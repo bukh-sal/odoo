@@ -51,3 +51,12 @@ package.json
 /man/
 /share/
 /src/
+
+# Modular Platform: local state, secrets and reproducible product tooling
+/.local/
+/artifacts/
+!/.dockerignore
+!/.env.example
+!package.json
+!package-lock.json
+!tsconfig.json

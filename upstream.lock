@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/odoo/odoo.git",
+  "branch": "19.0",
+  "commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+  "commit_utc": "2026-10-27T18:31:23Z",
+  "retrieved_date_utc": "2026-10-27",
+  "license_provenance": ["LICENSE", "COPYRIGHT", "per-addon manifests and bundled third-party notices"],
+  "upstream_tip_checked": "6a15403217577c1287dbd5ee72b13136ca4dbde2",
+  "subsequent_changes_reviewed": "One stock orderpoint horizon fix; no later security-related change identified in that delta. This is not a vulnerability scan or security certification.",
+  "history": "Official Git objects retained through upstream remote; shallow baseline plus 100-commit 19.0 fetch.",
+  "build_environment": "Docker Desktop Linux amd64; Python 3.12 container; see deploy/runtime.lock.json and evidence."
+}

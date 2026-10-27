@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "platform": "linux/amd64",
+  "python": "3.12.16",
+  "python_image": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
+  "postgresql": "16.15",
+  "postgres_image": "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+  "debian_snapshot": "20261027T000000Z",
+  "python_dependencies": "requirements-py312.lock",
+  "build_dependencies": "build-requirements.lock",
+  "resolver": "uv 0.13.5; Python 3.12 target; x86_64-unknown-linux-gnu",
+  "frontend_build": "No new frontend build toolchain in R0; retained upstream assets compiled by Odoo. Host SDK toolchain must be pinned before G2.",
+  "qualification": "candidate; container build and fresh boot pending"
+}

@@ -1,0 +1,61 @@
+name: ${MP_COMPOSE_PROJECT:?Run tools/r0.py setup first}
+services:
+  db:
+    image: postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets: [postgres_password, app_db_password]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init-db.sh:/docker-entrypoint-initdb.d/10-modular-role.sh:ro
+    command: [postgres, -c, max_connections=64, -c, shared_buffers=128MB]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U postgres -d postgres]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    mem_limit: 512m
+    cpus: 1
+    networks: [runtime]
+  app:
+    image: modular-platform:r0
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    depends_on:
+      db: {condition: service_healthy}
+    command: [-c, /run/secrets/odoo_config, "--addons-path=/opt/modular/addons,/opt/modular/fixtures/${MP_FIXTURE_VARIANT:-v1}"]
+    secrets: [odoo_config]
+    volumes: [filestore:/var/lib/modular]
+    ports: ["127.0.0.1:${MP_HTTP_PORT:-18069}:8069"]
+    read_only: true
+    tmpfs: [/tmp]
+    mem_limit: 1536m
+    cpus: 2
+    networks: [runtime]
+  maintenance:
+    image: modular-platform:r0
+    profiles: [maintenance]
+    depends_on:
+      db: {condition: service_healthy}
+    entrypoint: [python, /opt/modular/tools/r0_inside.py]
+    secrets: [odoo_config, bootstrap_password]
+    volumes:
+      - filestore:/var/lib/modular
+      - ../docs/evidence/G0:/evidence
+    read_only: true
+    tmpfs: [/tmp]
+    mem_limit: 1536m
+    cpus: 2
+    networks: [runtime]
+secrets:
+  postgres_password: {file: ../.local/r0/postgres-password}
+  app_db_password: {file: ../.local/r0/app-db-password}
+  bootstrap_password: {file: ../.local/r0/bootstrap-password}
+  odoo_config: {file: ../.local/r0/odoo.conf}
+volumes:
+  pgdata:
+  filestore:
+networks:
+  runtime:
+    internal: true
