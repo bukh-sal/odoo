@@ -14,6 +14,8 @@ from odoo import http
 from odoo.exceptions import AccessError, MissingError, ValidationError
 from odoo.http import request
 from odoo.addons.mp_identity.scopes import current_scope
+from odoo.addons.mp_identity.release import current_release,require_client_release,ClientReleaseMismatch,ClientReleaseUnavailable
+from modular_platform.client_release import protected_gateway
 from modular_platform.contracts import ContractError, validate, load_json, ERROR_STATUS, validate_binding, FORMAT_CHECKER
 from modular_platform.contracts import CONTRACTS
 
@@ -91,6 +93,7 @@ def result(handler, version='1.0'):
     ident=str(uuid4())
     try:
         if not request.session.uid:raise PublicError('UNAUTHENTICATED')
+        if protected_gateway(request.httprequest.path):require_client_release(request.env)
         data=handler()
         envelope={'data':data,'api_version':version,'request_id':ident}
         validate('service-response',envelope)
@@ -98,8 +101,8 @@ def result(handler, version='1.0'):
         return request.make_json_response(envelope,headers=[('Cache-Control','no-store')])
     except (PublicError,AccessError,MissingError,ValidationError,ContractError,ValueError,TypeError) as error:
         request.env.cr.rollback()
-        code=error.code if isinstance(error,PublicError) else 'FORBIDDEN' if isinstance(error,AccessError) else 'NOT_FOUND' if isinstance(error,MissingError) else 'VALIDATION_FAILED'
-        details=error.details if isinstance(error,PublicError) else {}
+        code='CONFLICT' if isinstance(error,ClientReleaseMismatch) else 'DEPENDENCY_UNAVAILABLE' if isinstance(error,ClientReleaseUnavailable) else error.code if isinstance(error,PublicError) else 'FORBIDDEN' if isinstance(error,AccessError) else 'NOT_FOUND' if isinstance(error,MissingError) else 'VALIDATION_FAILED'
+        details={'field':'client_release','outcome':'not_started'} if isinstance(error,ClientReleaseMismatch) else error.details if isinstance(error,PublicError) else {}
         audit('denied',ident)
         return request.make_json_response({'error':{'code':code,'message':code.replace('_',' ').capitalize(),'request_id':ident,'retryable':code in {'DEPENDENCY_UNAVAILABLE','RATE_LIMITED'},'details':details}},status=ERROR_STATUS[code],headers=[('Cache-Control','no-store')])
     except (psycopg2.errors.SerializationFailure,psycopg2.errors.DeadlockDetected):
@@ -117,6 +120,10 @@ def result(handler, version='1.0'):
 
 
 class CoreGateway(http.Controller):
+    @http.route('/api/v1/client-release',type='http',auth='public',methods=['GET'])
+    def client_release(self):
+        return result(lambda:current_release(request.env))
+
     @http.route('/api/v1/session',type='http',auth='public',methods=['GET'])
     def session(self):
         def run():
@@ -144,7 +151,7 @@ class CoreGateway(http.Controller):
             validate('host-context',context)
             request.env.cr.execute("SELECT descriptor FROM mp_service_binding WHERE consumer_id=(SELECT id FROM mp_plugin_installation WHERE plugin_id=%s) AND workspace_id=%s AND state='active'",[plugin_id,scope.workspace_id])
             bindings=[row[0] for row in request.env.cr.fetchall()]
-            return {'context':context,'bindings':bindings,'pages':install[1]['ui']['pages'],'slots':install[1]['ui'].get('slots',[]),'commands':[c for c in install[1]['ui'].get('commands',[]) if c['permission'] in caps],'csrf_token':request.csrf_token()}
+            return {'release':current_release(request.env),'context':context,'bindings':bindings,'pages':install[1]['ui']['pages'],'slots':install[1]['ui'].get('slots',[]),'commands':[c for c in install[1]['ui'].get('commands',[]) if c['permission'] in caps],'csrf_token':request.csrf_token()}
         return result(run)
 
     @http.route('/api/v1/ui/slot',type='http',auth='public',methods=['GET'])

@@ -8,20 +8,24 @@ import { registry } from '@web/core/registry';
 import { OperationsPanel } from './operations';
 import { ConfirmationDialog } from '@web/core/confirmation_dialog/confirmation_dialog';
 import { NativeInteractions } from './native_interactions';
+import { browser } from '@web/core/browser/browser';
+import { ClientReleaseFence,isReleaseError,releaseError } from './client_release';
 
 registry.category('command_categories').add('mp_platform',{name:'Platform'});
 
 let workspace = null;
 let generation = 0;
 const pendingNative = new Set();
+const releaseFence=new ClientReleaseFence(window.odoo?.__mp_client_release__);
 const nativeRPC = rpc._rpc;
 function obsolete() { return new DOMException('Obsolete page context','AbortError'); }
 rpc._rpc = function(url,params,settings={}) {
+    releaseFence.assert(url);
     const captured=generation;
-    const pending=nativeRPC.call(this,url,params,{...settings,cache:false,headers:{...settings.headers,...(workspace?{'X-MP-Workspace':workspace}:{})}});
+    const pending=nativeRPC.call(this,url,params,{...settings,cache:false,headers:{...settings.headers,...releaseFence.headers(),...(workspace?{'X-MP-Workspace':workspace}:{})}});
     let cancel;
     const cancellation=new Promise((resolve,reject)=>cancel=()=>reject(obsolete()));
-    const guarded=Promise.race([pending,cancellation]).then(value=>{if(captured!==generation)throw obsolete();return value;}).finally(()=>pendingNative.delete(guarded));
+    const guarded=Promise.race([pending,cancellation]).then(value=>{if(captured!==generation)throw obsolete();releaseFence.assert(url,'unknown');return value;}).catch(e=>{if(isReleaseError(e)){releaseFence.block();throw releaseError(e.details?.outcome||'not_started');}throw e;}).finally(()=>pendingNative.delete(guarded));
     guarded.abort=(rejectError=true)=>{pending.abort(false);if(rejectError)cancel();};
     pendingNative.add(guarded);
     return guarded;
@@ -74,7 +78,8 @@ class Shell extends Component {
             <div t-if="state.recoveryDraft and state.context" class="mp_notice" role="status">Your unsaved draft is available locally. <button t-on-click="downloadDraft">Download unsaved draft</button></div>
             <div t-if="state.error" class="mp_notice" role="alert"><strong t-esc="state.error.message"/><p t-esc="state.error.request_id"/>
                 <p t-if="state.error.field">Field: <t t-esc="state.error.field"/></p>
-                <button t-on-click="retry" t-esc="t('retry')"/>
+                <button t-if="!state.releaseChanged" t-on-click="retry" t-esc="t('retry')"/>
+                <button t-if="state.releaseChanged" t-on-click="reloadRelease">Refresh platform</button>
                 <a t-if="state.error.code==='UNAUTHENTICATED'" t-att-href="loginURL">Sign in</a>
                 <button t-if="canRecoverDraft" t-on-click="downloadDraft">Download unsaved draft</button>
             </div>
@@ -106,7 +111,7 @@ class Shell extends Component {
                     <button type="submit" t-att-disabled="state.adminBusy">Add member</button>
                 </form>
             </section>
-            <OperationsPanel t-if="state.operations" api="operationsAPI" onSession="operatorSession" onDenied="operatorDenied" initialWorkspace="state.workspace"/>
+            <OperationsPanel t-if="state.operations and !state.releaseChanged" api="operationsAPI" onSession="operatorSession" onDenied="operatorDenied" initialWorkspace="state.workspace"/>
             <div class="mp_content" t-if="!state.settings and !state.operations">
                 <div t-ref="custom"/>
                 <View t-if="state.nativeProps" t-key="state.generation" t-props="state.nativeProps"/>
@@ -122,6 +127,8 @@ class Shell extends Component {
         this.main=useRef('main');this.custom=useRef('custom');
         this.interactions=new NativeInteractions({...this.env.services,ConfirmationDialog,
             provider:registry.category('command_provider').get('command'),error});
+        this.state.releaseChanged=false;
+        releaseFence.onChange=()=>this.blockRelease();
         // Native hotkey dispatch selects the newest matching registration;
         // there is one invocation and no parallel window keydown listener.
         this.removeCommandHotkey=this.env.services.hotkey.add('control+k',()=>this.openCommands(),{
@@ -137,10 +144,12 @@ class Shell extends Component {
         this.transition=0;
         onError(e=>{
             const cause=e.cause||e;
+            if(isReleaseError(cause)){releaseFence.block();this.fail(releaseError());return;}
             this.state.nativeProps=null;this.state.detailActions=[];this.state.detailLabels=[];
             this.fail(error(cause.exceptionName==='odoo.exceptions.AccessError'?'FORBIDDEN':'INTERNAL_ERROR'));
         });
         this.onPop=async()=>{
+            if(releaseFence.blocked){history.pushState({},'',this.currentURL);return;}
             if(!await this.canLeave()){history.pushState({},'',this.currentURL);return;}
             this.nativeDirty=false;this.draft=null;this.customDraft=null;this.state.settingsDirty=false;this.settingsRecovery=null;await this.activate();
         };
@@ -148,28 +157,56 @@ class Shell extends Component {
             if(document.hidden){this.state.paused=true;return;}
             await this.refreshAuthority();this.state.paused=false;
         };
+        this.onBeforeUnload=event=>{
+            if(this.state.releaseChanged&&!this.allowReleaseUnload&&(this.draft||this.customDraft||this.nativeDirty||this.state.settingsDirty)){
+                event.preventDefault();event.returnValue='';
+            }
+        };
         onMounted(async()=>{
             this.applyAppearance();
             window.addEventListener('popstate',this.onPop);document.addEventListener('visibilitychange',this.onVisibility);
+            window.addEventListener('beforeunload',this.onBeforeUnload);
             // Authority refresh must not depend on initial native-view loading;
             // rapid navigation can cancel that activation before it completes.
             this.timer=setInterval(()=>this.refreshAuthority(),5000);
             try {const session=await this.json('/api/v1/session');this.csrf=session.csrf_token;this.sessionPrincipal=session.principal_id;this.state.displayName=session.display_name;this.state.workspaces=await this.json('/api/v1/workspaces');this.refreshOperatorAuthority();await this.activate();}
             catch(e){this.fail(e);this.state.loading=false;}
         });
-        onWillDestroy(()=>{clearInterval(this.timer);this.removeCommandHotkey();window.removeEventListener('popstate',this.onPop);document.removeEventListener('visibilitychange',this.onVisibility);this.retire();});
+        onWillDestroy(()=>{clearInterval(this.timer);this.closeReleaseNotice?.();releaseFence.onChange=null;this.removeCommandHotkey();window.removeEventListener('beforeunload',this.onBeforeUnload);window.removeEventListener('popstate',this.onPop);document.removeEventListener('visibilitychange',this.onVisibility);this.retire();});
     }
     t(key){return words[this.state.language][key]||key;}
     get loginURL(){return '/web/login?redirect='+encodeURIComponent(location.pathname+location.search);}
     async json(path,body,options={}){
+        releaseFence.assert(path);
         let response;
         try{response=await fetch(path,{cache:'no-store',credentials:'same-origin',method:body?'POST':'GET',signal:options.signal,
-            headers:{...(workspace?{'X-MP-Workspace':workspace}:{}),...(body?{'Content-Type':'application/json','X-CSRFToken':this.csrf}:{}),...options.headers},...(body?{body:JSON.stringify(body)}:{})});}
+            headers:{...(workspace?{'X-MP-Workspace':workspace}:{}),...(body?{'Content-Type':'application/json','X-CSRFToken':this.csrf}:{}),...options.headers,...releaseFence.headers()},...(body?{body:JSON.stringify(body)}:{})});}
         catch(e){if(e.name==='AbortError')throw e;throw Object.assign(error('DEPENDENCY_UNAVAILABLE',undefined,{outcome:'unknown'}),{retryable:true});}
+        if(path==='/api/v1/client-release'&&response.status===404){releaseFence.block();throw releaseError();}
         let result;try{result=await response.json();}catch{throw error(response.status===401?'UNAUTHENTICATED':'INTERNAL_ERROR');}
-        if(!response.ok||result.error){const e=result.error||{};throw Object.assign(error(e.code||'INTERNAL_ERROR',e.request_id,e.details),{message:e.message||'Operation unavailable',retryable:!!e.retryable});}
+        if(!response.ok||result.error){const e=result.error||{};if(isReleaseError(e)){releaseFence.block();throw releaseError();}throw Object.assign(error(e.code||'INTERNAL_ERROR',e.request_id,e.details),{message:e.message||'Operation unavailable',retryable:!!e.retryable});}
         if(result.api_version!=='1.0'||typeof result.request_id!=='string'||!('data'in result))throw error('INTERNAL_ERROR');
-        return result.data;
+        releaseFence.assert(path,'unknown');return result.data;
+    }
+    async blockRelease(){
+        if(this.state.releaseChanged)return;
+        this.state.releaseChanged=true;this.transition++;
+        if(this.state.settingsDirty&&this.state.workspaceSettings){
+            this.draft={workspace_id:workspace,settings:{...this.state.workspaceSettings}};this.draftPrincipal=this.boundPrincipal;
+        }
+        await this.retire({recover:true});generation++;
+        this.state.context=null;this.state.loading=false;this.state.paused=false;
+        this.fail(releaseError());
+        this.closeReleaseNotice=this.env.services.notification.add('A new platform release is available. Your old page is paused.',{
+            type:'warning',sticky:true,title:'Refresh platform',buttons:[
+                {name:'Refresh',primary:true,onClick:()=>this.reloadRelease()},
+                {name:'Download unsaved draft',onClick:()=>this.downloadDraft()},
+            ]});
+    }
+    async reloadRelease(){
+        if(!this.state.releaseChanged)return;
+        if((this.draft||this.customDraft||this.nativeDirty||this.state.settingsDirty)&&!await this.confirm({title:'Refresh platform',message:'Download any unsaved draft before continuing. Refresh and discard the in-memory draft?',destructive:false}))return;
+        this.allowReleaseUnload=true;browser.location.reload();
     }
     trackDraft(){
         if(this.state.nativeProps?.type!=='form')return;
@@ -206,7 +243,7 @@ class Shell extends Component {
         if(mounted){try{await mounted.dispose();}catch{this.fail(error('INTERNAL_ERROR'));}}
     }
     fail(e){if(e.name==='AbortError')return;if(e.code==='CONFLICT'&&this.nativeDirty&&this.draft)this.state.recoveryDraft=true;this.state.error={code:e.code||'INTERNAL_ERROR',message:e.message||'Page unavailable',request_id:e.request_id||crypto.randomUUID(),field:e.details?.field};}
-    async go(url){if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.customDraft=null;this.state.recoveryDraft=false;history.pushState({},'',url);await this.activate();}
+    async go(url){if(releaseFence.blocked){this.fail(releaseError());return;}if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.customDraft=null;this.state.recoveryDraft=false;history.pushState({},'',url);await this.activate();}
     async openPage(plugin,pageId,query={}){
         const app=this.state.navigation.find(app=>app.plugin_id===plugin);const page=app?.pages.find(p=>p.id===pageId);
         if(!page)throw error('NOT_FOUND');
@@ -276,11 +313,15 @@ class Shell extends Component {
     async downloadDraft(){
         const snapshot=this.customDraft;
         if(!this.draft&&!snapshot)return;
-        try{const session=await this.json('/api/v1/session');if(session.principal_id!==(snapshot?.principal||this.draftPrincipal)||snapshot&&session.site_id!==snapshot.site){this.draft=null;this.customDraft=null;this.state.recoveryDraft=false;throw error('FORBIDDEN');}}
+        try{
+            const session=await this.json('/api/v1/session');
+            const spaces=await this.json('/api/v1/workspaces');
+            if(session.principal_id!==(snapshot?.principal||this.draftPrincipal)||snapshot&&session.site_id!==snapshot.site||!spaces.some(space=>space.id===(snapshot?.workspace||this.state.workspace))){this.draft=null;this.customDraft=null;this.state.recoveryDraft=false;throw error('FORBIDDEN');}
+        }
         catch(e){if(!['UNAUTHENTICATED','INTERNAL_ERROR','DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED'].includes(e.code)){this.fail(e);return;}}
         this.download(snapshot?.filename||'unsaved-note.json',snapshot?.data||this.draft);
     }
-    get canRecoverDraft(){return !!(this.draft||this.customDraft)&&['UNAUTHENTICATED','INTERNAL_ERROR','DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED'].includes(this.state.error?.code);}
+    get canRecoverDraft(){return !!(this.draft||this.customDraft)&&(this.state.releaseChanged||['UNAUTHENTICATED','INTERNAL_ERROR','DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED'].includes(this.state.error?.code));}
     async exportNotes(){
         try{const notes=[];let cursor=null;do{const data=await this.callService('documents','list',{limit:100,...(cursor?{cursor}:{})});notes.push(...data.items.map(({id,title,body,revision,labels})=>({id,title,body,revision,labels})));cursor=data.next_cursor;if(notes.length>=10000&&cursor)throw error('VALIDATION_FAILED');}while(cursor);this.download('notes.json',{schema_version:1,workspace_id:workspace,notes});this.notify('Notes exported');}
         catch(e){this.fail(e);}
@@ -324,6 +365,15 @@ class Shell extends Component {
         }catch(e){this.fail(e);}
     }
     async refreshAuthority(){
+        if(this.state.releaseChanged||this.releaseChecking)return;
+        this.releaseChecking=true;
+        const releaseController=new AbortController();const deadline=setTimeout(()=>releaseController.abort(),5000);
+        try{const release=await this.json('/api/v1/client-release',null,{signal:releaseController.signal});if(!releaseFence.observe(release)){await releaseFence.retirement;return;}}
+        catch(e){
+            if(isReleaseError(e)){releaseFence.block();await releaseFence.retirement;}
+            else if(this.state.context){await this.retire({recover:true});generation++;this.state.context=null;this.fail(e.name==='AbortError'?error('DEADLINE_EXCEEDED'):e);}
+            return;
+        }finally{clearTimeout(deadline);this.releaseChecking=false;}
         this.refreshOperatorAuthority();
         if(!workspace||!this.state.context||this.checking)return;this.checking=true;const captured=generation;
         try{const value=await this.json('/api/v1/context?plugin_id='+this.state.plugin,null,{signal:this.controller.signal});if(captured===generation&&this.state.context&&(value.context.policy_generation!==this.state.context.policy_generation||value.context.principal_id!==this.state.context.principal_id||value.context.site_id!==this.state.context.site_id||value.context.installation_id!==this.state.context.installation_id)){
@@ -334,6 +384,7 @@ class Shell extends Component {
         finally{this.checking=false;}
     }
     async activate(force=false){
+        releaseFence.assert('/api/v1/context');
         const transition=++this.transition;
         const url=new URL(location.href);const nextWorkspace=url.searchParams.get('workspace');const settings=url.pathname==='/app/settings';const operations=url.pathname==='/app/operations';const plugin=(settings||operations)?this.state.plugin:url.pathname.split('/')[2];const path='/'+url.pathname.split('/').slice(3).join('/');
         this.currentURL=url.href;

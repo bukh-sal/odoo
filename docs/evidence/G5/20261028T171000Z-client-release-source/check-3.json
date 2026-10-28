@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "tests/test_canvas_lifecycle.mjs"
+  ],
+  "exit_code": 0,
+  "stdout": "\u2714 repeated mounts dispose document handlers, theme subscriptions and owned DOM (3.8089ms)\n\u2714 only the current mount handles one keyboard save after prior disposal (5.6246ms)\n\u2714 late initial response after abort cannot retain a page or subscriptions (0.8625ms)\n\u2714 late save completion cannot update a replacement mount (1.2562ms)\n\u2714 dirty page exposes a safe JSON snapshot and dispose retains no draft DOM (0.476ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 92.1677\n",
+  "stderr": ""
+}

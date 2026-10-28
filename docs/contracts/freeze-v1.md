@@ -50,3 +50,6 @@ The final revision8 normative prose/inventory addendum is qualified in `docs/evi
 
 
 Revision9 adds operator-only `core_upgrade` plan/public-status enum and `plan-core-upgrade.json` under ADR0016. Existing plugin targets/artifacts use `deploy` to retain all package scopes. Native core versions/source/migration hashes are explicit immutable lock/display data; destructive+native-trust acknowledgement and controlled maintenance are required. Static-only deploy and app request enums are unchanged. Old valid DTOs/golden serialization remain compatibility fixtures. G2 and affected consumers require requalification; actual core upgrade/recovery/UI07 remain G5.
+
+
+Revision10 freezes client-release transport1 schema/example under ADR0017. This is a documented operational migration requiring a release pin after activation; headerless business calls are not compatible. Existing JSON DTOs/host API1/golden plan bytes remain unchanged. The bootstrap pin is immutable; current release discovery is not authority and does not silently refresh clients. New consumers require G2 requalification and G5 actual native/browser/core recovery evidence.

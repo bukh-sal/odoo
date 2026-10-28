@@ -1,0 +1,24 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-10-28T16:57:38.638849+00:00",
+  "contract_major": 1,
+  "revision": 10,
+  "frozen_files": 78,
+  "inventory_sha256": "a19bcbd2f0839debdf193782fec751e2d82459481d9222022744ca1c20b6f32b",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "See current freeze/protocol and ADR0016/0017: explicit core operation and client-release transport migration; old JSON fixtures/golden retained; headerless operational compatibility is not preserved after activation.",
+  "runtime_qualification": "Current live image unchanged; new source consumers still require actual G5 core maintenance/recovery and UI07/browser qualification.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "c598de7b977b2d23fdf2916169076a2d76c18820"
+}

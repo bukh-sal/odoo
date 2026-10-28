@@ -3,6 +3,7 @@ from odoo.exceptions import AccessError
 from odoo.http import request
 
 from ..scopes import resolve_scope
+from ..release import require_client_release
 
 
 class IrHttp(models.AbstractModel):
@@ -25,6 +26,7 @@ class IrHttp(models.AbstractModel):
                 if request.httprequest.path.startswith("/web/dataset/"):
                     raise
         if request.httprequest.path.startswith("/web/dataset/"):
+            require_client_release(request.env)
             payload = request.get_json_data().get("params", {})
             context = payload.get("kwargs", {}).get("context", {}) or {}
             if not isinstance(context, dict) or any(key.startswith(("mp_", "_mp_")) for key in context):

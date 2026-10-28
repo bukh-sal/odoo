@@ -1,0 +1,8 @@
+{
+  "protocol": 1,
+  "site_id": "00000000-0000-4000-8000-000000000002",
+  "generation": 2,
+  "release_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "inventory_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "token": "sha256:5f845d2525452a96d68f9225bec7ba3b8610be909d1c5c520c0b8f37ffce8932"
+}

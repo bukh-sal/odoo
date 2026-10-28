@@ -1,0 +1,155 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T17:00:20.569772+00:00",
+  "git_base": "c598de7b977b2d23fdf2916169076a2d76c18820",
+  "linux_image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "node": "v24.22.1",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/test_native_interactions.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "\u2714 native confirmation maps destructive labels and resolves once on confirm (1.637ms)\n\u2714 native cancel, Escape/dismiss and external close all settle false (0.5408ms)\n\u2714 retiring cancels pending confirmation and stale callbacks cannot authorize (0.2384ms)\n\u2714 native notifications retain severity and plain text, clean up on scope retirement (0.8437ms)\n\u2714 native command registrations retire and cached commands recheck current authority (0.3829ms)\n\u2714 ordinary confirm does not use destructive appearance and failed add rejects (0.2574ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 96.482\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"contract_major\": 1, \"files\": 78, \"rows\": 7}\r\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/lib/tsc.js",
+        "--noEmit"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/test_canvas_lifecycle.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "\u2714 repeated mounts dispose document handlers, theme subscriptions and owned DOM (6.2663ms)\n\u2714 only the current mount handles one keyboard save after prior disposal (6.0507ms)\n\u2714 late initial response after abort cannot retain a page or subscriptions (1.2748ms)\n\u2714 late save completion cannot update a replacement mount (2.8677ms)\n\u2714 dirty page exposes a safe JSON snapshot and dispose retains no draft DOM (0.6183ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 107.7645\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/test_client_release.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "\u2714 bootstrap pin cannot be mutated or silently adopted from a newer poll (1.3093ms)\n\u2714 mismatch fences synchronously before asynchronous retirement and only once (0.1819ms)\n\u2714 safe auth/draft discovery remains usable but retries and native calls stay fenced (0.2115ms)\n\u2714 malformed or missing bootstrap fails closed without automatic reload (0.2592ms)\n\u2714 private native release exception maps distinctly from record CAS conflicts (0.1029ms)\n\u2714 failed page disposal cannot unblock or reload the document (0.2103ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 96.635\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_client_release.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_actual_adapter_current_token_recovery_and_non_http_paths (test_client_release.ClientReleaseTests.test_actual_adapter_current_token_recovery_and_non_http_paths) ... ok\r\ntest_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch (test_client_release.ClientReleaseTests.test_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch) ... ok\r\ntest_contract_example_has_exact_canonical_identity (test_client_release.ClientReleaseTests.test_contract_example_has_exact_canonical_identity) ... ok\r\ntest_epoch_restore_and_site_inventory_each_change_identity (test_client_release.ClientReleaseTests.test_epoch_restore_and_site_inventory_each_change_identity) ... ok\r\ntest_missing_malformed_publication_and_wrong_image_fail_closed (test_client_release.ClientReleaseTests.test_missing_malformed_publication_and_wrong_image_fail_closed) ... ok\r\ntest_only_explicit_recovery_endpoints_are_exempt (test_client_release.ClientReleaseTests.test_only_explicit_recovery_endpoints_are_exempt) ... ok\r\ntest_published_tuple_single_query_and_canonical_token (test_client_release.ClientReleaseTests.test_published_tuple_single_query_and_canonical_token) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 7 tests in 0.016s\r\n\r\nOK\r\n"
+    },
+    {
+      "source": "host.js",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "source": "native_interactions.js",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "source": "client_release.js",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "-i",
+        "--network",
+        "none",
+        "--read-only",
+        "--cap-drop",
+        "ALL",
+        "--security-opt",
+        "no-new-privileges",
+        "--memory",
+        "512m",
+        "--pids-limit",
+        "64",
+        "--user",
+        "10001:10001",
+        "--tmpfs",
+        "/tmp:rw,nosuid,nodev,noexec,size=64m,mode=1777",
+        "--entrypoint",
+        "/venv/bin/python",
+        "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+        "-c",
+        "import os,sys,tarfile,unittest\nos.mkdir('/tmp/client-release',0o700)\nwith tarfile.open(fileobj=sys.stdin.buffer,mode='r|') as archive:archive.extractall('/tmp/client-release',filter='data')\nos.chdir('/tmp/client-release')\nsuite=unittest.defaultTestLoader.discover('tests',pattern='test_client_release.py')\nraise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful())\n"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_actual_adapter_current_token_recovery_and_non_http_paths (test_client_release.ClientReleaseTests.test_actual_adapter_current_token_recovery_and_non_http_paths) ... ok\ntest_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch (test_client_release.ClientReleaseTests.test_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch) ... ok\ntest_contract_example_has_exact_canonical_identity (test_client_release.ClientReleaseTests.test_contract_example_has_exact_canonical_identity) ... ok\ntest_epoch_restore_and_site_inventory_each_change_identity (test_client_release.ClientReleaseTests.test_epoch_restore_and_site_inventory_each_change_identity) ... ok\ntest_missing_malformed_publication_and_wrong_image_fail_closed (test_client_release.ClientReleaseTests.test_missing_malformed_publication_and_wrong_image_fail_closed) ... ok\ntest_only_explicit_recovery_endpoints_are_exempt (test_client_release.ClientReleaseTests.test_only_explicit_recovery_endpoints_are_exempt) ... ok\ntest_published_tuple_single_query_and_canonical_token (test_client_release.ClientReleaseTests.test_published_tuple_single_query_and_canonical_token) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.008s\n\nOK\n"
+    }
+  ],
+  "source_sha256": {
+    "platform_addons/mp_shell/controllers.py": "18c32972a1ade8fb97db7b2eb1e731e9821184f293bb7c88c9d12f1c4cfe4c52",
+    "platform_addons/mp_shell/__init__.py": "912598b8ef8fc59f389dce818d259e5547ec666e961d2d37eb0deecb4f43a810",
+    "platform_addons/mp_shell/__manifest__.py": "22df934eebc8a8a2dd25945645ad413cc451a60058a2484b4b16f3d7a1ba1406",
+    "platform_addons/mp_shell/views/bootstrap.xml": "5a35778ae67324354ecc0ae1b7f2c5c9063dd2f5c552676c57529fba78d5efde",
+    "platform_addons/mp_shell/static/src/client_release.js": "84727f380a8f5041a485490504ba8a54ca1035a3d4a911784588b9d86b04476f",
+    "platform_addons/mp_shell/static/src/host.css": "234e710f54153564b52279c33a0fd7a91439bbb02607c4da3838580020401def",
+    "platform_addons/mp_shell/static/src/host.js": "26d9784e34f3df2acd9c0e0c1b9d02e6d948fcf89aedc73000cd567670cc2dcc",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0",
+    "platform_addons/mp_shell/static/src/operations.js": "5b19e0e46669116fe8eb031bc8a75e9bc6e88a75bba5073901358733f627afaf",
+    "tools/qualify_ui_reuse_source.py": "78a8d9093a420f771c52c63a0ec3c107c05f735a99ff42c795879bbe5a28c233",
+    "tests/test_native_interactions.mjs": "735093106c29d14fb9efbde35b86d71ea93eda9a1aa19b608725a9c3df568836",
+    "tests/test_canvas_lifecycle.mjs": "0744a58c336fc2dd7f1a03cbb9c0064375768f6cbe3e956514215e5ddf1ff2aa",
+    "tests/test_client_release.mjs": "402161a81edbc92640726d72888cce9dab762eca7f84dbee73a718c2a193dcc6",
+    "tests/test_client_release.py": "1303e5fab86b8b62f9932384fef1551029375bb0c5ed85c8a34cfa6baf2659db",
+    "tools/r1_probe.py": "5545372759a7cbe4f9209f899f135ad0d494b9ade5cb6bdc74ab6f1dad9fd92f",
+    "packages/platform_sdk/modular_platform/client_release.py": "0b645f21681823473d8c57832159c1c28167f8866e7a737677936d573efcc41d",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/plans.py": "d97e7f2c17a1de0e605118205e2f36d8ef72d7a2fb816c9ef6c39e406f0948a1",
+    "packages/contracts/v1/client-release.schema.json": "35292778738736b3458caaee2fd2e23987222e888edcc21f1c5b0fb5811d099b",
+    "packages/contracts/examples/v1/client-release.json": "8f32c193267ae4fd2531a7a87dc77dcdc13fe07bfb49c0c61cd23ae0188ea437",
+    "docs/contracts/freeze-v1.json": "a19bcbd2f0839debdf193782fec751e2d82459481d9222022744ca1c20b6f32b",
+    "platform_addons/mp_identity/release.py": "f2463661c9f1c95ed065552ae4be2aeb30118d17a160a54738928415a32dd52a",
+    "platform_addons/mp_identity/models/ir_http.py": "424fb21989abed46ed0189a4203715cba23a2efd57ebbeeb0c0e0820a70c98ce",
+    "platform_addons/mp_identity/scopes.py": "9fc8a82f40bfd532af856e40bbceb5296a7d37139296f4bb3181ca9794b5046b",
+    "platform_addons/mp_identity/__manifest__.py": "6be412376426a5230f90e5bb24d1fe6e26449e59494b736090243bf97fae43c1",
+    "platform_addons/mp_core/controllers.py": "26c39026087f58078377cac3f6c11ce1a18b18454ef88db98411ea69aed66141",
+    "platform_addons/mp_core/__manifest__.py": "26db8b7972bdd053db01308105eb20db105fca5049014d7955d49f7ed34544df",
+    "platform_addons/mp_example_canvas/static/src/page.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd",
+    "platform_addons/mp_example_canvas/static/src/adapter.js": "16528951a1062f7170b63f03f42085bb030e1337729226171ea9a8fada8e5f18"
+  },
+  "limits": [
+    "Mock services test mount/authority/Promise adapters; actual native rendering/focus/Escape/hotkeys/CRUD require browser qualification.",
+    "Release identity/adapter functions and client latch are source-only here; actual gateway/native/browser/core maintenance and recovery qualification remain separate checks."
+  ]
+}

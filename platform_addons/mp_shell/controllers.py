@@ -1,6 +1,7 @@
 from odoo import http
 from odoo.http import request
 from odoo.addons.mp_identity.scopes import current_scope
+from odoo.addons.mp_identity.release import current_release
 from odoo.addons.mp_core.controllers import result
 from odoo.addons.web.controllers.home import Home
 
@@ -32,7 +33,9 @@ class Shell(http.Controller):
     def app(self,plugin=None,page=None,**kwargs):
         # Bootstrap has no business data. Explicit URL workspace is validated
         # by /api/v1/context before rendering a page or native view.
-        response=request.render('mp_shell.bootstrap',request.env['ir.http'].webclient_rendering_context())
+        context=request.env['ir.http'].webclient_rendering_context()
+        context['mp_client_release']=current_release(request.env)
+        response=request.render('mp_shell.bootstrap',context)
         response.headers['Cache-Control']='no-store';response.headers['X-Frame-Options']='DENY'
         return response
 

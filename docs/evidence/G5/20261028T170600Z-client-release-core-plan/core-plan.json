@@ -1,0 +1,39 @@
+{
+  "result": "planned_not_registered_or_approved",
+  "utc": "2026-10-28T17:07:20.528238+00:00",
+  "operation_id": "192cc9d8-e7c0-4e09-8d2f-8f59a9cdf1a4",
+  "plan_hash": "sha256:9289126bf24e8dca9aecbf408d4045122049bc725daac06e7115d1952b25a985",
+  "base_generation": 16,
+  "target_generation": 17,
+  "candidate_image_id": "sha256:5685a3690346b2723b888959c0dab318c37f341baa55b063c1f9262f4f348c0b",
+  "targets": 4,
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.1",
+      "target_version": "19.0.0.1.2",
+      "migrations": []
+    },
+    {
+      "addon": "mp_identity",
+      "previous_version": "19.0.0.1.0",
+      "target_version": "19.0.0.1.1",
+      "migrations": []
+    },
+    {
+      "addon": "mp_shell",
+      "previous_version": "19.0.0.1.1",
+      "target_version": "19.0.0.1.2",
+      "migrations": []
+    }
+  ],
+  "destructive_ack_required": true,
+  "native_trust_ack_required": true,
+  "checkpoint_required": true,
+  "before_after_state_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+  "deployment_state_unchanged": true,
+  "private_stage_updated_only": true,
+  "limits": [
+    "No independent operation registration/approval/apply, clone/native migration or browser qualification. Stage now pins actual generation16; any intervening mutation must invalidate this plan."
+  ]
+}

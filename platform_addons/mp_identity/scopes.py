@@ -100,6 +100,8 @@ def current_scope(env, required=True):
         return None
     if not isinstance(scope, Scope):
         raise AccessError("Untrusted workspace context")
+    from .release import require_client_release
+    require_client_release(env)
     return resolve_scope(env, scope.workspace_public_id, previous=scope)
 
 

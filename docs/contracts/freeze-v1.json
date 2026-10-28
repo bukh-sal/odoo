@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 9,
+  "revision": 10,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -171,7 +171,9 @@
         "packages/contracts/examples/v1/manifest-labels.json",
         "packages/contracts/examples/v1/manifest-notes-composed.json",
         "packages/contracts/v1/draft-snapshot.schema.json",
-        "packages/contracts/examples/v1/draft-snapshot.json"
+        "packages/contracts/examples/v1/draft-snapshot.json",
+        "packages/contracts/v1/client-release.schema.json",
+        "packages/contracts/examples/v1/client-release.json"
       ],
       "g1": [
         "FEAS-03"
@@ -185,7 +187,7 @@
     "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
     "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
     "docs/architecture-decisions/0009-operator-ui-contract.md": "ad2dceb9b186e69aa9629a72e6998a7bd0d742d5e06a09abcc0550d3a4e59cc2",
-    "docs/contracts/protocol-v1.md": "92a8d317a386407cabedcdcd51ba6ecb47b8e63f69f0e195b112b95aeadf014a",
+    "docs/contracts/protocol-v1.md": "0a0cbb8f6dc1c957fd9afb81b5f649ba07cace6e7078d964a72bbb22b047d4ee",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/board.json": "fc3dae5a6c3e4483c1aa86365410ff38d9f0cb560e75a689cfa287e40c896b64",
@@ -254,7 +256,9 @@
     "tests/test_operation_contracts.py": "befb8a09e11989981642b56e06a896218f29fb5a0dcf310ae9a628d6d3faee87",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
     "packages/contracts/examples/v1/plan-deploy.json": "cbc9e64aab37f9e7ecd0ed136c918bd1ecf9fffd9974dc62dd225ff453f2af6c",
-    "packages/contracts/examples/v1/plan-core-upgrade.json": "ab6c4d6070220ed847cc5ad5a80d34b552866309ad5116af3bda2fbc3e384406"
+    "packages/contracts/examples/v1/plan-core-upgrade.json": "ab6c4d6070220ed847cc5ad5a80d34b552866309ad5116af3bda2fbc3e384406",
+    "packages/contracts/v1/client-release.schema.json": "35292778738736b3458caaee2fd2e23987222e888edcc21f1c5b0fb5811d099b",
+    "packages/contracts/examples/v1/client-release.json": "8f32c193267ae4fd2531a7a87dc77dcdc13fe07bfb49c0c61cd23ae0188ea437"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

@@ -1,0 +1,2717 @@
+{
+  "plan": {
+    "schema_version": 1,
+    "operation_id": "192cc9d8-e7c0-4e09-8d2f-8f59a9cdf1a4",
+    "operation_type": "core_upgrade",
+    "created_at": "2026-10-28T17:07:15Z",
+    "deployment_id": "eb7ce420-a928-4ecb-80c7-1f8ff3b3fa08",
+    "site_ids": [
+      "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e"
+    ],
+    "base_state_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+    "base_release_digest": "sha256:f078c674dd769b5e879ee72363a6b920df9f86edb2d9c3e2ea5547e83df9f787",
+    "target_release_digest": "sha256:16a190da2ad08a139a4d092be8cc5bef48493fbe1a02927773fc129494a1b8b9",
+    "artifacts": [
+      {
+        "plugin_id": "org.example.canvas",
+        "version": "0.1.3",
+        "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+        "runtime": "native",
+        "action": "deploy",
+        "native_addon": "mp_example_canvas",
+        "migration_digests": []
+      },
+      {
+        "plugin_id": "org.example.notes",
+        "version": "0.2.3",
+        "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+        "runtime": "native",
+        "action": "deploy",
+        "native_addon": "mp_example_notes",
+        "migration_digests": []
+      },
+      {
+        "plugin_id": "org.example.notes_labels",
+        "version": "0.2.1",
+        "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+        "runtime": "native",
+        "action": "deploy",
+        "native_addon": "mp_example_notes_labels",
+        "migration_digests": []
+      }
+    ],
+    "dependency_lock_digest": "sha256:96830849917ad3331f3e33d84f451780457f3a28c21415f053c47b37a5787d6d",
+    "bindings": [
+      {
+        "binding_id": "3fbe3323-61ba-523f-9541-18b3841620bd",
+        "generation": 1,
+        "digest": "sha256:9e5ed1e6846148bf7aba709741d7fd59d4d1c249f12de7a09704ff99da5a830c"
+      },
+      {
+        "binding_id": "47c6fcb8-c87d-5a90-bb64-f97701025cbd",
+        "generation": 1,
+        "digest": "sha256:83f59fc2627cfba530d97890395d3591cb9557d2ca1bebc848f128ed58bda22e"
+      },
+      {
+        "binding_id": "55c45246-dfc7-5135-b180-aad6952ed3c1",
+        "generation": 1,
+        "digest": "sha256:28ee6e59144d9b52ff5a3aa635fbc4bc339f8a5ce7b0a2194fe4300dc3672674"
+      },
+      {
+        "binding_id": "9d2b4ae5-ed06-587c-9e89-370954f89f5f",
+        "generation": 1,
+        "digest": "sha256:032965a7ed0f5a1a4c667d0d75bae9453ddfab66ec9aeed3d89f2326a4f8d06a"
+      },
+      {
+        "binding_id": "9d457085-d420-5623-af44-45ec9b2e2e11",
+        "generation": 1,
+        "digest": "sha256:4661367f0dc92e80786a061b9a48eeb13fbe37e741140899902ec1e46f1a4b06"
+      },
+      {
+        "binding_id": "fa75174d-a05d-527a-8928-948247b7c8c8",
+        "generation": 1,
+        "digest": "sha256:9cccc93a913431ec53d835c793b14c4d4f59284165358cf29909e98c4e27535e"
+      }
+    ],
+    "endpoints": [],
+    "permission_changes": [],
+    "trust_changes": [],
+    "destructive": true,
+    "backup": {
+      "required": true,
+      "policy_id": "development_checkpoint",
+      "retain_previous_release": true
+    },
+    "policy_version": 1,
+    "operator_authorization_generation": 2
+  },
+  "plan_hash": "sha256:9289126bf24e8dca9aecbf408d4045122049bc725daac06e7115d1952b25a985",
+  "operation_lock": {
+    "schema_version": 1,
+    "operation_id": "192cc9d8-e7c0-4e09-8d2f-8f59a9cdf1a4",
+    "targets": [
+      {
+        "installation_id": "4a901771-b72c-5ab4-9555-75e4c478d890",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "plugin_id": "org.example.canvas",
+        "action": "deploy"
+      },
+      {
+        "installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "plugin_id": "org.example.notes",
+        "action": "deploy"
+      },
+      {
+        "installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "plugin_id": "org.example.notes_labels",
+        "action": "deploy"
+      },
+      {
+        "installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "efb30aaf-6120-4fde-9410-80c2bcfa50a5",
+        "plugin_id": "org.example.notes",
+        "action": "deploy"
+      }
+    ],
+    "catalog_snapshot_digest": "sha256:7dceccaac2f9b8112d4bf151685f64eba75c5857139826f4d2ef73e00a2e61b6",
+    "resolution_reasons": {
+      "plugin:org.example.canvas": [
+        "plugin:org.example.canvas==0.1.3:boards ",
+        "requested ==0.1.3"
+      ],
+      "plugin:org.example.notes": [
+        "plugin:org.example.canvas==0.1.3 >=0.2,<0.3",
+        "plugin:org.example.canvas==0.1.3:documents ",
+        "plugin:org.example.notes==0.2.3:documents ",
+        "plugin:org.example.notes_labels==0.2.1 >=0.1,<0.3",
+        "plugin:org.example.notes_labels==0.2.1:documents ",
+        "requested ==0.2.3"
+      ],
+      "plugin:org.example.notes_labels": [
+        "plugin:org.example.notes_labels==0.2.1:labels ",
+        "requested ==0.2.1"
+      ],
+      "python:asn1crypto": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.5.1"
+      ],
+      "python:attrs": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.1.0",
+        "python:jsonschema==4.26.0 >=22.2.0",
+        "python:referencing==0.37.0 >=22.2.0",
+        "python:zeep==4.2.1 >=17.2.0"
+      ],
+      "python:babel": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.10.3"
+      ],
+      "python:beautifulsoup4": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.15.0",
+        "python:ofxparse==0.21 "
+      ],
+      "python:cbor2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.6.2"
+      ],
+      "python:certifi": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.10.23",
+        "python:requests==2.31.0 >=2017.4.17"
+      ],
+      "python:cffi": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.1.1",
+        "python:cryptography==42.0.8 >=1.12"
+      ],
+      "python:chardet": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.2.0",
+        "python:reportlab==4.1.0 "
+      ],
+      "python:charset-normalizer": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.5.2",
+        "python:requests==2.31.0 <4,>=2"
+      ],
+      "python:cryptography": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==42.0.8",
+        "python:pyopenssl==24.1.0 <43,>=41.0.5"
+      ],
+      "python:docopt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.6.2",
+        "python:num2words==0.5.13 >=0.6.2"
+      ],
+      "python:docutils": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.20.1"
+      ],
+      "python:et-xmlfile": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.0",
+        "python:openpyxl==3.1.2 "
+      ],
+      "python:freezegun": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:geoip2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.9.0"
+      ],
+      "python:gevent": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==24.2.1"
+      ],
+      "python:greenlet": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.3",
+        "python:gevent==24.2.1 >=3.0rc3"
+      ],
+      "python:idna": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.6",
+        "python:requests==2.31.0 <4,>=2.5"
+      ],
+      "python:isodate": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.7.2",
+        "python:zeep==4.2.1 >=0.5.4"
+      ],
+      "python:jinja2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.2"
+      ],
+      "python:jsonschema": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.26.0"
+      ],
+      "python:jsonschema-specifications": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2025.9.1",
+        "python:jsonschema==4.26.0 >=2023.03.6"
+      ],
+      "python:libsass": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.22.0"
+      ],
+      "python:lxml": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.2.1",
+        "python:lxml-html-clean==0.4.4 ",
+        "python:ofxparse==0.21 ",
+        "python:zeep==4.2.1 >=4.6.0"
+      ],
+      "python:lxml-html-clean": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.4"
+      ],
+      "python:markupsafe": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.1.5",
+        "python:jinja2==3.1.2 >=2.0",
+        "python:werkzeug==3.0.1 >=2.1.1"
+      ],
+      "python:maxminddb": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.2.0",
+        "python:geoip2==2.9.0 >=1.4.0"
+      ],
+      "python:num2words": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.5.13"
+      ],
+      "python:ofxparse": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.21"
+      ],
+      "python:openpyxl": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.2"
+      ],
+      "python:packaging": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.3"
+      ],
+      "python:passlib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.7.4"
+      ],
+      "python:pillow": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==10.2.0",
+        "python:reportlab==4.1.0 >=9.0.0"
+      ],
+      "python:pip": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==25.3"
+      ],
+      "python:platformdirs": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.13.6",
+        "python:zeep==4.2.1 >=1.4.0"
+      ],
+      "python:polib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.1.1"
+      ],
+      "python:psutil": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.9.8"
+      ],
+      "python:psycopg2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.9.9"
+      ],
+      "python:pyasn1": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.6.5",
+        "python:pyasn1-modules==0.4.2 <0.7.0,>=0.6.1",
+        "python:python-ldap==3.4.4 >=0.3.7"
+      ],
+      "python:pyasn1-modules": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.2",
+        "python:python-ldap==3.4.4 >=0.1.5"
+      ],
+      "python:pycparser": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.12",
+        "python:cffi==2.1.1 "
+      ],
+      "python:pyjwt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.15.1"
+      ],
+      "python:pyopenssl": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==24.1.0"
+      ],
+      "python:pypdf2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.12.1"
+      ],
+      "python:pypng": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.20220715.0",
+        "python:qrcode==7.4.2 "
+      ],
+      "python:pyserial": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.5"
+      ],
+      "python:python-dateutil": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.8.2",
+        "python:freezegun==1.2.1 >=2.7",
+        "python:vobject==0.9.6.1 >=2.4.0"
+      ],
+      "python:python-ldap": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.4.4"
+      ],
+      "python:python-magic": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.27"
+      ],
+      "python:python-stdnum": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.19"
+      ],
+      "python:pytz": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.5",
+        "python:babel==2.10.3 >=2015.7",
+        "python:zeep==4.2.1 "
+      ],
+      "python:pyusb": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:qrcode": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==7.4.2"
+      ],
+      "python:referencing": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.37.0",
+        "python:jsonschema-specifications==2025.9.1 >=0.31.0",
+        "python:jsonschema==4.26.0 >=0.28.4"
+      ],
+      "python:reportlab": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.1.0"
+      ],
+      "python:requests": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.31.0",
+        "python:geoip2==2.9.0 >=2.9",
+        "python:requests-file==3.0.1 >=1.0.0",
+        "python:requests-toolbelt==1.0.0 <3.0.0,>=2.0.1",
+        "python:zeep==4.2.1 >=2.7.0"
+      ],
+      "python:requests-file": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.1",
+        "python:zeep==4.2.1 >=1.5.1"
+      ],
+      "python:requests-toolbelt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.0.0",
+        "python:zeep==4.2.1 >=0.7.1"
+      ],
+      "python:resolvelib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:rfc8785": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.1.4"
+      ],
+      "python:rjsmin": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.0"
+      ],
+      "python:rpds-py": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.9.1",
+        "python:jsonschema==4.26.0 >=0.25.0",
+        "python:referencing==0.37.0 >=0.7.0"
+      ],
+      "python:setuptools": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==80.9.0"
+      ],
+      "python:six": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.17.0",
+        "python:ofxparse==0.21 ",
+        "python:python-dateutil==2.8.2 >=1.5"
+      ],
+      "python:soupsieve": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.4",
+        "python:beautifulsoup4==4.15.0 >=1.6.1"
+      ],
+      "python:typing-extensions": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.16.0",
+        "python:beautifulsoup4==4.15.0 >=4.0.0",
+        "python:qrcode==7.4.2 ",
+        "python:referencing==0.37.0 >=4.4.0"
+      ],
+      "python:urllib3": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.7",
+        "python:requests==2.31.0 <3,>=1.21.1"
+      ],
+      "python:vobject": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.9.6.1"
+      ],
+      "python:werkzeug": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.1"
+      ],
+      "python:wheel": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.45.1"
+      ],
+      "python:xlrd": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.1"
+      ],
+      "python:xlsxwriter": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.9"
+      ],
+      "python:xlwt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.3.0"
+      ],
+      "python:zeep": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.2.1"
+      ],
+      "python:zope-event": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==6.2",
+        "python:gevent==24.2.1 "
+      ],
+      "python:zope-interface": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==8.7",
+        "python:gevent==24.2.1 "
+      ]
+    },
+    "release": {
+      "schema_version": 1,
+      "generator": "modular-operator/0.1",
+      "platform_version": "0.1.0",
+      "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+      "native_patch_set_digest": "sha256:275a4260b99483c9032d0fbc5e52cebccddf5839fa7f4e4094babc02e32eaeb0",
+      "python_runtime": {
+        "version": "3.12.16",
+        "architecture": "linux/x86_64",
+        "marker_environment": {
+          "implementation_name": "cpython",
+          "implementation_version": "3.12.16",
+          "os_name": "posix",
+          "platform_machine": "x86_64",
+          "platform_python_implementation": "CPython",
+          "platform_release": "7.0.14-linuxkit",
+          "platform_system": "Linux",
+          "platform_version": "#1 SMP PREEMPT_DYNAMIC Tue Oct 20 23:09:17 UTC 2026",
+          "python_full_version": "3.12.16",
+          "python_version": "3.12",
+          "sys_platform": "linux"
+        }
+      },
+      "python_lock_digest": "sha256:3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+      "core_inventory_digest": "sha256:a0dbccae31c5498cce83e0aefe45db92d189ed19a9a86c22540cb8d051757d9e",
+      "python_solution_digest": "sha256:dfe9fe8f6da1fe3d40a53be85f5932e24740354618e7e9cbca506b3bfafec97d",
+      "python_solution": [
+        {
+          "digest": "sha256:b80f42b0d0da70ecf742c7050778172fa51362b97bcd78a7526f9a1074fbb051",
+          "kind": "runtime_distribution",
+          "name": "asn1crypto",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.5.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:3641844d64e28a4dd78c85ce1cc656bb413b9a44f2ee9f5699b35de8d8875213",
+          "kind": "runtime_distribution",
+          "name": "attrs",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "26.1.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:86f61ed25692d7f5e964f6573285aba2c350a4f9d0d9685c8fc6167ade3e6a50",
+          "kind": "runtime_distribution",
+          "name": "Babel",
+          "requires_dist": [
+            "pytz (>=2015.7)"
+          ],
+          "requires_python": ">=3.6",
+          "version": "2.10.3",
+          "extras": []
+        },
+        {
+          "digest": "sha256:e17efe80a50feaa82d69526e7ebcfe7eb0ec2585214f698b43f7f6397e18664b",
+          "kind": "runtime_distribution",
+          "name": "beautifulsoup4",
+          "requires_dist": [
+            "soupsieve>=1.6.1",
+            "typing-extensions>=4.0.0",
+            "cchardet; extra == 'cchardet'",
+            "chardet; extra == 'chardet'",
+            "charset-normalizer; extra == 'charset-normalizer'",
+            "html5lib; extra == 'html5lib'",
+            "lxml; extra == 'lxml'"
+          ],
+          "requires_python": ">=3.7.0",
+          "version": "4.15.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:deb1e549e05eb4d98fa40b4e3d4639380193dece7a51a4ed4049bec6fd8f1d01",
+          "kind": "runtime_distribution",
+          "name": "cbor2",
+          "requires_dist": [
+            "pytest-benchmark ==4.0.0 ; extra == 'benchmarks'",
+            "packaging ; extra == 'doc'",
+            "Sphinx >=7 ; extra == 'doc'",
+            "sphinx-rtd-theme >=1.3.0 ; extra == 'doc'",
+            "sphinx-autodoc-typehints >=1.2.0 ; extra == 'doc'",
+            "typing-extensions ; (python_version < \"3.12\") and extra == 'doc'",
+            "coverage >=7 ; extra == 'test'",
+            "pytest ; extra == 'test'",
+            "hypothesis ; extra == 'test'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "5.6.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:aa3e852ff279f5f9a68f38c0632bef5488e77205e23fb0b1053d69f676446751",
+          "kind": "runtime_distribution",
+          "name": "certifi",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2026.10.23",
+          "extras": []
+        },
+        {
+          "digest": "sha256:5ab16a1d7c082ef425e37b82a873bba87bebe336cacf9cf40da4be975c0a5212",
+          "kind": "runtime_distribution",
+          "name": "cffi",
+          "requires_dist": [
+            "pycparser; implementation_name != \"PyPy\""
+          ],
+          "requires_python": ">=3.10",
+          "version": "2.1.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:cd12f1eda938bef5c09e6b317434f526525d401e481b669beeb5a73a47267954",
+          "kind": "runtime_distribution",
+          "name": "chardet",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "5.2.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:06445f9816cb1a1d5e69bbea910344c406162c1423cbb6280e83dca2df63563a",
+          "kind": "runtime_distribution",
+          "name": "charset-normalizer",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "3.5.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:3f785f162df80550e04c7e83a26d41bde06a6ae8ed10f1cf3817e9a3f0931ac2",
+          "kind": "runtime_distribution",
+          "name": "cryptography",
+          "requires_dist": [
+            "cffi >=1.12 ; platform_python_implementation != \"PyPy\"",
+            "sphinx >=5.3.0 ; extra == 'docs'",
+            "sphinx-rtd-theme >=1.1.1 ; extra == 'docs'",
+            "pyenchant >=1.6.11 ; extra == 'docstest'",
+            "readme-renderer ; extra == 'docstest'",
+            "sphinxcontrib-spelling >=4.0.1 ; extra == 'docstest'",
+            "nox ; extra == 'nox'",
+            "ruff ; extra == 'pep8test'",
+            "mypy ; extra == 'pep8test'",
+            "check-sdist ; extra == 'pep8test'",
+            "click ; extra == 'pep8test'",
+            "build ; extra == 'sdist'",
+            "bcrypt >=3.1.5 ; extra == 'ssh'",
+            "pytest >=6.2.0 ; extra == 'test'",
+            "pytest-benchmark ; extra == 'test'",
+            "pytest-cov ; extra == 'test'",
+            "pytest-xdist ; extra == 'test'",
+            "pretend ; extra == 'test'",
+            "certifi ; extra == 'test'",
+            "pytest-randomly ; extra == 'test-randomorder'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "42.0.8",
+          "extras": []
+        },
+        {
+          "digest": "sha256:4914d0123ab1b7f89a55d146eb8d682abde3293e4f3fb72531843b43cc144c8c",
+          "kind": "runtime_distribution",
+          "name": "docopt",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "0.6.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:a0ad54641acf904827f3fdb9420f1455dbb352bf56854e7ef824abf4d0427cb7",
+          "kind": "runtime_distribution",
+          "name": "docutils",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "0.20.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:79d0d73394887ccb1627be5e562f10d8834af81ed6256a7b3670f288d7919078",
+          "kind": "runtime_distribution",
+          "name": "et_xmlfile",
+          "requires_dist": [],
+          "requires_python": ">=3.8",
+          "version": "2.0.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:a7b55d470489dc97748e80900e9dc2ad841be52f4afaca76ca1a9365db2d2692",
+          "kind": "runtime_distribution",
+          "name": "freezegun",
+          "requires_dist": [
+            "python-dateutil (>=2.7)"
+          ],
+          "requires_python": ">=3.6",
+          "version": "1.2.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:2e854893f8fe000419cc85861177edff0da768a9d84304c164d39669e4059c9d",
+          "kind": "runtime_distribution",
+          "name": "geoip2",
+          "requires_dist": [
+            "requests (>=2.9)",
+            "maxminddb (>=1.4.0)",
+            "ipaddress; python_version==\"2.7\""
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+          "version": "2.9.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:a2e80d800dbec5b16ef67b315eee905f4c3e010039ab0e14fcf91ceab86a0303",
+          "kind": "runtime_distribution",
+          "name": "gevent",
+          "requires_dist": [
+            "zope.event",
+            "zope.interface",
+            "greenlet >=2.0.0 ; platform_python_implementation == \"CPython\" and python_version < \"3.11\"",
+            "greenlet >=3.0rc3 ; platform_python_implementation == \"CPython\" and python_version >= \"3.11\"",
+            "cffi >=1.12.2 ; platform_python_implementation == \"CPython\" and sys_platform == \"win32\"",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'dnspython'",
+            "idna ; (python_version < \"3.10\") and extra == 'dnspython'",
+            "sphinx ; extra == 'docs'",
+            "furo ; extra == 'docs'",
+            "repoze.sphinx.autointerface ; extra == 'docs'",
+            "sphinxcontrib-programoutput ; extra == 'docs'",
+            "zope.schema ; extra == 'docs'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'monitor'",
+            "cffi >=1.12.2 ; (platform_python_implementation == \"CPython\") and extra == 'recommended'",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'recommended'",
+            "idna ; (python_version < \"3.10\") and extra == 'recommended'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'recommended'",
+            "requests ; extra == 'test'",
+            "objgraph ; extra == 'test'",
+            "cffi >=1.12.2 ; (platform_python_implementation == \"CPython\") and extra == 'test'",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'test'",
+            "idna ; (python_version < \"3.10\") and extra == 'test'",
+            "coverage >=5.0 ; (sys_platform != \"win32\") and extra == 'test'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'test'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "24.2.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:ce288da38a59cba5d437c12619b051bd3fcc680539d579b284422a905b115edc",
+          "kind": "runtime_distribution",
+          "name": "greenlet",
+          "requires_dist": [
+            "Sphinx ; extra == 'docs'",
+            "furo ; extra == 'docs'",
+            "objgraph ; extra == 'test'",
+            "psutil ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "3.0.3",
+          "extras": []
+        },
+        {
+          "digest": "sha256:9691637bd43b58ca5d82ae4cd2c0a09de8eb3ce4cb42adecf445c5d33778fd3e",
+          "kind": "runtime_distribution",
+          "name": "idna",
+          "requires_dist": [],
+          "requires_python": ">=3.5",
+          "version": "3.6",
+          "extras": []
+        },
+        {
+          "digest": "sha256:be9e8a9e328ab65f4aceeb915e7a3835c0a2ca48a8b8c4bd8b54b7ef495f2462",
+          "kind": "runtime_distribution",
+          "name": "isodate",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "0.7.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:44651ca3350c6a63f8a2b3ab27e0fc68b7e0699430bb0dd4d2eb0e51c549a485",
+          "kind": "runtime_distribution",
+          "name": "Jinja2",
+          "requires_dist": [
+            "MarkupSafe (>=2.0)",
+            "Babel (>=2.7) ; extra == 'i18n'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "3.1.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:9bc90badf40bd6029d4bf4d9f75766a824caef029903fbd45d7e4ae48b51ca1d",
+          "kind": "runtime_distribution",
+          "name": "jsonschema",
+          "requires_dist": [
+            "attrs>=22.2.0",
+            "jsonschema-specifications>=2023.03.6",
+            "referencing>=0.28.4",
+            "rpds-py>=0.25.0",
+            "fqdn; extra == 'format'",
+            "idna; extra == 'format'",
+            "isoduration; extra == 'format'",
+            "jsonpointer>1.13; extra == 'format'",
+            "rfc3339-validator; extra == 'format'",
+            "rfc3987; extra == 'format'",
+            "uri-template; extra == 'format'",
+            "webcolors>=1.11; extra == 'format'",
+            "fqdn; extra == 'format-nongpl'",
+            "idna; extra == 'format-nongpl'",
+            "isoduration; extra == 'format-nongpl'",
+            "jsonpointer>1.13; extra == 'format-nongpl'",
+            "rfc3339-validator; extra == 'format-nongpl'",
+            "rfc3986-validator>0.1.0; extra == 'format-nongpl'",
+            "rfc3987-syntax>=1.1.0; extra == 'format-nongpl'",
+            "uri-template; extra == 'format-nongpl'",
+            "webcolors>=24.6.0; extra == 'format-nongpl'"
+          ],
+          "requires_python": ">=3.10",
+          "version": "4.26.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:b2d758c54b5f8fb9df4ede00514d03ffe85c961512a3f9894d3a8b3f6e168a55",
+          "kind": "runtime_distribution",
+          "name": "jsonschema-specifications",
+          "requires_dist": [
+            "referencing>=0.31.0"
+          ],
+          "requires_python": ">=3.9",
+          "version": "2025.9.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:1a3bf959e7680885ad72dbe1d47d9f479e5fd2b733ab9089a7f2618fd20f9105",
+          "kind": "runtime_distribution",
+          "name": "libsass",
+          "requires_dist": [],
+          "requires_python": ">=3.6",
+          "version": "0.22.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:359b11aaa799256c2f7c0fa92ea631f6044fc3cdff53489217f2788b5617feac",
+          "kind": "runtime_distribution",
+          "name": "lxml",
+          "requires_dist": [
+            "cssselect >=0.7 ; extra == 'cssselect'",
+            "html5lib ; extra == 'html5'",
+            "lxml-html-clean ; extra == 'html_clean'",
+            "BeautifulSoup4 ; extra == 'htmlsoup'",
+            "Cython >=3.0.10 ; extra == 'source'"
+          ],
+          "requires_python": ">=3.6",
+          "version": "5.2.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:04628b096133109467d7d5f2971f26fe3cb5df54a51f12c269046f20120c7919",
+          "kind": "runtime_distribution",
+          "name": "lxml_html_clean",
+          "requires_dist": [
+            "lxml"
+          ],
+          "requires_python": "",
+          "version": "0.4.4",
+          "extras": []
+        },
+        {
+          "digest": "sha256:2e2b1b76328c869ebf556ae3aa2e8111ff014b72980335609a7e10e1f6183bcf",
+          "kind": "runtime_distribution",
+          "name": "MarkupSafe",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2.1.5",
+          "extras": []
+        },
+        {
+          "digest": "sha256:4d91a4e05ed1036411a82497301fe3129d5f8b09343db8d2890332da9043e2c1",
+          "kind": "runtime_distribution",
+          "name": "maxminddb",
+          "requires_dist": [],
+          "requires_python": ">=3.10",
+          "version": "3.2.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:c50202b619c17607ebf94957a899cbb5765cf4b4d6eccadbff037b271bd1a266",
+          "kind": "runtime_distribution",
+          "name": "num2words",
+          "requires_dist": [
+            "docopt >=0.6.2"
+          ],
+          "requires_python": "",
+          "version": "0.5.13",
+          "extras": []
+        },
+        {
+          "digest": "sha256:661797ec031dec3d14fa6b1e95eba633c78496a2dae2196dae6d74d06e778b51",
+          "kind": "runtime_distribution",
+          "name": "ofxparse",
+          "requires_dist": [
+            "beautifulsoup4",
+            "lxml",
+            "six"
+          ],
+          "requires_python": "",
+          "version": "0.21",
+          "extras": []
+        },
+        {
+          "digest": "sha256:19da7368a57fefb135d48c32938af522ec8d47bc319017703d54313043a6d5dc",
+          "kind": "runtime_distribution",
+          "name": "openpyxl",
+          "requires_dist": [
+            "et-xmlfile"
+          ],
+          "requires_python": ">=3.6",
+          "version": "3.1.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:fee2c02b88a2f745cb9ba0e7c502f392d45cd538aeb75d2854b148abc9792cab",
+          "kind": "runtime_distribution",
+          "name": "packaging",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "26.3",
+          "extras": []
+        },
+        {
+          "digest": "sha256:c129b5c34fbf08ceac2bcbf136b8d7581f8cc195d3375d2180589cf66730faed",
+          "kind": "runtime_distribution",
+          "name": "passlib",
+          "requires_dist": [
+            "argon2-cffi (>=18.2.0) ; extra == 'argon2'",
+            "bcrypt (>=3.1.0) ; extra == 'bcrypt'",
+            "sphinx (>=1.6) ; extra == 'build_docs'",
+            "sphinxcontrib-fulltoc (>=1.2.0) ; extra == 'build_docs'",
+            "cloud-sptheme (>=1.10.1) ; extra == 'build_docs'",
+            "cryptography ; extra == 'totp'"
+          ],
+          "requires_python": "",
+          "version": "1.7.4",
+          "extras": []
+        },
+        {
+          "digest": "sha256:a37bd6ea36119e8d3db8c059635e28c82541ed4fc4271a6e6f55661122bf8500",
+          "kind": "runtime_distribution",
+          "name": "pillow",
+          "requires_dist": [
+            "furo ; extra == 'docs'",
+            "olefile ; extra == 'docs'",
+            "sphinx >=2.4 ; extra == 'docs'",
+            "sphinx-copybutton ; extra == 'docs'",
+            "sphinx-inline-tabs ; extra == 'docs'",
+            "sphinx-removed-in ; extra == 'docs'",
+            "sphinxext-opengraph ; extra == 'docs'",
+            "olefile ; extra == 'fpx'",
+            "olefile ; extra == 'mic'",
+            "check-manifest ; extra == 'tests'",
+            "coverage ; extra == 'tests'",
+            "defusedxml ; extra == 'tests'",
+            "markdown2 ; extra == 'tests'",
+            "olefile ; extra == 'tests'",
+            "packaging ; extra == 'tests'",
+            "pyroma ; extra == 'tests'",
+            "pytest ; extra == 'tests'",
+            "pytest-cov ; extra == 'tests'",
+            "pytest-timeout ; extra == 'tests'",
+            "typing-extensions ; (python_version < \"3.10\") and extra == 'typing'",
+            "defusedxml ; extra == 'xmp'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "10.2.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:93a22bd5595bbb5cd2a4d99fd026dedd92578ef652a4dcfd19c44054c18bad4d",
+          "kind": "runtime_distribution",
+          "name": "pip",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "25.3",
+          "extras": []
+        },
+        {
+          "digest": "sha256:b9142e9305c659c5ad20075280e1b9e0673a3ddd5cc1d636d9ad580b03384c75",
+          "kind": "runtime_distribution",
+          "name": "platformdirs",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "4.13.6",
+          "extras": []
+        },
+        {
+          "digest": "sha256:0b9e1108908622da4affbb5d3089a0cdc25825d4816bb4f1bdd22b1022b2eb7b",
+          "kind": "runtime_distribution",
+          "name": "polib",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.1.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:6d3a27c4cd9d427f9de55ecda0c94a5d4ea6c10ca503a563cccbdb060ae0227f",
+          "kind": "runtime_distribution",
+          "name": "psutil",
+          "requires_dist": [
+            "ipaddress ; (python_version < \"3.0\") and extra == 'test'",
+            "mock ; (python_version < \"3.0\") and extra == 'test'",
+            "enum34 ; (python_version <= \"3.4\") and extra == 'test'",
+            "pywin32 ; (sys_platform == \"win32\") and extra == 'test'",
+            "wmi ; (sys_platform == \"win32\") and extra == 'test'"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*",
+          "version": "5.9.8",
+          "extras": []
+        },
+        {
+          "digest": "sha256:bc56efc83cba16deb6ac18e0e4517a9f2bf2d391502aad304cd335c9ea79e149",
+          "kind": "runtime_distribution",
+          "name": "psycopg2",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2.9.9",
+          "extras": []
+        },
+        {
+          "digest": "sha256:55cf1e122e3fc088d33fc5890677f9caad71dae57904f80e801a0a276e9a5b3d",
+          "kind": "runtime_distribution",
+          "name": "pyasn1",
+          "requires_dist": [],
+          "requires_python": ">=3.8",
+          "version": "0.6.5",
+          "extras": []
+        },
+        {
+          "digest": "sha256:a1a66dc5e51b85fa2c3597c939d353737e0ca8095537973a87a67009c8d6343c",
+          "kind": "runtime_distribution",
+          "name": "pyasn1_modules",
+          "requires_dist": [
+            "pyasn1<0.7.0,>=0.6.1"
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.4.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:f25c37a169becf60bd006d05ec7091aca1a15b6d0c6e839a2bf81e5fe2d2253e",
+          "kind": "runtime_distribution",
+          "name": "pycparser",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "3.12",
+          "extras": []
+        },
+        {
+          "digest": "sha256:d145e3215c948905f31b1b32d465e4ce5700e3c1cbf0cb96278df104abd57225",
+          "kind": "runtime_distribution",
+          "name": "PyJWT",
+          "requires_dist": [
+            "typing_extensions>=4.0; python_version < \"3.11\"",
+            "cryptography>=3.4.0; extra == \"crypto\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "2.15.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:379d1f1cf9a32cea359085a6cd0494ef0c4c0d47590ea9c77f8d4331145b1009",
+          "kind": "runtime_distribution",
+          "name": "pyOpenSSL",
+          "requires_dist": [
+            "cryptography <43,>=41.0.5",
+            "sphinx !=5.2.0,!=5.2.0.post0,!=7.2.5 ; extra == 'docs'",
+            "sphinx-rtd-theme ; extra == 'docs'",
+            "pytest-rerunfailures ; extra == 'test'",
+            "pretend ; extra == 'test'",
+            "pytest >=3.0.1 ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "24.1.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:eb910a32cc0bae2c32fdb749cb4fac4b27f846b23dd38ce3b2a1b028cd68ec4c",
+          "kind": "runtime_distribution",
+          "name": "PyPDF2",
+          "requires_dist": [
+            "typing_extensions >= 3.10.0.0; python_version < '3.10'",
+            "dataclasses; python_version < '3.7'",
+            "PyCryptodome ; extra == \"crypto\"",
+            "black ; extra == \"dev\"",
+            "pip-tools ; extra == \"dev\"",
+            "pre-commit<2.18.0 ; extra == \"dev\"",
+            "pytest-cov ; extra == \"dev\"",
+            "flit ; extra == \"dev\"",
+            "wheel ; extra == \"dev\"",
+            "sphinx ; extra == \"docs\"",
+            "sphinx_rtd_theme ; extra == \"docs\"",
+            "myst_parser ; extra == \"docs\"",
+            "PyCryptodome ; extra == \"full\"",
+            "Pillow ; extra == \"full\"",
+            "Pillow ; extra == \"image\""
+          ],
+          "requires_python": ">=3.6",
+          "version": "2.12.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:a422515b6808528889ef4284e7e7fcadb98a3dcbafe66fff9a4ebc97462698e3",
+          "kind": "runtime_distribution",
+          "name": "pypng",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "0.20220715.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:20525f855c241e9792e0016368e17aae5445230008e3a900546da6767a0a3d0d",
+          "kind": "runtime_distribution",
+          "name": "pyserial",
+          "requires_dist": [
+            "hidapi; extra == 'cp2110'"
+          ],
+          "requires_python": "",
+          "version": "3.5",
+          "extras": []
+        },
+        {
+          "digest": "sha256:8e2b178fa8007c898b2860ff89b359d84532a99d0fb84085894796593a7d2694",
+          "kind": "runtime_distribution",
+          "name": "python-dateutil",
+          "requires_dist": [
+            "six (>=1.5)"
+          ],
+          "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7",
+          "version": "2.8.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:cd4888ca3859c82c75b4e31c382cac80804bae92344677ebe058b8bbe9221b3d",
+          "kind": "runtime_distribution",
+          "name": "python-ldap",
+          "requires_dist": [
+            "pyasn1>=0.3.7",
+            "pyasn1_modules>=0.1.5"
+          ],
+          "requires_python": ">=3.6",
+          "version": "3.4.4",
+          "extras": []
+        },
+        {
+          "digest": "sha256:36ac295008a56ef1d6197789f2a5b125b26538817f0747507b129041a3aaacd6",
+          "kind": "runtime_distribution",
+          "name": "python-magic",
+          "requires_dist": [],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+          "version": "0.4.27",
+          "extras": []
+        },
+        {
+          "digest": "sha256:02326706fc681bcb1c44283677a9d61a9c6ac83eb901b912fc4221ca0fccf14d",
+          "kind": "runtime_distribution",
+          "name": "python-stdnum",
+          "requires_dist": [
+            "zeep ; extra == 'soap'",
+            "suds ; extra == 'soap-alt'",
+            "PySimpleSOAP ; extra == 'soap-fallback'"
+          ],
+          "requires_python": "",
+          "version": "1.19",
+          "extras": []
+        },
+        {
+          "digest": "sha256:833969f0ce4ad84a6f159e41a21f642f44692ca69a209b6abab41be9165fc3fd",
+          "kind": "runtime_distribution",
+          "name": "pytz",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "2026.5",
+          "extras": []
+        },
+        {
+          "digest": "sha256:31a0b3dabf14df21cf370ba55745671094bec3cdae8cc50037923cada53fe32f",
+          "kind": "runtime_distribution",
+          "name": "pyusb",
+          "requires_dist": [],
+          "requires_python": ">=3.6.0",
+          "version": "1.2.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:67f74d91ffc01e722d59788c02994045b331dbca99d892080853d15a3cc1ad7f",
+          "kind": "runtime_distribution",
+          "name": "qrcode",
+          "requires_dist": [
+            "typing-extensions",
+            "pypng",
+            "colorama ; platform_system == \"Windows\"",
+            "zest.releaser[recommended] ; extra == 'all'",
+            "tox ; extra == 'all'",
+            "pytest ; extra == 'all'",
+            "pytest-cov ; extra == 'all'",
+            "pillow (>=9.1.0) ; extra == 'all'",
+            "tox ; extra == 'dev'",
+            "pytest ; extra == 'dev'",
+            "pytest-cov ; extra == 'dev'",
+            "zest.releaser[recommended] ; extra == 'maintainer'",
+            "pillow (>=9.1.0) ; extra == 'pil'",
+            "coverage ; extra == 'test'",
+            "pytest ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "7.4.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:158a5c9f18f51199d5668206d240267bac9d6a36e8095efda6c055ddc897e1f5",
+          "kind": "runtime_distribution",
+          "name": "referencing",
+          "requires_dist": [
+            "attrs>=22.2.0",
+            "rpds-py>=0.7.0",
+            "typing-extensions>=4.4.0; python_version < '3.13'"
+          ],
+          "requires_python": ">=3.10",
+          "version": "0.37.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:0f03cea9524be753b063cd2016023732eb044069787e2d48af30cdee3f03aed7",
+          "kind": "runtime_distribution",
+          "name": "reportlab",
+          "requires_dist": [
+            "pillow >=9.0.0",
+            "chardet",
+            "rl-accel <1.1,>=0.9.0 ; extra == 'accel'",
+            "rlPyCairo <1,>=0.2.0 ; extra == 'pycairo'",
+            "freetype-py <2.4,>=2.3.0 ; extra == 'pycairo'",
+            "rl-renderPM <4.1,>=4.0.3 ; extra == 'renderpm'"
+          ],
+          "requires_python": ">=3.7,<4",
+          "version": "4.1.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:e86d70f10aadf576a49734ae531b46722c7b69be8f4de0f2ba2e7fb069ab6e88",
+          "kind": "runtime_distribution",
+          "name": "requests",
+          "requires_dist": [
+            "charset-normalizer (<4,>=2)",
+            "idna (<4,>=2.5)",
+            "urllib3 (<3,>=1.21.1)",
+            "certifi (>=2017.4.17)",
+            "PySocks (!=1.5.7,>=1.5.6) ; extra == 'socks'",
+            "chardet (<6,>=3.0.2) ; extra == 'use_chardet_on_py3'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.31.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:f2e61e691dba69ddfdd888b9dd59d098229da718f8cbb213afa720f39de832a9",
+          "kind": "runtime_distribution",
+          "name": "requests-file",
+          "requires_dist": [
+            "requests>=1.0.0"
+          ],
+          "requires_python": "",
+          "version": "3.0.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:da2e9267830335c3c0d95a55885a8b6c45cfea6f0e0bd0feb44f692abc50132a",
+          "kind": "runtime_distribution",
+          "name": "requests-toolbelt",
+          "requires_dist": [
+            "requests (<3.0.0,>=2.0.1)"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+          "version": "1.0.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:256cd02fd65cbf940f094bb5f85039a20af289c86dc42cf970d1cd8f7e9d3cb1",
+          "kind": "runtime_distribution",
+          "name": "resolvelib",
+          "requires_dist": [
+            "ruff; extra == \"lint\"",
+            "mypy; extra == \"lint\"",
+            "types-requests; extra == \"lint\"",
+            "packaging; extra == \"test\"",
+            "pytest; extra == \"test\"",
+            "build; extra == \"release\"",
+            "towncrier; extra == \"release\"",
+            "twine; extra == \"release\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "1.2.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:dc93728455a314bae954df5631f4d263066c994bb6ea002c488350464409920f",
+          "kind": "runtime_distribution",
+          "name": "rfc8785",
+          "requires_dist": [
+            "rfc8785[doc,test,lint] ; extra == \"dev\"",
+            "build ; extra == \"dev\"",
+            "pdoc ; extra == \"doc\"",
+            "ruff ~= 0.3 ; extra == \"lint\"",
+            "mypy >= 1.0 ; extra == \"lint\"",
+            "interrogate ; extra == \"lint\"",
+            "pytest ; extra == \"test\"",
+            "pytest-cov ; extra == \"test\"",
+            "coverage ; extra == \"test\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.1.4",
+          "extras": []
+        },
+        {
+          "digest": "sha256:c017cb27fee476ffbb107cf9c4194d98d5d15a4a35cd6cdef924263357e81929",
+          "kind": "runtime_distribution",
+          "name": "rjsmin",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.2.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:40ca0faeeb455f15cbf985733894f9b988d15177c2999c57b6a9a008ca8525c5",
+          "kind": "runtime_distribution",
+          "name": "rpds-py",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "2026.9.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:04e9bc6d2728859b5d1428120e1d33782538bac3637c98f837777077cca93336",
+          "kind": "runtime_distribution",
+          "name": "setuptools",
+          "requires_dist": [
+            "pytest!=8.1.*,>=6; extra == \"test\"",
+            "virtualenv>=13.0.0; extra == \"test\"",
+            "wheel>=0.44.0; extra == \"test\"",
+            "pip>=19.1; extra == \"test\"",
+            "packaging>=24.2; extra == \"test\"",
+            "jaraco.envs>=2.2; extra == \"test\"",
+            "pytest-xdist>=3; extra == \"test\"",
+            "jaraco.path>=3.7.2; extra == \"test\"",
+            "build[virtualenv]>=1.0.3; extra == \"test\"",
+            "filelock>=3.4.0; extra == \"test\"",
+            "ini2toml[lite]>=0.14; extra == \"test\"",
+            "tomli-w>=1.0.0; extra == \"test\"",
+            "pytest-timeout; extra == \"test\"",
+            "pytest-perf; sys_platform != \"cygwin\" and extra == \"test\"",
+            "jaraco.develop>=7.21; (python_version >= \"3.9\" and sys_platform != \"cygwin\") and extra == \"test\"",
+            "pytest-home>=0.5; extra == \"test\"",
+            "pytest-subprocess; extra == \"test\"",
+            "pyproject-hooks!=1.1; extra == \"test\"",
+            "jaraco.test>=5.5; extra == \"test\"",
+            "sphinx>=3.5; extra == \"doc\"",
+            "jaraco.packaging>=9.3; extra == \"doc\"",
+            "rst.linker>=1.9; extra == \"doc\"",
+            "furo; extra == \"doc\"",
+            "sphinx-lint; extra == \"doc\"",
+            "jaraco.tidelift>=1.4; extra == \"doc\"",
+            "pygments-github-lexers==0.0.5; extra == \"doc\"",
+            "sphinx-favicon; extra == \"doc\"",
+            "sphinx-inline-tabs; extra == \"doc\"",
+            "sphinx-reredirects; extra == \"doc\"",
+            "sphinxcontrib-towncrier; extra == \"doc\"",
+            "sphinx-notfound-page<2,>=1; extra == \"doc\"",
+            "pyproject-hooks!=1.1; extra == \"doc\"",
+            "towncrier<24.7; extra == \"doc\"",
+            "packaging>=24.2; extra == \"core\"",
+            "more_itertools>=8.8; extra == \"core\"",
+            "jaraco.text>=3.7; extra == \"core\"",
+            "importlib_metadata>=6; python_version < \"3.10\" and extra == \"core\"",
+            "tomli>=2.0.1; python_version < \"3.11\" and extra == \"core\"",
+            "wheel>=0.43.0; extra == \"core\"",
+            "platformdirs>=4.2.2; extra == \"core\"",
+            "jaraco.functools>=4; extra == \"core\"",
+            "more_itertools; extra == \"core\"",
+            "pytest-checkdocs>=2.4; extra == \"check\"",
+            "pytest-ruff>=0.2.1; sys_platform != \"cygwin\" and extra == \"check\"",
+            "ruff>=0.8.0; sys_platform != \"cygwin\" and extra == \"check\"",
+            "pytest-cov; extra == \"cover\"",
+            "pytest-enabler>=2.2; extra == \"enabler\"",
+            "pytest-mypy; extra == \"type\"",
+            "mypy==1.14.*; extra == \"type\"",
+            "importlib_metadata>=7.0.2; python_version < \"3.10\" and extra == \"type\"",
+            "jaraco.develop>=7.21; sys_platform != \"cygwin\" and extra == \"type\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "80.9.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:48fc3bdd119de4b1a610b81ee44f37d7f2a191010618b412d58ebdcb9653de5e",
+          "kind": "runtime_distribution",
+          "name": "six",
+          "requires_dist": [],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+          "version": "1.17.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:5ace130384c8858619b34f682539964005f7acc56fac63cabe2f7c70d4dba41f",
+          "kind": "runtime_distribution",
+          "name": "soupsieve",
+          "requires_dist": [],
+          "requires_python": ">=3.11.5",
+          "version": "3.0.4",
+          "extras": []
+        },
+        {
+          "digest": "sha256:b9050b8055c7bacebc9a0a683c71c25ba47fcef185d97b6b8fbf17524e5a7b56",
+          "kind": "runtime_distribution",
+          "name": "typing_extensions",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "4.16.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:97741116f378b0e510c39cc3100e022c7768eedac5bc851e1e620563039c6c6f",
+          "kind": "runtime_distribution",
+          "name": "urllib3",
+          "requires_dist": [
+            "brotli>=1.0.9; platform_python_implementation == 'CPython' and extra == 'brotli'",
+            "brotlicffi>=0.8.0; platform_python_implementation != 'CPython' and extra == 'brotli'",
+            "certifi; extra == 'secure'",
+            "cryptography>=1.9; extra == 'secure'",
+            "idna>=2.0.0; extra == 'secure'",
+            "pyopenssl>=17.1.0; extra == 'secure'",
+            "urllib3-secure-extra; extra == 'secure'",
+            "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+            "zstandard>=0.18.0; extra == 'zstd'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.0.7",
+          "extras": []
+        },
+        {
+          "digest": "sha256:2ad497a9691ea354a21e950d13716a45f1b62ff0e8de087ac36600e47fc22bf1",
+          "kind": "runtime_distribution",
+          "name": "vobject",
+          "requires_dist": [
+            "python-dateutil>=2.4.0"
+          ],
+          "requires_python": "",
+          "version": "0.9.6.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:00afe7f0d3312a761a509e5138e0085d2bf9379106cb8dfb01872e52684aec84",
+          "kind": "runtime_distribution",
+          "name": "Werkzeug",
+          "requires_dist": [
+            "MarkupSafe>=2.1.1",
+            "watchdog>=2.3 ; extra == \"watchdog\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "3.0.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:7d96d6752280519a90e81d98cd2d5ab0f4ed2880f2d924e63c3c10d4237b680c",
+          "kind": "runtime_distribution",
+          "name": "wheel",
+          "requires_dist": [
+            "pytest >= 6.0.0 ; extra == \"test\"",
+            "setuptools >= 65 ; extra == \"test\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.45.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:b8f5c7369d39308e242ea7462c22ea29b6945cae8cd067d104a9cd061f59cc5f",
+          "kind": "runtime_distribution",
+          "name": "xlrd",
+          "requires_dist": [
+            "wheel ; extra == 'build'",
+            "twine ; extra == 'build'",
+            "sphinx ; extra == 'docs'",
+            "pytest ; extra == 'test'",
+            "pytest-cov ; extra == 'test'"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*",
+          "version": "2.0.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:8e8fbefed6304618db9f66fd59e592c7f29fbc9c3d8dbc80bead860ecdf599d3",
+          "kind": "runtime_distribution",
+          "name": "XlsxWriter",
+          "requires_dist": [],
+          "requires_python": ">=3.6",
+          "version": "3.1.9",
+          "extras": []
+        },
+        {
+          "digest": "sha256:4836a431de84afc20b355843a018025e3df2fc235478bc7323193737faad2f87",
+          "kind": "runtime_distribution",
+          "name": "xlwt",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.3.0",
+          "extras": []
+        },
+        {
+          "digest": "sha256:70c162d580724a1a2914b85509eb3554cf902a1455fa9884b11009dff2b32b01",
+          "kind": "runtime_distribution",
+          "name": "zeep",
+          "requires_dist": [
+            "attrs (>=17.2.0)",
+            "isodate (>=0.5.4)",
+            "lxml (>=4.6.0)",
+            "platformdirs (>=1.4.0)",
+            "requests (>=2.7.0)",
+            "requests-toolbelt (>=0.7.1)",
+            "requests-file (>=1.5.1)",
+            "pytz",
+            "cached-property (>=1.3.0) ; python_version < \"3.8\"",
+            "httpx (>=0.15.0) ; extra == 'async'",
+            "sphinx (>=1.4.0) ; extra == 'docs'",
+            "coverage[toml] (==5.2.1) ; extra == 'test'",
+            "freezegun (==0.3.15) ; extra == 'test'",
+            "pretend (==1.0.9) ; extra == 'test'",
+            "pytest-cov (==2.8.1) ; extra == 'test'",
+            "pytest-httpx ; extra == 'test'",
+            "pytest-asyncio ; extra == 'test'",
+            "pytest (==6.2.5) ; extra == 'test'",
+            "requests-mock (>=0.7.0) ; extra == 'test'",
+            "isort (==5.3.2) ; extra == 'test'",
+            "flake8 (==3.8.3) ; extra == 'test'",
+            "flake8-blind-except (==0.1.1) ; extra == 'test'",
+            "flake8-debugger (==3.2.1) ; extra == 'test'",
+            "flake8-imports (==0.1.1) ; extra == 'test'",
+            "xmlsec (>=0.6.1) ; extra == 'xmlsec'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "4.2.1",
+          "extras": []
+        },
+        {
+          "digest": "sha256:ed78571876d1c7754d9bb8714c8a20c85423d807185cd5c9fb0f59d01b60004c",
+          "kind": "runtime_distribution",
+          "name": "zope.event",
+          "requires_dist": [
+            "Sphinx; extra == \"docs\"",
+            "zope.testrunner>=6.4; extra == \"test\""
+          ],
+          "requires_python": ">=3.10",
+          "version": "6.2",
+          "extras": []
+        },
+        {
+          "digest": "sha256:aa8b73da017ba92034ce0542d9f33c10146dd01a4e0d27cddf66914eb0125527",
+          "kind": "runtime_distribution",
+          "name": "zope.interface",
+          "requires_dist": [
+            "Sphinx; extra == \"docs\"",
+            "repoze.sphinx.autointerface; extra == \"docs\"",
+            "furo; extra == \"docs\"",
+            "coverage[toml]; extra == \"test\"",
+            "zope.event; extra == \"test\"",
+            "zope.testing; extra == \"test\"",
+            "coverage[toml]; extra == \"testing\"",
+            "zope.event; extra == \"testing\"",
+            "zope.testing; extra == \"testing\""
+          ],
+          "requires_python": ">=3.11",
+          "version": "8.7",
+          "extras": []
+        }
+      ],
+      "plugins": [
+        {
+          "plugin_id": "org.example.notes",
+          "version": "0.2.3",
+          "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "signature_verified": false,
+            "policy_generation": 3,
+            "warnings": []
+          },
+          "runtime": "native",
+          "native_addon": "mp_example_notes",
+          "native_version": "19.0.0.2.3",
+          "manifest_digest": "sha256:5211f02161d2a710c92e25d8c7f5e5e0aba61ef018d998b05cff4a2de5f5a22e",
+          "permissions": {
+            "defines": {
+              "notes.read": "Read notes",
+              "notes.write": "Write notes",
+              "notes.delete": "Delete notes"
+            },
+            "requests": []
+          },
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "hard_dependencies": {},
+          "data_ownership": {
+            "models": [
+              "mp.example.note"
+            ],
+            "extension_targets": [],
+            "export_schema": "schemas/notes-export-v1.json",
+            "contributions": [
+              {
+                "kind": "model",
+                "id": "mp.example.note",
+                "target": "workspace",
+                "delete_policy": "owned"
+              }
+            ]
+          },
+          "provided_apis": [
+            {
+              "service_id": "org.example.notes.documents",
+              "api_version": "1.0"
+            },
+            {
+              "service_id": "org.example.notes.documents",
+              "api_version": "2.0"
+            }
+          ]
+        },
+        {
+          "plugin_id": "org.example.canvas",
+          "version": "0.1.3",
+          "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "signature_verified": false,
+            "policy_generation": 3,
+            "warnings": []
+          },
+          "runtime": "native",
+          "native_addon": "mp_example_canvas",
+          "native_version": "19.0.0.1.3",
+          "manifest_digest": "sha256:d2b67e7eb66e513eb0064cf039c3ce4934ed93fa56f1ddc135cb47aad567a130",
+          "permissions": {
+            "defines": {
+              "canvas.read": "Read boards",
+              "canvas.write": "Save boards"
+            },
+            "requests": [
+              {
+                "capability": "org.example.notes:notes.read",
+                "reason": "Select workspace notes through documents v2",
+                "scope": "workspace"
+              }
+            ]
+          },
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "hard_dependencies": {
+            "org.example.notes": ">=0.2,<0.3"
+          },
+          "data_ownership": {
+            "models": [
+              "mp.example.canvas.board"
+            ],
+            "extension_targets": [],
+            "contributions": [
+              {
+                "kind": "model",
+                "id": "mp.example.canvas.board",
+                "target": "workspace",
+                "delete_policy": "owned"
+              }
+            ]
+          },
+          "provided_apis": [
+            {
+              "service_id": "org.example.canvas.boards",
+              "api_version": "1.0"
+            }
+          ]
+        },
+        {
+          "plugin_id": "org.example.notes_labels",
+          "version": "0.2.1",
+          "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "signature_verified": false,
+            "policy_generation": 3,
+            "warnings": []
+          },
+          "runtime": "native",
+          "native_addon": "mp_example_notes_labels",
+          "native_version": "19.0.0.2.1",
+          "manifest_digest": "sha256:6fd428a691c553353ad12ab6a80b728bc80dea88bdc501af5945eecefe7a897e",
+          "permissions": {
+            "defines": {
+              "labels.read": "Read labels",
+              "labels.write": "Set labels"
+            },
+            "requests": [
+              {
+                "capability": "org.example.notes:notes.read",
+                "reason": "Read base revision through the documents binding",
+                "scope": "workspace"
+              }
+            ]
+          },
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "hard_dependencies": {
+            "org.example.notes": ">=0.1,<0.3"
+          },
+          "data_ownership": {
+            "models": [],
+            "extension_targets": [
+              "mp.example.note"
+            ],
+            "contributions": [
+              {
+                "kind": "field",
+                "id": "mp.example.note.x_notes_labels",
+                "target": "mp.example.note",
+                "delete_policy": "owned"
+              }
+            ]
+          },
+          "provided_apis": [
+            {
+              "service_id": "org.example.notes_labels.labels",
+              "api_version": "1.0"
+            }
+          ]
+        }
+      ],
+      "native_order": [
+        "mp_example_notes",
+        "mp_example_canvas",
+        "mp_example_notes_labels"
+      ],
+      "frontend_inventory": {
+        "org.example.notes": {},
+        "org.example.canvas": {
+          "backend/odoo_addons/mp_example_canvas/static/src/adapter.js": "16528951a1062f7170b63f03f42085bb030e1337729226171ea9a8fada8e5f18",
+          "backend/odoo_addons/mp_example_canvas/static/src/canvas.css": "fbdabc2d32b7660814445e6404174363dff57fafc0f41e34087f265e2d8cb1c6",
+          "backend/odoo_addons/mp_example_canvas/static/src/page.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd",
+          "frontend/dist/canvas.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd"
+        },
+        "org.example.notes_labels": {
+          "backend/odoo_addons/mp_example_notes_labels/static/src/labels.js": "18c0c03e4f14f484388f6b4fd75c6d5c23f477cb114b6e416b9f5577370121be"
+        }
+      },
+      "frontend_inventory_digest": "sha256:6575c0ad44f4d6777fd0e84c9d0afe2fc4371b4329e09d2b17148c24c765f4bb",
+      "service_selection": [
+        {
+          "consumer": "org.example.notes",
+          "alias": "documents",
+          "provider": "org.example.notes",
+          "service_id": "org.example.notes.documents",
+          "contract_major": 1,
+          "api_version": "1.0",
+          "optional": false,
+          "scopes": [
+            [
+              "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+              "c578135b-df92-482e-9f2f-e306617cf561"
+            ],
+            [
+              "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+              "efb30aaf-6120-4fde-9410-80c2bcfa50a5"
+            ]
+          ]
+        },
+        {
+          "consumer": "org.example.canvas",
+          "alias": "documents",
+          "provider": "org.example.notes",
+          "service_id": "org.example.notes.documents",
+          "contract_major": 2,
+          "api_version": "2.0",
+          "optional": false,
+          "scopes": [
+            [
+              "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+              "c578135b-df92-482e-9f2f-e306617cf561"
+            ]
+          ]
+        },
+        {
+          "consumer": "org.example.canvas",
+          "alias": "boards",
+          "provider": "org.example.canvas",
+          "service_id": "org.example.canvas.boards",
+          "contract_major": 1,
+          "api_version": "1.0",
+          "optional": false,
+          "scopes": [
+            [
+              "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+              "c578135b-df92-482e-9f2f-e306617cf561"
+            ]
+          ]
+        },
+        {
+          "consumer": "org.example.notes_labels",
+          "alias": "documents",
+          "provider": "org.example.notes",
+          "service_id": "org.example.notes.documents",
+          "contract_major": 1,
+          "api_version": "1.0",
+          "optional": false,
+          "scopes": [
+            [
+              "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+              "c578135b-df92-482e-9f2f-e306617cf561"
+            ]
+          ]
+        },
+        {
+          "consumer": "org.example.notes_labels",
+          "alias": "labels",
+          "provider": "org.example.notes_labels",
+          "service_id": "org.example.notes_labels.labels",
+          "contract_major": 1,
+          "api_version": "1.0",
+          "optional": false,
+          "scopes": [
+            [
+              "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+              "c578135b-df92-482e-9f2f-e306617cf561"
+            ]
+          ]
+        }
+      ],
+      "optional_integrations": [
+        {
+          "consumer": "org.example.notes",
+          "provider": "org.example.notes_labels",
+          "available": true
+        }
+      ],
+      "generation": 17,
+      "created_at": "2026-10-28T17:07:15Z"
+    },
+    "bindings": [
+      {
+        "schema_version": 1,
+        "binding_id": "3fbe3323-61ba-523f-9541-18b3841620bd",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "consumer_installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+        "alias": "labels",
+        "service_id": "org.example.notes_labels.labels",
+        "contract_major": 1,
+        "api_version": "1.0",
+        "provider_plugin_id": "org.example.notes_labels",
+        "provider_installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+        "generation": 1,
+        "optional": false
+      },
+      {
+        "schema_version": 1,
+        "binding_id": "47c6fcb8-c87d-5a90-bb64-f97701025cbd",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "consumer_installation_id": "4a901771-b72c-5ab4-9555-75e4c478d890",
+        "alias": "boards",
+        "service_id": "org.example.canvas.boards",
+        "contract_major": 1,
+        "api_version": "1.0",
+        "provider_plugin_id": "org.example.canvas",
+        "provider_installation_id": "4a901771-b72c-5ab4-9555-75e4c478d890",
+        "generation": 1,
+        "optional": false
+      },
+      {
+        "schema_version": 1,
+        "binding_id": "55c45246-dfc7-5135-b180-aad6952ed3c1",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "efb30aaf-6120-4fde-9410-80c2bcfa50a5",
+        "consumer_installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "alias": "documents",
+        "service_id": "org.example.notes.documents",
+        "contract_major": 1,
+        "api_version": "1.0",
+        "provider_plugin_id": "org.example.notes",
+        "provider_installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "generation": 1,
+        "optional": false
+      },
+      {
+        "schema_version": 1,
+        "binding_id": "9d2b4ae5-ed06-587c-9e89-370954f89f5f",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "consumer_installation_id": "4a901771-b72c-5ab4-9555-75e4c478d890",
+        "alias": "documents",
+        "service_id": "org.example.notes.documents",
+        "contract_major": 2,
+        "api_version": "2.0",
+        "provider_plugin_id": "org.example.notes",
+        "provider_installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "generation": 1,
+        "optional": false
+      },
+      {
+        "schema_version": 1,
+        "binding_id": "9d457085-d420-5623-af44-45ec9b2e2e11",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "consumer_installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "alias": "documents",
+        "service_id": "org.example.notes.documents",
+        "contract_major": 1,
+        "api_version": "1.0",
+        "provider_plugin_id": "org.example.notes",
+        "provider_installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "generation": 1,
+        "optional": false
+      },
+      {
+        "schema_version": 1,
+        "binding_id": "fa75174d-a05d-527a-8928-948247b7c8c8",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "consumer_installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+        "alias": "documents",
+        "service_id": "org.example.notes.documents",
+        "contract_major": 1,
+        "api_version": "1.0",
+        "provider_plugin_id": "org.example.notes",
+        "provider_installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "generation": 1,
+        "optional": false
+      }
+    ],
+    "endpoints": [],
+    "migration_order": {},
+    "declaration_changes": {},
+    "known_unknowns": [
+      "Native Python and same-origin frontend code is fully trusted.",
+      "Author destructive=false does not prove migration safety.",
+      "The staged image includes fully trusted native core/runtime code; image rollback alone does not restore database state."
+    ],
+    "current_catalog_validation_digest": "sha256:7dceccaac2f9b8112d4bf151685f64eba75c5857139826f4d2ef73e00a2e61b6",
+    "platform_source_diff": [
+      {
+        "path": "addons/mp_core/__manifest__.py",
+        "previous_sha256": "54b1db4ebf8c69ba96787caf4ee059521d4d40cb26264ec38f6d31f9a248c90d",
+        "target_sha256": "26db8b7972bdd053db01308105eb20db105fca5049014d7955d49f7ed34544df"
+      },
+      {
+        "path": "addons/mp_core/controllers.py",
+        "previous_sha256": "b057bde0854c65a942c3268066195b996ef61288beabc8a0bd85621e6a8c1e56",
+        "target_sha256": "26c39026087f58078377cac3f6c11ce1a18b18454ef88db98411ea69aed66141"
+      },
+      {
+        "path": "addons/mp_identity/__manifest__.py",
+        "previous_sha256": "beb20d71528c89462e760fee123a772afb48817ff175dba42fd23ba03d87857a",
+        "target_sha256": "6be412376426a5230f90e5bb24d1fe6e26449e59494b736090243bf97fae43c1"
+      },
+      {
+        "path": "addons/mp_identity/models/ir_http.py",
+        "previous_sha256": "77dc35bae10f634181902f03a759a066e24b068f2f2cb94e9ff492071b5de800",
+        "target_sha256": "424fb21989abed46ed0189a4203715cba23a2efd57ebbeeb0c0e0820a70c98ce"
+      },
+      {
+        "path": "addons/mp_identity/release.py",
+        "previous_sha256": null,
+        "target_sha256": "f2463661c9f1c95ed065552ae4be2aeb30118d17a160a54738928415a32dd52a"
+      },
+      {
+        "path": "addons/mp_identity/scopes.py",
+        "previous_sha256": "09ba9c6d8a03270992e47e9f3cd5720671602167939d6dc108f78dedc4ec8e25",
+        "target_sha256": "9fc8a82f40bfd532af856e40bbceb5296a7d37139296f4bb3181ca9794b5046b"
+      },
+      {
+        "path": "addons/mp_shell/__manifest__.py",
+        "previous_sha256": "86e4df2516bad4cbfc873b9d275767c1f097d3db287acfca57b8e003552a0155",
+        "target_sha256": "22df934eebc8a8a2dd25945645ad413cc451a60058a2484b4b16f3d7a1ba1406"
+      },
+      {
+        "path": "addons/mp_shell/controllers.py",
+        "previous_sha256": "ecb1fc05d6eb8649bfca6b9bf0104e603ea9e15cedb397c8ab1221a081c0b756",
+        "target_sha256": "18c32972a1ade8fb97db7b2eb1e731e9821184f293bb7c88c9d12f1c4cfe4c52"
+      },
+      {
+        "path": "addons/mp_shell/static/src/client_release.js",
+        "previous_sha256": null,
+        "target_sha256": "84727f380a8f5041a485490504ba8a54ca1035a3d4a911784588b9d86b04476f"
+      },
+      {
+        "path": "addons/mp_shell/static/src/host.js",
+        "previous_sha256": "6aea0888048b04b96aeb533f4041af5824574e744c885aec6ceb7d651d0a876f",
+        "target_sha256": "26d9784e34f3df2acd9c0e0c1b9d02e6d948fcf89aedc73000cd567670cc2dcc"
+      },
+      {
+        "path": "addons/mp_shell/views/bootstrap.xml",
+        "previous_sha256": "76f848306c1e041f36ceeec708412d2c035bab10bc4573113571a3bab87d47d0",
+        "target_sha256": "5a35778ae67324354ecc0ae1b7f2c5c9063dd2f5c552676c57529fba78d5efde"
+      },
+      {
+        "path": "packages/contracts/examples/v1/client-release.json",
+        "previous_sha256": null,
+        "target_sha256": "8f32c193267ae4fd2531a7a87dc77dcdc13fe07bfb49c0c61cd23ae0188ea437"
+      },
+      {
+        "path": "packages/contracts/examples/v1/plan-core-upgrade.json",
+        "previous_sha256": null,
+        "target_sha256": "ab6c4d6070220ed847cc5ad5a80d34b552866309ad5116af3bda2fbc3e384406"
+      },
+      {
+        "path": "packages/contracts/v1/client-release.schema.json",
+        "previous_sha256": null,
+        "target_sha256": "35292778738736b3458caaee2fd2e23987222e888edcc21f1c5b0fb5811d099b"
+      },
+      {
+        "path": "packages/contracts/v1/operations-view.schema.json",
+        "previous_sha256": "1ea4fcc6993a998d6dece65ce94fd37863d946ed7d820b51bd1ec03ffb4dfd21",
+        "target_sha256": "1da3a20e1ec05ceabdaeeac69f91b296c7c0cca07fee028f0f85386ac3f66b3f"
+      },
+      {
+        "path": "packages/contracts/v1/plan.schema.json",
+        "previous_sha256": "e7d1b1a0f98f253d9a82fb5ae17644a383fc9041e86c8452a706e1e75b062950",
+        "target_sha256": "ac2b7b07d6733fd9b7cc77b546c197c3d5546092d7b68396bd8d1171856805ee"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/client_release.py",
+        "previous_sha256": null,
+        "target_sha256": "0b645f21681823473d8c57832159c1c28167f8866e7a737677936d573efcc41d"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/native_executor.py",
+        "previous_sha256": "a4e7038c54ea103b4b3f8f5b8ee25eb7bee7d5e7710595fc5a3633e753211817",
+        "target_sha256": "2de3f5db22dc7fc4f88f2d66acefcc4f732ea48661ab0d3b3348d3ef22a1ca79"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/operator_store.py",
+        "previous_sha256": "67ca67f652ec850bdad90bab55fea5ddb7b41f2f9110695d16ccd2d1b7f6bbf8",
+        "target_sha256": "93772511cb8d67bdb9718e10a9e1798d91b647ee486ef864c22f200fa79cefd5"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/plans.py",
+        "previous_sha256": "5b6cafd81c8bda9860b01b1fa2220c8f6f17e6521ef17acb29ee170c85ea16a1",
+        "target_sha256": "d97e7f2c17a1de0e605118205e2f36d8ef72d7a2fb816c9ef6c39e406f0948a1"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/release_staging.py",
+        "previous_sha256": "a874c07c5de6aff1d3c4ffc4e1a2b6682de7e5431a499d776720841f5b63470a",
+        "target_sha256": "7e7cc859ea93043f082e21e228b755cf7d8205c539b05e077202101198501610"
+      }
+    ],
+    "native_core_changes": [
+      {
+        "addon": "mp_core",
+        "previous_version": "19.0.0.1.1",
+        "target_version": "19.0.0.1.2",
+        "migrations": []
+      },
+      {
+        "addon": "mp_identity",
+        "previous_version": "19.0.0.1.0",
+        "target_version": "19.0.0.1.1",
+        "migrations": []
+      },
+      {
+        "addon": "mp_shell",
+        "previous_version": "19.0.0.1.1",
+        "target_version": "19.0.0.1.2",
+        "migrations": []
+      }
+    ],
+    "staged_image": {
+      "base_image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+      "inventory_digest": "sha256:a0dbccae31c5498cce83e0aefe45db92d189ed19a9a86c22540cb8d051757d9e",
+      "runtime_digest": "sha256:df03ea3f63b9b4ed841763d263f67f25f481b755e39873a1e649eb801fdd5998",
+      "stage_digest": "sha256:97a6ffce3c40305fc746746674406ef3a0d8ec9a601abdce55b612621390834d",
+      "target_image_id": "sha256:5685a3690346b2723b888959c0dab318c37f341baa55b063c1f9262f4f348c0b"
+    }
+  },
+  "display": {
+    "targets": [
+      {
+        "installation_id": "4a901771-b72c-5ab4-9555-75e4c478d890",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "plugin_id": "org.example.canvas",
+        "action": "deploy"
+      },
+      {
+        "installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "plugin_id": "org.example.notes",
+        "action": "deploy"
+      },
+      {
+        "installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+        "plugin_id": "org.example.notes_labels",
+        "action": "deploy"
+      },
+      {
+        "installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+        "workspace_id": "efb30aaf-6120-4fde-9410-80c2bcfa50a5",
+        "plugin_id": "org.example.notes",
+        "action": "deploy"
+      }
+    ],
+    "artifacts": [
+      {
+        "plugin_id": "org.example.canvas",
+        "version": "0.1.3",
+        "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+        "runtime": "native",
+        "action": "deploy",
+        "native_addon": "mp_example_canvas",
+        "migration_digests": []
+      },
+      {
+        "plugin_id": "org.example.notes",
+        "version": "0.2.3",
+        "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+        "runtime": "native",
+        "action": "deploy",
+        "native_addon": "mp_example_notes",
+        "migration_digests": []
+      },
+      {
+        "plugin_id": "org.example.notes_labels",
+        "version": "0.2.1",
+        "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+        "runtime": "native",
+        "action": "deploy",
+        "native_addon": "mp_example_notes_labels",
+        "migration_digests": []
+      }
+    ],
+    "required_local_step": "Independent local operator approval of the exact plan hash, then CLI apply.",
+    "native_code_requires_trust": true,
+    "restart_required": true,
+    "feature_suspension_unloads_code": false,
+    "permission_changes": [],
+    "trust_changes": [],
+    "declaration_changes": {},
+    "resolution_reasons": {
+      "plugin:org.example.canvas": [
+        "plugin:org.example.canvas==0.1.3:boards ",
+        "requested ==0.1.3"
+      ],
+      "plugin:org.example.notes": [
+        "plugin:org.example.canvas==0.1.3 >=0.2,<0.3",
+        "plugin:org.example.canvas==0.1.3:documents ",
+        "plugin:org.example.notes==0.2.3:documents ",
+        "plugin:org.example.notes_labels==0.2.1 >=0.1,<0.3",
+        "plugin:org.example.notes_labels==0.2.1:documents ",
+        "requested ==0.2.3"
+      ],
+      "plugin:org.example.notes_labels": [
+        "plugin:org.example.notes_labels==0.2.1:labels ",
+        "requested ==0.2.1"
+      ],
+      "python:asn1crypto": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.5.1"
+      ],
+      "python:attrs": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.1.0",
+        "python:jsonschema==4.26.0 >=22.2.0",
+        "python:referencing==0.37.0 >=22.2.0",
+        "python:zeep==4.2.1 >=17.2.0"
+      ],
+      "python:babel": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.10.3"
+      ],
+      "python:beautifulsoup4": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.15.0",
+        "python:ofxparse==0.21 "
+      ],
+      "python:cbor2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.6.2"
+      ],
+      "python:certifi": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.10.23",
+        "python:requests==2.31.0 >=2017.4.17"
+      ],
+      "python:cffi": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.1.1",
+        "python:cryptography==42.0.8 >=1.12"
+      ],
+      "python:chardet": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.2.0",
+        "python:reportlab==4.1.0 "
+      ],
+      "python:charset-normalizer": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.5.2",
+        "python:requests==2.31.0 <4,>=2"
+      ],
+      "python:cryptography": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==42.0.8",
+        "python:pyopenssl==24.1.0 <43,>=41.0.5"
+      ],
+      "python:docopt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.6.2",
+        "python:num2words==0.5.13 >=0.6.2"
+      ],
+      "python:docutils": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.20.1"
+      ],
+      "python:et-xmlfile": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.0",
+        "python:openpyxl==3.1.2 "
+      ],
+      "python:freezegun": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:geoip2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.9.0"
+      ],
+      "python:gevent": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==24.2.1"
+      ],
+      "python:greenlet": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.3",
+        "python:gevent==24.2.1 >=3.0rc3"
+      ],
+      "python:idna": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.6",
+        "python:requests==2.31.0 <4,>=2.5"
+      ],
+      "python:isodate": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.7.2",
+        "python:zeep==4.2.1 >=0.5.4"
+      ],
+      "python:jinja2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.2"
+      ],
+      "python:jsonschema": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.26.0"
+      ],
+      "python:jsonschema-specifications": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2025.9.1",
+        "python:jsonschema==4.26.0 >=2023.03.6"
+      ],
+      "python:libsass": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.22.0"
+      ],
+      "python:lxml": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.2.1",
+        "python:lxml-html-clean==0.4.4 ",
+        "python:ofxparse==0.21 ",
+        "python:zeep==4.2.1 >=4.6.0"
+      ],
+      "python:lxml-html-clean": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.4"
+      ],
+      "python:markupsafe": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.1.5",
+        "python:jinja2==3.1.2 >=2.0",
+        "python:werkzeug==3.0.1 >=2.1.1"
+      ],
+      "python:maxminddb": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.2.0",
+        "python:geoip2==2.9.0 >=1.4.0"
+      ],
+      "python:num2words": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.5.13"
+      ],
+      "python:ofxparse": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.21"
+      ],
+      "python:openpyxl": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.2"
+      ],
+      "python:packaging": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.3"
+      ],
+      "python:passlib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.7.4"
+      ],
+      "python:pillow": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==10.2.0",
+        "python:reportlab==4.1.0 >=9.0.0"
+      ],
+      "python:pip": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==25.3"
+      ],
+      "python:platformdirs": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.13.6",
+        "python:zeep==4.2.1 >=1.4.0"
+      ],
+      "python:polib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.1.1"
+      ],
+      "python:psutil": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.9.8"
+      ],
+      "python:psycopg2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.9.9"
+      ],
+      "python:pyasn1": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.6.5",
+        "python:pyasn1-modules==0.4.2 <0.7.0,>=0.6.1",
+        "python:python-ldap==3.4.4 >=0.3.7"
+      ],
+      "python:pyasn1-modules": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.2",
+        "python:python-ldap==3.4.4 >=0.1.5"
+      ],
+      "python:pycparser": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.12",
+        "python:cffi==2.1.1 "
+      ],
+      "python:pyjwt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.15.1"
+      ],
+      "python:pyopenssl": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==24.1.0"
+      ],
+      "python:pypdf2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.12.1"
+      ],
+      "python:pypng": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.20220715.0",
+        "python:qrcode==7.4.2 "
+      ],
+      "python:pyserial": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.5"
+      ],
+      "python:python-dateutil": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.8.2",
+        "python:freezegun==1.2.1 >=2.7",
+        "python:vobject==0.9.6.1 >=2.4.0"
+      ],
+      "python:python-ldap": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.4.4"
+      ],
+      "python:python-magic": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.27"
+      ],
+      "python:python-stdnum": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.19"
+      ],
+      "python:pytz": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.5",
+        "python:babel==2.10.3 >=2015.7",
+        "python:zeep==4.2.1 "
+      ],
+      "python:pyusb": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:qrcode": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==7.4.2"
+      ],
+      "python:referencing": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.37.0",
+        "python:jsonschema-specifications==2025.9.1 >=0.31.0",
+        "python:jsonschema==4.26.0 >=0.28.4"
+      ],
+      "python:reportlab": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.1.0"
+      ],
+      "python:requests": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.31.0",
+        "python:geoip2==2.9.0 >=2.9",
+        "python:requests-file==3.0.1 >=1.0.0",
+        "python:requests-toolbelt==1.0.0 <3.0.0,>=2.0.1",
+        "python:zeep==4.2.1 >=2.7.0"
+      ],
+      "python:requests-file": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.1",
+        "python:zeep==4.2.1 >=1.5.1"
+      ],
+      "python:requests-toolbelt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.0.0",
+        "python:zeep==4.2.1 >=0.7.1"
+      ],
+      "python:resolvelib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:rfc8785": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.1.4"
+      ],
+      "python:rjsmin": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.0"
+      ],
+      "python:rpds-py": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.9.1",
+        "python:jsonschema==4.26.0 >=0.25.0",
+        "python:referencing==0.37.0 >=0.7.0"
+      ],
+      "python:setuptools": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==80.9.0"
+      ],
+      "python:six": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.17.0",
+        "python:ofxparse==0.21 ",
+        "python:python-dateutil==2.8.2 >=1.5"
+      ],
+      "python:soupsieve": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.4",
+        "python:beautifulsoup4==4.15.0 >=1.6.1"
+      ],
+      "python:typing-extensions": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.16.0",
+        "python:beautifulsoup4==4.15.0 >=4.0.0",
+        "python:qrcode==7.4.2 ",
+        "python:referencing==0.37.0 >=4.4.0"
+      ],
+      "python:urllib3": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.7",
+        "python:requests==2.31.0 <3,>=1.21.1"
+      ],
+      "python:vobject": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.9.6.1"
+      ],
+      "python:werkzeug": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.1"
+      ],
+      "python:wheel": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.45.1"
+      ],
+      "python:xlrd": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.1"
+      ],
+      "python:xlsxwriter": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.9"
+      ],
+      "python:xlwt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.3.0"
+      ],
+      "python:zeep": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.2.1"
+      ],
+      "python:zope-event": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==6.2",
+        "python:gevent==24.2.1 "
+      ],
+      "python:zope-interface": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==8.7",
+        "python:gevent==24.2.1 "
+      ]
+    },
+    "artifact_trust": [
+      {
+        "plugin_id": "org.example.notes",
+        "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "signature_verified": false,
+          "policy_generation": 3,
+          "warnings": []
+        }
+      },
+      {
+        "plugin_id": "org.example.canvas",
+        "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "signature_verified": false,
+          "policy_generation": 3,
+          "warnings": []
+        }
+      },
+      {
+        "plugin_id": "org.example.notes_labels",
+        "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "signature_verified": false,
+          "policy_generation": 3,
+          "warnings": []
+        }
+      }
+    ],
+    "backup": {
+      "required": true,
+      "policy_id": "development_checkpoint",
+      "retain_previous_release": true
+    },
+    "destructive": true,
+    "known_unknowns": [
+      "Native Python and same-origin frontend code is fully trusted.",
+      "Author destructive=false does not prove migration safety.",
+      "The staged image includes fully trusted native core/runtime code; image rollback alone does not restore database state."
+    ],
+    "staged_image": {
+      "base_image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+      "inventory_digest": "sha256:a0dbccae31c5498cce83e0aefe45db92d189ed19a9a86c22540cb8d051757d9e",
+      "runtime_digest": "sha256:df03ea3f63b9b4ed841763d263f67f25f481b755e39873a1e649eb801fdd5998",
+      "stage_digest": "sha256:97a6ffce3c40305fc746746674406ef3a0d8ec9a601abdce55b612621390834d",
+      "target_image_id": "sha256:5685a3690346b2723b888959c0dab318c37f341baa55b063c1f9262f4f348c0b"
+    },
+    "current_catalog_validation_digest": "sha256:7dceccaac2f9b8112d4bf151685f64eba75c5857139826f4d2ef73e00a2e61b6",
+    "platform_source_diff": [
+      {
+        "path": "addons/mp_core/__manifest__.py",
+        "previous_sha256": "54b1db4ebf8c69ba96787caf4ee059521d4d40cb26264ec38f6d31f9a248c90d",
+        "target_sha256": "26db8b7972bdd053db01308105eb20db105fca5049014d7955d49f7ed34544df"
+      },
+      {
+        "path": "addons/mp_core/controllers.py",
+        "previous_sha256": "b057bde0854c65a942c3268066195b996ef61288beabc8a0bd85621e6a8c1e56",
+        "target_sha256": "26c39026087f58078377cac3f6c11ce1a18b18454ef88db98411ea69aed66141"
+      },
+      {
+        "path": "addons/mp_identity/__manifest__.py",
+        "previous_sha256": "beb20d71528c89462e760fee123a772afb48817ff175dba42fd23ba03d87857a",
+        "target_sha256": "6be412376426a5230f90e5bb24d1fe6e26449e59494b736090243bf97fae43c1"
+      },
+      {
+        "path": "addons/mp_identity/models/ir_http.py",
+        "previous_sha256": "77dc35bae10f634181902f03a759a066e24b068f2f2cb94e9ff492071b5de800",
+        "target_sha256": "424fb21989abed46ed0189a4203715cba23a2efd57ebbeeb0c0e0820a70c98ce"
+      },
+      {
+        "path": "addons/mp_identity/release.py",
+        "previous_sha256": null,
+        "target_sha256": "f2463661c9f1c95ed065552ae4be2aeb30118d17a160a54738928415a32dd52a"
+      },
+      {
+        "path": "addons/mp_identity/scopes.py",
+        "previous_sha256": "09ba9c6d8a03270992e47e9f3cd5720671602167939d6dc108f78dedc4ec8e25",
+        "target_sha256": "9fc8a82f40bfd532af856e40bbceb5296a7d37139296f4bb3181ca9794b5046b"
+      },
+      {
+        "path": "addons/mp_shell/__manifest__.py",
+        "previous_sha256": "86e4df2516bad4cbfc873b9d275767c1f097d3db287acfca57b8e003552a0155",
+        "target_sha256": "22df934eebc8a8a2dd25945645ad413cc451a60058a2484b4b16f3d7a1ba1406"
+      },
+      {
+        "path": "addons/mp_shell/controllers.py",
+        "previous_sha256": "ecb1fc05d6eb8649bfca6b9bf0104e603ea9e15cedb397c8ab1221a081c0b756",
+        "target_sha256": "18c32972a1ade8fb97db7b2eb1e731e9821184f293bb7c88c9d12f1c4cfe4c52"
+      },
+      {
+        "path": "addons/mp_shell/static/src/client_release.js",
+        "previous_sha256": null,
+        "target_sha256": "84727f380a8f5041a485490504ba8a54ca1035a3d4a911784588b9d86b04476f"
+      },
+      {
+        "path": "addons/mp_shell/static/src/host.js",
+        "previous_sha256": "6aea0888048b04b96aeb533f4041af5824574e744c885aec6ceb7d651d0a876f",
+        "target_sha256": "26d9784e34f3df2acd9c0e0c1b9d02e6d948fcf89aedc73000cd567670cc2dcc"
+      },
+      {
+        "path": "addons/mp_shell/views/bootstrap.xml",
+        "previous_sha256": "76f848306c1e041f36ceeec708412d2c035bab10bc4573113571a3bab87d47d0",
+        "target_sha256": "5a35778ae67324354ecc0ae1b7f2c5c9063dd2f5c552676c57529fba78d5efde"
+      },
+      {
+        "path": "packages/contracts/examples/v1/client-release.json",
+        "previous_sha256": null,
+        "target_sha256": "8f32c193267ae4fd2531a7a87dc77dcdc13fe07bfb49c0c61cd23ae0188ea437"
+      },
+      {
+        "path": "packages/contracts/examples/v1/plan-core-upgrade.json",
+        "previous_sha256": null,
+        "target_sha256": "ab6c4d6070220ed847cc5ad5a80d34b552866309ad5116af3bda2fbc3e384406"
+      },
+      {
+        "path": "packages/contracts/v1/client-release.schema.json",
+        "previous_sha256": null,
+        "target_sha256": "35292778738736b3458caaee2fd2e23987222e888edcc21f1c5b0fb5811d099b"
+      },
+      {
+        "path": "packages/contracts/v1/operations-view.schema.json",
+        "previous_sha256": "1ea4fcc6993a998d6dece65ce94fd37863d946ed7d820b51bd1ec03ffb4dfd21",
+        "target_sha256": "1da3a20e1ec05ceabdaeeac69f91b296c7c0cca07fee028f0f85386ac3f66b3f"
+      },
+      {
+        "path": "packages/contracts/v1/plan.schema.json",
+        "previous_sha256": "e7d1b1a0f98f253d9a82fb5ae17644a383fc9041e86c8452a706e1e75b062950",
+        "target_sha256": "ac2b7b07d6733fd9b7cc77b546c197c3d5546092d7b68396bd8d1171856805ee"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/client_release.py",
+        "previous_sha256": null,
+        "target_sha256": "0b645f21681823473d8c57832159c1c28167f8866e7a737677936d573efcc41d"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/native_executor.py",
+        "previous_sha256": "a4e7038c54ea103b4b3f8f5b8ee25eb7bee7d5e7710595fc5a3633e753211817",
+        "target_sha256": "2de3f5db22dc7fc4f88f2d66acefcc4f732ea48661ab0d3b3348d3ef22a1ca79"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/operator_store.py",
+        "previous_sha256": "67ca67f652ec850bdad90bab55fea5ddb7b41f2f9110695d16ccd2d1b7f6bbf8",
+        "target_sha256": "93772511cb8d67bdb9718e10a9e1798d91b647ee486ef864c22f200fa79cefd5"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/plans.py",
+        "previous_sha256": "5b6cafd81c8bda9860b01b1fa2220c8f6f17e6521ef17acb29ee170c85ea16a1",
+        "target_sha256": "d97e7f2c17a1de0e605118205e2f36d8ef72d7a2fb816c9ef6c39e406f0948a1"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/release_staging.py",
+        "previous_sha256": "a874c07c5de6aff1d3c4ffc4e1a2b6682de7e5431a499d776720841f5b63470a",
+        "target_sha256": "7e7cc859ea93043f082e21e228b755cf7d8205c539b05e077202101198501610"
+      }
+    ],
+    "native_core_changes": [
+      {
+        "addon": "mp_core",
+        "previous_version": "19.0.0.1.1",
+        "target_version": "19.0.0.1.2",
+        "migrations": []
+      },
+      {
+        "addon": "mp_identity",
+        "previous_version": "19.0.0.1.0",
+        "target_version": "19.0.0.1.1",
+        "migrations": []
+      },
+      {
+        "addon": "mp_shell",
+        "previous_version": "19.0.0.1.1",
+        "target_version": "19.0.0.1.2",
+        "migrations": []
+      }
+    ]
+  }
+}

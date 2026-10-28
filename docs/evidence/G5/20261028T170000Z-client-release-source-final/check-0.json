@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "tests/test_native_interactions.mjs"
+  ],
+  "exit_code": 0,
+  "stdout": "\u2714 native confirmation maps destructive labels and resolves once on confirm (1.2694ms)\n\u2714 native cancel, Escape/dismiss and external close all settle false (0.2182ms)\n\u2714 retiring cancels pending confirmation and stale callbacks cannot authorize (0.1816ms)\n\u2714 native notifications retain severity and plain text, clean up on scope retirement (0.5815ms)\n\u2714 native command registrations retire and cached commands recheck current authority (0.3621ms)\n\u2714 ordinary confirm does not use destructive appearance and failed add rejects (0.2658ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 79.6184\n",
+  "stderr": ""
+}

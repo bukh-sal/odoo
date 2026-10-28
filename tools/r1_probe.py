@@ -16,9 +16,19 @@ class Client:
         status,result=self.request('/web/session/authenticate',{'jsonrpc':'2.0','method':'call','id':1,'params':{'db':state['active_db'],'login':fixture['users'][actor]['login'],'password':(r1.r0.LOCAL/'bootstrap-password').read_text().strip()}})
         assert status==200 and result.get('result',{}).get('uid')==fixture['users'][actor]['id'],('Fixture authentication failed',status,result.get('error',{}).get('code'))
         self.csrf=self.request('/api/v1/session')[1]['data']['csrf_token']
+        # Discover once for this client document/process. Never auto-adopt a
+        # new pin on CONFLICT: that would hide stale native code from UI07.
+        status,release=self.request('/api/v1/client-release')
+        self.release_token=None
+        if status==200:
+            from modular_platform.contracts import validate
+            validate('client-release',release['data']);self.release_token=release['data']['token']
+        else:assert status==404,('Release transport discovery failed',status)
 
     def request(self,path,payload=None,workspace=None,headers=None):
         headers=dict(headers or {})
+        token=getattr(self,'release_token',None)
+        if token:headers.setdefault('X-MP-Client-Release',token)
         if workspace:headers['X-MP-Workspace']=self.fixture['workspaces'].get(workspace,{}).get('public_id',workspace)
         if payload is not None:headers['Content-Type']='application/json'
         request=urllib.request.Request(self.base+path,headers=headers,data=json.dumps(payload).encode() if payload is not None else None)

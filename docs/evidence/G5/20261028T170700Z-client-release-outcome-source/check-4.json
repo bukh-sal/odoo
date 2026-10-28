@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "tests/test_client_release.mjs"
+  ],
+  "exit_code": 0,
+  "stdout": "\u2714 bootstrap pin cannot be mutated or silently adopted from a newer poll (1.1117ms)\n\u2714 mismatch fences synchronously before asynchronous retirement and only once (0.184ms)\n\u2714 safe auth/draft discovery remains usable but retries and native calls stay fenced (0.2132ms)\n\u2714 malformed or missing bootstrap fails closed without automatic reload (0.2506ms)\n\u2714 private native release exception maps distinctly from record CAS conflicts (0.1034ms)\n\u2714 failed page disposal cannot unblock or reload the document (0.2206ms)\n\u2714 late response cannot falsely claim that a possibly committed write never started (0.12ms)\n\u2139 tests 7\n\u2139 suites 0\n\u2139 pass 7\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 127.419\n",
+  "stderr": ""
+}
