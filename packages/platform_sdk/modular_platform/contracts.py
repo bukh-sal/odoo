@@ -23,6 +23,17 @@ ERROR_STATUS = {
     'PLUGIN_SUSPENDED': 409, 'RATE_LIMITED': 429, 'DEADLINE_EXCEEDED': 504,
     'CANCELLED': 409, 'INTERNAL_ERROR': 500,
 }
+FORMAT_CHECKER = FormatChecker()
+
+
+@FORMAT_CHECKER.checks('date-time', raises=ValueError)
+def canonical_utc_datetime(value):
+    # jsonschema's optional RFC3339 dependency is not installed by the minimal
+    # runtime. Enforce this protocol's UTC profile with the standard library.
+    if not isinstance(value,str): return True  # type is validated separately
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z',value):return False
+    datetime.fromisoformat(value.replace('Z','+00:00'))
+    return True
 
 
 class ContractError(ValueError):
@@ -45,7 +56,7 @@ def load_json(raw):
 
 def validate(name, value):
     schema = json.loads((CONTRACTS / (name + '.schema.json')).read_text())
-    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    validator = Draft202012Validator(schema, format_checker=FORMAT_CHECKER)
     errors = sorted(validator.iter_errors(value), key=lambda e: str(e.path))
     if errors:
         # Avoid echoing values that may contain credentials or private content.

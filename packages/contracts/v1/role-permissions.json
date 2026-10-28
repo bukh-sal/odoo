@@ -14,8 +14,8 @@
         "notes.read",
         "notes.write",
         "notes.delete",
-        "workspace.members.manage",
-        "workspace.config.manage"
+        "org.modularplatform.identity:workspace.members.manage",
+        "org.modularplatform.identity:workspace.config.manage"
       ]
     },
     "org.example.notes_labels": {

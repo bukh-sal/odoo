@@ -140,6 +140,14 @@ version='0.1.0'
             with self.assertRaises(ContractError):check_start_approval(plan,changed,operator_generation=1,now=now)
         with self.assertRaises(ContractError):check_start_approval(plan,approval,operator_generation=2,now=now)
 
+    def test_utc_calendar_validation_does_not_depend_on_optional_formats(self):
+        plan=example('plan')
+        for timestamp in ['2026-99-28T00:00:00Z','2026-02-30T00:00:00Z','2026-10-28T25:00:00Z','2026-10-28T00:00:00+00:00']:
+            with self.subTest(timestamp=timestamp),self.assertRaises(ContractError):validate('plan',{**plan,'created_at':timestamp})
+        validate('plan',plan)
+        roles=json.loads((CONTRACTS/'role-permissions.json').read_text())
+        self.assertIn('org.modularplatform.identity:workspace.members.manage',roles['plugin_permissions']['org.example.notes']['administrator'])
+
     def test_actor_host_and_method_dtos_do_not_accept_privilege_claims(self):
         for schema in ['workspace-context','host-context','service-request']:
             value=example(schema);value['sudo']=True

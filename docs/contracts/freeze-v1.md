@@ -1,6 +1,6 @@
 # Contract freeze v1
 
-Status: **passed G2**, 28 October 2026. Contract major1, revision1. Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
+Status: **passed G2**, 28 October 2026. Contract major1, revision2 ([ADR0004](../architecture-decisions/0004-contract-validation-correction.md)). Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
 
 Normative semantics: [protocol-v1.md](protocol-v1.md), [ADR0003](../architecture-decisions/0003-r1-contracts.md). Machine inventory [freeze-v1.json](freeze-v1.json) contains exact SHA256 for every schema/type/example/validator/test/lock and maps owning phase, acceptance IDs and G1 correspondence. It excludes itself and unrelated evidence/status to avoid self-reference. Every path in the table has an exact digest in that inventory.
 
@@ -24,8 +24,10 @@ No-open-critical-decisions checklist:
 - [x] Metadata-only external artifact, independently operated pinned Compose/endpoint, RS256 issuer/key provisioning/claims/audience/lifetime and lifecycle separation fixed.
 - [x] Snake_case host context, framework-neutral mount/update/dispose, URL workspace/routing, stale generations, native adapter and service options fixed.
 
-Validation: `.venv/Scripts/python.exe -m unittest discover -s tests -p test_contracts.py -v` (15 passed); `npm --prefix packages/host_sdk run check` (passed); `.venv/Scripts/python.exe tools/check_contract_freeze.py` (50 files/seven rows passed). Evidence: [`gate-G2.json`](../evidence/G2/20261028T010917683075Z/gate-G2.json). G1 source boundary checked unchanged, rather than repeating passing infrastructure tests.
+Validation: `.venv/Scripts/python.exe -m unittest discover -s tests -p test_contracts.py -v` (16 passed); `npm --prefix packages/host_sdk run check` (passed); `.venv/Scripts/python.exe tools/check_contract_freeze.py` (51 files/seven rows passed). Evidence: [`gate-G2.json`](../evidence/G2/20261028T013857424160Z/gate-G2.json). G1 source boundary checked unchanged, rather than repeating passing infrastructure tests.
 
 Tests cover strict metadata/no imports, unknown authority fields/majors, numeric/native ordering and migration paths, explicit parallel service majors/provider selection, metadata-only services, golden plan serialization/hash and independent ECMAScript comparison, approval target/expiry/revocation/consumption semantics, DTO/input boundaries and RS256 vectors. The retired-key token is deliberately expired and its private key was discarded. Synthetic endpoint image digests are fixtures and cannot certify a real deployment.
 
 Change discipline: update an ADR with trigger/semantics/consumers/migration impact; bump public major for breaks or inventory revision for compatible changes; update schemas/types/golden fixtures and consumers; invalidate and requalify affected checks. Do not update hashes alone to conceal drift. Implementation may proceed internally without contract changes. G3 then G4/G5/G6/G7 remain required; G2 is not the goal endpoint.
+
+Revision2 requalified the strict UTC calendar validator and explicit core capability owner; the original freeze evidence is preserved. No golden plan hash, token protocol, DTO shape or role authority changed.

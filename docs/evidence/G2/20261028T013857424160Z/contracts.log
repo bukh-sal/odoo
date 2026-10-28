@@ -1,0 +1,21 @@
+test_actor_host_and_method_dtos_do_not_accept_privilege_claims (test_contracts.Contracts.test_actor_host_and_method_dtos_do_not_accept_privilege_claims) ... ok
+test_alias_exact_version_provider_and_major (test_contracts.Contracts.test_alias_exact_version_provider_and_major) ... ok
+test_approval_exact_target_expiry_revocation_and_consumption (test_contracts.Contracts.test_approval_exact_target_expiry_revocation_and_consumption) ... ok
+test_authoring_is_data_not_import (test_contracts.Contracts.test_authoring_is_data_not_import) ... ok
+test_live_jwt_scope_audience_algorithm_and_lifetime (test_contracts.Contracts.test_live_jwt_scope_audience_algorithm_and_lifetime) ... ok
+test_migration_path_and_nonincreasing_transition (test_contracts.Contracts.test_migration_path_and_nonincreasing_transition) ... ok
+test_parallel_contract_majors_are_explicit (test_contracts.Contracts.test_parallel_contract_majors_are_explicit) ... ok
+test_paths_cannot_escape_package (test_contracts.Contracts.test_paths_cannot_escape_package) ... ok
+test_plan_golden_bytes_hash_and_independent_js (test_contracts.Contracts.test_plan_golden_bytes_hash_and_independent_js) ... ok
+test_remote_metadata_cannot_deploy_or_register_native_code (test_contracts.Contracts.test_remote_metadata_cannot_deploy_or_register_native_code) ... ok
+test_retired_jwt_vector_signature_and_expiry (test_contracts.Contracts.test_retired_jwt_vector_signature_and_expiry) ... ok
+test_rfc8785_library_vector (test_contracts.Contracts.test_rfc8785_library_vector) ... ok
+test_schema_dialect_and_examples (test_contracts.Contracts.test_schema_dialect_and_examples) ... ok
+test_unknown_sensitive_keys_and_unsupported_majors (test_contracts.Contracts.test_unknown_sensitive_keys_and_unsupported_majors) ... ok
+test_utc_calendar_validation_does_not_depend_on_optional_formats (test_contracts.Contracts.test_utc_calendar_validation_does_not_depend_on_optional_formats) ... ok
+test_version_spelling_and_native_order (test_contracts.Contracts.test_version_spelling_and_native_order) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.191s
+
+OK

@@ -1,0 +1,55 @@
+{
+  "gate": "G2",
+  "state": "passed",
+  "contract_major": 1,
+  "revision": 2,
+  "frozen_files": 51,
+  "contract_tests": 16,
+  "utc": "2026-10-28T01:38:58.668317+00:00",
+  "parent_commit": "616b3e35d43babbb7e46d91cc33c8a2f6f9d966b",
+  "inventory": "docs/contracts/freeze-v1.json",
+  "inventory_sha256": "9d5547702d02d93a82d360748131c17d3d0f6b985dd189c9c6becea0a115e061",
+  "checks": [
+    {
+      "label": "contracts",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_contracts.py",
+        "-v"
+      ],
+      "evidence": "contracts.log"
+    },
+    {
+      "label": "typescript",
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "--prefix",
+        "packages/host_sdk",
+        "run",
+        "check"
+      ],
+      "evidence": "typescript.log"
+    },
+    {
+      "label": "freeze",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "evidence": "freeze.log"
+    }
+  ],
+  "trigger": "ADR0004 validation correction; revision1 preserved as historical evidence",
+  "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "shared_builder_regression": "docs/evidence/G3/20261028t011619z/prior-policy-regression.json",
+  "runtime_effect": "R1 rebuild required to include corrected validators; G3 remains open"
+}
