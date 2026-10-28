@@ -1,0 +1,101 @@
+{
+  "operation_id": "3ec081c1-9107-4e8c-8884-f3f9f2d81bae",
+  "plan_hash": "sha256:cd0e9cd19ef06d75352de36c09d570d7f0d28a2367f73b87e52fd92716dae3e5",
+  "state": "recovery_required",
+  "phase": "release_published",
+  "mutation_started": true,
+  "traffic_resumed": false,
+  "backup_id": "3ec081c1-9107-4e8c-8884-f3f9f2d81bae",
+  "approval_expires_at": "2026-10-28T12:26:01Z",
+  "history": [
+    {
+      "sequence": 56,
+      "utc": "2026-10-28T12:10:29Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:cd0e9cd19ef06d75352de36c09d570d7f0d28a2367f73b87e52fd92716dae3e5"
+      }
+    },
+    {
+      "sequence": 57,
+      "utc": "2026-10-28T12:11:01Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:cd0e9cd19ef06d75352de36c09d570d7f0d28a2367f73b87e52fd92716dae3e5"
+      }
+    },
+    {
+      "sequence": 58,
+      "utc": "2026-10-28T12:11:17Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 23468,
+        "lock_owner_digest": "sha256:32b406e026270c75cda41f4d58ad197c8dc2efd7fd784417553b34ab6e4b39dc"
+      }
+    },
+    {
+      "sequence": 59,
+      "utc": "2026-10-28T12:11:28Z",
+      "code": "staged",
+      "details": {}
+    },
+    {
+      "sequence": 60,
+      "utc": "2026-10-28T12:11:51Z",
+      "code": "maintenance",
+      "details": {}
+    },
+    {
+      "sequence": 61,
+      "utc": "2026-10-28T12:11:54Z",
+      "code": "drained",
+      "details": {}
+    },
+    {
+      "sequence": 62,
+      "utc": "2026-10-28T12:12:00Z",
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "3ec081c1-9107-4e8c-8884-f3f9f2d81bae"
+      }
+    },
+    {
+      "sequence": 63,
+      "utc": "2026-10-28T12:12:07Z",
+      "code": "mutation_started",
+      "details": {}
+    },
+    {
+      "sequence": 64,
+      "utc": "2026-10-28T12:12:11Z",
+      "code": "migrated",
+      "details": {}
+    },
+    {
+      "sequence": 65,
+      "utc": "2026-10-28T12:12:13Z",
+      "code": "workers_replaced",
+      "details": {}
+    },
+    {
+      "sequence": 66,
+      "utc": "2026-10-28T12:12:17Z",
+      "code": "ready",
+      "details": {}
+    },
+    {
+      "sequence": 67,
+      "utc": "2026-10-28T12:12:18Z",
+      "code": "release_published",
+      "details": {}
+    },
+    {
+      "sequence": 68,
+      "utc": "2026-10-28T12:12:19Z",
+      "code": "recovery_required",
+      "details": {
+        "code": "READINESS_FAILED"
+      }
+    }
+  ]
+}

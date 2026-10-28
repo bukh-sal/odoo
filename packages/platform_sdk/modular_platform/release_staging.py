@@ -41,6 +41,16 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     target_document['request']={'operation_type':operation_type,'requested':requested,'targets':copy.deepcopy(targets),
         'update':update,'core_python':[item['name']+'=='+item['version'] for item in runtime['python_metadata']],
         'operation_id':operation_id,'created_at':created_at}
+    grants={(site['site_id'],item['workspace_id'],item['installation_id'],item['capability']):item for site in sites for item in site.get('grants',[])}
+    changes=[]
+    for target in targets:
+        prior={item['capability'] for item in old.get(target['plugin_id'],{}).get('permissions',{}).get('requests',[])}
+        for requested_capability in by_plugin[target['plugin_id']]['manifest']['permissions']['requests']:
+            capability=requested_capability['capability']
+            existing=grants.get((target['site_id'],target['workspace_id'],target['installation_id'],capability))
+            if (not existing and target['action']=='install') or target['action']=='upgrade' and capability not in prior:
+                changes.append({'plugin_id':target['plugin_id'],'workspace_id':target['workspace_id'],'capability':capability,'action':'grant'})
+    target_document['request']['permission_changes']=changes
     bundle=prepare_document(target_document,catalog)
     for target in targets:
         required=set(by_plugin[target['plugin_id']]['manifest']['dependencies']['plugins'])

@@ -29,7 +29,7 @@ class IndependentValidator:
         state = document['state']
         check_bundle(bundle, state)
         plan = bundle['plan']
-        if plan['permission_changes'] or plan['trust_changes'] or plan['backup']['policy_id'] != 'development_checkpoint':
+        if plan['trust_changes'] or plan['backup']['policy_id'] != 'development_checkpoint':
             raise OperatorError('This profile does not accept unrelated grant/trust/backup policy changes')
         if 'staged_image' in bundle['operation_lock']:
             if not getattr(self,'stage_store',None):
@@ -42,6 +42,8 @@ class IndependentValidator:
             if data_digest(recomputed)!=data_digest(bundle):
                 raise OperatorError('Independently staged reconstruction differs from proposed exact plan')
             return state
+        if plan['permission_changes']:
+            raise OperatorError('Current-image feature/control profile does not accept unrelated grant changes')
         if plan['operation_type'] == 'install':
             validate_install_targets(document, observation['sites'], bundle['operation_lock']['targets'])
             expected = copy.deepcopy(state['release_lock'])

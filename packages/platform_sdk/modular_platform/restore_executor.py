@@ -22,6 +22,8 @@ from .operator_os import OperatorError, OperationLocks, current_identity, protec
 from .operator_store import _write_new
 from .plans import data_digest
 from .recovery_reviews import RecoveryReviews
+from .workers import snapshots,ensure,wait_ready
+from .projection import runtime_inputs
 
 
 AUTHORITY_SELECT = """SELECT jsonb_build_object(
@@ -64,6 +66,39 @@ def canonical_authority(value):
     return value
 
 
+def recovery_configuration(current,manifest,bundle,replacement=None):
+    """Only the checkpoint or exact privately recorded replacement is eligible."""
+    base=manifest['configuration']
+    expected=dict(base,image_id=bundle['operation_lock'].get('staged_image',{}).get('target_image_id',base['image_id']),
+        generation=bundle['operation_lock']['release']['generation'],release_created_at=bundle['plan']['created_at'])
+    if replacement is not None:
+        worker=replacement.get('container_id','')
+        expected['worker_id']=worker
+        if (not re.fullmatch('[0-9a-f]{64}',worker) or replacement!=
+                {'container_id':worker,'configuration':expected,'previous_image_id':base['image_id']}):
+            raise OperatorError('Private worker replacement differs from approved target')
+    if current!=base and (replacement is None or current!=expected):
+        raise OperatorError('Current configuration is neither checkpoint nor exact approved replacement')
+    target=copy.deepcopy(base);target.pop('worker_id',None)
+    target['generation']=max(current['generation'],base['generation'],bundle['operation_lock']['release']['generation'])+1
+    target['release_created_at']=bundle['plan']['created_at']
+    lock=copy.deepcopy(manifest['previous_release']['release_lock'])
+    lock.update(generation=target['generation'],created_at=target['release_created_at'])
+    return target,lock
+
+
+def restored_release_sql(configuration,lock,operation):
+    # All input is fixed/private canonical metadata. Use a JSON record rather
+    # than interpolating database identifiers or executable plan fragments.
+    values={'mp.release_generation':str(configuration['generation']),
+        'mp.release_digest':data_digest(lock),'mp.active_inventory_digest':lock['core_inventory_digest'],
+        'mp.last_operation_id':'restore:'+operation}
+    payload=json.dumps(values).replace("'","''")
+    return ("INSERT INTO ir_config_parameter(key,value,create_uid,write_uid,create_date,write_date) "
+        "SELECT key,value,1,1,timezone('UTC',now()),timezone('UTC',now()) FROM jsonb_each_text('"+payload+"'::jsonb) "
+        "ON CONFLICT(key) DO UPDATE SET value=EXCLUDED.value,write_date=EXCLUDED.write_date;\n")
+
+
 class RestoreExecutor:
     def __init__(self, native):
         self.native = native
@@ -80,8 +115,12 @@ class RestoreExecutor:
             raise OperatorError('Restore profile requires exactly one disposable site')
         checkpoint = self.store.root/'checkpoints'/operation
         manifest = load_json((checkpoint/'manifest.json').read_bytes())
-        if manifest['operation_id'] != operation or manifest['plan_hash'] != bundle['plan_hash'] or manifest['configuration'] != self.config:
-            raise OperatorError('Checkpoint does not match the exact failed operation/current configuration')
+        if manifest['operation_id'] != operation or manifest['plan_hash'] != bundle['plan_hash']:
+            raise OperatorError('Checkpoint does not match the exact failed operation')
+        replacement=self.store.root/'stages'/operation/'worker-replacement.json'
+        if replacement.exists():self.store._regular(replacement)
+        target,restored_lock=recovery_configuration(self.config,manifest,bundle,
+            load_json(replacement.read_bytes()) if replacement.exists() else None)
         for name, digest in manifest['files'].items():
             if name not in ('database.dump','database.dump.stderr.log','filestore.tar.gz','filestore.tar.gz.stderr.log'):
                 raise OperatorError('Unknown checkpoint member')
@@ -98,8 +137,17 @@ class RestoreExecutor:
         authority = canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d',source,'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
         if authority['api_key_count'] or authority['has_dispatch_tables']:
             raise OperatorError('Jobs/outbox/API keys require the later effect/credential reconciliation profile')
-        app=self.observer._container('app',stopped=True)
-        observation = self.observer.read(quiesced=not self.native._inspect(app)['State']['Running'])
+        workers=snapshots(self.config)
+        allowed_images={manifest['configuration']['image_id'],bundle['operation_lock'].get('staged_image',{}).get('target_image_id',self.config['image_id'])}
+        if any(worker['running'] and worker['image_id'] not in allowed_images for worker in workers):
+            raise OperatorError('Unexpected running worker requires independent reconciliation')
+        # No dependence on a bootable/running application, even if native
+        # maintenance left pending module states or the new worker crashed.
+        observation = DockerObserver(manifest['configuration']).read(quiesced=True,missing_worker=True,uncertain_native=True)
+        catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
+        runtime_inputs(observation['runtime'],catalog)
+        if observation['runtime']['inventory_digest']!=restored_lock['core_inventory_digest']:
+            raise OperatorError('Retained code inventory differs from checkpoint release')
         if any(item['runtime']!='native' for site in observation['sites'] for item in site['installations']):
             raise OperatorError('External runtime reconciliation is required before restore')
         fresh = 'mp_disposable_r0_r1_restore_'+operation.replace('-','')
@@ -107,7 +155,9 @@ class RestoreExecutor:
             raise OperatorError('Invalid fresh disposable restore database')
         return {'schema_version':1,'action':'restore_to_fresh_database','operation_id':operation,
             'plan_hash':bundle['plan_hash'],'checkpoint_digest':data_digest(manifest),'failed_state_digest':data_digest(observation),
-            'configuration':self.config,'fresh_database':fresh,'authority':authority,'keep_traffic_closed':True,
+            'configuration':self.config,'base_configuration':manifest['configuration'],
+            'restore_configuration':target,'restored_release_lock':restored_lock,'managed_workers':workers,
+            'fresh_database':fresh,'authority':authority,'keep_traffic_closed':True,
             'operator_authorization_generation':self.store.policy['authorization_generation']}
 
     def prepare(self,operation):
@@ -128,12 +178,15 @@ class RestoreExecutor:
             _write_new(directory/'decision.json',{'decision':decision,'hash':exact_hash,'operator_id':current_identity(),
                 'started_at':issued.isoformat(),'review_expires_at':decision['review']['expires_at']})
             self.store.record_restore(operation,locks,code='restore_authorized',details={'decision_hash':exact_hash,'fresh_database':decision['fresh_database']})
-            app = self.observer._container('app',stopped=True)
             database = self.observer._container('db')
-            if self.native._inspect(app)['State']['Running']:
-                _run(['docker','stop','--time','30',app])
-                if self.native._inspect(app)['State']['ExitCode'] != 0:
-                    raise OperatorError('Recovery worker drain failed')
+            for worker in decision['managed_workers']:
+                if worker['running']:
+                    _run(['docker','stop','--time','30',worker['container_id']])
+                    if self.native._inspect(worker['container_id'])['State']['ExitCode'] != 0:
+                        raise OperatorError('Recovery worker drain failed')
+            current_authority=canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d',self.config['sites'][0]['database'],'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
+            if current_authority!=decision['authority']:
+                raise OperatorError('Current authority changed while draining; inspect before restoring')
             fresh = decision['fresh_database']
             checkpoint = self.store.root/'checkpoints'/operation
             RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
@@ -145,7 +198,7 @@ class RestoreExecutor:
             self.native._private_command(args+['-c',EXTRACT_FILESTORE,self.config['sites'][0]['database'],fresh],
                 directory/'filestore.log',input=(checkpoint/'filestore.tar.gz').read_bytes())
             _run(['docker','exec','-i',database,'psql','-X','-q','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1','--single-transaction'],
-                input=authority_sql(decision['authority']).encode())
+                input=(authority_sql(decision['authority'])+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
             # Copy the old exact config to the private recovery directory before
             # replacing only its DB target. No secrets enter public evidence.
             args,name = self.native._child(operation,'read-config',network=False)
@@ -164,21 +217,27 @@ class RestoreExecutor:
             args[-1] = "import os,pathlib,sys; p=pathlib.Path('/config/odoo_config'); t=p.with_name('restore-config.tmp'); f=t.open('xb'); f.write(sys.stdin.buffer.read()); f.flush(); os.fsync(f.fileno()); f.close(); t.chmod(0o444); os.replace(t,p)"
             RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
             _run(args,input=buffer.getvalue().encode())
-            target = copy.deepcopy(self.config);target['sites'][0]['database'] = fresh
+            target = copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database'] = fresh
             RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
+            # Hash/project restored metadata with retained code offline before
+            # any ORM startup; never boot the failed new image to restore it.
+            observer=DockerObserver(target)
+            snapshot=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
+            restored=observer.state(observer.read(quiesced=True,missing_worker=True),snapshot)['state']
+            previous=load_json((checkpoint/'manifest.json').read_bytes())['previous_release']
+            if (restored['release_lock']!=decision['restored_release_lock'] or restored['installations']!=previous['installations']
+                    or restored['bindings']!=previous['bindings']):
+                raise OperatorError('Restored release/installation/bindings differ from reviewed checkpoint')
+            app=ensure(target,target['image_id'],operation,inventory_digest=restored['release_lock']['core_inventory_digest'],suffix='restore')
+            target['worker_id']=app
+            _write_new(directory/'worker-replacement.json',{'configuration':target,'container_id':app})
             temporary = self.native.target_path.with_name(self.native.target_path.name+'.restore-'+operation+'.tmp')
             _write_new(temporary,target);os.replace(temporary,self.native.target_path)
             _run(['docker','start',app])
+            wait_ready(app)
             observer = DockerObserver(target)
-            snapshot = Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
-            restored = observer.state(observer.read(),snapshot)['state']
-            previous = load_json((checkpoint/'manifest.json').read_bytes())['previous_release']
-            # Only policy counters may increase when current revocations are
-            # overlaid. Native inventory, bindings and installation footprint
-            # must be exactly the pre-mutation checkpoint.
-            if (restored['release_lock'] != previous['release_lock'] or restored['installations'] != previous['installations']
-                    or restored['bindings'] != previous['bindings']):
-                raise OperatorError('Restored release/installation/bindings differ from checkpoint')
+            running=observer.state(observer.read(),snapshot)['state']
+            if running!=restored:raise OperatorError('Restored worker observation differs from verified offline state')
             actual_authority = canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
             if actual_authority != decision['authority']:
                 raise OperatorError('Restored authority differs from current reconciled snapshot')

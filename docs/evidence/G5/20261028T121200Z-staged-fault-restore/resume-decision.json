@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "action": "resume_verified_restore",
+  "operation_id": "3ec081c1-9107-4e8c-8884-f3f9f2d81bae",
+  "configuration": {
+    "deployment_id": "eb7ce420-a928-4ecb-80c7-1f8ff3b3fa08",
+    "generation": 5,
+    "image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+    "operator_authorization_generation": 2,
+    "policy_version": 1,
+    "project": "mp-r0-r1g5fd0445d406d6",
+    "release_created_at": "2026-10-28T12:10:21Z",
+    "schema_version": 1,
+    "sites": [
+      {
+        "database": "mp_disposable_r0_r1_restore_3ec081c191074e8c8884f3f9f2d81bae",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e"
+      }
+    ],
+    "worker_id": "36367eba51db77763f268ee5b234d419e2d4ff8077850e68292434091f46e418"
+  },
+  "restored_observation_digest": "sha256:425cea144a17a5d739575135c71f76009dd9399e603a76f55541041933fa09a9",
+  "restore_result_digest": "sha256:f7faa99a86c35636554ad4ae3602c977f5c245af747ef0158befdde358fb01c1",
+  "review": {
+    "review_id": "a4735249-6ab0-4851-9229-116f235de4f2",
+    "issued_at": "2026-10-28T12:13:15Z",
+    "expires_at": "2026-10-28T12:28:15Z",
+    "policy_version": 1,
+    "operator_authorization_generation": 2
+  }
+}

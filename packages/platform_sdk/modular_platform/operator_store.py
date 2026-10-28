@@ -273,7 +273,7 @@ class OperatorStore:
             set((item.get('target_permissions') or {}).get('defines', {})) - set((item.get('previous_permissions') or {}).get('defines', {}))
             or any(request not in (item.get('previous_permissions') or {}).get('requests', []) for request in item['target_permissions'].get('requests', []))
             or set(item['target_activation']['scopes']) - set((item.get('previous_activation') or {}).get('scopes', []))
-            for item in declarations.values())
+            for item in declarations.values()) or any(item['action']=='grant' for item in bundle['plan']['permission_changes'])
         native_change = any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade') for item in bundle['plan']['artifacts'])
         if native_change and not acknowledgments['trust_expansion'] or permission_expansion and not acknowledgments['permission_expansion']:
             raise OperatorError('New native code or expanded declarations require explicit acknowledgment')

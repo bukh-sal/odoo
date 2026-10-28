@@ -1,0 +1,18 @@
+[
+  {
+    "container_id": "3e054642dd8de74ba55520cbe8f270471bcb393962a2f6c463a236d23b587520",
+    "image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-1",
+    "networks": []
+  },
+  {
+    "container_id": "8b6e0784db8d069767a888c3efbd42e2209b27cfec82c8fc96980011028bdd4d",
+    "image_id": "sha256:ac3e9995223265a3e41c29f3ef950bb1599401ba5e9054191dd84ea9bbf8d3ca",
+    "running": true,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-3ec081c191074e8c8884f3f9f2d81bae",
+    "networks": [
+      "mp-r0-r1g5fd0445d406d6_runtime"
+    ]
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "state": "restored_verified",
+  "fresh_database": "mp_disposable_r0_r1_restore_3ec081c191074e8c8884f3f9f2d81bae",
+  "failed_database_retained": true,
+  "keep_traffic_closed": true,
+  "operation_status": {
+    "operation_id": "3ec081c1-9107-4e8c-8884-f3f9f2d81bae",
+    "plan_hash": "sha256:cd0e9cd19ef06d75352de36c09d570d7f0d28a2367f73b87e52fd92716dae3e5",
+    "state": "revoked",
+    "phase": "restore_verified",
+    "mutation_started": true,
+    "traffic_resumed": false,
+    "backup_id": "3ec081c1-9107-4e8c-8884-f3f9f2d81bae",
+    "approval_expires_at": "2026-10-28T12:26:01Z",
+    "history": [
+      {
+        "sequence": 56,
+        "utc": "2026-10-28T12:10:29Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:cd0e9cd19ef06d75352de36c09d570d7f0d28a2367f73b87e52fd92716dae3e5"
+        }
+      },
+      {
+        "sequence": 57,
+        "utc": "2026-10-28T12:11:01Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:cd0e9cd19ef06d75352de36c09d570d7f0d28a2367f73b87e52fd92716dae3e5"
+        }
+      },
+      {
+        "sequence": 58,
+        "utc": "2026-10-28T12:11:17Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 23468,
+          "lock_owner_digest": "sha256:32b406e026270c75cda41f4d58ad197c8dc2efd7fd784417553b34ab6e4b39dc"
+        }
+      },
+      {
+        "sequence": 59,
+        "utc": "2026-10-28T12:11:28Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 60,
+        "utc": "2026-10-28T12:11:51Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 61,
+        "utc": "2026-10-28T12:11:54Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 62,
+        "utc": "2026-10-28T12:12:00Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "3ec081c1-9107-4e8c-8884-f3f9f2d81bae"
+        }
+      },
+      {
+        "sequence": 63,
+        "utc": "2026-10-28T12:12:07Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 64,
+        "utc": "2026-10-28T12:12:11Z",
+        "code": "migrated",
+        "details": {}
+      },
+      {
+        "sequence": 65,
+        "utc": "2026-10-28T12:12:13Z",
+        "code": "workers_replaced",
+        "details": {}
+      },
+      {
+        "sequence": 66,
+        "utc": "2026-10-28T12:12:17Z",
+        "code": "ready",
+        "details": {}
+      },
+      {
+        "sequence": 67,
+        "utc": "2026-10-28T12:12:18Z",
+        "code": "release_published",
+        "details": {}
+      },
+      {
+        "sequence": 68,
+        "utc": "2026-10-28T12:12:19Z",
+        "code": "recovery_required",
+        "details": {
+          "code": "READINESS_FAILED"
+        }
+      },
+      {
+        "sequence": 69,
+        "utc": "2026-10-28T12:12:44Z",
+        "code": "restore_authorized",
+        "details": {
+          "decision_hash": "sha256:a520169af6862356c822240c9bd5dda7ffb7c14803a015551f2e488b0f136e36",
+          "fresh_database": "mp_disposable_r0_r1_restore_3ec081c191074e8c8884f3f9f2d81bae"
+        }
+      },
+      {
+        "sequence": 70,
+        "utc": "2026-10-28T12:12:48Z",
+        "code": "restore_target_created",
+        "details": {
+          "fresh_database": "mp_disposable_r0_r1_restore_3ec081c191074e8c8884f3f9f2d81bae"
+        }
+      },
+      {
+        "sequence": 71,
+        "utc": "2026-10-28T12:13:04Z",
+        "code": "restore_verified",
+        "details": {
+          "decision_hash": "sha256:a520169af6862356c822240c9bd5dda7ffb7c14803a015551f2e488b0f136e36",
+          "failed_database_retained": true,
+          "fresh_database": "mp_disposable_r0_r1_restore_3ec081c191074e8c8884f3f9f2d81bae",
+          "session_secret_rotated": true,
+          "technical_credentials_revoked": true,
+          "traffic_resumed": false
+        }
+      }
+    ]
+  }
+}

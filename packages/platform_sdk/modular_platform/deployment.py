@@ -79,9 +79,11 @@ class DockerObserver:
     def __init__(self, configuration):
         required = {'schema_version', 'deployment_id', 'project', 'sites', 'image_id',
                     'generation', 'policy_version', 'operator_authorization_generation', 'release_created_at'}
-        if not isinstance(configuration, dict) or set(configuration) != required or configuration['schema_version'] != 1:
+        if not isinstance(configuration, dict) or not required<=configuration.keys() or not configuration.keys()<=required|{'worker_id'} or configuration['schema_version'] != 1:
             raise PlanningError('Exact independently owned deployment configuration required')
         self.config = configuration
+        if 'worker_id' in configuration and not re.fullmatch('[0-9a-f]{64}',configuration['worker_id']):
+            raise PlanningError('Exact independently selected worker identity required')
         if not re.fullmatch('mp-r0-r1[a-z0-9]+', configuration['project']):
             raise PlanningError('This adapter currently targets only named disposable R1 projects')
         if str(UUID(configuration['deployment_id'])) != configuration['deployment_id'] or not re.fullmatch('sha256:[0-9a-f]{64}', configuration['image_id']):
@@ -95,17 +97,25 @@ class DockerObserver:
     def _container(self, service, *, stopped=False):
         raw = _run(['docker', 'ps', *(['--all'] if stopped else []), '-q', '--filter', 'label=com.docker.compose.project=' + self.config['project'],
                     '--filter', 'label=com.docker.compose.service=' + service]).decode().split()
+        if service=='app' and raw:
+            raw=[value for value in raw if load_json(_run(['docker','inspect','--format','{{json .Image}}',value]))==self.config['image_id']]
+            if self.config.get('worker_id'):
+                raw=[value for value in raw if self.config['worker_id'].startswith(value)]
         if len(raw) != 1 or not re.fullmatch('[0-9a-f]{12,64}', raw[0]):
             raise PlanningError('Exactly one running container per observed service required')
         return raw[0]
 
-    def read(self, *, quiesced=False):
-        app, database = self._container('app', stopped=quiesced), self._container('db')
-        identity = load_json(_run(['docker', 'inspect', '--format', '{{json .Image}}', app]))
+    def read(self, *, quiesced=False, missing_worker=False, uncertain_native=False):
+        database=self._container('db')
+        app=None
+        if missing_worker:
+            if not quiesced:raise PlanningError('Missing-worker observation requires offline source inspection')
+        else:app=self._container('app',stopped=quiesced)
+        identity = self.config['image_id'] if app is None else load_json(_run(['docker', 'inspect', '--format', '{{json .Image}}', app]))
         if identity != self.config['image_id']:
             raise PlanningError('Running application image differs from operator pin')
         if quiesced:
-            running = load_json(_run(['docker', 'inspect', '--format', '{{json .State.Running}}', app]))
+            running = False if app is None else load_json(_run(['docker', 'inspect', '--format', '{{json .State.Running}}', app]))
             if running:
                 raise PlanningError('Quiesced observation requires stopped application workers')
             runtime = load_json(_run(['docker', 'run', '--rm', '--network', 'none', '--read-only',
@@ -122,7 +132,7 @@ class DockerObserver:
             site = load_json(raw)
             if site['site_id'] != target['site_id']:
                 raise PlanningError('Observed site identity differs from operator target')
-            if any(item['state'] != 'installed' for item in site['native_modules']):
+            if not uncertain_native and any(item['state'] != 'installed' for item in site['native_modules']):
                 raise PlanningError('Native registry has a pending/uncertain module operation')
             sites.append(site)
         return {'image_id': identity, 'runtime': runtime, 'sites': sites}

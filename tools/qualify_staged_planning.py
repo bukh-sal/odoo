@@ -16,6 +16,8 @@ from modular_platform.deployment import DockerObserver
 from modular_platform.lifecycle_planning import installation_id
 from modular_platform.plans import data_digest,plan_hash,_display
 from modular_platform.operator_store import OperatorStore
+from modular_platform.native_executor import NativeExecutor
+from modular_platform.operator_os import OperatorError
 from modular import configuration
 
 
@@ -73,8 +75,13 @@ def main():
         write(output/'registered.json',result)
         approved=invoke(operations+['approve',operation,'--plan-hash',bundle['plan_hash'],'--noninteractive','--ack-trust']+validation)
         write(output/'approved.json',approved)
-        blocked=invoke(prefix+['plugin','apply',operation]+options,success=False)
-        assert 'current-image mutation denied' in blocked['message'];write(output/'wrong-executor-denied.json',blocked)
+        # Deliberately exercise the wrong adapter directly. The public CLI may
+        # support staged execution; a read/plan qualifier must never invoke it.
+        try:NativeExecutor(OperatorStore(control),target,catalog_root,validator).apply(operation)
+        except OperatorError as error:
+            assert 'current-image mutation denied' in str(error)
+            write(output/'wrong-executor-denied.json',{'message':str(error)})
+        else:raise AssertionError('Current-image adapter accepted a staged plan')
         assert observer.state(observer.read(),snapshot)==before
     finally:
         if registered:write(output/'revoked.json',invoke(operations+['revoke-approval',operation]))

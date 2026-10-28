@@ -10,7 +10,6 @@ import json
 import os
 from pathlib import Path
 import subprocess
-import time
 
 from .approval_validation import IndependentValidator
 from .catalog import Catalog
@@ -28,7 +27,31 @@ with tarfile.open(fileobj=sys.stdout.buffer,mode='w|gz') as archive:
 """
 
 
+def verify_native_state(bundle,state,previous,observation):
+    if state['release_digest']!=bundle['plan']['target_release_digest']:
+        raise OperatorError('Ready release differs from approved executable lock')
+    expected={(item['installation_id'],item['workspace_id']):dict(item) for item in previous['installations']}
+    for target in bundle['operation_lock']['targets']:
+        key=target['installation_id'],target['workspace_id']
+        if target['action']=='install':
+            if key in expected:raise OperatorError('Install target already exists in checkpoint')
+            expected[key]={name:value for name,value in target.items() if name!='action'}|{
+                'state':'installed','feature_state':'enabled','metadata_state':'installed'}
+        elif key not in expected:raise OperatorError('Upgrade target is absent from checkpoint')
+    actual={(item['installation_id'],item['workspace_id']):item for item in state['installations']}
+    if actual!=expected or state['bindings']!=bundle['operation_lock']['bindings']:
+        raise OperatorError('Ready metadata/bindings or preserved availability differ from approved targets')
+    grants={(site['site_id'],row['workspace_id'],row['installation_id'],row['capability']):row
+        for site in observation['sites'] for row in site['grants']}
+    for change in bundle['plan']['permission_changes']:
+        target=next(item for item in bundle['operation_lock']['targets'] if item['plugin_id']==change['plugin_id'] and item['workspace_id']==change['workspace_id'])
+        actual=grants.get((target['site_id'],target['workspace_id'],target['installation_id'],change['capability']))
+        if not actual or actual['state']!=('approved' if change['action']=='grant' else 'revoked') or actual['policy_version']!=bundle['plan']['policy_version']:
+            raise OperatorError('Ready permission metadata differs from exact approved changes')
+
+
 class NativeExecutor:
+    staged_execution=False
     def __init__(self, store, target_path, catalog_root, validator):
         self.store, self.target_path = store, Path(target_path)
         self.config = load_json(self.target_path.read_bytes())
@@ -36,7 +59,25 @@ class NativeExecutor:
         self.catalog_root, self.validator = catalog_root, validator
 
     def _validate(self, *, quiesced=False):
-        return IndependentValidator(self.config, self.catalog_root, self.validator, quiesced=quiesced)
+        from .release_staging import StageStore
+        stages=StageStore(self.store,self.config,Catalog(self.catalog_root,self.validator,readonly=True))
+        return IndependentValidator(self.config, self.catalog_root, self.validator, quiesced=quiesced,stage_store=stages)
+
+    def _execution_image(self,bundle):
+        return bundle['operation_lock'].get('staged_image',{}).get('target_image_id',self.config['image_id'])
+
+    def _replace_workers(self,app,bundle,directory):
+        target=dict(self.config,image_id=self._execution_image(bundle),
+            generation=bundle['operation_lock']['release']['generation'],release_created_at=bundle['plan']['created_at'])
+        from .workers import ensure
+        inventory=bundle['operation_lock'].get('staged_image',{}).get('inventory_digest')
+        if not inventory:
+            inventory=self.observer.read(quiesced=True)['runtime']['inventory_digest']
+        app=ensure(target,target['image_id'],bundle['plan']['operation_id'],inventory_digest=inventory)
+        target['worker_id']=app
+        _write_new(directory/'worker-replacement.json',{'container_id':app,'configuration':target,'previous_image_id':self.config['image_id']})
+        _run(['docker','start',app])
+        return app,target
 
     def mirror_progress(self, operation):
         # App progress is a best-effort mirror. A broken/untrusted application
@@ -69,7 +110,7 @@ class NativeExecutor:
             raise OperatorError('Unexpected executor deployment topology')
         return app, database, edge
 
-    def _child(self, operation, suffix, *, writable=False, network=True):
+    def _child(self, operation, suffix, *, writable=False, network=True,image_id=None):
         project = self.config['project']
         name = project+'-op-'+operation+'-'+suffix
         arguments = ['docker', 'run', '--name', name, '--label', 'com.modular.operation='+operation,
@@ -78,7 +119,7 @@ class NativeExecutor:
             '--memory', '1536m', '--cpus', '2', '--network', project+'_runtime' if network else 'none',
             '--mount', 'type=volume,source='+project+'_appconfig,target=/run/secrets,readonly',
             '--mount', 'type=volume,source='+project+'_filestore,target=/var/lib/modular'+('' if writable else ',readonly'),
-            '--entrypoint', '/venv/bin/python', self.config['image_id']]
+            '--entrypoint', '/venv/bin/python', image_id or self.config['image_id']]
         return arguments, name
 
     def _private_command(self, arguments, path, *, input=None, timeout=300):
@@ -115,10 +156,10 @@ class NativeExecutor:
 
     def apply(self, operation):
         bundle = self.store.bundle(operation)
-        if 'staged_image' in bundle['operation_lock']:
+        if 'staged_image' in bundle['operation_lock'] and not self.staged_execution:
             raise OperatorError('Staged native execution must use the new-image executor adapter; current-image mutation denied')
-        if bundle['plan']['operation_type'] != 'install':
-            raise OperatorError('This executor currently accepts current-image native installation only')
+        if bundle['plan']['operation_type'] not in (('install','upgrade') if self.staged_execution else ('install',)):
+            raise OperatorError('Native execution requires a supported install/upgrade plan')
         plan = bundle['plan']
         with OperationLocks(self.store.root/'locks', plan['deployment_id'], plan['site_ids']) as locks:
             if self.store.status(operation)['state'] == 'completed':
@@ -163,42 +204,34 @@ class NativeExecutor:
                 plugins = {item['manifest']['plugin']['id']: item for item in snapshot
                     if any(entry['plugin_id'] == item['manifest']['plugin']['id'] and entry['digest'] == item['digest']
                            for entry in bundle['operation_lock']['release']['plugins'])}
-                addons = sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in bundle['operation_lock']['targets']})
-                arguments, child = self._child(operation, 'native', writable=True)
+                image=self._execution_image(bundle)
+                installs=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in bundle['operation_lock']['targets'] if item['action']=='install'})
+                upgrades=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in bundle['operation_lock']['targets'] if item['action']=='upgrade'})
+                arguments, child = self._child(operation, 'native', writable=True,image_id=image)
+                flags=(['-i',','.join(installs)] if installs else [])+(['-u',','.join(upgrades)] if upgrades else [])
                 self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
-                    '-i', ','.join(addons), '--stop-after-init', '--no-http', '--workers=0', '--max-cron-threads=0', '--without-demo'], directory/'native.log')
+                    *flags, '--stop-after-init', '--no-http', '--workers=0', '--max-cron-threads=0', '--without-demo'], directory/'native.log')
                 locks.check()
                 payload = {'site_id': self.config['sites'][0]['site_id'], 'deployment_id': self.config['deployment_id'],
                     'operation_id': operation, 'generation': bundle['operation_lock']['release']['generation'],
                     'release_digest': plan['target_release_digest'], 'targets': bundle['operation_lock']['targets'],
-                    'plugins': plugins, 'bindings': bundle['operation_lock']['bindings']}
-                arguments, child = self._child(operation, 'metadata')
+                    'plugins': plugins, 'bindings': bundle['operation_lock']['bindings'],
+                    'permission_changes':bundle['plan']['permission_changes'],'database':self.config['sites'][0]['database'],
+                    'policy_version':plan['policy_version'],
+                    'previous_plugins':{item['plugin_id']:item for item in load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']['release_lock']['plugins']}}
+                arguments, child = self._child(operation, 'metadata',image_id=image)
                 arguments.insert(2, '-i')
                 self._private_command(arguments+['-c', Path(__file__).with_name('install_metadata.py').read_text()], directory/'metadata.log', input=json.dumps(payload).encode())
                 self.store.advance(operation, locks, 'migrated')
                 failure = 'READINESS_FAILED'
-                _run(['docker', 'start', app])
+                app,target=self._replace_workers(app,bundle,directory)
                 self.store.advance(operation, locks, 'workers_replaced')
-                target = dict(self.config, generation=bundle['operation_lock']['release']['generation'], release_created_at=plan['created_at'])
-                deadline = time.monotonic()+90
-                while True:
-                    try:
-                        probe = "import urllib.request; r=urllib.request.urlopen('http://127.0.0.1:8069/web/login',timeout=5); assert r.status==200"
-                        _run(['docker', 'exec', app, '/venv/bin/python', '-c', probe])
-                        break
-                    except (ValueError, OSError):
-                        if time.monotonic() >= deadline:
-                            raise OperatorError('Registry readiness deadline exceeded')
-                        time.sleep(1)
+                from .workers import wait_ready
+                wait_ready(app)
                 observation = DockerObserver(target).read()
                 state = DockerObserver(target).state(observation, snapshot)['state']
-                if state['release_digest'] != plan['target_release_digest']:
-                    raise OperatorError('Ready release differs from approved executable lock')
-                expected = {(item['installation_id'], item['workspace_id']) for item in bundle['operation_lock']['targets']}
-                actual = {(item['installation_id'], item['workspace_id']) for item in state['installations']
-                          if item['state']=='installed' and item['feature_state']=='enabled'}
-                if not expected <= actual or state['bindings'] != bundle['operation_lock']['bindings']:
-                    raise OperatorError('Ready native metadata/bindings differ from exact targets')
+                previous=load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']
+                verify_native_state(bundle,state,previous,observation)
                 self.store.advance(operation, locks, 'ready')
                 temporary = self.target_path.with_name(self.target_path.name+'.'+operation+'.tmp')
                 _write_new(temporary, target)
@@ -219,3 +252,14 @@ class NativeExecutor:
                 # infer database rollback from a process exit or Python error.
                 self.store.fail(operation, locks, code=failure)
                 raise
+
+
+class StagedNativeExecutor(NativeExecutor):
+    """Same journal/checkpoint protocol, with independently pinned replacement."""
+    staged_execution=True
+
+    def apply(self,operation):
+        bundle=self.store.bundle(operation)
+        if 'staged_image' not in bundle['operation_lock']:
+            raise OperatorError('Staged executor requires an exact independent image descriptor')
+        return super().apply(operation)

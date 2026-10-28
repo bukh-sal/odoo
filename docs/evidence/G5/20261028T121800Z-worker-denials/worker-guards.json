@@ -1,0 +1,32 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T12:17:23.831627+00:00",
+  "image_id": "sha256:ac3e9995223265a3e41c29f3ef950bb1599401ba5e9054191dd84ea9bbf8d3ca",
+  "previous_image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+  "observations": [
+    {
+      "case": "wrong_inventory_pin",
+      "result": "denied_before_native_import",
+      "native_imported": false
+    },
+    {
+      "case": "wrong_database_inventory",
+      "result": "denied_before_native_import",
+      "native_imported": false
+    },
+    {
+      "case": "extra_addon",
+      "result": "denied_before_native_import",
+      "native_imported": false
+    }
+  ],
+  "deployment_state_unchanged": true,
+  "state_digest": "sha256:672812acab3864dc51b076597e737b3124c59ca8806c4b88a535d1bba04af03b",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_start.py": "91f878938cba9dbf43a8773b056d1d01f805372913478b32151631343b3e6856",
+    "tools/qualify_worker_guards.py": "0040552490f5f50c1c1c5d0017a6efc9d7c5767cdaf1d53f524d9a749b4c2855"
+  },
+  "limits": [
+    "Actual negative probes qualify executor-created worker guards; fresh-install default startup and complete G5 acceptance remain pending."
+  ]
+}

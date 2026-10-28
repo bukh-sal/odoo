@@ -117,6 +117,35 @@ class StagedPlans(unittest.TestCase):
                 targets=[target()|{'installation_id':installation_id(self.site,'org.test.a')}],
                 operation_type='install',operation_id=ident(500),created_at=STAMP)
 
+    def test_upgrade_derives_exact_new_capability_and_independent_recompute_rejects_omission(self):
+        request={'capability':'org.test.a:records.read','scope':'workspace','reason':'reviewed integration'}
+        self.new['manifest']['permissions']['requests']=[request]
+        self.runtime=staged_runtime([self.new]);self.descriptor['runtime_digest']=data_digest(self.runtime)
+        bundle=self.prepare()
+        self.assertEqual(bundle['plan']['permission_changes'],[{'plugin_id':'org.test.a','workspace_id':ident(30),
+            'capability':request['capability'],'action':'grant'}])
+        self.validator()(bundle)
+        # Rehashing the envelope does not permit a proposal to hide a grant.
+        from modular_platform.plans import plan_hash,_display
+        bundle['plan']['permission_changes']=[]
+        bundle['plan_hash']=plan_hash(bundle['plan']);bundle['display']=_display(bundle['plan'],bundle['operation_lock'])
+        with self.assertRaises(OperatorError):self.validator()(bundle)
+
+    def test_install_does_not_silently_reapprove_existing_revoked_capability(self):
+        request={'capability':'org.test.a:records.read','scope':'workspace','reason':'integration'}
+        self.new['manifest']['permissions']['requests']=[request]
+        self.runtime=staged_runtime([self.new]);self.descriptor['runtime_digest']=data_digest(self.runtime)
+        self.site['workspaces'].append({'workspace_id':ident(31),'state':'active'})
+        target_b=self.target|{'action':'install','workspace_id':ident(31)}
+        self.site['grants']=[{'workspace_id':ident(31),'installation_id':ident(100),'capability':request['capability'],'state':'revoked'}]
+        # This fixture already has the new artifact in the release; adding a
+        # workspace feature must preserve a prior explicit revocation there.
+        self.document['state']['release_lock']=base_state([self.new])['release_lock']
+        self.document['state']['release_digest']=data_digest(self.document['state']['release_lock'])
+        bundle=prepare_staged_plan(self.document,[self.site],self.catalog,self.runtime,self.descriptor,
+            targets=[target_b],operation_type='install',operation_id=ident(500),created_at=STAMP)
+        self.assertEqual(bundle['plan']['permission_changes'],[])
+
 
 class PrivateStageStore(unittest.TestCase):
     def test_actual_immutable_private_record_rejects_image_or_base_configuration_substitution(self):

@@ -13,7 +13,7 @@ import sys
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py', 'test_recovery.py', 'test_release_staging.py']
+PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py', 'test_recovery.py', 'test_release_staging.py', 'test_workers.py']
 
 
 def run(command, *, input=None):

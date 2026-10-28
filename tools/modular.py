@@ -226,6 +226,9 @@ def main(argv=None):
             from modular_platform.native_executor import NativeExecutor
             store=OperatorStore(args.store)
             executor=NativeExecutor(store,args.deployment_config,args.catalog,validator)
+            if 'staged_image' in store.bundle(args.operation_id)['operation_lock']:
+                from modular_platform.native_executor import StagedNativeExecutor
+                executor=StagedNativeExecutor(store,args.deployment_config,args.catalog,validator)
             if store.bundle(args.operation_id)['plan']['operation_type'] in ('suspend','enable'):
                 from modular_platform.feature_executor import FeatureExecutor
                 executor=FeatureExecutor(executor)

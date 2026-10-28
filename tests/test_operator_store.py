@@ -89,6 +89,15 @@ class OperatorStoreTests(unittest.TestCase):
                 self.store.reserve(self.operation, held, self.revalidate)
         self.assertEqual(self.store.status(self.operation)['state'], 'authorization_changed')
 
+    def test_explicit_grant_requires_permission_ack_even_without_new_declaration(self):
+        bundle=copy.deepcopy(self.bundle)
+        bundle['operation_lock']['declarations']={}
+        bundle['plan']['permission_changes']=[{'plugin_id':'org.test.a','workspace_id':ident(30),
+            'capability':'org.test.a:records.read','action':'grant'}]
+        with self.assertRaisesRegex(OperatorError,'explicit acknowledgment'):
+            self.store._check_acks(bundle,ACKS|{'permission_expansion':False})
+        self.store._check_acks(bundle,ACKS)
+
     def test_verified_restore_retires_original_approval_and_conservative_traffic_fence(self):
         self.approve()
         with self.locks() as held:
