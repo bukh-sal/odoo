@@ -1,0 +1,31 @@
+{
+  "result": "exact_approved_historical_artifact",
+  "worktree": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\worktrees\\g5-manager-upgrade",
+  "branch": "codex/g5-manager-upgrade-fixture",
+  "core_source_commit": "5e8dd6f664972df1d7684f205bc33bd64e03f888",
+  "notes_source_commit": "01832c10",
+  "plugin_id": "org.example.notes",
+  "package_version": "0.2.2",
+  "native_version": "19.0.0.2.2",
+  "artifact_digest": "sha256:fb7e53192237dcbe4877e52eb414330dcf963ff6fae03d83934567863b435ac6",
+  "archive_bytes_equal_to_curated_catalog": true,
+  "main_target_changed": false,
+  "source_files": {
+    "plugin.toml": "a125a65c37509c9571104328cdde5113e73bff0bc0601d60fdbb59cc7cef6f13",
+    "backend/odoo_addons/mp_example_notes/__init__.py": "700601c6004851130c3b1f496d67afed170adc1e42ba8eb46439c895ed663e3d",
+    "backend/odoo_addons/mp_example_notes/__manifest__.py": "233202285b24a30b0bddc51cacecddbc6f103c017b48860be5fa06834b9d2f12",
+    "backend/odoo_addons/mp_example_notes/models.py": "810dadf66c2999d81bfd5c2b038bd29245a13c26bde0ffc438ebf78a5d793173",
+    "backend/odoo_addons/mp_example_notes/security/ir.model.access.csv": "5bacdf48832cd10db144ed5019af4a7be04af2a0bd2951c97d7725a07772dd3d",
+    "backend/odoo_addons/mp_example_notes/security/rules.xml": "29babb9ca70645e7641e8126c31159762b64781f89313f0d92e74b1e6dac9e77",
+    "backend/odoo_addons/mp_example_notes/services.py": "1fbe5bd129ca771b2d95f099eca98adbbe7699b2e8f775096521b1b0d0e221ca",
+    "backend/odoo_addons/mp_example_notes/views/notes.xml": "aa912e68e87c09561dc8e2c53bfe5bae16dda1dc0aa0d474b6bc31f851ba0710",
+    "schemas/note-detail-actions.json": "8b69de760e3ec034d147a2040d606e94e32d59a027ddef94419fbf8e348eb26c",
+    "schemas/documents-v1.json": "bee8edcc2a9ee8bf3a6242539889f83791dc6a1c929204f46caac6ccd5fb602d",
+    "schemas/documents-v2.json": "b966b8097ca7858712793a528a7e920665d7993ccf8f082684f03228f3c5b7d8",
+    "schemas/notes-export-v1.json": "f11775b049d68956741a43ff998d978c7f3c3150e10c12e9106718cd25530a8d",
+    "notices/LICENSE": "abc09dad5f84a76e1b0279237053cae16c03228ab27d8d467677054c2bd17eeb",
+    "notices/COPYRIGHT": "86e49232d2162708d05405ed5ff6dc5594b73ef4b0f25d2749cfae13493b620c",
+    "provenance.json": "005e048d41f31115f6cee4c68ae4bcf112e006b3eb274c2183dbe6c2be2ced36",
+    "inventory.json": "61da6b23803cee65c8ebed6b58dcc69a0571d4919dbe46afa32e35ff94b78a5f"
+  }
+}

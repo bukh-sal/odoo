@@ -1,0 +1,8 @@
+{
+  "result": "build_not_launched",
+  "utc": "2026-10-28T21:05:26.967346+00:00",
+  "reason": "Fresh worktree had no private control/locks directory; ProcessLock failed before the Docker subprocess/log creation.",
+  "command_not_started": true,
+  "observation": "build_candidate command terminal exit1, FileNotFoundError at ProcessLock.acquire before subprocess.run",
+  "next": "Create protected lock directory and execute the same recorded immutable-tag build exactly once."
+}

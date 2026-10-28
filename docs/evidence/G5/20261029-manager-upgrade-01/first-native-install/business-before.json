@@ -1,0 +1,11 @@
+{
+  "grants": [],
+  "bindings": [],
+  "features": [],
+  "native_state": "uninstalled",
+  "migration_pre": null,
+  "migration_post": null,
+  "native_version": null,
+  "positive_constraint": false,
+  "notes": null
+}

@@ -1,0 +1,128 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Plugin operations":
+    - paragraph: Prepare a plan, request the operation, then use local operator approval and apply.
+    - paragraph: Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.
+    - generic: Plugin and version
+    - combobox "Plugin and version":
+      - option "Choose a plugin"
+      - option "Canvas · 0.1.2"
+      - option "Canvas · 0.1.3"
+      - option "Notes · 0.2.1"
+      - option "Notes · 0.2.2"
+      - option "Notes · 0.2.3" [selected]
+      - option "Notes Labels · 0.2.0"
+      - option "Notes Labels · 0.2.1"
+    - generic: Operation
+    - combobox "Operation":
+      - option "Install"
+      - option "Upgrade" [selected]
+      - option "Feature suspension"
+      - option "Enable feature"
+      - option "Native uninstall"
+      - option "Unregister service"
+      - option "Remove unused artifact"
+    - generic: Workspace
+    - combobox "Workspace":
+      - option "Choose a workspace"
+      - option "Personal" [selected]
+      - option "Research"
+    - checkbox "Include dependent changes in the proposed plan"
+    - text: Include dependent changes in the proposed plan
+    - button "Prepare plan"
+    - region "Package trust":
+      - heading "Notes" [level=2]
+      - paragraph: Workspace notes
+      - paragraph: "Publisher: example · License: LGPL-3.0-only"
+      - paragraph: "Trust: operator-approved-exact-digest · Signature verified: no"
+      - code: sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6
+    - region "Proposed operation":
+      - heading "Review proposed changes" [level=2]
+      - paragraph: Native code shares the host application's trust.
+      - paragraph: A coordinated database and filestore checkpoint is required.
+      - paragraph: Workers will restart on the selected release.
+      - table:
+        - rowgroup:
+          - row "Plugin Workspace Action":
+            - columnheader "Plugin"
+            - columnheader "Workspace"
+            - columnheader "Action"
+        - rowgroup:
+          - row "org.example.notes Personal upgrade":
+            - cell "org.example.notes"
+            - cell "Personal"
+            - cell "upgrade"
+      - table:
+        - rowgroup:
+          - row "Artifact Version Action Migration scripts":
+            - columnheader "Artifact"
+            - columnheader "Version"
+            - columnheader "Action"
+            - columnheader "Migration scripts"
+        - rowgroup:
+          - row "org.example.notes 0.2.3 upgrade 2":
+            - cell "org.example.notes"
+            - cell "0.2.3"
+            - cell "upgrade"
+            - cell "2"
+      - paragraph: "org.example.notes added capabilities: None; added scopes: None."
+      - paragraph: Native Python and same-origin frontend code is fully trusted.
+      - paragraph: Author destructive=false does not prove migration safety.
+      - paragraph: The staged image includes fully trusted native core/runtime code; image rollback alone does not restore database state.
+      - button "Download full plan and bindings"
+      - button "Request operation" [disabled]
+    - region "Operation progress":
+      - heading "Operation progress" [level=2]
+      - status:
+        - strong: awaiting_operator_approval
+        - text: · prepared
+      - paragraph: Progress observation is stale. Refresh or inspect the local operator journal.
+      - paragraph:
+        - text: "Operation ID:"
+        - code: b23a479e-4964-42ec-b5af-0cacbe407b93
+      - paragraph:
+        - text: "Exact plan hash:"
+        - code: sha256:b99a61f2b40b21f736732b044336f7e802d3a5e9bbda39454499f0a7e260dfc8
+      - paragraph: "Next: local operator approval for this exact hash, followed by local apply."
+      - generic: modular --config OPERATOR_TRUST_CONFIG operations import-request b23a479e-4964-42ec-b5af-0cacbe407b93 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG modular --config OPERATOR_TRUST_CONFIG operations approve b23a479e-4964-42ec-b5af-0cacbe407b93 --plan-hash sha256:b99a61f2b40b21f736732b044336f7e802d3a5e9bbda39454499f0a7e260dfc8 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG modular --config OPERATOR_TRUST_CONFIG plugin apply b23a479e-4964-42ec-b5af-0cacbe407b93 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG modular --config OPERATOR_TRUST_CONFIG operations mirror-status b23a479e-4964-42ec-b5af-0cacbe407b93 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+      - paragraph: Replace the uppercase path placeholders with the independently configured local operator paths. Review the full plan and supply any required trust, permission or destructive acknowledgements locally.
+      - list:
+        - time: 2026-10-28T21:33:07Z
+        - text: · prepared
+        - time: 2026-10-28T21:33:08Z
+        - text: · application_request_imported
+      - table:
+        - rowgroup:
+          - row "Plugin Artifact Release Database Feature Service runtime":
+            - columnheader "Plugin"
+            - columnheader "Artifact"
+            - columnheader "Release"
+            - columnheader "Database"
+            - columnheader "Feature"
+            - columnheader "Service runtime"
+        - rowgroup:
+          - row "org.example.notes verified planned installed enabled Not applicable":
+            - cell "org.example.notes"
+            - cell "verified"
+            - cell "planned"
+            - cell "installed"
+            - cell "enabled"
+            - cell "Not applicable"

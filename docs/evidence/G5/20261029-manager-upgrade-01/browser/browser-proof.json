@@ -1,0 +1,42 @@
+{
+  "result": "passed_actual_browser_first_install_and_upgrade",
+  "utc": "2026-10-28T21:45:35.885847+00:00",
+  "origin": "http://g5upgrade.localhost:18079",
+  "workspace_id": 1,
+  "operations": [
+    {
+      "mode": "install",
+      "operation_id": "ff864a8b-a22d-4bfb-8755-165f0359a8c5",
+      "plan_hash": "sha256:7f2078acc8d5d881c280bf353b7bbd47b6751136d0d28381cfc41f2ecac37637",
+      "state": "completed_verified",
+      "terminal_browser_status_verified": true
+    },
+    {
+      "mode": "upgrade",
+      "operation_id": "b23a479e-4964-42ec-b5af-0cacbe407b93",
+      "plan_hash": "sha256:b99a61f2b40b21f736732b044336f7e802d3a5e9bbda39454499f0a7e260dfc8",
+      "state": "completed_verified",
+      "terminal_browser_status_verified": true
+    }
+  ],
+  "observations": [
+    "Actual browser preparation/request/download followed by independent CLI import, exact approval and apply; browser did not approve maintenance.",
+    "Old documents fenced on each activation; explicit Refresh platform restored the same completed operation ID/hash.",
+    "Native Odoo list preserves both retained records after upgrade; native Odoo form displays retained revision2/title/body.",
+    "No retained-record edits from native form; returned to list and closed temporary fixture tab13; original main tabs/session untouched."
+  ],
+  "captures": [
+    "first-native-completed.jpg",
+    "upgrade-requested.jpg",
+    "upgrade-completed.jpg",
+    "retained-before-upgrade.jpg",
+    "retained-after-upgrade.jpg",
+    "native-form-after-upgrade.jpg"
+  ],
+  "limits": [
+    "first-install-requested capture shows running/reserved progress after independent apply began, not preapproval state.",
+    "Completed UI includes honest stale-observation warning; private terminal journal was independently checked.",
+    "Screenshots are JPEG. Fixture native asset variant differs from main because installed modules differ.",
+    "No Canvas model installed in this fixture; existing main Canvas remains unchanged."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "approval_expires_at": "2026-10-28T21:50:30Z",
+  "control_authority": "independent_local_os",
+  "dimensions": [
+    {
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "feature_state": "enabled",
+      "installation_id": "627c208d-66b0-571a-b5c2-7496c2dcd2eb",
+      "plugin_id": "org.example.notes",
+      "release_state": "active",
+      "service_state": null,
+      "workspace_id": "5928be42-c80a-41ec-a532-e5995f6a9698"
+    }
+  ],
+  "error_code": null,
+  "history": [
+    {
+      "code": "prepared",
+      "sequence": 16,
+      "utc": "2026-10-28T21:33:07Z"
+    },
+    {
+      "code": "application_request_imported",
+      "sequence": 17,
+      "utc": "2026-10-28T21:33:08Z"
+    },
+    {
+      "code": "approved",
+      "sequence": 18,
+      "utc": "2026-10-28T21:35:30Z"
+    },
+    {
+      "code": "reserved",
+      "sequence": 19,
+      "utc": "2026-10-28T21:36:03Z"
+    },
+    {
+      "code": "staged",
+      "sequence": 20,
+      "utc": "2026-10-28T21:36:22Z"
+    },
+    {
+      "code": "maintenance",
+      "sequence": 21,
+      "utc": "2026-10-28T21:36:53Z"
+    },
+    {
+      "code": "drained",
+      "sequence": 22,
+      "utc": "2026-10-28T21:36:56Z"
+    },
+    {
+      "code": "checkpointed",
+      "sequence": 23,
+      "utc": "2026-10-28T21:37:03Z"
+    },
+    {
+      "code": "mutation_started",
+      "sequence": 24,
+      "utc": "2026-10-28T21:37:12Z"
+    },
+    {
+      "code": "migrated",
+      "sequence": 25,
+      "utc": "2026-10-28T21:37:16Z"
+    },
+    {
+      "code": "workers_replaced",
+      "sequence": 26,
+      "utc": "2026-10-28T21:37:19Z"
+    },
+    {
+      "code": "ready",
+      "sequence": 27,
+      "utc": "2026-10-28T21:37:31Z"
+    },
+    {
+      "code": "release_published",
+      "sequence": 28,
+      "utc": "2026-10-28T21:37:32Z"
+    },
+    {
+      "code": "traffic_resumed",
+      "sequence": 29,
+      "utc": "2026-10-28T21:37:34Z"
+    },
+    {
+      "code": "completed",
+      "sequence": 30,
+      "utc": "2026-10-28T21:37:36Z"
+    }
+  ],
+  "kind": "status",
+  "observed_at": "2026-10-28T21:38:01Z",
+  "operation_id": "b23a479e-4964-42ec-b5af-0cacbe407b93",
+  "phase": "completed",
+  "plan_hash": "sha256:b99a61f2b40b21f736732b044336f7e802d3a5e9bbda39454499f0a7e260dfc8",
+  "requested_by": "c216633c-915d-46c5-81de-814b36c82084",
+  "schema_version": 1,
+  "source": "operator_journal_mirror",
+  "stale": false,
+  "state": "completed"
+}

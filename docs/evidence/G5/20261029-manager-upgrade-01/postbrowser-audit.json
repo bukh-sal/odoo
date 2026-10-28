@@ -1,0 +1,34 @@
+{
+  "result": "passed_read_only_reconciliation",
+  "utc": "2026-10-28T21:45:35.884777+00:00",
+  "main_generation": 28,
+  "main_config_exact": true,
+  "main_business_metadata_exact": true,
+  "main_state_exact": true,
+  "main_old_files_exact": 60,
+  "fixture_generation": 3,
+  "fixture_business_metadata_exact": true,
+  "fixture_state_exact": true,
+  "fixture_old_files_exact": 40,
+  "native_form_retained_revision": 2,
+  "before_after_native_list_dom_exact": true,
+  "current_runtime_sources_match_prior_qualified_identity": 11,
+  "baseline_worktree_matches_build_sources": 259,
+  "known_fixture_credentials_absent_from_public_files": true,
+  "operations": [
+    {
+      "mode": "install",
+      "operation_id": "ff864a8b-a22d-4bfb-8755-165f0359a8c5",
+      "plan_hash": "sha256:7f2078acc8d5d881c280bf353b7bbd47b6751136d0d28381cfc41f2ecac37637",
+      "state": "completed_verified",
+      "terminal_browser_status_verified": true
+    },
+    {
+      "mode": "upgrade",
+      "operation_id": "b23a479e-4964-42ec-b5af-0cacbe407b93",
+      "plan_hash": "sha256:b99a61f2b40b21f736732b044336f7e802d3a5e9bbda39454499f0a7e260dfc8",
+      "state": "completed_verified",
+      "terminal_browser_status_verified": true
+    }
+  ]
+}
