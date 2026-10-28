@@ -1,0 +1,22 @@
+{
+  "bindings": 10,
+  "deployment_id": "1e7d2963-6838-4428-ac1c-80a6b9cb3953",
+  "image_id": "sha256:65ab6a5143756af473e75023f217898db427436b59a27d153c554be5b2a025e2",
+  "item": "E-01b-independent-read",
+  "limitations": [
+    "No executor/apply approval or mutation.",
+    "Operator-store OS separation not yet qualified.",
+    "External-service and differing per-workspace provider adapters remain later work."
+  ],
+  "observation": "Two matching PostgreSQL REPEATABLE READ READ ONLY metadata snapshots plus static image/source/Python metadata; no native plugin/ORM import.",
+  "python_distributions": 75,
+  "release_digest": "sha256:fb743b130f6ad616becd3696158b5847ff24fc51fec492b0b5142874b4c15020",
+  "result": "passed",
+  "site_ids": [
+    "42a4aaa1-dfee-492c-8668-d8bf1a4e9a11"
+  ],
+  "site_installations": 3,
+  "state_digest": "sha256:b3e628518ad33fe15689b2fb47277bc74f03274a40cac99cbd562fa5eed29241",
+  "utc": "2026-10-28T05:30:30.058048+00:00",
+  "workspace_feature_rows": 6
+}

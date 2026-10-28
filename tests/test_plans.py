@@ -101,7 +101,7 @@ class Plans(unittest.TestCase):
         self.prepare(catalog, [target(), target('b', 101)])
         old = plugin('a')
         state = base_state([old])
-        state['installations'] = [{**target(), 'state': 'installed'}, {**target(value=101, workspace=31), 'state': 'installed'}]
+        state['installations'] = [{**target(), 'state': 'installed'}, {**target(workspace=31), 'state': 'installed'}]
         with self.assertRaisesRegex(PlanningError, 'untargeted installation'):
             self.prepare([plugin('a', '2.0.0')], [target(action='upgrade')], state=state, operation_type='upgrade')
 
@@ -144,16 +144,40 @@ class Plans(unittest.TestCase):
     def test_native_uninstall_is_destructive_preserves_source_and_covers_database(self):
         catalog = [plugin('a')]
         state = base_state(catalog)
-        state['installations'] = [{**target(), 'state': 'installed'}, {**target(value=101, workspace=31), 'state': 'installed'}]
+        state['installations'] = [{**target(), 'state': 'installed'}, {**target(workspace=31), 'state': 'installed'}]
         resolved = solution(catalog)
         with self.assertRaisesRegex(PlanningError, 'every workspace'):
             prepare_plan(state, state['release_lock'], resolved, [target(action='uninstall')], operation_type='uninstall')
         bundle = prepare_plan(state, state['release_lock'], resolved,
-            [target(action='uninstall'), target(value=101, workspace=31, action='uninstall')],
+            [target(action='uninstall'), target(workspace=31, action='uninstall')],
             operation_type='uninstall', created_at=STAMP)
         self.assertTrue(bundle['plan']['destructive'])
         self.assertTrue(bundle['plan']['backup']['required'])
         self.assertEqual(bundle['plan']['target_release_digest'], state['release_digest'])
+        self.assertTrue(check_bundle(bundle, state))
+
+    def test_enable_requires_scoped_provider_or_explicit_enable_cascade(self):
+        catalog = [plugin('a'), plugin('b', depends={'a': '>=1'})]
+        state = base_state(catalog)
+        state['installations'] = [{**target(), 'state': 'installed', 'feature_state': 'suspended'},
+                                 {**target('b', 101), 'state': 'installed', 'feature_state': 'suspended'}]
+        resolved = solution(catalog)
+        with self.assertRaisesRegex(PlanningError, 'Required provider must be installed and enabled'):
+            prepare_plan(state, state['release_lock'], resolved, [target('b', 101, action='enable')], operation_type='enable')
+        bundle = prepare_plan(state, state['release_lock'], resolved,
+            [target(action='enable'), target('b', 101, action='enable')], operation_type='enable')
+        self.assertTrue(check_bundle(bundle, state))
+
+    def test_suspending_provider_requires_dependent_scope_target(self):
+        catalog = [plugin('a'), plugin('b', depends={'a': '>=1'})]
+        state = base_state(catalog)
+        state['installations'] = [{**target(), 'state': 'installed', 'feature_state': 'enabled'},
+                                 {**target('b', 101), 'state': 'installed', 'feature_state': 'enabled'}]
+        resolved = solution(catalog)
+        with self.assertRaisesRegex(PlanningError, 'Explicit dependent cascade target'):
+            prepare_plan(state, state['release_lock'], resolved, [target(action='suspend')], operation_type='suspend')
+        bundle = prepare_plan(state, state['release_lock'], resolved,
+            [target(action='suspend'), target('b', 101, action='suspend')], operation_type='suspend')
         self.assertTrue(check_bundle(bundle, state))
 
     def test_artifact_removal_blocked_while_any_site_needs_it(self):

@@ -81,6 +81,26 @@ class PlanningCLI(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Read-only'):
             catalog.quarantine(self.configuration['approved_digests'][0])
 
+    def test_two_workspaces_share_site_installations_with_distinct_scoped_binding_ids(self):
+        document = copy.deepcopy(self.document)
+        original = list(document['request']['targets'])
+        document['request']['targets'].extend({**item, 'workspace_id': ident(31)} for item in original)
+        result = self.invoke(document)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        bundle = json.loads(result.stdout)
+        self.assertTrue(check_bundle(bundle, document['state']))
+        self.assertEqual(len(bundle['operation_lock']['targets']), 6)
+        self.assertEqual(len({item['installation_id'] for item in bundle['operation_lock']['targets']}), 3)
+        bindings = bundle['operation_lock']['bindings']
+        self.assertEqual(len(bindings), 10)
+        self.assertEqual(len({item['binding_id'] for item in bindings}), 10)
+        self.assertEqual({item['workspace_id'] for item in bindings}, {ident(30), ident(31)})
+        bad = copy.deepcopy(document)
+        bad['request']['targets'][-1]['installation_id'] = ident(999)
+        failed = self.invoke(bad)
+        self.assertEqual(failed.returncode, 2)
+        self.assertIn('stable plugin installation identity', failed.stderr)
+
     def test_malformed_or_approval_shaped_input_fails_without_traceback(self):
         for change in ({'approved': True}, {'state': {}}, {'request': {'approved': True}},
                        {'python_metadata': [{'kind': 'source_build', 'command': 'execute'}]}):

@@ -5,27 +5,29 @@ import copy
 from uuid import UUID, uuid5
 from packaging.utils import canonicalize_name
 
-from .plans import check_bundle, data_digest, prepare_plan, release_lock
-from .resolution import PlanningError, resolve_release
+from .plans import check_bundle, data_digest, prepare_plan, release_lock, scoped_installation_key
+from .resolution import PlanningError, resolve_release, binding_matches_scope
 
 
 def scoped_bindings(solution, installations, previous):
     """Materialize explicit scoped aliases with stable IDs/generations."""
     by_scope = {(item['site_id'], item['workspace_id'], item['plugin_id']): item for item in installations}
-    old = {(item['consumer_installation_id'], item['alias']): item for item in previous}
+    old = {(item['consumer_installation_id'], item['workspace_id'], item['alias']): item for item in previous}
     bindings = []
-    for installation in sorted(installations, key=lambda item: item['installation_id']):
+    for installation in sorted(installations, key=lambda item: scoped_installation_key(item)):
         for selected in solution['bindings']:
             if selected['consumer'] != installation['plugin_id']:
+                continue
+            if not binding_matches_scope(selected, installation['site_id'], installation['workspace_id']):
                 continue
             provider = by_scope.get((installation['site_id'], installation['workspace_id'], selected['provider']))
             if not provider:
                 if selected['optional']:
                     continue
                 raise PlanningError('Required provider has no installation at the consumer scope')
-            prior = old.get((installation['installation_id'], selected['alias']))
+            prior = old.get((installation['installation_id'], installation['workspace_id'], selected['alias']))
             binding = {'schema_version': 1,
-                'binding_id': prior['binding_id'] if prior else str(uuid5(UUID(installation['installation_id']), 'service:' + selected['alias'])),
+                'binding_id': prior['binding_id'] if prior else str(uuid5(UUID(installation['installation_id']), 'service:' + installation['site_id'] + ':' + installation['workspace_id'] + ':' + selected['alias'])),
                 'site_id': installation['site_id'], 'workspace_id': installation['workspace_id'],
                 'consumer_installation_id': installation['installation_id'], 'alias': selected['alias'],
                 'service_id': selected['service_id'], 'contract_major': selected['contract_major'],
@@ -57,15 +59,28 @@ def prepare_document(document, catalog):
     for plugin in removed:
         locked.pop('plugin:' + plugin, None)
     snapshot = [item for item in catalog if item['manifest']['plugin']['id'] not in removed]
-    choices = {}
+    choices, scoped_choices = {}, {}
     for item in request.get('provider_choices', []):
-        if set(item) != {'consumer', 'alias', 'provider'} or (item['consumer'], item['alias']) in choices:
+        if set(item) not in ({'consumer', 'alias', 'provider'}, {'consumer', 'alias', 'provider', 'site_id', 'workspace_id'}):
             raise PlanningError('Provider choices require unique consumer-local aliases')
-        choices[item['consumer'], item['alias']] = item['provider']
+        if 'site_id' in item:
+            key = item['consumer'], item['alias'], item['site_id'], item['workspace_id']
+            if key in scoped_choices:
+                raise PlanningError('Duplicate scoped provider choice')
+            scoped_choices[key] = item['provider']
+        else:
+            key = item['consumer'], item['alias']
+            if key in choices:
+                raise PlanningError('Duplicate provider choice')
+            choices[key] = item['provider']
     for item in state['release_lock'].get('service_selection', []):
-        choices.setdefault((item['consumer'], item['alias']), item['provider'])
+        if item.get('scopes'):
+            for site_id, workspace_id in item['scopes']:
+                scoped_choices.setdefault((item['consumer'], item['alias'], site_id, workspace_id), item['provider'])
+        elif not any(key[:2] == (item['consumer'], item['alias']) for key in choices):
+            choices.setdefault((item['consumer'], item['alias']), item['provider'])
     resolved = resolve_release(snapshot, document['python_metadata'], document['environment'], request['requested'],
-        locked=locked, update=request.get('update', []), provider_choices=choices,
+        locked=locked, update=request.get('update', []), provider_choices=choices, scoped_provider_choices=scoped_choices,
         core_python=request.get('core_python', []), site_requirements=request.get('site_requirements'))
     if request['operation_type'] in ('suspend', 'enable', 'uninstall', 'unregister'):
         lock = state['release_lock']
@@ -74,12 +89,12 @@ def prepare_document(document, catalog):
         if not created_at:
             raise PlanningError('A fixed UTC creation time is required for reproducible release planning')
         lock = release_lock(resolved, document['provenance'], generation=state['release_lock']['generation'] + 1, created_at=created_at)
-    installations = {item['installation_id']: item for item in state['installations'] if item.get('state', 'installed') != 'not_installed'}
+    installations = {scoped_installation_key(item): item for item in state['installations'] if item.get('state', 'installed') != 'not_installed'}
     for item in request['targets']:
         if item['action'] in ('uninstall', 'unregister', 'remove'):
-            installations.pop(item['installation_id'], None)
+            installations.pop(scoped_installation_key(item), None)
         else:
-            installations[item['installation_id']] = item
+            installations[scoped_installation_key(item)] = item
     bindings = request.get('bindings')
     if bindings is None:
         bindings = scoped_bindings(resolved, list(installations.values()), state.get('bindings', []))

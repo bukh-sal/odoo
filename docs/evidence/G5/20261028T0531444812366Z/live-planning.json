@@ -1,0 +1,33 @@
+{
+  "approval_or_apply": false,
+  "base_state_digest": "sha256:b3e628518ad33fe15689b2fb47277bc74f03274a40cac99cbd562fa5eed29241",
+  "binding_count": 10,
+  "database_mutations": false,
+  "item": "E-01b-live-draft",
+  "observations": [
+    "Running image/inventory independently pinned and verified.",
+    "PostgreSQL metadata read through REPEATABLE READ READ ONLY; no ORM/plugin imports.",
+    "Three site installations expand to six workspace features with ten scoped bindings.",
+    "One Canvas workspace feature target; other workspace shares installation but is not targeted.",
+    "All75 installed Python distribution roots resolved from actual static metadata.",
+    "Real curated CLI draft preserves release and state; hash includes exact lock preimage."
+  ],
+  "other_workspace_id": "caabf388-b4d2-4ce5-a954-0fd7747cbb8d",
+  "plan_hash": "sha256:d6cbdd9dce2056d7ca2d4f7a7c55adc1be33b046f2de1fb83d19ea6538636240",
+  "python_distributions": 75,
+  "result": "passed",
+  "selected_workspace_id": "3bc15463-2b8f-4529-84fb-0b6dc36d90d9",
+  "shared_site_installation": "249b4a18-7b1c-4063-a490-8bd2851d8349",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/artifacts.py": "6965c17c022e44955d5d49d8076f276181767c6698920f1db8fa89da8c922601",
+    "packages/platform_sdk/modular_platform/catalog.py": "671909cfcf3c2c019dc71e03ce49b72f833d39facbac56df9d87873137e06767",
+    "packages/platform_sdk/modular_platform/deployment.py": "558beec27b8ffcf09b135695bd166fef5f4d6c17b4073b810eec6b08c511b35c",
+    "packages/platform_sdk/modular_platform/planning_cli.py": "e8d196582648757a11e44de2aa6acb2d3d270d89fbf52ca85ae5e451c6110a1c",
+    "packages/platform_sdk/modular_platform/plans.py": "3c8fd208dfb3fda78ae5c0b2ee85bd86c5ce3b95b80c9596fe5f917fbf8773fc",
+    "packages/platform_sdk/modular_platform/resolution.py": "1b082574f76b5773f1ddc6f92e1907d14dd7751de6f5db694d50d891c37a2fa9",
+    "tools/modular.py": "7d9b4ed2f31ffc643d82ab4317f19658ea827c150d385b7a0ae566bd2e021c25",
+    "tools/observe_r1.py": "835c2f74d2f484dc7a6c6e133789b2e63beae9d16c99b88d9241a0a328e22e5c",
+    "tools/qualify_live_planning.py": "06317fdd123eeb0b78e47c26297425aeb66cf8f1c9bc332c48440aa0d38f675e"
+  },
+  "utc": "2026-10-28T05:31:49.361090+00:00"
+}

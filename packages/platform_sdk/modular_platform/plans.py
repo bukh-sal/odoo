@@ -15,7 +15,7 @@ from uuid import UUID, uuid4
 import rfc8785
 
 from .contracts import canonical_plan, native_version, package_version, plan_hash, validate, validate_binding
-from .resolution import PlanningError
+from .resolution import PlanningError, binding_matches_scope
 
 
 def data_digest(value):
@@ -48,6 +48,25 @@ def _digest(value):
     if not isinstance(value, str) or not re.fullmatch('sha256:[0-9a-f]{64}', value):
         raise PlanningError('Immutable SHA256 identity required')
     return value
+
+
+def scoped_installation_key(item):
+    # One installation per site/plugin; many workspace feature scopes share it.
+    return item['installation_id'], item['workspace_id']
+
+
+def _check_installation_mapping(rows):
+    identities, scopes, seen = {}, {}, set()
+    for item in rows:
+        identity = item['installation_id']
+        owner = item['site_id'], item['plugin_id']
+        if identity in identities and identities[identity] != owner or owner in scopes and scopes[owner] != identity:
+            raise PlanningError('One stable plugin installation identity is required per site')
+        key = scoped_installation_key(item)
+        if key in seen:
+            raise PlanningError('Duplicate workspace feature installation scope')
+        seen.add(key)
+        identities[identity], scopes[owner] = owner, identity
 
 
 def applicable_migrations(manifest, previous_version):
@@ -139,7 +158,10 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
     locked_new = {item['plugin_id']: item for item in target_release['plugins']}
     if set(new) != set(locked_new) or any(new[key]['digest'] != locked_new[key]['digest'] for key in new):
         raise PlanningError('Target release lock differs from solved artifacts')
-    installed = {item['installation_id']: item for item in state['installations']}
+    _check_installation_mapping(state['installations'])
+    _check_installation_mapping(targets)
+    _check_installation_mapping(list({scoped_installation_key(item): item for item in state['installations'] + list(targets)}.values()))
+    installed = {scoped_installation_key(item): item for item in state['installations']}
     clean_targets, seen, artifacts, migrations = [], set(), {}, {}
     valid_actions = {'install', 'upgrade', 'suspend', 'enable', 'uninstall', 'unregister', 'remove'}
     for source in targets:
@@ -155,14 +177,14 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             'unregister': {'uninstall', 'unregister'}, 'remove': {'remove'}}
         if target['action'] not in allowed_actions.get(operation_type, set()):
             raise PlanningError('Target action disagrees with the operation type')
-        identity = target['installation_id']
+        identity = scoped_installation_key(target)
         if identity in seen:
             raise PlanningError('Duplicate installation target')
         seen.add(identity)
         previous = installed.get(identity)
         if target['action'] == 'install':
-            if previous or any(item['site_id'] == target['site_id'] and item['workspace_id'] == target['workspace_id']
-                               and item['plugin_id'] == target['plugin_id'] for item in installed.values()):
+            if previous and previous.get('state', 'installed') != 'not_installed' or any(item['site_id'] == target['site_id'] and item['workspace_id'] == target['workspace_id']
+                               and item['plugin_id'] == target['plugin_id'] and item.get('state', 'installed') != 'not_installed' for item in installed.values()):
                 raise PlanningError('Installation already exists at this exact scope')
         elif not previous or any(previous[key] != target[key] for key in ('site_id', 'workspace_id', 'plugin_id')):
             raise PlanningError('Target installation identity or scope changed')
@@ -196,7 +218,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         raise PlanningError('Every transitive artifact change needs explicit targets: ' + ', '.join(sorted(changed - covered)))
     for key in changed:
         for installation in state['installations']:
-            if installation['plugin_id'] == key and installation['installation_id'] not in seen:
+            if installation['plugin_id'] == key and scoped_installation_key(installation) not in seen:
                 raise PlanningError('Changed native/shared artifact has an untargeted installation')
     removed = set(old) - set(new)
     if removed - {item['plugin_id'] for item in clean_targets if item['action'] == 'remove'}:
@@ -205,19 +227,38 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         if target['action'] == 'remove' and any(item['plugin_id'] == target['plugin_id'] and item.get('state', 'installed') != 'not_installed' for item in state['installations']):
             raise PlanningError('Artifact is still needed by a site installation')
         if target['action'] == 'uninstall':
-            if any(item['plugin_id'] == target['plugin_id'] and item['site_id'] == target['site_id'] and item['installation_id'] not in seen for item in state['installations']):
+            if any(item['plugin_id'] == target['plugin_id'] and item['site_id'] == target['site_id'] and scoped_installation_key(item) not in seen for item in state['installations']):
                 raise PlanningError('Native uninstall must target every workspace installation in its site database')
         if target['action'] in ('suspend', 'uninstall', 'unregister'):
             for dependent in state['installations']:
-                if dependent['installation_id'] in seen or dependent['site_id'] != target['site_id'] or dependent['workspace_id'] != target['workspace_id']:
+                if scoped_installation_key(dependent) in seen or dependent['site_id'] != target['site_id'] or dependent['workspace_id'] != target['workspace_id']:
                     continue
                 if target['action'] == 'suspend' and dependent.get('feature_state') == 'suspended':
                     continue
                 entry = old.get(dependent['plugin_id'], {})
                 providers = {item['provider'] for item in state['release_lock'].get('service_selection', [])
-                             if item['consumer'] == dependent['plugin_id'] and not item['optional']}
+                             if item['consumer'] == dependent['plugin_id'] and not item['optional'] and binding_matches_scope(item, dependent['site_id'], dependent['workspace_id'])}
                 if target['plugin_id'] in set(entry.get('hard_dependencies', {})) | providers:
                     raise PlanningError('Explicit dependent cascade target required: ' + dependent['plugin_id'])
+        if target['action'] == 'enable':
+            required_plugins = set(new[target['plugin_id']]['manifest']['dependencies']['plugins'])
+            required_plugins.update(item['provider'] for item in solution['bindings']
+                if item['consumer'] == target['plugin_id'] and not item['optional']
+                and binding_matches_scope(item, target['site_id'], target['workspace_id']))
+            for plugin in required_plugins:
+                provider_installation = next((item for item in state['installations'] if item['site_id'] == target['site_id']
+                    and item['workspace_id'] == target['workspace_id'] and item['plugin_id'] == plugin), None)
+                enabling = provider_installation and any(item['action'] == 'enable' and scoped_installation_key(item) == scoped_installation_key(provider_installation) for item in clean_targets)
+                if (not provider_installation or provider_installation['state'] != 'installed'
+                        or provider_installation.get('metadata_state', 'installed') != 'installed'
+                        or provider_installation.get('feature_state', 'enabled') != 'enabled' and not enabling):
+                    raise PlanningError('Required provider must be installed and enabled at this scope: ' + plugin)
+                if new[plugin]['manifest']['runtime']['kind'] == 'external_service':
+                    key = provider_installation['installation_id'] + ':' + target['workspace_id']
+                    health = state.get('service_health', {}).get(key, {})
+                    expected_image = new[plugin]['manifest']['external_service']['expected_image'].split('@', 1)[1]
+                    if health.get('state') != 'healthy' or health.get('expected_image_digest') != expected_image:
+                        raise PlanningError('Required external provider needs independently verified current health/image identity')
     if operation_type in ('suspend', 'enable', 'uninstall', 'unregister') and data_digest(target_release) != state['release_digest']:
         raise PlanningError('Feature/database-only operation must preserve the executable release')
     ordered_targets = sorted(clean_targets, key=lambda item: (item['site_id'], item['workspace_id'], item['plugin_id'], item['installation_id']))
@@ -225,14 +266,14 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
     target_installations = dict(installed)
     for target in clean_targets:
         if target['action'] in ('uninstall', 'unregister', 'remove'):
-            target_installations.pop(target['installation_id'], None)
+            target_installations.pop(scoped_installation_key(target), None)
         else:
-            target_installations[target['installation_id']] = target
+            target_installations[scoped_installation_key(target)] = target
     bound_aliases = set()
     for binding in bindings:
         validate('binding', binding)
-        consumer = target_installations.get(binding['consumer_installation_id'])
-        provider_install = target_installations.get(binding['provider_installation_id'])
+        consumer = target_installations.get((binding['consumer_installation_id'], binding['workspace_id']))
+        provider_install = target_installations.get((binding['provider_installation_id'], binding['workspace_id']))
         if not consumer or not provider_install or any(item[key] != binding[key] for item in (consumer, provider_install) for key in ('site_id', 'workspace_id')):
             raise PlanningError('Binding scope/installation is outside the exact operation')
         if provider_install['plugin_id'] != binding['provider_plugin_id'] or consumer['plugin_id'] not in new or provider_install['plugin_id'] not in new:
@@ -244,10 +285,10 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         if not requirement or not provider:
             raise PlanningError('Binding references an undeclared alias or service API')
         validate_binding(binding, requirement, {**provider, 'plugin_id': provider_install['plugin_id'], 'installation_id': provider_install['installation_id']})
-        selected = next((item for item in solution['bindings'] if item['consumer'] == consumer['plugin_id'] and item['alias'] == binding['alias']), None)
+        selected = next((item for item in solution['bindings'] if item['consumer'] == consumer['plugin_id'] and item['alias'] == binding['alias'] and item['provider'] == provider_install['plugin_id'] and binding_matches_scope(item, binding['site_id'], binding['workspace_id'])), None)
         if not selected or selected['provider'] != provider_install['plugin_id'] or selected['api_version'] != binding['api_version']:
             raise PlanningError('Scoped binding disagrees with the solved provider selection')
-        identity = binding['consumer_installation_id'], binding['alias']
+        identity = binding['consumer_installation_id'], binding['workspace_id'], binding['alias']
         if identity in bound_aliases:
             raise PlanningError('Duplicate consumer-local binding alias')
         bound_aliases.add(identity)
@@ -255,18 +296,18 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         if installation['plugin_id'] not in new:
             continue
         for requirement in new[installation['plugin_id']]['manifest']['services']['requires']:
-            if not requirement.get('optional', False) and (installation['installation_id'], requirement['alias']) not in bound_aliases:
+            if not requirement.get('optional', False) and (installation['installation_id'], installation['workspace_id'], requirement['alias']) not in bound_aliases:
                 raise PlanningError('Missing required scoped binding')
     for endpoint in endpoints:
         validate('endpoint', endpoint)
-        installation = target_installations.get(endpoint['installation_id'])
+        installation = target_installations.get((endpoint['installation_id'], endpoint['workspace_id']))
         if not installation or any(installation[key] != endpoint[key] for key in ('site_id', 'workspace_id')) or installation['plugin_id'] not in new:
             raise PlanningError('Endpoint installation scope mismatch')
         manifest = new[installation['plugin_id']]['manifest']
         if manifest['runtime']['kind'] != 'external_service' or endpoint['endpoint_config'] != manifest['external_service']['endpoint_config'] or endpoint['expected_image_digest'] != manifest['external_service']['expected_image'].split('@', 1)[1]:
             raise PlanningError('Endpoint expectation differs from external metadata')
     for installation in target_installations.values():
-        if installation['plugin_id'] in new and new[installation['plugin_id']]['manifest']['runtime']['kind'] == 'external_service' and not any(item['installation_id'] == installation['installation_id'] for item in endpoints):
+        if installation['plugin_id'] in new and new[installation['plugin_id']]['manifest']['runtime']['kind'] == 'external_service' and not any(item['installation_id'] == installation['installation_id'] and item['workspace_id'] == installation['workspace_id'] for item in endpoints):
             raise PlanningError('External installation requires its independently configured endpoint')
     if len({item['binding_id'] for item in bindings}) != len(bindings) or len({item['endpoint_config'] for item in endpoints}) != len(endpoints):
         raise PlanningError('Duplicate binding or endpoint identity')

@@ -1,0 +1,10 @@
+{
+  "result": "failed",
+  "item": "E-01b-independent-read",
+  "step": "read_only_sql",
+  "exit_code": 3,
+  "reason": "Observer initially requested f.state; existing workspace feature column is availability. Corrected read-only query, not native schema.",
+  "database_mutations": false,
+  "bootstrap_result": "Operator target/trust/catalog created successfully; do not bootstrap again.",
+  "superseded_by": "20261028T0530257042931Z/independent-observation.json"
+}

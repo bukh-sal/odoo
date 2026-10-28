@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
 sys.path.insert(0, str(ROOT / 'tools'))
 from modular_platform.artifacts import ArtifactValidator, TrustPolicy
 from modular_platform.resolution import PlanningError, dependent_closure, resolve_release
+from modular_platform.planning_cli import scoped_bindings
 from reference_package import assemble
 
 ENVIRONMENT = {'platform_version': '0.1.0', 'native_runtime': 'odoo-19',
@@ -154,6 +155,22 @@ class Resolution(unittest.TestCase):
         self.assertEqual(solution['bindings'][0]['api_version'], '1.0')
         with self.assertRaises(PlanningError):
             self.solve([catalog[0], catalog[-1]], {'consumer': ''})
+
+    def test_different_workspace_providers_resolve_both_explicit_scopes_without_fallback(self):
+        from uuid import UUID
+        uid = lambda value: str(UUID(int=value))
+        site, first, second, third = (uid(value) for value in (1, 2, 3, 4))
+        catalog = [plugin('consumer', requires=[require()]), plugin('one', provides=[provide('one')]), plugin('two', provides=[provide('two')])]
+        solution = self.solve(catalog, {'consumer': ''}, scoped_provider_choices={
+            ('org.test.consumer', 'documents', site, first): 'org.test.one',
+            ('org.test.consumer', 'documents', site, second): 'org.test.two'})
+        self.assertEqual(set(versions(solution)), {'org.test.consumer', 'org.test.one', 'org.test.two'})
+        installations = [{'installation_id': uid(100 + i), 'site_id': site, 'workspace_id': workspace, 'plugin_id': 'org.test.' + name}
+                         for i, name in enumerate(('consumer', 'one', 'two')) for workspace in (first, second, third)]
+        bindings = scoped_bindings(solution, installations, [])
+        self.assertEqual({item['workspace_id']: item['provider_plugin_id'] for item in bindings}, {first: 'org.test.one', second: 'org.test.two'})
+        self.assertNotIn(third, [item['workspace_id'] for item in bindings])
+        self.assertEqual(len({item['binding_id'] for item in bindings}), 2)
 
     def test_optional_absent_incompatible_or_undeclared_native_coupling(self):
         consumer = plugin('consumer', optional={'one': '>=2'}, requires=[require(optional=True)])

@@ -49,6 +49,11 @@ def _service_matches(candidate, service):
             and Version(item['api_version']) in api_range(specifier, major)]
 
 
+def binding_matches_scope(binding, site_id, workspace_id):
+    scope = [site_id, workspace_id]
+    return ('scopes' not in binding or scope in binding['scopes']) and scope not in binding.get('excluded_scopes', [])
+
+
 def dependency_order(graph):
     """Deterministic dependency-first order, with the actual cycle in errors."""
     visited, active, result = set(), [], []
@@ -74,8 +79,9 @@ def dependency_order(graph):
 
 
 class _Provider(AbstractProvider):
-    def __init__(self, plugins, wheels, environment, locked, update, choices, core_python):
+    def __init__(self, plugins, wheels, environment, locked, update, choices, scoped_choices, core_python):
         self.environment, self.locked, self.update, self.choices = environment, locked, update, choices
+        self.scoped_choices = scoped_choices
         self.candidates = {}
         for descriptor in plugins:
             manifest = normalize_manifest(descriptor['manifest'])
@@ -156,19 +162,20 @@ class _Provider(AbstractProvider):
         plugin = candidate.metadata['manifest']['plugin']['id']
         alias = requirement['alias']
         service = (requirement['id'], requirement['contract_major'], requirement['version'])
-        explicit = self.choices.get((plugin, alias))
+        explicit = {self.choices[plugin, alias]} if (plugin, alias) in self.choices else set()
+        explicit.update(value for key, value in self.scoped_choices.items() if key[:2] == (plugin, alias))
         eligible = {item.key[7:] for key, values in self.candidates.items() if key.startswith('plugin:')
                     for item in values if self.is_satisfied_by(Need(item.key, service=service), item)}
         if explicit:
-            if explicit not in eligible:
+            if not explicit <= eligible:
                 raise PlanningError('Explicit service provider does not satisfy ' + plugin + ':' + alias)
-            return explicit
+            return sorted(explicit)
         if optional:
             # Optional providers never enter the required dependency graph.
-            return None
+            return []
         if len(eligible) > 1:
             raise PlanningError('Explicit provider binding required for ' + plugin + ':' + alias + ': ' + ', '.join(sorted(eligible)))
-        return next(iter(eligible), '__missing_provider__')
+        return [next(iter(eligible), '__missing_provider__')]
 
     def get_dependencies(self, candidate):
         result = []
@@ -190,14 +197,14 @@ class _Provider(AbstractProvider):
         for requirement in manifest['services']['requires']:
             if requirement.get('optional', False):
                 continue
-            provider = self.provider(candidate, requirement)
             service = (requirement['id'], requirement['contract_major'], requirement['version'])
-            result.append(Need('plugin:' + provider, '', origin + ':' + requirement['alias'], service=service))
+            for provider in self.provider(candidate, requirement):
+                result.append(Need('plugin:' + provider, '', origin + ':' + requirement['alias'], service=service))
         return result
 
 
 def resolve_release(catalog, python_metadata, environment, requested, *, locked=None, update=(),
-                    provider_choices=None, core_python=(), site_requirements=None):
+                    provider_choices=None, scoped_provider_choices=None, core_python=(), site_requirements=None):
     """Resolve the WHOLE deployment, retaining installed roots and fixed sites.
 
     `locked` maps plugin:/python: identifiers to exact version/digest records.
@@ -212,8 +219,9 @@ def resolve_release(catalog, python_metadata, environment, requested, *, locked=
         raise PlanningError('Explicit supported target runtime and wheel tags are required')
     locked = copy.deepcopy(locked or {})
     choices = dict(provider_choices or {})
+    scoped_choices = dict(scoped_provider_choices or {})
     update = {value if value.startswith(('plugin:', 'python:')) else 'plugin:' + value for value in update}
-    provider = _Provider(copy.deepcopy(catalog), copy.deepcopy(python_metadata), environment, locked, update, choices, core_python)
+    provider = _Provider(copy.deepcopy(catalog), copy.deepcopy(python_metadata), environment, locked, update, choices, scoped_choices, core_python)
     roots = [Need('plugin:' + key, specifier) for key, specifier in sorted(requested.items())]
     roots.extend(Need(key, '', 'currently installed') for key in sorted(locked) if key.startswith('plugin:') and key[7:] not in requested)
     roots.extend(Need(key, '', 'currently locked Python runtime') for key in sorted(locked) if key.startswith('python:'))
@@ -270,20 +278,30 @@ def resolve_release(catalog, python_metadata, environment, requested, *, locked=
         for requirement in manifest['services']['requires']:
             service = (requirement['id'], requirement['contract_major'], requirement['version'])
             eligible = {key: value for key, value in plugins.items() if _service_matches(value, service)}
-            selected = choices.get((plugin, requirement['alias']))
-            if selected and selected not in eligible:
+            alias = requirement['alias']
+            global_choice = choices.get((plugin, alias))
+            scoped = {key[2:]: value for key, value in scoped_choices.items() if key[:2] == (plugin, alias)}
+            selected = ({global_choice} if global_choice else set()) | set(scoped.values())
+            if selected and not selected <= eligible.keys():
                 raise PlanningError('Selected provider is not installed/compatible: ' + plugin + ':' + requirement['alias'])
             if not selected and len(eligible) > 1:
                 raise PlanningError('Explicit provider binding required for ' + plugin + ':' + requirement['alias'])
-            selected = selected or next(iter(eligible), None)
+            selected = selected or ({next(iter(eligible))} if eligible else set())
             if not selected:
                 if not requirement.get('optional', False):
                     raise PlanningError('Unresolved required service alias: ' + plugin + ':' + requirement['alias'])
                 continue
-            api = max(_service_matches(eligible[selected], service), key=lambda value: Version(value['api_version']))
-            bindings.append({'consumer': plugin, 'alias': requirement['alias'], 'provider': selected,
-                'service_id': service[0], 'contract_major': service[1], 'api_version': api['api_version'],
-                'optional': requirement.get('optional', False)})
+            for selected_provider in sorted(selected):
+                api = max(_service_matches(eligible[selected_provider], service), key=lambda value: Version(value['api_version']))
+                binding = {'consumer': plugin, 'alias': alias, 'provider': selected_provider,
+                    'service_id': service[0], 'contract_major': service[1], 'api_version': api['api_version'],
+                    'optional': requirement.get('optional', False)}
+                if scoped:
+                    if global_choice == selected_provider:
+                        binding['excluded_scopes'] = [list(scope) for scope, value in sorted(scoped.items()) if value != selected_provider]
+                    else:
+                        binding['scopes'] = [list(scope) for scope, value in sorted(scoped.items()) if value == selected_provider]
+                bindings.append(binding)
     reasons = {}
     for need in roots + [need for item in mapping.values() for need in provider.get_dependencies(item)]:
         reasons.setdefault(need.key, set()).add(need.origin + ' ' + need.specifier)
