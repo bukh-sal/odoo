@@ -2,7 +2,7 @@
 
 Date: 2026-10-28 (Asia/Riyadh).
 
-Status: accepted direction; the incremental adjustments below are proposed, not implemented by this assessment. Continue G5 backend/lifecycle work. No WebClient replacement, source deletion, contract revision or runtime migration is authorized merely by this ADR.
+Status: accepted direction; native dialog/notification/command adapters now implemented and qualified as the bounded subset below. The original assessment is retained; the action/view pilot and client release fence remain G5 work. No full WebClient replacement follows from this ADR.
 
 ## Clarification and retained work
 
@@ -49,3 +49,13 @@ It would also require scoped menu generation/cache invalidation, `/app/...` deep
 Affected future adjustments must requalify dialog cancellation/Escape/focus restoration, single command invocation and disposal, escaped/severity-aware notifications, native CRUD/CAS/import boundaries, dirty navigation/back/refresh, actor/workspace revocation, two-tab isolation, Canvas lifecycle/draft recovery, theme/RTL/zoom/keyboard and native release refresh. Keep the earlier G3/G4 evidence as historical records; qualify changed consumers rather than silently treating old browser evidence as proof of new behavior. Historical backend results are not discarded.
 
 No G2 contract digest changes or new release-acceptance passes follow from this documentation. Current G5 work remains active, with UI service adapters tracked as a bounded follow-up before frontend expansion. No whole-frontend rewrite or automatic reset/reinitialization of qualified sites.
+
+## Implemented service reuse
+
+`platform_addons/mp_shell/static/src/native_interactions.js` delegates confirmation to `dialog.add(ConfirmationDialog)`, notifications to `notification.add`, and command registration/search to `command.add/openPalette`. The root uses the native hotkey service, whose dispatch chooses one matching registration; the parallel window key handler and root confirmation/command dialogs are removed. Only current authorized platform commands appear. Retire native dialogs, notifications and command registrations on mount/identity/workspace changes; stale cached callbacks recheck availability. The framework-neutral facade, public namespaced plugin command execution and optional Canvas hosting remain intact.
+
+Keep the custom header/sidebar/theme/layout and plugin dialog styling. Apply theme and direction to native overlays, including accessible selected-row colors. Native list/form views remain the standard record host. A browser fast-save test found that the custom save callback bypassed native input commit: call native `record.checkValidity` before reading DTO fields, retain the existing service/CAS/idempotency path, and show Saved after navigation. This reuses native validation rather than adding widget state handling.
+
+Evidence: `docs/evidence/G5/20261028T153100Z-native-palette-theme-source/ui-reuse-source.json` (6Node tests, SDK typecheck,75freeze); `151500Z-native-interactions-browser/browser-qualification.json` (native CRUD/revision2/create/delete of one new disposable probe, native confirmation/cancel/Escape/focus, single CtrlK from input, scoped commands/suspended workspace, RTL and measured palette contrast). Initial failed fast-save and dark selected-row screenshots are retained. Original4Notes remain byte-equivalent excluding the subsequently added labels column; only the new probe was deleted. English/light preferences restored.
+
+Independently reviewed platform deployments0835fda3/c28633d5/91ceba46 deliver the adapters and verified fixes through generation15. ADR0015 supplies the explicit platform-image operation; an ordinary same-version plugin upgrade was correctly rejected before mutation. Full SDK150host/123Linux and current G2 revision8 are separately recorded. No full WebClient, navigation/action-stack replacement, Canvas/session-expiry regression, full UI09 or client epoch/UI07 pass is claimed by this subset. The next bounded action/view pilot must preserve current public routes, CAS/idempotency, workspace authority and custom-page lifecycle; keep the current View adapter if it does not remove meaningful orchestration safely.

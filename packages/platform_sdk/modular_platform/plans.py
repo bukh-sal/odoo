@@ -163,7 +163,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
     _check_installation_mapping(list({scoped_installation_key(item): item for item in state['installations'] + list(targets)}.values()))
     installed = {scoped_installation_key(item): item for item in state['installations']}
     clean_targets, seen, artifacts, migrations = [], set(), {}, {}
-    valid_actions = {'install', 'upgrade', 'suspend', 'enable', 'uninstall', 'unregister', 'remove'}
+    valid_actions = {'install', 'upgrade', 'suspend', 'enable', 'uninstall', 'unregister', 'remove','deploy'}
     for source in targets:
         if set(source) != {'installation_id', 'site_id', 'workspace_id', 'plugin_id', 'action'}:
             raise PlanningError('Exact target has unknown/missing fields')
@@ -174,7 +174,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             raise PlanningError('Target site/action is outside this deployment')
         allowed_actions = {'install': {'install', 'upgrade'}, 'upgrade': {'install', 'upgrade'},
             'suspend': {'suspend'}, 'enable': {'enable'}, 'uninstall': {'uninstall', 'unregister'},
-            'unregister': {'uninstall', 'unregister'}, 'remove': {'remove'}}
+            'unregister': {'uninstall', 'unregister'}, 'remove': {'remove'},'deploy':{'deploy'}}
         if target['action'] not in allowed_actions.get(operation_type, set()):
             raise PlanningError('Target action disagrees with the operation type')
         identity = scoped_installation_key(target)
@@ -189,7 +189,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         elif not previous or any(previous[key] != target[key] for key in ('site_id', 'workspace_id', 'plugin_id')):
             raise PlanningError('Target installation identity or scope changed')
         plugin = target['plugin_id']
-        descriptor = new.get(plugin) if target['action'] in ('install', 'upgrade', 'enable', 'suspend') else None
+        descriptor = new.get(plugin) if target['action'] in ('install', 'upgrade', 'enable', 'suspend','deploy') else None
         old_entry = old.get(plugin)
         if descriptor is None and old_entry is None:
             raise PlanningError('Target plugin is absent from the relevant release')
@@ -213,6 +213,11 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             'migration_digests': [item['digest'] for item in migrations.get(plugin, [])]}
         clean_targets.append(target)
     changed = {key for key, value in new.items() if key not in old or value['digest'] != old[key]['digest']}
+    if operation_type=='deploy':
+        if (changed or set(new)!=set(old) or seen!=set(installed) or permission_changes or trust_changes
+                or any(row.get('state')!='installed' or row.get('metadata_state','installed')!='installed' for row in installed.values())
+                or any(item['runtime']!='native' for item in artifacts.values())):
+            raise PlanningError('Platform deploy requires every installed native scope and unchanged artifacts/grants')
     covered = {target['plugin_id'] for target in clean_targets if target['action'] in ('install', 'upgrade')}
     if changed - covered:
         raise PlanningError('Every transitive artifact change needs explicit targets: ' + ', '.join(sorted(changed - covered)))
@@ -341,7 +346,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         'permission_changes': sorted(copy.deepcopy(list(permission_changes)), key=lambda item: (item['plugin_id'], item['workspace_id'], item['capability'], item['action'])),
         'trust_changes': sorted(copy.deepcopy(list(trust_changes)), key=lambda item: (item['artifact_digest'], item['decision'])),
         'destructive': destructive,
-        'backup': {'required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall') for item in artifacts.values()),
+        'backup': {'required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall','deploy') for item in artifacts.values()),
                    'policy_id': backup_policy, 'retain_previous_release': True},
         'policy_version': state['policy_version'], 'operator_authorization_generation': state['operator_authorization_generation']}
     canonical_plan(plan)
@@ -353,7 +358,7 @@ def _display(plan, operation_lock):
     display={'targets': operation_lock['targets'], 'artifacts': plan['artifacts'],
                 'required_local_step': 'Independent local operator approval of the exact plan hash, then CLI apply.',
                 'native_code_requires_trust': any(item['runtime'] == 'native' for item in plan['artifacts']),
-                'restart_required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall', 'remove') for item in plan['artifacts']),
+                'restart_required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall', 'remove','deploy') for item in plan['artifacts']),
                 'feature_suspension_unloads_code': False,
                 'permission_changes': plan['permission_changes'], 'trust_changes': plan['trust_changes'],
                 'declaration_changes': operation_lock['declaration_changes'],
@@ -365,6 +370,8 @@ def _display(plan, operation_lock):
         display['staged_image']=copy.deepcopy(operation_lock['staged_image'])
     if 'current_catalog_validation_digest' in operation_lock:
         display['current_catalog_validation_digest']=operation_lock['current_catalog_validation_digest']
+    if 'platform_source_diff' in operation_lock:
+        display['platform_source_diff']=copy.deepcopy(operation_lock['platform_source_diff'])
     return display
 
 

@@ -16,18 +16,45 @@ from .projection import runtime_inputs
 from .resolution import binding_matches_scope
 
 
-def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at):
+def validate_platform_deploy(base,runtime,descriptor):
+    if base is None or descriptor['base_image_id']==descriptor['target_image_id']:
+        raise OperatorError('Platform deploy requires independently observed base and distinct image')
+    before,after=base['inventory'],runtime['inventory']
+    if (before.get('artifacts')!=after.get('artifacts') or base['python_metadata']!=runtime['python_metadata']
+            or base['python_lock_digest']!=runtime['python_lock_digest'] or before['native_addons']!=after['native_addons']
+            or before['policy']!=after['policy']):
+        raise OperatorError('Platform deploy cannot change package/Python/native inventory policy')
+    manifests=base.get('native_manifests');new_manifests=runtime.get('native_manifests')
+    if not manifests or not new_manifests or manifests.keys()!=new_manifests.keys():
+        raise OperatorError('Platform deploy requires independently read native manifests')
+    if any({key:value for key,value in manifest.items() if key!='assets'}!=
+            {key:value for key,value in new_manifests[name].items() if key!='assets'} for name,manifest in manifests.items()):
+        raise OperatorError('Platform deploy cannot change native manifest metadata beyond assets')
+    old,new=before['files'],after['files']
+    changed=sorted(name for name in old.keys()|new.keys() if old.get(name)!=new.get(name))
+    if not changed:raise OperatorError('Platform deploy requires a concrete inventoried source change')
+    packaged={item['addon'] for item in before.get('artifacts',{}).values()}
+    platform={name for name in before['native_addons'] if name.startswith('mp_') and name not in packaged}
+    allowed_prefixes=('packages/platform_sdk/','packages/contracts/',*(f'addons/{name}/static/' for name in platform))
+    allowed_manifests={f'addons/{name}/__manifest__.py' for name in platform}
+    if any(not name.startswith(allowed_prefixes) and name not in allowed_manifests for name in changed):
+        raise OperatorError('Platform deploy includes native/upstream files requiring controlled migrations')
+    return [{'path':name,'previous_sha256':old.get(name),'target_sha256':new.get(name)} for name in changed]
+
+
+def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at,base_runtime=None):
     if runtime.get('published_release_protocol')!=1:
         raise OperatorError('Staged native operations require an image with the published-release profile reader')
-    if operation_type not in ('install','upgrade'):
-        raise OperatorError('Staged native planning requires install or upgrade')
+    if operation_type not in ('install','upgrade','deploy'):
+        raise OperatorError('Staged native planning requires install, upgrade or platform deploy')
+    platform_diff=validate_platform_deploy(base_runtime,runtime,descriptor) if operation_type=='deploy' else None
     selected,environment,provenance=runtime_inputs(runtime,catalog)
     by_plugin={item['manifest']['plugin']['id']:item for item in selected}
     by_site={site['site_id']:site for site in sites}
     for target in targets:
         site=by_site.get(target['site_id'])
         if (site is None or not any(item['workspace_id']==target['workspace_id'] and item['state']=='active' for item in site['workspaces'])
-                or target['plugin_id'] not in by_plugin or target['action'] not in ('install','upgrade')
+                or target['plugin_id'] not in by_plugin or target['action'] not in (('deploy',) if operation_type=='deploy' else ('install','upgrade'))
                 or by_plugin[target['plugin_id']]['manifest']['runtime']['kind']!='native'
                 or target['installation_id']!=installation_id(site,target['plugin_id'])):
             raise OperatorError('Staged target differs from current site/workspace/installation identity')
@@ -54,6 +81,11 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
                 changes.append({'plugin_id':target['plugin_id'],'workspace_id':target['workspace_id'],'capability':capability,'action':'grant'})
     target_document['request']['permission_changes']=changes
     bundle=prepare_document(target_document,catalog)
+    if operation_type=='deploy':
+        if (bundle['operation_lock']['bindings']!=document['state'].get('bindings',[])
+                or bundle['operation_lock']['endpoints']!=document['state'].get('endpoints',[]) or bundle['plan']['permission_changes']):
+            raise OperatorError('Platform deploy must preserve bindings/endpoints/grants')
+        bundle['operation_lock']['platform_source_diff']=platform_diff
     for target in targets:
         required=set(by_plugin[target['plugin_id']]['manifest']['dependencies']['plugins'])
         required.update(item['provider'] for item in bundle['operation_lock']['release']['service_selection']

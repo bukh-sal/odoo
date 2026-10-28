@@ -1,0 +1,7 @@
+{
+  "result": "postcheck_bookkeeping_failed_after_completed_deploy_and_preservation_assertions",
+  "utc": "2026-10-28T15:06:03.639994+00:00",
+  "operation_id": "0835fda3-1aea-4aec-8470-f73bc6f139f1",
+  "failure": "Exclusive write helper used for existing .local/g5/state.json; no deployment failure/replay required",
+  "source_sha256": "fc4aac6fa7abebdeaca16fa24f067d0eba567f78d96063f658f57af2db879910"
+}

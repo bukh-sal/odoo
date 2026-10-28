@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "node_modules/typescript/lib/tsc.js",
+    "--noEmit"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

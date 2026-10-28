@@ -221,7 +221,7 @@ def main(argv=None):
                 descriptor,record=stages.load();observer=DockerObserver(deployment);observation=observer.read();snapshot=catalog.snapshot()
                 result=prepare_staged_plan(observer.state(observation,snapshot),observation['sites'],snapshot,record['runtime'],descriptor,
                     targets=nomination['targets'],operation_type=nomination['operation_type'],operation_id=str(uuid4()),
-                    created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+                    created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),base_runtime=observation['runtime'])
         elif args.group == 'plugin' and args.action == 'recover':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.native_executor import NativeExecutor

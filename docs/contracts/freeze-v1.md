@@ -1,6 +1,6 @@
 # Contract freeze v1
 
-Status: **passed G2**, 28 October 2026. Contract major1, revision7 (ADRs0004/0005/0006/0007/0009). Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
+Status: **passed G2 revision8**,28 October2026. Contract major1; compatible deployment enum extension under ADR0015. Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
 
 Normative semantics: [protocol-v1.md](protocol-v1.md), [ADR0003](../architecture-decisions/0003-r1-contracts.md). Machine inventory [freeze-v1.json](freeze-v1.json) contains exact SHA256 for every schema/type/example/validator/test/lock and maps owning phase, acceptance IDs and G1 correspondence. It excludes itself and unrelated evidence/status to avoid self-reference. Every path in the table has an exact digest in that inventory.
 
@@ -41,3 +41,9 @@ Revision5 clarifies initial board discovery without selecting a workspace; ADR00
 Revision6 supplies optional custom snapshotDraft recovery, with strict JSON/filename/ownership/size semantics; see ADR0007.
 
 Revision7 adds strict operator preparation/request/context/catalog/status DTOs and examples (ADR0009), with proposed plan ID/hash/targets/trust/restart checks and explicit application-request versus journal-mirror authority. New terminal-newline fixtures confirmed the old `$` end-anchor ambiguity;172 anchored patterns in22 schemas now use the portable absolute-end assertion. Existing valid fixtures and the golden plan hash remain unchanged. Current [G2 revision7 evidence](../evidence/G2/20261028T0630513883922Z/gate-G2.json):74 frozen files,26contract tests plus50affected archive/resolver/plan/CLI tests, TypeScript check. Context/catalog metadata bounds preserve the full512-character manifest metadata. Earlier0628543547965Z candidate retained; final adds the catalog-bound/unsigned-warning check. UI handlers are not yet enabled; strengthened G5/G7 runtime consumer checks remain required. Existing qualifiedG4image/source is unchanged.
+
+Revision8 adds explicit platform-only `deploy` plan/target/artifact action and status display under ADR0015, with `plan-deploy.json`. App request schemas still reject deploy; independent staged CLI/executor only. Plugin version/migration rules and old valid DTOs/golden serialization remain unchanged. Older consumers reject the unknown operation until explicitly upgraded. Source/runtime qualification is required before current revision is passed or applied.
+
+Revision8 source/contracts requalified by `docs/evidence/G2/20261028T150700Z-deploy-revision8/gate-G2.json`:75files/7rows, fullhost150/Linux123 regressions including6new platform-deploy checks. Previous golden hash unchanged; actual deploy/browser acceptance remains G5.
+
+The final revision8 normative prose/inventory addendum is qualified in `docs/evidence/G2/20261028T153300Z-deploy-protocol-addendum/gate-G2.json` (75files,26contract tests, unchanged golden; no executable/schema delta from150/123). Earlier150700Z record is retained as the initial revision checkpoint.

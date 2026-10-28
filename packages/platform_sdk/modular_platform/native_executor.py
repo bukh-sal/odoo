@@ -159,7 +159,7 @@ class NativeExecutor:
         bundle = self.store.bundle(operation)
         if 'staged_image' in bundle['operation_lock'] and not self.staged_execution:
             raise OperatorError('Staged native execution must use the new-image executor adapter; current-image mutation denied')
-        if bundle['plan']['operation_type'] not in (('install','upgrade') if self.staged_execution else ('install',)):
+        if bundle['plan']['operation_type'] not in (('install','upgrade','deploy') if self.staged_execution else ('install',)):
             raise OperatorError('Native execution requires a supported install/upgrade plan')
         plan = bundle['plan']
         with OperationLocks(self.store.root/'locks', plan['deployment_id'], plan['site_ids']) as locks:
@@ -210,10 +210,15 @@ class NativeExecutor:
                 image=self._execution_image(bundle)
                 installs=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in bundle['operation_lock']['targets'] if item['action']=='install'})
                 upgrades=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in bundle['operation_lock']['targets'] if item['action']=='upgrade'})
-                arguments, child = self._child(operation, 'native', writable=True,image_id=image)
-                flags=(['-i',','.join(installs)] if installs else [])+(['-u',','.join(upgrades)] if upgrades else [])
-                self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
-                    *flags, '--stop-after-init', '--no-http', '--workers=0', '--max-cron-threads=0', '--without-demo'], directory/'native.log')
+                if plan['operation_type']=='deploy':
+                    if installs or upgrades or 'platform_source_diff' not in bundle['operation_lock']:
+                        raise OperatorError('Platform deploy cannot invoke native migrations')
+                    _write_new(directory/'native-skipped.json',{'reason':'Reviewed platform-only image deployment; no native maintenance'})
+                else:
+                    arguments, child = self._child(operation, 'native', writable=True,image_id=image)
+                    flags=(['-i',','.join(installs)] if installs else [])+(['-u',','.join(upgrades)] if upgrades else [])
+                    self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
+                        *flags, '--stop-after-init', '--no-http', '--workers=0', '--max-cron-threads=0', '--without-demo'], directory/'native.log')
                 locks.check()
                 payload = {'site_id': self.config['sites'][0]['site_id'], 'deployment_id': self.config['deployment_id'],
                     'operation_id': operation, 'generation': bundle['operation_lock']['release']['generation'],

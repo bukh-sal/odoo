@@ -1,0 +1,4 @@
+{
+  "error": "VALIDATION_FAILED",
+  "message": "New native code or expanded declarations require explicit acknowledgment"
+}

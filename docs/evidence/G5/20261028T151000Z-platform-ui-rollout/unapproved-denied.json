@@ -1,0 +1,4 @@
+{
+  "error": "VALIDATION_FAILED",
+  "message": "Operation cannot start or continue without reconciliation"
+}

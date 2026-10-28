@@ -1,0 +1,14 @@
+{
+  "image": "sha256:cbcde2443fd7d5b4667550e1a2e53efda9faa365857fb1e777b93bd4f6689af2",
+  "generation": 13,
+  "native_palette": true,
+  "escape_focus_restored": true,
+  "ctrl_k_from_editable_exactly_one_dialog": true,
+  "native_unsaved_escape_preserved_draft": true,
+  "save_failed": {
+    "code": "VALIDATION_FAILED",
+    "request_id": "06101896-862a-473d-ba29-49037a927ae5",
+    "record_created": false
+  },
+  "next": "Native record.checkValidity commits widget changes before DTO extraction; notify after navigation."
+}

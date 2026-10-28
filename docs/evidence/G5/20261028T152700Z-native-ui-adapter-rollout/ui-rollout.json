@@ -1,0 +1,36 @@
+{
+  "result": "passed_rollout_browser_pending",
+  "utc": "2026-10-28T15:21:11.074757+00:00",
+  "operation_id": "c28633d5-6853-429f-9795-0901b93ee7ec",
+  "plan_hash": "sha256:da8bf90fdd89d1b92b4be9b7e36d045b622d65f547463e2a6a6510ba4672566b",
+  "generation": 14,
+  "image_id": "sha256:08779a6f400760d9f2990a1f86c99919fd159ea18ef06bd4ae915da1ac227b5b",
+  "worker_id": "0ec1bdc063a9d0e427360ba91738c82263d4a8b2e1ad878c8c74ad79fa8b572f",
+  "database": "mp_disposable_r0_r1_restore_736f872ff76d4cd8af14ce8049452691",
+  "changed_inventory_paths": [
+    "addons/mp_shell/static/src/host.css",
+    "addons/mp_shell/static/src/host.js"
+  ],
+  "existing_business_rows_files_feature_scopes_bindings_preserved": true,
+  "completed_replay_no_mutation": true,
+  "unapproved_and_missing_native_trust_ack_denied": true,
+  "native_orm_maintenance_skipped": true,
+  "source_sha256": {
+    "platform_addons/mp_shell/controllers.py": "ecb1fc05d6eb8649bfca6b9bf0104e603ea9e15cedb397c8ab1221a081c0b756",
+    "platform_addons/mp_shell/__init__.py": "912598b8ef8fc59f389dce818d259e5547ec666e961d2d37eb0deecb4f43a810",
+    "platform_addons/mp_shell/__manifest__.py": "86e4df2516bad4cbfc873b9d275767c1f097d3db287acfca57b8e003552a0155",
+    "platform_addons/mp_shell/views/bootstrap.xml": "76f848306c1e041f36ceeec708412d2c035bab10bc4573113571a3bab87d47d0",
+    "platform_addons/mp_shell/static/src/host.css": "cbc5a331b18a48c8d38ae5b829de3f0bb1a12eb44137209461f602c31854411b",
+    "platform_addons/mp_shell/static/src/host.js": "6aea0888048b04b96aeb533f4041af5824574e744c885aec6ceb7d651d0a876f",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0",
+    "platform_addons/mp_shell/static/src/operations.js": "5b19e0e46669116fe8eb031bc8a75e9bc6e88a75bba5073901358733f627afaf",
+    "tools/qualify_ui_reuse_rollout.py": "43c055bca1740484776dafe1322c4fa7fc7cd15cf996cb5fac1f6e997a70c049",
+    "packages/platform_sdk/modular_platform/worker_start.py": "681a28a46de8f502bac6b646103062d01c2d04f909d063b17fcbc85aaa640941",
+    "tools/start_worker.py": "b0b9ef1f6c3723f5e7441c4a1f627de87574ecc5f345b20951bdf27b72443edd",
+    "deploy/Dockerfile": "2d096e9cb3880d2d855271a1c5c7635033d1634a52866c55b62ab07721e553dc"
+  },
+  "limits": [
+    "Actual native dialogs/focus/Escape/command/notification/CRUD behavior remains browser qualification.",
+    "No WebClient replacement, action/router pilot, client epoch/UI07 or G5 exit claimed."
+  ]
+}

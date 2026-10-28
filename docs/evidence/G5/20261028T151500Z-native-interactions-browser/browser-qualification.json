@@ -1,0 +1,66 @@
+{
+  "result": "passed_service_adapter_subset",
+  "utc": "2026-10-28T15:34:22.498012+00:00",
+  "generation": 15,
+  "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "worker_id": "2ce52ccb9686715bd0b92db5da31d8e031e9f33b41a184e69341161b5da4e455",
+  "database": "mp_disposable_r0_r1_restore_736f872ff76d4cd8af14ce8049452691",
+  "observations": {
+    "native_list_form_create_update_revision2_and_delete": true,
+    "focused_widget_committed_before_save": true,
+    "native_saved_and_deleted_notifications_visible": true,
+    "native_destructive_confirmation_and_cancel_focus": true,
+    "native_unsaved_escape_preserves_draft": true,
+    "control_k_from_editable_one_palette": true,
+    "workspace_retirement_hides_previous_commands": true,
+    "authorized_palette_contains_exactly_settings_export": true,
+    "suspended_workspace_page_denied": true,
+    "native_rtl_overlay_direction": true,
+    "english_light_preferences_restored": true
+  },
+  "palette_contrast_ratios": {
+    "body": 12.78918563383681,
+    "selected": 7.709505751030358,
+    "category": 7.128542915919063
+  },
+  "original_business_rows_preserved": 4,
+  "probe_record_removed": "c0d01604-7124-48aa-9a11-aeffd499765e",
+  "prior_checkpoint_assets_preserved": 48,
+  "deployment_state_digest": "sha256:9d93f7690943d1b935d1f3bd034ca7ae099c08b117820bc21c32212f6f995446",
+  "source_sha256": {
+    "platform_addons/mp_shell/controllers.py": "ecb1fc05d6eb8649bfca6b9bf0104e603ea9e15cedb397c8ab1221a081c0b756",
+    "platform_addons/mp_shell/__init__.py": "912598b8ef8fc59f389dce818d259e5547ec666e961d2d37eb0deecb4f43a810",
+    "platform_addons/mp_shell/__manifest__.py": "86e4df2516bad4cbfc873b9d275767c1f097d3db287acfca57b8e003552a0155",
+    "platform_addons/mp_shell/views/bootstrap.xml": "76f848306c1e041f36ceeec708412d2c035bab10bc4573113571a3bab87d47d0",
+    "platform_addons/mp_shell/static/src/host.css": "234e710f54153564b52279c33a0fd7a91439bbb02607c4da3838580020401def",
+    "platform_addons/mp_shell/static/src/host.js": "6aea0888048b04b96aeb533f4041af5824574e744c885aec6ceb7d651d0a876f",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0",
+    "platform_addons/mp_shell/static/src/operations.js": "5b19e0e46669116fe8eb031bc8a75e9bc6e88a75bba5073901358733f627afaf",
+    "tools/verify_ui_reuse_browser.py": "d39e7c8f13092a1a92ca24c97b266dfc3a52661a5d5eaec6c07e5cec01de51e4",
+    "tests/test_native_interactions.mjs": "735093106c29d14fb9efbde35b86d71ea93eda9a1aa19b608725a9c3df568836"
+  },
+  "artifacts_sha256": {
+    "after-create.png": "951b0a9d0287d1398eff86d36c1291b72bb80ee0f7ecf5f00746bf25d875e0f1",
+    "disposable-note.json": "4ad1539be2ca0a76ca4d1a2d53b96f2c5f802b99b0e8a0b589d407bf744f8a04",
+    "failed-create-no-db-effect.json": "0c77fea97e1b112e7c1fe8f301154c091b5f15ac1dfd3afe16091182190ae83d",
+    "initial-browser-results.json": "c70bc96e78c9e72509d7097b3c766ce3c0124d2c95e2ed9b4e0e0620f63d69a7",
+    "native-create-saved.png": "8ec60cd5d35765bc41cb775c60c95634836592dcba3fbd05885a884e7c9d8ef8",
+    "native-delete-confirmation.png": "fdfe94ec86650e05fecf8fc62b827aff583cc4cff62b7884b04de2657a5529ae",
+    "native-palette-ax.txt": "377b5fdaf639aa2a65f5935765232f6f67c51a525b0209f25de7b8de698c05ab",
+    "native-palette-colors.json": "d31a2f2d5edc89c3b1541c87f60f15e841e1e50f6027b0d711087edcf5d5f7c6",
+    "native-palette-dark-rtl-final.png": "8810f43efff0ae1d6607057475d06917f7d2f609eb3adc911bb723a8721e53f1",
+    "native-palette-dark-rtl.png": "e1b3d338be049529c8de278f308c6b045f05a19ae9280a19614465b6108e66df",
+    "native-palette-final.png": "9a4458d84e64b5e80f61accbd253d88e3b6db43983e9e5aad4fb3fa55ff47b89",
+    "native-palette-rtl.png": "5552b2c119367bf8b953098fded4d9984477754eee7756be7c0d3a9707c6a59a",
+    "native-palette.png": "1b10751baf4e0161217cc0628310cd4bc14cfdb0f527b4fe5a2c36ee72418fa0",
+    "native-saved-notification.png": "7ea5cb80d578947c596f340fadf8d1c3132635863d0cba0f0880481885045047",
+    "native-unsaved-confirmation.png": "8bbcf2d07514e95e31771faed63acbfee7882bf5d414fb18a936d113cf113e50",
+    "suspended-workspace.png": "54bda55da736fa8e0dd0ebc6d4f9a46599497f40054b06253abae620376da54b"
+  },
+  "limits": [
+    "Browser CRUD/draft/dialog/command tests executed on gen13/14; unchanged JS/native backend plus palette-only CSS delta qualified on gen15.",
+    "Native list/form remains the default; no full WebClient/action-stack replacement or client release-fence/UI07 claim.",
+    "Canvas/expired-session/two-tab authority regression, action/view pilot and full UI09 zoom/keyboard/contrast sweep remain separate G5/G7 work.",
+    "Only the newly created disposable probe was deleted; original rows and prior asset bytes preserved. Expected audit/idempotency metadata remains."
+  ]
+}

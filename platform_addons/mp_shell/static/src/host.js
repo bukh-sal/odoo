@@ -6,6 +6,10 @@ import { View } from '@web/views/view';
 import { MainComponentsContainer } from '@web/core/main_components_container';
 import { registry } from '@web/core/registry';
 import { OperationsPanel } from './operations';
+import { ConfirmationDialog } from '@web/core/confirmation_dialog/confirmation_dialog';
+import { NativeInteractions } from './native_interactions';
+
+registry.category('command_categories').add('mp_platform',{name:'Platform'});
 
 let workspace = null;
 let generation = 0;
@@ -67,7 +71,6 @@ class Shell extends Component {
                 <button t-foreach="state.detailActions" t-as="action" t-key="action.id" t-on-click="()=>this.executeDetailAction(action)" t-esc="action.label"/>
             </div>
             <div t-if="state.detailLabels.length" class="mp_labels" aria-label="Note labels"><span t-foreach="state.detailLabels" t-as="label" t-key="label" t-esc="label"/></div>
-            <div t-if="state.notification" class="mp_notice" role="status" t-esc="state.notification"/>
             <div t-if="state.recoveryDraft and state.context" class="mp_notice" role="status">Your unsaved draft is available locally. <button t-on-click="downloadDraft">Download unsaved draft</button></div>
             <div t-if="state.error" class="mp_notice" role="alert"><strong t-esc="state.error.message"/><p t-esc="state.error.request_id"/>
                 <p t-if="state.error.field">Field: <t t-esc="state.error.field"/></p>
@@ -110,19 +113,19 @@ class Shell extends Component {
                 <p t-if="!state.context and !state.loading and !state.error" t-esc="t('empty')"/>
             </div>
         </div>
-        <dialog t-ref="commands"><h2 t-esc="t('search')"/><button t-if="state.plugin==='org.example.notes'" class="mp_command_row" t-on-click="paletteExport" t-esc="t('export')"/><button class="mp_command_row" t-on-click="paletteSettings" t-esc="t('settings')"/><button class="mp_command_row" t-on-click="closeCommands">Close · Esc</button></dialog>
-        <dialog t-ref="confirmation" aria-labelledby="mp_confirmation_title" t-on-cancel="cancelConfirmation">
-            <h2 id="mp_confirmation_title" t-esc="state.confirmation.title"/><p t-esc="state.confirmation.message"/>
-            <button t-on-click="cancelConfirmation">Cancel</button><button t-on-click="acceptConfirmation" t-esc="state.confirmation.destructive?'Delete':'Continue'"/>
-        </dialog>
         <MainComponentsContainer/>
     </div>`;
 
     setup() {
-        this.state=useState({workspaces:[],workspace:'',navigation:[],plugin:'org.example.notes',title:'Notes',displayName:'',context:null,nativeProps:null,generation:0,error:null,notification:'',loading:true,settings:false,paused:false,confirmation:{title:'',message:'',destructive:false},theme:localStorage.getItem('mp.theme')||'light',language:localStorage.getItem('mp.language')||'en-US'});
+        this.state=useState({workspaces:[],workspace:'',navigation:[],plugin:'org.example.notes',title:'Notes',displayName:'',context:null,nativeProps:null,generation:0,error:null,loading:true,settings:false,paused:false,theme:localStorage.getItem('mp.theme')||'light',language:localStorage.getItem('mp.language')||'en-US'});
         if(!words[this.state.language])this.state.language='en-US';
-        this.main=useRef('main');this.custom=useRef('custom');this.commands=useRef('commands');
-        this.confirmation=useRef('confirmation');
+        this.main=useRef('main');this.custom=useRef('custom');
+        this.interactions=new NativeInteractions({...this.env.services,ConfirmationDialog,
+            provider:registry.category('command_provider').get('command'),error});
+        // Native hotkey dispatch selects the newest matching registration;
+        // there is one invocation and no parallel window keydown listener.
+        this.removeCommandHotkey=this.env.services.hotkey.add('control+k',()=>this.openCommands(),{
+            global:true,bypassEditableProtection:true});
         Object.assign(this.state,{members:[],workspaceSettings:null,memberPrincipal:'',memberRole:'viewer',adminBusy:false,settingsDirty:false,recoveryDraft:false,detailActions:[],detailLabels:[]});
         Object.assign(this.state,{operations:false,canOperate:false});
         this.operationsAPI=(...args)=>this.json(...args);
@@ -145,17 +148,16 @@ class Shell extends Component {
             if(document.hidden){this.state.paused=true;return;}
             await this.refreshAuthority();this.state.paused=false;
         };
-        this.onKey=event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();this.openCommands();}};
         onMounted(async()=>{
-            document.body.dataset.theme=this.state.theme;
-            window.addEventListener('popstate',this.onPop);window.addEventListener('keydown',this.onKey);document.addEventListener('visibilitychange',this.onVisibility);
+            this.applyAppearance();
+            window.addEventListener('popstate',this.onPop);document.addEventListener('visibilitychange',this.onVisibility);
             // Authority refresh must not depend on initial native-view loading;
             // rapid navigation can cancel that activation before it completes.
             this.timer=setInterval(()=>this.refreshAuthority(),5000);
             try {const session=await this.json('/api/v1/session');this.csrf=session.csrf_token;this.sessionPrincipal=session.principal_id;this.state.displayName=session.display_name;this.state.workspaces=await this.json('/api/v1/workspaces');this.refreshOperatorAuthority();await this.activate();}
             catch(e){this.fail(e);this.state.loading=false;}
         });
-        onWillDestroy(()=>{clearInterval(this.timer);clearTimeout(this.noticeTimer);window.removeEventListener('popstate',this.onPop);window.removeEventListener('keydown',this.onKey);document.removeEventListener('visibilitychange',this.onVisibility);this.retire();});
+        onWillDestroy(()=>{clearInterval(this.timer);this.removeCommandHotkey();window.removeEventListener('popstate',this.onPop);document.removeEventListener('visibilitychange',this.onVisibility);this.retire();});
     }
     t(key){return words[this.state.language][key]||key;}
     get loginURL(){return '/web/login?redirect='+encodeURIComponent(location.pathname+location.search);}
@@ -180,15 +182,7 @@ class Shell extends Component {
         const dirty=this.nativeDirty||this.state.settingsDirty||(this.mounted?.canLeave&&await this.mounted.canLeave()==='confirm');
         return !dirty||await this.confirm({title:'Unsaved changes',message:'Discard unsaved changes?',destructive:false});
     }
-    confirm(input){
-        if(this.confirmResolve)throw error('CONFLICT');
-        this.state.confirmation={title:input.title,message:input.message,destructive:!!input.destructive};
-        this.confirmation.el.showModal();
-        return new Promise(resolve=>this.confirmResolve=resolve);
-    }
-    finishConfirmation(value){this.confirmation.el.close();const resolve=this.confirmResolve;this.confirmResolve=null;resolve?.(value);}
-    cancelConfirmation(event){event?.preventDefault();this.finishConfirmation(false);}
-    acceptConfirmation(){this.finishConfirmation(true);}
+    confirm(input){return this.interactions.confirm(input);}
     async retire({recover=false}={}){
         const mounted=this.mounted;this.mounted=null;
         if(recover&&mounted?.snapshotDraft&&this.state.context){
@@ -204,6 +198,7 @@ class Shell extends Component {
             }catch{this.notify('The page draft could not be captured.');}
         }
         this.controller?.abort();for(const p of pendingNative)p.abort();pendingNative.clear();
+        this.interactions.clear();
         this.state.nativeProps=null;this.bindings=[];
         this.state.detailActions=[];this.state.detailLabels=[];
         this.custom.el?.replaceChildren();
@@ -235,13 +230,21 @@ class Shell extends Component {
         try{await this.callService('documents','delete',{note_id:this.selectedNote.public_id,expected_revision:this.selectedNote.revision},{idempotencyKey:crypto.randomUUID()});this.nativeDirty=false;this.draft=null;this.selectedNote=null;await this.backToList();this.notify('Note deleted');}catch(e){this.fail(e);}
     }
     async retry(){if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.state.recoveryDraft=!!this.customDraft;await this.activate(true);}
-    openCommands(){this.commands.el.showModal();}
-    closeCommands(){this.commands.el.close();}
-    async paletteExport(){this.closeCommands();await this.exportNotes();}
-    async paletteSettings(){this.closeCommands();await this.openSettings();}
-    setTheme(event){this.state.theme=event.target.value;localStorage.setItem('mp.theme',this.state.theme);document.body.dataset.theme=this.state.theme;for(const callback of this.themeListeners)callback(this.theme());}
+    openCommands(){this.interactions.openCommands(this.t('search'));}
+    refreshCommands(){
+        const captured=generation;const context=this.state.context;
+        const available=()=>captured===generation&&!this.state.loading&&!this.controller?.signal.aborted;
+        const entries=[{name:this.t('settings'),action:()=>this.openSettings(),isAvailable:available}];
+        if(context?.plugin_id==='org.example.notes'&&context.capabilities.includes('org.example.notes:notes.read')){
+            entries.push({name:this.t('export'),action:()=>this.facade(context).commands.execute('org.modularplatform.shell:command:export'),
+                isAvailable:()=>available()&&this.state.context===context});
+        }
+        this.interactions.setCommands(entries);
+    }
+    applyAppearance(){document.body.dataset.theme=this.state.theme;document.body.dir=this.state.language==='ar'?'rtl':'ltr';}
+    setTheme(event){this.state.theme=event.target.value;localStorage.setItem('mp.theme',this.state.theme);this.applyAppearance();for(const callback of this.themeListeners)callback(this.theme());}
     toggleTheme(){this.setTheme({target:{value:this.state.theme==='dark'?'light':'dark'}});}
-    async setLanguage(event){if(!await this.canLeave()){event.target.value=this.state.language;return;}this.state.settingsDirty=false;this.settingsRecovery=null;this.state.language=event.target.value;localStorage.setItem('mp.language',this.state.language);for(const callback of this.localeListeners)callback(this.locale());await this.activate(true);}
+    async setLanguage(event){if(!await this.canLeave()){event.target.value=this.state.language;return;}this.state.settingsDirty=false;this.settingsRecovery=null;this.state.language=event.target.value;localStorage.setItem('mp.language',this.state.language);this.applyAppearance();for(const callback of this.localeListeners)callback(this.locale());await this.activate(true);}
     get isWorkspaceAdministrator(){return !!this.state.context?.capabilities.includes('org.modularplatform.identity:workspace.members.manage');}
     markSettingsDirty(){this.state.settingsDirty=true;}
     async loadWorkspaceAdministration(controller,captured){
@@ -268,7 +271,7 @@ class Shell extends Component {
     async removeWorkspaceMember(member){if(await this.confirm({title:'Revoke workspace access',message:'Revoke '+member.display_name+' access to this workspace? Data and the account will be retained.'}))return this.mutateWorkspace('members',{operation:'remove',principal_id:member.principal_id},'Member access revoked');}
     theme(){return freeze({mode:this.state.theme,density:'comfortable'});}
     locale(){return freeze({language:this.state.language,direction:this.state.language==='ar'?'rtl':'ltr',timezone:this.state.context?.timezone||'UTC'});}
-    notify(message){this.state.notification=message;clearTimeout(this.noticeTimer);this.noticeTimer=setTimeout(()=>this.state.notification='',5000);}
+    notify(message,severity='info'){this.interactions.notify(message,severity);}
     download(name,value){const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const anchor=document.createElement('a');anchor.href=url;anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
     async downloadDraft(){
         const snapshot=this.customDraft;
@@ -301,7 +304,7 @@ class Shell extends Component {
         return freeze({context:()=>context,navigate:target=>{ensure();if(target.params&&Object.keys(target.params).length)throw error('VALIDATION_FAILED');return this.openPage(target.pluginId,target.pageId,target.query);},services:{call:(alias,method,input,options)=>{ensure();return this.callService(alias,method,input,options,execution);}},
             commands:{execute:async(id,input)=>{ensure();if(id==='org.modularplatform.shell:command:export'){if(context.plugin_id!=='org.example.notes')throw error('FORBIDDEN');return this.exportNotes();}const command=execution.commands.find(command=>command.id===id);if(!command||!context.capabilities.includes(command.permission))throw error('FORBIDDEN');const handler=registry.category('mp.commands').get(command.handler,null);if(!handler)throw error('DEPENDENCY_UNAVAILABLE');return handler({host:this.facade(context,execution),input});}},
             events:{subscribe:(topic,callback)=>{if(!['org.example.notes.changed'].includes(topic))throw error('FORBIDDEN');if(!this.eventListeners.has(topic))this.eventListeners.set(topic,new Set());return subscribe(this.eventListeners.get(topic),callback);}},
-            notifications:{show:input=>{if(captured===generation)this.notify(input.message);}},dialogs:{confirm:async input=>{ensure();return this.confirm(input);}},
+            notifications:{show:input=>{ensure();this.notify(input.message,input.severity);}},dialogs:{confirm:async input=>{ensure();return this.confirm(input);}},
             theme:{current:()=>this.theme(),subscribe:callback=>subscribe(this.themeListeners,callback)},locale:{current:()=>this.locale(),translate:key=>key==='notes.title'?this.t('notes'):this.t(key)},
         });
     }
@@ -369,7 +372,7 @@ class Shell extends Component {
                 this.mounted=mounted;
             }
         }catch(e){if(captured===generation&&e.name!=='AbortError'){controller.abort();this.custom.el?.replaceChildren();this.fail(e);}}
-        finally{if(captured===generation)this.state.loading=false;}
+        finally{if(captured===generation){this.state.loading=false;this.refreshCommands();}}
     }
     async nativeView(url){
         const captured=generation;
@@ -387,13 +390,17 @@ class Shell extends Component {
         };
         if(type==='form')Object.assign(props,{resId:selected?.id||false,preventCreate:true,saveRecord:async record=>{
             try{
+            // Native validation also commits pending input-widget changes.
+            // Supplying saveRecord bypasses record.save(), which normally does it.
+            if(!await record.checkValidity({displayNotification:true}))return false;
+            if(captured!==generation)throw obsolete();
             const input={title:record.data.title,body:record.data.body||''};
             const payload=selected?{...input,note_id:publicID,expected_revision:selected.revision}:input;
             const fingerprint=JSON.stringify([workspace,publicID,payload]);
             if(this.saveAttempt?.fingerprint!==fingerprint)this.saveAttempt={fingerprint,key:crypto.randomUUID()};
             const saved=await this.callService('documents',selected?'update':'create',payload,{idempotencyKey:this.saveAttempt.key});
             this.saveAttempt=null;
-            this.nativeDirty=false;this.draft=null;this.notify(this.t('saved'));await this.openPage(this.state.plugin,this.page.id,{note:saved.id});return true;
+            this.nativeDirty=false;this.draft=null;await this.openPage(this.state.plugin,this.page.id,{note:saved.id});this.notify(this.t('saved'));return true;
             }catch(e){this.fail(e);return false;}
         },onDiscard:async()=>{this.nativeDirty=false;this.draft=null;await this.backToList();}});
         this.state.nativeProps=props;

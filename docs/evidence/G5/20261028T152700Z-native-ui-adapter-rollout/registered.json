@@ -1,0 +1,20 @@
+{
+  "approval_expires_at": null,
+  "backup_id": null,
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:da8bf90fdd89d1b92b4be9b7e36d045b622d65f547463e2a6a6510ba4672566b"
+      },
+      "sequence": 166,
+      "utc": "2026-10-28T15:18:36Z"
+    }
+  ],
+  "mutation_started": false,
+  "operation_id": "c28633d5-6853-429f-9795-0901b93ee7ec",
+  "phase": "prepared",
+  "plan_hash": "sha256:da8bf90fdd89d1b92b4be9b7e36d045b622d65f547463e2a6a6510ba4672566b",
+  "state": "awaiting_operator_approval",
+  "traffic_resumed": false
+}

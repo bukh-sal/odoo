@@ -24,7 +24,13 @@
 .mp_notice { background:var(--mp-surface); border:1px solid var(--mp-border); padding:16px; border-radius:var(--mp-radius); margin-bottom:18px; }
 .mp_notice[role="alert"] { border-inline-start:4px solid #bc4c47; }
 .mp_root dialog { background:var(--mp-surface); color:var(--mp-text); border:1px solid var(--mp-border); border-radius:12px; min-width:320px; padding:24px; }
-.mp_command_row { display:block; width:100%; margin-top:12px; text-align:start; }
+/* Presentation around native overlays; Odoo retains their behavior. */
+.mp_shell .modal-content,.mp_shell .o_notification { background:var(--mp-surface); color:var(--mp-text); border-color:var(--mp-border); border-radius:var(--mp-radius); }
+.mp_shell .modal-header,.mp_shell .modal-footer { border-color:var(--mp-border); }
+.mp_shell .o_command_palette input { background:var(--mp-surface); color:var(--mp-text); }
+.mp_shell .o_command_palette .o_command.focused { background:var(--mp-accent); color:var(--mp-bg); }
+.mp_shell .o_command_palette .o_command.focused a { color:inherit; }
+.mp_shell .o_command_palette .o_command_category > .text-muted { color:var(--mp-muted)!important; opacity:1!important; }
 .mp_mobile_exit { display:none; }
 .mp_settings_form { display:grid; grid-template-columns:150px minmax(200px,480px); gap:12px; align-items:center; margin:20px 0 30px; }
 .mp_settings_form input { padding:8px 10px; border:1px solid var(--mp-border); border-radius:6px; background:var(--mp-surface); color:var(--mp-text); }

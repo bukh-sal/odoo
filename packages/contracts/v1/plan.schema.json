@@ -19,7 +19,8 @@
         "uninstall",
         "unregister",
         "remove",
-        "restore"
+        "restore",
+        "deploy"
       ]
     },
     "created_at": {
@@ -84,7 +85,8 @@
               "enable",
               "uninstall",
               "unregister",
-              "remove"
+              "remove",
+              "deploy"
             ]
           },
           "native_addon": {

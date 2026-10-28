@@ -1,0 +1,105 @@
+{
+  "operation_id": "0835fda3-1aea-4aec-8470-f73bc6f139f1",
+  "plan_hash": "sha256:3eea56896c12b7514ad5051b8d378f4b4d6c15f695b104c1683ef4aa8cdedbb4",
+  "state": "completed",
+  "phase": "completed",
+  "mutation_started": true,
+  "traffic_resumed": true,
+  "backup_id": "0835fda3-1aea-4aec-8470-f73bc6f139f1",
+  "approval_expires_at": "2026-10-28T15:17:51Z",
+  "history": [
+    {
+      "sequence": 152,
+      "utc": "2026-10-28T15:02:03Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:3eea56896c12b7514ad5051b8d378f4b4d6c15f695b104c1683ef4aa8cdedbb4"
+      }
+    },
+    {
+      "sequence": 153,
+      "utc": "2026-10-28T15:02:51Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:3eea56896c12b7514ad5051b8d378f4b4d6c15f695b104c1683ef4aa8cdedbb4"
+      }
+    },
+    {
+      "sequence": 154,
+      "utc": "2026-10-28T15:03:08Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 21036,
+        "lock_owner_digest": "sha256:49d1406048599ea6a1698ca869ebf66c7f1b682a535f40bd3a6c060e0141348c"
+      }
+    },
+    {
+      "sequence": 155,
+      "utc": "2026-10-28T15:03:20Z",
+      "code": "staged",
+      "details": {}
+    },
+    {
+      "sequence": 156,
+      "utc": "2026-10-28T15:03:43Z",
+      "code": "maintenance",
+      "details": {}
+    },
+    {
+      "sequence": 157,
+      "utc": "2026-10-28T15:03:46Z",
+      "code": "drained",
+      "details": {}
+    },
+    {
+      "sequence": 158,
+      "utc": "2026-10-28T15:03:54Z",
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "0835fda3-1aea-4aec-8470-f73bc6f139f1"
+      }
+    },
+    {
+      "sequence": 159,
+      "utc": "2026-10-28T15:04:02Z",
+      "code": "mutation_started",
+      "details": {}
+    },
+    {
+      "sequence": 160,
+      "utc": "2026-10-28T15:04:04Z",
+      "code": "migrated",
+      "details": {}
+    },
+    {
+      "sequence": 161,
+      "utc": "2026-10-28T15:04:08Z",
+      "code": "workers_replaced",
+      "details": {}
+    },
+    {
+      "sequence": 162,
+      "utc": "2026-10-28T15:04:15Z",
+      "code": "ready",
+      "details": {}
+    },
+    {
+      "sequence": 163,
+      "utc": "2026-10-28T15:04:17Z",
+      "code": "release_published",
+      "details": {}
+    },
+    {
+      "sequence": 164,
+      "utc": "2026-10-28T15:04:18Z",
+      "code": "traffic_resumed",
+      "details": {}
+    },
+    {
+      "sequence": 165,
+      "utc": "2026-10-28T15:04:20Z",
+      "code": "completed",
+      "details": {}
+    }
+  ]
+}

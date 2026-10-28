@@ -1,0 +1,24 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T15:34:15.629993+00:00",
+  "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "generation": 15,
+  "notes_read_gateway_and_native": 2,
+  "cross_workspace_native_denied": true,
+  "suspended_B_denied": true,
+  "revoked_B_principal_denied": true,
+  "restored_asset": {
+    "url": "/web/assets/b056235/web.assets_frontend_minimal.min.js",
+    "checksum": "7284b720742f38c3cb7f0bbe1aeeeceffadfe95d",
+    "file_size": 15195
+  },
+  "asset_http_bytes_match_filestore_checksum": true,
+  "deployment_state_unchanged": true,
+  "state_digest": "sha256:9d93f7690943d1b935d1f3bd034ca7ae099c08b117820bc21c32212f6f995446",
+  "source_sha256": {
+    "tools/verify_g5_business.py": "f645b58fb13800b38a1c5ab36b73c38ee4dac4791b90ad6baa6b64ca02985323"
+  },
+  "limits": [
+    "Workspace attachments are deliberately excluded; this verifies a supported internal filestore asset read."
+  ]
+}

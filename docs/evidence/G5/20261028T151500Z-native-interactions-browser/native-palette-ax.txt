@@ -1,0 +1,3 @@
+Browser tab: 1, Title: "Modular Platform", URL: "http://g5.localhost:18072/app/settings?workspace=c578135b-df92-482e-9f2f-e306617cf561".
+There has been no change in the accessibility tree.
+The focused UI element is 106 combo box (expanded, settable) Secondary Actions: Collapse

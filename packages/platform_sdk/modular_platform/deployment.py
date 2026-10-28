@@ -43,6 +43,7 @@ from packaging.markers import default_environment
 from packaging.tags import sys_tags
 root=pathlib.Path('/opt/modular')
 inventory=json.loads((root/'distribution-inventory.json').read_text())
+native_manifests={name:ast.literal_eval((root/('odoo/addons' if name=='base' else 'addons')/name/'__manifest__.py').read_text()) for name in inventory['native_addons']}
 projection=root/'packages/platform_sdk/modular_platform/projection.py'
 protocol=0
 if projection.is_file():
@@ -65,7 +66,7 @@ for distribution in importlib.metadata.distributions():
     source={str(entry):hashlib.sha256(pathlib.Path(distribution.locate_file(entry)).read_bytes()).hexdigest() for entry in (distribution.files or []) if str(entry).endswith(('.py','.so','.dist-info/METADATA')) and pathlib.Path(distribution.locate_file(entry)).is_file()}
     digest='sha256:'+hashlib.sha256(json.dumps(source,sort_keys=True,separators=(',',':')).encode()).hexdigest()
     wheels.append({'name':distribution.metadata['Name'],'version':distribution.version,'kind':'runtime_distribution','requires_python':distribution.metadata.get('Requires-Python',''),'requires_dist':distribution.requires or [],'digest':digest})
-print(json.dumps({'inventory':inventory,'published_release_protocol':protocol,'inventory_digest':'sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),'python_lock_digest':'sha256:'+runtime_lock,'python':platform.python_version(),'architecture':platform.machine(),'markers':default_environment(),'accepted_wheel_tags':[str(tag) for tag in sys_tags()],'python_metadata':sorted(wheels,key=lambda item:item['name'].lower()),'modified_files':bad,'unexpected_addon_files':sorted(actual-expected),'missing_addon_files':sorted(expected-actual)}))
+print(json.dumps({'inventory':inventory,'native_manifests':native_manifests,'published_release_protocol':protocol,'inventory_digest':'sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),'python_lock_digest':'sha256:'+runtime_lock,'python':platform.python_version(),'architecture':platform.machine(),'markers':default_environment(),'accepted_wheel_tags':[str(tag) for tag in sys_tags()],'python_metadata':sorted(wheels,key=lambda item:item['name'].lower()),'modified_files':bad,'unexpected_addon_files':sorted(actual-expected),'missing_addon_files':sorted(expected-actual)}))
 """
 
 

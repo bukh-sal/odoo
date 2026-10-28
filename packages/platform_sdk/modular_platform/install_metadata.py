@@ -29,7 +29,7 @@ def main():
                 assert cursor.fetchone() == (expected,), 'Maintenance target identity mismatch'
             installations, workspaces = {}, {}
             for target in data['targets']:
-                assert target['action'] in ('install','upgrade') and target['site_id'] == data['site_id']
+                assert target['action'] in ('install','upgrade','deploy') and target['site_id'] == data['site_id']
                 plugin = data['plugins'][target['plugin_id']]
                 manifest = plugin['manifest']
                 cursor.execute('SELECT state,latest_version FROM ir_module_module WHERE name=%s', [manifest['runtime']['addon_name']])
@@ -92,7 +92,8 @@ def main():
                     VALUES (%s,%s,%s,%s,%s,1,1,timezone('UTC',now()),timezone('UTC',now()))
                     ON CONFLICT(installation_id,workspace_id,capability) DO UPDATE SET state=EXCLUDED.state,policy_version=EXCLUDED.policy_version,write_date=EXCLUDED.write_date''',
                     [installation,workspace,change['capability'],'approved' if change['action']=='grant' else 'revoked',data['policy_version']])
-            cursor.execute('UPDATE mp_workspace SET policy_generation=policy_generation+1 WHERE id=ANY(%s)', [list(workspaces.values())])
+            if not all(target['action']=='deploy' for target in data['targets']):
+                cursor.execute('UPDATE mp_workspace SET policy_generation=policy_generation+1 WHERE id=ANY(%s)', [list(workspaces.values())])
             inventory='sha256:'+hashlib.sha256(Path('/opt/modular/distribution-inventory.json').read_bytes()).hexdigest()
             for key, value in [('mp.release_generation', str(data['generation'])), ('mp.release_digest', data['release_digest']), ('mp.last_operation_id', data['operation_id']),('mp.active_inventory_digest',inventory)]:
                 cursor.execute('''INSERT INTO ir_config_parameter(key,value,create_uid,write_uid,create_date,write_date) VALUES (%s,%s,1,1,timezone('UTC',now()),timezone('UTC',now()))

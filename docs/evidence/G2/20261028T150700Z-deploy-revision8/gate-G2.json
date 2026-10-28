@@ -1,0 +1,21 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "revision": 8,
+  "contract_major": 1,
+  "utc": "2026-10-28T15:01:35.952282+00:00",
+  "frozen_files": 75,
+  "contract_rows": 7,
+  "inventory_sha256": "798fa4f8f2dd97b4196350212cabb6169a16b2fec951f796407bcdc9c9cd6c9c",
+  "golden_plan_hash": "sha256:4588c919d2c45b37971d1dfb98b69cc4f809fa86f9511f7e9c2a2b09a7ee1112",
+  "source_regression": "docs/evidence/G5/20261028T150500Z-platform-deploy-source/planning-core.json",
+  "test_counts": {
+    "host": "150",
+    "linux": "123"
+  },
+  "affected_new_tests": "tests/test_platform_deploy.py:6 source checks",
+  "semantics": "ADR0015 explicit independently approved constrained platform deploy; plugin upgrade remains strictly increasing; old DTOs/golden unchanged; app request refuses deploy",
+  "limitations": [
+    "Source/contracts only; actual deploy and browser behavior remain G5 qualification."
+  ]
+}

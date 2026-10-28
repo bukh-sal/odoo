@@ -1,0 +1,7 @@
+{
+  "result": "denied_before_operation_approval_or_mutation",
+  "utc": "2026-10-28T14:50:17.155436+00:00",
+  "reason": "Ordinary upgrade must strictly increase the package version",
+  "candidate_image": "sha256:74428132a0ebb047312fd72f5d417171b427bb7f4e0c76f7fa1e0f9e599441a8",
+  "next": "ADR0015 explicit constrained platform deploy operation; no plugin version fabrication or unrelated installation."
+}
