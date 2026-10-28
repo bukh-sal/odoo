@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/workspace-settings.schema.json",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "default_locale": {
+      "enum": [
+        "en-US",
+        "ar"
+      ]
+    },
+    "timezone": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    }
+  },
+  "required": [],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "$defs": {
+    "settings": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "default_locale": {
+          "enum": [
+            "en-US",
+            "ar"
+          ]
+        },
+        "timezone": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "workspace_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "slug": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "policy_generation": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "name",
+        "default_locale",
+        "timezone",
+        "workspace_id",
+        "slug",
+        "policy_generation"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

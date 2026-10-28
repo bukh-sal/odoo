@@ -180,5 +180,13 @@ version='0.1.0'
             with self.assertRaises(ContractError):checked_path(invalid)
         self.assertEqual(checked_path('schemas/notes.json'),'schemas/notes.json')
 
+    def test_workspace_admin_inputs_cannot_name_a_site_or_installation(self):
+        member=example('workspace-membership');settings=example('workspace-settings')
+        validate('workspace-membership',member);validate('workspace-settings',settings)
+        for key in ['workspace_id','site_id','user_id','sudo','installation_id','command']:
+            with self.subTest(key=key),self.assertRaises(ContractError):validate('workspace-membership',{**member,key:'forged'})
+            with self.subTest(key=key),self.assertRaises(ContractError):validate('workspace-settings',{**settings,key:'forged'})
+        with self.assertRaises(ContractError):validate('workspace-membership',{**member,'role':'site_operator'})
+
 
 if __name__ == '__main__': unittest.main()

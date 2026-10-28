@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/workspace-membership.schema.json",
+  "$defs": {
+    "member": {
+      "type": "object",
+      "properties": {
+        "principal_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "kind": {
+          "enum": [
+            "human",
+            "service"
+          ]
+        },
+        "role": {
+          "enum": [
+            "viewer",
+            "editor",
+            "administrator"
+          ]
+        },
+        "state": {
+          "enum": [
+            "active",
+            "revoked"
+          ]
+        }
+      },
+      "required": [
+        "principal_id",
+        "display_name",
+        "kind",
+        "role",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "member_list": {
+      "type": "array",
+      "maxItems": 1000,
+      "items": {
+        "$ref": "#/$defs/member"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "operation": {
+          "enum": [
+            "add",
+            "update"
+          ]
+        },
+        "principal_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "role": {
+          "enum": [
+            "viewer",
+            "editor",
+            "administrator"
+          ]
+        }
+      },
+      "required": [
+        "operation",
+        "principal_id",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "operation": {
+          "const": "remove"
+        },
+        "principal_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "operation",
+        "principal_id"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

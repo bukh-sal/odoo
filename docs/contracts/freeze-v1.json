@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 2,
+  "revision": 3,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -20,7 +20,11 @@
       "paths": [
         "packages/contracts/v1/workspace-context.schema.json",
         "packages/contracts/v1/role-permissions.json",
-        "packages/contracts/examples/v1/workspace-context.json"
+        "packages/contracts/examples/v1/workspace-context.json",
+        "packages/contracts/v1/workspace-membership.schema.json",
+        "packages/contracts/v1/workspace-settings.schema.json",
+        "packages/contracts/examples/v1/workspace-membership.json",
+        "packages/contracts/examples/v1/workspace-settings.json"
       ],
       "g1": [
         "FEAS-01",
@@ -154,7 +158,8 @@
     "deploy/requirements-tooling.lock": "84094bb9d9c2c07489890f757e0aef2294083ebba2d19ac35ac393aa0648c104",
     "docs/architecture-decisions/0003-r1-contracts.md": "28f17f916a860619da1222fd017daa8397be2029aa12a0922f652645a0dd2e2d",
     "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
-    "docs/contracts/protocol-v1.md": "82fc3a6edd454be8f5a44cde58302dbf39081c032f6f5ebe4aa276f5080094bf",
+    "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
+    "docs/contracts/protocol-v1.md": "4a3fb8982cfd2eb234e8b2b91b85f402964593eedf2b3b283bde16fcbf142ac4",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/endpoint.json": "ba813564ad9c211eed25ae1e8ed8e86f90b38e26a15d2fed73bd3bf7ac2cbdb8",
@@ -174,6 +179,8 @@
     "packages/contracts/examples/v1/worker-response.json": "c0bb4c297952165166736e3999451393fe1e932c19cdd7c4e77470e381b8fe37",
     "packages/contracts/examples/v1/worker-token.txt": "45989eaabdd951c6fd2113dc1911e30636ad98acf0539a350a31ed4746d082fb",
     "packages/contracts/examples/v1/workspace-context.json": "1b5e659cb7092a5a2c9acf8fc37af1bd5ebe88c0df06edf29df3286c00249a28",
+    "packages/contracts/examples/v1/workspace-membership.json": "b2dc5c75e9fc1de611091e98e3d5062c028a1cf915d575152b868925e0c54c86",
+    "packages/contracts/examples/v1/workspace-settings.json": "8cba194f68ff327eb3df08b0b5de10e5890e8b6be7e2554749cfc29af3e1b296",
     "packages/contracts/v1/approval.schema.json": "07ddec2afa1f8bf0539065f0e1907acc60c1cc1f78ac78ba28b31e6086707623",
     "packages/contracts/v1/binding.schema.json": "178f4a6e07ac7a3dae98d202e95089d3d9d5d78847d6c7e7d3b5e5d43b6ba4b3",
     "packages/contracts/v1/call-context.schema.json": "ad592f1a9b11d3334610bc3a6dad5a44d36bd43f006afb967709728dea3a3b60",
@@ -191,6 +198,8 @@
     "packages/contracts/v1/worker-request.schema.json": "aec2d3a6891266b16db4901423ae96ea1281adac694eb5c346387eaff554f1bc",
     "packages/contracts/v1/worker-response.schema.json": "741fee9b8ac404afaa0e8ac10d5103efcc3f1a695cf25b01c259c156b0f65f2f",
     "packages/contracts/v1/workspace-context.schema.json": "6aeb3cc769cef0a9fa06fb67d0921bd078daef7b1a7604a778cb34c1af21cd98",
+    "packages/contracts/v1/workspace-membership.schema.json": "c0737c15658796da5f01e84a4a86a7b8dbc61906aa6b5d88379211b1f620636d",
+    "packages/contracts/v1/workspace-settings.schema.json": "bcaa10f2058b515343ca4fe1e558b572d03e272db7e73dfbfa930e009f32ff80",
     "packages/host_sdk/package-lock.json": "3f0ee0040552022f928c4bfdb2c6d7a4973cfca5d10d104f5485b4332398729b",
     "packages/host_sdk/package.json": "e0d066d961a7931d70c71696cd17bac70b2d6f9c1b548ae50cee9677038dde87",
     "packages/host_sdk/src/index.ts": "cb9703f0e6ccb161880d60e411fcbc4c7044365a3ffa6a34322d7b8e520c7575",
@@ -199,7 +208,7 @@
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
     "packages/platform_sdk/modular_platform/contracts.py": "5fb999688ae295da4cd37aaea19a936491f52bbbd9deffa3d79f2dda346cc77b",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
-    "tests/test_contracts.py": "20a60d636cec9cb4e3876bfa1b2d16a7012e2f386fccd84c77109ab6b6b9ffa2",
+    "tests/test_contracts.py": "6115a9be86503d2017a8008c6224167be82331087fdd20f349ff19c514a0dfa4",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"

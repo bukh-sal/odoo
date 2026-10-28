@@ -1,0 +1,54 @@
+{
+  "gate": "G2",
+  "state": "passed",
+  "contract_major": 1,
+  "revision": 3,
+  "frozen_files": 56,
+  "contract_tests": 17,
+  "utc": "2026-10-28T02:09:16.896089+00:00",
+  "parent_commit": "67cc4acfdf528683e98925065517d457f18aefc1",
+  "inventory": "docs/contracts/freeze-v1.json",
+  "inventory_sha256": "1bf681ead5a610f39b203d71040749abd025b0a474a7e637227962bbaba0f7c9",
+  "trigger": "ADR0005 additive workspace administrator endpoints, existing semantics preserved",
+  "checks": [
+    {
+      "label": "contracts",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_contracts.py",
+        "-v"
+      ],
+      "evidence": "contracts.log"
+    },
+    {
+      "label": "typescript",
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "--prefix",
+        "packages/host_sdk",
+        "run",
+        "check"
+      ],
+      "evidence": "typescript.log"
+    },
+    {
+      "label": "freeze",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "evidence": "freeze.log"
+    }
+  ],
+  "g1": "unchanged; no new G1 runtime inputs",
+  "runtime_feature": "G3/C04 still requires real authority/admin tests"
+}
