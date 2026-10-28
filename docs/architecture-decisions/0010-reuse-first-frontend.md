@@ -1,0 +1,51 @@
+# ADR 0010: reuse Odoo UI behavior with platform-owned presentation
+
+Date: 2026-10-28 (Asia/Riyadh).
+
+Status: accepted direction; the incremental adjustments below are proposed, not implemented by this assessment. Continue G5 backend/lifecycle work. No WebClient replacement, source deletion, contract revision or runtime migration is authorized merely by this ADR.
+
+## Clarification and retained work
+
+The frontend goal is **maximum practical reuse of Odoo's existing UI infrastructure, with our own appearance and platform-specific additions**. Stock Odoo appearance is not a requirement. A custom layout does not itself justify replacing working code, and retaining Owl/assets does not by itself establish reuse of action, routing or interaction behavior.
+
+This clarifies specification v1.1 sections 2.2, 3.2 and 16.1: adapt existing frontend functionality, use the supported root/client-action seams where practical, and keep native declarative views as the default for standard record screens. Preserve the backend, workspace authorization, independent OS approval/deployment control, current native list/form integration and framework-neutral custom-page capability. Canvas remains a supported custom page. No public SDK or authority semantics change; G2 revision7 remains the current freeze.
+
+The current shell is a custom Owl root mounted with Odoo's `startWebClient`, not a replacement implementation of the Odoo frontend framework. Its bundle includes `web.assets_web`; `addons/web/static/src/env.js::mountComponent` starts Odoo services before mounting the root. It already imports native `View` and renders `MainComponentsContainer`. Several service reuse changes therefore do not require switching to the complete upstream WebClient.
+
+## Source assessment
+
+Representative paths refer to the pinned upstream checkout and the current platform source. These are source findings, not claims that alternative integrations have passed browser qualification.
+
+| Area | Current platform implementation | Existing Odoo infrastructure | Finding / smallest useful adjustment |
+| --- | --- | --- | --- |
+| Appearance and visual layout | `platform_addons/mp_shell/static/src/host.js::Shell.template`, `host.css`, `platform_addons/mp_shell/views/bootstrap.xml` | Owl/QWeb, native assets/components and styling hooks | Branding, sidebar/header arrangement, spacing, theme tokens and responsive styling are presentation. Retain useful work and adapt styles for reused components/overlays; no stock appearance requirement. |
+| Confirmation dialogs | `host.js` confirmation `<dialog>`, `confirm`, `finishConfirmation`, cancel/accept handlers | `addons/web/static/src/core/dialog/dialog_service.js`, `core/confirmation_dialog/confirmation_dialog.js` | Duplicates generic dialog lifecycle and confirmation UI. Adapt `host.dialogs.confirm` to Odoo's dialog service/ConfirmationDialog; retain the public Promise result, destructive labels, cancellation and generation/identity cleanup. |
+| Notifications | `host.js` notification banner, `notify`, `noticeTimer`; facade currently forwards only the message | `addons/web/static/src/core/notifications/notification_service.js` and `notification_container.js` | Reimplements transient notification storage/timing/rendering. Delegate to the notification service, map public severity and keep text escaping plus mount-scoped cleanup. Persistent page errors, permission denial and draft recovery remain separate platform states. |
+| Command palette/hotkeys | `host.js` commands `<dialog>`, `onKey`, `openCommands`, palette helpers | `addons/web/static/src/core/commands/command_service.js`, native hotkey/dialog services | Duplicates palette/keyboard behavior; both command service startup and shell register Control+K handling. Register only current authorized platform commands with native command service and remove their registrations on disposal. Preserve namespaced plugin commands and server checks; do not automatically expose unrestricted native actions through the public facade. |
+| Navigation state and action handling | `host.js::go/openPage/onPop/activate`, custom breadcrumbs/history config and URL parsing | `addons/web/static/src/core/browser/router.js`, `webclient/actions/action_service.js`, `webclient/menus/menu_service.js` | Partly duplicates routing, breadcrumbs, selected-action and leave orchestration. Plugin/page allowlists, public `/app/...` links, per-tab workspace context, live revocation and custom-page dirty guards are platform-specific. Concentrate translation in an adapter; test native router/action behavior against those requirements before replacing it. Avoid two competing history/action stacks. |
+| Native view hosting | `host.js::nativeView`, native `<View>` props, custom create/select/save/discard callbacks | `addons/web/static/src/views/view.js`, native controllers/control panel; `webclient/actions/action_container.js` and `action_service.js` for broader action hosting | Native rendering/widgets are already reused. The shell manually loads actions and orchestrates list/form transitions: partial duplicated action behavior, not a rewritten view renderer. Keep native views as the default. First isolate the adapter, then assess action-service/ActionContainer reuse while retaining revision CAS, idempotency, public-ID mapping, scope headers and stale-result fencing. |
+| User preferences and workspace administration | `host.js` preferences UI/local theme/locale state, workspace settings/member handlers; `platform_addons/mp_core/controllers.py` | Native localization, user-menu/preferences actions, reusable form/dialog components | Generic preference presentation and parts of locale handling overlap. Reuse compatible facilities without equating a platform workspace with an Odoo company or exposing ERP/system administration. Workspace membership/configuration semantics and their scoped APIs remain custom. |
+| Plugin/custom-page hosting and operations | `host.js::facade/retire/refreshAuthority/activate`, `operations.js`, `platform_addons/mp_example_canvas/static/src/page.js` | Client-action registry, action hosting and native interaction components | Plugin mount/updateRoute/dispose/AbortSignal, actor/site/workspace generations, safe draft recovery, compiled contributions and independent-approval operation requests are platform behavior. Retain it behind narrow adapters; reuse native UI primitives within those screens. A client-action wrapper may host Canvas without making Canvas depend on Owl. |
+
+## Smallest useful adjustment
+
+1. Keep the current working root, visual layout, native views, workspace/plugin behavior and Canvas mounting while G5 continues. This is not approval to expand parallel generic UI behavior.
+2. Before expanding generic frontend behavior, adapt confirmation dialogs, notifications and command palette/hotkeys to the already-running Odoo services. Preserve the frozen host facade. Reuse our theme/branding around native components rather than recreating their lifecycle.
+3. Isolate existing native view/action/route translation from the large root component, preserving behavior. Use one bounded Notes list/form pilot to determine whether native action service/ActionContainer removes meaningful custom orchestration. Standard record screens continue to use native views; custom pages remain optional.
+4. Adopt more native action/router/menu handling only where it satisfies workspace isolation, approved routes, CAS/idempotency, dirty navigation, revocation and generation disposal. Document a concrete incompatibility before adding an alternative implementation. Frontend permission display never substitutes for backend authorization.
+
+The first adjustment is deliberately service-level reuse; extracting a helper by itself earns no product/progress credit. No frontend source/runtime changes were made during this assessment.
+
+## When a complete WebClient change would help
+
+The existing `addons/web/static/src/webclient/webclient.js` composes `NavBar`, `ActionContainer`, menu/action services, native routing and `MainComponentsContainer`. Extending that root could simplify standard action stacks, breadcrumbs and record navigation **if** the pilot shows those pieces can take over current orchestration without recreating it inside a client action. A component substitution alone does not demonstrate that benefit.
+
+Such a change would replace the root's action container/navigation/history glue, and register platform screens/custom-page hosting as client actions. It would retain backend/security/deployment code, native XML views/models, public service/host contracts, workspace carrier/live authority checks, compiled plugin contributions, Canvas mount adapter, operation request screens and useful branding/theme/layout components. Adapting/replacing the NavBar template can preserve our appearance.
+
+It would also require scoped menu generation/cache invalidation, `/app/...` deep-link translation, per-tab workspace propagation, native record revision/idempotency integration, safe dirty/session recovery and custom-page disposal across native action transitions. Source inspection alone has not established a substantial net simplification. **Do not switch the whole root now.** If the pilot establishes a clear benefit, present the concrete change/retained components and affected qualification before proceeding with that larger change.
+
+## Verification and evidence discipline
+
+Affected future adjustments must requalify dialog cancellation/Escape/focus restoration, single command invocation and disposal, escaped/severity-aware notifications, native CRUD/CAS/import boundaries, dirty navigation/back/refresh, actor/workspace revocation, two-tab isolation, Canvas lifecycle/draft recovery, theme/RTL/zoom/keyboard and native release refresh. Keep the earlier G3/G4 evidence as historical records; qualify changed consumers rather than silently treating old browser evidence as proof of new behavior. Historical backend results are not discarded.
+
+No G2 contract digest changes or new release-acceptance passes follow from this documentation. Current G5 work remains active, with UI service adapters tracked as a bounded follow-up before frontend expansion. No whole-frontend rewrite or automatic reset/reinitialization of qualified sites.
