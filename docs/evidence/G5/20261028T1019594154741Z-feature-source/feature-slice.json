@@ -1,0 +1,23 @@
+{
+  "gate": "G5",
+  "result": "passed_subset",
+  "utc": "2026-10-28T10:27:12.891374+00:00",
+  "source_report": "planning-core.json",
+  "host_tests": 98,
+  "linux_tests": 71,
+  "frozen_files": 74,
+  "source_matches_current_tree": true,
+  "live_evidence": "../20261028T0959438545340Z-app-operation/app-operation.json",
+  "automatic_reenable_evidence": "../20261028T0959438545340Z-app-operation/enable-automatic-mirror.json",
+  "browser_evidence": "../20261028T0959438545340Z-app-operation/browser-operation.json",
+  "qualified_acceptance": [
+    "SEC-06"
+  ],
+  "acceptance_total": "46/99",
+  "scope": "Actual app request, independent exact-hash approval and metadata-only feature apply/status; not a G5 gate exit",
+  "limits": [
+    "General independently staged new-image install/upgrade/uninstall/removal remain pending.",
+    "Startup/client release fencing, recovery review start-expiry, remaining native faults/concurrency and record-bearing attachment restore remain pending.",
+    "ADR0010 UI reuse assessment changes no frontend runtime or frozen public contracts."
+  ]
+}

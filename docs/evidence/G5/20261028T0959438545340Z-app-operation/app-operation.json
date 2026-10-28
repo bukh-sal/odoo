@@ -1,0 +1,26 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T10:01:19.510277+00:00",
+  "operation_id": "7800293e-1844-4c46-8281-03d77b6e6b7f",
+  "plan_hash": "sha256:961391eeb23019db4d3717bb15a70f58b5a704dff9e5bf1a23830100c9fdec7d",
+  "checks": [
+    "Browser-prepared/submitted/downloaded exact plan equals app request",
+    "Independent CLI reconstructs/imports, fabricated app approval cannot apply or change base state",
+    "Exact local approval and typed redacted awaiting/approved/completed status mirrors",
+    "Actual atomic feature suspension, DB installation retained, release/bindings unchanged",
+    "No native migration/worker restart claimed or performed, completed replay stable"
+  ],
+  "limits": [
+    "Browser final progress observation, data retention/API gates and re-enable are recorded separately.",
+    "General native new-image lifecycle and full G5 exit remain pending."
+  ],
+  "source": {
+    "tools/modular.py": "fd0577b3c67ff0c5c746ccb2c043d772c6575a91f388e62e5279971e49c1f156",
+    "tools/qualify_app_operation.py": "415d847ed3e37eb96a314e74f7a3300f6e892799ff4c6bc8535c59b26c3ebbad",
+    "packages/platform_sdk/modular_platform/app_channel.py": "9d0fa413c75d0b13b235ff103dc427becef236c868fe1610f822426adc459da1",
+    "packages/platform_sdk/modular_platform/feature_executor.py": "fc956e3341cee3151afc8d76a3e3e5e0da759582703359a6cc0f1d42cddd57a4",
+    "packages/platform_sdk/modular_platform/feature_metadata.py": "891c4cfa881fb5c943ded7a7593bd50fdbddf85c49572f476fcde38f454a0b2d",
+    "packages/platform_sdk/modular_platform/operator_store.py": "63ee680a5520b6f8712a873814d875e79f0d07f8b94073a550c49a521fcf1103",
+    "packages/platform_sdk/modular_platform/approval_validation.py": "bf9a6a3e1718a141fce096ab9ef386a640825883b82bc109ffe4af44438e4574"
+  }
+}

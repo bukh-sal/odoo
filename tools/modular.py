@@ -94,6 +94,11 @@ def main(argv=None):
     register.add_argument('--bundle', required=True, type=Path)
     register.add_argument('--deployment-config', required=True, type=Path)
     register.add_argument('--catalog', required=True, type=Path)
+    for action in ('import-request','mirror-status'):
+        channel=operation_actions.add_parser(action)
+        channel.add_argument('operation_id')
+        channel.add_argument('--deployment-config',required=True,type=Path)
+        channel.add_argument('--catalog',required=True,type=Path)
     approve = operation_actions.add_parser('approve')
     approve.add_argument('operation_id')
     approve.add_argument('--plan-hash', required=True)
@@ -121,9 +126,21 @@ def main(argv=None):
                 result = {'state': 'initialized', 'authorization_generation': store.policy['authorization_generation']}
             else:
                 store = OperatorStore(args.store)
-                if args.action in ('register', 'approve'):
+                if args.action in ('register', 'approve','import-request'):
                     revalidate = IndependentValidator(load_json(args.deployment_config.read_bytes()), args.catalog, validator)
-                if args.action == 'register':
+                if args.action in ('import-request','mirror-status'):
+                    from modular_platform.app_channel import read_request,publish_status
+                    observer=DockerObserver(load_json(args.deployment_config.read_bytes()))
+                    if args.action=='import-request':
+                        nomination=read_request(observer,args.operation_id)
+                        operation=store.register(nomination['bundle'],revalidate)
+                        store.attach_application_request(operation,nomination)
+                        result=store.status(operation)
+                        try:publish_status(store,observer,Catalog(args.catalog,validator,readonly=True),operation)
+                        except Exception:pass
+                    else:
+                        result=publish_status(store,observer,Catalog(args.catalog,validator,readonly=True),args.operation_id)
+                elif args.action == 'register':
                     raw = args.bundle.read_bytes()
                     if len(raw) > 16 * 1024 * 1024:
                         raise OperatorError('Operation bundle size limit')
@@ -142,6 +159,9 @@ def main(argv=None):
                         revalidate=revalidate, noninteractive=args.noninteractive)
                     result = store.status(args.operation_id)
                     result['review'] = review
+                    if store.application_request(args.operation_id):
+                        from modular_platform.native_executor import NativeExecutor
+                        NativeExecutor(store,args.deployment_config,args.catalog,validator).mirror_progress(args.operation_id)
                 elif args.action == 'revoke-approval':
                     store.revoke(args.operation_id)
                     result = store.status(args.operation_id)
@@ -173,7 +193,12 @@ def main(argv=None):
         elif args.group == 'plugin' and args.action == 'apply':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.native_executor import NativeExecutor
-            result = NativeExecutor(OperatorStore(args.store), args.deployment_config, args.catalog, validator).apply(args.operation_id)
+            store=OperatorStore(args.store)
+            executor=NativeExecutor(store,args.deployment_config,args.catalog,validator)
+            if store.bundle(args.operation_id)['plan']['operation_type'] in ('suspend','enable'):
+                from modular_platform.feature_executor import FeatureExecutor
+                executor=FeatureExecutor(executor)
+            result=executor.apply(args.operation_id)
         elif args.group == 'plugin' and args.action == 'plan-current-install':
             from datetime import datetime, timezone
             from uuid import uuid4

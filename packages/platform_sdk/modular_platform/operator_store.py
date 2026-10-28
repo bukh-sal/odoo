@@ -22,6 +22,7 @@ from .plans import check_bundle, data_digest
 
 STEPS = ['reserved', 'staged', 'maintenance', 'drained', 'checkpointed', 'mutation_started',
          'migrated', 'workers_replaced', 'ready', 'release_published', 'traffic_resumed', 'completed']
+FEATURE_STEPS = ['reserved','staged','mutation_started','metadata_published','ready','completed']
 ACKS = {'destructive', 'trust_expansion', 'permission_expansion'}
 
 
@@ -113,6 +114,28 @@ class OperatorStore:
             bundle = load_json(self._row(database, operation_id)['bundle'])
         self._authorize_plan(bundle['plan'], generation=False)
         return bundle
+
+    def attach_application_request(self, operation_id, request):
+        keys={'operation_id','site_id','plan_hash','requested_by','request_id'}
+        value={key:request[key] for key in keys}
+        for key in ('operation_id','site_id','requested_by','request_id'):
+            if str(UUID(value[key]))!=value[key]:raise OperatorError('Canonical application request identity required')
+        with self._connect(transaction=True) as database:
+            row=self._row(database,operation_id);bundle=load_json(row['bundle'])
+            self._authorize_plan(bundle['plan'])
+            if value['operation_id']!=operation_id or value['plan_hash']!=row['plan_hash'] or value['site_id'] not in bundle['plan']['site_ids']:
+                raise OperatorError('Application request differs from independent registration')
+            previous=database.execute("SELECT details FROM events WHERE operation_id=? AND code='application_request_imported'",(operation_id,)).fetchone()
+            if previous:
+                if load_json(previous['details'])!=value:raise OperatorError('Application request origin is immutable')
+            else:self._event(database,operation_id,'application_request_imported',value)
+
+    def application_request(self, operation_id):
+        with self._connect() as database:
+            row=self._row(database,operation_id)
+            self._authorize_plan(load_json(row['bundle'])['plan'],generation=False)
+            event=database.execute("SELECT details FROM events WHERE operation_id=? AND code='application_request_imported'",(operation_id,)).fetchone()
+            return load_json(event['details']) if event else None
 
     def record_restore(self, operation_id, locks, *, code, details):
         """Narrow local recovery journal; never reuses the original approval."""
@@ -376,11 +399,14 @@ class OperatorStore:
         return self.status(operation_id)
 
     def advance(self, operation_id, locks, phase, *, backup_id=None):
-        if phase not in STEPS or phase in ('reserved', 'mutation_started'):
+        if phase not in set(STEPS+FEATURE_STEPS) or phase in ('reserved', 'mutation_started'):
             raise OperatorError('Invalid journal step; mutation needs its dedicated authority check')
         with self._connect(transaction=True) as database:
             row, bundle, approval, nonce = self._reservation(database, operation_id, locks)
-            steps = STEPS if bundle['plan']['backup']['required'] else [value for value in STEPS if value != 'checkpointed']
+            steps = FEATURE_STEPS if bundle['plan']['operation_type'] in ('suspend','enable') else (
+                STEPS if bundle['plan']['backup']['required'] else [value for value in STEPS if value != 'checkpointed'])
+            if phase not in steps:
+                raise OperatorError('Journal phase does not describe this operation type')
             if steps.index(phase) != steps.index(row['phase']) + 1:
                 raise OperatorError('Journal steps cannot be skipped, repeated or rewound')
             if phase == 'checkpointed' and (not isinstance(backup_id, str) or not backup_id or len(backup_id) > 200):
@@ -398,10 +424,12 @@ class OperatorStore:
         check_bundle(bundle, revalidate(bundle))
         with self._connect(transaction=True) as database:
             row, bundle, approval, nonce = self._reservation(database, operation_id, locks, now=now)
-            expected = 'checkpointed' if bundle['plan']['backup']['required'] else 'drained'
+            feature = bundle['plan']['operation_type'] in ('suspend','enable')
+            expected = 'staged' if feature else ('checkpointed' if bundle['plan']['backup']['required'] else 'drained')
             if row['phase'] != expected or row['mutation_started']:
                 raise OperatorError('Mutation requires a drained/checkpointed operation and one reservation')
-            database.execute('UPDATE operations SET mutation_started=1,phase=? WHERE operation_id=?', ('mutation_started', operation_id))
+            database.execute('UPDATE operations SET mutation_started=1,phase=?,traffic_resumed=MAX(traffic_resumed,?) WHERE operation_id=?',
+                             ('mutation_started',int(feature),operation_id))
             self._event(database, operation_id, 'mutation_started', now=now)
         # This durable record precedes launching ANY native mutating child. If the
         # parent dies, a new lock owner cannot infer that the child also stopped.

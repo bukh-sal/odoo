@@ -38,6 +38,17 @@ class NativeExecutor:
     def _validate(self, *, quiesced=False):
         return IndependentValidator(self.config, self.catalog_root, self.validator, quiesced=quiesced)
 
+    def mirror_progress(self, operation):
+        # App progress is a best-effort mirror. A broken/untrusted application
+        # must not hide or invalidate a successful independent journal result.
+        try:
+            if not self.store.application_request(operation):return
+            from .app_channel import publish_status
+            observer=DockerObserver(load_json(self.target_path.read_bytes()))
+            publish_status(self.store,observer,Catalog(self.catalog_root,self.validator,readonly=True),operation)
+        except Exception:
+            pass  # Existing UI observation becomes stale; local show still works.
+
     def _inspect(self, container):
         return load_json(_run(['docker', 'inspect', container]))[0]
 
@@ -109,8 +120,10 @@ class NativeExecutor:
         plan = bundle['plan']
         with OperationLocks(self.store.root/'locks', plan['deployment_id'], plan['site_ids']) as locks:
             if self.store.status(operation)['state'] == 'completed':
+                self.mirror_progress(operation)
                 return self.store.status(operation)
             self.store.reserve(operation, locks, self._validate())
+            self.mirror_progress(operation)
             stages = protect_directory(self.store.root/'stages')
             directory = stages/operation
             if directory.exists():
@@ -125,6 +138,7 @@ class NativeExecutor:
                 _write_new(directory/'bundle.json', bundle)
                 _write_new(directory/'configuration.json', self.config)
                 self.store.advance(operation, locks, 'staged')
+                self.mirror_progress(operation)
                 failure = 'DRAIN_FAILED'
                 locks.check()
                 _run(['docker', 'stop', '--time', '20', edge])
@@ -196,6 +210,7 @@ class NativeExecutor:
                 _write_new(directory/'result.json', {'state': 'completed', 'release_digest': state['release_digest'],
                     'limits': ['Client epoch refresh and general new-image staging are pending G5 qualification.']})
                 self.store.advance(operation, locks, 'completed')
+                self.mirror_progress(operation)
                 return self.store.status(operation)
             except BaseException:
                 # Keep traffic in maintenance on any uncertain state; never

@@ -1,0 +1,15 @@
+{
+  "result": "passed_subset",
+  "operation_id": "7800293e-1844-4c46-8281-03d77b6e6b7f",
+  "checks": [
+    "Actual browser prepared and submitted feature suspension in Personal",
+    "Downloaded full bundle matched independently read app request",
+    "Browser progressed from awaiting_operator_approval to completed/metadata_published and showed installed database plus suspended feature",
+    "No browser console errors observed"
+  ],
+  "screenshot": "browser-completed.png",
+  "limitations": [
+    "Completed status becomes stale when no fresh operator mirror is published",
+    "General install/upgrade/uninstall UI and complete G5 remain pending"
+  ]
+}
