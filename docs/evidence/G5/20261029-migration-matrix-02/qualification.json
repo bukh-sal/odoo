@@ -1,0 +1,229 @@
+{
+  "result": "native_engine_passed_planner_order_mismatch",
+  "utc": "2026-10-28T23:18:43.514811+00:00",
+  "source_commit": "34a9998356c3d89d99a8f4a0fc929e98c263b36c",
+  "image_id": "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+  "fixture_source_sha256": "462308e497e42f74efe1de0a808d4427d344953fa520aeb2bab7b12f887f7c06",
+  "project": "mp-g5-matrix-768a058e4225",
+  "cases": [
+    {
+      "case": "adjacent",
+      "database": "mp_disposable_g5_matrix_768a058e4225_adjacent",
+      "from": "0.1.9",
+      "to": "0.1.10",
+      "executed_scripts": 3,
+      "data_identity_preserved": true,
+      "schema_before_sha256": "59dd253421c261da90aac16c38a2d9792cc5815ec87bd130e371344554c298d7",
+      "schema_after_sha256": "59dd253421c261da90aac16c38a2d9792cc5815ec87bd130e371344554c298d7",
+      "native_order_matches_declared_hash_set": true
+    },
+    {
+      "case": "adjacent",
+      "database": "mp_disposable_g5_matrix_768a058e4225_adjacent",
+      "from": "0.1.10",
+      "to": "0.2.0",
+      "executed_scripts": 3,
+      "data_identity_preserved": true,
+      "schema_before_sha256": "59dd253421c261da90aac16c38a2d9792cc5815ec87bd130e371344554c298d7",
+      "schema_after_sha256": "7f67dbb9ddfd1ab9609cae173131970a23f26090e815857cda2a0e3ea255120c",
+      "native_order_matches_declared_hash_set": true
+    },
+    {
+      "case": "skipped",
+      "database": "mp_disposable_g5_matrix_768a058e4225_skipped",
+      "from": "0.1.0",
+      "to": "0.3.0",
+      "executed_scripts": 12,
+      "data_identity_preserved": true,
+      "schema_before_sha256": "59dd253421c261da90aac16c38a2d9792cc5815ec87bd130e371344554c298d7",
+      "schema_after_sha256": "7f67dbb9ddfd1ab9609cae173131970a23f26090e815857cda2a0e3ea255120c",
+      "native_order_matches_declared_hash_set": true
+    },
+    {
+      "case": "wide",
+      "database": "mp_disposable_g5_matrix_768a058e4225_wide",
+      "from": "0.99999998.0",
+      "to": "0.100000000.0",
+      "executed_scripts": 6,
+      "data_identity_preserved": true,
+      "schema_before_sha256": "7f43db529ba63b3f762d5dbce5f1dc1f4414d8dbbf384700b168ab14e11d02b8",
+      "schema_after_sha256": "7f43db529ba63b3f762d5dbce5f1dc1f4414d8dbbf384700b168ab14e11d02b8",
+      "native_order_matches_declared_hash_set": true
+    },
+    {
+      "case": "fresh",
+      "database": "mp_disposable_g5_matrix_768a058e4225_fresh",
+      "fresh_current_schema_data_without_upgrade_events": true
+    }
+  ],
+  "planner_order_discrepancies": [
+    {
+      "case": "skipped",
+      "from": "0.1.0",
+      "to": "0.3.0",
+      "planner_recorded_order": [
+        [
+          "pre",
+          "0.1.9"
+        ],
+        [
+          "post",
+          "0.1.9"
+        ],
+        [
+          "end",
+          "0.1.9"
+        ],
+        [
+          "pre",
+          "0.1.10"
+        ],
+        [
+          "post",
+          "0.1.10"
+        ],
+        [
+          "end",
+          "0.1.10"
+        ],
+        [
+          "pre",
+          "0.2.0"
+        ],
+        [
+          "post",
+          "0.2.0"
+        ],
+        [
+          "end",
+          "0.2.0"
+        ],
+        [
+          "pre",
+          "0.3.0"
+        ],
+        [
+          "post",
+          "0.3.0"
+        ],
+        [
+          "end",
+          "0.3.0"
+        ]
+      ],
+      "actual_native_order": [
+        [
+          "pre",
+          "0.1.9"
+        ],
+        [
+          "pre",
+          "0.1.10"
+        ],
+        [
+          "pre",
+          "0.2.0"
+        ],
+        [
+          "pre",
+          "0.3.0"
+        ],
+        [
+          "post",
+          "0.1.9"
+        ],
+        [
+          "post",
+          "0.1.10"
+        ],
+        [
+          "post",
+          "0.2.0"
+        ],
+        [
+          "post",
+          "0.3.0"
+        ],
+        [
+          "end",
+          "0.1.9"
+        ],
+        [
+          "end",
+          "0.1.10"
+        ],
+        [
+          "end",
+          "0.2.0"
+        ],
+        [
+          "end",
+          "0.3.0"
+        ]
+      ]
+    },
+    {
+      "case": "wide",
+      "from": "0.99999998.0",
+      "to": "0.100000000.0",
+      "planner_recorded_order": [
+        [
+          "pre",
+          "0.99999999.0"
+        ],
+        [
+          "post",
+          "0.99999999.0"
+        ],
+        [
+          "end",
+          "0.99999999.0"
+        ],
+        [
+          "pre",
+          "0.100000000.0"
+        ],
+        [
+          "post",
+          "0.100000000.0"
+        ],
+        [
+          "end",
+          "0.100000000.0"
+        ]
+      ],
+      "actual_native_order": [
+        [
+          "pre",
+          "0.99999999.0"
+        ],
+        [
+          "pre",
+          "0.100000000.0"
+        ],
+        [
+          "post",
+          "0.99999999.0"
+        ],
+        [
+          "post",
+          "0.100000000.0"
+        ],
+        [
+          "end",
+          "0.99999999.0"
+        ],
+        [
+          "end",
+          "0.100000000.0"
+        ]
+      ]
+    }
+  ],
+  "existing_targets_configuration_business_unchanged": true,
+  "limits": [
+    "Direct native-engine harness with verified development archives, not an additional manager/independent approval proof. Retained actual Notes first-native/adjacent operations supply that control-path evidence.",
+    "No failure/crash/recovery claim from this matrix; those remain G5-X06/X09. Non-retryable witnesses require reconciliation after uncertainty.",
+    "No existing database/volume reset; no Canvas/product/UI changes."
+  ]
+}

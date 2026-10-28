@@ -1,0 +1,19 @@
+{
+  "result": "confirmed_no_native_mutation",
+  "child": {
+    "name": "mp-g5-matrix-013a250ef06a-adjacent-install",
+    "case": "adjacent",
+    "database": "mp_disposable_g5_matrix_013a250ef06a_adjacent",
+    "version": "0.1.9",
+    "action": "-i",
+    "state": "exited",
+    "exit_code": 2
+  },
+  "database": "mp_disposable_g5_matrix_013a250ef06a_adjacent",
+  "observed": {
+    "user_tables": 0,
+    "ownership": "mp-g5-matrix-013a250ef06a"
+  },
+  "failure": "unsupported --server-wide-modules; actual pinned option is --load",
+  "next": "fresh attempt02 with corrected CLI flag; no reset or deletion"
+}

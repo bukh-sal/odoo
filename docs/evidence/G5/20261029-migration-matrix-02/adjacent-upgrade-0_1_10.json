@@ -1,0 +1,86 @@
+{
+  "rows": [
+    {
+      "id": 1,
+      "name": "Baseline fixture",
+      "payload": "fresh:0.1.9|pre@0.1.10|post@0.1.10|end@0.1.10",
+      "step_count": 3
+    },
+    {
+      "id": 2,
+      "name": "User fixture",
+      "payload": "user-original|pre@0.1.10|post@0.1.10|end@0.1.10",
+      "step_count": 3
+    }
+  ],
+  "events": [
+    {
+      "phase": "pre",
+      "target": "0.1.10",
+      "installed": "19.0.0.1.9",
+      "column_ready": false,
+      "payload_after": "c7ccf4c09b9fedc2dbbc0a6793c71e2b4c4d5d883397b37ba4daed7bdab104dc",
+      "payload_before": "8aaddecded989cf7327bc883d197c82c8963f8ab5f1feba4b5567bf494d7b271"
+    },
+    {
+      "phase": "post",
+      "target": "0.1.10",
+      "installed": "19.0.0.1.9",
+      "column_ready": false,
+      "payload_after": "6a706ee66627638aa917f3afe5bb686e0e0489cdf84097334cb8186a0f274801",
+      "payload_before": "c7ccf4c09b9fedc2dbbc0a6793c71e2b4c4d5d883397b37ba4daed7bdab104dc"
+    },
+    {
+      "phase": "end",
+      "target": "0.1.10",
+      "installed": "19.0.0.1.9",
+      "column_ready": false,
+      "payload_after": "c053ae20635fc5a4cafcb0cee9d1049cc40f2e0d66f66d2068e2ccd291934b1e",
+      "payload_before": "6a706ee66627638aa917f3afe5bb686e0e0489cdf84097334cb8186a0f274801"
+    }
+  ],
+  "columns": [
+    [
+      "id",
+      "integer",
+      "NO"
+    ],
+    [
+      "step_count",
+      "integer",
+      "YES"
+    ],
+    [
+      "create_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "write_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "name",
+      "character varying",
+      "NO"
+    ],
+    [
+      "payload",
+      "text",
+      "NO"
+    ],
+    [
+      "create_date",
+      "timestamp without time zone",
+      "YES"
+    ],
+    [
+      "write_date",
+      "timestamp without time zone",
+      "YES"
+    ]
+  ],
+  "native_state": "installed",
+  "native_version": "19.0.0.1.10"
+}

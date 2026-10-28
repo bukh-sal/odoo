@@ -1,0 +1,163 @@
+{
+  "rows": [
+    {
+      "id": 1,
+      "name": "Baseline fixture",
+      "payload": "fresh:0.1.0|pre@0.1.9|pre@0.1.10|pre@0.2.0|pre@0.3.0|post@0.1.9|post@0.1.10|post@0.2.0|post@0.3.0|end@0.1.9|end@0.1.10|end@0.2.0|end@0.3.0",
+      "step_count": 12
+    },
+    {
+      "id": 2,
+      "name": "User fixture",
+      "payload": "user-original|pre@0.1.9|pre@0.1.10|pre@0.2.0|pre@0.3.0|post@0.1.9|post@0.1.10|post@0.2.0|post@0.3.0|end@0.1.9|end@0.1.10|end@0.2.0|end@0.3.0",
+      "step_count": 12
+    }
+  ],
+  "events": [
+    {
+      "phase": "pre",
+      "target": "0.1.9",
+      "installed": "19.0.0.1.0",
+      "column_ready": false,
+      "payload_after": "b81a2e300cd422d1db025c127b0bfa9d894fa7b7266c036520addf1907a9ab98",
+      "payload_before": "f318f09b4eb0dbc88675c137ad8ff907ab129373d4d1d27d3dd2689a9c835d5b"
+    },
+    {
+      "phase": "pre",
+      "target": "0.1.10",
+      "installed": "19.0.0.1.0",
+      "column_ready": false,
+      "payload_after": "68039012a3d8a3ed9ab9a599fe2297a2cdd614e66b9847fb902c76760c555263",
+      "payload_before": "b81a2e300cd422d1db025c127b0bfa9d894fa7b7266c036520addf1907a9ab98"
+    },
+    {
+      "phase": "pre",
+      "target": "0.2.0",
+      "installed": "19.0.0.1.0",
+      "column_ready": false,
+      "payload_after": "2ecda43431fee21c94926bd42b2a81115cdeef4cc80738a624d2ed39ea8aea08",
+      "payload_before": "68039012a3d8a3ed9ab9a599fe2297a2cdd614e66b9847fb902c76760c555263"
+    },
+    {
+      "phase": "pre",
+      "target": "0.3.0",
+      "installed": "19.0.0.1.0",
+      "column_ready": false,
+      "payload_after": "f3ad8df6ba23c1a4b83938911cb848f0cfdb16c9f3c978f5403444e59152fc81",
+      "payload_before": "2ecda43431fee21c94926bd42b2a81115cdeef4cc80738a624d2ed39ea8aea08"
+    },
+    {
+      "phase": "post",
+      "target": "0.1.9",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "82459cfb2889c6f2deb0130c5e5866550357e88d3192bed1636bca890f36fa2d",
+      "payload_before": "f3ad8df6ba23c1a4b83938911cb848f0cfdb16c9f3c978f5403444e59152fc81"
+    },
+    {
+      "phase": "post",
+      "target": "0.1.10",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "785564d6997c620ba691dd1ec53df3beab285189ce55b9d316953753ecb13e0d",
+      "payload_before": "82459cfb2889c6f2deb0130c5e5866550357e88d3192bed1636bca890f36fa2d"
+    },
+    {
+      "phase": "post",
+      "target": "0.2.0",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "7cbc2ae34f2bf83af5ea1ecdfbb0d6dd2f99913c1ffd1f28daf62b6c521a500a",
+      "payload_before": "785564d6997c620ba691dd1ec53df3beab285189ce55b9d316953753ecb13e0d"
+    },
+    {
+      "phase": "post",
+      "target": "0.3.0",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "ba582d04d762cd8798a1b01e8fb07640d08566e3ecf00699c8ca56c589b4fcaa",
+      "payload_before": "7cbc2ae34f2bf83af5ea1ecdfbb0d6dd2f99913c1ffd1f28daf62b6c521a500a"
+    },
+    {
+      "phase": "end",
+      "target": "0.1.9",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "ce797638cfc1b052915341b0380491753d010e3d79075a7805e849a715d07cdc",
+      "payload_before": "ba582d04d762cd8798a1b01e8fb07640d08566e3ecf00699c8ca56c589b4fcaa"
+    },
+    {
+      "phase": "end",
+      "target": "0.1.10",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "6fd92668d0c7214afa02058a5904fd2f5927ea1cbabeb382f803fe939d3d19ea",
+      "payload_before": "ce797638cfc1b052915341b0380491753d010e3d79075a7805e849a715d07cdc"
+    },
+    {
+      "phase": "end",
+      "target": "0.2.0",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "d256177b341a0759bdf72af8f5f5dba2e3237851447ead8936d8ea01a3510103",
+      "payload_before": "6fd92668d0c7214afa02058a5904fd2f5927ea1cbabeb382f803fe939d3d19ea"
+    },
+    {
+      "phase": "end",
+      "target": "0.3.0",
+      "installed": "19.0.0.1.0",
+      "column_ready": true,
+      "payload_after": "502992d534f13a4258a60e2091093d69f9da62bd58c859f83a1b7ca2274990ca",
+      "payload_before": "d256177b341a0759bdf72af8f5f5dba2e3237851447ead8936d8ea01a3510103"
+    }
+  ],
+  "columns": [
+    [
+      "id",
+      "integer",
+      "NO"
+    ],
+    [
+      "step_count",
+      "integer",
+      "YES"
+    ],
+    [
+      "create_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "write_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "name",
+      "character varying",
+      "NO"
+    ],
+    [
+      "payload",
+      "text",
+      "NO"
+    ],
+    [
+      "create_date",
+      "timestamp without time zone",
+      "YES"
+    ],
+    [
+      "write_date",
+      "timestamp without time zone",
+      "YES"
+    ],
+    [
+      "current_ready",
+      "boolean",
+      "YES"
+    ]
+  ],
+  "native_state": "installed",
+  "native_version": "19.0.0.3.0"
+}

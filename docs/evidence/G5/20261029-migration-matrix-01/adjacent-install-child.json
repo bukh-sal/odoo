@@ -1,0 +1,23 @@
+{
+  "name": "mp-g5-matrix-013a250ef06a-adjacent-install",
+  "image_id": "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+  "arguments": [
+    "/opt/modular/odoo-bin",
+    "-c",
+    "/run/secrets/odoo_config",
+    "-d",
+    "mp_disposable_g5_matrix_013a250ef06a_adjacent",
+    "--db-filter=^mp_disposable_g5_matrix_013a250ef06a_adjacent$",
+    "--data-dir=/tmp/native-data",
+    "--workers=0",
+    "--max-cron-threads=0",
+    "--no-http",
+    "--stop-after-init",
+    "--without-demo",
+    "--server-wide-modules=base",
+    "--addons-path=/opt/modular/addons,/matrix/0.1.9",
+    "-i",
+    "mp_g5_migration_probe"
+  ],
+  "exit_code": 2
+}

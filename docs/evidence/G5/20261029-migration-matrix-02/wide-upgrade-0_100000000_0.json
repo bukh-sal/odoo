@@ -1,0 +1,115 @@
+{
+  "rows": [
+    {
+      "id": 1,
+      "name": "Baseline fixture",
+      "payload": "fresh:0.99999998.0|pre@0.99999999.0|pre@0.100000000.0|post@0.99999999.0|post@0.100000000.0|end@0.99999999.0|end@0.100000000.0",
+      "step_count": 6
+    },
+    {
+      "id": 2,
+      "name": "User fixture",
+      "payload": "user-original|pre@0.99999999.0|pre@0.100000000.0|post@0.99999999.0|post@0.100000000.0|end@0.99999999.0|end@0.100000000.0",
+      "step_count": 6
+    }
+  ],
+  "events": [
+    {
+      "phase": "pre",
+      "target": "0.99999999.0",
+      "installed": "19.0.0.99999998.0",
+      "column_ready": true,
+      "payload_after": "717eb9ca8228bdd2ebde8d0a93197bffeb7f0fb6880d379530fb8481d6fa28df",
+      "payload_before": "cfcdd830133726f98abb942a0cbf4c9ff2c8d84a31c3e7825016ae0b673740d3"
+    },
+    {
+      "phase": "pre",
+      "target": "0.100000000.0",
+      "installed": "19.0.0.99999998.0",
+      "column_ready": true,
+      "payload_after": "b6ac667bf53f6f6f8706962956ea6ac2fdcbdcd20586d0558ad376ed1b0ad3af",
+      "payload_before": "717eb9ca8228bdd2ebde8d0a93197bffeb7f0fb6880d379530fb8481d6fa28df"
+    },
+    {
+      "phase": "post",
+      "target": "0.99999999.0",
+      "installed": "19.0.0.99999998.0",
+      "column_ready": true,
+      "payload_after": "72c6d392bf501f68f5b71585aa7a54ae42cc89d9da4c15db2d53b7a4cce95ff6",
+      "payload_before": "b6ac667bf53f6f6f8706962956ea6ac2fdcbdcd20586d0558ad376ed1b0ad3af"
+    },
+    {
+      "phase": "post",
+      "target": "0.100000000.0",
+      "installed": "19.0.0.99999998.0",
+      "column_ready": true,
+      "payload_after": "a2181e421360d824db165429358dab7b39d0fef2f2ad49053b27284d28bc56e0",
+      "payload_before": "72c6d392bf501f68f5b71585aa7a54ae42cc89d9da4c15db2d53b7a4cce95ff6"
+    },
+    {
+      "phase": "end",
+      "target": "0.99999999.0",
+      "installed": "19.0.0.99999998.0",
+      "column_ready": true,
+      "payload_after": "62b77eb080f59c475c737b8fd2b4992bca7b2c454a6d021aa43eefc5a899e318",
+      "payload_before": "a2181e421360d824db165429358dab7b39d0fef2f2ad49053b27284d28bc56e0"
+    },
+    {
+      "phase": "end",
+      "target": "0.100000000.0",
+      "installed": "19.0.0.99999998.0",
+      "column_ready": true,
+      "payload_after": "95aaeacf9e58e13cb750b4ce091be1622f0dcc4f62d65477f1b3efae0f7dedd8",
+      "payload_before": "62b77eb080f59c475c737b8fd2b4992bca7b2c454a6d021aa43eefc5a899e318"
+    }
+  ],
+  "columns": [
+    [
+      "id",
+      "integer",
+      "NO"
+    ],
+    [
+      "step_count",
+      "integer",
+      "YES"
+    ],
+    [
+      "create_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "write_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "name",
+      "character varying",
+      "NO"
+    ],
+    [
+      "payload",
+      "text",
+      "NO"
+    ],
+    [
+      "current_ready",
+      "boolean",
+      "YES"
+    ],
+    [
+      "create_date",
+      "timestamp without time zone",
+      "YES"
+    ],
+    [
+      "write_date",
+      "timestamp without time zone",
+      "YES"
+    ]
+  ],
+  "native_state": "installed",
+  "native_version": "19.0.0.100000000.0"
+}

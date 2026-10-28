@@ -1,0 +1,55 @@
+{
+  "rows": [
+    {
+      "id": 1,
+      "name": "Baseline fixture",
+      "payload": "fresh:0.1.9",
+      "step_count": 0
+    }
+  ],
+  "events": [],
+  "columns": [
+    [
+      "id",
+      "integer",
+      "NO"
+    ],
+    [
+      "step_count",
+      "integer",
+      "YES"
+    ],
+    [
+      "create_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "write_uid",
+      "integer",
+      "YES"
+    ],
+    [
+      "name",
+      "character varying",
+      "NO"
+    ],
+    [
+      "payload",
+      "text",
+      "NO"
+    ],
+    [
+      "create_date",
+      "timestamp without time zone",
+      "YES"
+    ],
+    [
+      "write_date",
+      "timestamp without time zone",
+      "YES"
+    ]
+  ],
+  "native_state": "installed",
+  "native_version": "19.0.0.1.9"
+}

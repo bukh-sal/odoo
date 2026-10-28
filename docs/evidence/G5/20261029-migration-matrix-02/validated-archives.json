@@ -1,0 +1,421 @@
+[
+  {
+    "version": "0.1.0",
+    "artifact_digest": "sha256:7624277ce13551efd4f813a9ae67fdef10088ac82804b80d29dcd7da9362700a",
+    "native_manifest": {
+      "name": "G5 migration probe",
+      "version": "19.0.0.1.0",
+      "license": "LGPL-3",
+      "depends": [
+        "base"
+      ],
+      "data": [
+        "data.xml"
+      ],
+      "installable": true,
+      "application": false,
+      "auto_install": false
+    },
+    "scripts": [],
+    "schema_source_sha256": "1d8de829a7691e1529435d546197bdef2992b1dac5db7a89e3b6560c01d01715",
+    "declared_recovery": []
+  },
+  {
+    "version": "0.1.9",
+    "artifact_digest": "sha256:3c8afaf0c02cb7932c29025161c1247478d5e2f559a6202820cb9a213f0e1e72",
+    "native_manifest": {
+      "name": "G5 migration probe",
+      "version": "19.0.0.1.9",
+      "license": "LGPL-3",
+      "depends": [
+        "base"
+      ],
+      "data": [
+        "data.xml"
+      ],
+      "installable": true,
+      "application": false,
+      "auto_install": false
+    },
+    "scripts": [
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/pre-witness.py",
+        "sha256": "f051d5996145aeb674a1f6496add15e75de79c325dd1314d9ce52c7ab7113174"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/post-witness.py",
+        "sha256": "03004d72cc8061c6671444fd8304b0e54537d02fb448789f2c8b5ccb1685ea1d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/end-witness.py",
+        "sha256": "2c409268827c90e12c0acffe3a2a4a3eab10b2bd3fa6b5e63bd82534cb953361"
+      }
+    ],
+    "schema_source_sha256": "1d8de829a7691e1529435d546197bdef2992b1dac5db7a89e3b6560c01d01715",
+    "declared_recovery": [
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects."
+    ]
+  },
+  {
+    "version": "0.1.10",
+    "artifact_digest": "sha256:a45e6554ef2f6dcded48ef95fd170b32d73a4995c4f516b381f852b5b2ebdb80",
+    "native_manifest": {
+      "name": "G5 migration probe",
+      "version": "19.0.0.1.10",
+      "license": "LGPL-3",
+      "depends": [
+        "base"
+      ],
+      "data": [
+        "data.xml"
+      ],
+      "installable": true,
+      "application": false,
+      "auto_install": false
+    },
+    "scripts": [
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/pre-witness.py",
+        "sha256": "f051d5996145aeb674a1f6496add15e75de79c325dd1314d9ce52c7ab7113174"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/post-witness.py",
+        "sha256": "03004d72cc8061c6671444fd8304b0e54537d02fb448789f2c8b5ccb1685ea1d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/end-witness.py",
+        "sha256": "2c409268827c90e12c0acffe3a2a4a3eab10b2bd3fa6b5e63bd82534cb953361"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/pre-witness.py",
+        "sha256": "20c12f23abc5b3d65ab093e48e82b48e75f5a83cca7d57e9a8e9e9d98f3ce8bf"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/post-witness.py",
+        "sha256": "47ec15f1ab12d121770c095f3c3f53d9c6c94800d3d760ca339ce8d8b8d951b9"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/end-witness.py",
+        "sha256": "1cac7613731f3ea2685174ac6d8a4ec225f8345aa764e8ae0631904d85aa995e"
+      }
+    ],
+    "schema_source_sha256": "1d8de829a7691e1529435d546197bdef2992b1dac5db7a89e3b6560c01d01715",
+    "declared_recovery": [
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects."
+    ]
+  },
+  {
+    "version": "0.2.0",
+    "artifact_digest": "sha256:c08712d4788ead63cc4fd64581a1d1aadd948a634a22c61309e479fcbde039a4",
+    "native_manifest": {
+      "name": "G5 migration probe",
+      "version": "19.0.0.2.0",
+      "license": "LGPL-3",
+      "depends": [
+        "base"
+      ],
+      "data": [
+        "data.xml"
+      ],
+      "installable": true,
+      "application": false,
+      "auto_install": false
+    },
+    "scripts": [
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/pre-witness.py",
+        "sha256": "f051d5996145aeb674a1f6496add15e75de79c325dd1314d9ce52c7ab7113174"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/post-witness.py",
+        "sha256": "03004d72cc8061c6671444fd8304b0e54537d02fb448789f2c8b5ccb1685ea1d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/end-witness.py",
+        "sha256": "2c409268827c90e12c0acffe3a2a4a3eab10b2bd3fa6b5e63bd82534cb953361"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/pre-witness.py",
+        "sha256": "20c12f23abc5b3d65ab093e48e82b48e75f5a83cca7d57e9a8e9e9d98f3ce8bf"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/post-witness.py",
+        "sha256": "47ec15f1ab12d121770c095f3c3f53d9c6c94800d3d760ca339ce8d8b8d951b9"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/end-witness.py",
+        "sha256": "1cac7613731f3ea2685174ac6d8a4ec225f8345aa764e8ae0631904d85aa995e"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/pre-witness.py",
+        "sha256": "6caf04d9dd94e2a622c209deac02bf76602e753db652c176ed2ec131f4af8245"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/post-witness.py",
+        "sha256": "e7b23beb1f369b7f284669a3dc48e034d7ea3ce488976189073ea58c6af8990d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/end-witness.py",
+        "sha256": "8652caa38d84f217a68937a62b29a3e116bcd519ba3f5b370a81038c72abfc9a"
+      }
+    ],
+    "schema_source_sha256": "b74bebf141ccf580bf53b5469073291934003983b7dca5b0d17ed46d75ee119c",
+    "declared_recovery": [
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects."
+    ]
+  },
+  {
+    "version": "0.3.0",
+    "artifact_digest": "sha256:ee44dcc9d657dfdd0d398192e2f635d6f553e949d233a35a37bbb12ebad66d5b",
+    "native_manifest": {
+      "name": "G5 migration probe",
+      "version": "19.0.0.3.0",
+      "license": "LGPL-3",
+      "depends": [
+        "base"
+      ],
+      "data": [
+        "data.xml"
+      ],
+      "installable": true,
+      "application": false,
+      "auto_install": false
+    },
+    "scripts": [
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/pre-witness.py",
+        "sha256": "f051d5996145aeb674a1f6496add15e75de79c325dd1314d9ce52c7ab7113174"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/post-witness.py",
+        "sha256": "03004d72cc8061c6671444fd8304b0e54537d02fb448789f2c8b5ccb1685ea1d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/end-witness.py",
+        "sha256": "2c409268827c90e12c0acffe3a2a4a3eab10b2bd3fa6b5e63bd82534cb953361"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/pre-witness.py",
+        "sha256": "20c12f23abc5b3d65ab093e48e82b48e75f5a83cca7d57e9a8e9e9d98f3ce8bf"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/post-witness.py",
+        "sha256": "47ec15f1ab12d121770c095f3c3f53d9c6c94800d3d760ca339ce8d8b8d951b9"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/end-witness.py",
+        "sha256": "1cac7613731f3ea2685174ac6d8a4ec225f8345aa764e8ae0631904d85aa995e"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/pre-witness.py",
+        "sha256": "6caf04d9dd94e2a622c209deac02bf76602e753db652c176ed2ec131f4af8245"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/post-witness.py",
+        "sha256": "e7b23beb1f369b7f284669a3dc48e034d7ea3ce488976189073ea58c6af8990d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/end-witness.py",
+        "sha256": "8652caa38d84f217a68937a62b29a3e116bcd519ba3f5b370a81038c72abfc9a"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/pre-witness.py",
+        "sha256": "d85d050c7211bfdbef0fac7f881b9f0a37c80768eb63bce453b1d831be39f83f"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/post-witness.py",
+        "sha256": "77e93a5fe4a09769526b0c3f5bd00d67f41c2d0abcea19829d71803300a14345"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/end-witness.py",
+        "sha256": "dd6cc742a0fd5e43efef299b927a1c400e2edee4ab5b806229cd5932e913cabf"
+      }
+    ],
+    "schema_source_sha256": "b74bebf141ccf580bf53b5469073291934003983b7dca5b0d17ed46d75ee119c",
+    "declared_recovery": [
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects."
+    ]
+  },
+  {
+    "version": "0.99999998.0",
+    "artifact_digest": "sha256:39e27760b20923386ec93566f73e8f3cfdf0abe85e8d3efb0bb43036812163e5",
+    "native_manifest": {
+      "name": "G5 migration probe",
+      "version": "19.0.0.99999998.0",
+      "license": "LGPL-3",
+      "depends": [
+        "base"
+      ],
+      "data": [
+        "data.xml"
+      ],
+      "installable": true,
+      "application": false,
+      "auto_install": false
+    },
+    "scripts": [
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/pre-witness.py",
+        "sha256": "f051d5996145aeb674a1f6496add15e75de79c325dd1314d9ce52c7ab7113174"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/post-witness.py",
+        "sha256": "03004d72cc8061c6671444fd8304b0e54537d02fb448789f2c8b5ccb1685ea1d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/end-witness.py",
+        "sha256": "2c409268827c90e12c0acffe3a2a4a3eab10b2bd3fa6b5e63bd82534cb953361"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/pre-witness.py",
+        "sha256": "20c12f23abc5b3d65ab093e48e82b48e75f5a83cca7d57e9a8e9e9d98f3ce8bf"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/post-witness.py",
+        "sha256": "47ec15f1ab12d121770c095f3c3f53d9c6c94800d3d760ca339ce8d8b8d951b9"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/end-witness.py",
+        "sha256": "1cac7613731f3ea2685174ac6d8a4ec225f8345aa764e8ae0631904d85aa995e"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/pre-witness.py",
+        "sha256": "6caf04d9dd94e2a622c209deac02bf76602e753db652c176ed2ec131f4af8245"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/post-witness.py",
+        "sha256": "e7b23beb1f369b7f284669a3dc48e034d7ea3ce488976189073ea58c6af8990d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/end-witness.py",
+        "sha256": "8652caa38d84f217a68937a62b29a3e116bcd519ba3f5b370a81038c72abfc9a"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/pre-witness.py",
+        "sha256": "d85d050c7211bfdbef0fac7f881b9f0a37c80768eb63bce453b1d831be39f83f"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/post-witness.py",
+        "sha256": "77e93a5fe4a09769526b0c3f5bd00d67f41c2d0abcea19829d71803300a14345"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/end-witness.py",
+        "sha256": "dd6cc742a0fd5e43efef299b927a1c400e2edee4ab5b806229cd5932e913cabf"
+      }
+    ],
+    "schema_source_sha256": "b74bebf141ccf580bf53b5469073291934003983b7dca5b0d17ed46d75ee119c",
+    "declared_recovery": [
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects."
+    ]
+  },
+  {
+    "version": "0.100000000.0",
+    "artifact_digest": "sha256:4e7ba2a65c6cfa1c9b36d73ce49efe2023b4ce28e4ca10a09aa7f721a847c59c",
+    "native_manifest": {
+      "name": "G5 migration probe",
+      "version": "19.0.0.100000000.0",
+      "license": "LGPL-3",
+      "depends": [
+        "base"
+      ],
+      "data": [
+        "data.xml"
+      ],
+      "installable": true,
+      "application": false,
+      "auto_install": false
+    },
+    "scripts": [
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/pre-witness.py",
+        "sha256": "f051d5996145aeb674a1f6496add15e75de79c325dd1314d9ce52c7ab7113174"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/post-witness.py",
+        "sha256": "03004d72cc8061c6671444fd8304b0e54537d02fb448789f2c8b5ccb1685ea1d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.9/end-witness.py",
+        "sha256": "2c409268827c90e12c0acffe3a2a4a3eab10b2bd3fa6b5e63bd82534cb953361"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/pre-witness.py",
+        "sha256": "20c12f23abc5b3d65ab093e48e82b48e75f5a83cca7d57e9a8e9e9d98f3ce8bf"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/post-witness.py",
+        "sha256": "47ec15f1ab12d121770c095f3c3f53d9c6c94800d3d760ca339ce8d8b8d951b9"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.1.10/end-witness.py",
+        "sha256": "1cac7613731f3ea2685174ac6d8a4ec225f8345aa764e8ae0631904d85aa995e"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/pre-witness.py",
+        "sha256": "6caf04d9dd94e2a622c209deac02bf76602e753db652c176ed2ec131f4af8245"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/post-witness.py",
+        "sha256": "e7b23beb1f369b7f284669a3dc48e034d7ea3ce488976189073ea58c6af8990d"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.2.0/end-witness.py",
+        "sha256": "8652caa38d84f217a68937a62b29a3e116bcd519ba3f5b370a81038c72abfc9a"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/pre-witness.py",
+        "sha256": "d85d050c7211bfdbef0fac7f881b9f0a37c80768eb63bce453b1d831be39f83f"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/post-witness.py",
+        "sha256": "77e93a5fe4a09769526b0c3f5bd00d67f41c2d0abcea19829d71803300a14345"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.3.0/end-witness.py",
+        "sha256": "dd6cc742a0fd5e43efef299b927a1c400e2edee4ab5b806229cd5932e913cabf"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.99999999.0/pre-witness.py",
+        "sha256": "6d3aa2bf50e1a8427b53097a348693f5a91b0f6ca7a77b3a40bcf3035150b6e2"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.99999999.0/post-witness.py",
+        "sha256": "31493f3689493cfaf9569928ab14f12236be69d6dcfa63e76f4bf8219e108a94"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.99999999.0/end-witness.py",
+        "sha256": "c84463289bbe333450ccf9e2a0201e3cf2d1869c23fb784639b1169d5a7f73ff"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.100000000.0/pre-witness.py",
+        "sha256": "19c888dd1cbf6ceaf1a76136c53dc9aa0336536bec6ebc8e0268f69c72b4df45"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.100000000.0/post-witness.py",
+        "sha256": "1e5eb4f00a465070bcda5ca96bc9debd92e979566649d919d7427ec690bffb36"
+      },
+      {
+        "path": "backend/odoo_addons/mp_g5_migration_probe/migrations/19.0.0.100000000.0/end-witness.py",
+        "sha256": "8f24c284b761756a45f989097d00eda171118532155b183399a1054b0935d881"
+      }
+    ],
+    "schema_source_sha256": "b74bebf141ccf580bf53b5469073291934003983b7dca5b0d17ed46d75ee119c",
+    "declared_recovery": [
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects.",
+      "Do not replay uncertain native processes; inspect retained child and SQL witnesses. Restore coordinated checkpoint for real operations; this fixture has no external side effects."
+    ]
+  }
+]

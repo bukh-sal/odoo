@@ -135,11 +135,31 @@ class Plans(unittest.TestCase):
             manifest['upgrade']['transitions'].append({'from': previous, 'to': version, 'scripts': scripts})
         self.assertEqual(applicable_migrations(manifest, None), [])
         scripts = applicable_migrations(manifest, '0.1.9')
-        self.assertEqual([item['target_version'] for item in scripts[::3]], ['0.1.10', '0.2.0', '0.3.0'])
-        self.assertEqual([item['phase'] for item in scripts[:3]], ['pre', 'post', 'end'])
+        self.assertEqual([(item['phase'], item['target_version']) for item in scripts], [
+            ('pre', '0.1.10'), ('pre', '0.2.0'), ('pre', '0.3.0'),
+            ('post', '0.1.10'), ('post', '0.2.0'), ('post', '0.3.0'),
+            ('end', '0.1.10'), ('end', '0.2.0'), ('end', '0.3.0')])
         self.assertEqual(len(applicable_migrations(manifest, '0.2.0')), 3)
         with self.assertRaisesRegex(PlanningError, 'strictly increase'):
             applicable_migrations(manifest, '0.3.0')
+
+    def test_migration_phase_order_matches_native_wide_rollover_and_script_names(self):
+        manifest = plugin('a', '0.100000000.0')['manifest']
+        manifest['upgrade']['transitions'] = [
+            {'to': version, 'scripts': [
+                {'phase': phase, 'path': f'migrations/19.0.{version}/{phase}-{name}.py',
+                 'digest': 'sha256:' + ('a' if name == 'a' else 'b') * 64}
+                for phase in ('end', 'post', 'pre') for name in ('b', 'a')]}
+            for version in ('0.100000000.0', '0.99999999.0')]
+        scripts = applicable_migrations(manifest, '0.99999998.0')
+        self.assertEqual([(item['phase'], item['target_version'], Path(item['path']).name) for item in scripts], [
+            (phase, version, phase + '-' + name + '.py')
+            for phase in ('pre', 'post', 'end')
+            for version in ('0.99999999.0', '0.100000000.0') for name in ('a', 'b')])
+        self.assertEqual(applicable_migrations(manifest, None), [])
+        for previous in ('0.100000000.0', '1.0.0'):
+            with self.subTest(previous=previous), self.assertRaisesRegex(PlanningError, 'strictly increase'):
+                applicable_migrations(manifest, previous)
 
     def test_native_uninstall_is_destructive_preserves_source_and_covers_database(self):
         catalog = [plugin('a')]

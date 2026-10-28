@@ -1,0 +1,41 @@
+2026-10-28 23:17:56,007 1 INFO ? odoo.tools.config: adding missing 'web' to --load/server_wide_modules 
+2026-10-28 23:17:56,007 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 23:17:56,007 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 23:17:56,007 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/tmp/native-data/addons/19.0', '/opt/modular/addons', '/matrix/0.1.10']) 
+2026-10-28 23:17:56,008 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 23:17:56,579 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: loading 1 modules... 
+2026-10-28 23:17:56,582 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 23:17:56,600 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: updating modules list 
+2026-10-28 23:17:56,601 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-10-28 23:17:56,618 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 23:17:56,618 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 23:17:56,620 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 23:17:56,620 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 23:17:56,620 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_g5_migration_probe', defaulting to '' 
+2026-10-28 23:17:56,621 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_g5_migration_probe', defaulting to '' 
+2026-10-28 23:17:56,627 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['G5 migration probe'] to user __system__ #1 via n/a 
+2026-10-28 23:17:56,627 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['G5 migration probe'] to user __system__ #1 via n/a 
+2026-10-28 23:17:56,637 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 23:17:56,641 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 23:17:56,643 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.module: Missing `author` key in manifest for 'mp_g5_migration_probe', defaulting to '' 
+2026-10-28 23:17:56,648 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-10-28 23:17:56,657 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: loading 10 modules... 
+2026-10-28 23:17:56,657 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: Loading module mp_g5_migration_probe (2/10) 
+2026-10-28 23:17:56,658 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.migration: module mp_g5_migration_probe: Running upgrade [>19.0.0.1.10] pre-witness 
+2026-10-28 23:17:56,665 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.registry: module mp_g5_migration_probe: creating or updating database tables 
+2026-10-28 23:17:56,687 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: loading mp_g5_migration_probe/data.xml 
+2026-10-28 23:17:56,690 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.migration: module mp_g5_migration_probe: Running upgrade [19.0.0.1.10>] post-witness 
+2026-10-28 23:17:56,695 1 WARNING mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: The models ['mp.g5.migration.record', 'mp.g5.migration.event'] have no access rules in module mp_g5_migration_probe, consider adding some, like:
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mp_g5_migration_probe.access_mp_g5_migration_record,access_mp_g5_migration_record,mp_g5_migration_probe.model_mp_g5_migration_record,base.group_user,1,0,0,0
+mp_g5_migration_probe.access_mp_g5_migration_event,access_mp_g5_migration_event,mp_g5_migration_probe.model_mp_g5_migration_event,base.group_user,1,0,0,0 
+2026-10-28 23:17:56,697 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: Module mp_g5_migration_probe loaded in 0.04s, 45 queries (+45 other) 
+2026-10-28 23:17:56,780 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: 10 modules loaded in 0.12s, 45 queries (+45 extra) 
+2026-10-28 23:17:56,827 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.migration: module mp_g5_migration_probe: Running upgrade [$19.0.0.1.10] end-witness 
+2026-10-28 23:17:56,866 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.registry: verifying fields for every extended model 
+2026-10-28 23:17:56,911 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.modules.loading: Modules loaded. 
+2026-10-28 23:17:56,916 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.registry: Registry changed, signaling through the database 
+2026-10-28 23:17:56,918 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.registry: Registry loaded in 0.356s 
+2026-10-28 23:17:56,918 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.service.server: Initiating shutdown 
+2026-10-28 23:17:56,918 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 23:17:56,918 1 INFO mp_disposable_g5_matrix_768a058e4225_adjacent odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=12): Closed 1 connections  

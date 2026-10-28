@@ -80,7 +80,9 @@ def applicable_migrations(manifest, previous_version):
         if before < package_version(transition['to']) <= after:
             scripts.extend({**item, 'target_version': transition['to']} for item in transition['scripts'])
     phases = {'pre': 0, 'post': 1, 'end': 2}
-    scripts.sort(key=lambda item: (package_version(item['target_version']), phases[item['phase']], item['path']))
+    # Odoo completes each phase across all applicable versions before advancing
+    # to the next phase. This reviewed preimage must describe that native order.
+    scripts.sort(key=lambda item: (phases[item['phase']], package_version(item['target_version']), item['path']))
     return scripts
 
 

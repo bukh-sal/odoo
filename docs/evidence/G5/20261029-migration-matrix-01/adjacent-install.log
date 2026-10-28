@@ -1,0 +1,3 @@
+Usage: odoo-bin [--addons-path=PATH,...] server [options]
+
+odoo-bin [--addons-path=PATH,...] server: error: no such option: --server-wide-modules
