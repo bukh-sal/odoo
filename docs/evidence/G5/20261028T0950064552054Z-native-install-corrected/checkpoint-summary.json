@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "id": "ec2e6dfa-382a-412b-8183-64d873557db1",
+  "manifest_digest": "sha256:1e7a5395c83545e2fa345fc22586b0fe8cd016f0e211a97065d511dc098161aa",
+  "file_hashes": {
+    "database.dump": "f121d20bc09c2f1202716d73daefa0484d5536c4d828d7248bc5d77d5b6f09e0",
+    "database.dump.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "filestore.tar.gz": "eab5bceee0f3e24250505086a7833f2b0e218004046a92c6174b465bf9e87786",
+    "filestore.tar.gz.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "database_archive_readable": true,
+  "filestore_entries": 165,
+  "old_image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+  "secrets_in_evidence": false,
+  "limits": [
+    "Actual clean-target restore rehearsal and attachment reads remain pending."
+  ]
+}

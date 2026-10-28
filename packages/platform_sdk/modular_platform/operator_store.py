@@ -108,6 +108,51 @@ class OperatorStore:
         return {'operation_id': operation_id, 'plan_hash': bundle['plan_hash'],
                 'display': bundle['display'], 'approval_lifetime_seconds': self.policy['maximum_start_lifetime']}
 
+    def bundle(self, operation_id):
+        with self._connect() as database:
+            bundle = load_json(self._row(database, operation_id)['bundle'])
+        self._authorize_plan(bundle['plan'], generation=False)
+        return bundle
+
+    def record_restore(self, operation_id, locks, *, code, details):
+        """Narrow local recovery journal; never reuses the original approval."""
+        if code not in ('restore_authorized', 'restore_target_created', 'restore_verified'):
+            raise OperatorError('Unknown recovery journal action')
+        with self._connect(transaction=True) as database:
+            row = self._row(database, operation_id)
+            bundle = load_json(row['bundle'])
+            self._authorize_plan(bundle['plan'], generation=False)
+            nonce = self._lock_identity(bundle['plan'], locks)
+            if row['state'] != 'recovery_required' or row['traffic_resumed']:
+                raise OperatorError('Restore requires unresolved recovery before traffic has resumed')
+            if code != 'restore_authorized' and row['owner_nonce'] != nonce:
+                raise OperatorError('Recovery is fenced by another executor')
+            self._event(database, operation_id, code, details)
+            database.execute('UPDATE operations SET owner_nonce=?,phase=? WHERE operation_id=?', (nonce, code, operation_id))
+            if code == 'restore_verified':
+                # The original plan did NOT complete. Its reserved authority is
+                # retired after a verified restore; a retry needs a new plan ID.
+                database.execute('UPDATE operations SET state=? WHERE operation_id=?', ('revoked', operation_id))
+                approval = load_json(row['approval'])
+                approval['state'] = 'revoked'
+                database.execute('UPDATE operations SET approval=? WHERE operation_id=?',(json.dumps(approval,sort_keys=True),operation_id))
+                database.execute('INSERT OR IGNORE INTO revocations(operation_id,utc,operator_id) VALUES (?,?,?)',
+                    (operation_id,_stamp(_utc()),current_identity()))
+
+    def record_restore_resume(self, operation_id, locks, *, decision_hash):
+        with self._connect(transaction=True) as database:
+            row = self._row(database, operation_id)
+            self._authorize_plan(load_json(row['bundle'])['plan'])
+            self._lock_identity(load_json(row['bundle'])['plan'], locks)
+            if row['state']!='revoked' or row['phase']!='restore_verified' or row['traffic_resumed']:
+                raise OperatorError('Restored operation cannot resume traffic twice')
+            approval=load_json(row['approval']);approval['state']='revoked'
+            database.execute('UPDATE operations SET approval=? WHERE operation_id=?',(json.dumps(approval,sort_keys=True),operation_id))
+            database.execute('INSERT OR IGNORE INTO revocations(operation_id,utc,operator_id) VALUES (?,?,?)',
+                (operation_id,_stamp(_utc()),current_identity()))
+            self._event(database, operation_id, 'restore_traffic_resumed', {'decision_hash':decision_hash})
+            database.execute('UPDATE operations SET phase=?,traffic_resumed=1 WHERE operation_id=?',('restore_traffic_resumed',operation_id))
+
     def authorize_deployment(self, deployment_id, site_ids):
         """Explicit local OS-owner enrollment, never callable through the app."""
         if str(UUID(deployment_id))!=deployment_id or not site_ids or any(str(UUID(value))!=value for value in site_ids):
@@ -299,8 +344,8 @@ class OperatorStore:
                 row = self._row(database, operation_id)
                 self._authorize_plan(bundle['plan'], generation=False)
                 nonce = self._lock_identity(bundle['plan'], locks)
-                if row['state'] == 'completed':
-                    raise OperatorError('Completed operation cannot start or continue')
+                if row['state'] in ('completed','revoked','failed_before_mutation'):
+                    raise OperatorError('Retired or completed operation cannot start or continue')
                 if row['state'] == 'recovery_required' or row['owner_nonce'] != nonce:
                     if row['state'] != 'recovery_required':
                         database.execute('UPDATE operations SET state=? WHERE operation_id=?', ('recovery_required', operation_id))

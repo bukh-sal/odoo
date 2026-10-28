@@ -1,0 +1,89 @@
+{
+  "operation_id": "94b8f9db-d38e-4924-8ad1-2058d28bb675",
+  "plan_hash": "sha256:6139d92b3ee23f00a9ba2d4703a651a34d6bb065caed89bfe3c9285b818127a2",
+  "state": "recovery_required",
+  "phase": "workers_replaced",
+  "mutation_started": true,
+  "traffic_resumed": false,
+  "backup_id": "94b8f9db-d38e-4924-8ad1-2058d28bb675",
+  "approval_expires_at": "2026-10-28T09:51:53Z",
+  "history": [
+    {
+      "sequence": 4,
+      "utc": "2026-10-28T09:36:32Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:6139d92b3ee23f00a9ba2d4703a651a34d6bb065caed89bfe3c9285b818127a2"
+      }
+    },
+    {
+      "sequence": 5,
+      "utc": "2026-10-28T09:36:53Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:6139d92b3ee23f00a9ba2d4703a651a34d6bb065caed89bfe3c9285b818127a2"
+      }
+    },
+    {
+      "sequence": 6,
+      "utc": "2026-10-28T09:37:05Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 1956,
+        "lock_owner_digest": "sha256:7308e981f6f0574f0a5ba9c30befce6a2ef32e08d32210a0d263dc18097c092a"
+      }
+    },
+    {
+      "sequence": 7,
+      "utc": "2026-10-28T09:37:11Z",
+      "code": "staged",
+      "details": {}
+    },
+    {
+      "sequence": 8,
+      "utc": "2026-10-28T09:37:33Z",
+      "code": "maintenance",
+      "details": {}
+    },
+    {
+      "sequence": 9,
+      "utc": "2026-10-28T09:37:35Z",
+      "code": "drained",
+      "details": {}
+    },
+    {
+      "sequence": 10,
+      "utc": "2026-10-28T09:37:42Z",
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "94b8f9db-d38e-4924-8ad1-2058d28bb675"
+      }
+    },
+    {
+      "sequence": 11,
+      "utc": "2026-10-28T09:37:46Z",
+      "code": "mutation_started",
+      "details": {}
+    },
+    {
+      "sequence": 12,
+      "utc": "2026-10-28T09:37:50Z",
+      "code": "migrated",
+      "details": {}
+    },
+    {
+      "sequence": 13,
+      "utc": "2026-10-28T09:37:51Z",
+      "code": "workers_replaced",
+      "details": {}
+    },
+    {
+      "sequence": 14,
+      "utc": "2026-10-28T09:37:54Z",
+      "code": "recovery_required",
+      "details": {
+        "code": "READINESS_FAILED"
+      }
+    }
+  ]
+}

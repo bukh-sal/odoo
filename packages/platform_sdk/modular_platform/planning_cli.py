@@ -82,6 +82,25 @@ def prepare_document(document, catalog):
     resolved = resolve_release(snapshot, document['python_metadata'], document['environment'], request['requested'],
         locked=locked, update=request.get('update', []), provider_choices=choices, scoped_provider_choices=scoped_choices,
         core_python=request.get('core_python', []), site_requirements=request.get('site_requirements'))
+    if request['operation_type'] in ('install', 'upgrade'):
+        # An install creates concrete workspace bindings. Bind those provider
+        # selections into the release BEFORE hashing it, so observing the newly
+        # installed metadata reconstructs the exact same release lock.
+        scopes = {(item['plugin_id'], item['site_id'], item['workspace_id']) for item in state['installations']}
+        scopes.update((item['plugin_id'], item['site_id'], item['workspace_id']) for item in request['targets'])
+        added = False
+        for selected in resolved['bindings']:
+            for plugin, site, workspace in scopes:
+                key = plugin, selected['alias'], site, workspace
+                if plugin == selected['consumer'] and binding_matches_scope(selected, site, workspace) and key not in scoped_choices:
+                    scoped_choices[key] = selected['provider']
+                    added = True
+        if added:
+            for consumer, alias, site, workspace in scoped_choices:
+                choices.pop((consumer, alias), None)
+            resolved = resolve_release(snapshot, document['python_metadata'], document['environment'], request['requested'],
+                locked=locked, update=request.get('update', []), provider_choices=choices, scoped_provider_choices=scoped_choices,
+                core_python=request.get('core_python', []), site_requirements=request.get('site_requirements'))
     if request['operation_type'] in ('suspend', 'enable', 'uninstall', 'unregister'):
         lock = state['release_lock']
     else:

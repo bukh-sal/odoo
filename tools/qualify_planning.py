@@ -13,7 +13,7 @@ import sys
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py']
+PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py']
 
 
 def run(command, *, input=None):
@@ -98,10 +98,10 @@ raise SystemExit(0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccess
         'source_sha256': source, 'resolver_version': dependency.version,
         'resolver_files_sha256': {name: hashlib.sha256(raw).hexdigest() for name, raw in sorted(dependencies.items())},
         'records': ['host-tests.json', 'linux-tests.json', 'contract-freeze.json'],
-        'limitations': ['Pure resolver/lock/plan and real CLI qualified, not an executor or G5 exit.',
-            'No new deployment/site mutation or production release build.',
+        'limitations': ['This report qualifies data-only planning and selected OS/store tests, not the actual Docker executor or G5 exit.',
+            'Live deployment/install/recovery observations are recorded separately.',
             'Linux test streams the locally hash-locked resolver including license, verified against wheel RECORD, into private tmpfs.',
-            'UI queue, independent snapshot/approval, process locks, journal, native execution and recovery remain pending.',
+            'UI queue/apply/status integration and complete new-image lifecycle/recovery qualification remain pending.',
             'Dependency decisions use static metadata; no network/build/import of plugin code during planning.']}
     (output / 'planning-core.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps({'result': result, 'evidence': str(output), 'host_exit': host['exit_code'], 'linux_exit': linux['exit_code']}))

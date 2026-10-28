@@ -53,6 +53,28 @@ def main(argv=None):
     plan = plugin.add_parser('plan')
     plan.add_argument('--input', required=True, type=Path, help='Untrusted declarative proposal; grants no execution authority')
     plan.add_argument('--store', required=True, type=Path, help='Existing operator catalog, opened read only')
+    current = plugin.add_parser('plan-current-install', help='Nominate native packages already present in the verified image')
+    current.add_argument('--deployment-config', required=True, type=Path)
+    current.add_argument('--store', required=True, type=Path)
+    current.add_argument('--site', required=True)
+    current.add_argument('--workspace', required=True, action='append')
+    current.add_argument('--plugin', required=True)
+    current.add_argument('--version', required=True)
+    current.add_argument('--digest', required=True)
+    apply = plugin.add_parser('apply', help='Execute one independently registered/approved exact plan')
+    apply.add_argument('operation_id')
+    apply.add_argument('--store', required=True, type=Path, help='Independent OS-owned control store')
+    apply.add_argument('--deployment-config', required=True, type=Path)
+    apply.add_argument('--catalog', required=True, type=Path)
+    recover = plugin.add_parser('recover', help='Review/restore a checkpoint to a fresh disposable database, then separately resume')
+    recover.add_argument('recovery_action', choices=['prepare-restore','restore','prepare-resume','resume'])
+    recover.add_argument('operation_id')
+    recover.add_argument('--store', required=True, type=Path)
+    recover.add_argument('--deployment-config', required=True, type=Path)
+    recover.add_argument('--catalog', required=True, type=Path)
+    recover.add_argument('--decision', type=Path)
+    recover.add_argument('--decision-hash')
+    recover.add_argument('--noninteractive', action='store_true')
     catalog = groups.add_parser('catalog')
     catalog.add_argument('--store', required=True, type=Path)
     catalog_actions = catalog.add_subparsers(dest='action', required=True)
@@ -125,6 +147,45 @@ def main(argv=None):
                     result = store.status(args.operation_id)
                 else:
                     result = store.status(args.operation_id)
+        elif args.group == 'plugin' and args.action == 'recover':
+            from modular_platform.operator_store import OperatorStore
+            from modular_platform.native_executor import NativeExecutor
+            from modular_platform.restore_executor import RestoreExecutor
+            from modular_platform.operator_os import OperatorError
+            from modular_platform.plans import data_digest
+            recovery = RestoreExecutor(NativeExecutor(OperatorStore(args.store),args.deployment_config,args.catalog,validator))
+            if args.recovery_action.startswith('prepare-'):
+                decision = recovery.prepare(args.operation_id) if args.recovery_action=='prepare-restore' else recovery.prepare_resume(args.operation_id)
+                result = {'decision':decision,'decision_hash':data_digest(decision)}
+            else:
+                if not args.decision or not args.decision_hash:
+                    raise OperatorError('A separately reviewed recovery decision and exact hash are required')
+                decision = load_json(args.decision.read_bytes())
+                if decision['operation_id']!=args.operation_id:
+                    raise OperatorError('Recovery operation identity mismatch')
+                if not args.noninteractive:
+                    if not sys.stdin.isatty():raise OperatorError('Interactive recovery requires a terminal')
+                    print(json.dumps(decision,indent=2))
+                    if input('Type the exact reviewed recovery hash: ').strip()!=args.decision_hash:
+                        raise OperatorError('Recovery hash confirmation mismatch')
+                method = recovery.execute if args.recovery_action=='restore' else recovery.resume
+                result = method(decision,exact_hash=args.decision_hash,noninteractive=args.noninteractive)
+        elif args.group == 'plugin' and args.action == 'apply':
+            from modular_platform.operator_store import OperatorStore
+            from modular_platform.native_executor import NativeExecutor
+            result = NativeExecutor(OperatorStore(args.store), args.deployment_config, args.catalog, validator).apply(args.operation_id)
+        elif args.group == 'plugin' and args.action == 'plan-current-install':
+            from datetime import datetime, timezone
+            from uuid import uuid4
+            from modular_platform.deployment import DockerObserver
+            from modular_platform.lifecycle_planning import prepare_current_image_install
+            observer = DockerObserver(load_json(args.deployment_config.read_bytes()))
+            snapshot = Catalog(args.store, validator, readonly=True).snapshot()
+            observation = observer.read()
+            result = prepare_current_image_install(observer.state(observation, snapshot), observation['sites'], snapshot,
+                site_id=args.site, workspace_ids=args.workspace, plugin_id=args.plugin, version=args.version,
+                artifact_digest=args.digest, operation_id=str(uuid4()),
+                created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
         elif args.group == 'plugin' and args.action == 'plan':
             from modular_platform.planning_cli import prepare_document
             raw = args.input.read_bytes()

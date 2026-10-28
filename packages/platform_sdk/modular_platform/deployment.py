@@ -80,19 +80,27 @@ class DockerObserver:
             if set(site) != {'site_id', 'database'} or str(UUID(site['site_id'])) != site['site_id'] or not re.fullmatch('mp_disposable_r0_r1_[a-z0-9_]+', site['database']):
                 raise PlanningError('Explicit disposable site/database identity required')
 
-    def _container(self, service):
-        raw = _run(['docker', 'ps', '-q', '--filter', 'label=com.docker.compose.project=' + self.config['project'],
+    def _container(self, service, *, stopped=False):
+        raw = _run(['docker', 'ps', *(['--all'] if stopped else []), '-q', '--filter', 'label=com.docker.compose.project=' + self.config['project'],
                     '--filter', 'label=com.docker.compose.service=' + service]).decode().split()
         if len(raw) != 1 or not re.fullmatch('[0-9a-f]{12,64}', raw[0]):
             raise PlanningError('Exactly one running container per observed service required')
         return raw[0]
 
-    def read(self):
-        app, database = self._container('app'), self._container('db')
+    def read(self, *, quiesced=False):
+        app, database = self._container('app', stopped=quiesced), self._container('db')
         identity = load_json(_run(['docker', 'inspect', '--format', '{{json .Image}}', app]))
         if identity != self.config['image_id']:
             raise PlanningError('Running application image differs from operator pin')
-        runtime = load_json(_run(['docker', 'exec', app, '/venv/bin/python', '-c', OBSERVE_RUNTIME]))
+        if quiesced:
+            running = load_json(_run(['docker', 'inspect', '--format', '{{json .State.Running}}', app]))
+            if running:
+                raise PlanningError('Quiesced observation requires stopped application workers')
+            runtime = load_json(_run(['docker', 'run', '--rm', '--network', 'none', '--read-only',
+                '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--tmpfs', '/tmp',
+                '--entrypoint', '/venv/bin/python', identity, '-c', OBSERVE_RUNTIME]))
+        else:
+            runtime = load_json(_run(['docker', 'exec', app, '/venv/bin/python', '-c', OBSERVE_RUNTIME]))
         if runtime['modified_files'] or runtime['unexpected_addon_files'] or runtime['missing_addon_files']:
             raise PlanningError('Running executable source differs from the curated release inventory')
         sites = []

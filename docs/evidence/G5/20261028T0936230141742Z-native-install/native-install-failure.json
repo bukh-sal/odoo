@@ -1,0 +1,13 @@
+{
+  "result": "failed_safely",
+  "utc": "2026-10-28T09:45:59.437371+00:00",
+  "operation_id": "94b8f9db-d38e-4924-8ad1-2058d28bb675",
+  "plan_hash": "sha256:6139d92b3ee23f00a9ba2d4703a651a34d6bb065caed89bfe3c9285b818127a2",
+  "phase": "workers_replaced",
+  "state": "recovery_required",
+  "native_install_committed": true,
+  "public_edge_stopped": true,
+  "reason": "Readiness exact lock mismatch: newly installed workspace-scoped service selection was not in the proposed release lock.",
+  "recovery": "Fresh database checkpoint restore planned; original database retained. No rerun of native install under this ID.",
+  "source_fix": "Planning materializes concrete service provider scopes before hashing release; independent reconstruction still checks immutable executable fields."
+}

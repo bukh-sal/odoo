@@ -1,0 +1,43 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T09:51:58.227255+00:00",
+  "operation_id": "ec2e6dfa-382a-412b-8183-64d873557db1",
+  "plan_hash": "sha256:a8d886665b97bdccc950b4a7898c667be5ccd1cb9b1b35ffbf03c7ce26fda843",
+  "image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+  "checks": [
+    "Unapproved apply denied with no base-state change",
+    "Independent exact current-image reconstruction and OS approval",
+    "Deployment/site process locks and stopped edge/workers",
+    "Coordinated DB/filestore checkpoint before durable mutation marker",
+    "Controlled native install and exact site/workspace metadata/bindings",
+    "Internal HTTP/registry readiness before traffic",
+    "New release lock generation published, completed journal outside DB",
+    "Same operation replay returns completed status without another install"
+  ],
+  "limitations": [
+    "Client epoch refresh, new-image upgrade/removal/uninstall, failure/crash/recovery/restore and UI queue/status integration remain pending G5."
+  ],
+  "source": {
+    "tools/modular.py": "d4cc433014aadbf2901c15e50a1eb2705c7b0e7c9e0fdd2f1e00623388dac24a",
+    "tools/qualify_native_install.py": "fa3563f21f6cafa2677f5a6001ccddb171c873a0f91ada71e946f71c923c8548",
+    "packages/platform_sdk/modular_platform/approval_validation.py": "bf9a6a3e1718a141fce096ab9ef386a640825883b82bc109ffe4af44438e4574",
+    "packages/platform_sdk/modular_platform/artifacts.py": "6965c17c022e44955d5d49d8076f276181767c6698920f1db8fa89da8c922601",
+    "packages/platform_sdk/modular_platform/catalog.py": "671909cfcf3c2c019dc71e03ce49b72f833d39facbac56df9d87873137e06767",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/deployment.py": "16b6f78e8aa9b83f104584c8ec308f2867ddfda2a8188183886a23c3fcdd03a3",
+    "packages/platform_sdk/modular_platform/install_metadata.py": "59a3ff4a21778cbac8859c877f23fb8c60f69f871b5f336fe3c0f8e184dc5df7",
+    "packages/platform_sdk/modular_platform/lifecycle_planning.py": "d5c89b06b087da3cce02d3b15cdeffa048f275afc06fafb01ae4a4de7904375f",
+    "packages/platform_sdk/modular_platform/metadata_sql.py": "52068b8ef9bb9359af21db91b25e6cfa3031172bbc84f7be57470d786caaa516",
+    "packages/platform_sdk/modular_platform/native_executor.py": "c20a0242b516281badc46ef8a332e8561615ffd372b5be4964af7adf1dcee83d",
+    "packages/platform_sdk/modular_platform/operation_views.py": "bf860904ac1b9bb93836ed72d59adef422c64d7c42ef83312ca5fbb1c84848b8",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/operator_store.py": "72030caeaa8263044cb4994d86f9b5c3613964803079228dd011dfacf6216c8e",
+    "packages/platform_sdk/modular_platform/planning_cli.py": "223c78ce60608df9c8364ad38c0e60f0c92b4e70bd3ecf4c51b996f982324457",
+    "packages/platform_sdk/modular_platform/plans.py": "7e612b45bfc01eab8ef6875e4d8cb8ee650e875d4cfd07d4780f3ff4cdc84a40",
+    "packages/platform_sdk/modular_platform/projection.py": "6a4ba089cc7874b00ec7a693ffebdc8f6b0f94584b9a85c23ac626fff6602b62",
+    "packages/platform_sdk/modular_platform/resolution.py": "b99225983c62bba38f4d23a81760de37593cca97a08d5bda699521f2860de872",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "b82dac9b236aa096ef8ec35727fcb1fda9153aeebc8fbc7270fbcec5ede0a55a",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+    "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336"
+  }
+}

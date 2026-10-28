@@ -89,6 +89,27 @@ class OperatorStoreTests(unittest.TestCase):
                 self.store.reserve(self.operation, held, self.revalidate)
         self.assertEqual(self.store.status(self.operation)['state'], 'authorization_changed')
 
+    def test_verified_restore_retires_original_approval_and_conservative_traffic_fence(self):
+        self.approve()
+        with self.locks() as held:
+            self.ready_to_mutate(held)
+            self.store.before_mutation(self.operation,held,self.revalidate)
+            self.store.fail(self.operation,held,code='MUTATION_FAILED')
+        with self.locks() as recovery:
+            self.store.record_restore(self.operation,recovery,code='restore_authorized',details={'decision_hash':'sha256:'+'d'*64})
+            self.store.record_restore(self.operation,recovery,code='restore_target_created',details={})
+            self.store.record_restore(self.operation,recovery,code='restore_verified',details={})
+            self.assertEqual(self.store.status(self.operation)['state'],'revoked')
+        with self.locks() as repeated:
+            with self.assertRaisesRegex(OperatorError,'Retired or completed'):
+                self.store.reserve(self.operation,repeated,self.revalidate)
+            self.assertEqual(self.store.status(self.operation)['state'],'revoked')
+            with self.assertRaisesRegex(OperatorError,'revocation is final'): self.approve()
+            self.store.record_restore_resume(self.operation,repeated,decision_hash='sha256:'+'e'*64)
+            self.assertTrue(self.store.status(self.operation)['traffic_resumed'])
+            with self.assertRaises(OperatorError):
+                self.store.record_restore(self.operation,repeated,code='restore_authorized',details={})
+
     def test_expiry_and_independent_revocation_are_not_reusable(self):
         approved = self.approve()
         expired = datetime.fromisoformat(approved['expires_at'].replace('Z', '+00:00')) + timedelta(seconds=1)

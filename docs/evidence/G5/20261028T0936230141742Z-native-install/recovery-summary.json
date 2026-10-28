@@ -1,0 +1,26 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T09:54:11.543470+00:00",
+  "operation_id": "94b8f9db-d38e-4924-8ad1-2058d28bb675",
+  "first_native_failure": "Readiness exact release lock mismatch after native commit; public edge stayed stopped.",
+  "restore": {
+    "fresh_database": "mp_disposable_r0_r1_g5_fd0445d406d6_restore_94b8f9db",
+    "failed_database_retained": true,
+    "database_filestore_image_lock_verified": true,
+    "current_human_authority_reconciled": true,
+    "session_secret_rotated": true,
+    "technical_credentials_revoked": true,
+    "external_dispatch": "No jobs/outbox/external runtimes/API keys permitted by this first recovery profile."
+  },
+  "resume": {
+    "fresh_database": "mp_disposable_r0_r1_g5_fd0445d406d6_restore_94b8f9db",
+    "operation_id": "94b8f9db-d38e-4924-8ad1-2058d28bb675",
+    "original_plan_state": "revoked",
+    "state": "restored_traffic_resumed"
+  },
+  "original_plan_result": "retired/revoked, never claimed completed or silently retried",
+  "limitations": [
+    "General new-image recovery, attachment read rehearsal, dispatcher/effect reconciliation and explicit fault matrix remain G5/G6/G7.",
+    "Recovery decisions currently require exact current-state hashes and local OS policy; bounded review expiry still needs strengthening before G5 exit."
+  ]
+}
