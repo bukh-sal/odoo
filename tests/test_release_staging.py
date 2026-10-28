@@ -50,19 +50,20 @@ class StagedPlans(unittest.TestCase):
         self.site={'site_id':ident(20),'workspaces':[{'workspace_id':ident(30),'state':'active'}],
             'installations':[{'plugin_id':'org.test.a','installation_id':ident(100),'metadata_state':'installed'}]}
         self.runtime=staged_runtime([self.new])
+        self.base=staged_runtime([self.old])
         self.descriptor={'stage_digest':'sha256:'+'c'*64,'base_image_id':'sha256:'+'a'*64,
             'target_image_id':'sha256:'+'b'*64,'inventory_digest':self.runtime['inventory_digest'],'runtime_digest':data_digest(self.runtime)}
 
     def prepare(self,**kwargs):
         return prepare_staged_plan(self.document,[self.site],self.catalog,self.runtime,self.descriptor,
-            targets=kwargs.get('targets',[self.target]),operation_type='upgrade',operation_id=ident(500),created_at=STAMP)
+            targets=kwargs.get('targets',[self.target]),operation_type='upgrade',operation_id=ident(500),created_at=STAMP,base_runtime=self.base)
 
     def validator(self):
         validator=object.__new__(IndependentValidator)
         class Snapshot:
             def snapshot(inner):return copy.deepcopy(self.catalog)
         class Observer:
-            def read(inner):return {'sites':[copy.deepcopy(self.site)]}
+            def read(inner):return {'sites':[copy.deepcopy(self.site)],'runtime':copy.deepcopy(self.base)}
             def state(inner,observation,catalog):return copy.deepcopy(self.document)
         class Stages:
             def load(inner,descriptor):
@@ -119,7 +120,7 @@ class StagedPlans(unittest.TestCase):
         with self.assertRaisesRegex(OperatorError,'required workspace dependency'):
             prepare_staged_plan(self.document,[self.site],self.catalog,self.runtime,self.descriptor,
                 targets=[target()|{'installation_id':installation_id(self.site,'org.test.a')}],
-                operation_type='install',operation_id=ident(500),created_at=STAMP)
+                operation_type='install',operation_id=ident(500),created_at=STAMP,base_runtime=self.base)
 
     def test_upgrade_derives_exact_new_capability_and_independent_recompute_rejects_omission(self):
         request={'capability':'org.test.a:records.read','scope':'workspace','reason':'reviewed integration'}
@@ -147,7 +148,7 @@ class StagedPlans(unittest.TestCase):
         self.document['state']['release_lock']=base_state([self.new])['release_lock']
         self.document['state']['release_digest']=data_digest(self.document['state']['release_lock'])
         bundle=prepare_staged_plan(self.document,[self.site],self.catalog,self.runtime,self.descriptor,
-            targets=[target_b],operation_type='install',operation_id=ident(500),created_at=STAMP)
+            targets=[target_b],operation_type='install',operation_id=ident(500),created_at=STAMP,base_runtime=self.base)
         self.assertEqual(bundle['plan']['permission_changes'],[])
 
 

@@ -1,0 +1,23 @@
+{
+  "gate": "G2",
+  "result": "failed",
+  "utc": "2026-10-28T16:37:10.791251+00:00",
+  "contract_major": 1,
+  "revision": 9,
+  "frozen_files": 76,
+  "inventory_sha256": "58876ba250f68a09758d55f8e58630d3c8b18a15335482fef95c03916e2d39bf",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0016 revision9 operator-only core_upgrade enum/example; old valid fixtures/golden plan bytes retained; app request excludes operation.",
+  "runtime_qualification": "No existing live image/handler changed. G5 actual core maintenance/recovery and UI07 remain required separately.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "f76e736ae53f76b35893497eb595d25411d68416"
+}

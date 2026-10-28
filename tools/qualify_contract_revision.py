@@ -1,4 +1,4 @@
-"""Qualify additive G2 revision7 and affected data-only G5 consumers."""
+"""Qualify the current additive G2 revision and affected data-only consumers."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -36,9 +36,9 @@ def main():
     result='passed' if all(record['exit_code']==0 for record in records.values()) else 'failed'
     gate={'gate':'G2','result':result,'utc':datetime.now(timezone.utc).isoformat(),'contract_major':freeze['contract_major'],'revision':freeze['revision'],
         'frozen_files':len(freeze['files']),'inventory_sha256':hashlib.sha256(inventory.read_bytes()).hexdigest(),
-        'records':[name+'.json' for name in records],'tests':'26 contract +50 affected archive/resolver/plan/CLI tests; TypeScript and74-file freeze',
-        'change':'ADR0009 additive operator request/view DTOs; strict absolute-end anchored patterns; valid fixtures/golden plan hash retained.',
-        'runtime_qualification':'No handler or existing G4 image changed. New G5 image and G7 qualify tightened runtime boundaries and operator UI.',
+        'records':[name+'.json' for name in records],'tests':'See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.',
+        'change':'ADR0016 revision9 operator-only core_upgrade enum/example; old valid fixtures/golden plan bytes retained; app request excludes operation.',
+        'runtime_qualification':'No existing live image/handler changed. G5 actual core maintenance/recovery and UI07 remain required separately.',
         'prerequisite':'docs/evidence/G1/20261028t003753z/gate-G1.json','git_base':run(['git','rev-parse','HEAD'])['stdout'].strip()}
     (output/'gate-G2.json').write_text(json.dumps(gate,indent=2)+'\n')
     print(json.dumps({'result':result,'revision':freeze['revision'],'files':len(freeze['files']),'evidence':str(output)}))

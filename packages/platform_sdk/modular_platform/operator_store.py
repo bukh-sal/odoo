@@ -268,6 +268,8 @@ class OperatorStore:
     def _check_acks(bundle, acknowledgments):
         if not isinstance(acknowledgments, dict) or set(acknowledgments) != ACKS or any(type(value) is not bool for value in acknowledgments.values()):
             raise OperatorError('Explicit destructive/trust/permission acknowledgments required')
+        if bundle['plan']['destructive'] and not acknowledgments['destructive']:
+            raise OperatorError('Destructive operation requires explicit acknowledgment before approval')
         declarations = bundle['operation_lock']['declaration_changes']
         permission_expansion = any(
             set((item.get('target_permissions') or {}).get('defines', {})) - set((item.get('previous_permissions') or {}).get('defines', {}))

@@ -13,7 +13,7 @@ import sys
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py', 'test_recovery.py', 'test_release_staging.py', 'test_platform_deploy.py', 'test_start_worker.py', 'test_workers.py', 'test_release_identity.py']
+PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py', 'test_recovery.py', 'test_release_staging.py', 'test_platform_deploy.py', 'test_core_upgrade.py', 'test_start_worker.py', 'test_workers.py', 'test_release_identity.py']
 
 
 def run(command, *, input=None):
@@ -38,7 +38,7 @@ def main():
     output.mkdir(parents=True)
     if sum((args.recovery_only,args.staging_only,args.identity_only,args.startup_only))>1:raise ValueError('Choose one focused qualification scope')
     patterns = ['test_start_worker.py','test_workers.py','test_release_identity.py','test_release_staging.py'] if args.startup_only else ['test_release_identity.py','test_release_staging.py','test_workers.py','test_artifacts.py'] if args.identity_only else ['test_recovery.py'] if args.recovery_only else (
-        ['test_release_staging.py','test_platform_deploy.py','test_lifecycle_planning.py','test_resolution.py','test_plans.py','test_planning_cli.py','test_operation_contracts.py','test_contracts.py']
+        ['test_release_staging.py','test_platform_deploy.py','test_core_upgrade.py','test_lifecycle_planning.py','test_resolution.py','test_plans.py','test_planning_cli.py','test_operation_contracts.py','test_contracts.py']
         if args.staging_only else PATTERNS + (['test_operator_os.py', 'test_operator_store.py'] if args.operator else []))
     if args.staging_only or args.identity_only or args.startup_only:
         host_runner="import unittest; suite=unittest.TestSuite(unittest.defaultTestLoader.discover('tests',pattern=p) for p in "+repr(patterns)+"); raise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful())"

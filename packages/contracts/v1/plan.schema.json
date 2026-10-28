@@ -20,7 +20,8 @@
         "unregister",
         "remove",
         "restore",
-        "deploy"
+        "deploy",
+        "core_upgrade"
       ]
     },
     "created_at": {

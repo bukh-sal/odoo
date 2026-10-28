@@ -4,6 +4,7 @@ from datetime import datetime,timezone
 import os
 from pathlib import Path
 import re
+from packaging.version import Version
 
 from .contracts import load_json,plan_hash
 from .deployment import DockerObserver,inspect_image
@@ -42,19 +43,85 @@ def validate_platform_deploy(base,runtime,descriptor):
     return [{'path':name,'previous_sha256':old.get(name),'target_sha256':new.get(name)} for name in changed]
 
 
+CORE_ADDONS=frozenset({'mp_compat','mp_identity','mp_core','mp_shell'})
+CORE_VERSION=r'19\.0\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)'
+
+
+def validate_core_upgrade(base,runtime,descriptor):
+    """Versioned platform maintenance, deliberately distinct from static deploy."""
+    if base is None or descriptor['base_image_id']==descriptor['target_image_id']:
+        raise OperatorError('Core upgrade requires independently observed base and distinct image')
+    before,after=base['inventory'],runtime['inventory']
+    if (before.get('artifacts')!=after.get('artifacts') or base['python_metadata']!=runtime['python_metadata']
+            or base['python_lock_digest']!=runtime['python_lock_digest'] or before['native_addons']!=after['native_addons']
+            or before['policy']!=after['policy']):
+        raise OperatorError('Core upgrade must preserve package/Python/native dependency policy')
+    manifests,new_manifests=base.get('native_manifests'),runtime.get('native_manifests')
+    if not manifests or not new_manifests or manifests.keys()!=new_manifests.keys():
+        raise OperatorError('Core upgrade requires independently read native manifests')
+    old,new=before['files'],after['files']
+    changed=sorted(name for name in old.keys()|new.keys() if old.get(name)!=new.get(name))
+    packaged={item['addon'] for item in before.get('artifacts',{}).values()}
+    allowed=(CORE_ADDONS & manifests.keys()) - packaged
+    prefixes=('packages/platform_sdk/','packages/contracts/',*(f'addons/{name}/' for name in allowed))
+    if any(not name.startswith(prefixes) for name in changed):
+        raise OperatorError('Core upgrade includes packaged/upstream/unsupported native changes')
+    touched={name for name in allowed if any(path.startswith(f'addons/{name}/') for path in changed)}
+    if not touched or any(manifests[name]!=new_manifests[name] for name in manifests.keys()-touched):
+        raise OperatorError('Core upgrade needs a concrete versioned core source change')
+    upgrades=[]
+    for name in sorted(touched):
+        prior,version=manifests[name].get('version'),new_manifests[name].get('version')
+        if (not isinstance(prior,str) or not isinstance(version,str) or not re.fullmatch(CORE_VERSION,prior)
+                or not re.fullmatch(CORE_VERSION,version) or Version(version)<=Version(prior)
+                or f'addons/{name}/__manifest__.py' not in changed):
+            raise OperatorError('Every changed core addon requires a strictly increasing canonical native version')
+        migrations=[]
+        for path in sorted(old.keys()|new.keys()):
+            prefix=f'addons/{name}/migrations/'
+            if not path.startswith(prefix):continue
+            directory=path[len(prefix):].split('/')[0]
+            if not re.fullmatch(CORE_VERSION,directory):
+                raise OperatorError('Core migration requires a canonical native version directory')
+            if Version(directory)<=Version(prior) and old.get(path)!=new.get(path):
+                raise OperatorError('Core upgrade cannot rewrite previously applicable migrations')
+            if Version(prior)<Version(directory)<=Version(version) and path in new:
+                migrations.append({'path':path,'sha256':new[path]})
+        upgrades.append({'addon':name,'previous_version':prior,'target_version':version,'migrations':migrations})
+    return ([{'path':name,'previous_sha256':old.get(name),'target_sha256':new.get(name)} for name in changed],upgrades)
+
+
+def validate_plugin_core_stability(base,runtime):
+    if base is None:raise OperatorError('Native plugin plan requires independently observed base runtime')
+    packaged={item['addon'] for image in (base,runtime) for item in image['inventory'].get('artifacts',{}).values()}
+    prefixes=('artifacts/','packages/platform_sdk/','packages/contracts/',*(f'addons/{name}/' for name in packaged))
+    old,new=base['inventory']['files'],runtime['inventory']['files']
+    if any(old.get(path)!=new.get(path) and not path.startswith(prefixes) for path in old.keys()|new.keys()):
+        raise OperatorError('Plugin operation cannot carry native core/upstream changes; use explicit core maintenance')
+
+
 def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at,base_runtime=None):
     if runtime.get('published_release_protocol')!=1:
         raise OperatorError('Staged native operations require an image with the published-release profile reader')
-    if operation_type not in ('install','upgrade','deploy'):
-        raise OperatorError('Staged native planning requires install, upgrade or platform deploy')
+    if operation_type not in ('install','upgrade','deploy','core_upgrade'):
+        raise OperatorError('Staged native planning requires install, upgrade, platform deploy or core upgrade')
+    if operation_type in ('install','upgrade'):validate_plugin_core_stability(base_runtime,runtime)
     platform_diff=validate_platform_deploy(base_runtime,runtime,descriptor) if operation_type=='deploy' else None
+    core_changes=None
+    if operation_type=='core_upgrade':
+        platform_diff,core_changes=validate_core_upgrade(base_runtime,runtime,descriptor)
+        for site in sites:
+            native={item['addon']:item for item in site['native_modules']}
+            if any(change['addon'] not in native or native[change['addon']]['state']!='installed'
+                    or native[change['addon']]['version']!=change['previous_version'] for change in core_changes):
+                raise OperatorError('Core upgrade base database versions must match independently observed source')
     selected,environment,provenance=runtime_inputs(runtime,catalog)
     by_plugin={item['manifest']['plugin']['id']:item for item in selected}
     by_site={site['site_id']:site for site in sites}
     for target in targets:
         site=by_site.get(target['site_id'])
         if (site is None or not any(item['workspace_id']==target['workspace_id'] and item['state']=='active' for item in site['workspaces'])
-                or target['plugin_id'] not in by_plugin or target['action'] not in (('deploy',) if operation_type=='deploy' else ('install','upgrade'))
+                or target['plugin_id'] not in by_plugin or target['action'] not in (('deploy',) if operation_type in ('deploy','core_upgrade') else ('install','upgrade'))
                 or by_plugin[target['plugin_id']]['manifest']['runtime']['kind']!='native'
                 or target['installation_id']!=installation_id(site,target['plugin_id'])):
             raise OperatorError('Staged target differs from current site/workspace/installation identity')
@@ -81,11 +148,12 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
                 changes.append({'plugin_id':target['plugin_id'],'workspace_id':target['workspace_id'],'capability':capability,'action':'grant'})
     target_document['request']['permission_changes']=changes
     bundle=prepare_document(target_document,catalog)
-    if operation_type=='deploy':
+    if operation_type in ('deploy','core_upgrade'):
         if (bundle['operation_lock']['bindings']!=document['state'].get('bindings',[])
                 or bundle['operation_lock']['endpoints']!=document['state'].get('endpoints',[]) or bundle['plan']['permission_changes']):
             raise OperatorError('Platform deploy must preserve bindings/endpoints/grants')
         bundle['operation_lock']['platform_source_diff']=platform_diff
+        if core_changes is not None:bundle['operation_lock']['native_core_changes']=core_changes
     for target in targets:
         required=set(by_plugin[target['plugin_id']]['manifest']['dependencies']['plugins'])
         required.update(item['provider'] for item in bundle['operation_lock']['release']['service_selection']

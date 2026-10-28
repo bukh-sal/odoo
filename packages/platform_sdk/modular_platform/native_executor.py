@@ -50,6 +50,28 @@ def verify_native_state(bundle,state,previous,observation):
             raise OperatorError('Ready permission metadata differs from exact approved changes')
 
 
+def native_maintenance_flags(bundle,plugins):
+    """Commands derive only from the independently reconstructed operation lock."""
+    operation=bundle['plan']['operation_type'];lock=bundle['operation_lock']
+    installs=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in lock['targets'] if item['action']=='install'})
+    upgrades=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in lock['targets'] if item['action']=='upgrade'})
+    if operation in ('deploy','core_upgrade'):
+        if installs or upgrades or not lock.get('platform_source_diff') or any(item['action']!='deploy' for item in lock['targets']):
+            raise OperatorError('Platform maintenance cannot combine plugin migrations')
+        if operation=='deploy':
+            if 'native_core_changes' in lock:raise OperatorError('Static deploy cannot invoke native core maintenance')
+            return None
+        from .release_staging import CORE_ADDONS
+        changes=lock.get('native_core_changes',[])
+        upgrades=[item['addon'] for item in changes]
+        if (not upgrades or len(upgrades)!=len(set(upgrades)) or not set(upgrades)<=CORE_ADDONS
+                or not bundle['plan']['destructive'] or not bundle['plan']['backup']['required']):
+            raise OperatorError('Exact versioned core maintenance/checkpoint acknowledgement required')
+    elif 'native_core_changes' in lock:
+        raise OperatorError('Native core maintenance requires its explicit operation')
+    return (['-i',','.join(installs)] if installs else [])+(['-u',','.join(upgrades)] if upgrades else [])
+
+
 class NativeExecutor:
     staged_execution=False
     def __init__(self, store, target_path, catalog_root, validator):
@@ -159,7 +181,7 @@ class NativeExecutor:
         bundle = self.store.bundle(operation)
         if 'staged_image' in bundle['operation_lock'] and not self.staged_execution:
             raise OperatorError('Staged native execution must use the new-image executor adapter; current-image mutation denied')
-        if bundle['plan']['operation_type'] not in (('install','upgrade','deploy') if self.staged_execution else ('install',)):
+        if bundle['plan']['operation_type'] not in (('install','upgrade','deploy','core_upgrade') if self.staged_execution else ('install',)):
             raise OperatorError('Native execution requires a supported install/upgrade plan')
         plan = bundle['plan']
         with OperationLocks(self.store.root/'locks', plan['deployment_id'], plan['site_ids']) as locks:
@@ -208,15 +230,11 @@ class NativeExecutor:
                     if any(entry['plugin_id'] == item['manifest']['plugin']['id'] and entry['digest'] == item['digest']
                            for entry in bundle['operation_lock']['release']['plugins'])}
                 image=self._execution_image(bundle)
-                installs=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in bundle['operation_lock']['targets'] if item['action']=='install'})
-                upgrades=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in bundle['operation_lock']['targets'] if item['action']=='upgrade'})
-                if plan['operation_type']=='deploy':
-                    if installs or upgrades or 'platform_source_diff' not in bundle['operation_lock']:
-                        raise OperatorError('Platform deploy cannot invoke native migrations')
+                flags=native_maintenance_flags(bundle,plugins)
+                if flags is None:
                     _write_new(directory/'native-skipped.json',{'reason':'Reviewed platform-only image deployment; no native maintenance'})
                 else:
                     arguments, child = self._child(operation, 'native', writable=True,image_id=image)
-                    flags=(['-i',','.join(installs)] if installs else [])+(['-u',','.join(upgrades)] if upgrades else [])
                     self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
                         *flags, '--stop-after-init', '--no-http', '--workers=0', '--max-cron-threads=0', '--without-demo'], directory/'native.log')
                 locks.check()

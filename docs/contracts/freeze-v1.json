@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 8,
+  "revision": 9,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -77,7 +77,8 @@
         "packages/contracts/examples/v1/operations-request-submit.json",
         "packages/contracts/examples/v1/operations-view.json",
         "packages/contracts/examples/v1/operations-view-status.json",
-        "packages/contracts/examples/v1/plan-deploy.json"
+        "packages/contracts/examples/v1/plan-deploy.json",
+        "packages/contracts/examples/v1/plan-core-upgrade.json"
       ],
       "g1": []
     },
@@ -184,7 +185,7 @@
     "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
     "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
     "docs/architecture-decisions/0009-operator-ui-contract.md": "ad2dceb9b186e69aa9629a72e6998a7bd0d742d5e06a09abcc0550d3a4e59cc2",
-    "docs/contracts/protocol-v1.md": "3df7e4b928cf30f8a6971ca286ce5caa664b756c4feae491498d42403c15b80b",
+    "docs/contracts/protocol-v1.md": "92a8d317a386407cabedcdcd51ba6ecb47b8e63f69f0e195b112b95aeadf014a",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/board.json": "fc3dae5a6c3e4483c1aa86365410ff38d9f0cb560e75a689cfa287e40c896b64",
@@ -229,8 +230,8 @@
     "packages/contracts/v1/note-detail-actions.schema.json": "89ef9e21b6d7585bca5e64420054302db7f1b9bc1b5de63849de933971803850",
     "packages/contracts/v1/notes-export.schema.json": "cf776edf7ae01884a875a07bcb8ae2a07d79a1a097044d0809ad5fe8fd61ed55",
     "packages/contracts/v1/operations-request.schema.json": "e0e21fefb7cf77014e62e100e530f01708f436f548b42aa9652ad626fd75faf8",
-    "packages/contracts/v1/operations-view.schema.json": "1ea4fcc6993a998d6dece65ce94fd37863d946ed7d820b51bd1ec03ffb4dfd21",
-    "packages/contracts/v1/plan.schema.json": "e7d1b1a0f98f253d9a82fb5ae17644a383fc9041e86c8452a706e1e75b062950",
+    "packages/contracts/v1/operations-view.schema.json": "1da3a20e1ec05ceabdaeeac69f91b296c7c0cca07fee028f0f85386ac3f66b3f",
+    "packages/contracts/v1/plan.schema.json": "ac2b7b07d6733fd9b7cc77b546c197c3d5546092d7b68396bd8d1171856805ee",
     "packages/contracts/v1/role-permissions.json": "c21efe0da20622126bde433601d84b4a3f3792ee2b6712d75723aee5dad22d57",
     "packages/contracts/v1/route.schema.json": "21c8787035e50aaa9ee7ef529f0d6ab89525e521ec018d9d1f0f26b872d534f4",
     "packages/contracts/v1/service-request.schema.json": "39e95fdbdbb159a3c7defb0e11fc6d26c1c3a05a7704c9fb65d9cd0c33f73340",
@@ -249,10 +250,11 @@
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
     "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
-    "tests/test_contracts.py": "8211bdbc245380f587316726b66a8fc4c11924119c857c1c0dbc58f93f0a12c8",
+    "tests/test_contracts.py": "fbf1ec5069013e130793dc2cf9b2d077fc606498e407eaa7b7450ca8941ece3d",
     "tests/test_operation_contracts.py": "befb8a09e11989981642b56e06a896218f29fb5a0dcf310ae9a628d6d3faee87",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
-    "packages/contracts/examples/v1/plan-deploy.json": "cbc9e64aab37f9e7ecd0ed136c918bd1ecf9fffd9974dc62dd225ff453f2af6c"
+    "packages/contracts/examples/v1/plan-deploy.json": "cbc9e64aab37f9e7ecd0ed136c918bd1ecf9fffd9974dc62dd225ff453f2af6c",
+    "packages/contracts/examples/v1/plan-core-upgrade.json": "ab6c4d6070220ed847cc5ad5a80d34b552866309ad5116af3bda2fbc3e384406"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

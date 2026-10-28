@@ -47,3 +47,6 @@ Revision8 adds explicit platform-only `deploy` plan/target/artifact action and s
 Revision8 source/contracts requalified by `docs/evidence/G2/20261028T150700Z-deploy-revision8/gate-G2.json`:75files/7rows, fullhost150/Linux123 regressions including6new platform-deploy checks. Previous golden hash unchanged; actual deploy/browser acceptance remains G5.
 
 The final revision8 normative prose/inventory addendum is qualified in `docs/evidence/G2/20261028T153300Z-deploy-protocol-addendum/gate-G2.json` (75files,26contract tests, unchanged golden; no executable/schema delta from150/123). Earlier150700Z record is retained as the initial revision checkpoint.
+
+
+Revision9 adds operator-only `core_upgrade` plan/public-status enum and `plan-core-upgrade.json` under ADR0016. Existing plugin targets/artifacts use `deploy` to retain all package scopes. Native core versions/source/migration hashes are explicit immutable lock/display data; destructive+native-trust acknowledgement and controlled maintenance are required. Static-only deploy and app request enums are unchanged. Old valid DTOs/golden serialization remain compatibility fixtures. G2 and affected consumers require requalification; actual core upgrade/recovery/UI07 remain G5.

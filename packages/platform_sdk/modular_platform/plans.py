@@ -174,7 +174,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             raise PlanningError('Target site/action is outside this deployment')
         allowed_actions = {'install': {'install', 'upgrade'}, 'upgrade': {'install', 'upgrade'},
             'suspend': {'suspend'}, 'enable': {'enable'}, 'uninstall': {'uninstall', 'unregister'},
-            'unregister': {'uninstall', 'unregister'}, 'remove': {'remove'},'deploy':{'deploy'}}
+            'unregister': {'uninstall', 'unregister'}, 'remove': {'remove'},'deploy':{'deploy'},'core_upgrade':{'deploy'}}
         if target['action'] not in allowed_actions.get(operation_type, set()):
             raise PlanningError('Target action disagrees with the operation type')
         identity = scoped_installation_key(target)
@@ -213,7 +213,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             'migration_digests': [item['digest'] for item in migrations.get(plugin, [])]}
         clean_targets.append(target)
     changed = {key for key, value in new.items() if key not in old or value['digest'] != old[key]['digest']}
-    if operation_type=='deploy':
+    if operation_type in ('deploy','core_upgrade'):
         if (changed or set(new)!=set(old) or seen!=set(installed) or permission_changes or trust_changes
                 or any(row.get('state')!='installed' or row.get('metadata_state','installed')!='installed' for row in installed.values())
                 or any(item['runtime']!='native' for item in artifacts.values())):
@@ -332,7 +332,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         if state['catalog_validation_digest']!=operation_lock['catalog_snapshot_digest']:
             raise PlanningError('Catalog snapshot differs from independently observed current validation')
         operation_lock['current_catalog_validation_digest']=state['catalog_validation_digest']
-    destructive = any(item['action'] == 'uninstall' for item in ordered_targets) or any(
+    destructive = operation_type=='core_upgrade' or any(item['action'] == 'uninstall' for item in ordered_targets) or any(
         new[key]['manifest']['upgrade']['destructive'] for key in changed)
     plan = {'schema_version': 1, 'operation_id': operation_id, 'operation_type': operation_type,
         'created_at': created_at, 'deployment_id': state['deployment_id'],
@@ -372,6 +372,8 @@ def _display(plan, operation_lock):
         display['current_catalog_validation_digest']=operation_lock['current_catalog_validation_digest']
     if 'platform_source_diff' in operation_lock:
         display['platform_source_diff']=copy.deepcopy(operation_lock['platform_source_diff'])
+    if 'native_core_changes' in operation_lock:
+        display['native_core_changes']=copy.deepcopy(operation_lock['native_core_changes'])
     return display
 
 
