@@ -1,0 +1,137 @@
+{
+  "state": "restored_verified",
+  "fresh_database": "mp_disposable_r0_r1_restore_efe751fb942e4723a0611978c253a034",
+  "failed_database_retained": true,
+  "keep_traffic_closed": true,
+  "operation_status": {
+    "operation_id": "efe751fb-942e-4723-a061-1978c253a034",
+    "plan_hash": "sha256:4c8bf2cee12c48225872319b6fff08c5c3a3a62838a882a3e800266b3d4b9a23",
+    "state": "revoked",
+    "phase": "restore_verified",
+    "mutation_started": true,
+    "traffic_resumed": false,
+    "backup_id": "efe751fb-942e-4723-a061-1978c253a034",
+    "approval_expires_at": "2026-10-28T19:04:21Z",
+    "history": [
+      {
+        "sequence": 239,
+        "utc": "2026-10-28T18:48:55Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:4c8bf2cee12c48225872319b6fff08c5c3a3a62838a882a3e800266b3d4b9a23"
+        }
+      },
+      {
+        "sequence": 240,
+        "utc": "2026-10-28T18:49:21Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:4c8bf2cee12c48225872319b6fff08c5c3a3a62838a882a3e800266b3d4b9a23"
+        }
+      },
+      {
+        "sequence": 241,
+        "utc": "2026-10-28T18:49:44Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 27856,
+          "lock_owner_digest": "sha256:8a5262443cf476d6a477385e297944349fef8ca09a82d2cbfaf874c19017aa82"
+        }
+      },
+      {
+        "sequence": 242,
+        "utc": "2026-10-28T18:50:00Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 243,
+        "utc": "2026-10-28T18:50:25Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 244,
+        "utc": "2026-10-28T18:50:28Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 245,
+        "utc": "2026-10-28T18:50:40Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "efe751fb-942e-4723-a061-1978c253a034"
+        }
+      },
+      {
+        "sequence": 246,
+        "utc": "2026-10-28T18:50:51Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 247,
+        "utc": "2026-10-28T18:50:54Z",
+        "code": "migrated",
+        "details": {}
+      },
+      {
+        "sequence": 248,
+        "utc": "2026-10-28T18:50:59Z",
+        "code": "workers_replaced",
+        "details": {}
+      },
+      {
+        "sequence": 249,
+        "utc": "2026-10-28T18:51:09Z",
+        "code": "ready",
+        "details": {}
+      },
+      {
+        "sequence": 250,
+        "utc": "2026-10-28T18:51:11Z",
+        "code": "release_published",
+        "details": {}
+      },
+      {
+        "sequence": 251,
+        "utc": "2026-10-28T18:51:12Z",
+        "code": "recovery_required",
+        "details": {
+          "code": "READINESS_FAILED"
+        }
+      },
+      {
+        "sequence": 252,
+        "utc": "2026-10-28T18:51:51Z",
+        "code": "restore_authorized",
+        "details": {
+          "decision_hash": "sha256:04c718e8caf0d8589ace4a33a5d3af3b720f97abdd0f29cb0d745f1f26177d69",
+          "fresh_database": "mp_disposable_r0_r1_restore_efe751fb942e4723a0611978c253a034"
+        }
+      },
+      {
+        "sequence": 253,
+        "utc": "2026-10-28T18:51:56Z",
+        "code": "restore_target_created",
+        "details": {
+          "fresh_database": "mp_disposable_r0_r1_restore_efe751fb942e4723a0611978c253a034"
+        }
+      },
+      {
+        "sequence": 254,
+        "utc": "2026-10-28T18:52:25Z",
+        "code": "restore_verified",
+        "details": {
+          "decision_hash": "sha256:04c718e8caf0d8589ace4a33a5d3af3b720f97abdd0f29cb0d745f1f26177d69",
+          "failed_database_retained": true,
+          "fresh_database": "mp_disposable_r0_r1_restore_efe751fb942e4723a0611978c253a034",
+          "session_secret_rotated": true,
+          "technical_credentials_revoked": true,
+          "traffic_resumed": false
+        }
+      }
+    ]
+  }
+}

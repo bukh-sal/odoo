@@ -1,0 +1,27 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Canvas":
+      - /url: "#"
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- main:
+  - heading "Notes" [level=1]
+  - paragraph: Your ideas, in one place.
+  - alert:
+    - strong: dependency unavailable
+    - paragraph: 7e92dc16-f78e-496e-a033-c4e14cd42418
+    - button "Try again"
+    - button "Download unsaved draft"

@@ -1,0 +1,58 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Canvas":
+      - /url: "#"
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- main:
+  - heading "Canvas" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Canvas board":
+    - textbox "Board name": Unsaved Canvas draft across asset release 22
+    - paragraph: Collect ideas. Move them forward.
+    - button "Save board"
+    - button "Reload saved board"
+    - status: Unsaved changes
+    - textbox "New card text" [active]:
+      - /placeholder: An idea, a decision, a next step…
+    - combobox "Link a note":
+      - option "No linked note" [selected]
+      - option "G5 lifecycle A/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two"
+      - option "G5 lifecycle A/1 e0713c96-86d0-41d5-ad98-1997c37485fc"
+    - button "Add card"
+    - region "Ideas":
+      - heading "Ideas" [level=2]
+      - article:
+        - textbox "Card text": Canvas lifecycle fixture card
+        - button "G5 lifecycle A/1 e0713c96-86d0-41d5-ad98-1997c37485fc"
+        - combobox "Move card Canvas lifecycle fixture card":
+          - option "Ideas" [selected]
+          - option "In progress"
+          - option "Done"
+        - button "Remove card"
+      - article:
+        - textbox "Card text": Unsaved asset card 22
+        - combobox "Move card Unsaved asset card 22":
+          - option "Ideas" [selected]
+          - option "In progress"
+          - option "Done"
+        - button "Remove card"
+    - region "In progress":
+      - heading "In progress" [level=2]
+      - paragraph: Room for your next idea
+    - region "Done":
+      - heading "Done" [level=2]
+      - paragraph: Room for your next idea

@@ -1,0 +1,18 @@
+{
+  "auth_passkey": "19.0.1.1",
+  "auth_password_policy": "19.0.1.0",
+  "auth_totp": "19.0.1.0",
+  "base": "19.0.1.3",
+  "base_import": "19.0.2.0",
+  "base_setup": "19.0.1.0",
+  "bus": "19.0.1.0",
+  "mp_compat": "19.0.0.1.0",
+  "mp_core": "19.0.0.1.2",
+  "mp_example_canvas": "19.0.0.1.3",
+  "mp_example_notes": "19.0.0.2.3",
+  "mp_example_notes_labels": "19.0.0.2.1",
+  "mp_identity": "19.0.0.1.1",
+  "mp_shell": "19.0.0.1.2",
+  "web": "19.0.1.0",
+  "web_tour": "19.0.1.0"
+}

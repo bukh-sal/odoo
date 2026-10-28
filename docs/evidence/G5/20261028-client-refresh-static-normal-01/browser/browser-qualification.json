@@ -1,0 +1,39 @@
+{
+  "result": "passed_controlled_reload",
+  "acceptance": "UI-07",
+  "generation_before": 21,
+  "generation_after": 22,
+  "browser": "2",
+  "tabs": {
+    "native": "8",
+    "canvas": "9"
+  },
+  "checks": [
+    "Real exact reviewed asset deployment21to22 with distinct JavaScript URL/content",
+    "Native dirty form and Canvas dirty board retire; pending native Unsavedchanges confirmation cancelled",
+    "Old documents stay paused, exact native and Canvas drafts exported locally",
+    "Only explicit native confirmation reloads each complete document",
+    "New asset renders native list/form and optional minimal Canvas; native newform blank and savedboard2/onecard retained, no draft replay",
+    "New documents stay usable through subsequent backend reads/polling; no automatic reload loop"
+  ],
+  "assets_before": {
+    "scripts": [
+      "/web/assets/42de0c7/mp_shell.assets_host.min.js"
+    ],
+    "styles": [
+      "/web/assets/c2b2f4a/mp_shell.assets_host.min.css"
+    ]
+  },
+  "assets_after": {
+    "scripts": [
+      "/web/assets/3093e4a/mp_shell.assets_host.min.js"
+    ],
+    "styles": [
+      "/web/assets/1909912/mp_shell.assets_host.min.css"
+    ]
+  },
+  "limits": [
+    "Old checksum asset URL redirects after native metadata cleanup; strict immutable asset retention remains required in section19 and is separately recorded.",
+    "No complete UI09 accessibility or wholeG5 completion claim."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "result": "changed_asset_and_retention_gap_confirmed",
+  "utc": "2026-10-28T19:09:25.542109+00:00",
+  "old_bundle": {
+    "url": "/web/assets/42de0c7/mp_shell.assets_host.min.js",
+    "checksum": "b9fb6f9fa035c8143a29434b38693826707271ab",
+    "mimetype": "application/javascript",
+    "store_fname": "b9/b9fb6f9fa035c8143a29434b38693826707271ab",
+    "bytes": 3049736,
+    "sha256": "b2763dbb4aac446e6052f741688a99791bfd31a93daef26d676936a228b13f48",
+    "sha1": "b9fb6f9fa035c8143a29434b38693826707271ab"
+  },
+  "new_bundle": {
+    "generation": 22,
+    "requested": "/web/assets/3093e4a/mp_shell.assets_host.min.js",
+    "final_url": "http://127.0.0.1:18072/web/assets/3093e4a/mp_shell.assets_host.min.js",
+    "status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "bytes": 3049777,
+    "sha256": "5158a7ded1e1d9e21420311d0157dc63056abd587350bb93a2f0a86844783fe7",
+    "cache_control": "public, max-age=31536000, immutable",
+    "html": false
+  },
+  "old_blob_preserved_in_checkpoint_filestore": true,
+  "different_original_and_new_javascript_bytes": true,
+  "upstream_behavior": "Missing old attachment metadata causes Binary.content_assets to generate current bundle and redirect a stale checksum URL. AssetsBundle._clean_attachments deletes the old metadata.",
+  "required_followup": "Preserve content-addressed public asset metadata/blobs across releases; verify old URL returns its own exact bytes without redirect. Extend native asset seams, do not replace native CRUD or expand Canvas.",
+  "spec_section": "19",
+  "current_business_untouched": true
+}

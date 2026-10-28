@@ -1,0 +1,23 @@
+{
+  "result": "passed_restore_client_subset",
+  "generation_before": 19,
+  "generation_after": 21,
+  "browser": "2",
+  "tabs": {
+    "native": "8",
+    "canvas": "9"
+  },
+  "checks": [
+    "Actual traffic drain safely retired native/custom editable subtrees and kept draft recovery",
+    "Real fault after candidate20 readiness/publication before traffic; old code restored to freshDB/new21",
+    "Session rotation reauthenticated same Alice separately, both existing document19 pins stayed immutable and fenced",
+    "Exact native title/body and Canvasname/twocards/revision2 downloaded locally, no automatic persistence",
+    "Cancel refresh and known navigation remain fenced",
+    "Native confirmation followed by explicit full reload restores blanknewform/savedCanvas; recovered drafts never replayed",
+    "Native draft discarded without save; original two A notes and board2/onecard shown"
+  ],
+  "limits": [
+    "Old19/21 asset still shows internal field marker; new candidate presentation is assessed after successful activation.",
+    "Actual successful changed-asset activation remains next; no UI07 whole pass from restore subset."
+  ]
+}

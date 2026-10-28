@@ -77,7 +77,7 @@ class Shell extends Component {
             <div t-if="state.detailLabels.length" class="mp_labels" aria-label="Note labels"><span t-foreach="state.detailLabels" t-as="label" t-key="label" t-esc="label"/></div>
             <div t-if="state.recoveryDraft and state.context" class="mp_notice" role="status">Your unsaved draft is available locally. <button t-on-click="downloadDraft">Download unsaved draft</button></div>
             <div t-if="state.error" class="mp_notice" role="alert"><strong t-esc="state.error.message"/><p t-esc="state.error.request_id"/>
-                <p t-if="state.error.field">Field: <t t-esc="state.error.field"/></p>
+                <p t-if="state.error.field and state.error.field!=='client_release'">Field: <t t-esc="state.error.field"/></p>
                 <button t-if="!state.releaseChanged" t-on-click="retry" t-esc="t('retry')"/>
                 <button t-if="state.releaseChanged" t-on-click="reloadRelease">Refresh platform</button>
                 <a t-if="state.error.code==='UNAUTHENTICATED'" t-att-href="loginURL">Sign in</a>

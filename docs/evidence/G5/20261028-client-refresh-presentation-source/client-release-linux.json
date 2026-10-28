@@ -1,0 +1,31 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "-i",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--memory",
+    "512m",
+    "--pids-limit",
+    "64",
+    "--user",
+    "10001:10001",
+    "--tmpfs",
+    "/tmp:rw,nosuid,nodev,noexec,size=64m,mode=1777",
+    "--entrypoint",
+    "/venv/bin/python",
+    "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+    "-c",
+    "import os,sys,tarfile,unittest\nos.mkdir('/tmp/client-release',0o700)\nwith tarfile.open(fileobj=sys.stdin.buffer,mode='r|') as archive:archive.extractall('/tmp/client-release',filter='data')\nos.chdir('/tmp/client-release')\nsuite=unittest.defaultTestLoader.discover('tests',pattern='test_client_release.py')\nraise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful())\n"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_adapter_current_token_recovery_and_non_http_paths (test_client_release.ClientReleaseTests.test_actual_adapter_current_token_recovery_and_non_http_paths) ... ok\ntest_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch (test_client_release.ClientReleaseTests.test_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch) ... ok\ntest_contract_example_has_exact_canonical_identity (test_client_release.ClientReleaseTests.test_contract_example_has_exact_canonical_identity) ... ok\ntest_epoch_restore_and_site_inventory_each_change_identity (test_client_release.ClientReleaseTests.test_epoch_restore_and_site_inventory_each_change_identity) ... ok\ntest_missing_malformed_publication_and_wrong_image_fail_closed (test_client_release.ClientReleaseTests.test_missing_malformed_publication_and_wrong_image_fail_closed) ... ok\ntest_only_explicit_recovery_endpoints_are_exempt (test_client_release.ClientReleaseTests.test_only_explicit_recovery_endpoints_are_exempt) ... ok\ntest_published_tuple_single_query_and_canonical_token (test_client_release.ClientReleaseTests.test_published_tuple_single_query_and_canonical_token) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.010s\n\nOK\n"
+}

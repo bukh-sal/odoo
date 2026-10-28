@@ -1,0 +1,37 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Canvas":
+      - /url: "#"
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- heading "Notes" [level=1]
+- paragraph: Your ideas, in one place.
+- button "All notes"
+- button "Export notes"
+- generic: New
+- button "Save manually":
+  - generic: 
+- button "Discard all changes":
+  - generic: 
+- main:
+  - generic: Title
+  - textbox "Title": Unsaved native draft across asset release 22
+  - generic: Revision
+  - generic: "1"
+  - generic: Note
+  - textbox "Note" [active]:
+    - /placeholder: Write a note…
+    - text: Keep this native draft across the real asset deployment.

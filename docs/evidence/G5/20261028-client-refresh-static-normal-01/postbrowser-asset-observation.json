@@ -1,0 +1,29 @@
+{
+  "result": "asset_identity_assertion_failed",
+  "utc": "2026-10-28T19:03:36.400369+00:00",
+  "hypothesis": "Check redirects/content-type before treating identical response hashes as changed-byte aliasing. No product mutation or apply retry.",
+  "observations": [
+    {
+      "generation": 21,
+      "requested": "/web/assets/42de0c7/mp_shell.assets_host.min.js",
+      "final_url": "http://127.0.0.1:18072/web/assets/3093e4a/mp_shell.assets_host.min.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 3049777,
+      "sha256": "5158a7ded1e1d9e21420311d0157dc63056abd587350bb93a2f0a86844783fe7",
+      "cache_control": "public, max-age=31536000, immutable",
+      "html": false
+    },
+    {
+      "generation": 22,
+      "requested": "/web/assets/3093e4a/mp_shell.assets_host.min.js",
+      "final_url": "http://127.0.0.1:18072/web/assets/3093e4a/mp_shell.assets_host.min.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 3049777,
+      "sha256": "5158a7ded1e1d9e21420311d0157dc63056abd587350bb93a2f0a86844783fe7",
+      "cache_control": "public, max-age=31536000, immutable",
+      "html": false
+    }
+  ]
+}

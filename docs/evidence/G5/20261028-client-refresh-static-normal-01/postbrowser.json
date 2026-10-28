@@ -1,0 +1,20 @@
+{
+  "result": "passed_controlled_reload_data_subset",
+  "utc": "2026-10-28T19:14:03.493159+00:00",
+  "generation": 22,
+  "image_id": "sha256:8f64f816ce8d016691e2b156836baeda065ab5fe829fbf89af3a5e0e7487c596",
+  "inventory_digest": "sha256:033dbc1de13fc6209915040526c3d9fe6bf0ad9afdd9d39d0abfaa0a25891adf",
+  "worker_id": "3bc6ca6c48dc47657bbcbdb33bc8984ca2fd85c8ff1291d9fdb99acaa0778ab4",
+  "database": "mp_disposable_r0_r1_restore_efe751fb942e4723a0611978c253a034",
+  "business_digest": "sha256:bc5a915de032ba5d4e0a175f3cc0703ae29f3410e570108eb13b3ad5f2793b7b",
+  "current_pin_gateway_native_positive": true,
+  "old21_pin_gateway_native_update_denied": true,
+  "original4_notes_board2_features_grants_bindings_exact": true,
+  "browser_drafts_not_saved": true,
+  "new_asset_source_matches_candidate": true,
+  "changed_asset_bytes_confirmed": "asset-retention-diagnosis.json",
+  "limits": [
+    "Old native asset URLs redirect after attachment cleanup; strict immutable asset retention remains an open section19 requirement.",
+    "No complete G5/UI09 claim."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "generation": 21,
+  "browser": "2",
+  "tabs": {
+    "native": "8",
+    "canvas": "9"
+  },
+  "native_dirty": true,
+  "canvas_dirty": true,
+  "no_saved_mutations": true,
+  "native_dialog_pending": true,
+  "native": {
+    "title": "Unsaved native draft across asset release 22",
+    "body": "Keep this native draft across the real asset deployment."
+  },
+  "canvas": {
+    "name": "Unsaved Canvas draft across asset release 22",
+    "added_card": "Unsaved asset card 22",
+    "expected_revision": 2
+  }
+}

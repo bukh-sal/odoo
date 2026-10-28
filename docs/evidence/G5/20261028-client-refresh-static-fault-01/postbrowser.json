@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T18:55:47.009873+00:00",
+  "generation": 21,
+  "image_id": "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+  "database": "mp_disposable_r0_r1_restore_efe751fb942e4723a0611978c253a034",
+  "business_digest": "sha256:bc5a915de032ba5d4e0a175f3cc0703ae29f3410e570108eb13b3ad5f2793b7b",
+  "current_pin_positive": true,
+  "old19_pin_gateway_and_native_update_denied": true,
+  "browser_drafts_not_saved": true,
+  "limits": [
+    "Browser restore subset only; successful changed-asset activation still pending."
+  ]
+}
