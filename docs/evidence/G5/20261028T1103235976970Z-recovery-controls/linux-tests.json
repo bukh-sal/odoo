@@ -1,0 +1,33 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "-i",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--pids-limit",
+    "128",
+    "--memory",
+    "512m",
+    "--cpus",
+    "2",
+    "--user",
+    "10001:10001",
+    "--tmpfs",
+    "/tmp:rw,nosuid,nodev,noexec,size=256m,mode=1777",
+    "--entrypoint",
+    "/venv/bin/python",
+    "modular-platform:g5-fd0445d406d6",
+    "-c",
+    "import os,sys,tarfile,unittest\nos.mkdir('/tmp/qualification',0o700)\nwith tarfile.open(fileobj=sys.stdin.buffer,mode='r|') as archive:\n    archive.extractall('/tmp/qualification',filter='data')\nos.chdir('/tmp/qualification')\nos.environ['PYTHONPATH']='/tmp/qualification/operator_dependencies:/opt/modular/packages/platform_sdk'\nsys.path.insert(0,'/tmp/qualification/operator_dependencies')\nprint('QUALIFICATION_PYTHON='+sys.version,flush=True)\nsuite=unittest.TestSuite()\nfor pattern in ['test_recovery.py']:\n    suite.addTests(unittest.defaultTestLoader.discover('tests',pattern=pattern))\nraise SystemExit(0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful() else 1)\n"
+  ],
+  "exit_code": 0,
+  "stdout": "QUALIFICATION_PYTHON=3.12.16 (main, Oct 26 2026, 22:52:58) [GCC 12.2.0]\n",
+  "stderr": "test_empty_checkpoint_and_real_cli_child (test_recovery.RecoveryFilestoreTests.test_empty_checkpoint_and_real_cli_child) ... ok\ntest_existing_target_and_invalid_source_are_never_overwritten (test_recovery.RecoveryFilestoreTests.test_existing_target_and_invalid_source_are_never_overwritten) ... ok\ntest_new_backup_child_archives_only_selected_database (test_recovery.RecoveryFilestoreTests.test_new_backup_child_archives_only_selected_database) ... ok\ntest_old_whole_project_checkpoint_selects_source_and_preserves_retained_directory (test_recovery.RecoveryFilestoreTests.test_old_whole_project_checkpoint_selects_source_and_preserves_retained_directory) ... ok\ntest_unsafe_members_links_and_duplicates_never_publish_a_target (test_recovery.RecoveryFilestoreTests.test_unsafe_members_links_and_duplicates_never_publish_a_target) ... ok\ntest_actual_private_review_has_exact_nonextendable_start_deadline (test_recovery.RecoveryReviewTests.test_actual_private_review_has_exact_nonextendable_start_deadline) ... ok\ntest_revocation_and_policy_generation_fence_starts_and_running_boundaries (test_recovery.RecoveryReviewTests.test_revocation_and_policy_generation_fence_starts_and_running_boundaries) ... ok\ntest_wrong_hash_fabrication_cross_operation_and_changed_state_fail_closed (test_recovery.RecoveryReviewTests.test_wrong_hash_fabrication_cross_operation_and_changed_state_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.206s\n\nOK\n"
+}

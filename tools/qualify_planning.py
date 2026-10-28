@@ -13,11 +13,11 @@ import sys
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py']
+PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py', 'test_recovery.py']
 
 
 def run(command, *, input=None):
-    result = subprocess.run(command, input=input, capture_output=True, cwd=ROOT, timeout=300)
+    result = subprocess.run(command, input=input, capture_output=True, cwd=ROOT, timeout=600)
     return {'command': command, 'exit_code': result.returncode,
             'stdout': result.stdout.decode('utf-8', errors='replace'), 'stderr': result.stderr.decode('utf-8', errors='replace')}
 
@@ -27,17 +27,18 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--image', default='modular-platform:r1')
     parser.add_argument('--operator', action='store_true', help='Include independent OS/store primitives')
+    parser.add_argument('--recovery-only',action='store_true',help='Qualify changed recovery review/filestore controls without repeating unchanged suites')
     args = parser.parse_args()
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'docs/evidence/G5') or output.exists():
         raise ValueError('Fresh G5 evidence directory required')
     output.mkdir(parents=True)
-    patterns = PATTERNS + (['test_operator_os.py', 'test_operator_store.py'] if args.operator else [])
-    host = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py', '-v'])
+    patterns = ['test_recovery.py'] if args.recovery_only else PATTERNS + (['test_operator_os.py', 'test_operator_store.py'] if args.operator else [])
+    host = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_recovery.py' if args.recovery_only else 'test_*.py', '-v'])
     (output / 'host-tests.json').write_text(json.dumps(host, indent=2) + '\n')
     selected = {ROOT / name for name in ['LICENSE', 'COPYRIGHT', 'tools/reference_package.py', 'tools/modular.py',
         'tools/qualify_planning.py', 'tools/observe_r1.py', 'tools/qualify_live_planning.py', 'tools/qualify_operator_live.py',
-        'deploy/requirements-operator.in', 'deploy/requirements-operator.lock'] + ['tests/' + name for name in patterns]}
+        'deploy/requirements-operator.in', 'deploy/requirements-operator.lock', 'tests/test_plans.py','tests/test_resolution.py'] + ['tests/' + name for name in patterns]}
     for folder in ['packages/platform_sdk', 'packages/contracts', 'plugins',
                    'platform_addons/mp_example_notes', 'platform_addons/mp_example_notes_labels', 'platform_addons/mp_example_canvas']:
         selected.update(path for path in (ROOT / folder).rglob('*') if path.is_file() and '__pycache__' not in path.parts)
@@ -91,14 +92,14 @@ raise SystemExit(0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccess
     frozen = run([sys.executable, 'tools/check_contract_freeze.py'])
     (output / 'contract-freeze.json').write_text(json.dumps(frozen, indent=2) + '\n')
     result = 'passed' if all(item['exit_code'] == 0 for item in (host, linux, frozen)) else 'failed'
-    report = {'item': 'E-01c-primitives' if args.operator else 'E-01b-core', 'gate': 'G5', 'result': result, 'utc': datetime.now(timezone.utc).isoformat(),
+    report = {'item': 'E-01d-recovery-controls' if args.recovery_only else ('E-01c-primitives' if args.operator else 'E-01b-core'), 'gate': 'G5', 'result': result, 'utc': datetime.now(timezone.utc).isoformat(),
         'host': {'system': platform.system(), 'python': platform.python_version()},
         'git_base': run(['git', 'rev-parse', 'HEAD'])['stdout'].strip(),
         'image_id': run(['docker', 'image', 'inspect', args.image, '--format', '{{.Id}}'])['stdout'].strip(),
         'source_sha256': source, 'resolver_version': dependency.version,
         'resolver_files_sha256': {name: hashlib.sha256(raw).hexdigest() for name, raw in sorted(dependencies.items())},
         'records': ['host-tests.json', 'linux-tests.json', 'contract-freeze.json'],
-        'limitations': ['This report qualifies data-only planning and selected OS/store tests, not the actual Docker executor or G5 exit.',
+        'limitations': ['This report qualifies recovery reviews/filestore helpers, not an actual whole-deployment restore or G5 exit.' if args.recovery_only else 'This report qualifies data-only planning and selected OS/store tests, not the actual Docker executor or G5 exit.',
             'Live deployment/install/recovery observations are recorded separately.',
             'Linux test streams the locally hash-locked resolver including license, verified against wheel RECORD, into private tmpfs.',
             'UI queue/apply/status integration and complete new-image lifecycle/recovery qualification remain pending.',

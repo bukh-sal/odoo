@@ -67,7 +67,7 @@ def main(argv=None):
     apply.add_argument('--deployment-config', required=True, type=Path)
     apply.add_argument('--catalog', required=True, type=Path)
     recover = plugin.add_parser('recover', help='Review/restore a checkpoint to a fresh disposable database, then separately resume')
-    recover.add_argument('recovery_action', choices=['prepare-restore','restore','prepare-resume','resume'])
+    recover.add_argument('recovery_action', choices=['prepare-restore','restore','prepare-resume','resume','revoke-review'])
     recover.add_argument('operation_id')
     recover.add_argument('--store', required=True, type=Path)
     recover.add_argument('--deployment-config', required=True, type=Path)
@@ -188,8 +188,11 @@ def main(argv=None):
                     print(json.dumps(decision,indent=2))
                     if input('Type the exact reviewed recovery hash: ').strip()!=args.decision_hash:
                         raise OperatorError('Recovery hash confirmation mismatch')
-                method = recovery.execute if args.recovery_action=='restore' else recovery.resume
-                result = method(decision,exact_hash=args.decision_hash,noninteractive=args.noninteractive)
+                if args.recovery_action=='revoke-review':
+                    result=recovery.revoke_review(decision,exact_hash=args.decision_hash)
+                else:
+                    method = recovery.execute if args.recovery_action=='restore' else recovery.resume
+                    result = method(decision,exact_hash=args.decision_hash,noninteractive=args.noninteractive)
         elif args.group == 'plugin' and args.action == 'apply':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.native_executor import NativeExecutor

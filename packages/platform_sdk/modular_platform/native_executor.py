@@ -22,9 +22,9 @@ from .plans import data_digest
 
 
 ARCHIVE_FILESTORE = """import pathlib,sys,tarfile
-root=pathlib.Path('/var/lib/modular/filestore')
+root=pathlib.Path(sys.argv[2] if len(sys.argv)>2 else '/var/lib/modular/filestore')/sys.argv[1]
 with tarfile.open(fileobj=sys.stdout.buffer,mode='w|gz') as archive:
- if root.exists(): archive.add(root,arcname='filestore',recursive=True)
+ if root.exists(): archive.add(root,arcname='filestore/'+sys.argv[1],recursive=True)
 """
 
 
@@ -98,7 +98,7 @@ class NativeExecutor:
         self._private_command(['docker', 'exec', database, 'pg_dump', '-U', 'postgres', '--no-owner', '-Fc', site['database']],
                               checkpoint/'database.dump')
         arguments, name = self._child(operation, 'checkpoint', network=False)
-        self._private_command(arguments+['-c', ARCHIVE_FILESTORE], checkpoint/'filestore.tar.gz')
+        self._private_command(arguments+['-c', ARCHIVE_FILESTORE,site['database']], checkpoint/'filestore.tar.gz')
         previous = {'schema_version': 1, 'operation_id': operation, 'plan_hash': bundle['plan_hash'],
             'configuration': self.config, 'previous_release': self.observer.state(self.observer.read(quiesced=True),
                 Catalog(self.catalog_root, self.validator, readonly=True).snapshot())['state'],
