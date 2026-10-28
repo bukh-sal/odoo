@@ -1,0 +1,15 @@
+# ADR0006: concrete R1 composition contracts
+
+Status: accepted, compatible contract-major1 revision4, before G4 runtime implementation.
+
+G2 reserved the Notes detail-actions slot and versioned named bindings. G4 needs concrete board DTOs, provider slot declarations, compiled contribution/command references, and a deliberately different documents service major2. Add these strict schemas/examples now; existing manifests and documents1.0 inputs/results retain their meaning.
+
+Optional manifest UI arrays declare slots, action contributions and commands. IDs/compiled handlers belong to their plugin. A required contribution declares a compatible hard dependency on the slot provider; absent/mismatched required slots fail activation. Only explicitly optional mismatches are omitted. Dependencies, duplicate data/UI ownership and ordering cycles fail before code import. Order is dependency-first, then numeric order/plugin ID/contribution ID. Unknown/cross-slot ordering references fail. Catalog strings are text; they are never evaluated as code/templates. Runtime resolves only preloaded trusted compiled handlers. Slot context contains public note ID/revision; host actions preserve actor/workspace/generation.
+
+Documents2.0 uses document_id/content.headline/content.text and read-only get/list;1.0 remains concurrent. Labels uses documents1.0, Canvas documents2.0, each via an exact provider/major/API binding. Missing/mismatched aliases never discover latest. Nested supported dispatch retains a typed initiating frame and current actor; integration grants, both features/installations and target method/model authority intersect. It cannot substitute a privileged user. Native code remains fully trusted; these are supported-path guarantees, not containment.
+
+Boards1.0 stores ordered cards with unique UUIDs, text, lane and optional same-workspace note reference.40 cards/200 characters bound request size; duplicate IDs and invalid note references fail atomically. Save requires expected_revision. Browser cancellation before send reports not_started; cancellation/network loss after dispatch reports unknown and preserves an idempotency key for reconciliation. No false rollback claim.
+
+Labels owns mp.example.note.x_notes_labels in the shared native table. Its default is an array; the example migration normalizes existing extension values without changing base content. Public create/update still cannot assign undeclared extension fields. Native import/export and explicit extension service use reviewed ownership/revision checks. Suspended extension code/field definitions remain loaded; supported extension methods/field reads/actions deny or omit unavailable content. Unloading is not claimed.
+
+This revision adds no executor, worker authority or production deployment capability. Requalify contract fixtures/typecheck/inventory; retain G3 observations for unchanged1.0 behavior and recheck affected runtime paths during G4. Full package validation, artifact provenance and recoverable lifecycle remain G5, with only a bounded reference artifact assembler allowed as a G4 composition prerequisite.

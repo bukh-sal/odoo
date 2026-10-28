@@ -161,6 +161,17 @@ def normalize_manifest(source, *, core=False):
             checked_path(page['entry_asset'])
     if any(nav['page'] not in page_ids for nav in raw['ui']['navigation']):
         raise ContractError('Navigation references undeclared page')
+    for kind in ['slots','contributions','commands']:
+        ids=set()
+        for item in raw['ui'].get(kind,[]):
+            expected='slot' if kind=='slots' else 'action' if kind=='contributions' else 'command'
+            if not item['id'].startswith(raw['plugin']['id']+':'+expected+':') or item['id'] in ids:
+                raise ContractError('Duplicate or incorrectly owned UI contribution')
+            ids.add(item['id'])
+            for field in ['context_schema','input_schema']:
+                if field in item:checked_path(item[field])
+            if 'handler' in item and not item['handler'].startswith(raw['plugin']['id']+':'+expected+':'):
+                raise ContractError('UI handler must be owned compiled code')
     if 'export_schema' in raw['data']:
         checked_path(raw['data']['export_schema'])
     for transition in raw['upgrade']['transitions']:
@@ -172,6 +183,50 @@ def normalize_manifest(source, *, core=False):
             if not script['path'].startswith(expected) or not script['path'].endswith('.py'):
                 raise ContractError('Migration path must use full native target version and phase')
     return raw
+
+
+def resolve_ui(manifests):
+    """Pure data validation/order shared by activation/planning; never import JS/Python."""
+    plugins={}
+    for source in manifests:
+        manifest=normalize_manifest(source)
+        ident=manifest['plugin']['id']
+        if ident in plugins:raise ContractError('Duplicate plugin')
+        plugins[ident]=manifest
+    slots={};contributions={};commands={};owned={}
+    for plugin,manifest in plugins.items():
+        for dependency,specifier in manifest['dependencies']['plugins'].items():
+            if dependency not in plugins or package_version(plugins[dependency]['plugin']['version']) not in SpecifierSet(specifier):
+                raise ContractError('Missing or incompatible UI dependency')
+        for declaration in manifest['data']['contributions']:
+            key=declaration['kind'],declaration['id']
+            if key in owned:raise ContractError('Conflicting owned data contribution')
+            owned[key]=plugin
+        for item in manifest['ui'].get('slots',[]):
+            if item['id'] in slots:raise ContractError('Duplicate slot')
+            slots[item['id']]={**item,'plugin_id':plugin}
+        for item in manifest['ui'].get('commands',[]):
+            if item['id'] in commands:raise ContractError('Duplicate command')
+            commands[item['id']]={**item,'plugin_id':plugin}
+    for plugin,manifest in plugins.items():
+        for item in manifest['ui'].get('contributions',[]):
+            slot=slots.get(item['slot_id'])
+            if not slot or slot['major']!=item['slot_major']:
+                if item['optional']:continue
+                raise ContractError('Required slot missing or incompatible')
+            if slot['plugin_id']!=plugin and slot['plugin_id'] not in manifest['dependencies']['plugins']:
+                raise ContractError('Slot contribution requires a hard provider dependency')
+            if item['id'] in contributions:raise ContractError('Duplicate contribution')
+            contributions[item['id']]={**item,'plugin_id':plugin}
+    ordered=[];remaining=dict(contributions)
+    while remaining:
+        for item in remaining.values():
+            if any(dependency not in contributions or contributions[dependency]['slot_id']!=item['slot_id'] for dependency in item['after']):
+                raise ContractError('Unknown or cross-slot ordering dependency')
+        ready=sorted((item for item in remaining.values() if not any(d in remaining for d in item['after'])),key=lambda item:(item['order'],item['plugin_id'],item['id']))
+        if not ready:raise ContractError('UI contribution order cycle')
+        for item in ready:ordered.append(item);del remaining[item['id']]
+    return {'slots':slots,'contributions':ordered,'commands':commands}
 
 
 def canonical_plan(plan):

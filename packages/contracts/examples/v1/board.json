@@ -1,0 +1,13 @@
+{
+  "id": "10000000-0000-4000-8000-000000000001",
+  "name": "Ideas",
+  "revision": 1,
+  "cards": [
+    {
+      "id": "10000000-0000-4000-8000-000000000002",
+      "text": "A keyboard-accessible card",
+      "lane": "inbox",
+      "note_id": null
+    }
+  ]
+}

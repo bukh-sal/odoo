@@ -1,0 +1,54 @@
+{
+  "gate": "G2",
+  "state": "passed",
+  "contract_major": 1,
+  "revision": 4,
+  "frozen_files": 64,
+  "contract_tests": 19,
+  "utc": "2026-10-28T03:22:55.630388+00:00",
+  "parent_commit": "e49d3a6b972c1499c1138352c038145659c7e41d",
+  "inventory": "docs\\contracts\\freeze-v1.json",
+  "inventory_sha256": "9640ab069ec8c66adababdbe98e15f3dfa1dc58aa48b774fa69f4ed9f4c18a20",
+  "trigger": "ADR0006 additive composition DTO/slot/command contracts before G4 runtime work",
+  "checks": [
+    {
+      "label": "contracts",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_contracts.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "evidence": "contracts.log"
+    },
+    {
+      "label": "typescript",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "--prefix",
+        "packages/host_sdk",
+        "run",
+        "check"
+      ],
+      "exit_code": 0,
+      "evidence": "typescript.log"
+    },
+    {
+      "label": "freeze",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "evidence": "freeze.log"
+    }
+  ],
+  "g1": "unchanged adapters",
+  "g3": "unchanged1.0 wire semantics; old manifest/DTO examples pass; affected runtime integration rechecked at G4"
+}

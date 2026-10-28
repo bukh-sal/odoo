@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 3,
+  "revision": 4,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -146,7 +146,15 @@
         "packages/contracts/v1/route.schema.json",
         "packages/host_sdk/src/index.ts",
         "packages/host_sdk/tests/plain_page.ts",
-        "packages/contracts/examples/v1/host-context.json"
+        "packages/contracts/examples/v1/host-context.json",
+        "packages/contracts/v1/boards.schema.json",
+        "packages/contracts/v1/documents-v2.schema.json",
+        "packages/contracts/v1/note-detail-actions.schema.json",
+        "packages/contracts/examples/v1/board.json",
+        "packages/contracts/examples/v1/document-v2.json",
+        "packages/contracts/examples/v1/manifest-canvas.json",
+        "packages/contracts/examples/v1/manifest-labels.json",
+        "packages/contracts/examples/v1/manifest-notes-composed.json"
       ],
       "g1": [
         "FEAS-03"
@@ -159,7 +167,7 @@
     "docs/architecture-decisions/0003-r1-contracts.md": "28f17f916a860619da1222fd017daa8397be2029aa12a0922f652645a0dd2e2d",
     "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
     "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
-    "docs/contracts/protocol-v1.md": "4a3fb8982cfd2eb234e8b2b91b85f402964593eedf2b3b283bde16fcbf142ac4",
+    "docs/contracts/protocol-v1.md": "a84c1359691ec3add86763e1434a13df6e81a7a40f85c626d5a9388dc70c44ab",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/endpoint.json": "ba813564ad9c211eed25ae1e8ed8e86f90b38e26a15d2fed73bd3bf7ac2cbdb8",
@@ -187,7 +195,7 @@
     "packages/contracts/v1/documents.schema.json": "e3501a8ae274718f9013196c728a6aa6126f0a6daf8ca2951891c030406d0d47",
     "packages/contracts/v1/endpoint.schema.json": "5fe63d217458d569a976079aa435304ac02ddb3897acbc131dbfc0642d12b1eb",
     "packages/contracts/v1/host-context.schema.json": "62f4bb17f6c3c1cddf0b20b5497e6348bff71124b644211b51b719738cf508b1",
-    "packages/contracts/v1/manifest.schema.json": "f44f421e46929ab3a781d926a6499f5cd52d50cc5c46acd3087d805472f43ee1",
+    "packages/contracts/v1/manifest.schema.json": "10f59f8c61c87c3987c90edeec99f8e536c05ec3a0a68e3ca588394e00dbbd36",
     "packages/contracts/v1/notes-export.schema.json": "3331c40067a67f548f261487a4bd3edc3f99d4e7bf6f8988bc11f0a2bb584dfe",
     "packages/contracts/v1/plan.schema.json": "025da629a25e5373b6f7417b8b9d8d09410e1c882aeab031d466b23f6b0b19bf",
     "packages/contracts/v1/role-permissions.json": "c21efe0da20622126bde433601d84b4a3f3792ee2b6712d75723aee5dad22d57",
@@ -206,10 +214,18 @@
     "packages/host_sdk/tests/plain_page.ts": "2205df447eec8f6731f944e22a3e437e050a9ca08db392bc531c982783575966",
     "packages/host_sdk/tsconfig.json": "bcedc5e08a7fba258b29e5703e2167c271c9097c647033a572aefb198f701772",
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
-    "packages/platform_sdk/modular_platform/contracts.py": "5fb999688ae295da4cd37aaea19a936491f52bbbd9deffa3d79f2dda346cc77b",
+    "packages/platform_sdk/modular_platform/contracts.py": "d24593c0c3972b670601d3bc126a20809283ad030008accf50c2033e8b12a300",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
-    "tests/test_contracts.py": "6115a9be86503d2017a8008c6224167be82331087fdd20f349ff19c514a0dfa4",
-    "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a"
+    "tests/test_contracts.py": "5c0bcfd8dd77240727ea77af31431ed0fab415ec918f5c7ef87e842308cd3755",
+    "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
+    "packages/contracts/v1/boards.schema.json": "c875510c74aa6e6e360156f866da2a29884b9e5cc14c4abc2b03492183d1411a",
+    "packages/contracts/v1/documents-v2.schema.json": "476e0bac11bdfc85b4e8daaffab892762179748a2024c2c899abf7387b95dd30",
+    "packages/contracts/v1/note-detail-actions.schema.json": "49f24958735de11e5ec9d02cef4aa8be32a584c33e4a2e871c7ace9e4497754b",
+    "packages/contracts/examples/v1/board.json": "fc3dae5a6c3e4483c1aa86365410ff38d9f0cb560e75a689cfa287e40c896b64",
+    "packages/contracts/examples/v1/document-v2.json": "17b3a0ab8b67f2ca07967a770db34ff20f8925de28601bd71c5ed87dbd6031c4",
+    "packages/contracts/examples/v1/manifest-canvas.json": "b100453208838bc1abaecd46c2b7db27f375a8130f02ccd7f7edeadeb470e0fe",
+    "packages/contracts/examples/v1/manifest-labels.json": "9f8d99191a70bdc689bf85be87fbeb5009eac6f74836b4691b1f6f1b67641886",
+    "packages/contracts/examples/v1/manifest-notes-composed.json": "e44fb21f683f104a59732d5fc0bb743cb6490437bed84b8eebac45357cf9ae46"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

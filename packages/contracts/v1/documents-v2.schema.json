@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "get_input": {
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "document_id"
+      ],
+      "additionalProperties": false
+    },
+    "list_input": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "limit"
+      ],
+      "additionalProperties": false
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "content": {
+          "type": "object",
+          "properties": {
+            "headline": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 20000
+            }
+          },
+          "required": [
+            "headline",
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "maxItems": 30,
+          "uniqueItems": true
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "document_id",
+        "content",
+        "revision",
+        "labels",
+        "updated_at"
+      ],
+      "additionalProperties": false
+    },
+    "list_result": {
+      "type": "object",
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              },
+              "content": {
+                "type": "object",
+                "properties": {
+                  "headline": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "text": {
+                    "type": "string",
+                    "maxLength": 20000
+                  }
+                },
+                "required": [
+                  "headline",
+                  "text"
+                ],
+                "additionalProperties": false
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "labels": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64
+                },
+                "maxItems": 30,
+                "uniqueItems": true
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "document_id",
+              "content",
+              "revision",
+              "labels",
+              "updated_at"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "documents"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "description": "Documents service major2 deliberately changes ID/content DTO structure. Read-only reference contract; v1 remains concurrently supported through separate exact-major bindings."
+}

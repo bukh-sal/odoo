@@ -5,11 +5,11 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Updated UTC: 2026-10-28T03:15:48.391499+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
-- Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint pending commit. Read current Git HEAD/status on resumption.
+- Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **D / G4 in_progress**. Latest passed gate: **G3**, see `evidence/G3/20261028t011619z/gate-G3.json`.
 - Active item: **D-01**. Next: inspect frozen Labels/Canvas/slot contracts, implement native Labels extension and framework-neutral Canvas; qualify composition/version/binding/lifecycle cases. Do not repeat R1 initialization or existing shell install.
-- Working changes: G3 core/Notes/shell and separate R1 harness/lock; G2 revision3 additive administrator contracts requalified. Specification unchanged.
+- Working changes: G2 revision4 additive composition contracts requalified19 tests/64 frozen files + TypeScript. G4 runtime not yet implemented. Specification unchanged.
 
 ## Progress estimate
 
@@ -64,7 +64,7 @@ No hard blocker currently. Docker is healthy (Linux/amd64); user increased alloc
 
 ## Resume capsule
 
-- Passed G0 `3069e03f`, G1 `73d8ebd2`, G2 revision3 `5ea5779c` (17 tests/56 frozen files/TypeScript), G3 `evidence/G3/20261028t011619z/gate-G3.json`. G3 local checkpoint pending commit; source identity contains exact file hashes/image. No later gate passed. Rough45%;28/99 release acceptance +5 R2 exclusions.
+- Passed G0 `3069e03f`, G1 `73d8ebd2`, G2 revision3 `5ea5779c`; revision4 composition contracts (19 tests/64 frozen files/TypeScript), evidence `docs/evidence/G2/20261028T032254119165Z/gate-G2.json`, G3 `evidence/G3/20261028t011619z/gate-G3.json`. G3 checkpoint `e49d3a6b`; source identity contains exact file hashes/image. No later gate passed. Rough45%;28/99 release acceptance +5 R2 exclusions.
 - One active item D-01/G4: native Notes Labels extension, provider-owned detail-action slot and framework-neutral Canvas using frozen named bindings. Inspect frozen manifest examples/Notes schemas/SDK before edits. Do not expand packaging/executor until G4 passes. G5 owns immutable artifacts/planner/independent OS approval/recovery; G6 jobs/outbox/worker; G7 full qualification/runbooks.
 - R1 state `.local/r1/state.json`: project mp-r0-r1396163208bf1, DB mp_disposable_r0_r1_396163208bf1, image modular-platform:r1, port18071. install_status seeded, shell_install_status installed, view_refresh_1 passed. NEVER rerun init/seed/install-shell/view_refresh_1. Latest build031353561364Z/up031410772022Z. No tool/schema operation pending.
 - Synthetic users Alice editorA/viewerB, Bob editorB, Outsider revoked, service Worker viewerA without browser business rights. Personal/en-US/UTC. Journal public UUID d8243a62-f8ff-46d6-9998-9a2c35f592a0 revision2 retained. Temporary export group/broad rule and probe/conflict/crash notes removed. Development-source installation digest is intentionally not .mplug provenance; G5 must replace it with real artifacts.

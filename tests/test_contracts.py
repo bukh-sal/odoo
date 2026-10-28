@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
 from modular_platform.contracts import (CONTRACTS, ContractError, api_range, canonical_plan, checked_path,
-    load_json, native_version, normalize_manifest, package_version, plan_hash, validate, validate_binding, check_start_approval)
+    load_json, native_version, normalize_manifest, package_version, plan_hash, validate, validate_binding, check_start_approval, resolve_ui)
 from modular_platform.tokens import AUDIENCE, ISSUER, verify_worker_token
 from jsonschema import Draft202012Validator
 from packaging.version import Version
@@ -35,6 +35,10 @@ class Contracts(unittest.TestCase):
             self.assertEqual(schema['$schema'], 'https://json-schema.org/draft/2020-12/schema')
         for path in EXAMPLES.glob('*.json'):
             if path.name == 'plan.canonical.json': continue
+            if path.stem in ['board','document-v2']:
+                schema,definition=('boards','board') if path.stem=='board' else ('documents-v2','document')
+                Draft202012Validator(json.loads((CONTRACTS/(schema+'.schema.json')).read_text())['$defs'][definition],format_checker=__import__('modular_platform.contracts',fromlist=['FORMAT_CHECKER']).FORMAT_CHECKER).validate(json.loads(path.read_text()))
+                continue
             name = 'manifest' if path.stem.startswith('manifest-') else path.stem
             validate(name, json.loads(path.read_text()))
 
@@ -187,6 +191,36 @@ version='0.1.0'
             with self.subTest(key=key),self.assertRaises(ContractError):validate('workspace-membership',{**member,key:'forged'})
             with self.subTest(key=key),self.assertRaises(ContractError):validate('workspace-settings',{**settings,key:'forged'})
         with self.assertRaises(ContractError):validate('workspace-membership',{**member,'role':'site_operator'})
+
+    def test_composed_ui_dependency_ownership_order_and_compatibility(self):
+        manifests=[example(name) for name in ['manifest-notes-composed','manifest-labels','manifest-canvas']]
+        registry=resolve_ui(manifests)
+        self.assertEqual(len(registry['contributions']),1)
+        self.assertEqual(registry['contributions'][0]['plugin_id'],'org.example.notes_labels')
+        self.assertIn('org.example.notes:slot:detail_actions',registry['slots'])
+        for mutation in ['major','dependency','duplicate','cycle','ownership','path']:
+            changed=copy.deepcopy(manifests);label=changed[1];item=label['ui']['contributions'][0]
+            if mutation=='major':item['slot_major']=2
+            if mutation=='dependency':label['dependencies']['plugins']={}
+            if mutation=='duplicate':label['ui']['contributions'].append(copy.deepcopy(item))
+            if mutation=='ownership':item['id']='org.example.notes:action:forged'
+            if mutation=='path':label['ui']['commands'][0]['input_schema']='../escape'
+            if mutation=='cycle':
+                other={**item,'id':'org.example.notes_labels:action:second','after':[item['id']]};item['after']=[other['id']];label['ui']['contributions'].append(other)
+            with self.subTest(mutation=mutation),self.assertRaises(ContractError):resolve_ui(changed)
+        optional=copy.deepcopy(manifests);item=optional[1]['ui']['contributions'][0];item.update(slot_major=2,optional=True)
+        self.assertEqual(resolve_ui(optional)['contributions'],[])
+        self.assertEqual(resolve_ui([manifests[0]])['contributions'],[])
+
+    def test_board_and_documents_v2_dtos_cannot_expand_authority(self):
+        for name,definition,example_name in [('boards','board','board'),('documents-v2','document','document-v2')]:
+            validator=Draft202012Validator(json.loads((CONTRACTS/(name+'.schema.json')).read_text())['$defs'][definition])
+            value=example(example_name);self.assertTrue(validator.is_valid(value))
+            for key in ['workspace_id','sudo','user_id','database']:
+                self.assertFalse(validator.is_valid({**value,key:'forged'}))
+        get=Draft202012Validator(json.loads((CONTRACTS/'documents-v2.schema.json').read_text())['$defs']['get_input'])
+        self.assertFalse(get.is_valid({'note_id':example('document-v2')['document_id']}))
+        self.assertTrue(get.is_valid({'document_id':example('document-v2')['document_id']}))
 
 
 if __name__ == '__main__': unittest.main()
