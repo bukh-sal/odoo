@@ -1,0 +1,25 @@
+test_actor_host_and_method_dtos_do_not_accept_privilege_claims (test_contracts.Contracts.test_actor_host_and_method_dtos_do_not_accept_privilege_claims) ... ok
+test_alias_exact_version_provider_and_major (test_contracts.Contracts.test_alias_exact_version_provider_and_major) ... ok
+test_approval_exact_target_expiry_revocation_and_consumption (test_contracts.Contracts.test_approval_exact_target_expiry_revocation_and_consumption) ... ok
+test_authoring_is_data_not_import (test_contracts.Contracts.test_authoring_is_data_not_import) ... ok
+test_board_and_documents_v2_dtos_cannot_expand_authority (test_contracts.Contracts.test_board_and_documents_v2_dtos_cannot_expand_authority) ... ok
+test_composed_ui_dependency_ownership_order_and_compatibility (test_contracts.Contracts.test_composed_ui_dependency_ownership_order_and_compatibility) ... ok
+test_custom_draft_snapshot_has_safe_filename_and_no_authority (test_contracts.Contracts.test_custom_draft_snapshot_has_safe_filename_and_no_authority) ... ok
+test_live_jwt_scope_audience_algorithm_and_lifetime (test_contracts.Contracts.test_live_jwt_scope_audience_algorithm_and_lifetime) ... ok
+test_migration_path_and_nonincreasing_transition (test_contracts.Contracts.test_migration_path_and_nonincreasing_transition) ... ok
+test_parallel_contract_majors_are_explicit (test_contracts.Contracts.test_parallel_contract_majors_are_explicit) ... ok
+test_paths_cannot_escape_package (test_contracts.Contracts.test_paths_cannot_escape_package) ... ok
+test_plan_golden_bytes_hash_and_independent_js (test_contracts.Contracts.test_plan_golden_bytes_hash_and_independent_js) ... ok
+test_remote_metadata_cannot_deploy_or_register_native_code (test_contracts.Contracts.test_remote_metadata_cannot_deploy_or_register_native_code) ... ok
+test_retired_jwt_vector_signature_and_expiry (test_contracts.Contracts.test_retired_jwt_vector_signature_and_expiry) ... ok
+test_rfc8785_library_vector (test_contracts.Contracts.test_rfc8785_library_vector) ... ok
+test_schema_dialect_and_examples (test_contracts.Contracts.test_schema_dialect_and_examples) ... ok
+test_unknown_sensitive_keys_and_unsupported_majors (test_contracts.Contracts.test_unknown_sensitive_keys_and_unsupported_majors) ... ok
+test_utc_calendar_validation_does_not_depend_on_optional_formats (test_contracts.Contracts.test_utc_calendar_validation_does_not_depend_on_optional_formats) ... ok
+test_version_spelling_and_native_order (test_contracts.Contracts.test_version_spelling_and_native_order) ... ok
+test_workspace_admin_inputs_cannot_name_a_site_or_installation (test_contracts.Contracts.test_workspace_admin_inputs_cannot_name_a_site_or_installation) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.262s
+
+OK

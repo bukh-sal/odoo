@@ -64,6 +64,8 @@ export interface PluginHost {
 export interface MountedPage {
     updateRoute?(route: RouteSnapshot): void | Promise<void>;
     canLeave?(): 'allow' | 'confirm' | Promise<'allow' | 'confirm'>;
+    /** Synchronous JSON-only snapshot; host binds ownership and keeps it in RAM. */
+    snapshotDraft?(): {readonly filename:string;readonly data:unknown} | null;
     dispose(): void | Promise<void>;
 }
 export interface PluginPageModule {

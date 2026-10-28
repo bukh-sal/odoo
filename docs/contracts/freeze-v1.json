@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 5,
+  "revision": 6,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -157,7 +157,9 @@
         "packages/contracts/examples/v1/document-v2.json",
         "packages/contracts/examples/v1/manifest-canvas.json",
         "packages/contracts/examples/v1/manifest-labels.json",
-        "packages/contracts/examples/v1/manifest-notes-composed.json"
+        "packages/contracts/examples/v1/manifest-notes-composed.json",
+        "packages/contracts/v1/draft-snapshot.schema.json",
+        "packages/contracts/examples/v1/draft-snapshot.json"
       ],
       "g1": [
         "FEAS-03"
@@ -170,7 +172,7 @@
     "docs/architecture-decisions/0003-r1-contracts.md": "28f17f916a860619da1222fd017daa8397be2029aa12a0922f652645a0dd2e2d",
     "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
     "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
-    "docs/contracts/protocol-v1.md": "24d4357269b7e9b9ad035eb6f6a146bd3c6b0937ca7b1a604b9064597d7c3aef",
+    "docs/contracts/protocol-v1.md": "afc0df8f2279253664088edc348aaa27bd84492af7b561e9d682f634d1128c01",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/endpoint.json": "ba813564ad9c211eed25ae1e8ed8e86f90b38e26a15d2fed73bd3bf7ac2cbdb8",
@@ -213,13 +215,13 @@
     "packages/contracts/v1/workspace-settings.schema.json": "bcaa10f2058b515343ca4fe1e558b572d03e272db7e73dfbfa930e009f32ff80",
     "packages/host_sdk/package-lock.json": "3f0ee0040552022f928c4bfdb2c6d7a4973cfca5d10d104f5485b4332398729b",
     "packages/host_sdk/package.json": "e0d066d961a7931d70c71696cd17bac70b2d6f9c1b548ae50cee9677038dde87",
-    "packages/host_sdk/src/index.ts": "cb9703f0e6ccb161880d60e411fcbc4c7044365a3ffa6a34322d7b8e520c7575",
+    "packages/host_sdk/src/index.ts": "a8077b8b1e676a737a217bb3ff61bba8db981dd956a05fd9032a3eb4fe0db3b2",
     "packages/host_sdk/tests/plain_page.ts": "2205df447eec8f6731f944e22a3e437e050a9ca08db392bc531c982783575966",
     "packages/host_sdk/tsconfig.json": "bcedc5e08a7fba258b29e5703e2167c271c9097c647033a572aefb198f701772",
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
     "packages/platform_sdk/modular_platform/contracts.py": "d24593c0c3972b670601d3bc126a20809283ad030008accf50c2033e8b12a300",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
-    "tests/test_contracts.py": "5c0bcfd8dd77240727ea77af31431ed0fab415ec918f5c7ef87e842308cd3755",
+    "tests/test_contracts.py": "830bb244aeb763e3d8d15961b5c707d45359adb061df08475bf2fe47e8635014",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
     "packages/contracts/v1/boards.schema.json": "c8bb4af1d2810190ef932b02985554ade3e26235aafd1e65c1440647e2f4894d",
     "packages/contracts/v1/documents-v2.schema.json": "476e0bac11bdfc85b4e8daaffab892762179748a2024c2c899abf7387b95dd30",
@@ -228,7 +230,9 @@
     "packages/contracts/examples/v1/document-v2.json": "17b3a0ab8b67f2ca07967a770db34ff20f8925de28601bd71c5ed87dbd6031c4",
     "packages/contracts/examples/v1/manifest-canvas.json": "b100453208838bc1abaecd46c2b7db27f375a8130f02ccd7f7edeadeb470e0fe",
     "packages/contracts/examples/v1/manifest-labels.json": "9f8d99191a70bdc689bf85be87fbeb5009eac6f74836b4691b1f6f1b67641886",
-    "packages/contracts/examples/v1/manifest-notes-composed.json": "e44fb21f683f104a59732d5fc0bb743cb6490437bed84b8eebac45357cf9ae46"
+    "packages/contracts/examples/v1/manifest-notes-composed.json": "e44fb21f683f104a59732d5fc0bb743cb6490437bed84b8eebac45357cf9ae46",
+    "packages/contracts/v1/draft-snapshot.schema.json": "7f13456a2ec3e22ed19d6423dd82aceaa15ed0c134bc7e1b7252c92de1f8fc12",
+    "packages/contracts/examples/v1/draft-snapshot.json": "7f6527d05cc27bad35fe6322f08f427f60d6be307b67327228f7e00e4cdc1ccb"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

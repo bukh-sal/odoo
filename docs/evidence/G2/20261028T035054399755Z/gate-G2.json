@@ -1,0 +1,51 @@
+{
+  "gate": "G2",
+  "state": "passed",
+  "revision": 6,
+  "contract_major": 1,
+  "frozen_files": 66,
+  "contract_tests": 20,
+  "utc": "2026-10-28T03:50:55.906326+00:00",
+  "trigger": "ADR0007 optional custom draft recovery; existing consumer typechecks unchanged",
+  "inventory_sha256": "054b5a460d6cca7715fd87d7fc5846e4bf1a7ef94e5045c146e486a96d38b0c6",
+  "checks": [
+    {
+      "label": "contracts",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_contracts.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "evidence": "contracts.log"
+    },
+    {
+      "label": "typescript",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "--prefix",
+        "packages/host_sdk",
+        "run",
+        "check"
+      ],
+      "exit_code": 0,
+      "evidence": "typescript.log"
+    },
+    {
+      "label": "freeze",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "evidence": "freeze.log"
+    }
+  ],
+  "g3": "native1.0 DTO/draft behavior unchanged; affected custom runtime qualification remains G4"
+}

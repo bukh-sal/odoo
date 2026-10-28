@@ -222,5 +222,12 @@ version='0.1.0'
         self.assertFalse(get.is_valid({'note_id':example('document-v2')['document_id']}))
         self.assertTrue(get.is_valid({'document_id':example('document-v2')['document_id']}))
 
+    def test_custom_draft_snapshot_has_safe_filename_and_no_authority(self):
+        value=example('draft-snapshot');validate('draft-snapshot',value)
+        for name in ['../draft.json','C:/draft.json','/draft.json','draft.html','draft.json\n','draft.json\r','a\\draft.json']:
+            with self.subTest(name=name),self.assertRaises(ContractError):validate('draft-snapshot',{**value,'filename':name})
+        for key in ['principal_id','workspace_id','site_id','storage','automatic_download']:
+            with self.subTest(key=key),self.assertRaises(ContractError):validate('draft-snapshot',{**value,key:'forged'})
+
 
 if __name__ == '__main__': unittest.main()

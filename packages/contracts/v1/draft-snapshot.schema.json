@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "filename": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*\\.json(?![\\s\\S])",
+      "maxLength": 96
+    },
+    "data": {
+      "type": [
+        "object",
+        "array"
+      ]
+    }
+  },
+  "required": [
+    "filename",
+    "data"
+  ],
+  "additionalProperties": false,
+  "description": "Optional UI-major1 MountedPage.snapshotDraft result. Synchronous JSON-only; host binds actor/site/workspace and enforces UTF-8 encoded snapshot <=65536 bytes. RAM only, explicit authorized download."
+}
