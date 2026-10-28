@@ -9,9 +9,7 @@
           "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
         }
       },
-      "required": [
-        "board_id"
-      ],
+      "required": [],
       "additionalProperties": false
     },
     "save_input": {
@@ -153,5 +151,5 @@
       "additionalProperties": false
     }
   },
-  "description": "Boards major1. At most40 cards, unique card IDs enforced semantically; explicit workspace selected separately, note references must resolve in that workspace. Array order is card order."
+  "description": "Boards major1. At most40 cards, unique card IDs enforced semantically; explicit workspace selected separately, note references must resolve in that workspace. Array order is card order. Omitted board_id selects the single reference board in the explicitly selected workspace; an explicit unknown ID is not found. This never selects a workspace."
 }

@@ -1,0 +1,51 @@
+{
+  "gate": "G2",
+  "state": "passed",
+  "revision": 5,
+  "contract_major": 1,
+  "frozen_files": 64,
+  "contract_tests": 19,
+  "utc": "2026-10-28T03:28:06.138405+00:00",
+  "trigger": "ADR0006 initial-board optional-ID clarification before Canvas runtime exercised",
+  "inventory_sha256": "019293aebd96694254d0a29fddedfebaa37f0bca7b671fbc3b92d5abc96cb47b",
+  "checks": [
+    {
+      "label": "contracts",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_contracts.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "evidence": "contracts.log"
+    },
+    {
+      "label": "typescript",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "--prefix",
+        "packages/host_sdk",
+        "run",
+        "check"
+      ],
+      "exit_code": 0,
+      "evidence": "typescript.log"
+    },
+    {
+      "label": "freeze",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "evidence": "freeze.log"
+    }
+  ],
+  "compatibility": "Existing explicit-ID and all v1 manifest/DTO fixtures remain valid; no G3 wire semantics change"
+}

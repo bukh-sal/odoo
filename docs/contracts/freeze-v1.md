@@ -1,6 +1,6 @@
 # Contract freeze v1
 
-Status: **passed G2**, 28 October 2026. Contract major1, revision4 (ADRs0004/0005/0006). Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
+Status: **passed G2**, 28 October 2026. Contract major1, revision5 (ADRs0004/0005/0006). Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
 
 Normative semantics: [protocol-v1.md](protocol-v1.md), [ADR0003](../architecture-decisions/0003-r1-contracts.md). Machine inventory [freeze-v1.json](freeze-v1.json) contains exact SHA256 for every schema/type/example/validator/test/lock and maps owning phase, acceptance IDs and G1 correspondence. It excludes itself and unrelated evidence/status to avoid self-reference. Every path in the table has an exact digest in that inventory.
 
@@ -35,3 +35,5 @@ Revision2 requalified the strict UTC calendar validator and explicit core capabi
 Revision3 adds strict workspace-administrator membership/settings schemas/examples under the existing role/authority rules ([ADR0005](../architecture-decisions/0005-workspace-admin-contract.md));17contract tests,56frozen files/typecheck pass. Runtime admin qualification remains C04.
 
 Revision4 adds concrete composition/board/documents2.0 boundaries before G4 runtime work; see ADR0006 and the machine inventory. Existing1.0 examples remain compatibility fixtures.
+
+Revision5 clarifies initial board discovery without selecting a workspace; ADR0006 addendum, existing explicit-ID request remains compatible.

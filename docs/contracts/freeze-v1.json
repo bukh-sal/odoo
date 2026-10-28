@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 4,
+  "revision": 5,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -96,7 +96,10 @@
       "paths": [
         "packages/contracts/v1/binding.schema.json",
         "packages/contracts/examples/v1/binding.json",
-        "packages/contracts/v1/documents.schema.json"
+        "packages/contracts/v1/documents.schema.json",
+        "packages/contracts/v1/documents-v2.schema.json",
+        "packages/contracts/examples/v1/document-v2.json",
+        "packages/contracts/examples/v1/manifest-notes-composed.json"
       ],
       "g1": [
         "FEAS-04"
@@ -167,7 +170,7 @@
     "docs/architecture-decisions/0003-r1-contracts.md": "28f17f916a860619da1222fd017daa8397be2029aa12a0922f652645a0dd2e2d",
     "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
     "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
-    "docs/contracts/protocol-v1.md": "a84c1359691ec3add86763e1434a13df6e81a7a40f85c626d5a9388dc70c44ab",
+    "docs/contracts/protocol-v1.md": "24d4357269b7e9b9ad035eb6f6a146bd3c6b0937ca7b1a604b9064597d7c3aef",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/endpoint.json": "ba813564ad9c211eed25ae1e8ed8e86f90b38e26a15d2fed73bd3bf7ac2cbdb8",
@@ -218,7 +221,7 @@
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
     "tests/test_contracts.py": "5c0bcfd8dd77240727ea77af31431ed0fab415ec918f5c7ef87e842308cd3755",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
-    "packages/contracts/v1/boards.schema.json": "c875510c74aa6e6e360156f866da2a29884b9e5cc14c4abc2b03492183d1411a",
+    "packages/contracts/v1/boards.schema.json": "c8bb4af1d2810190ef932b02985554ade3e26235aafd1e65c1440647e2f4894d",
     "packages/contracts/v1/documents-v2.schema.json": "476e0bac11bdfc85b4e8daaffab892762179748a2024c2c899abf7387b95dd30",
     "packages/contracts/v1/note-detail-actions.schema.json": "49f24958735de11e5ec9d02cef4aa8be32a584c33e4a2e871c7ace9e4497754b",
     "packages/contracts/examples/v1/board.json": "fc3dae5a6c3e4483c1aa86365410ff38d9f0cb560e75a689cfa287e40c896b64",
