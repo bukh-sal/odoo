@@ -1,0 +1,10 @@
+{
+  "database": "mp_disposable_r0_r1_396163208bf1",
+  "variant": "v1",
+  "image_id": "sha256:a9e19de8dd9de3af5a65285d18a075eb0339e8b17b2eed0eca4447f7fb6791eb",
+  "files": {
+    "database.dump": "0d21fe3c383c87b7cd595db57d77cf9a7dc9ccaa8e766e460495a21a82a0cf06",
+    "filestore.tar.gz": "065818d56df44af2cb76bdc7683d65da7fa9a0f27550dd599d153f188b262a34"
+  },
+  "source": "e06645a57086cee7a371ac1da8ad2d4a011a3c05"
+}

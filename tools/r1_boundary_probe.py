@@ -111,7 +111,9 @@ def main():
         save('failed');raise
     finally:
         if policy_changed:policy(f"env['mp.membership'].browse({fixture['memberships']['aliceA']!r}).write({{'role':'editor','state':'active'}})",'r1-boundary-final-restore')
-        for ident in created:client.native('unlink',[[ident]])
+        for ident in created:
+            revision=client.native('read',[[ident],['revision']])[0]['revision']
+            client.native('unlink',[[ident]],{'context':{'expected_revision':revision}})
         if export_group_added:policy(f"actor=env['res.users'].browse({fixture['users']['alice']['id']!r})\nassert actor.login=='r1_alice'\nactor.write({{'group_ids':[(3,env.ref('base.group_allow_export').id)]}})",'r1-boundary-export-restore')
         policy(f"env['ir.rule'].search([('name','=',{broad_rule_name!r}),('model_id','=',env['ir.model']._get('mp.example.note').id)]).unlink()",'r1-boundary-rule-restore')
 

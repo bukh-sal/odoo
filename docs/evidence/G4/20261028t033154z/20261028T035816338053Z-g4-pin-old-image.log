@@ -1,0 +1,1 @@
+COMMAND: ["docker", "tag", "sha256:20c233124e6fe030a75f914f7530cf9918618478d706e680ffdff7d6b4919834", "modular-platform:g4-before-labels02"]

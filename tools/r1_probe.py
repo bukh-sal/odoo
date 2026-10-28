@@ -88,8 +88,13 @@ def main():
         updated=client.call('update',{'note_id':created['id'],'expected_revision':1,'title':'Updated'},key='update-'+uuid4().hex)
         assert updated['revision']==2 and updated['body']=='Private'
         client.call('update',{'note_id':created['id'],'expected_revision':1,'title':'Stale'},expect=409,code='CONFLICT')
+        native_id=client.native('search_read',[[('public_id','=',created['id'])]],{'fields':['id']})[0]['id']
+        for context in [{},{'expected_revision':1},{'expected_revision':True}]:
+            status,denied=client.request('/web/dataset/call_kw/mp.example.note.unlink',{'jsonrpc':'2.0','method':'call','id':1,'params':{'model':'mp.example.note','method':'unlink','args':[[native_id]],'kwargs':{'context':context}}},'A')
+            assert status==200 and denied.get('error',{}).get('data',{}).get('name','').endswith('.PublicError'),denied
+        assert client.call('get',{'note_id':created['id']})==updated
         client.call('delete',{'note_id':created['id'],'expected_revision':2},key='delete-'+uuid4().hex)
-        passed('create/update/delete revision CAS and saved idempotency outcome work')
+        passed('create/update/delete revision CAS and saved outcomes work; native stale/missing/bool delete revisions cannot bypass CAS')
         key='concurrent-'+uuid4().hex
         clients=[Client(state,fixture) for _ in range(8)]
         with ThreadPoolExecutor(max_workers=8) as pool:

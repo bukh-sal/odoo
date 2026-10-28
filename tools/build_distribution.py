@@ -48,11 +48,13 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     reference_stage=tempfile.TemporaryDirectory(prefix='mp-reference-') if policy.get('reference_packages') else None
     references={};artifacts={}
     if reference_stage:
-        from reference_package import materialize_reference
+        assert Path(reference_stage.name).resolve().is_relative_to(Path(tempfile.gettempdir()).resolve())
+        from reference_package import materialize_reference,validate_reference_composition
         for manifest_path in policy['reference_packages']:
             descriptor,raw,location=materialize_reference(source,manifest_path,Path(reference_stage.name))
             if descriptor['addon'] in references:raise ValueError('Duplicate reference package addon')
             references[descriptor['addon']]=location;artifacts[descriptor['plugin_id']]={**descriptor,'bytes':raw}
+        reference_registry=validate_reference_composition([item['bytes'] for item in artifacts.values()])
     manifests = {}
     locations = {}
     for name in sorted(selected):
@@ -88,6 +90,7 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     seeded = seed_category_metadata(category_file, target / "odoo/addons/base/data/ir_module_module.xml")
     inventory = {"policy": policy, "native_addons": manifests, "generated_patches": [{"path": "odoo/addons/base/data/ir_module_category_data.xml", "source_sha256": category_hash, "seeded_categories": seeded}], "files": {}}
     if artifacts:inventory['artifacts']={key:{name:value for name,value in item.items() if name!='bytes'} for key,item in artifacts.items()}
+    if artifacts:inventory['reference_composition']=reference_registry
     for path in sorted(target.rglob("*")):
         if path.is_file():
             inventory["files"][path.relative_to(target).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()

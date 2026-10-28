@@ -1,0 +1,14 @@
+{
+  "state": "passed",
+  "nonce": "b6c4ed5c1aaf46cfb338f70fe0868956",
+  "effect": "one_committed_record",
+  "cleanup": "normal_image_command_restored_no_fault_mount_or_environment_synthetic_note_removed",
+  "initial_client_status": 502,
+  "saved_result_replayed_twice": true,
+  "worker_events": [
+    "2026-10-28 04:27:03,674 9 INFO mp_disposable_r0_r1_396163208bf1 odoo.service.server: Worker WorkerHTTP (9) alive ",
+    "2026-10-28 04:27:03,675 10 INFO mp_disposable_r0_r1_396163208bf1 odoo.service.server: Worker WorkerHTTP (10) alive ",
+    "MP_R1_POSTCOMMIT_EXIT pid=9 nonce=b6c4ed5c1aaf46cfb338f70fe0868956",
+    "2026-10-28 04:27:04,136 14 INFO mp_disposable_r0_r1_396163208bf1 odoo.service.server: Worker WorkerHTTP (14) alive "
+  ]
+}

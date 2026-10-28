@@ -266,6 +266,7 @@ def http_probe(state, registry_sync=False):
 
 def backup(state):
     stop(state)
+    image = state.get('image', 'modular-platform:r0')
     folder = LOCAL / "backups" / (now() + "-backup")
     folder.mkdir(parents=True)
     dump = folder / "database.dump"
@@ -275,12 +276,12 @@ def backup(state):
     execute(state, "prepare-backup-path", compose() + ["run", "--rm", "--no-deps", "--entrypoint", "mkdir", "maintenance", "-p", "/evidence/" + relative])
     execute(state, "filestore-backup", compose() + ["run", "--rm", "--no-deps", "--entrypoint", "tar", "maintenance", "-czf", "/evidence/" + relative + "/filestore.tar.gz", "-C", "/var/lib/modular/filestore", state["active_db"]])
     copy_container = state["project"] + "-evidence-copy"
-    execute(state, "create-evidence-copy", ["docker", "create", "--name", copy_container, "--mount", f"type=volume,source={state['project']}_evidence,target=/evidence", "--entrypoint", "true", "modular-platform:r0"])
+    execute(state, "create-evidence-copy", ["docker", "create", "--name", copy_container, "--mount", f"type=volume,source={state['project']}_evidence,target=/evidence", "--entrypoint", "true", image])
     try:
         execute(state, "copy-filestore-backup", ["docker", "cp", copy_container + ":/evidence/" + relative + "/filestore.tar.gz", str(archive)])
     finally:
         execute(state, "remove-evidence-copy", ["docker", "rm", copy_container])
-    metadata = {"database": state["active_db"], "variant": state["variant"], "image_id": subprocess.check_output(["docker", "image", "inspect", "modular-platform:r0", "--format", "{{.Id}}"], text=True).strip(), "files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in [dump, archive]}, "source": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
+    metadata = {"database": state["active_db"], "variant": state["variant"], "image_id": subprocess.check_output(["docker", "image", "inspect", image, "--format", "{{.Id}}"], text=True).strip(), "files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in [dump, archive]}, "source": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
     (folder / "manifest.json").write_text(json.dumps(metadata, indent=2) + "\n")
     (ROOT / state["evidence"] / (folder.name + "-manifest.json")).write_text(json.dumps(metadata, indent=2) + "\n")
     state["backup"] = str(folder.relative_to(ROOT))

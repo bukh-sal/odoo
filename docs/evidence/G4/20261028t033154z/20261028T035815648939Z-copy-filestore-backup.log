@@ -1,0 +1,1 @@
+COMMAND: ["docker", "cp", "mp-r0-r1396163208bf1-evidence-copy:/evidence/backups/20261028T035812866223Z-backup/filestore.tar.gz", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r1\\backups\\20261028T035812866223Z-backup\\filestore.tar.gz"]

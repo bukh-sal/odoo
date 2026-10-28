@@ -18,7 +18,7 @@ RUN python -m pip install --require-hashes -r /locks/build-requirements.lock \
     && /venv/bin/python -m pip install --no-build-isolation --require-hashes -r /locks/requirements.lock \
     && /venv/bin/python -m pip check
 COPY . /source
-RUN python /source/tools/build_distribution.py /source /release --policy "$DISTRIBUTION_POLICY"
+RUN /venv/bin/python /source/tools/build_distribution.py /source /release --policy "$DISTRIBUTION_POLICY"
 
 FROM ${PYTHON_IMAGE} AS runtime
 ARG DEBIAN_SNAPSHOT=20261027T000000Z

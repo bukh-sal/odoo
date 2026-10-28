@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T04:43:38.367Z",
+  "committed_by_utc": "2026-10-28T04:42:58.247048+00:00",
+  "known_urls": "Context409/plugin_suspended; boards403/forbidden; direct native search denied",
+  "browser": "A custom subtree cleared on authority refresh; B stays readable/readonly",
+  "screenshot": "canvas-feature-suspended.jpg",
+  "restoration": "resumed; native registry and board revision15/two cards retained",
+  "restore_log": "20261028T044344858533Z-g4-resume-canvas-a.log"
+}

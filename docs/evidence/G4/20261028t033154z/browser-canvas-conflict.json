@@ -1,0 +1,10 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T03:49:10.504Z",
+  "navigation_cancel": "custom canLeave confirmation kept URL and unsaved name",
+  "server_change": "independent API revision9->10",
+  "stale_save": "conflict kept name/cards; explicit download exactly matched expected9 and two cards",
+  "recovery": "Reload saved board asks confirmation; Continue loads server name/revision10; original name restored by save",
+  "known_issue": "Download button remains after explicit discard/success; remove it in next Canvas patch",
+  "screenshot": "canvas-conflict-draft.jpg"
+}

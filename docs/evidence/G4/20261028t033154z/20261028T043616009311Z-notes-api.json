@@ -1,0 +1,46 @@
+{
+  "state": "passed",
+  "scope": "initial G3 backend subset; remaining G3/browser/fault acceptance open",
+  "checks": [
+    {
+      "name": "generic contexts and Notes search stay in explicit asymmetric workspaces",
+      "result": "passed"
+    },
+    {
+      "name": "viewer create/update/delete denied despite forged browser attribution",
+      "result": "passed"
+    },
+    {
+      "name": "foreign and nonexistent public IDs have identical not-found policy",
+      "result": "passed"
+    },
+    {
+      "name": "independent editor in B cannot read mutate delete or create into A; legitimate B CRUD works",
+      "result": "passed"
+    },
+    {
+      "name": "only registered methods and strict method schemas dispatch",
+      "result": "passed"
+    },
+    {
+      "name": "create/update/delete revision CAS and saved outcomes work; native stale/missing/bool delete revisions cannot bypass CAS",
+      "result": "passed"
+    },
+    {
+      "name": "eight concurrent same-key requests produce one committed effect/result",
+      "result": "passed"
+    },
+    {
+      "name": "retained native RPC cannot bypass owner viewer or forged-context guards",
+      "result": "passed"
+    },
+    {
+      "name": "excluded workspace attachment feature cannot be enabled through legacy public attachments",
+      "result": "passed"
+    },
+    {
+      "name": "pre-dispatch deadline reports not-started without false rollback claim",
+      "result": "passed"
+    }
+  ]
+}

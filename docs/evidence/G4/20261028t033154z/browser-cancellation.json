@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "nonce": "e6e8f59a850d4f26a77fcdc724bc7069",
+  "utc": "2026-10-28T04:09:42.775Z",
+  "procedure": "Save exact armed input; independently observe native postcommit START; click Cancel request before delayed response; UI reports CANCELLED/outcome unknown and retains draft; click Save board without changing payload",
+  "initial_revision": 13,
+  "replayed_revision": 14,
+  "recovery_button_removed_after_success": true,
+  "screenshot": "canvas-cancelled-unknown.jpg",
+  "console": []
+}

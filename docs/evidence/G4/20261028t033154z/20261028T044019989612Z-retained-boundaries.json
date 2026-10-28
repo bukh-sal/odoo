@@ -1,0 +1,35 @@
+{
+  "state": "passed",
+  "checks": [
+    {
+      "name": "mixed read/write/delete/export reject atomically; autocomplete and aggregates constrain ownership",
+      "result": "passed"
+    },
+    {
+      "name": "missing/unknown/noncanonical workspace and forged uid/sudo/company/private scope do not grant access",
+      "result": "passed"
+    },
+    {
+      "name": "native import uses current actor, ownership and revision checks; safe import/export works",
+      "result": "passed"
+    },
+    {
+      "name": "malformed/duplicate/non-JSON/oversized and chunked bodies produce bounded typed errors; CSRF and native traceback redaction hold",
+      "result": "passed"
+    },
+    {
+      "name": "48 cached-client writes denied after committed demotion across both workers",
+      "result": "passed",
+      "workers": [
+        9,
+        10
+      ],
+      "log": "20261028T044029573415Z-cross-worker-demotion.log",
+      "policy_log": "20261028T044027273481Z-r1-boundary-demote.log"
+    },
+    {
+      "name": "feature and installation suspension block gateway and retained native reads while retaining data",
+      "result": "passed"
+    }
+  ]
+}

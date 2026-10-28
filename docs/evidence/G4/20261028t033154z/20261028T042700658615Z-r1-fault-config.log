@@ -1,0 +1,2 @@
+COMMAND: ["docker", "run", "--rm", "-i", "--network", "none", "--mount", "type=volume,source=mp-r0-r1396163208bf1_fault_b6c4ed5c1aaf46cfb338f70fe0868956,target=/arm", "--user", "0", "--entrypoint", "python", "modular-platform:r1", "-c", "import json,pathlib,sys; p=pathlib.Path('/arm/arm.json'); p.write_text(json.dumps(json.load(sys.stdin))); p.chmod(0o444); print('Read-only disposable fault match configured')"]
+Read-only disposable fault match configured

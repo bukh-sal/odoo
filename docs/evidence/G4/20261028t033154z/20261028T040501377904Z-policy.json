@@ -1,0 +1,5 @@
+{
+  "action": "expire_alice_sessions",
+  "commit_observed_by_utc": "2026-10-28T04:05:01.376900+00:00",
+  "log": "docs\\evidence\\G4\\20261028t033154z\\20261028T040458847897Z-r1-policy-expire_alice_sessions.log"
+}

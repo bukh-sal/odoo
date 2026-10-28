@@ -47,6 +47,7 @@ class Shell extends Component {
                     <option t-foreach="state.workspaces" t-as="space" t-key="space.id" t-att-value="space.id" t-att-selected="space.id===state.workspace" t-esc="space.name"/>
                 </select></label>
                 <button t-on-click="openCommands" t-esc="t('search')"/>
+                <button t-on-click="toggleTheme" t-att-aria-pressed="state.theme==='dark'" t-esc="state.theme==='dark'?t('light'):t('dark')"/>
                 <span t-esc="state.displayName"/>
             </div>
         </header>
@@ -106,7 +107,7 @@ class Shell extends Component {
                 <p t-if="!state.context and !state.loading and !state.error" t-esc="t('empty')"/>
             </div>
         </div>
-        <dialog t-ref="commands"><h2 t-esc="t('search')"/><button class="mp_command_row" t-on-click="paletteExport" t-esc="t('export')"/><button class="mp_command_row" t-on-click="paletteSettings" t-esc="t('settings')"/><button class="mp_command_row" t-on-click="closeCommands">Close · Esc</button></dialog>
+        <dialog t-ref="commands"><h2 t-esc="t('search')"/><button t-if="state.plugin==='org.example.notes'" class="mp_command_row" t-on-click="paletteExport" t-esc="t('export')"/><button class="mp_command_row" t-on-click="paletteSettings" t-esc="t('settings')"/><button class="mp_command_row" t-on-click="closeCommands">Close · Esc</button></dialog>
         <dialog t-ref="confirmation" aria-labelledby="mp_confirmation_title" t-on-cancel="cancelConfirmation">
             <h2 id="mp_confirmation_title" t-esc="state.confirmation.title"/><p t-esc="state.confirmation.message"/>
             <button t-on-click="cancelConfirmation">Cancel</button><button t-on-click="acceptConfirmation" t-esc="state.confirmation.destructive?'Delete':'Continue'"/>
@@ -131,7 +132,7 @@ class Shell extends Component {
         });
         this.onPop=async()=>{
             if(!await this.canLeave()){history.pushState({},'',this.currentURL);return;}
-            this.nativeDirty=false;this.draft=null;this.state.settingsDirty=false;this.settingsRecovery=null;await this.activate();
+            this.nativeDirty=false;this.draft=null;this.customDraft=null;this.state.settingsDirty=false;this.settingsRecovery=null;await this.activate();
         };
         this.onVisibility=async()=>{
             if(document.hidden){this.state.paused=true;return;}
@@ -181,8 +182,20 @@ class Shell extends Component {
     finishConfirmation(value){this.confirmation.el.close();const resolve=this.confirmResolve;this.confirmResolve=null;resolve?.(value);}
     cancelConfirmation(event){event?.preventDefault();this.finishConfirmation(false);}
     acceptConfirmation(){this.finishConfirmation(true);}
-    async retire(){
+    async retire({recover=false}={}){
         const mounted=this.mounted;this.mounted=null;
+        if(recover&&mounted?.snapshotDraft&&this.state.context){
+            try{
+                const snapshot=mounted.snapshotDraft();
+                if(snapshot){
+                    if(Object.keys(snapshot).sort().join(',')!=='data,filename'||typeof snapshot.filename!=='string'||snapshot.filename.length>96||!/^[A-Za-z0-9][A-Za-z0-9_.-]*\.json(?![\s\S])/.test(snapshot.filename)||!snapshot.data||typeof snapshot.data!=='object')throw error('VALIDATION_FAILED');
+                    const encoded=JSON.stringify(snapshot,(_,value)=>{if(['function','symbol','bigint','undefined'].includes(typeof value)||typeof value==='number'&&!Number.isFinite(value))throw error('VALIDATION_FAILED');return value;});
+                    if(new TextEncoder().encode(encoded).length>65536)throw error('VALIDATION_FAILED');
+                    const copy=JSON.parse(encoded);if(!copy.data||typeof copy.data!=='object')throw error('VALIDATION_FAILED');
+                    this.customDraft={...copy,principal:this.state.context.principal_id,site:this.state.context.site_id,workspace:this.state.context.workspace_id};this.state.recoveryDraft=true;
+                }
+            }catch{this.notify('The page draft could not be captured.');}
+        }
         this.controller?.abort();for(const p of pendingNative)p.abort();pendingNative.clear();
         this.state.nativeProps=null;this.bindings=[];
         this.state.detailActions=[];this.state.detailLabels=[];
@@ -191,7 +204,7 @@ class Shell extends Component {
         if(mounted){try{await mounted.dispose();}catch{this.fail(error('INTERNAL_ERROR'));}}
     }
     fail(e){if(e.name==='AbortError')return;if(e.code==='CONFLICT'&&this.nativeDirty&&this.draft)this.state.recoveryDraft=true;this.state.error={code:e.code||'INTERNAL_ERROR',message:e.message||'Page unavailable',request_id:e.request_id||crypto.randomUUID(),field:e.details?.field};}
-    async go(url){if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.state.recoveryDraft=false;history.pushState({},'',url);await this.activate();}
+    async go(url){if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.customDraft=null;this.state.recoveryDraft=false;history.pushState({},'',url);await this.activate();}
     async openPage(plugin,pageId,query={}){
         const app=this.state.navigation.find(app=>app.plugin_id===plugin);const page=app?.pages.find(p=>p.id===pageId);
         if(!page)throw error('NOT_FOUND');
@@ -206,12 +219,13 @@ class Shell extends Component {
         if(!await this.confirm({title:'Delete note',message:'Permanently delete this note?',destructive:true}))return;
         try{await this.callService('documents','delete',{note_id:this.selectedNote.public_id,expected_revision:this.selectedNote.revision},{idempotencyKey:crypto.randomUUID()});this.nativeDirty=false;this.draft=null;this.selectedNote=null;await this.backToList();this.notify('Note deleted');}catch(e){this.fail(e);}
     }
-    async retry(){if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.state.recoveryDraft=false;await this.activate(true);}
+    async retry(){if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.state.recoveryDraft=!!this.customDraft;await this.activate(true);}
     openCommands(){this.commands.el.showModal();}
     closeCommands(){this.commands.el.close();}
     async paletteExport(){this.closeCommands();await this.exportNotes();}
     async paletteSettings(){this.closeCommands();await this.openSettings();}
     setTheme(event){this.state.theme=event.target.value;localStorage.setItem('mp.theme',this.state.theme);document.body.dataset.theme=this.state.theme;for(const callback of this.themeListeners)callback(this.theme());}
+    toggleTheme(){this.setTheme({target:{value:this.state.theme==='dark'?'light':'dark'}});}
     async setLanguage(event){if(!await this.canLeave()){event.target.value=this.state.language;return;}this.state.settingsDirty=false;this.settingsRecovery=null;this.state.language=event.target.value;localStorage.setItem('mp.language',this.state.language);for(const callback of this.localeListeners)callback(this.locale());await this.activate(true);}
     get isWorkspaceAdministrator(){return !!this.state.context?.capabilities.includes('org.modularplatform.identity:workspace.members.manage');}
     markSettingsDirty(){this.state.settingsDirty=true;}
@@ -242,12 +256,13 @@ class Shell extends Component {
     notify(message){this.state.notification=message;clearTimeout(this.noticeTimer);this.noticeTimer=setTimeout(()=>this.state.notification='',5000);}
     download(name,value){const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const anchor=document.createElement('a');anchor.href=url;anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
     async downloadDraft(){
-        if(!this.draft)return;
-        try{const session=await this.json('/api/v1/session');if(session.principal_id!==this.draftPrincipal){this.draft=null;this.state.recoveryDraft=false;throw error('FORBIDDEN');}}
+        const snapshot=this.customDraft;
+        if(!this.draft&&!snapshot)return;
+        try{const session=await this.json('/api/v1/session');if(session.principal_id!==(snapshot?.principal||this.draftPrincipal)||snapshot&&session.site_id!==snapshot.site){this.draft=null;this.customDraft=null;this.state.recoveryDraft=false;throw error('FORBIDDEN');}}
         catch(e){if(!['UNAUTHENTICATED','INTERNAL_ERROR','DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED'].includes(e.code)){this.fail(e);return;}}
-        this.download('unsaved-note.json',this.draft);
+        this.download(snapshot?.filename||'unsaved-note.json',snapshot?.data||this.draft);
     }
-    get canRecoverDraft(){return !!this.draft&&['UNAUTHENTICATED','INTERNAL_ERROR','DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED'].includes(this.state.error?.code);}
+    get canRecoverDraft(){return !!(this.draft||this.customDraft)&&['UNAUTHENTICATED','INTERNAL_ERROR','DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED'].includes(this.state.error?.code);}
     async exportNotes(){
         try{const notes=[];let cursor=null;do{const data=await this.callService('documents','list',{limit:100,...(cursor?{cursor}:{})});notes.push(...data.items.map(({id,title,body,revision,labels})=>({id,title,body,revision,labels})));cursor=data.next_cursor;if(notes.length>=10000&&cursor)throw error('VALIDATION_FAILED');}while(cursor);this.download('notes.json',{schema_version:1,workspace_id:workspace,notes});this.notify('Notes exported');}
         catch(e){this.fail(e);}
@@ -261,7 +276,7 @@ class Shell extends Component {
         try{
             const value=await this.json('/api/v1/services/'+binding.service_id+'/'+method,{api_version:binding.api_version,request_id:crypto.randomUUID(),...(options.idempotencyKey?{idempotency_key:options.idempotencyKey}:{}),input},{signal:controller.signal,headers:{'X-MP-Binding':binding.binding_id,'X-MP-Consumer':execution?.context.installation_id||this.state.context.installation_id}});
             if(captured!==generation||controller.signal.aborted)throw obsolete();return value;
-        }catch(e){if(captured!==generation)throw obsolete();if(e.name==='AbortError')throw error('CANCELLED',undefined,{outcome:'unknown'});if(e.code==='UNAUTHENTICATED'){await this.retire();generation++;this.state.context=null;this.fail(e);}throw e;}
+        }catch(e){if(captured!==generation)throw obsolete();if(e.name==='AbortError')throw error('CANCELLED',undefined,{outcome:'unknown'});if(e.code==='UNAUTHENTICATED'){await this.retire({recover:true});generation++;this.state.context=null;this.fail(e);}throw e;}
         finally{for(const signal of signals)signal.removeEventListener('abort',abort);}
     }
     facade(context,execution={context,bindings:this.bindings,commands:this.pageCommands||[]}){
@@ -269,7 +284,7 @@ class Shell extends Component {
         const ensure=()=>{if(captured!==generation||this.controller.signal.aborted)throw obsolete();};
         const subscribe=(set,callback)=>{if(captured!==generation)throw obsolete();set.add(callback);return()=>set.delete(callback);};
         return freeze({context:()=>context,navigate:target=>{ensure();if(target.params&&Object.keys(target.params).length)throw error('VALIDATION_FAILED');return this.openPage(target.pluginId,target.pageId,target.query);},services:{call:(alias,method,input,options)=>{ensure();return this.callService(alias,method,input,options,execution);}},
-            commands:{execute:async(id,input)=>{ensure();if(id==='org.modularplatform.shell:command:export')return this.exportNotes();const command=execution.commands.find(command=>command.id===id);if(!command||!context.capabilities.includes(command.permission))throw error('FORBIDDEN');const handler=registry.category('mp.commands').get(command.handler,null);if(!handler)throw error('DEPENDENCY_UNAVAILABLE');return handler({host:this.facade(context,execution),input});}},
+            commands:{execute:async(id,input)=>{ensure();if(id==='org.modularplatform.shell:command:export'){if(context.plugin_id!=='org.example.notes')throw error('FORBIDDEN');return this.exportNotes();}const command=execution.commands.find(command=>command.id===id);if(!command||!context.capabilities.includes(command.permission))throw error('FORBIDDEN');const handler=registry.category('mp.commands').get(command.handler,null);if(!handler)throw error('DEPENDENCY_UNAVAILABLE');return handler({host:this.facade(context,execution),input});}},
             events:{subscribe:(topic,callback)=>{if(!['org.example.notes.changed'].includes(topic))throw error('FORBIDDEN');if(!this.eventListeners.has(topic))this.eventListeners.set(topic,new Set());return subscribe(this.eventListeners.get(topic),callback);}},
             notifications:{show:input=>{if(captured===generation)this.notify(input.message);}},dialogs:{confirm:async input=>{ensure();return this.confirm(input);}},
             theme:{current:()=>this.theme(),subscribe:callback=>subscribe(this.themeListeners,callback)},locale:{current:()=>this.locale(),translate:key=>key==='notes.title'?this.t('notes'):this.t(key)},
@@ -296,15 +311,19 @@ class Shell extends Component {
             if(this.state.settingsDirty&&value.context.principal_id===this.state.context.principal_id&&value.context.capabilities.includes('org.modularplatform.identity:workspace.members.manage'))this.settingsRecovery={principal:value.context.principal_id,workspace,value:{...this.state.workspaceSettings}};
             this.state.recoveryDraft=!!(this.nativeDirty&&this.draft);await this.activate(true);
         }}
-        catch(e){if(captured===generation&&e.name!=='AbortError'){await this.retire();generation++;this.state.context=null;if(['FORBIDDEN','PLUGIN_SUSPENDED','NOT_FOUND'].includes(e.code)){this.draft=null;this.nativeDirty=false;this.state.recoveryDraft=false;this.settingsRecovery=null;}this.fail(e);}}
+        catch(e){if(captured===generation&&e.name!=='AbortError'){await this.retire({recover:['UNAUTHENTICATED','INTERNAL_ERROR','DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED'].includes(e.code)});generation++;this.state.context=null;if(['FORBIDDEN','PLUGIN_SUSPENDED','NOT_FOUND'].includes(e.code)){this.draft=null;this.customDraft=null;this.nativeDirty=false;this.state.recoveryDraft=false;this.settingsRecovery=null;}this.fail(e);}}
         finally{this.checking=false;}
     }
     async activate(force=false){
         const transition=++this.transition;
         const url=new URL(location.href);const nextWorkspace=url.searchParams.get('workspace');const settings=url.pathname==='/app/settings';const plugin=settings?this.state.plugin:url.pathname.split('/')[2];const path='/'+url.pathname.split('/').slice(3).join('/');
         this.currentURL=url.href;
-        if(!force&&!settings&&this.mounted&&workspace===nextWorkspace&&plugin===this.state.plugin&&path===this.page?.path){await this.mounted.updateRoute?.(freeze({plugin_id:plugin,page_id:this.page.id,path,params:{},query:Object.fromEntries(url.searchParams)}));return;}
-        await this.retire();if(transition!==this.transition)return;
+        if(!force&&!settings&&this.mounted&&workspace===nextWorkspace&&plugin===this.state.plugin&&path===this.page?.path){
+            try{await this.mounted.updateRoute?.(freeze({plugin_id:plugin,page_id:this.page.id,path,params:{},query:Object.fromEntries(url.searchParams)}));}
+            catch(e){if(transition===this.transition){await this.retire();generation++;this.state.context=null;this.fail(e);}}
+            return;
+        }
+        await this.retire({recover:force});if(transition!==this.transition)return;
         generation++;const captured=generation;workspace=nextWorkspace;
         this.state.workspace=workspace||'';this.state.plugin=plugin;this.state.generation=generation;this.state.context=null;this.state.settings=settings;this.state.error=null;this.state.nativeTitle='';this.state.loading=true;this.state.workspaceSettings=null;this.state.members=[];this.state.adminBusy=false;
         const controller=new AbortController();this.controller=controller;
@@ -316,7 +335,7 @@ class Shell extends Component {
             if(captured!==generation)throw obsolete();
             const c=value.context;
             if(c.ui_api_major!==1||c.workspace_id!==workspace||c.plugin_id!==plugin||!Array.isArray(c.capabilities))throw error('INTERNAL_ERROR');
-            if(this.boundPrincipal&&(c.principal_id!==this.boundPrincipal||c.site_id!==this.boundSite)){this.draft=null;this.nativeDirty=false;this.state.recoveryDraft=false;this.settingsRecovery=null;this.state.workspaces=await this.json('/api/v1/workspaces',null,{signal:controller.signal});if(captured!==generation)throw obsolete();}
+            if(this.boundPrincipal&&(c.principal_id!==this.boundPrincipal||c.site_id!==this.boundSite)){this.draft=null;this.customDraft=null;this.nativeDirty=false;this.state.recoveryDraft=false;this.settingsRecovery=null;this.state.workspaces=await this.json('/api/v1/workspaces',null,{signal:controller.signal});if(captured!==generation)throw obsolete();}
             this.boundPrincipal=c.principal_id;this.boundSite=c.site_id;this.state.displayName=c.display_name;
             this.csrf=value.csrf_token;this.bindings=freeze(value.bindings);this.state.context=freeze({...c,generation,locale:this.state.language,direction:this.state.language==='ar'?'rtl':'ltr',capabilities:[...c.capabilities]});
             this.pageCommands=value.commands||[];this.pageSlots=value.slots||[];

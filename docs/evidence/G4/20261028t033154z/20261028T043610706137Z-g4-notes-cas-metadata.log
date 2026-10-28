@@ -1,0 +1,18 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "--entrypoint", "python", "maintenance", "odoo-bin", "shell", "-c", "/run/secrets/odoo_config", "-d", "mp_disposable_r0_r1_396163208bf1", "--no-http", "--workers=0", "--max-cron-threads=0"]
+ Container mp-r0-r1396163208bf1-maintenance-run-11993ddf0146 Creating 
+ Container mp-r0-r1396163208bf1-maintenance-run-11993ddf0146 Created 
+2026-10-28 04:36:11,660 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 04:36:11,661 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 04:36:11,661 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 04:36:11,661 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 04:36:12,127 1 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 04:36:12,127 1 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 04:36:12,144 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 1 modules... 
+2026-10-28 04:36:12,147 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 04:36:12,149 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 04:36:12,149 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 04:36:12,150 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 16 modules... 
+2026-10-28 04:36:12,261 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: 16 modules loaded in 0.11s, 0 queries (+0 extra) 
+2026-10-28 04:36:12,284 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: Modules loaded. 
+2026-10-28 04:36:12,290 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.registry: Registry loaded in 0.163s 
+MP_G4_PATCH={"org.example.canvas": {"addon": "mp_example_canvas", "digest": "sha256:1edaadc63fd0a0184f003eead17dc559d4fdab5e1cd631b4c18f692f8d212b37", "file": "org.example.canvas-0.1.2.mplug", "plugin_id": "org.example.canvas", "version": "0.1.2"}, "org.example.notes": {"addon": "mp_example_notes", "digest": "sha256:160e27bfb22325a54c385ab32a35bc33a7c27bae9dbbc4ece7a954a9340bebc1", "file": "org.example.notes-0.2.1.mplug", "plugin_id": "org.example.notes", "version": "0.2.1"}, "org.example.notes_labels": {"addon": "mp_example_notes_labels", "digest": "sha256:b5b17ac770503f62b1fc1e432979df3bc9fba6396dd13cf6e460c4694ea1a7e0", "file": "org.example.notes_labels-0.2.0.mplug", "plugin_id": "org.example.notes_labels", "version": "0.2.0"}}

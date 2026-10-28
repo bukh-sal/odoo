@@ -1,0 +1,82 @@
+COMMAND: ["docker", "build", "-f", "deploy/Dockerfile", "--build-arg", "DISTRIBUTION_POLICY=deploy/distribution-r1.json", "--build-arg", "RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock", "--build-arg", "SDK_PYTHONPATH=/opt/modular/packages/platform_sdk", "-t", "modular-platform:r1", "."]
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.89kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#2 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 795B done
+#5 DONE 0.0s
+
+#6 [builder 1/7] FROM docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
+#6 resolve docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 3.65MB 2.6s done
+#7 DONE 2.6s
+
+#8 [builder 3/7] COPY deploy/build-requirements.lock /locks/build-requirements.lock
+#8 CACHED
+
+#9 [builder 4/7] COPY deploy/requirements-r1.lock /locks/requirements.lock
+#9 CACHED
+
+#10 [builder 2/7] RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/%s/ bookworm main\ndeb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/%s/ bookworm-security main\n' "20261027T000000Z" "20261027T000000Z" > /etc/apt/sources.list     && rm /etc/apt/sources.list.d/debian.sources     && apt-get update     && apt-get install -y --no-install-recommends build-essential libldap2-dev libsasl2-dev libpq-dev libssl-dev libffi-dev     && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [builder 5/7] RUN python -m pip install --require-hashes -r /locks/build-requirements.lock     && python -m venv /venv     && /venv/bin/python -m pip install --require-hashes -r /locks/build-requirements.lock     && /venv/bin/python -m pip install --no-build-isolation --require-hashes -r /locks/requirements.lock     && /venv/bin/python -m pip check
+#11 CACHED
+
+#12 [builder 6/7] COPY . /source
+#12 DONE 4.0s
+
+#13 [builder 7/7] RUN /venv/bin/python /source/tools/build_distribution.py /source /release --policy "deploy/distribution-r1.json"
+#13 1.626 {"addons": ["auth_passkey", "auth_password_policy", "auth_totp", "base", "base_import", "base_setup", "bus", "mp_compat", "mp_core", "mp_example_canvas", "mp_example_notes", "mp_example_notes_labels", "mp_identity", "mp_shell", "web", "web_tour"], "file_count": 4044}
+#13 DONE 1.7s
+
+#14 [runtime 2/8] RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/%s/ bookworm main\ndeb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/%s/ bookworm-security main\n' "20261027T000000Z" "20261027T000000Z" > /etc/apt/sources.list     && rm /etc/apt/sources.list.d/debian.sources     && apt-get update     && apt-get install -y --no-install-recommends libldap-2.5-0 libsasl2-2 libpq5 libmagic1 fonts-dejavu-core fonts-liberation     && rm -rf /var/lib/apt/lists/*     && groupadd --gid 10001 modular && useradd --uid 10001 --gid modular --create-home modular     && mkdir -p /var/lib/modular && chown modular:modular /var/lib/modular
+#14 CACHED
+
+#15 [runtime 3/8] COPY --from=builder /venv /venv
+#15 CACHED
+
+#16 [runtime 4/8] COPY --from=builder /release /opt/modular
+#16 DONE 0.6s
+
+#17 [runtime 5/8] COPY tools /opt/modular/tools
+#17 DONE 0.0s
+
+#18 [runtime 6/8] COPY deploy/requirements-r1.lock /opt/modular/requirements.lock
+#18 DONE 0.0s
+
+#19 [runtime 7/8] COPY tests/fixtures/addons /opt/modular/fixtures
+#19 DONE 0.0s
+
+#20 [runtime 8/8] WORKDIR /opt/modular
+#20 DONE 0.0s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 3.6s done
+#21 exporting manifest sha256:c207d7e432bccf20d81a0c273545cc5b3c3693f39e1e998bf72e4edae8ea4356 done
+#21 exporting config sha256:6cb43799c8aeaff35a8645d8c54330a822ee7d9c73b448b1f01a98013dbe2887 done
+#21 exporting attestation manifest sha256:e762a6fdff3b1a63e55626f4f55cacd54f052e5ceefeea863c2d8fba8c142623 0.0s done
+#21 exporting manifest list sha256:03991384668028682ac5c701bda416c2efbded5bcac1dc51e3a92be95641bd0a done
+#21 naming to docker.io/library/modular-platform:r1 done
+#21 unpacking to docker.io/library/modular-platform:r1
+#21 unpacking to docker.io/library/modular-platform:r1 0.8s done
+#21 DONE 4.5s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/p5hzr47sr3wjmvtrh7wqo7i8e

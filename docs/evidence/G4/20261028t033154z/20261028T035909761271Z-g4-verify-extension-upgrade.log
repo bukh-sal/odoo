@@ -1,0 +1,19 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "--entrypoint", "python", "maintenance", "odoo-bin", "shell", "-c", "/run/secrets/odoo_config", "-d", "mp_disposable_r0_r1_396163208bf1", "--no-http", "--workers=0", "--max-cron-threads=0"]
+ Container mp-r0-r1396163208bf1-maintenance-run-2ae62f61b33d Creating 
+ Container mp-r0-r1396163208bf1-maintenance-run-2ae62f61b33d Created 
+2026-10-28 03:59:10,906 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 03:59:10,907 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 03:59:10,907 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 03:59:10,907 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 03:59:11,502 1 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 03:59:11,502 1 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 03:59:11,519 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 1 modules... 
+2026-10-28 03:59:11,522 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 03:59:11,523 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 03:59:11,524 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 03:59:11,526 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 16 modules... 
+2026-10-28 03:59:11,659 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: 16 modules loaded in 0.13s, 0 queries (+0 extra) 
+2026-10-28 03:59:11,682 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: Modules loaded. 
+2026-10-28 03:59:11,688 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.registry: Registry loaded in 0.185s 
+MP_G4_SNAPSHOT={"notes": [[1, "48a5e609-fc8e-49d5-89b4-c0c6da604b55", "Welcome to Notes", "A private place for ideas, decisions and next steps.", 1, 3, ["r1", "verified"]], [2, "d2a9df10-e2fe-49a7-955c-a3491d510803", "Research journal", "This workspace is read-only for Alice.", 2, 1, null], [5, "d8243a62-f8ff-46d6-9998-9a2c35f592a0", "Implementation journal", "R0, G1 and contract freeze passed. Notes revision checks and the native editor are under browser verification.", 1, 2, null], [25, "8c27bf82-5ab1-45c8-a665-2717121c5902", "Labels migration fixture", "Base content must survive the extension upgrade.", 1, 2, ["important", "next"]]], "boards": [["4dce025f-8218-41a2-9f81-6ac1e5733d8e", "Personal ideas", 11, [{"id": "c041bc71-6877-446a-bec6-b9e455ddd558", "lane": "inbox", "text": "Explore a useful idea", "note_id": "d8243a62-f8ff-46d6-9998-9a2c35f592a0"}, {"id": "d4cebcf5-684f-4b72-9b20-db21a670ff61", "lane": "done", "text": "Qualify the Canvas contract", "note_id": "48a5e609-fc8e-49d5-89b4-c0c6da604b55"}], 1], ["46c3c488-9456-4b65-94ce-d037ae6f162e", "Research ideas", 1, [{"id": "da48192a-5bed-4b2a-a8af-ec1444d418f9", "lane": "inbox", "text": "Explore a useful idea", "note_id": "d2a9df10-e2fe-49a7-955c-a3491d510803"}], 2]]}
+MP_G4_UPGRADE=base-and-board-data-preserved-two-extension-values-normalized-with-revision-fences

@@ -1,0 +1,45 @@
+{
+  "state": "passed",
+  "checks": [
+    {
+      "name": "all3 packages reproduce exact registered outer bytes and declare distinct model/field ownership",
+      "result": "passed"
+    },
+    {
+      "name": "actual archive field conflict rejected before any plugin import",
+      "result": "passed",
+      "reason": "Conflicting declarative native field"
+    },
+    {
+      "name": "actual archive slot conflict rejected before any plugin import",
+      "result": "passed",
+      "reason": "Required slot missing or incompatible"
+    },
+    {
+      "name": "absent optional Labels integration does not break Notes/Canvas composition",
+      "result": "passed"
+    }
+  ],
+  "registry": {
+    "models": {
+      "mp.example.note": "org.example.notes",
+      "mp.example.canvas.board": "org.example.canvas"
+    },
+    "fields": {
+      "mp.example.note.public_id": "org.example.notes",
+      "mp.example.note.title": "org.example.notes",
+      "mp.example.note.body": "org.example.notes",
+      "mp.example.note.author_id": "org.example.notes",
+      "mp.example.note.revision": "org.example.notes",
+      "mp.example.note.x_notes_labels": "org.example.notes_labels",
+      "mp.example.canvas.board.public_id": "org.example.canvas",
+      "mp.example.canvas.board.name": "org.example.canvas",
+      "mp.example.canvas.board.revision": "org.example.canvas",
+      "mp.example.canvas.board.cards": "org.example.canvas"
+    },
+    "ui_contributions": [
+      "org.example.notes_labels:action:set_labels"
+    ]
+  },
+  "limitation": "repository-owned reference assembler; hostile archive/trust validation remains G5"
+}

@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "nonce": "e6e8f59a850d4f26a77fcdc724bc7069",
+  "committed_revision": 14,
+  "one_committed_effect": true,
+  "postcommit_events": [
+    "MP_R1_POSTCOMMIT_DELAY_START pid=9 nonce=e6e8f59a850d4f26a77fcdc724bc7069",
+    "MP_R1_POSTCOMMIT_DELAY_END pid=9 nonce=e6e8f59a850d4f26a77fcdc724bc7069"
+  ],
+  "outcome_log": "20261028T040947466779Z-g4-cancel-saved-outcome.log",
+  "browser": "browser-cancellation.json",
+  "cleanup": "normal app command/env/mount restored; original board name restored"
+}

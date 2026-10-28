@@ -1,0 +1,17 @@
+{
+  "state": "passed",
+  "checks": [
+    {
+      "name": "new native import preserves declared base/extension fields and normalizes labels; invalid JSON has no effect",
+      "result": "passed"
+    },
+    {
+      "name": "export roundtrip and existing-ID import preserve both owners; stale import cannot overwrite and revision advances once",
+      "result": "passed"
+    },
+    {
+      "name": "foreign ID, viewer import and ownership transfer fail atomically through native load",
+      "result": "passed"
+    }
+  ]
+}

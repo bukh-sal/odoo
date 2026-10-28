@@ -2,15 +2,16 @@
 export const CanvasPage={
     async mount({element,host,route,signal}){
         const controller=new AbortController();const abort=()=>controller.abort();signal.addEventListener('abort',abort,{once:true});
-        let active=true,dirty=false,board=null,notes=[],attempt=null,currentRoute=route;
+        let active=true,dirty=false,board=null,notes=[],attempt=null,currentRoute=route,saveAbort=null;
         const root=document.createElement('section');root.className='mp_canvas';root.setAttribute('aria-label','Canvas board');element.append(root);
         const header=document.createElement('div');header.className='mp_canvas_header';
         const title=document.createElement('input');title.setAttribute('aria-label','Board name');title.maxLength=100;
         const subtitle=document.createElement('p');subtitle.textContent='Collect ideas. Move them forward.';
         const save=document.createElement('button');save.textContent='Save board';
+        const cancelSave=document.createElement('button');cancelSave.textContent='Cancel request';cancelSave.hidden=true;
         const reset=document.createElement('button');reset.textContent='Reload saved board';
         const status=document.createElement('p');status.setAttribute('role','status');status.className='mp_canvas_status';
-        header.append(title,subtitle,save,reset,status);
+        header.append(title,subtitle,save,cancelSave,reset,status);
         const form=document.createElement('form');form.className='mp_canvas_add';
         const text=document.createElement('input');text.setAttribute('aria-label','New card text');text.placeholder='An idea, a decision, a next step…';text.maxLength=200;text.required=true;
         const note=document.createElement('select');note.setAttribute('aria-label','Link a note');
@@ -46,22 +47,23 @@ export const CanvasPage={
         const load=async next=>{
             const value=await host.services.call('boards','get',next.query.board?{board_id:next.query.board}:{},{signal:controller.signal});
             if(!active||signal.aborted)return;
-            board=structuredClone(value);title.value=board.name;dirty=false;attempt=null;status.textContent='Revision '+board.revision+(editable?' · Changes are saved when you choose Save board':' · Read only');render();
+            board=structuredClone(value);title.value=board.name;dirty=false;attempt=null;root.querySelector('.mp_canvas_recovery')?.remove();status.textContent='Revision '+board.revision+(editable?' · Changes are saved when you choose Save board':' · Read only');render();
         };
         const saveBoard=async()=>{
             if(!active||!editable||!board)return;
             if(!title.value.trim()||board.cards.some(card=>!card.text.trim())){status.textContent='A board name and nonempty card text are required.';return;}
             const payload={board_id:board.id,expected_revision:board.revision,name:title.value.trim(),cards:board.cards};const signature=JSON.stringify(payload);
             if(!attempt||attempt.signature!==signature)attempt={signature,key:'board-'+crypto.randomUUID()};
-            save.disabled=true;
+            save.disabled=true;cancelSave.hidden=false;saveAbort=new AbortController();
             try{
-                const result=await host.services.call('boards','save',payload,{signal:controller.signal,idempotencyKey:attempt.key});
-                if(!active||signal.aborted)return;board=structuredClone(result);dirty=false;attempt=null;status.textContent='Saved · revision '+board.revision;render();
+                const result=await host.services.call('boards','save',payload,{signal:saveAbort.signal,idempotencyKey:attempt.key});
+                if(!active||signal.aborted)return;board=structuredClone(result);dirty=false;attempt=null;root.querySelector('.mp_canvas_recovery')?.remove();status.textContent='Saved · revision '+board.revision;render();
             }catch(error){if(active&&error.name!=='AbortError'){status.textContent=error.code==='CONFLICT'?'This board changed elsewhere. Your draft is still here. Download it before reloading.':error.code+' · Outcome '+(error.details?.outcome||'unknown')+'. Keep this page to retry safely.';
-                if(!root.querySelector('.mp_canvas_recovery')){const download=document.createElement('button');download.className='mp_canvas_recovery';download.textContent='Download board draft';on(download,'click',()=>{const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='canvas-draft.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});header.append(download);}
-            }}finally{if(active)save.disabled=!editable;}
+                if(!root.querySelector('.mp_canvas_recovery')){const download=document.createElement('button');download.className='mp_canvas_recovery';download.textContent='Download board draft';on(download,'click',()=>{const snapshot={...payload,idempotency_key:attempt?.key||null};const blob=new Blob([JSON.stringify(snapshot,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='canvas-draft.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});header.append(download);}
+            }}finally{if(active){save.disabled=!editable;cancelSave.hidden=true;}saveAbort=null;}
         };
         on(title,'input',changed);on(save,'click',saveBoard);
+        on(cancelSave,'click',()=>saveAbort?.abort());
         on(reset,'click',async()=>{if(!dirty||await host.dialogs.confirm({title:'Unsaved board',message:'Discard unsaved board changes and load the saved revision?'}))await load(currentRoute);});
         on(form,'submit',event=>{event.preventDefault();if(!board||board.cards.length>=40){status.textContent='A board can contain up to 40 cards.';return;}board.cards.push({id:crypto.randomUUID(),text:text.value.trim(),lane:'inbox',note_id:note.value||null});text.value='';changed();render();text.focus();});
         on(document,'keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveBoard();}});
@@ -76,7 +78,8 @@ export const CanvasPage={
         return {
             async updateRoute(next){currentRoute=next;if((next.query.board||'')!==(route.query.board||''))await load(next);route=next;},
             canLeave:()=>dirty?'confirm':'allow',
-            dispose(){active=false;controller.abort();unsubscribe();signal.removeEventListener('abort',abort);root.remove();},
+            snapshotDraft:()=>dirty&&board?{filename:'canvas-draft.json',data:{board_id:board.id,expected_revision:board.revision,name:title.value,cards:structuredClone(board.cards),idempotency_key:attempt?.key||null}}:null,
+            dispose(){active=false;saveAbort?.abort();controller.abort();unsubscribe();signal.removeEventListener('abort',abort);root.remove();},
         };
     },
 };

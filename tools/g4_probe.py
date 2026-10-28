@@ -34,7 +34,7 @@ def main():
         call(alice,'canvas','documents','get',{'document_id':ident},headers={'X-MP-Binding':str(uuid4())},expect=503,code='DEPENDENCY_UNAVAILABLE')
         passed('documents1.0 and2.0 coexist through distinct consumer aliases; invalid DTO/major/binding never choose latest')
         note=alice.call('create',{'title':'G4 extension authority proof','body':'Base content retained'})
-        key='labels-'+uuid4().hex;values={'note_id':note['id'],'expected_revision':1,'labels':['Scoped','Native extension']}
+        key='labels-'+uuid4().hex;values={'note_id':note['id'],'expected_revision':1,'labels':['scoped','native extension']}
         labeled=call(alice,'notes_labels','labels','set_labels',values,key=key)
         assert labeled['revision']==2 and labeled['body']==note['body'] and labeled['labels']==values['labels']
         assert call(alice,'notes_labels','labels','set_labels',values,key=key)==labeled

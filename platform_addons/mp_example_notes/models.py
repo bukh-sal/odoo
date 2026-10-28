@@ -50,9 +50,18 @@ class Note(models.Model):
         expected_batch=self.env.context.get('expected_revisions',{})
         for record in self:
             desired=expected_batch.get(str(record.id),expected) if isinstance(expected_batch,dict) else None
-            if desired!=record.revision:raise PublicError('CONFLICT',{'field':'revision','outcome':'not_started'})
+            if type(desired)is not int or desired!=record.revision:raise PublicError('CONFLICT',{'field':'revision','outcome':'not_started'})
             super(Note,record).write({**values,'revision':record.revision+1})
         return True
+
+    def unlink(self):
+        self._mp_guard('unlink')
+        self.env.cr.execute('SELECT id,revision FROM mp_example_note WHERE id=ANY(%s) ORDER BY id FOR UPDATE',[self.ids])
+        expected=self.env.context.get('expected_revision');batch=self.env.context.get('expected_revisions',{})
+        for ident,revision in self.env.cr.fetchall():
+            desired=batch.get(str(ident),expected) if isinstance(batch,dict) else None
+            if type(desired)is not int or desired!=revision:raise PublicError('CONFLICT',{'field':'revision','outcome':'not_started'})
+        return super().unlink()
 
     def _load_records_write(self,values):
         # Native imports retain their resolved database ID in the update values.
@@ -113,7 +122,7 @@ class Note(models.Model):
 
     @api.model
     def _mp_service_delete(self,values):
-        record=self._expected(values,'unlink');ident=record.public_id;record.unlink()
+        record=self._expected(values,'unlink');ident=record.public_id;record.with_context(expected_revision=values['expected_revision']).unlink()
         return {'id':ident,'deleted':True}
 
     def _v2_dto(self):

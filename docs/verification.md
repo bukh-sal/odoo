@@ -41,7 +41,7 @@ Decision/source/environment: [gate-G1.json](evidence/G1/20261028t003753z/gate-G1
 
 ## G2 contract freeze: passed
 
-Seven-row reader inventory [freeze-v1.md](contracts/freeze-v1.md); current64file digests [freeze-v1.json](contracts/freeze-v1.json). Revision5 passes19 contract/golden tests, TypeScript compile and freeze check. [Current gate evidence](evidence/G2/20261028T032804708309Z/gate-G2.json). Historical revisions retained. G1 source unchanged. Executor/recovery, packaged migrations and worker acceptance stay at later gates.
+Seven-row reader inventory [freeze-v1.md](contracts/freeze-v1.md); current66file digests [freeze-v1.json](contracts/freeze-v1.json). Revision6 passes20 contract/golden tests, TypeScript compile and freeze check. [Current gate evidence](evidence/G2/20261028T035054399755Z/gate-G2.json). Historical revisions retained. G1 source unchanged. Executor/recovery, packaged migrations and worker acceptance stay at later gates.
 
 ## G3 integration: passed
 
@@ -49,6 +49,10 @@ Evidence directory `evidence/G3/20261028t011619z/` contains nine Notes API group
 
 G3 qualifying decision/source identity: [gate-G3.json](evidence/G3/20261028t011619z/gate-G3.json). Current10 Notes groups031305647053Z,8 admin groups031120165396Z,6 retained-boundary groups031329496667Z and real postcommit crash030918423461Z qualify the15 listed observations. Final bundle/browser confirmed; full later qualification remains as listed in the gate.
 
-## G4 composition: in progress
+## G4 composition: passed
 
 `evidence/G4/20261028t033154z/`: native install/reconciliation/patch metadata logs; six-group034121516830Z-composition-api.json; browser-composition-progress.json and keyboard-board-readback.json, Canvas/Labels screenshots. Failed prefetch proof retained. Remaining migration/import/custom faults and gate review pending. No G4 release acceptance is claimed yet.
+
+G4 native0.2 migration035834796750Z, raw preservation verification035909761271Z and corrected package registration040158610595Z pass; current API040204057727Z passes6 groups. New custom recovery/cancel and full G4 gate remain pending.
+
+Final G4 decision/source: [gate-G4.json](evidence/G4/20261028t033154z/gate-G4.json), superseding partial checkpoints.12 new observations; later limits explicit. G5 now active.

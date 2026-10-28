@@ -1,0 +1,60 @@
+{
+  "gate": "G4",
+  "result": "passed",
+  "utc": "2026-10-28T04:51:54.655192+00:00",
+  "prerequisites": [
+    "docs/evidence/G3/20261028t011619z/gate-G3.json",
+    "docs/evidence/G2/20261028T035054399755Z/gate-G2.json"
+  ],
+  "source": "source-identity.json",
+  "evidence": [
+    "20261028T040204057727Z-composition-api.json",
+    "20261028T043616009311Z-notes-api.json",
+    "20261028T041725376350Z-administrator-authority.json",
+    "20261028T044019989612Z-retained-boundaries.json",
+    "20261028T043621645189Z-extension-import-export.json",
+    "20261028T043626642916Z-reference-packages.json",
+    "20261028T042700519056Z-crash-before-response.json",
+    "browser-composition-progress.json",
+    "browser-canvas-conflict.json",
+    "browser-custom-session-recovery.json",
+    "browser-cancellation.json",
+    "cancel-after-commit.json",
+    "browser-theme-locale-history.json",
+    "browser-failed-mount-window.json",
+    "browser-route-failure.json",
+    "browser-canvas-suspension.json",
+    "keyboard-board-readback.json"
+  ],
+  "native_migration": [
+    "20261028T035834796750Z-g4-extension-upgrade.log",
+    "20261028T035909761271Z-g4-verify-extension-upgrade.log",
+    "20261028T040158610595Z-g4-upgrade-package-metadata.log"
+  ],
+  "notes_cas_patch": [
+    "20261028T043607959346Z-g4-notes-cas-update.log",
+    "20261028T043610706137Z-g4-notes-cas-metadata.log"
+  ],
+  "passed_acceptance": [
+    "ORM-01",
+    "ORM-02",
+    "ORM-03",
+    "ORM-04",
+    "API-03",
+    "API-06",
+    "API-07",
+    "UI-02",
+    "UI-04",
+    "UI-05",
+    "UI-06",
+    "UI-08"
+  ],
+  "qualification_limits": [
+    "Repository-owned reference assembler only: general hostile archives/trust/catalog/plans/independent approval/executor remain G5",
+    "Explicit development native maintenance is not a qualified platform executor",
+    "Static declarative field conflict validation does not contain arbitrary trusted dynamic Python",
+    "Full accessibility/zoom/native release mismatch/production/reproduction remain G7; English content fallback documented",
+    "Events/jobs/operator-managed worker remain G6"
+  ],
+  "restored_fixtures": "Alice editorA/viewerB; Outsider revoked; Canvas A enabled; grants/export group/broad rule restored; fault load/env/mount absent; Personal/en-US/UTC; boardA15/two cards,B1; journal2"
+}

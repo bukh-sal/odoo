@@ -1,0 +1,12 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T04:16:13.950Z",
+  "theme": "Header Dark control delivered live subscription; unsaved Board name Theme draft retained remained intact; restored light and explicitly discarded only test draft",
+  "locale": "Arabic host chrome and custom root dir=rtl; restored en-US",
+  "history": "Back reached Settings; Forward completed Canvas remount with board revision15/cards retained",
+  "limitations": "Canvas/native content labels use English fallback; full release accessibility/zoom remains G7",
+  "screenshots": [
+    "canvas-live-dark.jpg",
+    "canvas-arabic-rtl.jpg"
+  ]
+}

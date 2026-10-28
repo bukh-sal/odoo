@@ -1,0 +1,7 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T04:23:02.012Z",
+  "procedure": "Initial invalid-board failure -> Canvas root recovers -> Back while Canvas is mounted invokes updateRoute to unknown board -> typed Not found, no custom subtree -> Canvas navigation recovers",
+  "automatic_reload": false,
+  "native_error_dialogs": 0
+}

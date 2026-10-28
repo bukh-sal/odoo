@@ -25,7 +25,8 @@ class Labels(models.Model):
     @staticmethod
     def _clean_labels(value):
         if not isinstance(value,list) or len(value)>30 or any(not isinstance(label,str) or not label.strip() or len(label)>64 for label in value):raise ValidationError('Invalid labels')
-        result=[label.strip() for label in value]
+        result=[label.strip().casefold() for label in value]
+        if any(len(label)>64 for label in result):raise ValidationError('Normalized label is too long')
         if len(set(result))!=len(result):raise ValidationError('Labels must be unique')
         return result
 
