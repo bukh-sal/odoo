@@ -7,6 +7,7 @@ import hashlib
 import json
 import shutil
 import tempfile
+import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -88,7 +89,14 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     category_file = target / "odoo/addons/base/data/ir_module_category_data.xml"
     category_hash = hashlib.sha256(category_file.read_bytes()).hexdigest()
     seeded = seed_category_metadata(category_file, target / "odoo/addons/base/data/ir_module_module.xml")
-    inventory = {"policy": policy, "native_addons": manifests, "generated_patches": [{"path": "odoo/addons/base/data/ir_module_category_data.xml", "source_sha256": category_hash, "seeded_categories": seeded}], "files": {}}
+    generated_patches=[{"path": "odoo/addons/base/data/ir_module_category_data.xml", "source_sha256": category_hash, "seeded_categories": seeded}]
+    if policy.get('platform_sdk'):
+        sys.path.insert(0,str(source/'packages/platform_sdk'))
+        from modular_platform.native_versions import PARSER_PATH,corrected_parser,patch_record
+        parser_file=target/PARSER_PATH
+        parser_file.write_bytes(corrected_parser(parser_file.read_bytes()))
+        generated_patches.append(patch_record())
+    inventory = {"policy": policy, "native_addons": manifests, "generated_patches": generated_patches, "files": {}}
     if artifacts:inventory['artifacts']={key:{name:value for name,value in item.items() if name!='bytes'} for key,item in artifacts.items()}
     if artifacts:inventory['reference_composition']=reference_registry
     for path in sorted(target.rglob("*")):

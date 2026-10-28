@@ -1,6 +1,6 @@
 {
     "name": "Modular Platform Compatibility",
-    "version": "19.0.0.1.0",
+    "version": "19.0.0.1.1",
     "depends": ["web"],
     "auto_install": True,
     "license": "LGPL-3",

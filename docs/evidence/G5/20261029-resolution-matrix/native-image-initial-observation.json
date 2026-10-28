@@ -1,0 +1,33 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "mp-g5-native-numeric-original",
+    "--label",
+    "com.modular.disposable=mp-g5-resolution",
+    "--network",
+    "none",
+    "--read-only",
+    "--user",
+    "10001:10001",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--memory",
+    "512m",
+    "--tmpfs",
+    "/tmp",
+    "--entrypoint",
+    "/venv/bin/python",
+    "sha256:411101a91aa09467f39da6a288e0e548c5e6140aac9cde0559a2e90dbe5a727c",
+    "-c",
+    "import json,hashlib;from pathlib import Path;from odoo.tools.parse_version import parse_version;from odoo.modules.module import adapt_version,check_version;values=['19.0.0.99999999.0','19.0.0.100000000.0'];assert all(check_version(v) and adapt_version(v)==v for v in values);print(json.dumps({'native_source_sha256':hashlib.sha256(Path('/opt/modular/odoo/tools/parse_version.py').read_bytes()).hexdigest(),'both_native_versions_accepted':True,'native_order':sorted(values,key=parse_version),'numeric_order_agrees':parse_version(values[0])<parse_version(values[1])}))"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"native_source_sha256\": \"71eeb2085e17c03fd4c31a222559d38d6c78cddb278ef0f4b17c5ecf8163b214\", \"both_native_versions_accepted\": true, \"native_order\": [\"19.0.0.100000000.0\", \"19.0.0.99999999.0\"], \"numeric_order_agrees\": false}\n",
+  "stderr": "",
+  "scope": "Read-only native parser/adapt_version; no database or plugin registry access."
+}

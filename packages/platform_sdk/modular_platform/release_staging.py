@@ -15,6 +15,7 @@ from .planning_cli import prepare_document
 from .plans import check_bundle,data_digest,_display
 from .projection import runtime_inputs
 from .resolution import binding_matches_scope
+from .native_versions import PARSER_PATH,reviewed_transition
 
 
 def validate_platform_deploy(base,runtime,descriptor):
@@ -23,7 +24,7 @@ def validate_platform_deploy(base,runtime,descriptor):
     before,after=base['inventory'],runtime['inventory']
     if (before.get('artifacts')!=after.get('artifacts') or base['python_metadata']!=runtime['python_metadata']
             or base['python_lock_digest']!=runtime['python_lock_digest'] or before['native_addons']!=after['native_addons']
-            or before['policy']!=after['policy']):
+            or before['policy']!=after['policy'] or before.get('generated_patches',[])!=after.get('generated_patches',[])):
         raise OperatorError('Platform deploy cannot change package/Python/native inventory policy')
     manifests=base.get('native_manifests');new_manifests=runtime.get('native_manifests')
     if not manifests or not new_manifests or manifests.keys()!=new_manifests.keys():
@@ -64,7 +65,13 @@ def validate_core_upgrade(base,runtime,descriptor):
     packaged={item['addon'] for item in before.get('artifacts',{}).values()}
     allowed=(CORE_ADDONS & manifests.keys()) - packaged
     prefixes=('packages/platform_sdk/','packages/contracts/',*(f'addons/{name}/' for name in allowed))
-    if any(not name.startswith(prefixes) for name in changed):
+    parser_changed=PARSER_PATH in changed
+    if parser_changed and (not reviewed_transition(before,after) or 'mp_compat' not in allowed
+            or 'addons/mp_compat/__manifest__.py' not in changed):
+        raise OperatorError('Native numeric correction requires exact reviewed bytes/provenance and versioned compatibility maintenance')
+    if not parser_changed and before.get('generated_patches',[])!=after.get('generated_patches',[]):
+        raise OperatorError('Core upgrade cannot alter generated patch attestations')
+    if any(not name.startswith(prefixes) and not (parser_changed and name==PARSER_PATH) for name in changed):
         raise OperatorError('Core upgrade includes packaged/upstream/unsupported native changes')
     touched={name for name in allowed if any(path.startswith(f'addons/{name}/') for path in changed)}
     if not touched or any(manifests[name]!=new_manifests[name] for name in manifests.keys()-touched):

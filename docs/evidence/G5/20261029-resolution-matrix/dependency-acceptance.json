@@ -1,0 +1,36 @@
+{
+  "result": "passed_dependency_matrix",
+  "utc": "2026-10-28T22:59:07.129850+00:00",
+  "newly_qualified": [
+    "DEP-01",
+    "DEP-02",
+    "DEP-03",
+    "DEP-04",
+    "DEP-05",
+    "DEP-06",
+    "DEP-08"
+  ],
+  "mapping": {
+    "DEP-01": "test_resolver_cli_matrix.ResolverCLI.test_missing_transitive_dependency_fails_before_any_mutation",
+    "DEP-02": "test_resolver_cli_matrix.ResolverCLI.test_version_conflict_explains_both_incompatible_constraints",
+    "DEP-03": "test_resolver_cli_matrix.ResolverCLI.test_cycle_reports_the_complete_hard_dependency_cycle",
+    "DEP-04": "test_resolver_cli_matrix.ResolverCLI.test_python_conflict_is_distinct_and_explains_both_constraints",
+    "DEP-05": "test_resolver_cli_matrix.ResolverCLI.test_ambiguous_provider_rejects_then_explicit_binding_selects_only_one",
+    "DEP-06": "test_resolver_cli_matrix.ResolverCLI.test_optional_absent_and_incompatible_leave_base_plan_valid",
+    "DEP-08": "test_resolver_cli_matrix.ResolverCLI.test_compatible_locked_dependency_is_preserved_when_another_plugin_installs"
+  },
+  "source_and_commands": "../20261029-resolution-source/planning-core.json and host-tests.json/linux-tests.json",
+  "observations": [
+    "Every case invokes the actual catalog/plan CLI on independently curated synthetic archives, verifies the expected error/selection, and proves catalog/trust bytes unchanged.",
+    "Conflict messages include both incompatible ranges; hard cycle includes all three participants; Python conflict is distinguished from plugin conflict.",
+    "Ambiguous provider fails; explicit alias selects only the chosen provider. Optional absent does not auto-install; incompatible integration remains unavailable while base plan succeeds.",
+    "Compatible dependency remains locked1.0 while another plugin installs; retained pure solver test separately proves explicit update and no downgrade.",
+    "Native mapping rejects unconditional optional dependency coupling in the retained pure resolver test; actual retained Notes-only native startup/API proof supplies the absent optional-addon regression."
+  ],
+  "runtime_regression": "../20261029-manager-upgrade-01/first-native-install/result.json and ../20261029-manager-inspection-http-01/http-qualification.json",
+  "limits": [
+    "Synthetic archives are only metadata/CLI fixtures and are never installed; sentinel imports would fail the expected outcomes.",
+    "No claim that arbitrary fully trusted Python can be statically proven safe.",
+    "VER-01 remains failed on the old native image until corrected image/core proof; VER-02 still not_run."
+  ]
+}
