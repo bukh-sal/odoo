@@ -1,0 +1,11 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T11:40:46.920494+00:00",
+  "source_report": "planning-core.json",
+  "actual_candidate": "../20261028T1134474357326Z-candidate-staging/staged-planning.json",
+  "candidate_build": "../20261028T113142235177Z-candidate-build/candidate-build.json",
+  "source_matches_current": true,
+  "gate_exit": false,
+  "live_site_mutation": false,
+  "scope": "Independent staged image/plan/hash/approval and current-image execution denial; replacement/upgrade/uninstall/recovery/client fencing still pending"
+}

@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "baseline_git": "00998d2d",
+  "observations": [
+    {
+      "target": "g5",
+      "state_digest": "sha256:718e7421c3436aa09064a80bab90f7e9cf83663f7193b05afee62ce8f966f4c2",
+      "identical_to_qualified_projection": true,
+      "workspace_feature_rows": 1,
+      "bindings": 1
+    },
+    {
+      "target": "r1",
+      "state_digest": "sha256:c7ce0fc77197203c834a38d62fedcefc736c6d878ed3e380f5034cb4b6c97f7e",
+      "identical_to_qualified_projection": true,
+      "workspace_feature_rows": 6,
+      "bindings": 10
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "result": "failed_before_mutation",
+  "reason": "New workspace B could not extend provider selection already scoped to A; plan preparation reported Missing required scoped binding.",
+  "effect": "Private candidate metadata only; no plan approval/app install or DB mutation.",
+  "correction": "Materialize missing workspace provider choices before hashing when exactly one compatible provider exists; ambiguous new aliases still require explicit selection.",
+  "regression": "test_install_into_another_workspace_extends_an_existing_scoped_provider",
+  "superseded_by": "../20261028T1134474357326Z-candidate-staging/staged-planning.json"
+}

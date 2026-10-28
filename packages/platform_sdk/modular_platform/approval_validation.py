@@ -16,10 +16,11 @@ from .lifecycle_planning import validate_install_targets
 
 
 class IndependentValidator:
-    def __init__(self, deployment_config, catalog_root, artifact_validator, *, quiesced=False):
+    def __init__(self, deployment_config, catalog_root, artifact_validator, *, quiesced=False, stage_store=None):
         self.observer = DockerObserver(deployment_config)
         self.catalog = Catalog(catalog_root, artifact_validator, readonly=True)
         self.quiesced = quiesced
+        self.stage_store=stage_store
 
     def __call__(self, bundle):
         snapshot = self.catalog.snapshot()
@@ -28,6 +29,19 @@ class IndependentValidator:
         state = document['state']
         check_bundle(bundle, state)
         plan = bundle['plan']
+        if plan['permission_changes'] or plan['trust_changes'] or plan['backup']['policy_id'] != 'development_checkpoint':
+            raise OperatorError('This profile does not accept unrelated grant/trust/backup policy changes')
+        if 'staged_image' in bundle['operation_lock']:
+            if not getattr(self,'stage_store',None):
+                raise OperatorError('Staged image requires independently owned release metadata')
+            from .release_staging import prepare_staged_plan
+            descriptor,record=self.stage_store.load(bundle['operation_lock']['staged_image'])
+            recomputed=prepare_staged_plan(document,observation['sites'],snapshot,record['runtime'],descriptor,
+                targets=bundle['operation_lock']['targets'],operation_type=plan['operation_type'],
+                operation_id=plan['operation_id'],created_at=plan['created_at'])
+            if data_digest(recomputed)!=data_digest(bundle):
+                raise OperatorError('Independently staged reconstruction differs from proposed exact plan')
+            return state
         if plan['operation_type'] == 'install':
             validate_install_targets(document, observation['sites'], bundle['operation_lock']['targets'])
             expected = copy.deepcopy(state['release_lock'])
@@ -41,8 +55,6 @@ class IndependentValidator:
                 raise OperatorError('New executable bytes require an independently staged release image')
         elif plan['operation_type'] not in ('suspend', 'enable') or bundle['operation_lock']['release'] != state['release_lock']:
             raise OperatorError('This lifecycle operation requires the staged release adapter')
-        if plan['permission_changes'] or plan['trust_changes'] or plan['backup']['policy_id'] != 'development_checkpoint':
-            raise OperatorError('This profile does not accept unrelated grant/trust/backup policy changes')
         document['request'] = {'operation_type': plan['operation_type'], 'requested': {},
             'targets': copy.deepcopy(bundle['operation_lock']['targets']),
             'operation_id': plan['operation_id'], 'created_at': plan['created_at'],

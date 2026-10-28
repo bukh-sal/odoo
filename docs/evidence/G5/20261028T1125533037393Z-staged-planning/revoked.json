@@ -1,0 +1,34 @@
+{
+  "approval_expires_at": "2026-10-28T11:41:37Z",
+  "backup_id": null,
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:858c21138c6c03813ddfcd4c3aef719490e2397a6a70f075e427588642ff12c6"
+      },
+      "sequence": 50,
+      "utc": "2026-10-28T11:26:24Z"
+    },
+    {
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:858c21138c6c03813ddfcd4c3aef719490e2397a6a70f075e427588642ff12c6"
+      },
+      "sequence": 51,
+      "utc": "2026-10-28T11:26:37Z"
+    },
+    {
+      "code": "approval_revoked",
+      "details": {},
+      "sequence": 52,
+      "utc": "2026-10-28T11:26:50Z"
+    }
+  ],
+  "mutation_started": false,
+  "operation_id": "ac0d2bcb-3923-4f1c-af6b-21d6647e4a7d",
+  "phase": "prepared",
+  "plan_hash": "sha256:858c21138c6c03813ddfcd4c3aef719490e2397a6a70f075e427588642ff12c6",
+  "state": "revoked",
+  "traffic_resumed": false
+}

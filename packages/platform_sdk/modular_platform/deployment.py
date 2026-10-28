@@ -63,6 +63,18 @@ def _run(arguments, *, input=None):
     return completed.stdout
 
 
+def inspect_image(image_id):
+    """Hash an immutable candidate with no live mounts/network/plugin imports."""
+    if not isinstance(image_id,str) or not re.fullmatch('sha256:[0-9a-f]{64}',image_id):
+        raise PlanningError('An immutable operator-selected image ID is required')
+    runtime=load_json(_run(['docker','run','--rm','--network','none','--read-only','--cap-drop','ALL',
+        '--security-opt','no-new-privileges','--user','10001:10001','--pids-limit','128','--memory','512m',
+        '--tmpfs','/tmp:rw,nosuid,nodev,size=64m,mode=1777','--entrypoint','/venv/bin/python',image_id,'-c',OBSERVE_RUNTIME]))
+    if runtime['modified_files'] or runtime['unexpected_addon_files'] or runtime['missing_addon_files']:
+        raise PlanningError('Staged executable source differs from its curated release inventory')
+    return runtime
+
+
 class DockerObserver:
     def __init__(self, configuration):
         required = {'schema_version', 'deployment_id', 'project', 'sites', 'image_id',

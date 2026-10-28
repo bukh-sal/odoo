@@ -5,24 +5,47 @@ The app receives only a metadata proposal; OS approval re-observes its source.
 """
 import copy
 
-from .contracts import normalize_manifest, validate
+from .contracts import normalize_manifest, validate,checked_path
 from .plans import data_digest, release_lock
 from .resolution import PlanningError, resolve_release
 
 
-def project_deployment(configuration, observation, catalog):
-    runtime = observation['runtime']
+def runtime_inputs(runtime,catalog):
+    """Derive trusted-image inputs without asserting any database installation."""
     artifacts = runtime['inventory'].get('artifacts', {})
     selected = []
     for plugin, artifact in sorted(artifacts.items()):
         matches = [item for item in catalog if item['manifest']['plugin']['id'] == plugin and item['digest'] == artifact['digest']]
         if len(matches) != 1:
             raise PlanningError('Running artifact is absent/untrusted in the independent catalog: ' + plugin)
+        descriptor=matches[0];manifest=descriptor['manifest']
+        package_path=checked_path('artifacts/'+artifact['file'])
+        files=runtime['inventory']['files']
+        if (artifact['plugin_id']!=plugin or artifact['version']!=manifest['plugin']['version']
+                or files.get(package_path)!=descriptor['digest'][7:]):
+            raise PlanningError('Image package bytes differ from the independent catalog identity')
+        if manifest['runtime']['kind']=='native':
+            addon=manifest['runtime']['addon_name'];prefix='backend/odoo_addons/'+addon+'/'
+            expected={'addons/'+addon+'/'+name[len(prefix):]:digest for name,digest in descriptor['inventory'].items() if name.startswith(prefix)}
+            actual={name:digest for name,digest in files.items() if name.startswith('addons/'+addon+'/')}
+            if artifact['addon']!=addon or actual!=expected:
+                raise PlanningError('Image native source differs from independently validated package bytes')
         selected.append(matches[0])
     provided = {item['manifest']['runtime'].get('addon_name') for item in selected}
     environment = {'platform_version': '0.1.0', 'native_runtime': 'odoo-19',
         'markers': runtime['markers'], 'accepted_wheel_tags': runtime['accepted_wheel_tags'],
         'core_addons': sorted(set(runtime['inventory']['native_addons']) - provided)}
+    patches = runtime['inventory'].get('generated_patches', [])
+    provenance = {'platform_version': '0.1.0', 'upstream_commit': runtime['inventory']['policy']['upstream_commit'],
+        'native_patch_set_digest': data_digest(patches), 'core_inventory_digest': runtime['inventory_digest'],
+        'python_lock_digest': runtime['python_lock_digest'],
+        'python_runtime': {'version': runtime['python'], 'architecture': 'linux/' + runtime['architecture'], 'marker_environment': runtime['markers']}}
+    return selected,environment,provenance
+
+
+def project_deployment(configuration, observation, catalog):
+    runtime = observation['runtime']
+    selected,environment,provenance=runtime_inputs(runtime,catalog)
     choices = {}
     for site in observation['sites']:
         ids = {item['installation_id']: item['plugin_id'] for item in site['installations']}
@@ -34,11 +57,6 @@ def project_deployment(configuration, observation, catalog):
     resolved = resolve_release(selected, runtime['python_metadata'], environment,
         {item['manifest']['plugin']['id']: '==' + item['manifest']['plugin']['version'] for item in selected},
         core_python=core_python, scoped_provider_choices=choices)
-    patches = runtime['inventory'].get('generated_patches', [])
-    provenance = {'platform_version': '0.1.0', 'upstream_commit': runtime['inventory']['policy']['upstream_commit'],
-        'native_patch_set_digest': data_digest(patches), 'core_inventory_digest': runtime['inventory_digest'],
-        'python_lock_digest': runtime['python_lock_digest'],
-        'python_runtime': {'version': runtime['python'], 'architecture': 'linux/' + runtime['architecture'], 'marker_environment': runtime['markers']}}
     lock = release_lock(resolved, provenance, generation=configuration['generation'], created_at=configuration['release_created_at'])
     by_plugin = {item['manifest']['plugin']['id']: item for item in selected}
     expanded, bindings, security = [], [], []

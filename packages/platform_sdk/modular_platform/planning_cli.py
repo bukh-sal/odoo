@@ -4,6 +4,8 @@ from __future__ import annotations
 import copy
 from uuid import UUID, uuid5
 from packaging.utils import canonicalize_name
+from packaging.version import Version
+from .contracts import api_range
 
 from .plans import check_bundle, data_digest, prepare_plan, release_lock, scoped_installation_key
 from .resolution import PlanningError, resolve_release, binding_matches_scope
@@ -95,6 +97,21 @@ def prepare_document(document, catalog):
                 if plugin == selected['consumer'] and binding_matches_scope(selected, site, workspace) and key not in scoped_choices:
                     scoped_choices[key] = selected['provider']
                     added = True
+        manifests={item['manifest']['plugin']['id']:item['manifest'] for item in resolved['plugins']}
+        for plugin,site,workspace in scopes:
+            for requirement in manifests[plugin]['services']['requires']:
+                key=plugin,requirement['alias'],site,workspace
+                if key in scoped_choices:continue
+                eligible={ident for ident,manifest in manifests.items() if any(
+                    provided['id']==requirement['id'] and int(provided['api_version'].split('.')[0])==requirement['contract_major']
+                    and Version(provided['api_version']) in api_range(requirement['version'],requirement['contract_major'])
+                    for provided in manifest['services']['provides'])}
+                if len(eligible)>1:
+                    raise PlanningError('Explicit provider binding required for a new workspace alias: '+plugin+':'+requirement['alias'])
+                if eligible:
+                    scoped_choices[key]=next(iter(eligible));added=True
+                elif not requirement.get('optional',False):
+                    raise PlanningError('Required provider unavailable for new workspace alias')
         if added:
             for consumer, alias, site, workspace in scoped_choices:
                 choices.pop((consumer, alias), None)

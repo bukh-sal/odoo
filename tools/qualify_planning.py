@@ -13,7 +13,7 @@ import sys
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py', 'test_recovery.py']
+PATTERNS = ['test_artifacts.py', 'test_resolution.py', 'test_plans.py', 'test_planning_cli.py', 'test_lifecycle_planning.py', 'test_feature_executor.py', 'test_recovery.py', 'test_release_staging.py']
 
 
 def run(command, *, input=None):
@@ -28,13 +28,20 @@ def main():
     parser.add_argument('--image', default='modular-platform:r1')
     parser.add_argument('--operator', action='store_true', help='Include independent OS/store primitives')
     parser.add_argument('--recovery-only',action='store_true',help='Qualify changed recovery review/filestore controls without repeating unchanged suites')
+    parser.add_argument('--staging-only',action='store_true',help='Qualify staged plans and affected resolver/contract consumers')
     args = parser.parse_args()
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'docs/evidence/G5') or output.exists():
         raise ValueError('Fresh G5 evidence directory required')
     output.mkdir(parents=True)
-    patterns = ['test_recovery.py'] if args.recovery_only else PATTERNS + (['test_operator_os.py', 'test_operator_store.py'] if args.operator else [])
-    host = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_recovery.py' if args.recovery_only else 'test_*.py', '-v'])
+    if args.recovery_only and args.staging_only:raise ValueError('Choose one focused qualification scope')
+    patterns = ['test_recovery.py'] if args.recovery_only else (
+        ['test_release_staging.py','test_lifecycle_planning.py','test_resolution.py','test_plans.py','test_planning_cli.py','test_operation_contracts.py','test_contracts.py']
+        if args.staging_only else PATTERNS + (['test_operator_os.py', 'test_operator_store.py'] if args.operator else []))
+    if args.staging_only:
+        host_runner="import unittest; suite=unittest.TestSuite(unittest.defaultTestLoader.discover('tests',pattern=p) for p in "+repr(patterns)+"); raise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful())"
+        host=run([sys.executable,'-c',host_runner])
+    else:host = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_recovery.py' if args.recovery_only else 'test_*.py', '-v'])
     (output / 'host-tests.json').write_text(json.dumps(host, indent=2) + '\n')
     selected = {ROOT / name for name in ['LICENSE', 'COPYRIGHT', 'tools/reference_package.py', 'tools/modular.py',
         'tools/qualify_planning.py', 'tools/observe_r1.py', 'tools/qualify_live_planning.py', 'tools/qualify_operator_live.py',
@@ -82,7 +89,11 @@ for pattern in PATTERN_INPUT:
     suite.addTests(unittest.defaultTestLoader.discover('tests',pattern=pattern))
 raise SystemExit(0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful() else 1)
 '''
-    runner = runner.replace('PATTERN_INPUT', repr(patterns))
+    # The production Python image intentionally has no Node executable. The
+    # complete contract suite (including independent JS golden bytes) runs on
+    # the host; Linux exercises affected Python consumers/operation DTOs here.
+    linux_patterns=[pattern for pattern in patterns if pattern!='test_contracts.py']
+    runner = runner.replace('PATTERN_INPUT', repr(linux_patterns))
     linux = run(['docker', 'run', '--rm', '-i', '--network', 'none', '--read-only',
         '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--pids-limit', '128',
         '--memory', '512m', '--cpus', '2', '--user', '10001:10001',
@@ -92,7 +103,7 @@ raise SystemExit(0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccess
     frozen = run([sys.executable, 'tools/check_contract_freeze.py'])
     (output / 'contract-freeze.json').write_text(json.dumps(frozen, indent=2) + '\n')
     result = 'passed' if all(item['exit_code'] == 0 for item in (host, linux, frozen)) else 'failed'
-    report = {'item': 'E-01d-recovery-controls' if args.recovery_only else ('E-01c-primitives' if args.operator else 'E-01b-core'), 'gate': 'G5', 'result': result, 'utc': datetime.now(timezone.utc).isoformat(),
+    report = {'item': 'E-01d-staged-plans' if args.staging_only else ('E-01d-recovery-controls' if args.recovery_only else ('E-01c-primitives' if args.operator else 'E-01b-core')), 'gate': 'G5', 'result': result, 'utc': datetime.now(timezone.utc).isoformat(),
         'host': {'system': platform.system(), 'python': platform.python_version()},
         'git_base': run(['git', 'rev-parse', 'HEAD'])['stdout'].strip(),
         'image_id': run(['docker', 'image', 'inspect', args.image, '--format', '{{.Id}}'])['stdout'].strip(),

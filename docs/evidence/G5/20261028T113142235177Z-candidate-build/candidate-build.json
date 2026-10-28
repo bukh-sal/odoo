@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "tag": "modular-platform:stage-20261028t113142235177z",
+  "state": "built",
+  "evidence": "docs\\evidence\\G5\\20261028T113142235177Z-candidate-build",
+  "disposable": true,
+  "current_site_unchanged": true,
+  "source_head": "00998d2d5519b6db34f9572c69969ab383964e9f",
+  "exit_code": 0,
+  "image_id": "sha256:ac3e9995223265a3e41c29f3ef950bb1599401ba5e9054191dd84ea9bbf8d3ca"
+}

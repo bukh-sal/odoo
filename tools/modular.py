@@ -66,6 +66,13 @@ def main(argv=None):
     apply.add_argument('--store', required=True, type=Path, help='Independent OS-owned control store')
     apply.add_argument('--deployment-config', required=True, type=Path)
     apply.add_argument('--catalog', required=True, type=Path)
+    for action in ('stage-image','plan-staged'):
+        staged=plugin.add_parser(action)
+        staged.add_argument('--store',required=True,type=Path,help='Independent OS-owned control store')
+        staged.add_argument('--deployment-config',required=True,type=Path)
+        staged.add_argument('--catalog',required=True,type=Path)
+        if action=='stage-image':staged.add_argument('--image-id',required=True)
+        else:staged.add_argument('--input',required=True,type=Path,help='Exact native install/upgrade target nomination')
     recover = plugin.add_parser('recover', help='Review/restore a checkpoint to a fresh disposable database, then separately resume')
     recover.add_argument('recovery_action', choices=['prepare-restore','restore','prepare-resume','resume','revoke-review'])
     recover.add_argument('operation_id')
@@ -127,7 +134,10 @@ def main(argv=None):
             else:
                 store = OperatorStore(args.store)
                 if args.action in ('register', 'approve','import-request'):
-                    revalidate = IndependentValidator(load_json(args.deployment_config.read_bytes()), args.catalog, validator)
+                    from modular_platform.release_staging import StageStore
+                    deployment=load_json(args.deployment_config.read_bytes())
+                    stage_store=StageStore(store,deployment,Catalog(args.catalog,validator,readonly=True))
+                    revalidate = IndependentValidator(deployment,args.catalog,validator,stage_store=stage_store)
                 if args.action in ('import-request','mirror-status'):
                     from modular_platform.app_channel import read_request,publish_status
                     observer=DockerObserver(load_json(args.deployment_config.read_bytes()))
@@ -167,6 +177,24 @@ def main(argv=None):
                     result = store.status(args.operation_id)
                 else:
                     result = store.status(args.operation_id)
+        elif args.group == 'plugin' and args.action in ('stage-image','plan-staged'):
+            from datetime import datetime,timezone
+            from uuid import uuid4
+            from modular_platform.operator_store import OperatorStore
+            from modular_platform.deployment import DockerObserver
+            from modular_platform.release_staging import StageStore,prepare_staged_plan
+            store=OperatorStore(args.store);deployment=load_json(args.deployment_config.read_bytes())
+            catalog=Catalog(args.catalog,validator,readonly=True);stages=StageStore(store,deployment,catalog)
+            if args.action=='stage-image':result=stages.stage(args.image_id)
+            else:
+                raw=args.input.read_bytes()
+                if len(raw)>2*1024*1024:raise ArtifactError('Staged nomination size limit')
+                nomination=load_json(raw)
+                if set(nomination)!={'operation_type','targets'}:raise ArtifactError('Exact native operation/targets nomination required')
+                descriptor,record=stages.load();observer=DockerObserver(deployment);observation=observer.read();snapshot=catalog.snapshot()
+                result=prepare_staged_plan(observer.state(observation,snapshot),observation['sites'],snapshot,record['runtime'],descriptor,
+                    targets=nomination['targets'],operation_type=nomination['operation_type'],operation_id=str(uuid4()),
+                    created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
         elif args.group == 'plugin' and args.action == 'recover':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.native_executor import NativeExecutor

@@ -97,5 +97,20 @@ class CurrentImageInstallation(unittest.TestCase):
         self.assertNotIn('excluded_scopes', selected[0])
         self.assertEqual(self.validator()(bundle), self.document['state'])
 
+    def test_install_into_another_workspace_extends_an_existing_scoped_provider(self):
+        self.catalog=[plugin('a',provides=[provide('a')],requires=[require()])]
+        self.document['state']=base_state(self.catalog)|{'bindings':[],'endpoints':[]}
+        first=self.prepare(workspace_ids=[ident(30)],artifact_digest=self.catalog[0]['digest'])
+        installed=first['operation_lock']['targets'][0]
+        self.site['installations']=[{'installation_id':installed['installation_id'],'plugin_id':'org.test.a','metadata_state':'installed'}]
+        self.document['state'].update(release_lock=first['operation_lock']['release'],generation=2,
+            release_digest=first['plan']['target_release_digest'],bindings=first['operation_lock']['bindings'],
+            installations=[{key:value for key,value in installed.items() if key!='action'}|
+                {'state':'installed','feature_state':'enabled','metadata_state':'installed'}])
+        next_plan=self.prepare(workspace_ids=[ident(31)],artifact_digest=self.catalog[0]['digest'])
+        self.assertEqual(len(next_plan['operation_lock']['bindings']),2)
+        self.assertEqual(next_plan['operation_lock']['release']['service_selection'][0]['scopes'],
+            [[ident(20),ident(30)],[ident(20),ident(31)]])
+
 
 if __name__ == '__main__': unittest.main()

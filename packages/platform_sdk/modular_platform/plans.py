@@ -346,7 +346,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
 
 
 def _display(plan, operation_lock):
-    return {'targets': operation_lock['targets'], 'artifacts': plan['artifacts'],
+    display={'targets': operation_lock['targets'], 'artifacts': plan['artifacts'],
                 'required_local_step': 'Independent local operator approval of the exact plan hash, then CLI apply.',
                 'native_code_requires_trust': any(item['runtime'] == 'native' for item in plan['artifacts']),
                 'restart_required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall', 'remove') for item in plan['artifacts']),
@@ -357,6 +357,9 @@ def _display(plan, operation_lock):
                 'artifact_trust': [{'plugin_id': item['plugin_id'], 'digest': item['digest'], 'trust': item['trust']} for item in operation_lock['release']['plugins']],
                 'backup': plan['backup'], 'destructive': plan['destructive'],
                 'known_unknowns': operation_lock['known_unknowns']}
+    if 'staged_image' in operation_lock:
+        display['staged_image']=copy.deepcopy(operation_lock['staged_image'])
+    return display
 
 
 def check_bundle(bundle, current_state):

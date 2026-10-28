@@ -115,6 +115,8 @@ class NativeExecutor:
 
     def apply(self, operation):
         bundle = self.store.bundle(operation)
+        if 'staged_image' in bundle['operation_lock']:
+            raise OperatorError('Staged native execution must use the new-image executor adapter; current-image mutation denied')
         if bundle['plan']['operation_type'] != 'install':
             raise OperatorError('This executor currently accepts current-image native installation only')
         plan = bundle['plan']

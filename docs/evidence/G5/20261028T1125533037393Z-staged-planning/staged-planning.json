@@ -1,0 +1,49 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T11:26:51.389896+00:00",
+  "operation_id": "ac0d2bcb-3923-4f1c-af6b-21d6647e4a7d",
+  "plan_hash": "sha256:858c21138c6c03813ddfcd4c3aef719490e2397a6a70f075e427588642ff12c6",
+  "image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+  "stage_digest": "sha256:0d06f03e57d21c70c0389f850cdc2d765fc7045964be98ee4d9396a5165d1a8e",
+  "observations": [
+    "Actual immutable image hashed in network-disabled/read-only/no-live-volume process before private stage enrollment",
+    "Current G4/G5 projections byte-equivalent after runtime-input extraction",
+    "Actual staged plan includes concrete B workspace/self binding and native backup/restart declaration",
+    "Rehashed forged image pin rejected against independent private candidate",
+    "Valid stage plan independently registered/exact approved; current-image executor rejected it before reservation/mutation",
+    "Whole observed deployment state unchanged, final test approval revoked"
+  ],
+  "limits": [
+    "This stage uses the currently qualified image to prove metadata/authority integration; no different image was deployed.",
+    "New-image execution/upgrade/uninstall/recovery/startup/client fencing remain pending G5."
+  ],
+  "source": {
+    "packages/platform_sdk/modular_platform/approval_validation.py": "46f5b9ad7670adc55e43dd45b4d1d61eab4609c642403383946a6cd38b961464",
+    "packages/platform_sdk/modular_platform/app_channel.py": "9d0fa413c75d0b13b235ff103dc427becef236c868fe1610f822426adc459da1",
+    "packages/platform_sdk/modular_platform/artifacts.py": "6965c17c022e44955d5d49d8076f276181767c6698920f1db8fa89da8c922601",
+    "packages/platform_sdk/modular_platform/catalog.py": "671909cfcf3c2c019dc71e03ce49b72f833d39facbac56df9d87873137e06767",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/deployment.py": "7bd45481339b92ea33cce3c3e561a26e7f1c4e96835ba976ad84b42860d09c91",
+    "packages/platform_sdk/modular_platform/feature_executor.py": "197227bf53bcd6ae828a1f022cb891de6df89c651fc5e6e79168c9ccfc063207",
+    "packages/platform_sdk/modular_platform/feature_metadata.py": "891c4cfa881fb5c943ded7a7593bd50fdbddf85c49572f476fcde38f454a0b2d",
+    "packages/platform_sdk/modular_platform/install_metadata.py": "59a3ff4a21778cbac8859c877f23fb8c60f69f871b5f336fe3c0f8e184dc5df7",
+    "packages/platform_sdk/modular_platform/lifecycle_planning.py": "d5c89b06b087da3cce02d3b15cdeffa048f275afc06fafb01ae4a4de7904375f",
+    "packages/platform_sdk/modular_platform/metadata_sql.py": "52068b8ef9bb9359af21db91b25e6cfa3031172bbc84f7be57470d786caaa516",
+    "packages/platform_sdk/modular_platform/native_executor.py": "1f32131cba76c5fa276599e0af28eb9956ee1aca21c46e5a84660acd5bdf8e22",
+    "packages/platform_sdk/modular_platform/operation_views.py": "bf860904ac1b9bb93836ed72d59adef422c64d7c42ef83312ca5fbb1c84848b8",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/operator_store.py": "6943a2ca579824a0307fb7ba1b10e35a1cb5957c1aad480331a36174b7a210b4",
+    "packages/platform_sdk/modular_platform/planning_cli.py": "0f0c7e298ef1231bc52ab41e11b74df5cdf80df509b3c6db961eea17379d6c4e",
+    "packages/platform_sdk/modular_platform/plans.py": "5b398032b044cb65db80c74a049251f66dd84aa7d8a7db3e65a927f45ca68969",
+    "packages/platform_sdk/modular_platform/projection.py": "4df296d956c2a6c62d62f111a6bd03360e39a4a2790cfde50b366964cd40c6d8",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "7b5ad3153f66c78bc4132cd4ab425ab772ed0d1f62fa786fed9564853fc3a220",
+    "packages/platform_sdk/modular_platform/release_staging.py": "dbc841861bc2fe2d7cc68803baf62fc664bd7dbcf2b36beeebd22683ab52a165",
+    "packages/platform_sdk/modular_platform/resolution.py": "b99225983c62bba38f4d23a81760de37593cca97a08d5bda699521f2860de872",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "b0a762f2d6c808d5cdb8bf5659f793f5eae04e59eb242c1806ec8e95bd7a2286",
+    "packages/platform_sdk/modular_platform/restore_filestore.py": "43e3544b34bb68501201f0d382c167a382f4da7e06b33bfc6d66374824ed1626",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+    "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
+    "tools/qualify_staged_planning.py": "e147688345fdf5005982ab6fc2a23b5d7683af4817e9a796428eedb95f111775",
+    "tools/modular.py": "fbf38ed9250fab27bf60aa9598a3c2ddaab67fa513c678dfba888ccd5b9158bd"
+  }
+}
