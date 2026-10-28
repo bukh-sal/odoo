@@ -2,18 +2,18 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-10-28T04:51:54.655192+00:00
+- Updated UTC: 2026-10-28T05:08:25.683147+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **E / G5 in_progress**. Latest passed gate: **G4**, see `evidence/G4/20261028t033154z/gate-G4.json`.
-- Active item: **E-01a**. Next: read G5/frozen distribution-lifecycle contracts; implement hostile archive validation and curated catalog, then solver/plans, independent approval and recoverable execution. G4 passed. Do not repeat provisioning/migrations/reference patches.
-- Working changes: G4 qualification checkpoint pending commit. G2 revision6 e06645a5 remains current (66files/20tests/typecheck); specification unchanged.
+- Active item: **E-01b**. Next: pure complete dependency resolution, exact release lock and frozen-schema plans; then independent approval/executor and recoverable lifecycle. E-01a passed on Windows/Linux. G4 passed at9b315174. Do not repeat site provisioning/migrations/reference patches.
+- Working changes: E-01a archive/catalog checkpoint. G4 qualification committed9b315174. G2 revision6 e06645a5 unchanged (66files/20tests/typecheck); specification unchanged.
 
 ## Progress estimate
 
-**Overall roughly 55%; release acceptance 40/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
+**Overall roughly 58%; release acceptance 45/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
 
 ## Gate checklist
 
@@ -48,8 +48,8 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | C-03 | Neutral shell with native list/form and frozen host facade | passed | UI-01/09; ID-08 | C-02 | browser CRUD/deep links/theme/session/disposal |
 | C-04 | Qualify G3 integration, authority and API outcomes | passed | ID; API; UI | C-03 | evidence and source review before G3 pass |
 | D-01 | Deliver Notes Labels and custom Canvas | passed | ORM; API-06; UI | G3 | packaged extension/browser contracts |
-| E-01a | Validate immutable archives and curated catalog before import | in_progress | PKG; BOOT-05; OPS-03 | G4 | hostile archives, digest/version/trust |
-| E-01b | Resolve dependencies/versions/bindings into exact plans | not_started | DEP; VER; TEN | E-01a | constraints/cycles/stale targets |
+| E-01a | Validate immutable archives and curated catalog before import | passed | PKG; BOOT-05; OPS-03 | G4 | hostile archives, digest/version/trust |
+| E-01b | Resolve dependencies/versions/bindings into exact plans | in_progress | DEP; VER; TEN | E-01a | constraints/cycles/stale targets |
 | E-01c | Independent local approval and privileged journal | not_started | SEC-06..08; LIFE; OPS-01 | E-01b | app OS denial, exact-hash expiry/revoke/replay |
 | E-01d | Recoverable native execution, backup/restore and release fencing | not_started | MIG; LIFE; BOOT-06; OPS-02 | E-01c | real faults/restore/concurrency |
 | F-01 | Deliver jobs/outbox and separately operated worker | not_started | EVT; JOB; SVC | G5 | lease/failure/scopes/duplicate tests |
@@ -67,8 +67,8 @@ No hard blocker currently. Docker is healthy (Linux/amd64); user increased alloc
 
 ## Resume capsule
 
-- Passed G0 3069e03f, G1 73d8ebd2, G3 e49d3a6b; G2 revision6 e06645a5 (66files/20tests). G4 now passed evidence/G4/20261028t033154z/gate-G4.json with final source identity; qualification commit pending. Overall55%,40/99 release acceptance,5R2 exclusions. Goal stays active through G7.
-- Active E-01a/G5: general hostile archive validation and immutable curated catalog. Read spec7-12/15/23/25 and frozen manifest/plan/approval/version contracts first. Then E-01b solver/plans, E-01c independent OS approval/journal, E-01d lifecycle/recovery. G6 jobs/outbox/worker and G7 release remain later. Narrow reference assembler is not the G5 validator/executor.
+- Passed G0 3069e03f, G1 73d8ebd2, G3 e49d3a6b; G2 revision6 e06645a5 (66files/20tests). G4 passed9b315174 evidence/G4/20261028t033154z/gate-G4.json. E-01a passed evidence/G5/20261028T0508474407833Z/archive-catalog.json (18 groups Windows + Linux, real CLI, all6 boundary limits, exact package bytes). Overall58%,45/99 release acceptance,5R2 exclusions. Goal stays active through G7.
+- Active E-01b/G5: pure complete solver, lock and exact frozen plans. New artifacts.py/catalog.py +tools/modular.py inspect bytes without imports, strict portable ZIP/inventory/provenance/native/external layout, explicit unsigned warning or independently approved exact digest, immutable SQLite/version index and quarantine. docs/packaging.md has format/CLI. E-01a qualified at20261028T0508474407833Z; prior0506342702143Z superseded after narrower external notices and native descriptor. BOOT05/OPS03 remain later. Next solver/plans, E-01c independent OS approval/journal, E-01d lifecycle/recovery. G6 jobs/outbox/worker and G7 release remain later. Narrow reference assembler is not the G5 validator/executor.
 - Existing R1: mp-r0-r1396163208bf1 / DB mp_disposable_r0_r1_396163208bf1 / image modular-platform:r1 / localhost:18071. Operational evidence still G4/20261028t033154z, priorG3 history retained. State .local/r1/state.json: seeded/shell installed/view_refresh_1 passed; g4_install_status provisioned; patch/upgrade/notes_revision statuses registered. NEVER repeat init/seed/install/resume/provision/patch/upgrade/notes-revision actions. No process pending. Before G5 mutations, move operational evidence to its own directory while retaining history.
 - Current exact packages: Notes0.2.1, Labels0.2.0, Canvas0.1.2; digest/image/source in G4 source-identity. Services documents1.0/2.0 coexist; Labels command/base chain retains actor and grants; Canvas plain DOM consumes2.0 and its own boards1.0. Builder assembles repository-owned ZIPs, verifies inventory/full manifest/migration digest and declarative model/field/slot conflicts before import. Creator metadata explicitly Unix; local/Docker bytes now reproduce. No hostile upload/runtime containment claim.
 - Native Labels upgrade ran once035834796750Z, normalized2 records and fenced revisions; raw verification035909761271Z retained base IDs/content/author/boards. Initial NULL-as-empty assertion corrected by read-only verification, not rerunning migration. Metadata path corrected to addon-relative; first invalid candidate never registered. Corrected package registered040158610595Z. Notes0.2.1 patch043607959346Z closes native delete CAS (missing/stale/bool denied), disables default native delete XML and retains host revision-aware action; metadata043610706137Z. New versions/digests, no registered artifact overwritten.
@@ -100,11 +100,11 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | BOOT-04 | A/G0 | passed | No excluded ERP application is unexpectedly installed | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
 | BOOT-05 | E/G5 | not_run | Unexpected addon search-path content cannot bypass release inventory policy | not_run; procedure to be bound in owning phase |
 | BOOT-06 | E/G5 | not_run | Worker startup does not silently migrate production state | not_run; procedure to be bound in owning phase |
-| PKG-01 | E/G5 | not_run | Manifest validation does not import plugin code | not_run; procedure to be bound in owning phase |
-| PKG-02 | E/G5 | not_run | Traversal, symlinks, duplicate normalized paths and ZIP bombs are rejected | not_run; procedure to be bound in owning phase |
-| PKG-03 | E/G5 | not_run | Digest mismatch and same-version/different-artifact conflict are rejected | not_run; procedure to be bound in owning phase |
-| PKG-04 | E/G5 | not_run | Unsigned artifacts follow the actual configured trust policy | not_run; procedure to be bound in owning phase |
-| PKG-05 | E/G5 | not_run | Unknown sensitive schema fields and contract majors fail safely | not_run; procedure to be bound in owning phase |
+| PKG-01 | E/G5 | passed | Manifest validation does not import plugin code | `tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI) |
+| PKG-02 | E/G5 | passed | Traversal, symlinks, duplicate normalized paths and ZIP bombs are rejected | `tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI) |
+| PKG-03 | E/G5 | passed | Digest mismatch and same-version/different-artifact conflict are rejected | `tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI) |
+| PKG-04 | E/G5 | passed | Unsigned artifacts follow the actual configured trust policy | `tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI) |
+| PKG-05 | E/G5 | passed | Unknown sensitive schema fields and contract majors fail safely | `tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI) |
 | DEP-01 | E/G5 | not_run | Missing transitive dependency fails before any runtime mutation | not_run; procedure to be bound in owning phase |
 | DEP-02 | E/G5 | not_run | Version conflict explains the incompatible constraints | not_run; procedure to be bound in owning phase |
 | DEP-03 | E/G5 | not_run | Hard dependency cycle reports the cycle | not_run; procedure to be bound in owning phase |

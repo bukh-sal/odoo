@@ -56,3 +56,7 @@ G3 qualifying decision/source identity: [gate-G3.json](evidence/G3/20261028t0116
 G4 native0.2 migration035834796750Z, raw preservation verification035909761271Z and corrected package registration040158610595Z pass; current API040204057727Z passes6 groups. New custom recovery/cancel and full G4 gate remain pending.
 
 Final G4 decision/source: [gate-G4.json](evidence/G4/20261028t033154z/gate-G4.json), superseding partial checkpoints.12 new observations; later limits explicit. G5 now active.
+
+## G5 archive/catalog slice: passed; gate in progress
+
+[Current E-01a record](evidence/G5/20261028T0508474407833Z/archive-catalog.json) binds source hashes, the pinned Linux dependency image and host version to18 passing hostile-byte/catalog/CLI groups on Windows and Linux. Actual private staging/output hashes and no-import marker, six exact size/count/ratio boundaries, path/link/collision/bomb rejections, digest/version conflicts, strict metadata, external runtime exclusions, current trust/quarantine/corruption and explicit unsigned warnings pass. PKG01..05 qualified;45/99 total. No DB/site mutation. Startup release inventory, pure solver/plans, independent approval OS isolation and recoverable lifecycle remain pending G5 work; this is not a G5 exit. Earlier0506342702143Z evidence is retained and superseded.
