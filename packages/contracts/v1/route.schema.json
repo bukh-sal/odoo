@@ -5,12 +5,12 @@
   "properties": {
     "plugin_id": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
       "maxLength": 180
     },
     "page_id": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]{0,63}$"
+      "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
     },
     "path": {
       "type": "string",
@@ -20,7 +20,7 @@
       "type": "object",
       "propertyNames": {
         "type": "string",
-        "pattern": "^[a-z][a-z0-9_]{0,63}$"
+        "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
       },
       "additionalProperties": {
         "type": "string",
@@ -32,7 +32,7 @@
       "type": "object",
       "propertyNames": {
         "type": "string",
-        "pattern": "^[a-z][a-z0-9_]{0,63}$"
+        "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
       },
       "additionalProperties": {
         "type": "string",

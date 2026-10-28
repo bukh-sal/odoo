@@ -1,0 +1,23 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-10-28T06:31:03.683045+00:00",
+  "contract_major": 1,
+  "revision": 7,
+  "frozen_files": 74,
+  "inventory_sha256": "3a5d1099ced91d405f998247dd84fe6042adcfd5f0ba33173a7e570d57aba74c",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "26 contract +50 affected archive/resolver/plan/CLI tests; TypeScript and74-file freeze",
+  "change": "ADR0009 additive operator request/view DTOs; strict absolute-end anchored patterns; valid fixtures/golden plan hash retained.",
+  "runtime_qualification": "No handler or existing G4 image changed. New G5 image and G7 qualify tightened runtime boundaries and operator UI.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "1698ef967302dcb95280226c9edd0b1e3abc8711"
+}

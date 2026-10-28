@@ -40,6 +40,8 @@ class Contracts(unittest.TestCase):
                 Draft202012Validator(json.loads((CONTRACTS/(schema+'.schema.json')).read_text())['$defs'][definition],format_checker=__import__('modular_platform.contracts',fromlist=['FORMAT_CHECKER']).FORMAT_CHECKER).validate(json.loads(path.read_text()))
                 continue
             name = 'manifest' if path.stem.startswith('manifest-') else path.stem
+            if path.stem.startswith('operations-request'):name='operations-request'
+            if path.stem.startswith('operations-view'):name='operations-view'
             validate(name, json.loads(path.read_text()))
 
     def test_authoring_is_data_not_import(self):

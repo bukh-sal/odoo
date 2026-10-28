@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "operation": "prepare",
+  "operation_type": "install",
+  "plugin_id": "org.example.notes",
+  "site_id": "00000000-0000-4000-8000-000000000002",
+  "workspace_ids": [
+    "00000000-0000-4000-8000-000000000003"
+  ],
+  "artifact_version": "0.1.0",
+  "artifact_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "cascade": false
+}

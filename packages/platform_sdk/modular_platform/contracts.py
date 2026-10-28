@@ -251,6 +251,35 @@ def plan_hash(plan):
     return 'sha256:' + hashlib.sha256(canonical_plan(plan)).hexdigest()
 
 
+def validate_operations_view(value):
+    """Strict proposed UI data; never authenticates an OS approval or mirror."""
+    validate('operations-view', value)
+    if value['kind'] == 'prepared':
+        plan=value['plan']
+        if value['operation_id']!=plan['operation_id'] or value['plan_hash']!=plan_hash(plan):
+            raise ContractError('Prepared operation identity/hash mismatch')
+        if set(plan['site_ids'])!={item['site_id'] for item in value['targets']}:
+            raise ContractError('Prepared operation site targets mismatch')
+        if {(item['plugin_id'],item['action']) for item in plan['artifacts']}!={(item['plugin_id'],item['action']) for item in value['targets']}:
+            raise ContractError('Prepared operation artifact targets mismatch')
+        identities=[(item['installation_id'],item['workspace_id']) for item in value['targets']]
+        if len(set(identities))!=len(identities):raise ContractError('Duplicate prepared feature target')
+        if value['native_trusted_code']!=any(item['runtime']=='native' for item in plan['artifacts']):
+            raise ContractError('Prepared native trust description mismatch')
+        if value['restart_required']!=any(item['runtime']=='native' and item['action'] in ('install','upgrade','uninstall','remove') for item in plan['artifacts']):
+            raise ContractError('Prepared restart description mismatch')
+    elif value['kind']=='status':
+        if value['source']=='application_request' and (value['state']!='awaiting_operator_approval' or value['approval_expires_at'] is not None):
+            raise ContractError('Application request does not assert operator approval')
+        if value['state']=='completed' and value['phase']!='completed':raise ContractError('Completed status phase mismatch')
+        if value['state']=='approved' and value['approval_expires_at'] is None:raise ContractError('Approved mirror needs an expiry observation')
+    elif value['kind']=='catalog':
+        for item in value['items']:
+            if item['trust_model']=='unsigned-development' and not item['warnings']:
+                raise ContractError('Unsigned development catalog entry requires a visible warning')
+    return value
+
+
 def validate_binding(binding, requirement, provider):
     validate('binding', binding)
     desired = api_range(requirement['version'], requirement['contract_major'])

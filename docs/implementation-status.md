@@ -2,14 +2,14 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-10-28T06:14:05.276987+00:00
+- Updated UTC: 2026-10-28T06:33:11.433749+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **E / G5 in_progress**. Latest passed gate: **G4**, see `evidence/G4/20261028t033154z/gate-G4.json`.
-- Active item: **E-01c**. OS locks/approval/journal and live feature-approval CLI qualified; next freeze the small operator UI request/status DTOs, then wire app operator queue/read-only status mirror and E-01d staged release/native execution. E-01b UI integration remains pending. No G5 app mutation/apply yet.
-- Working changes: E-01c primitive/CLI checkpoint. Prior scope/read adapter c555b771, initial planning4b7c7101, artifactsb6432951. G4 9b315174 and G2 revision6 e06645a5 remain current.
+- Active item: **E-01c**. OS approval/journal and live feature CLI qualified; G2 revision7 operator UI DTOs/validation correction now qualified. Next: app operator queue, pure preparation using sanitized profile/current metadata, and read-only journal-status mirror; then E-01d staged release/native apply/recovery. E-01b UI integration remains pending. No G5 app mutation/apply yet.
+- Working changes: G2 revision7 checkpoint (74files/26contract +50affected tests/TypeScript). E-01c primitives1698ef96, scope/readc555b771, planning4b7c7101, artifactsb6432951. G4 9b315174 unchanged.
 
 ## Progress estimate
 
@@ -21,7 +21,7 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 | --- | --- | --- | --- | --- |
 | G0 | A: baseline | passed | 10 | `evidence/G0/20261027t234238z/gate-G0.json` |
 | G1 | A1: feasibility | passed | 10 | `evidence/G1/20261028t003753z/gate-G1.json` |
-| G2 | B: contract freeze | passed | 10 | `evidence/G2/20261028T035054399755Z/gate-G2.json` |
+| G2 | B: contract freeze | passed | 10 | `evidence/G2/20261028T0630513883922Z/gate-G2.json` |
 | G3 | C: Notes and shell | passed | 15 | `evidence/G3/20261028t011619z/gate-G3.json` |
 | G4 | D: composition and Canvas | passed | 10 | `evidence/G4/20261028t033154z/gate-G4.json` |
 | G5 | E: lifecycle and packaging | in_progress | 25 | G4; not_run |
@@ -67,6 +67,8 @@ No hard blocker currently. Docker is healthy (Linux/amd64); user increased alloc
 
 ## Resume capsule
 
+- Current G2 revision7 PASSED: evidence/G2/20261028T0630513883922Z/gate-G2.json,74files/26contract+50affectedtests/TypeScript; ADR0009. Two new schemas operations-request/view +four examples andtest_operation_contracts. BeforeUI, fixed confirmed terminal-newline acceptance by replacing172anchored schema patterns across22files with portable absolute-end negative assertion; property-name patterns included. Existing valid fixtures/golden hash unchanged. New validate_operations_view checksplanid/hash/exacttransitive targets/trust/restart; apprequest cannot assertOSapproval; unsignedcatalog requireswarning. CurrentG4image untouched; tighten runtime onnewG5/G7. No new release acceptance/progress credit, still63%,45/99.
+- Next exact implementation: app operator human role (no role-grantHTTP), operationscontext/catalog/prepare/request/status, puremetadata preparation and untrustedappqueue, sanitized profile/publicjournalmirror fromoperator CLI (never mountprivatecontrol store). New DTOcontracts frozen; followADR0009 routes/scopes/authority. Needcontrolled newcoremodel/bootstrap in separate disposableG5site ifnecessary to preserveG4, thenE-01d independently staged code-changing validator/apply/nativebackup/crash/restore/release fencing. No freshG1/G0 restart.
 - Current E-01c checkpoint: operator_os.py +operator_store.py implement authenticated system SID/effectiveUID, protected private control store/allowlist, actual process-held deployment-then-site locks, durable immutable plans/approval/revocation/reservation/journal and mutation-before-child fencing.84host/63Linux tests pass evidence/G5/20261028T0606301178838Z/planning-core.json (host173s, Linux7s). Actual CLI independent reconstruction/incorrect hash denial/approval/revoke +actualapp UID10001/no control mount/socket/CLI/read-write namespace proof evidence/G5/20261028T0604233716373Z/operator-live.json. No apply/DB mutation; final approval REVOKED. Docsoperations.md describes actual limits. Rough63%,45/99 unchanged.
 - Real control store now INITIALIZED at .local/operator/control (policy.json/control.sqlite3/locks). DO NOT init-store or observer --bootstrap again. OS owner allowlist names current disposable deployment/sites; explicit noninteractive qualification policyTrue;15minstarts. All real test approvals revoked. Store is outside app/DB restore domain, app only mounts filestore+config. Init and policy root DACL are ownerSID/System/Admins; Linux0700/0600. Windows fixes: system PowerShell module path must override inherited PowerShell7 PSModulePath; create empty directory before exactDACL because Python mkdir0700 adds OWNER RIGHTS ACE. Existing broad dirs failclosed. Lock-loss cleanup handles an alreadyclosed FD. All fixed and qualified. No control secrets/SID policy is tracked.
 - IndependentValidator/CLI currently accept only unchanged-release native feature enable/suspend after fresh actual observation +full plan reconstruction. Code-changing plans failclosed pendingE-01d staged release adapter. Exact targets/bindings/grants cannot come solely fromapp claims; final apply remains unimplemented. New operations init-store/register/approve/show/revoke-approval available; CLI --noninteractive requires policy +exacthash/acks. Schema fields incheck_bundle now exactfourkeys.
@@ -98,10 +100,10 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | FEAS-02 | A1/G1 | passed | Two tabs, warmed caches and cross-worker revocation preserve workspace/role boundaries | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
 | FEAS-03 | A1/G1 | passed | Minimal custom non-Owl page and native action coexist through the host adapter with correct routing/disposal | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
 | FEAS-04 | A1/G1 | passed | Browser attribution and supported call chains cannot expand authenticated authority | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
-| FREEZE-01 | B/G2 | passed | All seven section 5.5 contract rows have versioned schema/type/example paths and digests, with no critical authority/lifecycle TODO | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T035054399755Z/gate-G2.json` |
-| FREEZE-02 | B/G2 | passed | Manifest, restricted version mapping, alias bindings and approval canonicalization fixtures pass | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T035054399755Z/gate-G2.json` |
-| FREEZE-03 | B/G2 | passed | Frozen workspace/identity/UI contracts agree with passing G1 behavior and documented patch surface | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T035054399755Z/gate-G2.json` |
-| FREEZE-04 | B/G2 | passed | Contract inventory maps owning phases, acceptance IDs, compatibility fixtures and change/invalidation rules | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T035054399755Z/gate-G2.json` |
+| FREEZE-01 | B/G2 | passed | All seven section 5.5 contract rows have versioned schema/type/example paths and digests, with no critical authority/lifecycle TODO | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T0630513883922Z/gate-G2.json` |
+| FREEZE-02 | B/G2 | passed | Manifest, restricted version mapping, alias bindings and approval canonicalization fixtures pass | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T0630513883922Z/gate-G2.json` |
+| FREEZE-03 | B/G2 | passed | Frozen workspace/identity/UI contracts agree with passing G1 behavior and documented patch surface | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T0630513883922Z/gate-G2.json` |
+| FREEZE-04 | B/G2 | passed | Contract inventory maps owning phases, acceptance IDs, compatibility fixtures and change/invalidation rules | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T0630513883922Z/gate-G2.json` |
 | BOOT-01 | A/G0 | passed | Empty volumes initialize and an administrator can log in | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
 | BOOT-02 | A/G0 | passed | A second fresh build reproduces the declared inventory | `tools/r0_repro.py`; `evidence/G0/20261027t234238z/20261028T001455995688Z-reproduction-summary.json` |
 | BOOT-03 | A/G0 | passed | Explicit server-wide module choice works, including RPC omission if selected | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |

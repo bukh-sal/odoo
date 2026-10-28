@@ -1,0 +1,1025 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/operations-view.schema.json",
+  "$defs": {
+    "plan": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "operation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "operation_type": {
+          "enum": [
+            "install",
+            "upgrade",
+            "suspend",
+            "enable",
+            "uninstall",
+            "unregister",
+            "remove",
+            "restore"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z(?![\\s\\S])",
+          "format": "date-time"
+        },
+        "deployment_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "site_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "base_state_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "base_release_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "target_release_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plugin_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+                "maxLength": 180
+              },
+              "version": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])"
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+              },
+              "runtime": {
+                "enum": [
+                  "native",
+                  "external_service"
+                ]
+              },
+              "action": {
+                "enum": [
+                  "install",
+                  "upgrade",
+                  "suspend",
+                  "enable",
+                  "uninstall",
+                  "unregister",
+                  "remove"
+                ]
+              },
+              "native_addon": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "migration_digests": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+                },
+                "maxItems": 1000
+              }
+            },
+            "required": [
+              "plugin_id",
+              "version",
+              "digest",
+              "runtime",
+              "action",
+              "native_addon",
+              "migration_digests"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "dependency_lock_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "generation": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+              }
+            },
+            "required": [
+              "binding_id",
+              "generation",
+              "digest"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "endpoint_config": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
+              },
+              "generation": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+              },
+              "expected_image_digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+              }
+            },
+            "required": [
+              "endpoint_config",
+              "generation",
+              "digest",
+              "expected_image_digest"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "permission_changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plugin_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+                "maxLength": 180
+              },
+              "workspace_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "capability": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+(?![\\s\\S])",
+                "maxLength": 240
+              },
+              "action": {
+                "enum": [
+                  "grant",
+                  "revoke"
+                ]
+              }
+            },
+            "required": [
+              "plugin_id",
+              "workspace_id",
+              "capability",
+              "action"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "trust_changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "artifact_digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+              },
+              "decision": {
+                "enum": [
+                  "approve",
+                  "revoke"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              }
+            },
+            "required": [
+              "artifact_digest",
+              "decision",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "destructive": {
+          "type": "boolean"
+        },
+        "backup": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "policy_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
+            },
+            "retain_previous_release": {
+              "const": true
+            }
+          },
+          "required": [
+            "required",
+            "policy_id",
+            "retain_previous_release"
+          ],
+          "additionalProperties": false
+        },
+        "policy_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "operator_authorization_generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation_id",
+        "operation_type",
+        "created_at",
+        "deployment_id",
+        "site_ids",
+        "base_state_digest",
+        "base_release_digest",
+        "target_release_digest",
+        "artifacts",
+        "dependency_lock_digest",
+        "bindings",
+        "endpoints",
+        "permission_changes",
+        "trust_changes",
+        "destructive",
+        "backup",
+        "policy_version",
+        "operator_authorization_generation"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "installation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "site_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "workspace_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "plugin_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+          "maxLength": 180
+        },
+        "action": {
+          "enum": [
+            "install",
+            "upgrade",
+            "suspend",
+            "enable",
+            "uninstall",
+            "unregister",
+            "remove"
+          ]
+        }
+      },
+      "required": [
+        "installation_id",
+        "site_id",
+        "workspace_id",
+        "plugin_id",
+        "action"
+      ],
+      "additionalProperties": false
+    },
+    "dimension": {
+      "type": "object",
+      "properties": {
+        "plugin_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+          "maxLength": 180
+        },
+        "installation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "workspace_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "artifact_state": {
+          "enum": [
+            "available",
+            "acquired",
+            "verified",
+            "staged",
+            "quarantined",
+            "removed"
+          ]
+        },
+        "release_state": {
+          "enum": [
+            "planned",
+            "built",
+            "qualified",
+            "active",
+            "failed",
+            "retired"
+          ]
+        },
+        "database_state": {
+          "enum": [
+            "not_installed",
+            "installing",
+            "installed",
+            "upgrading",
+            "uninstalling",
+            "failed",
+            "recovery_required"
+          ]
+        },
+        "feature_state": {
+          "enum": [
+            "enabled",
+            "suspended",
+            "degraded",
+            null
+          ]
+        },
+        "service_state": {
+          "enum": [
+            "stopped",
+            "starting",
+            "healthy",
+            "draining",
+            "failed",
+            null
+          ]
+        }
+      },
+      "required": [
+        "plugin_id",
+        "installation_id",
+        "workspace_id",
+        "artifact_state",
+        "release_state",
+        "database_state",
+        "feature_state",
+        "service_state"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "context"
+        },
+        "can_request": {
+          "const": false
+        },
+        "site_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "control_authority": {
+          "const": "independent_local_os"
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "can_request",
+        "site_id",
+        "control_authority"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "context"
+        },
+        "can_request": {
+          "const": true
+        },
+        "site_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "control_authority": {
+          "const": "independent_local_os"
+        },
+        "workspaces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "workspace_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "state": {
+                "enum": [
+                  "active",
+                  "suspended"
+                ]
+              }
+            },
+            "required": [
+              "workspace_id",
+              "name",
+              "state"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "can_request",
+        "site_id",
+        "control_authority",
+        "workspaces"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "catalog"
+        },
+        "snapshot_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "observed_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z(?![\\s\\S])",
+          "format": "date-time"
+        },
+        "stale": {
+          "type": "boolean"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plugin_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+                "maxLength": 180
+              },
+              "version": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])"
+              },
+              "artifact_digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "publisher": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "license": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "runtime": {
+                "enum": [
+                  "native",
+                  "external_service"
+                ]
+              },
+              "trust_model": {
+                "enum": [
+                  "operator-approved-exact-digest",
+                  "unsigned-development"
+                ]
+              },
+              "signature_verified": {
+                "const": false
+              },
+              "warnings": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "maxItems": 10,
+                "minItems": 0
+              },
+              "policy_generation": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "plugin_id",
+              "version",
+              "artifact_digest",
+              "name",
+              "description",
+              "publisher",
+              "license",
+              "runtime",
+              "trust_model",
+              "signature_verified",
+              "warnings",
+              "policy_generation"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 20,
+          "minItems": 0
+        },
+        "next_offset": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "snapshot_digest",
+        "observed_at",
+        "stale",
+        "items",
+        "next_offset"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "prepared"
+        },
+        "operation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "plan_hash": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "plan": {
+          "$ref": "#/$defs/plan"
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "installation_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "site_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "workspace_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "plugin_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+                "maxLength": 180
+              },
+              "action": {
+                "enum": [
+                  "install",
+                  "upgrade",
+                  "suspend",
+                  "enable",
+                  "uninstall",
+                  "unregister",
+                  "remove"
+                ]
+              }
+            },
+            "required": [
+              "installation_id",
+              "site_id",
+              "workspace_id",
+              "plugin_id",
+              "action"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000,
+          "minItems": 1
+        },
+        "declaration_changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plugin_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+                "maxLength": 180
+              },
+              "added_capabilities": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+(?![\\s\\S])",
+                  "maxLength": 240
+                },
+                "maxItems": 1000,
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "added_scopes": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "site",
+                    "workspace"
+                  ]
+                },
+                "maxItems": 2,
+                "minItems": 0,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "plugin_id",
+              "added_capabilities",
+              "added_scopes"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000,
+          "minItems": 0
+        },
+        "native_trusted_code": {
+          "type": "boolean"
+        },
+        "restart_required": {
+          "type": "boolean"
+        },
+        "feature_suspension_unloads_code": {
+          "const": false
+        },
+        "known_unknowns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "maxItems": 20,
+          "minItems": 0
+        },
+        "control_authority": {
+          "const": "independent_local_os"
+        },
+        "observed_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z(?![\\s\\S])",
+          "format": "date-time"
+        },
+        "stale": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "operation_id",
+        "plan_hash",
+        "plan",
+        "targets",
+        "declaration_changes",
+        "native_trusted_code",
+        "restart_required",
+        "feature_suspension_unloads_code",
+        "known_unknowns",
+        "control_authority",
+        "observed_at",
+        "stale"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "status"
+        },
+        "operation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "plan_hash": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "requested_by": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "state": {
+          "enum": [
+            "awaiting_operator_approval",
+            "approved",
+            "running",
+            "completed",
+            "expired",
+            "revoked",
+            "recovery_required",
+            "failed_before_mutation",
+            "authorization_changed"
+          ]
+        },
+        "phase": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]+(?![\\s\\S])",
+          "maxLength": 80
+        },
+        "source": {
+          "enum": [
+            "application_request",
+            "operator_journal_mirror"
+          ]
+        },
+        "observed_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z(?![\\s\\S])",
+          "format": "date-time"
+        },
+        "stale": {
+          "type": "boolean"
+        },
+        "approval_expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z(?![\\s\\S])",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plugin_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+                "maxLength": 180
+              },
+              "installation_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "workspace_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "artifact_state": {
+                "enum": [
+                  "available",
+                  "acquired",
+                  "verified",
+                  "staged",
+                  "quarantined",
+                  "removed"
+                ]
+              },
+              "release_state": {
+                "enum": [
+                  "planned",
+                  "built",
+                  "qualified",
+                  "active",
+                  "failed",
+                  "retired"
+                ]
+              },
+              "database_state": {
+                "enum": [
+                  "not_installed",
+                  "installing",
+                  "installed",
+                  "upgrading",
+                  "uninstalling",
+                  "failed",
+                  "recovery_required"
+                ]
+              },
+              "feature_state": {
+                "enum": [
+                  "enabled",
+                  "suspended",
+                  "degraded",
+                  null
+                ]
+              },
+              "service_state": {
+                "enum": [
+                  "stopped",
+                  "starting",
+                  "healthy",
+                  "draining",
+                  "failed",
+                  null
+                ]
+              }
+            },
+            "required": [
+              "plugin_id",
+              "installation_id",
+              "workspace_id",
+              "artifact_state",
+              "release_state",
+              "database_state",
+              "feature_state",
+              "service_state"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000,
+          "minItems": 0
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sequence": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "utc": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z(?![\\s\\S])",
+                "format": "date-time"
+              },
+              "code": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]+(?![\\s\\S])",
+                "maxLength": 80
+              }
+            },
+            "required": [
+              "sequence",
+              "utc",
+              "code"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 200,
+          "minItems": 0
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Z][A-Z_]+(?![\\s\\S])",
+              "maxLength": 80
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "control_authority": {
+          "const": "independent_local_os"
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "operation_id",
+        "plan_hash",
+        "requested_by",
+        "state",
+        "phase",
+        "source",
+        "observed_at",
+        "stale",
+        "approval_expires_at",
+        "dimensions",
+        "history",
+        "error_code",
+        "control_authority"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

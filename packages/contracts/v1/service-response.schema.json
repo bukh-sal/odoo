@@ -8,11 +8,11 @@
         "data": {},
         "api_version": {
           "type": "string",
-          "pattern": "^[1-9][0-9]*\\.(0|[1-9][0-9]*)$"
+          "pattern": "^[1-9][0-9]*\\.(0|[1-9][0-9]*)(?![\\s\\S])"
         },
         "request_id": {
           "type": "string",
-          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
         },
         "revision": {
           "type": "integer",
@@ -60,7 +60,7 @@
             },
             "request_id": {
               "type": "string",
-              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
             },
             "retryable": {
               "type": "boolean"
@@ -70,11 +70,11 @@
               "properties": {
                 "field": {
                   "type": "string",
-                  "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                  "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
                 },
                 "operation_id": {
                   "type": "string",
-                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
                 },
                 "outcome": {
                   "enum": [

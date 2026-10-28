@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "status",
+  "operation_id": "00000000-0000-4000-8000-000000000010",
+  "plan_hash": "sha256:4588c919d2c45b37971d1dfb98b69cc4f809fa86f9511f7e9c2a2b09a7ee1112",
+  "requested_by": "00000000-0000-4000-8000-000000000005",
+  "state": "awaiting_operator_approval",
+  "phase": "prepared",
+  "source": "application_request",
+  "observed_at": "2026-10-28T06:00:00Z",
+  "stale": false,
+  "approval_expires_at": null,
+  "dimensions": [
+    {
+      "plugin_id": "org.example.notes",
+      "installation_id": "00000000-0000-4000-8000-000000000004",
+      "workspace_id": "00000000-0000-4000-8000-000000000003",
+      "artifact_state": "verified",
+      "release_state": "planned",
+      "database_state": "not_installed",
+      "feature_state": null,
+      "service_state": null
+    }
+  ],
+  "history": [
+    {
+      "sequence": 1,
+      "utc": "2026-10-28T06:00:00Z",
+      "code": "prepared"
+    }
+  ],
+  "error_code": null,
+  "control_authority": "independent_local_os"
+}

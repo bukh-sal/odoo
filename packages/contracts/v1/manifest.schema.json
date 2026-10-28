@@ -11,12 +11,12 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
           "maxLength": 180
         },
         "version": {
           "type": "string",
-          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])"
         },
         "name": {
           "type": "string",
@@ -81,7 +81,7 @@
             },
             "addon_name": {
               "type": "string",
-              "pattern": "^[a-z][a-z0-9_]+$"
+              "pattern": "^[a-z][a-z0-9_]+(?![\\s\\S])"
             },
             "native_compatibility": {
               "const": "odoo-19"
@@ -155,7 +155,7 @@
           "type": "object",
           "propertyNames": {
             "type": "string",
-            "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+            "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
             "maxLength": 180
           },
           "additionalProperties": {
@@ -177,7 +177,7 @@
           "type": "object",
           "propertyNames": {
             "type": "string",
-            "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+            "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
             "maxLength": 180
           },
           "additionalProperties": {
@@ -199,7 +199,7 @@
           "type": "object",
           "propertyNames": {
             "type": "string",
-            "pattern": "^[a-z][a-z0-9_.]+$"
+            "pattern": "^[a-z][a-z0-9_.]+(?![\\s\\S])"
           },
           "additionalProperties": {
             "type": "string",
@@ -214,7 +214,7 @@
             "properties": {
               "capability": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+$",
+                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+(?![\\s\\S])",
                 "maxLength": 240
               },
               "reason": {
@@ -270,7 +270,7 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 240,
-          "pattern": "^[A-Za-z0-9_./-]+$"
+          "pattern": "^[A-Za-z0-9_./-]+(?![\\s\\S])"
         },
         "contributions": {
           "type": "array",
@@ -350,11 +350,11 @@
             "properties": {
               "id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
               },
               "path": {
                 "type": "string",
-                "pattern": "^/[A-Za-z0-9_/-]*$",
+                "pattern": "^/[A-Za-z0-9_/-]*(?![\\s\\S])",
                 "maxLength": 200
               },
               "title_key": {
@@ -377,7 +377,7 @@
                 "type": "string",
                 "minLength": 1,
                 "maxLength": 240,
-                "pattern": "^[A-Za-z0-9_./-]+$"
+                "pattern": "^[A-Za-z0-9_./-]+(?![\\s\\S])"
               },
               "permission": {
                 "type": "string",
@@ -420,11 +420,11 @@
             "properties": {
               "id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
               },
               "page": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
               },
               "label_key": {
                 "type": "string",
@@ -433,7 +433,7 @@
               },
               "icon": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
               },
               "order": {
                 "type": "integer",
@@ -459,7 +459,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*$",
+                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*(?![\\s\\S])",
                 "maxLength": 240
               },
               "major": {
@@ -507,12 +507,12 @@
             "properties": {
               "id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*$",
+                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*(?![\\s\\S])",
                 "maxLength": 240
               },
               "slot_id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*$",
+                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*(?![\\s\\S])",
                 "maxLength": 240
               },
               "slot_major": {
@@ -522,7 +522,7 @@
               },
               "permission": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+$"
+                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+(?![\\s\\S])"
               },
               "label": {
                 "type": "string",
@@ -531,7 +531,7 @@
               },
               "handler": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*$",
+                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*(?![\\s\\S])",
                 "maxLength": 240
               },
               "order": {
@@ -543,7 +543,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*$",
+                  "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*(?![\\s\\S])",
                   "maxLength": 240
                 },
                 "maxItems": 20,
@@ -575,12 +575,12 @@
             "properties": {
               "id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*$",
+                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*(?![\\s\\S])",
                 "maxLength": 240
               },
               "permission": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+$"
+                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+(?![\\s\\S])"
               },
               "label": {
                 "type": "string",
@@ -589,7 +589,7 @@
               },
               "handler": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*$",
+                "pattern": "^[a-z][a-z0-9_.]+:(slot|action|command):[a-z][a-z0-9_]*(?![\\s\\S])",
                 "maxLength": 240
               },
               "input_schema": {
@@ -634,18 +634,18 @@
             "properties": {
               "id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
                 "maxLength": 180
               },
               "api_version": {
                 "type": "string",
-                "pattern": "^[1-9][0-9]*\\.(0|[1-9][0-9]*)$"
+                "pattern": "^[1-9][0-9]*\\.(0|[1-9][0-9]*)(?![\\s\\S])"
               },
               "schema": {
                 "type": "string",
                 "minLength": 1,
                 "maxLength": 240,
-                "pattern": "^[A-Za-z0-9_./-]+$"
+                "pattern": "^[A-Za-z0-9_./-]+(?![\\s\\S])"
               },
               "handler": {
                 "type": "string",
@@ -656,7 +656,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                  "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
                 },
                 "maxItems": 100
               }
@@ -678,11 +678,11 @@
             "properties": {
               "alias": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
               },
               "id": {
                 "type": "string",
-                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
                 "maxLength": 180
               },
               "contract_major": {
@@ -738,11 +738,11 @@
             "properties": {
               "from": {
                 "type": "string",
-                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])"
               },
               "to": {
                 "type": "string",
-                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])"
               },
               "scripts": {
                 "type": "array",
@@ -753,11 +753,11 @@
                       "type": "string",
                       "minLength": 1,
                       "maxLength": 240,
-                      "pattern": "^[A-Za-z0-9_./-]+$"
+                      "pattern": "^[A-Za-z0-9_./-]+(?![\\s\\S])"
                     },
                     "digest": {
                       "type": "string",
-                      "pattern": "^sha256:[0-9a-f]{64}$"
+                      "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
                     },
                     "phase": {
                       "enum": [
@@ -833,11 +833,11 @@
       "properties": {
         "endpoint_config": {
           "type": "string",
-          "pattern": "^[a-z][a-z0-9_]{0,63}$"
+          "pattern": "^[a-z][a-z0-9_]{0,63}(?![\\s\\S])"
         },
         "expected_image": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9._:/-]+@sha256:[0-9a-f]{64}$"
+          "pattern": "^[a-zA-Z0-9._:/-]+@sha256:[0-9a-f]{64}(?![\\s\\S])"
         }
       },
       "required": [
@@ -850,7 +850,7 @@
       "type": "object",
       "propertyNames": {
         "type": "string",
-        "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
         "maxLength": 180
       },
       "additionalProperties": {
