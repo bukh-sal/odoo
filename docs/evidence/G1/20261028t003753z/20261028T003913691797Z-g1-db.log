@@ -1,0 +1,15 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\g1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "up", "-d", "--wait", "db"]
+ Network mp-r0-g18a21ede14068_runtime Creating 
+ Volume mp-r0-g18a21ede14068_pgdata Creating 
+ Network mp-r0-g18a21ede14068_runtime Creating 
+ Volume mp-r0-g18a21ede14068_pgdata Creating 
+ Volume mp-r0-g18a21ede14068_pgdata Created 
+ Volume mp-r0-g18a21ede14068_pgdata Created 
+ Network mp-r0-g18a21ede14068_runtime Created 
+ Network mp-r0-g18a21ede14068_runtime Created 
+ Container mp-r0-g18a21ede14068-db-1 Creating 
+ Container mp-r0-g18a21ede14068-db-1 Created 
+ Container mp-r0-g18a21ede14068-db-1 Starting 
+ Container mp-r0-g18a21ede14068-db-1 Started 
+ Container mp-r0-g18a21ede14068-db-1 Waiting 
+ Container mp-r0-g18a21ede14068-db-1 Healthy 

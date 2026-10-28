@@ -1,0 +1,17 @@
+<odoo>
+    <record id="principal_self" model="ir.rule">
+        <field name="name">Principal mapping: own identity only</field>
+        <field name="model_id" ref="model_mp_principal"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+    <record id="membership_self" model="ir.rule">
+        <field name="name">Membership: own principal only</field>
+        <field name="model_id" ref="model_mp_membership"/>
+        <field name="domain_force">[('principal_id.user_id', '=', user.id)]</field>
+    </record>
+    <record id="workspace_member" model="ir.rule">
+        <field name="name">Workspace: active own membership</field>
+        <field name="model_id" ref="model_mp_workspace"/>
+        <field name="domain_force">[('membership_ids', 'any', [('principal_id.user_id', '=', user.id), ('state', '=', 'active')])]</field>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\g1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "--entrypoint", "python", "maintenance", "odoo-bin", "shell", "-c", "/run/secrets/odoo_config", "-d", "mp_disposable_r0_g1_8a21ede14068", "--no-http", "--workers=0", "--max-cron-threads=0"]
+ Container mp-r0-g18a21ede14068-maintenance-run-95273301a482 Creating 
+ Container mp-r0-g18a21ede14068-maintenance-run-95273301a482 Created 
+2026-10-28 00:39:30,188 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:39:30,188 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:39:30,188 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 00:39:30,189 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:39:30,625 1 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 00:39:30,625 1 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:39:30,641 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:39:30,643 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:39:30,645 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading 12 modules... 
+2026-10-28 00:39:30,714 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: 12 modules loaded in 0.07s, 0 queries (+0 extra) 
+2026-10-28 00:39:30,734 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: Modules loaded. 
+2026-10-28 00:39:30,740 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.registry: Registry loaded in 0.115s 
+MP_G1_RESULT={"credential_id": 1, "database": "mp_disposable_r0_g1_8a21ede14068", "memberships": {"aliceA": 1, "aliceB": 2, "bobB": 3, "workerA": 4}, "objects": {"A": {"id": 1, "public_id": "d2ebeb8f-2323-4f44-9074-36457c310ea8"}, "B": {"id": 2, "public_id": "bf3b4113-556f-4893-bc85-4fc6c779a9b9"}}, "users": {"alice": {"id": 5, "login": "g1_alice", "principal_id": "b4df5483-dff6-43de-91a7-3d6e57261876"}, "bob": {"id": 6, "login": "g1_bob", "principal_id": "01052a89-be40-48b0-86ec-c820dae3b74d"}, "outsider": {"id": 7, "login": "g1_outsider", "principal_id": "575f136f-c489-4827-ac8d-7bce61773362"}, "worker": {"id": 8, "login": "g1_worker", "principal_id": "1bef62e0-6cf7-4e4e-8a21-c021af64e07e"}}, "workspaces": {"A": {"id": 1, "public_id": "cbbedfa9-9e33-435d-9af4-219c7ca9ab59"}, "B": {"id": 2, "public_id": "a19727c2-030f-4b1d-88fd-67018d2c4cc7"}}}

@@ -1,0 +1,17 @@
+<odoo>
+    <template id="host_bootstrap">
+        <t t-call="web.layout">
+            <t t-set="title">Modular Platform · Feasibility</t>
+            <t t-set="head">
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <script type="text/javascript">
+                    odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                    odoo.reloadMenus = () => fetch('/web/webclient/load_menus', {cache:'no-store'}).then(r => r.json());
+                    odoo.loadMenusPromise = odoo.reloadMenus();
+                </script>
+                <t t-call-assets="mp_feas.assets_host"/>
+            </t>
+            <t t-set="body_classname" t-value="'o_web_client mp_feas_host'"/>
+        </t>
+    </template>
+</odoo>

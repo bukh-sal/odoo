@@ -1,0 +1,29 @@
+{
+  "gate": "G1",
+  "state": "passed",
+  "utc": "2026-10-28T00:59:59.435335+00:00",
+  "acceptance": {
+    "FEAS-01": "passed",
+    "FEAS-02": "passed",
+    "FEAS-03": "passed",
+    "FEAS-04": "passed"
+  },
+  "source_identity": "source-identity.json",
+  "backend": "20261028T005744618594Z-backend-feasibility.json",
+  "browser": "browser-proof.json",
+  "r0_regression": "default-r0-policy-regression.json",
+  "environment": {
+    "project": "mp-r0-g18a21ede14068",
+    "database": "mp_disposable_r0_g1_8a21ede14068",
+    "port": 18070,
+    "docker_ram_bytes": 8290807808,
+    "workers": 2
+  },
+  "limitations": [
+    "proof-only addon mp_feas; retire from product distribution after reusable adapters are integrated",
+    "no new upstream substrate patches",
+    "no production SDK or complete native action routing claim; freeze is next",
+    "native RPC result cache disabled; live model scope and keyed record-rule caches exercised",
+    "trusted same-origin and native code are not sandboxed"
+  ]
+}

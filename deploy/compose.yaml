@@ -30,7 +30,7 @@ services:
     cpus: 1
     networks: [runtime]
   app:
-    image: modular-platform:r0
+    image: ${MP_IMAGE:-modular-platform:r0}
     build:
       context: ..
       dockerfile: deploy/Dockerfile
@@ -44,7 +44,7 @@ services:
     cpus: 2
     networks: [runtime]
   maintenance:
-    image: modular-platform:r0
+    image: ${MP_IMAGE:-modular-platform:r0}
     profiles: [maintenance]
     depends_on:
       db: {condition: service_healthy}

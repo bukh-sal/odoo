@@ -32,12 +32,15 @@ def seed_category_metadata(category_file: Path, catalog_file: Path) -> list[str]
         addition = "\n        <!-- Modular Platform: metadata retained for excluded addon categories. -->\n        " + "\n        ".join(records) + "\n    "
         if text.count("</data>") != 1:
             raise ValueError("Unexpected upstream category data layout")
-        category_file.write_text(text.replace("</data>", addition + "</data>"))
+        category_file.write_text(text.replace("</data>", addition + "</data>"), newline="\n")
     return missing
 
 
-def build(source: Path, target: Path) -> dict:
-    policy = json.loads((source / "deploy/distribution.json").read_text())
+def build(source: Path, target: Path, policy_path="deploy/distribution.json") -> dict:
+    policy_file = (source / policy_path).resolve()
+    if not policy_file.is_relative_to(source):
+        raise ValueError("distribution policy must be within the source tree")
+    policy = json.loads(policy_file.read_text())
     if target.exists():
         raise ValueError("distribution target must not exist")
     selected = set(policy["addons"])
@@ -72,7 +75,7 @@ def build(source: Path, target: Path) -> dict:
     for path in sorted(target.rglob("*")):
         if path.is_file():
             inventory["files"][path.relative_to(target).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
-    (target / "distribution-inventory.json").write_text(json.dumps(inventory, sort_keys=True, indent=2) + "\n")
+    (target / "distribution-inventory.json").write_text(json.dumps(inventory, sort_keys=True, indent=2) + "\n", newline="\n")
     return inventory
 
 
@@ -80,6 +83,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
     parser.add_argument("target", type=Path)
+    parser.add_argument("--policy", default="deploy/distribution.json")
     args = parser.parse_args()
-    result = build(args.source.resolve(), args.target.resolve())
+    result = build(args.source.resolve(), args.target.resolve(), args.policy)
     print(json.dumps({"addons": sorted(result["native_addons"]), "file_count": len(result["files"])}))

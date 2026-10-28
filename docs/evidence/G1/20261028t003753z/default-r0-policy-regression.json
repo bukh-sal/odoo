@@ -1,0 +1,17 @@
+{
+  "default_policy_native_inventory_unchanged": true,
+  "files": 3942,
+  "selected_addons": [
+    "auth_passkey",
+    "auth_password_policy",
+    "auth_totp",
+    "base",
+    "base_import",
+    "base_setup",
+    "bus",
+    "mp_compat",
+    "web",
+    "web_tour"
+  ],
+  "scope": "optional policy selection and LF normalization preserve the frozen R0 output; G1 uses separate policy/image/site"
+}

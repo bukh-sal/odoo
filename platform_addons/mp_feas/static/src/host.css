@@ -1,0 +1,8 @@
+.mp_feas_host { background: #f5f6f8; color: #202936; }
+.mp_feas_root { height: 100%; display: flex; flex-direction: column; }
+.mp_feas_root header { display: flex; gap: 20px; align-items: center; padding: 18px 28px; background: white; border-bottom: 1px solid #dce1e8; }
+.mp_feas_root main { flex: 1; min-height: 0; overflow: auto; padding: 28px; }
+.mp_feas_root button, .mp_feas_root select { padding: 8px 12px; margin-right: 10px; }
+.mp_feas_root nav { display: flex; gap: 16px; padding: 12px 28px; }
+.mp_feas_root .mp_proof { padding: 8px 28px; font: 12px monospace; }
+.mp_feas_root pre { margin-top: 20px; background: white; padding: 20px; }

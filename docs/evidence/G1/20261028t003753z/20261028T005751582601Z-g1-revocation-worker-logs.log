@@ -1,0 +1,81 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\g1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "logs", "--no-color", "--since", "2026-10-28T00:57:51.489427+00:00", "app"]
+app-1  | 2026-10-28 00:57:51,508 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,509 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.003 0.006
+app-1  | 2026-10-28 00:57:51,509 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,509 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.004 0.005
+app-1  | 2026-10-28 00:57:51,514 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,514 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.002 0.003
+app-1  | 2026-10-28 00:57:51,515 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,515 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.003
+app-1  | 2026-10-28 00:57:51,518 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,518 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,518 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,518 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,522 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,522 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,522 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,522 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,526 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,526 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,526 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,526 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,530 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,530 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,530 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,530 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,533 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,533 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,534 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,534 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,537 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,537 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,537 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,537 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.002 0.002
+app-1  | 2026-10-28 00:57:51,541 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,541 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,541 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,541 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,544 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,544 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,544 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,544 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,548 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,548 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,548 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,548 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,552 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,552 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,552 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,552 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,555 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,555 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,555 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,555 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,559 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,559 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,559 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,559 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,562 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,562 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,562 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,562 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,566 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,566 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,567 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,567 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.003
+app-1  | 2026-10-28 00:57:51,569 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,569 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,570 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,570 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,573 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,574 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.002 0.002
+app-1  | 2026-10-28 00:57:51,574 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,574 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,577 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,577 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,577 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,577 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,581 10 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,581 9 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.http: Operation not permitted in current workspace 
+app-1  | 2026-10-28 00:57:51,581 10 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002
+app-1  | 2026-10-28 00:57:51,581 9 INFO mp_disposable_r0_g1_8a21ede14068 werkzeug: 172.21.0.4 - - [28/Oct/2026 00:57:51] "POST /web/dataset/call_kw/mp.feas.record.write HTTP/1.1" 200 - 3 0.001 0.002

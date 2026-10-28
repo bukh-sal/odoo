@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 ARG PYTHON_IMAGE=python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
 FROM ${PYTHON_IMAGE} AS builder
+ARG DISTRIBUTION_POLICY=deploy/distribution.json
 ARG DEBIAN_SNAPSHOT=20261027T000000Z
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 PIP_NO_CACHE_DIR=1 PYTHONDONTWRITEBYTECODE=1
 RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/%s/ bookworm main\ndeb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/%s/ bookworm-security main\n' "$DEBIAN_SNAPSHOT" "$DEBIAN_SNAPSHOT" > /etc/apt/sources.list \
@@ -16,7 +17,7 @@ RUN python -m pip install --require-hashes -r /locks/build-requirements.lock \
     && /venv/bin/python -m pip install --no-build-isolation --require-hashes -r /locks/requirements.lock \
     && /venv/bin/python -m pip check
 COPY . /source
-RUN python /source/tools/build_distribution.py /source /release
+RUN python /source/tools/build_distribution.py /source /release --policy "$DISTRIBUTION_POLICY"
 
 FROM ${PYTHON_IMAGE} AS runtime
 ARG DEBIAN_SNAPSHOT=20261027T000000Z

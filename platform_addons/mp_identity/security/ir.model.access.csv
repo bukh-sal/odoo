@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+principal_self_read,principal.self.read,model_mp_principal,base.group_user,1,0,0,0
+workspace_member_read,workspace.member.read,model_mp_workspace,base.group_user,1,0,0,0
+membership_self_read,membership.self.read,model_mp_membership,base.group_user,1,0,0,0
+principal_operator,principal.operator,model_mp_principal,base.group_system,1,1,1,1
+workspace_operator,workspace.operator,model_mp_workspace,base.group_system,1,1,1,1
+membership_operator,membership.operator,model_mp_membership,base.group_system,1,1,1,1
+workspace_plugin_operator,workspace.plugin.operator,model_mp_workspace_plugin,base.group_system,1,1,1,1
+service_credential_operator,service.credential.operator,model_mp_service_credential,base.group_system,1,1,1,1

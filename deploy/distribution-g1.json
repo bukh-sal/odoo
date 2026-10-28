@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+  "server_wide_modules": ["base", "web"],
+  "addons": ["base", "web", "base_setup", "auth_totp", "auth_passkey", "auth_password_policy", "base_import", "bus", "web_tour", "mp_compat", "mp_identity", "mp_feas"],
+  "explicit_install": ["web", "auth_password_policy", "mp_feas"],
+  "profile": "G1 disposable feasibility; mp_feas is not a release application"
+}

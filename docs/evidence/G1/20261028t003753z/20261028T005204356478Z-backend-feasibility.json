@@ -1,0 +1,118 @@
+{
+  "state": "passed",
+  "scope": "G1 backend proof only; browser/contract freeze still pending",
+  "checks": [
+    {
+      "name": "same backing user has asymmetric roles",
+      "result": "passed"
+    },
+    {
+      "name": "warmed native searches and aggregates stay in intended workspace",
+      "result": "passed"
+    },
+    {
+      "name": "viewer cannot create",
+      "result": "passed"
+    },
+    {
+      "name": "viewer cannot update",
+      "result": "passed"
+    },
+    {
+      "name": "viewer cannot delete",
+      "result": "passed"
+    },
+    {
+      "name": "missing workspace fails closed",
+      "result": "passed"
+    },
+    {
+      "name": "nonmember cannot select workspace",
+      "result": "passed"
+    },
+    {
+      "name": "cross-workspace read rejected",
+      "result": "passed"
+    },
+    {
+      "name": "cross-workspace write rejected",
+      "result": "passed"
+    },
+    {
+      "name": "cross-workspace unlink rejected",
+      "result": "passed"
+    },
+    {
+      "name": "forged create owner rejected",
+      "result": "passed"
+    },
+    {
+      "name": "ownership transfer rejected",
+      "result": "passed"
+    },
+    {
+      "name": "foreign many2one rejected",
+      "result": "passed"
+    },
+    {
+      "name": "foreign many2many link rejected",
+      "result": "passed"
+    },
+    {
+      "name": "foreign many2many set rejected",
+      "result": "passed"
+    },
+    {
+      "name": "forged platform context rejected",
+      "result": "passed"
+    },
+    {
+      "name": "editor native CRUD succeeds without core patch",
+      "result": "passed"
+    },
+    {
+      "name": "gateway CRUD and forbidden/not-found consistency",
+      "result": "passed"
+    },
+    {
+      "name": "forged actor/sudo/company context cannot grant authority",
+      "result": "passed"
+    },
+    {
+      "name": "broad group rule cannot widen global workspace scope",
+      "result": "passed"
+    },
+    {
+      "name": "gateway viewer denial",
+      "result": "passed"
+    },
+    {
+      "name": "provider chain preserves viewer authority",
+      "result": "passed"
+    },
+    {
+      "name": "scoped technical identity cannot create or switch workspace",
+      "result": "passed"
+    },
+    {
+      "name": "committed role revocation affects fresh concurrent requests",
+      "result": "passed",
+      "details": {
+        "worker_pids": [
+          "10",
+          "9"
+        ],
+        "elapsed_seconds": 0.438,
+        "denied_requests": 40
+      }
+    },
+    {
+      "name": "revoked membership denies both native and context routes",
+      "result": "passed"
+    },
+    {
+      "name": "feature suspension gates both transports and preserves records",
+      "result": "passed"
+    }
+  ]
+}

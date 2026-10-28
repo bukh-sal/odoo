@@ -1,0 +1,32 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\g1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "--entrypoint", "python", "maintenance", "odoo-bin", "-c", "/run/secrets/odoo_config", "-d", "mp_disposable_r0_g1_8a21ede14068", "-i", "mp_feas", "--stop-after-init", "--no-http", "--workers=0", "--without-demo"]
+ Container mp-r0-g18a21ede14068-maintenance-run-303fc06321e4 Creating 
+ Container mp-r0-g18a21ede14068-maintenance-run-303fc06321e4 Created 
+2026-10-28 00:39:27,727 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:39:27,727 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:39:27,727 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 00:39:27,727 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:39:28,182 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:39:28,186 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:39:28,207 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: updating modules list 
+2026-10-28 00:39:28,208 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-10-28 00:39:28,227 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Disposable Workspace Feasibility'] to user __system__ #1 via n/a 
+2026-10-28 00:39:28,236 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading 12 modules... 
+2026-10-28 00:39:28,306 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: Loading module mp_identity (11/12) 
+2026-10-28 00:39:28,332 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.registry: module mp_identity: creating or updating database tables 
+2026-10-28 00:39:28,447 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading mp_identity/security/ir.model.access.csv 
+2026-10-28 00:39:28,454 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading mp_identity/security/rules.xml 
+2026-10-28 00:39:28,469 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: Module mp_identity loaded in 0.16s, 258 queries (+258 other) 
+2026-10-28 00:39:28,469 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: Loading module mp_feas (12/12) 
+2026-10-28 00:39:28,472 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.registry: module mp_feas: creating or updating database tables 
+2026-10-28 00:39:28,483 1 WARNING mp_disposable_r0_g1_8a21ede14068 odoo.addons.base.models.ir_model: Two fields (peer_ids, peer_id) of mp.feas.record() have the same label: Peer. [Modules: mp_feas and mp_feas] 
+2026-10-28 00:39:28,509 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading mp_feas/security/ir.model.access.csv 
+2026-10-28 00:39:28,513 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading mp_feas/security/rules.xml 
+2026-10-28 00:39:28,517 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: loading mp_feas/views/records.xml 
+2026-10-28 00:39:28,537 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: Module mp_feas loaded in 0.07s, 131 queries (+131 other) 
+2026-10-28 00:39:28,537 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: 12 modules loaded in 0.30s, 389 queries (+389 extra) 
+2026-10-28 00:39:28,614 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.modules.loading: Modules loaded. 
+2026-10-28 00:39:28,619 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.registry: Registry changed, signaling through the database 
+2026-10-28 00:39:28,621 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.registry: Registry loaded in 0.461s 
+2026-10-28 00:39:28,621 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.service.server: Initiating shutdown 
+2026-10-28 00:39:28,621 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:39:28,621 1 INFO mp_disposable_r0_g1_8a21ede14068 odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=12): Closed 1 connections  

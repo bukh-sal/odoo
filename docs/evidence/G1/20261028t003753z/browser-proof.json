@@ -1,0 +1,38 @@
+{
+  "state": "passed",
+  "tool": "cua real in-app Chromium browser",
+  "observed_utc": "2026-10-28T00:59:10.008Z",
+  "tabs": [
+    "2",
+    "3"
+  ],
+  "sameSessionHuman": "g1_alice",
+  "roles": {
+    "A": "editor",
+    "B": "viewer"
+  },
+  "observations": [
+    "separate URL workspace in two tabs; only own records displayed",
+    "native action loaded and rendered through View adapter in A and B; viewer New action absent",
+    "browser forged actor/provider attribution denied FORBIDDEN for viewer",
+    "deep link reload custom and native, browser back and forward",
+    "route detail updates without remount",
+    "at least three native/custom dispose/remount cycles",
+    "delayed completed request discarded on workspace generation change; stale_discarded=1",
+    "missing URL workspace prevents business mount",
+    "committed membership revocation clears active page and private data; independent tab B remains usable"
+  ],
+  "revocation": {
+    "commitObservedByUtc": "2026-10-28T00:58:11.018180+00:00",
+    "visibleUtc": "2026-10-28T00:58:16.288Z",
+    "elapsedUpperBoundSeconds": 5.27,
+    "privateRecordCountAfter": 0,
+    "restoredFixture": true
+  },
+  "consoleWarningsErrors": [],
+  "limitations": [
+    "G1-only fixture, not production host SDK or complete native action navigation",
+    "native RPC result caching disabled; model record-rule cache and two-worker invalidation exercised by backend probe",
+    "no streams in G1; open-page authority refresh every five seconds"
+  ]
+}

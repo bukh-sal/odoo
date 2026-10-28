@@ -1,0 +1,6 @@
+{
+  "workspace": "A",
+  "policy": "revoked",
+  "commit_observed_by_utc": "2026-10-28T00:58:11.018180+00:00",
+  "evidence": "docs\\evidence\\G1\\20261028t003753z\\20261028T005809121980Z-g1-browser-policy-A-revoked.log"
+}

@@ -1,0 +1,2 @@
+COMMAND: ["docker", "volume", "create", "--label", "com.modular.disposable=mp-r0-g18a21ede14068", "mp-r0-g18a21ede14068_proxyconfig"]
+mp-r0-g18a21ede14068_proxyconfig

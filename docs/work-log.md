@@ -95,3 +95,16 @@ Next: cached rebuild, focused concurrent proof, remaining lifecycle/restore chai
 Corrected ten-addon source/runtime inventories match in an independent uncached image; a second fresh DB reproduces exact installed versions; native registries/parameters remain distinct. Final source also passes concurrent cross-worker signaling, post-commit failure, DB+filestore/image restore, attachment/value checks and cascading uninstall. Browser verifies styled login/authenticated client and rejects old restored session. Regression, generated-credential exclusion and private raw-backup checks pass. Gate record: docs/evidence/G0/20261027t234238z/gate-G0.json.
 
 R0 is complete; this is not R1 completion. Rough weighted effort 10%; 5/99 release observations passed. Next ready item A1-01 is the small workspace authorization feasibility proof. No blocked gate, no permission decision needed, continue within the authorized goal.
+
+## 2026-10-28T00:51:42.540159+00:00 / A1-01 / backend authorization proof
+
+Separate G1 project mp-r0-g18a21ede14068 / DB mp_disposable_r0_g1_8a21ede14068 / loopback 18070 installed and provisioned successfully. First 22 backend cases passed: asymmetric roles, CRUD/search/aggregates, foreign ownership/relation rejection, native context spoof denial, gateway/provider-chain restrictions, scoped technical identity, role revocation and suspension.
+
+Expanded proof also passed positive gateway CRUD, forbidden/not-found consistency, forged user/sudo/company context, and a deliberately broad native group rule with a required global scope rule. Concurrent revocation denial was observed on both HTTP workers. A later assertion caught a representation defect: revoked membership was denied, but the HTTP context route inherited an HTML 403 from pre-dispatch instead of a typed public error. Fixed by preserving a failed authoritative scope for HTTP boundary normalization; scoped model access still fails closed, and native dataset errors retain their JSON-RPC path.
+
+Next: rebuild/restart only the G1 candidate and rerun expanded backend cases. G0 baseline/image/site remain separate and unchanged. Broader schemas stay unfrozen until G1 browser/custom-host proof.
+
+- A1-01: expanded backend proof passed 26 checks (20261028T005204356478Z), including two-worker revocation, typed revoked-context denial and feature suspension. Default policy regression passed: 3942 native files unchanged from frozen R0. G1 remains open for browser proof.
+- A1-02: implemented a G1-only root using the replaceable entrypoint, plain JS mount/dispose and concentrated native action-to-View adapter; no upstream frontend edits. Native RPC cache disabled in this proof; scope all native transport per tab. Next build, explicit fixture addon upgrade and browser checks.
+
+- A1-02/G1 passed: real tabs preserve asymmetric roles and workspace data; native action/View adapter works in both, custom/native deep links and history work, three remount cycles and stale-completed-response discard observed. Membership revocation committed externally cleared private A in <=5.27s while B remained usable. No core source patches. Evidence gate-G1.json. Next B-01 contract freeze, progress20% / 9 of99 acceptance.
