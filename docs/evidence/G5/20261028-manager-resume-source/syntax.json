@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "--check",
+    "--input-type=module"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

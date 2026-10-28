@@ -1,0 +1,19 @@
+{
+  "provider_format": "JPEG",
+  "corrected_extensions_without_changing_bytes": [
+    "alice-denied.jpg",
+    "completed-after-refresh.jpg",
+    "completed-reentered.jpg",
+    "native-empty-list.jpg",
+    "native-form.jpg",
+    "requested.jpg",
+    "running-stale.jpg"
+  ],
+  "visual_proof": [
+    "completed-reentered.jpg",
+    "native-form-final.jpg"
+  ],
+  "limits": [
+    "Earliest fullPage captures can reflect a preceding compositor frame; use later settled screenshots and DOM/API records. No product layout change was made for this capture behavior."
+  ]
+}

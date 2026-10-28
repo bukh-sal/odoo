@@ -1,0 +1,14 @@
+{
+  "result": "passed_syntax_only",
+  "utc": "2026-10-28T20:20:04.594407+00:00",
+  "source_sha256": "a2823c2c61bbcc4cf7ba9105ad1fe29708f1f34eeb20f05e307775cac83efdc3",
+  "command": [
+    "node",
+    "--check",
+    "--input-type=module"
+  ],
+  "exit_code": 0,
+  "limitations": [
+    "No browser or native Owl/runtime qualification is claimed."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "tests\\test_operations_resume.mjs"
+  ],
+  "exit_code": 0,
+  "stdout": "\u2714 activation reload restores the same owned operation and continues polling without a prepared form (2.8971ms)\n\u2714 another principal never loads the previous actor resume hint (0.2146ms)\n\u2714 role revocation and own-request denial clear the hint without exposing a result (0.3699ms)\n\u2714 an uncertain request resumes using the same nonce and never invents approval (0.8761ms)\n\u2714 extra authority fields in storage are ignored rather than sent to an API (0.2353ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 82.2868\n",
+  "stderr": ""
+}

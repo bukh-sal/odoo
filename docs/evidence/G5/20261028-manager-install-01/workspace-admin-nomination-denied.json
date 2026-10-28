@@ -1,0 +1,11 @@
+{
+  "result": "passed_bounded_app_role_denial",
+  "actor": "alice",
+  "workspace_role": "administrator",
+  "context_can_request": false,
+  "native_install_prepare_http": 403,
+  "error_code": "FORBIDDEN",
+  "limits": [
+    "OS deployment/store denial and forged-approval checks are separate; this record alone does not pass all ID06."
+  ]
+}

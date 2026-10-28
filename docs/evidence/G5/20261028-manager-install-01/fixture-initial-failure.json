@@ -1,0 +1,9 @@
+{
+  "result": "failed_fixture_provisioning_rolled_back",
+  "utc": "2026-10-28T20:35:50.908112+00:00",
+  "failure": "mp_workspace.slug NOT NULL; initial SQL omitted inherited core workspace defaults",
+  "reconciled_new_workspace_count": 0,
+  "existing_business_impact": "none; transaction aborted before commit",
+  "finding": "Base identity model alone omits core workspace slug/default_locale/timezone extension. Inspect full model/schema, then supply fixed fixture defaults under the same nominated UUID; no retry on unchanged SQL.",
+  "stage_selection": "Current image stage command succeeded separately after failed setup; no installation/approval/application mutation."
+}

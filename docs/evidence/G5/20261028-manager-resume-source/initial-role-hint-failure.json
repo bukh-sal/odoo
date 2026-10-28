@@ -1,0 +1,16 @@
+{
+  "result": "failed",
+  "command": [
+    "node",
+    "--test",
+    "tests/test_operations_resume.mjs"
+  ],
+  "utc": "2026-10-28T20:28:23.974221+00:00",
+  "source_sha256": "d0b24a0b7fe66ec85bdd48fa753d0c77843ee0994a522b07051f74eae3294603",
+  "tests": 5,
+  "passed": 4,
+  "failed": 1,
+  "failure": "role revocation and own-request denial clear the hint without exposing a result: storage.has(key) true !== false",
+  "finding": "First load with can_request=false does not assign site context before denied(); the actor/site resume key is unavailable for cleanup. No status fetched or approval granted.",
+  "next_hypothesis": "Assign the authenticated server context before checking can_request, then existing denied clears the exact actor/site hint."
+}

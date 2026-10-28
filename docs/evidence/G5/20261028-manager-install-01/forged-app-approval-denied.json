@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "fabricated_app_mirror_state": "approved",
+  "independent_state": "awaiting_operator_approval",
+  "base_state_unchanged": true,
+  "cli_denial": {
+    "error": "VALIDATION_FAILED",
+    "message": "Operation cannot start or continue without reconciliation"
+  }
+}

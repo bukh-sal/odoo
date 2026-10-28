@@ -1,0 +1,19 @@
+{
+  "state": "created_empty",
+  "workspace_id": "b49d1849-2fbc-4b71-8541-7eea59e771dc",
+  "name": "G5 manager install fixture b49d1849",
+  "generation": 27,
+  "database": "mp_disposable_r0_r1_restore_9c577916f75c4e06ae8ed62444fcca48",
+  "actors": [
+    "operator",
+    "alice"
+  ],
+  "purpose": "Explicit empty reference workspace for native manager install/authority/reload qualification; original A/B preserved",
+  "utc": "2026-10-28T20:35:12.364388+00:00",
+  "result": {
+    "name": "G5 manager install fixture b49d1849",
+    "features": 0,
+    "memberships": 2,
+    "workspace_id": "b49d1849-2fbc-4b71-8541-7eea59e771dc"
+  }
+}

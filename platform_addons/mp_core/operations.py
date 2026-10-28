@@ -17,6 +17,7 @@ from modular_platform.planning_cli import prepare_document
 from modular_platform.plans import check_bundle
 from modular_platform.projection import project_deployment
 from modular_platform.resolution import dependent_closure, binding_matches_scope
+from modular_platform.manager_planning import prepare_manager_native
 
 from .controllers import PublicError, bounded_body, principal, result, site_id
 
@@ -93,7 +94,8 @@ def profile_document():
     record=request.env['mp.operation.profile'].sudo().search([('site_public_id','=',site_id())],limit=1)
     if not record:raise PublicError('DEPENDENCY_UNAVAILABLE')
     profile=record.payload
-    if not isinstance(profile,dict) or set(profile)!={'schema_version','configuration','runtime','catalog','observed_at'} or profile['schema_version']!=1:
+    required={'schema_version','configuration','runtime','catalog','observed_at'}
+    if not isinstance(profile,dict) or not required<=profile.keys() or not profile.keys()<=required|{'staged_release'} or profile['schema_version']!=1:
         raise ContractError('Invalid sanitized profile')
     if site_id() not in profile['configuration']['site_ids']:raise AccessError('Profile site mismatch')
     # A cache from another code release cannot silently prepare operations here.
@@ -153,8 +155,10 @@ class Operations(http.Controller):
             request.env.cr.execute("SELECT count(*) FROM mp_operation_request WHERE requested_by=%s AND create_date>=timezone('UTC',now())-interval '1 minute'",[actor[0]])
             if request.env.cr.fetchone()[0]>=10:raise PublicError('RATE_LIMITED')
             document,profile,metadata=profile_document()
-            # Code-changing preparation is added with the independently staged
-            # E-01d release adapter; it cannot execute through this web handler.
+            if nomination['operation_type'] in ('install','upgrade'):
+                bundle=prepare_manager_native(document,[metadata],profile['catalog'],profile['runtime'],profile.get('staged_release'),
+                    nomination,operation_id=str(uuid4()),created_at=stamp())
+                return _save_prepared(bundle,document,actor,profile)
             if nomination['operation_type'] not in ('suspend','enable'):raise PublicError('DEPENDENCY_UNAVAILABLE')
             plugin=nomination['plugin_id'];wanted=set(nomination['workspace_ids']);targets=[]
             for workspace in sorted(wanted):
@@ -184,14 +188,7 @@ class Operations(http.Controller):
                     targets.append({key:installation[key] for key in ('installation_id','site_id','workspace_id','plugin_id')}|{'action':nomination['operation_type']})
             document['request']={'operation_type':nomination['operation_type'],'requested':{},'targets':targets,
                                  'operation_id':str(uuid4()),'created_at':stamp()}
-            bundle=prepare_document(document,profile['catalog']);dimensions=[]
-            for target in targets:
-                existing=next(item for item in document['state']['installations'] if item['installation_id']==target['installation_id'] and item['workspace_id']==target['workspace_id'])
-                dimensions.append({'plugin_id':target['plugin_id'],'installation_id':target['installation_id'],'workspace_id':target['workspace_id'],
-                    'artifact_state':'verified','release_state':'active','database_state':existing['state'],'feature_state':existing['feature_state'],'service_state':None})
-            request.env['mp.operation.request'].sudo().create({'public_id':bundle['plan']['operation_id'],'site_public_id':site_id(),
-                'requested_by':actor[0],'plan_hash':bundle['plan_hash'],'bundle':bundle,'base_state':document['state'],'dimensions':dimensions})
-            return prepared_view(bundle,observed_at=profile['observed_at'],stale=_stale(profile['observed_at']))
+            return _save_prepared(prepare_document(document,profile['catalog']),document,actor,profile)
         return result(run)
 
     @http.route('/api/v1/operations/request',type='http',auth='public',methods=['POST'],csrf=False,max_content_length=65536)
@@ -220,6 +217,18 @@ class Operations(http.Controller):
 
 def _stale(observed_at, seconds=900):
     return (datetime.now(timezone.utc)-datetime.fromisoformat(observed_at.replace('Z','+00:00'))).total_seconds()>seconds
+
+
+def _save_prepared(bundle,document,actor,profile):
+    dimensions=[]
+    for target in bundle['operation_lock']['targets']:
+        existing=next((item for item in document['state']['installations'] if item['installation_id']==target['installation_id'] and item['workspace_id']==target['workspace_id']),None)
+        dimensions.append({'plugin_id':target['plugin_id'],'installation_id':target['installation_id'],'workspace_id':target['workspace_id'],
+            'artifact_state':'verified','release_state':'planned' if 'staged_image' in bundle['operation_lock'] else 'active',
+            'database_state':existing['state'] if existing else 'not_installed','feature_state':existing['feature_state'] if existing else None,'service_state':None})
+    request.env['mp.operation.request'].sudo().create({'public_id':bundle['plan']['operation_id'],'site_public_id':site_id(),
+        'requested_by':actor[0],'plan_hash':bundle['plan_hash'],'bundle':bundle,'base_state':document['state'],'dimensions':dimensions})
+    return prepared_view(bundle,observed_at=profile['observed_at'],stale=_stale(profile['observed_at']))
 
 
 def _status(row,actor):

@@ -1,0 +1,33 @@
+{
+  "operation_type": "core_upgrade",
+  "targets": [
+    {
+      "installation_id": "4a901771-b72c-5ab4-9555-75e4c478d890",
+      "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+      "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+      "plugin_id": "org.example.canvas",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+      "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+      "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+      "plugin_id": "org.example.notes_labels",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+      "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+      "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+      "plugin_id": "org.example.notes",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "a966df46-b0fa-5e07-9591-f64f25b9fae0",
+      "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+      "workspace_id": "efb30aaf-6120-4fde-9410-80c2bcfa50a5",
+      "plugin_id": "org.example.notes",
+      "action": "deploy"
+    }
+  ]
+}

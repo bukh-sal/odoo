@@ -1,6 +1,6 @@
 # Independent operator control: G5 implementation status
 
-E-01c primitives, the app operator frame/authority subset, and current-image native installation/checkpoint/fresh-target recovery are qualified in separate records. UI queue-to-apply/status, new-image staging/upgrade/uninstall, startup/client release fencing and the full fault matrix remain in progress. See [status](implementation-status.md); this document does not declare G5 passed.
+The independent store, staged native executor, guarded startup, client release fencing, checkpoint/fresh-target recovery and immutable host assets are qualified in separate records. The manager now prepares staged native install/upgrade proposals; its actual scoped installation/authority/status-refresh flow is qualified. Fresh native initialization, actual manager package upgrade and upload/details qualification remain in progress. Uninstall and the full fault/security/release matrix remain open. See [status](implementation-status.md) for the current gate and target.
 
 The control store lives outside the application database and its restore domain. On this Windows workstation it is `.local/operator/control`, with an explicit owner SID/SYSTEM/Administrators DACL. Linux uses an owning UID and0700 directories/0600 records. OS identity comes from the authenticated system SID/effective UID rather than user-supplied environment names. Existing broadly accessible directories are rejected rather than silently changing their permissions. Store records reject links/junctions/hard-link aliases.
 
@@ -69,3 +69,31 @@ Independent staged candidates are now available for review/planning:
 The nomination has exactly `operation_type` (install/upgrade) and `targets` (exact installation/site/workspace/plugin/action tuples). The independently selected image supplies exact artifact/Python/runtime roots; the browser cannot select arbitrary commands/images/configuration. Stage inspection imports no plugin code, uses no network/live volumes, verifies image inventory plus ZIP/native bytes against the catalog, and records the immutable candidate outside DB restore. The complete lock/review includes the image and stage digests. A different selected candidate/base config/image invalidates an old plan. New workspace scopes infer a provider only when exactly one compatible provider exists; ambiguity requires explicit binding rather than first/latest fallback.
 
 The existing register/approve commands can independently review these staged bundles. **Actual staged execution is still pending the new-image adapter.** The current-image apply path rejects a staged descriptor before reservation/mutation; it cannot accidentally install using the old image. Do not manually promote a candidate or treat staging/approval as a successful native upgrade. The qualification test approvals were revoked. [ADR0011](architecture-decisions/0011-independent-staged-images.md) records the preimage and verification boundaries; [actual different-image record](evidence/G5/20261028T1134474357326Z-candidate-staging/staged-planning.json) records the observed limits.
+
+## Manager native installation and upgrade
+
+Use the manager only with an application image supporting ADR0019. The independent local operator first acquires/validates curated artifacts and builds or selects an immutable runtime image. Upload validation does not execute code or install an artifact. Select the candidate using the existing private control store, then publish its sanitized planning preview. Set `$candidateImageId` to the actual inspected immutable `sha256:...` image ID before running:
+
+```powershell
+.venv/Scripts/python.exe tools/modular.py --config .local/operator/trust.json plugin stage-image --image-id $candidateImageId --store .local/operator/control --deployment-config .local/operator/targets/g5.json --catalog .local/operator/catalog
+.venv/Scripts/python.exe tools/publish_profile.py --target .local/operator/targets/g5.json --staged
+```
+
+For a plugin already present in the selected runtime, the candidate may be the current image. For a version upgrade, select an image containing the exact validated newer package. An incompatible or changed core requires its separate versioned core_upgrade before the plugin flow. Independent staging checks curated bytes and runtime inventory; the preview copies only the digest descriptor and runtime metadata. It carries no approval or private local paths. Ordinary activation/recovery publication clears it.
+
+Sign in as an application operator, open Operations, select the exact plugin/version, install or upgrade, and target workspace. Review all shared workspace targets, transitive changes, artifacts, migration counts, permission expansion, data-risk warnings and checkpoint requirement. Include dependent changes explicitly when the proposed closure needs other plugins. Suspended scopes remain suspended during a shared native upgrade; missing or suspended required providers must be resolved explicitly. Download the full plan and bindings, then Request operation. Workspace administration alone does not confer application-operator or local OS authority.
+
+Set `$operationId` and `$planHash` to the exact values shown in the requested plan. Import and inspect it locally, then approve and apply the same operation:
+
+```powershell
+.venv/Scripts/python.exe tools/modular.py --config .local/operator/trust.json operations import-request $operationId --store .local/operator/control --deployment-config .local/operator/targets/g5.json --catalog .local/operator/catalog
+.venv/Scripts/python.exe tools/modular.py --config .local/operator/trust.json operations approve $operationId --plan-hash $planHash --ack-trust --store .local/operator/control --deployment-config .local/operator/targets/g5.json --catalog .local/operator/catalog
+.venv/Scripts/python.exe tools/modular.py --config .local/operator/trust.json plugin apply $operationId --store .local/operator/control --deployment-config .local/operator/targets/g5.json --catalog .local/operator/catalog
+.venv/Scripts/python.exe tools/modular.py --config .local/operator/trust.json operations mirror-status $operationId --store .local/operator/control --deployment-config .local/operator/targets/g5.json --catalog .local/operator/catalog
+```
+
+Approval revalidates the current deployment, private stage, catalog/trust and exact hash and asks for confirmation. Add explicit permission/destructive acknowledgements when the reviewed plan requires them. Unattended qualification additionally needs the existing operator policy and --noninteractive; the browser cannot enable that policy or supply approval. A fabricated app status does not authorize apply. Native Python remains fully trusted inside the application runtime.
+
+During maintenance, the UI may show stale progress or temporary unavailability; inspect the independent journal. After activation, use the existing explicit release refresh. The manager retains only its operation ID/request nonce scoped to principal and site and reloads the owned status through fresh authentication/role checks. It can continue polling after the prepared form is gone, and explicit retry of an uncertain nomination reuses the same request nonce. Changing actors or losing authority does not reveal another actor's operation. If browser storage is unavailable, retain the displayed ID and inspect the local journal.
+
+On any interrupted apply, inspect the private journal, stage/child records and current target before retrying. A completed same-ID apply returns its saved result. A possible commit with recovery_required uses the separately reviewed fresh-target restore/resume protocol; never overwrite/reset the live target or rerun an uncertain migration. Standard record screens continue using native Odoo views. Canvas remains a minimal custom-page reference. This procedure does not replace the remaining G5 acceptance matrix.

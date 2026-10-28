@@ -1,0 +1,115 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace" [selected]
+    - option "Personal"
+    - option "Research"
+    - option "G5 manager install fixture b49d1849"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Plugin operations":
+    - paragraph: Prepare a plan, request the operation, then use local operator approval and apply.
+    - paragraph: Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.
+    - generic: Plugin and version
+    - combobox "Plugin and version":
+      - option "Choose a plugin" [selected]
+      - option "Canvas · 0.1.2"
+      - option "Canvas · 0.1.3"
+      - option "Notes · 0.2.1"
+      - option "Notes · 0.2.2"
+      - option "Notes · 0.2.3"
+      - option "Notes Labels · 0.2.0"
+      - option "Notes Labels · 0.2.1"
+    - generic: Operation
+    - combobox "Operation":
+      - option "Install"
+      - option "Upgrade"
+      - option "Feature suspension" [selected]
+      - option "Enable feature"
+      - option "Native uninstall"
+      - option "Unregister service"
+      - option "Remove unused artifact"
+    - generic: Workspace
+    - combobox "Workspace":
+      - option "Choose a workspace" [selected]
+      - option "G5 manager install fixture b49d1849"
+      - option "Personal"
+      - option "Research"
+    - checkbox "Include dependent changes in the proposed plan"
+    - text: Include dependent changes in the proposed plan
+    - button "Prepare plan" [disabled]
+    - region "Operation progress":
+      - heading "Operation progress" [level=2]
+      - status:
+        - strong: completed
+        - text: · completed
+      - paragraph: Progress observation is stale. Refresh or inspect the local operator journal.
+      - paragraph:
+        - text: "Operation ID:"
+        - code: aecb27f0-e01e-47e9-9dfb-df3d503aa23c
+      - paragraph:
+        - text: "Exact plan hash:"
+        - code: sha256:f98f19146a500e96fbc42de2e471cae188d2f23970722dee219cd59bfb532169
+      - paragraph:
+        - text: "Start approval expires:"
+        - time: 2026-10-28T20:57:15Z
+      - list:
+        - time: 2026-10-28T20:39:50Z
+        - text: · prepared
+        - time: 2026-10-28T20:39:51Z
+        - text: · application_request_imported
+        - time: 2026-10-28T20:42:15Z
+        - text: · approved
+        - time: 2026-10-28T20:42:50Z
+        - text: · reserved
+        - time: 2026-10-28T20:43:11Z
+        - text: · staged
+        - time: 2026-10-28T20:43:43Z
+        - text: · maintenance
+        - time: 2026-10-28T20:43:46Z
+        - text: · drained
+        - time: 2026-10-28T20:43:58Z
+        - text: · checkpointed
+        - time: 2026-10-28T20:44:10Z
+        - text: · mutation_started
+        - time: 2026-10-28T20:44:15Z
+        - text: · migrated
+        - time: 2026-10-28T20:44:21Z
+        - text: · workers_replaced
+        - time: 2026-10-28T20:44:32Z
+        - text: · ready
+        - time: 2026-10-28T20:44:33Z
+        - text: · release_published
+        - time: 2026-10-28T20:44:35Z
+        - text: · traffic_resumed
+        - time: 2026-10-28T20:44:37Z
+        - text: · completed
+      - table:
+        - rowgroup:
+          - row "Plugin Artifact Release Database Feature Service runtime":
+            - columnheader "Plugin"
+            - columnheader "Artifact"
+            - columnheader "Release"
+            - columnheader "Database"
+            - columnheader "Feature"
+            - columnheader "Service runtime"
+        - rowgroup:
+          - row "org.example.notes verified active installed enabled Not applicable":
+            - cell "org.example.notes"
+            - cell "verified"
+            - cell "active"
+            - cell "installed"
+            - cell "enabled"
+            - cell "Not applicable"

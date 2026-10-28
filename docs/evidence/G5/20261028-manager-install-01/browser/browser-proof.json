@@ -1,0 +1,35 @@
+{
+  "result": "passed_actual_manager_browser_flow",
+  "utc": "2026-10-28T20:56:08.623969+00:00",
+  "generation": 28,
+  "operation_id": "aecb27f0-e01e-47e9-9dfb-df3d503aa23c",
+  "plan_hash": "sha256:f98f19146a500e96fbc42de2e471cae188d2f23970722dee219cd59bfb532169",
+  "actual_steps": [
+    "Operator prepared Notes0.2.3 install in explicit empty workspace and downloaded exact bundle.",
+    "Requested operation entered awaiting approval; OS CLI import matched and independently reconstructed same hash.",
+    "Forged approved app mirror could not authorize apply; independent journal remained awaiting and base state unchanged.",
+    "Reviewed exact local approval and CLI apply completed28; original rows retained with exactly one approved feature and binding added.",
+    "Old27 page fenced on release change; explicit refresh recovered same completed own operation and continued polling without prepared form.",
+    "Leaving for native Notes list/form then returning recovered same completed operation.",
+    "Native Odoo list and untouched form shown in new workspace; native discard persisted no note.",
+    "Alice workspace admin login saw Application operator access is required with no operator ID/hash or status.",
+    "Alice session restored; temporary tabs11/12 closed; original tabs1/8/9 untouched."
+  ],
+  "original_notes_canvas_grants_and_existing_feature_binding_rows_exact": true,
+  "approved_feature_binding_additions": {
+    "features": 1,
+    "bindings": 1
+  },
+  "notes_in_new_workspace": 0,
+  "screenshot_sha256": {
+    "completed-reentered.jpg": "395eab2d382bef4d4e5fea58749774f188a44fe56e531d9f24f1d129c4fd5fd2",
+    "native-form-final.jpg": "8b0e34ca2bc208e5904bedcd595940debb5d30589ca1ca057ce2320604293eb7",
+    "alice-denied.jpg": "a7e4835237501cfa16b5f4cb27f7d825b2fd99e0cea97ed6e7b214ab25f87b65"
+  },
+  "limits": [
+    "The native Notes addon was already registered; this is a new workspace installation, not a fresh-database schema initialization.",
+    "Actual staged package upgrade, upload validation and broader G5 matrix remain open.",
+    "The returned completed journal observation can become stale after30seconds; the UI labels that honestly.",
+    "Unit tests isolate Owl hooks; these browser steps provide the actual integration evidence."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "result": "verified_expected_install_delta",
+  "original_notes_equal": true,
+  "original_canvas_boards_equal": true,
+  "original_grants_equal": true,
+  "original_feature_rows_equal": true,
+  "original_binding_rows_equal": true,
+  "approved_additions": {
+    "workspace_features": 1,
+    "service_bindings": 1
+  },
+  "first_verifier_failure": "Whole BUSINESS_SQL equality included newly installed feature and binding; corrected to preserve original rows and prove exact approved additions.",
+  "terminal_reconciliation": "Completed journal28 inspected; no repeated native apply/migration."
+}

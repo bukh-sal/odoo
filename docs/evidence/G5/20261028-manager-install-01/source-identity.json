@@ -1,0 +1,31 @@
+{
+  "result": "current_runtime_and_verifier_identity_bound",
+  "utc": "2026-10-28T21:00:32.690565+00:00",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/manager_planning.py": "0fbd248a12315ba6489b2769590960a6dba05a435668e14cefae5d9e222b4578",
+    "packages/platform_sdk/modular_platform/profile_channel.py": "c23bdda8ba546b20fc3236b52dabe234e24a5b8d8661c004a9c9e94718b2c5e0",
+    "platform_addons/mp_core/operations.py": "fbe8080078299095593c48c017ec6621430bdd5afbc8afb7f32e464c81237e36",
+    "platform_addons/mp_core/__manifest__.py": "967821b56a15e8d1880e2cb56c764616494a3a480e0d801524430226490977bb",
+    "platform_addons/mp_shell/static/src/operations.js": "2bbedc1e8b1dd14b39794a3fb7463e04042c0d84b4684147825fe34b94095f32",
+    "platform_addons/mp_shell/__manifest__.py": "62a4bc9a36846f94230136d1f7326a6130094418cb81b2feb0fdb1ba08f0fed5",
+    "tools/qualify_manager_core.py": "4452fdac9c6f33a6008f8851440148b2f835bb8216341d3f05c7a812d50cbf16",
+    "tools/qualify_manager_install.py": "d3d63ecbbae498a3ba58a4fb2dc6ad766a82d6456130b74ab676f3de16addbea",
+    "tools/publish_profile.py": "dafd5cf84542f6f12f74cf1478861edb9379b11786ae395c485bd58225e8f390",
+    "tests/test_manager_planning.py": "2bcd5d3d21cad970cf9b079d3b9c282aea0bb258b5bd211e4f22a094645a604b",
+    "tests/test_operations_resume.mjs": "2e7ae03fd1a165e172612539e1c472e6173e1572d3560923d9ce1e1712558fb2"
+  },
+  "private_configuration_sha256": {
+    ".local/operator/trust.json": "b29600d33d7b6576244c4af7b49df82617e5711f5a55191ecebe7eca4ca2d070",
+    ".local/operator/targets/g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local/operator/control/policy.json": "c687ecb3c3e0d826eb34359ee6495c766b00588255e996f4c46c53cdc1565535"
+  },
+  "source_suite": "../20261028-manager-native-source/planning-core.json",
+  "later_operations_js_reconciliation": "../20261028-manager-resume-source/reconciliation.json",
+  "immutable_image_build": "../20261028-manager-native-resume-candidate/candidate-build.json",
+  "current_generation": 28,
+  "notes": [
+    "The corrected terminal verifier inspects completed installation28 without repeating approval/apply/migration.",
+    "Build-recorded source still matches; qualification helper added after build is host-only and separately hash-bound here.",
+    "No raw operator configuration or approval policy is published."
+  ]
+}

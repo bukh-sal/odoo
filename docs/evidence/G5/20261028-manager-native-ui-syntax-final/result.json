@@ -1,0 +1,14 @@
+{
+  "result": "passed_syntax_only",
+  "utc": "2026-10-28T20:23:11.308948+00:00",
+  "source_sha256": "b7f4a9ae246bd1871ff96dc84edb827fcd8aca820495d89cae3a079f4655c5d3",
+  "command": [
+    "node",
+    "--check",
+    "--input-type=module"
+  ],
+  "exit_code": 0,
+  "limitations": [
+    "Earlier syntax record predates required artifact/migration/permission previews; neither is browser/Owl-runtime qualification."
+  ]
+}

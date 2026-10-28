@@ -1,0 +1,15 @@
+{
+  "workspace_id": "b49d1849-2fbc-4b71-8541-7eea59e771dc",
+  "memberships": [
+    {
+      "role": "administrator",
+      "login": "g5_alice",
+      "state": "active"
+    },
+    {
+      "role": "administrator",
+      "login": "g5_operator",
+      "state": "active"
+    }
+  ]
+}

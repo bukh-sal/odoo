@@ -1,0 +1,29 @@
+{
+  "result": "passed_bounded_acceptance",
+  "utc": "2026-10-28T20:56:08.625022+00:00",
+  "requalified": [
+    "SEC-06"
+  ],
+  "newly_qualified": [
+    "ID-06"
+  ],
+  "mapping": {
+    "ID-06": "Real Alice workspace administrator has no application-operator access; native install prepare403, native module methodAccessDenied, deployment nomination403, copied operator UI result absent; app UID10001 has no Docker/store mounts.",
+    "SEC-06": "Real manager native install request imported/reconstructed; forged approved app mirror fails actual CLI apply without OS approval and leaves base state unchanged; independent exact approval/apply succeeds."
+  },
+  "current_image_id": "sha256:2c7eeda91f213aea51091f1c7a2523a04c3fb51b2c30f4dd12d292da55544383",
+  "generation": 28,
+  "source": "../20261028-manager-resume-source/reconciliation.json",
+  "evidence_sha256": {
+    "browser/browser-proof.json": "94d4dd1fb075b8c1a4aad2febd07812842a80c3b6e57ed41179e8af4af0c271a",
+    "installation.json": "42ff9992b949c51a3d333f3744af621ceb62a43994864f586f83e09dc09eda67",
+    "workspace-admin-nomination-denied.json": "daec401e2492e75b66956a4ed994ab12bb2d39be12acca5084e9dbd9831a7188",
+    "native-deployment-authority-denied.json": "00e2daa4b30a9394d77a596268f879214139712c0a60409ff9f0b204961f9cf0",
+    "forged-app-approval-denied.json": "070c6a9f1671d79fb51c860aeca78cf9447759f23cdbf206831ef84762e3b525",
+    "observed-fixture-roles.json": "4034dc3cef2df1955d402a9b78623b71d3ecd28995d54a40625530443fac3c0f",
+    "expected-delta-reconciliation.json": "971232e98276c290160498aa419766526968b620754d9e8d78469122dbb72476"
+  },
+  "limits": [
+    "No whole G5-X02/G5/SEC08/crash/fresh-schema/upgrade/upload qualification claim."
+  ]
+}

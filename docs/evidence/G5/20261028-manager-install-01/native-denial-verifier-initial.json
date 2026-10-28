@@ -1,0 +1,9 @@
+{
+  "result": "denial_observed_verifier_expected_other_class",
+  "method": "ir.module.module.button_immediate_install",
+  "http": 200,
+  "actual_native_error": "odoo.exceptions.AccessDenied",
+  "expected_by_generic_crud_helper": "odoo.exceptions.AccessError",
+  "request_id": "89f3893e-32f0-4409-9eb9-0412451fbab1",
+  "decision": "Accept the actual native authentication denial for this module-admin route; no product change or repeated native RPC."
+}

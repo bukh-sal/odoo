@@ -1,0 +1,37 @@
+{
+  "result": "passed_bounded_native_and_deployment_authority_denial",
+  "generation": 27,
+  "actor": "alice",
+  "workspace_id": "b49d1849-2fbc-4b71-8541-7eea59e771dc",
+  "workspace_role": "administrator",
+  "native_install_rpc_error_class": "odoo.exceptions.AccessDenied",
+  "native_response_record": "native-denial-verifier-initial.json",
+  "native_rpc_not_repeated": true,
+  "deployment_nomination_http": 403,
+  "application_container": {
+    "uid": 10001,
+    "docker_cli": false,
+    "docker_socket": false,
+    "approval_store": {
+      "allowed": false,
+      "errno": 2
+    },
+    "operator_policy": {
+      "allowed": false,
+      "errno": 2
+    },
+    "root_write": {
+      "allowed": false,
+      "errno": 30
+    }
+  },
+  "mount_destinations": [
+    "/run/secrets",
+    "/var/lib/modular"
+  ],
+  "original_business_exact": true,
+  "limits": [
+    "Trusted native code retains application runtime authority; this is independent OS executor separation, not plugin confinement.",
+    "Full SEC08 is broader; ID06/SEC06 mapping also needs actual unapproved/fabricated-app-approval denial."
+  ]
+}

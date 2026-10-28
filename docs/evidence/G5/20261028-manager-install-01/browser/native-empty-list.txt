@@ -1,0 +1,58 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal"
+    - option "Research"
+    - option "G5 manager install fixture b49d1849" [selected]
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- heading "Notes" [level=1]
+- paragraph: Your ideas, in one place.
+- button "Export notes"
+- button "New"
+- generic: Notes
+- search:
+  - search:
+    - button "Search...":
+      - img: 
+    - searchbox "Search..." [active]
+  - button ""
+- main:
+  - table:
+    - rowgroup:
+      - row "Title  Revision  Last Updated on ":
+        - columnheader:
+          - checkbox
+        - columnheader "Title ":
+          - generic: Title
+          - generic: 
+        - columnheader "Revision ":
+          - generic: Revision
+          - generic: 
+        - columnheader "Last Updated on ":
+          - generic: Last Updated on
+          - generic: 
+    - rowgroup:
+      - row:
+        - cell
+      - row:
+        - cell
+      - row:
+        - cell
+      - row:
+        - cell
+    - rowgroup:
+      - row:
+        - cell

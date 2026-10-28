@@ -1,0 +1,30 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace" [selected]
+    - option "Personal"
+    - option "Research"
+    - option "G5 manager install fixture b49d1849"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - alert:
+    - strong: The platform has changed. Refresh to continue.
+    - paragraph: 8c9a8bf7-f2c3-4ebb-bb6d-0f595138c624
+    - button "Refresh platform"
+- alert:
+  - button "Close"
+  - generic: Refresh platform. A new platform release is available. Your old page is paused.
+  - button "Refresh"
+  - button "Download unsaved draft"

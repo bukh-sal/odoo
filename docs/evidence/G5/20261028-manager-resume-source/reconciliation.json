@@ -1,0 +1,20 @@
+{
+  "result": "passed_source_reconciliation",
+  "utc": "2026-10-28T20:28:24.649074+00:00",
+  "source_sha256": "2bbedc1e8b1dd14b39794a3fb7463e04042c0d84b4684147825fe34b94095f32",
+  "tests_sha256": "2e7ae03fd1a165e172612539e1c472e6173e1572d3560923d9ce1e1712558fb2",
+  "checks": {
+    "real_operations_methods_with_isolated_Owl_hooks": 5,
+    "windows_sdk": 51,
+    "linux_sdk": 51,
+    "frozen_files": 78
+  },
+  "sdk_source_report": "../20261028-manager-native-source/planning-core.json",
+  "changed_after_sdk_suite": [
+    "platform_addons/mp_shell/static/src/operations.js"
+  ],
+  "limits": [
+    "Node tests isolate Owl hooks/API boundary, not browser/native Owl rendering or actual OS authority.",
+    "Current application/native manager workflow still requires real deployment and walkthrough."
+  ]
+}
