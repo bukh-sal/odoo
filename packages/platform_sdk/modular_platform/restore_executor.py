@@ -243,6 +243,8 @@ class RestoreExecutor:
             if running!=restored:raise OperatorError('Restored worker observation differs from verified offline state')
             from .profile_channel import publish_profile
             if observer.read()['runtime'].get('published_release_protocol')==1:
+                self.native._prepare_assets(operation, target, restored, observer.read(), directory,
+                                            suffix='restored-assets')
                 _write_new(directory/'profile-publication.json',publish_profile(observer,
                     Catalog(self.native.catalog_root,self.native.validator,readonly=True)))
             else:

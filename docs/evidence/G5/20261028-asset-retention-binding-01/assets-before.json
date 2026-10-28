@@ -1,0 +1,22 @@
+[
+  {
+    "url": "/web/assets/055336548f37b2abfe58b6a40aa8a8b62f11b74a614a2bda242f8dcb42463884/mp_shell.assets_host.min.js",
+    "checksum": "8b1723034a9ec85aa41c529a0721a5ffbf83c40a",
+    "mimetype": "application/javascript"
+  },
+  {
+    "url": "/web/assets/11670895aa3f1666caa35b8d89ba465668c6fb715b11a7de14607621807c6cc8/mp_shell.assets_host.min.css",
+    "checksum": "fc601a79cfc3be45ba4c31c192b6c528d4e97667",
+    "mimetype": "text/css"
+  },
+  {
+    "url": "/web/assets/1909912/mp_shell.assets_host.min.css",
+    "checksum": "fc601a79cfc3be45ba4c31c192b6c528d4e97667",
+    "mimetype": "text/css"
+  },
+  {
+    "url": "/web/assets/3093e4a/mp_shell.assets_host.min.js",
+    "checksum": "8b1723034a9ec85aa41c529a0721a5ffbf83c40a",
+    "mimetype": "application/javascript"
+  }
+]

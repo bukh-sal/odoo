@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T20:03:53.710784+00:00",
+  "image_id": "sha256:fea18f5171e3714580ff4ae8ac79ccdaafd36c7677be81ba03c297c17c098f65",
+  "network": "none",
+  "readonly_config": true,
+  "mismatched_payload_rejected_before_odoo_registry": true,
+  "exit_code": 1,
+  "diagnostic": "ValueError: Asset preparation database differs from fixed configuration",
+  "database_effects": "none; no network and rejected before Odoo imports"
+}

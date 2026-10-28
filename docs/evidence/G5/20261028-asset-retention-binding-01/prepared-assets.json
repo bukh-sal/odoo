@@ -1,0 +1,19 @@
+{
+  "result": "prepared",
+  "generation": 26,
+  "inventory_digest": "sha256:1f92c70931353476d17254bf49041ee07497561c0f9b01afea9838c242be450a",
+  "assets": [
+    {
+      "url": "/web/assets/1452eede5b766bf896c93c6bdadcf5e2dfdf5288b61b13f140a1a9e8607c03a7/mp_shell.assets_host.min.css",
+      "mimetype": "text/css",
+      "bytes": 751605,
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677"
+    },
+    {
+      "url": "/web/assets/e660cfc43fc39b7645bfc94936fbedff7464864e6c8bdfe6c2490d103d47da72/mp_shell.assets_host.min.js",
+      "mimetype": "application/javascript",
+      "bytes": 3049777,
+      "sha256": "5158a7ded1e1d9e21420311d0157dc63056abd587350bb93a2f0a86844783fe7"
+    }
+  ]
+}

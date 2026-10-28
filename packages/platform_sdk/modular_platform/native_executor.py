@@ -155,6 +155,16 @@ class NativeExecutor:
         if result.returncode:
             raise OperatorError('Controlled maintenance child failed; private diagnostics retained')
 
+    def _prepare_assets(self, operation, target, state, observation, directory, *, suffix='assets'):
+        arguments, child = self._child(operation, suffix, writable=True, image_id=target['image_id'])
+        arguments.insert(2, '-i')
+        asset_target = {'database': target['sites'][0]['database'],
+            'site_id': target['sites'][0]['site_id'], 'deployment_id': target['deployment_id'],
+            'generation': target['generation'], 'release_digest': state['release_digest'],
+            'inventory_digest': observation['runtime']['inventory_digest']}
+        self._private_command(arguments+['-c', Path(__file__).with_name('prepare_assets.py').read_text()],
+            directory/'assets.json', input=json.dumps(asset_target).encode())
+
     def _checkpoint(self, operation, bundle, database, directory):
         root = protect_directory(self.store.root/'checkpoints')
         checkpoint = protect_directory(root/operation)
@@ -258,6 +268,10 @@ class NativeExecutor:
                 state = DockerObserver(target).state(observation, snapshot)['state']
                 previous=load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']
                 verify_native_state(bundle,state,previous,observation)
+                # Build public target assets under the approved image while
+                # traffic is still closed. An asset failure after native commit
+                # is recovery_required, never a falsely successful release.
+                self._prepare_assets(operation, target, state, observation, directory)
                 from .profile_channel import publish_profile
                 _write_new(directory/'profile-publication.json',publish_profile(DockerObserver(target),
                     Catalog(self.catalog_root,self.validator,readonly=True)))

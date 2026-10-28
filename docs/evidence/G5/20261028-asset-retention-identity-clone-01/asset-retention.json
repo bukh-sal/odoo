@@ -1,0 +1,72 @@
+{
+  "result": "passed_native_asset_clone",
+  "utc": "2026-10-28T19:44:57.415229+00:00",
+  "database": "mp_disposable_r0_r1_assets_087dd16612954870",
+  "image_id": "sha256:93fd708303d10d12efc526de07ae0c07b32c0c186b03b365820dd88c641d765a",
+  "inventory_digest": "sha256:f958388079f2046cddf16a220da253ba45e57a3aa4da0ad4f8124517dc353495",
+  "native_shell_version": "19.0.0.1.3",
+  "generation": 23,
+  "experimental_not_approved_release": true,
+  "old_actual_host_assets": 2,
+  "prepared_before_worker": [
+    {
+      "url": "/web/assets/055336548f37b2abfe58b6a40aa8a8b62f11b74a614a2bda242f8dcb42463884/mp_shell.assets_host.min.js",
+      "mimetype": "application/javascript",
+      "bytes": 3049777,
+      "sha256": "5158a7ded1e1d9e21420311d0157dc63056abd587350bb93a2f0a86844783fe7"
+    },
+    {
+      "url": "/web/assets/11670895aa3f1666caa35b8d89ba465668c6fb715b11a7de14607621807c6cc8/mp_shell.assets_host.min.css",
+      "mimetype": "text/css",
+      "bytes": 751605,
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677"
+    }
+  ],
+  "synthetic_distinct_old_public_payload_retained": true,
+  "http_assets": [
+    {
+      "url": "/web/assets/1909912/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "bytes": 751605,
+      "status": 200,
+      "redirected": false
+    },
+    {
+      "url": "/web/assets/3093e4a/mp_shell.assets_host.min.js",
+      "sha256": "5158a7ded1e1d9e21420311d0157dc63056abd587350bb93a2f0a86844783fe7",
+      "bytes": 3049777,
+      "status": 200,
+      "redirected": false
+    },
+    {
+      "url": "/web/assets/055336548f37b2abfe58b6a40aa8a8b62f11b74a614a2bda242f8dcb42463884/mp_shell.assets_host.min.js",
+      "sha256": "5158a7ded1e1d9e21420311d0157dc63056abd587350bb93a2f0a86844783fe7",
+      "bytes": 3049777,
+      "status": 200,
+      "redirected": false
+    },
+    {
+      "url": "/web/assets/11670895aa3f1666caa35b8d89ba465668c6fb715b11a7de14607621807c6cc8/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "bytes": 751605,
+      "status": 200,
+      "redirected": false
+    },
+    {
+      "url": "/web/assets/7a502ba/mp_shell.assets_host.min.js",
+      "sha256": "78be1420ca7708cd796037a3384227916c4767e8ceca4d19758a76121182baf4",
+      "bytes": 69,
+      "status": 200,
+      "redirected": false
+    }
+  ],
+  "current_pin_native_gateway_positive": true,
+  "original_business_exact": true,
+  "operated_source_unchanged": true,
+  "source_sha256": "89b550237f0dab952567fbb7dbab420c406be2d03a206d442affe24505101cc2",
+  "limits": [
+    "Actual candidate clone, not independent executor/restore/normal rollout qualification.",
+    "Preflight covers regular minified host assets; full locale/RTL/accessibility qualification remains G7.",
+    "Assets deleted by historical legacy releases are not retroactively recreated."
+  ]
+}

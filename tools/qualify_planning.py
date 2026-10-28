@@ -31,16 +31,17 @@ def main():
     parser.add_argument('--staging-only',action='store_true',help='Qualify staged plans and affected resolver/contract consumers')
     parser.add_argument('--identity-only',action='store_true',help='Qualify release identity/adoption/current-policy and affected package/worker boundaries')
     parser.add_argument('--startup-only',action='store_true',help='Qualify default bootstrap and affected worker/observer/identity boundaries')
+    parser.add_argument('--assets-only',action='store_true',help='Qualify public-asset retention/preflight and affected maintenance/recovery boundaries')
     args = parser.parse_args()
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'docs/evidence/G5') or output.exists():
         raise ValueError('Fresh G5 evidence directory required')
     output.mkdir(parents=True)
-    if sum((args.recovery_only,args.staging_only,args.identity_only,args.startup_only))>1:raise ValueError('Choose one focused qualification scope')
-    patterns = ['test_start_worker.py','test_workers.py','test_release_identity.py','test_release_staging.py'] if args.startup_only else ['test_release_identity.py','test_release_staging.py','test_workers.py','test_artifacts.py'] if args.identity_only else ['test_recovery.py'] if args.recovery_only else (
+    if sum((args.recovery_only,args.staging_only,args.identity_only,args.startup_only,args.assets_only))>1:raise ValueError('Choose one focused qualification scope')
+    patterns = ['test_asset_retention.py','test_recovery.py','test_workers.py','test_release_staging.py','test_platform_deploy.py','test_core_upgrade.py','test_operation_contracts.py','test_client_release.py'] if args.assets_only else ['test_start_worker.py','test_workers.py','test_release_identity.py','test_release_staging.py'] if args.startup_only else ['test_release_identity.py','test_release_staging.py','test_workers.py','test_artifacts.py'] if args.identity_only else ['test_recovery.py'] if args.recovery_only else (
         ['test_release_staging.py','test_platform_deploy.py','test_core_upgrade.py','test_lifecycle_planning.py','test_resolution.py','test_plans.py','test_planning_cli.py','test_operation_contracts.py','test_contracts.py']
         if args.staging_only else PATTERNS + (['test_operator_os.py', 'test_operator_store.py'] if args.operator else []))
-    if args.staging_only or args.identity_only or args.startup_only:
+    if args.staging_only or args.identity_only or args.startup_only or args.assets_only:
         host_runner="import unittest; suite=unittest.TestSuite(unittest.defaultTestLoader.discover('tests',pattern=p) for p in "+repr(patterns)+"); raise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful())"
         host=run([sys.executable,'-c',host_runner])
     else:host = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_recovery.py' if args.recovery_only else 'test_*.py', '-v'])
@@ -49,7 +50,8 @@ def main():
         'tools/qualify_planning.py', 'tools/start_worker.py', 'tools/observe_r1.py', 'tools/qualify_live_planning.py', 'tools/qualify_operator_live.py','tools/publish_profile.py','tools/qualify_release_adoption.py',
         'deploy/requirements-operator.in', 'deploy/requirements-operator.lock', 'tests/test_plans.py','tests/test_resolution.py'] + ['tests/' + name for name in patterns]}
     for folder in ['packages/platform_sdk', 'packages/contracts', 'plugins',
-                   'platform_addons/mp_example_notes', 'platform_addons/mp_example_notes_labels', 'platform_addons/mp_example_canvas']:
+                   'platform_addons/mp_example_notes', 'platform_addons/mp_example_notes_labels', 'platform_addons/mp_example_canvas',
+                   'platform_addons/mp_shell', 'platform_addons/mp_identity']:
         selected.update(path for path in (ROOT / folder).rglob('*') if path.is_file() and '__pycache__' not in path.parts)
     source = {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(selected)}
     dependency = importlib.metadata.distribution('resolvelib')
