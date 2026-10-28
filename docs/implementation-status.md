@@ -9,7 +9,7 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **E / G5 in_progress**. Latest passed gate: **G4**, see `evidence/G4/20261028t033154z/gate-G4.json`.
 - Active item: **E-01d**. Guarded new-image replacement, exact pre-traffic failure and offline fresh-target old-image restore now qualified as a bounded subset. Next: populate Notes/attachment fixtures for actual native version upgrade/uninstall and recovery; add automatic sanitized-profile publication and client/default-startup fencing before G5 exit.
-- Working changes: checkpointing qualified source/tests/ADR0012 and actual replacement/recovery/guard evidence. Source regression125host/98Linux/74-file freeze passed, source hashes match. Fault3ec081c1 restored and retired; normal promotion500230e9 completed/replayed. No running test/probe. G5 nowac3e9995/gen6 on fresh restoredDB; old images/workers/DBs retained. Read current Git HEAD/status.
+- Working changes: none after source/evidence checkpoint `ac8e3327` and this status record. Source regression125host/98Linux/74-file freeze passed, source hashes match. Fault3ec081c1 restored and retired; normal promotion500230e9 completed/replayed. No running test/probe. G5 nowac3e9995/gen6 on fresh restoredDB; old images/workers/DBs retained. Read current Git HEAD/status.
 
 ## Progress estimate
 
