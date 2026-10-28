@@ -9,6 +9,34 @@ from .contracts import normalize_manifest, validate,checked_path
 from .plans import data_digest, release_lock
 from .resolution import PlanningError, resolve_release
 
+PUBLISHED_RELEASE_PROTOCOL=1
+
+
+def catalog_validation_digest(catalog):
+    return data_digest(sorted([{'plugin_id':item['manifest']['plugin']['id'],'version':item['manifest']['plugin']['version'],
+        'digest':item['digest'],'trust':item['trust']} for item in catalog],key=lambda item:(item['plugin_id'],item['version'])))
+
+
+def published_lock(derived,published):
+    """Revalidate current executable contents, retaining publication evidence."""
+    if not isinstance(published,dict) or set(published)!=set(derived):
+        raise PlanningError('Exact independently published release lock required')
+    expected=copy.deepcopy(derived)
+    if not isinstance(published['plugins'],list) or len(published['plugins'])!=len(expected['plugins']):
+        raise PlanningError('Published release plugin footprint changed')
+    for actual,prior in zip(expected['plugins'],published['plugins']):
+        trust=prior.get('trust') if isinstance(prior,dict) else None
+        if (not isinstance(trust,dict) or set(trust)!={'model','signature_verified','policy_generation','warnings'}
+                or trust['model'] not in ('operator-approved-exact-digest','unsigned-development')
+                or trust['signature_verified'] is not False or type(trust['policy_generation']) is not int
+                or trust['policy_generation']<1 or not isinstance(trust['warnings'],list)
+                or any(not isinstance(warning,str) for warning in trust['warnings'])):
+            raise PlanningError('Unsupported historical release trust evidence')
+        actual['trust']=copy.deepcopy(trust)
+    if expected!=published:
+        raise PlanningError('Observed executable/environment/bindings differ from published release')
+    return copy.deepcopy(published)
+
 
 def runtime_inputs(runtime,catalog):
     """Derive trusted-image inputs without asserting any database installation."""
@@ -58,6 +86,12 @@ def project_deployment(configuration, observation, catalog):
         {item['manifest']['plugin']['id']: '==' + item['manifest']['plugin']['version'] for item in selected},
         core_python=core_python, scoped_provider_choices=choices)
     lock = release_lock(resolved, provenance, generation=configuration['generation'], created_at=configuration['release_created_at'])
+    if 'published_release' in configuration:
+        lock=published_lock(lock,configuration['published_release'])
+        for site in observation['sites']:
+            if (site.get('release_digest')!=data_digest(lock) or site.get('release_generation')!=str(configuration['generation'])
+                    or site.get('active_inventory_digest')!=runtime['inventory_digest']):
+                raise PlanningError('Database publication differs from independently pinned release')
     by_plugin = {item['manifest']['plugin']['id']: item for item in selected}
     expanded, bindings, security = [], [], []
     for site in observation['sites']:
@@ -83,6 +117,7 @@ def project_deployment(configuration, observation, catalog):
         'bindings': sorted(bindings, key=lambda item: item['binding_id']), 'endpoints': [],
         'security_metadata_digest': data_digest(security), 'image_id': observation['image_id'],
         'policy_version': configuration['policy_version'], 'operator_authorization_generation': configuration['operator_authorization_generation']}
+    if 'published_release' in configuration:state['catalog_validation_digest']=catalog_validation_digest(catalog)
     return {'state': state, 'environment': environment, 'provenance': provenance,
             'python_metadata': runtime['python_metadata']}
 
@@ -92,5 +127,6 @@ def public_profile(configuration, observation, catalog, observed_at):
           'operator_authorization_generation','release_created_at']
     public={key:configuration[key] for key in keys}
     public['site_ids']=[item['site_id'] for item in configuration['sites']]
+    if 'published_release' in configuration:public['published_release']=copy.deepcopy(configuration['published_release'])
     return {'schema_version':1,'configuration':public,'runtime':copy.deepcopy(observation['runtime']),
             'catalog':copy.deepcopy(catalog),'observed_at':observed_at}

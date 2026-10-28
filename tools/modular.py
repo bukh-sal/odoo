@@ -7,6 +7,7 @@ the independently tested OS separation, not this argument parser.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from dataclasses import fields
 import json
 from pathlib import Path
@@ -19,6 +20,25 @@ sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
 from modular_platform.artifacts import ArchiveLimits, ArtifactError, ArtifactValidator, TrustPolicy
 from modular_platform.catalog import Catalog
 from modular_platform.contracts import ContractError, load_json
+
+
+class ConfigurationBoundValidator(ArtifactValidator):
+    """A running operation cannot keep using a changed private trust policy."""
+    def bind_configuration(self,path,raw):
+        self.configuration_path=Path(path).resolve()
+        self.configuration_size=len(raw);self.configuration_digest=hashlib.sha256(raw).digest()
+        return self
+
+    def _check_configuration(self):
+        if (self.configuration_path.stat().st_size!=self.configuration_size
+                or hashlib.sha256(self.configuration_path.read_bytes()).digest()!=self.configuration_digest):
+            raise ArtifactError('Independent trust configuration changed; reload actual state and prepare/review again')
+
+    def verify(self,source,*,expected_digest=None):
+        self._check_configuration()
+        result=super().verify(source,expected_digest=expected_digest)
+        self._check_configuration()
+        return result
 
 
 def configuration(path):
@@ -39,7 +59,7 @@ def configuration(path):
     if not isinstance(limits, dict) or not limits.keys() <= {item.name for item in fields(ArchiveLimits)}:
         raise ArtifactError('Unknown archive limits configuration')
     policy = TrustPolicy(config['mode'], frozenset(config['approved_digests']), config['allow_unsigned_development'], config['generation'])
-    return ArtifactValidator(policy, ArchiveLimits(**limits))
+    return ConfigurationBoundValidator(policy, ArchiveLimits(**limits)).bind_configuration(path,raw)
 
 
 def main(argv=None):
@@ -115,6 +135,10 @@ def main(argv=None):
     for name in ('destructive', 'trust', 'permissions'):
         approve.add_argument('--ack-' + name, action='store_true')
     operation_actions.add_parser('show').add_argument('operation_id')
+    adopt=operation_actions.add_parser('adopt-release')
+    adopt.add_argument('operation_id')
+    adopt.add_argument('--deployment-config',required=True,type=Path)
+    adopt.add_argument('--catalog',required=True,type=Path)
     operation_actions.add_parser('revoke-approval').add_argument('operation_id')
     args = parser.parse_args(argv)
     try:
@@ -138,7 +162,10 @@ def main(argv=None):
                     deployment=load_json(args.deployment_config.read_bytes())
                     stage_store=StageStore(store,deployment,Catalog(args.catalog,validator,readonly=True))
                     revalidate = IndependentValidator(deployment,args.catalog,validator,stage_store=stage_store)
-                if args.action in ('import-request','mirror-status'):
+                if args.action=='adopt-release':
+                    from modular_platform.release_adoption import adopt_release
+                    result=adopt_release(store,args.deployment_config,args.catalog,validator,args.operation_id)
+                elif args.action in ('import-request','mirror-status'):
                     from modular_platform.app_channel import read_request,publish_status
                     observer=DockerObserver(load_json(args.deployment_config.read_bytes()))
                     if args.action=='import-request':

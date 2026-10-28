@@ -17,6 +17,8 @@ from .resolution import binding_matches_scope
 
 
 def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at):
+    if runtime.get('published_release_protocol')!=1:
+        raise OperatorError('Staged native operations require an image with the published-release profile reader')
     if operation_type not in ('install','upgrade'):
         raise OperatorError('Staged native planning requires install or upgrade')
     selected,environment,provenance=runtime_inputs(runtime,catalog)

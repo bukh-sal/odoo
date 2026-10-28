@@ -323,6 +323,10 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             'target_activation': new[key]['manifest']['activation']} for key in sorted(changed)},
         'known_unknowns': ['Native Python and same-origin frontend code is fully trusted.',
                            'Author destructive=false does not prove migration safety.']}
+    if 'catalog_validation_digest' in state:
+        if state['catalog_validation_digest']!=operation_lock['catalog_snapshot_digest']:
+            raise PlanningError('Catalog snapshot differs from independently observed current validation')
+        operation_lock['current_catalog_validation_digest']=state['catalog_validation_digest']
     destructive = any(item['action'] == 'uninstall' for item in ordered_targets) or any(
         new[key]['manifest']['upgrade']['destructive'] for key in changed)
     plan = {'schema_version': 1, 'operation_id': operation_id, 'operation_type': operation_type,
@@ -359,6 +363,8 @@ def _display(plan, operation_lock):
                 'known_unknowns': operation_lock['known_unknowns']}
     if 'staged_image' in operation_lock:
         display['staged_image']=copy.deepcopy(operation_lock['staged_image'])
+    if 'current_catalog_validation_digest' in operation_lock:
+        display['current_catalog_validation_digest']=operation_lock['current_catalog_validation_digest']
     return display
 
 

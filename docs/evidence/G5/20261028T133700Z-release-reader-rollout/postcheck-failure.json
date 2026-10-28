@@ -1,0 +1,8 @@
+{
+  "result": "postcheck_failed_after_completed_native_operation",
+  "operation_id": "4ec0ba68-04f1-4c9c-91ed-f492ea827cb7",
+  "native_operation_completed": true,
+  "failure": "Verifier popped labels, but labels=[] already exists in the baseline Notes DTO. Actual DTO equals original fixture; base SQL rows and automatic profile publication checks had passed before this assertion.",
+  "harness_source_sha256": "26b6163072921f30116dc9d592d07c8cfaf0283d816af57a608b13af26ecccd9",
+  "next_action": "Correct the comparison and run an independent completed-operation verifier; never repeat native install."
+}

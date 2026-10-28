@@ -71,6 +71,8 @@ def recovery_configuration(current,manifest,bundle,replacement=None):
     base=manifest['configuration']
     expected=dict(base,image_id=bundle['operation_lock'].get('staged_image',{}).get('target_image_id',base['image_id']),
         generation=bundle['operation_lock']['release']['generation'],release_created_at=bundle['plan']['created_at'])
+    if 'published_release' in base or replacement is not None and 'published_release' in replacement.get('configuration',{}):
+        expected['published_release']=bundle['operation_lock']['release']
     if replacement is not None:
         worker=replacement.get('container_id','')
         expected['worker_id']=worker
@@ -84,6 +86,7 @@ def recovery_configuration(current,manifest,bundle,replacement=None):
     target['release_created_at']=bundle['plan']['created_at']
     lock=copy.deepcopy(manifest['previous_release']['release_lock'])
     lock.update(generation=target['generation'],created_at=target['release_created_at'])
+    target['published_release']=copy.deepcopy(lock)
     return target,lock
 
 
@@ -238,6 +241,13 @@ class RestoreExecutor:
             observer = DockerObserver(target)
             running=observer.state(observer.read(),snapshot)['state']
             if running!=restored:raise OperatorError('Restored worker observation differs from verified offline state')
+            from .profile_channel import publish_profile
+            if observer.read()['runtime'].get('published_release_protocol')==1:
+                _write_new(directory/'profile-publication.json',publish_profile(observer,
+                    Catalog(self.native.catalog_root,self.native.validator,readonly=True)))
+            else:
+                _write_new(directory/'profile-publication.json',{'state':'deferred_legacy_reader',
+                    'reason':'Retained legacy image has no published-release reader; preserve its cache and use the independent CLI until a compatible release is approved.'})
             actual_authority = canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
             if actual_authority != decision['authority']:
                 raise OperatorError('Restored authority differs from current reconciled snapshot')

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "prepared",
+  "operation_id": "3eb8cc05-c388-400c-883e-9b784190f0ee",
+  "plan_hash": "sha256:5f7c38e2da5abb45c813a6d004d26e276277f66e08119834780b8443e11459b1",
+  "plan": {
+    "schema_version": 1,
+    "operation_id": "3eb8cc05-c388-400c-883e-9b784190f0ee",
+    "operation_type": "suspend",
+    "created_at": "2026-10-28T13:42:22Z",
+    "deployment_id": "eb7ce420-a928-4ecb-80c7-1f8ff3b3fa08",
+    "site_ids": [
+      "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e"
+    ],
+    "base_state_digest": "sha256:e11e5b41fce305dbc7df9144d4eb1e5cf233fdc7d7b5a0f7e4b693009ac1075a",
+    "base_release_digest": "sha256:3194c2085f04b0a9c1102df63625d8b4260ee93762322eeb8c7a2cf207b9acef",
+    "target_release_digest": "sha256:3194c2085f04b0a9c1102df63625d8b4260ee93762322eeb8c7a2cf207b9acef",
+    "artifacts": [
+      {
+        "plugin_id": "org.example.notes_labels",
+        "version": "0.2.1",
+        "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+        "runtime": "native",
+        "action": "suspend",
+        "native_addon": "mp_example_notes_labels",
+        "migration_digests": []
+      }
+    ],
+    "dependency_lock_digest": "sha256:528b619e6d01289b6a81ec17f64af182e9e51877e4901bd3c901a6d2496c7bcc",
+    "bindings": [
+      {
+        "binding_id": "3fbe3323-61ba-523f-9541-18b3841620bd",
+        "generation": 1,
+        "digest": "sha256:9e5ed1e6846148bf7aba709741d7fd59d4d1c249f12de7a09704ff99da5a830c"
+      },
+      {
+        "binding_id": "55c45246-dfc7-5135-b180-aad6952ed3c1",
+        "generation": 1,
+        "digest": "sha256:28ee6e59144d9b52ff5a3aa635fbc4bc339f8a5ce7b0a2194fe4300dc3672674"
+      },
+      {
+        "binding_id": "9d457085-d420-5623-af44-45ec9b2e2e11",
+        "generation": 1,
+        "digest": "sha256:4661367f0dc92e80786a061b9a48eeb13fbe37e741140899902ec1e46f1a4b06"
+      },
+      {
+        "binding_id": "fa75174d-a05d-527a-8928-948247b7c8c8",
+        "generation": 1,
+        "digest": "sha256:9cccc93a913431ec53d835c793b14c4d4f59284165358cf29909e98c4e27535e"
+      }
+    ],
+    "endpoints": [],
+    "permission_changes": [],
+    "trust_changes": [],
+    "destructive": false,
+    "backup": {
+      "required": false,
+      "policy_id": "development_checkpoint",
+      "retain_previous_release": true
+    },
+    "policy_version": 1,
+    "operator_authorization_generation": 2
+  },
+  "targets": [
+    {
+      "installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+      "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+      "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+      "plugin_id": "org.example.notes_labels",
+      "action": "suspend"
+    }
+  ],
+  "declaration_changes": [],
+  "native_trusted_code": true,
+  "restart_required": false,
+  "feature_suspension_unloads_code": false,
+  "known_unknowns": [
+    "Native Python and same-origin frontend code is fully trusted.",
+    "Author destructive=false does not prove migration safety."
+  ],
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-10-28T13:38:55Z",
+  "stale": false
+}

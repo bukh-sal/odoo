@@ -68,7 +68,8 @@ class NativeExecutor:
 
     def _replace_workers(self,app,bundle,directory):
         target=dict(self.config,image_id=self._execution_image(bundle),
-            generation=bundle['operation_lock']['release']['generation'],release_created_at=bundle['plan']['created_at'])
+            generation=bundle['operation_lock']['release']['generation'],release_created_at=bundle['plan']['created_at'],
+            published_release=bundle['operation_lock']['release'])
         from .workers import ensure
         inventory=bundle['operation_lock'].get('staged_image',{}).get('inventory_digest')
         if not inventory:
@@ -165,6 +166,8 @@ class NativeExecutor:
             if self.store.status(operation)['state'] == 'completed':
                 self.mirror_progress(operation)
                 return self.store.status(operation)
+            if not self.staged_execution and self.observer.read()['runtime'].get('published_release_protocol')!=1:
+                raise OperatorError('Native installation requires an image with the published-release profile reader; stage a compatible candidate')
             self.store.reserve(operation, locks, self._validate())
             self.mirror_progress(operation)
             stages = protect_directory(self.store.root/'stages')
@@ -232,6 +235,9 @@ class NativeExecutor:
                 state = DockerObserver(target).state(observation, snapshot)['state']
                 previous=load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']
                 verify_native_state(bundle,state,previous,observation)
+                from .profile_channel import publish_profile
+                _write_new(directory/'profile-publication.json',publish_profile(DockerObserver(target),
+                    Catalog(self.catalog_root,self.validator,readonly=True)))
                 self.store.advance(operation, locks, 'ready')
                 temporary = self.target_path.with_name(self.target_path.name+'.'+operation+'.tmp')
                 _write_new(temporary, target)

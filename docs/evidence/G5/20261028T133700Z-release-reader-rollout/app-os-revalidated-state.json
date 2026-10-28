@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "read_only_actual_app_sdk": {
+    "state_digest": "sha256:a5d73b0189fa88c79e49ed42fa115e3293d32f68f8aff52324022776b52ac391",
+    "release_digest": "sha256:3194c2085f04b0a9c1102df63625d8b4260ee93762322eeb8c7a2cf207b9acef",
+    "catalog_validation_digest": "sha256:9a7bcb1433f6944abdd3e5c55d71f68ba85e7a0e151aa06c3058abc13a4b7f12",
+    "native_imported": false
+  },
+  "os_state_digest": "sha256:a5d73b0189fa88c79e49ed42fa115e3293d32f68f8aff52324022776b52ac391",
+  "alternate_policy_only": true,
+  "published_identity_unchanged": true,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/projection.py": "c73aabb27c816e0ca0e86af798f236907612220ed694b41322f5970d1e6b64aa"
+  }
+}

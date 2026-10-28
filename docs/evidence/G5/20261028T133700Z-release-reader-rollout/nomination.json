@@ -1,0 +1,12 @@
+{
+  "operation_type": "install",
+  "targets": [
+    {
+      "installation_id": "80d1ad94-ad01-5d82-973a-d8e83148391a",
+      "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+      "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+      "plugin_id": "org.example.notes_labels",
+      "action": "install"
+    }
+  ]
+}

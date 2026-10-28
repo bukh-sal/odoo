@@ -1,0 +1,8 @@
+{
+  "result": "reproduced_gap",
+  "old_validator_reused_revoked_policy": true,
+  "new_validator_denied": true,
+  "temporary_policy_only": true,
+  "deployment_policy_unchanged": true,
+  "next_change": "Fence configured validator before/after every archive read against its original private configuration bytes."
+}

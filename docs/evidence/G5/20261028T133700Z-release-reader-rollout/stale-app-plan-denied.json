@@ -1,0 +1,10 @@
+{
+  "result": "denied",
+  "error": {
+    "error": "VALIDATION_FAILED",
+    "message": "Stale plan: deployment state or generation changed"
+  },
+  "actual_deployment_observed": true,
+  "live_trust_policy_changed": false,
+  "release_identity_unchanged": true
+}

@@ -22,6 +22,9 @@ BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY;
 SET LOCAL statement_timeout = '5s';
 SELECT jsonb_build_object(
  'site_id',(SELECT value FROM ir_config_parameter WHERE key='mp.site_id'),
+ 'release_generation',(SELECT value FROM ir_config_parameter WHERE key='mp.release_generation'),
+ 'release_digest',(SELECT value FROM ir_config_parameter WHERE key='mp.release_digest'),
+ 'active_inventory_digest',(SELECT value FROM ir_config_parameter WHERE key='mp.active_inventory_digest'),
  'installations',COALESCE((SELECT jsonb_agg(jsonb_build_object('installation_id',public_id,'plugin_id',plugin_id,'version',version,'digest',artifact_digest,'runtime',runtime,'metadata_state',state,'manifest',manifest) ORDER BY public_id) FROM mp_plugin_installation),'[]'::jsonb),
  'features',COALESCE((SELECT jsonb_agg(jsonb_build_object('installation_id',i.public_id,'plugin_id',f.plugin_id,'workspace_id',w.public_id,'feature_state',f.availability) ORDER BY i.public_id,w.public_id) FROM mp_workspace_plugin f JOIN mp_plugin_installation i ON i.id=f.installation_id JOIN mp_workspace w ON w.id=f.workspace_id),'[]'::jsonb),
  'workspaces',COALESCE((SELECT jsonb_agg(jsonb_build_object('workspace_id',public_id,'state',state,'policy_generation',policy_generation) ORDER BY public_id) FROM mp_workspace),'[]'::jsonb),
@@ -35,11 +38,18 @@ ROLLBACK;
 
 # Read static tool/distribution metadata only. Source files are hashed, never
 # imported. Tokens/config/filestore/database connection material is not read.
-OBSERVE_RUNTIME = """import hashlib,importlib.metadata,json,pathlib,platform,sys
+OBSERVE_RUNTIME = """import ast,hashlib,importlib.metadata,json,pathlib,platform,sys
 from packaging.markers import default_environment
 from packaging.tags import sys_tags
 root=pathlib.Path('/opt/modular')
 inventory=json.loads((root/'distribution-inventory.json').read_text())
+projection=root/'packages/platform_sdk/modular_platform/projection.py'
+protocol=0
+if projection.is_file():
+ for node in ast.parse(projection.read_text()).body:
+  if isinstance(node,ast.Assign) and any(isinstance(target,ast.Name) and target.id=='PUBLISHED_RELEASE_PROTOCOL' for target in node.targets):
+   protocol=ast.literal_eval(node.value)
+if type(protocol) is not int:raise ValueError('Invalid static published-release protocol')
 bad=[name for name,digest in inventory['files'].items() if not (root/name).is_file() or hashlib.sha256((root/name).read_bytes()).hexdigest()!=digest]
 expected={name for name in inventory['files'] if name.startswith(('addons/','odoo/addons/'))}
 actual={path.relative_to(root).as_posix() for folder in ('addons','odoo/addons') for path in (root/folder).rglob('*') if path.is_file() and '__pycache__' not in path.parts and path.suffix!='.pyc'}
@@ -49,7 +59,7 @@ for distribution in importlib.metadata.distributions():
     source={str(entry):hashlib.sha256(pathlib.Path(distribution.locate_file(entry)).read_bytes()).hexdigest() for entry in (distribution.files or []) if str(entry).endswith(('.py','.so','.dist-info/METADATA')) and pathlib.Path(distribution.locate_file(entry)).is_file()}
     digest='sha256:'+hashlib.sha256(json.dumps(source,sort_keys=True,separators=(',',':')).encode()).hexdigest()
     wheels.append({'name':distribution.metadata['Name'],'version':distribution.version,'kind':'runtime_distribution','requires_python':distribution.metadata.get('Requires-Python',''),'requires_dist':distribution.requires or [],'digest':digest})
-print(json.dumps({'inventory':inventory,'inventory_digest':'sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),'python_lock_digest':'sha256:'+runtime_lock,'python':platform.python_version(),'architecture':platform.machine(),'markers':default_environment(),'accepted_wheel_tags':[str(tag) for tag in sys_tags()],'python_metadata':sorted(wheels,key=lambda item:item['name'].lower()),'modified_files':bad,'unexpected_addon_files':sorted(actual-expected),'missing_addon_files':sorted(expected-actual)}))
+print(json.dumps({'inventory':inventory,'published_release_protocol':protocol,'inventory_digest':'sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),'python_lock_digest':'sha256:'+runtime_lock,'python':platform.python_version(),'architecture':platform.machine(),'markers':default_environment(),'accepted_wheel_tags':[str(tag) for tag in sys_tags()],'python_metadata':sorted(wheels,key=lambda item:item['name'].lower()),'modified_files':bad,'unexpected_addon_files':sorted(actual-expected),'missing_addon_files':sorted(expected-actual)}))
 """
 
 
@@ -79,7 +89,7 @@ class DockerObserver:
     def __init__(self, configuration):
         required = {'schema_version', 'deployment_id', 'project', 'sites', 'image_id',
                     'generation', 'policy_version', 'operator_authorization_generation', 'release_created_at'}
-        if not isinstance(configuration, dict) or not required<=configuration.keys() or not configuration.keys()<=required|{'worker_id'} or configuration['schema_version'] != 1:
+        if not isinstance(configuration, dict) or not required<=configuration.keys() or not configuration.keys()<=required|{'worker_id','published_release'} or configuration['schema_version'] != 1:
             raise PlanningError('Exact independently owned deployment configuration required')
         self.config = configuration
         if 'worker_id' in configuration and not re.fullmatch('[0-9a-f]{64}',configuration['worker_id']):

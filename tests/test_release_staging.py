@@ -30,7 +30,7 @@ def staged_runtime(catalog):
         files['artifacts/'+filename]=item['digest'][7:]
         prefix='backend/odoo_addons/'+addon+'/'
         files.update({'addons/'+addon+'/'+name[len(prefix):]:digest for name,digest in item['inventory'].items() if name.startswith(prefix)})
-    return {'inventory':{'artifacts':artifacts,'files':files,
+    return {'published_release_protocol':1,'inventory':{'artifacts':artifacts,'files':files,
             'native_addons':dict.fromkeys(['mp_core','mp_shell']+[item['manifest']['runtime']['addon_name'] for item in catalog]),
             'policy':{'upstream_commit':PROVENANCE['upstream_commit']},'generated_patches':[]},
         'inventory_digest':'sha256:'+'d'*64,'python_lock_digest':PROVENANCE['python_lock_digest'],
@@ -93,6 +93,10 @@ class StagedPlans(unittest.TestCase):
             def bundle(inner,operation):return self.prepare()
         executor.store=Store()
         with self.assertRaisesRegex(OperatorError,'current-image mutation denied'):executor.apply(ident(500))
+
+    def test_new_native_publication_requires_a_compatible_planning_profile_reader(self):
+        self.runtime['published_release_protocol']=0
+        with self.assertRaisesRegex(OperatorError,'published-release profile reader'):self.prepare()
 
     def test_self_consistent_image_inventory_cannot_substitute_curated_native_bytes(self):
         from modular_platform.projection import runtime_inputs

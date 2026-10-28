@@ -9,6 +9,7 @@ from .contracts import api_range
 
 from .plans import check_bundle, data_digest, prepare_plan, release_lock, scoped_installation_key
 from .resolution import PlanningError, resolve_release, binding_matches_scope
+from .projection import catalog_validation_digest
 
 
 def scoped_bindings(solution, installations, previous):
@@ -48,6 +49,8 @@ def prepare_document(document, catalog):
         raise PlanningError('Plan input requires exact state/environment/provenance/Python/request sections')
     document = copy.deepcopy(document)
     request, state = document['request'], document['state']
+    if 'catalog_validation_digest' in state and state['catalog_validation_digest']!=catalog_validation_digest(catalog):
+        raise PlanningError('Current catalog validation changed; observe and prepare again')
     allowed = {'operation_type', 'requested', 'targets', 'update', 'provider_choices', 'core_python',
                'site_requirements', 'bindings', 'endpoints', 'permission_changes', 'trust_changes',
                'operation_id', 'created_at', 'backup_policy'}
@@ -139,9 +142,7 @@ def prepare_document(document, catalog):
         permission_changes=request.get('permission_changes', []), trust_changes=request.get('trust_changes', []),
         operation_type=request['operation_type'], operation_id=request.get('operation_id'),
         created_at=request.get('created_at'), backup_policy=request.get('backup_policy', 'development_checkpoint'),
-        catalog_snapshot_digest=data_digest(sorted(
-            [{'plugin_id': item['manifest']['plugin']['id'], 'version': item['manifest']['plugin']['version'], 'digest': item['digest'], 'trust': item['trust']} for item in catalog],
-            key=lambda item: (item['plugin_id'], item['version']))),
+        catalog_snapshot_digest=catalog_validation_digest(catalog),
         resolution_reasons=resolved['reasons'])
     check_bundle(bundle, state)
     return bundle

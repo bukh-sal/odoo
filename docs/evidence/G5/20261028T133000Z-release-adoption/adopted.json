@@ -1,0 +1,9 @@
+{
+  "catalog_validation_digest": "sha256:7dceccaac2f9b8112d4bf151685f64eba75c5857139826f4d2ef73e00a2e61b6",
+  "database_or_runtime_changed": false,
+  "generation": 9,
+  "image_id": "sha256:76dab825202dd0903af22cef381dcc3d03dbb52b3df47e98cbec60c318c6ea14",
+  "operation_id": "86952188-580b-4de2-bab5-4ef536a29ce7",
+  "release_digest": "sha256:4149d5075be0d6e429c094aa5e616a45fb4b0fb9f7271893cacf489e6bae7ec5",
+  "state": "adopted"
+}
