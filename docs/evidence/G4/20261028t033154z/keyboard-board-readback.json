@@ -1,0 +1,7 @@
+{
+  "result": "passed",
+  "revision": 9,
+  "cards": 2,
+  "lane": "done",
+  "procedure": "After3 native/custom cycles, ArrowDown changed lane and one Ctrl+S advanced8->9"
+}

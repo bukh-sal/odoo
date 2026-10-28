@@ -23,6 +23,8 @@
 !tools/**
 !platform_addons/
 !platform_addons/**
+!plugins/
+!plugins/**
 !packages/
 !packages/contracts/
 !packages/contracts/**

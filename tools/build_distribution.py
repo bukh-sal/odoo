@@ -6,6 +6,7 @@ import ast
 import hashlib
 import json
 import shutil
+import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -44,10 +45,18 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     if target.exists():
         raise ValueError("distribution target must not exist")
     selected = set(policy["addons"])
+    reference_stage=tempfile.TemporaryDirectory(prefix='mp-reference-') if policy.get('reference_packages') else None
+    references={};artifacts={}
+    if reference_stage:
+        from reference_package import materialize_reference
+        for manifest_path in policy['reference_packages']:
+            descriptor,raw,location=materialize_reference(source,manifest_path,Path(reference_stage.name))
+            if descriptor['addon'] in references:raise ValueError('Duplicate reference package addon')
+            references[descriptor['addon']]=location;artifacts[descriptor['plugin_id']]={**descriptor,'bytes':raw}
     manifests = {}
     locations = {}
     for name in sorted(selected):
-        choices = [source / "odoo/addons" / name, source / "addons" / name, source / "platform_addons" / name]
+        choices = [references[name]] if name in references else [source / "odoo/addons" / name, source / "addons" / name, source / "platform_addons" / name]
         matches = [p for p in choices if (p / "__manifest__.py").is_file()]
         if len(matches) != 1:
             raise ValueError(f"missing or ambiguous addon: {name}")
@@ -63,6 +72,9 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     shutil.copytree(source / "odoo", target / "odoo", ignore=lambda p, names: set(ignore(p, names)) | ({"addons"} if Path(p) == source / "odoo" else set()))
     (target / "odoo/addons").mkdir()
     (target / "addons").mkdir()
+    if artifacts:
+        (target/'artifacts').mkdir()
+        for item in artifacts.values():(target/'artifacts'/item['file']).write_bytes(item['bytes'])
     for name, location in locations.items():
         destination = target / ("odoo/addons" if name == "base" else "addons") / name
         shutil.copytree(location, destination, ignore=ignore)
@@ -75,6 +87,7 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     category_hash = hashlib.sha256(category_file.read_bytes()).hexdigest()
     seeded = seed_category_metadata(category_file, target / "odoo/addons/base/data/ir_module_module.xml")
     inventory = {"policy": policy, "native_addons": manifests, "generated_patches": [{"path": "odoo/addons/base/data/ir_module_category_data.xml", "source_sha256": category_hash, "seeded_categories": seeded}], "files": {}}
+    if artifacts:inventory['artifacts']={key:{name:value for name,value in item.items() if name!='bytes'} for key,item in artifacts.items()}
     for path in sorted(target.rglob("*")):
         if path.is_file():
             inventory["files"][path.relative_to(target).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()

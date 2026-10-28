@@ -1,0 +1,17 @@
+{
+  "state": "passed_subset",
+  "utc": "2026-10-28T03:44:16.505Z",
+  "observations": [
+    "Canvas plain-JS mount loads through frozen host and own boards1.0/documents2.0 bindings",
+    "Added note-linked card, moved to doing, saved revision8, refresh retained exact card and lane",
+    "Three native/custom cycles, keyboard ArrowDown moved card to done, single Ctrl+S advanced8->9; independent HTTP readback verifies exactly one revision",
+    "Separate same-session Research tab is viewer: readonly name/card, no add/move/delete controls, Save disabled; Personal board remains editor",
+    "Followed linked note public-ID deep link; provider-owned Edit labels dialog invokes declared command/base1.0 chain; R1 and Verified persisted on Welcome note revision2, body unchanged"
+  ],
+  "remaining": [
+    "custom dirty/conflict/mount failure/theme/locale/deep-history proof",
+    "Labels0.2 migration and native import/export upgrade proof",
+    "package/model conflict and final G4 gate review"
+  ],
+  "console": []
+}

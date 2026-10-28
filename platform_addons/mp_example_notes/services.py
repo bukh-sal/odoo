@@ -13,3 +13,9 @@ class NotesService:
     }
 
 register('org.example.notes.documents','1.0','org.example.notes',NotesService.methods)
+
+_v2=json.loads((CONTRACTS/'documents-v2.schema.json').read_text())['$defs']
+class NotesServiceV2:
+    methods={name:Method('mp.example.note','_mp_service_v2_'+name,name+'_input','documents-v2.schema.json','org.example.notes:notes.read',False,'read',_v2['document'] if name=='get' else _v2['list_result']) for name in ['get','list']}
+
+register('org.example.notes.documents','2.0','org.example.notes',NotesServiceV2.methods)

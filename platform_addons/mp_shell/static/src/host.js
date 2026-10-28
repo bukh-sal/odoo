@@ -1,5 +1,5 @@
 /** Concentrated native adapter + major-1 framework-neutral host implementation. */
-import { Component, xml, useState, useRef, useSubEnv, onMounted, onWillDestroy } from '@odoo/owl';
+import { Component, xml, useState, useRef, useSubEnv, onMounted, onWillDestroy, onError } from '@odoo/owl';
 import { startWebClient } from '@web/start';
 import { rpc } from '@web/core/network/rpc';
 import { View } from '@web/views/view';
@@ -61,7 +61,9 @@ class Shell extends Component {
                 <button t-if="!state.settings and state.nativeProps and state.nativeProps.type==='form'" t-on-click="backToList" t-esc="t('back')"/>
                 <button t-if="!state.settings and state.context and state.plugin==='org.example.notes'" t-on-click="exportNotes" t-esc="t('export')"/>
                 <button t-if="state.nativeProps and state.nativeProps.type==='form' and selectedNote and state.context.capabilities.includes('org.example.notes:notes.delete')" t-on-click="deleteNote">Delete note</button>
+                <button t-foreach="state.detailActions" t-as="action" t-key="action.id" t-on-click="()=>this.executeDetailAction(action)" t-esc="action.label"/>
             </div>
+            <div t-if="state.detailLabels.length" class="mp_labels" aria-label="Note labels"><span t-foreach="state.detailLabels" t-as="label" t-key="label" t-esc="label"/></div>
             <div t-if="state.notification" class="mp_notice" role="status" t-esc="state.notification"/>
             <div t-if="state.recoveryDraft and state.context" class="mp_notice" role="status">Your unsaved draft is available locally. <button t-on-click="downloadDraft">Download unsaved draft</button></div>
             <div t-if="state.error" class="mp_notice" role="alert"><strong t-esc="state.error.message"/><p t-esc="state.error.request_id"/>
@@ -117,11 +119,16 @@ class Shell extends Component {
         if(!words[this.state.language])this.state.language='en-US';
         this.main=useRef('main');this.custom=useRef('custom');this.commands=useRef('commands');
         this.confirmation=useRef('confirmation');
-        Object.assign(this.state,{members:[],workspaceSettings:null,memberPrincipal:'',memberRole:'viewer',adminBusy:false,settingsDirty:false,recoveryDraft:false});
+        Object.assign(this.state,{members:[],workspaceSettings:null,memberPrincipal:'',memberRole:'viewer',adminBusy:false,settingsDirty:false,recoveryDraft:false,detailActions:[],detailLabels:[]});
         const shell=this;
         useSubEnv({config:{...this.env.config,breadcrumbs:[{get name(){return shell.state.nativeTitle||shell.state.title;}}],getDisplayName:()=>this.state.nativeTitle||this.state.title,setDisplayName:name=>this.state.nativeTitle=name,historyBack:()=>this.backToList()}});
         this.themeListeners=new Set();this.localeListeners=new Set();this.eventListeners=new Map();
         this.transition=0;
+        onError(e=>{
+            const cause=e.cause||e;
+            this.state.nativeProps=null;this.state.detailActions=[];this.state.detailLabels=[];
+            this.fail(error(cause.exceptionName==='odoo.exceptions.AccessError'?'FORBIDDEN':'INTERNAL_ERROR'));
+        });
         this.onPop=async()=>{
             if(!await this.canLeave()){history.pushState({},'',this.currentURL);return;}
             this.nativeDirty=false;this.draft=null;this.state.settingsDirty=false;this.settingsRecovery=null;await this.activate();
@@ -178,9 +185,10 @@ class Shell extends Component {
         const mounted=this.mounted;this.mounted=null;
         this.controller?.abort();for(const p of pendingNative)p.abort();pendingNative.clear();
         this.state.nativeProps=null;this.bindings=[];
+        this.state.detailActions=[];this.state.detailLabels=[];
         this.custom.el?.replaceChildren();
         this.themeListeners.clear();this.localeListeners.clear();this.eventListeners.clear();
-        if(mounted)await mounted.dispose();
+        if(mounted){try{await mounted.dispose();}catch{this.fail(error('INTERNAL_ERROR'));}}
     }
     fail(e){if(e.name==='AbortError')return;if(e.code==='CONFLICT'&&this.nativeDirty&&this.draft)this.state.recoveryDraft=true;this.state.error={code:e.code||'INTERNAL_ERROR',message:e.message||'Page unavailable',request_id:e.request_id||crypto.randomUUID(),field:e.details?.field};}
     async go(url){if(!await this.canLeave())return;this.nativeDirty=false;this.state.settingsDirty=false;this.settingsRecovery=null;this.draft=null;this.state.recoveryDraft=false;history.pushState({},'',url);await this.activate();}
@@ -244,28 +252,43 @@ class Shell extends Component {
         try{const notes=[];let cursor=null;do{const data=await this.callService('documents','list',{limit:100,...(cursor?{cursor}:{})});notes.push(...data.items.map(({id,title,body,revision,labels})=>({id,title,body,revision,labels})));cursor=data.next_cursor;if(notes.length>=10000&&cursor)throw error('VALIDATION_FAILED');}while(cursor);this.download('notes.json',{schema_version:1,workspace_id:workspace,notes});this.notify('Notes exported');}
         catch(e){this.fail(e);}
     }
-    async callService(alias,method,input,options={}){
+    async callService(alias,method,input,options={},execution=null){
         if(Object.keys(options).some(k=>!['signal','idempotencyKey'].includes(k)))throw error('VALIDATION_FAILED');
-        const binding=this.bindings?.find(binding=>binding.alias===alias);if(!binding)throw error('DEPENDENCY_UNAVAILABLE');
+        const binding=(execution?.bindings||this.bindings)?.find(binding=>binding.alias===alias);if(!binding)throw error('DEPENDENCY_UNAVAILABLE');
         const captured=generation;const controller=new AbortController();const signals=[this.controller.signal,options.signal].filter(Boolean);const abort=()=>controller.abort();
         if(options.signal?.aborted)throw error('CANCELLED',undefined,{outcome:'not_started'});
         for(const signal of signals){if(signal.aborted)abort();else signal.addEventListener('abort',abort,{once:true});}
         try{
-            const value=await this.json('/api/v1/services/'+binding.service_id+'/'+method,{api_version:binding.api_version,request_id:crypto.randomUUID(),...(options.idempotencyKey?{idempotency_key:options.idempotencyKey}:{}),input},{signal:controller.signal,headers:{'X-MP-Binding':binding.binding_id,'X-MP-Consumer':this.state.context.installation_id}});
+            const value=await this.json('/api/v1/services/'+binding.service_id+'/'+method,{api_version:binding.api_version,request_id:crypto.randomUUID(),...(options.idempotencyKey?{idempotency_key:options.idempotencyKey}:{}),input},{signal:controller.signal,headers:{'X-MP-Binding':binding.binding_id,'X-MP-Consumer':execution?.context.installation_id||this.state.context.installation_id}});
             if(captured!==generation||controller.signal.aborted)throw obsolete();return value;
         }catch(e){if(captured!==generation)throw obsolete();if(e.name==='AbortError')throw error('CANCELLED',undefined,{outcome:'unknown'});if(e.code==='UNAUTHENTICATED'){await this.retire();generation++;this.state.context=null;this.fail(e);}throw e;}
         finally{for(const signal of signals)signal.removeEventListener('abort',abort);}
     }
-    facade(context){
+    facade(context,execution={context,bindings:this.bindings,commands:this.pageCommands||[]}){
         const captured=generation;
         const ensure=()=>{if(captured!==generation||this.controller.signal.aborted)throw obsolete();};
         const subscribe=(set,callback)=>{if(captured!==generation)throw obsolete();set.add(callback);return()=>set.delete(callback);};
-        return freeze({context:()=>context,navigate:target=>{ensure();if(target.params&&Object.keys(target.params).length)throw error('VALIDATION_FAILED');return this.openPage(target.pluginId,target.pageId,target.query);},services:{call:(...args)=>{ensure();return this.callService(...args);}},
-            commands:{execute:async id=>{ensure();if(id==='org.modularplatform.shell:command:export')return this.exportNotes();throw error('NOT_FOUND');}},
+        return freeze({context:()=>context,navigate:target=>{ensure();if(target.params&&Object.keys(target.params).length)throw error('VALIDATION_FAILED');return this.openPage(target.pluginId,target.pageId,target.query);},services:{call:(alias,method,input,options)=>{ensure();return this.callService(alias,method,input,options,execution);}},
+            commands:{execute:async(id,input)=>{ensure();if(id==='org.modularplatform.shell:command:export')return this.exportNotes();const command=execution.commands.find(command=>command.id===id);if(!command||!context.capabilities.includes(command.permission))throw error('FORBIDDEN');const handler=registry.category('mp.commands').get(command.handler,null);if(!handler)throw error('DEPENDENCY_UNAVAILABLE');return handler({host:this.facade(context,execution),input});}},
             events:{subscribe:(topic,callback)=>{if(!['org.example.notes.changed'].includes(topic))throw error('FORBIDDEN');if(!this.eventListeners.has(topic))this.eventListeners.set(topic,new Set());return subscribe(this.eventListeners.get(topic),callback);}},
             notifications:{show:input=>{if(captured===generation)this.notify(input.message);}},dialogs:{confirm:async input=>{ensure();return this.confirm(input);}},
             theme:{current:()=>this.theme(),subscribe:callback=>subscribe(this.themeListeners,callback)},locale:{current:()=>this.locale(),translate:key=>key==='notes.title'?this.t('notes'):this.t(key)},
         });
+    }
+    async executeDetailAction(action){
+        const captured=generation;
+        if(!await this.canLeave())return;
+        try{
+            const value=await this.json('/api/v1/context?plugin_id='+encodeURIComponent(action.plugin_id),null,{signal:this.controller.signal});
+            if(captured!==generation)throw obsolete();
+            if(!value.context.capabilities.includes(action.permission))throw error('FORBIDDEN');
+            const handler=registry.category('mp.slot_actions').get(action.handler,null);if(!handler)throw error('DEPENDENCY_UNAVAILABLE');
+            const context=freeze({...value.context,generation,locale:this.state.language,direction:this.state.language==='ar'?'rtl':'ltr'});
+            const execution={context,bindings:freeze(value.bindings),commands:value.commands||[]};
+            const saved=await handler({element:this.main.el,host:this.facade(context,execution),context:freeze({note_id:this.selectedNote.public_id,expected_revision:this.selectedNote.revision}),signal:this.controller.signal});
+            if(captured!==generation)throw obsolete();
+            if(saved){this.nativeDirty=false;this.draft=null;await this.activate(true);}
+        }catch(e){this.fail(e);}
     }
     async refreshAuthority(){
         if(!workspace||!this.state.context||this.checking)return;this.checking=true;const captured=generation;
@@ -296,6 +319,7 @@ class Shell extends Component {
             if(this.boundPrincipal&&(c.principal_id!==this.boundPrincipal||c.site_id!==this.boundSite)){this.draft=null;this.nativeDirty=false;this.state.recoveryDraft=false;this.settingsRecovery=null;this.state.workspaces=await this.json('/api/v1/workspaces',null,{signal:controller.signal});if(captured!==generation)throw obsolete();}
             this.boundPrincipal=c.principal_id;this.boundSite=c.site_id;this.state.displayName=c.display_name;
             this.csrf=value.csrf_token;this.bindings=freeze(value.bindings);this.state.context=freeze({...c,generation,locale:this.state.language,direction:this.state.language==='ar'?'rtl':'ltr',capabilities:[...c.capabilities]});
+            this.pageCommands=value.commands||[];this.pageSlots=value.slots||[];
             if(settings){if(this.isWorkspaceAdministrator)await this.loadWorkspaceAdministration(controller,captured);return;}
             this.page=value.pages.find(page=>page.path===path);if(!this.page)throw error('NOT_FOUND');
             this.state.title=plugin==='org.example.notes'?this.t('notes'):(this.state.navigation.find(app=>app.plugin_id===plugin)?.name||plugin);
@@ -308,7 +332,7 @@ class Shell extends Component {
                 if(captured!==generation){await mounted.dispose();element.remove();throw obsolete();}
                 this.mounted=mounted;
             }
-        }catch(e){this.fail(e);}
+        }catch(e){if(captured===generation&&e.name!=='AbortError'){controller.abort();this.custom.el?.replaceChildren();this.fail(e);}}
         finally{if(captured===generation)this.state.loading=false;}
     }
     async nativeView(url){
@@ -337,6 +361,11 @@ class Shell extends Component {
             }catch(e){this.fail(e);return false;}
         },onDiscard:async()=>{this.nativeDirty=false;this.draft=null;await this.backToList();}});
         this.state.nativeProps=props;
+        if(selected&&this.pageSlots.length){
+            const value=await this.callService('documents','get',{note_id:selected.public_id});
+            if(captured!==generation)throw obsolete();this.state.detailLabels=value.labels;
+            for(const slot of this.pageSlots){const actions=await this.json('/api/v1/ui/slot?slot_id='+encodeURIComponent(slot.id)+'&major='+slot.major,null,{signal:this.controller.signal});if(captured!==generation)throw obsolete();this.state.detailActions.push(...actions);}
+        }
     }
 }
 

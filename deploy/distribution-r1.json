@@ -19,14 +19,23 @@
     "mp_identity",
     "mp_core",
     "mp_example_notes",
-    "mp_shell"
+    "mp_shell",
+    "mp_example_notes_labels",
+    "mp_example_canvas"
   ],
   "explicit_install": [
     "web",
     "auth_password_policy",
     "mp_example_notes",
-    "mp_shell"
+    "mp_shell",
+    "mp_example_notes_labels",
+    "mp_example_canvas"
   ],
   "platform_sdk": true,
-  "profile": "R1 development vertical slice; qualified release inventory remains G7"
+  "profile": "R1 development vertical slice; qualified release inventory remains G7",
+  "reference_packages": [
+    "plugins/notes/plugin.toml",
+    "plugins/notes_labels/plugin.toml",
+    "plugins/canvas/plugin.toml"
+  ]
 }

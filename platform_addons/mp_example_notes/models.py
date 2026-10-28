@@ -115,3 +115,15 @@ class Note(models.Model):
     def _mp_service_delete(self,values):
         record=self._expected(values,'unlink');ident=record.public_id;record.unlink()
         return {'id':ident,'deleted':True}
+
+    def _v2_dto(self):
+        value=self._dto()
+        return {'document_id':value['id'],'content':{'headline':value['title'],'text':value['body']},'revision':value['revision'],'labels':value['labels'],'updated_at':value['updated_at']}
+
+    @api.model
+    def _mp_service_v2_get(self,values):return self._by_public(values['document_id'])._v2_dto()
+
+    @api.model
+    def _mp_service_v2_list(self,values):
+        self._mp_guard('read')
+        return {'documents':[record._v2_dto() for record in self.search([],limit=values['limit'],order='title,id')]}

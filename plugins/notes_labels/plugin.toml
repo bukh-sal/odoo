@@ -1,0 +1,12 @@
+"schema_version" = 1
+"plugin" = {"id" = "org.example.notes_labels", "version" = "0.1.1", "name" = "Notes Labels", "description" = "Trusted shared-table Notes extension", "publisher" = "example", "license" = "LGPL-3.0-only"}
+"compatibility" = {"platform" = ">=0.1,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
+"runtime" = {"kind" = "native", "addon_name" = "mp_example_notes_labels", "native_compatibility" = "odoo-19", "python" = ">=3.12,<3.13", "python_dependencies" = []}
+"activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}
+"permissions" = {"defines" = {"labels.read" = "Read labels", "labels.write" = "Set labels"}, "requests" = [{"capability" = "org.example.notes:notes.read", "reason" = "Read base revision through the documents binding", "scope" = "workspace"}]}
+"data" = {"models" = [], "extension_targets" = ["mp.example.note"], "contributions" = [{"kind" = "field", "id" = "mp.example.note.x_notes_labels", "target" = "mp.example.note", "delete_policy" = "owned"}]}
+"ui" = {"mode" = "trusted", "design" = "standard", "pages" = [], "navigation" = [], "contributions" = [{"id" = "org.example.notes_labels:action:set_labels", "slot_id" = "org.example.notes:slot:detail_actions", "slot_major" = 1, "permission" = "org.example.notes_labels:labels.write", "label" = "Edit labels", "handler" = "org.example.notes_labels:action:set_labels", "order" = 100, "after" = [], "optional" = false}], "commands" = [{"id" = "org.example.notes_labels:command:set_labels", "permission" = "org.example.notes_labels:labels.write", "label" = "Set note labels", "handler" = "org.example.notes_labels:command:set_labels", "input_schema" = "schemas/labels-input.json", "order" = 200}]}
+"services" = {"provides" = [{"id" = "org.example.notes_labels.labels", "api_version" = "1.0", "schema" = "schemas/labels-input.json", "handler" = "mp_example_notes_labels.services:LabelsService", "methods" = ["set_labels"]}], "requires" = [{"alias" = "documents", "id" = "org.example.notes.documents", "contract_major" = 1, "version" = ">=1.0,<2.0"}, {"alias" = "labels", "id" = "org.example.notes_labels.labels", "contract_major" = 1, "version" = ">=1.0,<2.0"}]}
+"upgrade" = {"strategy" = "native_migrations", "requires_maintenance" = true, "destructive" = false, "transitions" = []}
+"dependencies" = {"plugins" = {"org.example.notes" = ">=0.1,<0.3"}}
+"integrations" = {"optional" = {}}

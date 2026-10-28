@@ -1,0 +1,25 @@
+{
+  "state": "failed",
+  "checks": [
+    {
+      "name": "documents1.0 and2.0 coexist through distinct consumer aliases; invalid DTO/major/binding never choose latest",
+      "result": "passed"
+    },
+    {
+      "name": "Labels command uses actor-preserving base1.0 call; revision/idempotency and forged-frame/viewer denial hold",
+      "result": "passed"
+    },
+    {
+      "name": "revoked integration grant prevents supported nested dispatch without changing actor or effect",
+      "result": "passed"
+    },
+    {
+      "name": "board persistence/CAS rejects cross-workspace references, duplicate card IDs, viewers and stale revisions atomically",
+      "result": "passed"
+    },
+    {
+      "name": "eight concurrent same-key board saves produce one revision/effect",
+      "result": "passed"
+    }
+  ]
+}

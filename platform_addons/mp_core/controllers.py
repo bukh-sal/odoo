@@ -54,7 +54,10 @@ def advertised_capabilities(plugin,manifest,scope):
     roles=json.loads((CONTRACTS/'role-permissions.json').read_text())['plugin_permissions']
     if plugin in roles:
         names=roles[plugin].get(scope.role,[])
-        return [name if ':' in name else plugin+':'+name for name in names]
+        capabilities=[name if ':' in name else plugin+':'+name for name in names]
+        if scope.role=='administrator' and scope.principal_kind=='human':
+            capabilities+=['org.modularplatform.identity:workspace.members.manage','org.modularplatform.identity:workspace.config.manage']
+        return sorted(set(capabilities))
     return [plugin+':'+name for name in manifest['permissions']['defines'] if scope.role!='viewer' or name.endswith('.read')]
 
 
@@ -141,7 +144,23 @@ class CoreGateway(http.Controller):
             validate('host-context',context)
             request.env.cr.execute("SELECT descriptor FROM mp_service_binding WHERE consumer_id=(SELECT id FROM mp_plugin_installation WHERE plugin_id=%s) AND workspace_id=%s AND state='active'",[plugin_id,scope.workspace_id])
             bindings=[row[0] for row in request.env.cr.fetchall()]
-            return {'context':context,'bindings':bindings,'pages':install[1]['ui']['pages'],'csrf_token':request.csrf_token()}
+            return {'context':context,'bindings':bindings,'pages':install[1]['ui']['pages'],'slots':install[1]['ui'].get('slots',[]),'commands':[c for c in install[1]['ui'].get('commands',[]) if c['permission'] in caps],'csrf_token':request.csrf_token()}
+        return result(run)
+
+    @http.route('/api/v1/ui/slot',type='http',auth='public',methods=['GET'])
+    def ui_slot(self,slot_id=None,major=None,**kwargs):
+        def run():
+            from modular_platform.contracts import resolve_ui
+            scope=current_scope(request.env)
+            request.env.cr.execute("SELECT plugin_id,manifest,state FROM mp_plugin_installation WHERE state!='removed'")
+            installed={ident:(manifest,state) for ident,manifest,state in request.env.cr.fetchall()}
+            registry=resolve_ui([manifest for manifest,state in installed.values()])
+            slot=registry['slots'].get(slot_id)
+            if not slot or str(slot['major'])!=major:raise PublicError('DEPENDENCY_UNAVAILABLE')
+            request.env.cr.execute("SELECT plugin_id FROM mp_workspace_plugin WHERE workspace_id=%s AND availability='enabled'",[scope.workspace_id])
+            enabled={r[0] for r in request.env.cr.fetchall()}
+            if slot['plugin_id'] not in enabled or installed[slot['plugin_id']][1]!='installed':raise PublicError('PLUGIN_SUSPENDED')
+            return [item for item in registry['contributions'] if item['slot_id']==slot_id and item['plugin_id'] in enabled and installed[item['plugin_id']][1]=='installed' and item['permission'] in advertised_capabilities(item['plugin_id'],installed[item['plugin_id']][0],scope)]
         return result(run)
 
     @http.route('/api/v1/services/<string:service>/<string:method>',type='http',auth='public',methods=['POST'],csrf=False,max_content_length=65536)
@@ -213,7 +232,9 @@ class CoreGateway(http.Controller):
                     return old[5]
                 outcome_id=inserted[0]
             if (time.monotonic()-started)*1000>=budget:raise PublicError('DEADLINE_EXCEEDED',{'outcome':'not_started'})
-            value=getattr(model,spec.handler)(body['input'])
+            from .dispatch import CallFrame
+            frame=CallFrame(scope.principal_public_id,scope.workspace_public_id,site_id(),binding['provider_installation_id'],provider['plugin']['id'],((provider['plugin']['id'],service,method),))
+            value=getattr(model.with_context(_mp_call_frame=frame),spec.handler)(body['input'])
             if not Draft202012Validator(spec.output_schema,format_checker=FORMAT_CHECKER).is_valid(value):raise PublicError('INTERNAL_ERROR')
             if outcome_id:
                 request.env.cr.execute("UPDATE mp_service_outcome SET state='completed',result=%s::jsonb WHERE id=%s",[json.dumps(value),outcome_id])

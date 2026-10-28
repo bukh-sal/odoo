@@ -1,0 +1,1 @@
+<odoo><record id="board_scope" model="ir.rule"><field name="name">Canvas global workspace</field><field name="model_id" ref="model_mp_example_canvas_board"/><field name="domain_force">[('workspace_id', '=', mp_workspace_id)]</field></record></odoo>

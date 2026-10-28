@@ -88,6 +88,10 @@ class Installation(models.Model):
 
     def write(self, values):
         if {'plugin_id','public_id','runtime'} & values.keys(): raise AccessError('Installation identity is immutable')
+        if 'artifact_digest' in values:
+            for record in self:
+                if values['artifact_digest']!=record.artifact_digest and values.get('version',record.version)==record.version:
+                    raise ValidationError('A different artifact requires a different package version')
         result=super().write(values)
         if {'state','version','manifest'} & values.keys():
             self.env['mp.workspace.plugin'].search([('installation_id','in',self.ids)]).workspace_id._bump_policy()

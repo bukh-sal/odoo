@@ -1,0 +1,68 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "--entrypoint", "python", "maintenance", "odoo-bin", "-c", "/run/secrets/odoo_config", "-d", "mp_disposable_r0_r1_396163208bf1", "-u", "mp_example_notes", "-i", "mp_example_notes_labels,mp_example_canvas", "--stop-after-init", "--no-http", "--workers=0", "--without-demo"]
+ Container mp-r0-r1396163208bf1-maintenance-run-338ef4a7875f Creating 
+ Container mp-r0-r1396163208bf1-maintenance-run-338ef4a7875f Created 
+2026-10-28 03:33:15,080 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 03:33:15,081 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 03:33:15,081 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 03:33:15,081 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 03:33:15,648 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 1 modules... 
+2026-10-28 03:33:15,650 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 03:33:15,667 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: updating modules list 
+2026-10-28 03:33:15,668 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-10-28 03:33:15,682 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 03:33:15,683 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 03:33:15,687 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 03:33:15,687 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 03:33:15,691 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_r1_fault', defaulting to '' 
+2026-10-28 03:33:15,691 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_r1_fault', defaulting to '' 
+2026-10-28 03:33:15,696 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Canvas', 'Notes Labels'] to user __system__ #1 via n/a 
+2026-10-28 03:33:15,704 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Notes'] to user __system__ #1 via n/a 
+2026-10-28 03:33:15,704 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Notes'] to user __system__ #1 via n/a 
+2026-10-28 03:33:15,712 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_canvas', defaulting to '' 
+2026-10-28 03:33:15,713 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_example_notes_labels', defaulting to '' 
+2026-10-28 03:33:15,716 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.module: Missing `author` key in manifest for 'mp_r1_fault', defaulting to '' 
+2026-10-28 03:33:15,722 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-10-28 03:33:15,727 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 16 modules... 
+2026-10-28 03:33:15,853 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: Loading module mp_example_notes (13/16) 
+2026-10-28 03:33:15,878 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.registry: module mp_example_notes: creating or updating database tables 
+2026-10-28 03:33:15,903 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading mp_example_notes/security/ir.model.access.csv 
+2026-10-28 03:33:15,907 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading mp_example_notes/security/rules.xml 
+2026-10-28 03:33:15,911 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading mp_example_notes/views/notes.xml 
+2026-10-28 03:33:15,930 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: Module mp_example_notes loaded in 0.08s, 85 queries (+85 other) 
+2026-10-28 03:33:15,931 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: Loading module mp_example_canvas (15/16) 
+2026-10-28 03:33:15,934 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.registry: module mp_example_canvas: creating or updating database tables 
+2026-10-28 03:33:15,975 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading mp_example_canvas/security/access.csv 
+2026-10-28 03:33:15,976 1 WARNING mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: Transient module states were reset 
+2026-10-28 03:33:15,977 1 ERROR mp_disposable_r0_r1_396163208bf1 odoo.registry: Failed to load registry 
+2026-10-28 03:33:15,977 1 CRITICAL mp_disposable_r0_r1_396163208bf1 odoo.service.server: Failed to initialize database `mp_disposable_r0_r1_396163208bf1`. 
+Traceback (most recent call last):
+  File "/opt/modular/odoo/service/server.py", line 1591, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/orm/registry.py", line 189, in new
+    load_modules(
+  File "/opt/modular/odoo/modules/loading.py", line 464, in load_modules
+    load_module_graph(
+  File "/opt/modular/odoo/modules/loading.py", line 217, in load_module_graph
+    load_data(env, idref, 'init', kind='data', package=package)
+  File "/opt/modular/odoo/modules/loading.py", line 59, in load_data
+    convert_file(env, package.name, filename, idref, mode, noupdate=kind == 'demo')
+  File "/opt/modular/odoo/tools/convert.py", line 692, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/opt/modular/odoo/tools/convert.py", line 753, in convert_csv_import
+    result = env[model].with_context(**context).load(fields, datas)
+             ~~~^^^^^^^
+  File "/opt/modular/odoo/orm/environments.py", line 107, in __getitem__
+    return self.registry[model_name](self, (), ())
+           ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/modular/odoo/orm/registry.py", line 345, in __getitem__
+    return self.models[model_name]
+           ~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'access'
+2026-10-28 03:33:15,979 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.service.server: Initiating shutdown 
+2026-10-28 03:33:15,979 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 03:33:15,979 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=12): Closed 1 connections  
+

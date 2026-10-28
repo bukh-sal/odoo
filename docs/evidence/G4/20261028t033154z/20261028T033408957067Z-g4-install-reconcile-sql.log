@@ -1,0 +1,24 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "exec", "-T", "db", "psql", "-U", "postgres", "-d", "mp_disposable_r0_r1_396163208bf1", "-c", "SELECT name,state,latest_version FROM ir_module_module WHERE name IN ('mp_example_notes','mp_example_notes_labels','mp_example_canvas'); SELECT public_id,title,revision FROM mp_example_note ORDER BY id; SELECT to_regclass('mp_example_canvas_board'); SELECT column_name FROM information_schema.columns WHERE table_name='mp_example_note' AND column_name='x_notes_labels';"]
+          name           |    state    | latest_version 
+-------------------------+-------------+----------------
+ mp_example_canvas       | uninstalled | 
+ mp_example_notes_labels | uninstalled | 
+ mp_example_notes        | installed   | 19.0.0.2.0
+(3 rows)
+
+              public_id               |         title          | revision 
+--------------------------------------+------------------------+----------
+ 48a5e609-fc8e-49d5-89b4-c0c6da604b55 | Welcome to Notes       |        1
+ d2a9df10-e2fe-49a7-955c-a3491d510803 | Research journal       |        1
+ d8243a62-f8ff-46d6-9998-9a2c35f592a0 | Implementation journal |        2
+(3 rows)
+
+ to_regclass 
+-------------
+ 
+(1 row)
+
+ column_name 
+-------------
+(0 rows)
+
