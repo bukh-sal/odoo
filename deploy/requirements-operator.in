@@ -1,0 +1,3 @@
+# Operator-only resolution library; existing frozen tooling lock remains intact.
+# Install alongside deploy/requirements-tooling.lock in an isolated environment.
+resolvelib>=1.2,<2

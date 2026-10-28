@@ -1,0 +1,15 @@
+# ADR 0008: Exact operation-lock preimages
+
+Accepted for the E-01b implementation core, 28 October 2026. G5 execution/approval integration remains pending. No frozen public envelope/schema or golden fixture changes.
+
+The frozen v1 plan already hashes artifact identities, site targets, bindings, endpoints and a `dependency_lock_digest`. Lifecycle operations also need exact installation/workspace targets. The executor must inspect their complete preimage, rather than infer workspace scope from a site ID or trust an application-supplied display.
+
+Persist an operation bundle with the canonical v1 `plan`, its derived `plan_hash`, the complete `operation_lock` preimage and a deterministic display. The operation lock contains exact installation/site/workspace/plugin/action tuples, the target executable release lock, full scoped bindings/endpoints, catalog snapshot digest, resolution reasons, migration order, declaration changes and bounded known unknowns. `dependency_lock_digest` is SHA-256 over RFC8785 canonical operation-lock bytes. The target release has its own distinct digest. The approval authenticates the plan hash; that authenticates the full lock preimage transitively. Every preimage must be loaded and revalidated independently before execution. A matching envelope with a missing/replaced lock is insufficient.
+
+The release section pins upstream commit, native patch/core inventories, target Python architecture/markers, one exact Python solution and lock digest, every plugin/version/digest/trust decision, native addon order, assets, public APIs, service selections and generation. The enclosing lock supplies the exact consumer/provider installation, site/workspace and binding generations. Credentials never belong in this data. The UI and CLI use the same derived display; authority is the independently approved hash, not display text or an application role/flag.
+
+Pure preparation does not authorize execution. Its state/catalog/metadata inputs may be untrusted proposals. E-01c must reconstruct and compare them with operator-owned configuration and actual deployment state, authenticate the local OS operator and durably reserve approval for one operation. E-01d must recheck before mutation and keep the journal outside the restored database.
+
+Alternatives rejected: stuffing workspace UUIDs into unrelated permission-change rows, accepting site-wide implicit scope for a workspace action, adding arbitrary shell fields, or changing the frozen plan merely to carry an internal implementation preimage. Existing v1 fixtures retain their meaning. The executor will require a valid complete bundle for actual apply.
+
+Qualified core: `tests/test_plans.py` and `tests/test_planning_cli.py` cover exact target/hash closure, stale state/generation, scoped aliases, transitive changes, destructive backup, misleading display, native uninstall scope and reference artifacts. Current evidence: `docs/evidence/G5/20261028T0523322202821Z/planning-core.json`. A fresh plan/lock major or freeze revision will be required if public semantics change; this ADR does not excuse digest-only updates to frozen files.

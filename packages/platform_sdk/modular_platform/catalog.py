@@ -13,21 +13,28 @@ from .artifacts import ArtifactError, ArtifactValidator
 
 
 class Catalog:
-    def __init__(self, root, validator: ArtifactValidator):
+    def __init__(self, root, validator: ArtifactValidator, *, readonly=False):
         self.root = Path(root)
         self.validator = validator
+        self.readonly = readonly
         if self.root.is_symlink():
             raise ArtifactError('Catalog root must not be a link')
-        self.root.mkdir(mode=0o700, parents=True, exist_ok=True)
+        if not readonly:
+            self.root.mkdir(mode=0o700, parents=True, exist_ok=True)
         self.blobs = self.root / 'blobs'
         self.staging = self.root / 'staging'
         for path in (self.blobs, self.staging):
             if path.is_symlink():
                 raise ArtifactError('Catalog directory must not be a link')
-            path.mkdir(mode=0o700, exist_ok=True)
+            if not readonly:
+                path.mkdir(mode=0o700, exist_ok=True)
         self.database = self.root / 'catalog.sqlite3'
         if self.database.is_symlink():
             raise ArtifactError('Catalog database must not be a link')
+        if readonly:
+            if not self.database.is_file():
+                raise ArtifactError('Existing catalog required for read-only planning')
+            return
         with self._connect() as database:
             database.execute('''CREATE TABLE IF NOT EXISTS artifacts (
                 digest TEXT PRIMARY KEY, plugin_id TEXT NOT NULL, version TEXT NOT NULL,
@@ -36,9 +43,11 @@ class Catalog:
 
     @contextmanager
     def _connect(self):
-        database = sqlite3.connect(self.database, timeout=30, isolation_level=None)
+        database = sqlite3.connect(self.database.resolve().as_uri() + '?mode=ro' if self.readonly else self.database,
+                                   uri=self.readonly, timeout=30, isolation_level=None)
         database.row_factory = sqlite3.Row
-        database.execute('PRAGMA synchronous=FULL')
+        if not self.readonly:
+            database.execute('PRAGMA synchronous=FULL')
         try:
             yield database
         finally:
@@ -55,6 +64,8 @@ class Catalog:
     def add(self, source, *, expected_digest):
         # Private copy, trust, inventory, layout and extracted-byte validation all
         # precede publication. A failed operation cannot overwrite an existing blob.
+        if self.readonly:
+            raise ArtifactError('Read-only catalog cannot acquire artifacts')
         private, verified = self.validator.stage(source, self.staging, expected_digest=expected_digest)
         with private:
             descriptor = verified.descriptor()
@@ -101,6 +112,8 @@ class Catalog:
                 os.close(descriptor)
 
     def quarantine(self, digest):
+        if self.readonly:
+            raise ArtifactError('Read-only catalog cannot change quarantine state')
         self.path(digest)
         with self._connect() as database:
             if database.execute('UPDATE artifacts SET quarantined=1 WHERE digest=?', (digest,)).rowcount != 1:

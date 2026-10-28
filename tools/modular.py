@@ -50,6 +50,9 @@ def main(argv=None):
     validate = plugin.add_parser('validate')
     validate.add_argument('artifact', type=Path)
     validate.add_argument('--digest', required=True)
+    plan = plugin.add_parser('plan')
+    plan.add_argument('--input', required=True, type=Path, help='Untrusted declarative proposal; grants no execution authority')
+    plan.add_argument('--store', required=True, type=Path, help='Existing operator catalog, opened read only')
     catalog = groups.add_parser('catalog')
     catalog.add_argument('--store', required=True, type=Path)
     catalog_actions = catalog.add_subparsers(dest='action', required=True)
@@ -62,7 +65,13 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         validator = configuration(args.config)
-        if args.group == 'plugin':
+        if args.group == 'plugin' and args.action == 'plan':
+            from modular_platform.planning_cli import prepare_document
+            raw = args.input.read_bytes()
+            if len(raw) > 16 * 1024 * 1024:
+                raise ArtifactError('Plan input size limit')
+            result = prepare_document(load_json(raw), Catalog(args.store, validator, readonly=True).snapshot())
+        elif args.group == 'plugin':
             result = validator.verify(args.artifact, expected_digest=args.digest).descriptor()
         else:
             store = Catalog(args.store, validator)
@@ -74,11 +83,14 @@ def main(argv=None):
                 store.quarantine(args.digest)
                 result = {'digest': args.digest, 'state': 'quarantined'}
         for item in result if isinstance(result, list) else [result]:
-            for warning in item.get('trust', {}).get('warnings', []):
-                print(warning, file=sys.stderr)
+            trust_entries = [item.get('trust', {})]
+            trust_entries.extend(plugin['trust'] for plugin in item.get('operation_lock', {}).get('release', {}).get('plugins', []))
+            for trust in trust_entries:
+                for warning in trust.get('warnings', []):
+                    print(warning, file=sys.stderr)
         print(json.dumps(result, sort_keys=True, ensure_ascii=False, indent=2))
         return 0
-    except (ContractError, OSError, TypeError, sqlite3.Error) as error:
+    except (ContractError, OSError, TypeError, ValueError, KeyError, sqlite3.Error) as error:
         # Validation messages are deliberately value-free. OS errors may contain
         # sensitive local paths, so only expose their type to the CLI consumer.
         message = str(error) if isinstance(error, ContractError) else type(error).__name__
