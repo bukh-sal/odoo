@@ -2,7 +2,7 @@
 
 Date: 2026-10-28 (Asia/Riyadh).
 
-Status: accepted direction; native dialog/notification/command adapters now implemented and qualified as the bounded subset below. The original assessment is retained; the action/view pilot and client release fence remain G5 work. No full WebClient replacement follows from this ADR.
+Status: accepted direction; native dialog/notification/command adapters implemented and qualified. The bounded action-service seam experiment below is complete: retain native View hosting for R1. Client release fencing remains G5 work. No full WebClient replacement follows from this ADR.
 
 ## Clarification and retained work
 
@@ -65,3 +65,16 @@ Independently reviewed platform deployments0835fda3/c28633d5/91ceba46 deliver th
 The changed-consumer Canvas/session regressions now pass at generation16 with the same host image. NEW independently approved native install32819468 adds Canvas only inA and its exact Notes.read grant; existing data/availability/bindings stay intact. `docs/evidence/G5/20261028T155500Z-canvas-reuse-browser/canvas-requalification.json` and source160500Z prove repeated page disposal, removed document/theme subscriptions, ignored late initial/save responses, one keyboard save, native dirty confirmation cancellation on logout, exact local draft recovery, different-principal export denial/clearing and return to unchanged saved state. UI05/UI10/G4 are requalified; the custom page remains plain JS using the frozen facade, not an Owl component.
 
 This regression explicitly supplied one named board through Alice's scoped native API. A fresh Canvas install otherwise has no reference board and reports Not found. Track G5-CANVAS-FIRSTUSE-01 for a usable, versioned/scoped initial-board path; a test fixture does not solve that product gap. Do not introduce silent writes in boards.get or edit an immutable published package version. Native action/view pilot, release fence/UI07 and full UI09 remain separate work.
+
+
+## Bounded native action-service seam experiment
+
+Completed 2026-10-28. Evidence: `docs/evidence/G5/20261028T163000Z-native-action-seam/action-seam.json`; reproduce in a NEW evidence directory with `node tools/probe_native_action_seam.mjs --output docs/evidence/G5/<fresh-run-id>`.
+
+Hypothesis: replacing direct native View with ActionContainer and passing the existing platform callbacks through action-service `options.props` would remove list/form orchestration while retaining public routes and save behavior. Execute the actual pinned, unmodified `_getViewInfo` function in an isolated Node process, stubbing only enclosing service calls. It overwrites `selectRecord`, `createRecord` and `updateActionState`: selection42 and creation call native `switchView(form, {resId:42/false})`, and mounted state changes call native `pushState`. Neither platform public-UUID route callback runs. The custom `saveRecord` and `onDiscard` callbacks survive. ActionContainer itself only renders the action manager's current component; it supplies no workspace/public-ID translation.
+
+Decision: keep the existing native View adapter for R1. It already reuses Odoo list/form controllers, renderers, widgets and validation. Its remaining route/public-ID/CAS/idempotency integration is required platform glue. Direct substitution through the proposed seam does not preserve route ownership; a full WebClient/client-action integration would require deeper navigation translation rather than simply removing this glue. No demonstrated substantial simplification warrants replacing the root. Keep native views as the default and optional framework-neutral Canvas mounting, with the qualified native dialog/notification/command services.
+
+This is a discriminating source-function experiment, **not** a complete browser/clone pilot or proof that every WebClient integration is incompatible. Source inspection found a concrete seam mismatch before a live prototype was warranted; the bounded experiment resolves this R1 design choice without a candidate rebuild or site/database mutation. No new UI acceptance pass or progress increase follows. Historical references above to a future action/view pilot describe the earlier sequence; this result closes that assessment, not UI07 or full UI09.
+
+For UI07, inspected upstream `addons/bus/static/src/services/assets_watchdog_service.js` and `addons/bus/static/src/outdated_page_watcher_service.js`. They reuse native notification/reload presentation, but only warn on bus/server-version/missed-notification signals; they do not compare the platform's published release epoch or fence stale mutations. Reuse native notification/dialog/browser facilities for controlled reload while implementing the necessary platform release comparison, mutation fencing and draft handling. Do not add bus merely to obtain an advisory refresh message. If a backend endpoint/dispatch change is required, ADR0015's static-only deploy restrictions still apply: implement explicit versioned native-core maintenance rather than relaxing them.

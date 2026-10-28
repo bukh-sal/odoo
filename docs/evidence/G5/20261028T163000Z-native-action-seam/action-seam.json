@@ -1,0 +1,51 @@
+{
+  "result": "completed",
+  "utc": "2026-10-28T16:27:20.533Z",
+  "git_base": "aa2ab7e9e0d38cc5b37aa1b8c1db3084c50bb076",
+  "node": "v24.22.1",
+  "method": "Unmodified pinned _getViewInfo executed in isolation with recorded closure-service stubs",
+  "findings": {
+    "public_route_select_callback_retained": false,
+    "public_route_create_callback_retained": false,
+    "platform_action_state_callback_retained": false,
+    "custom_save_callback_retained": true,
+    "custom_discard_callback_retained": true,
+    "observed_native_calls": [
+      {
+        "service": "switchView",
+        "args": [
+          "form",
+          {
+            "resId": 42
+          },
+          {}
+        ]
+      },
+      {
+        "service": "switchView",
+        "args": [
+          "form",
+          {
+            "resId": false
+          },
+          {}
+        ]
+      },
+      {
+        "service": "pushState"
+      }
+    ]
+  },
+  "decision": "Retain existing native View adapter for R1; direct ActionContainer/options.props substitution does not preserve route ownership.",
+  "limits": [
+    "No real browser, router, workspace authorization, save, dirty-navigation or session integration executed.",
+    "Does not prove all possible WebClient integrations are incompatible; deeper wrapping or a client-action adapter remains possible.",
+    "No live site, image, database, published package, upstream source or platform runtime changed."
+  ],
+  "source_sha256": {
+    "addons/web/static/src/webclient/actions/action_service.js": "007b5b53b542fe0316977bcc9c24c85617cf0ee9fcd2b4a59dc894582cfc7e22",
+    "addons/web/static/src/webclient/actions/action_container.js": "4eba64ea14412066397d5637a7105009aa923db9fb325bfa23015bd1911a631b",
+    "platform_addons/mp_shell/static/src/host.js": "6aea0888048b04b96aeb533f4041af5824574e744c885aec6ceb7d651d0a876f",
+    "tools/probe_native_action_seam.mjs": "bd0b6b1956a348cad49174a882b097b5125fc5fcd2926230d2917d259e966c19"
+  }
+}
