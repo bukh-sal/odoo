@@ -1,0 +1,37 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal"
+    - option "Research" [selected]
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- heading "Notes" [level=1]
+- paragraph: Your ideas, in one place.
+- button "All notes"
+- button "Export notes"
+- generic: G5 lifecycle B/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two
+- search:
+  - navigation "Pager":
+    - generic: "1"
+    - text: / 1
+    - button "Previous" [disabled]:
+      - generic: 
+    - button "Next" [disabled]:
+      - generic: 
+- main:
+  - generic: Title
+  - generic: G5 lifecycle B/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two
+  - generic: Revision
+  - generic: "2"
+  - generic: Note
+  - generic: "Private synthetic B data Arabic: مرحبا Preserve identity, revision and author."

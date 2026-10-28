@@ -1,0 +1,70 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal"
+    - option "Research" [selected]
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- heading "Notes" [level=1]
+- paragraph: Your ideas, in one place.
+- button "Export notes"
+- generic: Notes
+- search:
+  - search:
+    - button "Search...":
+      - img: 
+    - searchbox "Search..." [active]
+  - button ""
+- search:
+  - navigation "Pager":
+    - generic: 1-2
+    - text: / 2
+    - button "Previous" [disabled]:
+      - generic: 
+    - button "Next" [disabled]:
+      - generic: 
+- main:
+  - table:
+    - rowgroup:
+      - row "Title  Revision  Last Updated on ":
+        - columnheader:
+          - checkbox
+        - columnheader "Title ":
+          - generic: Title
+          - generic: 
+        - columnheader "Revision ":
+          - generic: Revision
+          - generic: 
+        - columnheader "Last Updated on ":
+          - generic: Last Updated on
+          - generic: 
+    - rowgroup:
+      - row "G5 lifecycle B/1 e0713c96-86d0-41d5-ad98-1997c37485fc 1 Oct 28, 3:26 PM":
+        - cell:
+          - checkbox
+        - cell "G5 lifecycle B/1 e0713c96-86d0-41d5-ad98-1997c37485fc"
+        - cell "1"
+        - cell "Oct 28, 3:26 PM"
+      - row "G5 lifecycle B/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two 2 Oct 28, 3:26 PM":
+        - cell:
+          - checkbox
+        - cell "G5 lifecycle B/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two"
+        - cell "2"
+        - cell "Oct 28, 3:26 PM"
+      - row:
+        - cell
+      - row:
+        - cell
+    - rowgroup:
+      - row:
+        - cell

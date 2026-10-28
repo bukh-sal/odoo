@@ -1,0 +1,79 @@
+{
+  "result": "passed_backend_subset",
+  "utc": "2026-10-28T18:18:13.757978+00:00",
+  "image_id": "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+  "inventory_digest": "sha256:3ab96a08d02214bf21272e27c60ae66de20cc16840b043b1261ee7ec5d8a8c34",
+  "database": "mp_disposable_r0_r1_client_d44f98595a294031",
+  "generation": 18,
+  "checks": [
+    {
+      "name": "positive editor A/viewer B, independent editor B CRUD and cross-owner denials",
+      "result": "passed"
+    },
+    {
+      "name": "forged actor/database/company/private-context/workspace cannot grant access",
+      "result": "passed"
+    },
+    {
+      "name": "service session has no credential-derived data or administrator authority",
+      "result": "passed"
+    },
+    {
+      "name": "declared dispatch/strict schemas and redacted native/public errors",
+      "result": "passed"
+    },
+    {
+      "name": "eight concurrent same-key writes commit one record; replay exact, changed input conflicts",
+      "result": "passed",
+      "note_id": "316278fc-dcbe-452d-b25b-3fed108a67e3",
+      "clients": 8
+    },
+    {
+      "name": "explicit consumer documents v1/v2 coexist; wrong/missing binding or DTO never selects latest",
+      "result": "passed"
+    },
+    {
+      "name": "actor-preserving Labels provider chain and live revoked integration grant resist forged attribution",
+      "result": "passed"
+    },
+    {
+      "name": "zero deadline rejected before dispatch without claiming rollback",
+      "result": "passed"
+    },
+    {
+      "name": "native RPC and gateway enforce feature/global installation suspension with current pin",
+      "result": "passed"
+    },
+    {
+      "name": "committed demotion/revocation affects warmed and new clients on two distinct guarded worker processes",
+      "result": "passed",
+      "workers": [
+        "6be678c6e7c36e43e5e0ca2b2d79d584e805592453a78edf77342074c272719f",
+        "6d19396254fa428e7e333e6eb31d84325f60461a39cd8970e6206ebc8c31c0fd"
+      ],
+      "delay": "first post-commit request"
+    }
+  ],
+  "acceptance_subset": [
+    "API-01",
+    "API-02",
+    "API-04",
+    "API-06",
+    "API-07",
+    "ID-01",
+    "ID-02",
+    "ID-04",
+    "ID-05",
+    "ID-07",
+    "ID-09",
+    "ID-10"
+  ],
+  "limits": [
+    "No independent executor/deployment qualification.",
+    "Actual postcommit crash/cancellation and browser two-tab cache checks are separate."
+  ],
+  "original_business_memberships_groups_restored": true,
+  "source_state_unchanged": true,
+  "policy_generations_monotonic": true,
+  "source_sha256": "2635ec83b937da4c0d948e95c4048682ca095da1e30df49bc2c4dcd47044ec45"
+}

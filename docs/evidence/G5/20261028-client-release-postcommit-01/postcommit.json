@@ -1,0 +1,40 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T18:21:28.035431+00:00",
+  "database": "mp_disposable_r0_r1_client_d44f98595a294031",
+  "image_id": "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+  "inventory_digest": "sha256:3ab96a08d02214bf21272e27c60ae66de20cc16840b043b1261ee7ec5d8a8c34",
+  "generation": 18,
+  "checks": [
+    {
+      "name": "cancelled connection after actual commit; outcome discoverable once without rollback claim",
+      "result": "passed",
+      "nonce": "7cbad9dc683942de897170c92398c2b0",
+      "events": [
+        "MP_R1_POSTCOMMIT_DELAY_START pid=1 nonce=7cbad9dc683942de897170c92398c2b0",
+        "MP_R1_POSTCOMMIT_DELAY_END pid=1 nonce=7cbad9dc683942de897170c92398c2b0"
+      ],
+      "same_key_replayed_twice": true,
+      "one_effect": true
+    },
+    {
+      "name": "actual exit86 after commit before response; separate guarded worker replays one saved result",
+      "result": "passed",
+      "nonce": "017f9b354a764fd7a355d2db39e12b62",
+      "event": "MP_R1_POSTCOMMIT_EXIT pid=1 nonce=017f9b354a764fd7a355d2db39e12b62",
+      "initial_status": 502,
+      "exit_code": 86,
+      "same_key_replayed_twice": true,
+      "one_effect": true
+    }
+  ],
+  "limits": [
+    "Separately instrumented disposable HTTP worker; not independent executor crash/recovery or a production startup claim.",
+    "Actual socket cancellation proves committed/unknown transport outcome; browser-facing unknown outcome is covered by unchanged source/client tests and retained browser recovery qualification."
+  ],
+  "immutable_fault_fixture_sha256": "754d5cec10067404db7eb8c2726cde23dc40554000332399c638728623d40802",
+  "original_business_restored": true,
+  "normal_guarded_workers_unchanged": true,
+  "source_state_unchanged": true,
+  "source_sha256": "1dc3c1a096e780dba85d900a83c03b4643d8c5553bf169676b3fc527df98e275"
+}

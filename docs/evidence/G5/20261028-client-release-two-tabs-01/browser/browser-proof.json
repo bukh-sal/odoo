@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "acceptance": "ID-08",
+  "browser": "2",
+  "tabs": [
+    "3",
+    "7"
+  ],
+  "sameActor": "Alice",
+  "origin": "http://client-release.localhost:18074",
+  "checks": [
+    "Positive A and B native lists show only their own records",
+    "B viewer has no New or Save control",
+    "A unsaved draft retains exact values while B opens and reloads its own native form",
+    "A draft discarded without save",
+    "Rapid A to B to A reload settles only A data while independent B still shows B"
+  ],
+  "limits": [
+    "No arbitrary network latency injection; rapid switch exercises actual overlapping view loading.",
+    "Clone-only B feature fixture restored separately."
+  ]
+}
