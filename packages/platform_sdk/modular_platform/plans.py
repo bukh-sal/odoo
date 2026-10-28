@@ -361,6 +361,8 @@ def _display(plan, operation_lock):
 
 def check_bundle(bundle, current_state):
     """Fail closed on stale state, lock tampering or envelope/display mismatch."""
+    if not isinstance(bundle, dict) or set(bundle) != {'plan', 'plan_hash', 'operation_lock', 'display'}:
+        raise PlanningError('Unknown or missing immutable operation bundle fields')
     plan, lock = bundle['plan'], bundle['operation_lock']
     canonical_plan(plan)
     if plan_hash(plan) != bundle['plan_hash'] or data_digest(lock) != plan['dependency_lock_digest']:

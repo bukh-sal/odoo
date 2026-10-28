@@ -62,10 +62,70 @@ def main(argv=None):
     catalog_actions.add_parser('list')
     quarantine = catalog_actions.add_parser('quarantine')
     quarantine.add_argument('digest')
+    operations = groups.add_parser('operations')
+    operations.add_argument('--store', required=True, type=Path, help='Independent OS-owned control store')
+    operation_actions = operations.add_subparsers(dest='action', required=True)
+    initialize = operation_actions.add_parser('init-store')
+    initialize.add_argument('--deployment-config', required=True, type=Path)
+    initialize.add_argument('--allow-noninteractive-disposable', action='store_true')
+    register = operation_actions.add_parser('register')
+    register.add_argument('--bundle', required=True, type=Path)
+    register.add_argument('--deployment-config', required=True, type=Path)
+    register.add_argument('--catalog', required=True, type=Path)
+    approve = operation_actions.add_parser('approve')
+    approve.add_argument('operation_id')
+    approve.add_argument('--plan-hash', required=True)
+    approve.add_argument('--deployment-config', required=True, type=Path)
+    approve.add_argument('--catalog', required=True, type=Path)
+    approve.add_argument('--noninteractive', action='store_true')
+    for name in ('destructive', 'trust', 'permissions'):
+        approve.add_argument('--ack-' + name, action='store_true')
+    operation_actions.add_parser('show').add_argument('operation_id')
+    operation_actions.add_parser('revoke-approval').add_argument('operation_id')
     args = parser.parse_args(argv)
     try:
         validator = configuration(args.config)
-        if args.group == 'plugin' and args.action == 'plan':
+        if args.group == 'operations':
+            from modular_platform.operator_store import OperatorStore
+            from modular_platform.deployment import DockerObserver
+            from modular_platform.approval_validation import IndependentValidator
+            from modular_platform.operator_os import OperatorError
+            if args.action == 'init-store':
+                target = load_json(args.deployment_config.read_bytes())
+                DockerObserver(target)
+                store = OperatorStore.initialize(args.store,
+                    {target['deployment_id']: [site['site_id'] for site in target['sites']]},
+                    allow_noninteractive=args.allow_noninteractive_disposable)
+                result = {'state': 'initialized', 'authorization_generation': store.policy['authorization_generation']}
+            else:
+                store = OperatorStore(args.store)
+                if args.action in ('register', 'approve'):
+                    revalidate = IndependentValidator(load_json(args.deployment_config.read_bytes()), args.catalog, validator)
+                if args.action == 'register':
+                    raw = args.bundle.read_bytes()
+                    if len(raw) > 16 * 1024 * 1024:
+                        raise OperatorError('Operation bundle size limit')
+                    result = store.status(store.register(load_json(raw), revalidate))
+                elif args.action == 'approve':
+                    review = store.review(args.operation_id, revalidate)
+                    if not args.noninteractive:
+                        if not sys.stdin.isatty():
+                            raise OperatorError('Use an explicitly configured noninteractive policy and exact hash, or an interactive terminal')
+                        print(json.dumps(review, indent=2))
+                        if input('Type the exact reviewed plan hash to approve: ').strip() != args.plan_hash:
+                            raise OperatorError('Interactive exact-hash confirmation did not match')
+                    store.approve(args.operation_id, exact_hash=args.plan_hash,
+                        acknowledgments={'destructive': args.ack_destructive, 'trust_expansion': args.ack_trust,
+                                         'permission_expansion': args.ack_permissions},
+                        revalidate=revalidate, noninteractive=args.noninteractive)
+                    result = store.status(args.operation_id)
+                    result['review'] = review
+                elif args.action == 'revoke-approval':
+                    store.revoke(args.operation_id)
+                    result = store.status(args.operation_id)
+                else:
+                    result = store.status(args.operation_id)
+        elif args.group == 'plugin' and args.action == 'plan':
             from modular_platform.planning_cli import prepare_document
             raw = args.input.read_bytes()
             if len(raw) > 16 * 1024 * 1024:

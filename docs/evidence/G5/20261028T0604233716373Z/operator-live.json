@@ -1,0 +1,29 @@
+{
+  "apply": false,
+  "database_mutations": false,
+  "final_approval_state": "revoked",
+  "item": "E-01c-live-approval",
+  "limitations": [
+    "No native execution, backup or restore yet.",
+    "UI queue/status adapter and code-changing staged-release validation remain E-01c/d."
+  ],
+  "observations": [
+    "OS-owned external allowlist/store initialized once with exact disposable target IDs.",
+    "Real CLI independently re-observed deployment/catalog and reconstructed feature plan before registration and approval.",
+    "Wrong exact hash denied; valid exact hash approved under explicit noninteractive disposable policy.",
+    "Real application UID10001 has no operator-store mount, Docker socket/CLI or writable control namespace.",
+    "Approval revoked in finally; current application authority unchanged."
+  ],
+  "operation_id": "1b60a42b-c947-4d66-aaf6-6d37ba81166b",
+  "plan_hash": "sha256:3fa38a1e6c8f63463438c3f5408df56b4427d2bb3dec4b7dcd0597941a45c25e",
+  "result": "passed",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/approval_validation.py": "581c52224bbfeb84f98e4f28696c955bfd642b8578c816d3f9736bdb3dc7ae8f",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/operator_store.py": "e227070d06b05fc52a3645d14c9b3998ae543fb0a7877ce29a8ca8ed1779318b",
+    "packages/platform_sdk/modular_platform/plans.py": "7e612b45bfc01eab8ef6875e4d8cb8ee650e875d4cfd07d4780f3ff4cdc84a40",
+    "tools/modular.py": "0fb788d188d04b02b71e171280a55973d9f8bffd6644f7c9e72a4af5f31ba8fe",
+    "tools/qualify_operator_live.py": "329449e2d9338c5ce319fed7dc33e06dc0cabd69fd06cab89867afb1d50173ad"
+  },
+  "utc": "2026-10-28T06:05:00.887952+00:00"
+}

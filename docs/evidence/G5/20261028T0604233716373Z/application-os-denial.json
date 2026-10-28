@@ -1,0 +1,27 @@
+{
+  "control_store_namespace": "Windows OS-owner DACL; not mounted into application container",
+  "mount_destinations": [
+    "/run/secrets",
+    "/var/lib/modular"
+  ],
+  "observations": {
+    "allowlist_read": {
+      "allowed": false,
+      "errno": 2
+    },
+    "approval_read": {
+      "allowed": false,
+      "errno": 2
+    },
+    "approval_store_creation": {
+      "allowed": false,
+      "errno": 30
+    },
+    "docker_cli_available": false,
+    "docker_socket_present": false,
+    "uid": 10001
+  },
+  "operator_identity_kind": "windows-sid",
+  "owner_acl_verified": true,
+  "readonly_rootfs": true
+}
