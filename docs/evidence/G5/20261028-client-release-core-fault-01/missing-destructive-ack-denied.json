@@ -1,0 +1,4 @@
+{
+  "error": "VALIDATION_FAILED",
+  "message": "Destructive operation requires explicit acknowledgment before approval"
+}

@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "generation": 18,
+  "database": "mp_disposable_r0_r1_restore_dc31daa565c94a1d8569db840c246a58",
+  "previous_image": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "legacy_discovery_absent_expected": true,
+  "native_gateway_original_note_and_canvas_board": true,
+  "notesB_suspension_retained": true,
+  "no_business_mutations": true
+}

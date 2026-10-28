@@ -1,0 +1,95 @@
+[
+  {
+    "container_id": "00ccf0c6c91a0accdb6f7e6fb56bc4f3a2b24d484ebacc308943bc0574061aa3",
+    "image_id": "sha256:76dab825202dd0903af22cef381dcc3d03dbb52b3df47e98cbec60c318c6ea14",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-86952188580b4de2bab54ef536a29ce7",
+    "networks": []
+  },
+  {
+    "container_id": "0ec1bdc063a9d0e427360ba91738c82263d4a8b2e1ad878c8c74ad79fa8b572f",
+    "image_id": "sha256:08779a6f400760d9f2990a1f86c99919fd159ea18ef06bd4ae915da1ac227b5b",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-c28633d56853429f97950901b93ee7ec",
+    "networks": []
+  },
+  {
+    "container_id": "29e3277d545897fd41d5ed0ca20596152a9eeb2c3af50cf827a3ad4d5c81c241",
+    "image_id": "sha256:ac3e9995223265a3e41c29f3ef950bb1599401ba5e9054191dd84ea9bbf8d3ca",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-restore-2364c27b48964da9a87585887d529436",
+    "networks": []
+  },
+  {
+    "container_id": "2ce52ccb9686715bd0b92db5da31d8e031e9f33b41a184e69341161b5da4e455",
+    "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-91ceba46a1ef43ab8fa24435d7e26df5",
+    "networks": []
+  },
+  {
+    "container_id": "36367eba51db77763f268ee5b234d419e2d4ff8077850e68292434091f46e418",
+    "image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-restore-3ec081c191074e8c8884f3f9f2d81bae",
+    "networks": []
+  },
+  {
+    "container_id": "3e054642dd8de74ba55520cbe8f270471bcb393962a2f6c463a236d23b587520",
+    "image_id": "sha256:3cf024957a263cba9e288977fecc212fbd760a3ef532f6183cb2ea279593f720",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-1",
+    "networks": []
+  },
+  {
+    "container_id": "73a544e88c636f256f4c7cd1fcae3ed76f83f64ed305c147437cf7015e48ca62",
+    "image_id": "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+    "running": true,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-dc31daa565c94a1d8569db840c246a58",
+    "networks": [
+      "mp-r0-r1g5fd0445d406d6_runtime"
+    ]
+  },
+  {
+    "container_id": "855f544087fa6a4d432ac14f74660c185d25cab1f2e816ef1d0235ac2a24d798",
+    "image_id": "sha256:95820dc46d22a40443b016c64a0afb9f3afc9c834df7eb0875f559ae8efeba93",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-restore-736f872ff76d4cd8af14ce8049452691",
+    "networks": []
+  },
+  {
+    "container_id": "8b6e0784db8d069767a888c3efbd42e2209b27cfec82c8fc96980011028bdd4d",
+    "image_id": "sha256:ac3e9995223265a3e41c29f3ef950bb1599401ba5e9054191dd84ea9bbf8d3ca",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-3ec081c191074e8c8884f3f9f2d81bae",
+    "networks": []
+  },
+  {
+    "container_id": "ae7ce746d0a937bd63d8b010bc0aa235a31ec93a2a2b7da10d48136fbdd327ea",
+    "image_id": "sha256:95820dc46d22a40443b016c64a0afb9f3afc9c834df7eb0875f559ae8efeba93",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-4ec0ba6804f14c9c91edf492ea827cb7",
+    "networks": []
+  },
+  {
+    "container_id": "b0aaceb03ad60ad63fce09b6c267b0ce8634c242234258f49e7e4a37b4c10468",
+    "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-3281946830344df2aa6ec76efc03c0fd",
+    "networks": []
+  },
+  {
+    "container_id": "bdb90c3d0b64464d6afba3ae45ecdd085542cb5b0a0d21b7e98f8b32196f6bb8",
+    "image_id": "sha256:cbcde2443fd7d5b4667550e1a2e53efda9faa365857fb1e777b93bd4f6689af2",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-0835fda31aea4aec8470f73bc6f139f1",
+    "networks": []
+  },
+  {
+    "container_id": "d5b990fd05f566d6e5cb977e337c24531d59b208699e300c948826e9f69d60fb",
+    "image_id": "sha256:ac3e9995223265a3e41c29f3ef950bb1599401ba5e9054191dd84ea9bbf8d3ca",
+    "running": false,
+    "name": "mp-r0-r1g5fd0445d406d6-app-release-500230e94daa4b24a793716c8effc707",
+    "networks": []
+  }
+]

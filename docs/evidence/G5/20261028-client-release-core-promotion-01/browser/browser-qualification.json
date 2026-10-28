@@ -1,0 +1,23 @@
+{
+  "result": "passed_initial_activation_subset",
+  "generation": 19,
+  "origin": "http://g5.localhost:18072",
+  "browser": "2",
+  "tabs": {
+    "native": "8",
+    "canvas": "9"
+  },
+  "actor": "Alice",
+  "workspace": "Personal",
+  "checks": [
+    "Recovery rotated previous sessions; selected existing Alice and authenticated through native login",
+    "Fresh native list shows exactly two original A records and no B data",
+    "Opened original native form; title/body/Arabic/revision2 and Labels action retained, no edits",
+    "Optional Canvas original board revision2/one linked card renders through custom page",
+    "Returned native page to clean list; Canvas clean; both retained for next real protocol1 activation"
+  ],
+  "limits": [
+    "Fresh document after initial legacy-to-protocol1 activation; not the full UI07 changed-asset refresh test.",
+    "No CRUD writes or draft saves; source original tab1 was untouched."
+  ]
+}

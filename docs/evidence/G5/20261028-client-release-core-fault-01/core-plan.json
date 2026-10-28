@@ -1,0 +1,36 @@
+{
+  "result": "prepared_not_registered",
+  "utc": "2026-10-28T18:27:49.748263+00:00",
+  "state": "prepared_not_registered",
+  "operation_id": "dc31daa5-65c9-4a1d-8569-db840c246a58",
+  "plan_hash": "sha256:aa87bcaf28ece87ff26b507f6382f600b24a902d71976d4950ce96da8081abbe",
+  "candidate_image_id": "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+  "evidence": "docs/evidence/G5/20261028-client-release-core-fault-01",
+  "before_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+  "targets": 4,
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "migrations": [],
+      "previous_version": "19.0.0.1.1",
+      "target_version": "19.0.0.1.2"
+    },
+    {
+      "addon": "mp_identity",
+      "migrations": [],
+      "previous_version": "19.0.0.1.0",
+      "target_version": "19.0.0.1.1"
+    },
+    {
+      "addon": "mp_shell",
+      "migrations": [],
+      "previous_version": "19.0.0.1.1",
+      "target_version": "19.0.0.1.2"
+    }
+  ],
+  "base_generation": 16,
+  "target_generation": 17,
+  "destructive_ack_required": true,
+  "trust_ack_required": true,
+  "main_unchanged": true
+}

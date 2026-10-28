@@ -1,6 +1,6 @@
 # ADR 0017: pin loaded clients to their native release
 
-Date: 2026-10-28. Status: implemented/source-qualified; candidate/integration qualification in progress under UI-RELEASE-01/UI07.
+Date: 2026-10-28. Status: implemented; native/API/browser and actual core rollout/recovery qualified. Protocol-1 changed-asset UI07 remains in progress.
 
 Section19 requires native release mismatch to stop incompatible calls and lead to safe full reload. Mount generation and workspace policy generation are separate identities. Polling alone leaves a stale-write window; native advisory asset/bus notifications do not close it.
 
@@ -28,3 +28,7 @@ Final candidate is `sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab
 
 
 Actual a34c native/HTTP/browser subset now passes in one retained disposable clone (20261028-client-release-clone-01): native migration/guarded boot, stale/missing request fences, both dirty page kinds, pending native dialog cancellation, exact local drafts/principal denial, explicit reload and ordinary expired-session recovery, failed registry metadata/retry, saved business preservation. Initial internal-only port publication failure was reconciled with an own proxy on the same clone/worker; no native migration replay. Product code/image unchanged. Seven changed UI checks are requalified; actual independent core operation/fault/recovery and changed-asset/native activation (UI07), plus15affected ID/API cases, remain required. The clone-only epoch17->18 is functional handler evidence, not an approved release. Original source generation16 stays unchanged. See browser-qualification.json/procedure/postbrowser evidence and status for retained resources and exact next action.
+
+Actual independent core path now qualified at `../evidence/G5/20261028-client-release-core-fault-01/core-fault-restore.json`: exact4scope/3version native-u/checkpoint/reviewed acknowledgements, ready/published17 pretrafficfailure =>recovery_required, previousimage/nativeversions freshDBrestore/new18/cache/separate resume. Actual current-pin clone/UI/15IDAPI also qualified (ingress-requalification). This is a bounded injected exception, not an OS executor crash; normal a34c rollout and actual protocol1 changed-asset UI07 remain pending. Runtime source unchanged.
+
+Normal exact operation85166e53 (new plan against restored18) now completed generation19: `../evidence/G5/20261028-client-release-core-promotion-01/core-promotion.json`, fresh native list/form and optional Canvas browser qualification, exact business/grant/binding/file preservation and same-ID no-maintenance replay. Product source/imagea34c unchanged. This establishes initial legacy-to-protocol1 activation; actual protocol1 changed-asset controlled refresh still required for UI07. Reuse-first architecture from ADR0010 remains unchanged.

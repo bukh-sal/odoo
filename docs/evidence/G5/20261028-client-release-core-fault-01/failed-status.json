@@ -1,0 +1,101 @@
+{
+  "approval_expires_at": "2026-10-28T18:44:17Z",
+  "backup_id": "dc31daa5-65c9-4a1d-8569-db840c246a58",
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:aa87bcaf28ece87ff26b507f6382f600b24a902d71976d4950ce96da8081abbe"
+      },
+      "sequence": 208,
+      "utc": "2026-10-28T18:28:38Z"
+    },
+    {
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:aa87bcaf28ece87ff26b507f6382f600b24a902d71976d4950ce96da8081abbe"
+      },
+      "sequence": 209,
+      "utc": "2026-10-28T18:29:17Z"
+    },
+    {
+      "code": "reserved",
+      "details": {
+        "executor_pid": 10072,
+        "lock_owner_digest": "sha256:a14112a1c881f90746e32f49a85cd6fcc43217fd1cd9e1516de1c803f5d80d7d"
+      },
+      "sequence": 210,
+      "utc": "2026-10-28T18:29:36Z"
+    },
+    {
+      "code": "staged",
+      "details": {},
+      "sequence": 211,
+      "utc": "2026-10-28T18:29:48Z"
+    },
+    {
+      "code": "maintenance",
+      "details": {},
+      "sequence": 212,
+      "utc": "2026-10-28T18:30:12Z"
+    },
+    {
+      "code": "drained",
+      "details": {},
+      "sequence": 213,
+      "utc": "2026-10-28T18:30:14Z"
+    },
+    {
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "dc31daa5-65c9-4a1d-8569-db840c246a58"
+      },
+      "sequence": 214,
+      "utc": "2026-10-28T18:30:24Z"
+    },
+    {
+      "code": "mutation_started",
+      "details": {},
+      "sequence": 215,
+      "utc": "2026-10-28T18:30:33Z"
+    },
+    {
+      "code": "migrated",
+      "details": {},
+      "sequence": 216,
+      "utc": "2026-10-28T18:30:38Z"
+    },
+    {
+      "code": "workers_replaced",
+      "details": {},
+      "sequence": 217,
+      "utc": "2026-10-28T18:30:42Z"
+    },
+    {
+      "code": "ready",
+      "details": {},
+      "sequence": 218,
+      "utc": "2026-10-28T18:30:49Z"
+    },
+    {
+      "code": "release_published",
+      "details": {},
+      "sequence": 219,
+      "utc": "2026-10-28T18:30:51Z"
+    },
+    {
+      "code": "recovery_required",
+      "details": {
+        "code": "READINESS_FAILED"
+      },
+      "sequence": 220,
+      "utc": "2026-10-28T18:30:52Z"
+    }
+  ],
+  "mutation_started": true,
+  "operation_id": "dc31daa5-65c9-4a1d-8569-db840c246a58",
+  "phase": "release_published",
+  "plan_hash": "sha256:aa87bcaf28ece87ff26b507f6382f600b24a902d71976d4950ce96da8081abbe",
+  "state": "recovery_required",
+  "traffic_resumed": false
+}
