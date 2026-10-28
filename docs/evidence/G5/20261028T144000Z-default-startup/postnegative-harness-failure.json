@@ -1,0 +1,8 @@
+{
+  "result": "harness_failed_after_negative_probes_before_positive_boot",
+  "utc": "2026-10-28T14:33:47.965147+00:00",
+  "negative_cases": 25,
+  "failure": "Plain pg_dump COPY rows reflect heap order changed by intentional fixture UPDATE/restoration; canonicalize COPY row ordering before comparing database contents.",
+  "mutation": "Only named disposable clone fixture changed; no positive boot or live mutation occurred.",
+  "next": "Resume same marker/clone after canonical dump comparison; never repeat clone creation."
+}

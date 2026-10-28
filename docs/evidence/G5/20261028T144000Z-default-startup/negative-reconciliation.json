@@ -1,0 +1,7 @@
+{
+  "result": "resumed_existing_clone",
+  "negative_cases": 25,
+  "clone_not_recreated": true,
+  "negative_probes_not_repeated": true,
+  "comparison": "COPY row order canonicalized; schema/sequences/row bytes retained"
+}

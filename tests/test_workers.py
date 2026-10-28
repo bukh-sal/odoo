@@ -51,7 +51,7 @@ class BootstrapTests(unittest.TestCase):
         (self.root/'distribution-inventory.json').write_bytes(raw)
         self.pin='sha256:'+hashlib.sha256(raw).hexdigest()
         options=configparser.ConfigParser();options['options']={'db_name':'fixed_database','addons_path':'/opt/modular/addons',
-            'server_wide_modules':'base,web','list_db':'False','max_cron_threads':'0'}
+            'server_wide_modules':'base,web','list_db':'False','max_cron_threads':'0','data_dir':'/var/lib/modular'}
         self.options=options['options'];self.cursor=Cursor(self.pin,[('test_guard','installed','19.0.1.2.3')])
 
     def cursor(self):return self.cursor
@@ -83,7 +83,8 @@ class BootstrapTests(unittest.TestCase):
             with self.subTest(state=state,version=version),self.assertRaisesRegex(ValueError,'never performs migration'):self.run_validation()
 
     def test_unsafe_boot_options_are_rejected(self):
-        for key,value in [('init','test_guard'),('update','all'),('addons_path','/tmp/addons'),
+        for key,value in [('init','test_guard'),('update','all'),('reinit','base'),('pre_upgrade_scripts','/tmp/x.py'),
+            ('upgrade_path','/tmp'),('load_language','en_US'),('data_dir','/tmp'),('addons_path','/tmp/addons'),
             ('list_db','True'),('server_wide_modules','base,web,other'),('max_cron_threads','1'),('db_name','other')]:
             original=dict(self.options);self.options[key]=value
             with self.subTest(key=key),self.assertRaisesRegex(ValueError,'bootstrap configuration'):self.run_validation()

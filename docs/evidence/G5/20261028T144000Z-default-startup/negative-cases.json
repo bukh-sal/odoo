@@ -1,0 +1,177 @@
+[
+  {
+    "case": "missing_db",
+    "result": "denied_before_native_import",
+    "expected_error": "pins are required",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-missing-db"
+  },
+  {
+    "case": "missing_pin",
+    "result": "denied_before_native_import",
+    "expected_error": "pins are required",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-missing-pin"
+  },
+  {
+    "case": "wrong_pin",
+    "result": "denied_before_native_import",
+    "expected_error": "inventory pin mismatch",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-wrong-pin"
+  },
+  {
+    "case": "wrong_db",
+    "result": "denied_before_native_import",
+    "expected_error": "bootstrap configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-wrong-db"
+  },
+  {
+    "case": "database_pin",
+    "result": "denied_before_native_import",
+    "expected_error": "Database release inventory differs",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-database-pin"
+  },
+  {
+    "case": "extra_source",
+    "result": "denied_before_native_import",
+    "expected_error": "search-path content",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-extra-source"
+  },
+  {
+    "case": "extra_bytecode",
+    "result": "denied_before_native_import",
+    "expected_error": "search-path content",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-extra-bytecode"
+  },
+  {
+    "case": "extra_cache",
+    "result": "denied_before_native_import",
+    "expected_error": "search-path content",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-extra-cache"
+  },
+  {
+    "case": "source_symlink",
+    "result": "denied_before_native_import",
+    "expected_error": "source symlink",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-source-symlink"
+  },
+  {
+    "case": "data_addon",
+    "result": "denied_before_native_import",
+    "expected_error": "writable data-dir",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-data-addon"
+  },
+  {
+    "case": "data_symlink",
+    "result": "denied_before_native_import",
+    "expected_error": "writable data-dir",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-data-symlink"
+  },
+  {
+    "case": "pending_install",
+    "result": "denied_before_native_import",
+    "expected_error": "never performs migration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-pending-install"
+  },
+  {
+    "case": "pending_upgrade",
+    "result": "denied_before_native_import",
+    "expected_error": "never performs migration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-pending-upgrade"
+  },
+  {
+    "case": "pending_remove",
+    "result": "denied_before_native_import",
+    "expected_error": "never performs migration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-pending-remove"
+  },
+  {
+    "case": "wrong_version",
+    "result": "denied_before_native_import",
+    "expected_error": "never performs migration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-wrong-version"
+  },
+  {
+    "case": "cli_init",
+    "result": "denied_before_native_import",
+    "expected_error": "fixed configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-cli-init"
+  },
+  {
+    "case": "cli_update",
+    "result": "denied_before_native_import",
+    "expected_error": "fixed configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-cli-update"
+  },
+  {
+    "case": "cli_reinit",
+    "result": "denied_before_native_import",
+    "expected_error": "fixed configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-cli-reinit"
+  },
+  {
+    "case": "cli_pre_upgrade",
+    "result": "denied_before_native_import",
+    "expected_error": "fixed configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-cli-pre-upgrade"
+  },
+  {
+    "case": "bootstrap_source",
+    "result": "denied_before_native_import",
+    "expected_error": "bootstrap source differs",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-bootstrap-source"
+  },
+  {
+    "case": "config_init",
+    "result": "denied_before_native_import",
+    "expected_error": "bootstrap configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-config-init"
+  },
+  {
+    "case": "config_update",
+    "result": "denied_before_native_import",
+    "expected_error": "bootstrap configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-config-update"
+  },
+  {
+    "case": "config_reinit",
+    "result": "denied_before_native_import",
+    "expected_error": "bootstrap configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-config-reinit"
+  },
+  {
+    "case": "config_pre_upgrade_scripts",
+    "result": "denied_before_native_import",
+    "expected_error": "bootstrap configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-config-pre-upgrade-scripts"
+  },
+  {
+    "case": "config_upgrade_path",
+    "result": "denied_before_native_import",
+    "expected_error": "bootstrap configuration",
+    "database_unchanged": true,
+    "container": "mp-r1-startup-1e44903a0fa34d63-config-upgrade-path"
+  }
+]

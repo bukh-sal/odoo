@@ -1,0 +1,59 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T14:34:02.191787+00:00",
+  "image_id": "sha256:60c03d32f952e477efada2f6f4e50275de5f37602d6b092d744a94e4021c6d32",
+  "inventory_digest": "sha256:4706e1cc1c98ebcf3c3ef3970bc40c4b3e69c67a3da98dc536aea6ea348ea706",
+  "database": "mp_disposable_r0_r1_boot_1e44903a0fa34d63",
+  "disposable": true,
+  "negative_cases": 25,
+  "compatible_default_boot": true,
+  "clone_database_unchanged": true,
+  "clone_schema_data_sha256": "f869ff91ff8e2461b198a63ec0af9f5bfdcafd33dff779ffa2c53967a83a8129",
+  "source_unchanged": true,
+  "live_deployment_state_unchanged": true,
+  "live_state_digest": "sha256:6294514287e1cfa398b63e014fef2966c748cd6858c5a8b2ab4e56d6ffc97244",
+  "source_sha256": {
+    "deploy/Dockerfile": "2d096e9cb3880d2d855271a1c5c7635033d1634a52866c55b62ab07721e553dc",
+    "tools/start_worker.py": "b0b9ef1f6c3723f5e7441c4a1f627de87574ecc5f345b20951bdf27b72443edd",
+    "tools/qualify_default_startup.py": "a1f3bb1f231925b205f32b2eae2f49832b379f81e22466e553b0ed49299e638a",
+    "packages/platform_sdk/modular_platform/worker_start.py": "681a28a46de8f502bac6b646103062d01c2d04f909d063b17fcbc85aaa640941",
+    "packages/platform_sdk/modular_platform/deployment.py": "a8a9ecfdcb044910420de23ee1b75da2b5db1fdda5e5fde1aa84586917ac6e53"
+  },
+  "limits": [
+    "Clone publication metadata intentionally stale except candidate inventory; no app release/deployment claimed.",
+    "No default-start command is a sandbox for trusted native plugins or a Docker operator.",
+    "Fresh-release install, skipped migration, uninstall and full G5 qualification remain separate checks."
+  ],
+  "retained": {
+    "database": "mp_disposable_r0_r1_boot_1e44903a0fa34d63",
+    "volume": "mp-r1-startup-1e44903a0fa34d63",
+    "positive_container": "mp-r1-startup-1e44903a0fa34d63-valid",
+    "negative_containers": [
+      "mp-r1-startup-1e44903a0fa34d63-missing-db",
+      "mp-r1-startup-1e44903a0fa34d63-missing-pin",
+      "mp-r1-startup-1e44903a0fa34d63-wrong-pin",
+      "mp-r1-startup-1e44903a0fa34d63-wrong-db",
+      "mp-r1-startup-1e44903a0fa34d63-database-pin",
+      "mp-r1-startup-1e44903a0fa34d63-extra-source",
+      "mp-r1-startup-1e44903a0fa34d63-extra-bytecode",
+      "mp-r1-startup-1e44903a0fa34d63-extra-cache",
+      "mp-r1-startup-1e44903a0fa34d63-source-symlink",
+      "mp-r1-startup-1e44903a0fa34d63-data-addon",
+      "mp-r1-startup-1e44903a0fa34d63-data-symlink",
+      "mp-r1-startup-1e44903a0fa34d63-pending-install",
+      "mp-r1-startup-1e44903a0fa34d63-pending-upgrade",
+      "mp-r1-startup-1e44903a0fa34d63-pending-remove",
+      "mp-r1-startup-1e44903a0fa34d63-wrong-version",
+      "mp-r1-startup-1e44903a0fa34d63-cli-init",
+      "mp-r1-startup-1e44903a0fa34d63-cli-update",
+      "mp-r1-startup-1e44903a0fa34d63-cli-reinit",
+      "mp-r1-startup-1e44903a0fa34d63-cli-pre-upgrade",
+      "mp-r1-startup-1e44903a0fa34d63-bootstrap-source",
+      "mp-r1-startup-1e44903a0fa34d63-config-init",
+      "mp-r1-startup-1e44903a0fa34d63-config-update",
+      "mp-r1-startup-1e44903a0fa34d63-config-reinit",
+      "mp-r1-startup-1e44903a0fa34d63-config-pre-upgrade-scripts",
+      "mp-r1-startup-1e44903a0fa34d63-config-upgrade-path"
+    ]
+  }
+}

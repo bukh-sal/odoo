@@ -37,8 +37,9 @@ COPY --from=builder /release /opt/modular
 COPY tools /opt/modular/tools
 COPY ${RUNTIME_REQUIREMENTS} /opt/modular/requirements.lock
 COPY tests/fixtures/addons /opt/modular/fixtures
+RUN if test -d /opt/modular/packages/platform_sdk; then printf 'r1\n' > /opt/modular/startup-profile; else printf 'baseline\n' > /opt/modular/startup-profile; fi
 WORKDIR /opt/modular
 USER 10001:10001
 EXPOSE 8069
-ENTRYPOINT ["python", "odoo-bin"]
+ENTRYPOINT ["/venv/bin/python", "/opt/modular/tools/start_worker.py"]
 CMD ["-c", "/run/secrets/odoo_config"]

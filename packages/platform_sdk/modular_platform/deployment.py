@@ -51,8 +51,14 @@ if projection.is_file():
    protocol=ast.literal_eval(node.value)
 if type(protocol) is not int:raise ValueError('Invalid static published-release protocol')
 bad=[name for name,digest in inventory['files'].items() if not (root/name).is_file() or hashlib.sha256((root/name).read_bytes()).hexdigest()!=digest]
-expected={name for name in inventory['files'] if name.startswith(('addons/','odoo/addons/'))}
-actual={path.relative_to(root).as_posix() for folder in ('addons','odoo/addons') for path in (root/folder).rglob('*') if path.is_file() and '__pycache__' not in path.parts and path.suffix!='.pyc'}
+folders=('addons','odoo','packages')
+expected={name for name in inventory['files'] if name.startswith(tuple(folder+'/' for folder in folders))}
+paths=[path for folder in folders for path in [root/folder,*(root/folder).rglob('*')]]
+bad.extend(path.relative_to(root).as_posix() for path in paths if path.is_symlink())
+actual={path.relative_to(root).as_posix() for path in paths if path.is_file()}
+data_addons=pathlib.Path('/var/lib/modular/addons')
+actual.update('data_dir/'+path.relative_to(data_addons).as_posix() for path in data_addons.rglob('*') if path.is_symlink() or not path.is_dir())
+if data_addons.is_symlink():actual.add('data_dir/addons-symlink')
 runtime_lock=hashlib.sha256((root/'requirements.lock').read_bytes()).hexdigest()
 wheels=[]
 for distribution in importlib.metadata.distributions():
