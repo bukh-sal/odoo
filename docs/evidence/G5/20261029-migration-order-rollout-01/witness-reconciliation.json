@@ -1,0 +1,32 @@
+{
+  "result": "passed_current_planner_and_retained_real_migration_witnesses",
+  "utc": "2026-10-28T23:26:24.177871+00:00",
+  "current_image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+  "native_engine_image_id": "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+  "planner_sha256": "fb0247f8e37b2e84e9cf25d6145e89ce001dd901e43f238f00765d9f5a274fa8",
+  "actual_current_image_result": {
+    "result": "passed_current_image_planner_matches_actual_SQL_order",
+    "cases": 5,
+    "script_hashes_checked": 24,
+    "exact_extracted_fixture_files": 88
+  },
+  "terminal_native_children_checked": [
+    "mp-g5-matrix-768a058e4225-adjacent-install",
+    "mp-g5-matrix-768a058e4225-adjacent-upgrade-0_1_10",
+    "mp-g5-matrix-768a058e4225-adjacent-upgrade-0_2_0",
+    "mp-g5-matrix-768a058e4225-skipped-install",
+    "mp-g5-matrix-768a058e4225-skipped-upgrade-0_3_0",
+    "mp-g5-matrix-768a058e4225-wide-install",
+    "mp-g5-matrix-768a058e4225-wide-upgrade-0_100000000_0",
+    "mp-g5-matrix-768a058e4225-fresh-install"
+  ],
+  "retained_four_databases_exact": true,
+  "public_contracts": "G2revision11/84files unchanged",
+  "retained_control_path": "../20261029-manager-upgrade-01/qualification.json",
+  "native_matrix": "../20261029-migration-matrix-02/qualification.json",
+  "limits": [
+    "Direct native-engine harness with verified development archives, not an additional manager/independent approval proof. Retained actual Notes first-native/adjacent operations supply that control-path evidence.",
+    "No failure/crash/recovery claim from this matrix; those remain G5-X06/X09. Non-retryable witnesses require reconciliation after uncertainty.",
+    "No existing database/volume reset; no Canvas/product/UI changes."
+  ]
+}

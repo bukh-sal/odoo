@@ -1,0 +1,78 @@
+{
+  "grants": [],
+  "bindings": [
+    {
+      "id": 1,
+      "alias": "documents",
+      "state": "active",
+      "public_id": "d31244db-0888-5959-9125-5af6d9052c23",
+      "write_uid": 1,
+      "create_uid": 1,
+      "descriptor": {
+        "alias": "documents",
+        "site_id": "365532d7-921e-43bc-8d49-b037a7183308",
+        "optional": false,
+        "binding_id": "d31244db-0888-5959-9125-5af6d9052c23",
+        "generation": 1,
+        "service_id": "org.example.notes.documents",
+        "api_version": "1.0",
+        "workspace_id": "5928be42-c80a-41ec-a532-e5995f6a9698",
+        "contract_major": 1,
+        "schema_version": 1,
+        "provider_plugin_id": "org.example.notes",
+        "consumer_installation_id": "627c208d-66b0-571a-b5c2-7496c2dcd2eb",
+        "provider_installation_id": "627c208d-66b0-571a-b5c2-7496c2dcd2eb"
+      },
+      "write_date": "2026-10-28T21:26:21.971019",
+      "consumer_id": 1,
+      "create_date": "2026-10-28T21:26:21.971019",
+      "workspace_id": 1
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "plugin_id": "org.example.notes",
+      "write_uid": 1,
+      "create_uid": 1,
+      "write_date": "2026-10-28T21:26:21.971019",
+      "create_date": "2026-10-28T21:26:21.971019",
+      "availability": "enabled",
+      "workspace_id": 1,
+      "installation_id": 1
+    }
+  ],
+  "native_state": "installed",
+  "migration_pre": "{\"from_native_version\": \"19.0.0.2.2\", \"rows_sha256\": \"c454c792a5822792082f7b0d35b81a80638889c4e37e3201833d695aba755c96\"}",
+  "migration_post": "{\"from_native_version\": \"19.0.0.2.2\", \"rows_sha256\": \"c454c792a5822792082f7b0d35b81a80638889c4e37e3201833d695aba755c96\"}",
+  "native_version": "19.0.0.2.3",
+  "positive_constraint": true,
+  "notes": [
+    {
+      "id": 1,
+      "body": "Explicit retained native migration record.",
+      "title": "Manager upgrade fixture 1",
+      "revision": 1,
+      "author_id": 2,
+      "public_id": "1b6ff728-3d94-49ec-933b-471d953f8dee",
+      "write_uid": 6,
+      "create_uid": 6,
+      "write_date": "2026-10-28T21:29:03.927632",
+      "create_date": "2026-10-28T21:29:03.927632",
+      "workspace_id": 1
+    },
+    {
+      "id": 2,
+      "body": "Explicit retained native migration record.",
+      "title": "Manager upgrade fixture revision two",
+      "revision": 2,
+      "author_id": 2,
+      "public_id": "40389ac3-2e2e-4f2a-86bd-57bf7c722192",
+      "write_uid": 6,
+      "create_uid": 6,
+      "write_date": "2026-10-28T21:29:03.990964",
+      "create_date": "2026-10-28T21:29:03.953784",
+      "workspace_id": 1
+    }
+  ]
+}

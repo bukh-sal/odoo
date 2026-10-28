@@ -1,0 +1,44 @@
+{
+  "result": "passed_G5_X04_VER02",
+  "utc": "2026-10-28T23:29:55.678246+00:00",
+  "newly_qualified": [
+    "VER-02"
+  ],
+  "spec_sections": [
+    "6.2",
+    "6.5",
+    "12.3",
+    "25.5 E"
+  ],
+  "source_commit": "b341a2da",
+  "native_engine_image_id": "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+  "current_image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+  "current_generation": 6,
+  "operation_id": "031017e3-8bd2-441f-a789-d7548d50457c",
+  "plan_hash": "sha256:4e0bc22dfd51b0d623e422662f6d63bfd13c09865591f3633cacea377866137f",
+  "observations": [
+    "Adjacent0.1.9->0.1.10 and0.1.10->0.2.0 execute exactly applicable pre/post/end scripts; earlier scripts are not repeated.",
+    "Skipped0.1.0->0.3.0 executes all12intermediate pre/post/end scripts in native phase/numeric version order.",
+    "Wide0.99999998.0->0.100000000.0 executes all6scripts including intermediate0.99999999.0 in numeric order.",
+    "Fresh0.3.0 initializes current column/default/data, zero upgrade events and counters, even with12older migration files present.",
+    "Seven immutable development archives use shared validator/extractor; exact extracted source/script hashes match actual read-only fixture volume. Four owned DBs/eight terminal native children/24real scripts preserve row identities/names and prove payload/hash chain and before/after schema phases.",
+    "Original planner-order mismatch preserved; narrow plans.py correction70Windows/70Linux/84freeze passes. New independently approved static deployment changes only that SDKfile, skipsnative maintenance, checkpoints/readies/assets/publishes atisolated6.",
+    "Actual current-image SDK and host select the exact ordered script hashes observed in real retained databases. Four databases/terminal children independently rechecked without native replay.",
+    "Actual Notes manager first-native/adjacent path remains source-bound control-path proof. Main28 unchanged, isolated Notes/scopes/bindings/grants/42old files preserved; native/service reads and6old/new HTTP assets exact."
+  ],
+  "evidence_sha256": {
+    "20261029-migration-matrix-01\\failure-reconciliation.json": "12c50cbbfe589945570aee86f3c434975a50da4e118e7e8feba967c3f9ccd272",
+    "20261029-migration-matrix-02\\qualification.json": "2bd8d80bff519387d27dd64a48af5e1d2cdb3d4a28a3fbbce9edf039f518fe21",
+    "20261029-migration-order-source\\planning-core.json": "6f79cc3932ac7f8ad42d18ee764c42d9d1c86c9c6ad98b27beabccc6900b978a",
+    "20261029-migration-order-candidate\\candidate-build.json": "99c290413f52ed13122d2bc7e7d071b4feb3b2865b96dce2a3c1fbc6b0f6290e",
+    "20261029-migration-order-rollout-01\\activation.json": "ab67c23268b61c21877c5b5fd34ca10717fcb02804db001561a404ec99059dc1",
+    "20261029-migration-order-rollout-01\\witness-reconciliation.json": "7826c37264806ad7c3d2c2afebf3fe7819efaee3fc0a97e6bceda5194b6de562",
+    "20261029-migration-order-rollout-01\\post-activation.json": "6f154447d4db86caf2c3791212731e7627b03c1f6cbf02581c0b579115f8e800",
+    "20261029-manager-upgrade-01\\qualification.json": "b2140fa41dd91ae93db8a245e569e9fd83ba391ec098276eccecd772dd154bb8"
+  },
+  "limits": [
+    "Native engine matrix is a bounded direct harness, not another manager/approval walkthrough. Existing real Notes control-path evidence retained on unchanged engine/adapter execution branches.",
+    "Non-retryable witness steps declare reconcile/no external effects; actual crash/failure/concurrency/clean restore remain G5-X06/X09.",
+    "G5 in_progress; G6/G7 unstarted; Canvas minimal/native Odoo views default."
+  ]
+}
