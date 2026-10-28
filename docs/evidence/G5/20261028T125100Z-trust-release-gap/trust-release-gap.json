@@ -1,0 +1,18 @@
+{
+  "result": "reproduced_gap",
+  "utc": "2026-10-28T12:51:47.243036+00:00",
+  "code": "G5-TRUST-RELEASE-01",
+  "current_generation": 9,
+  "image_id": "sha256:76dab825202dd0903af22cef381dcc3d03dbb52b3df47e98cbec60c318c6ea14",
+  "published_digest": "sha256:4149d5075be0d6e429c094aa5e616a45fb4b0fb9f7271893cacf489e6bae7ec5",
+  "current_projection_matches_published": true,
+  "simulated_next_trust_projection_digest": "sha256:1c15c283a27b241bce807fd27d2e4a1d090db2fb9b0b01a088d4896a4111f6eb",
+  "selected_artifact_bytes_and_versions_unchanged": true,
+  "no_catalog_or_deployment_mutation": true,
+  "gap": "Revalidating unchanged selected bytes under the next trust generation relabels the current release digest before an explicit release publication.",
+  "required_followup": "Preserve exact independently published lock evidence and separately fence plans on current trust/catalog state. Quarantine/revocation must still fail closed.",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/projection.py": "04c726a9b4815f14a72242fac032b36775bd928a47cf6df05cff51409d6cf696",
+    "packages/platform_sdk/modular_platform/plans.py": "5b398032b044cb65db80c74a049251f66dd84aa7d8a7db3e65a927f45ca68969"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "native_state": "installed",
+  "migration_pre": null,
+  "migration_post": null,
+  "native_version": "19.0.0.2.2",
+  "metadata_version": "0.2.2",
+  "positive_constraint": null
+}

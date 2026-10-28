@@ -1,0 +1,8 @@
+{
+  "native_state": "installed",
+  "migration_pre": "{\"from_native_version\": \"19.0.0.2.2\", \"rows_sha256\": \"322ee492f83344922d45adf9847f34faaa4a96a08f2a372227d727e20bdd0eda\"}",
+  "migration_post": "{\"from_native_version\": \"19.0.0.2.2\", \"rows_sha256\": \"322ee492f83344922d45adf9847f34faaa4a96a08f2a372227d727e20bdd0eda\"}",
+  "native_version": "19.0.0.2.3",
+  "metadata_version": "0.2.2",
+  "positive_constraint": true
+}

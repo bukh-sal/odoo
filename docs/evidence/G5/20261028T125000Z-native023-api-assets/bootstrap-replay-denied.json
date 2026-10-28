@@ -1,0 +1,12 @@
+{
+  "result": "denied_before_compose_mutation",
+  "bootstrap_state_unchanged": true,
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "tools/g5.py",
+    "up"
+  ],
+  "source_sha256": {
+    "tools/g5.py": "f10361cfcfe00ac862dca45e83dfb609900e5ce1b70a372c3fc15474ceee0d3a"
+  }
+}

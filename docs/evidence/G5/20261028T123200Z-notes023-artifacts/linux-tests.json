@@ -1,0 +1,33 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "-i",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--pids-limit",
+    "128",
+    "--memory",
+    "512m",
+    "--cpus",
+    "2",
+    "--user",
+    "10001:10001",
+    "--tmpfs",
+    "/tmp:rw,nosuid,nodev,noexec,size=256m,mode=1777",
+    "--entrypoint",
+    "/venv/bin/python",
+    "sha256:76dab825202dd0903af22cef381dcc3d03dbb52b3df47e98cbec60c318c6ea14",
+    "-c",
+    "import os,sys,tarfile,subprocess\nos.mkdir('/tmp/qualification',0o700)\nwith tarfile.open(fileobj=sys.stdin.buffer,mode='r|') as archive:\n    archive.extractall('/tmp/qualification',filter='data')\nos.chdir('/tmp/qualification')\nprint('QUALIFICATION_PYTHON='+sys.version,flush=True)\nraise SystemExit(subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-p','test_artifacts.py','-v']).returncode)\n"
+  ],
+  "exit_code": 0,
+  "stdout": "QUALIFICATION_PYTHON=3.12.16 (main, Oct 26 2026, 22:52:58) [GCC 12.2.0]\n",
+  "stderr": "test_all_six_limits_accept_boundary_and_reject_one_over (test_artifacts.Artifacts.test_all_six_limits_accept_boundary_and_reject_one_over) ... ok\ntest_catalog_immutable_version_conflicts_trust_change_quarantine_and_corruption (test_artifacts.Artifacts.test_catalog_immutable_version_conflicts_trust_change_quarantine_and_corruption) ... ok\ntest_curated_exact_digest_development_opt_in_and_no_self_trust (test_artifacts.Artifacts.test_curated_exact_digest_development_opt_in_and_no_self_trust) ... ok\ntest_duplicate_case_unicode_and_file_prefix_collisions (test_artifacts.Artifacts.test_duplicate_case_unicode_and_file_prefix_collisions) ... ok\ntest_external_metadata_accepts_data_and_rejects_every_executable_layout (test_artifacts.Artifacts.test_external_metadata_accepts_data_and_rejects_every_executable_layout) ... ok\ntest_extras_comments_encryption_sfx_trailing_and_header_inconsistency (test_artifacts.Artifacts.test_extras_comments_encryption_sfx_trailing_and_header_inconsistency) ... ok\ntest_missing_schema_remote_ref_bad_schema_and_missing_prebuilt_page (test_artifacts.Artifacts.test_missing_schema_remote_ref_bad_schema_and_missing_prebuilt_page) ... ok\ntest_multiple_roots_loose_files_and_root_manifest_disagreement (test_artifacts.Artifacts.test_multiple_roots_loose_files_and_root_manifest_disagreement) ... ok\ntest_native_manifest_is_static_and_rejects_hooks_activation_version_and_assets (test_artifacts.Artifacts.test_native_manifest_is_static_and_rejects_hooks_activation_version_and_assets) ... ok\ntest_never_imports_native_code_and_staging_hashes_written_files (test_artifacts.Artifacts.test_never_imports_native_code_and_staging_hashes_written_files) ... ok\ntest_outer_digest_inventory_exclusion_extra_file_and_provenance (test_artifacts.Artifacts.test_outer_digest_inventory_exclusion_extra_file_and_provenance) ... ok\ntest_real_cli_and_strict_operator_configuration (test_artifacts.Artifacts.test_real_cli_and_strict_operator_configuration) ... ok\ntest_secret_and_remote_script_lint_redacts_source (test_artifacts.Artifacts.test_secret_and_remote_script_lint_redacts_source) ... ok\ntest_symlink_fifo_device_and_directory_mode_confusion (test_artifacts.Artifacts.test_symlink_fifo_device_and_directory_mode_confusion) ... ok\ntest_three_actual_reference_archives_and_exact_reproducibility (test_artifacts.Artifacts.test_three_actual_reference_archives_and_exact_reproducibility) ... ok\ntest_traversal_absolute_drive_unc_mixed_device_and_control_paths (test_artifacts.Artifacts.test_traversal_absolute_drive_unc_mixed_device_and_control_paths) ... ok\ntest_unknown_sensitive_manifest_keys_and_unsupported_protocols (test_artifacts.Artifacts.test_unknown_sensitive_manifest_keys_and_unsupported_protocols) ... ok\ntest_zip_bomb_and_forged_directory_entry_counts (test_artifacts.Artifacts.test_zip_bomb_and_forged_directory_entry_counts) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 2.978s\n\nOK\n"
+}

@@ -1,0 +1,77 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T12:47:07.623231+00:00",
+  "operation_id": "86952188-580b-4de2-bab5-4ef536a29ce7",
+  "plan_hash": "sha256:336da1ecd86109c8b72390ce1c0d8cd44cd9c96b12a3b53fb1c421e70c984529",
+  "from_version": "0.2.2",
+  "to_version": "0.2.3",
+  "configuration": {
+    "deployment_id": "eb7ce420-a928-4ecb-80c7-1f8ff3b3fa08",
+    "generation": 9,
+    "image_id": "sha256:76dab825202dd0903af22cef381dcc3d03dbb52b3df47e98cbec60c318c6ea14",
+    "operator_authorization_generation": 2,
+    "policy_version": 1,
+    "project": "mp-r0-r1g5fd0445d406d6",
+    "release_created_at": "2026-10-28T12:45:05Z",
+    "schema_version": 1,
+    "sites": [
+      {
+        "database": "mp_disposable_r0_r1_restore_2364c27b48964da9a87585887d529436",
+        "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e"
+      }
+    ],
+    "worker_id": "00ccf0c6c91a0accdb6f7e6fb56bc4f3a2b24d484ebacc308943bc0574061aa3"
+  },
+  "business_preserved": {
+    "notes_count": 4,
+    "attachment_count": 0,
+    "business_rows_digest": "sha256:9d93a361d046c5c1311b30d475c052e785a1777bf50b646885d522e4baaae9e2",
+    "filestore_files": 40,
+    "filestore_digest": "sha256:8e220f09fb2998604197246da988b4e3822d12a5fa8e18b51f1a664d5e33b955"
+  },
+  "suspended_scope_preserved": true,
+  "actual_migrations_and_constraint": true,
+  "old_workers_retained": true,
+  "completed_replay_no_new_mutation": true,
+  "limitations": [
+    "Skipped-release/fresh-install migration qualification, uninstall/removal, default startup/client fencing and full G5 exit remain pending.",
+    "Sanitized profile refreshed manually; automatic publication remains pending."
+  ],
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/approval_validation.py": "b84716fa0ec5bc6653da7ead7dd1497c61349158acbe8946765c8c230c741322",
+    "packages/platform_sdk/modular_platform/app_channel.py": "9d0fa413c75d0b13b235ff103dc427becef236c868fe1610f822426adc459da1",
+    "packages/platform_sdk/modular_platform/artifacts.py": "6965c17c022e44955d5d49d8076f276181767c6698920f1db8fa89da8c922601",
+    "packages/platform_sdk/modular_platform/catalog.py": "671909cfcf3c2c019dc71e03ce49b72f833d39facbac56df9d87873137e06767",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/deployment.py": "e00b1110ada489977c1be2fc168497739047c2d3442037f3176507062e992c26",
+    "packages/platform_sdk/modular_platform/feature_executor.py": "197227bf53bcd6ae828a1f022cb891de6df89c651fc5e6e79168c9ccfc063207",
+    "packages/platform_sdk/modular_platform/feature_metadata.py": "891c4cfa881fb5c943ded7a7593bd50fdbddf85c49572f476fcde38f454a0b2d",
+    "packages/platform_sdk/modular_platform/install_metadata.py": "91eec6d17ee027874a30a27e36df620af01f9ebd1448a991e781e425d43d600c",
+    "packages/platform_sdk/modular_platform/lifecycle_planning.py": "d5c89b06b087da3cce02d3b15cdeffa048f275afc06fafb01ae4a4de7904375f",
+    "packages/platform_sdk/modular_platform/metadata_sql.py": "52068b8ef9bb9359af21db91b25e6cfa3031172bbc84f7be57470d786caaa516",
+    "packages/platform_sdk/modular_platform/native_executor.py": "02ba5c2a185349cca328f83dddfbf5b1a1a4226d4832598f42bc8bc77f3b4f41",
+    "packages/platform_sdk/modular_platform/operation_views.py": "bf860904ac1b9bb93836ed72d59adef422c64d7c42ef83312ca5fbb1c84848b8",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/operator_store.py": "81bd2a628c107be9dd130f67ae0419d3b911ae80039cbf338a8a92d22051fe21",
+    "packages/platform_sdk/modular_platform/planning_cli.py": "0f0c7e298ef1231bc52ab41e11b74df5cdf80df509b3c6db961eea17379d6c4e",
+    "packages/platform_sdk/modular_platform/plans.py": "5b398032b044cb65db80c74a049251f66dd84aa7d8a7db3e65a927f45ca68969",
+    "packages/platform_sdk/modular_platform/projection.py": "04c726a9b4815f14a72242fac032b36775bd928a47cf6df05cff51409d6cf696",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "7b5ad3153f66c78bc4132cd4ab425ab772ed0d1f62fa786fed9564853fc3a220",
+    "packages/platform_sdk/modular_platform/release_staging.py": "7af830f1b3473870f7933ebaa019a7da96264d26c03f9c4384a9fe25849c64c9",
+    "packages/platform_sdk/modular_platform/resolution.py": "b99225983c62bba38f4d23a81760de37593cca97a08d5bda699521f2860de872",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "ee5e4f65b59efcc23fbdb4227a55452db7c1c760eac4adc9a2bd9328ac8037a9",
+    "packages/platform_sdk/modular_platform/restore_filestore.py": "43e3544b34bb68501201f0d382c167a382f4da7e06b33bfc6d66374824ed1626",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+    "packages/platform_sdk/modular_platform/workers.py": "9a9a16189d271441e9b7cf327fcb3c6ae7d74cf427f36aae9396daa7c05e1733",
+    "packages/platform_sdk/modular_platform/worker_start.py": "91f878938cba9dbf43a8773b056d1d01f805372913478b32151631343b3e6856",
+    "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
+    "platform_addons/mp_example_notes/models.py": "5eaa7a35f0e947ff4937c327d0ba463f5926333d0daff4671a5f253298ae96b7",
+    "platform_addons/mp_example_notes/services.py": "1fbe5bd129ca771b2d95f099eca98adbbe7699b2e8f775096521b1b0d0e221ca",
+    "platform_addons/mp_example_notes/__init__.py": "700601c6004851130c3b1f496d67afed170adc1e42ba8eb46439c895ed663e3d",
+    "platform_addons/mp_example_notes/__manifest__.py": "e8d0ae0a2625876a6177aac47628e9aae5b9fd29864307ccb2d24ac303422b9d",
+    "platform_addons/mp_example_notes/migrations/19.0.0.2.3/post-verify_revisions.py": "43f44b974f4f29c6d599866e0bfaa236f622ba86130fc154acb08de19ff7a2e1",
+    "platform_addons/mp_example_notes/migrations/19.0.0.2.3/pre-validate_revisions.py": "11543770959a6676dfa0123295370c3be184e05d4c4287b35b99f3b586db9133",
+    "tools/promote_native_upgrade.py": "c31d0b1c64d33c87c80b34cbc68e24776a068bf959b6c1df0a14a95ed4fb0785",
+    "plugins/notes/plugin.toml": "463ca6cc022619ec61553e327c6e32258c178c117e33c1459cca85fe7f8fee2e"
+  }
+}

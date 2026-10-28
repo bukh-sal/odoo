@@ -1,0 +1,77 @@
+{
+  "operation_id": "2364c27b-4896-4da9-a875-85887d529436",
+  "plan_hash": "sha256:d1a046615ebc20ca035cd136e1d8d2438e447c78c409d6cd3a07153b998afd5f",
+  "state": "recovery_required",
+  "phase": "mutation_started",
+  "mutation_started": true,
+  "traffic_resumed": false,
+  "backup_id": "2364c27b-4896-4da9-a875-85887d529436",
+  "approval_expires_at": "2026-10-28T12:54:28Z",
+  "history": [
+    {
+      "sequence": 95,
+      "utc": "2026-10-28T12:39:01Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:d1a046615ebc20ca035cd136e1d8d2438e447c78c409d6cd3a07153b998afd5f"
+      }
+    },
+    {
+      "sequence": 96,
+      "utc": "2026-10-28T12:39:28Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:d1a046615ebc20ca035cd136e1d8d2438e447c78c409d6cd3a07153b998afd5f"
+      }
+    },
+    {
+      "sequence": 97,
+      "utc": "2026-10-28T12:39:45Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 6100,
+        "lock_owner_digest": "sha256:2c7a0332f7e9118174583b35d50ade89615296781d6c73e2e4d1117475d4dcdd"
+      }
+    },
+    {
+      "sequence": 98,
+      "utc": "2026-10-28T12:39:55Z",
+      "code": "staged",
+      "details": {}
+    },
+    {
+      "sequence": 99,
+      "utc": "2026-10-28T12:40:19Z",
+      "code": "maintenance",
+      "details": {}
+    },
+    {
+      "sequence": 100,
+      "utc": "2026-10-28T12:40:21Z",
+      "code": "drained",
+      "details": {}
+    },
+    {
+      "sequence": 101,
+      "utc": "2026-10-28T12:40:28Z",
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "2364c27b-4896-4da9-a875-85887d529436"
+      }
+    },
+    {
+      "sequence": 102,
+      "utc": "2026-10-28T12:40:35Z",
+      "code": "mutation_started",
+      "details": {}
+    },
+    {
+      "sequence": 103,
+      "utc": "2026-10-28T12:40:38Z",
+      "code": "recovery_required",
+      "details": {
+        "code": "MUTATION_FAILED"
+      }
+    }
+  ]
+}

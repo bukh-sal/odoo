@@ -1,0 +1,9 @@
+{
+  "result": "passed",
+  "test": "test_operator_store.OperatorStoreTests.test_explicit_grant_requires_permission_ack_even_without_new_declaration",
+  "observed": "1 test passed in4.660s on the explicit project Python interpreter",
+  "correction": "Clear declaration_changes, the actual operation-lock key, so a new grant alone must trigger acknowledgement. SDK behavior unchanged.",
+  "source_sha256": {
+    "tests/test_operator_store.py": "e27fe58f791b252d64eea3250ed0bcfd382f53db71e31db0b0cc2540659594b3"
+  }
+}

@@ -91,7 +91,7 @@ class OperatorStoreTests(unittest.TestCase):
 
     def test_explicit_grant_requires_permission_ack_even_without_new_declaration(self):
         bundle=copy.deepcopy(self.bundle)
-        bundle['operation_lock']['declarations']={}
+        bundle['operation_lock']['declaration_changes']={}
         bundle['plan']['permission_changes']=[{'plugin_id':'org.test.a','workspace_id':ident(30),
             'capability':'org.test.a:records.read','action':'grant'}]
         with self.assertRaisesRegex(OperatorError,'explicit acknowledgment'):

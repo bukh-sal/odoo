@@ -1,0 +1,14 @@
+{
+  "result": "enrolled_exact_digest",
+  "utc": "2026-10-28T12:31:43.265403+00:00",
+  "artifact_digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+  "plugin_id": "org.example.notes",
+  "version": "0.2.3",
+  "old_trust_generation": 2,
+  "trust_generation": 3,
+  "existing_digests_retained": true,
+  "catalog_count": 7,
+  "trust_digest": "sha256:51c725550f83978d35af5b5d40acfd77e0a4ab6857e9daacf5165d0bc61f56fa",
+  "native_code_is_trusted": true,
+  "deployment_unchanged": true
+}

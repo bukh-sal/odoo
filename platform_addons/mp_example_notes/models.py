@@ -23,6 +23,7 @@ class Note(models.Model):
     author_id = fields.Many2one('mp.principal',required=True,ondelete='restrict',readonly=True)
     revision = fields.Integer(default=1,required=True,readonly=True)
     _public_unique = models.Constraint('UNIQUE(public_id)', 'Note ID must be unique')
+    _revision_positive = models.Constraint('CHECK(revision > 0)', 'Note revision must be positive')
 
     @api.constrains('title','body')
     def _validate_content(self):

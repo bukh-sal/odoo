@@ -1,0 +1,118 @@
+{
+  "result": "passed_subset",
+  "utc": "2026-10-28T12:26:10.221478+00:00",
+  "database": "mp_disposable_r0_r1_restore_3ec081c191074e8c8884f3f9f2d81bae",
+  "objects": {
+    "A": [
+      {
+        "dto": {
+          "id": "7fc6380c-087a-45db-9364-328c69f93059",
+          "title": "G5 lifecycle A/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two",
+          "body": "Private synthetic A data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 2,
+          "labels": [],
+          "updated_at": "2026-10-28T12:26:09.670364Z"
+        },
+        "native": {
+          "id": 1,
+          "public_id": "7fc6380c-087a-45db-9364-328c69f93059",
+          "title": "G5 lifecycle A/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two",
+          "body": "Private synthetic A data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 2,
+          "workspace_id": [
+            1,
+            "Personal"
+          ],
+          "author_id": [
+            2,
+            "Alice"
+          ]
+        }
+      },
+      {
+        "dto": {
+          "id": "d83331b4-9a1d-4bbf-a82f-d1dc3d053db6",
+          "title": "G5 lifecycle A/1 e0713c96-86d0-41d5-ad98-1997c37485fc",
+          "body": "Private synthetic A data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 1,
+          "labels": [],
+          "updated_at": "2026-10-28T12:26:09.717098Z"
+        },
+        "native": {
+          "id": 2,
+          "public_id": "d83331b4-9a1d-4bbf-a82f-d1dc3d053db6",
+          "title": "G5 lifecycle A/1 e0713c96-86d0-41d5-ad98-1997c37485fc",
+          "body": "Private synthetic A data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 1,
+          "workspace_id": [
+            1,
+            "Personal"
+          ],
+          "author_id": [
+            2,
+            "Alice"
+          ]
+        }
+      }
+    ],
+    "B": [
+      {
+        "dto": {
+          "id": "bfcd3007-2c87-44d3-a1d9-9d932de838e9",
+          "title": "G5 lifecycle B/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two",
+          "body": "Private synthetic B data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 2,
+          "labels": [],
+          "updated_at": "2026-10-28T12:26:10.158245Z"
+        },
+        "native": {
+          "id": 3,
+          "public_id": "bfcd3007-2c87-44d3-a1d9-9d932de838e9",
+          "title": "G5 lifecycle B/0 e0713c96-86d0-41d5-ad98-1997c37485fc revision two",
+          "body": "Private synthetic B data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 2,
+          "workspace_id": [
+            2,
+            "Research"
+          ],
+          "author_id": [
+            3,
+            "Bob"
+          ]
+        }
+      },
+      {
+        "dto": {
+          "id": "3ee41782-6624-4608-bc83-3e66ac6a156c",
+          "title": "G5 lifecycle B/1 e0713c96-86d0-41d5-ad98-1997c37485fc",
+          "body": "Private synthetic B data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 1,
+          "labels": [],
+          "updated_at": "2026-10-28T12:26:10.185396Z"
+        },
+        "native": {
+          "id": 4,
+          "public_id": "3ee41782-6624-4608-bc83-3e66ac6a156c",
+          "title": "G5 lifecycle B/1 e0713c96-86d0-41d5-ad98-1997c37485fc",
+          "body": "Private synthetic B data\nArabic: \u0645\u0631\u062d\u0628\u0627\nPreserve identity, revision and author.",
+          "revision": 1,
+          "workspace_id": [
+            2,
+            "Research"
+          ],
+          "author_id": [
+            3,
+            "Bob"
+          ]
+        }
+      }
+    ]
+  },
+  "count": 4,
+  "scoped_gateway_and_native_readback": true,
+  "workspace_attachments_denied": true,
+  "notes_digest": "sha256:97f38501a30ba7d963d9975c48100b9c9f3a315ee76bbda61499c98839f8e5f5",
+  "source_sha256": {
+    "tools/seed_lifecycle_data.py": "f7c53b9d5614b624890e2ebcfadf33e3396c86121eb7ab4bedd307cab676cf37"
+  }
+}

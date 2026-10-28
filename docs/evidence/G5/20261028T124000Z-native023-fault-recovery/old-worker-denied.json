@@ -1,0 +1,5 @@
+{
+  "case": "native_version_mismatch",
+  "result": "denied_before_native_import",
+  "native_imported": false
+}

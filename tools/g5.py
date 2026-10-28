@@ -44,6 +44,8 @@ def shell(state,label,code):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('action',choices=['setup','build','init','seed','up','inspect']);args=parser.parse_args();state=setup()
+    if state.get('worker_id') and args.action in ('build','init','seed','up'):
+        raise RuntimeError('G5 is managed by the independent executor; use a new recorded candidate and exact approved operation, not the original bootstrap/Compose mutation path')
     if args.action=='build':
         if state.get('build_status')=='building':raise RuntimeError('Build may still be running; inspect before restarting')
         state['build_status']='building';r0.save(state)
