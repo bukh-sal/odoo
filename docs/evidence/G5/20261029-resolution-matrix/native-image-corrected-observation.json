@@ -1,0 +1,32 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "mp-g5-native-numeric-corrected",
+    "--label",
+    "com.modular.disposable=mp-g5-resolution",
+    "--network",
+    "none",
+    "--read-only",
+    "--user",
+    "10001:10001",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--memory",
+    "512m",
+    "--tmpfs",
+    "/tmp",
+    "--entrypoint",
+    "/venv/bin/python",
+    "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json\nfrom types import SimpleNamespace\nfrom packaging.version import Version\nfrom odoo.tools.parse_version import parse_version\nfrom odoo.modules.module import adapt_version,check_version\nimport odoo.modules.migration as migration\ninventory=json.loads(Path('/opt/modular/distribution-inventory.json').read_text())\nvalues=['0.1.0','0.1.9','0.1.10','0.2.0','0.3.0','0.99999999.0','0.100000000.0','1.0.0']\nnative=lambda value:'19.0.'+value\nassert all(check_version(native(v)) and adapt_version(native(v))==native(v) for v in values)\nassert sorted(values,key=Version)==sorted(values,key=lambda v:parse_version(native(v)))\ncases=[]\nfor start,end,intermediate in [('0.1.9','0.2.0',['0.1.10','0.2.0']),('0.1.0','0.3.0',['0.1.9','0.1.10','0.2.0','0.3.0']),('0.99999998.0','0.100000000.0',['0.99999999.0','0.100000000.0'])]:\n observed=[]\n def collect(cursor,installed,file,module,phase,version):observed.append([phase,version])\n migration.exec_script=collect\n package=SimpleNamespace(name='mp_version_probe',load_state='to upgrade',load_version=native(start),manifest={'version':native(end)})\n manager=object.__new__(migration.MigrationManager);manager.cr=None\n directories=[native(v) for v in intermediate]+[native('2.0.0')]\n assert all(migration.VERSION_RE.fullmatch(v) for v in directories)\n manager.migrations={package.name:{'module':{v:['/fixture/'+v+'/'+phase+'-check.py' for phase in ['pre','post','end']] for v in directories}}}\n for phase in ['pre','post','end']:manager.migrate_module(package,phase)\n expected=[[phase,native(v)] for phase in ['pre','post','end'] for v in intermediate]\n assert observed==expected,(start,end,observed,expected)\n cases.append({'from':start,'to':end,'observed_applicable_phases':observed})\nprint(json.dumps({'result':'passed_actual_native_parser_and_applicability','source_sha256':hashlib.sha256(Path('/opt/modular/odoo/tools/parse_version.py').read_bytes()).hexdigest(),'generated_patch':inventory['generated_patches'][-1],'numeric_order':sorted(values,key=lambda v:parse_version(native(v))),'cases':cases,'limits':['Actual native migrate_module selection code with inert exec_script collector only; no database/script execution or fresh-install claim. VER02 remains pending.']}))\n"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"result\": \"passed_actual_native_parser_and_applicability\", \"source_sha256\": \"dfbad4b881f38deea7185535e3f249b3908dd6c3c9dc8fbfeafcee8d9067e175\", \"generated_patch\": {\"patch_id\": \"native-numeric-width-v1\", \"path\": \"odoo/tools/parse_version.py\", \"result_sha256\": \"dfbad4b881f38deea7185535e3f249b3908dd6c3c9dc8fbfeafcee8d9067e175\", \"source_sha256\": \"71eeb2085e17c03fd4c31a222559d38d6c78cddb278ef0f4b17c5ecf8163b214\"}, \"numeric_order\": [\"0.1.0\", \"0.1.9\", \"0.1.10\", \"0.2.0\", \"0.3.0\", \"0.99999999.0\", \"0.100000000.0\", \"1.0.0\"], \"cases\": [{\"from\": \"0.1.9\", \"to\": \"0.2.0\", \"observed_applicable_phases\": [[\"pre\", \"19.0.0.1.10\"], [\"pre\", \"19.0.0.2.0\"], [\"post\", \"19.0.0.1.10\"], [\"post\", \"19.0.0.2.0\"], [\"end\", \"19.0.0.1.10\"], [\"end\", \"19.0.0.2.0\"]]}, {\"from\": \"0.1.0\", \"to\": \"0.3.0\", \"observed_applicable_phases\": [[\"pre\", \"19.0.0.1.9\"], [\"pre\", \"19.0.0.1.10\"], [\"pre\", \"19.0.0.2.0\"], [\"pre\", \"19.0.0.3.0\"], [\"post\", \"19.0.0.1.9\"], [\"post\", \"19.0.0.1.10\"], [\"post\", \"19.0.0.2.0\"], [\"post\", \"19.0.0.3.0\"], [\"end\", \"19.0.0.1.9\"], [\"end\", \"19.0.0.1.10\"], [\"end\", \"19.0.0.2.0\"], [\"end\", \"19.0.0.3.0\"]]}, {\"from\": \"0.99999998.0\", \"to\": \"0.100000000.0\", \"observed_applicable_phases\": [[\"pre\", \"19.0.0.99999999.0\"], [\"pre\", \"19.0.0.100000000.0\"], [\"post\", \"19.0.0.99999999.0\"], [\"post\", \"19.0.0.100000000.0\"], [\"end\", \"19.0.0.99999999.0\"], [\"end\", \"19.0.0.100000000.0\"]]}], \"limits\": [\"Actual native migrate_module selection code with inert exec_script collector only; no database/script execution or fresh-install claim. VER02 remains pending.\"]}\n",
+  "stderr": ""
+}

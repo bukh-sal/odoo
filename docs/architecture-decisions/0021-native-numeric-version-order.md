@@ -1,6 +1,6 @@
 # ADR 0021: width-independent native numeric version comparison
 
-Date: 2026-10-29. Status: implementation/qualification in progress under G5-X03/VER-01; G5-X04 will exercise actual migration phases. Public contract major1/G2revision11 is unchanged.
+Date: 2026-10-29. Status: qualified under G5-X03/VER-01 on corrected image0afd445c and exact isolated core5; G5-X04 actual database migration matrix remains open. Public contract major1/G2revision11 is unchanged.
 
 The specification accepts canonical numeric X.Y.Z without an eight-digit component limit and maps it to19.0.X.Y.Z. A read-only pinned-source experiment proves upstream parse_version sorts0.100000000.0 before0.99999999.0: its numeric tokens are padded to only eight digits. Packaging.Version orders them correctly. The previous golden test compared packaging.Version on both sides and did not exercise the native parser. Keep the original observation; VER-01 cannot pass on the old image.
 
@@ -13,3 +13,5 @@ The existing core-upgrade path intentionally rejects upstream changes. Add one e
 Compatibility addon1.0 becomes1.1; public plan/approval/host/schema/golden formats and package artifacts stay unchanged. Main28 and isolated4 must remain intact until source and image checks pass, then a NEW exact core operation may update the isolated fixture. G0's historical pinned baseline evidence is retained; this is a declared R1 distribution correction, not a claim that the original baseline parser handled wide fields correctly.
 
 Required evidence: original counterexample; invalid package spelling; ordinary/wide/very-wide numeric and native ordering; legacy equality/order and upstream vectors; exact build-preimage/output guard; positive and forged/unrelated/downgrade core-transition checks; focused resolver/CLI cases with immutable catalogs; actual corrected image parser and migration applicability; versioned native core maintenance/readiness and retained data/files/authority. No source test alone closes G5 or the full VER-02 matrix. Canvas and standard native record hosting are unchanged.
+
+Qualification: `../evidence/G5/20261029-resolution-matrix/qualification.json` binds original failure, focused69Windows/69Linux/84freeze, actual image/parser/applicability and exact independently approved core96a53908/compat1.1 plus post-activation equality. Applicability used an inert collector; it does not close VER-02 actual database/script/fresh matrix.

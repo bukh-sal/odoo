@@ -1,0 +1,18 @@
+{
+  "image_id": "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+  "arguments": [
+    "odoo-bin",
+    "-c",
+    "/run/secrets/odoo_config",
+    "-d",
+    "mp_disposable_r0_r1_g5_mgr_84459f617ab0",
+    "-u",
+    "mp_compat",
+    "--stop-after-init",
+    "--no-http",
+    "--workers=0",
+    "--max-cron-threads=0",
+    "--without-demo"
+  ],
+  "exit_code": 0
+}

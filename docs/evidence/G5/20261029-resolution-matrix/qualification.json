@@ -1,0 +1,43 @@
+{
+  "result": "passed_G5_X03_dependency_and_numeric_version_decisions",
+  "utc": "2026-10-28T23:13:35.143528+00:00",
+  "source_commit": "e62ef38e",
+  "newly_qualified": [
+    "VER-01"
+  ],
+  "retained_DEP_passes": [
+    "DEP-01",
+    "DEP-02",
+    "DEP-03",
+    "DEP-04",
+    "DEP-05",
+    "DEP-06",
+    "DEP-08"
+  ],
+  "actual_image_id": "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+  "operation_id": "96a53908-10e9-4f33-85ec-919113c0fe8e",
+  "plan_hash": "sha256:611689cd2b67180acb9af3b3f23bb2b70b20c27f27fd0415bde617cdd8b47dbd",
+  "generation": 5,
+  "observations": [
+    "69 Windows and69 isolated Linux current resolver/archive CLI/version/core/staging checks pass;84 frozen files unchanged.",
+    "Original native eight-digit counterexample retained; actual corrected image accepts canonical native spelling and orders ordinary/wide fields correctly.",
+    "Three actual MigrationManager applicability cases select pre/post/end intermediates in native order using an inert script collector.",
+    "New exact independently approved core operation updates only mp_compat1.0 to1.1 and the four pinned source paths; native maintenance/assets/readiness/traffic succeed.",
+    "Two raw Notes and revisions1/2, features/bindings/grants/old files retained; native RPC/API reads and old/new public asset bytes pass; main28 unchanged.",
+    "Upstream checkout parser SHA71eeb208 preserved; only generated runtime resultdfbad4b8 is patched."
+  ],
+  "evidence_sha256": {
+    "20261029-resolution-source\\planning-core.json": "76c0d4efe235dee1210f04976a9e6760b923d9c7206f2ac7342794d1f579bbb2",
+    "20261029-resolution-matrix\\dependency-acceptance.json": "4cb9334baefd02480eed24a6fa33eadc3d4b7ec3c8c40a77796e294697657249",
+    "20261029-resolution-matrix\\native-numeric-initial-observation.json": "47c14abb81ff17a08f9a864c68e1c4fe77eddbd7718f332f592d79251f737989",
+    "20261029-resolution-matrix\\native-image-initial-observation.json": "644e373e520255e31ba3e05df9f3f9faeda2b213609ea2abc7d488137c9302f9",
+    "20261029-resolution-matrix\\native-image-corrected-observation.json": "71f6d125b88b40d6049758b7bc59f876a563e14e93e8956e423db1fdc0b871ea",
+    "20261029-native-numeric-candidate\\candidate-build.json": "ced01e173dae5c52e446c95e4f87a052750c757747abd6e243a5228be6ff0566",
+    "20261029-native-numeric-core-01\\activation.json": "1bfb5c617f9afba5f24d69ec990dec4debd165e41e2b75d54e7716909d547cbe",
+    "20261029-native-numeric-core-01\\post-activation.json": "7e1180ba43ad36fc4ca5d51e08387dc59ec4a5fa4752e343f1d9a785e1fcc991"
+  },
+  "limits": [
+    "VER-02 remains not_run: actual database/script adjacent/skipped/full fresh-target matrix still required.",
+    "G5 remains in_progress. No Canvas/frontend expansion, new public contract, or G6/G7 work."
+  ]
+}

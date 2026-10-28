@@ -1,0 +1,57 @@
+{
+  "result": "passed_current_numeric_core_http_and_state",
+  "utc": "2026-10-28T23:10:00.394394+00:00",
+  "generation": 5,
+  "image_id": "sha256:0afd445cb1147de1fbf18ba250a5b7346570c21da26fb2b0d1ea4f78134a1319",
+  "operation_id": "96a53908-10e9-4f33-85ec-919113c0fe8e",
+  "plan_hash": "sha256:611689cd2b67180acb9af3b3f23bb2b70b20c27f27fd0415bde617cdd8b47dbd",
+  "business_and_native_api_revisions": [
+    1,
+    2
+  ],
+  "raw_business_features_bindings_grants_exact": true,
+  "old_files_preserved": 42,
+  "assets_old_and_new_exact_no_redirect": [
+    {
+      "generation": 4,
+      "url": "/web/assets/9bd94b74da7209ef010392528b630536c08858e9ef2dddc01790769e884d6891/mp_shell.assets_host.min.js",
+      "sha256": "fb12f5d89cd9288ab9a268a5a11d79d0e35185af2d7e74f81bbc3fb659abc461",
+      "bytes": 3053207,
+      "status": 200,
+      "redirects": false
+    },
+    {
+      "generation": 4,
+      "url": "/web/assets/ba0a95183e5a0daec530408ef295a8a3213958d63149110a213996189f65a212/mp_shell.assets_host.min.css",
+      "sha256": "503202eb5ac6f7e6883422aeb800c573c6796625be4bda83bdf7c37a00f9663f",
+      "bytes": 749505,
+      "status": 200,
+      "redirects": false
+    },
+    {
+      "generation": 5,
+      "url": "/web/assets/596ffbcf942acfd432ae06a701768dfb822b5d13bbbadc9b816d3609979ed307/mp_shell.assets_host.min.css",
+      "sha256": "503202eb5ac6f7e6883422aeb800c573c6796625be4bda83bdf7c37a00f9663f",
+      "bytes": 749505,
+      "status": 200,
+      "redirects": false
+    },
+    {
+      "generation": 5,
+      "url": "/web/assets/d09cb89d08e20aeddb871e88d5128ff290666b0063bf284add3aebf5417cb949/mp_shell.assets_host.min.js",
+      "sha256": "fb12f5d89cd9288ab9a268a5a11d79d0e35185af2d7e74f81bbc3fb659abc461",
+      "bytes": 3053207,
+      "status": 200,
+      "redirects": false
+    }
+  ],
+  "main_generation28_config_business_state_exact": true,
+  "upstream_checkout_parser_sha256": "71eeb2085e17c03fd4c31a222559d38d6c78cddb278ef0f4b17c5ecf8163b214",
+  "generated_runtime_parser_sha256": "dfbad4b881f38deea7185535e3f249b3908dd6c3c9dc8fbfeafcee8d9067e175",
+  "candidate_source_files_match": 273,
+  "freeze_files_match": 84,
+  "limits": [
+    "No new browser walkthrough required: exact4/5publicJS/CSSbytes match and nativeRPC/API/current manager reads pass. Earlier actualnativeView/Canvas evidence retained on unchanged frontend/runtime API boundaries.",
+    "Migration applicability probe used inert script collector; VER02 real database/script/fresh matrix still not_run."
+  ]
+}
