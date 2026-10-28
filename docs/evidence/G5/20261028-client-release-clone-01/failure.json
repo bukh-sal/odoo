@@ -1,0 +1,6 @@
+{
+  "phase": "worker_started",
+  "error_type": "RuntimeError",
+  "resources_retained": true,
+  "automatic_retry_forbidden": true
+}

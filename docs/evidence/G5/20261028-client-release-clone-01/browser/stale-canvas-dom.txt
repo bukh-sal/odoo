@@ -1,0 +1,33 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Canvas":
+      - /url: "#"
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- main:
+  - heading "Canvas" [level=1]
+  - paragraph: Your ideas, in one place.
+  - alert:
+    - strong: The platform has changed. Refresh to continue.
+    - paragraph: f3a5cf9b-e401-4bca-85b1-e585d43ac977
+    - paragraph: "Field: client_release"
+    - button "Refresh platform"
+    - button "Download unsaved draft"
+- alert:
+  - button "Close"
+  - generic: Refresh platform. A new platform release is available. Your old page is paused.
+  - button "Refresh"
+  - button "Download unsaved draft"

@@ -1,0 +1,47 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Canvas":
+      - /url: "#"
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- heading "Notes" [level=1]
+- paragraph: Your ideas, in one place.
+- button "All notes"
+- button "Export notes"
+- button "Delete note"
+- button "Edit labels"
+- generic: G5 release clone UI fixture d44f revision two
+- button "Save manually":
+  - generic: 
+- button "Discard all changes":
+  - generic: 
+- search:
+  - navigation "Pager":
+    - generic: "1"
+    - text: / 1
+    - button "Previous" [disabled]:
+      - generic: 
+    - button "Next" [disabled]:
+      - generic: 
+- main:
+  - generic: Title
+  - textbox "Title": Unsaved native draft across release 18 d44f
+  - generic: Revision
+  - generic: "2"
+  - generic: Note
+  - textbox "Note" [active]:
+    - /placeholder: Write a note…
+    - text: Native draft body across release 18.

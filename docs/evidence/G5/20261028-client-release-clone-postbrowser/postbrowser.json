@@ -1,0 +1,29 @@
+{
+  "result": "passed_postbrowser_subset",
+  "utc": "2026-10-28T17:49:31.824458+00:00",
+  "clone_database": "mp_disposable_r0_r1_client_d44f98595a294031",
+  "image_id": "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+  "clone_generation": 18,
+  "source_generation": 16,
+  "source_state_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+  "business_digest": "sha256:bc5a915de032ba5d4e0a175f3cc0703ae29f3410e570108eb13b3ad5f2793b7b",
+  "original_notes": 4,
+  "boards": 1,
+  "board_revision": 2,
+  "named_crud_fixture_deleted_only_in_clone": true,
+  "unsaved_drafts_not_saved": true,
+  "old_epoch_token_still_denied": true,
+  "new_epoch_current_pin_positive": true,
+  "source_filestore_files_preserved": 54,
+  "clone_filestore_files": 56,
+  "drafts_exact": true,
+  "three_mount_cycles": true,
+  "operated_source_unchanged": true,
+  "source_sha256": {
+    "tools/verify_client_release_clone.py": "c638c71527d9e849368380294bf2c343c3dfb011b0ac7f00defd3d86fc7159eb"
+  },
+  "limits": [
+    "Audit/session/idempotency and generated native assets changed in the clone; no full unchanged-database claim.",
+    "Experimental metadata epoch and direct clone maintenance do not qualify independent approved deployment/fault/recovery or real changed-asset client activation."
+  ]
+}

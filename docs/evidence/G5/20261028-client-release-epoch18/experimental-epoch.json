@@ -1,0 +1,21 @@
+{
+  "state": "completed",
+  "database": "mp_disposable_r0_r1_client_d44f98595a294031",
+  "previous": {
+    "mp.release_digest": "sha256:2d5e3fb0b9022cb9b1ae296b856caac222c26153546468ed31be6d237fa9181c",
+    "mp.release_generation": "17",
+    "mp.active_inventory_digest": "sha256:3ab96a08d02214bf21272e27c60ae66de20cc16840b043b1261ee7ec5d8a8c34"
+  },
+  "generation": 18,
+  "release_digest": "sha256:273679d9724209f61d42dfe6686d925bb07bf6c2f91da0775cc312aa86c2c198",
+  "business_digest": "sha256:86e5c8cba48abe757df4c679b21be08c0058cc8104f80cb3f242ab5d23d4b90a",
+  "experimental_only": true,
+  "after": {
+    "mp.release_digest": "sha256:273679d9724209f61d42dfe6686d925bb07bf6c2f91da0775cc312aa86c2c198",
+    "mp.release_generation": "18",
+    "mp.active_inventory_digest": "sha256:3ab96a08d02214bf21272e27c60ae66de20cc16840b043b1261ee7ec5d8a8c34"
+  },
+  "utc": "2026-10-28T17:30:39.752463+00:00",
+  "source_publication_unchanged": true,
+  "business_unchanged": true
+}

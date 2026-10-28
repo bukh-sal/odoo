@@ -1,0 +1,11 @@
+{
+  "result": "same_clone_same_worker",
+  "native_migration_repeated": false,
+  "database_recreated": false,
+  "source_deployment_changed": false,
+  "internal_only_binding": {
+    "8069/tcp": []
+  },
+  "edge_port": 18074,
+  "edge": "mp-r1-client-d44f98595a294031-edge"
+}

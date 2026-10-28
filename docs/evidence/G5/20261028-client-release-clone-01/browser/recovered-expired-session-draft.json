@@ -1,0 +1,14 @@
+{
+  "board_id": "949ae266-76d9-4be7-8c05-f7d95660b7b8",
+  "expected_revision": 2,
+  "name": "Session-expiry draft d44f",
+  "cards": [
+    {
+      "id": "789331d7-46e1-402e-ae2d-9a3941f9bc8d",
+      "lane": "inbox",
+      "text": "Canvas lifecycle fixture card",
+      "note_id": "d83331b4-9a1d-4bbf-a82f-d1dc3d053db6"
+    }
+  ],
+  "idempotency_key": null
+}

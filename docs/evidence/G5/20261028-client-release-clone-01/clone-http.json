@@ -1,0 +1,68 @@
+{
+  "state": "http_qualified",
+  "database": "mp_disposable_r0_r1_client_d44f98595a294031",
+  "volume": "mp-r1-client-d44f98595a294031",
+  "app": "mp-r1-client-d44f98595a294031-app",
+  "maintenance": "mp-r1-client-d44f98595a294031-maintenance",
+  "port": 18074,
+  "image_id": "sha256:a34c6b6f6d2cac53ce7ac46158a31b616b148204a19aad2116cab21ad2414eb8",
+  "inventory_digest": "sha256:3ab96a08d02214bf21272e27c60ae66de20cc16840b043b1261ee7ec5d8a8c34",
+  "source_database": "mp_disposable_r0_r1_restore_736f872ff76d4cd8af14ce8049452691",
+  "source_project": "mp-r0-r1g5fd0445d406d6",
+  "source_state_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.1",
+      "target_version": "19.0.0.1.2",
+      "migrations": []
+    },
+    {
+      "addon": "mp_identity",
+      "previous_version": "19.0.0.1.0",
+      "target_version": "19.0.0.1.1",
+      "migrations": []
+    },
+    {
+      "addon": "mp_shell",
+      "previous_version": "19.0.0.1.1",
+      "target_version": "19.0.0.1.2",
+      "migrations": []
+    }
+  ],
+  "experimental_not_approved_release": true,
+  "evidence": "docs/evidence/G5/20261028-client-release-clone-01",
+  "utc": "2026-10-28T17:23:31.576327+00:00",
+  "generation": 17,
+  "release_digest": "sha256:2d5e3fb0b9022cb9b1ae296b856caac222c26153546468ed31be6d237fa9181c",
+  "interrupted_phase": "worker_started",
+  "error_type": "RuntimeError",
+  "edge": "mp-r1-client-d44f98595a294031-edge",
+  "edge_network": "mp-r1-client-d44f98595a294031-edge-network",
+  "previous_unpublished_port": 18073,
+  "state_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+  "business_digest": "sha256:bc5a915de032ba5d4e0a175f3cc0703ae29f3410e570108eb13b3ad5f2793b7b",
+  "result": "passed_clone_http_subset",
+  "native_versions": {
+    "mp_core": "19.0.0.1.2",
+    "mp_shell": "19.0.0.1.2",
+    "mp_identity": "19.0.0.1.1"
+  },
+  "source_diff_count": 21,
+  "checks": [
+    "Actual core native-u completed and business/scopes preserved",
+    "Default guarded candidate started with experimental identity",
+    "Authenticated current-pin gateway/native/Canvas reads and context positive",
+    "Foreign/suspended/revoked scopes denied",
+    "Missing/stale gateway+native mutations denied before handler; original business/scopes unchanged",
+    "No-store native bootstrap contains exact release pin",
+    "Operated source deployment/business unchanged"
+  ],
+  "source_sha256": {
+    "tools/qualify_client_release_clone.py": "cd93a4fcc8707202df80d526213fc27edd8b8ebf24e888909869b0d1be3365ef"
+  },
+  "limits": [
+    "No browser, client mismatch epoch change, actor/draft/reload qualification or acceptance passes from this subset.",
+    "Direct disposable clone experiment is not independent executor approval/operation or a published release; actual core fault/recovery/rollout remain."
+  ]
+}
