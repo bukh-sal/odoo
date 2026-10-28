@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:00:00Z",
+  "profile_observed_at": "2026-10-28T21:59:00Z",
+  "stale": false,
+  "control_authority": "independent_local_os",
+  "kind": "installed",
+  "items": [
+    {
+      "installation_id": "00000000-0000-4000-8000-000000000001",
+      "plugin_id": "org.example.notes",
+      "version": "0.1.0",
+      "artifact_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "runtime": "native",
+      "metadata_state": "installed",
+      "database_state": "installed",
+      "native_version": "19.0.0.1.0",
+      "features": [
+        {
+          "workspace_id": "00000000-0000-4000-8000-000000000002",
+          "availability": "enabled"
+        }
+      ],
+      "health": {
+        "state": "unknown",
+        "reason": "Registry observed; plugin-specific health has not been probed."
+      },
+      "dependencies": {
+        "state": "satisfied",
+        "issues": []
+      },
+      "artifact": {
+        "plugin_id": "org.example.notes",
+        "version": "0.1.0",
+        "artifact_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "name": "Notes",
+        "description": "Workspace notes",
+        "publisher": "example",
+        "license": "LGPL-3.0-only",
+        "runtime": "native",
+        "trust_model": "operator-approved-exact-digest",
+        "signature_verified": false,
+        "warnings": [],
+        "policy_generation": 3
+      }
+    }
+  ],
+  "next_offset": null
+}

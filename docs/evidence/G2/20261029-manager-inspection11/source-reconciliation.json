@@ -1,0 +1,12 @@
+{
+  "result": "passed_byte_identity_reconciliation",
+  "utc": "2026-10-28T22:08:23.137610+00:00",
+  "trigger": "Preserve original mixed line endings in existing example loader to keep its Git diff to the single new prefix.",
+  "same_python_text_before_after": true,
+  "old_test_source_sha256": "76398cd3f21e5a055f5be124fb2101a059bef520554fa92f54b7bc5d5b896653",
+  "current_test_source_sha256": "14d99ae494bce780d54e26c28e815101fa88dfb1a9086eb132cb0b57c0dfc9c8",
+  "current_freeze_inventory_sha256": "9ea1c5ccda106e999a40459ef87c9f8ac04d0ae769f4b7952f73524ab4d7ac18",
+  "frozen_paths_verified": 84,
+  "prior_semantic_results": "gate-G2.json",
+  "runtime_boundary_changed": false
+}

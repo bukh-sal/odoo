@@ -18,6 +18,8 @@ from modular_platform.plans import check_bundle
 from modular_platform.projection import project_deployment
 from modular_platform.resolution import dependent_closure, binding_matches_scope
 from modular_platform.manager_planning import prepare_manager_native
+from modular_platform.manager_views import (UPLOAD_LIMIT, artifact_summary, details_view,
+    installed_view, validate_upload)
 
 from .controllers import PublicError, bounded_body, principal, result, site_id
 
@@ -90,7 +92,7 @@ def operator(required=True):
     return actor
 
 
-def profile_document():
+def profile_metadata():
     record=request.env['mp.operation.profile'].sudo().search([('site_public_id','=',site_id())],limit=1)
     if not record:raise PublicError('DEPENDENCY_UNAVAILABLE')
     profile=record.payload
@@ -103,6 +105,11 @@ def profile_document():
     if 'sha256:'+hashlib.sha256(inventory).hexdigest()!=profile['runtime']['inventory_digest']:
         raise PublicError('DEPENDENCY_UNAVAILABLE')
     request.env.cr.execute(METADATA_SELECT);metadata=request.env.cr.fetchone()[0]
+    return profile,metadata
+
+
+def profile_document():
+    profile,metadata=profile_metadata()
     if any(item['state']!='installed' for item in metadata['native_modules']):raise PublicError('DEPENDENCY_UNAVAILABLE')
     observation={'runtime':profile['runtime'],'image_id':profile['configuration']['image_id'],'sites':[metadata]}
     document=project_deployment(profile['configuration'],observation,profile['catalog'])
@@ -117,6 +124,36 @@ def own_request(operation_id, actor):
 
 
 class Operations(http.Controller):
+    @http.route('/api/v1/operations/installed',type='http',auth='public',methods=['GET'])
+    def installed(self,offset='0',**kwargs):
+        def run():
+            operator();profile,metadata=profile_metadata()
+            return installed_view(profile,metadata,now=stamp(),offset=offset)
+        return result(run)
+
+    @http.route('/api/v1/operations/details',type='http',auth='public',methods=['GET'])
+    def details(self,digest=None,**kwargs):
+        def run():
+            operator();profile,metadata=profile_metadata()
+            value=details_view(profile,digest,now=stamp())
+            if value is None:raise PublicError('NOT_FOUND')
+            return value
+        return result(run)
+
+    @http.route('/api/v1/operations/validate-upload',type='http',auth='public',methods=['POST'],csrf=False,max_content_length=UPLOAD_LIMIT)
+    def upload(self):
+        def run():
+            operator()
+            if not request.validate_csrf(request.httprequest.headers.get('X-CSRFToken')):raise AccessError('CSRF required')
+            if request.httprequest.mimetype!='application/octet-stream' or (request.httprequest.content_length or 0)>UPLOAD_LIMIT:
+                raise ContractError('Bounded binary archive required')
+            # The native HTTP wrapper enforces the route bound before get_data,
+            # including chunked bodies. No caller filename/path is used.
+            raw=request.httprequest.get_data()
+            profile,metadata=profile_metadata()
+            return validate_upload(raw,request.httprequest.headers.get('X-MP-Artifact-Digest'),profile,now=stamp())
+        return result(run)
+
     @http.route('/api/v1/operations/context',type='http',auth='public',methods=['GET'])
     def context(self):
         def run():
@@ -136,11 +173,7 @@ class Operations(http.Controller):
             items=sorted(profile['catalog'],key=lambda item:(item['manifest']['plugin']['id'],item['manifest']['plugin']['version']))
             page=[]
             for artifact in items[int(offset):int(offset)+20]:
-                manifest=artifact['manifest'];info=manifest['plugin'];trust=artifact['trust']
-                page.append({'plugin_id':info['id'],'version':info['version'],'artifact_digest':artifact['digest'],
-                    'name':info['name'],'description':info['description'],'publisher':info['publisher'],'license':info['license'],
-                    'runtime':manifest['runtime']['kind'],'trust_model':trust['model'],'signature_verified':False,
-                    'warnings':trust['warnings'],'policy_generation':trust['policy_generation']})
+                page.append(artifact_summary(artifact))
             from modular_platform.plans import data_digest
             return validate_operations_view({'schema_version':1,'kind':'catalog','snapshot_digest':data_digest(items),
                 'observed_at':profile['observed_at'],'stale':_stale(profile['observed_at']), 'items':page,

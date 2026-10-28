@@ -21,6 +21,7 @@ function fixture({actor=alice,canRequest=true,status={operation_id:id,plan_hash:
         if(path==='/api/v1/session')return {principal_id:actor};
         if(path==='/api/v1/operations/context')return {can_request:canRequest,site_id:site,workspaces:[]};
         if(path==='/api/v1/operations/catalog')return {items:[]};
+        if(path==='/api/v1/operations/installed?offset=0')return {items:[],next_offset:null,stale:false};
         if(path.startsWith('/api/v1/operations/status/')){if(reject)throw Object.assign(new Error('Not found'),{code:'NOT_FOUND'});return status;}
         if(path==='/api/v1/operations/request'){if(postError)throw Object.assign(new Error('Timeout'),{name:'AbortError'});return status;}
         throw new Error('Unexpected path '+path);

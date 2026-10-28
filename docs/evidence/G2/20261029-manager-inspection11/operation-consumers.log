@@ -1,0 +1,11 @@
+test_additive_examples_embed_exact_plan_and_preserve_golden_hash (test_operation_contracts.OperationContracts.test_additive_examples_embed_exact_plan_and_preserve_golden_hash) ... ok
+test_app_request_cannot_claim_approval_and_dimensions_remain_distinct (test_operation_contracts.OperationContracts.test_app_request_cannot_claim_approval_and_dimensions_remain_distinct) ... ok
+test_exact_artifacts_and_workspace_versus_site_scope (test_operation_contracts.OperationContracts.test_exact_artifacts_and_workspace_versus_site_scope) ... ok
+test_prepared_hash_and_exact_transitive_targets_cannot_diverge (test_operation_contracts.OperationContracts.test_prepared_hash_and_exact_transitive_targets_cannot_diverge) ... ok
+test_terminal_newlines_fail_all_identity_digest_version_boundaries (test_operation_contracts.OperationContracts.test_terminal_newlines_fail_all_identity_digest_version_boundaries) ... ok
+test_unknown_authority_fields_and_protocol_majors_rejected (test_operation_contracts.OperationContracts.test_unknown_authority_fields_and_protocol_majors_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.050s
+
+OK

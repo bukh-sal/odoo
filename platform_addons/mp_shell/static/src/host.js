@@ -180,7 +180,7 @@ class Shell extends Component {
         releaseFence.assert(path);
         let response;
         try{response=await fetch(path,{cache:'no-store',credentials:'same-origin',method:body?'POST':'GET',signal:options.signal,
-            headers:{...(workspace?{'X-MP-Workspace':workspace}:{}),...(body?{'Content-Type':'application/json','X-CSRFToken':this.csrf}:{}),...options.headers,...releaseFence.headers()},...(body?{body:JSON.stringify(body)}:{})});}
+            headers:{...(workspace?{'X-MP-Workspace':workspace}:{}),...(body?{'Content-Type':options.binary?'application/octet-stream':'application/json','X-CSRFToken':this.csrf}:{}),...options.headers,...releaseFence.headers()},...(body?{body:options.binary?body:JSON.stringify(body)}:{})});}
         catch(e){if(e.name==='AbortError')throw e;throw Object.assign(error('DEPENDENCY_UNAVAILABLE',undefined,{outcome:'unknown'}),{retryable:true});}
         if(path==='/api/v1/client-release'&&response.status===404){releaseFence.block();throw releaseError();}
         let result;try{result=await response.json();}catch{throw error(response.status===401?'UNAUTHENTICATED':'INTERNAL_ERROR');}

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:00:00Z",
+  "profile_observed_at": "2026-10-28T21:59:00Z",
+  "stale": false,
+  "control_authority": "independent_local_os",
+  "kind": "plugin_details",
+  "artifact": {
+    "plugin_id": "org.example.notes",
+    "version": "0.1.0",
+    "artifact_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "name": "Notes",
+    "description": "Workspace notes",
+    "publisher": "example",
+    "license": "LGPL-3.0-only",
+    "runtime": "native",
+    "trust_model": "operator-approved-exact-digest",
+    "signature_verified": false,
+    "warnings": [],
+    "policy_generation": 3
+  },
+  "manifest": {
+    "schema_version": 1,
+    "plugin": {
+      "id": "org.example.notes",
+      "version": "0.1.0",
+      "name": "Notes",
+      "description": "Workspace notes",
+      "publisher": "example",
+      "license": "LGPL-3.0-only"
+    },
+    "compatibility": {
+      "platform": ">=0.1,<0.2",
+      "host_api_major": 1,
+      "ui_api_major": 1
+    },
+    "runtime": {
+      "kind": "native",
+      "addon_name": "mp_example_notes",
+      "native_compatibility": "odoo-19",
+      "python": ">=3.12,<3.13",
+      "python_dependencies": []
+    },
+    "activation": {
+      "scopes": [
+        "site",
+        "workspace"
+      ],
+      "supports_feature_suspension": true
+    },
+    "permissions": {
+      "defines": {
+        "notes.read": "Read notes",
+        "notes.write": "Write notes",
+        "notes.delete": "Delete notes"
+      },
+      "requests": []
+    },
+    "data": {
+      "models": [
+        "mp.example.note"
+      ],
+      "extension_targets": [],
+      "export_schema": "schemas/notes-export-v1.json",
+      "contributions": [
+        {
+          "kind": "model",
+          "id": "mp.example.note",
+          "target": "workspace",
+          "delete_policy": "owned"
+        }
+      ]
+    },
+    "ui": {
+      "mode": "trusted",
+      "design": "standard",
+      "pages": [
+        {
+          "id": "home",
+          "path": "/",
+          "title_key": "notes.title",
+          "kind": "native_view",
+          "action_ref": "mp_example_notes.action_notes",
+          "permission": "notes.read",
+          "layout": "shell",
+          "ui_api_major": 1
+        }
+      ],
+      "navigation": [
+        {
+          "id": "main",
+          "page": "home",
+          "label_key": "notes.title",
+          "icon": "file_text",
+          "order": 200
+        }
+      ]
+    },
+    "services": {
+      "provides": [
+        {
+          "id": "org.example.notes.documents",
+          "api_version": "1.0",
+          "schema": "schemas/documents-v1.json",
+          "handler": "mp_example_notes.services:NotesService",
+          "methods": [
+            "list",
+            "get",
+            "create",
+            "update",
+            "delete"
+          ]
+        }
+      ],
+      "requires": [
+        {
+          "alias": "documents",
+          "id": "org.example.notes.documents",
+          "contract_major": 1,
+          "version": ">=1.0,<2.0"
+        }
+      ]
+    },
+    "upgrade": {
+      "strategy": "native_migrations",
+      "requires_maintenance": true,
+      "destructive": false,
+      "transitions": []
+    },
+    "dependencies": {
+      "plugins": {}
+    },
+    "integrations": {
+      "optional": {}
+    }
+  },
+  "provenance": {
+    "builder": "example-builder",
+    "source_files_count": 12,
+    "source_inventory_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "provenance_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "upstream_commit": null,
+    "publisher_identity_verified": false
+  },
+  "native_trusted_code": true,
+  "feature_suspension_unloads_code": false
+}

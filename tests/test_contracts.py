@@ -43,6 +43,7 @@ class Contracts(unittest.TestCase):
             if path.stem in ('plan-deploy','plan-core-upgrade'):name='plan'
             if path.stem.startswith('operations-request'):name='operations-request'
             if path.stem.startswith('operations-view'):name='operations-view'
+            if path.stem.startswith('manager-view'):name='manager-view'
             validate(name, json.loads(path.read_text()))
 
     def test_authoring_is_data_not_import(self):

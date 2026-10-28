@@ -1,0 +1,27 @@
+{
+  "result": "passed_source_only",
+  "utc": "2026-10-28T22:11:01.837042+00:00",
+  "git_base": "71a18c536c4ccd7570c44f81169211de6b474de3",
+  "current_source_identity": "source-reconciliation.json",
+  "host_checks": "host-summary.json",
+  "linux_checks": "linux-tests.json plus source-reconciliation.json",
+  "unique_current_python_cases_per_environment": 45,
+  "node_cases": 11,
+  "contract_checkpoint": "../../G2/20261029-manager-inspection11/gate-G2.json plus source-reconciliation.json",
+  "proxy_configuration": "proxy-config-check.json",
+  "initial_failures": [
+    "Initial8manager-view tests stopped at fixture service_id assumption; actual manifest id/optional defaults inspected and adapter/UI/tests corrected before all45source cases passed.",
+    "Windows bind proxy client31396/session93978 stalled before container creation; task-owned client stopped after inventory reconciliation; same bytes passed actual nginx -t through named network-none stdin container."
+  ],
+  "runtime_changes": [
+    "Core1.3->1.4 and shell1.4->1.5; add current metadata/details/upload endpoints using shared validator.",
+    "Operations file validation/details/installed pages/catalog continuation; internal root Blob option retains existing JSON/fences.",
+    "Proxy exact upload route100MiB; other routes retain10MiB."
+  ],
+  "limits": [
+    "No candidate built/deployed or browser/new endpoint qualification yet.",
+    "Main28 and isolated3 remain on2c7; old qualified evidence retained, newG5X02behavior not passed.",
+    "Canvas source unchanged and native CRUD hosting unchanged."
+  ],
+  "next": "Build once from current immutable source, then independently stage/approve core upgrade on isolated manager fixture3. Qualify proxy configuration and actual browser uploads/role/CSRF/release/escaping/details/native views; preserve original rows/authority/files."
+}

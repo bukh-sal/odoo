@@ -6,6 +6,39 @@ export class OperationsPanel extends Component {
     static template=xml`<section class="mp_operations" aria-label="Plugin operations">
         <p>Prepare a plan, request the operation, then use local operator approval and apply.</p>
         <p>Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.</p>
+        <section t-if="state.context" class="mp_notice" aria-label="Upload validation">
+            <h2>Validate a plugin archive</h2>
+            <p>Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.</p>
+            <label for="mp_upload_file">Plugin archive (.mplug, maximum 100 MiB)</label>
+            <input id="mp_upload_file" type="file" accept=".mplug" t-on-change="selectUpload" t-att-disabled="state.uploadBusy"/>
+            <button t-on-click="upload" t-att-disabled="!state.uploadName || state.uploadBusy"><t t-esc="state.uploadBusy?'Validating…':'Validate archive'"/></button>
+            <p t-if="state.uploadName" t-esc="state.uploadName"/>
+            <div t-if="state.uploadResult" role="status">
+                <p>Validation result: <strong t-esc="state.uploadResult.result"/></p><code t-esc="state.uploadResult.artifact_digest"/>
+                <p t-if="state.uploadResult.result==='verified'">Archive, inventory and extracted bytes verified against the published curated policy. Independent local revalidation and approval are still required.</p>
+                <p t-elif="state.uploadResult.result==='not_curated'">This digest is absent from the published curated catalog. Archive contents have not been validated. A local operator must review and configure trust separately.</p>
+                <p t-else="">Validation rejected the archive or its byte identity. Nothing was installed or retained.</p>
+                <p>Retain your original file for the local operator. Package builds and runtime selection happen separately, outside this web request.</p>
+                <pre t-esc="uploadCommand"/>
+            </div>
+        </section>
+        <section t-if="state.context" class="mp_notice" aria-label="Installed plugins">
+            <h2>Installed plugins</h2><p>Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.</p>
+            <p t-if="state.inspectionStale">Published metadata is stale. Refresh it through the local operator before planning changes.</p>
+            <table><thead><tr><th>Plugin</th><th>Version / trust</th><th>Database</th><th>Health</th><th>Dependencies</th><th>Workspace availability</th></tr></thead>
+                <tbody><tr t-foreach="state.installed" t-as="item" t-key="item.installation_id">
+                    <td><button t-if="item.artifact" t-on-click="()=>this.showDetails(item.artifact_digest)" t-esc="item.artifact.name"/><span t-else="" t-esc="item.plugin_id"/></td>
+                    <td><t t-esc="item.version"/><p t-esc="item.artifact?.trust_model||'Not in the current curated catalog'"/></td>
+                    <td t-esc="item.database_state"/><td><t t-esc="item.health.state"/><p t-esc="item.health.reason"/></td>
+                    <td><t t-esc="item.dependencies.state"/><p t-foreach="item.dependencies.issues" t-as="issue" t-key="issue" t-esc="issue"/></td>
+                    <td><p t-foreach="item.features" t-as="feature" t-key="feature.workspace_id"><t t-esc="workspaceName(feature.workspace_id)"/>: <t t-esc="feature.availability"/></p></td>
+                </tr></tbody>
+            </table>
+            <p t-if="!state.installed.length &amp;&amp; !state.loading">No plugin installation metadata on this page.</p>
+            <button t-if="state.installedOffset" t-on-click="()=>this.loadInstalled(Math.max(0,state.installedOffset-20))">Previous installations</button>
+            <button t-if="state.installedNext!==null" t-on-click="()=>this.loadInstalled(state.installedNext)">Next installations</button>
+            <button t-on-click="load">Refresh metadata</button>
+        </section>
         <div t-if="state.error" class="mp_notice" role="alert"><strong t-esc="state.error"/><button t-on-click="load">Refresh</button></div>
         <p t-if="state.loading" role="status">Loading operator metadata…</p>
         <form t-if="state.context" t-on-submit.prevent="prepare" class="mp_operation_form">
@@ -13,6 +46,7 @@ export class OperationsPanel extends Component {
             <select id="mp_operation_artifact" t-model="state.digest" required="required" t-on-change="clearPlan">
                 <option value="">Choose a plugin</option><option t-foreach="state.catalog" t-as="item" t-key="item.artifact_digest" t-att-value="item.artifact_digest"><t t-esc="item.name"/> · <t t-esc="item.version"/></option>
             </select>
+            <button t-if="state.catalogNext!==null" type="button" t-on-click="loadMoreCatalog" t-att-disabled="state.catalogBusy">Load more catalog versions</button>
             <label for="mp_operation_type">Operation</label><select id="mp_operation_type" t-model="state.action" t-on-change="clearPlan">
                 <option value="install">Install</option><option value="upgrade">Upgrade</option><option value="suspend">Feature suspension</option><option value="enable">Enable feature</option><option value="uninstall">Native uninstall</option><option value="unregister">Unregister service</option><option value="remove">Remove unused artifact</option>
             </select>
@@ -26,6 +60,27 @@ export class OperationsPanel extends Component {
             <h2 t-esc="selected.name"/><p t-esc="selected.description"/><p>Publisher: <t t-esc="selected.publisher"/> · License: <t t-esc="selected.license"/></p>
             <p>Trust: <t t-esc="selected.trust_model"/> · Signature verified: no</p><code t-esc="selected.artifact_digest"/>
             <p t-foreach="selected.warnings" t-as="warning" t-key="warning" class="mp_notice" role="status" t-esc="warning"/>
+            <button t-on-click="()=>this.showDetails(selected.artifact_digest)">View package details</button>
+        </section>
+        <section t-if="state.details" class="mp_notice" aria-label="Plugin details">
+            <h2><t t-esc="state.details.artifact.name"/> package details</h2>
+            <p><t t-esc="state.details.artifact.plugin_id"/> · <t t-esc="state.details.artifact.version"/> · <t t-esc="state.details.artifact.publisher"/> · <t t-esc="state.details.artifact.license"/></p>
+            <p t-esc="state.details.artifact.description"/><code t-esc="state.details.artifact.artifact_digest"/>
+            <p t-if="state.details.native_trusted_code">Native Python and same-origin plugin JavaScript are fully trusted code. Declared permissions govern supported APIs; they do not sandbox arbitrary native code.</p>
+            <p>Trust: <t t-esc="state.details.artifact.trust_model"/>. Signature and publisher identity verified: no.</p>
+            <p t-if="state.details.stale">This published package observation is stale.</p>
+            <h3>Declared permissions</h3><p t-foreach="permissionDefinitions" t-as="entry" t-key="entry[0]"><code t-esc="entry[0]"/>: <t t-esc="entry[1]"/></p>
+            <p t-foreach="state.details.manifest.permissions.requests" t-as="entry" t-key="entry.capability+entry.scope"><code t-esc="entry.capability"/> (<t t-esc="entry.scope"/>): <t t-esc="entry.reason"/></p>
+            <h3>Services and dependencies</h3><p t-foreach="state.details.manifest.services.provides" t-as="service" t-key="service.id+service.api_version">Provides <t t-esc="service.id"/> <t t-esc="service.api_version"/></p>
+            <p t-foreach="state.details.manifest.services.requires" t-as="service" t-key="service.alias">Requires <t t-esc="service.alias"/>: <t t-esc="service.id"/> <t t-esc="service.version"/> (<t t-esc="service.optional?'optional':'required'"/>)</p>
+            <p t-foreach="pluginDependencies" t-as="entry" t-key="entry[0]"><t t-esc="entry[0]"/> <t t-esc="entry[1]"/></p>
+            <p>Python requirements: <t t-esc="(state.details.manifest.dependencies.python||[]).join(', ')||'None'"/></p>
+            <h3>Native extension targets and data impact</h3><p>Models: <t t-esc="state.details.manifest.data.models.join(', ')||'None'"/></p><p>Extension targets: <t t-esc="state.details.manifest.data.extension_targets.join(', ')||'None'"/></p>
+            <p t-foreach="state.details.manifest.data.contributions||[]" t-as="entry" t-key="entry.id"><t t-esc="entry.kind"/> <code t-esc="entry.id"/> → <t t-esc="entry.target"/>; deletion policy: <t t-esc="entry.delete_policy"/></p>
+            <p>Data effects are package declarations. Arbitrary trusted hooks may have additional effects; review the exact operation plan and recovery requirements.</p>
+            <h3>Provenance</h3><p>Builder claim: <t t-esc="state.details.provenance.builder"/>; source files: <t t-esc="state.details.provenance.source_files_count"/>; upstream claim: <t t-esc="state.details.provenance.upstream_commit||'Not declared'"/></p>
+            <p>Provenance digest: <code t-esc="state.details.provenance.provenance_digest"/></p><p>Source inventory digest: <code t-esc="state.details.provenance.source_inventory_digest"/></p>
+            <button t-on-click="closeDetails">Close details</button>
         </section>
         <section t-if="state.prepared" class="mp_notice" aria-label="Proposed operation">
             <h2>Review proposed changes</h2><p t-if="state.prepared.stale">Catalog observation is old. The local operator revalidates it before approval.</p>
@@ -60,10 +115,11 @@ export class OperationsPanel extends Component {
     </section>`;
 
     setup(){
-        this.state=useState({context:null,catalog:[],digest:'',action:'suspend',workspace:this.props.initialWorkspace||'',cascade:false,prepared:null,status:null,error:'',loading:true,busy:false,submitted:false});
+        this.state=useState({context:null,catalog:[],catalogNext:null,catalogBusy:false,installed:[],installedOffset:0,installedNext:null,inspectionStale:false,details:null,uploadName:'',uploadBusy:false,uploadResult:null,digest:'',action:'suspend',workspace:this.props.initialWorkspace||'',cascade:false,prepared:null,status:null,error:'',loading:true,busy:false,submitted:false});
         this.controller=new AbortController();this.active=true;this.sequence=0;this.checking=false;
+        this.inspectionSequence=0;this.uploadSequence=0;this.detailSequence=0;this.loadSequence=0;
         onMounted(()=>{this.timer=setInterval(()=>this.poll(),5000);this.load();});
-        onWillDestroy(()=>{this.active=false;this.sequence++;clearInterval(this.timer);this.controller.abort();});
+        onWillDestroy(()=>{this.active=false;this.sequence++;this.clearInspection();clearInterval(this.timer);this.controller.abort();});
     }
     get selected(){return this.state.catalog.find(item=>item.artifact_digest===this.state.digest);}
     get needsWorkspace(){return ['install','upgrade','suspend','enable'].includes(this.state.action);}
@@ -77,6 +133,32 @@ export class OperationsPanel extends Component {
             prefix+'operations mirror-status '+s.operation_id+paths;
     }
     workspaceName(id){return this.state.context?.workspaces.find(item=>item.workspace_id===id)?.name||id;}
+    get permissionDefinitions(){return Object.entries(this.state.details?.manifest.permissions.defines||{});}
+    get pluginDependencies(){return Object.entries(this.state.details?.manifest.dependencies.plugins||{});}
+    get uploadCommand(){const digest=this.state.uploadResult?.artifact_digest;if(!digest)return '';return 'modular --config OPERATOR_TRUST_CONFIG plugin validate ARTIFACT_FILE --digest '+digest+'\nmodular --config OPERATOR_TRUST_CONFIG catalog --store OPERATOR_CATALOG add ARTIFACT_FILE --digest '+digest;}
+    clearInspection(){this.inspectionSequence++;this.uploadSequence++;this.detailSequence++;this.uploadFile=null;Object.assign(this.state,{installed:[],installedOffset:0,installedNext:null,details:null,uploadName:'',uploadBusy:false,uploadResult:null});}
+    closeDetails(){this.detailSequence++;this.state.details=null;}
+    async showDetails(digest){const sequence=++this.detailSequence;this.state.details=null;try{const value=await this.api('/api/v1/operations/details?digest='+encodeURIComponent(digest));if(this.active&&sequence===this.detailSequence)this.state.details=value;}catch(error){if(sequence===this.detailSequence)this.failure(error);}}
+    async loadInstalled(offset=0){const sequence=this.inspectionSequence;try{const value=await this.api('/api/v1/operations/installed?offset='+offset);if(this.active&&sequence===this.inspectionSequence){this.state.installed=value.items;this.state.installedOffset=offset;this.state.installedNext=value.next_offset;this.state.inspectionStale=value.stale;}}catch(error){if(sequence===this.inspectionSequence)this.failure(error);}}
+    async loadMoreCatalog(){
+        if(this.state.catalogNext===null||this.state.catalogBusy)return;const sequence=this.inspectionSequence;this.state.catalogBusy=true;
+        try{const page=await this.api('/api/v1/operations/catalog?offset='+this.state.catalogNext);if(!this.active||sequence!==this.inspectionSequence)return;
+            if(page.snapshot_digest!==this.catalogSnapshot)throw Object.assign(new Error('Catalog changed. Refresh metadata before selecting a version.'),{code:'CONFLICT'});
+            this.state.catalog.push(...page.items);this.state.catalogNext=page.next_offset;
+        }catch(error){if(sequence===this.inspectionSequence)this.failure(error);}finally{if(this.active)this.state.catalogBusy=false;}
+    }
+    selectUpload(event){this.uploadSequence++;this.uploadFile=event.target.files?.[0]||null;this.state.uploadName=this.uploadFile?.name||'';this.state.uploadResult=null;}
+    async upload(){
+        const file=this.uploadFile;if(!file||this.state.uploadBusy)return;const sequence=++this.uploadSequence;this.state.uploadBusy=true;this.state.error='';this.state.uploadResult=null;
+        try{
+            if(file.size<1||file.size>100*1024*1024)throw new Error('Choose a nonempty archive of at most 100 MiB.');
+            const bytes=await file.arrayBuffer();if(!this.active||sequence!==this.uploadSequence)return;
+            const hash=await crypto.subtle.digest('SHA-256',bytes);if(!this.active||sequence!==this.uploadSequence)return;
+            const digest='sha256:'+Array.from(new Uint8Array(hash),byte=>byte.toString(16).padStart(2,'0')).join('');
+            const value=await this.api('/api/v1/operations/validate-upload',file,{binary:true,timeoutMs:90000,headers:{'X-MP-Artifact-Digest':digest}});
+            if(this.active&&sequence===this.uploadSequence)this.state.uploadResult=value;
+        }catch(error){if(sequence===this.uploadSequence)this.failure(error);}finally{if(this.active&&sequence===this.uploadSequence)this.state.uploadBusy=false;}
+    }
     get resumeKey(){return this.principal&&this.state.context?'mp.operation.'+this.state.context.site_id+'.'+this.principal:null;}
     forgetPending(){try{if(this.resumeKey)sessionStorage.removeItem(this.resumeKey);}catch{/* Storage is optional; the local journal remains authoritative. */}}
     rememberPending(operation){try{if(this.resumeKey)sessionStorage.setItem(this.resumeKey,JSON.stringify({operation_id:operation.operation_id,request_id:this.requestId}));}catch{/* Keep the current in-memory observation. */}}
@@ -94,13 +176,13 @@ export class OperationsPanel extends Component {
             this.state.submitted=status.source==='operator_journal_mirror'||status.history.some(item=>item.code==='requested');
         }
     }
-    async api(path,body=null){
+    async api(path,body=null,options={}){
         const controller=new AbortController();const abort=()=>controller.abort();this.controller.signal.addEventListener('abort',abort,{once:true});
-        const timer=setTimeout(abort,10000);
-        try{return await this.props.api(path,body,{signal:controller.signal});}
+        const timer=setTimeout(abort,options.timeoutMs||10000);
+        try{return await this.props.api(path,body,{...options,signal:controller.signal});}
         finally{clearTimeout(timer);this.controller.signal.removeEventListener('abort',abort);}
     }
-    denied(){this.clearPlan();this.state.context=null;this.state.catalog=[];this.props.onDenied();}
+    denied(){this.clearPlan();this.clearInspection();this.state.context=null;this.state.catalog=[];this.state.catalogNext=null;this.props.onDenied();}
     failure(error){
         if(!this.active)return;
         if(this.state.status)this.state.status.stale=true;
@@ -109,7 +191,7 @@ export class OperationsPanel extends Component {
     }
     async authority(){
         const session=await this.api('/api/v1/session');if(!this.active)return false;
-        if(this.principal&&session.principal_id!==this.principal)this.clearPlan();
+        if(this.principal&&session.principal_id!==this.principal){this.clearPlan();this.clearInspection();this.state.catalog=[];this.state.catalogNext=null;}
         this.principal=session.principal_id;this.props.onSession(session);
         const context=await this.api('/api/v1/operations/context');
         if(!this.active)return false;
@@ -118,8 +200,8 @@ export class OperationsPanel extends Component {
         return true;
     }
     async load(){
-        this.state.loading=true;this.state.error='';
-        try{if(!await this.authority())return;const catalog=await this.api('/api/v1/operations/catalog');if(this.active){this.state.catalog=catalog.items;if(!this.state.prepared&&!this.state.status)await this.restorePending();}}
+        this.state.loading=true;this.state.error='';const load=++this.loadSequence;this.inspectionSequence++;
+        try{if(!await this.authority()||load!==this.loadSequence)return;const sequence=this.inspectionSequence;const catalog=await this.api('/api/v1/operations/catalog');if(this.active&&sequence===this.inspectionSequence){this.state.catalog=catalog.items;this.state.catalogNext=catalog.next_offset??null;this.catalogSnapshot=catalog.snapshot_digest;await this.loadInstalled();if(!this.state.prepared&&!this.state.status)await this.restorePending();}}
         catch(error){this.failure(error);}finally{if(this.active)this.state.loading=false;}
     }
     async prepare(){

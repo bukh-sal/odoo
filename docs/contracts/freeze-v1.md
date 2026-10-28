@@ -1,6 +1,6 @@
 # Contract freeze v1
 
-Status: **passed G2 revision8**,28 October2026. Contract major1; compatible deployment enum extension under ADR0015. Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
+Status: **passed G2 revision11**,29 October2026. Contract major1; additive manager inspection routes under ADR0020. Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
 
 Normative semantics: [protocol-v1.md](protocol-v1.md), [ADR0003](../architecture-decisions/0003-r1-contracts.md). Machine inventory [freeze-v1.json](freeze-v1.json) contains exact SHA256 for every schema/type/example/validator/test/lock and maps owning phase, acceptance IDs and G1 correspondence. It excludes itself and unrelated evidence/status to avoid self-reference. Every path in the table has an exact digest in that inventory.
 
@@ -53,3 +53,5 @@ Revision9 adds operator-only `core_upgrade` plan/public-status enum and `plan-co
 
 
 Revision10 freezes client-release transport1 schema/example under ADR0017. This is a documented operational migration requiring a release pin after activation; headerless business calls are not compatible. Existing JSON DTOs/host API1/golden plan bytes remain unchanged. The bootstrap pin is immutable; current release discovery is not authority and does not silently refresh clients. New consumers require G2 requalification and G5 actual native/browser/core recovery evidence.
+
+Revision11 adds isolated manager-view inspection/temporary-upload shapes and three examples under [ADR0020](../architecture-decisions/0020-manager-inspection-contract.md). Existing operations/plan/approval/host payloads remain byte-identical; only protocol documentation and the generic example-loader prefix change among prior frozen paths.20contract+6operation-consumer+5new boundary tests and host TypeScript check pass;84files/sevenrows exact. [Gate evidence](../evidence/G2/20261029-manager-inspection11/gate-G2.json). G1/current runtime source is unchanged; actual new manager behavior remains G5-X02 work.
