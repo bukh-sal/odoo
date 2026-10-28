@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "binding_id": "00000000-0000-4000-8000-000000000001",
+  "site_id": "00000000-0000-4000-8000-000000000002",
+  "workspace_id": "00000000-0000-4000-8000-000000000003",
+  "consumer_installation_id": "00000000-0000-4000-8000-000000000004",
+  "alias": "documents",
+  "service_id": "org.example.notes.documents",
+  "contract_major": 1,
+  "api_version": "1.0",
+  "provider_plugin_id": "org.example.notes",
+  "provider_installation_id": "00000000-0000-4000-8000-000000000005",
+  "generation": 1,
+  "optional": false
+}

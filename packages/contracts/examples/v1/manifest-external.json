@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "plugin": {
+    "id": "org.example.document_stats",
+    "version": "0.1.0",
+    "name": "Document Stats",
+    "description": "Workspace notes",
+    "publisher": "example",
+    "license": "LGPL-3.0-only"
+  },
+  "compatibility": {
+    "platform": ">=0.1,<0.2",
+    "host_api_major": 1,
+    "ui_api_major": 1
+  },
+  "runtime": {
+    "kind": "external_service"
+  },
+  "activation": {
+    "scopes": [
+      "site",
+      "workspace"
+    ],
+    "supports_feature_suspension": true
+  },
+  "permissions": {
+    "defines": {
+      "notes.read": "Read notes",
+      "notes.write": "Write notes",
+      "notes.delete": "Delete notes"
+    },
+    "requests": []
+  },
+  "data": {
+    "models": [],
+    "extension_targets": [],
+    "contributions": []
+  },
+  "ui": {
+    "mode": "none",
+    "design": "standard",
+    "pages": [],
+    "navigation": []
+  },
+  "services": {
+    "provides": [
+      {
+        "id": "org.example.document_stats.analysis",
+        "api_version": "1.0",
+        "schema": "schemas/stats-v1.json",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "requires": []
+  },
+  "upgrade": {
+    "strategy": "metadata_only",
+    "requires_maintenance": false,
+    "destructive": false,
+    "transitions": []
+  },
+  "dependencies": {
+    "plugins": {}
+  },
+  "integrations": {
+    "optional": {}
+  },
+  "external_service": {
+    "endpoint_config": "document_stats_local",
+    "expected_image": "modular-platform/document-stats@sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  }
+}

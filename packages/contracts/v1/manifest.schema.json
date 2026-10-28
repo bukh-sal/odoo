@@ -1,0 +1,787 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/manifest.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "plugin": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+          "maxLength": 180
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "name",
+        "description",
+        "publisher",
+        "license"
+      ],
+      "additionalProperties": false
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "platform": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "host_api_major": {
+          "const": 1
+        },
+        "ui_api_major": {
+          "const": 1
+        }
+      },
+      "required": [
+        "platform",
+        "host_api_major",
+        "ui_api_major"
+      ],
+      "additionalProperties": false
+    },
+    "runtime": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "native"
+            },
+            "addon_name": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]+$"
+            },
+            "native_compatibility": {
+              "const": "odoo-19"
+            },
+            "python": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "python_dependencies": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "kind",
+            "addon_name",
+            "native_compatibility",
+            "python",
+            "python_dependencies"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "external_service"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "activation": {
+      "type": "object",
+      "properties": {
+        "scopes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "site",
+              "workspace"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "supports_feature_suspension": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "scopes",
+        "supports_feature_suspension"
+      ],
+      "additionalProperties": false
+    },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "plugins": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+            "maxLength": 180
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      },
+      "required": [
+        "plugins"
+      ],
+      "additionalProperties": false
+    },
+    "integrations": {
+      "type": "object",
+      "properties": {
+        "optional": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+            "maxLength": 180
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      },
+      "required": [
+        "optional"
+      ],
+      "additionalProperties": false
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "defines": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.]+$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "requests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.]+:[a-z][a-z0-9_.]+$",
+                "maxLength": 240
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "scope": {
+                "enum": [
+                  "site",
+                  "workspace"
+                ]
+              }
+            },
+            "required": [
+              "capability",
+              "reason",
+              "scope"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "defines",
+        "requests"
+      ],
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "extension_targets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "export_schema": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240,
+          "pattern": "^[A-Za-z0-9_./-]+$"
+        },
+        "contributions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "model",
+                  "field",
+                  "view",
+                  "action",
+                  "index",
+                  "constraint",
+                  "attachment",
+                  "job",
+                  "slot"
+                ]
+              },
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "delete_policy": {
+                "enum": [
+                  "restrict",
+                  "cascade",
+                  "set_null",
+                  "owned"
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "target",
+              "delete_policy"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "models",
+        "extension_targets",
+        "contributions"
+      ],
+      "additionalProperties": false
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "trusted",
+            "none"
+          ]
+        },
+        "design": {
+          "enum": [
+            "standard",
+            "tokens_only",
+            "custom"
+          ]
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^/[A-Za-z0-9_/-]*$",
+                "maxLength": 200
+              },
+              "title_key": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "kind": {
+                "enum": [
+                  "native_view",
+                  "custom"
+                ]
+              },
+              "action_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "entry_asset": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240,
+                "pattern": "^[A-Za-z0-9_./-]+$"
+              },
+              "permission": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "layout": {
+                "enum": [
+                  "shell",
+                  "immersive"
+                ]
+              },
+              "ui_api_major": {
+                "const": 1
+              },
+              "unsaved_work": {
+                "enum": [
+                  "none",
+                  "confirm"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "path",
+              "title_key",
+              "kind",
+              "permission",
+              "layout",
+              "ui_api_major"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        },
+        "navigation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+              },
+              "page": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+              },
+              "label_key": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "icon": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+              },
+              "order": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "id",
+              "page",
+              "label_key",
+              "icon",
+              "order"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "mode",
+        "design",
+        "pages",
+        "navigation"
+      ],
+      "additionalProperties": false
+    },
+    "services": {
+      "type": "object",
+      "properties": {
+        "provides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+                "maxLength": 180
+              },
+              "api_version": {
+                "type": "string",
+                "pattern": "^[1-9][0-9]*\\.(0|[1-9][0-9]*)$"
+              },
+              "schema": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240,
+                "pattern": "^[A-Za-z0-9_./-]+$"
+              },
+              "handler": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "methods": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$"
+                },
+                "maxItems": 100
+              }
+            },
+            "required": [
+              "id",
+              "api_version",
+              "schema",
+              "methods"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "alias": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+              },
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+                "maxLength": 180
+              },
+              "contract_major": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "optional": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "alias",
+              "id",
+              "contract_major",
+              "version"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "provides",
+        "requires"
+      ],
+      "additionalProperties": false
+    },
+    "upgrade": {
+      "type": "object",
+      "properties": {
+        "strategy": {
+          "enum": [
+            "native_migrations",
+            "metadata_only"
+          ]
+        },
+        "requires_maintenance": {
+          "type": "boolean"
+        },
+        "destructive": {
+          "type": "boolean"
+        },
+        "transitions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+              },
+              "to": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+              },
+              "scripts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 240,
+                      "pattern": "^[A-Za-z0-9_./-]+$"
+                    },
+                    "digest": {
+                      "type": "string",
+                      "pattern": "^sha256:[0-9a-f]{64}$"
+                    },
+                    "phase": {
+                      "enum": [
+                        "pre",
+                        "post",
+                        "end"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "digest",
+                    "phase"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 1000
+              },
+              "preconditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "maxItems": 1000
+              },
+              "postconditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "maxItems": 1000
+              },
+              "retry": {
+                "enum": [
+                  "safe",
+                  "reconcile"
+                ]
+              },
+              "recovery": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "scripts",
+              "preconditions",
+              "postconditions",
+              "retry",
+              "recovery"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "strategy",
+        "requires_maintenance",
+        "destructive",
+        "transitions"
+      ],
+      "additionalProperties": false
+    },
+    "external_service": {
+      "type": "object",
+      "properties": {
+        "endpoint_config": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{0,63}$"
+        },
+        "expected_image": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9._:/-]+@sha256:[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "endpoint_config",
+        "expected_image"
+      ],
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}$",
+        "maxLength": 180
+      },
+      "additionalProperties": {
+        "type": "object"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "plugin",
+    "compatibility",
+    "runtime",
+    "activation",
+    "dependencies",
+    "integrations",
+    "permissions",
+    "data",
+    "ui",
+    "services",
+    "upgrade"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "runtime": {
+            "properties": {
+              "kind": {
+                "const": "external_service"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "external_service"
+        ],
+        "properties": {
+          "upgrade": {
+            "properties": {
+              "strategy": {
+                "const": "metadata_only"
+              },
+              "transitions": {
+                "maxItems": 0
+              }
+            }
+          },
+          "ui": {
+            "properties": {
+              "mode": {
+                "const": "none"
+              },
+              "pages": {
+                "maxItems": 0
+              },
+              "navigation": {
+                "maxItems": 0
+              }
+            }
+          },
+          "data": {
+            "properties": {
+              "models": {
+                "maxItems": 0
+              },
+              "extension_targets": {
+                "maxItems": 0
+              },
+              "contributions": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "not": {
+          "required": [
+            "external_service"
+          ]
+        },
+        "properties": {
+          "upgrade": {
+            "properties": {
+              "strategy": {
+                "const": "native_migrations"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

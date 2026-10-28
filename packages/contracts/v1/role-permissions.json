@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "plugin_permissions": {
+    "org.example.notes": {
+      "viewer": [
+        "notes.read"
+      ],
+      "editor": [
+        "notes.read",
+        "notes.write",
+        "notes.delete"
+      ],
+      "administrator": [
+        "notes.read",
+        "notes.write",
+        "notes.delete",
+        "workspace.members.manage",
+        "workspace.config.manage"
+      ]
+    },
+    "org.example.notes_labels": {
+      "viewer": [
+        "labels.read"
+      ],
+      "editor": [
+        "labels.read",
+        "labels.write"
+      ],
+      "administrator": [
+        "labels.read",
+        "labels.write"
+      ]
+    },
+    "org.example.canvas": {
+      "viewer": [
+        "canvas.read"
+      ],
+      "editor": [
+        "canvas.read",
+        "canvas.write"
+      ],
+      "administrator": [
+        "canvas.read",
+        "canvas.write"
+      ]
+    },
+    "org.example.document_stats": {
+      "viewer": [
+        "analysis.read"
+      ],
+      "editor": [
+        "analysis.read",
+        "analysis.run"
+      ],
+      "administrator": [
+        "analysis.read",
+        "analysis.run"
+      ]
+    }
+  },
+  "operator_is_independent": true,
+  "service_roles_require_explicit_actions": true
+}

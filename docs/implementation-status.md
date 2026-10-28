@@ -2,18 +2,18 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-10-28T00:51:42.540159+00:00
+- Updated UTC: 2026-10-28T01:10:07.518459+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
-- Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 proof work currently uncommitted. Read current Git HEAD/status on resumption.
+- Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 contract work currently uncommitted. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **B / G2 in_progress**. Latest passed gate: **G1**, see `evidence/G1/20261028t003753z/gate-G1.json`.
-- Active item: **B-01**. Next action: create the seven versioned contract rows, executable golden fixtures and freeze inventory; preserve passed G1 behavior.
-- Working changes: qualified G1 identity/model adapters, disposable host fixture and evidence. Specification unchanged.
+- Current phase/gate: **C / G3 in_progress**. Latest passed gate: **G2**, see `evidence/G2/20261028T010917683075Z/gate-G2.json`.
+- Active item: **C-01**. Next action: decompose G3 and implement Notes/shared API + neutral shell against frozen major1, then qualify the real packaged/runtime vertical slice.
+- Working changes: frozen major1 contracts, validators/types/examples and G2 evidence. Specification unchanged.
 
 ## Progress estimate
 
-**Overall roughly 20%; release acceptance 9/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
+**Overall roughly 30%; release acceptance 13/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
 
 ## Gate checklist
 
@@ -21,8 +21,8 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 | --- | --- | --- | --- | --- |
 | G0 | A: baseline | passed | 10 | `evidence/G0/20261027t234238z/gate-G0.json` |
 | G1 | A1: feasibility | passed | 10 | `evidence/G1/20261028t003753z/gate-G1.json` |
-| G2 | B: contract freeze | in_progress | 10 | G1; not_run |
-| G3 | C: Notes and shell | not_started | 15 | G2; not_run |
+| G2 | B: contract freeze | passed | 10 | `evidence/G2/20261028T010917683075Z/gate-G2.json` |
+| G3 | C: Notes and shell | in_progress | 15 | G2; not_run |
 | G4 | D: composition and Canvas | not_started | 10 | G3; not_run |
 | G5 | E: lifecycle and packaging | not_started | 25 | G4; not_run |
 | G6 | F: jobs/events/services | not_started | 10 | G5; not_run |
@@ -42,8 +42,8 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | A-06 | Exercise multiworker sync, repeat fresh boot and measure baseline | passed | BOOT-02; TEN-01 | A-05 | second fresh build; benchmark; G0 evidence review |
 | A1-01 | Workspace enforcement proof with asymmetric roles | passed | FEAS-01/02 | G0 | gateway/RPC/browser/cross-worker tests |
 | A1-02 | Neutral host/custom page and identity-chain proof | passed | FEAS-03/04 | A1-01 | browser lifecycle and identity checks |
-| B-01 | Freeze seven contract rows and compatibility fixtures | in_progress | FREEZE-01..04 | G1 | contract tests and digest inventory |
-| C-01 | Deliver Notes, identity and neutral shell vertical slice | not_started | ID; API; UI-01/09 | G2 | owning acceptance tests |
+| B-01 | Freeze seven contract rows and compatibility fixtures | passed | FREEZE-01..04 | G1 | contract tests and digest inventory |
+| C-01 | Deliver Notes, identity and neutral shell vertical slice | in_progress | ID; API; UI-01/09 | G2 | owning acceptance tests |
 | D-01 | Deliver Notes Labels and custom Canvas | not_started | ORM; API-06; UI | G3 | packaged extension/browser contracts |
 | E-01 | Deliver distribution, planner and recoverable executor | not_started | PKG; DEP; VER; LIFE; MIG; SEC; OPS | G4 | owning fault/security/restore acceptance |
 | F-01 | Deliver jobs/outbox and separately operated worker | not_started | EVT; JOB; SVC | G5 | lease/failure/scopes/duplicate tests |
@@ -61,13 +61,13 @@ No hard blocker currently. Docker is healthy (Linux/amd64); user increased alloc
 
 ## Resume capsule
 
-- G0 and G1 are passed. Do not restart their full lifecycle proofs without relevant changes. R0 loopback 18069 and G1 loopback 18070 remain running in separate projects.
-- G1 state `.local/g1/state.json`, fixtures `.local/g1/fixtures.json`, native install seeded. Do not rerun init/seed. Credentials/backups remain ignored local material. `tools/g1_browser_policy.py` modifies only known disposable Alice membership rows.
-- G1 evidence `docs/evidence/G1/20261028t003753z/gate-G1.json`; backend final `20261028T005744618594Z-backend-feasibility.json`; browser `browser-proof.json`. Technical proof credential expires after five minutes; renew only for a new relevant probe.
-- Active B-01/G2: read spec sections 5.5, 6, 10.6, 11.7, 13, 14.6 and 16, then implement schemas/types/examples/golden serialization fixtures. Freeze seven contract rows without building Phase E executor prematurely. G2 must have no authority/version/lifecycle-critical TODO.
-- G1 reusable code: mp_identity live actor/membership SQL + global scope rules/model guards; G1-only mp_feas neutral root replaces main entrypoint, plain JS mount API and native action-to-View adapter. Native RPC result cache disabled; no sandbox claim. Scope/identity public IDs and route/error schemas need explicit G2 hardening/versioning.
-- Current source identity includes G1 runtime and build/config locks; progress records/evidence excluded to avoid self-invalidating checks. On contract changes record ADR and revalidate affected boundary only.
-- Rough progress 20%; release acceptance 9/99, five R2 exclusions. Continue G2 then G3-G7, do not stop at freeze or start polished features before it.
+- G0 passed at3069e03f, G1 at73d8ebd2. G2 passed; freeze inventory `docs/contracts/freeze-v1.json`, semantics `docs/contracts/protocol-v1.md`, reader entry `docs/contracts/freeze-v1.md`. Read current git HEAD/status before resuming. No new runtime inputs changed at G2; G1 source digests verified unchanged.
+- Active C-01/G3. Decompose into identity/session/metadata, Notes+registered gateway, neutral shell/native adapter, and real adversarial/browser qualification. Implement against frozen schemas/types, not the disposable G1 facade. Do not build general executor/planner before G5; PhaseC may use explicit operator provisioning for core/reference plugins.
+- Reuse mp_identity scope/rules/model guards and successful replaceable-root/native View seam; mp_feas stays a separately installed regression fixture and is omitted from R1 product. Native RPC result cache remains disabled. Add runtime schema library dependencies through separate R1 locks/policy without altering frozen R0 default.
+- R0 site loopback18069 and G1 site18070 remain separate. `.local/g1/state.json` installation seeded; never rerun init/seed. All passwords/tokens/backups remain ignored. G1 ephemeral credential renewal only for relevant rerun. Browser A/B tabs marked handoff; browser documentation must be restored after compaction.
+- Contract check commands: `.venv/Scripts/python.exe -m unittest discover -s tests -p test_contracts.py`; `npm --prefix packages/host_sdk run check`; `.venv/Scripts/python.exe tools/check_contract_freeze.py`.15 semantic tests passed, types passed,50file digests passed. G2 fixtures are not runtime/executor/worker acceptance.
+- Frozen changes need ADR/version or compatible revision, consumer+fixture updates and affected evidence requalification. Do not rerun G0/G1 blindly after unrelated edits.
+- Rough progress30%; release acceptance13/99,5R2excluded. Continue C/G3 -> D/G4 -> E/G5 -> F/G6 -> G/G7; no stop at another plan/freeze.
 
 ## Acceptance ledger
 
@@ -79,10 +79,10 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | FEAS-02 | A1/G1 | passed | Two tabs, warmed caches and cross-worker revocation preserve workspace/role boundaries | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
 | FEAS-03 | A1/G1 | passed | Minimal custom non-Owl page and native action coexist through the host adapter with correct routing/disposal | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
 | FEAS-04 | A1/G1 | passed | Browser attribution and supported call chains cannot expand authenticated authority | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
-| FREEZE-01 | B/G2 | not_run | All seven section 5.5 contract rows have versioned schema/type/example paths and digests, with no critical authority/lifecycle TODO | not_run; procedure to be bound in owning phase |
-| FREEZE-02 | B/G2 | not_run | Manifest, restricted version mapping, alias bindings and approval canonicalization fixtures pass | not_run; procedure to be bound in owning phase |
-| FREEZE-03 | B/G2 | not_run | Frozen workspace/identity/UI contracts agree with passing G1 behavior and documented patch surface | not_run; procedure to be bound in owning phase |
-| FREEZE-04 | B/G2 | not_run | Contract inventory maps owning phases, acceptance IDs, compatibility fixtures and change/invalidation rules | not_run; procedure to be bound in owning phase |
+| FREEZE-01 | B/G2 | passed | All seven section 5.5 contract rows have versioned schema/type/example paths and digests, with no critical authority/lifecycle TODO | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
+| FREEZE-02 | B/G2 | passed | Manifest, restricted version mapping, alias bindings and approval canonicalization fixtures pass | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
+| FREEZE-03 | B/G2 | passed | Frozen workspace/identity/UI contracts agree with passing G1 behavior and documented patch surface | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
+| FREEZE-04 | B/G2 | passed | Contract inventory maps owning phases, acceptance IDs, compatibility fixtures and change/invalidation rules | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
 | BOOT-01 | A/G0 | passed | Empty volumes initialize and an administrator can log in | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
 | BOOT-02 | A/G0 | passed | A second fresh build reproduces the declared inventory | `tools/r0_repro.py`; `evidence/G0/20261027t234238z/20261028T001455995688Z-reproduction-summary.json` |
 | BOOT-03 | A/G0 | passed | Explicit server-wide module choice works, including RPC omission if selected | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |

@@ -1,0 +1,18 @@
+{
+  "ui_api_major": 1,
+  "principal_id": "00000000-0000-4000-8000-000000000006",
+  "display_name": "Fixture User",
+  "site_id": "00000000-0000-4000-8000-000000000002",
+  "workspace_id": "00000000-0000-4000-8000-000000000003",
+  "plugin_id": "org.example.notes",
+  "installation_id": "00000000-0000-4000-8000-000000000005",
+  "locale": "en-US",
+  "direction": "ltr",
+  "timezone": "UTC",
+  "generation": 1,
+  "policy_generation": 1,
+  "capabilities": [
+    "org.example.notes:notes.read",
+    "org.example.notes:notes.write"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "endpoint_config": "document_stats_local",
+  "installation_id": "00000000-0000-4000-8000-000000000020",
+  "site_id": "00000000-0000-4000-8000-000000000002",
+  "workspace_id": "00000000-0000-4000-8000-000000000003",
+  "destination": "http://document-stats:8080",
+  "expected_image_digest": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "generation": 1,
+  "state": "enabled",
+  "allowed_methods": [
+    "analyze"
+  ],
+  "api_version": "1.0",
+  "timeout_ms": 5000,
+  "payload_limit_bytes": 65536,
+  "health_path": "/health",
+  "public_key_ref": "worker_issuer_public",
+  "issuer_key_ref": "host_issuer_private",
+  "audience": "mp-document-stats-v1",
+  "issuer": "modular-platform-host-v1"
+}

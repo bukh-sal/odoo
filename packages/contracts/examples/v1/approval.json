@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "operation_id": "00000000-0000-4000-8000-000000000010",
+  "plan_hash": "sha256:4588c919d2c45b37971d1dfb98b69cc4f809fa86f9511f7e9c2a2b09a7ee1112",
+  "operator_id": "fixture-os-operator",
+  "deployment_id": "00000000-0000-4000-8000-000000000011",
+  "site_ids": [
+    "00000000-0000-4000-8000-000000000002"
+  ],
+  "issued_at": "2026-10-28T00:01:00Z",
+  "expires_at": "2026-10-28T00:16:00Z",
+  "policy_version": 1,
+  "operator_authorization_generation": 1,
+  "acknowledgments": {
+    "destructive": false,
+    "trust_expansion": false,
+    "permission_expansion": false
+  },
+  "state": "approved",
+  "consumed_operation_id": null
+}

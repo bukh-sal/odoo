@@ -1,0 +1,8 @@
+{
+  "name": "@modularplatform/host-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"check": "tsc --noEmit"},
+  "devDependencies": {"typescript": "7.0.2"}
+}

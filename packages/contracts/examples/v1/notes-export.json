@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "workspace_id": "00000000-0000-4000-8000-000000000003",
+  "notes": [
+    {
+      "id": "00000000-0000-4000-8000-000000000023",
+      "title": "First note",
+      "body": "Hello world",
+      "revision": 1,
+      "labels": []
+    }
+  ]
+}

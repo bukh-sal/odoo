@@ -1,0 +1,11 @@
+{
+  "contract_major": 1,
+  "site_id": "00000000-0000-4000-8000-000000000002",
+  "principal_id": "00000000-0000-4000-8000-000000000006",
+  "workspace_id": "00000000-0000-4000-8000-000000000003",
+  "principal_kind": "human",
+  "role": "editor",
+  "policy_generation": 1,
+  "authenticated_installation_id": null,
+  "allowed_actions": null
+}

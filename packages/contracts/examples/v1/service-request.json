@@ -1,0 +1,9 @@
+{
+  "api_version": "1.0",
+  "request_id": "fixture-1",
+  "idempotency_key": "fixture-mutation-1",
+  "input": {
+    "title": "First note",
+    "body": "Hello world"
+  }
+}

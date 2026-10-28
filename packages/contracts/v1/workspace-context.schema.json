@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/workspace-context.schema.json",
+  "type": "object",
+  "properties": {
+    "contract_major": {
+      "const": 1
+    },
+    "site_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "principal_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "workspace_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "principal_kind": {
+      "enum": [
+        "human",
+        "service"
+      ]
+    },
+    "role": {
+      "enum": [
+        "viewer",
+        "editor",
+        "administrator"
+      ]
+    },
+    "policy_generation": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "authenticated_installation_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "allowed_actions": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "enum": [
+              "read",
+              "create",
+              "write",
+              "unlink"
+            ]
+          },
+          "maxItems": 4
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "contract_major",
+    "site_id",
+    "principal_id",
+    "workspace_id",
+    "principal_kind",
+    "role",
+    "policy_generation",
+    "authenticated_installation_id",
+    "allowed_actions"
+  ],
+  "additionalProperties": false
+}

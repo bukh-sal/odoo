@@ -33,8 +33,12 @@ Decision and source/runtime identity: [gate-G0.json](evidence/G0/20261027t234238
 
 ## Later gates
 
-G2 contract freeze and G3-G7 R1 qualification are **not run**. R0 native observations do not certify those later boundaries. Five ISO checks are R2 exclusions. See the acceptance ledger for release status. Raw DB/filestore checkpoints and all generated passwords remain ignored local material, not tracked evidence.
+G3-G7 R1 qualification is **not run**. R0 native observations do not certify those later boundaries. Five ISO checks are R2 exclusions. See the acceptance ledger for release status. Raw DB/filestore checkpoints and all generated passwords remain ignored local material, not tracked evidence.
 
 ## G1 feasibility: passed
 
 Decision/source/environment: [gate-G1.json](evidence/G1/20261028t003753z/gate-G1.json). Backend command `python tools/g1_probe.py` passed 26 cases. Browser procedure: sign in as synthetic Alice; open A/B URLs in separate tabs; warm gateway/native views, try attributed write in B, refresh both deep links, exercise back/forward and route-only update, repeat native/custom transitions, delay an A callback then switch B, revoke Alice A from a separate maintenance process, observe cleared A and usable B, restore only that fixture, then select missing scope. Evidence [browser-proof.json](evidence/G1/20261028t003753z/browser-proof.json), linked screenshots and [source-identity.json](evidence/G1/20261028t003753z/source-identity.json). Qualified backend [report](evidence/G1/20261028t003753z/20261028T005744618594Z-backend-feasibility.json). Historical failed normalization attempts remain preserved.
+
+## G2 contract freeze: passed
+
+Seven-row reader inventory [freeze-v1.md](contracts/freeze-v1.md); exact50file digests [freeze-v1.json](contracts/freeze-v1.json). 15 contract/golden tests, TypeScript plain-page compile and freeze check passed. [Gate evidence](evidence/G2/20261028T010917683075Z/gate-G2.json) records environment/source and commands. G1 source boundary remained unchanged. Actual executor isolation/recovery, packaged migrations, service operation and product UI acceptance stay at owning later gates.

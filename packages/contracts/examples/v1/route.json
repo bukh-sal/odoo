@@ -1,0 +1,9 @@
+{
+  "plugin_id": "org.example.notes",
+  "page_id": "home",
+  "path": "/",
+  "params": {},
+  "query": {
+    "workspace": "00000000-0000-4000-8000-000000000003"
+  }
+}

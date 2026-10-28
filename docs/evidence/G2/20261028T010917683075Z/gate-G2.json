@@ -1,0 +1,65 @@
+{
+  "gate": "G2",
+  "state": "passed",
+  "utc": "2026-10-28T01:09:18.977260+00:00",
+  "acceptance": {
+    "FREEZE-01": "passed",
+    "FREEZE-02": "passed",
+    "FREEZE-03": "passed",
+    "FREEZE-04": "passed"
+  },
+  "parent_commit": "73d8ebd23ad682437c85e1ac7d3524747b324012",
+  "inventory": "docs/contracts/freeze-v1.json",
+  "inventory_sha256": "84314751df40620f4968c5b80309b6ba3623b63eadd8f52960021c8730dc63f7",
+  "contracts": 7,
+  "frozen_files": 50,
+  "checks": [
+    {
+      "label": "contracts",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_contracts.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "evidence": "contracts.log"
+    },
+    {
+      "label": "typescript",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "--prefix",
+        "packages/host_sdk",
+        "run",
+        "check"
+      ],
+      "exit_code": 0,
+      "evidence": "typescript.log"
+    },
+    {
+      "label": "freeze",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "evidence": "freeze.log"
+    }
+  ],
+  "environment": {
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.15 (main, Oct 21 2026, 17:48:33) [MSC v.1944 64 bit (AMD64)]",
+    "node": "v24.22.1"
+  },
+  "g1_revalidated": "G1-source-current.json",
+  "limitations": [
+    "Schemas/golden/type checks do not establish full runtime/executor/worker acceptance; G3-G7 own those effects",
+    "No new application runtime inputs changed; G0/G1 remain qualified"
+  ]
+}
