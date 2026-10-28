@@ -1,0 +1,18 @@
+[
+  {
+    "policy": "deploy/distribution.json",
+    "frozen_image": "modular-platform:r0",
+    "changed_files": [],
+    "files": 3942,
+    "result": "passed",
+    "scope": "optional SDK/requirements flags leave default and G1 runtime inventories unchanged; default SDK Python path empty"
+  },
+  {
+    "policy": "deploy/distribution-g1.json",
+    "frozen_image": "modular-platform:g1",
+    "changed_files": [],
+    "files": 3963,
+    "result": "passed",
+    "scope": "optional SDK/requirements flags leave default and G1 runtime inventories unchanged; default SDK Python path empty"
+  }
+]

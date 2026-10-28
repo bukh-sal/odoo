@@ -1,0 +1,16 @@
+{
+  "state": "passed_subset",
+  "utc": "2026-10-28T02:52:44.010Z",
+  "observations": [
+    "workspace administrator controls visible only with scoped capability",
+    "renamed workspace through Settings; selector reflected name; restored Personal",
+    "added provisioned Outsider UUID as viewer, selected editor, revoked through in-page confirmation",
+    "last administrator demotion returned conflict and selector remained Administrator",
+    "invalid timezone rejected; input retained for correction; valid UTC saved"
+  ],
+  "remaining": [
+    "operator readback of revoked membership role",
+    "full matrix and fault checks"
+  ],
+  "console": []
+}

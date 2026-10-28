@@ -1,0 +1,41 @@
+Browser tab: 4, Title: "Modular Platform", URL: "http://localhost:18071/app/org.example.notes/?workspace=3bc15463-2b8f-4529-84fb-0b6dc36d90d9&note=d8243a62-f8ff-46d6-9998-9a2c35f592a0".
+1 AXWebArea Modular Platform, URL: localhost:18071/app/org.example.notes/?workspace=3bc15463-2b8f-4529-84fb-0b6dc36d90d9&note=d8243a62-f8ff-46d6-9998-9a2c35f592a0
+	2 container
+		3 text M
+		4 text Modular Platform
+		5 container
+			6 text Workspace
+			7 pop up button (collapsed, settable) Description: Workspace, Value: Personal, Secondary Actions: Expand
+				8 menu
+					9 Workspace
+					10 (selected) Personal
+					11 Research
+		12 button Commands
+		13 text Alice
+		14 container Applications
+			15 link Description: Notes, Value: localhost:18071/app/org.example.notes/?workspace=3bc15463-2b8f-4529-84fb-0b6dc36d90d9&note=d8243a62-f8ff-46d6-9998-9a2c35f592a0#
+			16 link Description: Settings, Value: localhost:18071/app/org.example.notes/?workspace=3bc15463-2b8f-4529-84fb-0b6dc36d90d9&note=d8243a62-f8ff-46d6-9998-9a2c35f592a0#
+		17 heading Notes, Value: 1
+			18 text Notes
+		19 text Your ideas, in one place.
+		21 button All notes
+		20 button Export notes
+		22 container
+			23 button New
+			24 text Implementation journal
+			25 container Pager
+				26 container
+					27 text 1  /  1
+				28 container
+					29 button (disabled) Previous
+						30 text 
+					31 button (disabled) Next
+						32 text 
+			33 container
+				34 text Title
+				35 text field (settable) Title, Value: Implementation journal, ID: title_0
+				36 text Revision
+				37 text 2
+				38 text entry area (settable) ID: body_0, Value: R0, G1 and contract freeze passed. Notes revision checks and the native editor are under browser verification.
+
+The focused UI element is 1 AXWebArea Modular Platform, URL: localhost:18071/app/org.example.notes/?workspace=3bc15463-2b8f-4529-84fb-0b6dc36d90d9&note=d8243a62-f8ff-46d6-9998-9a2c35f592a0

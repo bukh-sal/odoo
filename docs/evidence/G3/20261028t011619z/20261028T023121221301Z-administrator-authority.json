@@ -1,0 +1,39 @@
+{
+  "state": "passed",
+  "scope": "C04 administrator/technical/audit subset; other G3 qualification remains open",
+  "checks": [
+    {
+      "name": "editor cannot administer workspace; service password session has no implicit model authority",
+      "result": "passed"
+    },
+    {
+      "name": "administrator sees only selected workspace directory/configuration; viewer B remains denied",
+      "result": "passed"
+    },
+    {
+      "name": "strict configuration DTO rejects scope installer sudo and invalid timezone inputs",
+      "result": "passed"
+    },
+    {
+      "name": "authorized metadata change updates validated context generation locale timezone; original values restored",
+      "result": "passed"
+    },
+    {
+      "name": "membership add role update and revoke change real actor permissions without cross-workspace access",
+      "result": "passed"
+    },
+    {
+      "name": "last human administrator cannot be removed/demoted; technical principal cannot become workspace administrator",
+      "result": "passed"
+    },
+    {
+      "name": "workspace administrator gains no legacy metadata ACL/native installation privilege",
+      "result": "passed"
+    },
+    {
+      "name": "real audit records retain allowed/denied actor scope request identity without passwords/note content",
+      "result": "passed"
+    }
+  ],
+  "audit_evidence": "docs\\evidence\\G3\\20261028t011619z\\20261028T023126871927Z-r1-audit-authority-check.log"
+}

@@ -1,0 +1,17 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r1\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "--entrypoint", "python", "maintenance", "odoo-bin", "shell", "-c", "/run/secrets/odoo_config", "-d", "mp_disposable_r0_r1_396163208bf1", "--no-http", "--workers=0", "--max-cron-threads=0"]
+ Container mp-r0-r1396163208bf1-maintenance-run-f04e6fa5dd4d Creating 
+ Container mp-r0-r1396163208bf1-maintenance-run-f04e6fa5dd4d Created 
+2026-10-28 01:56:34,213 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 01:56:34,213 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 01:56:34,213 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 01:56:34,213 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 01:56:34,683 1 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 01:56:34,683 1 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 01:56:34,701 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 1 modules... 
+2026-10-28 01:56:34,703 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 01:56:34,706 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: loading 14 modules... 
+2026-10-28 01:56:34,804 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: 14 modules loaded in 0.10s, 0 queries (+0 extra) 
+2026-10-28 01:56:34,827 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.modules.loading: Modules loaded. 
+2026-10-28 01:56:34,833 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.registry: Registry loaded in 0.149s 
+2026-10-28 01:56:35,129 1 INFO mp_disposable_r0_r1_396163208bf1 odoo.registry: Caches invalidated, signaling through the database: ['default'] 
+MP_R1_RESULT=synthetic-session-authority-refreshed-with-same-login-credential

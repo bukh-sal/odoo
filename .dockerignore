@@ -23,6 +23,11 @@
 !tools/**
 !platform_addons/
 !platform_addons/**
+!packages/
+!packages/contracts/
+!packages/contracts/**
+!packages/platform_sdk/
+!packages/platform_sdk/**
 !deploy/
 !deploy/**
 !tests/

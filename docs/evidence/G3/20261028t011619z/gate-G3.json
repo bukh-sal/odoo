@@ -1,0 +1,55 @@
+{
+  "gate": "G3",
+  "result": "passed",
+  "at_utc": "2026-10-28T03:15:48.391499+00:00",
+  "scope": "Useful Notes application in neutral shell, native CRUD, asymmetric workspaces, supported administration, strict gateway and crash-safe same-database idempotency",
+  "source": "source-identity.json",
+  "prerequisite": "../G2/20261028T020915524386Z/gate-G2.json",
+  "evidence": [
+    "20261028T031305647053Z-notes-api.json",
+    "20261028T031120165396Z-administrator-authority.json",
+    "20261028T031329496667Z-retained-boundaries.json",
+    "20261028T030918423461Z-crash-before-response.json",
+    "browser-stale-revision.json",
+    "browser-admin-revocation.json",
+    "browser-membership-revocation.json",
+    "session-draft-recovery.json",
+    "browser-export-proof.json",
+    "browser-crud-navigation.json",
+    "browser-administration.json"
+  ],
+  "passed_acceptance": [
+    "ID-01",
+    "ID-02",
+    "ID-04",
+    "ID-05",
+    "ID-07",
+    "ID-08",
+    "ID-09",
+    "ID-10",
+    "API-01",
+    "API-02",
+    "API-04",
+    "API-05",
+    "UI-01",
+    "UI-03",
+    "UI-10"
+  ],
+  "review": {
+    "final_bundle": "20261028T031353561364Z-r1-build.log",
+    "browser": "notes-shell-G3.jpg; one main landmark; no console warnings/errors",
+    "secret_scan": "current fixture credentials absent from product/probe/raw evidence files",
+    "scope_fixtures": "Alice editorA/viewerB; Outsider revoked; extra export group and broad rule removed; synthetic conflict/crash/probe notes deleted; journal revision2 retained",
+    "no_upstream_source_patch": true
+  },
+  "later_qualification": [
+    "ID-03 job paths at G6",
+    "ID-06 actual executor denial at G5",
+    "API-03 custom SDK cancellation at G4",
+    "API-06/07 concurrent service majors/provider-chain at G4",
+    "UI-02/05/06/08 custom lifecycle/failure at G4",
+    "UI-07 native release mismatch at G5/G7",
+    "UI-09 complete keyboard/zoom/RTL qualification at G7",
+    "Packaging, lifecycle/executor, events/jobs/worker and clean reproduction at owning gates"
+  ]
+}

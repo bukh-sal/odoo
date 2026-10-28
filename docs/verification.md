@@ -33,7 +33,7 @@ Decision and source/runtime identity: [gate-G0.json](evidence/G0/20261027t234238
 
 ## Later gates
 
-G3-G7 R1 qualification is **not run**. R0 native observations do not certify those later boundaries. Five ISO checks are R2 exclusions. See the acceptance ledger for release status. Raw DB/filestore checkpoints and all generated passwords remain ignored local material, not tracked evidence.
+G3 integration passed; G4-G7 qualification is pending. R0 native observations do not certify those later boundaries. Five ISO checks are R2 exclusions. See the acceptance ledger for release status. Raw DB/filestore checkpoints and all generated passwords remain ignored local material, not tracked evidence.
 
 ## G1 feasibility: passed
 
@@ -41,4 +41,10 @@ Decision/source/environment: [gate-G1.json](evidence/G1/20261028t003753z/gate-G1
 
 ## G2 contract freeze: passed
 
-Seven-row reader inventory [freeze-v1.md](contracts/freeze-v1.md); exact50file digests [freeze-v1.json](contracts/freeze-v1.json). 15 contract/golden tests, TypeScript plain-page compile and freeze check passed. [Gate evidence](evidence/G2/20261028T010917683075Z/gate-G2.json) records environment/source and commands. G1 source boundary remained unchanged. Actual executor isolation/recovery, packaged migrations, service operation and product UI acceptance stay at owning later gates.
+Seven-row reader inventory [freeze-v1.md](contracts/freeze-v1.md); current56file digests [freeze-v1.json](contracts/freeze-v1.json). Revision3 passes17 contract/golden tests, TypeScript compile and freeze check. [Current gate evidence](evidence/G2/20261028T020915524386Z/gate-G2.json). Historical revisions retained. G1 source unchanged. Executor/recovery, packaged migrations and worker acceptance stay at later gates.
+
+## G3 integration: passed
+
+Evidence directory `evidence/G3/20261028t011619z/` contains nine Notes API groups (`20261028T013439888375Z-notes-api.json`), eight administration groups (`20261028T023121221301Z-administrator-authority.json`), redacted audit readback, browser CRUD/navigation/export, session-draft recovery, membership revocation and administrator controls. `browser-admin-revocation.json` records the corrected polling race; `browser-administration.json` and `20261028T025256570025Z-r1-browser-admin-readback.log` record final synthetic member/configuration state. The current G3 decision below supersedes the earlier partial runs; unqualified later ID/API/UI observations remain pending.
+
+G3 qualifying decision/source identity: [gate-G3.json](evidence/G3/20261028t011619z/gate-G3.json). Current10 Notes groups031305647053Z,8 admin groups031120165396Z,6 retained-boundary groups031329496667Z and real postcommit crash030918423461Z qualify the15 listed observations. Final bundle/browser confirmed; full later qualification remains as listed in the gate.

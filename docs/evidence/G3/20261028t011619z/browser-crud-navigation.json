@@ -1,0 +1,23 @@
+{
+  "state": "passed_subset",
+  "utc": "2026-10-28T01:51:04.125Z",
+  "observations": [
+    "same Alice session: editor A, viewer B; viewer native list/form contains no write/delete controls",
+    "native create/edit/public-ID refresh persisted journal revision2",
+    "browser export passed frozen export schema; A notes only",
+    "host dark/light and Arabic RTL chrome smoke; native fields use English fallback",
+    "native detail extra New removed; list/New creates a separate public ID",
+    "in-page delete Cancel retained synthetic note, Delete removed only synthetic note and returned list",
+    "dirty form Cancel retained draft on Settings navigation",
+    "dirty form browser Back confirmation Cancel restored original URL and draft",
+    "Continue discarded only unsaved synthetic draft",
+    "command palette opened, focused first button and closed with Escape"
+  ],
+  "temporaryConfirmedDeleted": "0db2894e-2397-42d7-88d8-6248dbb0b4fd",
+  "retainedJournal": "d8243a62-f8ff-46d6-9998-9a2c35f592a0",
+  "remaining": [
+    "full session/revocation/context race and runtime acceptance",
+    "workspace administrator/audit/fault checks"
+  ],
+  "console": []
+}

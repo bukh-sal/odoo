@@ -1,0 +1,6 @@
+# Preserve exact qualified substrate packages; add only frozen platform tooling.
+-r requirements-py312.lock
+jsonschema==4.26.0
+rfc8785==0.1.4
+PyJWT==2.15.1
+packaging==26.3

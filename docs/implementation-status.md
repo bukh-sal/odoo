@@ -2,18 +2,18 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-10-28T01:10:07.518459+00:00
+- Updated UTC: 2026-10-28T03:15:48.391499+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
-- Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 contract work currently uncommitted. Read current Git HEAD/status on resumption.
+- Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint pending commit. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **C / G3 in_progress**. Latest passed gate: **G2**, see `evidence/G2/20261028T010917683075Z/gate-G2.json`.
-- Active item: **C-01**. Next action: decompose G3 and implement Notes/shared API + neutral shell against frozen major1, then qualify the real packaged/runtime vertical slice.
-- Working changes: frozen major1 contracts, validators/types/examples and G2 evidence. Specification unchanged.
+- Current phase/gate: **D / G4 in_progress**. Latest passed gate: **G3**, see `evidence/G3/20261028t011619z/gate-G3.json`.
+- Active item: **D-01**. Next: inspect frozen Labels/Canvas/slot contracts, implement native Labels extension and framework-neutral Canvas; qualify composition/version/binding/lifecycle cases. Do not repeat R1 initialization or existing shell install.
+- Working changes: G3 core/Notes/shell and separate R1 harness/lock; G2 revision3 additive administrator contracts requalified. Specification unchanged.
 
 ## Progress estimate
 
-**Overall roughly 30%; release acceptance 13/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
+**Overall roughly 45%; release acceptance 28/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
 
 ## Gate checklist
 
@@ -21,9 +21,9 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 | --- | --- | --- | --- | --- |
 | G0 | A: baseline | passed | 10 | `evidence/G0/20261027t234238z/gate-G0.json` |
 | G1 | A1: feasibility | passed | 10 | `evidence/G1/20261028t003753z/gate-G1.json` |
-| G2 | B: contract freeze | passed | 10 | `evidence/G2/20261028T010917683075Z/gate-G2.json` |
-| G3 | C: Notes and shell | in_progress | 15 | G2; not_run |
-| G4 | D: composition and Canvas | not_started | 10 | G3; not_run |
+| G2 | B: contract freeze | passed | 10 | `evidence/G2/20261028T020915524386Z/gate-G2.json` |
+| G3 | C: Notes and shell | passed | 15 | `evidence/G3/20261028t011619z/gate-G3.json` |
+| G4 | D: composition and Canvas | in_progress | 10 | G3; not_run |
 | G5 | E: lifecycle and packaging | not_started | 25 | G4; not_run |
 | G6 | F: jobs/events/services | not_started | 10 | G5; not_run |
 | G7 | G: qualification | not_started | 10 | G6; not_run |
@@ -43,8 +43,11 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | A1-01 | Workspace enforcement proof with asymmetric roles | passed | FEAS-01/02 | G0 | gateway/RPC/browser/cross-worker tests |
 | A1-02 | Neutral host/custom page and identity-chain proof | passed | FEAS-03/04 | A1-01 | browser lifecycle and identity checks |
 | B-01 | Freeze seven contract rows and compatibility fixtures | passed | FREEZE-01..04 | G1 | contract tests and digest inventory |
-| C-01 | Deliver Notes, identity and neutral shell vertical slice | in_progress | ID; API; UI-01/09 | G2 | owning acceptance tests |
-| D-01 | Deliver Notes Labels and custom Canvas | not_started | ORM; API-06; UI | G3 | packaged extension/browser contracts |
+| C-01 | Site/session/installation metadata and shared identity adapter | passed | ID; FREEZE-03 | G2 | real site bootstrap, metadata and role probes |
+| C-02 | Notes/revisions and schema-validated registered gateway/idempotency | passed | ID; API | C-01 | real concurrent gateway/native RPC and scope tests |
+| C-03 | Neutral shell with native list/form and frozen host facade | passed | UI-01/09; ID-08 | C-02 | browser CRUD/deep links/theme/session/disposal |
+| C-04 | Qualify G3 integration, authority and API outcomes | passed | ID; API; UI | C-03 | evidence and source review before G3 pass |
+| D-01 | Deliver Notes Labels and custom Canvas | in_progress | ORM; API-06; UI | G3 | packaged extension/browser contracts |
 | E-01 | Deliver distribution, planner and recoverable executor | not_started | PKG; DEP; VER; LIFE; MIG; SEC; OPS | G4 | owning fault/security/restore acceptance |
 | F-01 | Deliver jobs/outbox and separately operated worker | not_started | EVT; JOB; SVC | G5 | lease/failure/scopes/duplicate tests |
 | G-01 | Qualify full R1 and reproduce release/runbooks | not_started | all R0/R1 | G6 | full mapped acceptance; fresh install and recovery |
@@ -61,13 +64,15 @@ No hard blocker currently. Docker is healthy (Linux/amd64); user increased alloc
 
 ## Resume capsule
 
-- G0 passed at3069e03f, G1 at73d8ebd2. G2 passed; freeze inventory `docs/contracts/freeze-v1.json`, semantics `docs/contracts/protocol-v1.md`, reader entry `docs/contracts/freeze-v1.md`. Read current git HEAD/status before resuming. No new runtime inputs changed at G2; G1 source digests verified unchanged.
-- Active C-01/G3. Decompose into identity/session/metadata, Notes+registered gateway, neutral shell/native adapter, and real adversarial/browser qualification. Implement against frozen schemas/types, not the disposable G1 facade. Do not build general executor/planner before G5; PhaseC may use explicit operator provisioning for core/reference plugins.
-- Reuse mp_identity scope/rules/model guards and successful replaceable-root/native View seam; mp_feas stays a separately installed regression fixture and is omitted from R1 product. Native RPC result cache remains disabled. Add runtime schema library dependencies through separate R1 locks/policy without altering frozen R0 default.
-- R0 site loopback18069 and G1 site18070 remain separate. `.local/g1/state.json` installation seeded; never rerun init/seed. All passwords/tokens/backups remain ignored. G1 ephemeral credential renewal only for relevant rerun. Browser A/B tabs marked handoff; browser documentation must be restored after compaction.
-- Contract check commands: `.venv/Scripts/python.exe -m unittest discover -s tests -p test_contracts.py`; `npm --prefix packages/host_sdk run check`; `.venv/Scripts/python.exe tools/check_contract_freeze.py`.15 semantic tests passed, types passed,50file digests passed. G2 fixtures are not runtime/executor/worker acceptance.
-- Frozen changes need ADR/version or compatible revision, consumer+fixture updates and affected evidence requalification. Do not rerun G0/G1 blindly after unrelated edits.
-- Rough progress30%; release acceptance13/99,5R2excluded. Continue C/G3 -> D/G4 -> E/G5 -> F/G6 -> G/G7; no stop at another plan/freeze.
+- Passed G0 `3069e03f`, G1 `73d8ebd2`, G2 revision3 `5ea5779c` (17 tests/56 frozen files/TypeScript), G3 `evidence/G3/20261028t011619z/gate-G3.json`. G3 local checkpoint pending commit; source identity contains exact file hashes/image. No later gate passed. Rough45%;28/99 release acceptance +5 R2 exclusions.
+- One active item D-01/G4: native Notes Labels extension, provider-owned detail-action slot and framework-neutral Canvas using frozen named bindings. Inspect frozen manifest examples/Notes schemas/SDK before edits. Do not expand packaging/executor until G4 passes. G5 owns immutable artifacts/planner/independent OS approval/recovery; G6 jobs/outbox/worker; G7 full qualification/runbooks.
+- R1 state `.local/r1/state.json`: project mp-r0-r1396163208bf1, DB mp_disposable_r0_r1_396163208bf1, image modular-platform:r1, port18071. install_status seeded, shell_install_status installed, view_refresh_1 passed. NEVER rerun init/seed/install-shell/view_refresh_1. Latest build031353561364Z/up031410772022Z. No tool/schema operation pending.
+- Synthetic users Alice editorA/viewerB, Bob editorB, Outsider revoked, service Worker viewerA without browser business rights. Personal/en-US/UTC. Journal public UUID d8243a62-f8ff-46d6-9998-9a2c35f592a0 revision2 retained. Temporary export group/broad rule and probe/conflict/crash notes removed. Development-source installation digest is intentionally not .mplug provenance; G5 must replace it with real artifacts.
+- G3 qualifying backend: 10 Notes groups031305647053Z;8 administration groups031120165396Z;6 retained-boundary groups031329496667Z including48 post-demotion denials across both worker PIDs and unsafe/safe native imports. Crash030918423461Z: worker9 postcommit exit86, initial502, worker14 respawn, one effect and two saved-result retries; normal app restored with no fault load/env/mount. Test-only fault addon is never installed/default-loaded. Preserve disposable fault volume/evidence, no need rerun existing proof.
+- Browser tab6/r1ConfirmTab A Notes, tab5/r1BTab B viewer, localhost:18071 isolates cookie hostname from R0/G1. Browser documentation must be restored after compaction; mark handoff each turn. Credentials only ignored `.local/r1/bootstrap-password`; never print/save to password manager. Only browser automation; do not automate Codex or password-manager native windows. Product confirmations are HTML dialogs.
+- Browser records: native CRUD/deep links/history/export; dirty/Back dialogs; theme and Arabic RTL smoke (native labels English fallback); session expiry clears editor with exact explicit memory-draft recovery; membership revocation clears A while B works; administrator config/membership/audit and rapid initial navigation timer fix; stale revision keeps draft, downloads exact fields, explicit retry/Continue loads revision2. Latest final screenshot notes-shell-G3.jpg, one main landmark/no console errors. G4 owns full custom-page lifecycle/failure; complete zoom/RTL/release-mismatch checks remain later.
+- Prior R0/G1 inventories unchanged (3942/3963 native files); don't rerun completed lifecycle for unrelated product work. Existing sites on127.0.0.1:18069/18070 remain separate. All app data/backups/passwords ignored under .local. Docker8GB healthy. Python shell alias is Store: use .venv/Scripts/python.exe explicitly.
+- Freeze: `tools/check_contract_freeze.py`; tests `-m unittest discover -s tests -p test_contracts.py`; `npm --prefix packages/host_sdk run check` with Node in PATH. Contract changes require ADR/revision or major, compatibility fixtures/consumers and affected requalification; never silently rewrite frozen hashes.
 
 ## Acceptance ledger
 
@@ -79,10 +84,10 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | FEAS-02 | A1/G1 | passed | Two tabs, warmed caches and cross-worker revocation preserve workspace/role boundaries | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
 | FEAS-03 | A1/G1 | passed | Minimal custom non-Owl page and native action coexist through the host adapter with correct routing/disposal | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
 | FEAS-04 | A1/G1 | passed | Browser attribution and supported call chains cannot expand authenticated authority | `tools/g1_probe.py` and real-browser procedure; `evidence/G1/20261028t003753z/gate-G1.json` |
-| FREEZE-01 | B/G2 | passed | All seven section 5.5 contract rows have versioned schema/type/example paths and digests, with no critical authority/lifecycle TODO | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
-| FREEZE-02 | B/G2 | passed | Manifest, restricted version mapping, alias bindings and approval canonicalization fixtures pass | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
-| FREEZE-03 | B/G2 | passed | Frozen workspace/identity/UI contracts agree with passing G1 behavior and documented patch surface | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
-| FREEZE-04 | B/G2 | passed | Contract inventory maps owning phases, acceptance IDs, compatibility fixtures and change/invalidation rules | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T010917683075Z/gate-G2.json` |
+| FREEZE-01 | B/G2 | passed | All seven section 5.5 contract rows have versioned schema/type/example paths and digests, with no critical authority/lifecycle TODO | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T020915524386Z/gate-G2.json` |
+| FREEZE-02 | B/G2 | passed | Manifest, restricted version mapping, alias bindings and approval canonicalization fixtures pass | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T020915524386Z/gate-G2.json` |
+| FREEZE-03 | B/G2 | passed | Frozen workspace/identity/UI contracts agree with passing G1 behavior and documented patch surface | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T020915524386Z/gate-G2.json` |
+| FREEZE-04 | B/G2 | passed | Contract inventory maps owning phases, acceptance IDs, compatibility fixtures and change/invalidation rules | `tests/test_contracts.py`, host SDK typecheck, freeze digest checker; `evidence/G2/20261028T020915524386Z/gate-G2.json` |
 | BOOT-01 | A/G0 | passed | Empty volumes initialize and an administrator can log in | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
 | BOOT-02 | A/G0 | passed | A second fresh build reproduces the declared inventory | `tools/r0_repro.py`; `evidence/G0/20261027t234238z/20261028T001455995688Z-reproduction-summary.json` |
 | BOOT-03 | A/G0 | passed | Explicit server-wide module choice works, including RPC omission if selected | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
@@ -108,16 +113,16 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | ORM-02 | D/G4 | not_run | Extension upgrade preserves original and extension-owned values as specified | not_run; procedure to be bound in owning phase |
 | ORM-03 | D/G4 | not_run | Duplicate field/contribution conflict is caught or deterministically rejected | not_run; procedure to be bound in owning phase |
 | ORM-04 | D/G4 | not_run | Export/import preserves supported data and rejects unsafe scope reassignment | not_run; procedure to be bound in owning phase |
-| ID-01 | C/G3 | not_run | Two workspaces cannot read/write/create/delete each other's private records | not_run; procedure to be bound in owning phase |
-| ID-02 | C/G3 | not_run | Forged actor, database, company and workspace inputs do not grant access | not_run; procedure to be bound in owning phase |
+| ID-01 | C/G3 | passed | Two workspaces cannot read/write/create/delete each other's private records | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
+| ID-02 | C/G3 | passed | Forged actor, database, company and workspace inputs do not grant access | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | ID-03 | C/G3 | not_run | Export/search/attachments/autocomplete/batch/job paths enforce scope | not_run; procedure to be bound in owning phase |
-| ID-04 | C/G3 | not_run | Service principal has no implicit administrator authority | not_run; procedure to be bound in owning phase |
-| ID-05 | C/G3 | not_run | Revocation affects new and cached requests within the declared bound | not_run; procedure to be bound in owning phase |
+| ID-04 | C/G3 | passed | Service principal has no implicit administrator authority | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
+| ID-05 | C/G3 | passed | Revocation affects new and cached requests within the declared bound | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | ID-06 | C/G3 | not_run | Workspace admin cannot install native code or run deployment operations | not_run; procedure to be bound in owning phase |
-| ID-07 | C/G3 | not_run | Direct legacy RPC/model calls cannot bypass scope, authorization or supported suspension gates | not_run; procedure to be bound in owning phase |
-| ID-08 | C/G3 | not_run | Two tabs on different workspaces and their caches/replies remain isolated | not_run; procedure to be bound in owning phase |
-| ID-09 | C/G3 | not_run | One user is editor in A and viewer in B without global-group privilege leakage, including direct RPC | not_run; procedure to be bound in owning phase |
-| ID-10 | C/G3 | not_run | Cross-worker membership/policy changes invalidate scoped rules and cached authorization within the declared bounds | not_run; procedure to be bound in owning phase |
+| ID-07 | C/G3 | passed | Direct legacy RPC/model calls cannot bypass scope, authorization or supported suspension gates | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
+| ID-08 | C/G3 | passed | Two tabs on different workspaces and their caches/replies remain isolated | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
+| ID-09 | C/G3 | passed | One user is editor in A and viewer in B without global-group privilege leakage, including direct RPC | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
+| ID-10 | C/G3 | passed | Cross-worker membership/policy changes invalidate scoped rules and cached authorization within the declared bounds | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | TEN-01 | E/G5 | not_run | Two test databases do not leak data or registry context | not_run; procedure to be bound in owning phase |
 | TEN-02 | E/G5 | not_run | Incompatible native versions sharing one runtime are rejected | not_run; procedure to be bound in owning phase |
 | LIFE-01 | E/G5 | not_run | Feature suspension retains native schema/data and blocks documented entry points | not_run; procedure to be bound in owning phase |
@@ -135,11 +140,11 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | MIG-07 | E/G5 | passed | Destructive fixture uninstall proves the real deletion semantics | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
 | MIG-08 | E/G5 | not_run | Old workers/jobs do not serve incompatible new schema | not_run; procedure to be bound in owning phase |
 | MIG-09 | E/G5 | not_run | Restored queues remain fenced until externally completed effects are reconciled | not_run; procedure to be bound in owning phase |
-| API-01 | C/G3 | not_run | Gateway exposes only declared methods and validates schemas | not_run; procedure to be bound in owning phase |
-| API-02 | C/G3 | not_run | Idempotency repeats return the same outcome; changed input conflicts | not_run; procedure to be bound in owning phase |
+| API-01 | C/G3 | passed | Gateway exposes only declared methods and validates schemas | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
+| API-02 | C/G3 | passed | Idempotency repeats return the same outcome; changed input conflicts | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | API-03 | C/G3 | not_run | Deadline/cancellation errors do not falsely imply rollback | not_run; procedure to be bound in owning phase |
-| API-04 | C/G3 | not_run | Private ORM objects and stack traces do not cross public boundary | not_run; procedure to be bound in owning phase |
-| API-05 | C/G3 | not_run | Concurrent same-key mutations and a crash before response do not duplicate the reference database effect | not_run; procedure to be bound in owning phase |
+| API-04 | C/G3 | passed | Private ORM objects and stack traces do not cross public boundary | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
+| API-05 | C/G3 | passed | Concurrent same-key mutations and a crash before response do not duplicate the reference database effect | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | API-06 | C/G3 | not_run | Consumers use named bindings to call v1 and v2 concurrently; missing/mismatched bindings never select latest | not_run; procedure to be bound in owning phase |
 | API-07 | C/G3 | not_run | Forged browser plugin attribution and supported provider call chains cannot acquire broader actor/token/grant authority | not_run; procedure to be bound in owning phase |
 | EVT-01 | F/G6 | not_run | Rolled-back writes produce no externally delivered success event | not_run; procedure to be bound in owning phase |
@@ -148,16 +153,16 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | JOB-01 | F/G6 | not_run | Reference idempotent DB job survives lease reclaim without duplicate effect; obsolete claims cannot commit | not_run; procedure to be bound in owning phase |
 | JOB-02 | F/G6 | not_run | Revoked/suspended actor/plugin is checked before dispatch | not_run; procedure to be bound in owning phase |
 | JOB-03 | F/G6 | not_run | Non-idempotent uncertain outcomes are reported for reconciliation | not_run; procedure to be bound in owning phase |
-| UI-01 | C/G3 | not_run | Standard CRUD plugin uses the shared shell and components | not_run; procedure to be bound in owning phase |
+| UI-01 | C/G3 | passed | Standard CRUD plugin uses the shared shell and components | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | UI-02 | D/G4 | not_run | Custom non-Owl page works without a new core patch | not_run; procedure to be bound in owning phase |
-| UI-03 | D/G4 | not_run | Direct links, refresh and back/forward work | not_run; procedure to be bound in owning phase |
+| UI-03 | D/G4 | passed | Direct links, refresh and back/forward work | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | UI-04 | D/G4 | not_run | Unauthorized/disabled pages and service calls fail even if URL is known | not_run; procedure to be bound in owning phase |
 | UI-05 | D/G4 | not_run | Repeated mount/dispose does not accumulate listeners or stale updates | not_run; procedure to be bound in owning phase |
 | UI-06 | D/G4 | not_run | Failed plugin page offers recovery and does not trap the user | not_run; procedure to be bound in owning phase |
 | UI-07 | D/G4 | not_run | Native release mismatch triggers controlled reload | not_run; procedure to be bound in owning phase |
 | UI-08 | D/G4 | not_run | Generic SDK does not require company/partner/session internals | not_run; procedure to be bound in owning phase |
 | UI-09 | C/G3 | not_run | Standard shell passes keyboard, contrast, zoom and RTL checks | not_run; procedure to be bound in owning phase |
-| UI-10 | D/G4 | not_run | Unsaved-work and expired-session flows preserve a safe recovery path | not_run; procedure to be bound in owning phase |
+| UI-10 | D/G4 | passed | Unsaved-work and expired-session flows preserve a safe recovery path | `evidence/G3/20261028t011619z/gate-G3.json` and linked qualifying procedures |
 | SVC-01 | F/G6 | not_run | Reference worker runs without Odoo import or database credentials | not_run; procedure to be bound in owning phase |
 | SVC-02 | F/G6 | not_run | Worker timeout/crash leaves host healthy and feature degraded | not_run; procedure to be bound in owning phase |
 | SVC-03 | F/G6 | not_run | Scoped token cannot change workspace/site by altering payload | not_run; procedure to be bound in owning phase |

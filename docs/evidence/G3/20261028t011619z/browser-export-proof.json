@@ -1,0 +1,9 @@
+{
+  "result": "passed",
+  "download": "C:/Users/mesh/Downloads/notes.json",
+  "sha256": "d29e415f1a11247953ae56e92d60f407de9d9a28b5f0e9b125ee3709e4b7d6fc",
+  "notes": 2,
+  "workspace": "A",
+  "foreign_note_absent": true,
+  "frozen_schema": "notes-export"
+}

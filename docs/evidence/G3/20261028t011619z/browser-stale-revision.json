@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "public_id": "47430bd1-5f8f-4cb9-9e84-4362fcd57a35",
+  "initial_revision": 1,
+  "independent_server_revision": 2,
+  "stale_save": "conflict_field_revision_no_overwrite",
+  "draft_title_and_body": "exact_explicit_download_verified",
+  "recovery": "Try again presents unsaved confirmation; explicit Continue loads server title/body/revision2",
+  "screenshot": "stale-revision-draft.jpg",
+  "at_utc": "2026-10-28T03:11:09.728Z"
+}

@@ -68,6 +68,9 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
         shutil.copytree(location, destination, ignore=ignore)
     for name in ["odoo-bin", "LICENSE", "COPYRIGHT", "requirements.txt"]:
         shutil.copy2(source / name, target / name)
+    if policy.get("platform_sdk"):
+        for name in ["platform_sdk", "contracts"]:
+            shutil.copytree(source / "packages" / name, target / "packages" / name, ignore=ignore)
     category_file = target / "odoo/addons/base/data/ir_module_category_data.xml"
     category_hash = hashlib.sha256(category_file.read_bytes()).hexdigest()
     seeded = seed_category_metadata(category_file, target / "odoo/addons/base/data/ir_module_module.xml")

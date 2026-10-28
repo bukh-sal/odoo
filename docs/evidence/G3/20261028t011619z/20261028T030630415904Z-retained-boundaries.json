@@ -1,0 +1,13 @@
+{
+  "state": "failed",
+  "checks": [
+    {
+      "name": "mixed read/write/delete/export reject atomically; autocomplete and aggregates constrain ownership",
+      "result": "passed"
+    },
+    {
+      "name": "missing/unknown/noncanonical workspace and forged uid/sudo/company/private scope do not grant access",
+      "result": "passed"
+    }
+  ]
+}

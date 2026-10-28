@@ -1,0 +1,5 @@
+{
+  "state": "failed",
+  "checks": [],
+  "next": "inspect concrete failure; do not mark G3 passed"
+}

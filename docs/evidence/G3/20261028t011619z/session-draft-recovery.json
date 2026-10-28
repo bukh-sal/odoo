@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "session_rotation_committed_by": "2026-10-28T01:56:35.521271+00:00",
+  "observed_expiry_utc": "2026-10-28T01:56:41.036Z",
+  "observed_upper_bound_seconds": 5.515,
+  "private_editor_removed": true,
+  "explicit_local_download_preserved_title_and_body": true,
+  "download_sha256": "b96dec37a418d3897f695e3afa4d97549e1a10dd17c0aefd979a3b33cda40ddd",
+  "storage_policy": "draft kept in memory only; downloaded only on explicit user action",
+  "fixture_credential": "same preexisting generated login credential; no value logged"
+}

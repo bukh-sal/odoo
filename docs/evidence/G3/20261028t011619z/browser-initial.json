@@ -1,0 +1,12 @@
+{
+  "state": "in_progress",
+  "createdNotePublicId": "d8243a62-f8ff-46d6-9998-9a2c35f592a0",
+  "observations": [
+    "native Notes list opened",
+    "New routed to native create form",
+    "native Save used registered gateway and public UUID deep link",
+    "edit incremented revision 1 to2",
+    "deep link reload preserved body and revision"
+  ],
+  "console": []
+}

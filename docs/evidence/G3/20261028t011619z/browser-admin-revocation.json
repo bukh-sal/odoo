@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "procedure": "Reload Notes, immediately activate Settings during initial bootstrap; externally change Alice A from administrator to editor; authority heartbeat continues and removes administration controls without reloading.",
+  "commit_observed_by_utc": "2026-10-28T03:02:01.039316+00:00",
+  "server_heartbeat_reactivated_at_utc": "2026-10-28T03:02:05.166Z",
+  "bound_seconds": 30,
+  "server_bound_observed_seconds": 4.127,
+  "observation_utc": "2026-10-28T03:02:19.157Z",
+  "screenshot": "admin-revoked-after-rapid-navigation.jpg",
+  "console_errors": []
+}
