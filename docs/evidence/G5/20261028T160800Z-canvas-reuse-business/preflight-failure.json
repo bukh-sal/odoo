@@ -1,0 +1,8 @@
+{
+  "result": "verifier_failed_read_only",
+  "utc": "2026-10-28T16:13:14.540896+00:00",
+  "error": "VALIDATION_FAILED on Notes get; request c709fc92-af8f-4066-a2af-e3dc88ce5cc3",
+  "cause": "Verifier selected first workspace documents alias across consumers; now selected Canvas major2 alias for Notes major1 request. Runtime correctly refused incompatible DTO/version.",
+  "next": "Select exact Notes consumer installation/workspace/alias/major; no runtime relaxation or mutation.",
+  "source_sha256": "f645b58fb13800b38a1c5ab36b73c38ee4dac4791b90ad6baa6b64ca02985323"
+}

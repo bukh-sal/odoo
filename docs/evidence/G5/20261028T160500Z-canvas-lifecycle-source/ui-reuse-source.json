@@ -1,0 +1,76 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T15:59:56.927660+00:00",
+  "git_base": "d39cafb7d183278023f7570e2f6e520baeb23dbb",
+  "node": "v24.22.1",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/test_native_interactions.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "\u2714 native confirmation maps destructive labels and resolves once on confirm (1.2ms)\n\u2714 native cancel, Escape/dismiss and external close all settle false (0.1907ms)\n\u2714 retiring cancels pending confirmation and stale callbacks cannot authorize (0.1722ms)\n\u2714 native notifications retain severity and plain text, clean up on scope retirement (0.5361ms)\n\u2714 native command registrations retire and cached commands recheck current authority (0.3473ms)\n\u2714 ordinary confirm does not use destructive appearance and failed add rejects (0.2332ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 91.1928\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"contract_major\": 1, \"files\": 75, \"rows\": 7}\r\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/lib/tsc.js",
+        "--noEmit"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/test_canvas_lifecycle.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "\u2714 repeated mounts dispose document handlers, theme subscriptions and owned DOM (3.8986ms)\n\u2714 only the current mount handles one keyboard save after prior disposal (4.8243ms)\n\u2714 late initial response after abort cannot retain a page or subscriptions (0.7367ms)\n\u2714 late save completion cannot update a replacement mount (1.0663ms)\n\u2714 dirty page exposes a safe JSON snapshot and dispose retains no draft DOM (0.4093ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 97.0086\n",
+      "stderr": ""
+    },
+    {
+      "source": "host.js",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "source": "native_interactions.js",
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "platform_addons/mp_shell/controllers.py": "ecb1fc05d6eb8649bfca6b9bf0104e603ea9e15cedb397c8ab1221a081c0b756",
+    "platform_addons/mp_shell/__init__.py": "912598b8ef8fc59f389dce818d259e5547ec666e961d2d37eb0deecb4f43a810",
+    "platform_addons/mp_shell/__manifest__.py": "86e4df2516bad4cbfc873b9d275767c1f097d3db287acfca57b8e003552a0155",
+    "platform_addons/mp_shell/views/bootstrap.xml": "76f848306c1e041f36ceeec708412d2c035bab10bc4573113571a3bab87d47d0",
+    "platform_addons/mp_shell/static/src/host.css": "234e710f54153564b52279c33a0fd7a91439bbb02607c4da3838580020401def",
+    "platform_addons/mp_shell/static/src/host.js": "6aea0888048b04b96aeb533f4041af5824574e744c885aec6ceb7d651d0a876f",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0",
+    "platform_addons/mp_shell/static/src/operations.js": "5b19e0e46669116fe8eb031bc8a75e9bc6e88a75bba5073901358733f627afaf",
+    "tools/qualify_ui_reuse_source.py": "c1fa63c345cf9971e68235365d5e7e531b1d82032554158f1cefa55f014e092a",
+    "tests/test_native_interactions.mjs": "735093106c29d14fb9efbde35b86d71ea93eda9a1aa19b608725a9c3df568836",
+    "tests/test_canvas_lifecycle.mjs": "0744a58c336fc2dd7f1a03cbb9c0064375768f6cbe3e956514215e5ddf1ff2aa",
+    "platform_addons/mp_example_canvas/static/src/page.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd",
+    "platform_addons/mp_example_canvas/static/src/adapter.js": "16528951a1062f7170b63f03f42085bb030e1337729226171ea9a8fada8e5f18"
+  },
+  "limits": [
+    "Mock services test mount/authority/Promise adapters; actual native rendering/focus/Escape/hotkeys/CRUD require browser qualification.",
+    "Native list/form hosting, action/router pilot and client release fencing remain separate checks."
+  ]
+}

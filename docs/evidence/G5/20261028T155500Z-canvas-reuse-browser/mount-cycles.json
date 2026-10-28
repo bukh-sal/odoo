@@ -1,0 +1,20 @@
+{
+  "cycles": [
+    {
+      "cycle": 1,
+      "canvasRegionsAway": 0,
+      "canvasRegionsMounted": 1
+    },
+    {
+      "cycle": 2,
+      "canvasRegionsAway": 0,
+      "canvasRegionsMounted": 1
+    },
+    {
+      "cycle": 3,
+      "canvasRegionsAway": 0,
+      "canvasRegionsMounted": 1
+    }
+  ],
+  "oneKeyboardSave": "revision 1 to2"
+}

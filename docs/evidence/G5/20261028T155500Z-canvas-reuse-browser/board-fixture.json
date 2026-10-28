@@ -1,0 +1,20 @@
+{
+  "state": "created",
+  "name": "G5 Canvas lifecycle fixture 70a11475",
+  "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561",
+  "created_utc": "2026-10-28T15:54:55.877095+00:00",
+  "board": {
+    "id": 1,
+    "public_id": "949ae266-76d9-4be7-8c05-f7d95660b7b8",
+    "name": "G5 Canvas lifecycle fixture 70a11475",
+    "revision": 1,
+    "cards": [
+      {
+        "id": "789331d7-46e1-402e-ae2d-9a3941f9bc8d",
+        "lane": "inbox",
+        "text": "Canvas lifecycle fixture card",
+        "note_id": "d83331b4-9a1d-4bbf-a82f-d1dc3d053db6"
+      }
+    ]
+  }
+}

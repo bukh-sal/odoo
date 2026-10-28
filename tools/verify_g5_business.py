@@ -27,7 +27,13 @@ def main():
     fixture=json.loads((local/'fixtures.json').read_text());seeded=json.loads((local/'lifecycle-data.json').read_text())
     observer=DockerObserver(config);catalog=Catalog(operator/'catalog',configuration(operator/'trust.json'),readonly=True).snapshot()
     before=observer.state(observer.read(),catalog)['state']
-    fixture['bindings']={key:next(b for b in before['bindings'] if b['workspace_id']==row['public_id'] and b['alias']=='documents') for key,row in fixture['workspaces'].items()}
+    fixture['bindings']={}
+    for key,row in fixture['workspaces'].items():
+        consumer=next(item for item in before['installations'] if item['plugin_id']=='org.example.notes' and item['workspace_id']==row['public_id'])
+        matches=[binding for binding in before['bindings'] if binding['consumer_installation_id']==consumer['installation_id']
+            and binding['workspace_id']==row['public_id'] and binding['alias']=='documents']
+        assert len(matches)==1 and matches[0]['contract_major']==1 and matches[0]['api_version']=='1.0'
+        fixture['bindings'][key]=matches[0]
     alice=r1_probe.Client(state,fixture,'alice');bob=r1_probe.Client(state,fixture,'bob')
     for row in seeded['objects']['A']:
         assert alice.call('get',{'note_id':row['dto']['id']},workspace='A')==row['dto']
@@ -44,7 +50,7 @@ def main():
     assert hashlib.sha1(raw).hexdigest()==asset['checksum'] and len(raw)==asset['file_size']
     after=observer.state(observer.read(),catalog)['state'];assert after==before
     report={'result':'passed_subset','utc':datetime.now(timezone.utc).isoformat(),'image_id':config['image_id'],
-        'generation':config['generation'],'notes_read_gateway_and_native':2,'cross_workspace_native_denied':True,
+        'generation':config['generation'],'notes_read_gateway_and_native':2,'notes_exact_consumer_major1_bindings':True,'cross_workspace_native_denied':True,
         'suspended_B_denied':True,'revoked_B_principal_denied':True,'restored_asset':asset,
         'asset_http_bytes_match_filestore_checksum':True,'deployment_state_unchanged':True,'state_digest':data_digest(after),
         'source_sha256':{Path(__file__).relative_to(ROOT).as_posix():hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},

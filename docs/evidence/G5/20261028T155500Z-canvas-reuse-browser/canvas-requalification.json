@@ -1,0 +1,62 @@
+{
+  "result": "passed_UI05_UI10_requalification",
+  "utc": "2026-10-28T16:08:17.472480+00:00",
+  "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "generation": 16,
+  "worker_id": "b0aaceb03ad60ad63fce09b6c267b0ce8634c242234258f49e7e4a37b4c10468",
+  "database": "mp_disposable_r0_r1_restore_736f872ff76d4cd8af14ce8049452691",
+  "canvas_install_operation": "32819468-3034-4df2-aa6e-c76efc03c0fd",
+  "state_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+  "board": {
+    "id": "949ae266-76d9-4be7-8c05-f7d95660b7b8",
+    "name": "G5 Canvas lifecycle fixture 70a11475",
+    "cards": [
+      {
+        "id": "789331d7-46e1-402e-ae2d-9a3941f9bc8d",
+        "lane": "inbox",
+        "text": "Canvas lifecycle fixture card",
+        "note_id": "d83331b4-9a1d-4bbf-a82f-d1dc3d053db6"
+      }
+    ],
+    "revision": 2,
+    "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561"
+  },
+  "source_checks": "docs/evidence/G5/20261028T160500Z-canvas-lifecycle-source/ui-reuse-source.json",
+  "checks": [
+    "5 real-page Node lifecycle tests instrument document EventTargets/theme subscriptions, late initial/save responses and JSON snapshot",
+    "3 real browser mount/dispose cycles; zero old Canvas DOM, one current page; one CtrlS increments revision once",
+    "Native unsaved confirmation/Escape; expiry cancels pending confirmation/removes page; exact unsaved draft downloaded locally",
+    "Different authenticated principal cannot download old draft; retained snapshot/control cleared",
+    "Alice session restored; saved board remains revision2/original name/cards; no automatic save of unsaved edits",
+    "Original4Notes, prior asset bytes and current deployment identity preserved; real boards1.0/documents2.0 binding/get succeeds"
+  ],
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/host.js": "6aea0888048b04b96aeb533f4041af5824574e744c885aec6ceb7d651d0a876f",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0",
+    "platform_addons/mp_shell/static/src/host.css": "234e710f54153564b52279c33a0fd7a91439bbb02607c4da3838580020401def",
+    "platform_addons/mp_example_canvas/static/src/page.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd",
+    "platform_addons/mp_example_canvas/static/src/adapter.js": "16528951a1062f7170b63f03f42085bb030e1337729226171ea9a8fada8e5f18",
+    "tools/verify_canvas_reuse.py": "3ebe848438d124d45719550b42f181e6c76d3f68a897e2c4a16830b7dd9118f9",
+    "tests/test_canvas_lifecycle.mjs": "0744a58c336fc2dd7f1a03cbb9c0064375768f6cbe3e956514215e5ddf1ff2aa",
+    "tools/qualify_ui_reuse_source.py": "c1fa63c345cf9971e68235365d5e7e531b1d82032554158f1cefa55f014e092a"
+  },
+  "artifacts_sha256": {
+    "after-keyboard-save.png": "769b05a68dd06ed665c704e63a28894ae94324bfde9981daa759822cea740841",
+    "board-fixture.json": "defa82838d000627e0b0357f1035308d3127b39dcc20a74a6be4f9e8ef6e50c0",
+    "browser-observations.json": "1c6f267466a71da915936aaa9da87c58145126930a8e208fc5ee47a49a6b33f4",
+    "canvas-after-session-recovery.png": "516d845c1b62dc9e0f5ab563e30ed1aea3d92b83210b125414dd5a4a06d4d353",
+    "canvas-mounted.png": "3f95d4c0aeac32d651bb592b5a4b1126f556eb66a631a42f8a00e55bcaf9e987",
+    "different-principal-recovery-denied.png": "8542faf32dcfaa7a3ee16e4d2fb6061d5646fcd79a76fb43f2a44df42c4ec34b",
+    "dirty-native-confirmation.png": "a97bdef2f0390b90b983559f50c1af12dab0728882eb108ebd50f8f40ff7dfa8",
+    "expired-session-recovery.png": "67b67beed073b1b4d9aeac046252712cafe1d809802dcbafacce40a8fbaa7e16",
+    "final-dom.txt": "23b4cff9b2bbb1ac2b153ff8a9bc95245e2b41497264be7d09b110950a0b5123",
+    "fresh-no-board-dom.txt": "58970cc63886abd5d2535c1e6c7eebbbf5f54887e7dddcd0b974b14b3c7b55d4",
+    "fresh-no-board.png": "0ecfd144bb51757fddb87e5e7e1e2132f6974b129efc5f6121716aa804c2aac3",
+    "mount-cycles.json": "b46bde81f845f13d2264fbb4dfe5566f890ed1662189bcd279512e2251f0b2af",
+    "recovered-canvas-draft.json": "cfa429fd39fe35bd80f97b03c36923121e2e574bb80260ada0f6e4173dff495b"
+  },
+  "limits": [
+    "Reference board was explicitly provisioned through Alice scoped native API; fresh Canvas initial-board creation remains G5 work.",
+    "No native action/view pilot, client release epoch/UI07, full UI09 or G5 exit claimed."
+  ]
+}

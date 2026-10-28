@@ -16,7 +16,7 @@ def main():
     if not output.is_relative_to(ROOT/'docs/evidence/G5') or output.exists():raise ValueError('Fresh G5 evidence required')
     output.mkdir(parents=True);checks=[]
     commands=[['node','--test','tests/test_native_interactions.mjs'],[sys.executable,'tools/check_contract_freeze.py'],
-        ['node','node_modules/typescript/lib/tsc.js','--noEmit']]
+        ['node','node_modules/typescript/lib/tsc.js','--noEmit'],['node','--test','tests/test_canvas_lifecycle.mjs']]
     for index,command in enumerate(commands):
         result=subprocess.run(command,cwd=ROOT/'packages/host_sdk' if index==2 else ROOT,capture_output=True,timeout=90)
         record={'command':command,'exit_code':result.returncode,'stdout':result.stdout.decode(errors='replace'),'stderr':result.stderr.decode(errors='replace')}
@@ -26,7 +26,8 @@ def main():
         result=subprocess.run(['node','--check','--input-type=module'],input=raw,capture_output=True,timeout=20)
         checks.append({'source':name,'exit_code':result.returncode,'stderr':result.stderr.decode(errors='replace')})
     paths=[path for path in (ROOT/'platform_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
-    paths+=[Path(__file__),ROOT/'tests/test_native_interactions.mjs']
+    paths+=[Path(__file__),ROOT/'tests/test_native_interactions.mjs',ROOT/'tests/test_canvas_lifecycle.mjs',
+        ROOT/'platform_addons/mp_example_canvas/static/src/page.js',ROOT/'platform_addons/mp_example_canvas/static/src/adapter.js']
     report={'result':'passed' if all(row['exit_code']==0 for row in checks) else 'failed','utc':datetime.now(timezone.utc).isoformat(),
         'git_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),
         'node':subprocess.check_output(['node','--version']).decode().strip(),'checks':checks,

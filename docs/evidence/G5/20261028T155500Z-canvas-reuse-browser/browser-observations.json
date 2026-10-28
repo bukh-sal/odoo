@@ -1,0 +1,40 @@
+{
+  "generation": 16,
+  "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "mount_cycles": [
+    {
+      "cycle": 1,
+      "canvasRegionsAway": 0,
+      "canvasRegionsMounted": 1
+    },
+    {
+      "cycle": 2,
+      "canvasRegionsAway": 0,
+      "canvasRegionsMounted": 1
+    },
+    {
+      "cycle": 3,
+      "canvasRegionsAway": 0,
+      "canvasRegionsMounted": 1
+    }
+  ],
+  "one_keyboard_save_revision": 2,
+  "pending_native_confirmation_cancelled_on_expiry": true,
+  "expired_page_removed": true,
+  "recovered_draft": {
+    "board_id": "949ae266-76d9-4be7-8c05-f7d95660b7b8",
+    "expected_revision": 2,
+    "name": "UI10 unsaved Canvas recovery draft",
+    "card_text": "UI10 unsaved card must survive session expiry"
+  },
+  "different_principal_download_denied": true,
+  "recovery_control_removed_on_principal_change": true,
+  "alice_session_restored": true,
+  "final_dom": {
+    "canvasRegions": 1,
+    "card": "Canvas lifecycle fixture card",
+    "dialogs": 0,
+    "name": "G5 Canvas lifecycle fixture 70a11475"
+  },
+  "first_use_provisioning_gap": "Fresh Canvas has no reference board and only get/save services; explicit scoped native fixture created for this regression, not a first-use product pass."
+}

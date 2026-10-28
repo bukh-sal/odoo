@@ -1,0 +1,20 @@
+{
+  "gate": "G4",
+  "result": "passed",
+  "utc": "2026-10-28T16:10:55.554357+00:00",
+  "scope": "Requalify UI05/UI10 after native interaction service change; do not restart the previous G4 implementation",
+  "historical_gate": "docs/evidence/G4/20261028t033154z/gate-G4.json",
+  "requalified_acceptance": [
+    "UI-05",
+    "UI-10"
+  ],
+  "evidence": "docs/evidence/G5/20261028T155500Z-canvas-reuse-browser/canvas-requalification.json",
+  "evidence_sha256": "41d652fbae8944a816e176a6a862fbef5bfd83e659272bf47c122e52be956cc9",
+  "source_tests": "docs/evidence/G5/20261028T160500Z-canvas-lifecycle-source/ui-reuse-source.json",
+  "generation": 16,
+  "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "limitations": [
+    "Fresh Canvas initially lacks a reference board; explicit scoped fixture supplied for regression. First-use provisioning remains G5 work.",
+    "Native action/view pilot, release fence/UI07, UI09 and complete G5 remain pending."
+  ]
+}

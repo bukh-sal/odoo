@@ -1,0 +1,26 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Canvas" [active]:
+      - /url: "#"
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+- main:
+  - heading "Canvas" [level=1]
+  - paragraph: Your ideas, in one place.
+  - alert:
+    - strong: Not found
+    - paragraph: 358c411c-10f2-4b93-a5ec-21fe38636366
+    - button "Try again"

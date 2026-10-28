@@ -1,0 +1,27 @@
+{
+  "result": "passed_install_browser_pending",
+  "utc": "2026-10-28T15:51:21.390740+00:00",
+  "operation_id": "32819468-3034-4df2-aa6e-c76efc03c0fd",
+  "plan_hash": "sha256:5ccc9db72e214b86f89a2f18098523b4978cd782bbc04b0bf531a692e25dc916",
+  "image_id": "sha256:7dbb65483943315f5f48ef0c40001a2c8e33061a4d3ff8141def6745a1defaf4",
+  "generation": 16,
+  "worker_id": "b0aaceb03ad60ad63fce09b6c267b0ce8634c242234258f49e7e4a37b4c10468",
+  "database": "mp_disposable_r0_r1_restore_736f872ff76d4cd8af14ce8049452691",
+  "permission_changes": [
+    {
+      "action": "grant",
+      "capability": "org.example.notes:notes.read",
+      "plugin_id": "org.example.canvas",
+      "workspace_id": "c578135b-df92-482e-9f2f-e306617cf561"
+    }
+  ],
+  "original_notes_and_prior_assets_scopes_bindings_preserved": true,
+  "same_operation_replay_inert": true,
+  "state_digest": "sha256:022ffa357fb3d3af74cd62debb0f8609d01a52668acc17a6536bf7de02a138bc",
+  "source_sha256": {
+    "tools/qualify_canvas_reuse_install.py": "6ce3bfe32288bdb556a4a90346584053305d644956a216f81a98ee156c53362a"
+  },
+  "limits": [
+    "Canvas repeated mount/dispose and expired-session draft recovery still need actual browser qualification."
+  ]
+}
