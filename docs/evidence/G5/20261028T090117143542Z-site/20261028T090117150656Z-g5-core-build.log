@@ -1,0 +1,310 @@
+COMMAND: ["docker", "build", "-f", "deploy/Dockerfile", "--build-arg", "DISTRIBUTION_POLICY=deploy/distribution-r1.json", "--build-arg", "RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock", "--build-arg", "SDK_PYTHONPATH=/opt/modular/packages/platform_sdk", "-t", "modular-platform:g5-fd0445d406d6", "."]
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.89kB 0.0s done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#2 DONE 1.7s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
+#4 DONE 1.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 795B done
+#5 DONE 0.0s
+
+#6 [builder 1/7] FROM docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
+#6 resolve docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 4.23MB 2.6s done
+#7 DONE 2.6s
+
+#8 [builder 2/7] RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/%s/ bookworm main\ndeb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/%s/ bookworm-security main\n' "20261027T000000Z" "20261027T000000Z" > /etc/apt/sources.list     && rm /etc/apt/sources.list.d/debian.sources     && apt-get update     && apt-get install -y --no-install-recommends build-essential libldap2-dev libsasl2-dev libpq-dev libssl-dev libffi-dev     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [builder 3/7] COPY deploy/build-requirements.lock /locks/build-requirements.lock
+#9 CACHED
+
+#10 [builder 4/7] COPY deploy/requirements-r1.lock /locks/requirements.lock
+#10 DONE 0.0s
+
+#11 [builder 5/7] RUN python -m pip install --require-hashes -r /locks/build-requirements.lock     && python -m venv /venv     && /venv/bin/python -m pip install --require-hashes -r /locks/build-requirements.lock     && /venv/bin/python -m pip install --no-build-isolation --require-hashes -r /locks/requirements.lock     && /venv/bin/python -m pip check
+#11 1.456 Collecting pip==25.3 (from -r /locks/build-requirements.lock (line 1))
+#11 1.789   Downloading pip-25.3-py3-none-any.whl (1.8 MB)
+#11 2.306      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 6.4 MB/s eta 0:00:00
+#11 2.577 Collecting setuptools==80.9.0 (from -r /locks/build-requirements.lock (line 5))
+#11 2.668   Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+#11 2.771      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 12.1 MB/s eta 0:00:00
+#11 2.876 Collecting wheel==0.45.1 (from -r /locks/build-requirements.lock (line 9))
+#11 2.967   Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+#11 2.986 Installing collected packages: wheel, setuptools, pip
+#11 3.465   Attempting uninstall: pip
+#11 3.466     Found existing installation: pip 25.0.1
+#11 3.485     Uninstalling pip-25.0.1:
+#11 3.554       Successfully uninstalled pip-25.0.1
+#11 4.051 Successfully installed pip-25.3 setuptools-80.9.0 wheel-0.45.1
+#11 4.051 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#11 6.933 Collecting pip==25.3 (from -r /locks/build-requirements.lock (line 1))
+#11 7.243   Downloading pip-25.3-py3-none-any.whl (1.8 MB)
+#11 7.768      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 6.3 MB/s eta 0:00:00
+#11 8.036 Collecting setuptools==80.9.0 (from -r /locks/build-requirements.lock (line 5))
+#11 8.133   Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+#11 8.232      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 12.0 MB/s eta 0:00:00
+#11 8.349 Collecting wheel==0.45.1 (from -r /locks/build-requirements.lock (line 9))
+#11 8.447   Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+#11 8.461 Installing collected packages: wheel, setuptools, pip
+#11 8.925   Attempting uninstall: pip
+#11 8.927     Found existing installation: pip 25.0.1
+#11 8.943     Uninstalling pip-25.0.1:
+#11 8.947       Successfully uninstalled pip-25.0.1
+#11 9.449 Successfully installed pip-25.3 setuptools-80.9.0 wheel-0.45.1
+#11 10.32 Collecting asn1crypto==1.5.1 (from -r /locks/requirements.lock (line 3))
+#11 10.64   Downloading asn1crypto-1.5.1-py2.py3-none-any.whl (105 kB)
+#11 10.93 Collecting attrs==26.1.0 (from -r /locks/requirements.lock (line 7))
+#11 11.02   Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+#11 11.15 Collecting babel==2.10.3 (from -r /locks/requirements.lock (line 15))
+#11 11.25   Downloading Babel-2.10.3-py3-none-any.whl (9.5 MB)
+#11 12.26      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.5/9.5 MB 10.4 MB/s  0:00:01
+#11 12.38 Collecting beautifulsoup4==4.15.0 (from -r /locks/requirements.lock (line 19))
+#11 12.48   Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+#11 12.80 Collecting cbor2==5.6.2 (from -r /locks/requirements.lock (line 25))
+#11 12.91   Downloading cbor2-5.6.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (270 kB)
+#11 13.04 Collecting certifi==2026.10.23 (from -r /locks/requirements.lock (line 64))
+#11 13.14   Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+#11 13.39 Collecting cffi==2.1.1 (from -r /locks/requirements.lock (line 70))
+#11 13.49   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#11 13.61 Collecting chardet==5.2.0 (from -r /locks/requirements.lock (line 174))
+#11 13.71   Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+#11 13.90 Collecting charset-normalizer==3.5.2 (from -r /locks/requirements.lock (line 180))
+#11 14.01   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+#11 14.24 Collecting cryptography==42.0.8 (from -r /locks/requirements.lock (line 356))
+#11 14.34   Downloading cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl (3.9 MB)
+#11 14.66      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 12.1 MB/s  0:00:00
+#11 14.76 Collecting docopt==0.6.2 (from -r /locks/requirements.lock (line 392))
+#11 14.86   Downloading docopt-0.6.2.tar.gz (25 kB)
+#11 14.86   Preparing metadata (pyproject.toml): started
+#11 15.23   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 15.32 Collecting docutils==0.20.1 (from -r /locks/requirements.lock (line 397))
+#11 15.42   Downloading docutils-0.20.1-py3-none-any.whl (572 kB)
+#11 15.47      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 572.7/572.7 kB 11.5 MB/s  0:00:00
+#11 15.56 Collecting et-xmlfile==2.0.0 (from -r /locks/requirements.lock (line 401))
+#11 15.66   Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+#11 15.76 Collecting freezegun==1.2.1 (from -r /locks/requirements.lock (line 407))
+#11 15.86   Downloading freezegun-1.2.1-py3-none-any.whl (16 kB)
+#11 15.98 Collecting geoip2==2.9.0 (from -r /locks/requirements.lock (line 411))
+#11 16.08   Downloading geoip2-2.9.0-py2.py3-none-any.whl (18 kB)
+#11 16.26 Collecting gevent==24.2.1 (from -r /locks/requirements.lock (line 415))
+#11 16.36   Downloading gevent-24.2.1-cp312-cp312-manylinux_2_28_x86_64.whl (6.7 MB)
+#11 17.09      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 9.1 MB/s  0:00:00
+#11 17.32 Collecting greenlet==3.0.3 (from -r /locks/requirements.lock (line 458))
+#11 17.42   Downloading greenlet-3.0.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (625 kB)
+#11 17.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 625.7/625.7 kB 16.0 MB/s  0:00:00
+#11 17.57 Collecting idna==3.6 (from -r /locks/requirements.lock (line 520))
+#11 17.66   Downloading idna-3.6-py3-none-any.whl (61 kB)
+#11 17.77 Collecting isodate==0.7.2 (from -r /locks/requirements.lock (line 526))
+#11 17.86   Downloading isodate-0.7.2-py3-none-any.whl (22 kB)
+#11 17.97 Collecting jinja2==3.1.2 (from -r /locks/requirements.lock (line 532))
+#11 18.06   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+#11 18.18 Collecting jsonschema==4.26.0 (from -r /locks/requirements.lock (line 536))
+#11 18.28   Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+#11 18.39 Collecting jsonschema-specifications==2025.9.1 (from -r /locks/requirements.lock (line 540))
+#11 18.49   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+#11 18.61 Collecting libsass==0.22.0 (from -r /locks/requirements.lock (line 544))
+#11 18.72   Downloading libsass-0.22.0-cp36-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl (9.4 MB)
+#11 19.51      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.4/9.4 MB 11.8 MB/s  0:00:00
+#11 19.83 Collecting lxml==5.2.1 (from -r /locks/requirements.lock (line 552))
+#11 19.92   Downloading lxml-5.2.1-cp312-cp312-manylinux_2_28_x86_64.whl (4.9 MB)
+#11 20.34      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 11.9 MB/s  0:00:00
+#11 20.45 Collecting lxml-html-clean==0.4.4 (from -r /locks/requirements.lock (line 712))
+#11 20.54   Downloading lxml_html_clean-0.4.4-py3-none-any.whl (14 kB)
+#11 20.68 Collecting markupsafe==2.1.5 (from -r /locks/requirements.lock (line 716))
+#11 20.78   Downloading MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)
+#11 20.90 Collecting maxminddb==3.2.0 (from -r /locks/requirements.lock (line 781))
+#11 21.00   Downloading maxminddb-3.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (104 kB)
+#11 21.11 Collecting num2words==0.5.13 (from -r /locks/requirements.lock (line 888))
+#11 21.21   Downloading num2words-0.5.13-py3-none-any.whl (143 kB)
+#11 21.32 Collecting ofxparse==0.21 (from -r /locks/requirements.lock (line 892))
+#11 21.41   Downloading ofxparse-0.21.tar.gz (53 kB)
+#11 21.43   Preparing metadata (pyproject.toml): started
+#11 21.78   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 21.88 Collecting openpyxl==3.1.2 (from -r /locks/requirements.lock (line 895))
+#11 21.98   Downloading openpyxl-3.1.2-py2.py3-none-any.whl (249 kB)
+#11 22.10 Collecting packaging==26.3 (from -r /locks/requirements.lock (line 899))
+#11 22.20   Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#11 22.30 Collecting passlib==1.7.4 (from -r /locks/requirements.lock (line 903))
+#11 22.40   Downloading passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+#11 22.44      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 525.6/525.6 kB 13.3 MB/s  0:00:00
+#11 22.69 Collecting pillow==10.2.0 (from -r /locks/requirements.lock (line 907))
+#11 22.79   Downloading pillow-10.2.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
+#11 23.17      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 11.9 MB/s  0:00:00
+#11 23.27 Collecting platformdirs==4.13.6 (from -r /locks/requirements.lock (line 979))
+#11 23.37   Downloading platformdirs-4.13.6-py3-none-any.whl (32 kB)
+#11 23.48 Collecting polib==1.1.1 (from -r /locks/requirements.lock (line 985))
+#11 23.58   Downloading polib-1.1.1-py2.py3-none-any.whl (20 kB)
+#11 23.72 Collecting psutil==5.9.8 (from -r /locks/requirements.lock (line 989))
+#11 23.82   Downloading psutil-5.9.8-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (288 kB)
+#11 23.95 Collecting psycopg2==2.9.9 (from -r /locks/requirements.lock (line 1007))
+#11 24.05   Downloading psycopg2-2.9.9.tar.gz (384 kB)
+#11 24.11   Preparing metadata (pyproject.toml): started
+#11 24.48   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 24.58 Collecting pyasn1==0.6.5 (from -r /locks/requirements.lock (line 1022))
+#11 24.68   Downloading pyasn1-0.6.5-py3-none-any.whl (84 kB)
+#11 24.79 Collecting pyasn1-modules==0.4.2 (from -r /locks/requirements.lock (line 1029))
+#11 24.89   Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+#11 25.00 Collecting pycparser==3.12 (from -r /locks/requirements.lock (line 1035))
+#11 25.09   Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+#11 25.20 Collecting pyjwt==2.15.1 (from -r /locks/requirements.lock (line 1041))
+#11 25.30   Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+#11 25.41 Collecting pyopenssl==24.1.0 (from -r /locks/requirements.lock (line 1045))
+#11 25.50   Downloading pyOpenSSL-24.1.0-py3-none-any.whl (56 kB)
+#11 25.62 Collecting pypdf2==2.12.1 (from -r /locks/requirements.lock (line 1049))
+#11 25.73   Downloading pypdf2-2.12.1-py3-none-any.whl (222 kB)
+#11 25.84 Collecting pypng==0.20220715.0 (from -r /locks/requirements.lock (line 1053))
+#11 25.94   Downloading pypng-0.20220715.0-py3-none-any.whl (58 kB)
+#11 26.04 Collecting pyserial==3.5 (from -r /locks/requirements.lock (line 1059))
+#11 26.14   Downloading pyserial-3.5-py2.py3-none-any.whl (90 kB)
+#11 26.23 Collecting python-dateutil==2.8.2 (from -r /locks/requirements.lock (line 1063))
+#11 26.33   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+#11 26.46 Collecting python-ldap==3.4.4 (from -r /locks/requirements.lock (line 1070))
+#11 26.56   Downloading python-ldap-3.4.4.tar.gz (377 kB)
+#11 26.63   Preparing metadata (pyproject.toml): started
+#11 27.01   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 27.10 Collecting python-magic==0.4.27 (from -r /locks/requirements.lock (line 1073))
+#11 27.20   Downloading python_magic-0.4.27-py2.py3-none-any.whl (13 kB)
+#11 27.30 Collecting python-stdnum==1.19 (from -r /locks/requirements.lock (line 1077))
+#11 27.39   Downloading python_stdnum-1.19-py2.py3-none-any.whl (1.0 MB)
+#11 27.48      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 11.9 MB/s  0:00:00
+#11 27.60 Collecting pytz==2026.5 (from -r /locks/requirements.lock (line 1081))
+#11 27.69   Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
+#11 27.84 Collecting pyusb==1.2.1 (from -r /locks/requirements.lock (line 1088))
+#11 27.94   Downloading pyusb-1.2.1-py3-none-any.whl (58 kB)
+#11 28.05 Collecting qrcode==7.4.2 (from -r /locks/requirements.lock (line 1092))
+#11 28.15   Downloading qrcode-7.4.2-py3-none-any.whl (46 kB)
+#11 28.26 Collecting referencing==0.37.0 (from -r /locks/requirements.lock (line 1096))
+#11 28.36   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+#11 28.53 Collecting reportlab==4.1.0 (from -r /locks/requirements.lock (line 1102))
+#11 28.63   Downloading reportlab-4.1.0-py3-none-any.whl (1.9 MB)
+#11 28.80      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 11.9 MB/s  0:00:00
+#11 28.91 Collecting requests==2.31.0 (from -r /locks/requirements.lock (line 1106))
+#11 29.00   Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+#11 29.11 Collecting requests-file==3.0.1 (from -r /locks/requirements.lock (line 1115))
+#11 29.21   Downloading requests_file-3.0.1-py2.py3-none-any.whl (4.5 kB)
+#11 29.30 Collecting requests-toolbelt==1.0.0 (from -r /locks/requirements.lock (line 1121))
+#11 29.40   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+#11 29.50 Collecting resolvelib==1.2.1 (from -r /locks/requirements.lock (line 1127))
+#11 29.60   Downloading resolvelib-1.2.1-py3-none-any.whl (18 kB)
+#11 29.71 Collecting rfc8785==0.1.4 (from -r /locks/requirements.lock (line 1131))
+#11 29.81   Downloading rfc8785-0.1.4-py3-none-any.whl (9.2 kB)
+#11 29.93 Collecting rjsmin==1.2.0 (from -r /locks/requirements.lock (line 1135))
+#11 30.03   Downloading rjsmin-1.2.0.tar.gz (419 kB)
+#11 30.08   Preparing metadata (pyproject.toml): started
+#11 30.43   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 30.75 Collecting rpds-py==2026.9.1 (from -r /locks/requirements.lock (line 1157))
+#11 30.84   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+#11 30.97 Collecting six==1.17.0 (from -r /locks/requirements.lock (line 1289))
+#11 31.07   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#11 31.17 Collecting soupsieve==3.0.4 (from -r /locks/requirements.lock (line 1296))
+#11 31.27   Downloading soupsieve-3.0.4-py3-none-any.whl (42 kB)
+#11 31.37 Collecting typing-extensions==4.16.0 (from -r /locks/requirements.lock (line 1302))
+#11 31.46   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#11 31.57 Collecting urllib3==2.0.7 (from -r /locks/requirements.lock (line 1310))
+#11 31.66   Downloading urllib3-2.0.7-py3-none-any.whl (124 kB)
+#11 31.77 Collecting vobject==0.9.6.1 (from -r /locks/requirements.lock (line 1316))
+#11 31.87   Downloading vobject-0.9.6.1.tar.gz (58 kB)
+#11 31.88   Preparing metadata (pyproject.toml): started
+#11 32.22   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 32.33 Collecting werkzeug==3.0.1 (from -r /locks/requirements.lock (line 1319))
+#11 32.43   Downloading werkzeug-3.0.1-py3-none-any.whl (226 kB)
+#11 32.54 Collecting xlrd==2.0.1 (from -r /locks/requirements.lock (line 1323))
+#11 32.64   Downloading xlrd-2.0.1-py2.py3-none-any.whl (96 kB)
+#11 32.76 Collecting xlsxwriter==3.1.9 (from -r /locks/requirements.lock (line 1327))
+#11 32.85   Downloading XlsxWriter-3.1.9-py3-none-any.whl (154 kB)
+#11 32.97 Collecting xlwt==1.3.0 (from -r /locks/requirements.lock (line 1331))
+#11 33.07   Downloading xlwt-1.3.0-py2.py3-none-any.whl (99 kB)
+#11 33.18 Collecting zeep==4.2.1 (from -r /locks/requirements.lock (line 1335))
+#11 33.28   Downloading zeep-4.2.1-py3-none-any.whl (101 kB)
+#11 33.40 Collecting zope-event==6.2 (from -r /locks/requirements.lock (line 1339))
+#11 33.49   Downloading zope_event-6.2-py3-none-any.whl (6.5 kB)
+#11 33.66 Collecting zope-interface==8.7 (from -r /locks/requirements.lock (line 1345))
+#11 33.75   Downloading zope_interface-8.7-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (284 kB)
+#11 33.94 Building wheels for collected packages: docopt, ofxparse, psycopg2, python-ldap, rjsmin, vobject
+#11 33.94   Building wheel for docopt (pyproject.toml): started
+#11 34.30   Building wheel for docopt (pyproject.toml): finished with status 'done'
+#11 34.30   Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13783 sha256=ad3bd61264f085cd165cab57afb71d18874e633b462ac943608527a1f76e8104
+#11 34.30   Stored in directory: /tmp/pip-ephem-wheel-cache-ta50zni1/wheels/1a/bf/a1/4cee4f7678c68c5875ca89eaccf460593539805c3906722228
+#11 34.30   Building wheel for ofxparse (pyproject.toml): started
+#11 34.67   Building wheel for ofxparse (pyproject.toml): finished with status 'done'
+#11 34.67   Created wheel for ofxparse: filename=ofxparse-0.21-py3-none-any.whl size=35403 sha256=f8099fea2301868a43aed775e3ed2eec01590cb8752800ccbc3f4a84a609831f
+#11 34.67   Stored in directory: /tmp/pip-ephem-wheel-cache-ta50zni1/wheels/fa/b9/74/fddaedbeedab03989516f7c3f13fdae69856160288679f102f
+#11 34.67   Building wheel for psycopg2 (pyproject.toml): started
+#11 39.18   Building wheel for psycopg2 (pyproject.toml): finished with status 'done'
+#11 39.18   Created wheel for psycopg2: filename=psycopg2-2.9.9-cp312-cp312-linux_x86_64.whl size=520390 sha256=d66210a7dd0933acb045d0c95b411c63d777fc76e9cd67037a65f2e89bba2e2a
+#11 39.18   Stored in directory: /tmp/pip-ephem-wheel-cache-ta50zni1/wheels/ff/ac/80/7ccec163e3d05ae2112311b895132409b9abfd7e0c1c6b5183
+#11 39.18   Building wheel for python-ldap (pyproject.toml): started
+#11 40.68   Building wheel for python-ldap (pyproject.toml): finished with status 'done'
+#11 40.68   Created wheel for python-ldap: filename=python_ldap-3.4.4-cp312-cp312-linux_x86_64.whl size=216313 sha256=51da7b7301ae6da86d1118de561cbdb2c0b3cb8218fc223545689a1d22d18055
+#11 40.68   Stored in directory: /tmp/pip-ephem-wheel-cache-ta50zni1/wheels/52/eb/41/5a7623499a292eb53b74babfcd0a455a759c0cb0ba34790587
+#11 40.69   Building wheel for rjsmin (pyproject.toml): started
+#11 41.27   Building wheel for rjsmin (pyproject.toml): finished with status 'done'
+#11 41.27   Created wheel for rjsmin: filename=rjsmin-1.2.0-py3-none-any.whl size=12500 sha256=0ed39d4f1fb02cd35a1e4327f5674c28338af5912eae925342fa06c4f6e58044
+#11 41.27   Stored in directory: /tmp/pip-ephem-wheel-cache-ta50zni1/wheels/36/c3/55/f579b947368d812ea6b2e0dbd9134d3c78c1d7b892640c896b
+#11 41.27   Building wheel for vobject (pyproject.toml): started
+#11 41.65   Building wheel for vobject (pyproject.toml): finished with status 'done'
+#11 41.65   Created wheel for vobject: filename=vobject-0.9.6.1-py3-none-any.whl size=47546 sha256=9e13ccfa621a34d2d371f7f37325f5e54bd5c71374fef01ac6203f3e3a3ee454
+#11 41.65   Stored in directory: /tmp/pip-ephem-wheel-cache-ta50zni1/wheels/4c/04/1b/8f3080b6086b78a723aee61095a625347ddabc573ab1c293bc
+#11 41.65 Successfully built docopt ofxparse psycopg2 python-ldap rjsmin vobject
+#11 41.72 Installing collected packages: xlwt, rjsmin, pytz, python-stdnum, pyserial, pypng, polib, passlib, docopt, asn1crypto, zope-interface, zope-event, xlsxwriter, xlrd, urllib3, typing-extensions, soupsieve, six, rpds-py, rfc8785, resolvelib, pyusb, python-magic, pypdf2, pyjwt, pycparser, pyasn1, psycopg2, psutil, platformdirs, pillow, packaging, num2words, maxminddb, markupsafe, lxml, libsass, isodate, idna, greenlet, et-xmlfile, docutils, charset-normalizer, chardet, certifi, cbor2, babel, attrs, werkzeug, requests, reportlab, referencing, qrcode, python-dateutil, pyasn1-modules, openpyxl, lxml-html-clean, jinja2, gevent, cffi, beautifulsoup4, vobject, requests-toolbelt, requests-file, python-ldap, ofxparse, jsonschema-specifications, geoip2, freezegun, cryptography, zeep, pyopenssl, jsonschema
+#11 45.64 
+#11 45.64 Successfully installed asn1crypto-1.5.1 attrs-26.1.0 babel-2.10.3 beautifulsoup4-4.15.0 cbor2-5.6.2 certifi-2026.10.23 cffi-2.1.1 chardet-5.2.0 charset-normalizer-3.5.2 cryptography-42.0.8 docopt-0.6.2 docutils-0.20.1 et-xmlfile-2.0.0 freezegun-1.2.1 geoip2-2.9.0 gevent-24.2.1 greenlet-3.0.3 idna-3.6 isodate-0.7.2 jinja2-3.1.2 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 libsass-0.22.0 lxml-5.2.1 lxml-html-clean-0.4.4 markupsafe-2.1.5 maxminddb-3.2.0 num2words-0.5.13 ofxparse-0.21 openpyxl-3.1.2 packaging-26.3 passlib-1.7.4 pillow-10.2.0 platformdirs-4.13.6 polib-1.1.1 psutil-5.9.8 psycopg2-2.9.9 pyasn1-0.6.5 pyasn1-modules-0.4.2 pycparser-3.12 pyjwt-2.15.1 pyopenssl-24.1.0 pypdf2-2.12.1 pypng-0.20220715.0 pyserial-3.5 python-dateutil-2.8.2 python-ldap-3.4.4 python-magic-0.4.27 python-stdnum-1.19 pytz-2026.5 pyusb-1.2.1 qrcode-7.4.2 referencing-0.37.0 reportlab-4.1.0 requests-2.31.0 requests-file-3.0.1 requests-toolbelt-1.0.0 resolvelib-1.2.1 rfc8785-0.1.4 rjsmin-1.2.0 rpds-py-2026.9.1 six-1.17.0 soupsieve-3.0.4 typing-extensions-4.16.0 urllib3-2.0.7 vobject-0.9.6.1 werkzeug-3.0.1 xlrd-2.0.1 xlsxwriter-3.1.9 xlwt-1.3.0 zeep-4.2.1 zope-event-6.2 zope-interface-8.7
+#11 46.34 No broken requirements found.
+#11 DONE 46.4s
+
+#12 [builder 6/7] COPY . /source
+#12 DONE 5.6s
+
+#13 [builder 7/7] RUN /venv/bin/python /source/tools/build_distribution.py /source /release --policy "deploy/distribution-r1.json"
+#13 1.495 {"addons": ["auth_passkey", "auth_password_policy", "auth_totp", "base", "base_import", "base_setup", "bus", "mp_compat", "mp_core", "mp_example_canvas", "mp_example_notes", "mp_example_notes_labels", "mp_identity", "mp_shell", "web", "web_tour"], "file_count": 4064}
+#13 DONE 1.6s
+
+#14 [runtime 2/8] RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/%s/ bookworm main\ndeb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/%s/ bookworm-security main\n' "20261027T000000Z" "20261027T000000Z" > /etc/apt/sources.list     && rm /etc/apt/sources.list.d/debian.sources     && apt-get update     && apt-get install -y --no-install-recommends libldap-2.5-0 libsasl2-2 libpq5 libmagic1 fonts-dejavu-core fonts-liberation     && rm -rf /var/lib/apt/lists/*     && groupadd --gid 10001 modular && useradd --uid 10001 --gid modular --create-home modular     && mkdir -p /var/lib/modular && chown modular:modular /var/lib/modular
+#14 CACHED
+
+#15 [runtime 3/8] COPY --from=builder /venv /venv
+#15 DONE 0.7s
+
+#16 [runtime 4/8] COPY --from=builder /release /opt/modular
+#16 DONE 0.6s
+
+#17 [runtime 5/8] COPY tools /opt/modular/tools
+#17 DONE 0.1s
+
+#18 [runtime 6/8] COPY deploy/requirements-r1.lock /opt/modular/requirements.lock
+#18 DONE 0.0s
+
+#19 [runtime 7/8] COPY tests/fixtures/addons /opt/modular/fixtures
+#19 DONE 0.0s
+
+#20 [runtime 8/8] WORKDIR /opt/modular
+#20 DONE 0.0s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 6.4s done
+#21 exporting manifest sha256:20f8782013ad4d45edf957ab64a5180ece4feda2477702f0b908dab25929e32b done
+#21 exporting config sha256:6565cb13775c071c8413d40ee448030fc389b4fe6b3e903f7e5a4fb2c525fc21 done
+#21 exporting attestation manifest sha256:91e56912d1ed3da6015c2d3ed82bd29e7c9f439330f4c724117bb1305cf212d2 0.0s done
+#21 exporting manifest list sha256:3deac1519d2d68a21b1ed5f333293cce272d494aadbe5005b169e28ac35e39c5 done
+#21 naming to docker.io/library/modular-platform:g5-fd0445d406d6 done
+#21 unpacking to docker.io/library/modular-platform:g5-fd0445d406d6
+#21 unpacking to docker.io/library/modular-platform:g5-fd0445d406d6 1.9s done
+#21 DONE 8.4s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/nezfmwp5qs6x1mgi5knel884d

@@ -1,0 +1,20 @@
+{
+  "result": "passed_subset",
+  "observed_at": "2026-10-28T09:22:41.251Z",
+  "checks": [
+    "Synthetic operator sign-in renders Operations with explicit empty workspace selection",
+    "Six curated versions and Notes0.2.2 exact digest/signature distinction render as text",
+    "Selecting Personal enables preparation without changing the shell workspace",
+    "Switching the shared browser session to workspace administrator Alice removes Operations navigation and clears the old operator catalog/frame",
+    "Alice retains preferences; no application operator role is inferred from workspace administration",
+    "No browser console errors in the operator frame"
+  ],
+  "limitations": [
+    "No reference plugins installed, successful preparation/request/apply not qualified yet",
+    "Account-clear latency was observed without a precise timing measurement"
+  ],
+  "screenshots": [
+    "operator-catalog.png",
+    "operator-access-cleared.png"
+  ]
+}

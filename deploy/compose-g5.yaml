@@ -1,0 +1,4 @@
+# G5 qualification removes the disposable R0 fixture discovery path.
+services:
+  app:
+    command: [-c, /run/secrets/odoo_config]

@@ -1,0 +1,2 @@
+COMMAND: ["docker", "volume", "create", "--label", "com.modular.disposable=mp-r0-r1g5fd0445d406d6", "mp-r0-r1g5fd0445d406d6_appconfig"]
+mp-r0-r1g5fd0445d406d6_appconfig

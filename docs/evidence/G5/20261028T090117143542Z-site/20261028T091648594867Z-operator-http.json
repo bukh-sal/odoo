@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "checks": [
+    "explicit human application operator can read two workspace metadata rows",
+    "real sanitized six-artifact catalog validates with no signature claim",
+    "workspace administrator/editor/technical browser principals cannot request/view operations",
+    "real CSRF/authority-key/site-override/terminal-newline fences before preparation",
+    "application operator has no generic native RPC read/write grant on control metadata models",
+    "core-only site does not fabricate an installed Notes feature"
+  ],
+  "count": 6,
+  "limitations": [
+    "No installed reference plugins or native apply yet; successful prepare/request/status comes with E-01d."
+  ]
+}

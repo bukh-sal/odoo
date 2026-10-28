@@ -4,3 +4,6 @@ binding_operator,binding.operator,model_mp_service_binding,base.group_system,1,1
 grant_operator,grant.operator,model_mp_plugin_grant,base.group_system,1,1,1,1
 audit_operator,audit.operator,model_mp_audit_event,base.group_system,1,0,0,0
 outcome_operator,outcome.operator,model_mp_service_outcome,base.group_system,1,0,0,0
+application_operator_no_rpc,application.operator.no.rpc,model_mp_application_operator,base.group_user,0,0,0,0
+operation_profile_no_rpc,operation.profile.no.rpc,model_mp_operation_profile,base.group_user,0,0,0,0
+operation_request_no_rpc,operation.request.no.rpc,model_mp_operation_request,base.group_user,0,0,0,0

@@ -33,3 +33,15 @@
 .mp_members td,.mp_members th { padding:10px; border-bottom:1px solid var(--mp-border); }
 @media(max-width:760px){.mp_settings_form{grid-template-columns:1fr;}.mp_settings_form button{grid-column:1;}}
 @media(max-width:760px) { .mp_root {grid-template-columns:1fr;} .mp_root aside{display:flex;padding:10px;gap:12px;border-bottom:1px solid var(--mp-border);} .mp_root > .mp_main{padding:20px 14px;} .mp_tools{flex-wrap:wrap;gap:6px;} .mp_root header{padding:12px;} .mp_brand span:last-child{display:none;} }
+
+/* Operator nominations use the same theme and text escaping as the shell. */
+.mp_operations { max-width: 72rem; }
+.mp_operation_form { display:grid; grid-template-columns:minmax(9rem,14rem) minmax(12rem,1fr); gap: .75rem 1rem; align-items:center; }
+.mp_operation_form .mp_check, .mp_operation_form > p { grid-column:1 / -1; }
+.mp_operation_form .mp_check { display:flex; align-items:center; gap:.6rem; }
+.mp_operation_form .mp_check input { width:auto; }
+.mp_operations code, .mp_operations pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+.mp_operations table { display:block; overflow-x:auto; width:100%; border-collapse:collapse; margin:1rem 0; }
+.mp_operations th, .mp_operations td { padding:.6rem; text-align:start; border-bottom:1px solid var(--border,#b8c0cb); }
+.mp_operations .mp_notice { margin-block:1rem; }
+@media(max-width:50rem) { .mp_operation_form { grid-template-columns:1fr; } }

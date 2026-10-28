@@ -13,9 +13,10 @@ import os
 from pathlib import Path
 import sqlite3
 import stat
+from uuid import UUID
 
 from .contracts import check_start_approval, load_json, validate
-from .operator_os import OperatorError, OperationLocks, current_identity, protect_directory, verify_private_directory, _not_link
+from .operator_os import OperatorError, OperationLocks, ProcessLock, current_identity, protect_directory, verify_private_directory, _not_link
 from .plans import check_bundle, data_digest
 
 
@@ -106,6 +107,21 @@ class OperatorStore:
         check_bundle(bundle, revalidate(bundle))
         return {'operation_id': operation_id, 'plan_hash': bundle['plan_hash'],
                 'display': bundle['display'], 'approval_lifetime_seconds': self.policy['maximum_start_lifetime']}
+
+    def authorize_deployment(self, deployment_id, site_ids):
+        """Explicit local OS-owner enrollment, never callable through the app."""
+        if str(UUID(deployment_id))!=deployment_id or not site_ids or any(str(UUID(value))!=value for value in site_ids):
+            raise OperatorError('Canonical independently configured deployment/site IDs required')
+        with ProcessLock(self.root/'locks','operator-policy'):
+            policy=self._policy();sites=sorted(set(site_ids))
+            if policy['deployments'].get(deployment_id)==sites:return policy
+            policy['deployments'][deployment_id]=sites;policy['authorization_generation']+=1
+            temporary=self.root/('policy-'+str(UUID(int=__import__('secrets').randbits(128)))+'.tmp')
+            _write_new(temporary,policy)
+            if temporary.parent.resolve()!=self.root.resolve():raise OperatorError('Invalid policy staging path')
+            os.replace(temporary,self.root/'policy.json')
+            self.policy=self._policy()
+            return self.policy
 
     @staticmethod
     def _regular(path):

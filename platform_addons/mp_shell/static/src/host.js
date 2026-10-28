@@ -5,6 +5,7 @@ import { rpc } from '@web/core/network/rpc';
 import { View } from '@web/views/view';
 import { MainComponentsContainer } from '@web/core/main_components_container';
 import { registry } from '@web/core/registry';
+import { OperationsPanel } from './operations';
 
 let workspace = null;
 let generation = 0;
@@ -36,7 +37,7 @@ const words={
 };
 
 class Shell extends Component {
-    static components={View,MainComponentsContainer};
+    static components={View,MainComponentsContainer,OperationsPanel};
     static props={};
     static template=xml`
     <div class="mp_root" t-att-dir="state.language==='ar'?'rtl':'ltr'">
@@ -56,6 +57,7 @@ class Shell extends Component {
                 <a t-foreach="app.navigation" t-as="item" t-key="item.id" href="#" t-att-aria-current="state.plugin===app.plugin_id and !state.settings ? 'page' : undefined" t-on-click.prevent="()=>this.openPage(app.plugin_id,item.page)"><t t-esc="app.plugin_id==='org.example.notes'?t('notes'):app.name"/></a>
             </t>
             <a href="#" t-on-click.prevent="openSettings" t-att-aria-current="state.settings?'page':undefined" t-esc="t('settings')"/>
+            <a t-if="state.canOperate" href="/app/operations" t-on-click.prevent="openOperations" t-att-aria-current="state.operations?'page':undefined">Operations</a>
         </nav></aside>
         <div class="mp_main" t-att-role="state.nativeProps?undefined:'main'" t-ref="main" t-att-style="state.paused?'visibility:hidden':''" t-on-input="trackDraft">
             <div class="mp_page_header"><div><h1 t-esc="state.settings?t('settings'):state.title"/><p class="mp_subtitle" t-esc="t('subtitle')"/></div>
@@ -101,7 +103,8 @@ class Shell extends Component {
                     <button type="submit" t-att-disabled="state.adminBusy">Add member</button>
                 </form>
             </section>
-            <div class="mp_content" t-if="!state.settings">
+            <OperationsPanel t-if="state.operations" api="operationsAPI" onSession="operatorSession" onDenied="operatorDenied" initialWorkspace="state.workspace"/>
+            <div class="mp_content" t-if="!state.settings and !state.operations">
                 <div t-ref="custom"/>
                 <View t-if="state.nativeProps" t-key="state.generation" t-props="state.nativeProps"/>
                 <p t-if="!state.context and !state.loading and !state.error" t-esc="t('empty')"/>
@@ -121,6 +124,10 @@ class Shell extends Component {
         this.main=useRef('main');this.custom=useRef('custom');this.commands=useRef('commands');
         this.confirmation=useRef('confirmation');
         Object.assign(this.state,{members:[],workspaceSettings:null,memberPrincipal:'',memberRole:'viewer',adminBusy:false,settingsDirty:false,recoveryDraft:false,detailActions:[],detailLabels:[]});
+        Object.assign(this.state,{operations:false,canOperate:false});
+        this.operationsAPI=(...args)=>this.json(...args);
+        this.operatorSession=session=>{this.csrf=session.csrf_token;this.sessionPrincipal=session.principal_id;this.state.displayName=session.display_name;};
+        this.operatorDenied=()=>{this.state.canOperate=false;};
         const shell=this;
         useSubEnv({config:{...this.env.config,breadcrumbs:[{get name(){return shell.state.nativeTitle||shell.state.title;}}],getDisplayName:()=>this.state.nativeTitle||this.state.title,setDisplayName:name=>this.state.nativeTitle=name,historyBack:()=>this.backToList()}});
         this.themeListeners=new Set();this.localeListeners=new Set();this.eventListeners=new Map();
@@ -145,7 +152,7 @@ class Shell extends Component {
             // Authority refresh must not depend on initial native-view loading;
             // rapid navigation can cancel that activation before it completes.
             this.timer=setInterval(()=>this.refreshAuthority(),5000);
-            try {const session=await this.json('/api/v1/session');this.csrf=session.csrf_token;this.state.displayName=session.display_name;this.state.workspaces=await this.json('/api/v1/workspaces');await this.activate();}
+            try {const session=await this.json('/api/v1/session');this.csrf=session.csrf_token;this.sessionPrincipal=session.principal_id;this.state.displayName=session.display_name;this.state.workspaces=await this.json('/api/v1/workspaces');this.refreshOperatorAuthority();await this.activate();}
             catch(e){this.fail(e);this.state.loading=false;}
         });
         onWillDestroy(()=>{clearInterval(this.timer);clearTimeout(this.noticeTimer);window.removeEventListener('popstate',this.onPop);window.removeEventListener('keydown',this.onKey);document.removeEventListener('visibilitychange',this.onVisibility);this.retire();});
@@ -214,6 +221,14 @@ class Shell extends Component {
     }
     async switchWorkspace(event){const url=new URL(location.href);url.searchParams.set('workspace',event.target.value);url.searchParams.delete('note');url.searchParams.delete('new');await this.go(url);}
     async openSettings(){const url=new URL('/app/settings',location.origin);if(this.state.workspace)url.searchParams.set('workspace',this.state.workspace);await this.go(url);}
+    async openOperations(){const url=new URL('/app/operations',location.origin);if(this.state.workspace)url.searchParams.set('workspace',this.state.workspace);await this.go(url);}
+    async refreshOperatorAuthority(){
+        if(this.operatorChecking)return;this.operatorChecking=true;
+        const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),5000);
+        try{const value=await this.json('/api/v1/operations/context',null,{signal:controller.signal});this.state.canOperate=!!value.can_request;}
+        catch{this.state.canOperate=false;}
+        finally{clearTimeout(timeout);this.operatorChecking=false;}
+    }
     async backToList(){return this.openPage(this.state.plugin,this.page.id);}
     async deleteNote(){
         if(!await this.confirm({title:'Delete note',message:'Permanently delete this note?',destructive:true}))return;
@@ -306,6 +321,7 @@ class Shell extends Component {
         }catch(e){this.fail(e);}
     }
     async refreshAuthority(){
+        this.refreshOperatorAuthority();
         if(!workspace||!this.state.context||this.checking)return;this.checking=true;const captured=generation;
         try{const value=await this.json('/api/v1/context?plugin_id='+this.state.plugin,null,{signal:this.controller.signal});if(captured===generation&&this.state.context&&(value.context.policy_generation!==this.state.context.policy_generation||value.context.principal_id!==this.state.context.principal_id||value.context.site_id!==this.state.context.site_id||value.context.installation_id!==this.state.context.installation_id)){
             if(this.state.settingsDirty&&value.context.principal_id===this.state.context.principal_id&&value.context.capabilities.includes('org.modularplatform.identity:workspace.members.manage'))this.settingsRecovery={principal:value.context.principal_id,workspace,value:{...this.state.workspaceSettings}};
@@ -316,7 +332,7 @@ class Shell extends Component {
     }
     async activate(force=false){
         const transition=++this.transition;
-        const url=new URL(location.href);const nextWorkspace=url.searchParams.get('workspace');const settings=url.pathname==='/app/settings';const plugin=settings?this.state.plugin:url.pathname.split('/')[2];const path='/'+url.pathname.split('/').slice(3).join('/');
+        const url=new URL(location.href);const nextWorkspace=url.searchParams.get('workspace');const settings=url.pathname==='/app/settings';const operations=url.pathname==='/app/operations';const plugin=(settings||operations)?this.state.plugin:url.pathname.split('/')[2];const path='/'+url.pathname.split('/').slice(3).join('/');
         this.currentURL=url.href;
         if(!force&&!settings&&this.mounted&&workspace===nextWorkspace&&plugin===this.state.plugin&&path===this.page?.path){
             try{await this.mounted.updateRoute?.(freeze({plugin_id:plugin,page_id:this.page.id,path,params:{},query:Object.fromEntries(url.searchParams)}));}
@@ -325,9 +341,10 @@ class Shell extends Component {
         }
         await this.retire({recover:force});if(transition!==this.transition)return;
         generation++;const captured=generation;workspace=nextWorkspace;
-        this.state.workspace=workspace||'';this.state.plugin=plugin;this.state.generation=generation;this.state.context=null;this.state.settings=settings;this.state.error=null;this.state.nativeTitle='';this.state.loading=true;this.state.workspaceSettings=null;this.state.members=[];this.state.adminBusy=false;
+        this.state.workspace=workspace||'';this.state.plugin=plugin;this.state.generation=generation;this.state.context=null;this.state.settings=settings;this.state.operations=operations;this.state.error=null;this.state.nativeTitle='';this.state.loading=true;this.state.workspaceSettings=null;this.state.members=[];this.state.adminBusy=false;
         const controller=new AbortController();this.controller=controller;
         try{
+            if(operations){this.state.title='Operations';this.state.navigation=[];return;}
             if(!workspace){this.state.navigation=[];return;}
             const navigation=await this.json('/api/v1/navigation',null,{signal:controller.signal});
             if(captured!==generation)throw obsolete();this.state.navigation=navigation;

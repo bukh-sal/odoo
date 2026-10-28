@@ -1,5 +1,5 @@
 "schema_version" = 1
-"plugin" = {"id" = "org.example.notes_labels", "version" = "0.2.0", "name" = "Notes Labels", "description" = "Trusted shared-table Notes extension", "publisher" = "example", "license" = "LGPL-3.0-only"}
+"plugin" = {"id" = "org.example.notes_labels", "version" = "0.2.1", "name" = "Notes Labels", "description" = "Trusted shared-table Notes extension", "publisher" = "example", "license" = "LGPL-3.0-only"}
 "compatibility" = {"platform" = ">=0.1,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
 "runtime" = {"kind" = "native", "addon_name" = "mp_example_notes_labels", "native_compatibility" = "odoo-19", "python" = ">=3.12,<3.13", "python_dependencies" = []}
 "activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}
