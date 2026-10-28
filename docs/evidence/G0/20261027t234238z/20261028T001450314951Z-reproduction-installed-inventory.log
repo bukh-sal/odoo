@@ -1,0 +1,14 @@
+COMMAND: ["docker", "run", "--rm", "--network", "mp-r0-20261027234238n_runtime", "--mount", "type=volume,source=mp-r0-20261027234238n_appconfig,target=/run/secrets,readonly", "--mount", "type=volume,source=mp-r0-20261027234238n_bootstrap,target=/run/mp-bootstrap,readonly", "--mount", "type=volume,source=mp-r0-20261027234238n_filestore,target=/var/lib/modular", "--entrypoint", "python", "modular-platform:r0-repro-20261027t234238z", "/opt/modular/tools/r0_inside.py", "inspect", "--database", "mp_disposable_r0_20261027t234238z_fresh"]
+2026-10-28 00:14:51,214 7 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:14:51,214 7 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:14:51,214 7 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 00:14:51,214 7 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:14:51,634 7 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 00:14:51,634 7 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:14:51,658 7 INFO mp_disposable_r0_20261027t234238z_fresh odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:14:51,662 7 INFO mp_disposable_r0_20261027t234238z_fresh odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:14:51,664 7 INFO mp_disposable_r0_20261027t234238z_fresh odoo.modules.loading: loading 10 modules... 
+2026-10-28 00:14:51,737 7 INFO mp_disposable_r0_20261027t234238z_fresh odoo.modules.loading: 10 modules loaded in 0.07s, 0 queries (+0 extra) 
+2026-10-28 00:14:51,757 7 INFO mp_disposable_r0_20261027t234238z_fresh odoo.modules.loading: Modules loaded. 
+2026-10-28 00:14:51,762 7 INFO mp_disposable_r0_20261027t234238z_fresh odoo.registry: Registry loaded in 0.128s 
+MP_R0_RESULT={"addons_paths": ["/opt/modular/odoo/addons", "/var/lib/modular/addons/19.0", "/opt/modular/addons", "/opt/modular/fixtures/v1"], "database": "mp_disposable_r0_20261027t234238z_fresh", "installed": {"auth_passkey": "19.0.1.1", "auth_password_policy": "19.0.1.0", "auth_totp": "19.0.1.0", "base": "19.0.1.3", "base_import": "19.0.2.0", "base_setup": "19.0.1.0", "bus": "19.0.1.0", "mp_compat": "19.0.0.1.0", "web": "19.0.1.0", "web_tour": "19.0.1.0"}, "nonfinal": {}}

@@ -1,0 +1,47 @@
+{
+  "gate": "G0",
+  "decision": "passed",
+  "recorded_utc": "2026-10-28T00:20:59.566919+00:00",
+  "spec_version": "1.1",
+  "spec_sha256": "c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201",
+  "upstream": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+  "source_identity": "source-identity.json",
+  "runtime_image_id": "sha256:7e9cd45f452ef3c8761f6ec1dffe9f55ea866c4b6130599e64e79badaa645fd2",
+  "proofs": {
+    "empty_database_bootstrap": "20261028T000648534988Z-bootstrap.log",
+    "login_logout_assets_and_anonymous_controls": "20261028T001320256156Z-http-probe.json",
+    "native_model_and_extension_install": "20261028T001002968819Z-install.log",
+    "schema_upgrade": "20261028T001006972470Z-upgrade.log",
+    "upgrade_values_and_attachment": "20261028T001009175718Z-check-v2.log",
+    "multiworker_registry_sync": "20261028T001254739829Z-http-probe.json",
+    "backup_manifest": "20261028T001255951803Z-backup-manifest.json",
+    "committed_fixture_failure": "20261028T001259090266Z-fail.log",
+    "independent_partial_commit_observation": "20261028T001301242499Z-check-partial.log",
+    "database_restore": "20261028T001304374459Z-database-restore.log",
+    "filestore_restore": "20261028T001307715558Z-filestore-restore.log",
+    "restored_values_and_attachment": "20261028T001308501003Z-check-v2.log",
+    "destructive_uninstall": "20261028T001310712599Z-uninstall.log",
+    "authority_rotation_and_dependent_states": "20261028T001313160348Z-reopen-authority-check.log",
+    "second_build_and_fresh_database": "20261028T001455995688Z-reproduction-summary.json",
+    "two_native_registries": "20261028T001454086279Z-two-database-registry-proof.log",
+    "styled_login_browser": "login-styled.jpg",
+    "authenticated_web_client_browser": "authenticated-webclient.jpg",
+    "restored_browser_session_denied": "restored-session-login.jpg",
+    "source_identity": "source-identity.json",
+    "resource_sample": "resource-snapshot.jsonl",
+    "python_inventory": "runtime-packages.txt",
+    "os_inventory": "os-packages.txt",
+    "metadata_regression": "metadata-regression.txt"
+  },
+  "limitations": [
+    "Native R0 harness is not the R1 packaged plugin/executor workflow.",
+    "Inherited Apps UI/catalog retained at R0; neutral shell is later work.",
+    "No full vulnerability/license release qualification yet.",
+    "Warm sequential session timing is not the Notes performance benchmark."
+  ],
+  "revalidate_on": [
+    "upstream or core/native runtime changes",
+    "distribution metadata/asset adapter or dependency lock changes",
+    "lifecycle or restore implementation changes relevant to the proof"
+  ]
+}

@@ -1,0 +1,2 @@
+COMMAND: ["docker", "rm", "mp-r0-20261027234238n-evidence-copy"]
+mp-r0-20261027234238n-evidence-copy

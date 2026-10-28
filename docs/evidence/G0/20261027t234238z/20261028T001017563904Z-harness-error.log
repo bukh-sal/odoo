@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\mesh\Documents\modular_platform\tools\r0.py", line 391, in <module>
+    main()
+  File "C:\Users\mesh\Documents\modular_platform\tools\r0.py", line 361, in main
+    http_probe(state, registry_sync=True)
+  File "C:\Users\mesh\Documents\modular_platform\tools\r0.py", line 219, in http_probe
+    assert len(pids) >= 2, ("Did not observe both workers serving updated registry", pids)
+           ^^^^^^^^^^^^^^
+AssertionError: ('Did not observe both workers serving updated registry', ['10'])

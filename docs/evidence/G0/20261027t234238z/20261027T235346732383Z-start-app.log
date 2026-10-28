@@ -1,0 +1,16 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "up", "-d", "app", "edge"]
+ Container mp-r0-20261027234238n-db-1 Running 
+ Network mp-r0-20261027234238n_edge Creating 
+ Container mp-r0-20261027234238n-app-1 Recreate 
+ Network mp-r0-20261027234238n_edge Creating 
+ Network mp-r0-20261027234238n_edge Created 
+ Network mp-r0-20261027234238n_edge Created 
+ Container mp-r0-20261027234238n-app-1 Recreated 
+ Container mp-r0-20261027234238n-edge-1 Creating 
+ Container mp-r0-20261027234238n-edge-1 Created 
+ Container mp-r0-20261027234238n-db-1 Waiting 
+ Container mp-r0-20261027234238n-db-1 Healthy 
+ Container mp-r0-20261027234238n-app-1 Starting 
+ Container mp-r0-20261027234238n-app-1 Started 
+ Container mp-r0-20261027234238n-edge-1 Starting 
+ Container mp-r0-20261027234238n-edge-1 Started 

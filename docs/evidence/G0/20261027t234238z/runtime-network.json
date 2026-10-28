@@ -1,0 +1,71 @@
+[
+    {
+        "Name": "mp-r0-20261027234238n_runtime",
+        "Id": "e8b487dac8c3ab45634913f56553860498fed2c0250de329b90bddcea1e3bcb1",
+        "Created": "2026-10-27T23:46:24.023359156Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.19.0.0/16",
+                    "Gateway": "172.19.0.1"
+                }
+            ]
+        },
+        "Internal": true,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "13fd98474078a6dbfca6bc23b1d3c54a6fb7fbdcda5ec9342f4ca609b99449e2",
+            "com.docker.compose.network": "runtime",
+            "com.docker.compose.project": "mp-r0-20261027234238n",
+            "com.docker.compose.version": "5.6.1"
+        },
+        "Containers": {
+            "8ab2fb916c359520427c3d82f4160dab58ec4886ab555892720c644da7a8222e": {
+                "Name": "mp-r0-20261027234238n-db-1",
+                "EndpointID": "b2a543072be0d399d5b9a3e5dd137ce94b7d5194100a2b948fe36a80615b175f",
+                "MacAddress": "ca:93:c3:94:28:36",
+                "IPv4Address": "172.19.0.2/16",
+                "IPv6Address": ""
+            },
+            "c73b7a6bc83a5d7371e70795ae48a572fe91a1c153e62f161eaf578ea05ae105": {
+                "Name": "mp-r0-20261027234238n-app-1",
+                "EndpointID": "ef9c5d062235a1da94dad696bf0baab47637f4f326710f7c9fa8b5d6e7e7b617",
+                "MacAddress": "c2:28:05:77:71:26",
+                "IPv4Address": "172.19.0.3/16",
+                "IPv6Address": ""
+            },
+            "d9f6cb1d0d69fd33c3a07ae49341a2acdacb4919256f7905b363fad1faee3993": {
+                "Name": "mp-r0-20261027234238n-edge-1",
+                "EndpointID": "63923d4802c00d844dfe1cd3e46cbb2510fa9449647b3bb106f3e61907f10015",
+                "MacAddress": "5a:b7:f3:dc:be:99",
+                "IPv4Address": "172.19.0.4/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.19.0.0/16": {
+                        "IPsInUse": 6,
+                        "DynamicIPsAvailable": 65530
+                    }
+                }
+            }
+        }
+    }
+]

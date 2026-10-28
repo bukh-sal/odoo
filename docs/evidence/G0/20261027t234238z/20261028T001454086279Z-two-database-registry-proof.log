@@ -1,0 +1,22 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "--entrypoint", "python", "maintenance", "odoo-bin", "shell", "-c", "/run/secrets/odoo_config", "-d", "mp_disposable_r0_20261027t234238z_final_restore", "--no-http", "--workers=0", "--max-cron-threads=0", "--addons-path=/opt/modular/addons,/opt/modular/fixtures/v2"]
+ Container mp-r0-20261027234238n-maintenance-run-0d2381adb377 Creating 
+ Container mp-r0-20261027234238n-maintenance-run-0d2381adb377 Created 
+2026-10-28 00:14:54,984 1 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:14:54,984 1 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:14:54,984 1 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v2']) 
+2026-10-28 00:14:54,984 1 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:14:55,446 1 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 00:14:55,446 1 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:14:55,467 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:14:55,470 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:14:55,473 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 10 modules... 
+2026-10-28 00:14:55,543 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 10 modules loaded in 0.07s, 0 queries (+0 extra) 
+2026-10-28 00:14:55,563 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: Modules loaded. 
+2026-10-28 00:14:55,568 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.registry: Registry loaded in 0.122s 
+2026-10-28 00:14:55,581 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:14:55,583 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:14:55,584 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 10 modules... 
+2026-10-28 00:14:55,586 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 10 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:14:55,607 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: Modules loaded. 
+2026-10-28 00:14:55,609 1 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.registry: Registry loaded in 0.038s 
+MP_R0_RESULT={"registry_database_isolation": true, "databases": ["mp_disposable_r0_20261027t234238z_final_restore", "mp_disposable_r0_20261027t234238z_fresh"]}

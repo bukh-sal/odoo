@@ -32,9 +32,10 @@ def native(database, variant, *, install=None, upgrade=None, code=None):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["bootstrap", "install", "inspect", "upgrade", "fail", "check-v2", "check-partial", "uninstall"])
+    parser.add_argument("action", choices=["bootstrap", "install", "inspect", "upgrade", "fail", "check-v2", "check-partial", "signal", "uninstall"])
     parser.add_argument("--database", required=True)
     parser.add_argument("--variant", choices=["v1", "v2", "bad"], default="v1")
+    parser.add_argument("--probe-field", default="x_r0_signal")
     args = parser.parse_args()
     database = args.database
     if not re.fullmatch(r"mp_disposable_r0_[a-z0-9_]+", database):
@@ -63,7 +64,7 @@ def main():
     if args.action == "bootstrap":
         native(database, "v1", install="web,auth_password_policy")
         native(database, "v1", code="""from pathlib import Path
-password = Path('/run/secrets/bootstrap_password').read_text().strip()
+password = Path('/run/mp-bootstrap/password').read_text().strip()
 env.ref('base.user_admin').write({'password': password})
 env['ir.config_parameter'].sudo().set_param('mp.r0.database', env.cr.dbname)
 env.cr.commit()
@@ -104,6 +105,17 @@ print('MP_R0_RESULT=' + json.dumps({'v2_data_and_attachment': 'passed', 'record'
 env.cr.execute('SELECT name FROM mp_r0_fixture ORDER BY id LIMIT 1')
 assert env.cr.fetchone()[0] == 'committed-before-failure'
 print('MP_R0_RESULT=' + json.dumps({'partial_commit_observed': True, 'recovery_required': True}))
+""")
+    elif args.action == "signal":
+        if not re.fullmatch(r"x_r0_signal(?:_[0-9a-f]{8})?", args.probe_field):
+            raise ValueError("Invalid disposable signal field")
+        native(database, args.variant, code=f"field_name = {args.probe_field!r}\n" + """import json
+model = env['ir.model']._get('mp.r0.fixture')
+assert not env['ir.model.fields'].search_count([('model_id', '=', model.id), ('name', '=', field_name)]), 'Signal fixture already exists; inspect prior test evidence before replay'
+env['ir.model.fields'].create({'name': field_name, 'field_description': 'Disposable cross-worker registry proof', 'model_id': model.id, 'ttype': 'char', 'state': 'manual'})
+env.cr.commit()
+env.registry.signal_changes()
+print('MP_R0_RESULT=' + json.dumps({'registry_signal_sent': True, 'field': field_name}))
 """)
     elif args.action == "uninstall":
         native(database, args.variant, code="""import json

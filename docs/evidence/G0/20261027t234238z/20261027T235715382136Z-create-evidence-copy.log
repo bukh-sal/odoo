@@ -1,0 +1,2 @@
+COMMAND: ["docker", "create", "--name", "mp-r0-20261027234238n-evidence-copy", "--mount", "type=volume,source=mp-r0-20261027234238n_evidence,target=/evidence", "--entrypoint", "true", "modular-platform:r0"]
+cd1ca97cb27418a93327092ff112c1cb78ea08fde3b855e5c2757c4fe89085ab

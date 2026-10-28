@@ -1,0 +1,55 @@
+{
+  "database": "mp_disposable_r0_20261027t234238z_restore",
+  "login": "passed",
+  "logout": "subsequent_authenticated_endpoint_denied",
+  "anonymous_and_omitted_routes": {
+    "/web/database/manager": 403,
+    "/xmlrpc/2/object": 404,
+    "/jsonrpc": 404
+  },
+  "assets": [
+    {
+      "path": "/web/assets/03caf68/web.assets_web_print.min.css",
+      "bytes": 748868,
+      "content_type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/0f362e5/web.assets_web.min.js",
+      "bytes": 2980239,
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/a926f87/web.assets_web.min.css",
+      "bytes": 744137,
+      "content_type": "text/css; charset=utf-8"
+    }
+  ],
+  "warm_session_ms": {
+    "samples": [
+      47.0,
+      0.0,
+      16.0,
+      0.0,
+      15.0,
+      0.0,
+      0.0,
+      16.0,
+      0.0,
+      16.0,
+      0.0,
+      15.0,
+      0.0,
+      0.0,
+      16.0,
+      0.0,
+      15.0,
+      0.0,
+      0.0,
+      16.0
+    ],
+    "p95": 16.0
+  },
+  "registry_sync": null,
+  "source": "9ada7566ae7c1200d89c346351047e5991f74862",
+  "variant": "v2"
+}

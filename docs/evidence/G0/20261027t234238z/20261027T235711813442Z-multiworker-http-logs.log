@@ -1,0 +1,74 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "logs", "--no-color", "--since", "2026-10-27T23:57:09.307970+00:00", "app"]
+app-1  | 2026-10-27 23:57:09,531 11 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: loading 1 modules... 
+app-1  | 2026-10-27 23:57:09,533 11 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+app-1  | 2026-10-27 23:57:09,535 11 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: loading 11 modules... 
+app-1  | 2026-10-27 23:57:09,620 11 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: 11 modules loaded in 0.08s, 0 queries (+0 extra) 
+app-1  | 2026-10-27 23:57:09,643 11 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: Modules loaded. 
+app-1  | 2026-10-27 23:57:09,648 11 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.registry: Registry loaded in 0.133s 
+app-1  | 2026-10-27 23:57:09,650 11 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.service.server: Evented Service (longpolling) running on 0.0.0.0:8072 
+app-1  | 2026-10-27 23:57:11,419 9 INFO ? odoo.registry: Reloading the model registry after database signaling. 
+app-1  | 2026-10-27 23:57:11,429 9 INFO ? odoo.modules.loading: loading 1 modules... 
+app-1  | 2026-10-27 23:57:11,433 9 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+app-1  | 2026-10-27 23:57:11,433 9 INFO ? odoo.modules.loading: loading 11 modules... 
+app-1  | 2026-10-27 23:57:11,436 9 INFO ? odoo.modules.loading: 11 modules loaded in 0.00s, 0 queries (+0 extra) 
+app-1  | 2026-10-27 23:57:11,461 9 INFO ? odoo.modules.loading: Modules loaded. 
+app-1  | 2026-10-27 23:57:11,464 9 INFO ? odoo.registry: Registry loaded in 0.046s 
+app-1  | 2026-10-27 23:57:11,465 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.addons.base.models.ir_http: Generating routing map for key None 
+app-1  | 2026-10-27 23:57:11,471 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 24 0.009 0.044
+app-1  | 2026-10-27 23:57:11,499 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,502 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,506 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,509 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,512 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,515 10 INFO ? odoo.registry: Reloading the model registry after database signaling. 
+app-1  | 2026-10-27 23:57:11,525 10 INFO ? odoo.modules.loading: loading 1 modules... 
+app-1  | 2026-10-27 23:57:11,529 10 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+app-1  | 2026-10-27 23:57:11,530 10 INFO ? odoo.modules.loading: loading 11 modules... 
+app-1  | 2026-10-27 23:57:11,533 10 INFO ? odoo.modules.loading: 11 modules loaded in 0.00s, 0 queries (+0 extra) 
+app-1  | 2026-10-27 23:57:11,555 10 INFO ? odoo.modules.loading: Modules loaded. 
+app-1  | 2026-10-27 23:57:11,558 10 INFO ? odoo.registry: Registry loaded in 0.044s 
+app-1  | 2026-10-27 23:57:11,558 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.addons.base.models.ir_http: Generating routing map for key None 
+app-1  | 2026-10-27 23:57:11,565 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 24 0.009 0.042
+app-1  | 2026-10-27 23:57:11,568 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,591 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,594 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,596 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,599 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,602 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,604 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,607 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,609 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,611 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,614 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,617 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,619 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,622 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,624 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,627 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,629 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,632 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,634 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,637 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,639 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,642 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,645 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,667 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.001 0.002
+app-1  | 2026-10-27 23:57:11,670 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,673 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,699 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.001 0.002
+app-1  | 2026-10-27 23:57:11,703 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,707 9 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.002
+app-1  | 2026-10-27 23:57:11,728 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,743 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,747 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,750 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,752 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,755 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,758 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.001
+app-1  | 2026-10-27 23:57:11,763 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.003
+app-1  | 2026-10-27 23:57:11,790 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.001 0.002
+app-1  | 2026-10-27 23:57:11,795 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.001 0.001
+app-1  | 2026-10-27 23:57:11,799 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.001 0.002
+app-1  | 2026-10-27 23:57:11,803 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.000 0.002
+app-1  | 2026-10-27 23:57:11,808 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.001 0.002
+app-1  | 2026-10-27 23:57:11,812 10 INFO mp_disposable_r0_20261027t234238z_p1_p2 werkzeug: 172.19.0.4 - - [27/Oct/2026 23:57:11] "POST /web/dataset/call_kw/mp.r0.fixture/fields_get#mp.r0.fixture.fields_get HTTP/1.1" 200 - 1 0.001 0.002

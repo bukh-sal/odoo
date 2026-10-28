@@ -1,0 +1,50 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "maintenance", "uninstall", "--database", "mp_disposable_r0_20261027t234238z_final_restore", "--variant", "v2"]
+ Container mp-r0-20261027234238n-maintenance-run-da6dbb304915 Creating 
+ Container mp-r0-20261027234238n-maintenance-run-da6dbb304915 Created 
+2026-10-28 00:13:11,790 7 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:13:11,790 7 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:13:11,790 7 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v2']) 
+2026-10-28 00:13:11,790 7 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:13:12,237 7 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 00:13:12,237 7 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:13:12,256 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:13:12,258 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:13:12,261 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 12 modules... 
+2026-10-28 00:13:12,330 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 12 modules loaded in 0.07s, 0 queries (+0 extra) 
+2026-10-28 00:13:12,352 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: Modules loaded. 
+2026-10-28 00:13:12,357 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.registry: Registry loaded in 0.119s 
+2026-10-28 00:13:12,362 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_uninstall on ['Disposable R0 Fixture'] to user __system__ #1 via n/a 
+2026-10-28 00:13:12,362 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_module: User #1 triggered module uninstallation 
+2026-10-28 00:13:12,362 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_module: ALLOW access to module.button_uninstall on ['Disposable R0 Fixture'] to user __system__ #1 via n/a 
+2026-10-28 00:13:12,380 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:13:12,383 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:13:12,399 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: updating modules list 
+2026-10-28 00:13:12,399 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-10-28 00:13:12,414 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 12 modules... 
+2026-10-28 00:13:12,416 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 12 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:13:12,452 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_module: ALLOW access to module.module_uninstall on ['Disposable R0 Fixture', 'Disposable R0 Extension'] to user __system__ #1 via n/a 
+2026-10-28 00:13:12,455 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_model: Deleting ir.model.access(165,) 
+2026-10-28 00:13:12,461 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [8830] 
+2026-10-28 00:13:12,461 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.models.unlink: User #1 deleted ir.model.access records with IDs: [165] 
+2026-10-28 00:13:12,464 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_model: Deleting ir.model.fields(1764, 1763, 1762, 1755, 1757, 1756) 
+2026-10-28 00:13:12,476 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [8833, 8834, 8850, 8844, 8823, 8824, 8825] 
+2026-10-28 00:13:12,476 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.models.unlink: User #1 deleted ir.model.fields records with IDs: [1764, 1763, 1762, 1755, 1757, 1756] 
+2026-10-28 00:13:12,477 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_model: Deleting ir.model(141,) 
+2026-10-28 00:13:12,487 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [8831, 8821] 
+2026-10-28 00:13:12,487 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.models.unlink: User #1 deleted ir.model records with IDs: [141] 
+2026-10-28 00:13:12,487 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_model: ir.model.data could not be deleted ([]) 
+2026-10-28 00:13:12,489 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [8850, 8844, 8834, 8833, 8832, 8831, 8830, 8829, 8828, 8827, 8826, 8825, 8824, 8823, 8822, 8821] 
+2026-10-28 00:13:12,491 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: Reloading registry once more after uninstalling modules 
+2026-10-28 00:13:12,501 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:13:12,504 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:13:12,519 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: updating modules list 
+2026-10-28 00:13:12,520 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-10-28 00:13:12,533 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: loading 10 modules... 
+2026-10-28 00:13:12,536 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: 10 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:13:12,605 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.modules.loading: Modules loaded. 
+2026-10-28 00:13:12,609 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.registry: Registry changed, signaling through the database 
+2026-10-28 00:13:12,610 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.registry: Registry loaded in 0.119s 
+2026-10-28 00:13:12,610 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.registry: Registry changed, signaling through the database 
+2026-10-28 00:13:12,612 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.registry: Registry loaded in 0.243s 
+2026-10-28 00:13:12,612 7 INFO mp_disposable_r0_20261027t234238z_final_restore odoo.addons.base.models.ir_module: getting next ir.actions.todo() 
+MP_R0_RESULT={"native_table_removed": true}

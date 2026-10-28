@@ -1,0 +1,16 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "maintenance", "check-v2", "--database", "mp_disposable_r0_20261027t234238z_p1_p2", "--variant", "v2"]
+ Container mp-r0-20261027234238n-maintenance-run-40811196f084 Creating 
+ Container mp-r0-20261027234238n-maintenance-run-40811196f084 Created 
+2026-10-27 23:54:59,797 7 INFO ? odoo: Odoo version 19.0 
+2026-10-27 23:54:59,797 7 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-27 23:54:59,797 7 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v2']) 
+2026-10-27 23:54:59,797 7 INFO ? odoo: database: modular@db:5432 
+2026-10-27 23:55:00,228 7 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-27 23:55:00,228 7 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-27 23:55:00,244 7 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: loading 1 modules... 
+2026-10-27 23:55:00,247 7 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-27 23:55:00,249 7 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: loading 11 modules... 
+2026-10-27 23:55:00,317 7 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: 11 modules loaded in 0.07s, 0 queries (+0 extra) 
+2026-10-27 23:55:00,338 7 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.modules.loading: Modules loaded. 
+2026-10-27 23:55:00,343 7 INFO mp_disposable_r0_20261027t234238z_p1_p2 odoo.registry: Registry loaded in 0.114s 
+MP_R0_RESULT={"v2_data_and_attachment": "passed", "record": 1, "label": "BLUE"}

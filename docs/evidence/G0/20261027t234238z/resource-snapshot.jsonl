@@ -1,0 +1,3 @@
+{"BlockIO":"4.1kB / 8.19kB","CPUPerc":"0.00%","Container":"mp-r0-20261027234238n-app-1","ID":"c73b7a6bc83a","MemPerc":"13.09%","MemUsage":"201.1MiB / 1.5GiB","Name":"mp-r0-20261027234238n-app-1","NetIO":"584kB / 6.74MB","PIDs":"6"}
+{"BlockIO":"76.1MB / 116MB","CPUPerc":"3.55%","Container":"mp-r0-20261027234238n-db-1","ID":"8ab2fb916c35","MemPerc":"21.42%","MemUsage":"109.7MiB / 512MiB","Name":"mp-r0-20261027234238n-db-1","NetIO":"19.9MB / 19.6MB","PIDs":"10"}
+{"BlockIO":"3.68MB / 0B","CPUPerc":"0.00%","Container":"mp-r0-20261027234238n-edge-1","ID":"d9f6cb1d0d69","MemPerc":"10.85%","MemUsage":"13.89MiB / 128MiB","Name":"mp-r0-20261027234238n-edge-1","NetIO":"6.54MB / 6.53MB","PIDs":"17"}

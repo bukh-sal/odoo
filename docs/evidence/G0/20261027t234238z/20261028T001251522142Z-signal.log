@@ -1,0 +1,18 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "maintenance", "signal", "--database", "mp_disposable_r0_20261027t234238z_final", "--variant", "v2", "--probe-field", "x_r0_signal_4cbb94fc"]
+ Container mp-r0-20261027234238n-maintenance-run-b11e8a27eee0 Creating 
+ Container mp-r0-20261027234238n-maintenance-run-b11e8a27eee0 Created 
+2026-10-28 00:12:52,599 7 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:12:52,599 7 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:12:52,599 7 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v2']) 
+2026-10-28 00:12:52,599 7 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:12:53,034 7 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 00:12:53,034 7 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:12:53,051 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:12:53,053 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:12:53,055 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 12 modules... 
+2026-10-28 00:12:53,122 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 12 modules loaded in 0.07s, 0 queries (+0 extra) 
+2026-10-28 00:12:53,142 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Modules loaded. 
+2026-10-28 00:12:53,147 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry loaded in 0.113s 
+2026-10-28 00:12:53,160 7 WARNING mp_disposable_r0_20261027t234238z_final odoo.addons.base.models.ir_model: Two fields (x_r0_signal_4cbb94fc, x_r0_signal) of mp.r0.fixture() have the same label: Disposable cross-worker registry proof. [Modules: None and None] 
+2026-10-28 00:12:53,170 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry changed, signaling through the database 
+MP_R0_RESULT={"registry_signal_sent": true, "field": "x_r0_signal_4cbb94fc"}

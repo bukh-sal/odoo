@@ -1,0 +1,70 @@
+{
+  "database": "mp_disposable_r0_20261027t234238z_final_restore",
+  "login": "passed",
+  "logout": "subsequent_authenticated_endpoint_denied",
+  "anonymous_and_omitted_routes": {
+    "/web/database/manager": 403,
+    "/xmlrpc/2/object": 404,
+    "/jsonrpc": 404
+  },
+  "assets": [
+    {
+      "path": "/web/assets/0b02dcd/web.assets_web.min.css",
+      "bytes": 744187,
+      "content_type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/0f362e5/web.assets_web.min.js",
+      "bytes": 2980239,
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/7b991c5/web.assets_frontend_lazy.min.js",
+      "bytes": 1516427,
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/9d47ad5/web.assets_frontend.min.css",
+      "bytes": 374552,
+      "content_type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/b056235/web.assets_frontend_minimal.min.js",
+      "bytes": 15195,
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/eb385f7/web.assets_web_print.min.css",
+      "bytes": 748918,
+      "content_type": "text/css; charset=utf-8"
+    }
+  ],
+  "warm_session_ms": {
+    "samples": [
+      15.0,
+      0.0,
+      16.0,
+      0.0,
+      15.0,
+      32.0,
+      31.0,
+      0.0,
+      16.0,
+      0.0,
+      15.0,
+      0.0,
+      0.0,
+      16.0,
+      15.0,
+      0.0,
+      0.0,
+      16.0,
+      31.0,
+      0.0
+    ],
+    "p95": 31.0
+  },
+  "registry_sync": null,
+  "source": "9ada7566ae7c1200d89c346351047e5991f74862",
+  "variant": "v2"
+}

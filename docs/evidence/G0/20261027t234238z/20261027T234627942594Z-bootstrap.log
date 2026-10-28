@@ -1,0 +1,155 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "maintenance", "bootstrap", "--database", "mp_disposable_r0_20261027t234238z", "--variant", "v1"]
+ Volume mp-r0-20261027234238n_filestore Creating 
+ Volume mp-r0-20261027234238n_filestore Creating 
+ Volume mp-r0-20261027234238n_filestore Created 
+ Volume mp-r0-20261027234238n_filestore Created 
+ Container mp-r0-20261027234238n-maintenance-run-122e205b17dd Creating 
+ Container mp-r0-20261027234238n-maintenance-run-122e205b17dd Created 
+2026-10-27 23:46:29,051 7 INFO ? odoo: Odoo version 19.0 
+2026-10-27 23:46:29,051 7 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-27 23:46:29,051 7 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-27 23:46:29,051 7 INFO ? odoo: database: modular@db:5432 
+2026-10-27 23:46:29,535 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: Initializing database mp_disposable_r0_20261027t234238z 
+2026-10-27 23:46:29,589 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading 1 modules... 
+2026-10-27 23:46:29,589 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: Loading module base (1/1) 
+2026-10-27 23:46:29,606 7 INFO mp_disposable_r0_20261027t234238z odoo.registry: module base: creating or updating database tables 
+2026-10-27 23:46:29,864 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of ir.module.module.menus_by_module 
+2026-10-27 23:46:29,864 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of ir.module.module.reports_by_module 
+2026-10-27 23:46:29,864 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of ir.module.module.views_by_module 
+2026-10-27 23:46:29,958 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.user_id 
+2026-10-27 23:46:29,958 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.commercial_partner_id 
+2026-10-27 23:46:29,958 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.complete_name 
+2026-10-27 23:46:29,959 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.lang 
+2026-10-27 23:46:29,959 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.company_registry 
+2026-10-27 23:46:29,959 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.commercial_company_name 
+2026-10-27 23:46:29,959 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.properties 
+2026-10-27 23:46:29,959 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.partner.partner_share 
+2026-10-27 23:46:29,984 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.currency.decimal_places 
+2026-10-27 23:46:30,001 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.company.uses_default_logo 
+2026-10-27 23:46:30,001 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.company.logo_web 
+2026-10-27 23:46:30,003 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Computing parent_path for table res_company... 
+2026-10-27 23:46:30,026 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.users.signature 
+2026-10-27 23:46:30,027 7 INFO mp_disposable_r0_20261027t234238z odoo.models: Prepare computation of res.users.share 
+2026-10-27 23:46:30,984 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res_bank.xml 
+2026-10-27 23:46:30,987 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res.lang.csv 
+2026-10-27 23:46:31,010 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res_lang_data.xml 
+2026-10-27 23:46:31,031 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res_partner_data.xml 
+2026-10-27 23:46:31,059 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res_currency_data.xml 
+2026-10-27 23:46:31,331 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res_company_data.xml 
+2026-10-27 23:46:31,336 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res_users_data.xml 
+2026-10-27 23:46:31,915 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2026-10-27 23:46:31,921 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res_country_data.xml 
+2026-10-27 23:46:32,224 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2026-10-27 23:46:32,231 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/security/base_groups.xml 
+2026-10-27 23:46:32,321 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/security/base_security.xml 
+2026-10-27 23:46:32,403 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/wizard/wizard_ir_model_menu_create_views.xml 
+2026-10-27 23:46:32,409 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/base_menus.xml 
+2026-10-27 23:46:32,443 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2026-10-27 23:46:32,454 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/res_config_views.xml 
+2026-10-27 23:46:32,459 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/res.country.state.csv 
+2026-10-27 23:46:32,624 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2026-10-27 23:46:32,711 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_asset_views.xml 
+2026-10-27 23:46:32,722 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2026-10-27 23:46:32,733 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2026-10-27 23:46:32,751 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_cron_trigger_views.xml 
+2026-10-27 23:46:32,763 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2026-10-27 23:46:32,778 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2026-10-27 23:46:32,790 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_model_views.xml 
+2026-10-27 23:46:32,874 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2026-10-27 23:46:32,888 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2026-10-27 23:46:32,900 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2026-10-27 23:46:32,913 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2026-10-27 23:46:32,927 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2026-10-27 23:46:32,960 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_default_views.xml 
+2026-10-27 23:46:32,972 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/ir_config_parameter_data.xml 
+2026-10-27 23:46:32,974 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2026-10-27 23:46:32,982 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/report/ir_model_report.xml 
+2026-10-27 23:46:32,984 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2026-10-27 23:46:32,989 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2026-10-27 23:46:33,002 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2026-10-27 23:46:33,010 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/views/ir_module_views.xml 
+2026-10-27 23:46:33,042 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2026-10-27 23:46:33,068 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: loading base/data/ir_module_module.xml 
+2026-10-27 23:46:33,086 7 INFO mp_disposable_r0_20261027t234238z odoo.modules.loading: skipping reset_modules_state, ir_module_module table does not exists 
+2026-10-27 23:46:33,086 7 ERROR mp_disposable_r0_20261027t234238z odoo.registry: Failed to load registry 
+2026-10-27 23:46:33,086 7 CRITICAL mp_disposable_r0_20261027t234238z odoo.service.server: Failed to initialize database `mp_disposable_r0_20261027t234238z`. 
+Traceback (most recent call last):
+  File "/opt/modular/odoo/tools/convert.py", line 608, in _tag_root
+    f(rec)
+  File "/opt/modular/odoo/tools/convert.py", line 426, in _tag_record
+    f_val = self.id_get(f_ref, raise_if_not_found=nodeattr2bool(rec, 'forcecreate', True))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/tools/convert.py", line 592, in id_get
+    return self.model_id_get(id_str, raise_if_not_found)[1]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/tools/convert.py", line 596, in model_id_get
+    return self.env['ir.model.data']._xmlid_to_res_model_res_id(id_str, raise_if_not_found=raise_if_not_found)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/addons/base/models/ir_model.py", line 2313, in _xmlid_to_res_model_res_id
+    return self._xmlid_lookup(xmlid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/tools/cache.py", line 98, in lookup
+    return self.lookup(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/tools/cache.py", line 171, in lookup
+    value = self.method(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/addons/base/models/ir_model.py", line 2306, in _xmlid_lookup
+    raise ValueError('External ID not found in the system: %s' % xmlid)
+ValueError: External ID not found in the system: base.module_category_services_timesheets
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/modular/odoo/service/server.py", line 1591, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modular/odoo/orm/registry.py", line 189, in new
+    load_modules(
+  File "/opt/modular/odoo/modules/loading.py", line 405, in load_modules
+    load_module_graph(
+  File "/opt/modular/odoo/modules/loading.py", line 217, in load_module_graph
+    load_data(env, idref, 'init', kind='data', package=package)
+  File "/opt/modular/odoo/modules/loading.py", line 59, in load_data
+    convert_file(env, package.name, filename, idref, mode, noupdate=kind == 'demo')
+  File "/opt/modular/odoo/tools/convert.py", line 696, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/opt/modular/odoo/tools/convert.py", line 795, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/opt/modular/odoo/tools/convert.py", line 666, in parse
+    self._tag_root(de)
+  File "/opt/modular/odoo/tools/convert.py", line 608, in _tag_root
+    f(rec)
+  File "/opt/modular/odoo/tools/convert.py", line 621, in _tag_root
+    raise ParseError('while parsing %s:%s, somewhere inside\n%s' % (
+odoo.tools.convert.ParseError: while parsing /opt/modular/odoo/addons/base/data/ir_module_module.xml:19, somewhere inside
+<record model="ir.module.module" id="base.module_timesheet_grid">
+            <field name="name">timesheet_grid</field>
+            <field name="shortdesc">Timesheets</field>
+            <field name="sequence">65</field>
+            <field name="category_id" ref="base.module_category_services_timesheets"/>
+            <field name="application" eval="True"/>
+            <field name="summary">Track time &amp; costs</field>
+            <field name="license">OEEL-1</field>
+            <field name="author">Odoo S.A.</field>
+            <field name="to_buy" eval="True"/>
+            <field name="icon">/base/static/img/icons/timesheet_grid.png</field>
+            <field name="website">https://www.odoo.com/app/timesheet?utm_source=db&amp;utm_medium=module</field>
+        </record>
+2026-10-27 23:46:33,088 7 INFO mp_disposable_r0_20261027t234238z odoo.service.server: Initiating shutdown 
+2026-10-27 23:46:33,088 7 INFO mp_disposable_r0_20261027t234238z odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-27 23:46:33,088 7 INFO mp_disposable_r0_20261027t234238z odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=12): Closed 1 connections  
+Traceback (most recent call last):
+  File "/opt/modular/tools/r0_inside.py", line 119, in <module>
+    main()
+  File "/opt/modular/tools/r0_inside.py", line 64, in main
+    native(database, "v1", install="web,auth_password_policy")
+  File "/opt/modular/tools/r0_inside.py", line 30, in native
+    subprocess.run(command, input=code, text=True, check=True)
+  File "/usr/local/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/venv/bin/python', 'odoo-bin', '-c', '/run/secrets/odoo_config', '-d', 'mp_disposable_r0_20261027t234238z', '--workers=0', '--max-cron-threads=0', '--no-http', '--addons-path=/opt/modular/addons,/opt/modular/fixtures/v1', '--stop-after-init', '--without-demo', '-i', 'web,auth_password_policy']' returned non-zero exit status 255.
+

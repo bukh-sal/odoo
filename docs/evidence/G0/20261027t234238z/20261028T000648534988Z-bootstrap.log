@@ -1,0 +1,182 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "maintenance", "bootstrap", "--database", "mp_disposable_r0_20261027t234238z_final", "--variant", "v1"]
+ Container mp-r0-20261027234238n-maintenance-run-121245f293e4 Creating 
+ Container mp-r0-20261027234238n-maintenance-run-121245f293e4 Created 
+2026-10-28 00:06:49,795 7 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:06:49,795 7 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:06:49,795 7 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 00:06:49,795 7 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:06:50,277 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Initializing database mp_disposable_r0_20261027t234238z_final 
+2026-10-28 00:06:50,331 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:06:50,331 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module base (1/1) 
+2026-10-28 00:06:50,350 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module base: creating or updating database tables 
+2026-10-28 00:06:50,616 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of ir.module.module.menus_by_module 
+2026-10-28 00:06:50,616 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of ir.module.module.reports_by_module 
+2026-10-28 00:06:50,616 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of ir.module.module.views_by_module 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.user_id 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.commercial_partner_id 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.complete_name 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.lang 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.company_registry 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.commercial_company_name 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.properties 
+2026-10-28 00:06:50,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.partner.partner_share 
+2026-10-28 00:06:50,745 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.currency.decimal_places 
+2026-10-28 00:06:50,768 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.company.uses_default_logo 
+2026-10-28 00:06:50,768 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.company.logo_web 
+2026-10-28 00:06:50,770 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Computing parent_path for table res_company... 
+2026-10-28 00:06:50,794 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.users.signature 
+2026-10-28 00:06:50,795 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.users.share 
+2026-10-28 00:06:51,730 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res_bank.xml 
+2026-10-28 00:06:51,733 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res.lang.csv 
+2026-10-28 00:06:51,758 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res_lang_data.xml 
+2026-10-28 00:06:51,780 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res_partner_data.xml 
+2026-10-28 00:06:51,810 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res_currency_data.xml 
+2026-10-28 00:06:52,074 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res_company_data.xml 
+2026-10-28 00:06:52,079 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res_users_data.xml 
+2026-10-28 00:06:52,647 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2026-10-28 00:06:52,652 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res_country_data.xml 
+2026-10-28 00:06:52,962 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2026-10-28 00:06:52,970 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/security/base_groups.xml 
+2026-10-28 00:06:53,064 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/security/base_security.xml 
+2026-10-28 00:06:53,150 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/wizard_ir_model_menu_create_views.xml 
+2026-10-28 00:06:53,157 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/base_menus.xml 
+2026-10-28 00:06:53,189 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2026-10-28 00:06:53,199 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_config_views.xml 
+2026-10-28 00:06:53,203 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/res.country.state.csv 
+2026-10-28 00:06:53,375 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2026-10-28 00:06:53,459 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_asset_views.xml 
+2026-10-28 00:06:53,471 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2026-10-28 00:06:53,480 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2026-10-28 00:06:53,498 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_cron_trigger_views.xml 
+2026-10-28 00:06:53,509 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2026-10-28 00:06:53,523 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2026-10-28 00:06:53,538 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_model_views.xml 
+2026-10-28 00:06:53,624 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2026-10-28 00:06:53,638 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2026-10-28 00:06:53,650 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2026-10-28 00:06:53,664 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2026-10-28 00:06:53,677 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2026-10-28 00:06:53,707 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_default_views.xml 
+2026-10-28 00:06:53,719 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/ir_config_parameter_data.xml 
+2026-10-28 00:06:53,721 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2026-10-28 00:06:53,729 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/report/ir_model_report.xml 
+2026-10-28 00:06:53,731 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2026-10-28 00:06:53,736 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2026-10-28 00:06:53,750 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2026-10-28 00:06:53,758 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_module_views.xml 
+2026-10-28 00:06:53,792 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2026-10-28 00:06:53,823 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/ir_module_module.xml 
+2026-10-28 00:06:53,865 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2026-10-28 00:06:53,867 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2026-10-28 00:06:53,873 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2026-10-28 00:06:53,882 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2026-10-28 00:06:53,890 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2026-10-28 00:06:53,897 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2026-10-28 00:06:53,908 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2026-10-28 00:06:53,915 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2026-10-28 00:06:53,924 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2026-10-28 00:06:53,934 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2026-10-28 00:06:53,945 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/ir_profile_views.xml 
+2026-10-28 00:06:53,962 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_company_views.xml 
+2026-10-28 00:06:53,976 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_lang_views.xml 
+2026-10-28 00:06:53,989 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_partner_views.xml 
+2026-10-28 00:06:54,045 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_bank_views.xml 
+2026-10-28 00:06:54,067 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_country_views.xml 
+2026-10-28 00:06:54,093 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_currency_views.xml 
+2026-10-28 00:06:54,115 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_groups_views.xml 
+2026-10-28 00:06:54,141 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_users_views.xml 
+2026-10-28 00:06:54,196 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_users_apikeys_views.xml 
+2026-10-28 00:06:54,200 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_device_views.xml 
+2026-10-28 00:06:54,213 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_users_identitycheck_views.xml 
+2026-10-28 00:06:54,218 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2026-10-28 00:06:54,223 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2026-10-28 00:06:54,238 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base/security/ir.model.access.csv 
+2026-10-28 00:06:54,310 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module base loaded in 3.98s, 8469 queries (+8469 other) 
+2026-10-28 00:06:54,310 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 1 modules loaded in 3.98s, 8469 queries (+8469 extra) 
+2026-10-28 00:06:54,312 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: updating modules list 
+2026-10-28 00:06:54,313 7 INFO mp_disposable_r0_20261027t234238z_final odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-10-28 00:06:54,327 7 INFO mp_disposable_r0_20261027t234238z_final odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Password Policy'] to user __system__ #1 via n/a 
+2026-10-28 00:06:54,335 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 10 modules... 
+2026-10-28 00:06:54,336 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module web (2/10) 
+2026-10-28 00:06:54,355 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module web: creating or updating database tables 
+2026-10-28 00:06:54,594 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/security/ir.model.access.csv 
+2026-10-28 00:06:54,600 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/security/web_security.xml 
+2026-10-28 00:06:54,607 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/webclient_templates.xml 
+2026-10-28 00:06:54,641 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/report_templates.xml 
+2026-10-28 00:06:54,695 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/base_document_layout_views.xml 
+2026-10-28 00:06:54,705 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/partner_view.xml 
+2026-10-28 00:06:54,709 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/speedscope_template.xml 
+2026-10-28 00:06:54,713 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/memory_template.xml 
+2026-10-28 00:06:54,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/speedscope_config_wizard.xml 
+2026-10-28 00:06:54,720 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/neutralize_views.xml 
+2026-10-28 00:06:54,725 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/views/ir_ui_view_views.xml 
+2026-10-28 00:06:54,731 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/data/ir_attachment.xml 
+2026-10-28 00:06:54,734 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web/data/report_layout.xml 
+2026-10-28 00:06:54,763 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module web loaded in 0.43s, 1231 queries (+1231 other) 
+2026-10-28 00:06:54,763 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module auth_totp (3/10) 
+2026-10-28 00:06:54,775 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module auth_totp: creating or updating database tables 
+2026-10-28 00:06:54,822 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_totp/security/security.xml 
+2026-10-28 00:06:54,836 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_totp/security/ir.model.access.csv 
+2026-10-28 00:06:54,841 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_totp/data/ir_action_data.xml 
+2026-10-28 00:06:54,845 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_totp/views/res_users_views.xml 
+2026-10-28 00:06:54,863 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_totp/views/templates.xml 
+2026-10-28 00:06:54,867 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_totp/wizard/auth_totp_wizard_views.xml 
+2026-10-28 00:06:54,881 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module auth_totp loaded in 0.12s, 218 queries (+218 other) 
+2026-10-28 00:06:54,881 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module base_import (4/10) 
+2026-10-28 00:06:54,908 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module base_import: creating or updating database tables 
+2026-10-28 00:06:55,190 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base_import/security/base_import_security.xml 
+2026-10-28 00:06:55,194 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base_import/security/ir.model.access.csv 
+2026-10-28 00:06:55,204 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module base_import loaded in 0.32s, 964 queries (+964 other) 
+2026-10-28 00:06:55,204 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module base_setup (5/10) 
+2026-10-28 00:06:55,211 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module base_setup: creating or updating database tables 
+2026-10-28 00:06:55,235 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base_setup/data/base_setup_data.xml 
+2026-10-28 00:06:55,238 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base_setup/views/res_config_settings_views.xml 
+2026-10-28 00:06:55,260 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading base_setup/views/res_partner_views.xml 
+2026-10-28 00:06:55,272 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module base_setup loaded in 0.07s, 152 queries (+152 other) 
+2026-10-28 00:06:55,272 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module bus (6/10) 
+2026-10-28 00:06:55,291 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module bus: creating or updating database tables 
+2026-10-28 00:06:55,345 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading bus/security/ir.model.access.csv 
+2026-10-28 00:06:55,353 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module bus loaded in 0.08s, 159 queries (+159 other) 
+2026-10-28 00:06:55,353 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module mp_compat (7/10) 
+2026-10-28 00:06:55,363 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module mp_compat loaded in 0.01s, 10 queries (+10 other) 
+2026-10-28 00:06:55,363 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module web_tour (8/10) 
+2026-10-28 00:06:55,368 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module web_tour: creating or updating database tables 
+2026-10-28 00:06:55,371 7 INFO mp_disposable_r0_20261027t234238z_final odoo.models: Prepare computation of res.users.tour_enabled 
+2026-10-28 00:06:55,423 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web_tour/security/ir.model.access.csv 
+2026-10-28 00:06:55,428 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading web_tour/views/tour_views.xml 
+2026-10-28 00:06:55,453 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module web_tour loaded in 0.09s, 180 queries (+180 other) 
+2026-10-28 00:06:55,453 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module auth_passkey (9/10) 
+2026-10-28 00:06:55,492 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module auth_passkey: creating or updating database tables 
+2026-10-28 00:06:55,533 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_passkey/views/auth_passkey_key_views.xml 
+2026-10-28 00:06:55,547 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_passkey/views/auth_passkey_login_templates.xml 
+2026-10-28 00:06:55,554 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_passkey/views/res_users_identitycheck_views.xml 
+2026-10-28 00:06:55,560 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_passkey/views/res_users_views.xml 
+2026-10-28 00:06:55,572 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_passkey/security/ir.model.access.csv 
+2026-10-28 00:06:55,577 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_passkey/security/security.xml 
+2026-10-28 00:06:55,593 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module auth_passkey loaded in 0.14s, 218 queries (+218 other) 
+2026-10-28 00:06:55,593 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module auth_password_policy (10/10) 
+2026-10-28 00:06:55,598 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module auth_password_policy: creating or updating database tables 
+2026-10-28 00:06:55,615 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_password_policy/data/defaults.xml 
+2026-10-28 00:06:55,617 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_password_policy/views/res_users.xml 
+2026-10-28 00:06:55,630 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading auth_password_policy/views/res_config_settings_views.xml 
+2026-10-28 00:06:55,663 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module auth_password_policy loaded in 0.07s, 101 queries (+101 other) 
+2026-10-28 00:06:55,663 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 10 modules loaded in 1.33s, 3233 queries (+3233 extra) 
+2026-10-28 00:06:55,740 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Modules loaded. 
+2026-10-28 00:06:55,744 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry changed, signaling through the database 
+2026-10-28 00:06:55,745 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry loaded in 5.499s 
+2026-10-28 00:06:55,746 7 INFO mp_disposable_r0_20261027t234238z_final odoo.service.server: Initiating shutdown 
+2026-10-28 00:06:55,746 7 INFO mp_disposable_r0_20261027t234238z_final odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:06:55,746 7 INFO mp_disposable_r0_20261027t234238z_final odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=12): Closed 1 connections  
+2026-10-28 00:06:56,418 10 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:06:56,418 10 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:06:56,418 10 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 00:06:56,418 10 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:06:56,810 10 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 00:06:56,811 10 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:06:56,827 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:06:56,830 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:06:56,832 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 10 modules... 
+2026-10-28 00:06:56,897 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 10 modules loaded in 0.06s, 0 queries (+0 extra) 
+2026-10-28 00:06:56,917 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Modules loaded. 
+2026-10-28 00:06:56,922 10 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry loaded in 0.111s 
+MP_R0_RESULT={"bootstrap": "complete", "database": "mp_disposable_r0_20261027t234238z_final"}

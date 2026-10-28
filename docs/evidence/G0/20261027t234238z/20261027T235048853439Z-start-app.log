@@ -1,0 +1,8 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "up", "-d", "app"]
+ Container mp-r0-20261027234238n-db-1 Running 
+ Container mp-r0-20261027234238n-app-1 Creating 
+ Container mp-r0-20261027234238n-app-1 Created 
+ Container mp-r0-20261027234238n-db-1 Waiting 
+ Container mp-r0-20261027234238n-db-1 Healthy 
+ Container mp-r0-20261027234238n-app-1 Starting 
+ Container mp-r0-20261027234238n-app-1 Started 

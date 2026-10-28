@@ -2,25 +2,25 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-10-27T23:32:26.886278+00:00
+- Updated UTC: 2026-10-28T00:20:59.566919+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
-- Branch: `platform/r1`; HEAD at start of work: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; platform checkpoint commit pending. Use `git rev-parse HEAD` for current commit.
-- Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime locks not yet established.
-- Current phase/gate: **A / G0 in_progress**. Latest passed gate: none.
-- Active item: **A-02**. Next action: rebuild the curated image with the lifecycle harness, then bootstrap a fresh harness-owned database and verify HTTP login/assets.
-- Working changes: initialization of this status/evidence/work-log; original planning specification preserved.
+- Branch: `platform/r1`; latest committed parent `9ada7566`; G0 qualification tree/evidence being committed now. Read actual `git rev-parse HEAD` on resumption; code identity is in the G0 evidence manifest.
+- Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualification still pending.
+- Current phase/gate: **A1 / G1 in_progress**. Latest passed gate: **G0**, see `evidence/G0/20261027t234238z/gate-G0.json`.
+- Active item: **A1-01**. Next action: inspect retained HTTP/record-rule extension seams and implement the minimal G1 workspace/membership/scoped-model proof, then test asymmetric roles through gateway and native RPC.
+- Working changes: named-volume configuration, edge proxy, category metadata seed, mp_compat SCSS helpers, strengthened lifecycle/reproduction probes and G0 evidence. Specification unchanged.
 
 ## Progress estimate
 
-**Overall roughly 0%; release acceptance 0/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
+**Overall roughly 10%; release acceptance 5/99 passed; 5 R2 checks excluded.** Gate weights below sum to 100 and represent a rough effort estimate, not equal task counts or a completion guarantee. Estimate uses completed gate weight plus a conservatively assessed fraction of the active gate. Setup/checklists alone do not count as product acceptance. Update the estimate when meaningful deliverables pass; do not increase it based on time spent or number of files.
 
 ## Gate checklist
 
 | Gate | Deliverable | State | Weight % | Prerequisite / evidence |
 | --- | --- | --- | --- | --- |
-| G0 | A: baseline | in_progress | 10 | none; docs/evidence/G0/20261027T2312Z/ |
-| G1 | A1: feasibility | not_started | 10 | G0; not_run |
+| G0 | A: baseline | passed | 10 | none; docs/evidence/G0/20261027T2312Z/ |
+| G1 | A1: feasibility | in_progress | 10 | G0; not_run |
 | G2 | B: contract freeze | not_started | 10 | G1; not_run |
 | G3 | C: Notes and shell | not_started | 15 | G2; not_run |
 | G4 | D: composition and Canvas | not_started | 10 | G3; not_run |
@@ -35,12 +35,12 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | ID | Deliverable | State | Acceptance | Dependencies | Next check |
 | --- | --- | --- | --- | --- | --- |
 | A-01 | Inspect tools, initialize Git and pin official upstream | passed | BOOT-02; OPS-03 | none | git checkout pinned commit; inspect source and Docker resources |
-| A-02 | Build pinned Python/PostgreSQL baseline and lock dependencies | in_progress | BOOT-01..04 | A-01 | docker compose build and fresh database initialization |
-| A-03 | Boot/login/assets and inventory automatic modules | not_started | BOOT-01..04 | A-02 | real HTTP/session and installed module report |
-| A-04 | Run native model/extension install and schema migrations | not_started | ORM-01; VER-02 | A-03 | disposable native lifecycle harness |
-| A-05 | Prove failed migration, uninstall and DB/filestore restore | not_started | MIG-02/06/07 | A-04 | fault/restore harness and attachment checks |
-| A-06 | Exercise multiworker sync, repeat fresh boot and measure baseline | not_started | BOOT-02; TEN-01 | A-05 | second fresh build; benchmark; G0 evidence review |
-| A1-01 | Workspace enforcement proof with asymmetric roles | not_started | FEAS-01/02 | G0 | gateway/RPC/browser/cross-worker tests |
+| A-02 | Build pinned Python/PostgreSQL baseline and lock dependencies | passed | BOOT-01..04 | A-01 | docker compose build and fresh database initialization |
+| A-03 | Boot/login/assets and inventory automatic modules | passed | BOOT-01..04 | A-02 | real HTTP/session and installed module report |
+| A-04 | Run native model/extension install and schema migrations | passed | ORM-01; VER-02 | A-03 | disposable native lifecycle harness |
+| A-05 | Prove failed migration, uninstall and DB/filestore restore | passed | MIG-02/06/07 | A-04 | fault/restore harness and attachment checks |
+| A-06 | Exercise multiworker sync, repeat fresh boot and measure baseline | passed | BOOT-02; TEN-01 | A-05 | second fresh build; benchmark; G0 evidence review |
+| A1-01 | Workspace enforcement proof with asymmetric roles | in_progress | FEAS-01/02 | G0 | gateway/RPC/browser/cross-worker tests |
 | A1-02 | Neutral host/custom page and identity-chain proof | not_started | FEAS-03/04 | A1-01 | browser lifecycle and identity checks |
 | B-01 | Freeze seven contract rows and compatibility fixtures | not_started | FREEZE-01..04 | G1 | contract tests and digest inventory |
 | C-01 | Deliver Notes, identity and neutral shell vertical slice | not_started | ID; API; UI-01/09 | G2 | owning acceptance tests |
@@ -61,12 +61,13 @@ No hard blocker currently. Docker is healthy (Linux/amd64); user increased alloc
 
 ## Resume capsule
 
-- Working: specification, goal, local Git metadata, Docker engine. Product runtime has not yet booted.
-- Source checkout and image pulls completed. Initial dependency/container build succeeded; rebuild with the current harness is next. No application container is running yet.
-- Data: no application database or filestore created yet; no uncertain schema mutation.
-- Next: run `tools/r0.py setup`, `build`, `bootstrap`, then `up` and `http` using installed Python 3.12. Inspect evidence on failure before retrying.
-- Advance G0 only with section 5.3 lifecycle/restore/multiworker evidence. G1 and G2 precede substantial R1 implementation.
-- Evidence identity: code/contracts/config/locks, excluding status/work-log/generated logs.
+- **G0 passed**, decision/evidence at `docs/evidence/G0/20261027t234238z/gate-G0.json`. Work A-01..06 complete; overall weighted progress roughly 10%, release acceptance 5/99 passed.
+- Runtime: project `mp-r0-20261027234238n`, active DB `mp_disposable_r0_20261027t234238z_final_restore`, variant v2 (fixture addons uninstalled after destructive test); app/edge/DB running. URL http://127.0.0.1:18069. Current state pointer `.local/r0/state.json`; raw backup and passwords stay ignored.
+- Final full chain and independent uncached reproduction completed successfully; unified session 51308 finished. Do not repeat completed R0 work without a relevant change. Fresh secondary DB `mp_disposable_r0_20261027t234238z_fresh` also exists for the native registry regression. Earlier failed disposable targets are retained; original abandoned project's DB stopped. No uncertain mutation is running.
+- Browser CUA tab `r0Tab` (tab 1, in-app browser id 2) is at restored login after rejecting the old pre-restore session; handoff marked. Screenshots and empty-error-console observations recorded. If resuming browser work after compaction, refresh its documentation before reuse.
+- **Current gate G1**, primary work item **A1-01**: minimal project-owned identity/workspace/membership and scoped-model enforcement, explicit X-MP-Workspace request adapter, native rule context/cache integration and asymmetric-role direct-RPC tests. Read spec sections 5.4, 11 and 13.2 plus relevant native source; freeze broader public schemas only at G2 after proofs.
+- Next: implement only the bounded G1 backend proof (no catalog/resolver/polished shell). Then multi-tab/cross-worker revocation proof and A1-02 minimal custom UI/actor-chain evidence. G2 and later gates remain unstarted.
+- Source changes currently include finalized R0 harness/config/adapters/evidence, to be committed as G0 checkpoint. Specification unchanged; no hosted publication or production actions. Goal remains active through G7.
 
 ## Acceptance ledger
 
@@ -82,10 +83,10 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | FREEZE-02 | B/G2 | not_run | Manifest, restricted version mapping, alias bindings and approval canonicalization fixtures pass | not_run; procedure to be bound in owning phase |
 | FREEZE-03 | B/G2 | not_run | Frozen workspace/identity/UI contracts agree with passing G1 behavior and documented patch surface | not_run; procedure to be bound in owning phase |
 | FREEZE-04 | B/G2 | not_run | Contract inventory maps owning phases, acceptance IDs, compatibility fixtures and change/invalidation rules | not_run; procedure to be bound in owning phase |
-| BOOT-01 | A/G0 | not_run | Empty volumes initialize and an administrator can log in | not_run; procedure to be bound in owning phase |
-| BOOT-02 | A/G0 | not_run | A second fresh build reproduces the declared inventory | not_run; procedure to be bound in owning phase |
-| BOOT-03 | A/G0 | not_run | Explicit server-wide module choice works, including RPC omission if selected | not_run; procedure to be bound in owning phase |
-| BOOT-04 | A/G0 | not_run | No excluded ERP application is unexpectedly installed | not_run; procedure to be bound in owning phase |
+| BOOT-01 | A/G0 | passed | Empty volumes initialize and an administrator can log in | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
+| BOOT-02 | A/G0 | passed | A second fresh build reproduces the declared inventory | `tools/r0_repro.py`; `evidence/G0/20261027t234238z/20261028T001455995688Z-reproduction-summary.json` |
+| BOOT-03 | A/G0 | passed | Explicit server-wide module choice works, including RPC omission if selected | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
+| BOOT-04 | A/G0 | passed | No excluded ERP application is unexpectedly installed | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
 | BOOT-05 | E/G5 | not_run | Unexpected addon search-path content cannot bypass release inventory policy | not_run; procedure to be bound in owning phase |
 | BOOT-06 | E/G5 | not_run | Worker startup does not silently migrate production state | not_run; procedure to be bound in owning phase |
 | PKG-01 | E/G5 | not_run | Manifest validation does not import plugin code | not_run; procedure to be bound in owning phase |
@@ -131,7 +132,7 @@ Every spec ID is assigned an owning phase. `not_run` is not a pass. Exact comman
 | MIG-04 | E/G5 | not_run | Concurrent operations serialize or reject safely | not_run; procedure to be bound in owning phase |
 | MIG-05 | E/G5 | not_run | Reusing operation ID does not repeat migrations | not_run; procedure to be bound in owning phase |
 | MIG-06 | E/G5 | not_run | Restore recreates DB, filestore and previous release consistently | not_run; procedure to be bound in owning phase |
-| MIG-07 | E/G5 | not_run | Destructive fixture uninstall proves the real deletion semantics | not_run; procedure to be bound in owning phase |
+| MIG-07 | E/G5 | passed | Destructive fixture uninstall proves the real deletion semantics | `evidence/G0/20261027t234238z/gate-G0.json` and linked qualifying native/HTTP observations; R1 integration remains at owning phases |
 | MIG-08 | E/G5 | not_run | Old workers/jobs do not serve incompatible new schema | not_run; procedure to be bound in owning phase |
 | MIG-09 | E/G5 | not_run | Restored queues remain fenced until externally completed effects are reconciled | not_run; procedure to be bound in owning phase |
 | API-01 | C/G3 | not_run | Gateway exposes only declared methods and validates schemas | not_run; procedure to be bound in owning phase |

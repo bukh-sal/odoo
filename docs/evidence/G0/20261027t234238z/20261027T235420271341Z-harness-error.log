@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\mesh\Documents\modular_platform\tools\r0.py", line 335, in <module>
+    main()
+  File "C:\Users\mesh\Documents\modular_platform\tools\r0.py", line 307, in main
+    http_probe(state)
+  File "C:\Users\mesh\Documents\modular_platform\tools\r0.py", line 222, in http_probe
+    raise AssertionError("Unexpectedly available endpoint: " + path)
+AssertionError: Unexpectedly available endpoint: /web/database/manager

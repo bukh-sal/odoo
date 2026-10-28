@@ -2,13 +2,14 @@
   "schema_version": 1,
   "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
   "server_wide_modules": ["base", "web"],
-  "addons": ["base", "web", "base_setup", "auth_totp", "auth_passkey", "auth_password_policy", "base_import", "bus", "html_editor", "web_tour"],
+  "addons": ["base", "web", "base_setup", "auth_totp", "auth_passkey", "auth_password_policy", "base_import", "bus", "web_tour", "mp_compat"],
   "explicit_install": ["web", "auth_password_policy"],
   "excluded_auto_install": {
     "rpc": "Disable unused external XML/JSON RPC; native web transport remains.",
     "base_import_module": "Native code uploads must use the platform executor, never upstream module ZIP import.",
     "api_doc": "Optional upstream API documentation; public platform gateway will have its own contracts.",
     "iap": "Optional Odoo-hosted paid integration is not needed for local applications.",
+    "html_editor": "Imports IAP without a manifest dependency; R0/reference Notes use plain text. Reassess the editor adapter only when a required rich-text feature needs it.",
     "web_unsplash": "Optional external image integration is not a runtime requirement."
   }
 }

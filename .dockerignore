@@ -17,12 +17,12 @@
 !addons/base_import/**
 !addons/bus/
 !addons/bus/**
-!addons/html_editor/
-!addons/html_editor/**
 !addons/web_tour/
 !addons/web_tour/**
 !tools/
 !tools/**
+!platform_addons/
+!platform_addons/**
 !deploy/
 !deploy/**
 !tests/

@@ -1,0 +1,1 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "exec", "-T", "db", "createdb", "-U", "postgres", "-O", "modular", "mp_disposable_r0_20261027t234238z_final_restore"]

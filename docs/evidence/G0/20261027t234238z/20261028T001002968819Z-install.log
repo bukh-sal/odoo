@@ -1,0 +1,40 @@
+COMMAND: ["docker", "compose", "--env-file", "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\r0\\compose.env", "-f", "C:\\Users\\mesh\\Documents\\modular_platform\\deploy\\compose.yaml", "run", "--rm", "--no-deps", "maintenance", "install", "--database", "mp_disposable_r0_20261027t234238z_final", "--variant", "v1"]
+ Container mp-r0-20261027234238n-maintenance-run-acccc5cac7a1 Creating 
+ Container mp-r0-20261027234238n-maintenance-run-acccc5cac7a1 Created 
+2026-10-28 00:10:04,078 7 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:10:04,078 7 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:10:04,078 7 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 00:10:04,078 7 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:10:04,544 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:10:04,546 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:10:04,563 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: updating modules list 
+2026-10-28 00:10:04,564 7 INFO mp_disposable_r0_20261027t234238z_final odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-10-28 00:10:04,580 7 INFO mp_disposable_r0_20261027t234238z_final odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Disposable R0 Extension'] to user __system__ #1 via n/a 
+2026-10-28 00:10:04,588 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 12 modules... 
+2026-10-28 00:10:04,658 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module mp_r0_fixture (11/12) 
+2026-10-28 00:10:04,678 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module mp_r0_fixture: creating or updating database tables 
+2026-10-28 00:10:04,706 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading mp_r0_fixture/security/ir.model.access.csv 
+2026-10-28 00:10:04,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module mp_r0_fixture loaded in 0.06s, 49 queries (+49 other) 
+2026-10-28 00:10:04,716 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Loading module mp_r0_extension (12/12) 
+2026-10-28 00:10:04,718 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: module mp_r0_extension: creating or updating database tables 
+2026-10-28 00:10:04,735 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Module mp_r0_extension loaded in 0.02s, 29 queries (+29 other) 
+2026-10-28 00:10:04,735 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 12 modules loaded in 0.15s, 78 queries (+78 extra) 
+2026-10-28 00:10:04,810 7 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Modules loaded. 
+2026-10-28 00:10:04,814 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry changed, signaling through the database 
+2026-10-28 00:10:04,815 7 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry loaded in 0.287s 
+2026-10-28 00:10:04,815 7 INFO mp_disposable_r0_20261027t234238z_final odoo.service.server: Initiating shutdown 
+2026-10-28 00:10:04,815 7 INFO mp_disposable_r0_20261027t234238z_final odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:10:04,815 7 INFO mp_disposable_r0_20261027t234238z_final odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=12): Closed 1 connections  
+2026-10-28 00:10:05,551 10 INFO ? odoo: Odoo version 19.0 
+2026-10-28 00:10:05,551 10 INFO ? odoo: Using configuration file at /run/secrets/odoo_config 
+2026-10-28 00:10:05,551 10 INFO ? odoo: addons paths: _NamespacePath(['/opt/modular/odoo/addons', '/var/lib/modular/addons/19.0', '/opt/modular/addons', '/opt/modular/fixtures/v1']) 
+2026-10-28 00:10:05,551 10 INFO ? odoo: database: modular@db:5432 
+2026-10-28 00:10:05,950 10 INFO ? odoo.service.server: Initiating shutdown 
+2026-10-28 00:10:05,950 10 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-10-28 00:10:05,966 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 1 modules... 
+2026-10-28 00:10:05,969 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-10-28 00:10:05,971 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: loading 12 modules... 
+2026-10-28 00:10:06,036 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: 12 modules loaded in 0.06s, 0 queries (+0 extra) 
+2026-10-28 00:10:06,056 10 INFO mp_disposable_r0_20261027t234238z_final odoo.modules.loading: Modules loaded. 
+2026-10-28 00:10:06,060 10 INFO mp_disposable_r0_20261027t234238z_final odoo.registry: Registry loaded in 0.109s 
+MP_R0_RESULT={"record": 1, "attachment": 21, "name": "Original fixture", "label": "blue", "store_fname": "29/296b79be8929f1bb37643b2d9b8f7ed762bd4820"}
