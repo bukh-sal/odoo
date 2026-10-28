@@ -1,0 +1,24 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace" [selected]
+    - option "Personal"
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Alice
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Plugin operations":
+    - paragraph: Prepare a plan, request the operation, then use local operator approval and apply.
+    - paragraph: Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.
+    - alert:
+      - strong: Application operator access is required
+      - button "Refresh"

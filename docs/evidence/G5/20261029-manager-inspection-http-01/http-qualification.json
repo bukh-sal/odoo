@@ -1,0 +1,20 @@
+{
+  "state": "completed_verified",
+  "utc": "2026-10-28T22:20:20.802317+00:00",
+  "generation": 4,
+  "checks": [
+    "current installed schema/version/availability/dependencies and honest health",
+    "exact manifest, permissions/services/data/provenance/trust details",
+    "workspace actor denied operator metadata",
+    "real curated archive upload and extracted-byte validation",
+    "unknown bytes honestly stop at trust gate",
+    "actual byte identity mismatch rejected",
+    "actual upload CSRF/operator/stale-release denials",
+    "exact100MiB upload traverses real proxy and bounded native route",
+    "proxy rejects100MiBplus1 before receiving oversized body",
+    "no retained upload staging directories",
+    "retained Notes API/business/features/bindings/grants exact and main unchanged"
+  ],
+  "main_target_unchanged": true,
+  "browser_qualification_pending": true
+}

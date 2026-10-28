@@ -1,0 +1,8 @@
+{
+  "state": "restored_verified",
+  "catalog_items": 23,
+  "purpose": "Untrusted mirror-only pagination, inert markup escaping and invalid upload branch; no real catalog/trust/artifact/approval changes.",
+  "utc": "2026-10-28T22:26:09.303428+00:00",
+  "profile_exact": true,
+  "business_features_bindings_grants_exact": true
+}

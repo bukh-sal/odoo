@@ -1,0 +1,154 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace" [selected]
+    - option "Personal"
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Plugin operations":
+    - paragraph: Prepare a plan, request the operation, then use local operator approval and apply.
+    - paragraph: Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.
+    - region "Upload validation":
+      - heading "Validate a plugin archive" [level=2]
+      - paragraph: Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.
+      - generic: Plugin archive (.mplug, maximum 100 MiB)
+      - button "Plugin archive (.mplug, maximum 100 MiB)"
+      - button "Validate archive"
+      - paragraph: 8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6.mplug
+      - status:
+        - paragraph:
+          - text: "Validation result:"
+          - strong: verified
+        - code: sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6
+        - paragraph: Archive, inventory and extracted bytes verified against the published curated policy. Independent local revalidation and approval are still required.
+        - paragraph: Retain your original file for the local operator. Package builds and runtime selection happen separately, outside this web request.
+        - generic: modular --config OPERATOR_TRUST_CONFIG plugin validate ARTIFACT_FILE --digest sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6 modular --config OPERATOR_TRUST_CONFIG catalog --store OPERATOR_CATALOG add ARTIFACT_FILE --digest sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6
+    - region "Installed plugins":
+      - heading "Installed plugins" [level=2]
+      - paragraph: Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.
+      - table:
+        - rowgroup:
+          - row "Plugin Version / trust Database Health Dependencies Workspace availability":
+            - columnheader "Plugin"
+            - columnheader "Version / trust"
+            - columnheader "Database"
+            - columnheader "Health"
+            - columnheader "Dependencies"
+            - columnheader "Workspace availability"
+        - rowgroup:
+          - 'row "Notes 0.2.3 operator-approved-exact-digest installed unknown Registry observed; plugin-specific health has not been probed. satisfied Personal: enabled"':
+            - cell "Notes":
+              - button "Notes"
+            - cell "0.2.3 operator-approved-exact-digest":
+              - text: 0.2.3
+              - paragraph: operator-approved-exact-digest
+            - cell "installed"
+            - cell "unknown Registry observed; plugin-specific health has not been probed.":
+              - text: unknown
+              - paragraph: Registry observed; plugin-specific health has not been probed.
+            - cell "satisfied"
+            - 'cell "Personal: enabled"':
+              - paragraph: "Personal: enabled"
+      - button "Refresh metadata"
+    - generic: Plugin and version
+    - combobox "Plugin and version":
+      - option "Choose a plugin"
+      - option "Canvas · 0.1.2"
+      - option "Canvas · 0.1.3"
+      - option "Notes · 0.2.1"
+      - option "Notes · 0.2.2" [selected]
+      - option "Notes · 0.2.3"
+      - option "Notes Labels · 0.2.0"
+      - option "Notes Labels · 0.2.1"
+      - option "Catalog fixture 00 · 1.0.0"
+      - option "Catalog fixture 01 · 1.0.0"
+      - option "Catalog fixture 02 · 1.0.0"
+      - option "Catalog fixture 03 · 1.0.0"
+      - option "Catalog fixture 04 · 1.0.0"
+      - option "Catalog fixture 05 · 1.0.0"
+      - option "Catalog fixture 06 · 1.0.0"
+      - option "Catalog fixture 07 · 1.0.0"
+      - option "Catalog fixture 08 · 1.0.0"
+      - option "Catalog fixture 09 · 1.0.0"
+      - option "Catalog fixture 10 · 1.0.0"
+      - option "Catalog fixture 11 · 1.0.0"
+      - option "Catalog fixture 12 · 1.0.0"
+      - option "Catalog fixture 13 · 1.0.0"
+      - option "Catalog fixture 14 · 1.0.0"
+      - option "Invalid mirror fixture · 1.0.0"
+    - generic: Operation
+    - combobox "Operation":
+      - option "Install"
+      - option "Upgrade"
+      - option "Feature suspension" [selected]
+      - option "Enable feature"
+      - option "Native uninstall"
+      - option "Unregister service"
+      - option "Remove unused artifact"
+    - generic: Workspace
+    - combobox "Workspace":
+      - option "Choose a workspace" [selected]
+      - option "Personal"
+      - option "Research"
+    - checkbox "Include dependent changes in the proposed plan"
+    - text: Include dependent changes in the proposed plan
+    - button "Prepare plan" [disabled]
+    - region "Package trust":
+      - heading "Notes" [level=2]
+      - paragraph: Workspace notes
+      - paragraph: "Publisher: <b data-mp-g5-escape=\"publisher\">Fixture publisher</b> · License: LGPL-3.0-only"
+      - paragraph: "Trust: operator-approved-exact-digest · Signature verified: no"
+      - code: sha256:fb7e53192237dcbe4877e52eb414330dcf963ff6fae03d83934567863b435ac6
+      - button "View package details" [active]
+    - region "Plugin details":
+      - heading "Notes package details" [level=2]
+      - paragraph: org.example.notes · 0.2.2 · <b data-mp-g5-escape="publisher">Fixture publisher</b> · LGPL-3.0-only
+      - paragraph: Workspace notes
+      - code: sha256:fb7e53192237dcbe4877e52eb414330dcf963ff6fae03d83934567863b435ac6
+      - paragraph: Native Python and same-origin plugin JavaScript are fully trusted code. Declared permissions govern supported APIs; they do not sandbox arbitrary native code.
+      - paragraph: "Trust: operator-approved-exact-digest. Signature and publisher identity verified: no."
+      - heading "Declared permissions" [level=3]
+      - paragraph:
+        - code: notes.read
+        - text: ": Read notes"
+      - paragraph:
+        - code: notes.write
+        - text: ": Write notes"
+      - paragraph:
+        - code: notes.delete
+        - text: ": Delete notes"
+      - heading "Services and dependencies" [level=3]
+      - paragraph: Provides org.example.notes.documents 1.0
+      - paragraph: Provides org.example.notes.documents 2.0
+      - paragraph: "Requires documents: org.example.notes.documents >=1.0,<2.0 (required)"
+      - paragraph: "Python requirements: None"
+      - heading "Native extension targets and data impact" [level=3]
+      - paragraph: "Models: mp.example.note"
+      - paragraph: "Extension targets: None"
+      - paragraph:
+        - text: model
+        - code: mp.example.note
+        - text: "→ workspace; deletion policy: owned"
+      - paragraph: Data effects are package declarations. Arbitrary trusted hooks may have additional effects; review the exact operation plan and recovery requirements.
+      - heading "Provenance" [level=3]
+      - paragraph: "Builder claim: repository-reference-assembler-v1; source files: 14; upstream claim: 5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+      - paragraph:
+        - text: "Provenance digest:"
+        - code: sha256:be8cfbe791c18fc470d904737fe6882933268197db94273bb7172765d7870f3a
+      - paragraph:
+        - text: "Source inventory digest:"
+        - code: sha256:44b61af89f506a45903ae98dca4962aaa8bd9481fbb760e09f7559d1a1421178
+      - button "Close details"

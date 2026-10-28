@@ -1,0 +1,9 @@
+{
+  "result": "passed_read_only_reconciliation",
+  "failure": "Verifier compared psql bytes b1 with string1 after successful cache write.",
+  "payload_exact": true,
+  "business_exact": true,
+  "catalog_items": 23,
+  "native_or_cache_mutation_repeated": false,
+  "action": "Correct bytes comparison; activate existing marker, then restore through the same helper after bounded browser probes."
+}

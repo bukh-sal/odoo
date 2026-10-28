@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:20:18Z",
+  "profile_observed_at": "2026-10-28T22:16:57Z",
+  "stale": false,
+  "control_authority": "independent_local_os",
+  "kind": "upload_validation",
+  "artifact_digest": "sha256:5d9b4f9326e2b96e7b7b9dff8d54d17397ba96d81dbc26b92dc8820c7e86b565",
+  "size": 25,
+  "result": "not_curated",
+  "validation_scope": "trust_gate",
+  "artifact": null,
+  "error_code": "NOT_CURATED",
+  "retained": false,
+  "executed": false
+}

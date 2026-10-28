@@ -1,0 +1,73 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- heading "Notes" [level=1]
+- paragraph: Your ideas, in one place.
+- button "Export notes"
+- button "New"
+- generic: Notes
+- search:
+  - search:
+    - button "Search...":
+      - img: 
+    - searchbox "Search..." [active]
+  - button ""
+- search:
+  - navigation "Pager":
+    - generic: 1-2
+    - text: / 2
+    - button "Previous" [disabled]:
+      - generic: 
+    - button "Next" [disabled]:
+      - generic: 
+- main:
+  - table:
+    - rowgroup:
+      - row "Title  Revision  Last Updated on ":
+        - columnheader:
+          - checkbox
+        - columnheader "Title ":
+          - generic: Title
+          - generic: 
+        - columnheader "Revision ":
+          - generic: Revision
+          - generic: 
+        - columnheader "Last Updated on ":
+          - generic: Last Updated on
+          - generic: 
+    - rowgroup:
+      - row "Manager upgrade fixture revision two 2 Oct 29, 12:29 AM":
+        - cell:
+          - checkbox
+        - cell "Manager upgrade fixture revision two"
+        - cell "2"
+        - cell "Oct 29, 12:29 AM"
+      - row "Manager upgrade fixture 1 1 Oct 29, 12:29 AM":
+        - cell:
+          - checkbox
+        - cell "Manager upgrade fixture 1"
+        - cell "1"
+        - cell "Oct 29, 12:29 AM"
+      - row:
+        - cell
+      - row:
+        - cell
+    - rowgroup:
+      - row:
+        - cell

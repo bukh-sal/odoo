@@ -1,0 +1,7 @@
+{
+  "state": "updating",
+  "edge_id": "f7ae8e5897c9",
+  "volume": "mp-r0-r1mgr84459f617ab0_proxyconfig",
+  "old_sha256": "sha256:add58408fcd7c20c29dd649e7c6db1e813d4e811b1581e7a70d6d7f87a3b2422",
+  "new_sha256": "sha256:de7d3e2ed81e310fc89781522b81aef19877e22378180071bf6c8c6c13b3b066"
+}

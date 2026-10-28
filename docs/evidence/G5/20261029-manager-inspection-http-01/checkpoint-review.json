@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "utc": "2026-10-28T22:38:55.813649+00:00",
+  "host_helper_sha256": {
+    "tools/qualify_manager_inspection_core.py": "db0795051ee8efbecf02ff4ebdf76d3a2c2e03388296cc75f74ca4ce83633c5b",
+    "tools/qualify_manager_inspection_http.py": "1ff1604c0e86e8a1d908203587d59ea734d7356c0ef675e13c3ca5834ce66e23",
+    "tools/manager_inspection_browser_fixture.py": "426e2a81cf314e822961cc2a22afe31fb8e20d2a5a013954967e805a1ee1f60b"
+  },
+  "syntax_passed": true,
+  "evidence_digests_verified": 36,
+  "operator_authority_review_document": "docs/operations.md",
+  "operator_authority_review_sha256": "7e00b2636a90e70bdd4630e7ff6d9db9f3967beaff01fa50fa0b4950fef07734",
+  "runtime_source_unchanged_since_final_audit": true,
+  "limits": [
+    "Helpers are host-only fixture procedures added after candidate build, not claimed as runtime image inputs.",
+    "No fullR1/G5 completion claim."
+  ]
+}

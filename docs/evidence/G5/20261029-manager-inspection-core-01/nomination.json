@@ -1,0 +1,12 @@
+{
+  "operation_type": "core_upgrade",
+  "targets": [
+    {
+      "installation_id": "627c208d-66b0-571a-b5c2-7496c2dcd2eb",
+      "site_id": "365532d7-921e-43bc-8d49-b037a7183308",
+      "workspace_id": "5928be42-c80a-41ec-a532-e5995f6a9698",
+      "plugin_id": "org.example.notes",
+      "action": "deploy"
+    }
+  ]
+}

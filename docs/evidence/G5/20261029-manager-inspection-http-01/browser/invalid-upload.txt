@@ -1,0 +1,115 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace" [selected]
+    - option "Personal"
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Plugin operations":
+    - paragraph: Prepare a plan, request the operation, then use local operator approval and apply.
+    - paragraph: Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.
+    - region "Upload validation":
+      - heading "Validate a plugin archive" [level=2]
+      - paragraph: Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.
+      - generic: Plugin archive (.mplug, maximum 100 MiB)
+      - button "Plugin archive (.mplug, maximum 100 MiB)"
+      - button "Validate archive"
+      - paragraph: invalid-mirrored.mplug
+      - status:
+        - paragraph:
+          - text: "Validation result:"
+          - strong: invalid
+        - code: sha256:362558fe240022777b17298dac2d35ac66a1ba29c9a48935b575ff91c467976b
+        - paragraph: Validation rejected the archive or its byte identity. Nothing was installed or retained.
+        - paragraph: Retain your original file for the local operator. Package builds and runtime selection happen separately, outside this web request.
+        - generic: modular --config OPERATOR_TRUST_CONFIG plugin validate ARTIFACT_FILE --digest sha256:362558fe240022777b17298dac2d35ac66a1ba29c9a48935b575ff91c467976b modular --config OPERATOR_TRUST_CONFIG catalog --store OPERATOR_CATALOG add ARTIFACT_FILE --digest sha256:362558fe240022777b17298dac2d35ac66a1ba29c9a48935b575ff91c467976b
+    - region "Installed plugins":
+      - heading "Installed plugins" [level=2]
+      - paragraph: Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.
+      - table:
+        - rowgroup:
+          - row "Plugin Version / trust Database Health Dependencies Workspace availability":
+            - columnheader "Plugin"
+            - columnheader "Version / trust"
+            - columnheader "Database"
+            - columnheader "Health"
+            - columnheader "Dependencies"
+            - columnheader "Workspace availability"
+        - rowgroup:
+          - 'row "Notes 0.2.3 operator-approved-exact-digest installed unknown Registry observed; plugin-specific health has not been probed. satisfied Personal: enabled"':
+            - cell "Notes":
+              - button "Notes"
+            - cell "0.2.3 operator-approved-exact-digest":
+              - text: 0.2.3
+              - paragraph: operator-approved-exact-digest
+            - cell "installed"
+            - cell "unknown Registry observed; plugin-specific health has not been probed.":
+              - text: unknown
+              - paragraph: Registry observed; plugin-specific health has not been probed.
+            - cell "satisfied"
+            - 'cell "Personal: enabled"':
+              - paragraph: "Personal: enabled"
+      - button "Refresh metadata"
+    - generic: Plugin and version
+    - combobox "Plugin and version":
+      - option "Choose a plugin"
+      - option "Canvas · 0.1.2"
+      - option "Canvas · 0.1.3"
+      - option "Notes · 0.2.1"
+      - option "Notes · 0.2.2" [selected]
+      - option "Notes · 0.2.3"
+      - option "Notes Labels · 0.2.0"
+      - option "Notes Labels · 0.2.1"
+      - option "Catalog fixture 00 · 1.0.0"
+      - option "Catalog fixture 01 · 1.0.0"
+      - option "Catalog fixture 02 · 1.0.0"
+      - option "Catalog fixture 03 · 1.0.0"
+      - option "Catalog fixture 04 · 1.0.0"
+      - option "Catalog fixture 05 · 1.0.0"
+      - option "Catalog fixture 06 · 1.0.0"
+      - option "Catalog fixture 07 · 1.0.0"
+      - option "Catalog fixture 08 · 1.0.0"
+      - option "Catalog fixture 09 · 1.0.0"
+      - option "Catalog fixture 10 · 1.0.0"
+      - option "Catalog fixture 11 · 1.0.0"
+      - option "Catalog fixture 12 · 1.0.0"
+      - option "Catalog fixture 13 · 1.0.0"
+      - option "Catalog fixture 14 · 1.0.0"
+      - option "Invalid mirror fixture · 1.0.0"
+    - generic: Operation
+    - combobox "Operation":
+      - option "Install"
+      - option "Upgrade"
+      - option "Feature suspension" [selected]
+      - option "Enable feature"
+      - option "Native uninstall"
+      - option "Unregister service"
+      - option "Remove unused artifact"
+    - generic: Workspace
+    - combobox "Workspace":
+      - option "Choose a workspace" [selected]
+      - option "Personal"
+      - option "Research"
+    - checkbox "Include dependent changes in the proposed plan"
+    - text: Include dependent changes in the proposed plan
+    - button "Prepare plan" [disabled]
+    - region "Package trust":
+      - heading "Notes" [level=2]
+      - paragraph: Workspace notes
+      - paragraph: "Publisher: <b data-mp-g5-escape=\"publisher\">Fixture publisher</b> · License: LGPL-3.0-only"
+      - paragraph: "Trust: operator-approved-exact-digest · Signature verified: no"
+      - code: sha256:fb7e53192237dcbe4877e52eb414330dcf963ff6fae03d83934567863b435ac6
+      - button "View package details"

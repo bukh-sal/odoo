@@ -1,0 +1,42 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace"
+    - option "Personal" [selected]
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Notes":
+      - /url: "#"
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- heading "Notes" [level=1]
+- paragraph: Your ideas, in one place.
+- button "All notes"
+- button "Export notes"
+- button "Delete note"
+- generic: Manager upgrade fixture revision two
+- search:
+  - navigation "Pager":
+    - generic: "1"
+    - text: / 1
+    - button "Previous" [disabled]:
+      - generic: 
+    - button "Next" [disabled]:
+      - generic: 
+- main:
+  - generic: Title
+  - textbox "Title": Manager upgrade fixture revision two
+  - generic: Revision
+  - generic: "2"
+  - generic: Note
+  - textbox "Note":
+    - /placeholder: Write a note…
+    - text: Explicit retained native migration record.

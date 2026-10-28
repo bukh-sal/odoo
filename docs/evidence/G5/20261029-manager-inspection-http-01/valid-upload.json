@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:20:18Z",
+  "profile_observed_at": "2026-10-28T22:16:57Z",
+  "stale": false,
+  "control_authority": "independent_local_os",
+  "kind": "upload_validation",
+  "artifact_digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+  "size": 28314,
+  "result": "verified",
+  "validation_scope": "archive_and_inventory",
+  "artifact": {
+    "plugin_id": "org.example.notes",
+    "version": "0.2.3",
+    "artifact_digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+    "name": "Notes",
+    "description": "Workspace notes",
+    "publisher": "example",
+    "license": "LGPL-3.0-only",
+    "runtime": "native",
+    "trust_model": "operator-approved-exact-digest",
+    "signature_verified": false,
+    "warnings": [],
+    "policy_generation": 3
+  },
+  "error_code": null,
+  "retained": false,
+  "executed": false
+}

@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:20:18Z",
+  "profile_observed_at": "2026-10-28T22:16:57Z",
+  "stale": false,
+  "control_authority": "independent_local_os",
+  "kind": "plugin_details",
+  "artifact": {
+    "plugin_id": "org.example.notes",
+    "version": "0.2.3",
+    "artifact_digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+    "name": "Notes",
+    "description": "Workspace notes",
+    "publisher": "example",
+    "license": "LGPL-3.0-only",
+    "runtime": "native",
+    "trust_model": "operator-approved-exact-digest",
+    "signature_verified": false,
+    "warnings": [],
+    "policy_generation": 3
+  },
+  "manifest": {
+    "ui": {
+      "mode": "trusted",
+      "pages": [
+        {
+          "id": "home",
+          "kind": "native_view",
+          "path": "/",
+          "layout": "shell",
+          "title_key": "notes.title",
+          "action_ref": "mp_example_notes.action_notes",
+          "permission": "notes.read",
+          "ui_api_major": 1
+        }
+      ],
+      "slots": [
+        {
+          "id": "org.example.notes:slot:detail_actions",
+          "kind": "actions",
+          "major": 1,
+          "order": 100,
+          "failure": "isolate",
+          "cardinality": "many",
+          "context_schema": "schemas/note-detail-actions.json"
+        }
+      ],
+      "design": "standard",
+      "navigation": [
+        {
+          "id": "main",
+          "icon": "file_text",
+          "page": "home",
+          "order": 200,
+          "label_key": "notes.title"
+        }
+      ]
+    },
+    "data": {
+      "models": [
+        "mp.example.note"
+      ],
+      "contributions": [
+        {
+          "id": "mp.example.note",
+          "kind": "model",
+          "target": "workspace",
+          "delete_policy": "owned"
+        }
+      ],
+      "export_schema": "schemas/notes-export-v1.json",
+      "extension_targets": []
+    },
+    "plugin": {
+      "id": "org.example.notes",
+      "name": "Notes",
+      "license": "LGPL-3.0-only",
+      "version": "0.2.3",
+      "publisher": "example",
+      "description": "Workspace notes"
+    },
+    "runtime": {
+      "kind": "native",
+      "python": ">=3.12,<3.13",
+      "addon_name": "mp_example_notes",
+      "python_dependencies": [],
+      "native_compatibility": "odoo-19"
+    },
+    "upgrade": {
+      "strategy": "native_migrations",
+      "destructive": false,
+      "transitions": [
+        {
+          "to": "0.2.3",
+          "from": "0.2.2",
+          "retry": "reconcile",
+          "scripts": [
+            {
+              "path": "migrations/19.0.0.2.3/pre-validate_revisions.py",
+              "phase": "pre",
+              "digest": "sha256:11543770959a6676dfa0123295370c3be184e05d4c4287b35b99f3b586db9133"
+            },
+            {
+              "path": "migrations/19.0.0.2.3/post-verify_revisions.py",
+              "phase": "post",
+              "digest": "sha256:43f44b974f4f29c6d599866e0bfaa236f622ba86130fc154acb08de19ff7a2e1"
+            }
+          ],
+          "recovery": "Restore coordinated previous database/filestore/image checkpoint after uncertain failure",
+          "preconditions": [
+            "Controlled maintenance; existing note revisions are positive"
+          ],
+          "postconditions": [
+            "Positive-revision SQL constraint validated; all note rows retained byte-for-byte"
+          ]
+        }
+      ],
+      "requires_maintenance": true
+    },
+    "services": {
+      "provides": [
+        {
+          "id": "org.example.notes.documents",
+          "schema": "schemas/documents-v1.json",
+          "handler": "mp_example_notes.services:NotesService",
+          "methods": [
+            "list",
+            "get",
+            "create",
+            "update",
+            "delete"
+          ],
+          "api_version": "1.0"
+        },
+        {
+          "id": "org.example.notes.documents",
+          "schema": "schemas/documents-v2.json",
+          "handler": "mp_example_notes.services:NotesServiceV2",
+          "methods": [
+            "get",
+            "list"
+          ],
+          "api_version": "2.0"
+        }
+      ],
+      "requires": [
+        {
+          "id": "org.example.notes.documents",
+          "alias": "documents",
+          "version": ">=1.0,<2.0",
+          "contract_major": 1
+        }
+      ]
+    },
+    "activation": {
+      "scopes": [
+        "site",
+        "workspace"
+      ],
+      "supports_feature_suspension": true
+    },
+    "permissions": {
+      "defines": {
+        "notes.read": "Read notes",
+        "notes.write": "Write notes",
+        "notes.delete": "Delete notes"
+      },
+      "requests": []
+    },
+    "dependencies": {
+      "plugins": {}
+    },
+    "integrations": {
+      "optional": {
+        "org.example.notes_labels": ">=0.1,<0.3"
+      }
+    },
+    "compatibility": {
+      "platform": ">=0.1,<0.2",
+      "ui_api_major": 1,
+      "host_api_major": 1
+    },
+    "schema_version": 1
+  },
+  "native_trusted_code": true,
+  "feature_suspension_unloads_code": false,
+  "provenance": {
+    "builder": "repository-reference-assembler-v1",
+    "source_files_count": 16,
+    "source_inventory_digest": "sha256:2a9c463b9b539073e6c9144f0ac35acb72455a6177234e8e93c3571e0e85fe9d",
+    "provenance_digest": "sha256:392686ad972e5a320dabb042d98996f389719839894b952196aa01ce1bb1d00e",
+    "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+    "publisher_identity_verified": false
+  }
+}

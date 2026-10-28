@@ -1,0 +1,12 @@
+{
+  "state": "completed_verified",
+  "edge_id": "f7ae8e5897c9",
+  "volume": "mp-r0-r1mgr84459f617ab0_proxyconfig",
+  "old_sha256": "sha256:add58408fcd7c20c29dd649e7c6db1e813d4e811b1581e7a70d6d7f87a3b2422",
+  "new_sha256": "sha256:de7d3e2ed81e310fc89781522b81aef19877e22378180071bf6c8c6c13b3b066",
+  "utc": "2026-10-28T22:20:05.637902+00:00",
+  "native_check_stderr": "2026/10/28 22:20:05 [warn] 30#30: the \"user\" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2\nnginx: [warn] the \"user\" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2\nnginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful\n",
+  "reload_stderr": "2026/10/28 22:20:05 [warn] 36#36: the \"user\" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2\nnginx: [warn] the \"user\" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2\n2026/10/28 22:20:05 [notice] 36#36: signal process started\n",
+  "main_target_unchanged": true,
+  "scope": "Upload exact location100MiB; other routes10MiB, DB-manager denial and loopback edge unchanged."
+}

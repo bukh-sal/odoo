@@ -1,0 +1,27 @@
+{
+  "result": "passed_read_only_final_audit",
+  "utc": "2026-10-28T22:34:02.511956+00:00",
+  "main_generation": 28,
+  "main_config_business_state_exact": true,
+  "main_old_files_preserved": 60,
+  "fixture_generation": 4,
+  "fixture_business_state_exact": true,
+  "fixture_old_files_preserved": 40,
+  "profile_restored_exact": true,
+  "restored_catalog_items": 7,
+  "independent_catalog_entries": 7,
+  "core_operation_completed": "93a3feb7-7f8e-4224-883c-45bb2830d9a4",
+  "immutable_candidate_source_files_match": 269,
+  "frozen_files_match": 84,
+  "manager_metadata_no_html_or_script_sinks": true,
+  "manager_dynamic_attributes": [
+    "t-att-datetime",
+    "t-att-disabled",
+    "t-att-value"
+  ],
+  "known_fixture_credentials_absent": true,
+  "limits": [
+    "Known-value secret check only, not a complete SEC03 audit.",
+    "Browser role test uses fresh actor login, not an in-flight revocation; late reply/disposal covered by source tests."
+  ]
+}

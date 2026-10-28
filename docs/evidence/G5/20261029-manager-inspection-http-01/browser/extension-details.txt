@@ -1,0 +1,139 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace" [selected]
+    - option "Personal"
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Plugin operations":
+    - paragraph: Prepare a plan, request the operation, then use local operator approval and apply.
+    - paragraph: Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.
+    - region "Upload validation":
+      - heading "Validate a plugin archive" [level=2]
+      - paragraph: Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.
+      - generic: Plugin archive (.mplug, maximum 100 MiB)
+      - button "Plugin archive (.mplug, maximum 100 MiB)"
+      - button "Validate archive"
+      - paragraph: not-curated.mplug
+      - status:
+        - paragraph:
+          - text: "Validation result:"
+          - strong: not_curated
+        - code: sha256:aa9cb2ce4c9dec333659dc924d513e80434397931d4bf379c317eca0a40afa3a
+        - paragraph: This digest is absent from the published curated catalog. Archive contents have not been validated. A local operator must review and configure trust separately.
+        - paragraph: Retain your original file for the local operator. Package builds and runtime selection happen separately, outside this web request.
+        - generic: modular --config OPERATOR_TRUST_CONFIG plugin validate ARTIFACT_FILE --digest sha256:aa9cb2ce4c9dec333659dc924d513e80434397931d4bf379c317eca0a40afa3a modular --config OPERATOR_TRUST_CONFIG catalog --store OPERATOR_CATALOG add ARTIFACT_FILE --digest sha256:aa9cb2ce4c9dec333659dc924d513e80434397931d4bf379c317eca0a40afa3a
+    - region "Installed plugins":
+      - heading "Installed plugins" [level=2]
+      - paragraph: Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.
+      - table:
+        - rowgroup:
+          - row "Plugin Version / trust Database Health Dependencies Workspace availability":
+            - columnheader "Plugin"
+            - columnheader "Version / trust"
+            - columnheader "Database"
+            - columnheader "Health"
+            - columnheader "Dependencies"
+            - columnheader "Workspace availability"
+        - rowgroup:
+          - 'row "Notes 0.2.3 operator-approved-exact-digest installed unknown Registry observed; plugin-specific health has not been probed. satisfied Personal: enabled"':
+            - cell "Notes":
+              - button "Notes"
+            - cell "0.2.3 operator-approved-exact-digest":
+              - text: 0.2.3
+              - paragraph: operator-approved-exact-digest
+            - cell "installed"
+            - cell "unknown Registry observed; plugin-specific health has not been probed.":
+              - text: unknown
+              - paragraph: Registry observed; plugin-specific health has not been probed.
+            - cell "satisfied"
+            - 'cell "Personal: enabled"':
+              - paragraph: "Personal: enabled"
+      - button "Refresh metadata"
+    - generic: Plugin and version
+    - combobox "Plugin and version":
+      - option "Choose a plugin"
+      - option "Canvas · 0.1.2"
+      - option "Canvas · 0.1.3"
+      - option "Notes · 0.2.1"
+      - option "Notes · 0.2.2"
+      - option "Notes · 0.2.3"
+      - option "Notes Labels · 0.2.0"
+      - option "Notes Labels · 0.2.1" [selected]
+    - generic: Operation
+    - combobox "Operation":
+      - option "Install"
+      - option "Upgrade"
+      - option "Feature suspension" [selected]
+      - option "Enable feature"
+      - option "Native uninstall"
+      - option "Unregister service"
+      - option "Remove unused artifact"
+    - generic: Workspace
+    - combobox "Workspace":
+      - option "Choose a workspace" [selected]
+      - option "Personal"
+      - option "Research"
+    - checkbox "Include dependent changes in the proposed plan"
+    - text: Include dependent changes in the proposed plan
+    - button "Prepare plan" [disabled]
+    - region "Package trust":
+      - heading "Notes Labels" [level=2]
+      - paragraph: Trusted shared-table Notes extension
+      - paragraph: "Publisher: example · License: LGPL-3.0-only"
+      - paragraph: "Trust: operator-approved-exact-digest · Signature verified: no"
+      - code: sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2
+      - button "View package details" [active]
+    - region "Plugin details":
+      - heading "Notes Labels package details" [level=2]
+      - paragraph: org.example.notes_labels · 0.2.1 · example · LGPL-3.0-only
+      - paragraph: Trusted shared-table Notes extension
+      - code: sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2
+      - paragraph: Native Python and same-origin plugin JavaScript are fully trusted code. Declared permissions govern supported APIs; they do not sandbox arbitrary native code.
+      - paragraph: "Trust: operator-approved-exact-digest. Signature and publisher identity verified: no."
+      - heading "Declared permissions" [level=3]
+      - paragraph:
+        - code: labels.read
+        - text: ": Read labels"
+      - paragraph:
+        - code: labels.write
+        - text: ": Set labels"
+      - paragraph:
+        - code: org.example.notes:notes.read
+        - text: "(workspace): Read base revision through the documents binding"
+      - heading "Services and dependencies" [level=3]
+      - paragraph: Provides org.example.notes_labels.labels 1.0
+      - paragraph: "Requires documents: org.example.notes.documents >=1.0,<2.0 (required)"
+      - paragraph: "Requires labels: org.example.notes_labels.labels >=1.0,<2.0 (required)"
+      - paragraph: org.example.notes >=0.1,<0.3
+      - paragraph: "Python requirements: None"
+      - heading "Native extension targets and data impact" [level=3]
+      - paragraph: "Models: None"
+      - paragraph: "Extension targets: mp.example.note"
+      - paragraph:
+        - text: field
+        - code: mp.example.note.x_notes_labels
+        - text: "→ mp.example.note; deletion policy: owned"
+      - paragraph: Data effects are package declarations. Arbitrary trusted hooks may have additional effects; review the exact operation plan and recovery requirements.
+      - heading "Provenance" [level=3]
+      - paragraph: "Builder claim: repository-reference-assembler-v1; source files: 10; upstream claim: 5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+      - paragraph:
+        - text: "Provenance digest:"
+        - code: sha256:d56393fb441838749c734028419f6eb29a81644989a1ea937890d4144731a7c8
+      - paragraph:
+        - text: "Source inventory digest:"
+        - code: sha256:2c5ce83dc2fee8553357fda98b8a49ef0dd5f52d367b333ec2635e5d957cbe22
+      - button "Close details"

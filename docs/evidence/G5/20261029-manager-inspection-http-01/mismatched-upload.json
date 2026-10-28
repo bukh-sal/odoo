@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:20:18Z",
+  "profile_observed_at": "2026-10-28T22:16:57Z",
+  "stale": false,
+  "control_authority": "independent_local_os",
+  "kind": "upload_validation",
+  "artifact_digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+  "size": 28314,
+  "result": "invalid",
+  "validation_scope": "archive_rejected",
+  "artifact": null,
+  "error_code": "DIGEST_MISMATCH",
+  "retained": false,
+  "executed": false
+}

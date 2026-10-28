@@ -1,0 +1,36 @@
+{
+  "result": "passed_bounded_acceptance_review",
+  "utc": "2026-10-28T22:34:02.511956+00:00",
+  "newly_qualified": [
+    "SEC-01",
+    "SEC-05"
+  ],
+  "mapping": {
+    "SEC-01": {
+      "evidence": [
+        "browser/escaped-metadata.txt",
+        "browser/escaped-publisher.jpg",
+        "postbrowser-audit.json"
+      ],
+      "finding": "Package metadata is always escaped text in Operations; inert markup stays literal with0injectedDOMelements; no raw HTML/eval or dynamic URL sinks. Trusted plugin JS after approval is a separate full-trust boundary."
+    },
+    "SEC-05": {
+      "evidence": [
+        "browser/details.txt",
+        "browser/extension-details.txt",
+        "postbrowser-audit.json",
+        "../../../operations.md"
+      ],
+      "finding": "Actual details disclose fully trusted native/same-origin code, API-only permission grants and no native sandbox; plan text retains host application authority; suspension explicitly does not unload native overrides."
+    }
+  },
+  "does_not_qualify": [
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEC-07",
+    "SEC-08"
+  ],
+  "contract_revision": 11,
+  "image_id": "sha256:411101a91aa09467f39da6a288e0e548c5e6140aac9cde0559a2e90dbe5a727c"
+}
