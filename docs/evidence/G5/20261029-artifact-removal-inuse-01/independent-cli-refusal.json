@@ -1,0 +1,5 @@
+{
+  "result": "denied_before_operation_creation",
+  "exit_code": 2,
+  "reason": "Artifact is still needed by an installed or pending native module"
+}

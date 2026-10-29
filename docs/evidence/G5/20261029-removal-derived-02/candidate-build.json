@@ -1,0 +1,80 @@
+{
+  "state": "built",
+  "tag": "modular-platform:removal-20261029t041535621144z",
+  "command": [
+    "docker",
+    "build",
+    "--network",
+    "none",
+    "--pull=false",
+    "-f",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\operator\\build-contexts\\20261029-removal-derived-02\\Dockerfile",
+    "--build-arg",
+    "BASE_IMAGE=modular-platform:removal-base-967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+    "-t",
+    "modular-platform:removal-20261029t041535621144z",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\operator\\build-contexts\\20261029-removal-derived-02"
+  ],
+  "base_image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+  "inventory_source_image_id": "sha256:835d39c2ab3cbb61b52b644cf595dfd7582fae2db616e843727e9edcab963d76",
+  "plugins": [
+    "org.example.notes_labels"
+  ],
+  "expected_inventory_digest": "sha256:afdb6a8ee17370aa64beecc72684b588d1ceca01ee28668db9ae307b9811c17f",
+  "recipe_sha256": {
+    "Dockerfile": "a45f2e6fdddac4e48be48614067d0595c5ff2faf8bd5f809a9aaf1341b228808",
+    "removal-input.json": "719d0d47e1c7bf7c0c313301f48326eb5a1ba600335fb8eefb7af1bc4fd89d20",
+    "subtract.py": "349e266efd928998839577669ee25859c4a341520b141fdb84c8239be0d07cae"
+  },
+  "base_alias": "modular-platform:removal-base-967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+  "tool_sha256": "1f66f6377d1931520477fc320c76e2a78772a49c592677d07653d6dfe9c33f1d",
+  "output": "docs\\evidence\\G5\\20261029-removal-derived-02",
+  "result": "built_verified_not_deployed",
+  "utc": "2026-10-29T04:15:40.017523+00:00",
+  "image_id": "sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c",
+  "removed_files": [
+    {
+      "path": "addons/mp_example_notes_labels/__init__.py",
+      "previous_sha256": "88b20932acb13c6696e006185ff31f7eaccfd4a8e5748fd8aedc94bdc90e01b7",
+      "target_sha256": null
+    },
+    {
+      "path": "addons/mp_example_notes_labels/__manifest__.py",
+      "previous_sha256": "e54f717cc1f9321e3dafca0d002cf1de8cd4d03858b0ac4691cd4e8fdf1e2d3b",
+      "target_sha256": null
+    },
+    {
+      "path": "addons/mp_example_notes_labels/migrations/19.0.0.2.0/post-normalize_labels.py",
+      "previous_sha256": "fbe0e19f1a5e08e549c3bb5e8420947742a507fb12b5eb1d2d953638af91ede8",
+      "target_sha256": null
+    },
+    {
+      "path": "addons/mp_example_notes_labels/models.py",
+      "previous_sha256": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+      "target_sha256": null
+    },
+    {
+      "path": "addons/mp_example_notes_labels/services.py",
+      "previous_sha256": "cf7c3b883f14acaaafbf5e6b4fa7f7ec8888fd19ea5139f178e6704e1448bea6",
+      "target_sha256": null
+    },
+    {
+      "path": "addons/mp_example_notes_labels/static/src/labels.js",
+      "previous_sha256": "18c0c03e4f14f484388f6b4fd75c6d5c23f477cb114b6e416b9f5577370121be",
+      "target_sha256": null
+    },
+    {
+      "path": "artifacts/org.example.notes_labels-0.2.1.mplug",
+      "previous_sha256": "3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+      "target_sha256": null
+    }
+  ],
+  "python_metadata_exact": true,
+  "image_execution_configuration_exact": true,
+  "compiled_source_inventory_exact": true,
+  "base_layers_preserved": 12,
+  "deployment_changed": false,
+  "limits": [
+    "No native uninstall/source-removal operation has run. The independent plan/approval/executor must still reject every in-use site."
+  ]
+}

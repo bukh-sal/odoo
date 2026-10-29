@@ -1,0 +1,37 @@
+[
+  {
+    "path": "addons/mp_example_notes_labels/__init__.py",
+    "previous_sha256": "88b20932acb13c6696e006185ff31f7eaccfd4a8e5748fd8aedc94bdc90e01b7",
+    "target_sha256": null
+  },
+  {
+    "path": "addons/mp_example_notes_labels/__manifest__.py",
+    "previous_sha256": "e54f717cc1f9321e3dafca0d002cf1de8cd4d03858b0ac4691cd4e8fdf1e2d3b",
+    "target_sha256": null
+  },
+  {
+    "path": "addons/mp_example_notes_labels/migrations/19.0.0.2.0/post-normalize_labels.py",
+    "previous_sha256": "fbe0e19f1a5e08e549c3bb5e8420947742a507fb12b5eb1d2d953638af91ede8",
+    "target_sha256": null
+  },
+  {
+    "path": "addons/mp_example_notes_labels/models.py",
+    "previous_sha256": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+    "target_sha256": null
+  },
+  {
+    "path": "addons/mp_example_notes_labels/services.py",
+    "previous_sha256": "cf7c3b883f14acaaafbf5e6b4fa7f7ec8888fd19ea5139f178e6704e1448bea6",
+    "target_sha256": null
+  },
+  {
+    "path": "addons/mp_example_notes_labels/static/src/labels.js",
+    "previous_sha256": "18c0c03e4f14f484388f6b4fd75c6d5c23f477cb114b6e416b9f5577370121be",
+    "target_sha256": null
+  },
+  {
+    "path": "artifacts/org.example.notes_labels-0.2.1.mplug",
+    "previous_sha256": "3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+    "target_sha256": null
+  }
+]

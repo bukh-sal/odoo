@@ -1,0 +1,34 @@
+{
+  "result": "rejected_not_deployed",
+  "utc": "2026-10-29T04:09:06.726854+00:00",
+  "guard": "Removal cannot change Python/runtime compatibility metadata",
+  "base_image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+  "candidate_image_id": "sha256:835d39c2ab3cbb61b52b644cf595dfd7582fae2db616e843727e9edcab963d76",
+  "source_build_input_maps_equal": true,
+  "python_lock_equal": true,
+  "changed_python_distributions": [
+    {
+      "name": "psycopg2",
+      "before_digest": "sha256:bc56efc83cba16deb6ac18e0e4517a9f2bf2d391502aad304cd335c9ea79e149",
+      "target_digest": "sha256:5c116d99acf3feba4e14873cd76099c9336c233b4967c758135cc76f1e670d2c",
+      "metadata_except_digest_equal": true
+    },
+    {
+      "name": "python-ldap",
+      "before_digest": "sha256:cd4888ca3859c82c75b4e31c382cac80804bae92344677ebe058b8bbe9221b3d",
+      "target_digest": "sha256:2440534a70d0673a34b50f6bb21e0c666426902da0027aa761461dbacc7c3b1d",
+      "metadata_except_digest_equal": true
+    }
+  ],
+  "unrelated_inventoried_file_changes": [],
+  "deleted_package_files": [
+    "addons/mp_example_notes_labels/__init__.py",
+    "addons/mp_example_notes_labels/__manifest__.py",
+    "addons/mp_example_notes_labels/migrations/19.0.0.2.0/post-normalize_labels.py",
+    "addons/mp_example_notes_labels/models.py",
+    "addons/mp_example_notes_labels/services.py",
+    "addons/mp_example_notes_labels/static/src/labels.js",
+    "artifacts/org.example.notes_labels-0.2.1.mplug"
+  ],
+  "next_hypothesis": "Derive exact package subtraction from the approved base image, preserving its compiled /venv; do not weaken the runtime guard or repeat the same full rebuild."
+}

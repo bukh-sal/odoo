@@ -1,0 +1,43 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 352B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/modular-platform:removal-base-967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 528.18kB 0.0s done
+#4 DONE 0.1s
+
+#5 [1/4] FROM docker.io/library/modular-platform:removal-base-967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1@sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1
+#5 resolve docker.io/library/modular-platform:removal-base-967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1@sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1 0.0s done
+#5 DONE 0.1s
+
+#6 [2/4] COPY removal-input.json /tmp/mp-source-removal.json
+#6 DONE 0.0s
+
+#7 [3/4] COPY subtract.py /tmp/mp-source-subtract.py
+#7 DONE 0.0s
+
+#8 [4/4] RUN ["/venv/bin/python", "-I", "/tmp/mp-source-subtract.py"]
+#8 0.169 {"removed_inventoried_files": 7, "database_or_filestore_access": false, "python_runtime_rebuilt": false}
+#8 DONE 0.2s
+
+#9 exporting to image
+#9 exporting layers 0.1s done
+#9 exporting manifest sha256:e9a67e9635ea338b6fa49104c04976d6c036a4a2b3b6c54212bd38362a523350 done
+#9 exporting config sha256:83b93ec60030b1a7927140302ec5ffe8c9fe5d6b28de8d5d53a924967c685384 0.0s done
+#9 exporting attestation manifest sha256:47730bdbc5477ecae33de61470292c8d95ae627ed9091e9bd5ee37f3f2a3fd98 0.0s done
+#9 exporting manifest list sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c 0.0s done
+#9 naming to docker.io/library/modular-platform:removal-20261029t041535621144z done
+#9 unpacking to docker.io/library/modular-platform:removal-20261029t041535621144z 0.0s done
+#9 DONE 0.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/fwla8sgo37uhzo42491mvmy4l

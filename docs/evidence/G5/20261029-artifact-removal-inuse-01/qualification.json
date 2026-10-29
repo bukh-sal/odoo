@@ -1,0 +1,21 @@
+{
+  "result": "passed_actual_inuse_refusal_only",
+  "utc": "2026-10-29T04:18:23.726815+00:00",
+  "generation": 7,
+  "base_image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+  "staged_image_id": "sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c",
+  "exact_removed_files": 7,
+  "manager_http_refused": 400,
+  "independent_cli_refused": true,
+  "database_business_schema_requests_configuration_exact": true,
+  "protected_config_hashes": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad",
+    ".local\\g5-lifecycle\\operator\\target.json": "ac4e80595dd2f5c5ee69e3903c66a6f6a84b333fdb210b1baa322bec15bb8644"
+  },
+  "limits": [
+    "Staging/profile publication only; no independent operation/approval/native source removal.",
+    "Successful removal/worker/assets/client/survivor verification remain required for LIFE-06.",
+    "Restage the same image after a freshly approved uninstall because generation/base configuration will advance."
+  ]
+}

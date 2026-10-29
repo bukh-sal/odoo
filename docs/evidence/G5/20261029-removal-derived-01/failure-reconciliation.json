@@ -1,0 +1,6 @@
+{
+  "result": "reconciled_failed_before_subtraction",
+  "candidate_tag_exists": false,
+  "reason": "BuildKit interpreted bare sha256 FROM as repository; no RUN step or candidate tag. Corrected content-bound local alias, with post-build immutable ID/runtime/layer checks. Subtraction script AST/newline inspected and unchanged.",
+  "no_database_or_target_change": true
+}

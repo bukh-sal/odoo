@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T04:34:40.723804+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "state_and_business_exact": true,
+      "config_sha256": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9"
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "state_and_business_exact": true,
+      "config_sha256": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad"
+    }
+  ],
+  "lifecycle_generation": 7,
+  "lifecycle_worker_id": "9f257dcdffea0b6a0e9f88b4e45b0bfeb5dd61ff7f2a3fa70740530ef3a89fdf",
+  "all_six_scopes_enabled": true,
+  "core_after_business_schema_exact": true,
+  "independent_operations": [
+    [
+      "completed",
+      10
+    ]
+  ],
+  "qualified_runtime_source_inputs_exact": 202,
+  "derived_tool_source_exact": true,
+  "no_native_source_removal_executed": true
+}

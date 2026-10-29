@@ -1,0 +1,25 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 257B done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${BASE_IMAGE} results in empty or invalid base image name (line 2)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1
+#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/library/sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1:
+------
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${BASE_IMAGE} results in empty or invalid base image name (line 2)
+Dockerfile:2
+--------------------
+   1 |     ARG BASE_IMAGE
+   2 | >>> FROM ${BASE_IMAGE}
+   3 |     USER root
+   4 |     COPY removal-input.json /tmp/mp-source-removal.json
+--------------------
+ERROR: failed to build: failed to solve: sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1: failed to resolve source metadata for docker.io/library/sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/qaok6e6qxsh1lulf7gkumqt6t

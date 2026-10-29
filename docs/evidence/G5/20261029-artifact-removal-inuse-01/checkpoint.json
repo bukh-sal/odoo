@@ -1,0 +1,19 @@
+{
+  "result": "passed_build_and_inuse_checkpoint_only",
+  "utc": "2026-10-29T04:38:52.977316+00:00",
+  "public_files_checked": 37,
+  "known_private_values_checked": 12,
+  "runtime_source_commit": "1efd46de",
+  "active_generation": 7,
+  "active_image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+  "staged_only_image_id": "sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c",
+  "native_source_removal_executed": false,
+  "life06": "not_run",
+  "acceptance_passed": 70,
+  "g5_passed": 29,
+  "rough_engineering_percent": 78,
+  "limits": [
+    "Actual successful source-only execution and survivor/asset/client checks remain.",
+    "General clean build/runtime provenance remains X09/OPS-03/G7."
+  ]
+}

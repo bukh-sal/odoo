@@ -1,0 +1,22 @@
+{
+  "result": "diagnosed",
+  "base_image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+  "rejected_image_id": "sha256:835d39c2ab3cbb61b52b644cf595dfd7582fae2db616e843727e9edcab963d76",
+  "changed_files": {
+    "psycopg2": [
+      {
+        "path": "psycopg2/_psycopg.cpython-312-x86_64-linux-gnu.so",
+        "base_sha256": "8ccb514de7ee9d6611cea3f167353666803c5cbe0c09ef478f20d09986d23088",
+        "candidate_sha256": "c4dcaee027c87e0a23ac95ef90e1cc78a95ec6c5d0b0a14ee4e955613b3b737d"
+      }
+    ],
+    "python-ldap": [
+      {
+        "path": "_ldap.cpython-312-x86_64-linux-gnu.so",
+        "base_sha256": "924d89f129730a727ef2efe9524398d133481d0eaf3536113ff2e5bdad196781",
+        "candidate_sha256": "bd62c1543c97f0e88d19e8234ac792e70d2bbd7bf349397b9e3d8b914ad15972"
+      }
+    ]
+  },
+  "no_live_mounts_or_network": true
+}
