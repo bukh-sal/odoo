@@ -1,0 +1,21 @@
+{
+  "phase": "completed_verified",
+  "workspace_id": "2608dcfc-aaab-4c15-894f-6f4e4f98e70d",
+  "actor": "bob",
+  "name": "Recovery reference B",
+  "native_id": 2,
+  "board": {
+    "id": 2,
+    "public_id": "36ab2f5d-dfab-49d3-9b84-5720ef961dfe",
+    "name": "Recovery reference B",
+    "revision": 1,
+    "cards": [
+      {
+        "id": "90697e15-6109-4c77-888b-a3929be0ed0b",
+        "lane": "inbox",
+        "text": "Minimal reference card",
+        "note_id": "6d9e92ba-48f3-4e6e-9984-9f807556b0b6"
+      }
+    ]
+  }
+}

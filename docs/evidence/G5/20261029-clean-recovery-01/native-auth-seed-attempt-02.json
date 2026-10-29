@@ -1,0 +1,6 @@
+{
+  "result": "fixture_model_name_error",
+  "observed": "Native registered model is auth_totp.device; fixture incorrectly used auth.totp.device.",
+  "committed_probe_rows": 0,
+  "next": "Use actual pinned native model name, retain original credential inputs and failed containers."
+}

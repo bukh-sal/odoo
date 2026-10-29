@@ -1,0 +1,17 @@
+{
+  "result": "counterexample_confirmed",
+  "utc": "2026-10-29T11:53:28.747067+00:00",
+  "canonical_authority_unchanged_after_password_revocation": true,
+  "transaction_rolled_back": true,
+  "protected_deployments_touched": false,
+  "credentials_printed": false,
+  "authority_snapshot_fields": [
+    "api_key_count",
+    "has_dispatch_tables",
+    "memberships",
+    "operators",
+    "principals"
+  ],
+  "source_sha256": "6d38478211d2355ce7539d4080d6a9e43091161e7ab45449ef776081f9e92bb8",
+  "next": "Bind native credential state by a digest and reconcile current credential material privately before restored traffic; preserve native authentication."
+}

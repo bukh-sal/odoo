@@ -1,0 +1,11 @@
+{
+  "result": "SQL_valid_rolled_back",
+  "users": 8,
+  "passkeys": 0,
+  "public_binding": {
+    "native_auth_policy": "r1-current-native-auth-v1",
+    "native_auth_digest": "sha256:4806df3044d75d6ce2c9c63f96109f8469b0f23313b9f1e91d027c11083445c4"
+  },
+  "private_material_not_emitted": true,
+  "actual_product_query_exercised": true
+}

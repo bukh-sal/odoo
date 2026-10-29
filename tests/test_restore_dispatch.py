@@ -11,6 +11,7 @@ from unittest.mock import Mock,patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
 from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
+from modular_platform.native_auth_recovery import read_query,public_binding
 from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT
 
 CLEAR=dict(job_table=False,outbox_table=False,api_key_count=0,active_technical_credentials=0,external_installations=0)
@@ -29,6 +30,8 @@ class RestoreDispatchTests(unittest.TestCase):
         self.native.observer.read.return_value=dict(sites=[],runtime=dict(inventory_digest='sha256:'+'a'*64))
         self.edge_open=False;self.native._inspect.side_effect=lambda edge:dict(State=dict(Running=self.edge_open))
         self.effects=copy.deepcopy(CLEAR);self.authority=dict(principals=[],memberships=[],operators=[],api_key_count=0,has_dispatch_tables=False)
+        self.native_auth=dict(users=[dict(id=1,login='fixture',active=True,password=None,totp_secret=None,totp_last_counter=0,groups=[])],passkeys=[])
+        (directory/'result.json').write_text(json.dumps(dict(configuration=self.config)|public_binding(self.native_auth)),encoding='utf8')
         self.readiness_change=lambda:None;self.readiness_error=False;self.timeline=[]
         self.recovery=RestoreExecutor(self.native)
         self.reviews=Mock();self.reviews.verify.side_effect=self.verify
@@ -38,7 +41,7 @@ class RestoreDispatchTests(unittest.TestCase):
 
     def execute_command(self,args,*,input=None):
         if input==EFFECTS_SELECT.encode():return json.dumps(self.effects).encode()
-        if input==AUTHORITY_SELECT.encode():return json.dumps(self.authority).encode()
+        if input==read_query(AUTHORITY_SELECT).encode():return json.dumps(dict(authority=self.authority,native_auth=self.native_auth)).encode()
         if args[:3]==['docker','exec','app']:
             if self.readiness_error:raise OperatorError('Readiness failed')
             self.readiness_change();return b''
@@ -52,7 +55,7 @@ class RestoreDispatchTests(unittest.TestCase):
 
     def test_clear_profile_binds_effects_and_human_authority_without_writes(self):
         value=self.recovery._resume_state(self.op)
-        self.assertEqual(value['effects'],CLEAR);self.assertEqual(value['recovery_profile'],'r1-no-dispatch-v1');self.assertEqual(value['authority_digest'],data_digest(self.authority));self.assertEqual(self.timeline,[])
+        self.assertEqual(value['effects'],CLEAR);self.assertEqual(value['recovery_profile'],'r1-no-dispatch-v1');self.assertEqual(value['authority_digest'],data_digest(self.authority|public_binding(self.native_auth)));self.assertEqual(self.timeline,[])
 
     def test_each_unsupported_effect_denies_a_resume_proposal(self):
         for key in CLEAR:
@@ -79,6 +82,20 @@ class RestoreDispatchTests(unittest.TestCase):
         decision=self.decision();self.readiness_change=lambda:self.authority['operators'].append(dict(principal_id='operator',state='revoked'))
         with self.assertRaisesRegex(OperatorError,'changed before traffic'):self.recovery.resume(decision,exact_hash=data_digest(decision),noninteractive=True)
         self.store.record_restore_resume.assert_not_called();self.assertEqual(self.timeline,[])
+
+    def test_native_password_or_passkey_change_after_readiness_invalidates_review(self):
+        decision=self.decision()
+        self.readiness_change=lambda:self.native_auth['users'][0].update(password='post-review-revoked-credential')
+        with self.assertRaisesRegex(OperatorError,'changed before traffic'):
+            self.recovery.resume(decision,exact_hash=data_digest(decision),noninteractive=True)
+        self.store.record_restore_resume.assert_not_called();self.assertEqual(self.timeline,[])
+
+    def test_old_restoration_without_native_credential_proof_cannot_resume(self):
+        path=self.root/'recoveries'/self.op/'result.json'
+        path.write_text(json.dumps(dict(configuration=self.config)),encoding='utf8')
+        with self.assertRaisesRegex(OperatorError,'lacks current native credential'):
+            self.recovery._resume_state(self.op)
+        self.assertEqual(self.timeline,[])
 
     def test_already_open_or_late_open_edge_requires_reconciliation(self):
         self.edge_open=True

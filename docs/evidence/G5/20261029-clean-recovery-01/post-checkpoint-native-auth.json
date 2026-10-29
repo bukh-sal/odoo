@@ -1,0 +1,7 @@
+{
+  "probe_user_id": 11,
+  "current_passkey_id": 3,
+  "TOTP_enabled": true,
+  "mode": "rotate",
+  "material_emitted": false
+}

@@ -24,6 +24,7 @@ from .plans import data_digest
 from .recovery_reviews import RecoveryReviews
 from .workers import snapshots,ensure,wait_ready
 from .projection import runtime_inputs
+from .native_auth_recovery import POLICY as NATIVE_AUTH_POLICY,read_query,canonical_native_auth,public_binding,overlay_sql
 
 
 AUTHORITY_SELECT = """SELECT jsonb_build_object(
@@ -116,6 +117,15 @@ class RestoreExecutor:
         self.store, self.config = native.store, native.config
         self.observer = native.observer
 
+    def _authority(self, database):
+        container=self.observer._container('db')
+        value=load_json(_run(['docker','exec','-i',container,'psql','-X','-qAt','-U','postgres',
+            '-d',database,'-v','ON_ERROR_STOP=1'],input=read_query(AUTHORITY_SELECT).encode()))
+        if not isinstance(value,dict) or set(value)!={'authority','native_auth'}:
+            raise OperatorError('Exact private native authentication observation required')
+        private=canonical_native_auth(value['native_auth'])
+        return canonical_authority(value['authority'])|public_binding(private),private
+
     def _supported_effects(self, database):
         container=self.observer._container('db')
         value=load_json(_run(['docker','exec','-i',container,'psql','-X','-qAt','-U','postgres','-d',database,
@@ -155,7 +165,7 @@ class RestoreExecutor:
             raise OperatorError('Public traffic must remain stopped during recovery')
         database = self.observer._container('db')
         source = self.config['sites'][0]['database']
-        authority = canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d',source,'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
+        authority,_ = self._authority(source)
         if authority['api_key_count'] or authority['has_dispatch_tables']:
             raise OperatorError('Jobs/outbox/API keys require the later effect/credential reconciliation profile')
         workers=snapshots(self.config)
@@ -205,7 +215,7 @@ class RestoreExecutor:
                     _run(['docker','stop','--time','30',worker['container_id']])
                     if self.native._inspect(worker['container_id'])['State']['ExitCode'] != 0:
                         raise OperatorError('Recovery worker drain failed')
-            current_authority=canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d',self.config['sites'][0]['database'],'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
+            current_authority,private_native_auth=self._authority(self.config['sites'][0]['database'])
             if current_authority!=decision['authority']:
                 raise OperatorError('Current authority changed while draining; inspect before restoring')
             fresh = decision['fresh_database']
@@ -219,7 +229,7 @@ class RestoreExecutor:
             self.native._private_command(args+['-c',EXTRACT_FILESTORE,self.config['sites'][0]['database'],fresh],
                 directory/'filestore.log',input=(checkpoint/'filestore.tar.gz').read_bytes())
             _run(['docker','exec','-i',database,'psql','-X','-q','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1','--single-transaction'],
-                input=(authority_sql(decision['authority'])+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
+                input=(authority_sql(decision['authority'])+overlay_sql(private_native_auth)+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
             # The restored checkpoint may resurrect effects absent in the failed
             # DB. Reject unsupported state before configuration/registry startup.
             self._supported_effects(fresh)
@@ -271,12 +281,12 @@ class RestoreExecutor:
             else:
                 _write_new(directory/'profile-publication.json',{'state':'deferred_legacy_reader',
                     'reason':'Retained legacy image has no published-release reader; preserve its cache and use the independent CLI until a compatible release is approved.'})
-            actual_authority = canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
+            actual_authority,_ = self._authority(fresh)
             if actual_authority != decision['authority']:
                 raise OperatorError('Restored authority differs from current reconciled snapshot')
             self.store.record_restore(operation,locks,code='restore_verified',details={'fresh_database':fresh,'decision_hash':exact_hash,
                 'failed_database_retained':True,'traffic_resumed':False,'session_secret_rotated':True,'technical_credentials_revoked':True})
-            _write_new(directory/'result.json',{'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True})
+            _write_new(directory/'result.json',{'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth)})
             return {'state':'restored_verified','fresh_database':fresh,'failed_database_retained':True,'keep_traffic_closed':True,
                 'operation_status':self.store.status(operation)}
 
@@ -293,8 +303,9 @@ class RestoreExecutor:
         source=self.config['sites'][0]['database']
         effects=self._supported_effects(source)
         database=self.observer._container('db')
-        authority=canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres',
-            '-d',source,'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
+        if result.get('native_auth_policy')!=NATIVE_AUTH_POLICY or not isinstance(result.get('native_auth_digest'),str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',result['native_auth_digest']):
+            raise OperatorError('Restore lacks current native credential reconciliation; keep traffic closed')
+        authority,_=self._authority(source)
         observation = self.observer.read()
         return {'schema_version':1,'action':'resume_verified_restore','operation_id':operation,
             'configuration':self.config,'restored_observation_digest':data_digest(observation),'restore_result_digest':data_digest(result),

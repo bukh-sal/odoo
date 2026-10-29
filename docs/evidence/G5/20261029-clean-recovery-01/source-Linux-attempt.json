@@ -1,0 +1,6 @@
+{
+  "result": "not_qualified",
+  "container": "mp-r0-r1cleand32d742ed8b4-recovery-source-linux-564d5614",
+  "container_absent": true,
+  "diagnosis": "Original Docker run wrapper reached its 600-second timeout without creating a container or test result. Host wrapper and docker process terminal. No tests/mutations occurred; use isolated stdin source transfer instead of Windows bind mounts."
+}

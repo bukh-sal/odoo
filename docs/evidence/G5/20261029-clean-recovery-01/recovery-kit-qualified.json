@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "files": 147,
+  "inventory_sha256": "1790395f9a54c0abd2271339b031cb4fc99a2afb5409547c1e47df436a9d993a",
+  "checkpoint_hashes_verified": true,
+  "image_archive_valid": true,
+  "private_config_moved_intact": true,
+  "supersedes": "recovery-kit.json",
+  "diagnosis": "Fixture finalization was accidentally inside the hashing loop; first premature record invalid. All captured inputs retained, full independent inventory rebuilt without rerunning any capture or mutation."
+}

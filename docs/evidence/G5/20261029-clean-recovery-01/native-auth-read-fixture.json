@@ -1,0 +1,8 @@
+{
+  "result": "passed_current_native_fixture",
+  "users": 9,
+  "passkeys": 1,
+  "private_auth_bound_by_digest": true,
+  "material_in_public_authority": false,
+  "TOTP_enabled": true
+}

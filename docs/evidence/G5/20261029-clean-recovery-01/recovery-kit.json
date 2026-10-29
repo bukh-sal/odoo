@@ -1,0 +1,36 @@
+{
+  "result": "passed_complete_private_inputs",
+  "operation_id": "d53ed106-478b-4720-9c56-ff9b2dc946c9",
+  "files": 1,
+  "inventory_sha256": "9164a643a858422150388393f463b811af4b63c620c859fce5ca26ef54b6aa43",
+  "database_and_filestore_hashes_verified": true,
+  "nonsecret_runtime_configuration": {
+    "db_host": "db",
+    "db_port": "5432",
+    "db_user": "modular",
+    "db_name": "mp_disposable_r0_r1_g5_clean_d32d742ed8b4",
+    "dbfilter": "^mp_disposable_r0_r1_g5_clean_d32d742ed8b4$",
+    "list_db": "False",
+    "data_dir": "/var/lib/modular",
+    "addons_path": "/opt/modular/addons",
+    "server_wide_modules": "base,web",
+    "without_demo": "True",
+    "max_cron_threads": "0",
+    "workers": "2",
+    "db_maxconn": "12",
+    "http_interface": "0.0.0.0",
+    "proxy_mode": "True",
+    "limit_memory_soft": "536870912",
+    "limit_memory_hard": "671088640",
+    "log_handler": ":INFO,werkzeug:WARNING"
+  },
+  "code_release_image_saved": true,
+  "dependency_and_artifact_locks": true,
+  "independent_control_snapshot_separate": true,
+  "secrets_separately_owner_protected": true,
+  "limits": [
+    "Inputs collected in the new clean rehearsal. Ordinary restore still uses the current failed DB for authoritative revocation reconciliation.",
+    "Historical control snapshot is backup evidence, never replayed or substituted for the current journal.",
+    "Image and private kit remain local; no publication or disaster/host-authority-loss claim."
+  ]
+}

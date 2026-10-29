@@ -1,0 +1,21 @@
+{
+  "phase": "completed_verified",
+  "workspace_id": "96c63926-e73a-4b2f-adf2-35776ae11e27",
+  "actor": "alice",
+  "name": "Recovery reference A",
+  "native_id": 1,
+  "board": {
+    "id": 1,
+    "public_id": "ddd478f2-004d-4ffb-80ea-307ab4642464",
+    "name": "Recovery reference A",
+    "revision": 1,
+    "cards": [
+      {
+        "id": "fc05eeaf-026a-4058-b462-ea34b91ea605",
+        "lane": "inbox",
+        "text": "Minimal reference card",
+        "note_id": "0606fd20-3de5-4f53-9bd2-65bc79558fb3"
+      }
+    ]
+  }
+}

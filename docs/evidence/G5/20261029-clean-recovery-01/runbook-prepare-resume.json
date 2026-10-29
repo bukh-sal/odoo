@@ -1,0 +1,15 @@
+{
+  "result": "review_prepared",
+  "action": "prepare-resume",
+  "operation_id": "d53ed106-478b-4720-9c56-ff9b2dc946c9",
+  "decision_hash": "sha256:209e1920517e8c324f91e77c221dffb489b309d41cb8631654de30af5403e0a9",
+  "review": {
+    "expires_at": "2026-10-29T12:48:36Z",
+    "issued_at": "2026-10-29T12:33:36Z",
+    "operator_authorization_generation": 1,
+    "policy_version": 1,
+    "review_id": "e6802e15-2b1a-4d06-a203-3284283227af"
+  },
+  "keep_traffic_closed": true,
+  "native_auth_bound": true
+}

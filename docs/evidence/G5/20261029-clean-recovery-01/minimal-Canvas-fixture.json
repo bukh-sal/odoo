@@ -1,0 +1,29 @@
+{
+  "result": "passed",
+  "fresh_provisioning": "clean_recovery_data.py board --workspace A|B after actual empty-core initialization and independently approved packaged install",
+  "checks": [
+    {
+      "workspace": "A",
+      "revision_before": 1,
+      "revision_after": 2,
+      "one_board": true,
+      "repeat_provision_no_duplicate": true,
+      "save_idempotent": true,
+      "stale_conflict": true,
+      "foreign_board_not_found": true
+    },
+    {
+      "workspace": "B",
+      "revision_before": 1,
+      "revision_after": 2,
+      "one_board": true,
+      "repeat_provision_no_duplicate": true,
+      "save_idempotent": true,
+      "stale_conflict": true,
+      "foreign_board_not_found": true
+    }
+  ],
+  "application_changes": "Only the required two test saves, revision1\u21922; cards/name/content unchanged.",
+  "UI_or_product_feature_expansion": false,
+  "lifecycle_regression": "Actual checkpoint, destructive Labels native uninstall/failure, fresh restore and separately approved resume preserved both boards exactly before these explicit saves. Prior Canvas suspension/removal gating evidence remains current; Canvas source/image unchanged."
+}

@@ -1,0 +1,72 @@
+{
+  "operators": [
+    {
+      "state": "active",
+      "principal_id": "779c2d22-aa06-4c85-97f6-33b6d7f92468"
+    }
+  ],
+  "principals": [
+    {
+      "state": "active",
+      "active": true,
+      "principal_id": "05357b0d-cabd-4f26-bcb6-606b2fbd732f"
+    },
+    {
+      "state": "active",
+      "active": true,
+      "principal_id": "5533fdde-aa99-4991-b34a-b4fc69e6070a"
+    },
+    {
+      "state": "active",
+      "active": true,
+      "principal_id": "779c2d22-aa06-4c85-97f6-33b6d7f92468"
+    },
+    {
+      "state": "active",
+      "active": true,
+      "principal_id": "8aefacec-193a-461f-9a42-4c2d05bcdbb7"
+    }
+  ],
+  "memberships": [
+    {
+      "role": "viewer",
+      "state": "active",
+      "principal_id": "05357b0d-cabd-4f26-bcb6-606b2fbd732f",
+      "workspace_id": "96c63926-e73a-4b2f-adf2-35776ae11e27"
+    },
+    {
+      "role": "editor",
+      "state": "active",
+      "principal_id": "5533fdde-aa99-4991-b34a-b4fc69e6070a",
+      "workspace_id": "2608dcfc-aaab-4c15-894f-6f4e4f98e70d"
+    },
+    {
+      "role": "administrator",
+      "state": "active",
+      "principal_id": "779c2d22-aa06-4c85-97f6-33b6d7f92468",
+      "workspace_id": "2608dcfc-aaab-4c15-894f-6f4e4f98e70d"
+    },
+    {
+      "role": "administrator",
+      "state": "active",
+      "principal_id": "779c2d22-aa06-4c85-97f6-33b6d7f92468",
+      "workspace_id": "96c63926-e73a-4b2f-adf2-35776ae11e27"
+    },
+    {
+      "role": "viewer",
+      "state": "revoked",
+      "principal_id": "8aefacec-193a-461f-9a42-4c2d05bcdbb7",
+      "workspace_id": "2608dcfc-aaab-4c15-894f-6f4e4f98e70d"
+    },
+    {
+      "role": "administrator",
+      "state": "active",
+      "principal_id": "8aefacec-193a-461f-9a42-4c2d05bcdbb7",
+      "workspace_id": "96c63926-e73a-4b2f-adf2-35776ae11e27"
+    }
+  ],
+  "api_key_count": 0,
+  "has_dispatch_tables": false,
+  "native_auth_policy": "r1-current-native-auth-v1",
+  "native_auth_digest": "sha256:1a5e454db5bf1fc2fe995af8bbf42ec64591fe6b576b5c078a308b519a8e12ad"
+}

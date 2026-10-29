@@ -1,0 +1,4 @@
+{
+  "result": "harness_result_fetch_error",
+  "diagnosis": "Initial psycopg2 helper executed SELECT then ROLLBACK in one execute and attempted to fetch the final non-row result. Corrected by exercising actual product psql reader; no production fault or committed data change."
+}

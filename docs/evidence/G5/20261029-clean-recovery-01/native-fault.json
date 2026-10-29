@@ -1,0 +1,92 @@
+{
+  "result": "expected_native_commit_failure",
+  "operation_id": "d53ed106-478b-4720-9c56-ff9b2dc946c9",
+  "status": {
+    "operation_id": "d53ed106-478b-4720-9c56-ff9b2dc946c9",
+    "plan_hash": "sha256:f99a59df409cf97cd4f6c6f46d1ef018b0958a7444318db7444668b014f6a047",
+    "state": "recovery_required",
+    "phase": "mutation_started",
+    "mutation_started": true,
+    "traffic_resumed": false,
+    "backup_id": "d53ed106-478b-4720-9c56-ff9b2dc946c9",
+    "approval_expires_at": "2026-10-29T12:28:14Z",
+    "history": [
+      {
+        "sequence": 15,
+        "utc": "2026-10-29T12:13:01Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:f99a59df409cf97cd4f6c6f46d1ef018b0958a7444318db7444668b014f6a047"
+        }
+      },
+      {
+        "sequence": 16,
+        "utc": "2026-10-29T12:13:14Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:f99a59df409cf97cd4f6c6f46d1ef018b0958a7444318db7444668b014f6a047"
+        }
+      },
+      {
+        "sequence": 17,
+        "utc": "2026-10-29T12:15:07Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 6568,
+          "lock_owner_digest": "sha256:b9be0f75a0aeea1bd7e6a650aa27ceef47833a7a0a3d96d7d1a7efed71c0f81c"
+        }
+      },
+      {
+        "sequence": 18,
+        "utc": "2026-10-29T12:15:18Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 19,
+        "utc": "2026-10-29T12:15:22Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 20,
+        "utc": "2026-10-29T12:15:25Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 21,
+        "utc": "2026-10-29T12:15:36Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "d53ed106-478b-4720-9c56-ff9b2dc946c9"
+        }
+      },
+      {
+        "sequence": 22,
+        "utc": "2026-10-29T12:15:42Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 23,
+        "utc": "2026-10-29T12:15:45Z",
+        "code": "recovery_required",
+        "details": {
+          "code": "MUTATION_FAILED"
+        }
+      }
+    ]
+  },
+  "native_effect": {
+    "notes": 4,
+    "boards": 2,
+    "labels_state": "uninstalled",
+    "labels_column": false
+  },
+  "later_membership_revocation": {
+    "role": "viewer",
+    "state": "revoked"
+  },
+  "protected_configurations_exact": true
+}

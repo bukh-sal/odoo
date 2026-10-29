@@ -1,0 +1,5 @@
+{
+  "result": "fixture_line_ending_expectation",
+  "diagnosis": "Host ConfigParser wrote CRLF; transfer read_text normalized LF. Actual volume bytes retained as the authoritative config; compare parsed values. Original private config capture moved intact out of diagnostic logs into the dedicated secret-recovery domain.",
+  "raw_config_preserved": true
+}

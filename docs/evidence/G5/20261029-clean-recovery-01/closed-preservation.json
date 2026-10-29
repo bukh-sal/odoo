@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "database": "mp_disposable_r0_r1_restore_d53ed106478b47209c56ff9b2dc946c9",
+  "failed_database": "mp_disposable_r0_r1_g5_clean_d32d742ed8b4",
+  "source_retained": true,
+  "generation": 4,
+  "previous_executable_release_exact": true,
+  "business_schema_installations_bindings_grants_exact": true,
+  "old_filestore_members": 38,
+  "retained_old_file_hashes_exact": true,
+  "total_files": 44,
+  "native_auth_current_digest": "sha256:1a5e454db5bf1fc2fe995af8bbf42ec64591fe6b576b5c078a308b519a8e12ad",
+  "native_auth_material_emitted": false,
+  "passwords_TOTP_counters_groups_passkeys_current": true,
+  "remembered_devices": 0,
+  "active_technical_credentials": 0,
+  "session_secret_rotated": true,
+  "original_operation_retired": true,
+  "old_worker_stopped_disconnected": true,
+  "public_traffic_closed": true
+}

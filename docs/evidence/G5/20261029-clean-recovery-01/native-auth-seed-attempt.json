@@ -1,0 +1,6 @@
+{
+  "result": "native_registration_ACL_refusal",
+  "diagnosis": "Direct passkey create under ordinary user is correctly disallowed. Native registration uses a private privileged path. Fixed OS-only fixture uses with_user(probe).sudo after explicit disposable-target authorization; no ACL change.",
+  "committed_probe_rows": 0,
+  "credentials_reused": true
+}

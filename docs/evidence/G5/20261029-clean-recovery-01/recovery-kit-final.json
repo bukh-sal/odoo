@@ -1,0 +1,25 @@
+{
+  "result": "passed",
+  "files": 160,
+  "inventory_sha256": "17a6b9e0fd8410710e290a58e5f23564fd497cf9aa9567a9f33d5bc9025700cd",
+  "dependency_inputs": [
+    "build-requirements.in",
+    "build-requirements.lock",
+    "requirements-operator.in",
+    "requirements-operator.lock",
+    "requirements-py312.lock",
+    "requirements-r1.in",
+    "requirements-r1.lock",
+    "requirements-tooling.in",
+    "requirements-tooling.lock",
+    "runtime.lock.json"
+  ],
+  "host_operator_and_contract_code_exact": true,
+  "independent_copied_operator_CLI_loads": true,
+  "checkpoint_and_image_retained": true,
+  "supersedes": [
+    "recovery-kit.json",
+    "recovery-kit-qualified.json"
+  ],
+  "diagnosis": "Final actual-input audit found the draft used nonexistent generic lock filenames; add the actual five pinned operator/runtime/tooling/build lock files plus their input declarations. No database/restore replay or image recapture."
+}

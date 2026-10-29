@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "generation": 4,
+  "old_Alice_password_denied": true,
+  "new_Alice_password_valid": true,
+  "current_Alice_B_revocation_enforced": true,
+  "Bob_B_native_and_gateway": true,
+  "standard_list_form": "native Odoo",
+  "reference_boards_exact": 2,
+  "old_sessions_invalidated": 2,
+  "old_release_conflict": true,
+  "native_private_attachment_bytes": 8234,
+  "immutable_nonredirect_asset_hashes": 2,
+  "traffic_resumed_by_separate_exact_review": true,
+  "retired_operation_apply_refused_without_journal_change": true,
+  "application_data_mutations": 0
+}

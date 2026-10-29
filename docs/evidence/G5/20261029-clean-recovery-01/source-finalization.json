@@ -1,0 +1,8 @@
+{
+  "result": "passed",
+  "file": "tools/clean_recovery_auth.py",
+  "qualified_sha256": "b43a181ca1b58f92868bc45564e6bebaa98270f0bcd05c4e50c67cbb751061c4",
+  "final_sha256": "24399b53fd26f7a04d05dc8f54be4532e2a66bc525bb55fe9774c7bd220d4037",
+  "change": "Remove one surplus empty line at EOF after Git whitespace check; identical Python AST. No execution or recovery behavior change.",
+  "AST_exact": true
+}

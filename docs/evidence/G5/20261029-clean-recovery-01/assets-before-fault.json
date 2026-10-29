@@ -1,0 +1,14 @@
+[
+  {
+    "path": "/web/assets/63c5974592655d931920e0596ac04cfca96ac6d268d30a24f941725016e0c1fc/mp_shell.assets_host.min.js",
+    "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+    "bytes": 3071857,
+    "content_type": "application/javascript; charset=utf-8"
+  },
+  {
+    "path": "/web/assets/6fb25c7c2ae40341f8b9a58fa6af1b30b4c997dd64c44fc10385cd06fda16004/mp_shell.assets_host.min.css",
+    "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+    "bytes": 751605,
+    "content_type": "text/css; charset=utf-8"
+  }
+]

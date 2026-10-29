@@ -1,0 +1,5 @@
+{
+  "result": "fixture_cookie_jar_interference",
+  "observed": "All prior native/API/data/password/membership/old-session checks passed. Testing expired sessions on the fresh Alice CookieJar accepted a server replacement session cookie; subsequent stale-release check was unauthenticated401.",
+  "change": "Use an independent opener for each expired-cookie probe; repeat read-only verification without recovery or application data mutation."
+}

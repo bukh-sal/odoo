@@ -1,0 +1,10 @@
+{
+  "result": "counterexample_observed",
+  "old_authority_view_unchanged_after_password_revocation": false,
+  "transaction_rolled_back": true,
+  "raw_credentials_emitted": false,
+  "utc": "2026-10-29T11:52:39.963676+00:00",
+  "target": "mp-r0-r1cleand32d742ed8b4",
+  "source_boundary": "Current AUTHORITY_SELECT/authority_sql binds principal/membership/operator state but not native password/TOTP/passkey state.",
+  "interpretation": "Initial raw aggregate equality was inconclusive because JSON array ordering changed; actual review canonicalizes. See native-auth-review-counterexample.json for confirmed normalized observation."
+}
