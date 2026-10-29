@@ -1,0 +1,16 @@
+{
+  "result": "staged_exact_fixture",
+  "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+  "changed_files": [
+    "addons/mp_example_notes_labels/__manifest__.py",
+    "artifacts/org.example.notes_labels-0.2.1.mplug",
+    "artifacts/org.example.notes_labels-0.2.2.mplug"
+  ],
+  "python_runtime_exact": true,
+  "protected_hashes": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad",
+    ".local\\operator\\trust.json": "b29600d33d7b6576244c4af7b49df82617e5711f5a55191ecebe7eca4ca2d070",
+    ".local\\g5-lifecycle\\operator\\permission-upgrade\\trust.json": "c0cbb72c389745b8c074ea72eb2f45be1ca64194b5b35a8a9e692bd07f715c39"
+  }
+}

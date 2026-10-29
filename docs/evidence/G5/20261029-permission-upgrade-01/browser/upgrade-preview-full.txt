@@ -1,0 +1,271 @@
+Browser tab: 19, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4".
+0 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4
+	1 container
+		2 text M
+		3 text Modular Platform
+		4 container
+			5 text Workspace
+			6 pop up button (collapsed, settable) Description: Workspace, Value: Personal, Secondary Actions: Expand
+				7 menu
+					8 Workspace
+					16 (selected) Personal
+					17 Research
+		9 button Commands
+		10 button Dark
+		18 text Operator
+		11 container Applications
+			12 link Description: Settings, Value: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4#
+			19 link Description: Operations, Value: g5life.localhost:18080/app/operations
+		13 heading Operations, Value: 1
+			14 text Operations
+		15 text Your ideas, in one place.
+		20 container Plugin operations
+			21 text Prepare a plan, request the operation, then use local operator approval and apply.
+			22 text New code requires a local operator to stage the release first. Installation from the current image and native uninstall still require exact local approval and coordinated maintenance. Uploading or selecting an artifact does not execute it.
+			23 container Upload validation
+				24 heading Validate a plugin archive, Value: 2
+					25 text Validate a plugin archive
+				26 text Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.
+				27 text Plugin archive (.mplug, maximum 100 MiB)
+				28 button Plugin archive (.mplug, maximum 100 MiB), ID: mp_upload_file
+				29 button (disabled) Validate archive
+			30 container Installed plugins
+				31 heading Installed plugins, Value: 2
+					32 text Installed plugins
+				33 text Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.
+				34 table
+					35 row
+						36 cell
+							37 text Plugin
+						38 cell
+							39 text Version / trust
+						40 cell
+							41 text Database
+						42 cell
+							43 text Health
+						44 cell
+							45 text Dependencies
+						46 cell
+							47 text Workspace availability
+					48 row
+						49 cell
+							50 button Canvas
+						51 cell
+							52 text 0.1.3
+							53 text operator-approved-exact-digest
+						54 cell
+							55 text installed
+						56 cell
+							57 text unknown
+							58 text Registry observed; plugin-specific health has not been probed.
+						59 cell
+							60 text satisfied
+						61 cell
+							62 container
+								63 text Research :  enabled
+							64 container
+								65 text Personal :  enabled
+					66 row
+						67 cell
+							68 button Notes
+						69 cell
+							70 text 0.2.3
+							71 text operator-approved-exact-digest
+						72 cell
+							73 text installed
+						74 cell
+							75 text unknown
+							76 text Registry observed; plugin-specific health has not been probed.
+						77 cell
+							78 text satisfied
+						79 cell
+							80 container
+								81 text Research :  enabled
+							82 container
+								83 text Personal :  enabled
+					84 row
+						85 cell
+							86 button Notes Labels
+						87 cell
+							88 text 0.2.1
+							89 text operator-approved-exact-digest
+						90 cell
+							91 text installed
+						92 cell
+							93 text unknown
+							94 text Registry observed; plugin-specific health has not been probed.
+						95 cell
+							96 text satisfied
+						97 cell
+							98 container
+								99 text Research :  enabled
+							100 container
+								101 text Personal :  enabled
+				102 button Refresh metadata
+			103 container
+				104 text Plugin and version
+				105 pop up button (collapsed, settable) Plugin and version, Value: Notes Labels · 0.2.2, ID: mp_operation_artifact, Secondary Actions: Expand
+					106 menu
+						107 Choose a plugin
+						108 Canvas · 0.1.2
+						109 Canvas · 0.1.3
+						110 Notes · 0.2.1
+						111 Notes · 0.2.2
+						112 Notes · 0.2.3
+						113 Notes Labels · 0.2.0
+						114 Notes Labels · 0.2.1
+						133 (selected) Notes Labels · 0.2.2
+				115 text Operation
+				116 pop up button (collapsed, settable) Operation, Value: Upgrade, ID: mp_operation_type, Secondary Actions: Expand
+					117 menu
+						118 Install
+						119 (selected) Upgrade
+						120 Feature suspension
+						121 Enable feature
+						122 Native uninstall
+						123 Unregister service
+						124 Remove unused artifact
+				125 text Workspace
+				126 pop up button (collapsed, settable) Workspace, Value: Personal, ID: mp_operation_workspace, Secondary Actions: Expand
+					127 menu
+						128 Choose a workspace
+						129 Research
+						130 (selected) Personal
+				131 checkbox (settable, integer) Description: Include dependent changes in the proposed plan, Value: 0
+				132 button Prepare plan
+			134 container Package trust
+				135 heading Notes Labels, Value: 2
+					136 text Notes Labels
+				137 text Trusted shared-table Notes extension
+				138 container
+					139 text Publisher:  example  · License:  LGPL-3.0-only
+				140 container
+					141 text Trust:  operator-approved-exact-digest  · Signature verified: no
+				142 text sha256:89b31c85165db645af7a63cec954f31ad7e182ea3306813f66ee593b445aff94
+				143 button View package details
+			144 container Proposed operation
+				145 heading Review proposed changes, Value: 2
+					146 text Review proposed changes
+				147 text Native code shares the host application's trust.
+				148 text A coordinated database and filestore checkpoint is required.
+				149 text Workers will restart on the selected release.
+				150 table
+					151 row
+						152 cell
+							153 text Plugin
+						154 cell
+							155 text Workspace
+						156 cell
+							157 text Action
+					158 row
+						159 cell
+							160 text org.example.notes_labels
+						161 cell
+							162 text Research
+						163 cell
+							164 text upgrade
+					165 row
+						166 cell
+							167 text org.example.notes_labels
+						168 cell
+							169 text Personal
+						170 cell
+							171 text upgrade
+				172 table
+					173 row
+						174 cell
+							175 text Artifact
+						176 cell
+							177 text Version
+						178 cell
+							179 text Action
+						180 cell
+							181 text Migration scripts
+					182 row
+						183 cell
+							184 text org.example.notes_labels
+						185 cell
+							186 text 0.2.2
+						187 cell
+							188 text upgrade
+						189 cell
+							190 text 0
+				191 container Permission changes
+					192 heading Permission changes, Value: 3
+						193 text Permission changes
+					194 text These grants govern supported APIs. Native code retains the host application's authority.
+					195 content list
+						196 container
+							197 AXListMarker •
+							198 text grant org.example.notes:notes.write  for  org.example.notes_labels  in  Research
+						199 container
+							200 AXListMarker •
+							201 text grant org.example.notes:notes.write  for  org.example.notes_labels  in  Personal
+				202 container
+					203 text org.example.notes_labels  added capabilities:  org.example.notes:notes.write ; added scopes:  None .
+				204 text Native Python and same-origin frontend code is fully trusted.
+				205 text Author destructive=false does not prove migration safety.
+				206 text The staged image includes fully trusted native core/runtime code; image rollback alone does not restore database state.
+				207 button Download full plan and bindings
+				208 button Request operation
+			209 container Operation progress
+				210 heading Operation progress, Value: 2
+					211 text Operation progress
+				212 container
+					213 text awaiting_operator_approval  ·  prepared
+				214 container
+					215 text Operation ID:  4e84908e-4367-49b7-a605-37d199991c69
+				216 container
+					217 text Exact plan hash:  sha256:cc8231813f1b436ffdbe33e6b41af9d0bc14b07c1c77ad90427a10d3d3657f3a
+				218 text Next: local operator approval for this exact hash, followed by local apply.
+				219 text modular --config OPERATOR_TRUST_CONFIG operations import-request 4e84908e-4367-49b7-a605-37d199991c69 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+modular --config OPERATOR_TRUST_CONFIG operations approve 4e84908e-4367-49b7-a605-37d199991c69 --plan-hash sha256:cc8231813f1b436ffdbe33e6b41af9d0bc14b07c1c77ad90427a10d3d3657f3a --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+modular --config OPERATOR_TRUST_CONFIG plugin apply 4e84908e-4367-49b7-a605-37d199991c69 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+modular --config OPERATOR_TRUST_CONFIG operations mirror-status 4e84908e-4367-49b7-a605-37d199991c69 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+				220 text Replace the uppercase path placeholders with the independently configured local operator paths. Review the full plan and supply any required trust, permission or destructive acknowledgements locally.
+				221 content list
+					222 container
+						223 AXListMarker 1.
+						224 text 2026-10-29T05:07:49Z  ·  prepared
+				225 table
+					226 row
+						227 cell
+							228 text Plugin
+						229 cell
+							230 text Artifact
+						231 cell
+							232 text Release
+						233 cell
+							234 text Database
+						235 cell
+							236 text Feature
+						237 cell
+							238 text Service runtime
+					239 row
+						240 cell
+							241 text org.example.notes_labels
+						242 cell
+							243 text verified
+						244 cell
+							245 text planned
+						246 cell
+							247 text installed
+						248 cell
+							249 text enabled
+						250 cell
+							251 text Not applicable
+					252 row
+						253 cell
+							254 text org.example.notes_labels
+						255 cell
+							256 text verified
+						257 cell
+							258 text planned
+						259 cell
+							260 text installed
+						261 cell
+							262 text enabled
+						263 cell
+							264 text Not applicable
+
+The focused UI element is 0 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4

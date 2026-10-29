@@ -1,0 +1,16 @@
+{
+  "result": "validated_reference_upgrade_fixture_not_deployed",
+  "base_commit": "16893c65",
+  "source_worktree": ".local\\g5-permission-upgrade-source",
+  "overlay_sha256": {
+    "plugins/notes_labels/plugin.toml": "d59b98dd4bf6a37eee44c5e3ea22cf81645c36b64ecb619ad621da27b8835a7e",
+    "platform_addons/mp_example_notes_labels/__manifest__.py": "ae26534b100a7a6db8d8ca30b896b92ae47099db4f8929b145120a5f1cdc1be3"
+  },
+  "canonical_sources_unchanged": true,
+  "artifact_digest": "sha256:89b31c85165db645af7a63cec954f31ad7e182ea3306813f66ee593b445aff94",
+  "version": "0.2.2",
+  "added_request": "org.example.notes:notes.write",
+  "native_behavior_changes": false,
+  "contract_changes": false,
+  "reference_composition_valid": true
+}

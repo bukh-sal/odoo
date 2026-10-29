@@ -1,0 +1,8 @@
+{
+  "result": "reconciled_before_build_or_runtime_effect",
+  "invalid_fixture": "JSON separators used inside TOML permissions table; parser rejected before artifact creation",
+  "builder_precondition": "Isolated checkout lacked independently owned build lock directory; failed before Docker invocation",
+  "candidate_tag_absent": "modular-platform:stage-20261029t050202738419z",
+  "native_or_deployment_effect": false,
+  "next_distinct_action": "Use existing toml_value serializer, validate composition, initialize owned private lock directory, and fresh attempt02"
+}

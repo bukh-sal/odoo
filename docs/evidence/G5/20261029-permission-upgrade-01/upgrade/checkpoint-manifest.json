@@ -1,0 +1,3018 @@
+{
+  "app_config_volume": "mp-r0-r1lifef99acae9d906_appconfig",
+  "configuration": {
+    "deployment_id": "1f7db117-aa41-45a9-a318-6730d0f3c4cf",
+    "generation": 10,
+    "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+    "operator_authorization_generation": 1,
+    "policy_version": 1,
+    "project": "mp-r0-r1lifef99acae9d906",
+    "published_release": {
+      "core_inventory_digest": "sha256:13a8019cd8c8c943ac4efd3e8370d4939f9a245b4eee3092888071aabc1fd357",
+      "created_at": "2026-10-29T05:00:03Z",
+      "frontend_inventory": {
+        "org.example.canvas": {
+          "backend/odoo_addons/mp_example_canvas/static/src/adapter.js": "16528951a1062f7170b63f03f42085bb030e1337729226171ea9a8fada8e5f18",
+          "backend/odoo_addons/mp_example_canvas/static/src/canvas.css": "fbdabc2d32b7660814445e6404174363dff57fafc0f41e34087f265e2d8cb1c6",
+          "backend/odoo_addons/mp_example_canvas/static/src/page.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd",
+          "frontend/dist/canvas.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd"
+        },
+        "org.example.notes": {},
+        "org.example.notes_labels": {
+          "backend/odoo_addons/mp_example_notes_labels/static/src/labels.js": "18c0c03e4f14f484388f6b4fd75c6d5c23f477cb114b6e416b9f5577370121be"
+        }
+      },
+      "frontend_inventory_digest": "sha256:6575c0ad44f4d6777fd0e84c9d0afe2fc4371b4329e09d2b17148c24c765f4bb",
+      "generation": 10,
+      "generator": "modular-operator/0.1",
+      "native_order": [
+        "mp_example_notes",
+        "mp_example_canvas",
+        "mp_example_notes_labels"
+      ],
+      "native_patch_set_digest": "sha256:6e0a9bee5102ec502953c0bb59935f25dd65d1b4b51a5ff16c0ce686b91284d8",
+      "optional_integrations": [
+        {
+          "available": true,
+          "consumer": "org.example.notes",
+          "provider": "org.example.notes_labels"
+        }
+      ],
+      "platform_version": "0.1.0",
+      "plugins": [
+        {
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "data_ownership": {
+            "contributions": [
+              {
+                "delete_policy": "owned",
+                "id": "mp.example.note",
+                "kind": "model",
+                "target": "workspace"
+              }
+            ],
+            "export_schema": "schemas/notes-export-v1.json",
+            "extension_targets": [],
+            "models": [
+              "mp.example.note"
+            ]
+          },
+          "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+          "hard_dependencies": {},
+          "manifest_digest": "sha256:5211f02161d2a710c92e25d8c7f5e5e0aba61ef018d998b05cff4a2de5f5a22e",
+          "native_addon": "mp_example_notes",
+          "native_version": "19.0.0.2.3",
+          "permissions": {
+            "defines": {
+              "notes.delete": "Delete notes",
+              "notes.read": "Read notes",
+              "notes.write": "Write notes"
+            },
+            "requests": []
+          },
+          "plugin_id": "org.example.notes",
+          "provided_apis": [
+            {
+              "api_version": "1.0",
+              "service_id": "org.example.notes.documents"
+            },
+            {
+              "api_version": "2.0",
+              "service_id": "org.example.notes.documents"
+            }
+          ],
+          "runtime": "native",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "policy_generation": 3,
+            "signature_verified": false,
+            "warnings": []
+          },
+          "version": "0.2.3"
+        },
+        {
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "data_ownership": {
+            "contributions": [
+              {
+                "delete_policy": "owned",
+                "id": "mp.example.canvas.board",
+                "kind": "model",
+                "target": "workspace"
+              }
+            ],
+            "extension_targets": [],
+            "models": [
+              "mp.example.canvas.board"
+            ]
+          },
+          "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+          "hard_dependencies": {
+            "org.example.notes": ">=0.2,<0.3"
+          },
+          "manifest_digest": "sha256:d2b67e7eb66e513eb0064cf039c3ce4934ed93fa56f1ddc135cb47aad567a130",
+          "native_addon": "mp_example_canvas",
+          "native_version": "19.0.0.1.3",
+          "permissions": {
+            "defines": {
+              "canvas.read": "Read boards",
+              "canvas.write": "Save boards"
+            },
+            "requests": [
+              {
+                "capability": "org.example.notes:notes.read",
+                "reason": "Select workspace notes through documents v2",
+                "scope": "workspace"
+              }
+            ]
+          },
+          "plugin_id": "org.example.canvas",
+          "provided_apis": [
+            {
+              "api_version": "1.0",
+              "service_id": "org.example.canvas.boards"
+            }
+          ],
+          "runtime": "native",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "policy_generation": 3,
+            "signature_verified": false,
+            "warnings": []
+          },
+          "version": "0.1.3"
+        },
+        {
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "data_ownership": {
+            "contributions": [
+              {
+                "delete_policy": "owned",
+                "id": "mp.example.note.x_notes_labels",
+                "kind": "field",
+                "target": "mp.example.note"
+              }
+            ],
+            "extension_targets": [
+              "mp.example.note"
+            ],
+            "models": []
+          },
+          "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+          "hard_dependencies": {
+            "org.example.notes": ">=0.1,<0.3"
+          },
+          "manifest_digest": "sha256:6fd428a691c553353ad12ab6a80b728bc80dea88bdc501af5945eecefe7a897e",
+          "native_addon": "mp_example_notes_labels",
+          "native_version": "19.0.0.2.1",
+          "permissions": {
+            "defines": {
+              "labels.read": "Read labels",
+              "labels.write": "Set labels"
+            },
+            "requests": [
+              {
+                "capability": "org.example.notes:notes.read",
+                "reason": "Read base revision through the documents binding",
+                "scope": "workspace"
+              }
+            ]
+          },
+          "plugin_id": "org.example.notes_labels",
+          "provided_apis": [
+            {
+              "api_version": "1.0",
+              "service_id": "org.example.notes_labels.labels"
+            }
+          ],
+          "runtime": "native",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "policy_generation": 3,
+            "signature_verified": false,
+            "warnings": []
+          },
+          "version": "0.2.1"
+        }
+      ],
+      "python_lock_digest": "sha256:3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+      "python_runtime": {
+        "architecture": "linux/x86_64",
+        "marker_environment": {
+          "implementation_name": "cpython",
+          "implementation_version": "3.12.16",
+          "os_name": "posix",
+          "platform_machine": "x86_64",
+          "platform_python_implementation": "CPython",
+          "platform_release": "7.0.14-linuxkit",
+          "platform_system": "Linux",
+          "platform_version": "#1 SMP PREEMPT_DYNAMIC Tue Oct 20 23:09:17 UTC 2026",
+          "python_full_version": "3.12.16",
+          "python_version": "3.12",
+          "sys_platform": "linux"
+        },
+        "version": "3.12.16"
+      },
+      "python_solution": [
+        {
+          "digest": "sha256:b80f42b0d0da70ecf742c7050778172fa51362b97bcd78a7526f9a1074fbb051",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "asn1crypto",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.5.1"
+        },
+        {
+          "digest": "sha256:3641844d64e28a4dd78c85ce1cc656bb413b9a44f2ee9f5699b35de8d8875213",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "attrs",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "26.1.0"
+        },
+        {
+          "digest": "sha256:86f61ed25692d7f5e964f6573285aba2c350a4f9d0d9685c8fc6167ade3e6a50",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "Babel",
+          "requires_dist": [
+            "pytz (>=2015.7)"
+          ],
+          "requires_python": ">=3.6",
+          "version": "2.10.3"
+        },
+        {
+          "digest": "sha256:e17efe80a50feaa82d69526e7ebcfe7eb0ec2585214f698b43f7f6397e18664b",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "beautifulsoup4",
+          "requires_dist": [
+            "soupsieve>=1.6.1",
+            "typing-extensions>=4.0.0",
+            "cchardet; extra == 'cchardet'",
+            "chardet; extra == 'chardet'",
+            "charset-normalizer; extra == 'charset-normalizer'",
+            "html5lib; extra == 'html5lib'",
+            "lxml; extra == 'lxml'"
+          ],
+          "requires_python": ">=3.7.0",
+          "version": "4.15.0"
+        },
+        {
+          "digest": "sha256:deb1e549e05eb4d98fa40b4e3d4639380193dece7a51a4ed4049bec6fd8f1d01",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "cbor2",
+          "requires_dist": [
+            "pytest-benchmark ==4.0.0 ; extra == 'benchmarks'",
+            "packaging ; extra == 'doc'",
+            "Sphinx >=7 ; extra == 'doc'",
+            "sphinx-rtd-theme >=1.3.0 ; extra == 'doc'",
+            "sphinx-autodoc-typehints >=1.2.0 ; extra == 'doc'",
+            "typing-extensions ; (python_version < \"3.12\") and extra == 'doc'",
+            "coverage >=7 ; extra == 'test'",
+            "pytest ; extra == 'test'",
+            "hypothesis ; extra == 'test'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "5.6.2"
+        },
+        {
+          "digest": "sha256:aa3e852ff279f5f9a68f38c0632bef5488e77205e23fb0b1053d69f676446751",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "certifi",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2026.10.23"
+        },
+        {
+          "digest": "sha256:5ab16a1d7c082ef425e37b82a873bba87bebe336cacf9cf40da4be975c0a5212",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "cffi",
+          "requires_dist": [
+            "pycparser; implementation_name != \"PyPy\""
+          ],
+          "requires_python": ">=3.10",
+          "version": "2.1.1"
+        },
+        {
+          "digest": "sha256:cd12f1eda938bef5c09e6b317434f526525d401e481b669beeb5a73a47267954",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "chardet",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "5.2.0"
+        },
+        {
+          "digest": "sha256:06445f9816cb1a1d5e69bbea910344c406162c1423cbb6280e83dca2df63563a",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "charset-normalizer",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "3.5.2"
+        },
+        {
+          "digest": "sha256:3f785f162df80550e04c7e83a26d41bde06a6ae8ed10f1cf3817e9a3f0931ac2",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "cryptography",
+          "requires_dist": [
+            "cffi >=1.12 ; platform_python_implementation != \"PyPy\"",
+            "sphinx >=5.3.0 ; extra == 'docs'",
+            "sphinx-rtd-theme >=1.1.1 ; extra == 'docs'",
+            "pyenchant >=1.6.11 ; extra == 'docstest'",
+            "readme-renderer ; extra == 'docstest'",
+            "sphinxcontrib-spelling >=4.0.1 ; extra == 'docstest'",
+            "nox ; extra == 'nox'",
+            "ruff ; extra == 'pep8test'",
+            "mypy ; extra == 'pep8test'",
+            "check-sdist ; extra == 'pep8test'",
+            "click ; extra == 'pep8test'",
+            "build ; extra == 'sdist'",
+            "bcrypt >=3.1.5 ; extra == 'ssh'",
+            "pytest >=6.2.0 ; extra == 'test'",
+            "pytest-benchmark ; extra == 'test'",
+            "pytest-cov ; extra == 'test'",
+            "pytest-xdist ; extra == 'test'",
+            "pretend ; extra == 'test'",
+            "certifi ; extra == 'test'",
+            "pytest-randomly ; extra == 'test-randomorder'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "42.0.8"
+        },
+        {
+          "digest": "sha256:4914d0123ab1b7f89a55d146eb8d682abde3293e4f3fb72531843b43cc144c8c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "docopt",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "0.6.2"
+        },
+        {
+          "digest": "sha256:a0ad54641acf904827f3fdb9420f1455dbb352bf56854e7ef824abf4d0427cb7",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "docutils",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "0.20.1"
+        },
+        {
+          "digest": "sha256:79d0d73394887ccb1627be5e562f10d8834af81ed6256a7b3670f288d7919078",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "et_xmlfile",
+          "requires_dist": [],
+          "requires_python": ">=3.8",
+          "version": "2.0.0"
+        },
+        {
+          "digest": "sha256:a7b55d470489dc97748e80900e9dc2ad841be52f4afaca76ca1a9365db2d2692",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "freezegun",
+          "requires_dist": [
+            "python-dateutil (>=2.7)"
+          ],
+          "requires_python": ">=3.6",
+          "version": "1.2.1"
+        },
+        {
+          "digest": "sha256:2e854893f8fe000419cc85861177edff0da768a9d84304c164d39669e4059c9d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "geoip2",
+          "requires_dist": [
+            "requests (>=2.9)",
+            "maxminddb (>=1.4.0)",
+            "ipaddress; python_version==\"2.7\""
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+          "version": "2.9.0"
+        },
+        {
+          "digest": "sha256:a2e80d800dbec5b16ef67b315eee905f4c3e010039ab0e14fcf91ceab86a0303",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "gevent",
+          "requires_dist": [
+            "zope.event",
+            "zope.interface",
+            "greenlet >=2.0.0 ; platform_python_implementation == \"CPython\" and python_version < \"3.11\"",
+            "greenlet >=3.0rc3 ; platform_python_implementation == \"CPython\" and python_version >= \"3.11\"",
+            "cffi >=1.12.2 ; platform_python_implementation == \"CPython\" and sys_platform == \"win32\"",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'dnspython'",
+            "idna ; (python_version < \"3.10\") and extra == 'dnspython'",
+            "sphinx ; extra == 'docs'",
+            "furo ; extra == 'docs'",
+            "repoze.sphinx.autointerface ; extra == 'docs'",
+            "sphinxcontrib-programoutput ; extra == 'docs'",
+            "zope.schema ; extra == 'docs'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'monitor'",
+            "cffi >=1.12.2 ; (platform_python_implementation == \"CPython\") and extra == 'recommended'",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'recommended'",
+            "idna ; (python_version < \"3.10\") and extra == 'recommended'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'recommended'",
+            "requests ; extra == 'test'",
+            "objgraph ; extra == 'test'",
+            "cffi >=1.12.2 ; (platform_python_implementation == \"CPython\") and extra == 'test'",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'test'",
+            "idna ; (python_version < \"3.10\") and extra == 'test'",
+            "coverage >=5.0 ; (sys_platform != \"win32\") and extra == 'test'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'test'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "24.2.1"
+        },
+        {
+          "digest": "sha256:ce288da38a59cba5d437c12619b051bd3fcc680539d579b284422a905b115edc",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "greenlet",
+          "requires_dist": [
+            "Sphinx ; extra == 'docs'",
+            "furo ; extra == 'docs'",
+            "objgraph ; extra == 'test'",
+            "psutil ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "3.0.3"
+        },
+        {
+          "digest": "sha256:9691637bd43b58ca5d82ae4cd2c0a09de8eb3ce4cb42adecf445c5d33778fd3e",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "idna",
+          "requires_dist": [],
+          "requires_python": ">=3.5",
+          "version": "3.6"
+        },
+        {
+          "digest": "sha256:be9e8a9e328ab65f4aceeb915e7a3835c0a2ca48a8b8c4bd8b54b7ef495f2462",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "isodate",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "0.7.2"
+        },
+        {
+          "digest": "sha256:44651ca3350c6a63f8a2b3ab27e0fc68b7e0699430bb0dd4d2eb0e51c549a485",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "Jinja2",
+          "requires_dist": [
+            "MarkupSafe (>=2.0)",
+            "Babel (>=2.7) ; extra == 'i18n'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "3.1.2"
+        },
+        {
+          "digest": "sha256:9bc90badf40bd6029d4bf4d9f75766a824caef029903fbd45d7e4ae48b51ca1d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "jsonschema",
+          "requires_dist": [
+            "attrs>=22.2.0",
+            "jsonschema-specifications>=2023.03.6",
+            "referencing>=0.28.4",
+            "rpds-py>=0.25.0",
+            "fqdn; extra == 'format'",
+            "idna; extra == 'format'",
+            "isoduration; extra == 'format'",
+            "jsonpointer>1.13; extra == 'format'",
+            "rfc3339-validator; extra == 'format'",
+            "rfc3987; extra == 'format'",
+            "uri-template; extra == 'format'",
+            "webcolors>=1.11; extra == 'format'",
+            "fqdn; extra == 'format-nongpl'",
+            "idna; extra == 'format-nongpl'",
+            "isoduration; extra == 'format-nongpl'",
+            "jsonpointer>1.13; extra == 'format-nongpl'",
+            "rfc3339-validator; extra == 'format-nongpl'",
+            "rfc3986-validator>0.1.0; extra == 'format-nongpl'",
+            "rfc3987-syntax>=1.1.0; extra == 'format-nongpl'",
+            "uri-template; extra == 'format-nongpl'",
+            "webcolors>=24.6.0; extra == 'format-nongpl'"
+          ],
+          "requires_python": ">=3.10",
+          "version": "4.26.0"
+        },
+        {
+          "digest": "sha256:b2d758c54b5f8fb9df4ede00514d03ffe85c961512a3f9894d3a8b3f6e168a55",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "jsonschema-specifications",
+          "requires_dist": [
+            "referencing>=0.31.0"
+          ],
+          "requires_python": ">=3.9",
+          "version": "2025.9.1"
+        },
+        {
+          "digest": "sha256:1a3bf959e7680885ad72dbe1d47d9f479e5fd2b733ab9089a7f2618fd20f9105",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "libsass",
+          "requires_dist": [],
+          "requires_python": ">=3.6",
+          "version": "0.22.0"
+        },
+        {
+          "digest": "sha256:359b11aaa799256c2f7c0fa92ea631f6044fc3cdff53489217f2788b5617feac",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "lxml",
+          "requires_dist": [
+            "cssselect >=0.7 ; extra == 'cssselect'",
+            "html5lib ; extra == 'html5'",
+            "lxml-html-clean ; extra == 'html_clean'",
+            "BeautifulSoup4 ; extra == 'htmlsoup'",
+            "Cython >=3.0.10 ; extra == 'source'"
+          ],
+          "requires_python": ">=3.6",
+          "version": "5.2.1"
+        },
+        {
+          "digest": "sha256:04628b096133109467d7d5f2971f26fe3cb5df54a51f12c269046f20120c7919",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "lxml_html_clean",
+          "requires_dist": [
+            "lxml"
+          ],
+          "requires_python": "",
+          "version": "0.4.4"
+        },
+        {
+          "digest": "sha256:2e2b1b76328c869ebf556ae3aa2e8111ff014b72980335609a7e10e1f6183bcf",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "MarkupSafe",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2.1.5"
+        },
+        {
+          "digest": "sha256:4d91a4e05ed1036411a82497301fe3129d5f8b09343db8d2890332da9043e2c1",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "maxminddb",
+          "requires_dist": [],
+          "requires_python": ">=3.10",
+          "version": "3.2.0"
+        },
+        {
+          "digest": "sha256:c50202b619c17607ebf94957a899cbb5765cf4b4d6eccadbff037b271bd1a266",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "num2words",
+          "requires_dist": [
+            "docopt >=0.6.2"
+          ],
+          "requires_python": "",
+          "version": "0.5.13"
+        },
+        {
+          "digest": "sha256:661797ec031dec3d14fa6b1e95eba633c78496a2dae2196dae6d74d06e778b51",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "ofxparse",
+          "requires_dist": [
+            "beautifulsoup4",
+            "lxml",
+            "six"
+          ],
+          "requires_python": "",
+          "version": "0.21"
+        },
+        {
+          "digest": "sha256:19da7368a57fefb135d48c32938af522ec8d47bc319017703d54313043a6d5dc",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "openpyxl",
+          "requires_dist": [
+            "et-xmlfile"
+          ],
+          "requires_python": ">=3.6",
+          "version": "3.1.2"
+        },
+        {
+          "digest": "sha256:fee2c02b88a2f745cb9ba0e7c502f392d45cd538aeb75d2854b148abc9792cab",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "packaging",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "26.3"
+        },
+        {
+          "digest": "sha256:c129b5c34fbf08ceac2bcbf136b8d7581f8cc195d3375d2180589cf66730faed",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "passlib",
+          "requires_dist": [
+            "argon2-cffi (>=18.2.0) ; extra == 'argon2'",
+            "bcrypt (>=3.1.0) ; extra == 'bcrypt'",
+            "sphinx (>=1.6) ; extra == 'build_docs'",
+            "sphinxcontrib-fulltoc (>=1.2.0) ; extra == 'build_docs'",
+            "cloud-sptheme (>=1.10.1) ; extra == 'build_docs'",
+            "cryptography ; extra == 'totp'"
+          ],
+          "requires_python": "",
+          "version": "1.7.4"
+        },
+        {
+          "digest": "sha256:a37bd6ea36119e8d3db8c059635e28c82541ed4fc4271a6e6f55661122bf8500",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pillow",
+          "requires_dist": [
+            "furo ; extra == 'docs'",
+            "olefile ; extra == 'docs'",
+            "sphinx >=2.4 ; extra == 'docs'",
+            "sphinx-copybutton ; extra == 'docs'",
+            "sphinx-inline-tabs ; extra == 'docs'",
+            "sphinx-removed-in ; extra == 'docs'",
+            "sphinxext-opengraph ; extra == 'docs'",
+            "olefile ; extra == 'fpx'",
+            "olefile ; extra == 'mic'",
+            "check-manifest ; extra == 'tests'",
+            "coverage ; extra == 'tests'",
+            "defusedxml ; extra == 'tests'",
+            "markdown2 ; extra == 'tests'",
+            "olefile ; extra == 'tests'",
+            "packaging ; extra == 'tests'",
+            "pyroma ; extra == 'tests'",
+            "pytest ; extra == 'tests'",
+            "pytest-cov ; extra == 'tests'",
+            "pytest-timeout ; extra == 'tests'",
+            "typing-extensions ; (python_version < \"3.10\") and extra == 'typing'",
+            "defusedxml ; extra == 'xmp'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "10.2.0"
+        },
+        {
+          "digest": "sha256:93a22bd5595bbb5cd2a4d99fd026dedd92578ef652a4dcfd19c44054c18bad4d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pip",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "25.3"
+        },
+        {
+          "digest": "sha256:b9142e9305c659c5ad20075280e1b9e0673a3ddd5cc1d636d9ad580b03384c75",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "platformdirs",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "4.13.6"
+        },
+        {
+          "digest": "sha256:0b9e1108908622da4affbb5d3089a0cdc25825d4816bb4f1bdd22b1022b2eb7b",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "polib",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.1.1"
+        },
+        {
+          "digest": "sha256:6d3a27c4cd9d427f9de55ecda0c94a5d4ea6c10ca503a563cccbdb060ae0227f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "psutil",
+          "requires_dist": [
+            "ipaddress ; (python_version < \"3.0\") and extra == 'test'",
+            "mock ; (python_version < \"3.0\") and extra == 'test'",
+            "enum34 ; (python_version <= \"3.4\") and extra == 'test'",
+            "pywin32 ; (sys_platform == \"win32\") and extra == 'test'",
+            "wmi ; (sys_platform == \"win32\") and extra == 'test'"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*",
+          "version": "5.9.8"
+        },
+        {
+          "digest": "sha256:bc56efc83cba16deb6ac18e0e4517a9f2bf2d391502aad304cd335c9ea79e149",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "psycopg2",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2.9.9"
+        },
+        {
+          "digest": "sha256:55cf1e122e3fc088d33fc5890677f9caad71dae57904f80e801a0a276e9a5b3d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyasn1",
+          "requires_dist": [],
+          "requires_python": ">=3.8",
+          "version": "0.6.5"
+        },
+        {
+          "digest": "sha256:a1a66dc5e51b85fa2c3597c939d353737e0ca8095537973a87a67009c8d6343c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyasn1_modules",
+          "requires_dist": [
+            "pyasn1<0.7.0,>=0.6.1"
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.4.2"
+        },
+        {
+          "digest": "sha256:f25c37a169becf60bd006d05ec7091aca1a15b6d0c6e839a2bf81e5fe2d2253e",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pycparser",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "3.12"
+        },
+        {
+          "digest": "sha256:d145e3215c948905f31b1b32d465e4ce5700e3c1cbf0cb96278df104abd57225",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "PyJWT",
+          "requires_dist": [
+            "typing_extensions>=4.0; python_version < \"3.11\"",
+            "cryptography>=3.4.0; extra == \"crypto\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "2.15.1"
+        },
+        {
+          "digest": "sha256:379d1f1cf9a32cea359085a6cd0494ef0c4c0d47590ea9c77f8d4331145b1009",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyOpenSSL",
+          "requires_dist": [
+            "cryptography <43,>=41.0.5",
+            "sphinx !=5.2.0,!=5.2.0.post0,!=7.2.5 ; extra == 'docs'",
+            "sphinx-rtd-theme ; extra == 'docs'",
+            "pytest-rerunfailures ; extra == 'test'",
+            "pretend ; extra == 'test'",
+            "pytest >=3.0.1 ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "24.1.0"
+        },
+        {
+          "digest": "sha256:eb910a32cc0bae2c32fdb749cb4fac4b27f846b23dd38ce3b2a1b028cd68ec4c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "PyPDF2",
+          "requires_dist": [
+            "typing_extensions >= 3.10.0.0; python_version < '3.10'",
+            "dataclasses; python_version < '3.7'",
+            "PyCryptodome ; extra == \"crypto\"",
+            "black ; extra == \"dev\"",
+            "pip-tools ; extra == \"dev\"",
+            "pre-commit<2.18.0 ; extra == \"dev\"",
+            "pytest-cov ; extra == \"dev\"",
+            "flit ; extra == \"dev\"",
+            "wheel ; extra == \"dev\"",
+            "sphinx ; extra == \"docs\"",
+            "sphinx_rtd_theme ; extra == \"docs\"",
+            "myst_parser ; extra == \"docs\"",
+            "PyCryptodome ; extra == \"full\"",
+            "Pillow ; extra == \"full\"",
+            "Pillow ; extra == \"image\""
+          ],
+          "requires_python": ">=3.6",
+          "version": "2.12.1"
+        },
+        {
+          "digest": "sha256:a422515b6808528889ef4284e7e7fcadb98a3dcbafe66fff9a4ebc97462698e3",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pypng",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "0.20220715.0"
+        },
+        {
+          "digest": "sha256:20525f855c241e9792e0016368e17aae5445230008e3a900546da6767a0a3d0d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyserial",
+          "requires_dist": [
+            "hidapi; extra == 'cp2110'"
+          ],
+          "requires_python": "",
+          "version": "3.5"
+        },
+        {
+          "digest": "sha256:8e2b178fa8007c898b2860ff89b359d84532a99d0fb84085894796593a7d2694",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-dateutil",
+          "requires_dist": [
+            "six (>=1.5)"
+          ],
+          "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7",
+          "version": "2.8.2"
+        },
+        {
+          "digest": "sha256:cd4888ca3859c82c75b4e31c382cac80804bae92344677ebe058b8bbe9221b3d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-ldap",
+          "requires_dist": [
+            "pyasn1>=0.3.7",
+            "pyasn1_modules>=0.1.5"
+          ],
+          "requires_python": ">=3.6",
+          "version": "3.4.4"
+        },
+        {
+          "digest": "sha256:36ac295008a56ef1d6197789f2a5b125b26538817f0747507b129041a3aaacd6",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-magic",
+          "requires_dist": [],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+          "version": "0.4.27"
+        },
+        {
+          "digest": "sha256:02326706fc681bcb1c44283677a9d61a9c6ac83eb901b912fc4221ca0fccf14d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-stdnum",
+          "requires_dist": [
+            "zeep ; extra == 'soap'",
+            "suds ; extra == 'soap-alt'",
+            "PySimpleSOAP ; extra == 'soap-fallback'"
+          ],
+          "requires_python": "",
+          "version": "1.19"
+        },
+        {
+          "digest": "sha256:833969f0ce4ad84a6f159e41a21f642f44692ca69a209b6abab41be9165fc3fd",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pytz",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "2026.5"
+        },
+        {
+          "digest": "sha256:31a0b3dabf14df21cf370ba55745671094bec3cdae8cc50037923cada53fe32f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyusb",
+          "requires_dist": [],
+          "requires_python": ">=3.6.0",
+          "version": "1.2.1"
+        },
+        {
+          "digest": "sha256:67f74d91ffc01e722d59788c02994045b331dbca99d892080853d15a3cc1ad7f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "qrcode",
+          "requires_dist": [
+            "typing-extensions",
+            "pypng",
+            "colorama ; platform_system == \"Windows\"",
+            "zest.releaser[recommended] ; extra == 'all'",
+            "tox ; extra == 'all'",
+            "pytest ; extra == 'all'",
+            "pytest-cov ; extra == 'all'",
+            "pillow (>=9.1.0) ; extra == 'all'",
+            "tox ; extra == 'dev'",
+            "pytest ; extra == 'dev'",
+            "pytest-cov ; extra == 'dev'",
+            "zest.releaser[recommended] ; extra == 'maintainer'",
+            "pillow (>=9.1.0) ; extra == 'pil'",
+            "coverage ; extra == 'test'",
+            "pytest ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "7.4.2"
+        },
+        {
+          "digest": "sha256:158a5c9f18f51199d5668206d240267bac9d6a36e8095efda6c055ddc897e1f5",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "referencing",
+          "requires_dist": [
+            "attrs>=22.2.0",
+            "rpds-py>=0.7.0",
+            "typing-extensions>=4.4.0; python_version < '3.13'"
+          ],
+          "requires_python": ">=3.10",
+          "version": "0.37.0"
+        },
+        {
+          "digest": "sha256:0f03cea9524be753b063cd2016023732eb044069787e2d48af30cdee3f03aed7",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "reportlab",
+          "requires_dist": [
+            "pillow >=9.0.0",
+            "chardet",
+            "rl-accel <1.1,>=0.9.0 ; extra == 'accel'",
+            "rlPyCairo <1,>=0.2.0 ; extra == 'pycairo'",
+            "freetype-py <2.4,>=2.3.0 ; extra == 'pycairo'",
+            "rl-renderPM <4.1,>=4.0.3 ; extra == 'renderpm'"
+          ],
+          "requires_python": ">=3.7,<4",
+          "version": "4.1.0"
+        },
+        {
+          "digest": "sha256:e86d70f10aadf576a49734ae531b46722c7b69be8f4de0f2ba2e7fb069ab6e88",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "requests",
+          "requires_dist": [
+            "charset-normalizer (<4,>=2)",
+            "idna (<4,>=2.5)",
+            "urllib3 (<3,>=1.21.1)",
+            "certifi (>=2017.4.17)",
+            "PySocks (!=1.5.7,>=1.5.6) ; extra == 'socks'",
+            "chardet (<6,>=3.0.2) ; extra == 'use_chardet_on_py3'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.31.0"
+        },
+        {
+          "digest": "sha256:f2e61e691dba69ddfdd888b9dd59d098229da718f8cbb213afa720f39de832a9",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "requests-file",
+          "requires_dist": [
+            "requests>=1.0.0"
+          ],
+          "requires_python": "",
+          "version": "3.0.1"
+        },
+        {
+          "digest": "sha256:da2e9267830335c3c0d95a55885a8b6c45cfea6f0e0bd0feb44f692abc50132a",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "requests-toolbelt",
+          "requires_dist": [
+            "requests (<3.0.0,>=2.0.1)"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+          "version": "1.0.0"
+        },
+        {
+          "digest": "sha256:256cd02fd65cbf940f094bb5f85039a20af289c86dc42cf970d1cd8f7e9d3cb1",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "resolvelib",
+          "requires_dist": [
+            "ruff; extra == \"lint\"",
+            "mypy; extra == \"lint\"",
+            "types-requests; extra == \"lint\"",
+            "packaging; extra == \"test\"",
+            "pytest; extra == \"test\"",
+            "build; extra == \"release\"",
+            "towncrier; extra == \"release\"",
+            "twine; extra == \"release\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "1.2.1"
+        },
+        {
+          "digest": "sha256:dc93728455a314bae954df5631f4d263066c994bb6ea002c488350464409920f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "rfc8785",
+          "requires_dist": [
+            "rfc8785[doc,test,lint] ; extra == \"dev\"",
+            "build ; extra == \"dev\"",
+            "pdoc ; extra == \"doc\"",
+            "ruff ~= 0.3 ; extra == \"lint\"",
+            "mypy >= 1.0 ; extra == \"lint\"",
+            "interrogate ; extra == \"lint\"",
+            "pytest ; extra == \"test\"",
+            "pytest-cov ; extra == \"test\"",
+            "coverage ; extra == \"test\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.1.4"
+        },
+        {
+          "digest": "sha256:c017cb27fee476ffbb107cf9c4194d98d5d15a4a35cd6cdef924263357e81929",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "rjsmin",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.2.0"
+        },
+        {
+          "digest": "sha256:40ca0faeeb455f15cbf985733894f9b988d15177c2999c57b6a9a008ca8525c5",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "rpds-py",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "2026.9.1"
+        },
+        {
+          "digest": "sha256:04e9bc6d2728859b5d1428120e1d33782538bac3637c98f837777077cca93336",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "setuptools",
+          "requires_dist": [
+            "pytest!=8.1.*,>=6; extra == \"test\"",
+            "virtualenv>=13.0.0; extra == \"test\"",
+            "wheel>=0.44.0; extra == \"test\"",
+            "pip>=19.1; extra == \"test\"",
+            "packaging>=24.2; extra == \"test\"",
+            "jaraco.envs>=2.2; extra == \"test\"",
+            "pytest-xdist>=3; extra == \"test\"",
+            "jaraco.path>=3.7.2; extra == \"test\"",
+            "build[virtualenv]>=1.0.3; extra == \"test\"",
+            "filelock>=3.4.0; extra == \"test\"",
+            "ini2toml[lite]>=0.14; extra == \"test\"",
+            "tomli-w>=1.0.0; extra == \"test\"",
+            "pytest-timeout; extra == \"test\"",
+            "pytest-perf; sys_platform != \"cygwin\" and extra == \"test\"",
+            "jaraco.develop>=7.21; (python_version >= \"3.9\" and sys_platform != \"cygwin\") and extra == \"test\"",
+            "pytest-home>=0.5; extra == \"test\"",
+            "pytest-subprocess; extra == \"test\"",
+            "pyproject-hooks!=1.1; extra == \"test\"",
+            "jaraco.test>=5.5; extra == \"test\"",
+            "sphinx>=3.5; extra == \"doc\"",
+            "jaraco.packaging>=9.3; extra == \"doc\"",
+            "rst.linker>=1.9; extra == \"doc\"",
+            "furo; extra == \"doc\"",
+            "sphinx-lint; extra == \"doc\"",
+            "jaraco.tidelift>=1.4; extra == \"doc\"",
+            "pygments-github-lexers==0.0.5; extra == \"doc\"",
+            "sphinx-favicon; extra == \"doc\"",
+            "sphinx-inline-tabs; extra == \"doc\"",
+            "sphinx-reredirects; extra == \"doc\"",
+            "sphinxcontrib-towncrier; extra == \"doc\"",
+            "sphinx-notfound-page<2,>=1; extra == \"doc\"",
+            "pyproject-hooks!=1.1; extra == \"doc\"",
+            "towncrier<24.7; extra == \"doc\"",
+            "packaging>=24.2; extra == \"core\"",
+            "more_itertools>=8.8; extra == \"core\"",
+            "jaraco.text>=3.7; extra == \"core\"",
+            "importlib_metadata>=6; python_version < \"3.10\" and extra == \"core\"",
+            "tomli>=2.0.1; python_version < \"3.11\" and extra == \"core\"",
+            "wheel>=0.43.0; extra == \"core\"",
+            "platformdirs>=4.2.2; extra == \"core\"",
+            "jaraco.functools>=4; extra == \"core\"",
+            "more_itertools; extra == \"core\"",
+            "pytest-checkdocs>=2.4; extra == \"check\"",
+            "pytest-ruff>=0.2.1; sys_platform != \"cygwin\" and extra == \"check\"",
+            "ruff>=0.8.0; sys_platform != \"cygwin\" and extra == \"check\"",
+            "pytest-cov; extra == \"cover\"",
+            "pytest-enabler>=2.2; extra == \"enabler\"",
+            "pytest-mypy; extra == \"type\"",
+            "mypy==1.14.*; extra == \"type\"",
+            "importlib_metadata>=7.0.2; python_version < \"3.10\" and extra == \"type\"",
+            "jaraco.develop>=7.21; sys_platform != \"cygwin\" and extra == \"type\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "80.9.0"
+        },
+        {
+          "digest": "sha256:48fc3bdd119de4b1a610b81ee44f37d7f2a191010618b412d58ebdcb9653de5e",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "six",
+          "requires_dist": [],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+          "version": "1.17.0"
+        },
+        {
+          "digest": "sha256:5ace130384c8858619b34f682539964005f7acc56fac63cabe2f7c70d4dba41f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "soupsieve",
+          "requires_dist": [],
+          "requires_python": ">=3.11.5",
+          "version": "3.0.4"
+        },
+        {
+          "digest": "sha256:b9050b8055c7bacebc9a0a683c71c25ba47fcef185d97b6b8fbf17524e5a7b56",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "typing_extensions",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "4.16.0"
+        },
+        {
+          "digest": "sha256:97741116f378b0e510c39cc3100e022c7768eedac5bc851e1e620563039c6c6f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "urllib3",
+          "requires_dist": [
+            "brotli>=1.0.9; platform_python_implementation == 'CPython' and extra == 'brotli'",
+            "brotlicffi>=0.8.0; platform_python_implementation != 'CPython' and extra == 'brotli'",
+            "certifi; extra == 'secure'",
+            "cryptography>=1.9; extra == 'secure'",
+            "idna>=2.0.0; extra == 'secure'",
+            "pyopenssl>=17.1.0; extra == 'secure'",
+            "urllib3-secure-extra; extra == 'secure'",
+            "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+            "zstandard>=0.18.0; extra == 'zstd'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.0.7"
+        },
+        {
+          "digest": "sha256:2ad497a9691ea354a21e950d13716a45f1b62ff0e8de087ac36600e47fc22bf1",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "vobject",
+          "requires_dist": [
+            "python-dateutil>=2.4.0"
+          ],
+          "requires_python": "",
+          "version": "0.9.6.1"
+        },
+        {
+          "digest": "sha256:00afe7f0d3312a761a509e5138e0085d2bf9379106cb8dfb01872e52684aec84",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "Werkzeug",
+          "requires_dist": [
+            "MarkupSafe>=2.1.1",
+            "watchdog>=2.3 ; extra == \"watchdog\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "3.0.1"
+        },
+        {
+          "digest": "sha256:7d96d6752280519a90e81d98cd2d5ab0f4ed2880f2d924e63c3c10d4237b680c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "wheel",
+          "requires_dist": [
+            "pytest >= 6.0.0 ; extra == \"test\"",
+            "setuptools >= 65 ; extra == \"test\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.45.1"
+        },
+        {
+          "digest": "sha256:b8f5c7369d39308e242ea7462c22ea29b6945cae8cd067d104a9cd061f59cc5f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "xlrd",
+          "requires_dist": [
+            "wheel ; extra == 'build'",
+            "twine ; extra == 'build'",
+            "sphinx ; extra == 'docs'",
+            "pytest ; extra == 'test'",
+            "pytest-cov ; extra == 'test'"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*",
+          "version": "2.0.1"
+        },
+        {
+          "digest": "sha256:8e8fbefed6304618db9f66fd59e592c7f29fbc9c3d8dbc80bead860ecdf599d3",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "XlsxWriter",
+          "requires_dist": [],
+          "requires_python": ">=3.6",
+          "version": "3.1.9"
+        },
+        {
+          "digest": "sha256:4836a431de84afc20b355843a018025e3df2fc235478bc7323193737faad2f87",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "xlwt",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.3.0"
+        },
+        {
+          "digest": "sha256:70c162d580724a1a2914b85509eb3554cf902a1455fa9884b11009dff2b32b01",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "zeep",
+          "requires_dist": [
+            "attrs (>=17.2.0)",
+            "isodate (>=0.5.4)",
+            "lxml (>=4.6.0)",
+            "platformdirs (>=1.4.0)",
+            "requests (>=2.7.0)",
+            "requests-toolbelt (>=0.7.1)",
+            "requests-file (>=1.5.1)",
+            "pytz",
+            "cached-property (>=1.3.0) ; python_version < \"3.8\"",
+            "httpx (>=0.15.0) ; extra == 'async'",
+            "sphinx (>=1.4.0) ; extra == 'docs'",
+            "coverage[toml] (==5.2.1) ; extra == 'test'",
+            "freezegun (==0.3.15) ; extra == 'test'",
+            "pretend (==1.0.9) ; extra == 'test'",
+            "pytest-cov (==2.8.1) ; extra == 'test'",
+            "pytest-httpx ; extra == 'test'",
+            "pytest-asyncio ; extra == 'test'",
+            "pytest (==6.2.5) ; extra == 'test'",
+            "requests-mock (>=0.7.0) ; extra == 'test'",
+            "isort (==5.3.2) ; extra == 'test'",
+            "flake8 (==3.8.3) ; extra == 'test'",
+            "flake8-blind-except (==0.1.1) ; extra == 'test'",
+            "flake8-debugger (==3.2.1) ; extra == 'test'",
+            "flake8-imports (==0.1.1) ; extra == 'test'",
+            "xmlsec (>=0.6.1) ; extra == 'xmlsec'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "4.2.1"
+        },
+        {
+          "digest": "sha256:ed78571876d1c7754d9bb8714c8a20c85423d807185cd5c9fb0f59d01b60004c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "zope.event",
+          "requires_dist": [
+            "Sphinx; extra == \"docs\"",
+            "zope.testrunner>=6.4; extra == \"test\""
+          ],
+          "requires_python": ">=3.10",
+          "version": "6.2"
+        },
+        {
+          "digest": "sha256:aa8b73da017ba92034ce0542d9f33c10146dd01a4e0d27cddf66914eb0125527",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "zope.interface",
+          "requires_dist": [
+            "Sphinx; extra == \"docs\"",
+            "repoze.sphinx.autointerface; extra == \"docs\"",
+            "furo; extra == \"docs\"",
+            "coverage[toml]; extra == \"test\"",
+            "zope.event; extra == \"test\"",
+            "zope.testing; extra == \"test\"",
+            "coverage[toml]; extra == \"testing\"",
+            "zope.event; extra == \"testing\"",
+            "zope.testing; extra == \"testing\""
+          ],
+          "requires_python": ">=3.11",
+          "version": "8.7"
+        }
+      ],
+      "python_solution_digest": "sha256:dfe9fe8f6da1fe3d40a53be85f5932e24740354618e7e9cbca506b3bfafec97d",
+      "schema_version": 1,
+      "service_selection": [
+        {
+          "alias": "documents",
+          "api_version": "1.0",
+          "consumer": "org.example.notes",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.notes",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes.documents"
+        },
+        {
+          "alias": "documents",
+          "api_version": "2.0",
+          "consumer": "org.example.canvas",
+          "contract_major": 2,
+          "optional": false,
+          "provider": "org.example.notes",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes.documents"
+        },
+        {
+          "alias": "boards",
+          "api_version": "1.0",
+          "consumer": "org.example.canvas",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.canvas",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.canvas.boards"
+        },
+        {
+          "alias": "documents",
+          "api_version": "1.0",
+          "consumer": "org.example.notes_labels",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.notes",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes.documents"
+        },
+        {
+          "alias": "labels",
+          "api_version": "1.0",
+          "consumer": "org.example.notes_labels",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.notes_labels",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes_labels.labels"
+        }
+      ],
+      "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+    },
+    "release_created_at": "2026-10-29T05:00:03Z",
+    "schema_version": 1,
+    "sites": [
+      {
+        "database": "mp_disposable_r0_r1_g5_life_f99acae9d906",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc"
+      }
+    ],
+    "worker_id": "272df5ddaa59b74362d7923a8be7845a0ef8a7bf2fa5f25f72bcd3432f5bee13"
+  },
+  "created_at": "2026-10-29T05:10:52Z",
+  "external_dispatch": "Disabled: no external runtime or jobs installed in this profile.",
+  "files": {
+    "database.dump": "fe314e3fb28562de087220af84d0dd21684192cbb90f2740852df10c84ed24b1",
+    "database.dump.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "filestore.tar.gz": "c3b394aa8799e36c864b3fbb87d381ab92fb9fff69a6c77a6cbf846d0483215c",
+    "filestore.tar.gz.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "operation_id": "4e84908e-4367-49b7-a605-37d199991c69",
+  "plan_hash": "sha256:cc8231813f1b436ffdbe33e6b41af9d0bc14b07c1c77ad90427a10d3d3657f3a",
+  "previous_release": {
+    "bindings": [
+      {
+        "alias": "boards",
+        "api_version": "1.0",
+        "binding_id": "187f2769-19de-509d-9861-33fd41f459a1",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "provider_plugin_id": "org.example.canvas",
+        "schema_version": 1,
+        "service_id": "org.example.canvas.boards",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "alias": "documents",
+        "api_version": "2.0",
+        "binding_id": "663525ec-0eca-5f13-8c5c-7d0415f18114",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "contract_major": 2,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_plugin_id": "org.example.notes",
+        "schema_version": 1,
+        "service_id": "org.example.notes.documents",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "alias": "labels",
+        "api_version": "1.0",
+        "binding_id": "66fa25e9-81ed-5aef-b91f-949e3c12f0de",
+        "consumer_installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "provider_plugin_id": "org.example.notes_labels",
+        "schema_version": 1,
+        "service_id": "org.example.notes_labels.labels",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "alias": "labels",
+        "api_version": "1.0",
+        "binding_id": "6b4a8902-506c-53a3-aa2c-0b1e24cfeb4f",
+        "consumer_installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "provider_plugin_id": "org.example.notes_labels",
+        "schema_version": 1,
+        "service_id": "org.example.notes_labels.labels",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      },
+      {
+        "alias": "documents",
+        "api_version": "1.0",
+        "binding_id": "8d3aee30-9f60-51e0-bf3d-2b20307ae273",
+        "consumer_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_plugin_id": "org.example.notes",
+        "schema_version": 1,
+        "service_id": "org.example.notes.documents",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      },
+      {
+        "alias": "documents",
+        "api_version": "1.0",
+        "binding_id": "9b9fbdaf-18c4-53a7-a14a-11a8b350df4c",
+        "consumer_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_plugin_id": "org.example.notes",
+        "schema_version": 1,
+        "service_id": "org.example.notes.documents",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "alias": "documents",
+        "api_version": "1.0",
+        "binding_id": "a0b5af0d-b33c-5ce3-bb42-ceddad3e2ae1",
+        "consumer_installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_plugin_id": "org.example.notes",
+        "schema_version": 1,
+        "service_id": "org.example.notes.documents",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "alias": "boards",
+        "api_version": "1.0",
+        "binding_id": "a548bc22-e132-5858-83ff-52cc88d3980d",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "provider_plugin_id": "org.example.canvas",
+        "schema_version": 1,
+        "service_id": "org.example.canvas.boards",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      },
+      {
+        "alias": "documents",
+        "api_version": "1.0",
+        "binding_id": "dc6f4a63-ba63-5357-bc37-49208c553be7",
+        "consumer_installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "contract_major": 1,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_plugin_id": "org.example.notes",
+        "schema_version": 1,
+        "service_id": "org.example.notes.documents",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      },
+      {
+        "alias": "documents",
+        "api_version": "2.0",
+        "binding_id": "f128a82c-9cfe-5860-8391-312b3a163b59",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "contract_major": 2,
+        "generation": 1,
+        "optional": false,
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_plugin_id": "org.example.notes",
+        "schema_version": 1,
+        "service_id": "org.example.notes.documents",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      }
+    ],
+    "catalog_validation_digest": "sha256:d23ad6cd734bda5a9cf0f7f33c7a8f2782fbe8a44252ee9effba011d530532a4",
+    "deployment_id": "1f7db117-aa41-45a9-a318-6730d0f3c4cf",
+    "endpoints": [],
+    "generation": 10,
+    "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+    "installations": [
+      {
+        "feature_state": "enabled",
+        "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "metadata_state": "installed",
+        "plugin_id": "org.example.notes",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "state": "installed",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "feature_state": "enabled",
+        "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "metadata_state": "installed",
+        "plugin_id": "org.example.notes",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "state": "installed",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      },
+      {
+        "feature_state": "enabled",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "metadata_state": "installed",
+        "plugin_id": "org.example.notes_labels",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "state": "installed",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "feature_state": "enabled",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "metadata_state": "installed",
+        "plugin_id": "org.example.notes_labels",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "state": "installed",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      },
+      {
+        "feature_state": "enabled",
+        "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "metadata_state": "installed",
+        "plugin_id": "org.example.canvas",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "state": "installed",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+      },
+      {
+        "feature_state": "enabled",
+        "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "metadata_state": "installed",
+        "plugin_id": "org.example.canvas",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "state": "installed",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+      }
+    ],
+    "operator_authorization_generation": 1,
+    "policy_version": 1,
+    "release_digest": "sha256:cb248198af9956c3d1191e5c8c82f78e6fab478dd13c66b350c1f70301e1918f",
+    "release_lock": {
+      "core_inventory_digest": "sha256:13a8019cd8c8c943ac4efd3e8370d4939f9a245b4eee3092888071aabc1fd357",
+      "created_at": "2026-10-29T05:00:03Z",
+      "frontend_inventory": {
+        "org.example.canvas": {
+          "backend/odoo_addons/mp_example_canvas/static/src/adapter.js": "16528951a1062f7170b63f03f42085bb030e1337729226171ea9a8fada8e5f18",
+          "backend/odoo_addons/mp_example_canvas/static/src/canvas.css": "fbdabc2d32b7660814445e6404174363dff57fafc0f41e34087f265e2d8cb1c6",
+          "backend/odoo_addons/mp_example_canvas/static/src/page.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd",
+          "frontend/dist/canvas.js": "6de979c47c239172c8c3b466752c0fafd5a96bdb0d9c254f17090635dd8cccdd"
+        },
+        "org.example.notes": {},
+        "org.example.notes_labels": {
+          "backend/odoo_addons/mp_example_notes_labels/static/src/labels.js": "18c0c03e4f14f484388f6b4fd75c6d5c23f477cb114b6e416b9f5577370121be"
+        }
+      },
+      "frontend_inventory_digest": "sha256:6575c0ad44f4d6777fd0e84c9d0afe2fc4371b4329e09d2b17148c24c765f4bb",
+      "generation": 10,
+      "generator": "modular-operator/0.1",
+      "native_order": [
+        "mp_example_notes",
+        "mp_example_canvas",
+        "mp_example_notes_labels"
+      ],
+      "native_patch_set_digest": "sha256:6e0a9bee5102ec502953c0bb59935f25dd65d1b4b51a5ff16c0ce686b91284d8",
+      "optional_integrations": [
+        {
+          "available": true,
+          "consumer": "org.example.notes",
+          "provider": "org.example.notes_labels"
+        }
+      ],
+      "platform_version": "0.1.0",
+      "plugins": [
+        {
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "data_ownership": {
+            "contributions": [
+              {
+                "delete_policy": "owned",
+                "id": "mp.example.note",
+                "kind": "model",
+                "target": "workspace"
+              }
+            ],
+            "export_schema": "schemas/notes-export-v1.json",
+            "extension_targets": [],
+            "models": [
+              "mp.example.note"
+            ]
+          },
+          "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+          "hard_dependencies": {},
+          "manifest_digest": "sha256:5211f02161d2a710c92e25d8c7f5e5e0aba61ef018d998b05cff4a2de5f5a22e",
+          "native_addon": "mp_example_notes",
+          "native_version": "19.0.0.2.3",
+          "permissions": {
+            "defines": {
+              "notes.delete": "Delete notes",
+              "notes.read": "Read notes",
+              "notes.write": "Write notes"
+            },
+            "requests": []
+          },
+          "plugin_id": "org.example.notes",
+          "provided_apis": [
+            {
+              "api_version": "1.0",
+              "service_id": "org.example.notes.documents"
+            },
+            {
+              "api_version": "2.0",
+              "service_id": "org.example.notes.documents"
+            }
+          ],
+          "runtime": "native",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "policy_generation": 3,
+            "signature_verified": false,
+            "warnings": []
+          },
+          "version": "0.2.3"
+        },
+        {
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "data_ownership": {
+            "contributions": [
+              {
+                "delete_policy": "owned",
+                "id": "mp.example.canvas.board",
+                "kind": "model",
+                "target": "workspace"
+              }
+            ],
+            "extension_targets": [],
+            "models": [
+              "mp.example.canvas.board"
+            ]
+          },
+          "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+          "hard_dependencies": {
+            "org.example.notes": ">=0.2,<0.3"
+          },
+          "manifest_digest": "sha256:d2b67e7eb66e513eb0064cf039c3ce4934ed93fa56f1ddc135cb47aad567a130",
+          "native_addon": "mp_example_canvas",
+          "native_version": "19.0.0.1.3",
+          "permissions": {
+            "defines": {
+              "canvas.read": "Read boards",
+              "canvas.write": "Save boards"
+            },
+            "requests": [
+              {
+                "capability": "org.example.notes:notes.read",
+                "reason": "Select workspace notes through documents v2",
+                "scope": "workspace"
+              }
+            ]
+          },
+          "plugin_id": "org.example.canvas",
+          "provided_apis": [
+            {
+              "api_version": "1.0",
+              "service_id": "org.example.canvas.boards"
+            }
+          ],
+          "runtime": "native",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "policy_generation": 3,
+            "signature_verified": false,
+            "warnings": []
+          },
+          "version": "0.1.3"
+        },
+        {
+          "activation": {
+            "scopes": [
+              "site",
+              "workspace"
+            ],
+            "supports_feature_suspension": true
+          },
+          "data_ownership": {
+            "contributions": [
+              {
+                "delete_policy": "owned",
+                "id": "mp.example.note.x_notes_labels",
+                "kind": "field",
+                "target": "mp.example.note"
+              }
+            ],
+            "extension_targets": [
+              "mp.example.note"
+            ],
+            "models": []
+          },
+          "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+          "hard_dependencies": {
+            "org.example.notes": ">=0.1,<0.3"
+          },
+          "manifest_digest": "sha256:6fd428a691c553353ad12ab6a80b728bc80dea88bdc501af5945eecefe7a897e",
+          "native_addon": "mp_example_notes_labels",
+          "native_version": "19.0.0.2.1",
+          "permissions": {
+            "defines": {
+              "labels.read": "Read labels",
+              "labels.write": "Set labels"
+            },
+            "requests": [
+              {
+                "capability": "org.example.notes:notes.read",
+                "reason": "Read base revision through the documents binding",
+                "scope": "workspace"
+              }
+            ]
+          },
+          "plugin_id": "org.example.notes_labels",
+          "provided_apis": [
+            {
+              "api_version": "1.0",
+              "service_id": "org.example.notes_labels.labels"
+            }
+          ],
+          "runtime": "native",
+          "source": "operator-catalog",
+          "trust": {
+            "model": "operator-approved-exact-digest",
+            "policy_generation": 3,
+            "signature_verified": false,
+            "warnings": []
+          },
+          "version": "0.2.1"
+        }
+      ],
+      "python_lock_digest": "sha256:3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+      "python_runtime": {
+        "architecture": "linux/x86_64",
+        "marker_environment": {
+          "implementation_name": "cpython",
+          "implementation_version": "3.12.16",
+          "os_name": "posix",
+          "platform_machine": "x86_64",
+          "platform_python_implementation": "CPython",
+          "platform_release": "7.0.14-linuxkit",
+          "platform_system": "Linux",
+          "platform_version": "#1 SMP PREEMPT_DYNAMIC Tue Oct 20 23:09:17 UTC 2026",
+          "python_full_version": "3.12.16",
+          "python_version": "3.12",
+          "sys_platform": "linux"
+        },
+        "version": "3.12.16"
+      },
+      "python_solution": [
+        {
+          "digest": "sha256:b80f42b0d0da70ecf742c7050778172fa51362b97bcd78a7526f9a1074fbb051",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "asn1crypto",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.5.1"
+        },
+        {
+          "digest": "sha256:3641844d64e28a4dd78c85ce1cc656bb413b9a44f2ee9f5699b35de8d8875213",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "attrs",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "26.1.0"
+        },
+        {
+          "digest": "sha256:86f61ed25692d7f5e964f6573285aba2c350a4f9d0d9685c8fc6167ade3e6a50",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "Babel",
+          "requires_dist": [
+            "pytz (>=2015.7)"
+          ],
+          "requires_python": ">=3.6",
+          "version": "2.10.3"
+        },
+        {
+          "digest": "sha256:e17efe80a50feaa82d69526e7ebcfe7eb0ec2585214f698b43f7f6397e18664b",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "beautifulsoup4",
+          "requires_dist": [
+            "soupsieve>=1.6.1",
+            "typing-extensions>=4.0.0",
+            "cchardet; extra == 'cchardet'",
+            "chardet; extra == 'chardet'",
+            "charset-normalizer; extra == 'charset-normalizer'",
+            "html5lib; extra == 'html5lib'",
+            "lxml; extra == 'lxml'"
+          ],
+          "requires_python": ">=3.7.0",
+          "version": "4.15.0"
+        },
+        {
+          "digest": "sha256:deb1e549e05eb4d98fa40b4e3d4639380193dece7a51a4ed4049bec6fd8f1d01",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "cbor2",
+          "requires_dist": [
+            "pytest-benchmark ==4.0.0 ; extra == 'benchmarks'",
+            "packaging ; extra == 'doc'",
+            "Sphinx >=7 ; extra == 'doc'",
+            "sphinx-rtd-theme >=1.3.0 ; extra == 'doc'",
+            "sphinx-autodoc-typehints >=1.2.0 ; extra == 'doc'",
+            "typing-extensions ; (python_version < \"3.12\") and extra == 'doc'",
+            "coverage >=7 ; extra == 'test'",
+            "pytest ; extra == 'test'",
+            "hypothesis ; extra == 'test'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "5.6.2"
+        },
+        {
+          "digest": "sha256:aa3e852ff279f5f9a68f38c0632bef5488e77205e23fb0b1053d69f676446751",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "certifi",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2026.10.23"
+        },
+        {
+          "digest": "sha256:5ab16a1d7c082ef425e37b82a873bba87bebe336cacf9cf40da4be975c0a5212",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "cffi",
+          "requires_dist": [
+            "pycparser; implementation_name != \"PyPy\""
+          ],
+          "requires_python": ">=3.10",
+          "version": "2.1.1"
+        },
+        {
+          "digest": "sha256:cd12f1eda938bef5c09e6b317434f526525d401e481b669beeb5a73a47267954",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "chardet",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "5.2.0"
+        },
+        {
+          "digest": "sha256:06445f9816cb1a1d5e69bbea910344c406162c1423cbb6280e83dca2df63563a",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "charset-normalizer",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "3.5.2"
+        },
+        {
+          "digest": "sha256:3f785f162df80550e04c7e83a26d41bde06a6ae8ed10f1cf3817e9a3f0931ac2",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "cryptography",
+          "requires_dist": [
+            "cffi >=1.12 ; platform_python_implementation != \"PyPy\"",
+            "sphinx >=5.3.0 ; extra == 'docs'",
+            "sphinx-rtd-theme >=1.1.1 ; extra == 'docs'",
+            "pyenchant >=1.6.11 ; extra == 'docstest'",
+            "readme-renderer ; extra == 'docstest'",
+            "sphinxcontrib-spelling >=4.0.1 ; extra == 'docstest'",
+            "nox ; extra == 'nox'",
+            "ruff ; extra == 'pep8test'",
+            "mypy ; extra == 'pep8test'",
+            "check-sdist ; extra == 'pep8test'",
+            "click ; extra == 'pep8test'",
+            "build ; extra == 'sdist'",
+            "bcrypt >=3.1.5 ; extra == 'ssh'",
+            "pytest >=6.2.0 ; extra == 'test'",
+            "pytest-benchmark ; extra == 'test'",
+            "pytest-cov ; extra == 'test'",
+            "pytest-xdist ; extra == 'test'",
+            "pretend ; extra == 'test'",
+            "certifi ; extra == 'test'",
+            "pytest-randomly ; extra == 'test-randomorder'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "42.0.8"
+        },
+        {
+          "digest": "sha256:4914d0123ab1b7f89a55d146eb8d682abde3293e4f3fb72531843b43cc144c8c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "docopt",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "0.6.2"
+        },
+        {
+          "digest": "sha256:a0ad54641acf904827f3fdb9420f1455dbb352bf56854e7ef824abf4d0427cb7",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "docutils",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "0.20.1"
+        },
+        {
+          "digest": "sha256:79d0d73394887ccb1627be5e562f10d8834af81ed6256a7b3670f288d7919078",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "et_xmlfile",
+          "requires_dist": [],
+          "requires_python": ">=3.8",
+          "version": "2.0.0"
+        },
+        {
+          "digest": "sha256:a7b55d470489dc97748e80900e9dc2ad841be52f4afaca76ca1a9365db2d2692",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "freezegun",
+          "requires_dist": [
+            "python-dateutil (>=2.7)"
+          ],
+          "requires_python": ">=3.6",
+          "version": "1.2.1"
+        },
+        {
+          "digest": "sha256:2e854893f8fe000419cc85861177edff0da768a9d84304c164d39669e4059c9d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "geoip2",
+          "requires_dist": [
+            "requests (>=2.9)",
+            "maxminddb (>=1.4.0)",
+            "ipaddress; python_version==\"2.7\""
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+          "version": "2.9.0"
+        },
+        {
+          "digest": "sha256:a2e80d800dbec5b16ef67b315eee905f4c3e010039ab0e14fcf91ceab86a0303",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "gevent",
+          "requires_dist": [
+            "zope.event",
+            "zope.interface",
+            "greenlet >=2.0.0 ; platform_python_implementation == \"CPython\" and python_version < \"3.11\"",
+            "greenlet >=3.0rc3 ; platform_python_implementation == \"CPython\" and python_version >= \"3.11\"",
+            "cffi >=1.12.2 ; platform_python_implementation == \"CPython\" and sys_platform == \"win32\"",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'dnspython'",
+            "idna ; (python_version < \"3.10\") and extra == 'dnspython'",
+            "sphinx ; extra == 'docs'",
+            "furo ; extra == 'docs'",
+            "repoze.sphinx.autointerface ; extra == 'docs'",
+            "sphinxcontrib-programoutput ; extra == 'docs'",
+            "zope.schema ; extra == 'docs'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'monitor'",
+            "cffi >=1.12.2 ; (platform_python_implementation == \"CPython\") and extra == 'recommended'",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'recommended'",
+            "idna ; (python_version < \"3.10\") and extra == 'recommended'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'recommended'",
+            "requests ; extra == 'test'",
+            "objgraph ; extra == 'test'",
+            "cffi >=1.12.2 ; (platform_python_implementation == \"CPython\") and extra == 'test'",
+            "dnspython <2.0,>=1.16.0 ; (python_version < \"3.10\") and extra == 'test'",
+            "idna ; (python_version < \"3.10\") and extra == 'test'",
+            "coverage >=5.0 ; (sys_platform != \"win32\") and extra == 'test'",
+            "psutil >=5.7.0 ; (sys_platform != \"win32\" or platform_python_implementation == \"CPython\") and extra == 'test'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "24.2.1"
+        },
+        {
+          "digest": "sha256:ce288da38a59cba5d437c12619b051bd3fcc680539d579b284422a905b115edc",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "greenlet",
+          "requires_dist": [
+            "Sphinx ; extra == 'docs'",
+            "furo ; extra == 'docs'",
+            "objgraph ; extra == 'test'",
+            "psutil ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "3.0.3"
+        },
+        {
+          "digest": "sha256:9691637bd43b58ca5d82ae4cd2c0a09de8eb3ce4cb42adecf445c5d33778fd3e",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "idna",
+          "requires_dist": [],
+          "requires_python": ">=3.5",
+          "version": "3.6"
+        },
+        {
+          "digest": "sha256:be9e8a9e328ab65f4aceeb915e7a3835c0a2ca48a8b8c4bd8b54b7ef495f2462",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "isodate",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "0.7.2"
+        },
+        {
+          "digest": "sha256:44651ca3350c6a63f8a2b3ab27e0fc68b7e0699430bb0dd4d2eb0e51c549a485",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "Jinja2",
+          "requires_dist": [
+            "MarkupSafe (>=2.0)",
+            "Babel (>=2.7) ; extra == 'i18n'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "3.1.2"
+        },
+        {
+          "digest": "sha256:9bc90badf40bd6029d4bf4d9f75766a824caef029903fbd45d7e4ae48b51ca1d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "jsonschema",
+          "requires_dist": [
+            "attrs>=22.2.0",
+            "jsonschema-specifications>=2023.03.6",
+            "referencing>=0.28.4",
+            "rpds-py>=0.25.0",
+            "fqdn; extra == 'format'",
+            "idna; extra == 'format'",
+            "isoduration; extra == 'format'",
+            "jsonpointer>1.13; extra == 'format'",
+            "rfc3339-validator; extra == 'format'",
+            "rfc3987; extra == 'format'",
+            "uri-template; extra == 'format'",
+            "webcolors>=1.11; extra == 'format'",
+            "fqdn; extra == 'format-nongpl'",
+            "idna; extra == 'format-nongpl'",
+            "isoduration; extra == 'format-nongpl'",
+            "jsonpointer>1.13; extra == 'format-nongpl'",
+            "rfc3339-validator; extra == 'format-nongpl'",
+            "rfc3986-validator>0.1.0; extra == 'format-nongpl'",
+            "rfc3987-syntax>=1.1.0; extra == 'format-nongpl'",
+            "uri-template; extra == 'format-nongpl'",
+            "webcolors>=24.6.0; extra == 'format-nongpl'"
+          ],
+          "requires_python": ">=3.10",
+          "version": "4.26.0"
+        },
+        {
+          "digest": "sha256:b2d758c54b5f8fb9df4ede00514d03ffe85c961512a3f9894d3a8b3f6e168a55",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "jsonschema-specifications",
+          "requires_dist": [
+            "referencing>=0.31.0"
+          ],
+          "requires_python": ">=3.9",
+          "version": "2025.9.1"
+        },
+        {
+          "digest": "sha256:1a3bf959e7680885ad72dbe1d47d9f479e5fd2b733ab9089a7f2618fd20f9105",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "libsass",
+          "requires_dist": [],
+          "requires_python": ">=3.6",
+          "version": "0.22.0"
+        },
+        {
+          "digest": "sha256:359b11aaa799256c2f7c0fa92ea631f6044fc3cdff53489217f2788b5617feac",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "lxml",
+          "requires_dist": [
+            "cssselect >=0.7 ; extra == 'cssselect'",
+            "html5lib ; extra == 'html5'",
+            "lxml-html-clean ; extra == 'html_clean'",
+            "BeautifulSoup4 ; extra == 'htmlsoup'",
+            "Cython >=3.0.10 ; extra == 'source'"
+          ],
+          "requires_python": ">=3.6",
+          "version": "5.2.1"
+        },
+        {
+          "digest": "sha256:04628b096133109467d7d5f2971f26fe3cb5df54a51f12c269046f20120c7919",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "lxml_html_clean",
+          "requires_dist": [
+            "lxml"
+          ],
+          "requires_python": "",
+          "version": "0.4.4"
+        },
+        {
+          "digest": "sha256:2e2b1b76328c869ebf556ae3aa2e8111ff014b72980335609a7e10e1f6183bcf",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "MarkupSafe",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2.1.5"
+        },
+        {
+          "digest": "sha256:4d91a4e05ed1036411a82497301fe3129d5f8b09343db8d2890332da9043e2c1",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "maxminddb",
+          "requires_dist": [],
+          "requires_python": ">=3.10",
+          "version": "3.2.0"
+        },
+        {
+          "digest": "sha256:c50202b619c17607ebf94957a899cbb5765cf4b4d6eccadbff037b271bd1a266",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "num2words",
+          "requires_dist": [
+            "docopt >=0.6.2"
+          ],
+          "requires_python": "",
+          "version": "0.5.13"
+        },
+        {
+          "digest": "sha256:661797ec031dec3d14fa6b1e95eba633c78496a2dae2196dae6d74d06e778b51",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "ofxparse",
+          "requires_dist": [
+            "beautifulsoup4",
+            "lxml",
+            "six"
+          ],
+          "requires_python": "",
+          "version": "0.21"
+        },
+        {
+          "digest": "sha256:19da7368a57fefb135d48c32938af522ec8d47bc319017703d54313043a6d5dc",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "openpyxl",
+          "requires_dist": [
+            "et-xmlfile"
+          ],
+          "requires_python": ">=3.6",
+          "version": "3.1.2"
+        },
+        {
+          "digest": "sha256:fee2c02b88a2f745cb9ba0e7c502f392d45cd538aeb75d2854b148abc9792cab",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "packaging",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "26.3"
+        },
+        {
+          "digest": "sha256:c129b5c34fbf08ceac2bcbf136b8d7581f8cc195d3375d2180589cf66730faed",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "passlib",
+          "requires_dist": [
+            "argon2-cffi (>=18.2.0) ; extra == 'argon2'",
+            "bcrypt (>=3.1.0) ; extra == 'bcrypt'",
+            "sphinx (>=1.6) ; extra == 'build_docs'",
+            "sphinxcontrib-fulltoc (>=1.2.0) ; extra == 'build_docs'",
+            "cloud-sptheme (>=1.10.1) ; extra == 'build_docs'",
+            "cryptography ; extra == 'totp'"
+          ],
+          "requires_python": "",
+          "version": "1.7.4"
+        },
+        {
+          "digest": "sha256:a37bd6ea36119e8d3db8c059635e28c82541ed4fc4271a6e6f55661122bf8500",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pillow",
+          "requires_dist": [
+            "furo ; extra == 'docs'",
+            "olefile ; extra == 'docs'",
+            "sphinx >=2.4 ; extra == 'docs'",
+            "sphinx-copybutton ; extra == 'docs'",
+            "sphinx-inline-tabs ; extra == 'docs'",
+            "sphinx-removed-in ; extra == 'docs'",
+            "sphinxext-opengraph ; extra == 'docs'",
+            "olefile ; extra == 'fpx'",
+            "olefile ; extra == 'mic'",
+            "check-manifest ; extra == 'tests'",
+            "coverage ; extra == 'tests'",
+            "defusedxml ; extra == 'tests'",
+            "markdown2 ; extra == 'tests'",
+            "olefile ; extra == 'tests'",
+            "packaging ; extra == 'tests'",
+            "pyroma ; extra == 'tests'",
+            "pytest ; extra == 'tests'",
+            "pytest-cov ; extra == 'tests'",
+            "pytest-timeout ; extra == 'tests'",
+            "typing-extensions ; (python_version < \"3.10\") and extra == 'typing'",
+            "defusedxml ; extra == 'xmp'"
+          ],
+          "requires_python": ">=3.8",
+          "version": "10.2.0"
+        },
+        {
+          "digest": "sha256:93a22bd5595bbb5cd2a4d99fd026dedd92578ef652a4dcfd19c44054c18bad4d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pip",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "25.3"
+        },
+        {
+          "digest": "sha256:b9142e9305c659c5ad20075280e1b9e0673a3ddd5cc1d636d9ad580b03384c75",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "platformdirs",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "4.13.6"
+        },
+        {
+          "digest": "sha256:0b9e1108908622da4affbb5d3089a0cdc25825d4816bb4f1bdd22b1022b2eb7b",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "polib",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.1.1"
+        },
+        {
+          "digest": "sha256:6d3a27c4cd9d427f9de55ecda0c94a5d4ea6c10ca503a563cccbdb060ae0227f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "psutil",
+          "requires_dist": [
+            "ipaddress ; (python_version < \"3.0\") and extra == 'test'",
+            "mock ; (python_version < \"3.0\") and extra == 'test'",
+            "enum34 ; (python_version <= \"3.4\") and extra == 'test'",
+            "pywin32 ; (sys_platform == \"win32\") and extra == 'test'",
+            "wmi ; (sys_platform == \"win32\") and extra == 'test'"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*",
+          "version": "5.9.8"
+        },
+        {
+          "digest": "sha256:bc56efc83cba16deb6ac18e0e4517a9f2bf2d391502aad304cd335c9ea79e149",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "psycopg2",
+          "requires_dist": [],
+          "requires_python": ">=3.7",
+          "version": "2.9.9"
+        },
+        {
+          "digest": "sha256:55cf1e122e3fc088d33fc5890677f9caad71dae57904f80e801a0a276e9a5b3d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyasn1",
+          "requires_dist": [],
+          "requires_python": ">=3.8",
+          "version": "0.6.5"
+        },
+        {
+          "digest": "sha256:a1a66dc5e51b85fa2c3597c939d353737e0ca8095537973a87a67009c8d6343c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyasn1_modules",
+          "requires_dist": [
+            "pyasn1<0.7.0,>=0.6.1"
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.4.2"
+        },
+        {
+          "digest": "sha256:f25c37a169becf60bd006d05ec7091aca1a15b6d0c6e839a2bf81e5fe2d2253e",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pycparser",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "3.12"
+        },
+        {
+          "digest": "sha256:d145e3215c948905f31b1b32d465e4ce5700e3c1cbf0cb96278df104abd57225",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "PyJWT",
+          "requires_dist": [
+            "typing_extensions>=4.0; python_version < \"3.11\"",
+            "cryptography>=3.4.0; extra == \"crypto\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "2.15.1"
+        },
+        {
+          "digest": "sha256:379d1f1cf9a32cea359085a6cd0494ef0c4c0d47590ea9c77f8d4331145b1009",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyOpenSSL",
+          "requires_dist": [
+            "cryptography <43,>=41.0.5",
+            "sphinx !=5.2.0,!=5.2.0.post0,!=7.2.5 ; extra == 'docs'",
+            "sphinx-rtd-theme ; extra == 'docs'",
+            "pytest-rerunfailures ; extra == 'test'",
+            "pretend ; extra == 'test'",
+            "pytest >=3.0.1 ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "24.1.0"
+        },
+        {
+          "digest": "sha256:eb910a32cc0bae2c32fdb749cb4fac4b27f846b23dd38ce3b2a1b028cd68ec4c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "PyPDF2",
+          "requires_dist": [
+            "typing_extensions >= 3.10.0.0; python_version < '3.10'",
+            "dataclasses; python_version < '3.7'",
+            "PyCryptodome ; extra == \"crypto\"",
+            "black ; extra == \"dev\"",
+            "pip-tools ; extra == \"dev\"",
+            "pre-commit<2.18.0 ; extra == \"dev\"",
+            "pytest-cov ; extra == \"dev\"",
+            "flit ; extra == \"dev\"",
+            "wheel ; extra == \"dev\"",
+            "sphinx ; extra == \"docs\"",
+            "sphinx_rtd_theme ; extra == \"docs\"",
+            "myst_parser ; extra == \"docs\"",
+            "PyCryptodome ; extra == \"full\"",
+            "Pillow ; extra == \"full\"",
+            "Pillow ; extra == \"image\""
+          ],
+          "requires_python": ">=3.6",
+          "version": "2.12.1"
+        },
+        {
+          "digest": "sha256:a422515b6808528889ef4284e7e7fcadb98a3dcbafe66fff9a4ebc97462698e3",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pypng",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "0.20220715.0"
+        },
+        {
+          "digest": "sha256:20525f855c241e9792e0016368e17aae5445230008e3a900546da6767a0a3d0d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyserial",
+          "requires_dist": [
+            "hidapi; extra == 'cp2110'"
+          ],
+          "requires_python": "",
+          "version": "3.5"
+        },
+        {
+          "digest": "sha256:8e2b178fa8007c898b2860ff89b359d84532a99d0fb84085894796593a7d2694",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-dateutil",
+          "requires_dist": [
+            "six (>=1.5)"
+          ],
+          "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7",
+          "version": "2.8.2"
+        },
+        {
+          "digest": "sha256:cd4888ca3859c82c75b4e31c382cac80804bae92344677ebe058b8bbe9221b3d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-ldap",
+          "requires_dist": [
+            "pyasn1>=0.3.7",
+            "pyasn1_modules>=0.1.5"
+          ],
+          "requires_python": ">=3.6",
+          "version": "3.4.4"
+        },
+        {
+          "digest": "sha256:36ac295008a56ef1d6197789f2a5b125b26538817f0747507b129041a3aaacd6",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-magic",
+          "requires_dist": [],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+          "version": "0.4.27"
+        },
+        {
+          "digest": "sha256:02326706fc681bcb1c44283677a9d61a9c6ac83eb901b912fc4221ca0fccf14d",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "python-stdnum",
+          "requires_dist": [
+            "zeep ; extra == 'soap'",
+            "suds ; extra == 'soap-alt'",
+            "PySimpleSOAP ; extra == 'soap-fallback'"
+          ],
+          "requires_python": "",
+          "version": "1.19"
+        },
+        {
+          "digest": "sha256:833969f0ce4ad84a6f159e41a21f642f44692ca69a209b6abab41be9165fc3fd",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pytz",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "2026.5"
+        },
+        {
+          "digest": "sha256:31a0b3dabf14df21cf370ba55745671094bec3cdae8cc50037923cada53fe32f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "pyusb",
+          "requires_dist": [],
+          "requires_python": ">=3.6.0",
+          "version": "1.2.1"
+        },
+        {
+          "digest": "sha256:67f74d91ffc01e722d59788c02994045b331dbca99d892080853d15a3cc1ad7f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "qrcode",
+          "requires_dist": [
+            "typing-extensions",
+            "pypng",
+            "colorama ; platform_system == \"Windows\"",
+            "zest.releaser[recommended] ; extra == 'all'",
+            "tox ; extra == 'all'",
+            "pytest ; extra == 'all'",
+            "pytest-cov ; extra == 'all'",
+            "pillow (>=9.1.0) ; extra == 'all'",
+            "tox ; extra == 'dev'",
+            "pytest ; extra == 'dev'",
+            "pytest-cov ; extra == 'dev'",
+            "zest.releaser[recommended] ; extra == 'maintainer'",
+            "pillow (>=9.1.0) ; extra == 'pil'",
+            "coverage ; extra == 'test'",
+            "pytest ; extra == 'test'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "7.4.2"
+        },
+        {
+          "digest": "sha256:158a5c9f18f51199d5668206d240267bac9d6a36e8095efda6c055ddc897e1f5",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "referencing",
+          "requires_dist": [
+            "attrs>=22.2.0",
+            "rpds-py>=0.7.0",
+            "typing-extensions>=4.4.0; python_version < '3.13'"
+          ],
+          "requires_python": ">=3.10",
+          "version": "0.37.0"
+        },
+        {
+          "digest": "sha256:0f03cea9524be753b063cd2016023732eb044069787e2d48af30cdee3f03aed7",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "reportlab",
+          "requires_dist": [
+            "pillow >=9.0.0",
+            "chardet",
+            "rl-accel <1.1,>=0.9.0 ; extra == 'accel'",
+            "rlPyCairo <1,>=0.2.0 ; extra == 'pycairo'",
+            "freetype-py <2.4,>=2.3.0 ; extra == 'pycairo'",
+            "rl-renderPM <4.1,>=4.0.3 ; extra == 'renderpm'"
+          ],
+          "requires_python": ">=3.7,<4",
+          "version": "4.1.0"
+        },
+        {
+          "digest": "sha256:e86d70f10aadf576a49734ae531b46722c7b69be8f4de0f2ba2e7fb069ab6e88",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "requests",
+          "requires_dist": [
+            "charset-normalizer (<4,>=2)",
+            "idna (<4,>=2.5)",
+            "urllib3 (<3,>=1.21.1)",
+            "certifi (>=2017.4.17)",
+            "PySocks (!=1.5.7,>=1.5.6) ; extra == 'socks'",
+            "chardet (<6,>=3.0.2) ; extra == 'use_chardet_on_py3'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.31.0"
+        },
+        {
+          "digest": "sha256:f2e61e691dba69ddfdd888b9dd59d098229da718f8cbb213afa720f39de832a9",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "requests-file",
+          "requires_dist": [
+            "requests>=1.0.0"
+          ],
+          "requires_python": "",
+          "version": "3.0.1"
+        },
+        {
+          "digest": "sha256:da2e9267830335c3c0d95a55885a8b6c45cfea6f0e0bd0feb44f692abc50132a",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "requests-toolbelt",
+          "requires_dist": [
+            "requests (<3.0.0,>=2.0.1)"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+          "version": "1.0.0"
+        },
+        {
+          "digest": "sha256:256cd02fd65cbf940f094bb5f85039a20af289c86dc42cf970d1cd8f7e9d3cb1",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "resolvelib",
+          "requires_dist": [
+            "ruff; extra == \"lint\"",
+            "mypy; extra == \"lint\"",
+            "types-requests; extra == \"lint\"",
+            "packaging; extra == \"test\"",
+            "pytest; extra == \"test\"",
+            "build; extra == \"release\"",
+            "towncrier; extra == \"release\"",
+            "twine; extra == \"release\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "1.2.1"
+        },
+        {
+          "digest": "sha256:dc93728455a314bae954df5631f4d263066c994bb6ea002c488350464409920f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "rfc8785",
+          "requires_dist": [
+            "rfc8785[doc,test,lint] ; extra == \"dev\"",
+            "build ; extra == \"dev\"",
+            "pdoc ; extra == \"doc\"",
+            "ruff ~= 0.3 ; extra == \"lint\"",
+            "mypy >= 1.0 ; extra == \"lint\"",
+            "interrogate ; extra == \"lint\"",
+            "pytest ; extra == \"test\"",
+            "pytest-cov ; extra == \"test\"",
+            "coverage ; extra == \"test\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.1.4"
+        },
+        {
+          "digest": "sha256:c017cb27fee476ffbb107cf9c4194d98d5d15a4a35cd6cdef924263357e81929",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "rjsmin",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.2.0"
+        },
+        {
+          "digest": "sha256:40ca0faeeb455f15cbf985733894f9b988d15177c2999c57b6a9a008ca8525c5",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "rpds-py",
+          "requires_dist": [],
+          "requires_python": ">=3.11",
+          "version": "2026.9.1"
+        },
+        {
+          "digest": "sha256:04e9bc6d2728859b5d1428120e1d33782538bac3637c98f837777077cca93336",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "setuptools",
+          "requires_dist": [
+            "pytest!=8.1.*,>=6; extra == \"test\"",
+            "virtualenv>=13.0.0; extra == \"test\"",
+            "wheel>=0.44.0; extra == \"test\"",
+            "pip>=19.1; extra == \"test\"",
+            "packaging>=24.2; extra == \"test\"",
+            "jaraco.envs>=2.2; extra == \"test\"",
+            "pytest-xdist>=3; extra == \"test\"",
+            "jaraco.path>=3.7.2; extra == \"test\"",
+            "build[virtualenv]>=1.0.3; extra == \"test\"",
+            "filelock>=3.4.0; extra == \"test\"",
+            "ini2toml[lite]>=0.14; extra == \"test\"",
+            "tomli-w>=1.0.0; extra == \"test\"",
+            "pytest-timeout; extra == \"test\"",
+            "pytest-perf; sys_platform != \"cygwin\" and extra == \"test\"",
+            "jaraco.develop>=7.21; (python_version >= \"3.9\" and sys_platform != \"cygwin\") and extra == \"test\"",
+            "pytest-home>=0.5; extra == \"test\"",
+            "pytest-subprocess; extra == \"test\"",
+            "pyproject-hooks!=1.1; extra == \"test\"",
+            "jaraco.test>=5.5; extra == \"test\"",
+            "sphinx>=3.5; extra == \"doc\"",
+            "jaraco.packaging>=9.3; extra == \"doc\"",
+            "rst.linker>=1.9; extra == \"doc\"",
+            "furo; extra == \"doc\"",
+            "sphinx-lint; extra == \"doc\"",
+            "jaraco.tidelift>=1.4; extra == \"doc\"",
+            "pygments-github-lexers==0.0.5; extra == \"doc\"",
+            "sphinx-favicon; extra == \"doc\"",
+            "sphinx-inline-tabs; extra == \"doc\"",
+            "sphinx-reredirects; extra == \"doc\"",
+            "sphinxcontrib-towncrier; extra == \"doc\"",
+            "sphinx-notfound-page<2,>=1; extra == \"doc\"",
+            "pyproject-hooks!=1.1; extra == \"doc\"",
+            "towncrier<24.7; extra == \"doc\"",
+            "packaging>=24.2; extra == \"core\"",
+            "more_itertools>=8.8; extra == \"core\"",
+            "jaraco.text>=3.7; extra == \"core\"",
+            "importlib_metadata>=6; python_version < \"3.10\" and extra == \"core\"",
+            "tomli>=2.0.1; python_version < \"3.11\" and extra == \"core\"",
+            "wheel>=0.43.0; extra == \"core\"",
+            "platformdirs>=4.2.2; extra == \"core\"",
+            "jaraco.functools>=4; extra == \"core\"",
+            "more_itertools; extra == \"core\"",
+            "pytest-checkdocs>=2.4; extra == \"check\"",
+            "pytest-ruff>=0.2.1; sys_platform != \"cygwin\" and extra == \"check\"",
+            "ruff>=0.8.0; sys_platform != \"cygwin\" and extra == \"check\"",
+            "pytest-cov; extra == \"cover\"",
+            "pytest-enabler>=2.2; extra == \"enabler\"",
+            "pytest-mypy; extra == \"type\"",
+            "mypy==1.14.*; extra == \"type\"",
+            "importlib_metadata>=7.0.2; python_version < \"3.10\" and extra == \"type\"",
+            "jaraco.develop>=7.21; sys_platform != \"cygwin\" and extra == \"type\""
+          ],
+          "requires_python": ">=3.9",
+          "version": "80.9.0"
+        },
+        {
+          "digest": "sha256:48fc3bdd119de4b1a610b81ee44f37d7f2a191010618b412d58ebdcb9653de5e",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "six",
+          "requires_dist": [],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+          "version": "1.17.0"
+        },
+        {
+          "digest": "sha256:5ace130384c8858619b34f682539964005f7acc56fac63cabe2f7c70d4dba41f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "soupsieve",
+          "requires_dist": [],
+          "requires_python": ">=3.11.5",
+          "version": "3.0.4"
+        },
+        {
+          "digest": "sha256:b9050b8055c7bacebc9a0a683c71c25ba47fcef185d97b6b8fbf17524e5a7b56",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "typing_extensions",
+          "requires_dist": [],
+          "requires_python": ">=3.9",
+          "version": "4.16.0"
+        },
+        {
+          "digest": "sha256:97741116f378b0e510c39cc3100e022c7768eedac5bc851e1e620563039c6c6f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "urllib3",
+          "requires_dist": [
+            "brotli>=1.0.9; platform_python_implementation == 'CPython' and extra == 'brotli'",
+            "brotlicffi>=0.8.0; platform_python_implementation != 'CPython' and extra == 'brotli'",
+            "certifi; extra == 'secure'",
+            "cryptography>=1.9; extra == 'secure'",
+            "idna>=2.0.0; extra == 'secure'",
+            "pyopenssl>=17.1.0; extra == 'secure'",
+            "urllib3-secure-extra; extra == 'secure'",
+            "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+            "zstandard>=0.18.0; extra == 'zstd'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.0.7"
+        },
+        {
+          "digest": "sha256:2ad497a9691ea354a21e950d13716a45f1b62ff0e8de087ac36600e47fc22bf1",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "vobject",
+          "requires_dist": [
+            "python-dateutil>=2.4.0"
+          ],
+          "requires_python": "",
+          "version": "0.9.6.1"
+        },
+        {
+          "digest": "sha256:00afe7f0d3312a761a509e5138e0085d2bf9379106cb8dfb01872e52684aec84",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "Werkzeug",
+          "requires_dist": [
+            "MarkupSafe>=2.1.1",
+            "watchdog>=2.3 ; extra == \"watchdog\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "3.0.1"
+        },
+        {
+          "digest": "sha256:7d96d6752280519a90e81d98cd2d5ab0f4ed2880f2d924e63c3c10d4237b680c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "wheel",
+          "requires_dist": [
+            "pytest >= 6.0.0 ; extra == \"test\"",
+            "setuptools >= 65 ; extra == \"test\""
+          ],
+          "requires_python": ">=3.8",
+          "version": "0.45.1"
+        },
+        {
+          "digest": "sha256:b8f5c7369d39308e242ea7462c22ea29b6945cae8cd067d104a9cd061f59cc5f",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "xlrd",
+          "requires_dist": [
+            "wheel ; extra == 'build'",
+            "twine ; extra == 'build'",
+            "sphinx ; extra == 'docs'",
+            "pytest ; extra == 'test'",
+            "pytest-cov ; extra == 'test'"
+          ],
+          "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*",
+          "version": "2.0.1"
+        },
+        {
+          "digest": "sha256:8e8fbefed6304618db9f66fd59e592c7f29fbc9c3d8dbc80bead860ecdf599d3",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "XlsxWriter",
+          "requires_dist": [],
+          "requires_python": ">=3.6",
+          "version": "3.1.9"
+        },
+        {
+          "digest": "sha256:4836a431de84afc20b355843a018025e3df2fc235478bc7323193737faad2f87",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "xlwt",
+          "requires_dist": [],
+          "requires_python": "",
+          "version": "1.3.0"
+        },
+        {
+          "digest": "sha256:70c162d580724a1a2914b85509eb3554cf902a1455fa9884b11009dff2b32b01",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "zeep",
+          "requires_dist": [
+            "attrs (>=17.2.0)",
+            "isodate (>=0.5.4)",
+            "lxml (>=4.6.0)",
+            "platformdirs (>=1.4.0)",
+            "requests (>=2.7.0)",
+            "requests-toolbelt (>=0.7.1)",
+            "requests-file (>=1.5.1)",
+            "pytz",
+            "cached-property (>=1.3.0) ; python_version < \"3.8\"",
+            "httpx (>=0.15.0) ; extra == 'async'",
+            "sphinx (>=1.4.0) ; extra == 'docs'",
+            "coverage[toml] (==5.2.1) ; extra == 'test'",
+            "freezegun (==0.3.15) ; extra == 'test'",
+            "pretend (==1.0.9) ; extra == 'test'",
+            "pytest-cov (==2.8.1) ; extra == 'test'",
+            "pytest-httpx ; extra == 'test'",
+            "pytest-asyncio ; extra == 'test'",
+            "pytest (==6.2.5) ; extra == 'test'",
+            "requests-mock (>=0.7.0) ; extra == 'test'",
+            "isort (==5.3.2) ; extra == 'test'",
+            "flake8 (==3.8.3) ; extra == 'test'",
+            "flake8-blind-except (==0.1.1) ; extra == 'test'",
+            "flake8-debugger (==3.2.1) ; extra == 'test'",
+            "flake8-imports (==0.1.1) ; extra == 'test'",
+            "xmlsec (>=0.6.1) ; extra == 'xmlsec'"
+          ],
+          "requires_python": ">=3.7",
+          "version": "4.2.1"
+        },
+        {
+          "digest": "sha256:ed78571876d1c7754d9bb8714c8a20c85423d807185cd5c9fb0f59d01b60004c",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "zope.event",
+          "requires_dist": [
+            "Sphinx; extra == \"docs\"",
+            "zope.testrunner>=6.4; extra == \"test\""
+          ],
+          "requires_python": ">=3.10",
+          "version": "6.2"
+        },
+        {
+          "digest": "sha256:aa8b73da017ba92034ce0542d9f33c10146dd01a4e0d27cddf66914eb0125527",
+          "extras": [],
+          "kind": "runtime_distribution",
+          "name": "zope.interface",
+          "requires_dist": [
+            "Sphinx; extra == \"docs\"",
+            "repoze.sphinx.autointerface; extra == \"docs\"",
+            "furo; extra == \"docs\"",
+            "coverage[toml]; extra == \"test\"",
+            "zope.event; extra == \"test\"",
+            "zope.testing; extra == \"test\"",
+            "coverage[toml]; extra == \"testing\"",
+            "zope.event; extra == \"testing\"",
+            "zope.testing; extra == \"testing\""
+          ],
+          "requires_python": ">=3.11",
+          "version": "8.7"
+        }
+      ],
+      "python_solution_digest": "sha256:dfe9fe8f6da1fe3d40a53be85f5932e24740354618e7e9cbca506b3bfafec97d",
+      "schema_version": 1,
+      "service_selection": [
+        {
+          "alias": "documents",
+          "api_version": "1.0",
+          "consumer": "org.example.notes",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.notes",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes.documents"
+        },
+        {
+          "alias": "documents",
+          "api_version": "2.0",
+          "consumer": "org.example.canvas",
+          "contract_major": 2,
+          "optional": false,
+          "provider": "org.example.notes",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes.documents"
+        },
+        {
+          "alias": "boards",
+          "api_version": "1.0",
+          "consumer": "org.example.canvas",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.canvas",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.canvas.boards"
+        },
+        {
+          "alias": "documents",
+          "api_version": "1.0",
+          "consumer": "org.example.notes_labels",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.notes",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes.documents"
+        },
+        {
+          "alias": "labels",
+          "api_version": "1.0",
+          "consumer": "org.example.notes_labels",
+          "contract_major": 1,
+          "optional": false,
+          "provider": "org.example.notes_labels",
+          "scopes": [
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "3f502e47-683a-4551-b00e-03368e647dd2"
+            ],
+            [
+              "8afd569b-790c-400d-b123-cff2c86602fc",
+              "907b39a7-345a-4332-9df1-410019531cd4"
+            ]
+          ],
+          "service_id": "org.example.notes_labels.labels"
+        }
+      ],
+      "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+    },
+    "security_metadata_digest": "sha256:74984230b9f30bbd5e306846a04d883dfdef904a24d65eeefcd89b2767afb114",
+    "site_ids": [
+      "8afd569b-790c-400d-b123-cff2c86602fc"
+    ]
+  },
+  "schema_version": 1,
+  "secret_recovery": "Retain separately secured appconfig/dbconfig volumes; values intentionally excluded."
+}

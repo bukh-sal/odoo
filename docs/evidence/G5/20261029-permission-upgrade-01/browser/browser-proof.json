@@ -1,0 +1,24 @@
+{
+  "result": "passed",
+  "generation": 11,
+  "operation_id": "4e84908e-4367-49b7-a605-37d199991c69",
+  "actual_manager_preview_request": true,
+  "exact_expansion": "org.example.notes:notes.write",
+  "workspace_grants": [
+    "Research",
+    "Personal"
+  ],
+  "checkpoint_restart_wording": true,
+  "completed_status_observed": true,
+  "status_observation_stale_warning_seen": true,
+  "old_client_paused_explicit_refresh": true,
+  "native_list_count": 1,
+  "native_form_count": 1,
+  "retained_note": "db7c55ba-3cb8-4328-9e47-e1d6b0caf852",
+  "revision": 2,
+  "existing_labels_action_retained": true,
+  "limits": [
+    "UI completion included the designed stale-observation warning; independent exact journal/probes supply current runtime proof.",
+    "No native edits, new UI or Canvas features."
+  ]
+}

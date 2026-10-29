@@ -1,0 +1,228 @@
+{
+  "result": "isolated_exact_digest_catalog_ready_not_published",
+  "original_trust_unchanged_sha256": "b29600d33d7b6576244c4af7b49df82617e5711f5a55191ecebe7eca4ca2d070",
+  "isolated_trust_sha256": "c0cbb72c389745b8c074ea72eb2f45be1ca64194b5b35a8a9e692bd07f715c39",
+  "isolated_generation": 4,
+  "original_archives": 7,
+  "isolated_archives": 8,
+  "new_artifact": {
+    "plugin_id": "org.example.notes_labels",
+    "version": "0.2.2",
+    "digest": "sha256:89b31c85165db645af7a63cec954f31ad7e182ea3306813f66ee593b445aff94",
+    "runtime_kind": "native",
+    "manifest": {
+      "schema_version": 1,
+      "plugin": {
+        "id": "org.example.notes_labels",
+        "version": "0.2.2",
+        "name": "Notes Labels",
+        "description": "Trusted shared-table Notes extension",
+        "publisher": "example",
+        "license": "LGPL-3.0-only"
+      },
+      "compatibility": {
+        "platform": ">=0.1,<0.2",
+        "host_api_major": 1,
+        "ui_api_major": 1
+      },
+      "runtime": {
+        "kind": "native",
+        "addon_name": "mp_example_notes_labels",
+        "native_compatibility": "odoo-19",
+        "python": ">=3.12,<3.13",
+        "python_dependencies": []
+      },
+      "activation": {
+        "scopes": [
+          "site",
+          "workspace"
+        ],
+        "supports_feature_suspension": true
+      },
+      "permissions": {
+        "defines": {
+          "labels.read": "Read labels",
+          "labels.write": "Set labels"
+        },
+        "requests": [
+          {
+            "capability": "org.example.notes:notes.read",
+            "reason": "Read base revision through the documents binding",
+            "scope": "workspace"
+          },
+          {
+            "capability": "org.example.notes:notes.write",
+            "reason": "Lifecycle qualification fixture: explicitly review expanded integration authority",
+            "scope": "workspace"
+          }
+        ]
+      },
+      "data": {
+        "models": [],
+        "extension_targets": [
+          "mp.example.note"
+        ],
+        "contributions": [
+          {
+            "kind": "field",
+            "id": "mp.example.note.x_notes_labels",
+            "target": "mp.example.note",
+            "delete_policy": "owned"
+          }
+        ]
+      },
+      "ui": {
+        "mode": "trusted",
+        "design": "standard",
+        "pages": [],
+        "navigation": [],
+        "contributions": [
+          {
+            "id": "org.example.notes_labels:action:set_labels",
+            "slot_id": "org.example.notes:slot:detail_actions",
+            "slot_major": 1,
+            "permission": "org.example.notes_labels:labels.write",
+            "label": "Edit labels",
+            "handler": "org.example.notes_labels:action:set_labels",
+            "order": 100,
+            "after": [],
+            "optional": false
+          }
+        ],
+        "commands": [
+          {
+            "id": "org.example.notes_labels:command:set_labels",
+            "permission": "org.example.notes_labels:labels.write",
+            "label": "Set note labels",
+            "handler": "org.example.notes_labels:command:set_labels",
+            "input_schema": "schemas/labels-input.json",
+            "order": 200
+          }
+        ]
+      },
+      "services": {
+        "provides": [
+          {
+            "id": "org.example.notes_labels.labels",
+            "api_version": "1.0",
+            "schema": "schemas/labels-input.json",
+            "handler": "mp_example_notes_labels.services:LabelsService",
+            "methods": [
+              "set_labels"
+            ]
+          }
+        ],
+        "requires": [
+          {
+            "alias": "documents",
+            "id": "org.example.notes.documents",
+            "contract_major": 1,
+            "version": ">=1.0,<2.0"
+          },
+          {
+            "alias": "labels",
+            "id": "org.example.notes_labels.labels",
+            "contract_major": 1,
+            "version": ">=1.0,<2.0"
+          }
+        ]
+      },
+      "upgrade": {
+        "strategy": "native_migrations",
+        "requires_maintenance": true,
+        "destructive": false,
+        "transitions": [
+          {
+            "from": "0.1.0",
+            "to": "0.2.0",
+            "scripts": [
+              {
+                "path": "migrations/19.0.0.2.0/post-normalize_labels.py",
+                "digest": "sha256:fbe0e19f1a5e08e549c3bb5e8420947742a507fb12b5eb1d2d953638af91ede8",
+                "phase": "post"
+              }
+            ],
+            "preconditions": [
+              "Notes base version0.2; maintenance; previous labels are arrays of valid strings"
+            ],
+            "postconditions": [
+              "Labels casefolded/deduplicated; public IDs/base content retained; changed records revision incremented"
+            ],
+            "retry": "reconcile",
+            "recovery": "Restore coordinated previous database/filestore/image checkpoint after uncertain failure"
+          }
+        ]
+      },
+      "dependencies": {
+        "plugins": {
+          "org.example.notes": ">=0.1,<0.3"
+        }
+      },
+      "integrations": {
+        "optional": {}
+      }
+    },
+    "inventory": {
+      "backend/odoo_addons/mp_example_notes_labels/__init__.py": "88b20932acb13c6696e006185ff31f7eaccfd4a8e5748fd8aedc94bdc90e01b7",
+      "backend/odoo_addons/mp_example_notes_labels/__manifest__.py": "ae26534b100a7a6db8d8ca30b896b92ae47099db4f8929b145120a5f1cdc1be3",
+      "backend/odoo_addons/mp_example_notes_labels/migrations/19.0.0.2.0/post-normalize_labels.py": "fbe0e19f1a5e08e549c3bb5e8420947742a507fb12b5eb1d2d953638af91ede8",
+      "backend/odoo_addons/mp_example_notes_labels/models.py": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+      "backend/odoo_addons/mp_example_notes_labels/services.py": "cf7c3b883f14acaaafbf5e6b4fa7f7ec8888fd19ea5139f178e6704e1448bea6",
+      "backend/odoo_addons/mp_example_notes_labels/static/src/labels.js": "18c0c03e4f14f484388f6b4fd75c6d5c23f477cb114b6e416b9f5577370121be",
+      "inventory.json": "ba881dfc9dcb98e1df0eb03a1ea131981924e3ad9491973ad443d17292f4c2d7",
+      "notices/COPYRIGHT": "86e49232d2162708d05405ed5ff6dc5594b73ef4b0f25d2749cfae13493b620c",
+      "notices/LICENSE": "abc09dad5f84a76e1b0279237053cae16c03228ab27d8d467677054c2bd17eeb",
+      "plugin.toml": "d59b98dd4bf6a37eee44c5e3ea22cf81645c36b64ecb619ad621da27b8835a7e",
+      "provenance.json": "a9386b6e313697a67e8f26e22011ae31b7cdad1e089463ed9df986a124431eb3",
+      "schemas/labels-input.json": "b220f4609c4709617cca174a5bdc3a578952877a5f502758e5d00c7d7519fb46"
+    },
+    "provenance": {
+      "builder": "repository-reference-assembler-v1",
+      "schema_version": 1,
+      "source_files": {
+        "backend/odoo_addons/mp_example_notes_labels/__init__.py": "88b20932acb13c6696e006185ff31f7eaccfd4a8e5748fd8aedc94bdc90e01b7",
+        "backend/odoo_addons/mp_example_notes_labels/__manifest__.py": "ae26534b100a7a6db8d8ca30b896b92ae47099db4f8929b145120a5f1cdc1be3",
+        "backend/odoo_addons/mp_example_notes_labels/migrations/19.0.0.2.0/post-normalize_labels.py": "fbe0e19f1a5e08e549c3bb5e8420947742a507fb12b5eb1d2d953638af91ede8",
+        "backend/odoo_addons/mp_example_notes_labels/models.py": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+        "backend/odoo_addons/mp_example_notes_labels/services.py": "cf7c3b883f14acaaafbf5e6b4fa7f7ec8888fd19ea5139f178e6704e1448bea6",
+        "backend/odoo_addons/mp_example_notes_labels/static/src/labels.js": "18c0c03e4f14f484388f6b4fd75c6d5c23f477cb114b6e416b9f5577370121be",
+        "notices/COPYRIGHT": "86e49232d2162708d05405ed5ff6dc5594b73ef4b0f25d2749cfae13493b620c",
+        "notices/LICENSE": "abc09dad5f84a76e1b0279237053cae16c03228ab27d8d467677054c2bd17eeb",
+        "plugin.toml": "d59b98dd4bf6a37eee44c5e3ea22cf81645c36b64ecb619ad621da27b8835a7e",
+        "schemas/labels-input.json": "b220f4609c4709617cca174a5bdc3a578952877a5f502758e5d00c7d7519fb46"
+      },
+      "trusted_inputs_only": true,
+      "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+    },
+    "trust": {
+      "model": "operator-approved-exact-digest",
+      "signature_verified": false,
+      "policy_generation": 4,
+      "warnings": []
+    },
+    "size": 23912,
+    "expanded_size": 63427,
+    "native_manifest": {
+      "name": "Notes Labels",
+      "version": "19.0.0.2.2",
+      "depends": [
+        "mp_example_notes",
+        "mp_shell"
+      ],
+      "license": "LGPL-3",
+      "assets": {
+        "mp_shell.assets_host": [
+          "mp_example_notes_labels/static/src/labels.js"
+        ]
+      }
+    }
+  },
+  "paths": {
+    "trust": ".local\\g5-lifecycle\\operator\\permission-upgrade\\trust.json",
+    "catalog": ".local\\g5-lifecycle\\operator\\permission-upgrade\\catalog"
+  },
+  "limits": [
+    "No application profile publication, operation or deployment from this step.",
+    "Plain artifact preparation folder failed private ACL precondition before writing authority; used a new protected folder under existing operator tree without resetting ACLs."
+  ]
+}

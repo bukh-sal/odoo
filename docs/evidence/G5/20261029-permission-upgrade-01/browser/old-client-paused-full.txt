@@ -1,0 +1,31 @@
+Browser tab: 19, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4".
+0 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4
+	1 container
+		2 text M
+		3 text Modular Platform
+		4 container
+			5 text Workspace
+			6 pop up button (collapsed, settable) Description: Workspace, Value: Personal, Secondary Actions: Expand
+				7 menu
+					8 Workspace
+					16 (selected) Personal
+					17 Research
+		9 button Commands
+		10 button Dark
+		18 text Operator
+		11 container Applications
+			12 link Description: Settings, Value: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4#
+			19 link Description: Operations, Value: g5life.localhost:18080/app/operations
+		13 heading Operations, Value: 1
+			14 text Operations
+		15 text Your ideas, in one place.
+		20 container
+			21 text The platform has changed. Refresh to continue. a4f8a533-1adb-4fff-86be-abfabbddf758
+			22 button Refresh platform
+		23 container
+			24 button Close
+			25 text Refresh platform .  A new platform release is available. Your old page is paused.
+			26 button Refresh
+			27 button Download unsaved draft
+
+The focused UI element is 0 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4

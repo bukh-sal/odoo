@@ -1,0 +1,32 @@
+{
+  "result": "passed_LIFE05_and_G5_X05",
+  "utc": "2026-10-29T05:14:57.824509+00:00",
+  "runtime_core_sdk_source": "1efd46de",
+  "fixture_source_base": "16893c65",
+  "fixture_inputs": "fixture.json",
+  "image": "image.json",
+  "catalog": "catalog.json",
+  "prerequisite": "restore/qualification.json",
+  "actual_upgrade": "upgrade/qualification.json",
+  "old_approval_denial": "upgrade/previous-plan-hash.json",
+  "missing_permission_ack_denial": "upgrade/missing-permission-ack.json",
+  "survivors_assets": "survivor-http-assets.json",
+  "browser": "browser/browser-proof.json",
+  "protected_source_audit": "final-audit.json",
+  "acceptance_newly_passed": [
+    "LIFE-05"
+  ],
+  "scope": {
+    "exact_new_scoped_grants": 2,
+    "capability": "org.example.notes:notes.write",
+    "default_reference_plugin_unchanged": true,
+    "Canvas_expansion": false,
+    "core_runtime_edits": false
+  },
+  "limits": [
+    "G5 remains in_progress; X06..X10 are required.",
+    "Only the isolated disposable qualification site runs test fixture0.2.2; it does not broaden default product grants.",
+    "Native code is fully trusted; integration grant metadata is not a sandbox.",
+    "Current job/outbox-table rejection must be replaced/requalified with real G6 dispatch adapters."
+  ]
+}

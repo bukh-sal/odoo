@@ -1,0 +1,57 @@
+{
+  "scopes": [
+    [
+      1,
+      2,
+      "org.example.canvas",
+      1
+    ],
+    [
+      2,
+      2,
+      "org.example.notes",
+      2
+    ],
+    [
+      3,
+      1,
+      "org.example.canvas",
+      1
+    ],
+    [
+      4,
+      1,
+      "org.example.notes",
+      2
+    ],
+    [
+      5,
+      2,
+      "org.example.notes_labels",
+      3
+    ],
+    [
+      6,
+      1,
+      "org.example.notes_labels",
+      3
+    ]
+  ],
+  "installations": [
+    [
+      1,
+      "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+      "org.example.canvas"
+    ],
+    [
+      2,
+      "20739608-badd-54c8-95c7-d962d2cfdee7",
+      "org.example.notes"
+    ],
+    [
+      3,
+      "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+      "org.example.notes_labels"
+    ]
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "arguments": [
+    "odoo-bin",
+    "-c",
+    "/run/secrets/odoo_config",
+    "-d",
+    "mp_disposable_r0_r1_g5_life_f99acae9d906",
+    "-i",
+    "mp_example_notes_labels",
+    "--stop-after-init",
+    "--no-http",
+    "--workers=0",
+    "--max-cron-threads=0",
+    "--without-demo"
+  ],
+  "current_version": "0.2.1",
+  "historical_migrations_absent": true
+}

@@ -1,0 +1,13 @@
+{
+  "result": "passed_staged_reinstall_prerequisite",
+  "operation_id": "ebc94319-33ae-4860-9cf5-cc74e30ef95c",
+  "plan_hash": "sha256:0db37a3cbda986a8fa56048300d75ea1cea6814637c4a26c1cc80ac3bb6bf1d5",
+  "generation": 10,
+  "stable_identities": true,
+  "notes_boards_preserved": true,
+  "old_files_preserved": 54,
+  "historical_migrations_absent": true,
+  "limits": [
+    "Prerequisite only; LIFE-05 permission-expanding upgrade has not run."
+  ]
+}

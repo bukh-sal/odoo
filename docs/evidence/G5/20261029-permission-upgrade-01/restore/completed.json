@@ -1,0 +1,117 @@
+{
+  "operation_id": "ebc94319-33ae-4860-9cf5-cc74e30ef95c",
+  "plan_hash": "sha256:0db37a3cbda986a8fa56048300d75ea1cea6814637c4a26c1cc80ac3bb6bf1d5",
+  "state": "completed",
+  "phase": "completed",
+  "mutation_started": true,
+  "traffic_resumed": true,
+  "backup_id": "ebc94319-33ae-4860-9cf5-cc74e30ef95c",
+  "approval_expires_at": "2026-10-29T05:16:26Z",
+  "history": [
+    {
+      "sequence": 155,
+      "utc": "2026-10-29T05:00:11Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:0db37a3cbda986a8fa56048300d75ea1cea6814637c4a26c1cc80ac3bb6bf1d5"
+      }
+    },
+    {
+      "sequence": 156,
+      "utc": "2026-10-29T05:00:13Z",
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "ebc94319-33ae-4860-9cf5-cc74e30ef95c",
+        "plan_hash": "sha256:0db37a3cbda986a8fa56048300d75ea1cea6814637c4a26c1cc80ac3bb6bf1d5",
+        "request_id": "6763b242-d7fa-4439-83ea-1607d91abe90",
+        "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc"
+      }
+    },
+    {
+      "sequence": 157,
+      "utc": "2026-10-29T05:01:26Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:0db37a3cbda986a8fa56048300d75ea1cea6814637c4a26c1cc80ac3bb6bf1d5"
+      }
+    },
+    {
+      "sequence": 158,
+      "utc": "2026-10-29T05:01:52Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 35940,
+        "lock_owner_digest": "sha256:809b2f84a8c6d9a6c643c5b113a6a15fbc4b7c154c444fee8ee2e0703578cd90"
+      }
+    },
+    {
+      "sequence": 159,
+      "utc": "2026-10-29T05:02:12Z",
+      "code": "staged",
+      "details": {}
+    },
+    {
+      "sequence": 160,
+      "utc": "2026-10-29T05:02:22Z",
+      "code": "maintenance",
+      "details": {}
+    },
+    {
+      "sequence": 161,
+      "utc": "2026-10-29T05:02:24Z",
+      "code": "drained",
+      "details": {}
+    },
+    {
+      "sequence": 162,
+      "utc": "2026-10-29T05:02:33Z",
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "ebc94319-33ae-4860-9cf5-cc74e30ef95c"
+      }
+    },
+    {
+      "sequence": 163,
+      "utc": "2026-10-29T05:02:43Z",
+      "code": "mutation_started",
+      "details": {}
+    },
+    {
+      "sequence": 164,
+      "utc": "2026-10-29T05:02:47Z",
+      "code": "migrated",
+      "details": {}
+    },
+    {
+      "sequence": 165,
+      "utc": "2026-10-29T05:02:51Z",
+      "code": "workers_replaced",
+      "details": {}
+    },
+    {
+      "sequence": 166,
+      "utc": "2026-10-29T05:03:04Z",
+      "code": "ready",
+      "details": {}
+    },
+    {
+      "sequence": 167,
+      "utc": "2026-10-29T05:03:06Z",
+      "code": "release_published",
+      "details": {}
+    },
+    {
+      "sequence": 168,
+      "utc": "2026-10-29T05:03:07Z",
+      "code": "traffic_resumed",
+      "details": {}
+    },
+    {
+      "sequence": 169,
+      "utc": "2026-10-29T05:03:10Z",
+      "code": "completed",
+      "details": {}
+    }
+  ]
+}
