@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "generation": 9,
+  "worker_id": "54b284eaa6c4dd604e239968dc6f73ab5e636a8e7a6eaad860490ecef29f8fa2",
+  "retained_images": [
+    "sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c",
+    "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1"
+  ],
+  "native_source_directory_absent": true,
+  "runtime_archive_absent": true
+}

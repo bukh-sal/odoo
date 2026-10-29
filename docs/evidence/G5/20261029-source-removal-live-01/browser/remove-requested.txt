@@ -1,0 +1,24 @@
+Browser tab: 17, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 207-209, 211-213
++			254 container
++				255 text dependency unavailable
++				256 button Refresh
+~				197 button (disabled) Request operation
+~					202 text running  ·  reserved
++				257 text Progress observation is stale. Refresh or inspect the local operator journal.
++				258 container
++					259 text Start approval expires:  2026-10-29T05:05:34Z
++					260 container
++						261 AXListMarker 1. 
++						262 text 2026-10-29T04:49:46Z  ·  prepared
++					263 container
++						264 AXListMarker 2. 
++						265 text 2026-10-29T04:49:47Z  ·  application_request_imported
++					266 container
++						267 AXListMarker 3. 
++						268 text 2026-10-29T04:50:34Z  ·  approved
++					269 container
++						270 AXListMarker 4. 
++						271 text 2026-10-29T04:51:02Z  ·  reserved
+The focused UI element is 1 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4

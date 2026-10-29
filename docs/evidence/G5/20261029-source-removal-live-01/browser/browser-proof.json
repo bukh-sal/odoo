@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "fixture": "mp-r0-r1lifef99acae9d906",
+  "generation": 9,
+  "operation_id": "5429f3c0-d6ff-4484-ab1a-14de7728bf21",
+  "actual_manager_preview_request": true,
+  "targets": [
+    "Personal",
+    "Research"
+  ],
+  "checkpoint_retention_restart_wording": true,
+  "completed_observed_removed": true,
+  "old_client_paused_explicit_refresh": true,
+  "native_list_count": 1,
+  "native_form_count": 1,
+  "preserved_note": "db7c55ba-3cb8-4328-9e47-e1d6b0caf852",
+  "preserved_revision": 2,
+  "removed_labels_action_absent": true,
+  "limits": [
+    "No Canvas UI expansion, native edit, permission upgrade, crash or clean restore claim."
+  ]
+}

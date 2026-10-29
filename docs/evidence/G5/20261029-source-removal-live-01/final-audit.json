@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T04:53:48.877117+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "state_business_exact": true,
+      "configuration_sha256": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9"
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "state_business_exact": true,
+      "configuration_sha256": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad"
+    }
+  ],
+  "qualified_runtime_source_inputs_exact": 202,
+  "independent_operation_states": [
+    [
+      "completed",
+      12
+    ]
+  ],
+  "lifecycle_generation": 9,
+  "public_files_checked": 62,
+  "known_private_values_checked": 5,
+  "limits": [
+    "Bounded checkpoint scan, not SEC-03 whole-release audit. No permission-expanding upgrade, process-crash or clean restore claim."
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "result": "rejected",
+  "reason": "Staged image/configuration preimage mismatch or stale deployment"
+}

@@ -1,0 +1,90 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "workspace": "A",
+      "plugin": "org.example.canvas",
+      "method": "get",
+      "status": 200,
+      "code": null
+    },
+    {
+      "workspace": "A",
+      "plugin": "org.example.notes_labels",
+      "method": "set_labels",
+      "status": 503,
+      "code": "DEPENDENCY_UNAVAILABLE"
+    },
+    {
+      "workspace": "B",
+      "plugin": "org.example.canvas",
+      "method": "get",
+      "status": 200,
+      "code": null
+    },
+    {
+      "workspace": "B",
+      "plugin": "org.example.notes_labels",
+      "method": "set_labels",
+      "status": 503,
+      "code": "DEPENDENCY_UNAVAILABLE"
+    }
+  ],
+  "assets": [
+    {
+      "operation": "9958f09b-9181-41aa-99d4-2953a3e3095d",
+      "url": "/web/assets/281b220db0a9dc982a80afc31d390baa68213fb06d2fbe44eb015c7c1782e95c/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "status": 200,
+      "redirect": false,
+      "immutable": true
+    },
+    {
+      "operation": "9958f09b-9181-41aa-99d4-2953a3e3095d",
+      "url": "/web/assets/69ca4cc0aab8d05dbd8f8456527f8011f8b17928b6546572c1ae0cc0d15e72ac/mp_shell.assets_host.min.js",
+      "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+      "status": 200,
+      "redirect": false,
+      "immutable": true
+    },
+    {
+      "operation": "6d824b4d-8290-4419-8167-8b97c7f105f8",
+      "url": "/web/assets/281b220db0a9dc982a80afc31d390baa68213fb06d2fbe44eb015c7c1782e95c/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "status": 200,
+      "redirect": false,
+      "immutable": true
+    },
+    {
+      "operation": "6d824b4d-8290-4419-8167-8b97c7f105f8",
+      "url": "/web/assets/89477cc5919e3fcd6abacefa0e5f5d95307c6ded6f4fcf4949d3dc439d960b28/mp_shell.assets_host.min.js",
+      "sha256": "3502f1ad7faebe1bc3b8dadfee578ddca129ccf3f1a0d85ac5f9f2e5200ff853",
+      "status": 200,
+      "redirect": false,
+      "immutable": true
+    },
+    {
+      "operation": "5429f3c0-d6ff-4484-ab1a-14de7728bf21",
+      "url": "/web/assets/da155efdd7cdbd10e1b39d4bea1974cf94013712720cf8cf7a04fd869a91456e/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "status": 200,
+      "redirect": false,
+      "immutable": true
+    },
+    {
+      "operation": "5429f3c0-d6ff-4484-ab1a-14de7728bf21",
+      "url": "/web/assets/df65ca70899c4dbaa15ebb970c7556841829d41bd7718679412ccaacaefb5f3d/mp_shell.assets_host.min.js",
+      "sha256": "3502f1ad7faebe1bc3b8dadfee578ddca129ccf3f1a0d85ac5f9f2e5200ff853",
+      "status": 200,
+      "redirect": false,
+      "immutable": true
+    }
+  ],
+  "notes_native_and_gateway": true,
+  "removed_native_field_absent": true,
+  "removed_slot_absent": true,
+  "all_state_schema_business_exact": true,
+  "limits": [
+    "Read-only survivor proof; Canvas save/conflict and permission-expanding upgrade are separate requirements."
+  ]
+}

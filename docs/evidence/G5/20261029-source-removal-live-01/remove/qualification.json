@@ -1,0 +1,21 @@
+{
+  "result": "passed_actual_remove",
+  "utc": "2026-10-29T04:52:56.178109+00:00",
+  "operation_id": "5429f3c0-d6ff-4484-ab1a-14de7728bf21",
+  "plan_hash": "sha256:ee4b670815e8d0b03f895db17b55d22d019f72f046a1ae74e27122999b49b791",
+  "generation": 9,
+  "image_id": "sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c",
+  "notes_boards_preserved": true,
+  "stable_tombstone_scopes": 2,
+  "checkpoint_hashes_verified": true,
+  "old_files_preserved": 54,
+  "old_catalog_archive_retained": true,
+  "old_client_rejected": true,
+  "protected_config_hashes": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad"
+  },
+  "limits": [
+    "Actual browser/native/API/assets survivor checks remain separate; no permission-expanding upgrade or clean restore claim."
+  ]
+}

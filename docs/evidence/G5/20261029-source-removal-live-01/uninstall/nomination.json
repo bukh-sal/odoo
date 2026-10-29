@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "operation": "prepare",
+  "operation_type": "uninstall",
+  "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+  "plugin_id": "org.example.notes_labels",
+  "workspace_ids": [],
+  "cascade": false
+}

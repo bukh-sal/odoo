@@ -1,0 +1,114 @@
+{
+  "approval_expires_at": "2026-10-29T05:01:22Z",
+  "control_authority": "independent_local_os",
+  "dimensions": [
+    {
+      "artifact_state": "verified",
+      "database_state": "not_installed",
+      "feature_state": "suspended",
+      "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+      "plugin_id": "org.example.notes_labels",
+      "release_state": "active",
+      "service_state": null,
+      "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+    },
+    {
+      "artifact_state": "verified",
+      "database_state": "not_installed",
+      "feature_state": "suspended",
+      "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+      "plugin_id": "org.example.notes_labels",
+      "release_state": "active",
+      "service_state": null,
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4"
+    }
+  ],
+  "error_code": null,
+  "history": [
+    {
+      "code": "prepared",
+      "sequence": 125,
+      "utc": "2026-10-29T04:42:50Z"
+    },
+    {
+      "code": "application_request_imported",
+      "sequence": 126,
+      "utc": "2026-10-29T04:42:52Z"
+    },
+    {
+      "code": "approved",
+      "sequence": 127,
+      "utc": "2026-10-29T04:46:22Z"
+    },
+    {
+      "code": "reserved",
+      "sequence": 128,
+      "utc": "2026-10-29T04:46:48Z"
+    },
+    {
+      "code": "staged",
+      "sequence": 129,
+      "utc": "2026-10-29T04:47:06Z"
+    },
+    {
+      "code": "maintenance",
+      "sequence": 130,
+      "utc": "2026-10-29T04:47:36Z"
+    },
+    {
+      "code": "drained",
+      "sequence": 131,
+      "utc": "2026-10-29T04:47:38Z"
+    },
+    {
+      "code": "checkpointed",
+      "sequence": 132,
+      "utc": "2026-10-29T04:47:47Z"
+    },
+    {
+      "code": "mutation_started",
+      "sequence": 133,
+      "utc": "2026-10-29T04:47:54Z"
+    },
+    {
+      "code": "migrated",
+      "sequence": 134,
+      "utc": "2026-10-29T04:47:58Z"
+    },
+    {
+      "code": "workers_replaced",
+      "sequence": 135,
+      "utc": "2026-10-29T04:48:05Z"
+    },
+    {
+      "code": "ready",
+      "sequence": 136,
+      "utc": "2026-10-29T04:48:15Z"
+    },
+    {
+      "code": "release_published",
+      "sequence": 137,
+      "utc": "2026-10-29T04:48:16Z"
+    },
+    {
+      "code": "traffic_resumed",
+      "sequence": 138,
+      "utc": "2026-10-29T04:48:18Z"
+    },
+    {
+      "code": "completed",
+      "sequence": 139,
+      "utc": "2026-10-29T04:48:20Z"
+    }
+  ],
+  "kind": "status",
+  "observed_at": "2026-10-29T04:48:41Z",
+  "operation_id": "6d824b4d-8290-4419-8167-8b97c7f105f8",
+  "phase": "completed",
+  "plan_hash": "sha256:122f18b1512974e8b56368337e943f35bf2cfc44b813eebbfd87e6de95937a46",
+  "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+  "schema_version": 1,
+  "source": "operator_journal_mirror",
+  "stale": false,
+  "state": "completed"
+}
