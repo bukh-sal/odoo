@@ -1,0 +1,13 @@
+{
+  "result": "real_restored_queue_counterexample_and_fix_verified",
+  "source_commit": "2adbdbde",
+  "source_sha256": "000029a1696dfda7532a8221db6124e529b5a09d97b604211a5f7ace2701b500",
+  "old_clean_review_still_valid_with_queued_work": true,
+  "old_observation_digest_unchanged": true,
+  "old_mutative_resume_executed": false,
+  "current_prepare_resume_refused": true,
+  "current_reason": "Restored dispatch/API/technical identities require reconciliation; traffic must remain closed",
+  "journal_still_closed": true,
+  "edge_still_stopped": true,
+  "old_private_review_revoked": true
+}

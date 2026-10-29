@@ -1,0 +1,14 @@
+{
+  "result": "not_qualified_timeout",
+  "exec_session": 14974,
+  "timeout_seconds": 300,
+  "patterns": [
+    "test_restore_dispatch.py",
+    "test_recovery.py",
+    "test_unchanged_recovery.py",
+    "test_operator_store.py"
+  ],
+  "post_timeout_process_inventory": "No source runner or test child remains; only pre-existing unrelated Python processes observed.",
+  "native_or_database_mutation": false,
+  "next": "Direct base interpreter with isolated venv dependencies and streaming per-test logs; inspect exact slow case rather than repeat a silent launcher run."
+}

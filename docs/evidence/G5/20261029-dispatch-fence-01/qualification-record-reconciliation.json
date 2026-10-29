@@ -1,0 +1,6 @@
+{
+  "result": "recording_wrapper_corrected",
+  "failure": "Acceptance regex included work checklist rows before acceptance ledger, resulting89 passed instead77",
+  "correction": "Restrict count to authoritative acceptance ledger; verify already-created source and qualification records exact, finish status/index/log once",
+  "runtime_or_test_mutation_repeated": false
+}

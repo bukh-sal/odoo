@@ -1,0 +1,73 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "workspace": "A",
+      "plugin": "org.example.canvas",
+      "method": "get",
+      "status": 200
+    },
+    {
+      "workspace": "A",
+      "plugin": "org.example.notes_labels",
+      "method": "set_labels",
+      "status": 409
+    },
+    {
+      "workspace": "B",
+      "plugin": "org.example.canvas",
+      "method": "get",
+      "status": 200
+    },
+    {
+      "workspace": "B",
+      "plugin": "org.example.notes_labels",
+      "method": "set_labels",
+      "status": 409
+    }
+  ],
+  "assets": [
+    {
+      "url": "/web/assets/63c5974592655d931920e0596ac04cfca96ac6d268d30a24f941725016e0c1fc/mp_shell.assets_host.min.js",
+      "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/6fb25c7c2ae40341f8b9a58fa6af1b30b4c997dd64c44fc10385cd06fda16004/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/63c5974592655d931920e0596ac04cfca96ac6d268d30a24f941725016e0c1fc/mp_shell.assets_host.min.js",
+      "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/6fb25c7c2ae40341f8b9a58fa6af1b30b4c997dd64c44fc10385cd06fda16004/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "immutable": true,
+      "redirect": false
+    }
+  ],
+  "old_compatibility_document": {
+    "protocol": 1,
+    "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+    "generation": 18,
+    "release_digest": "sha256:c0bf2de6703bcbcdfba4062d3c6cd2004e2bac01c546260f5a96bd980d868090",
+    "inventory_digest": "sha256:f6c89902adb4a7e5038906d20bc2387f4743c5ac436c6594a9b3fed1ddccbb37",
+    "token": "sha256:0364e6cd4ed59687af1f8452063e86e98f1e0496a2eb0462298c544080e06e11"
+  },
+  "restored_generation": 20,
+  "old_client_fenced": true,
+  "failed_original_plan_replay": "denied by permanent independent revocation",
+  "exact_business_schema_state_files": true,
+  "limits": [
+    "Old compatibility pin is deterministically derived from recorded pre-crash publication; no pre-existing browser document was observed in this backend test.",
+    "Native Odoo RPC and existing APIs verified; no frontend redesign or Canvas feature expansion.",
+    "No successful Labels write/Canvas save; handlers exercised with reads or a deliberately conflicting revision.",
+    "No concurrency, dispatch adapter or clean-environment recovery qualification."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T08:42:12.995919+00:00",
+  "work_item": "G5-X06/MIG-09",
+  "acceptance": [
+    "MIG-09",
+    "MIG-06"
+  ],
+  "requalified": [
+    "MIG-06"
+  ],
+  "spec_sections": [
+    "10.2",
+    "10.5",
+    "12.4",
+    "25.3"
+  ],
+  "operation_id": "2c21ae48-a3bb-4c9a-bcd9-8cbbeb743a00",
+  "base_generation": 18,
+  "restored_generation": 20,
+  "checks": {
+    "actual_old_observer_counterexample": "old-counterexample.json",
+    "unsupported_restore_proposal": "prepare-restore-refused.json",
+    "unsupported_resume_start": "queued-start-refused.json",
+    "late_after_readiness": "late-refused.json",
+    "retained_effects_and_protected_targets": "final-audit.json",
+    "supported_real_restore_resume": "recovery/recovery-qualification.json",
+    "native_api_assets_client_and_retired_plan": "http-assets-replay.json"
+  },
+  "tests": {
+    "windows_passed": 35,
+    "linux_passed": 49,
+    "skipped": 0,
+    "frozen_files": 87
+  },
+  "source": "source-boundary.json",
+  "remaining_G5_acceptance": [
+    "TEN-01",
+    "TEN-02",
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEC-07",
+    "SEC-08",
+    "OPS-02",
+    "OPS-03"
+  ],
+  "limits": [
+    "Synthetic queues and harmless durable local receipts; fixture-only reconciliation, no G6 adapter.",
+    "Bounded private-value scan, not SEC-03 release qualification.",
+    "Actual native commit followed by controlled host exception; OS-process-crash evidence is retained separately.",
+    "Independent copied populated fixture, not OPS-02 clean-environment runbook rehearsal.",
+    "MIG-09 qualified for the current G5 no-dispatch profile only; actual G6 adapters must extend and requalify MIG-08/09.",
+    "Minimal Canvas unchanged and native Odoo standard record views retained."
+  ]
+}

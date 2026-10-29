@@ -1,0 +1,11 @@
+{
+  "result": "exact_existing_fixture_reconciliation",
+  "original_exec_session": 69044,
+  "diagnosis": "Root helper with dropped capabilities cannot write a UID10001-owned mode0755 volume.",
+  "observed_destination_uid": 10001,
+  "observed_destination_gid": 10001,
+  "destination_filestore_absent": true,
+  "database_recreation": false,
+  "new_private_secrets_generated": false,
+  "continuation_uid": 10001
+}

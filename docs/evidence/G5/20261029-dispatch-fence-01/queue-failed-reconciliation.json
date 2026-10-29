@@ -1,0 +1,39 @@
+{
+  "result": "fixture_rows_retained_and_external_completion_verified",
+  "record": {
+    "state": "explicit_fixture_reconciliation_retained",
+    "case": "failed",
+    "database": "mp_disposable_r0_r1_disp_efb95a06d78f",
+    "fixture_id": "126653d4-0e99-49b8-ae53-9e939372b75d",
+    "effect_id": "cbdb8e23-7bf4-49b4-adcd-8a3b5aad7f80",
+    "result_sha256": "9e67ebcedbe4ee55a68f5b2a35d31ba0cce13d033e5c2f8f2ed7e4ac198b6eb9",
+    "external_receipt_sha256": "80e8e4d061492fd5b096b68b5d36f80e3c20386c73ebcbedffa44c98a14f3970",
+    "retained_schema": "mp_fixture_reconciled_failed"
+  },
+  "original_rows": [
+    {
+      "table": "mp_job",
+      "rows": [
+        {
+          "state": "pending",
+          "effect_id": "cbdb8e23-7bf4-49b4-adcd-8a3b5aad7f80",
+          "fixture_id": "126653d4-0e99-49b8-ae53-9e939372b75d",
+          "result_sha256": "9e67ebcedbe4ee55a68f5b2a35d31ba0cce13d033e5c2f8f2ed7e4ac198b6eb9"
+        }
+      ]
+    },
+    {
+      "table": "mp_outbox",
+      "rows": [
+        {
+          "state": "pending",
+          "effect_id": "cbdb8e23-7bf4-49b4-adcd-8a3b5aad7f80",
+          "fixture_id": "126653d4-0e99-49b8-ae53-9e939372b75d",
+          "result_sha256": "9e67ebcedbe4ee55a68f5b2a35d31ba0cce13d033e5c2f8f2ed7e4ac198b6eb9"
+        }
+      ]
+    }
+  ],
+  "external_effect_repeated": false,
+  "production_reconciler_implemented": false
+}

@@ -1,0 +1,14 @@
+{
+  "result": "passed_dispatch_fixture_restore_resume",
+  "operation_id": "2c21ae48-a3bb-4c9a-bcd9-8cbbeb743a00",
+  "original_generation": 18,
+  "planned_failed_generation": 19,
+  "restored_generation": 20,
+  "fresh_database": "mp_disposable_r0_r1_restore_2c21ae48a3bb4c9abcd98cbbeb743a00",
+  "failed_database_retained": true,
+  "original_plan_revoked": true,
+  "limits": [
+    "Supported HTTP/assets/client fence and protected/source audit remain separate.",
+    "No concurrency, job/outbox adapter or clean-environment restore qualification."
+  ]
+}

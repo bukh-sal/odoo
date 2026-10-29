@@ -1,0 +1,6 @@
+{
+  "result": "corrected_unit_harness_then_9_passed",
+  "first_error": "Helper named run overrode unittest.TestCase.run; renamed execute_command.",
+  "second_error": "Mock store omitted explicit allow_noninteractive policy; supplied real expected policy shape.",
+  "production_actions_from_failed_tests": false
+}

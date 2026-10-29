@@ -1,0 +1,7 @@
+{
+  "result": "read_only_audit_wrapper_corrected",
+  "failure": "KeyError revoked: recovery revocation is a sibling .revoked.json record, not an inline flag",
+  "completed_checks": "Protected main/manager/lifecycle full state/business/files/config, restored state/effects/terminal replay/receipts/worker checks passed before wrapper failure",
+  "correction": "Check actual revocation marker exact decision hash and operation; assert existing preparation report actual result string",
+  "mutation_or_restore_repeated": false
+}

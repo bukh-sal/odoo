@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T08:43:37.938107+00:00",
+  "public_files_checked": 92,
+  "known_private_values_checked": 7,
+  "current_source_hashes_verified": 8,
+  "frozen_files": 87,
+  "acceptance_passed": 77,
+  "acceptance_not_run": 22,
+  "R2_excluded": 5,
+  "limits": [
+    "Bounded evidence recording scan; not SEC03 release qualification."
+  ]
+}

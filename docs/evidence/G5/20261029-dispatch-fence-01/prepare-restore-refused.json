@@ -1,0 +1,11 @@
+{
+  "result": "passed_unsupported_queues_refused_before_restore",
+  "operation_id": "2c21ae48-a3bb-4c9a-bcd9-8cbbeb743a00",
+  "reason": "Jobs/outbox/API keys require the later effect/credential reconciliation profile",
+  "cli_nonzero_verified": true,
+  "journal_unchanged": true,
+  "fresh_database_absent": true,
+  "recovery_attempt_absent": true,
+  "traffic_closed": true,
+  "reconciliation": "Post-denial catalog check initially used a third unsupported sql argument; fixed read-only catalog observation without repeating CLI."
+}

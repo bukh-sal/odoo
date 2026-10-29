@@ -34,6 +34,14 @@ AUTHORITY_SELECT = """SELECT jsonb_build_object(
 'has_dispatch_tables',to_regclass('mp_job') IS NOT NULL OR to_regclass('mp_outbox') IS NOT NULL);
 """
 
+EFFECTS_SELECT = """SELECT jsonb_build_object(
+'job_table',to_regclass('public.mp_job') IS NOT NULL,
+'outbox_table',to_regclass('public.mp_outbox') IS NOT NULL,
+'api_key_count',(SELECT count(*) FROM res_users_apikeys),
+'active_technical_credentials',(SELECT count(*) FROM mp_service_credential WHERE state='active'),
+'external_installations',(SELECT count(*) FROM mp_plugin_installation WHERE runtime<>'native'));
+"""
+
 EXTRACT_FILESTORE = Path(__file__).with_name('restore_filestore.py').read_text()
 
 
@@ -107,6 +115,16 @@ class RestoreExecutor:
         self.native = native
         self.store, self.config = native.store, native.config
         self.observer = native.observer
+
+    def _supported_effects(self, database):
+        container=self.observer._container('db')
+        value=load_json(_run(['docker','exec','-i',container,'psql','-X','-qAt','-U','postgres','-d',database,
+            '-v','ON_ERROR_STOP=1'],input=EFFECTS_SELECT.encode()))
+        flags={'job_table','outbox_table'};counts={'api_key_count','active_technical_credentials','external_installations'}
+        if (not isinstance(value,dict) or set(value)!=flags|counts or any(type(value[k]) is not bool for k in flags)
+                or any(type(value[k]) is not int or value[k]<0 for k in counts) or any(value.values())):
+            raise OperatorError('Restored dispatch/API/technical identities require reconciliation; traffic must remain closed')
+        return value
 
     def _restore_state(self, operation):
         status = self.store.status(operation)
@@ -202,6 +220,9 @@ class RestoreExecutor:
                 directory/'filestore.log',input=(checkpoint/'filestore.tar.gz').read_bytes())
             _run(['docker','exec','-i',database,'psql','-X','-q','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1','--single-transaction'],
                 input=(authority_sql(decision['authority'])+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
+            # The restored checkpoint may resurrect effects absent in the failed
+            # DB. Reject unsupported state before configuration/registry startup.
+            self._supported_effects(fresh)
             # Copy the old exact config to the private recovery directory before
             # replacing only its DB target. No secrets enter public evidence.
             args,name = self.native._child(operation,'read-config',network=False)
@@ -266,9 +287,18 @@ class RestoreExecutor:
         self.store._authorize_plan(self.store.bundle(operation)['plan'])
         if status['state']!='revoked' or status['phase']!='restore_verified' or status['traffic_resumed'] or result['configuration']!=self.config:
             raise OperatorError('Only a verified, still-closed restore can resume traffic')
+        edge=self.observer._container('edge',stopped=True)
+        if self.native._inspect(edge)['State']['Running']:
+            raise OperatorError('Restored traffic is already open; reconcile before a resume decision')
+        source=self.config['sites'][0]['database']
+        effects=self._supported_effects(source)
+        database=self.observer._container('db')
+        authority=canonical_authority(load_json(_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres',
+            '-d',source,'-v','ON_ERROR_STOP=1'],input=AUTHORITY_SELECT.encode())))
         observation = self.observer.read()
         return {'schema_version':1,'action':'resume_verified_restore','operation_id':operation,
-            'configuration':self.config,'restored_observation_digest':data_digest(observation),'restore_result_digest':data_digest(result)}
+            'configuration':self.config,'restored_observation_digest':data_digest(observation),'restore_result_digest':data_digest(result),
+            'recovery_profile':'r1-no-dispatch-v1','effects':effects,'authority_digest':data_digest(authority)}
 
     def prepare_resume(self,operation):
         return RecoveryReviews(self.store).issue(self._resume_state(operation))
@@ -291,6 +321,11 @@ class RestoreExecutor:
             edge = self.observer._container('edge',stopped=True)
             locks.check()
             RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
+            # Readiness can take time. Reobserve effects/authority/worker state
+            # at the last closed-traffic boundary; expiry remains a start deadline.
+            payload=copy.deepcopy(decision);payload.pop('review')
+            if payload!=self._resume_state(operation):
+                raise OperatorError('Recovery target, authority or effects changed before traffic resume')
             self.store.record_restore_resume(operation,locks,decision_hash=exact_hash)
             _run(['docker','start',edge])
             return {'state':'restored_traffic_resumed','operation_id':operation,'original_plan_state':'revoked',

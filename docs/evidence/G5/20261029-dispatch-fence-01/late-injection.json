@@ -1,0 +1,12 @@
+{
+  "result": "injected_after_real_HTTP_readiness_before_final_traffic_fence",
+  "queue": {
+    "state": "pending_with_external_completion",
+    "case": "late",
+    "database": "mp_disposable_r0_r1_restore_2c21ae48a3bb4c9abcd98cbbeb743a00",
+    "fixture_id": "4c05d5ce-bfc4-4d98-9264-6707ffb66f16",
+    "effect_id": "bf268941-f462-4b74-b7f4-c77ce920e74e",
+    "result_sha256": "10f7ff0ecbd527e1371eddfecdbac46e9e712e83b466beefc27aab429b470214",
+    "external_receipt_sha256": "9f42730ee4f38b65ce2fcb2c0406c76879065ed760c13ea902b9c8e5de2a52b5"
+  }
+}

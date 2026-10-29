@@ -1,0 +1,9 @@
+{
+  "state": "pending_with_external_completion",
+  "case": "restored",
+  "database": "mp_disposable_r0_r1_restore_2c21ae48a3bb4c9abcd98cbbeb743a00",
+  "fixture_id": "dc41a460-1b00-481f-99eb-1bfae93031ac",
+  "effect_id": "cbfb06e8-0f51-487a-9c17-021ce22e09fe",
+  "result_sha256": "6f1e070e5327cc3704a996ff5121475587e8d66681d2eca62fb7cd7877e9c7fd",
+  "external_receipt_sha256": "22048509e3ed5d4c5d4872f38d7b57f7cd0d46a786ec3f11145231cc88bea5ec"
+}

@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T08:29:26.427794+00:00",
+  "operation_id": "2c21ae48-a3bb-4c9a-bcd9-8cbbeb743a00",
+  "reason": "unsupported restored effects rejected before decision/traffic execution",
+  "journal_unchanged": true,
+  "traffic_fence_not_recorded": true,
+  "edge_still_stopped": true,
+  "external_receipt_hashes": {
+    "cbdb8e23-7bf4-49b4-adcd-8a3b5aad7f80.json": "80e8e4d061492fd5b096b68b5d36f80e3c20386c73ebcbedffa44c98a14f3970",
+    "cbfb06e8-0f51-487a-9c17-021ce22e09fe.json": "22048509e3ed5d4c5d4872f38d7b57f7cd0d46a786ec3f11145231cc88bea5ec"
+  },
+  "private_review_revoked": false,
+  "limits": [
+    "Synthetic fixture queued work and durable local external receipt; no real job adapter or network delivery."
+  ]
+}
