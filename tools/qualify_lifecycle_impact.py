@@ -53,6 +53,9 @@ with connection:
  for name,requested in data['cases'].items():
   results[name]=module.inspect_native_impact(connection,site_id=data['site_id'],requested=requested,
     descriptors=data['descriptors'],sources=sources)
+  preview=module.inspect_current_image(connection,root=root,inventory_digest='sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),
+    descriptors=data['descriptors'],site_id=data['site_id'],requested=requested)
+  assert preview==results[name],'Application byte-verified preview differs from independent inspection'
  try:
   module.inspect_native_impact(connection,site_id='00000000-0000-0000-0000-000000000000',
     requested=data['cases']['labels'],descriptors=data['descriptors'],sources=sources)
@@ -149,6 +152,7 @@ def main():
                   before_after_metadata_digest=data_digest(before), protected_config_hashes=hashes,
                   before_after_business_digest=data_digest(business_before), before_after_schema_digest=data_digest(schema_before),
                   labels_non_null_records=non_null_labels,
+                  application_archive_verified_preview_matches=True,
                   checks=['actual three dependency closures', 'shared model/fields retained', 'Labels one stored field/count matches independent retained business data',
                           'Notes+Canvas two models/six records', 'both workspaces covered', 'constraints/references/assets',
                           'unknown fields explicit', 'no dispatch tables', 'wrong-site rejection', 'unsafe transaction rejection',

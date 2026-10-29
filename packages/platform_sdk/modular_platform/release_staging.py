@@ -8,13 +8,13 @@ from packaging.version import Version
 
 from .contracts import load_json,plan_hash
 from .deployment import DockerObserver,inspect_image
-from .lifecycle_planning import installation_id
+from .lifecycle_planning import installation_id, install_scope_spec, install_activation_targets
 from .operator_os import OperatorError,OperationLocks,protect_directory,verify_private_directory
 from .operator_store import _write_new
 from .planning_cli import prepare_document
 from .plans import check_bundle,data_digest,_display
 from .projection import runtime_inputs
-from .resolution import binding_matches_scope
+from .resolution import binding_matches_scope, resolve_release
 from .native_versions import PARSER_PATH,reviewed_transition
 
 
@@ -107,7 +107,7 @@ def validate_plugin_core_stability(base,runtime):
         raise OperatorError('Plugin operation cannot carry native core/upstream changes; use explicit core maintenance')
 
 
-def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at,base_runtime=None):
+def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at,base_runtime=None,feature_states=()):
     if runtime.get('published_release_protocol')!=1:
         raise OperatorError('Staged native operations require an image with the published-release profile reader')
     if operation_type not in ('install','upgrade','deploy','core_upgrade'):
@@ -125,9 +125,27 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     selected,environment,provenance=runtime_inputs(runtime,catalog)
     by_plugin={item['manifest']['plugin']['id']:item for item in selected}
     by_site={site['site_id']:site for site in sites}
+    reinstall=operation_type=='install' and any(i['metadata_state']=='removed' and any(
+        t['site_id']==site['site_id'] and t['plugin_id']==i['plugin_id'] for t in targets) for site in sites for i in site['installations'])
+    reinstall_spec=None
+    if reinstall:
+        if any(t['action']!='install' for t in targets):raise OperatorError('Reinstall requires initial-install targets; upgrade existing changed dependencies separately first')
+        activation=install_activation_targets({'operation_lock':{'targets':targets,'feature_states':list(feature_states)}}) if feature_states else targets
+        ids={i['installation_id']:i['plugin_id'] for i in document['state']['installations']}
+        choices={(ids[b['consumer_installation_id']],b['alias'],b['site_id'],b['workspace_id']):b['provider_plugin_id'] for b in document['state'].get('bindings',[])}
+        solution=resolve_release(selected,runtime['python_metadata'],environment,
+            {p['plugin_id']:'=='+p['version'] for p in selected},scoped_provider_choices=choices,
+            core_python=[p['name']+'=='+p['version'] for p in runtime['python_metadata']])
+        entries={p['plugin_id']:dict(runtime=p['manifest']['runtime']['kind'],native_addon=p['manifest']['runtime'].get('addon_name'),
+                 hard_dependencies=p['manifest']['dependencies']['plugins'],permissions=p['manifest']['permissions']) for p in selected}
+        reinstall_spec=install_scope_spec(document,sites,activation_targets=activation,entries=entries,service_selection=solution['bindings'])
+        targets=reinstall_spec['targets'];feature_states=reinstall_spec['feature_states']
+    elif feature_states:
+        raise OperatorError('Post-feature states require a validated retained-scope reinstall')
+    feature_map={(r['installation_id'],r['workspace_id']):r['availability'] for r in feature_states}
     for target in targets:
         site=by_site.get(target['site_id'])
-        if (site is None or not any(item['workspace_id']==target['workspace_id'] and item['state']=='active' for item in site['workspaces'])
+        if (site is None or not any(item['workspace_id']==target['workspace_id'] and (item['state']=='active' or feature_map.get((target['installation_id'],target['workspace_id']))=='suspended') for item in site['workspaces'])
                 or target['plugin_id'] not in by_plugin or target['action'] not in (('deploy',) if operation_type in ('deploy','core_upgrade') else ('install','upgrade'))
                 or by_plugin[target['plugin_id']]['manifest']['runtime']['kind']!='native'
                 or target['installation_id']!=installation_id(site,target['plugin_id'])):
@@ -154,6 +172,9 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
             if (not existing and target['action']=='install') or target['action']=='upgrade' and capability not in prior:
                 changes.append({'plugin_id':target['plugin_id'],'workspace_id':target['workspace_id'],'capability':capability,'action':'grant'})
     target_document['request']['permission_changes']=changes
+    if reinstall_spec is not None:
+        target_document['request']['permission_changes']=reinstall_spec['permission_changes']
+        target_document['request']['feature_states']=list(feature_states)
     bundle=prepare_document(target_document,catalog)
     if operation_type in ('deploy','core_upgrade'):
         if (bundle['operation_lock']['bindings']!=document['state'].get('bindings',[])

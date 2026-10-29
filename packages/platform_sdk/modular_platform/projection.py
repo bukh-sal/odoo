@@ -4,6 +4,7 @@ No Docker, filesystem, network, native ORM/plugin imports or authority grant.
 The app receives only a metadata proposal; OS approval re-observes its source.
 """
 import copy
+import re
 
 from .contracts import normalize_manifest, validate,checked_path
 from .plans import data_digest, release_lock
@@ -77,8 +78,11 @@ def project_deployment(configuration, observation, catalog):
     choices = {}
     for site in observation['sites']:
         ids = {item['installation_id']: item['plugin_id'] for item in site['installations']}
+        removed = {item['installation_id'] for item in site['installations'] if item['metadata_state'] == 'removed'}
         for item in site['bindings']:
             binding = validate('binding', item['descriptor'])
+            if binding['consumer_installation_id'] in removed or binding['provider_installation_id'] in removed:
+                raise PlanningError('Removed installation retains a live service binding')
             key = ids[binding['consumer_installation_id']], binding['alias'], binding['site_id'], binding['workspace_id']
             choices[key] = binding['provider_plugin_id']
     core_python = [item['name'] + '==' + item['version'] for item in runtime['python_metadata']]
@@ -100,7 +104,26 @@ def project_deployment(configuration, observation, catalog):
             installation = installations[feature['installation_id']]
             if installation['runtime'] != 'native':
                 raise PlanningError('External runtime state requires the G6 endpoint/health adapter')
-            descriptor = by_plugin[installation['plugin_id']]
+            if feature.get('plugin_id', installation['plugin_id']) != installation['plugin_id']:
+                raise PlanningError('Retained feature ownership differs from its installation')
+            if installation['metadata_state'] == 'removed':
+                # Saved declarations are inert history, not executable roots or
+                # evidence of current catalog trust. They may name an earlier
+                # version or a package no longer present in this image.
+                manifest = normalize_manifest(installation['manifest'])
+                if (manifest['plugin']['id'] != installation['plugin_id'] or manifest['plugin']['version'] != installation['version']
+                        or manifest['runtime']['kind'] != 'native' or not re.fullmatch(r'sha256:[0-9a-f]{64}', installation['digest'])
+                        or feature['feature_state'] != 'suspended'
+                        or any(m['addon'] == manifest['runtime']['addon_name'] for m in site['native_modules'])
+                        or any(g['installation_id'] == installation['installation_id'] and g['state'] == 'approved' for g in site['grants'])):
+                    raise PlanningError('Removed installation has active native state, availability or grants')
+                expanded.append(dict(installation_id=installation['installation_id'], site_id=site['site_id'],
+                    workspace_id=feature['workspace_id'], plugin_id=installation['plugin_id'], state='not_installed',
+                    feature_state='suspended', metadata_state='removed'))
+                continue
+            descriptor = by_plugin.get(installation['plugin_id'])
+            if descriptor is None:
+                raise PlanningError('Active installation requires its verified package in this image')
             if installation['digest'] != descriptor['digest'] or normalize_manifest(installation['manifest']) != descriptor['manifest']:
                 raise PlanningError('Database installation metadata differs from verified artifact')
             native_state = {item['addon']: item['state'] for item in site['native_modules']}.get(descriptor['manifest']['runtime'].get('addon_name'))

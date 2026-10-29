@@ -31,7 +31,7 @@ function fixture({actor=alice,canRequest=true,status={operation_id:id,plan_hash:
 }
 
 test('activation reload restores the same owned operation and continues polling without a prepared form',async()=>{
-    const storage=environment();const first=fixture();await first.panel.authority();first.panel.requestId=nonce;first.panel.state.prepared={operation_id:id,plan_hash:hash};await first.panel.submit();
+    const storage=environment();const first=fixture();await first.panel.authority();first.panel.requestId=nonce;first.panel.state.prepared={operation_id:id,plan_hash:hash,plan:{operation_type:'suspend',destructive:false}};await first.panel.submit();
     assert.deepEqual(JSON.parse(storage.get('mp.operation.'+site+'.'+alice)),{operation_id:id,request_id:nonce});
     const fresh=fixture();await fresh.panel.load();assert.equal(fresh.panel.state.prepared,null);assert.equal(fresh.panel.state.status.state,'completed');
     await fresh.panel.poll();assert.equal(fresh.calls.filter(row=>row.path.endsWith('/status/'+id)).length,2);
@@ -51,7 +51,7 @@ test('role revocation and own-request denial clear the hint without exposing a r
 });
 
 test('an uncertain request resumes using the same nonce and never invents approval',async()=>{
-    environment();const first=fixture({postError:true});await first.panel.authority();first.panel.requestId=nonce;first.panel.state.prepared={operation_id:id,plan_hash:hash};await first.panel.submit();
+    environment();const first=fixture({postError:true});await first.panel.authority();first.panel.requestId=nonce;first.panel.state.prepared={operation_id:id,plan_hash:hash,plan:{operation_type:'suspend',destructive:false}};await first.panel.submit();
     const pending={operation_id:id,plan_hash:hash,state:'awaiting_operator_approval',phase:'prepared',source:'application_request',history:[{code:'prepared'}]};
     const fresh=fixture({status:pending});await fresh.panel.load();assert.equal(fresh.panel.state.submitted,false);assert.equal(fresh.panel.requestId,nonce);
     await fresh.panel.submit();const post=fresh.calls.find(row=>row.path==='/api/v1/operations/request');assert.equal(post.body.request_id,nonce);assert.equal(post.body.operation_id,id);assert.equal(fresh.panel.state.status.state,'awaiting_operator_approval');

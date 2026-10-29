@@ -12,7 +12,7 @@ from .deployment import DockerObserver
 from .operator_os import OperatorError
 from .planning_cli import prepare_document
 from .plans import check_bundle, data_digest
-from .lifecycle_planning import validate_install_targets
+from .lifecycle_planning import prepare_current_install_targets, install_activation_targets, prepare_current_feature
 
 
 class IndependentValidator:
@@ -38,11 +38,12 @@ class IndependentValidator:
             descriptor,record=self.stage_store.load(bundle['operation_lock']['staged_image'])
             recomputed=prepare_staged_plan(document,observation['sites'],snapshot,record['runtime'],descriptor,
                 targets=bundle['operation_lock']['targets'],operation_type=plan['operation_type'],
-                operation_id=plan['operation_id'],created_at=plan['created_at'],base_runtime=observation.get('runtime'))
+                operation_id=plan['operation_id'],created_at=plan['created_at'],base_runtime=observation.get('runtime'),
+                feature_states=bundle['operation_lock'].get('feature_states',[]))
             if data_digest(recomputed)!=data_digest(bundle):
                 raise OperatorError('Independently staged reconstruction differs from proposed exact plan')
             return state
-        if plan['permission_changes'] and plan['operation_type'] != 'uninstall':
+        if plan['permission_changes'] and plan['operation_type'] not in ('install', 'uninstall', 'enable'):
             raise OperatorError('Current-image feature/control profile does not accept unrelated grant changes')
         if plan['operation_type'] == 'uninstall':
             from .uninstall_planning import prepare_current_image_uninstall
@@ -59,7 +60,6 @@ class IndependentValidator:
                 raise OperatorError('Independent uninstall impact/epoch reconstruction differs from proposed exact plan')
             return state
         if plan['operation_type'] == 'install':
-            validate_install_targets(document, observation['sites'], bundle['operation_lock']['targets'])
             expected = copy.deepcopy(state['release_lock'])
             expected.update(generation=expected['generation'] + 1, created_at=plan['created_at'])
             proposed = copy.deepcopy(bundle['operation_lock']['release'])
@@ -69,15 +69,16 @@ class IndependentValidator:
             expected.pop('service_selection')
             if proposed != expected:
                 raise OperatorError('New executable bytes require an independently staged release image')
+            recomputed = prepare_current_install_targets(document, observation['sites'], snapshot,
+                activation_targets=install_activation_targets(bundle), operation_id=plan['operation_id'], created_at=plan['created_at'])
+            if data_digest(recomputed) != data_digest(bundle):
+                raise OperatorError('Independent native install scopes/feature states/grants differ from proposed exact plan')
+            return state
         elif plan['operation_type'] not in ('suspend', 'enable') or bundle['operation_lock']['release'] != state['release_lock']:
             raise OperatorError('This lifecycle operation requires the staged release adapter')
-        document['request'] = {'operation_type': plan['operation_type'], 'requested': {},
-            'targets': copy.deepcopy(bundle['operation_lock']['targets']),
-            'operation_id': plan['operation_id'], 'created_at': plan['created_at'],
-            'endpoints': copy.deepcopy(state['endpoints'])}
-        if plan['operation_type'] != 'install':
-            document['request']['bindings'] = copy.deepcopy(state['bindings'])
-        recomputed = prepare_document(document, snapshot)
+        recomputed = prepare_current_feature(document, observation['sites'], snapshot,
+            targets=copy.deepcopy(bundle['operation_lock']['targets']), operation_type=plan['operation_type'],
+            operation_id=plan['operation_id'], created_at=plan['created_at'])
         if data_digest(recomputed) != data_digest(bundle):
             raise OperatorError('Independent reconstruction differs from the proposed exact plan')
         return state

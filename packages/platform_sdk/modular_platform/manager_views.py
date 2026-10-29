@@ -85,16 +85,21 @@ def installed_view(profile,metadata,*,now,offset='0'):
         consistent=(descriptor is not None and descriptor['manifest']==manifest and descriptor['version']==row['version'])
         state='not_installed' if module is None else 'installed' if module['state']=='installed' else 'recovery_required'
         if row['runtime']=='external_service':state='not_installed' if row['metadata_state']=='removed' else 'installed'
+        retained=row['runtime']=='native' and row['metadata_state']=='removed' and module is None
         if module is not None and module['version']!=native_version(row['version']):state='failed'
-        if not consistent:state='failed'
-        dependencies=_dependencies(row,manifest,metadata) if consistent else {'state':'unknown','issues':['Installed metadata does not match a current curated artifact']}
+        if not consistent and not retained:state='failed'
+        dependencies={'state':'unknown','issues':[]} if retained else _dependencies(row,manifest,metadata) if consistent else {'state':'unknown','issues':['Installed metadata does not match a current curated artifact']}
         degraded=(state in ('failed','recovery_required') or dependencies['state']=='unavailable'
                   or (row['metadata_state']=='removed')!=(state=='not_installed'))
+        if retained:
+            degraded=any(f['feature_state']!='suspended' for f in metadata['features'] if f['installation_id']==row['installation_id']) or any(
+                g['state']=='approved' for g in metadata.get('grants',[]) if g['installation_id']==row['installation_id']) or any(
+                row['installation_id'] in (b['descriptor']['consumer_installation_id'],b['descriptor']['provider_installation_id']) for b in metadata['bindings'])
         items.append({'installation_id':row['installation_id'],'plugin_id':row['plugin_id'],'version':row['version'],
             'artifact_digest':row['digest'],'runtime':row['runtime'],'metadata_state':row['metadata_state'],'database_state':state,
             'native_version':module['version'] if module else None,'features':[{'workspace_id':f['workspace_id'],'availability':f['feature_state']}
             for f in metadata['features'] if f['installation_id']==row['installation_id']],
-            'health':{'state':'degraded' if degraded else 'unknown','reason':'Installation or required dependency needs attention.' if degraded else 'Registry observed; plugin-specific health has not been probed.'},
+            'health':{'state':'degraded' if degraded else 'unknown','reason':'Installation or required dependency needs attention.' if degraded else 'Native database installation is absent; retained metadata grants no availability.' if retained else 'Registry observed; plugin-specific health has not been probed.'},
             'dependencies':dependencies,'artifact':artifact_summary(descriptor) if descriptor else None})
     return validate('manager-view',observed(profile,now)|{'kind':'installed','items':items,'next_offset':offset+20 if len(rows)>offset+20 else None})
 

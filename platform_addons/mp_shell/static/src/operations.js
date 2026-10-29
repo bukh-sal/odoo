@@ -5,7 +5,7 @@ export class OperationsPanel extends Component {
     static props={api:Function,onSession:Function,onDenied:Function,initialWorkspace:{type:String,optional:true}};
     static template=xml`<section class="mp_operations" aria-label="Plugin operations">
         <p>Prepare a plan, request the operation, then use local operator approval and apply.</p>
-        <p>Native installation and upgrade require a local operator to stage the release and publish its planning preview first. Uploading or selecting an artifact does not execute it.</p>
+        <p>New code requires a local operator to stage the release first. Installation from the current image and native uninstall still require exact local approval and coordinated maintenance. Uploading or selecting an artifact does not execute it.</p>
         <section t-if="state.context" class="mp_notice" aria-label="Upload validation">
             <h2>Validate a plugin archive</h2>
             <p>Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.</p>
@@ -91,14 +91,41 @@ export class OperationsPanel extends Component {
             <p t-if="state.prepared.restart_required">Workers will restart on the selected release.</p>
             <table><thead><tr><th scope="col">Plugin</th><th scope="col">Workspace</th><th scope="col">Action</th></tr></thead><tbody><tr t-foreach="state.prepared.targets" t-as="target" t-key="target.installation_id+target.workspace_id"><td t-esc="target.plugin_id"/><td t-esc="workspaceName(target.workspace_id)"/><td t-esc="target.action"/></tr></tbody></table>
             <table><thead><tr><th scope="col">Artifact</th><th scope="col">Version</th><th scope="col">Action</th><th scope="col">Migration scripts</th></tr></thead><tbody><tr t-foreach="state.prepared.plan.artifacts" t-as="artifact" t-key="artifact.plugin_id+artifact.action"><td t-esc="artifact.plugin_id"/><td t-esc="artifact.version"/><td t-esc="artifact.action"/><td t-esc="artifact.migration_digests.length"/></tr></tbody></table>
+            <section t-if="state.featureStates.length" aria-label="Post-install workspace states">
+                <h3>Post-install workspace states</h3><p>Native schema is shared by the site. Retained suspended scopes are restored without enabling them or renewing their grants.</p>
+                <table><thead><tr><th scope="col">Plugin</th><th scope="col">Workspace</th><th scope="col">Feature after installation</th></tr></thead><tbody>
+                    <tr t-foreach="state.featureStates" t-as="scope" t-key="scope.installation_id+scope.workspace_id"><td t-esc="featurePlugin(scope)"/><td t-esc="workspaceName(scope.workspace_id)"/><td t-esc="scope.availability"/></tr>
+                </tbody></table>
+            </section>
+            <section t-if="state.impact" aria-label="Native uninstall effects">
+                <h3>Native uninstall effects</h3><p>Database uninstall may delete records and schema. The package remains in this runtime; workers will be replaced. These are known effects only; arbitrary trusted hooks may do more.</p>
+                <p>Native dependent closure: <t t-esc="state.impact.impact.native_closure.join(', ')"/>.</p>
+                <p t-foreach="state.impact.impact.plugins" t-as="plugin" t-key="plugin.installation_id"><t t-esc="plugin.plugin_id"/>: <t t-esc="workspaceList(plugin.workspace_ids)"/>.</p>
+                <details open="open"><summary>Known models and fields</summary>
+                    <table><thead><tr><th scope="col">Model</th><th scope="col">Relation</th><th scope="col">Records</th><th scope="col">Mapping</th></tr></thead><tbody><tr t-foreach="state.impact.impact.models" t-as="model" t-key="model.model"><td t-esc="model.model"/><td t-esc="model.relation||'Unknown'"/><td t-esc="model.records===null?'Unknown':model.records"/><td t-esc="model.unknown_reason||model.mapping"/></tr></tbody></table>
+                    <table><thead><tr><th scope="col">Field</th><th scope="col">Relation / column</th><th scope="col">Non-null records</th><th scope="col">Mapping</th></tr></thead><tbody><tr t-foreach="state.impact.impact.fields" t-as="field" t-key="field.model+field.field"><td><t t-esc="field.model"/>.<t t-esc="field.field"/></td><td><t t-esc="field.relation||'Unknown'"/> / <t t-esc="field.column||'Unknown'"/></td><td t-esc="field.non_null_records===null?'Unknown':field.non_null_records"/><td t-esc="field.unknown_reason||field.mapping"/></tr></tbody></table>
+                </details>
+                <details><summary>Constraints and foreign references</summary><p>These describe affected relations; not every listed constraint will be deleted.</p>
+                    <p t-foreach="state.impact.impact.constraints" t-as="constraint" t-key="constraint.relation+constraint.name"><code t-esc="constraint.relation"/> / <t t-esc="constraint.name"/>: <t t-esc="constraint.definition"/></p>
+                    <p t-foreach="state.impact.impact.foreign_references" t-as="reference" t-key="reference.relation+reference.name"><code t-esc="reference.relation"/> → <code t-esc="reference.referenced_relation"/>: <t t-esc="reference.definition"/></p>
+                </details>
+                <details><summary>Metadata, assets and durable work</summary>
+                    <p t-foreach="state.impact.impact.metadata_records" t-as="record" t-key="record.native_addon+record.model"><t t-esc="record.native_addon"/> / <t t-esc="record.model"/>: <t t-esc="record.records"/> metadata records.</p>
+                    <p t-foreach="state.impact.impact.assets" t-as="asset" t-key="asset.native_addon+asset.path"><code t-esc="asset.path"/></p>
+                    <p>Durable dispatch: <t t-esc="state.impact.impact.dispatch.state"/>.</p>
+                </details>
+                <p t-foreach="state.impact.impact.warnings" t-as="warning" t-key="warning" t-esc="warning"/>
+                <p>Observation: <time t-att-datetime="state.impact.observed_at" t-esc="state.impact.observed_at"/>. The local operator independently reconstructs these effects before approval and mutation.</p>
+            </section>
             <section t-if="state.prepared.plan.permission_changes.length" aria-label="Permission changes">
                 <h3>Permission changes</h3><p>These grants govern supported APIs. Native code retains the host application's authority.</p>
                 <ul><li t-foreach="state.prepared.plan.permission_changes" t-as="change" t-key="change.plugin_id+change.workspace_id+change.capability"><t t-esc="change.action"/> <code t-esc="change.capability"/> for <t t-esc="change.plugin_id"/> in <t t-esc="workspaceName(change.workspace_id)"/></li></ul>
             </section>
             <p t-foreach="state.prepared.declaration_changes" t-as="change" t-key="change.plugin_id"><t t-esc="change.plugin_id"/> added capabilities: <t t-esc="change.added_capabilities.join(', ')||'None'"/>; added scopes: <t t-esc="change.added_scopes.join(', ')||'None'"/>.</p>
             <p t-foreach="state.prepared.known_unknowns" t-as="item" t-key="item" t-esc="item"/>
+            <label t-if="state.prepared.plan.destructive" class="mp_check"><input type="checkbox" t-model="state.destructiveConfirmed"/> I understand this may delete native data and schema. A local operator must approve this exact plan and create a coordinated backup before execution.</label>
             <button t-on-click="download" t-att-disabled="state.busy">Download full plan and bindings</button>
-            <button t-on-click="submit" t-att-disabled="state.busy || state.submitted">Request operation</button>
+            <button t-on-click="submit" t-att-disabled="state.busy || state.submitted || !requestAllowed">Request operation</button>
         </section>
         <section t-if="state.status" class="mp_notice" aria-label="Operation progress">
             <h2>Operation progress</h2><p role="status"><strong t-esc="state.status.state"/> · <t t-esc="state.status.phase"/></p>
@@ -115,14 +142,17 @@ export class OperationsPanel extends Component {
     </section>`;
 
     setup(){
-        this.state=useState({context:null,catalog:[],catalogNext:null,catalogBusy:false,installed:[],installedOffset:0,installedNext:null,inspectionStale:false,details:null,uploadName:'',uploadBusy:false,uploadResult:null,digest:'',action:'suspend',workspace:this.props.initialWorkspace||'',cascade:false,prepared:null,status:null,error:'',loading:true,busy:false,submitted:false});
-        this.controller=new AbortController();this.active=true;this.sequence=0;this.checking=false;
+        this.state=useState({context:null,catalog:[],catalogNext:null,catalogBusy:false,installed:[],installedOffset:0,installedNext:null,inspectionStale:false,details:null,uploadName:'',uploadBusy:false,uploadResult:null,digest:'',action:'suspend',workspace:this.props.initialWorkspace||'',cascade:false,prepared:null,status:null,impact:null,featureStates:[],destructiveConfirmed:false,error:'',loading:true,busy:false,submitted:false});
+        this.controller=new AbortController();this.active=true;this.sequence=0;this.checking=false;this.resumeOperation=null;
         this.inspectionSequence=0;this.uploadSequence=0;this.detailSequence=0;this.loadSequence=0;
         onMounted(()=>{this.timer=setInterval(()=>this.poll(),5000);this.load();});
         onWillDestroy(()=>{this.active=false;this.sequence++;this.clearInspection();clearInterval(this.timer);this.controller.abort();});
     }
     get selected(){return this.state.catalog.find(item=>item.artifact_digest===this.state.digest);}
     get needsWorkspace(){return ['install','upgrade','suspend','enable'].includes(this.state.action);}
+    get requestAllowed(){const plan=this.state.prepared?.plan;if(!plan)return Boolean(!this.state.prepared&&this.resumeOperation&&this.resumeOperation===this.state.status?.operation_id&&this.requestId);return Boolean((!plan.destructive||this.state.destructiveConfirmed)&&(plan.operation_type!=='uninstall'||this.state.impact));}
+    featurePlugin(scope){return this.state.prepared?.targets.find(t=>t.installation_id===scope.installation_id&&t.workspace_id===scope.workspace_id)?.plugin_id||scope.installation_id;}
+    workspaceList(ids){return ids.map(id=>this.workspaceName(id)).join(', ');}
     get approvalCommand(){
         const s=this.state.status;if(!s)return '';
         const prefix='modular --config OPERATOR_TRUST_CONFIG ';
@@ -162,7 +192,7 @@ export class OperationsPanel extends Component {
     get resumeKey(){return this.principal&&this.state.context?'mp.operation.'+this.state.context.site_id+'.'+this.principal:null;}
     forgetPending(){try{if(this.resumeKey)sessionStorage.removeItem(this.resumeKey);}catch{/* Storage is optional; the local journal remains authoritative. */}}
     rememberPending(operation){try{if(this.resumeKey)sessionStorage.setItem(this.resumeKey,JSON.stringify({operation_id:operation.operation_id,request_id:this.requestId}));}catch{/* Keep the current in-memory observation. */}}
-    clearPlan(){this.forgetPending();this.sequence++;this.state.prepared=null;this.state.status=null;this.state.submitted=false;this.requestId=null;}
+    clearPlan(){this.forgetPending();this.sequence++;this.state.prepared=null;this.state.status=null;this.state.impact=null;this.state.featureStates=[];this.state.destructiveConfirmed=false;this.state.submitted=false;this.requestId=null;this.resumeOperation=null;}
     async restorePending(){
         const key=this.resumeKey,sequence=this.sequence;let pending;
         try{pending=JSON.parse(key?sessionStorage.getItem(key):null);}catch{return;}
@@ -172,7 +202,7 @@ export class OperationsPanel extends Component {
         // current session, operator role, own-request and release-pin checks.
         const status=await this.api('/api/v1/operations/status/'+pending.operation_id);
         if(this.active&&sequence===this.sequence&&key===this.resumeKey){
-            this.state.status=status;this.requestId=pending.request_id;
+            this.state.status=status;this.requestId=pending.request_id;this.resumeOperation=status.operation_id;
             this.state.submitted=status.source==='operator_journal_mirror'||status.history.some(item=>item.code==='requested');
         }
     }
@@ -211,12 +241,26 @@ export class OperationsPanel extends Component {
             workspace_ids:this.needsWorkspace?[this.state.workspace]:[],cascade:this.state.cascade};
         if(['install','upgrade'].includes(this.state.action)){body.artifact_version=item.version;body.artifact_digest=item.artifact_digest;}
         if(this.state.action==='remove')body.artifact_digest=item.artifact_digest;
-        try{const value=await this.api('/api/v1/operations/prepare',body);if(this.active&&sequence===this.sequence){this.state.prepared=value;this.requestId=crypto.randomUUID();}}
+        try{const value=await this.api('/api/v1/operations/prepare',body);
+            const bundle=await this.api('/api/v1/operations/bundle/'+value.operation_id);
+            if(bundle.plan_hash!==value.plan_hash||bundle.plan.operation_id!==value.operation_id)throw Object.assign(new Error('Prepared operation changed.'),{code:'CONFLICT'});
+            const featureStates=bundle.operation_lock.feature_states||[];
+            if(!Array.isArray(featureStates)||featureStates.length&&(
+                featureStates.length!==value.targets.length||new Set(featureStates.map(r=>r.installation_id+'|'+r.workspace_id)).size!==featureStates.length||
+                featureStates.some(r=>!['enabled','suspended'].includes(r.availability)||!value.targets.some(t=>t.installation_id===r.installation_id&&t.workspace_id===r.workspace_id&&t.site_id===r.site_id))))throw Object.assign(new Error('Invalid workspace state preview.'),{code:'VALIDATION_FAILED'});
+            let impact=null;
+            if(value.plan.operation_type==='uninstall'){
+                impact=await this.api('/api/v1/operations/impact/'+value.operation_id);
+                if(impact.schema_version!==1||impact.kind!=='native_uninstall_impact'||impact.operation_id!==value.operation_id||impact.plan_hash!==value.plan_hash||
+                    !impact.destructive||!impact.requires_backup||impact.artifact_action!=='retain_in_runtime'||
+                    ['plugins','models','fields','constraints','foreign_references','metadata_records','assets','warnings','native_closure','requested_addons'].some(k=>!Array.isArray(impact.impact?.[k])))throw Object.assign(new Error('Invalid native uninstall preview.'),{code:'VALIDATION_FAILED'});
+            }
+            if(this.active&&sequence===this.sequence){this.state.prepared=value;this.state.featureStates=featureStates;this.state.impact=impact;this.requestId=crypto.randomUUID();}}
         catch(error){if(sequence===this.sequence)this.failure(error);}finally{if(this.active)this.state.busy=false;}
     }
     async submit(){
         const prepared=this.state.prepared||this.state.status;
-        if(this.state.busy||!prepared||!this.requestId)return;this.state.busy=true;this.state.error='';const sequence=this.sequence;
+        if(this.state.busy||!prepared||!this.requestId||!this.requestAllowed)return;this.state.busy=true;this.state.error='';const sequence=this.sequence;
         this.rememberPending(prepared);
         try{const status=await this.api('/api/v1/operations/request',{schema_version:1,operation:'request',operation_id:prepared.operation_id,plan_hash:prepared.plan_hash,request_id:this.requestId});
             if(this.active&&sequence===this.sequence){this.state.status=status;this.state.submitted=true;}}

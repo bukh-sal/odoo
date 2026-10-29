@@ -114,6 +114,14 @@ class ManagerViews(unittest.TestCase):
         value=installed_view(self.profile,self.metadata,now=NOW)['items'][0]
         self.assertEqual(value['database_state'],'installed');self.assertEqual(value['health']['state'],'degraded')
 
+    def test_inert_removed_history_does_not_require_a_current_archive_or_live_bindings(self):
+        self.metadata['installations'][0]['metadata_state']='removed'
+        self.metadata['features'][0]['feature_state']='suspended'
+        self.metadata['native_modules']=[];self.metadata['bindings']=[];self.profile['catalog']=[]
+        row=installed_view(self.profile,self.metadata,now=NOW)['items'][0]
+        self.assertEqual(row['database_state'],'not_installed');self.assertEqual(row['health']['state'],'unknown')
+        self.assertEqual(row['dependencies']['state'],'unknown');self.assertIsNone(row['artifact'])
+
     def test_missing_catalog_metadata_never_claims_verified_health(self):
         self.profile['catalog']=[]
         value=installed_view(self.profile,self.metadata,now=NOW)['items'][0]

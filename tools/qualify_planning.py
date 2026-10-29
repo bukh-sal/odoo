@@ -48,6 +48,7 @@ def main():
         patterns=['test_resolution.py','test_resolver_cli_matrix.py','test_planning_cli.py','test_native_versions.py','test_core_upgrade.py','test_platform_deploy.py','test_release_staging.py','test_plans.py']
     if args.uninstall_only:
         patterns=['test_uninstall_planning.py','test_lifecycle_impact.py','test_lifecycle_planning.py',
+                  'test_reinstall_planning.py','test_projection_tombstones.py','test_feature_executor.py','test_manager_views.py',
                   'test_native_uninstall.py','test_workers.py','test_asset_retention.py',
                   'test_manager_planning.py','test_release_staging.py','test_core_upgrade.py','test_platform_deploy.py',
                   'test_plans.py','test_planning_cli.py','test_resolution.py','test_contracts.py',
@@ -62,6 +63,7 @@ def main():
         'deploy/requirements-operator.in', 'deploy/requirements-operator.lock', 'tests/test_plans.py','tests/test_resolution.py'] + ['tests/' + name for name in patterns]}
     if args.resolution_only:
         selected.update(ROOT/name for name in ['odoo/tools/parse_version.py','tests/test_artifacts.py'])
+    if args.uninstall_only:selected.add(ROOT/'tests/test_artifacts.py')
     for folder in ['packages/platform_sdk', 'packages/contracts', 'plugins',
                    'platform_addons/mp_example_notes', 'platform_addons/mp_example_notes_labels', 'platform_addons/mp_example_canvas',
                    'platform_addons/mp_shell', 'platform_addons/mp_identity', 'platform_addons/mp_core']:

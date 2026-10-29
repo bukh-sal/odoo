@@ -1,0 +1,26 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T02:42:07.882461+00:00",
+  "git_base": "94d839b893b991652c07a391bff5404ebc26af38",
+  "source_hashes_match": true,
+  "frontend_source_sha256": {
+    "platform_addons\\mp_shell\\static\\src\\operations.js": "dd25e1f5ef8f5fae7ae0222933dfbde689f46dff8de83bdc7964b65215347318",
+    "tests\\test_lifecycle_preview.mjs": "2248037adf948e6f97cb34df3e67b472d48d2161a7aa92e5f1bb2d2249ff117b",
+    "tests\\test_operations_resume.mjs": "fbe9a41af584dcf2b3f10b38f84b107e8e8aacc3a660c3dbbbd8d5b6071e0ddd",
+    "tests\\test_manager_inspection.mjs": "b080bb9fc6749b9949adc9f848ebb32910d1bde44e391f87b550900585715a6a"
+  },
+  "host_tests": 172,
+  "linux_tests": 152,
+  "frontend_tests": 15,
+  "frozen_files": 87,
+  "archive_verified_actual_preview_matches": true,
+  "public_files_scanned": 29,
+  "private_fixture_values_compared": 12,
+  "fixture_value_scan": "no match",
+  "acceptance_passed": 68,
+  "g5_passed": 27,
+  "rough_percent": 77,
+  "native_or_metadata_child_started": false,
+  "runtime_activated": false,
+  "next": "Commit then ONE compatible core1.5/shell1.6 candidate, review/independent activation on existing lifecycle fixture and actual destructive qualification"
+}

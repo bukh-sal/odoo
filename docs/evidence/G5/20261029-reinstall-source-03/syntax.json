@@ -1,0 +1,6 @@
+{
+  "result": "passed",
+  "xml_well_formed": true,
+  "python_parse": true,
+  "scope": "syntax_only_not_browser_render"
+}

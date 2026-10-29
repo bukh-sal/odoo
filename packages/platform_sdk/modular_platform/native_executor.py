@@ -31,12 +31,14 @@ def verify_native_state(bundle,state,previous,observation):
     if state['release_digest']!=bundle['plan']['target_release_digest']:
         raise OperatorError('Ready release differs from approved executable lock')
     expected={(item['installation_id'],item['workspace_id']):dict(item) for item in previous['installations']}
+    feature_states={(r['installation_id'],r['workspace_id']):r['availability'] for r in bundle['operation_lock'].get('feature_states',[])}
     for target in bundle['operation_lock']['targets']:
         key=target['installation_id'],target['workspace_id']
         if target['action']=='install':
-            if key in expected:raise OperatorError('Install target already exists in checkpoint')
+            if key in expected and (expected[key]['state']!='not_installed' or expected[key]['metadata_state']!='removed'):
+                raise OperatorError('Install target already exists in checkpoint')
             expected[key]={name:value for name,value in target.items() if name!='action'}|{
-                'state':'installed','feature_state':'enabled','metadata_state':'installed'}
+                'state':'installed','feature_state':feature_states.get(key,'enabled'),'metadata_state':'installed'}
         elif target['action']=='uninstall':
             if key not in expected:raise OperatorError('Uninstall target is absent from checkpoint')
             expected[key].update(state='not_installed',feature_state='suspended',metadata_state='removed')
@@ -55,6 +57,9 @@ def verify_native_state(bundle,state,previous,observation):
         affected={t['installation_id'] for t in bundle['operation_lock']['targets']}
         if any(row['state']=='approved' for site in observation['sites'] for row in site['grants'] if row['installation_id'] in affected):
             raise OperatorError('Ready uninstall retained an affected approved grant')
+    if feature_states and any(row['state']=='approved' and feature_states.get((row['installation_id'],row['workspace_id']))=='suspended'
+            for site in observation['sites'] for row in site['grants']):
+        raise OperatorError('Ready reinstall revived a grant in a suspended retained scope')
 
 
 def native_maintenance_flags(bundle,plugins):
@@ -94,6 +99,13 @@ def require_native_uninstall_runtime(runtime):
     paths['packages/contracts/v1/lifecycle-impact.schema.json'] = CONTRACTS / 'lifecycle-impact.schema.json'
     if any(files.get(name) != hashlib.sha256(path.read_bytes()).hexdigest() for name, path in paths.items()):
         raise OperatorError('Native uninstall requires an independently staged compatible maintenance image before any drain or mutation')
+
+
+def require_native_reinstall_runtime(runtime):
+    files=runtime['inventory']['files']
+    names=('lifecycle_planning.py','projection.py','install_metadata.py','planning_cli.py','plans.py')
+    if any(files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in names):
+        raise OperatorError('Retained-scope reinstall requires a compatible independently staged maintenance image')
 
 
 class NativeExecutor:
@@ -227,6 +239,7 @@ class NativeExecutor:
                 if runtime.get('published_release_protocol')!=1:
                     raise OperatorError('Native installation requires an image with the published-release profile reader; stage a compatible candidate')
                 if plan['operation_type']=='uninstall':require_native_uninstall_runtime(runtime)
+                if plan['operation_type']=='install' and 'feature_states' in bundle['operation_lock']:require_native_reinstall_runtime(runtime)
             self.store.reserve(operation, locks, self._validate())
             self.mirror_progress(operation)
             stages = protect_directory(self.store.root/'stages')
@@ -299,6 +312,7 @@ class NativeExecutor:
                     'permission_changes':bundle['plan']['permission_changes'],'database':self.config['sites'][0]['database'],
                     'policy_version':plan['policy_version'],
                     'previous_plugins':{item['plugin_id']:item for item in load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']['release_lock']['plugins']}}
+                if 'feature_states' in bundle['operation_lock']:payload['feature_states']=bundle['operation_lock']['feature_states']
                 arguments, child = self._child(operation, 'metadata',image_id=image)
                 arguments.insert(2, '-i')
                 metadata_script='uninstall_metadata.py' if plan['operation_type']=='uninstall' else 'install_metadata.py'

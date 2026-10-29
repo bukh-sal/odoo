@@ -53,7 +53,7 @@ def prepare_document(document, catalog):
         raise PlanningError('Current catalog validation changed; observe and prepare again')
     allowed = {'operation_type', 'requested', 'targets', 'update', 'provider_choices', 'core_python',
                'site_requirements', 'bindings', 'endpoints', 'permission_changes', 'trust_changes',
-               'operation_id', 'created_at', 'backup_policy'}
+               'operation_id', 'created_at', 'backup_policy', 'feature_states'}
     if not isinstance(request, dict) or not {'operation_type', 'requested', 'targets'} <= request.keys() or not request.keys() <= allowed:
         raise PlanningError('Unknown or missing operation request fields')
     uninstall = request['operation_type'] == 'uninstall'
@@ -110,7 +110,8 @@ def prepare_document(document, catalog):
         # An install creates concrete workspace bindings. Bind those provider
         # selections into the release BEFORE hashing it, so observing the newly
         # installed metadata reconstructs the exact same release lock.
-        scopes = {(item['plugin_id'], item['site_id'], item['workspace_id']) for item in state['installations']}
+        scopes = {(item['plugin_id'], item['site_id'], item['workspace_id']) for item in state['installations']
+                  if item.get('state', 'installed') != 'not_installed'}
         scopes.update((item['plugin_id'], item['site_id'], item['workspace_id']) for item in request['targets'])
         added = False
         for selected in resolved['bindings']:
@@ -167,6 +168,6 @@ def prepare_document(document, catalog):
         operation_type=request['operation_type'], operation_id=request.get('operation_id'),
         created_at=request.get('created_at'), backup_policy=request.get('backup_policy', 'development_checkpoint'),
         catalog_snapshot_digest=catalog_validation_digest(catalog),
-        resolution_reasons=resolved['reasons'])
+        resolution_reasons=resolved['reasons'], feature_states=request.get('feature_states', []))
     check_bundle(bundle, state)
     return bundle

@@ -18,6 +18,9 @@ from modular_platform.plans import check_bundle
 from modular_platform.projection import project_deployment
 from modular_platform.resolution import dependent_closure, binding_matches_scope
 from modular_platform.manager_planning import prepare_manager_native
+from modular_platform.lifecycle_planning import prepare_current_feature
+from modular_platform.lifecycle_impact import inspect_current_image, impact_view
+from modular_platform.uninstall_planning import prepare_current_image_uninstall
 from modular_platform.manager_views import (UPLOAD_LIMIT, artifact_summary, details_view,
     installed_view, validate_upload)
 
@@ -116,6 +119,22 @@ def profile_document():
     return document,profile,metadata
 
 
+def native_impact(profile, requested):
+    import psycopg2
+    from odoo.sql_db import connection_info_for
+    from modular_platform.projection import runtime_inputs
+    _, dsn = connection_info_for(request.env.cr.dbname)
+    connection = psycopg2.connect(**{**dsn, 'connect_timeout':10})
+    connection.set_session(isolation_level='REPEATABLE READ', readonly=True)
+    try:
+        with connection:
+            with connection.cursor() as cursor: cursor.execute("SET LOCAL statement_timeout='5s'")
+            selected, _, _ = runtime_inputs(profile['runtime'], profile['catalog'])
+            return inspect_current_image(connection, root='/opt/modular', inventory_digest=profile['runtime']['inventory_digest'],
+                                         descriptors=selected, site_id=site_id(), requested=requested)
+    finally: connection.close()
+
+
 def own_request(operation_id, actor):
     canonical_uuid(operation_id)
     row=request.env['mp.operation.request'].sudo().search([('public_id','=',operation_id),('site_public_id','=',site_id()),('requested_by','=',actor[0])],limit=1)
@@ -192,6 +211,17 @@ class Operations(http.Controller):
                 bundle=prepare_manager_native(document,[metadata],profile['catalog'],profile['runtime'],profile.get('staged_release'),
                     nomination,operation_id=str(uuid4()),created_at=stamp())
                 return _save_prepared(bundle,document,actor,profile)
+            if nomination['operation_type']=='uninstall':
+                if nomination['workspace_ids']:raise ContractError('Native uninstall is site-wide; workspace subsets are invalid')
+                entry=next((r for r in document['state']['release_lock']['plugins'] if r['plugin_id']==nomination['plugin_id']),None)
+                if not entry or entry['runtime']!='native':raise PublicError('NOT_FOUND')
+                impact=native_impact(profile,[entry['native_addon']])
+                if not nomination['cascade'] and len(impact['plugins'])!=1:raise ContractError('Explicit dependent cascade required for native uninstall')
+                targets=[dict(installation_id=p['installation_id'],site_id=site_id(),workspace_id=workspace,
+                              plugin_id=p['plugin_id'],action='uninstall') for p in impact['plugins'] for workspace in p['workspace_ids']]
+                bundle=prepare_current_image_uninstall(document,[metadata],profile['catalog'],impact=impact,targets=targets,
+                                                       operation_id=str(uuid4()),created_at=stamp())
+                return _save_prepared(bundle,document,actor,profile)
             if nomination['operation_type'] not in ('suspend','enable'):raise PublicError('DEPENDENCY_UNAVAILABLE')
             plugin=nomination['plugin_id'];wanted=set(nomination['workspace_ids']);targets=[]
             for workspace in sorted(wanted):
@@ -219,9 +249,9 @@ class Operations(http.Controller):
                     installation=next((item for item in installations if item['plugin_id']==ident),None)
                     if not installation:raise PublicError('DEPENDENCY_UNAVAILABLE')
                     targets.append({key:installation[key] for key in ('installation_id','site_id','workspace_id','plugin_id')}|{'action':nomination['operation_type']})
-            document['request']={'operation_type':nomination['operation_type'],'requested':{},'targets':targets,
-                                 'operation_id':str(uuid4()),'created_at':stamp()}
-            return _save_prepared(prepare_document(document,profile['catalog']),document,actor,profile)
+            bundle=prepare_current_feature(document,[metadata],profile['catalog'],targets=targets,
+                operation_type=nomination['operation_type'],operation_id=str(uuid4()),created_at=stamp())
+            return _save_prepared(bundle,document,actor,profile)
         return result(run)
 
     @http.route('/api/v1/operations/request',type='http',auth='public',methods=['POST'],csrf=False,max_content_length=65536)
@@ -245,6 +275,15 @@ class Operations(http.Controller):
         def run():
             row=own_request(operation_id,operator());check_bundle(row.bundle,row.base_state)
             return row.bundle
+        return result(run)
+
+    @http.route('/api/v1/operations/impact/<string:operation_id>',type='http',auth='public',methods=['GET'])
+    def impact(self,operation_id):
+        def run():
+            row=own_request(operation_id,operator());check_bundle(row.bundle,row.base_state)
+            impact=row.bundle['operation_lock'].get('native_uninstall_impact')
+            if impact is None or row.bundle['plan']['operation_type']!='uninstall':raise PublicError('NOT_FOUND')
+            return impact_view(impact,operation_id=row.public_id,plan_hash=row.plan_hash,observed_at=row.bundle['plan']['created_at'])
         return result(run)
 
 

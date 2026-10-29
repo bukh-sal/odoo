@@ -15,7 +15,14 @@ from psycopg2.extras import Json
 
 def main():
     data = json.load(sys.stdin)
-    assert set(data) == {'site_id', 'deployment_id', 'operation_id', 'generation', 'release_digest', 'targets', 'plugins', 'bindings','permission_changes','previous_plugins','database','policy_version'}
+    required = {'site_id', 'deployment_id', 'operation_id', 'generation', 'release_digest', 'targets', 'plugins', 'bindings','permission_changes','previous_plugins','database','policy_version'}
+    assert required <= data.keys() <= required | {'feature_states'}
+    states = {(r['installation_id'],r['workspace_id']):r['availability'] for r in data.get('feature_states',[])}
+    if 'feature_states' in data:
+        assert len(states)==len(data['targets'])==len(data['feature_states']) and all(t['action']=='install' for t in data['targets'])
+        assert all(set(r)=={'installation_id','site_id','workspace_id','availability'} and r['site_id']==data['site_id']
+                   and r['availability'] in ('enabled','suspended') for r in data['feature_states'])
+        assert set(states)=={(t['installation_id'],t['workspace_id']) for t in data['targets']}
     config = configparser.ConfigParser()
     config.read('/run/secrets/odoo_config')
     options = config['options']
@@ -27,7 +34,7 @@ def main():
             for key, expected in [('mp.site_id', data['site_id']), ('mp.deployment_id', data['deployment_id'])]:
                 cursor.execute('SELECT value FROM ir_config_parameter WHERE key=%s', [key])
                 assert cursor.fetchone() == (expected,), 'Maintenance target identity mismatch'
-            installations, workspaces = {}, {}
+            installations, workspaces, reinstalled = {}, {}, set()
             for target in data['targets']:
                 assert target['action'] in ('install','upgrade','deploy') and target['site_id'] == data['site_id']
                 plugin = data['plugins'][target['plugin_id']]
@@ -36,15 +43,26 @@ def main():
                 assert cursor.fetchone() == ('installed', '19.0.' + manifest['plugin']['version']), 'Native installed version differs'
                 cursor.execute('SELECT id,state FROM mp_workspace WHERE public_id=%s FOR UPDATE', [target['workspace_id']])
                 row = cursor.fetchone()
-                assert row and row[1] == 'active', 'Workspace is unavailable'
+                availability=states.get((target['installation_id'],target['workspace_id']),'enabled')
+                assert row and (row[1] == 'active' or availability=='suspended'), 'Workspace is unavailable'
                 workspace = row[0]
                 workspaces[target['workspace_id']] = workspace
                 cursor.execute('SELECT id,public_id,version,artifact_digest,state FROM mp_plugin_installation WHERE plugin_id=%s FOR UPDATE', [target['plugin_id']])
                 row = cursor.fetchone()
                 if row:
-                    assert row[1]==target['installation_id'] and row[4] in ('installed','suspended'),'Installation identity/state changed'
+                    assert row[1]==target['installation_id'] and row[4] in ('installed','suspended','removed'),'Installation identity/state changed'
                     installation = row[0]
-                    if row[2:4]!=(manifest['plugin']['version'],plugin['digest']):
+                    if row[4]=='removed':
+                        assert target['action']=='install' and states, 'Tombstone reinstall needs explicit complete post-feature states'
+                        cursor.execute('''SELECT w.public_id,f.availability FROM mp_workspace_plugin f
+                            JOIN mp_workspace w ON w.id=f.workspace_id WHERE f.installation_id=%s ORDER BY w.public_id''',[installation])
+                        retained=cursor.fetchall()
+                        nominated={t['workspace_id'] for t in data['targets'] if t['installation_id']==target['installation_id']}
+                        assert all(a=='suspended' and w in nominated for w,a in retained),'Reinstall omitted or implicitly enabled a retained scope'
+                        reinstalled.add(installation)
+                        cursor.execute("UPDATE mp_plugin_installation SET state='installed',version=%s,artifact_digest=%s,manifest=%s,write_date=timezone('UTC',now()) WHERE id=%s",
+                            [manifest['plugin']['version'],plugin['digest'],Json(manifest),installation])
+                    elif row[2:4]!=(manifest['plugin']['version'],plugin['digest']):
                         previous=data['previous_plugins'].get(target['plugin_id'])
                         assert target['action']=='upgrade' and previous and row[2:4]==(previous['version'],previous['digest']) and previous['version']!=manifest['plugin']['version'],'Unapproved artifact version replacement'
                         cursor.execute('UPDATE mp_plugin_installation SET version=%s,artifact_digest=%s,manifest=%s,write_date=timezone(\'UTC\',now()) WHERE id=%s',
@@ -57,8 +75,14 @@ def main():
                     installation = cursor.fetchone()[0]
                 installations[target['installation_id']] = installation
                 if target['action']=='install':
-                    cursor.execute('''INSERT INTO mp_workspace_plugin(workspace_id,plugin_id,installation_id,availability,create_uid,write_uid,create_date,write_date)
-                        VALUES (%s,%s,%s,'enabled',1,1,timezone('UTC',now()),timezone('UTC',now()))''', [workspace, target['plugin_id'], installation])
+                    cursor.execute('SELECT id,installation_id,availability FROM mp_workspace_plugin WHERE workspace_id=%s AND plugin_id=%s FOR UPDATE',[workspace,target['plugin_id']])
+                    feature=cursor.fetchone()
+                    if feature:
+                        assert installation in reinstalled and feature[1:]==(installation,'suspended'),'Existing feature requires explicit reconciliation'
+                        cursor.execute("UPDATE mp_workspace_plugin SET availability=%s,write_date=timezone('UTC',now()) WHERE id=%s",[availability,feature[0]])
+                    else:
+                        cursor.execute('''INSERT INTO mp_workspace_plugin(workspace_id,plugin_id,installation_id,availability,create_uid,write_uid,create_date,write_date)
+                            VALUES (%s,%s,%s,%s,1,1,timezone('UTC',now()),timezone('UTC',now()))''', [workspace, target['plugin_id'], installation,availability])
                 else:
                     cursor.execute('SELECT installation_id FROM mp_workspace_plugin WHERE workspace_id=%s AND plugin_id=%s',[workspace,target['plugin_id']])
                     assert cursor.fetchone()==(installation,),'Upgrade scope changed; feature availability is preserved'
@@ -86,6 +110,7 @@ def main():
                 assert change['action'] in ('grant','revoke') and any(t['plugin_id']==change['plugin_id'] and t['workspace_id']==change['workspace_id'] for t in data['targets'])
                 plugin=data['plugins'][change['plugin_id']]
                 if change['action']=='grant':assert change['capability'] in {item['capability'] for item in plugin['manifest']['permissions']['requests']},'Undeclared capability grant'
+                if change['action']=='grant':assert states.get((next(t['installation_id'] for t in data['targets'] if t['plugin_id']==change['plugin_id'] and t['workspace_id']==change['workspace_id']),change['workspace_id']),'enabled')=='enabled','Suspended scope cannot receive a renewed grant'
                 cursor.execute('SELECT id FROM mp_plugin_installation WHERE plugin_id=%s',[change['plugin_id']]);installation=cursor.fetchone()[0]
                 cursor.execute('SELECT id FROM mp_workspace WHERE public_id=%s',[change['workspace_id']]);workspace=cursor.fetchone()[0]
                 cursor.execute('''INSERT INTO mp_plugin_grant(installation_id,workspace_id,capability,state,policy_version,create_uid,write_uid,create_date,write_date)

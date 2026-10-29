@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "tests/test_lifecycle_preview.mjs",
+    "tests/test_operations_resume.mjs",
+    "tests/test_manager_inspection.mjs"
+  ],
+  "exit_code": 0,
+  "stdout": "\u2714 native request requires the bound impact and explicit destructive acknowledgment (4.9712ms)\n\u2714 mismatched impact and invalid retained-scope states fail before a request is possible (0.6143ms)\n\u2714 retained-scope map is displayed separately from the unchanged public prepared DTO (0.2705ms)\n\u2714 a late impact cannot restore a cleared or changed proposal (2.683ms)\n\u2714 upload sends original bytes and exact SHA through the existing fenced API adapter (3.6839ms)\n\u2714 role loss cannot publish a late upload or details result (1.5971ms)\n\u2714 no file or oversize input sends no request (0.4284ms)\n\u2714 catalog continuation requires the same snapshot and metadata pages do not mix (0.3831ms)\n\u2714 component cancellation aborts an in-flight validation through the shared controller (0.7963ms)\n\u2714 root binary transport preserves CSRF/session/release fences and old JSON serialization (0.5045ms)\n\u2714 activation reload restores the same owned operation and continues polling without a prepared form (3.4223ms)\n\u2714 another principal never loads the previous actor resume hint (0.2428ms)\n\u2714 role revocation and own-request denial clear the hint without exposing a result (0.4661ms)\n\u2714 an uncertain request resumes using the same nonce and never invents approval (0.3413ms)\n\u2714 extra authority fields in storage are ignored rather than sent to an API (0.267ms)\n\u2139 tests 15\n\u2139 suites 0\n\u2139 pass 15\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 105.7532\n",
+  "stderr": ""
+}

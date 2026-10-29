@@ -11,6 +11,7 @@ from collections import defaultdict
 import hashlib
 import re
 import zipfile
+from pathlib import Path
 
 from .contracts import native_version, validate, validate_binding
 from .plans import data_digest
@@ -44,6 +45,48 @@ def verified_archive_sources(path, descriptor):
                         raise PlanningError('Impact source differs from verified inventory')
                     result[addon + '/' + name[len(prefix):]] = raw
             return result
+
+
+def inspect_current_image(connection, *, root, inventory_digest, descriptors, site_id, requested):
+    """Application-side preview from actual inventoried bytes, not cache paths.
+
+    Image archive identities are checked locally as data. This confers no
+    current operator trust/approval; the independent catalog is still required.
+    """
+    from .artifacts import ArtifactValidator, TrustPolicy
+    from .contracts import checked_path, load_json
+    root = Path(root)
+    raw = (root / 'distribution-inventory.json').read_bytes()
+    if 'sha256:' + hashlib.sha256(raw).hexdigest() != inventory_digest:
+        raise PlanningError('Native preview differs from the running image inventory')
+    inventory = load_json(raw)
+    artifacts = inventory['artifacts']
+    if {d['plugin_id'] for d in descriptors} != set(artifacts):
+        raise PlanningError('Native preview must cover every actual image package')
+    validator = ArtifactValidator(TrustPolicy(approved_digests=frozenset(a['digest'] for a in artifacts.values())))
+    addons, sources = {'mp_identity'}, {}
+    for descriptor in descriptors:
+        artifact = artifacts[descriptor['plugin_id']]
+        if (artifact['digest'], artifact['version'], artifact['addon']) != (
+                descriptor['digest'], descriptor['version'], descriptor['manifest']['runtime'].get('addon_name')):
+            raise PlanningError('Native preview package differs from the actual image')
+        path = root / checked_path('artifacts/' + artifact['file'])
+        verified = validator.verify(path, expected_digest=descriptor['digest'])
+        if (verified.manifest != descriptor['manifest'] or verified.inventory != descriptor['inventory']
+                or verified.native_manifest != descriptor['native_manifest'] or verified.manifest['runtime']['kind'] != 'native'):
+            raise PlanningError('Native preview declarations differ from actual archive bytes')
+        sources.update(verified_archive_sources(path, descriptor))
+        addons.add(verified.manifest['runtime']['addon_name'])
+    for name, digest in inventory['files'].items():
+        if name.startswith('addons/') and name.endswith('.py') and name.split('/')[1] in addons:
+            raw = (root / checked_path(name)).read_bytes()
+            if hashlib.sha256(raw).hexdigest() != digest:
+                raise PlanningError('Native preview actual source differs from its inventory')
+            relative = name[len('addons/'):]
+            if relative in sources and sources[relative] != raw:
+                raise PlanningError('Native preview source differs from actual package bytes')
+            sources[relative] = raw
+    return inspect_native_impact(connection, site_id=site_id, requested=requested, descriptors=descriptors, sources=sources)
 
 
 def static_relations(sources):

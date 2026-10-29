@@ -7,7 +7,7 @@ result against its private StageStore before registration, approval and apply.
 from packaging.version import Version
 
 from .contracts import validate
-from .lifecycle_planning import installation_id
+from .lifecycle_planning import installation_id, prepare_current_image_install
 from .plans import data_digest
 from .projection import runtime_inputs
 from .release_staging import prepare_staged_plan
@@ -32,6 +32,14 @@ def prepare_manager_native(document, sites, catalog, base_runtime, staged, nomin
     action = nomination['operation_type']
     if nomination['operation'] != 'prepare' or action not in ('install', 'upgrade'):
         raise PlanningError('Native manager preparation requires install or upgrade')
+    current = next((r for r in document['state']['release_lock']['plugins'] if r['plugin_id'] == nomination['plugin_id']), None)
+    if action == 'install' and current and (current['version'], current['digest']) == (nomination['artifact_version'], nomination['artifact_digest']):
+        bundle = prepare_current_image_install(document, sites, catalog, site_id=nomination['site_id'],
+            workspace_ids=nomination['workspace_ids'], plugin_id=nomination['plugin_id'], version=nomination['artifact_version'],
+            artifact_digest=nomination['artifact_digest'], operation_id=operation_id, created_at=created_at)
+        if not nomination['cascade'] and any(t['plugin_id'] != nomination['plugin_id'] for t in bundle['operation_lock']['targets']):
+            raise PlanningError('Explicit dependent cascade consent required for native installation')
+        return bundle
     if not staged or set(staged) != {'descriptor', 'runtime'}:
         raise PlanningError('Local operator must stage and publish the selected native release first')
     candidate_preview(staged['descriptor'], staged['runtime'], document['state']['image_id'])
@@ -50,6 +58,13 @@ def prepare_manager_native(document, sites, catalog, base_runtime, staged, nomin
     old = {item['plugin_id']: item for item in current['plugins']}
     installed = {(item['site_id'], item['workspace_id'], item['plugin_id']): item
                  for item in document['state']['installations']}
+    if action=='install' and any(i['plugin_id']==plugin and i['metadata_state']=='removed' for i in site['installations']):
+        targets=[dict(installation_id=installation_id(site,plugin),site_id=site_id,workspace_id=w,plugin_id=plugin,action='install') for w in workspaces]
+        bundle=prepare_staged_plan(document,sites,catalog,staged['runtime'],staged['descriptor'],targets=targets,
+            operation_type='install',operation_id=operation_id,created_at=created_at,base_runtime=base_runtime)
+        if not nomination['cascade'] and any(t['plugin_id']!=plugin for t in bundle['operation_lock']['targets']):
+            raise PlanningError('Explicit dependent cascade consent required for native reinstall')
+        return bundle
     changed = {name for name, item in entries.items() if name not in old or old[name]['digest'] != item['digest']}
     if action == 'upgrade' and (plugin not in changed or plugin not in old
             or Version(nomination['artifact_version']) <= Version(old[plugin]['version'])):

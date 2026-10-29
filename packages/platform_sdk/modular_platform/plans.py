@@ -135,7 +135,7 @@ def release_lock(solution, provenance, *, generation, created_at):
 def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpoints=(),
                  permission_changes=(), trust_changes=(), operation_type='install',
                  operation_id=None, created_at=None, backup_policy='development_checkpoint',
-                 catalog_snapshot_digest=None, resolution_reasons=None):
+                 catalog_snapshot_digest=None, resolution_reasons=None, feature_states=()):
     """Build a reviewable immutable bundle; no approval or execution is implied.
 
     `state` is the independently observed complete deployment snapshot. Targets
@@ -192,6 +192,8 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             raise PlanningError('Target installation identity or scope changed')
         if target['action'] == 'uninstall' and previous.get('state', 'installed') != 'installed':
             raise PlanningError('Native uninstall requires an installed site target')
+        if target['action'] in ('enable', 'suspend', 'upgrade', 'deploy') and previous.get('state', 'installed') != 'installed':
+            raise PlanningError('Lifecycle target is not installed; explicit installation or recovery is required')
         plugin = target['plugin_id']
         descriptor = new.get(plugin) if target['action'] in ('install', 'upgrade', 'enable', 'suspend','deploy') else None
         old_entry = old.get(plugin)
@@ -283,6 +285,20 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
                        or (row['plugin_id'], row['workspace_id']) not in scopes for row in permission_changes)):
             raise PlanningError('Native uninstall requires a new epoch, unchanged executable identities and surviving service selections')
     ordered_targets = sorted(clean_targets, key=lambda item: (item['site_id'], item['workspace_id'], item['plugin_id'], item['installation_id']))
+    feature_states = copy.deepcopy(list(feature_states))
+    if feature_states:
+        expected_scopes = {(r['installation_id'], r['site_id'], r['workspace_id']) for r in clean_targets}
+        if (operation_type != 'install' or any(t['action'] != 'install' for t in clean_targets)
+                or len(feature_states) != len(expected_scopes)
+                or any(not isinstance(r, dict) or set(r) != {'installation_id', 'site_id', 'workspace_id', 'availability'}
+                       or r['availability'] not in ('enabled', 'suspended') for r in feature_states)
+                or {(r['installation_id'], r['site_id'], r['workspace_id']) for r in feature_states} != expected_scopes):
+            raise PlanningError('Exact post-install feature states must cover every native install target')
+        states = {(r['installation_id'], r['workspace_id']): r['availability'] for r in feature_states}
+        for change in permission_changes:
+            target = next((t for t in clean_targets if t['plugin_id'] == change['plugin_id'] and t['workspace_id'] == change['workspace_id']), None)
+            if target is None or change['action'] != 'grant' or states[(target['installation_id'], target['workspace_id'])] != 'enabled':
+                raise PlanningError('Suspended restored scopes cannot receive renewed grants')
     bindings, endpoints = copy.deepcopy(list(bindings)), copy.deepcopy(list(endpoints))
     target_installations = {key: value for key, value in installed.items() if value.get('state', 'installed') != 'not_installed'}
     for target in clean_targets:
@@ -344,6 +360,9 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             'target_activation': new[key]['manifest']['activation']} for key in sorted(changed)},
         'known_unknowns': ['Native Python and same-origin frontend code is fully trusted.',
                            'Author destructive=false does not prove migration safety.']}
+    if feature_states:
+        operation_lock['feature_states'] = sorted(feature_states, key=lambda r: (r['site_id'], r['workspace_id'], r['installation_id']))
+        operation_lock['known_unknowns'].append('Native schema is restored site-wide. Review the exact post-install feature states: suspended scopes receive no renewed grants and remain unavailable.')
     if 'catalog_validation_digest' in state:
         if state['catalog_validation_digest']!=operation_lock['catalog_snapshot_digest']:
             raise PlanningError('Catalog snapshot differs from independently observed current validation')
@@ -392,6 +411,8 @@ def _display(plan, operation_lock):
         display['native_core_changes']=copy.deepcopy(operation_lock['native_core_changes'])
     if 'native_uninstall_impact' in operation_lock:
         display['native_uninstall_impact_digest'] = data_digest(operation_lock['native_uninstall_impact'])
+    if 'feature_states' in operation_lock:
+        display['feature_states'] = copy.deepcopy(operation_lock['feature_states'])
     return display
 
 
