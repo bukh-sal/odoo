@@ -1,0 +1,17 @@
+# G5 SEC-08 operator isolation qualification
+
+Actual running application identities were probed on main28, manager6, lifecycle18, dispatch20 and the current HTTP security fixture. Each runs as UID/GID10001 with zero effective capabilities, no-new-privileges, a read-only root and private namespaces. The only runtime volume mounts are the project's application configuration (read-only) and application data. Privileged operator/approval/backup/TLS domains and the Docker socket/CLI are absent. Sixteen read/write probes per app fail; UID0 elevation and control-namespace creation fail.
+
+Missing mounts and filesystem denial are separate observations. A new synthetic root-owned operator store is created on a named disposable Docker volume. The application UID10001 receives that volume **read-write**, yet the kernel returns EACCES for reads/writes of the actual policy/control DB, synthetic executor secret and checkpoint. Listing and forged approval creation are denied; the SDK rejects the foreign owner. The owning UID0 can still inspect the store, and every private byte hash remains exact afterward. Three stopped test containers and their dedicated volume are retained; no real operator store is mounted into an application container.
+
+Windows audit checks 1,497 private-store/credential/backup/audit records and seven protected roots against the authenticated owner SID, SYSTEM and Administrators, with OWNER RIGHTS interpreted for the verified owner. A separate 15-path audit covers public catalog contents and writable-parent replacement risks. Public digest/catalog metadata may be readable; its integrity remains protected. No account impersonation, global account creation or permission reset is claimed or performed. Both ACL observations and the real foreign-UID proof are required to interpret the result.
+
+An existing lifecycle request's authorized requester can still read its typed journal mirror through HTTP. The old observation honestly reports stale=true. The response excludes private approval/allowlist/credentials/native diagnostics; two ordinary workspace actors and an anonymous caller are denied even when given the operation ID. No mirror is refreshed, request submitted or approval changed.
+
+Nine current source checks pass on Windows and nine on Linux, covering OS-authenticated identity, ACL/mode rejection, locks/links and redacted mirror behavior. Full four-protected-target state/business/schema/files and current HTTP configuration/native RPC audits pass; the 87 frozen contract files and product/runtime source are unchanged.
+
+Evidence: `application-identities.json`, `foreign-UID-denial.json`, `windows-store-ACLs.json`, `windows-catalog-parent-integrity.json`, `redacted-status.json`, `source-Windows.json`, `source-Linux.json`, `protected-audit.json`, and `qualification.json`.
+
+The app legitimately reads its necessary application DB configuration and writes its own data/session volume. Native Python and same-origin plugins remain trusted for application data; this result establishes the privileged host boundary, not an application-code sandbox. Application status is an untrusted mirror and never substitutes for the independently owned journal/approval store.
+
+Runners refuse existing outputs or fixture markers. Inspect `.local/g5-operator-isolation/linux-fixture.json` and terminal container state before any continuation. Do not reinitialize stores, reset volumes or change protected application mounts. Clean-environment restore/provenance and minimal Canvas first-use provisioning remain G5 requirements.

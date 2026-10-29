@@ -1,0 +1,356 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:22:30.667205+00:00",
+  "paths": 15,
+  "rows": [
+    {
+      "path": ".",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-21-3692905110-3295187853-4038592464-1002",
+          "type": "Allow",
+          "rights": 1179817
+        },
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-21-3692905110-3295187853-4038592464-1002",
+          "type": "Allow",
+          "rights": 1179817
+        },
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-21-3692905110-3295187853-4038592464-1002",
+          "type": "Allow",
+          "rights": 1179817
+        },
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/targets",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": true,
+      "rules": [
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": true,
+      "rules": [
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": true,
+      "rules": [
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/catalog.sqlite3",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/staging",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": true,
+      "rules": [
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs/160e27bfb22325a54c385ab32a35bc33a7c27bae9dbbc4ece7a954a9340bebc1.mplug",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs/1edaadc63fd0a0184f003eead17dc559d4fdab5e1cd631b4c18f692f8d212b37.mplug",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs/3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2.mplug",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs/686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe.mplug",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs/8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6.mplug",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs/b5b17ac770503f62b1fc1e432979df3bc9fba6396dd13cf6e460c4694ea1a7e0.mplug",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    },
+    {
+      "path": ".local/operator/catalog/blobs/fb7e53192237dcbe4877e52eb414330dcf963ff6fae03d83934567863b435ac6.mplug",
+      "owner": "S-1-5-21-3692905110-3295187853-4038592464-1001",
+      "protected": false,
+      "rules": [
+        {
+          "sid": "S-1-5-18",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-5-32-544",
+          "type": "Allow",
+          "rights": 2032127
+        },
+        {
+          "sid": "S-1-3-4",
+          "type": "Allow",
+          "rights": 2032127
+        }
+      ]
+    }
+  ],
+  "violations": [],
+  "limits": [
+    "Public metadata may be readable; independent configuration/catalog and parent directories must not permit untrusted mutation or delete/replace."
+  ]
+}

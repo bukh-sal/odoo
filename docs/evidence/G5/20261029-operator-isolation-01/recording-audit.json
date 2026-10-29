@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:27:22.668301+00:00",
+  "files": 20,
+  "known_or_structural_findings": 0,
+  "frozen_files": 87,
+  "Python_JSON_parse": true,
+  "source_SHA_current": true,
+  "records_sha256": {
+    "docs/evidence/G5/20261029-operator-isolation-01/README.md": "b94c261b1af50243910471c34bff2cd942f26abdabb19a59741f5d21284d6b4d",
+    "docs/evidence/G5/20261029-operator-isolation-01/application-identities.json": "34770c15f4725a623872282ec371eb0e0bcb79eaafa0d496f5b9fde728bbabb4",
+    "docs/evidence/G5/20261029-operator-isolation-01/application_probe.py": "0440be79901ccf043a15cb0a54c4cf2c00d751ae04787f5bdaab5cc392171bba",
+    "docs/evidence/G5/20261029-operator-isolation-01/catalog_acl.py": "4e9c05126c5ab8e50725897e82ccc88b4835c779ea3f638cd3d375e18b619505",
+    "docs/evidence/G5/20261029-operator-isolation-01/foreign-UID-denial.json": "21679113342641503d85092924c6ce361880b389aa7feec59ec542e37f1f3569",
+    "docs/evidence/G5/20261029-operator-isolation-01/linux_denial.py": "4bb016acda3c3ad7996b7c0da3dc3bf39a85eca7b4f81ce1b0ea6831bfaf9e05",
+    "docs/evidence/G5/20261029-operator-isolation-01/protected-audit.json": "d8bf3ae3ac7b1316ac9016433afdfb5534297d7cc7bbc8df86b6373c29487570",
+    "docs/evidence/G5/20261029-operator-isolation-01/protected_audit.py": "6385129c214fe549a3b14ddbacb778c201a91f7d6c2a462c2d1825c35842059c",
+    "docs/evidence/G5/20261029-operator-isolation-01/qualification.json": "c5d2d394769a243e53cd85f2fdc33caf75620309dfe57c87b68e654b9c5ae788",
+    "docs/evidence/G5/20261029-operator-isolation-01/redacted-status.json": "7eb4206520812461312e529a80d30910d7e2bb953e53c2b5b72f134aafdd7a70",
+    "docs/evidence/G5/20261029-operator-isolation-01/source-Linux.json": "06854976722caa9b269ad6a4b04fa8a43ce0626a884c521c299f336c9b90ccff",
+    "docs/evidence/G5/20261029-operator-isolation-01/source-Windows.json": "4cc3589624eeacb96ce2bacd54705fc35b02f91eccce5cd798ccdc4603277b51",
+    "docs/evidence/G5/20261029-operator-isolation-01/source_tests.py": "675fe09cb7112fe6c5ad847f98c0bc6b740cd5d123dbbc9766ec35edb50ac072",
+    "docs/evidence/G5/20261029-operator-isolation-01/status_probe.py": "3bdf474156bad227e0792baac56ac892f5daf142b3c863c14e7f9694d262d945",
+    "docs/evidence/G5/20261029-operator-isolation-01/windows-catalog-parent-integrity.json": "7867d31493108b2b8a24354a1603f6800cc62224a8f50ab02382ff29839d8402",
+    "docs/evidence/G5/20261029-operator-isolation-01/windows-store-ACLs.json": "efb40c54a784669494242c995454a8f675f387874775de7a390e3eb2185cd27e",
+    "docs/evidence/G5/20261029-operator-isolation-01/windows_acl.py": "8509b2ae5cae440054acbb2771ccea142a69a5229443d5e3a2df3b1efaa61aee",
+    "docs/implementation-status.md": "d1409156f57ff385721cd5de134f78ff91f01c9092b4f49c07f114987daaa671",
+    "docs/operations.md": "00d60e1340b44c080ff4009be2fa8b96705e35a90a84fc1e6092eba1bf2e8aa4",
+    "docs/work-log.md": "baacffa773ee073ec31c20d483204e1d882798c65cfc4b66ca823f443decbf55"
+  }
+}

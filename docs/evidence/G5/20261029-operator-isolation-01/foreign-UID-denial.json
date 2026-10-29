@@ -1,0 +1,122 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:18:38.376652+00:00",
+  "fixture": {
+    "state": "qualified",
+    "project": "mp-r0-r1http9669f0969d1d",
+    "volume": "mp-r0-r1http9669f0969d1d_operator_denial_36fd50d4ff",
+    "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+    "containers": [
+      {
+        "name": "mp-r0-r1http9669f0969d1d-operator-denial-36fd50d4ff-initialize",
+        "purpose": "initialize",
+        "state": "terminal_pass",
+        "container_id": "8507c59b6ab49e5fbbec8ca12e419ca91e774f4d099d51fe8401bd294403393d"
+      },
+      {
+        "name": "mp-r0-r1http9669f0969d1d-operator-denial-36fd50d4ff-application",
+        "purpose": "application",
+        "state": "terminal_pass",
+        "container_id": "69b187b9826d18001d991f6512f9975e9c18295830a14b4819c0230dabb6931d"
+      },
+      {
+        "name": "mp-r0-r1http9669f0969d1d-operator-denial-36fd50d4ff-verify",
+        "purpose": "verify",
+        "state": "terminal_pass",
+        "container_id": "a7f25cb02bbc413b44c597f80a0cd3c428a924fa05d9d58f406d915f57e3e910"
+      }
+    ],
+    "all_stopped": true
+  },
+  "operator_before": {
+    "state": "initialized",
+    "operator_identity": "posix-uid:0",
+    "owner_uid": 0,
+    "mode": "0o700",
+    "files": {
+      "executor-secret": "be575e9c235b54fabc03f5935d15a12c00150dd85400c4f4ec2b6e5f9d126812",
+      "policy.json": "4927d47c863580d2792e3aff7ee181b310241342119c777bf1cead5ab043392b",
+      "checkpoint.dump": "be575e9c235b54fabc03f5935d15a12c00150dd85400c4f4ec2b6e5f9d126812",
+      "control.sqlite3": "c40fcd8a594d47b7550df0be765ab52fb679af5a7167f10799f3165fe9e18022"
+    }
+  },
+  "application": {
+    "application_identity": "posix-uid:10001",
+    "uid": 10001,
+    "access": [
+      {
+        "name": "policy.json",
+        "action": "read",
+        "allowed": false,
+        "errno": 13
+      },
+      {
+        "name": "policy.json",
+        "action": "write",
+        "allowed": false,
+        "errno": 13
+      },
+      {
+        "name": "control.sqlite3",
+        "action": "read",
+        "allowed": false,
+        "errno": 13
+      },
+      {
+        "name": "control.sqlite3",
+        "action": "write",
+        "allowed": false,
+        "errno": 13
+      },
+      {
+        "name": "executor-secret",
+        "action": "read",
+        "allowed": false,
+        "errno": 13
+      },
+      {
+        "name": "executor-secret",
+        "action": "write",
+        "allowed": false,
+        "errno": 13
+      },
+      {
+        "name": "checkpoint.dump",
+        "action": "read",
+        "allowed": false,
+        "errno": 13
+      },
+      {
+        "name": "checkpoint.dump",
+        "action": "write",
+        "allowed": false,
+        "errno": 13
+      }
+    ],
+    "list_allowed": false,
+    "list_errno": 13,
+    "forge_allowed": false,
+    "forge_errno": 13,
+    "operator_store_open_allowed": false,
+    "store_refusal": "Operator directory must be owned by the current UID and mode0700"
+  },
+  "operator_after": {
+    "state": "verified",
+    "operator_identity": "posix-uid:0",
+    "owner_uid": 0,
+    "mode": "0o700",
+    "files": {
+      "executor-secret": "be575e9c235b54fabc03f5935d15a12c00150dd85400c4f4ec2b6e5f9d126812",
+      "policy.json": "4927d47c863580d2792e3aff7ee181b310241342119c777bf1cead5ab043392b",
+      "checkpoint.dump": "be575e9c235b54fabc03f5935d15a12c00150dd85400c4f4ec2b6e5f9d126812",
+      "control.sqlite3": "c40fcd8a594d47b7550df0be765ab52fb679af5a7167f10799f3165fe9e18022"
+    }
+  },
+  "private_bytes_exact": true,
+  "volume_mounted_readwrite_for_denial": true,
+  "limits": [
+    "Synthetic standalone operator store/backup/secret fixture only. No real host store, database, runtime config or TLS key mounted or modified.",
+    "Kernel EACCES and SDK owner checks proven with UID10001 against owner UID0/mode0700, despite rw volume.",
+    "Real Windows stores are audited separately; this does not claim Windows impersonation or a native plugin data sandbox."
+  ]
+}

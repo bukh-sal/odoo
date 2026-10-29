@@ -1,0 +1,48 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:20:00.251331+00:00",
+  "existing_operation_id": "39e37944-6648-4f7e-8aa1-30d01b452747",
+  "target": "lifecycle18",
+  "source": "operator_journal_mirror",
+  "authorized_requester_status": 200,
+  "stale_historical_mirror_explicit": true,
+  "redacted_top_level_fields": [
+    "approval_expires_at",
+    "control_authority",
+    "dimensions",
+    "error_code",
+    "history",
+    "kind",
+    "observed_at",
+    "operation_id",
+    "phase",
+    "plan_hash",
+    "requested_by",
+    "schema_version",
+    "source",
+    "stale",
+    "state"
+  ],
+  "history_has_no_private_details": true,
+  "denials": [
+    {
+      "actor": "alice",
+      "status": 403,
+      "error": "FORBIDDEN"
+    },
+    {
+      "actor": "bob",
+      "status": 403,
+      "error": "FORBIDDEN"
+    },
+    {
+      "actor": "anonymous",
+      "status": 401
+    }
+  ],
+  "privileged_status_or_approval_store_written": false,
+  "limits": [
+    "Read-only existing operation status; no new request, mirror refresh, approval, native action or application role change.",
+    "A historical mirror honestly reports stale=true and conveys no execution authority. Necessary application DB configuration is distinct from privileged host stores."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:26:08.083664+00:00",
+  "work_item": "G5-X08/SEC-08",
+  "acceptance": [
+    "SEC-08"
+  ],
+  "spec_sections": [
+    "7.3",
+    "10.6",
+    "11.5",
+    "15",
+    "20.3",
+    "25.3"
+  ],
+  "source_head": "193e4438da4b645644616e4fd7db89e53570bff5",
+  "source_sha256": {
+    "tests/test_operator_os.py": "1ac7d2566b8a66b3b80876b72225ea3154cde88a67098fb2d490e81b91ba61f1",
+    "tests/test_feature_executor.py": "0baad00883c9ee868a796efbd2caee265ffcb4389bc48bc3e1633da02ed2d84a",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/app_channel.py": "d2356d6e1aae103ff98912d4ebfaad189cf14100234bd68e0a846d3d65c8292b",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/plans.py": "e41bb5748ea517a03f2ca6b018edfe0d9660b52ae3721f9642f6b29cbe741d07",
+    "docs/evidence/G5/20261029-operator-isolation-01/application_probe.py": "0440be79901ccf043a15cb0a54c4cf2c00d751ae04787f5bdaab5cc392171bba",
+    "docs/evidence/G5/20261029-operator-isolation-01/linux_denial.py": "4bb016acda3c3ad7996b7c0da3dc3bf39a85eca7b4f81ce1b0ea6831bfaf9e05",
+    "docs/evidence/G5/20261029-operator-isolation-01/protected_audit.py": "6385129c214fe549a3b14ddbacb778c201a91f7d6c2a462c2d1825c35842059c",
+    "docs/evidence/G5/20261029-operator-isolation-01/source_tests.py": "675fe09cb7112fe6c5ad847f98c0bc6b740cd5d123dbbc9766ec35edb50ac072",
+    "docs/evidence/G5/20261029-operator-isolation-01/status_probe.py": "3bdf474156bad227e0792baac56ac892f5daf142b3c863c14e7f9694d262d945",
+    "docs/evidence/G5/20261029-operator-isolation-01/windows_acl.py": "8509b2ae5cae440054acbb2771ccea142a69a5229443d5e3a2df3b1efaa61aee",
+    "docs/evidence/G5/20261029-operator-isolation-01/catalog_acl.py": "4e9c05126c5ab8e50725897e82ccc88b4835c779ea3f638cd3d375e18b619505"
+  },
+  "checks": {
+    "application-identities": "application-identities.json",
+    "foreign-UID-denial": "foreign-UID-denial.json",
+    "windows-store-ACLs": "windows-store-ACLs.json",
+    "windows-catalog-parent-integrity": "windows-catalog-parent-integrity.json",
+    "redacted-status": "redacted-status.json",
+    "source-Windows": "source-Windows.json",
+    "source-Linux": "source-Linux.json",
+    "protected-audit": "protected-audit.json"
+  },
+  "results": {
+    "actual_running_application_identities": 5,
+    "namespace_read_write_denials": 80,
+    "kernel_foreign_UID_read_write_denials": 8,
+    "foreign_UID_forge_and_directory_and_store_open_denied": true,
+    "synthetic_private_bytes_exact": true,
+    "windows_private_ACL_records": 1497,
+    "additional_public_catalog_parent_integrity_paths": 15,
+    "authorized_existing_redacted_status_read": true,
+    "ordinary_or_anonymous_status_denials": 3,
+    "windows_tests": 9,
+    "linux_tests": 9,
+    "skipped": 0,
+    "frozen_files": 87,
+    "protected_deployments_unchanged": 4,
+    "product_runtime_contract_UI_changed": false
+  },
+  "remaining_G5_acceptance": [
+    "OPS-02",
+    "OPS-03"
+  ],
+  "additional_required_fixture": "Minimal explicit workspace-scoped Canvas first-use provisioning/fresh-install regression.",
+  "limits": [
+    "Actual app namespace separation and separate rw-volume/UID10001 kernel EACCES test; no real operator store mounted into app containers.",
+    "Windows owner/DACL audit is not a claim of account impersonation. SYSTEM/Administrators are privileged host authorities.",
+    "Application database configuration/data access is legitimate; native plugins remain trusted, not an application data sandbox.",
+    "Historical status stays explicitly stale and conveys no authority; no new request/mirror/approval/native action changed.",
+    "No production deployment/publication. Clean-environment recovery/provenance remain G5 and full release audits remain G7."
+  ]
+}

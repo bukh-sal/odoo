@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:21:59.417883+00:00",
+  "tests": 9,
+  "seconds": 56.957,
+  "skipped": 0,
+  "container": null,
+  "source_sha256": {
+    "tests/test_operator_os.py": "1ac7d2566b8a66b3b80876b72225ea3154cde88a67098fb2d490e81b91ba61f1",
+    "tests/test_feature_executor.py": "0baad00883c9ee868a796efbd2caee265ffcb4389bc48bc3e1633da02ed2d84a",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/app_channel.py": "d2356d6e1aae103ff98912d4ebfaad189cf14100234bd68e0a846d3d65c8292b",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/plans.py": "e41bb5748ea517a03f2ca6b018edfe0d9660b52ae3721f9642f6b29cbe741d07"
+  }
+}

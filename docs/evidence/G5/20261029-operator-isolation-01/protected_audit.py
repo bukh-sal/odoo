@@ -1,0 +1,2 @@
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[4];source=ROOT/'docs/evidence/G5/20261029-http-security-02/audit.py';code=source.read_text();old="dest=OUTPUT/'final-audit-native.json'";new="dest=ROOT/'docs/evidence/G5/20261029-operator-isolation-01/protected-audit.json'";assert code.count(old)==1;scope={'__file__':str(source),'__name__':'isolation_protected_audit'};exec(compile(code.replace(old,new),str(source),'exec'),scope);scope['main']()
