@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "command": [
+    "node",
+    "--test",
+    "tests/test_operations_resume.mjs",
+    "tests/test_lifecycle_preview.mjs",
+    "tests/test_manager_inspection.mjs"
+  ],
+  "stdout": "\u2714 native request requires the bound impact and explicit destructive acknowledgment (4.634ms)\n\u2714 mismatched impact and invalid retained-scope states fail before a request is possible (0.5094ms)\n\u2714 retained-scope map is displayed separately from the unchanged public prepared DTO (0.2595ms)\n\u2714 a late impact cannot restore a cleared or changed proposal (2.3802ms)\n\u2714 upload sends original bytes and exact SHA through the existing fenced API adapter (3.3718ms)\n\u2714 role loss cannot publish a late upload or details result (0.9479ms)\n\u2714 no file or oversize input sends no request (0.2782ms)\n\u2714 catalog continuation requires the same snapshot and metadata pages do not mix (0.3582ms)\n\u2714 component cancellation aborts an in-flight validation through the shared controller (0.7495ms)\n\u2714 root binary transport preserves CSRF/session/release fences and old JSON serialization (0.4062ms)\n\u2714 activation reload restores the same owned operation and continues polling without a prepared form (2.8206ms)\n\u2714 another principal never loads the previous actor resume hint (0.2153ms)\n\u2714 role revocation and own-request denial clear the hint without exposing a result (0.4119ms)\n\u2714 an uncertain request resumes using the same nonce and never invents approval (0.294ms)\n\u2714 extra authority fields in storage are ignored rather than sent to an API (0.2137ms)\n\u2139 tests 15\n\u2139 suites 0\n\u2139 pass 15\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 95.1157\n",
+  "stderr": "",
+  "xml_template_wellformed": true,
+  "python_ast_valid": true,
+  "js_syntax_valid": true,
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/operations.js": "023498ca2ef2e0ddd00d4cd81fab592bf915b25afab0eaa931092f7634849df4"
+  }
+}

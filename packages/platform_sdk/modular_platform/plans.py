@@ -10,7 +10,7 @@ import copy
 from datetime import datetime, timezone
 import hashlib
 import re
-from uuid import UUID, uuid4
+from uuid import UUID, uuid4, uuid5
 
 import rfc8785
 
@@ -188,6 +188,9 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
             if previous and previous.get('state', 'installed') != 'not_installed' or any(item['site_id'] == target['site_id'] and item['workspace_id'] == target['workspace_id']
                                and item['plugin_id'] == target['plugin_id'] and item.get('state', 'installed') != 'not_installed' for item in installed.values()):
                 raise PlanningError('Installation already exists at this exact scope')
+        elif target['action'] == 'remove' and previous is None:
+            if target['installation_id'] != str(uuid5(UUID(target['site_id']), 'plugin:' + target['plugin_id'])):
+                raise PlanningError('Never-installed source removal requires its canonical nomination identity')
         elif not previous or any(previous[key] != target[key] for key in ('site_id', 'workspace_id', 'plugin_id')):
             raise PlanningError('Target installation identity or scope changed')
         if target['action'] == 'uninstall' and previous.get('state', 'installed') != 'installed':
@@ -381,7 +384,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         'permission_changes': sorted(copy.deepcopy(list(permission_changes)), key=lambda item: (item['plugin_id'], item['workspace_id'], item['capability'], item['action'])),
         'trust_changes': sorted(copy.deepcopy(list(trust_changes)), key=lambda item: (item['artifact_digest'], item['decision'])),
         'destructive': destructive,
-        'backup': {'required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall','deploy') for item in artifacts.values()),
+        'backup': {'required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall','remove','deploy') for item in artifacts.values()),
                    'policy_id': backup_policy, 'retain_previous_release': True},
         'policy_version': state['policy_version'], 'operator_authorization_generation': state['operator_authorization_generation']}
     canonical_plan(plan)

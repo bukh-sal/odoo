@@ -16,7 +16,14 @@ from modular_platform.operator_store import _write_new
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--policy',type=Path,default=Path('deploy/distribution-r1.json'),help='Operator-owned R1 distribution policy under deploy/; never an application-selected path')
+    args=parser.parse_args()
+    policy=(ROOT/args.policy).resolve()
+    if (not policy.is_relative_to(ROOT/'deploy') or not policy.is_file()
+            or not re.fullmatch(r'distribution-r1(?:-[A-Za-z0-9_-]+)?\.json',policy.name)):
+        raise ValueError('Existing operator-owned deploy/distribution-r1*.json policy required')
+    policy_name=policy.relative_to(ROOT).as_posix()
     output=args.output.resolve()
     if not output.is_relative_to(ROOT/'docs/evidence/G5') or output.exists() or not re.fullmatch('[A-Za-z0-9_-]+',output.name):
         raise ValueError('Fresh named G5 evidence directory required')
@@ -30,9 +37,9 @@ def main():
                 source[path.relative_to(ROOT).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
     source.update({name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['.dockerignore','LICENSE','COPYRIGHT']})
     output.mkdir(parents=True)
-    command=['docker','build','-f','deploy/Dockerfile','--build-arg','DISTRIBUTION_POLICY=deploy/distribution-r1.json',
+    command=['docker','build','-f','deploy/Dockerfile','--build-arg','DISTRIBUTION_POLICY='+policy_name,
         '--build-arg','RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock','--build-arg','SDK_PYTHONPATH=/opt/modular/packages/platform_sdk','-t',tag,'.']
-    record={'state':'building','tag':tag,'output':str(output.relative_to(ROOT)),'command':command,
+    record={'state':'building','tag':tag,'output':str(output.relative_to(ROOT)),'command':command,'distribution_policy':policy_name,
         'git_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),'source_sha256':source}
     _write_new(record_path,record)
     with ProcessLock(ROOT/'.local/operator/control/locks','candidate-build'):

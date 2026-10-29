@@ -5,13 +5,14 @@ image, command, path or installation ID. The local validator reconstructs the
 result against its private StageStore before registration, approval and apply.
 """
 from packaging.version import Version
+import copy
 
 from .contracts import validate
 from .lifecycle_planning import installation_id, prepare_current_image_install
 from .plans import data_digest
 from .projection import runtime_inputs
 from .release_staging import prepare_staged_plan
-from .resolution import PlanningError, binding_matches_scope, resolve_release
+from .resolution import PlanningError, binding_matches_scope, resolve_release, dependent_closure
 
 
 def candidate_preview(descriptor, runtime, base_image_id):
@@ -25,6 +26,36 @@ def candidate_preview(descriptor, runtime, base_image_id):
             or descriptor['runtime_digest'] != data_digest(runtime)):
         raise PlanningError('Staged preview is stale or differs from its exact runtime')
     return {'descriptor': dict(descriptor), 'runtime': runtime}
+
+
+def prepare_manager_removal(document,sites,catalog,base_runtime,staged,nomination,*,operation_id,created_at):
+    validate('operations-request',nomination)
+    if (nomination['operation']!='prepare' or nomination['operation_type']!='remove'
+            or nomination['workspace_ids'] or nomination['site_id'] not in document['state']['site_ids']):
+        raise PlanningError('Source removal requires a site-wide current-site nomination')
+    artifact=base_runtime['inventory'].get('artifacts',{}).get(nomination['plugin_id'])
+    if not artifact or artifact['digest']!=nomination['artifact_digest']:
+        raise PlanningError('Select the exact package currently present in this runtime for source removal')
+    if not staged or set(staged)!={'descriptor','runtime'}:
+        raise PlanningError('Local operator must stage and publish the exact source-removal image first')
+    candidate_preview(staged['descriptor'],staged['runtime'],document['state']['image_id'])
+    removed=set(base_runtime['inventory'].get('artifacts',{}))-set(staged['runtime']['inventory'].get('artifacts',{}))
+    if nomination['plugin_id'] not in removed:
+        raise PlanningError('The independently staged image does not remove the nominated package')
+    if len(removed)>1 and not nomination['cascade']:
+        raise PlanningError('Explicit dependent cascade consent required for multiple source removals')
+    selected,_,_=runtime_inputs(base_runtime,catalog)
+    descriptors=copy.deepcopy(selected)
+    for item in descriptors:
+        item['required_providers']=[row['provider'] for row in document['state']['release_lock']['service_selection']
+            if row['consumer']==item['plugin_id'] and not row['optional']]
+    allowed=set(dependent_closure(descriptors,[nomination['plugin_id']],cascade=True))
+    if not removed<=allowed:
+        raise PlanningError('Removal image includes packages outside the nominated dependent closure')
+    from .artifact_removal import removal_targets
+    targets=removal_targets(document,sites,sorted(removed))
+    return prepare_staged_plan(document,sites,catalog,staged['runtime'],staged['descriptor'],targets=targets,
+        operation_type='remove',operation_id=operation_id,created_at=created_at,base_runtime=base_runtime)
 
 
 def prepare_manager_native(document, sites, catalog, base_runtime, staged, nomination, *, operation_id, created_at):

@@ -86,6 +86,7 @@ export class OperationsPanel extends Component {
             <h2>Review proposed changes</h2><p t-if="state.prepared.stale">Catalog observation is old. The local operator revalidates it before approval.</p>
             <p t-if="state.prepared.native_trusted_code">Native code shares the host application's trust.</p>
             <p t-if="state.prepared.plan.operation_type==='suspend'">Feature suspension retains native registration and data. Imported code and model overrides remain loaded.</p>
+            <p t-if="state.prepared.plan.operation_type==='remove'">This removes the selected package from the new runtime. Native uninstall must already be complete. Retained installation history, catalog archives, old images, checkpoints and old assets are preserved; workers restart.</p>
             <p t-if="state.prepared.plan.destructive" role="alert">This operation can delete native data and schema.</p>
             <p t-if="state.prepared.plan.backup.required">A coordinated database and filestore checkpoint is required.</p>
             <p t-if="state.prepared.restart_required">Workers will restart on the selected release.</p>

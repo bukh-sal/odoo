@@ -161,3 +161,22 @@ class DockerObserver:
     def native_impact(self, observation, catalog, *, site_id, requested):
         from .lifecycle_observation import observe_native_impact
         return observe_native_impact(self, observation, catalog, site_id=site_id, requested=requested)
+
+    def removal_site_inventory(self, observation):
+        """Independently reject omitted databases before source removal.
+
+        The disposable single-server profile has one known empty maintenance
+        database. Every other non-template DB must be explicitly configured and
+        observed. Never connect to an untrusted catalog-supplied database name.
+        """
+        from .artifact_removal import validate_sharing_database_inventory
+        query = """BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY;
+SET LOCAL statement_timeout='5s';
+SELECT jsonb_build_object(
+ 'databases',COALESCE((SELECT jsonb_agg(datname ORDER BY datname) FROM pg_database WHERE NOT datistemplate),'[]'::jsonb),
+ 'maintenance_relations',COALESCE((SELECT jsonb_agg(c.relname ORDER BY c.relname) FROM pg_class c
+    JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='public' AND c.relkind IN ('r','p','v','m','f','S')),'[]'::jsonb));
+ROLLBACK;"""
+        raw = _run(['docker', 'exec', '-i', self._container('db'), 'psql', '-X', '-qAt', '-U', 'postgres',
+                    '-v', 'ON_ERROR_STOP=1', '-d', 'postgres'], input=query.encode())
+        return validate_sharing_database_inventory(self.config, observation, load_json(raw))

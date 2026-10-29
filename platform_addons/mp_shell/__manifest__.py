@@ -1,5 +1,5 @@
 {
-    'name':'Modular Platform Shell','version':'19.0.0.1.6','depends':['mp_core'],
+    'name':'Modular Platform Shell','version':'19.0.0.1.7','depends':['mp_core'],
     'license':'LGPL-3','author':'Modular Platform','data':['views/bootstrap.xml'],
     'assets': {'mp_shell.assets_host': [
         ('include','web.assets_web'),('remove','web/static/src/main.js'),

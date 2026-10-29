@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+  "server_wide_modules": [
+    "base",
+    "web"
+  ],
+  "addons": [
+    "base",
+    "web",
+    "base_setup",
+    "auth_totp",
+    "auth_passkey",
+    "auth_password_policy",
+    "base_import",
+    "bus",
+    "web_tour",
+    "mp_compat",
+    "mp_identity",
+    "mp_core",
+    "mp_example_notes",
+    "mp_shell",
+    "mp_example_canvas"
+  ],
+  "explicit_install": [
+    "web",
+    "auth_password_policy",
+    "mp_example_notes",
+    "mp_shell",
+    "mp_example_canvas"
+  ],
+  "platform_sdk": true,
+  "profile": "R1 development vertical slice; qualified release inventory remains G7",
+  "reference_packages": [
+    "plugins/notes/plugin.toml",
+    "plugins/canvas/plugin.toml"
+  ]
+}

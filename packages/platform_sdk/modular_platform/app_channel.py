@@ -66,7 +66,8 @@ def journal_view(bundle, status, request, state):
         database = actual['state'] if actual else 'not_installed'
         if status['state']=='recovery_required': database='recovery_required'
         dimensions.append({'plugin_id':target['plugin_id'],'installation_id':target['installation_id'],'workspace_id':target['workspace_id'],
-            'artifact_state':'verified','release_state':'failed' if status['state']=='recovery_required' else
+            'artifact_state':'removed' if target['action']=='remove' and not any(p['plugin_id']==target['plugin_id'] for p in state['release_lock']['plugins']) else 'verified',
+            'release_state':'failed' if status['state']=='recovery_required' else
                 ('active' if state['release_digest']==bundle['plan']['target_release_digest'] else 'planned'),
             'database_state':database,'feature_state':actual['feature_state'] if actual else None,'service_state':None})
     failure = next((item['details'].get('code') for item in reversed(status['history']) if item['details'].get('code')),None)

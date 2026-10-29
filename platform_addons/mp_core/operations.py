@@ -17,7 +17,7 @@ from modular_platform.planning_cli import prepare_document
 from modular_platform.plans import check_bundle
 from modular_platform.projection import project_deployment
 from modular_platform.resolution import dependent_closure, binding_matches_scope
-from modular_platform.manager_planning import prepare_manager_native
+from modular_platform.manager_planning import prepare_manager_native, prepare_manager_removal
 from modular_platform.lifecycle_planning import prepare_current_feature
 from modular_platform.lifecycle_impact import inspect_current_image, impact_view
 from modular_platform.uninstall_planning import prepare_current_image_uninstall
@@ -209,6 +209,10 @@ class Operations(http.Controller):
             document,profile,metadata=profile_document()
             if nomination['operation_type'] in ('install','upgrade'):
                 bundle=prepare_manager_native(document,[metadata],profile['catalog'],profile['runtime'],profile.get('staged_release'),
+                    nomination,operation_id=str(uuid4()),created_at=stamp())
+                return _save_prepared(bundle,document,actor,profile)
+            if nomination['operation_type']=='remove':
+                bundle=prepare_manager_removal(document,[metadata],profile['catalog'],profile['runtime'],profile.get('staged_release'),
                     nomination,operation_id=str(uuid4()),created_at=stamp())
                 return _save_prepared(bundle,document,actor,profile)
             if nomination['operation_type']=='uninstall':

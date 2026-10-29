@@ -87,7 +87,7 @@ def prepare_document(document, catalog):
                 raise PlanningError('Duplicate provider choice')
             choices[key] = item['provider']
     previous_selections = state['release_lock'].get('service_selection', [])
-    if uninstall:
+    if uninstall or request['operation_type'] == 'remove':
         # Match post-uninstall observation exactly: only concrete surviving DB
         # bindings supply scoped choices. Packages remain image roots; an
         # uninstalled consumer's abstract, unscoped solver choice is not a grant.

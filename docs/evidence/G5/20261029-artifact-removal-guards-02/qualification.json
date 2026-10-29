@@ -1,0 +1,32 @@
+{
+  "result": "passed_actual_readonly_guard_only",
+  "utc": "2026-10-29T03:48:45.841725+00:00",
+  "generation": 6,
+  "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+  "independently_queried_complete_site_inventory": {
+    "site_ids": [
+      "8afd569b-790c-400d-b123-cff2c86602fc"
+    ],
+    "complete": true
+  },
+  "installed_package_refusal": "Artifact is still needed by an installed or pending native module",
+  "incompatible_runtime_refusal": "Source removal requires an independently staged compatible publication image before any drain or mutation",
+  "database_business_schema_state_requests_configs_exact": true,
+  "protected_config_hashes": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad",
+    ".local\\g5-lifecycle\\operator\\target.json": "1c784a153f5f7d746015a898092ccc54afef56fee24c7d481941578c5aa57323"
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/artifact_removal.py": "05867d76251ffbaa692c6e78cfdc5b92c51c7c30337b35caa97d00aa76ddf2ba",
+    "packages/platform_sdk/modular_platform/deployment.py": "f8c9c65deb1567870152181fd3c407081a3da13fa3d3a8c005767b9d9e8e0885",
+    "packages/platform_sdk/modular_platform/native_executor.py": "159f0d9d1ef3a14690f7c676acb0ea32bb0602d0931aced5b2dffada3a09ec5d",
+    "packages/platform_sdk/modular_platform/remove_metadata.py": "c2b62f25fe07d0ac7361ee09a0bc497e3c3a1cc1a9fe9c9d104f1b05e0ff539e",
+    "tests/test_artifact_removal.py": "b877ee97604c3002ab07a485aeee83d0140be399114f3ab6e0ac9dfe47fa0c32"
+  },
+  "limits": [
+    "Source integrated with prepare/independent approval/SAME staged executor, but not active in the running image; this calls only the read-only guards.",
+    "No source-removal image has been built or activated; LIFE-06 remains not_run.",
+    "Native Odoo views and Canvas code/UI are unchanged."
+  ]
+}

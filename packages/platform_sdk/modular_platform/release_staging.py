@@ -110,6 +110,11 @@ def validate_plugin_core_stability(base,runtime):
 def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at,base_runtime=None,feature_states=()):
     if runtime.get('published_release_protocol')!=1:
         raise OperatorError('Staged native operations require an image with the published-release profile reader')
+    if operation_type=='remove':
+        if feature_states:raise OperatorError('Source removal cannot change feature availability')
+        from .artifact_removal import prepare_staged_removal
+        return prepare_staged_removal(document,sites,catalog,runtime,descriptor,targets=targets,
+            operation_id=operation_id,created_at=created_at,base_runtime=base_runtime)
     if operation_type not in ('install','upgrade','deploy','core_upgrade'):
         raise OperatorError('Staged native planning requires install, upgrade, platform deploy or core upgrade')
     if operation_type in ('install','upgrade'):validate_plugin_core_stability(base_runtime,runtime)

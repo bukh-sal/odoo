@@ -42,6 +42,9 @@ def verify_native_state(bundle,state,previous,observation):
         elif target['action']=='uninstall':
             if key not in expected:raise OperatorError('Uninstall target is absent from checkpoint')
             expected[key].update(state='not_installed',feature_state='suspended',metadata_state='removed')
+        elif target['action']=='remove':
+            if key in expected and (expected[key]['state']!='not_installed' or expected[key]['metadata_state']!='removed' or expected[key]['feature_state']!='suspended'):
+                raise OperatorError('Source removal requires inert retained installation metadata')
         elif key not in expected:raise OperatorError('Upgrade target is absent from checkpoint')
     actual={(item['installation_id'],item['workspace_id']):item for item in state['installations']}
     if actual!=expected or state['bindings']!=bundle['operation_lock']['bindings']:
@@ -53,7 +56,7 @@ def verify_native_state(bundle,state,previous,observation):
         actual=grants.get((target['site_id'],target['workspace_id'],target['installation_id'],change['capability']))
         if not actual or actual['state']!=('approved' if change['action']=='grant' else 'revoked') or actual['policy_version']!=bundle['plan']['policy_version']:
             raise OperatorError('Ready permission metadata differs from exact approved changes')
-    if bundle['plan'].get('operation_type')=='uninstall':
+    if bundle['plan'].get('operation_type') in ('uninstall','remove'):
         affected={t['installation_id'] for t in bundle['operation_lock']['targets']}
         if any(row['state']=='approved' for site in observation['sites'] for row in site['grants'] if row['installation_id'] in affected):
             raise OperatorError('Ready uninstall retained an affected approved grant')
@@ -74,6 +77,14 @@ def native_maintenance_flags(bundle,plugins):
         if not bundle['plan']['destructive'] or not bundle['plan']['backup']['required']:
             raise OperatorError('Native uninstall requires destructive acknowledgement and checkpoint')
         return None  # The explicit fixed child is selected below, never a CLI -i/-u.
+    if operation=='remove':
+        if (installs or upgrades or any(t['action']!='remove' for t in lock['targets'])
+                or not lock.get('platform_source_diff') or 'staged_image' not in lock
+                or any(row['target_sha256'] is not None for row in lock['platform_source_diff'])
+                or 'native_core_changes' in lock or bundle['plan']['permission_changes'] or bundle['plan']['trust_changes']
+                or not bundle['plan']['backup']['required']):
+            raise OperatorError('Source removal requires exact staged subtraction and checkpoint without native maintenance')
+        return None
     if operation in ('deploy','core_upgrade'):
         if installs or upgrades or not lock.get('platform_source_diff') or any(item['action']!='deploy' for item in lock['targets']):
             raise OperatorError('Platform maintenance cannot combine plugin migrations')
@@ -106,6 +117,13 @@ def require_native_reinstall_runtime(runtime):
     names=('lifecycle_planning.py','projection.py','install_metadata.py','planning_cli.py','plans.py')
     if any(files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in names):
         raise OperatorError('Retained-scope reinstall requires a compatible independently staged maintenance image')
+
+
+def require_native_removal_runtime(runtime):
+    names=('artifact_removal.py','remove_metadata.py','projection.py','planning_cli.py','plans.py')
+    files=runtime['inventory']['files']
+    if any(files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in names):
+        raise OperatorError('Source removal requires an independently staged compatible publication image before any drain or mutation')
 
 
 class NativeExecutor:
@@ -227,13 +245,18 @@ class NativeExecutor:
         bundle = self.store.bundle(operation)
         if 'staged_image' in bundle['operation_lock'] and not self.staged_execution:
             raise OperatorError('Staged native execution must use the new-image executor adapter; current-image mutation denied')
-        if bundle['plan']['operation_type'] not in (('install','upgrade','deploy','core_upgrade') if self.staged_execution else ('install','uninstall')):
+        if bundle['plan']['operation_type'] not in (('install','upgrade','deploy','core_upgrade','remove') if self.staged_execution else ('install','uninstall')):
             raise OperatorError('Native execution requires a supported install/upgrade plan')
         plan = bundle['plan']
         with OperationLocks(self.store.root/'locks', plan['deployment_id'], plan['site_ids']) as locks:
             if self.store.status(operation)['state'] == 'completed':
                 self.mirror_progress(operation)
                 return self.store.status(operation)
+            if plan['operation_type']=='remove':
+                from .release_staging import StageStore
+                stages=StageStore(self.store,self.config,Catalog(self.catalog_root,self.validator,readonly=True))
+                _,record=stages.load(bundle['operation_lock']['staged_image'])
+                require_native_removal_runtime(record['runtime'])
             if not self.staged_execution:
                 runtime=self.observer.read()['runtime']
                 if runtime.get('published_release_protocol')!=1:
@@ -299,7 +322,8 @@ class NativeExecutor:
                         raise OperatorError('Native uninstall effect observation is missing or mismatched; reconcile actual state')
                     _write_new(directory/'native-effects.json',effects[0])
                 elif flags is None:
-                    _write_new(directory/'native-skipped.json',{'reason':'Reviewed platform-only image deployment; no native maintenance'})
+                    reason='Reviewed source removal; native schema already absent' if plan['operation_type']=='remove' else 'Reviewed platform-only image deployment; no native maintenance'
+                    _write_new(directory/'native-skipped.json',{'reason':reason})
                 else:
                     arguments, child = self._child(operation, 'native', writable=True,image_id=image)
                     self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
@@ -315,7 +339,7 @@ class NativeExecutor:
                 if 'feature_states' in bundle['operation_lock']:payload['feature_states']=bundle['operation_lock']['feature_states']
                 arguments, child = self._child(operation, 'metadata',image_id=image)
                 arguments.insert(2, '-i')
-                metadata_script='uninstall_metadata.py' if plan['operation_type']=='uninstall' else 'install_metadata.py'
+                metadata_script={'uninstall':'uninstall_metadata.py','remove':'remove_metadata.py'}.get(plan['operation_type'],'install_metadata.py')
                 self._private_command(arguments+['-c', Path(__file__).with_name(metadata_script).read_text(encoding='utf8')], directory/'metadata.log', input=json.dumps(payload).encode())
                 self.store.advance(operation, locks, 'migrated')
                 failure = 'READINESS_FAILED'

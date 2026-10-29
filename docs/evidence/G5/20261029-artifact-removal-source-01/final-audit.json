@@ -1,0 +1,14 @@
+{
+  "result": "passed_source_only",
+  "utc": "2026-10-29T03:51:39.884701+00:00",
+  "host_tests": 193,
+  "linux_tests": 173,
+  "frontend_tests": 15,
+  "frozen_files": 87,
+  "source_inputs_exact": 202,
+  "known_private_values_checked": 12,
+  "public_files_checked": 9,
+  "limits": [
+    "No image activation or actual source-only publication; LIFE-06 remains not_run."
+  ]
+}
