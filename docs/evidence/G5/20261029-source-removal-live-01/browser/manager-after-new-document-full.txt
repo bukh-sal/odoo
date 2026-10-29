@@ -1,0 +1,136 @@
+Browser tab: 18, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4".
+1 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4
+	2 container
+		3 text M
+		4 text Modular Platform
+		5 container
+			6 text Workspace
+			7 pop up button (collapsed, settable) Description: Workspace, Value: Personal, Secondary Actions: Expand
+				8 menu
+					9 Workspace
+					10 (selected) Personal
+					11 Research
+		12 button Commands
+		13 button Dark
+		14 text Operator
+		15 container Applications
+			16 link Description: Settings, Value: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4#
+			23 link Description: Operations, Value: g5life.localhost:18080/app/operations
+		17 heading Operations, Value: 1
+			18 text Operations
+		19 text Your ideas, in one place.
+		20 container Plugin operations
+			21 text Prepare a plan, request the operation, then use local operator approval and apply.
+			22 text New code requires a local operator to stage the release first. Installation from the current image and native uninstall still require exact local approval and coordinated maintenance. Uploading or selecting an artifact does not execute it.
+			24 container Upload validation
+				25 heading Validate a plugin archive, Value: 2
+					26 text Validate a plugin archive
+				27 text Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.
+				28 text Plugin archive (.mplug, maximum 100 MiB)
+				29 button Plugin archive (.mplug, maximum 100 MiB), ID: mp_upload_file
+				30 button (disabled) Validate archive
+			31 container Installed plugins
+				32 heading Installed plugins, Value: 2
+					33 text Installed plugins
+				34 text Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.
+				35 table
+					36 row
+						37 cell
+							38 text Plugin
+						39 cell
+							40 text Version / trust
+						41 cell
+							42 text Database
+						43 cell
+							44 text Health
+						45 cell
+							46 text Dependencies
+						47 cell
+							48 text Workspace availability
+					49 row
+						50 cell
+							51 button Canvas
+						52 cell
+							53 text 0.1.3
+							54 text operator-approved-exact-digest
+						55 cell
+							56 text installed
+						57 cell
+							58 text unknown
+							59 text Registry observed; plugin-specific health has not been probed.
+						60 cell
+							61 text satisfied
+						62 cell
+							63 container
+								64 text Research :  enabled
+							65 container
+								66 text Personal :  enabled
+					67 row
+						68 cell
+							69 button Notes
+						70 cell
+							71 text 0.2.3
+							72 text operator-approved-exact-digest
+						73 cell
+							74 text installed
+						75 cell
+							76 text unknown
+							77 text Registry observed; plugin-specific health has not been probed.
+						78 cell
+							79 text satisfied
+						80 cell
+							81 container
+								82 text Research :  enabled
+							83 container
+								84 text Personal :  enabled
+					85 row
+						86 cell
+							87 button Notes Labels
+						88 cell
+							89 text 0.2.1
+							90 text operator-approved-exact-digest
+						91 cell
+							92 text not_installed
+						93 cell
+							94 text unknown
+							95 text Native database installation is absent; retained metadata grants no availability.
+						96 cell
+							97 text unknown
+						98 cell
+							99 container
+								100 text Research :  suspended
+							101 container
+								102 text Personal :  suspended
+				103 button Refresh metadata
+			104 container
+				105 text Plugin and version
+				106 pop up button (collapsed, settable) Plugin and version, Value: Choose a plugin, ID: mp_operation_artifact, Secondary Actions: Expand
+					107 menu
+						108 (selected) Choose a plugin
+						109 Canvas · 0.1.2
+						110 Canvas · 0.1.3
+						111 Notes · 0.2.1
+						112 Notes · 0.2.2
+						113 Notes · 0.2.3
+						114 Notes Labels · 0.2.0
+						115 Notes Labels · 0.2.1
+				116 text Operation
+				117 pop up button (collapsed, settable) Operation, Value: Feature suspension, ID: mp_operation_type, Secondary Actions: Expand
+					118 menu
+						119 Install
+						120 Upgrade
+						121 (selected) Feature suspension
+						122 Enable feature
+						123 Native uninstall
+						124 Unregister service
+						125 Remove unused artifact
+				126 text Workspace
+				127 pop up button (collapsed, settable) Workspace, Value: Personal, ID: mp_operation_workspace, Secondary Actions: Expand
+					128 menu
+						129 Choose a workspace
+						130 Research
+						131 (selected) Personal
+				132 checkbox (settable, integer) Description: Include dependent changes in the proposed plan, Value: 0
+				133 button (disabled) Prepare plan
+
+The focused UI element is 1 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations?workspace=907b39a7-345a-4332-9df1-410019531cd4
