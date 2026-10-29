@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "kind": "native_uninstall_impact",
+  "operation_id": "e0150207-50e2-4314-a0a6-e17c276dbdd8",
+  "plan_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "impact_digest": "sha256:4113771e92c0468695426e98d78b069c13070c5d2b27186a11b22b716a19c6dd",
+  "impact": {
+    "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+    "requested_addons": [
+      "mp_example_notes_labels"
+    ],
+    "native_closure": [
+      "mp_example_notes_labels"
+    ],
+    "plugins": [
+      {
+        "plugin_id": "org.example.notes_labels",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "native_addon": "mp_example_notes_labels",
+        "artifact_digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+        "version": "0.2.1",
+        "workspace_ids": [
+          "3f502e47-683a-4551-b00e-03368e647dd2",
+          "907b39a7-345a-4332-9df1-410019531cd4"
+        ]
+      }
+    ],
+    "models": [],
+    "fields": [
+      {
+        "model": "mp.example.note",
+        "field": "x_notes_labels",
+        "relation": "mp_example_note",
+        "column": "x_notes_labels",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      }
+    ],
+    "constraints": [
+      {
+        "relation": "mp_example_note",
+        "name": "mp_example_note_author_id_fkey",
+        "definition": "FOREIGN KEY (author_id) REFERENCES mp_principal(id) ON DELETE RESTRICT"
+      },
+      {
+        "relation": "mp_example_note",
+        "name": "mp_example_note_create_uid_fkey",
+        "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      },
+      {
+        "relation": "mp_example_note",
+        "name": "mp_example_note_pkey",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "relation": "mp_example_note",
+        "name": "mp_example_note_public_unique",
+        "definition": "UNIQUE (public_id)"
+      },
+      {
+        "relation": "mp_example_note",
+        "name": "mp_example_note_revision_positive",
+        "definition": "CHECK ((revision > 0))"
+      },
+      {
+        "relation": "mp_example_note",
+        "name": "mp_example_note_workspace_id_fkey",
+        "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+      },
+      {
+        "relation": "mp_example_note",
+        "name": "mp_example_note_write_uid_fkey",
+        "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      }
+    ],
+    "foreign_references": [],
+    "metadata_records": [
+      {
+        "native_addon": "mp_example_notes_labels",
+        "model": "ir.model",
+        "records": 1
+      },
+      {
+        "native_addon": "mp_example_notes_labels",
+        "model": "ir.model.fields",
+        "records": 3
+      }
+    ],
+    "assets": [
+      {
+        "native_addon": "mp_example_notes_labels",
+        "path": "mp_example_notes_labels/static/src/labels.js",
+        "source": "declared_source"
+      }
+    ],
+    "dispatch": {
+      "state": "not_present",
+      "tables": []
+    },
+    "warnings": [
+      "Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects.",
+      "Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted."
+    ]
+  },
+  "database_action": "native_uninstall",
+  "artifact_action": "retain_in_runtime",
+  "destructive": true,
+  "requires_backup": true,
+  "native_code_fully_trusted": true,
+  "completeness": "known_effects_only",
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-10-29T00:40:59.777599Z"
+}

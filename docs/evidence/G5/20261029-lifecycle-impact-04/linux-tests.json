@@ -1,0 +1,41 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--name",
+    "mp-g5-impact-unit-1725ffa16d1e",
+    "--label",
+    "mp.disposable=g5-impact-unit",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--tmpfs",
+    "/tmp",
+    "--interactive",
+    "--entrypoint",
+    "/venv/bin/python",
+    "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+    "-B",
+    "-c",
+    "import json,pathlib,sys,tempfile,types,unittest\nfrom modular_platform import contracts\npayload=json.load(sys.stdin)\nwith tempfile.TemporaryDirectory(prefix='mp-impact-unit-') as directory:\n root=pathlib.Path(directory)\n for name,source in payload.items():\n  path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(source)\n contracts.CONTRACTS=root/'packages/contracts/v1'\n module=types.ModuleType('modular_platform.lifecycle_impact');module.__package__='modular_platform'\n exec(compile(payload['packages/platform_sdk/modular_platform/lifecycle_impact.py'],'reviewed-impact.py','exec'),module.__dict__)\n sys.modules[module.__name__]=module\n tests=types.ModuleType('test_lifecycle_impact');tests.__file__=str(root/'tests/test_lifecycle_impact.py')\n exec(compile(payload['tests/test_lifecycle_impact.py'],tests.__file__,'exec'),tests.__dict__)\n result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromModule(tests))\n sys.exit(0 if result.wasSuccessful() else 1)\n"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_declared_reference_mapping_and_extension (test_lifecycle_impact.LifecycleImpactTests.test_actual_declared_reference_mapping_and_extension) ... ok\ntest_archive_and_individual_source_bytes_are_both_bound (test_lifecycle_impact.LifecycleImpactTests.test_archive_and_individual_source_bytes_are_both_bound) ... ok\ntest_closure_includes_all_installed_dependents_and_checks_both_graphs (test_lifecycle_impact.LifecycleImpactTests.test_closure_includes_all_installed_dependents_and_checks_both_graphs) ... ok\ntest_count_drift_and_cross_operation_binding_are_detected (test_lifecycle_impact.LifecycleImpactTests.test_count_drift_and_cross_operation_binding_are_detected) ... ok\ntest_custom_table_never_guessed_from_model_name (test_lifecycle_impact.LifecycleImpactTests.test_custom_table_never_guessed_from_model_name) ... ok\ntest_dynamic_definition_and_duplicate_root_fail_closed_without_execution (test_lifecycle_impact.LifecycleImpactTests.test_dynamic_definition_and_duplicate_root_fail_closed_without_execution) ... ok\ntest_unresolved_view_inheritance_and_python_bases_are_unknown (test_lifecycle_impact.LifecycleImpactTests.test_unresolved_view_inheritance_and_python_bases_are_unknown) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.014s\n\nOK\n",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/lifecycle_impact.py": "1732f39188d790ea560aba6b41be7f987e75895dcbcf6f169fc9e7f67e9e7fe2",
+    "tests/test_lifecycle_impact.py": "0e197ef600904d5d00b3ac0dc49cb262d898ea40373d15f23ce8de5b9a112c51",
+    "packages/contracts/examples/v1/lifecycle-impact.json": "a2716a997e64fba31525b7e35dd8eda1f125424aaab6e60bcd90b2beb77b663e",
+    "packages/contracts/v1/lifecycle-impact.schema.json": "82c0a23ee4b8978c62fb37dec2aa85612008fdc7f90a22cf1ec1b57cc26b7d79",
+    "platform_addons/mp_example_notes/models.py": "5eaa7a35f0e947ff4937c327d0ba463f5926333d0daff4671a5f253298ae96b7",
+    "platform_addons/mp_example_notes_labels/models.py": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+    "platform_addons/mp_example_canvas/models.py": "bfb22bf8ac5999375fd36901e8183849aa84bd16f6d78d60182e7f60c57ff65f",
+    "platform_addons/mp_identity/models/scoped.py": "3a149bc7c577a681ded521a3989c9f2d7541390cc8851bf7040dbea1a60da44e"
+  },
+  "transport": "small stdin source bundle, no checkout mount",
+  "retained_container": "mp-g5-impact-unit-1725ffa16d1e"
+}

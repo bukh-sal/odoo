@@ -1,0 +1,23 @@
+# G5-X05b read-only impact source checkpoint
+
+This proves the inspector source against the retained populated lifecycle database. It does not install the code, create an executable proposal, approve an operation or run native uninstall. LIFE-03/04/05/06 remain unqualified. Synthetic operation IDs and zero plan hashes in the DTO captures test serialization/binding only.
+
+Command: `.venv/Scripts/python.exe tools/qualify_lifecycle_impact.py --output docs/evidence/G5/<fresh-run-id>`. The helper rejects reused evidence directories and all deployments except the exact generation3 lifecycle fixture. Do not bootstrap/reseed it. Qualified image154d74a9 remains unchanged.
+
+The independent Docker observer verifies actual image inventory bytes. The catalog revalidates current trust, archive identity and each selected native source file. A separate application-identity Python process reads those same inventoried bytes as AST data and uses a timed repeatable-read READ ONLY PostgreSQL snapshot; it imports no Odoo registry or addon. The host validates the strict frozen DTO and bound digest. The helper compares actual schema/business/native/security metadata before and after with retained baseline identities. It does not print credentials or business row values.
+
+Observed results:
+
+- Labels-only closure contains Labels; Notes closure contains Notes, Labels and Canvas; Canvas-only closure contains Canvas. Native manifest dependencies and installed versions agree with the database.
+- Every affected plugin lists both workspace IDs, including the coverage needed for suspended features.
+- Labels has one exclusively owned stored field, `mp.example.note.x_notes_labels`, on the preserved Notes table:2non-null values out of4Notes. Shared model/automatic fields have surviving XML IDs and are excluded from exclusively affected records. Metadata counts still show all owned XML IDs.
+- Notes closure shows4Notes and2reference Canvas boards. Nonstored display fields have explicit unknown scalar mappings. Counts are aggregates; no business contents enter the DTO.
+- SQL constraints and inbound references describe affected relations. The warning explicitly says every listed constraint is not necessarily deleted. Declared native assets are identified; arbitrary trusted hooks remain unknown. Job/outbox tables are absent. The eventual executor must reject `unsupported` dispatch until the G6 adapter exists.
+- Wrong-site and mutable/non-repeatable transaction calls are rejected. Static tests additionally cover actual reference declarations, custom/mixed-case table names, dynamic/unresolved/deep inheritance, duplicate roots, native graph/version drift, unsupported downstream modules, archive/file hash mismatch, count drift and cross-operation digest substitution.
+- 7 Windows and 7 Linux source checks pass. Linux uses a small stdin source bundle and a named, networkless, read-only disposable container; its executable command/source hashes/container name are in `linux-tests.json`.87-file contract freeze passes.
+
+`qualification.json` binds current source hashes, actual image ID, before/after digests and protected target configuration hashes. `labels-impact.json`, `notes-impact.json`, `canvas-impact.json` and `observed.json` contain actual read-only observations. The source is not deployed, so earlier running-image acceptance is retained without claiming these additions are active.
+
+Attempts are preserved in the work log: the initial archive reader omitted the required plugin-ID root and failed before inspection; corrected code follows the existing artifact layout. An incorrect fixture assertion expected4non-null Labels values; diagnostic02 and the retained baseline independently showed2, without changing data.03/04 are earlier passing source checkpoints, superseded by the conservative nested-mixin, native-version and bounded-timeout guards in05. The optional full-checkout Docker mount timed out90s before creating a test container; the small-bundle Linux run resolved that transport issue. No native operation was replayed.
+
+Next: bind the exact impact into the existing operation-lock hash and independent reconstruction, advance the release/client epoch for same-image native uninstall, reconstruct surviving bindings, add the authenticated opt-in preview and required destructive confirmation. Then reuse the existing executor/checkpoint/recovery/worker replacement path, tombstones/reinstall and separate image artifact removal. Destructive proof remains confined to this owned lifecycle fixture. Standard CRUD remains native Odoo; Canvas stays minimal.

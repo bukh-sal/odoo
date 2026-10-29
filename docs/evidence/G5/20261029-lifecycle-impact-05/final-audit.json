@@ -1,0 +1,30 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T00:46:54.312943+00:00",
+  "git_base": "4b55ea9efbf8b574526cd11f2d875461bd8b782e",
+  "source_identity": "qualification.json source hashes bind new uncommitted source; commit follows this checkpoint",
+  "acceptance_counts": {
+    "passed": 68,
+    "not_run": 31,
+    "excluded_R2": 5
+  },
+  "g5_counts": {
+    "passed": 27,
+    "not_run": 18
+  },
+  "rough_progress_percent": 77,
+  "source_digests_match": true,
+  "unit_checks": {
+    "Windows": 7,
+    "Linux": 7
+  },
+  "frozen_files": 87,
+  "secret_scan": {
+    "public_files": 37,
+    "private_values_compared": 12,
+    "result": "no private value found"
+  },
+  "native_operation_started": false,
+  "main_manager_and_lifecycle_images_changed": false,
+  "next": "G5-X05b exact impact/epoch/surviving-bindings independent reconstruction; required preview; same native executor uninstall/removal"
+}

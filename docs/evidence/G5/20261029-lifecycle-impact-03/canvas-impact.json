@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "kind": "native_uninstall_impact",
+  "operation_id": "6252c07f-72dd-4117-8715-700ed656c4e1",
+  "plan_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "impact_digest": "sha256:2c448f9e7cbdeb658c24f1c71f020e8cbaaf08df9663ec6954a5b029fb777053",
+  "impact": {
+    "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+    "requested_addons": [
+      "mp_example_canvas"
+    ],
+    "native_closure": [
+      "mp_example_canvas"
+    ],
+    "plugins": [
+      {
+        "plugin_id": "org.example.canvas",
+        "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "native_addon": "mp_example_canvas",
+        "artifact_digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+        "version": "0.1.3",
+        "workspace_ids": [
+          "3f502e47-683a-4551-b00e-03368e647dd2",
+          "907b39a7-345a-4332-9df1-410019531cd4"
+        ]
+      }
+    ],
+    "models": [
+      {
+        "model": "mp.example.canvas.board",
+        "relation": "mp_example_canvas_board",
+        "mapping": "static_declaration",
+        "records": 2,
+        "unknown_reason": null
+      }
+    ],
+    "fields": [
+      {
+        "model": "mp.example.canvas.board",
+        "field": "cards",
+        "relation": "mp_example_canvas_board",
+        "column": "cards",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "create_date",
+        "relation": "mp_example_canvas_board",
+        "column": "create_date",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "create_uid",
+        "relation": "mp_example_canvas_board",
+        "column": "create_uid",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "display_name",
+        "relation": null,
+        "column": null,
+        "mapping": "unknown",
+        "non_null_records": null,
+        "unknown_reason": "No unambiguous stored scalar-column mapping."
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "id",
+        "relation": "mp_example_canvas_board",
+        "column": "id",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "name",
+        "relation": "mp_example_canvas_board",
+        "column": "name",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "public_id",
+        "relation": "mp_example_canvas_board",
+        "column": "public_id",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "revision",
+        "relation": "mp_example_canvas_board",
+        "column": "revision",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "workspace_id",
+        "relation": "mp_example_canvas_board",
+        "column": "workspace_id",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "write_date",
+        "relation": "mp_example_canvas_board",
+        "column": "write_date",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.canvas.board",
+        "field": "write_uid",
+        "relation": "mp_example_canvas_board",
+        "column": "write_uid",
+        "mapping": "static_declaration",
+        "non_null_records": 2,
+        "unknown_reason": null
+      }
+    ],
+    "constraints": [
+      {
+        "relation": "mp_example_canvas_board",
+        "name": "mp_example_canvas_board_create_uid_fkey",
+        "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      },
+      {
+        "relation": "mp_example_canvas_board",
+        "name": "mp_example_canvas_board_pkey",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "relation": "mp_example_canvas_board",
+        "name": "mp_example_canvas_board_uuid_unique",
+        "definition": "UNIQUE (public_id)"
+      },
+      {
+        "relation": "mp_example_canvas_board",
+        "name": "mp_example_canvas_board_workspace_board",
+        "definition": "UNIQUE (workspace_id)"
+      },
+      {
+        "relation": "mp_example_canvas_board",
+        "name": "mp_example_canvas_board_workspace_id_fkey",
+        "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+      },
+      {
+        "relation": "mp_example_canvas_board",
+        "name": "mp_example_canvas_board_write_uid_fkey",
+        "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      }
+    ],
+    "foreign_references": [],
+    "metadata_records": [
+      {
+        "native_addon": "mp_example_canvas",
+        "model": "ir.model",
+        "records": 1
+      },
+      {
+        "native_addon": "mp_example_canvas",
+        "model": "ir.model.access",
+        "records": 1
+      },
+      {
+        "native_addon": "mp_example_canvas",
+        "model": "ir.model.constraint",
+        "records": 2
+      },
+      {
+        "native_addon": "mp_example_canvas",
+        "model": "ir.model.fields",
+        "records": 11
+      },
+      {
+        "native_addon": "mp_example_canvas",
+        "model": "ir.model.inherit",
+        "records": 1
+      },
+      {
+        "native_addon": "mp_example_canvas",
+        "model": "ir.rule",
+        "records": 1
+      }
+    ],
+    "assets": [
+      {
+        "native_addon": "mp_example_canvas",
+        "path": "mp_example_canvas/static/src/adapter.js",
+        "source": "declared_source"
+      },
+      {
+        "native_addon": "mp_example_canvas",
+        "path": "mp_example_canvas/static/src/canvas.css",
+        "source": "declared_source"
+      },
+      {
+        "native_addon": "mp_example_canvas",
+        "path": "mp_example_canvas/static/src/page.js",
+        "source": "declared_source"
+      }
+    ],
+    "dispatch": {
+      "state": "not_present",
+      "tables": []
+    },
+    "warnings": [
+      "Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects.",
+      "Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted."
+    ]
+  },
+  "database_action": "native_uninstall",
+  "artifact_action": "retain_in_runtime",
+  "destructive": true,
+  "requires_backup": true,
+  "native_code_fully_trusted": true,
+  "completeness": "known_effects_only",
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-10-29T00:39:54.433503Z"
+}

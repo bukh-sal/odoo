@@ -1,0 +1,43 @@
+{
+  "result": "passed",
+  "scope": "read_only_inspector_source_integration_only",
+  "utc": "2026-10-29T00:39:54.433503Z",
+  "project": "mp-r0-r1lifef99acae9d906",
+  "generation": 3,
+  "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+  "sources": {
+    "packages\\platform_sdk\\modular_platform\\lifecycle_impact.py": "f729d623a1bc128c5a4256858cc99fbbe75579d0e7b18049099f7bbedc6037c1",
+    "tools\\qualify_lifecycle_impact.py": "7500486bb340a00a2e1f74ccf475c5600d67aff690e778593aa084175659845b",
+    "tests\\test_lifecycle_impact.py": "6a4289bb4084b7cec6733f762b57ae53d0ee148ec8aa649a3e69beed963adb36"
+  },
+  "inspected_image_source_files": 24,
+  "catalog_source_files": 15,
+  "before_after_metadata_digest": "sha256:67382f7e0493120d0685b3fa669c930154b9a7ec42cedd8029331248725e8239",
+  "protected_config_hashes": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad",
+    ".local\\g5-lifecycle\\operator\\target.json": "64d462209de4f3435c968a98d634cd23006644844062640d99bcfd8171a913d5"
+  },
+  "before_after_business_digest": "sha256:4f87bd8d92eda9922514aa0c9218e8e7ab2f5d8c2f48497bb7c8e5229231f38a",
+  "before_after_schema_digest": "sha256:ed5082214faa5445e79519b7a9ff6c4ebc7de388abd79e935487ccc57a0fa5d6",
+  "labels_non_null_records": 2,
+  "checks": [
+    "actual three dependency closures",
+    "shared model/fields retained",
+    "Labels one stored field/count matches independent retained business data",
+    "Notes+Canvas two models/six records",
+    "both workspaces covered",
+    "constraints/references/assets",
+    "unknown fields explicit",
+    "no dispatch tables",
+    "wrong-site rejection",
+    "unsafe transaction rejection",
+    "no native registry import",
+    "strict bound DTO",
+    "exact unchanged deployment observation/configs"
+  ],
+  "runtime_activated": false,
+  "approval_or_native_execution": false,
+  "acceptance_credit": [],
+  "remaining": "Impact endpoint/operation-lock independent reconstruction, actual native uninstall/reinstall/artifact removal and destructive lifecycle qualification."
+}
