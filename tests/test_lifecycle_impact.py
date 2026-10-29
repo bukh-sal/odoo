@@ -78,6 +78,12 @@ class LifecycleImpactTests(unittest.TestCase):
             ('core', []), ('notes', ['core']), ('labels', ['notes']), ('canvas', ['core']))]
         self.assertEqual(native_closure(['notes'], modules, descriptors), ['labels', 'notes'])
         self.assertEqual(native_closure(['labels'], modules, descriptors), ['labels'])
+        service_descriptors = copy.deepcopy(descriptors)
+        service_descriptors[1]['native_manifest']['depends'] = ['core']
+        service_modules = copy.deepcopy(modules); service_modules[2]['depends'] = ['core']
+        self.assertEqual(native_closure(['notes'], service_modules, service_descriptors), ['notes'])
+        self.assertEqual(native_closure(['notes'], service_modules, service_descriptors,
+                                       [('labels', 'notes')]), ['labels', 'notes'])
         bad = copy.deepcopy(modules); bad[2]['depends'] = ['canvas']
         with self.assertRaises(PlanningError): native_closure(['notes'], bad, descriptors)
         bad = copy.deepcopy(modules); bad[1]['version'] = '19.0.0.0.9'

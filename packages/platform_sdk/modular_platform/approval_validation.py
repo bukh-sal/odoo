@@ -42,8 +42,22 @@ class IndependentValidator:
             if data_digest(recomputed)!=data_digest(bundle):
                 raise OperatorError('Independently staged reconstruction differs from proposed exact plan')
             return state
-        if plan['permission_changes']:
+        if plan['permission_changes'] and plan['operation_type'] != 'uninstall':
             raise OperatorError('Current-image feature/control profile does not accept unrelated grant changes')
+        if plan['operation_type'] == 'uninstall':
+            from .uninstall_planning import prepare_current_image_uninstall
+            from .lifecycle_impact import impact_view
+            bound = bundle['operation_lock'].get('native_uninstall_impact')
+            if not isinstance(bound, dict) or not {'site_id', 'requested_addons'} <= bound.keys():
+                raise OperatorError('Native uninstall requires a bound independently reconstructed impact')
+            impact_view(bound, operation_id=plan['operation_id'], plan_hash=bundle['plan_hash'], observed_at=plan['created_at'])
+            impact = self.observer.native_impact(observation, self.catalog, site_id=bound['site_id'], requested=bound['requested_addons'])
+            recomputed = prepare_current_image_uninstall(document, observation['sites'], snapshot,
+                impact=impact, targets=copy.deepcopy(bundle['operation_lock']['targets']),
+                operation_id=plan['operation_id'], created_at=plan['created_at'])
+            if data_digest(recomputed) != data_digest(bundle):
+                raise OperatorError('Independent uninstall impact/epoch reconstruction differs from proposed exact plan')
+            return state
         if plan['operation_type'] == 'install':
             validate_install_targets(document, observation['sites'], bundle['operation_lock']['targets'])
             expected = copy.deepcopy(state['release_lock'])

@@ -56,6 +56,14 @@ def prepare_document(document, catalog):
                'operation_id', 'created_at', 'backup_policy'}
     if not isinstance(request, dict) or not {'operation_type', 'requested', 'targets'} <= request.keys() or not request.keys() <= allowed:
         raise PlanningError('Unknown or missing operation request fields')
+    uninstall = request['operation_type'] == 'uninstall'
+    if uninstall and any(request.get(key) for key in ('requested', 'update', 'provider_choices', 'trust_changes')):
+        raise PlanningError('Current-image uninstall cannot change executable/provider/grant/trust selections')
+    remaining = {scoped_installation_key(item): item for item in state['installations']
+                 if item.get('state', 'installed') != 'not_installed'}
+    for item in request['targets']:
+        if item['action'] in ('uninstall', 'unregister', 'remove'):
+            remaining.pop(scoped_installation_key(item), None)
     locked = {'plugin:' + item['plugin_id']: {'version': item['version'], 'digest': item['digest']} for item in state['release_lock']['plugins']}
     locked.update({'python:' + canonicalize_name(item['name']): {'version': item['version'], 'digest': item['digest']} for item in state['release_lock']['python_solution']})
     # Removal changes executable inventory only after native uninstall/unregister.
@@ -78,7 +86,18 @@ def prepare_document(document, catalog):
             if key in choices:
                 raise PlanningError('Duplicate provider choice')
             choices[key] = item['provider']
-    for item in state['release_lock'].get('service_selection', []):
+    previous_selections = state['release_lock'].get('service_selection', [])
+    if uninstall:
+        # Match post-uninstall observation exactly: only concrete surviving DB
+        # bindings supply scoped choices. Packages remain image roots; an
+        # uninstalled consumer's abstract, unscoped solver choice is not a grant.
+        previous_selections = []
+        for binding in state.get('bindings', []):
+            consumer = remaining.get((binding['consumer_installation_id'], binding['workspace_id']))
+            provider = remaining.get((binding['provider_installation_id'], binding['workspace_id']))
+            if consumer and provider:
+                scoped_choices[(consumer['plugin_id'], binding['alias'], binding['site_id'], binding['workspace_id'])] = binding['provider_plugin_id']
+    for item in previous_selections:
         if item.get('scopes'):
             for site_id, workspace_id in item['scopes']:
                 scoped_choices.setdefault((item['consumer'], item['alias'], site_id, workspace_id), item['provider'])
@@ -121,7 +140,7 @@ def prepare_document(document, catalog):
             resolved = resolve_release(snapshot, document['python_metadata'], document['environment'], request['requested'],
                 locked=locked, update=request.get('update', []), provider_choices=choices, scoped_provider_choices=scoped_choices,
                 core_python=request.get('core_python', []), site_requirements=request.get('site_requirements'))
-    if request['operation_type'] in ('suspend', 'enable', 'uninstall', 'unregister'):
+    if request['operation_type'] in ('suspend', 'enable', 'unregister'):
         lock = state['release_lock']
     else:
         created_at = request.get('created_at')
@@ -135,6 +154,11 @@ def prepare_document(document, catalog):
         else:
             installations[scoped_installation_key(item)] = item
     bindings = request.get('bindings')
+    if uninstall:
+        expected = scoped_bindings(resolved, list(installations.values()), state.get('bindings', []))
+        if bindings is not None and sorted(bindings, key=lambda row: row['binding_id']) != sorted(expected, key=lambda row: row['binding_id']):
+            raise PlanningError('Uninstall bindings must be reconstructed from surviving scopes')
+        bindings = expected
     if bindings is None:
         bindings = scoped_bindings(resolved, list(installations.values()), state.get('bindings', []))
     bundle = prepare_plan(state, lock, resolved, request['targets'], bindings=bindings,

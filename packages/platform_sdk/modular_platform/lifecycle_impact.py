@@ -12,7 +12,7 @@ import hashlib
 import re
 import zipfile
 
-from .contracts import native_version, validate
+from .contracts import native_version, validate, validate_binding
 from .plans import data_digest
 from .resolution import PlanningError
 
@@ -147,7 +147,7 @@ def static_relations(sources):
     return {model: resolve(model, set()) for model in sorted(definitions)}
 
 
-def native_closure(requested, modules, descriptors):
+def native_closure(requested, modules, descriptors, required_consumers=()):
     """Compare the database dependency graph with verified native manifests."""
     if not requested or len(requested) > 100 or len(set(requested)) != len(requested):
         raise PlanningError('A nonempty unique bounded native nomination is required')
@@ -174,11 +174,12 @@ def native_closure(requested, modules, descriptors):
     result = set(requested)
     while True:
         downstream = {name for name, row in installed.items() if result.intersection(row['depends'])}
+        downstream.update(consumer for consumer, provider in required_consumers if provider in result)
         expanded = result | downstream
         if expanded == result:
             break
         result = expanded
-    if len(result) > 100 or not result <= packaged.keys():
+    if len(result) > 100 or not result <= packaged.keys() or not result <= installed.keys():
         raise PlanningError('Native closure includes unsupported core or non-package dependents')
     return sorted(result)
 
@@ -213,8 +214,33 @@ def inspect_native_impact(connection, *, site_id, requested, descriptors, source
             SELECT m.name,m.state,m.latest_version,COALESCE(array_agg(d.name ORDER BY d.name) FILTER (WHERE d.name IS NOT NULL),'{}')
             FROM ir_module_module m LEFT JOIN ir_module_module_dependency d ON d.module_id=m.id
             WHERE m.state IN ('installed','to install','to upgrade','to remove') GROUP BY m.name,m.state,m.latest_version ORDER BY m.name''')]
-        closure = native_closure(requested, modules, descriptors)
         by_addon = {d['manifest']['runtime']['addon_name']: d for d in descriptors if d['manifest']['runtime']['kind'] == 'native'}
+        by_plugin = {d['plugin_id']: d for d in descriptors}
+        installations = {public_id: (plugin, runtime) for public_id, plugin, runtime in _rows(cursor,
+            'SELECT public_id,plugin_id,runtime FROM mp_plugin_installation ORDER BY public_id')}
+        required_consumers = []
+        for (binding,) in _rows(cursor, 'SELECT descriptor FROM mp_service_binding ORDER BY public_id'):
+            validate('binding', binding)
+            consumer = installations.get(binding['consumer_installation_id'])
+            provider = installations.get(binding['provider_installation_id'])
+            if (binding['site_id'] != site_id or not consumer or not provider
+                    or provider[0] != binding['provider_plugin_id'] or consumer[0] not in by_plugin or provider[0] not in by_plugin):
+                raise PlanningError('Native impact has an unavailable service binding identity')
+            requirement = next((r for r in by_plugin[consumer[0]]['manifest']['services']['requires'] if r['alias'] == binding['alias']), None)
+            if requirement is None or requirement.get('optional', False) != binding['optional']:
+                raise PlanningError('Native impact binding differs from its verified requirement')
+            provided = next((p for p in by_plugin[provider[0]]['manifest']['services']['provides']
+                             if p['id'] == binding['service_id'] and p['api_version'] == binding['api_version']), None)
+            if provided is None:
+                raise PlanningError('Native impact has an unavailable service provider contract')
+            validate_binding(binding, requirement, {**provided, 'plugin_id': provider[0],
+                                                     'installation_id': binding['provider_installation_id']})
+            if not requirement.get('optional', False):
+                if consumer[1] != 'native' or provider[1] != 'native':
+                    raise PlanningError('External required consumers need the G6 lifecycle adapter')
+                required_consumers.append((by_plugin[consumer[0]]['manifest']['runtime']['addon_name'],
+                                           by_plugin[provider[0]]['manifest']['runtime']['addon_name']))
+        closure = native_closure(requested, modules, descriptors, required_consumers)
         plugins = []
         for addon in closure:
             descriptor = by_addon[addon]

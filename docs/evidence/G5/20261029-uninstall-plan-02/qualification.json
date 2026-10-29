@@ -1,0 +1,83 @@
+{
+  "result": "passed",
+  "scope": "uninstall_planning_and_independent_read_only_reconstruction_only",
+  "utc": "2026-10-29T00:54:53Z",
+  "git_base": "b13828aacf84c7e916664fc3588e14147935f2e3",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/plans.py": "bbedca5a05a87d0be4da7c6568e9cbbd9aff62d6d795af2e757ce88d76e8c965",
+    "packages/platform_sdk/modular_platform/planning_cli.py": "d0c0723f0eb4aab51b3950fd33cbd2ae4aeeb231d58d5b86a8e871a047a33aa6",
+    "packages/platform_sdk/modular_platform/uninstall_planning.py": "37873d163d7e438c4d470533fff704d54c87be3b60ab972aa415db8b9d7aa377",
+    "packages/platform_sdk/modular_platform/lifecycle_impact.py": "100886ec76d9578e1665023387b2b995d796f71b08494379588a83e862b2e941",
+    "packages/platform_sdk/modular_platform/lifecycle_observation.py": "35851c2893bd37d34e63cb47144621cc295ada7d3b206ffc5e8e91eaaa8a4ffa",
+    "packages/platform_sdk/modular_platform/deployment.py": "7ae41cf562282a988de5c9c055bf671f38c9c8fa04428c174dcca9664bfe8fc3",
+    "packages/platform_sdk/modular_platform/approval_validation.py": "693101f081f98bfd76b138aa020e787452a4bd1c63da1cd7387d41e0d2e3bcc3",
+    "tools/qualify_uninstall_plan.py": "330b5aeffa3baba34d046f51902ec27a7518e0dc9aa6dc9b59e14e03f662cf94",
+    "tests/test_uninstall_planning.py": "8e0d053ec96de97c499b7a327d9ea8ab3818a26721fd0ec19002dfe8de2a414d",
+    "tests/test_lifecycle_impact.py": "e887ed6856e72eb8623bea35257604709101c207556aab210d208ee1f9123b29",
+    "tests/test_plans.py": "dfd7822d3ec2ace1c2d1e099f9317d667c5244a712969d78daafb64e3253021a"
+  },
+  "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+  "project": "mp-r0-r1lifef99acae9d906",
+  "generation": 3,
+  "cases": [
+    {
+      "case": "labels",
+      "plan_hash": "sha256:f1cafe6df314b5813578e9c2e3d5ab417070c3a2d33fc620523ca9accc735bd4",
+      "operation_id": "11e16902-f429-43e9-b9b3-a35d1e807d65",
+      "requested_addons": [
+        "mp_example_notes_labels"
+      ],
+      "native_closure": [
+        "mp_example_notes_labels"
+      ],
+      "target_count": 2,
+      "surviving_bindings": 6,
+      "projected_generation": 4,
+      "same_executable_inventory": true,
+      "independent_reconstruction": true,
+      "post_binding_observation_matches": true,
+      "rehashed_tampering_rejected": [
+        "count_drift",
+        "old_epoch",
+        "source_change"
+      ]
+    },
+    {
+      "case": "notes",
+      "plan_hash": "sha256:b1b53a6ab86a0d1d9ba9991ff23ceac2cfd0bad7a732a7cfc4305d21feef63d2",
+      "operation_id": "274f4c2d-efca-4b0e-9c46-7fb681d96ad6",
+      "requested_addons": [
+        "mp_example_notes"
+      ],
+      "native_closure": [
+        "mp_example_canvas",
+        "mp_example_notes",
+        "mp_example_notes_labels"
+      ],
+      "target_count": 6,
+      "surviving_bindings": 0,
+      "projected_generation": 4,
+      "same_executable_inventory": true,
+      "independent_reconstruction": true,
+      "post_binding_observation_matches": true,
+      "rehashed_tampering_rejected": [
+        "count_drift",
+        "old_epoch",
+        "source_change"
+      ]
+    }
+  ],
+  "before_after_observation_digest": "sha256:67382f7e0493120d0685b3fa669c930154b9a7ec42cedd8029331248725e8239",
+  "before_after_business_digest": "sha256:4f87bd8d92eda9922514aa0c9218e8e7ab2f5d8c2f48497bb7c8e5229231f38a",
+  "before_after_schema_digest": "sha256:ed5082214faa5445e79519b7a9ff6c4ebc7de388abd79e935487ccc57a0fa5d6",
+  "protected_configs": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad",
+    ".local\\g5-lifecycle\\operator\\target.json": "64d462209de4f3435c968a98d634cd23006644844062640d99bcfd8171a913d5"
+  },
+  "application_request_count_unchanged": true,
+  "operator_request_approval_or_apply": false,
+  "runtime_activated": false,
+  "acceptance_credit": [],
+  "remaining": "Authenticated preview/confirmation, same-executor native child, tombstones/reinstall, separate artifact-removal image and destructive lifecycle qualification."
+}

@@ -34,18 +34,24 @@ def main():
     parser.add_argument('--assets-only',action='store_true',help='Qualify public-asset retention/preflight and affected maintenance/recovery boundaries')
     parser.add_argument('--manager-only',action='store_true',help='Qualify manager nominations, staged reconstruction and preserved feature/approval boundaries')
     parser.add_argument('--resolution-only',action='store_true',help='Qualify resolver/real CLI decisions and exact numeric parser/core correction without unrelated suites')
+    parser.add_argument('--uninstall-only',action='store_true',help='Qualify native uninstall impact/epoch/reconstruction and affected install/staging/contract consumers')
     args = parser.parse_args()
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'docs/evidence/G5') or output.exists():
         raise ValueError('Fresh G5 evidence directory required')
     output.mkdir(parents=True)
-    if sum((args.recovery_only,args.staging_only,args.identity_only,args.startup_only,args.assets_only,args.manager_only,args.resolution_only))>1:raise ValueError('Choose one focused qualification scope')
+    if sum((args.recovery_only,args.staging_only,args.identity_only,args.startup_only,args.assets_only,args.manager_only,args.resolution_only,args.uninstall_only))>1:raise ValueError('Choose one focused qualification scope')
     patterns = ['test_manager_planning.py','test_release_staging.py','test_lifecycle_planning.py','test_plans.py','test_feature_executor.py','test_operation_contracts.py','test_operator_store.py'] if args.manager_only else ['test_asset_retention.py','test_recovery.py','test_workers.py','test_release_staging.py','test_platform_deploy.py','test_core_upgrade.py','test_operation_contracts.py','test_client_release.py'] if args.assets_only else ['test_start_worker.py','test_workers.py','test_release_identity.py','test_release_staging.py'] if args.startup_only else ['test_release_identity.py','test_release_staging.py','test_workers.py','test_artifacts.py'] if args.identity_only else ['test_recovery.py'] if args.recovery_only else (
         ['test_release_staging.py','test_platform_deploy.py','test_core_upgrade.py','test_lifecycle_planning.py','test_resolution.py','test_plans.py','test_planning_cli.py','test_operation_contracts.py','test_contracts.py']
         if args.staging_only else PATTERNS + (['test_operator_os.py', 'test_operator_store.py'] if args.operator else []))
     if args.resolution_only:
         patterns=['test_resolution.py','test_resolver_cli_matrix.py','test_planning_cli.py','test_native_versions.py','test_core_upgrade.py','test_platform_deploy.py','test_release_staging.py','test_plans.py']
-    if args.staging_only or args.identity_only or args.startup_only or args.assets_only or args.manager_only or args.resolution_only:
+    if args.uninstall_only:
+        patterns=['test_uninstall_planning.py','test_lifecycle_impact.py','test_lifecycle_planning.py',
+                  'test_manager_planning.py','test_release_staging.py','test_core_upgrade.py','test_platform_deploy.py',
+                  'test_plans.py','test_planning_cli.py','test_resolution.py','test_contracts.py',
+                  'test_operation_contracts.py','test_manager_contracts.py','test_lifecycle_contracts.py']
+    if args.staging_only or args.identity_only or args.startup_only or args.assets_only or args.manager_only or args.resolution_only or args.uninstall_only:
         host_runner="import unittest; suite=unittest.TestSuite(unittest.defaultTestLoader.discover('tests',pattern=p) for p in "+repr(patterns)+"); raise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful())"
         host=run([sys.executable,'-c',host_runner])
     else:host = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_recovery.py' if args.recovery_only else 'test_*.py', '-v'])
@@ -104,7 +110,7 @@ raise SystemExit(0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccess
     # the host; Linux exercises affected Python consumers/operation DTOs here.
     linux_patterns=[pattern for pattern in patterns if pattern!='test_contracts.py']
     runner = runner.replace('PATTERN_INPUT', repr(linux_patterns))
-    named=['--name','mp-g5-resolution-'+output.name.lower(),'--label','com.modular.disposable=mp-g5-source-qualification'] if args.resolution_only else []
+    named=['--name',('mp-g5-uninstall-source-' if args.uninstall_only else 'mp-g5-resolution-')+output.name.lower(),'--label','com.modular.disposable=mp-g5-source-qualification'] if args.resolution_only or args.uninstall_only else []
     linux = run(['docker', 'run', '--rm', '-i', *named, '--network', 'none', '--read-only',
         '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--pids-limit', '128',
         '--memory', '512m', '--cpus', '2', '--user', '10001:10001',
@@ -126,6 +132,9 @@ raise SystemExit(0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccess
             'Linux test streams the locally hash-locked resolver including license, verified against wheel RECORD, into private tmpfs.',
             'UI queue/apply/status integration and complete new-image lifecycle/recovery qualification remain pending.',
             'Dependency decisions use static metadata; no network/build/import of plugin code during planning.']}
+    if args.uninstall_only:
+        report['item']='G5-X05b-native-uninstall-planning'
+        report['limitations'][0]='This qualifies source planning/impact/independent reconstruction and affected consumers, not native uninstall execution or G5 exit.'
     (output / 'planning-core.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps({'result': result, 'evidence': str(output), 'host_exit': host['exit_code'], 'linux_exit': linux['exit_code']}))
     return 0 if result == 'passed' else 1

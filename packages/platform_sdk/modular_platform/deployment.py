@@ -157,3 +157,7 @@ class DockerObserver:
     def state(self, observation, catalog):
         from .projection import project_deployment
         return project_deployment(self.config, observation, catalog)
+
+    def native_impact(self, observation, catalog, *, site_id, requested):
+        from .lifecycle_observation import observe_native_impact
+        return observe_native_impact(self, observation, catalog, site_id=site_id, requested=requested)

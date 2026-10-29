@@ -190,6 +190,8 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
                 raise PlanningError('Installation already exists at this exact scope')
         elif not previous or any(previous[key] != target[key] for key in ('site_id', 'workspace_id', 'plugin_id')):
             raise PlanningError('Target installation identity or scope changed')
+        if target['action'] == 'uninstall' and previous.get('state', 'installed') != 'installed':
+            raise PlanningError('Native uninstall requires an installed site target')
         plugin = target['plugin_id']
         descriptor = new.get(plugin) if target['action'] in ('install', 'upgrade', 'enable', 'suspend','deploy') else None
         old_entry = old.get(plugin)
@@ -238,6 +240,8 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
                 raise PlanningError('Native uninstall must target every workspace installation in its site database')
         if target['action'] in ('suspend', 'uninstall', 'unregister'):
             for dependent in state['installations']:
+                if dependent.get('state', 'installed') == 'not_installed':
+                    continue
                 if scoped_installation_key(dependent) in seen or dependent['site_id'] != target['site_id'] or dependent['workspace_id'] != target['workspace_id']:
                     continue
                 if target['action'] == 'suspend' and dependent.get('feature_state') == 'suspended':
@@ -266,11 +270,21 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
                     expected_image = new[plugin]['manifest']['external_service']['expected_image'].split('@', 1)[1]
                     if health.get('state') != 'healthy' or health.get('expected_image_digest') != expected_image:
                         raise PlanningError('Required external provider needs independently verified current health/image identity')
-    if operation_type in ('suspend', 'enable', 'uninstall', 'unregister') and data_digest(target_release) != state['release_digest']:
+    if operation_type in ('suspend', 'enable', 'unregister') and data_digest(target_release) != state['release_digest']:
         raise PlanningError('Feature/database-only operation must preserve the executable release')
+    if operation_type == 'uninstall':
+        expected_release = copy.deepcopy(state['release_lock'])
+        expected_release.update(generation=expected_release['generation'] + 1, created_at=created_at,
+                                service_selection=copy.deepcopy(solution['bindings']))
+        scopes = {(row['plugin_id'], row['workspace_id']) for row in clean_targets}
+        revocations = {(row.get('plugin_id'), row.get('workspace_id'), row.get('capability')) for row in permission_changes}
+        if (target_release != expected_release or trust_changes or len(revocations) != len(permission_changes)
+                or any(set(row) != {'plugin_id', 'workspace_id', 'capability', 'action'} or row['action'] != 'revoke'
+                       or (row['plugin_id'], row['workspace_id']) not in scopes for row in permission_changes)):
+            raise PlanningError('Native uninstall requires a new epoch, unchanged executable identities and surviving service selections')
     ordered_targets = sorted(clean_targets, key=lambda item: (item['site_id'], item['workspace_id'], item['plugin_id'], item['installation_id']))
     bindings, endpoints = copy.deepcopy(list(bindings)), copy.deepcopy(list(endpoints))
-    target_installations = dict(installed)
+    target_installations = {key: value for key, value in installed.items() if value.get('state', 'installed') != 'not_installed'}
     for target in clean_targets:
         if target['action'] in ('uninstall', 'unregister', 'remove'):
             target_installations.pop(scoped_installation_key(target), None)
@@ -376,6 +390,8 @@ def _display(plan, operation_lock):
         display['platform_source_diff']=copy.deepcopy(operation_lock['platform_source_diff'])
     if 'native_core_changes' in operation_lock:
         display['native_core_changes']=copy.deepcopy(operation_lock['native_core_changes'])
+    if 'native_uninstall_impact' in operation_lock:
+        display['native_uninstall_impact_digest'] = data_digest(operation_lock['native_uninstall_impact'])
     return display
 
 

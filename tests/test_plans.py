@@ -168,12 +168,18 @@ class Plans(unittest.TestCase):
         resolved = solution(catalog)
         with self.assertRaisesRegex(PlanningError, 'every workspace'):
             prepare_plan(state, state['release_lock'], resolved, [target(action='uninstall')], operation_type='uninstall')
-        bundle = prepare_plan(state, state['release_lock'], resolved,
+        release = release_lock(resolved, PROVENANCE, generation=2, created_at=STAMP)
+        with self.assertRaisesRegex(PlanningError, 'new epoch'):
+            prepare_plan(state, state['release_lock'], resolved,
+                [target(action='uninstall'), target(workspace=31, action='uninstall')],
+                operation_type='uninstall', created_at=STAMP)
+        bundle = prepare_plan(state, release, resolved,
             [target(action='uninstall'), target(workspace=31, action='uninstall')],
             operation_type='uninstall', created_at=STAMP)
         self.assertTrue(bundle['plan']['destructive'])
         self.assertTrue(bundle['plan']['backup']['required'])
-        self.assertEqual(bundle['plan']['target_release_digest'], state['release_digest'])
+        self.assertNotEqual(bundle['plan']['target_release_digest'], state['release_digest'])
+        self.assertEqual(bundle['operation_lock']['release']['plugins'], state['release_lock']['plugins'])
         self.assertTrue(check_bundle(bundle, state))
 
     def test_enable_requires_scoped_provider_or_explicit_enable_cascade(self):

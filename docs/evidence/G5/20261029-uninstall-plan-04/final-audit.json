@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T01:07:36.118081+00:00",
+  "source_hashes_match": true,
+  "host_tests": 122,
+  "linux_tests": 102,
+  "frozen_files": 87,
+  "public_files_scanned": 39,
+  "private_values_compared": 12,
+  "secret_scan": "no private value found",
+  "acceptance_passed": 68,
+  "g5_passed": 27,
+  "rough_percent": 77,
+  "qualification_processes": "47094/76140/46901/17197/79465/23563 terminal",
+  "native_operation_started": false,
+  "runtime_activated": false
+}
