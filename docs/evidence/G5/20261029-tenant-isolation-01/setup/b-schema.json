@@ -1,0 +1,227 @@
+{
+  "native": [
+    [
+      "mp_example_canvas",
+      "installed",
+      "19.0.0.1.3"
+    ],
+    [
+      "mp_example_notes",
+      "installed",
+      "19.0.0.2.3"
+    ],
+    [
+      "mp_example_notes_labels",
+      "uninstalled",
+      null
+    ]
+  ],
+  "columns": [
+    [
+      "mp_example_canvas_board",
+      "id",
+      "integer",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "workspace_id",
+      "integer",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "revision",
+      "integer",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "create_uid",
+      "integer",
+      false
+    ],
+    [
+      "mp_example_canvas_board",
+      "write_uid",
+      "integer",
+      false
+    ],
+    [
+      "mp_example_canvas_board",
+      "public_id",
+      "character varying",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "name",
+      "character varying(100)",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "cards",
+      "jsonb",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "create_date",
+      "timestamp without time zone",
+      false
+    ],
+    [
+      "mp_example_canvas_board",
+      "write_date",
+      "timestamp without time zone",
+      false
+    ],
+    [
+      "mp_example_note",
+      "id",
+      "integer",
+      true
+    ],
+    [
+      "mp_example_note",
+      "workspace_id",
+      "integer",
+      true
+    ],
+    [
+      "mp_example_note",
+      "author_id",
+      "integer",
+      true
+    ],
+    [
+      "mp_example_note",
+      "revision",
+      "integer",
+      true
+    ],
+    [
+      "mp_example_note",
+      "create_uid",
+      "integer",
+      false
+    ],
+    [
+      "mp_example_note",
+      "write_uid",
+      "integer",
+      false
+    ],
+    [
+      "mp_example_note",
+      "public_id",
+      "character varying",
+      true
+    ],
+    [
+      "mp_example_note",
+      "title",
+      "character varying(200)",
+      true
+    ],
+    [
+      "mp_example_note",
+      "body",
+      "text",
+      false
+    ],
+    [
+      "mp_example_note",
+      "create_date",
+      "timestamp without time zone",
+      false
+    ],
+    [
+      "mp_example_note",
+      "write_date",
+      "timestamp without time zone",
+      false
+    ]
+  ],
+  "constraints": [
+    [
+      "mp_example_canvas_board",
+      "mp_example_canvas_board_create_uid_fkey",
+      "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "mp_example_canvas_board_pkey",
+      "PRIMARY KEY (id)",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "mp_example_canvas_board_uuid_unique",
+      "UNIQUE (public_id)",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "mp_example_canvas_board_workspace_board",
+      "UNIQUE (workspace_id)",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "mp_example_canvas_board_workspace_id_fkey",
+      "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT",
+      true
+    ],
+    [
+      "mp_example_canvas_board",
+      "mp_example_canvas_board_write_uid_fkey",
+      "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL",
+      true
+    ],
+    [
+      "mp_example_note",
+      "mp_example_note_author_id_fkey",
+      "FOREIGN KEY (author_id) REFERENCES mp_principal(id) ON DELETE RESTRICT",
+      true
+    ],
+    [
+      "mp_example_note",
+      "mp_example_note_create_uid_fkey",
+      "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL",
+      true
+    ],
+    [
+      "mp_example_note",
+      "mp_example_note_pkey",
+      "PRIMARY KEY (id)",
+      true
+    ],
+    [
+      "mp_example_note",
+      "mp_example_note_public_unique",
+      "UNIQUE (public_id)",
+      true
+    ],
+    [
+      "mp_example_note",
+      "mp_example_note_revision_positive",
+      "CHECK ((revision > 0))",
+      true
+    ],
+    [
+      "mp_example_note",
+      "mp_example_note_workspace_id_fkey",
+      "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT",
+      true
+    ],
+    [
+      "mp_example_note",
+      "mp_example_note_write_uid_fkey",
+      "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL",
+      true
+    ]
+  ]
+}

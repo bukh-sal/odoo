@@ -1,0 +1,39 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T08:58:43.312410+00:00",
+  "incompatible_actual_native_versions": {
+    "a": "19.0.0.2.2",
+    "c": "19.0.0.2.1"
+  },
+  "proposal_rejection": "Database installation metadata differs from verified artifact",
+  "complete_database_inventory_verified": true,
+  "omitted_database_rejection": "Unknown sharing database or nonempty maintenance schema blocks artifact removal",
+  "cases": [
+    {
+      "case": "original-pin",
+      "container_id": "7a8f82f3df430b3a12944ec61dfcae831e7c1c8f40657ca1e8270d3d56b18a39",
+      "exit_code": 1,
+      "reason": "Database release inventory differs",
+      "rejected_before_native_import": true,
+      "retained_stopped_disconnected": true,
+      "business_schema_exact": true
+    },
+    {
+      "case": "matching-pin-still-incompatible",
+      "container_id": "6a3b5ba16ae7583cf04417ee80a62af3ce4a35cdf0a2a87c22c7b9b323876786",
+      "exit_code": 1,
+      "reason": "Native module state/version differs",
+      "rejected_before_native_import": true,
+      "retained_stopped_disconnected": true,
+      "business_schema_exact": true
+    }
+  ],
+  "only_test_pin_temporarily_changed_restored": true,
+  "no_native_version_rows_fabricated": true,
+  "source_main_unchanged": true,
+  "limits": [
+    "Copied genuine old release DB, not an actual upgrade or new installation.",
+    "One inventory-pin substitution isolates native-version rejection; never represented as a valid published release.",
+    "Current R1 requires separate deployments for incompatible native versions; no multi-version import isolation is claimed."
+  ]
+}

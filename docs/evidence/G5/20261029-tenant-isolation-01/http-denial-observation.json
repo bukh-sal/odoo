@@ -1,0 +1,7 @@
+{
+  "result": "actual_wrong_DB_denial_envelope",
+  "error_code": 0,
+  "exception_name": "odoo.exceptions.AccessError",
+  "message": "Operation denied or invalid. Reference d635ade9-e9a7-4847-9ed4-24605815d94e",
+  "top_message": "Operation denied or invalid"
+}

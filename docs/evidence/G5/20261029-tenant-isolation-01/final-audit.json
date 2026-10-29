@@ -1,0 +1,159 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T09:02:49.545518+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "full_state_business_configuration_exact": true
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "full_state_business_configuration_exact": true
+    },
+    {
+      "target": "lifecycle",
+      "generation": 18,
+      "full_state_business_schema_files_configuration_exact": true,
+      "operation_states": [
+        [
+          "completed",
+          17
+        ],
+        [
+          "failed_before_mutation",
+          3
+        ],
+        [
+          "revoked",
+          4
+        ]
+      ]
+    },
+    {
+      "target": "dispatch",
+      "generation": 20,
+      "full_state_business_schema_files_configuration_exact": true,
+      "operation_states": [
+        [
+          "revoked",
+          1
+        ]
+      ]
+    }
+  ],
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_start.py": "ccc71afcb082184567c45472ed41cd0a14aee6c6a7c1894c953fa0601002221b",
+    "packages/platform_sdk/modular_platform/deployment.py": "f8c9c65deb1567870152181fd3c407081a3da13fa3d3a8c005767b9d9e8e0885",
+    "packages/platform_sdk/modular_platform/projection.py": "7c65a08791013cd954575bd026e492a22f9e25e7ee917e09e3dcd99adce16075",
+    "packages/platform_sdk/modular_platform/artifact_removal.py": "05867d76251ffbaa692c6e78cfdc5b92c51c7c30337b35caa97d00aa76ddf2ba",
+    "tools/start_worker.py": "b0b9ef1f6c3723f5e7441c4a1f627de87574ecc5f345b20951bdf27b72443edd",
+    "platform_addons/mp_identity/scopes.py": "9fc8a82f40bfd532af856e40bbceb5296a7d37139296f4bb3181ca9794b5046b",
+    "platform_addons/mp_identity/models/scoped.py": "3a149bc7c577a681ded521a3989c9f2d7541390cc8851bf7040dbea1a60da44e",
+    "platform_addons/mp_core/dispatch.py": "a0b8e44e2379e8f49a333601e7b25254ad06a6794687856d0a0f04e9332f225c",
+    "platform_addons/mp_example_notes/models.py": "5eaa7a35f0e947ff4937c327d0ba463f5926333d0daff4671a5f253298ae96b7",
+    "platform_addons/mp_example_notes_labels/models.py": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+    "odoo/orm/registry.py": "74986e702e6d2cb6c1cde103ea5a74aef0dac936e51967c83f3c9dd13e1d543b",
+    "odoo/http.py": "9d7abdb09e75f899c4492a85f3287a0535988a66cd0266e411d400fb976ffcb9",
+    "addons/web/controllers/session.py": "0e72f36d6bbf75654cc24946d8dc4227d7089f042b1b5750f71dbb77134934d8"
+  },
+  "runtime_image": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "runtime_inventory_digest": "sha256:f6c89902adb4a7e5038906d20bc2387f4743c5ac436c6594a9b3fed1ddccbb37",
+  "prior_bootstrap_tests_source_still_current": true,
+  "frozen_files": 87,
+  "owned_databases": [
+    {
+      "database": "mp_disposable_r0_r1_ten_a7171d49d087_a",
+      "volume": "mp-r0-r1tena7171d49d087_probe_a",
+      "site_id": "29663efa-0faf-41d6-9d02-b6dd84fb85e7",
+      "source_database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983",
+      "source_volume": "mp-r0-r1lifef99acae9d906_filestore",
+      "labels_installed": true
+    },
+    {
+      "database": "mp_disposable_r0_r1_ten_a7171d49d087_b",
+      "volume": "mp-r0-r1tena7171d49d087_probe_b",
+      "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+      "source_database": "mp_disposable_r0_r1_wf_cf2560590d5d_removed",
+      "source_volume": "mp-g5-worker-fence-cf2560590d5d-removed",
+      "labels_installed": false
+    },
+    {
+      "database": "mp_disposable_r0_r1_ten_a7171d49d087_c",
+      "volume": "mp-r0-r1tena7171d49d087_probe_c",
+      "source_database": "mp_disposable_r0_r1_restore_9c577916f75c4e06ae8ed62444fcca48",
+      "site_id": "5b35a39c-2c92-4a98-9ec0-82a2fe9fba5e",
+      "labels_installed": true,
+      "source_image": "sha256:2c7eeda91f213aea51091f1c7a2523a04c3fb51b2c30f4dd12d292da55544383",
+      "source_inventory": "sha256:055c5649af7e46103881cfd816dece56ff4f11cd481c7ab0c6255de2f99061c9"
+    }
+  ],
+  "business_schema_exact_all_copies": true,
+  "removed_source_copy_exact": true,
+  "containers": [
+    {
+      "purpose": "transport-empty-stdin-excluded",
+      "container_id": "46a2ef922af7464d8d981feab4a8144c13be6d10db48ac0319ca4f29af9ba952",
+      "exit_code": 0,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "namespace-bootstrap-excluded",
+      "container_id": "2151d3dfa49e33d12cd5f97751defedb71c01475480b55b91ce93ab487a102ff",
+      "exit_code": 1,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "raw-SQL-before-ORM-flush-excluded",
+      "container_id": "4e8baf79d85ecb185ef2a88e9cdb02cf5b6b72a63b6815752280f09ec16dfba1",
+      "exit_code": 1,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "registry-ab",
+      "container_id": "6e75fd2d3ed5364dbc544339d8f416791dee0b133033a7eac183261e0442f1cc",
+      "exit_code": 0,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "registry-ba",
+      "container_id": "ee9863d91999e758fc59fa29fdb90b1be267ef93baadcb01dfb43e80e51e68cf",
+      "exit_code": 0,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "http-a",
+      "container_id": "4195aef31d48095c4a57182982b9f0927e836ae5e413fcaedd35fb890f2fab9a",
+      "exit_code": 0,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "http-b",
+      "container_id": "7f6c0927ddc633787a490db3d741e8a920f2b6a42ac69838c6e107ff2dc143ab",
+      "exit_code": 0,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "original-pin",
+      "container_id": "7a8f82f3df430b3a12944ec61dfcae831e7c1c8f40657ca1e8270d3d56b18a39",
+      "exit_code": 1,
+      "stopped_disconnected": true
+    },
+    {
+      "purpose": "matching-pin-still-incompatible",
+      "container_id": "6a3b5ba16ae7583cf04417ee80a62af3ce4a35cdf0a2a87c22c7b9b323876786",
+      "exit_code": 1,
+      "stopped_disconnected": true
+    }
+  ],
+  "only_owned_DB_server_still_connected": true,
+  "public_ports_none": true,
+  "public_files_checked": 37,
+  "known_private_values_checked": 7,
+  "limits": [
+    "Bounded evidence scan, not SEC03 release qualification.",
+    "No production source changes or new runtime image; actual runtime bytes equal current qualifying host paths.",
+    "Failed empty-stdin, namespace-init and raw-SQL-before-flush harness attempts are retained/excluded, not counted as passes."
+  ]
+}

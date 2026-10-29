@@ -1,0 +1,46 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T09:05:15.155587+00:00",
+  "work_item": "G5-X07",
+  "acceptance": [
+    "TEN-01",
+    "TEN-02"
+  ],
+  "spec_sections": [
+    "5.3",
+    "11.1",
+    "12.1",
+    "25.3"
+  ],
+  "host_base_commit": "0adcb936e20aa2f93036ae137e87f41c2f1de9d3",
+  "runtime_image": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "source": "final-audit.json",
+  "checks": {
+    "actual_registries": "registry-qualification.json",
+    "default_worker_HTTP": "http-qualification.json",
+    "genuine_native_version_refusal": "compatibility-qualification.json",
+    "protected_source_and_targets": "final-audit.json"
+  },
+  "actual_registry_import_orders": 2,
+  "actual_concurrent_reads": 64,
+  "default_HTTP_workers": 2,
+  "incompatible_startup_refusals": 2,
+  "frozen_files": 87,
+  "production_source_changed": false,
+  "remaining_G5_acceptance": [
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEC-07",
+    "SEC-08",
+    "OPS-02",
+    "OPS-03"
+  ],
+  "limits": [
+    "R1 remains fixed-site by default; compatible multi-registry process is a qualification harness, not a new tenant UI.",
+    "No same-process isolation for incompatible native code; separate deployments are required.",
+    "Synthetic title/site identity changes affect only explicitly owned disposable copies.",
+    "Actual native registry loads can update native caches/signals; exact business/schema preservation is verified.",
+    "Prior source tests reused only after exact hash validation; no new test-count credit."
+  ]
+}

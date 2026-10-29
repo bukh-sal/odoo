@@ -1,0 +1,11 @@
+{
+  "result": "Odoo_namespace_initialization_corrected",
+  "failure": "import odoo alone exposes no tools attribute on this upstream namespace package",
+  "evidence": "Inspected odoo/init.py, cli/command.py and modules/module.py before selecting proper odoo.init/config.parse_config/initialize_sys_path sequence",
+  "guards_passed_before_failure": true,
+  "no_registry_loaded": true,
+  "container_id": "2151d3dfa49e33d12cd5f97751defedb71c01475480b55b91ce93ab487a102ff",
+  "retained_stopped_disconnected": true,
+  "business_schema_exact": true,
+  "original_not_restarted": true
+}

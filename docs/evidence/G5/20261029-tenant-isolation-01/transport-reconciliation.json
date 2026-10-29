@@ -1,0 +1,10 @@
+{
+  "result": "initial_empty_stdin_container_excluded",
+  "diagnosis": "docker create lacked -i so start -a -i supplied no code; exit0/empty stdout+stderr, no native import or checks executed",
+  "observed_OpenStdin": false,
+  "original_container": "46a2ef922af7464d8d981feab4a8144c13be6d10db48ac0319ca4f29af9ba952",
+  "retained_stopped_disconnected": true,
+  "business_schema_exact": true,
+  "correction": "New distinct qualification containers keep stdin open via docker create -i; originals not restarted",
+  "database_recreated": false
+}

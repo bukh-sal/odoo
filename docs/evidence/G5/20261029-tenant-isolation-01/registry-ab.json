@@ -1,0 +1,33 @@
+{
+  "result": "passed",
+  "order": [
+    "a",
+    "b"
+  ],
+  "checks": [
+    "preimport_guard_a",
+    "preimport_guard_b",
+    "distinct_registry_and_model_classes",
+    "extension_import_does_not_leak_to_uninstalled_registry",
+    "alternating_colliding_record_ids_and_config_cache",
+    "32_concurrent_cross_database_reads",
+    "independent_ORM_cache_and_CAS_transactions",
+    "foreign_typed_scope_denied_both_directions",
+    "foreign_site_service_frame_denied",
+    "writes_rolled_back"
+  ],
+  "concurrent_reads": 32,
+  "same_process": true,
+  "registry_class_ids": {
+    "a": 139657882699872,
+    "b": 139657884729472
+  },
+  "native_extension_imported": true,
+  "labels_field_a": true,
+  "labels_field_b": false,
+  "all_test_writes_rolled_back": true,
+  "container_id": "6e75fd2d3ed5364dbc544339d8f416791dee0b133033a7eac183261e0442f1cc",
+  "inside_source_sha256": "40fb1894fca1003b37320b80c0a76c7a804e75f5526b65ceb9416dfdb80a5ec1",
+  "retained_stopped_disconnected": true,
+  "no_public_port": true
+}

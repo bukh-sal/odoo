@@ -1,0 +1,10 @@
+{
+  "result": "raw_SQL_probe_requires_ORM_flush",
+  "failure": "Two native registries, extension field isolation, alternating reads and32threads passed; ORM cache reflected CAS writes but raw A SQL was queried before ORM deferred flush",
+  "source_inspected": "Odoo Environment/cache and Note.write; explicit flush_recordset before raw SQL assertion",
+  "writes_rolled_back_on_failure": true,
+  "business_schema_exact": true,
+  "container_id": "4e8baf79d85ecb185ef2a88e9cdb02cf5b6b72a63b6815752280f09ec16dfba1",
+  "retained_stopped_disconnected": true,
+  "production_code_changed": false
+}

@@ -1,0 +1,10 @@
+{
+  "result": "HTTP_wrapper_adjusted_to_existing_security_contract",
+  "initial_filename": "http.py shadowed the standard-library package; import failed before any worker action; renamed http_probe.py",
+  "first_runtime_assertion": "Expected raw Database not found message; existing redaction correctly returned AccessError and a reference without that raw text",
+  "second_runtime_assertion": "Conflicting X-Odoo-Database with authenticated session is upstream HTTP403 HTML, not JSON or a silent ignored header; inspected odoo/http.py::_get_session_and_dbname",
+  "correction": "Require exact AccessError denial and exact HTTP403; retain own session, native RPC and no cross-site data",
+  "same_existing_A_worker_continued": true,
+  "no_worker_recreated": true,
+  "no_native_maintenance_or_schema_change": true
+}

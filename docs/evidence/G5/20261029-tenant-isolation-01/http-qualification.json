@@ -1,0 +1,48 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T08:57:09.349682+00:00",
+  "cases": [
+    {
+      "result": "passed",
+      "case": "a",
+      "database": "mp_disposable_r0_r1_ten_a7171d49d087_a",
+      "checks": [
+        "own_database_authentication",
+        "native_Odoo_reads_only_selected_database",
+        "explicit_other_database_authentication_denied_by_filter",
+        "foreign_database_header_with_session_refused_HTTP403",
+        "foreign_db_query_cannot_switch_platform_site"
+      ],
+      "native_note_count": 2,
+      "no_public_port": true,
+      "container_id": "4195aef31d48095c4a57182982b9f0927e836ae5e413fcaedd35fb890f2fab9a",
+      "source_sha256": "35e5f76e9545cef34cad148aca719d656555122ed1354422d2a91eb71b5e5a55",
+      "default_guarded_entrypoint": true,
+      "retained_stopped_disconnected": true
+    },
+    {
+      "result": "passed",
+      "case": "b",
+      "database": "mp_disposable_r0_r1_ten_a7171d49d087_b",
+      "checks": [
+        "other_site_session_cookie_not_authenticated",
+        "own_database_authentication",
+        "native_Odoo_reads_only_selected_database",
+        "explicit_other_database_authentication_denied_by_filter",
+        "foreign_database_header_with_session_refused_HTTP403",
+        "foreign_db_query_cannot_switch_platform_site"
+      ],
+      "native_note_count": 2,
+      "no_public_port": true,
+      "container_id": "7f6c0927ddc633787a490db3d741e8a920f2b6a42ac69838c6e107ff2dc143ab",
+      "source_sha256": "35e5f76e9545cef34cad148aca719d656555122ed1354422d2a91eb71b5e5a55",
+      "default_guarded_entrypoint": true,
+      "retained_stopped_disconnected": true
+    }
+  ],
+  "business_schema_exact": true,
+  "limits": [
+    "Internal HTTP against default fixed-site workers; no public tenant selector or multi-site deployment feature.",
+    "Copied logical actor/workspace/object IDs intentionally collide; each copied site identity and session secret differs."
+  ]
+}

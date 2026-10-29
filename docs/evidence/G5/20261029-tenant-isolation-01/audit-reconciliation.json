@@ -1,0 +1,7 @@
+{
+  "result": "image_bootstrap_identity_probe_corrected",
+  "failure": "Inventory omits image-default tools/start_worker.py, which Dockerfile adds as an immutable entrypoint",
+  "completed_checks": "Four protected deployments exact, all three copies exact, removed-source exact, nine test containers stopped/disconnected, no public ports",
+  "correction": "Compare13 relevant host/runtime source paths; for fixed bootstrap helper read SHA256 from exact immutable image in no-network/no-mount container",
+  "runtime_or_native_checks_repeated": false
+}

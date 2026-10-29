@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "case": "a",
+  "database": "mp_disposable_r0_r1_ten_a7171d49d087_a",
+  "checks": [
+    "own_database_authentication",
+    "native_Odoo_reads_only_selected_database",
+    "explicit_other_database_authentication_denied_by_filter",
+    "foreign_database_header_with_session_refused_HTTP403",
+    "foreign_db_query_cannot_switch_platform_site"
+  ],
+  "native_note_count": 2,
+  "no_public_port": true,
+  "container_id": "4195aef31d48095c4a57182982b9f0927e836ae5e413fcaedd35fb890f2fab9a",
+  "source_sha256": "35e5f76e9545cef34cad148aca719d656555122ed1354422d2a91eb71b5e5a55",
+  "default_guarded_entrypoint": true,
+  "retained_stopped_disconnected": true
+}

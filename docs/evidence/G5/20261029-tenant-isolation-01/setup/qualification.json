@@ -1,0 +1,36 @@
+{
+  "result": "passed",
+  "project": "mp-r0-r1tena7171d49d087",
+  "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "inventory_digest": "sha256:f6c89902adb4a7e5038906d20bc2387f4743c5ac436c6594a9b3fed1ddccbb37",
+  "cases": {
+    "a": {
+      "database": "mp_disposable_r0_r1_ten_a7171d49d087_a",
+      "volume": "mp-r0-r1tena7171d49d087_probe_a",
+      "site_id": "29663efa-0faf-41d6-9d02-b6dd84fb85e7",
+      "source_database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983",
+      "source_volume": "mp-r0-r1lifef99acae9d906_filestore",
+      "labels_installed": true
+    },
+    "b": {
+      "database": "mp_disposable_r0_r1_ten_a7171d49d087_b",
+      "volume": "mp-r0-r1tena7171d49d087_probe_b",
+      "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+      "source_database": "mp_disposable_r0_r1_wf_cf2560590d5d_removed",
+      "source_volume": "mp-g5-worker-fence-cf2560590d5d-removed",
+      "labels_installed": false
+    }
+  },
+  "record_id": {
+    "id": 1,
+    "revision": 2,
+    "public_id": "db7c55ba-3cb8-4328-9e47-e1d6b0caf852"
+  },
+  "source_targets_unchanged": true,
+  "no_public_ports": true,
+  "private_credentials_rotated": true,
+  "limits": [
+    "Qualification copies, not deployment of a multi-site product.",
+    "Owned test copies have new site/deployment IDs and title sentinels; all actor/workspace/object IDs intentionally collide."
+  ]
+}

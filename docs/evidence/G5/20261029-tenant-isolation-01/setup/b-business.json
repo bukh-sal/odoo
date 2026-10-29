@@ -1,0 +1,402 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "body": "Synthetic lifecycle data; retain identity and revision.",
+      "title": "TEN_B_VISIBLE",
+      "revision": 2,
+      "author_id": 2,
+      "public_id": "db7c55ba-3cb8-4328-9e47-e1d6b0caf852",
+      "write_uid": 6,
+      "create_uid": 6,
+      "write_date": "2026-10-28T23:50:27.001694",
+      "create_date": "2026-10-28T23:50:26.96563",
+      "workspace_id": 1
+    },
+    {
+      "id": 2,
+      "body": "Synthetic lifecycle data; retain identity and revision.",
+      "title": "Lifecycle A/1",
+      "revision": 1,
+      "author_id": 2,
+      "public_id": "f49af924-64e4-4d04-9ba3-b42653fe14b5",
+      "write_uid": 6,
+      "create_uid": 6,
+      "write_date": "2026-10-28T23:50:27.089449",
+      "create_date": "2026-10-28T23:50:27.089449",
+      "workspace_id": 1
+    },
+    {
+      "id": 3,
+      "body": "Synthetic lifecycle data; retain identity and revision.",
+      "title": "Lifecycle B/0",
+      "revision": 2,
+      "author_id": 3,
+      "public_id": "f8e501d4-9ed5-4ef1-821f-e260a3f3b176",
+      "write_uid": 7,
+      "create_uid": 7,
+      "write_date": "2026-10-28T23:50:27.243918",
+      "create_date": "2026-10-28T23:50:27.198706",
+      "workspace_id": 2
+    },
+    {
+      "id": 4,
+      "body": "Synthetic lifecycle data; retain identity and revision.",
+      "title": "Lifecycle B/1",
+      "revision": 1,
+      "author_id": 3,
+      "public_id": "5cc96e75-6707-4a38-ac19-5861f045362c",
+      "write_uid": 7,
+      "create_uid": 7,
+      "write_date": "2026-10-28T23:50:27.302475",
+      "create_date": "2026-10-28T23:50:27.302475",
+      "workspace_id": 2
+    }
+  ],
+  "boards": [
+    {
+      "id": 1,
+      "name": "Lifecycle reference A",
+      "cards": [
+        {
+          "id": "7670d5a0-9326-470b-91d6-e1eebfd96df7",
+          "lane": "inbox",
+          "text": "Retained reference card",
+          "note_id": "db7c55ba-3cb8-4328-9e47-e1d6b0caf852"
+        }
+      ],
+      "revision": 1,
+      "public_id": "90e3393c-a6f9-4642-a9e0-f865aea237a0",
+      "write_uid": 6,
+      "create_uid": 6,
+      "write_date": "2026-10-28T23:50:27.120405",
+      "create_date": "2026-10-28T23:50:27.120405",
+      "workspace_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Lifecycle reference B",
+      "cards": [
+        {
+          "id": "6e91e9bb-74ad-4c05-bb38-b476a3666691",
+          "lane": "inbox",
+          "text": "Retained reference card",
+          "note_id": "f8e501d4-9ed5-4ef1-821f-e260a3f3b176"
+        }
+      ],
+      "revision": 1,
+      "public_id": "fef587f1-fbcf-4595-9cd0-3ae43626ffcb",
+      "write_uid": 7,
+      "create_uid": 7,
+      "write_date": "2026-10-28T23:50:27.329152",
+      "create_date": "2026-10-28T23:50:27.329152",
+      "workspace_id": 2
+    }
+  ],
+  "grants": [
+    {
+      "id": 1,
+      "state": "approved",
+      "write_uid": 1,
+      "capability": "org.example.notes:notes.read",
+      "create_uid": 1,
+      "write_date": "2026-10-28T23:44:59.229001",
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 2,
+      "policy_version": 1,
+      "installation_id": 1
+    },
+    {
+      "id": 2,
+      "state": "approved",
+      "write_uid": 1,
+      "capability": "org.example.notes:notes.read",
+      "create_uid": 1,
+      "write_date": "2026-10-28T23:44:59.229001",
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 1,
+      "policy_version": 1,
+      "installation_id": 1
+    },
+    {
+      "id": 3,
+      "state": "revoked",
+      "write_uid": 1,
+      "capability": "org.example.notes:notes.read",
+      "create_uid": 1,
+      "write_date": "2026-10-29T07:10:20.930959",
+      "create_date": "2026-10-28T23:48:41.242991",
+      "workspace_id": 2,
+      "policy_version": 1,
+      "installation_id": 3
+    },
+    {
+      "id": 4,
+      "state": "revoked",
+      "write_uid": 1,
+      "capability": "org.example.notes:notes.read",
+      "create_uid": 1,
+      "write_date": "2026-10-29T07:10:20.930959",
+      "create_date": "2026-10-28T23:48:41.242991",
+      "workspace_id": 1,
+      "policy_version": 1,
+      "installation_id": 3
+    },
+    {
+      "id": 9,
+      "state": "revoked",
+      "write_uid": 1,
+      "capability": "org.example.notes:notes.write",
+      "create_uid": 1,
+      "write_date": "2026-10-29T07:10:20.930959",
+      "create_date": "2026-10-29T05:11:05.846559",
+      "workspace_id": 2,
+      "policy_version": 1,
+      "installation_id": 3
+    },
+    {
+      "id": 10,
+      "state": "revoked",
+      "write_uid": 1,
+      "capability": "org.example.notes:notes.write",
+      "create_uid": 1,
+      "write_date": "2026-10-29T07:10:20.930959",
+      "create_date": "2026-10-29T05:11:05.846559",
+      "workspace_id": 1,
+      "policy_version": 1,
+      "installation_id": 3
+    }
+  ],
+  "bindings": [
+    {
+      "id": 1,
+      "alias": "boards",
+      "state": "active",
+      "public_id": "187f2769-19de-509d-9861-33fd41f459a1",
+      "write_uid": 1,
+      "create_uid": 1,
+      "descriptor": {
+        "alias": "boards",
+        "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+        "optional": false,
+        "binding_id": "187f2769-19de-509d-9861-33fd41f459a1",
+        "generation": 1,
+        "service_id": "org.example.canvas.boards",
+        "api_version": "1.0",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+        "contract_major": 1,
+        "schema_version": 1,
+        "provider_plugin_id": "org.example.canvas",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "provider_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9"
+      },
+      "write_date": "2026-10-28T23:44:59.229001",
+      "consumer_id": 1,
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 2
+    },
+    {
+      "id": 2,
+      "alias": "documents",
+      "state": "active",
+      "public_id": "663525ec-0eca-5f13-8c5c-7d0415f18114",
+      "write_uid": 1,
+      "create_uid": 1,
+      "descriptor": {
+        "alias": "documents",
+        "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+        "optional": false,
+        "binding_id": "663525ec-0eca-5f13-8c5c-7d0415f18114",
+        "generation": 1,
+        "service_id": "org.example.notes.documents",
+        "api_version": "2.0",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+        "contract_major": 2,
+        "schema_version": 1,
+        "provider_plugin_id": "org.example.notes",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+      },
+      "write_date": "2026-10-28T23:44:59.229001",
+      "consumer_id": 1,
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 2
+    },
+    {
+      "id": 3,
+      "alias": "documents",
+      "state": "active",
+      "public_id": "8d3aee30-9f60-51e0-bf3d-2b20307ae273",
+      "write_uid": 1,
+      "create_uid": 1,
+      "descriptor": {
+        "alias": "documents",
+        "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+        "optional": false,
+        "binding_id": "8d3aee30-9f60-51e0-bf3d-2b20307ae273",
+        "generation": 1,
+        "service_id": "org.example.notes.documents",
+        "api_version": "1.0",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+        "contract_major": 1,
+        "schema_version": 1,
+        "provider_plugin_id": "org.example.notes",
+        "consumer_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+      },
+      "write_date": "2026-10-28T23:44:59.229001",
+      "consumer_id": 2,
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 1
+    },
+    {
+      "id": 4,
+      "alias": "documents",
+      "state": "active",
+      "public_id": "9b9fbdaf-18c4-53a7-a14a-11a8b350df4c",
+      "write_uid": 1,
+      "create_uid": 1,
+      "descriptor": {
+        "alias": "documents",
+        "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+        "optional": false,
+        "binding_id": "9b9fbdaf-18c4-53a7-a14a-11a8b350df4c",
+        "generation": 1,
+        "service_id": "org.example.notes.documents",
+        "api_version": "1.0",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+        "contract_major": 1,
+        "schema_version": 1,
+        "provider_plugin_id": "org.example.notes",
+        "consumer_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+      },
+      "write_date": "2026-10-28T23:44:59.229001",
+      "consumer_id": 2,
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 2
+    },
+    {
+      "id": 5,
+      "alias": "boards",
+      "state": "active",
+      "public_id": "a548bc22-e132-5858-83ff-52cc88d3980d",
+      "write_uid": 1,
+      "create_uid": 1,
+      "descriptor": {
+        "alias": "boards",
+        "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+        "optional": false,
+        "binding_id": "a548bc22-e132-5858-83ff-52cc88d3980d",
+        "generation": 1,
+        "service_id": "org.example.canvas.boards",
+        "api_version": "1.0",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+        "contract_major": 1,
+        "schema_version": 1,
+        "provider_plugin_id": "org.example.canvas",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "provider_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9"
+      },
+      "write_date": "2026-10-28T23:44:59.229001",
+      "consumer_id": 1,
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 1
+    },
+    {
+      "id": 6,
+      "alias": "documents",
+      "state": "active",
+      "public_id": "f128a82c-9cfe-5860-8391-312b3a163b59",
+      "write_uid": 1,
+      "create_uid": 1,
+      "descriptor": {
+        "alias": "documents",
+        "site_id": "469dcdf6-2959-4c25-b7f0-c6d4f2261dbe",
+        "optional": false,
+        "binding_id": "f128a82c-9cfe-5860-8391-312b3a163b59",
+        "generation": 1,
+        "service_id": "org.example.notes.documents",
+        "api_version": "2.0",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+        "contract_major": 2,
+        "schema_version": 1,
+        "provider_plugin_id": "org.example.notes",
+        "consumer_installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+        "provider_installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+      },
+      "write_date": "2026-10-28T23:44:59.229001",
+      "consumer_id": 1,
+      "create_date": "2026-10-28T23:44:59.229001",
+      "workspace_id": 1
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "plugin_id": "org.example.canvas",
+      "write_uid": 1,
+      "create_uid": 1,
+      "write_date": "2026-10-28T23:44:59.229001",
+      "create_date": "2026-10-28T23:44:59.229001",
+      "availability": "enabled",
+      "workspace_id": 2,
+      "installation_id": 1
+    },
+    {
+      "id": 2,
+      "plugin_id": "org.example.notes",
+      "write_uid": 1,
+      "create_uid": 1,
+      "write_date": "2026-10-28T23:44:59.229001",
+      "create_date": "2026-10-28T23:44:59.229001",
+      "availability": "enabled",
+      "workspace_id": 2,
+      "installation_id": 2
+    },
+    {
+      "id": 3,
+      "plugin_id": "org.example.canvas",
+      "write_uid": 1,
+      "create_uid": 1,
+      "write_date": "2026-10-29T00:01:18.073085",
+      "create_date": "2026-10-28T23:44:59.229001",
+      "availability": "enabled",
+      "workspace_id": 1,
+      "installation_id": 1
+    },
+    {
+      "id": 4,
+      "plugin_id": "org.example.notes",
+      "write_uid": 1,
+      "create_uid": 1,
+      "write_date": "2026-10-29T00:01:18.073085",
+      "create_date": "2026-10-28T23:44:59.229001",
+      "availability": "enabled",
+      "workspace_id": 1,
+      "installation_id": 2
+    },
+    {
+      "id": 5,
+      "plugin_id": "org.example.notes_labels",
+      "write_uid": 1,
+      "create_uid": 1,
+      "write_date": "2026-10-29T07:10:20.930959",
+      "create_date": "2026-10-28T23:48:41.242991",
+      "availability": "suspended",
+      "workspace_id": 2,
+      "installation_id": 3
+    },
+    {
+      "id": 6,
+      "plugin_id": "org.example.notes_labels",
+      "write_uid": 1,
+      "create_uid": 1,
+      "write_date": "2026-10-29T07:10:20.930959",
+      "create_date": "2026-10-28T23:48:41.242991",
+      "availability": "suspended",
+      "workspace_id": 1,
+      "installation_id": 3
+    }
+  ]
+}
