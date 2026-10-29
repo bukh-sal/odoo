@@ -1,0 +1,45 @@
+Browser tab: 16, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4&note=db7c55ba-3cb8-4328-9e47-e1d6b0caf852".
+1 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4&note=db7c55ba-3cb8-4328-9e47-e1d6b0caf852
+	2 container
+		3 text M
+		4 text Modular Platform
+		5 container
+			6 text Workspace
+			7 pop up button (collapsed, settable) Description: Workspace, Value: Personal, Secondary Actions: Expand
+				8 menu
+					9 Workspace
+					10 (selected) Personal
+					11 Research
+		12 button Commands
+		13 button Dark
+		14 text Operator
+		15 container Applications
+			20 link Description: Canvas, Value: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4&note=db7c55ba-3cb8-4328-9e47-e1d6b0caf852#
+			21 link Description: Notes, Value: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4&note=db7c55ba-3cb8-4328-9e47-e1d6b0caf852#
+			16 link Description: Settings, Value: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4&note=db7c55ba-3cb8-4328-9e47-e1d6b0caf852#
+			22 link Description: Operations, Value: g5life.localhost:18080/app/operations
+		17 heading Notes, Value: 1
+			18 text Notes
+		19 text Your ideas, in one place.
+		24 button All notes
+		23 button Export notes
+		25 button Delete note
+		26 container
+			27 text Lifecycle A/0
+			28 container Pager
+				29 container
+					30 text 1  /  1
+				31 container
+					32 button (disabled) Previous
+						33 text 
+					34 button (disabled) Next
+						35 text 
+		36 container
+			37 text Title
+			38 text field (settable) Title, Value: Lifecycle A/0, ID: title_0
+			39 text Revision
+			40 text 2
+			41 text Note
+			42 text entry area (settable) Note, Value: Synthetic lifecycle data; retain identity and revision., ID: body_0
+
+The focused UI element is 1 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4&note=db7c55ba-3cb8-4328-9e47-e1d6b0caf852

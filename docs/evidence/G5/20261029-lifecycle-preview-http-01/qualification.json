@@ -1,0 +1,19 @@
+{
+  "result": "passed_http_preview_only",
+  "utc": "2026-10-29T02:50:59.663801+00:00",
+  "generation": 4,
+  "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+  "base_digest": "sha256:813eea7899ef664fab2f79e864307724f35a27ad80c867ec08cfcbc8e18661c6",
+  "checks": [
+    "partial-site rejected before creation",
+    "missing-cascade rejected before creation",
+    "notes: exact closure/all scopes/hash/no-store/known effects/actor denial/immutable preview",
+    "notes_labels: exact closure/all scopes/hash/no-store/known effects/actor denial/immutable preview"
+  ],
+  "prepared_only": 2,
+  "requests_approvals_mutations": 0,
+  "business_schema_state_protected_configs_exact": true,
+  "limits": [
+    "Browser behavior and actual native uninstall/reinstall remain unqualified; no LIFE acceptance credit."
+  ]
+}

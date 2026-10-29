@@ -1,0 +1,12 @@
+{
+  "error": {
+    "code": "CONFLICT",
+    "message": "Conflict",
+    "request_id": "3cf6749d-5f79-450e-8acc-9f02f7b9b629",
+    "retryable": false,
+    "details": {
+      "field": "client_release",
+      "outcome": "not_started"
+    }
+  }
+}

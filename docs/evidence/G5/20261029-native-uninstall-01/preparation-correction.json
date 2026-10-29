@@ -1,0 +1,4 @@
+{
+  "previous_failure": "Fixture expected phase=requested, but public phase remains prepared and history records requested.",
+  "reconciliation": "Exact operation not registered; saved base/business/schema unchanged. Resume only before import, no preparation/request replay."
+}

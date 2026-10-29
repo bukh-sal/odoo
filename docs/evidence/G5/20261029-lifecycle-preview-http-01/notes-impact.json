@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "kind": "native_uninstall_impact",
+  "operation_id": "49a64667-eef5-4b29-a725-a00af2b4a2c6",
+  "plan_hash": "sha256:4ed7c1dc51bf9c442f4df91a1b92de613188b80667c477539265cd2fcae60191",
+  "impact_digest": "sha256:f58f830cbf7c1fbc1cb7f3caa89f0fe32919e8c729d8d8e9de68f430d84f3597",
+  "impact": {
+    "assets": [
+      {
+        "path": "mp_example_canvas/static/src/adapter.js",
+        "source": "declared_source",
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "path": "mp_example_canvas/static/src/canvas.css",
+        "source": "declared_source",
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "path": "mp_example_canvas/static/src/page.js",
+        "source": "declared_source",
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "path": "mp_example_notes_labels/static/src/labels.js",
+        "source": "declared_source",
+        "native_addon": "mp_example_notes_labels"
+      }
+    ],
+    "fields": [
+      {
+        "field": "cards",
+        "model": "mp.example.canvas.board",
+        "column": "cards",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "create_date",
+        "model": "mp.example.canvas.board",
+        "column": "create_date",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "create_uid",
+        "model": "mp.example.canvas.board",
+        "column": "create_uid",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "display_name",
+        "model": "mp.example.canvas.board",
+        "column": null,
+        "mapping": "unknown",
+        "relation": null,
+        "unknown_reason": "No unambiguous stored scalar-column mapping.",
+        "non_null_records": null
+      },
+      {
+        "field": "id",
+        "model": "mp.example.canvas.board",
+        "column": "id",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "name",
+        "model": "mp.example.canvas.board",
+        "column": "name",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "public_id",
+        "model": "mp.example.canvas.board",
+        "column": "public_id",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "revision",
+        "model": "mp.example.canvas.board",
+        "column": "revision",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "workspace_id",
+        "model": "mp.example.canvas.board",
+        "column": "workspace_id",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "write_date",
+        "model": "mp.example.canvas.board",
+        "column": "write_date",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "write_uid",
+        "model": "mp.example.canvas.board",
+        "column": "write_uid",
+        "mapping": "static_declaration",
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null,
+        "non_null_records": 2
+      },
+      {
+        "field": "author_id",
+        "model": "mp.example.note",
+        "column": "author_id",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "body",
+        "model": "mp.example.note",
+        "column": "body",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "create_date",
+        "model": "mp.example.note",
+        "column": "create_date",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "create_uid",
+        "model": "mp.example.note",
+        "column": "create_uid",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "display_name",
+        "model": "mp.example.note",
+        "column": null,
+        "mapping": "unknown",
+        "relation": null,
+        "unknown_reason": "No unambiguous stored scalar-column mapping.",
+        "non_null_records": null
+      },
+      {
+        "field": "id",
+        "model": "mp.example.note",
+        "column": "id",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "public_id",
+        "model": "mp.example.note",
+        "column": "public_id",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "revision",
+        "model": "mp.example.note",
+        "column": "revision",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "title",
+        "model": "mp.example.note",
+        "column": "title",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "workspace_id",
+        "model": "mp.example.note",
+        "column": "workspace_id",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "write_date",
+        "model": "mp.example.note",
+        "column": "write_date",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "write_uid",
+        "model": "mp.example.note",
+        "column": "write_uid",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 4
+      },
+      {
+        "field": "x_notes_labels",
+        "model": "mp.example.note",
+        "column": "x_notes_labels",
+        "mapping": "static_declaration",
+        "relation": "mp_example_note",
+        "unknown_reason": null,
+        "non_null_records": 2
+      }
+    ],
+    "models": [
+      {
+        "model": "mp.example.canvas.board",
+        "mapping": "static_declaration",
+        "records": 2,
+        "relation": "mp_example_canvas_board",
+        "unknown_reason": null
+      },
+      {
+        "model": "mp.example.note",
+        "mapping": "static_declaration",
+        "records": 4,
+        "relation": "mp_example_note",
+        "unknown_reason": null
+      }
+    ],
+    "plugins": [
+      {
+        "version": "0.1.3",
+        "plugin_id": "org.example.canvas",
+        "native_addon": "mp_example_canvas",
+        "workspace_ids": [
+          "3f502e47-683a-4551-b00e-03368e647dd2",
+          "907b39a7-345a-4332-9df1-410019531cd4"
+        ],
+        "artifact_digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+        "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9"
+      },
+      {
+        "version": "0.2.3",
+        "plugin_id": "org.example.notes",
+        "native_addon": "mp_example_notes",
+        "workspace_ids": [
+          "3f502e47-683a-4551-b00e-03368e647dd2",
+          "907b39a7-345a-4332-9df1-410019531cd4"
+        ],
+        "artifact_digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+        "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+      },
+      {
+        "version": "0.2.1",
+        "plugin_id": "org.example.notes_labels",
+        "native_addon": "mp_example_notes_labels",
+        "workspace_ids": [
+          "3f502e47-683a-4551-b00e-03368e647dd2",
+          "907b39a7-345a-4332-9df1-410019531cd4"
+        ],
+        "artifact_digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb"
+      }
+    ],
+    "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+    "dispatch": {
+      "state": "not_present",
+      "tables": []
+    },
+    "warnings": [
+      "Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects.",
+      "Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted."
+    ],
+    "constraints": [
+      {
+        "name": "mp_example_canvas_board_create_uid_fkey",
+        "relation": "mp_example_canvas_board",
+        "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      },
+      {
+        "name": "mp_example_canvas_board_pkey",
+        "relation": "mp_example_canvas_board",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "mp_example_canvas_board_uuid_unique",
+        "relation": "mp_example_canvas_board",
+        "definition": "UNIQUE (public_id)"
+      },
+      {
+        "name": "mp_example_canvas_board_workspace_board",
+        "relation": "mp_example_canvas_board",
+        "definition": "UNIQUE (workspace_id)"
+      },
+      {
+        "name": "mp_example_canvas_board_workspace_id_fkey",
+        "relation": "mp_example_canvas_board",
+        "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+      },
+      {
+        "name": "mp_example_canvas_board_write_uid_fkey",
+        "relation": "mp_example_canvas_board",
+        "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      },
+      {
+        "name": "mp_example_note_author_id_fkey",
+        "relation": "mp_example_note",
+        "definition": "FOREIGN KEY (author_id) REFERENCES mp_principal(id) ON DELETE RESTRICT"
+      },
+      {
+        "name": "mp_example_note_create_uid_fkey",
+        "relation": "mp_example_note",
+        "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      },
+      {
+        "name": "mp_example_note_pkey",
+        "relation": "mp_example_note",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "mp_example_note_public_unique",
+        "relation": "mp_example_note",
+        "definition": "UNIQUE (public_id)"
+      },
+      {
+        "name": "mp_example_note_revision_positive",
+        "relation": "mp_example_note",
+        "definition": "CHECK ((revision > 0))"
+      },
+      {
+        "name": "mp_example_note_workspace_id_fkey",
+        "relation": "mp_example_note",
+        "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+      },
+      {
+        "name": "mp_example_note_write_uid_fkey",
+        "relation": "mp_example_note",
+        "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+      }
+    ],
+    "native_closure": [
+      "mp_example_canvas",
+      "mp_example_notes",
+      "mp_example_notes_labels"
+    ],
+    "metadata_records": [
+      {
+        "model": "ir.model",
+        "records": 1,
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "model": "ir.model.access",
+        "records": 1,
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "model": "ir.model.constraint",
+        "records": 2,
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "model": "ir.model.fields",
+        "records": 11,
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "model": "ir.model.inherit",
+        "records": 1,
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "model": "ir.rule",
+        "records": 1,
+        "native_addon": "mp_example_canvas"
+      },
+      {
+        "model": "ir.actions.act_window",
+        "records": 1,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.model",
+        "records": 1,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.model.access",
+        "records": 1,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.model.constraint",
+        "records": 2,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.model.fields",
+        "records": 12,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.model.inherit",
+        "records": 1,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.rule",
+        "records": 1,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.ui.view",
+        "records": 2,
+        "native_addon": "mp_example_notes"
+      },
+      {
+        "model": "ir.model",
+        "records": 1,
+        "native_addon": "mp_example_notes_labels"
+      },
+      {
+        "model": "ir.model.fields",
+        "records": 3,
+        "native_addon": "mp_example_notes_labels"
+      }
+    ],
+    "requested_addons": [
+      "mp_example_notes"
+    ],
+    "foreign_references": []
+  },
+  "database_action": "native_uninstall",
+  "artifact_action": "retain_in_runtime",
+  "destructive": true,
+  "requires_backup": true,
+  "native_code_fully_trusted": true,
+  "completeness": "known_effects_only",
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-10-29T02:50:52Z"
+}

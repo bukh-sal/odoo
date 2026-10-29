@@ -1,0 +1,17 @@
+{
+  "result": "passed_enable-B",
+  "operation_id": "46f5f195-3026-4dd2-933e-d7c50dcb729c",
+  "plan_hash": "sha256:05c31ce6420342f145c051eb666be5b10a12ad6281864d479be58d60d024d0bb",
+  "generation": 6,
+  "stable_installation_scope_row_identities": true,
+  "exact_scoped_availability_and_grants": true,
+  "note_board_identity_content_revision_preserved": true,
+  "old_files_preserved": 50,
+  "protected_config_hashes": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad"
+  },
+  "limits": [
+    "HTTP/UI scoped gate regression remains separate; artifact removal and upgrade permission expansion remain required."
+  ]
+}

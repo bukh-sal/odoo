@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "reinstall": {
+    "operation_id": "a8b63f80-e9f1-4e11-b45e-0416fba336f1",
+    "plan_hash": "sha256:653114e74e8b6bafa73b2d8afcf0bb05e5ef60a44acdc09718476f0c9de0d221",
+    "previewAndResult": {
+      "Personal": "enabled",
+      "Research": "suspended"
+    },
+    "grantWorkspace": "Personal",
+    "historicalMigrationScripts": 0
+  },
+  "enable": {
+    "operation_id": "46f5f195-3026-4dd2-933e-d7c50dcb729c",
+    "plan_hash": "sha256:05c31ce6420342f145c051eb666be5b10a12ad6281864d479be58d60d024d0bb",
+    "previewWorkspace": "Research",
+    "explicitGrant": true,
+    "completed": true
+  },
+  "oldClientPausedAfterReinstall": true,
+  "explicitRefreshRecovered": true,
+  "restoredFormProof": {
+    "editLabelsButtons": 1,
+    "nativeOdooForms": 1
+  },
+  "nativeBaseFormUnchanged": true,
+  "restoredEditLabelsContribution": true,
+  "recordRevision": 2,
+  "noBrowserRecordEdits": true,
+  "allSixScopesEnabledAtEnd": true
+}

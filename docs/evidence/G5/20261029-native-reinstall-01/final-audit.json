@@ -1,0 +1,12 @@
+{
+  "result": "passed_bounded_checkpoint_audit",
+  "utc": "2026-10-29T03:17:26.276751+00:00",
+  "files": 125,
+  "known_private_values_checked": 12,
+  "exact_build_inputs": 289,
+  "frozen_contract_files": 87,
+  "scope": "New lifecycle evidence; not full SEC-03 release scan.",
+  "schema_reinstalled_exact": true,
+  "all_independent_operations_terminal": 9,
+  "main_manager_full_state_business_config_exact": true
+}

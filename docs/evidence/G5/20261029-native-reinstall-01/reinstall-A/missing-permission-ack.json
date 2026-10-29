@@ -1,0 +1,4 @@
+{
+  "result": "denied",
+  "reason": "New native code or expanded declarations require explicit acknowledgment"
+}

@@ -1,0 +1,323 @@
+Browser tab: 16, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/operations".
+0 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations
+	1 container
+		2 text M
+		3 text Modular Platform
+		4 container
+			5 text Workspace
+			6 pop up button (collapsed, settable) Description: Workspace, Secondary Actions: Expand
+				7 menu
+					8 (selected) Workspace
+					9 Personal
+					10 Research
+		11 button Commands
+		12 button Dark
+		13 text Operator
+		14 container Applications
+			15 link Description: Settings, Value: g5life.localhost:18080/app/operations#
+			20 link Description: Operations, Value: g5life.localhost:18080/app/operations
+		16 heading Operations, Value: 1
+			17 text Operations
+		18 text Your ideas, in one place.
+		19 container Plugin operations
+			21 text Prepare a plan, request the operation, then use local operator approval and apply.
+			22 text New code requires a local operator to stage the release first. Installation from the current image and native uninstall still require exact local approval and coordinated maintenance. Uploading or selecting an artifact does not execute it.
+			23 container Upload validation
+				24 heading Validate a plugin archive, Value: 2
+					25 text Validate a plugin archive
+				26 text Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.
+				27 text Plugin archive (.mplug, maximum 100 MiB)
+				28 button Plugin archive (.mplug, maximum 100 MiB), ID: mp_upload_file
+				29 button (disabled) Validate archive
+			30 container Installed plugins
+				31 heading Installed plugins, Value: 2
+					32 text Installed plugins
+				33 text Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.
+				34 table
+					35 row
+						36 cell
+							37 text Plugin
+						38 cell
+							39 text Version / trust
+						40 cell
+							41 text Database
+						42 cell
+							43 text Health
+						44 cell
+							45 text Dependencies
+						46 cell
+							47 text Workspace availability
+					48 row
+						49 cell
+							50 button Canvas
+						51 cell
+							52 text 0.1.3
+							53 text operator-approved-exact-digest
+						54 cell
+							55 text installed
+						56 cell
+							57 text unknown
+							58 text Registry observed; plugin-specific health has not been probed.
+						59 cell
+							60 text satisfied
+						61 cell
+							62 container
+								63 text Research :  enabled
+							64 container
+								65 text Personal :  enabled
+					66 row
+						67 cell
+							68 button Notes
+						69 cell
+							70 text 0.2.3
+							71 text operator-approved-exact-digest
+						72 cell
+							73 text installed
+						74 cell
+							75 text unknown
+							76 text Registry observed; plugin-specific health has not been probed.
+						77 cell
+							78 text satisfied
+						79 cell
+							80 container
+								81 text Research :  enabled
+							82 container
+								83 text Personal :  enabled
+					84 row
+						85 cell
+							86 button Notes Labels
+						87 cell
+							88 text 0.2.1
+							89 text operator-approved-exact-digest
+						90 cell
+							91 text installed
+						92 cell
+							93 text unknown
+							94 text Registry observed; plugin-specific health has not been probed.
+						95 cell
+							96 text satisfied
+						97 cell
+							98 container
+								99 text Research :  enabled
+							100 container
+								101 text Personal :  enabled
+				102 button Refresh metadata
+			103 container
+				104 text Plugin and version
+				105 pop up button (collapsed, settable) Plugin and version, Value: Notes Labels · 0.2.1, ID: mp_operation_artifact, Secondary Actions: Expand
+					106 menu
+						107 Choose a plugin
+						108 Canvas · 0.1.2
+						109 Canvas · 0.1.3
+						110 Notes · 0.2.1
+						111 Notes · 0.2.2
+						112 Notes · 0.2.3
+						113 Notes Labels · 0.2.0
+						114 (selected) Notes Labels · 0.2.1
+				115 text Operation
+				116 pop up button (collapsed, settable) Operation, Value: Native uninstall, ID: mp_operation_type, Secondary Actions: Expand
+					117 menu
+						118 Install
+						119 Upgrade
+						120 Feature suspension
+						121 Enable feature
+						122 (selected) Native uninstall
+						123 Unregister service
+						124 Remove unused artifact
+				133 text This operation affects the site. The plan lists every affected workspace.
+				131 checkbox (settable, integer) Description: Include dependent changes in the proposed plan, Value: 0
+				132 button Prepare plan
+			134 container Package trust
+				135 heading Notes Labels, Value: 2
+					136 text Notes Labels
+				137 text Trusted shared-table Notes extension
+				138 container
+					139 text Publisher:  example  · License:  LGPL-3.0-only
+				140 container
+					141 text Trust:  operator-approved-exact-digest  · Signature verified: no
+				142 text sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2
+				143 button View package details
+			144 container Proposed operation
+				145 heading Review proposed changes, Value: 2
+					146 text Review proposed changes
+				147 text Native code shares the host application's trust.
+				148 text This operation can delete native data and schema.
+				149 text A coordinated database and filestore checkpoint is required.
+				150 text Workers will restart on the selected release.
+				151 table
+					152 row
+						153 cell
+							154 text Plugin
+						155 cell
+							156 text Workspace
+						157 cell
+							158 text Action
+					159 row
+						160 cell
+							161 text org.example.notes_labels
+						162 cell
+							163 text Research
+						164 cell
+							165 text uninstall
+					166 row
+						167 cell
+							168 text org.example.notes_labels
+						169 cell
+							170 text Personal
+						171 cell
+							172 text uninstall
+				173 table
+					174 row
+						175 cell
+							176 text Artifact
+						177 cell
+							178 text Version
+						179 cell
+							180 text Action
+						181 cell
+							182 text Migration scripts
+					183 row
+						184 cell
+							185 text org.example.notes_labels
+						186 cell
+							187 text 0.2.1
+						188 cell
+							189 text uninstall
+						190 cell
+							191 text 0
+				192 container Native uninstall effects
+					193 heading Native uninstall effects, Value: 3
+						194 text Native uninstall effects
+					195 text Database uninstall may delete records and schema. The package remains in this runtime; workers will be replaced. These are known effects only; arbitrary trusted hooks may do more.
+					196 container
+						197 text Native dependent closure:  mp_example_notes_labels .
+					198 container
+						199 text org.example.notes_labels :  Research, Personal .
+					200 container
+						201 button (expanded) Known models and fields, Secondary Actions: Collapse
+							202 text Known models and fields
+						203 table
+							204 row
+								205 cell
+									206 text Model
+								207 cell
+									208 text Relation
+								209 cell
+									210 text Records
+								211 cell
+									212 text Mapping
+						213 table
+							214 row
+								215 cell
+									216 text Field
+								217 cell
+									218 text Relation / column
+								219 cell
+									220 text Non-null records
+								221 cell
+									222 text Mapping
+							223 row
+								224 cell
+									225 text mp.example.note . x_notes_labels
+								226 cell
+									227 text mp_example_note  /  x_notes_labels
+								228 cell
+									229 text 2
+								230 cell
+									231 text static_declaration
+					232 button (collapsed) Constraints and foreign references, Secondary Actions: Expand
+						233 text Constraints and foreign references
+					316 container
+						317 button (expanded) Metadata, assets and durable work, Secondary Actions: Collapse
+							318 text Metadata, assets and durable work
+						319 text mp_example_notes_labels  /  ir.model :  1  metadata records. mp_example_notes_labels  /  ir.model.fields :  3  metadata records.
+						320 text mp_example_notes_labels/static/src/labels.js
+						321 text Durable dispatch:  not_present .
+					236 text Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects.
+					237 text Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted.
+					238 container
+						239 text Observation:  2026-10-29T02:51:23Z . The local operator independently reconstructs these effects before approval and mutation.
+				240 container Permission changes
+					241 heading Permission changes, Value: 3
+						242 text Permission changes
+					243 text These grants govern supported APIs. Native code retains the host application's authority.
+					244 content list
+						245 container
+							246 AXListMarker • 
+							247 text revoke org.example.notes:notes.read  for  org.example.notes_labels  in  Research
+						248 container
+							249 AXListMarker • 
+							250 text revoke org.example.notes:notes.read  for  org.example.notes_labels  in  Personal
+				251 text Native Python and same-origin frontend code is fully trusted.
+				252 text Author destructive=false does not prove migration safety.
+				253 text Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects.
+				254 text Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted.
+				255 container
+					256 checkbox (settable, integer) Value: 1, Description: I understand this may delete native data and schema. A local operator must approve this exact plan and create a coordinated backup before execution.
+					257 text  I understand this may delete native data and schema. A local operator must approve this exact plan and create a coordinated backup before execution.
+				258 button Download full plan and bindings
+				259 button (disabled) Request operation
+			260 container Operation progress
+				261 heading Operation progress, Value: 2
+					262 text Operation progress
+				263 container
+					264 text awaiting_operator_approval  ·  prepared
+				265 container
+					266 text Operation ID:  b0797723-6b4d-4022-bcfb-8b286c09b7ef
+				267 container
+					268 text Exact plan hash:  sha256:87f2a190779162ef72106d40513a754a724dd9a76722894b037841078be54789
+				269 text Next: local operator approval for this exact hash, followed by local apply.
+				270 text modular --config OPERATOR_TRUST_CONFIG operations import-request b0797723-6b4d-4022-bcfb-8b286c09b7ef --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+modular --config OPERATOR_TRUST_CONFIG operations approve b0797723-6b4d-4022-bcfb-8b286c09b7ef --plan-hash sha256:87f2a190779162ef72106d40513a754a724dd9a76722894b037841078be54789 --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+modular --config OPERATOR_TRUST_CONFIG plugin apply b0797723-6b4d-4022-bcfb-8b286c09b7ef --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+modular --config OPERATOR_TRUST_CONFIG operations mirror-status b0797723-6b4d-4022-bcfb-8b286c09b7ef --store OPERATOR_STORE --deployment-config DEPLOYMENT_CONFIG --catalog OPERATOR_CATALOG
+				271 text Replace the uppercase path placeholders with the independently configured local operator paths. Review the full plan and supply any required trust, permission or destructive acknowledgements locally.
+				272 content list
+					273 container
+						274 AXListMarker 1. 
+						275 text 2026-10-29T02:51:23Z  ·  prepared
+					322 container
+						323 AXListMarker 2. 
+						324 text 2026-10-29T02:52:28Z  ·  requested
+				276 table
+					277 row
+						278 cell
+							279 text Plugin
+						280 cell
+							281 text Artifact
+						282 cell
+							283 text Release
+						284 cell
+							285 text Database
+						286 cell
+							287 text Feature
+						288 cell
+							289 text Service runtime
+					290 row
+						291 cell
+							292 text org.example.notes_labels
+						293 cell
+							294 text verified
+						295 cell
+							296 text active
+						297 cell
+							298 text installed
+						299 cell
+							300 text enabled
+						301 cell
+							302 text Not applicable
+					303 row
+						304 cell
+							305 text org.example.notes_labels
+						306 cell
+							307 text verified
+						308 cell
+							309 text active
+						310 cell
+							311 text installed
+						312 cell
+							313 text enabled
+						314 cell
+							315 text Not applicable
+
+The focused UI element is 0 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/operations

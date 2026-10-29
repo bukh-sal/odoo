@@ -1,0 +1,74 @@
+{
+  "approval_expires_at": "2026-10-29T03:25:52Z",
+  "control_authority": "independent_local_os",
+  "dimensions": [
+    {
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "feature_state": "enabled",
+      "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+      "plugin_id": "org.example.notes_labels",
+      "release_state": "active",
+      "service_state": null,
+      "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2"
+    }
+  ],
+  "error_code": null,
+  "history": [
+    {
+      "code": "prepared",
+      "sequence": 102,
+      "utc": "2026-10-29T03:09:47Z"
+    },
+    {
+      "code": "application_request_imported",
+      "sequence": 103,
+      "utc": "2026-10-29T03:09:49Z"
+    },
+    {
+      "code": "approved",
+      "sequence": 104,
+      "utc": "2026-10-29T03:10:52Z"
+    },
+    {
+      "code": "reserved",
+      "sequence": 105,
+      "utc": "2026-10-29T03:11:20Z"
+    },
+    {
+      "code": "staged",
+      "sequence": 106,
+      "utc": "2026-10-29T03:11:34Z"
+    },
+    {
+      "code": "mutation_started",
+      "sequence": 107,
+      "utc": "2026-10-29T03:11:50Z"
+    },
+    {
+      "code": "metadata_published",
+      "sequence": 108,
+      "utc": "2026-10-29T03:11:52Z"
+    },
+    {
+      "code": "ready",
+      "sequence": 109,
+      "utc": "2026-10-29T03:12:05Z"
+    },
+    {
+      "code": "completed",
+      "sequence": 110,
+      "utc": "2026-10-29T03:12:06Z"
+    }
+  ],
+  "kind": "status",
+  "observed_at": "2026-10-29T03:12:28Z",
+  "operation_id": "46f5f195-3026-4dd2-933e-d7c50dcb729c",
+  "phase": "completed",
+  "plan_hash": "sha256:05c31ce6420342f145c051eb666be5b10a12ad6281864d479be58d60d024d0bb",
+  "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+  "schema_version": 1,
+  "source": "operator_journal_mirror",
+  "stale": false,
+  "state": "completed"
+}

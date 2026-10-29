@@ -1,0 +1,75 @@
+Browser tab: 16, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4".
+1 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4
+	2 container
+		3 text M
+		4 text Modular Platform
+		5 container
+			6 text Workspace
+			7 pop up button (collapsed, settable) Description: Workspace, Value: Personal, Secondary Actions: Expand
+				8 menu
+					9 Workspace
+					10 (selected) Personal
+					11 Research
+		12 button Commands
+		13 button Dark
+		14 text Operator
+		15 container Applications
+			20 link Description: Canvas, Value: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4#
+			21 link Description: Notes, Value: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4#
+			16 link Description: Settings, Value: g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4#
+			22 link Description: Operations, Value: g5life.localhost:18080/app/operations
+		17 heading Notes, Value: 1
+			18 text Notes
+		19 text Your ideas, in one place.
+		23 button Export notes
+		24 container
+			25 button New
+			26 text Notes
+			27 container
+				28 button Search...
+				29 search text field (settable)
+			30 button (collapsed) , Help: Toggle Search Panel, Secondary Actions: Expand
+				31 text 
+			32 container Pager
+				33 container
+					34 text 1-2  /  2
+				35 container
+					36 button (disabled) Previous
+						37 text 
+					38 button (disabled) Next
+						39 text 
+		40 table
+			41 row
+				42 cell
+					43 checkbox (settable, integer) Value: 0, ID: checkbox-comp-1
+				44 cell
+					45 text Title
+					46 text 
+				47 cell
+					48 text Revision
+					49 text 
+				50 cell
+					51 text Last Updated on
+					52 text 
+			53 row
+				54 cell
+					55 container
+						56 checkbox (settable, integer) Value: 0, ID: checkbox-comp-2
+				57 cell
+					58 text Lifecycle A/1
+				59 cell
+					60 text 1
+				61 cell
+					62 text Oct 29, 2:50 AM
+			63 row
+				64 cell
+					65 container
+						66 checkbox (settable, integer) Value: 0, ID: checkbox-comp-3
+				67 cell
+					68 text Lifecycle A/0
+				69 cell
+					70 text 2
+				71 cell
+					72 text Oct 29, 2:50 AM
+
+The focused UI element is 29 search text field (settable)

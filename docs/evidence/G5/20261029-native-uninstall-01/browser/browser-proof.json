@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "previewOperation": "b0797723-6b4d-4022-bcfb-8b286c09b7ef",
+  "planHash": "sha256:87f2a190779162ef72106d40513a754a724dd9a76722894b037841078be54789",
+  "uncheckedRequestDisabled": true,
+  "checkedRequestEnabled": true,
+  "knownNonNullRecords": 2,
+  "siteWideWorkspaces": [
+    "Personal",
+    "Research"
+  ],
+  "independentApprovalRequired": true,
+  "oldClientPaused": true,
+  "explicitRefreshRecovered": true,
+  "nativeFormProof": {
+    "nativeOdooForms": 1,
+    "removedLabelWidgets": 0
+  },
+  "recordRevision": 2,
+  "noRecordEdits": true
+}

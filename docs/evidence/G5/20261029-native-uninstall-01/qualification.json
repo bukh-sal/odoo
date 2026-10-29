@@ -1,0 +1,24 @@
+{
+  "result": "passed_native_labels_uninstall",
+  "operation_id": "b0797723-6b4d-4022-bcfb-8b286c09b7ef",
+  "plan_hash": "sha256:87f2a190779162ef72106d40513a754a724dd9a76722894b037841078be54789",
+  "generation": 5,
+  "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+  "native_column_deleted_nonnull_records": 2,
+  "notes_boards_retained": [
+    4,
+    2
+  ],
+  "survivor_native_versions_unchanged": true,
+  "tombstone_scopes": 2,
+  "old_files_preserved": 48,
+  "checkpoint_files_hash_verified": true,
+  "old_client_rejected": true,
+  "protected_config_hashes": {
+    ".local\\operator\\targets\\g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local\\g5-manager-upgrade\\operator\\target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad"
+  },
+  "limits": [
+    "Browser survivor regression, reinstall, artifact removal and permission-expansion upgrade remain pending."
+  ]
+}

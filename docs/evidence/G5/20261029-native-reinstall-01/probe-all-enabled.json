@@ -1,0 +1,27 @@
+{
+  "result": "passed_all-enabled",
+  "checks": [
+    {
+      "workspace": "A",
+      "labels_suspended": false,
+      "notes_native_and_gateway": true,
+      "canvas_get": true,
+      "context_commands_slots": true,
+      "explicit_native_labels_access": "allowed read",
+      "supported_set_labels_dispatch": "not invoked to preserve revisions"
+    },
+    {
+      "workspace": "B",
+      "labels_suspended": false,
+      "notes_native_and_gateway": true,
+      "canvas_get": true,
+      "context_commands_slots": true,
+      "explicit_native_labels_access": "allowed read",
+      "supported_set_labels_dispatch": "not invoked to preserve revisions"
+    }
+  ],
+  "all_state_schema_business_exact": true,
+  "limits": [
+    "No successful Labels writes/Canvas saves in this read-only regression; their unchanged package behavior is covered by existing reference-plugin tests."
+  ]
+}

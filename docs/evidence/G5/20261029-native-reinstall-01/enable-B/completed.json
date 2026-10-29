@@ -1,0 +1,79 @@
+{
+  "approval_expires_at": "2026-10-29T03:25:52Z",
+  "backup_id": null,
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:05c31ce6420342f145c051eb666be5b10a12ad6281864d479be58d60d024d0bb"
+      },
+      "sequence": 102,
+      "utc": "2026-10-29T03:09:47Z"
+    },
+    {
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "46f5f195-3026-4dd2-933e-d7c50dcb729c",
+        "plan_hash": "sha256:05c31ce6420342f145c051eb666be5b10a12ad6281864d479be58d60d024d0bb",
+        "request_id": "cafdbc29-b384-451f-9371-2d5b308c18e4",
+        "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc"
+      },
+      "sequence": 103,
+      "utc": "2026-10-29T03:09:49Z"
+    },
+    {
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:05c31ce6420342f145c051eb666be5b10a12ad6281864d479be58d60d024d0bb"
+      },
+      "sequence": 104,
+      "utc": "2026-10-29T03:10:52Z"
+    },
+    {
+      "code": "reserved",
+      "details": {
+        "executor_pid": 9860,
+        "lock_owner_digest": "sha256:d2afe75bc3d2da5f5703228e2b201da4e40badfdaf492d684e53d4ef6eaefa0c"
+      },
+      "sequence": 105,
+      "utc": "2026-10-29T03:11:20Z"
+    },
+    {
+      "code": "staged",
+      "details": {},
+      "sequence": 106,
+      "utc": "2026-10-29T03:11:34Z"
+    },
+    {
+      "code": "mutation_started",
+      "details": {},
+      "sequence": 107,
+      "utc": "2026-10-29T03:11:50Z"
+    },
+    {
+      "code": "metadata_published",
+      "details": {},
+      "sequence": 108,
+      "utc": "2026-10-29T03:11:52Z"
+    },
+    {
+      "code": "ready",
+      "details": {},
+      "sequence": 109,
+      "utc": "2026-10-29T03:12:05Z"
+    },
+    {
+      "code": "completed",
+      "details": {},
+      "sequence": 110,
+      "utc": "2026-10-29T03:12:06Z"
+    }
+  ],
+  "mutation_started": true,
+  "operation_id": "46f5f195-3026-4dd2-933e-d7c50dcb729c",
+  "phase": "completed",
+  "plan_hash": "sha256:05c31ce6420342f145c051eb666be5b10a12ad6281864d479be58d60d024d0bb",
+  "state": "completed",
+  "traffic_resumed": true
+}

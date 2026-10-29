@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "status",
+  "operation_id": "b0797723-6b4d-4022-bcfb-8b286c09b7ef",
+  "plan_hash": "sha256:87f2a190779162ef72106d40513a754a724dd9a76722894b037841078be54789",
+  "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+  "state": "awaiting_operator_approval",
+  "phase": "prepared",
+  "source": "application_request",
+  "observed_at": "2026-10-29T02:53:59Z",
+  "stale": false,
+  "approval_expires_at": null,
+  "dimensions": [
+    {
+      "plugin_id": "org.example.notes_labels",
+      "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+      "feature_state": "enabled",
+      "release_state": "active",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb"
+    },
+    {
+      "plugin_id": "org.example.notes_labels",
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+      "feature_state": "enabled",
+      "release_state": "active",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb"
+    }
+  ],
+  "history": [
+    {
+      "sequence": 1,
+      "utc": "2026-10-29T02:51:23Z",
+      "code": "prepared"
+    },
+    {
+      "sequence": 2,
+      "utc": "2026-10-29T02:53:59Z",
+      "code": "requested"
+    }
+  ],
+  "error_code": null,
+  "control_authority": "independent_local_os"
+}

@@ -1,0 +1,4 @@
+{
+  "result": "denied",
+  "reason": "Destructive operation requires explicit acknowledgment before approval"
+}

@@ -1,0 +1,55 @@
+{
+  "result": "passed_native_uninstall_scoped_reinstall_and_explicit_enable",
+  "utc": "2026-10-29T03:17:26.060485+00:00",
+  "source_commit": "cbf44fbc",
+  "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+  "generation": 6,
+  "actual_operations": [
+    "e4065b38-00c8-4f45-9d3c-373817611886",
+    "b0797723-6b4d-4022-bcfb-8b286c09b7ef",
+    "a8b63f80-e9f1-4e11-b45e-0416fba336f1",
+    "46f5f195-3026-4dd2-933e-d7c50dcb729c"
+  ],
+  "newly_qualified": [
+    "LIFE-03",
+    "LIFE-04"
+  ],
+  "existing_acceptance_regression": [
+    "MIG-07",
+    "LIFE-01",
+    "LIFE-02"
+  ],
+  "note_board_identity_content_revisions_preserved": true,
+  "old_labels_values_deleted_by_explicit_uninstall_not_restored": true,
+  "stable_installation_scope_ids": true,
+  "uninstall_surviving_columns_constraints_exact": true,
+  "reinstall_current_schema_equals_original": true,
+  "explicit_scoped_grants_and_availability": true,
+  "all_six_scopes_enabled_at_end": true,
+  "native_odoo_standard_views": true,
+  "canvas_feature_code_unchanged": true,
+  "protected_main28_manager6_full_state_business_config_exact": true,
+  "all_nine_independent_operations_completed": true,
+  "evidence_sha256": {
+    "reinstall-A/qualification.json": "2126411567ef7718e6622ec4e01f48ad2a8138274e1866a9482b9ce2d1ba7a08",
+    "enable-B/qualification.json": "7a3f7a601c2a1490a1cee7dc69076e6efeec2fb880299147d377ed586c150b1d",
+    "probe-A-only.json": "5c6622f08bd5a3e7ccda3087028d2b2090cd1a162d4996fe55f1915657b9ead6",
+    "probe-all-enabled.json": "fc2721fd05faf032453b5b0e53ffa483d4bcef6cb0910aaac949dba164e56e98",
+    "browser/browser-proof.json": "1cc8b20bb99995b637fc422ba596b634193872f578d7a84432fb2788be76b24c",
+    "protected-targets.json": "e3439cc6f986c7a2a9de90ae24218b3e8ad9963280ecd03d45ef7275e5e3c4af"
+  },
+  "gate_state": "G5 in_progress",
+  "acceptance": {
+    "all_passed": 70,
+    "all_not_run": 29,
+    "g5_passed": 29,
+    "g5_not_run": 16
+  },
+  "rough_engineering_percent": 78,
+  "limits": [
+    "Artifact removal/LIFE-06 remains unimplemented/unqualified.",
+    "Explicit later grant enable is not permission-expanding upgrade/LIFE-05 proof.",
+    "Crash/concurrency/fences, shared-runtime compatibility, remaining security, clean restore/provenance and reproducible minimal Canvas provisioning remain G5 exit work.",
+    "No successful Labels writes or Canvas saves were introduced in the read-only reinstall probes; existing reference-plugin functional evidence remains separate."
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "status": 200,
+  "response": {
+    "data": {
+      "schema_version": 1,
+      "kind": "prepared",
+      "operation_id": "49a64667-eef5-4b29-a725-a00af2b4a2c6",
+      "plan_hash": "sha256:4ed7c1dc51bf9c442f4df91a1b92de613188b80667c477539265cd2fcae60191",
+      "plan": {
+        "schema_version": 1,
+        "operation_id": "49a64667-eef5-4b29-a725-a00af2b4a2c6",
+        "operation_type": "uninstall",
+        "created_at": "2026-10-29T02:50:52Z",
+        "deployment_id": "1f7db117-aa41-45a9-a318-6730d0f3c4cf",
+        "site_ids": [
+          "8afd569b-790c-400d-b123-cff2c86602fc"
+        ],
+        "base_state_digest": "sha256:813eea7899ef664fab2f79e864307724f35a27ad80c867ec08cfcbc8e18661c6",
+        "base_release_digest": "sha256:1093ae1afc2bc5b1bdc8f29d7be0fc1e9c3f10a065a965031a923bbb8c6a0f64",
+        "target_release_digest": "sha256:0547ff56b8be724dcb4cdf582d39bb44c8dad5e031e89a5683bb4ddeda10b9c0",
+        "artifacts": [
+          {
+            "plugin_id": "org.example.canvas",
+            "version": "0.1.3",
+            "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+            "runtime": "native",
+            "action": "uninstall",
+            "native_addon": "mp_example_canvas",
+            "migration_digests": []
+          },
+          {
+            "plugin_id": "org.example.notes",
+            "version": "0.2.3",
+            "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+            "runtime": "native",
+            "action": "uninstall",
+            "native_addon": "mp_example_notes",
+            "migration_digests": []
+          },
+          {
+            "plugin_id": "org.example.notes_labels",
+            "version": "0.2.1",
+            "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+            "runtime": "native",
+            "action": "uninstall",
+            "native_addon": "mp_example_notes_labels",
+            "migration_digests": []
+          }
+        ],
+        "dependency_lock_digest": "sha256:b15ce86da97a899e57c1fe68323955f97de016d087df0772d7c3d6b79c1d5846",
+        "bindings": [],
+        "endpoints": [],
+        "permission_changes": [
+          {
+            "plugin_id": "org.example.canvas",
+            "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+            "capability": "org.example.notes:notes.read",
+            "action": "revoke"
+          },
+          {
+            "plugin_id": "org.example.canvas",
+            "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+            "capability": "org.example.notes:notes.read",
+            "action": "revoke"
+          },
+          {
+            "plugin_id": "org.example.notes_labels",
+            "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+            "capability": "org.example.notes:notes.read",
+            "action": "revoke"
+          },
+          {
+            "plugin_id": "org.example.notes_labels",
+            "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+            "capability": "org.example.notes:notes.read",
+            "action": "revoke"
+          }
+        ],
+        "trust_changes": [],
+        "destructive": true,
+        "backup": {
+          "required": true,
+          "policy_id": "development_checkpoint",
+          "retain_previous_release": true
+        },
+        "policy_version": 1,
+        "operator_authorization_generation": 1
+      },
+      "targets": [
+        {
+          "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+          "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+          "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+          "plugin_id": "org.example.canvas",
+          "action": "uninstall"
+        },
+        {
+          "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+          "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+          "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+          "plugin_id": "org.example.notes",
+          "action": "uninstall"
+        },
+        {
+          "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+          "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+          "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+          "plugin_id": "org.example.notes_labels",
+          "action": "uninstall"
+        },
+        {
+          "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+          "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+          "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+          "plugin_id": "org.example.canvas",
+          "action": "uninstall"
+        },
+        {
+          "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+          "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+          "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+          "plugin_id": "org.example.notes",
+          "action": "uninstall"
+        },
+        {
+          "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+          "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+          "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+          "plugin_id": "org.example.notes_labels",
+          "action": "uninstall"
+        }
+      ],
+      "declaration_changes": [],
+      "native_trusted_code": true,
+      "restart_required": true,
+      "feature_suspension_unloads_code": false,
+      "known_unknowns": [
+        "Native Python and same-origin frontend code is fully trusted.",
+        "Author destructive=false does not prove migration safety.",
+        "Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects.",
+        "Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted."
+      ],
+      "control_authority": "independent_local_os",
+      "observed_at": "2026-10-29T02:49:36Z",
+      "stale": false
+    },
+    "api_version": "1.0",
+    "request_id": "f2bf525b-cd80-48ec-84b2-6cda0e2327fa"
+  }
+}

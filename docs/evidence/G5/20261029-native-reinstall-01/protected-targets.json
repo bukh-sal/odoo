@@ -1,0 +1,23 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "target": "main",
+      "generation": 28,
+      "state_and_business_exact": true,
+      "config_sha256": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9"
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "state_and_business_exact": true,
+      "config_sha256": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad"
+    }
+  ],
+  "independent_operations": [
+    [
+      "completed",
+      9
+    ]
+  ]
+}
