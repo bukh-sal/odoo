@@ -1,0 +1,10 @@
+{
+  "result": "passed_exact_guard_sdk_activation",
+  "operation_id": "e9bbc910-ec96-4ec5-a45e-78c94fd9c03b",
+  "generation": 18,
+  "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "native_maintenance_skipped": true,
+  "full_business_schema_metadata_exact": true,
+  "old_files_preserved": 54,
+  "completed_replay_exact": true
+}

@@ -1,0 +1,36 @@
+{
+  "state": "built",
+  "base_image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+  "tag": "modular-platform:worker-guard-20261029t073241537985z",
+  "command": [
+    "docker",
+    "build",
+    "--network",
+    "none",
+    "--pull=false",
+    "-t",
+    "modular-platform:worker-guard-20261029t073241537985z",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\operator\\build-contexts\\worker-fence-01"
+  ],
+  "recipe_sha256": {
+    "Dockerfile": "84e10b13ef0168680101300d1bd840d18b86b3b0296ba5c4bd1d60408a323bbb",
+    "worker-guard-apply.py": "6f96f1a364a648f556ac7dcbf0d12ca492267d50e615c95ba7aabbef9db51fec",
+    "worker-guard-input.json": "a80736620b399b170ba3a3c3f0f90add31fe98797a6969c1fcc1e8fc6f603624",
+    "worker-guard.py": "ccc71afcb082184567c45472ed41cd0a14aee6c6a7c1894c953fa0601002221b"
+  },
+  "candidate_source_sha256": "ccc71afcb082184567c45472ed41cd0a14aee6c6a7c1894c953fa0601002221b",
+  "expected_changed_file": "packages/platform_sdk/modular_platform/worker_start.py",
+  "result": "built_verified_not_deployed",
+  "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "inventory_digest": "sha256:f6c89902adb4a7e5038906d20bc2387f4743c5ac436c6594a9b3fed1ddccbb37",
+  "changed_files": [
+    {
+      "path": "packages/platform_sdk/modular_platform/worker_start.py",
+      "previous_sha256": "681a28a46de8f502bac6b646103062d01c2d04f909d063b17fcbc85aaa640941",
+      "target_sha256": "ccc71afcb082184567c45472ed41cd0a14aee6c6a7c1894c953fa0601002221b"
+    }
+  ],
+  "python_runtime_and_native_inventory_exact": true,
+  "base_layers_preserved": 12,
+  "utc": "2026-10-29T07:32:46.218067+00:00"
+}

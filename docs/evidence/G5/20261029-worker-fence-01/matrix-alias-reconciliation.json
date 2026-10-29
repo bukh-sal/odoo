@@ -1,0 +1,10 @@
+{
+  "result": "harness_null_alias_observation_corrected",
+  "exec_session": "dc2295",
+  "container_id": "6d263a01b0c326fbb818df8a8bd10a48290d12f511efa9c4106c9aca1e5d4247",
+  "actual_aliases": null,
+  "actual_port_bindings": {},
+  "guard_exit_code": 1,
+  "first_startup_not_repeated": true,
+  "next": "Exact existing-copy resume; treat null Docker aliases as empty. No database or image reset."
+}

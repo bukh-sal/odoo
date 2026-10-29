@@ -1,0 +1,176 @@
+{
+  "result": "observed",
+  "utc": "2026-10-29T07:24:20.812681+00:00",
+  "guard_cases": [
+    {
+      "result": "accepted",
+      "database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983",
+      "inventory_digest": "sha256:5f23585c041b1a837bd9b160dec0f37f7c030d424b638b5c2fc6c0da00cdf6bb",
+      "labels": [
+        [
+          "org.example.notes_labels",
+          "installed",
+          "installed",
+          "19.0.0.2.2"
+        ]
+      ],
+      "labels_field_present": true,
+      "transaction_read_only": true,
+      "native_code_imported": false,
+      "native_entrypoint_invoked": false,
+      "business_sha256": "5c59ee28062dd359c64322848570fce254948834ce83242a0c295787c534af5e",
+      "schema_sha256": "d14aefad97d17fbd4381b84e66b9b765faf85f24b98d70fc3851287f7d3cc685",
+      "business_schema_unchanged": true
+    },
+    {
+      "result": "accepted",
+      "database": "mp_disposable_r0_r1_g5_life_f99acae9d906",
+      "inventory_digest": "sha256:5f23585c041b1a837bd9b160dec0f37f7c030d424b638b5c2fc6c0da00cdf6bb",
+      "labels": [
+        [
+          "org.example.notes_labels",
+          "installed",
+          "uninstalled",
+          null
+        ]
+      ],
+      "labels_field_present": false,
+      "transaction_read_only": true,
+      "native_code_imported": false,
+      "native_entrypoint_invoked": false,
+      "business_sha256": "7df58cd8fd3e5cc3991eea0e38ac8567eef2bba43c792a7fa6f95b5d2d6cc443",
+      "schema_sha256": "5a53c042815f1e40f42836ad3d82d9fec6acafcaaeabc7771c8fcc125a677a5e",
+      "business_schema_unchanged": true
+    },
+    {
+      "result": "accepted",
+      "database": "mp_disposable_r0_r1_restore_c515909c969c4f9a8e76d475ffd0df46",
+      "inventory_digest": "sha256:5f23585c041b1a837bd9b160dec0f37f7c030d424b638b5c2fc6c0da00cdf6bb",
+      "labels": [
+        [
+          "org.example.notes_labels",
+          "installed",
+          "uninstalled",
+          null
+        ]
+      ],
+      "labels_field_present": false,
+      "transaction_read_only": true,
+      "native_code_imported": false,
+      "native_entrypoint_invoked": false,
+      "business_sha256": "7df58cd8fd3e5cc3991eea0e38ac8567eef2bba43c792a7fa6f95b5d2d6cc443",
+      "schema_sha256": "5a53c042815f1e40f42836ad3d82d9fec6acafcaaeabc7771c8fcc125a677a5e",
+      "business_schema_unchanged": true
+    }
+  ],
+  "managed_workers": [
+    {
+      "container_id": "05af855fb9148433fc09058d8a183522fbc8339be5cd95cca2bbdb2916653a2f",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": true,
+      "networks": [
+        "mp-r0-r1lifef99acae9d906_runtime"
+      ],
+      "current": true
+    },
+    {
+      "container_id": "bbf5b482130b8e73c7b8cc8b2200c70d19b60288ee8d36175d52db4262a71f4e",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "4b92db7eb300f7eeb5f7d4458aa6a5fd28474dcb00b4075599c6c6a01421322f",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "542521d28111987d6a08227cbc8ae1567bf7f351cb439d2ab1c2c45c8b1e3d9e",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "d8e61661ad7cc9f09f8501b0b248fd6e4251f0268de340bab0cd9139a2ba3c41",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "272df5ddaa59b74362d7923a8be7845a0ef8a7bf2fa5f25f72bcd3432f5bee13",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "54b284eaa6c4dd604e239968dc6f73ab5e636a8e7a6eaad860490ecef29f8fa2",
+      "image_id": "sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "92c671b7e54d4b206513d4541f5ba0b90e97499ea8872e64c187a7a0c142a296",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "9f257dcdffea0b6a0e9f88b4e45b0bfeb5dd61ff7f2a3fa70740530ef3a89fdf",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "39138cf0460a84368d9b31ed60104287c20eeef9192018587d4687d39288b16e",
+      "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "2a570b964382421dbd0adcd1dc27289b25b00e6018a5e26b9518e9bacea3032c",
+      "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "343f80c177c6d918e812154e30a9be7f8e5a616d804e04f5db73ebb24d65ef06",
+      "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "c8efbdc51ba37a91155af77e32ff51a17a8f82ed6dae189f93eaf3c6bf7bf417",
+      "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "4eacbe7dcf12ead7ef2c5f830d47d80451587d6fb22c098e33564e1fef241f17",
+      "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+      "running": false,
+      "networks": [],
+      "current": false
+    },
+    {
+      "container_id": "c7f59263c15755358b9291074532c6b0d50073b5fcf63212297a03793553f58f",
+      "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+      "running": false,
+      "networks": [],
+      "current": false
+    }
+  ],
+  "configuration_unchanged": true
+}

@@ -1,0 +1,19 @@
+{
+  "host_base_commit": "01bd1a9f813042cd9adcfedd46055e507a128948",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_start.py": "ccc71afcb082184567c45472ed41cd0a14aee6c6a7c1894c953fa0601002221b",
+    "packages/platform_sdk/modular_platform/workers.py": "9a9a16189d271441e9b7cf327fcb3c6ae7d74cf427f36aae9396daa7c05e1733",
+    "packages/platform_sdk/modular_platform/native_executor.py": "5f703479e32fc32f80bcecd25f91754b0d25b843f61f1f37cb7ca5e1b5f192f6",
+    "tools/start_worker.py": "b0b9ef1f6c3723f5e7441c4a1f627de87574ecc5f345b20951bdf27b72443edd",
+    "tests/test_worker_installations.py": "469eef44655599bc303bf37ed98f96376baf6c8eb23a3c1c56c1180c07236780",
+    "tests/test_workers.py": "7ed494a453384e4b7a46f935fbc0bd4c1877993df7bebabcd2e4b2f63d40165d",
+    "tests/test_start_worker.py": "184900e30713374ccd72271f2830b6f4810b9165203a0381fb6a4e671ba0f147"
+  },
+  "base_runtime_image": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+  "base_runtime_source_checkpoint": "1efd46de",
+  "runtime_image": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "runtime_inventory_digest": "sha256:f6c89902adb4a7e5038906d20bc2387f4743c5ac436c6594a9b3fed1ddccbb37",
+  "runtime_change": "Exactly one SDK worker_start.py file over retained base; Python/native/core/plugin archives/configuration unchanged.",
+  "host_recovery_ordering_checkpoint": "cc9362ba",
+  "contract_files": 87
+}

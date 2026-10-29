@@ -1,0 +1,12 @@
+{
+  "result": "guard_correct_harness_log_capture_failed",
+  "exec_session": 89403,
+  "container_id": "6d263a01b0c326fbb818df8a8bd10a48290d12f511efa9c4106c9aca1e5d4247",
+  "exit_code": 1,
+  "actual_guard_reason": "Database release inventory differs; controlled maintenance required",
+  "native_import_log_absent": true,
+  "stdout_bytes": 0,
+  "stderr_bytes": 921,
+  "diagnosis": "docker logs sends native diagnostics to stderr; wrapper captured stdout only.",
+  "next": "Resume exact existing copies and stopped first negative container. Do not recreate databases or repeat that startup."
+}

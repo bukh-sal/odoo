@@ -1,0 +1,62 @@
+{
+  "result": "passed",
+  "candidate_source_sha256": "ccc71afcb082184567c45472ed41cd0a14aee6c6a7c1894c953fa0601002221b",
+  "cases": [
+    {
+      "result": "accepted",
+      "database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983",
+      "inventory_digest": "sha256:5f23585c041b1a837bd9b160dec0f37f7c030d424b638b5c2fc6c0da00cdf6bb",
+      "labels": [
+        [
+          "org.example.notes_labels",
+          "installed",
+          "installed",
+          "19.0.0.2.2"
+        ]
+      ],
+      "labels_field_present": true,
+      "transaction_read_only": true,
+      "native_code_imported": false,
+      "native_entrypoint_invoked": false
+    },
+    {
+      "result": "rejected",
+      "reason": "Installed package differs from native registration; controlled maintenance required",
+      "database": "mp_disposable_r0_r1_g5_life_f99acae9d906",
+      "inventory_digest": "sha256:5f23585c041b1a837bd9b160dec0f37f7c030d424b638b5c2fc6c0da00cdf6bb",
+      "labels": [
+        [
+          "org.example.notes_labels",
+          "installed",
+          "uninstalled",
+          null
+        ]
+      ],
+      "labels_field_present": false,
+      "transaction_read_only": true,
+      "native_code_imported": false,
+      "native_entrypoint_invoked": false
+    },
+    {
+      "result": "rejected",
+      "reason": "Installed package differs from native registration; controlled maintenance required",
+      "database": "mp_disposable_r0_r1_restore_c515909c969c4f9a8e76d475ffd0df46",
+      "inventory_digest": "sha256:5f23585c041b1a837bd9b160dec0f37f7c030d424b638b5c2fc6c0da00cdf6bb",
+      "labels": [
+        [
+          "org.example.notes_labels",
+          "installed",
+          "uninstalled",
+          null
+        ]
+      ],
+      "labels_field_present": false,
+      "transaction_read_only": true,
+      "native_code_imported": false,
+      "native_entrypoint_invoked": false
+    }
+  ],
+  "limits": [
+    "Operator-supplied candidate source in read-only validation process; not immutable default-entrypoint or deployment qualification."
+  ]
+}

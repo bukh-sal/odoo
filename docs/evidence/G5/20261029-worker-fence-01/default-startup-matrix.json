@@ -1,0 +1,90 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T07:37:31.505676+00:00",
+  "cases": [
+    {
+      "case": "old-code-current-schema",
+      "container_id": "6d263a01b0c326fbb818df8a8bd10a48290d12f511efa9c4106c9aca1e5d4247",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "exit_code": 1,
+      "default_entrypoint": true,
+      "expected_error": "Database release inventory differs",
+      "registry_http_ready": false,
+      "business_schema_unchanged": true,
+      "retained_stopped_disconnected": true,
+      "no_public_port_or_app_alias": true
+    },
+    {
+      "case": "old-code-relabeled-pin",
+      "container_id": "2148db1001b24c4f2cca59058b59217ae784243d4c2ddd8d1f50a8d7bc54dd35",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "exit_code": 1,
+      "default_entrypoint": true,
+      "expected_error": "Native module state/version differs",
+      "registry_http_ready": false,
+      "business_schema_unchanged": true,
+      "retained_stopped_disconnected": true,
+      "no_public_port_or_app_alias": true
+    },
+    {
+      "case": "partial-uninstall-candidate",
+      "container_id": "1b019ceef20d13434fab56a602c430a0e58ca9f1d3109b869894efcd1b446555",
+      "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+      "exit_code": 1,
+      "default_entrypoint": true,
+      "expected_error": "Installed package differs from native registration",
+      "registry_http_ready": false,
+      "business_schema_unchanged": true,
+      "retained_stopped_disconnected": true,
+      "no_public_port_or_app_alias": true
+    },
+    {
+      "case": "coherent-installed-candidate",
+      "container_id": "74093a2596e23c06e57c7e79cc88962ddb730c29302206ad41ebcc5356ef44df",
+      "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+      "exit_code": 0,
+      "default_entrypoint": true,
+      "expected_error": null,
+      "registry_http_ready": true,
+      "business_schema_unchanged": true,
+      "retained_stopped_disconnected": true,
+      "no_public_port_or_app_alias": true
+    },
+    {
+      "case": "coherent-uninstalled-candidate",
+      "container_id": "60658b118f01aa933da81811427e27cd9cefc897ef47346607b351e824e233f9",
+      "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+      "exit_code": 0,
+      "default_entrypoint": true,
+      "expected_error": null,
+      "registry_http_ready": true,
+      "business_schema_unchanged": true,
+      "retained_stopped_disconnected": true,
+      "no_public_port_or_app_alias": true
+    }
+  ],
+  "source_target_unchanged": true,
+  "databases": {
+    "healthy": {
+      "database": "mp_disposable_r0_r1_wf_cf2560590d5d_healthy",
+      "volume": "mp-g5-worker-fence-cf2560590d5d-healthy",
+      "source_database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983"
+    },
+    "partial": {
+      "database": "mp_disposable_r0_r1_wf_cf2560590d5d_partial",
+      "volume": "mp-g5-worker-fence-cf2560590d5d-partial",
+      "source_database": "mp_disposable_r0_r1_g5_life_f99acae9d906"
+    },
+    "removed": {
+      "database": "mp_disposable_r0_r1_wf_cf2560590d5d_removed",
+      "volume": "mp-g5-worker-fence-cf2560590d5d-removed",
+      "source_database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983"
+    }
+  },
+  "native_jobs_disabled": true,
+  "limits": [
+    "Disposable bootstrap copies with isolated inventory-pin substitutions; not approved deployed/public release state.",
+    "No external job/outbox implementation; G6 requalification remains.",
+    "Positive HTTP readiness is internal only; no browser/public alias/port."
+  ]
+}

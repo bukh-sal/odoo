@@ -18,6 +18,30 @@ def validate_data_addons(data_dir):
         raise ValueError('Unexpected writable data-dir addon search-path content')
 
 
+def validate_installations(inventory,modules,installations):
+    """A native commit is not a complete platform metadata publication."""
+    artifacts=inventory.get('artifacts',{})
+    native={name:(state,version) for name,state,version in modules}
+    active={}
+    for plugin,runtime,state,version,digest,manifest in installations:
+        if runtime!='native' or plugin in active or state not in ('installed','suspended','removed'):
+            raise ValueError('Native installation metadata is inconsistent; controlled maintenance required')
+        addon=manifest.get('runtime',{}).get('addon_name') if isinstance(manifest,dict) else None
+        if not addon or manifest['runtime'].get('kind')!='native':
+            raise ValueError('Native installation metadata is inconsistent; controlled maintenance required')
+        if state=='removed':
+            if addon in native:
+                raise ValueError('Removed installation still has native registration; controlled maintenance required')
+            continue
+        artifact=artifacts.get(plugin)
+        if (not artifact or (artifact['addon'],artifact['version'],artifact['digest'])!=(addon,version,digest)
+                or native.get(addon)!=('installed','19.0.'+version)):
+            raise ValueError('Installed package differs from native registration; controlled maintenance required')
+        active[plugin]=addon
+    if any(entry['addon'] in native and plugin not in active for plugin,entry in artifacts.items()):
+        raise ValueError('Native package lacks installed platform metadata; controlled maintenance required')
+
+
 def validate(root,options,connection,expected_database,expected_inventory):
     root=Path(root)
     raw=(root/'distribution-inventory.json').read_bytes();inventory=json.loads(raw)
@@ -52,8 +76,12 @@ def validate(root,options,connection,expected_database,expected_inventory):
         cursor.execute("SELECT value FROM ir_config_parameter WHERE key='mp.active_inventory_digest'")
         if cursor.fetchone()!=(digest,):raise ValueError('Database release inventory differs; controlled maintenance required')
         cursor.execute("SELECT name,state,latest_version FROM ir_module_module WHERE state IN ('installed','to install','to upgrade','to remove')")
-        if any(state!='installed' or name not in versions or versions[name]!=version for name,state,version in cursor.fetchall()):
+        modules=cursor.fetchall()
+        if any(state!='installed' or name not in versions or versions[name]!=version for name,state,version in modules):
             raise ValueError('Native module state/version differs; startup never performs migration')
+        if inventory.get('policy',{}).get('platform_sdk') is True:
+            cursor.execute("SELECT plugin_id,runtime,state,version,artifact_digest,manifest FROM mp_plugin_installation WHERE runtime='native' ORDER BY plugin_id")
+            validate_installations(inventory,modules,cursor.fetchall())
     return digest
 
 

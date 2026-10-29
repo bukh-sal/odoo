@@ -1,0 +1,169 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T07:43:51.095636+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "full_state_business_configuration_exact": true
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "full_state_business_configuration_exact": true
+    }
+  ],
+  "active_generation": 18,
+  "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "source_guard_matches_image": true,
+  "managed_workers": [
+    {
+      "container_id": "05af855fb9148433fc09058d8a183522fbc8339be5cd95cca2bbdb2916653a2f",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-39e3794466484f7e8aa130d01b452747",
+      "networks": []
+    },
+    {
+      "container_id": "272df5ddaa59b74362d7923a8be7845a0ef8a7bf2fa5f25f72bcd3432f5bee13",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-ebc9431933ae48609cf5cc74e30ef95c",
+      "networks": []
+    },
+    {
+      "container_id": "2a570b964382421dbd0adcd1dc27289b25b00e6018a5e26b9518e9bacea3032c",
+      "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-b07977236b4d4022bcfb8b286c09b7ef",
+      "networks": []
+    },
+    {
+      "container_id": "2e926faf6cfa6945aa047a893b2ea18d2a0f859b9aeac896cf480f413bf33803",
+      "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+      "running": true,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-e9bbc910ec964ec5a45e78c94fd9c03b",
+      "networks": [
+        "mp-r0-r1lifef99acae9d906_runtime"
+      ]
+    },
+    {
+      "container_id": "343f80c177c6d918e812154e30a9be7f8e5a616d804e04f5db73ebb24d65ef06",
+      "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-e4065b3800c84f459d3c373817611886",
+      "networks": []
+    },
+    {
+      "container_id": "39138cf0460a84368d9b31ed60104287c20eeef9192018587d4687d39288b16e",
+      "image_id": "sha256:709d7fbd475aac6f2fef377b3f8d9a9bba15281931cc5e05b85f433ef7cdb708",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-a8b63f80e9f14e11b45e0416fba336f1",
+      "networks": []
+    },
+    {
+      "container_id": "4b92db7eb300f7eeb5f7d4458aa6a5fd28474dcb00b4075599c6c6a01421322f",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-restore-553e16b5a6134ec9a3f9bda5a0b3d983",
+      "networks": []
+    },
+    {
+      "container_id": "4eacbe7dcf12ead7ef2c5f830d47d80451587d6fb22c098e33564e1fef241f17",
+      "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-3c032df7512e4ca7a0fc4ee94ac8c5ff",
+      "networks": []
+    },
+    {
+      "container_id": "542521d28111987d6a08227cbc8ae1567bf7f351cb439d2ab1c2c45c8b1e3d9e",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-restore-c515909c969c4f9a8e76d475ffd0df46",
+      "networks": []
+    },
+    {
+      "container_id": "54b284eaa6c4dd604e239968dc6f73ab5e636a8e7a6eaad860490ecef29f8fa2",
+      "image_id": "sha256:ea6c34cee2a866b847dff7115674d2a03bd38268c953adf11edc8bc2b572e23c",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-5429f3c0d6ff4484ab1a14de7728bf21",
+      "networks": []
+    },
+    {
+      "container_id": "92c671b7e54d4b206513d4541f5ba0b90e97499ea8872e64c187a7a0c142a296",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-6d824b4d8290441981678b97c7f105f8",
+      "networks": []
+    },
+    {
+      "container_id": "9f257dcdffea0b6a0e9f88b4e45b0bfeb5dd61ff7f2a3fa70740530ef3a89fdf",
+      "image_id": "sha256:967c4b54371291a54ab5490e438c37358d561fa66e11293943096122a2608bc1",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-9958f09b918141aa99d42953a3e3095d",
+      "networks": []
+    },
+    {
+      "container_id": "bbf5b482130b8e73c7b8cc8b2200c70d19b60288ee8d36175d52db4262a71f4e",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-0a63c6f740d3426db8e86113506d85c6",
+      "networks": []
+    },
+    {
+      "container_id": "c7f59263c15755358b9291074532c6b0d50073b5fcf63212297a03793553f58f",
+      "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-06297edaaa7649c7bf8eb49b65df3bf5",
+      "networks": []
+    },
+    {
+      "container_id": "c8efbdc51ba37a91155af77e32ff51a17a8f82ed6dae189f93eaf3c6bf7bf417",
+      "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-ed32eb8d2d444bdabb51098dcd5b0364",
+      "networks": []
+    },
+    {
+      "container_id": "d8e61661ad7cc9f09f8501b0b248fd6e4251f0268de340bab0cd9139a2ba3c41",
+      "image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+      "running": false,
+      "name": "mp-r0-r1lifef99acae9d906-app-release-4e84908e436749b7a60537d199991c69",
+      "networks": []
+    }
+  ],
+  "active_database_client_addresses": [
+    "192.168.16.3/32"
+  ],
+  "only_current_worker_connected": true,
+  "native_cron_disabled": true,
+  "unsupported_dispatch_tables_absent": true,
+  "source_and_retained_failure_schema_business_exact": true,
+  "checkpoint_hashes_verified": true,
+  "independent_operation_states": [
+    [
+      "completed",
+      17
+    ],
+    [
+      "failed_before_mutation",
+      3
+    ],
+    [
+      "revoked",
+      4
+    ]
+  ],
+  "public_files_checked": 45,
+  "known_private_values_checked": 3,
+  "windows_tests": 24,
+  "windows_linux_only_skipped": 1,
+  "linux_tests": 24,
+  "linux_skipped": 0,
+  "frozen_files": 87,
+  "limits": [
+    "Bounded evidence/private-value scan, not SEC-03 release qualification.",
+    "No actual job/outbox/external worker adapter exists yet; G6 must extend and requalify worker/dispatch fences.",
+    "Retained historical images are immutable; new guard is qualified in current distribution and controlled host bootstrap."
+  ]
+}

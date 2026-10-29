@@ -1,0 +1,16 @@
+{
+  "result": "passed",
+  "container_id": "38691300ce70badeed4ce0e1ff8d4abac13d0faca11fca50672050cbd9058bac",
+  "old_image_id": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+  "active_image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "active_generation": 18,
+  "actual_active_database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983",
+  "default_entrypoint": true,
+  "exit_code": 1,
+  "reason": "Database release inventory differs; controlled maintenance required",
+  "native_registry_import_log_absent": true,
+  "current_business_schema_configuration_exact": true,
+  "old_probe_stopped_disconnected": true,
+  "no_public_port_or_app_alias": true,
+  "private_log_sha256": "51fba8734a275c371346f40eb05901d04c4f0e6e34b245b85853bcd52414800a"
+}

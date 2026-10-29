@@ -1,0 +1,58 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T07:45:54.869801+00:00",
+  "work_item": "G5-X06/MIG-08",
+  "acceptance": [
+    "MIG-08",
+    "BOOT-06"
+  ],
+  "requalified": [
+    "BOOT-06"
+  ],
+  "spec_sections": [
+    "10.2",
+    "10.3",
+    "10.5",
+    "25.3"
+  ],
+  "operation_id": "e9bbc910-ec96-4ec5-a45e-78c94fd9c03b",
+  "plan_hash": "sha256:2dc9989abb00fcb4e90406b8476027cdc2aa963c55f704c6a90053fc6eae561f",
+  "base_generation": 17,
+  "active_generation": 18,
+  "checks": {
+    "actual_counterexample": "read-only-baseline.json",
+    "new_guard_readonly": "candidate-read-only.json",
+    "immutable_default_bootstrap": "default-startup-matrix.json",
+    "sdk_only_activation": "deploy/activation.json",
+    "actual_old_worker_code_current_database": "old-worker-live-database.json",
+    "native_api_assets_client": "http-assets.json",
+    "source_workers_data_protected_audit": "final-audit.json"
+  },
+  "tests": {
+    "windows_total": 24,
+    "windows_passed": 23,
+    "windows_linux_only_skip": 1,
+    "linux_passed": 24,
+    "linux_skip": 0,
+    "frozen_files": 87
+  },
+  "source": "source-boundary.json",
+  "remaining_G5_acceptance": [
+    "MIG-09",
+    "TEN-01",
+    "TEN-02",
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEC-07",
+    "SEC-08",
+    "OPS-02",
+    "OPS-03"
+  ],
+  "limits": [
+    "G5 profile has native cron disabled and no job/outbox tables or external worker adapter; G6 must extend/requalify these shared worker/dispatch fences before R1 completion.",
+    "Retained old images remain immutable historical artifacts; qualified current distribution and controlled bootstrap contain the new check.",
+    "Disposable default-bootstrap copies substitute inventory pins to isolate guard cases; only the approved activation is the actual published release.",
+    "No UI or Canvas feature changes; native Odoo CRUD remains default."
+  ]
+}

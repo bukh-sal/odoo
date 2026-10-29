@@ -1,0 +1,11 @@
+# MIG-08 stale worker/bootstrap consistency
+
+`qualification.json` records MIG-08 and BOOT-06 requalification. A real counterexample in two retained native-commit failures showed that inventory/native version checks alone accepted metadata claiming an installed plugin whose native addon and field were already gone. The read-only probe imported no Odoo/plugin code and changed no source database bytes.
+
+The guard now checks native package installations in both directions before native import: exact immutable package identity plus installed native registration/version for active metadata; installed packaged addons require matching active metadata; removed history requires absent native registration. Never-installed packages and completed removals remain valid; feature suspension retains native registration. No public contract or schema changed.
+
+Source:23Windows checks plus one Linux-only symlink skip; all24Linux checks;87frozen files. The immutable candidate changes only worker_start.py and preserves Python, native/core sources, package archives, execution configuration and all12base layers. Five actual default-entrypoint copy cases reject old inventory, old native version and partial uninstall metadata; coherent installed and removed copies reach HTTP readiness without changing business/schema. First log/stderr and null-alias harness errors were reconciled on the same copies and stopped first container, without DB recreation or startup replay.
+
+The exact independently reviewed SDK-only deployment e9bbc910/checkpoint/worker replacement/asset preflight completed generation18 without native maintenance. Full business/schema/installation/binding/grant bytes and old files are exact. A generation17-image default-entrypoint process against the actual active18 database exits1 before Odoo import. Only selected worker2e926faf is connected; all prior managed workers and six test processes are stopped/disconnected. Current native/API/minimalCanvas/Labels-conflict, old-client409, four immutable old/new assets, protected main28/manager6 and retained-failure data pass.
+
+MIG-09 remains required. Native cron is0 and job/outbox tables are absent in this G5 profile; real G6 job/event/external-worker adapters must requalify these shared cases. No release-wide secret scan, clean recovery rehearsal, UI redesign or Canvas expansion is claimed.

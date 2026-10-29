@@ -1,0 +1,39 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 327B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/modular-platform:guard-base-486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/modular-platform:guard-base-486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea@sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea
+#4 resolve docker.io/library/modular-platform:guard-base-486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea@sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 534.79kB 0.0s done
+#5 DONE 0.1s
+
+#6 [2/3] COPY worker-guard-input.json worker-guard.py worker-guard-apply.py /tmp/
+#6 DONE 0.0s
+
+#7 [3/3] RUN ["/venv/bin/python", "-I", "/tmp/worker-guard-apply.py"]
+#7 0.168 exact one-file guard overlay; no database, artifact or Python rebuild
+#7 DONE 0.2s
+
+#8 exporting to image
+#8 exporting layers 0.1s done
+#8 exporting manifest sha256:6db3681cbf4cbb8e60d9a0c729eee7bb9046911d622244b4673250e73a449748 done
+#8 exporting config sha256:d3939a6aaeef4cdde54efb4d0edc4db000ae6bd0545a8162191ecbafa9c8fc85 0.0s done
+#8 exporting attestation manifest sha256:2048a7ca77655be8d13907f2e38b718dd002b07667a7950f8330916c3a997f3f 0.0s done
+#8 exporting manifest list sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a 0.0s done
+#8 naming to docker.io/library/modular-platform:worker-guard-20261029t073241537985z done
+#8 unpacking to docker.io/library/modular-platform:worker-guard-20261029t073241537985z 0.0s done
+#8 DONE 0.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/h9p58e7n3htx0etmtj858bupw
