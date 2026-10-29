@@ -1,0 +1,32 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T10:52:50.346720+00:00",
+  "windows_tests": 34,
+  "skipped": 0,
+  "commands": [
+    {
+      "command": ".venv/Scripts/python.exe -X utf8 -m unittest tests.test_maintenance_capture tests.test_secret_scan -v",
+      "tests": 7,
+      "seconds": 0.244
+    },
+    {
+      "command": ".venv/Scripts/python.exe -X utf8 -m unittest tests.test_recovery tests.test_restore_dispatch tests.test_unchanged_recovery -v",
+      "tests": 27,
+      "seconds": 181.732
+    }
+  ],
+  "actual_linux_container_capture": "maintenance-capture.json",
+  "line_ending_equivalence": "source-line-endings.json",
+  "frozen_files": 87,
+  "source_sha256": {
+    "tools/secret_scan.py": "ab1ccf2fa925fda524cd1ab1926afd9e603e59ed209f967a4f783ac3e27255bd",
+    "tests/test_secret_scan.py": "74d9e19d6ab5acc8c74493063f4a8e0f7f99bc00fdcec776350e7db09aa6e2d5",
+    "tests/test_maintenance_capture.py": "5526f71e32542c4ae149ecf6b6f6f6f905479c9ab46864f71668ff12f3bbff9b",
+    "tests/test_recovery.py": "93a21834b1de03823eb62607854b54114dde2a3645e6fcfcf440ba2faf88967f",
+    "tests/test_restore_dispatch.py": "78e7e90222f471c8fba9c74713d47e11c23880bb330902056d48939b39dca7b8",
+    "tests/test_unchanged_recovery.py": "c4a305782a34cdcf3531314e70b40c3193944f82355ba87296e1a03676133377",
+    "packages/platform_sdk/modular_platform/native_executor.py": "40336d6bd00b118a605d4ac86b62b1254c9c21f2b3badbdbfb0c49e270b12f12",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "6d38478211d2355ce7539d4080d6a9e43091161e7ab45449ef776081f9e92bb8"
+  },
+  "head": "5e6e867c5ad86a1b23e225e920d5f9a0a2130ee4"
+}

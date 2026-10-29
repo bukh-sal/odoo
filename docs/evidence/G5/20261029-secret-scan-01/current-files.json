@@ -1,0 +1,57 @@
+{
+  "result": "scanned_triage_required",
+  "utc": "2026-10-29T10:51:39.373525+00:00",
+  "files": {
+    "docs/architecture-decisions/0027-private-maintenance-output.md": "9f0283fd8e397f372d21c995ebb042923a2f96248bb75b55e1fb384bd5c4fac3",
+    "docs/evidence/G5/20261029-secret-scan-01/README.md": "83bdc0422052a5fee63bf80615272f4a1ea74c9c373bbc5e749bc0b51f1f274f",
+    "docs/evidence/G5/20261029-secret-scan-01/capture_probe.py": "eff646fcb3ec05f2c7da284cf4ea37989607e4f6d32971c674aaae0980ba2d87",
+    "docs/evidence/G5/20261029-secret-scan-01/collect.py": "063c481255099d1e84cce410e1d05c7a3f9f958e05238c1765b92701da3f7a8c",
+    "docs/evidence/G5/20261029-secret-scan-01/collection-correction.json": "49b9980e74e1cf5ad36adda8177d6ffb9a4c3268231954c34426ad75011f21ea",
+    "docs/evidence/G5/20261029-secret-scan-01/collection.json": "b06ecdae5114372d662cab2d6fe4d9206bc26c1938bfbfd662f5e42b2e4328d8",
+    "docs/evidence/G5/20261029-secret-scan-01/current_files.py": "ebd21875726794be811ea5839afa06655fe0e50c9a4f907f65904656dd61ef3a",
+    "docs/evidence/G5/20261029-secret-scan-01/history.py": "f7b2e143925af2c83ad5863d3a74ce880f5ea58cbc60275bb9e890a4518ede16",
+    "docs/evidence/G5/20261029-secret-scan-01/image-layers.json": "d5abeeee3c57f406eb9a1bd53f0ab51ef0e4156cb2d23bfccada9e9743a9b090",
+    "docs/evidence/G5/20261029-secret-scan-01/image.py": "9fef512bfcf07ee8d7ae118d6b078ca85074f4d23e8b13b99fc3fdda9c127d28",
+    "docs/evidence/G5/20261029-secret-scan-01/implementation-history.json": "7a7f6c47d527ce8ce7953b7bc5df60cc461b6c38592997efb216ef1fa90e87eb",
+    "docs/evidence/G5/20261029-secret-scan-01/legacy-payload-log-remediation.json": "61fd7ac27f8d8715b056224f4bea154e9fb30afe879c7010a3d2c53ade629611",
+    "docs/evidence/G5/20261029-secret-scan-01/maintenance-capture.json": "e776c577a4dfef0d823c7c01151ceb78949c110f22a8231b138bdeb19a2d6b40",
+    "docs/evidence/G5/20261029-secret-scan-01/packages-browser-logs.json": "e340ee373e03648ab5bceb6a3ddc1d0fca9170dba89b64ba8f19d73a3d70fd10",
+    "docs/evidence/G5/20261029-secret-scan-01/packages_browser_logs.py": "f57ca02c4ad2fcccaa20342e50959998ffaad7563efda4053a9be9dfabfa4b52",
+    "docs/evidence/G5/20261029-secret-scan-01/post-remediation-logs.json": "072512c5e3549a27d34e91108ec758baf6d5a1a813f66747e34fefc011547b13",
+    "docs/evidence/G5/20261029-secret-scan-01/post_logs.py": "4e974e0126e5e4635a6cd22faaf59ff35ee96334d0f2c7c3faa7af64611a2eb8",
+    "docs/evidence/G5/20261029-secret-scan-01/protected-audit.json": "9d349d975edc83497afd06853e01270c7c34165e5b463ba0598aad044f5c57e8",
+    "docs/evidence/G5/20261029-secret-scan-01/protected_audit.py": "1db46da59787d0cccace0bf9e2e2c69d22de50a1f63bca81c5969dc40d7b5863",
+    "docs/evidence/G5/20261029-secret-scan-01/remediate_legacy_logs.py": "a7f960c60296442ee215a36caf4f8a722bd5280e6598558221646274f79dd733",
+    "docs/evidence/G5/20261029-secret-scan-01/tracked-tree.json": "9f7cb65dc957fb593475ab8a8b633edb216f158c5ba7caf9425a9d890d6278a8",
+    "docs/evidence/G5/20261029-secret-scan-01/tree.py": "868ca5037dab3f3022063473c6144b29a776c35212e0ab8912b54d86d824c244",
+    "docs/evidence/G5/20261029-secret-scan-01/triage-source-image.json": "355109b5df3a01c650eb918a1604fe4c2add722b17a46007557adf202ce7a4cb",
+    "docs/evidence/G5/20261029-secret-scan-01/triage.py": "b715ef2481ce9920d9c6bff4f416b689bab7e1472ae325a746e1f3f230e59b50",
+    "docs/http-security.md": "9a19c9978cdb76cb92bbf666cd316855bcd21a36929f3daa2cac6eae79354bdd",
+    "docs/implementation-status.md": "ac0d35d82bd0f3b44936e0918d5c6bb2e7bf1bcfd14113840c0353debd76e273",
+    "docs/work-log.md": "edf0e568d6c4acd7b981de8849e4260b287e10141493d1b0192871e3d37e6ae6",
+    "packages/platform_sdk/modular_platform/native_executor.py": "b5ad5138f2dbbe63cedd0d0666d9beefdae78fb7ae7e3c09cc174806ee8d6d81",
+    "tests/test_maintenance_capture.py": "5526f71e32542c4ae149ecf6b6f6f6f905479c9ab46864f71668ff12f3bbff9b",
+    "tests/test_secret_scan.py": "74d9e19d6ab5acc8c74493063f4a8e0f7f99bc00fdcec776350e7db09aa6e2d5",
+    "tools/secret_scan.py": "ab1ccf2fa925fda524cd1ab1926afd9e603e59ed209f967a4f783ac3e27255bd"
+  },
+  "bytes": 926847,
+  "known_secret_findings": 0,
+  "generic_findings": 2,
+  "findings": [
+    {
+      "location": "tests/test_secret_scan.py",
+      "offset": 2233,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "docs/evidence/G5/20261029-secret-scan-01/triage.py",
+      "offset": 2128,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed"
+    }
+  ],
+  "limits": [
+    "Complements full tracked tree/history/image/package/log scans; status/prose/output records excluded from runtime code identity."
+  ]
+}

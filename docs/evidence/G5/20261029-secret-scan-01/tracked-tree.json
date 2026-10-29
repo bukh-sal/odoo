@@ -1,0 +1,1732 @@
+{
+  "result": "scanned_triage_required",
+  "utc": "2026-10-29T10:32:59.564191+00:00",
+  "files": 51416,
+  "bytes": 1150091707,
+  "elapsed_seconds": 37.0,
+  "known_secret_findings": 0,
+  "generic_findings": 286,
+  "findings": [
+    {
+      "location": "addons/account/tests/common.py",
+      "offset": 8469,
+      "rule": "credential-literal",
+      "fingerprint": "48cae435492ab8e05f0020f5"
+    },
+    {
+      "location": "addons/account/tests/common.py",
+      "offset": 10543,
+      "rule": "credential-literal",
+      "fingerprint": "3f028a34975ad389fc1ff99a"
+    },
+    {
+      "location": "addons/account/tests/test_account_lock_exception.py",
+      "offset": 762,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590"
+    },
+    {
+      "location": "addons/account/tests/test_account_account.py",
+      "offset": 30506,
+      "rule": "credential-literal",
+      "fingerprint": "30fb95402b8d5de6a6202775"
+    },
+    {
+      "location": "addons/account/tests/test_account_account.py",
+      "offset": 32301,
+      "rule": "credential-literal",
+      "fingerprint": "30fb95402b8d5de6a6202775"
+    },
+    {
+      "location": "addons/account/tests/test_account_journal.py",
+      "offset": 23744,
+      "rule": "credential-literal",
+      "fingerprint": "8784e4d94a61b899c1a946b1"
+    },
+    {
+      "location": "addons/account/views/account_portal_templates.xml",
+      "offset": 8458,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/account_payment/tests/test_payment_flows.py",
+      "offset": 2840,
+      "rule": "credential-literal",
+      "fingerprint": "d9208b63f439d823f5d42e15"
+    },
+    {
+      "location": "addons/account_payment/tests/test_payment_flows.py",
+      "offset": 3727,
+      "rule": "credential-literal",
+      "fingerprint": "d9208b63f439d823f5d42e15"
+    },
+    {
+      "location": "addons/account_payment/tests/test_payment_flows.py",
+      "offset": 6686,
+      "rule": "credential-literal",
+      "fingerprint": "1dd993cdb9e48fa87df6a896"
+    },
+    {
+      "location": "addons/account_peppol/tests/assets/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "addons/account_peppol/tests/test_peppol_out_of_sync_resolution.py",
+      "offset": 1149,
+      "rule": "credential-literal",
+      "fingerprint": "6d5785c11fb9552a79f99a71"
+    },
+    {
+      "location": "addons/account_peppol/tests/test_peppol_kyc.py",
+      "offset": 1102,
+      "rule": "credential-literal",
+      "fingerprint": "504d6ae3fbdb2640b627c469"
+    },
+    {
+      "location": "addons/account_peppol/tools/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "addons/account_peppol/tests/common.py",
+      "offset": 2162,
+      "rule": "credential-literal",
+      "fingerprint": "504d6ae3fbdb2640b627c469"
+    },
+    {
+      "location": "addons/analytic/tests/common.py",
+      "offset": 2550,
+      "rule": "credential-literal",
+      "fingerprint": "a1d2c10fb8a9b265d628e716"
+    },
+    {
+      "location": "addons/api_doc/static/src/utils/doc_code_gen.js",
+      "offset": 2367,
+      "rule": "credential-literal",
+      "fingerprint": "9907247cc271b8a1f93b27e8"
+    },
+    {
+      "location": "addons/auth_password_policy/static/src/password_field.xml",
+      "offset": 501,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc"
+    },
+    {
+      "location": "addons/auth_password_policy_signup/static/src/public/components/password_meter/password_meter.xml",
+      "offset": 197,
+      "rule": "credential-literal",
+      "fingerprint": "1519e8a8eadb258852929446"
+    },
+    {
+      "location": "addons/auth_signup/views/auth_signup_login_templates.xml",
+      "offset": 2347,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/auth_signup/views/auth_signup_login_templates.xml",
+      "offset": 4808,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/auth_signup/tests/test_auth_signup.py",
+      "offset": 1712,
+      "rule": "credential-literal",
+      "fingerprint": "87356daad7f82eb1e723e42c"
+    },
+    {
+      "location": "addons/auth_signup/tests/test_auth_signup.py",
+      "offset": 3119,
+      "rule": "credential-literal",
+      "fingerprint": "87356daad7f82eb1e723e42c"
+    },
+    {
+      "location": "addons/auth_totp/tests/test_totp.py",
+      "offset": 553,
+      "rule": "credential-literal",
+      "fingerprint": "d229518f5422ed51a534b2c8"
+    },
+    {
+      "location": "addons/auth_totp/tests/test_totp.py",
+      "offset": 5567,
+      "rule": "credential-literal",
+      "fingerprint": "a4d0e3e4a213220fb8bdbf0c"
+    },
+    {
+      "location": "addons/auth_totp/views/templates.xml",
+      "offset": 781,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/auth_totp/views/templates.xml",
+      "offset": 2235,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/auth_totp_mail/views/templates.xml",
+      "offset": 758,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/auth_totp_mail/tests/test_auth_signup.py",
+      "offset": 1351,
+      "rule": "credential-literal",
+      "fingerprint": "87356daad7f82eb1e723e42c"
+    },
+    {
+      "location": "addons/bus/tests/test_ir_websocket.py",
+      "offset": 885,
+      "rule": "credential-literal",
+      "fingerprint": "82d6b3ac8c1b0ae9e24c246e"
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 5627,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6099,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6716,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 13835,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "addons/calendar/tests/test_calendar_controller.py",
+      "offset": 494,
+      "rule": "credential-literal",
+      "fingerprint": "c0e1b99d850d5b066c07a775"
+    },
+    {
+      "location": "addons/calendar/views/calendar_templates.xml",
+      "offset": 1246,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/calendar/views/calendar_templates.xml",
+      "offset": 1696,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/certificate/tests/data/encrypted_private.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "d43af8efb6d136afd520bb70"
+    },
+    {
+      "location": "addons/certificate/tests/test_keys_certificates.py",
+      "offset": 14481,
+      "rule": "credential-literal",
+      "fingerprint": "ed9595ee8fe2019102dadef8"
+    },
+    {
+      "location": "addons/certificate/tests/test_keys_certificates.py",
+      "offset": 16740,
+      "rule": "credential-literal",
+      "fingerprint": "cc5b70cc0fc10f18052130ba"
+    },
+    {
+      "location": "addons/cloud_storage_google/tests/test_cloud_storage_google.py",
+      "offset": 484,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "addons/crm/tests/test_crm_ui.py",
+      "offset": 905,
+      "rule": "credential-literal",
+      "fingerprint": "c089181a34b03b761999e2ba"
+    },
+    {
+      "location": "addons/hr/tests/test_hr_employee.py",
+      "offset": 879,
+      "rule": "credential-literal",
+      "fingerprint": "838958a4e476cb51ef051fc6"
+    },
+    {
+      "location": "addons/hr/tests/test_hr_employee.py",
+      "offset": 11603,
+      "rule": "credential-literal",
+      "fingerprint": "253521cbf87c8755caf69dad"
+    },
+    {
+      "location": "addons/hr_attendance/views/hr_attendance_kiosk_templates.xml",
+      "offset": 611,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/hr_attendance/tests/test_hr_attendance_process.py",
+      "offset": 7815,
+      "rule": "credential-literal",
+      "fingerprint": "cc5b70cc0fc10f18052130ba"
+    },
+    {
+      "location": "addons/hr_holidays/tests/common.py",
+      "offset": 2443,
+      "rule": "credential-literal",
+      "fingerprint": "b0f5f587eb29fecbac3f00a5"
+    },
+    {
+      "location": "addons/hr_holidays/tests/common.py",
+      "offset": 2626,
+      "rule": "credential-literal",
+      "fingerprint": "26491a9e3bda2119a506c6b3"
+    },
+    {
+      "location": "addons/hr_holidays/tests/test_leave_requests.py",
+      "offset": 100575,
+      "rule": "credential-literal",
+      "fingerprint": "3c54f1cef473d8eafdfcbf71"
+    },
+    {
+      "location": "addons/hr_org_chart/tests/test_employee_ui.py",
+      "offset": 2331,
+      "rule": "credential-literal",
+      "fingerprint": "b3c2798830551e85e0c23e98"
+    },
+    {
+      "location": "addons/hr_skills/tests/test_certification_activities.py",
+      "offset": 675,
+      "rule": "credential-literal",
+      "fingerprint": "9217f8821a8d501edf2613e6"
+    },
+    {
+      "location": "addons/hr_skills/tests/test_certification_activities.py",
+      "offset": 838,
+      "rule": "credential-literal",
+      "fingerprint": "9217f8821a8d501edf2613e6"
+    },
+    {
+      "location": "addons/hr_work_entry_holidays/tests/test_leave.py",
+      "offset": 4019,
+      "rule": "credential-literal",
+      "fingerprint": "795a21f46a4de40021d41825"
+    },
+    {
+      "location": "addons/hr_work_entry_holidays/tests/test_work_entry.py",
+      "offset": 2580,
+      "rule": "credential-literal",
+      "fingerprint": "26491a9e3bda2119a506c6b3"
+    },
+    {
+      "location": "addons/html_editor/static/tests/utils/regex.test.js",
+      "offset": 6973,
+      "rule": "credential-url",
+      "fingerprint": "f96b827c58b39cbf78840036"
+    },
+    {
+      "location": "addons/html_editor/static/tests/utils/regex.test.js",
+      "offset": 7028,
+      "rule": "credential-url",
+      "fingerprint": "f96b827c58b39cbf78840036"
+    },
+    {
+      "location": "addons/im_livechat/tests/common.py",
+      "offset": 368,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace"
+    },
+    {
+      "location": "addons/im_livechat/views/im_livechat_channel_templates.xml",
+      "offset": 999,
+      "rule": "credential-literal",
+      "fingerprint": "21ea2b6a8e47980a26543821"
+    },
+    {
+      "location": "addons/im_livechat/tests/test_message.py",
+      "offset": 688,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace"
+    },
+    {
+      "location": "addons/iot_box_image/overwrite_after_init/etc/ssl/private/nginx-cert.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "addons/iot_box_image/overwrite_before_init/etc/init_image.sh",
+      "offset": 6273,
+      "rule": "credential-literal",
+      "fingerprint": "657ffb32e4e1a11c3263c5b1"
+    },
+    {
+      "location": "addons/l10n_ar_pos/tests/test_pos_ar.py",
+      "offset": 525,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1"
+    },
+    {
+      "location": "addons/l10n_dk_nemhandel/tests/assets/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "addons/l10n_fr_pdp/tests/test_files/assets/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "addons/l10n_id_pos/tests/test_qris_pos.py",
+      "offset": 1497,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1"
+    },
+    {
+      "location": "addons/l10n_id_pos/tests/test_qris_pos.py",
+      "offset": 4489,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc"
+    },
+    {
+      "location": "addons/l10n_it_edi/data/pkey.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "addons/l10n_pl_edi/tests/certificate/l10n_pl_edi_test.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "d43af8efb6d136afd520bb70"
+    },
+    {
+      "location": "addons/l10n_pl_edi/tests/test_l10n_pl_edi.py",
+      "offset": 3004,
+      "rule": "credential-literal",
+      "fingerprint": "59e62ce48ebc442881eaeb52"
+    },
+    {
+      "location": "addons/l10n_test_pos_qr_payment/tests/common.py",
+      "offset": 840,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1"
+    },
+    {
+      "location": "addons/l10n_tw_edi_ecpay_website_sale/views/templates.xml",
+      "offset": 1412,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/l10n_vn_edi_viettel_pos/tests/test_l10n_vn_edi_pos_tour.py",
+      "offset": 1025,
+      "rule": "credential-literal",
+      "fingerprint": "2dd90806a35715c6e037c59a"
+    },
+    {
+      "location": "addons/l10n_vn_edi_viettel_pos/tests/test_l10n_vn_edi_pos.py",
+      "offset": 3266,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1"
+    },
+    {
+      "location": "addons/mail/static/lib/odoo_sfu/odoo_sfu.js",
+      "offset": 463603,
+      "rule": "credential-literal",
+      "fingerprint": "ce4c908fb144b087aef1e111"
+    },
+    {
+      "location": "addons/mail/static/tests/mail_utils.test.js",
+      "offset": 528,
+      "rule": "credential-url",
+      "fingerprint": "e6288a779df26f29e1152665"
+    },
+    {
+      "location": "addons/mail/static/tests/mail_utils.test.js",
+      "offset": 587,
+      "rule": "credential-url",
+      "fingerprint": "65d08bb89705bcaef0e98eda"
+    },
+    {
+      "location": "addons/mail/static/tests/message/link_preview.test.js",
+      "offset": 19506,
+      "rule": "credential-literal",
+      "fingerprint": "1255d6c7412daf13c73ab304"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 902,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 1554,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 2606,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 3403,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 4386,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 4768,
+      "rule": "credential-literal",
+      "fingerprint": "1661b071480e3fd2338138ed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 6870,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 7252,
+      "rule": "credential-literal",
+      "fingerprint": "1661b071480e3fd2338138ed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 7876,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 8258,
+      "rule": "credential-literal",
+      "fingerprint": "1661b071480e3fd2338138ed"
+    },
+    {
+      "location": "addons/mail/tests/test_res_users.py",
+      "offset": 1615,
+      "rule": "credential-literal",
+      "fingerprint": "c86cf69bd926425842d1b88d"
+    },
+    {
+      "location": "addons/mail/tests/test_res_users.py",
+      "offset": 2570,
+      "rule": "credential-literal",
+      "fingerprint": "c86cf69bd926425842d1b88d"
+    },
+    {
+      "location": "addons/mail/tests/test_mail_message_translate.py",
+      "offset": 1711,
+      "rule": "credential-literal",
+      "fingerprint": "4a04547688e572b6c6335a72"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_message_controller.py",
+      "offset": 11457,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471"
+    },
+    {
+      "location": "addons/mail/views/discuss_public_templates.xml",
+      "offset": 750,
+      "rule": "credential-literal",
+      "fingerprint": "033ef8259d596a6d84bcb40f"
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_ui.py",
+      "offset": 732,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471"
+    },
+    {
+      "location": "addons/mail_plugin/views/mail_plugin_login.xml",
+      "offset": 322,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/mass_mailing/views/mailing_templates_portal_unsubscribe.xml",
+      "offset": 566,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/mass_mailing/views/mailing_templates_portal_unsubscribe.xml",
+      "offset": 10749,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/mass_mailing_sms/views/mass_mailing_sms_templates_portal.xml",
+      "offset": 868,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_create_events.py",
+      "offset": 29884,
+      "rule": "credential-literal",
+      "fingerprint": "b0f5f587eb29fecbac3f00a5"
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 19653,
+      "rule": "credential-literal",
+      "fingerprint": "7839761aa3744d221d6bb2a4"
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 19831,
+      "rule": "credential-literal",
+      "fingerprint": "9f226d8533c92b69029f5dc4"
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 20635,
+      "rule": "credential-literal",
+      "fingerprint": "b9e29fc698359145838c508c"
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 21446,
+      "rule": "credential-literal",
+      "fingerprint": "431714d7cea4b82c49f55070"
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 21562,
+      "rule": "credential-literal",
+      "fingerprint": "e6dc5e6ec8aab0e57132b709"
+    },
+    {
+      "location": "addons/mrp_subcontracting/tests/test_subcontracting.py",
+      "offset": 71904,
+      "rule": "credential-literal",
+      "fingerprint": "08f9b6c034d890f6c76b5a6d"
+    },
+    {
+      "location": "addons/mrp_subcontracting/tests/test_subcontracting_portal_ui.py",
+      "offset": 476,
+      "rule": "credential-literal",
+      "fingerprint": "1b3a8c7600dd712aca44b081"
+    },
+    {
+      "location": "addons/mrp_subcontracting_dropshipping/tests/test_purchase_subcontracting.py",
+      "offset": 22830,
+      "rule": "credential-literal",
+      "fingerprint": "08f9b6c034d890f6c76b5a6d"
+    },
+    {
+      "location": "addons/payment/tests/test_multicompany_flows.py",
+      "offset": 803,
+      "rule": "credential-literal",
+      "fingerprint": "f2cebf8b71c9bc1d0ede0996"
+    },
+    {
+      "location": "addons/payment/tests/test_multicompany_flows.py",
+      "offset": 1176,
+      "rule": "credential-literal",
+      "fingerprint": "d37aa962928389d29ec96710"
+    },
+    {
+      "location": "addons/payment_paymob/tests/test_paymob.py",
+      "offset": 929,
+      "rule": "credential-literal",
+      "fingerprint": "3926d2ddd2a8b5e859f80241"
+    },
+    {
+      "location": "addons/payment_xendit/tests/test_processing_flows.py",
+      "offset": 6949,
+      "rule": "credential-literal",
+      "fingerprint": "af6e416ac77b99dbaf2e107e"
+    },
+    {
+      "location": "addons/point_of_sale/static/tests/unit/data/pos_session.data.js",
+      "offset": 5569,
+      "rule": "credential-literal",
+      "fingerprint": "5be2a517202c98a7a4c38333"
+    },
+    {
+      "location": "addons/point_of_sale/static/tests/unit/data/pos_config.data.js",
+      "offset": 1845,
+      "rule": "credential-literal",
+      "fingerprint": "1e21eb772b583eefbabdb95c"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 1748,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 4713,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 6061,
+      "rule": "credential-literal",
+      "fingerprint": "685958c0aa51eff7462a16aa"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 7736,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 10206,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 12809,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 15473,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 16692,
+      "rule": "credential-literal",
+      "fingerprint": "685958c0aa51eff7462a16aa"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 18949,
+      "rule": "credential-literal",
+      "fingerprint": "a705d8be7a6105eb113448e5"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_frontend.py",
+      "offset": 3510,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_frontend.py",
+      "offset": 3956,
+      "rule": "credential-literal",
+      "fingerprint": "1c7b2b9f92f25ed8dd7eb720"
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_products_with_tax.py",
+      "offset": 37988,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1"
+    },
+    {
+      "location": "addons/point_of_sale/views/pos_ticket_view.xml",
+      "offset": 644,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/point_of_sale/views/pos_ticket_view.xml",
+      "offset": 8703,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/portal/static/src/xml/portal_chatter.xml",
+      "offset": 3822,
+      "rule": "credential-literal",
+      "fingerprint": "17cb01e6d84833859dbc5adf"
+    },
+    {
+      "location": "addons/portal/views/portal_templates.xml",
+      "offset": 27725,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/portal/views/portal_templates.xml",
+      "offset": 36763,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 2926,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 3201,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 3783,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 4449,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 4654,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 4859,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 5585,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 6102,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a"
+    },
+    {
+      "location": "addons/pos_event_sale/tests/test_frontend.py",
+      "offset": 3697,
+      "rule": "credential-literal",
+      "fingerprint": "8330ec9dfb748d5ad5ecf47a"
+    },
+    {
+      "location": "addons/pos_online_payment_self_order/tests/test_self_order_frontend.py",
+      "offset": 4307,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471"
+    },
+    {
+      "location": "addons/pos_safaricom/tests/test_pos_safaricom.py",
+      "offset": 1980,
+      "rule": "credential-literal",
+      "fingerprint": "c450c5602cc00bf997501c07"
+    },
+    {
+      "location": "addons/pos_self_order/views/pos_self_order.index.xml",
+      "offset": 669,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1"
+    },
+    {
+      "location": "addons/pos_self_order/views/pos_self_order.index.xml",
+      "offset": 746,
+      "rule": "credential-literal",
+      "fingerprint": "a0b697bf858ac38dbae10880"
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 1015,
+      "rule": "credential-literal",
+      "fingerprint": "d88ddc19e8197e84b052dfdd"
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 2308,
+      "rule": "credential-literal",
+      "fingerprint": "d88ddc19e8197e84b052dfdd"
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 2879,
+      "rule": "credential-literal",
+      "fingerprint": "6d02b5ac6b9c6559c0b0b048"
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 3727,
+      "rule": "credential-literal",
+      "fingerprint": "ef22386fd2cb1fde743cb1cf"
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 3956,
+      "rule": "credential-literal",
+      "fingerprint": "d88ddc19e8197e84b052dfdd"
+    },
+    {
+      "location": "addons/pos_viva_com/tests/test_pos_payment_method.py",
+      "offset": 1159,
+      "rule": "credential-literal",
+      "fingerprint": "55ddfcd20a8d5d6e103130c4"
+    },
+    {
+      "location": "addons/pos_viva_com/tests/test_pos_payment_method.py",
+      "offset": 1557,
+      "rule": "credential-literal",
+      "fingerprint": "ac3190eabc98391cc8e4758e"
+    },
+    {
+      "location": "addons/project/tests/test_project_base.py",
+      "offset": 1993,
+      "rule": "credential-literal",
+      "fingerprint": "e87ba6ff4abe1826fd3aaefd"
+    },
+    {
+      "location": "addons/project/tests/test_project_embedded_action_settings.py",
+      "offset": 336,
+      "rule": "credential-literal",
+      "fingerprint": "f98ba25c4f68306544c6691f"
+    },
+    {
+      "location": "addons/project/tests/test_project_recurrence.py",
+      "offset": 893,
+      "rule": "credential-literal",
+      "fingerprint": "e87ba6ff4abe1826fd3aaefd"
+    },
+    {
+      "location": "addons/project/tests/test_project_sharing_ui.py",
+      "offset": 442,
+      "rule": "credential-literal",
+      "fingerprint": "1b3a8c7600dd712aca44b081"
+    },
+    {
+      "location": "addons/project/tests/test_project_sharing_ui.py",
+      "offset": 5935,
+      "rule": "credential-literal",
+      "fingerprint": "7c04217b1f52beac2915429b"
+    },
+    {
+      "location": "addons/project/tests/test_project_task_quick_create.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "e05f065024a4964e3c89375c"
+    },
+    {
+      "location": "addons/project/tests/test_project_task_quick_create.py",
+      "offset": 686,
+      "rule": "credential-literal",
+      "fingerprint": "3ea9904eb8ded4029459df22"
+    },
+    {
+      "location": "addons/project/tests/test_project_template.py",
+      "offset": 8673,
+      "rule": "credential-literal",
+      "fingerprint": "329e38ba007704aa254036e5"
+    },
+    {
+      "location": "addons/project/tests/test_project_template.py",
+      "offset": 8867,
+      "rule": "credential-literal",
+      "fingerprint": "787f1359450c4b53a7bb8a07"
+    },
+    {
+      "location": "addons/repair/tests/test_anglo_saxon_valuation.py",
+      "offset": 974,
+      "rule": "credential-literal",
+      "fingerprint": "4f678be96944a2cf9fa13109"
+    },
+    {
+      "location": "addons/rpc/tests/test_xmlrpc.py",
+      "offset": 6690,
+      "rule": "credential-literal",
+      "fingerprint": "6549e1fa807c2d5d383042a5"
+    },
+    {
+      "location": "addons/sale/views/sale_portal_templates.xml",
+      "offset": 18667,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/sale/views/sale_portal_templates.xml",
+      "offset": 25401,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/sale_project/tests/test_sale_project_multicompany_access.py",
+      "offset": 586,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "addons/sale_project/tests/test_sale_project_multicompany_access.py",
+      "offset": 1041,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "addons/sale_stock/tests/test_anglo_saxon_valuation.py",
+      "offset": 66621,
+      "rule": "credential-literal",
+      "fingerprint": "e7b25aee0552fb5453c6e60e"
+    },
+    {
+      "location": "addons/sales_team/tests/common.py",
+      "offset": 636,
+      "rule": "credential-literal",
+      "fingerprint": "a8990c88aa300de59403fde7"
+    },
+    {
+      "location": "addons/sales_team/tests/common.py",
+      "offset": 1020,
+      "rule": "credential-literal",
+      "fingerprint": "e2e08d9c2cacba15ca508536"
+    },
+    {
+      "location": "addons/stock_delivery/tests/test_packing_delivery.py",
+      "offset": 14570,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "addons/survey/views/survey_templates.xml",
+      "offset": 8193,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/survey/tests/common.py",
+      "offset": 14588,
+      "rule": "credential-literal",
+      "fingerprint": "8f2ed993c28216343a964f61"
+    },
+    {
+      "location": "addons/survey/tests/test_certification_flow.py",
+      "offset": 9039,
+      "rule": "credential-literal",
+      "fingerprint": "563079a5157b58c20643da3f"
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_certification.py",
+      "offset": 477,
+      "rule": "credential-literal",
+      "fingerprint": "30a3ab5b154803cb718a482a"
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 473,
+      "rule": "credential-literal",
+      "fingerprint": "0b3372a61d293244490f69d4"
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 9259,
+      "rule": "credential-literal",
+      "fingerprint": "2ecc141a6db7137a932ae6da"
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 11842,
+      "rule": "credential-literal",
+      "fingerprint": "729845c8d94c9e74a52b8ba0"
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 14770,
+      "rule": "credential-literal",
+      "fingerprint": "c54562237507f687d53b4416"
+    },
+    {
+      "location": "addons/test_discuss_full/tests/test_performance.py",
+      "offset": 8410,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace"
+    },
+    {
+      "location": "addons/test_mail/tests/test_message_post.py",
+      "offset": 16558,
+      "rule": "credential-literal",
+      "fingerprint": "27635b3e5bd6b20e29bffcce"
+    },
+    {
+      "location": "addons/test_mail_full/tests/test_res_users.py",
+      "offset": 513,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590"
+    },
+    {
+      "location": "addons/test_mail_full/tests/test_res_users.py",
+      "offset": 813,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590"
+    },
+    {
+      "location": "addons/test_mail_full/tests/test_res_users.py",
+      "offset": 1120,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590"
+    },
+    {
+      "location": "addons/test_sale_product_configurators/tests/test_sale_product_configurator.py",
+      "offset": 727,
+      "rule": "credential-literal",
+      "fingerprint": "6dd04eb5caac32fd85637518"
+    },
+    {
+      "location": "addons/test_sale_product_configurators/tests/test_sale_product_matrix.py",
+      "offset": 622,
+      "rule": "credential-literal",
+      "fingerprint": "6dd04eb5caac32fd85637518"
+    },
+    {
+      "location": "addons/test_website/tests/test_redirect.py",
+      "offset": 552,
+      "rule": "credential-literal",
+      "fingerprint": "3c54f1cef473d8eafdfcbf71"
+    },
+    {
+      "location": "addons/test_sale_product_configurators/tests/test_event_sale_with_product_configurator.py",
+      "offset": 773,
+      "rule": "credential-literal",
+      "fingerprint": "6dd04eb5caac32fd85637518"
+    },
+    {
+      "location": "addons/test_website_slides_full/tests/test_ui_wslides.py",
+      "offset": 674,
+      "rule": "credential-literal",
+      "fingerprint": "7c6b0fa4a15aeb70762d8231"
+    },
+    {
+      "location": "addons/test_website/tests/test_website_field_sanitize.py",
+      "offset": 381,
+      "rule": "credential-literal",
+      "fingerprint": "19862ab23a7539c2d7beab64"
+    },
+    {
+      "location": "addons/web/static/lib/hoot/tests/hoot-dom/events.test.js",
+      "offset": 58628,
+      "rule": "HTML-session-token",
+      "fingerprint": "714de0c2acd2062a4eb8be38"
+    },
+    {
+      "location": "addons/web/static/tests/core/file_model.test.js",
+      "offset": 212,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "addons/web/static/tests/core/file_model.test.js",
+      "offset": 461,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "addons/web/static/tests/webclient/res_user_group_ids_field.test.js",
+      "offset": 1625,
+      "rule": "credential-literal",
+      "fingerprint": "3fd910fc34cc368ff199b77b"
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 437,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "0470f4c370cdb168fbe122ac"
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 638,
+      "rule": "credential-literal",
+      "fingerprint": "47f09c0ec53321a4e8b686bd"
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 737,
+      "rule": "credential-literal",
+      "fingerprint": "69517d8afc127a7760d0763d"
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 829,
+      "rule": "credential-literal",
+      "fingerprint": "ecb5fb44be34f288b229c86b"
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 920,
+      "rule": "credential-literal",
+      "fingerprint": "0b0e63127f5a650769478510"
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 3310,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "addons/web/tests/test_res_users_settings.py",
+      "offset": 329,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "addons/web/views/webclient_templates.xml",
+      "offset": 1231,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1"
+    },
+    {
+      "location": "addons/web/views/webclient_templates.xml",
+      "offset": 7114,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/web/tests/test_partner.py",
+      "offset": 4871,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471"
+    },
+    {
+      "location": "addons/website/tests/common.py",
+      "offset": 1199,
+      "rule": "credential-literal",
+      "fingerprint": "a5bccd1003999feb787358d1"
+    },
+    {
+      "location": "addons/website/tests/test_website_reset_password.py",
+      "offset": 3167,
+      "rule": "credential-literal",
+      "fingerprint": "2fdb33ad545a90e2501253b9"
+    },
+    {
+      "location": "addons/website/tests/test_website_reset_password.py",
+      "offset": 3473,
+      "rule": "credential-literal",
+      "fingerprint": "2fdb33ad545a90e2501253b9"
+    },
+    {
+      "location": "addons/website/tests/test_website_visitor.py",
+      "offset": 15888,
+      "rule": "credential-literal",
+      "fingerprint": "78423cfc2ed4a47c85801174"
+    },
+    {
+      "location": "addons/website/tests/test_website_visitor.py",
+      "offset": 16181,
+      "rule": "credential-literal",
+      "fingerprint": "7cecf7196e788675ada110a8"
+    },
+    {
+      "location": "addons/website/tests/test_website_visitor.py",
+      "offset": 16537,
+      "rule": "credential-literal",
+      "fingerprint": "7d71c34862ca308c7e506abd"
+    },
+    {
+      "location": "addons/website/tests/test_views.py",
+      "offset": 8107,
+      "rule": "credential-literal",
+      "fingerprint": "e0a36ee7edc3835cad92db7c"
+    },
+    {
+      "location": "addons/website/views/website_templates.xml",
+      "offset": 170383,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_crm/tests/test_website_visitor.py",
+      "offset": 950,
+      "rule": "credential-literal",
+      "fingerprint": "f036dad5dfff489e9f8f2ba4"
+    },
+    {
+      "location": "addons/website_crm/tests/test_website_visitor.py",
+      "offset": 3470,
+      "rule": "credential-literal",
+      "fingerprint": "f3b9413f5ac72fade15547b3"
+    },
+    {
+      "location": "addons/website_crm/tests/test_crm_lead_merge.py",
+      "offset": 943,
+      "rule": "credential-literal",
+      "fingerprint": "5f725df0ad1c1d6a607e12f9"
+    },
+    {
+      "location": "addons/website_crm/tests/test_crm_lead_merge.py",
+      "offset": 1107,
+      "rule": "credential-literal",
+      "fingerprint": "fb8b2b887f14ee8fd24b5cd7"
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 26455,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 35793,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 38113,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 48353,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 57721,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_crm_sms/tests/test_website_visitor.py",
+      "offset": 718,
+      "rule": "credential-literal",
+      "fingerprint": "f3b9413f5ac72fade15547b3"
+    },
+    {
+      "location": "addons/website_event/tests/test_event_internals.py",
+      "offset": 14557,
+      "rule": "credential-literal",
+      "fingerprint": "42923c9c2548cabe021d69e3"
+    },
+    {
+      "location": "addons/website_event/tests/test_event_visitor.py",
+      "offset": 918,
+      "rule": "credential-literal",
+      "fingerprint": "1a1abb0d41dbfd5671c04cc0"
+    },
+    {
+      "location": "addons/website_event/tests/test_website_event.py",
+      "offset": 12055,
+      "rule": "credential-literal",
+      "fingerprint": "dc12f5233f8d5f8593bf8640"
+    },
+    {
+      "location": "addons/website_event/views/event_templates_page_registration.xml",
+      "offset": 22715,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_event/views/event_templates_page_registration.xml",
+      "offset": 33576,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_event/views/event_templates_page_registration.xml",
+      "offset": 50205,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_event_booth/views/event_booth_templates.xml",
+      "offset": 3306,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_event_booth/views/event_booth_registration_templates.xml",
+      "offset": 1237,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_event_crm/tests/test_event_registration.py",
+      "offset": 1322,
+      "rule": "credential-literal",
+      "fingerprint": "5f725df0ad1c1d6a607e12f9"
+    },
+    {
+      "location": "addons/website_event_crm/tests/test_event_registration.py",
+      "offset": 1629,
+      "rule": "credential-literal",
+      "fingerprint": "87f01a8a9fb2a75cc2e1193b"
+    },
+    {
+      "location": "addons/website_event_exhibitor/views/event_exhibitor_templates_list.xml",
+      "offset": 1488,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_event_exhibitor/views/event_exhibitor_templates_list.xml",
+      "offset": 6131,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_event_track/views/event_track_templates_proposal.xml",
+      "offset": 2683,
+      "rule": "HTML-session-token",
+      "fingerprint": "9254e5cfe1c1fb50b2ef9d6c"
+    },
+    {
+      "location": "addons/website_event_track/tests/test_website_visitor.py",
+      "offset": 1102,
+      "rule": "credential-literal",
+      "fingerprint": "5f401638e33524b50c2572d1"
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_tools.xml",
+      "offset": 1027,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_post.xml",
+      "offset": 7595,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_post.xml",
+      "offset": 33451,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_moderation.xml",
+      "offset": 1226,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates.xml",
+      "offset": 4122,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates.xml",
+      "offset": 9393,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_forum/views/website_profile_templates.xml",
+      "offset": 5511,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_forum/views/website_profile_templates.xml",
+      "offset": 6399,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_livechat/tests/common.py",
+      "offset": 847,
+      "rule": "credential-literal",
+      "fingerprint": "89505aa6d6eaa5dff97bfd7f"
+    },
+    {
+      "location": "addons/website_livechat/tests/test_livechat_request.py",
+      "offset": 1568,
+      "rule": "credential-literal",
+      "fingerprint": "aa26258eea40044273dde9ad"
+    },
+    {
+      "location": "addons/website_livechat/tests/test_ui.py",
+      "offset": 496,
+      "rule": "credential-literal",
+      "fingerprint": "8d25931f4ea5ee7133b578ee"
+    },
+    {
+      "location": "addons/website_sale/tests/test_address.py",
+      "offset": 9439,
+      "rule": "credential-literal",
+      "fingerprint": "4607bb3a1a5f13c32dc9577d"
+    },
+    {
+      "location": "addons/website_sale/tests/test_address.py",
+      "offset": 14212,
+      "rule": "credential-literal",
+      "fingerprint": "fb9a98aaa063a2870e15e963"
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_cart.py",
+      "offset": 9999,
+      "rule": "credential-literal",
+      "fingerprint": "c3dcd4c7c6bb9927ad127f9d"
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_cart.py",
+      "offset": 10960,
+      "rule": "credential-literal",
+      "fingerprint": "05c1a59b53088a17365309d7"
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_product_page.py",
+      "offset": 1319,
+      "rule": "credential-literal",
+      "fingerprint": "4da5ee5cb7532694aba87860"
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_product_page.py",
+      "offset": 2829,
+      "rule": "credential-literal",
+      "fingerprint": "8ea081d5e40e05f4745c35d2"
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_pricelist.py",
+      "offset": 38825,
+      "rule": "credential-literal",
+      "fingerprint": "4607bb3a1a5f13c32dc9577d"
+    },
+    {
+      "location": "addons/website_sale/views/templates.xml",
+      "offset": 183484,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_sale_loyalty/views/website_sale_templates.xml",
+      "offset": 3411,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "addons/website_slides/tests/test_ui_wslides.py",
+      "offset": 10013,
+      "rule": "credential-literal",
+      "fingerprint": "4da5ee5cb7532694aba87860"
+    },
+    {
+      "location": "addons/website_slides_survey/views/website_profile.xml",
+      "offset": 1795,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "deploy/init-db.sh",
+      "offset": 254,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed"
+    },
+    {
+      "location": "docs/evidence/G5/20261029-http-security-02/preflight.py",
+      "offset": 1126,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_ir_mail_server_smtpd.py",
+      "offset": 683,
+      "rule": "credential-literal",
+      "fingerprint": "c34a0f434cb9028f0444d1ef"
+    },
+    {
+      "location": "odoo/addons/base/tests/ssl/server.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "odoo/addons/base/tests/ssl/self_signed.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "odoo/addons/base/tests/ssl/client.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_api.py",
+      "offset": 7786,
+      "rule": "credential-literal",
+      "fingerprint": "22e8e033b1b7465eaa52e621"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 751,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 988,
+      "rule": "credential-literal",
+      "fingerprint": "1370d7bb86b50a16589358cc"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 1198,
+      "rule": "credential-literal",
+      "fingerprint": "86ef00cafbc9cbd55c188815"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 6594,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 6861,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 24362,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 24611,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 24836,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 27223,
+      "rule": "credential-literal",
+      "fingerprint": "fc75b05e7db1a3741fbaafe5"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 28415,
+      "rule": "credential-literal",
+      "fingerprint": "1e72758257f6b79c024b7769"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_partner.py",
+      "offset": 19647,
+      "rule": "credential-literal",
+      "fingerprint": "e8a8b0d1152178bb24d6c877"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 6587,
+      "rule": "credential-literal",
+      "fingerprint": "af059d0c724f762cc7e3aa84"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 9160,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 21001,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 25252,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "odoo/addons/test_http/tests/test_device.py",
+      "offset": 781,
+      "rule": "credential-literal",
+      "fingerprint": "feb9a8baa9164237c94f972b"
+    },
+    {
+      "location": "odoo/addons/test_http/tests/test_static.py",
+      "offset": 21959,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace"
+    },
+    {
+      "location": "odoo/addons/test_http/tests/test_echo_reply.py",
+      "offset": 6040,
+      "rule": "credential-literal",
+      "fingerprint": "d5ae34aa14bd6170f2c5fb28"
+    },
+    {
+      "location": "odoo/addons/test_testing_utilities/tests/test_env.py",
+      "offset": 389,
+      "rule": "credential-literal",
+      "fingerprint": "b30a7d400183219fbb658f50"
+    },
+    {
+      "location": "odoo/http.py",
+      "offset": 9513,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "tests/test_artifacts.py",
+      "offset": 12641,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "tests/test_artifacts.py",
+      "offset": 12940,
+      "rule": "credential-literal",
+      "fingerprint": "e1dd6c8dc618cc0743181d8d"
+    },
+    {
+      "location": "tests/test_artifacts.py",
+      "offset": 13032,
+      "rule": "credential-url",
+      "fingerprint": "e642b2b86ba8f589022a048f"
+    }
+  ],
+  "source_sha256": "ab1ccf2fa925fda524cd1ab1926afd9e603e59ed209f967a4f783ac3e27255bd",
+  "limits": [
+    "Current tracked content only; Git history, image layers, packages/browser/logs are separate scans.",
+    "Generic signatures require exact fingerprint/file identity review, not automatic exclusion by directory."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T10:52:50.334205+00:00",
+  "records": [
+    {
+      "location": "tests/test_secret_scan.py",
+      "offset": 2233,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "74d9e19d6ab5acc8c74493063f4a8e0f7f99bc00fdcec776350e7db09aa6e2d5",
+      "reason": "Incomplete synthetic PEM recognition specimen used to verify redacted reporting; no actual key body.",
+      "disposition": "cleared"
+    },
+    {
+      "location": "docs/evidence/G5/20261029-secret-scan-01/triage.py",
+      "offset": 2128,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "file_sha256": "b715ef2481ce9920d9c6bff4f416b689bab7e1472ae325a746e1f3f230e59b50",
+      "reason": "Exact expected psql variable expression used to validate the init-db.sh clearance; no credential value.",
+      "disposition": "cleared"
+    },
+    {
+      "location": "served-browser/web/assets/63c5974592655d931920e0596ac04cfca96ac6d268d30a24f941725016e0c1fc/mp_shell.assets_host.min.js",
+      "offset": 3041792,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc",
+      "file_sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+      "reason": "Exact Owl password=state.value expression from pinned auth_password_policy XML inside native bundle; no password literal.",
+      "disposition": "cleared"
+    }
+  ]
+}

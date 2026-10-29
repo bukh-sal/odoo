@@ -1,0 +1,51 @@
+{
+  "result": "scanned_triage_required",
+  "utc": "2026-10-29T10:35:40.150699+00:00",
+  "implementation_commits": 67,
+  "blobs": 3141,
+  "bytes": 49023550,
+  "elapsed_seconds": 7.594,
+  "known_secret_findings": 0,
+  "generic_findings": 5,
+  "findings": [
+    {
+      "location": "git-history/deploy/init-db.sh",
+      "offset": 254,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "git_blob": "93fedd06f5d77882ab40499987c6b98f933a6d39"
+    },
+    {
+      "location": "git-history/docs/evidence/G5/20261029-http-security-02/preflight.py",
+      "offset": 1126,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b",
+      "git_blob": "fb128260a0da01fcdf45181ab061b8b65da07973"
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 12641,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa"
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 12940,
+      "rule": "credential-literal",
+      "fingerprint": "e1dd6c8dc618cc0743181d8d",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa"
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 13032,
+      "rule": "credential-url",
+      "fingerprint": "e642b2b86ba8f589022a048f",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa"
+    }
+  ],
+  "limits": [
+    "All blob objects introduced after the exact pinned upstream baseline through current HEAD. Pinned upstream current tree is separately scanned; older official upstream ancestor history is not represented as project credential history.",
+    "No Git rewrite/delete/publication; raw object audit cache remains private."
+  ]
+}

@@ -190,7 +190,9 @@ class NativeExecutor:
     def _child(self, operation, suffix, *, writable=False, network=True,image_id=None):
         project = self.config['project']
         name = project+'-op-'+operation+'-'+suffix
-        arguments = ['docker', 'run', '--name', name, '--label', 'com.modular.operation='+operation,
+        # Maintenance stdout can carry configuration or binary checkpoints. Keep
+        # attached output for the private operator capture, never a daemon log.
+        arguments = ['docker', 'run', '--log-driver', 'none', '--name', name, '--label', 'com.modular.operation='+operation,
             '--label', 'com.modular.deployment='+self.config['deployment_id'], '--read-only',
             '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--tmpfs', '/tmp',
             '--memory', '1536m', '--cpus', '2', '--network', project+'_runtime' if network else 'none',

@@ -1,0 +1,15 @@
+# ADR0027: private maintenance output without daemon log retention
+
+Date: 2026-10-29. Status: implementation qualified by a real attached-stream probe; full SEC-03 evidence linked below. Public contracts and immutable application images are unchanged.
+
+The G5 release scan found twenty credential occurrences in ten stopped `read-config` helper containers. Recovery correctly saved configuration under the protected operator store, but `docker run` also retained its stdout in the daemon's default log driver. Forty-three checkpoint helpers similarly retained compressed filestore output. Private subprocess capture alone does not prevent Docker from making a second copy.
+
+Set `--log-driver none` on the existing `NativeExecutor._child` constructor for every maintenance child. Attached stdout/stderr still reaches the independent operator process: configuration and checkpoint bytes remain exact, private diagnostic files remain available, and the stopped container retains its labels and exit status. This extends the existing path; no separate transport, authentication layer, recovery algorithm or UI is introduced. The daemon continues logging ordinary application and edge services under their qualified profiles.
+
+Preserve original diagnostics and inspections in an owner-protected audit store, record public hashes and redacted findings, then remove only the exact verified exited/no-network/read-only payload helpers without removing volumes. Do not rewrite Git, delete the authoritative operation journals/checkpoints, rotate unrelated protected fixture credentials, or replay restore operations. The local Docker operator already has access to the same private configuration volumes; no external disclosure was observed. Public evidence contains fingerprints/identities only.
+
+The real current-image probe sends a synthetic binary/configuration payload over stdin, confirms byte-exact private attached capture and private stderr, and proves that Docker logs expose neither. Recovery/dispatch regressions and the four protected deployment state/data/schema/file audits establish the unchanged semantics. Retained prior native restore evidence remains valid together with this transport qualification; no new restore or image activation is claimed.
+
+Secret scan clearance binds each finding to its file hash, offset and keyed fingerprint. Exact public upstream test/sample keys, unrendered token/state expressions, parser markers and vendor examples are distinct from current generated credentials. They are never treated as safe merely because a future file has the same directory name. The pinned vendor snakeoil key is not the configured edge key. Native Python and same-origin plugins remain trusted; this audit is not a sandbox or a guarantee about future arbitrary plugin logging.
+
+Evidence: [SEC-03 qualification](../evidence/G5/20261029-secret-scan-01/qualification.json). Re-scan changed deliverables and scoped runtime logs at later release qualification. OPS-02/03 clean-runbook/provenance checks remain separate G5 requirements.

@@ -1,0 +1,9 @@
+{
+  "result": "known_collection_corrected_before_qualification",
+  "diagnosis": "Filename substring password incorrectly collected17public upstream JS/XML/CSS/translation files from a private source-copy folder",
+  "correction": "Only small one-line credential file names plus explicit structured/config/DB values; regression test added, no secret or code data removed",
+  "known_sources": 96,
+  "distinct_values": 69,
+  "encoded_patterns": 568,
+  "owned_initial_scan_stopped": true
+}

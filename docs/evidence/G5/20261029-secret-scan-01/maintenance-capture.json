@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T10:46:37.304679+00:00",
+  "container_id": "1e33a83ada3cd2cbace8443c408885b4960d430ec6ff0a0e5bd8b2f69bb0115b",
+  "container_name": "mp-r0-r1http9669f0969d1d-op-a4c0901e-d638-4200-aa21-dee8faffe55b-secret-capture-proof",
+  "operation_id": "a4c0901e-d638-4200-aa21-dee8faffe55b",
+  "payload_bytes": 262171,
+  "attached_bytes_exact": true,
+  "private_stderr_preserved": true,
+  "daemon_log_driver": "none",
+  "docker_logs_stdout_bytes": 0,
+  "docker_logs_exit": 1,
+  "read_only_no_network": true,
+  "source_sha256": "b5ad5138f2dbbe63cedd0d0666d9beefdae78fb7ae7e3c09cc174806ee8d6d81",
+  "limits": [
+    "Synthetic payload only; existing config and filestore volumes mounted read-only and never read or written.",
+    "Host-only command construction change; native code/image/restore semantics and current deployments unchanged."
+  ]
+}

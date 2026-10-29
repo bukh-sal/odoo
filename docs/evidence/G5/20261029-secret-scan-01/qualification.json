@@ -1,0 +1,70 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T10:54:11.935306+00:00",
+  "work_item": "G5-X08/SEC-03",
+  "acceptance": [
+    "SEC-03"
+  ],
+  "spec_sections": [
+    "4.2",
+    "15",
+    "20",
+    "24.2",
+    "25.3"
+  ],
+  "source_head": "5e6e867c5ad86a1b23e225e920d5f9a0a2130ee4",
+  "source_sha256": {
+    "tools/secret_scan.py": "ab1ccf2fa925fda524cd1ab1926afd9e603e59ed209f967a4f783ac3e27255bd",
+    "tests/test_secret_scan.py": "74d9e19d6ab5acc8c74493063f4a8e0f7f99bc00fdcec776350e7db09aa6e2d5",
+    "tests/test_maintenance_capture.py": "5526f71e32542c4ae149ecf6b6f6f6f905479c9ab46864f71668ff12f3bbff9b",
+    "tests/test_recovery.py": "93a21834b1de03823eb62607854b54114dde2a3645e6fcfcf440ba2faf88967f",
+    "tests/test_restore_dispatch.py": "78e7e90222f471c8fba9c74713d47e11c23880bb330902056d48939b39dca7b8",
+    "tests/test_unchanged_recovery.py": "c4a305782a34cdcf3531314e70b40c3193944f82355ba87296e1a03676133377",
+    "packages/platform_sdk/modular_platform/native_executor.py": "40336d6bd00b118a605d4ac86b62b1254c9c21f2b3badbdbfb0c49e270b12f12",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "6d38478211d2355ce7539d4080d6a9e43091161e7ab45449ef776081f9e92bb8"
+  },
+  "checks": {
+    "tracked_tree": "tracked-tree.json",
+    "introduced_implementation_history": "implementation-history.json",
+    "all_operated_image_layers": "image-layers.json",
+    "decompressed_packages_actual_browser_original_logs": "packages-browser-logs.json",
+    "source_image_exact_triage": "triage-source-image.json",
+    "changed_files_browser_triage": "triage-current-browser.json",
+    "real_daemon_logging_counterexample": "packages-browser-logs.json",
+    "fixed_actual_attached_capture": "maintenance-capture.json",
+    "private_preservation_exact_stopped_helpers": "legacy-payload-log-remediation.json",
+    "clean_current_logs": "post-remediation-logs.json",
+    "protected_targets": "protected-audit.json",
+    "source_tests": "source-tests.json"
+  },
+  "results": {
+    "initial_real_secret_log_occurrences": 20,
+    "initial_affected_config_helpers": 10,
+    "additional_sensitive_checkpoint_helpers": 43,
+    "private_diagnostics_preserved": true,
+    "authoritative_checkpoints_and_volumes_unchanged": true,
+    "current_known_secret_findings": 0,
+    "source_image_generic_reviewed": 462,
+    "additional_changed_browser_generic_reviewed": 3,
+    "validated_archives": 8,
+    "expanded_entries": 118,
+    "windows_tests": 34,
+    "skipped": 0,
+    "frozen_files": 87,
+    "protected_deployments_unchanged": 4
+  },
+  "remaining_G5_acceptance": [
+    "SEC-07",
+    "SEC-08",
+    "OPS-02",
+    "OPS-03"
+  ],
+  "additional_required_fixture": "Minimal explicit workspace-scoped Canvas first-use provisioning/fresh-install regression; no product expansion.",
+  "limits": [
+    "Static known-value/signature audit with exact reviewed identities; not a universal secret detector or trusted-plugin sandbox.",
+    "Expected private credential/config/backup/audit stores excluded from public deliverables; original sensitive diagnostic copies retained privately.",
+    "All implementation blobs after exact upstream baseline through HEAD, plus full current pinned upstream tree; older official ancestor history outside project credential history.",
+    "Host-only maintenance log-driver fix; immutable image/native/UI/public contracts unchanged, actual prior restore evidence retained with byte-exact transport qualification.",
+    "No production deployment/publication; no externally observed disclosure. Later changed deliverables/logs require scoped re-scan."
+  ]
+}

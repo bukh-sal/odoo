@@ -1,0 +1,1052 @@
+{
+  "result": "scanned_triage_required",
+  "utc": "2026-10-29T10:37:26.447867+00:00",
+  "images": [
+    "nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+    "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+    "sha256:2c7eeda91f213aea51091f1c7a2523a04c3fb51b2c30f4dd12d292da55544383",
+    "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a"
+  ],
+  "unique_layers": 45,
+  "files": 33964,
+  "bytes": 1394023352,
+  "export_bytes": 410033664,
+  "elapsed_seconds": 105.813,
+  "known_secret_findings": 0,
+  "generic_findings": 171,
+  "findings": [
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1586912,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1587136,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1587296,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1587616,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1588128,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1588480,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1588768,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1589056,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1589376,
+      "rule": "private-key-marker",
+      "fingerprint": "7149e798ed281eb73b8a2a82"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1590880,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/418153af13877b8106fd64454296f962d290924fc1f73befa60a85c435d00e79/usr/lib/file/magic.mgc",
+      "offset": 3040,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/auth_password_policy/static/src/password_field.xml",
+      "offset": 501,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 553,
+      "rule": "credential-literal",
+      "fingerprint": "d229518f5422ed51a534b2c8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 5567,
+      "rule": "credential-literal",
+      "fingerprint": "a4d0e3e4a213220fb8bdbf0c"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 781,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 2235,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/bus/tests/test_ir_websocket.py",
+      "offset": 885,
+      "rule": "credential-literal",
+      "fingerprint": "82d6b3ac8c1b0ae9e24c246e"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 5627,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6099,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6716,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 13835,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/static/lib/hoot/tests/hoot-dom/events.test.js",
+      "offset": 58628,
+      "rule": "HTML-session-token",
+      "fingerprint": "714de0c2acd2062a4eb8be38"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 212,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 461,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/static/tests/webclient/res_user_group_ids_field.test.js",
+      "offset": 1625,
+      "rule": "credential-literal",
+      "fingerprint": "3fd910fc34cc368ff199b77b"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_partner.py",
+      "offset": 4871,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users_settings.py",
+      "offset": 329,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 437,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "0470f4c370cdb168fbe122ac"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 638,
+      "rule": "credential-literal",
+      "fingerprint": "47f09c0ec53321a4e8b686bd"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 737,
+      "rule": "credential-literal",
+      "fingerprint": "69517d8afc127a7760d0763d"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 829,
+      "rule": "credential-literal",
+      "fingerprint": "ecb5fb44be34f288b229c86b"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 920,
+      "rule": "credential-literal",
+      "fingerprint": "0b0e63127f5a650769478510"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 3310,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 1231,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 7114,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/ssl/self_signed.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/ssl/server.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/ssl/client.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_api.py",
+      "offset": 7786,
+      "rule": "credential-literal",
+      "fingerprint": "22e8e033b1b7465eaa52e621"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 6587,
+      "rule": "credential-literal",
+      "fingerprint": "af059d0c724f762cc7e3aa84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 9160,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 21001,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 25252,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_ir_mail_server_smtpd.py",
+      "offset": 683,
+      "rule": "credential-literal",
+      "fingerprint": "c34a0f434cb9028f0444d1ef"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 751,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 988,
+      "rule": "credential-literal",
+      "fingerprint": "1370d7bb86b50a16589358cc"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 1198,
+      "rule": "credential-literal",
+      "fingerprint": "86ef00cafbc9cbd55c188815"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6594,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6861,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24362,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24611,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24836,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 27223,
+      "rule": "credential-literal",
+      "fingerprint": "fc75b05e7db1a3741fbaafe5"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 28415,
+      "rule": "credential-literal",
+      "fingerprint": "1e72758257f6b79c024b7769"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/addons/base/tests/test_res_partner.py",
+      "offset": 19647,
+      "rule": "credential-literal",
+      "fingerprint": "e8a8b0d1152178bb24d6c877"
+    },
+    {
+      "location": "image-layer/blobs/sha256/693fa7ec773220407418ac63908f7d115fd7984f54269484768eec8e73fe9811/opt/modular/odoo/http.py",
+      "offset": 9513,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/auth_password_policy/static/src/password_field.xml",
+      "offset": 501,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 781,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 2235,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 553,
+      "rule": "credential-literal",
+      "fingerprint": "d229518f5422ed51a534b2c8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 5567,
+      "rule": "credential-literal",
+      "fingerprint": "a4d0e3e4a213220fb8bdbf0c"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/bus/tests/test_ir_websocket.py",
+      "offset": 885,
+      "rule": "credential-literal",
+      "fingerprint": "82d6b3ac8c1b0ae9e24c246e"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 5627,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6099,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6716,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 13835,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/static/lib/hoot/tests/hoot-dom/events.test.js",
+      "offset": 58628,
+      "rule": "HTML-session-token",
+      "fingerprint": "714de0c2acd2062a4eb8be38"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 212,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 461,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users_settings.py",
+      "offset": 329,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 437,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "0470f4c370cdb168fbe122ac"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 638,
+      "rule": "credential-literal",
+      "fingerprint": "47f09c0ec53321a4e8b686bd"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 737,
+      "rule": "credential-literal",
+      "fingerprint": "69517d8afc127a7760d0763d"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 829,
+      "rule": "credential-literal",
+      "fingerprint": "ecb5fb44be34f288b229c86b"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 920,
+      "rule": "credential-literal",
+      "fingerprint": "0b0e63127f5a650769478510"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 3310,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/tests/test_partner.py",
+      "offset": 4871,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/static/tests/webclient/res_user_group_ids_field.test.js",
+      "offset": 1625,
+      "rule": "credential-literal",
+      "fingerprint": "3fd910fc34cc368ff199b77b"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 1231,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 7114,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/ssl/client.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/ssl/server.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/ssl/self_signed.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_api.py",
+      "offset": 7786,
+      "rule": "credential-literal",
+      "fingerprint": "22e8e033b1b7465eaa52e621"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 6587,
+      "rule": "credential-literal",
+      "fingerprint": "af059d0c724f762cc7e3aa84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 9160,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 21001,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 25252,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_partner.py",
+      "offset": 19647,
+      "rule": "credential-literal",
+      "fingerprint": "e8a8b0d1152178bb24d6c877"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_ir_mail_server_smtpd.py",
+      "offset": 683,
+      "rule": "credential-literal",
+      "fingerprint": "c34a0f434cb9028f0444d1ef"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 751,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 988,
+      "rule": "credential-literal",
+      "fingerprint": "1370d7bb86b50a16589358cc"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 1198,
+      "rule": "credential-literal",
+      "fingerprint": "86ef00cafbc9cbd55c188815"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6594,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6861,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24362,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24611,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24836,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 27223,
+      "rule": "credential-literal",
+      "fingerprint": "fc75b05e7db1a3741fbaafe5"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 28415,
+      "rule": "credential-literal",
+      "fingerprint": "1e72758257f6b79c024b7769"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ac806fc224c2f619c0b393766e249f03d688d79e85a780f1070fe0ecd2366416/opt/modular/odoo/http.py",
+      "offset": 9513,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/auth_password_policy/static/src/password_field.xml",
+      "offset": 501,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 553,
+      "rule": "credential-literal",
+      "fingerprint": "d229518f5422ed51a534b2c8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 5567,
+      "rule": "credential-literal",
+      "fingerprint": "a4d0e3e4a213220fb8bdbf0c"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 781,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 2235,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/bus/tests/test_ir_websocket.py",
+      "offset": 885,
+      "rule": "credential-literal",
+      "fingerprint": "82d6b3ac8c1b0ae9e24c246e"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 5627,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6099,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6716,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 13835,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/static/lib/hoot/tests/hoot-dom/events.test.js",
+      "offset": 58628,
+      "rule": "HTML-session-token",
+      "fingerprint": "714de0c2acd2062a4eb8be38"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 212,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 461,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users_settings.py",
+      "offset": 329,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/static/tests/webclient/res_user_group_ids_field.test.js",
+      "offset": 1625,
+      "rule": "credential-literal",
+      "fingerprint": "3fd910fc34cc368ff199b77b"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 437,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "0470f4c370cdb168fbe122ac"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 638,
+      "rule": "credential-literal",
+      "fingerprint": "47f09c0ec53321a4e8b686bd"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 737,
+      "rule": "credential-literal",
+      "fingerprint": "69517d8afc127a7760d0763d"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 829,
+      "rule": "credential-literal",
+      "fingerprint": "ecb5fb44be34f288b229c86b"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 920,
+      "rule": "credential-literal",
+      "fingerprint": "0b0e63127f5a650769478510"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 3310,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/tests/test_partner.py",
+      "offset": 4871,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 1231,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 7114,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/ssl/client.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/ssl/server.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/ssl/self_signed.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_api.py",
+      "offset": 7786,
+      "rule": "credential-literal",
+      "fingerprint": "22e8e033b1b7465eaa52e621"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 6587,
+      "rule": "credential-literal",
+      "fingerprint": "af059d0c724f762cc7e3aa84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 9160,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 21001,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 25252,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_ir_mail_server_smtpd.py",
+      "offset": 683,
+      "rule": "credential-literal",
+      "fingerprint": "c34a0f434cb9028f0444d1ef"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_partner.py",
+      "offset": 19647,
+      "rule": "credential-literal",
+      "fingerprint": "e8a8b0d1152178bb24d6c877"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 751,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 988,
+      "rule": "credential-literal",
+      "fingerprint": "1370d7bb86b50a16589358cc"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 1198,
+      "rule": "credential-literal",
+      "fingerprint": "86ef00cafbc9cbd55c188815"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6594,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6861,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24362,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24611,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24836,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 27223,
+      "rule": "credential-literal",
+      "fingerprint": "fc75b05e7db1a3741fbaafe5"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 28415,
+      "rule": "credential-literal",
+      "fingerprint": "1e72758257f6b79c024b7769"
+    },
+    {
+      "location": "image-layer/blobs/sha256/b6b9e67bac22254460c75da2052190b6f9b60458efefe6de419d860ad417ed1f/opt/modular/odoo/http.py",
+      "offset": 9513,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/ssh.py",
+      "offset": 1876,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/__pycache__/ssh.cpython-312.pyc",
+      "offset": 2709,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/2_7_keycert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/keycert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/badcert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/badcert.pem",
+      "offset": 964,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/badkey.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/badkey.pem",
+      "offset": 1081,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/server.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/test_server.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/gevent/tests/wrongcert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/__pycache__/url.cpython-312.pyc",
+      "offset": 4536,
+      "rule": "credential-url",
+      "fingerprint": "c6516e15a7a01e7c75816f2e"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/url.py",
+      "offset": 4898,
+      "rule": "credential-url",
+      "fingerprint": "c6516e15a7a01e7c75816f2e"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/slapdtest/certs/client.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/slapdtest/certs/server.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/urllib3/util/__pycache__/url.cpython-312.pyc",
+      "offset": 5681,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400"
+    },
+    {
+      "location": "image-layer/blobs/sha256/be3b099691c3942e02d116923fe4ac731fcb4ac9224b0e7985f20821f92c6436/venv/lib/python3.12/site-packages/urllib3/util/url.py",
+      "offset": 6082,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ee131862682e15664f089e20b9645d57adef6a00d57e3cbbb0014830b6e84bef/etc/ssl/private/ssl-cert-snakeoil.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ee131862682e15664f089e20b9645d57adef6a00d57e3cbbb0014830b6e84bef/usr/share/perl/5.36.0/HTTP/Tiny.pm",
+      "offset": 13276,
+      "rule": "credential-url",
+      "fingerprint": "b2052864ebc122da1e26000a"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ee131862682e15664f089e20b9645d57adef6a00d57e3cbbb0014830b6e84bef/usr/share/perl/5.36.0/HTTP/Tiny.pm",
+      "offset": 65487,
+      "rule": "credential-url",
+      "fingerprint": "b2052864ebc122da1e26000a"
+    },
+    {
+      "location": "image-layer/blobs/sha256/f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f/usr/local/lib/python3.12/site-packages/pip/_vendor/urllib3/util/url.py",
+      "offset": 4898,
+      "rule": "credential-url",
+      "fingerprint": "c6516e15a7a01e7c75816f2e"
+    },
+    {
+      "location": "image-layer/blobs/sha256/f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f/usr/local/lib/python3.12/urllib/request.py",
+      "offset": 2309,
+      "rule": "credential-literal",
+      "fingerprint": "193f558bab92201d367a6381"
+    }
+  ],
+  "inventory_sha256": "89e793f724087be5ad079218896ad493c974483806e372abb4aad3d9524134ef",
+  "limits": [
+    "Every exported regular file in every unique layer, including files hidden/deleted by later layers; no archive-selected filesystem paths used or code imported.",
+    "Package ZIP payloads and served browser assets are separately decompressed/scanned; links and empty whiteout markers do not supply file bytes.",
+    "Raw exported images/audit cache remain owner-protected outside Git/build context."
+  ]
+}

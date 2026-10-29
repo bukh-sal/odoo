@@ -1,0 +1,7 @@
+{
+  "result": "passed_semantic_equivalence",
+  "prior_probe_sha256": "b5ad5138f2dbbe63cedd0d0666d9beefdae78fb7ae7e3c09cc174806ee8d6d81",
+  "current_sha256": "40336d6bd00b118a605d4ac86b62b1254c9c21f2b3badbdbfb0c49e270b12f12",
+  "difference": "Restore original LF line endings only; changing each LF to CRLF exactly reproduces tested source bytes. No code/comment difference.",
+  "current_diff": "3 insertions, 1 deletion; maintenance log-driver only"
+}
