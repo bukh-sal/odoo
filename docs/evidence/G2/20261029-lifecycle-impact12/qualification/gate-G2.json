@@ -1,0 +1,24 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-10-29T00:34:10.132673+00:00",
+  "contract_major": 1,
+  "revision": 12,
+  "frozen_files": 87,
+  "inventory_sha256": "22b3efde8adbdb697e562901853a4f8a1ac337936e66a59e56c524aa4bf3de4e",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0023: additive opt-in lifecycle-impact v1 DTO, strict known/unknown mapping fixtures. Existing JSON formats, golden data, consumers and seven rows unchanged; only protocol documentation appended. No runtime activation or destructive operation claimed.",
+  "runtime_qualification": "G5-X05b implementation and live inspection/native uninstall tests pending; all three retained deployments unchanged.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "8091e82cb51bebad14bb7daa5df5a0074b2486ae"
+}

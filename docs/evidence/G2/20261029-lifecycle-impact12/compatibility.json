@@ -1,0 +1,15 @@
+{
+  "result": "old_formats_consumers_and_golden_bytes_unchanged",
+  "old_files": 84,
+  "old_unchanged_files": 83,
+  "intentional_document_append": [
+    "docs/contracts/protocol-v1.md"
+  ],
+  "additive_files": [
+    "packages/contracts/v1/lifecycle-impact.schema.json",
+    "packages/contracts/examples/v1/lifecycle-impact.json",
+    "packages/contracts/examples/v1/lifecycle-impact/unknown.json"
+  ],
+  "new_files": 87,
+  "runtime_changed": false
+}

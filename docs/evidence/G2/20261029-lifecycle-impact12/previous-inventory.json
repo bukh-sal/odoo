@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "contract_major": 1,
+  "revision": 11,
+  "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "contracts": [
+    {
+      "name": "workspace enforcement",
+      "owner": "C/G3",
+      "acceptance": [
+        "FREEZE-03",
+        "ID-01",
+        "ID-03",
+        "ID-05",
+        "ID-07",
+        "ID-08",
+        "ID-09",
+        "ID-10"
+      ],
+      "paths": [
+        "packages/contracts/v1/workspace-context.schema.json",
+        "packages/contracts/v1/role-permissions.json",
+        "packages/contracts/examples/v1/workspace-context.json",
+        "packages/contracts/v1/workspace-membership.schema.json",
+        "packages/contracts/v1/workspace-settings.schema.json",
+        "packages/contracts/examples/v1/workspace-membership.json",
+        "packages/contracts/examples/v1/workspace-settings.json"
+      ],
+      "g1": [
+        "FEAS-01",
+        "FEAS-02"
+      ]
+    },
+    {
+      "name": "actor and plugin identity",
+      "owner": "C/G3; F/G6",
+      "acceptance": [
+        "FREEZE-03",
+        "ID-02",
+        "ID-04",
+        "API-01",
+        "SVC-02"
+      ],
+      "paths": [
+        "packages/contracts/v1/call-context.schema.json",
+        "packages/contracts/v1/service-request.schema.json",
+        "packages/contracts/v1/service-response.schema.json"
+      ],
+      "g1": [
+        "FEAS-04"
+      ]
+    },
+    {
+      "name": "executor approval",
+      "owner": "E/G5",
+      "acceptance": [
+        "FREEZE-02",
+        "MIG-01",
+        "MIG-02",
+        "OPS-01",
+        "SEC-01",
+        "SEC-02",
+        "SEC-03",
+        "SEC-06",
+        "SEC-07",
+        "SEC-08"
+      ],
+      "paths": [
+        "packages/contracts/v1/plan.schema.json",
+        "packages/contracts/v1/approval.schema.json",
+        "packages/contracts/examples/v1/plan.canonical.json",
+        "packages/contracts/examples/v1/plan.sha256",
+        "packages/contracts/examples/v1/approval.json",
+        "packages/contracts/v1/operations-request.schema.json",
+        "packages/contracts/v1/operations-view.schema.json",
+        "packages/contracts/examples/v1/operations-request.json",
+        "packages/contracts/examples/v1/operations-request-submit.json",
+        "packages/contracts/examples/v1/operations-view.json",
+        "packages/contracts/examples/v1/operations-view-status.json",
+        "packages/contracts/examples/v1/plan-deploy.json",
+        "packages/contracts/examples/v1/plan-core-upgrade.json",
+        "packages/contracts/v1/manager-view.schema.json",
+        "packages/contracts/examples/v1/manager-view.json",
+        "packages/contracts/examples/v1/manager-view-details.json",
+        "packages/contracts/examples/v1/manager-view-upload.json"
+      ],
+      "g1": []
+    },
+    {
+      "name": "versions and migrations",
+      "owner": "E/G5",
+      "acceptance": [
+        "FREEZE-02",
+        "VER-01",
+        "VER-02"
+      ],
+      "paths": [
+        "packages/contracts/v1/manifest.schema.json",
+        "packages/platform_sdk/modular_platform/contracts.py",
+        "packages/contracts/examples/v1/manifest-native.json"
+      ],
+      "g1": []
+    },
+    {
+      "name": "service bindings",
+      "owner": "C/G3; D/G4; E/G5",
+      "acceptance": [
+        "FREEZE-02",
+        "API-06",
+        "DEP-05"
+      ],
+      "paths": [
+        "packages/contracts/v1/binding.schema.json",
+        "packages/contracts/examples/v1/binding.json",
+        "packages/contracts/v1/documents.schema.json",
+        "packages/contracts/v1/documents-v2.schema.json",
+        "packages/contracts/examples/v1/document-v2.json",
+        "packages/contracts/examples/v1/manifest-notes-composed.json"
+      ],
+      "g1": [
+        "FEAS-04"
+      ]
+    },
+    {
+      "name": "external-service packaging",
+      "owner": "E/G5; F/G6",
+      "acceptance": [
+        "SVC-01",
+        "SVC-02",
+        "SVC-03",
+        "SVC-04",
+        "SVC-05"
+      ],
+      "paths": [
+        "packages/contracts/examples/v1/manifest-external.json",
+        "packages/contracts/v1/endpoint.schema.json",
+        "packages/contracts/v1/worker-claims.schema.json",
+        "packages/contracts/v1/worker-request.schema.json",
+        "packages/contracts/v1/worker-response.schema.json",
+        "packages/platform_sdk/modular_platform/tokens.py",
+        "packages/contracts/examples/v1/worker-public.pem",
+        "packages/contracts/examples/v1/worker-token.txt"
+      ],
+      "g1": [
+        "FEAS-04"
+      ]
+    },
+    {
+      "name": "UI host",
+      "owner": "C/G3; D/G4",
+      "acceptance": [
+        "FREEZE-03",
+        "UI-01",
+        "UI-02",
+        "UI-03",
+        "UI-04",
+        "UI-05",
+        "UI-06",
+        "UI-08",
+        "UI-09",
+        "UI-10"
+      ],
+      "paths": [
+        "packages/contracts/v1/host-context.schema.json",
+        "packages/contracts/v1/route.schema.json",
+        "packages/host_sdk/src/index.ts",
+        "packages/host_sdk/tests/plain_page.ts",
+        "packages/contracts/examples/v1/host-context.json",
+        "packages/contracts/v1/boards.schema.json",
+        "packages/contracts/v1/documents-v2.schema.json",
+        "packages/contracts/v1/note-detail-actions.schema.json",
+        "packages/contracts/examples/v1/board.json",
+        "packages/contracts/examples/v1/document-v2.json",
+        "packages/contracts/examples/v1/manifest-canvas.json",
+        "packages/contracts/examples/v1/manifest-labels.json",
+        "packages/contracts/examples/v1/manifest-notes-composed.json",
+        "packages/contracts/v1/draft-snapshot.schema.json",
+        "packages/contracts/examples/v1/draft-snapshot.json",
+        "packages/contracts/v1/client-release.schema.json",
+        "packages/contracts/examples/v1/client-release.json"
+      ],
+      "g1": [
+        "FEAS-03"
+      ]
+    }
+  ],
+  "files": {
+    "deploy/requirements-tooling.in": "93d4de2b7a2747dc39eb9aae64ec5b9bf66ec4da5d00ceee39abc9ece5dbb38a",
+    "deploy/requirements-tooling.lock": "84094bb9d9c2c07489890f757e0aef2294083ebba2d19ac35ac393aa0648c104",
+    "docs/architecture-decisions/0003-r1-contracts.md": "28f17f916a860619da1222fd017daa8397be2029aa12a0922f652645a0dd2e2d",
+    "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
+    "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
+    "docs/architecture-decisions/0009-operator-ui-contract.md": "ad2dceb9b186e69aa9629a72e6998a7bd0d742d5e06a09abcc0550d3a4e59cc2",
+    "docs/contracts/protocol-v1.md": "11eafdf41d6d548d4b3c8400e9cb3021ddae64fae98ff1c56b1e4db133eff9e2",
+    "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
+    "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
+    "packages/contracts/examples/v1/board.json": "fc3dae5a6c3e4483c1aa86365410ff38d9f0cb560e75a689cfa287e40c896b64",
+    "packages/contracts/examples/v1/document-v2.json": "17b3a0ab8b67f2ca07967a770db34ff20f8925de28601bd71c5ed87dbd6031c4",
+    "packages/contracts/examples/v1/draft-snapshot.json": "7f6527d05cc27bad35fe6322f08f427f60d6be307b67327228f7e00e4cdc1ccb",
+    "packages/contracts/examples/v1/endpoint.json": "ba813564ad9c211eed25ae1e8ed8e86f90b38e26a15d2fed73bd3bf7ac2cbdb8",
+    "packages/contracts/examples/v1/host-context.json": "601702177fe55f49f1d2cf981aa2bd2ed0887e24ca8e75a64c282baad04fb178",
+    "packages/contracts/examples/v1/manifest-canvas.json": "b100453208838bc1abaecd46c2b7db27f375a8130f02ccd7f7edeadeb470e0fe",
+    "packages/contracts/examples/v1/manifest-external.json": "af20c4021119f1a579fff9e036ca7745eee37d1b6e15b7eb29abc1e6cd3246e2",
+    "packages/contracts/examples/v1/manifest-labels.json": "9f8d99191a70bdc689bf85be87fbeb5009eac6f74836b4691b1f6f1b67641886",
+    "packages/contracts/examples/v1/manifest-native.json": "088f1f659aaf2641cb202c97d0b3f699c1133608164e9524fec98af84ef9da4f",
+    "packages/contracts/examples/v1/manifest-notes-composed.json": "e44fb21f683f104a59732d5fc0bb743cb6490437bed84b8eebac45357cf9ae46",
+    "packages/contracts/examples/v1/notes-export.json": "fddd53485e3547d852e3a5c6096e0ea1695909f03953d50950506f460f6467a3",
+    "packages/contracts/examples/v1/operations-request-submit.json": "673643fd81b41ed3861962aeff4e63708989cd254a5de8073b9be57087c6163f",
+    "packages/contracts/examples/v1/operations-request.json": "397c6aa5d0f2255fb518b1a152c4119b27915d4aa93976c87453e67fbad55a21",
+    "packages/contracts/examples/v1/operations-view-status.json": "b3e9a92f04a48fab985684b30fec44aaab897e0c02386cb02523fe39c50bc8e4",
+    "packages/contracts/examples/v1/operations-view.json": "e6b40edeb6c81caaf4f9158360f75106419f8c0042d89d8dcc4238dd3aac6bbc",
+    "packages/contracts/examples/v1/plan.canonical.json": "4588c919d2c45b37971d1dfb98b69cc4f809fa86f9511f7e9c2a2b09a7ee1112",
+    "packages/contracts/examples/v1/plan.json": "4b9f4166414069bd72c6e6f21f71058a2969f6c6cd7b0e1f46f0e623968d7f9d",
+    "packages/contracts/examples/v1/plan.sha256": "519bc6a2fc3b9453e75bbd41c86fe9d1106d3b1bcfd4a4a0d854443cc4bca1f7",
+    "packages/contracts/examples/v1/route.json": "849135435c6a28a82b9dc692060a31438a6d249d49ca2ff67514263bd0c752d0",
+    "packages/contracts/examples/v1/service-request.json": "af0ddb480c11eac32c76a70835fadd7193a768bc774ba8e6224df229b116f78a",
+    "packages/contracts/examples/v1/service-response.json": "f642be92c65e1acba878ed27295558097751ddac0b622c9d8468d57391844502",
+    "packages/contracts/examples/v1/worker-claims.json": "35b129fb6964e5781a59ea875cad9728eda016082873f03adf66caaad268147a",
+    "packages/contracts/examples/v1/worker-public.pem": "d79dd8b5dc4c8eca83c54c0b4db7c4e39912f4d0ec3b0addc859a21f6c4d5ea4",
+    "packages/contracts/examples/v1/worker-request.json": "40ab052b0f7ca427b84ee77d9ede2f8738423d8e9794bf7fdac8c6f3386647ed",
+    "packages/contracts/examples/v1/worker-response.json": "c0bb4c297952165166736e3999451393fe1e932c19cdd7c4e77470e381b8fe37",
+    "packages/contracts/examples/v1/worker-token.txt": "45989eaabdd951c6fd2113dc1911e30636ad98acf0539a350a31ed4746d082fb",
+    "packages/contracts/examples/v1/workspace-context.json": "1b5e659cb7092a5a2c9acf8fc37af1bd5ebe88c0df06edf29df3286c00249a28",
+    "packages/contracts/examples/v1/workspace-membership.json": "b2dc5c75e9fc1de611091e98e3d5062c028a1cf915d575152b868925e0c54c86",
+    "packages/contracts/examples/v1/workspace-settings.json": "8cba194f68ff327eb3df08b0b5de10e5890e8b6be7e2554749cfc29af3e1b296",
+    "packages/contracts/v1/approval.schema.json": "e3bc5c1df267bde93828aa347cbfafdebea25170c5d13622d66dc40fd1e8dc49",
+    "packages/contracts/v1/binding.schema.json": "125cfd9f5b8f93c16ba09208e3750fcdf06ce08129460d405c87d082b8aff7cf",
+    "packages/contracts/v1/boards.schema.json": "4503e757d58d5515683c746d8239b8e197f631a99631f6c8a2ce508f8fa36710",
+    "packages/contracts/v1/call-context.schema.json": "52fa8beef7a064e9be281a1e341b4416ef0e797f70096d53ef19d7634ff19a1a",
+    "packages/contracts/v1/documents-v2.schema.json": "4bbf4df9dbd34fe13b68b178c27108ca40d977d9a7669f43d0691649f622b68c",
+    "packages/contracts/v1/documents.schema.json": "00d503e7204b215537cceb0cad7a5b55bb2d600fbcd481552d40468d406f4465",
+    "packages/contracts/v1/draft-snapshot.schema.json": "7f13456a2ec3e22ed19d6423dd82aceaa15ed0c134bc7e1b7252c92de1f8fc12",
+    "packages/contracts/v1/endpoint.schema.json": "edf6ea539ce98c8230e2ed332a22d7c599eb65986e86877ce2d0effda360723a",
+    "packages/contracts/v1/host-context.schema.json": "a0c4ad4c83d2d386a6a9b4787880cab491870eabc5b14adf9b4ed856647da7a9",
+    "packages/contracts/v1/manifest.schema.json": "992d612b7c806be5e16d0f6898cd376cfffc4ab3f8e3cb876cf87dca1d1ad1e4",
+    "packages/contracts/v1/note-detail-actions.schema.json": "89ef9e21b6d7585bca5e64420054302db7f1b9bc1b5de63849de933971803850",
+    "packages/contracts/v1/notes-export.schema.json": "cf776edf7ae01884a875a07bcb8ae2a07d79a1a097044d0809ad5fe8fd61ed55",
+    "packages/contracts/v1/operations-request.schema.json": "e0e21fefb7cf77014e62e100e530f01708f436f548b42aa9652ad626fd75faf8",
+    "packages/contracts/v1/operations-view.schema.json": "1da3a20e1ec05ceabdaeeac69f91b296c7c0cca07fee028f0f85386ac3f66b3f",
+    "packages/contracts/v1/plan.schema.json": "ac2b7b07d6733fd9b7cc77b546c197c3d5546092d7b68396bd8d1171856805ee",
+    "packages/contracts/v1/role-permissions.json": "c21efe0da20622126bde433601d84b4a3f3792ee2b6712d75723aee5dad22d57",
+    "packages/contracts/v1/route.schema.json": "21c8787035e50aaa9ee7ef529f0d6ab89525e521ec018d9d1f0f26b872d534f4",
+    "packages/contracts/v1/service-request.schema.json": "39e95fdbdbb159a3c7defb0e11fc6d26c1c3a05a7704c9fb65d9cd0c33f73340",
+    "packages/contracts/v1/service-response.schema.json": "cb018df15f5ebf903a80bd6c7e8701411c1c62d08ff3949f39b1a47f6e579ff0",
+    "packages/contracts/v1/worker-claims.schema.json": "3abf73e6625667ac588ec0795cfd513d21c3731af262184f7ad9661ecc4eb69a",
+    "packages/contracts/v1/worker-request.schema.json": "9eb16d02ad52fbd3c2603ad0d3cc3bb83af836bf997fd06bb00ab9acaf31e4e6",
+    "packages/contracts/v1/worker-response.schema.json": "bf47a0228c20403f89b50cc995e239ad2a8904b1d2c764af1136d2316d426b84",
+    "packages/contracts/v1/workspace-context.schema.json": "51edc5ae5b871e1fd4b991b9d104ebe360434c635775fa3e36832abd4d1076cb",
+    "packages/contracts/v1/workspace-membership.schema.json": "c6f392ae56c12a91f0bfdfa5460960f0efdb7ad4cdb1ad9743b185311f1f1265",
+    "packages/contracts/v1/workspace-settings.schema.json": "b3301aa450a7f762ebd67f38b92dc4ceb08a0287dd436828f0e48cd89cd81e29",
+    "packages/host_sdk/package-lock.json": "3f0ee0040552022f928c4bfdb2c6d7a4973cfca5d10d104f5485b4332398729b",
+    "packages/host_sdk/package.json": "e0d066d961a7931d70c71696cd17bac70b2d6f9c1b548ae50cee9677038dde87",
+    "packages/host_sdk/src/index.ts": "a8077b8b1e676a737a217bb3ff61bba8db981dd956a05fd9032a3eb4fe0db3b2",
+    "packages/host_sdk/tests/plain_page.ts": "2205df447eec8f6731f944e22a3e437e050a9ca08db392bc531c982783575966",
+    "packages/host_sdk/tsconfig.json": "bcedc5e08a7fba258b29e5703e2167c271c9097c647033a572aefb198f701772",
+    "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+    "tests/test_contracts.py": "14d99ae494bce780d54e26c28e815101fa88dfb1a9086eb132cb0b57c0dfc9c8",
+    "tests/test_operation_contracts.py": "befb8a09e11989981642b56e06a896218f29fb5a0dcf310ae9a628d6d3faee87",
+    "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
+    "packages/contracts/examples/v1/plan-deploy.json": "cbc9e64aab37f9e7ecd0ed136c918bd1ecf9fffd9974dc62dd225ff453f2af6c",
+    "packages/contracts/examples/v1/plan-core-upgrade.json": "ab6c4d6070220ed847cc5ad5a80d34b552866309ad5116af3bda2fbc3e384406",
+    "packages/contracts/v1/client-release.schema.json": "35292778738736b3458caaee2fd2e23987222e888edcc21f1c5b0fb5811d099b",
+    "packages/contracts/examples/v1/client-release.json": "8f32c193267ae4fd2531a7a87dc77dcdc13fe07bfb49c0c61cd23ae0188ea437",
+    "docs/architecture-decisions/0020-manager-inspection-contract.md": "49cb3cc370f9260872589464d9cf7f7821027db0c60b900adf9274f15846fb60",
+    "packages/contracts/examples/v1/manager-view-details.json": "dfc206b183dee4c16ca3281dec83f57bd6d92d75dffc9d7cc333f1eb12b71617",
+    "packages/contracts/examples/v1/manager-view-upload.json": "aba758e738302b9398eccdbca055bf68702ab7d3ef101a9652d50a9400c5b331",
+    "tests/test_manager_contracts.py": "d63c67d345698532236ad1136a8ef0a0ec84baa7f299e356241f77d080c903a4",
+    "packages/contracts/v1/manager-view.schema.json": "1e9e15c72642911ab197b2ca08c8f48335e8127545fc3debffb0de1abbfd07f1",
+    "packages/contracts/examples/v1/manager-view.json": "fc09ef4f68c6a896d326cd517101452de0ec73be2c23d57ef690fd1b0d360bd4"
+  },
+  "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
+}

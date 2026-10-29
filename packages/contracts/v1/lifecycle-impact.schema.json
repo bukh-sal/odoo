@@ -1,0 +1,629 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/lifecycle-impact.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "kind": {
+      "const": "native_uninstall_impact"
+    },
+    "operation_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 36,
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+    },
+    "plan_hash": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 71,
+      "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+    },
+    "impact_digest": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 71,
+      "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+    },
+    "impact": {
+      "type": "object",
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 36,
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "requested_addons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 63,
+            "pattern": "^[a-z_][a-z0-9_]*(?![\\s\\S])"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "native_closure": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 63,
+            "pattern": "^[a-z_][a-z0-9_]*(?![\\s\\S])"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "plugins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plugin_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 180,
+                "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])"
+              },
+              "installation_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 36,
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+              },
+              "native_addon": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[a-z_][a-z0-9_]*(?![\\s\\S])"
+              },
+              "artifact_digest": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 71,
+                "pattern": "^sha256:[0-9a-f]{64}(?![\\s\\S])"
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 180,
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])"
+              },
+              "workspace_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 36,
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+                },
+                "maxItems": 1000,
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "plugin_id",
+              "installation_id",
+              "native_addon",
+              "artifact_digest",
+              "version",
+              "workspace_ids"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100,
+          "minItems": 1
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "model": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 180,
+                "pattern": "^[a-z_][a-z0-9_]*(\\.[a-z_][a-z0-9_]*)*(?![\\s\\S])"
+              },
+              "relation": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 63,
+                    "pattern": "^[^\\u0000]+(?![\\s\\S])"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "mapping": {
+                "enum": [
+                  "static_declaration",
+                  "unknown"
+                ]
+              },
+              "records": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "unknown_reason": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "model",
+              "relation",
+              "mapping",
+              "records",
+              "unknown_reason"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "mapping": {
+                      "const": "unknown"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "relation": {
+                      "type": "null"
+                    },
+                    "records": {
+                      "type": "null"
+                    },
+                    "unknown_reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "relation": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 63,
+                      "pattern": "^[^\\u0000]+(?![\\s\\S])"
+                    },
+                    "unknown_reason": {
+                      "type": "null"
+                    },
+                    "records": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "maxItems": 1000
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "model": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 180,
+                "pattern": "^[a-z_][a-z0-9_]*(\\.[a-z_][a-z0-9_]*)*(?![\\s\\S])"
+              },
+              "field": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[a-z_][a-z0-9_]*(?![\\s\\S])"
+              },
+              "relation": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 63,
+                    "pattern": "^[^\\u0000]+(?![\\s\\S])"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "column": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 63,
+                    "pattern": "^[^\\u0000]+(?![\\s\\S])"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "mapping": {
+                "enum": [
+                  "static_declaration",
+                  "unknown"
+                ]
+              },
+              "non_null_records": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "unknown_reason": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "model",
+              "field",
+              "relation",
+              "column",
+              "mapping",
+              "non_null_records",
+              "unknown_reason"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "mapping": {
+                      "const": "unknown"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "relation": {
+                      "type": "null"
+                    },
+                    "non_null_records": {
+                      "type": "null"
+                    },
+                    "unknown_reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512
+                    },
+                    "column": {
+                      "type": "null"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "relation": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 63,
+                      "pattern": "^[^\\u0000]+(?![\\s\\S])"
+                    },
+                    "unknown_reason": {
+                      "type": "null"
+                    },
+                    "column": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 63,
+                      "pattern": "^[^\\u0000]+(?![\\s\\S])"
+                    },
+                    "non_null_records": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "maxItems": 1000
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "relation": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[^\\u0000]+(?![\\s\\S])"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[^\\u0000]+(?![\\s\\S])"
+              },
+              "definition": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              }
+            },
+            "required": [
+              "relation",
+              "name",
+              "definition"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "foreign_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "relation": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[^\\u0000]+(?![\\s\\S])"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[^\\u0000]+(?![\\s\\S])"
+              },
+              "referenced_relation": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[^\\u0000]+(?![\\s\\S])"
+              },
+              "definition": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              }
+            },
+            "required": [
+              "relation",
+              "name",
+              "referenced_relation",
+              "definition"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "metadata_records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "native_addon": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[a-z_][a-z0-9_]*(?![\\s\\S])"
+              },
+              "model": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 180,
+                "pattern": "^[a-z_][a-z0-9_]*(\\.[a-z_][a-z0-9_]*)*(?![\\s\\S])"
+              },
+              "records": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "native_addon",
+              "model",
+              "records"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "native_addon": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[a-z_][a-z0-9_]*(?![\\s\\S])"
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512,
+                "pattern": "^[A-Za-z0-9_./-]+(?![\\s\\S])"
+              },
+              "source": {
+                "const": "declared_source"
+              }
+            },
+            "required": [
+              "native_addon",
+              "path",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1000
+        },
+        "dispatch": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "not_present",
+                "unsupported"
+              ]
+            },
+            "tables": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[a-z_][a-z0-9_]*(?![\\s\\S])"
+              },
+              "maxItems": 10,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "state",
+            "tables"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "state": {
+                    "const": "not_present"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "tables": {
+                    "maxItems": 0
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "tables": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024
+          },
+          "maxItems": 100,
+          "minItems": 1
+        }
+      },
+      "required": [
+        "site_id",
+        "requested_addons",
+        "native_closure",
+        "plugins",
+        "models",
+        "fields",
+        "constraints",
+        "foreign_references",
+        "metadata_records",
+        "assets",
+        "dispatch",
+        "warnings"
+      ],
+      "additionalProperties": false
+    },
+    "database_action": {
+      "const": "native_uninstall"
+    },
+    "artifact_action": {
+      "const": "retain_in_runtime"
+    },
+    "destructive": {
+      "const": true
+    },
+    "requires_backup": {
+      "const": true
+    },
+    "native_code_fully_trusted": {
+      "const": true
+    },
+    "completeness": {
+      "const": "known_effects_only"
+    },
+    "control_authority": {
+      "const": "independent_local_os"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "operation_id",
+    "plan_hash",
+    "impact_digest",
+    "impact",
+    "database_action",
+    "artifact_action",
+    "destructive",
+    "requires_backup",
+    "native_code_fully_trusted",
+    "completeness",
+    "control_authority",
+    "observed_at"
+  ],
+  "additionalProperties": false
+}
