@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T01:13:52.124997+00:00",
+  "scope": "actual old-runtime rejection before reserve/drain/mutation",
+  "project": "mp-r0-r1lifef99acae9d906",
+  "generation": 3,
+  "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+  "failure": "Native uninstall requires an independently staged compatible maintenance image before any drain or mutation",
+  "observation_unchanged": true,
+  "observation_digest": "sha256:67382f7e0493120d0685b3fa669c930154b9a7ec42cedd8029331248725e8239",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/native_executor.py": "348b20c6ad8a0240549de86b238f439fafbc75e281fb3b81fbb91040db66909c",
+    "packages/platform_sdk/modular_platform/native_uninstall.py": "990dd2c1ae92e4b1426cc014a238320c88914e7bf70558def4b08f8d2c9b4f58",
+    "packages/platform_sdk/modular_platform/uninstall_metadata.py": "d3fb18477f1436cd5e99cf024b742bfcaffe156294b2e4caa5341370160f0365"
+  },
+  "source_compilation": "passed",
+  "store_reserve_drain_native_or_metadata_child_started": false
+}

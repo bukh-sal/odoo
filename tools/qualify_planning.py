@@ -48,6 +48,7 @@ def main():
         patterns=['test_resolution.py','test_resolver_cli_matrix.py','test_planning_cli.py','test_native_versions.py','test_core_upgrade.py','test_platform_deploy.py','test_release_staging.py','test_plans.py']
     if args.uninstall_only:
         patterns=['test_uninstall_planning.py','test_lifecycle_impact.py','test_lifecycle_planning.py',
+                  'test_native_uninstall.py','test_workers.py','test_asset_retention.py',
                   'test_manager_planning.py','test_release_staging.py','test_core_upgrade.py','test_platform_deploy.py',
                   'test_plans.py','test_planning_cli.py','test_resolution.py','test_contracts.py',
                   'test_operation_contracts.py','test_manager_contracts.py','test_lifecycle_contracts.py']

@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T01:22:11.837583+00:00",
+  "git_base": "10323134",
+  "source_hashes_match": true,
+  "host_tests": 147,
+  "linux_tests": 127,
+  "frozen_files": 87,
+  "public_files_scanned": 10,
+  "private_values_compared": 12,
+  "secret_scan": "no private value found",
+  "acceptance_passed": 68,
+  "g5_passed": 27,
+  "rough_percent": 77,
+  "qualification_process": "99569 terminal",
+  "native_child_executed": false,
+  "metadata_child_executed": false,
+  "runtime_activated": false,
+  "next": "Reinstall IDs/scopes/grants, required preview and compatible versioned activation before real native uninstall qualification"
+}
