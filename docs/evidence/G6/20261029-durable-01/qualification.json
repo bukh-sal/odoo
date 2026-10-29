@@ -1,0 +1,51 @@
+{
+  "result": "passed",
+  "work_item": "F-01a",
+  "utc": "2026-10-29T13:38:08.412785+00:00",
+  "source_commit_before_change": "91c84d7e455af4c8080dde293a989787783d1b66",
+  "image_id": "sha256:07534ee7e8157944c51e2898518d61ceffe8a470d51184a6cf7313fb11b4fe47",
+  "inventory_digest": "sha256:5a88c464a5ff5b0ff8c66c3de5642862fb302376ca18b6348960cea29d5b6ca6",
+  "project": "mp-r0-r1g6d4a49d3eccba",
+  "database": "mp_disposable_r0_r1_g6_d4a49d3eccba",
+  "core_native_version": "19.0.0.1.7",
+  "real_native_PostgreSQL_tests": 11,
+  "Linux_input_validation_tests": 4,
+  "Windows_input_validation_tests": 4,
+  "HTTP_native_CRUD_denials": 12,
+  "frozen_files": 87,
+  "six_G5_configurations_exact": true,
+  "four_G5_deployments_and_HTTP_fixture_audited": true,
+  "clean_G5_business_schema_exact": true,
+  "current_dispatch": "paused generation4;9synthetic jobs/1outbox/11synthetic Notes retained",
+  "source_sha256": {
+    "docs/evidence/G6/20261029-durable-01/native_tests.py": "506bf3bfc1ce572a885fa167583f0464276c7edc46a74fd0f815770bbf8fe477",
+    "docs/evidence/G6/20261029-durable-01/qualify.py": "97a47acd7f5cf084fb1d92f3dde37b704643dfe317c02aadbaca4b3a5ce1197f",
+    "packages/platform_sdk/modular_platform/durable.py": "ef7a428e868e64fe8fea18204e9758f95ad586e6b2925cd0140633c3049ceda0",
+    "platform_addons/mp_core/async_models.py": "c7c77d451e064db07c72e65d9bed16f6c993d32da704d426e6594512edd03b00",
+    "tests/test_durable_validation.py": "56bc0a872e10e3726ad658cb050df5e81e60de1b89b792acb46d6b22a8d09544",
+    "tools/g6_fixture.py": "dd46a5e5f61fb1d7bad301cf2a12fd9c70444da0904147647c73a9fb232b2933",
+    "tools/g6_primitive_probe.py": "e63e6773d00c0a94464ac19bb02d210d268834d4625958607bd9db638b5ad936",
+    "platform_addons/mp_core/__init__.py": "a8f993ce5c3d3e8ccbd0dac05444fdb8d44a74e80f33a8d39be98f404a1ffa12",
+    "platform_addons/mp_core/__manifest__.py": "8eae6af97914af089dd20390d4c13e38bc6ebd92a8dc25c5d09cbf413754aaae",
+    "tools/build_candidate.py": "59c1314563bf0e49256adfd2f20ca1a6755875209ad5ee9de2c406cc9aa572ca"
+  },
+  "public_files_scanned": 25,
+  "private_diagnostic_files": 47,
+  "known_credential_sources": 116,
+  "credential_findings": 0,
+  "checks": [
+    "primitive-backend-01.json",
+    "primitive-audit.json",
+    "private-model-HTTP-denials.json",
+    "protected-audit.json",
+    "core-provision-attempt.json"
+  ],
+  "limits": [
+    "This qualifies native durable primitives, not the complete JOB/EVT/SVC acceptance. Those11 G6 checks remain not_run until real authorized dispatch/subscriptions/worker/lifecycle/recovery are integrated.",
+    "Native handlers in this proof use real ordinary backing-user Notes CRUD. The production job registry/actor+grant reauthorization and event delivery are F-01b.",
+    "Lease expiry/reclaim and two real concurrent connections are exercised; no OS-worker-kill or external-service outage claim.",
+    "G5 restore still rejects job/outbox tables. Implement and qualify G6 drain/effect/credential reconciliation before representing this G6 environment as recoverable through that profile.",
+    "Only this suite's unfinished synthetic rows are held. All rows/business effects/uncertainty remain; no unknown data deletion or setup/native migration replay.",
+    "The initial seed database-prefix refusal committed no fixture data; zero-row reconciliation and separate provisioning-only continuation retained."
+  ]
+}

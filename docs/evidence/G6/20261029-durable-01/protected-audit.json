@@ -1,0 +1,92 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T13:33:18.236838+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "full_state_business_configuration_exact": true
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "full_state_business_configuration_exact": true
+    },
+    {
+      "target": "lifecycle",
+      "generation": 18,
+      "full_state_business_schema_files_configuration_exact": true,
+      "operation_states": [
+        [
+          "completed",
+          17
+        ],
+        [
+          "failed_before_mutation",
+          3
+        ],
+        [
+          "revoked",
+          4
+        ]
+      ]
+    },
+    {
+      "target": "dispatch",
+      "generation": 20,
+      "full_state_business_schema_files_configuration_exact": true,
+      "operation_states": [
+        [
+          "revoked",
+          1
+        ]
+      ]
+    }
+  ],
+  "active_fixture_project": "mp-r0-r1http9669f0969d1d",
+  "application_image_unchanged": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "native_source_or_public_contract_changed": false,
+  "profiles": [
+    {
+      "mode": "development",
+      "configuration_sha256": "f372660c0e6cb82919986326e662d08431c52f9bbca675d5db157e62b6076b1d",
+      "prior_HTTP_policy_retained_except_separately_qualified_rate_handler": true
+    },
+    {
+      "mode": "production",
+      "configuration_sha256": "c6d50033e50aef8f1579eb9c8efa98e038cad5aa24f10b85133e410164275e7a",
+      "prior_HTTP_policy_retained_except_separately_qualified_rate_handler": true
+    }
+  ],
+  "final_source_sanity": [
+    {
+      "mode": "development",
+      "final_source_native_auth_RPC_Host_Origin_passed": true
+    },
+    {
+      "mode": "production",
+      "final_source_native_auth_RPC_Host_Origin_passed": true
+    }
+  ],
+  "source_sha256": {
+    "tools/http_profile.py": "4b56b9c3e8cb0c61da2aa5db94e68ae25c6c55a460dd2b4384ceba7b4d0ce8e1",
+    "tools/production_preflight.py": "68e3c1616b3074cc4ed185666727554f10060897315ac5af6c703bf94a936a03",
+    "deploy/nginx-r0.conf": "f372660c0e6cb82919986326e662d08431c52f9bbca675d5db157e62b6076b1d",
+    "deploy/compose-production.yaml": "55f91131156ae995a3c2b62de35cd2361c898f4568ea50b8bb00d037b4fe8d8c",
+    "tests/test_http_profile.py": "f6dee6a03690d5a55783e8c600246e9eaf00d1427db1f9dccad3885d760a559a"
+  },
+  "old_failed_edge_stopped_disconnected": true,
+  "current_backend_internal_nonroot_readonly": true,
+  "existing_business_schema_and_publication_exact": true,
+  "windows_tests": 5,
+  "linux_tests": 5,
+  "skipped": 0,
+  "frozen_files": 87,
+  "public_files_checked": 54,
+  "known_private_values_and_key_fragments_checked": 17,
+  "limits": [
+    "Bounded evidence/log canary scan; full release-wide SEC03 remains.",
+    "Explicit local test-copy bootstrap changed only site-scoped publication, user credentials and config; no install/upgrade/restore acceptance credit.",
+    "Self-signed local TLS profile is not an authorized external production deployment."
+  ]
+}

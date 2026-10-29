@@ -1,0 +1,29 @@
+# Jobs and events: G6 implementation boundary
+
+F-01a is qualified by [real native/PostgreSQL evidence](evidence/G6/20261029-durable-01/qualification.json). The remaining integration work is tracked in [ADR0029](architecture-decisions/0029-durable-jobs-and-outbox.md) and [implementation status](implementation-status.md). This is a private scheduler foundation; no public arbitrary-handler or job-creation API is exposed.
+
+Native Odoo core19.0.0.1.7 owns `mp.job`, `mp.outbox` and `mp.dispatch.control`. They are site-owned internal control metadata with workspace/actor/installation tags. Human native ORM CRUD is denied; supported status projections must authorize their current actor and workspace separately. The [private SQL adapter](../packages/platform_sdk/modular_platform/durable.py) opens no database connection and commits no transaction. Its caller must validate the registered handler/payload and derive current authority; a serialized scope or a queued permission snapshot cannot authorize execution.
+
+Jobs record an immutable deduplication scope/key and input digest, exact handler/version/release, actor/workspace/installation, deadline, attempts, lease owner/generation, cancellation/progress, safe error code and result. `FOR UPDATE SKIP LOCKED` permits competing dispatchers without giving both the same claim. A claim increments its fencing generation. Heartbeats cannot renew an expired or cancelled claim. Expired idempotent work may be reclaimed immediately, within its attempt/deadline limits. Explicit retry failures back off1,2,4…seconds, capped at60; attempts default to5 and are bounded to16. Final retry failure/deadline becomes dead-letter state. Lost or failed non-idempotent attempts whose effect-start marker committed become `outcome_unknown`; they are not automatically retried.
+
+`run_fenced` locks the current job and dispatch generation, calls the native business handler, flushes native changes and validates the current lease/fence again before completing. Business mutation and successful outcome commit together. A stale owner, cancelled job, paused/replaced generation or late expiry rolls the business effect back. Native callers use a fresh environment as the original currently mapped backing user and supply `env.flush_all`; no administrator fallback is permitted. Computation/network calls belong outside this transaction, and their results need fresh authority before application. Cancellation never proves that an external effect rolled back.
+
+Dispatch starts paused: without an explicitly enabled matching site/release control row, enqueue, claim and finalization fail closed. A pause/release transition advances the dispatch generation and invalidates old claims. The internal `set_control` function is for a separately authorized operator adapter, not a public model method or browser control. G6 maintenance/restore integration is still required before claiming that a populated G6 queue can recover through the existing lifecycle executor. The passed G5 profile continues rejecting job/outbox tables.
+
+Outbox insertion shares the producer's native transaction. Its immutable envelope includes event ID/topic/schema, owner/aggregate, site/workspace, timestamp, correlation/causation, optional aggregate sequence and a bounded minimized JSON payload. The primitive proves uncommitted events are invisible and rolled-back business writes leave no event. Delivery/subscription authorization, consumer deduplication, retention/replay/dead-letter policy and the browser transport remain F-01b. Do not turn a maximum allocated database ID into a commit cursor: concurrent transactions can allocate IDs and commit in the opposite order. No global ordering or exactly-once external effects are promised.
+
+The owned G6 fixture is `.local/g6`, at `http://g6.localhost:18085`, with its own PG/database/volumes/credentials/operator store and six normally approved reference scopes. It uses candidate image `sha256:07534ee7e8157944c51e2898518d61ceffe8a470d51184a6cf7313fb11b4fe47` and inventory `sha256:5a88c464a5ff5b0ff8c66c3de5642862fb302376ca18b6348960cea29d5b6ca6`. Its nine synthetic jobs, one event and eleven Notes are retained; unfinished suite-owned work is held, one uncertain outcome remains explicit, and site dispatch is paused at generation4. Standard record screens still use native Odoo views; Canvas has not changed.
+
+Once-only commands used on the fresh owned fixture:
+
+```powershell
+.venv/Scripts/python.exe -X utf8 tools/build_candidate.py --gate G6 --output docs/evidence/G6/20261029-durable-candidate-01
+.venv/Scripts/python.exe -X utf8 tools/g6_fixture.py configure
+.venv/Scripts/python.exe -X utf8 tools/g6_fixture.py initialize
+.venv/Scripts/python.exe -X utf8 tools/g6_fixture.py install
+.venv/Scripts/python.exe -X utf8 tools/g6_primitive_probe.py
+```
+
+Do not replay these against the completed target. The initial provisioning stopped at a G5-specific seed database-name guard before any fixture write. Zero provision/queue rows and the native core version were verified, and `resume-provision` continued only the corrected G6 provisioning/publication step; schema initialization was not repeated. The failed child/logs and [diagnosis](evidence/G6/20261029-durable-01/core-provision-attempt.json) remain available. On interruption, inspect phase/operation/process markers before deciding a next action; never reset a database to make a probe green.
+
+Next: implement the supported job registry and live actor/plugin/grant/binding/release checks, safe status/error projections, producer events and authorized delivery. Preserve trace/request context in the validated job envelope. Test revocation between enqueue/claim/finalization, out-of-order producer commits and duplicate delivery. Then integrate the frozen token/request/endpoint contract with the operator-managed worker. Restore/effect/credential reconciliation and full G6/G7 qualification remain required.

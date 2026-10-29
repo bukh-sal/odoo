@@ -1,0 +1,69 @@
+{
+  "result": "passed",
+  "cases": [
+    {
+      "model": "mp.dispatch.control",
+      "method": "read",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.dispatch.control",
+      "method": "create",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.dispatch.control",
+      "method": "write",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.dispatch.control",
+      "method": "unlink",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.job",
+      "method": "read",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.job",
+      "method": "create",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.job",
+      "method": "write",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.job",
+      "method": "unlink",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "read",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "create",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "write",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "unlink",
+      "result": "AccessError"
+    }
+  ],
+  "all_control_job_outbox_bytes_exact": true,
+  "no_side_effects": true,
+  "normal_authenticated_scoped_actor": "Alice A administrator, ordinary native backing user",
+  "public_generic_scheduler_API": false
+}

@@ -17,6 +17,7 @@ from modular_platform.operator_store import _write_new
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--gate',choices=['G5','G6','G7'],default='G5',help='Owning implementation gate for recorded build evidence')
     parser.add_argument('--policy',type=Path,default=Path('deploy/distribution-r1.json'),help='Operator-owned R1 distribution policy under deploy/; never an application-selected path')
     args=parser.parse_args()
     policy=(ROOT/args.policy).resolve()
@@ -25,8 +26,8 @@ def main():
         raise ValueError('Existing operator-owned deploy/distribution-r1*.json policy required')
     policy_name=policy.relative_to(ROOT).as_posix()
     output=args.output.resolve()
-    if not output.is_relative_to(ROOT/'docs/evidence/G5') or output.exists() or not re.fullmatch('[A-Za-z0-9_-]+',output.name):
-        raise ValueError('Fresh named G5 evidence directory required')
+    if not output.is_relative_to(ROOT/'docs/evidence'/args.gate) or output.exists() or not re.fullmatch('[A-Za-z0-9_-]+',output.name):
+        raise ValueError('Fresh named evidence directory under the owning gate required')
     private=protect_directory(ROOT/'.local/operator/builds');record_path=private/(output.name+'.json')
     if record_path.exists():raise RuntimeError('Build already attempted; inspect recorded state and builder before retrying')
     tag='modular-platform:stage-'+datetime.now(timezone.utc).strftime('%Y%m%dt%H%M%S%fz')

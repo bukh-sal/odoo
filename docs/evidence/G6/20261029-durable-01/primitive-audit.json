@@ -1,0 +1,37 @@
+{
+  "result": "passed",
+  "actual_queues": {
+    "jobs": {
+      "held": 4,
+      "cancelled": 1,
+      "completed": 1,
+      "dead_letter": 2,
+      "outcome_unknown": 1
+    },
+    "notes": 11,
+    "outbox": 1,
+    "control": [
+      [
+        "paused",
+        4
+      ]
+    ],
+    "core_version": "19.0.0.1.7"
+  },
+  "installation_scopes": 6,
+  "current_image": "sha256:07534ee7e8157944c51e2898518d61ceffe8a470d51184a6cf7313fb11b4fe47",
+  "generation": 2,
+  "standard_screens": "native Odoo list/form",
+  "Alice_A_notes": 11,
+  "Bob_B_notes": 0,
+  "clean_G5_business_schema_exact": true,
+  "dispatch_paused": true,
+  "Windows_validation_tests": 4,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/durable.py": "ef7a428e868e64fe8fea18204e9758f95ad586e6b2925cd0140633c3049ceda0",
+    "platform_addons/mp_core/async_models.py": "c7c77d451e064db07c72e65d9bed16f6c993d32da704d426e6594512edd03b00",
+    "platform_addons/mp_core/__manifest__.py": "8eae6af97914af089dd20390d4c13e38bc6ebd92a8dc25c5d09cbf413754aaae",
+    "platform_addons/mp_core/__init__.py": "a8f993ce5c3d3e8ccbd0dac05444fdb8d44a74e80f33a8d39be98f404a1ffa12",
+    "tests/test_durable_validation.py": "56bc0a872e10e3726ad658cb050df5e81e60de1b89b792acb46d6b22a8d09544"
+  }
+}

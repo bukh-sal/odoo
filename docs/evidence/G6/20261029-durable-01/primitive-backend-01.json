@@ -1,0 +1,26 @@
+{
+  "result": "passed",
+  "tests": 15,
+  "failures": [],
+  "errors": [],
+  "skipped": 0,
+  "successful": true,
+  "image_id": "sha256:07534ee7e8157944c51e2898518d61ceffe8a470d51184a6cf7313fb11b4fe47",
+  "inventory_digest": "sha256:5a88c464a5ff5b0ff8c66c3de5642862fb302376ca18b6348960cea29d5b6ca6",
+  "project": "mp-r0-r1g6d4a49d3eccba",
+  "database": "mp_disposable_r0_r1_g6_d4a49d3eccba",
+  "container": "mp-r0-r1g6d4a49d3eccba-primitive-backend-01",
+  "core_native_version": "19.0.0.1.7",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/durable.py": "ef7a428e868e64fe8fea18204e9758f95ad586e6b2925cd0140633c3049ceda0",
+    "platform_addons/mp_core/async_models.py": "c7c77d451e064db07c72e65d9bed16f6c993d32da704d426e6594512edd03b00",
+    "platform_addons/mp_core/__manifest__.py": "8eae6af97914af089dd20390d4c13e38bc6ebd92a8dc25c5d09cbf413754aaae",
+    "tests/test_durable_validation.py": "56bc0a872e10e3726ad658cb050df5e81e60de1b89b792acb46d6b22a8d09544"
+  },
+  "native_test_sha256": "506bf3bfc1ce572a885fa167583f0464276c7edc46a74fd0f815770bbf8fe477",
+  "limits": [
+    "Real primitive/native/PostgreSQL proof; current actor/plugin dispatch adapters, subscriptions, external service and restore reconciliation remain F-01b..f.",
+    "Only explicitly owned synthetic unfinished test jobs held; rows/business effects/uncertain outcomes retained. Site dispatch is paused after suite.",
+    "No complete G6 acceptance credit from primitives alone."
+  ]
+}

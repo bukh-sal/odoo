@@ -1,0 +1,14 @@
+{
+  "result": "fixture_database_guard_refusal",
+  "before_any_seed_mutation": true,
+  "observed_counts": {
+    "jobs": 0,
+    "outbox": 0,
+    "control": 0,
+    "principals": 0,
+    "core_version": "19.0.0.1.7",
+    "installations": 0,
+    "site_parameters": 0
+  },
+  "diagnosis": "Trusted shared G5 seed asserted its G5 DB prefix before any write. G6 driver now uses its own explicit G6 DB prefix; preserve failed child/logs and resume only provisioning/publishing, not initialization."
+}
