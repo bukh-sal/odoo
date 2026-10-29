@@ -1,0 +1,57 @@
+{
+  "operation_id": "86b30ed1-f711-4a37-b1c0-c765f94a6df9",
+  "plan_hash": "sha256:d38ce1c9e85623c9a01e65910a8f5bfac44f3a644cce90426896444e951f5da7",
+  "state": "failed_before_mutation",
+  "phase": "reserved",
+  "mutation_started": false,
+  "traffic_resumed": false,
+  "backup_id": null,
+  "approval_expires_at": "2026-10-29T05:55:36Z",
+  "history": [
+    {
+      "sequence": 197,
+      "utc": "2026-10-29T05:39:19Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:d38ce1c9e85623c9a01e65910a8f5bfac44f3a644cce90426896444e951f5da7"
+      }
+    },
+    {
+      "sequence": 198,
+      "utc": "2026-10-29T05:39:20Z",
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "86b30ed1-f711-4a37-b1c0-c765f94a6df9",
+        "plan_hash": "sha256:d38ce1c9e85623c9a01e65910a8f5bfac44f3a644cce90426896444e951f5da7",
+        "request_id": "f8d2e3a1-013f-4bc9-a891-2d13eff5e67b",
+        "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc"
+      }
+    },
+    {
+      "sequence": 199,
+      "utc": "2026-10-29T05:40:36Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:d38ce1c9e85623c9a01e65910a8f5bfac44f3a644cce90426896444e951f5da7"
+      }
+    },
+    {
+      "sequence": 200,
+      "utc": "2026-10-29T05:41:01Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 30036,
+        "lock_owner_digest": "sha256:3a9b360eb3cc2d8d366da3870be5c7d6eddd981613bb42c54efeb80db58cb3cd"
+      }
+    },
+    {
+      "sequence": 201,
+      "utc": "2026-10-29T05:41:18Z",
+      "code": "failed_before_mutation",
+      "details": {
+        "code": "STAGING_FAILED"
+      }
+    }
+  ]
+}

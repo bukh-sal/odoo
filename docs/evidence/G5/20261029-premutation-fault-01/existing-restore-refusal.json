@@ -1,0 +1,4 @@
+{
+  "result": "denied_as_designed",
+  "reason": "Fresh-target recovery is permitted only before traffic resumes"
+}

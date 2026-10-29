@@ -1,0 +1,5 @@
+{
+  "result": "same_existing_application_request",
+  "reason": "First CLI parse failed before registration: --store belongs on operations group",
+  "operation_id": "86b30ed1-f711-4a37-b1c0-c765f94a6df9"
+}

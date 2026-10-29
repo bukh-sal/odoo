@@ -1,0 +1,63 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T05:48:38.374022+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "state_business_exact": true,
+      "configuration_sha256": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9"
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "state_business_exact": true,
+      "configuration_sha256": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad"
+    }
+  ],
+  "exact_base_schema_business_grants_files_configuration": true,
+  "worker_and_generation_unchanged": true,
+  "cases": [
+    {
+      "case": "checkpointed",
+      "operation_id": "600af7d9-15b4-4b96-af20-9dabfa86f8b5",
+      "original_authority_revoked": true,
+      "mutation_never_started": true,
+      "base_generation": 11
+    },
+    {
+      "case": "staging",
+      "operation_id": "86b30ed1-f711-4a37-b1c0-c765f94a6df9",
+      "original_authority_revoked": true,
+      "mutation_never_started": true,
+      "base_generation": 11
+    },
+    {
+      "case": "no-backup",
+      "operation_id": "c016afbf-80f2-4764-a0ec-79ad7fc7f605",
+      "original_authority_revoked": true,
+      "mutation_never_started": true,
+      "base_generation": 11
+    }
+  ],
+  "independent_operation_states": [
+    [
+      "completed",
+      14
+    ],
+    [
+      "failed_before_mutation",
+      3
+    ]
+  ],
+  "windows_checks": 26,
+  "linux_checks": 26,
+  "frozen_files": 87,
+  "source_boundary": "source-boundary.json",
+  "known_private_values_checked": 3,
+  "public_files_checked": 67,
+  "limits": [
+    "Bounded evidence scan, not SEC-03 release qualification.",
+    "No OS-process-crash/concurrency/stale-job/clean-restore claim."
+  ]
+}

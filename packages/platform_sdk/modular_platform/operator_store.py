@@ -10,6 +10,7 @@ from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
 import json
 import os
+import re
 from pathlib import Path
 import sqlite3
 import stat
@@ -467,3 +468,32 @@ class OperatorStore:
                     'approval_expires_at': approval['expires_at'] if approval else None,
                     'history': [{'sequence': event['sequence'], 'utc': event['utc'], 'code': event['code'],
                                  'details': load_json(event['details'])} for event in events]}
+
+    def record_unchanged_resume(self, operation_id, locks, *, decision_hash, phase):
+        """Retire failed native authority; journal only an unchanged-code resume."""
+        phases = ('unchanged_resume_started','unchanged_release_ready','unchanged_traffic_resumed')
+        if phase not in phases or not re.fullmatch(r'sha256:[0-9a-f]{64}', decision_hash):
+            raise OperatorError('Exact unchanged-release recovery step/hash required')
+        with self._connect(transaction=True) as database:
+            row = self._row(database, operation_id)
+            bundle = load_json(row['bundle'])
+            self._authorize_plan(bundle['plan'])
+            nonce = self._lock_identity(bundle['plan'], locks)
+            if row['state'] != 'failed_before_mutation' or row['mutation_started']:
+                raise OperatorError('Only an unmutated failed operation can resume its base release')
+            if phase != phases[0] and (row['owner_nonce'] != nonce or row['phase'] != phases[phases.index(phase)-1]):
+                raise OperatorError('Unchanged-release recovery is fenced or out of order')
+            if phase == phases[0]:
+                if row['phase'] not in ('reserved','staged','maintenance','drained','checkpointed',*phases):
+                    raise OperatorError('Unknown failed operation phase requires reconciliation')
+                if row['approval'] is None:
+                    raise OperatorError('Failed operation has no original independent authority to retire')
+                approval = load_json(row['approval'])
+                approval['state'] = 'revoked'
+                database.execute('UPDATE operations SET approval=? WHERE operation_id=?',
+                                 (json.dumps(approval,sort_keys=True),operation_id))
+                database.execute('INSERT OR IGNORE INTO revocations(operation_id,utc,operator_id) VALUES (?,?,?)',
+                                 (operation_id,_stamp(_utc()),current_identity()))
+            database.execute('UPDATE operations SET phase=?,owner_nonce=?,traffic_resumed=MAX(traffic_resumed,?) WHERE operation_id=?',
+                             (phase,nonce,int(phase==phases[2]),operation_id))
+            self._event(database, operation_id, phase, {'decision_hash':decision_hash})

@@ -119,3 +119,21 @@ Feature suspension retains the native addon, schema, data, imports and class ove
 The [current two-workspace fixture](evidence/G5/20261029-lifecycle-01/qualification.json) proves an actual browser cascade preview/request, matching independent CLI approval/apply, direct-page/gateway/native/command/slot denial, unaffected Research access and retained native field registration. Labels-only suspension leaves standard native Notes CRUD available while extension access is gated. All six availabilities were restored using new exact enable operations; the same four Notes, two minimal boards, labels, schema, bindings, grants, worker/image/release remain. Main28 and retained manager6 are untouched. LIFE-01/02 pass for the current G5 runtime; native-removal closure remains the open half of LIFE-03. G6 must add/requalify dispatch drain and job/event/schedule delivery gates before final R1.
 
 The bounded fixture uses `tools/manager_upgrade_fixture.py --profile lifecycle` for the original explicit setup and `tools/qualify_lifecycle_features.py` for exact operations; all existing markers are terminal and must not be rerun. `tools/lifecycle_data_probe.py` seeded only minimal reference/test data. Inspect its existing evidence and private state rather than creating a second baseline, reseeding boards or replaying completed native/feature operations.
+
+
+## Resume an unchanged release after failure before mutation
+
+Use the existing independent operator CLI when the journal records `failed_before_mutation` and `mutation_started=false`. This is a separately reviewed resume of the old executable release, not another attempt to install and not a database restore. Read the target's private state/resume capsule for its actual trust/catalog/control paths; the lifecycle qualification fixture uses its isolated catalog rather than the shared main-site catalog.
+
+Set `$operatorTrust`, `$operatorControl`, `$deploymentTarget`, `$operatorCatalog`, `$failedOperation` and a fresh `$resumeDecisionFile` to those independently selected local paths/ID. Prepare the review, inspect the entire result and save the decision before executing its exact hash:
+
+```powershell
+$unchangedResume = (& .venv/Scripts/python.exe tools/modular.py --config $operatorTrust plugin recover prepare-unchanged-resume $failedOperation --store $operatorControl --deployment-config $deploymentTarget --catalog $operatorCatalog) | ConvertFrom-Json
+$unchangedResume.decision | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $resumeDecisionFile -Encoding utf8
+$unchangedResume | ConvertTo-Json -Depth 100
+.venv/Scripts/python.exe tools/modular.py --config $operatorTrust plugin recover resume-unchanged $failedOperation --store $operatorControl --deployment-config $deploymentTarget --catalog $operatorCatalog --decision $resumeDecisionFile --decision-hash $unchangedResume.decision_hash
+```
+
+The review checks the complete original base-state digest, current independent authority/catalog/source/configuration, installed native versions, selected guarded worker/mount/network/code pins, absence of a running maintenance child or unexpected running worker, and unsupported dispatch/external runtime boundaries. A changed base or possible native mutation is rejected. Do not replace the target configuration or manually start an unverified worker to bypass that rejection.
+
+The resume permanently revokes the failed installation's authority before restarting only its selected old worker, checks readiness and unchanged state, then records a conservative traffic fence before reopening ingress. It preserves the database, filestore, session authority, published lock/configuration and generation. The original operation remains `failed_before_mutation`: it never completed its installation. Keep stages, checkpoints and images. After an interrupted or failed resume inspect the journal/actual worker state and prepare a fresh review; do not replay the failed installation or an old recovery decision. This action cannot authorize destructive rollback even if traffic might already have opened. Job/outbox adapters must extend and requalify this dispatch boundary in G6.

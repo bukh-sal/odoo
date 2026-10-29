@@ -1,0 +1,12 @@
+{
+  "result": "passed_actual_staging_failure_and_resume",
+  "operation_id": "86b30ed1-f711-4a37-b1c0-c765f94a6df9",
+  "generation": 11,
+  "checkpoint_absent": true,
+  "exact_base_business_schema_configuration_files": true,
+  "worker_unchanged": true,
+  "traffic_continuously_available": true,
+  "limits": [
+    "Injected exception, not process-crash evidence."
+  ]
+}

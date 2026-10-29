@@ -1,0 +1,19 @@
+{
+  "result": "verified_host_only_addition",
+  "unchanged_original_store_methods": 26,
+  "changed_original_source_files": [
+    "packages/platform_sdk/modular_platform/operator_store.py",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py",
+    "tools/modular.py"
+  ],
+  "added_files": [
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py",
+    "tests/test_unchanged_recovery.py"
+  ],
+  "native_application_helpers_unchanged": true,
+  "current_image_unchanged": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+  "public_contract_files_changed": false,
+  "limits": [
+    "Private recovery action/CLI additions tested separately; original normal store methods AST-identical."
+  ]
+}

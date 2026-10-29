@@ -1,0 +1,5 @@
+{
+  "result": "denied",
+  "exit_code": 2,
+  "reason": "Exact reviewed recovery hash required; journal unchanged"
+}

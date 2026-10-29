@@ -1,0 +1,12 @@
+{
+  "result": "passed_actual_no-backup_failure_and_resume",
+  "operation_id": "c016afbf-80f2-4764-a0ec-79ad7fc7f605",
+  "generation": 11,
+  "checkpoint_absent": true,
+  "exact_base_business_schema_configuration_files": true,
+  "worker_unchanged": true,
+  "traffic_continuously_available": false,
+  "limits": [
+    "Injected exception, not process-crash evidence."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "result": "passed",
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "tools/check_contract_freeze.py"
+  ],
+  "exit_code": 0,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "1134cb59dcb4c2adc9cc87e28c298f1fdc67681f43d788eb5cbe96b0f3a9e681",
+    "tools/modular.py": "5c003d505f24283858742a7d377b749f1031a9c94469f2436ec945a5d8ca689e",
+    "tests/test_unchanged_recovery.py": "c4a305782a34cdcf3531314e70b40c3193944f82355ba87296e1a03676133377"
+  },
+  "summary": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 87,
+    "rows": 7
+  }
+}

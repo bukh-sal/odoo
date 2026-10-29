@@ -1,0 +1,13 @@
+{
+  "result": "passed_actual_unchanged_release_resume",
+  "operation_id": "600af7d9-15b4-4b96-af20-9dabfa86f8b5",
+  "generation": 11,
+  "original_approval_permanently_revoked": true,
+  "native_mutation_never_started": true,
+  "state_schema_business_configuration_files_exact": true,
+  "worker_unchanged": true,
+  "limits": [
+    "Supported HTTP/API/assets and protected full-state audit remain separate.",
+    "Injected exception is not process-crash qualification."
+  ]
+}

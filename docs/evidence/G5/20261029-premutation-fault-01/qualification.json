@@ -1,0 +1,37 @@
+{
+  "result": "passed_MIG01",
+  "utc": "2026-10-29T05:52:16.179551+00:00",
+  "git_base": "a656abb4",
+  "runtime_image": "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+  "runtime_source": "1efd46de",
+  "host_source_sha256": {
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "1134cb59dcb4c2adc9cc87e28c298f1fdc67681f43d788eb5cbe96b0f3a9e681",
+    "tools/modular.py": "5c003d505f24283858742a7d377b749f1031a9c94469f2436ec945a5d8ca689e",
+    "tests/test_unchanged_recovery.py": "c4a305782a34cdcf3531314e70b40c3193944f82355ba87296e1a03676133377"
+  },
+  "source_boundary": "source-boundary.json",
+  "source_checks": {
+    "windows_focused": 10,
+    "windows_regression": 16,
+    "linux": 26,
+    "contract_freeze": 87
+  },
+  "actual_cases": [
+    "fault-qualification.json",
+    "resume-qualification.json",
+    "staging/qualification.json",
+    "no-backup/qualification.json"
+  ],
+  "supported_http_assets_replay": "http-assets-replay.json",
+  "protected_and_current_audit": "final-audit.json",
+  "new_acceptance": [
+    "MIG-01"
+  ],
+  "limits": [
+    "No OS-process-crash, concurrency, stale-job/queue or clean-restore qualification.",
+    "Current unchanged-resume profile rejects changed base state, external runtimes and dispatch tables; G6 must extend/requalify dispatch reconciliation.",
+    "Original installations remain failed_before_mutation with permanently revoked approvals; recovery does not mark them completed."
+  ]
+}

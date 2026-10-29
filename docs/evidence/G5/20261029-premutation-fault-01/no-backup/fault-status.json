@@ -1,0 +1,75 @@
+{
+  "operation_id": "c016afbf-80f2-4764-a0ec-79ad7fc7f605",
+  "plan_hash": "sha256:46ce6907772c7e0057c09bfbfce87117d3dcad5e5380dafcf1ae5f883fe61c73",
+  "state": "failed_before_mutation",
+  "phase": "drained",
+  "mutation_started": false,
+  "traffic_resumed": false,
+  "backup_id": null,
+  "approval_expires_at": "2026-10-29T05:59:56Z",
+  "history": [
+    {
+      "sequence": 205,
+      "utc": "2026-10-29T05:43:11Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:46ce6907772c7e0057c09bfbfce87117d3dcad5e5380dafcf1ae5f883fe61c73"
+      }
+    },
+    {
+      "sequence": 206,
+      "utc": "2026-10-29T05:43:12Z",
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "c016afbf-80f2-4764-a0ec-79ad7fc7f605",
+        "plan_hash": "sha256:46ce6907772c7e0057c09bfbfce87117d3dcad5e5380dafcf1ae5f883fe61c73",
+        "request_id": "77e33dbf-0848-4fe7-a6c1-b1f3bae4b110",
+        "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc"
+      }
+    },
+    {
+      "sequence": 207,
+      "utc": "2026-10-29T05:44:56Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:46ce6907772c7e0057c09bfbfce87117d3dcad5e5380dafcf1ae5f883fe61c73"
+      }
+    },
+    {
+      "sequence": 208,
+      "utc": "2026-10-29T05:45:21Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 26192,
+        "lock_owner_digest": "sha256:c00cd3c6a4a1d1cdcfdb831c61e6201a94bc41bb9889fae57d8d9c3c5b1b9f9e"
+      }
+    },
+    {
+      "sequence": 209,
+      "utc": "2026-10-29T05:45:39Z",
+      "code": "staged",
+      "details": {}
+    },
+    {
+      "sequence": 210,
+      "utc": "2026-10-29T05:45:49Z",
+      "code": "maintenance",
+      "details": {}
+    },
+    {
+      "sequence": 211,
+      "utc": "2026-10-29T05:45:51Z",
+      "code": "drained",
+      "details": {}
+    },
+    {
+      "sequence": 212,
+      "utc": "2026-10-29T05:45:53Z",
+      "code": "failed_before_mutation",
+      "details": {
+        "code": "BACKUP_FAILED"
+      }
+    }
+  ]
+}

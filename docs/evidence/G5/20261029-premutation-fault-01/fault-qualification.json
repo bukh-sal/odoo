@@ -1,0 +1,14 @@
+{
+  "result": "verified_gap_before_mutation",
+  "operation_id": "600af7d9-15b4-4b96-af20-9dabfa86f8b5",
+  "plan_hash": "sha256:fea92059590c869861aab05eeada5c54844b40cea0f6d5124cc1c35391273819",
+  "generation": 11,
+  "base_state_business_schema_configuration_exact": true,
+  "native_child_absent": true,
+  "checkpoint_hashes_verified": true,
+  "traffic_closed": true,
+  "limits": [
+    "Required verified unchanged-release resume path is not yet implemented; MIG-01 remains not_run.",
+    "Injected exception is not OS-process-crash evidence."
+  ]
+}

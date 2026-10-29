@@ -94,7 +94,7 @@ def main(argv=None):
         if action=='stage-image':staged.add_argument('--image-id',required=True)
         else:staged.add_argument('--input',required=True,type=Path,help='Exact native install/upgrade target nomination')
     recover = plugin.add_parser('recover', help='Review/restore a checkpoint to a fresh disposable database, then separately resume')
-    recover.add_argument('recovery_action', choices=['prepare-restore','restore','prepare-resume','resume','revoke-review'])
+    recover.add_argument('recovery_action', choices=['prepare-restore','restore','prepare-resume','resume','revoke-review','prepare-unchanged-resume','resume-unchanged'])
     recover.add_argument('operation_id')
     recover.add_argument('--store', required=True, type=Path)
     recover.add_argument('--deployment-config', required=True, type=Path)
@@ -229,8 +229,11 @@ def main(argv=None):
             from modular_platform.operator_os import OperatorError
             from modular_platform.plans import data_digest
             recovery = RestoreExecutor(NativeExecutor(OperatorStore(args.store),args.deployment_config,args.catalog,validator))
+            if args.recovery_action in ('prepare-unchanged-resume','resume-unchanged'):
+                from modular_platform.unchanged_recovery import UnchangedReleaseRecovery
+                recovery=UnchangedReleaseRecovery(recovery.native)
             if args.recovery_action.startswith('prepare-'):
-                decision = recovery.prepare(args.operation_id) if args.recovery_action=='prepare-restore' else recovery.prepare_resume(args.operation_id)
+                decision = recovery.prepare_resume(args.operation_id) if args.recovery_action=='prepare-resume' else recovery.prepare(args.operation_id)
                 result = {'decision':decision,'decision_hash':data_digest(decision)}
             else:
                 if not args.decision or not args.decision_hash:
