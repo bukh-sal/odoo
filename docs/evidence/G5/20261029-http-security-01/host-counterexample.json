@@ -1,0 +1,9 @@
+{
+  "result": "unknown_host_login_observation",
+  "status": 200,
+  "login_form_rendered": true,
+  "body_sha256": "b667b865a635bc69e5ae8621e726b5f18426eb9d137d0ab3a960f9059ce93606",
+  "source": "deploy/nginx-r0.conf server_name _ passes Host without allowlist",
+  "prior_release_probe_status": 401,
+  "interpretation": "Anonymous release401 cannot establish metadata disclosure. This login probe checks allowed-host handling independently of session auth."
+}

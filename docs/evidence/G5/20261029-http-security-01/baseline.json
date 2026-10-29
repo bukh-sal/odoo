@@ -1,0 +1,137 @@
+{
+  "result": "observed_SEC02_not_qualified",
+  "utc": "2026-10-29T09:09:01.416971+00:00",
+  "target_project": "mp-r0-r1dispefb95a06d78f",
+  "generation": 20,
+  "cases": [
+    {
+      "case": "normal_release",
+      "status": 401,
+      "access_control_allow_origin": null,
+      "access_control_allow_credentials": null,
+      "body_sha256": "dad48f1df975efbe840e0a4159062ec9620f052543281ed5073eb6286b3bd8bf",
+      "cookie_flags": [
+        {
+          "name": "session_id",
+          "host_only": true,
+          "http_only": true,
+          "secure": false,
+          "same_site": null
+        }
+      ]
+    },
+    {
+      "case": "unknown_host",
+      "status": 401,
+      "access_control_allow_origin": null,
+      "access_control_allow_credentials": null,
+      "body_sha256": "aff2ae8a9dc95d65b0b428e13b56d13da288176f02d49afa91a9cd276d63e8b3",
+      "cookie_flags": [
+        {
+          "name": "session_id",
+          "host_only": true,
+          "http_only": true,
+          "secure": false,
+          "same_site": null
+        }
+      ]
+    },
+    {
+      "case": "cross_origin_read",
+      "status": 401,
+      "access_control_allow_origin": null,
+      "access_control_allow_credentials": null,
+      "body_sha256": "b870e144c20a019b4382f917db37216d4c3f7058107389d4d710a7b1229faf2a",
+      "cookie_flags": [
+        {
+          "name": "session_id",
+          "host_only": true,
+          "http_only": true,
+          "secure": false,
+          "same_site": null
+        }
+      ]
+    },
+    {
+      "case": "cross_origin_preflight",
+      "status": 401,
+      "access_control_allow_origin": null,
+      "access_control_allow_credentials": null,
+      "body_sha256": "e58276dba36a7767d7b999a0f3b1c6f99399b148b7f7c5a1f587dd03b6e31a45",
+      "cookie_flags": [
+        {
+          "name": "session_id",
+          "host_only": true,
+          "http_only": true,
+          "secure": false,
+          "same_site": null
+        }
+      ]
+    },
+    {
+      "case": "anonymous_session_cookie",
+      "status": 200,
+      "access_control_allow_origin": null,
+      "access_control_allow_credentials": null,
+      "body_sha256": "8cc5fd5f3e2e437eec53dd8dccfcb731230e774bf7c842fbcc2cef248eaee8b2",
+      "cookie_flags": [
+        {
+          "name": "session_id",
+          "host_only": true,
+          "http_only": true,
+          "secure": false,
+          "same_site": null
+        }
+      ]
+    },
+    {
+      "case": "forged_forwarded_headers",
+      "status": 401,
+      "access_control_allow_origin": null,
+      "access_control_allow_credentials": null,
+      "body_sha256": "b5347fe04118b58b2b4cde6676d42dc87fe7511f7718269ef424b777d5606da1",
+      "cookie_flags": [
+        {
+          "name": "session_id",
+          "host_only": true,
+          "http_only": true,
+          "secure": false,
+          "same_site": null
+        }
+      ]
+    },
+    {
+      "case": "database_manager",
+      "status": 403,
+      "access_control_allow_origin": null,
+      "access_control_allow_credentials": null,
+      "body_sha256": "cac61ecbe9b896631584f583f8fb1a1d25474a371158f0f60b9a983949286855",
+      "cookie_flags": []
+    }
+  ],
+  "nonsecret_runtime_options": {
+    "proxy_mode": "False",
+    "list_db": "False",
+    "dbfilter": "^mp_disposable_r0_r1_restore_2c21ae48a3bb4c9abcd98cbbeb743a00$",
+    "max_cron_threads": "0",
+    "http_interface": "0.0.0.0"
+  },
+  "business_configuration_unchanged": true,
+  "source_sha256": {
+    "deploy/nginx-r0.conf": "de7d3e2ed81e310fc89781522b81aef19877e22378180071bf6c8c6c13b3b066",
+    "deploy/compose.yaml": "aad4f277bd9e14b96537573239c6819d1d6a2c31df0d953c7868b8ce82f36681",
+    "odoo/http.py": "9d7abdb09e75f899c4492a85f3287a0535988a66cd0266e411d400fb976ffcb9",
+    "platform_addons/mp_core/controllers.py": "26c39026087f58078377cac3f6c11ce1a18b18454ef88db98411ea69aed66141"
+  },
+  "findings": [
+    "Explicit allowed-host enforcement is missing: unknown Host reaches the login page with HTTP200 (host-counterexample.json); anonymous release probes both return401 and do not disclose site metadata.",
+    "Pinned upstream session cookie is host-only and HttpOnly; local HTTP has no explicit SameSite or Secure. Separate HTTPS/production policy must be implemented/tested rather than inferred from local HTTP.",
+    "No dedicated production profile exists yet; SEC04 cannot pass from the development proxy database-manager denial alone."
+  ],
+  "next": "Implement/test explicit development allowed-host policy and a separate operator-configured production proxy/profile with trusted proxy, TLS cookie and endpoint defaults; preserve Odoo session/CSRF/native-view behavior.",
+  "limits": [
+    "Anonymous read-only seven-request baseline; no complete CSRF/authenticated-cookie/rate-limit/production qualification.",
+    "No production deployment or existing proxy mutation."
+  ],
+  "interpretation_reconciliation": "Initial findings text inferred site metadata from anonymous release path; raw observation was401. Corrected using a distinct unknown-host login probe; raw baseline observations unchanged."
+}
