@@ -1,0 +1,12 @@
+{
+  "result": "passed_exact_suspend-notes-A",
+  "utc": "2026-10-28T23:56:49.643481+00:00",
+  "operation_id": "5d987ff9-fc93-4d16-a7aa-518a7797de1c",
+  "plan_hash": "sha256:8d3565f6565e84d494007d9584b9a8ed7a9dc78f44bfa8a5672216f2658e35bb",
+  "generation": 3,
+  "retained_files": 46,
+  "main_target_unchanged": true,
+  "limits": [
+    "Feature gate/API/UI/retention qualification recorded separately; native uninstall/artifact removal remain G5-X05."
+  ]
+}

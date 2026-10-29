@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "status",
+  "operation_id": "fb5d3e97-d355-4295-a45c-3885c3207346",
+  "plan_hash": "sha256:185e33e2540eca42266ef957c2db19e87bb06a62fdc7213b66786f1aea6dff4f",
+  "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+  "state": "awaiting_operator_approval",
+  "phase": "prepared",
+  "source": "application_request",
+  "observed_at": "2026-10-28T23:58:06Z",
+  "stale": false,
+  "approval_expires_at": null,
+  "dimensions": [
+    {
+      "plugin_id": "org.example.canvas",
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+      "feature_state": "suspended",
+      "release_state": "active",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9"
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+      "feature_state": "suspended",
+      "release_state": "active",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+    }
+  ],
+  "history": [
+    {
+      "sequence": 1,
+      "utc": "2026-10-28T23:58:06Z",
+      "code": "prepared"
+    },
+    {
+      "sequence": 2,
+      "utc": "2026-10-28T23:58:06Z",
+      "code": "requested"
+    }
+  ],
+  "error_code": null,
+  "control_authority": "independent_local_os"
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "operation": "prepare",
+  "operation_type": "install",
+  "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+  "plugin_id": "org.example.notes_labels",
+  "artifact_version": "0.2.1",
+  "artifact_digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+  "workspace_ids": [
+    "907b39a7-345a-4332-9df1-410019531cd4",
+    "3f502e47-683a-4551-b00e-03368e647dd2"
+  ],
+  "cascade": true
+}

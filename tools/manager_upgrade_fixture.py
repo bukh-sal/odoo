@@ -43,19 +43,30 @@ def command(arguments,*,input=None):
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('action',choices=['setup','init','publish-stage','inspect']);parser.add_argument('--image-id');args=parser.parse_args()
+    global LOCAL,OUTPUT
+    parser=argparse.ArgumentParser();parser.add_argument('action',choices=['setup','init','publish-stage','inspect']);parser.add_argument('--image-id')
+    parser.add_argument('--profile',choices=['manager-upgrade','lifecycle'],default='manager-upgrade');args=parser.parse_args()
+    lifecycle=args.profile=='lifecycle';prefix='mp-r0-r1life' if lifecycle else 'mp-r0-r1mgr'
+    if lifecycle:
+        LOCAL=ROOT/'.local/g5-lifecycle';OUTPUT=ROOT/'docs/evidence/G5/20261029-lifecycle-01'
     main_path=ROOT/'.local/operator/targets/g5.json';main_hash=hashlib.sha256(main_path.read_bytes()).hexdigest()
     def guard():
         assert hashlib.sha256(main_path.read_bytes()).hexdigest()==main_hash,'Main target changed during isolated qualification'
     if args.action=='setup':
         assert not LOCAL.exists() and args.image_id
         runtime=inspect_image(args.image_id);target_runtime=inspect_image('sha256:2c7eeda91f213aea51091f1c7a2523a04c3fb51b2c30f4dd12d292da55544383')
-        validate_plugin_core_stability(runtime,target_runtime)
-        identity=json.loads((OUTPUT/'baseline-artifact-identity.json').read_text(encoding='utf-8'))
-        assert runtime['inventory']['artifacts']['org.example.notes']['digest']==identity['artifact_digest']
+        if lifecycle:
+            qualified=json.loads((ROOT/'docs/evidence/G5/20261029-migration-order-candidate/candidate-build.json').read_text(encoding='utf-8'))
+            assert args.image_id==qualified['image_id'] and qualified['result']=='built_not_deployed'
+            assert runtime['inventory']['artifacts']==qualified['artifacts']
+            assert not OUTPUT.exists();OUTPUT.mkdir(parents=True)
+        else:
+            validate_plugin_core_stability(runtime,target_runtime)
+            identity=json.loads((OUTPUT/'baseline-artifact-identity.json').read_text(encoding='utf-8'))
+            assert runtime['inventory']['artifacts']['org.example.notes']['digest']==identity['artifact_digest']
         protect_directory(LOCAL);protect_directory(LOCAL/'logs');protect_directory(LOCAL/'operator')
-        nonce=secrets.token_hex(6);project='mp-r0-r1mgr'+nonce;database='mp_disposable_r0_r1_g5_mgr_'+nonce
-        for port in range(18079,18100):
+        nonce=secrets.token_hex(6);project=prefix+nonce;database='mp_disposable_r0_r1_g5_'+('life_' if lifecycle else 'mgr_')+nonce
+        for port in range(18080 if lifecycle else 18079,18100):
             try:
                 with socket.socket() as sock:sock.bind(('127.0.0.1',port))
                 break
@@ -70,7 +81,7 @@ def main():
             'http_interface':'0.0.0.0','proxy_mode':'False','limit_memory_soft':'536870912','limit_memory_hard':'671088640'}
         with (LOCAL/'odoo.conf').open('x',encoding='utf-8') as stream:config.write(stream)
         state={'phase':'configured','disposable':True,'project':project,'active_db':database,'databases':[database],'image_id':args.image_id,
-            'port':port,'url':'http://g5upgrade.localhost:'+str(port),'variant':'v1','evidence':OUTPUT.relative_to(ROOT).as_posix(),
+            'port':port,'url':('http://g5life.localhost:' if lifecycle else 'http://g5upgrade.localhost:')+str(port),'variant':'v1','evidence':OUTPUT.relative_to(ROOT).as_posix(),
             'site_id':str(uuid4()),'deployment_id':str(uuid4()),'bootstrap_id':str(uuid4()),'runtime_inventory_digest':runtime['inventory_digest'],
             'main_target_sha256':main_hash,'created_at':datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
         write(LOCAL/'state.json',state)
@@ -81,7 +92,7 @@ def main():
         command(['docker','volume','create','--label','com.modular.disposable='+project,project+'_filestore'])
         write(LOCAL/'state.json',state);write(OUTPUT/'fixture-setup.json',{key:value for key,value in state.items() if key!='bootstrap_id'})
         guard();print(json.dumps({'result':'isolated_fixture_configured','project':project,'database':database,'port':port,'image_id':args.image_id}));return
-    state=json.loads((LOCAL/'state.json').read_text(encoding='utf-8'));assert state['disposable'] and state['project'].startswith('mp-r0-r1mgr') and state['main_target_sha256']==main_hash
+    state=json.loads((LOCAL/'state.json').read_text(encoding='utf-8'));assert state['disposable'] and state['project'].startswith(prefix) and state['main_target_sha256']==main_hash
     project=state['project'];database=state['active_db'];target_path=LOCAL/'operator/target.json';catalog_root=ROOT/'.local/operator/catalog';validator=configuration(ROOT/'.local/operator/trust.json');catalog=Catalog(catalog_root,validator,readonly=True);store=OperatorStore(LOCAL/'operator/control')
     compose=['docker','compose','--env-file',str(LOCAL/'compose.env'),'-f',str(ROOT/'deploy/compose.yaml')]
     config={'schema_version':1,'deployment_id':state['deployment_id'],'project':project,'sites':[{'site_id':state['site_id'],'database':database}],

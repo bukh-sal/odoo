@@ -1,0 +1,14 @@
+{
+  "result": "passed_concurrent_scoped_extension_denials",
+  "clients": 4,
+  "unaffected_B_reads": 4,
+  "A_denied_label_mutations": 16,
+  "native_worker_pid_denied_counts": {
+    "15": 9,
+    "16": 8
+  },
+  "raw_notes_boards_features_bindings_grants_exact": true,
+  "limits": [
+    "This tests live feature gates, not executor operation serialization/MIG-04. Earlier serial Notes denial sample used onlyPID15; no two-worker claim from that sample."
+  ]
+}

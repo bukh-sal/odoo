@@ -1,0 +1,20 @@
+{
+  "result": "passed_notes-A-suspended",
+  "utc": "2026-10-28T23:57:27.277298+00:00",
+  "checks": [
+    "A navigation/context/registered commands/slot visibility follows live availability",
+    "A saved IDs, gateway/native reads and writes, Canvas get/save denied without changing data",
+    "A cached command/service binding and explicit native extension field access denied",
+    "B navigation/context/registered commands/slot visibility follows live availability",
+    "B native/base APIs/Canvas remain available; shared Labels field remains registered when enabled"
+  ],
+  "configuration_worker_image_release_unchanged": true,
+  "native_modules_schema_constraints_and_all_business_data_retained": true,
+  "business_digest": "sha256:cddc8cfa44b8873ac4ad304c6d005c007fc2c054d8d9d486767271227beddac8",
+  "schema_digest": "sha256:ed5082214faa5445e79519b7a9ff6c4ebc7de388abd79e935487ccc57a0fa5d6",
+  "main_target_unchanged": true,
+  "limits": [
+    "Browser direct-page/terminology proof recorded separately.",
+    "Current G5 has no job/outbox tables; the executor rejects those tables until G6 drain/reconciliation support. Requalify LIFE-01 when G6 adds dispatch."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "result": "passed_feature_suspension_browser",
+  "tab_id": "15",
+  "origin": "http://g5life.localhost:18080",
+  "request_operation_id": "5d987ff9-fc93-4d16-a7aa-518a7797de1c",
+  "plan_hash": "sha256:8d3565f6565e84d494007d9584b9a8ed7a9dc78f44bfa8a5672216f2658e35bb",
+  "checks": [
+    "Native Notes list and minimal Canvas data visible before suspension",
+    "Provider suspension without cascade rejected; explicit cascade names Notes,Canvas,Labels in Personal",
+    "Operator preview explicitly says feature suspension retains native registration/data/imports/overrides",
+    "Same UI operation requested then independently reviewed/approved/applied; status completed with database installed and feature suspended",
+    "Saved Notes and Canvas Personal links blocked; Research Canvas and native Notes form/Labels still work",
+    "Personal native form works without Labels contribution while Labels alone suspended",
+    "After final enable, exact same native note identity/revision2/body/retained labels and Edit labels action restored"
+  ],
+  "record_edits": false,
+  "canvas_product_changes": false,
+  "final_availability": "all six enabled",
+  "password_binding_cleared": true,
+  "temporary_tab_closed": true,
+  "limits": [
+    "Initial no-cascade UI error is generic Validation failed; explicit cascade preview supplies full dependent target names.",
+    "Read-only browser checks; privilege remains in independent CLI."
+  ]
+}

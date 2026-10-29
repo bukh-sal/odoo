@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "operation": "prepare",
+  "operation_type": "suspend",
+  "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+  "plugin_id": "org.example.notes",
+  "workspace_ids": [
+    "907b39a7-345a-4332-9df1-410019531cd4"
+  ],
+  "cascade": true
+}

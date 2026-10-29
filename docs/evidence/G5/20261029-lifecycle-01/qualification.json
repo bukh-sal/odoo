@@ -1,0 +1,100 @@
+{
+  "result": "passed_G5_X05a_feature_suspension",
+  "utc": "2026-10-29T00:19:05.491601+00:00",
+  "gate": "G5",
+  "parent": "G5-X05",
+  "newly_qualified": [
+    "LIFE-01",
+    "LIFE-02"
+  ],
+  "partial_not_passed": {
+    "LIFE-03": "Suspension rejection/cascade demonstrated; native-removal dependent closure still pending."
+  },
+  "spec_sections": [
+    "9.1",
+    "9.2",
+    "10.6",
+    "11.4",
+    "20.1",
+    "20.3"
+  ],
+  "image_id": "sha256:154d74a9d63337cb64607affb78104462a5eb9ab97afe8cd9a5ede48b65b8c5a",
+  "generation": 3,
+  "fixture_project": "mp-r0-r1lifef99acae9d906",
+  "operations": {
+    "install-canvas": {
+      "operation_id": "3c032df7-512e-4ca7-a0fc-4ee94ac8c5ff",
+      "plan_hash": "sha256:27c9bde70d79ae1b94594a8965edf9550e848583eea559d004315656d5325a8c",
+      "state": "completed_verified"
+    },
+    "install-labels": {
+      "operation_id": "ed32eb8d-2d44-4bda-bb51-098dcd5b0364",
+      "plan_hash": "sha256:909468abcc5514128c9e794ad95ee9cf7df5021731e92392464fc219e297f260",
+      "state": "completed_verified"
+    },
+    "suspend-notes-A": {
+      "operation_id": "5d987ff9-fc93-4d16-a7aa-518a7797de1c",
+      "plan_hash": "sha256:8d3565f6565e84d494007d9584b9a8ed7a9dc78f44bfa8a5672216f2658e35bb",
+      "state": "completed_verified"
+    },
+    "enable-canvas-A": {
+      "operation_id": "fb5d3e97-d355-4295-a45c-3885c3207346",
+      "plan_hash": "sha256:185e33e2540eca42266ef957c2db19e87bb06a62fdc7213b66786f1aea6dff4f",
+      "state": "completed_verified"
+    },
+    "enable-labels-A": {
+      "operation_id": "8898e654-3920-4bb8-b66f-87ad81653f7b",
+      "plan_hash": "sha256:f2ce633ec7b5c3c35b8990c0c4a3e06706fdb837cfc311e92147d8cc08572707",
+      "state": "completed_verified"
+    }
+  },
+  "observations": [
+    "New owned core-only fixture: actual manager requests and independent CLI approval/checkpoint/native-i installation of Notes+Canvas, then Labels, in two workspaces. No historical upgrade scripts or version fakery.",
+    "Four synthetic Notes and two minimal reference boards have retained names/IDs/revisions/labels and schema/constraints throughout all feature changes.",
+    "Actual browser rejects provider suspension without cascade; explicit cascade names Notes/Canvas/Labels only in Personal. Same browser plan/hash imported, independently reviewed/approved/applied.",
+    "Navigation, direct Notes/Canvas pages, context/commands/slots, gateway services/savedIDs and native read/write paths are blocked at suspended scopes. Research remains usable with the shared native Labels field registered.",
+    "After enabling Notes+Canvas only, Personal native list/form and Canvas work but Labels command/binding/explicit native field access fail. Four concurrent actors/16denied mutations are observed in both native workerPIDs15/16; data unchanged.",
+    "Final exact independent enable restores all6scopes; same native Notes form/publicID/revision2/body/retained labels returns. No browser record edits, new Canvas product features or application source changes.",
+    "Operator UI/docs explicitly call this feature suspension, preserve database-installed versus feature-suspended dimensions, and warn imports/native overrides stay loaded.",
+    "Final read-only audit: main28 and retained manager6 full configuration/business/state exact; lifecycle worker/image/release/config unchanged, all availability restored with policy generations advanced. Frozen84files match;276old buildinputs match and only host fixturehelper differs."
+  ],
+  "evidence_sha256": {
+    "core-only-bootstrap.json": "6897f6f36cef6da35680dad9d7f8da8189e1ac89f1bb18bc0b47da4e11c0e61b",
+    "install-canvas/result.json": "72a3e00900d711891921309be8412ddca453db442f718b18dc6038cb344c67a0",
+    "install-labels/result.json": "733092e3f10cdaf3bf7306a0bb75e46470421d55ed024741890cb936e79b890b",
+    "data-baseline.json": "a0dd846385fc329530867195f0e0c4e96b5d065a758f1127eb42b3061ed79221",
+    "probe-all-enabled.json": "fc98fb9899e9e7a8c5ea48aec992354d53afee99cb057b6a9da861007ed05993",
+    "suspend-notes-A/result.json": "6a357d344e2106a4dc014f48741038b11c07a481ef1dd605836032050554579a",
+    "probe-notes-A-suspended.json": "c8b65c707950275dbc713b3316a57e63fd6054314e069f429f1f3a4ef063018e",
+    "enable-canvas-A/result.json": "1767612a20e67b85a2f86af23c927cf4cfae290365facac1f72df7836859a276",
+    "probe-labels-A-suspended.json": "8a6c8a3e9e8bb50e856b16add54abd32200585a702e0809c1a57595c898e2d08",
+    "concurrent-feature-denials.json": "1891ac2407de6e9cb3755f95dce40e7d9ecd27aed5660768b54f171f49ab154f",
+    "enable-labels-A/result.json": "3e04b2709581e2562d1d11a829de2d19b257f00c7f42e006a99434f2662904c6",
+    "probe-restored.json": "71a2bda9d680e4bdae23909df3f46798c3e8a995c943f9d95c7da8de6fd8b621",
+    "browser/browser-proof.json": "8c37b7ec5ddba2ab3a183a4828929e2bf1d455109dc1e29d1f1da4900d67a7cd",
+    "final-audit.json": "4db72f9a5b45475df953148d56fc21d956548e7b2ac99ec33acd22781c81050d"
+  },
+  "source_sha256": {
+    "tools/manager_upgrade_fixture.py": "0aa2c72493ee0ad96d1ae84a2214cd82df17a4b41d3e1f2d814d9006d556c51c",
+    "tools/qualify_lifecycle_features.py": "7cbcfa0640ecc234bd7e40cec304557aa5f3b3fd0fad45d58794700f60f90f8b",
+    "tools/lifecycle_data_probe.py": "72f4ab7ed8d16ff93e3537cee1ca891f51439b4004747e0abcd2241844ef2780",
+    "packages/platform_sdk/modular_platform/feature_executor.py": "197227bf53bcd6ae828a1f022cb891de6df89c651fc5e6e79168c9ccfc063207",
+    "packages/platform_sdk/modular_platform/feature_metadata.py": "891c4cfa881fb5c943ded7a7593bd50fdbddf85c49572f476fcde38f454a0b2d",
+    "packages/platform_sdk/modular_platform/plans.py": "fb0247f8e37b2e84e9cf25d6145e89ce001dd901e43f238f00765d9f5a274fa8",
+    "packages/platform_sdk/modular_platform/approval_validation.py": "21caacac3fa7effb1c5d04d27fccca4c8b0b3696c112e5ce7d461c98d1a979ec",
+    "platform_addons/mp_core/operations.py": "07968ed32821d7c15621ceb2038e4bfa76ffe07eb15df179ce07eda7645a21bc",
+    "platform_addons/mp_core/controllers.py": "26c39026087f58078377cac3f6c11ce1a18b18454ef88db98411ea69aed66141",
+    "platform_addons/mp_core/models.py": "1b820815aacc8d4a898aca8929cb85dabe4b6313e61d47dc490af6a3a93cdb73",
+    "platform_addons/mp_identity/models/scoped.py": "3a149bc7c577a681ded521a3989c9f2d7541390cc8851bf7040dbea1a60da44e",
+    "platform_addons/mp_shell/static/src/operations.js": "c09b730e4cbde9428daf84261aa6df8c5a9f96f58b916f99cb4ce2754b5ddcdb",
+    "platform_addons/mp_shell/static/src/host.js": "052fb5461ebe4e3cd76d2468c497d2f35a7ef76bc334003020ff72a80fba1388",
+    "platform_addons/mp_example_notes_labels/models.py": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5"
+  },
+  "limits": [
+    "LIFE-03 remains not_run for its removal half; LIFE-04/05/06 and complete G5-X05 remain pending.",
+    "No current job/outbox tables: feature executor fails closed for unsupported dispatch. LIFE-01 must be requalified when G6 adds job/event/schedule delivery and drain adapters.",
+    "No executor process-crash/operation-concurrency/clean-restore claim; those remain X06/X09. API parallel-denial proof is not MIG-04.",
+    "First test-helper request omitted schema_version; rejected before operation creation, then strictly validated bounded resume. Optional concurrency probe initially lacked host SDK import before business calls; corrected extension-only experiment ran after current-state verification.",
+    "No publication, production change, native uninstall, artifact removal or new containment claim."
+  ]
+}

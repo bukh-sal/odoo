@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "kind": "status",
+  "operation_id": "3c032df7-512e-4ca7-a0fc-4ee94ac8c5ff",
+  "plan_hash": "sha256:27c9bde70d79ae1b94594a8965edf9550e848583eea559d004315656d5325a8c",
+  "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+  "state": "awaiting_operator_approval",
+  "phase": "prepared",
+  "source": "application_request",
+  "observed_at": "2026-10-28T23:42:53Z",
+  "stale": false,
+  "approval_expires_at": null,
+  "dimensions": [
+    {
+      "plugin_id": "org.example.canvas",
+      "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+      "feature_state": null,
+      "release_state": "planned",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "not_installed",
+      "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9"
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+      "feature_state": null,
+      "release_state": "planned",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "not_installed",
+      "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+    },
+    {
+      "plugin_id": "org.example.canvas",
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+      "feature_state": null,
+      "release_state": "planned",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "not_installed",
+      "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9"
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+      "feature_state": null,
+      "release_state": "planned",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "not_installed",
+      "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7"
+    }
+  ],
+  "history": [
+    {
+      "sequence": 1,
+      "utc": "2026-10-28T23:42:53Z",
+      "code": "prepared"
+    },
+    {
+      "sequence": 2,
+      "utc": "2026-10-28T23:42:53Z",
+      "code": "requested"
+    }
+  ],
+  "error_code": null,
+  "control_authority": "independent_local_os"
+}

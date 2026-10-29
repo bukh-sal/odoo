@@ -1,0 +1,12 @@
+{
+  "result": "passed_exact_install-labels",
+  "utc": "2026-10-28T23:49:14.462532+00:00",
+  "operation_id": "ed32eb8d-2d44-4bda-bb51-098dcd5b0364",
+  "plan_hash": "sha256:909468abcc5514128c9e794ad95ee9cf7df5021731e92392464fc219e297f260",
+  "generation": 3,
+  "retained_files": 36,
+  "main_target_unchanged": true,
+  "limits": [
+    "Feature gate/API/UI/retention qualification recorded separately; native uninstall/artifact removal remain G5-X05."
+  ]
+}

@@ -1,0 +1,3 @@
+Browser tab: 15, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/org.example.canvas/?workspace=3f502e47-683a-4551-b00e-03368e647dd2".
+There has been no change in the accessibility tree.
+The focused UI element is 1 AXWebArea Modular Platform, URL: g5life.localhost:18080/app/org.example.canvas/?workspace=3f502e47-683a-4551-b00e-03368e647dd2

@@ -1,0 +1,79 @@
+{
+  "approval_expires_at": "2026-10-29T00:20:58Z",
+  "backup_id": null,
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:f2ce633ec7b5c3c35b8990c0c4a3e06706fdb837cfc311e92147d8cc08572707"
+      },
+      "sequence": 49,
+      "utc": "2026-10-29T00:04:10Z"
+    },
+    {
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "8898e654-3920-4bb8-b66f-87ad81653f7b",
+        "plan_hash": "sha256:f2ce633ec7b5c3c35b8990c0c4a3e06706fdb837cfc311e92147d8cc08572707",
+        "request_id": "93e8609a-1cee-41f1-a754-94327839fd3a",
+        "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc"
+      },
+      "sequence": 50,
+      "utc": "2026-10-29T00:04:12Z"
+    },
+    {
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:f2ce633ec7b5c3c35b8990c0c4a3e06706fdb837cfc311e92147d8cc08572707"
+      },
+      "sequence": 51,
+      "utc": "2026-10-29T00:05:58Z"
+    },
+    {
+      "code": "reserved",
+      "details": {
+        "executor_pid": 15308,
+        "lock_owner_digest": "sha256:b1b3c9f1a9cb78f1ef94828aef146771c9db92159e00d11e70c6b972d451ae90"
+      },
+      "sequence": 52,
+      "utc": "2026-10-29T00:06:23Z"
+    },
+    {
+      "code": "staged",
+      "details": {},
+      "sequence": 53,
+      "utc": "2026-10-29T00:06:37Z"
+    },
+    {
+      "code": "mutation_started",
+      "details": {},
+      "sequence": 54,
+      "utc": "2026-10-29T00:06:52Z"
+    },
+    {
+      "code": "metadata_published",
+      "details": {},
+      "sequence": 55,
+      "utc": "2026-10-29T00:06:54Z"
+    },
+    {
+      "code": "ready",
+      "details": {},
+      "sequence": 56,
+      "utc": "2026-10-29T00:07:06Z"
+    },
+    {
+      "code": "completed",
+      "details": {},
+      "sequence": 57,
+      "utc": "2026-10-29T00:07:07Z"
+    }
+  ],
+  "mutation_started": true,
+  "operation_id": "8898e654-3920-4bb8-b66f-87ad81653f7b",
+  "phase": "completed",
+  "plan_hash": "sha256:f2ce633ec7b5c3c35b8990c0c4a3e06706fdb837cfc311e92147d8cc08572707",
+  "state": "completed",
+  "traffic_resumed": true
+}

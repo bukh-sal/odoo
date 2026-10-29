@@ -1,0 +1,12 @@
+{
+  "result": "passed_exact_enable-canvas-A",
+  "utc": "2026-10-29T00:01:47.377350+00:00",
+  "operation_id": "fb5d3e97-d355-4295-a45c-3885c3207346",
+  "plan_hash": "sha256:185e33e2540eca42266ef957c2db19e87bb06a62fdc7213b66786f1aea6dff4f",
+  "generation": 3,
+  "retained_files": 46,
+  "main_target_unchanged": true,
+  "limits": [
+    "Feature gate/API/UI/retention qualification recorded separately; native uninstall/artifact removal remain G5-X05."
+  ]
+}

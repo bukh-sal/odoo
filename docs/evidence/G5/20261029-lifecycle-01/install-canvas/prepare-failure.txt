@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<stdin>", line 14, in <module>
+  File "C:\Users\mesh\Documents\modular_platform\packages/platform_sdk\modular_platform\manager_planning.py", line 31, in prepare_manager_native
+    validate('operations-request', nomination)
+  File "C:\Users\mesh\Documents\modular_platform\packages/platform_sdk\modular_platform\contracts.py", line 64, in validate
+    raise ContractError(f'{name}: invalid field {path} ({errors[0].validator})')
+modular_platform.contracts.ContractError: operations-request: invalid field <root> (oneOf)

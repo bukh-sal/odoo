@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "operation": "prepare",
+  "operation_type": "install",
+  "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+  "plugin_id": "org.example.canvas",
+  "artifact_version": "0.1.3",
+  "artifact_digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+  "workspace_ids": [
+    "907b39a7-345a-4332-9df1-410019531cd4",
+    "3f502e47-683a-4551-b00e-03368e647dd2"
+  ],
+  "cascade": true
+}

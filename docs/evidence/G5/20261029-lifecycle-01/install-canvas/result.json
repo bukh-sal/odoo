@@ -1,0 +1,12 @@
+{
+  "result": "passed_exact_install-canvas",
+  "utc": "2026-10-28T23:45:31.848186+00:00",
+  "operation_id": "3c032df7-512e-4ca7-a0fc-4ee94ac8c5ff",
+  "plan_hash": "sha256:27c9bde70d79ae1b94594a8965edf9550e848583eea559d004315656d5325a8c",
+  "generation": 2,
+  "retained_files": 32,
+  "main_target_unchanged": true,
+  "limits": [
+    "Feature gate/API/UI/retention qualification recorded separately; native uninstall/artifact removal remain G5-X05."
+  ]
+}

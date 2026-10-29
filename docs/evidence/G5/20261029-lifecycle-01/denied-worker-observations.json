@@ -1,0 +1,10 @@
+{
+  "result": "limited_worker_sample",
+  "worker_process_ids_and_denied_updates": {
+    "15": 8
+  },
+  "all_scripted_denials_and_raw_data_preservation": "probe-notes-A-suspended.json",
+  "limits": [
+    "Worker PID counts are extracted from native access logs; no request bodies/credentials copied."
+  ]
+}

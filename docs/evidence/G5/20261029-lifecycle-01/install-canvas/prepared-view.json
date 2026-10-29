@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "kind": "prepared",
+  "operation_id": "3c032df7-512e-4ca7-a0fc-4ee94ac8c5ff",
+  "plan_hash": "sha256:27c9bde70d79ae1b94594a8965edf9550e848583eea559d004315656d5325a8c",
+  "plan": {
+    "schema_version": 1,
+    "operation_id": "3c032df7-512e-4ca7-a0fc-4ee94ac8c5ff",
+    "operation_type": "install",
+    "created_at": "2026-10-28T23:42:53Z",
+    "deployment_id": "1f7db117-aa41-45a9-a318-6730d0f3c4cf",
+    "site_ids": [
+      "8afd569b-790c-400d-b123-cff2c86602fc"
+    ],
+    "base_state_digest": "sha256:60b5735c8bfd3218da4c92501276606389bad92a6181ae618811d9cae1988cfc",
+    "base_release_digest": "sha256:640f329609418a6821d5288400af23c657bcc5573fe041d7503409ed343aa340",
+    "target_release_digest": "sha256:604c6bd1d8254f6279af31fd6fdb7888fac077143204a261f22a7bf2e0006cf8",
+    "artifacts": [
+      {
+        "plugin_id": "org.example.canvas",
+        "version": "0.1.3",
+        "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+        "runtime": "native",
+        "action": "install",
+        "native_addon": "mp_example_canvas",
+        "migration_digests": []
+      },
+      {
+        "plugin_id": "org.example.notes",
+        "version": "0.2.3",
+        "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+        "runtime": "native",
+        "action": "install",
+        "native_addon": "mp_example_notes",
+        "migration_digests": []
+      }
+    ],
+    "dependency_lock_digest": "sha256:912b90cd2f697d244385f0784dd6a91eabfa667bc48d4e831a265734bf759d7e",
+    "bindings": [
+      {
+        "binding_id": "187f2769-19de-509d-9861-33fd41f459a1",
+        "generation": 1,
+        "digest": "sha256:743dad3aceb32b0e05c51388be9d53157b5555fa912d56cf4b5c57ea4cdf8be9"
+      },
+      {
+        "binding_id": "663525ec-0eca-5f13-8c5c-7d0415f18114",
+        "generation": 1,
+        "digest": "sha256:c2bbd75d1350e350a0fe9c51dc38955ab7a15971bf7fb55c6ccc28916d63e1c6"
+      },
+      {
+        "binding_id": "8d3aee30-9f60-51e0-bf3d-2b20307ae273",
+        "generation": 1,
+        "digest": "sha256:bc6ebd4eba753525d3e371ac9d1e33ba6854d7ee63f76c4950bfc2d02fdfe898"
+      },
+      {
+        "binding_id": "9b9fbdaf-18c4-53a7-a14a-11a8b350df4c",
+        "generation": 1,
+        "digest": "sha256:8260e69c5f538222f34d4d76850c2bf880acf5c3a716092dedd56ad838fcab04"
+      },
+      {
+        "binding_id": "a548bc22-e132-5858-83ff-52cc88d3980d",
+        "generation": 1,
+        "digest": "sha256:58cd0b21a4065e22e7c8135d12f1243cbf2092f751c4fb782d1f48971e430913"
+      },
+      {
+        "binding_id": "f128a82c-9cfe-5860-8391-312b3a163b59",
+        "generation": 1,
+        "digest": "sha256:e664c2a2d58c24e9da879fb6d99c95e8bf0d9a1e6b49a28098a8f6262fa8f530"
+      }
+    ],
+    "endpoints": [],
+    "permission_changes": [
+      {
+        "plugin_id": "org.example.canvas",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+        "capability": "org.example.notes:notes.read",
+        "action": "grant"
+      },
+      {
+        "plugin_id": "org.example.canvas",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+        "capability": "org.example.notes:notes.read",
+        "action": "grant"
+      }
+    ],
+    "trust_changes": [],
+    "destructive": false,
+    "backup": {
+      "required": true,
+      "policy_id": "development_checkpoint",
+      "retain_previous_release": true
+    },
+    "policy_version": 1,
+    "operator_authorization_generation": 1
+  },
+  "targets": [
+    {
+      "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+      "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+      "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+      "plugin_id": "org.example.canvas",
+      "action": "install"
+    },
+    {
+      "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+      "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+      "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+      "plugin_id": "org.example.notes",
+      "action": "install"
+    },
+    {
+      "installation_id": "aca0f641-30c4-5faf-99a6-a8eec2f0eea9",
+      "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+      "plugin_id": "org.example.canvas",
+      "action": "install"
+    },
+    {
+      "installation_id": "20739608-badd-54c8-95c7-d962d2cfdee7",
+      "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+      "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+      "plugin_id": "org.example.notes",
+      "action": "install"
+    }
+  ],
+  "declaration_changes": [],
+  "native_trusted_code": true,
+  "restart_required": true,
+  "feature_suspension_unloads_code": false,
+  "known_unknowns": [
+    "Native Python and same-origin frontend code is fully trusted.",
+    "Author destructive=false does not prove migration safety.",
+    "The staged image includes fully trusted native core/runtime code; image rollback alone does not restore database state."
+  ],
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-10-28T23:41:19Z",
+  "stale": false
+}

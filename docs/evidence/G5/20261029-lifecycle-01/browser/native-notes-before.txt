@@ -1,0 +1,5 @@
+Browser tab: 15, Title: "Modular Platform", URL: "http://g5life.localhost:18080/app/org.example.notes/?workspace=907b39a7-345a-4332-9df1-410019531cd4".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 31
++				73 text 
+The focused UI element is 29 search text field (settable)
