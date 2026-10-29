@@ -1,0 +1,8 @@
+{
+  "result": "fixture_cleanup_error",
+  "tests": 3,
+  "seconds": 58.32,
+  "assertion_failures": 0,
+  "cleanup_errors": 3,
+  "diagnosis": "SQLite connection context commits/rolls back but does not close. Snapshot helper retained open readers during TemporaryDirectory cleanup on Windows. Use contextlib.closing; affected tests only, no product code change."
+}

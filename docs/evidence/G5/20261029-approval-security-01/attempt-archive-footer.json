@@ -1,0 +1,9 @@
+{
+  "result": "harness_expectation_mismatch",
+  "observed": "Changed ZIP footer refused by strict preflight before digest check.",
+  "expected": "Outer digest mismatch",
+  "live_matrix_terminal": true,
+  "protected_DB_mutation": false,
+  "private_blob_restored_by_finally": true,
+  "next": "Reconcile two prepared journals/catalog; mutate a payload byte with original footer intact; continue remaining cases without repeating passed checks."
+}

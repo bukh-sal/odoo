@@ -1,0 +1,141 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:07:30.299800+00:00",
+  "checks": [
+    {
+      "case": "wrong_exact_hash_denied",
+      "result": "passed",
+      "journal_exact": true
+    },
+    {
+      "case": "CLI_default900_exact_targets_idempotent_no_extension",
+      "result": "passed",
+      "operation_id": "a1ce0401-0781-4a76-bcd6-d79823abf07b",
+      "plan_hash": "sha256:50b688776cbea12e8571a66f7e17c3a98d4f2837c8b3b4fa5ddec688bb52c31e",
+      "expires_at": "2026-10-29T11:15:42Z"
+    },
+    {
+      "case": "cross_operation_workspace_hash_replay_denied",
+      "result": "passed",
+      "both_journals_exact": true
+    },
+    {
+      "case": "unapproved_other_operation_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Operation cannot start or continue without reconciliation",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "stale_policy_version_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Policy or independent operator authority generation changed",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "stale_operator_generation_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Policy or independent operator authority generation changed",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "stale_deployment_allowlist_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Operation targets are outside the OS operator deployment allowlist",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "stale_worker_target_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Exactly one running container per observed service required",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "stale_image_target_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Exactly one running container per observed service required",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "stale_generation_target_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Observed executable/environment/bindings differ from published release",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "stale_site_target_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Observed site identity differs from operator target",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "changed_trust_generation_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Stale plan: deployment state or generation changed",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "changed_exact_artifact_payload_bytes_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Outer artifact digest mismatch",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "actual_wall_clock_expiry_before_start_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Approval unavailable for starting operation",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "revoked_reserved_approval_before_mutation_denied",
+      "result": "passed",
+      "operation_id": "b6048ebf-f6b6-4b29-8c25-d01153a43bf7",
+      "journal_exact": true,
+      "no_database_mutation": true
+    },
+    {
+      "case": "revoked_original_apply_denied",
+      "result": "passed",
+      "error_code": "VALIDATION_FAILED",
+      "message": "Independent approval is revoked; stop at a safe boundary and reconcile",
+      "journal_exact": true,
+      "no_stage_or_mutation": true
+    },
+    {
+      "case": "revoked_operation_cannot_be_reapproved",
+      "result": "passed"
+    }
+  ],
+  "live_project": "mp-r0-r1http9669f0969d1d",
+  "live_generation": 18,
+  "all_four_operations_revoked": true,
+  "all_journals_premutation": true,
+  "exact_state_business_schema_retained": true,
+  "initial_diagnosed_attempt": "attempt-archive-footer.json",
+  "limits": [
+    "Actual CLI/independent validator reads immutable image/PostgreSQL state; only separate private control/catalog/config fixtures change.",
+    "Pre-mutation revocation uses actual store/validator/process locks directly, no metadata/native child executed.",
+    "Staleness injection changes owned operator inputs, not protected DB/deployment files. Pure state-field/consumption/after-mutation cases are separate source tests."
+  ]
+}

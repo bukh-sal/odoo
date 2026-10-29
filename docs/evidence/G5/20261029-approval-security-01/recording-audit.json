@@ -1,0 +1,32 @@
+{
+  "result": "passed",
+  "files": 23,
+  "known_or_structural_findings": 0,
+  "python_JSON_parse": true,
+  "product_source_unchanged": true,
+  "records_sha256": {
+    "docs/evidence/G5/20261029-approval-security-01/README.md": "34422bc99330f0bb2abc97fc0848673ebe709024b2a8eb6ec2b8fdeda529edd7",
+    "docs/evidence/G5/20261029-approval-security-01/attempt-archive-footer.json": "55c8cc972b11eecffe55d882866e7eaaf198dd6a3d6671aa619a6e6a348ec860",
+    "docs/evidence/G5/20261029-approval-security-01/business-before.json": "8917c5309cd306840f3f2cdde70b1b7d45b6435128d9951079e8e4dc03788416",
+    "docs/evidence/G5/20261029-approval-security-01/cli-matrix.json": "6b30b1ff8d57a9a5a9c023a9c884cc5527fb54ad09f28107d75f32e41d3dd4d1",
+    "docs/evidence/G5/20261029-approval-security-01/cli-progress.json": "3b5e8a3b0e39d30f04d2a98c5a41ad6e25aa598308a71b7de83611f767218fb8",
+    "docs/evidence/G5/20261029-approval-security-01/final-statuses.json": "f01b7bff13711b96302087dab232127bda62650ebace05e5c3625f08c5ed8a5e",
+    "docs/evidence/G5/20261029-approval-security-01/linux_source.py": "f465e35a90095796f691dc6a42b68657a07a6334d391d973b13a8f632876f1d9",
+    "docs/evidence/G5/20261029-approval-security-01/matrix.py": "04cd0a6f8784ea5d9b23515744f288d498190ae3dd27757e0357fe1cb3afc26c",
+    "docs/evidence/G5/20261029-approval-security-01/qualification.json": "efa22e8429aa36c5f8f53cc4c8913446bd172e1815d7df624246aa23e934095b",
+    "docs/evidence/G5/20261029-approval-security-01/resume_matrix.py": "a58745666838aee91d5eadf2828d5bf90cdcb095afc2a64b283cad3ab255a573",
+    "docs/evidence/G5/20261029-approval-security-01/schema-before.json": "bc8589d035f8a4c1514289ca4a62b8c7fbec76dabfb7165ccea76b6a35afcf5a",
+    "docs/evidence/G5/20261029-approval-security-01/source-Linux-attempt-01.json": "ae611fc0f0c168d72ab85d23e01e53e015de282f544efbd95dc29bd5f615ab38",
+    "docs/evidence/G5/20261029-approval-security-01/source-Linux.json": "915a297579f747ca71e08ed0a92bb9875475ab155c98a0b2e89eb202b5b8943d",
+    "docs/evidence/G5/20261029-approval-security-01/source-Windows-existing.json": "4357f744feda37538bec062a55811d50308deb30c280d6cef5e2dc1d5bd27856",
+    "docs/evidence/G5/20261029-approval-security-01/source-Windows-focused.json": "6eb01a340096e4a039db5357096bb6df35b59fb468018c9fc61a06225bdcc244",
+    "docs/evidence/G5/20261029-approval-security-01/source-Windows.json": "0361286eaf8f18888fda37b850ba786bc4de693ed46774afa1278c35655c4f22",
+    "docs/evidence/G5/20261029-approval-security-01/source-focused-attempt-02.json": "1a5d7f5e9a9bbc9ac22111323f91a54efd1e5b0629770788f961470b3e4a90cb",
+    "docs/evidence/G5/20261029-approval-security-01/source_tests.py": "103b07c7dc072e429da6a5334131c2280fd0736ce9cdb1c7539d88c3685a0c86",
+    "docs/evidence/G5/20261029-approval-security-01/state-after.json": "06e4c8646da37ed08ab21040ab28c2a663947c0349e70292f49cc4917978c6e2",
+    "docs/evidence/G5/20261029-approval-security-01/state-before.json": "06e4c8646da37ed08ab21040ab28c2a663947c0349e70292f49cc4917978c6e2",
+    "docs/implementation-status.md": "bffc79efa7a35aee6e088fd534be3ad4041eb5fcbc64394bd7c951ec9ab68e88",
+    "docs/work-log.md": "08e7c699d2ebf4a74ead2f4d852046cb2ce3c95f820d36b704b1e06b0c7dfd56",
+    "tests/test_approval_fences.py": "1b3cb4552586ab0c8645e39ca6dffede56aef6c1801bcdbe4ec6cdb54d6b50ed"
+  }
+}

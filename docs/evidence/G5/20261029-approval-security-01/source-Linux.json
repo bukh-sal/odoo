@@ -1,0 +1,25 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:08:19.345370+00:00",
+  "tests": 24,
+  "skipped": 0,
+  "seconds": 1.054,
+  "container_id": "06cc5075d7ddb2e434eca07b00e63fbdbbaffb9b2455028dd5d9311f52b9e531",
+  "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "actual_UID": 10001,
+  "no_network_private_or_live_mounts": true,
+  "all_source_mounts_readonly": true,
+  "source_sha256": {
+    "tests/test_approval_fences.py": "1b3cb4552586ab0c8645e39ca6dffede56aef6c1801bcdbe4ec6cdb54d6b50ed",
+    "tests/test_operator_store.py": "e27fe58f791b252d64eea3250ed0bcfd382f53db71e31db0b0cc2540659594b3",
+    "tests/test_plans.py": "dfd7822d3ec2ace1c2d1e099f9317d667c5244a712969d78daafb64e3253021a",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/approval_validation.py": "80c107058f19cadb62a897eebf4484ef468af3aaa7b936351acb1366ba40b1e1",
+    "packages/platform_sdk/modular_platform/plans.py": "e41bb5748ea517a03f2ca6b018edfe0d9660b52ae3721f9642f6b29cbe741d07",
+    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/native_executor.py": "40336d6bd00b118a605d4ac86b62b1254c9c21f2b3badbdbfb0c49e270b12f12",
+    "packages/platform_sdk/modular_platform/feature_executor.py": "01fc3be17f33098cd113c9998abd75f8b5525701672b26dc28aafe825539f336",
+    "packages/platform_sdk/modular_platform/projection.py": "7c65a08791013cd954575bd026e492a22f9e25e7ee917e09e3dcd99adce16075"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "result": "fixture_import_error",
+  "container": "mp-r0-r1http9669f0969d1d-approval-source-linux-4ef750ee",
+  "tests_executed": 0,
+  "loader_errors": 3,
+  "reason": "test_resolution imports reference_package from tools; readonly test environment omitted tools mount.",
+  "private_stderr_sha256": "7a50269e8550cb0667ade978ddd29f13d65131e589bf2ef7f14165bbf0ed0295",
+  "next": "Add only readonly tools source mount and use new named container; no live mounts or production change."
+}

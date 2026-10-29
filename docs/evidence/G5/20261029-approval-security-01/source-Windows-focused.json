@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T11:09:15.499994+00:00",
+  "tests": 3,
+  "seconds": 55.316,
+  "skipped": 0,
+  "source_sha256": {
+    "tests/test_approval_fences.py": "1b3cb4552586ab0c8645e39ca6dffede56aef6c1801bcdbe4ec6cdb54d6b50ed"
+  }
+}

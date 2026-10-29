@@ -1,0 +1,145 @@
+[
+  {
+    "operation_id": "a1ce0401-0781-4a76-bcd6-d79823abf07b",
+    "plan_hash": "sha256:50b688776cbea12e8571a66f7e17c3a98d4f2837c8b3b4fa5ddec688bb52c31e",
+    "state": "revoked",
+    "phase": "prepared",
+    "mutation_started": false,
+    "traffic_resumed": false,
+    "backup_id": null,
+    "approval_expires_at": "2026-10-29T11:15:42Z",
+    "history": [
+      {
+        "sequence": 1,
+        "utc": "2026-10-29T11:00:18Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:50b688776cbea12e8571a66f7e17c3a98d4f2837c8b3b4fa5ddec688bb52c31e"
+        }
+      },
+      {
+        "sequence": 3,
+        "utc": "2026-10-29T11:00:42Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:50b688776cbea12e8571a66f7e17c3a98d4f2837c8b3b4fa5ddec688bb52c31e"
+        }
+      },
+      {
+        "sequence": 11,
+        "utc": "2026-10-29T11:06:46Z",
+        "code": "approval_revoked",
+        "details": {}
+      }
+    ]
+  },
+  {
+    "operation_id": "016e846a-6f48-4500-b7aa-fd443b8a2d75",
+    "plan_hash": "sha256:7113f440c61cf2e0cf476851e4870d4617f55b246926b39061d2f2e43c25efec",
+    "state": "revoked",
+    "phase": "prepared",
+    "mutation_started": false,
+    "traffic_resumed": false,
+    "backup_id": null,
+    "approval_expires_at": null,
+    "history": [
+      {
+        "sequence": 2,
+        "utc": "2026-10-29T11:00:25Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:7113f440c61cf2e0cf476851e4870d4617f55b246926b39061d2f2e43c25efec"
+        }
+      },
+      {
+        "sequence": 12,
+        "utc": "2026-10-29T11:07:15Z",
+        "code": "approval_revoked",
+        "details": {}
+      }
+    ]
+  },
+  {
+    "operation_id": "9e6aea29-0e8a-4140-a93e-70a2dcefed92",
+    "plan_hash": "sha256:547f1effd9ab9cf020081ebb45b5c0809790a310b6c370a37d6d8d92765b54b8",
+    "state": "revoked",
+    "phase": "prepared",
+    "mutation_started": false,
+    "traffic_resumed": false,
+    "backup_id": null,
+    "approval_expires_at": "2026-10-29T11:05:40Z",
+    "history": [
+      {
+        "sequence": 4,
+        "utc": "2026-10-29T11:05:29Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:547f1effd9ab9cf020081ebb45b5c0809790a310b6c370a37d6d8d92765b54b8"
+        }
+      },
+      {
+        "sequence": 5,
+        "utc": "2026-10-29T11:05:39Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:547f1effd9ab9cf020081ebb45b5c0809790a310b6c370a37d6d8d92765b54b8"
+        }
+      },
+      {
+        "sequence": 13,
+        "utc": "2026-10-29T11:07:19Z",
+        "code": "approval_revoked",
+        "details": {}
+      }
+    ]
+  },
+  {
+    "operation_id": "b6048ebf-f6b6-4b29-8c25-d01153a43bf7",
+    "plan_hash": "sha256:bbd3a50aaf413898a57e90878ec05edcc5668298c4d497f5e2aa770867f9a67a",
+    "state": "revoked",
+    "phase": "staged",
+    "mutation_started": false,
+    "traffic_resumed": false,
+    "backup_id": null,
+    "approval_expires_at": "2026-10-29T11:21:17Z",
+    "history": [
+      {
+        "sequence": 6,
+        "utc": "2026-10-29T11:06:06Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:bbd3a50aaf413898a57e90878ec05edcc5668298c4d497f5e2aa770867f9a67a"
+        }
+      },
+      {
+        "sequence": 7,
+        "utc": "2026-10-29T11:06:17Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:bbd3a50aaf413898a57e90878ec05edcc5668298c4d497f5e2aa770867f9a67a"
+        }
+      },
+      {
+        "sequence": 8,
+        "utc": "2026-10-29T11:06:29Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 18148,
+          "lock_owner_digest": "sha256:127963d7ae3a3cd5103e836c0337c0524f07347370eb1ede9face046a55f185c"
+        }
+      },
+      {
+        "sequence": 9,
+        "utc": "2026-10-29T11:06:32Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 10,
+        "utc": "2026-10-29T11:06:34Z",
+        "code": "approval_revoked",
+        "details": {}
+      }
+    ]
+  }
+]
