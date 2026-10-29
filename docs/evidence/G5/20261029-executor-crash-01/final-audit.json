@@ -1,0 +1,62 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T06:56:07.853427+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "state_business_configuration_exact": true
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "state_business_configuration_exact": true
+    }
+  ],
+  "cases": [
+    {
+      "operation_id": "c515909c-969c-4f9a-8e76-d475ffd0df46",
+      "failed_database_retained_unchanged": true,
+      "checkpoint_hashes_verified": true,
+      "old_worker_stopped_disconnected": true,
+      "original_approval_revoked": true,
+      "completed_recovery_decisions_refused_by_terminal_state": true,
+      "base_generation": 11
+    },
+    {
+      "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+      "failed_database_retained_unchanged": true,
+      "checkpoint_hashes_verified": true,
+      "old_worker_stopped_disconnected": true,
+      "original_approval_revoked": true,
+      "completed_recovery_decisions_refused_by_terminal_state": true,
+      "base_generation": 13
+    }
+  ],
+  "actual_OS_crash_and_lost_owner_fence": true,
+  "exact_restored_schema_business_grants_bindings_files": true,
+  "source_windows_checks": 6,
+  "source_linux_checks": 70,
+  "frozen_files": 87,
+  "independent_operation_states": [
+    [
+      "completed",
+      14
+    ],
+    [
+      "failed_before_mutation",
+      3
+    ],
+    [
+      "revoked",
+      2
+    ]
+  ],
+  "public_files_checked": 90,
+  "known_private_values_checked": 3,
+  "limits": [
+    "Bounded evidence scan, not SEC-03 release qualification.",
+    "Initial launcher failure recovered but excluded from OS-crash acceptance.",
+    "No concurrency/dispatch/clean-environment recovery qualification."
+  ]
+}

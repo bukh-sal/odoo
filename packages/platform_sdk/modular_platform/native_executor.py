@@ -249,9 +249,17 @@ class NativeExecutor:
             raise OperatorError('Native execution requires a supported install/upgrade plan')
         plan = bundle['plan']
         with OperationLocks(self.store.root/'locks', plan['deployment_id'], plan['site_ids']) as locks:
-            if self.store.status(operation)['state'] == 'completed':
+            journal = self.store.status(operation)
+            if journal['state'] == 'completed':
                 self.mirror_progress(operation)
                 return self.store.status(operation)
+            if journal['mutation_started']:
+                # A dead executor can leave the app stopped or the candidate
+                # stale. Fence its possible commit BEFORE requiring either.
+                def no_replay(_):
+                    raise OperatorError('Possible native mutation requires explicit reconciliation before revalidation')
+                self.store.reserve(operation, locks, no_replay)
+                raise OperatorError('Started native operation requires explicit reconciliation')
             if plan['operation_type']=='remove':
                 from .release_staging import StageStore
                 stages=StageStore(self.store,self.config,Catalog(self.catalog_root,self.validator,readonly=True))

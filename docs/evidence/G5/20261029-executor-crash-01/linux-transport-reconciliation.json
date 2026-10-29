@@ -1,0 +1,10 @@
+{
+  "result": "prior_test_transport_terminal_no_qualification",
+  "prior_exec_session": 61791,
+  "timeout_seconds": 600,
+  "known_docker_pid": 36000,
+  "unit_container_observed": false,
+  "native_deployment_effect": false,
+  "next_distinct_approach": "Retain a named container; run a file without multiline CLI args; inspect exit/logs independently",
+  "host_loader_error": "First host attempt used wrong test class name; corrected OperatorStoreTests and all6 passed"
+}

@@ -1,0 +1,14 @@
+{
+  "result": "passed_actual_process_crash_reconciliation_restore_resume",
+  "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+  "original_generation": 13,
+  "planned_failed_generation": 14,
+  "restored_generation": 15,
+  "fresh_database": "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983",
+  "failed_database_retained": true,
+  "original_plan_revoked": true,
+  "limits": [
+    "Supported HTTP/assets/client fence and protected/source audit remain separate.",
+    "No concurrency, job/outbox adapter or clean-environment restore qualification."
+  ]
+}

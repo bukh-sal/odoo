@@ -1,0 +1,10 @@
+.....E
+======================================================================
+ERROR: StoreTests (unittest.loader._FailedTest.StoreTests)
+----------------------------------------------------------------------
+AttributeError: module 'test_operator_store' has no attribute 'StoreTests'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+FAILED (errors=1)

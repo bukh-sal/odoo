@@ -1,0 +1,14 @@
+{
+  "result": "recovered_launcher_harness_failure_not_OS_crash",
+  "operation_id": "c515909c-969c-4f9a-8e76-d475ffd0df46",
+  "original_generation": 11,
+  "planned_failed_generation": 12,
+  "restored_generation": 13,
+  "fresh_database": "mp_disposable_r0_r1_restore_c515909c969c4f9a8e76d475ffd0df46",
+  "failed_database_retained": true,
+  "original_plan_revoked": true,
+  "limits": [
+    "Supported HTTP/assets/client fence and protected/source audit remain separate.",
+    "No concurrency, job/outbox adapter or clean-environment restore qualification."
+  ]
+}

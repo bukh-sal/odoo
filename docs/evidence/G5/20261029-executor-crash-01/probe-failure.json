@@ -1,0 +1,8 @@
+{
+  "result": "harness_assertion_failure",
+  "session": 33764,
+  "stage": "Final post-recovery retired-plan rejection text",
+  "diagnosis": "Store mutation-started branch rejects retired state before approval check; correct denial is Retired or completed operation cannot start or continue. First script incorrectly expected approval is revoked.",
+  "prior_checks": "Both scoped native/API/Canvas/Labels conflict, old client409, nine retained assets and app journal mirror assertions reached successfully.",
+  "next": "One bounded corrected probe; no original native operation or restore replay."
+}

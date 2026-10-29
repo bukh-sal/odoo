@@ -1,0 +1,25 @@
+{
+  "result": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "tools/check_contract_freeze.py"
+  ],
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/native_executor.py": "5f703479e32fc32f80bcecd25f91754b0d25b843f61f1f37cb7ca5e1b5f192f6",
+    "tests/test_executor_crash_fence.py": "3373274186c475624078714c96d888453c0fc2bd45628869417b3b6a1ffd98c6",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "000029a1696dfda7532a8221db6124e529b5a09d97b604211a5f7ace2701b500",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "1134cb59dcb4c2adc9cc87e28c298f1fdc67681f43d788eb5cbe96b0f3a9e681",
+    "tools/modular.py": "5c003d505f24283858742a7d377b749f1031a9c94469f2436ec945a5d8ca689e"
+  },
+  "summary": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 87,
+    "rows": 7
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "result": "passed_restored_before_traffic",
+  "generation": 15,
+  "failed_database_retained": true,
+  "failed_database_unchanged": true,
+  "old_note_board_grant_binding_rows_exact": true,
+  "old_files_preserved": 54,
+  "previous_plugin_versions_and_field_restored": true,
+  "session_secret_rotated": true,
+  "old_worker_stopped_disconnected": true,
+  "traffic_closed": true
+}

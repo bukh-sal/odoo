@@ -1,0 +1,57 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T06:57:02.994336+00:00",
+  "work_item": "G5-X06/MIG-03",
+  "acceptance": [
+    "MIG-03"
+  ],
+  "spec_sections": [
+    "10.2",
+    "10.3",
+    "10.4",
+    "10.5",
+    "25.3"
+  ],
+  "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+  "base_generation": 13,
+  "failed_planned_generation": 14,
+  "restored_generation": 15,
+  "checks": {
+    "actual_process_crash": "attempt02/process-crash.json",
+    "native_commit": "attempt02/native-effects.json",
+    "lost_owner_fence": "attempt02/reconciliation.json",
+    "recovery": "attempt02/recovery-qualification.json",
+    "restored_invariants": "attempt02/restored-invariants.json",
+    "http_assets_compatibility_replay": "http-assets-replay.json",
+    "protected_retained_source_audit": "final-audit.json"
+  },
+  "source": "source-boundary.json",
+  "qualification": {
+    "windows": 6,
+    "linux": 70,
+    "freeze_files": 87,
+    "freeze_rows": 7,
+    "skipped": 0
+  },
+  "excluded_attempt": "launcher-reconciliation.json: first venv launcher mismatch caused normal exception cleanup; recovered separately, not OS-crash evidence.",
+  "remaining_G5_acceptance": [
+    "MIG-04",
+    "MIG-08",
+    "MIG-09",
+    "TEN-01",
+    "TEN-02",
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEC-07",
+    "SEC-08",
+    "OPS-02",
+    "OPS-03"
+  ],
+  "limits": [
+    "Canvas is an unchanged minimal reference/test plugin; native Odoo CRUD stays the default.",
+    "No process crash while native child was still live; this case terminates executor after child commit/exit and before metadata publication.",
+    "No concurrency, dispatch adapters, clean-environment recovery or release-wide secret scan qualification.",
+    "Initial failed harnesses and their reconciliations retained; no destructive test/reset of main or retained manager."
+  ]
+}

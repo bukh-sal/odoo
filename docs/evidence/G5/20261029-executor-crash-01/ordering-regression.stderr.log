@@ -1,0 +1,25 @@
+F
+======================================================================
+FAIL: test_current_image_stopped_app_does_not_mask_possible_commit (test_executor_crash_fence.ExecutorCrashFenceTests.test_current_image_stopped_app_does_not_mask_possible_commit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\mesh\Documents\modular_platform\tests\test_executor_crash_fence.py", line 27, in test_current_image_stopped_app_does_not_mask_possible_commit
+    with self.assertRaisesRegex(OperatorError,'recovery_required'):native.apply('operation')
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mesh\Documents\modular_platform\packages\platform_sdk\modular_platform\native_executor.py", line 261, in apply
+    runtime=self.observer.read()['runtime']
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mesh\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mesh\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mesh\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+AssertionError: running application was observed before crash reconciliation
+
+----------------------------------------------------------------------
+Ran 1 test in 0.013s
+
+FAILED (failures=1)

@@ -1,0 +1,8 @@
+{
+  "result": "harness_assertion_failure",
+  "session": 95693,
+  "diagnosis": "Audit incorrectly assumed RestoreExecutor automatically creates review revocation files, as the different UnchangedReleaseRecovery adapter does. Existing RestoreExecutor instead rejects completed restore/resume at terminal state before mutation.",
+  "prior_checks": "Protected main/manager configuration+state+business exact; restored source/schema/business/grants/bindings/files and first retained failed DB/checkpoint checks passed.",
+  "correction": "Verify exact protected review record plus explicit bounded terminal-state rejection of all four completed decisions; no restore action is allowed to execute.",
+  "probe_failure_correction": "Previous probe-failure.json says nine assets; actual verified HTTP result contains six assets across three publication manifests."
+}

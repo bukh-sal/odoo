@@ -1,0 +1,5 @@
+{
+  "result": "existing_completed_restore_only",
+  "reason": "Optional private fixture database key absent; no restore retry",
+  "operation_id": "c515909c-969c-4f9a-8e76-d475ffd0df46"
+}

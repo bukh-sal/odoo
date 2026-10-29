@@ -1,0 +1,87 @@
+{
+  "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+  "plan_hash": "sha256:9081599aa0ccaf31d22c3b214c280f10d7b63fcd98528a854104f88970f4d5ac",
+  "state": "recovery_required",
+  "phase": "mutation_started",
+  "mutation_started": true,
+  "traffic_resumed": false,
+  "backup_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+  "approval_expires_at": "2026-10-29T07:02:26Z",
+  "history": [
+    {
+      "sequence": 230,
+      "utc": "2026-10-29T06:46:40Z",
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:9081599aa0ccaf31d22c3b214c280f10d7b63fcd98528a854104f88970f4d5ac"
+      }
+    },
+    {
+      "sequence": 231,
+      "utc": "2026-10-29T06:46:42Z",
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+        "plan_hash": "sha256:9081599aa0ccaf31d22c3b214c280f10d7b63fcd98528a854104f88970f4d5ac",
+        "request_id": "87549608-6322-45a8-9b06-4753273191c2",
+        "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc"
+      }
+    },
+    {
+      "sequence": 232,
+      "utc": "2026-10-29T06:47:26Z",
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:9081599aa0ccaf31d22c3b214c280f10d7b63fcd98528a854104f88970f4d5ac"
+      }
+    },
+    {
+      "sequence": 233,
+      "utc": "2026-10-29T06:47:52Z",
+      "code": "reserved",
+      "details": {
+        "executor_pid": 14540,
+        "lock_owner_digest": "sha256:33c2022ed31056c7f664ab0972d9f82fdfef0e27d693c1795c43d4ba3caff6a8"
+      }
+    },
+    {
+      "sequence": 234,
+      "utc": "2026-10-29T06:48:10Z",
+      "code": "staged",
+      "details": {}
+    },
+    {
+      "sequence": 235,
+      "utc": "2026-10-29T06:48:20Z",
+      "code": "maintenance",
+      "details": {}
+    },
+    {
+      "sequence": 236,
+      "utc": "2026-10-29T06:48:22Z",
+      "code": "drained",
+      "details": {}
+    },
+    {
+      "sequence": 237,
+      "utc": "2026-10-29T06:48:32Z",
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983"
+      }
+    },
+    {
+      "sequence": 238,
+      "utc": "2026-10-29T06:48:40Z",
+      "code": "mutation_started",
+      "details": {}
+    },
+    {
+      "sequence": 239,
+      "utc": "2026-10-29T06:49:18Z",
+      "code": "executor_lost_after_possible_mutation",
+      "details": {}
+    }
+  ]
+}

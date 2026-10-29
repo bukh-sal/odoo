@@ -1,0 +1,206 @@
+{
+  "kind": "native_uninstall_effects",
+  "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+  "plan_hash": "sha256:9081599aa0ccaf31d22c3b214c280f10d7b63fcd98528a854104f88970f4d5ac",
+  "impact_digest": "sha256:4e4db6d3b53adceeca010f2639955b33206c4d80ad16be52a572cd6e413f7146",
+  "before": {
+    "mp_example_note": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "workspace_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "author_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "revision",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "create_uid",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "write_uid",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "public_id",
+          "type": "character varying",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "character varying(200)",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "create_date",
+          "type": "timestamp without time zone",
+          "required": false
+        },
+        {
+          "name": "write_date",
+          "type": "timestamp without time zone",
+          "required": false
+        },
+        {
+          "name": "x_notes_labels",
+          "type": "jsonb",
+          "required": false
+        }
+      ],
+      "records": 4,
+      "constraints": [
+        {
+          "name": "mp_example_note_author_id_fkey",
+          "definition": "FOREIGN KEY (author_id) REFERENCES mp_principal(id) ON DELETE RESTRICT"
+        },
+        {
+          "name": "mp_example_note_create_uid_fkey",
+          "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "mp_example_note_pkey",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "mp_example_note_public_unique",
+          "definition": "UNIQUE (public_id)"
+        },
+        {
+          "name": "mp_example_note_revision_positive",
+          "definition": "CHECK ((revision > 0))"
+        },
+        {
+          "name": "mp_example_note_workspace_id_fkey",
+          "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+        },
+        {
+          "name": "mp_example_note_write_uid_fkey",
+          "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+        }
+      ]
+    }
+  },
+  "after": {
+    "mp_example_note": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "workspace_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "author_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "revision",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "create_uid",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "write_uid",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "public_id",
+          "type": "character varying",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "character varying(200)",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "create_date",
+          "type": "timestamp without time zone",
+          "required": false
+        },
+        {
+          "name": "write_date",
+          "type": "timestamp without time zone",
+          "required": false
+        }
+      ],
+      "records": 4,
+      "constraints": [
+        {
+          "name": "mp_example_note_author_id_fkey",
+          "definition": "FOREIGN KEY (author_id) REFERENCES mp_principal(id) ON DELETE RESTRICT"
+        },
+        {
+          "name": "mp_example_note_create_uid_fkey",
+          "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "mp_example_note_pkey",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "mp_example_note_public_unique",
+          "definition": "UNIQUE (public_id)"
+        },
+        {
+          "name": "mp_example_note_revision_positive",
+          "definition": "CHECK ((revision > 0))"
+        },
+        {
+          "name": "mp_example_note_workspace_id_fkey",
+          "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+        },
+        {
+          "name": "mp_example_note_write_uid_fkey",
+          "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+        }
+      ]
+    }
+  },
+  "native_after": [
+    {
+      "addon": "mp_example_notes_labels",
+      "state": "uninstalled",
+      "version": null
+    }
+  ],
+  "remaining_owned_metadata": [],
+  "surviving_native_versions_unchanged": true,
+  "source_artifacts_retained": true,
+  "arbitrary_hooks_fully_trusted": true
+}

@@ -1,0 +1,19 @@
+{
+  "result": "verified_regression_reproduced_before_fix",
+  "exit_code": 1,
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_executor_crash_fence.py",
+    "-k",
+    "current_image_stopped"
+  ],
+  "cause": "Native runtime preflight attempted to observe a stopped application before the lost-owner journal fence"
+}

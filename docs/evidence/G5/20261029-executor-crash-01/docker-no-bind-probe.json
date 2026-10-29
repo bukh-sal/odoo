@@ -1,0 +1,22 @@
+{
+  "result": "created",
+  "exit_code": 0,
+  "stdout": "a26ef18d79ebe87438441279139c04ac980c29c72e04177884dbdb7704344cab\n",
+  "stderr": "",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "mp-g5-executor-crash-probe-03",
+    "--network",
+    "none",
+    "--read-only",
+    "--tmpfs",
+    "/tmp",
+    "--entrypoint",
+    "/venv/bin/python",
+    "sha256:486c2857ea32db6c9db0a27a61a4dc2de02c238e375c4148b1b4e4e2bad441ea",
+    "-c",
+    "print('isolated creation probe')"
+  ]
+}

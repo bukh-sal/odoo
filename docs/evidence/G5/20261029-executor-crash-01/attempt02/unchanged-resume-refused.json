@@ -1,0 +1,4 @@
+{
+  "result": "denied",
+  "reason": "Only an independently verified failure before mutation can resume unchanged code"
+}

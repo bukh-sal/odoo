@@ -1,0 +1,113 @@
+{
+  "data": {
+    "kind": "status",
+    "phase": "restore_traffic_resumed",
+    "stale": false,
+    "state": "revoked",
+    "source": "operator_journal_mirror",
+    "history": [
+      {
+        "utc": "2026-10-29T06:46:40Z",
+        "code": "prepared",
+        "sequence": 230
+      },
+      {
+        "utc": "2026-10-29T06:46:42Z",
+        "code": "application_request_imported",
+        "sequence": 231
+      },
+      {
+        "utc": "2026-10-29T06:47:26Z",
+        "code": "approved",
+        "sequence": 232
+      },
+      {
+        "utc": "2026-10-29T06:47:52Z",
+        "code": "reserved",
+        "sequence": 233
+      },
+      {
+        "utc": "2026-10-29T06:48:10Z",
+        "code": "staged",
+        "sequence": 234
+      },
+      {
+        "utc": "2026-10-29T06:48:20Z",
+        "code": "maintenance",
+        "sequence": 235
+      },
+      {
+        "utc": "2026-10-29T06:48:22Z",
+        "code": "drained",
+        "sequence": 236
+      },
+      {
+        "utc": "2026-10-29T06:48:32Z",
+        "code": "checkpointed",
+        "sequence": 237
+      },
+      {
+        "utc": "2026-10-29T06:48:40Z",
+        "code": "mutation_started",
+        "sequence": 238
+      },
+      {
+        "utc": "2026-10-29T06:49:18Z",
+        "code": "executor_lost_after_possible_mutation",
+        "sequence": 239
+      },
+      {
+        "utc": "2026-10-29T06:50:33Z",
+        "code": "restore_authorized",
+        "sequence": 240
+      },
+      {
+        "utc": "2026-10-29T06:50:37Z",
+        "code": "restore_target_created",
+        "sequence": 241
+      },
+      {
+        "utc": "2026-10-29T06:51:06Z",
+        "code": "restore_verified",
+        "sequence": 242
+      },
+      {
+        "utc": "2026-10-29T06:52:08Z",
+        "code": "restore_traffic_resumed",
+        "sequence": 243
+      }
+    ],
+    "plan_hash": "sha256:9081599aa0ccaf31d22c3b214c280f10d7b63fcd98528a854104f88970f4d5ac",
+    "dimensions": [
+      {
+        "plugin_id": "org.example.notes_labels",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+        "feature_state": "enabled",
+        "release_state": "planned",
+        "service_state": null,
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb"
+      },
+      {
+        "plugin_id": "org.example.notes_labels",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+        "feature_state": "enabled",
+        "release_state": "planned",
+        "service_state": null,
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb"
+      }
+    ],
+    "error_code": null,
+    "observed_at": "2026-10-29T06:52:41Z",
+    "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+    "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+    "schema_version": 1,
+    "control_authority": "independent_local_os",
+    "approval_expires_at": "2026-10-29T07:02:26Z"
+  },
+  "api_version": "1.0",
+  "request_id": "c669ee7a-7d69-47bc-9460-162228098c0b"
+}

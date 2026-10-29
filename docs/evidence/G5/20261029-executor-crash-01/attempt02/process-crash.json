@@ -1,0 +1,13 @@
+{
+  "result": "actual_executor_OS_termination_after_native_commit",
+  "operation_id": "553e16b5-a613-4ec9-a3f9-bda5a0b3d983",
+  "executor_pid": 14540,
+  "executor_exit_code": 1,
+  "native_child_id": "fa5f2d51f6398f0d34b1be0ed56d0b23d9075977070a2bd6ba1287fd586a6525",
+  "native_child_exit_code": 0,
+  "journal_still_running_after_exit": true,
+  "python_cleanup_did_not_run": true,
+  "traffic_closed": true,
+  "labels_field_deleted_before_exit": true,
+  "configuration_generation": 13
+}

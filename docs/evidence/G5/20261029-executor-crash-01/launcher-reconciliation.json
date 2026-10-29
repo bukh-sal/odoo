@@ -1,0 +1,10 @@
+{
+  "result": "harness_failure_not_OS_crash",
+  "operation_id": "c515909c-969c-4f9a-8e76-d475ffd0df46",
+  "launcher_pid": 23584,
+  "actual_executor_pid": 1388,
+  "native_commit_completed": true,
+  "python_cleanup_ran": true,
+  "journal_recovery_required": true,
+  "correction": "Direct sys._base_executable with isolated venv site-packages; PID equality separately verified."
+}
