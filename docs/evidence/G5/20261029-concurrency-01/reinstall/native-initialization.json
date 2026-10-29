@@ -1,0 +1,17 @@
+{
+  "arguments": [
+    "odoo-bin",
+    "-c",
+    "/run/secrets/odoo_config",
+    "-d",
+    "mp_disposable_r0_r1_restore_553e16b5a6134ec9a3f9bda5a0b3d983",
+    "-i",
+    "mp_example_notes_labels",
+    "--stop-after-init",
+    "--no-http",
+    "--workers=0",
+    "--max-cron-threads=0",
+    "--without-demo"
+  ],
+  "exit_code": 0
+}

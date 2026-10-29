@@ -1,0 +1,28 @@
+{
+  "result": "passed",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_operator_concurrency.py"
+  ],
+  "exec_session": 92698,
+  "summary": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_sha256": {
+    "tests/test_operator_concurrency.py": "2da3a16beec9522e22fc6e2a341d560826df143094c6bdc077c0209a32c6ec5b",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/native_executor.py": "5f703479e32fc32f80bcecd25f91754b0d25b843f61f1f37cb7ca5e1b5f192f6",
+    "packages/platform_sdk/modular_platform/feature_executor.py": "01fc3be17f33098cd113c9998abd75f8b5525701672b26dc28aafe825539f336",
+    "tools/modular.py": "5c003d505f24283858742a7d377b749f1031a9c94469f2436ec945a5d8ca689e"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "data": {
+    "schema_version": 1,
+    "kind": "prepared",
+    "operation_id": "39e37944-6648-4f7e-8aa1-30d01b452747",
+    "plan_hash": "sha256:d08f57984215820ae8f98629c1bce02c30590f9f223bb8357c8bc64e717d3a69",
+    "plan": {
+      "schema_version": 1,
+      "operation_id": "39e37944-6648-4f7e-8aa1-30d01b452747",
+      "operation_type": "install",
+      "created_at": "2026-10-29T07:12:44Z",
+      "deployment_id": "1f7db117-aa41-45a9-a318-6730d0f3c4cf",
+      "site_ids": [
+        "8afd569b-790c-400d-b123-cff2c86602fc"
+      ],
+      "base_state_digest": "sha256:b5f309ffb833f7b47514946feabab10b032e453a9eb249affada058324d7888f",
+      "base_release_digest": "sha256:0a0966a78bc22f34e4468583fcd664489933e7725172e746fad44b1c43ca79e1",
+      "target_release_digest": "sha256:a122200bbb4bf1d783340162ddf87658d13ac448d2fab979a432b52eea306f1b",
+      "artifacts": [
+        {
+          "plugin_id": "org.example.notes_labels",
+          "version": "0.2.2",
+          "digest": "sha256:89b31c85165db645af7a63cec954f31ad7e182ea3306813f66ee593b445aff94",
+          "runtime": "native",
+          "action": "install",
+          "native_addon": "mp_example_notes_labels",
+          "migration_digests": []
+        }
+      ],
+      "dependency_lock_digest": "sha256:7d2c31642cfd727405607b5d4e32d5a8d939f8801055d4cd52649b2ef7c3253b",
+      "bindings": [
+        {
+          "binding_id": "187f2769-19de-509d-9861-33fd41f459a1",
+          "generation": 1,
+          "digest": "sha256:743dad3aceb32b0e05c51388be9d53157b5555fa912d56cf4b5c57ea4cdf8be9"
+        },
+        {
+          "binding_id": "663525ec-0eca-5f13-8c5c-7d0415f18114",
+          "generation": 1,
+          "digest": "sha256:c2bbd75d1350e350a0fe9c51dc38955ab7a15971bf7fb55c6ccc28916d63e1c6"
+        },
+        {
+          "binding_id": "66fa25e9-81ed-5aef-b91f-949e3c12f0de",
+          "generation": 1,
+          "digest": "sha256:3c30f9e81638b0650e360f28940573420d177fd52dc77dada126a3a14ec10558"
+        },
+        {
+          "binding_id": "6b4a8902-506c-53a3-aa2c-0b1e24cfeb4f",
+          "generation": 1,
+          "digest": "sha256:507332aff8d78b8937b294b83cd16dc8e44edae10203bb23c1686e361e6a92de"
+        },
+        {
+          "binding_id": "8d3aee30-9f60-51e0-bf3d-2b20307ae273",
+          "generation": 1,
+          "digest": "sha256:bc6ebd4eba753525d3e371ac9d1e33ba6854d7ee63f76c4950bfc2d02fdfe898"
+        },
+        {
+          "binding_id": "9b9fbdaf-18c4-53a7-a14a-11a8b350df4c",
+          "generation": 1,
+          "digest": "sha256:8260e69c5f538222f34d4d76850c2bf880acf5c3a716092dedd56ad838fcab04"
+        },
+        {
+          "binding_id": "a0b5af0d-b33c-5ce3-bb42-ceddad3e2ae1",
+          "generation": 1,
+          "digest": "sha256:c0ac30e587f5754c732ab4818db43aaa1cd312117fb9d30a8eb5ac8714f6e6ce"
+        },
+        {
+          "binding_id": "a548bc22-e132-5858-83ff-52cc88d3980d",
+          "generation": 1,
+          "digest": "sha256:58cd0b21a4065e22e7c8135d12f1243cbf2092f751c4fb782d1f48971e430913"
+        },
+        {
+          "binding_id": "dc6f4a63-ba63-5357-bc37-49208c553be7",
+          "generation": 1,
+          "digest": "sha256:394efd0d7ca3b67469d66cc69013f3c663ed516819a420a3732126738a6ea876"
+        },
+        {
+          "binding_id": "f128a82c-9cfe-5860-8391-312b3a163b59",
+          "generation": 1,
+          "digest": "sha256:e664c2a2d58c24e9da879fb6d99c95e8bf0d9a1e6b49a28098a8f6262fa8f530"
+        }
+      ],
+      "endpoints": [],
+      "permission_changes": [
+        {
+          "plugin_id": "org.example.notes_labels",
+          "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+          "capability": "org.example.notes:notes.read",
+          "action": "grant"
+        },
+        {
+          "plugin_id": "org.example.notes_labels",
+          "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+          "capability": "org.example.notes:notes.write",
+          "action": "grant"
+        },
+        {
+          "plugin_id": "org.example.notes_labels",
+          "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+          "capability": "org.example.notes:notes.read",
+          "action": "grant"
+        },
+        {
+          "plugin_id": "org.example.notes_labels",
+          "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+          "capability": "org.example.notes:notes.write",
+          "action": "grant"
+        }
+      ],
+      "trust_changes": [],
+      "destructive": false,
+      "backup": {
+        "required": true,
+        "policy_id": "development_checkpoint",
+        "retain_previous_release": true
+      },
+      "policy_version": 1,
+      "operator_authorization_generation": 1
+    },
+    "targets": [
+      {
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+        "plugin_id": "org.example.notes_labels",
+        "action": "install"
+      },
+      {
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb",
+        "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+        "plugin_id": "org.example.notes_labels",
+        "action": "install"
+      }
+    ],
+    "declaration_changes": [],
+    "native_trusted_code": true,
+    "restart_required": true,
+    "feature_suspension_unloads_code": false,
+    "known_unknowns": [
+      "Native Python and same-origin frontend code is fully trusted.",
+      "Author destructive=false does not prove migration safety.",
+      "Native schema is restored site-wide. Review the exact post-install feature states: suspended scopes receive no renewed grants and remain unavailable."
+    ],
+    "control_authority": "independent_local_os",
+    "observed_at": "2026-10-29T07:10:39Z",
+    "stale": false
+  },
+  "api_version": "1.0",
+  "request_id": "12941202-0914-4cb0-a8d6-d3dca3fa3972"
+}

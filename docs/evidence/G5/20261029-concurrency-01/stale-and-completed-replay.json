@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "contenders": [
+    {
+      "case": "other-native",
+      "operation_id": "70c3d58c-95f4-4b14-b5c4-79722a898be7",
+      "result": "stale_base_refused_before_reservation_then_revoked"
+    },
+    {
+      "case": "other-feature",
+      "operation_id": "4d2f5788-3fe2-4924-84aa-4e4733a693d8",
+      "result": "stale_base_refused_before_reservation_then_revoked"
+    }
+  ],
+  "completed_owner_exact_saved_result": true,
+  "no_repeat_native_or_metadata": true
+}

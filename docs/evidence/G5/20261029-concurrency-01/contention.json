@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "owner_pid": 30840,
+  "owner_operation_id": "0a63c6f7-40d3-426d-b8e8-6113506d85c6",
+  "native_child_id": "3c1a15b60efa5e385f9cf79a23c22bd90f3e80b30c86456c5b9fe7fb9f00b4db",
+  "native_child_exit_code": 0,
+  "owner_phase": "mutation_started",
+  "owner_live_after_contenders": true,
+  "all_journals_unchanged": true,
+  "no_contender_stages_or_children": true,
+  "contenders": [
+    {
+      "case": "duplicate-owner",
+      "operation_id": "0a63c6f7-40d3-426d-b8e8-6113506d85c6",
+      "exit_code": 2,
+      "result": "rejected_live_process_lock"
+    },
+    {
+      "case": "other-native",
+      "operation_id": "70c3d58c-95f4-4b14-b5c4-79722a898be7",
+      "exit_code": 2,
+      "result": "rejected_live_process_lock"
+    },
+    {
+      "case": "other-feature",
+      "operation_id": "4d2f5788-3fe2-4924-84aa-4e4733a693d8",
+      "exit_code": 2,
+      "result": "rejected_live_process_lock"
+    }
+  ]
+}

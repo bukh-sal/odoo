@@ -1,0 +1,79 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "workspace": "A",
+      "method": "get",
+      "status": 200
+    },
+    {
+      "workspace": "A",
+      "method": "set_labels",
+      "status": 409
+    },
+    {
+      "workspace": "B",
+      "method": "get",
+      "status": 200
+    },
+    {
+      "workspace": "B",
+      "method": "set_labels",
+      "status": 409
+    }
+  ],
+  "assets": [
+    {
+      "url": "/web/assets/0d84adea920bae5fe488c806f84fe3a2c6738322fcd6c7de55570b4ddaf1aada/mp_shell.assets_host.min.js",
+      "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/798ee8d1a61c7db109d4d0fae7b740732da6b6d990352d1ef5c821a7e5ccb652/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/27cc86b65461ebc5a581c4052e364ac0d23e5fc9feda8a89d027a0a46309e810/mp_shell.assets_host.min.js",
+      "sha256": "3502f1ad7faebe1bc3b8dadfee578ddca129ccf3f1a0d85ac5f9f2e5200ff853",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/798ee8d1a61c7db109d4d0fae7b740732da6b6d990352d1ef5c821a7e5ccb652/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/0d84adea920bae5fe488c806f84fe3a2c6738322fcd6c7de55570b4ddaf1aada/mp_shell.assets_host.min.js",
+      "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+      "immutable": true,
+      "redirect": false
+    },
+    {
+      "url": "/web/assets/798ee8d1a61c7db109d4d0fae7b740732da6b6d990352d1ef5c821a7e5ccb652/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "immutable": true,
+      "redirect": false
+    }
+  ],
+  "old_publication": {
+    "protocol": 1,
+    "site_id": "8afd569b-790c-400d-b123-cff2c86602fc",
+    "generation": 15,
+    "release_digest": "sha256:d5941f3f2b8edbcd7822312c066af0aae0ea92b53a95ac5e5dcfbbba239e7ac9",
+    "inventory_digest": "sha256:5f23585c041b1a837bd9b160dec0f37f7c030d424b638b5c2fc6c0da00cdf6bb",
+    "token": "sha256:df6ace40b8bd5c3d82ca64b7cf64801eed936c41b8f39f4235aa5c5609826fb4"
+  },
+  "current_generation": 17,
+  "old_client_fenced": true,
+  "final_business_unchanged_by_probes": true,
+  "limits": [
+    "Old client pin derived from recorded publication; no pre-existing browser document was observed.",
+    "Native Odoo RPC and unchanged native view hosting retained; no new UI behavior or Canvas feature.",
+    "Existing read/conflict paths exercised; no committed Labels write or Canvas save."
+  ]
+}

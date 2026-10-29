@@ -1,0 +1,63 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T07:17:06.989875+00:00",
+  "protected_targets": [
+    {
+      "target": "main",
+      "generation": 28,
+      "state_business_configuration_exact": true
+    },
+    {
+      "target": "manager",
+      "generation": 6,
+      "state_business_configuration_exact": true
+    }
+  ],
+  "effects": [
+    {
+      "case": "owner",
+      "operation_id": "0a63c6f7-40d3-426d-b8e8-6113506d85c6",
+      "native_child_id": "3c1a15b60efa5e385f9cf79a23c22bd90f3e80b30c86456c5b9fe7fb9f00b4db",
+      "native_exit_code": 0,
+      "single_mutation_reservation": true,
+      "checkpoint_hashes_verified": true,
+      "old_worker_stopped_disconnected": true
+    },
+    {
+      "case": "reinstall",
+      "operation_id": "39e37944-6648-4f7e-8aa1-30d01b452747",
+      "native_child_id": "8f21bb5db4f42992749388694b94e96347918a24bba22c0464a1861779b4f993",
+      "native_exit_code": 0,
+      "single_mutation_reservation": true,
+      "checkpoint_hashes_verified": true,
+      "old_worker_stopped_disconnected": true
+    }
+  ],
+  "contenders_retired_without_reservation_or_mutation": true,
+  "exact_note_board_schema_restored": true,
+  "public_binding_identities_and_descriptors_preserved": true,
+  "recreated_internal_binding_rows": 4,
+  "independent_operation_states": [
+    [
+      "completed",
+      16
+    ],
+    [
+      "failed_before_mutation",
+      3
+    ],
+    [
+      "revoked",
+      4
+    ]
+  ],
+  "windows_checks": 4,
+  "linux_checks": 24,
+  "contract_files": 87,
+  "public_files_checked": 59,
+  "known_private_values_checked": 3,
+  "limits": [
+    "Bounded evidence scan, not SEC-03 release qualification.",
+    "No stale-worker/dispatch/two-database/security/clean-environment recovery qualification."
+  ]
+}

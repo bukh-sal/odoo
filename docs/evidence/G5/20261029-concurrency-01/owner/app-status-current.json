@@ -1,0 +1,118 @@
+{
+  "data": {
+    "kind": "status",
+    "phase": "completed",
+    "stale": false,
+    "state": "completed",
+    "source": "operator_journal_mirror",
+    "history": [
+      {
+        "utc": "2026-10-29T07:06:17Z",
+        "code": "prepared",
+        "sequence": 244
+      },
+      {
+        "utc": "2026-10-29T07:06:19Z",
+        "code": "application_request_imported",
+        "sequence": 245
+      },
+      {
+        "utc": "2026-10-29T07:07:58Z",
+        "code": "approved",
+        "sequence": 250
+      },
+      {
+        "utc": "2026-10-29T07:09:11Z",
+        "code": "reserved",
+        "sequence": 253
+      },
+      {
+        "utc": "2026-10-29T07:09:28Z",
+        "code": "staged",
+        "sequence": 254
+      },
+      {
+        "utc": "2026-10-29T07:09:38Z",
+        "code": "maintenance",
+        "sequence": 255
+      },
+      {
+        "utc": "2026-10-29T07:09:41Z",
+        "code": "drained",
+        "sequence": 256
+      },
+      {
+        "utc": "2026-10-29T07:09:50Z",
+        "code": "checkpointed",
+        "sequence": 257
+      },
+      {
+        "utc": "2026-10-29T07:09:59Z",
+        "code": "mutation_started",
+        "sequence": 258
+      },
+      {
+        "utc": "2026-10-29T07:10:22Z",
+        "code": "migrated",
+        "sequence": 259
+      },
+      {
+        "utc": "2026-10-29T07:10:31Z",
+        "code": "workers_replaced",
+        "sequence": 260
+      },
+      {
+        "utc": "2026-10-29T07:10:41Z",
+        "code": "ready",
+        "sequence": 261
+      },
+      {
+        "utc": "2026-10-29T07:10:43Z",
+        "code": "release_published",
+        "sequence": 262
+      },
+      {
+        "utc": "2026-10-29T07:10:44Z",
+        "code": "traffic_resumed",
+        "sequence": 263
+      },
+      {
+        "utc": "2026-10-29T07:10:46Z",
+        "code": "completed",
+        "sequence": 264
+      }
+    ],
+    "plan_hash": "sha256:fdcb768f26654d2846638ccaef447d759ba60afbffe0626c64297310f1094d52",
+    "dimensions": [
+      {
+        "plugin_id": "org.example.notes_labels",
+        "workspace_id": "3f502e47-683a-4551-b00e-03368e647dd2",
+        "feature_state": "enabled",
+        "release_state": "planned",
+        "service_state": null,
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb"
+      },
+      {
+        "plugin_id": "org.example.notes_labels",
+        "workspace_id": "907b39a7-345a-4332-9df1-410019531cd4",
+        "feature_state": "enabled",
+        "release_state": "planned",
+        "service_state": null,
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "installation_id": "276ebdd0-fad3-51f2-be6a-9b65ccac81bb"
+      }
+    ],
+    "error_code": null,
+    "observed_at": "2026-10-29T07:16:08Z",
+    "operation_id": "0a63c6f7-40d3-426d-b8e8-6113506d85c6",
+    "requested_by": "7c1ebc0f-5a9b-43be-a084-f46b5f199cbc",
+    "schema_version": 1,
+    "control_authority": "independent_local_os",
+    "approval_expires_at": "2026-10-29T07:22:58Z"
+  },
+  "api_version": "1.0",
+  "request_id": "01ac34f2-8f61-42a1-9650-c4e0c6227134"
+}

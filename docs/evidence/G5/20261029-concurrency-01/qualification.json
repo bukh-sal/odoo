@@ -1,0 +1,57 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T07:18:50.079201+00:00",
+  "work_item": "G5-X06/MIG-04",
+  "acceptance": [
+    "MIG-04"
+  ],
+  "spec_sections": [
+    "10.2",
+    "10.3",
+    "10.4",
+    "25.3"
+  ],
+  "checks": {
+    "cross_process_windows": "source-host.json",
+    "cross_process_linux": "source-linux.json",
+    "live_native_feature_contention": "contention.json",
+    "stale_base_and_completed_replay": "stale-and-completed-replay.json",
+    "fixture_reinstalled": "reinstall/completed.json",
+    "native_api_assets_client": "http-assets.json",
+    "protected_effects_source_audit": "final-audit.json"
+  },
+  "owner_operation_id": "0a63c6f7-40d3-426d-b8e8-6113506d85c6",
+  "reinstall_operation_id": "39e37944-6648-4f7e-8aa1-30d01b452747",
+  "base_generation": 15,
+  "uninstall_generation": 16,
+  "final_generation": 17,
+  "all_contenders_approved_and_unexpired_at_contention": true,
+  "owner_completed_before_all_approval_expiries": "2026-10-29T07:10:46Z",
+  "qualification": {
+    "windows": 4,
+    "linux": 24,
+    "skipped": 0,
+    "frozen_files": 87,
+    "frozen_rows": 7
+  },
+  "source": "source-boundary.json",
+  "remaining_G5_acceptance": [
+    "MIG-08",
+    "MIG-09",
+    "TEN-01",
+    "TEN-02",
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEC-07",
+    "SEC-08",
+    "OPS-02",
+    "OPS-03"
+  ],
+  "limits": [
+    "Single-host process-held locks; no distributed/multi-host coordination claim.",
+    "Live case uses current-image native uninstall plus competing native/feature operations; staged executor uses the same inherited lock path.",
+    "Internal binding rows removed by native uninstall are recreated; all public binding identities/descriptors, installation identities, grant permissions and reference records are preserved.",
+    "No stale-worker/dispatch/two-database/security/clean-environment qualification. Canvas remains an unchanged minimal reference plugin; native Odoo CRUD default."
+  ]
+}
