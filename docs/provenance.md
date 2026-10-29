@@ -1,0 +1,32 @@
+# Release provenance and retained notices
+
+The G5 qualification binds the immutable application image `sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a`, inventory `sha256:f6c89902adb4a7e5038906d20bc2387f4743c5ac436c6594a9b3fed1ddccbb37`, the separately operated host CLI source at checkpoint `b43f6e2f`, and the exact curated artifact catalog. This is an intermediate G5 distribution; G6/G7 must refresh it for the final R1 executable release.
+
+The [build record](evidence/G5/20261029-provenance-01/build-provenance.json) identifies the parent build, its source hashes, retained image layers, the offline one-file worker guard recipe, and source/dependency/runtime locks. The [official source comparison](evidence/G5/20261029-provenance-01/official-source.json) matches3,937 upstream files to official Odoo Community19 commit `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`. Both remaining generated exceptions are reproduced exactly: native version comparison and bootstrap category metadata. [The patch ledger](upstream-patches.md) records their purpose and removal conditions. Root LGPLv3 and copyright text are unchanged.
+
+The application image and independent host operator have separate inventories. The [host delta](evidence/G5/20261029-provenance-01/host-only-additions.json) explicitly records newer host recovery/approval/logging modules and additions; it never overlays code into the running app. App workers retain their existing immutable inventory and have no operator-store or Docker authority. Native plugins and same-origin frontend plugins remain trusted.
+
+The [runtime license index](evidence/G5/20261029-provenance-01/runtime-license-index.json) records all76 installed Python distributions,16 native addon manifests and113 installed OS packages. The installed Python solution matches `deploy/requirements-r1.lock` plus pinned build tools exactly. All native addon manifests declare LGPL-3. Every OS package has a retained copyright file. Vendored frontend/WebAuthn libraries retain the official source and notice bytes; license fields such as Docutils' mixed notices or PyUSB's legacy `UNKNOWN` metadata are preserved alongside the actual notice text rather than silently relabeled.
+
+Three installed Python distributions lacked standalone notice files in their installed metadata. Their exact upstream source notices are now retained under [third_party/python](../third_party/python/README.md), fetched from versioned PyPI source archives whose SHA-256 hashes already appear in the runtime lock. Downloading these archives executed no build, import or installer. The [supplemental index](evidence/G5/20261029-provenance-01/supplemental-notices.json) records URLs, versions, archive/member hashes and preserved files.
+
+The complete associated notice bundle is retained locally at `.local/g5-provenance/release-notices.zip`; its287 entries and archive hash are recorded in the [final notice inventory](evidence/G5/20261029-provenance-01/notice-bundle-final.json). It includes runtime/vendor/OS notices, the three supplements, and host TypeScript notices. Keep this bundle, the tracked supplements, source and root notices with any later distributed image. The legacy initial Node archive layout is superseded; the final bundle preserves exactly the same notice content hashes.
+
+All eight curated artifacts have matching archive digests, source inventories/provenance, exact root notices and declared licenses in the [artifact record](evidence/G5/20261029-provenance-01/artifact-provenance.json). Current packages remain Notes0.2.3, Notes Labels0.2.2 and Canvas0.1.3. Historical artifacts remain explicitly identified for upgrades/recovery. No approved operation resolves a moving `latest` or installs dependencies from a web request.
+
+Host Python3.12.15, Node24.22.1, npm11.19.1 and TypeScript7.0.2 are pinned in `deploy/host-toolchain.lock.json` and the host SDK package lock. The runtime separately pins Linux amd64/Python3.12.16, digest-selected Python/PostgreSQL/Nginx images, the Debian snapshot, hashed Python artifacts and build tools. TypeScript is a host development/type-check tool; the browser reuses native Odoo infrastructure and prebuilt plugin assets.
+
+For a fresh supported Windows checkout, use the explicit installed interpreter to create an isolated environment, install the hashed tooling/operator requirements, and use the pinned Node tools for the SDK:
+
+```powershell
+C:/Users/mesh/AppData/Roaming/uv/python/cpython-3.12-windows-x86_64-none/python.exe -m venv .venv
+.venv/Scripts/python.exe -m pip install --require-hashes -r deploy/requirements-tooling.lock -r deploy/requirements-operator.lock
+npm.cmd --prefix packages/host_sdk ci --ignore-scripts
+npm.cmd --prefix packages/host_sdk run check
+```
+
+Check the explicit interpreter path on the new host and match the recorded version. Never change global Python to repair a project environment. [Fresh installation and recovery](recovery-rehearsal.md) use empty owned volumes and independent exact-hash approvals. The full image recipe is `deploy/Dockerfile` with the arguments in the linked parent build record; the final guard derivation preserves the parent runtime layers and records exact inputs. Retained immutable images are the recovery artifact. Recompiling native extensions under the same dependency pins can produce different binary bytes, as documented in the retained compiler counterexample/current status; do not substitute a rebuilt image for an approved image ID.
+
+[Retained product ties](evidence/G5/20261029-provenance-01/retained-product-ties.json) classifies Odoo-hosted account, commercial/catalog, help, branding and test references. The neutral platform manager uses the curated catalog and the custom root omits the stock account menu. Optional IAP, external RPC installer and Unsplash implementations are excluded by the addon policy. Current app/DB networks are internal and the actual fresh reference installation boots and operates there. Build-time package downloads and optional user-followed browser links are separate network uses. Final browser network/branding checks remain G7; this record does not claim that an arbitrary browser cannot follow any external link.
+
+This preserves provenance and notices for the stated distribution. It does not authorize publication, production deployment, proprietary relicensing or commercial licensing decisions. Final vulnerability/security/update qualification remains G7.

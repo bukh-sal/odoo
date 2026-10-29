@@ -1,0 +1,16 @@
+{
+  "result": "passed_documented_separate_host_release",
+  "source_commit": "b43f6e2fc7715b2b45b48d7a8bd35940e50d6198",
+  "host_only_additions": {
+    "packages/platform_sdk/modular_platform/native_auth_recovery.py": "75cc9ae73facf5d4d53c4ea4017288baa4c081f4076473219f5e6259b5246882",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "1134cb59dcb4c2adc9cc87e28c298f1fdc67681f43d788eb5cbe96b0f3a9e681",
+    "tools/modular.py": "5c003d505f24283858742a7d377b749f1031a9c94469f2436ec945a5d8ca689e"
+  },
+  "changed_existing_host_files": {
+    "packages/platform_sdk/modular_platform/native_executor.py": "40336d6bd00b118a605d4ac86b62b1254c9c21f2b3badbdbfb0c49e270b12f12",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "e8e3d8574f465ac03f16c9dcf22d07ab4bf6a0dd04567bb829a1e91045833b1a"
+  },
+  "meaning": "These host SDK modules belong to the independent operator distribution, not a live application overlay. Full host source hashes are retained in build-provenance.json. New native_auth_recovery.py is intentionally outside the old immutable application inventory."
+}

@@ -1,0 +1,323 @@
+{
+  "gate": "G5",
+  "result": "passed",
+  "utc": "2026-10-29T13:00:28.869975+00:00",
+  "source_commit_before_provenance": "b43f6e2fc7715b2b45b48d7a8bd35940e50d6198",
+  "source_binding": "Unchanged b43f6e2f executable host/SDK source; exact runtime image/inventory, immutable prior integration evidence and new provenance source/lock hashes. Status/work-log/evidence bytes excluded from executable identity.",
+  "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "inventory_digest": "sha256:f6c89902adb4a7e5038906d20bc2387f4743c5ac436c6594a9b3fed1ddccbb37",
+  "frozen_files": 87,
+  "acceptance": [
+    {
+      "id": "BOOT-05",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`evidence/G5/20261028T144000Z-default-startup/default-startup.json`; actual default entrypoint rejects extra source/bytecode/cache/symlinks/writable data-dir addons before native import; strict observer source36host/36Linux/freeze143000Z; candidate60c03d32, live unchanged."
+    },
+    {
+      "id": "BOOT-06",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Requalified after internal guard change: prior default-startup negative/config/native checks retained on unchanged code;23Windows+1Linux-onlyskip/24Linux/87freeze, five actual default bootstrap cases before Odoo import/positive coherent installed+removed copies, exact one-file SDK18 activation/full business-schema bytes and current startup pass. `evidence/G5/20261029-worker-fence-01/qualification.json`."
+    },
+    {
+      "id": "PKG-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI)"
+    },
+    {
+      "id": "PKG-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI)"
+    },
+    {
+      "id": "PKG-03",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI)"
+    },
+    {
+      "id": "PKG-04",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI)"
+    },
+    {
+      "id": "PKG-05",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`tools/qualify_artifacts.py`; `evidence/G5/20261028T0508474407833Z/archive-catalog.json` (Windows/Linux/CLI)"
+    },
+    {
+      "id": "DEP-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual immutable-curated archive -> CLI matrix on Windows/Linux; exact test_missing_transitive_dependency_fails_before_any_mutation assertions plus unchanged catalog/trust bytes; `evidence/G5/20261029-resolution-matrix/dependency-acceptance.json` and resolution-source69/69."
+    },
+    {
+      "id": "DEP-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual immutable-curated archive -> CLI matrix on Windows/Linux; exact test_version_conflict_explains_both_incompatible_constraints assertions plus unchanged catalog/trust bytes; `evidence/G5/20261029-resolution-matrix/dependency-acceptance.json` and resolution-source69/69."
+    },
+    {
+      "id": "DEP-03",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual immutable-curated archive -> CLI matrix on Windows/Linux; exact test_cycle_reports_the_complete_hard_dependency_cycle assertions plus unchanged catalog/trust bytes; `evidence/G5/20261029-resolution-matrix/dependency-acceptance.json` and resolution-source69/69."
+    },
+    {
+      "id": "DEP-04",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual immutable-curated archive -> CLI matrix on Windows/Linux; exact test_python_conflict_is_distinct_and_explains_both_constraints assertions plus unchanged catalog/trust bytes; `evidence/G5/20261029-resolution-matrix/dependency-acceptance.json` and resolution-source69/69."
+    },
+    {
+      "id": "DEP-05",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual immutable-curated archive -> CLI matrix on Windows/Linux; exact test_ambiguous_provider_rejects_then_explicit_binding_selects_only_one assertions plus unchanged catalog/trust bytes; `evidence/G5/20261029-resolution-matrix/dependency-acceptance.json` and resolution-source69/69."
+    },
+    {
+      "id": "DEP-06",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual immutable-curated archive -> CLI matrix on Windows/Linux; exact test_optional_absent_and_incompatible_leave_base_plan_valid assertions plus unchanged catalog/trust bytes; `evidence/G5/20261029-resolution-matrix/dependency-acceptance.json` and resolution-source69/69."
+    },
+    {
+      "id": "DEP-07",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`evidence/G5/20261028T133700Z-release-reader-rollout/stale-app-plan-denied.json`; actual CLI re-observes deployment/catalog under alternate current policy, stable published identity but old app preimage denied before registration/mutation; current47host/47Linux fence tests132700Z."
+    },
+    {
+      "id": "DEP-08",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual immutable-curated archive -> CLI matrix on Windows/Linux; exact test_compatible_locked_dependency_is_preserved_when_another_plugin_installs assertions plus unchanged catalog/trust bytes; `evidence/G5/20261029-resolution-matrix/dependency-acceptance.json` and resolution-source69/69."
+    },
+    {
+      "id": "VER-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`evidence/G5/20261029-resolution-matrix/qualification.json`: original native counterexample retained; source69/69/84freeze plus actual corrected0afd445c parser/order/applicability, exact approved compat1.1 core5 and retained state/files/authority pass. Public syntax/native spelling unchanged; VER-02 separate"
+    },
+    {
+      "id": "VER-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`evidence/G5/20261029-migration-order-rollout-01/qualification.json`: actual adjacent/skipped/fresh/wide24scripts/4DBs, exact archive/script/schema/data witnesses; corrected current SDK70/70/84freeze and approved deployment6. Actual manager first-native/adjacent path retained; no crash/clean-restore claim"
+    },
+    {
+      "id": "TEN-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual native registries in SAME process/both importorders/64concurrentreads; Labels field only in installed DB despite shared import, colliding actor/workspace/record IDs keep own data/config/caches/CAS transactions; foreign Scope and site frames denied. Two default workers HTTP DBauth/header403/query/session-cookie separation; exact business/schema afterward. tenant-isolation-01/qualification.json."
+    },
+    {
+      "id": "TEN-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Genuine installed Labels0.2.1 main28snapshot copied independently vs0.2.2 runtime/A: complete3DBobserver/proposal rejects verifiedartifact mismatch; omittedDBinventory denied. Immutable default startup refuses originalinventory and genuine nativeversions after isolated temporarypin substitution (restored), before native imports/no fabricated versionrows; tenant-isolation-01/compatibility-qualification.json."
+    },
+    {
+      "id": "LIFE-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`evidence/G5/20261029-lifecycle-01/qualification.json`: actual approved scoped cascade, retained native schema/4Notes/2boards/labels; page/navigation/context/command/slot/gateway/native denial, unaffected Research, two-worker extension denials and exact restoration. G6 must requalify dispatch/drain when jobs/events are added."
+    },
+    {
+      "id": "LIFE-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`evidence/G5/20261029-lifecycle-01/qualification.json`: actual operator preview and dimensions explicitly retain native registration/data/imports/overrides; docs/operations.md same terminology; same schema/image/worker and unaffected native Labels in Research prove no unload claim."
+    },
+    {
+      "id": "LIFE-03",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual suspension cascade in lifecycle-01, actual native Notes all6scope/3plugin closure with cascade-false and partial-site denial in `evidence/G5/20261029-lifecycle-preview-http-01/qualification.json`; Labels browser/native exact2scope closure in `evidence/G5/20261029-native-uninstall-01/browser/browser-proof.json`. Candidate709d7fbd/core1.5/shell1.6, ADR0023."
+    },
+    {
+      "id": "LIFE-04",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual browser-requested b0797723/hash87f2a190 through SAME independent executor: missing OS destructive ACK denied before reserve/drain, explicit exact approval, coordinated DB+filestore checkpoint with hashes verified before actual upstream uninstall. Column/data loss recorded, surviving native versions/4Notes/2boards retained, workers replaced/client fenced/assets retained. `evidence/G5/20261029-native-uninstall-01/qualification.json`, native-effects.json, checkpoint-manifest.json and survivor-http-assets.json."
+    },
+    {
+      "id": "LIFE-05",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual manager Labels0.2.1->0.2.2 test-fixture upgrade shows both workspace targets/exact2newnotes.write grants; old hash and missing-permission-ack refused before exact acknowledged independent approval/SAME executor. Native Labels-only upgrade/checkpoint/oldgrants/data/schema/IDs/nativeOdoo/APIs/assets/client/protected-sites pass: `evidence/G5/20261029-permission-upgrade-01/qualification.json`. Default product privileges unchanged."
+    },
+    {
+      "id": "LIFE-06",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual installed manager+CLI refusal in artifact-removal-inuse-01; separately approved native uninstall then exact7file source-only removal8\u21929 through SAME executor. Full schema/business/history/bindings exact, newworker/clientepoch, retained catalog/images/checkpoint/assets and nativeOdoo/Notes/Canvas proof: `evidence/G5/20261029-source-removal-live-01/qualification.json`. Complete sharing inventory source/runtime guard retained; twoDB compatibility remains TEN-01/02."
+    },
+    {
+      "id": "MIG-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual staging/live-oldtraffic, drained/no-backup and checkpointed/before-mutation faults; exact reviewed unchanged-release resume via same CLI/reviews/locks/journal, original authority revoked/no replay, SAME worker/image/generation11, full data/schema/grants/files/config and APIs/assets/compatibility retained.26Windows/26Linux/87freeze and protected targets: `evidence/G5/20261029-premutation-fault-01/qualification.json`. This is not OS-process-crash evidence."
+    },
+    {
+      "id": "MIG-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Current asset pre-ready boundary: `evidence/G5/20261028-asset-retention-fault-01/failed-status.json` and asset-operation.json; real native commit/actual preflight then injected exception => recovery_required/workers_replaced/trafficfalse, no config publication. Latest guard source/binding26 reconciliation: `evidence/G5/20261028-asset-retention-requalification/requalification.json`. Historical post-publication/core faults retained; not OS crash."
+    },
+    {
+      "id": "MIG-03",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual PID14540 OS-terminated after native child exit0/LabelsDDL commit; durable journal remains running/mutation_started/noPythoncleanup, next apply records lost-owner recovery_required BEFORE stopped-app/stale-state preflight and never replays native work. Exact freshDB restore/resume15, fullbusiness/schema/grants/files, oldclient/assets/native/API, retiredplan/recoverydecision denials and protected sites pass;6Windows/70Linux/87freeze: `evidence/G5/20261029-executor-crash-01/qualification.json`. Initial launcher failure excluded."
+    },
+    {
+      "id": "MIG-04",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Four real-process topology cases Windows4/Linux24/87freeze; live approved native owner PID30840 holds locks after child commit while duplicate-owner/native/feature CLI contenders all rejectbusy/exit2, journals unchanged/no stages or children. Owner completes16; competitors stale/refused/revoked, completed replay exact/no repeat. Separately approved reinstall17 preserves full reference data/schema/grant permissions/publicbindings; native/API/assets/client/protected audit passes: `evidence/G5/20261029-concurrency-01/qualification.json`."
+    },
+    {
+      "id": "MIG-05",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Current normal core25 and SDK26 completed replay return identical saved status without native/asset child: `evidence/G5/20261028-asset-retention-normal-01/completed-replay.json`, `evidence/G5/20261028-asset-retention-binding-01/completed-replay.json`; current source identity in asset-retention-requalification. Historical plugin migration replay retained."
+    },
+    {
+      "id": "MIG-06",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "ADR0028 requalification: actual fresh clean installation/native commit fault/fresh restore2\u21924/samef2 and separate exact resume, completebusiness/schema/grants/bindings/installations/38oldfiles, nativepassword/TOTP/group/passkey/currentrevocation preserved, devices/technicalcredentials/sessions invalidated, nativeOdoo/API/assets/attachment/client/retiredplan fences and protectedtargets pass.41Windows/35Linux/87freeze; clean-recovery-01/qualification.json. Prior dispatch effects/restore evidence retained."
+    },
+    {
+      "id": "MIG-07",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Baseline G0 retained; R1 actual independently approved upstream uninstall deletes x_notes_labels with2non-null values and records schema/data effects, preserving allothercolumns/constraints/4Notes/2boards/native survivors. `evidence/G5/20261029-native-uninstall-01/qualification.json`, native-effects.json and survivor-http-assets.json. Scoped current-version reinstall reinitializes schema, not deleted values; `evidence/G5/20261029-native-reinstall-01/reinstall-A/qualification.json`."
+    },
+    {
+      "id": "MIG-08",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual old17image default bootstrap against active18DB exits1 before Odoo; defaultcopy oldinventory/nativeversion/partialnative mismatch refusals and coherent installed/removed positives. New consistency guard after real counterexample, approved exact1fileSDK18, onlyselectedworker/network+DBclients, oldworkersstopped/disconnected; cron0/nojob-outboxtables. Source23Windows+1OSskip/24Linux/87freeze/API/native/assets/protected proof: `evidence/G5/20261029-worker-fence-01/qualification.json`. G6 must extend/requalify actual job/outbox/external-worker cases."
+    },
+    {
+      "id": "MIG-09",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Current G5 no-dispatch profile: real old read-only review counterexample; fixed prepare/start/late-readiness refusals before journal/edge; three durable external completion receipts unchanged, every synthetic row retained after explicit fixture-only reconciliation, fresh reviewed supported resume; dispatch-fence-01/qualification.json. Actual G6 adapters must extend/requalify; no generic reconciler claim."
+    },
+    {
+      "id": "SEC-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Current411101a9 actual inert publisher markup remains literal/0injectedDOMelements in trust/details; dynamic manager text uses native Owl escaping, no rawHTML/eval/dynamicURL sinks. `evidence/G5/20261029-manager-inspection-http-01/acceptance.json`, browser proof and postbrowser source audit. Trusted plugin JavaScript is a separate boundary."
+    },
+    {
+      "id": "SEC-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual devHTTP+localTLS strictHost/Origin/preflight/CSRF/session-cookie, direct-proxy forwarding, TLS1.2/1.3+1.1negative/sharedrate with forgedaddresses; platformRATE_LIMITED and nativeOdoo UserError/data contracts, native views/assets/Canvasread retained, safe-log canaries, final4protectedtargets unchanged. http-security-02/qualification.json and final-audit-native.json."
+    },
+    {
+      "id": "SEC-03",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Full tree/history/5image-layer/8archive/browser/837private-log scan found20credential occurrences in10Docker config helpers and43sensitive checkpoint streams. Host --log-driver none fix, actual byte-exact/private capture, preserved private diagnostics/exact stopped-helper cleanup, fresh202container+837log scan clean;34Windows/87freeze/protected4 unchanged. `evidence/G5/20261029-secret-scan-01/qualification.json`; expected private secret stores excluded, no sandbox claim"
+    },
+    {
+      "id": "SEC-04",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Actual dedicated productionTLS profile blocks DB manager/list/create/encodedvariants, tests/debug/tour/debugassets/queryflags; fixedDB/list_dbFalse/currentguardedstartup/no-build/pinnedimage. Explicit rotated namedaccounts/initialadmin+fixtureusers disabled, oldcredentials actuallyrefused; read-onlypreflightpositive/3negative/Compose/internal-onlybackend verifies defaults. http-security-02/production-preflight.json and qualification.json. Local rehearsal only, not external production deployment."
+    },
+    {
+      "id": "SEC-05",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "R1 review of actual details/extension/plan warnings: native/same-origin full trust, grants only supported APIs, native host authority retained, suspension does not unload overrides. `evidence/G5/20261029-manager-inspection-http-01/acceptance.json`, rendered details and operations runbook; no sandbox claim."
+    },
+    {
+      "id": "SEC-06",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Current-source actual manager native request/independent import/forged approved app mirror denied with OS store awaiting and unchanged base, then exact local approval/apply28; `evidence/G5/20261028-manager-install-01/acceptance.json`, forged-app-approval-denied.json and browser/browser-proof.json. Historical feature case retained."
+    },
+    {
+      "id": "SEC-07",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "17actualCLI/current-deployment cases, wronghash/default900/noTTLextension/crossoperationworkspacehash/noapproval/stalepolicy+authority+worker+image+generation+site+trust+artifact/realexpiry/premutationrevocation/finalrevocation.4testapprovals revoked/no live mutation;44Windows/24Linux/87freeze. `evidence/G5/20261029-approval-security-01/qualification.json`"
+    },
+    {
+      "id": "SEC-08",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "5actualapps UID10001/no capabilities/no Docker or operator/TLS mounts/80accessdenials; separate rw-volume foreignUID8kernelEACCES+forge/list/store refusal/privatebytes exact.1497WindowsACLrecords+15catalog/parent paths; actualredactedstaleHTTPstatus authorized/3denials;9Windows/9Linux/87freeze/fourprotectedtargets exact. `evidence/G5/20261029-operator-isolation-01/qualification.json`; no native-data sandbox claim"
+    },
+    {
+      "id": "OPS-01",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "`evidence/G5/20261028T135000Z-pinned-cache-restore/independent-cli-no-app.json`; actual independent CLI shows recovery journal with no running app process, no registry/app dependency; actual incompatible old-code guard refusal124000Z also retained."
+    },
+    {
+      "id": "OPS-02",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "Fresh emptycore/ownPG/volumes/secrets/control\u2192sixapprovedscopes\u2192populatedcheckpoint\u2192actualnativecommitfault\u2192ordinaryreviewedfreshrestore/resume. Complete160fileprivatekit, exactbusiness/schema/files/code/config/currentauthority/nativecredentials and nativeHTTP/asset/attachment/fences pass. clean-recovery-01/qualification.json; docs/recovery-rehearsal.md. Singlehostprofile retainsfailedDB/currentauthority/independentjournal."
+    },
+    {
+      "id": "OPS-03",
+      "phase": "E/G5",
+      "result": "passed",
+      "evidence": "provenance-01/qualification.json:4108physicalruntimefiles/3937exactofficialfiles+2reproducedpatches, exactparentlayers/workerrecipe/dependency+hostlocks/currenthostsource,76Python/16native/113OS/8curatedartifacts/287notices;3missinginstallednotices retainedfromhash-lockedupstreamsourcearchives(noexecution). docs/provenance.md; finalG6/R1provenance refreshaudit remainsG7."
+    }
+  ],
+  "acceptance_passed": 45,
+  "reference_fixture": "X10 passed: clean-recovery-01/minimal-Canvas-fixture.json",
+  "exit_criteria": {
+    "G5-X01": "passed",
+    "G5-X02": "passed",
+    "G5-X03": "passed",
+    "G5-X04": "passed",
+    "G5-X05": "passed",
+    "G5-X06": "passed",
+    "G5-X07": "passed",
+    "G5-X08": "passed",
+    "G5-X09": "passed",
+    "G5-X10": "passed"
+  },
+  "overall_R1_acceptance": {
+    "passed": 86,
+    "not_run": 13,
+    "excluded_R2": 5
+  },
+  "weighted_progress_percent": 80,
+  "next_gate": "G6",
+  "next_work_item": "F-01 durable jobs/outbox/scoped external service",
+  "source_sha256": {
+    "planning/modular_platform_spec.md": "c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201",
+    "upstream.lock": "d5b08898eb7044bbee78500bc1501ab390d74826b936d5eb83854f5b740de47f",
+    "deploy/host-toolchain.lock.json": "928401e0717cd428d2e685688624d77819d1128c9fad7e3855bf35e86defc377",
+    "docs/contracts/freeze-v1.json": "22b3efde8adbdb697e562901853a4f8a1ac337936e66a59e56c524aa4bf3de4e"
+  },
+  "qualification_records": [
+    "../20261029-clean-recovery-01/qualification.json",
+    "qualification.json",
+    "../20261029-operator-isolation-01/qualification.json",
+    "../20261029-approval-security-01/qualification.json",
+    "../20261029-dispatch-fence-01/qualification.json",
+    "../20261029-worker-fence-01/qualification.json"
+  ],
+  "limits": [
+    "This passes G5, not G7 or the R1 goal. G6 actual adapters must extend and requalify restored effects, worker compatibility and scoped identities.",
+    "G7 must run the complete current final-release acceptance and reproduce install/recovery/provenance/security/network/accessibility/performance.",
+    "Canvas remains minimal and standard CRUD remains native Odoo. No publication, production deployment or destruction of unknown data."
+  ]
+}

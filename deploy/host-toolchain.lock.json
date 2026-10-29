@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "scope": "Qualified local Windows operator and host SDK development tooling; Linux application pins remain runtime.lock.json.",
+  "Python": "3.12.15",
+  "host_platform": "win32",
+  "host_architecture": "AMD64",
+  "Node": "24.22.1",
+  "npm": "11.19.1",
+  "TypeScript": "7.0.2",
+  "python_dependencies": [
+    "deploy/requirements-tooling.lock",
+    "deploy/requirements-operator.lock"
+  ],
+  "node_dependencies": "packages/host_sdk/package-lock.json",
+  "setup": "Use an isolated .venv, hash-locked dependencies and npm ci --ignore-scripts. Do not change global Python."
+}

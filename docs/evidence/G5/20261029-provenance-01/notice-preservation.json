@@ -1,0 +1,10 @@
+{
+  "result": "preserved_exact_upstream_notice",
+  "path": "third_party/python/xlwt-1.3.0/docs/licenses.rst",
+  "sha256": "7f7b66f23fdac4f68fe3b342dd16b329d511017a901784a5ceb83f505f2de7c6",
+  "git_whitespace_findings": [
+    "line114 upstream trailing space",
+    "line118 upstream blank line at EOF"
+  ],
+  "disposition": "Keep source-archive notice bytes unchanged, as required by provenance. Code/docs whitespace check excludes only this exact notice; notice content/hash validated by supplemental-notices.json and qualification.json."
+}
