@@ -1,0 +1,89 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T09:46:34.129784+00:00",
+  "cases": [
+    {
+      "category": "service",
+      "requests": 96,
+      "concurrency": 16,
+      "statuses": {
+        "200": 50,
+        "429": 46
+      },
+      "elapsed_seconds": 0.531,
+      "forged_forwarded_addresses_cannot_bypass": true,
+      "rate_errors_match_frozen_DTO": true
+    },
+    {
+      "category": "operator",
+      "requests": 40,
+      "concurrency": 16,
+      "statuses": {
+        "403": 11,
+        "429": 29
+      },
+      "elapsed_seconds": 0.078,
+      "forged_forwarded_addresses_cannot_bypass": true,
+      "rate_errors_match_frozen_DTO": true
+    },
+    {
+      "category": "public",
+      "requests": 240,
+      "concurrency": 16,
+      "statuses": {
+        "200": 121,
+        "429": 119
+      },
+      "elapsed_seconds": 0.422,
+      "forged_forwarded_addresses_cannot_bypass": true,
+      "rate_errors_match_frozen_DTO": true
+    },
+    {
+      "category": "login",
+      "requests": 20,
+      "statuses": {
+        "200": 10,
+        "429": 10
+      },
+      "forged_forwarded_addresses_cannot_bypass": true,
+      "rate_errors_match_frozen_DTO": true
+    }
+  ],
+  "public_service_recover_after_refill": true,
+  "TLS_protocols": [
+    "TLSv1.2",
+    "TLSv1.3"
+  ],
+  "TLS11_rejected": "TLSV1_ALERT_PROTOCOL_VERSION",
+  "certificate_and_hostname_verified": true,
+  "log_canaries_absent": [
+    {
+      "purpose": "application",
+      "canaries_absent": true,
+      "bytes": 7121,
+      "sha256": "e1f140d71caf9e27169d0c980bc7ecae5729b0c55f627799067430b861610963"
+    },
+    {
+      "purpose": "development-edge",
+      "canaries_absent": true,
+      "bytes": 15419,
+      "sha256": "b519912fedf2090970771b07f5c63d99e27ab1d943d3df55038556322dd5540f"
+    },
+    {
+      "purpose": "production-edge",
+      "canaries_absent": true,
+      "bytes": 37734,
+      "sha256": "a2c21978ba27ec06197cd6b8eb4957b53d7ea92e8303af381dbff83b8a203380"
+    }
+  ],
+  "existing_business_schema_and_operation_count_exact": true,
+  "source_sha256": {
+    "tools/http_profile.py": "15b4f7ac52391c6f4c6c73d8246e8d47559b49ec93011741effce6fafdaa0311",
+    "deploy/nginx-r0.conf": "51fd687f16dec4872c6520e96ffa704249c73bdb31b48b9b542fcb504232f6bd",
+    "deploy/compose-production.yaml": "770b1925e4c896d55407d9517a6f2b7debc1adcdaba4c4ee42cedd1706fe31f5"
+  },
+  "limits": [
+    "Bounded local edge load, not final G7 performance/capacity qualification.",
+    "Safe-log canaries are scoped evidence; full artifact/log/secret release scan remains SEC03."
+  ]
+}

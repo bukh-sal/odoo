@@ -1,0 +1,18 @@
+{
+  "result": "syntax_and_reload_passed",
+  "profiles": [
+    {
+      "mode": "development",
+      "old_sha256": "51fd687f16dec4872c6520e96ffa704249c73bdb31b48b9b542fcb504232f6bd",
+      "new_sha256": "f372660c0e6cb82919986326e662d08431c52f9bbca675d5db157e62b6076b1d",
+      "reason": "Separate platform API429 DTO from native Odoo JSONRPC UserError/data; preserve native error dialogs"
+    },
+    {
+      "mode": "production",
+      "old_sha256": "2836dc9f695e76713bbce872ce6c7464a0f7f7b30d10da30250035bce6cfc31c",
+      "new_sha256": "c6d50033e50aef8f1579eb9c8efa98e038cad5aa24f10b85133e410164275e7a",
+      "reason": "Separate platform API429 DTO from native Odoo JSONRPC UserError/data; preserve native error dialogs"
+    }
+  ],
+  "no_backend_or_data_change": true
+}

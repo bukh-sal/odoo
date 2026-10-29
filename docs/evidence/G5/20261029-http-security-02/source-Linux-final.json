@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "tests": 5,
+  "skipped": 0,
+  "source_sha256": {
+    "tools/http_profile.py": "4b56b9c3e8cb0c61da2aa5db94e68ae25c6c55a460dd2b4384ceba7b4d0ce8e1",
+    "tests/test_http_profile.py": "f6dee6a03690d5a55783e8c600246e9eaf00d1427db1f9dccad3885d760a559a",
+    "deploy/nginx-r0.conf": "f372660c0e6cb82919986326e662d08431c52f9bbca675d5db157e62b6076b1d"
+  },
+  "private_or_live_mounts": false
+}

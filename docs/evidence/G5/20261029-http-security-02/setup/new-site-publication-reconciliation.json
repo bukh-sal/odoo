@@ -1,0 +1,8 @@
+{
+  "result": "new_site_scoped_lock_published_consistently",
+  "diagnosis": "Copied lock service_selection named original site; actual derived diff only site scopes, not code/package/environment",
+  "correction": "Explicit copied-fixture bootstrap publishes exact derived new-site digest/profile; no lifecycle acceptance claim",
+  "wrapper": "Final source-compare lambda missed during helper extraction; corrected, existing matching publication observed, no account/container/native repetition",
+  "accounts_or_TLS_regenerated": false,
+  "source_deployments_unchanged": true
+}

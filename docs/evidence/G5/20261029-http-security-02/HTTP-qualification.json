@@ -1,0 +1,120 @@
+{
+  "result": "passed_HTTP_matrix",
+  "utc": "2026-10-29T09:40:32.741941+00:00",
+  "checks": [
+    {
+      "case": "development_native_login_and_cookie_policy",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true,
+      "Secure": false
+    },
+    {
+      "case": "development_unknown_hosts_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_native_login_and_cookie_policy",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true,
+      "Secure": true
+    },
+    {
+      "case": "production_unknown_hosts_denied",
+      "result": "passed"
+    },
+    {
+      "case": "development_loopback_aliases_preserved",
+      "result": "passed"
+    },
+    {
+      "case": "production_HTTP_fixed_canonical_redirect_and_mutation_refusal",
+      "result": "passed"
+    },
+    {
+      "case": "development_gateway_CSFR_missing_invalid_other_session_denied",
+      "result": "passed"
+    },
+    {
+      "case": "development_foreign_null_wrong_port_Origin_and_preflight_denied_no_CORS_credentials",
+      "result": "passed"
+    },
+    {
+      "case": "development_native_Odoo_list_form_views_and_RPC_preserved_simple_form_write_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_gateway_CSFR_missing_invalid_other_session_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_foreign_null_wrong_port_Origin_and_preflight_denied_no_CORS_credentials",
+      "result": "passed"
+    },
+    {
+      "case": "production_native_Odoo_list_form_views_and_RPC_preserved_simple_form_write_denied",
+      "result": "passed"
+    },
+    {
+      "case": "valid_session_CSFR_create_delete_succeeds_only_for_owned_temporary_record",
+      "result": "passed"
+    },
+    {
+      "case": "minimal_Canvas_read_and_custom_page_capability_retained",
+      "result": "passed"
+    },
+    {
+      "case": "production_database_debug_test_and_excluded_external_RPC_endpoints_unavailable",
+      "result": "passed"
+    },
+    {
+      "case": "native_shell_and_regular_JS_CSS_assets_work_through_both_edges",
+      "result": "passed",
+      "assets": [
+        {
+          "mode": "development",
+          "path": "/web/assets/63c5974592655d931920e0596ac04cfca96ac6d268d30a24f941725016e0c1fc/mp_shell.assets_host.min.js",
+          "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+          "bytes": 3071857
+        },
+        {
+          "mode": "development",
+          "path": "/web/assets/6fb25c7c2ae40341f8b9a58fa6af1b30b4c997dd64c44fc10385cd06fda16004/mp_shell.assets_host.min.css",
+          "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+          "bytes": 751605
+        },
+        {
+          "mode": "production",
+          "path": "/web/assets/63c5974592655d931920e0596ac04cfca96ac6d268d30a24f941725016e0c1fc/mp_shell.assets_host.min.js",
+          "sha256": "682fed9beaa9d8e4d7fd5bc08730b5a4d8bd2bfaaef69b818874266540c1112d",
+          "bytes": 3071857
+        },
+        {
+          "mode": "production",
+          "path": "/web/assets/6fb25c7c2ae40341f8b9a58fa6af1b30b4c997dd64c44fc10385cd06fda16004/mp_shell.assets_host.min.css",
+          "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+          "bytes": 751605
+        }
+      ]
+    },
+    {
+      "case": "production_fixture_old_logins_disabled_and_exact_business_schema_retained",
+      "result": "passed"
+    }
+  ],
+  "application_image": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "source_sha256": {
+    "tools/http_profile.py": "a94879065adfefedcbe33be3d3b57511e59cf5160f0065172587efb712d935ae",
+    "deploy/nginx-r0.conf": "e8524ad342f264c2882db0718d2f5ddefa23ae740c64d0567c5bddc74e9e0e38",
+    "deploy/compose-production.yaml": "770b1925e4c896d55407d9517a6f2b7debc1adcdaba4c4ee42cedd1706fe31f5",
+    "tests/test_http_profile.py": "7012766510ca2e424b4b1e80f30a0e096e3055956e9a5ece7e1ee38cc411e17a"
+  },
+  "limits": [
+    "Local TLS uses a private two-day qualification certificate explicitly trusted only by this client.",
+    "TLS protocol-negative and rate-boundary/source/protected-target audits are separate; no SEC02/04 pass yet.",
+    "Same-origin/native plugins remain trusted; no sandbox or remote production deployment."
+  ]
+}

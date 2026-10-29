@@ -1,0 +1,18 @@
+{
+  "result": "syntax_and_reload_passed",
+  "profiles": [
+    {
+      "mode": "development",
+      "old_sha256": "9ed3dc963e823b395588561b408441a541e1f9709cc0e4987d9c7aafbc082ad6",
+      "new_sha256": "51fd687f16dec4872c6520e96ffa704249c73bdb31b48b9b542fcb504232f6bd",
+      "reason": "Named rate-error location declares headers, so explicitly preserve security headers rather than losing inherited HSTS/nosniff"
+    },
+    {
+      "mode": "production",
+      "old_sha256": "3a333c87d22a7e71c1fab43c8c77f510dc275dd7675b682db619166e33b172c0",
+      "new_sha256": "2836dc9f695e76713bbce872ce6c7464a0f7f7b30d10da30250035bce6cfc31c",
+      "reason": "Named rate-error location declares headers, so explicitly preserve security headers rather than losing inherited HSTS/nosniff"
+    }
+  ],
+  "no_backend_or_data_change": true
+}

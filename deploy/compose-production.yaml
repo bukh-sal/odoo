@@ -1,0 +1,21 @@
+# Operator-supplied private appconfig/proxyconfig/TLS volumes are required.
+# Use after explicit initialization/credential rotation and the production
+# preflight in docs/http-security.md. This file never initializes a database.
+services:
+  edge:
+    ports: !override
+      - "${MP_BIND_ADDRESS:-127.0.0.1}:${MP_HTTP_PORT:-18069}:8069"
+      - "${MP_BIND_ADDRESS:-127.0.0.1}:${MP_HTTPS_PORT:-18443}:8443"
+    volumes:
+      - tls:/etc/mp-tls:ro
+  app:
+    image: ${MP_IMAGE:?Independently select the immutable approved image}
+    build: !reset null
+    command: [-c, /run/secrets/odoo_config]
+    environment:
+      MP_EXPECTED_DATABASE: ${MP_EXPECTED_DATABASE:?Independently pin the initialized database}
+      MP_EXPECTED_INVENTORY_DIGEST: ${MP_EXPECTED_INVENTORY_DIGEST:?Independently pin the immutable inventory}
+volumes:
+  tls:
+    external: true
+    name: ${MP_COMPOSE_PROJECT}_tls

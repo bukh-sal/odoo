@@ -1,0 +1,8 @@
+{
+  "result": "read_only_native_simple_type_observation",
+  "status": 415,
+  "content_type": "text/html; charset=utf-8",
+  "json_error_class": null,
+  "previous_mutation_attempt_left_business_exact": true,
+  "bytes": 300
+}

@@ -1,0 +1,30 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T10:01:04.005805+00:00",
+  "native_requests": 240,
+  "native_status_counts": null,
+  "API_requests": 160,
+  "API_status_counts": {
+    "200": 115,
+    "429": 45
+  },
+  "API_error_matches_frozen_contract": true,
+  "native_error_matches_existing_Odoo_RPC": true,
+  "native_parser_and_handler": {
+    "result": "passed",
+    "actual_native_functions": true,
+    "old_API_DTO_would_throw": true,
+    "new_native_error_reaches_existing_dialog_service": true,
+    "Owl_render_not_observed": true
+  },
+  "native_source_sha256": {
+    "addons/web/static/src/core/network/rpc.js": "80b936b536b1d1fb3d3e6eeaf2a14289d08055b06cf709c6e0b44944d8e31617",
+    "addons/web/static/src/core/errors/error_handlers.js": "20f9b49952add3961bcfd391b1cc66d9e4be9413545aae7fd35c408680f53094"
+  },
+  "normal_native_read_recovers": true,
+  "limits": [
+    "Actual server responses and actual pinned native functions verified; no Owl dialog rendering observed.",
+    "Native cohort finished and response preserved before a subsequent single API request had already recovered; API got its own bounded burst. Original native cohort not repeated; exact native status distribution not retained if resumed.",
+    "Only new rate-response protocol branch changed after earlier HTTP/TLS/rate qualification; no native or frontend implementation changed."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "result": "existing_TLS_valid_and_readable_by_actual_UID101",
+  "certificate_sha256": "231f83d01794360d1cb90e49fbbebf1972136b9b588164b15a286707fbbc603a",
+  "diagnosis": "Previous chmod/chown succeeded; UID0 without DAC capability correctly cannot reread UID101 mode0400 key. Verify as actual edge UID101; no more permission mutation.",
+  "TLS_regenerated": false,
+  "database_recreated": false
+}

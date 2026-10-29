@@ -1,0 +1,22 @@
+{
+  "result": "passed_setup_only",
+  "project": "mp-r0-r1http9669f0969d1d",
+  "database": "mp_disposable_r0_r1_http_9669f0969d1d",
+  "site_id": "871c989d-8948-4857-a370-5256a61492de",
+  "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+  "origin": "https://security.localhost:18443",
+  "ports": {
+    "development": 18082,
+    "redirect": 18083,
+    "TLS": 18443
+  },
+  "config_sha256": "339cdca7f20bddce88d7e6e9996f03cac5d8cad73c33f664bee5c0968d237ccb",
+  "development_proxy_sha256": "e8524ad342f264c2882db0718d2f5ddefa23ae740c64d0567c5bddc74e9e0e38",
+  "production_proxy_sha256": "3a23f4f8b9ac1449227b97dbb527a1dedd4a12d5c99eb846e7770925806cf7c1",
+  "private_TLS_generated": true,
+  "accounts_explicitly_rotated": true,
+  "old_sample_and_admin_logins_inactive": true,
+  "guarded_startup": true,
+  "source_target_unchanged": true,
+  "acceptance_not_yet_qualified": true
+}

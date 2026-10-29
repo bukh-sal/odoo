@@ -1,0 +1,48 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T10:09:14.063755+00:00",
+  "work_item": "G5-X08/SEC02+04",
+  "acceptance": [
+    "SEC-02",
+    "SEC-04"
+  ],
+  "spec_sections": [
+    "11.3",
+    "11.4",
+    "15.1",
+    "15.2",
+    "15.3",
+    "20",
+    "25.3"
+  ],
+  "host_base_commit": "f50b5f962ec4f9b98342af7b787e5c1dd1567886",
+  "source": "final-audit-native.json",
+  "checks": {
+    "HTTP": "HTTP-qualification.json",
+    "rate_TLS": "rate-TLS-qualification.json",
+    "native_error_compatibility": "native-rate-qualification.json",
+    "production_defaults": "production-preflight.json",
+    "operator_upload": "operator-upload-regression.json",
+    "protected_source_recording": "final-audit-native.json"
+  },
+  "windows_tests": 5,
+  "linux_tests": 5,
+  "skipped": 0,
+  "frozen_files": 87,
+  "native_application_image_unchanged": true,
+  "protected_deployments_unchanged": 4,
+  "remaining_G5_acceptance": [
+    "SEC-03",
+    "SEC-07",
+    "SEC-08",
+    "OPS-02",
+    "OPS-03"
+  ],
+  "limits": [
+    "Current fixed direct-edge local R1 topology only, not arbitrary proxy chains or external production deployment.",
+    "Local test certificate explicitly trusted by test client only; public issuance/renewal not claimed.",
+    "Actual native error parser/handler verified; no Owl dialog rendering observed.",
+    "Bounded known-secret/key/log-canary checks do not replace SEC03 release-wide scanning.",
+    "Canvas remains a minimal reference/test plugin; native list/form screens remain default."
+  ]
+}

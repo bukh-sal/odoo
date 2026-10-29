@@ -1,0 +1,23 @@
+{
+  "result": "owned_profiles_updated_only",
+  "profiles": [
+    {
+      "mode": "development",
+      "container_id": "a16bf09b129271d2dc22ad174d6aea0a4856868c2370231ac0cedba5f00709ed",
+      "old_sha256": "e8524ad342f264c2882db0718d2f5ddefa23ae740c64d0567c5bddc74e9e0e38",
+      "new_sha256": "9ed3dc963e823b395588561b408441a541e1f9709cc0e4987d9c7aafbc082ad6",
+      "nginx_syntax_and_reload_passed": true,
+      "change": "Add frozen RATE_LIMITED JSON/UUID/Retry-After for edge429; prior Host/Origin/cookie/native proxy behavior retained"
+    },
+    {
+      "mode": "production",
+      "container_id": "7d47c4db52dcf22dd8321b80817713f6a42a1f925775933597c447c835446b5e",
+      "old_sha256": "3a23f4f8b9ac1449227b97dbb527a1dedd4a12d5c99eb846e7770925806cf7c1",
+      "new_sha256": "3a333c87d22a7e71c1fab43c8c77f510dc275dd7675b682db619166e33b172c0",
+      "nginx_syntax_and_reload_passed": true,
+      "change": "Add frozen RATE_LIMITED JSON/UUID/Retry-After for edge429; prior Host/Origin/cookie/native proxy behavior retained"
+    }
+  ],
+  "backend_or_accounts_restarted": false,
+  "public_contract_changed": false
+}

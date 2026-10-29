@@ -1,0 +1,10 @@
+test_canonical_origin_and_port_are_kept_without_normalizing_bad_input (test_http_profile.HTTPProfileTests.test_canonical_origin_and_port_are_kept_without_normalizing_bad_input) ... ok
+test_checked_in_development_config_matches_reviewed_generator (test_http_profile.HTTPProfileTests.test_checked_in_development_config_matches_reviewed_generator) ... ok
+test_only_explicit_supported_profile_combinations_are_accepted (test_http_profile.HTTPProfileTests.test_only_explicit_supported_profile_combinations_are_accepted) ... ok
+test_origin_injection_path_userinfo_wildcards_and_ambiguous_ports_fail (test_http_profile.HTTPProfileTests.test_origin_injection_path_userinfo_wildcards_and_ambiguous_ports_fail) ... ok
+test_production_config_cannot_enable_db_listing_dev_or_untrusted_proxy (test_http_profile.HTTPProfileTests.test_production_config_cannot_enable_db_listing_dev_or_untrusted_proxy) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.014s
+
+OK

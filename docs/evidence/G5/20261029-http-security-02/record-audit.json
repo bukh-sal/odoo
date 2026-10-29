@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T10:12:20.065297+00:00",
+  "public_files_checked": 53,
+  "known_private_values_and_TLS_fragments_checked": 17,
+  "current_source_files": 5,
+  "frozen_files": 87,
+  "acceptance_passed": 81,
+  "acceptance_not_run": 18,
+  "limits": [
+    "Bounded recording scan only; SEC03 release-wide scan remains not_run."
+  ]
+}

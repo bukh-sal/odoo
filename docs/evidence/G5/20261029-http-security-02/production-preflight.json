@@ -1,0 +1,64 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T09:51:25.511752+00:00",
+  "positive": {
+    "result": "passed",
+    "site_id": "871c989d-8948-4857-a370-5256a61492de",
+    "image_id": "sha256:f2b4e8a5d84315007bba9f3e03b13b7ac4de330335da7a8f78be11c5c46b191a",
+    "release_digest": "sha256:528cd8e1a29ef18fbc368fdcf63759a7d8443fdbd954d4417a045626f82f8cc3",
+    "profile": "https://security.localhost:18443",
+    "private_configuration_matches": true,
+    "sample_logins_inactive": true,
+    "development_modules_absent": true,
+    "application_internal_nonroot_readonly": true,
+    "read_only": true,
+    "limits": [
+      "Qualified local single-host Docker adapter only; no production deployment or installation approval.",
+      "The OS operator must separately provision/review certificates, credentials, proxy volumes and exact executor authority."
+    ]
+  },
+  "negative_cases": [
+    {
+      "case": "untrusted_proxy",
+      "refused": true,
+      "live_configuration_not_changed": true
+    },
+    {
+      "case": "development_flag",
+      "refused": true,
+      "live_configuration_not_changed": true
+    },
+    {
+      "case": "different_private_config",
+      "refused": true,
+      "live_configuration_not_changed": true
+    },
+    {
+      "case": "retired_g5_alice",
+      "old_credentials_refused": true
+    },
+    {
+      "case": "retired_admin",
+      "old_credentials_refused": true
+    }
+  ],
+  "production_compose_resolved": {
+    "no_build": true,
+    "immutable_image": true,
+    "fixed_guarded_command": true,
+    "independent_pins": true,
+    "backend_ports_none": true,
+    "edge_loopback_by_default": true,
+    "TLS_volume_readonly": true
+  },
+  "source_sha256": {
+    "tools/http_profile.py": "23d372051fd78aba32fc49b8131c25f9994db01cd2f4a358d823f960887cc552",
+    "tools/production_preflight.py": "68e3c1616b3074cc4ed185666727554f10060897315ac5af6c703bf94a936a03",
+    "deploy/compose-production.yaml": "55f91131156ae995a3c2b62de35cd2361c898f4568ea50b8bb00d037b4fe8d8c",
+    "tests/test_http_profile.py": "f6dee6a03690d5a55783e8c600246e9eaf00d1427db1f9dccad3885d760a559a"
+  },
+  "limits": [
+    "Read-only preflight does not grant executor approval or publish an external production deployment.",
+    "Named accounts were explicitly rotated/initial accounts disabled in the owned test copy; no existing user account was changed."
+  ]
+}

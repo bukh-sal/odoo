@@ -1,0 +1,8 @@
+{
+  "result": "exact_existing_copy_continuation",
+  "failure": "Immutable image default UID10001 cannot seed root-owned new proxy volume",
+  "diagnosis": "Proxy config/TLS absent, copied DB/business/schema/54files present, source unchanged, no account provisioning or worker started",
+  "correction": "Explicit owner UID0 with dropped capabilities seeds only the new empty config volume; retain all existing DB/files/secrets",
+  "database_recreated": false,
+  "credentials_regenerated": false
+}

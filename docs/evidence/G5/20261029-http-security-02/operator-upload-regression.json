@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "operator_catalog_access_preserved": true,
+  "valid_CSRF_invalid_archive_reaches_validator": true,
+  "missing_CSRF_refused": true,
+  "actual_11MiB_invalid_upload_reaches_validator": true,
+  "negative_header_boundaries": [
+    {
+      "path": "/api/v1/operations/validate-upload",
+      "declared_length": 104857601,
+      "status": 413
+    },
+    {
+      "path": "/api/v1/workspace/settings",
+      "declared_length": 10485761,
+      "status": 413
+    }
+  ],
+  "no_native_installation_or_approval": true
+}

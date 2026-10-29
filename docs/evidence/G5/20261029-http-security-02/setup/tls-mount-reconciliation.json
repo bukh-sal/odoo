@@ -1,0 +1,13 @@
+{
+  "result": "corrected_owned_TLS_edge_running",
+  "diagnosis": "Stock nginx /var/run symlinks /run; tmpfs hid nested /run/mp-tls mount",
+  "old_container": "de111e86e3b4c17bdbecc413806ccc2cb772213c8f18205fbffa69b7bfca2e5d",
+  "new_container": "7d47c4db52dcf22dd8321b80817713f6a42a1f925775933597c447c835446b5e",
+  "old_retained_stopped_disconnected": true,
+  "only_owned_proxy_volume_changed": true,
+  "old_config_sha256": "3533682f13404916bb63543fdb710c0985ebf258dc6755e4949d7fe1fa894bbb",
+  "new_config_sha256": "3a23f4f8b9ac1449227b97dbb527a1dedd4a12d5c99eb846e7770925806cf7c1",
+  "TLS_path": "/etc/mp-tls",
+  "database_or_account_provisioning_repeated": false,
+  "TLS_regenerated": false
+}
