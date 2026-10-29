@@ -1,0 +1,75 @@
+{
+  "result": "passed",
+  "image_id": "sha256:4b270f6052fb38fce71fd889aee2e727b62d217046247c61c81e7ef12b297f4d",
+  "inventory_digest": "sha256:84d46adc667e15b294628bdccf0f238b84630b5ea3dd8288e4f9317867e6e22c",
+  "private_CRUD_denials": [
+    {
+      "model": "mp.job",
+      "method": "read",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.job",
+      "method": "create",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.job",
+      "method": "write",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.job",
+      "method": "unlink",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "read",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "create",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "write",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.outbox",
+      "method": "unlink",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.dispatch.control",
+      "method": "read",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.dispatch.control",
+      "method": "create",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.dispatch.control",
+      "method": "write",
+      "result": "AccessError"
+    },
+    {
+      "model": "mp.dispatch.control",
+      "method": "unlink",
+      "result": "AccessError"
+    }
+  ],
+  "native_list_form_contexts": [
+    "Alice A administrator",
+    "Alice B viewer",
+    "Bob B editor"
+  ],
+  "current_gateway_create_get_update_delete_and_CAS": true,
+  "only_new_suite_owned_note_deleted": true,
+  "Canvas_or_frontend_changes": false
+}

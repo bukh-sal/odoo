@@ -1,0 +1,30 @@
+{
+  "result": "failed",
+  "tests": 12,
+  "failures": [],
+  "errors": [
+    "g6_native_authorized.AuthorizedJobTests.test_current_membership_principal_and_user_rechecked_before_claim",
+    "g6_native_authorized.AuthorizedJobTests.test_feature_binding_and_installation_rechecked",
+    "g6_native_authorized.AuthorizedJobTests.test_foreign_and_missing_records_share_not_found",
+    "g6_native_authorized.AuthorizedJobTests.test_integration_grant_rechecked_before_dispatch",
+    "g6_native_authorized.AuthorizedJobTests.test_membership_role_revoked_between_compute_and_finalization",
+    "g6_native_authorized.AuthorizedJobTests.test_normalization_uses_original_native_user_and_safe_status",
+    "g6_native_authorized.AuthorizedJobTests.test_payload_cannot_supply_actor_role_user_site_or_consumer",
+    "g6_native_authorized.AuthorizedJobTests.test_resource_revision_change_conflicts_without_overwriting",
+    "g6_native_authorized.AuthorizedJobTests.test_semantic_dedup_preserves_first_trace_and_rejects_changed_input",
+    "g6_native_authorized.AuthorizedJobTests.test_status_requires_current_actor_workspace_resource_and_authority",
+    "g6_native_authorized.AuthorizedJobTests.test_technical_identity_needs_live_scoped_credential",
+    "g6_native_authorized.AuthorizedJobTests.test_viewer_cannot_write_but_can_read_own_workspace"
+  ],
+  "successful": false,
+  "image_id": "sha256:33039f49a410b9ff7a30a6dfdd36ba3196166de31d2a3b0e08f5eb970290ba91",
+  "inventory_digest": "sha256:d87534f39b5892687adcad2fefd2dbe2895da9ab97355730787b1a40ebbc34ce",
+  "project": "mp-r0-r1g613623537d6b4",
+  "database": "mp_disposable_r0_r1_g6_13623537d6b4",
+  "container": "mp-r0-r1g613623537d6b4-jobs-backend-01",
+  "native_test_sha256": "880f2c318d659175c1bcc6e4a19023840a808639c056aca14916d66f3594eec9",
+  "limits": [
+    "Native job authorization integration only; real runner process death, scoped events, external worker and queue-aware restore remain required.",
+    "Synthetic rows retained and dispatch paused; metadata temporarily changed by tests is restored. No full G6 acceptance credit."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "result": "confirmed_declarative_compatibility_gap",
+  "artifact_digest": "sha256:b2babb33f2e03ff3fdfe6441defc5c57db4015be0d1ee9893209e1d488cb2331",
+  "package_version": "0.2.4",
+  "declared_platform": ">=0.1,<0.2",
+  "accepted_environment": "0.1.0",
+  "missing_private_API": "mp_core.job_dispatch",
+  "old_core": "19.0.0.1.7",
+  "new_core_needed": "19.0.0.1.8",
+  "native_installation_attempted": false,
+  "curated_catalog_or_trust_changed": false,
+  "fixture_attempt": "Initial assertion incorrectly treated resolver plugins list as mapping; fixed assertion against actual returned descriptors, reused same extracted bytes, no extraction/native action replay.",
+  "decision": "Reject unpublished candidate. Introduce image-observed platform0.1.8 with legacy0.1.0 fallback; new Notes0.2.5 requires>=0.1.8,<0.2. Preserve old artifacts/locks."
+}

@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "diagnosis": "Docker default subnet pool exhausted after completed native bootstrap. Installer subsequently refused its core_only_ready precondition, before any plan/register/apply. First read-only network-inspection helper encountered null IPAM Config on host/none networks, before creating anything; corrected normalization and fresh read-only counts retained.",
+  "observed_counts": {
+    "core": "19.0.0.1.8",
+    "jobs": 0,
+    "outbox": 0,
+    "control": 0,
+    "principals": 4,
+    "installations": 0,
+    "reference_tables_absent": true
+  },
+  "resumed_only": "edge network and edge service",
+  "owned_network": "mp-r0-r1g6caddae299594_edge",
+  "explicit_subnet": "10.233.240.0/28",
+  "existing_networks_and_host_routes_checked": true,
+  "global_Docker_configuration_changed": false,
+  "existing_networks_or_volumes_removed": false,
+  "native_init_or_provision_replayed": false
+}

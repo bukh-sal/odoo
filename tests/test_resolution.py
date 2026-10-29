@@ -218,7 +218,12 @@ class Resolution(unittest.TestCase):
                 path = Path(directory) / (name + '.mplug')
                 path.write_bytes(raw)
                 catalog.append(ArtifactValidator(TrustPolicy('development', allow_unsigned_development=True)).verify(path).descriptor())
-            solution = resolve_release(catalog, [], ENVIRONMENT, {'org.example.canvas': '', 'org.example.notes_labels': ''})
+            # Current Notes jobs require the new platform/core API. Legacy
+            # catalog fixtures above retain their original0.1.0 environment.
+            with self.assertRaises(PlanningError):
+                resolve_release(catalog, [], ENVIRONMENT, {'org.example.canvas': '', 'org.example.notes_labels': ''})
+            environment=copy.deepcopy(ENVIRONMENT);environment['platform_version']='0.1.8'
+            solution = resolve_release(catalog, [], environment, {'org.example.canvas': '', 'org.example.notes_labels': ''})
             self.assertEqual(solution['native_order'], ['mp_example_notes', 'mp_example_canvas', 'mp_example_notes_labels'])
             self.assertEqual({item['contract_major'] for item in solution['bindings']}, {1, 2})
             self.assertEqual(len(solution['plugins']), 3)

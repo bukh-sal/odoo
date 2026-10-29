@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "tests": 15,
+  "failures": [],
+  "errors": [],
+  "successful": true,
+  "image_id": "sha256:4b270f6052fb38fce71fd889aee2e727b62d217046247c61c81e7ef12b297f4d",
+  "inventory_digest": "sha256:84d46adc667e15b294628bdccf0f238b84630b5ea3dd8288e4f9317867e6e22c",
+  "source_sha256": "506bf3bfc1ce572a885fa167583f0464276c7edc46a74fd0f815770bbf8fe477",
+  "reason": "Explicit semantic dedup must preserve qualified default enqueue/claims/fences/outbox behavior.",
+  "native_PostgreSQL_tests": 11,
+  "Linux_input_validation_tests": 4
+}

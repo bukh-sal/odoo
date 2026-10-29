@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "returncode": 0,
+  "tests": 47,
+  "modules": [
+    "tests.test_platform_compatibility",
+    "tests.test_resolution",
+    "tests.test_release_identity",
+    "tests.test_release_staging",
+    "tests.test_core_upgrade"
+  ],
+  "seconds": 25.172,
+  "diagnostics_sha256": "38fc236e07747866805c99cbf10fbe4a531674f8f0d3df67a94725fa305662fe",
+  "reason": "Prior uncaptured source-check process is terminal; its output handle expired before the result could be recovered. This captured verification is read-only and repeats no native operation."
+}

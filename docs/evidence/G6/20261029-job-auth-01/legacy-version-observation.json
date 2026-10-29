@@ -1,0 +1,8 @@
+{
+  "result": "passed_legacy_image_projection_exact",
+  "image_id": "sha256:07534ee7e8157944c51e2898518d61ceffe8a470d51184a6cf7313fb11b4fe47",
+  "generation": 2,
+  "observed_platform_version": "0.1.0",
+  "published_lock_and_full_metadata_exact": true,
+  "native_or_HTTP_mutations": 0
+}

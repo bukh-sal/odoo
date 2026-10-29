@@ -6,11 +6,12 @@ The app receives only a metadata proposal; OS approval re-observes its source.
 import copy
 import re
 
-from .contracts import normalize_manifest, validate,checked_path
+from .contracts import normalize_manifest, validate,checked_path,PACKAGE_VERSION
 from .plans import data_digest, release_lock
 from .resolution import PlanningError, resolve_release
 
 PUBLISHED_RELEASE_PROTOCOL=1
+PLATFORM_VERSION='0.1.8'
 
 
 def catalog_validation_digest(catalog):
@@ -61,11 +62,18 @@ def runtime_inputs(runtime,catalog):
                 raise PlanningError('Image native source differs from independently validated package bytes')
         selected.append(matches[0])
     provided = {item['manifest']['runtime'].get('addon_name') for item in selected}
-    environment = {'platform_version': '0.1.0', 'native_runtime': 'odoo-19',
+    # Select the immutable image's version, not the host reader's version.
+    # Old images retain the exact platform0.1.0 meaning in their published lock.
+    platform_version=runtime.get('platform_version','0.1.0')
+    if not isinstance(platform_version,str) or not PACKAGE_VERSION.fullmatch(platform_version):
+        raise PlanningError('Invalid image platform version')
+    if platform_version!='0.1.0' and runtime.get('native_manifests',{}).get('mp_core',{}).get('version')!='19.0.'+platform_version:
+        raise PlanningError('Image platform/native core version mismatch')
+    environment = {'platform_version': platform_version, 'native_runtime': 'odoo-19',
         'markers': runtime['markers'], 'accepted_wheel_tags': runtime['accepted_wheel_tags'],
         'core_addons': sorted(set(runtime['inventory']['native_addons']) - provided)}
     patches = runtime['inventory'].get('generated_patches', [])
-    provenance = {'platform_version': '0.1.0', 'upstream_commit': runtime['inventory']['policy']['upstream_commit'],
+    provenance = {'platform_version': platform_version, 'upstream_commit': runtime['inventory']['policy']['upstream_commit'],
         'native_patch_set_digest': data_digest(patches), 'core_inventory_digest': runtime['inventory_digest'],
         'python_lock_digest': runtime['python_lock_digest'],
         'python_runtime': {'version': runtime['python'], 'architecture': 'linux/' + runtime['architecture'], 'marker_environment': runtime['markers']}}

@@ -109,13 +109,15 @@ def set_control(cr, site_id, release_digest, state):
     return cr.fetchone()[0]
 
 
-def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120):
+def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None):
     if not isinstance(scope, DispatchScope):
         raise QueueError('Validated private dispatch scope required')
     _name(handler); _bounded(version, 1, 1000); _bounded(max_attempts, 1, 16); _bounded(timeout_seconds, 1, 86400)
     if effect_mode not in {'idempotent', 'reconcile'} or not isinstance(key, str) or not re.fullmatch(r'[A-Za-z0-9_.:-]{1,128}', key):
         raise QueueError('Invalid job effect or deduplication policy')
     data, digest = _json(payload)
+    if deduplication is not None:
+        _, digest = _json(deduplication)
     generation = control(cr, scope.site_id, scope.release_digest)
     identity = [scope.site_id, scope.workspace_id, scope.actor_id, scope.installation_id, handler, version, key]
     public_id = str(uuid4())
@@ -238,7 +240,7 @@ def effect_started(cr, value):
 
 
 def fail(cr, value, code, *, retryable=False):
-    if code not in {'DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED','FORBIDDEN','PLUGIN_SUSPENDED','CONFLICT','INTERNAL_ERROR'} or type(retryable) is not bool:
+    if code not in {'DEPENDENCY_UNAVAILABLE','DEADLINE_EXCEEDED','FORBIDDEN','PLUGIN_SUSPENDED','CONFLICT','INTERNAL_ERROR','VALIDATION_FAILED','NOT_FOUND'} or type(retryable) is not bool:
         raise QueueError('Safe registered failure code required')
     row = _lock(cr, value)
     state = ('outcome_unknown' if row['effect_mode']=='reconcile' and row['effect_started'] else

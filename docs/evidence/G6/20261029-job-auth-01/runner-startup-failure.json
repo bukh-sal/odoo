@@ -1,0 +1,14 @@
+{
+  "result": "confirmed_startup_defect_before_claim",
+  "image_id": "sha256:33039f49a410b9ff7a30a6dfdd36ba3196166de31d2a3b0e08f5eb970290ba91",
+  "inventory_digest": "sha256:d87534f39b5892687adcad2fefd2dbe2895da9ab97355730787b1a40ebbc34ce",
+  "project": "mp-r0-r1g613623537d6b4",
+  "job_id": "b663c771-5aec-4396-9736-6eb5e2d710ac",
+  "attempts": 0,
+  "native_business_revision": 1,
+  "children_terminal": true,
+  "dispatch": "paused",
+  "diagnosis": "Pinned Odoo19 namespace package requires its official core initialization. Bare import odoo provides neither tools nor modules.",
+  "fix": "Import Registry from odoo.modules.registry and config from odoo.tools after immutable guards. No upstream edit.",
+  "next_experiment": "Build corrected candidate03. Its package/core/dispatch code remains exact; qualify actual runner startup and OS kill/reclaim on one distinct fresh owned site. Preserve both prior G6 sites/queues; populated queue-aware lifecycle remains F-01e."
+}

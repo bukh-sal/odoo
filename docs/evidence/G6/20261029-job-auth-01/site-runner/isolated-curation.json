@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "artifact": {
+    "addon": "mp_example_notes",
+    "digest": "sha256:5046d1d4fae70943d3fcee04e581ca61129933b1290f8ed5d2b1d0c84e221133",
+    "file": "org.example.notes-0.2.5.mplug",
+    "plugin_id": "org.example.notes",
+    "version": "0.2.5"
+  },
+  "platform_version": "0.1.8",
+  "catalog_entries": 8,
+  "trust_generation": 4,
+  "global_catalog_and_trust_unchanged": true,
+  "rejected_024_not_curated": true
+}

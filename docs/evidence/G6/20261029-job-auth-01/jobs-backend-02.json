@@ -1,0 +1,20 @@
+{
+  "result": "failed",
+  "tests": 12,
+  "failures": [],
+  "errors": [
+    "g6_native_authorized.AuthorizedJobTests.test_foreign_and_missing_records_share_not_found (resource=True)",
+    "g6_native_authorized.AuthorizedJobTests.test_foreign_and_missing_records_share_not_found (resource=False)"
+  ],
+  "successful": false,
+  "image_id": "sha256:33039f49a410b9ff7a30a6dfdd36ba3196166de31d2a3b0e08f5eb970290ba91",
+  "inventory_digest": "sha256:d87534f39b5892687adcad2fefd2dbe2895da9ab97355730787b1a40ebbc34ce",
+  "project": "mp-r0-r1g613623537d6b4",
+  "database": "mp_disposable_r0_r1_g6_13623537d6b4",
+  "container": "mp-r0-r1g613623537d6b4-jobs-backend-02",
+  "native_test_sha256": "a029abd54d3caaa70457fc9e10c6b2375485999cc41cfb9b4fcd87dd52ddd22c",
+  "limits": [
+    "Native job authorization integration only; real runner process death, scoped events, external worker and queue-aware restore remain required.",
+    "Synthetic rows retained and dispatch paused; metadata temporarily changed by tests is restored. No full G6 acceptance credit."
+  ]
+}

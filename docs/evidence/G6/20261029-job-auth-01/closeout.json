@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "utc": "2026-10-29T14:58:49.033773+00:00",
+  "acceptance_counts": {
+    "passed": 88,
+    "not_run": 11,
+    "excluded_R2": 5,
+    "failed": 0,
+    "invalidated": 0
+  },
+  "rough_gate_progress_percent": 83,
+  "specification_unchanged": true,
+  "frozen_files": 87,
+  "runtime_sources_match_qualification": true,
+  "protected_configurations": 8,
+  "known_credential_sources": 144,
+  "public_files_scanned": 63,
+  "credential_findings": 0,
+  "goal": "active; F-01b2 next, G6/G7 incomplete"
+}

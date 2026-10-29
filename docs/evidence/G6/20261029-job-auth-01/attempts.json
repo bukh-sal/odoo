@@ -1,0 +1,20 @@
+{
+  "attempts": [
+    {
+      "label": "jobs-backend-01",
+      "result": "fixture_setup_error_before_any_business_test",
+      "signature": "Environment has no attribute with_context",
+      "diagnosis": "Trusted test helper used the recordset context API on an Environment. All twelve tests stopped in setUp before creating a Note or enqueueing a job. Native core/package code was not exercised and has not changed.",
+      "change": "Use the native Environment(context=...) API with its existing typed scope preserved.",
+      "next_experiment": "Read actual queue/Notes counts and paused dispatch, then run the corrected suite against the same existing site. Preserve failed child/logs; no build/install/database replay."
+    },
+    {
+      "label": "jobs-backend-02",
+      "result": "eleven_native_tests_passed_one_assertion_type_mismatch",
+      "signature": "Expected PublicError but both foreign and missing resources raise native MissingError: Resource unavailable",
+      "diagnosis": "The private native enqueue adapter retains Odoo's resource exception type. Both resource cases are indistinguishable and reveal no foreign record. The test incorrectly assumed an HTTP error projection at this private boundary. Runtime source remains unchanged.",
+      "change": "Assert native MissingError and the same fixed resource message for both cases.",
+      "next_experiment": "Run only the corrected foreign/missing test on the same retained site, then test the actual native job runner process. The optional read-only setup reconciliation command previously failed at PowerShell quoting before Python/SQL ran; no reconciliation result was claimed and no database mutation was replayed."
+    }
+  ]
+}

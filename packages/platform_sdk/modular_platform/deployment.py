@@ -46,10 +46,13 @@ inventory=json.loads((root/'distribution-inventory.json').read_text())
 native_manifests={name:ast.literal_eval((root/('odoo/addons' if name=='base' else 'addons')/name/'__manifest__.py').read_text()) for name in inventory['native_addons']}
 projection=root/'packages/platform_sdk/modular_platform/projection.py'
 protocol=0
+platform_version='0.1.0'
 if projection.is_file():
  for node in ast.parse(projection.read_text()).body:
   if isinstance(node,ast.Assign) and any(isinstance(target,ast.Name) and target.id=='PUBLISHED_RELEASE_PROTOCOL' for target in node.targets):
    protocol=ast.literal_eval(node.value)
+  if isinstance(node,ast.Assign) and any(isinstance(target,ast.Name) and target.id=='PLATFORM_VERSION' for target in node.targets):
+   platform_version=ast.literal_eval(node.value)
 if type(protocol) is not int:raise ValueError('Invalid static published-release protocol')
 bad=[name for name,digest in inventory['files'].items() if not (root/name).is_file() or hashlib.sha256((root/name).read_bytes()).hexdigest()!=digest]
 folders=('addons','odoo','packages')
@@ -66,7 +69,7 @@ for distribution in importlib.metadata.distributions():
     source={str(entry):hashlib.sha256(pathlib.Path(distribution.locate_file(entry)).read_bytes()).hexdigest() for entry in (distribution.files or []) if str(entry).endswith(('.py','.so','.dist-info/METADATA')) and pathlib.Path(distribution.locate_file(entry)).is_file()}
     digest='sha256:'+hashlib.sha256(json.dumps(source,sort_keys=True,separators=(',',':')).encode()).hexdigest()
     wheels.append({'name':distribution.metadata['Name'],'version':distribution.version,'kind':'runtime_distribution','requires_python':distribution.metadata.get('Requires-Python',''),'requires_dist':distribution.requires or [],'digest':digest})
-print(json.dumps({'inventory':inventory,'native_manifests':native_manifests,'published_release_protocol':protocol,'inventory_digest':'sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),'python_lock_digest':'sha256:'+runtime_lock,'python':platform.python_version(),'architecture':platform.machine(),'markers':default_environment(),'accepted_wheel_tags':[str(tag) for tag in sys_tags()],'python_metadata':sorted(wheels,key=lambda item:item['name'].lower()),'modified_files':bad,'unexpected_addon_files':sorted(actual-expected),'missing_addon_files':sorted(expected-actual)}))
+print(json.dumps({'inventory':inventory,'native_manifests':native_manifests,'published_release_protocol':protocol,'platform_version':platform_version,'inventory_digest':'sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),'python_lock_digest':'sha256:'+runtime_lock,'python':platform.python_version(),'architecture':platform.machine(),'markers':default_environment(),'accepted_wheel_tags':[str(tag) for tag in sys_tags()],'python_metadata':sorted(wheels,key=lambda item:item['name'].lower()),'modified_files':bad,'unexpected_addon_files':sorted(actual-expected),'missing_addon_files':sorted(expected-actual)}))
 """
 
 

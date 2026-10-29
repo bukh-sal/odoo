@@ -1,0 +1,83 @@
+{
+  "result": "passed",
+  "work_item": "F-01b1",
+  "utc": "2026-10-29T14:53:08.443662+00:00",
+  "source_commit_before_change": "62acd61c3d314fcf3f75f5f96eb14a2aef59100c",
+  "image_id": "sha256:4b270f6052fb38fce71fd889aee2e727b62d217046247c61c81e7ef12b297f4d",
+  "inventory_digest": "sha256:84d46adc667e15b294628bdccf0f238b84630b5ea3dd8288e4f9317867e6e22c",
+  "project": "mp-r0-r1g6caddae299594",
+  "database": "mp_disposable_r0_r1_g6_caddae299594",
+  "native_authorization_cases": 12,
+  "source_tests": 47,
+  "native_processes": 4,
+  "actual_SIGKILL_exit": 137,
+  "real_native_PostgreSQL_regression_tests": 11,
+  "Linux_input_tests": 4,
+  "HTTP_native_CRUD_denials": 12,
+  "native_list_form_contexts": 3,
+  "frozen_files": 87,
+  "protected_target_configs": 8,
+  "protected_G5_audit": true,
+  "old_G6_counts_exact": {
+    "notes": 11,
+    "outbox": 1,
+    "states": {
+      "held": 4,
+      "cancelled": 1,
+      "completed": 1,
+      "dead_letter": 2,
+      "outcome_unknown": 1
+    },
+    "dispatch": "paused",
+    "generation": 4
+  },
+  "old_authorization_site_metadata_exact": true,
+  "global_catalog_and_trust_exact": true,
+  "current_counts": {
+    "notes": 13,
+    "outbox": 1,
+    "states": {
+      "held": 4,
+      "cancelled": 1,
+      "completed": 3,
+      "dead_letter": 2,
+      "outcome_unknown": 1
+    },
+    "dispatch": "paused",
+    "generation": 6
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/job_runner.py": "1c9f4513793fd87f576de26371ef68297ea711ac7e2ecf8c68d2e42422bbed48",
+    "packages/platform_sdk/modular_platform/durable.py": "f88dee517236dc3558bb8152e47642b77c6d86d19f0626d9d6255b4ac0aeba82",
+    "packages/platform_sdk/modular_platform/projection.py": "59e12d41b5bfd27e7ec774f0e7c15ebece70e7105eb4c4d8358e9751007a3336",
+    "packages/platform_sdk/modular_platform/deployment.py": "9a8968f61355954b5564c8c1bb201350906536707a25c26f3a34f00ff6f5bba9",
+    "platform_addons/mp_core/job_dispatch.py": "24378087b39646c811ae60a8714cac500d63625feaf31739494a2d3114561475",
+    "platform_addons/mp_core/dispatch.py": "f0b7d4d738076f4f3478b531d7a009800f9889501edf81260350884e7591a0cb",
+    "platform_addons/mp_core/__manifest__.py": "66a847db5b9e653e042846258568c78eeb28424baf08e8ca40a317629927995d",
+    "platform_addons/mp_example_notes/jobs.py": "dde4fe53150d93100fe0aefb40413b6e77e54756331325402ba1893ea93cc4fc",
+    "platform_addons/mp_example_notes/services.py": "1fbe5bd129ca771b2d95f099eca98adbbe7699b2e8f775096521b1b0d0e221ca",
+    "platform_addons/mp_example_notes/models.py": "5eaa7a35f0e947ff4937c327d0ba463f5926333d0daff4671a5f253298ae96b7",
+    "platform_addons/mp_identity/scopes.py": "9fc8a82f40bfd532af856e40bbceb5296a7d37139296f4bb3181ca9794b5046b",
+    "platform_addons/mp_identity/release.py": "f2463661c9f1c95ed065552ae4be2aeb30118d17a160a54738928415a32dd52a"
+  },
+  "only_candidate02_to03_runtime_change": [
+    "packages/platform_sdk/modular_platform/job_runner.py"
+  ],
+  "same_exact_package_artifacts": true,
+  "public_files_scanned": 59,
+  "private_diagnostics_scanned": 150,
+  "known_credential_sources": 144,
+  "credential_findings": 0,
+  "acceptance": [
+    "JOB-01",
+    "JOB-02"
+  ],
+  "limits": [
+    "F-01b2 scoped producer/delivery/dedup/status event contracts remain open; no EVT acceptance passed.",
+    "Non-idempotent supported reconciliation and external worker/metadata lifecycle remain pending; JOB-03/SVC checks not passed.",
+    "G5 no-dispatch recovery still rejects populated queues. No populated-G6 upgrade/restore claim; F-01e remains required.",
+    "Candidate01 compatibility gap and candidate02 runner namespace defect retained. Corrected candidate03 tested on a distinct fresh site, no old database reset/upgrade bypass.",
+    "One test-helper context error and one private exception assertion correction are retained; source-bound eleven+one results, no full suite replay after runtime passed.",
+    "Native CRUD uses Odoo list/form views; Canvas and frontend remain unchanged."
+  ]
+}

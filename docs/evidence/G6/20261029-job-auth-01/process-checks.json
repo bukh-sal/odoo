@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "image_id": "sha256:4b270f6052fb38fce71fd889aee2e727b62d217046247c61c81e7ef12b297f4d",
+  "inventory_digest": "sha256:84d46adc667e15b294628bdccf0f238b84630b5ea3dd8288e4f9317867e6e22c",
+  "project": "mp-r0-r1g6caddae299594",
+  "bad_pin_denied_before_native_import": true,
+  "normal_job": "608c8133-c1bc-4030-8987-3dcafbb7969f",
+  "normal_attempts": 1,
+  "killed_job": "fc00f5c7-df1c-4f8e-bee9-bb56bb71b2b6",
+  "actual_exit_code": 137,
+  "business_revision_at_death": 1,
+  "reclaimed_attempts": 2,
+  "reclaimed_business_revision": 2,
+  "original_user_write_uid": true,
+  "stale_original_claim_denied": true,
+  "all_children_terminal": true,
+  "dispatch": "paused",
+  "limits": [
+    "Native runner proof only. Scoped events/external worker/lifecycle/queue-aware recovery remain pending. All job and business rows retained."
+  ]
+}
