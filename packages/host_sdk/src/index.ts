@@ -71,3 +71,39 @@ export interface MountedPage {
 export interface PluginPageModule {
     mount(input:{element:HTMLElement;host:PluginHost;route:RouteSnapshot;signal:AbortSignal}): MountedPage | Promise<MountedPage>;
 }
+
+/** Additive event wire contract; existing HostEvent/facade remain UI major1. */
+export type EventJSON = null | boolean | number | string | readonly EventJSON[] | {readonly [key:string]:EventJSON};
+export interface DomainEventEnvelope {
+    readonly id:UUID; readonly topic:string; readonly schema_version:number;
+    readonly owner_plugin_id:string; readonly aggregate_id:UUID; readonly aggregate_sequence:number|null;
+    readonly site_id:UUID; readonly workspace_id:UUID; readonly occurred_at:string;
+    readonly correlation_id:UUID; readonly causation_id:UUID|null;
+    readonly payload:Readonly<Record<string,EventJSON>>;
+}
+export interface EventReceipt {readonly delivery_id:UUID;readonly receipt:UUID;readonly generation:number}
+export interface EventDelivery {
+    readonly id:UUID;readonly receipt:UUID;readonly generation:number;readonly attempt:number;
+    readonly lease_expires_at:string;readonly event:DomainEventEnvelope;
+}
+export interface EventDeliveryStatus {
+    readonly id:UUID;readonly event_id:UUID;readonly state:'pending'|'leased'|'acknowledged'|'dead_letter';
+    readonly attempts:number;readonly replays:number;readonly error_code:null|'ACK_EXPIRED'|'CONSUMER_FAILED';
+}
+type EventRequestBase={readonly protocol:1;readonly request_id:UUID};
+type EventSubscriptionRequest=EventRequestBase & {readonly subscription_id:UUID};
+type EventResultBase={readonly protocol:1;readonly subscription_id:UUID};
+export type EventTransportRequest =
+    | EventRequestBase & {readonly kind:'subscribe_request';readonly topic:string;readonly idempotency_key:UUID}
+    | EventSubscriptionRequest & {readonly kind:'poll_request';readonly limit:number}
+    | EventSubscriptionRequest & {readonly kind:'ack_request';readonly receipts:readonly EventReceipt[]}
+    | EventSubscriptionRequest & {readonly kind:'status_request'}
+    | EventSubscriptionRequest & {readonly kind:'replay_request';readonly event_ids:readonly UUID[]}
+    | EventSubscriptionRequest & {readonly kind:'close_request'};
+export type EventTransportResult =
+    | EventResultBase & {readonly kind:'subscribe_result';readonly topic:string;readonly expires_at:string;readonly replay_window_seconds:604800;readonly ack_lease_seconds:15;readonly max_attempts:5;readonly max_replays:3}
+    | EventResultBase & {readonly kind:'poll_result';readonly deliveries:readonly EventDelivery[];readonly has_more:boolean;readonly dead_letter_count:number;readonly next_poll_ms:number}
+    | EventResultBase & {readonly kind:'ack_result';readonly acknowledged:readonly UUID[]}
+    | EventResultBase & {readonly kind:'status_result';readonly state:'active'|'closed'|'expired';readonly deliveries:readonly EventDeliveryStatus[];readonly truncated:boolean}
+    | EventResultBase & {readonly kind:'replay_result';readonly replayed:readonly UUID[]}
+    | EventResultBase & {readonly kind:'close_result';readonly closed:true};

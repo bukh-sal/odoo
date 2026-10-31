@@ -1,0 +1,52 @@
+<!doctype html><meta charset="utf-8"><title>G6 event transport qualification</title>
+<h1>G6 event transport qualification</h1>
+<p>Disposable test harness. Uses the deployed event client and real scoped API. Canvas is unchanged.</p>
+<button id="start">Start transport</button><button id="emit" disabled>Emit owned Note</button><button id="replay" disabled>Replay delivered event</button><button id="pause" disabled>Pause and emit</button><button id="resume" disabled>Resume delivery</button><button id="dispose" disabled>Dispose and emit</button><button id="workspace" disabled>Read workspace B</button>
+<pre id="results" role="status">Ready</pre>
+<a href="/app/org.example.notes/">Native Odoo record screens</a>
+<script type="module">
+import {DomainEventClient} from '/mp_shell/static/src/event_client.js';
+const results=document.querySelector('#results');const log=message=>results.textContent+='\n'+message;
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const check=(condition,message)=>{if(!condition)throw Error(message);};
+let client,context,binding,csrf,release,workspace,spaces,entry,generation=1,active=true;
+let note,eventID,pausedNote,polls=0,callbacks=new Map(),events=new Map(),errors=[];
+async function api(path,body,extra={}){
+ const response=await fetch(path,{method:body?'POST':'GET',credentials:'same-origin',headers:{'Content-Type':'application/json',...(workspace?{'X-MP-Workspace':workspace}:{}),...(release?{'X-MP-Client-Release':release}:{}),...(csrf?{'X-CSRFToken':csrf}:{}),...extra},...(body?{body:JSON.stringify(body)}:{})});
+ const value=await response.json();if(!response.ok)throw Object.assign(Error(value.error?.code||'HTTP_ERROR'),value.error);return value.data;
+}
+async function event(kind,values){return api('/api/v1/events',{protocol:1,kind:kind+'_request',request_id:crypto.randomUUID(),subscription_id:entry.subscription.subscription_id,...values});}
+async function service(method,input){return api('/api/v1/services/org.example.notes.documents/'+method,{api_version:'1.0',request_id:crypto.randomUUID(),idempotency_key:crypto.randomUUID(),input},{'X-MP-Binding':binding.binding_id});}
+async function until(predicate){for(let n=0;n<40;n++){if(await predicate())return;await wait(250);}throw Error('Timed out waiting for observed transport result');}
+function mount(){
+ const captured=generation;client=new DomainEventClient({context,generation,request:async(message,declared,{signal})=>{
+  if(message.kind==='poll_request')polls++;
+  const response=await fetch('/api/v1/events',{method:'POST',credentials:'same-origin',signal,headers:{'Content-Type':'application/json','X-MP-Workspace':workspace,'X-MP-Client-Release':release,'X-CSRFToken':csrf,'X-MP-Binding':declared.binding_id},body:JSON.stringify(message)});
+  const value=await response.json();if(!response.ok)throw Object.assign(Error(value.error?.code||'HTTP_ERROR'),value.error);return value.data;
+ },isCurrent:()=>active&&captured===generation,onError:error=>{errors.push(error.code);log('TRANSPORT ERROR '+error.code);}});
+ client.subscribe('org.example.notes.changed',message=>{
+  check(message.generation===generation,'wrong mount generation');check(Object.isFrozen(message)&&Object.isFrozen(message.data),'callback data mutable');
+  check(Object.keys(message.data).sort().join(',')==='change,note_id,revision','payload contains unexpected fields');
+  events.set(message.data.note_id,message.id);callbacks.set(message.data.note_id,(callbacks.get(message.data.note_id)||0)+1);
+ },binding);entry=[...client.entries.values()][0];
+}
+async function contextFor(space){workspace=space;const value=await api('/api/v1/context?plugin_id=org.example.notes');context=value.context;binding=value.bindings.find(b=>b.alias==='documents');csrf=value.csrf_token;check(context.workspace_id===space,'wrong context');}
+function button(id,next,action){document.querySelector('#'+id).onclick=async()=>{document.querySelector('#'+id).disabled=true;try{await action();check(errors.length===0,'unexpected transport errors');log('PASS '+id);if(next)document.querySelector('#'+next).disabled=false;}catch(error){log('FAIL '+id+' '+error.message);}};}
+button('start','emit',async()=>{
+ const session=await api('/api/v1/session');csrf=session.csrf_token;release=(await api('/api/v1/client-release')).token;spaces=await api('/api/v1/workspaces');
+ const config=await (await fetch('/__events__/fixture.json')).json();await contextFor(config.workspaceA);mount();await until(()=>entry.subscription&&polls>0&&!entry.busy);
+ log('Deployed client mounted with real Alice session, CSRF, release and current workspace binding.');
+});
+button('emit','replay',async()=>{note=await service('create',{title:'Browser event owned '+crypto.randomUUID(),body:'Synthetic content stays outside event payload'});await until(()=>events.has(note.id));check(callbacks.get(note.id)===1,'first effect count');eventID=events.get(note.id);log('Real committed Note event delivered exactly once; frozen minimized HostEvent generation verified.');});
+button('replay','pause',async()=>{
+ await until(async()=>{const s=await event('status',{});return s.deliveries.some(d=>d.event_id===eventID&&d.state==='acknowledged');});
+ await event('replay',{event_ids:[eventID]});client.resumeTimers();await until(async()=>{const s=await event('status',{});return s.deliveries.some(d=>d.event_id===eventID&&d.state==='acknowledged'&&d.replays===1);});check(callbacks.get(note.id)===1,'duplicate browser effect');log('Explicit real replay ACKed without repeating mount callback.');
+});
+button('pause','resume',async()=>{client.pause();pausedNote=await service('create',{title:'Paused browser owned '+crypto.randomUUID(),body:''});await wait(3000);check(!events.has(pausedNote.id),'callback while paused');log('Paused transport delivered no callbacks for committed event.');});
+button('resume','dispose',async()=>{client.resume();await until(()=>events.has(pausedNote.id));check(callbacks.get(pausedNote.id)===1,'resume effect count');log('Resumed current mount fetched retained event once.');});
+button('dispose','workspace',async()=>{client.dispose();active=false;const before=polls;const after=await service('create',{title:'After disposed browser owned '+crypto.randomUUID(),body:''});await wait(3000);check(!events.has(after.id)&&polls===before&&client.entries.size===0,'disposed transport remains active');log('Disposed client closed stream and stopped polls/callbacks; committed Note retained.');});
+button('workspace',null,async()=>{generation++;active=true;const config=await (await fetch('/__events__/fixture.json')).json();await contextFor(config.workspaceB);check(!context.capabilities.includes('org.example.notes:notes.write'),'expected viewer');mount();await until(()=>entry.subscription&&polls>0&&!entry.busy);
+ try{await service('create',{title:'Viewer must not create',body:''});throw Error('viewer created record');}catch(error){check(error.code==='FORBIDDEN','viewer denial code');}
+ client.dispose();active=false;log('Workspace B current viewer read path works and mutation is denied. Native list/form integration remains standard.');log('BROWSER TRANSPORT QUALIFICATION PASSED');
+});
+</script>

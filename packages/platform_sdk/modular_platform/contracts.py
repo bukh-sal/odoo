@@ -54,7 +54,42 @@ def load_json(raw):
         raise ContractError('Invalid JSON') from error
 
 
+def _event_transport_limits(value):
+    """Bound the new recursive DTO before schema traversal; no authority here."""
+    def visit(item,depth):
+        if depth>16:raise ContractError('Event transport exceeds JSON depth')
+        if isinstance(item,dict):
+            if len(item)>128 or any(not isinstance(key,str) for key in item):raise ContractError('Invalid event object')
+            for child in item.values():visit(child,depth+1)
+        elif isinstance(item,list):
+            if len(item)>128:raise ContractError('Invalid event array')
+            for child in item:visit(child,depth+1)
+    visit(value,1)
+    try:raw=rfc8785.dumps(value)
+    except Exception:raise ContractError('Invalid event JSON') from None
+    if len(raw)>65536:raise ContractError('Event message exceeds byte limit')
+    if not isinstance(value,dict):return
+    deliveries=value.get('deliveries',[]) if value.get('kind')=='poll_result' else []
+    if isinstance(deliveries,list):
+        for delivery in deliveries:
+            event=delivery.get('event') if isinstance(delivery,dict) else None
+            if isinstance(event,dict):
+                if len(rfc8785.dumps(event))>16384:raise ContractError('Event exceeds byte limit')
+                if event.get('topic')=='org.example.notes.changed' and isinstance(event.get('payload'),dict):
+                    payload=event['payload']
+                    if event.get('aggregate_id')!=payload.get('note_id') or event.get('aggregate_sequence')!=payload.get('revision'):
+                        raise ContractError('Inconsistent Notes event identity/revision')
+        for field in ['id','event']:
+            ids=[d.get('id') if field=='id' else d.get('event',{}).get('id') for d in deliveries if isinstance(d,dict) and (field=='id' or isinstance(d.get('event'),dict))]
+            if len(ids)!=len(set(str(ident) for ident in ids)):raise ContractError('Duplicate event delivery')
+    receipts=value.get('receipts',[]) if value.get('kind')=='ack_request' else []
+    if isinstance(receipts,list):
+        ids=[r.get('delivery_id') for r in receipts if isinstance(r,dict)]
+        if len(ids)!=len(set(str(ident) for ident in ids)):raise ContractError('Duplicate acknowledgement target')
+
+
 def validate(name, value):
+    if name=='event-transport':_event_transport_limits(value)
     schema = json.loads((CONTRACTS / (name + '.schema.json')).read_text())
     validator = Draft202012Validator(schema, format_checker=FORMAT_CHECKER)
     errors = sorted(validator.iter_errors(value), key=lambda e: str(e.path))

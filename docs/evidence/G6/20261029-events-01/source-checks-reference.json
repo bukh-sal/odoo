@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "returncode": 0,
+  "tests": 1,
+  "modules": [
+    "tests.test_resolution.Resolution.test_actual_three_reference_artifacts_resolve_without_import"
+  ],
+  "diagnostics_sha256": "221a20f675d86c21401b92568675db380ff8501c0dcabd5afe868f80cfbf2fee",
+  "limits": "Source/archive/CLI checks only. New event storage/native API/hooks/projection still require actual PostgreSQL/Odoo/HTTP/browser qualification before EVT acceptance."
+}

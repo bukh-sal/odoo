@@ -222,7 +222,8 @@ class Resolution(unittest.TestCase):
             # catalog fixtures above retain their original0.1.0 environment.
             with self.assertRaises(PlanningError):
                 resolve_release(catalog, [], ENVIRONMENT, {'org.example.canvas': '', 'org.example.notes_labels': ''})
-            environment=copy.deepcopy(ENVIRONMENT);environment['platform_version']='0.1.8'
+            from modular_platform.projection import PLATFORM_VERSION
+            environment=copy.deepcopy(ENVIRONMENT);environment['platform_version']=PLATFORM_VERSION
             solution = resolve_release(catalog, [], environment, {'org.example.canvas': '', 'org.example.notes_labels': ''})
             self.assertEqual(solution['native_order'], ['mp_example_notes', 'mp_example_canvas', 'mp_example_notes_labels'])
             self.assertEqual({item['contract_major'] for item in solution['bindings']}, {1, 2})

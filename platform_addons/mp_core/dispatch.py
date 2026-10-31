@@ -80,3 +80,16 @@ def authorize_bound(env,alias,method):
 
 def call_bound(env,alias,method,values):
     return authorize_bound(env,alias,method).invoke(values)
+
+
+def authorize_origin(env,scope,bound):
+    """Intersect a technical origin with a supported native provider chain."""
+    origin=scope.authenticated_installation_id
+    if not origin:return
+    env.cr.execute("""SELECT i.id FROM mp_plugin_installation i JOIN mp_workspace_plugin f ON f.installation_id=i.id
+        WHERE i.public_id=%s AND i.state='installed' AND f.workspace_id=%s AND f.availability='enabled' FOR SHARE OF i,f""",[origin,scope.workspace_id])
+    if not env.cr.fetchone():raise AccessError('Technical installation unavailable')
+    if origin!=bound.binding['provider_installation_id']:
+        env.cr.execute("""SELECT g.id FROM mp_plugin_grant g JOIN mp_plugin_installation i ON i.id=g.installation_id
+            WHERE i.public_id=%s AND g.workspace_id=%s AND g.capability=%s AND g.state='approved' FOR SHARE OF g""",[origin,scope.workspace_id,bound.spec.permission])
+        if not env.cr.fetchone():raise AccessError('Technical origin grant required')

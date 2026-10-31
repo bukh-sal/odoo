@@ -15,7 +15,9 @@ sys.path.insert(0, str(ROOT / 'tools'))
 sys.path.insert(0, str(ROOT / 'tests'))
 from modular_platform.artifacts import ArtifactValidator, TrustPolicy
 from modular_platform.catalog import Catalog
-from modular_platform.plans import check_bundle
+from modular_platform.plans import check_bundle,release_lock,data_digest
+from modular_platform.resolution import resolve_release
+from modular_platform.projection import PLATFORM_VERSION
 from reference_package import assemble
 from test_plans import base_state, ident, PROVENANCE, STAMP
 from test_resolution import ENVIRONMENT
@@ -44,7 +46,13 @@ class PlanningCLI(unittest.TestCase):
         catalog = Catalog(self.store, ArtifactValidator(TrustPolicy(approved_digests=frozenset(digests))))
         for path, digest in artifacts:
             catalog.add(path, expected_digest=digest)
-        self.document = {'state': base_state(), 'environment': ENVIRONMENT, 'provenance': PROVENANCE, 'python_metadata': [],
+        # Current archives require the registered-job API introduced in0.1.8.
+        # Model an already compatible empty core, not an implicit core upgrade.
+        environment={**copy.deepcopy(ENVIRONMENT),'platform_version':PLATFORM_VERSION}
+        provenance={**copy.deepcopy(PROVENANCE),'platform_version':PLATFORM_VERSION}
+        state=base_state();state['release_lock']=release_lock(resolve_release([],[],environment,{}),provenance,generation=1,created_at=STAMP)
+        state['release_digest']=data_digest(state['release_lock'])
+        self.document = {'state': state, 'environment': environment, 'provenance': provenance, 'python_metadata': [],
             'request': {'operation_type': 'install', 'requested': {'org.example.canvas': '>=0.1', 'org.example.notes_labels': '>=0.2'},
                 'targets': [{'installation_id': ident(100 + i), 'site_id': ident(20), 'workspace_id': ident(30), 'plugin_id': 'org.example.' + name, 'action': 'install'}
                             for i, name in enumerate(('notes', 'notes_labels', 'canvas'))],
@@ -109,6 +117,16 @@ class PlanningCLI(unittest.TestCase):
                 self.assertEqual(result.returncode, 2)
                 self.assertEqual(json.loads(result.stderr)['error'], 'VALIDATION_FAILED')
                 self.assertNotIn('Traceback', result.stderr)
+
+    def test_current_archives_refuse_legacy_platform_without_catalog_mutation(self):
+        before={p.relative_to(self.store).as_posix():p.read_bytes() for p in self.store.rglob('*') if p.is_file()}
+        legacy=copy.deepcopy(self.document);legacy['state']=base_state()
+        legacy['environment']['platform_version']='0.1.0';legacy['provenance']['platform_version']='0.1.0'
+        result=self.invoke(legacy)
+        self.assertEqual(result.returncode,2)
+        self.assertEqual(json.loads(result.stderr)['error'],'VALIDATION_FAILED')
+        self.assertNotIn('Traceback',result.stderr)
+        self.assertEqual(before,{p.relative_to(self.store).as_posix():p.read_bytes() for p in self.store.rglob('*') if p.is_file()})
 
 
 if __name__ == '__main__':

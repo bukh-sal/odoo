@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "checks": 12,
+  "limits": "Actual frontend validator/client semantics; native PostgreSQL/HTTP/browser integration remains required.",
+  "utc": "2026-10-29T16:25:30.750111+00:00",
+  "reason": "Monotonic request age and per-callback30s authority bound added; actual client state suite rerun after changed code, including two timing counterexamples.",
+  "command": [
+    "node",
+    "tests/test_event_client.mjs"
+  ],
+  "stdout": "PASS six golden results accepted; requests and unknown shapes rejected\nPASS strict calendar, payload identity, duplicate receipts and Unicode\nPASS byte and depth limits apply before callbacks\nPASS redelivery has one callback and ACKs each current receipt\nPASS one failed callback does not repeat a successful sibling effect\nPASS foreign workspace payload closes before any callback or ACK\nPASS retired generation ignores an already-completed transport reply\nPASS pause drops its old reply and resume fetches under a new controller\nPASS late creation after disposal is closed without payload polling\nPASS a reply older than30seconds cannot reach callbacks despite wall-clock drift\nPASS a slow callback cannot pass stale event authority to a later callback\nPASS unsubscribe and native wake subscription are disposed once\n{\"result\":\"passed\",\"checks\":12,\"limits\":\"Actual frontend validator/client semantics; native PostgreSQL/HTTP/browser integration remains required.\"}\n",
+  "stderr": "",
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/event_contract.js": "a0e274b42b0b59e550cc505a8f79fedeef74e870846e24800616855094be497f",
+    "platform_addons/mp_shell/static/src/event_client.js": "827f12f6ecfa2a1becf3ac1e4458b6183e3ee52b8cf535dd072fd3d4fca3d679",
+    "platform_addons/mp_shell/static/src/host.js": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+    "tests/test_event_client.mjs": "7dccbd8f250c50c62fd09248092c6d0a54def09be9e209823236e657fe6c6aa8"
+  }
+}

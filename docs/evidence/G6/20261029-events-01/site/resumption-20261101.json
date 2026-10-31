@@ -1,0 +1,35 @@
+{
+  "result": "terminal_success_reconciled",
+  "utc": "2026-10-31T23:30:42.873779+00:00",
+  "previous_goal_turn": "progress",
+  "technical_test": "native-technical-01.json",
+  "prior_native_tests": 12,
+  "technical_tests": 1,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "containers": [
+    {
+      "name": "/mp-r0-r1g64bb76636070f-db-1",
+      "id": "4709fdc65f4733dc9b37bb164c28e0d85d3ee94faa8678322766077b02996cc9",
+      "state": "exited",
+      "exit_code": 0,
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0"
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-app-release-269919fd488c4efe8d6edbe78b539c23",
+      "id": "b7a0b334118b6158145ca25db8536a54f0905f31575d8d1b0074b3f7339db0cf",
+      "state": "exited",
+      "exit_code": 0,
+      "image": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63"
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-edge-1",
+      "id": "eff382f3cdb0ff7f4b340c96787d228ccb48e74ed4c0111fb46f7ff206b6fd7f",
+      "state": "exited",
+      "exit_code": 0,
+      "image": "sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951"
+    }
+  ],
+  "preflight_correction": "Initial fixture assertion compared recorded worker ID to Docker name and stopped before mutation; reconciled exact full ID/name. Existing ordinary runtime local log driver preserved; transient native helpers use none.",
+  "action": "Restart these exact stopped containers; no create, initialize, install, migration or reset",
+  "acceptance_credit": false
+}

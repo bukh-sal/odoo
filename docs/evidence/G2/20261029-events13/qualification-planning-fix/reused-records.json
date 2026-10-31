@@ -1,0 +1,44 @@
+[
+  {
+    "record": "contracts.json",
+    "source": "docs/evidence/G2/20261029-events13/qualification/contracts.json",
+    "sha256": "a827c5236eba45956372206c2654d8ff930b68cc076d6c21ce99263d12591828",
+    "reason": "Passing source/schema/type consumer unchanged; no rerun after CLI-only fixture correction."
+  },
+  {
+    "record": "archives.json",
+    "source": "docs/evidence/G2/20261029-events13/qualification/archives.json",
+    "sha256": "dc7976f32a1f1afc5709812e966bb8095d352c8adec79c62b37c17aa0ba8d601",
+    "reason": "Passing source/schema/type consumer unchanged; no rerun after CLI-only fixture correction."
+  },
+  {
+    "record": "resolution.json",
+    "source": "docs/evidence/G2/20261029-events13/qualification/resolution.json",
+    "sha256": "57ff2623ad066991da72b49ce6b28a272f38e0e64816f96f94588237701eb326",
+    "reason": "Passing source/schema/type consumer unchanged; no rerun after CLI-only fixture correction."
+  },
+  {
+    "record": "plans.json",
+    "source": "docs/evidence/G2/20261029-events13/qualification/plans.json",
+    "sha256": "05454ef19a5ee7c2df8f7077bb2ec4873c95f787a482992298e11722dfe1e08b",
+    "reason": "Passing source/schema/type consumer unchanged; no rerun after CLI-only fixture correction."
+  },
+  {
+    "record": "client-release.json",
+    "source": "docs/evidence/G2/20261029-events13/qualification/client-release.json",
+    "sha256": "680ad929f756bb000244f15cab8bc5dd0987d3c51088d42c5e2c940f87120407",
+    "reason": "Passing source/schema/type consumer unchanged; no rerun after CLI-only fixture correction."
+  },
+  {
+    "record": "typescript.json",
+    "source": "docs/evidence/G2/20261029-events13/qualification/typescript.json",
+    "sha256": "c19d5b483712d17a3b8c9531cfeba0dada959984da522171c50c1346df7c5e56",
+    "reason": "Passing source/schema/type consumer unchanged; no rerun after CLI-only fixture correction."
+  },
+  {
+    "record": "freeze.json",
+    "source": "docs/evidence/G2/20261029-events13/qualification/freeze.json",
+    "sha256": "f348ff6994d128210d57d01be45b94ec282b7ea5507c99df49b5738f91a0144c",
+    "reason": "Passing source/schema/type consumer unchanged; no rerun after CLI-only fixture correction."
+  }
+]

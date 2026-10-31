@@ -1,0 +1,16 @@
+Ready
+Deployed client mounted with real Alice session, CSRF, release and current workspace binding.
+PASS start
+Real committed Note event delivered exactly once; frozen minimized HostEvent generation verified.
+PASS emit
+Explicit real replay ACKed without repeating mount callback.
+PASS replay
+Paused transport delivered no callbacks for committed event.
+PASS pause
+Resumed current mount fetched retained event once.
+PASS resume
+Disposed client closed stream and stopped polls/callbacks; committed Note retained.
+PASS dispose
+Workspace B current viewer read path works and mutation is denied. Native list/form integration remains standard.
+BROWSER TRANSPORT QUALIFICATION PASSED
+PASS workspace

@@ -19,7 +19,7 @@ from modular_platform import durable
 from modular_platform.contracts import ContractError, FORMAT_CHECKER, validate
 
 from .controllers import PublicError
-from .dispatch import CallFrame, authorize_bound
+from .dispatch import CallFrame, authorize_bound, authorize_origin
 
 
 @dataclass(frozen=True)
@@ -101,15 +101,7 @@ def _authorize(env,definition,alias):
         raise PublicError('CONFLICT')
     # An authenticated technical origin never gains a consumer/provider's
     # broader grants by traversing a supported native call chain.
-    origin=scope.authenticated_installation_id
-    if origin:
-        env.cr.execute("""SELECT i.id FROM mp_plugin_installation i JOIN mp_workspace_plugin f ON f.installation_id=i.id
-            WHERE i.public_id=%s AND i.state='installed' AND f.workspace_id=%s AND f.availability='enabled' FOR SHARE OF i,f""",[origin,scope.workspace_id])
-        if not env.cr.fetchone():raise AccessError('Technical installation unavailable')
-        if origin!=bound.binding['provider_installation_id']:
-            env.cr.execute("""SELECT g.id FROM mp_plugin_grant g JOIN mp_plugin_installation i ON i.id=g.installation_id
-                WHERE i.public_id=%s AND g.workspace_id=%s AND g.capability=%s AND g.state='approved' FOR SHARE OF g""",[origin,scope.workspace_id,bound.spec.permission])
-            if not env.cr.fetchone():raise AccessError('Technical origin grant required')
+    authorize_origin(env,scope,bound)
     return scope,release,bound
 
 

@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "checks": 10,
+  "limits": "Actual frontend validator/client semantics; native PostgreSQL/HTTP/browser integration remains required.",
+  "utc": "2026-10-29T16:19:03.671381+00:00",
+  "command": [
+    "node",
+    "tests/test_event_client.mjs"
+  ],
+  "stdout": "PASS six golden results accepted; requests and unknown shapes rejected\nPASS strict calendar, payload identity, duplicate receipts and Unicode\nPASS byte and depth limits apply before callbacks\nPASS redelivery has one callback and ACKs each current receipt\nPASS one failed callback does not repeat a successful sibling effect\nPASS foreign workspace payload closes before any callback or ACK\nPASS retired generation ignores an already-completed transport reply\nPASS pause drops its old reply and resume fetches under a new controller\nPASS late creation after disposal is closed without payload polling\nPASS unsubscribe and native wake subscription are disposed once\n{\"result\":\"passed\",\"checks\":10,\"limits\":\"Actual frontend validator/client semantics; native PostgreSQL/HTTP/browser integration remains required.\"}\n",
+  "stderr": "",
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/event_contract.js": "a0e274b42b0b59e550cc505a8f79fedeef74e870846e24800616855094be497f",
+    "platform_addons/mp_shell/static/src/event_client.js": "47da78525f08b79f79b960a4d4df751d5c7e7c3d9fe9185ec6b5b06507695df0",
+    "platform_addons/mp_shell/static/src/host.js": "9010deefe3d2d0cfba5eae9c5dd9452638cbfdb22c4ffb9e4a7942ae5660218b",
+    "tests/test_event_client.mjs": "1b426b5def056357ed0fecbf26b1d178549c5d16e550e6da796bd3f817502f31"
+  }
+}

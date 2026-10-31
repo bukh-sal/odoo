@@ -1,0 +1,49 @@
+{
+  "result": "passed",
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "checks": [
+    {
+      "name": "missing/invalid CSRF, stale client release and foreign Origin refused",
+      "result": "passed"
+    },
+    {
+      "name": "strict request schema rejects actor/workspace overrides and result kinds",
+      "result": "passed"
+    },
+    {
+      "name": "missing/invalid/unknown binding, mismatched Canvas boards binding and unknown topic refused",
+      "result": "passed"
+    },
+    {
+      "name": "real HTTP producer delivers minimized scoped event, ACK is idempotent and removes pending delivery",
+      "result": "passed"
+    },
+    {
+      "name": "foreign actor/workspace subscriptions and cross-workspace replay disclose no payload",
+      "result": "passed"
+    },
+    {
+      "name": "current viewer may read authorized events but cannot mutate standard records",
+      "result": "passed"
+    },
+    {
+      "name": "28 direct native CRUD attempts across all private event/job/outbox/control models denied",
+      "result": "passed"
+    },
+    {
+      "name": "native Odoo list/form available in three role contexts; committed CRUD/CAS emits update/delete history",
+      "result": "passed"
+    },
+    {
+      "name": "close idempotent, status closed and closed poll conflicts",
+      "result": "passed"
+    }
+  ],
+  "retained_passing_record": "site/HTTP-01.json",
+  "correction": "Owner closed stream is a current-state conflict409, not foreign/missing404; frozen protocol forbids delivery but does not require404. No runtime change or previous check replay.",
+  "limits": [
+    "HTTP only; browser/protected/privacy qualification still required before EVT acceptance.",
+    "Native pending revision and queue-aware recovery remain required."
+  ]
+}

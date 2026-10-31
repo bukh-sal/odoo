@@ -1,0 +1,39 @@
+{
+  "result": "failed",
+  "checks": [
+    {
+      "name": "missing/invalid CSRF, stale client release and foreign Origin refused",
+      "result": "passed"
+    },
+    {
+      "name": "strict request schema rejects actor/workspace overrides and result kinds",
+      "result": "passed"
+    },
+    {
+      "name": "missing/invalid/unknown binding, mismatched Canvas boards binding and unknown topic refused",
+      "result": "passed"
+    },
+    {
+      "name": "real HTTP producer delivers minimized scoped event, ACK is idempotent and removes pending delivery",
+      "result": "passed"
+    },
+    {
+      "name": "foreign actor/workspace subscriptions and cross-workspace replay disclose no payload",
+      "result": "passed"
+    },
+    {
+      "name": "current viewer may read authorized events but cannot mutate standard records",
+      "result": "passed"
+    },
+    {
+      "name": "28 direct native CRUD attempts across all private event/job/outbox/control models denied",
+      "result": "passed"
+    },
+    {
+      "name": "native Odoo list/form available in three role contexts; committed CRUD/CAS emits update/delete history",
+      "result": "passed"
+    }
+  ],
+  "error_class": "AssertionError",
+  "next": "Inspect owner-private HTTP trace and exact marker before continuing; no fixture or operation replay."
+}

@@ -1,0 +1,12 @@
+{
+  "project": "mp-r0-r1g64bb76636070f",
+  "database": "mp_disposable_r0_r1_g6_4bb76636070f",
+  "image": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "port": 18088,
+  "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+  "deployment_id": "0c96e0cf-b0ef-43b8-868b-1deb3cc6cd5f",
+  "empty_owned_volumes": true,
+  "no_existing_DB_or_filestore_copied": true,
+  "independent_new_control_store": true,
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231"
+}

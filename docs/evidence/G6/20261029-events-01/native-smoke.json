@@ -1,0 +1,31 @@
+{
+  "result": "failed",
+  "successful": false,
+  "checks": [
+    "actual producer and strict minimized API envelope",
+    "second actual connection sees no uncommitted producer/subscription/effect",
+    "same current receipt acknowledgement is idempotent",
+    "registered original-user native projection/tombstone/ACK",
+    "explicit replay cannot duplicate native effect"
+  ],
+  "all_business_event_and_receipt_rows_rolled_back": true,
+  "counts_after": {
+    "mp_outbox": 0,
+    "mp_event_subscription": 0,
+    "mp_event_delivery": 0,
+    "mp_event_consumption": 0,
+    "mp_event_consumer_state": 0,
+    "mp_example_note": 0,
+    "mp_example_note_event_summary": 0
+  },
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "project": "mp-r0-r1g64bb76636070f",
+  "database": "mp_disposable_r0_r1_g6_4bb76636070f",
+  "source_sha256": "977001cab1c78c5d224f78357c179fdb551d63126e11777e21f72f8bca1af9d8",
+  "limits": [
+    "Rollback-only real native API/import wiring check; not complete EVT acceptance.",
+    "No event/business/subscription/receipt/counter/state row committed; exact zero counts after rollback.",
+    "Committed producer/concurrent allocation/consumer retry/authorization/HTTP/browser/lifecycle/recovery qualification remains required."
+  ]
+}

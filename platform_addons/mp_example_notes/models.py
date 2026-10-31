@@ -38,7 +38,9 @@ class Note(models.Model):
         for values in values_list:
             if set(values)-{'title','body','workspace_id'}:raise AccessError('Only declared note input fields may be created')
             clean.append({**values,'author_id':scope.principal_id,'revision':1})
-        return super().create(clean)
+        records=super().create(clean)
+        records._emit_change('created')
+        return records
 
     def write(self,values):
         self._mp_guard('write')
@@ -53,16 +55,28 @@ class Note(models.Model):
             desired=expected_batch.get(str(record.id),expected) if isinstance(expected_batch,dict) else None
             if type(desired)is not int or desired!=record.revision:raise PublicError('CONFLICT',{'field':'revision','outcome':'not_started'})
             super(Note,record).write({**values,'revision':record.revision+1})
+        self._emit_change('updated')
         return True
 
     def unlink(self):
         self._mp_guard('unlink')
-        self.env.cr.execute('SELECT id,revision FROM mp_example_note WHERE id=ANY(%s) ORDER BY id FOR UPDATE',[self.ids])
+        self.env.cr.execute('SELECT id,revision,public_id FROM mp_example_note WHERE id=ANY(%s) ORDER BY id FOR UPDATE',[self.ids])
         expected=self.env.context.get('expected_revision');batch=self.env.context.get('expected_revisions',{})
-        for ident,revision in self.env.cr.fetchall():
+        deleted=[]
+        for ident,revision,public_id in self.env.cr.fetchall():
             desired=batch.get(str(ident),expected) if isinstance(batch,dict) else None
             if type(desired)is not int or desired!=revision:raise PublicError('CONFLICT',{'field':'revision','outcome':'not_started'})
-        return super().unlink()
+            deleted.append((public_id,revision+1))
+        result=super().unlink()
+        self._emit_change('deleted',deleted)
+        return result
+
+    def _emit_change(self,change,identities=None):
+        from odoo.addons.mp_core.events import emit
+        identities=identities if identities is not None else [(record.public_id,record.revision) for record in self]
+        for ident,revision in identities:
+            emit(self.env,'org.example.notes.changed',ident,dict(note_id=ident,revision=revision,change=change),
+                sequence=revision,action={'created':'create','updated':'write','deleted':'unlink'}[change])
 
     def _load_records_write(self,values):
         # Native imports retain their resolved database ID in the update values.

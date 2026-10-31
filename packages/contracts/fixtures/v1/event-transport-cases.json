@@ -1,0 +1,137 @@
+{
+  "valid": {
+    "subscribe_request": {
+      "protocol": 1,
+      "kind": "subscribe_request",
+      "request_id": "00000000-0000-4000-8000-000000000008",
+      "topic": "org.example.notes.changed",
+      "idempotency_key": "00000000-0000-4000-8000-000000000009"
+    },
+    "poll_request": {
+      "protocol": 1,
+      "kind": "poll_request",
+      "request_id": "00000000-0000-4000-8000-000000000008",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "limit": 50
+    },
+    "ack_request": {
+      "protocol": 1,
+      "kind": "ack_request",
+      "request_id": "00000000-0000-4000-8000-000000000008",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "receipts": [
+        {
+          "delivery_id": "00000000-0000-4000-8000-000000000006",
+          "receipt": "00000000-0000-4000-8000-000000000007",
+          "generation": 1
+        }
+      ]
+    },
+    "status_request": {
+      "protocol": 1,
+      "kind": "status_request",
+      "request_id": "00000000-0000-4000-8000-000000000008",
+      "subscription_id": "00000000-0000-4000-8000-000000000010"
+    },
+    "replay_request": {
+      "protocol": 1,
+      "kind": "replay_request",
+      "request_id": "00000000-0000-4000-8000-000000000008",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "event_ids": [
+        "00000000-0000-4000-8000-000000000001"
+      ]
+    },
+    "close_request": {
+      "protocol": 1,
+      "kind": "close_request",
+      "request_id": "00000000-0000-4000-8000-000000000008",
+      "subscription_id": "00000000-0000-4000-8000-000000000010"
+    },
+    "subscribe_result": {
+      "protocol": 1,
+      "kind": "subscribe_result",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "topic": "org.example.notes.changed",
+      "expires_at": "2026-10-29T16:00:00Z",
+      "replay_window_seconds": 604800,
+      "ack_lease_seconds": 15,
+      "max_attempts": 5,
+      "max_replays": 3
+    },
+    "poll_result": {
+      "protocol": 1,
+      "kind": "poll_result",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "deliveries": [
+        {
+          "id": "00000000-0000-4000-8000-000000000006",
+          "receipt": "00000000-0000-4000-8000-000000000007",
+          "generation": 1,
+          "attempt": 1,
+          "lease_expires_at": "2026-10-29T15:00:15Z",
+          "event": {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "topic": "org.example.notes.changed",
+            "schema_version": 1,
+            "owner_plugin_id": "org.example.notes",
+            "aggregate_id": "00000000-0000-4000-8000-000000000002",
+            "aggregate_sequence": 2,
+            "site_id": "00000000-0000-4000-8000-000000000003",
+            "workspace_id": "00000000-0000-4000-8000-000000000004",
+            "occurred_at": "2026-10-29T15:00:00Z",
+            "correlation_id": "00000000-0000-4000-8000-000000000005",
+            "causation_id": null,
+            "payload": {
+              "note_id": "00000000-0000-4000-8000-000000000002",
+              "revision": 2,
+              "change": "updated"
+            }
+          }
+        }
+      ],
+      "has_more": false,
+      "dead_letter_count": 0,
+      "next_poll_ms": 2000
+    },
+    "ack_result": {
+      "protocol": 1,
+      "kind": "ack_result",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "acknowledged": [
+        "00000000-0000-4000-8000-000000000006"
+      ]
+    },
+    "status_result": {
+      "protocol": 1,
+      "kind": "status_result",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "state": "active",
+      "deliveries": [
+        {
+          "id": "00000000-0000-4000-8000-000000000006",
+          "event_id": "00000000-0000-4000-8000-000000000001",
+          "state": "dead_letter",
+          "attempts": 5,
+          "replays": 0,
+          "error_code": "ACK_EXPIRED"
+        }
+      ],
+      "truncated": false
+    },
+    "replay_result": {
+      "protocol": 1,
+      "kind": "replay_result",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "replayed": [
+        "00000000-0000-4000-8000-000000000006"
+      ]
+    },
+    "close_result": {
+      "protocol": 1,
+      "kind": "close_result",
+      "subscription_id": "00000000-0000-4000-8000-000000000010",
+      "closed": true
+    }
+  }
+}

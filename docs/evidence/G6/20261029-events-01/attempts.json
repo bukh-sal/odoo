@@ -1,0 +1,34 @@
+{
+  "attempts": [
+    {
+      "step": "unpublished-source-version-edit",
+      "result": "partial_reversible_source_edit",
+      "diagnosis": "Core version/explicit bus dependency updated; a whitespace-specific PLATFORM_VERSION replacement assertion then stopped before projection and package versions. Inspected actual source and applied only remaining edits; no build/native action occurred."
+    },
+    {
+      "step": "source-checks",
+      "result": "manifest_serialization_error_before_native_execution",
+      "diagnosis": "The ad hoc source-version edit wrote JSON dictionaries with colons inside TOML inline tables for two unpublished manifests. Native code compiled, but actual archive/CLI tests correctly refused the malformed data. No image was built or installation attempted.",
+      "change": "Read the exact intended JSON values and serialize with the repository's existing reference_package.toml_value writer; TOML round-trip equality verified. Package versions/permissions/ownership intent unchanged.",
+      "next_experiment": "Re-run only affected archive tests, the actual-reference resolution case and five CLI cases. Preserve the31 passing source cases and original diagnostics; no runtime/DB reset or build replay."
+    },
+    {
+      "step": "source-checks-corrected",
+      "result": "23_passes_and_one_selector_error",
+      "diagnosis": "Corrected TOML makes all18 archive and five CLI cases pass. The selected single resolution method omitted the word three in its name; unittest loader refused it before execution.",
+      "change": "Inspected the actual test source and invoked only test_actual_three_reference_artifacts_resolve_without_import.",
+      "outcome": "source-checks-reference.json passes one real-reference case;55 distinct source tests are covered by retained31+23+1 passing results. No native/build action or broad suite replay."
+    },
+    {
+      "step": "owned-networks",
+      "result": "no_network_mutation_before_candidate_pool_exhausted",
+      "diagnosis": "The first candidate subnet list covered only192.168 networks, all already allocated as/20. No network command ran. Read actual Docker/host routes and prior successful10.233.240.0/28 fixture; added10.233 fallback, resumed only network creation on the same configured target. Both project-only runtime/edge networks now exist; no configure/init replay or pruning."
+    },
+    {
+      "step": "event-smoke-01",
+      "result": "five_native_event_checks_pass_then_existing_pending_revision_CAS_defect",
+      "diagnosis": "Real Note.write increments cached revision, but immediate same-transaction unlink checks SQL revision without flushing and falsely conflicts. All event/business/subscription/receipt/state rows rolled back to zero. Required actual model fix tracked separately, not marked passed.",
+      "next_experiment": "Explicitly flush the stored revision in the rollback-only event-history smoke, preserving the defect for versioned model fix and real lifecycle upgrade/requalification. Continue independent committed-producer/event checks; no reset or native install replay."
+    }
+  ]
+}

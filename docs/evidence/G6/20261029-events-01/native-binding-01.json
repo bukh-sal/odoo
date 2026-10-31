@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "tests": 1,
+  "failures": [],
+  "errors": [],
+  "successful": true,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "project": "mp-r0-r1g64bb76636070f",
+  "database": "mp_disposable_r0_r1_g6_4bb76636070f",
+  "container": "mp-r0-r1g64bb76636070f-events-binding-01",
+  "source_sha256": "2c71b6696c733b4859b8219c72085f55cf44b5f452f2e5b6dacabe083eaaa082",
+  "limits": [
+    "Actual native/PostgreSQL committed tests; HTTP/browser/protected-source qualification remains required before EVT acceptance.",
+    "Only suite-created subscriptions closed; every event/receipt/consumer effect retained, dispatch paused after suite.",
+    "Known same-transaction pending-revision unlink defect remains required ID-03 fix; no claim of full G6 lifecycle/recovery or R1 completion."
+  ]
+}

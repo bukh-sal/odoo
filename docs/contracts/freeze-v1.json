@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 12,
+  "revision": 13,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -185,6 +185,35 @@
       "g1": [
         "FEAS-03"
       ]
+    },
+    {
+      "name": "scoped domain-event delivery",
+      "owner": "F/G6",
+      "acceptance": [
+        "FREEZE-01",
+        "FREEZE-02",
+        "FREEZE-03",
+        "FREEZE-04",
+        "EVT-01",
+        "EVT-02",
+        "EVT-03",
+        "ID-03"
+      ],
+      "paths": [
+        "docs/architecture-decisions/0031-scoped-domain-event-delivery.md",
+        "docs/contracts/events-v1.md",
+        "packages/contracts/v1/event-transport.schema.json",
+        "packages/contracts/examples/v1/event-transport.json",
+        "packages/contracts/fixtures/v1/event-transport-cases.json",
+        "packages/host_sdk/tests/event_transport.ts",
+        "tests/test_event_contracts.py",
+        "packages/host_sdk/src/index.ts",
+        "packages/platform_sdk/modular_platform/contracts.py"
+      ],
+      "g1": [
+        "FEAS-01",
+        "FEAS-04"
+      ]
     }
   ],
   "files": {
@@ -195,6 +224,8 @@
     "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
     "docs/architecture-decisions/0009-operator-ui-contract.md": "ad2dceb9b186e69aa9629a72e6998a7bd0d742d5e06a09abcc0550d3a4e59cc2",
     "docs/architecture-decisions/0020-manager-inspection-contract.md": "49cb3cc370f9260872589464d9cf7f7821027db0c60b900adf9274f15846fb60",
+    "docs/architecture-decisions/0031-scoped-domain-event-delivery.md": "08b375d518301c1f63a4d3b501f98a9595f33c749680cd86dbcb117c74fe438e",
+    "docs/contracts/events-v1.md": "ca0914b5da964ab09a53b07d2eec7015b0205f8a7f8b242c5336e5425103e7f9",
     "docs/contracts/protocol-v1.md": "669a2b3cc2a49b751305e1a9ccf7a5120bcb42abc5079e076c82050e2ca29275",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
@@ -203,6 +234,7 @@
     "packages/contracts/examples/v1/document-v2.json": "17b3a0ab8b67f2ca07967a770db34ff20f8925de28601bd71c5ed87dbd6031c4",
     "packages/contracts/examples/v1/draft-snapshot.json": "7f6527d05cc27bad35fe6322f08f427f60d6be307b67327228f7e00e4cdc1ccb",
     "packages/contracts/examples/v1/endpoint.json": "ba813564ad9c211eed25ae1e8ed8e86f90b38e26a15d2fed73bd3bf7ac2cbdb8",
+    "packages/contracts/examples/v1/event-transport.json": "16ab351af78496e6ba22127cf29fcad6d8be424776ca35b6df175ab1b04c9115",
     "packages/contracts/examples/v1/host-context.json": "601702177fe55f49f1d2cf981aa2bd2ed0887e24ca8e75a64c282baad04fb178",
     "packages/contracts/examples/v1/lifecycle-impact.json": "a2716a997e64fba31525b7e35dd8eda1f125424aaab6e60bcd90b2beb77b663e",
     "packages/contracts/examples/v1/lifecycle-impact/unknown.json": "1a812f020859289dca7650f8c5a998958aaa43a91d4a580dff750de1388cb811",
@@ -235,6 +267,7 @@
     "packages/contracts/examples/v1/workspace-context.json": "1b5e659cb7092a5a2c9acf8fc37af1bd5ebe88c0df06edf29df3286c00249a28",
     "packages/contracts/examples/v1/workspace-membership.json": "b2dc5c75e9fc1de611091e98e3d5062c028a1cf915d575152b868925e0c54c86",
     "packages/contracts/examples/v1/workspace-settings.json": "8cba194f68ff327eb3df08b0b5de10e5890e8b6be7e2554749cfc29af3e1b296",
+    "packages/contracts/fixtures/v1/event-transport-cases.json": "5943fae1f3707857d1d47c385affe97a5f4e3ddc7143dff49c981cb568963046",
     "packages/contracts/v1/approval.schema.json": "e3bc5c1df267bde93828aa347cbfafdebea25170c5d13622d66dc40fd1e8dc49",
     "packages/contracts/v1/binding.schema.json": "125cfd9f5b8f93c16ba09208e3750fcdf06ce08129460d405c87d082b8aff7cf",
     "packages/contracts/v1/boards.schema.json": "4503e757d58d5515683c746d8239b8e197f631a99631f6c8a2ce508f8fa36710",
@@ -244,6 +277,7 @@
     "packages/contracts/v1/documents.schema.json": "00d503e7204b215537cceb0cad7a5b55bb2d600fbcd481552d40468d406f4465",
     "packages/contracts/v1/draft-snapshot.schema.json": "7f13456a2ec3e22ed19d6423dd82aceaa15ed0c134bc7e1b7252c92de1f8fc12",
     "packages/contracts/v1/endpoint.schema.json": "edf6ea539ce98c8230e2ed332a22d7c599eb65986e86877ce2d0effda360723a",
+    "packages/contracts/v1/event-transport.schema.json": "f90b6d124a86563bbb0a1d3fd3bd9840517cf10b3f99392a527fd1c34ac8f562",
     "packages/contracts/v1/host-context.schema.json": "a0c4ad4c83d2d386a6a9b4787880cab491870eabc5b14adf9b4ed856647da7a9",
     "packages/contracts/v1/lifecycle-impact.schema.json": "82c0a23ee4b8978c62fb37dec2aa85612008fdc7f90a22cf1ec1b57cc26b7d79",
     "packages/contracts/v1/manager-view.schema.json": "1e9e15c72642911ab197b2ca08c8f48335e8127545fc3debffb0de1abbfd07f1",
@@ -265,13 +299,15 @@
     "packages/contracts/v1/workspace-settings.schema.json": "b3301aa450a7f762ebd67f38b92dc4ceb08a0287dd436828f0e48cd89cd81e29",
     "packages/host_sdk/package-lock.json": "3f0ee0040552022f928c4bfdb2c6d7a4973cfca5d10d104f5485b4332398729b",
     "packages/host_sdk/package.json": "e0d066d961a7931d70c71696cd17bac70b2d6f9c1b548ae50cee9677038dde87",
-    "packages/host_sdk/src/index.ts": "a8077b8b1e676a737a217bb3ff61bba8db981dd956a05fd9032a3eb4fe0db3b2",
+    "packages/host_sdk/src/index.ts": "fcd029574cf03f19f43573304791ad67ed75aa527dd94681da465db7705706d9",
+    "packages/host_sdk/tests/event_transport.ts": "7e49b183d56ed5c450f011d72f58b8c93b36b7c8ce305d13d1ab53b7c34285ee",
     "packages/host_sdk/tests/plain_page.ts": "2205df447eec8f6731f944e22a3e437e050a9ca08db392bc531c982783575966",
     "packages/host_sdk/tsconfig.json": "bcedc5e08a7fba258b29e5703e2167c271c9097c647033a572aefb198f701772",
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
-    "packages/platform_sdk/modular_platform/contracts.py": "ead741611efa47b62f438da221cc9585bb89b42acb8c4077436e9bbf4afecc9c",
+    "packages/platform_sdk/modular_platform/contracts.py": "175fadaca2c52ef8cb476eb48922ef0986285efb2e50795a2fbad3329e7d8337",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
     "tests/test_contracts.py": "14d99ae494bce780d54e26c28e815101fa88dfb1a9086eb132cb0b57c0dfc9c8",
+    "tests/test_event_contracts.py": "8318a2e843c6b3387e92d464f07b4109f08c9e4bf8da665773d2c0c4a25155e7",
     "tests/test_manager_contracts.py": "d63c67d345698532236ad1136a8ef0a0ec84baa7f299e356241f77d080c903a4",
     "tests/test_operation_contracts.py": "befb8a09e11989981642b56e06a896218f29fb5a0dcf310ae9a628d6d3faee87",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a"

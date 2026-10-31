@@ -1,0 +1,24 @@
+{
+  "gate": "G2",
+  "result": "failed",
+  "utc": "2026-10-29T15:19:17.707548+00:00",
+  "contract_major": 1,
+  "revision": 13,
+  "frozen_files": 94,
+  "inventory_sha256": "17effadeae81f9ce88b6075ed20e465e896ec4a80b82f81ab3743fa096e0fc24",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0031 adds scoped durable event messages, minimized envelopes, strict limits, twelve golden messages and additive wire types; existing facade, JSON fixtures, plan golden and token contracts preserved.",
+  "runtime_qualification": "No runtime consumer or deployment changed. Native producer/delivery/consumer and browser transport still require actual G6 rollback, out-of-order commit, duplicate, revocation and disposal evidence before EVT acceptance.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "133e5dd8b8c0958511c1df4ee85dcfb936f66d85"
+}

@@ -10,8 +10,11 @@ import { ConfirmationDialog } from '@web/core/confirmation_dialog/confirmation_d
 import { NativeInteractions } from './native_interactions';
 import { browser } from '@web/core/browser/browser';
 import { ClientReleaseFence,isReleaseError,releaseError } from './client_release';
+import { DomainEventClient } from './event_client';
 
 registry.category('command_categories').add('mp_platform',{name:'Platform'});
+// Trusted UI routing declarations; server binding/topic checks remain authority.
+for(const plugin of ['org.example.notes','org.example.notes_labels','org.example.canvas'])registry.category('mp.event_bindings').add(plugin+':org.example.notes.changed','documents');
 
 let workspace = null;
 let generation = 0;
@@ -40,8 +43,8 @@ function freeze(value) {
     return value;
 }
 const words={
-    'en-US':{workspace:'Workspace',notes:'Notes',settings:'Settings',export:'Export notes',search:'Commands',theme:'Theme',language:'Language',back:'All notes',retry:'Try again',empty:'Select a workspace to begin',subtitle:'Your ideas, in one place.',saved:'Saved',light:'Light',dark:'Dark'},
-    'ar':{workspace:'مساحة العمل',notes:'الملاحظات',settings:'الإعدادات',export:'تصدير الملاحظات',search:'الأوامر',theme:'المظهر',language:'اللغة',back:'كل الملاحظات',retry:'إعادة المحاولة',empty:'اختر مساحة عمل للبدء',subtitle:'أفكارك في مكان واحد.',saved:'تم الحفظ',light:'فاتح',dark:'داكن'},
+    'en-US':{workspace:'Workspace',notes:'Notes',settings:'Settings',export:'Export notes',search:'Commands',theme:'Theme',language:'Language',back:'All notes',retry:'Try again',empty:'Select a workspace to begin',subtitle:'Your ideas, in one place.',saved:'Saved',light:'Light',dark:'Dark',eventsUnavailable:'Live updates unavailable. Refresh the page to retry.',eventsReview:'Some workspace updates could not be applied.',retryUpdates:'Retry updates'},
+    'ar':{workspace:'مساحة العمل',notes:'الملاحظات',settings:'الإعدادات',export:'تصدير الملاحظات',search:'الأوامر',theme:'المظهر',language:'اللغة',back:'كل الملاحظات',retry:'إعادة المحاولة',empty:'اختر مساحة عمل للبدء',subtitle:'أفكارك في مكان واحد.',saved:'تم الحفظ',light:'فاتح',dark:'داكن',eventsUnavailable:'التحديثات المباشرة غير متاحة. حدّث الصفحة لإعادة المحاولة.',eventsReview:'تعذر تطبيق بعض تحديثات مساحة العمل.',retryUpdates:'إعادة محاولة التحديثات'},
 };
 
 class Shell extends Component {
@@ -140,7 +143,7 @@ class Shell extends Component {
         this.operatorDenied=()=>{this.state.canOperate=false;};
         const shell=this;
         useSubEnv({config:{...this.env.config,breadcrumbs:[{get name(){return shell.state.nativeTitle||shell.state.title;}}],getDisplayName:()=>this.state.nativeTitle||this.state.title,setDisplayName:name=>this.state.nativeTitle=name,historyBack:()=>this.backToList()}});
-        this.themeListeners=new Set();this.localeListeners=new Set();this.eventListeners=new Map();
+        this.themeListeners=new Set();this.localeListeners=new Set();this.eventClients=new Map();
         this.transition=0;
         onError(e=>{
             const cause=e.cause||e;
@@ -154,8 +157,10 @@ class Shell extends Component {
             this.nativeDirty=false;this.draft=null;this.customDraft=null;this.state.settingsDirty=false;this.settingsRecovery=null;await this.activate();
         };
         this.onVisibility=async()=>{
-            if(document.hidden){this.state.paused=true;return;}
+            this.state.paused=true;for(const client of this.eventClients.values())client.pause();
+            if(document.hidden)return;
             await this.refreshAuthority();this.state.paused=false;
+            for(const client of this.eventClients.values())client.resume();
         };
         this.onBeforeUnload=event=>{
             if(this.state.releaseChanged&&!this.allowReleaseUnload&&(this.draft||this.customDraft||this.nativeDirty||this.state.settingsDirty)){
@@ -234,12 +239,13 @@ class Shell extends Component {
                 }
             }catch{this.notify('The page draft could not be captured.');}
         }
+        for(const client of this.eventClients.values())client.dispose();this.eventClients.clear();
         this.controller?.abort();for(const p of pendingNative)p.abort();pendingNative.clear();
         this.interactions.clear();
         this.state.nativeProps=null;this.bindings=[];
         this.state.detailActions=[];this.state.detailLabels=[];
         this.custom.el?.replaceChildren();
-        this.themeListeners.clear();this.localeListeners.clear();this.eventListeners.clear();
+        this.themeListeners.clear();this.localeListeners.clear();
         if(mounted){try{await mounted.dispose();}catch{this.fail(error('INTERNAL_ERROR'));}}
     }
     fail(e){if(e.name==='AbortError')return;if(e.code==='CONFLICT'&&this.nativeDirty&&this.draft)this.state.recoveryDraft=true;this.state.error={code:e.code||'INTERNAL_ERROR',message:e.message||'Page unavailable',request_id:e.request_id||crypto.randomUUID(),field:e.details?.field};}
@@ -344,10 +350,32 @@ class Shell extends Component {
         const subscribe=(set,callback)=>{if(captured!==generation)throw obsolete();set.add(callback);return()=>set.delete(callback);};
         return freeze({context:()=>context,navigate:target=>{ensure();if(target.params&&Object.keys(target.params).length)throw error('VALIDATION_FAILED');return this.openPage(target.pluginId,target.pageId,target.query);},services:{call:(alias,method,input,options)=>{ensure();return this.callService(alias,method,input,options,execution);}},
             commands:{execute:async(id,input)=>{ensure();if(id==='org.modularplatform.shell:command:export'){if(context.plugin_id!=='org.example.notes')throw error('FORBIDDEN');return this.exportNotes();}const command=execution.commands.find(command=>command.id===id);if(!command||!context.capabilities.includes(command.permission))throw error('FORBIDDEN');const handler=registry.category('mp.commands').get(command.handler,null);if(!handler)throw error('DEPENDENCY_UNAVAILABLE');return handler({host:this.facade(context,execution),input});}},
-            events:{subscribe:(topic,callback)=>{if(!['org.example.notes.changed'].includes(topic))throw error('FORBIDDEN');if(!this.eventListeners.has(topic))this.eventListeners.set(topic,new Set());return subscribe(this.eventListeners.get(topic),callback);}},
+            events:{subscribe:(topic,callback)=>{ensure();return this.subscribeEvent(context,execution,topic,callback,captured);}},
             notifications:{show:input=>{ensure();this.notify(input.message,input.severity);}},dialogs:{confirm:async input=>{ensure();return this.confirm(input);}},
             theme:{current:()=>this.theme(),subscribe:callback=>subscribe(this.themeListeners,callback)},locale:{current:()=>this.locale(),translate:key=>key==='notes.title'?this.t('notes'):this.t(key)},
         });
+    }
+    subscribeEvent(context,execution,topic,callback,captured){
+        const alias=registry.category('mp.event_bindings').get(context.plugin_id+':'+topic,null);
+        const binding=execution.bindings.find(b=>b.alias===alias);
+        if(!alias||!binding)throw error('FORBIDDEN');
+        const key=[context.principal_id,context.site_id,context.workspace_id,context.installation_id,captured].join('/');
+        let client=this.eventClients.get(key);
+        if(!client){
+            const warn=e=>this.notify(this.t('eventsUnavailable')+' ('+(e.code||'INTERNAL_ERROR')+')','warning');
+            client=new DomainEventClient({context,generation:captured,isCurrent:()=>captured===generation&&!this.controller.signal.aborted&&!releaseFence.blocked,
+                onError:warn,onDeadLetter:({retry})=>this.env.services.notification.add(this.t('eventsReview'),{type:'warning',buttons:[{name:this.t('retryUpdates'),primary:true,onClick:retry}]}),
+                wake:callback=>{const bus=this.env.services.bus_service;if(!bus)return()=>{};bus.subscribe('mp_domain_events',callback);bus.start().catch(()=>{});return()=>bus.unsubscribe('mp_domain_events',callback);},
+                request:async(message,selected,{signal})=>{
+                    const controller=new AbortController();const abort=()=>controller.abort();signal.addEventListener('abort',abort,{once:true});if(signal.aborted)abort();
+                    let expired=false;const timer=setTimeout(()=>{expired=true;controller.abort();},10000);
+                    try{return await this.json('/api/v1/events',message,{signal:controller.signal,headers:{'X-MP-Workspace':context.workspace_id,'X-MP-Binding':selected.binding_id,'X-MP-Consumer':context.installation_id}});}
+                    catch(e){if(expired)throw error('DEADLINE_EXCEEDED');throw e;}
+                    finally{clearTimeout(timer);signal.removeEventListener('abort',abort);}
+                }});
+            if(document.hidden||this.state.paused)client.pause();this.eventClients.set(key,client);
+        }
+        return client.subscribe(topic,callback,binding);
     }
     async executeDetailAction(action){
         const captured=generation;

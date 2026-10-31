@@ -1,0 +1,35 @@
+{
+  "protocol": 1,
+  "kind": "poll_result",
+  "subscription_id": "00000000-0000-4000-8000-000000000010",
+  "deliveries": [
+    {
+      "id": "00000000-0000-4000-8000-000000000006",
+      "receipt": "00000000-0000-4000-8000-000000000007",
+      "generation": 1,
+      "attempt": 1,
+      "lease_expires_at": "2026-10-29T15:00:15Z",
+      "event": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "topic": "org.example.notes.changed",
+        "schema_version": 1,
+        "owner_plugin_id": "org.example.notes",
+        "aggregate_id": "00000000-0000-4000-8000-000000000002",
+        "aggregate_sequence": 2,
+        "site_id": "00000000-0000-4000-8000-000000000003",
+        "workspace_id": "00000000-0000-4000-8000-000000000004",
+        "occurred_at": "2026-10-29T15:00:00Z",
+        "correlation_id": "00000000-0000-4000-8000-000000000005",
+        "causation_id": null,
+        "payload": {
+          "note_id": "00000000-0000-4000-8000-000000000002",
+          "revision": 2,
+          "change": "updated"
+        }
+      }
+    }
+  ],
+  "has_more": false,
+  "dead_letter_count": 0,
+  "next_poll_ms": 2000
+}

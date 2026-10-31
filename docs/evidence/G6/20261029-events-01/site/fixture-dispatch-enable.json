@@ -1,0 +1,6 @@
+{
+  "result": "passed",
+  "explicit_OS_fixture_bootstrap": true,
+  "initial_jobs_and_events_zero": true,
+  "no_claim_of_generic_populated_queue_lifecycle": true
+}

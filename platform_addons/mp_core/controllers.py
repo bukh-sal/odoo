@@ -91,6 +91,7 @@ def principal():
 
 def result(handler, version='1.0'):
     ident=str(uuid4())
+    request._mp_server_request_id=ident
     try:
         if not request.session.uid:raise PublicError('UNAUTHENTICATED')
         if protected_gateway(request.httprequest.path):require_client_release(request.env)

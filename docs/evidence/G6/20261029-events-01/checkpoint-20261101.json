@@ -1,0 +1,71 @@
+{
+  "result": "partial_qualification",
+  "utc": "2026-10-31T23:38:32.478152+00:00",
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "native_event_cases": 14,
+  "http_checks": 9,
+  "private_native_CRUD_denials": 28,
+  "affected_job_cases": 3,
+  "frontend_source_checks": {
+    "passed": 13,
+    "command": [
+      "node",
+      "tests/test_event_client.mjs"
+    ],
+    "observed_tool_chunk": "194bb4",
+    "new_case": "Default timer global receiver scheduling and cleanup",
+    "no_claim_of_new_immutable_image": true
+  },
+  "browser": {
+    "source_mode": "corrected worktree transport against unchanged deployed native backend via loopback-only test proxy",
+    "checks": 7,
+    "initial_deployed_failure": "Illegal invocation from unbound browser timer; screenshot retained",
+    "fixed": "globalThis timer wrappers; Shell source version19.0.0.1.9",
+    "fixture_authentication": "ordinary server-side native Alice login supplied browser fixture cookie; browser login UI not qualified",
+    "Canvas_changed": false,
+    "host_facade_native_bus_wiring_browser_qualification": "pending after controlled immutable upgrade"
+  },
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/event_client.js": "2ae37a90d51290826fb462e3f7b5eb41a2a526692eb28c302b966fb339a0aa8f",
+    "platform_addons/mp_shell/static/src/event_contract.js": "a0e274b42b0b59e550cc505a8f79fedeef74e870846e24800616855094be497f",
+    "platform_addons/mp_shell/__manifest__.py": "035773fffcc5a8b3260d3a92266e3a43a8da161d7abd42b7ed97cec7ac3de194",
+    "tests/test_event_client.mjs": "66da96fd34740e98960a115eb0a88d8a09f07126a4165dcb71385b3e16d28429",
+    "docs/evidence/G6/20261029-events-01/browser_harness.html": "84fafc0a20a1948ba23719c7e008452b96e7aa67b60bf46dbd4d052949ccfd24"
+  },
+  "queued_state": {
+    "jobs": 3,
+    "notes": 22,
+    "events": 28,
+    "dispatch": "paused",
+    "deliveries": 216,
+    "job_states": {
+      "completed": 1,
+      "dead_letter": 2
+    },
+    "consumptions": 3,
+    "subscriptions": 31,
+    "consumer_states": 1,
+    "dispatch_generation": 12,
+    "active_subscriptions": 0
+  },
+  "frozen_files": 94,
+  "protected_configuration_hashes": 9,
+  "protected_live_database_audit": "not rerun; unrelated prior sites found stopped and left untouched",
+  "privacy": {
+    "public_files": 104,
+    "known_values": 127,
+    "findings": 0
+  },
+  "acceptance_credit": false,
+  "rough_progress_percent": 83,
+  "required_remaining": [
+    "Queue-aware drain/restore/receipt generation reconciliation and independent resume, before populated fixture upgrade",
+    "Deploy new immutable timer fix and versioned native pending-revision fix via ordinary controlled upgrade; requalify host/browser/native batch",
+    "Protected data/source audit and full source-bound EVT qualification",
+    "External deterministic worker, endpoint/artifact/credential lifecycle, uncertain outcomes and full G6 integration",
+    "G7 complete acceptance/accessibility/RTL/performance/provenance/reinstall/recovery/release bundle"
+  ]
+}

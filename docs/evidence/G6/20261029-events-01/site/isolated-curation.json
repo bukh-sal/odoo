@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "artifacts": {
+    "org.example.notes": {
+      "addon": "mp_example_notes",
+      "digest": "sha256:95d74f8efae9ecf9ed1d59af496df577f912057c4b400ab0ef8ad280cf0c0ad4",
+      "file": "org.example.notes-0.2.6.mplug",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.6"
+    },
+    "org.example.notes_labels": {
+      "addon": "mp_example_notes_labels",
+      "digest": "sha256:e0e61f52454757397f8b6a3e6fea3e8d2860acb63bcd74b38653f95e43218211",
+      "file": "org.example.notes_labels-0.2.3.mplug",
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.3"
+    }
+  },
+  "trust_generation": 4,
+  "catalog_entries": 9,
+  "global_catalog_and_trust_unchanged": true
+}

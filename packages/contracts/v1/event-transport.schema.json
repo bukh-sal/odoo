@@ -1,0 +1,765 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/event-transport.schema.json",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/subscribe_request"
+    },
+    {
+      "$ref": "#/$defs/poll_request"
+    },
+    {
+      "$ref": "#/$defs/ack_request"
+    },
+    {
+      "$ref": "#/$defs/status_request"
+    },
+    {
+      "$ref": "#/$defs/replay_request"
+    },
+    {
+      "$ref": "#/$defs/close_request"
+    },
+    {
+      "$ref": "#/$defs/subscribe_result"
+    },
+    {
+      "$ref": "#/$defs/poll_result"
+    },
+    {
+      "$ref": "#/$defs/ack_result"
+    },
+    {
+      "$ref": "#/$defs/status_result"
+    },
+    {
+      "$ref": "#/$defs/replay_result"
+    },
+    {
+      "$ref": "#/$defs/close_result"
+    }
+  ],
+  "$defs": {
+    "json_value": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "number",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "string",
+          "maxLength": 2048
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/json_value"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        {
+          "type": "object",
+          "maxProperties": 32,
+          "additionalProperties": {
+            "$ref": "#/$defs/json_value"
+          }
+        }
+      ]
+    },
+    "notes_changed_payload": {
+      "type": "object",
+      "properties": {
+        "note_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "change": {
+          "enum": [
+            "created",
+            "updated",
+            "deleted"
+          ]
+        }
+      },
+      "required": [
+        "note_id",
+        "revision",
+        "change"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "topic": {
+          "type": "string",
+          "maxLength": 200,
+          "pattern": "^[a-z][a-z0-9_-]*(?:\\.[a-z][a-z0-9_-]*){2,15}(?![\\s\\S])"
+        },
+        "schema_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "owner_plugin_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*){2,}(?![\\s\\S])",
+          "maxLength": 180
+        },
+        "aggregate_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "aggregate_sequence": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            }
+          ]
+        },
+        "site_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "workspace_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 35,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]{1,6})?Z(?![\\s\\S])"
+        },
+        "correlation_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+            }
+          ]
+        },
+        "payload": {
+          "type": "object",
+          "maxProperties": 32,
+          "additionalProperties": {
+            "$ref": "#/$defs/json_value"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "topic",
+        "schema_version",
+        "owner_plugin_id",
+        "aggregate_id",
+        "aggregate_sequence",
+        "site_id",
+        "workspace_id",
+        "occurred_at",
+        "correlation_id",
+        "causation_id",
+        "payload"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "topic": {
+                "const": "org.example.notes.changed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "schema_version": {
+                "type": "integer",
+                "const": 1
+              },
+              "owner_plugin_id": {
+                "const": "org.example.notes"
+              },
+              "payload": {
+                "$ref": "#/$defs/notes_changed_payload"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "receipt": {
+      "type": "object",
+      "properties": {
+        "delivery_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "receipt": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "delivery_id",
+        "receipt",
+        "generation"
+      ],
+      "additionalProperties": false
+    },
+    "delivery": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "receipt": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "lease_expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 35,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]{1,6})?Z(?![\\s\\S])"
+        },
+        "event": {
+          "$ref": "#/$defs/event"
+        }
+      },
+      "required": [
+        "id",
+        "receipt",
+        "generation",
+        "attempt",
+        "lease_expires_at",
+        "event"
+      ],
+      "additionalProperties": false
+    },
+    "delivery_status": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "event_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "state": {
+          "enum": [
+            "pending",
+            "leased",
+            "acknowledged",
+            "dead_letter"
+          ]
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "replays": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "error_code": {
+          "enum": [
+            null,
+            "ACK_EXPIRED",
+            "CONSUMER_FAILED"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "event_id",
+        "state",
+        "attempts",
+        "replays",
+        "error_code"
+      ],
+      "additionalProperties": false
+    },
+    "subscribe_request": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "subscribe_request"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "topic": {
+          "type": "string",
+          "maxLength": 200,
+          "pattern": "^[a-z][a-z0-9_-]*(?:\\.[a-z][a-z0-9_-]*){2,15}(?![\\s\\S])"
+        },
+        "idempotency_key": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "request_id",
+        "topic",
+        "idempotency_key"
+      ],
+      "additionalProperties": false
+    },
+    "poll_request": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "poll_request"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "request_id",
+        "subscription_id",
+        "limit"
+      ],
+      "additionalProperties": false
+    },
+    "ack_request": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "ack_request"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "receipts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/receipt"
+          },
+          "minItems": 1,
+          "maxItems": 50,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "request_id",
+        "subscription_id",
+        "receipts"
+      ],
+      "additionalProperties": false
+    },
+    "status_request": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "status_request"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "request_id",
+        "subscription_id"
+      ],
+      "additionalProperties": false
+    },
+    "replay_request": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "replay_request"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+          },
+          "minItems": 1,
+          "maxItems": 50,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "request_id",
+        "subscription_id",
+        "event_ids"
+      ],
+      "additionalProperties": false
+    },
+    "close_request": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "close_request"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "request_id",
+        "subscription_id"
+      ],
+      "additionalProperties": false
+    },
+    "subscribe_result": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "subscribe_result"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "topic": {
+          "type": "string",
+          "maxLength": 200,
+          "pattern": "^[a-z][a-z0-9_-]*(?:\\.[a-z][a-z0-9_-]*){2,15}(?![\\s\\S])"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 35,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]{1,6})?Z(?![\\s\\S])"
+        },
+        "replay_window_seconds": {
+          "type": "integer",
+          "const": 604800
+        },
+        "ack_lease_seconds": {
+          "type": "integer",
+          "const": 15
+        },
+        "max_attempts": {
+          "type": "integer",
+          "const": 5
+        },
+        "max_replays": {
+          "type": "integer",
+          "const": 3
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "subscription_id",
+        "topic",
+        "expires_at",
+        "replay_window_seconds",
+        "ack_lease_seconds",
+        "max_attempts",
+        "max_replays"
+      ],
+      "additionalProperties": false
+    },
+    "poll_result": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "poll_result"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "deliveries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/delivery"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "has_more": {
+          "type": "boolean"
+        },
+        "dead_letter_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "next_poll_ms": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 10000
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "subscription_id",
+        "deliveries",
+        "has_more",
+        "dead_letter_count",
+        "next_poll_ms"
+      ],
+      "additionalProperties": false
+    },
+    "ack_result": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "ack_result"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "acknowledged": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+          },
+          "minItems": 0,
+          "maxItems": 50,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "subscription_id",
+        "acknowledged"
+      ],
+      "additionalProperties": false
+    },
+    "status_result": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "status_result"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "state": {
+          "enum": [
+            "active",
+            "closed",
+            "expired"
+          ]
+        },
+        "deliveries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/delivery_status"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "truncated": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "subscription_id",
+        "state",
+        "deliveries",
+        "truncated"
+      ],
+      "additionalProperties": false
+    },
+    "replay_result": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "replay_result"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "replayed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+          },
+          "minItems": 0,
+          "maxItems": 50,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "subscription_id",
+        "replayed"
+      ],
+      "additionalProperties": false
+    },
+    "close_result": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "integer",
+          "const": 1
+        },
+        "kind": {
+          "const": "close_result"
+        },
+        "subscription_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "closed": {
+          "const": true
+        }
+      },
+      "required": [
+        "protocol",
+        "kind",
+        "subscription_id",
+        "closed"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

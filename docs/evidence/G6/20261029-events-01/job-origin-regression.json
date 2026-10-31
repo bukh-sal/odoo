@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "tests": 3,
+  "failures": [],
+  "errors": [],
+  "successful": true,
+  "cases": [
+    "test_normalization_uses_original_native_user_and_safe_status",
+    "test_integration_grant_rechecked_before_dispatch",
+    "test_technical_identity_needs_live_scoped_credential"
+  ],
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "source_path": "docs/evidence/G6/20261029-job-auth-01/native_tests.py",
+  "source_sha256": "cb7353d29a7a0de017f61c05adf7f39294afaf26d2f1f0f4f7cd022d33e04b70",
+  "limits": [
+    "Affected shared technical-origin authorization and native producer hooks only; prior actual process-kill/reclaim evidence retained on its original image.",
+    "Suite-owned unfinished jobs held, every row retained, dispatch paused."
+  ]
+}
