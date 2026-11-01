@@ -9,7 +9,7 @@ services:
     pids_limit: 64
     mem_limit: 256m
     cpus: 1
-    tmpfs: [/tmp:rw,noexec,nosuid,size=16m,mode=0700,uid=10002,gid=10002]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m,mode=0700,uid=10002,gid=10002"]
     volumes:
       - type: bind
         source: ${MP_DOCUMENT_STATS_CONFIG:?operator-owned public-key-only config directory required}

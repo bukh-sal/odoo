@@ -1,0 +1,18 @@
+{
+  "result": "startup_pending_verified_wait_not_qualified",
+  "utc": "2026-11-01T03:07:38.279291+00:00",
+  "project": "mp-disposable-document-stats-01",
+  "container_short_id": "f84615e57840",
+  "last_authoritative_container_state": "Created; ps inspection762eb2",
+  "startup_session": 62164,
+  "inspection_session": 77631,
+  "latest_startup_poll": "69a2cf: still running, no terminal output",
+  "latest_inspection_poll": "88797a: still running, no terminal output",
+  "private_marker": ".local/document-stats/compose-01.json; starting",
+  "credential_material": "original host issuer outside public-config mount; reused once after pre-container YAML refusal",
+  "limits": [
+    "Do not rerun driver/startup, rotate keys, rebuild image, delete container or restart Docker.",
+    "Observe existing handles/container and reconcile daemon operation before continuation. No HTTP checks ran or SVC credit.",
+    "Native deployment/configuration was not mutated by this fixture."
+  ]
+}

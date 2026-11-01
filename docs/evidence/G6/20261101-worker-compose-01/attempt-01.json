@@ -1,0 +1,9 @@
+{
+  "result": "Compose_rejected_mount_before_container_creation",
+  "diagnosis": "Unquoted tmpfs options in a YAML flow list split at commas, so Docker received nosuid as a mount target. Exact project inventory confirms no container exists.",
+  "correction": "Quote the entire tmpfs string. Resume startup only with the existing private scope/public-key configuration and original host issuer key; verify those bytes/mapping before new launch label02.",
+  "image_unchanged": true,
+  "runtime_files_unchanged": true,
+  "original_driver": "run_attempt01.py",
+  "continuation": "run.py --resume-start"
+}
