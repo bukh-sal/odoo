@@ -1,0 +1,56 @@
+{
+  "result": "passed_actual_checkpointed_native_feature",
+  "action": "enable",
+  "operation_id": "68e5366a-74e9-4258-a0ef-1cdb4ad11dbe",
+  "plan_hash": "sha256:33c72a11d8ab90389564afba2e7e0ca914c3571c1ffc9daada7dfb687d0ead98",
+  "image": "sha256:04a4ffaf616b095110a805ff8238ecf39a0dfec3dbb542a4ac4f0437919ba1a9",
+  "configuration_generation": 11,
+  "release_unchanged": true,
+  "dispatch_generation": 52,
+  "native_views": {
+    "A": {
+      "state": "available",
+      "records": 24,
+      "native_list_form": true
+    },
+    "B": {
+      "state": "available",
+      "records": 1,
+      "native_list_form": true
+    },
+    "C": {
+      "state": "available",
+      "records": 4,
+      "native_list_form": true
+    }
+  },
+  "native_addon_still_installed": true,
+  "no_native_install_unload_or_migration": true,
+  "table_rows_preserved_except_exact_target_feature_policy_and_job_epochs": true,
+  "counts": {
+    "mp_job": 18,
+    "mp_outbox": 47,
+    "mp_principal": 4,
+    "mp_workspace": 3,
+    "mp_membership": 7,
+    "mp_example_note": 29,
+    "mp_plugin_grant": 4,
+    "mp_event_delivery": 251,
+    "mp_service_binding": 11,
+    "mp_workspace_plugin": 7,
+    "mp_event_consumption": 3,
+    "mp_event_subscription": 35,
+    "mp_service_credential": 3,
+    "mp_plugin_installation": 3,
+    "mp_event_consumer_state": 1,
+    "mp_example_canvas_board": 0,
+    "mp_example_note_event_summary": 3
+  },
+  "jobs_epoch_updated": 17,
+  "old_checkpoint_files_preserved": 46,
+  "exact_single_feature_audit": true,
+  "limits": [
+    "Actual native feature path with terminal queue history; no new pending/remote jobs in this cycle.",
+    "Installed native list/form model methods probed; no new browser rendering or external metadata/SVC proof."
+  ]
+}

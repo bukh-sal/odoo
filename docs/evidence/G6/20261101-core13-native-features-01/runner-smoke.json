@@ -1,0 +1,17 @@
+{
+  "result": "passed_actual_installed_readonly_runner",
+  "image": "sha256:04a4ffaf616b095110a805ff8238ecf39a0dfec3dbb542a4ac4f0437919ba1a9",
+  "job_id": "0c6416f4-9092-4f48-a54d-a9bdf4d6f226",
+  "completed_once": true,
+  "original_actor": true,
+  "no_source_or_handler_substitution": true,
+  "normal_worker_operator_cli": true,
+  "all_business_authority_event_and_old_job_rows_exact": true,
+  "job_counts": {
+    "before": 18,
+    "after": 19
+  },
+  "limits": [
+    "One read-only native job. No new lease/death experiment or external remote dispatch claim."
+  ]
+}
