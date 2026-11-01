@@ -4,8 +4,10 @@ The private operator API is implemented in
 `packages/platform_sdk/modular_platform/worker_publication.py`, with the dedicated
 Linux-volume projector in `worker_projection.py`. Normal application HTTP requests
 and artifact installation do not import these modules or obtain Docker authority.
-Thin CLI exposure and normal deployment/job-runner mount integration remain required
-before this is a supported installed profile.
+The normal `tools/modular.py worker` commands now expose this boundary. The
+inventoried guarded job process mounts authority read-only; the HTTP application
+does not need the issuer mount. Actual remote Notes integration and the full
+external recovery profile still require qualification.
 
 The publisher reuses the existing independent `OperatorStore` OS owner/allowlist,
 deployment/site authorization, approval lifetime and noninteractive policy. It keeps
@@ -42,9 +44,34 @@ Crash handling is deliberately fail-closed: intent precedes runtime projection,
 which precedes the host mirror and result receipt. If these disagree, neither a new
 plan nor a retry silently overwrites the actual volume. Inspect the intent, volume,
 mirror and worker, then reconcile explicitly. The full external recovery adapter is
-still required. A replacement empty volume cannot silently bootstrap an existing
-generation: approved bootstrap from current independent authority must be added to
-normal deployment integration. Never restore older authority from an app DB backup.
+still required. `prepare-bootstrap`, review and exact-hash `publish` initialize an
+empty, unattached replacement volume from CURRENT independently owned authority,
+preserving its generation, revocations and immutable key references. Changed
+authority, changed volume identity, nonempty volumes and replay are refused.
+Never restore older authority from an app DB backup. Full enabled-worker and
+failure/crash reconciliation remain part of the external recovery qualification.
+
+The CLI group takes `--store`, `--deployment-config` and `--worker-config` before
+its action. The worker configuration is an OS-owned JSON file with exactly
+`schema_version`, `deployment_id`, `site_id`, `runtime`, `authority_volume` and
+`helper_image`; the helper must be the current native deployment image. Runtime
+policy has the fixed project/service/network/public-config-volume/image/destination
+fields documented by `DockerWorkerObservation`. No HTTP input supplies these paths.
+
+Actions are `provision-keys`, `prepare`, `prepare-bootstrap`, `review`, `publish`
+and `run-job-once`. Key provisioning reads bounded files from private OS directories;
+it never prints private material or overwrites a different immutable key reference.
+Publication requires the exact reviewed hash, interactive confirmation or explicit
+`--noninteractive` with existing OS policy permission. A bootstrap plan copies
+current authority, without enabling endpoints or resetting their generations.
+
+`run-job-once` independently observes the current native image/DB/inventory, refuses
+outdated runner/native bridge code before any claim, compares the mounted authority
+with the current operator mirror, then starts the actual inventoried runner. The
+runner still reconstructs and freshly authorizes the saved original actor. Only this
+job process receives the authority mount. Its one-shot container auto-removes and
+private stdout/stderr remain in the control store. This mount selection does not
+claim to sandbox trusted Python plugins.
 
 `evidence/G6/20261101-worker-publication-01/qualification.json` records real Compose,
 reviewed generation1 publication, mounted signed HTTP, read-only enforcement, stopped
@@ -52,3 +79,11 @@ worker/generation2 revocation and mounted denial. Both test volumes and the work
 were retired. Six Linux OS/file/key negative/positive source checks also pass. This
 is an unregistered synthetic provider scope; it does not qualify the installed Notes
 bridge, metadata lifecycle, guarded runner, normal configuration rollout or recovery.
+
+Later evidence in `20261101-worker-operator-01` proves actual CLI bootstrap at
+generation2, current revocation preservation, wrong-hash/replay/nonempty refusal and
+old-runner refusal. `20261101-core11-upgrade-01` proves the normal immutable core1.11/
+SDK0.1.11 rollout, exact original data/history/file preservation, native Odoo views
+and one normal original-actor read-only job without source substitution. The
+authority volume is retained for integration; lease/error/revocation requalification
+and the committed external Notes path remain required.

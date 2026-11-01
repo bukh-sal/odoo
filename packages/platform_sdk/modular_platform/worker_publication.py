@@ -210,6 +210,55 @@ by inspecting its durable intent and current projection, never by replaying it.
             _write_new(self.records/(plan['operation_id']+'.plan.json'),plan)
             return dict(plan=plan,plan_hash=data_digest(plan))
 
+    def _material(self,document):
+        material={}
+        for entry in document['endpoints']:
+            endpoint=entry['descriptor'];validate('endpoint',endpoint)
+            for key in ['issuer_key_ref','public_key_ref']:
+                ref=endpoint[key];source=self.keys/(ref+'.pem');_not_link(source)
+                if not source.is_file() or source.stat().st_size>16384:
+                    if endpoint['state']=='enabled':raise OperatorError('Existing enabled runtime key material missing')
+                    continue
+                material[ref+'.pem']=source.read_text()
+            if endpoint['state']=='enabled':
+                _keypair(*(material[endpoint[k]+'.pem'].encode() for k in ['issuer_key_ref','public_key_ref']))
+        return material
+
+    def prepare_bootstrap(self):
+        policy=self._authorize()
+        if not self.sink:raise OperatorError('Explicit replacement authority projection required')
+        with ProcessLock(self.locks,'publication'):
+            document=self._document()
+            if document['generation']<1:raise OperatorError('Bootstrap requires current independently published authority')
+            material=self._material(document)
+            plan=dict(schema_version=1,kind='bootstrap',operation_id=str(uuid4()),deployment_id=self.deployment_id,site_id=self.site_id,
+                authorization_generation=policy['authorization_generation'],policy_version=policy['policy_version'],created_at=int(time.time()),
+                document=document,projection=copy.deepcopy(self.sink.descriptor),volume=self.sink.observe_empty(),
+                key_digests={k:hashlib.sha256(v.encode()).hexdigest() for k,v in material.items()})
+            _write_new(self.records/(plan['operation_id']+'.plan.json'),plan)
+            return dict(plan=plan,plan_hash=data_digest(plan))
+
+    def publish_bootstrap(self,review,*,exact_hash,noninteractive=False):
+        policy=self._authorize();plan=review['plan'];_uuid(plan['operation_id'])
+        if noninteractive and not policy['allow_noninteractive']:raise OperatorError('Explicit noninteractive operator policy required')
+        if review['plan_hash']!=exact_hash or data_digest(plan)!=exact_hash:raise OperatorError('Exact reviewed bootstrap hash required')
+        path=self.records/(plan['operation_id']+'.plan.json');_not_link(path)
+        if load_json(path.read_bytes())!=plan or plan.get('kind')!='bootstrap':raise OperatorError('Independent bootstrap plan differs')
+        if not 0<=int(time.time())-plan['created_at']<=min(policy['maximum_start_lifetime'],900):raise OperatorError('Bootstrap review expired')
+        if (plan['authorization_generation'],plan['policy_version'])!=(policy['authorization_generation'],policy['policy_version']):raise OperatorError('Operator authority changed')
+        with ProcessLock(self.locks,'publication'):
+            intent=self.records/(plan['operation_id']+'.intent.json')
+            if intent.exists():raise OperatorError('Bootstrap already attempted; inspect actual projection without replay')
+            if not self.sink or self.sink.descriptor!=plan['projection'] or self._document()!=plan['document']:
+                raise OperatorError('Current independent authority or projection changed')
+            if self.sink.observe_empty()!=plan['volume']:raise OperatorError('Replacement volume changed after review')
+            material=self._material(plan['document'])
+            if {k:hashlib.sha256(v.encode()).hexdigest() for k,v in material.items()}!=plan['key_digests']:raise OperatorError('Current key material changed after review')
+            _write_new(intent,dict(plan_hash=exact_hash,operator=policy['owner_identity'],state='bootstrap_started'))
+            self.sink.bootstrap(plan['document'],material,plan['operation_id'])
+            _write_new(self.records/(plan['operation_id']+'.result.json'),dict(plan_hash=exact_hash,state='bootstrapped',generation=plan['document']['generation']))
+            return dict(operation_id=plan['operation_id'],generation=plan['document']['generation'],state='bootstrapped')
+
     def publish(self,review,*,exact_hash,observer,noninteractive=False):
         policy=self._authorize()
         if noninteractive and not policy['allow_noninteractive']:raise OperatorError('Explicit noninteractive operator policy required')
@@ -237,13 +286,7 @@ by inspecting its durable intent and current projection, never by replaying it.
                 _keypair(*material)
             _write_new(intent,dict(plan_hash=exact_hash,operator=policy['owner_identity'],state='publication_started'))
             if self.sink:
-                material={}
-                for projected in plan['document']['endpoints']:
-                    for key in ['issuer_key_ref','public_key_ref']:
-                        ref=projected['descriptor'][key];source=self.keys/(ref+'.pem');_not_link(source)
-                        if not source.is_file() or source.stat().st_size>16384:raise OperatorError('Existing runtime key material missing')
-                        material[ref+'.pem']=source.read_text()
-                self.sink(self._document(),plan['document'],material,plan['operation_id'])
+                self.sink(self._document(),plan['document'],self._material(plan['document']),plan['operation_id'])
             _atomic(self.projection/'authority.json',plan['document'])
             _write_new(self.records/(plan['operation_id']+'.result.json'),dict(plan_hash=exact_hash,state='published',generation=plan['document']['generation']))
             return dict(operation_id=plan['operation_id'],generation=plan['document']['generation'],state=endpoint['state'])

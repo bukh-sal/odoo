@@ -1,0 +1,75 @@
+{
+  "result": "passed_exact_core11_candidate",
+  "image_id": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "inventory_digest": "sha256:4e87d6945e00d9e735b57ae7fd4e64c13b740ab5b77c1bd9892a14ddc618f401",
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.10",
+      "target_version": "19.0.0.1.11",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "ccd603eb0b862985a405274f7269bbe80ee44c0b6c1df16fcaf3fc31538a5056",
+      "target_sha256": "ea02156499ba612391b2f09e7d23ec219c778a5e8ae0ee9d298fdc011a7ab510"
+    },
+    {
+      "path": "addons/mp_core/external_authority.py",
+      "previous_sha256": null,
+      "target_sha256": "575cdd16c4f8df86be1dd5e888391effcf9ab9d009e88fcd85723a40895d26a9"
+    },
+    {
+      "path": "addons/mp_core/external_job.py",
+      "previous_sha256": null,
+      "target_sha256": "456121efb20dbf6bbcf20fcb4d8f4f390bd2c0387064e698ca09d0a68dab1ed0"
+    },
+    {
+      "path": "addons/mp_core/job_dispatch.py",
+      "previous_sha256": "90bf5cdb6ffd1097bc0d7fd1ac68c20aa1228458618a17b13166eb5b689a9fd8",
+      "target_sha256": "b426caa122963c88b26039931a2b747fa7249f469ea052f35adf1464657fee76"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/job_runner.py",
+      "previous_sha256": "1c9f4513793fd87f576de26371ef68297ea711ac7e2ecf8c68d2e42422bbed48",
+      "target_sha256": "4bf4b4578e871c81b0a5dde020dc8a1ebb34e499c925f6c8acb944c575f3abc1"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "66434118f00c0342411c0277d10fe21731725c8be443e963f679612fd586e187",
+      "target_sha256": "3c2c65fc43f17fb2ba1e2b987f32d994fadc2af4f58c580908c0ef5a1f970635"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/worker_authority.py",
+      "previous_sha256": null,
+      "target_sha256": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/worker_dispatch.py",
+      "previous_sha256": null,
+      "target_sha256": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/worker_operator.py",
+      "previous_sha256": null,
+      "target_sha256": "40694e81bd4652e803cf0e5bef682c01f8952d9e0ad688108d72e98dc65c74f4"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/worker_projection.py",
+      "previous_sha256": null,
+      "target_sha256": "4b498e8a3d1910f7b96766c7b67e347d1d6049f33be8d52431fcf4ec1433b530"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/worker_publication.py",
+      "previous_sha256": null,
+      "target_sha256": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b"
+    }
+  ],
+  "all_plugin_artifacts_manifests_exact": true,
+  "Python_and_distribution_policy_exact": true,
+  "notes_stats_not_in_base_image": true,
+  "build_record": "docs/evidence/G6/20261101-core11-candidate-02/candidate-build.json",
+  "deployment_changed": false
+}

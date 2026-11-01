@@ -1,0 +1,23 @@
+{
+  "result": "passed_normal_operator_bootstrap_prerequisite",
+  "generation": 2,
+  "revocation_preserved": true,
+  "normal_cli_exact_hash_and_review": true,
+  "wrong_hash_replay_and_nonempty_refused": true,
+  "old_runner_refused_before_claim": true,
+  "new_images": 0,
+  "temporary_helpers_auto_removed": true,
+  "retained_authority_volume": "mp-r0-r1g64bb76636070f_worker_authority",
+  "retention_reason": "Normal integration target for next immutable core/connector and committed job; current independent generation2 retained",
+  "protected_configurations": 10,
+  "source_sha256": {
+    "tools/modular.py": "2a3beb5e74c6cfd62cc555218ac18791819f65d5c3704fde46ef344fdfb257b4",
+    "packages/platform_sdk/modular_platform/worker_operator.py": "40694e81bd4652e803cf0e5bef682c01f8952d9e0ad688108d72e98dc65c74f4",
+    "packages/platform_sdk/modular_platform/worker_projection.py": "4b498e8a3d1910f7b96766c7b67e347d1d6049f33be8d52431fcf4ec1433b530",
+    "packages/platform_sdk/modular_platform/worker_publication.py": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b"
+  },
+  "limits": [
+    "Current installed core1.10/runner refused; current core1.11 immutable rollout and actual committed Notes job remain required.",
+    "No external provider registered/launched, no runtime metadata lifecycle or external recovery acceptance credit."
+  ]
+}

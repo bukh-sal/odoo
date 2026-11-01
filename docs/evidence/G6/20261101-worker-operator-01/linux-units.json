@@ -1,0 +1,15 @@
+{
+  "tests": 8,
+  "successful": true,
+  "errors": [],
+  "failures": [],
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_publication.py": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b",
+    "packages/platform_sdk/modular_platform/worker_projection.py": "4b498e8a3d1910f7b96766c7b67e347d1d6049f33be8d52431fcf4ec1433b530",
+    "packages/platform_sdk/modular_platform/worker_authority.py": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+    "tests/test_worker_publication.py": "b415ddb47de61f3a0b0829320c38e2109a9c5dd98338b344d424d52961c3a504"
+  },
+  "helper_auto_removed": true,
+  "no_volumes_or_images_created": true,
+  "runtime_observations": "Explicit fixture data; real OS owner/keys/files/locks"
+}

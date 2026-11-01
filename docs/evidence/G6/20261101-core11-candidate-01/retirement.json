@@ -1,0 +1,6 @@
+{
+  "tag": "modular-platform:stage-20261101t041548130235z",
+  "result": "daemon_operation_timed_out_no_retry",
+  "timeout_seconds": 10,
+  "post_timeout_readonly_observation": "tag_still_present"
+}

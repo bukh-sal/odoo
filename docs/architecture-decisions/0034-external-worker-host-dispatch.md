@@ -91,3 +91,33 @@ See `../worker-authority.md` and worker-publication-01/qualification.json. This
 unregistered scope is a boundary prerequisite, not installed SVC/JOB qualification.
 Thin operator CLI, reviewed normal deployment/runner mounts, replacement-volume
 bootstrap/reconciliation, metadata lifecycle and the committed Notes bridge remain.
+
+Normal operator integration is now implemented. The new worker CLI delegates to
+the independent publisher, including explicit exact-hash bootstrap of an empty,
+unattached replacement volume from CURRENT OS authority. Bootstrap preserves
+generation/revocation, refuses changed authority or volume identity, nonempty
+volumes and replay. Disabled entries remain publishable when retired key files
+are absent. Eight actual Linux store/file/key cases and five CLI regressions pass.
+The actual CLI bootstrapped retained generation2 and refused wrong hashes/replay/
+nonempty volume and the old runner before any claim.
+
+Only the guarded native job process needs the authority volume; enqueue/status
+HTTP handlers do not read signing material. Keep the normal HTTP app topology
+unchanged and attach the current approved volume read-only through the operator's
+fixed `run-job-once` path. Independent image/database/inventory and native bridge
+source checks precede process creation; the inventoried startup/claim/finalization
+guards still apply. No artifact or app request selects mounts or Docker commands.
+This reduces unnecessary key exposure without claiming native-code containment.
+
+The first core1.11 candidate was rejected before stage enrollment because SDK
+projection still advertised0.1.10. Correcting its explicit version constant and
+rebuilding produced a strictly admitted core1.11/SDK0.1.11 image; native plugin
+artifacts/manifests, Python and distribution policy stayed exact. The reviewed
+same-DB checkpointed core-only upgrade completed config9/dispatch40, preserving
+27Notes/44event envelopes/five old jobs/all46old files and scoped installations/
+bindings. Native Odoo list/form reads in all three workspaces and scoped/foreign
+HTTP checks pass. One real normal CLI job completed once as its original actor
+using the installed runner, with no source substitution or business edit. This
+does not yet restore JOB01/02: installed lease/kill/stale-claim, actor revocation
+and compute-error paths still require targeted qualification. External metadata,
+connector installation, real remote jobs and complete recovery remain required.

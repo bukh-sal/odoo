@@ -76,5 +76,34 @@ class WorkerPublicationTests(unittest.TestCase):
         self.observed['addresses']=['169.254.169.254']
         with self.assertRaises(OperatorError):self.review()
 
+    def test_bootstrap_preserves_current_revocation_and_never_resets_generation(self):
+        self.publish();self.endpoint.update(generation=2,state='revoked');self.publish()
+        before=self.publisher._document()
+        # Revocation stays publishable even after issuer material is retired.
+        for path in self.publisher.keys.glob('*.pem'):path.unlink()
+        class Sink:
+            descriptor={'kind':'test-replacement'}
+            def observe_empty(self):return dict(identity='same-empty-volume')
+            def bootstrap(self,document,keys,operation):self.document=document;self.keys=keys
+        sink=Sink();self.publisher.sink=sink;review=self.publisher.prepare_bootstrap()
+        self.assertEqual(review['plan']['document']['generation'],2)
+        self.publisher.publish_bootstrap(review,exact_hash=review['plan_hash'])
+        self.assertEqual(sink.document,before);self.assertEqual(sink.keys,{})
+        self.assertEqual(self.publisher._document(),before)
+        with self.assertRaises(AuthorityUnavailable):self.reader.select(**self.scope)
+        with self.assertRaises(OperatorError):self.publisher.publish_bootstrap(review,exact_hash=review['plan_hash'])
+
+    def test_bootstrap_wrong_hash_or_replaced_empty_volume_refused(self):
+        self.publish()
+        class Sink:
+            descriptor={'kind':'test-replacement'}
+            generation=1
+            def observe_empty(self):return dict(identity=self.generation)
+            def bootstrap(self,*args):raise AssertionError('Stale bootstrap must not mutate')
+        sink=Sink();self.publisher.sink=sink;review=self.publisher.prepare_bootstrap()
+        with self.assertRaises(OperatorError):self.publisher.publish_bootstrap(review,exact_hash='sha256:'+'0'*64)
+        sink.generation=2
+        with self.assertRaises(OperatorError):self.publisher.publish_bootstrap(review,exact_hash=review['plan_hash'])
+
 
 if __name__=='__main__':unittest.main()

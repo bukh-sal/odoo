@@ -1,0 +1,69 @@
+{
+  "result": "passed_core11_rollout_and_normal_operator_job_prerequisite",
+  "utc": "2026-11-01T04:31:09.514389+00:00",
+  "image_id": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "inventory_digest": "sha256:4e87d6945e00d9e735b57ae7fd4e64c13b740ab5b77c1bd9892a14ddc618f401",
+  "generation": 9,
+  "dispatch_generation": 40,
+  "core": "19.0.0.1.11",
+  "platform_sdk": "0.1.11",
+  "notes": "0.2.7",
+  "source_substitution": false,
+  "original_jobs_preserved": 5,
+  "retained_new_read_only_job": 1,
+  "current_job_states": {
+    "completed": 4,
+    "dead_letter": 2
+  },
+  "native_list_form_workspaces": [
+    "A",
+    "B",
+    "C"
+  ],
+  "original_Notes": 27,
+  "original_events": 44,
+  "retained_files": 46,
+  "operator_bootstrap_generation": 2,
+  "current_linux_unit_cases": 8,
+  "CLI_regressions": 5,
+  "core_upgrade_source_cases": 8,
+  "frozen_files": 94,
+  "retired_current_operation_and_seed_helpers": 10,
+  "retired_current_observation_helpers": 3,
+  "authority_volume_retained": "mp-r0-r1g64bb76636070f_worker_authority",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_operator.py": "40694e81bd4652e803cf0e5bef682c01f8952d9e0ad688108d72e98dc65c74f4",
+    "packages/platform_sdk/modular_platform/worker_projection.py": "4b498e8a3d1910f7b96766c7b67e347d1d6049f33be8d52431fcf4ec1433b530",
+    "packages/platform_sdk/modular_platform/worker_publication.py": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b",
+    "packages/platform_sdk/modular_platform/projection.py": "3c2c65fc43f17fb2ba1e2b987f32d994fadc2af4f58c580908c0ef5a1f970635",
+    "tools/modular.py": "2a3beb5e74c6cfd62cc555218ac18791819f65d5c3704fde46ef344fdfb257b4",
+    "tests/test_worker_publication.py": "b415ddb47de61f3a0b0829320c38e2109a9c5dd98338b344d424d52961c3a504"
+  },
+  "evidence": [
+    "candidate-validation.json",
+    "completed.json",
+    "preservation.json",
+    "normal-job.json",
+    "http.json",
+    "retirement.json",
+    "../20261101-worker-operator-01/qualification.json",
+    "../20261101-worker-operator-01/linux-units.json"
+  ],
+  "observed_tool_chunks": {
+    "candidate": "55eda4",
+    "apply": "6ecfd7",
+    "preservation": "6df599",
+    "normal_job": "b44e34",
+    "HTTP": "a77fec",
+    "units": "9d4a13",
+    "CLI": "113b22",
+    "core_cases": "9dadfa",
+    "freeze": "e0cff1"
+  },
+  "acceptance_credit": false,
+  "JOB01_JOB02": "still invalidated pending installed kill/lease/stale-claim/revocation/compute-error qualification",
+  "limits": [
+    "No external metadata provider or Notes connector installed. Real Notes-to-worker job, degraded UI and complete external recovery remain required.",
+    "Rejected candidate01 tag removal10s timeout; read-only inspection confirms still present. No repeat/force/prune/restart. Current candidate02 image is deployed and retained."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "state": "candidate_rejected_platform_mismatch",
+  "image_id": "sha256:bdb6cffb0b9f8601becde70c501291775b04929ae6a9c72368d66d58a2f286cb",
+  "reason": "SDK projection.PLATFORM_VERSION0.1.10 did not match native core19.0.0.1.11; never staged or deployed",
+  "deployment_changed": false,
+  "stage_enrolled": false,
+  "next": "SDK projection constant corrected to0.1.11; unique candidate02 required"
+}

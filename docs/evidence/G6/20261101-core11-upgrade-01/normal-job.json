@@ -1,0 +1,15 @@
+{
+  "result": "passed_actual_installed_normal_operator_job",
+  "state": "completed",
+  "attempts": 1,
+  "original_actor": true,
+  "job_id": "35b930b5-12a7-48db-9acc-ebd430be6b40",
+  "runner_source_substitution": false,
+  "normal_cli": true,
+  "authority_mount_read_only": true,
+  "no_business_record_mutation": true,
+  "retained_new_read_only_job": true,
+  "limits": [
+    "This is native inspect_revision, not remote Notes statistics. Lease/kill/error-path requalification and external metadata/connector installation remain required."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "terminal_one_shots_removed": 10,
+  "private_inspection_archive": ".local/retired-docker-20261101",
+  "all_exit_zero": true,
+  "native_app_DB_edge_and_recovery_roles_retained": true,
+  "current_authority_volume_retained_for_integration": true,
+  "stage_candidate01_tag_removal": "10second timeout recorded separately; no retry",
+  "completed_current_turn_observation_helpers_removed": 3
+}

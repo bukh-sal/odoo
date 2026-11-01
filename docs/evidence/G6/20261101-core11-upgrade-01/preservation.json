@@ -1,0 +1,26 @@
+{
+  "result": "passed_installed_core11_upgrade_preservation",
+  "image_id": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "generation": 9,
+  "dispatch_generation": 40,
+  "same_database": true,
+  "counts_exact": {
+    "mp_example_note": 27,
+    "mp_example_canvas_board": 0,
+    "mp_example_note_event_summary": 3,
+    "mp_outbox": 44,
+    "mp_job": 5
+  },
+  "all_original_job_fields_except_explicit_generations_and_release_exact": true,
+  "retained_files": 46,
+  "plugin_installations_and_bindings_exact": true,
+  "worker_configuration_update": {
+    "previous_sha256": "ec7985923d8a0f2e5c3208b237d98dbe29486357a2f10b54c6d53c8c983d93ca",
+    "current_sha256": "81396056d3f506bca0761efff059d37f9224e380abead3e3d5568707209b8097",
+    "only_field": "helper_image",
+    "reason": "Use the normally approved current core image for isolated operator helpers; runtime authority generation2 retained"
+  },
+  "limits": [
+    "JOB01/02 targeted lease/error/revocation requalification and actual external Notes bridge still required."
+  ]
+}

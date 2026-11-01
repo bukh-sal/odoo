@@ -140,10 +140,48 @@ def main(argv=None):
     adopt.add_argument('--deployment-config',required=True,type=Path)
     adopt.add_argument('--catalog',required=True,type=Path)
     operation_actions.add_parser('revoke-approval').add_argument('operation_id')
+    worker=groups.add_parser('worker',help='Independent local worker authority; never launches an external runtime')
+    worker.add_argument('--store',required=True,type=Path)
+    worker.add_argument('--deployment-config',required=True,type=Path)
+    worker.add_argument('--worker-config',required=True,type=Path)
+    worker_actions=worker.add_subparsers(dest='action',required=True)
+    keys=worker_actions.add_parser('provision-keys')
+    keys.add_argument('--private-reference',required=True);keys.add_argument('--public-reference',required=True)
+    keys.add_argument('--private-key',required=True,type=Path);keys.add_argument('--public-key',required=True,type=Path)
+    prepare_worker=worker_actions.add_parser('prepare')
+    prepare_worker.add_argument('--endpoint',required=True,type=Path);prepare_worker.add_argument('--key-id',required=True)
+    worker_actions.add_parser('prepare-bootstrap')
+    worker_actions.add_parser('review').add_argument('operation_id')
+    publish_worker=worker_actions.add_parser('publish');publish_worker.add_argument('operation_id')
+    publish_worker.add_argument('--plan-hash',required=True);publish_worker.add_argument('--noninteractive',action='store_true')
+    worker_actions.add_parser('run-job-once')
     args = parser.parse_args(argv)
     try:
         validator = configuration(args.config)
-        if args.group == 'operations':
+        if args.group=='worker':
+            import subprocess
+            from modular_platform.operator_store import OperatorStore
+            from modular_platform.operator_os import OperatorError
+            from modular_platform.worker_operator import WorkerOperator,private_json
+            operator=WorkerOperator(OperatorStore(args.store),args.deployment_config,args.worker_config)
+            try:
+                if args.action=='provision-keys':
+                    result=operator.provision(args.private_reference,args.public_reference,args.private_key,args.public_key)
+                elif args.action=='prepare':
+                    result=operator.publisher.prepare(private_json(args.endpoint),args.key_id,operator.observer)
+                elif args.action=='prepare-bootstrap':result=operator.publisher.prepare_bootstrap()
+                elif args.action=='review':result=operator.review(args.operation_id)
+                elif args.action=='publish':
+                    review=operator.review(args.operation_id)
+                    if not args.noninteractive:
+                        if not sys.stdin.isatty():raise OperatorError('Noninteractive publication requires explicit flag and OS-owned policy')
+                        if input('Type the exact reviewed worker plan hash to publish: ').strip()!=args.plan_hash:
+                            raise OperatorError('Exact reviewed plan hash confirmation required')
+                    result=operator.publish(review,args.plan_hash,args.noninteractive)
+                else:result=operator.run_once()
+            except subprocess.SubprocessError:
+                raise OperatorError('Independent worker Docker operation failed; inspect retained intent and private diagnostics before retry') from None
+        elif args.group == 'operations':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.deployment import DockerObserver
             from modular_platform.approval_validation import IndependentValidator
