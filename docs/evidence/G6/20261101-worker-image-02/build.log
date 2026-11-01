@@ -1,0 +1,56 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.15kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
+#2 DONE 0.0s
+
+#3 [internal] load build context
+#3 transferring context: 7.27kB done
+#3 DONE 0.0s
+
+#4 [builder 1/3] FROM docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
+#4 resolve docker.io/library/python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753 0.0s done
+#4 DONE 0.0s
+
+#5 [stage-1 2/8] COPY --from=builder /venv /venv
+#5 CACHED
+
+#6 [builder 2/3] COPY services/document_stats/requirements.lock /locks/requirements.lock
+#6 CACHED
+
+#7 [builder 3/3] RUN python -m venv /venv && /venv/bin/python -m pip install --only-binary=:all: --require-hashes -r /locks/requirements.lock && /venv/bin/python -m pip check
+#7 CACHED
+
+#8 [stage-1 3/8] WORKDIR /app
+#8 CACHED
+
+#9 [stage-1 4/8] COPY services/document_stats/__init__.py services/document_stats/engine.py services/document_stats/server.py /app/services/document_stats/
+#9 DONE 0.0s
+
+#10 [stage-1 5/8] COPY packages/platform_sdk/modular_platform/__init__.py packages/platform_sdk/modular_platform/contracts.py packages/platform_sdk/modular_platform/tokens.py /app/packages/platform_sdk/modular_platform/
+#10 DONE 0.0s
+
+#11 [stage-1 6/8] COPY packages/contracts/v1/worker-request.schema.json packages/contracts/v1/worker-response.schema.json packages/contracts/v1/worker-claims.schema.json /app/packages/contracts/v1/
+#11 DONE 0.0s
+
+#12 [stage-1 7/8] COPY services/document_stats/requirements.lock services/document_stats/dependency-provenance.json /app/provenance/
+#12 DONE 0.0s
+
+#13 [stage-1 8/8] COPY LICENSE COPYRIGHT /app/provenance/
+#13 DONE 0.0s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 0.2s done
+#14 exporting manifest sha256:101a9c6bad2190e1f8dd8a076fc4e939db9454cc125568284b1d3fe7df396e5f 0.0s done
+#14 exporting config sha256:ab26d04ca0e1bab89e7d5e4e24df6febe0e7cc8fb1a5d0bd093da7213b1ee6e1 0.0s done
+#14 exporting attestation manifest sha256:f5457fbd9568797294efdaeb61ffce291070f90d0b72d91474e47f24509277c9 0.0s done
+#14 exporting manifest list sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca 0.0s done
+#14 naming to docker.io/library/modular-document-stats:stage-20261101t031456833782z done
+#14 unpacking to docker.io/library/modular-document-stats:stage-20261101t031456833782z 0.1s done
+#14 DONE 0.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/5vd7eivjpp0jaojn0rtwuzzta

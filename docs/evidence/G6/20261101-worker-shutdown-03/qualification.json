@@ -1,0 +1,38 @@
+{
+  "result": "passed_actual_independent_Compose_worker_prerequisite",
+  "utc": "2026-11-01T03:15:58.686140+00:00",
+  "image_id": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "reference": "modular-document-stats@sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "container_id": "cba15669c171fa2d2df68fd74572b413bbf82f9706cfe5116c1c32dde1e918bd",
+  "project": "mp-disposable-document-stats-03",
+  "internal_network": "mp-r0-r1g64bb76636070f_runtime",
+  "public_config_backend": "owned_linux_volume",
+  "actual_configuration": {
+    "user": "10002:10002",
+    "read_only": true,
+    "public_key_config_only": true,
+    "no_database_or_signing_key_or_socket_or_filestore": true,
+    "ports_published": false,
+    "memory": 268435456,
+    "pids": 64,
+    "cpus": 1
+  },
+  "checks": [
+    "health and actual signed Linux HTTP",
+    "duplicate saved outcome and changed input conflict",
+    "missing/expired/wrong audience refused",
+    "forged site/workspace/installation/endpoint generation refused",
+    "otherwise valid separately scoped credentials refused by fixed worker configuration",
+    "actual worker outage leaves native login healthy",
+    "actual same-image restart returns deterministic outcome",
+    "structured logs omit text and bearer credentials"
+  ],
+  "all_helpers_terminal": true,
+  "final_worker_exit": 0,
+  "protected_configurations": 10,
+  "acceptance_credit": false,
+  "limits": [
+    "Standalone unregistered synthetic scope; no host service dispatch/Notes integration or metadata lifecycle/recovery qualification yet.",
+    "Slow worker/host timeout/degraded UI and managed external reconciliation remain required; SVC/JOB03 not marked passed."
+  ]
+}

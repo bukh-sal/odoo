@@ -1,0 +1,43 @@
+{
+  "result": "passed_independent_worker_SVC01_and_SIGTERM_fix",
+  "utc": "2026-11-01T03:23:34.534900+00:00",
+  "acceptance": [
+    "SVC-01"
+  ],
+  "image_id": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "image_change": "only runtime server.py changed;13 distributions and all other files exact vsimage01",
+  "actual_execution": "qualification.json: signed Linux Compose HTTP/auth/scopes/duplicate/conflict/outage/restart and clean SIGTERM exit0",
+  "actual_runtime_authority": {
+    "user": "10002:10002",
+    "read_only": true,
+    "public_key_config_only": true,
+    "no_database_or_signing_key_or_socket_or_filestore": true,
+    "ports_published": false,
+    "memory": 268435456,
+    "pids": 64,
+    "cpus": 1
+  },
+  "image_proof": "../20261101-worker-image-02/inventory.json",
+  "cleanup": {
+    "one_shot_containers_removed": 381,
+    "retired_worker_containers_removed": 2,
+    "public_config_volumes_removed": 1,
+    "private_metadata_and_diagnostics_archived": true,
+    "containers_remaining": 176,
+    "owned_remaining": 96,
+    "stale_created_and_one_image_removal_pending": "exact daemon operations timed out; no retry/globalprune/backendrestart; originalf846Created retained/currentworkerimage retained"
+  },
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "native_deployment_generation": 8,
+  "native_login_status": 200,
+  "privacy": {
+    "files": 7,
+    "findings": 0
+  },
+  "limits": [
+    "SVC01 only: independent process/image/configuration no Odoo/mainDB credentials proven; host issuer/current-authority dispatch/Notes alias and metadata-only artifact/endpoint lifecycle not implemented yet.",
+    "SVC02..05/JOB03/ID03/UI09/full G6/G7 remain; standalone scope checks are not the complete host-integration authority proof."
+  ],
+  "next": "Inspect existing service gateway, frozen endpoint/claims and metadata planning, implement current-approved host issuer and bounded fixed-destination worker dispatch plus Notes alias integration. Preserve image1d919d0c; do not recreate retired containers or volume merely to inspect historical proof."
+}

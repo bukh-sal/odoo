@@ -1,0 +1,18 @@
+{
+  "result": "retirement_completed_with_two_daemon_operations_pending",
+  "one_shot_removed": 381,
+  "workers_removed": 2,
+  "public_config_volume_removed": 1,
+  "containers_before": 559,
+  "containers_after": 176,
+  "owned_retained": 96,
+  "foreign_untouched": 80,
+  "private_archives": ".local/retired-docker-20261101",
+  "image_tags_removed": 0,
+  "pending": [
+    "originalf846Created removal8s timeout",
+    "first unusedownedstage image removal20s timeout; remaining5 notattempted"
+  ],
+  "no_global_prune_or_Docker_restart": true,
+  "active_and_recovery_inputs_preserved": true
+}

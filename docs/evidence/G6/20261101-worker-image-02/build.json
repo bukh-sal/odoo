@@ -1,0 +1,30 @@
+{
+  "state": "built_and_inspected_not_started",
+  "tag": "modular-document-stats:stage-20261101t031456833782z",
+  "command": [
+    "docker",
+    "build",
+    "-f",
+    "services/document_stats/Dockerfile",
+    "-t",
+    "modular-document-stats:stage-20261101t031456833782z",
+    "."
+  ],
+  "source_sha256": {
+    "services/document_stats/server.py": "3958b71382d822510c994296bb6c6dd7d3ed29afc21972f197e55a807e74098d",
+    "services/document_stats/engine.py": "bd9bda44c7abfabbbab95041b1f349de9ccd287e6a172783c03c376fefa1f85e",
+    "services/document_stats/Dockerfile": "502be53aa7c23194b4430ca0dc50d93cbbafd465fb15ccd010215a12bdffc0ae",
+    "services/document_stats/Dockerfile.dockerignore": "e9010ac0b05e17c908f943de928be0bf76e37c5a7a5911befb0b0749772ea33b",
+    "services/document_stats/requirements.lock": "683ebc3177b748efebcb5885ddfc8093b1df988c1a83f2d975e9ad49907906cb",
+    "services/document_stats/compose.yaml": "a42d9fac50be4ea6b8b740b6f3b92c5642474016258ecc36415dbb756e0535c3",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+    "packages/platform_sdk/modular_platform/contracts.py": "175fadaca2c52ef8cb476eb48922ef0986285efb2e50795a2fbad3329e7d8337"
+  },
+  "git_base": "151ad9698910c0e38d50c43aca21e7aecc730e7b",
+  "image_id": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "reference": "modular-document-stats@sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "utc": "2026-11-01T03:14:59.415495+00:00",
+  "only_runtime_change": [
+    "services/document_stats/server.py"
+  ]
+}
