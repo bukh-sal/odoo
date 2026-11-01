@@ -223,8 +223,15 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         clean_targets.append(target)
     changed = {key for key, value in new.items() if key not in old or value['digest'] != old[key]['digest']}
     if operation_type in ('deploy','core_upgrade'):
-        if (changed or set(new)!=set(old) or seen!=set(installed) or permission_changes or trust_changes
-                or any(row.get('state')!='installed' or row.get('metadata_state','installed')!='installed' for row in installed.values())
+        # Native maintenance targets all native scopes. Metadata-only roots are
+        # retained exactly, including inert unregister tombstones; they do not
+        # become fake native deploy targets or gain runtime-control authority.
+        native_scopes={key:row for key,row in installed.items() if old.get(row['plugin_id'],{}).get('runtime')=='native'}
+        external=[p for p in old.values() if p['runtime']=='external_service']
+        if (changed or set(new)!=set(old) or seen!=set(native_scopes) or permission_changes or trust_changes
+                or any(row.get('state')!='installed' or row.get('metadata_state','installed')!='installed' for row in native_scopes.values())
+                or any(old.get(row['plugin_id'],{}).get('runtime') not in {'native','external_service'} for row in installed.values())
+                or any(locked_new.get(p['plugin_id'])!=p for p in external)
                 or any(item['runtime']!='native' for item in artifacts.values())):
             raise PlanningError('Platform deploy requires every installed native scope and unchanged artifacts/grants')
     covered = {target['plugin_id'] for target in clean_targets if target['action'] in ('install', 'upgrade')}

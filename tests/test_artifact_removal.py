@@ -33,8 +33,9 @@ class ArtifactRemoval(unittest.TestCase):
         self.catalog = fixture.catalog; self.plugin = 'org.example.notes_labels'; self.addon = 'mp_example_notes_labels'
         self.site['bindings'] = [dict(descriptor=row, state='active') for row in self.document['state']['bindings']]
         self.base = staged_runtime(self.catalog)
+        self.base['platform_version']=self.document['environment']['platform_version']
         manifests = {row['manifest']['runtime']['addon_name']: row['native_manifest'] for row in self.catalog}
-        manifests.update(mp_core=dict(depends=[], version='19.0.0.1.5'), mp_shell=dict(depends=['mp_core'], version='19.0.0.1.6'))
+        manifests.update(mp_core=dict(depends=[], version='19.0.'+self.base['platform_version']), mp_shell=dict(depends=['mp_core'], version='19.0.0.1.6'))
         self.base['native_manifests'] = manifests
         self.base['inventory']['native_addons'] = {name: dict(depends=manifest['depends'], license='LGPL-3') for name,manifest in manifests.items()}
         policy = self.base['inventory']['policy']

@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-01T07:46:09.245261+00:00",
+  "result": "passed",
+  "tests": 84,
+  "suites": [
+    {
+      "suite": "test_reference_staging",
+      "tests": 10,
+      "passed": true,
+      "transcript": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.307s\n\nOK\n"
+    },
+    {
+      "suite": "test_release_staging",
+      "tests": 9,
+      "passed": true,
+      "transcript": ".........\n----------------------------------------------------------------------\nRan 9 tests in 8.913s\n\nOK\n"
+    },
+    {
+      "suite": "test_manager_planning",
+      "tests": 8,
+      "passed": true,
+      "transcript": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.116s\n\nOK\n"
+    },
+    {
+      "suite": "test_core_upgrade",
+      "tests": 8,
+      "passed": true,
+      "transcript": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.082s\n\nOK\n"
+    },
+    {
+      "suite": "test_platform_deploy",
+      "tests": 6,
+      "passed": true,
+      "transcript": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.049s\n\nOK\n"
+    },
+    {
+      "suite": "test_artifact_removal",
+      "tests": 21,
+      "passed": true,
+      "transcript": ".....................\n----------------------------------------------------------------------\nRan 21 tests in 6.213s\n\nOK\n"
+    },
+    {
+      "suite": "test_reinstall_planning",
+      "tests": 9,
+      "passed": true,
+      "transcript": ".........\n----------------------------------------------------------------------\nRan 9 tests in 13.769s\n\nOK\n"
+    },
+    {
+      "suite": "test_plans",
+      "tests": 13,
+      "passed": true,
+      "transcript": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.117s\n\nOK\n"
+    }
+  ],
+  "sources": {
+    "release_staging.py": "7400bd2d0db76e422712640dc2a5ef4aa71e5774bf6355e4059ce41154027582",
+    "manager_planning.py": "188f1ae2811e09d455c402af87f3186891720faa66fa7cb2468815f685be9216",
+    "artifact_removal.py": "526f748ab30c8b90187fa11803d43cfcc4d1c51a1913f8bc0959a73475865b2e",
+    "profile_channel.py": "bb95e8f4aa054af3b9d8fe8fd1743eace2622e7d5dce1e29dd4515d89b63328d",
+    "plans.py": "b33805954412b847ee79727b97b9ef69ae8b52fe277b362a3b7a485e888c847b",
+    "lifecycle_planning.py": "660eb04980612cae8e5404c49f0a202f2807f663257d15d1a4c9783730b8bfab"
+  },
+  "cli_sha256": "2b09e48280913a17965e0d41867c96f9d5457155769619ad8f901bde81447a15",
+  "scope": "Pure source planning, immutable artifact assembly/validation and temporary OS approval fixtures only.",
+  "actual_staged_deployment": false,
+  "actual_external_registration": false,
+  "installed": false,
+  "new_docker_assets": 0,
+  "acceptance_credit": false
+}

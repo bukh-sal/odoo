@@ -277,7 +277,8 @@ def main(argv=None):
                 if len(raw)>2*1024*1024:raise ArtifactError('Staged nomination size limit')
                 nomination=load_json(raw)
                 if set(nomination)!={'operation_type','targets'}:raise ArtifactError('Exact native operation/targets nomination required')
-                descriptor,record=stages.load();observer=DockerObserver(deployment);observation=observer.read();snapshot=catalog.snapshot()
+                from modular_platform.worker_operator import operator_observer
+                descriptor,record=stages.load();observer=operator_observer(store,args.deployment_config);observation=observer.read();snapshot=catalog.snapshot()
                 result=prepare_staged_plan(observer.state(observation,snapshot),observation['sites'],snapshot,record['runtime'],descriptor,
                     targets=nomination['targets'],operation_type=nomination['operation_type'],operation_id=str(uuid4()),
                     created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),base_runtime=observation['runtime'])

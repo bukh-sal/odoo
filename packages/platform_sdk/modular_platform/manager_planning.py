@@ -44,7 +44,8 @@ def prepare_manager_removal(document,sites,catalog,base_runtime,staged,nominatio
         raise PlanningError('The independently staged image does not remove the nominated package')
     if len(removed)>1 and not nomination['cascade']:
         raise PlanningError('Explicit dependent cascade consent required for multiple source removals')
-    selected,_,_=runtime_inputs(base_runtime,catalog)
+    external=[p for p in document['state']['release_lock']['plugins'] if p['runtime']=='external_service']
+    selected,_,_=runtime_inputs(base_runtime,catalog,external_plugins=external)
     descriptors=copy.deepcopy(selected)
     for item in descriptors:
         item['required_providers']=[row['provider'] for row in document['state']['release_lock']['service_selection']
@@ -74,12 +75,15 @@ def prepare_manager_native(document, sites, catalog, base_runtime, staged, nomin
     if not staged or set(staged) != {'descriptor', 'runtime'}:
         raise PlanningError('Local operator must stage and publish the selected native release first')
     candidate_preview(staged['descriptor'], staged['runtime'], document['state']['image_id'])
-    selected, environment, _ = runtime_inputs(staged['runtime'], catalog)
+    external=[p for p in document['state']['release_lock']['plugins'] if p['runtime']=='external_service']
+    selected, environment, _ = runtime_inputs(staged['runtime'], catalog,external_plugins=external)
     entries = {item['manifest']['plugin']['id']: item for item in selected}
     plugin = nomination['plugin_id']; chosen = entries.get(plugin)
     if chosen is None or (chosen['manifest']['plugin']['version'], chosen['digest']) != (
             nomination['artifact_version'], nomination['artifact_digest']):
         raise PlanningError('Selected artifact is absent from the operator-staged image')
+    if chosen['manifest']['runtime']['kind']!='native':
+        raise PlanningError('Native manager cannot nominate external metadata lifecycle changes')
     site_id = nomination['site_id']; workspaces = nomination['workspace_ids']
     site = next((item for item in sites if item['site_id'] == site_id), None)
     if not workspaces or site is None or not set(workspaces) <= {

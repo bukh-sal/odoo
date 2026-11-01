@@ -136,7 +136,8 @@ def prepare_current_install_targets(document, sites, catalog, *, activation_targ
     request=dict(operation_type='install',requested={},targets=spec['targets'],permission_changes=spec['permission_changes'],
                  operation_id=operation_id,created_at=created_at)
     if spec['feature_states']:request['feature_states']=spec['feature_states']
-    return prepare_document({**document, 'request': request}, catalog)
+    retained=[p['plugin_id'] for p in document['state']['release_lock']['plugins']]
+    return prepare_document({**document, 'request': request}, catalog,retained_trust_for=retained)
 
 
 def install_activation_targets(bundle):

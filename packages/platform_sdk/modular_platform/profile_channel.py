@@ -21,7 +21,8 @@ def publish_profile(observer,catalog,*,staged=None):
         descriptor,record=staged
         if record['base_configuration']!=observer.config:
             raise OperatorError('Staged preview base configuration changed before publication')
-        runtime_inputs(record['runtime'],snapshot)
+        external=[p for p in state['release_lock']['plugins'] if p['runtime']=='external_service']
+        runtime_inputs(record['runtime'],snapshot,external_plugins=external)
         payload['staged_release']=candidate_preview(descriptor,record['runtime'],observer.config['image_id'])
     raw=json.dumps(payload).encode()
     if len(raw)>16*1024*1024:raise OperatorError('Public planning profile size limit')

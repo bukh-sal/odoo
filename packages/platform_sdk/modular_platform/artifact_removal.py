@@ -195,13 +195,16 @@ def prepare_staged_removal(document, sites, catalog, runtime, descriptor, *, tar
     if sorted(targets,key=lambda row:(row['site_id'],row['workspace_id'],row['plugin_id'],row['installation_id'])) != expected_targets:
         raise OperatorError('Removal must list every sharing site and retained scope exactly')
     diff = validate_removal_image(base_runtime,runtime,descriptor,plugins)
-    selected, environment, provenance = runtime_inputs(runtime,catalog)
+    old={p['plugin_id']:p for p in document['state']['release_lock']['plugins']}
+    external=[p for p in old.values() if p['runtime']=='external_service']
+    selected, environment, provenance = runtime_inputs(runtime,catalog,external_plugins=external)
     staged = copy.deepcopy(document)
     staged.update(environment=environment,provenance=provenance,python_metadata=runtime['python_metadata'])
     staged['request'] = dict(operation_type='remove',requested={row['plugin_id']:'=='+row['version'] for row in selected},
         targets=expected_targets,core_python=[row['name']+'=='+row['version'] for row in runtime['python_metadata']],
         operation_id=operation_id,created_at=created_at)
-    bundle = prepare_document(staged,catalog)
+    retained=[row['plugin_id'] for row in selected if row['plugin_id'] in old and row['digest']==old[row['plugin_id']]['digest']]
+    bundle = prepare_document(staged,catalog,retained_trust_for=retained)
     actual = {row['plugin_id']:row['digest'] for row in bundle['operation_lock']['release']['plugins']}
     if (actual != {row['plugin_id']:row['digest'] for row in selected}
             or bundle['operation_lock']['bindings'] != document['state'].get('bindings', [])

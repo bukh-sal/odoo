@@ -127,7 +127,8 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
             if any(change['addon'] not in native or native[change['addon']]['state']!='installed'
                     or native[change['addon']]['version']!=change['previous_version'] for change in core_changes):
                 raise OperatorError('Core upgrade base database versions must match independently observed source')
-    selected,environment,provenance=runtime_inputs(runtime,catalog)
+    external=[p for p in document['state']['release_lock']['plugins'] if p['runtime']=='external_service']
+    selected,environment,provenance=runtime_inputs(runtime,catalog,external_plugins=external)
     by_plugin={item['manifest']['plugin']['id']:item for item in selected}
     by_site={site['site_id']:site for site in sites}
     reinstall=operation_type=='install' and any(i['metadata_state']=='removed' and any(
@@ -180,7 +181,8 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     if reinstall_spec is not None:
         target_document['request']['permission_changes']=reinstall_spec['permission_changes']
         target_document['request']['feature_states']=list(feature_states)
-    bundle=prepare_document(target_document,catalog)
+    retained=[name for name,item in by_plugin.items() if name in old and old[name]['digest']==item['digest']]
+    bundle=prepare_document(target_document,catalog,retained_trust_for=retained)
     if operation_type in ('deploy','core_upgrade'):
         if (bundle['operation_lock']['bindings']!=document['state'].get('bindings',[])
                 or bundle['operation_lock']['endpoints']!=document['state'].get('endpoints',[]) or bundle['plan']['permission_changes']):
