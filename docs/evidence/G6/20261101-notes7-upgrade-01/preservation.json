@@ -1,0 +1,38 @@
+{
+  "result": "passed_separate_populated_notes7_upgrade",
+  "image_id": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "inventory_digest": "sha256:7e51485f8252019a16a5785d8d7588fb84fb27f80ec13a2278af5c58a148ec31",
+  "generation": 8,
+  "operation_id": "a3b2a10f-0548-4251-bc2f-a602a6b39635",
+  "dispatch_generations": [
+    34,
+    35,
+    36,
+    37
+  ],
+  "same_database": true,
+  "exact_checkpoint_rows": {
+    "mp_example_note": 25,
+    "mp_example_canvas_board": 0,
+    "mp_example_note_event_summary": 3,
+    "mp_outbox": 42
+  },
+  "all_five_job_columns_exact_except_explicit_release_claim_dispatch_generations": true,
+  "all_old_files_retained": 44,
+  "other_installations_and_all_bindings_exact": true,
+  "notes_workspace_authority_preserved": true,
+  "native_views": {
+    "workspaces": [
+      "A",
+      "B",
+      "C"
+    ],
+    "native_Odoo_list_form_default": true
+  },
+  "native_batch_cases": 10,
+  "all_batch_writes_rolled_back": true,
+  "source_substitution": false,
+  "limits": [
+    "Actual deployed event host/bus/browser still required; external worker/effects/credential and G7 remain. No full ID-03/EVT gate credit from this bounded prerequisite."
+  ]
+}

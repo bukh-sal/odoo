@@ -1,0 +1,9 @@
+{
+  "result": "preservation_assertions_passed_view_harness_shape_error",
+  "failure": "KeyError: type in native get_view response",
+  "diagnosis": "Native get_view returns XML arch/model/id; the test incorrectly required an additional type key. The requested view type is observable in the returned root XML tag.",
+  "passed_before_failure": ["queue/control fences34-37", "25 Notes/zero Canvas/3 projections/42 producer COPY rows exact", "five jobs exact except explicit epochs", "all old filestore bytes", "other installations/bindings/Notes workspace authority"],
+  "correction": "Assert the actual native XML root and continue only read-only views. Reuse retained private COPY/file observations and inspect current dispatch state; no lifecycle, batch mutation, checkpoint extraction or file helper replay.",
+  "original_driver": "verify_preservation_attempt01.py",
+  "continuation": "verify_preservation.py --resume-views"
+}

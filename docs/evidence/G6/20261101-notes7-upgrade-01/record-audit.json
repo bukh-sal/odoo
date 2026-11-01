@@ -1,0 +1,7 @@
+{
+  "result": "passed",
+  "public_files": 24,
+  "findings": 0,
+  "syntax_valid": true,
+  "installed_native_hash_scan": "qualification.json"
+}

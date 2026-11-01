@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "successful": true,
+  "tests": 10,
+  "failures": [],
+  "errors": [],
+  "image_id": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "inventory_digest": "sha256:7e51485f8252019a16a5785d8d7588fb84fb27f80ec13a2278af5c58a148ec31",
+  "generation": 8,
+  "installed_source": true,
+  "source_substitution": false,
+  "all_test_writes_rolled_back": true,
+  "test_sha256": "ff3eda49f2db42d889df44c6b1daaff077568cae33b79e8c184a98da287682d4",
+  "limits": [
+    "Bounded native batch/CAS regression; other ID-03 final source/native-path audits, event host/browser and external/G7 remain."
+  ]
+}

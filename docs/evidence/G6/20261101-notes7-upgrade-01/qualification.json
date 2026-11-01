@@ -1,0 +1,41 @@
+{
+  "result": "passed_bounded_native_plugin_upgrade_prerequisite",
+  "utc": "2026-11-01T02:41:10.341705+00:00",
+  "operation_id": "a3b2a10f-0548-4251-bc2f-a602a6b39635",
+  "plan_hash": "sha256:01fa9e1911afcdbd9103fb99824dc11d32fd132dee3a1dec5603e619ea99a075",
+  "image_id": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "inventory_digest": "sha256:7e51485f8252019a16a5785d8d7588fb84fb27f80ec13a2278af5c58a148ec31",
+  "generation": 8,
+  "dispatch_generation": 37,
+  "native_batch_cases": 10,
+  "installed_source": true,
+  "source_base": "4d81c84e6a292bbce2cebed83cb09b9a75934ebe",
+  "all_runtime_build_inputs_exact": true,
+  "freeze_files": 94,
+  "protected_configurations": 9,
+  "privacy": {
+    "public_files": 20,
+    "known_values": 127,
+    "findings": 0
+  },
+  "evidence": [
+    "candidate-validation.json",
+    "completed.json",
+    "native-batch-01.json",
+    "preservation.json",
+    "preservation-attempt-01.json"
+  ],
+  "acceptance_counts_unchanged": {
+    "passed": 88,
+    "not_run": 11,
+    "invalidated": 0,
+    "failed": 0,
+    "excluded_R2": 5
+  },
+  "rough_weighted_progress_percent": 87,
+  "limits": [
+    "F-01e1 remains active: deployed host facade/native bus/browser proof next.",
+    "No blanket ID-03/EVT/JOB-03/SVC/UI-09/G6 pass; external managed worker/effects/credential reconciliation and G7 required."
+  ],
+  "next_action": "Use existing deployed Shell1.9 host facade and native bus on this same populated fixture; verify actual browser delivery/dedup/disposal/current workspace limits without altering Canvas product source. A test-only page wrapper may exercise the existing custom-page seam. Preserve native Odoo default views."
+}
