@@ -9,6 +9,7 @@ from modular_platform.operator_store import OperatorStore
 from modular_platform.operator_os import OperatorError
 from modular_platform.worker_publication import WorkerAuthorityPublisher,DockerWorkerObservation
 from modular_platform.worker_authority import PublishedWorkerAuthority,AuthorityUnavailable
+from modular_platform.worker_operator import WorkerOperator
 
 
 class WorkerPublicationTests(unittest.TestCase):
@@ -104,6 +105,52 @@ class WorkerPublicationTests(unittest.TestCase):
         with self.assertRaises(OperatorError):self.publisher.publish_bootstrap(review,exact_hash='sha256:'+'0'*64)
         sink.generation=2
         with self.assertRaises(OperatorError):self.publisher.publish_bootstrap(review,exact_hash=review['plan_hash'])
+
+    def planning_operator(self, observer=None):
+        # Keep the real independent store/publication/key reader. Only Docker
+        # observation is substituted; these tests never launch a worker.
+        operator=WorkerOperator.__new__(WorkerOperator)
+        operator.publisher=self.publisher
+        operator.config=dict(deployment_id=self.deployment,site_id=self.site)
+        operator.observer=observer or self.observer
+        return operator
+
+    def test_planning_health_retains_approved_descriptor_during_outage(self):
+        self.publish();operator=self.planning_operator();before=self.publisher._document()
+        state=operator.planning_state();key=self.endpoint['installation_id']+':'+self.endpoint['workspace_id']
+        self.assertEqual(state['endpoints'],[self.endpoint]);self.assertEqual(state['service_health'][key]['state'],'healthy')
+        def down(*args):raise OperatorError('Worker unavailable')
+        operator.observer=down
+        state=operator.planning_state();self.assertEqual(state['endpoints'],[self.endpoint])
+        self.assertEqual(state['service_health'][key]['state'],'unavailable')
+        self.assertEqual(self.publisher._document(),before)
+        self.assertNotIn(self.private.decode(),json.dumps(state));self.assertNotIn('addresses',json.dumps(state))
+
+    def test_planning_new_address_requires_separate_publication(self):
+        self.publish();self.observed['addresses']=['172.28.0.20']
+        state=self.planning_operator().planning_state()
+        self.assertEqual(next(iter(state['service_health'].values()))['state'],'unavailable')
+
+    def test_planning_revoked_endpoint_needs_no_runtime_or_keys(self):
+        self.publish();self.endpoint.update(generation=2,state='revoked');self.publish()
+        for path in self.publisher.keys.glob('*.pem'):path.unlink()
+        def forbidden(*args):raise AssertionError('Revoked endpoint must not inspect a runtime')
+        state=self.planning_operator(forbidden).planning_state()
+        self.assertEqual(state['endpoints'],[self.endpoint])
+        self.assertEqual(next(iter(state['service_health'].values()))['state'],'disabled')
+
+    def test_planning_publication_race_is_refused(self):
+        self.publish()
+        def replaced(*args):
+            self.endpoint.update(generation=2,state='revoked');self.publish()
+            return copy.deepcopy(self.observed)
+        with self.assertRaises(OperatorError):self.planning_operator(replaced).planning_state()
+
+    def test_planning_missing_verification_key_is_unavailable(self):
+        self.publish();(self.publisher.keys/(self.endpoint['public_key_ref']+'.pem')).unlink()
+        def forbidden(*args):raise AssertionError('Missing publication key must not inspect a runtime')
+        state=self.planning_operator(forbidden).planning_state()
+        self.assertEqual(next(iter(state['service_health'].values()))['state'],'unavailable')
 
 
 if __name__=='__main__':unittest.main()

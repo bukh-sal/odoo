@@ -7,7 +7,7 @@ and current image/database/inventory pins. No artifact chooses these arguments.
 import hashlib,json,os,re,subprocess
 from pathlib import Path
 from uuid import UUID,uuid4
-from .contracts import load_json
+from .contracts import load_json,validate
 from .deployment import DockerObserver
 from .operator_os import OperatorError,_not_link,verify_private_directory
 from .plans import data_digest
@@ -33,6 +33,38 @@ class WorkerOperator:
         self.publisher=WorkerAuthorityPublisher(store,c['deployment_id'],c['site_id'])
         self.sink=DockerWorkerProjection(volume=c['authority_volume'],deployment_id=c['deployment_id'],helper_image=c['helper_image'],records=self.publisher.records)
         self.publisher.sink=self.sink;self.observer=DockerWorkerObservation(c['runtime'])
+
+    def planning_state(self):
+        """Fresh OS-owned descriptors plus observed availability, never approval.
+
+        Runtime failure retains the descriptor for suspension/unregistration.
+        A healthy process at a new address cannot silently replace the reviewed
+        address set. No issuer bytes or Docker details enter the app's cache.
+        """
+        from .worker_authority import PublishedWorkerAuthority,AuthorityUnavailable
+        from .projection import external_observation
+        policy=self.publisher._authorize();document=self.publisher._document()
+        reader=PublishedWorkerAuthority(self.publisher.projection,
+            deployment_id=self.config['deployment_id'],site_id=self.config['site_id'])
+        endpoints=[];health={}
+        for entry in document['endpoints']:
+            if not isinstance(entry,dict) or set(entry)!={'descriptor','addresses','key_id'}:
+                raise OperatorError('Exact independently published worker entry required')
+            endpoint=validate('endpoint',entry['descriptor'])
+            if endpoint['site_id']!=self.config['site_id']:raise OperatorError('Published worker site differs')
+            state='disabled' if endpoint['state']!='enabled' else 'unavailable'
+            if endpoint['state']=='enabled':
+                try:
+                    snapshot=reader.select(**{k:endpoint[k] for k in ['installation_id','workspace_id','endpoint_config']})
+                    observed=self.observer(endpoint,snapshot.public_key_digest,entry['key_id'])
+                    if observed['addresses']==entry['addresses']:state='healthy'
+                except (AuthorityUnavailable,OperatorError):pass
+            endpoints.append(endpoint)
+            health[endpoint['installation_id']+':'+endpoint['workspace_id']]=dict(
+                state=state,expected_image_digest=endpoint['expected_image_digest'])
+        if self.publisher._document()!=document or self.publisher._authorize()!=policy:
+            raise OperatorError('Worker publication/policy changed during observation')
+        return external_observation(dict(endpoints=endpoints,service_health=health))
 
     def review(self,operation):
         if str(UUID(operation))!=operation:raise OperatorError('Canonical publication operation required')

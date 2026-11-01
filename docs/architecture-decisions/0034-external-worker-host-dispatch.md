@@ -153,3 +153,32 @@ unpublished connector/provider now require platform>=0.1.12 to exclude the known
 cancel-defect release. This is packaging evidence, not metadata registration,
 endpoint activation, process control or SVC04/05 qualification. Next extend the
 independently observed/executed metadata lifecycle; keep worker launch separate.
+
+F-01d source reader checkpoint (`external-projection-01/qualification.json`):
+metadata packages outside the native image are selected only by exact external
+pins in the independently owned published release and revalidated against the
+current trusted catalog. Database installation declarations cannot select them.
+Their retained, unregistered declarations are inert history; no addon or schema
+is invented. Native projection and its existing historical locks are preserved.
+
+The OS-configured WorkerOperator supplies a fresh, sanitized endpoint/health
+snapshot through an explicit DockerObserver reader. It reads the existing
+protected publisher, checks the actual configured runtime and reviewed address
+set, and rechecks publication/policy after observation. Outage, missing public
+verification material or changed address reports unavailable. Revoked endpoints
+need no live runtime or retained keys. The app's planning cache contains frozen
+endpoint DTOs and availability, never issuer bytes, observed network addresses,
+Docker controls or approval authority. This cache can support proposals only;
+the independent lifecycle validator must reconstruct from the protected source.
+The new reader is not yet wired into the normal lifecycle CLI/executor, and these
+source tests do not qualify metadata registration or SVC04/05.
+
+Before installing the optional connector, close a separate finalization gap:
+detached compute currently rechecks remote authority around I/O, but connector
+apply only rereads the Note/revision. Apply must also revalidate the current
+external binding/provider/grants and protected endpoint publication against the
+computed result's authority snapshot. This is required by sections11.6/14.6;
+no network call belongs inside the final database transaction. Status/history
+may remain readable during worker outage under current Note/connector authority.
+Do not claim a cross-runtime atomic transaction or advance external acceptance
+until actual late-revocation cases pass.

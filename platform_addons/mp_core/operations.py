@@ -100,7 +100,7 @@ def profile_metadata():
     if not record:raise PublicError('DEPENDENCY_UNAVAILABLE')
     profile=record.payload
     required={'schema_version','configuration','runtime','catalog','observed_at'}
-    if not isinstance(profile,dict) or not required<=profile.keys() or not profile.keys()<=required|{'staged_release'} or profile['schema_version']!=1:
+    if not isinstance(profile,dict) or not required<=profile.keys() or not profile.keys()<=required|{'staged_release','external_state'} or profile['schema_version']!=1:
         raise ContractError('Invalid sanitized profile')
     if site_id() not in profile['configuration']['site_ids']:raise AccessError('Profile site mismatch')
     # A cache from another code release cannot silently prepare operations here.
@@ -115,6 +115,7 @@ def profile_document():
     profile,metadata=profile_metadata()
     if any(item['state']!='installed' for item in metadata['native_modules']):raise PublicError('DEPENDENCY_UNAVAILABLE')
     observation={'runtime':profile['runtime'],'image_id':profile['configuration']['image_id'],'sites':[metadata]}
+    if 'external_state' in profile:observation['external_state']=profile['external_state']
     document=project_deployment(profile['configuration'],observation,profile['catalog'])
     return document,profile,metadata
 

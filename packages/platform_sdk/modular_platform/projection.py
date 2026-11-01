@@ -40,7 +40,7 @@ def published_lock(derived,published):
     return copy.deepcopy(published)
 
 
-def runtime_inputs(runtime,catalog):
+def runtime_inputs(runtime,catalog,*,external_plugins=()):
     """Derive trusted-image inputs without asserting any database installation."""
     artifacts = runtime['inventory'].get('artifacts', {})
     selected = []
@@ -61,7 +61,21 @@ def runtime_inputs(runtime,catalog):
             if artifact['addon']!=addon or actual!=expected:
                 raise PlanningError('Image native source differs from independently validated package bytes')
         selected.append(matches[0])
-    provided = {item['manifest']['runtime'].get('addon_name') for item in selected}
+    # Metadata packages are independently pinned in the published release, not
+    # fabricated executable roots in the native image or selected from DB rows.
+    seen={item['manifest']['plugin']['id'] for item in selected}
+    for pin in external_plugins:
+        if not isinstance(pin,dict) or pin.get('runtime')!='external_service' or pin.get('plugin_id') in seen:
+            raise PlanningError('Exact distinct external metadata release selection required')
+        matches=[item for item in catalog if item['manifest']['plugin']['id']==pin['plugin_id'] and item['digest']==pin.get('digest')]
+        if len(matches)!=1:raise PlanningError('External metadata package is absent/untrusted in the independent catalog')
+        descriptor=matches[0];manifest=descriptor['manifest']
+        if manifest['runtime']!={'kind':'external_service'} or manifest['plugin']['version']!=pin.get('version'):
+            raise PlanningError('External metadata selection differs from validated artifact')
+        if any(name.startswith(('backend/','frontend/','migrations/')) for name in descriptor.get('inventory',{})):
+            raise PlanningError('External metadata cannot supply native/frontend/migration code')
+        seen.add(pin['plugin_id']);selected.append(descriptor)
+    provided = {item['manifest']['runtime']['addon_name'] for item in selected if item['manifest']['runtime']['kind']=='native'}
     # Select the immutable image's version, not the host reader's version.
     # Old images retain the exact platform0.1.0 meaning in their published lock.
     platform_version=runtime.get('platform_version','0.1.0')
@@ -80,9 +94,32 @@ def runtime_inputs(runtime,catalog):
     return selected,environment,provenance
 
 
+def external_observation(value):
+    """Sanitize the private planning cache; this never establishes approval."""
+    if not isinstance(value,dict) or set(value)!={'endpoints','service_health'} or not isinstance(value['endpoints'],list) or len(value['endpoints'])>256 or not isinstance(value['service_health'],dict):
+        raise PlanningError('Exact sanitized external observation required')
+    for endpoint in value['endpoints']:validate('endpoint',endpoint)
+    if len({(e['installation_id'],e['workspace_id'],e['endpoint_config']) for e in value['endpoints']})!=len(value['endpoints']):
+        raise PlanningError('Duplicate external observation scope')
+    scopes={e['installation_id']+':'+e['workspace_id'] for e in value['endpoints']}
+    if not set(value['service_health'])<=scopes:raise PlanningError('External health scope has no approved endpoint descriptor')
+    for health in value['service_health'].values():
+        if (not isinstance(health,dict) or set(health)!={'state','expected_image_digest'}
+                or health['state'] not in ('healthy','unavailable','disabled') or not isinstance(health['expected_image_digest'],str)
+                or not re.fullmatch('sha256:[0-9a-f]{64}',health['expected_image_digest'])):
+            raise PlanningError('Sanitized external health evidence required')
+    return copy.deepcopy(value)
+
+
 def project_deployment(configuration, observation, catalog):
     runtime = observation['runtime']
-    selected,environment,provenance=runtime_inputs(runtime,catalog)
+    external_pins=[item for item in configuration.get('published_release',{}).get('plugins',[]) if item['runtime']=='external_service']
+    selected,environment,provenance=runtime_inputs(runtime,catalog,external_plugins=external_pins)
+    external=observation.get('external_state')
+    if external_pins and external is None:
+        raise PlanningError('External metadata requires independently observed endpoint/health state')
+    if external is not None:
+        external=external_observation(external)
     choices = {}
     for site in observation['sites']:
         ids = {item['installation_id']: item['plugin_id'] for item in site['installations']}
@@ -110,7 +147,7 @@ def project_deployment(configuration, observation, catalog):
         installations = {item['installation_id']: item for item in site['installations']}
         for feature in site['features']:
             installation = installations[feature['installation_id']]
-            if installation['runtime'] != 'native':
+            if installation['runtime'] not in ('native','external_service') or installation['runtime']=='external_service' and external is None:
                 raise PlanningError('External runtime state requires the G6 endpoint/health adapter')
             if feature.get('plugin_id', installation['plugin_id']) != installation['plugin_id']:
                 raise PlanningError('Retained feature ownership differs from its installation')
@@ -120,9 +157,9 @@ def project_deployment(configuration, observation, catalog):
                 # version or a package no longer present in this image.
                 manifest = normalize_manifest(installation['manifest'])
                 if (manifest['plugin']['id'] != installation['plugin_id'] or manifest['plugin']['version'] != installation['version']
-                        or manifest['runtime']['kind'] != 'native' or not re.fullmatch(r'sha256:[0-9a-f]{64}', installation['digest'])
+                        or manifest['runtime']['kind'] != installation['runtime'] or not re.fullmatch(r'sha256:[0-9a-f]{64}', installation['digest'])
                         or feature['feature_state'] != 'suspended'
-                        or any(m['addon'] == manifest['runtime']['addon_name'] for m in site['native_modules'])
+                        or manifest['runtime']['kind']=='native' and any(m['addon'] == manifest['runtime']['addon_name'] for m in site['native_modules'])
                         or any(g['installation_id'] == installation['installation_id'] and g['state'] == 'approved' for g in site['grants'])):
                     raise PlanningError('Removed installation has active native state, availability or grants')
                 expanded.append(dict(installation_id=installation['installation_id'], site_id=site['site_id'],
@@ -132,12 +169,12 @@ def project_deployment(configuration, observation, catalog):
             descriptor = by_plugin.get(installation['plugin_id'])
             if descriptor is None:
                 raise PlanningError('Active installation requires its verified package in this image')
-            if installation['digest'] != descriptor['digest'] or normalize_manifest(installation['manifest']) != descriptor['manifest']:
+            if installation['digest'] != descriptor['digest'] or normalize_manifest(installation['manifest']) != descriptor['manifest'] or installation['runtime']!=descriptor['manifest']['runtime']['kind']:
                 raise PlanningError('Database installation metadata differs from verified artifact')
             native_state = {item['addon']: item['state'] for item in site['native_modules']}.get(descriptor['manifest']['runtime'].get('addon_name'))
             expanded.append({'installation_id': installation['installation_id'], 'site_id': site['site_id'],
                 'workspace_id': feature['workspace_id'], 'plugin_id': installation['plugin_id'],
-                'state': 'installed' if native_state == 'installed' else 'not_installed',
+                'state': 'installed' if native_state == 'installed' or installation['runtime']=='external_service' and installation['metadata_state'] in ('installed','suspended') else 'not_installed',
                 'feature_state': feature['feature_state'], 'metadata_state': installation['metadata_state']})
         bindings.extend(item['descriptor'] for item in site['bindings'])
         security.append({'site_id': site['site_id'], 'workspaces': site['workspaces'], 'memberships': site['memberships'],
@@ -148,6 +185,23 @@ def project_deployment(configuration, observation, catalog):
         'bindings': sorted(bindings, key=lambda item: item['binding_id']), 'endpoints': [],
         'security_metadata_digest': data_digest(security), 'image_id': observation['image_id'],
         'policy_version': configuration['policy_version'], 'operator_authorization_generation': configuration['operator_authorization_generation']}
+    if external is not None:
+        scopes={(row['installation_id'],row['workspace_id']):row for row in expanded if row['state']=='installed' and by_plugin[row['plugin_id']]['manifest']['runtime']['kind']=='external_service'}
+        endpoints=[];health={}
+        for endpoint in external['endpoints']:
+            row=scopes.get((endpoint['installation_id'],endpoint['workspace_id']))
+            if row is None:continue  # Unregistered approval is not installation.
+            manifest=by_plugin[row['plugin_id']]['manifest'];expected=manifest['external_service']
+            if endpoint['site_id']!=row['site_id'] or endpoint['endpoint_config']!=expected['endpoint_config'] or endpoint['expected_image_digest']!=expected['expected_image'].split('@',1)[1]:
+                raise PlanningError('Observed external endpoint differs from pinned package/scope')
+            endpoints.append(copy.deepcopy(endpoint));key=endpoint['installation_id']+':'+endpoint['workspace_id']
+            value=external['service_health'].get(key)
+            if value:
+                if value['expected_image_digest']!=endpoint['expected_image_digest']:raise PlanningError('Observed health image differs from endpoint approval')
+                health[key]=copy.deepcopy(value)
+        if len({e['endpoint_config'] for e in endpoints})!=len(endpoints):raise PlanningError('This R1 release profile requires distinct endpoint configuration names per scoped instance')
+        state['endpoints']=sorted(endpoints,key=lambda row:row['endpoint_config'])
+        if external_pins or health:state['service_health']=health
     if 'published_release' in configuration:state['catalog_validation_digest']=catalog_validation_digest(catalog)
     return {'state': state, 'environment': environment, 'provenance': provenance,
             'python_metadata': runtime['python_metadata']}
@@ -159,5 +213,7 @@ def public_profile(configuration, observation, catalog, observed_at):
     public={key:configuration[key] for key in keys}
     public['site_ids']=[item['site_id'] for item in configuration['sites']]
     if 'published_release' in configuration:public['published_release']=copy.deepcopy(configuration['published_release'])
-    return {'schema_version':1,'configuration':public,'runtime':copy.deepcopy(observation['runtime']),
+    result={'schema_version':1,'configuration':public,'runtime':copy.deepcopy(observation['runtime']),
             'catalog':copy.deepcopy(catalog),'observed_at':observed_at}
+    if 'external_state' in observation:result['external_state']=external_observation(observation['external_state'])
+    return result

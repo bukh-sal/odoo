@@ -96,12 +96,15 @@ def inspect_image(image_id):
 
 
 class DockerObserver:
-    def __init__(self, configuration):
+    def __init__(self, configuration, *, external_reader=None):
         required = {'schema_version', 'deployment_id', 'project', 'sites', 'image_id',
                     'generation', 'policy_version', 'operator_authorization_generation', 'release_created_at'}
         if not isinstance(configuration, dict) or not required<=configuration.keys() or not configuration.keys()<=required|{'worker_id','published_release'} or configuration['schema_version'] != 1:
             raise PlanningError('Exact independently owned deployment configuration required')
         self.config = configuration
+        # Only the OS-side composition root supplies this reader. Database and
+        # package declarations never nominate an authority path or callback.
+        self.external_reader = external_reader
         if 'worker_id' in configuration and not re.fullmatch('[0-9a-f]{64}',configuration['worker_id']):
             raise PlanningError('Exact independently selected worker identity required')
         if not re.fullmatch('mp-r0-r1[a-z0-9]+', configuration['project']):
@@ -155,7 +158,11 @@ class DockerObserver:
             if not uncertain_native and any(item['state'] != 'installed' for item in site['native_modules']):
                 raise PlanningError('Native registry has a pending/uncertain module operation')
             sites.append(site)
-        return {'image_id': identity, 'runtime': runtime, 'sites': sites}
+        observation = {'image_id': identity, 'runtime': runtime, 'sites': sites}
+        if self.external_reader is not None:
+            from .projection import external_observation
+            observation['external_state'] = external_observation(self.external_reader())
+        return observation
 
     def state(self, observation, catalog):
         from .projection import project_deployment

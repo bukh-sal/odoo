@@ -1,0 +1,35 @@
+{
+  "result": "source_readers_passed_not_installed",
+  "utc": "2026-11-01T05:41:54.796008+00:00",
+  "native_image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "tests": {
+    "external_projection": 8,
+    "native_tombstones": 3,
+    "planning_cli": 5,
+    "linux_publication": 13
+  },
+  "contract_freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 94,
+    "rows": 8
+  },
+  "source_hashes": {
+    "packages/platform_sdk/modular_platform/projection.py": "9dae483d4fe3e428bd67596a47cc6cf1dcb5fe0f4c23c42baff78190a79de5d0",
+    "packages/platform_sdk/modular_platform/deployment.py": "aec84a0d03372fe91f7cb7caee81ee6876035428d1e0751212ad52f4283e5a56",
+    "packages/platform_sdk/modular_platform/worker_operator.py": "aca4118d6c02845bc3f9b5e3365dbb37869eb203116cf742a7de6a5223007fb8",
+    "platform_addons/mp_core/operations.py": "24919500021466bea692f2eb3099fde0e72777c9c298a5b14e102029cbb6e9d3",
+    "tests/test_external_projection.py": "7e7a19de70daa439c28172f18cae7b2acb2c2dd18464ae0931d24a02eadf4aa6",
+    "tests/test_worker_publication.py": "4a7c1de686011159cc6c9864ef219cc9592f70374080ced73e9aa8e34a4617fc"
+  },
+  "database_connections": false,
+  "release_files_replaced": false,
+  "new_images": false,
+  "new_volumes": false,
+  "limitations": [
+    "Explicit external reader is not yet wired to lifecycle CLI/independent executor.",
+    "Metadata registration, native connector install, final-apply external authority recheck and real remote jobs remain required.",
+    "Windows publication run stopped after two passing cases because repeated ACL subprocesses were slow.",
+    "One Docker helper-create client stalled before any matching container appeared; stopped without retry or daemon restart."
+  ]
+}
