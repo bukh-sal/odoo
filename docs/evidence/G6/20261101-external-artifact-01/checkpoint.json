@@ -1,0 +1,21 @@
+{
+  "result": "metadata_artifact_source_ready_lifecycle_unimplemented",
+  "utc": "2026-11-01T05:13:21.318048+00:00",
+  "external_plugin": "org.example.document_stats",
+  "version": "0.1.0",
+  "core_minimum": "0.1.12",
+  "selected_host_image_unchanged": true,
+  "current_build_input_changes_after_rollout": [
+    "plugins/notes_stats/plugin.toml",
+    "plugins/notes_stats/README.md",
+    "tools/reference_package.py"
+  ],
+  "changes_scope": "Host-only archive assembler and unpublished/unshipped connector compatibility. Current selected native artifact bytes remain identical; core/SDK current files unchanged.",
+  "artifact_qualification": "qualification.json",
+  "archive_regressions": 18,
+  "frozen_files": 94,
+  "installed": false,
+  "curated": false,
+  "worker_launched": false,
+  "next": "Implement independent metadata registration/observation/approved endpoint and lifecycle; keep runtime launch separate, no native addon fabricated."
+}

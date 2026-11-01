@@ -216,7 +216,7 @@ class Invocation:
 
 def _safe_code(error):
     from modular_platform.worker_dispatch import WorkerDispatchError
-    if isinstance(error,WorkerDispatchError) and error.code in {'FORBIDDEN','DEPENDENCY_UNAVAILABLE','CONFLICT','DEADLINE_EXCEEDED','CANCELLED','VALIDATION_FAILED'}:return error.code
+    if isinstance(error,WorkerDispatchError) and error.code in {'FORBIDDEN','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','NOT_FOUND','CONFLICT','DEADLINE_EXCEEDED','CANCELLED','VALIDATION_FAILED'}:return error.code
     if isinstance(error,PublicError) and error.code in {'NOT_FOUND','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','CONFLICT','DEADLINE_EXCEEDED'}:return error.code
     if isinstance(error,AccessError):return 'FORBIDDEN'
     if isinstance(error,MissingError):return 'NOT_FOUND'

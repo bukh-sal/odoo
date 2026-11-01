@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "tests": 10,
+  "successful": true,
+  "errors": [],
+  "failures": [],
+  "image_id": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "source_substitution": false,
+  "all_writes_rolled_back": true,
+  "test_sha256": "322ece755a2ef4b8445febc113a9e33b3cef814066b28222eaddf6b7dd4b12c7"
+}

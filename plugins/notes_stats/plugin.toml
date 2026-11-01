@@ -1,6 +1,6 @@
 "schema_version" = 1
 "plugin" = {"id" = "org.example.notes_stats", "version" = "0.1.0", "name" = "Notes Analysis Connector", "description" = "Optional saved-revision text statistics through the independent worker", "publisher" = "example", "license" = "LGPL-3.0-only"}
-"compatibility" = {"platform" = ">=0.1.11,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
+"compatibility" = {"platform" = ">=0.1.12,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
 "runtime" = {"kind" = "native", "addon_name" = "mp_example_notes_stats", "native_compatibility" = "odoo-19", "python" = ">=3.12,<3.13", "python_dependencies" = []}
 "activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}
 "permissions" = {"defines" = {"analysis.run" = "Analyze saved Note body and read own analysis jobs"}, "requests" = [{"capability" = "org.example.notes:notes.read", "reason" = "Read the authorized saved revision through documents", "scope" = "workspace"}, {"capability" = "org.example.document_stats:analysis.run", "reason" = "Analyze the saved Note body through optional stats", "scope" = "workspace"}]}

@@ -87,3 +87,13 @@ SDK0.1.11 rollout, exact original data/history/file preservation, native Odoo vi
 and one normal original-actor read-only job without source substitution. The
 authority volume is retained for integration; lease/error/revocation requalification
 and the committed external Notes path remain required.
+
+Current native runner qualification is now in `20261101-core12-runner-01`:
+core1.12/SDK0.1.12 fixes bridge CANCELLED handling, preserves safe suspension/missing
+codes, passes12 installed authority cases and seven actual process error/cancel
+cases plus normal CLI execution. Cancellation means claim loss, with ordinary
+bounded reaping; it never proves a remote computation stopped or rolled back.
+Recorded death/reclaim/committed-demotion cases retain exact unchanged code paths.
+The reference provider/connector require this corrected minimum. Metadata artifact
+validation is ready in `20261101-external-artifact-01`; live metadata registration,
+real scoped remote Notes jobs, degraded UI and full external recovery still remain.

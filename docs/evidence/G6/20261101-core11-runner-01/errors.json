@@ -1,0 +1,14 @@
+{
+  "result": "unavailable_passed_cancel_defect_reproduced",
+  "image_id": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "unavailable_error_preserved": true,
+  "cancellation_uses_actual_bridge_snapshot_and_real_cancel_flag": true,
+  "installed_mapping": {
+    "mapper_code": "CANCELLED",
+    "failure_writer_rejects": true
+  },
+  "outer_runner_reported": "INTERNAL_ERROR",
+  "cancelled_owned_job_reaped_without_replay": true,
+  "privacy_guard_omits_exception_text": true,
+  "fixture_correction": "Initial assertion wrongly expected suppressed private exception text; actual minimal log was correct. Resume observes same terminal process/job, proves mapping directly without mutation and reaps expired owned claim once."
+}

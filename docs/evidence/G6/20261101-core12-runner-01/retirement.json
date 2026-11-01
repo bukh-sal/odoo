@@ -1,0 +1,7 @@
+{
+  "completed_operation_seed_and_fault_helpers_removed": 25,
+  "completed_current_observation_helpers_removed": 5,
+  "private_archive": ".local/retired-docker-20261101",
+  "native_app_DB_edge_recovery_images_and_authority_volume_retained": true,
+  "no_global_prune_or_daemon_restart": true
+}

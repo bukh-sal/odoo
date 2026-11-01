@@ -1,0 +1,46 @@
+{
+  "containers": [
+    {
+      "label": "core11-kill-seed",
+      "exit_code": 0
+    },
+    {
+      "label": "core11-killed-runner",
+      "exit_code": 137
+    },
+    {
+      "label": "core11-stale-claim",
+      "exit_code": 0
+    },
+    {
+      "label": "core11-revoke-seed",
+      "exit_code": 0
+    },
+    {
+      "label": "core11-revoked-runner",
+      "exit_code": 0
+    },
+    {
+      "label": "core11-unavailable-seed",
+      "exit_code": 0
+    },
+    {
+      "label": "core11-unavailable-runner",
+      "exit_code": 0
+    },
+    {
+      "label": "core11-cancel-seed",
+      "exit_code": 0
+    },
+    {
+      "label": "core11-cancel-runner",
+      "exit_code": 1
+    },
+    {
+      "label": "core11-cancel-mapping-proof",
+      "exit_code": 0
+    }
+  ],
+  "original_data_and_native_roles_preserved": true,
+  "no_volumes_or_images_created": true
+}

@@ -24,12 +24,32 @@ def toml_value(value):
     raise ValueError('Unsupported reference TOML value')
 
 
+def _finish_archive(source,manifest,files):
+    plugin=manifest['plugin']['id']
+    for name in ['LICENSE','COPYRIGHT']:files['notices/'+name]=(source/name).read_bytes()
+    provenance={'schema_version':1,'builder':'repository-reference-assembler-v1','trusted_inputs_only':True,'source_files':{name:hashlib.sha256(value).hexdigest() for name,value in sorted(files.items())},'upstream_commit':'5c7defb49e020fec8b6bb82403a2f54eb79e92e1'}
+    files['provenance.json']=(json.dumps(provenance,sort_keys=True,indent=2)+'\n').encode()
+    inventory={'schema_version':1,'files':{name:hashlib.sha256(value).hexdigest() for name,value in sorted(files.items())},'excluded':['inventory.json']}
+    files['inventory.json']=(json.dumps(inventory,sort_keys=True,indent=2)+'\n').encode()
+    output=io.BytesIO()
+    with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+        for name,value in sorted(files.items()):
+            info=zipfile.ZipInfo(plugin+'/'+name,(2000,1,1,0,0,0));info.create_system=3;info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=(stat.S_IFREG|0o444)<<16;archive.writestr(info,value)
+    return manifest,output.getvalue(),files
+
+
 def assemble(source,manifest_path):
     manifest_path=(source/manifest_path).resolve()
     if not manifest_path.is_relative_to(source/'plugins'):raise ValueError('Reference manifests must be repository plugin inputs')
     sys.path.insert(0,str(source/'packages/platform_sdk'))
     from modular_platform.contracts import normalize_manifest
-    manifest=normalize_manifest(tomllib.loads(manifest_path.read_text()));plugin=manifest['plugin']['id'];version=manifest['plugin']['version'];addon=manifest['runtime']['addon_name']
+    manifest=normalize_manifest(tomllib.loads(manifest_path.read_text()));plugin=manifest['plugin']['id'];version=manifest['plugin']['version']
+    if manifest['runtime']['kind']=='external_service':
+        if plugin!='org.example.document_stats' or manifest_path!=source/'plugins/document_stats/plugin.toml':raise ValueError('Unsupported external reference package')
+        if manifest['services']['provides']!=[dict(id='org.example.document_stats.analysis',api_version='1.0',schema='schemas/stats-v1.json',methods=['analyze'])]:raise ValueError('Explicit reference worker contract required')
+        schema={'$schema':'https://json-schema.org/draft/2020-12/schema','$defs':{name:json.loads((source/'packages/contracts/v1'/('worker-'+name+'.schema.json')).read_text()) for name in ['request','response']}}
+        return _finish_archive(source,manifest,{'plugin.toml':manifest_path.read_bytes(),'schemas/stats-v1.json':(json.dumps(schema,indent=2)+'\n').encode()})
+    addon=manifest['runtime']['addon_name']
     if plugin not in ['org.example.notes','org.example.notes_labels','org.example.canvas','org.example.notes_stats'] or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',version):raise ValueError('Not an allowlisted reference package')
     if addon not in ['mp_example_notes','mp_example_notes_labels','mp_example_canvas','mp_example_notes_stats']:raise ValueError('Unsupported reference addon')
     addon_dir=source/'platform_addons'/addon
@@ -54,21 +74,13 @@ def assemble(source,manifest_path):
         if Path(name).stem=='labels-input':schema['$ref']='#/$defs/labels_input'
         files[name]=(json.dumps(schema,indent=2)+'\n').encode()
     if plugin=='org.example.canvas':files['frontend/dist/canvas.js']=(addon_dir/'static/src/page.js').read_bytes()
-    for name in ['LICENSE','COPYRIGHT']:files['notices/'+name]=(source/name).read_bytes()
-    provenance={'schema_version':1,'builder':'repository-reference-assembler-v1','trusted_inputs_only':True,'source_files':{name:hashlib.sha256(value).hexdigest() for name,value in sorted(files.items())},'upstream_commit':'5c7defb49e020fec8b6bb82403a2f54eb79e92e1'}
-    files['provenance.json']=(json.dumps(provenance,sort_keys=True,indent=2)+'\n').encode()
-    inventory={'schema_version':1,'files':{name:hashlib.sha256(value).hexdigest() for name,value in sorted(files.items())},'excluded':['inventory.json']}
-    files['inventory.json']=(json.dumps(inventory,sort_keys=True,indent=2)+'\n').encode()
-    output=io.BytesIO()
-    with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
-        for name,value in sorted(files.items()):
-            info=zipfile.ZipInfo(plugin+'/'+name,(2000,1,1,0,0,0));info.create_system=3;info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=(stat.S_IFREG|0o444)<<16;archive.writestr(info,value)
-    raw=output.getvalue()
-    return manifest,raw,files
+    return _finish_archive(source,manifest,files)
 
 
 def materialize_reference(source,manifest_path,staging):
-    manifest,raw,files=assemble(source,manifest_path);plugin=manifest['plugin']['id'];addon=manifest['runtime']['addon_name'];prefix=plugin+'/backend/odoo_addons/'+addon+'/'
+    manifest,raw,files=assemble(source,manifest_path)
+    if manifest['runtime']['kind']!='native':raise ValueError('External metadata cannot materialize a native addon')
+    plugin=manifest['plugin']['id'];addon=manifest['runtime']['addon_name'];prefix=plugin+'/backend/odoo_addons/'+addon+'/'
     # Verify/extract the archive bytes, rather than installing the original tree.
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
         inventory=json.loads(archive.read(plugin+'/inventory.json'))
@@ -101,6 +113,7 @@ def validate_reference_composition(artifacts):
                     raise ContractError('Migration script digest mismatch')
     registry=resolve_ui([manifest for manifest,archive in parsed])
     for manifest,archive in parsed:
+        if manifest['runtime']['kind']!='native':continue
         plugin=manifest['plugin']['id'];own=set(manifest['data']['models']);targets=set(manifest['data']['extension_targets'])
         declared={item['id'] for item in manifest['data']['contributions'] if item['kind']=='field'}
         prefix=plugin+'/backend/odoo_addons/'+manifest['runtime']['addon_name']+'/'

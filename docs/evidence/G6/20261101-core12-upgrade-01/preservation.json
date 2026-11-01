@@ -1,0 +1,36 @@
+{
+  "result": "passed_installed_core12_upgrade_preservation",
+  "image_id": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "generation": 10,
+  "dispatch_generation": 43,
+  "same_database": true,
+  "counts_exact": {
+    "mp_example_note": 29,
+    "mp_example_canvas_board": 0,
+    "mp_example_note_event_summary": 3,
+    "mp_outbox": 47,
+    "mp_job": 10
+  },
+  "all_original_job_identity_input_attempt_result_and_other_fields_exact": true,
+  "sanctioned_job_fields": [
+    "release_digest",
+    "claim_generation",
+    "dispatch_generation"
+  ],
+  "sanctioned_cancelled_null_terminal_timestamp_backfills": 1,
+  "retained_files": 46,
+  "plugin_installations_and_bindings_exact": true,
+  "worker_configuration_update": {
+    "previous_sha256": "81396056d3f506bca0761efff059d37f9224e380abead3e3d5568707209b8097",
+    "current_sha256": "9d85576682832aba92ff458d8ba2e7d198375b218760c6496810417444857cb5",
+    "only_field": "helper_image",
+    "reason": "Use the normally approved current core image for isolated operator helpers; runtime authority generation2 retained"
+  },
+  "fixture_corrections": [
+    "Expected job states updated for four committed owned runner tests.",
+    "Existing reconciliation backfills this one cancelled job null finished_at; timestamp must fall within this reviewed operation, and every other field stays exact. Read-only COPY results reused explicitly; no migration replay."
+  ],
+  "limits": [
+    "JOB01/02 targeted lease/error/revocation requalification and actual external Notes bridge still required."
+  ]
+}

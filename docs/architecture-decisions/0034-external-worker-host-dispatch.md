@@ -1,6 +1,6 @@
 # ADR0034: approved host-to-worker dispatch
 
-Date: 2026-11-01. Status: transport/operator publication implemented and tested; native integration unqualified.
+Date: 2026-11-01. Status: operator/worker prerequisites and current native runner qualified; external metadata/Notes integration pending.
 Parent F-01c/d/e2; spec13/14.3/14.5/14.6/22.4, SVC-02..05 and JOB-03.
 
 The existing service gateway registers native model handlers only. The independent
@@ -121,3 +121,35 @@ using the installed runner, with no source substitution or business edit. This
 does not yet restore JOB01/02: installed lease/kill/stale-claim, actor revocation
 and compute-error paths still require targeted qualification. External metadata,
 connector installation, real remote jobs and complete recovery remain required.
+
+Installed runner requalification exposed a real1.11 cancellation defect: the
+bridge correctly reported CANCELLED after a committed cancel flag, but the runner
+passed that nonfailure code to durable.fail, whose strict failure enum rejected it.
+The outer safe logger emitted INTERNAL_ERROR and ordinary lease reaping eventually
+cancelled the job. Keep that evidence. Core1.12/SDK0.1.12 returns claim_lost directly
+for cancelled/paused/reclaimed bridge claims, without touching an obsolete claim or
+asserting remote rollback. It also preserves existing PLUGIN_SUSPENDED/NOT_FOUND
+bridge codes. No failure enum, public DTO or queue fence was weakened.
+
+The normally reviewed/checkpointed same-DB core-only upgrade completed config10/
+dispatch43, preserving29Notes/47envelopes/ten previous jobs/files/installations/
+bindings. Existing reconciliation filled one owned cancelled job's previously null
+terminal timestamp; the preservation test checks its exact ID/state/null-to-current-
+operation timestamp transition, with every other input/identity/result field exact.
+Twelve installed rollback-only authorization cases pass. Seven real runner error/
+cancel cases and a normal installed CLI job pass; real bridge cancellation now
+reports claim_lost/exit0 and the ordinary bounded reaper finishes it. The actual
+earlier SIGKILL137/reclaim-one-effect/stale-claim and committed actor-demotion cases
+are retained with explicit exact file/AST boundaries; current changed branches are
+tested directly. JOB01/02 native qualification is restored in core12-runner-01/
+qualification.json. External lifecycle/real remote/uncertain effects remain required.
+
+F-01d now has a concrete metadata-only document_stats reference package. Its six
+files contain TOML, unchanged frozen worker DTOs, notices/provenance/inventory;
+there is no addon, frontend or executable deployment descriptor. Normal native
+materialization refuses it. Five deterministic archives validate, with original
+three native archives byte-identical;18 hostile-archive regressions pass. The
+unpublished connector/provider now require platform>=0.1.12 to exclude the known
+cancel-defect release. This is packaging evidence, not metadata registration,
+endpoint activation, process control or SVC04/05 qualification. Next extend the
+independently observed/executed metadata lifecycle; keep worker launch separate.

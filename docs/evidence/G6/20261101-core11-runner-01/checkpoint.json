@@ -1,0 +1,27 @@
+{
+  "result": "installed_lease_revocation_passed_cancel_defect_open",
+  "image_id": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "generation": 9,
+  "dispatch_generation": 40,
+  "original_jobs_notes_events_memberships_control_exact": true,
+  "current_jobs": 10,
+  "current_notes": 29,
+  "current_events": 47,
+  "job_states": {
+    "cancelled": 1,
+    "completed": 5,
+    "dead_letter": 4
+  },
+  "pending_or_running_jobs": 0,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/job_runner.py": "4bf4b4578e871c81b0a5dde020dc8a1ebb34e499c925f6c8acb944c575f3abc1",
+    "platform_addons/mp_core/job_dispatch.py": "b426caa122963c88b26039931a2b747fa7249f469ea052f35adf1464657fee76",
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "platform_addons/mp_example_notes/jobs.py": "dde4fe53150d93100fe0aefb40413b6e77e54756331325402ba1893ea93cc4fc",
+    "platform_addons/mp_core/external_job.py": "456121efb20dbf6bbcf20fcb4d8f4f390bd2c0387064e698ca09d0a68dab1ed0"
+  },
+  "limits": [
+    "Trace pauses for death/revocation; registered compute callback deliberately injects unavailable or delegates real bridge cancellation fence. Actual runner/claim/authorization/finalization code unchanged.",
+    "CANCELLED must be treated as claim loss, not passed to durable.fail. Fix via immutable versioned rollout and requalify; JOB01/02 remain invalidated."
+  ]
+}

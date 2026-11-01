@@ -1,0 +1,11 @@
+{
+  "result": "passed_current_installed_death_reclaim",
+  "image_id": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "actual_SIGKILL_exit": 137,
+  "attempts": 2,
+  "revision": 2,
+  "one_original_user_effect": true,
+  "obsolete_claim_denied": true,
+  "runner_source_substitution": false,
+  "trace_instrumentation": "Pause before compute only; normal CLI reclaimed the actual expired lease"
+}

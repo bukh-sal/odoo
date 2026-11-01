@@ -1,0 +1,9 @@
+{
+  "result": "passed_installed_compute_to_apply_revocation",
+  "image_id": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "actor_role_committed_between_compute_and_apply": true,
+  "no_business_effect": true,
+  "original_role_restored": true,
+  "runner_source_substitution": false,
+  "trace_instrumentation": "Pause immediately before actual finalization only"
+}

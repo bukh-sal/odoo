@@ -58,6 +58,11 @@ def run_once(registry,owner):
         computed=jobs.compute(invocation)
     except Exception as error:
         code=jobs._safe_code(error)
+        if code=='CANCELLED':
+            # Detached authority checks report cancelled/paused/reclaimed
+            # claims this way. They are not registered failures to persist.
+            # Do not touch an obsolete claim or reinterpret remote rollback.
+            return dict(job_id=invocation.claim.job_id,state='claim_lost')
         with registry.cursor() as cr:
             metadata=api.Environment(cr,1,{})
             try:state=retrying(lambda:durable.fail(cr,invocation.claim,code,retryable=False),metadata)

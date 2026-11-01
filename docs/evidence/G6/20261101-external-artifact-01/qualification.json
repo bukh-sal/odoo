@@ -1,0 +1,54 @@
+{
+  "result": "passed_reference_metadata_artifact_prerequisite",
+  "archives": [
+    {
+      "plugin": "org.example.notes",
+      "runtime": "native",
+      "digest": "sha256:d24876c930fd9b852498f93c90a06f05bf26fd5b98d4de559a3cd0ee50a4bcad",
+      "files": 20,
+      "reproducible": true
+    },
+    {
+      "plugin": "org.example.notes_labels",
+      "runtime": "native",
+      "digest": "sha256:e0e61f52454757397f8b6a3e6fea3e8d2860acb63bcd74b38653f95e43218211",
+      "files": 14,
+      "reproducible": true
+    },
+    {
+      "plugin": "org.example.canvas",
+      "runtime": "native",
+      "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+      "files": 16,
+      "reproducible": true
+    },
+    {
+      "plugin": "org.example.notes_stats",
+      "runtime": "native",
+      "digest": "sha256:c71176c95ed0b52a45c1b73e275eba2be84c177cb500df4ff3374bf035be1d9b",
+      "files": 12,
+      "reproducible": true
+    },
+    {
+      "plugin": "org.example.document_stats",
+      "runtime": "external_service",
+      "digest": "sha256:bc1170197c19fb1503f1e786a157c4d2e14ec18a8a50d2d7fff7a64a2fdd97b7",
+      "files": 6,
+      "reproducible": true
+    }
+  ],
+  "old_three_native_archives_byte_identical": true,
+  "no_external_native_addon_frontend_or_deployment_descriptors": true,
+  "existing_frozen_worker_DTOs_exact": true,
+  "no_artifact_retained_or_registered": true,
+  "no_runtime_started": true,
+  "no_docker_assets_created": true,
+  "source_sha256": {
+    "tools/reference_package.py": "e359a5f63a03520f539eab6a01c9dde6a9f314e2d76bebde9ce0346d9ce1f4a3",
+    "plugins/document_stats/plugin.toml": "6abb43bcbb5e11b7efbe755cdc218886771107c2ff191d3e9a613e60d238ce60",
+    "plugins/notes_stats/plugin.toml": "90b5f00877cbfc2761cc2abf6815a3690e740b06eb48a2de86f3bb1dac5e6f85"
+  },
+  "limits": [
+    "Artifact validation/composition only. Independent metadata registration/unregister/suspension, live endpoints/provider bindings, compatibility and full external recovery remain required; SVC04/05 not claimed."
+  ]
+}

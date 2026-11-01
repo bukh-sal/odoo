@@ -1,0 +1,62 @@
+{
+  "result": "passed_current_native_JOB01_JOB02_qualification",
+  "utc": "2026-11-01T05:13:21.318048+00:00",
+  "image_id": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "inventory_digest": "sha256:69e77a15d3c599d7398cd2d75f34f31cee30cba5991f729d35e6ac5aa0f23aa1",
+  "configuration_generation": 10,
+  "dispatch_generation": 43,
+  "core": "19.0.0.1.12",
+  "SDK": "0.1.12",
+  "installed_guard_cases": 12,
+  "actual_runner_compute_error_and_cancel_cases": 7,
+  "normal_installed_CLI_job": true,
+  "retained_actual_SIGKILL137_reclaim_one_business_effect": true,
+  "retained_obsolete_claim_refusal_and_committed_role_demotion": true,
+  "source_boundaries_verified": true,
+  "all_current_jobs_terminal": true,
+  "job_states": {
+    "cancelled": 2,
+    "completed": 6,
+    "dead_letter": 10
+  },
+  "current_notes": 29,
+  "current_events": 47,
+  "native_rollback_writes_not_retained": true,
+  "all_original_data_and_authority_preserved": true,
+  "frozen_files": 94,
+  "acceptance": [
+    "JOB-01",
+    "JOB-02"
+  ],
+  "evidence": [
+    "native-guards-02.json",
+    "processes.json",
+    "source-boundaries.json",
+    "http.json",
+    "retirement.json",
+    "../20261101-core11-runner-01/lease.json",
+    "../20261101-core11-runner-01/revocation.json",
+    "../20261101-core12-upgrade-01/preservation.json"
+  ],
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/job_runner.py": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+    "platform_addons/mp_core/job_dispatch.py": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+    "platform_addons/mp_core/__manifest__.py": "790fa627ceafd8ae1df05e9b292607043b6735d241a92583a76223011fc780b4",
+    "packages/platform_sdk/modular_platform/projection.py": "b258aad59ef387329e59ecf4608cc34b87922fca1e3d5ca2d0be3a1cc9cdf77f",
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "platform_addons/mp_example_notes/jobs.py": "dde4fe53150d93100fe0aefb40413b6e77e54756331325402ba1893ea93cc4fc",
+    "platform_addons/mp_core/external_job.py": "456121efb20dbf6bbcf20fcb4d8f4f390bd2c0387064e698ca09d0a68dab1ed0"
+  },
+  "tools": {
+    "native_guards": "0823d9",
+    "processes": "e4a873",
+    "source_boundaries": "745fee",
+    "HTTP": "4d2860",
+    "external_archive": "4d6cb7"
+  },
+  "limits": [
+    "Qualifies supported native database jobs/runner only; SVC02..05, external metadata lifecycle, actual remote Notes connector and external effect/credential recovery remain mandatory.",
+    "Trace instrumentation pauses actual runner for death/revocation; error cases substitute only registered compute callbacks, cancellation calls the real installed bridge/claim gate. No runner/claim/authorization/finalization replacement.",
+    "Retained death/revocation test image is1.11; exact AST/function/file comparison proves its exercised code paths unchanged in1.12. Changed cancel/error branches tested on actual installed1.12."
+  ]
+}

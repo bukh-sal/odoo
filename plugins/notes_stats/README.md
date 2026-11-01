@@ -26,6 +26,6 @@ current original actor, grants, availability, resource and revision.
 The `stats` binding and external plugin dependency are optional. Missing or revoked
 worker authority must produce an unavailable/degraded analysis outcome while base
 Notes remains usable. Installing this connector does not install or launch a worker.
-Core/SDK0.1.11 or newer and Notes0.2.7 or newer are required. R1 qualification
+Core/SDK0.1.12 or newer and Notes0.2.7 or newer are required. R1 qualification
 still needs the reviewed immutable deployment, independent endpoint publication,
 committed remote job integration and minimal native-detail action qualification.

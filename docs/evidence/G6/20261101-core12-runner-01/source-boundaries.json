@@ -1,0 +1,38 @@
+{
+  "result": "passed_retained_test_boundaries",
+  "previous_actual_image": "sha256:4ea56c47170acc9fa41933ff19023e0e00665faafecddc123ba5c7de025bbfa0",
+  "current_core": "19.0.0.1.12",
+  "exact_files": [
+    "packages/platform_sdk/modular_platform/durable.py",
+    "platform_addons/mp_example_notes/jobs.py",
+    "platform_addons/mp_core/external_job.py"
+  ],
+  "exact_native_definitions": [
+    "JobDefinition",
+    "register",
+    "_validate",
+    "_locked_scope",
+    "_authorize",
+    "enqueue_bound",
+    "_envelope",
+    "_environment",
+    "_authorized_job",
+    "_fingerprint",
+    "Invocation",
+    "prepare_one",
+    "compute",
+    "finish_one",
+    "status",
+    "reconcile_release"
+  ],
+  "exact_runner_functions_except_one_cancel_if": true,
+  "only_runner_control_flow_addition": "Return claim_lost for CANCELLED before opening a failure transaction",
+  "native_mapper_delta": "Existing PLUGIN_SUSPENDED/NOT_FOUND worker codes preserved; all other guard/prepare/finalization definitions unchanged",
+  "retained_proofs": [
+    "../20261101-core11-runner-01/lease.json",
+    "../20261101-core11-runner-01/revocation.json"
+  ],
+  "limits": [
+    "AST/source boundaries justify retaining the actual death/reclaim and committed actor-demotion cases. Current installed native matrix and actual runner code/error/cancel cases are separate required records."
+  ]
+}

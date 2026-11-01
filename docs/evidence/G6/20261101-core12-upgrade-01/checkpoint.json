@@ -1,0 +1,17 @@
+{
+  "result": "passed_core12_cancellation_fix_rollout",
+  "utc": "2026-11-01T05:13:21.318048+00:00",
+  "image_id": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "inventory_digest": "sha256:69e77a15d3c599d7398cd2d75f34f31cee30cba5991f729d35e6ac5aa0f23aa1",
+  "configuration_generation": 10,
+  "dispatch_generation": 43,
+  "original_plugin_artifacts_and_bindings_exact": true,
+  "prior_notes": 29,
+  "prior_events": 47,
+  "prior_jobs": 10,
+  "retained_files": 46,
+  "sanctioned_cancelled_job_null_timestamp_backfill": 1,
+  "JOB01_JOB02_qualification": "../20261101-core12-runner-01/qualification.json",
+  "native_only_profile": true,
+  "external_profile_not_yet_qualified": true
+}

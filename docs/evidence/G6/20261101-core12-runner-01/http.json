@@ -1,0 +1,10 @@
+{
+  "result": "passed_current_authenticated_native_Odoo_views",
+  "generation": 10,
+  "workspaces": [
+    "A",
+    "B",
+    "C"
+  ],
+  "no_record_writes": true
+}
