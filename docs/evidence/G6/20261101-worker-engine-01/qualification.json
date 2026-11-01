@@ -1,0 +1,35 @@
+{
+  "result": "passed_bounded_engine_source_tests",
+  "utc": "2026-11-01T02:57:35.257314+00:00",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "tests.test_document_stats_engine",
+    "-v"
+  ],
+  "observed_tool_chunk": "07244a",
+  "tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "source_sha256": {
+    "services/document_stats/__init__.py": "49ce86115da36321648d538587649db13b94db012ca2f7003e73ce6ae20c5218",
+    "services/document_stats/engine.py": "bd9bda44c7abfabbbab95041b1f349de9ccd287e6a172783c03c376fefa1f85e",
+    "tests/test_document_stats_engine.py": "fe33f22698a457b1e1e8e92e2776351f433a25e55f59209a2d6a3b602bfebd0c"
+  },
+  "frozen_files": 94,
+  "checks": [
+    "actual RS256 verifier and Unicode statistics",
+    "16 concurrent duplicates compute once with current transport IDs",
+    "changed input conflict and no text cached",
+    "retry reauth expiry/audience/scope plus independent configured scope",
+    "bounded eviction/expiry and deterministic restart"
+  ],
+  "limits": [
+    "No HTTP process/container/image/host ingress or lifecycle integration yet; SVC/JOB03 remain not_run.",
+    "No runtime target or existing source boundary changed."
+  ],
+  "next_action": "Implement bounded HTTP health/analyze transport and structured payload-free logs, independently pinned dependency/image build/Compose; test actual processes before SVC credit."
+}
