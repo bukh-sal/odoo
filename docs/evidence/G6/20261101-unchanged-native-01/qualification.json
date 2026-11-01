@@ -1,0 +1,90 @@
+{
+  "result": "passed_two_actual_pre_native_unchanged_resume_profiles",
+  "utc": "2026-11-01T01:30:30.318021+00:00",
+  "gate": "G6 partial F-01e1; no gate pass",
+  "source_commit": "1c8d97064729f7f3a6f05b3832d0be2db0614cfb",
+  "generation": 5,
+  "image_unchanged": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_unchanged": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "database_unchanged": "mp_disposable_r0_r1_restore_8090a1a813ee42e299809369a79bd78a",
+  "cases": {
+    "paused": {
+      "operation_id": "f9837768-2533-4397-ae21-a2aa85c198d6",
+      "evidence": "paused-qualification.json",
+      "mode": "reconcile_paused"
+    },
+    "enabled": {
+      "operation_id": "6b7c47a7-a6ff-4186-8de1-d27e90d4c305",
+      "evidence": "enabled-qualification.json",
+      "mode": "enabled_unchanged"
+    }
+  },
+  "both_original_approvals_revoked": true,
+  "same_configuration_worker_business_42files_authority_jobs_trace_budget_and_outcome": true,
+  "paused_control_generations": [
+    25,
+    26,
+    27,
+    28
+  ],
+  "enabled_whole_dispatch_snapshot_unchanged": true,
+  "no_native_maintenance_database_restore_or_replacement": true,
+  "queue_snapshot": {
+    "jobs": 4,
+    "notes": 24,
+    "outbox": 34,
+    "deliveries": 220,
+    "job_states": {
+      "completed": 2,
+      "dead_letter": 2
+    },
+    "consumptions": 3,
+    "control_state": "enabled",
+    "subscriptions": 32,
+    "consumer_states": 1,
+    "leased_deliveries": 0,
+    "control_generation": 28,
+    "active_subscriptions": 0
+  },
+  "production_source_unchanged_from_prior_qualification": true,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/restore_executor.py": "317f630b00ca4600add17930e3b365049891c4b13e216490ee454ce89c97973d",
+    "packages/platform_sdk/modular_platform/restore_continuation.py": "9fb3600dd42621e09e45dba1cb5ceeb0aa7c0b6bbf2b77b225fcf19a95546d54",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "d3200e1cc135228e975b13321961fdad4068fd7ba769ed856849c074068a7dda",
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "91404af0c557c77e6550d9416475575a22e210e71eb3400f3bdd7106da5074d4",
+    "platform_addons/mp_core/job_dispatch.py": "90bf5cdb6ffd1097bc0d7fd1ac68c20aa1228458618a17b13166eb5b689a9fd8",
+    "tests/test_restore_continuation.py": "0edfc67fd0657d2fb3e98703532076218bcd0fcabd5084fc73c9815d1867d469",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "574ecc2f59fbfd7e41fe287ef6f41334d4f8b7798f821d0e24680a54de398f61"
+  },
+  "prior_source_tests_retained": {
+    "current_targeted": 21,
+    "unchanged_retained": 28,
+    "total_distinct": 49,
+    "evidence": "../20261101-native-recovery-01/restore-revalidation.json"
+  },
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "privacy": {
+    "public_files_scanned": 21,
+    "known_values": 127,
+    "findings": 0
+  },
+  "rough_progress_percent": 86,
+  "acceptance_counts": {
+    "passed": 88,
+    "not_run": 11,
+    "invalidated": 0,
+    "failed": 0,
+    "excluded_R2": 5
+  },
+  "goal_turn": "progress",
+  "next_build_input_inspection": "core-only-input-inspection.json",
+  "limits": [
+    "Actual native new-image core/plugin upgrade and retained compatible event delivery/native-batch/browser fixes remain before F-01e1 completion.",
+    "Current old a337 image still has documented timer/history/batch defects; no EVT/ID03 acceptance from unchanged recovery.",
+    "Native-only scope still refuses external/live credentials/uncertain effects pending F-01e2; actual managed worker/effects/credential and JOB03/SVC/G7 remain required.",
+    "Readonly retained-source comparison is a build preparation result; no candidate/worktree created and no progress credit for it.",
+    "Canvas and standard native Odoo record views remain unchanged; no frontend product expansion."
+  ],
+  "next_action": "Create isolated Git worktree from current implementation HEAD, restore only12verified old Notes0.2.6 inputs from5daaf201, use existing recorded builder and require exact artifact95d74f8e reproduction; normal independently staged/approved core10 populated upgrade with a newly bounded pending original-user job, then separate Notes0.2.7 upgrade and actual event/host/bus/browser/native batch proof. Preserve all current/failed databases and old operations."
+}

@@ -1,0 +1,14 @@
+{
+  "result": "exact_private_unchanged_review",
+  "operation_id": "6b7c47a7-a6ff-4186-8de1-d27e90d4c305",
+  "decision_hash": "sha256:5b498b81bf890280775cbaedabcd0d78023ca64abf252d177c80abea7ba34c09",
+  "review": {
+    "expires_at": "2026-11-01T01:42:13Z",
+    "issued_at": "2026-11-01T01:27:13Z",
+    "operator_authorization_generation": 1,
+    "policy_version": 1,
+    "review_id": "e3ab9956-3eec-4271-941e-d18b8f67a4b4"
+  },
+  "mode": "enabled_unchanged",
+  "database_restore": false
+}

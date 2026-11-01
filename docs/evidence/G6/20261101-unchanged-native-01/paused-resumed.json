@@ -1,0 +1,9 @@
+{
+  "database_restore": false,
+  "generation": 5,
+  "operation_id": "f9837768-2533-4397-ae21-a2aa85c198d6",
+  "original_plan_state": "failed_before_mutation",
+  "state": "unchanged_release_resumed",
+  "traffic_resumed": true,
+  "worker_replaced": false
+}

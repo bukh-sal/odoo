@@ -1,0 +1,12 @@
+{
+  "result": "passed_readonly_retained_core_upgrade_input_match",
+  "retained_source_commit": "5daaf2019d313d664243e37d5dbeac2b53674397",
+  "retained_plugin": "org.example.notes",
+  "version": "0.2.6",
+  "artifact_digest": "sha256:95d74f8efae9ecf9ed1d59af496df577f912057c4b400ab0ef8ad280cf0c0ad4",
+  "exact_files": 12,
+  "extra_native_files": 0,
+  "source_tree_changed": false,
+  "candidate_built": false,
+  "next": "Use isolated local Git worktree at current implementation HEAD; restore only these old Notes inputs from this verified commit for a core-only candidate. Main tree keeps Notes0.2.7. Existing builder must reproduce the exact curated0.2.6 artifact digest; stage/approve core upgrade separately before a Notes0.2.7 plugin upgrade. No new image built by this inspection."
+}
