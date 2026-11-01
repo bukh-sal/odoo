@@ -1,0 +1,47 @@
+{
+  "result": "passed_separate_process_HTTP_prerequisite",
+  "utc": "2026-11-01T02:59:26.949596+00:00",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "tests.test_document_stats_process.WorkerProcessTests",
+    "-v"
+  ],
+  "observed_tool_chunk": "d8ba60",
+  "tests": 2,
+  "failures": 0,
+  "errors": 0,
+  "source_sha256": {
+    "services/document_stats/server.py": "4bab00c478eb20ff6a0efd7a70b960f7ba278da405c6c97207195d9bb8fb99ec",
+    "services/document_stats/engine.py": "bd9bda44c7abfabbbab95041b1f349de9ccd287e6a172783c03c376fefa1f85e",
+    "tests/test_document_stats_process.py": "27c0b71baf42b81a9641f624985a73198b19f7c12bf56585bf112481912dd293"
+  },
+  "processes": "Each test launches an explicitly owned subprocess with stripped environment, temporary public-key-only configuration and private captured logs; first test restarts the owned process. All children waited terminal and temporary fixtures cleaned.",
+  "checks": [
+    "health endpoint and actual signed request",
+    "duplicates return deterministic same outcome",
+    "changed same-operation input conflicts",
+    "actual kill/restart recomputes same pure outcome",
+    "missing/wrong-audience credentials refused",
+    "duplicate JSON fields and oversized request refused",
+    "unknown route refused without redirect",
+    "request text/bearer/JWT absent from captured logs"
+  ],
+  "bounds": {
+    "connections": 16,
+    "body_bytes": 131072,
+    "socket_timeout_seconds": 5,
+    "cache_entries": 1024,
+    "cache_retention_seconds": 600
+  },
+  "frozen_files": 94,
+  "acceptance_credit": false,
+  "limits": [
+    "Native Windows isolated Python process proof; own locked worker image/dependencies/Compose/container authority inspection not yet done.",
+    "No host issuer/dispatch/Notes command/alias/metadata-only registration or uncertain-effect recovery integration yet; SVC/JOB03 remain not_run."
+  ],
+  "next_action": "Create independent worker dependency lock from already pinned approved packages, minimal public-verification-only image/inventory and explicit Compose profile, then actual disposable container HTTP/configuration/outage tests; continue host integration and external lifecycle/recovery."
+}
