@@ -66,12 +66,12 @@ def candidates(cr,subscription,limit):
     # is invisible now but remains eligible after it commits, even at a lower ID.
     cr.execute("""SELECT to_jsonb(o) FROM mp_outbox o LEFT JOIN mp_event_delivery d
         ON d.event_id=o.id AND d.subscription_id=%s
-        WHERE o.site_id=%s AND o.workspace_id=%s AND o.topic=%s AND o.release_digest=%s
+        WHERE o.site_id=%s AND o.workspace_id=%s AND o.topic=%s
         AND o.state IN ('pending','published')
         AND o.occurred_at>=timezone('UTC',clock_timestamp())-interval '7 days'
         AND (d.id IS NULL OR d.state='pending' AND d.available_at<=timezone('UTC',clock_timestamp()))
         ORDER BY o.occurred_at,o.id LIMIT %s""",
-        [subscription['id'],subscription['site_id'],subscription['workspace_id'],subscription['topic'],subscription['release_digest'],limit])
+        [subscription['id'],subscription['site_id'],subscription['workspace_id'],subscription['topic'],limit])
     return [row[0] for row in cr.fetchall()]
 
 

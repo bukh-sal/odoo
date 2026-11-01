@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "scenarios": 5,
+  "completed_same_key_returns_original_job_and_result": true,
+  "first_trace_preserved": true,
+  "changed_input_refused": true,
+  "failed_new_preflight_reservation_rolled_back": true,
+  "current_role_rechecked": true,
+  "all_fixture_writes_rolled_back": true,
+  "immutable_deployment": false,
+  "backend_image": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "platform_addons/mp_core/job_dispatch.py": "45a28ea986d689bce03fa7d09d90ceb831f4732f9023f725d056bf081efe45d8"
+  },
+  "limits": [
+    "Corrected source in short-lived native process; normal immutable upgrade/current job authorization and actual runner regression remain required."
+  ]
+}

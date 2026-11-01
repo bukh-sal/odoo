@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "tests": 9,
+  "failures": [],
+  "errors": [],
+  "successful": true,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "helper_sha256": "80b6254037311035adac87337636457f7689b33d06a7c8177239d4c073fdb569",
+  "test_sha256": "99c2a666baa1776c2252255c7caa6f66437ea297db0a2136091e6486ad9d4707",
+  "limits": [
+    "Source helper evaluated in disposable native process; not a deployed helper or integrated executor/recovery qualification.",
+    "Test business/queue writes rollback and are snapshot-checked. Real producer/drain concurrency case commits the operator fence: control generation advances by two and outstanding receipt metadata is invalidated; producer/business/history rows are retained."
+  ]
+}

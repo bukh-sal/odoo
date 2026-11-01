@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "tests": 7,
+  "failures": [],
+  "errors": [],
+  "successful": true,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "helper_sha256": "ca8ba0af20f26a603f728fe28d4dd77da6f386274694a122f4775504a99afc0b",
+  "test_sha256": "4f7dcdc84570ca2919a6558dc20a01c5f933ac7c6baf9a32bba3a47c60c1ca91",
+  "limits": [
+    "Source helper evaluated in disposable native process; not a deployed helper or integrated executor/recovery qualification.",
+    "All test writes rollback; snapshot of every queue/receipt/control table verified exact after each case."
+  ]
+}

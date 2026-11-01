@@ -101,12 +101,21 @@ def _authorize(env,definition,binding_id):
     return env,scope,bound,storage
 
 
-def _subscription(env,ident,*,active=False):
+def _subscription(env,ident,*,active=False,closing=False):
     scope=_locked_scope(env);release=current_release(env);durable._uuid(ident)
     env.cr.execute("SELECT binding,topic FROM mp_event_subscription WHERE public_id=%s AND site_id=%s AND workspace_id=%s AND actor_id=%s",[ident,release['site_id'],scope.workspace_id,scope.principal_id])
     row=env.cr.fetchone()
     if not row:raise PublicError('NOT_FOUND')
     old_binding,topic=row;env,scope,bound,storage=_authorize(env,_topic(topic),old_binding['binding_id'])
+    # Match maintenance lock order: control before the mutable subscription.
+    # Otherwise ACK/poll can hold this row while waiting for control, as drain
+    # holds control while waiting to invalidate this row's receipt.
+    if active:durable.control(env.cr,storage.site_id,storage.release_digest)
+    elif closing:
+        # Closing exposes no payload and remains valid while dispatch is
+        # paused. Still take the same first lock to avoid a drain deadlock.
+        env.cr.execute('SELECT generation FROM mp_dispatch_control WHERE site_id=%s AND release_digest=%s FOR SHARE',[storage.site_id,storage.release_digest])
+        if not env.cr.fetchone():raise PublicError('DEPENDENCY_UNAVAILABLE')
     subscription=store.lock_subscription(env.cr,ident,storage,active=active)
     if not subscription:raise PublicError('NOT_FOUND')
     if subscription['binding']!=bound.binding or subscription['release_digest']!=storage.release_digest:
@@ -200,7 +209,7 @@ def dispatch(env,message,*,binding_id=None):
             subscription=store.open_subscription(env.cr,storage,definition.ident,bound.binding,message['idempotency_key'],scope.authenticated_installation_id)
             value=dict(protocol=1,kind='subscribe_result',subscription_id=subscription['public_id'],topic=definition.ident,expires_at=_utc(subscription['expires_at']),replay_window_seconds=604800,ack_lease_seconds=15,max_attempts=5,max_replays=3)
         else:
-            env,subscription,bound=_subscription(env,message['subscription_id'],active=operation in {'poll','ack','replay'})
+            env,subscription,bound=_subscription(env,message['subscription_id'],active=operation in {'poll','ack','replay'},closing=operation=='close')
             value=dict(protocol=1,kind=operation+'_result',subscription_id=subscription['public_id'])
             if operation=='poll':value=poll(env,subscription,bound,message['limit'])
             elif operation=='ack':value['acknowledged']=[store.acknowledge(env.cr,subscription,receipt) for receipt in message['receipts']]
@@ -210,8 +219,8 @@ def dispatch(env,message,*,binding_id=None):
                 value.update(state='expired' if subscription['expired'] else subscription['state'],truncated=len(rows)>50,deliveries=[dict(id=r['public_id'],event_id=_event_public_id(env.cr,r['event_id']),state=r['state'],attempts=r['attempts'],replays=r['replays'],error_code=r['error_code'] if r['error_code'] in {None,'ACK_EXPIRED','CONSUMER_FAILED'} else 'CONSUMER_FAILED') for r in rows[:50]])
             elif operation=='replay':
                 env.cr.execute("""SELECT to_jsonb(o) FROM mp_outbox o WHERE public_id=ANY(%s) AND site_id=%s AND workspace_id=%s
-                    AND topic=%s AND release_digest=%s AND state IN ('pending','published') AND occurred_at>=timezone('UTC',clock_timestamp())-interval '7 days'""",
-                    [message['event_ids'],subscription['site_id'],subscription['workspace_id'],subscription['topic'],subscription['release_digest']])
+                    AND topic=%s AND state IN ('pending','published') AND occurred_at>=timezone('UTC',clock_timestamp())-interval '7 days'""",
+                    [message['event_ids'],subscription['site_id'],subscription['workspace_id'],subscription['topic']])
                 rows=[r[0] for r in env.cr.fetchall()]
                 if len(rows)!=len(message['event_ids']):raise PublicError('NOT_FOUND')
                 for event in rows:_envelope(env,_topic(subscription['topic']),event,bound)

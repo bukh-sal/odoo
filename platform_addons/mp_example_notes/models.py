@@ -60,6 +60,7 @@ class Note(models.Model):
 
     def unlink(self):
         self._mp_guard('unlink')
+        self.flush_recordset(['revision'])
         self.env.cr.execute('SELECT id,revision,public_id FROM mp_example_note WHERE id=ANY(%s) ORDER BY id FOR UPDATE',[self.ids])
         expected=self.env.context.get('expected_revision');batch=self.env.context.get('expected_revisions',{})
         deleted=[]
@@ -124,6 +125,7 @@ class Note(models.Model):
 
     def _expected(self,values,action):
         record=self._by_public(values['note_id'],action)
+        record.flush_recordset(['revision'])
         self.env.cr.execute('SELECT revision FROM mp_example_note WHERE id=%s FOR UPDATE',[record.id])
         if self.env.cr.fetchone()[0]!=values['expected_revision']:raise PublicError('CONFLICT',{'field':'revision','outcome':'not_started'})
         record.invalidate_recordset()

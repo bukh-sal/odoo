@@ -109,12 +109,14 @@ def set_control(cr, site_id, release_digest, state):
     return cr.fetchone()[0]
 
 
-def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None):
+def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None, on_new=None):
     if not isinstance(scope, DispatchScope):
         raise QueueError('Validated private dispatch scope required')
     _name(handler); _bounded(version, 1, 1000); _bounded(max_attempts, 1, 16); _bounded(timeout_seconds, 1, 86400)
     if effect_mode not in {'idempotent', 'reconcile'} or not isinstance(key, str) or not re.fullmatch(r'[A-Za-z0-9_.:-]{1,128}', key):
         raise QueueError('Invalid job effect or deduplication policy')
+    if on_new is not None and not callable(on_new):
+        raise QueueError('Trusted new-job preflight callback required')
     data, digest = _json(payload)
     if deduplication is not None:
         _, digest = _json(deduplication)
@@ -130,6 +132,9 @@ def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempoten
         [public_id, *identity, scope.release_digest, data, digest, effect_mode, max_attempts, generation, timeout_seconds])
     inserted = cr.fetchone()
     if inserted:
+        # Only the unique insertion winner validates new-work preconditions.
+        # Caller must roll back this reservation if that callback fails.
+        if on_new is not None:on_new()
         return inserted[0]
     cr.execute("""SELECT public_id,input_digest,release_digest,effect_mode FROM mp_job
         WHERE site_id=%s AND workspace_id=%s AND actor_id=%s AND installation_id=%s AND handler=%s AND handler_version=%s AND idempotency_key=%s""", identity)

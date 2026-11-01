@@ -1,0 +1,65 @@
+{
+  "result": "passed_readonly_host_adapter",
+  "operation_id": "ae8dff23-b38f-4cb4-82b4-ef30120c0251",
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "observed": {
+    "profile": "r1-native-dispatch-v1",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "release_digest": "sha256:f5600f952134fbe9e9ac91cb63ea98393dbaaab0b804fb8f1350bdac6f570b3f",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "control": {
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "release_digest": "sha256:f5600f952134fbe9e9ac91cb63ea98393dbaaab0b804fb8f1350bdac6f570b3f",
+      "state": "paused",
+      "generation": 18
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "1e9232fc7b41c29c150777b4dca4b954fae8c72b897257dbfb76b15e512ca946"
+      },
+      "mp_event_consumer_state": {
+        "rows": 1,
+        "sha256": "20b5c232ced02ce62e3728583592703215feb13caa5aa8f4f1d07f22b025b34f"
+      },
+      "mp_event_consumption": {
+        "rows": 3,
+        "sha256": "ec04be3ea0534e612209c0f03241a47e0aa91c7e877e1e2952a8d9d3e880a556"
+      },
+      "mp_event_delivery": {
+        "rows": 216,
+        "sha256": "d3520d178c0665b95164a15eb38275e4fa89303f5bb732fcbe5272e7662e64a6"
+      },
+      "mp_event_subscription": {
+        "rows": 31,
+        "sha256": "b586e30008656225f41ce18e066056dfe56f0e721365521e954627411fc75b7f"
+      },
+      "mp_job": {
+        "rows": 3,
+        "sha256": "bb268284317c025f41d78981ee3f95a7a8d00a03c677d4f41e41a62a7e910fe7"
+      },
+      "mp_outbox": {
+        "rows": 29,
+        "sha256": "6ef73dc6d411cd9c3a9827bb2020ca526c41ca27130b89138d65f98cf66964aa"
+      }
+    },
+    "job_states": {
+      "dead_letter": 2,
+      "completed": 1
+    },
+    "event_receipts": true,
+    "external_installations": 0,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "state_digest": "sha256:2e2253d535d9dabb945a0485ef6777b6756f70c484d79a9f250ad56e6540e772"
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "80b6254037311035adac87337636457f7689b33d06a7c8177239d4c073fdb569",
+    "packages/platform_sdk/modular_platform/dispatch_maintenance.py": "bae3bb2c1de93630fbbafa15898c5e99a1c2459b9df4388168a84c5f4fb98bc0",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "54ae0e38cccd33b15095d1efe3a3b584291ab0be16e41def643514a093535f79"
+  },
+  "limits": [
+    "Host owns the helper source and exact current site/database/release; no image patched or backend mutation.",
+    "Not yet wired into apply/checkpoint/reconciliation/restore/resume; existing no-dispatch recovery refusal remains."
+  ]
+}

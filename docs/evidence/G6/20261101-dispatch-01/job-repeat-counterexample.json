@@ -1,0 +1,8 @@
+{
+  "result": "confirmed_required_defect",
+  "same_key_same_input_completed_job_refused_by_stale_preflight": true,
+  "business_and_control_rollback_exact": true,
+  "lease_reclaim_or_obsolete_claim_proof_contradicted": false,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "required_fix": "Check an authorized saved semantic job before new-work revision preflight; retain current actor/resource/binding checks and reject changed input. Qualify before carry-forward is complete."
+}

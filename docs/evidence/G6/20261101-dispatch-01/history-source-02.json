@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "retained_candidate_and_replay_across_compatible_release": true,
+  "original_producer_release_immutable": true,
+  "cross_workspace_replay_refused": true,
+  "paused_close_idempotent_and_status_safe": true,
+  "transaction_rollback_exact": true,
+  "actual_immutable_upgrade": false,
+  "backend_image": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/event_store.py": "a08360610b91b2cc7aa8c5ecc5d6f03c9724659c4ff740e78ddc4989ffcdcd9f",
+    "platform_addons/mp_core/events.py": "287bcfe3dc84207e2c00f5d342eeabc4f559fd336a5b6c430271199a2e018f97"
+  },
+  "limits": [
+    "Corrected source evaluated in short-lived native process; no endpoint or deployed image patched. Real controlled upgrade/history proof remains required."
+  ]
+}

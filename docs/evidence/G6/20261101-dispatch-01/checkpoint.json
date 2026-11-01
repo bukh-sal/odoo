@@ -1,0 +1,127 @@
+{
+  "result": "partial_native_lifecycle_qualification",
+  "utc": "2026-11-01T00:00:04.437424+00:00",
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "image_unchanged": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_unchanged": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "native_fence_cases": 10,
+  "corrected_job_retry_scenarios": 5,
+  "corrected_history_and_paused_close_source": true,
+  "readonly_OS_host_adapter": true,
+  "source_Platform_version": "0.1.10",
+  "source_Notes_version": "0.2.7",
+  "source_Shell_version": "19.0.0.1.9",
+  "new_image_built": false,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "80b6254037311035adac87337636457f7689b33d06a7c8177239d4c073fdb569",
+    "packages/platform_sdk/modular_platform/dispatch_maintenance.py": "bae3bb2c1de93630fbbafa15898c5e99a1c2459b9df4388168a84c5f4fb98bc0",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "54ae0e38cccd33b15095d1efe3a3b584291ab0be16e41def643514a093535f79",
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "packages/platform_sdk/modular_platform/event_store.py": "a08360610b91b2cc7aa8c5ecc5d6f03c9724659c4ff740e78ddc4989ffcdcd9f",
+    "packages/platform_sdk/modular_platform/projection.py": "66434118f00c0342411c0277d10fe21731725c8be443e963f679612fd586e187",
+    "platform_addons/mp_core/job_dispatch.py": "45a28ea986d689bce03fa7d09d90ceb831f4732f9023f725d056bf081efe45d8",
+    "platform_addons/mp_core/events.py": "287bcfe3dc84207e2c00f5d342eeabc4f559fd336a5b6c430271199a2e018f97",
+    "platform_addons/mp_core/__manifest__.py": "ccd603eb0b862985a405274f7269bbe80ee44c0b6c1df16fcaf3fc31538a5056",
+    "platform_addons/mp_example_notes/models.py": "b3bb1187b90c2db8e67b6466c16249b0806a8eb4b296566c9b27a3bc167ff805",
+    "platform_addons/mp_example_notes/__manifest__.py": "cf906beda0295eb80090978b3392a35486a10fe04d067663dd395e424ee59a7e",
+    "plugins/notes/plugin.toml": "339145de1ef9461fcaaa48f3204744c7c440f0690081702154de6182f6224c62"
+  },
+  "planning_cli_checks": {
+    "passed": 5,
+    "observed_tool_chunk": "5a5256",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_planning_cli.py"
+    ]
+  },
+  "queue_snapshot": {
+    "jobs": 3,
+    "notes": 23,
+    "events": 29,
+    "deliveries": 216,
+    "consumptions": 3,
+    "control_state": "paused",
+    "subscriptions": 31,
+    "consumer_states": 1,
+    "leased_deliveries": 0,
+    "control_generation": 18,
+    "active_subscriptions": 0
+  },
+  "children": [
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-counterexamples-01",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-fence-01",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-drain-concurrency-01",
+      "exit_code": 1
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-drain-reconcile-01",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-history-source-01",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-fence-02",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-drain-commit-01",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-history-source-02",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-job-repeat-counterexample-01",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-dispatch-job-repeat-source-01",
+      "exit_code": 0
+    },
+    {
+      "name": "/mp-r0-r1g64bb76636070f-op-ae8dff23-b38f-4cb4-82b4-ef30120c0251-dispatch-observe",
+      "exit_code": 0
+    }
+  ],
+  "privacy": {
+    "public_files_scanned": 33,
+    "known_values": 127,
+    "findings": 0
+  },
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "rough_progress_percent": 84,
+  "acceptance_counts": {
+    "passed": 88,
+    "not_run": 11,
+    "failed": 0,
+    "invalidated": 0,
+    "excluded_R2": 5
+  },
+  "limits": [
+    "Helpers/source tests are not a working independently reviewed upgrade/restore/resume path; current refusals unchanged.",
+    "Pending Note revision source fix still needs versioned immutable native upgrade and batch qualification.",
+    "No external effects/credentials reconciliation, complete EVT qualification or G6/G7 pass claimed.",
+    "Other prior sites/configurations left untouched; no new full live-data audit."
+  ],
+  "next_action": "Implement current-authority compatible job carry-forward preserving semantic dedup/first trace and held/unknown outcomes. Then wire this helper into the existing approved executor/checkpoint/restore/unchanged/final-resume paths; qualify a populated controlled upgrade and fresh recovery before new-image event acceptance."
+}

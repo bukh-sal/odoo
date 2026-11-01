@@ -1,0 +1,17 @@
+{
+  "result": "failed",
+  "tests": 1,
+  "failures": [
+    "g6_native_lifecycle.DispatchLifecycleTests.test_real_native_producer_holds_drain_until_its_transaction_finishes",
+    "g6_native_lifecycle.DispatchLifecycleTests.test_real_native_producer_holds_drain_until_its_transaction_finishes"
+  ],
+  "errors": [],
+  "successful": false,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "helper_sha256": "ca8ba0af20f26a603f728fe28d4dd77da6f386274694a122f4775504a99afc0b",
+  "test_sha256": "b8d08ad1ad44f937f98468d32cee13a5d3b914bb29ee7a314ea4bae99a8aa13b",
+  "limits": [
+    "Source helper evaluated in disposable native process; not a deployed helper or integrated executor/recovery qualification.",
+    "Test business/queue writes rollback and are snapshot-checked. Real producer/drain concurrency case commits only one enabled/paused control transition, advancing generation by two; other tables exact."
+  ]
+}

@@ -111,8 +111,9 @@ def enqueue_bound(env,alias,ident,values,key,*,version=1,request_id=None,trace_i
     if not definition:raise PublicError('NOT_FOUND')
     _validate(definition.input_schema,values)
     scope,release,bound=_authorize(env,definition,alias)
-    # Resource preflight is read-only and runs as the originating backing user.
-    _validate(definition.prepared_schema,definition.prepare(env,values,bound))
+    # Saved outcomes still need current original-user resource authority, but
+    # their original expected revision may have been changed by that very job.
+    definition.authorize_resource(env,values,bound)
     request_id=request_id or str(uuid4());trace_id=trace_id or request_id
     durable._uuid(request_id);durable._uuid(trace_id)
     context=dict(binding=bound.binding,alias=alias,request_id=request_id,trace_id=trace_id,
@@ -123,9 +124,14 @@ def enqueue_bound(env,alias,ident,values,key,*,version=1,request_id=None,trace_i
     consumer=env.cr.fetchone()
     if not consumer:raise PublicError('DEPENDENCY_UNAVAILABLE')
     storage=durable.DispatchScope(release['site_id'],scope.workspace_id,scope.principal_id,consumer[0],release['release_digest'])
-    return durable.enqueue(env.cr,storage,ident,version,payload,key,effect_mode=definition.effect_mode,
-        max_attempts=definition.max_attempts,timeout_seconds=definition.timeout_seconds,
-        deduplication=dict(input=values,binding=bound.binding,handler=ident,version=version))
+    # Unique insertion chooses the new-work winner, including concurrent calls.
+    # Failed revision preflight rolls back its reservation even if a native
+    # caller catches the error and later commits other work in its transaction.
+    with env.cr.savepoint():
+        return durable.enqueue(env.cr,storage,ident,version,payload,key,effect_mode=definition.effect_mode,
+            max_attempts=definition.max_attempts,timeout_seconds=definition.timeout_seconds,
+            deduplication=dict(input=values,binding=bound.binding,handler=ident,version=version),
+            on_new=lambda:_validate(definition.prepared_schema,definition.prepare(env,values,bound)))
 
 
 def _envelope(row):

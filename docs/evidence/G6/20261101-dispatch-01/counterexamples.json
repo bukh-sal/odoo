@@ -1,0 +1,28 @@
+{
+  "result": "confirmed_required_defects",
+  "compatible_release_candidate_query_hides_retained_event": true,
+  "pause_resume_accepts_obsolete_event_receipt": true,
+  "synthetic_transaction_rolled_back": true,
+  "protected_row_counts_and_control_exact": {
+    "jobs": 3,
+    "notes": 22,
+    "events": 28,
+    "control": [
+      {
+        "id": 1,
+        "state": "paused",
+        "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+        "generation": 12,
+        "release_digest": "sha256:f5600f952134fbe9e9ac91cb63ea98393dbaaab0b804fb8f1350bdac6f570b3f"
+      }
+    ],
+    "deliveries": 216,
+    "consumptions": 3,
+    "subscriptions": 31,
+    "consumer_states": 1
+  },
+  "real_upgrade_or_restore_exercised": false,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "project": "mp-r0-r1g64bb76636070f"
+}
