@@ -1,0 +1,42 @@
+{
+  "result": "passed_identity12_corrective_upgrade_preservation",
+  "generation": 7,
+  "operation_id": "993a5128-53de-4a04-8b32-ca3b985fbce7",
+  "dispatch_generations": [
+    31,
+    32,
+    33,
+    34
+  ],
+  "same_database": true,
+  "business_checkpoint_COPY_exact": [
+    {
+      "table": "mp_example_note",
+      "rows": 25,
+      "checkpoint_COPY_exact": true,
+      "sha256": "d8f2711b324f457cd869c211227a91067782e49ad150682498d4d6d4a45e0047"
+    },
+    {
+      "table": "mp_example_canvas_board",
+      "rows": 0,
+      "checkpoint_COPY_exact": true,
+      "sha256": "4b41f7e9d7e20bf2a9a0aac00d195237f4904038ac74c93e76b7a0dcbfeeb3de"
+    },
+    {
+      "table": "mp_example_note_event_summary",
+      "rows": 3,
+      "checkpoint_COPY_exact": true,
+      "sha256": "3747a0e527231f8de689b3ee58d4f5bf0b27ea0af2cda47960107429e34c7c8a"
+    }
+  ],
+  "all_old_filestore_hashes_retained": 44,
+  "all_five_terminal_jobs_first_trace_actor_input_key_budget_and_result_preserved": true,
+  "original_producer_rows_retained_and_six_HTTP_fixture_events_added": true,
+  "consumer_history_and_projection_retained": true,
+  "original_failed_pending_role_regression_now_passed": true,
+  "actual_installed_history_replay_and_consumer_dedup_passed": true,
+  "HTTP_test_helpers_stopped": true,
+  "limits": [
+    "Notes0.2.7 pending-revision native batch fix and actual host/bus/browser/current event acceptance/external work remain required."
+  ]
+}

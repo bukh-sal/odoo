@@ -64,6 +64,22 @@ class PendingAuthorityTests(unittest.TestCase):
         wrong=api.Environment(self.cr,FIXTURE['users']['bob']['id'],self.native.context);self.denied(lambda:scopes.current_scope(wrong))
     def test_forged_dict_cannot_replace_native_scope(self):
         wrong=self.native(context={'_mp_scope':{'workspace_id':FIXTURE['workspaces']['C']['id']}});self.denied(lambda:scopes.current_scope(wrong))
+    def pending_job(self):
+        note=self.native['mp.example.note'].create({'title':'Pending  policy  claim','body':'Rollback-only native dispatch regression'})
+        ident=jobs.enqueue_bound(self.native,'documents','org.example.notes:normalize_title',dict(note_id=note.public_id,expected_revision=1),uuid4().hex)
+        return note,ident
+    def test_pending_role_revocation_is_checked_before_claim_dispatch(self):
+        note,ident=self.pending_job();self.member.write({'role':'viewer'})
+        result=jobs.prepare_one(ENV,str(uuid4()))
+        self.assertEqual(result,dict(job_id=ident,state='dead_letter',error_code='FORBIDDEN'))
+        note.invalidate_recordset();self.assertEqual((note.title,note.revision),('Pending  policy  claim',1))
+    def test_pending_role_revocation_between_compute_and_apply_blocks_effect(self):
+        note,ident=self.pending_job();invocation=jobs.prepare_one(ENV,str(uuid4()));self.assertEqual(invocation.claim.job_id,ident)
+        computed=jobs.compute(invocation);self.member.write({'role':'viewer'})
+        result=jobs.finish_one(ENV,invocation,computed)
+        self.assertEqual(result,dict(job_id=ident,state='dead_letter',error_code='FORBIDDEN'))
+        note.invalidate_recordset();self.assertEqual((note.title,note.revision),('Pending  policy  claim',1))
+        self.cr.execute('SELECT count(*) FROM mp_outbox WHERE aggregate_id=%s AND aggregate_sequence=2',[note.public_id]);self.assertEqual(self.cr.fetchone()[0],0)
     def technical(self):
         self.cr.execute('SELECT id FROM mp_principal WHERE public_id=%s',[FIXTURE['users']['worker']['principal_id']]);principal=self.cr.fetchone()[0]
         member=ENV['mp.membership'].search([('principal_id','=',principal),('workspace_id','=',FIXTURE['workspaces']['A']['id'])]);member.write({'role':'editor'})

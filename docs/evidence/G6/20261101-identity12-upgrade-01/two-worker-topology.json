@@ -1,0 +1,12 @@
+{
+  "result": "ready_two_distinct_guarded_HTTP_workers",
+  "workers": [
+    "17dfc96de6c09cdc531659ac71b01ae42339c77971832f8ed6b72efb565f2ec5",
+    "a47d4aa7698311caa3ce289d184da8237a58a063596da1617d9a0fada01520e7"
+  ],
+  "same_image": "sha256:f956b840ac3fdc63215773305ea1947b6e8750802966a4640cf1f4e3c8256cce",
+  "database": "mp_disposable_r0_r1_restore_8090a1a813ee42e299809369a79bd78a",
+  "secondary_loopback_port": 18089,
+  "operator_or_Docker_mounts": false,
+  "new_runtime_or_database_initialized": false
+}

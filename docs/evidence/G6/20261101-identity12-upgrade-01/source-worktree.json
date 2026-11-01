@@ -1,0 +1,12 @@
+{
+  "result": "prepared_versioned_identity12_corrective_source",
+  "base_commit": "3c2adcdcb0763768d617ad09379b4463abbceae7",
+  "worktree": ".local/worktrees/g6-identity12",
+  "source_case_proof": "../20261101-authority-flush-01/source-checkpoint.json",
+  "retained_notes_files": 12,
+  "retained_notes_digest": "sha256:95d74f8efae9ecf9ed1d59af496df577f912057c4b400ab0ef8ad280cf0c0ad4",
+  "private_build_lock_initialized": true,
+  "frozen_files": 94,
+  "current_target_generation": 6,
+  "deployment_changed": false
+}

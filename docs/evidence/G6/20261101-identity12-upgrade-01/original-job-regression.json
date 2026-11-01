@@ -1,0 +1,21 @@
+{
+  "result": "passed_installed_core10_original_user_effect_and_completed_retry",
+  "revision": 2,
+  "attempts": 2,
+  "original_user_id": 6,
+  "one_native_revision_event": true,
+  "original_input_key_trace_deadline_budget_preserved": true,
+  "old_claim_and_receipt_denied": true,
+  "old_claim_still_within_original_lease": false,
+  "completed_semantic_retry_saved_outcome_and_first_trace": true,
+  "changed_input_conflict": true,
+  "failed_new_work_reservation_absent_in_live_transaction": true,
+  "current_role_rechecked_for_completed_retry": true,
+  "all_negative_fixture_changes_rolled_back": true,
+  "source_substitution": false,
+  "installed_image_id": "sha256:f956b840ac3fdc63215773305ea1947b6e8750802966a4640cf1f4e3c8256cce",
+  "dispatch_generation": 34,
+  "previous_failed_probe": "../20261101-core10-upgrade-01/job_native_attempt01.py",
+  "only_fixture_control_generation_assertion_adapted": true,
+  "job_runner_replayed": false
+}

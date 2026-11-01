@@ -1,6 +1,6 @@
 # ADR0033: pending native ORM authority before SQL policy reads
 
-Date: 2026-11-01. Status: implementation prerequisite, unqualified. Parent F-01e1; affects native batch/authorization ID-03, scope/revocation regressions and saved-outcome authorization in spec13.4. No new public contract or sandbox claim.
+Date: 2026-11-01. Status: accepted and qualified for the bounded identity correction. Parent F-01e1; affects native batch/authorization ID-03, scope/revocation regressions and saved-outcome authorization in spec13.4. No new public contract or sandbox claim.
 
 The actual core10 populated upgrade and inventoried runner pass. Its completed-key replay fix also passes, but a new native ORM role change within the same transaction is invisible to raw SQL scope authorization until ORM flush. The enqueue adapter authorizes the old administrator role, then its ordinary Odoo savepoint flushes the viewer role and returns a saved identity without a new authorization check. The constrained native guard can likewise see the old role before that flush. Existing committed/direct-SQL revocation tests do not exercise this pending ORM boundary. Counterexample and diagnosed savepoint ordering are retained in `evidence/G6/20261101-core10-upgrade-01/`.
 
@@ -11,3 +11,5 @@ Version the owned identity addon1.1→1.2 and use the existing independently sta
 Alternatives rejected: require every caller to remember `flush_all` before authorization; this makes a supported API depend on hidden ORM timing. Flush all business data on every policy read; this introduces unnecessary recomputation/reentrancy and unrelated writes. Add a job-only recheck; it leaves other native scope readers inconsistent. Move policy into global groups or replace Odoo authorization; neither is required.
 
 Return condition: pending role/revocation/principal/user/workspace/feature/credential metadata is honored by native scope/job gates in the same transaction, original actor/workspace/technical limits remain enforced, rollback restores fixture state, and exact immutable identity1.2/native HTTP/cross-worker checks pass. Then return to the existing core10 job/history verification and separate Notes batch fix, event host/browser proof, external service/effect reconciliation and full G6/G7.
+
+Qualification: [installed immutable identity1.2](../evidence/G6/20261101-identity12-upgrade-01/qualification.json) passes20 native rollback cases, actual two-worker native/REST warmed/new-session demotion/revocation and technical identity limits. Original business, roles/groups,5job traces and36producer rows are preserved;44oldfiles retained. Ten affected checks/G1/G3 restored. Notes.7 batch, deployed event host/browser and external/G7 work remain separate requirements.

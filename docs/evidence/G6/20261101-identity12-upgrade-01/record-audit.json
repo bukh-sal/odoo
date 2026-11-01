@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "acceptance_counts": {
+    "passed": 88,
+    "not_run": 11,
+    "excluded_R2": 5
+  },
+  "public_files": 38,
+  "known_values": 127,
+  "findings": 0,
+  "status_and_evidence_syntax_valid": true,
+  "audit_parser_correction": "Exclude Markdown separator row; no result changed."
+}

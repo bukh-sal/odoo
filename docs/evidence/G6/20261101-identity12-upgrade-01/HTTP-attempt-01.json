@@ -1,0 +1,8 @@
+{
+  "result": "driver_name_binding_refusal_before_requests",
+  "tool_chunk": "f8f72b",
+  "diagnosis": "Python for-loop target context shadowed the imported context function across verify. Rename only loop variable to forged_context. No HTTP requests/business/authority writes occurred; existing two live guarded workers/setup retained. Continue verify only.",
+  "private_state": "ready",
+  "owned_notes": 0,
+  "membership_change_started": false
+}

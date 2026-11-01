@@ -1,0 +1,27 @@
+{
+  "result": "passed_installed_identity12_two_worker_HTTP",
+  "image_id": "sha256:f956b840ac3fdc63215773305ea1947b6e8750802966a4640cf1f4e3c8256cce",
+  "inventory_digest": "sha256:f8987b820d0bca6ebb4fa2880803b5b616f92ca5cb3d2c8492f3d37b6ae8f317",
+  "generation": 7,
+  "checks": [
+    "positive native/REST CRUD, asymmetric roles and two-session workspace isolation",
+    "forged actor/database/company/private context/workspace rejected",
+    "service cookie has no credential-derived or administrator authority",
+    "committed demotion/revocation/restoration effective on first warmed/new request across two distinct guarded workers",
+    "standard native Odoo list/form retained"
+  ],
+  "worker_ids": [
+    "17dfc96de6c09cdc531659ac71b01ae42339c77971832f8ed6b72efb565f2ec5",
+    "a47d4aa7698311caa3ce289d184da8237a58a063596da1617d9a0fada01520e7"
+  ],
+  "original_business_projection_groups_and_membership_authority_exact": true,
+  "only_two_owned_notes_created_updated_deleted": true,
+  "original_producer_history_exact": true,
+  "new_owned_events_retained": 6,
+  "native_Odoo_list_form_default": true,
+  "no_new_core_route_or_UI": true,
+  "limits": [
+    "Existing frontend transport/cache/typed-Scope/SQL logic retained; earlier real two-tab browser evidence reused, final browser/event/accessibility qualification still required.",
+    "Helper worker/edge must be stopped before later lifecycle mutations."
+  ]
+}

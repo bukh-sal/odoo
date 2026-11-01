@@ -1,0 +1,21 @@
+{
+  "result": "passed_complete_checkpoint_job_and_producer_row_comparison",
+  "job_rows": 5,
+  "all_job_columns_exact_except_explicit_release_claim_dispatch_generations": true,
+  "preserved": [
+    "actor",
+    "workspace",
+    "installation",
+    "handler/version",
+    "input digest and payload",
+    "semantic key/first request/trace",
+    "attempts/budget/deadline",
+    "result/error/state/progress",
+    "lease/cancellation/effect fields",
+    "creation/finish timestamps"
+  ],
+  "original_producer_envelopes_exact": 36,
+  "only_six_owned_HTTP_fixture_events_added": true,
+  "failed_database_retained": true,
+  "raw_COPY_streams_private": true
+}

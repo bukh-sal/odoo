@@ -1,0 +1,9 @@
+{
+  "result": "driver_fixture_role_precondition_refusal_before_mutation",
+  "tool_chunk": "8e051d",
+  "observed_original_A_role": "administrator",
+  "source": "tools/g5_seed.py:19 explicitly gives Alice A administrator, B viewer; this differs from the old ingress clone fixture",
+  "diagnosis": "Preserve original read-only role observation; independently confirm current operator/Alice roles through membership GET, explicitly demote Alice A to editor through normal scoped admin endpoint for asymmetric-role proof, and restore original administrator at cleanup. No runtime relaxation or repeated setup/original SQL command.",
+  "owned_notes": 0,
+  "membership_change_started": false
+}

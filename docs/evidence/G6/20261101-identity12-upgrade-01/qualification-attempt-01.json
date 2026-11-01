@@ -1,0 +1,7 @@
+{
+  "result": "read_only_qualification_harness_failed_before_write",
+  "failure": "KeyError: mp_event_outbox",
+  "diagnosis": "The installed adapter uses the existing mp_outbox table; the final audit misspelled its snapshot key.",
+  "correction": "Use the source-confirmed existing mp_outbox snapshot key. No runtime, requirement, expected count, migration, or test result changed.",
+  "next": "Continue read-only qualification; never replay any lifecycle operation or job."
+}

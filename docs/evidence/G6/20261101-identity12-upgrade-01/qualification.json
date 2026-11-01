@@ -1,0 +1,56 @@
+{
+  "result": "passed_bounded_identity12_requalification",
+  "utc": "2026-11-01T02:29:33.956667+00:00",
+  "image_id": "sha256:f956b840ac3fdc63215773305ea1947b6e8750802966a4640cf1f4e3c8256cce",
+  "inventory_digest": "sha256:f8987b820d0bca6ebb4fa2880803b5b616f92ca5cb3d2c8492f3d37b6ae8f317",
+  "generation": 7,
+  "dispatch_generation": 34,
+  "native_tests": 20,
+  "installed_source": true,
+  "two_distinct_guarded_HTTP_workers": true,
+  "source_type_SQL_cache_logic_preserved": true,
+  "original_business_authority_groups_and_job_trace_preserved": true,
+  "original_producer_envelopes": 36,
+  "retained_owned_HTTP_events": 6,
+  "old_filestore_files_retained": 44,
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "privacy": {
+    "files": 32,
+    "known_values": 127,
+    "findings": 0
+  },
+  "restored_acceptances": [
+    "FEAS-01",
+    "FEAS-02",
+    "ID-01",
+    "ID-02",
+    "ID-04",
+    "ID-05",
+    "ID-07",
+    "ID-09",
+    "ID-10",
+    "JOB-02"
+  ],
+  "restored_gates": [
+    "G1",
+    "G3"
+  ],
+  "retained_evidence_boundary": "Unchanged browser cache/transport, two-tab lifecycle, Scope type, SQL query and cache keys; current installed native and HTTP scope/role/service/two-worker revocation checks replace affected server authority evidence.",
+  "evidence": [
+    "candidate-validation.json",
+    "completed.json",
+    "../20261101-authority-flush-01/installed-01.json",
+    "HTTP-qualified.json",
+    "helpers-stopped.json",
+    "preservation.json",
+    "checkpoint-trace.json",
+    "original-job-regression.json",
+    "history.json"
+  ],
+  "limits": [
+    "No EVT/JOB-03/SVC/ID-03/UI-09 pass from this bounded correction.",
+    "Notes0.2.7 native batch and deployed host/bus/browser checks remain; external service/effect/credential and full G7 qualification remain."
+  ],
+  "next_action": "Separate Notes0.2.7 plugin candidate: exact current core/SDK/identity and unchanged Labels/Canvas; local isolated catalog and normal independent plugin upgrade, then installed native batch/event host/browser proof."
+}
