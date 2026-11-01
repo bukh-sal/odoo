@@ -1,0 +1,21 @@
+{
+  "containers": [
+    {
+      "label": "notes-analysis-source-01",
+      "exit_code": 1,
+      "removed": true
+    },
+    {
+      "label": "notes-analysis-source-02",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "label": "notes-analysis-source-03",
+      "exit_code": 0,
+      "removed": true
+    }
+  ],
+  "no_volumes_created": true,
+  "current_runtime_and_recovery_assets_preserved": true
+}

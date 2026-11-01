@@ -1,0 +1,25 @@
+{
+  "result": "failed",
+  "successful": false,
+  "tests": 7,
+  "errors": [
+    "native_notes_analysis.NotesAnalysisTests.test_foreign_and_missing_note_status_are_not_found"
+  ],
+  "failures": [],
+  "installed_image": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "all_mutations_rolled_back": true,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_dispatch.py": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5",
+    "packages/platform_sdk/modular_platform/worker_authority.py": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+    "platform_addons/mp_core/external_authority.py": "575cdd16c4f8df86be1dd5e888391effcf9ab9d009e88fcd85723a40895d26a9",
+    "platform_addons/mp_core/external_job.py": "456121efb20dbf6bbcf20fcb4d8f4f390bd2c0387064e698ca09d0a68dab1ed0",
+    "platform_addons/mp_example_notes_stats/contracts.py": "19120031696371c1723a75defd91149cfb90b9725e88f0f5ad0dc3ec3a2c99a3",
+    "platform_addons/mp_example_notes_stats/models.py": "adc5d10af1dd3e3dd9545c76ca9e713725512ae054935f03bc72f3653fd7563e",
+    "platform_addons/mp_example_notes_stats/services.py": "7c66064edb8e6a26706a5c44aa0a77402f048f5e3a24f1346eef653a672d0ad4",
+    "platform_addons/mp_example_notes_stats/jobs.py": "f75e95a2dd58d8774c6bce2d0294789162321a9d1b9ed2a7a0f082f3ac9d04b8"
+  },
+  "limits": [
+    "Connector source handlers temporarily attached to Notes class in one isolated native helper; metadata fixtures rollback. Not installed module or approved native lifecycle proof.",
+    "No remote compute, fresh committed bridge, publisher, mount, runner error branch or UI proof; no new acceptance credit."
+  ]
+}

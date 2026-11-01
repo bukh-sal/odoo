@@ -50,3 +50,28 @@ Native authority prerequisite: external_authority.py reuses the actual _locked_s
 The application read-side projection uses a host-owned absolute directory with authority.json and fixed keys/<validated-reference>.pem files. Its private version1 envelope binds deployment/site/publication generation and bounded endpoint entries; each entry embeds the unchanged frozen endpoint DTO, observed numeric addresses and key ID. Reads are fresh and snapshots also bind the public-key fingerprint. Issuer access reselects current scope/publication before and after key parsing, verifies a matching RSA private/public pair, and never accepts arbitrary paths or public keys as signing keys. The existing operator path-link guard and strict JSON loader are reused. The privileged publisher must establish current approval, actual image/address verification, immutable key references/atomic generation changes and a read-only runtime mount; validation is not attestation. Host recovery must retain current independent authority rather than restore older key/endpoint approval from a database checkpoint. Seven real filesystem/key tests pass; no publisher or native bridge is yet installed.
 
 Detached bridge implementation: native Invocation now carries a server-selected database field. compute stamps private database/claim/handler/version/fingerprint provenance from the actual Invocation, overriding any preexisting context key. external_job opens a fresh cursor for each current claim/fingerprint/original-actor/resource/binding/OS-snapshot check and rolls it back before remote I/O. It re-prepares the original resource and refuses changed input/revision, cancelled/expired/reclaimed claims and changed publication/key snapshots. Only the fixed worker schema crosses the remote boundary. Existing finish_one still reauthorizes and commits any job effect. The guarded runner preserves safe specific compute error codes rather than hiding worker outages as INTERNAL_ERROR. Core source version1.11 requires immutable rollout; JOB01/02 source evidence is invalidated pending targeted installed requalification. Four real native provenance/finalization/role/error-code tests pass; they do not exercise the entire remote bridge or runner error path yet.
+
+The optional `org.example.notes_stats` connector now has a dedicated abstract
+Odoo service model (`mp.example.notes.stats`) and no stored fields/table. This
+keeps its own current feature/installation and base Notes guards ahead of gateway
+idempotency replay. Attaching only private handlers to Notes would leave the
+generic pre-replay model guard checking the wrong plugin. Its read-only job is
+authorized through its self-bound `status` method, avoiding re-entry into the
+active `analyze` provider-chain target. The resource handler reads Note body via
+the declared/granted Notes service and requires the expected revision in prepare
+and final apply. Compute uses the existing detached bridge; the only saved result
+is revision-tagged statistics. The payload does not persist Note text. Status
+first authorizes the Note and selects only the current actor/workspace/connector's
+latest job, then delegates to the existing original-actor job status guard.
+
+Connector source qualification loads its actual abstract model into one isolated
+native registry and uses the existing database/identity/binding/queue/finalization
+primitives. Seven cases pass; every metadata/business/queue mutation rolls back.
+Four actual reference archives validate and reproduce; the previous three remain
+byte-identical to the retained assembler's output. No shared frozen contract or
+default distribution policy changed. The shipped connector schema reuses frozen
+document and worker shapes. There is no new frontend yet: a small existing native
+detail-slot action is deferred until it can demonstrate the real remote path.
+Independent publisher, metadata-only lifecycle, committed bridge and installed
+runner/error/recovery tests remain required. These source results grant no new
+SVC/JOB acceptance and do not replace the immutable lifecycle rollout.

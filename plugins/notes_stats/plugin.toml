@@ -1,0 +1,12 @@
+"schema_version" = 1
+"plugin" = {"id" = "org.example.notes_stats", "version" = "0.1.0", "name" = "Notes Analysis Connector", "description" = "Optional saved-revision text statistics through the independent worker", "publisher" = "example", "license" = "LGPL-3.0-only"}
+"compatibility" = {"platform" = ">=0.1.11,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
+"runtime" = {"kind" = "native", "addon_name" = "mp_example_notes_stats", "native_compatibility" = "odoo-19", "python" = ">=3.12,<3.13", "python_dependencies" = []}
+"activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}
+"permissions" = {"defines" = {"analysis.run" = "Analyze saved Note body and read own analysis jobs"}, "requests" = [{"capability" = "org.example.notes:notes.read", "reason" = "Read the authorized saved revision through documents", "scope" = "workspace"}, {"capability" = "org.example.document_stats:analysis.run", "reason" = "Analyze the saved Note body through optional stats", "scope" = "workspace"}]}
+"data" = {"models" = [], "extension_targets" = [], "contributions" = []}
+"ui" = {"mode" = "trusted", "design" = "standard", "pages" = [], "navigation" = []}
+"services" = {"provides" = [{"id" = "org.example.notes_stats.jobs", "api_version" = "1.0", "schema" = "schemas/analysis-v1.json", "handler" = "mp_example_notes_stats.services:AnalysisService", "methods" = ["analyze", "status"]}], "requires" = [{"alias" = "documents", "id" = "org.example.notes.documents", "contract_major" = 1, "version" = ">=1.0,<2.0"}, {"alias" = "jobs", "id" = "org.example.notes_stats.jobs", "contract_major" = 1, "version" = ">=1.0,<2.0"}, {"alias" = "stats", "id" = "org.example.document_stats.analysis", "contract_major" = 1, "version" = ">=1.0,<2.0", "optional" = true}]}
+"upgrade" = {"strategy" = "native_migrations", "requires_maintenance" = true, "destructive" = false, "transitions" = []}
+"dependencies" = {"plugins" = {"org.example.notes" = ">=0.2.7,<0.3"}}
+"integrations" = {"optional" = {"org.example.document_stats" = ">=0.1,<0.2"}}

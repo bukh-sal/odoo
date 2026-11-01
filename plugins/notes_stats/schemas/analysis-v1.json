@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "analyze_input": {
+      "type": "object",
+      "properties": {
+        "note_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        },
+        "expected_revision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "note_id",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "status_input": {
+      "type": "object",
+      "properties": {
+        "note_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "note_id"
+      ],
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "job": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+                },
+                "state": {
+                  "enum": [
+                    "pending",
+                    "retry",
+                    "running",
+                    "held",
+                    "outcome_unknown",
+                    "completed",
+                    "cancelled",
+                    "dead_letter"
+                  ]
+                },
+                "progress": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "attempts": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 16
+                },
+                "error_code": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "enum": [
+                        "NOT_FOUND",
+                        "DEPENDENCY_UNAVAILABLE",
+                        "PLUGIN_SUSPENDED",
+                        "CONFLICT",
+                        "DEADLINE_EXCEEDED",
+                        "CANCELLED",
+                        "FORBIDDEN",
+                        "VALIDATION_FAILED",
+                        "INTERNAL_ERROR",
+                        "LEASE_EXPIRED"
+                      ]
+                    }
+                  ]
+                },
+                "result": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "note_id": {
+                          "type": "string",
+                          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+                        },
+                        "revision": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "statistics": {
+                          "type": "object",
+                          "properties": {
+                            "characters": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "words": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "lines": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991
+                            }
+                          },
+                          "required": [
+                            "characters",
+                            "words",
+                            "lines"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "note_id",
+                        "revision",
+                        "statistics"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "state",
+                "progress",
+                "attempts",
+                "error_code",
+                "result"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

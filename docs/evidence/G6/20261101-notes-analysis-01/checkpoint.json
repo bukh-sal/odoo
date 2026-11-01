@@ -1,0 +1,52 @@
+{
+  "result": "passed_source_prerequisites_only",
+  "utc": "2026-11-01T03:57:48.956912+00:00",
+  "native_tests": 7,
+  "artifact_regressions": 18,
+  "reference_archives_validated": 4,
+  "old_archives_byte_identical": 3,
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "helpers_retired": 3,
+  "new_docker_images": 0,
+  "new_docker_volumes": 0,
+  "installed_core": "19.0.0.1.10",
+  "source_core": "19.0.0.1.11",
+  "connector_version": "0.1.0",
+  "deployment_unchanged": true,
+  "source_sha256": {
+    "platform_addons/mp_example_notes_stats/contracts.py": "19120031696371c1723a75defd91149cfb90b9725e88f0f5ad0dc3ec3a2c99a3",
+    "platform_addons/mp_example_notes_stats/jobs.py": "f75e95a2dd58d8774c6bce2d0294789162321a9d1b9ed2a7a0f082f3ac9d04b8",
+    "platform_addons/mp_example_notes_stats/models.py": "b008de5f9323fb95b5eaeaabba10709f97fcac61c8c0c7463be100c61a88ba5a",
+    "platform_addons/mp_example_notes_stats/services.py": "7d1ce78b6f33bd7004422384212e5eb445d44d3d121f5eca6b0690562fb3b07b",
+    "platform_addons/mp_example_notes_stats/__init__.py": "b6b1744600a8db20ebbc0e0f6d24f8fc187c28dff18092b766bf44d75dda215b",
+    "platform_addons/mp_example_notes_stats/__manifest__.py": "f935c83d0fd3939406a5f7fc8a5e35730bad8b7e38b6b857c4ba62f630e969f8",
+    "plugins/notes_stats/plugin.toml": "b9d74c746b727cb18ea44e89d4bd95f99f43a9aba534a0c2205885e5354c6c6a",
+    "plugins/notes_stats/README.md": "503abdf4ba12e740c703913d54b378cb9f29fa6fb59ce82be1fbe390c54cf8e4",
+    "plugins/notes_stats/schemas/analysis-v1.json": "901d9f41651b66fae837849047ffcd986d2f7863d2564eb51f30a4109a28813a",
+    "tools/reference_package.py": "c7ae1f70244b4810c7ed2ea760ee00842b7b516e31ae5991d1c9be665828300c",
+    "docs/evidence/G6/20261101-notes-analysis-01/native_tests.py": "91bef8b1cc759c264fc5266de4265366abc76fb970a02fb39834376f78f8081e",
+    "docs/evidence/G6/20261101-notes-analysis-01/run.py": "281875a597c1f54f2340cae68871d0fdf2d9aaa03f754b2ad771f50cc2165ed7",
+    "docs/evidence/G6/20261101-notes-analysis-01/package_check.py": "189c6777cfab295642bed19a786c1d976c6d6ff0da46e9b2a49f9f04c0326c25"
+  },
+  "evidence": [
+    "notes-analysis-source-03.json",
+    "packages.json",
+    "retirement.json"
+  ],
+  "observed_tool_chunks": {
+    "native_final": "d46ac2",
+    "artifact_regressions": "3f166c",
+    "freeze": "c3bc54",
+    "archives": "32a093"
+  },
+  "retained_attempts": [
+    "native-source-01.json (native MissingError assertion corrected; all writes rolled back)",
+    "notes-analysis-source-02.json (prior Notes-handler design superseded by abstract service guard before replay)"
+  ],
+  "limits": [
+    "Source-bound isolated registry model loading is not approved installed module qualification.",
+    "Remote compute, committed fresh-cursor bridge, independent endpoint publication/mount, metadata-only lifecycle, guarded runner errors and UI demonstration remain required.",
+    "No new acceptance credit; JOB-01/02 remain invalidated until installed core1.11 requalification."
+  ]
+}

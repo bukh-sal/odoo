@@ -30,8 +30,8 @@ def assemble(source,manifest_path):
     sys.path.insert(0,str(source/'packages/platform_sdk'))
     from modular_platform.contracts import normalize_manifest
     manifest=normalize_manifest(tomllib.loads(manifest_path.read_text()));plugin=manifest['plugin']['id'];version=manifest['plugin']['version'];addon=manifest['runtime']['addon_name']
-    if plugin not in ['org.example.notes','org.example.notes_labels','org.example.canvas'] or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',version):raise ValueError('Not an allowlisted reference package')
-    if addon not in ['mp_example_notes','mp_example_notes_labels','mp_example_canvas']:raise ValueError('Unsupported reference addon')
+    if plugin not in ['org.example.notes','org.example.notes_labels','org.example.canvas','org.example.notes_stats'] or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',version):raise ValueError('Not an allowlisted reference package')
+    if addon not in ['mp_example_notes','mp_example_notes_labels','mp_example_canvas','mp_example_notes_stats']:raise ValueError('Unsupported reference addon')
     addon_dir=source/'platform_addons'/addon
     native=ast.literal_eval((addon_dir/'__manifest__.py').read_text())
     if native['version']!='19.0.'+version:raise ValueError('Reference native/package version mismatch')
@@ -44,6 +44,11 @@ def assemble(source,manifest_path):
     needed.update(item['context_schema'] for item in manifest['ui'].get('slots',[]));needed.update(item['input_schema'] for item in manifest['ui'].get('commands',[]))
     if manifest['data'].get('export_schema'):needed.add(manifest['data']['export_schema'])
     for name in needed:
+        if plugin=='org.example.notes_stats' and name=='schemas/analysis-v1.json':
+            path=manifest_path.parent/name
+            if path.is_symlink():raise ValueError('No reference schema links')
+            files[name]=path.read_bytes()
+            continue
         if name not in {'schemas/'+key+'.json' for key in schemas}:raise ValueError('Unreviewed reference schema path')
         schema=json.loads((source/'packages/contracts/v1'/(schemas[Path(name).stem]+'.schema.json')).read_text())
         if Path(name).stem=='labels-input':schema['$ref']='#/$defs/labels_input'
