@@ -1,0 +1,8 @@
+{
+  "result": "seed_helper_failed_before_write",
+  "diagnosis": "The driver omitted docker run -i, so JSON stdin was closed. Helper exited1 at json.load before its write loop; original volume is retained. This proves Linux volume container start and inspect respond promptly, unlike the original bind-mount fixture.",
+  "correction": "Verify exact disposable volume ownership and original terminal helper, keep the original issuer/config/volume, run a new named stdin-enabled helper whose first assertion requires an empty volume, then continue initial Compose launch only.",
+  "continuation": "run.py --resume-seed",
+  "original_driver": "run_attempt01.py",
+  "no_runtime_or_contract_change": true
+}

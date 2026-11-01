@@ -11,8 +11,8 @@ services:
     cpus: 1
     tmpfs: ["/tmp:rw,noexec,nosuid,size=16m,mode=0700,uid=10002,gid=10002"]
     volumes:
-      - type: bind
-        source: ${MP_DOCUMENT_STATS_CONFIG:?operator-owned public-key-only config directory required}
+      - type: volume
+        source: worker-public-config
         target: /run/worker
         read_only: true
     networks:
@@ -32,3 +32,7 @@ networks:
   runtime:
     external: true
     name: ${MP_DOCUMENT_STATS_NETWORK:?existing explicitly approved internal network required}
+volumes:
+  worker-public-config:
+    external: true
+    name: ${MP_DOCUMENT_STATS_CONFIG_VOLUME:?operator-provisioned public-key-only Docker volume required}

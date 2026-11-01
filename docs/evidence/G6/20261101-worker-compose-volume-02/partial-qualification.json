@@ -1,0 +1,22 @@
+{
+  "result": "actual_Compose_HTTP_passed_shutdown_defect_open",
+  "utc": "2026-11-01T03:14:21.599788+00:00",
+  "image_id": "sha256:269bd71ae621aabdb3057bb9e2a747a6951808365f0e8d023d0090190d5d158f",
+  "container_id": "e0ca3c5c980aeb888346bde6570fb53de988f5754a5f24c677358404dee9873d",
+  "project": "mp-disposable-document-stats-02",
+  "volume": "mp-disposable-document-stats-02-public-config",
+  "actual_HTTP_and_scope_refusals_passed": true,
+  "actual_outage_native_login_healthy": true,
+  "actual_restart_result_exact": true,
+  "public_config_only_mount": true,
+  "no_database_credentials_issuer_key_socket_or_filestore": true,
+  "structured_logs_clean": true,
+  "failed_exit": 137,
+  "OOM": false,
+  "diagnosis": "Default Linux PID1 SIGTERM disposition ignored; Docker stop escalated to SIGKILL. This is a real required lifecycle defect, not a test expectation change.",
+  "fix": "Explicit SIGTERM handler exits0 through server_close finally. Existing immutable image remains unchanged; new recorded image/build and actual Docker stop qualification required.",
+  "all_helpers_terminal": true,
+  "original_created_fixture_retained": true,
+  "acceptance_credit": false,
+  "next": "Commit reviewed SIGTERM fix; new worker-only image build02 with same dependency/base/SDK/contracts and only server.py change. Keep image269bd71a/old stopped137 worker and volume/key evidence. Explicit new owned Compose runtime on same public volume tests graceful stop0, scoped HTTP/restart/outage; then host issuer/Notes integration and metadata/recovery."
+}

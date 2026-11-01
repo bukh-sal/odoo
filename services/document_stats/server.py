@@ -1,6 +1,7 @@
 """Bounded JSON/HTTP adapter for the separately operated reference worker."""
 import argparse
 import json
+import signal
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from threading import BoundedSemaphore
@@ -130,6 +131,12 @@ def main():
     if not isinstance(parsed, RSAPublicKey) or parsed.key_size < 2048:
         raise ValueError('Public-only RSA verification key required')
     server = Server((args.host, args.port), Engine(public_key, **config))
+    # Linux PID1 ignores the default SIGTERM disposition. Explicitly finish
+    # through finally so an operator stop does not require Docker SIGKILL.
+    # An interrupted pure computation can be retried; the host owns effects.
+    def stop(_signum, _frame):
+        raise SystemExit(0)
+    signal.signal(signal.SIGTERM, stop)
     print(json.dumps(dict(event='ready', port=server.server_port, api_version='1.0')), flush=True)
     try:
         server.serve_forever()
