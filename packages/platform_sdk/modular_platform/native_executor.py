@@ -39,16 +39,20 @@ def verify_native_state(bundle,state,previous,observation):
                 raise OperatorError('Install target already exists in checkpoint')
             expected[key]={name:value for name,value in target.items() if name!='action'}|{
                 'state':'installed','feature_state':feature_states.get(key,'enabled'),'metadata_state':'installed'}
-        elif target['action']=='uninstall':
+        elif target['action'] in ('uninstall','unregister'):
             if key not in expected:raise OperatorError('Uninstall target is absent from checkpoint')
             expected[key].update(state='not_installed',feature_state='suspended',metadata_state='removed')
         elif target['action']=='remove':
             if key in expected and (expected[key]['state']!='not_installed' or expected[key]['metadata_state']!='removed' or expected[key]['feature_state']!='suspended'):
                 raise OperatorError('Source removal requires inert retained installation metadata')
+        elif target['action'] in ('enable','suspend'):
+            if key not in expected or expected[key]['state']!='installed':raise OperatorError('Feature target is absent from checkpoint')
+            expected[key]['feature_state']='enabled' if target['action']=='enable' else 'suspended'
         elif key not in expected:raise OperatorError('Upgrade target is absent from checkpoint')
     actual={(item['installation_id'],item['workspace_id']):item for item in state['installations']}
-    if actual!=expected or state['bindings']!=bundle['operation_lock']['bindings']:
-        raise OperatorError('Ready metadata/bindings or preserved availability differ from approved targets')
+    if (actual!=expected or state['bindings']!=bundle['operation_lock']['bindings']
+            or state.get('endpoints',[])!=bundle['operation_lock'].get('endpoints',[])):
+        raise OperatorError('Ready metadata/bindings/endpoints or preserved availability differ from approved targets')
     grants={(site['site_id'],row['workspace_id'],row['installation_id'],row['capability']):row
         for site in observation['sites'] for row in site['grants']}
     for change in bundle['plan']['permission_changes']:
@@ -56,7 +60,7 @@ def verify_native_state(bundle,state,previous,observation):
         actual=grants.get((target['site_id'],target['workspace_id'],target['installation_id'],change['capability']))
         if not actual or actual['state']!=('approved' if change['action']=='grant' else 'revoked') or actual['policy_version']!=bundle['plan']['policy_version']:
             raise OperatorError('Ready permission metadata differs from exact approved changes')
-    if bundle['plan'].get('operation_type') in ('uninstall','remove'):
+    if bundle['plan'].get('operation_type') in ('uninstall','unregister','remove'):
         affected={t['installation_id'] for t in bundle['operation_lock']['targets']}
         if any(row['state']=='approved' for site in observation['sites'] for row in site['grants'] if row['installation_id'] in affected):
             raise OperatorError('Ready uninstall retained an affected approved grant')
@@ -131,20 +135,51 @@ class NativeExecutor:
     def __init__(self, store, target_path, catalog_root, validator):
         self.store, self.target_path = store, Path(target_path)
         self.config = load_json(self.target_path.read_bytes())
-        self.observer = DockerObserver(self.config)
         self.catalog_root, self.validator = catalog_root, validator
+        self.observer = self._observer_for(self.config)
+
+    def _observer_for(self,configuration):
+        if any(p['runtime']=='external_service' for p in configuration.get('published_release',{}).get('plugins',[])):
+            from .reference_dispatch import reference_observer
+            return reference_observer(self,configuration)
+        return DockerObserver(configuration)
+
+    def _dispatch(self):
+        if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
+            from .reference_dispatch import ReferenceDispatchMaintenance
+            return ReferenceDispatchMaintenance(self)
+        from .dispatch_operator import DispatchMaintenance
+        return DispatchMaintenance(self)
+
+    def _native_flags(self,bundle,plugins):
+        return native_maintenance_flags(bundle,plugins)
+
+    def _native_skip_reason(self,bundle):
+        return ('Reviewed source removal; native schema already absent' if bundle['plan']['operation_type']=='remove'
+            else 'Reviewed platform-only image deployment; no native maintenance')
+
+    def _verify_publication(self,bundle,state,previous,observation):
+        return verify_native_state(bundle,state,previous,observation)
+
+    def _publish_metadata(self,bundle,payload,directory,image):
+        arguments,child=self._child(bundle['plan']['operation_id'],'metadata',image_id=image)
+        arguments.insert(2,'-i')
+        script={'uninstall':'uninstall_metadata.py','remove':'remove_metadata.py'}.get(bundle['plan']['operation_type'],'install_metadata.py')
+        self._private_command(arguments+['-c',Path(__file__).with_name(script).read_text(encoding='utf8')],
+            directory/'metadata.log',input=json.dumps(payload).encode())
 
     def _validate(self, *, quiesced=False):
         from .release_staging import StageStore
         stages=StageStore(self.store,self.config,Catalog(self.catalog_root,self.validator,readonly=True))
-        return IndependentValidator(self.config, self.catalog_root, self.validator, quiesced=quiesced,stage_store=stages)
+        return IndependentValidator(self.config, self.catalog_root, self.validator, quiesced=quiesced,stage_store=stages,
+            external_reader=getattr(self.observer,'external_reader',None))
 
     def _execution_image(self,bundle):
         return bundle['operation_lock'].get('staged_image',{}).get('target_image_id',self.config['image_id'])
 
     def _replace_workers(self,app,bundle,directory):
         target=dict(self.config,image_id=self._execution_image(bundle),
-            generation=bundle['operation_lock']['release']['generation'],release_created_at=bundle['plan']['created_at'],
+            generation=bundle['operation_lock']['release']['generation'],release_created_at=bundle['operation_lock']['release']['created_at'],
             published_release=bundle['operation_lock']['release'])
         from .workers import ensure
         inventory=bundle['operation_lock'].get('staged_image',{}).get('inventory_digest')
@@ -162,7 +197,7 @@ class NativeExecutor:
         try:
             if not self.store.application_request(operation):return
             from .app_channel import publish_status
-            observer=DockerObserver(load_json(self.target_path.read_bytes()))
+            observer=self._observer_for(load_json(self.target_path.read_bytes()))
             publish_status(self.store,observer,Catalog(self.catalog_root,self.validator,readonly=True),operation)
         except Exception:
             pass  # Existing UI observation becomes stale; local show still works.
@@ -239,26 +274,37 @@ class NativeExecutor:
             'created_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
         dispatch=directory/'dispatch-fence/fence.json'
         if dispatch.exists() and load_json(dispatch.read_bytes())['result'] is not None:
-            from .dispatch_operator import DispatchMaintenance
-            actual=DispatchMaintenance(self).inspect()
+            actual=self._dispatch().inspect()
             if actual!=load_json(dispatch.read_bytes())['result']['after']:
                 raise OperatorError('Dispatch changed after drain; checkpoint cannot be declared coordinated')
             previous['dispatch_profile']=actual
-            previous['external_dispatch']='Native queue/receipt profile fenced; remote effects are excluded by this profile.'
+            previous['external_dispatch']=('Outbound stateless reference profile fenced; independent current publication is not rolled back.'
+                if actual['profile']=='r1-reference-stateless-dispatch-v1' else 'Native queue/receipt profile fenced; remote effects are excluded by this profile.')
         _write_new(checkpoint/'manifest.json', previous)
         # Keep a stable local tag as well as its immutable image identity.
         _run(['docker', 'tag', self.config['image_id'], 'modular-platform:retained-'+operation])
         _write_new(directory/'checkpoint.json', {'id': operation, 'manifest_digest': data_digest(previous)})
         return operation
 
-    def apply(self, operation):
-        bundle = self.store.bundle(operation)
+    def _check_operation(self,bundle):
         if any(r['runtime']!='native' for r in bundle['plan']['artifacts']):
             raise OperatorError('External metadata requires the managed-worker lifecycle executor; native mutation denied before drain')
         if 'staged_image' in bundle['operation_lock'] and not self.staged_execution:
             raise OperatorError('Staged native execution must use the new-image executor adapter; current-image mutation denied')
         if bundle['plan']['operation_type'] not in (('install','upgrade','deploy','core_upgrade','remove') if self.staged_execution else ('install','uninstall')):
             raise OperatorError('Native execution requires a supported install/upgrade plan')
+
+    def _runtime_preflight(self,bundle):
+        if not self.staged_execution:
+            runtime=self.observer.read()['runtime']
+            if runtime.get('published_release_protocol')!=1:
+                raise OperatorError('Native installation requires an image with the published-release profile reader; stage a compatible candidate')
+            if bundle['plan']['operation_type']=='uninstall':require_native_uninstall_runtime(runtime)
+            if bundle['plan']['operation_type']=='install' and 'feature_states' in bundle['operation_lock']:require_native_reinstall_runtime(runtime)
+
+    def apply(self, operation):
+        bundle = self.store.bundle(operation)
+        self._check_operation(bundle)
         plan = bundle['plan']
         with OperationLocks(self.store.root/'locks', plan['deployment_id'], plan['site_ids']) as locks:
             journal = self.store.status(operation)
@@ -277,12 +323,7 @@ class NativeExecutor:
                 stages=StageStore(self.store,self.config,Catalog(self.catalog_root,self.validator,readonly=True))
                 _,record=stages.load(bundle['operation_lock']['staged_image'])
                 require_native_removal_runtime(record['runtime'])
-            if not self.staged_execution:
-                runtime=self.observer.read()['runtime']
-                if runtime.get('published_release_protocol')!=1:
-                    raise OperatorError('Native installation requires an image with the published-release profile reader; stage a compatible candidate')
-                if plan['operation_type']=='uninstall':require_native_uninstall_runtime(runtime)
-                if plan['operation_type']=='install' and 'feature_states' in bundle['operation_lock']:require_native_reinstall_runtime(runtime)
+            self._runtime_preflight(bundle)
             self.store.reserve(operation, locks, self._validate())
             self.mirror_progress(operation)
             stages = protect_directory(self.store.root/'stages')
@@ -296,8 +337,7 @@ class NativeExecutor:
             try:
                 self._validate()(bundle)
                 app, database, edge = self._topology()
-                from .dispatch_operator import DispatchMaintenance
-                dispatch=DispatchMaintenance(self)
+                dispatch=self._dispatch()
                 if dispatch.present():dispatch.require_runtime(self.observer.read()['runtime'])
                 _write_new(directory/'bundle.json', bundle)
                 _write_new(directory/'configuration.json', self.config)
@@ -310,7 +350,7 @@ class NativeExecutor:
                 dispatch_fence=None
                 if dispatch.present():
                     dispatch_fence=dispatch.run('fence',operation,directory/'dispatch-fence',release_digest=plan['base_release_digest'])
-                    dispatch.require_native(dispatch_fence['after'],closed=True)
+                    dispatch.require_profile(dispatch_fence['after'],closed=True)
                 _run(['docker', 'stop', '--time', '30', app])
                 info = self._inspect(app)
                 if info['State']['Running'] or info['State']['ExitCode'] != 0:
@@ -330,7 +370,7 @@ class NativeExecutor:
                     if any(entry['plugin_id'] == item['manifest']['plugin']['id'] and entry['digest'] == item['digest']
                            for entry in bundle['operation_lock']['release']['plugins'])}
                 image=self._execution_image(bundle)
-                flags=native_maintenance_flags(bundle,plugins)
+                flags=self._native_flags(bundle,plugins)
                 if plan['operation_type']=='uninstall':
                     arguments, child = self._child(operation, 'native', writable=True, image_id=image)
                     arguments.insert(2,'-i')
@@ -349,8 +389,7 @@ class NativeExecutor:
                         raise OperatorError('Native uninstall effect observation is missing or mismatched; reconcile actual state')
                     _write_new(directory/'native-effects.json',effects[0])
                 elif flags is None:
-                    reason='Reviewed source removal; native schema already absent' if plan['operation_type']=='remove' else 'Reviewed platform-only image deployment; no native maintenance'
-                    _write_new(directory/'native-skipped.json',{'reason':reason})
+                    _write_new(directory/'native-skipped.json',{'reason':self._native_skip_reason(bundle)})
                 else:
                     arguments, child = self._child(operation, 'native', writable=True,image_id=image)
                     self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
@@ -364,26 +403,24 @@ class NativeExecutor:
                     'policy_version':plan['policy_version'],
                     'previous_plugins':{item['plugin_id']:item for item in load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']['release_lock']['plugins']}}
                 if 'feature_states' in bundle['operation_lock']:payload['feature_states']=bundle['operation_lock']['feature_states']
-                arguments, child = self._child(operation, 'metadata',image_id=image)
-                arguments.insert(2, '-i')
-                metadata_script={'uninstall':'uninstall_metadata.py','remove':'remove_metadata.py'}.get(plan['operation_type'],'install_metadata.py')
-                self._private_command(arguments+['-c', Path(__file__).with_name(metadata_script).read_text(encoding='utf8')], directory/'metadata.log', input=json.dumps(payload).encode())
+                self._publish_metadata(bundle,payload,directory,image)
                 self.store.advance(operation, locks, 'migrated')
                 failure = 'READINESS_FAILED'
                 app,target=self._replace_workers(app,bundle,directory)
                 self.store.advance(operation, locks, 'workers_replaced')
                 from .workers import wait_ready
                 wait_ready(app)
-                observation = DockerObserver(target).read()
-                state = DockerObserver(target).state(observation, snapshot)['state']
+                observer=self._observer_for(target)
+                observation = observer.read()
+                state = observer.state(observation, snapshot)['state']
                 previous=load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']
-                verify_native_state(bundle,state,previous,observation)
+                self._verify_publication(bundle,state,previous,observation)
                 # Build public target assets under the approved image while
                 # traffic is still closed. An asset failure after native commit
                 # is recovery_required, never a falsely successful release.
                 self._prepare_assets(operation, target, state, observation, directory)
                 from .profile_channel import publish_profile
-                _write_new(directory/'profile-publication.json',publish_profile(DockerObserver(target),
+                _write_new(directory/'profile-publication.json',publish_profile(observer,
                     Catalog(self.catalog_root,self.validator,readonly=True)))
                 dispatch_ready=None
                 if dispatch.present(configuration=target):
@@ -393,12 +430,12 @@ class NativeExecutor:
                         # existed in the base, so fence the exact new profile
                         # before classifying any migration-created work.
                         initial=dispatch.run('fence',operation,directory/'dispatch-initial',configuration=target,release_digest=plan['target_release_digest'])
-                        dispatch.require_native(initial['after'],closed=True)
+                        dispatch.require_profile(initial['after'],closed=True)
                         prior_dispatch=plan['target_release_digest']
                     reconciled=dispatch.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
                         previous_release=prior_dispatch,release_digest=plan['target_release_digest'],inventory_digest=observation['runtime']['inventory_digest'])
                     if not reconciled['resume_allowed']:raise OperatorError('Uncertain job effects require independent reconciliation before dispatch or traffic')
-                    dispatch_ready=dispatch.require_native(dispatch.inspect(configuration=target),closed=True)
+                    dispatch_ready=dispatch.require_profile(dispatch.inspect(configuration=target),closed=True)
                     _write_new(directory/'dispatch-ready.json',dispatch_ready)
                 self.store.advance(operation, locks, 'ready')
                 temporary = self.target_path.with_name(self.target_path.name+'.'+operation+'.tmp')

@@ -14,7 +14,7 @@ class ExecutorCrashFenceTests(unittest.TestCase):
     def executor(self,*,staged=False,started=True,completed=False):
         native=(StagedNativeExecutor if staged else NativeExecutor).__new__(StagedNativeExecutor if staged else NativeExecutor)
         native.store=Mock();native.store.root=Path('unused-private-store')
-        native.store.bundle.return_value={'plan':{'operation_type':'remove' if staged else 'uninstall','deployment_id':'test','site_ids':['site']},'operation_lock':{'staged_image':{}} if staged else {}}
+        native.store.bundle.return_value={'plan':{'operation_type':'remove' if staged else 'uninstall','deployment_id':'test','site_ids':['site'],'artifacts':[{'runtime':'native'}]},'operation_lock':{'staged_image':{}} if staged else {}}
         native.store.status.return_value={'state':'completed' if completed else ('running' if started else 'approved'),'mutation_started':started}
         native.store.reserve.side_effect=OperatorError('recovery_required: previous executor may have committed')
         native.observer=Mock();native.observer.read.side_effect=AssertionError('running application was observed before crash reconciliation')

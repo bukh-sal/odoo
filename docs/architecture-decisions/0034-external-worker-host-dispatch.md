@@ -287,3 +287,39 @@ and publication. Current native apply still refuses external artifacts before
 drain. Queue-bearing native feature operations also need an appropriate complete
 lifecycle path before final G6 qualification; preserving their legacy journal
 behavior here is not proof that the old no-queue feature child supports G6.
+
+`metadata-executor-01` now wires the metadata adapter into the existing executor
+loop. Small observer/dispatch/publication/readiness hooks retain one copy of the
+drain, checkpoint, reservation, uncertain-child fence, worker replacement,
+asset/profile publication and traffic ordering. ReferenceMetadataExecutor accepts
+only checkpointed single-site external metadata operations, skips native
+maintenance, and invokes the fixed inventoried external_metadata module. It
+requires the exact current component hashes in the immutable image before
+reservation/drain, and validates the child's exact operation result. A zero exit
+with a missing or mismatched result is not proof of publication.
+
+Native operations select the same bounded reference context when their
+independently published release includes external metadata; ordinary native
+defaults remain intact. Readiness now also compares exact approved endpoint
+descriptors. Worker replacement takes the release lock's original creation time,
+so a feature-only operation preserves the unchanged epoch instead of inventing a
+new timestamp. The CLI selects the full metadata adapter for external feature
+operations and keeps the legacy native feature adapter separate.
+
+Eight adapter,5 crash-fence,8 core-upgrade,4 native-uninstall,9 reinstall and18
+metadata-planning checks pass, as do5 shared-loop cases with real temporary
+OS-store approvals/locks/journal and substituted Docker/SQL effects. These cover
+registration, feature changes/unregister, completed replay, uncertain child exit,
+wrong operation result and durable traffic uncertainty. Test revalidation and
+checkpoint files are fixtures; this is not a real coordinated restore proof. The
+real current image also refuses metadata preflight before reservation or mutation.
+No committed metadata operation, new image or persistent Docker asset was added.
+
+Before an actual reviewed rollout, extend restore/unchanged-resume/continuation
+to this same explicit reference profile. Recovery inspection must account for
+exact base or approved-target metadata after a possible commit before target-file
+publication, while preserving current independently owned endpoint revocations.
+The default native-only recovery refusal must not simply be removed. Later native
+staging must carry published metadata pins outside the native image, and queued
+native feature operations plus late external-result authorization remain required
+before complete G6 qualification. No SVC/recovery acceptance is inferred here.

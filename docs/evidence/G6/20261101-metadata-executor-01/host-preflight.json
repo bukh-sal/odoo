@@ -1,0 +1,11 @@
+{
+  "result": "passed_actual_old_image_refusal",
+  "utc": "2026-11-01T07:02:19.235198+00:00",
+  "image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "metadata_preflight_rejected": true,
+  "reservation_attempted": false,
+  "mutation_attempted": false,
+  "new_docker_assets": 0,
+  "target_and_protected_configs_preserved": true,
+  "limit": "Private read-only preflight only; coherent new immutable image still required."
+}

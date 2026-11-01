@@ -7,12 +7,23 @@ is neither an app approval channel nor general external-effect reconciliation.
 from pathlib import Path
 from .catalog import Catalog
 from .contracts import load_json
-from .deployment import _run
+from .deployment import _run,DockerObserver
 from .dispatch_operator import DispatchMaintenance
 from .metadata_sql import METADATA_SELECT
 from .operator_os import OperatorError
 from .plans import data_digest
 from .worker_operator import WorkerPlanningReader,private_json
+
+
+def reference_observer(native,configuration):
+    def fresh():
+        reader=WorkerPlanningReader(native.store,native.target_path,native.target_path.with_name('worker-target.json'))
+        if reader.target not in (native.config,configuration):
+            raise OperatorError('Independent deployment configuration changed during reference lifecycle')
+        if any(reader.target[k]!=configuration[k] for k in ['deployment_id','project','sites']):
+            raise OperatorError('Reference observer cannot change its independently selected site')
+        return reader.planning_state()
+    return DockerObserver(configuration,external_reader=fresh)
 
 
 def read_metadata(native,configuration):

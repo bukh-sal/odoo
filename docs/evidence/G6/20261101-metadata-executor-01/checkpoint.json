@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-01T07:16:06.213880+00:00",
+  "result": "shared_metadata_executor_source_passed",
+  "tests": {
+    "adapter": 8,
+    "crash_order": 5,
+    "core_upgrade": 8,
+    "native_uninstall": 4,
+    "reinstall": 9,
+    "external_planning": 18,
+    "shared_loop": 5
+  },
+  "frozen_files": 94,
+  "actual_old_image_refused_before_reservation": true,
+  "actual_metadata_operation": false,
+  "source_hashes": {
+    "packages/platform_sdk/modular_platform/native_executor.py": "23fb5cf7221484cc8e96735c63f10a1df6186dff17cc739a26772cb86f2c004e",
+    "packages/platform_sdk/modular_platform/metadata_executor.py": "b35a920dc11bbcb0e0ff248437f31975e5c84c1cfdca5abe8447043dd980eac2",
+    "packages/platform_sdk/modular_platform/reference_dispatch.py": "38f319ac405c263b4cea5727bf77ffe1c950b7684555025d67bb0d80b3bc903d",
+    "tools/modular.py": "f702898e9e145045d9607f00cbb76de5af6017a0b51a6c0bcb9133ed728b48c8",
+    "tests/test_metadata_executor.py": "a19e27bfd7c7d5309a42276f0ce71cd16f083179aee5729cb67a28213c85e411",
+    "tests/test_executor_crash_fence.py": "049c46ce85b8991a024ae9e502b995461d2ef2d6a49ead8b18ea44a6c128fb34",
+    "docs/evidence/G6/20261101-metadata-executor-01/native_tests.py": "69767c8a95be41d6fc0be6b5b28c7699bb5ca77271bccfc0923752ea3b5373d0",
+    "docs/evidence/G6/20261101-metadata-executor-01/check.py": "373e0babdd4cf819559fca275357ac89105c3c0a4fb5b2d1cdcce8a3a87ac616",
+    "docs/evidence/G6/20261101-metadata-executor-01/host_preflight.py": "8a4fafd8602ca916d5f82e7b437bea83c977c8213e7de99db3f4cee36e761951"
+  },
+  "next": "Extend explicit reference recovery/continuation/unchanged-resume before committed metadata operations; then coherent image/staged pin/final apply/actual qualification.",
+  "acceptance": "92/99",
+  "rough_percent": 88,
+  "new_docker_assets": 0
+}

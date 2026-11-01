@@ -314,11 +314,16 @@ def main(argv=None):
             from modular_platform.operator_store import OperatorStore
             from modular_platform.native_executor import NativeExecutor
             store=OperatorStore(args.store)
-            executor=NativeExecutor(store,args.deployment_config,args.catalog,validator)
-            if 'staged_image' in store.bundle(args.operation_id)['operation_lock']:
+            bundle=store.bundle(args.operation_id)
+            metadata=bool(bundle['plan']['artifacts']) and all(a['runtime']=='external_service' for a in bundle['plan']['artifacts'])
+            if metadata:
+                from modular_platform.metadata_executor import ReferenceMetadataExecutor
+                executor=ReferenceMetadataExecutor(store,args.deployment_config,args.catalog,validator)
+            else:executor=NativeExecutor(store,args.deployment_config,args.catalog,validator)
+            if not metadata and 'staged_image' in bundle['operation_lock']:
                 from modular_platform.native_executor import StagedNativeExecutor
                 executor=StagedNativeExecutor(store,args.deployment_config,args.catalog,validator)
-            if store.bundle(args.operation_id)['plan']['operation_type'] in ('suspend','enable'):
+            if not metadata and bundle['plan']['operation_type'] in ('suspend','enable'):
                 from modular_platform.feature_executor import FeatureExecutor
                 executor=FeatureExecutor(executor)
             result=executor.apply(args.operation_id)
