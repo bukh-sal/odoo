@@ -1,0 +1,14 @@
+{
+  "result": "retired_owned_terminal_provider_helpers",
+  "removed_containers": 18,
+  "superseded_apps_removed": 2,
+  "active_host_app_database_edge_and_reference_worker_preserved": true,
+  "active_public_config_and_authority_volumes_retained": true,
+  "volumes_removed": 0,
+  "images_removed": 0,
+  "current_and_checkpoint_images_retained": true,
+  "private_diagnostics_archived": true,
+  "generated_private_key_staging_duplicate_removed": true,
+  "authoritative_operator_keys_preserved": true,
+  "no_global_prune": true
+}

@@ -1,0 +1,23 @@
+{
+  "result": "passed_exact_metadata_artifact_curation",
+  "digest": "sha256:bc1170197c19fb1503f1e786a157c4d2e14ec18a8a50d2d7fff7a64a2fdd97b7",
+  "files": [
+    "inventory.json",
+    "notices/COPYRIGHT",
+    "notices/LICENSE",
+    "plugin.toml",
+    "provenance.json",
+    "schemas/stats-v1.json"
+  ],
+  "previous_trust_generation": 5,
+  "current_trust_generation": 6,
+  "fixture_local_catalog_only": true,
+  "native_release_installations_bindings_endpoints_exact": true,
+  "artifact_not_installed": true,
+  "no_docker_assets_created": true,
+  "canonical_scope": {
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+    "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e"
+  }
+}

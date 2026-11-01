@@ -1,0 +1,17 @@
+{
+  "result": "passed_actual_metadata_enable",
+  "operation_id": "66e30043-aec3-4402-bf77-e233aa26525e",
+  "image": "sha256:04a4ffaf616b095110a805ff8238ecf39a0dfec3dbb542a4ac4f0437919ba1a9",
+  "configuration_generation": 12,
+  "dispatch_generation": 58,
+  "release_unchanged": true,
+  "approved_provider_healthy_and_enabled": true,
+  "worker_identity_image_start_restart_mounts_network_key_and_publication_exact": true,
+  "native_modules_and_schema_exact": true,
+  "all_business_authority_event_binding_grant_rows_exact": true,
+  "old_job_outcomes_inputs_attempts_exact": true,
+  "jobs_epoch_updated": 18,
+  "limits": [
+    "No connector, remote Note computation, outage/revocation/upgrade/unregister or external recovery qualification yet."
+  ]
+}

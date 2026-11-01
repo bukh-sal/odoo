@@ -1,0 +1,21 @@
+{
+  "result": "passed_actual_canonical_worker_publication",
+  "publication_generation": 3,
+  "endpoint_generation": 1,
+  "canonical_scope": {
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+    "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e"
+  },
+  "image": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "worker_project": "mp-disposable-document-stats-05",
+  "public_config_volume": "mp-disposable-document-stats-05-public-config",
+  "independent_exact_review_and_image_address_key_scope_attestation": true,
+  "previous_revoked_entries_preserved": true,
+  "operator_started_runtime_separately": true,
+  "metadata_installer_not_invoked": true,
+  "new_images": 0,
+  "new_runtime_containers": 1,
+  "new_public_only_volumes": 1,
+  "seed_helper_auto_removed": true
+}
