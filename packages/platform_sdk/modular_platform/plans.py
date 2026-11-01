@@ -384,7 +384,8 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         'permission_changes': sorted(copy.deepcopy(list(permission_changes)), key=lambda item: (item['plugin_id'], item['workspace_id'], item['capability'], item['action'])),
         'trust_changes': sorted(copy.deepcopy(list(trust_changes)), key=lambda item: (item['artifact_digest'], item['decision'])),
         'destructive': destructive,
-        'backup': {'required': any(item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall','remove','deploy') for item in artifacts.values()),
+        'backup': {'required': any(item['runtime']=='external_service' or item['runtime'] == 'native'
+                    and item['action'] in ('install', 'upgrade', 'uninstall','remove','deploy') for item in artifacts.values()),
                    'policy_id': backup_policy, 'retain_previous_release': True},
         'policy_version': state['policy_version'], 'operator_authorization_generation': state['operator_authorization_generation']}
     canonical_plan(plan)

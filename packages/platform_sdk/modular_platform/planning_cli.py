@@ -43,7 +43,7 @@ def scoped_bindings(solution, installations, previous):
     return bindings
 
 
-def prepare_document(document, catalog):
+def prepare_document(document, catalog, *, retained_trust_for=()):
     required = {'state', 'environment', 'provenance', 'python_metadata', 'request'}
     if not isinstance(document, dict) or set(document) != required:
         raise PlanningError('Plan input requires exact state/environment/provenance/Python/request sections')
@@ -148,6 +148,17 @@ def prepare_document(document, catalog):
         if not created_at:
             raise PlanningError('A fixed UTC creation time is required for reproducible release planning')
         lock = release_lock(resolved, document['provenance'], generation=state['release_lock']['generation'] + 1, created_at=created_at)
+        # Historical publication evidence is distinct from the fresh catalog
+        # validation digest. Private metadata callers may retain it only for
+        # unchanged, previously published exact artifacts. This option is never
+        # accepted from an untrusted request document.
+        previous={r['plugin_id']:r for r in state['release_lock']['plugins']}
+        for entry in lock['plugins']:
+            if entry['plugin_id'] in retained_trust_for:
+                prior=previous.get(entry['plugin_id'])
+                if not prior or any(entry[k]!=prior[k] for k in ['version','digest','manifest_digest','runtime']):
+                    raise PlanningError('Historical trust can only accompany unchanged published artifact bytes')
+                entry['trust']=copy.deepcopy(prior['trust'])
     installations = {scoped_installation_key(item): item for item in state['installations'] if item.get('state', 'installed') != 'not_installed'}
     for item in request['targets']:
         if item['action'] in ('uninstall', 'unregister', 'remove'):

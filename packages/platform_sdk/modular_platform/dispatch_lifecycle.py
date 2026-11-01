@@ -19,6 +19,7 @@ class LifecycleScope:
     site_id: str
     release_digest: str
     control_release: str | None = None
+    reference: dict | None = None
 
 
 def _columns(*groups):
@@ -51,6 +52,58 @@ UNIQUE={
 JOB_STATES=frozenset({'pending','running','retry','completed','dead_letter','cancelled','outcome_unknown','held'})
 UNFINISHED=('pending','running','retry','held','outcome_unknown')
 MAX_ROWS=100000
+
+
+def _reference(cr,scope):
+    """Private OS-selected profile, never a DB flag or general remote allowlist.
+
+    The host verifies catalog/release/publication provenance. This transaction
+    checks its exact physical metadata footprint again, including tombstones.
+    Supported authority is outbound-only, to the stateless reference worker.
+    """
+    value=scope.reference
+    keys={'profile','site_id','runtime_image','publication_digest','registrations'}
+    if (not isinstance(value,dict) or set(value)!=keys or value['profile']!='r1-reference-stateless-v1'
+            or value['site_id']!=scope.site_id or not isinstance(value['runtime_image'],str)
+            or not re.fullmatch(r'modular-document-stats@sha256:[0-9a-f]{64}',value['runtime_image'])
+            or not isinstance(value['publication_digest'],str) or not re.fullmatch('sha256:[0-9a-f]{64}',value['publication_digest'])
+            or not isinstance(value['registrations'],list) or len(value['registrations'])>256):
+        raise DispatchLifecycleError('Exact independently selected reference profile required')
+    expected=[]
+    for row in value['registrations']:
+        if (not isinstance(row,dict) or set(row)!={'installation_id','plugin_id','version','artifact_digest','manifest_digest','state','features'}
+                or row['plugin_id']!='org.example.document_stats' or row['state'] not in {'installed','removed'}
+                or any(not isinstance(row[k],str) or not re.fullmatch('sha256:[0-9a-f]{64}',row[k]) for k in ['artifact_digest','manifest_digest'])
+                or not isinstance(row['features'],list) or len(row['features'])>256):
+            raise DispatchLifecycleError('Unknown external registration is outside the reference profile')
+        durable._uuid(row['installation_id'])
+        for feature in row['features']:
+            if (not isinstance(feature,dict) or set(feature)!={'workspace_id','feature_state'}
+                    or feature['feature_state'] not in {'enabled','suspended'}
+                    or row['state']=='removed' and feature['feature_state']!='suspended'):
+                raise DispatchLifecycleError('Exact retained reference feature scope required')
+            durable._uuid(feature['workspace_id'])
+        if len({f['workspace_id'] for f in row['features']})!=len(row['features']):
+            raise DispatchLifecycleError('Duplicate reference workspace scope')
+        expected.append(row)
+    if len({r['installation_id'] for r in expected})!=len(expected):raise DispatchLifecycleError('Duplicate reference installation')
+    cr.execute("SELECT id,public_id,plugin_id,version,artifact_digest,state,manifest FROM mp_plugin_installation WHERE runtime<>'native' ORDER BY public_id")
+    actual=[]
+    for ident,public,plugin,version,digest,state,manifest in cr.fetchall():
+        if (not isinstance(manifest,dict) or manifest.get('runtime')!={'kind':'external_service'}
+                or not isinstance(manifest.get('external_service'),dict)
+                or not re.fullmatch(r'modular-document-stats@sha256:[0-9a-f]{64}',manifest['external_service'].get('expected_image',''))
+                or state!='removed' and manifest['external_service']['expected_image']!=value['runtime_image']):
+            raise DispatchLifecycleError('External image/runtime differs from independently selected reference')
+        cr.execute('''SELECT w.public_id,f.availability,f.plugin_id FROM mp_workspace_plugin f JOIN mp_workspace w ON w.id=f.workspace_id
+            WHERE f.installation_id=%s ORDER BY w.public_id''',[ident])
+        features=cr.fetchall()
+        if any(p!=plugin for _,_,p in features):raise DispatchLifecycleError('Reference feature ownership changed')
+        actual.append(dict(installation_id=public,plugin_id=plugin,version=version,artifact_digest=digest,
+            manifest_digest=data_digest(manifest),state=state,features=[dict(workspace_id=w,feature_state=a) for w,a,_ in features]))
+    if actual!=sorted(expected,key=lambda r:r['installation_id']):
+        raise DispatchLifecycleError('Reference metadata changed after independent observation')
+    return data_digest(value)
 
 
 def _scope(cr,scope):
@@ -147,6 +200,8 @@ def observe(cr,scope,*,lock=False):
     body=dict(profile='r1-native-dispatch-v1',site_id=scope.site_id,release_digest=scope.release_digest,
         schema_digest=data_digest({table:SCHEMA[table] for table in tables}),control=control,tables=snapshots,
         job_states=states,event_receipts=EVENTS<=set(tables),external_installations=external,active_credentials=credentials,api_keys=keys,uncertain_jobs=uncertain)
+    if scope.reference is not None:
+        body.update(profile='r1-reference-stateless-dispatch-v1',reference_policy_digest=_reference(cr,scope))
     return body|dict(state_digest=data_digest(body))
 
 
@@ -162,7 +217,7 @@ def fence(cr,scope,operation_id,*,state='paused'):
     if state not in {'paused','restoring'}:raise DispatchLifecycleError('Closed dispatch state required')
     before=observe(cr,scope,lock=True)
     if before is None:return None
-    if before['external_installations'] or before['active_credentials'] or before['api_keys']:
+    if before['external_installations'] and scope.reference is None or before['active_credentials'] or before['api_keys']:
         raise DispatchLifecycleError('External effects or live technical credentials require the external reconciliation profile')
     if before['control'] and before['control']['generation']>=2**31-1:
         raise DispatchLifecycleError('Dispatch generation exhausted')
@@ -183,7 +238,7 @@ def fence(cr,scope,operation_id,*,state='paused'):
         cr.execute("""UPDATE mp_event_delivery SET state=CASE WHEN attempts>=5 THEN 'dead_letter' ELSE 'pending' END,
             generation=generation+1,receipt=NULL,lease_until=NULL,error_code='ACK_EXPIRED',
             available_at=timezone('UTC',clock_timestamp()) WHERE state='leased'""")
-    after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest))
+    after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest,reference=scope.reference))
     for table in ['mp_outbox','mp_event_consumption','mp_event_consumer_state']:
         if table in before['tables'] and before['tables'][table]!=after['tables'][table]:
             raise DispatchLifecycleError('Fencing changed producer or consumer history')
@@ -201,7 +256,8 @@ def enable(cr,scope,expected_digest):
             or before['control']['state']!='paused' or before['control']['release_digest']!=scope.release_digest
             or before['control']['generation']>=2**31-1):
         raise DispatchLifecycleError('Exact paused dispatch snapshot required before resume')
-    if before['external_installations'] or before['active_credentials'] or before['api_keys'] or before['job_states'].get('running') or before['job_states'].get('outcome_unknown'):
+    if (before['external_installations'] and scope.reference is None or before['active_credentials'] or before['api_keys']
+            or before['job_states'].get('running') or before['job_states'].get('outcome_unknown')):
         raise DispatchLifecycleError('Unreconciled effects or credentials prevent native dispatch resume')
     cr.execute("SELECT count(*) FROM mp_job WHERE (state IN ('pending','retry') AND (release_digest<>%s OR effect_mode<>'idempotent')) OR (effect_mode='reconcile' AND effect_started AND state NOT IN ('completed','cancelled','dead_letter'))",[scope.release_digest])
     if cr.fetchone()[0]:raise DispatchLifecycleError('Pending work requires explicit current-release effect reconciliation')
@@ -211,4 +267,4 @@ def enable(cr,scope,expected_digest):
         cr.execute("SELECT count(*) FROM mp_event_delivery WHERE state='leased'")
         if cr.fetchone()[0]:raise DispatchLifecycleError('Obsolete event receipts remain leased')
     durable.set_control(cr,scope.site_id,scope.release_digest,'enabled')
-    return dict(before=before,after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest)),dispatch_enabled=True)
+    return dict(before=before,after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest,reference=scope.reference)),dispatch_enabled=True)

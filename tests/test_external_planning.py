@@ -88,6 +88,21 @@ class ExternalPlanning(unittest.TestCase):
         self.unregistered();self.f.catalog[0]=copy.deepcopy(self.f.catalog[0]);self.f.catalog[0]['digest']='sha256:'+'b'*64
         with self.assertRaises(PlanningError):self.prepare('install')
 
+    def test_new_catalog_policy_keeps_published_native_trust_history(self):
+        self.unregistered();prior=copy.deepcopy(self.document['state']['release_lock']['plugins'][0])
+        for descriptor in self.f.catalog:descriptor['trust']['policy_generation']+=1
+        self.document=self.f.project();bundle=self.prepare('install')
+        native=next(r for r in bundle['operation_lock']['release']['plugins'] if r['runtime']=='native')
+        self.assertEqual(native,prior)
+        external=next(r for r in bundle['operation_lock']['release']['plugins'] if r['runtime']=='external_service')
+        self.assertEqual(external['trust']['policy_generation'],self.f.catalog[1]['trust']['policy_generation'])
+        self.assertEqual(self.independent()(bundle),self.document['state'])
+
+    def test_untrusted_request_cannot_select_historical_trust_option(self):
+        from modular_platform.planning_cli import prepare_document
+        request=dict(operation_type='suspend',requested={},targets=[self.target],retained_trust_for=['org.test.a'])
+        with self.assertRaisesRegex(PlanningError,'request fields'):prepare_document({**self.document,'request':request},self.f.catalog)
+
     def test_closed_workspace_allows_removal_but_not_activation(self):
         self.f.site['workspaces'][0]['state']='closed'
         with self.assertRaises(PlanningError):self.prepare('enable')

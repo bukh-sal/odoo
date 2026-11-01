@@ -1,0 +1,20 @@
+{
+  "result": "passed_real_readonly_reference_child",
+  "utc": "2026-11-01T06:30:01.807707+00:00",
+  "image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "profile": "r1-reference-stateless-dispatch-v1",
+  "reference_policy_digest": "sha256:96e7d2c41fe84382131abfd448b100610e15d6c200c21cbe229e8b13886cdb17",
+  "external_registrations": 0,
+  "current_protected_publication": true,
+  "actual_docker_child": true,
+  "child_exit_code": 0,
+  "child_removed": true,
+  "new_images": 0,
+  "new_volumes": 0,
+  "nineteen_table_rows_preserved": true,
+  "protected_configurations_preserved": true,
+  "limits": [
+    "Current publication is revoked generation2 and database has no external registration.",
+    "Read-only inspection only; no lifecycle approval, metadata commit, remote runtime or recovery qualification."
+  ]
+}

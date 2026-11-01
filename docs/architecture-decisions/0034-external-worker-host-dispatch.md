@@ -244,3 +244,46 @@ uses its shorter no-checkpoint path; neither may be weakened as a shortcut.
 Bind the external profile to the independent publication/current exact reference
 image, preserve uncertainty/credential gates, and qualify actual reviewed
 registration and recovery before SVC04/05 can pass.
+
+`reference-dispatch-01` adds that explicit private dispatch profile. Its scope
+contains exact reference installation/manifest/artifact/feature identities,
+runtime image and protected publication digest. The host reconstructs it from
+the independent release/catalog and protected worker files; the SQL transaction
+checks the physical footprint again. Unknown registrations, changed image or
+workspace ownership, active host credentials/API keys, uncertain effects and
+stale resume receipts remain closed. No general allow-external flag exists.
+Native calls without this scope retain the native snapshot/guards. The optional
+scope is confined to the private operator child protocol, with no public DTO or
+frozen file change.
+
+External metadata plans now require a coordinated backup. The independent
+journal uses its existing full drained/checkpointed/mutation/replacement/ready/
+publication/traffic sequence for external enable/suspend too. Native feature
+plans retain their established short sequence. A rehashed external plan omitting
+the required backup is rejected at registration. These are prerequisite journal
+checks, not claims that a real checkpoint/restore has occurred.
+
+The current source family passes16 real PostgreSQL/temporary OS-store cases,
+including native-default refusal, reference/tombstone fencing and resume,
+unknown effects/credentials/metadata, publication races and phase ordering.
+Protected-publication builder tests use real private files/keys but substitute
+Docker/catalog/metadata observations; the full integrated operation is pending.
+An additional actual controlled read-only Docker child succeeds with the current
+protected revoked-generation2 publication and zero external registrations. All
+nineteen observed tables and protected configurations remain exact, and the
+terminal child is retired. This does not qualify a registered external runtime.
+
+Actual curation also advances catalog trust generations. Metadata planning
+retains historical published trust evidence only for unchanged untargeted exact
+artifacts while validating every package against the fresh catalog and binding
+its current digest. A private prepare_document option supplies this behavior;
+request documents cannot select it.18 external planning,13 frozen-envelope plan
+and5 CLI checks pass;94 frozen files remain unchanged. This prevents an unrelated
+native package from appearing changed when the metadata package is added.
+
+Next integrate these tested components in the executor's existing lifecycle,
+including observer/dispatch selection, checkpoint manifest, SQL child, readiness
+and publication. Current native apply still refuses external artifacts before
+drain. Queue-bearing native feature operations also need an appropriate complete
+lifecycle path before final G6 qualification; preserving their legacy journal
+behavior here is not proof that the old no-queue feature child supports G6.

@@ -27,6 +27,17 @@ FEATURE_STEPS = ['reserved','staged','mutation_started','metadata_published','re
 ACKS = {'destructive', 'trust_expansion', 'permission_expansion'}
 
 
+def _short_feature(plan):
+    return plan['operation_type'] in ('suspend','enable') and all(a['runtime']=='native' for a in plan['artifacts'])
+
+
+def _steps(plan):
+    if any(a['runtime']=='external_service' for a in plan['artifacts']) and not plan['backup']['required']:
+        raise OperatorError('External metadata requires a coordinated checkpoint')
+    return FEATURE_STEPS if _short_feature(plan) else (
+        STEPS if plan['backup']['required'] else [value for value in STEPS if value!='checkpointed'])
+
+
 def _utc(value=None):
     return (value or datetime.now(timezone.utc)).astimezone(timezone.utc).replace(microsecond=0)
 
@@ -252,6 +263,7 @@ class OperatorStore:
     def register(self, bundle, revalidate):
         self._authorize_plan(bundle['plan'])
         check_bundle(bundle, revalidate(bundle))
+        _steps(bundle['plan'])
         operation_id = bundle['plan']['operation_id']
         with self._connect(transaction=True) as database:
             old = database.execute('SELECT * FROM operations WHERE operation_id=?', (operation_id,)).fetchone()
@@ -406,8 +418,7 @@ class OperatorStore:
             raise OperatorError('Invalid journal step; mutation needs its dedicated authority check')
         with self._connect(transaction=True) as database:
             row, bundle, approval, nonce = self._reservation(database, operation_id, locks)
-            steps = FEATURE_STEPS if bundle['plan']['operation_type'] in ('suspend','enable') else (
-                STEPS if bundle['plan']['backup']['required'] else [value for value in STEPS if value != 'checkpointed'])
+            steps = _steps(bundle['plan'])
             if phase not in steps:
                 raise OperatorError('Journal phase does not describe this operation type')
             if steps.index(phase) != steps.index(row['phase']) + 1:
@@ -427,7 +438,8 @@ class OperatorStore:
         check_bundle(bundle, revalidate(bundle))
         with self._connect(transaction=True) as database:
             row, bundle, approval, nonce = self._reservation(database, operation_id, locks, now=now)
-            feature = bundle['plan']['operation_type'] in ('suspend','enable')
+            _steps(bundle['plan'])
+            feature = _short_feature(bundle['plan'])
             expected = 'staged' if feature else ('checkpointed' if bundle['plan']['backup']['required'] else 'drained')
             if row['phase'] != expected or row['mutation_started']:
                 raise OperatorError('Mutation requires a drained/checkpointed operation and one reservation')

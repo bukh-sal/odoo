@@ -37,13 +37,16 @@ class DispatchMaintenance:
             raise OperatorError('Known reconciled native dispatch profile required; external or uncertain effects keep traffic fenced')
         return snapshot
 
+    def require_profile(self,snapshot,*,closed=False):
+        return self.require_native(snapshot,closed=closed)
+
     @staticmethod
     def require_runtime(runtime):
         required={'addons/mp_core/job_dispatch.py','packages/platform_sdk/modular_platform/job_runner.py','packages/platform_sdk/modular_platform/worker_start.py'}
         if not required<=set(runtime.get('inventory',{}).get('files',{})):
             raise OperatorError('Runtime lacks the scoped native job adapter; explicit queue reconciliation is required before lifecycle mutation')
 
-    def run(self,action,operation,directory,*,database=None,release_digest,control_release=None,expected_digest=None,configuration=None,review_id=None):
+    def run(self,action,operation,directory,*,database=None,release_digest,control_release=None,expected_digest=None,configuration=None,review_id=None,reference=None):
         if action not in {'observe','fence','enable'} or str(UUID(operation))!=operation:
             raise OperatorError('Exact dispatch maintenance action/operation required')
         config=configuration or self.native.config;self._configuration(config);site=config['sites'][0]
@@ -55,6 +58,7 @@ class DispatchMaintenance:
         script=Path(__file__).with_name('dispatch_maintenance.py').read_text(encoding='utf8')
         source='LIFECYCLE_SOURCE='+repr(helper)+'\n'+script
         binding=dict(action=action,database=site['database'],site_id=site['site_id'],release_digest=release_digest,control_release=control_release,operation_id=operation,expected_digest=expected_digest)
+        if reference is not None:binding['reference']=reference
         _write_new(directory/(action+'-request.json'),dict(**binding,helper_sha256=hashlib.sha256(helper.encode()).hexdigest(),script_sha256=hashlib.sha256(script.encode()).hexdigest(),image_id=config['image_id']))
         args,child=self.native._child(operation,self._suffix(action,review_id),image_id=config['image_id'])
         args.insert(2,'-i')

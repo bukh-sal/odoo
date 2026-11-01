@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-01T06:41:49.139601+00:00",
+  "result": "reference_profile_journal_prerequisites_passed",
+  "pg_os_cases": 16,
+  "external_planner_cases": 18,
+  "plan_cases": 13,
+  "cli_cases": 5,
+  "frozen_files": 94,
+  "real_protected_readonly_child": true,
+  "committed_metadata_operation": false,
+  "hashes": {
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "88a37967403c602bac8d91f4c993dacae6d27d6f6f084d2446ebb6e1d05c1b0c",
+    "packages/platform_sdk/modular_platform/dispatch_maintenance.py": "dbbec4679f95f88d1c6743106cc1be3892dcb9a469560ec5b564dbb4b548a4ab",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "c3dc417eb323fae239291587f028d4e70f4d9851a0c740e2b6af57d38104f33a",
+    "packages/platform_sdk/modular_platform/reference_dispatch.py": "2c91e730671b0c44a7cd00f744fc5b120211d8d656a09bc2b96adaf38f1b3f12",
+    "packages/platform_sdk/modular_platform/operator_store.py": "9e09b71d6a1c7d74b9c32ab1eb9c0c3206de38e49668677826bf07a17d9304ef",
+    "packages/platform_sdk/modular_platform/planning_cli.py": "b0ac416bcb38333015296fc82e24e64bee23ec138032b403126fd491dbe2efaf",
+    "packages/platform_sdk/modular_platform/plans.py": "57ad61810cb408aa4078defa2067d7eb4932cdd05babeb45d907c8f04c491466",
+    "packages/platform_sdk/modular_platform/external_planning.py": "5996c8aa6b6160efd6c86cb827673bd2a05280f82b342133e89e646724a7b669",
+    "tests/test_external_planning.py": "3a67cf0d1df1a51ff67f171e4b582a8270627d7bb58f9e4a93863cf0ba1222ea",
+    "docs/evidence/G6/20261101-reference-dispatch-01/native_tests.py": "de03b917b06b652e2bca556012379161ce82f03455e9192bc684f075c7d80203",
+    "docs/evidence/G6/20261101-reference-dispatch-01/check.py": "9938fd936c5da1c6fbf0991502b216697577ccdd4f50d2a490267b6c26e3e8df",
+    "docs/evidence/G6/20261101-reference-dispatch-01/host_inspect.py": "1251a23fbd2f03ba8de3229447342a75f60ccf17e4cae41d79d543395d1f0961"
+  },
+  "next": "Integrate existing executor hooks/checkpoint/external SQL/readiness/publication/traffic and qualify actual lifecycle/recovery.",
+  "acceptance": "92/99",
+  "rough_percent": 88,
+  "retained_new_docker_assets": 0
+}
