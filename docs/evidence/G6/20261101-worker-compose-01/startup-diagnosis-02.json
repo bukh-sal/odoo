@@ -1,0 +1,18 @@
+{
+  "result": "startup_failure_reconciled_no_worker_acceptance",
+  "utc": "2026-11-01T03:10:52.242512+00:00",
+  "driver_session": 62164,
+  "driver_terminal_exit": 1,
+  "diagnosis": "120s subprocess timeout killed docker parent but orphaned owned docker-compose child34964 kept output pipes open. Exact verified owned child stopped; driver then reported TimeoutExpired. No worker/native/backend stop/restart command issued.",
+  "observer_session": 77631,
+  "observer": "overdue read-only CLI cancelled separately; no container mutation",
+  "daemon_discriminator": "daemon-discriminator-01.json: daemonversionresponds/native login200",
+  "current_container": {
+    "id": "f84615e578404770c795cb92949d2e232c3a30f8cfd683debf3b3cbb29907213",
+    "state": "created",
+    "evidence": "b56073 actual Dockerps"
+  },
+  "diagnostics": "5 matching backend messages privately retained: volume registration and empty port registration, no explicit daemon error. Windows bind mount is a hypothesis, not established root cause.",
+  "next": "Preserve existing Created fixture. Discriminating experiment: public-config-only Linux Docker volume using existing approved config-volume provisioning pattern, independent owned project and same pinned worker; no native fixture or Docker restart. Implement bounded process-tree supervision to avoid orphan CLI pipes.",
+  "acceptance_credit": false
+}

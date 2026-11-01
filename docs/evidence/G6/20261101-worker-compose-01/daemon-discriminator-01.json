@@ -1,0 +1,12 @@
+[
+  {
+    "probe": "daemon_version",
+    "terminal": true,
+    "exit": 0,
+    "responded": true
+  },
+  {
+    "probe": "native_login",
+    "status": 200
+  }
+]
