@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-01T07:50:39.405761+00:00",
+  "result": "failed",
+  "attempt": "01",
+  "successful": false,
+  "tests": 20,
+  "errors": [
+    "native_final_apply.FinalizeTests.test_equivalent_replaced_binding_cannot_reuse_old_authority_fingerprint"
+  ],
+  "failures": [],
+  "original_rows_restored": false,
+  "sources": {
+    "platform_addons/mp_core/external_authority.py": "575cdd16c4f8df86be1dd5e888391effcf9ab9d009e88fcd85723a40895d26a9",
+    "platform_addons/mp_core/external_job.py": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+    "platform_addons/mp_example_notes_stats/contracts.py": "547f7d66bacc09cc94774a1125719871a046b19a9bdf39d351a266dcd2ea3962",
+    "platform_addons/mp_example_notes_stats/models.py": "b008de5f9323fb95b5eaeaabba10709f97fcac61c8c0c7463be100c61a88ba5a",
+    "platform_addons/mp_example_notes_stats/services.py": "7d1ce78b6f33bd7004422384212e5eb445d44d3d121f5eca6b0690562fb3b07b",
+    "platform_addons/mp_example_notes_stats/jobs.py": "d2a06f78231d20dfdd546bcb8d1e58bff44960b9f4bc52751d0ee839c231a411"
+  },
+  "image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "inventory": "sha256:69e77a15d3c599d7398cd2d75f34f31cee30cba5991f729d35e6ac5aa0f23aa1",
+  "new_docker_assets": 0,
+  "installed": false,
+  "actual_remote_compute": false,
+  "acceptance_credit": false,
+  "limits": [
+    "Candidate source loaded in isolated existing-container Odoo process; no installed code changed.",
+    "Native provider/connector/queue/business fixture writes roll back; sequence counters may advance.",
+    "Temporary public-key/authority files are test fixtures, not actual operator approval or image attestation.",
+    "No actual worker request, metadata lifecycle/connector deployment or cross-runtime atomicity claim."
+  ]
+}

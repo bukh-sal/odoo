@@ -1,0 +1,37 @@
+{
+  "result": "passed",
+  "archives": [
+    {
+      "plugin": "org.example.notes",
+      "digest": "sha256:d24876c930fd9b852498f93c90a06f05bf26fd5b98d4de559a3cd0ee50a4bcad",
+      "reproducible": true,
+      "old_bytes_unchanged": true
+    },
+    {
+      "plugin": "org.example.notes_labels",
+      "digest": "sha256:e0e61f52454757397f8b6a3e6fea3e8d2860acb63bcd74b38653f95e43218211",
+      "reproducible": true,
+      "old_bytes_unchanged": true
+    },
+    {
+      "plugin": "org.example.canvas",
+      "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+      "reproducible": true,
+      "old_bytes_unchanged": true
+    },
+    {
+      "plugin": "org.example.notes_stats",
+      "digest": "sha256:2591d6266fe5837ad3fdbad13d5d8e6023b8285921da009f0c495c6d115119cd",
+      "reproducible": true,
+      "old_bytes_unchanged": false
+    }
+  ],
+  "composition_valid": true,
+  "shipped_schema_matches_runtime": true,
+  "no_runtime_installation": true,
+  "no_retained_test_archives": true,
+  "private_computed_schema_validated": true,
+  "minimum_platform": "0.1.13",
+  "frozen_wire_contracts_changed": false,
+  "plugin_manifest_sha256": "c96aec65ab6873321294f7f46b8cfebea70c2aedf60d6a3b08c43ec363083181"
+}

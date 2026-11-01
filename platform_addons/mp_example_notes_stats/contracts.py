@@ -13,6 +13,7 @@ def obj(properties):
     return dict(type='object',properties=properties,required=list(properties),additionalProperties=False)
 
 PREPARED=obj(dict(input=WORKER_INPUT))
+COMPUTED=obj(dict(statistics=STATISTICS,authority_digest=dict(type='string',pattern='^sha256:[0-9a-f]{64}$')))
 RESULT=obj(dict(note_id=INPUT['properties']['note_id'],revision=INPUT['properties']['expected_revision'],statistics=STATISTICS))
 JOB=obj(dict(id=INPUT['properties']['note_id'],
     state=dict(enum=['pending','retry','running','held','outcome_unknown','completed','cancelled','dead_letter']),

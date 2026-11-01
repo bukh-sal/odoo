@@ -1,9 +1,9 @@
 """Read-only, revision-bound external analysis through existing durable jobs."""
 from odoo.addons.mp_core.controllers import PublicError
 from odoo.addons.mp_core.dispatch import call_bound
-from odoo.addons.mp_core.external_job import analyze
+from odoo.addons.mp_core.external_job import analyze,authorization_snapshot
 from odoo.addons.mp_core.job_dispatch import JobDefinition,register
-from .contracts import INPUT,PREPARED,STATISTICS,RESULT
+from .contracts import INPUT,PREPARED,COMPUTED,RESULT
 from .models import guard,IDENT
 
 
@@ -20,10 +20,14 @@ def prepare(env,values,bound):
 
 def apply(env,values,prepared,computed,bound):
     if prepare(env,values,bound)!=prepared:raise PublicError('CONFLICT')
-    return dict(note_id=values['note_id'],revision=values['expected_revision'],statistics=computed)
+    _,_,fingerprint=authorization_snapshot(bound.model.env)
+    if computed['authority_digest']!=fingerprint:
+        from odoo.exceptions import AccessError
+        raise AccessError('External analysis authority changed before result application')
+    return dict(note_id=values['note_id'],revision=values['expected_revision'],statistics=computed['statistics'])
 
 
 register(JobDefinition(ident=IDENT,version=1,plugin='org.example.notes_stats',
     service='org.example.notes_stats.jobs',api_version='1.0',method='status',
-    input_schema=INPUT,prepared_schema=PREPARED,computed_schema=STATISTICS,output_schema=RESULT,
+    input_schema=INPUT,prepared_schema=PREPARED,computed_schema=COMPUTED,output_schema=RESULT,
     authorize_resource=resource,prepare=prepare,compute=analyze,apply=apply))
