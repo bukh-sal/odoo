@@ -1,0 +1,39 @@
+{
+  "result": "passed_host_authority_file_reader_source",
+  "utc": "2026-11-01T03:41:16.220206+00:00",
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "tests.test_worker_authority",
+    "-v"
+  ],
+  "observed_tool_chunk": "aba8fd",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_authority.py": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+    "tests/test_worker_authority.py": "f92da9c19df6e38346f708293c0426fd0a0631a8d24c56970321f9d812c95e69"
+  },
+  "frozen_files": 94,
+  "privacy_findings": 0,
+  "checks": [
+    "real private/public RSA key matching",
+    "atomic revocation/removal/generation change rejects old snapshot",
+    "public key fingerprint binds snapshot against same-reference replacement",
+    "deployment/site/workspace/installation matching and duplicate scope rejection",
+    "link-local and unapproved address refusal",
+    "strict duplicate-property/nonfinite JSON refusal",
+    "key reference confined to validated fixed directory and public key cannot sign"
+  ],
+  "fixtures": "TemporaryDirectory files and ephemeral in-memory RSA material only; cleaned after each test. No Docker/runtime artifacts created.",
+  "acceptance_credit": false,
+  "limits": [
+    "This is read-side format/key/snapshot validation, not independent executor approval or actual Docker image attestation.",
+    "Privileged reviewed publication/read-only mounts, native detached-job bridge, Notes integration and deployed lifecycle remain required. No new SVC/goal completion claim."
+  ],
+  "next": "Wire PublishedWorkerAuthority select/issuer with external_authority.authorize_analysis in a fresh cursor per detached-job authorization; bind immutable claim/generation/fingerprint from server-selected Invocation context; then native Notes connector and independent operator publication/versioned deployment."
+}
