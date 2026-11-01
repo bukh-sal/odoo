@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "successful": true,
+  "tests": 4,
+  "errors": [],
+  "failures": [],
+  "installed_image": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "all_mutations_rolled_back": true,
+  "source_mode": "Targeted changed Invocation/prepare/compute/error mapper in real native registry; existing job definitions, metadata and business guards unchanged; new bridge modules import successfully",
+  "limits": [
+    "Does not exercise real fresh-cursor/OS authority/remote compute bridge or guarded runner error branch yet; committed fixture, installed image and Notes integration remain required."
+  ]
+}

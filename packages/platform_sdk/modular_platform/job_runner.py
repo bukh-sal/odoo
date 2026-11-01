@@ -56,13 +56,14 @@ def run_once(registry,owner):
     if isinstance(invocation,dict):return invocation
     try:
         computed=jobs.compute(invocation)
-    except Exception:
+    except Exception as error:
+        code=jobs._safe_code(error)
         with registry.cursor() as cr:
             metadata=api.Environment(cr,1,{})
-            try:state=retrying(lambda:durable.fail(cr,invocation.claim,'INTERNAL_ERROR',retryable=False),metadata)
+            try:state=retrying(lambda:durable.fail(cr,invocation.claim,code,retryable=False),metadata)
             except (durable.ClaimLost,durable.DispatchPaused):
                 cr.rollback();return dict(job_id=invocation.claim.job_id,state='claim_lost')
-        return dict(job_id=invocation.claim.job_id,state=state,error_code='INTERNAL_ERROR')
+        return dict(job_id=invocation.claim.job_id,state=state,error_code=code)
     with registry.cursor() as cr:
         metadata=api.Environment(cr,1,{})
         try:result=retrying(lambda:jobs.finish_one(metadata,invocation,computed),metadata)

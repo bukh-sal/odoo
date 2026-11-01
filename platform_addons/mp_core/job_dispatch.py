@@ -211,9 +211,12 @@ class Invocation:
     fingerprint: str
     prepared: dict
     context: dict
+    database: str = ''
 
 
 def _safe_code(error):
+    from modular_platform.worker_dispatch import WorkerDispatchError
+    if isinstance(error,WorkerDispatchError) and error.code in {'FORBIDDEN','DEPENDENCY_UNAVAILABLE','CONFLICT','DEADLINE_EXCEEDED','CANCELLED','VALIDATION_FAILED'}:return error.code
     if isinstance(error,PublicError) and error.code in {'NOT_FOUND','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','CONFLICT','DEADLINE_EXCEEDED'}:return error.code
     if isinstance(error,AccessError):return 'FORBIDDEN'
     if isinstance(error,MissingError):return 'NOT_FOUND'
@@ -235,7 +238,7 @@ def prepare_one(metadata_env,owner,*,lease_seconds=30):
             prepared=_validate(definition.prepared_schema,definition.prepare(env,payload['input'],bound))
             context=dict(job_id=claim.job_id,site_id=row['site_id'],workspace_id=bound.binding['workspace_id'],
                 provider_installation_id=bound.binding['provider_installation_id'],request_id=payload['context']['request_id'],trace_id=payload['context']['trace_id'])
-            return Invocation(claim,definition.ident,definition.version,_fingerprint(row),copy.deepcopy(prepared),context)
+            return Invocation(claim,definition.ident,definition.version,_fingerprint(row),copy.deepcopy(prepared),context,metadata_env.cr.dbname)
     except (psycopg2.OperationalError,psycopg2.IntegrityError):
         raise
     except Exception as error:
@@ -245,7 +248,11 @@ def prepare_one(metadata_env,owner,*,lease_seconds=30):
 
 def compute(invocation):
     definition=DEFINITIONS[(invocation.handler,invocation.version)]
-    return _validate(definition.computed_schema,definition.compute(copy.deepcopy(invocation.prepared),copy.deepcopy(invocation.context)))
+    context=copy.deepcopy(invocation.context)
+    # Server-selected ephemeral provenance, never serialized request context.
+    context['_native_job']=dict(database=invocation.database,handler=invocation.handler,version=invocation.version,
+        fingerprint=invocation.fingerprint,claim=dict(job_id=invocation.claim.job_id,generation=invocation.claim.generation,owner=invocation.claim.owner))
+    return _validate(definition.computed_schema,definition.compute(copy.deepcopy(invocation.prepared),context))
 
 
 def finish_one(metadata_env,invocation,computed):
@@ -278,7 +285,7 @@ def status(env,ident):
     record=row[0];_,definition,_,_=_authorized_job(env,record)
     result=record['result']
     if result is not None:_validate(definition.output_schema,result)
-    allowed={'NOT_FOUND','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','CONFLICT','DEADLINE_EXCEEDED','FORBIDDEN','VALIDATION_FAILED','INTERNAL_ERROR','LEASE_EXPIRED',None}
+    allowed={'NOT_FOUND','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','CONFLICT','DEADLINE_EXCEEDED','CANCELLED','FORBIDDEN','VALIDATION_FAILED','INTERNAL_ERROR','LEASE_EXPIRED',None}
     code=record['error_code'] if record['error_code'] in allowed else 'INTERNAL_ERROR'
     return dict(id=ident,state=record['state'],progress=record['progress'],attempts=record['attempts'],error_code=code,result=result)
 

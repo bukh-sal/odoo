@@ -1,0 +1,28 @@
+{
+  "result": "passed_native_job_provenance_source_prerequisite",
+  "utc": "2026-11-01T03:46:32.657368+00:00",
+  "tests": 4,
+  "observed_tool_chunk": "fbfd62",
+  "source_sha256": {
+    "platform_addons/mp_core/job_dispatch.py": "b426caa122963c88b26039931a2b747fa7249f469ea052f35adf1464657fee76",
+    "platform_addons/mp_core/external_job.py": "456121efb20dbf6bbcf20fcb4d8f4f390bd2c0387064e698ca09d0a68dab1ed0",
+    "platform_addons/mp_core/__manifest__.py": "ea02156499ba612391b2f09e7d23ec219c778a5e8ae0ee9d298fdc011a7ab510",
+    "packages/platform_sdk/modular_platform/job_runner.py": "4bf4b4578e871c81b0a5dde020dc8a1ebb34e499c925f6c8acb944c575f3abc1",
+    "docs/evidence/G6/20261101-detached-worker-bridge-01/native_tests.py": "bcc2ab782fad5a5972cc6ed037ebaa229b63de58b726b447e7fd5d292e9d99a4"
+  },
+  "new_source_core_version": "19.0.0.1.11",
+  "installed_core_version": "19.0.0.1.10",
+  "native_helper_retired": true,
+  "all_changes_rolled_back": true,
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "source_acceptance_invalidations": [
+    "JOB-01",
+    "JOB-02"
+  ],
+  "limits": [
+    "Actual bridge fresh cursors/OS projection/remote worker and guarded runner error path require committed integration fixture and reviewed immutable deployment.",
+    "Original installed core1.10 profile evidence retained; source changed Invocation/compute/error mapping requires targeted JOB01/02 requalification on core1.11. No new acceptance credit."
+  ],
+  "next": "Implement Notes optional analysis connector/service alias/job using prepared input only, source core1.11; add independently reviewed host authority/key projection publication and actual external metadata lifecycle before deployment/bridge qualification."
+}
