@@ -1,0 +1,31 @@
+{
+  "result": "passed_18_distinct_native_source_cases",
+  "utc": "2026-11-01T01:57:59.982533+00:00",
+  "successful_cases": 18,
+  "retained_unchanged_first_attempt_cases": 17,
+  "focused_corrected_fixture_case": 1,
+  "evidence": [
+    "source-01.json",
+    "source-02.json"
+  ],
+  "original_test_assumption": "Core deliberately makes principal kind/user/public ID immutable; corrected test asserts that denial and an existing uncredentialed service identity cannot inherit human authority. No runtime policy was weakened.",
+  "scope_type_and_existing_SQL_and_cache_logic_AST_exact": true,
+  "change": "One policy-only native ORM flush before original constrained SQL scope query; identity1.2.",
+  "source_sha256": {
+    "platform_addons/mp_identity/scopes.py": "c36b822c80d5c75801e617e8aed727782e039e96d1ad9157741bb9fbc52082d0",
+    "platform_addons/mp_identity/__manifest__.py": "97863e22b967d7d41ff2c0919f8f3074e258bfea53406b32621b896f765c3423",
+    "docs/evidence/G6/20261101-authority-flush-01/native_tests.py": "2198a623faa333a6b2dfe7aaf433cb48bcb07afc0d561a4ecf1812f3edfea9a3"
+  },
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "privacy": {
+    "files": 45,
+    "known_values": 121,
+    "findings": 0
+  },
+  "limits": [
+    "Actual immutable identity1.2/native HTTP/two-worker/technical requalification still required;10acceptances/G1/G3 remain invalidated.",
+    "No core10 apply/job/producer replay, business write or authority change committed by source tests."
+  ],
+  "next_action": "Commit reviewed source/evidence, create new owned identity1.2 worktree from that HEAD retaining exact12 Notes0.2.6 inputs, initialize its owned private build lock before existing builder, strict validate identity-only native change, then independent corrective core upgrade and actual source/HTTP/worker qualification."
+}

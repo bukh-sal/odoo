@@ -1,0 +1,8 @@
+{
+  "result": "distinct_minimal_probe_hypothesis_after_source_review",
+  "original_job_probe": "482057: failed at pending-ORM replay after all prior assertions; real runner already completed",
+  "minimal_attempt01": "ce34df: pending role/SQL stale and job replay acceptance confirmed, but following native guard denied",
+  "diagnosis": "Odoo sql_db._FlushingSavepoint flushes before creating the savepoint; jobs.enqueue_bound authorizes before entering that savepoint. Its replay can authorize old role, flush new viewer, then return saved result. A subsequent guard therefore sees viewer. Move direct guard observation before enqueue; assert SQL viewer after enqueue. No runtime change, no job/apply replay.",
+  "upstream_source": "odoo/sql_db.py:132-149 and217-226",
+  "next": "One corrected rollback-only minimal probe with exact ordering, then versioned identity source fix."
+}

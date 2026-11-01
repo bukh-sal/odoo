@@ -1,0 +1,7 @@
+{
+  "result": "passed_pre_effect_old_claim_receipt_and_semantic_retry",
+  "old_claim_denied": true,
+  "old_receipt_denied": true,
+  "old_claim_still_within_original_lease": true,
+  "original_job_row_exact": true
+}

@@ -1,0 +1,10 @@
+{
+  "result": "passed_real_core10_inventoried_runner",
+  "image_id": "sha256:bac0f3b512e9e07f61fa25865ac70d349cd087c3ef06d3c4e51c2ecf417563a7",
+  "inventory_digest": "sha256:f7ceee056162e31418d8ff11566ddf0c4513bd77123db60aeab54e7f0061a5aa",
+  "output": {
+    "job_id": "e4288de6-a8da-4ce1-b228-b6e9c64f9be1",
+    "state": "completed"
+  },
+  "source_substitution": false
+}

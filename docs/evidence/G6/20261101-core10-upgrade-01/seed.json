@@ -1,0 +1,10 @@
+{
+  "result": "seeded_original_user_claim_before_core_upgrade",
+  "job_id": "e4288de6-a8da-4ce1-b228-b6e9c64f9be1",
+  "note_id": "5df6a1b5-8ae0-4bf6-978d-464dae38ff7c",
+  "attempts": 1,
+  "fixture_timeout_seconds": 3600,
+  "production_timeout_seconds": 120,
+  "original_input_key_trace_claim_receipt_and_history_retained_privately": true,
+  "created_after_approval_before_drain": true
+}

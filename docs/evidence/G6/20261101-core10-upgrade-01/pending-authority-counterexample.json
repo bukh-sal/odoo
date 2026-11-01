@@ -1,0 +1,25 @@
+{
+  "result": "confirmed_pending_ORM_authority_read_defect",
+  "ORM_role_after_write": "viewer",
+  "SQL_and_scope_role_before_flush": "administrator",
+  "completed_job_retry_and_native_write_guard_accept_stale_role": true,
+  "explicit_flush_makes_both_deny": true,
+  "original_job_terminal_outcome_and_membership_exact_after_rollback": true,
+  "job_runner_replayed": false,
+  "required_fix": "Flush relevant pending ORM identity/policy metadata before authoritative SQL scope reads; version mp_identity and qualify native batch/job paths before R1.",
+  "image_id": "sha256:bac0f3b512e9e07f61fa25865ac70d349cd087c3ef06d3c4e51c2ecf417563a7",
+  "inventory_digest": "sha256:f7ceee056162e31418d8ff11566ddf0c4513bd77123db60aeab54e7f0061a5aa",
+  "original_probe_sha256": "ef94820729d35d9ea64fe5fd25b7f94f9470c0cb9a8ff219edce4bd80e666e52",
+  "original_child_failed_after_prior_job_retry_assertions": true,
+  "already_passed": [
+    "real inventoried runner once-effect/originaluser/attempt2",
+    "original input/key/trace/deadline/budget retained",
+    "completed semantic retry saved result",
+    "changed-input conflict",
+    "failed new reservation absent while transaction live"
+  ],
+  "limits": [
+    "Committed revocations/current SQL policy remain denied; this newly exercised pending native ORM batch must also be supported.",
+    "No source/image/DB mutation committed by this counterexample. Earlier source role tests used direct SQL, so did not cover pending ORM metadata."
+  ]
+}

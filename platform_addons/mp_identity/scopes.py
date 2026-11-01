@@ -34,6 +34,24 @@ def canonical_uuid(value):
     return normalized
 
 
+def _flush_identity_policy(env):
+    """Publish pending authorized ORM metadata before constrained SQL reads.
+
+    Native callers can change policy and use a supported service in one
+    transaction. A later savepoint may flush too late for its authorization.
+    These are policy fields only; business records stay under their ORM gates.
+    """
+    for model, names in (
+        ("res.users", ["active"]),
+        ("mp.principal", ["user_id", "public_id", "kind", "state"]),
+        ("mp.membership", ["principal_id", "workspace_id", "role", "state"]),
+        ("mp.workspace", ["public_id", "state", "policy_generation"]),
+        ("mp.workspace.plugin", ["workspace_id", "plugin_id", "availability"]),
+        ("mp.service.credential", ["principal_id", "workspace_id", "installation_public_id", "audience", "actions", "expires_at", "state"]),
+    ):
+        env[model].flush_model(names)
+
+
 def resolve_scope(env, workspace_public_id, previous=None):
     """Read only current actor/workspace authority, never arbitrary resources.
 
@@ -46,6 +64,7 @@ def resolve_scope(env, workspace_public_id, previous=None):
         raise AccessError("Authentication required")
     if previous is not None and (not isinstance(previous, Scope) or previous.database != env.cr.dbname or previous.user_id != env.uid):
         raise AccessError("Actor or site context mismatch")
+    _flush_identity_policy(env)
     env.cr.execute("""
         SELECT p.id, p.public_id, p.kind, w.id, w.public_id,
                m.role, w.policy_generation

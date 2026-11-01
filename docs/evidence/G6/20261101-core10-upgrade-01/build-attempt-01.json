@@ -1,0 +1,9 @@
+{
+  "result": "pre_Docker_launch_lock_directory_refusal",
+  "observed_tool_chunk": "381c50",
+  "before_Docker_build_or_log": true,
+  "image_tag_absent": true,
+  "source_hashes_exact": true,
+  "diagnosis": "Existing builder requires an initialized private candidate-build lock directory. Fresh owned source worktree has no control store. Create only that owned directory and continue the original recorded tag/command/input; no new build attempt/tag or Docker cleanup.",
+  "recorded_tag": "modular-platform:stage-20261101t013335066844z"
+}

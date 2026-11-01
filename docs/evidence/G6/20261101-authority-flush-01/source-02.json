@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "successful": true,
+  "tests": 1,
+  "failures": [],
+  "errors": [],
+  "image_id": "sha256:bac0f3b512e9e07f61fa25865ac70d349cd087c3ef06d3c4e51c2ecf417563a7",
+  "source_sha256": {
+    "platform_addons/mp_identity/scopes.py": "c36b822c80d5c75801e617e8aed727782e039e96d1ad9157741bb9fbc52082d0",
+    "platform_addons/mp_identity/__manifest__.py": "97863e22b967d7d41ff2c0919f8f3074e258bfea53406b32621b896f765c3423",
+    "docs/evidence/G6/20261101-authority-flush-01/native_tests.py": "2198a623faa333a6b2dfe7aaf433cb48bcb07afc0d561a4ecf1812f3edfea9a3"
+  },
+  "installed_source": false,
+  "preserves_original_Scope_class": true,
+  "all_fixture_writes_rolled_back": true,
+  "limits": [
+    "Corrected source functions in one short-lived native process; actual immutable identity1.2/HTTP/cross-worker requalification still required before restoring invalidated acceptances."
+  ]
+}

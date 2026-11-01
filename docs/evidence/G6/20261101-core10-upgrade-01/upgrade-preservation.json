@@ -1,0 +1,80 @@
+{
+  "result": "passed_real_populated_core_upgrade_before_job_effect",
+  "operation_id": "d2185bf6-3a55-42d4-9c9c-9103c6fd41ce",
+  "generation": 6,
+  "image_id": "sha256:bac0f3b512e9e07f61fa25865ac70d349cd087c3ef06d3c4e51c2ecf417563a7",
+  "inventory_digest": "sha256:f7ceee056162e31418d8ff11566ddf0c4513bd77123db60aeab54e7f0061a5aa",
+  "same_database": true,
+  "all_plugin_artifacts_versions_installations_bindings_exact": true,
+  "business_COPY_exact": [
+    {
+      "table": "mp_example_note",
+      "rows": 25,
+      "sha256": "8035ec4da3735c3b4136422b29e5d75ef2c0a8681c45aba9640049a0dfb66d2b",
+      "checkpoint_COPY_exact": true
+    },
+    {
+      "table": "mp_example_canvas_board",
+      "rows": 0,
+      "sha256": "4b41f7e9d7e20bf2a9a0aac00d195237f4904038ac74c93e76b7a0dcbfeeb3de",
+      "checkpoint_COPY_exact": true
+    },
+    {
+      "table": "mp_example_note_event_summary",
+      "rows": 3,
+      "sha256": "3747a0e527231f8de689b3ee58d4f5bf0b27ea0af2cda47960107429e34c7c8a",
+      "checkpoint_COPY_exact": true
+    }
+  ],
+  "all_five_job_ID_actor_input_key_first_trace_budget_and_saved_results_preserved": true,
+  "claimed_job_requeued_within_original_policy": true,
+  "dispatch_generations": [
+    28,
+    29,
+    30,
+    31
+  ],
+  "original_producer_and_consumer_history_exact": true,
+  "retained_filestore_files": 42,
+  "new_asset_bytes_differ": true,
+  "old_and_new_asset_URLs_nonredirect_exact": [
+    {
+      "kind": "retained",
+      "url": "/web/assets/7e77829d00d3099888369b5598b77e90f9de65c9c0885dad1ad4f48e83d09810/mp_shell.assets_host.min.css",
+      "mimetype": "text/css",
+      "bytes": 751605,
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677"
+    },
+    {
+      "kind": "retained",
+      "url": "/web/assets/ea08422e0e22dc1ef4f0f5302a22979cf9b6e9870126c292956fcc0634918077/mp_shell.assets_host.min.js",
+      "mimetype": "application/javascript",
+      "bytes": 3086131,
+      "sha256": "c861c824f8871a394e3a99f27b6165d0afa905d99630f3f679e4584e225e537e"
+    },
+    {
+      "kind": "new",
+      "url": "/web/assets/518cd2adb905f29a88fad759242ffa96b70e415225c43dd9ac9fdc6027a51127/mp_shell.assets_host.min.js",
+      "mimetype": "application/javascript",
+      "bytes": 3086201,
+      "sha256": "2a8251a4d4af9d75d7e7d18dc58b50bc451125de09e9cc2f1f86fd36d2d8146f"
+    },
+    {
+      "kind": "new",
+      "url": "/web/assets/cffdd10a51cd4d8f96a3e21faa6efd7d9adca59b533e31cbe68631d4b080bd9c/mp_shell.assets_host.min.css",
+      "mimetype": "text/css",
+      "bytes": 751605,
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677"
+    }
+  ],
+  "native_Odoo_list_form": [
+    "A",
+    "B",
+    "C"
+  ],
+  "pending_note_scoped_HTTP_and_foreign_denial": true,
+  "limits": [
+    "Native recovered job/new-image completed semantic retry/history probes are next, not covered by this checkpoint.",
+    "Notes0.2.6 remains exact; versioned Notes0.2.7 batch fix and full event/browser/external qualification remain."
+  ]
+}

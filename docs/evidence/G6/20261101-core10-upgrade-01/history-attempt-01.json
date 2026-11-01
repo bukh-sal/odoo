@@ -1,0 +1,5 @@
+{
+  "result": "fixture_replay_result_assertion_corrected",
+  "diagnosis": "Replay response contains delivery IDs, not producer event IDs; event_store.replay source127-139 and frozen protocol reviewed. Native old-release delivery/payload/ACK already passed before wrong assertion. Entire native transaction rolled back; exact retained subscription/delivery/control/completed-job counts confirmed. Resume corrected rollback-only probe, no runtime/build/install/job replay.",
+  "retained_original_source": "history_native_attempt01.py"
+}

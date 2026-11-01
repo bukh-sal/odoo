@@ -1,0 +1,17 @@
+{
+  "result": "passed_installed_core10_history_replay_and_native_dedup",
+  "retained_old_release_event_delivered_and_replayed": true,
+  "original_producer_envelope_exact": true,
+  "current_scope_foreign_replay_denied": true,
+  "actual_native_consumer_retained_tombstone_returns_duplicate": true,
+  "projection_and_consumption_history_not_duplicated": true,
+  "paused_close_idempotent_and_status_safe": true,
+  "all_subscription_receipt_policy_changes_rolled_back": true,
+  "source_substitution": false,
+  "image_id": "sha256:bac0f3b512e9e07f61fa25865ac70d349cd087c3ef06d3c4e51c2ecf417563a7",
+  "inventory_digest": "sha256:f7ceee056162e31418d8ff11566ddf0c4513bd77123db60aeab54e7f0061a5aa",
+  "limits": [
+    "Installed native adapter proof; actual browser host facade/bus and versioned Notes batch fix still pending.",
+    "Pending native ORM identity-role flush defect remains open; this history case uses stable current committed authority and rolls back all fixture changes."
+  ]
+}

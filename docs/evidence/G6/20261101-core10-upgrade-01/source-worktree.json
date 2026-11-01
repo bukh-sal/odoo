@@ -1,0 +1,26 @@
+{
+  "result": "prepared_exact_core_only_source_worktree",
+  "utc": "2026-11-01T01:33:08.115284+00:00",
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "base_commit": "e2cddf9533174f878d5b1eaa002ff1f463e34fd8",
+  "worktree": ".local\\worktrees\\g6-core10",
+  "branch": "codex/g6-core10",
+  "retained_notes_source_commit": "5daaf2019d313d664243e37d5dbeac2b53674397",
+  "retained_notes_artifact": "sha256:95d74f8efae9ecf9ed1d59af496df577f912057c4b400ab0ef8ad280cf0c0ad4",
+  "retained_notes_files": 12,
+  "core_version": "19.0.0.1.10",
+  "shell_version": "19.0.0.1.9",
+  "main_notes_version": "19.0.0.2.7",
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "fixture_baseline": {
+    "jobs": 4,
+    "notes": 24,
+    "state": "enabled",
+    "events": 34,
+    "generation": 28
+  },
+  "deployment_changed": false,
+  "candidate_built": false
+}
