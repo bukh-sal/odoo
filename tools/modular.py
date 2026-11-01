@@ -86,13 +86,13 @@ def main(argv=None):
     apply.add_argument('--store', required=True, type=Path, help='Independent OS-owned control store')
     apply.add_argument('--deployment-config', required=True, type=Path)
     apply.add_argument('--catalog', required=True, type=Path)
-    for action in ('stage-image','plan-staged'):
+    for action in ('stage-image','plan-staged','plan-external'):
         staged=plugin.add_parser(action)
         staged.add_argument('--store',required=True,type=Path,help='Independent OS-owned control store')
         staged.add_argument('--deployment-config',required=True,type=Path)
         staged.add_argument('--catalog',required=True,type=Path)
         if action=='stage-image':staged.add_argument('--image-id',required=True)
-        else:staged.add_argument('--input',required=True,type=Path,help='Exact native install/upgrade target nomination')
+        else:staged.add_argument('--input',required=True,type=Path,help='Exact scoped target nomination; grants no approval')
     recover = plugin.add_parser('recover', help='Review/restore a checkpoint to a fresh disposable database, then separately resume')
     recover.add_argument('recovery_action', choices=['prepare-restore','restore','prepare-resume','resume','revoke-review','prepare-unchanged-resume','resume-unchanged'])
     recover.add_argument('operation_id')
@@ -186,6 +186,7 @@ def main(argv=None):
             from modular_platform.deployment import DockerObserver
             from modular_platform.approval_validation import IndependentValidator
             from modular_platform.operator_os import OperatorError
+            from modular_platform.worker_operator import operator_observer
             if args.action == 'init-store':
                 target = load_json(args.deployment_config.read_bytes())
                 DockerObserver(target)
@@ -199,13 +200,15 @@ def main(argv=None):
                     from modular_platform.release_staging import StageStore
                     deployment=load_json(args.deployment_config.read_bytes())
                     stage_store=StageStore(store,deployment,Catalog(args.catalog,validator,readonly=True))
-                    revalidate = IndependentValidator(deployment,args.catalog,validator,stage_store=stage_store)
+                    independent=operator_observer(store,args.deployment_config)
+                    revalidate = IndependentValidator(deployment,args.catalog,validator,stage_store=stage_store,
+                        external_reader=independent.external_reader)
                 if args.action=='adopt-release':
                     from modular_platform.release_adoption import adopt_release
                     result=adopt_release(store,args.deployment_config,args.catalog,validator,args.operation_id)
                 elif args.action in ('import-request','mirror-status'):
                     from modular_platform.app_channel import read_request,publish_status
-                    observer=DockerObserver(load_json(args.deployment_config.read_bytes()))
+                    observer=operator_observer(store,args.deployment_config)
                     if args.action=='import-request':
                         nomination=read_request(observer,args.operation_id)
                         operation=store.register(nomination['bundle'],revalidate)
@@ -242,6 +245,24 @@ def main(argv=None):
                     result = store.status(args.operation_id)
                 else:
                     result = store.status(args.operation_id)
+        elif args.group == 'plugin' and args.action == 'plan-external':
+            from datetime import datetime,timezone
+            from uuid import uuid4
+            from modular_platform.operator_store import OperatorStore
+            from modular_platform.worker_operator import operator_observer
+            from modular_platform.external_planning import prepare_external_metadata
+            raw=args.input.read_bytes()
+            if len(raw)>1024*1024:raise ArtifactError('Metadata nomination size limit')
+            nomination=load_json(raw)
+            required={'operation_type','targets'}
+            if not isinstance(nomination,dict) or not required<=nomination.keys() or not nomination.keys()<=required|{'selections','feature_states'}:
+                raise ArtifactError('Exact metadata-only nomination fields required')
+            store=OperatorStore(args.store);observer=operator_observer(store,args.deployment_config)
+            observation=observer.read();snapshot=Catalog(args.catalog,validator,readonly=True).snapshot()
+            if 'external_state' not in observation:raise ArtifactError('Independent worker configuration required')
+            result=prepare_external_metadata(observer.state(observation,snapshot),observation['sites'],snapshot,
+                **nomination,external_state=observation['external_state'],operation_id=str(uuid4()),
+                created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
         elif args.group == 'plugin' and args.action in ('stage-image','plan-staged'):
             from datetime import datetime,timezone
             from uuid import uuid4

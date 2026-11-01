@@ -130,6 +130,22 @@ def project_deployment(configuration, observation, catalog):
                 raise PlanningError('Removed installation retains a live service binding')
             key = ids[binding['consumer_installation_id']], binding['alias'], binding['site_id'], binding['workspace_id']
             choices[key] = binding['provider_plugin_id']
+    # An external unregister preserves the published code/metadata selection,
+    # while deleting its optional live bindings. The OS-owned lock records a
+    # provider choice, not a grant or evidence that it remains installed. Keep
+    # that choice reproducible without recreating the removed DB binding.
+    external_ids={pin['plugin_id'] for pin in external_pins}
+    for selection in configuration.get('published_release',{}).get('service_selection',[]):
+        if selection['provider'] not in external_ids:continue
+        for site_id,workspace_id in selection.get('scopes',[]):
+            key=(selection['consumer'],selection['alias'],site_id,workspace_id)
+            if key not in choices and not selection['optional']:
+                active=any(site['site_id']==site_id and any(feature['plugin_id']==selection['consumer']
+                    and feature['workspace_id']==workspace_id and any(i['installation_id']==feature['installation_id']
+                        and i['metadata_state']!='removed' for i in site['installations']) for feature in site['features'])
+                    for site in observation['sites'])
+                if active:raise PlanningError('Published required external binding is missing from its installed consumer')
+            choices.setdefault(key,selection['provider'])
     core_python = [item['name'] + '==' + item['version'] for item in runtime['python_metadata']]
     resolved = resolve_release(selected, runtime['python_metadata'], environment,
         {item['manifest']['plugin']['id']: '==' + item['manifest']['plugin']['version'] for item in selected},

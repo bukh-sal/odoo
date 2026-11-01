@@ -152,6 +152,11 @@ class ReinstallPlanning(unittest.TestCase):
         new['digest']='sha256:'+'e'*64
         selected=[new if p['plugin_id']==new['plugin_id'] else p for p in self.catalog]
         catalog=self.catalog+[new];runtime=staged_runtime(selected)
+        # The helper defaults to the retained platform0.1.0 fixture. These real
+        # current archives need the current compatible core on both sides.
+        for image in (base,runtime):
+            image.update(platform_version=self.document['environment']['platform_version'],
+                native_manifests={'mp_core':{'version':'19.0.'+self.document['environment']['platform_version']}})
         self.document['state']['image_id']='sha256:'+'a'*64
         descriptor=dict(stage_digest='sha256:'+'b'*64,base_image_id=self.document['state']['image_id'],
             target_image_id='sha256:'+'f'*64,inventory_digest=runtime['inventory_digest'],runtime_digest=data_digest(runtime))

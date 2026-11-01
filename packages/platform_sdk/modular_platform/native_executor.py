@@ -253,6 +253,8 @@ class NativeExecutor:
 
     def apply(self, operation):
         bundle = self.store.bundle(operation)
+        if any(r['runtime']!='native' for r in bundle['plan']['artifacts']):
+            raise OperatorError('External metadata requires the managed-worker lifecycle executor; native mutation denied before drain')
         if 'staged_image' in bundle['operation_lock'] and not self.staged_execution:
             raise OperatorError('Staged native execution must use the new-image executor adapter; current-image mutation denied')
         if bundle['plan']['operation_type'] not in (('install','upgrade','deploy','core_upgrade','remove') if self.staged_execution else ('install','uninstall')):

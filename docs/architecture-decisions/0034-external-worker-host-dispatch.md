@@ -170,7 +170,7 @@ need no live runtime or retained keys. The app's planning cache contains frozen
 endpoint DTOs and availability, never issuer bytes, observed network addresses,
 Docker controls or approval authority. This cache can support proposals only;
 the independent lifecycle validator must reconstruct from the protected source.
-The new reader is not yet wired into the normal lifecycle CLI/executor, and these
+At that checkpoint the reader was not yet wired into the lifecycle CLI/executor; those
 source tests do not qualify metadata registration or SVC04/05.
 
 Before installing the optional connector, close a separate finalization gap:
@@ -182,3 +182,35 @@ no network call belongs inside the final database transaction. Status/history
 may remain readable during worker outage under current Note/connector authority.
 Do not claim a cross-runtime atomic transaction or advance external acceptance
 until actual late-revocation cases pass.
+
+The subsequent `external-planning-01/qualification.json` checkpoint connects
+metadata proposals and independent reconstruction to the OS reader. `plugin
+plan-external` accepts scoped targets, exact catalog package identities and an
+explicit registration feature-state map; endpoints, paths, keys and health cannot
+come from the nomination. The fixed protected `worker-target.json` sibling of the
+deployment configuration supplies runtime policy. The composition root reloads
+that file for each observation, rejects changed deployment identity and has no
+projection/volume/helper execution capability. Actual publication/job mutations
+still require the current helper image pin through WorkerOperator.
+
+Registration may be explicitly suspended during a worker outage. Activation and
+enablement require an enabled approved endpoint, matching actual image/address,
+healthy process and usable current scoped issuer/public keypair. Suspend works
+during outage. Unregister first requires independent endpoint revocation, all
+retained workspace scopes of the site installation, and exact revocation of its
+approved grants; required consumers are rejected until explicitly resolved.
+Optional bindings are removed without dropping the selected metadata package or
+changing native/Python/frontend bytes. Published external provider choices remain
+reproducible after optional binding deletion, and confer no live binding/grant;
+missing required bindings still fail observation. No endpoint-config uniqueness
+rule or frozen DTO/schema changed at this checkpoint.
+
+Seventy-nine source/regression/real Linux OS-file tests pass, including fresh
+independent reconstruction after health/endpoint changes. Two current-archive
+native test fixtures were corrected to use their actual compatible platform/core
+and provenance; runtime compatibility checks were preserved. This is not a live
+metadata operation: the native executor explicitly rejects external artifacts
+before reserve/drain, pending the managed-worker lifecycle adapter. Actual
+registration/upgrade/suspend/unregister, changed-image transition coordination,
+external recovery and connector finalization remain required. The synthetic
+second-version catalog test is not an upgraded worker/artifact qualification.

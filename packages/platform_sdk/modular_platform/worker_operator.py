@@ -21,18 +21,17 @@ def private_json(path):
     return load_json(path.read_bytes())
 
 
-class WorkerOperator:
+class WorkerPlanningReader:
     def __init__(self,store,target_path,worker_path):
         self.store=store;self.target=private_json(target_path);DockerObserver(self.target)
         self.config=private_json(worker_path)
         required={'schema_version','deployment_id','site_id','runtime','authority_volume','helper_image'}
         c=self.config
-        if not isinstance(c,dict) or set(c)!=required or c['schema_version']!=1 or c['deployment_id']!=self.target['deployment_id'] or c['helper_image']!=self.target['image_id']:
+        if not isinstance(c,dict) or set(c)!=required or c['schema_version']!=1 or c['deployment_id']!=self.target['deployment_id'] or not re.fullmatch('sha256:[0-9a-f]{64}',c['helper_image']):
             raise OperatorError('Exact current independent worker/deployment configuration required')
         if len(self.target['sites'])!=1 or c['site_id']!=self.target['sites'][0]['site_id']:raise OperatorError('Exact single-site worker configuration required')
         self.publisher=WorkerAuthorityPublisher(store,c['deployment_id'],c['site_id'])
-        self.sink=DockerWorkerProjection(volume=c['authority_volume'],deployment_id=c['deployment_id'],helper_image=c['helper_image'],records=self.publisher.records)
-        self.publisher.sink=self.sink;self.observer=DockerWorkerObservation(c['runtime'])
+        self.observer=DockerWorkerObservation(c['runtime'])
 
     def planning_state(self):
         """Fresh OS-owned descriptors plus observed availability, never approval.
@@ -56,6 +55,9 @@ class WorkerOperator:
             if endpoint['state']=='enabled':
                 try:
                     snapshot=reader.select(**{k:endpoint[k] for k in ['installation_id','workspace_id','endpoint_config']})
+                    # Enablement needs usable current scoped credentials as
+                    # well as a healthy public worker. Never cache issuer bytes.
+                    reader.issuer(snapshot,endpoint['issuer_key_ref'])
                     observed=self.observer(endpoint,snapshot.public_key_digest,entry['key_id'])
                     if observed['addresses']==entry['addresses']:state='healthy'
                 except (AuthorityUnavailable,OperatorError):pass
@@ -65,6 +67,16 @@ class WorkerOperator:
         if self.publisher._document()!=document or self.publisher._authorize()!=policy:
             raise OperatorError('Worker publication/policy changed during observation')
         return external_observation(dict(endpoints=endpoints,service_health=health))
+
+
+class WorkerOperator(WorkerPlanningReader):
+    def __init__(self,store,target_path,worker_path):
+        super().__init__(store,target_path,worker_path)
+        c=self.config
+        if c['helper_image']!=self.target['image_id']:
+            raise OperatorError('Worker mutation requires the exact current helper image')
+        self.sink=DockerWorkerProjection(volume=c['authority_volume'],deployment_id=c['deployment_id'],helper_image=c['helper_image'],records=self.publisher.records)
+        self.publisher.sink=self.sink
 
     def review(self,operation):
         if str(UUID(operation))!=operation:raise OperatorError('Canonical publication operation required')
@@ -130,3 +142,20 @@ class WorkerOperator:
         # minimized JSON records become local command output. No Note text/keys.
         allowed={'job_id','state','error_code','event','owner','database'}
         return dict(operation_id=operation,results=[{k:v for k,v in row.items() if k in allowed} for row in rows])
+
+
+def operator_observer(store,target_path):
+    """Compose only from protected local files, never package/cache paths.
+
+    The fixed sibling file is optional for legacy native deployments. Once
+    external metadata is published, projection itself refuses a missing reader.
+    Read-only observation needs no helper image execution or volume mutation.
+    """
+    target=private_json(target_path);worker_path=Path(target_path).absolute().with_name('worker-target.json')
+    _not_link(worker_path)
+    if not worker_path.exists():return DockerObserver(target)
+    def fresh():
+        reader=WorkerPlanningReader(store,target_path,worker_path)
+        if reader.target!=target:raise OperatorError('Independent deployment configuration changed during worker observation')
+        return reader.planning_state()
+    return DockerObserver(target,external_reader=fresh)

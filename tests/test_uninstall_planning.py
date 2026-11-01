@@ -97,7 +97,7 @@ class UninstallPlanning(unittest.TestCase):
         selected = resolve_release(self.catalog, [], self.document['environment'],
             {r['manifest']['plugin']['id']: '==' + r['manifest']['plugin']['version'] for r in self.catalog},
             scoped_provider_choices=choices)
-        observed = release_lock(selected, PROVENANCE, generation=3, created_at=STAMP)
+        observed = release_lock(selected, self.document['provenance'], generation=3, created_at=STAMP)
         self.assertEqual(observed, bundle['operation_lock']['release'])
 
     def test_epoch_preserves_executables_and_exact_surviving_binding_identities(self):

@@ -16,8 +16,8 @@ from .lifecycle_planning import prepare_current_install_targets, install_activat
 
 
 class IndependentValidator:
-    def __init__(self, deployment_config, catalog_root, artifact_validator, *, quiesced=False, stage_store=None):
-        self.observer = DockerObserver(deployment_config)
+    def __init__(self, deployment_config, catalog_root, artifact_validator, *, quiesced=False, stage_store=None, external_reader=None):
+        self.observer = DockerObserver(deployment_config,external_reader=external_reader)
         self.catalog = Catalog(catalog_root, artifact_validator, readonly=True)
         self.quiesced = quiesced
         self.stage_store=stage_store
@@ -44,6 +44,18 @@ class IndependentValidator:
                 feature_states=bundle['operation_lock'].get('feature_states',[]))
             if data_digest(recomputed)!=data_digest(bundle):
                 raise OperatorError('Independently staged reconstruction differs from proposed exact plan')
+            return state
+        if plan['artifacts'] and all(r['runtime']=='external_service' for r in plan['artifacts']):
+            from .external_planning import prepare_external_metadata,external_selections
+            if self.observer.external_reader is None or 'external_state' not in observation:
+                raise OperatorError('External metadata requires a fresh independently configured reader')
+            recomputed=prepare_external_metadata(document,observation['sites'],snapshot,
+                targets=bundle['operation_lock']['targets'],operation_type=plan['operation_type'],
+                external_state=observation['external_state'],selections=external_selections(bundle),
+                feature_states=bundle['operation_lock'].get('feature_states',[]),
+                operation_id=plan['operation_id'],created_at=plan['created_at'])
+            if data_digest(recomputed)!=data_digest(bundle):
+                raise OperatorError('Independent external metadata reconstruction differs from proposed exact plan')
             return state
         if plan['permission_changes'] and plan['operation_type'] not in ('install', 'uninstall', 'enable'):
             raise OperatorError('Current-image feature/control profile does not accept unrelated grant changes')

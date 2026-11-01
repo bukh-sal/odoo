@@ -9,7 +9,7 @@ from modular_platform.operator_store import OperatorStore
 from modular_platform.operator_os import OperatorError
 from modular_platform.worker_publication import WorkerAuthorityPublisher,DockerWorkerObservation
 from modular_platform.worker_authority import PublishedWorkerAuthority,AuthorityUnavailable
-from modular_platform.worker_operator import WorkerOperator
+from modular_platform.worker_operator import WorkerOperator,operator_observer
 
 
 class WorkerPublicationTests(unittest.TestCase):
@@ -151,6 +151,41 @@ class WorkerPublicationTests(unittest.TestCase):
         def forbidden(*args):raise AssertionError('Missing publication key must not inspect a runtime')
         state=self.planning_operator(forbidden).planning_state()
         self.assertEqual(next(iter(state['service_health'].values()))['state'],'unavailable')
+
+    def test_planning_missing_issuer_cannot_claim_healthy_credentials(self):
+        self.publish();(self.publisher.keys/(self.endpoint['issuer_key_ref']+'.pem')).unlink()
+        def forbidden(*args):raise AssertionError('Missing issuer must not report healthy worker authority')
+        state=self.planning_operator(forbidden).planning_state()
+        self.assertEqual(next(iter(state['service_health'].values()))['state'],'unavailable')
+
+    def configured_reader(self):
+        target=dict(schema_version=1,deployment_id=self.deployment,project='mp-r0-r1readerunit',
+            sites=[dict(site_id=self.site,database='mp_disposable_r0_r1_reader')],image_id='sha256:'+'a'*64,
+            generation=1,policy_version=1,operator_authorization_generation=1,release_created_at='2026-11-01T00:00:00Z')
+        runtime=dict(project='mp-disposable-document-stats-reader',service='document-stats',network='mp-r0-r1readerunit_runtime',
+            public_config_volume='mp-disposable-reader-public',image='modular-document-stats@'+self.endpoint['expected_image_digest'],destination=self.endpoint['destination'])
+        config=dict(schema_version=1,deployment_id=self.deployment,site_id=self.site,runtime=runtime,
+            authority_volume='mp-r0-r1readerunit_authority',helper_image='sha256:'+'b'*64)
+        path=self.store.root/'deployment.json';path.write_text(json.dumps(target))
+        worker=path.with_name('worker-target.json');worker.write_text(json.dumps(config))
+        return path,worker,config
+
+    def test_operator_composition_reloads_protected_sibling_and_does_not_execute_helper(self):
+        self.publish();self.endpoint.update(generation=2,state='revoked');self.publish()
+        path,worker,config=self.configured_reader();observer=operator_observer(self.store,path)
+        self.assertEqual(observer.external_reader()['endpoints'],[self.endpoint])
+        # Read-only observation tolerates a retained helper pin; actual worker
+        # writes still require the exact current native image.
+        with self.assertRaises(OperatorError):WorkerOperator(self.store,path,worker)
+        config['site_id']=str(uuid4());worker.write_text(json.dumps(config))
+        with self.assertRaises(OperatorError):observer.external_reader()
+
+    def test_legacy_reader_optional_but_changed_deployment_refused(self):
+        path,worker,config=self.configured_reader();worker.unlink()
+        self.assertIsNone(operator_observer(self.store,path).external_reader)
+        worker.write_text(json.dumps(config));observer=operator_observer(self.store,path)
+        target=json.loads(path.read_text());target['generation']+=1;path.write_text(json.dumps(target))
+        with self.assertRaises(OperatorError):observer.external_reader()
 
 
 if __name__=='__main__':unittest.main()

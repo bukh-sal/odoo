@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-01T05:57:27.287924+00:00",
+  "result": "source_planning_prerequisite_completed",
+  "evidence": "qualification.json",
+  "acceptance_passed": 92,
+  "acceptance_total": 99,
+  "rough_percent": 88,
+  "active": "F-01d managed-worker metadata execution/drain/publication/recovery",
+  "runtime_image_unchanged": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "config": 10,
+  "dispatch": 43,
+  "operation_started": false,
+  "metadata_registered": false,
+  "new_docker_assets": false,
+  "next": "Implement explicit safe metadata executor; do not weaken native refusal. Then version/build/review/deploy coherent core and qualify actual metadata/provider/connector remote lifecycle."
+}

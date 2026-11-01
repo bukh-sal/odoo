@@ -97,3 +97,25 @@ Recorded death/reclaim/committed-demotion cases retain exact unchanged code path
 The reference provider/connector require this corrected minimum. Metadata artifact
 validation is ready in `20261101-external-artifact-01`; live metadata registration,
 real scoped remote Notes jobs, degraded UI and full external recovery still remain.
+## Metadata planning checkpoint
+
+`plugin plan-external --store <control> --deployment-config <deployment.json>
+--catalog <catalog> --input <nomination.json>` uses the normal top-level
+`--config <trust.json>` option. The nomination has `operation_type`, `targets`,
+and, for registration/upgrade, exact `selections` (`plugin_id`, `version`,
+`digest`). Registration also requires a complete `feature_states` map with
+explicit `enabled` or `suspended` availability. No endpoint or credential fields
+are accepted from this document.
+
+The endpoint source is the protected `worker-target.json` beside the deployment
+configuration and its existing independent publication. The OS approval command
+reconstructs the proposal with a fresh observation; the app cache is advisory.
+Healthy status requires the actual pinned worker and current usable scoped
+keypair. The read-only composition root executes no helper and writes no volume.
+
+This is currently a source-qualified planning path, not a completed execution
+runbook. Native apply refuses external artifacts before any drain. Do not bypass
+that refusal or manually insert installation rows. The next required step is the
+explicit managed-worker metadata executor, its recovery/publication checks and
+actual reviewed lifecycle qualification. See ADR0034 and the implementation
+status. No runtime start/stop or remote data deletion is part of metadata planning.

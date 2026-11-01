@@ -1,0 +1,57 @@
+{
+  "result": "metadata_planning_review_source_passed_not_installed",
+  "utc": "2026-11-01T05:54:56.316998+00:00",
+  "tests": {
+    "external_planning": 16,
+    "external_projection": 8,
+    "projection_tombstones": 3,
+    "planning_cli": 5,
+    "lifecycle_planning": 6,
+    "reinstall_planning": 9,
+    "uninstall_planning": 8,
+    "manager_planning": 8,
+    "linux_publication": 16
+  },
+  "total_tests": 79,
+  "contract_freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 94,
+    "rows": 8
+  },
+  "sources": {
+    "packages/platform_sdk/modular_platform/external_planning.py": "e6aece829fea1cedc3a820eb10c306f4ebce2cff78c1e98123cdcda02ca4adad",
+    "packages/platform_sdk/modular_platform/projection.py": "de87fd7468a534411d591b0a4112e7ae403746903bff7717f68d295874dd7147",
+    "packages/platform_sdk/modular_platform/deployment.py": "aec84a0d03372fe91f7cb7caee81ee6876035428d1e0751212ad52f4283e5a56",
+    "packages/platform_sdk/modular_platform/worker_operator.py": "5598c4c615c64679ea06a064a8289f174577b5ded115c0bc30c63bc3c4ffaf37",
+    "packages/platform_sdk/modular_platform/approval_validation.py": "fffa098f08001bd5a00c26cd02abc950a6d07a896419378dba26ba02455079f5",
+    "packages/platform_sdk/modular_platform/native_executor.py": "0406c21b8a4a87784da8e1d72c7ae8a23f42388fa5c7c3511241f15345593796",
+    "tools/modular.py": "0e4423e0deec8ac32572d79584eef2a4f1d4b3b75b71e9a695345ff2a92bccef",
+    "tests/test_external_planning.py": "2a267b43435cb7dc694c4c59087e7720b7c86bec020fcd70128d9a71e12c1e3c",
+    "tests/test_worker_publication.py": "7577ff2e4362a7f2d10b8979385f49e99ec10ee0a7be780dfbad9bd15054d2fb",
+    "tests/test_reinstall_planning.py": "7562b3073b8d577797779c8e665e19b80f88587e75e380ca43540df291f5d1a3",
+    "tests/test_uninstall_planning.py": "6347de1dc438f33786e11fd58c67f942b3bb4ab7e859ce56ffea7bb4f77caf7c"
+  },
+  "linux_profile": {
+    "image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+    "isolated_source_process": true,
+    "installed_code_replaced": false,
+    "database_connections": false
+  },
+  "metadata_registered": false,
+  "new_containers": false,
+  "new_images": false,
+  "new_volumes": false,
+  "corrections": [
+    "Current-archive reinstall fixture used legacy platform0.1.0; aligned both staged images with its already current environment/core.",
+    "Uninstall post-observation fixture used legacy global provenance; use the actual matching document provenance.",
+    "Linux source harness initially omitted the candidate deployment reader; now loads its exact source before worker composition tests.",
+    "Optional unregister initially made unchanged published service choices unobservable; preserve OS-pinned external choices without recreating live bindings."
+  ],
+  "limitations": [
+    "No metadata execution/drain/recovery or actual endpoint activation yet.",
+    "Upgrade version test uses a synthetic second catalog descriptor; no actual upgraded worker/artifact qualification.",
+    "Independent validator source tests substitute catalog/observation IO; actual protected publisher and composition-root files tested separately on Linux.",
+    "Native executor deliberately refuses external artifacts before drain until managed-worker adapter is implemented."
+  ]
+}
