@@ -330,8 +330,12 @@ def main(argv=None):
                 from modular_platform.native_executor import StagedNativeExecutor
                 executor=StagedNativeExecutor(store,args.deployment_config,args.catalog,validator)
             if not metadata and bundle['plan']['operation_type'] in ('suspend','enable'):
-                from modular_platform.feature_executor import FeatureExecutor
-                executor=FeatureExecutor(executor)
+                if bundle['plan']['backup']['required']:
+                    from modular_platform.native_feature_executor import NativeFeatureExecutor
+                    executor=NativeFeatureExecutor(store,args.deployment_config,args.catalog,validator)
+                else:
+                    from modular_platform.feature_executor import FeatureExecutor
+                    executor=FeatureExecutor(executor)
             result=executor.apply(args.operation_id)
         elif args.group == 'plugin' and args.action == 'plan-current-install':
             from datetime import datetime, timezone

@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-01T08:07:25.629111+00:00",
+  "state": "failed_before_tests",
+  "result": "failed_before_tests",
+  "attempt": "01",
+  "tests": 0,
+  "process_exit_code": 1,
+  "reason": "Reused snapshot helper imported an uninstalled external_planning module; process terminal before tests.",
+  "new_docker_assets": 0,
+  "no_test_mutations": true
+}

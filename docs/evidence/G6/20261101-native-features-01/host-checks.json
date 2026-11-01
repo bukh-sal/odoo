@@ -1,0 +1,45 @@
+{
+  "utc": "2026-11-01T08:07:25.629111+00:00",
+  "result": "passed",
+  "tests": 53,
+  "suites": [
+    {
+      "command": "-m unittest discover -s tests -p test_native_feature_executor.py",
+      "tests": 6
+    },
+    {
+      "command": "-m unittest discover -s tests -p test_lifecycle_planning.py",
+      "tests": 6
+    },
+    {
+      "command": "-m unittest discover -s tests -p test_feature_executor.py",
+      "tests": 2
+    },
+    {
+      "command": "-m unittest discover -s tests -p test_metadata_executor.py",
+      "tests": 8
+    },
+    {
+      "command": "-m unittest discover -s tests -p test_plans.py",
+      "tests": 13
+    },
+    {
+      "command": "-m unittest discover -s tests -p test_external_planning.py",
+      "tests": 18
+    }
+  ],
+  "source_sha256": {
+    "native_feature_executor.py": "62d04efbd8e06b7b5efe43d1731a1ad09e5b8855aacfce21732a2999a20dfecb",
+    "coordinated_feature_metadata.py": "4c9a3780e315abc884c89a0371fcbb70fe3c3d86881d7f99ae62c80c07662e6a",
+    "feature_metadata.py": "ad9edb183753b28d3a1de921667a29ce1a51ee54cc2399a81aaee09e78b9a90c",
+    "feature_executor.py": "75b7d3b35d9aff2504900e23ed0a0d7fe6e196646a129531f77792181ef1fd69",
+    "lifecycle_planning.py": "282422d4f738fb8c497a9bd04c3e75359baef79541588beeba5c0a407d396cc5",
+    "operator_store.py": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+    "plans.py": "48410f8b9f9a83f797c45c469ac2db460b19b34030113b92da2634f9a4c7bc23",
+    "unchanged_recovery.py": "609c36af2fdca7820c0fb1ea4cb16fcc1e83925908c4b27e126997a5ec011f40"
+  },
+  "scope": "Observed host unit-suite outputs plus real temporary OS journal/review fixtures. SQL tests are recorded separately.",
+  "installed": false,
+  "actual_lifecycle": false,
+  "acceptance_credit": false
+}

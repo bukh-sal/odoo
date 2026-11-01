@@ -28,7 +28,7 @@ ACKS = {'destructive', 'trust_expansion', 'permission_expansion'}
 
 
 def _short_feature(plan):
-    return plan['operation_type'] in ('suspend','enable') and all(a['runtime']=='native' for a in plan['artifacts'])
+    return plan['operation_type'] in ('suspend','enable') and not plan['backup']['required'] and all(a['runtime']=='native' for a in plan['artifacts'])
 
 
 def _steps(plan):

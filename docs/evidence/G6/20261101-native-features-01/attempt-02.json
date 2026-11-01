@@ -1,0 +1,38 @@
+{
+  "utc": "2026-11-01T08:00:26.643414+00:00",
+  "attempt": "02",
+  "result": "failed",
+  "successful": false,
+  "tests": 10,
+  "errors": [
+    "__main__.FeatureSQL.test_enable_reapproves_only_declared_exact_grants",
+    "__main__.FeatureSQL.test_late_sql_error_propagates_to_caller_transaction",
+    "__main__.FeatureSQL.test_leased_event_refused",
+    "__main__.FeatureSQL.test_legacy_writer_still_refuses_existing_queue_tables",
+    "__main__.FeatureSQL.test_live_dispatch_refused",
+    "__main__.FeatureSQL.test_missing_checkpoint_flag_refused",
+    "__main__.FeatureSQL.test_running_or_uncertain_job_refused",
+    "__main__.FeatureSQL.test_stale_feature_preimage_and_replay_refused",
+    "__main__.FeatureSQL.test_suspend_and_enable_change_only_availability_policy_and_audit",
+    "__main__.FeatureSQL.test_wrong_database_deployment_or_inventory_refused"
+  ],
+  "failures": [],
+  "original_rows_restored": false,
+  "sources": {
+    "projection": "de87fd7468a534411d591b0a4112e7ae403746903bff7717f68d295874dd7147",
+    "planning_cli": "b0ac416bcb38333015296fc82e24e64bee23ec138032b403126fd491dbe2efaf",
+    "lifecycle_planning": "282422d4f738fb8c497a9bd04c3e75359baef79541588beeba5c0a407d396cc5",
+    "feature_metadata": "ad9edb183753b28d3a1de921667a29ce1a51ee54cc2399a81aaee09e78b9a90c",
+    "coordinated_feature_metadata": "4c9a3780e315abc884c89a0371fcbb70fe3c3d86881d7f99ae62c80c07662e6a"
+  },
+  "image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "inventory": "sha256:69e77a15d3c599d7398cd2d75f34f31cee30cba5991f729d35e6ac5aa0f23aa1",
+  "installed": false,
+  "actual_lifecycle": false,
+  "new_docker_assets": 0,
+  "acceptance_credit": false,
+  "limits": [
+    "Candidate modules in isolated existing-container process; every fixture transaction rolls back, sequences may advance.",
+    "SQL gates are real; no coordinated backup/worker replacement/journal/readiness/recovery operation is performed."
+  ]
+}

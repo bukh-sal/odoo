@@ -56,7 +56,7 @@ class UnchangedReleaseRecovery:
         status=self.store.status(operation);validate_failed_base(status)
         bundle=self.store.bundle(operation);self.store._authorize_plan(bundle['plan'])
         external=bool(bundle['plan']['artifacts']) and all(a['runtime']=='external_service' for a in bundle['plan']['artifacts'])
-        if (bundle['plan']['operation_type'] in ('suspend','enable') and not external or len(self.config['sites'])!=1
+        if (bundle['plan']['operation_type'] in ('suspend','enable') and not external and not bundle['plan']['backup']['required'] or len(self.config['sites'])!=1
                 or load_json(self.native.target_path.read_bytes())!=self.config):
             raise OperatorError('Unchanged recovery requires the exact independent single-site native base configuration')
         stage=self.store.root/'stages'/operation

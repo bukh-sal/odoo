@@ -20,6 +20,11 @@ class FeatureExecutor:
             if self.store.status(operation)['state']=='completed':
                 self.native.mirror_progress(operation)
                 return self.store.status(operation)
+            if plan['backup']['required']:
+                raise OperatorError('Checkpointed native features require the coordinated executor')
+            from .dispatch_operator import DispatchMaintenance
+            if DispatchMaintenance(self.native).present():
+                raise OperatorError('Durable work requires a fresh checkpointed feature plan before reservation')
             if plan['permission_changes']:
                 files=self.observer.read()['runtime']['inventory']['files']
                 for name in ('feature_metadata.py','lifecycle_planning.py'):

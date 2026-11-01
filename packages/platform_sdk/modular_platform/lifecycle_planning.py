@@ -180,7 +180,15 @@ def prepare_current_feature(document, sites, catalog, *, targets, operation_type
                     changes.append(dict(plugin_id=target['plugin_id'], workspace_id=target['workspace_id'], capability=request['capability'], action='grant'))
     request = dict(operation_type=operation_type, requested={}, targets=targets, permission_changes=changes,
                    operation_id=operation_id, created_at=created_at, bindings=document['state'].get('bindings', []))
-    return prepare_document({**document, 'request': request}, catalog)
+    # New native feature plans use the complete lifecycle even when the queue
+    # is currently empty. Historical short journals remain recognizable.
+    from .contracts import plan_hash
+    from .plans import _display
+    bundle=prepare_document({**document, 'request': request}, catalog)
+    bundle['plan']['backup']['required']=True
+    bundle['plan_hash']=plan_hash(bundle['plan'])
+    bundle['display']=_display(bundle['plan'],bundle['operation_lock'])
+    return bundle
 
 
 def prepare_current_image_install(document, sites, catalog, *, site_id, workspace_ids,
