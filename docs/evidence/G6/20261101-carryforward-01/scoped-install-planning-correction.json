@@ -1,0 +1,6 @@
+{
+  "result": "fixture_driver_corrected_before_plan_or_operation",
+  "workspace_provisioned_once": true,
+  "operation_registered": false,
+  "diagnosis": "Driver supplied only the state to prepare_current_install_targets; restore complete observer document with environment/provenance/Python. Resume planning only, not workspace creation or any native lifecycle command."
+}

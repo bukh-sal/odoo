@@ -70,15 +70,27 @@ class UnchangedReleaseRecovery:
         validate_base_worker(info,self.config,observation['runtime']['inventory_digest'])
         raw=_run(['docker','exec','-i',self.observer._container('db'),'psql','-X','-qAt','-U','postgres',
                   '-d',self.config['sites'][0]['database'],'-v','ON_ERROR_STOP=1'],input=DISPATCH_CHECK.encode())
-        if load_json(raw)['dispatch']:raise OperatorError('Jobs/outbox require the later dispatch reconciliation profile')
         edge=self.native._inspect(self.observer._container('edge',stopped=True))
-        return {'schema_version':1,'action':'resume_unchanged_release','operation_id':operation,
+        dispatch=None
+        if load_json(raw)['dispatch']:
+            from .dispatch_operator import DispatchMaintenance
+            helper=DispatchMaintenance(self.native);snapshot=helper.require_native(helper.inspect())
+            if snapshot['control'] and snapshot['control']['state']=='enabled':
+                # No queue mutation is proposed. Ordinary existing work may
+                # continue, so do not bind a moving per-job hash to this review.
+                dispatch=dict(mode='enabled_unchanged',profile=snapshot['profile'],control=snapshot['control'])
+            else:
+                helper.require_native(snapshot,closed=True)
+                dispatch=dict(mode='reconcile_paused',snapshot=snapshot)
+        value={'schema_version':1,'action':'resume_unchanged_release','operation_id':operation,
                 'plan_hash':bundle['plan_hash'],'configuration':self.config,'base_state_digest':data_digest(state),
                 'observation_digest':data_digest(observation),'managed_workers':workers,
                 'worker_id':info['Id'],'worker_running':info['State']['Running'],
                 'edge':{'id':edge['Id'],'image_id':edge['Image'],'running':edge['State']['Running']},
                 'journal_phase':status['phase'],'last_event_sequence':status['history'][-1]['sequence'],
                 'traffic_may_have_opened':status['traffic_resumed'],'database_restore':False}
+        if dispatch is not None:value['dispatch']=dispatch
+        return value
 
     def prepare(self,operation):
         bundle=self.store.bundle(operation)
@@ -101,6 +113,18 @@ class UnchangedReleaseRecovery:
             current=self._state(operation)
             if current['edge']['id']!=decision['edge']['id'] or current['edge']['image_id']!=decision['edge']['image_id']:
                 raise OperatorError('Ingress changed after review; traffic remains fenced')
+            dispatch_ready=None
+            if decision.get('dispatch') is not None:
+                if current.get('dispatch')!=decision['dispatch']:
+                    raise OperatorError('Dispatch changed after unchanged-release review')
+                if decision['dispatch']['mode']=='reconcile_paused':
+                    from .dispatch_operator import DispatchMaintenance
+                    helper=DispatchMaintenance(self.native);digest=decision['dispatch']['snapshot']['release_digest']
+                    reconciled=helper.reconcile_jobs(operation,directory/'dispatch-reconcile',previous_release=digest,release_digest=digest,
+                        inventory_digest=observation_inventory(current,self.observer),review_id=decision['review']['review_id'])
+                    if not reconciled['resume_allowed']:raise OperatorError('Uncertain effects prevent unchanged dispatch resume')
+                    dispatch_ready=helper.require_native(helper.inspect(),closed=True)
+                    _write_new(directory/'dispatch-ready.json',dispatch_ready)
             locks.check();reviews.check_reserved(decision,exact_hash=exact_hash)
             self.store.record_unchanged_resume(operation,locks,decision_hash=exact_hash,phase='unchanged_release_ready')
             _write_new(directory/'ready.json',{'observation_digest':current['observation_digest'],'base_state_digest':current['base_state_digest']})
@@ -108,6 +132,12 @@ class UnchangedReleaseRecovery:
             # Conservative external-effect fence precedes reopening; this action
             # never authorizes DB/filestore rollback, including after a crash.
             self.store.record_unchanged_resume(operation,locks,decision_hash=exact_hash,phase='unchanged_traffic_resumed')
+            if dispatch_ready is not None:
+                # The durable effects fence above also precedes queue enable,
+                # not just ingress: a native runner may already be waiting.
+                from .dispatch_operator import DispatchMaintenance
+                DispatchMaintenance(self.native).run('enable',operation,directory/'dispatch-enable',
+                    review_id=decision['review']['review_id'],release_digest=dispatch_ready['release_digest'],expected_digest=dispatch_ready['state_digest'])
             if not current['edge']['running']:_run(['docker','start',current['edge']['id']])
             if not self.native._inspect(current['edge']['id'])['State']['Running']:
                 raise OperatorError('Ingress did not resume; prepare a fresh unchanged-release review')
@@ -116,3 +146,10 @@ class UnchangedReleaseRecovery:
             _write_new(directory/'result.json',result);reviews.revoke(decision,exact_hash=exact_hash)
             self.native.mirror_progress(operation)
             return result
+
+
+def observation_inventory(current,observer):
+    """Current immutable runtime pin; never an application attribution field."""
+    value=observer.read()['runtime']['inventory_digest']
+    if not isinstance(value,str) or not value.startswith('sha256:'):raise OperatorError('Exact runtime inventory required')
+    return value

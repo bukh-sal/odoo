@@ -7,6 +7,7 @@ from dataclasses import dataclass, replace
 import copy
 import hashlib
 import json
+import re
 from uuid import uuid4
 import psycopg2
 
@@ -17,6 +18,7 @@ from odoo.addons.mp_identity.scopes import current_scope, resolve_scope
 from odoo.addons.mp_identity.release import current_release
 from modular_platform import durable
 from modular_platform.contracts import ContractError, FORMAT_CHECKER, validate
+from modular_platform.plans import data_digest
 
 from .controllers import PublicError
 from .dispatch import CallFrame, authorize_bound, authorize_origin
@@ -279,3 +281,85 @@ def status(env,ident):
     allowed={'NOT_FOUND','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','CONFLICT','DEADLINE_EXCEEDED','FORBIDDEN','VALIDATION_FAILED','INTERNAL_ERROR','LEASE_EXPIRED',None}
     code=record['error_code'] if record['error_code'] in allowed else 'INTERNAL_ERROR'
     return dict(id=ident,state=record['state'],progress=record['progress'],attempts=record['attempts'],error_code=code,result=result)
+
+
+def reconcile_release(metadata_env,*,previous_release,target_release):
+    """Private host maintenance: classify fenced jobs under current authority.
+
+    The independently approved executor owns this transaction and must persist
+    this before/after proof outside the application before dispatch may resume.
+    This function does not approve an operation, enable dispatch, compute a job
+    or apply a business effect. It accepts only a binding generation change;
+    an API/provider/scope/alias change requires explicit separate resolution.
+    """
+    for value in (previous_release,target_release):
+        if not isinstance(value,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',value):raise PublicError('VALIDATION_FAILED')
+    release=current_release(metadata_env)
+    if release['release_digest']!=target_release:raise PublicError('CONFLICT')
+    cr=metadata_env.cr
+    cr.execute('SELECT site_id,release_digest,state,generation FROM mp_dispatch_control FOR UPDATE')
+    controls=cr.fetchall()
+    if len(controls)!=1:raise PublicError('CONFLICT')
+    site,old,state,generation=controls[0]
+    if site!=release['site_id'] or old!=previous_release or state not in {'paused','restoring'} or not 0<generation<2**31-1:
+        raise PublicError('CONFLICT')
+    cr.execute('SELECT count(*) FROM mp_job')
+    if cr.fetchone()[0]>100000:raise PublicError('DEPENDENCY_UNAVAILABLE')
+    cr.execute('SELECT to_jsonb(j) FROM mp_job j ORDER BY id FOR UPDATE');rows=[r[0] for r in cr.fetchall()]
+    if any(row['site_id']!=site or row['state'] not in {'held','outcome_unknown','completed','cancelled','dead_letter'} for row in rows):
+        raise PublicError('CONFLICT')
+    if any(row['claim_generation']>=2**31-1 for row in rows):raise PublicError('CONFLICT')
+    next_generation=generation+1;decisions=[];uncertain=False
+    for row in rows:
+        original=data_digest(row);decision='retained';code=None
+        if row['state']=='outcome_unknown' or row['effect_mode']=='reconcile' and row['effect_started'] and row['state'] not in {'completed','cancelled','dead_letter'}:
+            uncertain=True;decision='requires_effect_reconciliation';code='DEPENDENCY_UNAVAILABLE'
+        else:
+            try:
+                with cr.savepoint():
+                    definition=DEFINITIONS.get((row['handler'],row['handler_version']))
+                    if not definition:raise PublicError('DEPENDENCY_UNAVAILABLE')
+                    env,payload=_environment(metadata_env,row)
+                    _validate(definition.input_schema,payload['input'])
+                    _,current,bound=_authorize(env,definition,payload['context']['alias'])
+                    if current['site_id']!=site or current['release_digest']!=target_release or definition.effect_mode!=row['effect_mode']:
+                        raise PublicError('CONFLICT')
+                    before_binding=payload['context']['binding'];after_binding=bound.binding
+                    if ({k:v for k,v in before_binding.items() if k!='generation'}!={k:v for k,v in after_binding.items() if k!='generation'}
+                            or after_binding['generation']<before_binding['generation']):
+                        raise PublicError('CONFLICT')
+                    expected=dict(input=payload['input'],binding=before_binding,handler=row['handler'],version=row['handler_version'])
+                    if durable._json(expected)[1]!=row['input_digest']:raise ContractError('Invalid original job deduplication digest')
+                    definition.authorize_resource(env,payload['input'],bound)
+                    if row['result'] is not None:_validate(definition.output_schema,row['result'])
+                    next_state=row['state'];next_code=row['error_code']
+                    if row['state']=='held':
+                        if row['cancel_requested']:next_state='cancelled'
+                        elif row['effect_mode']!='idempotent':
+                            raise PublicError('DEPENDENCY_UNAVAILABLE')
+                        else:
+                            cr.execute('SELECT %s::timestamp<=timezone(\'UTC\',clock_timestamp())',[row['deadline_at']]);expired=cr.fetchone()[0]
+                            if expired:next_state='dead_letter';next_code='DEADLINE_EXCEEDED'
+                            elif row['attempts']>=row['max_attempts']:next_state='dead_letter';next_code='LEASE_EXPIRED'
+                            else:
+                                _validate(definition.prepared_schema,definition.prepare(env,payload['input'],bound))
+                                next_state='pending';next_code=None
+                    updated=copy.deepcopy(payload);updated['context']['binding']=copy.deepcopy(after_binding)
+                    digest=durable._json(dict(input=updated['input'],binding=after_binding,handler=row['handler'],version=row['handler_version']))[1]
+                    # Preserve original actor, input, key, trace, outcome, attempts
+                    # and deadline. The host proof retains the old binding hash.
+                    cr.execute("""UPDATE mp_job SET release_digest=%s,payload=%s::jsonb,input_digest=%s,state=%s,error_code=%s,
+                        claim_generation=claim_generation+1,dispatch_generation=%s,lease_owner=NULL,lease_until=NULL,
+                        available_at=CASE WHEN %s='pending' THEN GREATEST(available_at,timezone('UTC',clock_timestamp())) ELSE available_at END,
+                        finished_at=CASE WHEN %s='pending' THEN NULL WHEN %s IN ('cancelled','dead_letter') THEN COALESCE(finished_at,timezone('UTC',clock_timestamp())) ELSE finished_at END
+                        WHERE id=%s""",[target_release,json.dumps(updated),digest,next_state,next_code,next_generation,next_state,next_state,next_state,row['id']])
+                    decision='resumable' if next_state=='pending' else 'retained_terminal' if next_state!='held' else 'held'
+            except (psycopg2.OperationalError,psycopg2.IntegrityError):raise
+            except Exception as error:
+                code=_safe_code(error);decision='retained_terminal' if row['state'] in {'completed','dead_letter','cancelled'} else 'held'
+                if decision=='held':cr.execute("UPDATE mp_job SET state='held',error_code=%s WHERE id=%s",[code,row['id']])
+        cr.execute('SELECT to_jsonb(j) FROM mp_job j WHERE id=%s',[row['id']]);after=cr.fetchone()[0]
+        decisions.append(dict(job_id=row['public_id'],decision=decision,state=after['state'],error_code=code,before_digest=original,after_digest=data_digest(after)))
+    cr.execute('UPDATE mp_dispatch_control SET release_digest=%s,state=\'paused\',generation=%s WHERE site_id=%s',[target_release,next_generation,site])
+    return dict(profile='r1-native-jobs-carry-forward-v1',site_id=site,previous_release=previous_release,target_release=target_release,
+        generation=next_generation,jobs=decisions,dispatch_enabled=False,resume_allowed=not uncertain,requires_independent_resume=True)

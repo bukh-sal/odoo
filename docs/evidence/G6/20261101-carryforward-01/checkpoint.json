@@ -1,0 +1,67 @@
+{
+  "result": "partial_integrated_native_lifecycle_qualification",
+  "utc": "2026-11-01T00:59:52.166896+00:00",
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "image_unchanged": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_unchanged": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "deployment_generation": 3,
+  "actual_operation_id": "15dec27a-7f41-4664-9533-d19e3cee8728",
+  "actual_operation_completed": true,
+  "carry_forward_distinct_native_source_cases": 13,
+  "additional_restore_enable_native_source_cases": 3,
+  "positive_rechecked_after_helper_change": true,
+  "host_guarded_preview_and_stale_enable_negative_passed": true,
+  "shared_legacy_and_native_resume_orchestration_tests": 43,
+  "legacy_five_cases_revalidated": true,
+  "actual_normal_install_and_backup_business_trace_scope_proof": "scoped-install-qualification.json",
+  "queue_snapshot": {
+    "jobs": 3,
+    "notes": 23,
+    "outbox": 32,
+    "deliveries": 216,
+    "job_states": {
+      "completed": 1,
+      "dead_letter": 2
+    },
+    "consumptions": 3,
+    "control_state": "enabled",
+    "subscriptions": 31,
+    "consumer_states": 1,
+    "leased_deliveries": 0,
+    "control_generation": 21,
+    "active_subscriptions": 0
+  },
+  "source_sha256": {
+    "platform_addons/mp_core/job_dispatch.py": "90bf5cdb6ffd1097bc0d7fd1ac68c20aa1228458618a17b13166eb5b689a9fd8",
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "91404af0c557c77e6550d9416475575a22e210e71eb3400f3bdd7106da5074d4",
+    "packages/platform_sdk/modular_platform/dispatch_maintenance.py": "2e8dd76e8943f56c6de6fb93da1917dff1cf57632766a218f2dbe61baf5fa6f8",
+    "packages/platform_sdk/modular_platform/dispatch_jobs_maintenance.py": "2be760047018e3b821bb59b19f77052702f535b7c68ca3cd36ebf4b531a66e46",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "d3200e1cc135228e975b13321961fdad4068fd7ba769ed856849c074068a7dda",
+    "packages/platform_sdk/modular_platform/native_executor.py": "0b9b7b8773e8f61add46a8ec6aed4ddf5e5b12121d113e26b076c6f9f048581c",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "6c88f278f26e60d357b88a14138f3742f9626d7c8f0482a5ac41817806deceda",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "574ecc2f59fbfd7e41fe287ef6f41334d4f8b7798f821d0e24680a54de398f61",
+    "tests/test_native_dispatch_resume.py": "993b7f2240596586066522332ca7c2c1222a1eade080f7d1e2f210f577fc1dea"
+  },
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "privacy": {
+    "public_files_scanned": 43,
+    "known_values": 127,
+    "findings": 0
+  },
+  "rough_progress_percent": 85,
+  "acceptance_counts": {
+    "passed": 88,
+    "not_run": 11,
+    "failed": 0,
+    "invalidated": 0,
+    "excluded_R2": 5
+  },
+  "limits": [
+    "New native failure/fresh-restore/separate-resume and pre-mutation unchanged resume paths are wired but not yet exercised by a real native populated fault.",
+    "Same-image scoped installation does not qualify a new-image upgrade or old a337 timer/history/batch defects; core/platform0.1.10, Notes0.2.7 and Shell1.9 remain undeployed.",
+    "No EVT/SVC/JOB03 acceptance, external runtime/effect/credential reconciliation or complete G6/G7 claim."
+  ],
+  "next_action": "Seed bounded owned native job claim and event lease; independently approve a new scoped Labels-C install and inject a post-native-commit failure once. Reconcile journal/source, then use the existing exact reviewed fresh restore and separate resume workflow. Do not replay completed Notes-C install. After native recovery, qualify separate versioned core/plugin image upgrades and actual host/bus/browser/native batch fixes, then external worker and full R1."
+}

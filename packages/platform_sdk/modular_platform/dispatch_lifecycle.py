@@ -18,6 +18,7 @@ class DispatchLifecycleError(ValueError):
 class LifecycleScope:
     site_id: str
     release_digest: str
+    control_release: str | None = None
 
 
 def _columns(*groups):
@@ -58,6 +59,8 @@ def _scope(cr,scope):
     except durable.QueueError:raise DispatchLifecycleError('Canonical lifecycle site required') from None
     if not isinstance(scope.release_digest,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',scope.release_digest):
         raise DispatchLifecycleError('Exact lifecycle release required')
+    if scope.control_release is not None and (not isinstance(scope.control_release,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',scope.control_release)):
+        raise DispatchLifecycleError('Exact prior control release required')
     cr.execute("SELECT key,value FROM ir_config_parameter WHERE key IN ('mp.site_id','mp.release_digest')")
     if dict(cr.fetchall())!={'mp.site_id':scope.site_id,'mp.release_digest':scope.release_digest}:
         raise DispatchLifecycleError('Lifecycle site or published release changed')
@@ -90,7 +93,7 @@ def _control(cr,scope,*,lock=False):
     if not rows:return None
     if len(rows)!=1:raise DispatchLifecycleError('Unexpected dispatch site footprint')
     site,release,state,generation=rows[0]
-    if site!=scope.site_id or release!=scope.release_digest or state not in {'enabled','paused','restoring'} or type(generation) is not int or not 0<generation<2**31:
+    if site!=scope.site_id or release!=(scope.control_release or scope.release_digest) or state not in {'enabled','paused','restoring'} or type(generation) is not int or not 0<generation<2**31:
         raise DispatchLifecycleError('Dispatch identity, release or generation mismatch')
     return dict(site_id=site,release_digest=release,state=state,generation=generation)
 
@@ -140,9 +143,10 @@ def observe(cr,scope,*,lock=False):
     cr.execute("SELECT count(*) FROM mp_plugin_installation WHERE runtime<>'native'");external=cr.fetchone()[0]
     cr.execute("SELECT count(*) FROM mp_service_credential WHERE state='active'");credentials=cr.fetchone()[0]
     cr.execute('SELECT count(*) FROM res_users_apikeys');keys=cr.fetchone()[0]
+    cr.execute("SELECT count(*) FROM mp_job WHERE state='outcome_unknown' OR (effect_mode='reconcile' AND effect_started AND state NOT IN ('completed','cancelled','dead_letter'))");uncertain=cr.fetchone()[0]
     body=dict(profile='r1-native-dispatch-v1',site_id=scope.site_id,release_digest=scope.release_digest,
         schema_digest=data_digest({table:SCHEMA[table] for table in tables}),control=control,tables=snapshots,
-        job_states=states,event_receipts=EVENTS<=set(tables),external_installations=external,active_credentials=credentials,api_keys=keys)
+        job_states=states,event_receipts=EVENTS<=set(tables),external_installations=external,active_credentials=credentials,api_keys=keys,uncertain_jobs=uncertain)
     return body|dict(state_digest=data_digest(body))
 
 
@@ -168,7 +172,7 @@ def fence(cr,scope,operation_id,*,state='paused'):
         cr.execute("SELECT count(*) FROM mp_event_delivery WHERE state='leased' AND generation>=%s",[2**31-1])
         if cr.fetchone()[0]:raise DispatchLifecycleError('Event receipt generation exhausted')
     cr.execute("""INSERT INTO mp_dispatch_control(site_id,release_digest,state,generation) VALUES(%s,%s,%s,1)
-        ON CONFLICT(site_id) DO UPDATE SET state=EXCLUDED.state,generation=mp_dispatch_control.generation+1
+        ON CONFLICT(site_id) DO UPDATE SET release_digest=EXCLUDED.release_digest,state=EXCLUDED.state,generation=mp_dispatch_control.generation+1
         RETURNING generation""",[scope.site_id,scope.release_digest,state]);generation=cr.fetchone()[0]
     cr.execute("""UPDATE mp_job SET state=CASE WHEN effect_mode='reconcile' AND (effect_started OR state='outcome_unknown')
         THEN 'outcome_unknown' WHEN cancel_requested THEN 'cancelled' ELSE 'held' END,
@@ -179,8 +183,32 @@ def fence(cr,scope,operation_id,*,state='paused'):
         cr.execute("""UPDATE mp_event_delivery SET state=CASE WHEN attempts>=5 THEN 'dead_letter' ELSE 'pending' END,
             generation=generation+1,receipt=NULL,lease_until=NULL,error_code='ACK_EXPIRED',
             available_at=timezone('UTC',clock_timestamp()) WHERE state='leased'""")
-    after=observe(cr,scope)
+    after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest))
     for table in ['mp_outbox','mp_event_consumption','mp_event_consumer_state']:
         if table in before['tables'] and before['tables'][table]!=after['tables'][table]:
             raise DispatchLifecycleError('Fencing changed producer or consumer history')
     return dict(operation_id=operation_id,before=before,after=after,requires_reviewed_resume=True)
+
+
+def enable(cr,scope,expected_digest):
+    """After independent caller approval and persisted current reconciliation.
+
+    The caller must record the conservative 'effects may resume' journal fence
+    BEFORE committing this transaction, including when ingress is still closed.
+    """
+    before=observe(cr,scope,lock=True)
+    if (before is None or before['state_digest']!=expected_digest or not before['control']
+            or before['control']['state']!='paused' or before['control']['release_digest']!=scope.release_digest
+            or before['control']['generation']>=2**31-1):
+        raise DispatchLifecycleError('Exact paused dispatch snapshot required before resume')
+    if before['external_installations'] or before['active_credentials'] or before['api_keys'] or before['job_states'].get('running') or before['job_states'].get('outcome_unknown'):
+        raise DispatchLifecycleError('Unreconciled effects or credentials prevent native dispatch resume')
+    cr.execute("SELECT count(*) FROM mp_job WHERE (state IN ('pending','retry') AND (release_digest<>%s OR effect_mode<>'idempotent')) OR (effect_mode='reconcile' AND effect_started AND state NOT IN ('completed','cancelled','dead_letter'))",[scope.release_digest])
+    if cr.fetchone()[0]:raise DispatchLifecycleError('Pending work requires explicit current-release effect reconciliation')
+    if before['event_receipts']:
+        cr.execute("SELECT count(*) FROM mp_event_subscription WHERE state='active'")
+        if cr.fetchone()[0]:raise DispatchLifecycleError('Obsolete event subscriptions remain active')
+        cr.execute("SELECT count(*) FROM mp_event_delivery WHERE state='leased'")
+        if cr.fetchone()[0]:raise DispatchLifecycleError('Obsolete event receipts remain leased')
+    durable.set_control(cr,scope.site_id,scope.release_digest,'enabled')
+    return dict(before=before,after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest)),dispatch_enabled=True)

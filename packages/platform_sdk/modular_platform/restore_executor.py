@@ -126,15 +126,43 @@ class RestoreExecutor:
         private=canonical_native_auth(value['native_auth'])
         return canonical_authority(value['authority'])|public_binding(private),private
 
-    def _supported_effects(self, database):
+    def _supported_effects(self, database, *, dispatch_profile=None, configuration=None):
         container=self.observer._container('db')
         value=load_json(_run(['docker','exec','-i',container,'psql','-X','-qAt','-U','postgres','-d',database,
             '-v','ON_ERROR_STOP=1'],input=EFFECTS_SELECT.encode()))
         flags={'job_table','outbox_table'};counts={'api_key_count','active_technical_credentials','external_installations'}
         if (not isinstance(value,dict) or set(value)!=flags|counts or any(type(value[k]) is not bool for k in flags)
-                or any(type(value[k]) is not int or value[k]<0 for k in counts) or any(value.values())):
+                or any(type(value[k]) is not int or value[k]<0 for k in counts)):
             raise OperatorError('Restored dispatch/API/technical identities require reconciliation; traffic must remain closed')
+        if dispatch_profile is None:
+            if any(value.values()):raise OperatorError('Restored dispatch/API/technical identities require reconciliation; traffic must remain closed')
+        else:
+            from .dispatch_operator import DispatchMaintenance
+            if (not isinstance(dispatch_profile,dict) or dispatch_profile.get('profile')!='r1-native-dispatch-v1'
+                    or not all(value[k] for k in flags) or any(value[k] for k in counts)):
+                raise OperatorError('Exact known native dispatch profile required; external effects require reconciliation')
+            observed=DispatchMaintenance(self.native).require_native(DispatchMaintenance(self.native).inspect_current(configuration=configuration),closed=True)
+            if observed['schema_digest']!=dispatch_profile['schema_digest']:
+                raise OperatorError('Restored dispatch schema differs from the coordinated checkpoint')
+            value['dispatch']=observed
         return value
+
+    def _source_dispatch(self,manifest,bundle):
+        """Observe failed source metadata without needing its registry to boot."""
+        from .dispatch_operator import DispatchMaintenance
+        profile=manifest.get('dispatch_profile');config=self.config
+        if profile is None:
+            changes=bundle['operation_lock'].get('native_core_changes',[])
+            staged=bundle['operation_lock'].get('staged_image',{})
+            if bundle['plan']['operation_type']!='core_upgrade' or not any(c['addon']=='mp_core' for c in changes) or not staged.get('target_image_id'):
+                raise OperatorError('Jobs/outbox require a coordinated dispatch checkpoint or exact first core introduction')
+            # Only the admitted target SDK performs fixed SQL inspection. No
+            # native/plugin imports from a possibly unbootable new registry.
+            config={**config,'image_id':staged['target_image_id']}
+        helper=DispatchMaintenance(self.native);observed=helper.require_native(helper.inspect_current(configuration=config),closed=True)
+        if profile is not None and observed['schema_digest']!=profile['schema_digest']:
+            raise OperatorError('Failed dispatch schema requires independent reconciliation')
+        return observed
 
     def _restore_state(self, operation):
         status = self.store.status(operation)
@@ -166,8 +194,10 @@ class RestoreExecutor:
         database = self.observer._container('db')
         source = self.config['sites'][0]['database']
         authority,_ = self._authority(source)
-        if authority['api_key_count'] or authority['has_dispatch_tables']:
-            raise OperatorError('Jobs/outbox/API keys require the later effect/credential reconciliation profile')
+        if authority['api_key_count']:raise OperatorError('API keys require independent credential reconciliation')
+        source_dispatch=self._source_dispatch(manifest,bundle) if authority['has_dispatch_tables'] else None
+        if manifest.get('dispatch_profile') is not None and source_dispatch is None:
+            raise OperatorError('Coordinated dispatch schema missing from the failed source')
         workers=snapshots(self.config)
         allowed_images={manifest['configuration']['image_id'],bundle['operation_lock'].get('staged_image',{}).get('target_image_id',self.config['image_id'])}
         if any(worker['running'] and worker['image_id'] not in allowed_images for worker in workers):
@@ -184,12 +214,14 @@ class RestoreExecutor:
         fresh = 'mp_disposable_r0_r1_restore_'+operation.replace('-','')
         if not re.fullmatch('mp_disposable_r0_r1_[a-z0-9_]{1,100}',fresh) or len(fresh)>63:
             raise OperatorError('Invalid fresh disposable restore database')
-        return {'schema_version':1,'action':'restore_to_fresh_database','operation_id':operation,
+        proposal={'schema_version':1,'action':'restore_to_fresh_database','operation_id':operation,
             'plan_hash':bundle['plan_hash'],'checkpoint_digest':data_digest(manifest),'failed_state_digest':data_digest(observation),
             'configuration':self.config,'base_configuration':manifest['configuration'],
             'restore_configuration':target,'restored_release_lock':restored_lock,'managed_workers':workers,
             'fresh_database':fresh,'authority':authority,'keep_traffic_closed':True,
             'operator_authorization_generation':self.store.policy['authorization_generation']}
+        if source_dispatch is not None:proposal['source_dispatch']=source_dispatch
+        return proposal
 
     def prepare(self,operation):
         return RecoveryReviews(self.store).issue(self._restore_state(operation))
@@ -218,6 +250,9 @@ class RestoreExecutor:
             current_authority,private_native_auth=self._authority(self.config['sites'][0]['database'])
             if current_authority!=decision['authority']:
                 raise OperatorError('Current authority changed while draining; inspect before restoring')
+            manifest=load_json((self.store.root/'checkpoints'/operation/'manifest.json').read_bytes())
+            if decision.get('source_dispatch') is not None and self._source_dispatch(manifest,bundle)!=decision['source_dispatch']:
+                raise OperatorError('Dispatch effects changed after recovery review; fresh target must not be created')
             fresh = decision['fresh_database']
             checkpoint = self.store.root/'checkpoints'/operation
             RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
@@ -232,7 +267,14 @@ class RestoreExecutor:
                 input=(authority_sql(decision['authority'])+overlay_sql(private_native_auth)+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
             # The restored checkpoint may resurrect effects absent in the failed
             # DB. Reject unsupported state before configuration/registry startup.
-            self._supported_effects(fresh)
+            target=copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database']=fresh
+            dispatch_profile=manifest.get('dispatch_profile')
+            self._supported_effects(fresh,dispatch_profile=dispatch_profile,configuration=target)
+            if dispatch_profile is not None:
+                from .dispatch_operator import DispatchMaintenance
+                fence=DispatchMaintenance(self.native).run('fence',operation,directory/'dispatch-fence',configuration=target,
+                    release_digest=data_digest(decision['restored_release_lock']),control_release=dispatch_profile['control']['release_digest'])
+                DispatchMaintenance.require_native(fence['after'],closed=True)
             # Copy the old exact config to the private recovery directory before
             # replacing only its DB target. No secrets enter public evidence.
             args,name = self.native._child(operation,'read-config',network=False)
@@ -284,9 +326,20 @@ class RestoreExecutor:
             actual_authority,_ = self._authority(fresh)
             if actual_authority != decision['authority']:
                 raise OperatorError('Restored authority differs from current reconciled snapshot')
+            dispatch_ready=None
+            if dispatch_profile is not None:
+                from .dispatch_operator import DispatchMaintenance
+                helper=DispatchMaintenance(self.native);digest=data_digest(decision['restored_release_lock'])
+                jobs=helper.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
+                    previous_release=digest,release_digest=digest,inventory_digest=restored['release_lock']['core_inventory_digest'])
+                if not jobs['resume_allowed']:raise OperatorError('Restored uncertain effects require independent reconciliation')
+                dispatch_ready=helper.require_native(helper.inspect(configuration=target),closed=True)
+                _write_new(directory/'dispatch-ready.json',dispatch_ready)
             self.store.record_restore(operation,locks,code='restore_verified',details={'fresh_database':fresh,'decision_hash':exact_hash,
                 'failed_database_retained':True,'traffic_resumed':False,'session_secret_rotated':True,'technical_credentials_revoked':True})
-            _write_new(directory/'result.json',{'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth)})
+            result={'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth)}
+            if dispatch_ready is not None:result['dispatch']=dispatch_ready
+            _write_new(directory/'result.json',result)
             return {'state':'restored_verified','fresh_database':fresh,'failed_database_retained':True,'keep_traffic_closed':True,
                 'operation_status':self.store.status(operation)}
 
@@ -301,7 +354,9 @@ class RestoreExecutor:
         if self.native._inspect(edge)['State']['Running']:
             raise OperatorError('Restored traffic is already open; reconcile before a resume decision')
         source=self.config['sites'][0]['database']
-        effects=self._supported_effects(source)
+        effects=self._supported_effects(source,dispatch_profile=result.get('dispatch'))
+        if result.get('dispatch') is not None and effects.get('dispatch')!=result['dispatch']:
+            raise OperatorError('Restored queues changed after reconciliation; keep traffic fenced')
         database=self.observer._container('db')
         if result.get('native_auth_policy')!=NATIVE_AUTH_POLICY or not isinstance(result.get('native_auth_digest'),str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',result['native_auth_digest']):
             raise OperatorError('Restore lacks current native credential reconciliation; keep traffic closed')
@@ -309,7 +364,7 @@ class RestoreExecutor:
         observation = self.observer.read()
         return {'schema_version':1,'action':'resume_verified_restore','operation_id':operation,
             'configuration':self.config,'restored_observation_digest':data_digest(observation),'restore_result_digest':data_digest(result),
-            'recovery_profile':'r1-no-dispatch-v1','effects':effects,'authority_digest':data_digest(authority)}
+            'recovery_profile':'r1-native-dispatch-v1' if result.get('dispatch') is not None else 'r1-no-dispatch-v1','effects':effects,'authority_digest':data_digest(authority)}
 
     def prepare_resume(self,operation):
         return RecoveryReviews(self.store).issue(self._resume_state(operation))
@@ -338,6 +393,11 @@ class RestoreExecutor:
             if payload!=self._resume_state(operation):
                 raise OperatorError('Recovery target, authority or effects changed before traffic resume')
             self.store.record_restore_resume(operation,locks,decision_hash=exact_hash)
+            if decision.get('effects',{}).get('dispatch') is not None:
+                from .dispatch_operator import DispatchMaintenance
+                snapshot=decision['effects']['dispatch']
+                DispatchMaintenance(self.native).run('enable',operation,self.store.root/'recoveries'/operation/'dispatch-resumes'/decision['review']['review_id'],
+                    review_id=decision['review']['review_id'],release_digest=snapshot['release_digest'],expected_digest=snapshot['state_digest'])
             _run(['docker','start',edge])
             return {'state':'restored_traffic_resumed','operation_id':operation,'original_plan_state':'revoked',
                 'fresh_database':self.config['sites'][0]['database']}

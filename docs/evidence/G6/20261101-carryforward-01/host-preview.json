@@ -1,0 +1,54 @@
+{
+  "result": "passed_guarded_host_preview",
+  "operation_id": "3c572085-44fd-471a-bb81-a58f43d18d1e",
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "actual_pre_adapter_retained_image": true,
+  "whole_queue_receipt_control_snapshot_exact_before_after": true,
+  "current_generation": 18,
+  "prospective_reconciliation": {
+    "profile": "r1-native-jobs-carry-forward-v1",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "previous_release": "sha256:f5600f952134fbe9e9ac91cb63ea98393dbaaab0b804fb8f1350bdac6f570b3f",
+    "target_release": "sha256:f5600f952134fbe9e9ac91cb63ea98393dbaaab0b804fb8f1350bdac6f570b3f",
+    "generation": 19,
+    "jobs": [
+      {
+        "job_id": "5e22db74-3f5b-4666-9b41-72cfe6ce1f9b",
+        "decision": "retained_terminal",
+        "state": "completed",
+        "error_code": null,
+        "before_digest": "sha256:a69284859df56769d95dec3fe9c2dd5ee67bf83bb95d7266596697c6b5a4a452",
+        "after_digest": "sha256:7aa8d8a1ac2c2d10e52e82c056a3df3d3318834456299932e2d41954a8455a4d"
+      },
+      {
+        "job_id": "f3ccdb2b-a21c-425d-bef9-f8919e065981",
+        "decision": "retained_terminal",
+        "state": "dead_letter",
+        "error_code": null,
+        "before_digest": "sha256:dd0546b836ff9013580ff078b5441054be78f8a5c8f6dadd942ee8bf96791d1d",
+        "after_digest": "sha256:19cde2727cb5618010fb132e6fbd92e5862ea3f3ca48d74dd9fbc1a7c185854e"
+      },
+      {
+        "job_id": "1894a3da-1e91-4828-b187-1dd1e8a8fb7d",
+        "decision": "retained_terminal",
+        "state": "dead_letter",
+        "error_code": "FORBIDDEN",
+        "before_digest": "sha256:ab222f75d931a469351f1c700da89d3868ea6d96ee55de3312b29f30c8e722ba",
+        "after_digest": "sha256:ab222f75d931a469351f1c700da89d3868ea6d96ee55de3312b29f30c8e722ba"
+      }
+    ],
+    "dispatch_enabled": false,
+    "resume_allowed": true,
+    "requires_independent_resume": true
+  },
+  "source_sha256": {
+    "platform_addons/mp_core/job_dispatch.py": "90bf5cdb6ffd1097bc0d7fd1ac68c20aa1228458618a17b13166eb5b689a9fd8",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "4dd99c7af67bd6ef27db439c929e8ad2fe57f410794b96849f7e76ea13cbde77",
+    "packages/platform_sdk/modular_platform/dispatch_jobs_maintenance.py": "2be760047018e3b821bb59b19f77052702f535b7c68ca3cd36ebf4b531a66e46"
+  },
+  "limits": [
+    "Preview rolls back; no approved apply/restore/resume mutation or new immutable image qualified.",
+    "Pinned native runtime validators/handlers are reused; only one fixed host-owned reconciliation function is supplied, never artifact/application Python."
+  ]
+}

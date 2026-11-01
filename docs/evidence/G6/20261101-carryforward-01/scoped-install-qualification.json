@@ -1,0 +1,98 @@
+{
+  "result": "passed_actual_scoped_install",
+  "operation_id": "15dec27a-7f41-4664-9533-d19e3cee8728",
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "deployment_generation": 3,
+  "dispatch_generation": 21,
+  "dispatch_state": "enabled",
+  "native_normal_install_with_populated_queues": true,
+  "coordinated_dispatch_checkpoint": true,
+  "classification_kept_paused_until_effects_fence": true,
+  "original_business_data_exact": [
+    {
+      "table": "mp_example_note",
+      "rows": 23,
+      "same_checkpoint_COPY_data": true,
+      "sha256": "4fc7efbc0632fd095efe8b3954eda74da3017b611c324d72cd930bc5d5f9c409"
+    },
+    {
+      "table": "mp_example_canvas_board",
+      "rows": 0,
+      "same_checkpoint_COPY_data": true,
+      "sha256": "4b41f7e9d7e20bf2a9a0aac00d195237f4904038ac74c93e76b7a0dcbfeeb3de"
+    },
+    {
+      "table": "mp_example_note_event_summary",
+      "rows": 3,
+      "same_checkpoint_COPY_data": true,
+      "sha256": "3747a0e527231f8de689b3ee58d4f5bf0b27ea0af2cda47960107429e34c7c8a"
+    }
+  ],
+  "all_three_job_IDs_input_actor_trace_attempts_outcomes_preserved": true,
+  "original29events_and_native_dedup_history_exact_before_HTTP": true,
+  "native_Odoo_list_form_workspaces": [
+    "A",
+    "B",
+    "C"
+  ],
+  "new_C_HTTP_CRUD_CAS_and_foreign_A_denial": true,
+  "only_suite_owned_new_note_deleted": true,
+  "final_dispatch": {
+    "profile": "r1-native-dispatch-v1",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "release_digest": "sha256:6845d53e5c5639dbfb0d1564bc32c3ffd97683b883de0955af577f9acd44f78c",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "control": {
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "release_digest": "sha256:6845d53e5c5639dbfb0d1564bc32c3ffd97683b883de0955af577f9acd44f78c",
+      "state": "enabled",
+      "generation": 21
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "5b64d853053e7fe6538445c42dc83237751fd64bcc4e883ea7aa1f4b23e26b7c"
+      },
+      "mp_event_consumer_state": {
+        "rows": 1,
+        "sha256": "20b5c232ced02ce62e3728583592703215feb13caa5aa8f4f1d07f22b025b34f"
+      },
+      "mp_event_consumption": {
+        "rows": 3,
+        "sha256": "ec04be3ea0534e612209c0f03241a47e0aa91c7e877e1e2952a8d9d3e880a556"
+      },
+      "mp_event_delivery": {
+        "rows": 216,
+        "sha256": "d3520d178c0665b95164a15eb38275e4fa89303f5bb732fcbe5272e7662e64a6"
+      },
+      "mp_event_subscription": {
+        "rows": 31,
+        "sha256": "b586e30008656225f41ce18e066056dfe56f0e721365521e954627411fc75b7f"
+      },
+      "mp_job": {
+        "rows": 3,
+        "sha256": "a8e25911f94357a8eee6f6c1be047067deb12b274d108c8b7e428553d07fe6e3"
+      },
+      "mp_outbox": {
+        "rows": 32,
+        "sha256": "eb904a6c323ad16ddd5c7cf1caac54af0f63303ca4c708e0de86dd350f6f870a"
+      }
+    },
+    "job_states": {
+      "completed": 1,
+      "dead_letter": 2
+    },
+    "event_receipts": true,
+    "external_installations": 0,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "uncertain_jobs": 0,
+    "state_digest": "sha256:77a4486fcae11cefded8b5d0f7817251bc5ce4f7476da3bd3157bff782ba66b8"
+  },
+  "limits": [
+    "Same-image scoped install is not actual new-image upgrade or failure/restore qualification.",
+    "Old a337 timer/history/Note batch bugs remain until versioned core/plugin upgrades; no EVT acceptance or full G6 pass.",
+    "Three new C events retained; existing A/B business data, Canvas and native projections match the coordinated backup exactly."
+  ]
+}

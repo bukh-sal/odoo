@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "tests": 1,
+  "failures": [],
+  "errors": [],
+  "successful": true,
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "80b6254037311035adac87337636457f7689b33d06a7c8177239d4c073fdb569",
+    "platform_addons/mp_core/job_dispatch.py": "90bf5cdb6ffd1097bc0d7fd1ac68c20aa1228458618a17b13166eb5b689a9fd8"
+  },
+  "test_sha256": "5089766522fbb85df2d19370d3a0a25723228bd78566a2bac810aaa347a75401",
+  "limits": [
+    "Corrected source in short-lived native process against real PG; no actual immutable upgrade or independently reviewed executor recovery exercised.",
+    "All fixture writes roll back; full scheduler/receipt/control snapshot and Note count restored after every case."
+  ]
+}

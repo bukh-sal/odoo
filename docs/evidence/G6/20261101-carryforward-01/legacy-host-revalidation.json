@@ -1,0 +1,66 @@
+{
+  "result": "passed_legacy_host_revalidation",
+  "utc": "2026-11-01T00:37:09.502787+00:00",
+  "checks": [
+    {
+      "file": "test_restore_dispatch.py",
+      "passed": 11,
+      "observed_tool_chunk": "8a9d59",
+      "sha256": "aca2d8563d3df72af41afa0ee96348472351912c44710f20763fd2d10fd47d37"
+    },
+    {
+      "file": "test_unchanged_recovery.py",
+      "passed": 10,
+      "observed_tool_chunk": "3abe0c",
+      "sha256": "c4a305782a34cdcf3531314e70b40c3193944f82355ba87296e1a03676133377"
+    },
+    {
+      "file": "test_recovery.py",
+      "passed": 8,
+      "observed_tool_chunk": "ba48c9",
+      "sha256": "93a21834b1de03823eb62607854b54114dde2a3645e6fcfcf440ba2faf88967f"
+    },
+    {
+      "file": "test_native_auth_recovery.py",
+      "passed": 5,
+      "observed_tool_chunk": "2aeb03",
+      "sha256": "4d761bf7b17821ae0bc60c4573866ddae6ab16ed0ea93aba9315dcd629c00ed1"
+    },
+    {
+      "file": "test_executor_crash_fence.py",
+      "passed": 5,
+      "observed_tool_chunk": "8a1c9b",
+      "sha256": "3373274186c475624078714c96d888453c0fc2bd45628869417b3b6a1ffd98c6"
+    },
+    {
+      "file": "test_native_dispatch_resume.py",
+      "passed": 4,
+      "observed_tool_chunk": "186a1c",
+      "sha256": "993b7f2240596586066522332ca7c2c1222a1eade080f7d1e2f210f577fc1dea"
+    }
+  ],
+  "tests": 43,
+  "real_runtime": "legacy-profile.json",
+  "frozen_files": 94,
+  "protected_configuration_hashes": 9,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/native_executor.py": "0b9b7b8773e8f61add46a8ec6aed4ddf5e5b12121d113e26b076c6f9f048581c",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "6c88f278f26e60d357b88a14138f3742f9626d7c8f0482a5ac41817806deceda",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "574ecc2f59fbfd7e41fe287ef6f41334d4f8b7798f821d0e24680a54de398f61",
+    "packages/platform_sdk/modular_platform/native_auth_recovery.py": "75cc9ae73facf5d4d53c4ea4017288baa4c081f4076473219f5e6259b5246882",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9"
+  },
+  "acceptance_revalidated": [
+    "MIG-01",
+    "MIG-06",
+    "MIG-08",
+    "MIG-09",
+    "OPS-02"
+  ],
+  "limits": [
+    "Revalidates the retained qualified G5 no-dispatch profile/default legacy branches; its completed install/fault/restore workflows are not replayed.",
+    "New native dispatch checkpoint/upgrade/recovery/resume branches remain unqualified G6 work despite passing kernel/source/control tests.",
+    "Native/HTTP/asset images and prior protected publication/data are unchanged; only the clean legacy DB was briefly restarted for exact read-only checks and returned stopped."
+  ]
+}

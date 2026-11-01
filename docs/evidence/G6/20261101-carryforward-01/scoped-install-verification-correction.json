@@ -1,0 +1,5 @@
+{
+  "result": "resume_remaining_HTTP_only",
+  "diagnosis": "Fixture has no G3 objects key. Original checkpoint COPY/trace/native views and create/update/CAS passed before KeyError. Identify exactly one owned C Note by scope/title/body/revision and query a real A public ID. Reuse retained pre-HTTP COPY output and exact persisted snapshot; do not replay install, utility commands or create/update.",
+  "owned_note_id": "b88cb362-ef03-4811-bfaf-ed5c6cb12d12"
+}

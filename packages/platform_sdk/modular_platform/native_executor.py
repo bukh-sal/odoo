@@ -237,6 +237,14 @@ class NativeExecutor:
             'secret_recovery': 'Retain separately secured appconfig/dbconfig volumes; values intentionally excluded.',
             'external_dispatch': 'Disabled: no external runtime or jobs installed in this profile.',
             'created_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
+        dispatch=directory/'dispatch-fence/fence.json'
+        if dispatch.exists() and load_json(dispatch.read_bytes())['result'] is not None:
+            from .dispatch_operator import DispatchMaintenance
+            actual=DispatchMaintenance(self).inspect()
+            if actual!=load_json(dispatch.read_bytes())['result']['after']:
+                raise OperatorError('Dispatch changed after drain; checkpoint cannot be declared coordinated')
+            previous['dispatch_profile']=actual
+            previous['external_dispatch']='Native queue/receipt profile fenced; remote effects are excluded by this profile.'
         _write_new(checkpoint/'manifest.json', previous)
         # Keep a stable local tag as well as its immutable image identity.
         _run(['docker', 'tag', self.config['image_id'], 'modular-platform:retained-'+operation])
@@ -286,6 +294,9 @@ class NativeExecutor:
             try:
                 self._validate()(bundle)
                 app, database, edge = self._topology()
+                from .dispatch_operator import DispatchMaintenance
+                dispatch=DispatchMaintenance(self)
+                if dispatch.present():dispatch.require_runtime(self.observer.read()['runtime'])
                 _write_new(directory/'bundle.json', bundle)
                 _write_new(directory/'configuration.json', self.config)
                 self.store.advance(operation, locks, 'staged')
@@ -294,6 +305,10 @@ class NativeExecutor:
                 locks.check()
                 _run(['docker', 'stop', '--time', '20', edge])
                 self.store.advance(operation, locks, 'maintenance')
+                dispatch_fence=None
+                if dispatch.present():
+                    dispatch_fence=dispatch.run('fence',operation,directory/'dispatch-fence',release_digest=plan['base_release_digest'])
+                    dispatch.require_native(dispatch_fence['after'],closed=True)
                 _run(['docker', 'stop', '--time', '30', app])
                 info = self._inspect(app)
                 if info['State']['Running'] or info['State']['ExitCode'] != 0:
@@ -368,6 +383,21 @@ class NativeExecutor:
                 from .profile_channel import publish_profile
                 _write_new(directory/'profile-publication.json',publish_profile(DockerObserver(target),
                     Catalog(self.catalog_root,self.validator,readonly=True)))
+                dispatch_ready=None
+                if dispatch.present(configuration=target):
+                    prior_dispatch=plan['base_release_digest']
+                    if dispatch_fence is None:
+                        # First scheduler introduction: no supported dispatch
+                        # existed in the base, so fence the exact new profile
+                        # before classifying any migration-created work.
+                        initial=dispatch.run('fence',operation,directory/'dispatch-initial',configuration=target,release_digest=plan['target_release_digest'])
+                        dispatch.require_native(initial['after'],closed=True)
+                        prior_dispatch=plan['target_release_digest']
+                    reconciled=dispatch.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
+                        previous_release=prior_dispatch,release_digest=plan['target_release_digest'],inventory_digest=observation['runtime']['inventory_digest'])
+                    if not reconciled['resume_allowed']:raise OperatorError('Uncertain job effects require independent reconciliation before dispatch or traffic')
+                    dispatch_ready=dispatch.require_native(dispatch.inspect(configuration=target),closed=True)
+                    _write_new(directory/'dispatch-ready.json',dispatch_ready)
                 self.store.advance(operation, locks, 'ready')
                 temporary = self.target_path.with_name(self.target_path.name+'.'+operation+'.tmp')
                 _write_new(temporary, target)
@@ -377,6 +407,10 @@ class NativeExecutor:
                 # BEFORE the external command; a crash after it starts must
                 # never permit an automatic destructive restore.
                 self.store.advance(operation, locks, 'traffic_resumed')
+                if dispatch_ready is not None:
+                    self.store._authorize_plan(plan)
+                    dispatch.run('enable',operation,directory/'dispatch-enable',configuration=target,
+                        release_digest=plan['target_release_digest'],expected_digest=dispatch_ready['state_digest'])
                 _run(['docker', 'start', edge])
                 _write_new(directory/'result.json', {'state': 'completed', 'release_digest': state['release_digest'],
                     'limits': ['Client epoch refresh and general new-image staging are pending G5 qualification.']})
