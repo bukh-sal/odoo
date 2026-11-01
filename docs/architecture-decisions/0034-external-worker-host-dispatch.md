@@ -1,6 +1,6 @@
 # ADR0034: approved host-to-worker dispatch
 
-Date: 2026-11-01. Status: bounded transport implemented; native integration unqualified.
+Date: 2026-11-01. Status: transport/operator publication implemented and tested; native integration unqualified.
 Parent F-01c/d/e2; spec13/14.3/14.5/14.6/22.4, SVC-02..05 and JOB-03.
 
 The existing service gateway registers native model handlers only. The independent
@@ -75,3 +75,19 @@ detail-slot action is deferred until it can demonstrate the real remote path.
 Independent publisher, metadata-only lifecycle, committed bridge and installed
 runner/error/recovery tests remain required. These source results grant no new
 SVC/JOB acceptance and do not replace the immutable lifecycle rollout.
+
+Operator publication is now implemented, superseding the earlier publisher gap.
+It reuses OperatorStore's actual OS owner/target/policy checks and process locks,
+requires the exact prepared plan hash, expires reviews, re-observes current runtime
+identity/addresses/public-key configuration and refuses replay or stale generations.
+Immutable key references and durable intent/result files stay outside app restore.
+An explicit projector updates an independently labeled dedicated Linux volume using
+the exact existing native image, no network, no worker control, atomic replacement
+and fsync. The nonroot application mounts it read-only; the worker mounts public
+configuration only. Revocation does not require a running worker. Real Compose
+publication/signed dispatch/read-only denial/outage revocation pass, then all test
+containers/volumes are retired. Six current-source Linux OS/file/key checks pass.
+See `../worker-authority.md` and worker-publication-01/qualification.json. This
+unregistered scope is a boundary prerequisite, not installed SVC/JOB qualification.
+Thin operator CLI, reviewed normal deployment/runner mounts, replacement-volume
+bootstrap/reconciliation, metadata lifecycle and the committed Notes bridge remain.

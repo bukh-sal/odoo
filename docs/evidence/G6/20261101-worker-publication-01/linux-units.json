@@ -1,0 +1,15 @@
+{
+  "tests": 6,
+  "successful": true,
+  "errors": [],
+  "failures": [],
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_publication.py": "9248b3797cfd3648c8770a0ac373ef7e708398487c01f9f21045f46256c1deac",
+    "packages/platform_sdk/modular_platform/worker_projection.py": "2b9413fe765490e9f5a2a21e7ca92822690712e73b652d03f89a45e30e245be5",
+    "packages/platform_sdk/modular_platform/worker_authority.py": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+    "tests/test_worker_publication.py": "e51ca0a4fe2639c6dcd1c77fc088009efdf5784adae96ba0aab1ff871f20ff5c"
+  },
+  "source_injection": "New private modules compiled into one isolated no-network/read-only native-image process; real Linux OS store/locks/tempfiles/RSA, runtime observations explicit test fixtures",
+  "helper_auto_removed": true,
+  "no_volumes_or_images_created": true
+}

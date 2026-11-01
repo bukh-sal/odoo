@@ -1,0 +1,45 @@
+{
+  "result": "passed_operator_publication_boundary_prerequisite",
+  "utc": "2026-11-01T04:09:10.427920+00:00",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_publication.py": "9248b3797cfd3648c8770a0ac373ef7e708398487c01f9f21045f46256c1deac",
+    "packages/platform_sdk/modular_platform/worker_projection.py": "2b9413fe765490e9f5a2a21e7ca92822690712e73b652d03f89a45e30e245be5",
+    "tests/test_worker_publication.py": "e51ca0a4fe2639c6dcd1c77fc088009efdf5784adae96ba0aab1ff871f20ff5c",
+    "docs/evidence/G6/20261101-worker-publication-01/run.py": "e913cb7ec8b627c6c979264baf1cda861e7f24bc7a958fb4b8d2e053262a9352",
+    "docs/evidence/G6/20261101-worker-publication-01/resume.py": "10b363cbfa2fbce5e1da4b9931f076a1aaf4b437f3dab24bf5311aa774afd529",
+    "docs/evidence/G6/20261101-worker-publication-01/run_units.py": "5c992174a31b6762bcc1d725e865399931400c99ecd8b0639049fc3e746797ca"
+  },
+  "current_linux_tests": 6,
+  "actual_compose_publication_and_mounted_signed_dispatch": true,
+  "actual_mounted_revocation_with_worker_stopped": true,
+  "publication_generations": [
+    1,
+    2
+  ],
+  "helpers_terminal_and_removed": true,
+  "owned_volumes_removed": 2,
+  "new_images": 0,
+  "frozen_files": 94,
+  "protected_configurations": 10,
+  "current_native_image_unchanged": true,
+  "evidence": [
+    "qualification.json",
+    "linux-units.json",
+    "retirement.json"
+  ],
+  "tool_chunks": {
+    "actual_resume": "e4fb99",
+    "current_linux_tests": "ec5bb2",
+    "retirement_freeze": "e52d0c"
+  },
+  "retained_attempts": [
+    "Initial readonly assertion expected PermissionError, while Linux mount correctly returned EROFS after successful signed HTTP; corrected errno assertion and resumed from actual generation1 without replaying prepare/approval/start.",
+    "First Linux-unit launcher exceeded Windows argv limit before CreateProcess; no runtime created. Current test code travels over stdin; six actual Linux cases pass.",
+    "Six initial Windows OS-store cases passed before projection extension; not counted as current-source negative qualification."
+  ],
+  "acceptance_credit": false,
+  "limits": [
+    "Installed Notes bridge, metadata-only artifact/lifecycle, normal CLI/deployment/runner projection mount, replacement-volume bootstrap/reconciliation and actual guarded runner/recovery remain required.",
+    "No current native image or database change. Source core1.11 still needs reviewed immutable rollout and JOB01/02 requalification."
+  ]
+}

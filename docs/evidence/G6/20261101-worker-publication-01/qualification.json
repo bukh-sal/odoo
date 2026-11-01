@@ -1,0 +1,30 @@
+{
+  "result": "passed_actual_operator_publication_prerequisite",
+  "worker_image": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "native_image": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "enabled_generation": 1,
+  "revoked_generation": 2,
+  "checks": [
+    "existing independent OS store target/owner/exact-hash review",
+    "actual running Compose image/RepoDigest/internal network/address/public-key configuration",
+    "atomic dedicated Linux volume projection and nonroot read-only application mount",
+    "actual WorkerClient signed HTTP with public-only worker config",
+    "worker stopped exit0; revocation publishes without health or process restart",
+    "fresh mounted reader refuses revoked endpoint"
+  ],
+  "all_helpers_auto_removed": true,
+  "worker_removed": true,
+  "owned_volumes_removed": 2,
+  "new_images": 0,
+  "protected_configurations": 10,
+  "limits": [
+    "Synthetic unregistered provider scope; not installed Notes bridge, metadata lifecycle, guarded runner, native rollout or recovery qualification.",
+    "Private publisher is operator-only API; CLI and normal native/job-runner mount/config integration remain required."
+  ],
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_publication.py": "9248b3797cfd3648c8770a0ac373ef7e708398487c01f9f21045f46256c1deac",
+    "packages/platform_sdk/modular_platform/worker_projection.py": "2b9413fe765490e9f5a2a21e7ca92822690712e73b652d03f89a45e30e245be5",
+    "packages/platform_sdk/modular_platform/worker_authority.py": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+    "packages/platform_sdk/modular_platform/worker_dispatch.py": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5"
+  }
+}

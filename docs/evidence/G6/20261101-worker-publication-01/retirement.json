@@ -1,0 +1,13 @@
+{
+  "project": "mp-disposable-document-stats-04",
+  "remaining_project_containers": 0,
+  "removed_volumes": [
+    "mp-disposable-document-stats-04-public-config",
+    "mp-disposable-document-stats-04-authority"
+  ],
+  "one_shot_helpers_auto_removed": true,
+  "retained_private_logs": ".local/document-stats/publication-04",
+  "retained_independent_state": "Revoked generation2 OS-owned authority and intent/result receipts; no runtime mounted to it",
+  "new_images": 0,
+  "current_native_runtime_and_recovery_assets_preserved": true
+}
