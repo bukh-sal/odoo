@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "successful": true,
+  "tests": 8,
+  "failures": [],
+  "errors": [],
+  "installed_image": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "source_sha256": {
+    "platform_addons/mp_core/external_authority.py": "575cdd16c4f8df86be1dd5e888391effcf9ab9d009e88fcd85723a40895d26a9",
+    "docs/evidence/G6/20261101-external-authority-01/native_tests.py": "9792cc20c40b26eecb3e9bea7687822c671671be391f3a58812fe761e124e4bd"
+  },
+  "all_fixture_changes_rolled_back": true,
+  "source_injection": "New private module compiled into one disposable native process; existing Scope/model/job/dispatch classes unchanged",
+  "limits": [
+    "Not installed native integration or independent endpoint publisher/key provisioning proof. No external metadata artifact installed; synthetic native metadata fixtures rolled back.",
+    "Fresh detached-job/issuer/public authority projection/Notes integration and versioned deployment/revalidation still required; no acceptance credit."
+  ]
+}

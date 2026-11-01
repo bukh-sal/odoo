@@ -44,3 +44,5 @@ They do not qualify Odoo readers, host issuer provisioning, metadata-only regist
 Notes alias/command/job, runtime image attestation, slow/degraded UI or recovery.
 Implement those next. Before deploying added SDK/native integration, increment the
 owned runtime versions and use the established reviewed immutable lifecycle path.
+
+Native authority prerequisite: external_authority.py reuses the actual _locked_scope, frozen binding validator and technical-origin intersection. Existing installation/feature/binding/grant tables suffice; no fabricated native addon or extra endpoint business model is needed for an external provider. The independently published OS authority projection remains the approval source. Eight real native/PG source-module cases pass pending policy revocations, scoped positive path and forged/mismatched contexts, all rolled back with original queue/business/metadata rows exact. The module is not yet wired or deployed; tests deliberately do not claim independent publication/issuer or full service lifecycle. Its single test container was retired after diagnostics capture.
