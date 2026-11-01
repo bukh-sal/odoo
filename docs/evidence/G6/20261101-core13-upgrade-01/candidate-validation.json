@@ -1,0 +1,175 @@
+{
+  "result": "passed_exact_core13_candidate",
+  "image_id": "sha256:04a4ffaf616b095110a805ff8238ecf39a0dfec3dbb542a4ac4f0437919ba1a9",
+  "inventory_digest": "sha256:adacfc5e2cca99ab58fbc749dbad8c1aebd14e32aa4bfc234d36054823564d6a",
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.12",
+      "target_version": "19.0.0.1.13",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "790fa627ceafd8ae1df05e9b292607043b6735d241a92583a76223011fc780b4",
+      "target_sha256": "aedb7d9371c2e48602cacd9b1606d2b07852744dd53db34db8a710e49427c28f"
+    },
+    {
+      "path": "addons/mp_core/external_job.py",
+      "previous_sha256": "456121efb20dbf6bbcf20fcb4d8f4f390bd2c0387064e698ca09d0a68dab1ed0",
+      "target_sha256": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86"
+    },
+    {
+      "path": "addons/mp_core/operations.py",
+      "previous_sha256": "6e3b2f7d7ac4426b624c5defd79f9dc86f40ff1e83620a17c8eb949752f54ec2",
+      "target_sha256": "24919500021466bea692f2eb3099fde0e72777c9c298a5b14e102029cbb6e9d3"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/approval_validation.py",
+      "previous_sha256": "80c107058f19cadb62a897eebf4484ef468af3aaa7b936351acb1366ba40b1e1",
+      "target_sha256": "fffa098f08001bd5a00c26cd02abc950a6d07a896419378dba26ba02455079f5"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/artifact_removal.py",
+      "previous_sha256": "05867d76251ffbaa692c6e78cfdc5b92c51c7c30337b35caa97d00aa76ddf2ba",
+      "target_sha256": "526f748ab30c8b90187fa11803d43cfcc4d1c51a1913f8bc0959a73475865b2e"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/coordinated_feature_metadata.py",
+      "previous_sha256": null,
+      "target_sha256": "4c9a3780e315abc884c89a0371fcbb70fe3c3d86881d7f99ae62c80c07662e6a"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/deployment.py",
+      "previous_sha256": "9a8968f61355954b5564c8c1bb201350906536707a25c26f3a34f00ff6f5bba9",
+      "target_sha256": "aec84a0d03372fe91f7cb7caee81ee6876035428d1e0751212ad52f4283e5a56"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/dispatch_lifecycle.py",
+      "previous_sha256": "91404af0c557c77e6550d9416475575a22e210e71eb3400f3bdd7106da5074d4",
+      "target_sha256": "88a37967403c602bac8d91f4c993dacae6d27d6f6f084d2446ebb6e1d05c1b0c"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/dispatch_maintenance.py",
+      "previous_sha256": "2e8dd76e8943f56c6de6fb93da1917dff1cf57632766a218f2dbe61baf5fa6f8",
+      "target_sha256": "dbbec4679f95f88d1c6743106cc1be3892dcb9a469560ec5b564dbb4b548a4ab"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/dispatch_operator.py",
+      "previous_sha256": "d3200e1cc135228e975b13321961fdad4068fd7ba769ed856849c074068a7dda",
+      "target_sha256": "c3dc417eb323fae239291587f028d4e70f4d9851a0c740e2b6af57d38104f33a"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/external_metadata.py",
+      "previous_sha256": null,
+      "target_sha256": "6b994fbc64135eddb4d20802b14fb853cd2da913a2549edbf3f6a484eab22c5a"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/external_planning.py",
+      "previous_sha256": null,
+      "target_sha256": "5996c8aa6b6160efd6c86cb827673bd2a05280f82b342133e89e646724a7b669"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/feature_executor.py",
+      "previous_sha256": "01fc3be17f33098cd113c9998abd75f8b5525701672b26dc28aafe825539f336",
+      "target_sha256": "75b7d3b35d9aff2504900e23ed0a0d7fe6e196646a129531f77792181ef1fd69"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/feature_metadata.py",
+      "previous_sha256": "2d3a3278a551a03f0060b01fa03e7801b645a0df8e4fd0ab692ba9087cde4b00",
+      "target_sha256": "ad9edb183753b28d3a1de921667a29ce1a51ee54cc2399a81aaee09e78b9a90c"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/lifecycle_planning.py",
+      "previous_sha256": "04bd8fac58e4862292cbef8fcdf4a37ba7e5f1cf0800971ddc13290abfcacf1e",
+      "target_sha256": "282422d4f738fb8c497a9bd04c3e75359baef79541588beeba5c0a407d396cc5"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/manager_planning.py",
+      "previous_sha256": "79784e3e31bb55b8235b369ee3bd6144bdd03b9c20e80d1560c501e9b529b4a0",
+      "target_sha256": "188f1ae2811e09d455c402af87f3186891720faa66fa7cb2468815f685be9216"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/metadata_executor.py",
+      "previous_sha256": null,
+      "target_sha256": "b35a920dc11bbcb0e0ff248437f31975e5c84c1cfdca5abe8447043dd980eac2"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/native_executor.py",
+      "previous_sha256": "0b9b7b8773e8f61add46a8ec6aed4ddf5e5b12121d113e26b076c6f9f048581c",
+      "target_sha256": "2a5bdb1ed793caeff02806361cc8eff7b9addccdbc6ff4a4a1e289b7d6c796c8"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/native_feature_executor.py",
+      "previous_sha256": null,
+      "target_sha256": "62d04efbd8e06b7b5efe43d1731a1ad09e5b8855aacfce21732a2999a20dfecb"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/operator_store.py",
+      "previous_sha256": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9",
+      "target_sha256": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/planning_cli.py",
+      "previous_sha256": "41963a6fd449ae91768d3e93b3930f1bed8de046b1688736e86da7569275a311",
+      "target_sha256": "b0ac416bcb38333015296fc82e24e64bee23ec138032b403126fd491dbe2efaf"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/plans.py",
+      "previous_sha256": "e41bb5748ea517a03f2ca6b018edfe0d9660b52ae3721f9642f6b29cbe741d07",
+      "target_sha256": "48410f8b9f9a83f797c45c469ac2db460b19b34030113b92da2634f9a4c7bc23"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/profile_channel.py",
+      "previous_sha256": "c23bdda8ba546b20fc3236b52dabe234e24a5b8d8661c004a9c9e94718b2c5e0",
+      "target_sha256": "bb95e8f4aa054af3b9d8fe8fd1743eace2622e7d5dce1e29dd4515d89b63328d"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "b258aad59ef387329e59ecf4608cc34b87922fca1e3d5ca2d0be3a1cc9cdf77f",
+      "target_sha256": "9cc89d0e8632d33519ca15a8374c2b7cc2f328f696578bff27a5781b56c32d50"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/reference_dispatch.py",
+      "previous_sha256": null,
+      "target_sha256": "12a8ad918e94d2adee98ed9f1f0698e722a1ddc7a586fc0f888198d19981c75f"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/reference_recovery.py",
+      "previous_sha256": null,
+      "target_sha256": "634d49b61709d66f0cb559c5ee334457cd136a4e617fee4337ab3002f6ae208d"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/release_staging.py",
+      "previous_sha256": "8037b6349ebb32f76d31aebb69d2ff6a465b75c20406b202a45c6be7f98bad6b",
+      "target_sha256": "7400bd2d0db76e422712640dc2a5ef4aa71e5774bf6355e4059ce41154027582"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/restore_continuation.py",
+      "previous_sha256": "9fb3600dd42621e09e45dba1cb5ceeb0aa7c0b6bbf2b77b225fcf19a95546d54",
+      "target_sha256": "f7bf9de3ecb6622d1737c398dcd0202b648c9efa353d0b490236ae7950b08992"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/restore_executor.py",
+      "previous_sha256": "317f630b00ca4600add17930e3b365049891c4b13e216490ee454ce89c97973d",
+      "target_sha256": "ccf6128dc1477dd59f17de106d705cfed8ac2d604419a6abb2b758b26c15276b"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/unchanged_recovery.py",
+      "previous_sha256": "574ecc2f59fbfd7e41fe287ef6f41334d4f8b7798f821d0e24680a54de398f61",
+      "target_sha256": "609c36af2fdca7820c0fb1ea4cb16fcc1e83925908c4b27e126997a5ec011f40"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/worker_operator.py",
+      "previous_sha256": "40694e81bd4652e803cf0e5bef682c01f8952d9e0ad688108d72e98dc65c74f4",
+      "target_sha256": "5598c4c615c64679ea06a064a8289f174577b5ded115c0bc30c63bc3c4ffaf37"
+    }
+  ],
+  "native_plugin_artifacts_and_manifests_exact": true,
+  "Python_and_policy_exact": true,
+  "connector_not_in_image": true,
+  "metadata_lifecycle_recovery_and_feature_readers_inventoried": true,
+  "deployment_changed": false
+}

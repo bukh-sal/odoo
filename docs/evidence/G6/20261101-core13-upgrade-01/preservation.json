@@ -1,0 +1,48 @@
+{
+  "result": "passed_actual_core13_upgrade_preservation",
+  "image": "sha256:04a4ffaf616b095110a805ff8238ecf39a0dfec3dbb542a4ac4f0437919ba1a9",
+  "inventory": "sha256:adacfc5e2cca99ab58fbc749dbad8c1aebd14e32aa4bfc234d36054823564d6a",
+  "configuration_generation": 11,
+  "dispatch_generation": 46,
+  "native_versions": {
+    "core": "19.0.0.1.13",
+    "shell": "19.0.0.1.9",
+    "identity": "19.0.0.1.2"
+  },
+  "same_database": true,
+  "counts": {
+    "mp_job": 18,
+    "mp_outbox": 47,
+    "mp_principal": 4,
+    "mp_workspace": 3,
+    "mp_membership": 7,
+    "mp_example_note": 29,
+    "mp_plugin_grant": 4,
+    "mp_event_delivery": 251,
+    "mp_service_binding": 11,
+    "mp_workspace_plugin": 7,
+    "mp_event_consumption": 3,
+    "mp_event_subscription": 35,
+    "mp_service_credential": 3,
+    "mp_plugin_installation": 3,
+    "mp_event_consumer_state": 1,
+    "mp_example_canvas_board": 0,
+    "mp_example_note_event_summary": 3
+  },
+  "original_business_metadata_authority_event_rows_exact": true,
+  "allowed_active_subscriptions_closed": 0,
+  "original_jobs_preserved_except_reviewed_epoch_fields": true,
+  "reconciled_job_epoch_rows": 17,
+  "sanctioned_cancelled_null_timestamp_backfills": 1,
+  "old_checkpoint_files_preserved": 46,
+  "all_current_files": 46,
+  "worker_helper_update": {
+    "previous_sha256": "9d85576682832aba92ff458d8ba2e7d198375b218760c6496810417444857cb5",
+    "current_sha256": "d1ce17f9a11bade4746f4b8bf88b61b7dd14e092fa11eaee6106e384c1844313",
+    "only_field": "helper_image"
+  },
+  "limits": [
+    "Native feature and external metadata/connector/remote/lifecycle/recovery still require installed qualification.",
+    "No actual external provider or connector is installed by this core-only operation."
+  ]
+}

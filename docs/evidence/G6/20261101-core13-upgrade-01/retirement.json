@@ -1,0 +1,12 @@
+{
+  "result": "retired_owned_terminal_helpers",
+  "removed_containers": 11,
+  "superseded_app_removed": true,
+  "current_app_database_edge_preserved": true,
+  "volumes_removed": 0,
+  "images_removed": 0,
+  "current_and_checkpoint_images_retained": true,
+  "private_diagnostics_archived": true,
+  "no_global_prune": true,
+  "verification_correction": "Retirement succeeded; final assertion compared short app ID with full inventory IDs. This read-only verification normalizes IDs and does not repeat removal."
+}

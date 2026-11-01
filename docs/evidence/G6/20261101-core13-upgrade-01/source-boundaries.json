@@ -1,0 +1,52 @@
+{
+  "result": "passed_exact_native_source_boundaries",
+  "previous_image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "current_image": "sha256:04a4ffaf616b095110a805ff8238ecf39a0dfec3dbb542a4ac4f0437919ba1a9",
+  "exact_files": [
+    "platform_addons/mp_core/job_dispatch.py",
+    "packages/platform_sdk/modular_platform/job_runner.py",
+    "packages/platform_sdk/modular_platform/durable.py",
+    "platform_addons/mp_example_notes/jobs.py",
+    "platform_addons/mp_identity/__init__.py",
+    "platform_addons/mp_identity/__manifest__.py",
+    "platform_addons/mp_identity/models/__init__.py",
+    "platform_addons/mp_identity/models/identity.py",
+    "platform_addons/mp_identity/models/ir_http.py",
+    "platform_addons/mp_identity/models/ir_rule.py",
+    "platform_addons/mp_identity/models/scoped.py",
+    "platform_addons/mp_identity/release.py",
+    "platform_addons/mp_identity/scopes.py",
+    "platform_addons/mp_identity/security/ir.model.access.csv",
+    "platform_addons/mp_identity/security/rules.xml"
+  ],
+  "current_source_sha256": {
+    "platform_addons/mp_core/job_dispatch.py": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+    "packages/platform_sdk/modular_platform/job_runner.py": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "platform_addons/mp_example_notes/jobs.py": "dde4fe53150d93100fe0aefb40413b6e77e54756331325402ba1893ea93cc4fc",
+    "platform_addons/mp_identity/__init__.py": "5fd10918e1361ad65b4b41bcd8fb525e659267f47c8c4334ae52530e58908e9e",
+    "platform_addons/mp_identity/__manifest__.py": "97863e22b967d7d41ff2c0919f8f3074e258bfea53406b32621b896f765c3423",
+    "platform_addons/mp_identity/models/__init__.py": "5b0fdbac5d7384aa9e409e37e71f3462872f4e80a2113714d742842ef4119af5",
+    "platform_addons/mp_identity/models/identity.py": "9684c2ee64f1df918fd6e76ab5537414bbff16889ed740addd18f9525239b802",
+    "platform_addons/mp_identity/models/ir_http.py": "424fb21989abed46ed0189a4203715cba23a2efd57ebbeeb0c0e0820a70c98ce",
+    "platform_addons/mp_identity/models/ir_rule.py": "3b970b0a6767fb644f820f36bacd23d655f0c51ea8c02aa981fd0faaf5cdb4f9",
+    "platform_addons/mp_identity/models/scoped.py": "3a149bc7c577a681ded521a3989c9f2d7541390cc8851bf7040dbea1a60da44e",
+    "platform_addons/mp_identity/release.py": "f2463661c9f1c95ed065552ae4be2aeb30118d17a160a54738928415a32dd52a",
+    "platform_addons/mp_identity/scopes.py": "c36b822c80d5c75801e617e8aed727782e039e96d1ad9157741bb9fbc52082d0",
+    "platform_addons/mp_identity/security/ir.model.access.csv": "c57a361621e163f913e54f7f0c79d2d5787503d22912f14dab2510d351659ee5",
+    "platform_addons/mp_identity/security/rules.xml": "d6ce6a3c5ca0d7e69ac9cae7e3debf93dbdd559306c11bb59cd6f4656aee66dd"
+  },
+  "new_external_bridge_qualified_by": "20261101-external-finalize-01 candidate source; installed remote path still pending",
+  "retained_native_evidence": [
+    "../20261101-core12-runner-01/qualification.json",
+    "../20261101-identity12-upgrade-01/qualification.json"
+  ],
+  "actual_new_evidence": [
+    "preservation.json",
+    "completed.json"
+  ],
+  "limits": [
+    "No new lease/death/revocation experiment or complete SVC acceptance is claimed.",
+    "Changed metadata lifecycle, native feature and external operator/bridge paths need their actual installed integration checks."
+  ]
+}
