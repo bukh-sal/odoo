@@ -1,0 +1,37 @@
+{
+  "result": "passed",
+  "at": "2026-11-01T09:26:45.686776+00:00",
+  "checks": [
+    {
+      "module": "test_external_projection",
+      "result": "passed",
+      "output": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.167s\n\nOK\n"
+    },
+    {
+      "module": "test_external_planning",
+      "result": "passed",
+      "output": "..................\n----------------------------------------------------------------------\nRan 18 tests in 0.471s\n\nOK\n"
+    },
+    {
+      "module": "test_reference_staging",
+      "result": "passed",
+      "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.314s\n\nOK\n"
+    }
+  ],
+  "total": 37,
+  "frozen_contracts": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 94,
+    "rows": 8
+  },
+  "source_digests": {
+    "plugins/document_stats/plugin.toml": "8245b09f12cebb8595b39845bff26084e71242ffcf5189b0b6e807815fc6bf90",
+    "tests/test_external_projection.py": "40547da95004d0b5528e2b2513eaee69b98e3cf1c83dc02855cdcf1dd539554a",
+    "tests/test_external_planning.py": "fa4de293351d63c0a8d045f44a682d35f9beb373294cde33dff3635cabb1cd66",
+    "tests/test_reference_staging.py": "7218b8b7d6a3be9fb53459b998c0813473dc5ee95e150f33d8cbe6443e390f47"
+  },
+  "limits": [
+    "Source planning/retention regressions; actual lifecycle evidence separate."
+  ]
+}

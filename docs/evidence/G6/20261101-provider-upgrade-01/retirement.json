@@ -1,0 +1,14 @@
+{
+  "result": "retired_owned_terminal_upgrade_helpers",
+  "removed_containers": 7,
+  "superseded_apps_removed": 1,
+  "private_diagnostics_archived": true,
+  "active_host_worker_database_edge_preserved": true,
+  "new_images": 0,
+  "new_volumes": 0,
+  "images_removed": 0,
+  "volumes_removed": 0,
+  "active_and_recovery_assets_retained": true,
+  "no_global_prune": true,
+  "post_delete_short_vs_full_id_assertion_corrected_without_repeating_deletion": true
+}

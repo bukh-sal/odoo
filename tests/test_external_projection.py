@@ -23,14 +23,14 @@ class ExternalProjection(unittest.TestCase):
 
     def setUp(self):
         self.native=plugin('a');self.catalog=[self.native,copy.deepcopy(self.external)];self.runtime=staged_runtime([self.native])
-        self.runtime.update(platform_version='0.1.12',native_manifests={'mp_core':{'version':'19.0.0.1.12'}})
+        self.runtime.update(platform_version='0.1.13',native_manifests={'mp_core':{'version':'19.0.0.1.13'}})
         self.config=dict(schema_version=1,image_id='sha256:'+'a'*64,deployment_id=ident(10),generation=2,release_created_at=STAMP,policy_version=1,operator_authorization_generation=1,sites=[dict(site_id=ident(20),database='mp_disposable_r0_r1_projection')])
         self.site=dict(site_id=ident(20),release_generation='2',active_inventory_digest=self.runtime['inventory_digest'],
             installations=[dict(installation_id=ident(100),plugin_id='org.test.a',version='1.0.0',digest=self.native['digest'],runtime='native',metadata_state='installed',manifest=self.native['manifest']),
-                dict(installation_id=ident(101),plugin_id='org.example.document_stats',version='0.1.0',digest=self.external['digest'],runtime='external_service',metadata_state='installed',manifest=self.external['manifest'])],
+                dict(installation_id=ident(101),plugin_id='org.example.document_stats',version=self.external['manifest']['plugin']['version'],digest=self.external['digest'],runtime='external_service',metadata_state='installed',manifest=self.external['manifest'])],
             features=[dict(installation_id=ident(100),plugin_id='org.test.a',workspace_id=ident(30),feature_state='enabled'),dict(installation_id=ident(101),plugin_id='org.example.document_stats',workspace_id=ident(30),feature_state='enabled')],
             native_modules=[dict(addon='test_a',state='installed',version='19.0.1.0.0')],bindings=[],grants=[],workspaces=[],memberships=[])
-        pin=dict(plugin_id='org.example.document_stats',version='0.1.0',digest=self.external['digest'],runtime='external_service')
+        pin=dict(plugin_id='org.example.document_stats',version=self.external['manifest']['plugin']['version'],digest=self.external['digest'],runtime='external_service')
         selected,environment,provenance=runtime_inputs(self.runtime,self.catalog,external_plugins=[pin])
         solution=resolve_release(selected,[],environment,{item['manifest']['plugin']['id']:'=='+item['manifest']['plugin']['version'] for item in selected})
         lock=release_lock(solution,provenance,generation=2,created_at=STAMP);self.config['published_release']=lock;self.site['release_digest']=data_digest(lock)
@@ -47,6 +47,10 @@ class ExternalProjection(unittest.TestCase):
         self.assertNotIn('org.example.document_stats',self.runtime['inventory']['artifacts'])
         self.assertIsNone(next(r for r in state['release_lock']['plugins'] if r['runtime']=='external_service')['native_addon'])
         self.assertEqual(state['endpoints'],[self.endpoint]);self.assertEqual(state['service_health'],self.external_state['service_health'])
+
+    def test_metadata_successor_refuses_unqualified_platform_minimum(self):
+        self.runtime.update(platform_version='0.1.12',native_manifests={'mp_core':{'version':'19.0.0.1.12'}})
+        with self.assertRaises(PlanningError):self.project()
 
     def test_database_declaration_cannot_select_metadata_package(self):
         self.config.pop('published_release')

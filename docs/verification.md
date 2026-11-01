@@ -1,5 +1,16 @@
 # Verification evidence index
 
+Current release status is in [implementation-status.md](implementation-status.md).
+The dated entries below retain their original scope and limitations; their old
+progress figures are historical, not current gate status. G0-G5 passed for their
+qualified profiles; G6 is active and G7 remains required.
+
+Latest G6 lifecycle evidence:
+
+- [Installed native13 feature lifecycle](evidence/G6/20261101-core13-native-features-01/README.md).
+- [Actual independent worker and metadata registration/enable](evidence/G6/20261101-provider-registration-01/README.md).
+- [Actual immutable metadata successor upgrade](evidence/G6/20261101-provider-upgrade-01/README.md): same worker identity/image, native state/data/jobs/files preserved;37 targeted source checks and current freeze. External integration/recovery and changed-worker-image qualification remain open.
+
 ## G0 foundation: passed
 
 Decision and source/runtime identity: [gate-G0.json](evidence/G0/20261027t234238z/gate-G0.json). Historical failed attempts are preserved in the same directory and explained in the work log. The corrected ten-addon baseline is the qualifying run.
@@ -33,7 +44,7 @@ Decision and source/runtime identity: [gate-G0.json](evidence/G0/20261027t234238
 
 ## Later gates
 
-G3 integration passed; G4-G7 qualification is pending. R0 native observations do not certify those later boundaries. Five ISO checks are R2 exclusions. See the acceptance ledger for release status. Raw DB/filestore checkpoints and all generated passwords remain ignored local material, not tracked evidence.
+This section introduces the historical later-gate records. R0 observations do not certify those boundaries. Five ISO checks are R2 exclusions. See the acceptance ledger for current release status. Raw DB/filestore checkpoints and all generated passwords remain ignored local material, not tracked evidence.
 
 ## G1 feasibility: passed
 

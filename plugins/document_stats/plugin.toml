@@ -1,6 +1,6 @@
 "schema_version" = 1
-"plugin" = {"id" = "org.example.document_stats", "version" = "0.1.0", "name" = "Document Stats", "description" = "Deterministic statistics on an authorized text snapshot", "publisher" = "example", "license" = "LGPL-3.0-only"}
-"compatibility" = {"platform" = ">=0.1.12,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
+"plugin" = {"id" = "org.example.document_stats", "version" = "0.1.1", "name" = "Document Stats", "description" = "Deterministic statistics on an authorized text snapshot", "publisher" = "example", "license" = "LGPL-3.0-only"}
+"compatibility" = {"platform" = ">=0.1.13,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
 "runtime" = {"kind" = "external_service"}
 "activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}
 "permissions" = {"defines" = {"analysis.run" = "Analyze the supplied authorized document snapshot"}, "requests" = []}

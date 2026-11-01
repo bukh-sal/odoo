@@ -1,0 +1,19 @@
+{
+  "result": "passed_immutable_successor_curation",
+  "version": "0.1.1",
+  "digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+  "minimum_platform": "0.1.13",
+  "worker_image_contract_unchanged": true,
+  "old_artifact_preserved": true,
+  "trust_generation": 7,
+  "native_release_and_worker_unchanged": true,
+  "new_docker_assets": 0,
+  "files": [
+    "inventory.json",
+    "notices/COPYRIGHT",
+    "notices/LICENSE",
+    "plugin.toml",
+    "provenance.json",
+    "schemas/stats-v1.json"
+  ]
+}

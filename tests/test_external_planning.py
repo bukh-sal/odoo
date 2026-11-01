@@ -53,7 +53,7 @@ class ExternalPlanning(unittest.TestCase):
         self.assertEqual(artifact['migration_digests'],[])
         self.assertEqual(bundle['operation_lock']['feature_states'][0]['availability'],'suspended')
         self.assertEqual(bundle['plan']['permission_changes'],[])
-        self.assertEqual(external_selections(bundle),[dict(plugin_id='org.example.document_stats',version='0.1.0',digest=self.f.external['digest'])])
+        self.assertEqual(external_selections(bundle),[dict(plugin_id='org.example.document_stats',version=self.f.external['manifest']['plugin']['version'],digest=self.f.external['digest'])])
 
     def test_activate_registration_requires_current_health(self):
         self.unregistered();next(iter(self.f.external_state['service_health'].values()))['state']='unavailable'
@@ -155,8 +155,8 @@ class ExternalPlanning(unittest.TestCase):
         with self.assertRaisesRegex(PlanningError,'approved grants outside'):self.prepare('unregister')
 
     def test_upgrade_keeps_native_and_existing_feature_state(self):
-        candidate=copy.deepcopy(self.f.external);candidate['manifest']['plugin']['version']='0.1.1';candidate['digest']='sha256:'+'c'*64
-        self.f.catalog.append(candidate);self.document=self.f.project();pin=dict(plugin_id=self.target['plugin_id'],version='0.1.1',digest=candidate['digest'])
+        candidate=copy.deepcopy(self.f.external);candidate['manifest']['plugin']['version']='0.1.2';candidate['digest']='sha256:'+'c'*64
+        self.f.catalog.append(candidate);self.document=self.f.project();pin=dict(plugin_id=self.target['plugin_id'],version='0.1.2',digest=candidate['digest'])
         bundle=self.prepare('upgrade',selections=[pin])
         self.assertEqual(external_selections(bundle),[pin]);self.assertNotIn('feature_states',bundle['operation_lock'])
         self.assertEqual(next(r for r in bundle['operation_lock']['release']['plugins'] if r['runtime']=='native'),next(r for r in self.document['state']['release_lock']['plugins'] if r['runtime']=='native'))
@@ -167,7 +167,7 @@ class ExternalPlanning(unittest.TestCase):
         from modular_platform.planning_cli import scoped_bindings
         native=plugin('a',requires=[dict(alias='stats',id='org.example.document_stats.analysis',contract_major=1,version='>=1.0,<2.0',optional=optional)])
         self.f.native=native;self.f.catalog[0]=native;self.f.runtime=staged_runtime([native])
-        self.f.runtime.update(platform_version='0.1.12',native_manifests={'mp_core':{'version':'19.0.0.1.12'}})
+        self.f.runtime.update(platform_version='0.1.13',native_manifests={'mp_core':{'version':'19.0.0.1.13'}})
         self.f.site['active_inventory_digest']=self.f.runtime['inventory_digest']
         self.f.site['installations'][0].update(digest=native['digest'],manifest=native['manifest'])
         pin={k:self.document['state']['release_lock']['plugins'][0][k] for k in ['plugin_id','version','digest','runtime']}
