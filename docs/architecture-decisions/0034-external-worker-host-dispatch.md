@@ -1,0 +1,46 @@
+# ADR0034: approved host-to-worker dispatch
+
+Date: 2026-11-01. Status: bounded transport implemented; native integration unqualified.
+Parent F-01c/d/e2; spec13/14.3/14.5/14.6/22.4, SVC-02..05 and JOB-03.
+
+The existing service gateway registers native model handlers only. The independent
+document-statistics worker and frozen request/response/RS256/endpoint contracts
+already exist. Reuse those contracts and PyJWT verifier; add a host transport,
+then connect it to live approved endpoint/actor/resource/binding authorization.
+No new wire contract, cryptographic format, orchestrator or Canvas feature is needed.
+
+The private WorkerClient receives a host-owned current-authorization reader and
+issuer lookup. Its reader must check the current actor, resource, workspace,
+installation, feature, grant, binding and independently approved endpoint generation.
+The transport cannot make an arbitrary endpoint DTO authoritative. Native code is
+fully trusted; passing a callback is not a sandbox or evidence of native enforcement.
+Actual native readers must use a fresh authority decision after detached computation,
+not assume a repeatable-read snapshot observes a concurrently committed revocation.
+No result can mutate host data until the existing original-actor finalization gate
+has reauthorized it. Network computation belongs outside native database retries;
+do not put external I/O into a handler that a database retry can replay silently.
+
+An independently operator-owned egress map pins exact destination, installation,
+site/workspace, image digest, endpoint generation and observed internal IPv4 addresses.
+Connect to a pinned numeric IP and preserve the configured Host header. Runtime DNS,
+redirects, proxy environment settings and package/browser URLs do not select egress.
+This local Compose profile refuses global, loopback, link-local and other special
+addresses. The operator must verify actual image/network identity when creating or
+changing this generation; health JSON is not image attestation. Address changes
+require a new approved generation. The application receives no Docker authority.
+
+Issue fresh 120-second worker-audience RS256 credentials after current authorization,
+then recheck before sending. Bind the request entirely from the authorized scope;
+caller input cannot supply a different site, workspace, installation or generation.
+Bound request/response bytes, apply an absolute network deadline, reject redirects,
+validate the frozen response and both correlation IDs, then reauthorize before return.
+Failures retain whether a request might have reached the worker; timeout never proves
+remote rollback. Reference statistics are deterministic and have no remote external
+effect. Non-idempotent work still needs F-01e2's durable uncertainty reconciliation.
+
+Seven source tests include actual RS256 verification and a real local HTTP worker
+exchange; network selection is explicitly mapped by that test fixture only.
+They do not qualify Odoo readers, host issuer provisioning, metadata-only registration,
+Notes alias/command/job, runtime image attestation, slow/degraded UI or recovery.
+Implement those next. Before deploying added SDK/native integration, increment the
+owned runtime versions and use the established reviewed immutable lifecycle path.

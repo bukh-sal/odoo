@@ -1,0 +1,39 @@
+{
+  "result": "passed_bounded_host_worker_transport_source",
+  "utc": "2026-11-01T03:29:02.268683+00:00",
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "tests.test_worker_dispatch",
+    "-v"
+  ],
+  "observed_tool_chunk": "eaf412",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/worker_dispatch.py": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5",
+    "tests/test_worker_dispatch.py": "0c9b9ac81e52b74a8729dafba7052ec64dccd55c4f68e25623a15e8d595abd00"
+  },
+  "frozen_files": 94,
+  "privacy_findings": 0,
+  "checks": [
+    "real signed request and scope verification",
+    "numeric operator-pinned connection preserves Host",
+    "key-lookup revocation prevents sending",
+    "post-response revocation refuses result and marks request sent",
+    "destination/generation/workspace and loopback egress refused",
+    "redirect/mismatched correlation/oversized response refused",
+    "connection timeout reports no sent request",
+    "actual HTTP worker Connection:close response parsed under absolute deadline"
+  ],
+  "limits": [
+    "Callback authority reader is a private seam, not implemented native authorization evidence.",
+    "Six transport/policy cases use explicit fake connections; one real HTTP worker test maps the approved IP to a loopback fixture only. No claim of actual Docker/native gateway integration.",
+    "No installed runtime or worker image changed; new SDK module awaits versioned host/native integration. No new acceptance credit."
+  ],
+  "next": "Wire real current-approved native endpoint reader/host issuer into detached job compute and fresh original-actor finalization; integrate Notes through declared optional service alias/connector. Extend metadata-only artifact/endpoint lifecycle separately and keep external recovery refusal until supported."
+}
