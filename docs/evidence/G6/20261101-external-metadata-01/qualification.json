@@ -1,0 +1,26 @@
+{
+  "result": "source_transactions_passed",
+  "utc": "2026-11-01T06:08:56.615291+00:00",
+  "attempt": "02",
+  "successful": true,
+  "tests": 13,
+  "errors": [],
+  "failures": [],
+  "original_rows_restored": true,
+  "image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "inventory": "sha256:69e77a15d3c599d7398cd2d75f34f31cee30cba5991f729d35e6ac5aa0f23aa1",
+  "sources": {
+    "projection": "de87fd7468a534411d591b0a4112e7ae403746903bff7717f68d295874dd7147",
+    "external_planning": "425b569d7a097028192c9199dadb1a109afd560cf25844b5b61d66e3d36b0162",
+    "external_metadata": "6b994fbc64135eddb4d20802b14fb853cd2da913a2549edbf3f6a484eab22c5a"
+  },
+  "no_new_docker_assets": true,
+  "no_committed_test_rows": true,
+  "actual_metadata_operation": false,
+  "limits": [
+    "Candidate source loaded in an isolated existing-container process, not installed code.",
+    "Endpoint/health are explicit synthetic source-test data, not actual OS approval or a running worker.",
+    "All test transactions roll back; PostgreSQL sequence counters may advance.",
+    "No runtime control, executor/journal/checkpoint/recovery integration or complete SVC acceptance is claimed."
+  ]
+}

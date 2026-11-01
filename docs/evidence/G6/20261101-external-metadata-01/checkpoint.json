@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-01T06:12:21.277309+00:00",
+  "result": "sql_transaction_source_prerequisite_passed",
+  "qualification": "qualification.json",
+  "sql_cases": 13,
+  "changed_planner_cases": 16,
+  "frozen_files": 94,
+  "acceptance": "92/99",
+  "rough_percent": 88,
+  "hashes": {
+    "docs/evidence/G6/20261101-external-metadata-01/native_tests.py": "f4e627e71d6867a4b4fd4f77c16b0e4383a7fcf84232b891600b276a24b35d9e",
+    "docs/evidence/G6/20261101-external-metadata-01/check.py": "4664158206f72a5152a38cd5d3acd4686d2aacd4f327edff9a60f928fb41b5cb",
+    "packages/platform_sdk/modular_platform/external_metadata.py": "6b994fbc64135eddb4d20802b14fb853cd2da913a2549edbf3f6a484eab22c5a",
+    "packages/platform_sdk/modular_platform/external_planning.py": "425b569d7a097028192c9199dadb1a109afd560cf25844b5b61d66e3d36b0162"
+  },
+  "next": "Managed reference-worker dispatch/checkpoint/journal integration, actual metadata execution/readiness/recovery.",
+  "runtime_unchanged": true,
+  "metadata_committed": false,
+  "retained_new_docker_assets": 0
+}

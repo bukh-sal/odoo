@@ -214,3 +214,33 @@ before reserve/drain, pending the managed-worker lifecycle adapter. Actual
 registration/upgrade/suspend/unregister, changed-image transition coordination,
 external recovery and connector finalization remain required. The synthetic
 second-version catalog test is not an upgraded worker/artifact qualification.
+
+The `external-metadata-01` checkpoint implements the fixed SQL publication
+transaction required by F-01d. It uses the frozen bundle plus independently
+observed database preimage, checks target database/deployment/site/inventory,
+locks metadata, and requires paused dispatch with no running/unknown jobs or
+leased event deliveries. Registration/upgrade, feature availability, exact
+bindings/grants, audits and release tags publish atomically. Unregister keeps
+installation/feature tombstones, removes only affected bindings and revokes
+owned grants and technical credentials. It performs no native initialization,
+DDL, business-model write, network I/O or worker process control. The caller
+owns the transaction; the fixed child's connection context rolls back on error.
+
+Thirteen real PostgreSQL source cases pass with all nineteen observed tables'
+original rows restored after every test. They include a late injected Python
+fault after actual metadata writes, an optional fixture binding, credential/grant
+revocation, exact re-registration, stale state, wrong targets, uncertain jobs and
+replay refusal. The fixture endpoint/health and second-version descriptor are
+synthetic; no endpoint approval, committed installation or actual upgraded image
+is claimed. PostgreSQL sequence counters can advance despite rollback. Sixteen
+changed-path planner checks and the94-file freeze also pass. External metadata
+enable/suspend proposals now explicitly retain their existing bindings.
+
+The transaction is deliberately not exposed through native apply. Integration
+must still supply the explicit managed reference-worker dispatch policy,
+coordinated checkpoint and full journal path. In particular the native dispatch
+fence/enable refuses external installations, and the current feature journal
+uses its shorter no-checkpoint path; neither may be weakened as a shortcut.
+Bind the external profile to the independent publication/current exact reference
+image, preserve uncertainty/credential gates, and qualify actual reviewed
+registration and recovery before SVC04/05 can pass.

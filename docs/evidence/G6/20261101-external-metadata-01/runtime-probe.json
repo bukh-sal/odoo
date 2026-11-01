@@ -1,0 +1,9 @@
+{
+  "result": "passed",
+  "exit_code": 0,
+  "utc": "2026-11-01T06:10:51.733190+00:00",
+  "name": "mp-disposable-g6-runtime-probe-01",
+  "image": "sha256:6eefde4bf3a4abfbb2de75ee64f5347eb6d9dddfba83a55489801aa291a96992",
+  "retained_container_rows": [],
+  "hypothesis": "Earlier helper creation included a Windows bind of the whole repository; discriminate an otherwise identical immutable image run without any bind or volume."
+}

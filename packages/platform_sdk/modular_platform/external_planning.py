@@ -107,6 +107,7 @@ def prepare_external_metadata(document, sites, catalog, *, targets, operation_ty
         permission_changes=changes,operation_id=operation_id,created_at=created_at)
     if selecting:request.update(update=sorted(chosen))
     if operation_type=='install':request['feature_states']=features
+    if operation_type in ('enable','suspend'):request['bindings']=state.get('bindings',[])
     bundle=prepare_document({**document,'request':request},catalog)
     # Selecting metadata may advance the release epoch and service choices, but
     # cannot sneak native code, Python, core provenance or other artifact changes.
