@@ -1,0 +1,34 @@
+services:
+  document-stats:
+    profiles: [worker]
+    image: ${MP_DOCUMENT_STATS_IMAGE:?operator must supply exact verified sha256 image identity}
+    user: "10002:10002"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 64
+    mem_limit: 256m
+    cpus: 1
+    tmpfs: [/tmp:rw,noexec,nosuid,size=16m,mode=0700,uid=10002,gid=10002]
+    volumes:
+      - type: bind
+        source: ${MP_DOCUMENT_STATS_CONFIG:?operator-owned public-key-only config directory required}
+        target: /run/worker
+        read_only: true
+    networks:
+      runtime:
+        aliases: [document-stats]
+    healthcheck:
+      test: [CMD, /venv/bin/python, -c, "import urllib.request; assert urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2).status==200"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    logging:
+      driver: local
+      options:
+        max-size: 1m
+        max-file: "2"
+networks:
+  runtime:
+    external: true
+    name: ${MP_DOCUMENT_STATS_NETWORK:?existing explicitly approved internal network required}

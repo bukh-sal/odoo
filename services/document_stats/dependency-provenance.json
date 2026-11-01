@@ -1,0 +1,70 @@
+{
+  "source": "deploy/requirements-r1.lock",
+  "source_sha256": "3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+  "packages": {
+    "packaging": {
+      "version": "26.3",
+      "dependencies": []
+    },
+    "rfc8785": {
+      "version": "0.1.4",
+      "dependencies": []
+    },
+    "jsonschema": {
+      "version": "4.26.0",
+      "dependencies": [
+        "attrs",
+        "jsonschema-specifications",
+        "referencing",
+        "rpds-py"
+      ]
+    },
+    "rpds-py": {
+      "version": "2026.9.1",
+      "dependencies": []
+    },
+    "referencing": {
+      "version": "0.37.0",
+      "dependencies": [
+        "attrs",
+        "rpds-py",
+        "typing-extensions"
+      ]
+    },
+    "typing-extensions": {
+      "version": "4.16.0",
+      "dependencies": []
+    },
+    "attrs": {
+      "version": "26.1.0",
+      "dependencies": []
+    },
+    "jsonschema-specifications": {
+      "version": "2025.9.1",
+      "dependencies": [
+        "referencing"
+      ]
+    },
+    "cryptography": {
+      "version": "42.0.8",
+      "dependencies": [
+        "cffi"
+      ]
+    },
+    "cffi": {
+      "version": "2.1.1",
+      "dependencies": [
+        "pycparser"
+      ]
+    },
+    "pycparser": {
+      "version": "3.12",
+      "dependencies": []
+    },
+    "pyjwt": {
+      "version": "2.15.1",
+      "dependencies": []
+    }
+  },
+  "linux_runtime_verification": "required during independent image build"
+}

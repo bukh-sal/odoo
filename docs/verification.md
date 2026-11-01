@@ -204,3 +204,5 @@ G6 F-01e1 [two actual unchanged recovery modes](evidence/G6/20261101-unchanged-n
 - F-01c [engine source checkpoint](evidence/G6/20261101-worker-engine-01/qualification.json):5 signed-token/concurrency/dedup/bounds/restart cases pass; actual process/HTTP/image/Compose/host/lifecycle integration still required. No acceptance credit.
 
 - F-01c [separate-process HTTP checkpoint](evidence/G6/20261101-worker-http-01/qualification.json):2 actual process tests pass health/signed auth/duplicate/conflict/kill-restart/malformed-size-route refusals and payload-free logs; all children terminal. Separate worker image/dependency/Compose/host/lifecycle proof remains; no acceptance credit.
+
+- F-01c [independent Linux image](evidence/G6/20261101-worker-image-01/qualification.json), [inventory](evidence/G6/20261101-worker-image-01/inventory.json):12hashlockeddependencies/Linuxbinarypipcheck,13distributions/9source-schemafiles exact, actual noOdoo/DBdriver/mounts/credentialenv/nonroot read-only inspection, immutableRepoDigest269bd71a verified. Actual Compose HTTP/host/lifecycle still required; no acceptance credit.

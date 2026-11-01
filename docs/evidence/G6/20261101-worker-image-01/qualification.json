@@ -1,0 +1,28 @@
+{
+  "result": "passed_independent_linux_worker_image_prerequisite",
+  "utc": "2026-11-01T03:02:54.027015+00:00",
+  "image_id": "sha256:269bd71ae621aabdb3057bb9e2a747a6951808365f0e8d023d0090190d5d158f",
+  "reference": "modular-document-stats@sha256:269bd71ae621aabdb3057bb9e2a747a6951808365f0e8d023d0090190d5d158f",
+  "build_session": 55543,
+  "build_terminal_exit": 0,
+  "inspection_tool_chunk": "5324f2",
+  "dependencies": 12,
+  "installed_distributions": 13,
+  "install": "Linux binary wheels only; pip --require-hashes and pip check passed",
+  "source_schema_files_exact": 9,
+  "no_odoo": true,
+  "no_database_driver": true,
+  "no_mounts": true,
+  "no_database_credentials_or_issuer_key": true,
+  "nonroot_user": "10002:10002",
+  "helper": "mp-disposable-document-stats-inventory-01 terminalexit0 retained",
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "current_native_generation_unchanged": 8,
+  "acceptance_credit": false,
+  "limits": [
+    "Actual independently launched Compose HTTP runtime/configuration/signed requests/outage/restart still required.",
+    "Host issuer/dispatch/Notes integration, metadata endpoint lifecycle and external effects/credential reconciliation still required; SVC/JOB03 remain not_run."
+  ],
+  "next_action": "Create owned public-key-only worker config and separate private host issuer fixture, inspect existing approved internal network, launch explicit owned Compose project with exact image reference/pull never, inspect actual worker mounts/env/image/resources, test signed Linux HTTP/auth/dedup/restart/outage, retain and stop only owned worker."
+}

@@ -1,0 +1,8 @@
+{
+  "image_id": "sha256:269bd71ae621aabdb3057bb9e2a747a6951808365f0e8d023d0090190d5d158f",
+  "reference": "modular-document-stats@sha256:269bd71ae621aabdb3057bb9e2a747a6951808365f0e8d023d0090190d5d158f",
+  "base": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
+  "requirements_sha256": "683ebc3177b748efebcb5885ddfc8093b1df988c1a83f2d975e9ad49907906cb",
+  "build_evidence": "docs/evidence/G6/20261101-worker-image-01/build.json",
+  "inventory": "docs/evidence/G6/20261101-worker-image-01/inventory.json"
+}
