@@ -1,0 +1,9 @@
+{
+  "result": "fixture_subscribe_schema_refused_before_mutation",
+  "diagnosis": "Driver supplied uuid4().hex as event subscription idempotency key; the frozen protocol requires a canonical UUID string. Native dispatch validation refused it before authorization or insertion.",
+  "source_review": "event-transport.schema.json and event_store.open_subscription require canonical UUIDs",
+  "correction": "Use str(uuid4()), locally validate the exact subscribe message before launching a native process, and independently confirm the first key inserted no row. Keep the original failed marker/driver; use a new exact native child label.",
+  "no_runtime_or_contract_change": true,
+  "no_business_write_or_subscription_commit_before_failure": true,
+  "continuation": "run_native.py --after-schema-correction"
+}

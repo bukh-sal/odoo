@@ -1,0 +1,8 @@
+{
+  "result": "read_only_audit_required_producer_envelope_boundary_correction",
+  "passed": "All25 original Notes are exact; exactly two browser fixture Notes added.",
+  "diagnosis": "The initial audit compared entire outbox rows, including mutable publication state. Actual first delivery legitimately changes state from pending to published in event_store.claim; nine retained rows made precisely that transition. Every immutable envelope field is exact.",
+  "correction": "Require exact comparison of every outbox column except state, require exactly nine pending-to-published transitions, preserve all42 original envelopes and exactly two new browser events. No runtime or acceptance behavior is weakened.",
+  "original_driver": "qualify_attempt01.py",
+  "continuation": "Reuse captured private COPY/stream observations; perform only remaining read-only audit. Never replay browser actions, native tests, producer writes, subscriptions or checkpoint extraction."
+}

@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "checks": [
+    "actual distinct-cursor rollback exposes no producer envelope, delivery or native bus hint",
+    "current foreign workspace and missing subscription are equivalent without payload",
+    "pending native feature revocation blocks event poll before payload/claim"
+  ],
+  "owned_subscription": "2e2d8950-586d-49d5-a280-607da9fde90a",
+  "subscription_retained_closed": true,
+  "all_business_policy_and_receipt_test_writes_rolled_back": true,
+  "dispatch_generation_unchanged": 37,
+  "source_substitution": false,
+  "image_id": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "inventory_digest": "sha256:7e51485f8252019a16a5785d8d7588fb84fb27f80ec13a2278af5c58a148ec31",
+  "generation": 8,
+  "test_sha256": "ab751187ed584bf48bd1b42ef26eb5eeff0987329d69096132b1ffb4f9d52a9d"
+}

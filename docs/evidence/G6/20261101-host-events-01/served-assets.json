@@ -1,0 +1,12 @@
+{
+  "/web/assets/d2792bf2004822adb611056c119aefb3124e3bde16e6fbf8e71a890a3b489cef/mp_shell.assets_host.min.css": {
+    "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+    "bytes": 751605,
+    "response_unchanged": true
+  },
+  "/web/assets/8a959dfbd4f2790d2f5c6bca0563855e21ded4f73649d3e3f4e7ae8c37b98424/mp_shell.assets_host.min.js": {
+    "sha256": "2a8251a4d4af9d75d7e7d18dc58b50bc451125de09e9cc2f1f86fd36d2d8146f",
+    "bytes": 3086201,
+    "response_unchanged": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "phase": "host_browser_checks_complete",
+  "checks": [
+    "Emit through committed Notes API",
+    "Replay without duplicate callback",
+    "Dispose and show native Notes",
+    "Check workspace B viewer limits"
+  ],
+  "counts": {
+    "callbacks": 29,
+    "polls": 20,
+    "wakes": 1
+  },
+  "notes": [
+    "38665f3f-3be3-4b6c-8ff3-06ecae606a17",
+    "acc95991-cead-484d-9106-8c23af68d8e6"
+  ],
+  "subscription_ids": [
+    "eee1b1ee-80ae-4b72-ae3b-dd75cb9e470c"
+  ],
+  "failures": [],
+  "disposals": 1,
+  "actual_host_facade": true,
+  "bus_payload_minimized": true,
+  "context": {
+    "workspace_id": "15ba4543-2539-4e66-b367-461700227701",
+    "plugin_id": "org.example.canvas",
+    "generation": 1
+  },
+  "native_Odoo_default": true
+}

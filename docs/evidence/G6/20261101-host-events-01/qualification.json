@@ -1,0 +1,76 @@
+{
+  "result": "passed_scoped_native_events_and_deployed_host",
+  "utc": "2026-11-01T02:53:15.465651+00:00",
+  "image_id": "sha256:4262dffe7d3cdb316d7434a42c54ad1f918d94c4c07f3df860b17d7fcec4e8af",
+  "inventory_digest": "sha256:7e51485f8252019a16a5785d8d7588fb84fb27f80ec13a2278af5c58a148ec31",
+  "generation": 8,
+  "dispatch_generation": 37,
+  "acceptances": [
+    "EVT-01",
+    "EVT-02",
+    "EVT-03"
+  ],
+  "native_original_retained_cases": 14,
+  "current_native_cases": 3,
+  "retained_HTTP_checks": 9,
+  "frontend_source_cases": 13,
+  "retained_corrected_source_browser_cases": 7,
+  "current_actual_host_browser_checks": 4,
+  "actual_Odoo_WebSocket_bus": true,
+  "actual_host_facade": true,
+  "current_served_bundles_unchanged": true,
+  "producer_hook_AST_exact": true,
+  "retained_byte_exact_paths": [
+    "platform_addons/mp_core/event_models.py",
+    "platform_addons/mp_core/async_models.py",
+    "platform_addons/mp_core/controllers.py",
+    "platform_addons/mp_core/dispatch.py",
+    "platform_addons/mp_example_notes_labels/event_projection.py",
+    "platform_addons/mp_example_notes_labels/models.py",
+    "platform_addons/mp_identity/models/scoped.py"
+  ],
+  "changed_functions_and_covered_new_behavior": {
+    "platform_addons/mp_core/events.py": [
+      "_subscription",
+      "dispatch"
+    ],
+    "packages/platform_sdk/modular_platform/event_store.py": [
+      "candidates"
+    ],
+    "packages/platform_sdk/modular_platform/durable.py": [
+      "enqueue"
+    ]
+  },
+  "changed_function_evidence": "Actual core10/identity12 history/replay/paused close/retained consumer tombstone duplicate; original-user semantic job retry; current rollback/scope and browser actual replay/dispose; Notes.7 native batch10. Identity1.2 native20/HTTPtwo-worker requalification retained.",
+  "original_business_authority_bindings_jobs_and_42_envelopes_preserved": true,
+  "retained_browser_notes": [
+    "38665f3f-3be3-4b6c-8ff3-06ecae606a17",
+    "acc95991-cead-484d-9106-8c23af68d8e6"
+  ],
+  "counts": {
+    "jobs": 5,
+    "notes": 27,
+    "events": 44,
+    "subscriptions": 35,
+    "deliveries": 251,
+    "consumptions": 3,
+    "consumer_states": 1,
+    "active_subscriptions": 0,
+    "leased_deliveries": 0
+  },
+  "freeze_files": 94,
+  "protected_configurations": 9,
+  "privacy": {
+    "public_files": 13,
+    "known_values": 127,
+    "findings": 0,
+    "screenshot_visually_reviewed": true
+  },
+  "helpers": "proxy36997 intentionally interrupted after four successful browser checks; finally marker stopped and port18089 closed; created browser tab closed; primary remains live",
+  "limits": [
+    "Native-only populated lifecycle prerequisite F-01e1 and scoped events F-01b2 complete; full G6 remains open for deterministic external worker/artifact/endpoint/scoped credentials/outage and non-idempotent effect/credential reconciliation.",
+    "ID-03 broader native-path audit/UI-09/final G7 qualification still required.",
+    "Earlier real native/HTTP/browser evidence is retained only with the explicitly audited source boundary; no new browser login-UI or production deployment claim."
+  ],
+  "next_action": "F-01c: inspect frozen worker request/response/token and endpoint lifecycle contracts plus existing scoped service gateway, implement minimal deterministic independently operated reference worker. No Canvas/product UI work."
+}
