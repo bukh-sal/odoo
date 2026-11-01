@@ -23,7 +23,9 @@ class RestoreDispatchTests(unittest.TestCase):
         self.root=Path(temporary.name);self.op='00000000-0000-4000-8000-000000000500'
         self.config=dict(sites=[dict(database='mp_disposable_r0_r1_restored')])
         self.store=Mock();self.store.root=self.root;self.store.policy={'allow_noninteractive':True};self.store.status.return_value=dict(state='revoked',phase='restore_verified',traffic_resumed=False)
-        self.store.bundle.return_value=dict(plan=dict(deployment_id='00000000-0000-4000-8000-000000000010',site_ids=['00000000-0000-4000-8000-000000000020']))
+        self.store.bundle.return_value=dict(plan=dict(deployment_id='00000000-0000-4000-8000-000000000010',site_ids=['00000000-0000-4000-8000-000000000020']),operation_lock=dict(release=dict(plugins=[])))
+        checkpoint=self.root/'checkpoints'/self.op;checkpoint.mkdir(parents=True)
+        (checkpoint/'manifest.json').write_text(json.dumps(dict(configuration=self.config)),encoding='utf8')
         directory=self.root/'recoveries'/self.op;directory.mkdir(parents=True);(directory/'result.json').write_text(json.dumps(dict(configuration=self.config)),encoding='utf8')
         self.native=Mock();self.native.store=self.store;self.native.config=self.config
         self.native.observer._container.side_effect=lambda service,**kwargs:service

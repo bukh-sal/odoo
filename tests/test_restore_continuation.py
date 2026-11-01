@@ -64,6 +64,7 @@ class RestoreContinuationTests(unittest.TestCase):
     def test_restored_fence_uses_review_specific_child_namespace(self):
         recovery=object.__new__(RestoreExecutor);recovery.config={};recovery._supported_effects=Mock();recovery.native=Mock()
         helper=Mock();helper.run.side_effect=RuntimeError('Stop after inspected fence call')
+        recovery._dispatch_helper=Mock(return_value=helper)
         decision=dict(operation_id='same-operation',restore_configuration={'sites':[{'database':'source'}]},restored_release_lock={'generation':5},review=dict(review_id='fresh-review'))
         manifest=dict(dispatch_profile=dict(control=dict(release_digest='prior-tag')))
         with patch('modular_platform.dispatch_operator.DispatchMaintenance',return_value=helper):

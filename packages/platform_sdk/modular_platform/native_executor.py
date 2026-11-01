@@ -274,10 +274,12 @@ class NativeExecutor:
             'created_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
         dispatch=directory/'dispatch-fence/fence.json'
         if dispatch.exists() and load_json(dispatch.read_bytes())['result'] is not None:
-            actual=self._dispatch().inspect()
+            helper=self._dispatch();actual=helper.inspect()
             if actual!=load_json(dispatch.read_bytes())['result']['after']:
                 raise OperatorError('Dispatch changed after drain; checkpoint cannot be declared coordinated')
             previous['dispatch_profile']=actual
+            if actual['profile']=='r1-reference-stateless-dispatch-v1':
+                previous['reference_policy']=helper.policy_for(actual)
             previous['external_dispatch']=('Outbound stateless reference profile fenced; independent current publication is not rolled back.'
                 if actual['profile']=='r1-reference-stateless-dispatch-v1' else 'Native queue/receipt profile fenced; remote effects are excluded by this profile.')
         _write_new(checkpoint/'manifest.json', previous)

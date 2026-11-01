@@ -4,6 +4,7 @@ Every request rebuilds a policy from the independently selected release/catalog,
 protected worker configuration/publication and exact read-only DB metadata. This
 is neither an app approval channel nor general external-effect reconciliation.
 """
+import copy
 from pathlib import Path
 from .catalog import Catalog
 from .contracts import load_json
@@ -38,16 +39,22 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
     def __init__(self,native):
         super().__init__(native);self.policies={}
 
+    def _matches_target(self,target,configuration):
+        return all(target[k]==configuration[k] for k in ['deployment_id','project','sites'])
+
+    def _metadata_release(self,configuration,metadata):
+        return configuration['published_release']
+
     def reference_policy(self,configuration):
         self._configuration(configuration)
         worker_path=Path(self.native.target_path).absolute().with_name('worker-target.json')
         reader=WorkerPlanningReader(self.native.store,self.native.target_path,worker_path)
-        if any(reader.target[k]!=configuration[k] for k in ['deployment_id','project','sites']):
+        if not self._matches_target(reader.target,configuration):
             raise OperatorError('Reference worker must belong to the exact independently selected deployment/site')
         publication=reader.publisher._document();observed=reader.planning_state()
         metadata=read_metadata(self.native,configuration)
         catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
-        selected={r['plugin_id']:r for r in configuration['published_release']['plugins']}
+        selected={r['plugin_id']:r for r in self._metadata_release(configuration,metadata)['plugins']}
         registrations=[]
         for row in metadata['installations']:
             if row['runtime']=='native':continue
@@ -99,3 +106,7 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
                 or closed and (not snapshot.get('control') or snapshot['control']['state'] not in {'paused','restoring'})):
             raise OperatorError('Exact reconciled outbound reference profile required; unknown effects/credentials keep dispatch fenced')
         return snapshot
+
+    def policy_for(self,snapshot):
+        self.require_profile(snapshot)
+        return copy.deepcopy(self.policies[snapshot['reference_policy_digest']])

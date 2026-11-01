@@ -12,8 +12,7 @@ from uuid import uuid4
 
 from .catalog import Catalog
 from .contracts import load_json
-from .deployment import DockerObserver,_run
-from .dispatch_operator import DispatchMaintenance
+from .deployment import _run
 from .operator_os import OperatorError,OperationLocks,protect_directory
 from .operator_store import _write_new
 from .plans import data_digest
@@ -78,14 +77,22 @@ class RestoreContinuation:
             input=("SELECT count(*) FROM pg_stat_activity WHERE datname IN ('"+fresh+"','"+r.config['sites'][0]['database']+"') AND usename<>'postgres';").encode())
         if clients.strip()!=b'0':raise OperatorError('Database clients prevent closed restored-target continuation')
         target=copy.deepcopy(proposal['restore_configuration']);target['sites'][0]['database']=fresh
-        helper=DispatchMaintenance(self.native);observed=helper.require_native(helper.inspect_current(configuration=target),closed=True)
+        helper=r._dispatch_helper(manifest=manifest);observed=helper.require_profile(helper.inspect_current(configuration=target),closed=True)
         ignored={'release_digest','state_digest'}
-        if {k:v for k,v in observed.items() if k not in ignored}!={k:v for k,v in profile.items() if k not in ignored}:
+        if profile['profile']=='r1-reference-stateless-dispatch-v1':
+            same=helper.same_restored_dispatch(observed,profile,manifest.get('reference_policy'),checkpoint=True)
+            if not same or not isinstance(request.get('reference'),dict):raise OperatorError('Exact private checkpoint reference fence request required')
+            # A failed pre-fence attempt must have selected the checkpoint
+            # registrations. Current OS publication is independently reread.
+            if {k:v for k,v in request['reference'].items() if k!='publication_digest'}!={k:v for k,v in manifest['reference_policy'].items() if k!='publication_digest'}:
+                raise OperatorError('Reference fence request changed checkpoint scope')
+        else:same={k:v for k,v in observed.items() if k not in ignored}=={k:v for k,v in profile.items() if k not in ignored}
+        if not same:
             raise OperatorError('Restored queues differ from the untouched coordinated checkpoint')
         authority,private=r._authority(fresh);current,current_private=r._authority(r.config['sites'][0]['database'])
         if authority!=proposal['authority'] or current!=authority or private!=current_private:
             raise OperatorError('Current native authority overlay differs; continuation denied')
-        reader=DockerObserver(target);catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
+        reader=r._recovery_observer(target,manifest=manifest);catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
         state=reader.state(reader.read(quiesced=True,missing_worker=True),catalog)['state'];previous=manifest['previous_release']
         if state['release_lock']!=proposal['restored_release_lock'] or any(state[k]!=previous[k] for k in ['installations','bindings']):
             raise OperatorError('Restored release/metadata differs from reviewed checkpoint')
@@ -102,6 +109,7 @@ class RestoreContinuation:
             raise OperatorError('Restored filestore differs from coordinated checkpoint')
         raw=_run(['docker','exec',database,'pg_dump','-U','postgres','--no-owner','--no-privileges',fresh])
         sources=['restore_executor.py','restore_continuation.py','dispatch_operator.py','dispatch_lifecycle.py','dispatch_jobs_maintenance.py']
+        if profile['profile']=='r1-reference-stateless-dispatch-v1':sources+=['reference_recovery.py','reference_dispatch.py','worker_operator.py','worker_publication.py']
         proposal['continuation']=dict(phase='restored_before_first_dispatch_fence',original_decision_digest=data_digest(original),
             diagnostics=records,restored_database_digest=canonical_dump_digest(raw),restored_state_digest=data_digest(state),
             dispatch=observed,filestore_digest=data_digest(files),filestore_files=len(files),

@@ -43,10 +43,20 @@ class UnchangedReleaseRecovery:
     def __init__(self,native):
         self.native=native;self.store=native.store;self.config=native.config;self.observer=native.observer
 
+    def _dispatch(self):
+        # Only the existing typed reference profile opts into metadata-only
+        # registrations. The normal native helper still refuses all externals.
+        from .dispatch_operator import DispatchMaintenance
+        if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
+            from .reference_dispatch import ReferenceDispatchMaintenance
+            return ReferenceDispatchMaintenance(self.native)
+        return DispatchMaintenance(self.native)
+
     def _state(self,operation):
         status=self.store.status(operation);validate_failed_base(status)
         bundle=self.store.bundle(operation);self.store._authorize_plan(bundle['plan'])
-        if (bundle['plan']['operation_type'] in ('suspend','enable') or len(self.config['sites'])!=1
+        external=bool(bundle['plan']['artifacts']) and all(a['runtime']=='external_service' for a in bundle['plan']['artifacts'])
+        if (bundle['plan']['operation_type'] in ('suspend','enable') and not external or len(self.config['sites'])!=1
                 or load_json(self.native.target_path.read_bytes())!=self.config):
             raise OperatorError('Unchanged recovery requires the exact independent single-site native base configuration')
         stage=self.store.root/'stages'/operation
@@ -65,7 +75,8 @@ class UnchangedReleaseRecovery:
         observation=self.observer.read(quiesced=not info['State']['Running'])
         catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
         state=self.observer.state(observation,catalog)['state'];check_bundle(bundle,state)
-        if any(i['runtime']!='native' for s in observation['sites'] for i in s['installations']):
+        reference=any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[]))
+        if not reference and any(i['runtime']!='native' for s in observation['sites'] for i in s['installations']):
             raise OperatorError('External runtimes require dispatch reconciliation')
         validate_base_worker(info,self.config,observation['runtime']['inventory_digest'])
         raw=_run(['docker','exec','-i',self.observer._container('db'),'psql','-X','-qAt','-U','postgres',
@@ -73,14 +84,14 @@ class UnchangedReleaseRecovery:
         edge=self.native._inspect(self.observer._container('edge',stopped=True))
         dispatch=None
         if load_json(raw)['dispatch']:
-            from .dispatch_operator import DispatchMaintenance
-            helper=DispatchMaintenance(self.native);snapshot=helper.require_native(helper.inspect())
+            helper=self._dispatch();snapshot=helper.require_profile(helper.inspect())
             if snapshot['control'] and snapshot['control']['state']=='enabled':
                 # No queue mutation is proposed. Ordinary existing work may
                 # continue, so do not bind a moving per-job hash to this review.
                 dispatch=dict(mode='enabled_unchanged',profile=snapshot['profile'],control=snapshot['control'])
+                if reference:dispatch['reference_policy']=helper.policy_for(snapshot)
             else:
-                helper.require_native(snapshot,closed=True)
+                helper.require_profile(snapshot,closed=True)
                 dispatch=dict(mode='reconcile_paused',snapshot=snapshot)
         value={'schema_version':1,'action':'resume_unchanged_release','operation_id':operation,
                 'plan_hash':bundle['plan_hash'],'configuration':self.config,'base_state_digest':data_digest(state),
@@ -118,12 +129,11 @@ class UnchangedReleaseRecovery:
                 if current.get('dispatch')!=decision['dispatch']:
                     raise OperatorError('Dispatch changed after unchanged-release review')
                 if decision['dispatch']['mode']=='reconcile_paused':
-                    from .dispatch_operator import DispatchMaintenance
-                    helper=DispatchMaintenance(self.native);digest=decision['dispatch']['snapshot']['release_digest']
+                    helper=self._dispatch();digest=decision['dispatch']['snapshot']['release_digest']
                     reconciled=helper.reconcile_jobs(operation,directory/'dispatch-reconcile',previous_release=digest,release_digest=digest,
                         inventory_digest=observation_inventory(current,self.observer),review_id=decision['review']['review_id'])
                     if not reconciled['resume_allowed']:raise OperatorError('Uncertain effects prevent unchanged dispatch resume')
-                    dispatch_ready=helper.require_native(helper.inspect(),closed=True)
+                    dispatch_ready=helper.require_profile(helper.inspect(),closed=True)
                     _write_new(directory/'dispatch-ready.json',dispatch_ready)
             locks.check();reviews.check_reserved(decision,exact_hash=exact_hash)
             self.store.record_unchanged_resume(operation,locks,decision_hash=exact_hash,phase='unchanged_release_ready')
@@ -135,8 +145,7 @@ class UnchangedReleaseRecovery:
             if dispatch_ready is not None:
                 # The durable effects fence above also precedes queue enable,
                 # not just ingress: a native runner may already be waiting.
-                from .dispatch_operator import DispatchMaintenance
-                DispatchMaintenance(self.native).run('enable',operation,directory/'dispatch-enable',
+                self._dispatch().run('enable',operation,directory/'dispatch-enable',
                     review_id=decision['review']['review_id'],release_digest=dispatch_ready['release_digest'],expected_digest=dispatch_ready['state_digest'])
             if not current['edge']['running']:_run(['docker','start',current['edge']['id']])
             if not self.native._inspect(current['edge']['id'])['State']['Running']:

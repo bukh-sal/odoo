@@ -12,10 +12,10 @@ class NativeDispatchResumeTests(unittest.TestCase):
         self.base=legacy.RestoreDispatchTests();self.base.setUp();self.addCleanup(self.base.doCleanups)
         b=self.base;b.effects.update(job_table=True,outbox_table=True);b.authority['has_dispatch_tables']=True
         self.snapshot=dict(profile='r1-native-dispatch-v1',schema_digest='sha256:'+'a'*64,release_digest='sha256:'+'b'*64,state_digest='sha256:'+'c'*64,
-            control=dict(state='paused',generation=7),tables={},uncertain_jobs=0)
+            control=dict(state='paused',generation=7),tables={},uncertain_jobs=0,external_installations=0)
         path=b.root/'recoveries'/b.op/'result.json';result=json.loads(path.read_text());result['dispatch']=copy.deepcopy(self.snapshot);path.write_text(json.dumps(result))
         self.helper=Mock();self.helper.inspect_current.side_effect=lambda **kwargs:copy.deepcopy(self.snapshot)
-        self.helper.require_native.side_effect=lambda value,**kwargs:value
+        self.helper.require_profile.side_effect=lambda value,**kwargs:value
         def enable(*args,**kwargs):b.timeline.append('enable');return dict(dispatch_enabled=True)
         self.helper.run.side_effect=enable
         p=patch('modular_platform.dispatch_operator.DispatchMaintenance',return_value=self.helper);p.start();self.addCleanup(p.stop)

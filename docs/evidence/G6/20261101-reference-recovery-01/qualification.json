@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-01T07:39:35.210781+00:00",
+  "result": "passed",
+  "tests": 57,
+  "suites": [
+    {
+      "suite": "test_reference_recovery",
+      "tests": 15,
+      "successful": true,
+      "transcript": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.035s\n\nOK\n"
+    },
+    {
+      "suite": "test_restore_dispatch",
+      "tests": 11,
+      "successful": true,
+      "transcript": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.064s\n\nOK\n"
+    },
+    {
+      "suite": "test_restore_continuation",
+      "tests": 6,
+      "successful": true,
+      "transcript": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.017s\n\nOK\n"
+    },
+    {
+      "suite": "test_native_dispatch_resume",
+      "tests": 4,
+      "successful": true,
+      "transcript": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.034s\n\nOK\n"
+    },
+    {
+      "suite": "test_metadata_executor",
+      "tests": 8,
+      "successful": true,
+      "transcript": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.300s\n\nOK\n"
+    },
+    {
+      "suite": "test_core_upgrade",
+      "tests": 8,
+      "successful": true,
+      "transcript": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.081s\n\nOK\n"
+    },
+    {
+      "suite": "test_executor_crash_fence",
+      "tests": 5,
+      "successful": true,
+      "transcript": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nOK\n"
+    }
+  ],
+  "sources": {
+    "reference_recovery.py": "634d49b61709d66f0cb559c5ee334457cd136a4e617fee4337ab3002f6ae208d",
+    "reference_dispatch.py": "12a8ad918e94d2adee98ed9f1f0698e722a1ddc7a586fc0f888198d19981c75f",
+    "restore_executor.py": "ccf6128dc1477dd59f17de106d705cfed8ac2d604419a6abb2b758b26c15276b",
+    "restore_continuation.py": "f7bf9de3ecb6622d1737c398dcd0202b648c9efa353d0b490236ae7950b08992",
+    "unchanged_recovery.py": "4f057c91ff64ad11cec0a5a1cb00407f901e77c26a300e3561d4c55968042550",
+    "native_executor.py": "2a5bdb1ed793caeff02806361cc8eff7b9addccdbc6ff4a4a1e289b7d6c796c8",
+    "metadata_executor.py": "b35a920dc11bbcb0e0ff248437f31975e5c84c1cfdca5abe8447043dd980eac2",
+    "dispatch_operator.py": "c3dc417eb323fae239291587f028d4e70f4d9851a0c740e2b6af57d38104f33a"
+  },
+  "cli_sha256": "59f497dc798eee7623e776cf520c4f0f12e363c670c279e83804bd7ddfa8cfb0",
+  "scope": "Host source only; recovery Docker/SQL/checkpoint effects substituted. Real OS journals have separate retained evidence.",
+  "installed": false,
+  "actual_metadata_recovery": false,
+  "new_docker_assets": 0,
+  "acceptance_credit": false,
+  "limits": [
+    "Known reference immutable worker image only; changed-image transition is not qualified.",
+    "No real checkpoint, fresh database restore, runtime launch, endpoint publication or remote IO in these suites.",
+    "Unknown effects, live technical credentials, API keys, unknown release metadata and stale queue state remain refused."
+  ]
+}

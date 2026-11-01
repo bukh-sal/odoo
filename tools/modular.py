@@ -287,7 +287,12 @@ def main(argv=None):
             from modular_platform.restore_executor import RestoreExecutor
             from modular_platform.operator_os import OperatorError
             from modular_platform.plans import data_digest
-            recovery = RestoreExecutor(NativeExecutor(OperatorStore(args.store),args.deployment_config,args.catalog,validator))
+            store=OperatorStore(args.store);bundle=store.bundle(args.operation_id)
+            executor=NativeExecutor
+            if bundle['plan']['artifacts'] and all(a['runtime']=='external_service' for a in bundle['plan']['artifacts']):
+                from modular_platform.metadata_executor import ReferenceMetadataExecutor
+                executor=ReferenceMetadataExecutor
+            recovery = RestoreExecutor(executor(store,args.deployment_config,args.catalog,validator))
             if args.recovery_action in ('prepare-unchanged-resume','resume-unchanged'):
                 from modular_platform.unchanged_recovery import UnchangedReleaseRecovery
                 recovery=UnchangedReleaseRecovery(recovery.native)
