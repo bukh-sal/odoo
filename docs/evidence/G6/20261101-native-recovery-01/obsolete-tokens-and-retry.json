@@ -1,0 +1,6 @@
+{
+  "result": "passed_obsolete_claim_receipt_and_pre_effect_semantic_retry",
+  "old_claim_denied": true,
+  "old_receipt_denied": true,
+  "original_row_unchanged": true
+}

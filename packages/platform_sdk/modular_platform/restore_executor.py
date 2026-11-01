@@ -1,8 +1,9 @@
 """Explicit exact-hash restore into a NEW disposable database, traffic closed.
 
-This first profile has no jobs/outbox/external runtimes. It retains the failed
-database and original filestore, rotates sessions/technical credentials, and
-reconciles current human revocations before starting the restored registry.
+Retains the failed database and original filestore, rotates sessions/technical
+credentials, and reconciles current human revocations before registry startup.
+Only the recognized native queue profile has a reviewed reconciliation path;
+external effects and unknown queue/credential state remain refused.
 """
 import configparser
 import copy
@@ -224,9 +225,16 @@ class RestoreExecutor:
         return proposal
 
     def prepare(self,operation):
+        directory=self.store.root/'recoveries'/operation
+        if directory.exists():
+            from .restore_continuation import RestoreContinuation
+            return RecoveryReviews(self.store).issue(RestoreContinuation(self).state(operation))
         return RecoveryReviews(self.store).issue(self._restore_state(operation))
 
     def execute(self, decision, *, exact_hash, noninteractive=False):
+        if 'continuation' in decision:
+            from .restore_continuation import RestoreContinuation
+            return RestoreContinuation(self).execute(decision,exact_hash=exact_hash,noninteractive=noninteractive)
         operation = decision['operation_id']
         bundle = self.store.bundle(operation)
         with OperationLocks(self.store.root/'locks',bundle['plan']['deployment_id'],bundle['plan']['site_ids']) as locks:
@@ -265,83 +273,87 @@ class RestoreExecutor:
                 directory/'filestore.log',input=(checkpoint/'filestore.tar.gz').read_bytes())
             _run(['docker','exec','-i',database,'psql','-X','-q','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1','--single-transaction'],
                 input=(authority_sql(decision['authority'])+overlay_sql(private_native_auth)+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
-            # The restored checkpoint may resurrect effects absent in the failed
-            # DB. Reject unsupported state before configuration/registry startup.
-            target=copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database']=fresh
-            dispatch_profile=manifest.get('dispatch_profile')
-            self._supported_effects(fresh,dispatch_profile=dispatch_profile,configuration=target)
-            if dispatch_profile is not None:
-                from .dispatch_operator import DispatchMaintenance
-                fence=DispatchMaintenance(self.native).run('fence',operation,directory/'dispatch-fence',configuration=target,
-                    release_digest=data_digest(decision['restored_release_lock']),control_release=dispatch_profile['control']['release_digest'])
-                DispatchMaintenance.require_native(fence['after'],closed=True)
-            # Copy the old exact config to the private recovery directory before
-            # replacing only its DB target. No secrets enter public evidence.
-            args,name = self.native._child(operation,'read-config',network=False)
-            old_config = _run(args+['-c',"from pathlib import Path;print(Path('/run/secrets/odoo_config').read_text(),end='')"])
-            with (directory/'previous-odoo.conf').open('xb') as stream:stream.write(old_config)
-            parser = configparser.ConfigParser();parser.read_string(old_config.decode())
-            if parser['options']['db_name'] != self.config['sites'][0]['database'] or parser['options'].getint('max_cron_threads') != 0:
-                raise OperatorError('Unexpected configuration/dispatch target')
-            parser['options']['db_name'] = fresh;parser['options']['dbfilter'] = '^'+fresh+'$'
-            buffer = io.StringIO();parser.write(buffer)
-            code = "import pathlib,sys; p=pathlib.Path('/config/odoo_config'); p.write_bytes(sys.stdin.buffer.read()); p.chmod(0o444)"
-            args = ['docker','run','--rm','-i','--user','0:0','--network','none','--read-only','--cap-drop','ALL',
-                '--mount','type=volume,source='+self.config['project']+'_appconfig,target=/config','--entrypoint','/venv/bin/python',self.config['image_id'],'-c',code]
-            # The file is read-only. A new file under the protected parent is
-            # atomically replaced, preserving the previous bytes privately.
-            args[-1] = "import os,pathlib,sys; p=pathlib.Path('/config/odoo_config'); t=p.with_name('restore-config.tmp'); f=t.open('xb'); f.write(sys.stdin.buffer.read()); f.flush(); os.fsync(f.fileno()); f.close(); t.chmod(0o444); os.replace(t,p)"
-            RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
-            _run(args,input=buffer.getvalue().encode())
-            target = copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database'] = fresh
-            RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
-            # Hash/project restored metadata with retained code offline before
-            # any ORM startup; never boot the failed new image to restore it.
-            observer=DockerObserver(target)
-            snapshot=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
-            restored=observer.state(observer.read(quiesced=True,missing_worker=True),snapshot)['state']
-            previous=load_json((checkpoint/'manifest.json').read_bytes())['previous_release']
-            if (restored['release_lock']!=decision['restored_release_lock'] or restored['installations']!=previous['installations']
-                    or restored['bindings']!=previous['bindings']):
-                raise OperatorError('Restored release/installation/bindings differ from reviewed checkpoint')
-            app=ensure(target,target['image_id'],operation,inventory_digest=restored['release_lock']['core_inventory_digest'],suffix='restore')
-            target['worker_id']=app
-            _write_new(directory/'worker-replacement.json',{'configuration':target,'container_id':app})
-            temporary = self.native.target_path.with_name(self.native.target_path.name+'.restore-'+operation+'.tmp')
-            _write_new(temporary,target);os.replace(temporary,self.native.target_path)
-            _run(['docker','start',app])
-            wait_ready(app)
-            observer = DockerObserver(target)
-            running=observer.state(observer.read(),snapshot)['state']
-            if running!=restored:raise OperatorError('Restored worker observation differs from verified offline state')
-            from .profile_channel import publish_profile
-            if observer.read()['runtime'].get('published_release_protocol')==1:
-                self.native._prepare_assets(operation, target, restored, observer.read(), directory,
-                                            suffix='restored-assets')
-                _write_new(directory/'profile-publication.json',publish_profile(observer,
-                    Catalog(self.native.catalog_root,self.native.validator,readonly=True)))
-            else:
-                _write_new(directory/'profile-publication.json',{'state':'deferred_legacy_reader',
-                    'reason':'Retained legacy image has no published-release reader; preserve its cache and use the independent CLI until a compatible release is approved.'})
-            actual_authority,_ = self._authority(fresh)
-            if actual_authority != decision['authority']:
-                raise OperatorError('Restored authority differs from current reconciled snapshot')
-            dispatch_ready=None
-            if dispatch_profile is not None:
-                from .dispatch_operator import DispatchMaintenance
-                helper=DispatchMaintenance(self.native);digest=data_digest(decision['restored_release_lock'])
-                jobs=helper.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
-                    previous_release=digest,release_digest=digest,inventory_digest=restored['release_lock']['core_inventory_digest'])
-                if not jobs['resume_allowed']:raise OperatorError('Restored uncertain effects require independent reconciliation')
-                dispatch_ready=helper.require_native(helper.inspect(configuration=target),closed=True)
-                _write_new(directory/'dispatch-ready.json',dispatch_ready)
-            self.store.record_restore(operation,locks,code='restore_verified',details={'fresh_database':fresh,'decision_hash':exact_hash,
-                'failed_database_retained':True,'traffic_resumed':False,'session_secret_rotated':True,'technical_credentials_revoked':True})
-            result={'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth)}
-            if dispatch_ready is not None:result['dispatch']=dispatch_ready
-            _write_new(directory/'result.json',result)
-            return {'state':'restored_verified','fresh_database':fresh,'failed_database_retained':True,'keep_traffic_closed':True,
-                'operation_status':self.store.status(operation)}
+            return self._complete_restore(decision,exact_hash=exact_hash,locks=locks,directory=directory,checkpoint=checkpoint,manifest=manifest,fresh=fresh,private_native_auth=private_native_auth)
+
+    def _complete_restore(self,decision,*,exact_hash,locks,directory,checkpoint,manifest,fresh,private_native_auth,dispatch_directory=None):
+        operation=decision['operation_id']
+        # The restored checkpoint may resurrect effects absent in the failed
+        # DB. Reject unsupported state before configuration/registry startup.
+        target=copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database']=fresh
+        dispatch_profile=manifest.get('dispatch_profile')
+        self._supported_effects(fresh,dispatch_profile=dispatch_profile,configuration=target)
+        if dispatch_profile is not None:
+            from .dispatch_operator import DispatchMaintenance
+            fence=DispatchMaintenance(self.native).run('fence',operation,(dispatch_directory or directory)/'dispatch-fence',configuration=target,review_id=decision['review']['review_id'],
+                release_digest=data_digest(decision['restored_release_lock']),control_release=dispatch_profile['control']['release_digest'])
+            DispatchMaintenance.require_native(fence['after'],closed=True)
+        # Copy the old exact config to the private recovery directory before
+        # replacing only its DB target. No secrets enter public evidence.
+        args,name = self.native._child(operation,'read-config',network=False)
+        old_config = _run(args+['-c',"from pathlib import Path;print(Path('/run/secrets/odoo_config').read_text(),end='')"])
+        with (directory/'previous-odoo.conf').open('xb') as stream:stream.write(old_config)
+        parser = configparser.ConfigParser();parser.read_string(old_config.decode())
+        if parser['options']['db_name'] != self.config['sites'][0]['database'] or parser['options'].getint('max_cron_threads') != 0:
+            raise OperatorError('Unexpected configuration/dispatch target')
+        parser['options']['db_name'] = fresh;parser['options']['dbfilter'] = '^'+fresh+'$'
+        buffer = io.StringIO();parser.write(buffer)
+        code = "import pathlib,sys; p=pathlib.Path('/config/odoo_config'); p.write_bytes(sys.stdin.buffer.read()); p.chmod(0o444)"
+        args = ['docker','run','--rm','-i','--user','0:0','--network','none','--read-only','--cap-drop','ALL',
+            '--mount','type=volume,source='+self.config['project']+'_appconfig,target=/config','--entrypoint','/venv/bin/python',self.config['image_id'],'-c',code]
+        # The file is read-only. A new file under the protected parent is
+        # atomically replaced, preserving the previous bytes privately.
+        args[-1] = "import os,pathlib,sys; p=pathlib.Path('/config/odoo_config'); t=p.with_name('restore-config.tmp'); f=t.open('xb'); f.write(sys.stdin.buffer.read()); f.flush(); os.fsync(f.fileno()); f.close(); t.chmod(0o444); os.replace(t,p)"
+        RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
+        _run(args,input=buffer.getvalue().encode())
+        target = copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database'] = fresh
+        RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
+        # Hash/project restored metadata with retained code offline before
+        # any ORM startup; never boot the failed new image to restore it.
+        observer=DockerObserver(target)
+        snapshot=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
+        restored=observer.state(observer.read(quiesced=True,missing_worker=True),snapshot)['state']
+        previous=load_json((checkpoint/'manifest.json').read_bytes())['previous_release']
+        if (restored['release_lock']!=decision['restored_release_lock'] or restored['installations']!=previous['installations']
+                or restored['bindings']!=previous['bindings']):
+            raise OperatorError('Restored release/installation/bindings differ from reviewed checkpoint')
+        app=ensure(target,target['image_id'],operation,inventory_digest=restored['release_lock']['core_inventory_digest'],suffix='restore')
+        target['worker_id']=app
+        _write_new(directory/'worker-replacement.json',{'configuration':target,'container_id':app})
+        temporary = self.native.target_path.with_name(self.native.target_path.name+'.restore-'+operation+'.tmp')
+        _write_new(temporary,target);os.replace(temporary,self.native.target_path)
+        _run(['docker','start',app])
+        wait_ready(app)
+        observer = DockerObserver(target)
+        running=observer.state(observer.read(),snapshot)['state']
+        if running!=restored:raise OperatorError('Restored worker observation differs from verified offline state')
+        from .profile_channel import publish_profile
+        if observer.read()['runtime'].get('published_release_protocol')==1:
+            self.native._prepare_assets(operation, target, restored, observer.read(), directory,
+                                        suffix='restored-assets')
+            _write_new(directory/'profile-publication.json',publish_profile(observer,
+                Catalog(self.native.catalog_root,self.native.validator,readonly=True)))
+        else:
+            _write_new(directory/'profile-publication.json',{'state':'deferred_legacy_reader',
+                'reason':'Retained legacy image has no published-release reader; preserve its cache and use the independent CLI until a compatible release is approved.'})
+        actual_authority,_ = self._authority(fresh)
+        if actual_authority != decision['authority']:
+            raise OperatorError('Restored authority differs from current reconciled snapshot')
+        dispatch_ready=None
+        if dispatch_profile is not None:
+            from .dispatch_operator import DispatchMaintenance
+            helper=DispatchMaintenance(self.native);digest=data_digest(decision['restored_release_lock'])
+            jobs=helper.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
+                previous_release=digest,release_digest=digest,inventory_digest=restored['release_lock']['core_inventory_digest'],review_id=decision['review']['review_id'])
+            if not jobs['resume_allowed']:raise OperatorError('Restored uncertain effects require independent reconciliation')
+            dispatch_ready=helper.require_native(helper.inspect(configuration=target),closed=True)
+            _write_new(directory/'dispatch-ready.json',dispatch_ready)
+        self.store.record_restore(operation,locks,code='restore_verified',details={'fresh_database':fresh,'decision_hash':exact_hash,
+            'failed_database_retained':True,'traffic_resumed':False,'session_secret_rotated':True,'technical_credentials_revoked':True})
+        result={'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth)}
+        if dispatch_ready is not None:result['dispatch']=dispatch_ready
+        _write_new(directory/'result.json',result)
+        return {'state':'restored_verified','fresh_database':fresh,'failed_database_retained':True,'keep_traffic_closed':True,
+            'operation_status':self.store.status(operation)}
 
     def _resume_state(self, operation):
         status = self.store.status(operation)

@@ -1,0 +1,11 @@
+{
+  "result": "passed_real_inventoried_runner_on_fresh_restored_database",
+  "output": {
+    "job_id": "0ab73694-69ea-417b-8b24-fb28124c952d",
+    "state": "completed"
+  },
+  "inventory_digest": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "image_id": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "database": "mp_disposable_r0_r1_restore_8090a1a813ee42e299809369a79bd78a",
+  "source_injection": false
+}

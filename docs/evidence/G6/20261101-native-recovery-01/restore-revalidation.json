@@ -1,0 +1,54 @@
+{
+  "result": "passed_targeted_restore_revalidation",
+  "utc": "2026-11-01T01:11:49.427239+00:00",
+  "current_tests": [
+    {
+      "file": "test_restore_dispatch.py",
+      "passed": 11,
+      "tool_chunk": "92a9ca"
+    },
+    {
+      "file": "test_native_dispatch_resume.py",
+      "passed": 4,
+      "tool_chunk": "bf6168"
+    },
+    {
+      "file": "test_restore_continuation.py",
+      "passed": 6,
+      "tool_chunk": "e8afea"
+    }
+  ],
+  "current_passed": 21,
+  "retained_unchanged_checks": 28,
+  "total_distinct": 49,
+  "retained_actual_legacy_SQL_profile": "../20261101-carryforward-01/legacy-profile.json",
+  "retained_methods_AST_exact": [
+    "__init__",
+    "_authority",
+    "_supported_effects",
+    "_source_dispatch",
+    "_restore_state",
+    "_resume_state",
+    "prepare_resume",
+    "revoke_review",
+    "resume"
+  ],
+  "unchanged_source_sha256": {
+    "packages/platform_sdk/modular_platform/native_executor.py": "0b9b7b8773e8f61add46a8ec6aed4ddf5e5b12121d113e26b076c6f9f048581c",
+    "packages/platform_sdk/modular_platform/unchanged_recovery.py": "574ecc2f59fbfd7e41fe287ef6f41334d4f8b7798f821d0e24680a54de398f61",
+    "packages/platform_sdk/modular_platform/native_auth_recovery.py": "75cc9ae73facf5d4d53c4ea4017288baa4c081f4076473219f5e6259b5246882",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+    "packages/platform_sdk/modular_platform/operator_store.py": "75a5e7136e7ff8c8b9126bfb7bb87cf85caef0760874a3c43dd2f3b236508dd9"
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/restore_executor.py": "317f630b00ca4600add17930e3b365049891c4b13e216490ee454ce89c97973d",
+    "packages/platform_sdk/modular_platform/restore_continuation.py": "9fb3600dd42621e09e45dba1cb5ceeb0aa7c0b6bbf2b77b225fcf19a95546d54",
+    "tests/test_restore_continuation.py": "0edfc67fd0657d2fb3e98703532076218bcd0fcabd5084fc73c9815d1867d469"
+  },
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "limits": [
+    "Initial continuation test loader lacked project SDK sys.path and ran no tests; fixed fixture import only, six actual cases then pass.",
+    "New partial native continuation still needs real exact-review execution; no actual native fault/fresh restore pass from source tests alone."
+  ]
+}

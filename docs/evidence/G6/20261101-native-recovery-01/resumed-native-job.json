@@ -1,0 +1,19 @@
+{
+  "result": "passed_original_user_resumed_effect_and_obsolete_tokens",
+  "job_id": "0ab73694-69ea-417b-8b24-fb28124c952d",
+  "note_id": "33a105b1-d71b-4825-9655-d940addfd6d0",
+  "revision": 2,
+  "attempts": 2,
+  "write_uid": 6,
+  "outcome": {
+    "changed": true,
+    "note_id": "33a105b1-d71b-4825-9655-d940addfd6d0",
+    "revision": 2
+  },
+  "original_input_key_trace_deadline_budget_preserved": true,
+  "semantic_retry_before_effect_same_ID": true,
+  "old_claim_denied_before_and_after_effect": true,
+  "old_receipt_denied": true,
+  "receipt_expiry_limit": "Fifteen-second event lease expired during real reviewed recovery; generation advanced and subscription closed are independently verified. Immediate within-lease invalidation was proved by native lifecycle tests.",
+  "one_native_revision_two_event": true
+}

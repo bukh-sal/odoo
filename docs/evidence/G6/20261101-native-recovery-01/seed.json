@@ -1,0 +1,11 @@
+{
+  "result": "seeded_original_actor_native_job_and_event_lease",
+  "job_id": "0ab73694-69ea-417b-8b24-fb28124c952d",
+  "note_id": "33a105b1-d71b-4825-9655-d940addfd6d0",
+  "attempts": 1,
+  "max_attempts": 5,
+  "fixture_timeout_seconds": 3600,
+  "production_timeout_seconds": 120,
+  "policy": "Trusted once-only native test enqueue scheduling policy; actual registered handler/schema/effect/permissions unchanged; stored deadline will never be extended.",
+  "private_claim_receipt_and_trace_retained": true
+}

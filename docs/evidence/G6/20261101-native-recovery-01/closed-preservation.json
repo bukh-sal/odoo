@@ -1,0 +1,36 @@
+{
+  "result": "passed_closed_fresh_native_restore",
+  "operation_id": "8090a1a8-13ee-42e2-9980-9369a79bd78a",
+  "generation": 5,
+  "failed_database_retained": true,
+  "business_COPY_exact": [
+    {
+      "table": "mp_example_note",
+      "rows": 24,
+      "sha256": "763fd3fd5da13830bf69cda821156cfd614b4465232a7792af6c08a4beb896ed",
+      "checkpoint_data_exact": true
+    },
+    {
+      "table": "mp_example_canvas_board",
+      "rows": 0,
+      "sha256": "4b41f7e9d7e20bf2a9a0aac00d195237f4904038ac74c93e76b7a0dcbfeeb3de",
+      "checkpoint_data_exact": true
+    },
+    {
+      "table": "mp_example_note_event_summary",
+      "rows": 3,
+      "sha256": "3747a0e527231f8de689b3ee58d4f5bf0b27ea0af2cda47960107429e34c7c8a",
+      "checkpoint_data_exact": true
+    }
+  ],
+  "original_actor_input_key_trace_attempts_deadline_and_result_preserved": true,
+  "job_requeued_within_original_budget": true,
+  "obsolete_claim_generation_advanced": true,
+  "obsolete_receipt_cleared_and_subscription_closed": true,
+  "current_native_authority_and_private_auth_exact": true,
+  "original_installations_and_bindings_exact": true,
+  "producer_and_consumer_history_exact": true,
+  "dispatch": "paused",
+  "traffic_closed": true,
+  "requires_separate_reviewed_resume": true
+}

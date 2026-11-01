@@ -1,0 +1,9 @@
+{
+  "result": "passed_exact_partial_target_readonly_inspection",
+  "phase": "restored_before_first_dispatch_fence",
+  "filestore_files": 42,
+  "restored_database_digest": "sha256:f6f988396181c7c25bf600897ed63d5068d8add6f356eaacf8dd0ed39079cd06",
+  "source_and_current_auth_exact": true,
+  "checkpoint_queue_metadata_exact": true,
+  "no_DB_or_filestore_or_auth_replay": true
+}

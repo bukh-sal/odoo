@@ -1,0 +1,76 @@
+{
+  "result": "passed_populated_native_fault_restore_and_separate_resume",
+  "utc": "2026-11-01T01:19:17.230424+00:00",
+  "gate": "G6 partial F-01e1; not a gate pass",
+  "source_commit_before_change": "a52570d48a1a41620161a76bf01c47b36ae81652",
+  "operation_id": "8090a1a8-13ee-42e2-9980-9369a79bd78a",
+  "image_unchanged": "sha256:a3376530cca7ee4008433deb49a5d2c61e1981ee483d7950b99607e9ca700e63",
+  "inventory_digest_unchanged": "sha256:b81a4d691a87830b4db97c75542cc5edec9c85be310b29edceef5e71eadbf231",
+  "generation_before": 3,
+  "generation_after": 5,
+  "failed_database": "mp_disposable_r0_r1_g6_4bb76636070f",
+  "restored_database": "mp_disposable_r0_r1_restore_8090a1a813ee42e299809369a79bd78a",
+  "queue_snapshot": {
+    "jobs": 4,
+    "notes": 24,
+    "outbox": 34,
+    "deliveries": 220,
+    "job_states": {
+      "completed": 2,
+      "dead_letter": 2
+    },
+    "consumptions": 3,
+    "control_state": "enabled",
+    "subscriptions": 32,
+    "consumer_states": 1,
+    "leased_deliveries": 0,
+    "control_generation": 25,
+    "active_subscriptions": 0
+  },
+  "normal_scoped_install_proof": "../20261101-carryforward-01/scoped-install-qualification.json",
+  "native_fault": "Real exact approved Labels-C native child exit0, controlled host exception before metadata/traffic; original operation retired after verified restore.",
+  "restore": "Fresh DB/dump/42files/currentauth overlay completed once. Retained Docker helper-name collision before restored fence; new review-specific names plus newly exact reviewed pre-fence continuation completed only remaining setup on SAME target. Separate fresh final-resume review.",
+  "closed_business_authority_budget_proof": "closed-preservation.json",
+  "actual_inventoried_runner_proof": "guarded-runner.json",
+  "original_actor_effect_and_obsolete_token_proof": "resumed-native-job.json",
+  "native_views_and_scoped_HTTP_proof": "resumed-HTTP.json",
+  "source_checks": {
+    "current": 21,
+    "retained_unchanged": 28,
+    "total_distinct": 49,
+    "evidence": "restore-revalidation.json"
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/restore_executor.py": "317f630b00ca4600add17930e3b365049891c4b13e216490ee454ce89c97973d",
+    "packages/platform_sdk/modular_platform/restore_continuation.py": "9fb3600dd42621e09e45dba1cb5ceeb0aa7c0b6bbf2b77b225fcf19a95546d54",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "d3200e1cc135228e975b13321961fdad4068fd7ba769ed856849c074068a7dda",
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "91404af0c557c77e6550d9416475575a22e210e71eb3400f3bdd7106da5074d4",
+    "platform_addons/mp_core/job_dispatch.py": "90bf5cdb6ffd1097bc0d7fd1ac68c20aa1228458618a17b13166eb5b689a9fd8",
+    "tests/test_restore_continuation.py": "0edfc67fd0657d2fb3e98703532076218bcd0fcabd5084fc73c9815d1867d469"
+  },
+  "frozen_files": 94,
+  "protected_configurations": 9,
+  "privacy": {
+    "public_files_scanned": 33,
+    "known_values": 127,
+    "findings": 0
+  },
+  "rough_progress_percent": 85,
+  "acceptance_counts": {
+    "passed": 88,
+    "not_run": 11,
+    "invalidated": 0,
+    "failed": 0,
+    "excluded_R2": 5
+  },
+  "goal_turn": "progress",
+  "limits": [
+    "Physical business/producer/dedup history preserved; compatible old-release event delivery remains unqualified until actual versioned core fix.",
+    "Event lease expired during this real reviewed workflow; old receipt denial/cleared token/advanced generation/closed subscription supplement the earlier within-lease native fence test.",
+    "Fixture explicitly enqueued one new job with one-hour native scheduling policy; production120-second default and all stored deadlines/attempt budgets unchanged.",
+    "Pre-native unchanged-release recovery and normal populated new-image core/plugin upgrades remain required F-01e1.",
+    "Native-only profile refuses external/live credentials/uncertain effects pending F-01e2; managed worker/effect-ledger/credential integration and JOB03/SVC/full G6/G7 remain.",
+    "No Canvas/UI expansion, production/public deployment, global Python change or unknown data reset."
+  ],
+  "next_action": "New same-image Labels-C pre-native failure then exact reviewed unchanged-release resume on current config5/fresh DB; preserve existing rows/operations. Then distinct versioned core-only and Notes upgrades plus actual host/bus/browser/native batch/event-history fixes; external worker/effects/credentials and full R1 remain."
+}

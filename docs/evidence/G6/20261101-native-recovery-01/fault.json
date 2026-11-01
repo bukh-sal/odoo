@@ -1,0 +1,137 @@
+{
+  "result": "expected_post_native_commit_fault",
+  "operation_id": "8090a1a8-13ee-42e2-9980-9369a79bd78a",
+  "status": {
+    "operation_id": "8090a1a8-13ee-42e2-9980-9369a79bd78a",
+    "plan_hash": "sha256:c907459f8722c11e0e0b563b49167eebddaaa8e273790df6096e78224fa80b88",
+    "state": "recovery_required",
+    "phase": "mutation_started",
+    "mutation_started": true,
+    "traffic_resumed": false,
+    "backup_id": "8090a1a8-13ee-42e2-9980-9369a79bd78a",
+    "approval_expires_at": "2026-11-01T01:20:01Z",
+    "history": [
+      {
+        "sequence": 29,
+        "utc": "2026-11-01T01:04:50Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:c907459f8722c11e0e0b563b49167eebddaaa8e273790df6096e78224fa80b88"
+        }
+      },
+      {
+        "sequence": 30,
+        "utc": "2026-11-01T01:05:01Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:c907459f8722c11e0e0b563b49167eebddaaa8e273790df6096e78224fa80b88"
+        }
+      },
+      {
+        "sequence": 31,
+        "utc": "2026-11-01T01:05:25Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 31832,
+          "lock_owner_digest": "sha256:bfe0df3bda9d84793ffdae64a6a74f369e147fb4136010a8fc5905dcec2b73a2"
+        }
+      },
+      {
+        "sequence": 32,
+        "utc": "2026-11-01T01:05:37Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 33,
+        "utc": "2026-11-01T01:05:41Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 34,
+        "utc": "2026-11-01T01:05:46Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 35,
+        "utc": "2026-11-01T01:05:56Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "8090a1a8-13ee-42e2-9980-9369a79bd78a"
+        }
+      },
+      {
+        "sequence": 36,
+        "utc": "2026-11-01T01:06:02Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 37,
+        "utc": "2026-11-01T01:06:05Z",
+        "code": "recovery_required",
+        "details": {
+          "code": "MUTATION_FAILED"
+        }
+      }
+    ]
+  },
+  "checkpoint_dispatch_profile": {
+    "active_credentials": 0,
+    "api_keys": 0,
+    "control": {
+      "generation": 22,
+      "release_digest": "sha256:6845d53e5c5639dbfb0d1564bc32c3ffd97683b883de0955af577f9acd44f78c",
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "state": "paused"
+    },
+    "event_receipts": true,
+    "external_installations": 0,
+    "job_states": {
+      "completed": 1,
+      "dead_letter": 2,
+      "held": 1
+    },
+    "profile": "r1-native-dispatch-v1",
+    "release_digest": "sha256:6845d53e5c5639dbfb0d1564bc32c3ffd97683b883de0955af577f9acd44f78c",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "state_digest": "sha256:6da4ac43bec8f35479245e8a69b89ba84cc85946dc48e2d0fc6047cf06e2f40f",
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "1a6532555ea86dd66e46ded2290f773f8a10bd5c991e4ceda70be2ccac393c91"
+      },
+      "mp_event_consumer_state": {
+        "rows": 1,
+        "sha256": "20b5c232ced02ce62e3728583592703215feb13caa5aa8f4f1d07f22b025b34f"
+      },
+      "mp_event_consumption": {
+        "rows": 3,
+        "sha256": "ec04be3ea0534e612209c0f03241a47e0aa91c7e877e1e2952a8d9d3e880a556"
+      },
+      "mp_event_delivery": {
+        "rows": 220,
+        "sha256": "b83b537ba640eca9c6821285cb089fe0bb8cccfe601aed304ea55b82b2076d71"
+      },
+      "mp_event_subscription": {
+        "rows": 32,
+        "sha256": "f467b6ce6de794367c98646a151fa884318bf83458d5aeabb90c4f11051ce7b2"
+      },
+      "mp_job": {
+        "rows": 4,
+        "sha256": "5b1dbb88db02dc12459dd5f3ebaff9d9a55f097fee01374a5131122255529862"
+      },
+      "mp_outbox": {
+        "rows": 33,
+        "sha256": "c8f7dd01370d066d5d0aaa37066bdd37737ab9007274e860948c734be2195675"
+      }
+    },
+    "uncertain_jobs": 0
+  },
+  "native_child_returned_exit0": true,
+  "traffic_closed": true,
+  "original_image_and_database_retained": true
+}
