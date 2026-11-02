@@ -1,0 +1,60 @@
+{
+  "result": "passed_exact_ID03_core_identity_candidate_not_deployed",
+  "image_id": "sha256:643f8d97949e0e150979d64333a9db23f170af066a360dc610f65477855e3588",
+  "inventory_digest": "sha256:dd284da3f5231f897621d66693bb5bc086048a5113cc660b7d3fef3d6e11196d",
+  "base_image_id": "sha256:bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.19",
+      "target_version": "19.0.0.1.20",
+      "migrations": []
+    },
+    {
+      "addon": "mp_identity",
+      "previous_version": "19.0.0.1.4",
+      "target_version": "19.0.0.1.5",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "8856ae3aa949ea6444780993b1e53d61291ad4d9a25d6374f52c22aacecf2397",
+      "target_sha256": "c1ab4c8dd5152bad42d58251663bb29e0e69b3326a1743211188126327f8d27f"
+    },
+    {
+      "path": "addons/mp_core/models.py",
+      "previous_sha256": "1b820815aacc8d4a898aca8929cb85dabe4b6313e61d47dc490af6a3a93cdb73",
+      "target_sha256": "a654468d3b947b41e34d115d27beb3c8246f80048302b8f69b5bbd6af0f0a908"
+    },
+    {
+      "path": "addons/mp_identity/__manifest__.py",
+      "previous_sha256": "fe48d1834e5205567bab5c676e0e586e8cb7465935561fac9a1b71f885be5405",
+      "target_sha256": "506ee6a77eacb3721d60d107d02a09658bc203b1c222aee93d6b1d3c9c3bf1c1"
+    },
+    {
+      "path": "addons/mp_identity/models/scoped.py",
+      "previous_sha256": "45efc136b49a0a92ccae22d29b453f6949ee28b4061d156466b626a21a42a95a",
+      "target_sha256": "326767502beed11713b6e92ffbc7f8300edfb737bc04fd619b86f2a4e69d4e13"
+    },
+    {
+      "path": "addons/mp_identity/read_window.py",
+      "previous_sha256": null,
+      "target_sha256": "9aaaab8cf8408d94ce9ec0b0fb9187cf584cd114fca3f8f212b0b10cead15f3a"
+    },
+    {
+      "path": "addons/mp_identity/scopes.py",
+      "previous_sha256": "c36b822c80d5c75801e617e8aed727782e039e96d1ad9157741bb9fbc52082d0",
+      "target_sha256": "4e16d19a3aaa23f3d0d02e41d962f55240e6fb6ffbd52b27e7abcf3a9bc15fe7"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "99a3279ca1485f43018e09d3e5c2485c75ba09f27f1a13b478674f00dfa9a085",
+      "target_sha256": "f621e8bf2d46dbb2fa7cf4bb4eb1d5af82f0522a87681cd114e2ab8cf51cfcd3"
+    }
+  ],
+  "all_four_plugin_artifacts_shell_contracts_OS_Python_exact": true,
+  "independent_worker_unchanged": true,
+  "approved_for_staging": true
+}

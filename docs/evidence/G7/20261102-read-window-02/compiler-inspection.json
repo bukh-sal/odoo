@@ -1,0 +1,16 @@
+{
+  "result": "application_delta_exact",
+  "base_image": "sha256:bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+  "compiler_image": "sha256:5095e691ba1fd358d34a333e877b14b472ac04b89f9610aee6e24a83067a5f39",
+  "expected_paths": [
+    "addons/mp_core/__manifest__.py",
+    "addons/mp_core/models.py",
+    "addons/mp_identity/__manifest__.py",
+    "addons/mp_identity/models/scoped.py",
+    "addons/mp_identity/read_window.py",
+    "addons/mp_identity/scopes.py",
+    "packages/platform_sdk/modular_platform/projection.py"
+  ],
+  "python_distributions_changed": true,
+  "not_deployed": true
+}

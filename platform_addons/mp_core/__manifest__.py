@@ -1,5 +1,5 @@
 {
-    'name': 'Modular Platform Core', 'version': '19.0.0.1.19',
+    'name': 'Modular Platform Core', 'version': '19.0.0.1.20',
     'depends': ['mp_identity','bus'], 'license': 'LGPL-3', 'author': 'Modular Platform',
     'data': ['security/ir.model.access.csv'],
 }

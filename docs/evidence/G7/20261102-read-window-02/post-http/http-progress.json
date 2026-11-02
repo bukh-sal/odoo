@@ -1,0 +1,284 @@
+{
+  "result": "completed",
+  "checks": [
+    {
+      "name": "A search_read",
+      "method": "search_read",
+      "workspace": "A",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "A search_count",
+      "method": "search_count",
+      "workspace": "A",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": null
+    },
+    {
+      "name": "A autocomplete",
+      "method": "name_search",
+      "workspace": "A",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "A aggregate",
+      "method": "read_group",
+      "workspace": "A",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "A web_search_read",
+      "method": "web_search_read",
+      "workspace": "A",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 2
+    },
+    {
+      "name": "A own web_read",
+      "method": "web_read",
+      "workspace": "A",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "A foreign read",
+      "method": "read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "A mixed read",
+      "method": "read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "A foreign web_read fields",
+      "method": "web_read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "A foreign web_read id-only",
+      "method": "web_read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "A mixed web_read empty spec",
+      "method": "web_read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "A foreign export",
+      "method": "export_data",
+      "workspace": "A",
+      "expected": "native_export_permission_denial; authorized export scoped separately in native suite",
+      "passed": true,
+      "error_type": "odoo.exceptions.UserError",
+      "result_count": null
+    },
+    {
+      "name": "B search_read",
+      "method": "search_read",
+      "workspace": "B",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "B search_count",
+      "method": "search_count",
+      "workspace": "B",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": null
+    },
+    {
+      "name": "B autocomplete",
+      "method": "name_search",
+      "workspace": "B",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "B aggregate",
+      "method": "read_group",
+      "workspace": "B",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "B web_search_read",
+      "method": "web_search_read",
+      "workspace": "B",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 2
+    },
+    {
+      "name": "B own web_read",
+      "method": "web_read",
+      "workspace": "B",
+      "expected": "scoped_success",
+      "passed": true,
+      "error_type": null,
+      "result_count": 1
+    },
+    {
+      "name": "B foreign read",
+      "method": "read",
+      "workspace": "B",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "B mixed read",
+      "method": "read",
+      "workspace": "B",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "B foreign web_read fields",
+      "method": "web_read",
+      "workspace": "B",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "B foreign web_read id-only",
+      "method": "web_read",
+      "workspace": "B",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "B mixed web_read empty spec",
+      "method": "web_read",
+      "workspace": "B",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "B foreign export",
+      "method": "export_data",
+      "workspace": "B",
+      "expected": "native_export_permission_denial; authorized export scoped separately in native suite",
+      "passed": true,
+      "error_type": "odoo.exceptions.UserError",
+      "result_count": null
+    },
+    {
+      "name": "missing workspace search",
+      "method": "search_read",
+      "workspace": "missing",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "missing workspace id-only web_read",
+      "method": "web_read",
+      "workspace": "missing",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "forged native context",
+      "method": "read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "forged read window dictionary",
+      "method": "read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "forged read window string",
+      "method": "web_read",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "viewer native batch write",
+      "method": "write",
+      "workspace": "B",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    },
+    {
+      "name": "mixed native batch write",
+      "method": "write",
+      "workspace": "A",
+      "expected": "AccessError",
+      "passed": true,
+      "error_type": "odoo.exceptions.AccessError",
+      "result_count": null
+    }
+  ]
+}

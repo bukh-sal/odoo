@@ -1,0 +1,15 @@
+{
+  "result": "retired_exact_unused_compilers_superseded_candidate_and_temporary_aliases",
+  "removed_tags": [
+    "modular-platform:core20-base-bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+    "modular-platform:core20-source-4677f5dad7db25b1172ae9a00d73c6645b3e2f8839e9c9f3fccc30b4b6d000c8",
+    "modular-platform:core20-source-5095e691ba1fd358d34a333e877b14b472ac04b89f9610aee6e24a83067a5f39",
+    "modular-platform:stage-20261102t184545456328z",
+    "modular-platform:core20-runtime-20261102t185550339152z",
+    "modular-platform:stage-20261102t190657323394z"
+  ],
+  "removed_images": 3,
+  "current_and_checkpoint_retained": true,
+  "no_global_prune": true,
+  "diagnosis": "Original helper conservatively required empty RepoDigests. Docker containerd retains the known local modular-platform@imageID reference on all owned builds; exact ID/tag/build provenance and no-container use validated before unforced tag removal. Completed23container phase and aliases were not replayed."
+}

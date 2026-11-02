@@ -1,0 +1,38 @@
+{
+  "result": "passed_installed_finite_native_read_window_correction",
+  "work_item": "G-01c2_core_prerequisite",
+  "configuration_generation": 28,
+  "dispatch_generation": 129,
+  "image": "sha256:9fd76d7b4bac1882a938ba3064104df11f097b7949a50fc642f5101ffbad53ff",
+  "inventory": "sha256:78aa3686226d72d3610381b92ece1a82644fb6effdb46605df2aeae21d725e93",
+  "core": "19.0.0.1.20",
+  "identity": "19.0.0.1.5",
+  "native_tests": 55,
+  "http_cases": 31,
+  "Canvas_scope": [
+    "actual Canvas id-only/empty native reads and viewer write enforce current workspace/role",
+    "actual Canvas JSON Note references accept own and reject foreign/missing identically with savepoint rollback"
+  ],
+  "exact_current_source_build_inputs": true,
+  "ordinary_independently_reviewed_approved_upgrade": true,
+  "all36jobs_other16tables_schema_files_worker_preserved_except_reviewed_queue_epochs": true,
+  "contracts_97_exact": true,
+  "ID03_retained": true,
+  "retained_coverage": {
+    "binary_HTTP": "../20261102-native-paths-01/http-binary.json: real anonymous/own/foreign denials. Binary adapter/upstream route unchanged by exact seven-path delta; current native attachment suite exercises changed shared guard.",
+    "server_actions": "../20261102-native-paths-01/server-actions.json: actual UID/nonsudo groups, own success/foreign denial. Server-action engine unchanged; current native read suite exercises shared guard.",
+    "Canvas4_empty_storage": "../20261102-canvas4-source-01/qualification.json: packaged Canvas4 bytes/schema retained; current shared-guard Canvas/reference cases passed."
+  },
+  "query_discriminator": {
+    "candidate_only": true,
+    "native24list_before": 519,
+    "native24list_after": 123,
+    "gateway24list_unchanged": 816,
+    "not_HTTP_or_10k_target": true
+  },
+  "limits": [
+    "Core prerequisite only; G-01c2 still requires separate Notes/Labels read serialization adaptation and measured HTTP improvement.",
+    "Not a native-code/SQL sandbox. Supported serializers reuse finite validated authority for at most20ms; entries/writes remain fresh.",
+    "UI09/10k20concurrent/shell/mount cycles/full fresh release/security/license/network/provenance/recovery/runbooks/handoff remain. No new progress/acceptance credit."
+  ]
+}

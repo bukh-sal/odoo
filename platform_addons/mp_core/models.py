@@ -185,6 +185,7 @@ class SupportedInstallationGuard(models.AbstractModel):
 
     def _mp_guard(self, operation):
         scope = super()._mp_guard(operation)
+        self.env['mp.plugin.installation'].flush_model(['state'])
         # Current metadata only, after actor/scope authorization. No business
         # access elevation or administrator fallback. Applies to native RPC too.
         self.env.cr.execute("SELECT state FROM mp_plugin_installation WHERE plugin_id=%s",[self._mp_plugin_id])

@@ -102,8 +102,8 @@ def resolve_scope(env, workspace_public_id, previous=None):
     return Scope(env.cr.dbname, env.uid, *row[:3], *row[3:], credential_id, installation, actions)
 
 
-def current_scope(env, required=True):
-    """Native call_kw replaces context; request-bound authority survives it."""
+def scope_carrier(env, required=True):
+    """Private typed carrier lookup only; it is not an authorization decision."""
     scope = None
     if request and request.db == env.cr.dbname:
         if getattr(request, "_mp_scope_failure", False):
@@ -121,7 +121,13 @@ def current_scope(env, required=True):
         raise AccessError("Untrusted workspace context")
     from .release import require_client_release
     require_client_release(env)
-    return resolve_scope(env, scope.workspace_public_id, previous=scope)
+    return scope
+
+
+def current_scope(env, required=True):
+    """Native call_kw replaces context; request-bound authority survives it."""
+    scope = scope_carrier(env, required=required)
+    return resolve_scope(env, scope.workspace_public_id, previous=scope) if scope else None
 
 
 def scoped_environment(env, workspace_public_id):

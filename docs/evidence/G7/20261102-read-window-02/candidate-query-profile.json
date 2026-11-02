@@ -1,0 +1,130 @@
+{
+  "result": "candidate_discriminator_not_deployed",
+  "results": [
+    {
+      "operation": "current_scope",
+      "samples": [
+        {
+          "ms": 0.29559899121522903,
+          "sql_queries": 1
+        },
+        {
+          "ms": 0.31241998658515513,
+          "sql_queries": 1
+        },
+        {
+          "ms": 0.3720230015460402,
+          "sql_queries": 1
+        }
+      ]
+    },
+    {
+      "operation": "whole_recordset_guard",
+      "samples": [
+        {
+          "ms": 0.7657739915885031,
+          "sql_queries": 4
+        },
+        {
+          "ms": 0.9103680204134434,
+          "sql_queries": 4
+        },
+        {
+          "ms": 0.8024639973882586,
+          "sql_queries": 4
+        }
+      ]
+    },
+    {
+      "operation": "one_warmed_scalar",
+      "samples": [
+        {
+          "ms": 0.7053970184642822,
+          "sql_queries": 4
+        },
+        {
+          "ms": 0.5946169840171933,
+          "sql_queries": 4
+        },
+        {
+          "ms": 0.5185980116948485,
+          "sql_queries": 4
+        }
+      ]
+    },
+    {
+      "operation": "native_list24",
+      "samples": [
+        {
+          "ms": 26.663536991691217,
+          "sql_queries": 123
+        },
+        {
+          "ms": 31.466991000343114,
+          "sql_queries": 123
+        },
+        {
+          "ms": 32.81331298057921,
+          "sql_queries": 123
+        }
+      ]
+    },
+    {
+      "operation": "native_detail",
+      "samples": [
+        {
+          "ms": 6.3802119984757155,
+          "sql_queries": 33
+        },
+        {
+          "ms": 8.367547998204827,
+          "sql_queries": 33
+        },
+        {
+          "ms": 6.109047011705115,
+          "sql_queries": 33
+        }
+      ]
+    },
+    {
+      "operation": "gateway_list24",
+      "samples": [
+        {
+          "ms": 152.84427101141773,
+          "sql_queries": 816
+        },
+        {
+          "ms": 141.20149001246318,
+          "sql_queries": 816
+        },
+        {
+          "ms": 142.96248098253272,
+          "sql_queries": 816
+        }
+      ]
+    },
+    {
+      "operation": "gateway_detail",
+      "samples": [
+        {
+          "ms": 9.94315100251697,
+          "sql_queries": 61
+        },
+        {
+          "ms": 11.903136008186266,
+          "sql_queries": 61
+        },
+        {
+          "ms": 11.061966011766344,
+          "sql_queries": 61
+        }
+      ]
+    }
+  ],
+  "actual_candidate_source": true,
+  "no_monkeypatch": true,
+  "no_data_writes": true,
+  "image": "sha256:9fd76d7b4bac1882a938ba3064104df11f097b7949a50fc642f5101ffbad53ff",
+  "all17tables_worker_exact": true,
+  "limits": "Single warm candidate shell; no HTTP/10k/performance-target claim. Packaged Notes7/Labels3 unchanged."
+}

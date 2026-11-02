@@ -1,0 +1,13 @@
+{
+  "result": "retired_exact_owned_terminal_helpers",
+  "counts": {
+    "native_tests": 8,
+    "operation_children": 7,
+    "observers": 7,
+    "superseded_apps": 1
+  },
+  "removed_containers": 23,
+  "all17tables_current_worker_app_checkpoint_images_volumes_preserved": true,
+  "private_diagnostics_archived": true,
+  "no_global_prune": true
+}

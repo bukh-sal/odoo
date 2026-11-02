@@ -1,0 +1,30 @@
+{
+  "work_item": "G-01c2",
+  "attempts": [
+    {
+      "attempt": "first prototype warmed-field assertion",
+      "evidence": "../20261102-read-window-01/window-candidate-readonly-native-results.json",
+      "finding": "The second row title was cold despite warming the first row body; its native lazy fetch issued25queries. Preserved original test and failure. Separate cold-field diagnostics from a genuinely warmed window;24cases then passed.",
+      "product_change_for_test": false
+    },
+    {
+      "attempt": "proactive exact environment binding",
+      "finding": "Native extension guards may inspect arbitrary native context. Superseded first643candidate before staging and bound the read snapshot to the exact native environment; added changed-context fallback regression. Revised candidate25cases passed.",
+      "installed_first_prototype": false
+    },
+    {
+      "attempt": "Canvas scope fixture01",
+      "evidence": "canvas_probe_attempt01.py",
+      "finding": "The reused older probe assumed no board existed in workspaceA. Canvas4 upgrade qualification deliberately retained one unique-per-workspace board at revision3, so fixture creation correctly failed UniqueViolation before testing scope. Process rollback preserved existing data.",
+      "next_distinct_hypothesis": "Reuse the known revision3 board for rollback-only own-workspace checks and create only a temporary B board. Compare all tracked tables afterward.",
+      "result": "Corrected fixture02 passed actual scope/role/reference checks; all17tables exact. No product edit or successful committed business mutation."
+    },
+    {
+      "attempt": "image cleanup assertion after completed container retirement",
+      "finding": "Retired23exact terminal containers and3temporary aliases, then conservatively stopped because RepoDigests was nonempty. Inspection showed every owned local containerd build retained modular-platform@its-exact-image-ID alongside its single recorded build tag.",
+      "next_distinct_hypothesis": "Validate exact build provenance, ID/tag/local digest reference and absence of container users; continue only the image phase with unforced tag removal and no parent prune.",
+      "result": "finish_image_retirement.py retired3unusedimages. Completed container/alias phases were not replayed; current/checkpoint images and all volumes retained."
+    }
+  ],
+  "limits": "Core correction only; full HTTP performance/10k qualification and G7 remain."
+}

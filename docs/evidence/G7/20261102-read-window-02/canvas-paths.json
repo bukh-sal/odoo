@@ -1,0 +1,12 @@
+{
+  "result": "passed",
+  "checks": [
+    "actual Canvas id-only/empty native reads and viewer write enforce current workspace/role",
+    "actual Canvas JSON Note references accept own and reject foreign/missing identically with savepoint rollback"
+  ],
+  "all_board_fixtures_rolled_back": true,
+  "product_features_added": false,
+  "native_generation": 28,
+  "image": "sha256:9fd76d7b4bac1882a938ba3064104df11f097b7949a50fc642f5101ffbad53ff",
+  "all36jobs_other16tables_exact": true
+}

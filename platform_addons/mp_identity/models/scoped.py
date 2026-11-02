@@ -1,9 +1,12 @@
+from contextlib import contextmanager
+
 from odoo import api, fields, models
 from odoo.exceptions import AccessError
 from odoo.fields import Domain
 from odoo.tools import SQL
 
 from ..scopes import current_scope
+from ..read_window import KEY, ReadWindow, active_window
 
 
 class WorkspaceScoped(models.AbstractModel):
@@ -73,8 +76,44 @@ class WorkspaceScoped(models.AbstractModel):
         return super().check_access(operation)
 
     def read(self, fields=None, load="_classic_read"):
-        self._mp_guard("read")
-        return super().read(fields, load=load)
+        with self._mp_read_window() as records:
+            return super(WorkspaceScoped, records).read(fields, load=load)
+
+    @api.private
+    @contextmanager
+    def _mp_read_window(self):
+        if active_window(self):
+            yield self
+            return
+        window = ReadWindow(self)
+        try:
+            window.start()
+            records = self.with_context(**{KEY: window})
+            window.bound_env = records.env
+            yield records
+        finally:
+            window.close()
+
+    @api.private
+    def _mp_cached_read_scope(self):
+        window = active_window(self)
+        return window.scope if window else None
+
+    @api.private
+    def _mp_read_scope(self):
+        return self._mp_cached_read_scope() or self._mp_guard("read")
+
+    @api.private
+    def _mp_read_policy(self, key, check):
+        window = active_window(self)
+        if window and key in window.policies:
+            return window.policies[key]
+        value = check()
+        if type(value) is not bool:
+            raise TypeError("A read policy check must return bool")
+        if window and not window.invalid:
+            window.policies[key] = value
+        return value
 
     @api.model
     def _has_field_access(self, field, operation):
@@ -82,7 +121,7 @@ class WorkspaceScoped(models.AbstractModel):
         # lookup. Model-only introspection and trusted sudo stay native.
         if operation == "read" and self._ids and not self.env.su:
             try:
-                self._mp_guard("read")
+                self._mp_read_scope()
             except AccessError:
                 return False
         return super()._has_field_access(field, operation)
