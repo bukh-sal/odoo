@@ -36,6 +36,7 @@ for info in selected:
 remaining=call(['docker','ps','--all','--no-trunc','--format','{{.ID}}']).decode().split()
 assert not {i['Id'] for i in selected}&set(remaining)
 assert worker(native,'refregfix-worker-after-observation-retirement')==remote
+f.OUTPUT=OUT
 f.save('observation-retirement.json',dict(result='retired_owned_completed_current15_readonly_inspection_helpers',removed_containers=len(selected),
     exact_deployment_project_image_exit0_and_durable_readonly_receipt_required=True,private_diagnostics_and_receipts_retained=True,
     active_host_database_edge_external_worker_and_checkpoint_roles_preserved=True,images_removed=0,volumes_removed=0,no_global_prune=True))

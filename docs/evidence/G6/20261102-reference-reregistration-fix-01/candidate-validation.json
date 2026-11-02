@@ -1,0 +1,78 @@
+{
+  "result": "passed_exact_corrective_core16_candidate_not_deployed",
+  "image_id": "sha256:cfb0fb0d8ea14286bfbb7b47b912bfb86895a7e7b77de3bcdab037e9bcdbe34d",
+  "inventory_digest": "sha256:a415e7797d2bfd45a7bbac6096cba75f85d2af30533fbcfa37083488624d7783",
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.15",
+      "target_version": "19.0.0.1.16",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "9dbe6bea3787903e191c27cd09b5129332dc472f103c9142787a36fab45154f6",
+      "target_sha256": "e500f0fb8a3b546366b8c6067dbf6499c36318cdc3305d6e1e7b9eae5008cc39"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "20eb908e3018976010b7e65df2a5bea203f13948a6e03c44ee15809adf19c593",
+      "target_sha256": "a55420e4cab35cdf2ad0472f14a0b64dda215cac6bd113f473ce8ff34fb245d0"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/reference_dispatch.py",
+      "previous_sha256": "12a8ad918e94d2adee98ed9f1f0698e722a1ddc7a586fc0f888198d19981c75f",
+      "target_sha256": "51c8fa7ede59e921fe6bf1b53c7eba5289466c33b9fd22099ac4f369fb08f546"
+    }
+  ],
+  "shell10_and_native_plugin_artifacts_manifests_python_policy_exact": true,
+  "retained_external_pins": [
+    {
+      "activation": {
+        "scopes": [
+          "site",
+          "workspace"
+        ],
+        "supports_feature_suspension": true
+      },
+      "data_ownership": {
+        "contributions": [],
+        "extension_targets": [],
+        "models": []
+      },
+      "digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+      "hard_dependencies": {},
+      "manifest_digest": "sha256:5cc5f8f086f7e6e3cfbc353e47a7515932fdc69fa353d69c6a9392ba85fbfe0b",
+      "native_addon": null,
+      "native_version": null,
+      "permissions": {
+        "defines": {
+          "analysis.run": "Analyze the supplied authorized document snapshot"
+        },
+        "requests": []
+      },
+      "plugin_id": "org.example.document_stats",
+      "provided_apis": [
+        {
+          "api_version": "1.0",
+          "service_id": "org.example.document_stats.analysis"
+        }
+      ],
+      "runtime": "external_service",
+      "source": "operator-catalog",
+      "trust": {
+        "model": "operator-approved-exact-digest",
+        "policy_generation": 7,
+        "signature_verified": false,
+        "warnings": []
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "connector_not_in_image": true,
+  "live_configuration_generation": 15,
+  "live_installations": 8,
+  "deployment_changed": false
+}
