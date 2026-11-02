@@ -26,7 +26,8 @@ class WorkspaceScoped(models.AbstractModel):
         available = self.env.cr.fetchone()
         if not available or available[0] != "enabled":
             raise AccessError("Plugin feature unavailable")
-        ids = [ident for ident in self.ids if isinstance(ident, int)]
+        # Native onchange/new wrappers retain their persisted origin's scope.
+        ids = [ident for ident in self._origin.ids if isinstance(ident, int)]
         if ids:
             # Ownership preflight avoids ORM-cache recursion and rejects a mixed
             # batch identically for nonexistent or foreign-workspace objects.
@@ -74,6 +75,17 @@ class WorkspaceScoped(models.AbstractModel):
     def read(self, fields=None, load="_classic_read"):
         self._mp_guard("read")
         return super().read(fields, load=load)
+
+    @api.model
+    def _has_field_access(self, field, operation):
+        # The native descriptor calls this before transaction field-cache
+        # lookup. Model-only introspection and trusted sudo stay native.
+        if operation == "read" and self._ids and not self.env.su:
+            try:
+                self._mp_guard("read")
+            except AccessError:
+                return False
+        return super()._has_field_access(field, operation)
 
     @api.readonly
     def web_read(self, specification):

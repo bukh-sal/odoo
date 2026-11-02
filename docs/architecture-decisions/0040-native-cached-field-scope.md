@@ -1,0 +1,15 @@
+# ADR0040: authorize native fields before returning cached values
+
+Date: 2026-11-02. Status: qualified on actual core19/identity1.4, native26/dispatch123. Parent G-01a / ID-03, specification §11.7.
+
+The actual core18/identity1.3 rollback-only probe warms a Note body as Alice in A, then constructs distinct scoped environments for Alice/B and Bob/B on the same native transaction. Ordinary `read()` denies both; direct `.body` returns the warmed foreign value. No HTTP disclosure was demonstrated. The native transaction field cache is shared by environments; a new context/environment alone does not partition it. Cooperating code must still use a distinct transaction for unrelated workspace/principal operations, as required by §11.7. The supported field API must also fail closed if a caller accidentally retains a cached record.
+
+Extend the pinned native `_has_field_access` seam on the shared workspace mixin. The ordinary native field descriptor calls it before cache lookup. For non-sudo record reads, reapply the live actor/membership/action/feature/ownership guard, returning false on denial and delegating every other native field permission. Empty model recordsets retain field/schema introspection. Explicit sudo remains fully trusted native elevation, outside the scope API guarantee. No transaction cache replacement, public facade change, per-plugin cache implementation or upstream source edit is introduced.
+
+Use persisted `_origin` IDs in ownership preflight, so virtual/onchange wrappers of existing foreign records cannot bypass the same guard. Pure new records have no persisted origin. Record and field writes retain their existing checks; field-level write access is not converted into an extra read requirement. Validate positive own/new/origin behavior, warmed workspace/principal changes, missing scope, revoked membership, disabled feature, mapped/relational reads and unrelated native field introspection against the immutable installed correction. Measure resulting overhead during required G7 performance qualification; do not trade away authorization to meet a benchmark.
+
+Version identity1.3→1.4, core18→19 and SDK18→19. Preserve all four packaged plugin artifacts, frozen contracts, OS/Python and independent worker. This corrects existing frozen enforcement behavior; public contracts stay unchanged. Ordinary independently approved immutable upgrade, strict data/authority preservation and actual native plus HTTP regressions are required. Canvas's valid empty-array storage defect is a separate minimal plugin upgrade afterward; keep its source unchanged during this core operation.
+
+Counterexample: `../evidence/G7/20261102-native-paths-01/cache-counterexample.json`. ID03 remains failed until the installed supported-path audit is complete.
+
+Qualification: ../evidence/G7/20261102-cached-fields-01/qualification.json; independently approved operation09c2a712, strict populated-state preservation,40actual installed native/29HTTP and Canvas scope checks. Candidate-only ten-case matrix passed first; mismatched-release event fixture refusal is retained in attempts.json. ID03 passed; G7 remains open.

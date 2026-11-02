@@ -1,0 +1,45 @@
+{
+  "result": "passed_exact_ID03_core_identity_candidate_not_deployed",
+  "image_id": "sha256:209fb8099027b1a43ac9b49add2167b7eadfa963ba598c093e9c06f31f9611c6",
+  "inventory_digest": "sha256:aa4da059af6a0f18bb879b46e2e111d98c8f1f44837cb793d9be14fef37c1e58",
+  "base_image_id": "sha256:6da0f6864c7e01b3c1d8ea1e0ceebde3ed29c7cd889511ec52205df4e43fa76b",
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.18",
+      "target_version": "19.0.0.1.19",
+      "migrations": []
+    },
+    {
+      "addon": "mp_identity",
+      "previous_version": "19.0.0.1.3",
+      "target_version": "19.0.0.1.4",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "b038f7857b597ab2c03db7bd8930bafb804a1c4b062f6488783f9aac292ee153",
+      "target_sha256": "8856ae3aa949ea6444780993b1e53d61291ad4d9a25d6374f52c22aacecf2397"
+    },
+    {
+      "path": "addons/mp_identity/__manifest__.py",
+      "previous_sha256": "a7046ae2f286a31d3467333c674457e3604036d4e4afadbc556fc7bc3c42063c",
+      "target_sha256": "fe48d1834e5205567bab5c676e0e586e8cb7465935561fac9a1b71f885be5405"
+    },
+    {
+      "path": "addons/mp_identity/models/scoped.py",
+      "previous_sha256": "9a16292d4bfe7afff1888a49c7a582d17d54034e1dc10f54c7fe530e476b4824",
+      "target_sha256": "45efc136b49a0a92ccae22d29b453f6949ee28b4061d156466b626a21a42a95a"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "8eca68eac8e578f569074adbc33cbe47ff0c5cf229be039ca98f10a6a39242cc",
+      "target_sha256": "99a3279ca1485f43018e09d3e5c2485c75ba09f27f1a13b478674f00dfa9a085"
+    }
+  ],
+  "all_four_plugin_artifacts_shell_contracts_OS_Python_exact": true,
+  "independent_worker_unchanged": true,
+  "approved_for_staging": true
+}

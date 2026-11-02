@@ -1,0 +1,11 @@
+{
+  "result": "retired_exact_unused_compiler_and_temporary_aliases",
+  "removed_tags": [
+    "modular-platform:core19-base-6da0f6864c7e01b3c1d8ea1e0ceebde3ed29c7cd889511ec52205df4e43fa76b",
+    "modular-platform:core19-source-210ece9023bed6696dc72f5519c7bf34cc52781e6203666265d18a06f655108e",
+    "modular-platform:stage-20261102t163846738502z"
+  ],
+  "compiler_image": "sha256:210ece9023bed6696dc72f5519c7bf34cc52781e6203666265d18a06f655108e",
+  "current_and_checkpoint_retained": true,
+  "no_global_prune": true
+}

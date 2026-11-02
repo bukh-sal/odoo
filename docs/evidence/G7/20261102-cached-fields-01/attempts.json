@@ -1,0 +1,20 @@
+{
+  "candidate_full_suite": {
+    "result": "release_fence_refused_fixture_events",
+    "tests": 40,
+    "errors": 40,
+    "source": "candidate-native-results.json",
+    "cause": "The not-yet-installed candidate inventory differs from the current database release metadata. Every test creates a Note in setup; its event emitter correctly rejects the release mismatch before exercising the assertions.",
+    "data_preserved": true,
+    "correction": "Do not replace release metadata or weaken the fence. Use existing Notes for the candidate-only field tests; run the complete suite only after the reviewed actual upgrade."
+  },
+  "candidate_existing_notes": {
+    "result": "passed",
+    "tests": 10,
+    "source": "candidate-readonly-native-results.json",
+    "scope": "Real candidate classes, existing Notes, rollback-only policy changes, no event creation or runtime source replacement. All17trackedtables and independent worker exact. Not installed qualification."
+  },
+  "driver_review": "Before execution, corrected generated pre-upgrade configuration assertions from26 to25; target26 and dispatch120->121->122->123 retained. No rejected lifecycle mutation or replay occurred.",
+  "retirement_first_attempt": "Exclusive old core18 read-only snapshot label already existed; failed before any deletion. Corrected only new g7-cache-retire labels; exact cleanup succeeded, no lifecycle replay.",
+  "qualifier_first_attempt": "Generic passed assertion did not match specific passed_actual_legacy_public_binary_HTTP_denials result. Read original report, asserted exact result; no test, mutation or evidence rewrite."
+}

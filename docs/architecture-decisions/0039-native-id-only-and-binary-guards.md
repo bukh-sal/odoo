@@ -1,6 +1,6 @@
 # ADR0039: native ID-only reads and binary shortcuts retain scope gates
 
-Date: 2026-11-02. Status: accepted correction; immutable rollout and qualification pending. Parent G-01a / ID-03.
+Date: 2026-11-02. Status: qualified on actual core18/identity1.3; retained and regressed on core19/identity1.4. Parent G-01a / ID-03.
 
 The current-image HTTP matrix confirms that the native `web_read` ID-only/empty specification branch returns caller-supplied IDs without entering `read`, `fetch` or `_check_access`. Missing workspace and foreign/mixed record IDs therefore do not fail closed. This does not expose Note bodies, but contradicts the supported record-entry scope contract. Guard `web_read` in the shared workspace mixin before delegating to the existing native implementation. Other native rendering/serialization behavior stays upstream-owned.
 
@@ -11,3 +11,5 @@ Add a metadata-only ownership preflight to the owned attachment adapter before `
 Version identity1.2→1.3, core17→18 and the platform SDK identity17→18. Preserve all packaged plugins, Python/OS layers, worker image/publication and frozen contracts. Use ordinary staging, independent review/approval, native checkpoint/readiness and release fencing. Test source-candidate behavior before admission where practical; only actual installed native/HTTP/binary and native-view regressions can close ID-03. The export matrix's UserError reflects a separate missing native export permission; test authorized export inside rollback-only fixtures rather than changing production role grants.
 
 Counterexamples: `../evidence/G7/20261102-native-paths-01/http-matrix.json` and `attachment-counterexample.json`. Return condition: the documented supported export/search/autocomplete/aggregate/attachment/batch/job paths have explicit positive/negative coverage, all current-state data/authority is preserved, and the immutable correction is qualified. Then continue G7 accessibility/performance/fresh-release work.
+
+Qualification: core18 operation78fb1336 completed25/120 with preservation,30native/29HTTP/binary HTTP denials and native UI result. Follow-up ADR0040/core19 completed26/123,40native/29HTTP/Canvas scope pass; ID03 closes in cached-fields-01/qualification.json. Canvas empty-array storage is a separate required release defect.
