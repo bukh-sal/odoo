@@ -1,0 +1,43 @@
+{
+  "result": "passed_source_only_not_deployed_or_browser_verified",
+  "node_checks": 17,
+  "freeze_files": 97,
+  "freeze_rows": 8,
+  "archives": [
+    {
+      "plugin_id": "org.example.notes",
+      "version": "0.2.7",
+      "digest": "sha256:d24876c930fd9b852498f93c90a06f05bf26fd5b98d4de559a3cd0ee50a4bcad",
+      "files": 20
+    },
+    {
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.3",
+      "digest": "sha256:e0e61f52454757397f8b6a3e6fea3e8d2860acb63bcd74b38653f95e43218211",
+      "files": 14
+    },
+    {
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.3",
+      "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+      "files": 16
+    },
+    {
+      "plugin_id": "org.example.notes_stats",
+      "version": "0.1.1",
+      "digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+      "files": 13
+    }
+  ],
+  "composition_valid": true,
+  "source_sha256": {
+    "platform_addons/mp_example_notes_stats/static/src/analysis.js": "e75d97785ccf20cd4c46b97446189dafb870ae2e0036f1c85d0b7eae20ae41bd",
+    "platform_addons/mp_example_notes_stats/__manifest__.py": "4f8595c0b26e6d9e1d12e5f617b0ee4a68369773a9f2ee522424a112ea6660dc",
+    "plugins/notes_stats/plugin.toml": "05577f3f853dc99a20e209d6d5ddc828103905401616c855e7d06def00f5879b",
+    "tests/test_notes_analysis_action.mjs": "1884863681459ac13ae650eaac7b78caafc768fc48db863776fc77a4d8cc49c5"
+  },
+  "native_slot_and_facade_reused": true,
+  "custom_record_screen_or_dialog_added": false,
+  "public_contract_changed": false,
+  "browser_verified": false
+}

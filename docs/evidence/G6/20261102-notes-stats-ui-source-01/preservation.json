@@ -1,0 +1,18 @@
+{
+  "result": "passed_approved_NotesStats_UI_only_upgrade",
+  "operation_id": "854da573-1cfe-4749-9580-98da27d9b20a",
+  "plan_hash": "sha256:b221c29708497217ae3d5c2fee1d7ecb291406fc49d488bab53fb68963af499c",
+  "native_generation": 24,
+  "dispatch_generation": 117,
+  "native_image": "sha256:22067a190d1f81d35c45ac2f74ac64269da70359d79fbb2e91bbb1a74b0e4ac9",
+  "native_inventory": "sha256:e9240b4fece52ade7af8c06fa6a46c0cdd888008cd6601d1faeb5c8352e55da2",
+  "old30job_outcomes_inputs_attempts_results_and_all30Notes_retained": true,
+  "job_epochs_updated": 27,
+  "all17tables_preserved_under_reviewed_footprint": true,
+  "schema_and_other_native_module_versions_exact": true,
+  "old_checkpoint_files_retained": 48,
+  "worker_container_image_key_config9_approval11_exact": true,
+  "helper_only_moved_to_admitted_image": true,
+  "no_new_grants": true,
+  "browser_verified": false
+}

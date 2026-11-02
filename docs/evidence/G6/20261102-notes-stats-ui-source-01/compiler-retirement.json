@@ -1,0 +1,12 @@
+{
+  "result": "retired_exact_unused_compiler_and_temporary_aliases",
+  "removed_tags": [
+    "modular-platform:notes-ui-base-9408148ef42b723effefc0de074fa0992bfecdf72c0f858c7a3d1a54cd932132",
+    "modular-platform:notes-ui-source-bb87d4910738bb7f64e273bb3bd13bb754f58cca15b7ea51a739e18d8ad3f1cb",
+    "modular-platform:stage-20261102t143026005028z"
+  ],
+  "compiler_image": "sha256:bb87d4910738bb7f64e273bb3bd13bb754f58cca15b7ea51a739e18d8ad3f1cb",
+  "current_base_and_admitted_candidate_retained": true,
+  "containers_or_volumes_removed": 0,
+  "no_global_prune": true
+}

@@ -1,1 +1,1 @@
-{'name':'Notes Analysis Connector','version':'19.0.0.1.0','depends':['mp_example_notes','mp_shell'],'license':'LGPL-3'}
+{'name':'Notes Analysis Connector','version':'19.0.0.1.1','depends':['mp_example_notes','mp_shell'],'license':'LGPL-3','assets':{'mp_shell.assets_host':['mp_example_notes_stats/static/src/analysis.js']}}

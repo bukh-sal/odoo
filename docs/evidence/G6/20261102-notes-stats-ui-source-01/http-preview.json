@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "kind": "prepared",
+  "operation_id": "854da573-1cfe-4749-9580-98da27d9b20a",
+  "plan_hash": "sha256:b221c29708497217ae3d5c2fee1d7ecb291406fc49d488bab53fb68963af499c",
+  "plan": {
+    "schema_version": 1,
+    "operation_id": "854da573-1cfe-4749-9580-98da27d9b20a",
+    "operation_type": "upgrade",
+    "created_at": "2026-11-02T14:33:13Z",
+    "deployment_id": "0c96e0cf-b0ef-43b8-868b-1deb3cc6cd5f",
+    "site_ids": [
+      "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa"
+    ],
+    "base_state_digest": "sha256:8045925eb5c518a475d374d4f97a7c12a2fb09a90cefa4ad439de75d4b12e585",
+    "base_release_digest": "sha256:cd62e54085a7217e01a54f7a973437f74548445986137411c64180f15234ddf6",
+    "target_release_digest": "sha256:818fc7d5f20d6fdd10569cdad83e262bd968d073f7f44c783d4b602ddb691c41",
+    "artifacts": [
+      {
+        "plugin_id": "org.example.notes_stats",
+        "version": "0.1.1",
+        "digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+        "runtime": "native",
+        "action": "upgrade",
+        "native_addon": "mp_example_notes_stats",
+        "migration_digests": []
+      }
+    ],
+    "dependency_lock_digest": "sha256:89d05dcfc53f50684f43abc468c968f41e1b39324b77d0ed8cbe325a4a3bed7f",
+    "bindings": [
+      {
+        "binding_id": "13836bf4-0b25-5588-a453-f1db40879373",
+        "generation": 1,
+        "digest": "sha256:2408860f8a3c6b1d314cf02788e5a2a365fbed1b147643ffcac49aab8c45c2b4"
+      },
+      {
+        "binding_id": "13c9a58f-7faf-5464-9a70-bd9ad9a40c98",
+        "generation": 1,
+        "digest": "sha256:5c640bd5ddf855d48ba4e2c535105aa45230f0ea24f21f4ac9f04079b819a1dc"
+      },
+      {
+        "binding_id": "23b3de6c-05c7-567d-ad6a-23922049cc18",
+        "generation": 1,
+        "digest": "sha256:0548f59a51b29714402f6ca3886d2b525a148def0222eebc251b5bbf909a8f2d"
+      },
+      {
+        "binding_id": "2c2d32b5-27be-5b04-8168-bca850ec1977",
+        "generation": 1,
+        "digest": "sha256:be29c59d5354dddf701d92dc0b65176985cb77fb0f3771ba3ffe598e7929cfff"
+      },
+      {
+        "binding_id": "3e1ad92f-b1c2-5dfe-8d0c-bf0a551c9bb3",
+        "generation": 1,
+        "digest": "sha256:db1fc47b6807ad8b9a4bae353123a515cb1a624af953270404f6c26261c98c84"
+      },
+      {
+        "binding_id": "48d1c062-1237-5b70-9738-8e7f1ff97f9a",
+        "generation": 1,
+        "digest": "sha256:ede001fb150776132918f2d32606147800cd09e59a9bea0235e2cf41a1a83c5c"
+      },
+      {
+        "binding_id": "529629c6-9cc1-5b97-99e9-00e734867378",
+        "generation": 1,
+        "digest": "sha256:4dca7678624617ed3bd9782a1b83cf4a290cb4cdcd511e05135ebdacd85eb2bb"
+      },
+      {
+        "binding_id": "80d1b7c5-5385-58bf-acfd-4c66be346408",
+        "generation": 1,
+        "digest": "sha256:c5b42c18df4b4572ac0b0b963bcf77d52b873da8fb98daa2c0a810ec7578ed0b"
+      },
+      {
+        "binding_id": "8397d75e-71f0-5e28-9fdd-22ba19a8e3a2",
+        "generation": 1,
+        "digest": "sha256:ac317a19412cad0f2aad6ff2457f7f0324f63336fb5c8a98755ec923ba1486c7"
+      },
+      {
+        "binding_id": "933033a6-0c4a-54f1-8809-2ad237db187e",
+        "generation": 1,
+        "digest": "sha256:7278d4c69a41dff5c47419b2c6be0f3b056dd305e5e942f53cf8b4df536f2fc9"
+      },
+      {
+        "binding_id": "9d8f1b6e-7809-5041-888c-517c1c376493",
+        "generation": 1,
+        "digest": "sha256:8247e3988bd0aabc80a7c3e2810698a6728553f5a8b1abd776221ad45052b44d"
+      },
+      {
+        "binding_id": "ca542c5a-4faf-536a-8f30-fdd93c1ec176",
+        "generation": 1,
+        "digest": "sha256:a50bdd77bc75c7b84d2eea62909282607ccc83996572439ee54835371d0f8828"
+      },
+      {
+        "binding_id": "ce1e3986-4aed-5c93-87ab-0d05eb9d9310",
+        "generation": 1,
+        "digest": "sha256:2aa673c6d8d631394e3dd9a7134f14c081b98b40d866b6b3dcfb4f9fd370571c"
+      },
+      {
+        "binding_id": "e6bf5808-54b7-54f2-8c23-b072a7a981f5",
+        "generation": 1,
+        "digest": "sha256:9b504d1b59a4da2cea069d02a701afc446d9678b7c8ade239e506699fc40c8a8"
+      }
+    ],
+    "endpoints": [
+      {
+        "endpoint_config": "document_stats_local",
+        "generation": 9,
+        "digest": "sha256:10e4759e8a48c8fddd227ed3484225d44d575e69bc05ea9c829ce4fcd28a0d66",
+        "expected_image_digest": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0"
+      }
+    ],
+    "permission_changes": [],
+    "trust_changes": [],
+    "destructive": false,
+    "backup": {
+      "required": true,
+      "policy_id": "development_checkpoint",
+      "retain_previous_release": true
+    },
+    "policy_version": 1,
+    "operator_authorization_generation": 1
+  },
+  "targets": [
+    {
+      "installation_id": "cae8cd52-96f9-52b9-af31-13567266fab8",
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+      "plugin_id": "org.example.notes_stats",
+      "action": "upgrade"
+    }
+  ],
+  "declaration_changes": [
+    {
+      "plugin_id": "org.example.notes_stats",
+      "added_capabilities": [],
+      "added_scopes": []
+    }
+  ],
+  "native_trusted_code": true,
+  "restart_required": true,
+  "feature_suspension_unloads_code": false,
+  "known_unknowns": [
+    "Native Python and same-origin frontend code is fully trusted.",
+    "Author destructive=false does not prove migration safety.",
+    "The staged image includes fully trusted native core/runtime code; image rollback alone does not restore database state."
+  ],
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-11-02T14:32:48Z",
+  "stale": false
+}

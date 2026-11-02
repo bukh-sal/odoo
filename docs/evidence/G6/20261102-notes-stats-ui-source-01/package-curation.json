@@ -1,0 +1,12 @@
+{
+  "result": "passed_minimal_action_curation_not_deployed",
+  "artifact_digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+  "version": "0.1.1",
+  "old_three_artifacts_exact": true,
+  "fixture_trust_generation": 10,
+  "global_trust_untouched": true,
+  "configuration_generation": 23,
+  "release_bindings_endpoints_17tables_worker_exact": true,
+  "browser_verified": false,
+  "no_docker_assets_created": true
+}

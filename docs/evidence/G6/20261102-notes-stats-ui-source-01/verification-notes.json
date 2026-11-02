@@ -1,0 +1,27 @@
+{
+  "result": "test_helper_corrections_only_no_product_or_operation_replay",
+  "attempts": [
+    {
+      "step": "preservation01",
+      "result": "assertion_failed",
+      "cause": "native lifecycle also updates installation write_date",
+      "correction": "exact four metadata fields version/artifact_digest/manifest/write_date; all business tables still exact",
+      "recheck": "preservation02 passed"
+    },
+    {
+      "step": "entrypoints01",
+      "result": "AttributeError before service request",
+      "cause": "generic historical upgrade import collided with current evidence upgrade module",
+      "correction": "use existing documented HTTP gateway directly; no historical helper chain"
+    },
+    {
+      "step": "entrypoints02",
+      "result": "404 after slot/native/service checks passed",
+      "cause": "test targeted nonexistent /app/ bootstrap route",
+      "correction": "use installed /app/settings route from mp_shell/controllers.py",
+      "recheck": "entrypoints03 passed including native compilation"
+    }
+  ],
+  "native_apply_repeated": false,
+  "browser_verified": false
+}

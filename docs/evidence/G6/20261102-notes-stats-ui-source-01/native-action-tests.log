@@ -1,0 +1,25 @@
+✔ native confirmation maps destructive labels and resolves once on confirm (1.1413ms)
+✔ native cancel, Escape/dismiss and external close all settle false (0.189ms)
+✔ retiring cancels pending confirmation and stale callbacks cannot authorize (0.1679ms)
+✔ native notifications retain severity and plain text, clean up on scope retirement (0.7168ms)
+✔ native command registrations retire and cached commands recheck current authority (0.4328ms)
+✔ ordinary confirm does not use destructive appearance and failed add rejects (0.2822ms)
+✔ registers one existing Notes slot handler, without a new page (0.7576ms)
+✔ new analysis uses saved revision/idempotency and returns null, not a saved Note (4.2731ms)
+✔ cached current result and pending job do not enqueue duplicate work (0.2096ms)
+✔ changed saved revision blocks enqueue and later changes block result display (0.2207ms)
+✔ timeout/crash errors visibly degrade analysis without a second write (0.3834ms)
+✔ unknown and held outcomes never create another analysis request (0.2675ms)
+✔ retirement cancels polling and suppresses late cross-workspace results (0.4422ms)
+✔ newer actor request is not mistaken for this analysis result (0.2613ms)
+✔ polling is bounded and re-opening reuses the outstanding job (0.2824ms)
+✔ duplicate clicks share the active scope and cleanup allows a later action (0.3539ms)
+✔ RPC failure is local degradation; Arabic uses the existing locale facade (0.2694ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 84.0185

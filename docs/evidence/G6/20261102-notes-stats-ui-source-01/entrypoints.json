@@ -1,0 +1,16 @@
+{
+  "result": "passed_installed_slot_native_compiled_asset_and_existing_result_HTTP",
+  "native_generation": 24,
+  "action_visible_C_and_absent_A_B": true,
+  "capability_scoped": true,
+  "native_A_B_C_list_form_definitions_retained": true,
+  "existing_original_actor_job30_result_current_no_new_enqueue": true,
+  "asset_url": "/web/assets/7fff6c5060eb3c60b3a7e4f6d19641dc9cc30ed4cc36bd88d8ca1a1db89a37e3/mp_shell.assets_host.min.js",
+  "asset_sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+  "native_Odoo_bundle_compiled_and_served": true,
+  "all17tables_worker_approval_unchanged": true,
+  "browser_rendering_verified": false,
+  "limits": [
+    "HTTP/native bundle compilation is not browser execution, rendering, navigation cancellation or degraded UI proof."
+  ]
+}

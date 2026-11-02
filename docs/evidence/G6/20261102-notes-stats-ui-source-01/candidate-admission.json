@@ -1,0 +1,16 @@
+{
+  "result": "passed_notes_stats_only_candidate",
+  "base_image": "sha256:9408148ef42b723effefc0de074fa0992bfecdf72c0f858c7a3d1a54cd932132",
+  "candidate_image": "sha256:22067a190d1f81d35c45ac2f74ac64269da70359d79fbb2e91bbb1a74b0e4ac9",
+  "inventory_digest": "sha256:e9240b4fece52ade7af8c06fa6a46c0cdd888008cd6601d1faeb5c8352e55da2",
+  "changed_paths": [
+    "addons/mp_example_notes_stats/__manifest__.py",
+    "addons/mp_example_notes_stats/static/src/analysis.js",
+    "artifacts/org.example.notes_stats-0.1.0.mplug",
+    "artifacts/org.example.notes_stats-0.1.1.mplug"
+  ],
+  "other_three_artifacts_core_sdk_shell_python_exact": true,
+  "approved_for_staging": true,
+  "deployment_changed": false,
+  "browser_verified": false
+}

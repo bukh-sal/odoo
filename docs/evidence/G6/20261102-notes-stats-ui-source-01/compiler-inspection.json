@@ -1,0 +1,15 @@
+{
+  "result": "compiler_only_requires_exact_base_derivation",
+  "image_id": "sha256:bb87d4910738bb7f64e273bb3bd13bb754f58cca15b7ea51a739e18d8ad3f1cb",
+  "changed_paths": [
+    "addons/mp_example_notes_stats/__manifest__.py",
+    "addons/mp_example_notes_stats/static/src/analysis.js",
+    "artifacts/org.example.notes_stats-0.1.0.mplug",
+    "artifacts/org.example.notes_stats-0.1.1.mplug"
+  ],
+  "changed_python_distributions": [
+    "psycopg2",
+    "python-ldap"
+  ],
+  "not_deployed": true
+}

@@ -26,6 +26,15 @@ current original actor, grants, availability, resource and revision.
 The `stats` binding and external plugin dependency are optional. Missing or revoked
 worker authority must produce an unavailable/degraded analysis outcome while base
 Notes remains usable. Installing this connector does not install or launch a worker.
-Core/SDK0.1.13 or newer and Notes0.2.7 or newer are required. R1 qualification
-still needs the reviewed immutable deployment, independent endpoint publication,
-committed remote job integration and minimal native-detail action qualification.
+Core/SDK0.1.17 or newer and Notes0.2.7 or newer are required. Version0.1.1 adds one
+compiled action in the existing Notes detail-actions slot. It uses the scoped
+`documents`/`jobs` aliases and Odoo notifications through the frozen host facade;
+there is no new record screen, custom dialog, navigation or worker control.
+The action reuses a current result/pending job, checks the saved revision again
+before displaying counts, stops on retirement, and reports held/unknown outcomes
+without automatic retry. Queued checks are bounded; reopening checks existing work.
+Analysis always returns no saved-Note result, preserving native draft semantics.
+
+Backend reference-image/credential/recovery integration is qualified separately.
+This frontend successor still requires immutable reviewed deployment and actual
+healthy/outage/navigation/browser verification before SVC02 is passed.
