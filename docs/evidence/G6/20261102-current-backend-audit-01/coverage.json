@@ -1,0 +1,179 @@
+{
+  "result": "passed_current_G6_backend_coverage_audit_not_gate",
+  "utc": "2026-11-02T14:49:56.932456+00:00",
+  "git_base": "10f8734d40109cf01f076d22be1e576477179d2b",
+  "native_generation": 24,
+  "dispatch_generation": 117,
+  "image": "sha256:22067a190d1f81d35c45ac2f74ac64269da70359d79fbb2e91bbb1a74b0e4ac9",
+  "inventory": "sha256:e9240b4fece52ade7af8c06fa6a46c0cdd888008cd6601d1faeb5c8352e55da2",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "6839281a35ec2448251b078194b8722f2e5ae7334bcaae4156f8989d7ef32421",
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "packages/platform_sdk/modular_platform/event_store.py": "a08360610b91b2cc7aa8c5ecc5d6f03c9724659c4ff740e78ddc4989ffcdcd9f",
+    "packages/platform_sdk/modular_platform/external_metadata.py": "6b994fbc64135eddb4d20802b14fb853cd2da913a2549edbf3f6a484eab22c5a",
+    "packages/platform_sdk/modular_platform/external_planning.py": "943627bfb53825695fb1352ee8a6ba6bfafbed2d879b2998514128be74db7b2c",
+    "packages/platform_sdk/modular_platform/job_runner.py": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+    "packages/platform_sdk/modular_platform/metadata_executor.py": "24c7c5d0a1b355e2c39d130f35a1a5f518215b369f57b1076ad8ef8db2102a12",
+    "packages/platform_sdk/modular_platform/native_auth_recovery.py": "75cc9ae73facf5d4d53c4ea4017288baa4c081f4076473219f5e6259b5246882",
+    "packages/platform_sdk/modular_platform/operator_store.py": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+    "packages/platform_sdk/modular_platform/plans.py": "77272c450c57326a53d0a032a495e4362e707b09ed041ea36d8e9ee4e6e21bfa",
+    "packages/platform_sdk/modular_platform/projection.py": "beeb090067be2707a3f6776587b66592b89092331fc42a28cc0881505beaa1ac",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+    "packages/platform_sdk/modular_platform/reference_dispatch.py": "88c7f59e8dd7fca43cbeb217c22125f5465fd6dc83701998cb8eadea0d6a29b4",
+    "packages/platform_sdk/modular_platform/reference_recovery.py": "62846336995e8f81b3a0ff9419df2bcbc8ab1562d5a0837392d6025d1e082313",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "ccf6128dc1477dd59f17de106d705cfed8ac2d604419a6abb2b758b26c15276b",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+    "packages/platform_sdk/modular_platform/worker_authority.py": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+    "packages/platform_sdk/modular_platform/worker_dispatch.py": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5",
+    "packages/platform_sdk/modular_platform/worker_operator.py": "5598c4c615c64679ea06a064a8289f174577b5ded115c0bc30c63bc3c4ffaf37",
+    "packages/platform_sdk/modular_platform/worker_publication.py": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b",
+    "packages/platform_sdk/modular_platform/worker_transition.py": "a04a57812708b8be20a7f8a3c86878d069d58473d9e34ae79024fd28ba2408a3",
+    "platform_addons/mp_core/__manifest__.py": "799169976899448163dad20562d9ffc0655734533852f3000a7940a6092c0119",
+    "platform_addons/mp_core/async_models.py": "c7c77d451e064db07c72e65d9bed16f6c993d32da704d426e6594512edd03b00",
+    "platform_addons/mp_core/controllers.py": "5972590705fa0c9194d220959403e4fe10cf56530bef3d72c39871e922db0178",
+    "platform_addons/mp_core/dispatch.py": "3fd728ed1a037a61f42c44cf435ce76b832168ecaf89b23ba1c538e9e6139507",
+    "platform_addons/mp_core/event_models.py": "3b4451e8b55c7baeee58bb15f3e7b5f09ed3ad0dc5541f0670d8098060b2feb3",
+    "platform_addons/mp_core/events.py": "287bcfe3dc84207e2c00f5d342eeabc4f559fd336a5b6c430271199a2e018f97",
+    "platform_addons/mp_core/external_authority.py": "575cdd16c4f8df86be1dd5e888391effcf9ab9d009e88fcd85723a40895d26a9",
+    "platform_addons/mp_core/external_job.py": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+    "platform_addons/mp_core/job_dispatch.py": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+    "platform_addons/mp_example_notes/jobs.py": "dde4fe53150d93100fe0aefb40413b6e77e54756331325402ba1893ea93cc4fc",
+    "platform_addons/mp_example_notes/models.py": "b3bb1187b90c2db8e67b6466c16249b0806a8eb4b296566c9b27a3bc167ff805",
+    "platform_addons/mp_example_notes_labels/event_projection.py": "f3597366b05f7c4cc6fcc7aca723a87f58c13408a473b4a461e704d27c8fb0df",
+    "platform_addons/mp_example_notes_labels/models.py": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+    "platform_addons/mp_example_notes_stats/contracts.py": "547f7d66bacc09cc94774a1125719871a046b19a9bdf39d351a266dcd2ea3962",
+    "platform_addons/mp_example_notes_stats/jobs.py": "d2a06f78231d20dfdd546bcb8d1e58bff44960b9f4bc52751d0ee839c231a411",
+    "platform_addons/mp_example_notes_stats/models.py": "b008de5f9323fb95b5eaeaabba10709f97fcac61c8c0c7463be100c61a88ba5a",
+    "platform_addons/mp_example_notes_stats/services.py": "7d1ce78b6f33bd7004422384212e5eb445d44d3d121f5eca6b0690562fb3b07b",
+    "platform_addons/mp_identity/models/scoped.py": "3a149bc7c577a681ded521a3989c9f2d7541390cc8851bf7040dbea1a60da44e",
+    "platform_addons/mp_identity/scopes.py": "c36b822c80d5c75801e617e8aed727782e039e96d1ad9157741bb9fbc52082d0",
+    "platform_addons/mp_shell/static/src/event_client.js": "2ae37a90d51290826fb462e3f7b5eb41a2a526692eb28c302b966fb339a0aa8f",
+    "platform_addons/mp_shell/static/src/host.js": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0"
+  },
+  "event_and_host_paths_exact": 14,
+  "current_native_guards": 12,
+  "external_matrix_six_executable_files_byte_exact": true,
+  "successor_image_transition_sixteen_SDK_files_byte_exact": true,
+  "job03_only_changed_definition": "_reference; current native default unknown guard covered by later installed SVC05 evidence",
+  "checked_record_sha256": {
+    "20261101-core12-runner-01/qualification.json": "073df0873844cdfd9ff0d99b62645ed8642e0b11dd842b7cf38f3bdecdc77355",
+    "20261101-core12-runner-01/source-boundaries.json": "52e71d763cff63b209dc1ee4fac29ba206a886f766e297d90a3e6c52cd9d210e",
+    "20261102-current-backend-audit-01/native-guards.json": "6189074c4f6638c68deb56560969cf40068c1527df47f52764b5ce12f8366c88",
+    "20261102-installed-authority-01/qualification.json": "22e46d776a7c3c7488a20d05416d41efe1ba7fddd12921777b5fd44166c8c438",
+    "20261102-remote-role-01/qualification.json": "ee95d0a50b9c6bc3510ff5f98df604196b1b933f4bf1e694173788d69eae4ce5",
+    "20261102-remote-revision-01/qualification.json": "f5433b2d7b4363cd75ded1ea5e1cd83715c4160bd5d2f885883ee91240b6576d",
+    "20261102-job03-01/qualification.json": "f0498a92b140967e6fcad6f6b27a4671cbb17261c41679ce62e07da8314b34dc",
+    "20261102-worker-image-success-01/unknown-effect-refusal.json": "a4ff3e7fd0278481e97e5c58b7ea094dba79413fdcead99fd6fca4b39dc7c5f7",
+    "20261101-host-events-01/qualification.json": "217927f2a7d0ad8aa21ec7da0016fbfbe5e41c9140d6cc36c469c349afd68b76",
+    "20261102-worker-image-success-01/qualification.json": "0e3e08a7418d2455057ff4275f578b97fc74a213ea8c4ed4f786a398fa5a50ee",
+    "20261102-notes-stats-fault-01/timeout-qualification.json": "c08ec35270e23a71a168ebc6eb04843bfe7d8abec2cb087ad4b697c481dc5d5f",
+    "20261102-notes-stats-fault-01/crash-qualification.json": "985e287576649b63db182261ebb9d5633d642699e345454e45bdc0cdd8ba4b2f",
+    "20261102-notes-stats-ui-source-01/entrypoints.json": "e9ccab82267ff2107fd0f5a14b60b288e2a7535dbc5f63ca03196ba560a7deed",
+    "20261102-worker-scope-01/qualification.json": "b1837280b29f2ffb1a4cb9f27240f3fff2bf1250feb91087a7e4452c31057e75",
+    "20261102-worker-image-success-01/current-credentials.json": "36fa531258a2f5a3a713fbacf05bd76e27d0700e6e0ab73b27bf04b8f3a33d51",
+    "20261102-connector-lifecycle-01/qualification.json": "242282eca57f347982259bdf5e4aafe911382fa658ce8d2cf4d4f7635d037f1e",
+    "20261102-manager-unregister-01/qualification.json": "8a315bf0b7a0181567fc1c5c2f7a8b638d344ae766938eaef24c909205af502e",
+    "20261102-manager-reregister-02/qualification.json": "95dd13606b6bc46beffafc9e6d08f1d855f22ac840960b9f70759891eee45f59"
+  },
+  "coverage": [
+    {
+      "acceptance": "JOB-01",
+      "state": "backend_covered",
+      "evidence": [
+        "20261101-core12-runner-01/qualification.json",
+        "20261101-core12-runner-01/source-boundaries.json",
+        "20261102-current-backend-audit-01/native-guards.json"
+      ]
+    },
+    {
+      "acceptance": "JOB-02",
+      "state": "backend_covered",
+      "evidence": [
+        "20261102-current-backend-audit-01/native-guards.json",
+        "20261102-installed-authority-01/qualification.json",
+        "20261102-remote-role-01/qualification.json",
+        "20261102-remote-revision-01/qualification.json"
+      ]
+    },
+    {
+      "acceptance": "JOB-03",
+      "state": "backend_covered",
+      "evidence": [
+        "20261102-job03-01/qualification.json",
+        "20261102-worker-image-success-01/unknown-effect-refusal.json"
+      ]
+    },
+    {
+      "acceptance": "EVT-01",
+      "state": "backend_and_retained_host_covered",
+      "evidence": [
+        "20261101-host-events-01/qualification.json"
+      ]
+    },
+    {
+      "acceptance": "EVT-02",
+      "state": "backend_and_retained_host_covered",
+      "evidence": [
+        "20261101-host-events-01/qualification.json"
+      ]
+    },
+    {
+      "acceptance": "EVT-03",
+      "state": "backend_and_retained_host_covered",
+      "evidence": [
+        "20261101-host-events-01/qualification.json"
+      ]
+    },
+    {
+      "acceptance": "SVC-01",
+      "state": "backend_covered",
+      "evidence": [
+        "20261102-worker-image-success-01/qualification.json"
+      ]
+    },
+    {
+      "acceptance": "SVC-02",
+      "state": "backend_covered_actual_UI_pending",
+      "evidence": [
+        "20261102-notes-stats-fault-01/timeout-qualification.json",
+        "20261102-notes-stats-fault-01/crash-qualification.json",
+        "20261102-notes-stats-ui-source-01/entrypoints.json"
+      ]
+    },
+    {
+      "acceptance": "SVC-03",
+      "state": "backend_covered",
+      "evidence": [
+        "20261102-worker-scope-01/qualification.json",
+        "20261102-worker-image-success-01/current-credentials.json"
+      ]
+    },
+    {
+      "acceptance": "SVC-04",
+      "state": "backend_covered",
+      "evidence": [
+        "20261102-connector-lifecycle-01/qualification.json",
+        "20261102-manager-unregister-01/qualification.json",
+        "20261102-manager-reregister-02/qualification.json"
+      ]
+    },
+    {
+      "acceptance": "SVC-05",
+      "state": "backend_covered",
+      "evidence": [
+        "20261102-worker-image-success-01/qualification.json"
+      ]
+    }
+  ],
+  "all30jobs_and_other16tables_and_current_worker_authority_preserved": true,
+  "remaining_G6": [
+    "SVC-02 actual UI healthy/degraded result and scope/navigation retirement proof",
+    "Final G6 review after that UI proof; no gate-G6 yet"
+  ],
+  "limits": [
+    "Twelve tests exercise real installed native job guards; fixture reuses an existing Bob membership within rollback only.",
+    "Source equality carries forward the explicitly identified prior tests; it does not widen their scope.",
+    "Browser deferred per user. No new acceptance pass, G6 gate pass, G7 start, external rollback or universal exactly-once claim."
+  ]
+}

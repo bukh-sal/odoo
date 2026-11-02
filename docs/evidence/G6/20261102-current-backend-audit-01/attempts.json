@@ -1,0 +1,19 @@
+{
+  "result": "fixture_and_audit_helper_corrections_only",
+  "native_attempt01": {
+    "tests": 12,
+    "successful": false,
+    "errors": [
+      "current_installed_job_guards.CurrentJobGuards.test_status_same_workspace_other_actor_and_current_revocation"
+    ],
+    "failures": []
+  },
+  "native_failure": "Existing revoked Bob/C membership violates uniqueness when historical fixture always creates another row",
+  "fixture_correction": "Reuse only the existing matching membership, setting viewer/active inside the rollback-only transaction; otherwise create. Product authorization checks unchanged.",
+  "first_attempt_data_preservation": "Second attempt preflight proved all17tables/current worker identical to original before snapshot.",
+  "native_attempt02": "12/12 passed; every test tearDown rollback and entire before/after snapshot exact.",
+  "coverage_attempt01": "Source comparisons passed; helper incorrectly used a new ReferenceDispatchMaintenance instance to consume a snapshot whose policy cache belonged to the first instance. Existing guard rejected this correctly.",
+  "coverage_correction": "Reuse the same adapter for inspect and policy_for. No product/policy change, mutation or replay.",
+  "production_files_changed": false,
+  "lifecycle_crash_restore_or_remote_jobs_replayed": false
+}

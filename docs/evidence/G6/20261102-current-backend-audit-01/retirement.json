@@ -1,0 +1,12 @@
+{
+  "result": "retired_exact_current_backend_audit_children",
+  "removed_containers": 4,
+  "native_guard_children": 2,
+  "receipt_bound_readonly_observers": 2,
+  "expected_failed_fixture_exit1_archived": true,
+  "raw_private_logs_retained": true,
+  "all17tables_worker_current_app_and_checkpoint_roles_preserved": true,
+  "new_images": 0,
+  "volumes_created_or_removed": 0,
+  "no_global_prune": true
+}

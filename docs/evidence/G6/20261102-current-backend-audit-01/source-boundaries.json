@@ -1,0 +1,306 @@
+{
+  "result": "source_boundaries_observed_review_required",
+  "qualified_to_current": [
+    {
+      "evidence": "20261101-core12-runner-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/job_runner.py",
+      "qualified_sha256": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+      "current_sha256": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261101-core12-runner-01/qualification.json",
+      "path": "platform_addons/mp_core/job_dispatch.py",
+      "qualified_sha256": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+      "current_sha256": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261101-core12-runner-01/qualification.json",
+      "path": "platform_addons/mp_core/__manifest__.py",
+      "qualified_sha256": "790fa627ceafd8ae1df05e9b292607043b6735d241a92583a76223011fc780b4",
+      "current_sha256": "799169976899448163dad20562d9ffc0655734533852f3000a7940a6092c0119",
+      "byte_exact": false,
+      "qualified_source_commit": "76e0159738298002003e61ffa000c4169abcd2ac",
+      "changed_definitions": []
+    },
+    {
+      "evidence": "20261101-core12-runner-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "qualified_sha256": "b258aad59ef387329e59ecf4608cc34b87922fca1e3d5ca2d0be3a1cc9cdf77f",
+      "current_sha256": "beeb090067be2707a3f6776587b66592b89092331fc42a28cc0881505beaa1ac",
+      "byte_exact": false,
+      "qualified_source_commit": "76e0159738298002003e61ffa000c4169abcd2ac",
+      "changed_definitions": [
+        "external_observation",
+        "project_deployment",
+        "public_profile",
+        "runtime_inputs"
+      ]
+    },
+    {
+      "evidence": "20261101-core12-runner-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/durable.py",
+      "qualified_sha256": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+      "current_sha256": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261101-core12-runner-01/qualification.json",
+      "path": "platform_addons/mp_example_notes/jobs.py",
+      "qualified_sha256": "dde4fe53150d93100fe0aefb40413b6e77e54756331325402ba1893ea93cc4fc",
+      "current_sha256": "dde4fe53150d93100fe0aefb40413b6e77e54756331325402ba1893ea93cc4fc",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261101-core12-runner-01/qualification.json",
+      "path": "platform_addons/mp_core/external_job.py",
+      "qualified_sha256": "456121efb20dbf6bbcf20fcb4d8f4f390bd2c0387064e698ca09d0a68dab1ed0",
+      "current_sha256": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+      "byte_exact": false,
+      "qualified_source_commit": "24be0294ec2b6624e890fe01d1740e804b0b2019",
+      "changed_definitions": [
+        "_snapshot",
+        "analyze",
+        "authorization_snapshot"
+      ]
+    },
+    {
+      "evidence": "20261102-job03-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/durable.py",
+      "qualified_sha256": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+      "current_sha256": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-job03-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/job_runner.py",
+      "qualified_sha256": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+      "current_sha256": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-job03-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/dispatch_lifecycle.py",
+      "qualified_sha256": "88a37967403c602bac8d91f4c993dacae6d27d6f6f084d2446ebb6e1d05c1b0c",
+      "current_sha256": "6839281a35ec2448251b078194b8722f2e5ae7334bcaae4156f8989d7ef32421",
+      "byte_exact": false,
+      "qualified_source_commit": "98618837f01febf44ae8802aa023a514ee144584",
+      "changed_definitions": [
+        "_reference"
+      ]
+    },
+    {
+      "evidence": "20261102-job03-01/qualification.json",
+      "path": "platform_addons/mp_core/job_dispatch.py",
+      "qualified_sha256": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+      "current_sha256": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-job03-01/qualification.json",
+      "path": "platform_addons/mp_core/external_job.py",
+      "qualified_sha256": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+      "current_sha256": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-job03-01/qualification.json",
+      "path": "platform_addons/mp_example_notes_stats/contracts.py",
+      "qualified_sha256": "547f7d66bacc09cc94774a1125719871a046b19a9bdf39d351a266dcd2ea3962",
+      "current_sha256": "547f7d66bacc09cc94774a1125719871a046b19a9bdf39d351a266dcd2ea3962",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-reference-restore-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/reference_recovery.py",
+      "qualified_sha256": "634d49b61709d66f0cb559c5ee334457cd136a4e617fee4337ab3002f6ae208d",
+      "current_sha256": "62846336995e8f81b3a0ff9419df2bcbc8ab1562d5a0837392d6025d1e082313",
+      "byte_exact": false,
+      "qualified_source_commit": "c464480581ce46b6665496931ff2a2052c5b6d64",
+      "changed_definitions": [
+        "ReferenceRecoveryDispatch",
+        "ReferenceRecoveryDispatch._transition_source"
+      ]
+    },
+    {
+      "evidence": "20261102-reference-restore-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/restore_executor.py",
+      "qualified_sha256": "ccf6128dc1477dd59f17de106d705cfed8ac2d604419a6abb2b758b26c15276b",
+      "current_sha256": "ccf6128dc1477dd59f17de106d705cfed8ac2d604419a6abb2b758b26c15276b",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-reference-restore-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/recovery_reviews.py",
+      "qualified_sha256": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+      "current_sha256": "0a3f2a2af8f3f565e3efa8f765c2af6d95eac5d4be437c5e9096df300f66b902",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-reference-restore-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/native_auth_recovery.py",
+      "qualified_sha256": "75cc9ae73facf5d4d53c4ea4017288baa4c081f4076473219f5e6259b5246882",
+      "current_sha256": "75cc9ae73facf5d4d53c4ea4017288baa4c081f4076473219f5e6259b5246882",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-reference-restore-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/worker_publication.py",
+      "qualified_sha256": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b",
+      "current_sha256": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-reference-restore-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/worker_authority.py",
+      "qualified_sha256": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+      "current_sha256": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-reference-restore-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/reference_dispatch.py",
+      "qualified_sha256": "51c8fa7ede59e921fe6bf1b53c7eba5289466c33b9fd22099ac4f369fb08f546",
+      "current_sha256": "88c7f59e8dd7fca43cbeb217c22125f5465fd6dc83701998cb8eadea0d6a29b4",
+      "byte_exact": false,
+      "qualified_source_commit": "b0b4f74fcbd33485f5e00df3d9e0544e44ebb474",
+      "changed_definitions": [
+        "ReferenceDispatchMaintenance",
+        "ReferenceDispatchMaintenance.__init__",
+        "ReferenceDispatchMaintenance._transition_source",
+        "ReferenceDispatchMaintenance.reference_policy"
+      ]
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/worker_transition.py",
+      "qualified_sha256": "a04a57812708b8be20a7f8a3c86878d069d58473d9e34ae79024fd28ba2408a3",
+      "current_sha256": "a04a57812708b8be20a7f8a3c86878d069d58473d9e34ae79024fd28ba2408a3",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/reference_dispatch.py",
+      "qualified_sha256": "88c7f59e8dd7fca43cbeb217c22125f5465fd6dc83701998cb8eadea0d6a29b4",
+      "current_sha256": "88c7f59e8dd7fca43cbeb217c22125f5465fd6dc83701998cb8eadea0d6a29b4",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/reference_recovery.py",
+      "qualified_sha256": "62846336995e8f81b3a0ff9419df2bcbc8ab1562d5a0837392d6025d1e082313",
+      "current_sha256": "62846336995e8f81b3a0ff9419df2bcbc8ab1562d5a0837392d6025d1e082313",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/external_planning.py",
+      "qualified_sha256": "943627bfb53825695fb1352ee8a6ba6bfafbed2d879b2998514128be74db7b2c",
+      "current_sha256": "943627bfb53825695fb1352ee8a6ba6bfafbed2d879b2998514128be74db7b2c",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/external_metadata.py",
+      "qualified_sha256": "6b994fbc64135eddb4d20802b14fb853cd2da913a2549edbf3f6a484eab22c5a",
+      "current_sha256": "6b994fbc64135eddb4d20802b14fb853cd2da913a2549edbf3f6a484eab22c5a",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/metadata_executor.py",
+      "qualified_sha256": "24c7c5d0a1b355e2c39d130f35a1a5f518215b369f57b1076ad8ef8db2102a12",
+      "current_sha256": "24c7c5d0a1b355e2c39d130f35a1a5f518215b369f57b1076ad8ef8db2102a12",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/dispatch_lifecycle.py",
+      "qualified_sha256": "6839281a35ec2448251b078194b8722f2e5ae7334bcaae4156f8989d7ef32421",
+      "current_sha256": "6839281a35ec2448251b078194b8722f2e5ae7334bcaae4156f8989d7ef32421",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/worker_operator.py",
+      "qualified_sha256": "5598c4c615c64679ea06a064a8289f174577b5ded115c0bc30c63bc3c4ffaf37",
+      "current_sha256": "5598c4c615c64679ea06a064a8289f174577b5ded115c0bc30c63bc3c4ffaf37",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/worker_publication.py",
+      "qualified_sha256": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b",
+      "current_sha256": "b6fd85c1f3cf9aa4dfbf5c53d0505f7ade2506804a18ff38352a6ef46bc7490b",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/worker_authority.py",
+      "qualified_sha256": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+      "current_sha256": "b98e00ff9874217ef4f52e2fffffe54b219b5ce963bec70a1d443ac831191487",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/worker_dispatch.py",
+      "qualified_sha256": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5",
+      "current_sha256": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/job_runner.py",
+      "qualified_sha256": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+      "current_sha256": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/tokens.py",
+      "qualified_sha256": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+      "current_sha256": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "qualified_sha256": "beeb090067be2707a3f6776587b66592b89092331fc42a28cc0881505beaa1ac",
+      "current_sha256": "beeb090067be2707a3f6776587b66592b89092331fc42a28cc0881505beaa1ac",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/operator_store.py",
+      "qualified_sha256": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+      "current_sha256": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+      "byte_exact": true
+    },
+    {
+      "evidence": "20261102-worker-image-success-01/qualification.json",
+      "path": "packages/platform_sdk/modular_platform/plans.py",
+      "qualified_sha256": "77272c450c57326a53d0a032a495e4362e707b09ed041ea36d8e9ee4e6e21bfa",
+      "current_sha256": "77272c450c57326a53d0a032a495e4362e707b09ed041ea36d8e9ee4e6e21bfa",
+      "byte_exact": true
+    }
+  ],
+  "all11_event_authority_transport_consumer_paths_byte_exact": true,
+  "event_paths": {
+    "platform_addons/mp_core/event_models.py": "3b4451e8b55c7baeee58bb15f3e7b5f09ed3ad0dc5541f0670d8098060b2feb3",
+    "platform_addons/mp_core/async_models.py": "c7c77d451e064db07c72e65d9bed16f6c993d32da704d426e6594512edd03b00",
+    "platform_addons/mp_core/controllers.py": "5972590705fa0c9194d220959403e4fe10cf56530bef3d72c39871e922db0178",
+    "platform_addons/mp_core/dispatch.py": "3fd728ed1a037a61f42c44cf435ce76b832168ecaf89b23ba1c538e9e6139507",
+    "platform_addons/mp_core/events.py": "287bcfe3dc84207e2c00f5d342eeabc4f559fd336a5b6c430271199a2e018f97",
+    "packages/platform_sdk/modular_platform/event_store.py": "a08360610b91b2cc7aa8c5ecc5d6f03c9724659c4ff740e78ddc4989ffcdcd9f",
+    "platform_addons/mp_example_notes_labels/event_projection.py": "f3597366b05f7c4cc6fcc7aca723a87f58c13408a473b4a461e704d27c8fb0df",
+    "platform_addons/mp_example_notes_labels/models.py": "f7fa3a7bb32ac9b4e89720d97b92072188b04c8a09c56c26e2dc7a74bdd72df5",
+    "platform_addons/mp_identity/models/scoped.py": "3a149bc7c577a681ded521a3989c9f2d7541390cc8851bf7040dbea1a60da44e",
+    "platform_addons/mp_identity/scopes.py": "c36b822c80d5c75801e617e8aed727782e039e96d1ad9157741bb9fbc52082d0",
+    "platform_addons/mp_shell/static/src/event_client.js": "2ae37a90d51290826fb462e3f7b5eb41a2a526692eb28c302b966fb339a0aa8f"
+  },
+  "limits": [
+    "Changed definitions are identified, not automatically accepted as covered. Review the exact source diff and successor evidence.",
+    "No browser or whole G6 qualification claim."
+  ]
+}

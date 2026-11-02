@@ -1,0 +1,17 @@
+{
+  "result": "passed_current_installed_native_job_guards",
+  "tests": 12,
+  "successful": true,
+  "errors": [],
+  "failures": [],
+  "native_generation": 24,
+  "image": "sha256:22067a190d1f81d35c45ac2f74ac64269da70359d79fbb2e91bbb1a74b0e4ac9",
+  "original_test_sha256": "0e7a51bc8b383c4979456e89dbdf21aa4f8f4086d43bc4aa272249840c5c8f28",
+  "test_sha256": "981db3331b384513599a068659087f5f378e78f026b6bbfa8b975b44e2724440",
+  "unchanged_test_reused": false,
+  "fixture_only_reuses_existing_Bob_membership": true,
+  "source_substitution": false,
+  "all_test_writes_rolled_back": true,
+  "all17tables_and_worker_authority_exact": true,
+  "browser_verified": false
+}
