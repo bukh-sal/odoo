@@ -1,0 +1,50 @@
+{
+  "result": "passed_exact_ID03_core_identity_candidate_not_deployed",
+  "image_id": "sha256:6da0f6864c7e01b3c1d8ea1e0ceebde3ed29c7cd889511ec52205df4e43fa76b",
+  "inventory_digest": "sha256:3e0fd33ebc9ad7fd9a24e45e56d5582765a3da594c3fe5d77903c29b2d582709",
+  "base_image_id": "sha256:22067a190d1f81d35c45ac2f74ac64269da70359d79fbb2e91bbb1a74b0e4ac9",
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.17",
+      "target_version": "19.0.0.1.18",
+      "migrations": []
+    },
+    {
+      "addon": "mp_identity",
+      "previous_version": "19.0.0.1.2",
+      "target_version": "19.0.0.1.3",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "799169976899448163dad20562d9ffc0655734533852f3000a7940a6092c0119",
+      "target_sha256": "b038f7857b597ab2c03db7bd8930bafb804a1c4b062f6488783f9aac292ee153"
+    },
+    {
+      "path": "addons/mp_core/attachments.py",
+      "previous_sha256": "9ea6e65411beb5976b01a36d50e73d963feb57ea520f485af21ad7855ce72ccc",
+      "target_sha256": "ce78f79dfc855a8a929fcdce5b3690e9ccfe23e3d95c7c049439a2c1e3b3e490"
+    },
+    {
+      "path": "addons/mp_identity/__manifest__.py",
+      "previous_sha256": "97863e22b967d7d41ff2c0919f8f3074e258bfea53406b32621b896f765c3423",
+      "target_sha256": "a7046ae2f286a31d3467333c674457e3604036d4e4afadbc556fc7bc3c42063c"
+    },
+    {
+      "path": "addons/mp_identity/models/scoped.py",
+      "previous_sha256": "3a149bc7c577a681ded521a3989c9f2d7541390cc8851bf7040dbea1a60da44e",
+      "target_sha256": "9a16292d4bfe7afff1888a49c7a582d17d54034e1dc10f54c7fe530e476b4824"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "beeb090067be2707a3f6776587b66592b89092331fc42a28cc0881505beaa1ac",
+      "target_sha256": "8eca68eac8e578f569074adbc33cbe47ff0c5cf229be039ca98f10a6a39242cc"
+    }
+  ],
+  "all_four_plugin_artifacts_shell_contracts_OS_Python_exact": true,
+  "independent_worker_unchanged": true,
+  "approved_for_staging": true
+}

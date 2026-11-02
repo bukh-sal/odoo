@@ -75,6 +75,13 @@ class WorkspaceScoped(models.AbstractModel):
         self._mp_guard("read")
         return super().read(fields, load=load)
 
+    @api.readonly
+    def web_read(self, specification):
+        # Native id-only/empty specifications deliberately skip read(). Scope
+        # authorization still applies to this supported record entry point.
+        self._mp_guard("read")
+        return super().web_read(specification)
+
     @api.private
     def fetch(self, field_names=None):
         self._mp_guard("read")

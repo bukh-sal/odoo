@@ -1,0 +1,11 @@
+{
+  "result": "separate_existing_Canvas_empty_JSON_storage_defect_confirmed",
+  "native_generation": 25,
+  "source_test_sha256": "571fe6f99814609784f9e9c41c01aa4270886c625085cd8ae4922339be67a7f5",
+  "failure": "PostgreSQL NOT NULL violation: native required Json cards=[] converts to SQL NULL during reference board creation.",
+  "wire_schema_allows_empty_cards": true,
+  "native_field_declares_default_empty_list": true,
+  "all_test_rows_rolled_back": true,
+  "scope_probe_return_condition": "Use a nonempty valid fixture for ID03 scope cases; preserve this empty-value failure as required G7 contract work, do not label it a security failure or silently discard it.",
+  "next_required_work": "Correct existing Canvas empty-list persistence/DTO normalization through a separately versioned plugin upgrade; no UI/product expansion."
+}

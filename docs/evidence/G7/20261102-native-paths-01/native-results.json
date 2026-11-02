@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "tests": 30,
+  "successful": true,
+  "failures": [],
+  "errors": [],
+  "native_generation": 25,
+  "image": "sha256:6da0f6864c7e01b3c1d8ea1e0ceebde3ed29c7cd889511ec52205df4e43fa76b",
+  "native_core": "19.0.0.1.18",
+  "identity": "19.0.0.1.3",
+  "all36originaljobs_other16tables_worker_authority_exact": true,
+  "all_fixture_changes_rolled_back": true,
+  "installed_source_not_replaced": true,
+  "test_sha256": {
+    "docs\\evidence\\G7\\20261102-native-paths-01\\native_paths.py": "265ee90b2060368f7434e93153df73dd67577e822a2b321ec28e5285808c5980",
+    "docs\\evidence\\G6\\20261102-current-backend-audit-01\\native_guards.py": "981db3331b384513599a068659087f5f378e78f026b6bbfa8b975b44e2724440",
+    "docs\\evidence\\G6\\20261101-notes7-upgrade-01\\native_batch.py": "20c92aea4c510503737856892424bcd17b8e4efd030bf12ee81d0c33ab6bf6e4"
+  },
+  "fixture_adaptation": "Retained batch observer receives exact independently reconstructed reference policy for current external metadata; product handlers/authorization are unchanged. Export permission group granted only within rolled-back native test."
+}

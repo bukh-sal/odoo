@@ -9,6 +9,25 @@ class Attachment(models.Model):
     def _mp_managed(self,name):
         return bool(name and name in self.env and getattr(self.env[name],'_mp_scoped',False))
 
+    def _mp_guard_workspace_binary(self):
+        # Public/token binary routes may sudo before ordinary access checks.
+        # Read only attachment ownership here; never its binary/token fields.
+        ids=[ident for ident in self.ids if isinstance(ident,int)]
+        self.env.cr.execute('SELECT res_model,res_id FROM ir_attachment WHERE id=ANY(%s)',[ids])
+        for model,ident in self.env.cr.fetchall():
+            if self._mp_managed(model):
+                self.env[model].browse(ident)._mp_guard('read')
+                raise AccessError('Workspace attachments are unavailable in this R1 profile')
+
+    def _can_return_content(self,field_name=None,access_token=None):
+        self._mp_guard_workspace_binary()
+        return super()._can_return_content(field_name,access_token)
+
+    def _to_http_stream(self):
+        # Also cover limited-field tokens that bypass _can_return_content.
+        self._mp_guard_workspace_binary()
+        return super()._to_http_stream()
+
     @api.model_create_multi
     def create(self,values_list):
         if any(self._mp_managed(v.get('res_model')) for v in values_list):

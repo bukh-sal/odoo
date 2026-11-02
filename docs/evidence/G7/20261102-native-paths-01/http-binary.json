@@ -1,0 +1,27 @@
+{
+  "result": "passed_actual_legacy_public_binary_HTTP_denials",
+  "cases": [
+    {
+      "case": "anonymous",
+      "status": 404,
+      "fixture_bytes_returned": false
+    },
+    {
+      "case": "same_workspace",
+      "status": 404,
+      "fixture_bytes_returned": false
+    },
+    {
+      "case": "foreign_workspace",
+      "status": 404,
+      "fixture_bytes_returned": false
+    }
+  ],
+  "native_generation": 25,
+  "exact_synthetic_fixture_created_and_removed": true,
+  "all_original_attachment_metadata_exact": true,
+  "no_filestore_write": true,
+  "all36jobs_other16tables_exact": true,
+  "token_and_limited_field_shortcuts_tested_in_native_results": true,
+  "limits": "Live HTTP public shortcut tested without secret query tokens; native suite exercises real ordinary and limited field tokens."
+}

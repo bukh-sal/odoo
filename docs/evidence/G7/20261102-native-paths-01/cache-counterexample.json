@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "user": "alice",
+      "workspace": "B",
+      "ordinary_read_denied": true,
+      "scalar_denied": false,
+      "warmed_foreign_value_returned": true
+    },
+    {
+      "user": "bob",
+      "workspace": "B",
+      "ordinary_read_denied": true,
+      "scalar_denied": false,
+      "warmed_foreign_value_returned": true
+    }
+  ],
+  "fixture_writes": false,
+  "native_generation": 25,
+  "image": "sha256:6da0f6864c7e01b3c1d8ea1e0ceebde3ed29c7cd889511ec52205df4e43fa76b",
+  "all36jobs_other16tables_exact": true,
+  "trust_boundary": "Cooperating native ORM callers; not a demonstrated HTTP leak or sandbox claim"
+}

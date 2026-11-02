@@ -1,0 +1,20 @@
+{
+  "result": "counterexample_confirmed",
+  "public_shortcut_returned_fixture_bytes": true,
+  "token_shortcut_returned_fixture_bytes": true,
+  "all_fixture_rows_rolled_back": true,
+  "no_filestore_write": true,
+  "actual_native_binary_adapter": true,
+  "native_generation": 24,
+  "image": "sha256:22067a190d1f81d35c45ac2f74ac64269da70359d79fbb2e91bbb1a74b0e4ac9",
+  "all36jobs_other16tables_exact": true,
+  "source_sha256": {
+    "platform_addons/mp_core/attachments.py": "9ea6e65411beb5976b01a36d50e73d963feb57ea520f485af21ad7855ce72ccc",
+    "odoo/addons/base/models/ir_binary.py": "b872f005e5fd1281c2ce3c61d642c7fef158c9dbbf7e5431794c6165083632bb",
+    "odoo/addons/base/models/ir_attachment.py": "6c18f39d621b3237b2d3ef0371c9245a5aa4ffffed8453d2500e2282f3836b68"
+  },
+  "limits": [
+    "Synthetic legacy/operator-imported attachment row inserted only inside a rolled-back transaction; no normal user could create it through the supported blocked create API.",
+    "Exercises the exact native binary adapter/stream, not a live HTTP request. The public/token shortcut currently bypasses the intended scoped attachment gate."
+  ]
+}

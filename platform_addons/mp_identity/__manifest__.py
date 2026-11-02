@@ -1,6 +1,6 @@
 {
     "name": "Modular Platform Identity",
-    "version": "19.0.0.1.2",
+    "version": "19.0.0.1.3",
     "depends": ["mp_compat"],
     "license": "LGPL-3",
     "author": "Modular Platform",

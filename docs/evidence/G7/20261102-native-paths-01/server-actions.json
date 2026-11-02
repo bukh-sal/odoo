@@ -1,0 +1,34 @@
+{
+  "result": "passed",
+  "cases": [
+    {
+      "grouped": false,
+      "original_actor_no_sudo": true,
+      "own_allowed_foreign_denied": true
+    },
+    {
+      "grouped": true,
+      "original_actor_no_sudo": true,
+      "own_allowed_foreign_denied": true
+    }
+  ],
+  "explicit_group_viewer_read_allowed_only_own_scope": true,
+  "all_action_fixture_changes_rolled_back": true,
+  "native_crons": [
+    {
+      "id": 1,
+      "model": "ir.autovacuum",
+      "active": true
+    },
+    {
+      "id": 2,
+      "model": "res.users.deletion",
+      "active": true
+    }
+  ],
+  "workspace_scoped_native_crons": 0,
+  "native_generation": 25,
+  "image": "sha256:6da0f6864c7e01b3c1d8ea1e0ceebde3ed29c7cd889511ec52205df4e43fa76b",
+  "all36jobs_other16tables_exact": true,
+  "limits": "Trusted cooperating server-action code executed by real native runner; native plugins remain fully trusted. Reference scheduled work uses the separately qualified guarded job dispatcher, not unscoped cron callbacks."
+}

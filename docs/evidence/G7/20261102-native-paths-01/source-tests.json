@@ -1,0 +1,8 @@
+{
+  "result": "passed",
+  "tests": 52,
+  "failures": [],
+  "errors": [],
+  "skipped": 0,
+  "limits": "Host planning/version/unchanged external compatibility regressions; not installed ID03 qualification."
+}
