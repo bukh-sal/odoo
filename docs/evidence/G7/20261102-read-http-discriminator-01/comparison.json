@@ -1,0 +1,43 @@
+{
+  "result": "read_correction_HTTP_improvement_confirmed_small_dataset",
+  "source_sha256": {
+    "docs\\evidence\\G7\\20261102-performance-preflight-01\\read-preflight.json": "2e9ded240ff0f9989613e24a6d1c2a0c00261c9707f052fee50760df1db51157",
+    "docs\\evidence\\G7\\20261102-read-http-discriminator-01\\read-preflight.json": "26105d05e2cc14b50c99c3d3ab83280df52952c88d0c9ed3c7ab87c4c925b2b1"
+  },
+  "cases": {
+    "native_list80": {
+      "before_p95_ms": 2007.261,
+      "after_p95_ms": 178.482,
+      "after_max_ms": 1104.992,
+      "after_errors": 0
+    },
+    "native_detail": {
+      "before_p95_ms": 388.28,
+      "after_p95_ms": 119.953,
+      "after_max_ms": 1104.249,
+      "after_errors": 0
+    },
+    "gateway_list25": {
+      "before_p95_ms": 3477.619,
+      "after_p95_ms": 187.228,
+      "after_max_ms": 1094.072,
+      "after_errors": 0
+    },
+    "gateway_detail": {
+      "before_p95_ms": 813.648,
+      "after_p95_ms": 156.274,
+      "after_max_ms": 1073.991,
+      "after_errors": 0
+    }
+  },
+  "total_notes": 30,
+  "workspace_notes": 24,
+  "concurrent_independent_sessions": 20,
+  "samples_per_case": 40,
+  "all17tables_worker_exact": true,
+  "limits": [
+    "Same operational limits/proxy/authorization; small dataset only. Required10k target still unexecuted.",
+    "Rare maximum latencies around1.1s remain recorded; p95 is not a tail-latency guarantee.",
+    "No performance gate point or acceptance added from this diagnostic."
+  ]
+}

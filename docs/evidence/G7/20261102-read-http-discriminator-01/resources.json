@@ -1,0 +1,86 @@
+{
+  "docker": {
+    "ServerVersion": "29.9.2",
+    "KernelVersion": "7.0.14-linuxkit",
+    "OperatingSystem": "Docker Desktop",
+    "Architecture": "x86_64",
+    "NCPU": 16,
+    "MemTotal": 8290824192,
+    "Driver": "overlayfs",
+    "DriverStatus": [
+      [
+        "driver-type",
+        "io.containerd.snapshotter.v1"
+      ]
+    ]
+  },
+  "host_OS": "Windows-11-10.0.26300-SP0",
+  "host_python": "3.12.15 (main, Oct 21 2026, 17:48:33) [MSC v.1944 64 bit (AMD64)]",
+  "clocks": {
+    "monotonic": {
+      "implementation": "GetTickCount64()",
+      "resolution": 0.015625
+    },
+    "perf_counter": {
+      "implementation": "QueryPerformanceCounter()",
+      "resolution": 1e-07
+    }
+  },
+  "runtimes": [
+    {
+      "role": "app",
+      "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+      "user": "10001:10001",
+      "memory_limit_bytes": 1610612736,
+      "nano_cpus": 2000000000,
+      "cpu_period": 0,
+      "cpu_quota": 0,
+      "readonly_root": true
+    },
+    {
+      "role": "database",
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "user": "",
+      "memory_limit_bytes": 536870912,
+      "nano_cpus": 1000000000,
+      "cpu_period": 0,
+      "cpu_quota": 0,
+      "readonly_root": false
+    },
+    {
+      "role": "edge",
+      "image": "sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+      "user": "101:101",
+      "memory_limit_bytes": 134217728,
+      "nano_cpus": 500000000,
+      "cpu_period": 0,
+      "cpu_quota": 0,
+      "readonly_root": true
+    },
+    {
+      "role": "external_worker",
+      "image": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+      "user": "10002:10002",
+      "memory_limit_bytes": 268435456,
+      "nano_cpus": 1000000000,
+      "cpu_period": 0,
+      "cpu_quota": 0,
+      "readonly_root": true
+    }
+  ],
+  "global_running_containers": 6,
+  "reference": "Spec provisional4CPU/8GiB for app/database; actual engine and per-container caps are recorded, no equivalence assumed.",
+  "storage": "Docker managed Linux volumes; actual storage driver/backing metadata above. Physical Windows disk model not yet bound.",
+  "target_dataset_notes": 10000,
+  "actual_total_notes": 30,
+  "actual_workspace_notes": 24,
+  "concurrent_requests": 20,
+  "actual_app_settings": {
+    "workers": "2",
+    "db_maxconn": "12",
+    "max_cron_threads": "0",
+    "limit_memory_soft": "536870912",
+    "limit_memory_hard": "671088640",
+    "dev_mode": null
+  }
+}

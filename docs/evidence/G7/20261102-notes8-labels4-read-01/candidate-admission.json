@@ -1,0 +1,60 @@
+{
+  "result": "passed_exact_Notes8_Labels4_candidate_not_deployed",
+  "image_id": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory_digest": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "base_image_id": "sha256:9fd76d7b4bac1882a938ba3064104df11f097b7949a50fc642f5101ffbad53ff",
+  "source_diff": [
+    "addons/mp_example_notes/__manifest__.py",
+    "addons/mp_example_notes/models.py",
+    "addons/mp_example_notes_labels/__manifest__.py",
+    "addons/mp_example_notes_labels/models.py",
+    "artifacts/org.example.notes-0.2.7.mplug",
+    "artifacts/org.example.notes-0.2.8.mplug",
+    "artifacts/org.example.notes_labels-0.2.3.mplug",
+    "artifacts/org.example.notes_labels-0.2.4.mplug"
+  ],
+  "artifacts": {
+    "org.example.canvas": {
+      "addon": "mp_example_canvas",
+      "digest": "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+      "file": "org.example.canvas-0.1.4.mplug",
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.4"
+    },
+    "org.example.notes": {
+      "addon": "mp_example_notes",
+      "digest": "sha256:b7b4a934fbbab8e8c0a423e04307ac735cd99872f9950a49504ed04bb94fa562",
+      "file": "org.example.notes-0.2.8.mplug",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.8"
+    },
+    "org.example.notes_labels": {
+      "addon": "mp_example_notes_labels",
+      "digest": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+      "file": "org.example.notes_labels-0.2.4.mplug",
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.4"
+    },
+    "org.example.notes_stats": {
+      "addon": "mp_example_notes_stats",
+      "digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+      "file": "org.example.notes_stats-0.1.1.mplug",
+      "plugin_id": "org.example.notes_stats",
+      "version": "0.1.1"
+    }
+  },
+  "native_changes": {
+    "mp_example_notes": [
+      "19.0.0.2.7",
+      "19.0.0.2.8"
+    ],
+    "mp_example_notes_labels": [
+      "19.0.0.2.3",
+      "19.0.0.2.4"
+    ]
+  },
+  "core_identity_shell_SDK_other_artifacts_OS_Python_exact": true,
+  "frozen_files": 97,
+  "independent_worker_unchanged": true,
+  "approved_for_curating": true
+}

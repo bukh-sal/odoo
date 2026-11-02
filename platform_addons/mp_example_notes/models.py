@@ -89,7 +89,7 @@ class Note(models.Model):
         return super()._load_records_write(values)
 
     def _dto(self):
-        self.ensure_one();self._mp_guard('read')
+        self.ensure_one();self._mp_read_scope()
         updated=self.write_date or self.create_date
         return {'id':self.public_id,'title':self.title,'body':self.body or '', 'revision':self.revision,'labels':[], 'updated_at':updated.replace(tzinfo=timezone.utc).isoformat().replace('+00:00','Z')}
 
@@ -115,10 +115,13 @@ class Note(models.Model):
         rows=self.search(domain,limit=values['limit']+1,offset=offset,order=order)
         more=len(rows)>values['limit'];rows=rows[:values['limit']]
         cursor=base64.urlsafe_b64encode(json.dumps({'offset':offset+len(rows)}).encode()).decode().rstrip('=') if more else None
-        return {'items':[r._dto() for r in rows],'next_cursor':cursor}
+        with rows._mp_read_window() as records:
+            return {'items':[r._dto() for r in records],'next_cursor':cursor}
 
     @api.model
-    def _mp_service_get(self,values):return self._by_public(values['note_id'])._dto()
+    def _mp_service_get(self,values):
+        with self._by_public(values['note_id'])._mp_read_window() as record:
+            return record._dto()
 
     @api.model
     def _mp_service_create(self,values):return self.create(values)._dto()
@@ -147,9 +150,12 @@ class Note(models.Model):
         return {'document_id':value['id'],'content':{'headline':value['title'],'text':value['body']},'revision':value['revision'],'labels':value['labels'],'updated_at':value['updated_at']}
 
     @api.model
-    def _mp_service_v2_get(self,values):return self._by_public(values['document_id'])._v2_dto()
+    def _mp_service_v2_get(self,values):
+        with self._by_public(values['document_id'])._mp_read_window() as record:
+            return record._v2_dto()
 
     @api.model
     def _mp_service_v2_list(self,values):
         self._mp_guard('read')
-        return {'documents':[record._v2_dto() for record in self.search([],limit=values['limit'],order='title,id')]}
+        with self.search([],limit=values['limit'],order='title,id')._mp_read_window() as records:
+            return {'documents':[record._v2_dto() for record in records]}

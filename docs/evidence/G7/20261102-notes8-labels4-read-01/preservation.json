@@ -1,0 +1,29 @@
+{
+  "result": "passed_actual_Notes8_Labels4_upgrade",
+  "operation_id": "2abd82cd-c7cf-40e4-9293-209cb3da302b",
+  "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "configuration_generation": 29,
+  "dispatch_generation": 132,
+  "all36jobs_outcomes_inputs_attempts_retained": true,
+  "jobs_epoch_updated": 33,
+  "all30Notes_one_existing_Canvas_reference_other_business_events_credentials_bindings_endpoints_exact": true,
+  "reviewed_metadata_delta": "Only Notes/Labels manifest/version/digest/write_date and A/B/C policy generations+1; no grants/feature availability change.",
+  "schema_columns_exact": true,
+  "native_versions_only": {
+    "mp_example_notes": [
+      "19.0.0.2.7",
+      "19.0.0.2.8"
+    ],
+    "mp_example_notes_labels": [
+      "19.0.0.2.3",
+      "19.0.0.2.4"
+    ]
+  },
+  "retained_checkpoint_files": 50,
+  "worker_identity_image_start_restart_network_mounts_key_publication_exact": true,
+  "helper_image_only_moved_to_approved_image": true,
+  "limits": [
+    "Upgrade/preservation only; installed/native/HTTP scope and performance discrimination remain. FullG7 open."
+  ]
+}

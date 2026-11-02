@@ -1,0 +1,48 @@
+{
+  "result": "passed_installed_Notes8_Labels4_read_serialization_and_pending_policy_fix",
+  "work_item": "G-01c2b",
+  "acceptance_requalified": "ID-03",
+  "configuration_generation": 29,
+  "dispatch_generation": 132,
+  "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "Notes": "0.2.8",
+  "Labels": "0.2.4",
+  "core": "19.0.0.1.20",
+  "identity": "19.0.0.1.5",
+  "native_tests": 63,
+  "http_cases": 31,
+  "actual_installed_pending_policy_cached_field_denied": true,
+  "private_policy_bool_cache_expiry_SQL_ORM_and_write_guards_qualified": true,
+  "read_v1_v2_DTOs_and_empty_lists_preserved": true,
+  "ordinary_curated_independently_reviewed_approved_five_scope_upgrade": true,
+  "all36jobs_other16tables_schema_files_worker_preserved_except_reviewed_metadata_policy_queue_epochs": true,
+  "all_current_source_build_inputs_exact": true,
+  "contracts_97_exact": true,
+  "unchanged_components": [
+    "core20",
+    "identity1.5",
+    "SDK20",
+    "shell10",
+    "native Notes views",
+    "Canvas4",
+    "native NotesStats1",
+    "external metadataStats2",
+    "external worker runtime/credentials/publication"
+  ],
+  "retained_coverage": "../20261102-read-window-02/qualification.json maps exact unchanged binary HTTP/server-action/Canvas4 persistence; original55native plus8current Labels/DTO cases now pass against installed plugin code.",
+  "query_discriminator": {
+    "candidate_only": true,
+    "native24list_before": 519,
+    "native24list_after": 45,
+    "gateway24list_before": 816,
+    "gateway24list_after": 29,
+    "not_HTTP_or_10k_target": true
+  },
+  "limits": [
+    "Only the read correction and ID03 regression are qualified; no extra performance gate/acceptance credit.",
+    "Current real HTTP latency discriminator and isolated10k20concurrent benchmark still required.",
+    "UI09/shell/mount cycles/full fresh release/security/license/network/provenance/recovery/runbooks/handoff remain.",
+    "Native Python/sudo/SQL remain trusted; the private finite20ms snapshot is not a sandbox."
+  ]
+}

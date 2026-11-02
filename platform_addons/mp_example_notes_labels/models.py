@@ -11,11 +11,17 @@ class Labels(models.Model):
     _inherit='mp.example.note'
     x_notes_labels=fields.Json(default=list,copy=True)
 
-    def _labels_available(self):
-        scope=current_scope(self.env)
-        self.env.cr.execute("""SELECT 1 FROM mp_workspace_plugin f JOIN mp_plugin_installation i ON i.id=f.installation_id
-            WHERE f.workspace_id=%s AND i.plugin_id='org.example.notes_labels' AND i.state='installed' AND f.availability='enabled'""",[scope.workspace_id])
-        return bool(self.env.cr.fetchone())
+    def _labels_available(self,read_window=False):
+        def check():
+            scope=(self._mp_cached_read_scope() if read_window else None) or current_scope(self.env)
+            self.env['mp.plugin.installation'].flush_model(['plugin_id','state'])
+            self.env['mp.workspace.plugin'].flush_model(['installation_id','workspace_id','availability'])
+            self.env.cr.execute("""SELECT 1 FROM mp_workspace_plugin f JOIN mp_plugin_installation i ON i.id=f.installation_id
+                WHERE f.workspace_id=%s AND i.plugin_id='org.example.notes_labels' AND i.state='installed' AND f.availability='enabled'""",[scope.workspace_id])
+            return bool(self.env.cr.fetchone())
+        # Only read serialization opts in. Every write/feature guard uses
+        # authoritative policy even when invoked inside a read window.
+        return self._mp_read_policy('notes_labels.available',check) if read_window else check()
 
     def _labels_guard(self,action='read'):
         scope=self._mp_guard(action)
@@ -40,8 +46,8 @@ class Labels(models.Model):
         # Guarding fetch's candidate list denied base fields merely because
         # native prefetch included this extension's stored field.
         if field.name=='x_notes_labels' and not self.env.su:
-            scope=current_scope(self.env,required=False)
-            if not scope or not self._labels_available():return False
+            scope=(self._mp_cached_read_scope() if operation=='read' else None) or current_scope(self.env,required=False)
+            if not scope or not self._labels_available(read_window=operation=='read'):return False
             if operation=='write' and (scope.role=='viewer' or scope.allowed_actions is not None and 'write' not in scope.allowed_actions):return False
         return super()._has_field_access(field,operation)
 
@@ -70,7 +76,7 @@ class Labels(models.Model):
 
     def _dto(self):
         value=super()._dto()
-        if self._labels_available():value['labels']=self._clean_labels(self.x_notes_labels or [])
+        if self._labels_available(read_window=True):value['labels']=self._clean_labels(self.x_notes_labels or [])
         return value
 
     @api.model

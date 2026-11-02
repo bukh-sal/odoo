@@ -1,0 +1,17 @@
+{
+  "result": "application_delta_exact",
+  "base_image": "sha256:9fd76d7b4bac1882a938ba3064104df11f097b7949a50fc642f5101ffbad53ff",
+  "compiler_image": "sha256:3b8499c8c3f49a750b6521095b2f3350b7184a4476cd83ad99662ffb0b5ef1be",
+  "expected_paths": [
+    "addons/mp_example_notes/__manifest__.py",
+    "addons/mp_example_notes/models.py",
+    "addons/mp_example_notes_labels/__manifest__.py",
+    "addons/mp_example_notes_labels/models.py",
+    "artifacts/org.example.notes-0.2.7.mplug",
+    "artifacts/org.example.notes-0.2.8.mplug",
+    "artifacts/org.example.notes_labels-0.2.3.mplug",
+    "artifacts/org.example.notes_labels-0.2.4.mplug"
+  ],
+  "python_distributions_changed": true,
+  "not_deployed": true
+}

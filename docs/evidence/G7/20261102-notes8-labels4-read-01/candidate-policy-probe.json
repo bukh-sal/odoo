@@ -1,0 +1,24 @@
+{
+  "result": "counterexample_confirmed",
+  "checks": [
+    {
+      "kind": "feature",
+      "pending_ORM_state": true,
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "kind": "installation",
+      "pending_ORM_state": true,
+      "expected": false,
+      "actual": true,
+      "passed": false
+    }
+  ],
+  "all_fixtures_rolled_back": true,
+  "image": "sha256:3302a00a9f635a6e9f9aba4278936184bb59dd1d3ea139409779b2c02f9e0327",
+  "installed": false,
+  "all17tables_worker_exact": true,
+  "source_sha256": "00e3c7d426de65bf1d9008c1dfd5a8dc5dcf57905fcee47e8e2cd2c2f804f3e9"
+}

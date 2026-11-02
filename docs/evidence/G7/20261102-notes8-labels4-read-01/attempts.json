@@ -1,0 +1,24 @@
+{
+  "work_item": "G-01c2b",
+  "attempts": [
+    {
+      "attempt": "metadata version helper",
+      "finding": "Notes metadata changed once; helper stopped before writing Labels because its previous platform minimum was0.1.9 rather than the assumed0.1.10. Explicitly edited only remaining Labels metadata; no Notes mutation replay."
+    },
+    {
+      "attempt": "pending Labels installation policy",
+      "finding": "Compiler01 and actual installed Labels3 cached field both returned after pending ORM installation suspension. Feature suspension already denied. All fixtures rolled back and tables/worker exact. ID03 temporarily invalidated.",
+      "correction": "Flush only queried installation/feature policy fields before availability SQL. Corrected candidate33native+2policy and actual installed63native31HTTP/Canvas passed; ID03 requalified on29/132."
+    },
+    {
+      "attempt": "compiler policy admission",
+      "finding": "Compiler01/02 used default distribution policy omitting installed NotesStats. Admission assertion refused02 before deriving, curating or staging it. Compiler03 explicitly used current distribution-r1-notes-stats; derived04 retained exact old OS/Python and eight expected changed paths.",
+      "correction": "Only derived04 was curated/staged/approved/applied. All three unused compiler images retired after final installed qualification."
+    },
+    {
+      "attempt": "prepare source pointer",
+      "finding": "Prepare initially referenced compiler02 instead of derived04 and refused before baseline capture/staging. Corrected the exact path; no existing mutation labels or completed steps replayed."
+    }
+  ],
+  "limits": "Correction and ID03 qualification only; current-data HTTP diagnostic and full10k/performance/G7 are separate."
+}

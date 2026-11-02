@@ -1,0 +1,130 @@
+{
+  "result": "candidate_discriminator_not_deployed",
+  "results": [
+    {
+      "operation": "current_scope",
+      "samples": [
+        {
+          "ms": 0.43602101504802704,
+          "sql_queries": 1
+        },
+        {
+          "ms": 0.4186489968560636,
+          "sql_queries": 1
+        },
+        {
+          "ms": 0.437289010733366,
+          "sql_queries": 1
+        }
+      ]
+    },
+    {
+      "operation": "whole_recordset_guard",
+      "samples": [
+        {
+          "ms": 1.0734380048234016,
+          "sql_queries": 4
+        },
+        {
+          "ms": 1.2233049783390015,
+          "sql_queries": 4
+        },
+        {
+          "ms": 1.8822570273187011,
+          "sql_queries": 4
+        }
+      ]
+    },
+    {
+      "operation": "one_warmed_scalar",
+      "samples": [
+        {
+          "ms": 1.113936014007777,
+          "sql_queries": 4
+        },
+        {
+          "ms": 1.0766820050776005,
+          "sql_queries": 4
+        },
+        {
+          "ms": 0.9342760022263974,
+          "sql_queries": 4
+        }
+      ]
+    },
+    {
+      "operation": "native_list24",
+      "samples": [
+        {
+          "ms": 23.125785985030234,
+          "sql_queries": 45
+        },
+        {
+          "ms": 23.793544998625293,
+          "sql_queries": 45
+        },
+        {
+          "ms": 20.553624985041097,
+          "sql_queries": 45
+        }
+      ]
+    },
+    {
+      "operation": "native_detail",
+      "samples": [
+        {
+          "ms": 8.837750996463,
+          "sql_queries": 28
+        },
+        {
+          "ms": 11.318703996948898,
+          "sql_queries": 28
+        },
+        {
+          "ms": 8.573036000598222,
+          "sql_queries": 28
+        }
+      ]
+    },
+    {
+      "operation": "gateway_list24",
+      "samples": [
+        {
+          "ms": 13.069974986137822,
+          "sql_queries": 29
+        },
+        {
+          "ms": 16.506927990121767,
+          "sql_queries": 29
+        },
+        {
+          "ms": 10.932406003121287,
+          "sql_queries": 29
+        }
+      ]
+    },
+    {
+      "operation": "gateway_detail",
+      "samples": [
+        {
+          "ms": 8.214921981561929,
+          "sql_queries": 33
+        },
+        {
+          "ms": 13.05778801906854,
+          "sql_queries": 33
+        },
+        {
+          "ms": 14.512219990137964,
+          "sql_queries": 33
+        }
+      ]
+    }
+  ],
+  "actual_candidate_source": true,
+  "no_monkeypatch": true,
+  "no_data_writes": true,
+  "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "all17tables_worker_exact": true,
+  "limits": "Single warm candidate shell; no HTTP/10k/performance-target claim. Candidate Notes8/Labels4; core/Canvas/Stats/worker unchanged."
+}

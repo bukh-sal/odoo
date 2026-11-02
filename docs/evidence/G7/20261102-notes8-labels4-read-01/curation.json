@@ -1,0 +1,25 @@
+{
+  "result": "curated_exact_Notes8_Labels4",
+  "artifacts": [
+    {
+      "addon": "mp_example_notes",
+      "digest": "sha256:b7b4a934fbbab8e8c0a423e04307ac735cd99872f9950a49504ed04bb94fa562",
+      "file": "org.example.notes-0.2.8.mplug",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.8"
+    },
+    {
+      "addon": "mp_example_notes_labels",
+      "digest": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+      "file": "org.example.notes_labels-0.2.4.mplug",
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.4"
+    }
+  ],
+  "trust_generation": 12,
+  "previous_catalog_count": 16,
+  "catalog_count": 18,
+  "all_old_archives_retained": true,
+  "no_grants_or_native_state_changed": true,
+  "global_trust_catalog_unchanged": true
+}

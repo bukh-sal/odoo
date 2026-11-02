@@ -1,0 +1,13 @@
+{
+  "result": "retired_exact_unused_compilers_wrong_policy_candidates_and_temporary_aliases",
+  "removed_tags": [
+    "modular-platform:notes8-labels4-base-9fd76d7b4bac1882a938ba3064104df11f097b7949a50fc642f5101ffbad53ff",
+    "modular-platform:notes8-labels4-source-3b8499c8c3f49a750b6521095b2f3350b7184a4476cd83ad99662ffb0b5ef1be",
+    "modular-platform:stage-20261102t192847922096z",
+    "modular-platform:stage-20261102t193124405816z",
+    "modular-platform:stage-20261102t193330144154z"
+  ],
+  "removed_images": 3,
+  "current_and_checkpoint_retained": true,
+  "no_global_prune": true
+}
