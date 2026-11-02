@@ -1,0 +1,83 @@
+{
+  "result": "passed_exact_corrective_core15_candidate_not_deployed",
+  "image_id": "sha256:b992b9b4a7fee09e29c43e072418b09e31069e14a862b4db84ea4927a73c5f32",
+  "inventory_digest": "sha256:bf65da526ffbed46165e78328a47ebaced58957ff6b560b5fd0a238d12c4063e",
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.14",
+      "target_version": "19.0.0.1.15",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "264c9d4fa05f4a4c0cc3ff58acccdbc22d5be47305cb1664f63dbfcf370529a8",
+      "target_sha256": "9dbe6bea3787903e191c27cd09b5129332dc472f103c9142787a36fab45154f6"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/contracts.py",
+      "previous_sha256": "175fadaca2c52ef8cb476eb48922ef0986285efb2e50795a2fbad3329e7d8337",
+      "target_sha256": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/plans.py",
+      "previous_sha256": "f65746f8646f2e79a7990a32b26ee299102e0c5d8110644be711670f39fe3214",
+      "target_sha256": "77272c450c57326a53d0a032a495e4362e707b09ed041ea36d8e9ee4e6e21bfa"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "864a1fa214e0d654ef71a3573308b43c68afba51a3a126e9ad51e4f3fa662256",
+      "target_sha256": "20eb908e3018976010b7e65df2a5bea203f13948a6e03c44ee15809adf19c593"
+    }
+  ],
+  "shell10_and_native_plugin_artifacts_manifests_python_policy_exact": true,
+  "retained_external_pins": [
+    {
+      "activation": {
+        "scopes": [
+          "site",
+          "workspace"
+        ],
+        "supports_feature_suspension": true
+      },
+      "data_ownership": {
+        "contributions": [],
+        "extension_targets": [],
+        "models": []
+      },
+      "digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+      "hard_dependencies": {},
+      "manifest_digest": "sha256:5cc5f8f086f7e6e3cfbc353e47a7515932fdc69fa353d69c6a9392ba85fbfe0b",
+      "native_addon": null,
+      "native_version": null,
+      "permissions": {
+        "defines": {
+          "analysis.run": "Analyze the supplied authorized document snapshot"
+        },
+        "requests": []
+      },
+      "plugin_id": "org.example.document_stats",
+      "provided_apis": [
+        {
+          "api_version": "1.0",
+          "service_id": "org.example.document_stats.analysis"
+        }
+      ],
+      "runtime": "external_service",
+      "source": "operator-catalog",
+      "trust": {
+        "model": "operator-approved-exact-digest",
+        "policy_generation": 7,
+        "signature_verified": false,
+        "warnings": []
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "connector_not_in_image": true,
+  "live_configuration_generation": 14,
+  "live_installations": 8,
+  "deployment_changed": false
+}

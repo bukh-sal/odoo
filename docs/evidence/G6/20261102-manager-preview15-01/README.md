@@ -17,3 +17,14 @@ The actual installed core14 browser failure and no-mutation audit are retained i
 without creating an operation; the installed runtime still needs a coherent
 core/SDK15 upgrade. Shell10 is unchanged. No runtime image was hot patched and no
 source/image guard was bypassed. No SVC/G6 acceptance is inferred from source tests.
+
+
+Actual corrective candidate is now built/admitted: `candidate-validation.json`,
+image `sha256:b992b9b4a7fee09e29c43e072418b09e31069e14a862b4db84ea4927a73c5f32`, inventory
+`sha256:bf65da526ffbed46165e78328a47ebaced58957ff6b560b5fd0a238d12c4063e`. Only core14→15 changes; shell10,
+all native plugin artifacts/manifests, Python and policy stay exact. External
+metadata0.1.1 remains outside image; no connector. No deployment occurred.
+The compiled once-only next procedure is `../20261102-core15-upgrade-01/activate.py
+prepare`, then normal independent exact review/approval/apply, verification and
+retirement. Marker `.local/g6-events/core15-upgrade-01.json` is candidate_validated.
+One pending image retained; no new persistent container/volume.
