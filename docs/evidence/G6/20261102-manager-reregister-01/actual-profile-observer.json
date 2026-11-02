@@ -1,0 +1,13 @@
+{
+  "result": "passed_actual_independent_profile_corrected_observer",
+  "configuration_generation": 15,
+  "dispatch_generation": 76,
+  "publication_generation": 5,
+  "endpoint_generation": 3,
+  "metadata_still_removed_suspended_ungranted_unbound": true,
+  "all17tables_and_stoppedworker_exact": true,
+  "application_image_not_modified": true,
+  "limits": [
+    "Read-only corrected host observer only; installed metadata apply must use a new coherent immutable image."
+  ]
+}

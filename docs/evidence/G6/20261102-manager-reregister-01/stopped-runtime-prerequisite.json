@@ -1,0 +1,9 @@
+{
+  "result": "passed_actual_operator_stopped_runtime_registration_preimage",
+  "publication_generation": 5,
+  "endpoint_generation": 3,
+  "endpoint_approved_but_process_stopped": true,
+  "all17tables_exact": true,
+  "metadata_still_removed": true,
+  "no_installer_runtime_control": true
+}

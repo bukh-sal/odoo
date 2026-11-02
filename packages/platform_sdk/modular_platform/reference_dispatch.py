@@ -72,14 +72,27 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
                 endpoints=[e for e in observed['endpoints'] if e['installation_id']==row['installation_id']
                     and e['workspace_id']==feature['workspace_id'] and e['endpoint_config']==manifest['external_service']['endpoint_config']]
                 if row['metadata_state']=='removed':
-                    if feature['feature_state']!='suspended' or any(e['state']!='revoked' for e in endpoints):
-                        raise OperatorError('Retained reference metadata has active availability or endpoint approval')
+                    if feature['feature_state']!='suspended':
+                        raise OperatorError('Retained reference metadata has active availability')
+                    # Independent endpoint approval precedes registration, just
+                    # as it does when no installation row exists yet. A retained
+                    # tombstone supplies no host availability or grants. Permit
+                    # only the exact same-image reference pre-registration;
+                    # revoked endpoints retain their existing recovery meaning.
+                    if len(endpoints)>1 or any(e['state']!='revoked' and (
+                            e['state']!='enabled' or e['site_id']!=configuration['sites'][0]['site_id']
+                            or e['expected_image_digest']!=manifest['external_service']['expected_image'].split('@',1)[1]
+                            or manifest['external_service']['expected_image']!=reader.config['runtime']['image']) for e in endpoints):
+                        raise OperatorError('Retained reference scope lacks an exact same-image pre-registration approval')
                 elif (len(endpoints)!=1 or endpoints[0]['expected_image_digest']!=manifest['external_service']['expected_image'].split('@',1)[1]
                         or manifest['external_service']['expected_image']!=reader.config['runtime']['image']):
                     raise OperatorError('Installed reference scope lacks its exact independently published endpoint/image')
                 features.append({k:feature[k] for k in ['workspace_id','feature_state']})
             if row['metadata_state']=='removed' and any(g['installation_id']==row['installation_id'] and g['state']=='approved' for g in metadata['grants']):
                 raise OperatorError('Removed reference installation retains approved grants')
+            if row['metadata_state']=='removed' and any(b['state']=='active' and row['installation_id'] in (
+                    b['descriptor']['consumer_installation_id'],b['descriptor']['provider_installation_id']) for b in metadata['bindings']):
+                raise OperatorError('Removed reference installation retains an active binding')
             registrations.append(dict(installation_id=row['installation_id'],plugin_id=row['plugin_id'],version=row['version'],
                 artifact_digest=row['digest'],manifest_digest=data_digest(manifest),state=row['metadata_state'],
                 features=sorted(features,key=lambda f:f['workspace_id'])))

@@ -1,0 +1,13 @@
+{
+  "result": "passed_corrective_core_sdk16_source",
+  "tests": 43,
+  "core_version": "19.0.0.1.16",
+  "sdk_version": "0.1.16",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/reference_dispatch.py": "51c8fa7ede59e921fe6bf1b53c7eba5289466c33b9fd22099ac4f369fb08f546",
+    "packages/platform_sdk/modular_platform/projection.py": "a55420e4cab35cdf2ad0472f14a0b64dda215cac6bd113f473ce8ff34fb245d0",
+    "platform_addons/mp_core/__manifest__.py": "e500f0fb8a3b546366b8c6067dbf6499c36318cdc3305d6e1e7b9eae5008cc39",
+    "tests/test_reference_reregistration.py": "26ac65e8428d3b93c6000428bf4fd2c928450504acd5091753f53849b135836f"
+  },
+  "installed_runtime_changed": false
+}

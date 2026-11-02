@@ -1,0 +1,14 @@
+{
+  "result": "passed_separate_operator_public_config_transition",
+  "same_worker_container_image_mounts_network_config": true,
+  "public_key_digest_unchanged": true,
+  "public_config_generation_before": 1,
+  "public_config_generation_after": 3,
+  "metadata_unchanged_removed": true,
+  "all17tables_exact": true,
+  "independent_publication_still4_revoked": true,
+  "no_metadata_executor_invoked": true,
+  "new_images": 0,
+  "new_volumes": 0,
+  "update_helper_auto_removed": true
+}

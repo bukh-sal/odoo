@@ -1,0 +1,13 @@
+{
+  "result": "passed_targeted_reference_observer_metadata_recovery_source_checks",
+  "tests": 67,
+  "failures": 0,
+  "errors": 0,
+  "changed_source_sha256": {
+    "packages/platform_sdk/modular_platform/reference_dispatch.py": "51c8fa7ede59e921fe6bf1b53c7eba5289466c33b9fd22099ac4f369fb08f546",
+    "tests/test_reference_reregistration.py": "26ac65e8428d3b93c6000428bf4fd2c928450504acd5091753f53849b135836f"
+  },
+  "new_guard_cases": 6,
+  "public_contracts_changed": false,
+  "installed_registration_or_recovery_claimed": false
+}

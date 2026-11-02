@@ -1,0 +1,11 @@
+{
+  "result": "prepared_fresh_independent_unchanged_resume",
+  "operation_id": "2b5f4ed3-7af0-4602-b7b8-a1a3f58fa3eb",
+  "decision_hash": "sha256:34fe9a5a4b4c8278e51345a8602049d1621437c1a7a5959d1748ab75c1e3714a",
+  "configuration_generation": 15,
+  "dispatch_generation": 76,
+  "current_publication_bound": true,
+  "existing_worker_and_dispatch_retained": true,
+  "database_restore": false,
+  "ingress_currently_stopped": true
+}
