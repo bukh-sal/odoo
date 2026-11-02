@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 14,
+  "revision": 15,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -88,7 +88,8 @@
         "packages/contracts/examples/v1/lifecycle-impact/unknown.json",
         "docs/architecture-decisions/0035-external-manager-observations.md",
         "packages/contracts/examples/v1/manager-view-external.json",
-        "tests/test_manager_contracts.py"
+        "tests/test_manager_contracts.py",
+        "docs/architecture-decisions/0036-metadata-preview-restart-consistency.md"
       ],
       "g1": []
     },
@@ -229,6 +230,7 @@
     "docs/architecture-decisions/0020-manager-inspection-contract.md": "49cb3cc370f9260872589464d9cf7f7821027db0c60b900adf9274f15846fb60",
     "docs/architecture-decisions/0031-scoped-domain-event-delivery.md": "08b375d518301c1f63a4d3b501f98a9595f33c749680cd86dbcb117c74fe438e",
     "docs/architecture-decisions/0035-external-manager-observations.md": "d889caacb7f35fbdfec082e39bda2f1fa4cade0323a01b2e7d3516b8b99dcfd1",
+    "docs/architecture-decisions/0036-metadata-preview-restart-consistency.md": "e7e5db0f17206ac5a67aea94e38ef24da96b1d16fa19171e7d28652f83d39577",
     "docs/contracts/events-v1.md": "ca0914b5da964ab09a53b07d2eec7015b0205f8a7f8b242c5336e5425103e7f9",
     "docs/contracts/protocol-v1.md": "669a2b3cc2a49b751305e1a9ccf7a5120bcb42abc5079e076c82050e2ca29275",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
@@ -309,12 +311,12 @@
     "packages/host_sdk/tests/plain_page.ts": "2205df447eec8f6731f944e22a3e437e050a9ca08db392bc531c982783575966",
     "packages/host_sdk/tsconfig.json": "bcedc5e08a7fba258b29e5703e2167c271c9097c647033a572aefb198f701772",
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
-    "packages/platform_sdk/modular_platform/contracts.py": "175fadaca2c52ef8cb476eb48922ef0986285efb2e50795a2fbad3329e7d8337",
+    "packages/platform_sdk/modular_platform/contracts.py": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
     "tests/test_contracts.py": "14d99ae494bce780d54e26c28e815101fa88dfb1a9086eb132cb0b57c0dfc9c8",
     "tests/test_event_contracts.py": "8318a2e843c6b3387e92d464f07b4109f08c9e4bf8da665773d2c0c4a25155e7",
     "tests/test_manager_contracts.py": "e0e2a12c9f88506a1f51619e6c6f78dac22d560a5d7607255b54d17380214667",
-    "tests/test_operation_contracts.py": "befb8a09e11989981642b56e06a896218f29fb5a0dcf310ae9a628d6d3faee87",
+    "tests/test_operation_contracts.py": "5e806a26d8ec89d444eabad5bab7bc65c9bfcd8ed0ebcca0f34c8d545bbf899e",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"

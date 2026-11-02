@@ -286,6 +286,13 @@ def plan_hash(plan):
     return 'sha256:' + hashlib.sha256(canonical_plan(plan)).hexdigest()
 
 
+def host_restart_required(plan):
+    """Host maintenance only; an external process is independently operated."""
+    return ((plan['operation_type'] in ('enable','suspend') and plan['backup']['required'])
+        or any(item['runtime']=='external_service' or (item['runtime']=='native'
+            and item['action'] in ('install','upgrade','uninstall','remove','deploy')) for item in plan['artifacts']))
+
+
 def validate_operations_view(value):
     """Strict proposed UI data; never authenticates an OS approval or mirror."""
     validate('operations-view', value)
@@ -301,7 +308,7 @@ def validate_operations_view(value):
         if len(set(identities))!=len(identities):raise ContractError('Duplicate prepared feature target')
         if value['native_trusted_code']!=any(item['runtime']=='native' for item in plan['artifacts']):
             raise ContractError('Prepared native trust description mismatch')
-        if value['restart_required']!=any(item['runtime']=='native' and item['action'] in ('install','upgrade','uninstall','remove') for item in plan['artifacts']):
+        if value['restart_required']!=host_restart_required(plan):
             raise ContractError('Prepared restart description mismatch')
     elif value['kind']=='status':
         if value['source']=='application_request' and (value['state']!='awaiting_operator_approval' or value['approval_expires_at'] is not None):

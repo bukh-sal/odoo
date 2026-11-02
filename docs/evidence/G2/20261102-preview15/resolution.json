@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_resolution.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_three_reference_artifacts_resolve_without_import (test_resolution.Resolution.test_actual_three_reference_artifacts_resolve_without_import) ... ok\r\ntest_complete_backtracking_finds_older_non_greedy_solution (test_resolution.Resolution.test_complete_backtracking_finds_older_non_greedy_solution) ... ok\r\ntest_complete_target_markers_extras_and_wheel_compatibility (test_resolution.Resolution.test_complete_target_markers_extras_and_wheel_compatibility) ... ok\r\ntest_conflicting_native_addons_and_unmapped_extension_owner (test_resolution.Resolution.test_conflicting_native_addons_and_unmapped_extension_owner) ... ok\r\ntest_different_workspace_providers_resolve_both_explicit_scopes_without_fallback (test_resolution.Resolution.test_different_workspace_providers_resolve_both_explicit_scopes_without_fallback) ... ok\r\ntest_exact_hard_cycle (test_resolution.Resolution.test_exact_hard_cycle) ... ok\r\ntest_locked_compatible_preserved_explicit_update_and_no_downgrade (test_resolution.Resolution.test_locked_compatible_preserved_explicit_update_and_no_downgrade) ... ok\r\ntest_multiple_providers_require_explicit_alias_and_exact_major (test_resolution.Resolution.test_multiple_providers_require_explicit_alias_and_exact_major) ... ok\r\ntest_no_dynamic_metadata_or_direct_url_resolution (test_resolution.Resolution.test_no_dynamic_metadata_or_direct_url_resolution) ... ok\r\ntest_optional_absent_incompatible_or_undeclared_native_coupling (test_resolution.Resolution.test_optional_absent_incompatible_or_undeclared_native_coupling) ... ok\r\ntest_provider_dependent_closure_needs_explicit_cascade (test_resolution.Resolution.test_provider_dependent_closure_needs_explicit_cascade) ... ok\r\ntest_python_conflict_is_distinct_and_backtracks_plugin_candidate (test_resolution.Resolution.test_python_conflict_is_distinct_and_backtracks_plugin_candidate) ... ok\r\ntest_retains_every_installed_root_and_rechecks_transitive_compatibility (test_resolution.Resolution.test_retains_every_installed_root_and_rechecks_transitive_compatibility) ... ok\r\ntest_service_constraints_backtrack_provider_version_and_parallel_majors (test_resolution.Resolution.test_service_constraints_backtrack_provider_version_and_parallel_majors) ... ok\r\ntest_shared_runtime_sites_reject_different_native_versions (test_resolution.Resolution.test_shared_runtime_sites_reject_different_native_versions) ... ok\r\ntest_transitive_missing_dependency_and_constraint_explanation (test_resolution.Resolution.test_transitive_missing_dependency_and_constraint_explanation) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 16 tests in 0.292s\r\n\r\nOK\r\n"
+}

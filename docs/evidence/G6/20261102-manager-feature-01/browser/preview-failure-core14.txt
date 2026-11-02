@@ -1,0 +1,142 @@
+- banner:
+  - generic: M
+  - strong: Modular Platform
+  - generic: Workspace
+  - combobox "Workspace":
+    - option "Workspace" [selected]
+    - option "Personal"
+    - option "Research"
+  - button "Commands"
+  - button "Dark"
+  - generic: Operator
+- complementary:
+  - navigation "Applications":
+    - link "Settings":
+      - /url: "#"
+    - link "Operations":
+      - /url: /app/operations
+- main:
+  - heading "Operations" [level=1]
+  - paragraph: Your ideas, in one place.
+  - region "Plugin operations":
+    - paragraph: Prepare a plan, request the operation, then use local operator approval and apply.
+    - paragraph: New native code requires a local operator to stage the release first. External services are provisioned separately by the operator; registration installs metadata in a suspended state, followed by a separate enable. Every operation requires exact local approval. Uploading or selecting an artifact does not execute it.
+    - region "Upload validation":
+      - heading "Validate a plugin archive" [level=2]
+      - paragraph: Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.
+      - generic: Plugin archive (.mplug, maximum 100 MiB)
+      - button "Plugin archive (.mplug, maximum 100 MiB)"
+      - button "Validate archive" [disabled]
+    - region "Installed plugins":
+      - heading "Installed plugins" [level=2]
+      - paragraph: Health is reported separately from installation and workspace availability. Feature suspension does not unload native Python overrides.
+      - table:
+        - rowgroup:
+          - row "Plugin Version / trust Database Health Dependencies Workspace availability":
+            - columnheader "Plugin"
+            - columnheader "Version / trust"
+            - columnheader "Database"
+            - columnheader "Health"
+            - columnheader "Dependencies"
+            - columnheader "Workspace availability"
+        - rowgroup:
+          - 'row "Canvas 0.1.3 operator-approved-exact-digest installed unknown Registry observed; plugin-specific health has not been probed. satisfied Personal: enabled Research: enabled"':
+            - cell "Canvas":
+              - button "Canvas"
+            - cell "0.1.3 operator-approved-exact-digest":
+              - text: 0.1.3
+              - paragraph: operator-approved-exact-digest
+            - cell "installed"
+            - cell "unknown Registry observed; plugin-specific health has not been probed.":
+              - text: unknown
+              - paragraph: Registry observed; plugin-specific health has not been probed.
+            - cell "satisfied"
+            - 'cell "Personal: enabled Research: enabled"':
+              - paragraph: "Personal: enabled"
+              - paragraph: "Research: enabled"
+          - 'row "Document Stats 0.1.1 operator-approved-exact-digest installed healthy Published scoped endpoint and service health observed; workspace availability is separate. satisfied Owned lifecycle C: enabled"':
+            - cell "Document Stats":
+              - button "Document Stats"
+            - cell "0.1.1 operator-approved-exact-digest":
+              - text: 0.1.1
+              - paragraph: operator-approved-exact-digest
+            - cell "installed"
+            - cell "healthy Published scoped endpoint and service health observed; workspace availability is separate.":
+              - text: healthy
+              - paragraph: Published scoped endpoint and service health observed; workspace availability is separate.
+            - cell "satisfied"
+            - 'cell "Owned lifecycle C: enabled"':
+              - paragraph: "Owned lifecycle C: enabled"
+          - 'row "Notes 0.2.7 operator-approved-exact-digest installed unknown Registry observed; plugin-specific health has not been probed. satisfied Personal: enabled Research: enabled Owned lifecycle C: enabled"':
+            - cell "Notes":
+              - button "Notes"
+            - cell "0.2.7 operator-approved-exact-digest":
+              - text: 0.2.7
+              - paragraph: operator-approved-exact-digest
+            - cell "installed"
+            - cell "unknown Registry observed; plugin-specific health has not been probed.":
+              - text: unknown
+              - paragraph: Registry observed; plugin-specific health has not been probed.
+            - cell "satisfied"
+            - 'cell "Personal: enabled Research: enabled Owned lifecycle C: enabled"':
+              - paragraph: "Personal: enabled"
+              - paragraph: "Research: enabled"
+              - paragraph: "Owned lifecycle C: enabled"
+          - 'row "Notes Labels 0.2.3 operator-approved-exact-digest installed unknown Registry observed; plugin-specific health has not been probed. satisfied Personal: enabled Research: enabled"':
+            - cell "Notes Labels":
+              - button "Notes Labels"
+            - cell "0.2.3 operator-approved-exact-digest":
+              - text: 0.2.3
+              - paragraph: operator-approved-exact-digest
+            - cell "installed"
+            - cell "unknown Registry observed; plugin-specific health has not been probed.":
+              - text: unknown
+              - paragraph: Registry observed; plugin-specific health has not been probed.
+            - cell "satisfied"
+            - 'cell "Personal: enabled Research: enabled"':
+              - paragraph: "Personal: enabled"
+              - paragraph: "Research: enabled"
+      - button "Refresh metadata"
+    - alert:
+      - strong: Validation failed
+      - button "Refresh"
+    - generic: Plugin and version
+    - combobox "Plugin and version":
+      - option "Choose a plugin"
+      - option "Canvas · 0.1.2"
+      - option "Canvas · 0.1.3"
+      - option "Document Stats · 0.1.0"
+      - option "Document Stats · 0.1.1" [selected]
+      - option "Notes · 0.2.1"
+      - option "Notes · 0.2.2"
+      - option "Notes · 0.2.3"
+      - option "Notes · 0.2.6"
+      - option "Notes · 0.2.7"
+      - option "Notes Labels · 0.2.0"
+      - option "Notes Labels · 0.2.1"
+      - option "Notes Labels · 0.2.3"
+    - generic: Operation
+    - combobox "Operation":
+      - option "Install"
+      - option "Upgrade"
+      - option "Feature suspension" [selected]
+      - option "Enable feature"
+      - option "Native uninstall"
+      - option "Unregister service"
+      - option "Remove unused artifact"
+    - generic: Workspace
+    - combobox "Workspace":
+      - option "Choose a workspace"
+      - option "Personal"
+      - option "Research"
+      - option "Owned lifecycle C" [selected]
+    - checkbox "Include dependent changes in the proposed plan"
+    - text: Include dependent changes in the proposed plan
+    - button "Prepare plan"
+    - region "Package trust":
+      - heading "Document Stats" [level=2]
+      - paragraph: Deterministic statistics on an authorized text snapshot
+      - paragraph: "Publisher: example · License: LGPL-3.0-only"
+      - paragraph: "Trust: operator-approved-exact-digest · Signature verified: no"
+      - code: sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a
+      - button "View package details"

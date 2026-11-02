@@ -1,0 +1,8 @@
+{
+  "result": "failed_preview_rolled_back_app_draft",
+  "drafts": [],
+  "all17tables_and_independent_worker_exact": true,
+  "cause": "Prepared restart description mismatch in frozen operations-view validator",
+  "boundary": "Existing HTTP exception rollback preserves app request table; no request or independent authority granted",
+  "next": "Align canonical host-restart derivation and prepared-view validation; coherent versioned runtime required"
+}

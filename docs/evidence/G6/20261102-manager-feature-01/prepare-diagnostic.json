@@ -1,0 +1,23 @@
+{
+  "result": "reproduced",
+  "phase": "prepared_view",
+  "exception": "ContractError",
+  "message": "Prepared restart description mismatch",
+  "frames": [
+    {
+      "file": "diagnose_prepare.py",
+      "line": 23,
+      "function": "<module>"
+    },
+    {
+      "file": "operation_views.py",
+      "line": 19,
+      "function": "prepared_view"
+    },
+    {
+      "file": "contracts.py",
+      "line": 305,
+      "function": "validate_operations_view"
+    }
+  ]
+}

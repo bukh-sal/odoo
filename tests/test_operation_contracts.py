@@ -78,6 +78,27 @@ class OperationContracts(unittest.TestCase):
         value['state']='completed'
         with self.assertRaises(ContractError):validate_operations_view(value)
         value['phase']='completed';validate_operations_view(value)
+
+    def test_external_metadata_preview_requires_host_restart_without_native_trust(self):
+        value=example('operations-view')
+        for artifact in value['plan']['artifacts']:
+            artifact.update(runtime='external_service',native_addon=None,migration_digests=[])
+        value['native_trusted_code']=False;value['plan_hash']=plan_hash(value['plan'])
+        validate_operations_view(value)
+        value['restart_required']=False
+        with self.assertRaises(ContractError):validate_operations_view(value)
+
+    def test_checkpointed_native_feature_preview_differs_from_retained_short_profile(self):
+        for backup in (False,True):
+            value=example('operations-view');value['plan']['operation_type']='suspend'
+            for artifact in value['plan']['artifacts']:artifact['action']='suspend'
+            for target in value['targets']:target['action']='suspend'
+            value['plan']['backup']['required']=backup;value['restart_required']=backup
+            value['plan_hash']=plan_hash(value['plan']);validate_operations_view(value)
+            value['restart_required']=not backup
+            with self.assertRaises(ContractError):validate_operations_view(value)
+    def test_dimensions_and_catalog_claims_remain_bounded(self):
+        value=example('operations-view-status')
         value['dimensions'][0]['feature_state']='unloaded'
         with self.assertRaises(ContractError):validate_operations_view(value)
         metadata=example('manifest-native')['plugin']

@@ -12,6 +12,7 @@ from modular_platform.manager_planning import manager_runtime,prepare_manager_ex
 from modular_platform.resolution import PlanningError
 from modular_platform.operator_os import OperatorError
 from modular_platform.manager_views import installed_view
+from modular_platform.operation_views import prepared_view
 
 class ManagerExternal(unittest.TestCase):
     @classmethod
@@ -118,7 +119,10 @@ class ManagerExternal(unittest.TestCase):
         cls=next(n for n in tree.body if isinstance(n,ast.ClassDef) and n.name=='Operations')
         method=next(n for n in cls.body if isinstance(n,ast.FunctionDef) and n.name=='prepare');method.decorator_list=[]
         cursor=Mock();cursor.fetchone.return_value=(0,)
-        save=Mock(side_effect=lambda bundle,*_:bundle)
+        def save_preview(bundle,*_):
+            prepared_view(bundle,observed_at=STAMP)
+            return bundle
+        save=Mock(side_effect=save_preview)
         native=Mock(side_effect=AssertionError('External request reached native planner'))
         profile=dict(catalog=self.f.f.catalog,external_state=self.f.f.external_state)
         ns=dict(request=SimpleNamespace(env=SimpleNamespace(cr=cursor)),operator=lambda:(6,'actor'),bounded_body=lambda _:self.nomination,
@@ -127,6 +131,18 @@ class ManagerExternal(unittest.TestCase):
             uuid4=lambda:ident(500),stamp=lambda:STAMP,_save_prepared=save,AccessError=PermissionError,PublicError=ValueError)
         exec(compile(ast.Module(body=[method],type_ignores=[]),'actual-manager-prepare','exec'),ns)
         self.assertEqual(ns['prepare'](None),self.prepare());native.assert_not_called();save.assert_called_once()
+
+    def test_every_metadata_lifecycle_round_trips_through_actual_public_preview(self):
+        for action in ['enable','suspend']:
+            self.select(action);bundle=self.prepare();view=prepared_view(bundle,observed_at=STAMP)
+            self.assertTrue(view['restart_required']);self.assertFalse(view['native_trusted_code'])
+        self.select('unregister');self.nomination['workspace_ids']=[];self.f.f.endpoint['state']='revoked'
+        self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
+        self.setUp();self.f.unregistered();self.select('install')
+        self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
+        self.setUp();candidate=copy.deepcopy(self.f.f.external);candidate['manifest']['plugin']['version']='0.1.2';candidate['digest']='sha256:'+'c'*64
+        self.f.f.catalog.append(candidate);self.f.document=self.f.f.project();self.select('upgrade',candidate)
+        self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
 
     def view(self,external=True):
         # Solver fixtures intentionally omit snapshot-only descriptor fields.

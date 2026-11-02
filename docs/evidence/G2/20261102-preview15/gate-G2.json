@@ -1,0 +1,24 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-02T05:00:24.240582+00:00",
+  "contract_major": 1,
+  "revision": 15,
+  "frozen_files": 97,
+  "inventory_sha256": "c752621537c2328adc8aca1bbc00b130da85d3f17e7348f14a23d3e16442b57d",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0036: correct frozen preview restart checker to share authoritative host-maintenance derivation with planner; all existing schemas/examples/golden unchanged.",
+  "runtime_qualification": "Installed core14 remains unchanged; actual browser counterexample retained. Corrective coherent core15 activation and same browser lifecycle must qualify before G6 acceptance.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "ba01ee29f56fc49e7ad846a8b3f0514356d98fd2"
+}

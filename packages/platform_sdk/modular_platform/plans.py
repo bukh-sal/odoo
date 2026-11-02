@@ -14,7 +14,7 @@ from uuid import UUID, uuid4, uuid5
 
 import rfc8785
 
-from .contracts import canonical_plan, native_version, package_version, plan_hash, validate, validate_binding
+from .contracts import canonical_plan, native_version, package_version, plan_hash, validate, validate_binding, host_restart_required
 from .resolution import PlanningError, binding_matches_scope
 
 
@@ -404,7 +404,7 @@ def _display(plan, operation_lock):
     display={'targets': operation_lock['targets'], 'artifacts': plan['artifacts'],
                 'required_local_step': 'Independent local operator approval of the exact plan hash, then CLI apply.',
                 'native_code_requires_trust': any(item['runtime'] == 'native' for item in plan['artifacts']),
-                'restart_required': (plan['operation_type'] in ('enable','suspend') and plan['backup']['required']) or any(item['runtime'] == 'external_service' or (item['runtime'] == 'native' and item['action'] in ('install', 'upgrade', 'uninstall', 'remove','deploy')) for item in plan['artifacts']),
+                'restart_required': host_restart_required(plan),
                 'feature_suspension_unloads_code': False,
                 'permission_changes': plan['permission_changes'], 'trust_changes': plan['trust_changes'],
                 'declaration_changes': operation_lock['declaration_changes'],

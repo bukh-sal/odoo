@@ -1,0 +1,15 @@
+{
+  "result": "passed_real_profile_source_preview_fix",
+  "same_actual_profile_metadata_path": true,
+  "restart_required": true,
+  "native_trusted_code": false,
+  "app_operation_created": false,
+  "all17tables_exact": true,
+  "source_digests": {
+    "packages/platform_sdk/modular_platform/contracts.py": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50",
+    "packages/platform_sdk/modular_platform/plans.py": "77272c450c57326a53d0a032a495e4362e707b09ed041ea36d8e9ee4e6e21bfa"
+  },
+  "limits": [
+    "Host source correction only; installed core14 remains unchanged/broken until coherent core15 activation."
+  ]
+}
