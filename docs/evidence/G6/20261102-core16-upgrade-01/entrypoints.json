@@ -1,0 +1,10 @@
+{
+  "result": "passed_actual_core16_native_views_and_removed_metadata_with_stopped_worker",
+  "provider_context_404": true,
+  "native_A_B_C_list_form_retained": true,
+  "native_notes_C_context200": true,
+  "manager_reports_removed_metadata_without_claiming_runtime_stopped": true,
+  "all17tables_and_independent_worker_exact": true,
+  "original_actor_uid": 6,
+  "browser_rendering_tested": false
+}

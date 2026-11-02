@@ -725,3 +725,38 @@ Apply47939 terminalfailure: Retained reference metadata has active availability 
 ### 2026-11-02T07:45:13.072900+00:00 F-01d corrective core16 image built and admitted
 
 Sourcefix/recovery commitb0b4f74 terminal92319; unique build13726 terminal0, imagecfb0fb0d8ea14286bfbb7b47b912bfb86895a7e7b77de3bcdab037e9bcdbe34d/inventorya415e7797d2bfd45a7bbac6096cba75f85d2af30533fbcfa37083488624d7783. Admission71928 terminal0: all362sourceinputs exact, same3nativeartifacts/Python/policy/shell/native manifests exceptcore15→16; exactly3sourcechanges coremanifest/projectionversion/referenceguard. Marker core16-upgrade01 candidatevalidated; no stage/approval/deploy yet. One needed candidate image, no newvolumes/long-livedcontainers. Shared fixture workerimport routed3correct recoveryreports into siblingfolder; movedbyteexact tointendedfixindex andresetoutputbeforefuture save, no test/recovery/deletionreplay. Live15/76 ingressnativeviews/dataexact, metadataremoved/stoppedworker3/pub5 retained. Next actual independentcore16rollout thenNEWregistration; noextraacceptancecredit92/99/rough88.
+
+
+### 2026-11-02T07:48:24.668736+00:00 F-01d corrective core16 rollout preparation started
+
+Previousgoalturn PROGRESS: actual failedbeforemutationcase/newguard67+43sourcechecks/realunchangedresume/candidateadmission. Read cleand54b4dbb/status/ADR0037/relevant14.6, admittedmarker/source preserved; noexistinglivehandle. Fresh activate/retire drivers constrain current15→16/control76→79 and7native-onlytargets; retainedremovedexternal metadata. Stoppedworker observation compares exact retainedcontainer/state/config/mounts, reads only existingpublicconfigvolume viaautoremovednetworknonepublicuserhelper and verifiesgen3/publicdigest/currentpublication5. Staticreviewcaught cascadingnumericpreconditionreplacement beforeexecution; corrected current15/target16. prepare80699 nowrunning; noapplyyet, inspectmarkers/handle before retries.
+
+
+### 2026-11-02T07:50:35.293170+00:00 F-01d exact core16 rollout approved/applying
+
+Prepare80699 terminal0: fresh17table/19terminaljob/schema/nativeversions/stoppedworker/publicconfig3/publication5 captures; normalstage/plan with7native-onlytargets retainedexternalremoved0.1.1pins/bindings/endpoints. Same 2f677d90-4e10-42a8-bb46-2290ea7ee0a0/sha256:8f9718455587e071085851e3a7ba1a06fe63460a962629e26164b3d3ef8a18df independentlyregistered/reconstructed/reviewed/exactacktrust+destructiveapproved. Applynowlive, expectedconfig15→16/control76→79, sameimagecfb/SDK16source/correctedprivateguard. Nextpreservation/helperpin/realHTTP/nativeviews/cleanup beforeNEWregistration02. No oldfailed2b5f4ed3 replay.
+
+
+### 2026-11-02T07:58:53.082809+00:00 F-01d core16 actual immutable rollout qualified
+
+Same2f677d90/hash8f971845 apply57117 terminal0 config16/control79. verify80977/nativeHTTP6435/retire42574 terminal0:17tables exact under18jobepoch/releasechanges;19originaloutcomes/inputs/attempts, nativeversions exceptcore15→16/schema/48files retained; no subscriptionsclosed. SeparateworkerstillSTOPPED/publicconfig3/pub5/key exact (publiconlyvolume probes autoremoved); helperpinb992→cfb afterproof. OriginalAliceprovider404/nativeA/B/Clistform/NotesC200, managerremoved/separateruntime correct; dataexact.8exactexited0helpers/oldapp privatelyarchived/removed, currentimagecfb/checkpointb992/neededvolumes retained. No oldfailedregister replay; no newacceptance. Next freshregistration02 baseline/HTTP/independentapproval/apply/preservation thenseparateoperatorstart.
+
+
+### 2026-11-02T08:00:59.412407+00:00 F-01d new current16 stopped-worker manager request captured
+
+Freshregistration02baseline59247 terminal0 underactualcorrectedimagecfb/config16/control79, canonicalremoved0.1.1/C andstoppedpublicconfig3/pub5worker. ActualHTTPprepare/request andcaptureterminal0; new 2d81e660-1494-41e6-997e-771568263f38/sha256:f302fb650ba1f0fc6e12e4bef10270643c71da1eaf8ec2c1ec0aa55fc46b810c explicitpoststate suspended/no grants,17tables/stoppedworker exactbeforeauthority. Independentapprove processnowrunning; expectedtargetconfig17/control82. No oldfailedrequeststage/review/runtimeactionreplayed. Nextsameapprovedapply/verification/entrypoints/mirror/exactcleanup/separateoperatorstart.
+
+
+### 2026-11-02T08:03:36.390792+00:00 F-01d fresh stopped-worker reinstall independently approved/applying
+
+Approve75549 terminal0: new 2d81e660-1494-41e6-997e-771568263f38/sha256:f302fb650ba1f0fc6e12e4bef10270643c71da1eaf8ec2c1ec0aa55fc46b810c ordinaryimport/OSawaitingapproval-mutationfalse observed, freshindependentreview/reconstruction/exactapproval/currentCFBruntimehashpreflightpass. Sameoperationapplynowlive; no oldfailedrequestretry. Expectedconfig17/control82 and retainedsameidentity0.1.1/suspended/no grants/stoppedworker. Nextpreservation/actualHTTP409+nativeretained/degradedstatus/completedmirror/cleanup thenseparateoperatorstart andnoautoenable.
+
+
+### 2026-11-02T08:15:51.343441+00:00 F-01d actual stopped-worker reinstall fully preserved and handed off
+
+Apply95681 completed0; verify16720/entrypoints3847/mirror95432/retire73339/readonlycleanup78951 terminal0. New2d81e660/config17/control82 onactualSDK16 crossespreviousguardboundary. Sameinstallation0.1.1 reinstatedsuspended, noapprovedgrantrevival, all17tableoriginalrows underexactscopedpolicy/timestamp/18jobepochs only;19oldoutcomes/inputs/attempts/fullnative modules/schema/48files exact. Separateworker05staysSTOPPED/config3/pub5/key exact throughinstaller; childnativefalse/runtimecontrolfalse. OriginalAliceprovider409/nativeA/B/Clistform/NotesC200, managerinstalled/suspended/degraded, sameopnormalcompletedmirror.7exactoperationhelpers+5current16readonlyhelpers privatelyarchived/retired (20thisrunwithcore16eight),0newimages/volumes forregistration. Separateoperatorstart80319 nowrunning afterallproof; nexthealthyprocessmustnotautoenablefeature/grants.
+
+
+### 2026-11-02T08:18:03.174714+00:00 F-01d separate runtime start and completed re-registration checkpoint
+
+80319 terminal0: afterinstallerproof/cleanup, explicitoperatorstart ofsameworker05/publickey/config3/image1d andcurrentpub5; actualimage/key/scope/addresshealthattested. Protectedreaderprofile refresh nowreportshealthy; originalAliceCcontextstill409, metadata installed/suspended/native_versionNone, no grantrevival/autoenable,17tables exact. Originalruntime marker nowoperator_started_register02_verified; no livehandles. Qualification bindsactualreports/source362exact/20containersretired/no newimagesorvolumes. Closed actualremoved-endpoint preregistrationbug oninstalledSDK16; oldfailed2b5f4ed3 remainsclosed.92/99/rough88 unchanged: requiredconsumer/connector/remote/recovery/image/browser/fullG7 stillrequired. Nextfreshcurrent17enable82→85 withrunningworkerobserver, thennativeconnector build/install. SourceconnectorREADMEmin.12 vsmanifestmin.13 notedforitsnextpackagingbuild; do notmodifyoldcandidate inputs beforethat.

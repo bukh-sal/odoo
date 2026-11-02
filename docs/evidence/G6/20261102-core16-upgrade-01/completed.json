@@ -1,0 +1,105 @@
+{
+  "approval_expires_at": "2026-11-02T08:04:43Z",
+  "backup_id": "2f677d90-4e10-42a8-bb46-2290ea7ee0a0",
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:8f9718455587e071085851e3a7ba1a06fe63460a962629e26164b3d3ef8a18df"
+      },
+      "sequence": 297,
+      "utc": "2026-11-02T07:48:48Z"
+    },
+    {
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:8f9718455587e071085851e3a7ba1a06fe63460a962629e26164b3d3ef8a18df"
+      },
+      "sequence": 298,
+      "utc": "2026-11-02T07:49:43Z"
+    },
+    {
+      "code": "reserved",
+      "details": {
+        "executor_pid": 36316,
+        "lock_owner_digest": "sha256:19f3de04dd96c0ff932ff85ced1bd5619c8cba02418b1791e2ab7baac61db707"
+      },
+      "sequence": 299,
+      "utc": "2026-11-02T07:51:00Z"
+    },
+    {
+      "code": "staged",
+      "details": {},
+      "sequence": 300,
+      "utc": "2026-11-02T07:51:45Z"
+    },
+    {
+      "code": "maintenance",
+      "details": {},
+      "sequence": 301,
+      "utc": "2026-11-02T07:51:50Z"
+    },
+    {
+      "code": "drained",
+      "details": {},
+      "sequence": 302,
+      "utc": "2026-11-02T07:52:10Z"
+    },
+    {
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "2f677d90-4e10-42a8-bb46-2290ea7ee0a0"
+      },
+      "sequence": 303,
+      "utc": "2026-11-02T07:52:53Z"
+    },
+    {
+      "code": "mutation_started",
+      "details": {},
+      "sequence": 304,
+      "utc": "2026-11-02T07:53:16Z"
+    },
+    {
+      "code": "migrated",
+      "details": {},
+      "sequence": 305,
+      "utc": "2026-11-02T07:53:24Z"
+    },
+    {
+      "code": "workers_replaced",
+      "details": {},
+      "sequence": 306,
+      "utc": "2026-11-02T07:53:29Z"
+    },
+    {
+      "code": "ready",
+      "details": {},
+      "sequence": 307,
+      "utc": "2026-11-02T07:54:21Z"
+    },
+    {
+      "code": "release_published",
+      "details": {},
+      "sequence": 308,
+      "utc": "2026-11-02T07:54:23Z"
+    },
+    {
+      "code": "traffic_resumed",
+      "details": {},
+      "sequence": 309,
+      "utc": "2026-11-02T07:54:24Z"
+    },
+    {
+      "code": "completed",
+      "details": {},
+      "sequence": 310,
+      "utc": "2026-11-02T07:54:41Z"
+    }
+  ],
+  "mutation_started": true,
+  "operation_id": "2f677d90-4e10-42a8-bb46-2290ea7ee0a0",
+  "phase": "completed",
+  "plan_hash": "sha256:8f9718455587e071085851e3a7ba1a06fe63460a962629e26164b3d3ef8a18df",
+  "state": "completed",
+  "traffic_resumed": true
+}

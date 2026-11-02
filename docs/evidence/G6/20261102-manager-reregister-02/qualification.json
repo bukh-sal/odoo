@@ -1,0 +1,40 @@
+{
+  "result": "passed_bounded_actual_installed16_stopped_worker_reregistration_and_separate_start",
+  "operation_id": "2d81e660-1494-41e6-997e-771568263f38",
+  "plan_hash": "sha256:f302fb650ba1f0fc6e12e4bef10270643c71da1eaf8ec2c1ec0aa55fc46b810c",
+  "image_id": "sha256:cfb0fb0d8ea14286bfbb7b47b912bfb86895a7e7b77de3bcdab037e9bcdbe34d",
+  "inventory_digest": "sha256:a415e7797d2bfd45a7bbac6096cba75f85d2af30533fbcfa37083488624d7783",
+  "configuration_generation": 17,
+  "dispatch_generation": 82,
+  "publication_generation": 5,
+  "endpoint_generation": 3,
+  "current_source_inputs_exact": 362,
+  "same_metadata_identity_artifact_reinstalled_suspended": true,
+  "grants_remain_revoked": true,
+  "metadata_installer_left_worker_stopped": true,
+  "separate_operator_start_does_not_activate_feature": true,
+  "evidence_sha256": {
+    "register-preservation.json": "f2342fb6b51fb80a4ae829025ba4633ea4639be91bfe383d93e392216bb54bd9",
+    "entrypoints-suspended-stopped.json": "bcd3a1b1dbd798337a2135dfb2e6f3bb4f9427197e886548bf29600bfd70c753",
+    "register-handoff-qualification.json": "e48afdbf5bf5b04531b71fa5e7f5578761d42d41ac4bb4817a33ce6ee0c05c18",
+    "register-retirement.json": "35f9a6e8195e004bb49b86bd827eef90d43c54fbe714f2f8fea8fcfedda7c037",
+    "observation-retirement.json": "3a678deed159307a6f5e82ed00b0d8b21568f1538666e55de68ee86d9828f5a5",
+    "separate-start-qualification.json": "bbcd16cc4d7c622cb2e98e397fe60b5d6d44cfa917a44fbf6b935b8aa3c18069"
+  },
+  "removed_registration_helpers": 7,
+  "removed_readonly_helpers": 5,
+  "total_removed_this_backend_run": 20,
+  "new_images": 0,
+  "new_volumes": 0,
+  "browser_rendering_tested": false,
+  "whole_G6_or_SVC04_SVC05_pass": false,
+  "acceptance_passed": 92,
+  "acceptance_total": 99,
+  "rough_weighted_progress_percent": 88,
+  "remaining": [
+    "Separate fresh enable on current17 to reactivate reference provider.",
+    "Installed native NotesStats connector, actual remote/outage/duplicates/original-actor/in-flight authority and required-consumer integration.",
+    "Actual external uncertain-effect/credential recovery and changed-worker-image compatibility.",
+    "Browser rendering and G7 complete R1 qualification."
+  ]
+}

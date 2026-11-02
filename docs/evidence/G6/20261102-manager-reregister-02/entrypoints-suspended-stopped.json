@@ -1,0 +1,10 @@
+{
+  "result": "passed_actual_http_suspended_reregistration_with_stopped_worker",
+  "provider_context_409_suspended": true,
+  "native_A_B_C_list_form_retained": true,
+  "native_notes_C_context200": true,
+  "manager_reports_installed_suspended_and_degraded_provider": true,
+  "all17tables_and_independent_worker_exact": true,
+  "original_actor_uid": 6,
+  "browser_rendering_tested": false
+}

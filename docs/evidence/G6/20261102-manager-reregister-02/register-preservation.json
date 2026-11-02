@@ -1,0 +1,20 @@
+{
+  "result": "passed_actual_http_manager_suspended_reregistration_with_stopped_worker",
+  "operation_id": "2d81e660-1494-41e6-997e-771568263f38",
+  "plan_hash": "sha256:f302fb650ba1f0fc6e12e4bef10270643c71da1eaf8ec2c1ec0aa55fc46b810c",
+  "configuration_generation": 17,
+  "dispatch_generation": 82,
+  "native_image_and_all_artifact_pins_unchanged": true,
+  "metadata_reinstalled_same_identity_feature_still_suspended": true,
+  "revoked_grants_not_revived": true,
+  "native_module_rows_and_schema_exact": true,
+  "independent_worker_stays_stopped_and_publication5_exact": true,
+  "all17table_original_rows_preserved_under_exact_metadata_feature_policy_epoch_changes": true,
+  "old_job_outcomes_inputs_attempts_exact": 19,
+  "jobs_epoch_updated": 18,
+  "old_checkpoint_files_preserved": 48,
+  "metadata_child_has_no_native_or_external_runtime_control": true,
+  "limits": [
+    "Stopped reference-runtime re-registration; no connector/remote/in-flight/recovery/changedimage/browser proof."
+  ]
+}

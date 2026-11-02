@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "kind": "prepared",
+  "operation_id": "2d81e660-1494-41e6-997e-771568263f38",
+  "plan_hash": "sha256:f302fb650ba1f0fc6e12e4bef10270643c71da1eaf8ec2c1ec0aa55fc46b810c",
+  "plan": {
+    "schema_version": 1,
+    "operation_id": "2d81e660-1494-41e6-997e-771568263f38",
+    "operation_type": "install",
+    "created_at": "2026-11-02T07:59:46Z",
+    "deployment_id": "0c96e0cf-b0ef-43b8-868b-1deb3cc6cd5f",
+    "site_ids": [
+      "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa"
+    ],
+    "base_state_digest": "sha256:e5097ea7a5f6d7f2f1b33973825a1c047ba04a81b19ace52a79108d079809d89",
+    "base_release_digest": "sha256:669fb070ac81007ab972580d85f7bca183ec7f35809685a1a6727da0b0a3c1dd",
+    "target_release_digest": "sha256:d48a910a6f5a244e1855cf752c588af7fce084ab3e95321b519133a5cba3947b",
+    "artifacts": [
+      {
+        "plugin_id": "org.example.document_stats",
+        "version": "0.1.1",
+        "digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+        "runtime": "external_service",
+        "action": "install",
+        "native_addon": null,
+        "migration_digests": []
+      }
+    ],
+    "dependency_lock_digest": "sha256:1418a4a984c6a6c8a24fa0cba2c29d7bc13e2fcf6274b2bd87f1aab7f1cbfb2c",
+    "bindings": [
+      {
+        "binding_id": "13836bf4-0b25-5588-a453-f1db40879373",
+        "generation": 1,
+        "digest": "sha256:2408860f8a3c6b1d314cf02788e5a2a365fbed1b147643ffcac49aab8c45c2b4"
+      },
+      {
+        "binding_id": "2c2d32b5-27be-5b04-8168-bca850ec1977",
+        "generation": 1,
+        "digest": "sha256:be29c59d5354dddf701d92dc0b65176985cb77fb0f3771ba3ffe598e7929cfff"
+      },
+      {
+        "binding_id": "3e1ad92f-b1c2-5dfe-8d0c-bf0a551c9bb3",
+        "generation": 1,
+        "digest": "sha256:db1fc47b6807ad8b9a4bae353123a515cb1a624af953270404f6c26261c98c84"
+      },
+      {
+        "binding_id": "48d1c062-1237-5b70-9738-8e7f1ff97f9a",
+        "generation": 1,
+        "digest": "sha256:ede001fb150776132918f2d32606147800cd09e59a9bea0235e2cf41a1a83c5c"
+      },
+      {
+        "binding_id": "529629c6-9cc1-5b97-99e9-00e734867378",
+        "generation": 1,
+        "digest": "sha256:4dca7678624617ed3bd9782a1b83cf4a290cb4cdcd511e05135ebdacd85eb2bb"
+      },
+      {
+        "binding_id": "80d1b7c5-5385-58bf-acfd-4c66be346408",
+        "generation": 1,
+        "digest": "sha256:c5b42c18df4b4572ac0b0b963bcf77d52b873da8fb98daa2c0a810ec7578ed0b"
+      },
+      {
+        "binding_id": "8397d75e-71f0-5e28-9fdd-22ba19a8e3a2",
+        "generation": 1,
+        "digest": "sha256:ac317a19412cad0f2aad6ff2457f7f0324f63336fb5c8a98755ec923ba1486c7"
+      },
+      {
+        "binding_id": "9d8f1b6e-7809-5041-888c-517c1c376493",
+        "generation": 1,
+        "digest": "sha256:8247e3988bd0aabc80a7c3e2810698a6728553f5a8b1abd776221ad45052b44d"
+      },
+      {
+        "binding_id": "ca542c5a-4faf-536a-8f30-fdd93c1ec176",
+        "generation": 1,
+        "digest": "sha256:a50bdd77bc75c7b84d2eea62909282607ccc83996572439ee54835371d0f8828"
+      },
+      {
+        "binding_id": "ce1e3986-4aed-5c93-87ab-0d05eb9d9310",
+        "generation": 1,
+        "digest": "sha256:2aa673c6d8d631394e3dd9a7134f14c081b98b40d866b6b3dcfb4f9fd370571c"
+      },
+      {
+        "binding_id": "e6bf5808-54b7-54f2-8c23-b072a7a981f5",
+        "generation": 1,
+        "digest": "sha256:9b504d1b59a4da2cea069d02a701afc446d9678b7c8ade239e506699fc40c8a8"
+      }
+    ],
+    "endpoints": [
+      {
+        "endpoint_config": "document_stats_local",
+        "generation": 3,
+        "digest": "sha256:382d886212f9e5fd96a7671f15b64f3f505ac708cf666e3027d951a12c9f92f8",
+        "expected_image_digest": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca"
+      }
+    ],
+    "permission_changes": [],
+    "trust_changes": [],
+    "destructive": false,
+    "backup": {
+      "required": true,
+      "policy_id": "development_checkpoint",
+      "retain_previous_release": true
+    },
+    "policy_version": 1,
+    "operator_authorization_generation": 1
+  },
+  "targets": [
+    {
+      "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e",
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+      "plugin_id": "org.example.document_stats",
+      "action": "install"
+    }
+  ],
+  "declaration_changes": [],
+  "native_trusted_code": false,
+  "restart_required": true,
+  "feature_suspension_unloads_code": false,
+  "known_unknowns": [
+    "Native Python and same-origin frontend code is fully trusted.",
+    "Author destructive=false does not prove migration safety.",
+    "Native schema is restored site-wide. Review the exact post-install feature states: suspended scopes receive no renewed grants and remain unavailable."
+  ],
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-11-02T07:53:59Z",
+  "stale": false
+}

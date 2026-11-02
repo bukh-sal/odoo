@@ -1,0 +1,14 @@
+{
+  "result": "passed_separate_operator_start_does_not_enable_metadata",
+  "same_worker_image_container_key_scope_retained": true,
+  "configuration_generation": 17,
+  "dispatch_generation": 82,
+  "publication_generation": 5,
+  "endpoint_generation": 3,
+  "metadata_feature_still_suspended": true,
+  "original_actor_context409": true,
+  "manager_reports_installed_suspended_healthy_without_native_addon": true,
+  "all17tables_exact_including_revoked_grants": true,
+  "no_automatic_feature_activation": true,
+  "browser_rendering_tested": false
+}

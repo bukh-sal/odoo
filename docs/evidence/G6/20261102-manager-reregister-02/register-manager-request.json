@@ -1,0 +1,13 @@
+{
+  "result": "passed_actual_http_manager_request",
+  "operation_id": "2d81e660-1494-41e6-997e-771568263f38",
+  "plan_hash": "sha256:f302fb650ba1f0fc6e12e4bef10270643c71da1eaf8ec2c1ec0aa55fc46b810c",
+  "existing_operator_uid": 5,
+  "exact_metadata_C_scope": true,
+  "host_restart_required": true,
+  "native_code_execution_requested": false,
+  "only_app_nomination_created": true,
+  "all17tables_and_independent_worker_unchanged": true,
+  "independent_approval_and_apply_not_performed": true,
+  "browser_rendering_tested": false
+}

@@ -1,0 +1,9 @@
+# Actual corrective core16 immutable rollout
+
+Normal independent staged core maintenance2f677d90-4e10-42a8-bb46-2290ea7ee0a0, hash8f9718455587e071085851e3a7ba1a06fe63460a962629e26164b3d3ef8a18df. Source/SDK16/private inert-reference correction is the admitted cfb0fb0d image; shell10, all3native artifacts/manifests, Python and policy unchanged. Seven native deployment targets; removed external metadata0.1.1/pins/bindings remain unchanged. No service process control or package code execution.
+
+Staging preserves the exact observed preimage; fresh independent reconstruction/review and exact trust/destructive acknowledgement precede apply. Config15→16, dispatch76→79. `preservation.json` proves all17 original tables under exact18 job epoch/release updates,19 old outcomes/inputs/attempts, schema columns, native module state/versions except reviewed core15→16 and48 checkpoint files. No active event subscriptions changed. The separate worker remains exactly stopped, same image/state/mounts/configured network/public-only configgeneration3/key/publication5. Read-only volume probes auto-remove; they contain no issuer material. Helper image advances b992→cfb only after preservation checks.
+
+`entrypoints.json`: original Alice provider context404 remains removed, native A/B/C list/form and NotesC context200 work, manager distinguishes removed metadata from independently managed runtime. Reads preserve17tables/worker. `retirement.json` archives privately/removes8 exact owned exited0 helpers/superseded app; current app/DB/edge/stopped worker and actual current/checkpoint images/volumes retained. One admitted image becomes active; no new volume.
+
+This is the corrective host rollout, not a re-registration pass. Next use a NEW stopped-worker manager request on this image; never replay failed2b5f4ed3. Full SVC/JOB external effects/recovery/changed-image, browser and G7 remain required; no acceptance credit added.
