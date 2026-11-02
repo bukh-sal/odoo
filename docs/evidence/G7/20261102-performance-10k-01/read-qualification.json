@@ -1,0 +1,80 @@
+{
+  "result": "passed_required_10k_20concurrent_standard_read_target",
+  "work_item": "G-01c3",
+  "spec_section": "24.1",
+  "source_configuration_generation": 29,
+  "source_dispatch_generation": 132,
+  "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "dataset": {
+    "total_notes": 10006,
+    "workspace_notes": 10000,
+    "synthetic_added": 9976,
+    "detail_body_bytes": 9600,
+    "sha256": "7eee3872ac3505877b6444caf269b85d51dfb4807a3e14756c642d9740c652f8"
+  },
+  "metrics": {
+    "native_list80": {
+      "samples": 200,
+      "median_ms": 166.32,
+      "p95_ms": 323.262,
+      "max_ms": 1092.28,
+      "requests_over_500ms": 10,
+      "errors": 0
+    },
+    "native_detail": {
+      "samples": 200,
+      "median_ms": 64.007,
+      "p95_ms": 120.154,
+      "max_ms": 1092.157,
+      "requests_over_500ms": 8,
+      "errors": 0
+    },
+    "gateway_list25": {
+      "samples": 200,
+      "median_ms": 127.169,
+      "p95_ms": 254.463,
+      "max_ms": 1099.56,
+      "requests_over_500ms": 10,
+      "errors": 0
+    },
+    "gateway_detail": {
+      "samples": 200,
+      "median_ms": 102.336,
+      "p95_ms": 182.166,
+      "max_ms": 1087.314,
+      "requests_over_500ms": 6,
+      "errors": 0
+    }
+  },
+  "measured_requests": 800,
+  "total_errors": 0,
+  "normal_authenticated_actor_workspace_native_and_gateway_paths": true,
+  "release_CSRF_binding_authorization_and_proxy_admission_retained": true,
+  "proxy_security_admission_config_only_upstream_hostname_changed": true,
+  "source17tables_36jobs_30Notes_worker_unchanged": true,
+  "benchmark_dataset_exact_after_reads": true,
+  "copied_dispatch_paused_credentials_revoked_no_new_jobs_or_events": true,
+  "app_CPUs": 2,
+  "app_memory_bytes": 1610612736,
+  "workers": 2,
+  "shared_PG_CPUs": 1,
+  "shared_PG_memory_bytes": 536870912,
+  "source_sha256": {
+    "fixture.py": "7e8d397efaa55fb8391ac19b51264344d0072a35bc127c1a51eaf01f38408578",
+    "read_benchmark.py": "2d38f5934e3d3be0d0da9fbf2d8e57afe5622d46c30af2b01497932130d18f79",
+    "fixture.json": "8eed4f73eee651d48cfc9f3b67c309d2c2c498fcf69b233726d2e5bd0ff1bff5",
+    "read-benchmark.json": "937d00e67cadae81115625453c25d533e1a268c3ba219537cc07f3f80e3e1be8",
+    "authenticated-dataset-validation.json": "825189981978c5b9cba21b5bb7ea85208a3feb6e2355ad35c36b433a3099a4e0",
+    "resources.json": "f341f61ae1c5f4681d28b068043f7c219dc6d8c2cf0eb128066096cf0ba0bd75",
+    "host-hardware.json": "88f4a3dc6e258fbac6fc4cd00272b928fcf0370fdaff46d53ebf1e2a91b14b2f"
+  },
+  "one_owned_reusable_fixture_no_new_image": true,
+  "limits": [
+    "Read portion only: shell<3s,100custom-page mount/dispose cycles, relevant R0 comparison, heartbeat/revocation mapping and fullG7 remain.",
+    "Logical separateDB/app/proxy/filestore; PostgreSQL process and physical hardware/network shared with original idle/available runtime, not dedicated hardware.",
+    "Engine/resource/clock/storage metadata and host CPU/disk models recorded; Docker VHD-to-physical-disk placement not mapped.",
+    "Maximum requests around1.1seconds retained; p95 pass is not a uniform latency guarantee.",
+    "No product deployment/fixture install or hostile native-code isolation claim."
+  ]
+}

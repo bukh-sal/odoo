@@ -1,0 +1,12 @@
+{
+  "result": "retired_one_exact_empty_archived_project_network",
+  "project": "mp-r0-r1cleand32d742ed8b4",
+  "name": "mp-r0-r1cleand32d742ed8b4_edge",
+  "network_id": "0e4fc75e04e8d89c8ab1f5f37b30fd092cc15b96d3cef7e0669849ee1a55b447",
+  "repository_ownership_sha256": "74b4da6ffecdf97b9359192e93db707582a92ea7a89089ad983b8e6027e52f96",
+  "private_topology_archive_sha256": "90fafa3aa3ebf31b455751e3cff4860bd5d9c6310d596a37b224230008184147",
+  "no_container_or_volume_or_image_removed": true,
+  "no_global_prune": true,
+  "current_runtime_networks_preserved": true,
+  "reason": "Default Docker address pools exhausted; known retired project bridge had no endpoint/container users."
+}

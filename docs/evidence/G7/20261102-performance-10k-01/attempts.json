@@ -1,0 +1,21 @@
+{
+  "work_item": "G-01c3",
+  "attempts": [
+    {
+      "attempt": "config and data copy helper",
+      "finding": "The negative app:8069 substring assertion also matched the new hostname's -app:8069 suffix after config/filestore copy completed. No Notes seed/app start occurred.",
+      "correction": "Preserved fixture_attempt01.py. Exact continuation verified copied config and every source/copy filestore hash, then wrote only the pending proxy config with an exact-hostname check. No DB restore/volume creation/data copy replay."
+    },
+    {
+      "attempt": "edge network creation",
+      "finding": "Docker refused because all default address pools were allocated. Database/10kdataset and app were already prepared, without source changes.",
+      "correction": "Archived and retired one exact empty prior D0-owned project network with no container users, then created only the pending edge/network. No global prune/daemon restart or subnet guessing. network-retirement.json."
+    },
+    {
+      "attempt": "fixture report publication",
+      "finding": "After splitting the continuation function, summary was no longer local when writing the report. App/proxy/readiness/source preservation had already passed.",
+      "correction": "Preserved fixture_attempt03.py, derived the report from persisted record.dataset, revalidated exact running IDs/image/port/source/worker and wrote the report only. No restore/seed/container/network recreation."
+    }
+  ],
+  "result": "One unchanged qualified product image, one reusable logical fixture; distinct diagnosed setup faults retained. Benchmark measurements executed once."
+}

@@ -1,0 +1,15 @@
+{
+  "result": "passed_actual_authenticated_10k_and_bounded_filters_pagination",
+  "workspace_count": 10000,
+  "native_filtered_rows": 80,
+  "gateway_page_sizes": [
+    25,
+    25
+  ],
+  "gateway_pages_disjoint": true,
+  "detail_body_bytes": 9600,
+  "dispatch_paused": true,
+  "copied_technical_credentials_revoked": true,
+  "source_workspace_notes": 24,
+  "benchmark_database": "mp_disposable_r0_r1_g7_perf_6fafdba2c44c"
+}

@@ -1,0 +1,17 @@
+# ADR0045: one reusable owned10k read benchmark fixture
+
+Date: 2026-11-02. Status: actual required read target qualified; fixture retained for remaining performance checks. G-01c3, §24.1.
+
+The qualified read correction passes the actual20concurrent30Note diagnostic, but that cannot pass the specified10kNotes target. Create one explicitly recorded disposable benchmark database/filestore and app/proxy using the existing qualified31a673eb image. Reuse this fixture for justified measurements. No new image, alternate UI or performance-target relaxation.
+
+Use the current owned PostgreSQL16 process for a distinct database restored from a consistent current dump, with its actual1CPU/512MiB limits and sharing explicitly reported. The original app remains idle/available, with its data and worker checked unchanged. The benchmark app has the same2CPU/1536MiB/two-worker configuration, independent exact database filter, filestore/config volume and guarded image/inventory startup. Its proxy preserves the actual current admission/security config and has an independent loopback port/network. This is logical fixture separation, not dedicated physical hardware or hostile native-code containment.
+
+Never register a scheduler/executor or mount issuer authority in the copy. Pause copied dispatch and revoke copied technical credentials; suspend copied external features. No original worker/key/publication is changed. Read benchmarks use ordinary authenticated Alice sessions, native Odoo list/detail RPCs and declared gateway list/get with current release/binding/CSRF checks.
+
+Seed exactly10,000 workspaceA Notes, retaining the copied original24A rows and adding9,976 explicitly synthetic rows. Fixture-only SQL seeding measures read performance, not create/event throughput. Use deterministic documented body-size distribution up to10,000characters, unique public IDs, valid author/revision/workspace references and native schema constraints. Retain the other copied workspace rows to detect filtering/scope mistakes. Analyze the copied Notes table and record row counts, dataset digest, actual environment/storage/limits, current source/image, warmup/sample procedure and all errors.
+
+Required pass remains p95<500ms after warmup at20concurrent requests, for standard native and gateway list/detail operations; pagination/filtering stays server-side. Record maximum/median/raw samples as well as p95. A small-data result, cold startup or resource-limit change is not the target. Preserve original17tables/worker/configuration and identify any logical/physical sharing limitations.
+
+Record every exact database/container/volume/network before creating it. Archive diagnostics before retiring only those exact owned targets after the fixture is no longer useful. Preserve current/recovery/worker images, source database/volumes and unselected resources; no global prune or historical fixture resurrection. The benchmark clone is an experimental test target, not a separately approved product deployment.
+
+Qualification: `../evidence/G7/20261102-performance-10k-01/read-qualification.json`. All four200-sample/20concurrent cases passed: native list/detail p95323/120ms, gateway254/182ms,800requests0errors. Source17tables/worker and benchmark dataset digest exact. Proxysecurity/admission preserved exceptupstreamhostname. Max~1.1s retained. One exact empty previously archived-project network was retired after Dockerpool exhaustion; copiedDB/seed/app were never recreated. This earns only the read-target point; remaining shell/mount/R0 bundle and fullG7 remain.

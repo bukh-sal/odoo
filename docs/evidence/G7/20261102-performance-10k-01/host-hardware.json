@@ -1,0 +1,44 @@
+{
+  "cpu": [
+    {
+      "Name": "12th Gen Intel(R) Core(TM) i5-12600K",
+      "NumberOfCores": 10,
+      "NumberOfLogicalProcessors": 16,
+      "MaxClockSpeed": 3700
+    }
+  ],
+  "disk_mapping_limit": "Host physical models only; Docker Linux volume/VHD placement is not mapped to one physical drive.",
+  "memory_bytes": 34102591488,
+  "disks": [
+    {
+      "Model": "ST8000DM004-2U9188",
+      "InterfaceType": "IDE",
+      "Size": 8001560609280
+    },
+    {
+      "Model": "WDC WD40EZAZ-19SF3B0",
+      "InterfaceType": "IDE",
+      "Size": 4000784417280
+    },
+    {
+      "Model": "CT500MX500SSD1",
+      "InterfaceType": "IDE",
+      "Size": 500105249280
+    },
+    {
+      "Model": "SAMSUNG MZVLQ512HBLU-00BH1",
+      "InterfaceType": "SCSI",
+      "Size": 512105932800
+    },
+    {
+      "Model": "CT2000P510SSD8",
+      "InterfaceType": "SCSI",
+      "Size": 2000396321280
+    },
+    {
+      "Model": "Samsung SSD 970 EVO Plus 1TB",
+      "InterfaceType": "SCSI",
+      "Size": 1000202273280
+    }
+  ]
+}

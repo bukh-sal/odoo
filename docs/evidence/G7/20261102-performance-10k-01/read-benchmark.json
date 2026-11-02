@@ -1,0 +1,5710 @@
+{
+  "result": "actual_10k_20concurrent_read_benchmark",
+  "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "configuration_generation": 29,
+  "total_notes": 10006,
+  "workspace_notes": 10000,
+  "target10000_dataset_met": true,
+  "quality_target_passed": true,
+  "cases": {
+    "native_list80": {
+      "timing": {
+        "samples": 200,
+        "median_ms": 166.32,
+        "p95_ms": 323.262,
+        "max_ms": 1092.28
+      },
+      "errors": [],
+      "concurrency": 20,
+      "independent_sessions": 20,
+      "rounds": 10,
+      "batch_pacing_seconds": 1.15,
+      "all_requests": [
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 67.67020002007484
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 180.00710001797415
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 151.1711000057403
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 93.50389998871833
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 66.19290000526235
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 124.14980001631193
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 236.3648999889847
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 263.5094000142999
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 122.63830000301823
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1092.280499986373
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 288.91179998754524
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 234.5616000238806
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 177.4135000014212
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 208.63740000640973
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 36.18249998544343
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 37.20329998759553
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 94.01650002109818
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 150.9485999995377
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 207.51770000788383
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 261.9513999961782
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 137.78560000355355
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 220.18269999534823
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 65.90350001351908
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 63.53559999843128
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 189.7303000150714
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 273.8794000179041
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 246.61550001474097
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 322.76419998379424
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 33.196199976373464
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 296.9558000040706
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 97.97440000693314
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1077.1680000179913
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 217.25899999728426
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 185.94309999025427
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 94.60779998335056
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 243.77519998233765
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 135.1270999875851
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 31.194100010907277
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 269.966599997133
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 299.0384000004269
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 219.1705000004731
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 202.45680000516586
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 258.36269999854267
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 83.84919998934492
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 118.42749998322688
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 244.00710000190884
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 138.61339999129996
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 174.26939998404123
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 58.92519999179058
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 230.20920000271872
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 147.28789997752756
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1078.6531000048853
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 163.11340001993813
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 58.03259997628629
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 191.69370000599883
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 109.74760001408868
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 31.797800009371713
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 267.86490000085905
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 84.29500000784174
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 31.014099979074672
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 73.12329998239875
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 97.19480000785552
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 166.24469999806024
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 148.0327000026591
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 222.1414000086952
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 221.98120001121424
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 196.98209999478422
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.14269999647513
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 190.3724999865517
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 267.68150000134483
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.37520000222139
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 239.2178000009153
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 68.31270002294332
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 242.39259999012575
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 115.29030001838692
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 116.60859998664819
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.2139999885112
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1073.9670999755617
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 167.62829999788664
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 140.55810001445934
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.2424000191968
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 188.57579998439178
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 132.4006999784615
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 207.2557999927085
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 43.128699995577335
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 230.06030000397004
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 131.70600001467392
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 179.125099995872
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 94.17679999023676
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 66.40869998955168
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.375900007551536
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 160.7246000203304
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 206.47469998220913
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 235.97000000881962
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 283.8142999971751
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1070.514799997909
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 154.8060000059195
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 261.05139998253435
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 261.0634999873582
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.33490000385791
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 122.75549999321811
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 69.9443000194151
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 245.66459999186918
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.36839999794029
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 219.5359000179451
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 323.26170001761056
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 69.3514000158757
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 189.24030000925995
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 305.4670999990776
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1079.0360000100918
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 97.43940000771545
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 269.9236999906134
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.1218000119552
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 245.24180000298657
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 300.64539998420514
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 215.0817000074312
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 190.81510000978597
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 96.00109999882989
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 271.6157000104431
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 126.87179999193177
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 116.02610000409186
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 62.29980001808144
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 141.68589998735115
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.38470000773668
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 87.60530001018196
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 35.88329997728579
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 61.980500002391636
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 193.43270000535995
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 165.68659999757074
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 219.38199998112395
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1083.2586000033189
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 166.90570002538152
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 193.04040001588874
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 271.14960001199506
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 141.3858000014443
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 113.82550001144409
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 246.23560000327416
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 245.68550000549294
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 34.49949997593649
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 219.83069999259897
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 98.41089998371899
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.25329998577945
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 121.21260000276379
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.34680001763627
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 147.28410000680014
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 192.27080000564456
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 266.4613999950234
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 247.71269998745993
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.249999980209395
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.851700021652505
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 244.54980000155047
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 143.69260001694784
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.6644999999553
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 193.54340000427328
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 115.37119999411516
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 217.80349998152815
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1076.96649999707
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 218.00980000989512
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 166.395400010515
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 166.91450000507757
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 40.48209998290986
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 170.9823000128381
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 89.52200002386235
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 195.5315000086557
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 116.27410000073723
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 116.95769999641925
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1083.7134000030346
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 164.6685999876354
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 196.6312000004109
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 225.49949999665841
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.87440001126379
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 38.78420000546612
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 285.20290000597015
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 137.30619999114424
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 64.92269999580458
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 254.68780001392588
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 64.29190002381802
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 257.08619999932125
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 222.84589998889714
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 140.56699999491684
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 239.0224999981001
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.81640000571497
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 104.30619999533519
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 148.42670000507496
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 212.8579999844078
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 79.30510002188385
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 38.56899999664165
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 170.0686999829486
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 129.79690000065602
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 93.63749998738058
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 117.50389999360777
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 254.274400009308
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 155.3004999877885
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1068.9299999794457
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 206.8804999871645
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 179.9153000174556
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 64.77599998470396
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 227.5787999969907
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 312.65600002370775
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 261.5724999923259
+        }
+      ]
+    },
+    "native_detail": {
+      "timing": {
+        "samples": 200,
+        "median_ms": 64.007,
+        "p95_ms": 120.154,
+        "max_ms": 1092.157
+      },
+      "errors": [],
+      "concurrency": 20,
+      "independent_sessions": 20,
+      "rounds": 10,
+      "batch_pacing_seconds": 1.15,
+      "all_requests": [
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.10860000527464
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.422699999064207
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 29.287899989867583
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1057.8229000093415
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 102.21270000329241
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 82.81199997873046
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 28.88840000377968
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 62.97009999980219
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.476100004743785
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 16.99969999026507
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 101.08660001424141
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 107.33579998486675
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 61.68760001310147
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 89.41769998637028
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 37.52939999685623
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 89.99439998297021
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 48.7771000189241
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.19490000675432
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 36.21799999382347
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 80.44290001271293
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.45050000702031
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 49.428600003011525
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.264200014527887
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 95.64800001680851
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 99.96819999651052
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 28.849199996329844
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 39.39920000266284
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.07080000359565
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 79.88829998066649
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 60.91929998365231
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 67.35339999431744
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1018.4195000038017
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 37.67590000643395
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 27.54019998246804
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 104.140199982794
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 89.40009999787435
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 85.60059999581426
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 76.29569998243824
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 58.03190000005998
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 68.92749998951331
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 53.87589999008924
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.93490000418387
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 64.65479999314994
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1018.6322999943513
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.767100002150983
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 29.404500004602596
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 61.36240001069382
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 99.29350001038983
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.63279999815859
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 75.80559997586533
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 28.090900013921782
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 76.4525999838952
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 98.34730002330616
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 111.36929999338463
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 86.4956000004895
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 107.35320000094362
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 40.32230001757853
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 118.87090001255274
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.7002999947872
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 84.65770000475459
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 57.89659998845309
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 105.88839999400079
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.84299999801442
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 120.68330001784489
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.1753000030294
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.37629999499768
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.181799974059686
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1079.452499980107
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 82.41740000084974
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 82.54579998902045
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.86360000260174
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.15919998730533
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 67.54809999256395
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 118.28950000926852
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 103.60669999499805
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 54.92329999106005
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 132.93789999443106
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 27.152800001204014
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.5130999928806
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 27.074200013885275
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 17.652400012593716
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 83.77830000245012
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 105.41750001721084
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 72.2286999807693
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 98.81060000043362
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.62350001069717
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 94.65949999867007
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 31.4916999777779
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 30.674400011776015
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.12949999398552
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 61.62439999752678
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 38.57350000180304
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.51420000125654
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 18.294299981789663
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 48.049000004539266
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1081.2620999931823
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 78.47210002364591
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 110.97870001685806
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 46.16340002394281
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 59.332900011213496
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1075.1638000074308
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 79.9307000124827
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 63.80939998780377
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 73.81830000667833
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 43.8780999975279
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 53.75260001164861
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.29780000448227
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 31.71799998381175
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 96.72689999570139
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.4903999955859
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 86.9589000067208
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 26.400000002468005
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 13.89750000089407
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 16.13480001105927
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 24.94890001253225
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 52.357900014612824
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 79.88000000477768
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 61.39620000612922
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.28930000588298
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 33.5551000025589
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 52.555999980540946
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 66.43070001155138
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 69.7634999814909
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 19.76450000074692
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 83.50019998033531
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 31.811199994990602
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 15.938399999868125
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 87.40479999687523
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 51.46960000274703
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 94.80819999589585
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 59.125800005858764
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 59.14990001474507
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 77.09919998887926
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.70110000576824
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 101.5035999880638
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 40.49339998164214
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 99.45810001227073
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 40.09100000257604
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.22530000261031
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 29.22300001955591
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 120.15380000229925
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1092.1571000071708
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 82.72299999953248
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 63.98259999696165
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 58.2585999800358
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.3144999765791
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 83.74180001555942
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.66189998015761
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 52.969800017308444
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 39.9807000067085
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 48.821300006238744
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 65.97959998180158
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 94.88340001553297
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 73.0082000081893
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 100.7155999832321
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 26.603000005707145
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.937900005374104
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 103.62070001428947
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 45.853499992517754
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.96189998346381
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 33.409499999834225
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 54.54789998475462
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 23.980900004971772
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 17.195799999171868
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 47.27899999124929
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 65.18270002561621
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 100.15200002817437
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.974299991503358
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 94.21660000225529
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 81.17809999384917
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 101.094000012381
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.58099999651313
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 63.78110000514425
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 90.17000001040287
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 56.24219999299385
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.18329999200068
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 43.536099983612075
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 36.54810000443831
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 81.74500000313856
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 14.826900005573407
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 84.64329998241737
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 81.16780000273138
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 26.282499980879948
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 43.50990001694299
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 54.88189999596216
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 44.12770000635646
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.952900003176183
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 63.49669999326579
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 53.796299995156005
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 72.23930000327528
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.4700999960769
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 64.03189999400638
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.20049998839386
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 13.557400001445785
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 15.73759998427704
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 90.746300003957
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 32.70360000897199
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 99.33220001403242
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1016.1772000137717
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 32.69030002411455
+        }
+      ]
+    },
+    "gateway_list25": {
+      "timing": {
+        "samples": 200,
+        "median_ms": 127.169,
+        "p95_ms": 254.463,
+        "max_ms": 1099.56
+      },
+      "errors": [],
+      "concurrency": 20,
+      "independent_sessions": 20,
+      "rounds": 10,
+      "batch_pacing_seconds": 1.15,
+      "all_requests": [
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 189.85250001423992
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.511500012362376
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 132.92390000424348
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1071.0262000211515
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 32.234700018307194
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 72.36210000701249
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 169.15239999070764
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 30.789699987508357
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 147.48250000411645
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 150.81990000908263
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 108.47279999870807
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 110.46270001679659
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.83210000931285
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.08409998891875
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 127.54760001553223
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 68.6956999998074
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 203.23380001354963
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 168.95029999432154
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 187.1003000123892
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 48.07039999286644
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 144.953799986979
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 64.86339998082258
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 124.41879999823868
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 163.44350000144914
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 198.6724000016693
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 85.0538999948185
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 39.33020000113174
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 178.22099998011254
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 222.5834999990184
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 203.58950001536869
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 63.61599999945611
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 140.62469999771565
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 102.58440001052804
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1092.4818000057712
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 118.42770001385361
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 38.21840000455268
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 179.2888999916613
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 81.4941999851726
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 102.6422000140883
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 157.39179999218322
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 145.23019999614917
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 166.22900002403185
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 127.48019999708049
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 64.66189998900518
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 165.73110001627356
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 26.188299991190434
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1070.419600000605
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 44.32359998463653
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 46.97730002226308
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 87.48159999959171
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 147.83990001888014
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 87.87350001512095
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 66.79919999442063
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 185.07569999201223
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 127.44759998167865
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 107.20579998451285
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 203.5584999830462
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 186.32760000764392
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 26.801900006830692
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 106.29180000978522
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 115.98380000214092
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 33.90999999828637
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 152.21989998826757
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 115.85420000483282
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.022599985823035
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 194.80019999900833
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 73.14680001582019
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 33.30380000988953
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 194.6874000132084
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 171.41799998353235
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 72.99249997595325
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 51.64299998432398
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 134.47740001720376
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 213.0909999832511
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 133.85380001273006
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 152.34690002398565
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1084.2115000123158
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 173.61509997863322
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.55150001263246
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.89879999030381
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 192.6378000061959
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 62.99950001994148
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 37.211100017884746
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 62.4041999981273
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 126.89050001790747
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 84.00350000010803
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 167.23819999606349
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 149.5166000095196
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 84.14130000164732
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 170.28449999634176
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 105.70580000057817
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 104.91779999574646
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 189.8512999759987
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 209.9838999856729
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1082.4923999898601
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 210.36579998326488
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 124.36740001430735
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 147.2580999834463
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 229.17960002087057
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 33.951899997191504
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 131.14730000961572
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 89.32920001097955
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 192.307500023162
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 26.048800005810335
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 109.58060002303682
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 172.22300000139512
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 171.65489998296835
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 68.32900000154041
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 149.98009998816997
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 149.5244999823626
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.931699987268075
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 187.8621999931056
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 68.34289999096654
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1099.56040000543
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 108.26240002643317
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 45.32849998213351
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 87.08070000284351
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 128.14559999969788
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 210.17310000024736
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 44.99080000096001
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.08129997504875
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.412300013704225
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 131.26210001064464
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 49.79699998511933
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 173.28339998493902
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1056.7687000147998
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 133.88510001823306
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 28.360199998132885
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 109.5373000134714
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.91540000028908
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.33520000916906
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.19230000535026
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 26.89560002181679
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 170.47969999839552
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 153.24860002147034
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 152.60659999330528
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 192.0576999837067
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 211.09259998775087
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 111.80059998878278
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 191.81079999543726
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 76.54969999566674
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 189.4153000030201
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 145.12810000451282
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 99.08029998769052
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 211.38839999912307
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 210.88040000176989
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 164.44660001434386
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 30.641399993328378
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 30.218400002922863
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 53.44730001525022
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 120.66639997647144
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1085.3671999939252
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 52.738500002305955
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 121.09000000054948
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 143.24279999709688
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 187.2051999962423
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 230.97750000306405
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 165.22719999193214
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 75.39069998892955
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 97.15519999735989
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 122.0741999859456
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 189.91630000527948
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 34.12179998122156
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 229.79990000021644
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 56.600999989314005
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 210.33850000821985
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 54.99600002076477
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 165.39879998890683
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 166.57910001231357
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 186.48400000529364
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 211.34350000647828
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 121.77949998294935
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 100.58340002433397
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 140.1993999897968
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 99.73170000012033
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1090.1805000030436
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 141.62979999673553
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 32.71960001438856
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 77.55929999984801
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 76.89369999570772
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 237.0085000002291
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 50.25469997781329
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 161.4306999836117
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 113.66109998198226
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 254.46280001779087
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 183.3755999978166
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 113.69800000102259
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 90.91080000507645
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 134.64800000656396
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 184.7422999853734
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 27.848900004755706
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1075.1058000023477
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 28.118600021116436
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.89740000083111
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 134.41479997709394
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.0038000147324
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 159.10580000490882
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 235.17259999061935
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 68.02830001106486
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 49.593100004130974
+        }
+      ]
+    },
+    "gateway_detail": {
+      "timing": {
+        "samples": 200,
+        "median_ms": 102.336,
+        "p95_ms": 182.166,
+        "max_ms": 1087.314
+      },
+      "errors": [],
+      "concurrency": 20,
+      "independent_sessions": 20,
+      "rounds": 10,
+      "batch_pacing_seconds": 1.15,
+      "all_requests": [
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 126.19820001418702
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 66.94859999697655
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 48.45480000949465
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 85.21799999289215
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 179.52509998576716
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 162.9118999990169
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 178.7379999877885
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 47.22179999225773
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 106.3766999868676
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 200.89189999271184
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 139.70680002239533
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 29.934100020909682
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 123.28569998499006
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.558099994668737
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 84.0504000079818
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 161.4697999903001
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 144.59849998820573
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 239.62639999808744
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 62.91469998541288
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 102.13830001885071
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 96.1496000236366
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 40.04819999681786
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 189.51759999617934
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 23.13839999260381
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 37.95560001162812
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 56.63710000226274
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 169.97950000222772
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.28649999201298
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 54.820099991047755
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 154.28570000221953
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 135.21700000273995
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.47530001448467
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.23040000139736
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 132.80669998493977
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 21.06230001663789
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 170.2118000248447
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 153.04160001687706
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 112.69690000335686
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 112.98509998596273
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1044.1963000048418
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 105.88600000482984
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 143.16420000977814
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 39.47009998955764
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 72.44379998883232
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 37.87910001119599
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1061.5824999986216
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 67.97420000657439
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 114.71580000943504
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 57.17039998853579
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 130.51010001800023
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 160.45789999770932
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 82.87470001960173
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 170.66989999148063
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 86.51029999600723
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 55.34349998924881
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 143.22209998499602
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 129.23669998417608
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 98.56670000590384
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 114.089899987448
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 157.02809998765588
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 82.7980000176467
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 112.86419999669306
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 33.190200017997995
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 157.75290000601672
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 55.98370000370778
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1057.477900001686
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 125.87940000230446
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 78.47210002364591
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 44.7998000017833
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 153.55660000932403
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 123.04209999274462
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.55150002334267
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 136.95660000666976
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 105.45700002694502
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 134.86809999449179
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.315800012322143
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 55.81670001265593
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 167.7475000033155
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 87.37709998968057
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.8696999840904
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 86.81070001330227
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 39.818899997044355
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 144.8998000123538
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 24.140299996361136
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 85.94530000118539
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 101.86880000401288
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.80370000423864
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 117.29650001507252
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 56.15320001379587
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 141.73120001214556
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 53.243500005919486
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 101.09740000916645
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 39.45559999556281
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1082.8420000034384
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 127.51559997559525
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 69.47280000895262
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 157.1550000226125
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 128.83039997541346
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 116.25060002552345
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 22.469699993962422
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.14390000561252
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 57.49629999627359
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.75020000222139
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 137.38529998227023
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 105.9252999839373
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 152.9714999778662
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1081.072300003143
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 105.79480000887997
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 24.869199987733737
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 119.59379998734221
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 118.11740000848658
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 56.62120002671145
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 165.73269999935292
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 72.53600002150051
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 40.15590000199154
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 86.75200000288896
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 133.83810000959784
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.52910000877455
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.04850000888109
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 149.158999993233
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 154.14540001074784
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.98939998168498
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 60.06550000165589
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 27.601300011156127
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 122.67369998153299
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 76.22679998166859
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 167.44509999989532
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 58.7736000015866
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.60539999813773
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 106.85520002152771
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.32949999184348
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 1087.3141000047326
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.85559999314137
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 106.67049998301081
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 137.99620000645518
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 121.87139998422936
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.28130001062527
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 152.44689999963157
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 25.807300000451505
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 136.90759998280555
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 113.04850000306033
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 182.16639998718165
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 24.577600008342415
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 59.442600002512336
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 58.67720002424903
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 124.5383000059519
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 146.76189998863265
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.371800023829564
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 108.5091000131797
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 77.83340002060868
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 162.07779999240302
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 178.44740001601167
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 91.60070001962595
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 92.55189998657443
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 146.10510002239607
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 23.119999998016283
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 40.55000000516884
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 128.77090001711622
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 74.30519998888485
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 162.65559999737889
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 42.492999986279756
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 41.96950001642108
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 104.69200002262369
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 165.96369998296723
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 120.73439999949187
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.86719998554327
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.4016000200063
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 23.251500009791926
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 24.567299988120794
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 103.42759999912232
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 119.20990000362508
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 135.33339998684824
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 72.15150000411086
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 55.92600000090897
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 168.19749999558553
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 151.3138999871444
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 150.74849998927675
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 69.55939999897964
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 134.535599994706
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 54.79230001219548
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 106.37719999067485
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 88.72909998171963
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 87.98420001403429
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 226.87430001678877
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 70.13300000107847
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 55.251299985684454
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 153.0606999876909
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 121.4073000010103
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 37.754799996037036
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 136.1447999952361
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 22.59720000438392
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 134.11690000793897
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 118.95410000579432
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 164.39159997389652
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 55.04609999479726
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 102.53289999673143
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 38.797899993369356
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 21.743099990999326
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 71.73530000727624
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "native_error": null,
+          "latency_ms": 147.8521999961231
+        }
+      ]
+    }
+  },
+  "warm_sequential_session_control": {
+    "timing": {
+      "samples": 20,
+      "median_ms": 16.0,
+      "p95_ms": 31.0,
+      "max_ms": 32.0
+    },
+    "samples_ms": [
+      31.000000017229468,
+      0.0,
+      30.999999988125637,
+      0.0,
+      16.00000000325963,
+      0.0,
+      16.00000000325963,
+      0.0,
+      14.999999984866008,
+      32.00000000651926,
+      15.000000013969839,
+      0.0,
+      30.999999988125637,
+      0.0,
+      16.00000000325963,
+      30.999999988125637,
+      16.00000000325963,
+      31.000000017229468,
+      15.999999974155799,
+      0.0
+    ],
+    "R0_control_p95_ms": 31.0,
+    "limits": "G0 used admin/different old environment and coarse monotonic clock; this is an upstream session control, not a Notes benchmark."
+  },
+  "all17tables_worker_exact": true,
+  "no_product_source_or_limits_changed": true,
+  "limits": [
+    "Required read benchmark only; shell/mount cycles/R0/heartbeat/revocation and other G7 work remain.",
+    "Public proxy admission and ordinary authorization remain active; batches paced rather than disabling controls.",
+    "No body payloads or session credentials in public timing evidence. The original PostgreSQL process/hardware/network are shared and recorded; logical fixture only."
+  ]
+}

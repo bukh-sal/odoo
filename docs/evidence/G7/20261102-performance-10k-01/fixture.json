@@ -1,0 +1,34 @@
+{
+  "result": "prepared_owned_logical_read_benchmark",
+  "project": "mp-g7-perf-6fafdba2c44c",
+  "database": "mp_disposable_r0_r1_g7_perf_6fafdba2c44c",
+  "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "port": 18089,
+  "dataset": {
+    "total": 10006,
+    "body_max": 9600,
+    "dispatch": [
+      "paused"
+    ],
+    "synthetic": 9976,
+    "workspace": 10000,
+    "dataset_sha256": "7eee3872ac3505877b6444caf269b85d51dfb4807a3e14756c642d9740c652f8",
+    "credentials_active": 0
+  },
+  "source17tables_worker_exact": true,
+  "guarded_exact_image_start": true,
+  "app_CPUs": 2,
+  "app_memory_bytes": 1610612736,
+  "shared_PG_CPUs": 1,
+  "shared_PG_memory_bytes": 536870912,
+  "workers": 2,
+  "issuer_not_mounted": true,
+  "dispatch_paused_credentials_revoked_in_copy": true,
+  "experimental_not_approved_deployment": true,
+  "limits": [
+    "Distinct logical database/filestore/app/proxy; shared original PostgreSQL process/hardware/network explicitly retained.",
+    "No benchmark target pass yet; ordinary authenticated HTTP validation and actual warm measurements remain.",
+    "Source runtime unchanged. One new volume/two containers/one network and one known new database; no new image."
+  ]
+}
