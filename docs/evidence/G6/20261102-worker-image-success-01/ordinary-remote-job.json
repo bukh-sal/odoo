@@ -1,0 +1,27 @@
+{
+  "result": "passed_actual_original_actor_remote_job_after_changed_image_upgrade_and_recovery",
+  "generation": 23,
+  "job": {
+    "id": "c7115fe8-b465-49a9-bb7a-b9570fa6e306",
+    "state": "completed",
+    "progress": 100,
+    "attempts": 1,
+    "error_code": null,
+    "result": {
+      "note_id": "33a105b1-d71b-4825-9655-d940addfd6d0",
+      "revision": 2,
+      "statistics": {
+        "lines": 1,
+        "words": 7,
+        "characters": 50
+      }
+    }
+  },
+  "ordinary_independent_CLI": true,
+  "current_worker_image548202_publication11_endpoint9": true,
+  "native_A_B_C_views_retained": true,
+  "old29job_outcomes_and_other17tables_exact": true,
+  "manager_healthy_provider_enabled": true,
+  "new_upgrade_enable_completed_HTTP_mirrors": true,
+  "browser_rendering_tested": false
+}

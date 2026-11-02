@@ -1,0 +1,15 @@
+{
+  "result": "retired_exact_terminal_success_helpers_and_obsolete_old_worker",
+  "removed_containers": 22,
+  "readonly_observations": 7,
+  "superseded_hosts_removed": 2,
+  "obsolete_worker05_removed": true,
+  "volumes_removed": 1,
+  "old_public_volume": "mp-disposable-document-stats-05-public-config",
+  "old_public_only_configuration_and_private_diagnostics_archived": true,
+  "images_removed": 0,
+  "old_image_retained_as_actual_checkpoint_and_derivation_base": true,
+  "current_host_worker06_database_edge_config9_authority11_preserved": true,
+  "all30jobs_other17tables_exact": true,
+  "no_global_prune_or_force": true
+}

@@ -1,0 +1,9 @@
+{
+  "result": "passed_installed_current_profile_unknown_effect_refusal",
+  "profile": "r1-reference-stateless-v1",
+  "job_id": "5e22db74-3f5b-4666-9b41-72cfe6ce1f9b",
+  "rollback_restored_exact_native_dispatch_state": true,
+  "all30jobs_other17tables_exact": true,
+  "no_external_effect_or_job_dispatch": true,
+  "limits": "Rollback-only current guard regression. Actual non-idempotent effect/crash/lease/nonretry evidence remains job03-01."
+}

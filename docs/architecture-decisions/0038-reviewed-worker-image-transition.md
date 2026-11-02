@@ -1,6 +1,6 @@
 # ADR0038: reviewed reference-worker image transition
 
-Date: 2026-11-02. Status: implementation/qualification in progress.
+Date: 2026-11-02. Status: qualified for the R1 stateless reference profile.
 Scope: G6 F-01d, spec14.6/SVC05; no new public wire contract or runtime control.
 
 The current planner requires a matching approved new-image endpoint before a
@@ -47,9 +47,9 @@ Core17 was normally staged/reviewed/approved/applied under operation
 `6348ddd4-f48f-4793-9adf-13ef14918de3`; native epoch20/control101 retains the
 existing provider/connector, all 29 terminal jobs, 30 Notes, schema/files and
 independent worker/publication7. Native views and old-release refusals pass in
-`../evidence/G6/20261102-core17-upgrade-01/`. This establishes the installed
-default-profile regression only. Actual distinct-worker upgrade/recovery remains
-required before SVC05 or this ADR's qualification can be complete.
+`../evidence/G6/20261102-core17-upgrade-01/`. That rollout established the installed
+default-profile regression; the following records establish the actual different
+worker image transition, recovery and final success path.
 
 Actual transition/recovery evidence now lives in
 `../evidence/G6/20261102-worker-image-upgrade-01/`. A separate compatible image548202
@@ -61,6 +61,16 @@ all29job outcomes/30Notes/native/auth/history/48files while the new worker/image
 and publication9 remained unchanged. Independent revocation10 then invalidated
 an unexpired resume review. A fresh review resumed host records with that current
 revocation retained and the provider still suspended. The original failed plan
-remains revoked; a new successful metadata upgrade/enable/remote job is still
-required. No automatic remote rollback or arbitrary-effect reconciliation is
+remains revoked; the success path below uses a new metadata upgrade/enable and
+ordinary remote job. No automatic remote rollback or arbitrary-effect reconciliation is
 claimed. Revocation was injected after the closed SQL restore, not before it.
+
+The final success path is qualified in
+`../evidence/G6/20261102-worker-image-success-01/qualification.json`: separate
+publicconfig9/approval11, NEW normal metadata0.1.2 upgrade/enable at native23/control114,
+strict default profile restored, actual current-generation/audience/scope/key
+checks and an ordinary original-user remote job completed once. All old outcomes,
+native/auth/history and48files remained. A current installed rollback-only check
+still refuses unknown effects. The obsolete worker05/container/public volume and
+22terminal containers were retired after diagnostics; current and real checkpoint
+image roles remain. SVC05 passes; SVC02/rendering/full G6/G7 are separate.

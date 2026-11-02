@@ -1,0 +1,104 @@
+{
+  "approval_expires_at": "2026-11-02T13:54:03Z",
+  "control_authority": "independent_local_os",
+  "dimensions": [
+    {
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "feature_state": "enabled",
+      "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e",
+      "plugin_id": "org.example.document_stats",
+      "release_state": "active",
+      "service_state": null,
+      "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d"
+    }
+  ],
+  "error_code": null,
+  "history": [
+    {
+      "code": "prepared",
+      "sequence": 443,
+      "utc": "2026-11-02T13:37:51Z"
+    },
+    {
+      "code": "application_request_imported",
+      "sequence": 444,
+      "utc": "2026-11-02T13:37:53Z"
+    },
+    {
+      "code": "approved",
+      "sequence": 445,
+      "utc": "2026-11-02T13:39:03Z"
+    },
+    {
+      "code": "reserved",
+      "sequence": 446,
+      "utc": "2026-11-02T13:40:01Z"
+    },
+    {
+      "code": "staged",
+      "sequence": 447,
+      "utc": "2026-11-02T13:40:45Z"
+    },
+    {
+      "code": "maintenance",
+      "sequence": 448,
+      "utc": "2026-11-02T13:41:04Z"
+    },
+    {
+      "code": "drained",
+      "sequence": 449,
+      "utc": "2026-11-02T13:41:23Z"
+    },
+    {
+      "code": "checkpointed",
+      "sequence": 450,
+      "utc": "2026-11-02T13:41:57Z"
+    },
+    {
+      "code": "mutation_started",
+      "sequence": 451,
+      "utc": "2026-11-02T13:42:12Z"
+    },
+    {
+      "code": "migrated",
+      "sequence": 452,
+      "utc": "2026-11-02T13:42:15Z"
+    },
+    {
+      "code": "workers_replaced",
+      "sequence": 453,
+      "utc": "2026-11-02T13:42:31Z"
+    },
+    {
+      "code": "ready",
+      "sequence": 454,
+      "utc": "2026-11-02T13:43:15Z"
+    },
+    {
+      "code": "release_published",
+      "sequence": 455,
+      "utc": "2026-11-02T13:43:16Z"
+    },
+    {
+      "code": "traffic_resumed",
+      "sequence": 456,
+      "utc": "2026-11-02T13:43:18Z"
+    },
+    {
+      "code": "completed",
+      "sequence": 457,
+      "utc": "2026-11-02T13:43:33Z"
+    }
+  ],
+  "kind": "status",
+  "observed_at": "2026-11-02T13:58:28Z",
+  "operation_id": "115154b6-fa14-4883-a969-01b579b2f344",
+  "phase": "completed",
+  "plan_hash": "sha256:6d7245a01cc0c8ef3766986e8c692f6414336edf938791eb039ac0e298c9d91b",
+  "requested_by": "1ea0b2ac-ae49-4ea7-bfad-0ed1699301ad",
+  "schema_version": 1,
+  "source": "operator_journal_mirror",
+  "stale": false,
+  "state": "completed"
+}

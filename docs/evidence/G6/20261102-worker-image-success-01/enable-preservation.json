@@ -1,0 +1,16 @@
+{
+  "result": "passed_actual_new_changed_image_metadata_enable",
+  "operation_id": "782b4010-af48-4941-a1fc-e7507e24254e",
+  "configuration_generation": 23,
+  "dispatch_generation": 114,
+  "old29job_outcomes_inputs_attempts_results_exact": true,
+  "changed_job_epochs": 26,
+  "all30Notes_other_native_data_auth_history_exact": true,
+  "schema_native_modules_exact": true,
+  "checkpoint_files_preserved": 48,
+  "current_worker_image_container_start_key_mount_network_publication11_exact": true,
+  "strict_default_reference_profile_restored": true,
+  "provider_feature": "enabled",
+  "original_failed_plan_still_revoked": true,
+  "no_remote_process_control": true
+}
