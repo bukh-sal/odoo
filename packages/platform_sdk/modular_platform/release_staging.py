@@ -4,7 +4,8 @@ from datetime import datetime,timezone
 import os
 from pathlib import Path
 import re
-from packaging.version import Version
+from packaging.utils import canonicalize_name
+from packaging.version import InvalidVersion, Version
 
 from .contracts import load_json,plan_hash
 from .deployment import DockerObserver,inspect_image
@@ -48,15 +49,77 @@ CORE_ADDONS=frozenset({'mp_compat','mp_identity','mp_core','mp_shell'})
 CORE_VERSION=r'19\.0\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)'
 
 
+def core_python_changes(base, runtime):
+    """Reviewed dependency maintenance; never install or execute build metadata.
+
+    The complete target is subsequently solved against all artifact constraints.
+    This guard additionally forbids interpreter changes, hidden downgrades and
+    removals. PyPDF2 has one reviewed successor already supported by Odoo.
+    """
+    changed = (base['python_metadata'] != runtime['python_metadata'] or
+               base['python_lock_digest'] != runtime['python_lock_digest'])
+    if not changed:
+        return None
+    if any(not base.get(key) or base.get(key) != runtime.get(key) for key in ('python', 'architecture', 'markers')):
+        raise OperatorError('Python maintenance must preserve interpreter, architecture and marker environment')
+    if base['python_lock_digest'] == runtime['python_lock_digest']:
+        raise OperatorError('Python distribution changes require a changed exact dependency lock')
+    for image in (base, runtime):
+        if not isinstance(image['python_lock_digest'], str) or not re.fullmatch(r'sha256:[0-9a-f]{64}', image['python_lock_digest']):
+            raise OperatorError('Python maintenance requires exact dependency lock digests')
+
+    def index(image):
+        result = {}
+        for item in image['python_metadata']:
+            name, version = item.get('name'), item.get('version')
+            if not isinstance(name, str) or not re.fullmatch(r'[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?', name):
+                raise OperatorError('Python maintenance requires valid distribution names')
+            key = canonicalize_name(name)
+            if key in result:
+                raise OperatorError('Python maintenance rejects duplicate normalized distribution names')
+            try:
+                if not isinstance(version, str):
+                    raise InvalidVersion(str(version))
+                Version(version)
+            except InvalidVersion as error:
+                raise OperatorError('Python maintenance requires valid distribution versions') from error
+            if (item.get('kind') != 'runtime_distribution' or not isinstance(item.get('digest'), str) or
+                    not re.fullmatch(r'sha256:[0-9a-f]{64}', item['digest'])):
+                raise OperatorError('Python maintenance requires independently observed runtime distribution digests')
+            result[key] = item
+        return result
+
+    before, after = index(base), index(runtime)
+    removed, added = before.keys() - after.keys(), after.keys() - before.keys()
+    if removed and not (removed == {'pypdf2'} and 'pypdf' in added):
+        raise OperatorError('Python maintenance cannot remove distributions except reviewed PyPDF2 to pypdf replacement')
+    if any(Version(after[name]['version']) < Version(before[name]['version']) for name in before.keys() & after.keys()):
+        raise OperatorError('Python maintenance cannot downgrade distributions')
+    changes = [{'name': name, 'previous': copy.deepcopy(before.get(name)), 'target': copy.deepcopy(after.get(name))}
+               for name in sorted(before.keys() | after.keys()) if before.get(name) != after.get(name)]
+    if not changes:
+        raise OperatorError('Python maintenance requires concrete distribution changes, not lock-only edits')
+    versions = [image.get('platform_version', '') for image in (base, runtime)]
+    if (any(not re.fullmatch(r'(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)', v) for v in versions)
+            or Version(versions[1]) <= Version(versions[0])):
+        raise OperatorError('Python maintenance requires a strictly versioned SDK/platform release')
+    files = [image['inventory']['files'] for image in (base, runtime)]
+    for path in ('packages/platform_sdk/modular_platform/projection.py', 'addons/mp_core/__manifest__.py'):
+        if path not in files[0] or path not in files[1] or files[0][path] == files[1][path]:
+            raise OperatorError('Python maintenance requires versioned core and SDK source changes')
+    return {'previous_lock_digest': base['python_lock_digest'], 'target_lock_digest': runtime['python_lock_digest'],
+            'distributions': changes}
+
+
 def validate_core_upgrade(base,runtime,descriptor):
     """Versioned platform maintenance, deliberately distinct from static deploy."""
     if base is None or descriptor['base_image_id']==descriptor['target_image_id']:
         raise OperatorError('Core upgrade requires independently observed base and distinct image')
     before,after=base['inventory'],runtime['inventory']
-    if (before.get('artifacts')!=after.get('artifacts') or base['python_metadata']!=runtime['python_metadata']
-            or base['python_lock_digest']!=runtime['python_lock_digest'] or before['native_addons']!=after['native_addons']
+    if (before.get('artifacts')!=after.get('artifacts') or before['native_addons']!=after['native_addons']
             or before['policy']!=after['policy']):
-        raise OperatorError('Core upgrade must preserve package/Python/native dependency policy')
+        raise OperatorError('Core upgrade must preserve package/native dependency policy')
+    core_python_changes(base, runtime)
     manifests,new_manifests=base.get('native_manifests'),runtime.get('native_manifests')
     if not manifests or not new_manifests or manifests.keys()!=new_manifests.keys():
         raise OperatorError('Core upgrade requires independently read native manifests')
@@ -160,9 +223,9 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     old={item['plugin_id']:item for item in current['plugins']}
     requested={plugin:'=='+item['manifest']['plugin']['version'] for plugin,item in by_plugin.items()}
     update=[plugin for plugin,item in by_plugin.items() if plugin not in old or old[plugin]['digest']!=item['digest']]
-    old_python={item['name'].lower():item for item in current['python_solution']}
-    update.extend('python:'+item['name'] for item in runtime['python_metadata']
-        if item['name'].lower() not in old_python or old_python[item['name'].lower()]['digest']!=item['digest'])
+    old_python={canonicalize_name(item['name']):item for item in current['python_solution']}
+    update.extend('python:'+canonicalize_name(item['name']) for item in runtime['python_metadata']
+        if canonicalize_name(item['name']) not in old_python or old_python[canonicalize_name(item['name'])]['digest']!=item['digest'])
     target_document=copy.deepcopy(document)
     target_document.update(environment=environment,provenance=provenance,python_metadata=runtime['python_metadata'])
     target_document['request']={'operation_type':operation_type,'requested':requested,'targets':copy.deepcopy(targets),
@@ -189,6 +252,9 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
             raise OperatorError('Platform deploy must preserve bindings/endpoints/grants')
         bundle['operation_lock']['platform_source_diff']=platform_diff
         if core_changes is not None:bundle['operation_lock']['native_core_changes']=core_changes
+        if operation_type=='core_upgrade':
+            python_changes=core_python_changes(base_runtime,runtime)
+            if python_changes is not None:bundle['operation_lock']['python_dependency_changes']=python_changes
     for target in targets:
         required=set(by_plugin[target['plugin_id']]['manifest']['dependencies']['plugins'])
         required.update(item['provider'] for item in bundle['operation_lock']['release']['service_selection']

@@ -1,0 +1,31 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-02T21:45:04.623848+00:00",
+  "contract_major": 1,
+  "revision": 16,
+  "frozen_files": 100,
+  "rows": 8,
+  "inventory_sha256": "49a2c5a6f45823b1b236e623b673199fc531bb7c13f34144e75f7e91396279fd",
+  "git_base": "af5db9dcce3048e196e4b3c6a642e77bc65fa29b",
+  "source_qualification": "docs/evidence/G7/20261103-python-maintenance-source-01/qualification.json",
+  "linux_qualification": "docs/evidence/G7/20261103-python-maintenance-source-01/linux-consumers02.json",
+  "host_checks": 180,
+  "linux_checks": 65,
+  "typescript": "passed",
+  "freeze": "passed",
+  "previous_revision": 15,
+  "previous_files_retained_exactly": 95,
+  "changed_previous_files": [
+    "docs/contracts/protocol-v1.md",
+    "tests/test_contracts.py"
+  ],
+  "added_files": [
+    "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md",
+    "packages/contracts/examples/v1/plan-python-maintenance.json",
+    "tests/test_core_python_maintenance.py"
+  ],
+  "old_schema_example_files_unchanged": 71,
+  "change": "ADR0046: independently staged versioned Python maintenance with complete solution, one reviewed PDF successor, exact dependency review/hash and unchanged public DTO schemas.",
+  "runtime_qualification": "Installed image31/core20 remains unchanged. Core21/SDK21 source only; exact dependency lock, release build, registry/lifecycle/recovery/worker/security/fresh release remain unqualified."
+}

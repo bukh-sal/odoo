@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_core_upgrade.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 8,
+  "stdout": "",
+  "stderr": "test_app_requests_reject_core_operation_but_status_can_show_it (test_core_upgrade.CoreUpgrade.test_app_requests_reject_core_operation_but_status_can_show_it) ... ok\ntest_database_versions_pending_native_state_and_omitted_scope_deny (test_core_upgrade.CoreUpgrade.test_database_versions_pending_native_state_and_omitted_scope_deny) ... ok\ntest_exact_core_versions_sources_and_destructive_approval (test_core_upgrade.CoreUpgrade.test_exact_core_versions_sources_and_destructive_approval) ... ok\ntest_independent_reconstruction_rejects_rehashed_core_version_forgery (test_core_upgrade.CoreUpgrade.test_independent_reconstruction_rejects_rehashed_core_version_forgery) ... ok\ntest_migration_digests_and_historical_script_immutability (test_core_upgrade.CoreUpgrade.test_migration_digests_and_historical_script_immutability) ... ok\ntest_package_python_dependency_and_policy_changes_deny (test_core_upgrade.CoreUpgrade.test_package_python_dependency_and_policy_changes_deny) ... ok\ntest_static_deploy_and_plugin_operations_cannot_invoke_core_maintenance (test_core_upgrade.CoreUpgrade.test_static_deploy_and_plugin_operations_cannot_invoke_core_maintenance) ... ok\ntest_unversioned_downgrade_noncanonical_and_upstream_changes_deny (test_core_upgrade.CoreUpgrade.test_unversioned_downgrade_noncanonical_and_upstream_changes_deny) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.127s\n\nOK\n"
+}

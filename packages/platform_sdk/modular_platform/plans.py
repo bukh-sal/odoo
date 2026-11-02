@@ -420,6 +420,8 @@ def _display(plan, operation_lock):
         display['platform_source_diff']=copy.deepcopy(operation_lock['platform_source_diff'])
     if 'native_core_changes' in operation_lock:
         display['native_core_changes']=copy.deepcopy(operation_lock['native_core_changes'])
+    if 'python_dependency_changes' in operation_lock:
+        display['python_dependency_changes']=copy.deepcopy(operation_lock['python_dependency_changes'])
     if 'native_uninstall_impact' in operation_lock:
         display['native_uninstall_impact_digest'] = data_digest(operation_lock['native_uninstall_impact'])
     if 'feature_states' in operation_lock:

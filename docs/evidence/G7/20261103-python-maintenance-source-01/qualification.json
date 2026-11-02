@@ -1,0 +1,130 @@
+{
+  "result": "passed",
+  "utc": "2026-11-02T21:42:07.757435+00:00",
+  "git_base": "af5db9dcce3048e196e4b3c6a642e77bc65fa29b",
+  "tracked_diff_sha256": "7d916151c6b5665aeddeb8b2f162ac401225d9a20e9f4f82943b590261b665fc",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/release_staging.py": "58e9a92d59e828647ad13cec8a25a25c5efe07660606c5ca6f71232b6338213d",
+    "packages/platform_sdk/modular_platform/planning_cli.py": "47714fdc92affab84ce0a14fbdf7181b573e19c1dce618dd2d5eed36ced1d204",
+    "packages/platform_sdk/modular_platform/plans.py": "d4510aa9caf20d398ab9808eda193fecd3dc130a9dd43994fe307ca2e74aa694",
+    "packages/platform_sdk/modular_platform/projection.py": "accb10349d0e35bb599e6b31c2b1a3da30d204154c58570f2b44dcc39f38a0f8",
+    "platform_addons/mp_core/__manifest__.py": "645915f38186570589da34347c89b3d1b37076a303fb2b193a99905c6e68bd3e",
+    "tests/test_core_python_maintenance.py": "384704dcb214522906e9ccb24fafec3958f5e2985f83142b9fbe45157a99ca25",
+    "docs/contracts/freeze-v1.json": "49a2c5a6f45823b1b236e623b673199fc531bb7c13f34144e75f7e91396279fd"
+  },
+  "records": [
+    {
+      "record": "contracts.json",
+      "exit_code": 0,
+      "tests": 20
+    },
+    {
+      "record": "artifacts.json",
+      "exit_code": 0,
+      "tests": 18
+    },
+    {
+      "record": "resolution.json",
+      "exit_code": 0,
+      "tests": 16
+    },
+    {
+      "record": "plans.json",
+      "exit_code": 0,
+      "tests": 13
+    },
+    {
+      "record": "planning_cli.json",
+      "exit_code": 0,
+      "tests": 5
+    },
+    {
+      "record": "client_release.json",
+      "exit_code": 0,
+      "tests": 7
+    },
+    {
+      "record": "core_upgrade.json",
+      "exit_code": 0,
+      "tests": 8
+    },
+    {
+      "record": "core_python_maintenance.json",
+      "exit_code": 0,
+      "tests": 8
+    },
+    {
+      "record": "release_staging.json",
+      "exit_code": 0,
+      "tests": 9
+    },
+    {
+      "record": "platform_deploy.json",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "record": "approval_fences.json",
+      "exit_code": 0,
+      "tests": 3
+    },
+    {
+      "record": "operator_store.json",
+      "exit_code": 0,
+      "tests": 8
+    },
+    {
+      "record": "manager_planning.json",
+      "exit_code": 0,
+      "tests": 8
+    },
+    {
+      "record": "manager_contracts.json",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "record": "operation_contracts.json",
+      "exit_code": 0,
+      "tests": 9
+    },
+    {
+      "record": "lifecycle_planning.json",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "record": "external_planning.json",
+      "exit_code": 0,
+      "tests": 19
+    },
+    {
+      "record": "platform_compatibility.json",
+      "exit_code": 0,
+      "tests": 3
+    },
+    {
+      "record": "distribution_metadata.json",
+      "exit_code": 0,
+      "tests": 1
+    },
+    {
+      "record": "start_worker.json",
+      "exit_code": 0,
+      "tests": 7
+    },
+    {
+      "record": "typescript.json",
+      "exit_code": 0,
+      "tests": null
+    },
+    {
+      "record": "freeze.json",
+      "exit_code": 0,
+      "tests": null
+    }
+  ],
+  "limits": [
+    "Source/contract consumers only; no rebuilt dependency image, registry, actual lifecycle/recovery, full security or fresh release qualification."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "tools/check_contract_freeze.py"
+  ],
+  "exit_code": 0,
+  "tests": null,
+  "stdout": "{\"result\": \"passed\", \"contract_major\": 1, \"files\": 100, \"rows\": 8}\n",
+  "stderr": ""
+}

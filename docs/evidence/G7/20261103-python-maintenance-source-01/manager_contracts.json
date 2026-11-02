@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_manager_contracts.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 6,
+  "stdout": "",
+  "stderr": "test_external_healthy_observation_is_not_native_or_removed_success (test_manager_contracts.ManagerContracts.test_external_healthy_observation_is_not_native_or_removed_success) ... ok\ntest_health_publisher_and_unloading_claims_are_bounded (test_manager_contracts.ManagerContracts.test_health_publisher_and_unloading_claims_are_bounded) ... ok\ntest_new_examples_and_unchanged_old_consumers (test_manager_contracts.ManagerContracts.test_new_examples_and_unchanged_old_consumers) ... ok\ntest_pagination_payload_and_identity_limits (test_manager_contracts.ManagerContracts.test_pagination_payload_and_identity_limits) ... ok\ntest_unknown_authority_and_unsupported_major (test_manager_contracts.ManagerContracts.test_unknown_authority_and_unsupported_major) ... ok\ntest_upload_cannot_claim_retention_execution_or_unchecked_success (test_manager_contracts.ManagerContracts.test_upload_cannot_claim_retention_execution_or_unchecked_success) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.152s\n\nOK\n"
+}

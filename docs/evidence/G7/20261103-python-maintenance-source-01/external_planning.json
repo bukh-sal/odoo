@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_external_planning.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 19,
+  "stdout": "",
+  "stderr": "test_activate_registration_requires_current_health (test_external_planning.ExternalPlanning.test_activate_registration_requires_current_health) ... ok\ntest_changed_image_suspended_projection_and_real_independent_reconstruction (test_external_planning.ExternalPlanning.test_changed_image_suspended_projection_and_real_independent_reconstruction) ... ok\ntest_closed_workspace_allows_removal_but_not_activation (test_external_planning.ExternalPlanning.test_closed_workspace_allows_removal_but_not_activation) ... ok\ntest_enable_and_suspend_preserve_release_and_health_is_not_approval (test_external_planning.ExternalPlanning.test_enable_and_suspend_preserve_release_and_health_is_not_approval) ... ok\ntest_independent_reader_is_required_and_native_executor_refuses_before_drain (test_external_planning.ExternalPlanning.test_independent_reader_is_required_and_native_executor_refuses_before_drain) ... ok\ntest_independent_reconstruction_ignores_proposal_health_and_endpoint (test_external_planning.ExternalPlanning.test_independent_reconstruction_ignores_proposal_health_and_endpoint) ... ok\ntest_missing_required_binding_does_not_become_published_authority (test_external_planning.ExternalPlanning.test_missing_required_binding_does_not_become_published_authority) ... ok\ntest_new_catalog_policy_keeps_published_native_trust_history (test_external_planning.ExternalPlanning.test_new_catalog_policy_keeps_published_native_trust_history) ... ok\ntest_optional_binding_removed_but_published_release_remains_observable (test_external_planning.ExternalPlanning.test_optional_binding_removed_but_published_release_remains_observable) ... ok\ntest_register_suspended_during_outage_is_exact_metadata_only (test_external_planning.ExternalPlanning.test_register_suspended_during_outage_is_exact_metadata_only) ... ok\ntest_registration_cannot_change_untargeted_native_bytes (test_external_planning.ExternalPlanning.test_registration_cannot_change_untargeted_native_bytes) ... ok\ntest_scope_image_catalog_and_native_nomination_refused (test_external_planning.ExternalPlanning.test_scope_image_catalog_and_native_nomination_refused) ... ok\ntest_selection_must_match_metadata_target (test_external_planning.ExternalPlanning.test_selection_must_match_metadata_target) ... ok\ntest_site_unregister_cannot_omit_another_workspace_or_live_grant (test_external_planning.ExternalPlanning.test_site_unregister_cannot_omit_another_workspace_or_live_grant) ... ok\ntest_unregister_reconstructs_only_actual_scope_grant_revocations (test_external_planning.ExternalPlanning.test_unregister_reconstructs_only_actual_scope_grant_revocations) ... ok\ntest_unregister_rejects_required_consumer_without_runtime_mutation (test_external_planning.ExternalPlanning.test_unregister_rejects_required_consumer_without_runtime_mutation) ... ok\ntest_unregister_requires_revocation_and_retains_package (test_external_planning.ExternalPlanning.test_unregister_requires_revocation_and_retains_package) ... ok\ntest_untrusted_request_cannot_select_historical_trust_option (test_external_planning.ExternalPlanning.test_untrusted_request_cannot_select_historical_trust_option) ... ok\ntest_upgrade_keeps_native_and_existing_feature_state (test_external_planning.ExternalPlanning.test_upgrade_keeps_native_and_existing_feature_state) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.635s\n\nOK\n"
+}

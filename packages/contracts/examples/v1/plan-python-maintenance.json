@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "operation_id": "00000000-0000-0000-0000-0000000001f4",
+  "operation_type": "core_upgrade",
+  "created_at": "2026-10-28T05:00:00Z",
+  "deployment_id": "00000000-0000-0000-0000-00000000000a",
+  "site_ids": [
+    "00000000-0000-0000-0000-000000000014"
+  ],
+  "base_state_digest": "sha256:fee478c48c399b092134df092dd985e0215491ab2457ee4573e761499fc56631",
+  "base_release_digest": "sha256:b6269767dc144577889a3433df7767be02e1bd4bbb5589211f463190656f09b0",
+  "target_release_digest": "sha256:f2d771c63e23cf25ace2c037a9d4b21a2f2ecc18349c9e6672658630672063d5",
+  "artifacts": [
+    {
+      "plugin_id": "org.test.a",
+      "version": "1.0.0",
+      "digest": "sha256:4bbd7ebd41246ea0f5ab981d56229b856914f3ec2c4ec4c920eee94752fe8832",
+      "runtime": "native",
+      "action": "deploy",
+      "native_addon": "test_a",
+      "migration_digests": []
+    }
+  ],
+  "dependency_lock_digest": "sha256:83fe2b1a78d509e00d0596dad61842c73f184ca264239d2fc62cf17946b6af54",
+  "bindings": [],
+  "endpoints": [],
+  "permission_changes": [],
+  "trust_changes": [],
+  "destructive": true,
+  "backup": {
+    "required": true,
+    "policy_id": "development_checkpoint",
+    "retain_previous_release": true
+  },
+  "policy_version": 1,
+  "operator_authorization_generation": 1
+}

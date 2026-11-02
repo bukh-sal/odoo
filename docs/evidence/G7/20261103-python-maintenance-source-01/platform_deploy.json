@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_platform_deploy.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 6,
+  "stdout": "",
+  "stderr": "test_deploy_pins_source_diff_checkpoint_restart_and_unchanged_package (test_platform_deploy.PlatformDeploy.test_deploy_pins_source_diff_checkpoint_restart_and_unchanged_package) ... ok\ntest_independent_reconstruction_binds_source_diff_and_base_runtime (test_platform_deploy.PlatformDeploy.test_independent_reconstruction_binds_source_diff_and_base_runtime) ... ok\ntest_omitted_scope_and_changed_plugin_deny_without_version_exception (test_platform_deploy.PlatformDeploy.test_omitted_scope_and_changed_plugin_deny_without_version_exception) ... ok\ntest_package_python_manifest_and_policy_changes_denied (test_platform_deploy.PlatformDeploy.test_package_python_manifest_and_policy_changes_denied) ... ok\ntest_public_status_can_show_deploy_but_app_cannot_request_it (test_platform_deploy.PlatformDeploy.test_public_status_can_show_deploy_but_app_cannot_request_it) ... ok\ntest_same_image_no_op_and_unknown_native_changes_denied (test_platform_deploy.PlatformDeploy.test_same_image_no_op_and_unknown_native_changes_denied) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.105s\n\nOK\n"
+}

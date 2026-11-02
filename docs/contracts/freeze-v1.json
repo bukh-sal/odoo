@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 15,
+  "revision": 16,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -89,7 +89,10 @@
         "docs/architecture-decisions/0035-external-manager-observations.md",
         "packages/contracts/examples/v1/manager-view-external.json",
         "tests/test_manager_contracts.py",
-        "docs/architecture-decisions/0036-metadata-preview-restart-consistency.md"
+        "docs/architecture-decisions/0036-metadata-preview-restart-consistency.md",
+        "packages/contracts/examples/v1/plan-python-maintenance.json",
+        "tests/test_core_python_maintenance.py",
+        "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md"
       ],
       "g1": []
     },
@@ -231,8 +234,9 @@
     "docs/architecture-decisions/0031-scoped-domain-event-delivery.md": "08b375d518301c1f63a4d3b501f98a9595f33c749680cd86dbcb117c74fe438e",
     "docs/architecture-decisions/0035-external-manager-observations.md": "d889caacb7f35fbdfec082e39bda2f1fa4cade0323a01b2e7d3516b8b99dcfd1",
     "docs/architecture-decisions/0036-metadata-preview-restart-consistency.md": "e7e5db0f17206ac5a67aea94e38ef24da96b1d16fa19171e7d28652f83d39577",
+    "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md": "6d86aa17ea376d6eb1a0e3454aae5208b663907837e801fafbff9b7b86b77fe6",
     "docs/contracts/events-v1.md": "ca0914b5da964ab09a53b07d2eec7015b0205f8a7f8b242c5336e5425103e7f9",
-    "docs/contracts/protocol-v1.md": "669a2b3cc2a49b751305e1a9ccf7a5120bcb42abc5079e076c82050e2ca29275",
+    "docs/contracts/protocol-v1.md": "d82252780c1039615323db3f2b940b748f2748e550755ad2d8cc64cab9ab9071",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/board.json": "fc3dae5a6c3e4483c1aa86365410ff38d9f0cb560e75a689cfa287e40c896b64",
@@ -260,6 +264,7 @@
     "packages/contracts/examples/v1/operations-view.json": "e6b40edeb6c81caaf4f9158360f75106419f8c0042d89d8dcc4238dd3aac6bbc",
     "packages/contracts/examples/v1/plan-core-upgrade.json": "ab6c4d6070220ed847cc5ad5a80d34b552866309ad5116af3bda2fbc3e384406",
     "packages/contracts/examples/v1/plan-deploy.json": "cbc9e64aab37f9e7ecd0ed136c918bd1ecf9fffd9974dc62dd225ff453f2af6c",
+    "packages/contracts/examples/v1/plan-python-maintenance.json": "291643c79464137acb2a9eecee7eae319f845a55eb4f08d67d28abef0fff63d3",
     "packages/contracts/examples/v1/plan.canonical.json": "4588c919d2c45b37971d1dfb98b69cc4f809fa86f9511f7e9c2a2b09a7ee1112",
     "packages/contracts/examples/v1/plan.json": "4b9f4166414069bd72c6e6f21f71058a2969f6c6cd7b0e1f46f0e623968d7f9d",
     "packages/contracts/examples/v1/plan.sha256": "519bc6a2fc3b9453e75bbd41c86fe9d1106d3b1bcfd4a4a0d854443cc4bca1f7",
@@ -313,7 +318,8 @@
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
     "packages/platform_sdk/modular_platform/contracts.py": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
-    "tests/test_contracts.py": "14d99ae494bce780d54e26c28e815101fa88dfb1a9086eb132cb0b57c0dfc9c8",
+    "tests/test_contracts.py": "a81845ef69196f08836389541cd66ffcaf7f9a41ef5cae160d81bdb69460d8f6",
+    "tests/test_core_python_maintenance.py": "384704dcb214522906e9ccb24fafec3958f5e2985f83142b9fbe45157a99ca25",
     "tests/test_event_contracts.py": "8318a2e843c6b3387e92d464f07b4109f08c9e4bf8da665773d2c0c4a25155e7",
     "tests/test_manager_contracts.py": "e0e2a12c9f88506a1f51619e6c6f78dac22d560a5d7607255b54d17380214667",
     "tests/test_operation_contracts.py": "5e806a26d8ec89d444eabad5bab7bc65c9bfcd8ed0ebcca0f34c8d545bbf899e",

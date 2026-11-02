@@ -66,6 +66,18 @@ def prepare_document(document, catalog, *, retained_trust_for=()):
             remaining.pop(scoped_installation_key(item), None)
     locked = {'plugin:' + item['plugin_id']: {'version': item['version'], 'digest': item['digest']} for item in state['release_lock']['plugins']}
     locked.update({'python:' + canonicalize_name(item['name']): {'version': item['version'], 'digest': item['digest']} for item in state['release_lock']['python_solution']})
+    if request['operation_type']=='core_upgrade':
+        # A core dependency release may replace this one retired distribution.
+        # Remove its retained-root preference, never installed plugin constraints
+        # or the actual base state used by the approval hash. Independent staged
+        # validation separately checks the exact observed before/after images.
+        old_python={canonicalize_name(item['name']) for item in state['release_lock']['python_solution']}
+        new_python={canonicalize_name(item['name']) for item in document['python_metadata']}
+        removed_python=old_python-new_python
+        if removed_python:
+            if removed_python!={'pypdf2'} or 'pypdf' not in new_python-old_python:
+                raise PlanningError('Core Python planning refuses unreviewed distribution removal')
+            locked.pop('python:pypdf2')
     # Removal changes executable inventory only after native uninstall/unregister.
     # The pure solver still checks every surviving root and dependency.
     removed = {item['plugin_id'] for item in request['targets'] if item['action'] == 'remove'}

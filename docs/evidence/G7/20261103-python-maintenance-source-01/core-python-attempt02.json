@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_core_python_maintenance.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "test_complete_solution_dependency_review_hash_and_independent_reconstruction (test_core_python_maintenance.CorePythonMaintenance.test_complete_solution_dependency_review_hash_and_independent_reconstruction) ... FAIL\ntest_complete_target_dependency_constraints_and_plugin_constraints_reject_conflicts (test_core_python_maintenance.CorePythonMaintenance.test_complete_target_dependency_constraints_and_plugin_constraints_reject_conflicts) ... ok\ntest_dependency_review_cannot_be_hidden_even_when_envelope_is_rehashed (test_core_python_maintenance.CorePythonMaintenance.test_dependency_review_cannot_be_hidden_even_when_envelope_is_rehashed) ... ok\ntest_downgrade_removal_duplicate_invalid_metadata_and_environment_are_rejected (test_core_python_maintenance.CorePythonMaintenance.test_downgrade_removal_duplicate_invalid_metadata_and_environment_are_rejected) ... ok\ntest_explicit_pypdf_successor_only_and_same_version_content_change_is_reviewed (test_core_python_maintenance.CorePythonMaintenance.test_explicit_pypdf_successor_only_and_same_version_content_change_is_reviewed) ... ok\ntest_normalized_duplicate_cannot_hide_removal_and_base_metadata_is_checked (test_core_python_maintenance.CorePythonMaintenance.test_normalized_duplicate_cannot_hide_removal_and_base_metadata_is_checked) ... ok\ntest_static_and_plugin_operations_remain_closed (test_core_python_maintenance.CorePythonMaintenance.test_static_and_plugin_operations_remain_closed) ... ok\n\n======================================================================\nFAIL: test_complete_solution_dependency_review_hash_and_independent_reconstruction (test_core_python_maintenance.CorePythonMaintenance.test_complete_solution_dependency_review_hash_and_independent_reconstruction)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\mesh\\Documents\\modular_platform\\tests\\test_core_python_maintenance.py\", line 50, in test_complete_solution_dependency_review_hash_and_independent_reconstruction\n    self.assertEqual(solved,{'pillow':'13.0.0','retained':'1.0'})\nAssertionError: {'Pillow': '13.0.0', 'retained': '1.0'} != {'pillow': '13.0.0', 'retained': '1.0'}\n- {'Pillow': '13.0.0', 'retained': '1.0'}\n?   ^\n\n+ {'pillow': '13.0.0', 'retained': '1.0'}\n?   ^\n\n\n----------------------------------------------------------------------\nRan 7 tests in 0.109s\n\nFAILED (failures=1)\n"
+}
