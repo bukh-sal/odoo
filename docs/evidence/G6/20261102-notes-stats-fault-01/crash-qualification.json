@@ -1,0 +1,16 @@
+{
+  "result": "passed_actual_worker_crash_host_survival_and_same_worker_recovery",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "job_id": "24e6ba26-8d14-4e91-b96e-696ab2eccdb2",
+  "old_terminal_jobs": 21,
+  "all_old_jobs_and_other16tables_exact": true,
+  "same_worker_image_key_publication5_config3_addresses": true,
+  "one_terminal_failed_attempt_no_late_host_result": true,
+  "native_A_B_C_view_definitions_and_original_actor_note_status": true,
+  "provider_unavailable_then_healthy": true,
+  "elapsed_runner_seconds": 14.0,
+  "limits": [
+    "Backend/API evidence; degraded UI rendering and complete SVC02 acceptance still pending."
+  ]
+}

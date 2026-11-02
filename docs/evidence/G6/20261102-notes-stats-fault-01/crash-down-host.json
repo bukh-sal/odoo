@@ -1,0 +1,18 @@
+{
+  "job": {
+    "id": "24e6ba26-8d14-4e91-b96e-696ab2eccdb2",
+    "state": "dead_letter",
+    "progress": 0,
+    "attempts": 1,
+    "error_code": "DEPENDENCY_UNAVAILABLE",
+    "result": null
+  },
+  "provider_health": {
+    "state": "degraded",
+    "reason": "Published endpoint approval, image or service health needs attention; the runtime is separately managed."
+  },
+  "native_A_B_C_list_form": true,
+  "notes_readable": true,
+  "connector_context200": true,
+  "browser_rendering_tested": false
+}
