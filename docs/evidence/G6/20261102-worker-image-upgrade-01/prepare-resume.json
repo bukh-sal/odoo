@@ -1,0 +1,12 @@
+{
+  "result": "exact_private_changed_image_recovery_review",
+  "decision_hash": "sha256:558308e8d5ed50d77408dc3b0e8616187b14aff8913e79c3685d2bb8ed49cf69",
+  "review": {
+    "expires_at": "2026-11-02T13:28:25Z",
+    "issued_at": "2026-11-02T13:13:25Z",
+    "operator_authorization_generation": 1,
+    "policy_version": 1,
+    "review_id": "7e045c1a-b613-4062-9842-6aaff290ee03"
+  },
+  "action": "resume_verified_restore"
+}

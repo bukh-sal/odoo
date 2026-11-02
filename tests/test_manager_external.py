@@ -59,10 +59,10 @@ class ManagerExternal(unittest.TestCase):
         with self.assertRaises((OperatorError,PlanningError)):self.f.independent()(bundle)
 
     def test_upgrade_is_exact_and_retains_feature_state_and_native_roots(self):
-        candidate=copy.deepcopy(self.f.f.external);candidate['manifest']['plugin']['version']='0.1.2';candidate['digest']='sha256:'+'c'*64
+        candidate=copy.deepcopy(self.f.f.external);candidate['manifest']['plugin']['version']='0.1.3';candidate['digest']='sha256:'+'c'*64
         self.f.f.catalog.append(candidate);self.f.document=self.f.f.project();self.select('upgrade',candidate)
         bundle=self.prepare()
-        self.assertEqual(bundle,self.f.prepare('upgrade',selections=[dict(plugin_id=self.f.target['plugin_id'],version='0.1.2',digest=candidate['digest'])]))
+        self.assertEqual(bundle,self.f.prepare('upgrade',selections=[dict(plugin_id=self.f.target['plugin_id'],version='0.1.3',digest=candidate['digest'])]))
         self.assertNotIn('feature_states',bundle['operation_lock'])
         self.assertEqual(self.f.independent()(bundle),self.f.document['state'])
 
@@ -140,7 +140,7 @@ class ManagerExternal(unittest.TestCase):
         self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
         self.setUp();self.f.unregistered();self.select('install')
         self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
-        self.setUp();candidate=copy.deepcopy(self.f.f.external);candidate['manifest']['plugin']['version']='0.1.2';candidate['digest']='sha256:'+'c'*64
+        self.setUp();candidate=copy.deepcopy(self.f.f.external);candidate['manifest']['plugin']['version']='0.1.3';candidate['digest']='sha256:'+'c'*64
         self.f.f.catalog.append(candidate);self.f.document=self.f.f.project();self.select('upgrade',candidate)
         self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
 

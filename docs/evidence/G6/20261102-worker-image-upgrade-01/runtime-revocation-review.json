@@ -1,0 +1,88 @@
+{
+  "plan": {
+    "authorization_generation": 1,
+    "base_digest": "sha256:ef603753fff1294251793d9d0c94f9cea6729cb9da311256e15a1b5b693d61c3",
+    "created_at": 1793623555,
+    "deployment_id": "0c96e0cf-b0ef-43b8-868b-1deb3cc6cd5f",
+    "document": {
+      "deployment_id": "0c96e0cf-b0ef-43b8-868b-1deb3cc6cd5f",
+      "endpoints": [
+        {
+          "addresses": [
+            "10.233.240.21"
+          ],
+          "descriptor": {
+            "allowed_methods": [
+              "analyze"
+            ],
+            "api_version": "1.0",
+            "audience": "mp-document-stats-v1",
+            "destination": "http://document-stats:8080",
+            "endpoint_config": "document_stats_local",
+            "expected_image_digest": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+            "generation": 2,
+            "health_path": "/health",
+            "installation_id": "d4eba0d5-4b82-4e68-91d0-8b218f587bd9",
+            "issuer": "modular-platform-host-v1",
+            "issuer_key_ref": "stats04_private",
+            "payload_limit_bytes": 65536,
+            "public_key_ref": "stats04_public",
+            "schema_version": 1,
+            "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+            "state": "revoked",
+            "timeout_ms": 5000,
+            "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d"
+          },
+          "key_id": "stats04"
+        },
+        {
+          "addresses": [
+            "10.233.240.20"
+          ],
+          "descriptor": {
+            "allowed_methods": [
+              "analyze"
+            ],
+            "api_version": "1.0",
+            "audience": "mp-document-stats-v1",
+            "destination": "http://document-stats:8080",
+            "endpoint_config": "document_stats_local",
+            "expected_image_digest": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+            "generation": 6,
+            "health_path": "/health",
+            "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e",
+            "issuer": "modular-platform-host-v1",
+            "issuer_key_ref": "recovery19_issuer",
+            "payload_limit_bytes": 65536,
+            "public_key_ref": "recovery19_public",
+            "schema_version": 1,
+            "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+            "state": "revoked",
+            "timeout_ms": 5000,
+            "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d"
+          },
+          "key_id": "recovery19-key"
+        }
+      ],
+      "generation": 8,
+      "schema_version": 1,
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa"
+    },
+    "observation": null,
+    "operation_id": "4ff16f59-a525-47cb-8e91-170ed69dac12",
+    "policy_version": 1,
+    "projection": {
+      "application_mount": "/run/worker-authority",
+      "application_uid": 10001,
+      "deployment_id": "0c96e0cf-b0ef-43b8-868b-1deb3cc6cd5f",
+      "helper_image": "sha256:9408148ef42b723effefc0de074fa0992bfecdf72c0f858c7a3d1a54cd932132",
+      "kind": "dedicated-docker-volume-v1",
+      "read_only": true,
+      "volume": "mp-r0-r1g64bb76636070f_worker_authority"
+    },
+    "public_digest": null,
+    "schema_version": 1,
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa"
+  },
+  "plan_hash": "sha256:e72a2c66b3c188f93a3847e04045be78ae8566116883c54cd3d64b8614510e20"
+}

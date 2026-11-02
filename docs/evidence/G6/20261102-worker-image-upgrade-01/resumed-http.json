@@ -1,0 +1,19 @@
+{
+  "result": "passed_actual_changed_image_recovery_resume_with_current_revocation",
+  "generation": 22,
+  "native_A_B_C_list_form": true,
+  "saved_note_revision_preserved": true,
+  "old_epoch20_gateway409": true,
+  "retired_original_upgrade_exit2": true,
+  "original_failed_plan_remains_revoked": true,
+  "all29job_outcomes_and_other17tables_exact": true,
+  "current_OS_publication10_revocation_preserved": true,
+  "worker06_image548202_config7_not_rolled_back": true,
+  "provider_feature_suspended": true,
+  "manager_health": {
+    "state": "degraded",
+    "reason": "Published endpoint approval, image or service health needs attention; the runtime is separately managed."
+  },
+  "browser_rendering_tested": false,
+  "limits": "Host records resumed; provider remains unavailable until separate runtime approval and NEW metadata upgrade/enable. No remote success claim yet."
+}

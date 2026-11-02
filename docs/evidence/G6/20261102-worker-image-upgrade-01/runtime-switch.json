@@ -1,0 +1,16 @@
+{
+  "result": "passed_separate_operator_image_switch_before_metadata_upgrade",
+  "old_container": "dd1e96cdeaf68e33b6a138a2a0ae769e405c90a2e52968ed5036ec5150b4087e",
+  "new_container": "6e786efe43b7bf5716fd82e276ba7fd95133492dc872b91d6a4ce2807ab8a93d",
+  "old_image": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "new_image": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "actual_Config_Image_and_RepoDigests_match_verified_reference": true,
+  "old_worker_stopped_retained": true,
+  "public_only_config_volume": "mp-disposable-document-stats-06-public-config",
+  "new_endpoint_generation": 7,
+  "authority_still_revoked8": true,
+  "all29jobs_30Notes_other17tables_exact": true,
+  "no_installer_runtime_control": true,
+  "guard_correctly_refused_raw_id_Config_Image": true,
+  "discarded_unused_misconfigured_container_removed": true
+}

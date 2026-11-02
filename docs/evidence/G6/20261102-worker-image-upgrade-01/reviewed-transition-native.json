@@ -1,0 +1,98 @@
+{
+  "result": "passed_actual_installed_native_private_transition_observation",
+  "snapshot": {
+    "profile": "r1-reference-stateless-dispatch-v1",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "release_digest": "sha256:e8b9145fcdb774dbeb8e3b0f7ee4f8e648915ccea442fe772e6c7125dc14a4c6",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "control": {
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "release_digest": "sha256:e8b9145fcdb774dbeb8e3b0f7ee4f8e648915ccea442fe772e6c7125dc14a4c6",
+      "state": "enabled",
+      "generation": 104
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "985bf046087ac73b2e6a8fc8538015db9f0140a42184bae7d951745750b32b41"
+      },
+      "mp_event_consumer_state": {
+        "rows": 1,
+        "sha256": "20b5c232ced02ce62e3728583592703215feb13caa5aa8f4f1d07f22b025b34f"
+      },
+      "mp_event_consumption": {
+        "rows": 3,
+        "sha256": "ec04be3ea0534e612209c0f03241a47e0aa91c7e877e1e2952a8d9d3e880a556"
+      },
+      "mp_event_delivery": {
+        "rows": 251,
+        "sha256": "646ea1457ea0671c491eb08710742e32a57156a60a73846fde44ca41604fbaa6"
+      },
+      "mp_event_subscription": {
+        "rows": 35,
+        "sha256": "3a82ce61e2928b1b6b5a6750b8a5b40701884505fd880c32ad16ad6790e99808"
+      },
+      "mp_job": {
+        "rows": 29,
+        "sha256": "49eb4be9de0c66cb0f07e9183506e36ab68f84803a7969d71505cf71df500e49"
+      },
+      "mp_outbox": {
+        "rows": 49,
+        "sha256": "5a338798d0e201e587bbfaf5be09ca49a585f5f840d0d165e5a93f1ae081edb0"
+      }
+    },
+    "job_states": {
+      "cancelled": 2,
+      "completed": 11,
+      "dead_letter": 16
+    },
+    "event_receipts": true,
+    "external_installations": 1,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "uncertain_jobs": 0,
+    "reference_policy_digest": "sha256:886baf541de6790e1e8ee74b7ba7f119729df01faba703c04f1062b7434aedc1",
+    "state_digest": "sha256:81cf60a0993a9225c1cf55a461ffb06df857d1101481de1e8c300785658ca7e3"
+  },
+  "policy": {
+    "profile": "r1-reference-stateless-transition-v1",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "runtime_image": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+    "publication_digest": "sha256:80b5c3d608ff1f5125fd3abd46835e2c22e202ad51430d9a9570bcba73d12787",
+    "registrations": [
+      {
+        "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e",
+        "plugin_id": "org.example.document_stats",
+        "version": "0.1.1",
+        "artifact_digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+        "manifest_digest": "sha256:5cc5f8f086f7e6e3cfbc353e47a7515932fdc69fa353d69c6a9392ba85fbfe0b",
+        "state": "installed",
+        "features": [
+          {
+            "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+            "feature_state": "suspended"
+          }
+        ]
+      }
+    ],
+    "worker_transition": {
+      "operation_id": "5edcfc97-6477-48a4-ad2b-ba36252834fc",
+      "plan_hash": "sha256:612c70223b6e9b11c2793d177f46ec1e1c6f2f725a917ab5727653ec0b3922ee",
+      "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e",
+      "base_version": "0.1.1",
+      "base_artifact_digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+      "base_manifest_digest": "sha256:5cc5f8f086f7e6e3cfbc353e47a7515932fdc69fa353d69c6a9392ba85fbfe0b",
+      "base_image": "modular-document-stats@sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+      "target_version": "0.1.2",
+      "target_artifact_digest": "sha256:64a774c6fad1ffed9f8c78f6f17e75c2a172e2fadda2bf101427413757694925",
+      "target_manifest_digest": "sha256:2ed4a7c9dade120cc0764460b9aedf409032c16bee36fcd7f0cc51176b5b085d",
+      "target_image": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+      "workspaces": [
+        "ccd6ca50-67e7-4e68-87cb-7d516769c08d"
+      ]
+    }
+  },
+  "all29jobs_and_other17tables_exact": true,
+  "default_profile_refusal_separately_observed": true,
+  "no_mutation": true
+}

@@ -50,3 +50,17 @@ independent worker/publication7. Native views and old-release refusals pass in
 `../evidence/G6/20261102-core17-upgrade-01/`. This establishes the installed
 default-profile regression only. Actual distinct-worker upgrade/recovery remains
 required before SVC05 or this ADR's qualification can be complete.
+
+Actual transition/recovery evidence now lives in
+`../evidence/G6/20261102-worker-image-upgrade-01/`. A separate compatible image548202
+and metadata0.1.2 were approved after all provider scopes were suspended. Actual
+unapproved/old/third-image and default maintenance refusals passed, followed by
+installed native acceptance of the exact stored transition. The real metadata
+commit was faulted before readiness. Fresh native22 restored metadata0.1.1 and
+all29job outcomes/30Notes/native/auth/history/48files while the new worker/image
+and publication9 remained unchanged. Independent revocation10 then invalidated
+an unexpired resume review. A fresh review resumed host records with that current
+revocation retained and the provider still suspended. The original failed plan
+remains revoked; a new successful metadata upgrade/enable/remote job is still
+required. No automatic remote rollback or arbitrary-effect reconciliation is
+claimed. Revocation was injected after the closed SQL restore, not before it.

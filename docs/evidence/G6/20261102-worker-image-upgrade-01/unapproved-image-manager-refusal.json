@@ -1,0 +1,17 @@
+{
+  "result": "passed_actual_manager_new_image_without_current_approval_refused",
+  "status": 400,
+  "response": {
+    "error": {
+      "code": "VALIDATION_FAILED",
+      "message": "Validation failed",
+      "request_id": "2060e711-cd43-4dbb-b7e2-27a918f2c9ef",
+      "retryable": false,
+      "details": {}
+    }
+  },
+  "native_generation": 20,
+  "publication_generation": 8,
+  "provider_all_scopes_suspended": true,
+  "old_metadata_preserved": true
+}

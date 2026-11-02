@@ -1,0 +1,27 @@
+{
+  "base_image_id": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "command": [
+    "docker",
+    "build",
+    "--network",
+    "none",
+    "--pull=false",
+    "-f",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\operator\\build-contexts\\20261102-worker-image-release-01\\Dockerfile",
+    "-t",
+    "modular-document-stats:release-20261102-image-transition-01",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\operator\\build-contexts\\20261102-worker-image-release-01"
+  ],
+  "exact_original_runtime_code_OS_Python_layers": true,
+  "expected_image": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "image_id": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "limits": "Release-label-only compatible image; does not claim an API/storage migration or new computation behavior.",
+  "no_runtime_started": true,
+  "recipe": "FROM modular-document-stats:image-transition-base-1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca\nLABEL org.opencontainers.image.version=\"1.0.1\" org.modular.reference.release=\"r1-image-transition-01\"\n",
+  "recipe_sha256": "0a16e9aef9995cad73c5b02458aef38802c67c2e9ab9fca9a4e4e5a6ad1e2351",
+  "result": "passed_distinct_compatible_release_identity",
+  "state": "built",
+  "tag": "modular-document-stats:release-20261102-image-transition-01",
+  "temporary_alias_removed": true,
+  "utc": "2026-11-02T12:36:58.421187+00:00"
+}

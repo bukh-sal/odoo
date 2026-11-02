@@ -1,8 +1,12 @@
 {
-  "image_id": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
-  "reference": "modular-document-stats@sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "image_id": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "reference": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
   "base": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
   "requirements_sha256": "683ebc3177b748efebcb5885ddfc8093b1df988c1a83f2d975e9ad49907906cb",
-  "build_evidence": "docs/evidence/G6/20261101-worker-image-02/build.json",
-  "inventory": "docs/evidence/G6/20261101-worker-image-02/inventory.json"
+  "build_evidence": "docs/evidence/G6/20261102-worker-image-upgrade-01/worker-build.json",
+  "inventory": "docs/evidence/G6/20261101-worker-image-02/inventory.json",
+  "previous_image_id": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "previous_reference": "modular-document-stats@sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "runtime_inventory_basis": "docs/evidence/G6/20261101-worker-image-02/inventory.json",
+  "compatible_derivation": "Exact original RootFS/runtime configuration; release labels only. No API/storage/code migration."
 }

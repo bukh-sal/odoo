@@ -1,0 +1,27 @@
+{
+  "result": "passed_immutable_changed_image_metadata_curation",
+  "version": "0.1.2",
+  "digest": "sha256:64a774c6fad1ffed9f8c78f6f17e75c2a172e2fadda2bf101427413757694925",
+  "minimum_platform": "0.1.17",
+  "previous_version": "0.1.1",
+  "previous_digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+  "previous_archive_preserved": true,
+  "trust_generation": 9,
+  "files": [
+    "inventory.json",
+    "notices/COPYRIGHT",
+    "notices/LICENSE",
+    "plugin.toml",
+    "provenance.json",
+    "schemas/stats-v1.json"
+  ],
+  "only_manifest_changes": [
+    "plugin.version",
+    "compatibility.platform",
+    "external_service.expected_image"
+  ],
+  "no_native_or_frontend_code": true,
+  "worker_image": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "source_sha256": "1ad38c00f05be93cc45d344cb098ae583e93ae1922fbc7c729493008714b73f9",
+  "all_host_data_exact": true
+}

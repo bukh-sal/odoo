@@ -1,0 +1,17 @@
+{
+  "result": "retired_exact_completed_suspension_and_changed_image_recovery_helpers",
+  "removed_containers": 33,
+  "readonly_observations": 16,
+  "superseded_hosts_removed": 2,
+  "original_misconfigured_container_already_removed": 1,
+  "private_diagnostics_archived": true,
+  "current_host_database_edge_new_worker_preserved": true,
+  "old_stopped_worker_retained_pending_final_image_qualification": true,
+  "actual_checkpoint_images_volumes_and_failed_source_database_retained": true,
+  "images_removed": 0,
+  "volumes_removed": 0,
+  "no_global_prune_or_force": true,
+  "current_generation": 22,
+  "dispatch_generation": 108,
+  "all29jobs_and_other17tables_exact": true
+}

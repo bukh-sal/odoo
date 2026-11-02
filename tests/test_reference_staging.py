@@ -29,7 +29,7 @@ class ReferenceStaging(unittest.TestCase):
         self.f.catalog=self.catalog
         self.document=self.f.project();self.base=copy.deepcopy(self.f.runtime)
         self.runtime=staged_runtime([self.new])
-        self.runtime.update(platform_version='0.1.13',native_manifests=copy.deepcopy(self.base['native_manifests']))
+        self.runtime.update(platform_version='0.1.17',native_manifests=copy.deepcopy(self.base['native_manifests']))
         self.target=dict(installation_id=ident(100),site_id=ident(20),workspace_id=ident(30),plugin_id='org.test.a',action='upgrade')
         self.descriptor=dict(stage_digest='sha256:'+'c'*64,base_image_id=self.f.config['image_id'],
             target_image_id='sha256:'+'b'*64,inventory_digest=self.runtime['inventory_digest'],runtime_digest=data_digest(self.runtime))

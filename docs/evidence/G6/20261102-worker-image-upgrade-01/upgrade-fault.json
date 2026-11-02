@@ -1,0 +1,14 @@
+{
+  "result": "passed_actual_changed_image_metadata_commit_fault_fenced",
+  "operation_id": "5edcfc97-6477-48a4-ad2b-ba36252834fc",
+  "plan_hash": "sha256:612c70223b6e9b11c2793d177f46ec1e1c6f2f725a917ab5727653ec0b3922ee",
+  "real_new_metadata_0_1_2_committed": true,
+  "actual_metadata_child_exit0": true,
+  "host_fault_after_commit_before_ready": true,
+  "state": "recovery_required",
+  "traffic_resumed": false,
+  "old29job_outcomes_and_all_other_data_exact": true,
+  "provider_all_scopes_still_suspended": true,
+  "new_worker_and_approval9_unchanged": true,
+  "limits": "Injected host-side exception after real child exit0; not a second process-kill test. Recovery is required next; no success/rollback claim yet."
+}
