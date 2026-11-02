@@ -1,0 +1,101 @@
+{
+  "result": "passed_current_worker_static_provenance",
+  "image_id": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "base_image": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
+  "base_layers_exact": true,
+  "source_files": {
+    "services/document_stats/__init__.py": {
+      "image_path": "services/document_stats/__init__.py",
+      "sha256": "49ce86115da36321648d538587649db13b94db012ca2f7003e73ce6ae20c5218"
+    },
+    "services/document_stats/engine.py": {
+      "image_path": "services/document_stats/engine.py",
+      "sha256": "bd9bda44c7abfabbbab95041b1f349de9ccd287e6a172783c03c376fefa1f85e"
+    },
+    "services/document_stats/server.py": {
+      "image_path": "services/document_stats/server.py",
+      "sha256": "3958b71382d822510c994296bb6c6dd7d3ed29afc21972f197e55a807e74098d"
+    },
+    "packages/platform_sdk/modular_platform/__init__.py": {
+      "image_path": "packages/platform_sdk/modular_platform/__init__.py",
+      "sha256": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336"
+    },
+    "packages/platform_sdk/modular_platform/contracts.py": {
+      "image_path": "packages/platform_sdk/modular_platform/contracts.py",
+      "sha256": "175fadaca2c52ef8cb476eb48922ef0986285efb2e50795a2fbad3329e7d8337"
+    },
+    "packages/platform_sdk/modular_platform/tokens.py": {
+      "image_path": "packages/platform_sdk/modular_platform/tokens.py",
+      "sha256": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900"
+    },
+    "packages/contracts/v1/worker-request.schema.json": {
+      "image_path": "packages/contracts/v1/worker-request.schema.json",
+      "sha256": "9eb16d02ad52fbd3c2603ad0d3cc3bb83af836bf997fd06bb00ab9acaf31e4e6"
+    },
+    "packages/contracts/v1/worker-response.schema.json": {
+      "image_path": "packages/contracts/v1/worker-response.schema.json",
+      "sha256": "bf47a0228c20403f89b50cc995e239ad2a8904b1d2c764af1136d2316d426b84"
+    },
+    "packages/contracts/v1/worker-claims.schema.json": {
+      "image_path": "packages/contracts/v1/worker-claims.schema.json",
+      "sha256": "3abf73e6625667ac588ec0795cfd513d21c3731af262184f7ad9661ecc4eb69a"
+    },
+    "services/document_stats/requirements.lock": {
+      "image_path": "provenance/requirements.lock",
+      "sha256": "683ebc3177b748efebcb5885ddfc8093b1df988c1a83f2d975e9ad49907906cb"
+    },
+    "services/document_stats/dependency-provenance.json": {
+      "image_path": "provenance/dependency-provenance.json",
+      "sha256": "7fbe1b588f46efc1b7e170f4389ad6924bb435d55c31a95f403234d3f2721cca"
+    },
+    "LICENSE": {
+      "image_path": "provenance/LICENSE",
+      "sha256": "abc09dad5f84a76e1b0279237053cae16c03228ab27d8d467677054c2bd17eeb"
+    },
+    "COPYRIGHT": {
+      "image_path": "provenance/COPYRIGHT",
+      "sha256": "86e49232d2162708d05405ed5ff6dc5594b73ef4b0f25d2749cfae13493b620c"
+    }
+  },
+  "worker_recipe_sha256": "502be53aa7c23194b4430ca0dc50d93cbbafd465fb15ccd010215a12bdffc0ae",
+  "python_locked_subset": {
+    "attrs": "26.1.0",
+    "cffi": "2.1.1",
+    "cryptography": "42.0.8",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "packaging": "26.3",
+    "pycparser": "3.12",
+    "pyjwt": "2.15.1",
+    "referencing": "0.37.0",
+    "rfc8785": "0.1.4",
+    "rpds-py": "2026.9.1",
+    "typing-extensions": "4.16.0"
+  },
+  "bootstrap_pip": {
+    "version": "25.0.1",
+    "origin": "venv ensurepip from exact digest-selected Python base; not a service runtime requirement"
+  },
+  "OS_packages": 105,
+  "python_distributions": 13,
+  "all_python_OS_notices_retained": true,
+  "running_worker_identity_publication_config_unchanged": true,
+  "host_worker_contract_helper_delta": {
+    "approved_worker_build": "docs/evidence/G6/20261101-worker-image-02/build.json",
+    "historical_source_commit": "151ad9698910c0e38d50c43aca21e7aecc730e7b",
+    "image_sha256": "175fadaca2c52ef8cb476eb48922ef0986285efb2e50795a2fbad3329e7d8337",
+    "current_host_sha256": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50",
+    "only_functions_changed": [
+      "host_restart_required",
+      "validate_operations_view"
+    ],
+    "all_other_AST_exact": true,
+    "worker_callers_do_not_reference_changed_helpers": true,
+    "three_frozen_worker_schemas_current": true,
+    "reason": "Host-only restart/operations-view helper additions; preserve the independently approved worker protocol image."
+  },
+  "limits": [
+    "Static source/dependency/notice provenance only; actual vulnerability/security qualification and fresh full release/recovery remain.",
+    "No worker restart/build/credential/endpoint or operation mutation."
+  ]
+}

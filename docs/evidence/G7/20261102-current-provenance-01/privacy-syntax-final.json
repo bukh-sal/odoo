@@ -1,0 +1,7 @@
+{
+  "result": "passed_changed_source_evidence_privacy_and_syntax",
+  "files": 28,
+  "known_values": 100,
+  "findings": 0,
+  "scope": "This current release audit checkpoint only; final full image/archive/history/dependency/license/security qualification remains G7."
+}

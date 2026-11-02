@@ -1,0 +1,13 @@
+{
+  "result": "retired_two_exact_completed_offline_no_mount_collectors",
+  "removed_containers": 2,
+  "notice_bundle_verified_files": 411,
+  "notice_bundle_sha256": "f3d61b1a92ce38405f8523fb3386eb05d5b15bd0cd9821cc918d65855085e0a8",
+  "notice_bundle_fsynced": true,
+  "private_diagnostics_retained": true,
+  "current_image_worker_benchmark_original_data_volumes_preserved": true,
+  "no_global_prune": true,
+  "limits": [
+    "Static provenance subtask only; security/advisory/layer/history/network and fresh release qualification remain."
+  ]
+}

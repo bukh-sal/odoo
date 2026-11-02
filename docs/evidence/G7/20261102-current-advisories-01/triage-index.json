@@ -1,0 +1,752 @@
+{
+  "result": "alias_and_range_review_index_not_security_pass",
+  "matched_package_version_entries": 18,
+  "raw_records": 178,
+  "alias_connected_components": 102,
+  "packages": [
+    {
+      "package": "cbor2",
+      "installed_version": "5.6.2",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 6,
+      "alias_components": [
+        "CVE-2025-64076",
+        "CVE-2025-68131",
+        "CVE-2026-26209"
+      ],
+      "reported_fixed_versions": [
+        "5.7.1",
+        "5.8.0",
+        "5.9.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH",
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-9q9c-vjxh-p795",
+        "https://github.com/agronholm/cbor2/releases/tag/5.9.0",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-64076",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68131",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26209"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "cryptography",
+      "installed_version": "42.0.8",
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "matched_record_count": 11,
+      "alias_components": [
+        "CVE-2024-12797",
+        "CVE-2026-26007",
+        "CVE-2026-34073",
+        "CVE-2026-69248",
+        "CVE-2026-69249",
+        "GHSA-537c-gmf6-5ccf",
+        "GHSA-h4gh-qq45-vh27"
+      ],
+      "reported_fixed_versions": [
+        "43.0.1",
+        "44.0.1",
+        "46.0.5",
+        "46.0.6",
+        "48.0.1",
+        "49.0.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH",
+        "LOW",
+        "MODERATE"
+      ],
+      "references": [
+        "http://www.openwall.com/lists/oss-security/2026/02/10/4",
+        "https://access.redhat.com/errata/RHSA-2026:10184",
+        "https://access.redhat.com/errata/RHSA-2026:12176",
+        "https://access.redhat.com/errata/RHSA-2026:13512",
+        "https://access.redhat.com/errata/RHSA-2026:13545",
+        "https://access.redhat.com/errata/RHSA-2026:13553",
+        "https://access.redhat.com/errata/RHSA-2026:13672",
+        "https://access.redhat.com/errata/RHSA-2026:19355",
+        "https://access.redhat.com/errata/RHSA-2026:21431",
+        "https://access.redhat.com/errata/RHSA-2026:21517",
+        "https://access.redhat.com/errata/RHSA-2026:22330",
+        "https://access.redhat.com/errata/RHSA-2026:22993",
+        "https://access.redhat.com/errata/RHSA-2026:2694",
+        "https://access.redhat.com/errata/RHSA-2026:5168",
+        "https://access.redhat.com/errata/RHSA-2026:5665",
+        "https://access.redhat.com/errata/RHSA-2026:6308",
+        "https://access.redhat.com/errata/RHSA-2026:6309",
+        "https://access.redhat.com/errata/RHSA-2026:6497",
+        "https://access.redhat.com/errata/RHSA-2026:6567",
+        "https://access.redhat.com/errata/RHSA-2026:6568",
+        "https://access.redhat.com/errata/RHSA-2026:7295",
+        "https://github.com/advisories/GHSA-79v4-65xg-pq4g",
+        "https://github.com/advisories/GHSA-jwv3-5hgf-82ww",
+        "https://github.com/advisories/GHSA-m2h6-j472-rp4c",
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-m959-cc7f-wv43",
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-r6ph-v2qm-q3c2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-12797",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26007",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34073",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69248",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69249"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "idna",
+      "installed_version": "3.6",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 4,
+      "alias_components": [
+        "CVE-2024-3651",
+        "CVE-2026-45409"
+      ],
+      "reported_fixed_versions": [
+        "3.15",
+        "3.7"
+      ],
+      "reported_fixed_git_commits": [
+        "1d365e17e10d72d0b7876316fc7b9ca0eebdd38d"
+      ],
+      "severity_labels": [
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-jjg7-2v4v-x38h",
+        "https://github.com/kjd/idna/security/advisories/GHSA-65pc-fj4g-8rjx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-3651",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45409"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "jinja2",
+      "installed_version": "3.1.2",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 10,
+      "alias_components": [
+        "CVE-2024-22195",
+        "CVE-2024-34064",
+        "CVE-2024-56201",
+        "CVE-2024-56326",
+        "CVE-2025-27516"
+      ],
+      "reported_fixed_versions": [
+        "3.1.3",
+        "3.1.4",
+        "3.1.5",
+        "3.1.6"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-cpwx-vrp4-4pq7",
+        "https://github.com/advisories/GHSA-gmj6-6f8f-6699",
+        "https://github.com/advisories/GHSA-h5c8-rqwp-cp95",
+        "https://github.com/advisories/GHSA-h75v-3vvj-5mfj",
+        "https://github.com/advisories/GHSA-q2x7-8rv6-6q7h",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-22195",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-34064",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-56201",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-56326",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27516"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "lxml",
+      "installed_version": "5.2.1",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 2,
+      "alias_components": [
+        "CVE-2026-41066"
+      ],
+      "reported_fixed_versions": [
+        "6.1.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH"
+      ],
+      "references": [
+        "https://github.com/lxml/lxml/security/advisories/GHSA-vfmq-68hx-4jfw",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-41066"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "lxml-html-clean",
+      "installed_version": "0.4.4",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 2,
+      "alias_components": [
+        "CVE-2026-49825"
+      ],
+      "reported_fixed_versions": [
+        "0.4.5"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-4jhm-jv67-739f",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-49825"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "pillow",
+      "installed_version": "10.2.0",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 78,
+      "alias_components": [
+        "CVE-2024-28219",
+        "CVE-2026-112390",
+        "CVE-2026-112391",
+        "CVE-2026-112392",
+        "CVE-2026-112393",
+        "CVE-2026-112394",
+        "CVE-2026-112395",
+        "CVE-2026-112397",
+        "CVE-2026-112398",
+        "CVE-2026-112399",
+        "CVE-2026-112400",
+        "CVE-2026-112401",
+        "CVE-2026-112402",
+        "CVE-2026-112403",
+        "CVE-2026-112404",
+        "CVE-2026-112406",
+        "CVE-2026-112891",
+        "CVE-2026-112892",
+        "CVE-2026-112893",
+        "CVE-2026-112894",
+        "CVE-2026-112895",
+        "CVE-2026-112896",
+        "CVE-2026-112897",
+        "CVE-2026-112898",
+        "CVE-2026-112899",
+        "CVE-2026-112900",
+        "CVE-2026-112901",
+        "CVE-2026-112902",
+        "CVE-2026-42308",
+        "CVE-2026-42310",
+        "CVE-2026-54058",
+        "CVE-2026-54059",
+        "CVE-2026-54060",
+        "CVE-2026-55379",
+        "CVE-2026-55380",
+        "CVE-2026-55798",
+        "CVE-2026-59197",
+        "CVE-2026-59198",
+        "CVE-2026-59199",
+        "CVE-2026-59200",
+        "CVE-2026-59204",
+        "CVE-2026-59205",
+        "CVE-2026-96636",
+        "CVE-2026-96637",
+        "CVE-2026-96638",
+        "CVE-2026-96640",
+        "CVE-2026-96641",
+        "CVE-2026-96642",
+        "CVE-2026-96644",
+        "CVE-2026-96778"
+      ],
+      "reported_fixed_versions": [
+        "10.3.0",
+        "12.2.0",
+        "12.3.0",
+        "13.0.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "CRITICAL",
+        "HIGH",
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-44wm-f244-xhp3",
+        "https://github.com/advisories/GHSA-62p4-gmf7-7g93",
+        "https://github.com/advisories/GHSA-fj7v-r99m-22gq",
+        "https://github.com/advisories/GHSA-jjj6-mw9f-p565",
+        "https://github.com/advisories/GHSA-r73j-pqj5-w3x7",
+        "https://github.com/advisories/GHSA-vjc4-5qp5-m44j",
+        "https://github.com/python-pillow/Pillow/blob/main/docs/releasenotes/12.3.0.rst",
+        "https://github.com/python-pillow/Pillow/releases/tag/12.2.0",
+        "https://github.com/python-pillow/Pillow/releases/tag/12.3.0",
+        "https://github.com/python-pillow/Pillow/releases/tag/13.0.0",
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-3j72-p6qg-6xp7",
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-4rm8-3hmm-39fg",
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-9v9v-9qvf-h2hj",
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-g842-9rc4-69pw",
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-p8hx-v2p6-rp84",
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-wjx4-4jcj-g98j",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-28219",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112390",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112391",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112392",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112393",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112394",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112395",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112397",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112398",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112399",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112400",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112401",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112402",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112403",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112404",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112406",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112891",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112892",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112893",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112894",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112895",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112896",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112897",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112898",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112900",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112901",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42308",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42310",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54058",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54059",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54060",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55379",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55380",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55798",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59197",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59198",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59199",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59200",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59204",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59205",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96636",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96637",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96638",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96640",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96641",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96642",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96644",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96778"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "pip",
+      "installed_version": "25.0.1",
+      "roles": [
+        "independent_worker"
+      ],
+      "matched_record_count": 12,
+      "alias_components": [
+        "CVE-2025-8869",
+        "CVE-2026-13346",
+        "CVE-2026-1703",
+        "CVE-2026-3219",
+        "CVE-2026-6357",
+        "CVE-2026-8643"
+      ],
+      "reported_fixed_versions": [
+        "25.3",
+        "26.0",
+        "26.1",
+        "26.1.2",
+        "26.2",
+        "26.2.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "LOW",
+        "MODERATE"
+      ],
+      "references": [
+        "http://www.openwall.com/lists/oss-security/2026/06/01/5",
+        "http://www.openwall.com/lists/oss-security/2026/07/29/7",
+        "https://github.com/advisories/GHSA-4xh5-x5gv-qwph",
+        "https://github.com/advisories/GHSA-58qw-9mgm-455v",
+        "https://github.com/advisories/GHSA-6vgw-5pg2-w6jp",
+        "https://github.com/advisories/GHSA-jp4c-xjxw-mgf9",
+        "https://github.com/advisories/GHSA-qwm4-qh6w-59xr",
+        "https://github.com/advisories/GHSA-wf93-45jw-7689",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/L2BNQGGVQCEV7DROOORQ7WFKKFF2OOQX/",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/YV63UET5D3OOJY7O4M5XCVYO2YM4NBYJ/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-8869",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-13346",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-1703",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-3219",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-6357",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-8643"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "pip",
+      "installed_version": "25.3",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 10,
+      "alias_components": [
+        "CVE-2026-13346",
+        "CVE-2026-1703",
+        "CVE-2026-3219",
+        "CVE-2026-6357",
+        "CVE-2026-8643"
+      ],
+      "reported_fixed_versions": [
+        "26.0",
+        "26.1",
+        "26.1.2",
+        "26.2",
+        "26.2.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "LOW",
+        "MODERATE"
+      ],
+      "references": [
+        "http://www.openwall.com/lists/oss-security/2026/06/01/5",
+        "http://www.openwall.com/lists/oss-security/2026/07/29/7",
+        "https://github.com/advisories/GHSA-58qw-9mgm-455v",
+        "https://github.com/advisories/GHSA-6vgw-5pg2-w6jp",
+        "https://github.com/advisories/GHSA-jp4c-xjxw-mgf9",
+        "https://github.com/advisories/GHSA-qwm4-qh6w-59xr",
+        "https://github.com/advisories/GHSA-wf93-45jw-7689",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/L2BNQGGVQCEV7DROOORQ7WFKKFF2OOQX/",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/YV63UET5D3OOJY7O4M5XCVYO2YM4NBYJ/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-13346",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-1703",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-3219",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-6357",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-8643"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "pyopenssl",
+      "installed_version": "24.1.0",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 4,
+      "alias_components": [
+        "CVE-2026-27448",
+        "CVE-2026-27459"
+      ],
+      "reported_fixed_versions": [
+        "26.0.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH",
+        "LOW"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:10754",
+        "https://access.redhat.com/errata/RHSA-2026:11856",
+        "https://access.redhat.com/errata/RHSA-2026:11916",
+        "https://access.redhat.com/errata/RHSA-2026:11996",
+        "https://access.redhat.com/errata/RHSA-2026:13508",
+        "https://access.redhat.com/errata/RHSA-2026:13512",
+        "https://access.redhat.com/errata/RHSA-2026:13545",
+        "https://access.redhat.com/errata/RHSA-2026:13553",
+        "https://access.redhat.com/errata/RHSA-2026:14835",
+        "https://access.redhat.com/errata/RHSA-2026:14873",
+        "https://access.redhat.com/errata/RHSA-2026:14874",
+        "https://access.redhat.com/errata/RHSA-2026:19375",
+        "https://access.redhat.com/errata/RHSA-2026:21017",
+        "https://access.redhat.com/errata/RHSA-2026:22465",
+        "https://access.redhat.com/errata/RHSA-2026:24853",
+        "https://access.redhat.com/errata/RHSA-2026:7224",
+        "https://access.redhat.com/errata/RHSA-2026:8437",
+        "https://github.com/pyca/pyopenssl/blob/358cbf29c4e364c59930e53a270116249581eaa3/CHANGELOG.rst",
+        "https://github.com/pyca/pyopenssl/blob/358cbf29c4e364c59930e53a270116249581eaa3/CHANGELOG.rst#L27",
+        "https://github.com/pyca/pyopenssl/security/advisories/GHSA-5pwr-322w-8jr4",
+        "https://github.com/pyca/pyopenssl/security/advisories/GHSA-vp96-hxj8-p424",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27448",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27459"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "pypdf2",
+      "installed_version": "2.12.1",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 2,
+      "alias_components": [
+        "CVE-2023-36464"
+      ],
+      "reported_fixed_versions": [
+        "3.9.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-4vvm-4w3v-6mr8",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-36464"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "python-ldap",
+      "installed_version": "3.4.4",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 4,
+      "alias_components": [
+        "CVE-2025-61911",
+        "CVE-2025-61912"
+      ],
+      "reported_fixed_versions": [
+        "3.4.5"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-p34h-wq7j-h5v6",
+        "https://github.com/advisories/GHSA-r7r6-cc7p-4v5m",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61911",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61912"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "requests",
+      "installed_version": "2.31.0",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 6,
+      "alias_components": [
+        "CVE-2024-35195",
+        "CVE-2024-47081",
+        "CVE-2026-25645"
+      ],
+      "reported_fixed_versions": [
+        "2.32.0",
+        "2.32.4",
+        "2.33.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-9hjg-9r4m-mvj7",
+        "https://github.com/advisories/GHSA-9wx4-h78v-vm56",
+        "https://github.com/psf/requests/releases/tag/v2.33.0",
+        "https://github.com/psf/requests/security/advisories/GHSA-gc5v-m9x4-r6x2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-35195",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-47081",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-25645"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "setuptools",
+      "installed_version": "80.9.0",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 3,
+      "alias_components": [
+        "CVE-2026-59890",
+        "GHSA-xmj3-9gf7-h52w"
+      ],
+      "reported_fixed_versions": [
+        "83.0.0",
+        "84.1.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "LOW",
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/pypa/setuptools/releases/tag/v83.0.0",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59890"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "urllib3",
+      "installed_version": "2.0.7",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 16,
+      "alias_components": [
+        "CVE-2024-37891",
+        "CVE-2025-50181",
+        "CVE-2025-66418",
+        "CVE-2025-66471",
+        "CVE-2026-21441",
+        "CVE-2026-44431",
+        "CVE-2026-97687",
+        "CVE-2026-97689"
+      ],
+      "reported_fixed_versions": [
+        "1.26.19",
+        "2.2.2",
+        "2.5.0",
+        "2.6.0",
+        "2.6.3",
+        "2.7.0",
+        "2.8.0"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH",
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-2xpw-w6gg-jr37",
+        "https://github.com/advisories/GHSA-34jh-p97f-mpxf",
+        "https://github.com/advisories/GHSA-38jv-5279-wg99",
+        "https://github.com/advisories/GHSA-8988-9cw3-xx77",
+        "https://github.com/advisories/GHSA-gm62-xv2j-4w53",
+        "https://github.com/advisories/GHSA-pq67-6m6q-mj2v",
+        "https://github.com/advisories/GHSA-vxq7-64xx-v4gw",
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-37891",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-50181",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66418",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66471",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21441",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44431",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-97687",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-97689"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "werkzeug",
+      "installed_version": "3.0.1",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 14,
+      "alias_components": [
+        "CVE-2024-34069",
+        "CVE-2024-49766",
+        "CVE-2024-49767",
+        "CVE-2025-66221",
+        "CVE-2026-102598",
+        "CVE-2026-21860",
+        "CVE-2026-27199"
+      ],
+      "reported_fixed_versions": [
+        "3.0.3",
+        "3.0.6",
+        "3.1.4",
+        "3.1.5",
+        "3.1.6",
+        "3.1.9"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH",
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-2g68-c3qc-8985",
+        "https://github.com/advisories/GHSA-87hc-h4r5-73f7",
+        "https://github.com/advisories/GHSA-f9vj-2wh5-fj8j",
+        "https://github.com/advisories/GHSA-g6x2-hccm-hh4m",
+        "https://github.com/advisories/GHSA-hgf8-39gv-g3f2",
+        "https://github.com/advisories/GHSA-q34m-jh98-gwm2",
+        "https://github.com/pallets/werkzeug/releases/tag/3.1.6",
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-29vq-49wr-vm6x",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-34069",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-49766",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-49767",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66221",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102598",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21860",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27199"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "wheel",
+      "installed_version": "0.45.1",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 2,
+      "alias_components": [
+        "CVE-2026-24049"
+      ],
+      "reported_fixed_versions": [
+        "0.46.2"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "HIGH"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-8rrh-rw8j-w5fx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-24049"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    },
+    {
+      "package": "zeep",
+      "installed_version": "4.2.1",
+      "roles": [
+        "application"
+      ],
+      "matched_record_count": 2,
+      "alias_components": [
+        "CVE-2026-58501"
+      ],
+      "reported_fixed_versions": [
+        "4.3.3"
+      ],
+      "reported_fixed_git_commits": [],
+      "severity_labels": [
+        "MODERATE"
+      ],
+      "references": [
+        "https://github.com/mvantellingen/python-zeep/releases/tag/4.3.3"
+      ],
+      "disposition": "review_required_not_yet_classified"
+    }
+  ],
+  "source": "https://api.osv.dev/v1/querybatch",
+  "limits": [
+    "Alias components are a review aid, not a count of independently exploitable vulnerabilities.",
+    "Reported fixed versions span advisory branches and are not selected dependency recommendations.",
+    "Installed-code reachability, primary advisory confirmation and actual compatibility tests remain before remediation or a release decision."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "work_item": "G-01d2",
+  "attempts": [
+    {
+      "attempt": "local alias index",
+      "finding": "Initial grouping omitted records with no aliases and refused during index construction. No output index or runtime mutation occurred.",
+      "correction": "Register each record ID before joining aliases, then build all102connected components. No network query/fetch repeated."
+    },
+    {
+      "attempt": "fixed-event review index",
+      "finding": "Initial factual index mixed GIT fixed commit hashes with ecosystem package versions.",
+      "correction": "Preserved triage-index-initial.json; final index separates reported_fixed_git_commits and reported_fixed_versions. Neither is a selected upgrade recommendation; branch/range and compatibility review remains."
+    }
+  ],
+  "limits": "178records/102alias components are review inputs, not a count of exploitable issues or a security pass. No dependency/version/source/image/approval changes made."
+}

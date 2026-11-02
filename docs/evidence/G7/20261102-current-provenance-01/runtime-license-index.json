@@ -1,0 +1,2965 @@
+{
+  "python": [
+    {
+      "name": "asn1crypto",
+      "version": "1.5.1",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/asn1crypto-1.5.1.dist-info/LICENSE",
+          "sha256": "29c3425e5da53ab842273e5f2f2f068ce2e35df4260f7fa156aa1ac6bed02433",
+          "bytes": 1075
+        }
+      ],
+      "metadata_sha256": "29112bfcab83d0af2e494a5de4e95e71c51e1113255d7f82536160366550f194"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/attrs-26.1.0.dist-info/licenses/LICENSE",
+          "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f",
+          "bytes": 1109
+        }
+      ],
+      "metadata_sha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc"
+    },
+    {
+      "name": "Babel",
+      "version": "2.10.3",
+      "license_expression": null,
+      "license_field": "BSD",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/Babel-2.10.3.dist-info/LICENSE",
+          "sha256": "d20900c6fac6ad1f5a19b05408e7683a1423eee8b69e0475b878e96f089d225c",
+          "bytes": 1451
+        }
+      ],
+      "metadata_sha256": "321ff996614757dbe60f23aed101207b5be5c150b7183cd53cb6b0b3bb5a2e42"
+    },
+    {
+      "name": "beautifulsoup4",
+      "version": "4.15.0",
+      "license_expression": null,
+      "license_field": "MIT License",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/beautifulsoup4-4.15.0.dist-info/licenses/LICENSE",
+          "sha256": "55b4d8d4b1e5bc86d10efac91b74c87bcb77526b0f5b9edaf8b9cd2adc7397b2",
+          "bytes": 1441
+        }
+      ],
+      "metadata_sha256": "b2f888103259f1607c85f3b1163be1bc49fc9941a3243c3b89a21075bfc6d4fb"
+    },
+    {
+      "name": "cbor2",
+      "version": "5.6.2",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/cbor2-5.6.2.dist-info/LICENSE.txt",
+          "sha256": "a6afd126d8f545a15166a22f25fadff4b9fb4978bbdd17e97d97d950b66d2fef",
+          "bytes": 1081
+        }
+      ],
+      "metadata_sha256": "b45ecc77a0d1a91b55a18a54f3fcc8382412180f732b15456c2adc28c3649cde"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "license_expression": null,
+      "license_field": "MPL-2.0",
+      "license_classifiers": [
+        "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/certifi-2026.10.23.dist-info/licenses/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+          "bytes": 989
+        }
+      ],
+      "metadata_sha256": "e463e38f7fe7da36a11e6d3fecc5dfa5b97be8c8022620400750d79ae7d842bc"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "license_expression": "MIT-0",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/cffi-2.1.1.dist-info/licenses/LICENSE",
+          "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63",
+          "bytes": 1123
+        }
+      ],
+      "metadata_sha256": "558bafb9093a8e790175d9ecff9688382981d744877dad86fd6770db0f4dc918"
+    },
+    {
+      "name": "chardet",
+      "version": "5.2.0",
+      "license_expression": null,
+      "license_field": "LGPL",
+      "license_classifiers": [
+        "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/chardet-5.2.0.dist-info/LICENSE",
+          "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+          "bytes": 26530
+        }
+      ],
+      "metadata_sha256": "3c0af6350ea1416a63c859f0948ecca311edd92ffaa11894b2e70e28c361cc6c"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/charset_normalizer-3.5.2.dist-info/licenses/LICENSE",
+          "sha256": "6d0d41bfe170ac6c7dc248c9a63e254d0fb45a60d50a8257d0af92c6e249b887",
+          "bytes": 1071
+        }
+      ],
+      "metadata_sha256": "89ce6362bb7be88558f4be99a98f5d1b4da93d19cd0323e5ee0bac05cf883dfb"
+    },
+    {
+      "name": "cryptography",
+      "version": "42.0.8",
+      "license_expression": null,
+      "license_field": "Apache-2.0 OR BSD-3-Clause",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License",
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/cryptography-42.0.8.dist-info/LICENSE",
+          "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+          "bytes": 197
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/cryptography-42.0.8.dist-info/LICENSE.APACHE",
+          "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+          "bytes": 11360
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/cryptography-42.0.8.dist-info/LICENSE.BSD",
+          "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb",
+          "bytes": 1532
+        }
+      ],
+      "metadata_sha256": "f73d6eade9c5387b6faf25b308dd2e11e19f7e38c5bc1a70f4ec77adc1f0714f"
+    },
+    {
+      "name": "docopt",
+      "version": "0.6.2",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/docopt-0.6.2.dist-info/licenses/LICENSE-MIT",
+          "sha256": "3d5df78f592ff2433c3c6ce4984091b7f497059ddb8c6b08a061ba48e37b67f2",
+          "bytes": 1097
+        }
+      ],
+      "metadata_sha256": "d4c3ef35e6f87c733814ee02bcd50e34c431f4044195d4f997a79201f49c5176"
+    },
+    {
+      "name": "docutils",
+      "version": "0.20.1",
+      "license_expression": null,
+      "license_field": "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)",
+      "license_classifiers": [
+        "License :: Public Domain",
+        "License :: OSI Approved :: Python Software Foundation License",
+        "License :: OSI Approved :: BSD License",
+        "License :: OSI Approved :: GNU General Public License (GPL)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/docutils-0.20.1.dist-info/COPYING.txt",
+          "sha256": "a0d7ee761e8d757c0b904518514f98233fd94f2398da3703130d15142ca47a77",
+          "bytes": 6292
+        }
+      ],
+      "metadata_sha256": "533a36162946e056339cd3487afd23f051b317dec08eaf2939e681d42e9f3fe4"
+    },
+    {
+      "name": "et_xmlfile",
+      "version": "2.0.0",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/et_xmlfile-2.0.0.dist-info/LICENCE.python",
+          "sha256": "4ccdaaebc0f44b83720ec0399bb7ab329adce067dd62f73c5535a2dc05628ab2",
+          "bytes": 14688
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/et_xmlfile-2.0.0.dist-info/LICENCE.rst",
+          "sha256": "0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
+          "bytes": 1131
+        }
+      ],
+      "metadata_sha256": "0e97d7ea909ed0fbe03d88bc8b6f58677cee1b07bd3353ce361cd2405915204e"
+    },
+    {
+      "name": "freezegun",
+      "version": "1.2.1",
+      "license_expression": null,
+      "license_field": "Apache 2.0",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/freezegun-1.2.1.dist-info/LICENSE",
+          "sha256": "f12ef9fd396a13e90878630b1b4fab471c6ed9cb7a48cf2abb2516281632218e",
+          "bytes": 10834
+        }
+      ],
+      "metadata_sha256": "d6d34568766bd2f34d2e43acc6a0bf0a46b9fdbcb9329a2417d17462e3051a06"
+    },
+    {
+      "name": "geoip2",
+      "version": "2.9.0",
+      "license_expression": null,
+      "license_field": "Apache License, Version 2.0",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [],
+      "metadata_sha256": "45c340aa7de7ae63c902aabe18138a5fe1b81111f9c20c9c788d6962ffe703bd"
+    },
+    {
+      "name": "gevent",
+      "version": "24.2.1",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/gevent-24.2.1.dist-info/LICENSE",
+          "sha256": "4d46bc11d19e3853d54325973b8e2c53090f5638a7bf27fa1f5f1232c78901f7",
+          "bytes": 1235
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/gevent-24.2.1.dist-info/NOTICE",
+          "sha256": "64938247ca9a57fee4c11656404b93c313029187e13da787c927b6c64a680583",
+          "bytes": 4004
+        }
+      ],
+      "metadata_sha256": "1b0ae967133f1965dfe40ccaa987f7be40322940cda2c228c0a3fa6aef6c5991"
+    },
+    {
+      "name": "greenlet",
+      "version": "3.0.3",
+      "license_expression": null,
+      "license_field": "MIT License",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/greenlet-3.0.3.dist-info/LICENSE",
+          "sha256": "769831d6e5dfaf2c20802faccff1fafb4c2025dd8f6253dfa47fcad59d4d0979",
+          "bytes": 1434
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/greenlet-3.0.3.dist-info/LICENSE.PSF",
+          "sha256": "e5ff3c23c110e494cd7d736c10fd96d462457bafeca310840db6527298c7d46b",
+          "bytes": 2424
+        }
+      ],
+      "metadata_sha256": "087b47962b5433f012f612a825f60b177573f9414996a46785b465dbed49ae35"
+    },
+    {
+      "name": "idna",
+      "version": "3.6",
+      "license_expression": null,
+      "license_field": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/idna-3.6.dist-info/LICENSE.md",
+          "sha256": "cb2faf0ca18c6d387ec7cb66f321939fba6e67e9dac09d31477cb9d8d3fe6899",
+          "bytes": 1541
+        }
+      ],
+      "metadata_sha256": "37ddc1e74f5d92fbe477f63413f5710873e4564ac3e889f1a327d7bd7e1e81db"
+    },
+    {
+      "name": "isodate",
+      "version": "0.7.2",
+      "license_expression": null,
+      "license_field": "Copyright (c) 2021, Hugo van Kemenade and contributors\nCopyright (c) 2009-2018, Gerhard Weis and contributors\nCopyright (c) 2009, Gerhard Weis\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * Neither the name of the <organization> nor the\n      names of its contributors may be used to endorse or promote products\n      derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/isodate-0.7.2.dist-info/LICENSE",
+          "sha256": "ce5fe4893fb6ab843de77b367bfa9db974d7b00ab9033fcca8d7760a97fe1b43",
+          "bytes": 1609
+        }
+      ],
+      "metadata_sha256": "90bc9d1eee7c3c97fd3a52001dece07c0f9b480cfc8fbbf767ca4ae0ab848529"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.2",
+      "license_expression": null,
+      "license_field": "BSD-3-Clause",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/Jinja2-3.1.2.dist-info/LICENSE.rst",
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+          "bytes": 1475
+        }
+      ],
+      "metadata_sha256": "3d9eafd9222274c362c51ecc4545fd7fb656b0fc2d5da9e49ea89952645b8785"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/jsonschema-4.26.0.dist-info/licenses/COPYING",
+          "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439",
+          "bytes": 1057
+        }
+      ],
+      "metadata_sha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+          "bytes": 1057
+        }
+      ],
+      "metadata_sha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d"
+    },
+    {
+      "name": "libsass",
+      "version": "0.22.0",
+      "license_expression": null,
+      "license_field": "MIT License",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/libsass-0.22.0.dist-info/LICENSE",
+          "sha256": "25d2114597795d9df05761686d30ca0656727c50dcab678eff82045141d0a738",
+          "bytes": 1081
+        }
+      ],
+      "metadata_sha256": "5f619121d608ce4b303bbce7a07fa87bb59739c633c446e89098d5a1e6a134e6"
+    },
+    {
+      "name": "lxml",
+      "version": "5.2.1",
+      "license_expression": null,
+      "license_field": "BSD-3-Clause",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/lxml-5.2.1.dist-info/LICENSE.txt",
+          "sha256": "69edb445c1335a8312d4c09271847e9956d84f0d9f724d125340cc3fad767b2a",
+          "bytes": 1488
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/lxml-5.2.1.dist-info/LICENSES.txt",
+          "sha256": "41d49dd406aa0e1548a6d5f21a30d6bf638b3cd96eb7289dd348d83ed2e40392",
+          "bytes": 1514
+        }
+      ],
+      "metadata_sha256": "80eb89821fbeb88d58ba1af32bc5284c6fa804c249075b658dd1161fe63dfc0c"
+    },
+    {
+      "name": "lxml_html_clean",
+      "version": "0.4.4",
+      "license_expression": null,
+      "license_field": "BSD-3-Clause",
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/lxml_html_clean-0.4.4.dist-info/licenses/LICENSE.txt",
+          "sha256": "69edb445c1335a8312d4c09271847e9956d84f0d9f724d125340cc3fad767b2a",
+          "bytes": 1488
+        }
+      ],
+      "metadata_sha256": "4ee1a3c48b01c47719742f90ab2a17c440f2fa70f47f804277bd3cfb7181d249"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "2.1.5",
+      "license_expression": null,
+      "license_field": "BSD-3-Clause",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/MarkupSafe-2.1.5.dist-info/LICENSE.rst",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+          "bytes": 1475
+        }
+      ],
+      "metadata_sha256": "d9d4433da9ba3992dfa57d3083524de4fdeef5aaea002c5549f7469ac254ee8f"
+    },
+    {
+      "name": "maxminddb",
+      "version": "3.2.0",
+      "license_expression": "Apache-2.0",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/maxminddb-3.2.0.dist-info/licenses/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        }
+      ],
+      "metadata_sha256": "36916ccc7170b9713469dd560428889d4d6f6ceec58bf3b75bff7eafed6f72e1"
+    },
+    {
+      "name": "num2words",
+      "version": "0.5.13",
+      "license_expression": null,
+      "license_field": "LGPL",
+      "license_classifiers": [
+        "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/num2words-0.5.13.dist-info/COPYING",
+          "sha256": "1457a03d928aeb06af3ea75ef065c517e915d7e41283d550dd4fa18ab20cda12",
+          "bytes": 23995
+        }
+      ],
+      "metadata_sha256": "374e6ce988d6b78f96f11d0582feb7d0991be6cd410f6d61138ba151ea3ee74f"
+    },
+    {
+      "name": "ofxparse",
+      "version": "0.21",
+      "license_expression": null,
+      "license_field": "MIT License",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/ofxparse-0.21.dist-info/licenses/LICENSE",
+          "sha256": "25e75507d0e1d9d2487c12fc839780f2905b18553a60ab1895ac9d999db30370",
+          "bytes": 1057
+        }
+      ],
+      "metadata_sha256": "19de038d9028f427b8ab9878c77c1f9fd65dc947f52e031ec9eaa5fe709cb6db"
+    },
+    {
+      "name": "openpyxl",
+      "version": "3.1.2",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/openpyxl-3.1.2.dist-info/LICENCE.rst",
+          "sha256": "0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
+          "bytes": 1131
+        }
+      ],
+      "metadata_sha256": "40d8cc40162f1f8183a77c44953e746ff8f2532502dcdc8718e4e232cfc189c4"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/packaging-26.3.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        }
+      ],
+      "metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763"
+    },
+    {
+      "name": "passlib",
+      "version": "1.7.4",
+      "license_expression": null,
+      "license_field": "BSD",
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/passlib-1.7.4.dist-info/LICENSE",
+          "sha256": "a95ba8f1af88ff8d5f0d0c33519f430b7f9d8992b69d4bc369ac0423a7a05a89",
+          "bytes": 4954
+        }
+      ],
+      "metadata_sha256": "97eb91ab5e227b7dbc442a15b1ac93ec07cc1da26abf7e0809ba50b4a1b4d233"
+    },
+    {
+      "name": "pillow",
+      "version": "10.2.0",
+      "license_expression": null,
+      "license_field": "HPND",
+      "license_classifiers": [
+        "License :: OSI Approved :: Historical Permission Notice and Disclaimer (HPND)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pillow-10.2.0.dist-info/LICENSE",
+          "sha256": "17ae2e60d75d52d68430180b7db3e638d64c6d8069a91e75c583339afc776c73",
+          "bytes": 60064
+        }
+      ],
+      "metadata_sha256": "7d994a0afb859ab1e4eac8f568823a83b2afdaadee0f7ab3be9dff8986bee29e"
+    },
+    {
+      "name": "pip",
+      "version": "25.3",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/LICENSE.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+          "bytes": 1093
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+          "bytes": 558
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+          "bytes": 989
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/dependency_groups/LICENSE.txt",
+          "sha256": "1ab36e3e2a4ba8631625384f87e9e091db1faed034c5b23325b3239abf2cc525",
+          "bytes": 1099
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+          "bytes": 14531
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+          "bytes": 11325
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+          "sha256": "a59f0b0ef3635874109a4461ca44ff7a70d50696e814767bfaf721d4c9b0db0f",
+          "bytes": 1541
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+          "bytes": 614
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "bytes": 1089
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+          "bytes": 1331
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+          "bytes": 1081
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+          "bytes": 751
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+          "bytes": 1056
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+          "bytes": 1086
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "c37bf186e27cf9dbe9619e55edfe3cea7b30091ceb3da63c7dacbe0e6d77907b",
+          "bytes": 1115
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+          "bytes": 558
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+          "bytes": 989
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/dependency_groups/LICENSE.txt",
+          "sha256": "1ab36e3e2a4ba8631625384f87e9e091db1faed034c5b23325b3239abf2cc525",
+          "bytes": 1099
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+          "bytes": 14531
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+          "bytes": 11325
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/idna/LICENSE.md",
+          "sha256": "a59f0b0ef3635874109a4461ca44ff7a70d50696e814767bfaf721d4c9b0db0f",
+          "bytes": 1541
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+          "bytes": 614
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "bytes": 1089
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+          "bytes": 1331
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+          "bytes": 1081
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+          "bytes": 751
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+          "bytes": 1056
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+          "bytes": 1086
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/LICENSE.txt",
+          "sha256": "c37bf186e27cf9dbe9619e55edfe3cea7b30091ceb3da63c7dacbe0e6d77907b",
+          "bytes": 1115
+        }
+      ],
+      "metadata_sha256": "2a1ba0725e7d236fbe2d5c50a4fff9c9e3fe34ca494f2cebde5c45c3791379d3"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.13.6",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/platformdirs-4.13.6.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "bytes": 1089
+        }
+      ],
+      "metadata_sha256": "7d1f4954693fd54061c556e2829e9fefbbbe7fac4a8f7691c630b59d50a0fa48"
+    },
+    {
+      "name": "polib",
+      "version": "1.1.1",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/polib-1.1.1.dist-info/LICENSE",
+          "sha256": "ec198e4296135923ac95b98cae58b14eb25d41d7a1e412241393802af6bf65fa",
+          "bytes": 1066
+        }
+      ],
+      "metadata_sha256": "2f3b7c80bba7ca9b5bffafc54c6f9ef95d1fc7e923c50f6a64734dab95ad901d"
+    },
+    {
+      "name": "psutil",
+      "version": "5.9.8",
+      "license_expression": null,
+      "license_field": "BSD-3-Clause",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/psutil-5.9.8.dist-info/LICENSE",
+          "sha256": "b89c063b3786e28e0c0a38f1931db61fed35e69dd2a2966fbecffee0f46c8d10",
+          "bytes": 1548
+        }
+      ],
+      "metadata_sha256": "19f679f9f89daead325ce0a0c8de1fba70a554793a47fcdf273fb714ac742a35"
+    },
+    {
+      "name": "psycopg2",
+      "version": "2.9.9",
+      "license_expression": null,
+      "license_field": "LGPL with exceptions",
+      "license_classifiers": [
+        "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/psycopg2-2.9.9.dist-info/licenses/LICENSE",
+          "sha256": "9614b85dfc9a72c5b2ca33144c1d7e1ed3b1c297459d9fb28a6a5762c2e8d71b",
+          "bytes": 2238
+        }
+      ],
+      "metadata_sha256": "ce9a67f0d1935aaae82adea13cdd077d0075b97a6d8332eb0ea48df7ea713945"
+    },
+    {
+      "name": "pyasn1",
+      "version": "0.6.5",
+      "license_expression": null,
+      "license_field": "BSD-2-Clause",
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pyasn1-0.6.5.dist-info/licenses/LICENSE.rst",
+          "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd",
+          "bytes": 1334
+        }
+      ],
+      "metadata_sha256": "946d39d6bba28dee7adb2c06f3087268281e9e801fbd0ee7b4405b440b3de304"
+    },
+    {
+      "name": "pyasn1_modules",
+      "version": "0.4.2",
+      "license_expression": null,
+      "license_field": "BSD",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pyasn1_modules-0.4.2.dist-info/licenses/LICENSE.txt",
+          "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd",
+          "bytes": 1334
+        }
+      ],
+      "metadata_sha256": "162666d75297dfcdd0116cbeab134d78fab808b8a66bfa5c1d74832d9b754771"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12",
+      "license_expression": "BSD-3-Clause",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pycparser-3.12.dist-info/licenses/LICENSE",
+          "sha256": "0a9e78156ae8b96caf1b4f11ac2df424b83de29736f9e757630548a6272fdf90",
+          "bytes": 1543
+        }
+      ],
+      "metadata_sha256": "ad8db5fe2b0e0a3b0e8419fe5041b80be92470a40b06bd9c1462a0a8bb637c92"
+    },
+    {
+      "name": "PyJWT",
+      "version": "2.15.1",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pyjwt-2.15.1.dist-info/licenses/LICENSE",
+          "sha256": "797a7a20231d4c433e9f1911db1731d06b5828b98f499819a034f7c0f56f5ce5",
+          "bytes": 1085
+        }
+      ],
+      "metadata_sha256": "1ea0c9f139b8c928276b3628af165955f6f764491448a6ad8f103cdcbb382da3"
+    },
+    {
+      "name": "pyOpenSSL",
+      "version": "24.1.0",
+      "license_expression": null,
+      "license_field": "Apache License, Version 2.0",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pyOpenSSL-24.1.0.dist-info/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        }
+      ],
+      "metadata_sha256": "ef7bdbd534e86bff7ae42829751dab7218e23d5cc0ee34dc6a480ed3d28c34d2"
+    },
+    {
+      "name": "PyPDF2",
+      "version": "2.12.1",
+      "license_expression": null,
+      "license_field": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pypdf2-2.12.1.dist-info/LICENSE",
+          "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524",
+          "bytes": 1605
+        }
+      ],
+      "metadata_sha256": "46218101ff0efe421bdf154678d010df5137ad99421dcac83dc1046ae1192591"
+    },
+    {
+      "name": "pypng",
+      "version": "0.20220715.0",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pypng-0.20220715.0.dist-info/LICENCE",
+          "sha256": "8dd127d87bb901ab9c8f584e98b7c7aa8539db27fe62ff01b1ee4be93b6a513a",
+          "bytes": 1038
+        }
+      ],
+      "metadata_sha256": "a3183a268c9cead4e2b7b8866baaafcb015e7c13fe13d169171af3c3002792ac"
+    },
+    {
+      "name": "pyserial",
+      "version": "3.5",
+      "license_expression": null,
+      "license_field": "BSD",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [],
+      "metadata_sha256": "42a8ab7e94ef0b7baa7e94cdac65d6b9254c608476f630120c990007bf472943"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.8.2",
+      "license_expression": null,
+      "license_field": "Dual License",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License",
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/python_dateutil-2.8.2.dist-info/LICENSE",
+          "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e",
+          "bytes": 2889
+        }
+      ],
+      "metadata_sha256": "4431ed1a8ec19d8463998c68b7fc25bbf5b73760b2bcfb6f7216edc8894a28f0"
+    },
+    {
+      "name": "python-ldap",
+      "version": "3.4.4",
+      "license_expression": null,
+      "license_field": "Python style",
+      "license_classifiers": [
+        "License :: OSI Approved :: Python Software Foundation License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/python_ldap-3.4.4.dist-info/licenses/LICENCE",
+          "sha256": "1bef88f2dab0ffe7aa7e0b13798b0718172a1ed91a0048272a3faf770470d345",
+          "bytes": 551
+        }
+      ],
+      "metadata_sha256": "c50ca8bd1c534379099468e9ae3c86bdfbcf6ad820edac2da543d46517d43b17"
+    },
+    {
+      "name": "python-magic",
+      "version": "0.4.27",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/python_magic-0.4.27.dist-info/LICENSE",
+          "sha256": "5081053ad3adb0423dc0c581cb1155a60e4e2a0571d5a641d3083cb65b1f4bb2",
+          "bytes": 2869
+        }
+      ],
+      "metadata_sha256": "406fd2f090886a38a08a594771230a154b561b853f6634ee38d2438b934d64d3"
+    },
+    {
+      "name": "python-stdnum",
+      "version": "1.19",
+      "license_expression": null,
+      "license_field": "LGPL",
+      "license_classifiers": [
+        "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/python_stdnum-1.19.dist-info/COPYING",
+          "sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a",
+          "bytes": 26436
+        }
+      ],
+      "metadata_sha256": "0fb73932c0fea16c37debfc1b1bd94adbaba0f6e1fc6c3b1a9c096c76a900b84"
+    },
+    {
+      "name": "pytz",
+      "version": "2026.5",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pytz-2026.5.dist-info/LICENSE.txt",
+          "sha256": "be8b1a37ebe26c592a90f6c0eb33103a7f383ce2f4d7498c0af9a526990a07b8",
+          "bytes": 1088
+        }
+      ],
+      "metadata_sha256": "4d20d16f6004b1d7f9b01a96f4d3eb462c0c2a8413d9aa878effe50a21535929"
+    },
+    {
+      "name": "pyusb",
+      "version": "1.2.1",
+      "license_expression": null,
+      "license_field": "UNKNOWN",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/pyusb-1.2.1.dist-info/LICENSE",
+          "sha256": "03e39fdcee9c18f2f9d0c3500a993ddeac050695eb81070ea41347587c76a7fe",
+          "bytes": 1513
+        }
+      ],
+      "metadata_sha256": "7736825b80bc5ecd09fe669c5fbcce83026a0dd64512a3de4c43e9143c3154f3"
+    },
+    {
+      "name": "qrcode",
+      "version": "7.4.2",
+      "license_expression": null,
+      "license_field": "BSD",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/qrcode-7.4.2.dist-info/LICENSE",
+          "sha256": "40dfb903c94ee3f789500131311186548ecba5cefd3557623d7700e2522ab994",
+          "bytes": 2143
+        }
+      ],
+      "metadata_sha256": "26c82d84140e2d7d20076d452199e9af62f020c7c4f0a9307a03f2d7d6bfbbc0"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/referencing-0.37.0.dist-info/licenses/COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+          "bytes": 1057
+        }
+      ],
+      "metadata_sha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a"
+    },
+    {
+      "name": "reportlab",
+      "version": "4.1.0",
+      "license_expression": null,
+      "license_field": "BSD license (see license.txt for details), Copyright (c) 2000-2022, ReportLab Inc.",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/reportlab-4.1.0.dist-info/LICENSE",
+          "sha256": "a02a6aeb5dde4c4194494bc0b10d5ed62a32628ccd2882c363fdb9a7874ab2b8",
+          "bytes": 1707
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/reportlab/fonts/DarkGarden-copying-gpl.txt",
+          "sha256": "1b2a567f289f66a143c56353e7b3d4fa5862514a5e3c5cfdf8b02ee5e5aaa953",
+          "bytes": 17976
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/reportlab/fonts/DarkGarden-copying.txt",
+          "sha256": "3cd1020510efa7f6b3166a5a2740f92bd664a695ea179e0bda442e74cd0ef3a4",
+          "bytes": 1318
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/reportlab/fonts/bitstream-vera-license.txt",
+          "sha256": "3361d054759a2fc686a2c058be82deaf9c2e6fe549be9004d7935a6c1736315d",
+          "bytes": 5954
+        }
+      ],
+      "metadata_sha256": "99e69e43f3d7668d2aec1f71e0c81e4b4b26b78afcbe12cbb4931728f898229b"
+    },
+    {
+      "name": "requests",
+      "version": "2.31.0",
+      "license_expression": null,
+      "license_field": "Apache 2.0",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/requests-2.31.0.dist-info/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142
+        }
+      ],
+      "metadata_sha256": "7823e890e9db6f415138badf9744791290ef76e7ec6fd09a3789e8247fffe782"
+    },
+    {
+      "name": "requests-file",
+      "version": "3.0.1",
+      "license_expression": null,
+      "license_field": "Apache 2.0",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/requests_file-3.0.1.dist-info/licenses/LICENSE",
+          "sha256": "39ff1bc4e15ffced0047d99689d06f54bb29ce47844927a03eaa29ebb9ac0f17",
+          "bytes": 581
+        }
+      ],
+      "metadata_sha256": "105ec607c4a90c119e788c0d143dd87d9f2cfd6fdbca8ea96da5e2aa56e4caae"
+    },
+    {
+      "name": "requests-toolbelt",
+      "version": "1.0.0",
+      "license_expression": null,
+      "license_field": "Apache 2.0",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/requests_toolbelt-1.0.0.dist-info/LICENSE",
+          "sha256": "1f8cf8bdacd98ed6d36d0fec0c07f7765acebd6e81205962ab5146023b3c858d",
+          "bytes": 596
+        }
+      ],
+      "metadata_sha256": "fa52f26237cc8d148d25c5746fdca499a56d0e765e69095cc3564a07cce23967"
+    },
+    {
+      "name": "resolvelib",
+      "version": "1.2.1",
+      "license_expression": null,
+      "license_field": "ISC License",
+      "license_classifiers": [
+        "License :: OSI Approved :: ISC License (ISCL)"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/resolvelib-1.2.1.dist-info/licenses/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+          "bytes": 751
+        }
+      ],
+      "metadata_sha256": "7cd9798f05f86072f220f701d9ed3d38530f97de6d6d1d41b4c7aed4513d4700"
+    },
+    {
+      "name": "rfc8785",
+      "version": "0.1.4",
+      "license_expression": null,
+      "license_field": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/rfc8785-0.1.4.dist-info/LICENSE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        }
+      ],
+      "metadata_sha256": "9dfbf420c8c18077dd7697ec12fe2838b5901683573ae128df2d3403330f7aa9"
+    },
+    {
+      "name": "rjsmin",
+      "version": "1.2.0",
+      "license_expression": null,
+      "license_field": "Apache License, Version 2.0",
+      "license_classifiers": [
+        "License :: OSI Approved"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/rjsmin-1.2.0.dist-info/licenses/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        }
+      ],
+      "metadata_sha256": "f13163e2b01f3d2bf17ebd873c9009ccc97987cceb26a86ac7f31aff5a1ffd8f"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/rpds_py-2026.9.1.dist-info/licenses/LICENSE",
+          "sha256": "314e4e91be3baa93c0fb4bccc9e4e97cd643eb839b065af921782c2175fe9909",
+          "bytes": 1057
+        }
+      ],
+      "metadata_sha256": "5d72dca2e387c8d2b4180b68ee87c15b64751e059100a6db58891ec9995445c3"
+    },
+    {
+      "name": "setuptools",
+      "version": "80.9.0",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools-80.9.0.dist-info/licenses/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d",
+          "bytes": 7634
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/inflect-7.3.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/jaraco.collections-5.1.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/jaraco.context-5.3.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/jaraco.functools-4.0.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/jaraco.text-3.12.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/more_itertools-10.3.0.dist-info/LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46",
+          "bytes": 1053
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/packaging-24.2.dist-info/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/packaging-24.2.dist-info/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/packaging-24.2.dist-info/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "bytes": 1089
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/tomli-2.0.1.dist-info/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/typeguard-4.3.0.dist-info/LICENSE",
+          "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758",
+          "bytes": 1130
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/typing_extensions-4.12.2.dist-info/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+          "bytes": 13936
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654",
+          "bytes": 1107
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/config/NOTICE",
+          "sha256": "2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8",
+          "bytes": 493
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/setuptools/config/_validate_pyproject/NOTICE",
+          "sha256": "5d300dbfa643138b013b75ac9caeee591f951b8b0ee24288c34ccd926c4780c8",
+          "bytes": 18737
+        }
+      ],
+      "metadata_sha256": "7f890ca8dbc16b63b568c89312ed6a7f9f0a79d0b2b7f3c83bf796ac3d930615"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0",
+          "bytes": 1066
+        }
+      ],
+      "metadata_sha256": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468"
+    },
+    {
+      "name": "soupsieve",
+      "version": "3.0.4",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/soupsieve-3.0.4.dist-info/licenses/LICENSE.md",
+          "sha256": "76a0acdb98c3a63681e20b6f096699ef8cad5fb35d56eef8387e0fa71d797a9a",
+          "bytes": 1096
+        }
+      ],
+      "metadata_sha256": "548d71d83acf92c9206af9b8bac48271f34d2cdd3f6c6b4237c88bad6fee09fd"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "license_expression": "PSF-2.0",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+          "bytes": 13936
+        }
+      ],
+      "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.0.7",
+      "license_expression": null,
+      "license_field": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/urllib3-2.0.7.dist-info/licenses/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+          "bytes": 1093
+        }
+      ],
+      "metadata_sha256": "c1165a9594045b87774929b565dde1c3440245531b9c210fb96893f8cd5b27b5"
+    },
+    {
+      "name": "vobject",
+      "version": "0.9.6.1",
+      "license_expression": null,
+      "license_field": "Apache",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/vobject-0.9.6.1.dist-info/licenses/LICENSE-2.0.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        }
+      ],
+      "metadata_sha256": "96b0bc08369978e3a7c86cc13547fa3fbc996620d8b8532f3a6a8e7e73ba3d59"
+    },
+    {
+      "name": "Werkzeug",
+      "version": "3.0.1",
+      "license_expression": null,
+      "license_field": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/werkzeug-3.0.1.dist-info/LICENSE.rst",
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+          "bytes": 1475
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/werkzeug/debug/shared/ICON_LICENSE.md",
+          "sha256": "0e103a6358149792707e0d0d14df518f8556213b7cb54c7422f7467f4bb1f7eb",
+          "bytes": 222
+        }
+      ],
+      "metadata_sha256": "5455176dd163f44197abb6fea0f71de2eeddb181b2b71e4213a580115f20902a"
+    },
+    {
+      "name": "wheel",
+      "version": "0.45.1",
+      "license_expression": null,
+      "license_field": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654",
+          "bytes": 1107
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/wheel/vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/wheel/vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "path": "/venv/lib/python3.12/site-packages/wheel/vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        }
+      ],
+      "metadata_sha256": "98acfce07ee6ee3b31272cde21c4d53918936f434f315dfd2af3886211a09a30"
+    },
+    {
+      "name": "xlrd",
+      "version": "2.0.1",
+      "license_expression": null,
+      "license_field": "BSD",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/xlrd-2.0.1.dist-info/LICENSE",
+          "sha256": "b5a5dbce60265e305a815a6cb83ed07f24519d8ba644f2a307994488bced8815",
+          "bytes": 3771
+        }
+      ],
+      "metadata_sha256": "40955978fa70eba066a1bd1ed4d13c5441a5ebf2dd3aed40e61f2d4e327de1df"
+    },
+    {
+      "name": "XlsxWriter",
+      "version": "3.1.9",
+      "license_expression": null,
+      "license_field": "BSD-2-Clause",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/XlsxWriter-3.1.9.dist-info/LICENSE.txt",
+          "sha256": "b3b494c7e7456dad12ac1b3e61c60e850d60d3ce865fa056c4ce0ae680c03677",
+          "bytes": 1349
+        }
+      ],
+      "metadata_sha256": "1b88c0d1ab748b060cfa661f4c21ab25ab887248736727e30a8862aa766cca3c"
+    },
+    {
+      "name": "xlwt",
+      "version": "1.3.0",
+      "license_expression": null,
+      "license_field": "BSD",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "notices": [],
+      "metadata_sha256": "7fdd11a8ef6c0fb3c5c275a37ad3d0f864f7e94d665f39b4c58ca75739308516"
+    },
+    {
+      "name": "zeep",
+      "version": "4.2.1",
+      "license_expression": null,
+      "license_field": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/zeep-4.2.1.dist-info/LICENSE",
+          "sha256": "0c382b057f478f84d2a13e0f2d281e2dbfc541eb83d55cb785c0265af99c53f5",
+          "bytes": 4448
+        }
+      ],
+      "metadata_sha256": "32a98dcb7e009ba60211245b22c132d77381a5fcb4fe2cece55cc415100b92a1"
+    },
+    {
+      "name": "zope.event",
+      "version": "6.2",
+      "license_expression": "ZPL-2.1",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/zope_event-6.2.dist-info/licenses/LICENSE.txt",
+          "sha256": "3e671db11df687516cc1db5b3d65e4aa383eaca3c20cea3faf53a0f7335d0a3c",
+          "bytes": 2070
+        }
+      ],
+      "metadata_sha256": "6c9d3b3faefffd240f2368ec76cab8ae22a6c28c832e4c48c69b8684b074e501"
+    },
+    {
+      "name": "zope.interface",
+      "version": "8.7",
+      "license_expression": "ZPL-2.1",
+      "license_field": null,
+      "license_classifiers": [],
+      "notices": [
+        {
+          "path": "/venv/lib/python3.12/site-packages/zope_interface-8.7.dist-info/licenses/LICENSE.txt",
+          "sha256": "3e671db11df687516cc1db5b3d65e4aa383eaca3c20cea3faf53a0f7335d0a3c",
+          "bytes": 2070
+        }
+      ],
+      "metadata_sha256": "136bda9fdaeebdf460fc038d3c6061935634875a3a0555f861a40ef0db5a8699"
+    }
+  ],
+  "native": [
+    {
+      "addon": "auth_passkey",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "7f26ee45e2bfe3708357657bfc9dcb4f8777cb19c98637d16690a9bc00ed3d48"
+    },
+    {
+      "addon": "auth_password_policy",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "10ca730c7a5509feb29e4482d502e7dd450972be41d5ee7215a96dfa29c23f21"
+    },
+    {
+      "addon": "auth_totp",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "702a2279c9f98b6a99bc5ef8db40dbb775881ca378e9a945d6e2a9b07a772cfe"
+    },
+    {
+      "addon": "base",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "0ad4109fd814b9212de92ec35c004669d915df04fb8c54e410be89656b524c36"
+    },
+    {
+      "addon": "base_import",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "4af989c1e8d6dc8aaace9032d140876347e1e63220dc8ca96209221d4f2e2059"
+    },
+    {
+      "addon": "base_setup",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "07e88ce844c51965b6e976d8df861c2bd3f5844a313cb06892b0e4cbfaf93b05"
+    },
+    {
+      "addon": "bus",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "0da3173c1091b701877f8be0c4c3b8996c0bccb717d68fadd61574a30206331b"
+    },
+    {
+      "addon": "mp_compat",
+      "license": "LGPL-3",
+      "author": "Modular Platform",
+      "manifest_sha256": "7b849c06e0441ff7707136d46bec08dc09f4dd90ddfd17e88b8168e11e61dd0b"
+    },
+    {
+      "addon": "mp_core",
+      "license": "LGPL-3",
+      "author": "Modular Platform",
+      "manifest_sha256": "c1ab4c8dd5152bad42d58251663bb29e0e69b3326a1743211188126327f8d27f"
+    },
+    {
+      "addon": "mp_example_canvas",
+      "license": "LGPL-3",
+      "author": null,
+      "manifest_sha256": "2413b2a2edbf3d20c3470897b067366c770feda0388d9e49d90fc9b1378bddf3"
+    },
+    {
+      "addon": "mp_example_notes",
+      "license": "LGPL-3",
+      "author": "Modular Platform examples",
+      "manifest_sha256": "2021473d5f89f2f6e14d86ba6236faa5e8c750763a965e49fdd4e8b05182bdd0"
+    },
+    {
+      "addon": "mp_example_notes_labels",
+      "license": "LGPL-3",
+      "author": null,
+      "manifest_sha256": "3b78c4b4dd3865aec043eb073f89749f422c28e02ed8ad2da86e57f08caa1bbf"
+    },
+    {
+      "addon": "mp_example_notes_stats",
+      "license": "LGPL-3",
+      "author": null,
+      "manifest_sha256": "4f8595c0b26e6d9e1d12e5f617b0ee4a68369773a9f2ee522424a112ea6660dc"
+    },
+    {
+      "addon": "mp_identity",
+      "license": "LGPL-3",
+      "author": "Modular Platform",
+      "manifest_sha256": "506ee6a77eacb3721d60d107d02a09658bc203b1c222aee93d6b1d3c9c3bf1c1"
+    },
+    {
+      "addon": "mp_shell",
+      "license": "LGPL-3",
+      "author": "Modular Platform",
+      "manifest_sha256": "5ec30ec18314445bcad11db2b32442fcc3fa8cc854ff529f2cd34754662b143f"
+    },
+    {
+      "addon": "web",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "e34b9cf41fb4219f838fba9f7c907d8b7bf45c222bd768177d775614e5e8f2e9"
+    },
+    {
+      "addon": "web_tour",
+      "license": "LGPL-3",
+      "author": "Odoo S.A.",
+      "manifest_sha256": "935bdfdc6bb3d8b3dcb4e6b2b443df80493bb9dd902a505c983c43bf7aa0a767"
+    }
+  ],
+  "source_notices": [
+    {
+      "path": "/opt/modular/COPYRIGHT",
+      "sha256": "86e49232d2162708d05405ed5ff6dc5594b73ef4b0f25d2749cfae13493b620c",
+      "bytes": 433
+    },
+    {
+      "path": "/opt/modular/LICENSE",
+      "sha256": "abc09dad5f84a76e1b0279237053cae16c03228ab27d8d467677054c2bd17eeb",
+      "bytes": 43529
+    },
+    {
+      "path": "/opt/modular/addons/auth_passkey/_vendor/webauthn/LICENSE",
+      "sha256": "5922ad23a214080d72535c733f69aa36de0f0135f7e5859239758a550042de81",
+      "bytes": 1506
+    },
+    {
+      "path": "/opt/modular/addons/web/static/fonts/google/Open_Sans/LICENSE.txt",
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "bytes": 11560
+    },
+    {
+      "path": "/opt/modular/addons/web/static/fonts/google/Roboto/LICENSE.txt",
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "bytes": 11560
+    },
+    {
+      "path": "/opt/modular/addons/web/static/fonts/lato/SIL-Open-Font-License-1.1.txt",
+      "sha256": "697383c6addd5dd14d7e1ff053aaa44520ce86a58589eef1f9985ab66e08db08",
+      "bytes": 4301
+    },
+    {
+      "path": "/opt/modular/addons/web/static/lib/bootstrap/LICENSE",
+      "sha256": "8c14611ae41ac6fd543c13349f22188eb12c69b3e59105c5eca3925a8e4eca3e",
+      "bytes": 1093
+    },
+    {
+      "path": "/opt/modular/addons/web/static/lib/fullcalendar/LICENSE.md",
+      "sha256": "4c0b0dae26c99e3b11be70b990a703be4deb75e21884104582e0e217786d3209",
+      "bytes": 1066
+    },
+    {
+      "path": "/opt/modular/addons/web/static/lib/odoo_ui_icons/LICENSE.md",
+      "sha256": "18d21c651d0d2112bc499bb0f4504b5e26ca713efb41bf1773f0faa250a733fc",
+      "bytes": 10946
+    },
+    {
+      "path": "/opt/modular/addons/web/static/lib/pdfjs/LICENSE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "/opt/modular/addons/web/static/lib/pdfjs/web/cmaps/LICENSE",
+      "sha256": "aa92ab5a472974865a96fd4a4e9c13bb41bf6fe1b309cb6b8da48bc9e19839a2",
+      "bytes": 2080
+    },
+    {
+      "path": "/opt/modular/addons/web/static/lib/stacktracejs/LICENSE",
+      "sha256": "8b7768b338ad6bdb0a2651c249196a56f33e241a21a94ca712fb237b782a31d8",
+      "bytes": 1079
+    },
+    {
+      "path": "/opt/modular/addons/web/static/lib/zxing-library/LICENSE",
+      "sha256": "849b3ff4527ff587eecc78736b5685bbba7a44b071f3b944da914e832292f6c0",
+      "bytes": 13321
+    },
+    {
+      "path": "/opt/modular/odoo/tools/data/files/sRGB2014.icc.LICENSE",
+      "sha256": "2cce05c0d157862854033100c0078973a9eedaa97b7f16c6b5d383bd0a9eeb52",
+      "bytes": 368
+    }
+  ],
+  "os_packages": [
+    {
+      "name": "adduser",
+      "version": "3.134",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/adduser/copyright",
+        "sha256": "b143053a4862ab354831487b5f8bd31dc9ffdc589d15de9d9c764332a0209796",
+        "bytes": 12432
+      }
+    },
+    {
+      "name": "apt",
+      "version": "2.6.1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/apt/copyright",
+        "sha256": "b4701305243d8d746f4acaafe15d94f946251b05691bd6917fef41dd15e9ee12",
+        "bytes": 7668
+      }
+    },
+    {
+      "name": "base-files",
+      "version": "12.4+deb12u15",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/base-files/copyright",
+        "sha256": "fd7e4aae7e7b05f217bcf2d02322825c360e66c52c4c2f1b28d784d6297a1c23",
+        "bytes": 1208
+      }
+    },
+    {
+      "name": "base-passwd",
+      "version": "3.6.1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/base-passwd/copyright",
+        "sha256": "0f1cde79bd80a75f9029ae9a8c252b642223027ef36f6989c63a8230aae576a7",
+        "bytes": 798
+      }
+    },
+    {
+      "name": "bash",
+      "version": "5.2.15-2+b13",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/bash/copyright",
+        "sha256": "06319d84c3e5ed096036f6a9310a030c7e84e50dff2b8a6792285c83ec0ada73",
+        "bytes": 9764
+      }
+    },
+    {
+      "name": "bsdutils",
+      "version": "1:2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/bsdutils/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "ca-certificates",
+      "version": "20250419~deb12u2",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/ca-certificates/copyright",
+        "sha256": "e85e1bcad3a915dc7e6f41412bc5bdeba275cadd817896ea0451f2140a93967c",
+        "bytes": 18940
+      }
+    },
+    {
+      "name": "coreutils",
+      "version": "9.1-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/coreutils/copyright",
+        "sha256": "24e86c5ca53d6bfd8e0c47988160daa62d10a74997fe11f651e1d9533c78bff6",
+        "bytes": 5552
+      }
+    },
+    {
+      "name": "dash",
+      "version": "0.5.12-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/dash/copyright",
+        "sha256": "d98c53f281321baad38164aa9ae6e368a9253be6ec51bd26a759b5e72b326f4a",
+        "bytes": 3878
+      }
+    },
+    {
+      "name": "debconf",
+      "version": "1.5.82",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/debconf/copyright",
+        "sha256": "57163c71bd8a5289660892827dd0dfaa7fef47f89deedc9dc6711ced7d0a28d7",
+        "bytes": 2764
+      }
+    },
+    {
+      "name": "debian-archive-keyring",
+      "version": "2023.3+deb12u2",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/debian-archive-keyring/copyright",
+        "sha256": "b32aecaae84643700a33bc9ee83fa9b36938d35aa7b61b5042092eca77ddb732",
+        "bytes": 1243
+      }
+    },
+    {
+      "name": "debianutils",
+      "version": "5.7-0.5~deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/debianutils/copyright",
+        "sha256": "fd2d797e208bcfb713510e47a89867191180943e1167d44c2acd8ff1b88e5c10",
+        "bytes": 9055
+      }
+    },
+    {
+      "name": "diffutils",
+      "version": "1:3.8-4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/diffutils/copyright",
+        "sha256": "8654d7cc7cdae1f31bb67a3ce5bf35d512c0bdfffd071df757edc54153cc7930",
+        "bytes": 16112
+      }
+    },
+    {
+      "name": "dpkg",
+      "version": "1.21.23",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/dpkg/copyright",
+        "sha256": "7442bdadcd44e818fddd786057db07639cc68225c389c7c240d3bb3984b05173",
+        "bytes": 7943
+      }
+    },
+    {
+      "name": "e2fsprogs",
+      "version": "1.47.0-2+b2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/e2fsprogs/copyright",
+        "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+        "bytes": 15209
+      }
+    },
+    {
+      "name": "findutils",
+      "version": "4.9.0-4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/findutils/copyright",
+        "sha256": "8fbcc77ed31f480a85654e9b6d1d25cbb95b62e9dc5159ae1565bca684c3e1dc",
+        "bytes": 24782
+      }
+    },
+    {
+      "name": "fonts-dejavu-core",
+      "version": "2.37-6",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/fonts-dejavu-core/copyright",
+        "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+        "bytes": 3859
+      }
+    },
+    {
+      "name": "fonts-liberation",
+      "version": "1:1.07.4-11",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/fonts-liberation/copyright",
+        "sha256": "bcb5f95766d5dc969748869eef4559dd991fd31f7e0d30c29e140276cc3c24ee",
+        "bytes": 4473
+      }
+    },
+    {
+      "name": "gcc-12-base",
+      "version": "12.2.0-14+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/gcc-12-base/copyright",
+        "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+        "bytes": 68194
+      }
+    },
+    {
+      "name": "gpgv",
+      "version": "2.2.40-1.1+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/gpgv/copyright",
+        "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+        "bytes": 10555
+      }
+    },
+    {
+      "name": "grep",
+      "version": "3.8-5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/grep/copyright",
+        "sha256": "42d9b4d610396b1e8d1303dcb9487af3f5a2d2709623cf03a04cf76acdf6c5e3",
+        "bytes": 1807
+      }
+    },
+    {
+      "name": "gzip",
+      "version": "1.12-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/gzip/copyright",
+        "sha256": "1ca5dd5098fe2e1c0f0d05196f5b3da8b414a807702e6ca8b536eb5fd3059130",
+        "bytes": 2895
+      }
+    },
+    {
+      "name": "hostname",
+      "version": "3.23+nmu1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/hostname/copyright",
+        "sha256": "94189fc5a9a7b7224d96e1a0cfdfe9be0df2018b04bf21d591627ab96b30cad1",
+        "bytes": 1273
+      }
+    },
+    {
+      "name": "init-system-helpers",
+      "version": "1.65.2+deb12u1",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/init-system-helpers/copyright",
+        "sha256": "7534601cc4fa513804d16490359f5831e7b6a1212da3bbf948bebdd4c8799783",
+        "bytes": 3133
+      }
+    },
+    {
+      "name": "libacl1",
+      "version": "2.3.1-3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libacl1/copyright",
+        "sha256": "9a2dfb4a5abc7e84be2cc41f1089be665519c9409549296f6c19de57ab1d37c2",
+        "bytes": 2048
+      }
+    },
+    {
+      "name": "libapt-pkg6.0",
+      "version": "2.6.1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libapt-pkg6.0/copyright",
+        "sha256": "b4701305243d8d746f4acaafe15d94f946251b05691bd6917fef41dd15e9ee12",
+        "bytes": 7668
+      }
+    },
+    {
+      "name": "libattr1",
+      "version": "1:2.5.1-4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libattr1/copyright",
+        "sha256": "0cbec745d85ea775450b2d54fac55277197f429e52d611f72852ed420450620e",
+        "bytes": 1947
+      }
+    },
+    {
+      "name": "libaudit-common",
+      "version": "1:3.0.9-1",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/libaudit-common/copyright",
+        "sha256": "6c7011e93f643b112c4cc3622131e28a30477afad6c4f5efe466b13aa7f603cc",
+        "bytes": 1596
+      }
+    },
+    {
+      "name": "libaudit1",
+      "version": "1:3.0.9-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libaudit1/copyright",
+        "sha256": "6c7011e93f643b112c4cc3622131e28a30477afad6c4f5efe466b13aa7f603cc",
+        "bytes": 1596
+      }
+    },
+    {
+      "name": "libblkid1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libblkid1/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "libbz2-1.0",
+      "version": "1.0.8-5+b1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libbz2-1.0/copyright",
+        "sha256": "832ed535ff3c3d025a8d2348eb1b697b89addcf2eaadbc17650262040b9145e2",
+        "bytes": 2228
+      }
+    },
+    {
+      "name": "libc-bin",
+      "version": "2.36-9+deb12u14",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libc-bin/copyright",
+        "sha256": "40c7e1f2118531f038ca22999bd976901254e1bc5cd1b0f0211bdd064c599987",
+        "bytes": 25467
+      }
+    },
+    {
+      "name": "libc6",
+      "version": "2.36-9+deb12u14",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libc6/copyright",
+        "sha256": "40c7e1f2118531f038ca22999bd976901254e1bc5cd1b0f0211bdd064c599987",
+        "bytes": 25467
+      }
+    },
+    {
+      "name": "libcap-ng0",
+      "version": "0.8.3-1+b3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libcap-ng0/copyright",
+        "sha256": "49b5db19990a3e3cc1a9ed716aed231f6f3c1c217e58f62ae4dc2818c6d3e9cc",
+        "bytes": 2035
+      }
+    },
+    {
+      "name": "libcap2",
+      "version": "1:2.66-4+deb12u3+b1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libcap2/copyright",
+        "sha256": "e60a5642e12e340060e4e519a65b2eb0330be2917854841c644e36268f607d54",
+        "bytes": 4631
+      }
+    },
+    {
+      "name": "libcom-err2",
+      "version": "1.47.0-2+b2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libcom-err2/copyright",
+        "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+        "bytes": 15209
+      }
+    },
+    {
+      "name": "libcrypt1",
+      "version": "1:4.4.33-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libcrypt1/copyright",
+        "sha256": "5a5e7ca0e9f3f9679977e3a3e9ede45ad92885a3297ea78e766979f9866c5a16",
+        "bytes": 6010
+      }
+    },
+    {
+      "name": "libdb5.3",
+      "version": "5.3.28+dfsg2-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libdb5.3/copyright",
+        "sha256": "8b53da37d73289d9df7317b3a2dbe16491f1fa9fec8b77b86d69704b40ce2c26",
+        "bytes": 17177
+      }
+    },
+    {
+      "name": "libdebconfclient0",
+      "version": "0.270",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libdebconfclient0/copyright",
+        "sha256": "cf63099896d1c0f6529c41b8d95738e6fea342ffba609187d339c4f38ce36ecc",
+        "bytes": 5856
+      }
+    },
+    {
+      "name": "libext2fs2",
+      "version": "1.47.0-2+b2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libext2fs2/copyright",
+        "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+        "bytes": 15209
+      }
+    },
+    {
+      "name": "libffi8",
+      "version": "3.4.4-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libffi8/copyright",
+        "sha256": "f83d2ecba1ea4d99957e81c50bebbd076a128194288a3ec22cc8ccdb77c43087",
+        "bytes": 10165
+      }
+    },
+    {
+      "name": "libgcc-s1",
+      "version": "12.2.0-14+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libgcc-s1/copyright",
+        "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+        "bytes": 68194
+      }
+    },
+    {
+      "name": "libgcrypt20",
+      "version": "1.10.1-3+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libgcrypt20/copyright",
+        "sha256": "95db2f9da663f2bfe2aabe9c72fce9d6c9ae767b912f397d7823f50bd55a1a7d",
+        "bytes": 24896
+      }
+    },
+    {
+      "name": "libgdbm6",
+      "version": "1.23-3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libgdbm6/copyright",
+        "sha256": "8bea8cf2f94cd8b37a0b8b3a2b974122b9194c1165e6ad508e366c74679e8817",
+        "bytes": 2701
+      }
+    },
+    {
+      "name": "libgmp10",
+      "version": "2:6.2.1+dfsg1-1.1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libgmp10/copyright",
+        "sha256": "7d366aef5ba325150246de1d7820c4c9926cd27ca61a69948492b26cd3b61601",
+        "bytes": 4153
+      }
+    },
+    {
+      "name": "libgnutls30",
+      "version": "3.7.9-2+deb12u7",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libgnutls30/copyright",
+        "sha256": "bb7e5c24b3e27bbba5671dd710d159a0066833bda4caa1d55d8027ffed539337",
+        "bytes": 51588
+      }
+    },
+    {
+      "name": "libgpg-error0",
+      "version": "1.46-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libgpg-error0/copyright",
+        "sha256": "8760fd36efa1d7186f8769d4e76a3e678045b94d54465bf6f2db5eb871c7c27f",
+        "bytes": 4903
+      }
+    },
+    {
+      "name": "libgssapi-krb5-2",
+      "version": "1.20.1-2+deb12u5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libgssapi-krb5-2/copyright",
+        "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+        "bytes": 63047
+      }
+    },
+    {
+      "name": "libhogweed6",
+      "version": "3.8.1-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libhogweed6/copyright",
+        "sha256": "ca2ca597320220c00ef6dc0fe5d0d82025548d6d4ba80e85615eb691f9021f93",
+        "bytes": 24923
+      }
+    },
+    {
+      "name": "libidn2-0",
+      "version": "2.3.3-1+b1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libidn2-0/copyright",
+        "sha256": "41702469f28e8ff406345e3d1dd0c741f11bdfca319264f67036efd6aaa79e4b",
+        "bytes": 5348
+      }
+    },
+    {
+      "name": "libk5crypto3",
+      "version": "1.20.1-2+deb12u5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libk5crypto3/copyright",
+        "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+        "bytes": 63047
+      }
+    },
+    {
+      "name": "libkeyutils1",
+      "version": "1.6.3-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libkeyutils1/copyright",
+        "sha256": "c62fe37d22203046611112bc10a9e03a39a7f73bec1b061e7c615326166d9ff5",
+        "bytes": 2104
+      }
+    },
+    {
+      "name": "libkrb5-3",
+      "version": "1.20.1-2+deb12u5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libkrb5-3/copyright",
+        "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+        "bytes": 63047
+      }
+    },
+    {
+      "name": "libkrb5support0",
+      "version": "1.20.1-2+deb12u5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libkrb5support0/copyright",
+        "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+        "bytes": 63047
+      }
+    },
+    {
+      "name": "libldap-2.5-0",
+      "version": "2.5.13+dfsg-5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libldap-2.5-0/copyright",
+        "sha256": "b4081907f0d9a4110736fa6540dc8ca9d7d60a20878b5d78f84916cc04907bdc",
+        "bytes": 62837
+      }
+    },
+    {
+      "name": "liblz4-1",
+      "version": "1.9.4-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/liblz4-1/copyright",
+        "sha256": "d3be0f43fe14da244f97c451bbae789c0acf868612598a69f5f22a289abeca40",
+        "bytes": 3275
+      }
+    },
+    {
+      "name": "liblzma5",
+      "version": "5.4.1-1+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/liblzma5/copyright",
+        "sha256": "a2dc8fac0f496e1c58aff67018cf0c6b88336316afa5642f9335b71642e28aa8",
+        "bytes": 15465
+      }
+    },
+    {
+      "name": "libmagic-mgc",
+      "version": "1:5.44-3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libmagic-mgc/copyright",
+        "sha256": "96c8c6ab85931f81120eb40d42f3c40c76ee328d024cfc7ae31acaa99971d54c",
+        "bytes": 6668
+      }
+    },
+    {
+      "name": "libmagic1",
+      "version": "1:5.44-3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libmagic1/copyright",
+        "sha256": "96c8c6ab85931f81120eb40d42f3c40c76ee328d024cfc7ae31acaa99971d54c",
+        "bytes": 6668
+      }
+    },
+    {
+      "name": "libmd0",
+      "version": "1.0.4-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libmd0/copyright",
+        "sha256": "4365ef6255ad553fce69dd4bc0e093472c5d0e41b8ea493a545cc926ce171aa6",
+        "bytes": 8018
+      }
+    },
+    {
+      "name": "libmount1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libmount1/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "libncursesw6",
+      "version": "6.4-4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libncursesw6/copyright",
+        "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+        "bytes": 4670
+      }
+    },
+    {
+      "name": "libnettle8",
+      "version": "3.8.1-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libnettle8/copyright",
+        "sha256": "ca2ca597320220c00ef6dc0fe5d0d82025548d6d4ba80e85615eb691f9021f93",
+        "bytes": 24923
+      }
+    },
+    {
+      "name": "libnsl2",
+      "version": "1.3.0-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libnsl2/copyright",
+        "sha256": "7d9c79b73fd956319a90cd210441498b225e00960352c4c6d447436481bb0eec",
+        "bytes": 13646
+      }
+    },
+    {
+      "name": "libp11-kit0",
+      "version": "0.24.1-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libp11-kit0/copyright",
+        "sha256": "ed139379f7c874f0ee75f3ddcc2e01091dd828d84ee1a0bdff6a1c5673ee6e58",
+        "bytes": 8646
+      }
+    },
+    {
+      "name": "libpam-modules",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libpam-modules/copyright",
+        "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+        "bytes": 9477
+      }
+    },
+    {
+      "name": "libpam-modules-bin",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libpam-modules-bin/copyright",
+        "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+        "bytes": 9477
+      }
+    },
+    {
+      "name": "libpam-runtime",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/libpam-runtime/copyright",
+        "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+        "bytes": 9477
+      }
+    },
+    {
+      "name": "libpam0g",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libpam0g/copyright",
+        "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+        "bytes": 9477
+      }
+    },
+    {
+      "name": "libpcre2-8-0",
+      "version": "10.42-1+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libpcre2-8-0/copyright",
+        "sha256": "030511beb4d9d620ad09914c369c36ec0528dcf301d1923cc643c948ee7c6a38",
+        "bytes": 6626
+      }
+    },
+    {
+      "name": "libpq5",
+      "version": "15.19-0+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libpq5/copyright",
+        "sha256": "afcc052a946b4117667527211b4ca303f07044f5585222f4c8f577e0764b2123",
+        "bytes": 12934
+      }
+    },
+    {
+      "name": "libreadline8",
+      "version": "8.2-1.3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libreadline8/copyright",
+        "sha256": "3591a8e4de849d910c5ee9045388344ef151c23b10cf8c6b1950f89f1ba1569c",
+        "bytes": 4414
+      }
+    },
+    {
+      "name": "libsasl2-2",
+      "version": "2.1.28+dfsg-10",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libsasl2-2/copyright",
+        "sha256": "5e77ddcac7fb682d696bc4b034dc2869e5a9011e8c2ed3c570ab8db0f4506931",
+        "bytes": 32354
+      }
+    },
+    {
+      "name": "libsasl2-modules-db",
+      "version": "2.1.28+dfsg-10",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libsasl2-modules-db/copyright",
+        "sha256": "5e77ddcac7fb682d696bc4b034dc2869e5a9011e8c2ed3c570ab8db0f4506931",
+        "bytes": 32354
+      }
+    },
+    {
+      "name": "libseccomp2",
+      "version": "2.5.4-1+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libseccomp2/copyright",
+        "sha256": "6da0653a365b80ab31478dbfe9e7c358e80d58b6d2b52b4e16b4dbb42d7d9f5c",
+        "bytes": 1429
+      }
+    },
+    {
+      "name": "libselinux1",
+      "version": "3.4-1+b6",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libselinux1/copyright",
+        "sha256": "641806738b0c6a3d03168c2649e6b94205198bb66cd557e6bae3a20b71c9bb0b",
+        "bytes": 3131
+      }
+    },
+    {
+      "name": "libsemanage-common",
+      "version": "3.4-1",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/libsemanage-common/copyright",
+        "sha256": "e00e6a86c598f9e24ced0180a70a5f2f2e45e133d93adf2b17ce8a06ce4b1b51",
+        "bytes": 1830
+      }
+    },
+    {
+      "name": "libsemanage2",
+      "version": "3.4-1+b5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libsemanage2/copyright",
+        "sha256": "e00e6a86c598f9e24ced0180a70a5f2f2e45e133d93adf2b17ce8a06ce4b1b51",
+        "bytes": 1830
+      }
+    },
+    {
+      "name": "libsepol2",
+      "version": "3.4-2.1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libsepol2/copyright",
+        "sha256": "78d2a34606a0302057ec499a3b3c07bcbc43ca334064ce4c80891a0f69c8f6c6",
+        "bytes": 3750
+      }
+    },
+    {
+      "name": "libsmartcols1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libsmartcols1/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "libsqlite3-0",
+      "version": "3.40.1-2+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libsqlite3-0/copyright",
+        "sha256": "78e9df8f8153c91c762ec970b82d224ac4d30f05aa7773e7e17e268141e53873",
+        "bytes": 1833
+      }
+    },
+    {
+      "name": "libss2",
+      "version": "1.47.0-2+b2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libss2/copyright",
+        "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+        "bytes": 15209
+      }
+    },
+    {
+      "name": "libssl3",
+      "version": "3.0.22-1~deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libssl3/copyright",
+        "sha256": "6a7da622fe0637a334d2a8fc470852d2ffb77d9a2b2f930f854e32a41ad6ef35",
+        "bytes": 2543
+      }
+    },
+    {
+      "name": "libstdc++6",
+      "version": "12.2.0-14+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libstdc++6/copyright",
+        "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+        "bytes": 68194
+      }
+    },
+    {
+      "name": "libsystemd0",
+      "version": "252.39-1~deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libsystemd0/copyright",
+        "sha256": "a7d06854714a1ca99f6dbd1a1641dde5bcf28635be149f6554449618f8f427f3",
+        "bytes": 12776
+      }
+    },
+    {
+      "name": "libtasn1-6",
+      "version": "4.19.0-2+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libtasn1-6/copyright",
+        "sha256": "572ad60ad184d8f52c6dc66d83a61a68f137db560b3452ce00588c9ecf128a65",
+        "bytes": 3451
+      }
+    },
+    {
+      "name": "libtinfo6",
+      "version": "6.4-4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libtinfo6/copyright",
+        "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+        "bytes": 4670
+      }
+    },
+    {
+      "name": "libtirpc-common",
+      "version": "1.3.3+ds-1",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/libtirpc-common/copyright",
+        "sha256": "401dcf98d8ef2b712ec6ab310dbf727fc2cdce290bfde5b6d0b609a927530217",
+        "bytes": 13121
+      }
+    },
+    {
+      "name": "libtirpc3",
+      "version": "1.3.3+ds-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libtirpc3/copyright",
+        "sha256": "401dcf98d8ef2b712ec6ab310dbf727fc2cdce290bfde5b6d0b609a927530217",
+        "bytes": 13121
+      }
+    },
+    {
+      "name": "libudev1",
+      "version": "252.39-1~deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libudev1/copyright",
+        "sha256": "a7d06854714a1ca99f6dbd1a1641dde5bcf28635be149f6554449618f8f427f3",
+        "bytes": 12776
+      }
+    },
+    {
+      "name": "libunistring2",
+      "version": "1.0-2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libunistring2/copyright",
+        "sha256": "0035f89e5317f3cec389383e8727788521b0fde3e75cea881fa0e92e1d48cb57",
+        "bytes": 6068
+      }
+    },
+    {
+      "name": "libuuid1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libuuid1/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "libxxhash0",
+      "version": "0.8.1-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libxxhash0/copyright",
+        "sha256": "a123c93b07e781919ae996276ac02bb1c8b19dfde88176cd1240ab277c14a4ce",
+        "bytes": 2579
+      }
+    },
+    {
+      "name": "libzstd1",
+      "version": "1.5.4+dfsg2-5",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/libzstd1/copyright",
+        "sha256": "35e85e8e9bbb71492c5f5dddf39ed65b68775a02ad8d710c25d097b497f06c49",
+        "bytes": 5389
+      }
+    },
+    {
+      "name": "login",
+      "version": "1:4.13+dfsg1-1+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/login/copyright",
+        "sha256": "a4c3e5b19700dd3cc5961663d204bd7150f65f913314682aede5931548c436d5",
+        "bytes": 7044
+      }
+    },
+    {
+      "name": "logsave",
+      "version": "1.47.0-2+b2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/logsave/copyright",
+        "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+        "bytes": 15209
+      }
+    },
+    {
+      "name": "mawk",
+      "version": "1.3.4.20200120-3.1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/mawk/copyright",
+        "sha256": "167d04422f2fdf76ab565878c23be8ba0c2ebb2c57a5dac0a5a59ccd27e747a5",
+        "bytes": 22591
+      }
+    },
+    {
+      "name": "mount",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/mount/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "ncurses-base",
+      "version": "6.4-4",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/ncurses-base/copyright",
+        "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+        "bytes": 4670
+      }
+    },
+    {
+      "name": "ncurses-bin",
+      "version": "6.4-4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/ncurses-bin/copyright",
+        "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+        "bytes": 4670
+      }
+    },
+    {
+      "name": "netbase",
+      "version": "6.4",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/netbase/copyright",
+        "sha256": "795b66147ea5ad692991caa7008ece551fb0fa88b9c53656223bd1518dc58ab2",
+        "bytes": 1234
+      }
+    },
+    {
+      "name": "openssl",
+      "version": "3.0.22-1~deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/openssl/copyright",
+        "sha256": "6a7da622fe0637a334d2a8fc470852d2ffb77d9a2b2f930f854e32a41ad6ef35",
+        "bytes": 2543
+      }
+    },
+    {
+      "name": "passwd",
+      "version": "1:4.13+dfsg1-1+deb12u2",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/passwd/copyright",
+        "sha256": "a4c3e5b19700dd3cc5961663d204bd7150f65f913314682aede5931548c436d5",
+        "bytes": 7044
+      }
+    },
+    {
+      "name": "perl-base",
+      "version": "5.36.0-7+deb12u4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/perl-base/copyright",
+        "sha256": "b52f3ca17b45473cb0da6ec46748949101fcf0dda1fd5d8b306e6c97fd41af4d",
+        "bytes": 109772
+      }
+    },
+    {
+      "name": "readline-common",
+      "version": "8.2-1.3",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/readline-common/copyright",
+        "sha256": "3591a8e4de849d910c5ee9045388344ef151c23b10cf8c6b1950f89f1ba1569c",
+        "bytes": 4414
+      }
+    },
+    {
+      "name": "sed",
+      "version": "4.9-1+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/sed/copyright",
+        "sha256": "719320e425e8e6da53a55e0fcfa2f2ed9b1332cea16abd65321bd651b2a88568",
+        "bytes": 8618
+      }
+    },
+    {
+      "name": "sysvinit-utils",
+      "version": "3.06-4",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/sysvinit-utils/copyright",
+        "sha256": "ad7cb339e58a88918a883d553ca236795191f027e158788a8b33f747ff502fb2",
+        "bytes": 4689
+      }
+    },
+    {
+      "name": "tar",
+      "version": "1.34+dfsg-1.2+deb12u1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/tar/copyright",
+        "sha256": "bea61e0c172868e07845cf50423f97f093a9a46de167dbbe333a38be610c8e00",
+        "bytes": 3798
+      }
+    },
+    {
+      "name": "tzdata",
+      "version": "2026e-0+deb12u1",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/tzdata/copyright",
+        "sha256": "cb61132bc0fc7b26ef5a82ee18b2fb644a1362f4f286ed980ff22e408471f59a",
+        "bytes": 375
+      }
+    },
+    {
+      "name": "usr-is-merged",
+      "version": "37~deb12u1",
+      "architecture": "all",
+      "copyright": {
+        "path": "/usr/share/doc/usr-is-merged/copyright",
+        "sha256": "9836bfe2ef94505bbf29701e8c90799ab1a5fd966d26d60d019a822cdbf3d61a",
+        "bytes": 987
+      }
+    },
+    {
+      "name": "util-linux",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/util-linux/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "util-linux-extra",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/util-linux-extra/copyright",
+        "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+        "bytes": 23237
+      }
+    },
+    {
+      "name": "zlib1g",
+      "version": "1:1.2.13.dfsg-1",
+      "architecture": "amd64",
+      "copyright": {
+        "path": "/usr/share/doc/zlib1g/copyright",
+        "sha256": "9e5b96d63773a5d177ba264254390f792be07e41748ebd94730981c6cac31cc6",
+        "bytes": 2927
+      }
+    }
+  ],
+  "runtime_requirement_lock_sha256": "3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+  "result": "collected_review_required",
+  "utc": "2026-11-02T20:24:36.124161+00:00",
+  "image_id": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory_digest": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "files_physically_verified": 4156,
+  "container": "mp-r0-r1g64bb76636070f-g7-provenance-static-01",
+  "notice_files": 280,
+  "notice_archive_sha256": "8dc2797c4af3da91d1b20b1d99a052315486a0c916616441379ba5e7f92f0d4d",
+  "limits": [
+    "Static installed metadata/notices inventory; license interpretation/obligations are not inferred from a green collector.",
+    "Official source/copy history, artifact license identity and lock matching are separate qualification steps.",
+    "No network, plugin imports, private mounts or deployment changes."
+  ]
+}

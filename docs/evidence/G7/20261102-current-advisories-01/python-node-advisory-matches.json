@@ -1,0 +1,2251 @@
+{
+  "result": "queried_matches_require_review",
+  "utc": "2026-11-02T20:45:49.413228+00:00",
+  "source": "https://api.osv.dev/v1/querybatch",
+  "response_sha256": "b90e7956b82371c6be3efedfcbe061d0cc89bfd9bdecc54dcf9ebc85bb22ab02",
+  "queries": 98,
+  "packages_with_matches": 18,
+  "unique_advisories": [
+    "GHSA-22hg-r758-rrw9",
+    "GHSA-24rc-8hj2-v98c",
+    "GHSA-254f-3936-288h",
+    "GHSA-27h8-gf7j-v5hc",
+    "GHSA-29vq-49wr-vm6x",
+    "GHSA-2g68-c3qc-8985",
+    "GHSA-2xpw-w6gg-jr37",
+    "GHSA-332p-7hrc-92wf",
+    "GHSA-34jh-p97f-mpxf",
+    "GHSA-38jv-5279-wg99",
+    "GHSA-3c37-wwvx-h642",
+    "GHSA-3j72-p6qg-6xp7",
+    "GHSA-44wm-f244-xhp3",
+    "GHSA-4558-3h8r-v8xp",
+    "GHSA-45hq-cxwh-f6vc",
+    "GHSA-462x-pgg6-55fp",
+    "GHSA-4cc2-g9w2-fhf6",
+    "GHSA-4jhm-jv67-739f",
+    "GHSA-4rm8-3hmm-39fg",
+    "GHSA-4vvm-4w3v-6mr8",
+    "GHSA-4x4j-2g7c-83w6",
+    "GHSA-4xh5-x5gv-qwph",
+    "GHSA-537c-gmf6-5ccf",
+    "GHSA-58qw-9mgm-455v",
+    "GHSA-58r4-6rv3-gfh8",
+    "GHSA-5pwr-322w-8jr4",
+    "GHSA-5x8w-8jj5-q52h",
+    "GHSA-5x94-69rx-g8h2",
+    "GHSA-5xm2-6676-qcp9",
+    "GHSA-62p4-gmf7-7g93",
+    "GHSA-65pc-fj4g-8rjx",
+    "GHSA-65qm-jvmh-6pqg",
+    "GHSA-6r8x-57c9-28j4",
+    "GHSA-6vgw-5pg2-w6jp",
+    "GHSA-74r2-7ff9-mjj2",
+    "GHSA-79v4-65xg-pq4g",
+    "GHSA-7mwm-ghpf-9vrm",
+    "GHSA-87hc-h4r5-73f7",
+    "GHSA-8988-9cw3-xx77",
+    "GHSA-8g5g-8vmr-9782",
+    "GHSA-8rrh-rw8j-w5fx",
+    "GHSA-8v84-f9pq-wr9x",
+    "GHSA-9hjg-9r4m-mvj7",
+    "GHSA-9hw9-ch79-4vh6",
+    "GHSA-9q9c-vjxh-p795",
+    "GHSA-9v9v-9qvf-h2hj",
+    "GHSA-9wx4-h78v-vm56",
+    "GHSA-c6hw-5grf-ff96",
+    "GHSA-cpwx-vrp4-4pq7",
+    "GHSA-f2g6-542v-9j58",
+    "GHSA-f9vj-2wh5-fj8j",
+    "GHSA-fc9g-5qg7-mf45",
+    "GHSA-fj7v-r99m-22gq",
+    "GHSA-g6x2-hccm-hh4m",
+    "GHSA-g7cr-3p24-7wf7",
+    "GHSA-g842-9rc4-69pw",
+    "GHSA-gc5v-m9x4-r6x2",
+    "GHSA-gg2r-wvfm-q9rx",
+    "GHSA-gm62-xv2j-4w53",
+    "GHSA-gmj6-6f8f-6699",
+    "GHSA-h35f-9h28-mq5c",
+    "GHSA-h4gh-qq45-vh27",
+    "GHSA-h5c8-rqwp-cp95",
+    "GHSA-h75v-3vvj-5mfj",
+    "GHSA-hgf8-39gv-g3f2",
+    "GHSA-j4m9-6w36-pw47",
+    "GHSA-jg86-v3jv-hrpm",
+    "GHSA-jjg7-2v4v-x38h",
+    "GHSA-jjj6-mw9f-p565",
+    "GHSA-jp4c-xjxw-mgf9",
+    "GHSA-jwv3-5hgf-82ww",
+    "GHSA-m959-cc7f-wv43",
+    "GHSA-mrfp-p49p-3hf2",
+    "GHSA-p34h-wq7j-h5v6",
+    "GHSA-p4wg-p73j-c528",
+    "GHSA-p8hx-v2p6-rp84",
+    "GHSA-pchr-8j38-3x4p",
+    "GHSA-phj9-mv4w-65pm",
+    "GHSA-pq67-6m6q-mj2v",
+    "GHSA-q2x7-8rv6-6q7h",
+    "GHSA-q34m-jh98-gwm2",
+    "GHSA-q45j-58j2-45rg",
+    "GHSA-qccp-gfcp-xxvc",
+    "GHSA-qwm4-qh6w-59xr",
+    "GHSA-r6ph-v2qm-q3c2",
+    "GHSA-r73j-pqj5-w3x7",
+    "GHSA-r7r6-cc7p-4v5m",
+    "GHSA-rfgq-q3w2-pmv2",
+    "GHSA-vfmq-68hx-4jfw",
+    "GHSA-vjc4-5qp5-m44j",
+    "GHSA-vp96-hxj8-p424",
+    "GHSA-vx6w-vv9f-6gvg",
+    "GHSA-vxq7-64xx-v4gw",
+    "GHSA-w889-685w-c8fh",
+    "GHSA-wcj4-jw5j-44wh",
+    "GHSA-wf93-45jw-7689",
+    "GHSA-wjx4-4jcj-g98j",
+    "GHSA-xgh8-jp6q-p5x8",
+    "GHSA-xj96-63gp-2gmr",
+    "GHSA-xmj3-9gf7-h52w",
+    "GHSA-xvh5-g6gv-559v",
+    "PYSEC-2024-60",
+    "PYSEC-2025-238",
+    "PYSEC-2025-90",
+    "PYSEC-2026-1284",
+    "PYSEC-2026-141",
+    "PYSEC-2026-1471",
+    "PYSEC-2026-1472",
+    "PYSEC-2026-1473",
+    "PYSEC-2026-1474",
+    "PYSEC-2026-1475",
+    "PYSEC-2026-165",
+    "PYSEC-2026-1793",
+    "PYSEC-2026-1795",
+    "PYSEC-2026-1796",
+    "PYSEC-2026-1835",
+    "PYSEC-2026-1846",
+    "PYSEC-2026-1847",
+    "PYSEC-2026-1872",
+    "PYSEC-2026-1873",
+    "PYSEC-2026-196",
+    "PYSEC-2026-1994",
+    "PYSEC-2026-1995",
+    "PYSEC-2026-1996",
+    "PYSEC-2026-1998",
+    "PYSEC-2026-1999",
+    "PYSEC-2026-2043",
+    "PYSEC-2026-2044",
+    "PYSEC-2026-2045",
+    "PYSEC-2026-2046",
+    "PYSEC-2026-2047",
+    "PYSEC-2026-2123",
+    "PYSEC-2026-2141",
+    "PYSEC-2026-215",
+    "PYSEC-2026-2253",
+    "PYSEC-2026-2254",
+    "PYSEC-2026-2255",
+    "PYSEC-2026-2256",
+    "PYSEC-2026-2257",
+    "PYSEC-2026-2268",
+    "PYSEC-2026-2269",
+    "PYSEC-2026-2275",
+    "PYSEC-2026-2320",
+    "PYSEC-2026-2323",
+    "PYSEC-2026-2614",
+    "PYSEC-2026-2874",
+    "PYSEC-2026-2875",
+    "PYSEC-2026-2876",
+    "PYSEC-2026-3417",
+    "PYSEC-2026-3447",
+    "PYSEC-2026-3451",
+    "PYSEC-2026-3453",
+    "PYSEC-2026-3454",
+    "PYSEC-2026-3493",
+    "PYSEC-2026-3494",
+    "PYSEC-2026-3495",
+    "PYSEC-2026-3496",
+    "PYSEC-2026-35",
+    "PYSEC-2026-3553",
+    "PYSEC-2026-3554",
+    "PYSEC-2026-3721",
+    "PYSEC-2026-4175",
+    "PYSEC-2026-4177",
+    "PYSEC-2026-4312",
+    "PYSEC-2026-4326",
+    "PYSEC-2026-4327",
+    "PYSEC-2026-4329",
+    "PYSEC-2026-4330",
+    "PYSEC-2026-4331",
+    "PYSEC-2026-4332",
+    "PYSEC-2026-4334",
+    "PYSEC-2026-4335",
+    "PYSEC-2026-4337",
+    "PYSEC-2026-4338",
+    "PYSEC-2026-4340",
+    "PYSEC-2026-4341",
+    "PYSEC-2026-4343",
+    "PYSEC-2026-87"
+  ],
+  "matches": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "asn1crypto"
+        },
+        "version": "1.5.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "attrs"
+        },
+        "version": "26.1.0"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "babel"
+        },
+        "version": "2.10.3"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "beautifulsoup4"
+        },
+        "version": "4.15.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "cbor2"
+        },
+        "version": "5.6.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-3c37-wwvx-h642",
+          "modified": "2026-09-10T03:50:36.691215Z"
+        },
+        {
+          "id": "GHSA-9q9c-vjxh-p795",
+          "modified": "2026-09-01T16:55:40.143239Z"
+        },
+        {
+          "id": "GHSA-wcj4-jw5j-44wh",
+          "modified": "2026-09-10T03:49:54.340848Z"
+        },
+        {
+          "id": "PYSEC-2025-238",
+          "modified": "2026-09-10T11:15:08.179863Z"
+        },
+        {
+          "id": "PYSEC-2025-90",
+          "modified": "2026-05-20T09:18:54.182045Z"
+        },
+        {
+          "id": "PYSEC-2026-2123",
+          "modified": "2026-07-13T07:15:16.978732Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "certifi"
+        },
+        "version": "2026.10.23"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "cffi"
+        },
+        "version": "2.1.1"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "chardet"
+        },
+        "version": "5.2.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "charset-normalizer"
+        },
+        "version": "3.5.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "cryptography"
+        },
+        "version": "42.0.8"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-537c-gmf6-5ccf",
+          "modified": "2026-09-10T03:50:48.298936Z"
+        },
+        {
+          "id": "GHSA-79v4-65xg-pq4g",
+          "modified": "2026-09-10T03:50:22.501671Z"
+        },
+        {
+          "id": "GHSA-h4gh-qq45-vh27",
+          "modified": "2026-09-10T03:50:18.241644Z"
+        },
+        {
+          "id": "GHSA-jwv3-5hgf-82ww",
+          "modified": "2026-09-24T14:45:10.238420Z"
+        },
+        {
+          "id": "GHSA-m959-cc7f-wv43",
+          "modified": "2026-09-10T03:51:00.592317Z"
+        },
+        {
+          "id": "GHSA-r6ph-v2qm-q3c2",
+          "modified": "2026-09-10T03:50:59.750965Z"
+        },
+        {
+          "id": "PYSEC-2026-1284",
+          "modified": "2026-07-07T17:47:34.798935Z"
+        },
+        {
+          "id": "PYSEC-2026-2141",
+          "modified": "2026-07-13T07:15:23.314483Z"
+        },
+        {
+          "id": "PYSEC-2026-35",
+          "modified": "2026-05-20T09:18:55.884138Z"
+        },
+        {
+          "id": "PYSEC-2026-3553",
+          "modified": "2026-08-04T14:30:26.222821Z"
+        },
+        {
+          "id": "PYSEC-2026-3554",
+          "modified": "2026-08-04T14:30:26.230323Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "docopt"
+        },
+        "version": "0.6.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "docutils"
+        },
+        "version": "0.20.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "et-xmlfile"
+        },
+        "version": "2.0.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "freezegun"
+        },
+        "version": "1.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "geoip2"
+        },
+        "version": "2.9.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "gevent"
+        },
+        "version": "24.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "greenlet"
+        },
+        "version": "3.0.3"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "idna"
+        },
+        "version": "3.6"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-65pc-fj4g-8rjx",
+          "modified": "2026-09-10T03:50:45.700124Z"
+        },
+        {
+          "id": "GHSA-jjg7-2v4v-x38h",
+          "modified": "2026-09-10T03:50:12.774088Z"
+        },
+        {
+          "id": "PYSEC-2024-60",
+          "modified": "2026-06-10T17:01:21.102419Z"
+        },
+        {
+          "id": "PYSEC-2026-215",
+          "modified": "2026-06-16T16:15:04.639265Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "isodate"
+        },
+        "version": "0.7.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jinja2"
+        },
+        "version": "3.1.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-cpwx-vrp4-4pq7",
+          "modified": "2026-09-10T03:49:48.526758Z"
+        },
+        {
+          "id": "GHSA-gmj6-6f8f-6699",
+          "modified": "2026-09-10T03:50:56.152882Z"
+        },
+        {
+          "id": "GHSA-h5c8-rqwp-cp95",
+          "modified": "2026-09-10T03:50:00.236017Z"
+        },
+        {
+          "id": "GHSA-h75v-3vvj-5mfj",
+          "modified": "2026-09-10T03:50:13.786450Z"
+        },
+        {
+          "id": "GHSA-q2x7-8rv6-6q7h",
+          "modified": "2026-09-10T03:50:21.662855Z"
+        },
+        {
+          "id": "PYSEC-2026-1471",
+          "modified": "2026-07-07T17:46:43.358335Z"
+        },
+        {
+          "id": "PYSEC-2026-1472",
+          "modified": "2026-07-07T17:46:46.013371Z"
+        },
+        {
+          "id": "PYSEC-2026-1473",
+          "modified": "2026-07-07T17:46:13.853151Z"
+        },
+        {
+          "id": "PYSEC-2026-1474",
+          "modified": "2026-07-07T17:46:13.832160Z"
+        },
+        {
+          "id": "PYSEC-2026-1475",
+          "modified": "2026-07-07T17:46:13.842466Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jsonschema"
+        },
+        "version": "4.26.0"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jsonschema-specifications"
+        },
+        "version": "2025.9.1"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "libsass"
+        },
+        "version": "0.22.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "lxml"
+        },
+        "version": "5.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-vfmq-68hx-4jfw",
+          "modified": "2026-09-10T03:51:03.302383Z"
+        },
+        {
+          "id": "PYSEC-2026-87",
+          "modified": "2026-05-20T09:19:06.179641Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "lxml-html-clean"
+        },
+        "version": "0.4.4"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-4jhm-jv67-739f",
+          "modified": "2026-07-13T16:42:41.379452Z"
+        },
+        {
+          "id": "PYSEC-2026-2614",
+          "modified": "2026-07-13T16:32:12.324499Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "markupsafe"
+        },
+        "version": "2.1.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "maxminddb"
+        },
+        "version": "3.2.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "num2words"
+        },
+        "version": "0.5.13"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "ofxparse"
+        },
+        "version": "0.21"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "openpyxl"
+        },
+        "version": "3.1.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "packaging"
+        },
+        "version": "26.3"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "passlib"
+        },
+        "version": "1.7.4"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pillow"
+        },
+        "version": "10.2.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-22hg-r758-rrw9",
+          "modified": "2026-10-26T08:56:03.565713Z"
+        },
+        {
+          "id": "GHSA-24rc-8hj2-v98c",
+          "modified": "2026-10-29T10:55:36.262902Z"
+        },
+        {
+          "id": "GHSA-254f-3936-288h",
+          "modified": "2026-10-26T08:56:17.690706Z"
+        },
+        {
+          "id": "GHSA-27h8-gf7j-v5hc",
+          "modified": "2026-10-27T11:10:35.409737Z"
+        },
+        {
+          "id": "GHSA-332p-7hrc-92wf",
+          "modified": "2026-10-26T08:56:07.886625Z"
+        },
+        {
+          "id": "GHSA-3j72-p6qg-6xp7",
+          "modified": "2026-10-29T10:55:45.826300Z"
+        },
+        {
+          "id": "GHSA-44wm-f244-xhp3",
+          "modified": "2026-09-10T03:50:11.139712Z"
+        },
+        {
+          "id": "GHSA-4558-3h8r-v8xp",
+          "modified": "2026-10-27T11:10:34.006455Z"
+        },
+        {
+          "id": "GHSA-45hq-cxwh-f6vc",
+          "modified": "2026-09-10T03:50:51.372929Z"
+        },
+        {
+          "id": "GHSA-462x-pgg6-55fp",
+          "modified": "2026-10-26T08:56:01.770928Z"
+        },
+        {
+          "id": "GHSA-4rm8-3hmm-39fg",
+          "modified": "2026-10-29T10:56:07.449486Z"
+        },
+        {
+          "id": "GHSA-4x4j-2g7c-83w6",
+          "modified": "2026-09-10T03:51:10.324377Z"
+        },
+        {
+          "id": "GHSA-58r4-6rv3-gfh8",
+          "modified": "2026-10-28T11:10:53.627071Z"
+        },
+        {
+          "id": "GHSA-5x8w-8jj5-q52h",
+          "modified": "2026-10-28T11:10:48.833199Z"
+        },
+        {
+          "id": "GHSA-5x94-69rx-g8h2",
+          "modified": "2026-09-10T03:51:10.514604Z"
+        },
+        {
+          "id": "GHSA-5xm2-6676-qcp9",
+          "modified": "2026-10-26T08:56:16.789537Z"
+        },
+        {
+          "id": "GHSA-62p4-gmf7-7g93",
+          "modified": "2026-09-10T03:51:10.632149Z"
+        },
+        {
+          "id": "GHSA-65qm-jvmh-6pqg",
+          "modified": "2026-10-26T08:55:49.781288Z"
+        },
+        {
+          "id": "GHSA-6r8x-57c9-28j4",
+          "modified": "2026-09-10T03:51:10.822199Z"
+        },
+        {
+          "id": "GHSA-74r2-7ff9-mjj2",
+          "modified": "2026-10-26T08:56:13.792431Z"
+        },
+        {
+          "id": "GHSA-7mwm-ghpf-9vrm",
+          "modified": "2026-10-28T11:10:35.587185Z"
+        },
+        {
+          "id": "GHSA-8g5g-8vmr-9782",
+          "modified": "2026-10-28T11:10:51.788355Z"
+        },
+        {
+          "id": "GHSA-8v84-f9pq-wr9x",
+          "modified": "2026-09-10T03:51:11.229114Z"
+        },
+        {
+          "id": "GHSA-9hw9-ch79-4vh6",
+          "modified": "2026-09-10T03:51:11.334365Z"
+        },
+        {
+          "id": "GHSA-9v9v-9qvf-h2hj",
+          "modified": "2026-10-29T10:55:35.129178Z"
+        },
+        {
+          "id": "GHSA-c6hw-5grf-ff96",
+          "modified": "2026-10-26T08:55:55.669563Z"
+        },
+        {
+          "id": "GHSA-f2g6-542v-9j58",
+          "modified": "2026-10-26T08:56:13.538142Z"
+        },
+        {
+          "id": "GHSA-fc9g-5qg7-mf45",
+          "modified": "2026-10-26T08:56:06.483214Z"
+        },
+        {
+          "id": "GHSA-fj7v-r99m-22gq",
+          "modified": "2026-09-10T03:50:51.891240Z"
+        },
+        {
+          "id": "GHSA-g7cr-3p24-7wf7",
+          "modified": "2026-10-29T10:56:05.933422Z"
+        },
+        {
+          "id": "GHSA-g842-9rc4-69pw",
+          "modified": "2026-10-29T10:55:56.102454Z"
+        },
+        {
+          "id": "GHSA-gg2r-wvfm-q9rx",
+          "modified": "2026-10-26T08:55:54.537605Z"
+        },
+        {
+          "id": "GHSA-j4m9-6w36-pw47",
+          "modified": "2026-10-26T08:55:43.891551Z"
+        },
+        {
+          "id": "GHSA-jg86-v3jv-hrpm",
+          "modified": "2026-10-26T08:56:08.669907Z"
+        },
+        {
+          "id": "GHSA-jjj6-mw9f-p565",
+          "modified": "2026-09-10T03:50:12.341825Z"
+        },
+        {
+          "id": "GHSA-mrfp-p49p-3hf2",
+          "modified": "2026-10-29T10:55:39.916451Z"
+        },
+        {
+          "id": "GHSA-p4wg-p73j-c528",
+          "modified": "2026-10-26T08:55:38.434240Z"
+        },
+        {
+          "id": "GHSA-p8hx-v2p6-rp84",
+          "modified": "2026-10-29T10:55:49.521326Z"
+        },
+        {
+          "id": "GHSA-pchr-8j38-3x4p",
+          "modified": "2026-10-28T11:10:41.233140Z"
+        },
+        {
+          "id": "GHSA-phj9-mv4w-65pm",
+          "modified": "2026-09-10T03:51:11.734605Z"
+        },
+        {
+          "id": "GHSA-q45j-58j2-45rg",
+          "modified": "2026-10-26T08:56:08.265781Z"
+        },
+        {
+          "id": "GHSA-r73j-pqj5-w3x7",
+          "modified": "2026-09-10T03:50:55.309086Z"
+        },
+        {
+          "id": "GHSA-rfgq-q3w2-pmv2",
+          "modified": "2026-10-26T08:55:50.383984Z"
+        },
+        {
+          "id": "GHSA-vjc4-5qp5-m44j",
+          "modified": "2026-09-10T03:50:53.107920Z"
+        },
+        {
+          "id": "GHSA-vx6w-vv9f-6gvg",
+          "modified": "2026-10-20T21:00:04.428653Z"
+        },
+        {
+          "id": "GHSA-w889-685w-c8fh",
+          "modified": "2026-10-26T08:55:37.091976Z"
+        },
+        {
+          "id": "GHSA-wjx4-4jcj-g98j",
+          "modified": "2026-09-10T03:50:47.950262Z"
+        },
+        {
+          "id": "GHSA-xgh8-jp6q-p5x8",
+          "modified": "2026-10-28T11:10:55.647541Z"
+        },
+        {
+          "id": "GHSA-xj96-63gp-2gmr",
+          "modified": "2026-09-10T03:50:53.192759Z"
+        },
+        {
+          "id": "GHSA-xvh5-g6gv-559v",
+          "modified": "2026-10-21T21:45:08.352742Z"
+        },
+        {
+          "id": "PYSEC-2026-165",
+          "modified": "2026-05-27T13:56:18.230226Z"
+        },
+        {
+          "id": "PYSEC-2026-1793",
+          "modified": "2026-07-07T17:57:00.234584Z"
+        },
+        {
+          "id": "PYSEC-2026-2253",
+          "modified": "2026-07-13T07:26:49.281845Z"
+        },
+        {
+          "id": "PYSEC-2026-2254",
+          "modified": "2026-07-13T07:26:56.196935Z"
+        },
+        {
+          "id": "PYSEC-2026-2255",
+          "modified": "2026-07-13T07:26:26.726353Z"
+        },
+        {
+          "id": "PYSEC-2026-2256",
+          "modified": "2026-07-13T07:26:17.085341Z"
+        },
+        {
+          "id": "PYSEC-2026-2257",
+          "modified": "2026-07-13T07:26:48.229039Z"
+        },
+        {
+          "id": "PYSEC-2026-2874",
+          "modified": "2026-07-13T16:42:37.358429Z"
+        },
+        {
+          "id": "PYSEC-2026-3451",
+          "modified": "2026-07-15T20:11:36.266805Z"
+        },
+        {
+          "id": "PYSEC-2026-3453",
+          "modified": "2026-07-15T20:11:15.582336Z"
+        },
+        {
+          "id": "PYSEC-2026-3454",
+          "modified": "2026-07-22T11:11:36.231472Z"
+        },
+        {
+          "id": "PYSEC-2026-3493",
+          "modified": "2026-07-23T15:11:42.568996Z"
+        },
+        {
+          "id": "PYSEC-2026-3494",
+          "modified": "2026-07-23T15:11:28.382441Z"
+        },
+        {
+          "id": "PYSEC-2026-3495",
+          "modified": "2026-07-23T15:11:28.034031Z"
+        },
+        {
+          "id": "PYSEC-2026-3496",
+          "modified": "2026-07-23T15:11:20.720915Z"
+        },
+        {
+          "id": "PYSEC-2026-4326",
+          "modified": "2026-10-27T11:10:35.409737Z"
+        },
+        {
+          "id": "PYSEC-2026-4327",
+          "modified": "2026-10-27T11:10:34.006455Z"
+        },
+        {
+          "id": "PYSEC-2026-4329",
+          "modified": "2026-10-28T11:10:53.627071Z"
+        },
+        {
+          "id": "PYSEC-2026-4330",
+          "modified": "2026-10-28T11:10:48.833199Z"
+        },
+        {
+          "id": "PYSEC-2026-4331",
+          "modified": "2026-10-28T11:10:35.587185Z"
+        },
+        {
+          "id": "PYSEC-2026-4332",
+          "modified": "2026-10-28T11:10:51.788355Z"
+        },
+        {
+          "id": "PYSEC-2026-4334",
+          "modified": "2026-10-28T11:10:41.233140Z"
+        },
+        {
+          "id": "PYSEC-2026-4335",
+          "modified": "2026-10-28T11:10:55.647541Z"
+        },
+        {
+          "id": "PYSEC-2026-4337",
+          "modified": "2026-10-29T10:55:49.521326Z"
+        },
+        {
+          "id": "PYSEC-2026-4338",
+          "modified": "2026-10-29T10:55:56.102454Z"
+        },
+        {
+          "id": "PYSEC-2026-4340",
+          "modified": "2026-10-29T10:56:07.449486Z"
+        },
+        {
+          "id": "PYSEC-2026-4341",
+          "modified": "2026-10-29T10:55:45.826300Z"
+        },
+        {
+          "id": "PYSEC-2026-4343",
+          "modified": "2026-10-29T10:55:35.129178Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pip"
+        },
+        "version": "25.0.1"
+      },
+      "roles": [
+        "independent_worker"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-4xh5-x5gv-qwph",
+          "modified": "2026-09-10T03:50:27.949321Z"
+        },
+        {
+          "id": "GHSA-58qw-9mgm-455v",
+          "modified": "2026-09-10T03:50:42.838011Z"
+        },
+        {
+          "id": "GHSA-6vgw-5pg2-w6jp",
+          "modified": "2026-09-10T03:50:34.266257Z"
+        },
+        {
+          "id": "GHSA-jp4c-xjxw-mgf9",
+          "modified": "2026-09-10T03:50:44.656580Z"
+        },
+        {
+          "id": "GHSA-qwm4-qh6w-59xr",
+          "modified": "2026-09-10T03:50:52.923367Z"
+        },
+        {
+          "id": "GHSA-wf93-45jw-7689",
+          "modified": "2026-09-10T03:51:09.636289Z"
+        },
+        {
+          "id": "PYSEC-2026-1795",
+          "modified": "2026-07-07T17:48:06.199964Z"
+        },
+        {
+          "id": "PYSEC-2026-1796",
+          "modified": "2026-07-07T17:48:06.240646Z"
+        },
+        {
+          "id": "PYSEC-2026-196",
+          "modified": "2026-07-13T16:45:04.859457Z"
+        },
+        {
+          "id": "PYSEC-2026-2875",
+          "modified": "2026-07-13T16:31:33.455648Z"
+        },
+        {
+          "id": "PYSEC-2026-2876",
+          "modified": "2026-07-13T16:32:57.447552Z"
+        },
+        {
+          "id": "PYSEC-2026-3721",
+          "modified": "2026-09-10T11:15:08.939447Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pip"
+        },
+        "version": "25.3"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-58qw-9mgm-455v",
+          "modified": "2026-09-10T03:50:42.838011Z"
+        },
+        {
+          "id": "GHSA-6vgw-5pg2-w6jp",
+          "modified": "2026-09-10T03:50:34.266257Z"
+        },
+        {
+          "id": "GHSA-jp4c-xjxw-mgf9",
+          "modified": "2026-09-10T03:50:44.656580Z"
+        },
+        {
+          "id": "GHSA-qwm4-qh6w-59xr",
+          "modified": "2026-09-10T03:50:52.923367Z"
+        },
+        {
+          "id": "GHSA-wf93-45jw-7689",
+          "modified": "2026-09-10T03:51:09.636289Z"
+        },
+        {
+          "id": "PYSEC-2026-1796",
+          "modified": "2026-07-07T17:48:06.240646Z"
+        },
+        {
+          "id": "PYSEC-2026-196",
+          "modified": "2026-07-13T16:45:04.859457Z"
+        },
+        {
+          "id": "PYSEC-2026-2875",
+          "modified": "2026-07-13T16:31:33.455648Z"
+        },
+        {
+          "id": "PYSEC-2026-2876",
+          "modified": "2026-07-13T16:32:57.447552Z"
+        },
+        {
+          "id": "PYSEC-2026-3721",
+          "modified": "2026-09-10T11:15:08.939447Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "platformdirs"
+        },
+        "version": "4.13.6"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "polib"
+        },
+        "version": "1.1.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "psutil"
+        },
+        "version": "5.9.8"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "psycopg2"
+        },
+        "version": "2.9.9"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyasn1"
+        },
+        "version": "0.6.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyasn1-modules"
+        },
+        "version": "0.4.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pycparser"
+        },
+        "version": "3.12"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyjwt"
+        },
+        "version": "2.15.1"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyopenssl"
+        },
+        "version": "24.1.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-5pwr-322w-8jr4",
+          "modified": "2026-09-10T03:50:37.586707Z"
+        },
+        {
+          "id": "GHSA-vp96-hxj8-p424",
+          "modified": "2026-09-10T03:51:00.753013Z"
+        },
+        {
+          "id": "PYSEC-2026-2268",
+          "modified": "2026-07-13T07:15:42.074177Z"
+        },
+        {
+          "id": "PYSEC-2026-2269",
+          "modified": "2026-07-13T07:15:42.174035Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pypdf2"
+        },
+        "version": "2.12.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-4vvm-4w3v-6mr8",
+          "modified": "2026-09-10T03:50:01.918644Z"
+        },
+        {
+          "id": "PYSEC-2026-1835",
+          "modified": "2026-07-13T16:42:55.319975Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pypng"
+        },
+        "version": "0.20220715.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyserial"
+        },
+        "version": "3.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-dateutil"
+        },
+        "version": "2.8.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-ldap"
+        },
+        "version": "3.4.4"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-p34h-wq7j-h5v6",
+          "modified": "2026-09-10T03:50:30.209082Z"
+        },
+        {
+          "id": "GHSA-r7r6-cc7p-4v5m",
+          "modified": "2026-09-10T03:50:30.344217Z"
+        },
+        {
+          "id": "PYSEC-2026-1846",
+          "modified": "2026-07-07T17:47:51.792721Z"
+        },
+        {
+          "id": "PYSEC-2026-1847",
+          "modified": "2026-07-07T17:47:51.799608Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-magic"
+        },
+        "version": "0.4.27"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-stdnum"
+        },
+        "version": "1.19"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pytz"
+        },
+        "version": "2026.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyusb"
+        },
+        "version": "1.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "qrcode"
+        },
+        "version": "7.4.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "referencing"
+        },
+        "version": "0.37.0"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "reportlab"
+        },
+        "version": "4.1.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "requests"
+        },
+        "version": "2.31.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-9hjg-9r4m-mvj7",
+          "modified": "2026-10-19T20:00:04.716114Z"
+        },
+        {
+          "id": "GHSA-9wx4-h78v-vm56",
+          "modified": "2026-09-10T03:50:13.740879Z"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "modified": "2026-09-10T03:50:39.207922Z"
+        },
+        {
+          "id": "PYSEC-2026-1872",
+          "modified": "2026-07-07T17:47:00.332079Z"
+        },
+        {
+          "id": "PYSEC-2026-1873",
+          "modified": "2026-07-07T17:46:36.762141Z"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "modified": "2026-07-13T07:15:43.964902Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "requests-file"
+        },
+        "version": "3.0.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "requests-toolbelt"
+        },
+        "version": "1.0.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "resolvelib"
+        },
+        "version": "1.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rfc8785"
+        },
+        "version": "0.1.4"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rjsmin"
+        },
+        "version": "1.2.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rpds-py"
+        },
+        "version": "2026.9.1"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "setuptools"
+        },
+        "version": "80.9.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-h35f-9h28-mq5c",
+          "modified": "2026-09-10T03:50:52.323347Z"
+        },
+        {
+          "id": "GHSA-xmj3-9gf7-h52w",
+          "modified": "2026-10-23T22:00:03.739009Z"
+        },
+        {
+          "id": "PYSEC-2026-3447",
+          "modified": "2026-07-14T10:56:37.948360Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "six"
+        },
+        "version": "1.17.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "soupsieve"
+        },
+        "version": "3.0.4"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "typing-extensions"
+        },
+        "version": "4.16.0"
+      },
+      "roles": [
+        "application",
+        "independent_worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "urllib3"
+        },
+        "version": "2.0.7"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-2xpw-w6gg-jr37",
+          "modified": "2026-09-25T17:15:05.968189Z"
+        },
+        {
+          "id": "GHSA-34jh-p97f-mpxf",
+          "modified": "2026-09-10T03:50:14.811193Z"
+        },
+        {
+          "id": "GHSA-38jv-5279-wg99",
+          "modified": "2026-09-10T03:50:32.562010Z"
+        },
+        {
+          "id": "GHSA-8988-9cw3-xx77",
+          "modified": "2026-10-01T17:55:53.793608Z"
+        },
+        {
+          "id": "GHSA-gm62-xv2j-4w53",
+          "modified": "2026-09-10T03:50:58.741847Z"
+        },
+        {
+          "id": "GHSA-pq67-6m6q-mj2v",
+          "modified": "2026-09-10T03:50:25.299291Z"
+        },
+        {
+          "id": "GHSA-qccp-gfcp-xxvc",
+          "modified": "2026-09-10T03:50:47.272765Z"
+        },
+        {
+          "id": "GHSA-vxq7-64xx-v4gw",
+          "modified": "2026-10-01T17:55:57.514829Z"
+        },
+        {
+          "id": "PYSEC-2026-141",
+          "modified": "2026-05-20T09:19:20.983812Z"
+        },
+        {
+          "id": "PYSEC-2026-1994",
+          "modified": "2026-07-07T17:48:15.379954Z"
+        },
+        {
+          "id": "PYSEC-2026-1995",
+          "modified": "2026-07-07T17:48:15.400192Z"
+        },
+        {
+          "id": "PYSEC-2026-1996",
+          "modified": "2026-07-07T17:48:15.382053Z"
+        },
+        {
+          "id": "PYSEC-2026-1998",
+          "modified": "2026-07-07T17:47:54.140852Z"
+        },
+        {
+          "id": "PYSEC-2026-1999",
+          "modified": "2026-07-07T17:47:54.161376Z"
+        },
+        {
+          "id": "PYSEC-2026-4175",
+          "modified": "2026-10-01T17:45:18.542387Z"
+        },
+        {
+          "id": "PYSEC-2026-4177",
+          "modified": "2026-10-01T17:45:18.336090Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "vobject"
+        },
+        "version": "0.9.6.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "werkzeug"
+        },
+        "version": "3.0.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-29vq-49wr-vm6x",
+          "modified": "2026-09-10T03:50:33.709103Z"
+        },
+        {
+          "id": "GHSA-2g68-c3qc-8985",
+          "modified": "2026-09-10T03:50:13.189126Z"
+        },
+        {
+          "id": "GHSA-87hc-h4r5-73f7",
+          "modified": "2026-09-10T03:50:32.862525Z"
+        },
+        {
+          "id": "GHSA-f9vj-2wh5-fj8j",
+          "modified": "2026-09-10T03:50:19.894904Z"
+        },
+        {
+          "id": "GHSA-g6x2-hccm-hh4m",
+          "modified": "2026-10-15T14:56:11.020811Z"
+        },
+        {
+          "id": "GHSA-hgf8-39gv-g3f2",
+          "modified": "2026-09-10T03:50:31.900494Z"
+        },
+        {
+          "id": "GHSA-q34m-jh98-gwm2",
+          "modified": "2026-09-10T03:50:19.984825Z"
+        },
+        {
+          "id": "PYSEC-2026-2043",
+          "modified": "2026-07-07T17:47:56.449875Z"
+        },
+        {
+          "id": "PYSEC-2026-2044",
+          "modified": "2026-07-07T17:47:56.418445Z"
+        },
+        {
+          "id": "PYSEC-2026-2045",
+          "modified": "2026-07-07T17:47:56.415783Z"
+        },
+        {
+          "id": "PYSEC-2026-2046",
+          "modified": "2026-07-07T17:47:56.418201Z"
+        },
+        {
+          "id": "PYSEC-2026-2320",
+          "modified": "2026-07-13T07:15:48.093424Z"
+        },
+        {
+          "id": "PYSEC-2026-3417",
+          "modified": "2026-07-13T16:43:34.482065Z"
+        },
+        {
+          "id": "PYSEC-2026-4312",
+          "modified": "2026-10-15T14:45:14.716393Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "wheel"
+        },
+        "version": "0.45.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-8rrh-rw8j-w5fx",
+          "modified": "2026-09-10T03:50:32.887502Z"
+        },
+        {
+          "id": "PYSEC-2026-2047",
+          "modified": "2026-07-07T17:47:43.451695Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "xlrd"
+        },
+        "version": "2.0.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "xlsxwriter"
+        },
+        "version": "3.1.9"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "xlwt"
+        },
+        "version": "1.3.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "zeep"
+        },
+        "version": "4.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-4cc2-g9w2-fhf6",
+          "modified": "2026-07-13T07:26:20.896735Z"
+        },
+        {
+          "id": "PYSEC-2026-2323",
+          "modified": "2026-07-13T07:15:49.587927Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "zope-event"
+        },
+        "version": "6.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "zope-interface"
+        },
+        "version": "8.7"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-aix-ppc64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-darwin-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-darwin-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-freebsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-freebsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-arm"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-loong64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-mips64el"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-ppc64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-riscv64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-s390x"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-netbsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-netbsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-openbsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-openbsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-sunos-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-win32-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-win32-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "typescript"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "host_typecheck_tool"
+      ],
+      "advisories": []
+    }
+  ],
+  "limits": [
+    "Public advisory matching only, not a security pass or exploitability judgment.",
+    "Names/versions only sent; no source, credentials, workspace records or user documents.",
+    "OS/vendor runtimes, vendored libraries, archive/layer/history secrets, network and actual fresh release tests remain separate."
+  ]
+}

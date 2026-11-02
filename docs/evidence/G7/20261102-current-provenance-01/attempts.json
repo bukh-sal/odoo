@@ -1,0 +1,11 @@
+{
+  "work_item": "G-01d2",
+  "attempts": [
+    {
+      "attempt": "worker helper compared with current host file",
+      "finding": "The independently approved worker intentionally bundles the contract helper from build151ad969; current host bytes include newer restart/operations-view helpers. First strict source assertion refused before producing a worker qualification or mutating runtime.",
+      "correction": "Preserved audit_worker_attempt01.py. Bound actual image hash to approved worker build and historical Git blob, compared normalized AST excluding the two host-only helpers, verified worker callers never reference them and all three frozen worker schemas/current other12source files match. No worker rebuild, restart or schema exception."
+    }
+  ],
+  "limits": "Bounded static source/dependency/notices provenance only; current advisory/security/fresh-release qualification remains."
+}
