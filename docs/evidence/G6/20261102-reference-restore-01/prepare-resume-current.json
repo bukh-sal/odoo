@@ -1,0 +1,12 @@
+{
+  "result": "exact_private_recovery_review",
+  "decision_hash": "sha256:7bf5862aa0c4d2598c15a5b7bee4857e5dbb4425b97d604cc8579d4c5a5f6d26",
+  "review": {
+    "expires_at": "2026-11-02T11:12:54Z",
+    "issued_at": "2026-11-02T10:57:54Z",
+    "operator_authorization_generation": 1,
+    "policy_version": 1,
+    "review_id": "262309f7-3384-41f0-9f2d-6ad70544e0d9"
+  },
+  "action": "resume_verified_restore"
+}

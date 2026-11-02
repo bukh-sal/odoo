@@ -1,0 +1,29 @@
+{
+  "result": "passed_actual_recovered_ordinary_original_actor_remote_job_with_current_key",
+  "configuration_generation": 19,
+  "job": {
+    "id": "49f02c7a-025a-4e72-a7c3-d465710457e2",
+    "state": "completed",
+    "progress": 100,
+    "attempts": 1,
+    "error_code": null,
+    "result": {
+      "note_id": "33a105b1-d71b-4825-9655-d940addfd6d0",
+      "revision": 2,
+      "statistics": {
+        "lines": 1,
+        "words": 7,
+        "characters": 50
+      }
+    }
+  },
+  "actual_ordinary_independent_CLI": true,
+  "current_publication7_endpoint5_key_recovery19": true,
+  "all_old28jobs_and_other16tables_exact": true,
+  "same_current_rotated_worker": true,
+  "current_manager_healthy_provider_enabled": true,
+  "no_new_note_or_business_schema": true,
+  "limits": [
+    "Stateless reference result only; actual non-idempotent uncertain effect/reconciliation remains separate JOB03. Changed-worker-image and browser/G7 still pending."
+  ]
+}

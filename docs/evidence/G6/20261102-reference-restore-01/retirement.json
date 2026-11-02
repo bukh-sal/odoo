@@ -1,0 +1,14 @@
+{
+  "result": "retired_exact_completed_reference_recovery_helpers",
+  "removed_containers": 22,
+  "readonly_observations": 12,
+  "superseded_host_apps": 1,
+  "active_host_database_edge_rotated_worker_preserved": true,
+  "failed_database_and_checkpoint_files_images_volumes_retained": true,
+  "private_diagnostics_archived": true,
+  "new_images": 0,
+  "new_volumes": 0,
+  "images_removed": 0,
+  "volumes_removed": 0,
+  "no_global_prune": true
+}

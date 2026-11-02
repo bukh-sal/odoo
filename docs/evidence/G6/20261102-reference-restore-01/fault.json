@@ -1,0 +1,12 @@
+{
+  "result": "verified_actual_post_metadata_commit_fault",
+  "operation_id": "d0b079f4-415d-4ea5-b777-f543ae70e752",
+  "plan_hash": "sha256:af4e8219a765df99c491f435d2cf4c3eb5605c64959585e085170a4f85850511",
+  "state": "recovery_required",
+  "mutation_started": true,
+  "traffic_resumed": false,
+  "actual_metadata_child_exit0": true,
+  "only_provider_feature_and_policy_committed": true,
+  "all28job_outcomes_and_other_data_exact": true,
+  "same_worker_and_current_publication": true
+}

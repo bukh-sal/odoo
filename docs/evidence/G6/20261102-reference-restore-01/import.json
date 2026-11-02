@@ -1,0 +1,32 @@
+{
+  "approval_expires_at": null,
+  "backup_id": null,
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:af4e8219a765df99c491f435d2cf4c3eb5605c64959585e085170a4f85850511"
+      },
+      "sequence": 386,
+      "utc": "2026-11-02T10:32:15Z"
+    },
+    {
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "d0b079f4-415d-4ea5-b777-f543ae70e752",
+        "plan_hash": "sha256:af4e8219a765df99c491f435d2cf4c3eb5605c64959585e085170a4f85850511",
+        "request_id": "8962e496-f38b-443b-b28b-90a90135e24d",
+        "requested_by": "1ea0b2ac-ae49-4ea7-bfad-0ed1699301ad",
+        "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa"
+      },
+      "sequence": 387,
+      "utc": "2026-11-02T10:32:16Z"
+    }
+  ],
+  "mutation_started": false,
+  "operation_id": "d0b079f4-415d-4ea5-b777-f543ae70e752",
+  "phase": "prepared",
+  "plan_hash": "sha256:af4e8219a765df99c491f435d2cf4c3eb5605c64959585e085170a4f85850511",
+  "state": "awaiting_operator_approval",
+  "traffic_resumed": false
+}

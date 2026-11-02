@@ -1,0 +1,11 @@
+{
+  "result": "passed_restored_native_HTTP_and_release_plan_fences",
+  "generation": 19,
+  "native_A_B_C_list_form": true,
+  "saved_Note_readable": true,
+  "old_epoch18_gateway409": true,
+  "old_native_RPC_ClientReleaseMismatch": true,
+  "retired_plan_exit2": true,
+  "all17tables_28jobs_exact": true,
+  "browser_rendering_tested": false
+}

@@ -1,0 +1,19 @@
+{
+  "result": "passed_actual_independent_revocation_and_fresh_key_publication_before_resume",
+  "publication_before": 5,
+  "revoked_publication": 6,
+  "current_publication": 7,
+  "endpoint_generation_before": 3,
+  "current_endpoint_generation": 5,
+  "old_key_id": "provider13-key",
+  "current_key_id": "recovery19-key",
+  "same_worker_container_image_mounts_and_scope": true,
+  "explicit_separate_operator_stop_public_update_start": true,
+  "public_only_worker_configuration": true,
+  "private_issuer_only_in_operator_store": true,
+  "metadata_installer_did_not_control_worker": true,
+  "all17tables_and28jobs_exact": true,
+  "host_still_closed_requires_fresh_resume_review": true,
+  "new_images": 0,
+  "new_volumes": 0
+}

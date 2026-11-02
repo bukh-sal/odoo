@@ -356,3 +356,18 @@ metadata source carryforward. See ../evidence/G6/20261102-connector-lifecycle-01
 This does not qualify unknown external effects/credential recovery, changed-image
 approval or degraded browser rendering. Those remain required before G6; no
 native trust boundary, frozen wire contract or UI infrastructure choice changed.
+
+
+Actual reference recovery checkpoint (2026-11-02): a normal metadata suspension
+faulted after its real child committed. Fresh DB/native epoch19 restored the
+checkpoint and current native authority while closed, retaining old job/business/
+event/native/file state and the independently managed worker. After SQL restore,
+a new OS endpoint revocation invalidated an unexpired resume review. Separate
+operator public-key/config rotation and publication7, actual retired-key/token
+refusals, a new review and successful ordinary recovered job qualify the current
+authority boundary at resume. This timing is explicit; it is not a claim that a
+new revocation was injected before SQL restore. The installer never controlled
+that operator runtime/key transition. See ../evidence/G6/20261102-reference-restore-01/README.md.
+The reference remains stateless; JOB03 non-idempotent unknown-effect reporting/
+reconciliation still needs a real effect fixture, and changed-image/UI/G7 work
+remains. No public protocol, trust boundary or generic effects orchestrator changed.

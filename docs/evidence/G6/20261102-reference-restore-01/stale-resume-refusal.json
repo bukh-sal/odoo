@@ -1,0 +1,16 @@
+{
+  "result": "passed_actual_post_review_revocation_invalidates_old_resume",
+  "old_resume_decision_hash": "sha256:96402fe94b6804468adf63237d345c128ca8da11aeaa5656ceb85a0ca9a59ae9",
+  "old_review_unexpired": true,
+  "changed_review_fields": [
+    "effects",
+    "restored_observation_digest"
+  ],
+  "direct_verifier_rejects_changed_current_state": true,
+  "exit_code": 2,
+  "current_publication_generation": 6,
+  "endpoint_generation": 4,
+  "traffic_and_dispatch_stay_closed": true,
+  "old28jobs_and_all17tables_exact": true,
+  "revoked_approval_not_restored_from_checkpoint": true
+}

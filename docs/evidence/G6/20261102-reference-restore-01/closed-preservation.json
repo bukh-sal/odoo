@@ -1,0 +1,26 @@
+{
+  "result": "passed_actual_fresh_reference_restore_while_closed",
+  "operation_id": "d0b079f4-415d-4ea5-b777-f543ae70e752",
+  "configuration_generation": 19,
+  "fresh_database_derived_from_exact_operation": true,
+  "failed_database_retained": true,
+  "checkpoint_metadata_native_schema_modules_and_all30notes_exact": true,
+  "all28job_outcomes_inputs_keys_attempts_deadlines_results_preserved": true,
+  "changed_job_epochs": 25,
+  "workspace_policy_generation_plus1_security_invalidation": true,
+  "current_native_authority_and_private_auth_exact": true,
+  "technical_credentials_revoked": true,
+  "source_checkpoint_feature_restored": true,
+  "all49outbox35subscriptions251deliveries_and_consumption_history_exact": true,
+  "old_files_preserved": 48,
+  "same_running_external_worker_and_independent_publication5": true,
+  "dispatch_profile": "r1-reference-stateless-dispatch-v1",
+  "dispatch_generation": 97,
+  "dispatch_paused": true,
+  "actual_edge_stopped": true,
+  "separate_resume_required": true,
+  "limits": [
+    "No new post-checkpoint OS revocation was injected; current independent publication/key state is unchanged and is not restored from the DB.",
+    "Actual non-idempotent external uncertainty/reconciliation remains JOB03, separate from this stateless reference restore."
+  ]
+}
