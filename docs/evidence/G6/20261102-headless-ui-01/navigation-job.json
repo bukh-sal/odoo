@@ -1,0 +1,19 @@
+{
+  "result": "passed_real_browser_enqueued_navigation_job",
+  "job_id": "2e6a22d5-b908-4b6f-bc77-922057c7a902",
+  "state": "completed",
+  "attempts": 1,
+  "error_code": null,
+  "result_value": {
+    "note_id": "a31c7960-2ebc-4d73-9c98-70292275ecad",
+    "revision": 2,
+    "statistics": {
+      "lines": 1,
+      "words": 3,
+      "characters": 19
+    }
+  },
+  "native_generation": 24,
+  "actor_original": true,
+  "browser_triggered": true
+}

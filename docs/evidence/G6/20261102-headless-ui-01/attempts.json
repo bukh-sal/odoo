@@ -1,0 +1,8 @@
+{
+  "result": "diagnosed_test_fixture_and_readiness_observations",
+  "first_healthy_attempt": "Wrong existing title selected. Actual UI queued one job. Browser closed; its original pending deadline expired. One guarded runner pass terminalized it with zero attempts/no remote effect.",
+  "correction": "Read immutable Note IDs/titles from baseline. Corrected original Note displayed its real cached result; later fresh real jobs verified navigation, both outages and recovery.",
+  "timeout_recovery": "Unpause completed once; immediate observer refused not-yet-healthy worker. Fresh Docker healthy heartbeat/source inspection discriminated readiness; separate attest reused same current image/key/config/publication without another unpause.",
+  "all_production_sources_unchanged": true,
+  "personal_browser_used": false
+}

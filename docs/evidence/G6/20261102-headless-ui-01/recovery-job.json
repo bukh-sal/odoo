@@ -1,0 +1,19 @@
+{
+  "result": "passed_real_browser_enqueued_recovery_job",
+  "job_id": "8098138a-ddfb-4044-8519-269187a75d1e",
+  "state": "completed",
+  "attempts": 1,
+  "error_code": null,
+  "result_value": {
+    "note_id": "70374666-2199-4c99-897b-980518dc6b98",
+    "revision": 1,
+    "statistics": {
+      "lines": 0,
+      "words": 0,
+      "characters": 0
+    }
+  },
+  "native_generation": 24,
+  "actor_original": true,
+  "browser_triggered": true
+}

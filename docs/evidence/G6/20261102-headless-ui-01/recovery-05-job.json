@@ -1,0 +1,16 @@
+{
+  "result": "passed_actual_browser_recovery_job",
+  "job_id": "ddd293c5-897a-4cd9-acdf-782338668c8e",
+  "state": "completed",
+  "attempts": 1,
+  "error_code": null,
+  "result_value": {
+    "note_id": "5df6a1b5-8ae0-4bf6-978d-464dae38ff7c",
+    "revision": 2,
+    "statistics": {
+      "lines": 1,
+      "words": 5,
+      "characters": 36
+    }
+  }
+}

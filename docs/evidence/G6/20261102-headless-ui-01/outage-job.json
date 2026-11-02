@@ -1,0 +1,11 @@
+{
+  "result": "passed_real_browser_enqueued_outage_job",
+  "job_id": "279c1271-5984-4f2a-bbfd-dda76ba5fe70",
+  "state": "dead_letter",
+  "attempts": 1,
+  "error_code": "DEADLINE_EXCEEDED",
+  "result_value": null,
+  "native_generation": 24,
+  "actor_original": true,
+  "browser_triggered": true
+}

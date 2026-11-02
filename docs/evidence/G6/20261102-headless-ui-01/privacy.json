@@ -1,0 +1,9 @@
+{
+  "result": "passed_new_evidence_active_fixture_password_and_private_key_marker_scan",
+  "known_password_values": 4,
+  "public_files": 41,
+  "findings": 0,
+  "screenshots_of_synthetic_fixtures_visually_reviewed": true,
+  "private_profiles_cookies_logs_not_published": true,
+  "limits": "Bounded new-evidence scan; final complete release SEC03 audit remains G7."
+}

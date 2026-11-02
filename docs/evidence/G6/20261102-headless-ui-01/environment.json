@@ -1,0 +1,16 @@
+{
+  "git_base": "9a2bea7f7dd29c0089b95f5261a31a03fc82df67",
+  "product_source_checkpoint": "10f8734d40109cf01f076d22be1e576477179d2b",
+  "source_tree_note": "No product source changes after the UI plugin upgrade checkpoint; exact installed hashes verified in qualification and backend coverage.",
+  "python": "3.12.15 (main, Oct 21 2026, 17:48:33) [MSC v.1944 64 bit (AMD64)]",
+  "node": "v24.22.1",
+  "edge_installed_product_version": "156.0.4314.50",
+  "browser_mode": "headless=new; project-owned protected user-data-dir; local fixture origin only",
+  "docker_server_version": "29.9.2",
+  "os": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64"
+  },
+  "commands": "See README.md and phase-guarded driver source. All processes terminal; no production deployment."
+}

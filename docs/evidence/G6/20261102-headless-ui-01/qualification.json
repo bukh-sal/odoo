@@ -1,0 +1,73 @@
+{
+  "result": "passed_SVC02_actual_native_UI_timeout_crash_navigation_and_recovery",
+  "utc": "2026-11-02T15:12:44.241413+00:00",
+  "acceptance": [
+    "SVC-02"
+  ],
+  "spec_sections": [
+    "14.6",
+    "22.4",
+    "22.5",
+    "23"
+  ],
+  "native_generation": 24,
+  "dispatch_generation": 117,
+  "image": "sha256:22067a190d1f81d35c45ac2f74ac64269da70359d79fbb2e91bbb1a74b0e4ac9",
+  "inventory": "sha256:e9240b4fece52ade7af8c06fa6a46c0cdd888008cd6601d1faeb5c8352e55da2",
+  "worker_container": "6e786efe43b7bf5716fd82e276ba7fd95133492dc872b91d6a4ce2807ab8a93d",
+  "worker_image": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "actual_headless_Edge_with_fresh_protected_profiles": true,
+  "personal_browser_used": false,
+  "all_five_owned_browsers_exited_zero": true,
+  "real_native_list_form_and_existing_slot_Odoo_notifications": true,
+  "cached_revision2_statistics50_7_1_visible": true,
+  "actual_post_navigation_computation_no_late_notice": true,
+  "actual_paused_worker_timeout_degraded_UI": true,
+  "actual_SIGKILL137_worker_crash_degraded_UI": true,
+  "native_Notes_list_usable_during_both_outages": true,
+  "explicit_post_recovery_real_results_visible": true,
+  "uncaught_UI_exceptions": 0,
+  "original30job_outcomes_and_other16tables_all30Notes_exact": true,
+  "additional_UI_jobs": 6,
+  "terminal_jobs": 36,
+  "new_job_states": {
+    "completed": 3,
+    "dead_letter": 3
+  },
+  "first_wrong_fixture_job_never_dispatched": true,
+  "current_worker_config9_key19_publication11_and_scope_exact": true,
+  "worker_start_timestamp_changed_only_for_explicit_crash_restart": true,
+  "no_new_images_volumes_or_plugin_features": true,
+  "source_sha256": {
+    "platform_addons/mp_example_notes_stats/static/src/analysis.js": "e75d97785ccf20cd4c46b97446189dafb870ae2e0036f1c85d0b7eae20ae41bd",
+    "platform_addons/mp_example_notes_stats/__manifest__.py": "4f8595c0b26e6d9e1d12e5f617b0ee4a68369773a9f2ee522424a112ea6660dc",
+    "plugins/notes_stats/plugin.toml": "05577f3f853dc99a20e209d6d5ddc828103905401616c855e7d06def00f5879b",
+    "tests/test_notes_analysis_action.mjs": "1884863681459ac13ae650eaac7b78caafc768fc48db863776fc77a4d8cc49c5"
+  },
+  "records": {
+    "healthy-result.json": "debe041d04933e951b40047930aec986d0f454ed38ac862642567d52b532f2ef",
+    "timeout-UI.json": "141d178c2a2c61356b33497f1d09c8d01f77f7221e937965c25b217dab105dec",
+    "crash-UI.json": "38f0d6c24c2aba0e6a0eba360684de8d089ea3a09a4c4d7c64a1859e4a6c2c37",
+    "navigation-job.json": "c290c112c6bbaac8f999be47ac942df22d24212eb457fb47688c0c095d45d173",
+    "outage-job.json": "370dcd6871d7c364c8fc078c00243bc1d09b5c6fe1b91a526708177e22fd6c89",
+    "recovery-job.json": "73dac72abd8b4cbae4e25584a759f694a9dabca3b32bacdd571629d45329590a",
+    "crash-05-job.json": "ebee861cec7717dff7188f1120d55ea05d90b162d15dc5657242921f9175416a",
+    "recovery-05-job.json": "ee87138abbb5513d95752f68ed3d0689ec3f22ffe285b95a64434c79cf27fd12",
+    "attempt01-runner.json": "07b412d94258d2e5608d7bdde3885b188fc687af38124e5abf9c61a3be922239",
+    "crash-degraded.png": "3d3717232f01eb627aae6f7f602b129b15ec77d28d47a2eb3337a426eaa2f8d2",
+    "crash-recovered-result.png": "916b0d233cd6ff2eb60347454ccc364a65018eb2154ea5d74edcf5caa029af2c",
+    "healthy-native-form.png": "dcf7b508d13aaf59962ab02495871fca89f92bb4b50cd9ed598e5e88862446d6",
+    "initial-native-list.png": "0fb1ef687c75d71dbb598388da45343064cd285390d32b4c43216bfda1d44f10",
+    "navigation-clean.png": "cc92ec8827284963439a4e1de51cf98d05ade29023ec6bbe54833c97d4ce9475",
+    "outage-degraded.png": "2fdf8514d8183dfc093d23e5c71d9fb9e59686f9491934b1f333eb7628d3f084",
+    "outage-native-list.png": "2566ae75fa2c5802404eba3eec6d62fb8c8afa58848786d3b9e51afa64cd44a7",
+    "recovered-result.png": "74058ccc440ab699cb6f665e8b90e1b35bd502734acc1b1f16fb763728071f98"
+  },
+  "screenshots_visually_reviewed": true,
+  "limits": [
+    "Real browser DOM/events/native views and Odoo notifications; no function replacement or fake worker results.",
+    "This proves G6 UI behavior, not UI09 keyboard/contrast/zoom/RTL or complete G7 qualification.",
+    "UI cancellation retires polling/notifications; the already accepted read-only durable job may finish. No cancellation rollback claim.",
+    "Cleanup and final G6 evidence audit must finish before gate-G6 is marked passed."
+  ]
+}

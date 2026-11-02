@@ -1,0 +1,10 @@
+{
+  "operation_id": "6a5188d6-4689-46fe-9b68-73af1d1e395d",
+  "results": [
+    {
+      "error_code": "DEPENDENCY_UNAVAILABLE",
+      "job_id": "5048b4d0-8c90-43fb-8aa0-b447a3231f0e",
+      "state": "dead_letter"
+    }
+  ]
+}

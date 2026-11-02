@@ -1,0 +1,8 @@
+{
+  "result": "passed_actual_browser_crash_job",
+  "job_id": "5048b4d0-8c90-43fb-8aa0-b447a3231f0e",
+  "state": "dead_letter",
+  "attempts": 1,
+  "error_code": "DEPENDENCY_UNAVAILABLE",
+  "result_value": null
+}

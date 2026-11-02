@@ -1,0 +1,11 @@
+{
+  "result": "actual_UI_navigation_timeout_native_survival_and_recovered_result",
+  "native_generation": 24,
+  "personal_browser_used": false,
+  "nativeViews": true,
+  "navigation_retirement_verified": true,
+  "timeout_degraded_notification_verified": true,
+  "native_list_usable_during_outage": true,
+  "explicit_post_recovery_result_verified": true,
+  "exception_count": 0
+}

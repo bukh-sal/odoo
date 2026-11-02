@@ -1,0 +1,39 @@
+{
+  "result": "retired_exact_terminal_observers_all_owned_browsers_stopped",
+  "containers_removed": 1,
+  "new_images": 0,
+  "new_volumes": 0,
+  "personal_browser_touched": false,
+  "owned_browser_processes_still_running": 0,
+  "profiles_retained": [
+    {
+      "role": "protected_owned_test_browser_profile",
+      "name": "headless-ui-01",
+      "bytes": 18899499
+    },
+    {
+      "role": "protected_owned_test_browser_profile",
+      "name": "headless-ui-02",
+      "bytes": 61877543
+    },
+    {
+      "role": "protected_owned_test_browser_profile",
+      "name": "headless-ui-03",
+      "bytes": 19011561
+    },
+    {
+      "role": "protected_owned_test_browser_profile",
+      "name": "headless-ui-04",
+      "bytes": 66185315
+    },
+    {
+      "role": "protected_owned_test_browser_profile",
+      "name": "headless-ui-05",
+      "bytes": 66287788
+    }
+  ],
+  "profile_removal": "Automatic approval review rejected deleting the five owned profiles: blocked by policy; no specific reason supplied. No deletion ran and no alternate deletion method was attempted.",
+  "profiles_protected_and_excluded_from_release": true,
+  "current_host_worker_database_public_authority_and_checkpoint_roles_preserved": true,
+  "no_global_prune": true
+}
