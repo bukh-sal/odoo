@@ -1,0 +1,22 @@
+{
+  "result": "passed_actual_installed_original_actor_remote_analysis_job",
+  "job_id": "09fdd06d-b312-45c7-b004-3776f9e8da23",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "actual_independent_runner_and_installed_bridge_without_source_substitution": true,
+  "one_completed_job_one_attempt": true,
+  "original_actor_uid": 6,
+  "revision_and_structured_statistics_exact": true,
+  "note_body_sha256": "cda149aca252da020cbba412409ff703412be9f0d57f01314ff97afc1eb8416a",
+  "statistics": {
+    "characters": 50,
+    "words": 7,
+    "lines": 1
+  },
+  "old19jobs_and_all16_other_tables_exact": true,
+  "no_note_text_in_job_payload": true,
+  "worker_identity_key_config3_publication5_exact": true,
+  "limits": [
+    "Positive remote path and gateway replay only; worker duplicate/outage/scoped/in-flight authority/external recovery/changedimage/browser still required."
+  ]
+}

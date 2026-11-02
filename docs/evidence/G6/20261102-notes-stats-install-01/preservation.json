@@ -1,0 +1,27 @@
+{
+  "result": "passed_actual_approved_native_connector_C_install",
+  "operation_id": "6de93eb4-a2d2-41f1-919c-59908b7cf02a",
+  "plan_hash": "sha256:dd6aa560d3c1e0fa1be90eda528177ec862537916728a630273b5b9fe51915c4",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "image_id": "sha256:bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82",
+  "inventory_digest": "sha256:4833b5ca3052eba929be4c4c9456b7ccd1a27057bfe4641c0cb89a7ef81a2ac3",
+  "new_metadata_rows": {
+    "installations": 1,
+    "features": 1,
+    "grants": 2,
+    "bindings": 3
+  },
+  "native_connector_installed_only_C": true,
+  "no_new_business_table_or_note_field": true,
+  "old_module_state_versions_and_core_sdk16_exact": true,
+  "all17original_tables_preserved_under_exact_new_footprint_policy_epoch_changes": true,
+  "old_job_outcomes_inputs_attempts_preserved": 19,
+  "jobs_epoch_updated": 18,
+  "old_checkpoint_files_preserved": 48,
+  "independent_worker_config3_publication5_physical_identity_key_exact": true,
+  "helper_only_moved_to_admitted_image": true,
+  "limits": [
+    "Installed native footprint only; original-actor service/job/actual remote/degraded/in-flight and recovery qualification follows."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "result": "retired_owned_completed_current-notes-stats_readonly_inspection_helpers",
+  "removed_containers": 2,
+  "exact_deployment_project_image_exit0_and_durable_readonly_receipt_required": true,
+  "private_diagnostics_and_receipts_retained": true,
+  "active_host_database_edge_external_worker_and_checkpoint_roles_preserved": true,
+  "images_removed": 0,
+  "volumes_removed": 0,
+  "no_global_prune": true
+}

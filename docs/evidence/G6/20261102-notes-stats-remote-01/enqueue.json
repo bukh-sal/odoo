@@ -1,0 +1,10 @@
+{
+  "job": {
+    "id": "09fdd06d-b312-45c7-b004-3776f9e8da23",
+    "state": "pending",
+    "progress": 0,
+    "attempts": 0,
+    "error_code": null,
+    "result": null
+  }
+}

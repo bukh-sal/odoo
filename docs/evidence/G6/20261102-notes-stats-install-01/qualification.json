@@ -1,0 +1,27 @@
+{
+  "result": "passed_actual_scoped_native_connector_install",
+  "operation_id": "6de93eb4-a2d2-41f1-919c-59908b7cf02a",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "image_id": "sha256:bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82",
+  "inventory_digest": "sha256:4833b5ca3052eba929be4c4c9456b7ccd1a27057bfe4641c0cb89a7ef81a2ac3",
+  "evidence_sha256": {
+    "preservation.json": "5e3c15bab77640410fec1c4816fcce850cf470b1576a09f52a06600868b49556",
+    "entrypoints.json": "bb0fafdae277087e6750ba82a20ef33a8ab952556e38e257a92b506088e5971c",
+    "install-handoff-qualification.json": "eefed61bb3cef83eae12ae5b65eeaa784bed9411c86d583bae1a9f92ff4f82c9",
+    "retirement.json": "217c9c4cbfeebabbcf78b4f4dc237cca49c92f44d947a016217c022156e30cef",
+    "observation-retirement.json": "bc442fb08f810e4d6be03134e52df93319cc22a50619c6ebf535393d3e21053f"
+  },
+  "new_scoped_installation_feature_grants_bindings": [
+    1,
+    1,
+    2,
+    3
+  ],
+  "no_new_business_table_or_note_field": true,
+  "old19job_outcomes_and_other_data_preserved": true,
+  "external_worker_publication5_untouched": true,
+  "removed_native_helpers": 8,
+  "removed_readonly_helpers": 2,
+  "whole_SVC_G6_pass": false
+}

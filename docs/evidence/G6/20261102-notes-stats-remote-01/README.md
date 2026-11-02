@@ -1,0 +1,9 @@
+# First actual installed original-actor remote analysis
+
+Currentconfig18/control88/BB1/coreSDK16 withscopedNotesStatsC andindependentlyapprovedrunningDocumentStats1d/config3/pub5. `remote.py baseline/enqueue/run/verify` allterminal0; no source injection, mocked network/issuer/IO, newNote or nativecode substitution. The ordinary existing AliceCuser calls installedjobs.analyze for a savedNote/revision; samegatewaykey replay yields the same pendingjob, exactlyone newrow. No other19jobs/16tables change.
+
+Ordinary `tools/modular.py worker ... run-job-once` independentlychecks currentimage/source/publication then runs the inventoried native jobprocess withprotectedauthorityRO. Operation46613772-d9b0-4f96-bc69-e869cc4f7f02 completesjob09fdd06d-b312-45c7-b004-3776f9e8da23. The installed registereddefinition usesdetachedexternalbridge andsignedscopedWorkerClient; publicworker image containsnoOdoo/DBcredentials/issuer. Original-actor currentresource/revision andfinalauthority guards run normally.
+
+`positive-qualification.json`: onecompletedjob/oneattempt, originalAliceUID6, resultrevision2/statistics50characters7words/linesexact; Note bodyhash recordedinstead oftext. Recursivepayloadcheck findsno textkey. All19oldjobrows andother16tables stayexact; workerphysicalidentity/image/key/config3/pub5 unchanged.20terminaljobs now8completed10deadletter2cancelled. Runner/projectionhelpers auto-remove. No non-idempotent remote effect or external storage isclaimed.
+
+This is the actualpositivepath andgatewayreplay, not worker-level duplicate/outage/scopetampering/in-flight revocation/recovery/image/UI proof. Those canonicalnegativecases remain required before SVC/JOB/G6 pass. Current source standardCRUD remainsnativeOdoo; Canvas unchanged. Weightedimplementationestimate advances~89% for installedconnector+realremote behavior; acceptance92/99 unchanged.

@@ -1,0 +1,13 @@
+{
+  "result": "passed_actual_installed_connector_status_scope_and_native_views",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "original_actor_C_context200_status200_no_job": true,
+  "not_installed_A_B_context409_and_foreign_binding_unavailable503": true,
+  "native_notes_A_B_C_list_form_retained": true,
+  "all17tables_and_running_worker_exact": true,
+  "browser_rendering_tested": false,
+  "limits": [
+    "Read-only status path; durable enqueue/real remote computation follows separately."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "kind": "status",
+  "phase": "completed",
+  "stale": false,
+  "state": "completed",
+  "source": "operator_journal_mirror",
+  "history": [
+    {
+      "utc": "2026-11-02T08:56:29Z",
+      "code": "prepared",
+      "sequence": 341
+    },
+    {
+      "utc": "2026-11-02T08:56:33Z",
+      "code": "application_request_imported",
+      "sequence": 342
+    },
+    {
+      "utc": "2026-11-02T08:59:05Z",
+      "code": "approved",
+      "sequence": 343
+    },
+    {
+      "utc": "2026-11-02T09:00:55Z",
+      "code": "reserved",
+      "sequence": 344
+    },
+    {
+      "utc": "2026-11-02T09:01:47Z",
+      "code": "staged",
+      "sequence": 345
+    },
+    {
+      "utc": "2026-11-02T09:02:08Z",
+      "code": "maintenance",
+      "sequence": 346
+    },
+    {
+      "utc": "2026-11-02T09:02:25Z",
+      "code": "drained",
+      "sequence": 347
+    },
+    {
+      "utc": "2026-11-02T09:02:57Z",
+      "code": "checkpointed",
+      "sequence": 348
+    },
+    {
+      "utc": "2026-11-02T09:03:17Z",
+      "code": "mutation_started",
+      "sequence": 349
+    },
+    {
+      "utc": "2026-11-02T09:03:22Z",
+      "code": "migrated",
+      "sequence": 350
+    },
+    {
+      "utc": "2026-11-02T09:03:26Z",
+      "code": "workers_replaced",
+      "sequence": 351
+    },
+    {
+      "utc": "2026-11-02T09:04:15Z",
+      "code": "ready",
+      "sequence": 352
+    },
+    {
+      "utc": "2026-11-02T09:04:17Z",
+      "code": "release_published",
+      "sequence": 353
+    },
+    {
+      "utc": "2026-11-02T09:04:19Z",
+      "code": "traffic_resumed",
+      "sequence": 354
+    },
+    {
+      "utc": "2026-11-02T09:04:36Z",
+      "code": "completed",
+      "sequence": 355
+    }
+  ],
+  "plan_hash": "sha256:dd6aa560d3c1e0fa1be90eda528177ec862537916728a630273b5b9fe51915c4",
+  "dimensions": [
+    {
+      "plugin_id": "org.example.notes_stats",
+      "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+      "feature_state": "enabled",
+      "release_state": "active",
+      "service_state": null,
+      "artifact_state": "verified",
+      "database_state": "installed",
+      "installation_id": "cae8cd52-96f9-52b9-af31-13567266fab8"
+    }
+  ],
+  "error_code": null,
+  "observed_at": "2026-11-02T09:13:19Z",
+  "operation_id": "6de93eb4-a2d2-41f1-919c-59908b7cf02a",
+  "requested_by": "1ea0b2ac-ae49-4ea7-bfad-0ed1699301ad",
+  "schema_version": 1,
+  "control_authority": "independent_local_os",
+  "approval_expires_at": "2026-11-02T09:14:05Z"
+}

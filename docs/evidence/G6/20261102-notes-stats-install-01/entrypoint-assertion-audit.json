@@ -1,0 +1,10 @@
+{
+  "result": "read_only_harness_expectation_corrected_from_existing_contract",
+  "observed_foreign_workspace_status": 503,
+  "error_code": "DEPENDENCY_UNAVAILABLE",
+  "cause": "Gateway queries active binding by public_id AND current workspace; missing scoped binding deliberately returns DEPENDENCY_UNAVAILABLE before resource lookup.",
+  "actual_C_context_and_status_passed": true,
+  "all17tables_and_worker_exact": true,
+  "no_jobs_or_native_code_changed": true,
+  "next": "Fresh labeled read-only continuation expects frozen binding-unavailable code; positive C status and negative A/B are both required."
+}

@@ -1,0 +1,18 @@
+{
+  "result": "rejected_unrequested_python_binary_change",
+  "base_image": "sha256:cfb0fb0d8ea14286bfbb7b47b912bfb86895a7e7b77de3bcdab037e9bcdbe34d",
+  "candidate_image": "sha256:efd103d2e8698dc10934543e70f55dec298445ee840669ae706dd497e85d7f09",
+  "inventory_digest": "sha256:4833b5ca3052eba929be4c4c9456b7ccd1a27057bfe4641c0cb89a7ef81a2ac3",
+  "old_core_sdk_shell_and_three_artifacts_exact": true,
+  "only_new_addon": "mp_example_notes_stats",
+  "artifact_digest": "sha256:2591d6266fe5837ad3fdbad13d5d8e6023b8285921da009f0c495c6d115119cd",
+  "automatic_install_list_unchanged": true,
+  "changed_python_distributions": [
+    "psycopg2",
+    "python-ldap"
+  ],
+  "python_lock_unchanged": true,
+  "deployment_changed": false,
+  "approved_for_staging": false,
+  "next": "Derive from exact approved base layers without adopting rebuilt Python; keep strict guard."
+}
