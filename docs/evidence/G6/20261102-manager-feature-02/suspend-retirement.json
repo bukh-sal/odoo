@@ -1,0 +1,14 @@
+{
+  "result": "retired_owned_terminal_manager_suspension_helpers",
+  "removed_containers": 7,
+  "superseded_apps_removed": 1,
+  "current_host_database_edge_external_worker_preserved": true,
+  "private_diagnostics_archived": true,
+  "host_workers_replaced": true,
+  "new_images": 0,
+  "new_volumes": 0,
+  "images_removed": 0,
+  "volumes_removed": 0,
+  "current_and_actual_checkpoint_roles_retained": true,
+  "no_global_prune": true
+}

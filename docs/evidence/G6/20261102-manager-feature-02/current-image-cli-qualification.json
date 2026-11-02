@@ -1,0 +1,11 @@
+{
+  "result": "passed_actual_current_image_cli_with_independent_external_reader",
+  "read_only_plan": true,
+  "explicit_operator_store_separate_from_catalog": true,
+  "independent_reconstruction_passed": true,
+  "same_external_metadata_pins_retained": true,
+  "all17tables_and_external_worker_unchanged": true,
+  "no_registration_approval_apply_or_native_install": true,
+  "canvas_data_or_product_features_changed": false,
+  "purpose": "Qualify the required current-image native CLI with an existing external metadata root; C Canvas was only nominated, never installed."
+}

@@ -7,6 +7,8 @@ qualified profiles; G6 is active and G7 remains required.
 
 Latest G6 lifecycle evidence:
 
+- [Actual corrective core15 upgrade](evidence/G6/20261102-core15-upgrade-01/README.md) and [installed manager HTTP suspension/handoff](evidence/G6/20261102-manager-feature-02/README.md): config15/control70, exact data/jobs/schema/files/worker preservation, scoped denial/native views, completed mirror and explicit CLI context qualified;15terminalhelpers retired. Browser/remaining lifecycle/remote/recovery still required.
+
 - [Real browser preview counterexample](evidence/G6/20261102-manager-feature-01/README.md) and [corrective core15 source/admission](evidence/G6/20261102-manager-preview15-01/README.md): zero saved requests/data changes, shared restart checker fix117Python/sixJS and G2rev15/97files qualified; corrective image admitted/not deployed.
 
 - [Actual core14/shell10 upgrade, preservation and installed HTTP](evidence/G6/20261102-core14-upgrade-01/README.md): config14/dispatch64, external worker unchanged, native data/jobs/schema/files retained;8terminalhelpers retired. Browser/manager-created lifecycle still required.

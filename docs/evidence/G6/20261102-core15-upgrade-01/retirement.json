@@ -1,0 +1,11 @@
+{
+  "result": "retired_owned_terminal_core15_helpers",
+  "removed_containers": 8,
+  "superseded_apps_removed": 1,
+  "private_diagnostics_archived": true,
+  "current_app_external_worker_database_edge_preserved": true,
+  "images_removed": 0,
+  "volumes_removed": 0,
+  "current_and_actual_checkpoint_images_retained": true,
+  "no_global_prune": true
+}

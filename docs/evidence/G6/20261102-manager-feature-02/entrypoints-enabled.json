@@ -1,0 +1,17 @@
+{
+  "result": "passed_actual_http_enabled_provider",
+  "provider_context_status": 200,
+  "provider_context_available": true,
+  "native_views": {
+    "A": "native_list_form_available",
+    "B": "native_list_form_available",
+    "C": "native_list_form_available"
+  },
+  "manager_reports_process_health_separate_from_feature_availability": true,
+  "all17tables_and_independent_worker_exact": true,
+  "original_actor_uid": 6,
+  "browser_rendering_tested": false,
+  "limits": [
+    "Host context/native view definitions only; no native connector/remote computation installed."
+  ]
+}
