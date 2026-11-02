@@ -1,0 +1,55 @@
+{
+  "result": "passed_exact_minimal_native_connector_curation",
+  "artifact_digest": "sha256:2591d6266fe5837ad3fdbad13d5d8e6023b8285921da009f0c495c6d115119cd",
+  "archives": [
+    {
+      "plugin_id": "org.example.notes",
+      "digest": "sha256:d24876c930fd9b852498f93c90a06f05bf26fd5b98d4de559a3cd0ee50a4bcad",
+      "reproducible": true,
+      "old_image_artifact_exact": true
+    },
+    {
+      "plugin_id": "org.example.notes_labels",
+      "digest": "sha256:e0e61f52454757397f8b6a3e6fea3e8d2860acb63bcd74b38653f95e43218211",
+      "reproducible": true,
+      "old_image_artifact_exact": true
+    },
+    {
+      "plugin_id": "org.example.canvas",
+      "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+      "reproducible": true,
+      "old_image_artifact_exact": true
+    },
+    {
+      "plugin_id": "org.example.notes_stats",
+      "digest": "sha256:2591d6266fe5837ad3fdbad13d5d8e6023b8285921da009f0c495c6d115119cd",
+      "reproducible": true,
+      "old_image_artifact_exact": false
+    }
+  ],
+  "composition_valid": true,
+  "files": [
+    "backend/odoo_addons/mp_example_notes_stats/__init__.py",
+    "backend/odoo_addons/mp_example_notes_stats/__manifest__.py",
+    "backend/odoo_addons/mp_example_notes_stats/contracts.py",
+    "backend/odoo_addons/mp_example_notes_stats/jobs.py",
+    "backend/odoo_addons/mp_example_notes_stats/models.py",
+    "backend/odoo_addons/mp_example_notes_stats/services.py",
+    "inventory.json",
+    "notices/COPYRIGHT",
+    "notices/LICENSE",
+    "plugin.toml",
+    "provenance.json",
+    "schemas/analysis-v1.json"
+  ],
+  "old_three_native_image_artifacts_exact": true,
+  "no_models_fields_pages_or_python_dependencies_added": true,
+  "previous_fixture_trust_generation": 7,
+  "current_fixture_trust_generation": 8,
+  "global_catalog_and_trust_untouched": true,
+  "live_configuration_generation": 17,
+  "dispatch_generation": 85,
+  "release_metadata_bindings_endpoints_and17tables_worker_exact": true,
+  "native_addon_not_installed": true,
+  "no_docker_assets_created": true
+}

@@ -760,3 +760,23 @@ Apply95681 completed0; verify16720/entrypoints3847/mirror95432/retire73339/reado
 ### 2026-11-02T08:18:03.174714+00:00 F-01d separate runtime start and completed re-registration checkpoint
 
 80319 terminal0: afterinstallerproof/cleanup, explicitoperatorstart ofsameworker05/publickey/config3/image1d andcurrentpub5; actualimage/key/scope/addresshealthattested. Protectedreaderprofile refresh nowreportshealthy; originalAliceCcontextstill409, metadata installed/suspended/native_versionNone, no grantrevival/autoenable,17tables exact. Originalruntime marker nowoperator_started_register02_verified; no livehandles. Qualification bindsactualreports/source362exact/20containersretired/no newimagesorvolumes. Closed actualremoved-endpoint preregistrationbug oninstalledSDK16; oldfailed2b5f4ed3 remainsclosed.92/99/rough88 unchanged: requiredconsumer/connector/remote/recovery/image/browser/fullG7 stillrequired. Nextfreshcurrent17enable82→85 withrunningworkerobserver, thennativeconnector build/install. SourceconnectorREADMEmin.12 vsmanifestmin.13 notedforitsnextpackagingbuild; do notmodifyoldcandidate inputs beforethat.
+
+
+### 2026-11-02T08:22:10.708442+00:00 F-01d fresh current17 enable02 nomination captured
+
+Previousgoalturn PROGRESS actualcore16/re-registration/separateoperatorstart/20containercleanup. Read cleanf0b4e38e/status/ADR0037/evidence/spec14.6. Freshbaseline59661 terminal0 canonicalinstalled0.1.1/Csuspended/nativecurrent16/config17/control82; qualified running-worker observer fromoriginalcore15fixture selects currentapproved endpoint3/pub5 dynamically, notstoppedhelper. ActualHTTPprepare/request andcapture70595 terminal0; 6d33faca-a617-4ce4-b0ed-255e278f0ca4/sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77,17tables/worker unchanged beforeauthority. Independentapproval nowrunning; expectedcontrol85/same17/imageCFB. No oldoperation/runtimeprovisioning replay. Nextsameapply/preservation/currentpositiveHTTP/mirror/cleanup, thenconnectorpackaging/actualremote.
+
+
+### 2026-11-02T08:25:14.873019+00:00 F-01d current17 provider enable approved/applying
+
+Independentapprove24680 terminal0, same6d33faca/hash34c92659 freshreconstruction/review/exactapproval andcurrentCFBpreflight pass. Same checkpointedmetadataapply nowrunning; expectedunchangedconfig17/imageCFB/workerpub5 anddispatch82→85. No plugin/source/packagechanges mid-apply. Nextverify/currentpositiveHTTP/nativeviews/samecompletedmirror/exactcleanup thenreferenceconnectorcuration/image/install/remote.
+
+
+### 2026-11-02T08:36:20.536013+00:00 F-01d current17 provider enable fully qualified; return to connector
+
+Same6d33faca apply28828/verify64604/actualHTTP9593/mirror2541/retire84950/readonlycleanup4938 allterminal0. Config17/release/imageCFB unchanged/control85; Cfeatureenabled/policy+1/18jobepochs only in17tables;19oldoutcomes/inputs/attempts/nativefullmodules/schema/48files/independentworkerkey/config3/pub5 exact. OriginalAliceCcontext200freshpolicy/nativeA/B/Clistform/managerinstalled-enabled-healthy-noaddon andsame-opcompletedmirror pass.7operation+3readonlyhelpers privatelyarchived/removed,0newimage/volume. Criticalmetadata/reactivation prerequisite complete; soleactiveleafnowF01c existingNotesStats package/build/install/remote. No product/sourcechanges duringapply; nextcurate archive/newexplicitdistributionvariant andalignREADMEminimum.13 beforecandidatebuild.92/99/rough88 unchanged.
+
+
+### 2026-11-02T08:41:20.584187+00:00 F-01c minimal connector archive curated and candidate inputs ready
+
+Curate44043 terminal0: deterministicvalidated0.1.0digest2591d626,4referencearchivescompositionvalid/old3nativeimageartifacts exact; no table/field/page/Pythondependency. Fixtureonlytrust7→8 andcatalogentryadded, globalprotectedconfigs/data17tables/release/bindings/endpoints/currenthealthyworker/pub5 exact. Explicitdistributionvariant adds onlymp_example_notes_stats/manifest reference; automaticinstall unchanged, defaultpolicy unchanged. SourceREADMEminSDK.12 corrected.13 matchingcurrentmanifest/qualifiedmetadata. No newDockerassets/noinstallation. Enable02qualificationbound10cleanup/sourcecontext; nowholeacceptancecredit. Nextcommitinputs/oneunique candidatebuild/admit/nativeinstall C viaordinary stagedmanager/executor thenrealremote.

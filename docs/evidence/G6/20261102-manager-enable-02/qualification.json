@@ -1,0 +1,21 @@
+{
+  "result": "passed_actual_current17_provider_enable",
+  "operation_id": "6d33faca-a617-4ce4-b0ed-255e278f0ca4",
+  "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77",
+  "configuration_generation": 17,
+  "dispatch_generation": 85,
+  "publication_generation": 5,
+  "endpoint_generation": 3,
+  "evidence_sha256": {
+    "enable-preservation.json": "ceba3fb253d3b87163a15cae52a1ea527dfffafeef3a9d55b8fbbd832a6b889a",
+    "enabled-entrypoints.json": "76087679f4ccc562d279659f2cdbd48074301284d4a1e6188a2e0a2527b455ef",
+    "enable-handoff-qualification.json": "d1c21b3efab6bc841a2ef7173c19c7c49b501829fad9dd1a61844b52804a9980",
+    "enable-retirement.json": "15361073c9802d32ef2583f1ea7d3b07bbd93c7c222bf1cce8bb8cfc710abb1c",
+    "observation-retirement.json": "bce5f6588dd9596d3229655184c305e5c102b58ea2909c89142c1bfa8baf73b8"
+  },
+  "removed_containers": 10,
+  "new_images": 0,
+  "new_volumes": 0,
+  "browser_rendering_tested": false,
+  "whole_SVC_or_G6_pass": false
+}

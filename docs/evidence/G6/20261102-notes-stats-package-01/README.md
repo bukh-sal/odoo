@@ -1,0 +1,7 @@
+# Minimal native Notes analysis connector curation
+
+F-01c/spec14.3/14.5/22.4. Existing connector0.1.0 uses one abstract service model, no business table, Note field, page or extra Python dependency. Source action/UI integration remains deferred until the actual remote path is demonstrated. Canonical provider is enabled on17/85/coreSDK16; no lifecycle/runtime provisioning is repeated.
+
+`package-curation.json`: deterministic validated archive2591d6266fe5837ad3fdbad13d5d8e6023b8285921da009f0c495c6d115119cd, source-composition validity and exact previous3native image artifacts. Only fixture-local catalog/trust7→8 adds the one reviewed digest; global catalog/trust protected. Current release/installations/bindings/endpoints/17tables/runningworker/pub5 remain exact. No addon install or Docker asset created.
+
+`deploy/distribution-r1-notes-stats.json` is an explicit image variant adding only the connector addon/reference package. Its automatic-install list is unchanged; the connector still needs a normal reviewed native installation. Source README minimum corrected.12→.13 to match its existing manifest and qualified metadata prerequisites. No default distribution or existing artifact changed. Next one candidate build/admission and actual C install with fresh scoped permissions/bindings, then original-actor remote/outage/duplicate/scoped/in-flight and recovery/image/UI qualification. No new acceptance credit from the archive or build.

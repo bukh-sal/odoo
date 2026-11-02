@@ -1,0 +1,117 @@
+{
+  "approval_expires_at": "2026-11-02T08:38:54Z",
+  "backup_id": "6d33faca-a617-4ce4-b0ed-255e278f0ca4",
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77"
+      },
+      "sequence": 326,
+      "utc": "2026-11-02T08:22:22Z"
+    },
+    {
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "6d33faca-a617-4ce4-b0ed-255e278f0ca4",
+        "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77",
+        "request_id": "26ceadc1-6d25-43c8-a4da-fb88f3a1169a",
+        "requested_by": "1ea0b2ac-ae49-4ea7-bfad-0ed1699301ad",
+        "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa"
+      },
+      "sequence": 327,
+      "utc": "2026-11-02T08:22:24Z"
+    },
+    {
+      "code": "approved",
+      "details": {
+        "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77"
+      },
+      "sequence": 328,
+      "utc": "2026-11-02T08:23:54Z"
+    },
+    {
+      "code": "reserved",
+      "details": {
+        "executor_pid": 30536,
+        "lock_owner_digest": "sha256:75ee39027ccd05b65a92ee8e83fdce09927d47bf7d4a77983973eb24fcecd433"
+      },
+      "sequence": 329,
+      "utc": "2026-11-02T08:25:45Z"
+    },
+    {
+      "code": "staged",
+      "details": {},
+      "sequence": 330,
+      "utc": "2026-11-02T08:26:40Z"
+    },
+    {
+      "code": "maintenance",
+      "details": {},
+      "sequence": 331,
+      "utc": "2026-11-02T08:27:04Z"
+    },
+    {
+      "code": "drained",
+      "details": {},
+      "sequence": 332,
+      "utc": "2026-11-02T08:27:22Z"
+    },
+    {
+      "code": "checkpointed",
+      "details": {
+        "backup_id": "6d33faca-a617-4ce4-b0ed-255e278f0ca4"
+      },
+      "sequence": 333,
+      "utc": "2026-11-02T08:27:59Z"
+    },
+    {
+      "code": "mutation_started",
+      "details": {},
+      "sequence": 334,
+      "utc": "2026-11-02T08:28:17Z"
+    },
+    {
+      "code": "migrated",
+      "details": {},
+      "sequence": 335,
+      "utc": "2026-11-02T08:28:21Z"
+    },
+    {
+      "code": "workers_replaced",
+      "details": {},
+      "sequence": 336,
+      "utc": "2026-11-02T08:28:40Z"
+    },
+    {
+      "code": "ready",
+      "details": {},
+      "sequence": 337,
+      "utc": "2026-11-02T08:29:33Z"
+    },
+    {
+      "code": "release_published",
+      "details": {},
+      "sequence": 338,
+      "utc": "2026-11-02T08:29:34Z"
+    },
+    {
+      "code": "traffic_resumed",
+      "details": {},
+      "sequence": 339,
+      "utc": "2026-11-02T08:29:36Z"
+    },
+    {
+      "code": "completed",
+      "details": {},
+      "sequence": 340,
+      "utc": "2026-11-02T08:29:55Z"
+    }
+  ],
+  "mutation_started": true,
+  "operation_id": "6d33faca-a617-4ce4-b0ed-255e278f0ca4",
+  "phase": "completed",
+  "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77",
+  "state": "completed",
+  "traffic_resumed": true
+}

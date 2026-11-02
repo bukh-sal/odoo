@@ -1,0 +1,32 @@
+{
+  "approval_expires_at": null,
+  "backup_id": null,
+  "history": [
+    {
+      "code": "prepared",
+      "details": {
+        "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77"
+      },
+      "sequence": 326,
+      "utc": "2026-11-02T08:22:22Z"
+    },
+    {
+      "code": "application_request_imported",
+      "details": {
+        "operation_id": "6d33faca-a617-4ce4-b0ed-255e278f0ca4",
+        "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77",
+        "request_id": "26ceadc1-6d25-43c8-a4da-fb88f3a1169a",
+        "requested_by": "1ea0b2ac-ae49-4ea7-bfad-0ed1699301ad",
+        "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa"
+      },
+      "sequence": 327,
+      "utc": "2026-11-02T08:22:24Z"
+    }
+  ],
+  "mutation_started": false,
+  "operation_id": "6d33faca-a617-4ce4-b0ed-255e278f0ca4",
+  "phase": "prepared",
+  "plan_hash": "sha256:34c926591a0051d3bcea10a3c3f512cbb5485abd64d21039c89590c437770c77",
+  "state": "awaiting_operator_approval",
+  "traffic_resumed": false
+}

@@ -1,0 +1,13 @@
+{
+  "result": "passed_actual_current17_enabled_provider_http_native_gates",
+  "configuration_generation": 17,
+  "dispatch_generation": 85,
+  "original_actor_context200_with_fresh_policy": true,
+  "native_A_B_C_list_form_retained": true,
+  "manager_reports_installed_enabled_healthy_no_native_addon": true,
+  "all17tables_and_independent_worker_exact": true,
+  "browser_rendering_tested": false,
+  "limits": [
+    "Host/native view definitions only; actual Notes connector and remote computation remain required."
+  ]
+}
