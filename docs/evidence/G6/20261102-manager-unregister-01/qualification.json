@@ -1,0 +1,41 @@
+{
+  "result": "passed_bounded_installed_http_manager_unregister_profile",
+  "operation_id": "9e1686d6-3090-4aeb-8455-85d08f78b22c",
+  "plan_hash": "sha256:75dd122e82b6e69d2f975c81ddc9330098e94ebff3503ba25428b88abdeb21af",
+  "configuration_generation": 15,
+  "dispatch_generation": 76,
+  "publication_generation": 4,
+  "endpoint_generation": 2,
+  "source_context": {
+    "parent_commit": "519cf34229d067297b2b41745cfdc106b3d6a9ff",
+    "current_native_image": "sha256:b992b9b4a7fee09e29c43e072418b09e31069e14a862b4db84ea4927a73c5f32",
+    "all_candidate15_source_files_exact": 362,
+    "product_source_changed": false,
+    "contract_revision": 15,
+    "scope": "Installed reference metadata lifecycle; HTTP backend only.",
+    "no_extra_acceptance_credit": true
+  },
+  "evidence_sha256": {
+    "revocation-qualification.json": "00ade5dd412d88d2558ee7af45faab3d323ac3ded91578959b9d2a33c7f84f7f",
+    "invalid-nomination-audit.json": "8428d9766f3b5384fc92a9b85070bff6f0924cebce36ac5544aacf272f5c6136",
+    "unregister-preservation.json": "ddac29bcdac0274a5b66c2e60dbf8c00842427d0d1b2ca271b8c02358624fb5a",
+    "entrypoints-removed.json": "fa24209a4195a077a33768eb467c50b0936cd3ac361523baecf6aceb2058cef7",
+    "unregister-handoff-qualification.json": "00a42fdb1252a41ff9e7f777bee7e9c249e22040477758a9ba1daa3b00f20d50",
+    "unregister-retirement.json": "15361073c9802d32ef2583f1ea7d3b07bbd93c7c222bf1cce8bb8cfc710abb1c",
+    "observation-retirement.json": "9d8b31ad40e591fc989b09b03f5081237a50b8ae3c793a375cb2217784f249b5",
+    "source-context.json": "a988c19c3d9d17880db69aa47f8d2b99cd46b25246949c8dbde3b1dc04aebafc"
+  },
+  "removed_owned_terminal_containers": 18,
+  "whole_G6_or_SVC04_SVC05_pass": false,
+  "acceptance_passed": 92,
+  "acceptance_total": 99,
+  "rough_weighted_progress_percent": 88,
+  "browser_rendering_tested": false,
+  "remaining": [
+    "Actual revoked-endpoint next-generation re-registration, including stopped-worker metadata separation.",
+    "Native NotesStats connector installation/actual remote/outage/duplicate/original-actor/in-flight scoped authority.",
+    "Actual external effect/credential recovery and reviewed continuation/resume; JOB03.",
+    "Changed-worker-image compatibility and full G7 qualification."
+  ],
+  "receipt_label_note": "Original unregister-retirement receipt retains copied enablement result label; its exact operation-scoped deletion guards and7 removals ran for unregister. Procedure label corrected without replay or rewriting receipt."
+}

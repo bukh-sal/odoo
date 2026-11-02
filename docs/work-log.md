@@ -675,3 +675,23 @@ Previous turn PROGRESS/core15actual+suspensionhandoff/CLIcontext+15terminalclean
 ### 2026-11-02T06:15:05.182950+00:00 F-01d manager enable and paired restoration qualified
 
 Resumed same apply36014, observed completed rather than replay. lifecycle.py verify, verify_restored.py, mirror.py and retire.py all terminal0. Actual HTTP request04bfa287 independently approved/applied on core15, config15/control73.17tables/native modules/schema/48files/19original outcomes retained under exact scoped feature/policy/18job epoch changes. Whole suspend-enable pair restores originalAliceCcontext200/nativeA/B/Clistform; healthy worker remains same physical process/key/publication3. Same-op completed status via normal independent mirror.7exact owned exited0helpers/oldapp archived privately and removed;0newimages/volumes. Browserpending by user backend instruction;92/99/rough88 unchanged, SVC04/05 stillnotrun. Next actual separately reviewed endpointrevocation/unregister/re-register; inspect dispatch publicationbinding before mutation.
+
+
+### 2026-11-02T06:19:44.054009+00:00 F-01d separate endpoint revocation qualified
+
+Read externalplanning/metadata/reference dispatch/workerpublication guards before mutation. Fresh config15/control73 baseline. revoke.py baseline/revoke/verify terminal0: normal workerCLI prepare/review/exactpublish endpointgen1enabled→gen2revoked, publication3→4; fixed existing authorityprojection autoremovehelper, no newimage/volume/runtimecontrol. Physical worker05/publicconfiggen1/key exact;17tables and raw dispatchcontrol73 exact. Protected externalreader planningstate disabled; sanitized untrusted managerprofile refreshed. Metadata remainsinstalled/enabled pending separatelyapproved unregister. Fresh lifecycle baseline nowcapturing; no appoperation yet. Browser stillpending/userbackendinstruction; no acceptance increase.
+
+
+### 2026-11-02T06:24:33.901773+00:00 F-01d corrected sitewide unregister nomination captured
+
+Fresh revokedbaseline captured. Initial HTTPprepare400VALIDATION_FAILED before draft: testharness incorrectlycopied workspace_ids[C] from featureoperation. Realprofile diagnostic reproduced operations-request oneOf; frozen schema requires maxItems0 forsitewideunregister, existingUIalready sends[]. Corrected harness only; fresh read-only planner+realprepared_view pass. Audit confirms requestIDs/17tables/worker exact, noappdraft/independentapply. New corrected HTTPprepare/request200; exact9e1686d6/hash75dd122e captured with targetCderived bysiteplanner, data/worker unchanged. Independent approveprocess54727 currently running; inspect marker/journal beforeapply. No runtime/product source change or rebuild.
+
+
+### 2026-11-02T06:25:49.802680+00:00 F-01d exact manager unregister approved/applying
+
+Independent approve54727 terminal0: import9e1686d6/hash75dd122e, OSawaitingapproval/mutationfalse, freshreconstruction/review/runtime15preflight and exactapproval pass. Same operation now applying through coordinated metadataexecutor. Expected sameconfig/release/image15/control73→76 and scope metadata/grant changes only. Inspect durable marker/journal before retries; next preservation/actualHTTP404+nativeviews/mirror/exactcleanup.
+
+
+### 2026-11-02T06:35:43.466338+00:00 F-01d actual revoked unregister fully verified and cleaned
+
+Apply48252 completed0; verify69709, entrypoints76614, mirror84380, retire36686 and readonlycleanup3896 terminal0. Same9e1686d6 exact approved request/config15/control76; metadata removed/featuresuspended/grantsrevoked and17originaltables preserved under exact scoped changes,19originaloutcomes/inputs/attempts/nativefullmodules/schema/48files exact. AliceCprovider404/nativeA/B/Clistform/NotesC200, manager explicitly separates removedmetadata from independently runningworker05. Revokedpublication4/endpoint2/workerphysical/publickey exact.7exactterminalhelpers/oldapp +11current15exited0readonlyobservehelpers with exactdurablereceipts archived privately/removed;0images/volumescreated. Original cleanupreceipt copied enablementresultlabel; procedurelabelcorrected, observedreceiptretained/no deletionreplay. All362candidate15sourcefiles exact; no runtime/productsourcechange. Worker authorityrunbook stale native-only assertion corrected to explicit boundedexecutor/currentlimits and separate endpoint/runtimegenerationcontrol.25ownedcontainersretired across thisrun including7enable.92/99/rough88 unchanged; SVC04/05 stillnotrun pendingwholeprofiles. Next stopped-runtime re-registration with separately attestedgen3/publication5, then connector/remote/effectrecovery/changedimage/G7. Browserpending peruserbackendsteering; no activeprocesshandle.

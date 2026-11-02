@@ -1,0 +1,23 @@
+{
+  "result": "reproduced",
+  "phase": "metadata_planner",
+  "exception": "ContractError",
+  "message": "operations-request: invalid field <root> (oneOf)",
+  "frames": [
+    {
+      "file": "diagnose_prepare.py",
+      "line": 21,
+      "function": "<module>"
+    },
+    {
+      "file": "manager_planning.py",
+      "line": 78,
+      "function": "prepare_manager_external"
+    },
+    {
+      "file": "contracts.py",
+      "line": 99,
+      "function": "validate"
+    }
+  ]
+}

@@ -113,9 +113,36 @@ reconstructs the proposal with a fresh observation; the app cache is advisory.
 Healthy status requires the actual pinned worker and current usable scoped
 keypair. The read-only composition root executes no helper and writes no volume.
 
-This is currently a source-qualified planning path, not a completed execution
-runbook. Native apply refuses external artifacts before any drain. Do not bypass
-that refusal or manually insert installation rows. The next required step is the
-explicit managed-worker metadata executor, its recovery/publication checks and
-actual reviewed lifecycle qualification. See ADR0034 and the implementation
-status. No runtime start/stop or remote data deletion is part of metadata planning.
+The explicit `ReferenceMetadataExecutor` now handles the exact checkpointed
+single-site reference metadata profile through the same independent approval and
+coordinated host-maintenance loop. The default native-only profile still refuses
+external authority; do not weaken it or manually insert installation rows.
+Actual register/enable/upgrade and installed core15 HTTP manager suspend/enable
+qualification are linked from `implementation-status.md` and
+`evidence/G6/20261102-manager-enable-01/README.md`. Native image/module/schema,
+original job outcomes and the separately managed worker are preserved.
+
+For the installed manager API, unregister is sitewide: send `workspace_ids: []`;
+the planner derives every retained scope. Independent endpoint revocation must
+precede preparation. Revocation uses the normal separate worker prepare/review/
+exact-hash publish commands with the next endpoint generation, and does not stop
+the process or change its public configuration. The resulting OS publication is
+current authority, never rolled back from a database checkpoint. Refresh the
+sanitized planning profile through the protected external reader, then prepare
+and request metadata unregistration. Import/reconstruct/review/exact approval
+remain separate; an application request or cached profile cannot authorize apply.
+
+Re-enabling a revoked endpoint requires another monotonically newer endpoint
+generation and actual independent attestation of its image/public key/scope/
+configuration. The operator must separately update the reference runtime's public
+configuration and restart it before publishing that enabled generation; metadata
+registration must not do this. Retain immutable issuer/public key references
+unless a separately reviewed key rotation is required. A subsequent metadata
+registration starts suspended and a separate enable rechecks current health.
+
+Full unregister/re-register, installed connector/remote/in-flight authority,
+external recovery/credential reconciliation and changed-worker-image transition
+remain required G6 qualifications. Browser rendering is separately pending.
+These bounded execution records do not establish those cases or a general
+external-service orchestrator. No runtime start/stop or remote data deletion is
+part of metadata planning or execution. See ADR0034 and the authoritative status.

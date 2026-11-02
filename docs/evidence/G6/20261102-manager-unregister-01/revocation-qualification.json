@@ -1,0 +1,17 @@
+{
+  "result": "passed_actual_independent_endpoint_revocation",
+  "publication_generation": 4,
+  "endpoint_generation": 2,
+  "operation_id": "15ea3be4-6854-4969-b3a0-07ba5cd73611",
+  "plan_hash": "sha256:fbc772bb6ca6a466c9c4400c04642c31f2254c69829c4667d80b0d18ab07a921",
+  "operator_exact_review_required": true,
+  "worker_process_identity_image_start_restart_mounts_network_public_key_unchanged": true,
+  "all17tables_and_dispatch_control73_exact": true,
+  "host_planning_observation_disabled": true,
+  "protected_reader_sanitized_profile_refreshed": true,
+  "metadata_still_installed": true,
+  "limits": [
+    "No remote job was dispatched; no in-flight revocation/recovery claim.",
+    "Metadata unregister is the next separately approved operation."
+  ]
+}

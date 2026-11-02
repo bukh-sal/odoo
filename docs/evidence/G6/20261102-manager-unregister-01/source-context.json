@@ -1,0 +1,9 @@
+{
+  "parent_commit": "519cf34229d067297b2b41745cfdc106b3d6a9ff",
+  "current_native_image": "sha256:b992b9b4a7fee09e29c43e072418b09e31069e14a862b4db84ea4927a73c5f32",
+  "all_candidate15_source_files_exact": 362,
+  "product_source_changed": false,
+  "contract_revision": 15,
+  "scope": "Installed reference metadata lifecycle; HTTP backend only.",
+  "no_extra_acceptance_credit": true
+}

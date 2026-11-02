@@ -1,0 +1,9 @@
+{
+  "result": "rejected_malformed_test_harness_before_draft",
+  "cause": "Frozen sitewide unregister requires empty workspace_ids; harness copied a feature nomination.",
+  "app_request_ids_exact": true,
+  "all17tables_and_worker_exact": true,
+  "independent_approval_apply_not_invoked": true,
+  "corrected_fresh_profile_planning_and_real_preview_pass": true,
+  "runtime_source_changed": false
+}
