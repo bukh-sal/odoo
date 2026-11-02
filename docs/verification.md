@@ -7,6 +7,8 @@ qualified profiles; G6 is active and G7 remains required.
 
 Latest G6 lifecycle evidence:
 
+- [Actual core14/shell10 upgrade, preservation and installed HTTP](evidence/G6/20261102-core14-upgrade-01/README.md): config14/dispatch64, external worker unchanged, native data/jobs/schema/files retained;8terminalhelpers retired. Browser/manager-created lifecycle still required.
+
 - [Existing manager metadata source and admitted core14/shell10 candidate](evidence/G6/20261102-manager-metadata-01/README.md):107Python/sixJS source checks, G2revision14/96files qualified, immutable image admitted but not deployed. Actual HTTP/browser/lifecycle remains.
 
 - [Installed native13 feature lifecycle](evidence/G6/20261101-core13-native-features-01/README.md).

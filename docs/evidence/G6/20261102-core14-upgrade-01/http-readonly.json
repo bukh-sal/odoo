@@ -1,0 +1,21 @@
+{
+  "result": "passed_installed_core14_readonly_http",
+  "checks": [
+    "Actual operator authority and client-release discovery succeed on installed core14",
+    "External health independently observed; native registry does not invent liveness or fake addon",
+    "Actual exact external details use metadata-only runtime with separate trust display",
+    "Actual manager rejects forged browser runtime before any plan record",
+    "Workspace administrator cannot read independent operation manager without application-operator role",
+    "Actual original-user native Odoo list/form views remain available in A/B/C, including viewer B"
+  ],
+  "actual_http": true,
+  "source_substitution": false,
+  "native_Odoo_standard_views": true,
+  "all17tables_exact": true,
+  "external_worker_and_publication_exact": true,
+  "created_mutation_plans": 0,
+  "limits": [
+    "HTTP native view definitions, not browser rendering.",
+    "No actual manager-created metadata lifecycle operation, outage or external recovery tested yet."
+  ]
+}
