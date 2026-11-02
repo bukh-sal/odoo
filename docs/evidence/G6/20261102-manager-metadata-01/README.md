@@ -35,3 +35,15 @@ container or volume was created for these source checks. Next build/admit a sing
 coherent candidate retaining exact native plugin artifacts/Python/policy and
 external pins, then independently reviewed upgrade and actual HTTP/browser tests.
 No SVC04/05 or complete G6 acceptance is inferred from this source checkpoint.
+
+
+Candidate admission now passed: `candidate-validation.json` and
+`../20261102-core14-candidate-01/candidate-build.json` record unique image
+`sha256:a712c599b7fcded8c131b4de6b8e1adb135ea0645af8c6b808e6c8ae2cb861f5`, inventory `sha256:7e35a6656aeaa2a374e6c942d52cb5567eecf8c2bc6e9ce5cea51dcf143eae76`.
+Exact prior native plugin artifacts/manifests, Python and policy are preserved;
+only core13→14 and shell9→10 native versions change, without migrations.
+Current external metadata0.1.1 remains pinned outside the native image; connector
+is absent. No deployment occurred. One pending candidate image retained, no new
+persistent container/volume; ordinary observation helpers auto-remove. Next
+ordinary reviewed core upgrade and actual installed qualification; marker is
+`.local/g6-events/core14-upgrade-01.json` state candidate_validated.

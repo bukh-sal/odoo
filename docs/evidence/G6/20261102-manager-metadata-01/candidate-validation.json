@@ -1,0 +1,128 @@
+{
+  "result": "passed_exact_core14_shell10_candidate_not_deployed",
+  "image_id": "sha256:a712c599b7fcded8c131b4de6b8e1adb135ea0645af8c6b808e6c8ae2cb861f5",
+  "inventory_digest": "sha256:7e35a6656aeaa2a374e6c942d52cb5567eecf8c2bc6e9ce5cea51dcf143eae76",
+  "native_core_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.13",
+      "target_version": "19.0.0.1.14",
+      "migrations": []
+    },
+    {
+      "addon": "mp_shell",
+      "previous_version": "19.0.0.1.9",
+      "target_version": "19.0.0.1.10",
+      "migrations": []
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "aedb7d9371c2e48602cacd9b1606d2b07852744dd53db34db8a710e49427c28f",
+      "target_sha256": "264c9d4fa05f4a4c0cc3ff58acccdbc22d5be47305cb1664f63dbfcf370529a8"
+    },
+    {
+      "path": "addons/mp_core/operations.py",
+      "previous_sha256": "24919500021466bea692f2eb3099fde0e72777c9c298a5b14e102029cbb6e9d3",
+      "target_sha256": "007ebab44beb277830bd9741b97b24874feb322ec78a7bb26b1ad521021a0bf8"
+    },
+    {
+      "path": "addons/mp_shell/__manifest__.py",
+      "previous_sha256": "035773fffcc5a8b3260d3a92266e3a43a8da161d7abd42b7ed97cec7ac3de194",
+      "target_sha256": "5ec30ec18314445bcad11db2b32442fcc3fa8cc854ff529f2cd34754662b143f"
+    },
+    {
+      "path": "addons/mp_shell/static/src/operations.js",
+      "previous_sha256": "023498ca2ef2e0ddd00d4cd81fab592bf915b25afab0eaa931092f7634849df4",
+      "target_sha256": "0c82cee17fcab30d60b2fccf37b3d5f0d689a9b7abb8ff73a983eb8b814616db"
+    },
+    {
+      "path": "packages/contracts/examples/v1/manager-view-external.json",
+      "previous_sha256": null,
+      "target_sha256": "3924022850468fb1f8911dcd86d85aa52080d61df5cd82e29e6b8a390cf73b09"
+    },
+    {
+      "path": "packages/contracts/v1/manager-view.schema.json",
+      "previous_sha256": "1e9e15c72642911ab197b2ca08c8f48335e8127545fc3debffb0de1abbfd07f1",
+      "target_sha256": "7181c83adb6574cbd33f9ad40e332975f72c736c57e73acd722fc2a29e7c828d"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/external_planning.py",
+      "previous_sha256": "5996c8aa6b6160efd6c86cb827673bd2a05280f82b342133e89e646724a7b669",
+      "target_sha256": "943627bfb53825695fb1352ee8a6ba6bfafbed2d879b2998514128be74db7b2c"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/manager_planning.py",
+      "previous_sha256": "188f1ae2811e09d455c402af87f3186891720faa66fa7cb2468815f685be9216",
+      "target_sha256": "a7170086bcfb8e18b13d6fb6d1172f14dc6d49ef1ea5a5cd730e25c7ef9b12cd"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/manager_views.py",
+      "previous_sha256": "c3ef0e35ee27d74b8dba65bba57823a76ba94a811f124162d142129904b1ffcb",
+      "target_sha256": "a28a4acf6b0f6d0377625316786b4857709ca5408b3d95707c52b7970e0da40a"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/plans.py",
+      "previous_sha256": "48410f8b9f9a83f797c45c469ac2db460b19b34030113b92da2634f9a4c7bc23",
+      "target_sha256": "f65746f8646f2e79a7990a32b26ee299102e0c5d8110644be711670f39fe3214"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "9cc89d0e8632d33519ca15a8374c2b7cc2f328f696578bff27a5781b56c32d50",
+      "target_sha256": "864a1fa214e0d654ef71a3573308b43c68afba51a3a126e9ad51e4f3fa662256"
+    }
+  ],
+  "native_plugin_artifacts_manifests_python_policy_exact": true,
+  "external_metadata_outside_native_image": true,
+  "retained_external_pins": [
+    {
+      "activation": {
+        "scopes": [
+          "site",
+          "workspace"
+        ],
+        "supports_feature_suspension": true
+      },
+      "data_ownership": {
+        "contributions": [],
+        "extension_targets": [],
+        "models": []
+      },
+      "digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+      "hard_dependencies": {},
+      "manifest_digest": "sha256:5cc5f8f086f7e6e3cfbc353e47a7515932fdc69fa353d69c6a9392ba85fbfe0b",
+      "native_addon": null,
+      "native_version": null,
+      "permissions": {
+        "defines": {
+          "analysis.run": "Analyze the supplied authorized document snapshot"
+        },
+        "requests": []
+      },
+      "plugin_id": "org.example.document_stats",
+      "provided_apis": [
+        {
+          "api_version": "1.0",
+          "service_id": "org.example.document_stats.analysis"
+        }
+      ],
+      "runtime": "external_service",
+      "source": "operator-catalog",
+      "trust": {
+        "model": "operator-approved-exact-digest",
+        "policy_generation": 7,
+        "signature_verified": false,
+        "warnings": []
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "connector_not_in_image": true,
+  "live_configuration_generation": 13,
+  "live_installations": 8,
+  "deployment_changed": false,
+  "limits": [
+    "Admission only; no staged operation/approval/apply or installed manager qualification yet."
+  ]
+}

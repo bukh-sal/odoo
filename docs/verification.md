@@ -7,6 +7,8 @@ qualified profiles; G6 is active and G7 remains required.
 
 Latest G6 lifecycle evidence:
 
+- [Existing manager metadata source and admitted core14/shell10 candidate](evidence/G6/20261102-manager-metadata-01/README.md):107Python/sixJS source checks, G2revision14/96files qualified, immutable image admitted but not deployed. Actual HTTP/browser/lifecycle remains.
+
 - [Installed native13 feature lifecycle](evidence/G6/20261101-core13-native-features-01/README.md).
 - [Actual independent worker and metadata registration/enable](evidence/G6/20261101-provider-registration-01/README.md).
 - [Actual immutable metadata successor upgrade](evidence/G6/20261101-provider-upgrade-01/README.md): same worker identity/image, native state/data/jobs/files preserved;37 targeted source checks and current freeze. External integration/recovery and changed-worker-image qualification remain open.
