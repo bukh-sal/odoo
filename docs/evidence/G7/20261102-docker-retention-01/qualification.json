@@ -1,0 +1,25 @@
+{
+  "result": "passed_bounded_repository_owned_Docker_retention",
+  "work_item": "G-01d0",
+  "removed_stopped_containers": 105,
+  "removed_unused_volumes": 61,
+  "removed_unused_recorded_images": 28,
+  "removed_image_tags": 70,
+  "all_old_selected_volume_bytes_privately_archived_pre_post_and_tar_hash_verified": true,
+  "private_archive_bytes": 495917355,
+  "source_regular_file_bytes": 2289179132,
+  "archives_rehashed_and_fsynced_after_retirement": true,
+  "private_container_logs_inspections_source_and_image_records_retained": true,
+  "current4owned_runtime_17tables_36jobs_30Notes_board_worker_authority_unchanged": true,
+  "current_and_latest_native_checkpoint_images_current_and_previous_worker_images_preserved": true,
+  "unmatched_or_unrelated_assets_touched": 0,
+  "known_hung_rejected_resources_not_retried": true,
+  "no_force_no_global_prune_no_parent_pruning": true,
+  "global_BuildKit_cache_untouched": true,
+  "limits": [
+    "Bounded cleanup of assets with concrete repository ownership and no remaining use; unmatched/ambiguous resources retained.",
+    "Cold file-byte verification does not claim a rehearsed PostgreSQL restore of historical closed fixtures.",
+    "Windows/Docker virtual-disk physical compaction is not measured or claimed.",
+    "No acceptance, performance, full security/provenance or G7 completion credit from this cleanup. Backend performance and remaining release qualification next."
+  ]
+}

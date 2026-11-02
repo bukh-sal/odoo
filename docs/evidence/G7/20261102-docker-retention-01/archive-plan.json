@@ -1,0 +1,15 @@
+{
+  "result": "exact_archive_retention_plan_prepared_no_deletion",
+  "volumes_requiring_private_byte_verified_cold_archive": 61,
+  "retained_associated_volumes": 8,
+  "retained_volume_reasons": {
+    "still_used_by_a_container_including_unmatched_assets": 3,
+    "current_project_volume_and_recovery_storage": 5
+  },
+  "exact_unused_recorded_image_candidates": 28,
+  "protected_or_used_recorded_images": 10,
+  "unmatched_assets_preserved": true,
+  "current_native_and_checkpoint_images_preserved": true,
+  "current_and_previous_approved_worker_images_preserved": true,
+  "volumes_or_images_deleted": 0
+}

@@ -1,0 +1,15 @@
+{
+  "result": "retired_exact_61_unused_owned_volumes_after_verified_cold_archives",
+  "removed_volumes": 61,
+  "all_file_contents_pre_post_hashes_tar_contents_verified": true,
+  "ordinary_UID_GID_modes_mtimes_links_verified": true,
+  "source_regular_file_bytes": 2289179132,
+  "private_compressed_archive_bytes": 495917355,
+  "all_other_volume_names_preserved": true,
+  "current_runtime_17tables_worker_authority_recovery_storage_exact": true,
+  "unmatched_resources_touched": 0,
+  "archive_helpers_auto_removed": true,
+  "helper_network_none_readonly_source_root_only_DAC_OVERRIDE": true,
+  "no_global_prune_or_force": true,
+  "limits": "Cold byte-verified historical fixture archives are not a rehearsed database restore or permission to replay closed operation approvals. Current/latest actual checkpoint and current/previous worker images retained; exact unused old image cleanup next."
+}

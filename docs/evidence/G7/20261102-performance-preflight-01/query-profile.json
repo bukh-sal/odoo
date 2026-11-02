@@ -1,0 +1,130 @@
+{
+  "result": "actual_installed_read_query_counts",
+  "results": [
+    {
+      "operation": "current_scope",
+      "samples": [
+        {
+          "ms": 0.3049460065085441,
+          "sql_queries": 1
+        },
+        {
+          "ms": 0.26949102175422013,
+          "sql_queries": 1
+        },
+        {
+          "ms": 0.35325600765645504,
+          "sql_queries": 1
+        }
+      ]
+    },
+    {
+      "operation": "whole_recordset_guard",
+      "samples": [
+        {
+          "ms": 0.8592689991928637,
+          "sql_queries": 4
+        },
+        {
+          "ms": 0.6304399867076427,
+          "sql_queries": 4
+        },
+        {
+          "ms": 0.5704850191250443,
+          "sql_queries": 4
+        }
+      ]
+    },
+    {
+      "operation": "one_warmed_scalar",
+      "samples": [
+        {
+          "ms": 1.1770629789680243,
+          "sql_queries": 4
+        },
+        {
+          "ms": 2.396861993474886,
+          "sql_queries": 4
+        },
+        {
+          "ms": 1.5331239847000688,
+          "sql_queries": 4
+        }
+      ]
+    },
+    {
+      "operation": "native_list24",
+      "samples": [
+        {
+          "ms": 145.68796401727013,
+          "sql_queries": 519
+        },
+        {
+          "ms": 132.9612479894422,
+          "sql_queries": 519
+        },
+        {
+          "ms": 133.5947730112821,
+          "sql_queries": 519
+        }
+      ]
+    },
+    {
+      "operation": "native_detail",
+      "samples": [
+        {
+          "ms": 22.2460119985044,
+          "sql_queries": 65
+        },
+        {
+          "ms": 20.41991800069809,
+          "sql_queries": 65
+        },
+        {
+          "ms": 19.242501992266625,
+          "sql_queries": 65
+        }
+      ]
+    },
+    {
+      "operation": "gateway_list24",
+      "samples": [
+        {
+          "ms": 214.58692700252868,
+          "sql_queries": 816
+        },
+        {
+          "ms": 194.1445890115574,
+          "sql_queries": 816
+        },
+        {
+          "ms": 198.84481601184234,
+          "sql_queries": 816
+        }
+      ]
+    },
+    {
+      "operation": "gateway_detail",
+      "samples": [
+        {
+          "ms": 15.83243699860759,
+          "sql_queries": 61
+        },
+        {
+          "ms": 16.745479981182143,
+          "sql_queries": 61
+        },
+        {
+          "ms": 16.732921998482198,
+          "sql_queries": 61
+        }
+      ]
+    }
+  ],
+  "actual_installed_source": true,
+  "no_monkeypatch": true,
+  "no_data_writes": true,
+  "image": "sha256:bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+  "all17tables_exact": true,
+  "limits": "Single native rollback-only profiling process with warm caches; not HTTP or10k qualification."
+}

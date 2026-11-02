@@ -1,0 +1,12 @@
+{
+  "result": "retired_exact_28_unused_recorded_images",
+  "removed_images": 28,
+  "removed_tags": 70,
+  "private_source_and_image_inspection_records_retained": true,
+  "current_app_checkpoint_database_edge_current_and_previous_approved_worker_images_preserved": true,
+  "current_runtime_17tables_worker_authority_exact": true,
+  "all_unselected_image_ids_preserved": true,
+  "no_force_no_parent_prune_no_global_prune": true,
+  "global_BuildKit_cache_untouched": true,
+  "limits": "Historical closed fixture images are retired; protected byte-verified volume archives retain data. Current/latest checkpoint recovery roles remain available. Unmatched or ambiguous resources were not selected."
+}
