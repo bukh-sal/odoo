@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 13,
+  "revision": 14,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -85,7 +85,10 @@
         "packages/contracts/examples/v1/manager-view-upload.json",
         "packages/contracts/v1/lifecycle-impact.schema.json",
         "packages/contracts/examples/v1/lifecycle-impact.json",
-        "packages/contracts/examples/v1/lifecycle-impact/unknown.json"
+        "packages/contracts/examples/v1/lifecycle-impact/unknown.json",
+        "docs/architecture-decisions/0035-external-manager-observations.md",
+        "packages/contracts/examples/v1/manager-view-external.json",
+        "tests/test_manager_contracts.py"
       ],
       "g1": []
     },
@@ -225,6 +228,7 @@
     "docs/architecture-decisions/0009-operator-ui-contract.md": "ad2dceb9b186e69aa9629a72e6998a7bd0d742d5e06a09abcc0550d3a4e59cc2",
     "docs/architecture-decisions/0020-manager-inspection-contract.md": "49cb3cc370f9260872589464d9cf7f7821027db0c60b900adf9274f15846fb60",
     "docs/architecture-decisions/0031-scoped-domain-event-delivery.md": "08b375d518301c1f63a4d3b501f98a9595f33c749680cd86dbcb117c74fe438e",
+    "docs/architecture-decisions/0035-external-manager-observations.md": "d889caacb7f35fbdfec082e39bda2f1fa4cade0323a01b2e7d3516b8b99dcfd1",
     "docs/contracts/events-v1.md": "ca0914b5da964ab09a53b07d2eec7015b0205f8a7f8b242c5336e5425103e7f9",
     "docs/contracts/protocol-v1.md": "669a2b3cc2a49b751305e1a9ccf7a5120bcb42abc5079e076c82050e2ca29275",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
@@ -239,6 +243,7 @@
     "packages/contracts/examples/v1/lifecycle-impact.json": "a2716a997e64fba31525b7e35dd8eda1f125424aaab6e60bcd90b2beb77b663e",
     "packages/contracts/examples/v1/lifecycle-impact/unknown.json": "1a812f020859289dca7650f8c5a998958aaa43a91d4a580dff750de1388cb811",
     "packages/contracts/examples/v1/manager-view-details.json": "dfc206b183dee4c16ca3281dec83f57bd6d92d75dffc9d7cc333f1eb12b71617",
+    "packages/contracts/examples/v1/manager-view-external.json": "3924022850468fb1f8911dcd86d85aa52080d61df5cd82e29e6b8a390cf73b09",
     "packages/contracts/examples/v1/manager-view-upload.json": "aba758e738302b9398eccdbca055bf68702ab7d3ef101a9652d50a9400c5b331",
     "packages/contracts/examples/v1/manager-view.json": "fc09ef4f68c6a896d326cd517101452de0ec73be2c23d57ef690fd1b0d360bd4",
     "packages/contracts/examples/v1/manifest-canvas.json": "b100453208838bc1abaecd46c2b7db27f375a8130f02ccd7f7edeadeb470e0fe",
@@ -280,7 +285,7 @@
     "packages/contracts/v1/event-transport.schema.json": "f90b6d124a86563bbb0a1d3fd3bd9840517cf10b3f99392a527fd1c34ac8f562",
     "packages/contracts/v1/host-context.schema.json": "a0c4ad4c83d2d386a6a9b4787880cab491870eabc5b14adf9b4ed856647da7a9",
     "packages/contracts/v1/lifecycle-impact.schema.json": "82c0a23ee4b8978c62fb37dec2aa85612008fdc7f90a22cf1ec1b57cc26b7d79",
-    "packages/contracts/v1/manager-view.schema.json": "1e9e15c72642911ab197b2ca08c8f48335e8127545fc3debffb0de1abbfd07f1",
+    "packages/contracts/v1/manager-view.schema.json": "7181c83adb6574cbd33f9ad40e332975f72c736c57e73acd722fc2a29e7c828d",
     "packages/contracts/v1/manifest.schema.json": "992d612b7c806be5e16d0f6898cd376cfffc4ab3f8e3cb876cf87dca1d1ad1e4",
     "packages/contracts/v1/note-detail-actions.schema.json": "89ef9e21b6d7585bca5e64420054302db7f1b9bc1b5de63849de933971803850",
     "packages/contracts/v1/notes-export.schema.json": "cf776edf7ae01884a875a07bcb8ae2a07d79a1a097044d0809ad5fe8fd61ed55",
@@ -308,7 +313,7 @@
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
     "tests/test_contracts.py": "14d99ae494bce780d54e26c28e815101fa88dfb1a9086eb132cb0b57c0dfc9c8",
     "tests/test_event_contracts.py": "8318a2e843c6b3387e92d464f07b4109f08c9e4bf8da665773d2c0c4a25155e7",
-    "tests/test_manager_contracts.py": "d63c67d345698532236ad1136a8ef0a0ec84baa7f299e356241f77d080c903a4",
+    "tests/test_manager_contracts.py": "e0e2a12c9f88506a1f51619e6c6f78dac22d560a5d7607255b54d17380214667",
     "tests/test_operation_contracts.py": "befb8a09e11989981642b56e06a896218f29fb5a0dcf310ae9a628d6d3faee87",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a"
   },

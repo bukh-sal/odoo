@@ -76,6 +76,7 @@ def main(argv=None):
     current = plugin.add_parser('plan-current-install', help='Nominate native packages already present in the verified image')
     current.add_argument('--deployment-config', required=True, type=Path)
     current.add_argument('--store', required=True, type=Path)
+    current.add_argument('--operator-store', type=Path, help='Independent OS-owned control store for published external endpoint observation; --store remains the catalog')
     current.add_argument('--site', required=True)
     current.add_argument('--workspace', required=True, action='append')
     current.add_argument('--plugin', required=True)
@@ -342,7 +343,12 @@ def main(argv=None):
             from uuid import uuid4
             from modular_platform.deployment import DockerObserver
             from modular_platform.lifecycle_planning import prepare_current_image_install
-            observer = DockerObserver(load_json(args.deployment_config.read_bytes()))
+            if args.operator_store is not None:
+                from modular_platform.operator_store import OperatorStore
+                from modular_platform.worker_operator import operator_observer
+                observer=operator_observer(OperatorStore(args.operator_store),args.deployment_config)
+            else:
+                observer = DockerObserver(load_json(args.deployment_config.read_bytes()))
             snapshot = Catalog(args.store, validator, readonly=True).snapshot()
             observation = observer.read()
             result = prepare_current_image_install(observer.state(observation, snapshot), observation['sites'], snapshot,

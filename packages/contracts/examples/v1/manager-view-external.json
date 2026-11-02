@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:00:00Z",
+  "profile_observed_at": "2026-10-28T21:59:00Z",
+  "stale": false,
+  "control_authority": "independent_local_os",
+  "kind": "installed",
+  "items": [
+    {
+      "installation_id": "00000000-0000-4000-8000-000000000001",
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.0",
+      "artifact_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "runtime": "external_service",
+      "metadata_state": "installed",
+      "database_state": "installed",
+      "native_version": null,
+      "features": [
+        {
+          "workspace_id": "00000000-0000-4000-8000-000000000002",
+          "availability": "enabled"
+        }
+      ],
+      "health": {
+        "state": "healthy",
+        "reason": "Published scoped endpoint and service health observed; workspace availability is separate."
+      },
+      "dependencies": {
+        "state": "satisfied",
+        "issues": []
+      },
+      "artifact": null
+    }
+  ],
+  "next_offset": null
+}

@@ -1,0 +1,235 @@
+{
+  "result": "passed",
+  "utc": "2026-11-02T04:29:09.191649+00:00",
+  "python_tests": 107,
+  "records": [
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_manager_external.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.642s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_current_install_cli.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.112s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_manager_planning.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.171s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_manager_views.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.192s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_manager_routes.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.023s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_external_planning.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "..................\n----------------------------------------------------------------------\nRan 18 tests in 0.529s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_external_projection.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.177s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_reference_staging.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.311s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_plans.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.175s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_metadata_executor.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.414s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_native_feature_executor.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 42.687s\n\nOK\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/test_manager_inspection.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "\u2714 upload sends original bytes and exact SHA through the existing fenced API adapter (5.3245ms)\n\u2714 role loss cannot publish a late upload or details result (1.3656ms)\n\u2714 no file or oversize input sends no request (0.4329ms)\n\u2714 catalog continuation requires the same snapshot and metadata pages do not mix (0.6641ms)\n\u2714 component cancellation aborts an in-flight validation through the shared controller (1.2699ms)\n\u2714 root binary transport preserves CSRF/session/release fences and old JSON serialization (1.3576ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 100.7209\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"contract_major\": 1, \"files\": 96, \"rows\": 8}\n",
+      "stderr": ""
+    }
+  ],
+  "source_digests": {
+    "packages/platform_sdk/modular_platform/manager_planning.py": "a7170086bcfb8e18b13d6fb6d1172f14dc6d49ef1ea5a5cd730e25c7ef9b12cd",
+    "packages/platform_sdk/modular_platform/manager_views.py": "a28a4acf6b0f6d0377625316786b4857709ca5408b3d95707c52b7970e0da40a",
+    "packages/platform_sdk/modular_platform/plans.py": "f65746f8646f2e79a7990a32b26ee299102e0c5d8110644be711670f39fe3214",
+    "packages/platform_sdk/modular_platform/projection.py": "864a1fa214e0d654ef71a3573308b43c68afba51a3a126e9ad51e4f3fa662256",
+    "packages/platform_sdk/modular_platform/external_planning.py": "943627bfb53825695fb1352ee8a6ba6bfafbed2d879b2998514128be74db7b2c",
+    "platform_addons/mp_core/operations.py": "007ebab44beb277830bd9741b97b24874feb322ec78a7bb26b1ad521021a0bf8",
+    "platform_addons/mp_core/__manifest__.py": "264c9d4fa05f4a4c0cc3ff58acccdbc22d5be47305cb1664f63dbfcf370529a8",
+    "platform_addons/mp_shell/static/src/operations.js": "0c82cee17fcab30d60b2fccf37b3d5f0d689a9b7abb8ff73a983eb8b814616db",
+    "platform_addons/mp_shell/__manifest__.py": "5ec30ec18314445bcad11db2b32442fcc3fa8cc854ff529f2cd34754662b143f",
+    "tools/modular.py": "9c9faddeb25a312c1242c9e9a7ab66c4cdc631f06eb5982ce436a6624a73435b",
+    "tests/test_manager_external.py": "f4f474d805e0feac473801a6b2d4753e7134a335fa6f0906c6824e8a818c7e53",
+    "tests/test_current_install_cli.py": "f5a0fef77b0549a57088d5e771609374b50090443716ecb5fe9907fc95e5032b",
+    "docs/contracts/freeze-v1.json": "c408dbff10b5d8c3135574dd2e4699bd082248ec73914ddf04644c4ca968dd18"
+  },
+  "live_runtime_unchanged": true,
+  "no_docker_assets_created": true,
+  "limits": [
+    "Source/isolated controller behavior; no installed core14/shell10 HTTP/browser or metadata lifecycle acceptance."
+  ]
+}

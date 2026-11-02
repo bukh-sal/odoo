@@ -163,7 +163,8 @@
             "state": {
               "enum": [
                 "unknown",
-                "degraded"
+                "degraded",
+                "healthy"
               ]
             },
             "reason": {
@@ -229,7 +230,35 @@
         "dependencies",
         "artifact"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "health": {
+                "properties": {
+                  "state": {
+                    "const": "healthy"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "runtime": {
+                "const": "external_service"
+              },
+              "metadata_state": {
+                "const": "installed"
+              },
+              "database_state": {
+                "const": "installed"
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "oneOf": [

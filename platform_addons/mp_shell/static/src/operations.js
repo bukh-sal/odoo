@@ -5,7 +5,7 @@ export class OperationsPanel extends Component {
     static props={api:Function,onSession:Function,onDenied:Function,initialWorkspace:{type:String,optional:true}};
     static template=xml`<section class="mp_operations" aria-label="Plugin operations">
         <p>Prepare a plan, request the operation, then use local operator approval and apply.</p>
-        <p>New code requires a local operator to stage the release first. Installation from the current image and native uninstall still require exact local approval and coordinated maintenance. Uploading or selecting an artifact does not execute it.</p>
+        <p>New native code requires a local operator to stage the release first. External services are provisioned separately by the operator; registration installs metadata in a suspended state, followed by a separate enable. Every operation requires exact local approval. Uploading or selecting an artifact does not execute it.</p>
         <section t-if="state.context" class="mp_notice" aria-label="Upload validation">
             <h2>Validate a plugin archive</h2>
             <p>Validation uses a temporary private copy. It does not install code or add a package to the independent operator catalog.</p>
@@ -85,11 +85,12 @@ export class OperationsPanel extends Component {
         <section t-if="state.prepared" class="mp_notice" aria-label="Proposed operation">
             <h2>Review proposed changes</h2><p t-if="state.prepared.stale">Catalog observation is old. The local operator revalidates it before approval.</p>
             <p t-if="state.prepared.native_trusted_code">Native code shares the host application's trust.</p>
-            <p t-if="state.prepared.plan.operation_type==='suspend'">Feature suspension retains native registration and data. Imported code and model overrides remain loaded.</p>
+            <p t-if="state.prepared.plan.operation_type==='suspend'">Feature suspension retains registration and data. Native code and model overrides remain loaded; external processes remain separately managed.</p>
+            <p t-if="selected?.runtime==='external_service'">External service metadata operations do not launch, stop or redeploy the service, or erase remote data. Registration starts suspended. Unregistration requires independent endpoint revocation; required consumers must be handled first.</p>
             <p t-if="state.prepared.plan.operation_type==='remove'">This removes the selected package from the new runtime. Native uninstall must already be complete. Retained installation history, catalog archives, old images, checkpoints and old assets are preserved; workers restart.</p>
             <p t-if="state.prepared.plan.destructive" role="alert">This operation can delete native data and schema.</p>
             <p t-if="state.prepared.plan.backup.required">A coordinated database and filestore checkpoint is required.</p>
-            <p t-if="state.prepared.restart_required">Workers will restart on the selected release.</p>
+            <p t-if="state.prepared.restart_required">Host application workers will restart on the selected release.</p>
             <table><thead><tr><th scope="col">Plugin</th><th scope="col">Workspace</th><th scope="col">Action</th></tr></thead><tbody><tr t-foreach="state.prepared.targets" t-as="target" t-key="target.installation_id+target.workspace_id"><td t-esc="target.plugin_id"/><td t-esc="workspaceName(target.workspace_id)"/><td t-esc="target.action"/></tr></tbody></table>
             <table><thead><tr><th scope="col">Artifact</th><th scope="col">Version</th><th scope="col">Action</th><th scope="col">Migration scripts</th></tr></thead><tbody><tr t-foreach="state.prepared.plan.artifacts" t-as="artifact" t-key="artifact.plugin_id+artifact.action"><td t-esc="artifact.plugin_id"/><td t-esc="artifact.version"/><td t-esc="artifact.action"/><td t-esc="artifact.migration_digests.length"/></tr></tbody></table>
             <section t-if="state.featureStates.length" aria-label="Post-install workspace states">

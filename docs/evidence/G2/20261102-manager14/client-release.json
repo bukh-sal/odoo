@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_client_release.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_adapter_current_token_recovery_and_non_http_paths (test_client_release.ClientReleaseTests.test_actual_adapter_current_token_recovery_and_non_http_paths) ... ok\r\ntest_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch (test_client_release.ClientReleaseTests.test_actual_adapter_rejects_missing_stale_and_wrong_inventory_before_dispatch) ... ok\r\ntest_contract_example_has_exact_canonical_identity (test_client_release.ClientReleaseTests.test_contract_example_has_exact_canonical_identity) ... ok\r\ntest_epoch_restore_and_site_inventory_each_change_identity (test_client_release.ClientReleaseTests.test_epoch_restore_and_site_inventory_each_change_identity) ... ok\r\ntest_missing_malformed_publication_and_wrong_image_fail_closed (test_client_release.ClientReleaseTests.test_missing_malformed_publication_and_wrong_image_fail_closed) ... ok\r\ntest_only_explicit_recovery_endpoints_are_exempt (test_client_release.ClientReleaseTests.test_only_explicit_recovery_endpoints_are_exempt) ... ok\r\ntest_published_tuple_single_query_and_canonical_token (test_client_release.ClientReleaseTests.test_published_tuple_single_query_and_canonical_token) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 7 tests in 0.010s\r\n\r\nOK\r\n"
+}

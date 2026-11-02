@@ -1,0 +1,24 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-02T04:26:56.983976+00:00",
+  "contract_major": 1,
+  "revision": 14,
+  "frozen_files": 96,
+  "inventory_sha256": "c408dbff10b5d8c3135574dd2e4699bd082248ec73914ddf04644c4ca968dd18",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0035: external-only independently observed healthy manager state; exact metadata nominations reuse unchanged request/plan/token/host contracts and all old examples.",
+  "runtime_qualification": "Live core13/image04a4 unchanged. New core/shell consumers require coherent immutable upgrade and actual metadata HTTP/browser qualification before G6 acceptance.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "683268dc32a113b5a3231ae75d656aa7e5176ff2"
+}

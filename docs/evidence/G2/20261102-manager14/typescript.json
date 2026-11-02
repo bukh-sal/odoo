@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Program Files\\nodejs\\node.EXE",
+    "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+    "--prefix",
+    "packages/host_sdk",
+    "run",
+    "check"
+  ],
+  "exit_code": 0,
+  "stdout": "\n> @modularplatform/host-sdk@0.1.0 check\n> tsc --noEmit\n\n",
+  "stderr": ""
+}

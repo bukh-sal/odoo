@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_planning_cli.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_curated_plan_is_pure_scoped_reproducible_and_has_one_major_per_alias (test_planning_cli.PlanningCLI.test_actual_curated_plan_is_pure_scoped_reproducible_and_has_one_major_per_alias) ... ok\r\ntest_current_archives_refuse_legacy_platform_without_catalog_mutation (test_planning_cli.PlanningCLI.test_current_archives_refuse_legacy_platform_without_catalog_mutation) ... ok\r\ntest_development_warning_survives_plan_wrapper_and_read_only_store_denies_mutation (test_planning_cli.PlanningCLI.test_development_warning_survives_plan_wrapper_and_read_only_store_denies_mutation) ... ok\r\ntest_malformed_or_approval_shaped_input_fails_without_traceback (test_planning_cli.PlanningCLI.test_malformed_or_approval_shaped_input_fails_without_traceback) ... ok\r\ntest_two_workspaces_share_site_installations_with_distinct_scoped_binding_ids (test_planning_cli.PlanningCLI.test_two_workspaces_share_site_installations_with_distinct_scoped_binding_ids) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 5 tests in 6.168s\r\n\r\nOK\r\n"
+}

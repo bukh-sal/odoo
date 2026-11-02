@@ -59,6 +59,49 @@ def prepare_manager_removal(document,sites,catalog,base_runtime,staged,nominatio
         operation_type='remove',operation_id=operation_id,created_at=created_at,base_runtime=base_runtime)
 
 
+def manager_runtime(document, catalog, nomination):
+    """Choose behavior from the exact catalog pin, never a browser runtime flag."""
+    validate('operations-request',nomination)
+    if nomination['operation_type'] in ('install','upgrade'):
+        matches=[r for r in catalog if r['manifest']['plugin']['id']==nomination['plugin_id']
+                 and r['manifest']['plugin']['version']==nomination['artifact_version'] and r['digest']==nomination['artifact_digest']]
+    else:
+        matches=[r for r in document['state']['release_lock']['plugins'] if r['plugin_id']==nomination['plugin_id']]
+    if len(matches)!=1:raise PlanningError('Select one exact current curated artifact or installed plugin')
+    chosen=matches[0]
+    return chosen['manifest']['runtime']['kind'] if 'manifest' in chosen else chosen['runtime']
+
+
+def prepare_manager_external(document, sites, catalog, external_state, nomination, *, operation_id, created_at):
+    """Metadata nominations only; OS review reconstructs endpoint authority anew."""
+    from .external_planning import prepare_external_metadata
+    validate('operations-request',nomination)
+    action=nomination['operation_type'];plugin=nomination['plugin_id'];site_id=nomination['site_id']
+    if nomination['operation']!='prepare' or action not in ('install','upgrade','enable','suspend','unregister'):
+        raise PlanningError('External metadata cannot use native uninstall or source removal')
+    if manager_runtime(document,catalog,nomination)!='external_service':raise PlanningError('Metadata nomination requires an external service')
+    site=next((s for s in sites if s['site_id']==site_id),None)
+    if site is None or site_id not in document['state']['site_ids']:raise PlanningError('Current site required')
+    current=[r for r in document['state']['installations'] if r['site_id']==site_id and r['plugin_id']==plugin and r['state']=='installed']
+    requested=set(nomination['workspace_ids']);retained={r['workspace_id'] for r in current}
+    active={w['workspace_id'] for w in site['workspaces'] if w['state']=='active'}
+    if action in ('upgrade','unregister'):
+        if not current or requested-retained:raise PlanningError('Metadata operation requires existing site scopes')
+        workspaces=retained  # One metadata identity is shared by every retained scope.
+    else:
+        workspaces=requested
+        if not workspaces or (action in ('install','enable') and not workspaces<=active):
+            raise PlanningError('Explicit active workspace targets required')
+        if action in ('enable','suspend') and not workspaces<=retained:raise PlanningError('Metadata feature scope is not installed')
+    targets=[dict(installation_id=installation_id(site,plugin),site_id=site_id,workspace_id=w,plugin_id=plugin,action=action) for w in sorted(workspaces)]
+    selections=[dict(plugin_id=plugin,version=nomination['artifact_version'],digest=nomination['artifact_digest'])] if action in ('install','upgrade') else []
+    # The existing frozen nomination has no activation field. Registration is
+    # explicitly suspended; a separate reviewed enable rechecks live health/keys.
+    features=[{k:t[k] for k in ('installation_id','site_id','workspace_id')}|dict(availability='suspended') for t in targets] if action=='install' else []
+    return prepare_external_metadata(document,sites,catalog,targets=targets,operation_type=action,
+        external_state=external_state,selections=selections,feature_states=features,operation_id=operation_id,created_at=created_at)
+
+
 def prepare_manager_native(document, sites, catalog, base_runtime, staged, nomination, *, operation_id, created_at):
     validate('operations-request', nomination)
     action = nomination['operation_type']

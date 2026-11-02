@@ -1,4 +1,4 @@
-"""Additive inspection DTOs cannot assert execution, trust enrollment or health."""
+"""Inspection observations cannot assert execution or native registry liveness."""
 import copy
 import json
 from pathlib import Path
@@ -14,7 +14,7 @@ def example(name):return json.loads((EXAMPLES/(name+'.json')).read_text(encoding
 
 class ManagerContracts(unittest.TestCase):
     def test_new_examples_and_unchanged_old_consumers(self):
-        for name in ('manager-view','manager-view-details','manager-view-upload'):validate('manager-view',example(name))
+        for name in ('manager-view','manager-view-details','manager-view-upload','manager-view-external'):validate('manager-view',example(name))
         for name in ('operations-view','operations-view-status'):validate_operations_view(example(name))
         self.assertEqual(plan_hash(example('plan')),(EXAMPLES/'plan.sha256').read_text().strip())
 
@@ -43,6 +43,14 @@ class ManagerContracts(unittest.TestCase):
             if path=='publisher':v['provenance']['publisher_identity_verified']=True
             else:v['feature_suspension_unloads_code']=True
             with self.assertRaises(ContractError):validate('manager-view',v)
+
+    def test_external_healthy_observation_is_not_native_or_removed_success(self):
+        value=example('manager-view-external');validate('manager-view',value)
+        for key,field in [('runtime','native'),('metadata_state','removed'),('database_state','failed')]:
+            v=copy.deepcopy(value);v['items'][0][key]=field
+            with self.subTest(key=key),self.assertRaises(ContractError):validate('manager-view',v)
+        value['approved']=True
+        with self.assertRaises(ContractError):validate('manager-view',value)
 
     def test_pagination_payload_and_identity_limits(self):
         v=example('manager-view');v['items']*=21

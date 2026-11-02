@@ -48,10 +48,34 @@ def details_view(profile,digest,*,now):
         'source_files_count':len(provenance['source_files']),'source_inventory_digest':data_digest(provenance['source_files']),
         'provenance_digest':data_digest(provenance),'upstream_commit':upstream,'publisher_identity_verified':False}})
 
-def _dependencies(row,manifest,metadata):
+def _external_health(row,metadata,external_state,workspaces=None):
+    if row['metadata_state']=='removed':
+        return {'state':'unknown','reason':'Metadata is unregistered; the external runtime remains separately managed.'}
+    if row['metadata_state']!='installed':
+        return {'state':'unknown','reason':'Installed metadata must be verified before reporting external service health.'}
+    if external_state is None:
+        return {'state':'unknown','reason':'No published external service observation is available.'}
+    from .projection import external_observation
+    external=external_observation(external_state)
+    if workspaces is None:
+        workspaces=[f['workspace_id'] for f in metadata['features'] if f['installation_id']==row['installation_id']]
+    expected=row['manifest']['external_service']['expected_image'].split('@')[1]
+    for workspace in workspaces:
+        endpoints=[e for e in external['endpoints'] if e['site_id']==metadata['site_id'] and e['workspace_id']==workspace and e['installation_id']==row['installation_id']]
+        health=external['service_health'].get(row['installation_id']+':'+workspace,{})
+        if (len(endpoints)!=1 or endpoints[0]['state']!='enabled' or endpoints[0]['expected_image_digest']!=expected
+                or health.get('state')!='healthy' or health.get('expected_image_digest')!=expected):
+            return {'state':'degraded','reason':'Published endpoint approval, image or service health needs attention; the runtime is separately managed.'}
+    return {'state':'healthy' if workspaces else 'unknown','reason':'Published scoped endpoint and service health observed; workspace availability is separate.'}
+
+
+def _dependencies(row,manifest,metadata,external_state=None):
     installations={item['plugin_id']:item for item in metadata['installations'] if item['metadata_state']!='removed'}
     modules={item['addon']:item for item in metadata['native_modules']};features=metadata['features'];issues=[]
     def available(provider,workspace):
+        enabled=any(f['installation_id']==provider['installation_id'] and f['workspace_id']==workspace and f['feature_state']=='enabled' for f in features)
+        if provider['runtime']=='external_service':
+            return provider['metadata_state']=='installed' and enabled and _external_health(provider,metadata,external_state,[workspace])['state']=='healthy'
         native=modules.get(provider['manifest']['runtime'].get('addon_name'))
         return (provider['metadata_state']=='installed' and native is not None and native['state']=='installed'
                 and native['version']==native_version(provider['version'])
@@ -88,18 +112,20 @@ def installed_view(profile,metadata,*,now,offset='0'):
         retained=row['runtime']=='native' and row['metadata_state']=='removed' and module is None
         if module is not None and module['version']!=native_version(row['version']):state='failed'
         if not consistent and not retained:state='failed'
-        dependencies={'state':'unknown','issues':[]} if retained else _dependencies(row,manifest,metadata) if consistent else {'state':'unknown','issues':['Installed metadata does not match a current curated artifact']}
+        dependencies={'state':'unknown','issues':[]} if retained else _dependencies(row,manifest,metadata,profile.get('external_state')) if consistent else {'state':'unknown','issues':['Installed metadata does not match a current curated artifact']}
         degraded=(state in ('failed','recovery_required') or dependencies['state']=='unavailable'
                   or (row['metadata_state']=='removed')!=(state=='not_installed'))
         if retained:
             degraded=any(f['feature_state']!='suspended' for f in metadata['features'] if f['installation_id']==row['installation_id']) or any(
                 g['state']=='approved' for g in metadata.get('grants',[]) if g['installation_id']==row['installation_id']) or any(
                 row['installation_id'] in (b['descriptor']['consumer_installation_id'],b['descriptor']['provider_installation_id']) for b in metadata['bindings'])
+        health={'state':'degraded' if degraded else 'unknown','reason':'Installation or required dependency needs attention.' if degraded else 'Native database installation is absent; retained metadata grants no availability.' if retained else 'Registry observed; plugin-specific health has not been probed.'}
+        if row['runtime']=='external_service' and not degraded:health=_external_health(row,metadata,profile.get('external_state'))
         items.append({'installation_id':row['installation_id'],'plugin_id':row['plugin_id'],'version':row['version'],
             'artifact_digest':row['digest'],'runtime':row['runtime'],'metadata_state':row['metadata_state'],'database_state':state,
             'native_version':module['version'] if module else None,'features':[{'workspace_id':f['workspace_id'],'availability':f['feature_state']}
             for f in metadata['features'] if f['installation_id']==row['installation_id']],
-            'health':{'state':'degraded' if degraded else 'unknown','reason':'Installation or required dependency needs attention.' if degraded else 'Native database installation is absent; retained metadata grants no availability.' if retained else 'Registry observed; plugin-specific health has not been probed.'},
+            'health':health,
             'dependencies':dependencies,'artifact':artifact_summary(descriptor) if descriptor else None})
     return validate('manager-view',observed(profile,now)|{'kind':'installed','items':items,'next_offset':offset+20 if len(rows)>offset+20 else None})
 

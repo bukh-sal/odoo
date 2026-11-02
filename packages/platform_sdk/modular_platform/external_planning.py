@@ -5,6 +5,7 @@ cache may prepare the same proposal but cannot authorize it. No runtime control,
 native module installation, package-selected URL or new approval channel exists.
 """
 import copy
+from packaging.version import Version
 
 from .lifecycle_planning import installation_id
 from .planning_cli import prepare_document
@@ -77,6 +78,8 @@ def prepare_external_metadata(document, sites, catalog, *, targets, operation_ty
         if len(matches)!=1 or matches[0]['manifest']['runtime']!={'kind':'external_service'}:
             raise PlanningError('Exact current trusted external metadata package required')
         descriptor=matches[0];manifest=descriptor['manifest']
+        if operation_type=='upgrade' and (plugin not in old or Version(pin['version'])<=Version(old[plugin]['version'])):
+            raise PlanningError('Metadata upgrade requires a strictly newer package version')
         if any(name.startswith(('backend/','frontend/','migrations/')) for name in descriptor.get('inventory',{})):
             raise PlanningError('Metadata lifecycle cannot import executable plugin code')
         scoped=[r for r in external['endpoints'] if all(r[k]==target[k] for k in ['installation_id','site_id','workspace_id'])
