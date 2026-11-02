@@ -1,0 +1,172 @@
+{
+  "result": "passed_actual_canonical_worker_duplicates_and_scoped_tokens",
+  "cases": [
+    {
+      "name": "first",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "duplicate_new_transport_id",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "same_operation_changed_input",
+      "status": 409,
+      "error_code": "CONFLICT"
+    },
+    {
+      "name": "original_after_conflict",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "payload_only_site_id",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "signed_matching_foreign_site_id",
+      "status": 403,
+      "error_code": "FORBIDDEN"
+    },
+    {
+      "name": "payload_only_workspace_id",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "signed_matching_foreign_workspace_id",
+      "status": 403,
+      "error_code": "FORBIDDEN"
+    },
+    {
+      "name": "payload_only_installation_id",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "signed_matching_foreign_installation_id",
+      "status": 403,
+      "error_code": "FORBIDDEN"
+    },
+    {
+      "name": "payload_only_endpoint_generation",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "signed_matching_foreign_endpoint_generation",
+      "status": 403,
+      "error_code": "FORBIDDEN"
+    },
+    {
+      "name": "expired_retry",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "future_not_before",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "wrong_audience",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "wrong_issuer",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "wrong_subject",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "wrong_method",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "excessive_lifetime",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "wrong_key_id",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "wrong_signature",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "wrong_algorithm",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED"
+    },
+    {
+      "name": "concurrent_duplicate_0",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "concurrent_duplicate_1",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "concurrent_duplicate_2",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "concurrent_duplicate_3",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "concurrent_duplicate_4",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "concurrent_duplicate_5",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "concurrent_duplicate_6",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "name": "concurrent_duplicate_7",
+      "status": 200,
+      "error_code": null
+    }
+  ],
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "same_running_worker_image_key_config3_publication5": true,
+  "all17tables_and22terminal_jobs_exact": true,
+  "private_key_remains_operator_only": true,
+  "short_lived_tokens_stdin_only_not_logged": true,
+  "positive_duplicate_responses_and_changed_input_conflict": true,
+  "concurrent_duplicate_requests": 8,
+  "source_commit": "be3910ee",
+  "source_sha256": {
+    "services/document_stats/engine.py": "bd9bda44c7abfabbbab95041b1f349de9ccd287e6a172783c03c376fefa1f85e",
+    "services/document_stats/server.py": "3958b71382d822510c994296bb6c6dd7d3ed29afc21972f197e55a807e74098d",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900"
+  },
+  "limits": [
+    "Direct real worker verifier qualification; no host gateway bypass or original-actor finalization claim. Installed gateway/bridge positive and outage evidence is separate. No private cache instrumentation or single-computation-count assertion. In-flight revocation, external recovery and changed-image qualification remain."
+  ]
+}
