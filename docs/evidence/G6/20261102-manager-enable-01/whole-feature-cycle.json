@@ -1,0 +1,18 @@
+{
+  "result": "passed_actual_http_manager_suspend_enable_cycle",
+  "configuration_generation": 15,
+  "dispatch_generation": 73,
+  "original_actor_uid": 6,
+  "provider_context_restored_200": true,
+  "current_policy_generation_fresh": true,
+  "native_A_B_C_list_form_retained": true,
+  "manager_reports_installed_enabled_healthy_without_fake_addon": true,
+  "all17table_original_rows_preserved_except_exact_feature_timestamp_policy_plus2_and_job_epochs": true,
+  "old_job_outcomes_inputs_attempts_preserved": 19,
+  "jobs_epoch_updated_twice": 18,
+  "independent_worker_identity_image_start_mounts_key_and_publication_unchanged_through_cycle": true,
+  "browser_rendering_tested": false,
+  "limits": [
+    "Terminal-history queues; no remote computation/in-flight effects/recovery/changed worker image qualification."
+  ]
+}

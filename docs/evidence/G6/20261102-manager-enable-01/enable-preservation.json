@@ -1,0 +1,19 @@
+{
+  "result": "passed_actual_http_manager_requested_metadata_enable",
+  "operation_id": "04bfa287-3fce-4105-ab7f-d5502cf5a716",
+  "plan_hash": "sha256:d8a98269cd4cbb1d1a415b8a842d9193c3ef163db219dd36939d67cd329bd4e4",
+  "configuration_generation": 15,
+  "dispatch_generation": 73,
+  "release_unchanged": true,
+  "native_module_rows_and_schema_exact": true,
+  "external_worker_identity_image_start_restart_mounts_network_key_publication_exact": true,
+  "all17table_original_rows_preserved_under_exact_feature_policy_epoch_changes": true,
+  "old_job_outcomes_inputs_attempts_exact": 19,
+  "jobs_epoch_updated": 18,
+  "old_checkpoint_files_preserved": 48,
+  "metadata_child_has_no_native_or_external_runtime_control": true,
+  "limits": [
+    "Terminal-history queues only; no in-flight remote race or external effects recovery.",
+    "Post-enablement browser/host invocation checks and enable/unregister remain separate."
+  ]
+}

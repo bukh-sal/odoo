@@ -1,0 +1,13 @@
+# Installed HTTP manager enable and full feature-cycle verification
+
+Actual core15/shell10 follows the verified suspension at dispatch70. Fresh suspended baseline, normal operator HTTP prepare/request, independent import, observed awaiting approval/mutation false, fresh reconstruction/review and exact-hash approval precede the same checkpointed executor. Operation `04bfa287-3fce-4105-ab7f-d5502cf5a716`, hash `sha256:d8a98269cd4cbb1d1a415b8a842d9193c3ef163db219dd36939d67cd329bd4e4` completed; config/release/image15 unchanged, dispatch70→73.
+
+`enable-preservation.json` proves all17 tables preserve original rows except C feature/timestamp, C policy+1 and18 job claim/dispatch epochs. All19 original job outcomes/inputs/attempts, full native module rows, schema and48 checkpoint files remain. Metadata child performs no native maintenance or external runtime control; host workers are replaced. Independent worker container/image/start/restarts/mounts/network/key/publication3 stay exact.
+
+`whole-feature-cycle.json` additionally compares with the original enabled pre-suspension snapshot: C availability restored, C policy+2 and18 exact paired epoch updates are the only allowed differences. Original Alice C context200→409→200, fresh policy and native Odoo A/B/C list/form definitions pass. Manager distinguishes installed/enabled/healthy from native addon registration; no fake addon exists. HTTP reads preserve all17 tables and worker.
+
+`enable-handoff-qualification.json` and `enable-http-completed-status.json` verify the same operation completed through ordinary redacted journal mirroring. The app request grants no executor authority. `enable-retirement.json` records7 exact owned terminal helpers/superseded host app archived privately and removed; no new images/volumes, active and actual checkpoint roles retained.
+
+The driver initially retained a suspend keyword in its fresh enable marker. First nomination stopped before HTTP with KeyError; source/empty marker corrected without recapturing baseline or replaying mutation. See append-only work log. The preservation report's next-check limit reflects its earlier point in the sequence; subsequent whole-cycle/handoff records above close backend entrypoint and enable checks.
+
+Browser rendering was not tested: user explicitly requested backend checks while the browser surface is unavailable. Terminal-history scope only: no installed connector, remote computation/in-flight effects, external recovery or changed-worker-image proof. Unregister/re-register and complete SVC04/05 remain required. No new whole acceptance or G6 pass is claimed.

@@ -1,0 +1,11 @@
+{
+  "result": "passed_actual_http_manager_to_independent_executor_handoff",
+  "operation_id": "04bfa287-3fce-4105-ab7f-d5502cf5a716",
+  "plan_hash": "sha256:d8a98269cd4cbb1d1a415b8a842d9193c3ef163db219dd36939d67cd329bd4e4",
+  "app_request_was_not_approval": true,
+  "independent_import_review_exact_approval_required": true,
+  "same_operation_completed": true,
+  "actual_http_redacted_status_completed": true,
+  "external_metadata_installed_feature_enabled": true,
+  "browser_rendering_tested": false
+}
