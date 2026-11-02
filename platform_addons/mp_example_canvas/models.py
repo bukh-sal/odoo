@@ -17,7 +17,9 @@ class Board(models.Model):
     public_id=fields.Char(default=lambda self:str(uuid4()),required=True,index=True,readonly=True)
     name=fields.Char(required=True,size=100)
     revision=fields.Integer(required=True,default=1,readonly=True)
-    cards=fields.Json(default=list,required=True)
+    # Native Json stores an empty list as SQL NULL. Canonical public DTOs still
+    # contain an array; allow that native representation of an empty board.
+    cards=fields.Json(default=list)
     _uuid_unique=models.Constraint('UNIQUE(public_id)','Board ID must be unique')
     _workspace_board=models.Constraint('UNIQUE(workspace_id)','One reference board per workspace')
 
@@ -25,8 +27,9 @@ class Board(models.Model):
     def _validate_board(self):
         for board in self:
             if not Draft202012Validator(_board).is_valid(board._dto()) or not board.name.strip():raise ValidationError('Invalid board')
-            if len({card['id'] for card in board.cards})!=len(board.cards):raise ValidationError('Duplicate card ID')
-            for card in board.cards:
+            cards=board.cards or []
+            if len({card['id'] for card in cards})!=len(cards):raise ValidationError('Duplicate card ID')
+            for card in cards:
                 if card['note_id'] and not self.env['mp.example.note'].search_count([('public_id','=',card['note_id'])]):raise MissingError('Referenced note unavailable')
 
     @api.model_create_multi

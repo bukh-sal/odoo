@@ -1,0 +1,28 @@
+{
+  "result": "passed_actual_Canvas4_only_upgrade",
+  "operation_id": "e6621f8d-8abe-43e3-9395-206669338d4a",
+  "image": "sha256:bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+  "inventory": "sha256:14d7d7fe727e817826134aee4d71dfea3ec739acdfeb690ddc533bafd0218fff",
+  "configuration_generation": 27,
+  "dispatch_generation": 126,
+  "all36jobs_outcomes_inputs_attempts_retained": true,
+  "jobs_epoch_updated": 33,
+  "all30Notes_one_existing_Canvas_reference_other_business_events_credentials_bindings_endpoints_exact": true,
+  "reviewed_metadata_delta": "Only Canvas manifest/version/digest/write_date and A/B policy generations +1; no grants or feature availability change.",
+  "only_schema_delta": [
+    "mp_example_canvas_board.cards",
+    "NOT NULL",
+    "nullable"
+  ],
+  "only_native_version_delta": [
+    "mp_example_canvas",
+    "19.0.0.1.3",
+    "19.0.0.1.4"
+  ],
+  "retained_checkpoint_files": 50,
+  "worker_identity_image_start_restart_network_mounts_key_publication_exact": true,
+  "helper_image_only_moved_to_approved_image": true,
+  "limits": [
+    "Upgrade/preservation only; actual empty storage/get/save and HTTP checks still required. Full G7 remains open."
+  ]
+}

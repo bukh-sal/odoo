@@ -1,0 +1,37 @@
+{
+  "result": "passed_minimal_Canvas_empty_array_storage_correction",
+  "work_item": "G-01d1",
+  "spec_sections": [
+    "22.3",
+    "22.5",
+    "25.5 G"
+  ],
+  "configuration_generation": 27,
+  "dispatch_generation": 126,
+  "image": "sha256:bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+  "inventory": "sha256:14d7d7fe727e817826134aee4d71dfea3ec739acdfeb690ddc533bafd0218fff",
+  "Canvas": "0.1.4",
+  "core": "19.0.0.1.19",
+  "identity": "19.0.0.1.4",
+  "native_tests": 9,
+  "http_checks": 10,
+  "actual_approved_Canvas_only_upgrade": true,
+  "one_nonempty_preupgrade_board_preserved": true,
+  "actual_default_and_explicit_empty_JSON_persistence": true,
+  "public_get_save_empty_array_and_fresh_client_reload": true,
+  "strict_input_CAS_role_workspace_Note_reference_guards_preserved": true,
+  "existing_Notes_use_native_Odoo_list_form": true,
+  "old36jobs_30Notes_other16tables_worker_preserved": true,
+  "owned_test_board_final_revision": 3,
+  "owned_test_board_original_cards_restored": true,
+  "only_column_schema_delta": "Canvas cards NOTNULL removed; native SQLNULL normalizes to public[]",
+  "no_frontend_source_change": true,
+  "contracts_97_exact": true,
+  "removed_containers": 14,
+  "compiler_retired": true,
+  "limits": [
+    "Reference compatibility correction only, no Canvas feature expansion or new acceptance credit.",
+    "ID03 remains passed by exact unchanged core19/identity1.4/other native paths and the new Canvas scope checks.",
+    "Full G7 still requires UI09, performance, current full release/security/license/network/provenance, fresh install/recovery/runbooks/handoff and obsolete owned Docker fixture retention cleanup."
+  ]
+}

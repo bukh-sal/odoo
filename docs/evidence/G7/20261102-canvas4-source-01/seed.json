@@ -1,0 +1,20 @@
+{
+  "result": "created_one_owned_nonempty_upgrade_fixture",
+  "workspace": "A",
+  "board": {
+    "id": "b3564e12-081f-4ea8-901a-7dfddd3a12f3",
+    "name": "R1 storage upgrade reference",
+    "revision": 1,
+    "cards": [
+      {
+        "id": "9b1530e9-ccdb-4a18-863b-cabd418c81b5",
+        "text": "Minimal compatibility fixture",
+        "lane": "inbox",
+        "note_id": "db117c2b-3134-4410-af5a-49c58c8bf929"
+      }
+    ]
+  },
+  "actual_old_Canvas": "0.1.3",
+  "all_other16tables_exact": true,
+  "product_expansion": false
+}

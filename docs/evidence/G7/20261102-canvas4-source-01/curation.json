@@ -1,0 +1,16 @@
+{
+  "result": "curated_exact_Canvas4_only",
+  "artifact": {
+    "addon": "mp_example_canvas",
+    "digest": "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+    "file": "org.example.canvas-0.1.4.mplug",
+    "plugin_id": "org.example.canvas",
+    "version": "0.1.4"
+  },
+  "trust_generation": 11,
+  "previous_catalog_count": 15,
+  "catalog_count": 16,
+  "all_old_archives_retained": true,
+  "no_grants_or_native_state_changed": true,
+  "global_trust_catalog_unchanged": true
+}

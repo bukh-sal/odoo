@@ -1,5 +1,5 @@
 "schema_version" = 1
-"plugin" = {"id" = "org.example.canvas", "version" = "0.1.3", "name" = "Canvas", "description" = "Framework-neutral workspace board", "publisher" = "example", "license" = "LGPL-3.0-only"}
+"plugin" = {"id" = "org.example.canvas", "version" = "0.1.4", "name" = "Canvas", "description" = "Framework-neutral workspace board", "publisher" = "example", "license" = "LGPL-3.0-only"}
 "compatibility" = {"platform" = ">=0.1,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
 "runtime" = {"kind" = "native", "addon_name" = "mp_example_canvas", "native_compatibility" = "odoo-19", "python" = ">=3.12,<3.13", "python_dependencies" = []}
 "activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}

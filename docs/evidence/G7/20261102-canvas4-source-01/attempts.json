@@ -1,0 +1,24 @@
+{
+  "http_first_attempt": {
+    "source": "http_empty_attempt01.py",
+    "sha256": "e9b57d86acf3f4feeb2fa392ba55f5c811df44d162f2cdc451da5a5e4d00fe32",
+    "result": "test_error_code_expectation_mismatch",
+    "actual": "400 VALIDATION_FAILED",
+    "expected": "400 INVALID_INPUT",
+    "committed_owned_board_revision": 2,
+    "prior_successes": [
+      "clear saved",
+      "fresh authenticated GET[]",
+      "stale CAS409"
+    ],
+    "no_product_defect": true
+  },
+  "resume": {
+    "flag": "--resume-after-validation",
+    "exact_original36jobs_30Notes_other_tables_verified": true,
+    "original4outcomes_validated": true,
+    "clearing_or_denied_write_not_replayed": true,
+    "owned_cards_restored_once_revision3": true,
+    "result": "passed"
+  }
+}

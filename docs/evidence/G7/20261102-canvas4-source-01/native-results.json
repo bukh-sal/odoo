@@ -1,0 +1,16 @@
+{
+  "result": "passed",
+  "tests": 9,
+  "successful": true,
+  "failures": [],
+  "errors": [],
+  "image": "sha256:bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+  "configuration_generation": 27,
+  "Canvas": "0.1.4",
+  "actual_installed_source": true,
+  "all36jobs_30Notes_oneboard_other_tables_worker_exact": true,
+  "all_test_writes_rolled_back": true,
+  "no_runtime_source_replacement": true,
+  "test_sha256": "4e610b2f01f51ae929dadb2bd21d0fec38243bb82752b859ea88fa0c0aa073a4",
+  "scope": "Default/explicit empty create, actual native NULL storage/reload, strict bound get/save schemas and nonempty-empty round trip, CAS, viewer/foreign/missing scope, Note references and native Notes views. One explicitly seeded upgrade board retained."
+}

@@ -1,0 +1,13 @@
+{
+  "result": "application_delta_exact",
+  "base_image": "sha256:209fb8099027b1a43ac9b49add2167b7eadfa963ba598c093e9c06f31f9611c6",
+  "compiler_image": "sha256:bf59b8ae0b9bb898143d41659f0342b2d625f6f2473bce7f0a59262d401d10f3",
+  "expected_paths": [
+    "addons/mp_example_canvas/__manifest__.py",
+    "addons/mp_example_canvas/models.py",
+    "artifacts/org.example.canvas-0.1.3.mplug",
+    "artifacts/org.example.canvas-0.1.4.mplug"
+  ],
+  "python_distributions_changed": true,
+  "not_deployed": true
+}

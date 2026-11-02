@@ -1,0 +1,19 @@
+{
+  "operation_type": "upgrade",
+  "targets": [
+    {
+      "installation_id": "e92fb752-f6a0-5a8f-a414-437cde511af2",
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "workspace_id": "15ba4543-2539-4e66-b367-461700227701",
+      "plugin_id": "org.example.canvas",
+      "action": "upgrade"
+    },
+    {
+      "installation_id": "e92fb752-f6a0-5a8f-a414-437cde511af2",
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "workspace_id": "8967a16c-eeed-433c-8f65-0593a108a601",
+      "plugin_id": "org.example.canvas",
+      "action": "upgrade"
+    }
+  ]
+}

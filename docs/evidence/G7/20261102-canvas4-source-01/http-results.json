@@ -1,0 +1,89 @@
+{
+  "result": "passed_actual_empty_board_clear_reload_restore",
+  "checks": [
+    {
+      "method": "save",
+      "workspace": "A",
+      "status": 200,
+      "expected_error": null,
+      "passed": true
+    },
+    {
+      "method": "get",
+      "workspace": "A",
+      "status": 200,
+      "expected_error": null,
+      "passed": true
+    },
+    {
+      "method": "save",
+      "workspace": "A",
+      "status": 409,
+      "expected_error": "CONFLICT",
+      "passed": true
+    },
+    {
+      "method": "save",
+      "workspace": "A",
+      "status": 400,
+      "expected_error": "VALIDATION_FAILED",
+      "passed": true
+    },
+    {
+      "method": "get",
+      "workspace": "A",
+      "status": 200,
+      "expected_error": null,
+      "passed": true
+    },
+    {
+      "method": "get",
+      "workspace": "B",
+      "status": 404,
+      "expected_error": "NOT_FOUND",
+      "passed": true
+    },
+    {
+      "method": "get",
+      "workspace": "B",
+      "status": 404,
+      "expected_error": "NOT_FOUND",
+      "passed": true
+    },
+    {
+      "method": "save",
+      "workspace": "B",
+      "status": 403,
+      "expected_error": "FORBIDDEN",
+      "passed": true
+    },
+    {
+      "method": "save",
+      "workspace": "A",
+      "status": 200,
+      "expected_error": null,
+      "passed": true
+    },
+    {
+      "method": "get",
+      "workspace": "A",
+      "status": 200,
+      "expected_error": null,
+      "passed": true
+    }
+  ],
+  "configuration_generation": 27,
+  "image": "sha256:bca52b9b5f66f907a73fabe2d0e301ff8073190733b348af8329ea23d54e1d87",
+  "fresh_authenticated_client_observed_committed_empty_array": true,
+  "exact_owned_fixture_cards_restored": true,
+  "owned_board_revision": [
+    1,
+    2,
+    3
+  ],
+  "all36jobs_30Notes_other16tables_worker_exact": true,
+  "standard_CRUD_uses_native_Odoo": true,
+  "no_new_UI_features": true,
+  "resumed_after_correcting_test_error_code_expectation": true,
+  "no_clear_or_denied_write_replayed": true
+}

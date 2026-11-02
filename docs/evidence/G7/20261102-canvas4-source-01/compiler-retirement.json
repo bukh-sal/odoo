@@ -1,0 +1,11 @@
+{
+  "result": "retired_exact_unused_compiler_and_temporary_aliases",
+  "removed_tags": [
+    "modular-platform:canvas4-base-209fb8099027b1a43ac9b49add2167b7eadfa963ba598c093e9c06f31f9611c6",
+    "modular-platform:canvas4-source-bf59b8ae0b9bb898143d41659f0342b2d625f6f2473bce7f0a59262d401d10f3",
+    "modular-platform:stage-20261102t165752831984z"
+  ],
+  "compiler_image": "sha256:bf59b8ae0b9bb898143d41659f0342b2d625f6f2473bce7f0a59262d401d10f3",
+  "current_and_checkpoint_retained": true,
+  "no_global_prune": true
+}
