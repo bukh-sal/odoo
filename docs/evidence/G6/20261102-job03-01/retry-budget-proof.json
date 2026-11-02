@@ -1,0 +1,10 @@
+{
+  "result": "original_reclaimer_reached_unknown_with_retry_budget_remaining",
+  "first_observer_ended_UTC": "2026-11-02T11:38:24.191271+00:00",
+  "original_job_deadline_UTC": "2026-11-02T11:40:51.081948+00:00",
+  "max_attempts": 3,
+  "attempts": 1,
+  "first_observer_native_status_assertions_passed_before_operator_isolation_error": true,
+  "real_lease_not_modified": true,
+  "first_observer_diagnostics_sha256": "d5fc5c6906dcc15082b8115089daedbfc04f7fc8e7b837daf2734b90bf73f7cb"
+}

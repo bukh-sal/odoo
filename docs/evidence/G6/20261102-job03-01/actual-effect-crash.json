@@ -1,0 +1,12 @@
+{
+  "result": "verified_real_non_idempotent_external_commit_then_native_SIGKILL",
+  "job_id": "b7a26d05-6460-459c-8c5f-cbf934866d35",
+  "native_original_actor_uid": 6,
+  "actual_installed_startup_authorization_prepare_runner": true,
+  "trusted_fixture_handler_registered_without_replacing_existing_functions": true,
+  "effect_started_committed_before_HTTP": true,
+  "recipient_effect_count": 1,
+  "response_sent": false,
+  "producer_exit_code": 137,
+  "no_host_result_committed": true
+}

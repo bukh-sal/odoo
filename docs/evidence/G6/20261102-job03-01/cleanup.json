@@ -1,0 +1,17 @@
+{
+  "result": "removed_all_owned_job03_fixture_assets_after_diagnostic_archive",
+  "native_producer_and_observers_auto_removed": true,
+  "effect_fixture_stopped_and_auto_removed": true,
+  "isolated_database_exact_OID_owner_and_zero_connections_checked_then_dropped": true,
+  "one_owned_native_config_volume_removed": true,
+  "duplicate_setup_dump_bytes_removed": 6442850,
+  "effect_receipt_unknown_row_status_and_trace_retained": true,
+  "live_site_all17tables_and_canonical_worker_exact": true,
+  "new_images": 0,
+  "remaining_fixture_containers": 0,
+  "remaining_fixture_volumes": 0,
+  "remaining_fixture_databases": 0,
+  "no_force_or_global_prune": true,
+  "no_unknown_database_or_volume_touched": true,
+  "continuation_reason": "PostgreSQL to_json serializes oid as text; explicit bigint cast verified same numeric OID before any DB deletion."
+}

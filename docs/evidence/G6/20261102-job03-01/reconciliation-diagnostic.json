@@ -1,0 +1,19 @@
+{
+  "result": "external_effect_requires_explicit_reconciliation",
+  "job_id": "b7a26d05-6460-459c-8c5f-cbf934866d35",
+  "native_job_state": "outcome_unknown",
+  "error_code": "LEASE_EXPIRED",
+  "effect_started": true,
+  "attempts": 1,
+  "remote_receipt": {
+    "count": 1,
+    "operation_id": "b7a26d05-6460-459c-8c5f-cbf934866d35",
+    "input_sha256": "cdffaf556cb310ba9d71ec50c61c2086fcfedc9c2f1f0ae102986e30fc6c90f4",
+    "committed_at": 1793619471.2453406,
+    "response_sent": false
+  },
+  "safe_operator_action": "Do not retry or claim rollback. Independently compare operation ID/input receipt and perform effect-specific reconciliation before a new deployment/resume approval.",
+  "automatic_dispatch_resume_allowed": false,
+  "test_fixture_only": true,
+  "unknown_row_and_original_trace_archived_privately": true
+}

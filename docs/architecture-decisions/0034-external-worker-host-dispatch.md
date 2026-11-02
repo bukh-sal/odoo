@@ -1,6 +1,6 @@
 # ADR0034: approved host-to-worker dispatch
 
-Date: 2026-11-01. Status: installed remote bridge/authority and reference metadata lifecycle qualified; uncertain-effect recovery, changed-image and browser qualification pending.
+Date: 2026-11-01. Status: installed remote bridge/reference lifecycle/current-authority recovery and unknown-effect reporting qualified; changed-image and browser qualification pending.
 Parent F-01c/d/e2; spec13/14.3/14.5/14.6/22.4, SVC-02..05 and JOB-03.
 
 The existing service gateway registers native model handlers only. The independent
@@ -371,3 +371,18 @@ that operator runtime/key transition. See ../evidence/G6/20261102-reference-rest
 The reference remains stateless; JOB03 non-idempotent unknown-effect reporting/
 reconciliation still needs a real effect fixture, and changed-image/UI/G7 work
 remains. No public protocol, trust boundary or generic effects orchestrator changed.
+
+
+JOB03 checkpoint (2026-11-02): an isolated owned copy used the installed native
+JobDefinition/authorization/runner/status API with a trusted test handler in
+reconcile mode. A separate public-key-only recipient committed a real
+non-idempotent counter, withheld its response, and survived the producer SIGKILL.
+After real lease expiry the job reported outcome_unknown/attempt1/no result,
+without automatic redispatch despite remaining retry budget. Operator fencing
+used a fresh READ COMMITTED transaction; enable refused the unreconciled effect.
+Receipt/native status/trace diagnostics were archived before all fixture assets
+were removed; the live site and canonical worker stayed unchanged. See
+../evidence/G6/20261102-job03-01/README.md. This demonstrates reporting and a safe
+reconciliation fence, not a generic automatic effects resolver or remote rollback.
+Trusted handlers must commit effect_started before non-idempotent I/O; native
+Python remains fully trusted, and grant metadata is not a sandbox guarantee.

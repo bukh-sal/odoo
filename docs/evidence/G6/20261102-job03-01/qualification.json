@@ -1,0 +1,47 @@
+{
+  "result": "passed_JOB03_real_external_non_idempotent_commit_native_crash_unknown_outcome",
+  "source_commit": "8b0e25d5",
+  "job_id": "b7a26d05-6460-459c-8c5f-cbf934866d35",
+  "actual_installed_native_job_registration_authorization_resource_checks_and_runner": true,
+  "private_trusted_fixture_definition_no_existing_function_replacement": true,
+  "exact_owned_isolated_DB_config_and_recipient": true,
+  "no_main_database_credentials_or_filestore_or_private_signing_keys_in_recipient": true,
+  "standard_scoped_worker_RS256_credentials": true,
+  "durable_effect_started_committed_before_HTTP": true,
+  "actual_external_counter_committed_once_without_response": true,
+  "actual_native_producer_SIGKILL_exit137": true,
+  "real_lease_seconds": 30,
+  "original_max_attempts": 3,
+  "attempts": 1,
+  "first_reclaimer_within_original_deadline": true,
+  "native_status_outcome_unknown_LEASE_EXPIRED_no_result": true,
+  "two_subsequent_actual_runner_passes_idle_no_external_retry": true,
+  "lifecycle_enable_refuses_uncertain_effect": true,
+  "explicit_reconciliation_diagnostic_and_external_receipt_archived": true,
+  "all17_live_site_tables_29jobs_and_canonical_worker_exact": true,
+  "all_fixture_containers_database_and_volume_removed": true,
+  "new_images": 0,
+  "duplicate_setup_dump_bytes_removed": 6442850,
+  "fixture_compute_sha256": "4374c502531857f231be704ed46fbec59fa19e160ac4998eb0f05bf2939d284d",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "packages/platform_sdk/modular_platform/job_runner.py": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+    "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "88a37967403c602bac8d91f4c993dacae6d27d6f6f084d2446ebb6e1d05c1b0c",
+    "platform_addons/mp_core/job_dispatch.py": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+    "platform_addons/mp_core/external_job.py": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+    "platform_addons/mp_example_notes_stats/contracts.py": "547f7d66bacc09cc94774a1125719871a046b19a9bdf39d351a266dcd2ea3962"
+  },
+  "evidence_sha256": {
+    "recipient-isolation.json": "819a44275b773a81c96f4d20f9b4110e9b82de08a89b37f6b5c4fe1c8fa11cf5",
+    "actual-effect-crash.json": "a9bf93aecf9e9d2c5d0919d7c8d362763f0edd03efefcd81e18133ad405eda93",
+    "unknown-outcome.json": "3d771a27643323aa4e5e71e771f9764025d7791b8f5c9386fc487faac6ec7af4",
+    "retry-budget-proof.json": "cdc3e8e110d8fb5ea4e938ea4baed07b8b94c179b0f1054e384544747dcd642e",
+    "reconciliation-diagnostic.json": "e500b536e5f2e4b3057380b8ff77d623ba3278a35721acb5e70b026a5a35d441",
+    "cleanup.json": "3e5fe45eb01743ea77f3799cad276fbc323ebe291fbdd42c30f6aaded0d617b7"
+  },
+  "limits": [
+    "One real trusted fixture definition/recipient, not a new deployed public plugin or changed production handler.",
+    "An unknown outcome requires effect-specific operator reconciliation; no automatic resolution, remote rollback or universal exactly-once claim.",
+    "No browser test, changed-worker-image transition or whole G6/G7 qualification."
+  ]
+}

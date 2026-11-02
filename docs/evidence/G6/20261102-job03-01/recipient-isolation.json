@@ -1,0 +1,9 @@
+{
+  "result": "verified_owned_test_effect_recipient",
+  "same_cached_worker_image": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
+  "only_public_key_config_volume_readonly": true,
+  "no_database_credentials_or_filestore_or_host_bind_or_socket": true,
+  "no_published_host_port": true,
+  "scope_and_key_reuse_standard_worker_JWT": true,
+  "test_only_fixture_not_canonical_service": true
+}
