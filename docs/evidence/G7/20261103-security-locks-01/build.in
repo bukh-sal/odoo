@@ -1,0 +1,5 @@
+# Exact reviewed security maintenance; retain every unrelated qualified version.
+packaging==26.3
+pip==26.3
+setuptools==84.2.1
+wheel==0.48.0

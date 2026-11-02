@@ -1,0 +1,8 @@
+{
+  "result": "setup_permission_denial_before_registry_init",
+  "database": "mp_disposable_r0_r1_g7_security_afb79b1ffb3f",
+  "phase": "config_created_then_chown_before_chmod_denied_with_cap_CHOWN_only",
+  "native_init_not_started": true,
+  "source_database_not_modified": true,
+  "next": "Inspect exact owned volume/empty database, correct only modes/ownership; retain config bytes and database"
+}

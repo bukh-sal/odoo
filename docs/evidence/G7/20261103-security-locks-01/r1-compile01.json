@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\.local\\bin\\uv.exe",
+    "--no-config",
+    "pip",
+    "compile",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\docs\\evidence\\G7\\20261103-security-locks-01\\r1.in",
+    "--generate-hashes",
+    "--python-platform",
+    "x86_64-manylinux_2_28",
+    "--python-version",
+    "3.12.16",
+    "--no-python-downloads",
+    "--no-build",
+    "--no-annotate",
+    "--no-header",
+    "--default-index",
+    "https://pypi.org/simple",
+    "--keyring-provider",
+    "disabled",
+    "--output-file",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\g7-security-locks-01\\r1.lock"
+  ],
+  "exit_code": 1,
+  "no_build_backends": true,
+  "no_installed_environment_change": true
+}

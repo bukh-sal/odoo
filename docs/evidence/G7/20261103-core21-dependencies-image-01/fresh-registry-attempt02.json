@@ -1,0 +1,8 @@
+{
+  "result": "continuation_report_nameerror_before_permissions_or_init",
+  "reason": "Resumed record did not bind local project/database aliases used by phase reporter",
+  "phase_marker_written": true,
+  "permission_fix_not_run": true,
+  "native_init_not_started": true,
+  "next": "Bind exact recorded aliases, inspect current empty DB/owned volume, perform pending permissions and init only"
+}

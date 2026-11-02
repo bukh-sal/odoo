@@ -10,7 +10,16 @@
   "debian_snapshot": "20261027T000000Z",
   "python_dependencies": "requirements-py312.lock",
   "build_dependencies": "build-requirements.lock",
-  "resolver": "uv 0.13.5; Python 3.12 target; x86_64-unknown-linux-gnu",
+  "resolver": "Qualified modular_platform.resolution / resolvelib1.2.1, complete static observed Python3.12.16 target metadata; no source build hooks in planning",
   "frontend_build": "No new frontend build toolchain in R0; retained upstream assets compiled by Odoo. Host SDK toolchain must be pinned before G2.",
-  "qualification": "candidate; container build and fresh boot pending"
+  "qualification": "candidate; container build and fresh boot pending",
+  "dependency_review": {
+    "adr": "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md",
+    "evidence": "docs/evidence/G7/20261103-security-locks-01/static-resolution.json",
+    "baseline_packages": 65,
+    "r1_packages": 73,
+    "build_packages": 4,
+    "worker_packages": 13,
+    "qualification": "candidate; actual images/native lifecycle/security/fresh release required"
+  }
 }

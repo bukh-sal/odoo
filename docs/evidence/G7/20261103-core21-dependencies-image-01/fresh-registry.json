@@ -1,0 +1,201 @@
+{
+  "result": "passed_empty_database_native_core_initialization",
+  "state": "fresh_core_registry_passed_retained_for_http_and_release_rehearsal",
+  "project": "mp-g7-core21-fresh-afb79b1ffb3f",
+  "database": "mp_disposable_r0_r1_g7_security_afb79b1ffb3f",
+  "volume": "mp-g7-core21-fresh-afb79b1ffb3f-config-data",
+  "init_container": "mp-g7-core21-fresh-afb79b1ffb3f-init",
+  "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "source_project": "mp-r0-r1g64bb76636070f",
+  "source_database": "mp_disposable_r0_r1_restore_5edcfc97647748a4ad2bba36252834fc",
+  "shared_pg": "mp-r0-r1g64bb76636070f-db-1",
+  "network": "mp-r0-r1g64bb76636070f_runtime",
+  "experimental_not_approved_deployment": true,
+  "terminal_init_retired": "f154efe29b4c5287b4a9be1d9824d14d6eec15bcac03367f7a1244cb26bdfb0d",
+  "installed_modules": [
+    {
+      "name": "auth_passkey",
+      "state": "installed",
+      "version": "19.0.1.1"
+    },
+    {
+      "name": "auth_password_policy",
+      "state": "installed",
+      "version": "19.0.1.0"
+    },
+    {
+      "name": "auth_totp",
+      "state": "installed",
+      "version": "19.0.1.0"
+    },
+    {
+      "name": "base",
+      "state": "installed",
+      "version": "19.0.1.3"
+    },
+    {
+      "name": "base_import",
+      "state": "installed",
+      "version": "19.0.2.0"
+    },
+    {
+      "name": "base_setup",
+      "state": "installed",
+      "version": "19.0.1.0"
+    },
+    {
+      "name": "bus",
+      "state": "installed",
+      "version": "19.0.1.0"
+    },
+    {
+      "name": "mp_compat",
+      "state": "installed",
+      "version": "19.0.0.1.1"
+    },
+    {
+      "name": "mp_core",
+      "state": "installed",
+      "version": "19.0.0.1.21"
+    },
+    {
+      "name": "mp_identity",
+      "state": "installed",
+      "version": "19.0.0.1.5"
+    },
+    {
+      "name": "mp_shell",
+      "state": "installed",
+      "version": "19.0.0.1.10"
+    },
+    {
+      "name": "web",
+      "state": "installed",
+      "version": "19.0.1.0"
+    },
+    {
+      "name": "web_tour",
+      "state": "installed",
+      "version": "19.0.1.0"
+    }
+  ],
+  "uninstallable_catalog_only": [
+    {
+      "name": "accountant",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "appointment",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "helpdesk",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "hr_appraisal",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "industry_fsm",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "knowledge",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "marketing_automation",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "mrp_plm",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "mrp_workorder",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "payment_sepa_direct_debit",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "planning",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "quality_control",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "sale_amazon",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "sale_subscription",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "sign",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "social",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "stock_barcode",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "timesheet_grid",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "voip",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "web_mobile",
+      "state": "uninstallable",
+      "version": null
+    },
+    {
+      "name": "web_studio",
+      "state": "uninstallable",
+      "version": null
+    }
+  ],
+  "source_17table_sha256": "15b1e295bd5cb5bee5d80c0d62627e23b9adfc7f20e1c9062ae9ceadcb809e70",
+  "source_17tables_worker_exact": true,
+  "attempts": [
+    "Seed chown-before-chmod denied; exact existing config permissions corrected without regenerating bytes/database.",
+    "Continuation reporting alias NameError before fix/init; bound recorded aliases, no mutation repeated.",
+    "Native init completed0, registry loaded; result assertion incorrectly included uninstallable catalog placeholders. Finalizer verifies installed-only graph and retains all metadata observations; no init rerun."
+  ],
+  "limits": [
+    "No HTTP/login/plugin-install/current acceptance pass yet; bootstrap-only registry probe, not approved live deployment.",
+    "One new owned database/config-data volume retained for required HTTP/fresh-release follow-up; terminal init retired.",
+    "Shared PostgreSQL/network/trusted DB role explicitly retained; not hostile-native isolation."
+  ]
+}

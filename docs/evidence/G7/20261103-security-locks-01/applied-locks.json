@@ -1,0 +1,68 @@
+{
+  "result": "reviewed_exact_candidate_locks_applied_not_deployed",
+  "changes": [
+    {
+      "path": "deploy/requirements-py312.lock",
+      "previous_sha256": "d5310a8292ec8077519bc9c8e438e3a7c751d3d65769b38ca024eb4ab2d3c850",
+      "target_sha256": "be26bde25602962900dc59ea738b8783c8111e4e39a00a6d47edf3cbb1999196",
+      "packages": 65
+    },
+    {
+      "path": "deploy/requirements-r1.lock",
+      "previous_sha256": "3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+      "target_sha256": "2c9dedf1ecc29cd321b95a44372ca2afba5023bd9d2dfb26839c9a415602bc36",
+      "packages": 73
+    },
+    {
+      "path": "deploy/build-requirements.lock",
+      "previous_sha256": "9bd8af40aefa4385b5dee38b57eec5edecd669d2ec4c6479061f5b38419fb03f",
+      "target_sha256": "88710c849b4315ea5176ad6b83517366fc754265ffac07e77f2a1b4d13c199c5",
+      "packages": 4
+    },
+    {
+      "path": "services/document_stats/requirements.lock",
+      "previous_sha256": "683ebc3177b748efebcb5885ddfc8093b1df988c1a83f2d975e9ad49907906cb",
+      "target_sha256": "e6557f66e398bb61d44ef8114958ff6941613388b78aed3d8344594c93dc42ae"
+    },
+    {
+      "path": "services/document_stats/dependency-provenance.json",
+      "previous_sha256": "7fbe1b588f46efc1b7e170f4389ad6924bb435d55c31a95f403234d3f2721cca",
+      "target_sha256": "66045761ea39cc6a1c4c8a4a8698885ef84f814cb738fea1843c5db333d1456b"
+    },
+    {
+      "path": "deploy/runtime.lock.json",
+      "previous_sha256": "026c6efcdd3e34c494830bbd99f3d7ac908111b05a3a2bff9dd6404bb08c3dbe",
+      "target_sha256": "05526d18c9003cbc4cb2b49c8d4390ec421ac74c0655592608c68ee985745b05"
+    }
+  ],
+  "worker_derivation_command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "services/document_stats/lock_dependencies.py",
+    "--metadata",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\g7-dependency-compatibility-01\\final-installed-metadata.stdout",
+    "--output",
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\g7-security-locks-01\\worker-derived"
+  ],
+  "worker_packages": {
+    "attrs": "26.1.0",
+    "cffi": "2.1.1",
+    "cryptography": "50.0.2",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "packaging": "26.3",
+    "pip": "26.3",
+    "pycparser": "3.12",
+    "pyjwt": "2.15.1",
+    "referencing": "0.37.0",
+    "rfc8785": "0.1.4",
+    "rpds-py": "2026.9.1",
+    "typing-extensions": "4.16.0"
+  },
+  "no_installed_environment_or_running_service_change": true,
+  "limits": [
+    "Affected runtime acceptance needs target image qualification; historical installed evidence retained.",
+    "Frozen host tooling/global Python unchanged; app/worker images separately built and approved."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "result": "retired_completed_owned_fixtures",
+  "database": "mp_disposable_r0_r1_g7_security_afb79b1ffb3f",
+  "removed_volumes": [
+    "mp-g7-core21-fresh-afb79b1ffb3f-config-data",
+    "mp-g7-dep-c39f7dae7ba4-venv"
+  ],
+  "fresh_database_archive": {
+    "sha256": "749a33b68ddad187bede7d3dba6570b1fd38deca23a0da08a20d6a0433a22873",
+    "bytes": 1300180,
+    "pg_restore_list_verified": true
+  },
+  "fresh_volume_archive": {
+    "sha256": "e1efbc39f3d7d8b01bb0123cfd7f690493faabfc61b189bc707b8482e93f5c8d",
+    "bytes": 493592,
+    "entries": 27,
+    "all_entries_read_hash_verified": true
+  },
+  "old_probe": {
+    "root_entries": [
+      "ldap-wheel",
+      "probe-requirements.lock",
+      "venv",
+      "wheels"
+    ],
+    "binary_environment_only": true
+  },
+  "old_probe_reconstruction": "Original protected31 image plus all verified downloaded wheels/LDAP wheel, metadata/hashes and install diagnostics retained privately; no database/user data in binary-only probe.",
+  "original_17tables_worker_exact": true,
+  "candidate_image_retained_for_actual_maintenance": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "no_unknown_or_shared_resources_removed": true
+}

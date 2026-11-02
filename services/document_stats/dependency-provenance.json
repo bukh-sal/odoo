@@ -1,14 +1,38 @@
 {
   "source": "deploy/requirements-r1.lock",
-  "source_sha256": "3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+  "source_sha256": "2c9dedf1ecc29cd321b95a44372ca2afba5023bd9d2dfb26839c9a415602bc36",
+  "bootstrap_source": "deploy/build-requirements.lock",
+  "bootstrap_source_sha256": "88710c849b4315ea5176ad6b83517366fc754265ffac07e77f2a1b4d13c199c5",
+  "metadata_sha256": "04afc2e13af15213c1b564c09f8cde38429ded04b56e2fade3f002cfe91ad077",
+  "target_markers": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.16",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "7.0.14-linuxkit",
+    "platform_system": "Linux",
+    "platform_version": "#1 SMP PREEMPT_DYNAMIC Tue Oct 20 23:09:17 UTC 2026",
+    "python_full_version": "3.12.16",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "linux"
+  },
   "packages": {
-    "packaging": {
-      "version": "26.3",
+    "attrs": {
+      "version": "26.1.0",
       "dependencies": []
     },
-    "rfc8785": {
-      "version": "0.1.4",
-      "dependencies": []
+    "cffi": {
+      "version": "2.1.1",
+      "dependencies": [
+        "pycparser"
+      ]
+    },
+    "cryptography": {
+      "version": "50.0.2",
+      "dependencies": [
+        "cffi"
+      ]
     },
     "jsonschema": {
       "version": "4.26.0",
@@ -19,8 +43,26 @@
         "rpds-py"
       ]
     },
-    "rpds-py": {
-      "version": "2026.9.1",
+    "jsonschema-specifications": {
+      "version": "2025.9.1",
+      "dependencies": [
+        "referencing"
+      ]
+    },
+    "packaging": {
+      "version": "26.3",
+      "dependencies": []
+    },
+    "pip": {
+      "version": "26.3",
+      "dependencies": []
+    },
+    "pycparser": {
+      "version": "3.12",
+      "dependencies": []
+    },
+    "pyjwt": {
+      "version": "2.15.1",
       "dependencies": []
     },
     "referencing": {
@@ -31,40 +73,19 @@
         "typing-extensions"
       ]
     },
+    "rfc8785": {
+      "version": "0.1.4",
+      "dependencies": []
+    },
+    "rpds-py": {
+      "version": "2026.9.1",
+      "dependencies": []
+    },
     "typing-extensions": {
       "version": "4.16.0",
       "dependencies": []
-    },
-    "attrs": {
-      "version": "26.1.0",
-      "dependencies": []
-    },
-    "jsonschema-specifications": {
-      "version": "2025.9.1",
-      "dependencies": [
-        "referencing"
-      ]
-    },
-    "cryptography": {
-      "version": "42.0.8",
-      "dependencies": [
-        "cffi"
-      ]
-    },
-    "cffi": {
-      "version": "2.1.1",
-      "dependencies": [
-        "pycparser"
-      ]
-    },
-    "pycparser": {
-      "version": "3.12",
-      "dependencies": []
-    },
-    "pyjwt": {
-      "version": "2.15.1",
-      "dependencies": []
     }
   },
-  "linux_runtime_verification": "required during independent image build"
+  "lock_sha256": "e6557f66e398bb61d44ef8114958ff6941613388b78aed3d8344594c93dc42ae",
+  "linux_runtime_verification": "required during independent image build; static solution is not runtime qualification"
 }

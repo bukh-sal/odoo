@@ -1,0 +1,33 @@
+{
+  "result": "passed_fresh_native_login_session_and_assets",
+  "database": "mp_disposable_r0_r1_g7_security_afb79b1ffb3f",
+  "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "uid": 2,
+  "login_status": 303,
+  "login_page_sha256": "496b4be2671c37c0ba865059d869bdf5f826f16a42db3690e44c2c07fc240e8b",
+  "assets": [
+    {
+      "path": "/web/assets/7b991c5/web.assets_frontend_lazy.min.js",
+      "kind": "js",
+      "bytes": 1516427,
+      "sha256": "f43f4b26cd46b1fdf46f6eaa0f2b0aa9f7d4f79a3622d7ad868dde9f30739b6a",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/web/assets/9d47ad5/web.assets_frontend.min.css",
+      "kind": "css",
+      "bytes": 374552,
+      "sha256": "87752b0485554df24c093542cf17e393dbcc60232dc79672b36ef7e2d77a3610",
+      "content_type": "text/css; charset=utf-8"
+    }
+  ],
+  "nondefault_private_password": true,
+  "csrf_form_token_used": true,
+  "client_location": "Actual HTTP TCP127.0.0.1:8069 within the existing temporary native server container",
+  "temporary_http_server_removed": true,
+  "limits": [
+    "Initial host18090 attempt refused: Docker published port list empty on existing internal network; server remained healthy and was not restarted.",
+    "Native bootstrap entrypoint only; not production/proxy/startup-guard/platform-site/plugin/lifecycle/recovery/full security qualification.",
+    "No UI code or Canvas changes; real native login/session/CSS/JS bytes only."
+  ]
+}
