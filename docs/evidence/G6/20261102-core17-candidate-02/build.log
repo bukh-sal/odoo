@@ -1,0 +1,39 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 358B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/modular-platform:core17-base-bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/modular-platform:core17-source-0fa6c3dadcd62efbb8ca78cb00aa2abbf599c50183dedc20fe747035f1bd55d1
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [source 1/1] FROM docker.io/library/modular-platform:core17-source-0fa6c3dadcd62efbb8ca78cb00aa2abbf599c50183dedc20fe747035f1bd55d1@sha256:0fa6c3dadcd62efbb8ca78cb00aa2abbf599c50183dedc20fe747035f1bd55d1
+#5 resolve docker.io/library/modular-platform:core17-source-0fa6c3dadcd62efbb8ca78cb00aa2abbf599c50183dedc20fe747035f1bd55d1@sha256:0fa6c3dadcd62efbb8ca78cb00aa2abbf599c50183dedc20fe747035f1bd55d1 0.0s done
+#5 DONE 0.1s
+
+#6 [stage-1 1/2] FROM docker.io/library/modular-platform:core17-base-bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82@sha256:bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82
+#6 resolve docker.io/library/modular-platform:core17-base-bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82@sha256:bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82 0.0s done
+#6 DONE 0.1s
+
+#7 [stage-1 2/2] COPY --from=source /opt/modular/ /opt/modular/
+#7 DONE 0.5s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 0.2s done
+#8 exporting manifest sha256:ed60e6cd0ce792633fa18071d3344a83bba901edcce9a76d60171228ae838011 done
+#8 exporting config sha256:20dfc6ddd58d6a79d084978ddcf8bbd44c9fac415ce16e6788b6bdec85adddae done
+#8 exporting attestation manifest sha256:e3ebe9f4b416d3cbc784eb7e8287bec9b0e7acb7edad621eb784976f3f1ecdb8 0.0s done
+#8 exporting manifest list sha256:9408148ef42b723effefc0de074fa0992bfecdf72c0f858c7a3d1a54cd932132 0.0s done
+#8 naming to docker.io/library/modular-platform:core17-runtime-20261102t122155824124z done
+#8 unpacking to docker.io/library/modular-platform:core17-runtime-20261102t122155824124z 0.0s done
+#8 DONE 0.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/z4onpgr90spxkh6q6pmhv9eys

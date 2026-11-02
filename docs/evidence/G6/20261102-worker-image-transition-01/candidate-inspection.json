@@ -1,0 +1,13 @@
+{
+  "base_image": "sha256:bb1a5c85e630b396bf7f743db396a828c79c13ce5d19e43979af97d06728df82",
+  "candidate_image": "sha256:0fa6c3dadcd62efbb8ca78cb00aa2abbf599c50183dedc20fe747035f1bd55d1",
+  "inventory_digest": "sha256:82974bcaf1efd3469dcfc49a3dde0ca773eb3acdab09e5e275297d909f3e3e51",
+  "deployment_changed": false,
+  "changed_python_distributions": [
+    "psycopg2",
+    "python-ldap"
+  ],
+  "result": "rejected_compiler_runtime",
+  "reason": "Core upgrade must preserve package/Python/native dependency policy",
+  "next": "Derive exact application tree onto approved BB1 OS/Python layers, then revalidate; do not deploy compiler image."
+}

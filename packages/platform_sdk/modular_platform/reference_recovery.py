@@ -21,6 +21,9 @@ def reference_needed(native,bundle,manifest=None):
 
 
 class ReferenceRecoveryDispatch(ReferenceDispatchMaintenance):
+    def _transition_source(self,configuration):
+        return self.bundle['plan']['operation_id'],self.base,True
+
     def __init__(self,native,bundle,manifest,*,purpose='restored'):
         super().__init__(native)
         if purpose not in {'source_inspection','restored','unchanged'}:raise OperatorError('Typed reference recovery purpose required')

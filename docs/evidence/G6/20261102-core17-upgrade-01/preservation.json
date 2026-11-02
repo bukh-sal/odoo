@@ -1,0 +1,40 @@
+{
+  "result": "passed_actual_core17_shell10_upgrade",
+  "operation_id": "6348ddd4-f48f-4793-9adf-13ef14918de3",
+  "image": "sha256:9408148ef42b723effefc0de074fa0992bfecdf72c0f858c7a3d1a54cd932132",
+  "inventory": "sha256:82974bcaf1efd3469dcfc49a3dde0ca773eb3acdab09e5e275297d909f3e3e51",
+  "configuration_generation": 20,
+  "dispatch_generation": 101,
+  "counts": {
+    "mp_job": 29,
+    "mp_outbox": 49,
+    "mp_principal": 4,
+    "mp_workspace": 3,
+    "mp_membership": 8,
+    "mp_example_note": 30,
+    "mp_plugin_grant": 6,
+    "mp_event_delivery": 251,
+    "mp_service_binding": 14,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 3,
+    "mp_event_subscription": 35,
+    "mp_service_credential": 3,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 1,
+    "mp_example_canvas_board": 0,
+    "mp_example_note_event_summary": 3
+  },
+  "schema_columns_exact": true,
+  "full_native_module_state_versions_preserved_except_reviewed_core": true,
+  "all_business_metadata_authority_events_exact": true,
+  "old_jobs_outcomes_inputs_attempts_preserved": 29,
+  "jobs_epoch_updated": 26,
+  "active_subscriptions_closed": 0,
+  "retained_checkpoint_files": 48,
+  "external_metadata_feature_bindings_endpoints_unchanged": true,
+  "independent_worker_identity_image_start_restart_mounts_network_key_publication_exact": true,
+  "helper_image_only_moved_to_approved_image": true,
+  "limits": [
+    "Upgrade/preservation only; installed manager HTTP/browser lifecycle and connector/remote/recovery/image-transition qualification remain."
+  ]
+}

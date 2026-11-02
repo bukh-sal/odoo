@@ -161,6 +161,31 @@ class ExternalPlanning(unittest.TestCase):
         self.assertEqual(external_selections(bundle),[pin]);self.assertNotIn('feature_states',bundle['operation_lock'])
         self.assertEqual(next(r for r in bundle['operation_lock']['release']['plugins'] if r['runtime']=='native'),next(r for r in self.document['state']['release_lock']['plugins'] if r['runtime']=='native'))
 
+    def test_changed_image_suspended_projection_and_real_independent_reconstruction(self):
+        from modular_platform.projection import project_deployment
+        self.f.site=copy.deepcopy(self.f.site)
+        self.f.site['features'][1]['feature_state']='suspended'
+        candidate=copy.deepcopy(self.f.external);candidate['manifest']['plugin']['version']='99.0.0'
+        candidate['digest']='sha256:'+'7'*64
+        candidate['manifest']['external_service']['expected_image']='modular-document-stats@sha256:'+'8'*64
+        self.f.catalog.append(candidate)
+        self.f.endpoint['expected_image_digest']='sha256:'+'8'*64
+        next(iter(self.f.external_state['service_health'].values()))['expected_image_digest']=self.f.endpoint['expected_image_digest']
+        self.document=self.f.project()
+        self.assertEqual(self.document['state']['endpoints'],[self.f.endpoint])
+        pin=dict(plugin_id=self.target['plugin_id'],version='99.0.0',digest=candidate['digest'])
+        bundle=self.prepare('upgrade',selections=[pin])
+        validator=self.independent()
+        observation=dict(runtime=self.f.runtime,image_id=self.f.config['image_id'],sites=[self.f.site],external_state=self.f.external_state)
+        validator.observer.read=lambda:observation
+        validator.observer.state=lambda actual,catalog:project_deployment(self.f.config,actual,catalog)
+        self.assertEqual(validator(bundle),self.document['state'])
+        # An ordinary enable still selects the old pin and refuses the new image.
+        with self.assertRaisesRegex(PlanningError,'endpoint/image'):self.prepare('enable')
+        # One active scope prevents treating the installation as inert.
+        self.f.site['features'].append(dict(self.f.site['features'][1],workspace_id=ident(31),feature_state='enabled'))
+        with self.assertRaisesRegex(PlanningError,'pinned package'):self.f.project()
+
     def consumer(self, optional):
         from test_resolution import plugin
         from test_release_staging import staged_runtime

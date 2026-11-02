@@ -1,0 +1,12 @@
+{
+  "result": "passed_actual_core17_native_HTTP_and_prior_epoch_fences",
+  "generation": 20,
+  "native_A_B_C_list_form": true,
+  "saved_note_readable": true,
+  "old_epoch19_gateway409": true,
+  "old_native_RPC_ClientReleaseMismatch": true,
+  "manager_provider_healthy_enabled": true,
+  "all17tables_29jobs_exact": true,
+  "independent_worker_unchanged": true,
+  "browser_rendering_tested": false
+}

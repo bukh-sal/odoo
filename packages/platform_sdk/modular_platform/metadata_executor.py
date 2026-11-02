@@ -16,7 +16,7 @@ class ReferenceMetadataExecutor(NativeExecutor):
         return reference_observer(self,configuration)
 
     def _dispatch(self):
-        return ReferenceDispatchMaintenance(self)
+        return ReferenceDispatchMaintenance(self,operation=getattr(self,'_reference_operation',None))
 
     def _check_operation(self,bundle):
         plan=bundle['plan']
@@ -24,13 +24,14 @@ class ReferenceMetadataExecutor(NativeExecutor):
                 or 'staged_image' in bundle['operation_lock'] or plan['operation_type'] not in {'install','upgrade','enable','suspend','unregister'}
                 or not plan['backup']['required'] or len(plan['site_ids'])!=1):
             raise OperatorError('Exact checkpointed single-site metadata-only lifecycle required')
+        self._reference_operation=plan['operation_id']
 
     def _runtime_preflight(self,bundle):
         if bundle['operation_lock']['release']['core_inventory_digest']!=self.config['published_release']['core_inventory_digest']:
             raise OperatorError('Metadata lifecycle cannot change native image contents')
         runtime=self.observer.read()['runtime'];files=runtime['inventory']['files']
         names=['metadata_executor','external_metadata','external_planning','native_executor','dispatch_lifecycle',
-            'dispatch_operator','dispatch_maintenance','reference_dispatch','operator_store','projection','planning_cli','plans']
+            'dispatch_operator','dispatch_maintenance','reference_dispatch','worker_transition','operator_store','projection','planning_cli','plans']
         if runtime.get('published_release_protocol')!=1 or any(
                 files.get('packages/platform_sdk/modular_platform/'+name+'.py')!=hashlib.sha256(Path(__file__).with_name(name+'.py').read_bytes()).hexdigest()
                 for name in names):

@@ -24,6 +24,7 @@ class MetadataExecutorTests(unittest.TestCase):
 
     def test_only_checkpointed_metadata_without_staged_image_is_accepted(self):
         self.native._check_operation(self.bundle);self.assertIsNone(self.native._native_flags(self.bundle,{}))
+        self.assertEqual(self.native._dispatch().operation,self.bundle['plan']['operation_id'])
         for mutation in ['native','no_backup','staged','unsupported']:
             bundle=copy.deepcopy(self.bundle)
             if mutation=='native':bundle['plan']['artifacts'][0]['runtime']='native'
@@ -42,7 +43,7 @@ class MetadataExecutorTests(unittest.TestCase):
     def test_current_exact_component_hashes_are_required(self):
         runtime=copy.deepcopy(self.f.f.runtime)
         names=['metadata_executor','external_metadata','external_planning','native_executor','dispatch_lifecycle','dispatch_operator',
-            'dispatch_maintenance','reference_dispatch','operator_store','projection','planning_cli','plans']
+            'dispatch_maintenance','reference_dispatch','worker_transition','operator_store','projection','planning_cli','plans']
         for name in names:runtime['inventory']['files']['packages/platform_sdk/modular_platform/'+name+'.py']=hashlib.sha256((ROOT/'packages/platform_sdk/modular_platform'/f'{name}.py').read_bytes()).hexdigest()
         self.native.observer.read.return_value=dict(runtime=runtime);self.native._runtime_preflight(self.bundle)
         runtime['inventory']['files']['packages/platform_sdk/modular_platform/external_metadata.py']='0'*64

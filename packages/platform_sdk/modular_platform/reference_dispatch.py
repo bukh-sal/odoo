@@ -36,8 +36,11 @@ def read_metadata(native,configuration):
 
 
 class ReferenceDispatchMaintenance(DispatchMaintenance):
-    def __init__(self,native):
-        super().__init__(native);self.policies={}
+    def __init__(self,native,*,operation=None):
+        super().__init__(native);self.policies={};self.operation=operation
+
+    def _transition_source(self,configuration):
+        return (self.operation,configuration['published_release'],False) if self.operation else None
 
     def _matches_target(self,target,configuration):
         return all(target[k]==configuration[k] for k in ['deployment_id','project','sites'])
@@ -55,7 +58,7 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
         metadata=read_metadata(self.native,configuration)
         catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
         selected={r['plugin_id']:r for r in self._metadata_release(configuration,metadata)['plugins']}
-        registrations=[]
+        registrations=[];transition=None
         for row in metadata['installations']:
             if row['runtime']=='native':continue
             pin=selected.get(row['plugin_id'])
@@ -86,7 +89,13 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
                         raise OperatorError('Retained reference scope lacks an exact same-image pre-registration approval')
                 elif (len(endpoints)!=1 or endpoints[0]['expected_image_digest']!=manifest['external_service']['expected_image'].split('@',1)[1]
                         or manifest['external_service']['expected_image']!=reader.config['runtime']['image']):
-                    raise OperatorError('Installed reference scope lacks its exact independently published endpoint/image')
+                    source=self._transition_source(configuration)
+                    if source is None:
+                        raise OperatorError('Installed reference scope lacks its exact independently published endpoint/image')
+                    from .worker_transition import reviewed_worker_transition
+                    current=reviewed_worker_transition(self.native,source[0],source[1],configuration,row,metadata,catalog,reader,observed,recovery=source[2])
+                    if transition is not None and transition!=current:raise OperatorError('Only one exact reference image transition may be observed')
+                    transition=current
                 features.append({k:feature[k] for k in ['workspace_id','feature_state']})
             if row['metadata_state']=='removed' and any(g['installation_id']==row['installation_id'] and g['state']=='approved' for g in metadata['grants']):
                 raise OperatorError('Removed reference installation retains approved grants')
@@ -101,6 +110,8 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
             raise OperatorError('Independent reference publication/configuration changed during observation')
         value=dict(profile='r1-reference-stateless-v1',site_id=metadata['site_id'],runtime_image=reader.config['runtime']['image'],
             publication_digest=data_digest(publication),registrations=sorted(registrations,key=lambda r:r['installation_id']))
+        if transition is not None:
+            value.update(profile='r1-reference-stateless-transition-v1',worker_transition=transition)
         self.policies[data_digest(value)]=value
         return value
 

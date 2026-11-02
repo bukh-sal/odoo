@@ -11,7 +11,7 @@ from .plans import data_digest, release_lock
 from .resolution import PlanningError, resolve_release
 
 PUBLISHED_RELEASE_PROTOCOL=1
-PLATFORM_VERSION='0.1.16'
+PLATFORM_VERSION='0.1.17'
 
 
 def catalog_validation_digest(catalog):
@@ -208,7 +208,15 @@ def project_deployment(configuration, observation, catalog):
             row=scopes.get((endpoint['installation_id'],endpoint['workspace_id']))
             if row is None:continue  # Unregistered approval is not installation.
             manifest=by_plugin[row['plugin_id']]['manifest'];expected=manifest['external_service']
-            if endpoint['site_id']!=row['site_id'] or endpoint['endpoint_config']!=expected['endpoint_config'] or endpoint['expected_image_digest']!=expected['expected_image'].split('@',1)[1]:
+            # Inspect the real independently approved image while an operator
+            # prepares an upgrade. This grants no availability: every scope of
+            # this reference installation must already be suspended. Planning
+            # still matches the target artifact and maintenance requires its
+            # private stored-operation proof before admitting a mismatch.
+            inert_reference=(row['plugin_id']=='org.example.document_stats'
+                and all(r['feature_state']=='suspended' for r in scopes.values() if r['installation_id']==row['installation_id']))
+            if (endpoint['site_id']!=row['site_id'] or endpoint['endpoint_config']!=expected['endpoint_config']
+                    or endpoint['expected_image_digest']!=expected['expected_image'].split('@',1)[1] and not inert_reference):
                 raise PlanningError('Observed external endpoint differs from pinned package/scope')
             endpoints.append(copy.deepcopy(endpoint));key=endpoint['installation_id']+':'+endpoint['workspace_id']
             value=external['service_health'].get(key)
