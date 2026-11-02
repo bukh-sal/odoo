@@ -1,0 +1,15 @@
+{
+  "result": "passed_actual_optional_provider_enable_with_connector",
+  "operation_id": "7bb42cdf-9b5f-4c0e-a3b3-e51639b46fab",
+  "plan_hash": "sha256:6bc77d064742fd86dcf2a60771b20d63149ada9e99027628f09403e66da6a3bd",
+  "configuration_generation": 18,
+  "dispatch_generation": 94,
+  "installed_connector_and_other8features_unchanged": true,
+  "old_job_outcomes_inputs_attempts_exact": 27,
+  "changed_job_epochs": 24,
+  "all17tables_exact_under_feature_policy_job_epoch_changes": true,
+  "schema_native_modules_exact": true,
+  "old_files_retained": 48,
+  "same_worker_process_image_key_publication": true,
+  "no_remote_runtime_control": true
+}

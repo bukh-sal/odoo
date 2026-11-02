@@ -1,0 +1,15 @@
+{
+  "result": "passed_actual_optional_provider_suspend_with_connector",
+  "operation_id": "1f663bb3-8a54-4c6a-9b33-9f2ffaefec9b",
+  "plan_hash": "sha256:49780fb7892dba2369482102ac3d33a909f73e55398a2c501a9e7e4e53a59c71",
+  "configuration_generation": 18,
+  "dispatch_generation": 91,
+  "installed_connector_and_other8features_unchanged": true,
+  "old_job_outcomes_inputs_attempts_exact": 26,
+  "changed_job_epochs": 23,
+  "all17tables_exact_under_feature_policy_job_epoch_changes": true,
+  "schema_native_modules_exact": true,
+  "old_files_retained": 48,
+  "same_worker_process_image_key_publication": true,
+  "no_remote_runtime_control": true
+}

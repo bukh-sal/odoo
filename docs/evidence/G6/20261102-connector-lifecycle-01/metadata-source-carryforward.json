@@ -1,0 +1,14 @@
+{
+  "result": "exact_metadata_execution_source_retained_from_actual_unregister_profile",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/metadata_executor.py": "b35a920dc11bbcb0e0ff248437f31975e5c84c1cfdca5abe8447043dd980eac2",
+    "packages/platform_sdk/modular_platform/external_metadata.py": "6b994fbc64135eddb4d20802b14fb853cd2da913a2549edbf3f6a484eab22c5a",
+    "packages/platform_sdk/modular_platform/external_planning.py": "943627bfb53825695fb1352ee8a6ba6bfafbed2d879b2998514128be74db7b2c",
+    "packages/platform_sdk/modular_platform/metadata_sql.py": "f7e28641a5708d4de52fa996b2c11962cfbf626509b539ee41102eb9c6f3782e"
+  },
+  "retained_evidence": "docs/evidence/G6/20261102-manager-unregister-01/qualification.json",
+  "current_registration_evidence": "docs/evidence/G6/20261102-manager-reregister-02/qualification.json",
+  "limits": [
+    "Reference observer tombstone correction is separate ADR0037/current16 rollout and re-registration evidence. This comparison alone gives no acceptance credit."
+  ]
+}

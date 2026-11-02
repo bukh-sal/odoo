@@ -1,0 +1,24 @@
+{
+  "result": "passed_actual_connector_enable_integration",
+  "job": {
+    "id": "ae30f2d9-0d05-440d-8293-cb6ebd92867b",
+    "state": "completed",
+    "progress": 100,
+    "attempts": 1,
+    "error_code": null,
+    "result": {
+      "note_id": "33a105b1-d71b-4825-9655-d940addfd6d0",
+      "revision": 2,
+      "statistics": {
+        "lines": 1,
+        "words": 7,
+        "characters": 50
+      }
+    }
+  },
+  "native_A_B_C_views": true,
+  "connector_context200_status_readable": true,
+  "all_old_data_and_worker_exact": true,
+  "same_operation_completed_HTTP_mirror": true,
+  "browser_rendering_tested": false
+}

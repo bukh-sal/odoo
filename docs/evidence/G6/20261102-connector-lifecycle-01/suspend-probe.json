@@ -1,0 +1,16 @@
+{
+  "result": "passed_actual_connector_suspend_integration",
+  "job": {
+    "id": "4beba414-f9f2-477d-af40-bab52e5d216a",
+    "state": "dead_letter",
+    "progress": 0,
+    "attempts": 1,
+    "error_code": "PLUGIN_SUSPENDED",
+    "result": null
+  },
+  "native_A_B_C_views": true,
+  "connector_context200_status_readable": true,
+  "all_old_data_and_worker_exact": true,
+  "same_operation_completed_HTTP_mirror": true,
+  "browser_rendering_tested": false
+}

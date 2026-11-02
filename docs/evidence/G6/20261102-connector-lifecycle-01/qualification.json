@@ -1,0 +1,51 @@
+{
+  "result": "passed_SVC04_qualified_R1_reference_metadata_lifecycle",
+  "source_commit": "a7a00abf",
+  "configuration_generation": 18,
+  "dispatch_generation": 94,
+  "artifact_versions": {
+    "native_connector": "0.1.0",
+    "external_metadata": "0.1.1",
+    "core_sdk": "0.1.16"
+  },
+  "actual_required_Notes_cascade_refusal_and_exact_closure": true,
+  "actual_optional_provider_suspend_enable_with_installed_connector": true,
+  "actual_normal_gateway_and_ordinary_independent_job_runner_failure_then_success": true,
+  "normal_HTTP_request_independent_exact_review_approval_same_executor_completed_mirror": true,
+  "all_native_schema_modules_old_data_outcomes_files_worker_preserved": true,
+  "metadata_installer_does_not_fabricate_addon_or_control_remote_runtime": true,
+  "current_worker_image_public_config3_publication5_unchanged": true,
+  "old_files_retained": 48,
+  "final_counts": {
+    "notes": 30,
+    "jobs": 28,
+    "completed": 10,
+    "dead_letter": 16,
+    "cancelled": 2,
+    "outbox": 49,
+    "subscriptions": 35,
+    "deliveries": 251,
+    "consumptions": 3,
+    "consumer_states": 1
+  },
+  "retired_containers": 20,
+  "new_images": 0,
+  "new_volumes": 0,
+  "retained_actual_register_unregister_profiles": [
+    "docs/evidence/G6/20261102-manager-unregister-01/qualification.json",
+    "docs/evidence/G6/20261102-manager-reregister-02/qualification.json"
+  ],
+  "evidence_sha256": {
+    "suspend-preservation.json": "fbc6d52af1eb4c22729cbd7b6a0df84bde8304c3774f85ffa0c878992567732e",
+    "enable-preservation.json": "140dd5648393bab443b473acb6c97046bd73aebab4b5b96a4efaf0340496674c",
+    "suspend-probe.json": "5c67e4edc24b5976ba71f208fbb3524710e8bdc4b4965f3ad537cd0bf1559e04",
+    "enable-probe.json": "b6fdbe8382c14dd93ef8e1484a4a2bc71e09c3a9dede4229b52dd930b83742de",
+    "retirement.json": "c4010e86824f8b71254843c0fad03442f516d4bc1e442ed4986e018dcdd17540",
+    "metadata-source-carryforward.json": "1f56761a845cb00fdefa97587347ea2fd68a110370956dd06277abcfdf7791ea"
+  },
+  "limits": [
+    "SVC04 for qualified trusted R1 stateless reference profile; no unknown remote data/effect rollback or sandbox claim.",
+    "Required Notes cascade was previewed/refused; optional Stats suspension and enable were actually applied.",
+    "Changed-worker-image approval/credential and uncertain-effect recovery, degraded UI/browser and G7 remain required."
+  ]
+}

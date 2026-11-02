@@ -1,0 +1,60 @@
+{
+  "result": "passed_current_installed_authority_matrix_with_actual_remote_computation",
+  "source_commit": "a7a00abf",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "job_id": "9cead924-f709-43f3-aa9c-5d3645bef4a2",
+  "cases": [
+    {
+      "name": "stats_grant",
+      "error_code": "FORBIDDEN",
+      "rolled_back": true
+    },
+    {
+      "name": "documents_grant",
+      "error_code": "FORBIDDEN",
+      "rolled_back": true
+    },
+    {
+      "name": "stats_binding",
+      "error_code": "DEPENDENCY_UNAVAILABLE",
+      "rolled_back": true
+    },
+    {
+      "name": "documents_binding",
+      "error_code": "DEPENDENCY_UNAVAILABLE",
+      "rolled_back": true
+    },
+    {
+      "name": "connector_feature",
+      "error_code": "PLUGIN_SUSPENDED",
+      "rolled_back": true
+    },
+    {
+      "name": "provider_feature",
+      "error_code": "PLUGIN_SUSPENDED",
+      "rolled_back": true
+    },
+    {
+      "name": "provider_registration",
+      "error_code": "PLUGIN_SUSPENDED",
+      "rolled_back": true
+    },
+    {
+      "name": "actor_membership",
+      "error_code": "FORBIDDEN",
+      "rolled_back": true
+    }
+  ],
+  "actual_remote_computed": true,
+  "one_normal_completed_job_one_attempt": true,
+  "actual_native_startup_bridge_transport_and_finalize": true,
+  "test_only_trace_no_function_or_module_replacement": true,
+  "all8negative_case_writes_rolled_back": true,
+  "all_old25jobs_and_other16tables_exact": true,
+  "same_worker_and_publication": true,
+  "no_persistent_Docker_assets_added": true,
+  "limits": [
+    "Negative controls are same-transaction rollback fixtures, not committed manager lifecycle or independent publication changes. Committed actor/revision tests are separate. Technical credential/publication recovery and full lifecycle/image/browser checks remain."
+  ]
+}

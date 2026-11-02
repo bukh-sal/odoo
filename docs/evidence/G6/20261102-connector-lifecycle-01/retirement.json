@@ -1,0 +1,14 @@
+{
+  "result": "retired_exact_owned_completed_connector_lifecycle_helpers",
+  "removed_containers": 20,
+  "readonly_observations": 6,
+  "superseded_apps": 2,
+  "active_host_database_edge_worker_preserved": true,
+  "current_checkpoint_images_and_volumes_preserved": true,
+  "diagnostics_archived_privately": true,
+  "new_images": 0,
+  "new_volumes": 0,
+  "removed_images": 0,
+  "removed_volumes": 0,
+  "no_global_prune": true
+}

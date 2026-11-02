@@ -1,0 +1,12 @@
+{
+  "status": 400,
+  "response": {
+    "error": {
+      "code": "VALIDATION_FAILED",
+      "message": "Validation failed",
+      "request_id": "ee27135a-06c0-477f-baff-7cb9321ec287",
+      "retryable": false,
+      "details": {}
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "operation_id": "3b060634-e836-4aab-a484-3eddaa11ff95",
+  "results": [
+    {
+      "error_code": "PLUGIN_SUSPENDED",
+      "job_id": "4beba414-f9f2-477d-af40-bab52e5d216a",
+      "state": "dead_letter"
+    }
+  ]
+}

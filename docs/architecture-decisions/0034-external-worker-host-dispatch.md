@@ -1,6 +1,6 @@
 # ADR0034: approved host-to-worker dispatch
 
-Date: 2026-11-01. Status: operator/worker prerequisites and current native runner qualified; external metadata/Notes integration pending.
+Date: 2026-11-01. Status: installed remote bridge/authority and reference metadata lifecycle qualified; uncertain-effect recovery, changed-image and browser qualification pending.
 Parent F-01c/d/e2; spec13/14.3/14.5/14.6/22.4, SVC-02..05 and JOB-03.
 
 The existing service gateway registers native model handlers only. The independent
@@ -340,3 +340,19 @@ Actual provider checkpoint: provider-registration-01 now proves fixture-local im
 
 
 Installed metadata successor checkpoint: actual reviewed0.1.1 upgrade raises the supported minimum to qualified platform.13, preserving old0.1.0 archive/history. Same independent worker image/API/container/start/publication, enabled feature and native module/schema/artifact/business/job/file state are verified across config13/dispatch61. Host maintenance/replacement remains distinct from external runtime control. Seven completed owned helpers/apps retired; no new image/volume. See ../evidence/G6/20261101-provider-upgrade-01/README.md. This closes the minimum declaration/same-image upgrade correction, not changed-worker-image compatibility or whole SVC04/05. Existing frozen manager request already supports unregister; reuse that contract and manager/Odoo UI path for required metadata nominations, without fabricated native staging or a frontend rewrite.
+
+
+Current qualification checkpoint (2026-11-02): actual native18/94/BB1 includes
+NotesStats0.1.0/C. Real gateway/ordinary independent runner/canonical worker
+positive, timeout/crash/restart,30 duplicate/scoped-token cases, committed
+original-actor/revision races and8 installed rollback authority controls pass.
+The test-only post-compute trace used for late-result tests replaces no native
+function/module/transport/authorization result and is not a product hook.
+Current required Notes closure and actual optional Stats suspend/enable preserve
+native Odoo views/schema/data/files and the separately managed worker; restored
+ordinary job succeeds. SVC04 is qualified by these current observations plus
+retained actual unregister/corrected stopped-worker re-registration and exact
+metadata source carryforward. See ../evidence/G6/20261102-connector-lifecycle-01/README.md.
+This does not qualify unknown external effects/credential recovery, changed-image
+approval or degraded browser rendering. Those remain required before G6; no
+native trust boundary, frozen wire contract or UI infrastructure choice changed.
