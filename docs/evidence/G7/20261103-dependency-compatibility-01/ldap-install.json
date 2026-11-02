@@ -1,0 +1,13 @@
+{
+  "result": "installed_in_isolated_probe_only",
+  "wheel": {
+    "filename": "python_ldap-3.4.8-cp312-cp312-linux_x86_64.whl",
+    "size": 240966,
+    "sha256": "4a1a9848fd831c711b72146016d852de523934c75238c742399c3eac9f3f3fe7"
+  },
+  "pip_check": true,
+  "volume": "mp-g7-dep-c39f7dae7ba4-venv",
+  "container": "mp-g7-dep-c39f7dae7ba4-ldap-install",
+  "network": "none",
+  "qualified_runtime_unchanged": true
+}

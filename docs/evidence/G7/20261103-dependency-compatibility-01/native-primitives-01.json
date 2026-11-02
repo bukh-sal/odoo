@@ -1,0 +1,18 @@
+{
+  "result": "failed",
+  "tests": 8,
+  "successful": false,
+  "failures": [
+    "__main__.NativeDependencyCompatibility.test_native_image_png_jpeg_gif_processing"
+  ],
+  "errors": [],
+  "base_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "actual_unchanged_pinned_Odoo_and_SDK_source": true,
+  "probe_source_sha256": "100aa4fb6d088c5e1c6a27140396ff807f6507778477700cae9c3de53fe3b735",
+  "qualified_runtime_unchanged": true,
+  "no_database_config_issuer_network": true,
+  "LDAP_source_build_deferred": true,
+  "limits": [
+    "Primitive compatibility only; no deployed dependency lock/native registry/lifecycle/full acceptance/security/performance pass."
+  ]
+}

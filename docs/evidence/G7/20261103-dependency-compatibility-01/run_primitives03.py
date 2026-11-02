@@ -1,0 +1,14 @@
+"""Run offline native primitives in the one isolated copied environment."""
+import hashlib,json,subprocess
+from pathlib import Path
+ROOT=Path.cwd();OUT=Path(__file__).parent;PRIVATE=ROOT/'.local/g7-dependency-compatibility-01'
+state=json.loads((PRIVATE/'probe-state.json').read_text());assert state['state']=='ldap_installed_native_probe_pending'
+fixture=json.loads((ROOT/'packages/contracts/examples/v1/worker-request.json').read_text());tests=(OUT/'native_primitives03.py').read_text()
+code='REQUEST='+repr(fixture)+'\n'+tests+"\nsuite=unittest.defaultTestLoader.loadTestsFromTestCase(NativeDependencyCompatibility)\nr=unittest.TextTestRunner(verbosity=2).run(suite)\nprint('MP_NATIVE_COMPAT='+json.dumps(dict(tests=r.testsRun,successful=r.wasSuccessful(),failures=[t.id() for t,_ in r.failures],errors=[t.id() for t,_ in r.errors])))\nraise SystemExit(not r.wasSuccessful())\n"
+name=state['project']+'-native-primitives-03';state['native_probe_container']=name;state['state']='native_primitives_running';(PRIVATE/'probe-state.json').write_text(json.dumps(state,indent=2)+'\n',encoding='utf8')
+with (PRIVATE/'native-primitives-03.stdout').open('xb') as out,(PRIVATE/'native-primitives-03.stderr').open('xb') as err:
+ r=subprocess.run(['docker','run','-i','--name',name,'--label','com.modular.disposable='+state['project'],'--log-driver','none','--network','none','--read-only','--user','10001:10001','--cap-drop','ALL','--security-opt','no-new-privileges','--memory','1g','--cpus','2','--tmpfs','/tmp','--mount','type=volume,source='+state['volume']+',target=/probe','--entrypoint','/probe/venv/bin/python',state['image'],'-B','-'],input=code.encode(),stdout=out,stderr=err,timeout=120)
+raw=(PRIVATE/'native-primitives-03.stdout').read_text();rows=[json.loads(line.split('MP_NATIVE_COMPAT=',1)[1]) for line in raw.splitlines() if line.startswith('MP_NATIVE_COMPAT=')];assert len(rows)==1,'Inspect exact offline probe; no recreation or blind retry'
+result=rows[0];value=dict(result='passed' if result['successful'] else 'failed',**result,base_image=state['image'],actual_unchanged_pinned_Odoo_and_SDK_source=True,probe_source_sha256=hashlib.sha256(tests.encode()).hexdigest(),qualified_runtime_unchanged=True,no_database_config_issuer_network=True,LDAP_source_build_deferred=False,limits=['Primitive compatibility only; no deployed dependency lock/native registry/lifecycle/full acceptance/security/performance pass.'])
+(OUT/'native-primitives-03.json').write_text(json.dumps(value,indent=2)+'\n',encoding='utf8');state['state']='native_primitives_passed_further_qualification_pending' if result['successful'] else 'ldap_installed_native_probe_pending';(PRIVATE/'probe-state.json').write_text(json.dumps(state,indent=2)+'\n',encoding='utf8')
+print(json.dumps(result));raise SystemExit(not result['successful'])

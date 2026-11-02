@@ -1,0 +1,70 @@
+{
+  "result": "source_wheel_built_not_deployed",
+  "source": {
+    "filename": "python_ldap-3.4.8.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/1c/45/489fcf46984f916ef165cdc6a2a1f1ca01ab6f486d47169256ebe44bdd62/python_ldap-3.4.8.tar.gz",
+    "digests": {
+      "blake2b_256": "1c45489fcf46984f916ef165cdc6a2a1f1ca01ab6f486d47169256ebe44bdd62",
+      "md5": "3f8d49d06f5ac84505a154fc69959e68",
+      "sha256": "18dc7460470c6ff64ed5c04ee21c56dbfee7ab433a53213ba91e407eea44c34c"
+    },
+    "size": 387710,
+    "upload_time_iso_8601": "2026-09-16T12:41:20.150137Z"
+  },
+  "base_image": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
+  "build_tools": [
+    {
+      "package": "pip",
+      "version": "26.3",
+      "filename": "pip-26.3-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/07/25/ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337/pip-26.3-py3-none-any.whl",
+      "digests": {
+        "blake2b_256": "0725ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337",
+        "md5": "dc9c3a72de035b8d769ffb43340eb141",
+        "sha256": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13"
+      },
+      "size": 1950951,
+      "upload_time_iso_8601": "2026-11-02T20:34:25.728168Z"
+    },
+    {
+      "package": "setuptools",
+      "version": "84.2.1",
+      "filename": "setuptools-84.2.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl",
+      "digests": {
+        "blake2b_256": "ef556dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610",
+        "md5": "d16d3f1f25175cbc466dd5dfe938ac6b",
+        "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2"
+      },
+      "size": 876263,
+      "upload_time_iso_8601": "2026-10-20T19:01:35.678013Z"
+    },
+    {
+      "package": "wheel",
+      "version": "0.48.0",
+      "filename": "wheel-0.48.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+      "digests": {
+        "blake2b_256": "2e2969cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449",
+        "md5": "75e4bbe15fefadbb91258c5e79b38aa3",
+        "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+      },
+      "size": 33320,
+      "upload_time_iso_8601": "2026-08-11T22:02:26.100721Z"
+    }
+  ],
+  "dockerfile_sha256": "42c16069c443107277bbc145fe8c1803b83271fb329eb0a5a4ff94734d436902",
+  "context_sha256": "30b130eed2a50cd06dae1996413caec9bfcbb1b897e203d7587359800136e0c4",
+  "wheel": {
+    "filename": "python_ldap-3.4.8-cp312-cp312-linux_x86_64.whl",
+    "size": 240966,
+    "sha256": "4a1a9848fd831c711b72146016d852de523934c75238c742399c3eac9f3f3fe7"
+  },
+  "no_final_image_tag_or_service_created": true,
+  "source_build_network_disabled": true,
+  "original_runtime_unchanged": true,
+  "limits": [
+    "APT acquisition uses network to the pinned Debian snapshot; source compilation itself has no network.",
+    "BuildKit compiler cache remains reusable; no global/shared cache prune. Wheel import/native linked-library probes remain."
+  ]
+}

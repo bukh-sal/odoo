@@ -1,0 +1,986 @@
+{
+  "result": "registry_candidates_for_compatibility_probe_not_approved_release",
+  "utc": "2026-11-02T21:15:42.435454+00:00",
+  "base_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "Python": "3.12.16",
+  "candidates": [
+    {
+      "package": "cbor2",
+      "version": "6.2.0.post2",
+      "requires_python": ">=3.10",
+      "requires_dist": [],
+      "license_expression": "MIT",
+      "license_field": null,
+      "project_urls": {
+        "Changelog": "https://cbor2.readthedocs.io/en/latest/versionhistory.html",
+        "Documentation": "https://cbor2.readthedocs.org/en/latest/",
+        "Issue Tracker": "https://github.com/agronholm/cbor2/issues",
+        "Source Code": "https://github.com/agronholm/cbor2"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "cbor2-6.2.0.post2-cp312-cp312-manylinux_2_28_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/20/5d/2b85458ab73728ab3a6240545fc1dee25146897a67b6bea3bfca84cccf29/cbor2-6.2.0.post2-cp312-cp312-manylinux_2_28_x86_64.whl",
+          "digests": {
+            "blake2b_256": "205d2b85458ab73728ab3a6240545fc1dee25146897a67b6bea3bfca84cccf29",
+            "md5": "8de12bc9d57bf798f5bf9985215aa8cc",
+            "sha256": "1b3146a840c3adbf1b4fed5a200bf8f984d6af0a220e0326d714d12d1c1f223b"
+          },
+          "size": 465279,
+          "upload_time_iso_8601": "2026-11-02T10:42:58.253674Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "cbor2-6.2.0.post2.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/cd/eb/e2ef5f241f15131babf4854032953b97c88b2c2700d7712a0ba8f57cbe81/cbor2-6.2.0.post2.tar.gz",
+          "digests": {
+            "blake2b_256": "cdebe2ef5f241f15131babf4854032953b97c88b2c2700d7712a0ba8f57cbe81",
+            "md5": "421111207d776131f794da131bcfbffb",
+            "sha256": "3b08ba9f3a556186515000949d478e47e6d55322f9d86bdaef5b4e3d27d48298"
+          },
+          "size": 101466,
+          "upload_time_iso_8601": "2026-11-02T10:44:01.627273Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "81caf457d7fec45cb746964c44d5ed82486fff04f8797fa2aa96a0c8a51eefbb",
+      "source": "https://pypi.org/pypi/cbor2/6.2.0.post2/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "cryptography",
+      "version": "50.0.2",
+      "requires_python": "!=3.9.0,!=3.9.1,>=3.9",
+      "requires_dist": [
+        "cffi>=2.0.0; platform_python_implementation != \"PyPy\"",
+        "typing-extensions>=4.13.2; python_full_version < \"3.11\"",
+        "bcrypt>=3.1.5; extra == \"ssh\""
+      ],
+      "license_expression": "Apache-2.0 OR BSD-3-Clause",
+      "license_field": null,
+      "project_urls": {
+        "changelog": "https://cryptography.io/en/latest/changelog/",
+        "documentation": "https://cryptography.io/",
+        "homepage": "https://github.com/pyca/cryptography",
+        "issues": "https://github.com/pyca/cryptography/issues",
+        "source": "https://github.com/pyca/cryptography/"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "cryptography-50.0.2-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/21/69/64cef1f702bf6657e0cc186ed1a2891d50d29fb41586b254e1c07adea261/cryptography-50.0.2-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "digests": {
+            "blake2b_256": "216964cef1f702bf6657e0cc186ed1a2891d50d29fb41586b254e1c07adea261",
+            "md5": "d8df48cd2fab7c589ab1f10ef6b2585c",
+            "sha256": "630ebfea3bf689d075f82316324ff7433dc447fe6bc1bfc76524b74b4a9567d2"
+          },
+          "size": 4719841,
+          "upload_time_iso_8601": "2026-09-30T14:43:49.010540Z"
+        },
+        {
+          "filename": "cryptography-50.0.2-cp311-abi3-manylinux_2_28_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/1a/f1/b474e930c4d910328780e3940da76f5aa5cbc48ce1fc14e44d239d9ea9db/cryptography-50.0.2-cp311-abi3-manylinux_2_28_x86_64.whl",
+          "digests": {
+            "blake2b_256": "1af1b474e930c4d910328780e3940da76f5aa5cbc48ce1fc14e44d239d9ea9db",
+            "md5": "ee7313d093c76e5c333eb0d3cad0dfc1",
+            "sha256": "4061c0079120205fb760c58acab6443e217307dcf05e3702cf970e0689972856"
+          },
+          "size": 4753050,
+          "upload_time_iso_8601": "2026-09-30T14:43:55.272150Z"
+        },
+        {
+          "filename": "cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/d3/69/2c833a049475e0a3444e94c7d0aca0aa51d166374a449b09e92ac98138de/cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl",
+          "digests": {
+            "blake2b_256": "d3692c833a049475e0a3444e94c7d0aca0aa51d166374a449b09e92ac98138de",
+            "md5": "101d8521d5fe2181d2d21c689afa4d15",
+            "sha256": "9dab55f57c74c3cad24c323bacbbd04be4705ba6eb0d92e920b1fc4837ed5079"
+          },
+          "size": 4752576,
+          "upload_time_iso_8601": "2026-09-30T14:44:04.545137Z"
+        },
+        {
+          "filename": "cryptography-50.0.2-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/bf/f1/1c1f6874e8550cfddd4b688ceb38cefb6ed15ceed224d56f133f3d88c214/cryptography-50.0.2-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "digests": {
+            "blake2b_256": "bff11c1f6874e8550cfddd4b688ceb38cefb6ed15ceed224d56f133f3d88c214",
+            "md5": "48c9329ae3e3b7307153e9e358af9710",
+            "sha256": "ee247f5c245c9a2fe7c8e2214e295918838e44e00a45a6718451e4004219e767"
+          },
+          "size": 4749145,
+          "upload_time_iso_8601": "2026-09-30T15:29:26.807001Z"
+        },
+        {
+          "filename": "cryptography-50.0.2-cp39-abi3-manylinux_2_28_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/4f/87/ef344a9e616871f2519c22d6afcda79ddd5d35e9592d95eb6e677608d055/cryptography-50.0.2-cp39-abi3-manylinux_2_28_x86_64.whl",
+          "digests": {
+            "blake2b_256": "4f87ef344a9e616871f2519c22d6afcda79ddd5d35e9592d95eb6e677608d055",
+            "md5": "1645283926a603e8ea3bce4935ab06c9",
+            "sha256": "f21e8a22c8605750c7af886bab299a363721264061b4ac0a30efb73cfd58efc5"
+          },
+          "size": 4781387,
+          "upload_time_iso_8601": "2026-09-30T15:29:32.605292Z"
+        },
+        {
+          "filename": "cryptography-50.0.2-cp39-abi3-manylinux_2_34_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/40/cf/6b5c8e2fd9202d98988ab7cb5cc5c991704c4ad55f492ff408e4969f83f1/cryptography-50.0.2-cp39-abi3-manylinux_2_34_x86_64.whl",
+          "digests": {
+            "blake2b_256": "40cf6b5c8e2fd9202d98988ab7cb5cc5c991704c4ad55f492ff408e4969f83f1",
+            "md5": "fbffe928cdb0496e79d2e594071e09eb",
+            "sha256": "1981f1db4630889b9ef7803fadef12b056f428cb6b85c27ba57b774793b6093c"
+          },
+          "size": 4780973,
+          "upload_time_iso_8601": "2026-09-30T15:29:41.251208Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "cryptography-50.0.2.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/9d/af/182eb91b0df3fe75c4d9f26fe70684569566745f6ba7e5c9c73a862c5252/cryptography-50.0.2.tar.gz",
+          "digests": {
+            "blake2b_256": "9daf182eb91b0df3fe75c4d9f26fe70684569566745f6ba7e5c9c73a862c5252",
+            "md5": "f09a928b7abdcfe76c56fdff3a2302ad",
+            "sha256": "7b46165bb56eb4704e2eaaf86f3c940d19154535d9b0ca7d6d590b04060e00d5"
+          },
+          "size": 880623,
+          "upload_time_iso_8601": "2026-09-30T15:30:04.884601Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "7423990cc0948676ef47a71ea62a476ece4c76245e6bebd1c3a71f03c4ffc0f4",
+      "source": "https://pypi.org/pypi/cryptography/50.0.2/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "idna",
+      "version": "3.20",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "ruff>=0.16.0; extra == \"all\"",
+        "mypy>=1.11.2; extra == \"all\"",
+        "ty>=0.0.37; extra == \"all\"",
+        "pytest>=8.3.2; extra == \"all\"",
+        "hypothesis>=6.141.1; extra == \"all\"",
+        "coverage>=7.10.0; extra == \"all\""
+      ],
+      "license_expression": "BSD-3-Clause",
+      "license_field": null,
+      "project_urls": {
+        "Changelog": "https://github.com/kjd/idna/blob/master/HISTORY.md",
+        "Issue tracker": "https://github.com/kjd/idna/issues",
+        "Source": "https://github.com/kjd/idna"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "idna-3.20-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "58a2bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8",
+            "md5": "9481f70139501176693e1833735309ea",
+            "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+          },
+          "size": 69583,
+          "upload_time_iso_8601": "2026-09-17T14:11:03.168153Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "idna-3.20.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz",
+          "digests": {
+            "blake2b_256": "f5088eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa",
+            "md5": "922e0f674e2ea8035ae7bc07652677ec",
+            "sha256": "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
+          },
+          "size": 216463,
+          "upload_time_iso_8601": "2026-09-17T14:11:04.752193Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "e7cbd26e23ce60f6cb3a151d2adf3b1b087bb8f10ac2d9d6db70fdccbf3bb041",
+      "source": "https://pypi.org/pypi/idna/3.20/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "jinja2",
+      "version": "3.1.6",
+      "requires_python": ">=3.7",
+      "requires_dist": [
+        "MarkupSafe>=2.0",
+        "Babel>=2.7; extra == \"i18n\""
+      ],
+      "license_expression": null,
+      "license_field": null,
+      "project_urls": {
+        "Changes": "https://jinja.palletsprojects.com/changes/",
+        "Chat": "https://discord.gg/pallets",
+        "Documentation": "https://jinja.palletsprojects.com/",
+        "Donate": "https://palletsprojects.com/donate",
+        "Source": "https://github.com/pallets/jinja/"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "jinja2-3.1.6-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "62a13d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56",
+            "md5": "845b37cea56edd0f4dbd949244e9d798",
+            "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+          },
+          "size": 134899,
+          "upload_time_iso_8601": "2025-03-05T20:05:00.369721Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "jinja2-3.1.6.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz",
+          "digests": {
+            "blake2b_256": "dfbff7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b",
+            "md5": "66d4c25ff43d1deaf9637ccda523dec8",
+            "sha256": "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
+          },
+          "size": 245115,
+          "upload_time_iso_8601": "2025-03-05T20:05:02.478302Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "1bc757d7065f3e67d3a49e72ebc731d0774055575732592eede9820c136329cc",
+      "source": "https://pypi.org/pypi/jinja2/3.1.6/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "lxml",
+      "version": "6.1.3",
+      "requires_python": ">=3.8",
+      "requires_dist": [
+        "cssselect>=0.7; extra == \"cssselect\"",
+        "html5lib; extra == \"html5\"",
+        "BeautifulSoup4; extra == \"htmlsoup\"",
+        "lxml_html_clean; extra == \"html-clean\""
+      ],
+      "license_expression": null,
+      "license_field": "BSD-3-Clause",
+      "project_urls": {
+        "Bug Tracker": "https://bugs.launchpad.net/lxml",
+        "Homepage": "https://lxml.de/",
+        "Source": "https://github.com/lxml/lxml"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "lxml-6.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/db/36/aa413bc214dc4f785ad2b2ddd8cc99aae7062d49ab155e91e6011af00daf/lxml-6.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "digests": {
+            "blake2b_256": "db36aa413bc214dc4f785ad2b2ddd8cc99aae7062d49ab155e91e6011af00daf",
+            "md5": "f056355bd74a3b300441107b4c2692b0",
+            "sha256": "379f8a75cf6eb7eef0af074b55f49ab73b868388a98de14646abcdfa4564bb11"
+          },
+          "size": 5105247,
+          "upload_time_iso_8601": "2026-09-02T14:47:36.734433Z"
+        },
+        {
+          "filename": "lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/0a/20/e022dbc6b4753a9bc9fc5fb28a27163430c1731b9913997f6544c1b2518c/lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+          "digests": {
+            "blake2b_256": "0a20e022dbc6b4753a9bc9fc5fb28a27163430c1731b9913997f6544c1b2518c",
+            "md5": "a4e67c34ec4f5cad8dfa714172451690",
+            "sha256": "909f4e927bb051f7740d6367285fc60cdcfdaf0258c2dba4ff5ba7eadadc250c"
+          },
+          "size": 5244675,
+          "upload_time_iso_8601": "2026-09-02T14:47:47.635154Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "lxml-6.1.3.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz",
+          "digests": {
+            "blake2b_256": "23ad28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb",
+            "md5": "15ecfaf666e0a881667005cc96e0a343",
+            "sha256": "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
+          },
+          "size": 4211198,
+          "upload_time_iso_8601": "2026-09-02T14:48:02.287400Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "1f03dafdc0bd6c308a1e69aff7caef27f6d7c586eadd34e02229703a8541fe61",
+      "source": "https://pypi.org/pypi/lxml/6.1.3/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "lxml-html-clean",
+      "version": "0.4.6",
+      "requires_python": "",
+      "requires_dist": [
+        "lxml>=6.1.1"
+      ],
+      "license_expression": null,
+      "license_field": "BSD-3-Clause",
+      "project_urls": {
+        "Documentation": "https://lxml-html-clean.readthedocs.io/",
+        "Homepage": "https://github.com/fedora-python/lxml_html_clean/"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "lxml_html_clean-0.4.6-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/f5/36/4898b5e3951635846ed0e445e042fadf02b7c5e811a9e43da5b3557bc8d2/lxml_html_clean-0.4.6-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "f5364898b5e3951635846ed0e445e042fadf02b7c5e811a9e43da5b3557bc8d2",
+            "md5": "9abeaa8105a49e2e145101ab8002a7fc",
+            "sha256": "cc037270ba500a65e7235409dcddcae8ef37300f26dea826b61d917bf0236880"
+          },
+          "size": 14952,
+          "upload_time_iso_8601": "2026-10-26T11:14:44.730509Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "lxml_html_clean-0.4.6.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/ac/7e/2b7118b28d5bb69dfc4f349e1ca92334cf986601d3c809caa62cfa3bfab6/lxml_html_clean-0.4.6.tar.gz",
+          "digests": {
+            "blake2b_256": "ac7e2b7118b28d5bb69dfc4f349e1ca92334cf986601d3c809caa62cfa3bfab6",
+            "md5": "7cb998b4bede041922fcd6457ed7aad7",
+            "sha256": "ea9db067c3053854fd87f8d5a1cf01221dc893b54dbf6019c689052e05c64f22"
+          },
+          "size": 26385,
+          "upload_time_iso_8601": "2026-10-26T11:14:45.978035Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "b36c144d59c409772ee755ad258b27a3510fb0fdf062abbeea43814ef294116c",
+      "source": "https://pypi.org/pypi/lxml-html-clean/0.4.6/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "pillow",
+      "version": "13.0.0",
+      "requires_python": ">=3.11",
+      "requires_dist": [
+        "furo; extra == \"docs\"",
+        "olefile; extra == \"docs\"",
+        "sphinx>=8.2; extra == \"docs\"",
+        "sphinx-autobuild; extra == \"docs\"",
+        "sphinx-copybutton; extra == \"docs\"",
+        "sphinx-inline-tabs; extra == \"docs\"",
+        "sphinxext-opengraph; extra == \"docs\"",
+        "olefile; extra == \"fpx\"",
+        "olefile; extra == \"mic\"",
+        "arro3-compute; extra == \"test-arrow\"",
+        "arro3-core; extra == \"test-arrow\"",
+        "nanoarrow; extra == \"test-arrow\"",
+        "pyarrow; extra == \"test-arrow\"",
+        "coverage>=7.4.2; extra == \"tests\"",
+        "defusedxml; extra == \"tests\"",
+        "markdown2; extra == \"tests\"",
+        "olefile; extra == \"tests\"",
+        "packaging; extra == \"tests\"",
+        "psutil; (sys_platform == \"linux\" or sys_platform == \"darwin\") and extra == \"tests\"",
+        "pytest; extra == \"tests\"",
+        "pytest-cov; extra == \"tests\"",
+        "pytest-timeout; extra == \"tests\"",
+        "pytest-xdist; extra == \"tests\"",
+        "setuptools; extra == \"tests\"",
+        "trove-classifiers>=2024.10.12; extra == \"tests\"",
+        "defusedxml; extra == \"xmp\""
+      ],
+      "license_expression": "MIT-CMU",
+      "license_field": null,
+      "project_urls": {
+        "Changelog": "https://github.com/python-pillow/Pillow/releases",
+        "Documentation": "https://pillow.readthedocs.io",
+        "Funding": "https://tidelift.com/lifter/search/pypi/pillow",
+        "Homepage": "https://python-pillow.org",
+        "Mastodon": "https://fosstodon.org/@pillow",
+        "Release notes": "https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+        "Security": "https://pillow.readthedocs.io/en/stable/handbook/security.html",
+        "Source": "https://github.com/python-pillow/Pillow"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/e6/99/fdf65cc539e266ab93546c261bdf98411fe165c6e4e13f9dbf597097192b/pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "digests": {
+            "blake2b_256": "e699fdf65cc539e266ab93546c261bdf98411fe165c6e4e13f9dbf597097192b",
+            "md5": "9daf79c9e49491bade8d0b61a0616fac",
+            "sha256": "42d63be3af4f9b951b199b0a9d23365d37ab14687e6d77b74940432c8515c4ca"
+          },
+          "size": 7144542,
+          "upload_time_iso_8601": "2026-10-16T22:15:50.093577Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "pillow-13.0.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/ce/a4/9cc30690a394a8305e8be4c9036aa16d0dfddadd09079860b582f562496d/pillow-13.0.0.tar.gz",
+          "digests": {
+            "blake2b_256": "cea49cc30690a394a8305e8be4c9036aa16d0dfddadd09079860b582f562496d",
+            "md5": "c774e5aef5897704ccd528d0781a9b37",
+            "sha256": "cdcd1ba258178f7356d74170c9a81ba4eab6a5d55748bc402a5a2a6fe6be3510"
+          },
+          "size": 47058631,
+          "upload_time_iso_8601": "2026-10-16T22:18:09.718711Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "183d4151cbc909acf39d4d5d48469d6bc66d5516e7f506854241839d0611b69e",
+      "source": "https://pypi.org/pypi/pillow/13.0.0/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "pip",
+      "version": "26.3",
+      "requires_python": ">=3.10",
+      "requires_dist": [],
+      "license_expression": "MIT",
+      "license_field": null,
+      "project_urls": {
+        "Changelog": "https://pip.pypa.io/en/stable/news/",
+        "Documentation": "https://pip.pypa.io",
+        "Homepage": "https://pip.pypa.io/",
+        "Source": "https://github.com/pypa/pip"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "pip-26.3-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/07/25/ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337/pip-26.3-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "0725ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337",
+            "md5": "dc9c3a72de035b8d769ffb43340eb141",
+            "sha256": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13"
+          },
+          "size": 1950951,
+          "upload_time_iso_8601": "2026-11-02T20:34:25.728168Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "pip-26.3.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/53/c7/f8d9e2e0e7c1ed8a22a10eeb3b5bf7860bc07d8446c7a978a882c5c8214b/pip-26.3.tar.gz",
+          "digests": {
+            "blake2b_256": "53c7f8d9e2e0e7c1ed8a22a10eeb3b5bf7860bc07d8446c7a978a882c5c8214b",
+            "md5": "329592944207f872a94cb63da2b978f0",
+            "sha256": "6c36ae7da8695be67e3cd9f7d87919667ced53f57ce2ede75d89b5912ed2bc4c"
+          },
+          "size": 1934348,
+          "upload_time_iso_8601": "2026-11-02T20:34:27.738302Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "9cee103938ec9d9fb6201ecd0eb8a51b1893e01358f75c162d7c7cf6a9d8fa20",
+      "source": "https://pypi.org/pypi/pip/26.3/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "pyopenssl",
+      "version": "26.4.0",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "cryptography<51,>=49.0.0",
+        "typing-extensions>=4.9; python_version < \"3.13\"",
+        "pytest-rerunfailures; extra == \"test\"",
+        "pretend; extra == \"test\"",
+        "pytest>=3.0.1; extra == \"test\"",
+        "sphinx!=5.2.0,!=5.2.0.post0,!=7.2.5; extra == \"docs\"",
+        "sphinx_rtd_theme; extra == \"docs\""
+      ],
+      "license_expression": null,
+      "license_field": "Apache License, Version 2.0",
+      "project_urls": {
+        "Homepage": "https://pyopenssl.org/",
+        "Source": "https://github.com/pyca/pyopenssl"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "pyopenssl-26.4.0-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/51/ad/2cf6d3fa2fae5c79e1ed9960c0d42badd0f94d81dd12b50604cdc839e648/pyopenssl-26.4.0-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "51ad2cf6d3fa2fae5c79e1ed9960c0d42badd0f94d81dd12b50604cdc839e648",
+            "md5": "c7fa2b65cabdeea4b88f925e5ace2685",
+            "sha256": "f0eb0cb2d581d3ad2b9c489468485e7f2ab6727d08401bcf9d824c3caddf3c1c"
+          },
+          "size": 56026,
+          "upload_time_iso_8601": "2026-08-01T19:50:48.940195Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "pyopenssl-26.4.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz",
+          "digests": {
+            "blake2b_256": "3fe87325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201",
+            "md5": "6e47d45177e87ee8f4c0963e873610a1",
+            "sha256": "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
+          },
+          "size": 182046,
+          "upload_time_iso_8601": "2026-08-01T19:50:50.512064Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "065319346d47c6d9f401e228d17b5fb82d6bc695ad18154286da3912d6122981",
+      "source": "https://pypi.org/pypi/pyopenssl/26.4.0/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "pypdf",
+      "version": "6.21.4",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "typing_extensions>=4.0; python_version < \"3.11\"",
+        "brotli>=1.2.0; extra == \"brotli\"",
+        "cryptography>3.0; extra == \"crypto\"",
+        "PyCryptodome; extra == \"cryptodome\"",
+        "flit; extra == \"dev\"",
+        "pip-tools; extra == \"dev\"",
+        "pre-commit; extra == \"dev\"",
+        "pytest-cov; extra == \"dev\"",
+        "pytest-socket; extra == \"dev\"",
+        "pytest-timeout; extra == \"dev\"",
+        "pytest-xdist; extra == \"dev\"",
+        "wheel; extra == \"dev\"",
+        "myst_parser; extra == \"docs\"",
+        "sphinx; extra == \"docs\"",
+        "sphinx_rtd_theme; extra == \"docs\"",
+        "fonttools; extra == \"fonts\"",
+        "arabic-reshaper; extra == \"full\"",
+        "brotli>=1.2.0; extra == \"full\"",
+        "cryptography>3.0; extra == \"full\"",
+        "fonttools; extra == \"full\"",
+        "Pillow>=8.0.0; extra == \"full\"",
+        "python-bidi; extra == \"full\"",
+        "Pillow>=8.0.0; extra == \"image\"",
+        "arabic-reshaper; extra == \"rtl-text\"",
+        "python-bidi; extra == \"rtl-text\""
+      ],
+      "license_expression": "BSD-3-Clause",
+      "license_field": null,
+      "project_urls": {
+        "Bug Reports": "https://github.com/py-pdf/pypdf/issues",
+        "Changelog": "https://pypdf.readthedocs.io/en/latest/meta/CHANGELOG.html",
+        "Documentation": "https://pypdf.readthedocs.io/en/latest/",
+        "Source": "https://github.com/py-pdf/pypdf"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "pypdf-6.21.4-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/3f/4b/77e8ad4ac42c9d93600f40541a50e9feb3a61d2bbee2d76f659346072051/pypdf-6.21.4-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "3f4b77e8ad4ac42c9d93600f40541a50e9feb3a61d2bbee2d76f659346072051",
+            "md5": "f5e0dae7400c5599b4050ea14fbe6db3",
+            "sha256": "33e4fb41ca352810eb4e9838aa0d82d6888a5f8bf682f43e99cce5faa666255c"
+          },
+          "size": 410430,
+          "upload_time_iso_8601": "2026-10-28T17:00:53.146109Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "pypdf-6.21.4.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/1e/e1/ec8f4d155c997c45917153a5521e60d6ee6389d68abdcbc8e44e564caffc/pypdf-6.21.4.tar.gz",
+          "digests": {
+            "blake2b_256": "1ee1ec8f4d155c997c45917153a5521e60d6ee6389d68abdcbc8e44e564caffc",
+            "md5": "e969e3c56062296cacf478010f6c8953",
+            "sha256": "c8817e3f888d47a087872ded69812c1ef30cacb871d6e053e0c00bbaf0bc2163"
+          },
+          "size": 7109255,
+          "upload_time_iso_8601": "2026-10-28T17:00:54.810531Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "2f98f17abf1e2ec13768d54b32893da5fd8802eba458cd782c8377f5ce2b8851",
+      "source": "https://pypi.org/pypi/pypdf/6.21.4/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "python-ldap",
+      "version": "3.4.8",
+      "requires_python": ">=3.6",
+      "requires_dist": [
+        "pyasn1>=0.3.7",
+        "pyasn1_modules>=0.1.5"
+      ],
+      "license_expression": null,
+      "license_field": "python-ldap",
+      "project_urls": {
+        "Changelog": "https://github.com/python-ldap/python-ldap/blob/main/CHANGES",
+        "Documentation": "https://python-ldap.readthedocs.io/",
+        "Download": "https://pypi.org/project/python-ldap/",
+        "Homepage": "https://www.python-ldap.org/",
+        "Repository": "https://github.com/python-ldap/python-ldap"
+      },
+      "compatible_wheels": [],
+      "source_archives": [
+        {
+          "filename": "python_ldap-3.4.8.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/1c/45/489fcf46984f916ef165cdc6a2a1f1ca01ab6f486d47169256ebe44bdd62/python_ldap-3.4.8.tar.gz",
+          "digests": {
+            "blake2b_256": "1c45489fcf46984f916ef165cdc6a2a1f1ca01ab6f486d47169256ebe44bdd62",
+            "md5": "3f8d49d06f5ac84505a154fc69959e68",
+            "sha256": "18dc7460470c6ff64ed5c04ee21c56dbfee7ab433a53213ba91e407eea44c34c"
+          },
+          "size": 387710,
+          "upload_time_iso_8601": "2026-09-16T12:41:20.150137Z"
+        }
+      ],
+      "source_build_required": true,
+      "metadata_sha256": "8db465b514eb0f3710a0e25b98d402c81eb416577173c9935815c710e766c278",
+      "source": "https://pypi.org/pypi/python-ldap/3.4.8/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "requests",
+      "version": "2.34.2",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "charset_normalizer<4,>=2",
+        "idna<4,>=2.5",
+        "urllib3<3,>=1.26",
+        "certifi>=2023.5.7",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+        "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\""
+      ],
+      "license_expression": null,
+      "license_field": "Apache-2.0",
+      "project_urls": {
+        "Documentation": "https://requests.readthedocs.io",
+        "Source": "https://github.com/psf/requests"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "requests-2.34.2-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "a0f4c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a",
+            "md5": "cc4287951c320ff794e5e183c7a91f85",
+            "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+          },
+          "size": 73075,
+          "upload_time_iso_8601": "2026-05-14T19:25:26.443000Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "requests-2.34.2.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz",
+          "digests": {
+            "blake2b_256": "acc3e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf",
+            "md5": "611e438d0803e962500225f9807a475e",
+            "sha256": "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
+          },
+          "size": 142856,
+          "upload_time_iso_8601": "2026-05-14T19:25:27.735762Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "8622e50ffd295ed759ec793f2a009172a4ed0204bbc5e948de23111bc3d2aeae",
+      "source": "https://pypi.org/pypi/requests/2.34.2/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "setuptools",
+      "version": "84.2.1",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "pytest!=8.1.*,>=6; extra == \"test\"",
+        "virtualenv>=13.0.0; extra == \"test\"",
+        "wheel>=0.44.0; extra == \"test\"",
+        "pip>=19.1; extra == \"test\"",
+        "packaging>=26.3; extra == \"test\"",
+        "jaraco.envs>=2.2; extra == \"test\"",
+        "pytest-xdist>=3; extra == \"test\"",
+        "jaraco.path>=3.7.2; extra == \"test\"",
+        "build[virtualenv]>=1.0.3; extra == \"test\"",
+        "filelock>=3.4.0; extra == \"test\"",
+        "ini2toml[lite]>=0.14; extra == \"test\"",
+        "tomli-w>=1.0.0; extra == \"test\"",
+        "pytest-timeout; extra == \"test\"",
+        "pytest-perf; sys_platform != \"cygwin\" and extra == \"test\"",
+        "jaraco.develop>=7.21; (python_version >= \"3.9\" and sys_platform != \"cygwin\") and extra == \"test\"",
+        "pytest-home>=0.5; extra == \"test\"",
+        "pytest-subprocess; extra == \"test\"",
+        "pyproject-hooks!=1.1; extra == \"test\"",
+        "jaraco.test>=5.5; extra == \"test\"",
+        "sphinx>=3.5; extra == \"doc\"",
+        "jaraco.packaging>=9.3; extra == \"doc\"",
+        "rst.linker>=1.9; extra == \"doc\"",
+        "furo; extra == \"doc\"",
+        "sphinx-lint; extra == \"doc\"",
+        "jaraco.tidelift>=1.4; extra == \"doc\"",
+        "pygments-github-lexers==0.0.5; extra == \"doc\"",
+        "sphinx-favicon; extra == \"doc\"",
+        "sphinx-inline-tabs; extra == \"doc\"",
+        "sphinx-reredirects; extra == \"doc\"",
+        "sphinxcontrib-towncrier; extra == \"doc\"",
+        "sphinx-notfound-page<2,>=1; extra == \"doc\"",
+        "pyproject-hooks!=1.1; extra == \"doc\"",
+        "towncrier<24.7; extra == \"doc\"",
+        "packaging>=26.3; extra == \"core\"",
+        "more_itertools>=8.8; extra == \"core\"",
+        "jaraco.text>=3.7; extra == \"core\"",
+        "importlib_metadata>=6; python_version < \"3.10\" and extra == \"core\"",
+        "tomli>=2.0.1; python_version < \"3.11\" and extra == \"core\"",
+        "wheel>=0.43.0; extra == \"core\"",
+        "jaraco.functools>=4; extra == \"core\"",
+        "more_itertools; extra == \"core\"",
+        "pytest-checkdocs>=2.14; extra == \"check\"",
+        "pytest-ruff>=0.2.1; sys_platform != \"cygwin\" and extra == \"check\"",
+        "ruff>=0.13.0; sys_platform != \"cygwin\" and extra == \"check\"",
+        "pytest-cov; extra == \"cover\"",
+        "pytest-enabler>=3.4; extra == \"enabler\"",
+        "pytest-mypy>=1.0.1; platform_python_implementation != \"PyPy\" and extra == \"type\"",
+        "mypy==1.18.*; extra == \"type\"",
+        "importlib_metadata>=7.0.2; python_version < \"3.10\" and extra == \"type\"",
+        "jaraco.develop>=7.21; sys_platform != \"cygwin\" and extra == \"type\""
+      ],
+      "license_expression": "MIT",
+      "license_field": null,
+      "project_urls": {
+        "Changelog": "https://setuptools.pypa.io/en/stable/history.html",
+        "Documentation": "https://setuptools.pypa.io/",
+        "Source": "https://github.com/pypa/setuptools"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "setuptools-84.2.1-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "ef556dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610",
+            "md5": "d16d3f1f25175cbc466dd5dfe938ac6b",
+            "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2"
+          },
+          "size": 876263,
+          "upload_time_iso_8601": "2026-10-20T19:01:35.678013Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "setuptools-84.2.1.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz",
+          "digests": {
+            "blake2b_256": "70b3c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1",
+            "md5": "251cbfc8f83414155e0e595cc4cffdd2",
+            "sha256": "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
+          },
+          "size": 1230289,
+          "upload_time_iso_8601": "2026-10-20T19:01:37.742699Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "d75de8ba0d3304a3d74484fb9f340edb87ef02712da4fa02a2ed92e71b0572dd",
+      "source": "https://pypi.org/pypi/setuptools/84.2.1/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "urllib3",
+      "version": "2.8.0",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "brotli>=1.2.0; platform_python_implementation == \"CPython\" and extra == \"brotli\"",
+        "brotlicffi>=1.2.0.0; platform_python_implementation != \"CPython\" and extra == \"brotli\"",
+        "h2<5,>=4; extra == \"h2\"",
+        "pysocks!=1.5.7,<2.0,>=1.5.6; extra == \"socks\"",
+        "backports-zstd>=1.0.0; python_version < \"3.14\" and extra == \"zstd\""
+      ],
+      "license_expression": "MIT",
+      "license_field": null,
+      "project_urls": {
+        "Changelog": "https://github.com/urllib3/urllib3/blob/main/CHANGES.rst",
+        "Code": "https://github.com/urllib3/urllib3",
+        "Documentation": "https://urllib3.readthedocs.io",
+        "Issue tracker": "https://github.com/urllib3/urllib3/issues",
+        "Security policy": "https://urllib3.readthedocs.io/en/latest/security.html"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "urllib3-2.8.0-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "929dc4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c",
+            "md5": "e6e9d40fb009e4a52290209506d8d4d4",
+            "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+          },
+          "size": 135717,
+          "upload_time_iso_8601": "2026-09-15T19:29:34.577402Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "urllib3-2.8.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz",
+          "digests": {
+            "blake2b_256": "e305b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e",
+            "md5": "e8ed250b4d520f9e3c0df3165953aa94",
+            "sha256": "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
+          },
+          "size": 458972,
+          "upload_time_iso_8601": "2026-09-15T19:29:36.253420Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "5315e7401db3cacccd0c2ce5daf81f752a9cc3614b18c37f2b79930b7159ce2f",
+      "source": "https://pypi.org/pypi/urllib3/2.8.0/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "werkzeug",
+      "version": "3.1.9",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "markupsafe>=2.1.1",
+        "watchdog>=2.3; extra == \"watchdog\""
+      ],
+      "license_expression": "BSD-3-Clause",
+      "license_field": null,
+      "project_urls": {
+        "Changes": "https://werkzeug.palletsprojects.com/page/changes/",
+        "Chat": "https://discord.gg/pallets",
+        "Documentation": "https://werkzeug.palletsprojects.com/",
+        "Donate": "https://palletsprojects.com/donate",
+        "Source": "https://github.com/pallets/werkzeug/"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "werkzeug-3.1.9-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/a1/38/df03f564f43cec2684823f3cccae1a652ee7face1cbaa76fb223096e64d7/werkzeug-3.1.9-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "a138df03f564f43cec2684823f3cccae1a652ee7face1cbaa76fb223096e64d7",
+            "md5": "0d87233e2a19a043a680d6db7e46f4e7",
+            "sha256": "6392e50c78460ba618e5b21f08a71f59c99ce99cdc6cf6e3dd7e6ccca8754fab"
+          },
+          "size": 228700,
+          "upload_time_iso_8601": "2026-09-27T18:33:39.685530Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "werkzeug-3.1.9.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz",
+          "digests": {
+            "blake2b_256": "a4344dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e",
+            "md5": "786765fcf7f7c9fa43cfefdc8147eff0",
+            "sha256": "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
+          },
+          "size": 940188,
+          "upload_time_iso_8601": "2026-09-27T18:33:41.637920Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "2ebf74c299c008b5df95eaf3d0aa223cd9504142686eb3186627ab46b733096a",
+      "source": "https://pypi.org/pypi/werkzeug/3.1.9/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "wheel",
+      "version": "0.48.0",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "packaging>=24.0"
+      ],
+      "license_expression": "MIT",
+      "license_field": null,
+      "project_urls": {
+        "Changelog": "https://wheel.readthedocs.io/en/stable/news.html",
+        "Documentation": "https://wheel.readthedocs.io/",
+        "Issue Tracker": "https://github.com/pypa/wheel/issues",
+        "Source": "https://github.com/pypa/wheel"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "wheel-0.48.0-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "2e2969cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449",
+            "md5": "75e4bbe15fefadbb91258c5e79b38aa3",
+            "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+          },
+          "size": 33320,
+          "upload_time_iso_8601": "2026-08-11T22:02:26.100721Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "wheel-0.48.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz",
+          "digests": {
+            "blake2b_256": "d02050ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90",
+            "md5": "f668e4885de814378b332eceea04a8a0",
+            "sha256": "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+          },
+          "size": 66471,
+          "upload_time_iso_8601": "2026-08-11T22:02:27.327210Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "03f655da3a6dd010d9ac41d4771d5d973109cb662a1e10eb9d967535ffd145f8",
+      "source": "https://pypi.org/pypi/wheel/0.48.0/json",
+      "current_advisory_ids": []
+    },
+    {
+      "package": "zeep",
+      "version": "4.3.3",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "attrs>=17.2.0",
+        "isodate>=0.5.4",
+        "lxml>=4.6.0",
+        "platformdirs>=1.4.0",
+        "requests>=2.7.0",
+        "requests-toolbelt>=0.7.1",
+        "requests-file>=1.5.1",
+        "sphinx>=1.4.0; extra == \"docs\"",
+        "httpx>=0.15.0; extra == \"async\"",
+        "packaging; extra == \"async\"",
+        "xmlsec>=0.6.1; extra == \"xmlsec\""
+      ],
+      "license_expression": null,
+      "license_field": "MIT",
+      "project_urls": {
+        "Changelog": "https://github.com/mvantellingen/python-zeep/blob/main/CHANGES",
+        "Documentation": "https://docs.python-zeep.org",
+        "Repository": "https://github.com/mvantellingen/python-zeep"
+      },
+      "compatible_wheels": [
+        {
+          "filename": "zeep-4.3.3-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/b5/87/5c1d29f52fc32da98b75dc8a681cd0de78c9cfd5c10493cd7fb730e1d4b0/zeep-4.3.3-py3-none-any.whl",
+          "digests": {
+            "blake2b_256": "b5875c1d29f52fc32da98b75dc8a681cd0de78c9cfd5c10493cd7fb730e1d4b0",
+            "md5": "9d8f6d929aac2c8d9786d20126aef109",
+            "sha256": "5adfae35582848819f8bb97b6ea9f1a34a2d4851a539f830e14dbab09961dd18"
+          },
+          "size": 102054,
+          "upload_time_iso_8601": "2026-06-18T17:17:57.223735Z"
+        }
+      ],
+      "source_archives": [
+        {
+          "filename": "zeep-4.3.3.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/7e/c2/e06e5f177d818d0fc34fcbe2f98c175af2cba63b7d90f4bfcb6fe360d343/zeep-4.3.3.tar.gz",
+          "digests": {
+            "blake2b_256": "7ec2e06e5f177d818d0fc34fcbe2f98c175af2cba63b7d90f4bfcb6fe360d343",
+            "md5": "cc13ce426f534dfa98478c6a8e7a6152",
+            "sha256": "99d5059f92f721020998695fd9c85289ccb03ec5a2398ad49c6dbe43f19cfb94"
+          },
+          "size": 167372,
+          "upload_time_iso_8601": "2026-06-18T17:17:58.994742Z"
+        }
+      ],
+      "source_build_required": false,
+      "metadata_sha256": "fd50fcfe4cca515bc14a636f8ad2d782bf0123c02a3c593dc657616d7b3fc14f",
+      "source": "https://pypi.org/pypi/zeep/4.3.3/json",
+      "current_advisory_ids": []
+    }
+  ],
+  "renamed_dependency": {
+    "previous": "PyPDF2",
+    "candidate": "pypdf",
+    "existing_native_adapter": "odoo/tools/pdf/_pypdf.py"
+  },
+  "limits": [
+    "Exact stable registry candidates only; no lock/source/library/runtime mutation performed.",
+    "Newer versions are not assumed ABI/API compatible. Native import/image/PDF/HTML/HTTP/token and later full native/lifecycle/performance tests required.",
+    "Source-build packages require a separate controlled authorized builder; never execute build backends in pure planning.",
+    "A registry no-match is not a full security signoff; OS/vendor/vendored and reachability checks remain."
+  ]
+}

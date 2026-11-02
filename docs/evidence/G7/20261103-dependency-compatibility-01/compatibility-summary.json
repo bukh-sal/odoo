@@ -1,0 +1,495 @@
+{
+  "result": "isolated_dependency_primitive_compatibility_passed",
+  "base_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "retained_probe_volume": "mp-g7-dep-c39f7dae7ba4-venv",
+  "qualified_runtime_unchanged": true,
+  "installed_candidate_versions": {
+    "cbor2": "6.2.0.post2",
+    "cryptography": "50.0.2",
+    "idna": "3.20",
+    "jinja2": "3.1.6",
+    "lxml": "6.1.3",
+    "lxml-html-clean": "0.4.6",
+    "pillow": "13.0.0",
+    "pip": "26.3",
+    "pyopenssl": "26.4.0",
+    "pypdf": "6.21.4",
+    "python-ldap": "3.4.8",
+    "requests": "2.34.2",
+    "setuptools": "84.2.1",
+    "urllib3": "2.8.0",
+    "werkzeug": "3.1.9",
+    "wheel": "0.48.0",
+    "zeep": "4.3.3"
+  },
+  "runtime_distributions": [
+    {
+      "name": "asn1crypto",
+      "version": "1.5.1",
+      "digest": "sha256:b80f42b0d0da70ecf742c7050778172fa51362b97bcd78a7526f9a1074fbb051"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "digest": "sha256:3641844d64e28a4dd78c85ce1cc656bb413b9a44f2ee9f5699b35de8d8875213"
+    },
+    {
+      "name": "Babel",
+      "version": "2.10.3",
+      "digest": "sha256:86f61ed25692d7f5e964f6573285aba2c350a4f9d0d9685c8fc6167ade3e6a50"
+    },
+    {
+      "name": "beautifulsoup4",
+      "version": "4.15.0",
+      "digest": "sha256:e17efe80a50feaa82d69526e7ebcfe7eb0ec2585214f698b43f7f6397e18664b"
+    },
+    {
+      "name": "cbor2",
+      "version": "6.2.0.post2",
+      "digest": "sha256:90b99206a7f2a260fa3c3e2575f1d6ed1114bdbd1ebbb97e83df1b27031b1e23"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "digest": "sha256:aa3e852ff279f5f9a68f38c0632bef5488e77205e23fb0b1053d69f676446751"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "digest": "sha256:5ab16a1d7c082ef425e37b82a873bba87bebe336cacf9cf40da4be975c0a5212"
+    },
+    {
+      "name": "chardet",
+      "version": "5.2.0",
+      "digest": "sha256:cd12f1eda938bef5c09e6b317434f526525d401e481b669beeb5a73a47267954"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "digest": "sha256:06445f9816cb1a1d5e69bbea910344c406162c1423cbb6280e83dca2df63563a"
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2",
+      "digest": "sha256:5f63f6d17ace754da9384a1e20ba11aa90c1261f7eecd6a11590184c84919d94"
+    },
+    {
+      "name": "docopt",
+      "version": "0.6.2",
+      "digest": "sha256:4914d0123ab1b7f89a55d146eb8d682abde3293e4f3fb72531843b43cc144c8c"
+    },
+    {
+      "name": "docutils",
+      "version": "0.20.1",
+      "digest": "sha256:a0ad54641acf904827f3fdb9420f1455dbb352bf56854e7ef824abf4d0427cb7"
+    },
+    {
+      "name": "et_xmlfile",
+      "version": "2.0.0",
+      "digest": "sha256:79d0d73394887ccb1627be5e562f10d8834af81ed6256a7b3670f288d7919078"
+    },
+    {
+      "name": "freezegun",
+      "version": "1.2.1",
+      "digest": "sha256:a7b55d470489dc97748e80900e9dc2ad841be52f4afaca76ca1a9365db2d2692"
+    },
+    {
+      "name": "geoip2",
+      "version": "2.9.0",
+      "digest": "sha256:2e854893f8fe000419cc85861177edff0da768a9d84304c164d39669e4059c9d"
+    },
+    {
+      "name": "gevent",
+      "version": "24.2.1",
+      "digest": "sha256:a2e80d800dbec5b16ef67b315eee905f4c3e010039ab0e14fcf91ceab86a0303"
+    },
+    {
+      "name": "greenlet",
+      "version": "3.0.3",
+      "digest": "sha256:ce288da38a59cba5d437c12619b051bd3fcc680539d579b284422a905b115edc"
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "digest": "sha256:55ad73e1478eb595bf11e9ff548211c250b1b837aeee781b7cd530e7da431b17"
+    },
+    {
+      "name": "isodate",
+      "version": "0.7.2",
+      "digest": "sha256:be9e8a9e328ab65f4aceeb915e7a3835c0a2ca48a8b8c4bd8b54b7ef495f2462"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "digest": "sha256:891f990d3e55804bd8e52a55fbbcb881f753b9435a3394ea7e8807333831d3c7"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "digest": "sha256:9bc90badf40bd6029d4bf4d9f75766a824caef029903fbd45d7e4ae48b51ca1d"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "digest": "sha256:b2d758c54b5f8fb9df4ede00514d03ffe85c961512a3f9894d3a8b3f6e168a55"
+    },
+    {
+      "name": "libsass",
+      "version": "0.22.0",
+      "digest": "sha256:1a3bf959e7680885ad72dbe1d47d9f479e5fd2b733ab9089a7f2618fd20f9105"
+    },
+    {
+      "name": "lxml",
+      "version": "6.1.3",
+      "digest": "sha256:3167ca0077efef51aab9e8aad8e2e0873dd44f1c106217b1722d466a423a6388"
+    },
+    {
+      "name": "lxml_html_clean",
+      "version": "0.4.6",
+      "digest": "sha256:1460b2eb44ac5604710e483d11f7aea4a7e03f53dd6257150bdd56962935a9b8"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "2.1.5",
+      "digest": "sha256:2e2b1b76328c869ebf556ae3aa2e8111ff014b72980335609a7e10e1f6183bcf"
+    },
+    {
+      "name": "maxminddb",
+      "version": "3.2.0",
+      "digest": "sha256:4d91a4e05ed1036411a82497301fe3129d5f8b09343db8d2890332da9043e2c1"
+    },
+    {
+      "name": "num2words",
+      "version": "0.5.13",
+      "digest": "sha256:c50202b619c17607ebf94957a899cbb5765cf4b4d6eccadbff037b271bd1a266"
+    },
+    {
+      "name": "ofxparse",
+      "version": "0.21",
+      "digest": "sha256:661797ec031dec3d14fa6b1e95eba633c78496a2dae2196dae6d74d06e778b51"
+    },
+    {
+      "name": "openpyxl",
+      "version": "3.1.2",
+      "digest": "sha256:19da7368a57fefb135d48c32938af522ec8d47bc319017703d54313043a6d5dc"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "digest": "sha256:fee2c02b88a2f745cb9ba0e7c502f392d45cd538aeb75d2854b148abc9792cab"
+    },
+    {
+      "name": "passlib",
+      "version": "1.7.4",
+      "digest": "sha256:c129b5c34fbf08ceac2bcbf136b8d7581f8cc195d3375d2180589cf66730faed"
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0",
+      "digest": "sha256:087e0ca518d7993e6494d9dce88e800ff98ebdcb8a653044707965ffbb1e4dbe"
+    },
+    {
+      "name": "pip",
+      "version": "26.3",
+      "digest": "sha256:5fc6af76b9b10677cbf58a3a58d983eff98e38f9d531d3cfd05fb67c7a0aa302"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.13.6",
+      "digest": "sha256:b9142e9305c659c5ad20075280e1b9e0673a3ddd5cc1d636d9ad580b03384c75"
+    },
+    {
+      "name": "polib",
+      "version": "1.1.1",
+      "digest": "sha256:0b9e1108908622da4affbb5d3089a0cdc25825d4816bb4f1bdd22b1022b2eb7b"
+    },
+    {
+      "name": "psutil",
+      "version": "5.9.8",
+      "digest": "sha256:6d3a27c4cd9d427f9de55ecda0c94a5d4ea6c10ca503a563cccbdb060ae0227f"
+    },
+    {
+      "name": "psycopg2",
+      "version": "2.9.9",
+      "digest": "sha256:bc56efc83cba16deb6ac18e0e4517a9f2bf2d391502aad304cd335c9ea79e149"
+    },
+    {
+      "name": "pyasn1",
+      "version": "0.6.5",
+      "digest": "sha256:55cf1e122e3fc088d33fc5890677f9caad71dae57904f80e801a0a276e9a5b3d"
+    },
+    {
+      "name": "pyasn1_modules",
+      "version": "0.4.2",
+      "digest": "sha256:a1a66dc5e51b85fa2c3597c939d353737e0ca8095537973a87a67009c8d6343c"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12",
+      "digest": "sha256:f25c37a169becf60bd006d05ec7091aca1a15b6d0c6e839a2bf81e5fe2d2253e"
+    },
+    {
+      "name": "PyJWT",
+      "version": "2.15.1",
+      "digest": "sha256:d145e3215c948905f31b1b32d465e4ce5700e3c1cbf0cb96278df104abd57225"
+    },
+    {
+      "name": "pyOpenSSL",
+      "version": "26.4.0",
+      "digest": "sha256:948747adb1a8e2b74a6026cde10c2a9ce02f2314d9f40096050cf77c69074a87"
+    },
+    {
+      "name": "pypdf",
+      "version": "6.21.4",
+      "digest": "sha256:979d32ab7d9222c4b4a29430bd4b4141e2cc498068dcdabb94d00debd38a187a"
+    },
+    {
+      "name": "pypng",
+      "version": "0.20220715.0",
+      "digest": "sha256:a422515b6808528889ef4284e7e7fcadb98a3dcbafe66fff9a4ebc97462698e3"
+    },
+    {
+      "name": "pyserial",
+      "version": "3.5",
+      "digest": "sha256:20525f855c241e9792e0016368e17aae5445230008e3a900546da6767a0a3d0d"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.8.2",
+      "digest": "sha256:8e2b178fa8007c898b2860ff89b359d84532a99d0fb84085894796593a7d2694"
+    },
+    {
+      "name": "python-ldap",
+      "version": "3.4.8",
+      "digest": "sha256:09aa5e86d6a35e549f3469f4d190a3cbd9f30f1e49254c54b90527b72a4e22b4"
+    },
+    {
+      "name": "python-magic",
+      "version": "0.4.27",
+      "digest": "sha256:36ac295008a56ef1d6197789f2a5b125b26538817f0747507b129041a3aaacd6"
+    },
+    {
+      "name": "python-stdnum",
+      "version": "1.19",
+      "digest": "sha256:02326706fc681bcb1c44283677a9d61a9c6ac83eb901b912fc4221ca0fccf14d"
+    },
+    {
+      "name": "pytz",
+      "version": "2026.5",
+      "digest": "sha256:833969f0ce4ad84a6f159e41a21f642f44692ca69a209b6abab41be9165fc3fd"
+    },
+    {
+      "name": "pyusb",
+      "version": "1.2.1",
+      "digest": "sha256:31a0b3dabf14df21cf370ba55745671094bec3cdae8cc50037923cada53fe32f"
+    },
+    {
+      "name": "qrcode",
+      "version": "7.4.2",
+      "digest": "sha256:67f74d91ffc01e722d59788c02994045b331dbca99d892080853d15a3cc1ad7f"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "digest": "sha256:158a5c9f18f51199d5668206d240267bac9d6a36e8095efda6c055ddc897e1f5"
+    },
+    {
+      "name": "reportlab",
+      "version": "4.1.0",
+      "digest": "sha256:0f03cea9524be753b063cd2016023732eb044069787e2d48af30cdee3f03aed7"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "digest": "sha256:a8300017568bc143d4191a1cec3397c66a88d6821988ccfd1df69e3c5f14664a"
+    },
+    {
+      "name": "requests-file",
+      "version": "3.0.1",
+      "digest": "sha256:f2e61e691dba69ddfdd888b9dd59d098229da718f8cbb213afa720f39de832a9"
+    },
+    {
+      "name": "requests-toolbelt",
+      "version": "1.0.0",
+      "digest": "sha256:da2e9267830335c3c0d95a55885a8b6c45cfea6f0e0bd0feb44f692abc50132a"
+    },
+    {
+      "name": "resolvelib",
+      "version": "1.2.1",
+      "digest": "sha256:256cd02fd65cbf940f094bb5f85039a20af289c86dc42cf970d1cd8f7e9d3cb1"
+    },
+    {
+      "name": "rfc8785",
+      "version": "0.1.4",
+      "digest": "sha256:dc93728455a314bae954df5631f4d263066c994bb6ea002c488350464409920f"
+    },
+    {
+      "name": "rjsmin",
+      "version": "1.2.0",
+      "digest": "sha256:c017cb27fee476ffbb107cf9c4194d98d5d15a4a35cd6cdef924263357e81929"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "digest": "sha256:40ca0faeeb455f15cbf985733894f9b988d15177c2999c57b6a9a008ca8525c5"
+    },
+    {
+      "name": "setuptools",
+      "version": "84.2.1",
+      "digest": "sha256:c2e2cf44ca2d2ba72672dca55fbaf300fcf81fd26b330f1e204ca420beb96c70"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "digest": "sha256:48fc3bdd119de4b1a610b81ee44f37d7f2a191010618b412d58ebdcb9653de5e"
+    },
+    {
+      "name": "soupsieve",
+      "version": "3.0.4",
+      "digest": "sha256:5ace130384c8858619b34f682539964005f7acc56fac63cabe2f7c70d4dba41f"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "digest": "sha256:b9050b8055c7bacebc9a0a683c71c25ba47fcef185d97b6b8fbf17524e5a7b56"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "digest": "sha256:135a23ed2887e0e13fc855f5b74e5751ac2bbbcd898e3fa53d66255dc34e4ba9"
+    },
+    {
+      "name": "vobject",
+      "version": "0.9.6.1",
+      "digest": "sha256:2ad497a9691ea354a21e950d13716a45f1b62ff0e8de087ac36600e47fc22bf1"
+    },
+    {
+      "name": "Werkzeug",
+      "version": "3.1.9",
+      "digest": "sha256:17fc3b239dfb29b30470c88577bd0f65be29a3f9f680cbc1fabaa0a5ca4b3219"
+    },
+    {
+      "name": "wheel",
+      "version": "0.48.0",
+      "digest": "sha256:93d741a38217c0f43610507d1d4bcfdcd1265ab0653d06073222c3a238227674"
+    },
+    {
+      "name": "xlrd",
+      "version": "2.0.1",
+      "digest": "sha256:b8f5c7369d39308e242ea7462c22ea29b6945cae8cd067d104a9cd061f59cc5f"
+    },
+    {
+      "name": "XlsxWriter",
+      "version": "3.1.9",
+      "digest": "sha256:8e8fbefed6304618db9f66fd59e592c7f29fbc9c3d8dbc80bead860ecdf599d3"
+    },
+    {
+      "name": "xlwt",
+      "version": "1.3.0",
+      "digest": "sha256:4836a431de84afc20b355843a018025e3df2fc235478bc7323193737faad2f87"
+    },
+    {
+      "name": "zeep",
+      "version": "4.3.3",
+      "digest": "sha256:de4a4c7b2eb1220ae13e181d04bcb39c3239b13dfcc8b00066da1a8a5f940b6e"
+    },
+    {
+      "name": "zope.event",
+      "version": "6.2",
+      "digest": "sha256:ed78571876d1c7754d9bb8714c8a20c85423d807185cd5c9fb0f59d01b60004c"
+    },
+    {
+      "name": "zope.interface",
+      "version": "8.7",
+      "digest": "sha256:aa8b73da017ba92034ce0542d9f33c10146dd01a4e0d27cddf66914eb0125527"
+    }
+  ],
+  "ldap": {
+    "version": "3.4.8",
+    "tls": true,
+    "sasl": true,
+    "linked_libraries": "\tlinux-vdso.so.1 (0x00007fcaae6b7000)\n\tlibldap-2.5.so.0 => /lib/x86_64-linux-gnu/libldap-2.5.so.0 (0x00007fcaae638000)\n\tliblber-2.5.so.0 => /lib/x86_64-linux-gnu/liblber-2.5.so.0 (0x00007fcaae628000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fcaae446000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007fcaae429000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007fcaae20a000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007fcaae6b9000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007fcaae0d4000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007fcaae0a3000)\n\tlibunistring.so.2 => /lib/x86_64-linux-gnu/libunistring.so.2 (0x00007fcaadeed000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007fcaaded8000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007fcaade8a000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007fcaade41000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007fcaaddbe000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007fcaaddb2000)\n"
+  },
+  "pillow_features": {
+    "pil": "13.0.0",
+    "freetype2": "2.14.3",
+    "littlecms2": "2.19",
+    "webp": "1.6.0",
+    "avif": "1.4.2",
+    "libjpeg_turbo": "3.2.0",
+    "zlib_ng": "2.3.3",
+    "xcb": null,
+    "jpg": "6.2",
+    "jpg_2000": "2.5.4",
+    "zlib": "1.2.13",
+    "libtiff": "4.7.2"
+  },
+  "libxml_version": [
+    2,
+    14,
+    6
+  ],
+  "libxslt_version": [
+    1,
+    1,
+    43
+  ],
+  "native_tests": {
+    "tests": 9,
+    "passed": true,
+    "report": "native-primitives-03.json"
+  },
+  "retired_helpers": [
+    {
+      "name": "mp-g7-dep-c39f7dae7ba4-copy",
+      "id": "6195ae68c0e9f6e643f03897d1e3f726c00d311f47a45131bddf5979bb316baf",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-g7-dep-c39f7dae7ba4-install",
+      "id": "129a4a3bf97cbda5929a3bf470cf7b9c62e40761d59257d133cfd76815c977ca",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-g7-dep-c39f7dae7ba4-ldap-install",
+      "id": "80bb630415f2a898230128876d4312ad70c33b0d555a4d16c3a30ec07d68825f",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-g7-dep-c39f7dae7ba4-native-primitives-01",
+      "id": "5e5cdd4fca61a7bf1ca7b8a602f6009be012ba969156d9c2815bec5da9dff2f1",
+      "exit_code": 1,
+      "removed": true
+    },
+    {
+      "name": "mp-g7-dep-c39f7dae7ba4-native-primitives-02",
+      "id": "7e2c9272cacddac016bfd856e6ef312e11d042ba1439f63a120e36924d7e7ae1",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-g7-dep-c39f7dae7ba4-native-primitives-03",
+      "id": "e7a3bd5d6b36f38db94a4d2e6d8bdf522cd952f6e6737c247396380cb474905c",
+      "exit_code": 0,
+      "removed": true
+    }
+  ],
+  "evidence_sha256": {
+    "candidate-selection.json": "75335019ffe10f571a75a673005ee8aaedbd4e4cd496deb95c8c8b5f2030f309",
+    "probe-preparation.json": "3b3a8673f23c3c2694e4649e36fe69c1aa958b4db9fb8c3b7f2153097d58e3ac",
+    "ldap-build.json": "770d92eb12a962a3d9a82b403343fe20627af2769851f5d6b9942a2a6b1bf6da",
+    "ldap-install.json": "3e8df7b00706bc35bdf7d3e818b0fc418d399c64131f778d30c111b681b5a83a",
+    "native-primitives-01.json": "defb2665b255379534f13ed53b6f0cd9744579a2180f604e7890aef022f78414",
+    "native-primitives-02.json": "6a0c12d072c12d9d41678a79948b6dc011b7495607792ead6a93ad217d4e8d66",
+    "native-primitives-03.json": "1361010c373afc883f84d3616750ecfc91b85fe4b292cb84fa6dca984404a20b"
+  },
+  "limits": [
+    "Not a release image; original image lock is intentionally unchanged and does not describe this experiment.",
+    "No application registry, database, native lifecycle, full acceptance, fresh release, performance or final security qualification.",
+    "One isolated probe volume retained for required follow-up; no compiler image tagged, shared BuildKit cache untouched.",
+    "Retirement attempt01 removed copy helper successfully, then uppercase-only Docker diagnostic assertion refused lowercase no such object. Continuation reused installed metadata and archived removal; no collector or removed-container recreation."
+  ]
+}
