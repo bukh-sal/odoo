@@ -1,0 +1,29 @@
+{
+  "result": "passed_actual_saved_note_revision_change_after_remote_IO",
+  "source_commit": "79145cc2",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "job_id": "d7abf72b-3a82-4194-8435-0bbcc97c9f6c",
+  "note_id": "a31c7960-2ebc-4d73-9c98-70292275ecad",
+  "computed_before_revision_change": true,
+  "barrier": {
+    "job_id": "d7abf72b-3a82-4194-8435-0bbcc97c9f6c",
+    "computed_sha256": "921b8cd909f45e6eb1abcabae4da2766162daf7f8d1f440f27fee2476655aff5"
+  },
+  "unchanged_native_runner_startup_bridge_transport_finalize": true,
+  "test_only_trace_no_function_replacement": true,
+  "normal_gateway_saved_revision1_to2": true,
+  "one_terminal_conflict_attempt_no_stale_result": true,
+  "newer_note_retained": true,
+  "all_old24jobs_29notes_and_other17table_rows_exact": true,
+  "explicit_new_footprint": {
+    "mp_job": 1,
+    "mp_outbox": 2,
+    "mp_example_note": 1
+  },
+  "same_running_worker_and_independent_authority": true,
+  "no_persistent_Docker_assets_added": true,
+  "limits": [
+    "Revision race only; binding/grant/feature/credential/publication current integration coverage review, external recovery, changed-image and browser remain."
+  ]
+}

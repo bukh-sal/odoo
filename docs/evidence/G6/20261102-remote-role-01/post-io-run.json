@@ -1,0 +1,13 @@
+{
+  "operation_id": "354184a3-d668-451b-af46-ce3e36f257f4",
+  "result": {
+    "error_code": "FORBIDDEN",
+    "job_id": "03533a33-1d1a-47e6-95d9-be96b1e706df",
+    "state": "dead_letter"
+  },
+  "barrier": {
+    "job_id": "03533a33-1d1a-47e6-95d9-be96b1e706df",
+    "computed_sha256": "0a0e8ae13b9532abb39a0e09ab66ea7d4edf94058915f1582416fc19ee1dd3c8"
+  },
+  "unchanged_runner_test_only_post_compute_trace": true
+}

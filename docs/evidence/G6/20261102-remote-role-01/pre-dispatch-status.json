@@ -1,0 +1,8 @@
+{
+  "id": "234c715e-57db-4526-9fdf-c21a27502d89",
+  "state": "dead_letter",
+  "progress": 0,
+  "attempts": 1,
+  "error_code": "FORBIDDEN",
+  "result": null
+}

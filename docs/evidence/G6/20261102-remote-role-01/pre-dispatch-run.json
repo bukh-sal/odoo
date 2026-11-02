@@ -1,0 +1,10 @@
+{
+  "operation_id": "0c62325e-7b6c-4068-9250-3e950efa6659",
+  "results": [
+    {
+      "error_code": "FORBIDDEN",
+      "job_id": "234c715e-57db-4526-9fdf-c21a27502d89",
+      "state": "dead_letter"
+    }
+  ]
+}

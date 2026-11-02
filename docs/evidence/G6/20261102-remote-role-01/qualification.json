@@ -1,0 +1,28 @@
+{
+  "result": "passed_actual_original_actor_role_before_dispatch_and_after_remote_IO",
+  "source_commit": "79145cc2",
+  "configuration_generation": 18,
+  "dispatch_generation": 88,
+  "pre_dispatch_ordinary_independent_CLI": true,
+  "post_IO_actual_inventoried_runner_startup_compute_transport_finalize": true,
+  "test_only_trace_barrier_no_function_replacement": true,
+  "original_actor_user_id": 7,
+  "jobs": [
+    "234c715e-57db-4526-9fdf-c21a27502d89",
+    "03533a33-1d1a-47e6-95d9-be96b1e706df"
+  ],
+  "one_attempt_each_no_result": true,
+  "live_HTTP_membership_and_revoked_status_denial": true,
+  "original22jobs_and_other_data_exact": true,
+  "explicit_footprint": {
+    "new_revoked_test_membership": 1,
+    "workspace_C_policy_increments": 7,
+    "new_dead_letter_jobs": 2
+  },
+  "same_running_worker_and_independent_authority": true,
+  "no_persistent_Docker_assets_added": true,
+  "wrapper_sha256": "8fddb7a5214cc2dc61dd92f0913fc54d5c47e1c3919cbbeacd95e300bf0bb7fd",
+  "limits": [
+    "Actual role changes only; resource revision/binding/grant/credential/feature/publication in-flight cases, recovery, changedimage and browser remain required. Native plugins remain fully trusted."
+  ]
+}
