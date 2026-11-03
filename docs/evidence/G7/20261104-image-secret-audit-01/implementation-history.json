@@ -1,0 +1,105 @@
+{
+  "result": "scanned_triage_required",
+  "source_head": "fb60b98b2478d142210a456bd4f2e453a2a7f869",
+  "upstream_base": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+  "implementation_commits": 159,
+  "blobs": 5822,
+  "bytes": 118736063,
+  "known_secret_findings": 0,
+  "generic_findings": 11,
+  "findings": [
+    {
+      "location": "git-history/deploy/init-db.sh",
+      "offset": 254,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "git_blob": "93fedd06f5d77882ab40499987c6b98f933a6d39",
+      "file_sha256": "3f448eb17f1aa22b4f8cf45ee173c2c721a4e8bf460e0304855b0861f79c68e3"
+    },
+    {
+      "location": "git-history/docs/evidence/G5/20261029-http-security-02/preflight.py",
+      "offset": 1126,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b",
+      "git_blob": "fb128260a0da01fcdf45181ab061b8b65da07973",
+      "file_sha256": "a15d0be197b1f0f55b7f42cfd0d91e6faf8d4a66a00ef9015585126b86ee4611"
+    },
+    {
+      "location": "git-history/docs/evidence/G5/20261029-secret-scan-01/triage.py",
+      "offset": 2128,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "git_blob": "11db853fec53b6bab83448e7f036e479a0f33948",
+      "file_sha256": "b715ef2481ce9920d9c6bff4f416b689bab7e1472ae325a746e1f3f230e59b50"
+    },
+    {
+      "location": "git-history/docs/evidence/G7/20261103-core21-dependencies-image-01/fresh_http.py",
+      "offset": 2050,
+      "rule": "credential-literal",
+      "fingerprint": "52ba4f37a8d8f5372e63e163",
+      "git_blob": "e7ea59b163c4dfb62bfa4d9b4a141dfb93ac8296",
+      "file_sha256": "85c5e8729d1517aada0b4afc025cb50d0c5d024ad700e954a6331aab6cec359a"
+    },
+    {
+      "location": "git-history/docs/evidence/G7/20261104-production-profile-01/preflight.py",
+      "offset": 1153,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b",
+      "git_blob": "81506b1fc28d8e2baa5c5acaa642dec8b7ceff04",
+      "file_sha256": "980baf60ecf3c56d9c755a4767e2e3f46182d5f6603707a4a603022ce1df4486"
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 12641,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a"
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 12940,
+      "rule": "credential-literal",
+      "fingerprint": "e1dd6c8dc618cc0743181d8d",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a"
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 13032,
+      "rule": "credential-url",
+      "fingerprint": "e642b2b86ba8f589022a048f",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a"
+    },
+    {
+      "location": "git-history/tests/test_secret_scan.py",
+      "offset": 2233,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "git_blob": "6e8f481095b44842f04507b324a95e021f3cc6fa",
+      "file_sha256": "74d9e19d6ab5acc8c74493063f4a8e0f7f99bc00fdcec776350e7db09aa6e2d5"
+    },
+    {
+      "location": "git-history/tests/test_restore_dispatch.py",
+      "offset": 6970,
+      "rule": "credential-literal",
+      "fingerprint": "e76d931dd26e7d05ced42582",
+      "git_blob": "d8551a8e0b4e894c63419eb2510daacd0436fb00",
+      "file_sha256": "8c02e7845c36b97b852e8c6e600d1f8ea554d507832d6bcefc6f29691be4abca"
+    },
+    {
+      "location": "git-history/tests/test_restore_dispatch.py",
+      "offset": 6733,
+      "rule": "credential-literal",
+      "fingerprint": "e76d931dd26e7d05ced42582",
+      "git_blob": "c5766758cae614097b92079a0e5c1d11adab62d9",
+      "file_sha256": "aca2d8563d3df72af41afa0ee96348472351912c44710f20763fd2d10fd47d37"
+    }
+  ],
+  "elapsed_seconds": 99.391,
+  "limits": [
+    "All blobs introduced after exact pinned upstream through captured HEAD, including replaced/deleted versions; upstream current source scanned separately.",
+    "No Git rewrite/publication; raw blob cache remains private pending exact identity triage and cleanup."
+  ]
+}

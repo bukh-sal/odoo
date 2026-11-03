@@ -1,0 +1,25 @@
+{
+  "result": "passed_current_curated_archives_static_assets_and_current_logs",
+  "packages": 19,
+  "decompressed_entries": 259,
+  "served_assets": 2,
+  "current_container_logs": 8,
+  "known_generated_findings": 0,
+  "reviewed_findings": [
+    {
+      "location": "served-static/web/assets/6d5205ea13258199a03dd6d6d225e371d1343230351090de10a455eb7a6a76b1/mp_shell.assets_host.min.js",
+      "offset": 3061693,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc",
+      "file_sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+      "source_path": "addons/auth_password_policy/static/src/password_field.xml",
+      "source_sha256": "c19436ba47ffa3772df7f245996faeba002d426e2955c91ab17b5224d744c859",
+      "reason": "Exact pinned Owl binding to current password-field state; static template expression, no issued account credential."
+    }
+  ],
+  "limits": [
+    "Actual current original+fresh app/worker/DB/edge container streams; retained executor/private diagnostic logs require separate audit.",
+    "Static JS/CSS only; per-session dynamic bootstrap/CSRF responses are legitimate secret-bearing authentication data and excluded from release assets.",
+    "Curated19 archive bytes strictly verified and decompressed, no archive-selected extraction or code import."
+  ]
+}

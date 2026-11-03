@@ -1,0 +1,167 @@
+{
+  "result": "scanned_retained_logs_triage_required",
+  "files": 5926,
+  "bytes": 164520960,
+  "known_secret_findings": 14,
+  "generic_findings": 2,
+  "findings": [
+    {
+      "location": ".local/g7-fresh-release-01/target21/logs/target21-prior-mounted-config.stdout",
+      "offset": 70,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01/app-db-password"
+      ],
+      "fingerprint": "394ffbcf6fe6b77a27e09087",
+      "file_sha256": "674a65afbe91d25e5254704e949b6adf4b595e1a284e086e11cc797c509a3f83"
+    },
+    {
+      "location": ".local/g7-fresh-release-01/target21/logs/target21-prior-mounted-config.stdout",
+      "offset": 129,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01/database-master-password"
+      ],
+      "fingerprint": "dd8d734afd9a4325f6a4c48c",
+      "file_sha256": "674a65afbe91d25e5254704e949b6adf4b595e1a284e086e11cc797c509a3f83"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive02.stdout",
+      "offset": 3142,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/app-db-password"
+      ],
+      "fingerprint": "4493fd05752531b2b4fe38c4",
+      "file_sha256": "a2bfcef6f0a2aea0bccafc0b6670b59433a2026958f69b932877eece9dd7e20d"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive02.stdout",
+      "offset": 3201,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/database-master-password"
+      ],
+      "fingerprint": "c5e7bfcf29590c132b9e741f",
+      "file_sha256": "a2bfcef6f0a2aea0bccafc0b6670b59433a2026958f69b932877eece9dd7e20d"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive02.stdout",
+      "offset": 7168,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/app-db-password"
+      ],
+      "fingerprint": "4493fd05752531b2b4fe38c4",
+      "file_sha256": "a2bfcef6f0a2aea0bccafc0b6670b59433a2026958f69b932877eece9dd7e20d"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive02.stdout",
+      "offset": 13312,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/postgres-password"
+      ],
+      "fingerprint": "d80a62d3554ec437a8c3ac2d",
+      "file_sha256": "a2bfcef6f0a2aea0bccafc0b6670b59433a2026958f69b932877eece9dd7e20d"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive02.stdout",
+      "offset": 16896,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/bootstrap-password"
+      ],
+      "fingerprint": "ca64e2612f15352673dcde14",
+      "file_sha256": "a2bfcef6f0a2aea0bccafc0b6670b59433a2026958f69b932877eece9dd7e20d"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive02.stdout",
+      "offset": 9470,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "file_sha256": "a2bfcef6f0a2aea0bccafc0b6670b59433a2026958f69b932877eece9dd7e20d"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive.stdout",
+      "offset": 3142,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/app-db-password"
+      ],
+      "fingerprint": "4493fd05752531b2b4fe38c4",
+      "file_sha256": "e81ce70f652132948e3d8e0582c83c657ddc6702b056e2e27a8a3d9ac9e9d2af"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive.stdout",
+      "offset": 3201,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/database-master-password"
+      ],
+      "fingerprint": "c5e7bfcf29590c132b9e741f",
+      "file_sha256": "e81ce70f652132948e3d8e0582c83c657ddc6702b056e2e27a8a3d9ac9e9d2af"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive.stdout",
+      "offset": 7168,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/app-db-password"
+      ],
+      "fingerprint": "4493fd05752531b2b4fe38c4",
+      "file_sha256": "e81ce70f652132948e3d8e0582c83c657ddc6702b056e2e27a8a3d9ac9e9d2af"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive.stdout",
+      "offset": 13312,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/postgres-password"
+      ],
+      "fingerprint": "d80a62d3554ec437a8c3ac2d",
+      "file_sha256": "e81ce70f652132948e3d8e0582c83c657ddc6702b056e2e27a8a3d9ac9e9d2af"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive.stdout",
+      "offset": 16896,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01-project-refused/bootstrap-password"
+      ],
+      "fingerprint": "ca64e2612f15352673dcde14",
+      "file_sha256": "e81ce70f652132948e3d8e0582c83c657ddc6702b056e2e27a8a3d9ac9e9d2af"
+    },
+    {
+      "location": ".local/g7-fresh-release-01-project-refused/logs/refused-project-volume-archive.stdout",
+      "offset": 9470,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "file_sha256": "e81ce70f652132948e3d8e0582c83c657ddc6702b056e2e27a8a3d9ac9e9d2af"
+    },
+    {
+      "location": ".local/g7-production-profile-01/logs/000.stdout",
+      "offset": 70,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01/app-db-password"
+      ],
+      "fingerprint": "394ffbcf6fe6b77a27e09087",
+      "file_sha256": "0df7cdb30da581f427e446c7f40fca5bf3201c2b0a7ec53e19be99aed17ea13c"
+    },
+    {
+      "location": ".local/g7-production-profile-01/logs/000.stdout",
+      "offset": 129,
+      "rule": "known-generated-secret",
+      "secret_sources": [
+        "g7-fresh-release-01/database-master-password"
+      ],
+      "fingerprint": "dd8d734afd9a4325f6a4c48c",
+      "file_sha256": "0df7cdb30da581f427e446c7f40fca5bf3201c2b0a7ec53e19be99aed17ea13c"
+    }
+  ],
+  "limits": [
+    "Retained G6/G7 stdout/stderr/log command streams, including operational diagnostics; configured credentials, issuer stores, backups/DB/filestore and dynamic browser bootstrap stores are private secret stores, not release logs.",
+    "G5 log scans/remediation retain their own exact historical evidence; no prior log record is silently overwritten."
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "result": "scanned_triage_required",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "packages": [
+    {
+      "digest": "sha256:1edaadc63fd0a0184f003eead17dc559d4fdab5e1cd631b4c18f692f8d212b37",
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.2",
+      "entries": 16
+    },
+    {
+      "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.3",
+      "entries": 16
+    },
+    {
+      "digest": "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.4",
+      "entries": 16
+    },
+    {
+      "digest": "sha256:bc1170197c19fb1503f1e786a157c4d2e14ec18a8a50d2d7fff7a64a2fdd97b7",
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.0",
+      "entries": 6
+    },
+    {
+      "digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.1",
+      "entries": 6
+    },
+    {
+      "digest": "sha256:64a774c6fad1ffed9f8c78f6f17e75c2a172e2fadda2bf101427413757694925",
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.2",
+      "entries": 6
+    },
+    {
+      "digest": "sha256:586a51a13e814078cf2b1111b268600498be4b0e9029264236e4c04a291948b6",
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.3",
+      "entries": 6
+    },
+    {
+      "digest": "sha256:160e27bfb22325a54c385ab32a35bc33a7c27bae9dbbc4ece7a954a9340bebc1",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.1",
+      "entries": 16
+    },
+    {
+      "digest": "sha256:fb7e53192237dcbe4877e52eb414330dcf963ff6fae03d83934567863b435ac6",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.2",
+      "entries": 16
+    },
+    {
+      "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.3",
+      "entries": 18
+    },
+    {
+      "digest": "sha256:95d74f8efae9ecf9ed1d59af496df577f912057c4b400ab0ef8ad280cf0c0ad4",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.6",
+      "entries": 20
+    },
+    {
+      "digest": "sha256:d24876c930fd9b852498f93c90a06f05bf26fd5b98d4de559a3cd0ee50a4bcad",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.7",
+      "entries": 20
+    },
+    {
+      "digest": "sha256:b7b4a934fbbab8e8c0a423e04307ac735cd99872f9950a49504ed04bb94fa562",
+      "plugin_id": "org.example.notes",
+      "version": "0.2.8",
+      "entries": 20
+    },
+    {
+      "digest": "sha256:b5b17ac770503f62b1fc1e432979df3bc9fba6396dd13cf6e460c4694ea1a7e0",
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.0",
+      "entries": 12
+    },
+    {
+      "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.1",
+      "entries": 12
+    },
+    {
+      "digest": "sha256:e0e61f52454757397f8b6a3e6fea3e8d2860acb63bcd74b38653f95e43218211",
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.3",
+      "entries": 14
+    },
+    {
+      "digest": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.4",
+      "entries": 14
+    },
+    {
+      "digest": "sha256:2591d6266fe5837ad3fdbad13d5d8e6023b8285921da009f0c495c6d115119cd",
+      "plugin_id": "org.example.notes_stats",
+      "version": "0.1.0",
+      "entries": 12
+    },
+    {
+      "digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+      "plugin_id": "org.example.notes_stats",
+      "version": "0.1.1",
+      "entries": 13
+    }
+  ],
+  "expanded_entries": 259,
+  "served_assets": [
+    {
+      "path": "/web/assets/0007be4e8b151ab794f8f8cfce484d09a8d8215fd649b627ad92e8aa909f4d89/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "bytes": 751605
+    },
+    {
+      "path": "/web/assets/6d5205ea13258199a03dd6d6d225e371d1343230351090de10a455eb7a6a76b1/mp_shell.assets_host.min.js",
+      "sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+      "bytes": 3091758
+    }
+  ],
+  "Canvas_registration_observed": true,
+  "current_container_logs": [
+    {
+      "id": "ba8f4c12ed1beaf48ab0729d305daab8200a81ca06503b8f0a2ab85462640f03",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-app-release-bbc56ef9bd894c3f900dd33cd8c0b4b4",
+      "bytes": 8176,
+      "sha256": "7b1a2167622ff136e6adb71fc82b4bce28928782e1c0b1582ca4c4770a11e88e"
+    },
+    {
+      "id": "97a0ba35e6096989f1cd3e1dbebe5994edb060087e720450249021783400e3f4",
+      "name": "/mp-disposable-document-stats-g7qual-document-stats-1",
+      "bytes": 34580,
+      "sha256": "8355a8757dde8849c0a289159fa6c5c4ca113e8fe515a316d24e20939f8609b5"
+    },
+    {
+      "id": "133e5515050fdd67f81d35e5a48bb3a80e3f58db789507a92634694d14be506f",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-edge-1",
+      "bytes": 56449,
+      "sha256": "fdce087fade0e0597728c5773b56a62398ada4e600d4f3143fc152d050c2316f"
+    },
+    {
+      "id": "76ddb8caf89dc2e89c0a5bc1af6df361f6c1ce0f8742ce8514a319b5a63115fa",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-db-1",
+      "bytes": 7891,
+      "sha256": "74fc3e2091858f59764a2ca7451c286214459b36c93c3f3d01fa09e05bc0bc0c"
+    },
+    {
+      "id": "eff382f3cdb0ff7f4b340c96787d228ccb48e74ed4c0111fb46f7ff206b6fd7f",
+      "name": "/mp-r0-r1g64bb76636070f-edge-1",
+      "bytes": 477534,
+      "sha256": "4b6eac349467c4a12c935140f402fe518b88e02d80ab2596368dce98497814e8"
+    },
+    {
+      "id": "4709fdc65f4733dc9b37bb164c28e0d85d3ee94faa8678322766077b02996cc9",
+      "name": "/mp-r0-r1g64bb76636070f-db-1",
+      "bytes": 74887,
+      "sha256": "a9d0f41ae6883745aecb30ef7a4eca72646f86f7de1d592d64993626e58225f6"
+    },
+    {
+      "id": "f173be90902ab4dfa70779efa40f0727674db49f6da98da0dd8a785c0fea5b31",
+      "name": "/mp-r0-r1g64bb76636070f-app-release-014e30407261495197b6a8824a03d905",
+      "bytes": 5675,
+      "sha256": "4bb8e195394bdc595c637e5474a2f8fa9c8b2421795e5d1b3f9e6eec2ec8c909"
+    },
+    {
+      "id": "ec8a77f570ff5679558021b149299b2adfd67be3594b11f3fa2c977b514da0ad",
+      "name": "/mp-disposable-document-stats-07-document-stats-1",
+      "bytes": 66188,
+      "sha256": "5f073c99035d413a7c58b5b0f07804044de17c0d34963e6f488b6cb58ff0d0cb"
+    }
+  ],
+  "known_secret_findings": 0,
+  "generic_findings": 1,
+  "findings": [
+    {
+      "location": "served-static/web/assets/6d5205ea13258199a03dd6d6d225e371d1343230351090de10a455eb7a6a76b1/mp_shell.assets_host.min.js",
+      "offset": 3061693,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc"
+    }
+  ],
+  "all17tables_worker_original_configs_exact": true,
+  "limits": [
+    "Actual current original+fresh app/worker/DB/edge container streams; retained executor/private diagnostic logs require separate audit.",
+    "Static JS/CSS only; per-session dynamic bootstrap/CSRF responses are legitimate secret-bearing authentication data and excluded from release assets.",
+    "Curated19 archive bytes strictly verified and decompressed, no archive-selected extraction or code import."
+  ]
+}

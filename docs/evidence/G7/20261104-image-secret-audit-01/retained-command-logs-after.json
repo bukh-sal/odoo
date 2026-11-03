@@ -1,0 +1,12 @@
+{
+  "result": "scanned_retained_logs_triage_required",
+  "files": 5922,
+  "bytes": 164294950,
+  "known_secret_findings": 0,
+  "generic_findings": 0,
+  "findings": [],
+  "limits": [
+    "Retained G6/G7 stdout/stderr/log command streams, including operational diagnostics; configured credentials, issuer stores, backups/DB/filestore and dynamic browser bootstrap stores are private secret stores, not release logs.",
+    "G5 log scans/remediation retain their own exact historical evidence; no prior log record is silently overwritten."
+  ]
+}

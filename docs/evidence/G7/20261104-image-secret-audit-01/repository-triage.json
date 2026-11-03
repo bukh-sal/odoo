@@ -1,0 +1,3052 @@
+{
+  "result": "passed_current_tracked_source_and_implementation_history_secret_review",
+  "source_head": "fb60b98b2478d142210a456bd4f2e453a2a7f869",
+  "known_values": 121,
+  "counts": {
+    "tracked-tree": 291,
+    "implementation-history": 11
+  },
+  "known_generated_findings": 0,
+  "unreviewed_findings": 0,
+  "prior_exact_review": {
+    "path": "docs/evidence/G5/20261029-secret-scan-01/triage-source-image.json",
+    "sha256": "355109b5df3a01c650eb918a1604fe4c2add722b17a46007557adf202ce7a4cb"
+  },
+  "records": [
+    {
+      "location": "addons/account/tests/test_account_account.py",
+      "offset": 30506,
+      "rule": "credential-literal",
+      "fingerprint": "30fb95402b8d5de6a6202775",
+      "file_sha256": "dcb56ccf31f40d7e7b5578e901a16fcf58d4d6b3469373196f0d481c43de4e77",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account/tests/test_account_account.py",
+      "offset": 32301,
+      "rule": "credential-literal",
+      "fingerprint": "30fb95402b8d5de6a6202775",
+      "file_sha256": "dcb56ccf31f40d7e7b5578e901a16fcf58d4d6b3469373196f0d481c43de4e77",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account/tests/common.py",
+      "offset": 8469,
+      "rule": "credential-literal",
+      "fingerprint": "48cae435492ab8e05f0020f5",
+      "file_sha256": "308b0aee452853c761aaca862105a3b49ede2aae1e2aa019ec450ecd45960ace",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account/tests/common.py",
+      "offset": 10543,
+      "rule": "credential-literal",
+      "fingerprint": "3f028a34975ad389fc1ff99a",
+      "file_sha256": "308b0aee452853c761aaca862105a3b49ede2aae1e2aa019ec450ecd45960ace",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account/tests/test_account_lock_exception.py",
+      "offset": 762,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590",
+      "file_sha256": "6ed272d66c488d7d41aaf98d6a2ea23dd328fe467af2a5bf60e39b282160fc9a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account/tests/test_account_journal.py",
+      "offset": 23744,
+      "rule": "credential-literal",
+      "fingerprint": "8784e4d94a61b899c1a946b1",
+      "file_sha256": "deee8b932cb890f757fb5dd76e45d02628eb89371a3edbefdc88c10a4a6cc03d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account/views/account_portal_templates.xml",
+      "offset": 8458,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "b6cc3b7a5eafd0eac34dd4b155825f760f894ce8586d6e0e629635f59ea08629",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/account_payment/tests/test_payment_flows.py",
+      "offset": 2840,
+      "rule": "credential-literal",
+      "fingerprint": "d9208b63f439d823f5d42e15",
+      "file_sha256": "da17e337a54fa09291ca7d8512b7aa073adfd26f301e790626418f39ac16b899",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account_payment/tests/test_payment_flows.py",
+      "offset": 3727,
+      "rule": "credential-literal",
+      "fingerprint": "d9208b63f439d823f5d42e15",
+      "file_sha256": "da17e337a54fa09291ca7d8512b7aa073adfd26f301e790626418f39ac16b899",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account_payment/tests/test_payment_flows.py",
+      "offset": 6686,
+      "rule": "credential-literal",
+      "fingerprint": "1dd993cdb9e48fa87df6a896",
+      "file_sha256": "da17e337a54fa09291ca7d8512b7aa073adfd26f301e790626418f39ac16b899",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account_peppol/tests/common.py",
+      "offset": 2162,
+      "rule": "credential-literal",
+      "fingerprint": "504d6ae3fbdb2640b627c469",
+      "file_sha256": "705bfd896d2d954a7695d615ee35581b3e060a4eafa31571cfe91d0483c38c76",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account_peppol/tests/test_peppol_out_of_sync_resolution.py",
+      "offset": 1149,
+      "rule": "credential-literal",
+      "fingerprint": "6d5785c11fb9552a79f99a71",
+      "file_sha256": "4638124561b00926b0afc1e8c9629d720ebee1ced047f1e42a521d4b5be7f42c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account_peppol/tests/assets/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "de5ccb763296bbb0a515c0b3401e2a81595f0eda1773ed51339158156edd48a7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account_peppol/tests/test_peppol_kyc.py",
+      "offset": 1102,
+      "rule": "credential-literal",
+      "fingerprint": "504d6ae3fbdb2640b627c469",
+      "file_sha256": "bd1840b9401cefd6c938fb8e84067f05ed1e479effa2d957ebf3b230d657f817",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/account_peppol/tools/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "de5ccb763296bbb0a515c0b3401e2a81595f0eda1773ed51339158156edd48a7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/analytic/tests/common.py",
+      "offset": 2550,
+      "rule": "credential-literal",
+      "fingerprint": "a1d2c10fb8a9b265d628e716",
+      "file_sha256": "df74e33e0274bebb51ee130bd118dc2d0c7b8efeb7072d66191914251cdf769c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/api_doc/static/src/utils/doc_code_gen.js",
+      "offset": 2367,
+      "rule": "credential-literal",
+      "fingerprint": "9907247cc271b8a1f93b27e8",
+      "file_sha256": "672cf856962589c3b14c4ad10165eecdc5f2401a6232f2e475d2844a2a1f9854",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Documentation code generator placeholder, not a generated platform credential; excluded runtime."
+    },
+    {
+      "location": "addons/auth_password_policy/static/src/password_field.xml",
+      "offset": 501,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc",
+      "file_sha256": "c19436ba47ffa3772df7f245996faeba002d426e2955c91ab17b5224d744c859",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Owl password state binding expression, not a credential value."
+    },
+    {
+      "location": "addons/auth_password_policy_signup/static/src/public/components/password_meter/password_meter.xml",
+      "offset": 197,
+      "rule": "credential-literal",
+      "fingerprint": "1519e8a8eadb258852929446",
+      "file_sha256": "0a802f0b2349f71c9f9603fccce957b4b21e327a125fd8e296a18e7fad730ead",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Owl password state binding expression, not a credential value."
+    },
+    {
+      "location": "addons/auth_signup/views/auth_signup_login_templates.xml",
+      "offset": 2347,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "dabd2073007485b6347242b3e7266282995d4805a530cfd7d85681acef3701a6",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/auth_signup/views/auth_signup_login_templates.xml",
+      "offset": 4808,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "dabd2073007485b6347242b3e7266282995d4805a530cfd7d85681acef3701a6",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/auth_signup/tests/test_auth_signup.py",
+      "offset": 1712,
+      "rule": "credential-literal",
+      "fingerprint": "87356daad7f82eb1e723e42c",
+      "file_sha256": "d8d845bed26fb4fde78b9eb051fce6da61a1cd45d7358fff2461a9f04d478c26",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/auth_signup/tests/test_auth_signup.py",
+      "offset": 3119,
+      "rule": "credential-literal",
+      "fingerprint": "87356daad7f82eb1e723e42c",
+      "file_sha256": "d8d845bed26fb4fde78b9eb051fce6da61a1cd45d7358fff2461a9f04d478c26",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/auth_totp/tests/test_totp.py",
+      "offset": 553,
+      "rule": "credential-literal",
+      "fingerprint": "d229518f5422ed51a534b2c8",
+      "file_sha256": "f8685a3f9d16f13ebf3b7b04203666a2860aa4c42d2510056fe890ca08739403",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/auth_totp/tests/test_totp.py",
+      "offset": 5567,
+      "rule": "credential-literal",
+      "fingerprint": "a4d0e3e4a213220fb8bdbf0c",
+      "file_sha256": "f8685a3f9d16f13ebf3b7b04203666a2860aa4c42d2510056fe890ca08739403",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/auth_totp/views/templates.xml",
+      "offset": 781,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "77ea1bffa017dbfdd1d1be8abd90db0d9b129f2d02d1008395857be9f0e6f25d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/auth_totp/views/templates.xml",
+      "offset": 2235,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "77ea1bffa017dbfdd1d1be8abd90db0d9b129f2d02d1008395857be9f0e6f25d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/auth_totp_mail/tests/test_auth_signup.py",
+      "offset": 1351,
+      "rule": "credential-literal",
+      "fingerprint": "87356daad7f82eb1e723e42c",
+      "file_sha256": "8adff6cd53b3359acd4d1b2433befd5354dc88b6df2edfb828e3e1cc596e752b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/auth_totp_mail/views/templates.xml",
+      "offset": 758,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "adf3775eb7ed2c2445425f790f4f5a839c2709a1d8f5611f9bfcde6a2d72ec02",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/bus/tests/test_ir_websocket.py",
+      "offset": 885,
+      "rule": "credential-literal",
+      "fingerprint": "82d6b3ac8c1b0ae9e24c246e",
+      "file_sha256": "f9870e401df775c49596e617637765004fbe0bfaed8c0e7f2d89547d5038835c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 5627,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6099,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6716,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/bus/tests/test_websocket_caryall.py",
+      "offset": 13835,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/calendar/tests/test_calendar_controller.py",
+      "offset": 494,
+      "rule": "credential-literal",
+      "fingerprint": "c0e1b99d850d5b066c07a775",
+      "file_sha256": "641ac03e7c88417a9b669af490dbc45ca4ffdef54642cb42f38579074cd95c62",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/calendar/views/calendar_templates.xml",
+      "offset": 1246,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "e9b112d846ff0e4afb2acdb9e71b1de4662c0c27f86bc0bbe495d94e820308ec",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/calendar/views/calendar_templates.xml",
+      "offset": 1696,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "e9b112d846ff0e4afb2acdb9e71b1de4662c0c27f86bc0bbe495d94e820308ec",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/certificate/tests/data/encrypted_private.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "d43af8efb6d136afd520bb70",
+      "file_sha256": "a9e4e700123c939f31cbc90973e8ef89f4d965518559227150efa3f025096f36",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/certificate/tests/test_keys_certificates.py",
+      "offset": 14481,
+      "rule": "credential-literal",
+      "fingerprint": "ed9595ee8fe2019102dadef8",
+      "file_sha256": "a62df92c2c4b713d40572b70797c9cbcd5c3bff22fd1b0c0f6933ea638d0b002",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/certificate/tests/test_keys_certificates.py",
+      "offset": 16740,
+      "rule": "credential-literal",
+      "fingerprint": "cc5b70cc0fc10f18052130ba",
+      "file_sha256": "a62df92c2c4b713d40572b70797c9cbcd5c3bff22fd1b0c0f6933ea638d0b002",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/cloud_storage_google/tests/test_cloud_storage_google.py",
+      "offset": 484,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "832afe537fddfd3c1215041101ea43c29e7493fcb5f35e8cebc16bb93dd86920",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/crm/tests/test_crm_ui.py",
+      "offset": 905,
+      "rule": "credential-literal",
+      "fingerprint": "c089181a34b03b761999e2ba",
+      "file_sha256": "57bdb6280f995ce53d36a0b2fa0a2d1fad396424068b0f1a1a60fdcbb8122dd3",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr/tests/test_hr_employee.py",
+      "offset": 879,
+      "rule": "credential-literal",
+      "fingerprint": "838958a4e476cb51ef051fc6",
+      "file_sha256": "7af61ba350697c886b9eaeabaab5726cd66ffe270785f811a53d6f856f19b626",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr/tests/test_hr_employee.py",
+      "offset": 11603,
+      "rule": "credential-literal",
+      "fingerprint": "253521cbf87c8755caf69dad",
+      "file_sha256": "7af61ba350697c886b9eaeabaab5726cd66ffe270785f811a53d6f856f19b626",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_attendance/tests/test_hr_attendance_process.py",
+      "offset": 7815,
+      "rule": "credential-literal",
+      "fingerprint": "cc5b70cc0fc10f18052130ba",
+      "file_sha256": "b6b446ebe5c9a17d39a8a65c77f078e1a4a89c4b0dca5c106c4efb596b1a511a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_attendance/views/hr_attendance_kiosk_templates.xml",
+      "offset": 611,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "96416e9fe5d1fe26c33a730662481b76147b2749a70e6313145e3312774bc705",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/hr_holidays/tests/common.py",
+      "offset": 2443,
+      "rule": "credential-literal",
+      "fingerprint": "b0f5f587eb29fecbac3f00a5",
+      "file_sha256": "a77225d0d67d469aca399b9ef49f28cf9595f4805069f2a894ea0414226fb5d1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_holidays/tests/common.py",
+      "offset": 2626,
+      "rule": "credential-literal",
+      "fingerprint": "26491a9e3bda2119a506c6b3",
+      "file_sha256": "a77225d0d67d469aca399b9ef49f28cf9595f4805069f2a894ea0414226fb5d1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_holidays/tests/test_leave_requests.py",
+      "offset": 100575,
+      "rule": "credential-literal",
+      "fingerprint": "3c54f1cef473d8eafdfcbf71",
+      "file_sha256": "d54d574124357aec3807557f5122301a0ad53602a67bcd82e3005e9929993fdf",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_org_chart/tests/test_employee_ui.py",
+      "offset": 2331,
+      "rule": "credential-literal",
+      "fingerprint": "b3c2798830551e85e0c23e98",
+      "file_sha256": "f5f8962420da4138c91c13e748f071bca0845594789306bdde773f8a28b856c8",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_skills/tests/test_certification_activities.py",
+      "offset": 675,
+      "rule": "credential-literal",
+      "fingerprint": "9217f8821a8d501edf2613e6",
+      "file_sha256": "652c5c8ecd8580679905ccaf1b3d030fc0cccecc8315b8ec917cd2e672ac68c4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_skills/tests/test_certification_activities.py",
+      "offset": 838,
+      "rule": "credential-literal",
+      "fingerprint": "9217f8821a8d501edf2613e6",
+      "file_sha256": "652c5c8ecd8580679905ccaf1b3d030fc0cccecc8315b8ec917cd2e672ac68c4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_work_entry_holidays/tests/test_work_entry.py",
+      "offset": 2580,
+      "rule": "credential-literal",
+      "fingerprint": "26491a9e3bda2119a506c6b3",
+      "file_sha256": "34745b4a1bf114924eb864846eb836ec740771ab3188ed1f24fcf34ae6d4204c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/hr_work_entry_holidays/tests/test_leave.py",
+      "offset": 4019,
+      "rule": "credential-literal",
+      "fingerprint": "795a21f46a4de40021d41825",
+      "file_sha256": "23aa40d490623fbe014b21f503d8334b3a030caf11f487e3da2edb2e612ed672",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/html_editor/static/tests/utils/regex.test.js",
+      "offset": 6973,
+      "rule": "credential-url",
+      "fingerprint": "f96b827c58b39cbf78840036",
+      "file_sha256": "441508ac7763ddf619dd310ade61b3ef9e9466975a9fc9cdac1db43e612c3090",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/html_editor/static/tests/utils/regex.test.js",
+      "offset": 7028,
+      "rule": "credential-url",
+      "fingerprint": "f96b827c58b39cbf78840036",
+      "file_sha256": "441508ac7763ddf619dd310ade61b3ef9e9466975a9fc9cdac1db43e612c3090",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/im_livechat/tests/test_message.py",
+      "offset": 688,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace",
+      "file_sha256": "74af24e7be9e76036e9d4acce0cb24c649ef728a0c58c2d8ae3a599b25bf7a56",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/iot_box_image/overwrite_after_init/etc/ssl/private/nginx-cert.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "8db8b6930bf1cac17e7b4ba553c9f49312ea8a8d71493d0f1908af5f2e65d668",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Public upstream IoT image sample key; excluded from curated runtime, not current TLS identity."
+    },
+    {
+      "location": "addons/im_livechat/tests/common.py",
+      "offset": 368,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace",
+      "file_sha256": "e8daa7c79b6c2367295802afa2f0a1db216a3b7b808e7b4620a3362602d936e1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/im_livechat/views/im_livechat_channel_templates.xml",
+      "offset": 999,
+      "rule": "credential-literal",
+      "fingerprint": "21ea2b6a8e47980a26543821",
+      "file_sha256": "5058863bdad03d376983bdccbe23542ec1b0da2827bb2ca8b21ad5d0d349cc7b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/iot_box_image/overwrite_before_init/etc/init_image.sh",
+      "offset": 6273,
+      "rule": "credential-literal",
+      "fingerprint": "657ffb32e4e1a11c3263c5b1",
+      "file_sha256": "db652e1d1fc7d0210e7264997bd5a66a28dbd0a1b93791dca5e168987454db1a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Upstream image bootstrap default comment explicitly replaces it on first start; excluded runtime and never executed here."
+    },
+    {
+      "location": "addons/l10n_ar_pos/tests/test_pos_ar.py",
+      "offset": 525,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1",
+      "file_sha256": "2b25d86f5766f41c6d20a736d1062524f269ec4fc55807f83974b920d67f7e17",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_dk_nemhandel/tests/assets/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "de5ccb763296bbb0a515c0b3401e2a81595f0eda1773ed51339158156edd48a7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_fr_pdp/tests/test_files/assets/private_key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "de5ccb763296bbb0a515c0b3401e2a81595f0eda1773ed51339158156edd48a7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_id_pos/tests/test_qris_pos.py",
+      "offset": 1497,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1",
+      "file_sha256": "e375aa39573753dcf660216c52278a2892e7492bac9f3d9cf172ead6a6e726aa",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_id_pos/tests/test_qris_pos.py",
+      "offset": 4489,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc",
+      "file_sha256": "e375aa39573753dcf660216c52278a2892e7492bac9f3d9cf172ead6a6e726aa",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_it_edi/data/pkey.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "1f5c8829098b840609195582970f0114f79f690c027e846904a13917318a522f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Public upstream Italian EDI sample key; excluded from curated runtime and never configured for this platform."
+    },
+    {
+      "location": "addons/l10n_pl_edi/tests/certificate/l10n_pl_edi_test.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "d43af8efb6d136afd520bb70",
+      "file_sha256": "fcaccd365ef6e5df7f8d8a00d8ce2ea376f11163276d960fc0035f0f755d3a7a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_pl_edi/tests/test_l10n_pl_edi.py",
+      "offset": 3004,
+      "rule": "credential-literal",
+      "fingerprint": "59e62ce48ebc442881eaeb52",
+      "file_sha256": "60ef3f3edc05804efb74f88d604f8a89e41a0e1a7e1767f359839eb7c7f7a777",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_test_pos_qr_payment/tests/common.py",
+      "offset": 840,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1",
+      "file_sha256": "cf449aaa1bda770a9ffe5e75d43856144be552419159ba5626c51cc69ff1eb4a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_tw_edi_ecpay_website_sale/views/templates.xml",
+      "offset": 1412,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "1e83322e40faa78b9af0899a1a03859754b216eeab2e1dafcb949d40cc5f9463",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/l10n_vn_edi_viettel_pos/tests/test_l10n_vn_edi_pos.py",
+      "offset": 3266,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1",
+      "file_sha256": "736a8eb605d9328936bc1cbd0012e44b27c81b3037005fbde22f946bdf5366ae",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/l10n_vn_edi_viettel_pos/tests/test_l10n_vn_edi_pos_tour.py",
+      "offset": 1025,
+      "rule": "credential-literal",
+      "fingerprint": "2dd90806a35715c6e037c59a",
+      "file_sha256": "b32c23f7bdb2048da5e32e7f99262dec492db4ffeabc8e2a29bdddbde0e361e7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/static/lib/odoo_sfu/odoo_sfu.js",
+      "offset": 463603,
+      "rule": "credential-literal",
+      "fingerprint": "ce4c908fb144b087aef1e111",
+      "file_sha256": "3c581ebb564ba34272761b22ddf976fddbadf638826c1aa32a3841a24e105177",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Public upstream SFU fallback ICE parameter literal, not an account/API credential; excluded curated runtime."
+    },
+    {
+      "location": "addons/mail/static/tests/mail_utils.test.js",
+      "offset": 528,
+      "rule": "credential-url",
+      "fingerprint": "e6288a779df26f29e1152665",
+      "file_sha256": "4ec493b6754f9ded26d8e8a2621383a34f7566943abe220ebad2f917a8f49f4d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/static/tests/mail_utils.test.js",
+      "offset": 587,
+      "rule": "credential-url",
+      "fingerprint": "65d08bb89705bcaef0e98eda",
+      "file_sha256": "4ec493b6754f9ded26d8e8a2621383a34f7566943abe220ebad2f917a8f49f4d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/static/tests/message/link_preview.test.js",
+      "offset": 19506,
+      "rule": "credential-literal",
+      "fingerprint": "1255d6c7412daf13c73ab304",
+      "file_sha256": "b450839e3cf2ae5728649e6cbda490435700f8305a119527215fb02a04dc367d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 902,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 1554,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 2606,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 3403,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 4386,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 4768,
+      "rule": "credential-literal",
+      "fingerprint": "1661b071480e3fd2338138ed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 6870,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 7252,
+      "rule": "credential-literal",
+      "fingerprint": "1661b071480e3fd2338138ed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 7876,
+      "rule": "credential-literal",
+      "fingerprint": "711e7884c793779893e6aaed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_avatar_acl.py",
+      "offset": 8258,
+      "rule": "credential-literal",
+      "fingerprint": "1661b071480e3fd2338138ed",
+      "file_sha256": "5ac21d3ebe7be13882a66a396a00825b9aff8c9f98dfe75b0576c23b0d61a23f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/test_res_users.py",
+      "offset": 1615,
+      "rule": "credential-literal",
+      "fingerprint": "c86cf69bd926425842d1b88d",
+      "file_sha256": "eb6d1864048c14a9c0c59cbbaddd83f80ff57218cf18ef9c232155aacf97379c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/test_res_users.py",
+      "offset": 2570,
+      "rule": "credential-literal",
+      "fingerprint": "c86cf69bd926425842d1b88d",
+      "file_sha256": "eb6d1864048c14a9c0c59cbbaddd83f80ff57218cf18ef9c232155aacf97379c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/test_mail_message_translate.py",
+      "offset": 1711,
+      "rule": "credential-literal",
+      "fingerprint": "4a04547688e572b6c6335a72",
+      "file_sha256": "9528f436b98c8cbea566c895008dd818d50d5ba178fb9637e066774d6d98450f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_message_controller.py",
+      "offset": 11457,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471",
+      "file_sha256": "0f4b3e63ca3bb7ceb9c0f9faa15e56208bdb48b5dceacbf996d7d0c036e11011",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/tests/discuss/test_ui.py",
+      "offset": 732,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471",
+      "file_sha256": "10ae25f3ffa021d30d8dcb1012bc5c67f91066fbb248f7e9889074b9c88768b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mail/views/discuss_public_templates.xml",
+      "offset": 750,
+      "rule": "credential-literal",
+      "fingerprint": "033ef8259d596a6d84bcb40f",
+      "file_sha256": "59f23384e79ecf36aa2e12d32c102abbb607db0c47325926ad3e602ac38d19bb",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/mail_plugin/views/mail_plugin_login.xml",
+      "offset": 322,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "37aee08b7242ccb03949ce734888dd345b23d9bebdd385a00a80ce4c8bac78d6",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/mass_mailing/views/mailing_templates_portal_unsubscribe.xml",
+      "offset": 566,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "41e2c3e15fe270c44d258bef6de721aa13b59c62ac5f73a2766cd993b268fdcc",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/mass_mailing/views/mailing_templates_portal_unsubscribe.xml",
+      "offset": 10749,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "41e2c3e15fe270c44d258bef6de721aa13b59c62ac5f73a2766cd993b268fdcc",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/mass_mailing_sms/views/mass_mailing_sms_templates_portal.xml",
+      "offset": 868,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "71851361b0b2c42c5bbea2afc6d16cc2fa2c2cd927cc5759bd0666de4542601d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_create_events.py",
+      "offset": 29884,
+      "rule": "credential-literal",
+      "fingerprint": "b0f5f587eb29fecbac3f00a5",
+      "file_sha256": "e598202a5e64384040d1073cc68578e9e7c43a37f7c09d45dd1b424d94f45671",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 19653,
+      "rule": "credential-literal",
+      "fingerprint": "7839761aa3744d221d6bb2a4",
+      "file_sha256": "28576210bfda05cbb506dd43a8b1d5d3daad0da4537baa97e888768d46527133",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 19831,
+      "rule": "credential-literal",
+      "fingerprint": "9f226d8533c92b69029f5dc4",
+      "file_sha256": "28576210bfda05cbb506dd43a8b1d5d3daad0da4537baa97e888768d46527133",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 20635,
+      "rule": "credential-literal",
+      "fingerprint": "b9e29fc698359145838c508c",
+      "file_sha256": "28576210bfda05cbb506dd43a8b1d5d3daad0da4537baa97e888768d46527133",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 21446,
+      "rule": "credential-literal",
+      "fingerprint": "431714d7cea4b82c49f55070",
+      "file_sha256": "28576210bfda05cbb506dd43a8b1d5d3daad0da4537baa97e888768d46527133",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/microsoft_calendar/tests/test_microsoft_service.py",
+      "offset": 21562,
+      "rule": "credential-literal",
+      "fingerprint": "e6dc5e6ec8aab0e57132b709",
+      "file_sha256": "28576210bfda05cbb506dd43a8b1d5d3daad0da4537baa97e888768d46527133",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mrp_subcontracting/tests/test_subcontracting.py",
+      "offset": 71904,
+      "rule": "credential-literal",
+      "fingerprint": "08f9b6c034d890f6c76b5a6d",
+      "file_sha256": "78d348835e0ce785e6c45f9b7c5d39ca7d7071588b9685db3b075c6158f9fbd7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mrp_subcontracting/tests/test_subcontracting_portal_ui.py",
+      "offset": 476,
+      "rule": "credential-literal",
+      "fingerprint": "1b3a8c7600dd712aca44b081",
+      "file_sha256": "e5fd8427e254d3dfd1a7d9aabeaf09d150bb3274d8ea2a8a7b27e5c44851f9dd",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/mrp_subcontracting_dropshipping/tests/test_purchase_subcontracting.py",
+      "offset": 22830,
+      "rule": "credential-literal",
+      "fingerprint": "08f9b6c034d890f6c76b5a6d",
+      "file_sha256": "a87de2811e21000b5c7d0faf3353c99cc30d10c3c8a1ef7fed50541f9ba23187",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/payment/tests/test_multicompany_flows.py",
+      "offset": 803,
+      "rule": "credential-literal",
+      "fingerprint": "f2cebf8b71c9bc1d0ede0996",
+      "file_sha256": "faa8d5ad9cc060b19935d895a7720b54afb21ac7c2f9d6120b2d6ee0b47d833c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/payment/tests/test_multicompany_flows.py",
+      "offset": 1176,
+      "rule": "credential-literal",
+      "fingerprint": "d37aa962928389d29ec96710",
+      "file_sha256": "faa8d5ad9cc060b19935d895a7720b54afb21ac7c2f9d6120b2d6ee0b47d833c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/payment_paymob/tests/test_paymob.py",
+      "offset": 929,
+      "rule": "credential-literal",
+      "fingerprint": "3926d2ddd2a8b5e859f80241",
+      "file_sha256": "2c86db9a282c14292fffc6a87279b336ea6c1ac69574d99403203618079ad33c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/payment_xendit/tests/test_processing_flows.py",
+      "offset": 6949,
+      "rule": "credential-literal",
+      "fingerprint": "af6e416ac77b99dbaf2e107e",
+      "file_sha256": "60f57ce692bbe189c034196dc9251ec3e189dd88e858123d0ec4f2411df0bcc6",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/static/tests/unit/data/pos_session.data.js",
+      "offset": 5569,
+      "rule": "credential-literal",
+      "fingerprint": "5be2a517202c98a7a4c38333",
+      "file_sha256": "1ecac83b290964faafe74db48adbfd8351434a996d5b3bc11e06963c7a908380",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/static/tests/unit/data/pos_config.data.js",
+      "offset": 1845,
+      "rule": "credential-literal",
+      "fingerprint": "1e21eb772b583eefbabdb95c",
+      "file_sha256": "35b285512750fbc75dfe8333461bbd466e5d35da4b507b09f6a7e074340bab0b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 1748,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 4713,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 6061,
+      "rule": "credential-literal",
+      "fingerprint": "685958c0aa51eff7462a16aa",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 7736,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 10206,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 12809,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 15473,
+      "rule": "credential-literal",
+      "fingerprint": "5f0b6c9e1b9e11b4c6fd05fc",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 16692,
+      "rule": "credential-literal",
+      "fingerprint": "685958c0aa51eff7462a16aa",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_controller.py",
+      "offset": 18949,
+      "rule": "credential-literal",
+      "fingerprint": "a705d8be7a6105eb113448e5",
+      "file_sha256": "5798627bbde0436481046419db5c920bee272262dd7cb7f9c3bef7c3bf8db61b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_pos_products_with_tax.py",
+      "offset": 37988,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1",
+      "file_sha256": "f2b96aed1e1fdf0e20043ee18eecac68e66d8e8073770e76501da30e58179385",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/views/pos_ticket_view.xml",
+      "offset": 644,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "d3dbedd56074ea03681f9a889dd346ce68fdf5370e46f0e4bbd7b1a457259ee1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/point_of_sale/views/pos_ticket_view.xml",
+      "offset": 8703,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "d3dbedd56074ea03681f9a889dd346ce68fdf5370e46f0e4bbd7b1a457259ee1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_frontend.py",
+      "offset": 3510,
+      "rule": "credential-literal",
+      "fingerprint": "895236b41051249e086341f1",
+      "file_sha256": "9148d40e14f375d956ae12884f3edaca13c8a697ab09c9bb1fedb4dafdefe5fc",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/point_of_sale/tests/test_frontend.py",
+      "offset": 3956,
+      "rule": "credential-literal",
+      "fingerprint": "1c7b2b9f92f25ed8dd7eb720",
+      "file_sha256": "9148d40e14f375d956ae12884f3edaca13c8a697ab09c9bb1fedb4dafdefe5fc",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/portal/static/src/xml/portal_chatter.xml",
+      "offset": 3822,
+      "rule": "credential-literal",
+      "fingerprint": "17cb01e6d84833859dbc5adf",
+      "file_sha256": "f9aaf40bf618d4b90d49f62be1ee52e60e147c08b15bfda9d74b9813d6897956",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Template URL expression concatenates current attachment token; expression is not a credential value."
+    },
+    {
+      "location": "addons/portal/views/portal_templates.xml",
+      "offset": 27725,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "dab5716bd6b66be4d3b7fc381121fb2b9f7fbc6aae9fe34fcf0b3b61b39ffa44",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/portal/views/portal_templates.xml",
+      "offset": 36763,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "dab5716bd6b66be4d3b7fc381121fb2b9f7fbc6aae9fe34fcf0b3b61b39ffa44",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 2926,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 3201,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 3783,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 4449,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 4654,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 4859,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 5585,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_cashdro/static/tests/cashdro_service.test.js",
+      "offset": 6102,
+      "rule": "credential-literal",
+      "fingerprint": "c74378af688baa844e9baa6a",
+      "file_sha256": "f19906f4bd8d5bc8174a7579678f656b5f07a4b699b7116a3595a5f1a20057a2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_event_sale/tests/test_frontend.py",
+      "offset": 3697,
+      "rule": "credential-literal",
+      "fingerprint": "8330ec9dfb748d5ad5ecf47a",
+      "file_sha256": "39b95bf4233081608de935e75c327f153eecfed5dd7fe49a790db8501a77e5d8",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_online_payment_self_order/tests/test_self_order_frontend.py",
+      "offset": 4307,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471",
+      "file_sha256": "3367c3761c7a3978f7f984180fb6e09a3a9a862dfc6c576ff79123b5d72b2fee",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_safaricom/tests/test_pos_safaricom.py",
+      "offset": 1980,
+      "rule": "credential-literal",
+      "fingerprint": "c450c5602cc00bf997501c07",
+      "file_sha256": "2188e1883d84f62e2751d77a41f747329b1f4f5149e3042e9f686b10a51e6d82",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_self_order/views/pos_self_order.index.xml",
+      "offset": 669,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1",
+      "file_sha256": "fbeb7877a66815d9c140433a731c9fc0ac8b9d992eaa5d56d3735e3d015cd702",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/pos_self_order/views/pos_self_order.index.xml",
+      "offset": 746,
+      "rule": "credential-literal",
+      "fingerprint": "a0b697bf858ac38dbae10880",
+      "file_sha256": "fbeb7877a66815d9c140433a731c9fc0ac8b9d992eaa5d56d3735e3d015cd702",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 1015,
+      "rule": "credential-literal",
+      "fingerprint": "d88ddc19e8197e84b052dfdd",
+      "file_sha256": "83eab5b30a7c0bf1d01fc336a40e660749cf79396b64c2765574dfedb29f9693",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 2308,
+      "rule": "credential-literal",
+      "fingerprint": "d88ddc19e8197e84b052dfdd",
+      "file_sha256": "83eab5b30a7c0bf1d01fc336a40e660749cf79396b64c2765574dfedb29f9693",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 2879,
+      "rule": "credential-literal",
+      "fingerprint": "6d02b5ac6b9c6559c0b0b048",
+      "file_sha256": "83eab5b30a7c0bf1d01fc336a40e660749cf79396b64c2765574dfedb29f9693",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 3727,
+      "rule": "credential-literal",
+      "fingerprint": "ef22386fd2cb1fde743cb1cf",
+      "file_sha256": "83eab5b30a7c0bf1d01fc336a40e660749cf79396b64c2765574dfedb29f9693",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_self_order_stripe/tests/test_self_order_kiosk_stripe.py",
+      "offset": 3956,
+      "rule": "credential-literal",
+      "fingerprint": "d88ddc19e8197e84b052dfdd",
+      "file_sha256": "83eab5b30a7c0bf1d01fc336a40e660749cf79396b64c2765574dfedb29f9693",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_viva_com/tests/test_pos_payment_method.py",
+      "offset": 1159,
+      "rule": "credential-literal",
+      "fingerprint": "55ddfcd20a8d5d6e103130c4",
+      "file_sha256": "54f85999e5aea82b27eda87c73cbf3e2a64a05acc3e125fcf32b04fd6cf81969",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/pos_viva_com/tests/test_pos_payment_method.py",
+      "offset": 1557,
+      "rule": "credential-literal",
+      "fingerprint": "ac3190eabc98391cc8e4758e",
+      "file_sha256": "54f85999e5aea82b27eda87c73cbf3e2a64a05acc3e125fcf32b04fd6cf81969",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_embedded_action_settings.py",
+      "offset": 336,
+      "rule": "credential-literal",
+      "fingerprint": "f98ba25c4f68306544c6691f",
+      "file_sha256": "a4f116b28cad546d61aaaa9dcb99f394043502a0bfc71f70231305a62a3ccb3a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_base.py",
+      "offset": 1993,
+      "rule": "credential-literal",
+      "fingerprint": "e87ba6ff4abe1826fd3aaefd",
+      "file_sha256": "39f7a98aab41307fa4a6788b163f4f75e21cf40bc1cc5a05375f8d0284f5b899",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_sharing_ui.py",
+      "offset": 442,
+      "rule": "credential-literal",
+      "fingerprint": "1b3a8c7600dd712aca44b081",
+      "file_sha256": "c5de0483392020f5923acdedf40faf21b6a0fbde1492c14c2096b0f022f95d9e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_sharing_ui.py",
+      "offset": 5935,
+      "rule": "credential-literal",
+      "fingerprint": "7c04217b1f52beac2915429b",
+      "file_sha256": "c5de0483392020f5923acdedf40faf21b6a0fbde1492c14c2096b0f022f95d9e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_recurrence.py",
+      "offset": 893,
+      "rule": "credential-literal",
+      "fingerprint": "e87ba6ff4abe1826fd3aaefd",
+      "file_sha256": "0a14de050e0e4c8b488b754ddcc41bc6d6f9a0a27956a06456d14761789e6cf7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_task_quick_create.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "e05f065024a4964e3c89375c",
+      "file_sha256": "5bd5f24aa0019ae86cfa82bb746f34a0b89f07f81cc2add57cedf8456b44cd54",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_task_quick_create.py",
+      "offset": 686,
+      "rule": "credential-literal",
+      "fingerprint": "3ea9904eb8ded4029459df22",
+      "file_sha256": "5bd5f24aa0019ae86cfa82bb746f34a0b89f07f81cc2add57cedf8456b44cd54",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_template.py",
+      "offset": 8673,
+      "rule": "credential-literal",
+      "fingerprint": "329e38ba007704aa254036e5",
+      "file_sha256": "8f29af1ca6603c160593dc370e4be3e1b5223a100f6db21336440749f7567e50",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/project/tests/test_project_template.py",
+      "offset": 8867,
+      "rule": "credential-literal",
+      "fingerprint": "787f1359450c4b53a7bb8a07",
+      "file_sha256": "8f29af1ca6603c160593dc370e4be3e1b5223a100f6db21336440749f7567e50",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/repair/tests/test_anglo_saxon_valuation.py",
+      "offset": 974,
+      "rule": "credential-literal",
+      "fingerprint": "4f678be96944a2cf9fa13109",
+      "file_sha256": "92334fd7d8ebc07040c6d689c0ecb1b1f8b4e60b4e721515b3a2a55ea68dbdf5",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/rpc/tests/test_xmlrpc.py",
+      "offset": 6690,
+      "rule": "credential-literal",
+      "fingerprint": "6549e1fa807c2d5d383042a5",
+      "file_sha256": "352f631a824a1f2a32faebb9b296df08533deecaeabc81898ecff5073e347793",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/sale/views/sale_portal_templates.xml",
+      "offset": 18667,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "9b2cb7abf750b765ba1bb105d5c6abc920a4a5a4baafbea0748efbd55ea528da",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/sale/views/sale_portal_templates.xml",
+      "offset": 25401,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "9b2cb7abf750b765ba1bb105d5c6abc920a4a5a4baafbea0748efbd55ea528da",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/sale_project/tests/test_sale_project_multicompany_access.py",
+      "offset": 586,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "5ed19507e36fe63d8266c518e20b95ad78bc99656872199e2742526578d4e890",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/sale_project/tests/test_sale_project_multicompany_access.py",
+      "offset": 1041,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "5ed19507e36fe63d8266c518e20b95ad78bc99656872199e2742526578d4e890",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/sale_stock/tests/test_anglo_saxon_valuation.py",
+      "offset": 66621,
+      "rule": "credential-literal",
+      "fingerprint": "e7b25aee0552fb5453c6e60e",
+      "file_sha256": "b5c02d7c9d3ad4289d977029924055378e7555204c7ca9348052318c7f952308",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/sales_team/tests/common.py",
+      "offset": 636,
+      "rule": "credential-literal",
+      "fingerprint": "a8990c88aa300de59403fde7",
+      "file_sha256": "4990346c3a4b0a9b16362202cff34f7a8caab61dc141c5501bb1faf03780c57b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/sales_team/tests/common.py",
+      "offset": 1020,
+      "rule": "credential-literal",
+      "fingerprint": "e2e08d9c2cacba15ca508536",
+      "file_sha256": "4990346c3a4b0a9b16362202cff34f7a8caab61dc141c5501bb1faf03780c57b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/stock_delivery/tests/test_packing_delivery.py",
+      "offset": 14570,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "ac64beb344b3c85c623384533ba758124c85e9c3bed730fe70c29b1956fa36f2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/survey/views/survey_templates.xml",
+      "offset": 8193,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "d03d9cf3fe1839bf2215d8db727b05b943ed378c7b65aa6fefb35a99dc716b8e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/survey/tests/common.py",
+      "offset": 14588,
+      "rule": "credential-literal",
+      "fingerprint": "8f2ed993c28216343a964f61",
+      "file_sha256": "43e78a242eb4a5515a88bedc72cb251996a7866692e720d8e1e4e9809d05da53",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/survey/tests/test_certification_flow.py",
+      "offset": 9039,
+      "rule": "credential-literal",
+      "fingerprint": "563079a5157b58c20643da3f",
+      "file_sha256": "1e6eff0c02c4108fbdb62140dffce1730b71e20cbe969da89dab26ea802e8c6a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_certification.py",
+      "offset": 477,
+      "rule": "credential-literal",
+      "fingerprint": "30a3ab5b154803cb718a482a",
+      "file_sha256": "5f5ca37d3574912d9f5256ca0190dded3ba348735b7c3da4211c0e461458213f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 473,
+      "rule": "credential-literal",
+      "fingerprint": "0b3372a61d293244490f69d4",
+      "file_sha256": "6160321a4270ee9493f1a21e4f0cf0886b1764db0a899f62aebedf6ee2974a4f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 9259,
+      "rule": "credential-literal",
+      "fingerprint": "2ecc141a6db7137a932ae6da",
+      "file_sha256": "6160321a4270ee9493f1a21e4f0cf0886b1764db0a899f62aebedf6ee2974a4f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 11842,
+      "rule": "credential-literal",
+      "fingerprint": "729845c8d94c9e74a52b8ba0",
+      "file_sha256": "6160321a4270ee9493f1a21e4f0cf0886b1764db0a899f62aebedf6ee2974a4f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/survey/tests/test_survey_ui_feedback.py",
+      "offset": 14770,
+      "rule": "credential-literal",
+      "fingerprint": "c54562237507f687d53b4416",
+      "file_sha256": "6160321a4270ee9493f1a21e4f0cf0886b1764db0a899f62aebedf6ee2974a4f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_discuss_full/tests/test_performance.py",
+      "offset": 8410,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace",
+      "file_sha256": "4a8517e11210af74ba59971063fd78c4cf341542d774aeffec1fbe2ee940cdc4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_mail/tests/test_message_post.py",
+      "offset": 16558,
+      "rule": "credential-literal",
+      "fingerprint": "27635b3e5bd6b20e29bffcce",
+      "file_sha256": "022317f308f1f4b162e128f1f103d57f93648b23ab6326623ed5489f897410ba",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_mail_full/tests/test_res_users.py",
+      "offset": 513,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590",
+      "file_sha256": "a294960a659c3e647b7071f71bfc9bb08fc199c152a4555ae0f0e959bf2ad3a0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_mail_full/tests/test_res_users.py",
+      "offset": 813,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590",
+      "file_sha256": "a294960a659c3e647b7071f71bfc9bb08fc199c152a4555ae0f0e959bf2ad3a0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_mail_full/tests/test_res_users.py",
+      "offset": 1120,
+      "rule": "credential-literal",
+      "fingerprint": "03b8068a6ef7976e96360590",
+      "file_sha256": "a294960a659c3e647b7071f71bfc9bb08fc199c152a4555ae0f0e959bf2ad3a0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_sale_product_configurators/tests/test_event_sale_with_product_configurator.py",
+      "offset": 773,
+      "rule": "credential-literal",
+      "fingerprint": "6dd04eb5caac32fd85637518",
+      "file_sha256": "882312dc758cca7028975d4cf5a00e93beaf52b9c18a596798710775674ceca1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_sale_product_configurators/tests/test_sale_product_matrix.py",
+      "offset": 622,
+      "rule": "credential-literal",
+      "fingerprint": "6dd04eb5caac32fd85637518",
+      "file_sha256": "aa9de809cfafb640c07fe3d61eda94ce8dac94f789462228d2e8b571261beef4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_sale_product_configurators/tests/test_sale_product_configurator.py",
+      "offset": 727,
+      "rule": "credential-literal",
+      "fingerprint": "6dd04eb5caac32fd85637518",
+      "file_sha256": "e02f59871b7edc48ff8da56c711494e69538dd20d535b8ac459f1c7059b72797",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_website/tests/test_redirect.py",
+      "offset": 552,
+      "rule": "credential-literal",
+      "fingerprint": "3c54f1cef473d8eafdfcbf71",
+      "file_sha256": "2882f1ad247cd47f4ec32c89bf70bf18ec8164a0345dac584149cb1aaf6b0744",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_website/tests/test_website_field_sanitize.py",
+      "offset": 381,
+      "rule": "credential-literal",
+      "fingerprint": "19862ab23a7539c2d7beab64",
+      "file_sha256": "8269ea812cf2b76a1268dc52cb7af3be54598ae0e1c0562d07c799f9e4e361bb",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/test_website_slides_full/tests/test_ui_wslides.py",
+      "offset": 674,
+      "rule": "credential-literal",
+      "fingerprint": "7c6b0fa4a15aeb70762d8231",
+      "file_sha256": "c8a55cbb9bf64e12a08a695787e5bfac5de095218376e9815e53beb343332087",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/static/lib/hoot/tests/hoot-dom/events.test.js",
+      "offset": 58628,
+      "rule": "HTML-session-token",
+      "fingerprint": "714de0c2acd2062a4eb8be38",
+      "file_sha256": "d54d3845c5aa24c3f7c57552feaf8cd8739852ab4182c8843aa4f2b45652eaee",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/static/tests/core/file_model.test.js",
+      "offset": 212,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3",
+      "file_sha256": "50fcfdfbb3b7727afde1c8362c3299878ed0c55e06fee4e601f47b9027f9ea4d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/static/tests/core/file_model.test.js",
+      "offset": 461,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3",
+      "file_sha256": "50fcfdfbb3b7727afde1c8362c3299878ed0c55e06fee4e601f47b9027f9ea4d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/static/tests/webclient/res_user_group_ids_field.test.js",
+      "offset": 1625,
+      "rule": "credential-literal",
+      "fingerprint": "3fd910fc34cc368ff199b77b",
+      "file_sha256": "a0db1edbb6a9a075a17342d6463e9dd62ea68c8fdc3daa9ad5d2584313d86a4a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users_settings.py",
+      "offset": 329,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8",
+      "file_sha256": "5ae894f36c2be2337899d96c25a5e69be710178a897f50883879cdcb28baf382",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 437,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "0470f4c370cdb168fbe122ac",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 638,
+      "rule": "credential-literal",
+      "fingerprint": "47f09c0ec53321a4e8b686bd",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 737,
+      "rule": "credential-literal",
+      "fingerprint": "69517d8afc127a7760d0763d",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 829,
+      "rule": "credential-literal",
+      "fingerprint": "ecb5fb44be34f288b229c86b",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 920,
+      "rule": "credential-literal",
+      "fingerprint": "0b0e63127f5a650769478510",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_res_users.py",
+      "offset": 3310,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/tests/test_partner.py",
+      "offset": 4871,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471",
+      "file_sha256": "9938cc207e1068d4c6c6306528bf42704197cadb8241fc879b4c46ef119d9058",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/web/views/webclient_templates.xml",
+      "offset": 1231,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1",
+      "file_sha256": "075e913c055a049b1b4c4647dc4cac15b4ec500ac27c66d351372ab93a359458",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/web/views/webclient_templates.xml",
+      "offset": 7114,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "075e913c055a049b1b4c4647dc4cac15b4ec500ac27c66d351372ab93a359458",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website/tests/common.py",
+      "offset": 1199,
+      "rule": "credential-literal",
+      "fingerprint": "a5bccd1003999feb787358d1",
+      "file_sha256": "de797b66a00cef635aef61e4e69f87979a439859a1c96c473228a0f3288c7293",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website/tests/test_website_reset_password.py",
+      "offset": 3167,
+      "rule": "credential-literal",
+      "fingerprint": "2fdb33ad545a90e2501253b9",
+      "file_sha256": "2ebc681f59dc941902f223234ef4a8a8e8038533180db147c8629b76c473c717",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website/tests/test_website_reset_password.py",
+      "offset": 3473,
+      "rule": "credential-literal",
+      "fingerprint": "2fdb33ad545a90e2501253b9",
+      "file_sha256": "2ebc681f59dc941902f223234ef4a8a8e8038533180db147c8629b76c473c717",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website/tests/test_views.py",
+      "offset": 8107,
+      "rule": "credential-literal",
+      "fingerprint": "e0a36ee7edc3835cad92db7c",
+      "file_sha256": "6484e1d93315b0ef18c6e11398b2dd229ba9261d278f267caff3271e1d4bf020",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website/tests/test_website_visitor.py",
+      "offset": 15888,
+      "rule": "credential-literal",
+      "fingerprint": "78423cfc2ed4a47c85801174",
+      "file_sha256": "c8c2a5169d3ec5d17d5ece180467f270d949be25dd24a4d87d7ad6c768e5a581",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website/tests/test_website_visitor.py",
+      "offset": 16181,
+      "rule": "credential-literal",
+      "fingerprint": "7cecf7196e788675ada110a8",
+      "file_sha256": "c8c2a5169d3ec5d17d5ece180467f270d949be25dd24a4d87d7ad6c768e5a581",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website/tests/test_website_visitor.py",
+      "offset": 16537,
+      "rule": "credential-literal",
+      "fingerprint": "7d71c34862ca308c7e506abd",
+      "file_sha256": "c8c2a5169d3ec5d17d5ece180467f270d949be25dd24a4d87d7ad6c768e5a581",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website/views/website_templates.xml",
+      "offset": 170383,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "7618bf46eb9ba8d61969c0e1268724617cbee1848149e1fa94e9e972ad2d5040",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_crm/tests/test_website_visitor.py",
+      "offset": 950,
+      "rule": "credential-literal",
+      "fingerprint": "f036dad5dfff489e9f8f2ba4",
+      "file_sha256": "81b4df2f835f5f9ad57eecffa84ea94b29139b47a8f4ac94c97b1b3225ef1fa4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_crm/tests/test_website_visitor.py",
+      "offset": 3470,
+      "rule": "credential-literal",
+      "fingerprint": "f3b9413f5ac72fade15547b3",
+      "file_sha256": "81b4df2f835f5f9ad57eecffa84ea94b29139b47a8f4ac94c97b1b3225ef1fa4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_crm/tests/test_crm_lead_merge.py",
+      "offset": 943,
+      "rule": "credential-literal",
+      "fingerprint": "5f725df0ad1c1d6a607e12f9",
+      "file_sha256": "9dde173c680904d405772dd2950a15b8847dc9d5b6732c177ab289bc0da5515d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_crm/tests/test_crm_lead_merge.py",
+      "offset": 1107,
+      "rule": "credential-literal",
+      "fingerprint": "fb8b2b887f14ee8fd24b5cd7",
+      "file_sha256": "9dde173c680904d405772dd2950a15b8847dc9d5b6732c177ab289bc0da5515d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 26455,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "6460e9ce85e74a49e28acc2d8bc09565effa601c31b19f2a347b9fdaa15dd1b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 35793,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "6460e9ce85e74a49e28acc2d8bc09565effa601c31b19f2a347b9fdaa15dd1b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 38113,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "6460e9ce85e74a49e28acc2d8bc09565effa601c31b19f2a347b9fdaa15dd1b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 48353,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "6460e9ce85e74a49e28acc2d8bc09565effa601c31b19f2a347b9fdaa15dd1b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_crm_partner_assign/views/website_crm_partner_assign_templates.xml",
+      "offset": 57721,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "6460e9ce85e74a49e28acc2d8bc09565effa601c31b19f2a347b9fdaa15dd1b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_crm_sms/tests/test_website_visitor.py",
+      "offset": 718,
+      "rule": "credential-literal",
+      "fingerprint": "f3b9413f5ac72fade15547b3",
+      "file_sha256": "2d8ea1434125ab14baf7e6391a43b9f1a291a528d52a4b890550a6e5df5dd933",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_event/tests/test_event_visitor.py",
+      "offset": 918,
+      "rule": "credential-literal",
+      "fingerprint": "1a1abb0d41dbfd5671c04cc0",
+      "file_sha256": "f024d9c86b93ba192fe9609fec350ae638802e7c695c8e980ac7b50a2197e903",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_event/tests/test_event_internals.py",
+      "offset": 14557,
+      "rule": "credential-literal",
+      "fingerprint": "42923c9c2548cabe021d69e3",
+      "file_sha256": "8d217a7659cadb859754581a12eb538ac708071eb8664ef0975919008afd7ec1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_event/tests/test_website_event.py",
+      "offset": 12055,
+      "rule": "credential-literal",
+      "fingerprint": "dc12f5233f8d5f8593bf8640",
+      "file_sha256": "f13c6805fcb728a966f17703f1e7b647ab63de7d38509ea3c6e7702eb8d1f901",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_event/views/event_templates_page_registration.xml",
+      "offset": 22715,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "c5250dbd7a71307ddcf52a7516446e34f112d901428e562e6767e15e598d873c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event/views/event_templates_page_registration.xml",
+      "offset": 33576,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "c5250dbd7a71307ddcf52a7516446e34f112d901428e562e6767e15e598d873c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event/views/event_templates_page_registration.xml",
+      "offset": 50205,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "c5250dbd7a71307ddcf52a7516446e34f112d901428e562e6767e15e598d873c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event_booth/views/event_booth_templates.xml",
+      "offset": 3306,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "6ea8ce6d7b23e605f124011e5e7ca1463f4023d27ed07b0f291eb760c7c7555b",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event_booth/views/event_booth_registration_templates.xml",
+      "offset": 1237,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "4c8dc238392a9a7c483393815cf0bc99c63ec43d3dc015299bbbdb1c79784318",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event_crm/tests/test_event_registration.py",
+      "offset": 1322,
+      "rule": "credential-literal",
+      "fingerprint": "5f725df0ad1c1d6a607e12f9",
+      "file_sha256": "1a2540838add123e6ad4d65ac908ee7450c981cc1fb81763cd3f0b77422cb7b4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_event_crm/tests/test_event_registration.py",
+      "offset": 1629,
+      "rule": "credential-literal",
+      "fingerprint": "87f01a8a9fb2a75cc2e1193b",
+      "file_sha256": "1a2540838add123e6ad4d65ac908ee7450c981cc1fb81763cd3f0b77422cb7b4",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_event_exhibitor/views/event_exhibitor_templates_list.xml",
+      "offset": 1488,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "17de7f2452ce66114b7dca6b7faa046d27d83e9bd9d83a351ced00aeebf49770",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event_exhibitor/views/event_exhibitor_templates_list.xml",
+      "offset": 6131,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "17de7f2452ce66114b7dca6b7faa046d27d83e9bd9d83a351ced00aeebf49770",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event_track/views/event_track_templates_proposal.xml",
+      "offset": 2683,
+      "rule": "HTML-session-token",
+      "fingerprint": "9254e5cfe1c1fb50b2ef9d6c",
+      "file_sha256": "8c06f82c7355f42be0c8a3d4880794f4aed33b963f0301fcbd731815ca878345",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_event_track/tests/test_website_visitor.py",
+      "offset": 1102,
+      "rule": "credential-literal",
+      "fingerprint": "5f401638e33524b50c2572d1",
+      "file_sha256": "3b18ee041109de89f86c9f870302ede7b6f8be5fa8ac8dd9536f7815fc0999e7",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_moderation.xml",
+      "offset": 1226,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "fac2dbb65f2c46459cebb1984380877526fb66713404f6309b0420d9fb5c0a17",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_tools.xml",
+      "offset": 1027,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "f83e0cf5847c4ce8c33b1fd1176a6cce5f14ecfa799ac6a241b3551a72fb7408",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_post.xml",
+      "offset": 7595,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "cd72ab5d559b00fd7d6245521bfb8571b09035ee29cd26e4a244dd43ad227469",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates_post.xml",
+      "offset": 33451,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "cd72ab5d559b00fd7d6245521bfb8571b09035ee29cd26e4a244dd43ad227469",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates.xml",
+      "offset": 4122,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "162461d3ff8bf21f228febb16b1d83a66d195618a17551ed514b22c2e81619b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_forum/views/forum_forum_templates.xml",
+      "offset": 9393,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "162461d3ff8bf21f228febb16b1d83a66d195618a17551ed514b22c2e81619b2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_forum/views/website_profile_templates.xml",
+      "offset": 5511,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "9c829f01502369bdca02de588da930a564d697c435d1de40ca13fe4a257e1a20",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_forum/views/website_profile_templates.xml",
+      "offset": 6399,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "9c829f01502369bdca02de588da930a564d697c435d1de40ca13fe4a257e1a20",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_livechat/tests/test_livechat_request.py",
+      "offset": 1568,
+      "rule": "credential-literal",
+      "fingerprint": "aa26258eea40044273dde9ad",
+      "file_sha256": "39152e01743b0f810a25c77b85e8b967148608c61337b40b9d9546ea21565873",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_livechat/tests/common.py",
+      "offset": 847,
+      "rule": "credential-literal",
+      "fingerprint": "89505aa6d6eaa5dff97bfd7f",
+      "file_sha256": "6057d2d408b450b3ee7219ffe887c5dafb2aa97a525af317fd3a0a846df0b43d",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_livechat/tests/test_ui.py",
+      "offset": 496,
+      "rule": "credential-literal",
+      "fingerprint": "8d25931f4ea5ee7133b578ee",
+      "file_sha256": "b84617cdf9c928e5988a15646c84806fab262915b5f6a068227a42ec7e5de807",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/tests/test_address.py",
+      "offset": 9439,
+      "rule": "credential-literal",
+      "fingerprint": "4607bb3a1a5f13c32dc9577d",
+      "file_sha256": "e10ac79d2db06ff2c24665559537222a87cadbc9cc79d931506defb2d934cec0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/tests/test_address.py",
+      "offset": 14212,
+      "rule": "credential-literal",
+      "fingerprint": "fb9a98aaa063a2870e15e963",
+      "file_sha256": "e10ac79d2db06ff2c24665559537222a87cadbc9cc79d931506defb2d934cec0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_cart.py",
+      "offset": 9999,
+      "rule": "credential-literal",
+      "fingerprint": "c3dcd4c7c6bb9927ad127f9d",
+      "file_sha256": "39d66cf29191f3babee7ad941cc09ee00a7b1721301d93419aca3784c9f66cb0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_cart.py",
+      "offset": 10960,
+      "rule": "credential-literal",
+      "fingerprint": "05c1a59b53088a17365309d7",
+      "file_sha256": "39d66cf29191f3babee7ad941cc09ee00a7b1721301d93419aca3784c9f66cb0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_product_page.py",
+      "offset": 1319,
+      "rule": "credential-literal",
+      "fingerprint": "4da5ee5cb7532694aba87860",
+      "file_sha256": "a165d2bf538bdfa48b9e85ed396303e0e5365299ca9ab75a9aa9a4c58f50c3cd",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_product_page.py",
+      "offset": 2829,
+      "rule": "credential-literal",
+      "fingerprint": "8ea081d5e40e05f4745c35d2",
+      "file_sha256": "a165d2bf538bdfa48b9e85ed396303e0e5365299ca9ab75a9aa9a4c58f50c3cd",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/tests/test_website_sale_pricelist.py",
+      "offset": 38825,
+      "rule": "credential-literal",
+      "fingerprint": "4607bb3a1a5f13c32dc9577d",
+      "file_sha256": "dcc165b2358f243d1b53f76319b8f9fcf18d625ece304a30102399fbdd0b44c2",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_sale/views/templates.xml",
+      "offset": 183484,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "a9f26aa598eb6dbde918c8809cc93fd4efb701cc7182b01603f0829affdb5d93",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_sale_loyalty/views/website_sale_templates.xml",
+      "offset": 3411,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "2f3f41e3120ea62859d1c5ea1493fb9687684ba0b2a155e37062cc66c39c953f",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "addons/website_slides/tests/test_ui_wslides.py",
+      "offset": 10013,
+      "rule": "credential-literal",
+      "fingerprint": "4da5ee5cb7532694aba87860",
+      "file_sha256": "094734fe7a5d68ec03f69e624d5b73bef2964be3ac895486493f04bdf5d7c5ff",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "addons/website_slides_survey/views/website_profile.xml",
+      "offset": 1795,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "f1e9158dd07cc80cc3f3da9d940501ceab87ae37762566205dc00f62879ec5af",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal."
+    },
+    {
+      "location": "deploy/init-db.sh",
+      "offset": 254,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "file_sha256": "3f448eb17f1aa22b4f8cf45ee173c2c721a4e8bf460e0304855b0861f79c68e3",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "psql variable reference populated from private secret file at runtime; no password literal."
+    },
+    {
+      "location": "docs/evidence/G5/20261029-http-security-02/preflight.py",
+      "offset": 1126,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b",
+      "file_sha256": "a15d0be197b1f0f55b7f42cfd0d91e6faf8d4a66a00ef9015585126b86ee4611",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Explicit negative preflight specimen; never applied to a live database or configuration."
+    },
+    {
+      "location": "docs/evidence/G5/20261029-secret-scan-01/triage.py",
+      "offset": 2128,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "file_sha256": "b715ef2481ce9920d9c6bff4f416b689bab7e1472ae325a746e1f3f230e59b50",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Prior scanner triage asserts the public psql variable-reference syntax; this is audit source, not a configured password."
+    },
+    {
+      "location": "docs/evidence/G7/20261103-core21-dependencies-image-01/fresh_http.py",
+      "offset": 2050,
+      "rule": "credential-literal",
+      "fingerprint": "52ba4f37a8d8f5372e63e163",
+      "file_sha256": "85c5e8729d1517aada0b4afc025cb50d0c5d024ad700e954a6331aab6cec359a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Source expression repr(password) constructs a private stdin program at execution; no actual credential bytes in source."
+    },
+    {
+      "location": "docs/evidence/G7/20261104-production-profile-01/preflight.py",
+      "offset": 1153,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b",
+      "file_sha256": "980baf60ecf3c56d9c755a4767e2e3f46182d5f6603707a4a603022ce1df4486",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Intentionally wrong configuration literal for negative preflight; never a generated credential or active database value."
+    },
+    {
+      "location": "odoo/addons/base/tests/ssl/server.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "3dcc8ac35f140bda2a56aa728f2131b457aed216abf45407cfb7a1f4b4a87226",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_api.py",
+      "offset": 7786,
+      "rule": "credential-literal",
+      "fingerprint": "22e8e033b1b7465eaa52e621",
+      "file_sha256": "9c0e920e15767c4a1870b9a620828b4d05e606aede4484d16f07f0066b10a6bc",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/ssl/self_signed.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "fefdcf41cc5e53c9697d52f18f5a3f46df5446e574a3aa34732602e2d5d93180",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_ir_mail_server_smtpd.py",
+      "offset": 683,
+      "rule": "credential-literal",
+      "fingerprint": "c34a0f434cb9028f0444d1ef",
+      "file_sha256": "c522a621b0d2f8cdd1b8a888796ff72c72d3fc81cb50203c03b1bf03e206070e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 751,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 988,
+      "rule": "credential-literal",
+      "fingerprint": "1370d7bb86b50a16589358cc",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 1198,
+      "rule": "credential-literal",
+      "fingerprint": "86ef00cafbc9cbd55c188815",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 6594,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 6861,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 24362,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 24611,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 24836,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 27223,
+      "rule": "credential-literal",
+      "fingerprint": "fc75b05e7db1a3741fbaafe5",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_users.py",
+      "offset": 28415,
+      "rule": "credential-literal",
+      "fingerprint": "1e72758257f6b79c024b7769",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/ssl/client.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "4e166b7ede70c222516dba865622d9842f79dc25f2842f7907a19158e4776e8e",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 6587,
+      "rule": "credential-literal",
+      "fingerprint": "af059d0c724f762cc7e3aa84",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 9160,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 21001,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_configmanager.py",
+      "offset": 25252,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/base/tests/test_res_partner.py",
+      "offset": 19647,
+      "rule": "credential-literal",
+      "fingerprint": "e8a8b0d1152178bb24d6c877",
+      "file_sha256": "63799c25f965f5ee3e8af20ec0e9c50c6f98ec264e99c9e86e090a9775ff45c6",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/test_http/tests/test_device.py",
+      "offset": 781,
+      "rule": "credential-literal",
+      "fingerprint": "feb9a8baa9164237c94f972b",
+      "file_sha256": "d1b0c6b0f67e167534ce2df904f71853f0ccdd84df1b714b7cb80f22b5677466",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/test_http/tests/test_static.py",
+      "offset": 21959,
+      "rule": "credential-literal",
+      "fingerprint": "e249b069753347ca3121aace",
+      "file_sha256": "fc87210294fa8b52876b64f6d3a77b9a1af8a6ae47888b76bca016389ffe87c0",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/test_http/tests/test_echo_reply.py",
+      "offset": 6040,
+      "rule": "credential-literal",
+      "fingerprint": "d5ae34aa14bd6170f2c5fb28",
+      "file_sha256": "5370ad6d7afb03ad402930ff018c8dabe1dc8a15130fd611d684480c0c3860c1",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/addons/test_testing_utilities/tests/test_env.py",
+      "offset": 389,
+      "rule": "credential-literal",
+      "fingerprint": "b30a7d400183219fbb658f50",
+      "file_sha256": "9108ce65f13bca1eb7aa40b2c79d0e38370d37989127aabc48de411f11724f69",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts."
+    },
+    {
+      "location": "odoo/http.py",
+      "offset": 9513,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "9d7abdb09e75f899c4492a85f3287a0535988a66cd0266e411d400fb976ffcb9",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Documentation form template calls request.csrf_token(); no issued token literal."
+    },
+    {
+      "location": "tests/test_artifacts.py",
+      "offset": 12641,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Reviewed package rejection specimen: incomplete PEM marker or synthetic credential/invalid-domain URL; never an actual account."
+    },
+    {
+      "location": "tests/test_artifacts.py",
+      "offset": 12940,
+      "rule": "credential-literal",
+      "fingerprint": "e1dd6c8dc618cc0743181d8d",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Reviewed package rejection specimen: incomplete PEM marker or synthetic credential/invalid-domain URL; never an actual account."
+    },
+    {
+      "location": "tests/test_artifacts.py",
+      "offset": 13032,
+      "rule": "credential-url",
+      "fingerprint": "e642b2b86ba8f589022a048f",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Reviewed package rejection specimen: incomplete PEM marker or synthetic credential/invalid-domain URL; never an actual account."
+    },
+    {
+      "location": "tests/test_secret_scan.py",
+      "offset": 2233,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "74d9e19d6ab5acc8c74493063f4a8e0f7f99bc00fdcec776350e7db09aa6e2d5",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Scanner regression specimen: PEM marker with synthetic non-key body, used only to prove scanner detection."
+    },
+    {
+      "location": "tests/test_restore_dispatch.py",
+      "offset": 6970,
+      "rule": "credential-literal",
+      "fingerprint": "e76d931dd26e7d05ced42582",
+      "file_sha256": "8c02e7845c36b97b852e8c6e600d1f8ea554d507832d6bcefc6f29691be4abca",
+      "report": "tracked-tree",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unit-test in-memory readiness callback uses a synthetic credential-change marker to assert review invalidation; no database connection or account."
+    },
+    {
+      "location": "git-history/deploy/init-db.sh",
+      "offset": 254,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "git_blob": "93fedd06f5d77882ab40499987c6b98f933a6d39",
+      "file_sha256": "3f448eb17f1aa22b4f8cf45ee173c2c721a4e8bf460e0304855b0861f79c68e3",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "psql variable reference populated from private secret file at runtime; no password literal."
+    },
+    {
+      "location": "git-history/docs/evidence/G5/20261029-http-security-02/preflight.py",
+      "offset": 1126,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b",
+      "git_blob": "fb128260a0da01fcdf45181ab061b8b65da07973",
+      "file_sha256": "a15d0be197b1f0f55b7f42cfd0d91e6faf8d4a66a00ef9015585126b86ee4611",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Explicit negative preflight specimen; never applied to a live database or configuration."
+    },
+    {
+      "location": "git-history/docs/evidence/G5/20261029-secret-scan-01/triage.py",
+      "offset": 2128,
+      "rule": "credential-literal",
+      "fingerprint": "7057d5276c3557401e2dc9ed",
+      "git_blob": "11db853fec53b6bab83448e7f036e479a0f33948",
+      "file_sha256": "b715ef2481ce9920d9c6bff4f416b689bab7e1472ae325a746e1f3f230e59b50",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Prior scanner triage asserts the public psql variable-reference syntax; this is audit source, not a configured password."
+    },
+    {
+      "location": "git-history/docs/evidence/G7/20261103-core21-dependencies-image-01/fresh_http.py",
+      "offset": 2050,
+      "rule": "credential-literal",
+      "fingerprint": "52ba4f37a8d8f5372e63e163",
+      "git_blob": "e7ea59b163c4dfb62bfa4d9b4a141dfb93ac8296",
+      "file_sha256": "85c5e8729d1517aada0b4afc025cb50d0c5d024ad700e954a6331aab6cec359a",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Source expression repr(password) constructs a private stdin program at execution; no actual credential bytes in source."
+    },
+    {
+      "location": "git-history/docs/evidence/G7/20261104-production-profile-01/preflight.py",
+      "offset": 1153,
+      "rule": "credential-literal",
+      "fingerprint": "49fa1b790a5c8894ee29017b",
+      "git_blob": "81506b1fc28d8e2baa5c5acaa642dec8b7ceff04",
+      "file_sha256": "980baf60ecf3c56d9c755a4767e2e3f46182d5f6603707a4a603022ce1df4486",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Intentionally wrong configuration literal for negative preflight; never a generated credential or active database value."
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 12641,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Reviewed package rejection specimen: incomplete PEM marker or synthetic credential/invalid-domain URL; never an actual account."
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 12940,
+      "rule": "credential-literal",
+      "fingerprint": "e1dd6c8dc618cc0743181d8d",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Reviewed package rejection specimen: incomplete PEM marker or synthetic credential/invalid-domain URL; never an actual account."
+    },
+    {
+      "location": "git-history/tests/test_artifacts.py",
+      "offset": 13032,
+      "rule": "credential-url",
+      "fingerprint": "e642b2b86ba8f589022a048f",
+      "git_blob": "20b0b56a629e2a2f503eb9ffc0e811c8363b43fa",
+      "file_sha256": "609aa6334eca6268f6cf36bfec4e5795ef21f77be7bbe9b4650adcae263d6d4a",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Reviewed package rejection specimen: incomplete PEM marker or synthetic credential/invalid-domain URL; never an actual account."
+    },
+    {
+      "location": "git-history/tests/test_secret_scan.py",
+      "offset": 2233,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "git_blob": "6e8f481095b44842f04507b324a95e021f3cc6fa",
+      "file_sha256": "74d9e19d6ab5acc8c74493063f4a8e0f7f99bc00fdcec776350e7db09aa6e2d5",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Scanner regression specimen: PEM marker with synthetic non-key body, used only to prove scanner detection."
+    },
+    {
+      "location": "git-history/tests/test_restore_dispatch.py",
+      "offset": 6970,
+      "rule": "credential-literal",
+      "fingerprint": "e76d931dd26e7d05ced42582",
+      "git_blob": "d8551a8e0b4e894c63419eb2510daacd0436fb00",
+      "file_sha256": "8c02e7845c36b97b852e8c6e600d1f8ea554d507832d6bcefc6f29691be4abca",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Unit-test in-memory readiness callback uses a synthetic credential-change marker to assert review invalidation; no database connection or account."
+    },
+    {
+      "location": "git-history/tests/test_restore_dispatch.py",
+      "offset": 6733,
+      "rule": "credential-literal",
+      "fingerprint": "e76d931dd26e7d05ced42582",
+      "git_blob": "c5766758cae614097b92079a0e5c1d11adab62d9",
+      "file_sha256": "aca2d8563d3df72af41afa0ee96348472351912c44710f20763fd2d10fd47d37",
+      "report": "implementation-history",
+      "disposition": "reviewed_public_fixture_or_expression",
+      "reason": "Earlier Git blob of the same synthetic in-memory readiness invalidation test; exact bytes/offset reviewed."
+    }
+  ],
+  "limits": [
+    "Current tracked tree and every implementation-introduced blob through captured HEAD only; current images, archives/assets/logs and new audit files remain separate.",
+    "Exact file SHA256/offset/rule/fingerprint reuse, not path-based suppression. No Git rewrite or publication."
+  ]
+}
