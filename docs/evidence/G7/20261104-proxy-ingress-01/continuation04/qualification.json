@@ -1,0 +1,35 @@
+{
+  "result": "passed_bounded_websocket_and_preservation_continuation_not_release_selection",
+  "utc": "2026-11-03T21:30:18.649102+00:00",
+  "candidate_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "application_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "configuration_generation": 4,
+  "checks": [
+    {
+      "case": "candidate_nonroot_readonly_existing_config_and_networks",
+      "result": "passed",
+      "user": "101:101",
+      "mounts": 1,
+      "private_authority_mounts": 0
+    },
+    {
+      "case": "actual_native_Odoo_WebSocket_upgrade",
+      "result": "passed",
+      "version": "19.0-2",
+      "status": 101,
+      "accept_digest_verified": true
+    },
+    {
+      "case": "seventeen_business_tables_worker_original_edge_and_protected_configs_preserved",
+      "result": "passed"
+    }
+  ],
+  "canary_removed": true,
+  "new_volumes": 0,
+  "new_networks": 0,
+  "limits": [
+    "Development profile on fresh fixture only; production TLS/rate/security fixture and final release selection remain separate.",
+    "Real HTTP/native/asset/socket transport; not browser rendering/accessibility/performance qualification.",
+    "Original/fresh active edges remain old official pin; no application/native lifecycle/key/worker mutation."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "state": "in_progress",
+  "checks": [
+    {
+      "case": "candidate_nonroot_readonly_existing_config_and_networks",
+      "result": "passed",
+      "user": "101:101",
+      "mounts": 1,
+      "private_authority_mounts": 0
+    },
+    {
+      "case": "development_cookie_and_browser_headers",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true
+    },
+    {
+      "case": "unrecognized_host_rejected",
+      "result": "passed"
+    },
+    {
+      "case": "database_endpoints_blocked_at_proxy",
+      "result": "passed"
+    },
+    {
+      "case": "foreign_origin_and_forged_forwarding_cannot_create_session",
+      "result": "passed"
+    },
+    {
+      "case": "independent_native_login_and_client_release_pins",
+      "result": "passed"
+    },
+    {
+      "case": "default_native_list_form_and_scoped_gateway_reads",
+      "result": "passed"
+    },
+    {
+      "case": "supported_gateway_missing_and_invalid_csrf_rejected",
+      "result": "passed"
+    },
+    {
+      "case": "production_shell_asset_bytes_served",
+      "result": "passed",
+      "assets": [
+        {
+          "path": "/web/assets/3520df04ce1af8d7e8690c1df95d6cec79e3f560cf4f886caf4515343357b2de/mp_shell.assets_host.min.css",
+          "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+          "bytes": 751605,
+          "content_type": "text/css; charset=utf-8"
+        },
+        {
+          "path": "/web/assets/8fd91d184e4ae2107b0a65ef7575bbaf4b53983713554b455f1efc675bac2b0e/mp_shell.assets_host.min.js",
+          "sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+          "bytes": 3091758,
+          "content_type": "application/javascript; charset=utf-8"
+        }
+      ]
+    }
+  ]
+}

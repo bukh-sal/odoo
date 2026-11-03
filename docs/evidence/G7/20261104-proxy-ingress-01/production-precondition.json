@@ -1,0 +1,22 @@
+{
+  "result": "development_fixture_correctly_refused_as_production_profile",
+  "utc": "2026-11-03T21:35:01.376314+00:00",
+  "configuration_sha256": "c62aafc9c260a771938604b9d9af4fff69bb38700a5640d66c79a0a351a35fb1",
+  "settings": {
+    "proxy_mode": "True",
+    "list_db": "False",
+    "db_name": "mp_disposable_r0_r1_g6_g7target_b513bc4f50d4",
+    "dbfilter": "^mp_disposable_r0_r1_g6_g7target_b513bc4f50d4$",
+    "dev_mode": null,
+    "test_enable": null,
+    "log_handler": ":INFO,werkzeug:WARNING"
+  },
+  "guard_error": "Production needs one fixed DB, listing/dev/tests disabled and only its direct trusted edge",
+  "source_sha256": "4b56b9c3e8cb0c61da2aa5db94e68ae25c6c55a460dd2b4384ceba7b4d0ce8e1",
+  "action": "Do not relax the validator or silently rewrite running fixture. Qualify current images in an isolated production-profile fixture with actual rotated named accounts, canonical URL, native safe logging and matching mounted configuration; then actual TLS/rate/defaults/ingress tests.",
+  "limits": [
+    "This is an intentional development fixture, not a product default regression.",
+    "Does not require user input and does not block independent authorized G7 work.",
+    "No production profile pass or proxy release adoption is claimed."
+  ]
+}

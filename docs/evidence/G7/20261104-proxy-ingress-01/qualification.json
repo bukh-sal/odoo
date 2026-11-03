@@ -1,0 +1,118 @@
+{
+  "result": "passed_proxy_candidate_development_ingress_and_transport",
+  "utc": "2026-11-03T21:33:21.892839+00:00",
+  "candidate_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "application_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "config_generation": 4,
+  "source_and_records_sha256": {
+    "canary.py": "112a029c0e73b5ba38d2d618083f1f16e28dd1aa4d3d465d1a551320d5bd9c56",
+    "canary02.py": "680992d17bbb4477a1462e2814c3b82eeb0415d616f7f65bc5ab0c846349c2c3",
+    "canary03.py": "1bad1feaf3f4068e6962a508b005d13dd1d64528f9b9321d4fcbe3e9f4a78db3",
+    "canary04.py": "42283ab3302447b56114ea949fe38d96fe0e1d2da1049163720175bd0d075417",
+    "continuation03/progress.json": "e6fb4759f842f93b8ab51e82be7a41907adcc896d3fc060b8138b790668ebc3c",
+    "continuation04/qualification.json": "2ef8fb561836c6e9b8a7918fba7c051c8b3a5e7e526c24d8bea569f22b138186"
+  },
+  "checks": [
+    {
+      "case": "candidate_nonroot_readonly_existing_config_and_networks",
+      "result": "passed",
+      "user": "101:101",
+      "mounts": 1,
+      "private_authority_mounts": 0
+    },
+    {
+      "case": "development_cookie_and_browser_headers",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true
+    },
+    {
+      "case": "unrecognized_host_rejected",
+      "result": "passed"
+    },
+    {
+      "case": "database_endpoints_blocked_at_proxy",
+      "result": "passed"
+    },
+    {
+      "case": "foreign_origin_and_forged_forwarding_cannot_create_session",
+      "result": "passed"
+    },
+    {
+      "case": "independent_native_login_and_client_release_pins",
+      "result": "passed"
+    },
+    {
+      "case": "default_native_list_form_and_scoped_gateway_reads",
+      "result": "passed"
+    },
+    {
+      "case": "supported_gateway_missing_and_invalid_csrf_rejected",
+      "result": "passed"
+    },
+    {
+      "case": "production_shell_asset_bytes_served",
+      "result": "passed",
+      "assets": [
+        {
+          "path": "/web/assets/3520df04ce1af8d7e8690c1df95d6cec79e3f560cf4f886caf4515343357b2de/mp_shell.assets_host.min.css",
+          "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+          "bytes": 751605,
+          "content_type": "text/css; charset=utf-8"
+        },
+        {
+          "path": "/web/assets/8fd91d184e4ae2107b0a65ef7575bbaf4b53983713554b455f1efc675bac2b0e/mp_shell.assets_host.min.js",
+          "sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+          "bytes": 3091758,
+          "content_type": "application/javascript; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "case": "actual_native_Odoo_WebSocket_upgrade",
+      "result": "passed",
+      "version": "19.0-2",
+      "status": 101,
+      "accept_digest_verified": true
+    },
+    {
+      "case": "seventeen_business_tables_worker_original_edge_and_protected_configs_preserved",
+      "result": "passed"
+    }
+  ],
+  "checks_count": 11,
+  "all_four_runs_started_with_exact_same17tables_and_worker": true,
+  "final17tables_worker_and_original_edge_protected_configs_exact": true,
+  "retained_canaries": 0,
+  "new_volumes": 0,
+  "new_networks": 0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "observation": "Exact mount dictionary comparison stopped before authentication; actual volume/name/source/destination/RWfalse identical, Docker --mount Mode=z versus Compose ro.",
+      "decision": "Compare real mount identity and permissions; retain diagnostic Mode difference, no product change."
+    },
+    {
+      "attempt": 2,
+      "observation": "Eight boundary checks passed, shell /app/ returned non200; source route does not register /app/.",
+      "decision": "Use registered /app/settings; no routing change."
+    },
+    {
+      "attempt": 3,
+      "observation": "Nine checks including shell assets pass; native websocket rejects invalid decoded17byte test nonce with explicit400.",
+      "decision": "Bounded WebSocket-only continuation with uuid4 16bytes, retain nine completed checks; no protocol change."
+    },
+    {
+      "attempt": 4,
+      "observation": "101nativeWS upgrade and accept digest plus exact preservation pass; canary removed.",
+      "decision": "Combine explicitly retained same-source/runtime evidence."
+    }
+  ],
+  "limits": [
+    "Development-profile real HTTP/native/assets/WebSocket only. No new browser/accessibility/performance claim.",
+    "Current fresh native config has werkzeug:WARNING; production startup validator correctly refuses it. Full production application profile qualification still required; do not bypass guard or call this a production deployment.",
+    "Original/fresh active proxies and runtime lock remain old official pin; candidate release selection pending production profile/security qualification.",
+    "Full G7 OS/vendor/history/layer/archive/secret/network/license/provenance/reprobuild/perf/UI09/runbooks/final audit remain."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "state": "in_progress",
+  "checks": [
+    {
+      "case": "candidate_nonroot_readonly_existing_config_and_networks",
+      "result": "passed",
+      "user": "101:101",
+      "mounts": 1,
+      "private_authority_mounts": 0
+    },
+    {
+      "case": "actual_native_Odoo_WebSocket_upgrade",
+      "result": "passed",
+      "version": "19.0-2",
+      "status": 101,
+      "accept_digest_verified": true
+    },
+    {
+      "case": "seventeen_business_tables_worker_original_edge_and_protected_configs_preserved",
+      "result": "passed"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "state": "in_progress",
+  "checks": [
+    {
+      "case": "candidate_nonroot_readonly_existing_config_and_networks",
+      "result": "passed",
+      "user": "101:101",
+      "mounts": 1,
+      "private_authority_mounts": 0
+    },
+    {
+      "case": "development_cookie_and_browser_headers",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true
+    },
+    {
+      "case": "unrecognized_host_rejected",
+      "result": "passed"
+    },
+    {
+      "case": "database_endpoints_blocked_at_proxy",
+      "result": "passed"
+    },
+    {
+      "case": "foreign_origin_and_forged_forwarding_cannot_create_session",
+      "result": "passed"
+    },
+    {
+      "case": "independent_native_login_and_client_release_pins",
+      "result": "passed"
+    },
+    {
+      "case": "default_native_list_form_and_scoped_gateway_reads",
+      "result": "passed"
+    },
+    {
+      "case": "supported_gateway_missing_and_invalid_csrf_rejected",
+      "result": "passed"
+    }
+  ]
+}
