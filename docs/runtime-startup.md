@@ -1,5 +1,9 @@
 # Runtime startup boundary
 
+For a new environment, build/load the selected [locked proxy](proxy-build.md)
+before using Compose. Its local immutable digest is independent of the app's
+approved release/inventory; changing a template does not update running sites.
+
 The current independent executor is the supported G5 lifecycle path. Read its private deployment configuration and journal rather than the historical bootstrap Compose file. Do not restart, initialize or seed an existing site to refresh its image.
 
 New R1 images default to `/venv/bin/python /opt/modular/tools/start_worker.py -c /run/secrets/odoo_config`. Their operator-provided environment must include:

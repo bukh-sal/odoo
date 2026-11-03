@@ -1,0 +1,29 @@
+{
+  "result": "retirement_absence_and_retained_working_sites_verified",
+  "utc": "2026-11-03T22:04:54.936466+00:00",
+  "project": "mp-r0-r1g7httpef5ead610623",
+  "remaining_owned_containers": [],
+  "remaining_owned_volumes": [],
+  "remaining_owned_networks": [],
+  "retained_sites": [
+    {
+      "role": "original",
+      "port": 18088,
+      "native_login_status": 200
+    },
+    {
+      "role": "fresh",
+      "port": 18090,
+      "native_login_status": 200
+    },
+    {
+      "role": "benchmark",
+      "port": 18089,
+      "native_login_status": 200
+    }
+  ],
+  "images_removed": 0,
+  "limits": [
+    "Native login HTTP health only; full scoped preservation is separately bound in source-preservation.json."
+  ]
+}

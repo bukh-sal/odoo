@@ -1,0 +1,39 @@
+{
+  "result": "owned_copy_old_scope_quarantined_new_site_dispatch_bootstrapped",
+  "utc": "2026-11-03T21:45:28.178475+00:00",
+  "application_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "project": "mp-r0-r1g7httpef5ead610623",
+  "database": "mp_disposable_r0_r1_g7http_ef5ead610623",
+  "control": {
+    "before": [
+      [
+        "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "sha256:426ca9e206d5f6f23c5dbe6ee2f0c056a738c8da061e46a81741ca7fd71df783",
+        "enabled",
+        12
+      ]
+    ],
+    "after": [
+      [
+        "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "sha256:426ca9e206d5f6f23c5dbe6ee2f0c056a738c8da061e46a81741ca7fd71df783",
+        "paused",
+        13
+      ],
+      [
+        "f55bb7d5-5d8b-4403-8bee-1db87b8306ff",
+        "sha256:cecce74bc1f4088f937221edf46ccead30cbb26c5cc4826dbf029df3d2464bd2",
+        "enabled",
+        1
+      ]
+    ],
+    "pending_or_running_jobs": 0,
+    "leased_deliveries": 0
+  },
+  "source_runtime_not_modified": true,
+  "external_worker_or_issuer_copied": false,
+  "limits": [
+    "Explicit NEW owned site bootstrap under local operator, not public HTTP authority, lifecycle approval or recovery evidence.",
+    "Copied source-site terminal history is preserved; old scope dispatch paused. New site emits events but no automatic worker/issuer authority is granted."
+  ]
+}

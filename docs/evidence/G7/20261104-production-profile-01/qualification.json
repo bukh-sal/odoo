@@ -1,0 +1,132 @@
+{
+  "result": "passed_current_SEC02_SEC04_and_selected_proxy_profiles",
+  "utc": "2026-11-03T21:54:42.180053+00:00",
+  "acceptances": [
+    "SEC-02",
+    "SEC-04"
+  ],
+  "spec_sections": [
+    "11.3",
+    "11.4",
+    "15.1",
+    "15.2",
+    "15.3",
+    "20",
+    "25.3"
+  ],
+  "application_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "proxy_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "selected_proxy_reference": "modular-platform-proxy@sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "site_id": "f55bb7d5-5d8b-4403-8bee-1db87b8306ff",
+  "project": "mp-r0-r1g7httpef5ead610623",
+  "database": "mp_disposable_r0_r1_g7http_ef5ead610623",
+  "production_preflight": {
+    "result": "passed",
+    "site_id": "f55bb7d5-5d8b-4403-8bee-1db87b8306ff",
+    "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+    "release_digest": "sha256:cecce74bc1f4088f937221edf46ccead30cbb26c5cc4826dbf029df3d2464bd2",
+    "profile": "https://security.localhost:18445",
+    "private_configuration_matches": true,
+    "sample_logins_inactive": true,
+    "development_modules_absent": true,
+    "application_internal_nonroot_readonly": true,
+    "read_only": true,
+    "limits": [
+      "Qualified local single-host Docker adapter only; no production deployment or installation approval.",
+      "The OS operator must separately provision/review certificates, credentials, proxy volumes and exact executor authority."
+    ]
+  },
+  "actual_containers": [
+    {
+      "purpose": "application",
+      "image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+      "user": "10001:10001",
+      "readonly": true,
+      "container_id": "f2f4f09f358f18986fb61103e5f71d4d11b582452ff07858f45bca4eaebfdc6e"
+    },
+    {
+      "purpose": "development-edge",
+      "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "user": "101:101",
+      "readonly": true,
+      "container_id": "3bdd205cb1e498c4f6a01a499df4da3946bf70d4a58b31fd1682021df11de25c"
+    },
+    {
+      "purpose": "production-edge",
+      "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "user": "101:101",
+      "readonly": true,
+      "container_id": "e5e5d281b7b8ca9beef8a0d63ec8b138324ab30e5700eb8c5acd63a783525ed5"
+    }
+  ],
+  "record_sha256": {
+    "HTTP-qualification.json": "6b7d212c03d104925ea662dbfdb77a302781e771543d35de2411b0967191285d",
+    "production-preflight.json": "0ff92b49282ea4ab6eec2837840f8ff3b183a2d7af2e8b0d7c1076bb867e3355",
+    "rate-TLS-qualification.json": "21a0e1712fe502f6f25991d68b92b6e7da981ced46b76a1f96b91ea824c9c93a",
+    "TLS-WebSocket-qualification.json": "392151d1b4e215fd2dfdd0a5e5031daf5a8b7af6a6a54587d254728b0dad81fa",
+    "upload-native-error-qualification.json": "d5616da7c0e5f14e4d095d696ba8541631d39c71dce9d9f740514739721cc116",
+    "source-preservation.json": "16851cf31e7f339d1a42fd408e4750a3a5873254fe705c46b7ffc3c827c32eb4"
+  },
+  "source_sha256": {
+    "platform_addons/mp_core/controllers.py": "5972590705fa0c9194d220959403e4fe10cf56530bef3d72c39871e922db0178",
+    "platform_addons/mp_core/operations.py": "007ebab44beb277830bd9741b97b24874feb322ec78a7bb26b1ad521021a0bf8",
+    "packages/platform_sdk/modular_platform/manager_views.py": "a28a4acf6b0f6d0377625316786b4857709ca5408b3d95707c52b7970e0da40a",
+    "tools/http_profile.py": "4b56b9c3e8cb0c61da2aa5db94e68ae25c6c55a460dd2b4384ceba7b4d0ce8e1",
+    "tools/production_preflight.py": "68e3c1616b3074cc4ed185666727554f10060897315ac5af6c703bf94a936a03",
+    "deploy/compose.yaml": "2a502171acb929457755dc52e00ab83e9b387b868b9693f9fc10778399a60fd1",
+    "deploy/compose-production.yaml": "55f91131156ae995a3c2b62de35cd2361c898f4568ea50b8bb00d037b4fe8d8c",
+    "deploy/runtime.lock.json": "94cb8b4fbd62b4e135cc85340da19e49dcbabf5fab9058f43edb2d18cdcd9bd9",
+    "deploy/nginx-r0.conf": "f372660c0e6cb82919986326e662d08431c52f9bbca675d5db157e62b6076b1d",
+    "deploy/proxy.Dockerfile": "9123f8ff96656b5342690b22f8067631a419157bb0cfc3d65a1cd122deb84341",
+    "deploy/proxy-packages.lock.json": "55e596cffc6e853269bd9e817ac6f3d7ff20b47d32f8cb028512c72e90da776e",
+    "tests/test_http_profile.py": "f6dee6a03690d5a55783e8c600246e9eaf00d1427db1f9dccad3885d760a559a"
+  },
+  "HTTP_cases": 17,
+  "rate_requests": 396,
+  "TLS": [
+    "TLSv1.2",
+    "TLSv1.3"
+  ],
+  "TLS11_rejected": true,
+  "TLS_WebSocket": [
+    101,
+    403
+  ],
+  "host_profile_unit_tests": {
+    "command": [
+      "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_http_profile.py",
+      "-v"
+    ],
+    "tests": 5,
+    "result": "passed",
+    "tool_output_observed": true
+  },
+  "native_CRUD_default_views": true,
+  "Canvas_minimal_read": true,
+  "clone_business_counts": {
+    "jobs": 1,
+    "notes": 2,
+    "canvas": 1,
+    "outbox": 5,
+    "active_credentials": 0
+  },
+  "source17tables_worker_configs_exact": true,
+  "compose_selected_exact_candidate": true,
+  "root_contract_change": false,
+  "limits": [
+    "Local qualification copy only, not publication or external production deployment. Private test certificate trusted only by test client.",
+    "No external worker/issuer copied; external analysis intentionally unavailable. No new SVC/recovery/fresh-install claim.",
+    "Existing upstream native parser/handler functions exercised with current native429; actual Owl dialog/browser rendering not claimed.",
+    "Safe-log canaries/upload boundaries do not establish global SEC03. Final OS/vendor/source/licenses/history/layers/archives/secrets/network/reprobuild/performance/accessibility/runbooks/handoff remain G7.",
+    "Fixture cleanup evidence recorded separately; current original/fresh/perf services and rollback images remain retained."
+  ]
+}

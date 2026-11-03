@@ -1,0 +1,27 @@
+{
+  "result": "passed_actual_TLS_native_WebSocket_and_foreign_origin_rejection",
+  "utc": "2026-11-03T21:48:23.160902+00:00",
+  "application_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "proxy_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "version": "19.0-2",
+  "checks": [
+    {
+      "origin": "canonical",
+      "status": 101,
+      "TLS": "TLSv1.3",
+      "certificate_verified": true,
+      "accept_digest_verified": true
+    },
+    {
+      "origin": "foreign",
+      "status": 403,
+      "TLS": "TLSv1.3",
+      "certificate_verified": true,
+      "accept_digest_verified": false
+    }
+  ],
+  "limits": [
+    "Protocol transport/authenticated native session and browser-origin fence; no browser rendering/event subscription/lifecycle or accessibility claim.",
+    "Private two-day test certificate trusted only by this client; no external production deployment."
+  ]
+}

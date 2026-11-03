@@ -1,0 +1,23 @@
+{
+  "result": "passed_host_only_proxy_builder_same_exact_context_and_bad_input_refusal",
+  "source_sha256": "e9ce634602b4c2518b65b9ce463eb04623987ec28f5d59085757dcb302719793",
+  "context_sha256": "aabe05e71c839f791aa3a5df5b35da1e2a9c4818c6b9e1fb37d147c613d01a6d",
+  "actual_built_candidate_context_exact": true,
+  "negative_cases": [
+    {
+      "case": "unexpected_member",
+      "refused": true,
+      "reason": "Unexpected, duplicate or incorrectly sized APK input"
+    },
+    {
+      "case": "wrong_APK_bytes",
+      "refused": true,
+      "reason": "APK bytes differ from the reviewed package lock"
+    }
+  ],
+  "new_images": 0,
+  "limits": [
+    "Input preparation and negative safety checks; the existing candidate build already exercised this exact context with offline APK verification.",
+    "This host-only script is under deploy, not copied as a new app runtime tool. Final release-kit delivery/rehearsal remains."
+  ]
+}

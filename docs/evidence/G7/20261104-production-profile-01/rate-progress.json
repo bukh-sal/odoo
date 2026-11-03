@@ -1,0 +1,41 @@
+{
+  "state": "in_progress",
+  "cases": [
+    {
+      "category": "service",
+      "requests": 96,
+      "concurrency": 16,
+      "statuses": {
+        "200": 51,
+        "429": 45
+      },
+      "elapsed_seconds": 0.641,
+      "forged_forwarded_addresses_cannot_bypass": true,
+      "rate_errors_match_frozen_DTO": true
+    },
+    {
+      "category": "operator",
+      "requests": 40,
+      "concurrency": 16,
+      "statuses": {
+        "403": 11,
+        "429": 29
+      },
+      "elapsed_seconds": 0.078,
+      "forged_forwarded_addresses_cannot_bypass": true,
+      "rate_errors_match_frozen_DTO": true
+    },
+    {
+      "category": "public",
+      "requests": 240,
+      "concurrency": 16,
+      "statuses": {
+        "200": 129,
+        "429": 111
+      },
+      "elapsed_seconds": 0.578,
+      "forged_forwarded_addresses_cannot_bypass": true,
+      "rate_errors_match_frozen_DTO": true
+    }
+  ]
+}

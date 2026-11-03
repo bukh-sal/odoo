@@ -6,13 +6,13 @@
   "python_image": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
   "postgresql": "16.15",
   "postgres_image": "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
-  "reverse_proxy_image": "nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+  "reverse_proxy_image": "modular-platform-proxy@sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
   "debian_snapshot": "20261027T000000Z",
   "python_dependencies": "requirements-py312.lock",
   "build_dependencies": "build-requirements.lock",
   "resolver": "Qualified modular_platform.resolution / resolvelib1.2.1, complete static observed Python3.12.16 target metadata; no source build hooks in planning",
   "frontend_build": "No new frontend build toolchain in R0; retained upstream assets compiled by Odoo. Host SDK toolchain must be pinned before G2.",
-  "qualification": "candidate; container build and fresh boot pending",
+  "qualification": "Actual current R1 app/worker builds, native dependency maintenance, recovery and fresh reference integration qualified; selected patched proxy passes current dev/production-profile transport/security. Second fresh application build and full G7 release/security/provenance/performance/accessibility/runbooks/handoff remain.",
   "dependency_review": {
     "adr": "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md",
     "evidence": "docs/evidence/G7/20261103-security-locks-01/static-resolution.json",
@@ -20,6 +20,19 @@
     "r1_packages": 73,
     "build_packages": 4,
     "worker_packages": 13,
-    "qualification": "candidate; actual images/native lifecycle/security/fresh release required"
+    "qualification": "Actual app570/core21 and worker87, approved maintenance, dependency-fault/fresh restore and fresh reference jobs qualified; final G7 security/provenance/reproducibility remains.",
+    "host_maintenance": "docs/evidence/G7/20261103-core21-maintenance-01/qualification.json",
+    "worker_maintenance": "docs/evidence/G7/20261103-worker-security-transition-01/qualification.json",
+    "fresh_reference": "docs/evidence/G7/20261103-fresh-target21-01/qualification.json"
+  },
+  "reverse_proxy_maintenance": {
+    "adr": "docs/architecture-decisions/0048-proxy-os-security-maintenance.md",
+    "base": "nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+    "recipe": "proxy.Dockerfile",
+    "packages": "proxy-packages.lock.json",
+    "image_and_solution": "docs/evidence/G7/20261104-support-images-01/proxy-image-qualification.json",
+    "development_ingress": "docs/evidence/G7/20261104-proxy-ingress-01/qualification.json",
+    "production_profile": "docs/evidence/G7/20261104-production-profile-01/qualification.json",
+    "qualification": "Selected after actual current dev+production-profile HTTP/TLS/native/rate/upload/WebSocket qualification; release-wide provenance/history/license/secret audit and second fresh application build remain."
   }
 }

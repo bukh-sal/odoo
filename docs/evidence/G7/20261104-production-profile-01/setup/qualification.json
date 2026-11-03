@@ -1,0 +1,30 @@
+{
+  "result": "passed_current_production_profile_setup_only",
+  "utc": "2026-11-03T21:40:33.711430+00:00",
+  "project": "mp-r0-r1g7httpef5ead610623",
+  "application_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "proxy_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "database": "mp_disposable_r0_r1_g7http_ef5ead610623",
+  "site_id": "f55bb7d5-5d8b-4403-8bee-1db87b8306ff",
+  "generation": 4,
+  "ports": {
+    "development": 18092,
+    "redirect": 18093,
+    "TLS": 18445
+  },
+  "configuration_sha256": "82515e97eb1b85020e25999b00fa19ac8b15c2da39e13c19850e2f654bf514d9",
+  "named_accounts_rotated": 4,
+  "admin_inactive": true,
+  "technical_credentials_active": 0,
+  "external_authority": {
+    "endpoints": [],
+    "service_health": {}
+  },
+  "source_target_unchanged": true,
+  "schema_exact": true,
+  "limits": [
+    "Isolated owned qualification copy, not fresh installation, external worker qualification or production deployment.",
+    "External analysis unavailable by explicit absence of operator publisher/issuer; do not fabricate a healthy endpoint or remove metadata pins.",
+    "Production_preflight, HTTP/TLS/rate/security matrix and cleanup still required; no G7 acceptance pass."
+  ]
+}

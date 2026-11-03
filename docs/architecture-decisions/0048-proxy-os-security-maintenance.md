@@ -1,7 +1,7 @@
 # ADR0048: pinned proxy-only OS security maintenance
 
-Date: 2026-11-04 (Asia/Riyadh). Status: accepted for candidate staging;
-actual image and ingress qualification required before release selection.
+Date: 2026-11-04 (Asia/Riyadh). Status: selected after actual development and
+isolated current production-profile ingress qualification. Full G7 pending.
 
 G7's actual nginx image is the pinned official nginx1.30.6 Alpine3.24.3
 image. Primary Alpine security fixes identify three older installed origins:
@@ -34,3 +34,16 @@ version, application/worker image, keys, endpoint/publication authority or nativ
 database migration. G2 remains unchanged. SEC02/04/OPS03 and final release
 qualification remain pending until actual evidence covers the selected image.
 No final-security, generic sandbox or zero-vulnerability claim is implied.
+
+Selection evidence is `docs/evidence/G7/20261104-production-profile-01/qualification.json`:
+17 HTTP cases, production preflight/retired credentials, four rate categories,
+TLS1.2/1.3 with TLS1.1 refusal, native error-service reuse, upload limits and
+actual authenticated TLS WebSocket/foreign-Origin refusal. SEC02/04 are current;
+OPS03 and global release security remain pending. The exact test-copy resources
+are archived/retired, and the original working sites remain unchanged.
+
+`deploy/build_proxy.py` is a host-only offline rebuild path using retained exact
+APK inputs; it does not add another runtime framework or a private application
+mount. Final release-kit packaging and the second fresh application build are
+still required. No generic site-cloning product feature is introduced by the
+explicit qualification-copy bootstrap.

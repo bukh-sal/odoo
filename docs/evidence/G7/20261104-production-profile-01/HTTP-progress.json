@@ -1,0 +1,61 @@
+{
+  "state": "in_progress",
+  "checks": [
+    {
+      "case": "development_native_login_and_cookie_policy",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true,
+      "Secure": false
+    },
+    {
+      "case": "development_unknown_hosts_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_native_login_and_cookie_policy",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true,
+      "Secure": true
+    },
+    {
+      "case": "production_unknown_hosts_denied",
+      "result": "passed"
+    },
+    {
+      "case": "development_loopback_aliases_preserved",
+      "result": "passed"
+    },
+    {
+      "case": "production_HTTP_fixed_canonical_redirect_and_mutation_refusal",
+      "result": "passed"
+    },
+    {
+      "case": "development_gateway_CSFR_missing_invalid_other_session_denied",
+      "result": "passed"
+    },
+    {
+      "case": "development_foreign_null_wrong_port_Origin_and_preflight_denied_no_CORS_credentials",
+      "result": "passed"
+    },
+    {
+      "case": "development_native_Odoo_list_form_views_and_RPC_preserved_simple_form_write_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_gateway_CSFR_missing_invalid_other_session_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_foreign_null_wrong_port_Origin_and_preflight_denied_no_CORS_credentials",
+      "result": "passed"
+    },
+    {
+      "case": "production_native_Odoo_list_form_views_and_RPC_preserved_simple_form_write_denied",
+      "result": "passed"
+    }
+  ]
+}

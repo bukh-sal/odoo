@@ -1,0 +1,51 @@
+{
+  "type": "DispatchPaused",
+  "message": "Dispatch is paused or release incompatible",
+  "frames": [
+    {
+      "file": "<string>",
+      "line": 8,
+      "function": "<module>"
+    },
+    {
+      "file": "decorators.py",
+      "line": 369,
+      "function": "create"
+    },
+    {
+      "file": "models.py",
+      "line": 61,
+      "function": "create"
+    },
+    {
+      "file": "decorators.py",
+      "line": 369,
+      "function": "create"
+    },
+    {
+      "file": "models.py",
+      "line": 42,
+      "function": "create"
+    },
+    {
+      "file": "models.py",
+      "line": 79,
+      "function": "_emit_change"
+    },
+    {
+      "file": "events.py",
+      "line": 176,
+      "function": "emit"
+    },
+    {
+      "file": "durable.py",
+      "line": 277,
+      "function": "append_event"
+    },
+    {
+      "file": "durable.py",
+      "line": 89,
+      "function": "control"
+    }
+  ]
+}

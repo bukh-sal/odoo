@@ -1,0 +1,6 @@
+{
+  "result": "rotated_explicit_accounts_and_disabled_shipped_logins",
+  "account_count": 4,
+  "old_admin_and_fixture_logins_inactive": true,
+  "technical_credentials_revoked": true
+}

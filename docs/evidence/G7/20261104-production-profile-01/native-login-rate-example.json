@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": null,
+  "error": {
+    "code": 429,
+    "message": "Too many requests; try again shortly",
+    "data": {
+      "name": "odoo.exceptions.UserError",
+      "message": "Too many requests; try again shortly",
+      "request_id": "fc513872-4fa2-1f06-dfe8-3fd8bfab2d1c"
+    }
+  }
+}

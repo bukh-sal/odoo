@@ -1,0 +1,107 @@
+{
+  "state": "in_progress",
+  "checks": [
+    {
+      "case": "development_native_login_and_cookie_policy",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true,
+      "Secure": false
+    },
+    {
+      "case": "development_unknown_hosts_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_native_login_and_cookie_policy",
+      "result": "passed",
+      "HttpOnly": true,
+      "SameSite": "Lax",
+      "host_only": true,
+      "Secure": true
+    },
+    {
+      "case": "production_unknown_hosts_denied",
+      "result": "passed"
+    },
+    {
+      "case": "development_loopback_aliases_preserved",
+      "result": "passed"
+    },
+    {
+      "case": "production_HTTP_fixed_canonical_redirect_and_mutation_refusal",
+      "result": "passed"
+    },
+    {
+      "case": "development_gateway_CSFR_missing_invalid_other_session_denied",
+      "result": "passed"
+    },
+    {
+      "case": "development_foreign_null_wrong_port_Origin_and_preflight_denied_no_CORS_credentials",
+      "result": "passed"
+    },
+    {
+      "case": "development_native_Odoo_list_form_views_and_RPC_preserved_simple_form_write_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_gateway_CSFR_missing_invalid_other_session_denied",
+      "result": "passed"
+    },
+    {
+      "case": "production_foreign_null_wrong_port_Origin_and_preflight_denied_no_CORS_credentials",
+      "result": "passed"
+    },
+    {
+      "case": "production_native_Odoo_list_form_views_and_RPC_preserved_simple_form_write_denied",
+      "result": "passed"
+    },
+    {
+      "case": "valid_session_CSFR_create_delete_succeeds_only_for_owned_temporary_record",
+      "result": "passed"
+    },
+    {
+      "case": "minimal_Canvas_read_and_custom_page_capability_retained",
+      "result": "passed"
+    },
+    {
+      "case": "production_database_debug_test_and_excluded_external_RPC_endpoints_unavailable",
+      "result": "passed"
+    },
+    {
+      "case": "native_shell_and_regular_JS_CSS_assets_work_through_both_edges",
+      "result": "passed",
+      "assets": [
+        {
+          "mode": "development",
+          "path": "/web/assets/3520df04ce1af8d7e8690c1df95d6cec79e3f560cf4f886caf4515343357b2de/mp_shell.assets_host.min.css",
+          "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+          "bytes": 751605
+        },
+        {
+          "mode": "development",
+          "path": "/web/assets/8fd91d184e4ae2107b0a65ef7575bbaf4b53983713554b455f1efc675bac2b0e/mp_shell.assets_host.min.js",
+          "sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+          "bytes": 3091758
+        },
+        {
+          "mode": "production",
+          "path": "/web/assets/3520df04ce1af8d7e8690c1df95d6cec79e3f560cf4f886caf4515343357b2de/mp_shell.assets_host.min.css",
+          "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+          "bytes": 751605
+        },
+        {
+          "mode": "production",
+          "path": "/web/assets/8fd91d184e4ae2107b0a65ef7575bbaf4b53983713554b455f1efc675bac2b0e/mp_shell.assets_host.min.js",
+          "sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+          "bytes": 3091758
+        }
+      ]
+    },
+    {
+      "case": "production_fixture_old_logins_disabled_and_exact_business_schema_retained",
+      "result": "passed"
+    }
+  ]
+}

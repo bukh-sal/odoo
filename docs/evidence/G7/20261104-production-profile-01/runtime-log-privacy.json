@@ -1,0 +1,36 @@
+{
+  "result": "passed_scoped_retired_runtime_logs_known_secret_scan",
+  "known_values": 121,
+  "files": 6,
+  "findings": 0,
+  "records": {
+    "retire-logs-application.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "retire-logs-development-edge.stdout": {
+      "bytes": 1942,
+      "sha256": "21ad78319bb7e5dd45157fab62744dd123379cf8d07bddb5505fbf3e64f2eabe"
+    },
+    "retire-logs-production-edge.stdout": {
+      "bytes": 27932,
+      "sha256": "c168c9406fc0083ce1408b6df123437b91e00e800627b25f9a28f9b40f5e1050"
+    },
+    "retire-logs-application.stderr": {
+      "bytes": 10019,
+      "sha256": "ef18ba4d32a7368c04e3c479ddf5dab1c92f7ff57984d148efef4f8df5e7131b"
+    },
+    "retire-logs-development-edge.stderr": {
+      "bytes": 1603,
+      "sha256": "bdb5a35ac8cd558d45e3c5d0ca4156a7969aa33633eef6b072d3bd690fbda68f"
+    },
+    "retire-logs-production-edge.stderr": {
+      "bytes": 1603,
+      "sha256": "bdb5a35ac8cd558d45e3c5d0ca4156a7969aa33633eef6b072d3bd690fbda68f"
+    }
+  },
+  "limits": [
+    "Actual newly owned app/dev/prod-edge daemon logs only; private configuration/DB/filestore capture domains intentionally separate.",
+    "Not global SEC03/image/history/archive/browser/dependency qualification."
+  ]
+}
