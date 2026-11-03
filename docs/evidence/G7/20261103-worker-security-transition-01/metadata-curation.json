@@ -1,0 +1,24 @@
+{
+  "result": "passed_metadata_curation_and_unapproved_image_refusal",
+  "version": "0.1.3",
+  "digest": "sha256:586a51a13e814078cf2b1111b268600498be4b0e9029264236e4c04a291948b6",
+  "old_version": "0.1.2",
+  "old_digest": "sha256:64a774c6fad1ffed9f8c78f6f17e75c2a172e2fadda2bf101427413757694925",
+  "old_archive_retained": true,
+  "files": [
+    "inventory.json",
+    "notices/COPYRIGHT",
+    "notices/LICENSE",
+    "plugin.toml",
+    "provenance.json",
+    "schemas/stats-v1.json"
+  ],
+  "only_manifest_changes": [
+    "plugin.version",
+    "external_service.expected_image"
+  ],
+  "trust_generation": 13,
+  "unapproved_image_HTTP_status": 400,
+  "source_sha256": "7a7851cdaa903ec0b92e187d31ce007e3eea357d5c9fb668938392cb32fcffed",
+  "all_host_data_exact": true
+}

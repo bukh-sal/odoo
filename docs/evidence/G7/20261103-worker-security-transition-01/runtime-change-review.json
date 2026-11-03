@@ -1,0 +1,28 @@
+{
+  "result": "reviewed_explicit_local_operator_runtime_change",
+  "scope": {
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+    "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e"
+  },
+  "old_runtime": {
+    "project": "mp-disposable-document-stats-06",
+    "service": "document-stats",
+    "network": "mp-r0-r1g64bb76636070f_runtime",
+    "public_config_volume": "mp-disposable-document-stats-06-public-config",
+    "image": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+    "destination": "http://document-stats:8080"
+  },
+  "new_project": "mp-disposable-document-stats-07",
+  "new_public_volume": "mp-disposable-document-stats-07-public-config",
+  "new_image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "new_reference": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "new_endpoint_generation": 11,
+  "retained_key": "recovery19-key",
+  "public_config_only": true,
+  "protocol_engine_schemas_unchanged": true,
+  "reason": "Actual cryptography50.0.2/pip26.3 dependency remediation; seven isolated immutable-image tests passed",
+  "limits": [
+    "This runtime review is not endpoint publication or metadata approval; those remain separate exact-hash operations."
+  ]
+}

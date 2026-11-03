@@ -1,5 +1,5 @@
 "schema_version" = 1
-"plugin" = {"id" = "org.example.document_stats", "version" = "0.1.2", "name" = "Document Stats", "description" = "Deterministic statistics on an authorized text snapshot", "publisher" = "example", "license" = "LGPL-3.0-only"}
+"plugin" = {"id" = "org.example.document_stats", "version" = "0.1.3", "name" = "Document Stats", "description" = "Deterministic statistics on an authorized text snapshot", "publisher" = "example", "license" = "LGPL-3.0-only"}
 "compatibility" = {"platform" = ">=0.1.17,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
 "runtime" = {"kind" = "external_service"}
 "activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}
@@ -10,4 +10,4 @@
 "upgrade" = {"strategy" = "metadata_only", "requires_maintenance" = false, "destructive" = false, "transitions" = []}
 "dependencies" = {"plugins" = {}}
 "integrations" = {"optional" = {}}
-"external_service" = {"endpoint_config" = "document_stats_local", "expected_image" = "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0"}
+"external_service" = {"endpoint_config" = "document_stats_local", "expected_image" = "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f"}

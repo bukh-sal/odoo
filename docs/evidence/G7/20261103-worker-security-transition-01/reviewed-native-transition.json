@@ -1,0 +1,97 @@
+{
+  "result": "passed_actual_installed_exact_private_transition",
+  "snapshot": {
+    "profile": "r1-reference-stateless-dispatch-v1",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "release_digest": "sha256:2a5ed4d81e567f49387046be6a8661b0a822e795cfce88d6b2e461a5a0a59a31",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "control": {
+      "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+      "release_digest": "sha256:2a5ed4d81e567f49387046be6a8661b0a822e795cfce88d6b2e461a5a0a59a31",
+      "state": "enabled",
+      "generation": 138
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "23f397cd098143ffe9a11e62d8a48f7995c6284be1d636cdc2a8dd7bf2b81785"
+      },
+      "mp_event_consumer_state": {
+        "rows": 1,
+        "sha256": "20b5c232ced02ce62e3728583592703215feb13caa5aa8f4f1d07f22b025b34f"
+      },
+      "mp_event_consumption": {
+        "rows": 3,
+        "sha256": "ec04be3ea0534e612209c0f03241a47e0aa91c7e877e1e2952a8d9d3e880a556"
+      },
+      "mp_event_delivery": {
+        "rows": 251,
+        "sha256": "646ea1457ea0671c491eb08710742e32a57156a60a73846fde44ca41604fbaa6"
+      },
+      "mp_event_subscription": {
+        "rows": 35,
+        "sha256": "3a82ce61e2928b1b6b5a6750b8a5b40701884505fd880c32ad16ad6790e99808"
+      },
+      "mp_job": {
+        "rows": 37,
+        "sha256": "a76fab338cac81903ddbdaae9b07f02aadf2752539d8933384659edcc14faddf"
+      },
+      "mp_outbox": {
+        "rows": 55,
+        "sha256": "12f0b32fc29272ba72f84ccb93a903098b1d88770bd11637b0ca6d88b17b0bd3"
+      }
+    },
+    "job_states": {
+      "cancelled": 2,
+      "completed": 16,
+      "dead_letter": 19
+    },
+    "event_receipts": true,
+    "external_installations": 1,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "uncertain_jobs": 0,
+    "reference_policy_digest": "sha256:211e2d31081b3c0c8158bb4ccd315a9a7dc92b91c2fdf81697622b0af6f4a38c",
+    "state_digest": "sha256:99359eb82ec08d5e40b6a08e0262c35404f6410cc89f7dd715788e30f363d501"
+  },
+  "policy": {
+    "profile": "r1-reference-stateless-transition-v1",
+    "site_id": "772b79cc-2d67-4fd5-a5b2-feadfd8db1aa",
+    "runtime_image": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+    "publication_digest": "sha256:e54bee8898510dc67611a6872bc4ec62ef5cdbcf158a9030e3dd072872e44a02",
+    "registrations": [
+      {
+        "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e",
+        "plugin_id": "org.example.document_stats",
+        "version": "0.1.2",
+        "artifact_digest": "sha256:64a774c6fad1ffed9f8c78f6f17e75c2a172e2fadda2bf101427413757694925",
+        "manifest_digest": "sha256:2ed4a7c9dade120cc0764460b9aedf409032c16bee36fcd7f0cc51176b5b085d",
+        "state": "installed",
+        "features": [
+          {
+            "workspace_id": "ccd6ca50-67e7-4e68-87cb-7d516769c08d",
+            "feature_state": "suspended"
+          }
+        ]
+      }
+    ],
+    "worker_transition": {
+      "operation_id": "9ab8a8bf-2d96-44d4-bf85-746eddcc8911",
+      "plan_hash": "sha256:1df7946b4581be46a333a749a8f448500cc2a73cdcf8593fff01c1a90c45f15f",
+      "installation_id": "c3aa1ff5-09e9-57fb-8748-1b24d65c9d1e",
+      "base_version": "0.1.2",
+      "base_artifact_digest": "sha256:64a774c6fad1ffed9f8c78f6f17e75c2a172e2fadda2bf101427413757694925",
+      "base_manifest_digest": "sha256:2ed4a7c9dade120cc0764460b9aedf409032c16bee36fcd7f0cc51176b5b085d",
+      "base_image": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+      "target_version": "0.1.3",
+      "target_artifact_digest": "sha256:586a51a13e814078cf2b1111b268600498be4b0e9029264236e4c04a291948b6",
+      "target_manifest_digest": "sha256:b637132ed9490a15140ee3d6ebae6fbfa138309814975006167f223a63fb7f82",
+      "target_image": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "workspaces": [
+        "ccd6ca50-67e7-4e68-87cb-7d516769c08d"
+      ]
+    }
+  },
+  "all37terminal_jobs_other17tables_exact": true,
+  "no_mutation": true
+}

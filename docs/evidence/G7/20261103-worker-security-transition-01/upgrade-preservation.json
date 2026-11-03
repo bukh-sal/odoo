@@ -1,0 +1,13 @@
+{
+  "result": "passed_actual_reviewed_upgrade",
+  "operation_id": "9ab8a8bf-2d96-44d4-bf85-746eddcc8911",
+  "configuration_generation": 31,
+  "dispatch_generation": 141,
+  "tables": 17,
+  "old_jobs_exact_except_epochs": 37,
+  "changed_job_epochs": 34,
+  "original_notes": 30,
+  "files_retained": 50,
+  "native_schema_modules_exact": true,
+  "independent_worker_exact": true
+}

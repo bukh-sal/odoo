@@ -1,0 +1,30 @@
+{
+  "result": "passed_current_dependency_worker_original_actor_remote_job",
+  "job_id": "da856a78-0069-4f40-a16c-f311ebc0c386",
+  "attempts": 1,
+  "idempotent_gateway_replay": true,
+  "native_views": {
+    "A": [
+      "form",
+      "list"
+    ],
+    "B": [
+      "form",
+      "list"
+    ],
+    "C": [
+      "form",
+      "list"
+    ]
+  },
+  "statistics_match_saved_note_revision": true,
+  "old_jobs_preserved": 37,
+  "other16tables_worker_exact": true,
+  "actual_helper_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "independent_worker_image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "manager_healthy_enabled": true,
+  "limits": [
+    "Actual current host and updated worker dependency images interoperate through the ordinary original-actor runner.",
+    "No browser rendering, full proxy/security or recovery qualification."
+  ]
+}

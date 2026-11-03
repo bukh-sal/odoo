@@ -143,6 +143,33 @@ registration starts suspended and a separate enable rechecks current health.
 Full unregister/re-register, installed connector/remote/in-flight authority,
 external recovery/credential reconciliation and changed-worker-image transition
 remain required G6 qualifications. Browser rendering is separately pending.
+
+## Current dependency-maintenance qualification
+
+The earlier pending statements above describe their individual evidence stages.
+G6 is historically complete. G7 current dependency-worker qualification is recorded
+in `evidence/G7/20261103-worker-security-transition-01/qualification.json`.
+The actual worker87 image changes cryptography/pip dependencies, retains the
+reference protocol/engine/schemas, and is not the earlier label-only image release.
+
+All provider scopes were first suspended by an independently approved normal
+manager operation. Separate operator revocation, public-only configuration11,
+hardened runtime replacement and exact-reviewed endpoint11/publication13 preceded
+the normal metadata0.1.3 upgrade. Only its exact stored private transition could
+admit the temporary old-metadata/new-image mismatch. Separate normal enable
+restored the strict default reference profile. Artifact metadata neither started
+the external process nor supplied issuer material or independent approval.
+
+Seven actual signed HTTP checks, one ordinary original-user job, actual copied
+worker source/provenance/package inspection, native schema/module/file/data
+preservation and exact owned cleanup passed. Token/request scope mismatch returns
+401 at authentication; a separately signed foreign configured scope returns403.
+The obsolete worker06/public volume were retired after verified public-config
+archival; current/checkpoint images and independent issuer authority remain.
+
+This evidence requalifies SVC01/03/05 on the new dependency target. It does not
+claim new native post-commit dependency fault/restore, full fresh release, final
+security/provenance/license/network/secret qualification or hostile-code isolation.
 These bounded execution records do not establish those cases or a general
 external-service orchestrator. No runtime start/stop or remote data deletion is
 part of metadata planning or execution. See ADR0034 and the authoritative status.

@@ -1,0 +1,13 @@
+{
+  "result": "passed_actual_reviewed_suspend",
+  "operation_id": "1678b5dd-2a3f-4ffa-ae1d-71a4386ff261",
+  "configuration_generation": 30,
+  "dispatch_generation": 138,
+  "tables": 17,
+  "old_jobs_exact_except_epochs": 37,
+  "changed_job_epochs": 34,
+  "original_notes": 30,
+  "files_retained": 50,
+  "native_schema_modules_exact": true,
+  "independent_worker_exact": true
+}

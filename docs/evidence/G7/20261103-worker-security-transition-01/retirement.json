@@ -1,0 +1,107 @@
+{
+  "result": "retired_exact_owned_obsolete_worker_and_terminal_helpers",
+  "containers": [
+    {
+      "id": "6e786efe43b7bf5716fd82e276ba7fd95133492dc872b91d6a4ce2807ab8a93d",
+      "role": "obsolete_worker06",
+      "exit_code": 0
+    },
+    {
+      "id": "64d94dd80773a8c9ad8b4807bba4c7c8617b2026fbb808812a74ba76f854b9b8",
+      "role": "suspend_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "f1c9cc973ff6124980ebf32abb9f0d03d27249eb85202e5d21cb04bc4bc1b30f",
+      "role": "suspend_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "62a7622aacf8876963bda04a14c8eaaf7eef7b3c4ba496aac204cb9bc9ab5a13",
+      "role": "suspend_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "3770596aeebd45cd868717fa36d91dc28a2df887d2abf3e2f2c5bef64d32ea23",
+      "role": "suspend_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "7dcd20c41a1c37c6eed3ad513ceb8cd0d2f4ba88580803e5a767c5f69b73a2d3",
+      "role": "suspend_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "ec22be0f682ab5de5f6ed2e02d44876083994eabc4ecd63a15d441188bc213f9",
+      "role": "suspend_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "fc6120461790a51e94295a7b004531e97dc1edaf153744a70c4bf25ecdca053f",
+      "role": "upgrade_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "59d49cefec1fb7d3d82effe0c2f747e59e4dc79a77535420064ced3db6c7b52f",
+      "role": "upgrade_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "c503c471c7246ee80c2ff10d2468ecf5d9845c87c0053b3e93c3589249ebcb20",
+      "role": "upgrade_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "8666a9a384ff11e98adf9964e44478a42d64de205ab61fbd1f9cd5a33ad9bc52",
+      "role": "upgrade_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "cd4a875c45fa7807a3ac203349a92a93bce61f43e54f17926c841fcfc8f2bee4",
+      "role": "upgrade_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "65a7734ed50a407702c6ada102a5c71ef0b36aaf05a4f6b36e892da8844e7ed9",
+      "role": "upgrade_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "f0ff5cb3a23adfc7eac8aa7120c0e945b1ba88ed86ba57019f20e391d41f4198",
+      "role": "enable_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "010977adadb0cbbab179123da4850f710cadd798ffdf061b046b4c7b67613f5a",
+      "role": "enable_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "3f3e374364608a3d515a6a2223eea10c32a5f94bda43c19f10d7a64f781d198d",
+      "role": "enable_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "b01ff7dec37b7f746893a9d330aa0417a2d101aa7fc71e12c83917d4c11f8ff6",
+      "role": "enable_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "0ae2476b52fe57eaf345f53a94ad2096c21671ee032606f63a02892e6093ea60",
+      "role": "enable_terminal_helper",
+      "exit_code": 0
+    },
+    {
+      "id": "c7d99a34f045a3a684ff359238ebc6067a55bf84f80cbd1b5fb324984f2ffaee",
+      "role": "enable_terminal_helper",
+      "exit_code": 0
+    }
+  ],
+  "public_volume_removed": "mp-disposable-document-stats-06-public-config",
+  "public_config_archive_sha256": "a9947bbc9be9b20320433f2898b49d260cb4b7d24a9905c244de7f34396597f8",
+  "archive_verified_files": 2,
+  "images_removed": 0,
+  "networks_removed": 0,
+  "current_runtime_data_exact": true,
+  "old_current_images_checkpoints_issuer_preserved": true
+}

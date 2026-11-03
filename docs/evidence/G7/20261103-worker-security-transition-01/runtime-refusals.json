@@ -1,0 +1,20 @@
+{
+  "result": "passed_actual_wrong_image_and_default_profile_refusals",
+  "cases": [
+    {
+      "case": "old_image",
+      "result": "refused",
+      "reason": "Endpoint differs from operator runtime policy"
+    },
+    {
+      "case": "third_image",
+      "result": "refused",
+      "reason": "Endpoint differs from operator runtime policy"
+    },
+    {
+      "case": "default_old_metadata_new_image",
+      "result": "refused",
+      "reason": "Installed reference scope lacks its exact independently published endpoint/image"
+    }
+  ]
+}

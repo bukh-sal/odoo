@@ -1,0 +1,10 @@
+{
+  "result": "passed_precise_pre_revocation_runtime_and_initialized_volume_checks",
+  "previous_refusal": "Helper used current revoked endpoint10 against correctly unchanged worker config9; no old process stop occurred",
+  "old_config9_exact": true,
+  "old_process_image_mounts_network_start_restart_exact": true,
+  "initialized_public_volume11_exact": true,
+  "authority_still_revoked12": true,
+  "all17tables_exact": true,
+  "no_recreation_replay": true
+}

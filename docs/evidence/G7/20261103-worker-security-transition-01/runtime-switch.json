@@ -1,0 +1,13 @@
+{
+  "result": "passed_explicit_hardened_dependency_worker_switch",
+  "new_container": "ec8a77f570ff5679558021b149299b2adfd67be3594b11f3fa2c977b514da0ad",
+  "new_image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "old_container": "6e786efe43b7bf5716fd82e276ba7fd95133492dc872b91d6a4ce2807ab8a93d",
+  "old_stopped_retained": true,
+  "issuer_key_unchanged": true,
+  "public_config_generation": 11,
+  "authority_still_revoked12": true,
+  "all17tables_exact": true,
+  "observer_validated_actual_image_scope_key_network_user_mounts_resources": true,
+  "no_installer_runtime_control": true
+}
