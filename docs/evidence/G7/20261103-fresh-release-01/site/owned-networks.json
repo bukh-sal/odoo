@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "networks": {
+    "runtime": {
+      "name": "mp-r0-r1g7qualb513bc4f50d4_runtime",
+      "subnet": "10.233.240.48/28",
+      "internal": true
+    },
+    "edge": {
+      "name": "mp-r0-r1g7qualb513bc4f50d4_edge",
+      "subnet": "10.233.240.64/28",
+      "internal": false
+    }
+  },
+  "existing_Docker_and_host_routes_checked": true,
+  "global_configuration_changed": false,
+  "existing_networks_or_volumes_removed": false
+}

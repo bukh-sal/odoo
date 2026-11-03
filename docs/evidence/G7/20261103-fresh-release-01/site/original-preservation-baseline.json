@@ -1,0 +1,86 @@
+{
+  "result": "captured_read_only_original_baseline",
+  "tables": {
+    "mp_job": {
+      "count": 38,
+      "sha256": "9ef76286c39f56dba39fb377e17b189d84ed2f02f85b8650afb93d52679d0cec"
+    },
+    "mp_outbox": {
+      "count": 55,
+      "sha256": "cc97be398e05c293a5ec7b38013d42fa37c4718bdb81a85b765e024fb226dd67"
+    },
+    "mp_principal": {
+      "count": 4,
+      "sha256": "f8557b06e653273e1abb703625d321d9057b1866007538c5b197cfbfdb2e8847"
+    },
+    "mp_workspace": {
+      "count": 3,
+      "sha256": "4e2dcd988bb582bb46a492c4dfcbbb339eeeec519fe2bc6549fe05bef5fb5a7e"
+    },
+    "mp_membership": {
+      "count": 8,
+      "sha256": "5bee026751ca0686ecc3d9f69afcdbdf547665525493ee183adea45b474dd475"
+    },
+    "mp_example_note": {
+      "count": 30,
+      "sha256": "9b554bbb127007c3fa43dfdb90ffee4b093945d122df480a3039c5392a090acb"
+    },
+    "mp_plugin_grant": {
+      "count": 6,
+      "sha256": "182b2ac40a876de2d699b069bc75f07bbb06b4fc0504482e388c2f8556b5b9cd"
+    },
+    "mp_event_delivery": {
+      "count": 251,
+      "sha256": "7d4bb32b28231f86bd0c6c8362bf3e98ba2e7a18cd571aa9964d1ec02193bc5d"
+    },
+    "mp_service_binding": {
+      "count": 14,
+      "sha256": "330a0bbb5b360f5d44f0378e1852fed63e837ad65e68e5208a8c7a8a61f38669"
+    },
+    "mp_workspace_plugin": {
+      "count": 9,
+      "sha256": "072dff29d01a3067e24a89948daeca115a3277df5aec6c5cf7a757ec8a6f8840"
+    },
+    "mp_event_consumption": {
+      "count": 3,
+      "sha256": "692b9b787c24c052637230584f1c3e9df583ebb4fec6beaa406bcfb98f549992"
+    },
+    "mp_event_subscription": {
+      "count": 35,
+      "sha256": "a4953cc3b7f40bb3d8a0cd1ff1db3cf3bfa4db7d99244ce603b44dc2f279f17d"
+    },
+    "mp_service_credential": {
+      "count": 3,
+      "sha256": "2d3de140994082873750c1b431dbba977a0e5ab67c5bf6ff4972c7e27472a3a8"
+    },
+    "mp_plugin_installation": {
+      "count": 5,
+      "sha256": "42dbb31fadf307e333357f80b5a890e198a24184ad57f384d03e8314f0cde937"
+    },
+    "mp_event_consumer_state": {
+      "count": 1,
+      "sha256": "54ea00b7a124c202bdb086742421471c8da4430fd38edf3d19db60aecb372d55"
+    },
+    "mp_example_canvas_board": {
+      "count": 1,
+      "sha256": "696009708f5ff78459690a008be881d8d1bca1a95ac6fc2b1c3e53753ed9bb2e"
+    },
+    "mp_example_note_event_summary": {
+      "count": 3,
+      "sha256": "a0d39db12ba6ad793fedf5b77bf069527f7ced60dd9a0d9399dd39bf37fd219b"
+    }
+  },
+  "protected_configs": {
+    ".local/operator/targets/g5.json": "3441ea13f16aef9a26226059df88da2d8992fdb2db95f491e98e0513d41b72c9",
+    ".local/g5-manager-upgrade/operator/target.json": "8c586a0832f8d0147c3ab491a7897d34d0882d0bd97eecb4fc302df8aa98f8ad",
+    ".local/g5-lifecycle/operator/target.json": "93760234f31a8623f366c2ce8cf01781d2000c99189f76bbb75a8af01d4d36dd",
+    ".local/g5-dispatch/operator/target.json": "65a4cb4369c29fe2ae98e5b0ff16a533d903fdba51cc85d75216dcc7222eed21",
+    ".local/g5-httpsecurity/operator/target.json": "1850ecdeca7b8a9bfec82a4c02a373187dd894564a6bba245d684dc8df53d3cc",
+    ".local/g5-clean-recovery/operator/target.json": "304a56190673e26be2e9d5d6e7e905c310871336e0f613ab771bc5d7b5a1e19d",
+    ".local/g6/operator/target.json": "78423b87dcb4ce24240e57c2dc7f28d01d1f122e4e94d6e3114aaa6a5f87a3b6",
+    ".local/g6-jobs/operator/target.json": "ea1e9dd0c849e2baaaa6efb7c683edf7c81ac4015cd76093de5cc863620318f5",
+    ".local/g6-jobs-runner/operator/target.json": "0aa55353fbb29555b09564229de6ec2ac0a24727a7930a0c1762e7770fdeb647",
+    ".local/g6-events/operator/target.json": "8be642c95db331231f84cea1457cd6c2a23e36d8dc3d3f38253d822338d5291d",
+    ".local/g6-events/operator/worker-target.json": "a68d8e60f61300802d520bd9235709edb7ac5a94c659984fb108d702da0fbc19"
+  }
+}

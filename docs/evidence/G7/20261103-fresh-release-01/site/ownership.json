@@ -1,0 +1,27 @@
+{
+  "result": "owned_existing_adapter_compatible_fresh_realm_configured",
+  "project": "mp-r0-r1g7qualb513bc4f50d4",
+  "resources": {
+    "volumes": [
+      "mp-r0-r1g7qualb513bc4f50d4_appconfig",
+      "mp-r0-r1g7qualb513bc4f50d4_dbconfig",
+      "mp-r0-r1g7qualb513bc4f50d4_bootstrap",
+      "mp-r0-r1g7qualb513bc4f50d4_proxyconfig",
+      "mp-r0-r1g7qualb513bc4f50d4_filestore",
+      "mp-r0-r1g7qualb513bc4f50d4_pgdata"
+    ],
+    "networks": [
+      "mp-r0-r1g7qualb513bc4f50d4_runtime",
+      "mp-r0-r1g7qualb513bc4f50d4_edge"
+    ],
+    "initial_database": "mp_disposable_r0_r1_g6_g7qual_b513bc4f50d4"
+  },
+  "site_id": "57cb3482-b68e-42fc-9203-63093d0ed13d",
+  "deployment_id": "2ba7466d-a776-4e38-bdb1-eed84c2b1786",
+  "url": "http://g7qual.localhost:18090",
+  "adapter_syntax_checked_before_allocation": true,
+  "refused_project_archived_retired": true,
+  "no_original_data_or_store_copied": true,
+  "images_built": 0,
+  "purpose": "Actual dependency fault/recovery, then genuine target fresh initialization/release/runbooks in same project"
+}

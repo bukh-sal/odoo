@@ -1,0 +1,12 @@
+{
+  "result": "verified_real_new570_native_core21_commit_and_paused_oldmetadata",
+  "native_child": "f21cef2b21589d72a3ecf6ca6c329237cce46b0e1f756989232619ecc56004d4",
+  "actual_child_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "exit_code": 0,
+  "native_core_version": "19.0.0.1.21",
+  "metadata_configuration_generation": 2,
+  "native_schema_exact": true,
+  "baseline_tables_exact": true,
+  "old_files_retained": 38,
+  "original_approval_not_reused": true
+}

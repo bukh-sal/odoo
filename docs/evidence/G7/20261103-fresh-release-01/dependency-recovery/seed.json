@@ -1,0 +1,23 @@
+{
+  "result": "seeded_actual_native_reference_history",
+  "notes": {
+    "A": [
+      "274d3adb-db21-4e01-81b2-c237dfb6e2f5",
+      "bf098ab1-1827-4c12-89bc-85c4c354c072"
+    ],
+    "B": [
+      "af0e71e1-e87b-4129-8b1f-33519a14dc76",
+      "5c5bff26-f013-40bf-9452-5a5af0ba0efc"
+    ]
+  },
+  "board_id": "07cc23b8-72b4-4eef-b296-7a896468b8ee",
+  "board_revision": 1,
+  "attachment_id": 38,
+  "attachment_store_fname": "d6/d69e36673bdef9c689ab380792ff537ba8f92f01",
+  "attachment_sha256": "b93447597bea5515b8a46a37799fb0f4217d6b3c6269ef24cd128520dcf7aadf",
+  "job_id": "e16158a9-8423-43ce-91c5-b3248a6edd48",
+  "job_state": "completed",
+  "job_attempts": 1,
+  "original_actor": "alice",
+  "notes_total": 4
+}

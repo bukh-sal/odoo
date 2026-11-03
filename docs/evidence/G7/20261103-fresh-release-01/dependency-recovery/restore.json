@@ -1,0 +1,113 @@
+{
+  "failed_database_retained": true,
+  "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4",
+  "keep_traffic_closed": true,
+  "operation_status": {
+    "approval_expires_at": "2026-11-03T18:52:50Z",
+    "backup_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+    "history": [
+      {
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688"
+        },
+        "sequence": 15,
+        "utc": "2026-11-03T18:37:22Z"
+      },
+      {
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688"
+        },
+        "sequence": 16,
+        "utc": "2026-11-03T18:37:50Z"
+      },
+      {
+        "code": "reserved",
+        "details": {
+          "executor_pid": 25020,
+          "lock_owner_digest": "sha256:b63bad4cc1febf3432556e91776b796b1dc3ee87daf0a365c7e0bb2468d46fa8"
+        },
+        "sequence": 17,
+        "utc": "2026-11-03T18:38:17Z"
+      },
+      {
+        "code": "staged",
+        "details": {},
+        "sequence": 18,
+        "utc": "2026-11-03T18:38:34Z"
+      },
+      {
+        "code": "maintenance",
+        "details": {},
+        "sequence": 19,
+        "utc": "2026-11-03T18:38:38Z"
+      },
+      {
+        "code": "drained",
+        "details": {},
+        "sequence": 20,
+        "utc": "2026-11-03T18:38:44Z"
+      },
+      {
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4"
+        },
+        "sequence": 21,
+        "utc": "2026-11-03T18:38:56Z"
+      },
+      {
+        "code": "mutation_started",
+        "details": {},
+        "sequence": 22,
+        "utc": "2026-11-03T18:39:05Z"
+      },
+      {
+        "code": "recovery_required",
+        "details": {
+          "code": "MUTATION_FAILED"
+        },
+        "sequence": 23,
+        "utc": "2026-11-03T18:39:09Z"
+      },
+      {
+        "code": "restore_authorized",
+        "details": {
+          "decision_hash": "sha256:a78f68f3c6ea1b15c6fe24cfcefdf892447718f525ad7065a10c9b34f4697e6e",
+          "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4"
+        },
+        "sequence": 24,
+        "utc": "2026-11-03T18:42:58Z"
+      },
+      {
+        "code": "restore_target_created",
+        "details": {
+          "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4"
+        },
+        "sequence": 25,
+        "utc": "2026-11-03T18:43:04Z"
+      },
+      {
+        "code": "restore_verified",
+        "details": {
+          "decision_hash": "sha256:a78f68f3c6ea1b15c6fe24cfcefdf892447718f525ad7065a10c9b34f4697e6e",
+          "failed_database_retained": true,
+          "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4",
+          "session_secret_rotated": true,
+          "technical_credentials_revoked": true,
+          "traffic_resumed": false
+        },
+        "sequence": 26,
+        "utc": "2026-11-03T18:43:44Z"
+      }
+    ],
+    "mutation_started": true,
+    "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+    "phase": "restore_verified",
+    "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688",
+    "state": "revoked",
+    "traffic_resumed": false
+  },
+  "state": "restored_verified"
+}

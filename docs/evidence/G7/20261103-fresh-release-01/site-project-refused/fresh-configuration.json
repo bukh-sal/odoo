@@ -1,0 +1,12 @@
+{
+  "project": "mp-g7-qual-291893200389",
+  "database": "mp_disposable_r0_r1_g6_g7qual_291893200389",
+  "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "port": 18090,
+  "site_id": "d539912d-8025-4976-82e3-1b4adc58307d",
+  "deployment_id": "6b9b15f4-e8f1-45db-ab9f-734375fed466",
+  "empty_owned_volumes": true,
+  "no_existing_DB_or_filestore_copied": true,
+  "independent_new_control_store": true,
+  "inventory_digest": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c"
+}

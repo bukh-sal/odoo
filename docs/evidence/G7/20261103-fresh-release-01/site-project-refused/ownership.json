@@ -1,0 +1,26 @@
+{
+  "result": "owned_fresh_qualification_realm_configured",
+  "project": "mp-g7-qual-291893200389",
+  "site_id": "d539912d-8025-4976-82e3-1b4adc58307d",
+  "deployment_id": "6b9b15f4-e8f1-45db-ab9f-734375fed466",
+  "resources": {
+    "volumes": [
+      "mp-g7-qual-291893200389_appconfig",
+      "mp-g7-qual-291893200389_dbconfig",
+      "mp-g7-qual-291893200389_bootstrap",
+      "mp-g7-qual-291893200389_proxyconfig",
+      "mp-g7-qual-291893200389_filestore",
+      "mp-g7-qual-291893200389_pgdata"
+    ],
+    "networks": [
+      "mp-g7-qual-291893200389_runtime",
+      "mp-g7-qual-291893200389_edge"
+    ],
+    "initial_database": "mp_disposable_r0_r1_g6_g7qual_291893200389"
+  },
+  "port": 18090,
+  "url": "http://g7qual.localhost:18090",
+  "no_existing_user_data": true,
+  "purpose": "Actual dependency fault/recovery, then full fresh target initialization/release qualification/runbooks in this same project",
+  "previous_attempt": "Wrong earlier core20 build metadata refused in curator before state/secrets/Docker mutations; scaffold retained privately, exact31 baseline now selected"
+}

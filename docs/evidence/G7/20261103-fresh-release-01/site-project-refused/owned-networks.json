@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "networks": {
+    "runtime": {
+      "name": "mp-g7-qual-291893200389_runtime",
+      "subnet": "10.233.240.48/28",
+      "internal": true
+    },
+    "edge": {
+      "name": "mp-g7-qual-291893200389_edge",
+      "subnet": "10.233.240.64/28",
+      "internal": false
+    }
+  },
+  "existing_Docker_and_host_routes_checked": true,
+  "global_configuration_changed": false,
+  "existing_networks_or_volumes_removed": false
+}

@@ -1,0 +1,15 @@
+{
+  "result": "observed_existing_real_dependency_baseline_and_target",
+  "baseline_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "baseline_inventory": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "target_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "target_inventory": "sha256:7993431065b3edefd8dc5e322c7952e241de1c500aa0aed8665fd76d100fe856",
+  "baseline_platform": "0.1.20",
+  "target_platform": "0.1.21",
+  "python_metadata_changed": true,
+  "baseline_python_lock": "sha256:3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+  "target_python_lock": "sha256:2c9dedf1ecc29cd321b95a44372ca2afba5023bd9d2dfb26839c9a415602bc36",
+  "copied_curated_archives": 19,
+  "independent_new_control": true,
+  "no_database_filestore_operator_store_copied": true
+}

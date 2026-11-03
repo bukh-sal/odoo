@@ -1,0 +1,7 @@
+{
+  "base_image_id": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory_digest": "sha256:7993431065b3edefd8dc5e322c7952e241de1c500aa0aed8665fd76d100fe856",
+  "runtime_digest": "sha256:761e9c00f8d65ae2033ac794b34fdfaa37b2d113d748a04e08c98353a620468d",
+  "stage_digest": "sha256:d3c593460923e759f6715e4f786048d0854e5ef41368691928bc5ed1e23f433e",
+  "target_image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886"
+}

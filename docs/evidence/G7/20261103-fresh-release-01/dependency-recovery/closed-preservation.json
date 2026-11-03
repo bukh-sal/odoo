@@ -1,0 +1,30 @@
+{
+  "result": "passed_actual_dependency_fault_fresh_restore_while_closed",
+  "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+  "configuration_generation": 4,
+  "current_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "inventory_digest": "sha256:b5784a58c4752b717507f338a7d17fd198eeffe60f68ee8a4445cf1bb450756c",
+  "python_lock_digest": "sha256:3d35f647b9b900a3b2cbda400543a9f5e0b48fbc20163a618f43e559b879501f",
+  "failed_database_retained": "mp_disposable_r0_r1_g6_g7qual_b513bc4f50d4",
+  "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4",
+  "native_modules_schema_exact": true,
+  "baseline_tables_exact_except_current_BobB_revocation_policy_job_epochs": true,
+  "policy_changes": {
+    "1": [
+      5,
+      6
+    ],
+    "2": [
+      5,
+      6
+    ]
+  },
+  "original4Notes_1Canvas_1completed_job_exact": true,
+  "current_human_authority_private_native_auth_exact": true,
+  "old_approval_revoked": true,
+  "filestore_files_retained": 38,
+  "standalone_attachment_sha256": "b93447597bea5515b8a46a37799fb0f4217d6b3c6269ef24cd128520dcf7aadf",
+  "dispatch_paused": true,
+  "ingress_closed": true,
+  "separate_resume_required": true
+}

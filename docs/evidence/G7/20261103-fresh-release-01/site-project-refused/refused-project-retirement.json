@@ -1,0 +1,22 @@
+{
+  "result": "archived_and_retired_exact_core_only_project_after_name_guard_refusal",
+  "project": "mp-g7-qual-291893200389",
+  "counts": {
+    "jobs": 0,
+    "outbox": 0,
+    "principals": 4,
+    "workspaces": 2,
+    "installations": 0
+  },
+  "containers": 4,
+  "volumes": 6,
+  "networks": 2,
+  "images_removed": 0,
+  "database_dump_sha256": "8f294f6f8714e6a65384b62777b9849fb4f86b4033ee4a6855ec84af9062f84c",
+  "config_filestore_tar_sha256": "a2bfcef6f0a2aea0bccafc0b6670b59433a2026958f69b932877eece9dd7e20d",
+  "dump_toc_checked": true,
+  "archive_checked": true,
+  "original17table_hashes_configs_exact": true,
+  "reason": "mp-g7-qual naming is outside existing mp-r0-r1[a-z0-9]+ adapter profile; no guard weakening or product image change",
+  "next": "Replacement project name is validated with actual DockerObserver before files/Docker allocation; use existing qualified fixture path."
+}

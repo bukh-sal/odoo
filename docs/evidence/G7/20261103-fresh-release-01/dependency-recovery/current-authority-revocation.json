@@ -1,0 +1,11 @@
+{
+  "result": "committed_current_failed_source_human_revocation_before_restore_review",
+  "actor": "bob",
+  "workspace": "B",
+  "state": "revoked",
+  "before_policy_generation": 5,
+  "after_policy_generation": 6,
+  "unrelated_membership_fields_exact": true,
+  "traffic_remains_closed": true,
+  "scope": "Only owned qualification realm; original working deployment untouched"
+}

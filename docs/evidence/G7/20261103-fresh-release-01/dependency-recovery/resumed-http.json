@@ -1,0 +1,199 @@
+{
+  "result": "passed_actual_dependency_fault_reviewed_fresh_restore_separate_resume",
+  "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+  "configuration_generation": 4,
+  "native_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4",
+  "native_Odoo_views": {
+    "A": [
+      "form",
+      "list"
+    ],
+    "B": [
+      "form",
+      "list"
+    ]
+  },
+  "original_Alice_note_revision": 2,
+  "foreign_workspace404": true,
+  "current_BobB_revocation_denied_after_restore": true,
+  "attachment": {
+    "attachment_read": true,
+    "sha256": "b93447597bea5515b8a46a37799fb0f4217d6b3c6269ef24cd128520dcf7aadf",
+    "native_operator_only": true
+  },
+  "no_new_business_or_job_effect": true,
+  "original17table_hashes_and_configs_exact": true,
+  "dispatch": {
+    "profile": "r1-native-dispatch-v1",
+    "site_id": "57cb3482-b68e-42fc-9203-63093d0ed13d",
+    "release_digest": "sha256:f53823a8a4fa0769c8b53c47ff9dd82c3b6906072ad00cada4bcfa0b5a145b8f",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "control": {
+      "site_id": "57cb3482-b68e-42fc-9203-63093d0ed13d",
+      "release_digest": "sha256:f53823a8a4fa0769c8b53c47ff9dd82c3b6906072ad00cada4bcfa0b5a145b8f",
+      "state": "enabled",
+      "generation": 7
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "5b2f2735c26ea84c8e69f59bf04f6d926da367d4899b7c69f8c14bdef7dbafe7"
+      },
+      "mp_event_consumer_state": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_consumption": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_delivery": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_subscription": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_job": {
+        "rows": 1,
+        "sha256": "40af4b89182e6ff443cc5731505967a2be8d21060b8d5ffe1c9175967fe629be"
+      },
+      "mp_outbox": {
+        "rows": 5,
+        "sha256": "44cff8116dac2e9c44c9f4fc863d5797cb46c12550bda48620b08f5505c5d7a2"
+      }
+    },
+    "job_states": {
+      "completed": 1
+    },
+    "event_receipts": true,
+    "external_installations": 0,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "uncertain_jobs": 0,
+    "state_digest": "sha256:b07461771587cc792788baf8d3ff7398cf9648adbf5944fefbfcf6bb0f57fca1"
+  },
+  "operation_status": {
+    "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+    "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688",
+    "state": "revoked",
+    "phase": "restore_traffic_resumed",
+    "mutation_started": true,
+    "traffic_resumed": true,
+    "backup_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+    "approval_expires_at": "2026-11-03T18:52:50Z",
+    "history": [
+      {
+        "sequence": 15,
+        "utc": "2026-11-03T18:37:22Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688"
+        }
+      },
+      {
+        "sequence": 16,
+        "utc": "2026-11-03T18:37:50Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688"
+        }
+      },
+      {
+        "sequence": 17,
+        "utc": "2026-11-03T18:38:17Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 25020,
+          "lock_owner_digest": "sha256:b63bad4cc1febf3432556e91776b796b1dc3ee87daf0a365c7e0bb2468d46fa8"
+        }
+      },
+      {
+        "sequence": 18,
+        "utc": "2026-11-03T18:38:34Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 19,
+        "utc": "2026-11-03T18:38:38Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 20,
+        "utc": "2026-11-03T18:38:44Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 21,
+        "utc": "2026-11-03T18:38:56Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4"
+        }
+      },
+      {
+        "sequence": 22,
+        "utc": "2026-11-03T18:39:05Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 23,
+        "utc": "2026-11-03T18:39:09Z",
+        "code": "recovery_required",
+        "details": {
+          "code": "MUTATION_FAILED"
+        }
+      },
+      {
+        "sequence": 24,
+        "utc": "2026-11-03T18:42:58Z",
+        "code": "restore_authorized",
+        "details": {
+          "decision_hash": "sha256:a78f68f3c6ea1b15c6fe24cfcefdf892447718f525ad7065a10c9b34f4697e6e",
+          "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4"
+        }
+      },
+      {
+        "sequence": 25,
+        "utc": "2026-11-03T18:43:04Z",
+        "code": "restore_target_created",
+        "details": {
+          "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4"
+        }
+      },
+      {
+        "sequence": 26,
+        "utc": "2026-11-03T18:43:44Z",
+        "code": "restore_verified",
+        "details": {
+          "decision_hash": "sha256:a78f68f3c6ea1b15c6fe24cfcefdf892447718f525ad7065a10c9b34f4697e6e",
+          "failed_database_retained": true,
+          "fresh_database": "mp_disposable_r0_r1_restore_f6511684b8de4f3a9d35ba63ab3d05f4",
+          "session_secret_rotated": true,
+          "technical_credentials_revoked": true,
+          "traffic_resumed": false
+        }
+      },
+      {
+        "sequence": 27,
+        "utc": "2026-11-03T18:45:08Z",
+        "code": "restore_traffic_resumed",
+        "details": {
+          "decision_hash": "sha256:42fe43bb0bae69de9a8f41b8e83c2e0d733aa452ecbe11a3815b657125b3da6d"
+        }
+      }
+    ]
+  },
+  "browser_rendering": false,
+  "limits": [
+    "Recovered baseline remains old31/core20 intentionally. Target570 full fresh release and normal final qualification remain.",
+    "Standalone operator-owned native attachment only; workspace attachments remain unavailable.",
+    "No populated pending/in-flight or remote effect recovery claim from this terminal-native-job fixture."
+  ]
+}

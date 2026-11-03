@@ -1,0 +1,7 @@
+{
+  "result": "independent_exact_current_recovery_review_prepared",
+  "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+  "decision_hash": "sha256:42fe43bb0bae69de9a8f41b8e83c2e0d733aa452ecbe11a3815b657125b3da6d",
+  "action": "resume_verified_restore",
+  "keep_traffic_closed": true
+}

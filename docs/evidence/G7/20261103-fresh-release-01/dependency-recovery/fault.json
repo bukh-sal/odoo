@@ -1,0 +1,137 @@
+{
+  "result": "actual_dependency_changing_native_postcommit_fault",
+  "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+  "status": {
+    "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+    "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688",
+    "state": "recovery_required",
+    "phase": "mutation_started",
+    "mutation_started": true,
+    "traffic_resumed": false,
+    "backup_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+    "approval_expires_at": "2026-11-03T18:52:50Z",
+    "history": [
+      {
+        "sequence": 15,
+        "utc": "2026-11-03T18:37:22Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688"
+        }
+      },
+      {
+        "sequence": 16,
+        "utc": "2026-11-03T18:37:50Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688"
+        }
+      },
+      {
+        "sequence": 17,
+        "utc": "2026-11-03T18:38:17Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 25020,
+          "lock_owner_digest": "sha256:b63bad4cc1febf3432556e91776b796b1dc3ee87daf0a365c7e0bb2468d46fa8"
+        }
+      },
+      {
+        "sequence": 18,
+        "utc": "2026-11-03T18:38:34Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 19,
+        "utc": "2026-11-03T18:38:38Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 20,
+        "utc": "2026-11-03T18:38:44Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 21,
+        "utc": "2026-11-03T18:38:56Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4"
+        }
+      },
+      {
+        "sequence": 22,
+        "utc": "2026-11-03T18:39:05Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 23,
+        "utc": "2026-11-03T18:39:09Z",
+        "code": "recovery_required",
+        "details": {
+          "code": "MUTATION_FAILED"
+        }
+      }
+    ]
+  },
+  "checkpoint_dispatch_profile": {
+    "active_credentials": 0,
+    "api_keys": 0,
+    "control": {
+      "generation": 4,
+      "release_digest": "sha256:4bb27733b86c67e04461909217766d32927c4dab31830caa0d980b7a57feb477",
+      "site_id": "57cb3482-b68e-42fc-9203-63093d0ed13d",
+      "state": "paused"
+    },
+    "event_receipts": true,
+    "external_installations": 0,
+    "job_states": {
+      "completed": 1
+    },
+    "profile": "r1-native-dispatch-v1",
+    "release_digest": "sha256:4bb27733b86c67e04461909217766d32927c4dab31830caa0d980b7a57feb477",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "site_id": "57cb3482-b68e-42fc-9203-63093d0ed13d",
+    "state_digest": "sha256:49630d1f02dc2ad40eef12ee6b47a62c2d5acc78be121f0018b40251230da652",
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "20ed423dc734c776369f804d2bcfc560e1980521e17787c68d0dc4d8ac91dde1"
+      },
+      "mp_event_consumer_state": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_consumption": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_delivery": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_subscription": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_job": {
+        "rows": 1,
+        "sha256": "b346f429a0bc9717ec9e47b645d4ed03a5ea187e3bba697ff90c9b2c44bc7ded"
+      },
+      "mp_outbox": {
+        "rows": 5,
+        "sha256": "44cff8116dac2e9c44c9f4fc863d5797cb46c12550bda48620b08f5505c5d7a2"
+      }
+    },
+    "uncertain_jobs": 0
+  },
+  "native_child_exit0": true,
+  "baseline_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "target_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "traffic_closed": true,
+  "original_working_deployment_untouched": true
+}

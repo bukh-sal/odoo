@@ -1,0 +1,31 @@
+{
+  "result": "actual_populated_dependency_recovery_baseline_captured",
+  "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+  "plan_hash": "sha256:cd1520afea438aee37aa08ae380adb3533954da2b63af925301fbc4a5b9b7688",
+  "tables": {
+    "mp_example_note": 4,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 0,
+    "mp_plugin_installation": 3,
+    "mp_workspace_plugin": 6,
+    "mp_service_binding": 10,
+    "mp_plugin_grant": 4,
+    "mp_service_credential": 0,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_principal": 4,
+    "mp_outbox": 5,
+    "mp_event_subscription": 0,
+    "mp_event_delivery": 0,
+    "mp_event_consumption": 0,
+    "mp_event_consumer_state": 0,
+    "mp_job": 1
+  },
+  "native_schema_sha256": "5bc1dad9d07f7be749423f640995298891357679679e1a8d5d80c4a800a31f72",
+  "filestore_files": 38,
+  "baseline_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "target_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "original_actor_terminal_job": true,
+  "standalone_native_filestore_sentinel": true,
+  "workspace_attachments_remain_unsupported": true
+}
