@@ -1,0 +1,72 @@
+{
+  "result": "passed_current_SEC08_application_operator_separation",
+  "acceptance": [
+    "SEC-08"
+  ],
+  "spec_sections": [
+    "7.3",
+    "10.6",
+    "11.5",
+    "15",
+    "20.3"
+  ],
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "configuration_generation": 5,
+  "records_sha256": {
+    "application-identities": "70fcd3fc993455aca1676e81504231a9ea0071b78a79f18ba99431ee10d1dd12",
+    "foreign-UID-denial": "4110fd34f665332f7480dad547b5900b3d44388d301ff7e7c6bcf72e0ea0f2c4",
+    "windows-store-ACLs": "265ed9973eff4dd006ba0be7af40e41aca595df4d30cf0ea0dc61087ccb56f77",
+    "windows-catalog-parent-integrity": "b53e1371293422203d86186d182f0cf89e140e8dc4bf5efa35776e0c268eba43",
+    "redacted-status": "a3b7e589b1f5de8d35662667aa953cf2d4e0cc38ab177bd5d6889c8f2ec3bc0f",
+    "source-Windows": "8cc566bfd221b169bcac001e561dc962c8b8eaed07e1a271c02b30ae24cecf1e",
+    "source-Linux": "30a5b2434cb482ec8334bca6fbb02782e856b28a36f3a9ad96f846e04ffd0283"
+  },
+  "checks": {
+    "actual_running_application_identities": 2,
+    "namespace_read_write_denials": 32,
+    "foreign_UID_kernel_read_write_denials": 8,
+    "foreign_UID_forged_approval_denied": true,
+    "private_fixture_bytes_exact": true,
+    "Windows_ACL_records": 3494,
+    "catalog_parent_integrity_paths": 28,
+    "Windows_source_tests": 9,
+    "Linux_source_tests": 9,
+    "redacted_positive_requester": 200,
+    "ordinary_actor_denials": 2,
+    "anonymous_status": 401,
+    "current_core22_known_CLI_journal_ID_status": 404
+  },
+  "all17tables_and_independent_worker_exact": true,
+  "cleanup": {
+    "containers": [
+      {
+        "id": "55085df556a46fe37c71393ab54ef4d7c624adcaad4a5ea6911d08fd382663f3",
+        "name": "/mp-r0-r1g7qualb513bc4f50d4-operator-denial-78af93f074-initialize",
+        "removed": true
+      },
+      {
+        "id": "6dd20f6bd22171a81630c0fd6690eae138230eec52588e5b27d24e80d8abe903",
+        "name": "/mp-r0-r1g7qualb513bc4f50d4-operator-denial-78af93f074-application",
+        "removed": true
+      },
+      {
+        "id": "7a327b42ffaab3c9962b6aa8d874e9667a67efe3f2cf9c4a4f1251fe4c598426",
+        "name": "/mp-r0-r1g7qualb513bc4f50d4-operator-denial-78af93f074-verify",
+        "removed": true
+      },
+      {
+        "id": "c5cf49f400ea2b4eedb5fa3b2f1e399c94486a2948672b8542813191b1e3b1ec",
+        "name": "/mp-r0-r1g7qualb513bc4f50d4-operator-source-linux-43efb687",
+        "removed": true
+      }
+    ],
+    "synthetic_volume": "mp-r0-r1g7qualb513bc4f50d4_operator_denial_78af93f074",
+    "volume_removed": true,
+    "images_networks_removed": 0
+  },
+  "limits": [
+    "Positive application-request mirror is observed on preserved original core21; exact handler/channel/validator source hashes match current core22. Current core22 CLI ID denial is directly observed.",
+    "Actual namespace isolation, Windows ACL metadata and separate synthetic POSIX foreign-UID denial do not claim Windows impersonation or general trusted-native sandboxing.",
+    "Application DB config/data are intentionally accessible to application identity; privileged host approvals/checkpoints/issuer/TLS stores are separate. No real privileged store or credential mounted into the synthetic fixture."
+  ]
+}

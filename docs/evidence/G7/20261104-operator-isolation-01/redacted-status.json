@@ -1,0 +1,54 @@
+{
+  "result": "passed_redacted_existing_status_and_current_core22_CLI_ID_denial",
+  "positive_profile": {
+    "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+    "configuration_generation": 31,
+    "operation_id": "014e3040-7261-4951-97b6-a8824a03d905",
+    "requester_status": 200,
+    "source": "operator_journal_mirror",
+    "stale": true,
+    "fields": [
+      "approval_expires_at",
+      "control_authority",
+      "dimensions",
+      "error_code",
+      "history",
+      "kind",
+      "observed_at",
+      "operation_id",
+      "phase",
+      "plan_hash",
+      "requested_by",
+      "schema_version",
+      "source",
+      "stale",
+      "state"
+    ]
+  },
+  "denials": [
+    {
+      "actor": "alice",
+      "status": 403
+    },
+    {
+      "actor": "bob",
+      "status": 403
+    }
+  ],
+  "current_core22_CLI_journal_ID": {
+    "operation_id": "bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4",
+    "status": 404,
+    "error": "NOT_FOUND",
+    "no_application_request_mirror": true
+  },
+  "exact_current_handler_and_channel_hashes": {
+    "addons/mp_core/operations.py": "007ebab44beb277830bd9741b97b24874feb322ec78a7bb26b1ad521021a0bf8",
+    "packages/platform_sdk/modular_platform/app_channel.py": "d2356d6e1aae103ff98912d4ebfaad189cf14100234bd68e0a846d3d65c8292b",
+    "packages/platform_sdk/modular_platform/contracts.py": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50"
+  },
+  "privileged_state_written": false,
+  "limits": [
+    "Positive existing application request is on preserved original core21; handler/channel/validator source bytes match current core22 exactly. Current core22 actual known CLI journal ID remains inaccessible via application status.",
+    "Read-only status/denials only; no new application request, mirror refresh, approval, role or execution change. Necessary application DB configuration is distinct from privileged stores."
+  ]
+}
