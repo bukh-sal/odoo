@@ -1,0 +1,140 @@
+{
+  "result": "selected_vendor_findings_resolved_or_explicit_residual_candidate_ingress_pending",
+  "utc": "2026-11-03T21:24:56.232577+00:00",
+  "source_report_sha256": "fce65f012466a9d3a4bd3acc5a56af798fd487332dbe65ad97a1788ce36df273",
+  "openssl_system_backports": [
+    {
+      "role": "application",
+      "cve": "CVE-2026-35189",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "application",
+      "cve": "CVE-2026-54872",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "application",
+      "cve": "CVE-2026-75805",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "application",
+      "cve": "CVE-2026-75806",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "application",
+      "cve": "CVE-2026-77696",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "application",
+      "cve": "CVE-2026-84782",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "application",
+      "cve": "CVE-2022-3996",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.7-2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "worker",
+      "cve": "CVE-2026-35189",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "worker",
+      "cve": "CVE-2026-54872",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "worker",
+      "cve": "CVE-2026-75805",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "worker",
+      "cve": "CVE-2026-75806",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "worker",
+      "cve": "CVE-2026-77696",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "worker",
+      "cve": "CVE-2026-84782",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.22-1~deb12u2",
+      "result": "vendor_backport_fixed"
+    },
+    {
+      "role": "worker",
+      "cve": "CVE-2022-3996",
+      "source_version": "3.0.22-1~deb12u2",
+      "vendor_fixed_version": "3.0.7-2",
+      "result": "vendor_backport_fixed"
+    }
+  ],
+  "bundled_openssl4_0_3_and_nginx3_5_9": "No matching current primary vendor affected ranges in retained branch pages",
+  "postgres_server16_15_and_application_libpq15_19": "63applicable vendor fixed-version comparisons; none newer than installed",
+  "nginx_mainline_only_cve": {
+    "cve": "CVE-2026-42530",
+    "installed": "1.30.6",
+    "vulnerable_from": "1.31.0",
+    "vulnerable_through": "1.31.1",
+    "result": "outside_vendor_affected_range",
+    "previous_report": "Fixed-version-only heuristic could not establish this. Exact affected range read from retained primary source."
+  },
+  "nginx_error_log_residual": {
+    "cve": "CVE-2009-4487",
+    "vendor_severity": "none",
+    "vendor_fixed_release": null,
+    "disposition": "known_upstream_diagnostic_log_limitation",
+    "reference_profile": "error_log crit; access log whitelists method/URI/status/size and omits bodies, cookies and query strings. Untrusted text is not safe to render as HTML or execute as terminal controls.",
+    "limits": "Reduced logging is not a proof that arbitrary diagnostic content is sanitized. Retain as explicit release limitation; no patch claimed."
+  },
+  "proxy_candidate": {
+    "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+    "old_published_Alpine_fixes": 3,
+    "fixed_origins": [
+      "brotli",
+      "curl",
+      "expat"
+    ],
+    "actual_four_binary_package_changes": true,
+    "other67packages_exact": true,
+    "remaining": "actual ingress/config/HTTP/assets/WebSocket/security/layers/notices and release selection"
+  },
+  "limits": [
+    "This closes the listed version/backport ambiguities only. Not final security qualification.",
+    "Original and fresh edges remain on old pinned official image until candidate ingress qualification.",
+    "Debian open/undetermined and PG OS package review, broader vendored/provenance/network/history/secrets/license/reprobuild and other G7 work remain."
+  ]
+}

@@ -1,0 +1,7268 @@
+{
+  "result": "primary_version_comparison_completed_findings_require_review",
+  "utc": "2026-11-03T21:20:13.858044+00:00",
+  "alpine": {
+    "installed_origins": 59,
+    "vendor_secfix_comparisons": 310,
+    "published_fixes_newer_than_installed": [
+      {
+        "origin": "brotli",
+        "installed": "1.2.0-r1",
+        "fixed": "1.2.1-r0",
+        "advisories": [
+          "CVE-2026-111497"
+        ],
+        "repository": "main",
+        "installed_before_fix": true
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.23.0-r0",
+        "advisories": [
+          "CVE-2026-86409",
+          "CVE-2026-86410",
+          "CVE-2026-86411",
+          "CVE-2026-86412",
+          "CVE-2026-86413",
+          "CVE-2026-86414",
+          "CVE-2026-86415",
+          "CVE-2026-87861",
+          "CVE-2026-87862",
+          "CVE-2026-87863",
+          "CVE-2026-87864",
+          "CVE-2026-87865",
+          "CVE-2026-87866",
+          "CVE-2026-92386",
+          "CVE-2026-92387",
+          "CVE-2026-92388",
+          "CVE-2026-92389",
+          "CVE-2026-92390",
+          "CVE-2026-92391",
+          "CVE-2026-92392",
+          "CVE-2026-94265",
+          "CVE-2026-94266",
+          "CVE-2026-107928",
+          "CVE-2026-107929"
+        ],
+        "repository": "main",
+        "installed_before_fix": true
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.10.0-r0",
+        "advisories": [
+          "CVE-2026-113351",
+          "CVE-2026-115506",
+          "CVE-2026-117610",
+          "CVE-2026-118370"
+        ],
+        "repository": "main",
+        "installed_before_fix": true
+      }
+    ],
+    "rows": [
+      {
+        "origin": "aom",
+        "installed": "3.14.1-r0",
+        "fixed": "3.1.1-r0",
+        "advisories": [
+          "CVE-2021-30473",
+          "CVE-2021-30474",
+          "CVE-2021-30475"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "aom",
+        "installed": "3.14.1-r0",
+        "fixed": "3.9.1-r0",
+        "advisories": [
+          "CVE-2024-5171"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "apk-tools",
+        "installed": "3.0.8-r0",
+        "fixed": "2.12.5-r0",
+        "advisories": [
+          "CVE-2021-30139"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "apk-tools",
+        "installed": "3.0.8-r0",
+        "fixed": "2.12.6-r0",
+        "advisories": [
+          "CVE-2021-36159"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "brotli",
+        "installed": "1.2.0-r1",
+        "fixed": "1.0.9-r0",
+        "advisories": [
+          "CVE-2020-8927"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "brotli",
+        "installed": "1.2.0-r1",
+        "fixed": "1.2.1-r0",
+        "advisories": [
+          "CVE-2026-111497"
+        ],
+        "repository": "main",
+        "installed_before_fix": true
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "0",
+        "advisories": [
+          "CVE-2021-42373",
+          "CVE-2021-42376",
+          "CVE-2021-42377"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.27.2-r4",
+        "advisories": [
+          "CVE-2017-16544",
+          "CVE-2017-15873",
+          "CVE-2017-15874"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.28.3-r2",
+        "advisories": [
+          "CVE-2018-1000500"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.29.3-r10",
+        "advisories": [
+          "CVE-2018-20679"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.30.1-r2",
+        "advisories": [
+          "CVE-2019-5747"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.33.0-r5",
+        "advisories": [
+          "CVE-2021-28831"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.34.0-r0",
+        "advisories": [
+          "CVE-2021-42374",
+          "CVE-2021-42375",
+          "CVE-2021-42378",
+          "CVE-2021-42379",
+          "CVE-2021-42380",
+          "CVE-2021-42381",
+          "CVE-2021-42382",
+          "CVE-2021-42383",
+          "CVE-2021-42384",
+          "CVE-2021-42385",
+          "CVE-2021-42386"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.35.0-r17",
+        "advisories": [
+          "CVE-2022-30065"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.35.0-r7",
+        "advisories": [
+          "ALPINE-13661",
+          "CVE-2022-28391"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.36.1-r2",
+        "advisories": [
+          "CVE-2022-48174"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.36.1-r25",
+        "advisories": [
+          "CVE-2023-42366"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.36.1-r27",
+        "advisories": [
+          "CVE-2023-42363"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.36.1-r30",
+        "advisories": [
+          "CVE-2023-42364",
+          "CVE-2023-42365"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.37.0-r24",
+        "advisories": [
+          "CVE-2024-58251"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "busybox",
+        "installed": "1.37.0-r31",
+        "fixed": "1.37.0-r27",
+        "advisories": [
+          "CVE-2025-46394"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "bzip2",
+        "installed": "1.0.8-r6",
+        "fixed": "1.0.6-r5",
+        "advisories": [
+          "CVE-2016-3189"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "bzip2",
+        "installed": "1.0.8-r6",
+        "fixed": "1.0.6-r7",
+        "advisories": [
+          "CVE-2019-12900"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "c-ares",
+        "installed": "1.34.9-r0",
+        "fixed": "1.17.2-r0",
+        "advisories": [
+          "CVE-2021-3672"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "c-ares",
+        "installed": "1.34.9-r0",
+        "fixed": "1.27.0-r0",
+        "advisories": [
+          "CVE-2024-25629"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "c-ares",
+        "installed": "1.34.9-r0",
+        "fixed": "1.34.5-r0",
+        "advisories": [
+          "CVE-2025-31498"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "c-ares",
+        "installed": "1.34.9-r0",
+        "fixed": "1.34.6-r0",
+        "advisories": [
+          "CVE-2025-62408"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "c-ares",
+        "installed": "1.34.9-r0",
+        "fixed": "1.34.8-r0",
+        "advisories": [
+          "CVE-2026-33630"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "0",
+        "advisories": [
+          "CVE-2021-22897",
+          "CVE-2025-13034",
+          "CVE-2025-15079",
+          "CVE-2025-15224"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.36.0-r0",
+        "advisories": [
+          "CVE-2014-0138",
+          "CVE-2014-0139"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.50.1-r0",
+        "advisories": [
+          "CVE-2016-5419",
+          "CVE-2016-5420",
+          "CVE-2016-5421"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.50.2-r0",
+        "advisories": [
+          "CVE-2016-7141"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.50.3-r0",
+        "advisories": [
+          "CVE-2016-7167"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.51.0-r0",
+        "advisories": [
+          "CVE-2016-8615",
+          "CVE-2016-8616",
+          "CVE-2016-8617",
+          "CVE-2016-8618",
+          "CVE-2016-8619",
+          "CVE-2016-8620",
+          "CVE-2016-8621",
+          "CVE-2016-8622",
+          "CVE-2016-8623",
+          "CVE-2016-8624",
+          "CVE-2016-8625"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.52.1-r0",
+        "advisories": [
+          "CVE-2016-9594"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.53.0-r0",
+        "advisories": [
+          "CVE-2017-2629"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.53.1-r2",
+        "advisories": [
+          "CVE-2017-7407"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.54.0-r0",
+        "advisories": [
+          "CVE-2017-7468"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.55.0-r0",
+        "advisories": [
+          "CVE-2017-1000099",
+          "CVE-2017-1000100",
+          "CVE-2017-1000101"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.56.1-r0",
+        "advisories": [
+          "CVE-2017-1000257"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.57.0-r0",
+        "advisories": [
+          "CVE-2017-8816",
+          "CVE-2017-8817",
+          "CVE-2017-8818"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.59.0-r0",
+        "advisories": [
+          "CVE-2018-1000120",
+          "CVE-2018-1000121",
+          "CVE-2018-1000122"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.60.0-r0",
+        "advisories": [
+          "CVE-2018-1000300",
+          "CVE-2018-1000301"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.61.0-r0",
+        "advisories": [
+          "CVE-2018-0500"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.61.1-r0",
+        "advisories": [
+          "CVE-2018-14618"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.62.0-r0",
+        "advisories": [
+          "CVE-2018-16839",
+          "CVE-2018-16840",
+          "CVE-2018-16842"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.64.0-r0",
+        "advisories": [
+          "CVE-2018-16890",
+          "CVE-2019-3822",
+          "CVE-2019-3823"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.65.0-r0",
+        "advisories": [
+          "CVE-2019-5435",
+          "CVE-2019-5436"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.66.0-r0",
+        "advisories": [
+          "CVE-2019-5481",
+          "CVE-2019-5482"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.71.0-r0",
+        "advisories": [
+          "CVE-2020-8169",
+          "CVE-2020-8177"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.72.0-r0",
+        "advisories": [
+          "CVE-2020-8231"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.74.0-r0",
+        "advisories": [
+          "CVE-2020-8284",
+          "CVE-2020-8285",
+          "CVE-2020-8286"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.76.0-r0",
+        "advisories": [
+          "CVE-2021-22876",
+          "CVE-2021-22890"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.77.0-r0",
+        "advisories": [
+          "CVE-2021-22898",
+          "CVE-2021-22901"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.78.0-r0",
+        "advisories": [
+          "CVE-2021-22922",
+          "CVE-2021-22923",
+          "CVE-2021-22924",
+          "CVE-2021-22925"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.79.0-r0",
+        "advisories": [
+          "CVE-2021-22945",
+          "CVE-2021-22946",
+          "CVE-2021-22947"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.83.0-r0",
+        "advisories": [
+          "CVE-2022-22576",
+          "CVE-2022-27774",
+          "CVE-2022-27775",
+          "CVE-2022-27776"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.83.1-r0",
+        "advisories": [
+          "CVE-2022-27778",
+          "CVE-2022-27779",
+          "CVE-2022-27780",
+          "CVE-2022-27781",
+          "CVE-2022-27782",
+          "CVE-2022-30115"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.84.0-r0",
+        "advisories": [
+          "CVE-2022-32205",
+          "CVE-2022-32206",
+          "CVE-2022-32207",
+          "CVE-2022-32208"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.85.0-r0",
+        "advisories": [
+          "CVE-2022-35252"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.86.0-r0",
+        "advisories": [
+          "CVE-2022-32221",
+          "CVE-2022-35260",
+          "CVE-2022-42915",
+          "CVE-2022-42916"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.87.0-r0",
+        "advisories": [
+          "CVE-2022-43551",
+          "CVE-2022-43552"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "7.88.0-r0",
+        "advisories": [
+          "CVE-2023-23914",
+          "CVE-2023-23915",
+          "CVE-2023-23916"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.0.0-r0",
+        "advisories": [
+          "CVE-2023-27533",
+          "CVE-2023-27534",
+          "CVE-2023-27535",
+          "CVE-2023-27536",
+          "CVE-2023-27537",
+          "CVE-2023-27538"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.1.0-r0",
+        "advisories": [
+          "CVE-2023-28319",
+          "CVE-2023-28320",
+          "CVE-2023-28321",
+          "CVE-2023-28322"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.10.0-r0",
+        "advisories": [
+          "CVE-2024-8096"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.11.0-r0",
+        "advisories": [
+          "CVE-2024-9681"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.11.1-r0",
+        "advisories": [
+          "CVE-2024-11053"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.12.0-r0",
+        "advisories": [
+          "CVE-2025-0167",
+          "CVE-2025-0665",
+          "CVE-2025-0725"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.14.0-r0",
+        "advisories": [
+          "CVE-2025-5025",
+          "CVE-2025-4947"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.14.1-r0",
+        "advisories": [
+          "CVE-2025-5399"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.16.0-r0",
+        "advisories": [
+          "CVE-2025-9086",
+          "CVE-2025-10148"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.17.0-r0",
+        "advisories": [
+          "CVE-2025-10966"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.18.0-r0",
+        "advisories": [
+          "CVE-2025-14017",
+          "CVE-2025-14524",
+          "CVE-2025-14819"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.19.0-r0",
+        "advisories": [
+          "CVE-2026-1965",
+          "CVE-2026-3783",
+          "CVE-2026-3784",
+          "CVE-2026-3805"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.20.0-r0",
+        "advisories": [
+          "CVE-2026-4873",
+          "CVE-2026-5545",
+          "CVE-2026-5773",
+          "CVE-2026-6253",
+          "CVE-2026-6276",
+          "CVE-2026-6429",
+          "CVE-2026-7009",
+          "CVE-2026-7168"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.21.0-r0",
+        "advisories": [
+          "CVE-2026-10536",
+          "CVE-2026-11352",
+          "CVE-2026-11564",
+          "CVE-2026-11586",
+          "CVE-2026-11856",
+          "CVE-2026-12064",
+          "CVE-2026-8286",
+          "CVE-2026-8458",
+          "CVE-2026-8924",
+          "CVE-2026-8925",
+          "CVE-2026-8926",
+          "CVE-2026-8927",
+          "CVE-2026-8932",
+          "CVE-2026-9079",
+          "CVE-2026-9080",
+          "CVE-2026-9545",
+          "CVE-2026-9546",
+          "CVE-2026-9547"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.22.0-r0",
+        "advisories": [
+          "CVE-2026-13608",
+          "CVE-2026-18924",
+          "CVE-2026-19931",
+          "CVE-2026-80229",
+          "CVE-2026-80230",
+          "CVE-2026-80231",
+          "CVE-2026-80255",
+          "CVE-2026-80256",
+          "CVE-2026-82208",
+          "CVE-2026-82209"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.23.0-r0",
+        "advisories": [
+          "CVE-2026-86409",
+          "CVE-2026-86410",
+          "CVE-2026-86411",
+          "CVE-2026-86412",
+          "CVE-2026-86413",
+          "CVE-2026-86414",
+          "CVE-2026-86415",
+          "CVE-2026-87861",
+          "CVE-2026-87862",
+          "CVE-2026-87863",
+          "CVE-2026-87864",
+          "CVE-2026-87865",
+          "CVE-2026-87866",
+          "CVE-2026-92386",
+          "CVE-2026-92387",
+          "CVE-2026-92388",
+          "CVE-2026-92389",
+          "CVE-2026-92390",
+          "CVE-2026-92391",
+          "CVE-2026-92392",
+          "CVE-2026-94265",
+          "CVE-2026-94266",
+          "CVE-2026-107928",
+          "CVE-2026-107929"
+        ],
+        "repository": "main",
+        "installed_before_fix": true
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.3.0-r0",
+        "advisories": [
+          "CVE-2023-38039"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.4.0-r0",
+        "advisories": [
+          "CVE-2023-38545",
+          "CVE-2023-38546"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.5.0-r0",
+        "advisories": [
+          "CVE-2023-46218",
+          "CVE-2023-46219"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.6.0-r0",
+        "advisories": [
+          "CVE-2024-0853"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.7.1-r0",
+        "advisories": [
+          "CVE-2024-2004",
+          "CVE-2024-2379",
+          "CVE-2024-2398",
+          "CVE-2024-2466"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.9.0-r0",
+        "advisories": [
+          "CVE-2024-6197",
+          "CVE-2024-6874"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "curl",
+        "installed": "8.22.0-r0",
+        "fixed": "8.9.1-r0",
+        "advisories": [
+          "CVE-2024-7264"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "0",
+        "advisories": [
+          "CVE-2026-72522"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.10.0-r0",
+        "advisories": [
+          "CVE-2026-113351",
+          "CVE-2026-115506",
+          "CVE-2026-117610",
+          "CVE-2026-118370"
+        ],
+        "repository": "main",
+        "installed_before_fix": true
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.2.0-r1",
+        "advisories": [
+          "CVE-2017-9233"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.2.7-r0",
+        "advisories": [
+          "CVE-2018-20843"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.2.7-r1",
+        "advisories": [
+          "CVE-2019-15903"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.4.3-r0",
+        "advisories": [
+          "CVE-2021-45960",
+          "CVE-2021-46143",
+          "CVE-2022-22822",
+          "CVE-2022-22823",
+          "CVE-2022-22824",
+          "CVE-2022-22825",
+          "CVE-2022-22826",
+          "CVE-2022-22827"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.4.4-r0",
+        "advisories": [
+          "CVE-2022-23852",
+          "CVE-2022-23990"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.4.5-r0",
+        "advisories": [
+          "CVE-2022-25235",
+          "CVE-2022-25236",
+          "CVE-2022-25313",
+          "CVE-2022-25314",
+          "CVE-2022-25315"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.4.9-r0",
+        "advisories": [
+          "CVE-2022-40674"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.5.0-r0",
+        "advisories": [
+          "CVE-2022-43680"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.6.0-r0",
+        "advisories": [
+          "CVE-2023-52425",
+          "CVE-2023-52426"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.6.2-r0",
+        "advisories": [
+          "CVE-2024-28757"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.6.3-r0",
+        "advisories": [
+          "CVE-2024-45490",
+          "CVE-2024-45491",
+          "CVE-2024-45492"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.6.4-r0",
+        "advisories": [
+          "CVE-2024-50602"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.7.0-r0",
+        "advisories": [
+          "CVE-2024-8176"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.7.2-r0",
+        "advisories": [
+          "CVE-2025-59375"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.7.4-r0",
+        "advisories": [
+          "CVE-2026-24515",
+          "CVE-2026-25210"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.7.5-r0",
+        "advisories": [
+          "CVE-2026-32776",
+          "CVE-2026-32777",
+          "CVE-2026-32778"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.8.0-r0",
+        "advisories": [
+          "CVE-2026-41080"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.8.1-r0",
+        "advisories": [
+          "CVE-2026-45186"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.8.2-r0",
+        "advisories": [
+          "CVE-2026-50219",
+          "CVE-2026-56131",
+          "CVE-2026-56132",
+          "CVE-2026-56403",
+          "CVE-2026-56404",
+          "CVE-2026-56405",
+          "CVE-2026-56406",
+          "CVE-2026-56407",
+          "CVE-2026-56408",
+          "CVE-2026-56409",
+          "CVE-2026-56410",
+          "CVE-2026-56411",
+          "CVE-2026-56412"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.8.4-r0",
+        "advisories": [
+          "CVE-2026-66046",
+          "CVE-2026-76641",
+          "CVE-2026-76956",
+          "CVE-2026-76957"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.8.5-r0",
+        "advisories": [
+          "CVE-2026-93990"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "expat",
+        "installed": "2.9.0-r0",
+        "fixed": "2.9.0-r0",
+        "advisories": [
+          "CVE-2026-102633",
+          "CVE-2026-77214"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "freetype",
+        "installed": "2.14.3-r0",
+        "fixed": "2.10.4-r0",
+        "advisories": [
+          "CVE-2020-15999"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "freetype",
+        "installed": "2.14.3-r0",
+        "fixed": "2.12.1-r0",
+        "advisories": [
+          "CVE-2022-27404",
+          "CVE-2022-27405",
+          "CVE-2022-27406"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "freetype",
+        "installed": "2.14.3-r0",
+        "fixed": "2.13.1-r0",
+        "advisories": [
+          "CVE-2025-27363"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "freetype",
+        "installed": "2.14.3-r0",
+        "fixed": "2.7.1-r1",
+        "advisories": [
+          "CVE-2017-8105",
+          "CVE-2017-8287"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "freetype",
+        "installed": "2.14.3-r0",
+        "fixed": "2.9-r1",
+        "advisories": [
+          "CVE-2018-6942"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "gcc",
+        "installed": "15.2.0-r5",
+        "fixed": "13.2.1_git20231014-r0",
+        "advisories": [
+          "CVE-2023-4039"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "gd",
+        "installed": "2.3.3-r10",
+        "fixed": "2.2.5-r1",
+        "advisories": [
+          "CVE-2018-1000222"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "gd",
+        "installed": "2.3.3-r10",
+        "fixed": "2.2.5-r2",
+        "advisories": [
+          "CVE-2018-5711",
+          "CVE-2019-6977",
+          "CVE-2019-6978"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "gd",
+        "installed": "2.3.3-r10",
+        "fixed": "2.3.0-r0",
+        "advisories": [
+          "CVE-2019-11038",
+          "CVE-2018-14553",
+          "CVE-2017-6363"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "gd",
+        "installed": "2.3.3-r10",
+        "fixed": "2.3.0-r1",
+        "advisories": [
+          "CVE-2021-38115",
+          "CVE-2021-40145"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "gettext",
+        "installed": "1.0-r0",
+        "fixed": "0.20.1-r0",
+        "advisories": [
+          "CVE-2018-18751"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libbsd",
+        "installed": "0.12.2-r0",
+        "fixed": "0.10.0-r0",
+        "advisories": [
+          "CVE-2019-20367"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libice",
+        "installed": "1.1.2-r0",
+        "fixed": "1.0.10-r0",
+        "advisories": [
+          "CVE-2017-2626"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libidn2",
+        "installed": "2.3.8-r0",
+        "fixed": "2.1.1-r0",
+        "advisories": [
+          "CVE-2019-18224"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libidn2",
+        "installed": "2.3.8-r0",
+        "fixed": "2.2.0-r0",
+        "advisories": [
+          "CVE-2019-12290"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "1.5.3-r2",
+        "advisories": [
+          "CVE-2018-1152"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "1.5.3-r3",
+        "advisories": [
+          "CVE-2018-11813"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "2.0.2-r0",
+        "advisories": [
+          "CVE-2018-20330",
+          "CVE-2018-19664"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "2.0.4-r0",
+        "advisories": [
+          "CVE-2019-2201"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "2.0.4-r2",
+        "advisories": [
+          "CVE-2020-13790"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "2.0.6-r0",
+        "advisories": [
+          "CVE-2020-35538"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "2.1.0-r0",
+        "advisories": [
+          "CVE-2021-20205"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libjpeg-turbo",
+        "installed": "3.1.3-r0",
+        "fixed": "2.1.5.1-r4",
+        "advisories": [
+          "CVE-2023-2804"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.37-r0",
+        "advisories": [
+          "CVE-2019-7317",
+          "CVE-2018-14048",
+          "CVE-2018-14550"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.51-r0",
+        "advisories": [
+          "CVE-2025-64505",
+          "CVE-2025-64506",
+          "CVE-2025-64720",
+          "CVE-2025-65018"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.53-r0",
+        "advisories": [
+          "CVE-2025-66293"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.54-r0",
+        "advisories": [
+          "CVE-2026-22695",
+          "CVE-2026-22801"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.55-r0",
+        "advisories": [
+          "CVE-2026-25646"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.56-r0",
+        "advisories": [
+          "CVE-2026-33416",
+          "CVE-2026-33636"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.57-r0",
+        "advisories": [
+          "CVE-2026-34757"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.58-r1",
+        "advisories": [
+          "CVE-2026-40930"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libpng",
+        "installed": "1.6.59-r0",
+        "fixed": "1.6.59-r0",
+        "advisories": [
+          "CVE-2026-46675"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libwebp",
+        "installed": "1.6.0-r0",
+        "fixed": "1.3.0-r3",
+        "advisories": [
+          "CVE-2023-1999"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libwebp",
+        "installed": "1.6.0-r0",
+        "fixed": "1.3.1-r1",
+        "advisories": [
+          "CVE-2023-4863"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libx11",
+        "installed": "1.8.14-r0",
+        "fixed": "1.6.10-r0",
+        "advisories": [
+          "CVE-2020-14344"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libx11",
+        "installed": "1.8.14-r0",
+        "fixed": "1.6.12-r0",
+        "advisories": [
+          "CVE-2020-14363"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libx11",
+        "installed": "1.8.14-r0",
+        "fixed": "1.6.6-r0",
+        "advisories": [
+          "CVE-2018-14598",
+          "CVE-2018-14599",
+          "CVE-2018-14600"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libx11",
+        "installed": "1.8.14-r0",
+        "fixed": "1.7.1-r0",
+        "advisories": [
+          "CVE-2021-31535"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libx11",
+        "installed": "1.8.14-r0",
+        "fixed": "1.8.14-r0",
+        "advisories": [
+          "CVE-2026-88806",
+          "CVE-2026-94283",
+          "CVE-2026-94284",
+          "CVE-2026-94285"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libx11",
+        "installed": "1.8.14-r0",
+        "fixed": "1.8.7-r0",
+        "advisories": [
+          "CVE-2023-43785",
+          "CVE-2023-43786",
+          "CVE-2023-43787"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxdmcp",
+        "installed": "1.1.5-r1",
+        "fixed": "1.1.2-r3",
+        "advisories": [
+          "CVE-2017-2625"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.10.0-r0",
+        "advisories": [
+          "CVE-2022-2309"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.10.3-r0",
+        "advisories": [
+          "CVE-2022-40303",
+          "CVE-2022-40304"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.10.4-r0",
+        "advisories": [
+          "CVE-2023-28484",
+          "CVE-2023-29469"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.12.5-r0",
+        "advisories": [
+          "CVE-2024-25062"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.12.7-r0",
+        "advisories": [
+          "CVE-2024-34459"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.13.6-r0",
+        "advisories": [
+          "CVE-2025-24928",
+          "CVE-2024-56171",
+          "CVE-2025-27113"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.13.8-r0",
+        "advisories": [
+          "CVE-2025-32414",
+          "CVE-2025-32415"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.13.9-r0",
+        "advisories": [
+          "CVE-2025-49794",
+          "CVE-2025-49796",
+          "CVE-2025-49795",
+          "CVE-2025-6170",
+          "CVE-2025-6021"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.13.9-r2",
+        "advisories": [
+          "CVE-2026-6732"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.10-r4",
+        "advisories": [
+          "CVE-2019-20388"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.10-r5",
+        "advisories": [
+          "CVE-2020-24977"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.11-r0",
+        "advisories": [
+          "CVE-2016-3709",
+          "CVE-2021-3517",
+          "CVE-2021-3518",
+          "CVE-2021-3537",
+          "CVE-2021-3541"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.13-r0",
+        "advisories": [
+          "CVE-2022-23308"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.14-r0",
+        "advisories": [
+          "CVE-2022-29824"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.4-r1",
+        "advisories": [
+          "CVE-2016-5131"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.4-r2",
+        "advisories": [
+          "CVE-2016-9318"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.4-r4",
+        "advisories": [
+          "CVE-2017-5969"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.8-r1",
+        "advisories": [
+          "CVE-2018-9251",
+          "CVE-2018-14404",
+          "CVE-2018-14567"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxml2",
+        "installed": "2.13.9-r2",
+        "fixed": "2.9.8-r3",
+        "advisories": [
+          "CVE-2020-7595"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxpm",
+        "installed": "3.5.20-r0",
+        "fixed": "3.5.15-r0",
+        "advisories": [
+          "CVE-2022-46285",
+          "CVE-2022-44617",
+          "CVE-2022-4883"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxpm",
+        "installed": "3.5.20-r0",
+        "fixed": "3.5.17-r0",
+        "advisories": [
+          "CVE-2023-43788",
+          "CVE-2023-43789"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxpm",
+        "installed": "3.5.20-r0",
+        "fixed": "3.5.19-r0",
+        "advisories": [
+          "CVE-2026-4367"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxpm",
+        "installed": "3.5.20-r0",
+        "fixed": "3.5.20-r0",
+        "advisories": [
+          "CVE-2026-94287"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxslt",
+        "installed": "1.1.43-r3",
+        "fixed": "0",
+        "advisories": [
+          "CVE-2022-29824"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxslt",
+        "installed": "1.1.43-r3",
+        "fixed": "1.1.29-r1",
+        "advisories": [
+          "CVE-2017-5029"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxslt",
+        "installed": "1.1.43-r3",
+        "fixed": "1.1.33-r1",
+        "advisories": [
+          "CVE-2019-11068"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxslt",
+        "installed": "1.1.43-r3",
+        "fixed": "1.1.33-r3",
+        "advisories": [
+          "CVE-2019-18197"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxslt",
+        "installed": "1.1.43-r3",
+        "fixed": "1.1.34-r0",
+        "advisories": [
+          "CVE-2019-13117",
+          "CVE-2019-13118"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxslt",
+        "installed": "1.1.43-r3",
+        "fixed": "1.1.35-r0",
+        "advisories": [
+          "CVE-2021-30560"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "libxslt",
+        "installed": "1.1.43-r3",
+        "fixed": "1.1.43-r0",
+        "advisories": [
+          "CVE-2025-24855",
+          "CVE-2024-55549"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "musl",
+        "installed": "1.2.6-r3",
+        "fixed": "1.1.15-r4",
+        "advisories": [
+          "CVE-2016-8859"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "musl",
+        "installed": "1.2.6-r3",
+        "fixed": "1.1.23-r2",
+        "advisories": [
+          "CVE-2019-14697"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "musl",
+        "installed": "1.2.6-r3",
+        "fixed": "1.2.2_pre2-r0",
+        "advisories": [
+          "CVE-2020-28928"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "musl",
+        "installed": "1.2.6-r3",
+        "fixed": "1.2.5-r10",
+        "advisories": [
+          "CVE-2025-26519"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "musl",
+        "installed": "1.2.6-r3",
+        "fixed": "1.2.6-r1",
+        "advisories": [
+          "CVE-2026-6042"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "musl",
+        "installed": "1.2.6-r3",
+        "fixed": "1.2.6-r2",
+        "advisories": [
+          "CVE-2026-40200"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "musl",
+        "installed": "1.2.6-r3",
+        "fixed": "1.2.6-r3",
+        "advisories": [
+          "CVE-2026-107891"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "ncurses",
+        "installed": "6.6_p20260516-r0",
+        "fixed": "6.0_p20170701-r0",
+        "advisories": [
+          "CVE-2017-10684"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "ncurses",
+        "installed": "6.6_p20260516-r0",
+        "fixed": "6.0_p20171125-r0",
+        "advisories": [
+          "CVE-2017-16879"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "ncurses",
+        "installed": "6.6_p20260516-r0",
+        "fixed": "6.1_p20180414-r0",
+        "advisories": [
+          "CVE-2018-10754"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "ncurses",
+        "installed": "6.6_p20260516-r0",
+        "fixed": "6.2_p20200530-r0",
+        "advisories": [
+          "CVE-2021-39537"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "ncurses",
+        "installed": "6.6_p20260516-r0",
+        "fixed": "6.3_p20220416-r0",
+        "advisories": [
+          "CVE-2022-29458"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "ncurses",
+        "installed": "6.6_p20260516-r0",
+        "fixed": "6.4_p20230424-r0",
+        "advisories": [
+          "CVE-2023-29491"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nghttp2",
+        "installed": "1.70.0-r0",
+        "fixed": "1.39.2-r0",
+        "advisories": [
+          "CVE-2019-9511",
+          "CVE-2019-9513"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nghttp2",
+        "installed": "1.70.0-r0",
+        "fixed": "1.41.0-r0",
+        "advisories": [
+          "CVE-2020-11080"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nghttp2",
+        "installed": "1.70.0-r0",
+        "fixed": "1.57.0-r0",
+        "advisories": [
+          "CVE-2023-44487"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nghttp2",
+        "installed": "1.70.0-r0",
+        "fixed": "1.68.1-r0",
+        "advisories": [
+          "CVE-2026-27135"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nghttp2",
+        "installed": "1.70.0-r0",
+        "fixed": "1.70.0-r0",
+        "advisories": [
+          "CVE-2026-58055"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "0",
+        "advisories": [
+          "CVE-2022-3638",
+          "CVE-2024-32760",
+          "CVE-2024-31079",
+          "CVE-2024-35200",
+          "CVE-2024-34161",
+          "CVE-2026-42926",
+          "CVE-2026-40701"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.12.1-r0",
+        "advisories": [
+          "CVE-2017-7529"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.14.1-r0",
+        "advisories": [
+          "CVE-2018-16843",
+          "CVE-2018-16844",
+          "CVE-2018-16845"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.16.1-r0",
+        "advisories": [
+          "CVE-2019-9511",
+          "CVE-2019-9513",
+          "CVE-2019-9516"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.16.1-r6",
+        "advisories": [
+          "CVE-2019-20372"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.20.1-r0",
+        "advisories": [
+          "CVE-2021-23017"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.20.1-r1",
+        "advisories": [
+          "CVE-2021-3618"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.20.2-r2",
+        "advisories": [
+          "CVE-2021-46461",
+          "CVE-2021-46462",
+          "CVE-2021-46463",
+          "CVE-2022-25139"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.22.1-r0",
+        "advisories": [
+          "CVE-2022-41741",
+          "CVE-2022-41742"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.24.0-r12",
+        "advisories": [
+          "CVE-2023-44487"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.26.2-r0",
+        "advisories": [
+          "CVE-2024-7347"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.26.3-r0",
+        "advisories": [
+          "CVE-2025-23419"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.28.2-r0",
+        "advisories": [
+          "CVE-2025-53859",
+          "CVE-2026-1642"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.28.3-r0",
+        "advisories": [
+          "CVE-2026-27654",
+          "CVE-2026-27784",
+          "CVE-2026-32647",
+          "CVE-2026-27651",
+          "CVE-2026-28753",
+          "CVE-2026-28755"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.30.1-r0",
+        "advisories": [
+          "CVE-2026-42945",
+          "CVE-2026-42946",
+          "CVE-2026-42934",
+          "CVE-2026-40460",
+          "CVE-2026-49975"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.30.2-r0",
+        "advisories": [
+          "CVE-2026-9256"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.30.2-r1",
+        "advisories": [
+          "CVE-2026-8711"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.30.3-r0",
+        "advisories": [
+          "CVE-2026-42055",
+          "CVE-2026-48142"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.30.4-r0",
+        "advisories": [
+          "CVE-2026-42533",
+          "CVE-2026-56434",
+          "CVE-2026-60005"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "nginx",
+        "installed": "1.30.6-r1",
+        "fixed": "1.30.6-r0",
+        "advisories": [
+          "CVE-2026-90439",
+          "CVE-2026-15176",
+          "CVE-2026-93479",
+          "CVE-2026-95101",
+          "CVE-2026-97629",
+          "CVE-2026-97205"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "0",
+        "advisories": [
+          "CVE-2022-1292",
+          "CVE-2022-2068",
+          "CVE-2022-2274",
+          "CVE-2023-0466",
+          "CVE-2023-4807"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1a-r0",
+        "advisories": [
+          "CVE-2018-0734",
+          "CVE-2018-0735"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1b-r1",
+        "advisories": [
+          "CVE-2019-1543"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1d-r1",
+        "advisories": [
+          "CVE-2019-1547",
+          "CVE-2019-1549",
+          "CVE-2019-1563"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1d-r3",
+        "advisories": [
+          "CVE-2019-1551"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1g-r0",
+        "advisories": [
+          "CVE-2020-1967"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1i-r0",
+        "advisories": [
+          "CVE-2020-1971"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1j-r0",
+        "advisories": [
+          "CVE-2021-23841",
+          "CVE-2021-23840",
+          "CVE-2021-23839"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1k-r0",
+        "advisories": [
+          "CVE-2021-3449",
+          "CVE-2021-3450"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "1.1.1l-r0",
+        "advisories": [
+          "CVE-2021-3711",
+          "CVE-2021-3712"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.1-r0",
+        "advisories": [
+          "CVE-2021-4044"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.2-r0",
+        "advisories": [
+          "CVE-2022-0778"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.3-r0",
+        "advisories": [
+          "CVE-2022-1343",
+          "CVE-2022-1434",
+          "CVE-2022-1473"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.5-r0",
+        "advisories": [
+          "CVE-2022-2097"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.6-r0",
+        "advisories": [
+          "CVE-2022-3358"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.7-r0",
+        "advisories": [
+          "CVE-2022-3786",
+          "CVE-2022-3602"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.7-r2",
+        "advisories": [
+          "CVE-2022-3996"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.0.8-r0",
+        "advisories": [
+          "CVE-2022-4203",
+          "CVE-2022-4304",
+          "CVE-2022-4450",
+          "CVE-2023-0215",
+          "CVE-2023-0216",
+          "CVE-2023-0217",
+          "CVE-2023-0286",
+          "CVE-2023-0401"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.0-r1",
+        "advisories": [
+          "CVE-2023-0464"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.0-r2",
+        "advisories": [
+          "CVE-2023-0465"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.0-r4",
+        "advisories": [
+          "CVE-2023-1255"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.1-r0",
+        "advisories": [
+          "CVE-2023-2650"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.1-r2",
+        "advisories": [
+          "CVE-2023-2975"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.1-r3",
+        "advisories": [
+          "CVE-2023-3446"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.2-r0",
+        "advisories": [
+          "CVE-2023-3817"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.4-r0",
+        "advisories": [
+          "CVE-2023-5363"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.4-r1",
+        "advisories": [
+          "CVE-2023-5678"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.4-r3",
+        "advisories": [
+          "CVE-2023-6129"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.4-r4",
+        "advisories": [
+          "CVE-2023-6237"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.1.4-r5",
+        "advisories": [
+          "CVE-2024-0727"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.2.1-r2",
+        "advisories": [
+          "CVE-2024-2511"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.3.0-r2",
+        "advisories": [
+          "CVE-2024-4603"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.3.0-r3",
+        "advisories": [
+          "CVE-2024-4741"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.3.1-r1",
+        "advisories": [
+          "CVE-2024-5535"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.3.2-r0",
+        "advisories": [
+          "CVE-2024-6119"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.3.2-r3",
+        "advisories": [
+          "CVE-2024-9143"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.3.2-r5",
+        "advisories": [
+          "CVE-2024-13176"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.3.3-r0",
+        "advisories": [
+          "CVE-2024-12797"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.5.1-r0",
+        "advisories": [
+          "CVE-2025-4575"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.5.4-r0",
+        "advisories": [
+          "CVE-2025-9230",
+          "CVE-2025-9231",
+          "CVE-2025-9232"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.5.5-r0",
+        "advisories": [
+          "CVE-2025-11187",
+          "CVE-2025-15467",
+          "CVE-2025-15468",
+          "CVE-2025-15469",
+          "CVE-2025-66199",
+          "CVE-2025-68160",
+          "CVE-2025-69418",
+          "CVE-2025-69419",
+          "CVE-2025-69420",
+          "CVE-2025-69421",
+          "CVE-2026-22795",
+          "CVE-2026-22796"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.5.6-r0",
+        "advisories": [
+          "CVE-2026-2673",
+          "CVE-2026-28387",
+          "CVE-2026-28388",
+          "CVE-2026-28389",
+          "CVE-2026-28390",
+          "CVE-2026-31789",
+          "CVE-2026-31790"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.5.7-r0",
+        "advisories": [
+          "CVE-2026-34180",
+          "CVE-2026-34181",
+          "CVE-2026-34182",
+          "CVE-2026-34183",
+          "CVE-2026-42764",
+          "CVE-2026-42766",
+          "CVE-2026-42767",
+          "CVE-2026-42768",
+          "CVE-2026-42769",
+          "CVE-2026-42770",
+          "CVE-2026-45445",
+          "CVE-2026-45446",
+          "CVE-2026-45447",
+          "CVE-2026-7383",
+          "CVE-2026-9076"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "openssl",
+        "installed": "3.5.9-r0",
+        "fixed": "3.5.8-r0",
+        "advisories": [
+          "CVE-2026-14456",
+          "CVE-2026-14457",
+          "CVE-2026-18798",
+          "CVE-2026-54874",
+          "CVE-2026-63072",
+          "CVE-2026-63073",
+          "CVE-2026-63074",
+          "CVE-2026-63075",
+          "CVE-2026-63076",
+          "CVE-2026-75803"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "pcre2",
+        "installed": "10.49-r0",
+        "fixed": "10.40-r0",
+        "advisories": [
+          "CVE-2022-1586",
+          "CVE-2022-1587"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "pcre2",
+        "installed": "10.49-r0",
+        "fixed": "10.41-r0",
+        "advisories": [
+          "CVE-2022-41409"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "pcre2",
+        "installed": "10.49-r0",
+        "fixed": "10.46-r0",
+        "advisories": [
+          "CVE-2025-58050"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "pcre2",
+        "installed": "10.49-r0",
+        "fixed": "10.48-r0",
+        "advisories": [
+          "CVE-2026-86145",
+          "CVE-2026-89156",
+          "CVE-2026-89157",
+          "CVE-2026-89158",
+          "CVE-2026-89160",
+          "CVE-2026-89161",
+          "CVE-2026-89162"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "pcre2",
+        "installed": "10.49-r0",
+        "fixed": "10.49-r0",
+        "advisories": [
+          "CVE-2026-103111"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.10-r0",
+        "advisories": [
+          "CVE-2018-12900",
+          "CVE-2018-18557",
+          "CVE-2018-18661"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.10-r1",
+        "advisories": [
+          "CVE-2019-14973"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.10-r2",
+        "advisories": [
+          "CVE-2019-10927"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.7-r1",
+        "advisories": [
+          "CVE-2017-5225"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.7-r2",
+        "advisories": [
+          "CVE-2017-7592",
+          "CVE-2017-7593",
+          "CVE-2017-7594",
+          "CVE-2017-7595",
+          "CVE-2017-7596",
+          "CVE-2017-7598",
+          "CVE-2017-7601",
+          "CVE-2017-7602"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.8-r1",
+        "advisories": [
+          "CVE-2017-9936",
+          "CVE-2017-10688"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.9-r0",
+        "advisories": [
+          "CVE-2017-16231",
+          "CVE-2017-16232"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.9-r1",
+        "advisories": [
+          "CVE-2017-18013"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.9-r2",
+        "advisories": [
+          "CVE-2018-5784"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.9-r4",
+        "advisories": [
+          "CVE-2018-7456"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.9-r5",
+        "advisories": [
+          "CVE-2018-8905"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.9-r6",
+        "advisories": [
+          "CVE-2017-9935",
+          "CVE-2017-11613",
+          "CVE-2017-17095",
+          "CVE-2018-10963"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.0.9-r8",
+        "advisories": [
+          "CVE-2018-10779",
+          "CVE-2018-17100",
+          "CVE-2018-17101"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.1.0-r0",
+        "advisories": [
+          "CVE-2019-6128"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.2.0-r0",
+        "advisories": [
+          "CVE-2020-35521",
+          "CVE-2020-35522",
+          "CVE-2020-35523",
+          "CVE-2020-35524"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.3.0-r1",
+        "advisories": [
+          "CVE-2022-0561",
+          "CVE-2022-0562",
+          "CVE-2022-0865",
+          "CVE-2022-0891",
+          "CVE-2022-0907",
+          "CVE-2022-0908",
+          "CVE-2022-0909",
+          "CVE-2022-0924",
+          "CVE-2022-22844",
+          "CVE-2022-34266"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.4.0-r0",
+        "advisories": [
+          "CVE-2022-2867",
+          "CVE-2022-2868",
+          "CVE-2022-2869"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.4.0-r1",
+        "advisories": [
+          "CVE-2022-2056",
+          "CVE-2022-2057",
+          "CVE-2022-2058",
+          "CVE-2022-2519",
+          "CVE-2022-2520",
+          "CVE-2022-2521",
+          "CVE-2022-34526"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.5.0-r0",
+        "advisories": [
+          "CVE-2022-2953",
+          "CVE-2022-3213",
+          "CVE-2022-3570",
+          "CVE-2022-3597",
+          "CVE-2022-3598",
+          "CVE-2022-3599",
+          "CVE-2022-3626",
+          "CVE-2022-3627",
+          "CVE-2022-3970"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.5.0-r3",
+        "advisories": [
+          "CVE-2022-48281"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.5.0-r5",
+        "advisories": [
+          "CVE-2023-0795",
+          "CVE-2023-0796",
+          "CVE-2023-0797",
+          "CVE-2023-0798",
+          "CVE-2023-0799",
+          "CVE-2023-0800",
+          "CVE-2023-0801",
+          "CVE-2023-0802",
+          "CVE-2023-0803",
+          "CVE-2023-0804"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.7.1-r0",
+        "advisories": [
+          "CVE-2025-8961",
+          "CVE-2025-9165"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "tiff",
+        "installed": "4.7.2-r0",
+        "fixed": "4.7.2-r0",
+        "advisories": [
+          "CVE-2026-4775"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "util-linux",
+        "installed": "2.42.3-r1",
+        "fixed": "2.37.2-r0",
+        "advisories": [
+          "CVE-2021-37600"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "util-linux",
+        "installed": "2.42.3-r1",
+        "fixed": "2.37.3-r0",
+        "advisories": [
+          "CVE-2021-3995",
+          "CVE-2021-3996"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "util-linux",
+        "installed": "2.42.3-r1",
+        "fixed": "2.37.4-r0",
+        "advisories": [
+          "CVE-2022-0563"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "util-linux",
+        "installed": "2.42.3-r1",
+        "fixed": "2.40-r0",
+        "advisories": [
+          "CVE-2024-28085"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "util-linux",
+        "installed": "2.42.3-r1",
+        "fixed": "2.41.4-r0",
+        "advisories": [
+          "CVE-2026-27456"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "util-linux",
+        "installed": "2.42.3-r1",
+        "fixed": "2.42.3-r0",
+        "advisories": [
+          "CVE-2026-27456",
+          "CVE-2026-53612",
+          "CVE-2026-53613",
+          "CVE-2026-53614",
+          "CVE-2026-76642",
+          "CVE-2026-78409",
+          "CVE-2026-78410"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "util-linux",
+        "installed": "2.42.3-r1",
+        "fixed": "2.42.3-r1",
+        "advisories": [
+          "CVE-2026-78408"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "xz",
+        "installed": "5.8.4-r0",
+        "fixed": "5.2.5-r1",
+        "advisories": [
+          "CVE-2022-1271"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "xz",
+        "installed": "5.8.4-r0",
+        "fixed": "5.6.1-r2",
+        "advisories": [
+          "CVE-2024-3094"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "xz",
+        "installed": "5.8.4-r0",
+        "fixed": "5.8.1-r0",
+        "advisories": [
+          "CVE-2025-31115"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "xz",
+        "installed": "5.8.4-r0",
+        "fixed": "5.8.3-r0",
+        "advisories": [
+          "CVE-2026-34743"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zlib",
+        "installed": "1.3.2-r1",
+        "fixed": "0",
+        "advisories": [
+          "CVE-2023-45853",
+          "CVE-2023-6992",
+          "CVE-2026-22184"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zlib",
+        "installed": "1.3.2-r1",
+        "fixed": "1.2.11-r4",
+        "advisories": [
+          "CVE-2018-25032"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zlib",
+        "installed": "1.3.2-r1",
+        "fixed": "1.2.12-r2",
+        "advisories": [
+          "CVE-2022-37434"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zlib",
+        "installed": "1.3.2-r1",
+        "fixed": "1.3.2-r0",
+        "advisories": [
+          "CVE-2026-22184",
+          "CVE-2026-27171"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zlib",
+        "installed": "1.3.2-r1",
+        "fixed": "1.3.2-r1",
+        "advisories": [
+          "CVE-2026-85091"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zstd",
+        "installed": "1.5.7-r2",
+        "fixed": "1.3.8-r0",
+        "advisories": [
+          "CVE-2019-11922"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zstd",
+        "installed": "1.5.7-r2",
+        "fixed": "1.4.1-r0",
+        "advisories": [
+          "CVE-2021-24031"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      },
+      {
+        "origin": "zstd",
+        "installed": "1.5.7-r2",
+        "fixed": "1.4.9-r0",
+        "advisories": [
+          "CVE-2021-24032"
+        ],
+        "repository": "main",
+        "installed_before_fix": false
+      }
+    ]
+  },
+  "postgres": {
+    "comparisons": [
+      {
+        "cve": "CVE-2026-19385",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-19385",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.19",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-18408",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-18408",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.19",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-18024",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-16241",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-16241",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.19",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-16239",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-15742",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-15741",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14680",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14679",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14678",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14677",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14673",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14672",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14671",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14670",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14669",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14668",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14666",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14664",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14663",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-14662",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6638",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6637",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6479",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6478",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6477",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6477",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.18",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6475",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6475",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.18",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6474",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6473",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6472",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.14",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6471",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6470",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6469",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6464",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.15",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-6464",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.19",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-2006",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.12",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-2005",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.12",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-2004",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.12",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2026-2003",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.12",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2025-12818",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.11",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2025-12817",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.11",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2025-8715",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.10",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2025-8714",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.10",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2025-8713",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.10",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2025-4207",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.9",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2025-1094",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.7",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-10979",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.5",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-10978",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.5",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-10977",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.5",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-10977",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.9",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-10976",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.5",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-7348",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.4",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-4317",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.3",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2024-0985",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.2",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2023-5870",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.1",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2023-5869",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.1",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2023-5868",
+        "role": "server16",
+        "installed": "16.15",
+        "fixed": "16.1",
+        "installed_before_fix": false
+      },
+      {
+        "cve": "CVE-2022-41862",
+        "role": "application_libpq15",
+        "installed": "15.19",
+        "fixed": "15.2",
+        "installed_before_fix": false
+      }
+    ],
+    "newer_fixes": []
+  },
+  "openssl": {
+    "comparisons": [
+      {
+        "cve": "CVE-2026-35189",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-35191",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42772",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54872",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54873",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54875",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-72897",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75804",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75805",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75806",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-77696",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-84782",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-84783",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-84784",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75803",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-14457",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-18798",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54874",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63072",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63073",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63074",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63075",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63076",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-14456",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54876",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34180",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34181",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34182",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34183",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-35188",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42764",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42765",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42766",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42767",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42768",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42769",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42770",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42771",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-45445",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-45446",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-45447",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-7383",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-9076",
+        "series": "4.0",
+        "installed": "4.0.3",
+        "introduced": "4.0.0",
+        "fixed": "4.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-35189",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-54872",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-75805",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-75806",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-77696",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-84782",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-75803",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.22",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-54874",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.22",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-63072",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.22",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-63074",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.22",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-63076",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.22",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-34180",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-34182",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-42766",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-42767",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-42770",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-45445",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-45446",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-45447",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-7383",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-9076",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.21",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.20-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-28387",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.20",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.19-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-28388",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.20",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.19-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-28389",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.20",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.19-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-28390",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.20",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.19-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-31789",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.20",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.19-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-31790",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.20",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.19-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-15467",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-68160",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-69418",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-69419",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-69420",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-69421",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-22795",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-22796",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.19",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.18-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-9230",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.18",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.17-1~deb12u3",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2025-9232",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.16",
+        "fixed": "3.0.18",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.17-1~deb12u3",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-13176",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.16",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.16-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-9143",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.16",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.15-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-6119",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.15",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.14-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-5535",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.15",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.15-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-4741",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.14",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.14-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-4603",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.14",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.14-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-2511",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.14",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.14-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2024-0727",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.13",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.13-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-6237",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.13",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.13-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-6129",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.13",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.13-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-5678",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.13",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.13-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-5363",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.12",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.11-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-4807",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.11",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "0",
+          "urgency": "unimportant"
+        }
+      },
+      {
+        "cve": "CVE-2023-3817",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.10",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.10-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-3446",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.10",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.10-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-2975",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.10",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.10-1~deb12u1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-2650",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.9-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0465",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.9-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0464",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.9-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0466",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.9-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-1255",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.9-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-4203",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-4304",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-4450",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0215",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0216",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0217",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0286",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2023-0401",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.8-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-3996",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "",
+        "upstream_range_matches": null,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.7-2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-3602",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.7-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-3786",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.7-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-3358",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.7-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-2097",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.5-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-2274",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.4",
+        "fixed": "3.0.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.4-2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-2068",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.4",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.4-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-1292",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "1.1.1o-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-1343",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "0",
+          "urgency": "unimportant"
+        }
+      },
+      {
+        "cve": "CVE-2022-1434",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "0",
+          "urgency": "unimportant"
+        }
+      },
+      {
+        "cve": "CVE-2022-1473",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.3",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "0",
+          "urgency": "unimportant"
+        }
+      },
+      {
+        "cve": "CVE-2022-0778",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.2",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "1.1.1n-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2021-4160",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "1.1.1m-1",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2021-4044",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "0",
+          "urgency": "unimportant"
+        }
+      },
+      {
+        "cve": "CVE-2026-35189",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-35191",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42772",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54872",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54873",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54875",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-72897",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75804",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75805",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75806",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-77696",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-84782",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-84784",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.9",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-75803",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-14457",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-18798",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-54874",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63072",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63073",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63074",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63075",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-63076",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-14456",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.8",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34180",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34181",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34182",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-34183",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42764",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42766",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42767",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42768",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42769",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-42770",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-45445",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-45446",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-45447",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-7383",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-9076",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.7",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-28387",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-28388",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-28389",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-28390",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-31789",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-31790",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-2673",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.6",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-11187",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-15467",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-15468",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-15469",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-66199",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-68160",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-69418",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-69419",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-69420",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-69421",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-22795",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2026-22796",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.5",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-9230",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.4",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-9231",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.4",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-9232",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.4",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      },
+      {
+        "cve": "CVE-2025-4575",
+        "series": "3.5",
+        "installed": "3.5.9",
+        "introduced": "3.5.0",
+        "fixed": "3.5.1",
+        "upstream_range_matches": false,
+        "Debian_bookworm": null
+      }
+    ],
+    "upstream_range_matches": [
+      {
+        "cve": "CVE-2026-35189",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-54872",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-75805",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-75806",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-77696",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2026-84782",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "3.0.23",
+        "upstream_range_matches": true,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.22-1~deb12u2",
+          "urgency": "not yet assigned"
+        }
+      },
+      {
+        "cve": "CVE-2022-3996",
+        "series": "3.0",
+        "installed": "3.0.22",
+        "introduced": "3.0.0",
+        "fixed": "",
+        "upstream_range_matches": null,
+        "Debian_bookworm": {
+          "status": "resolved",
+          "repositories": {
+            "bookworm": "3.0.20-1~deb12u2",
+            "bookworm-security": "3.0.22-1~deb12u2"
+          },
+          "fixed_version": "3.0.7-2",
+          "urgency": "not yet assigned"
+        }
+      }
+    ]
+  },
+  "nginx": {
+    "comparisons": [
+      {
+        "cves": [
+          "CVE-2026-15176"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.7",
+          "1.30.6"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-93479"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.7",
+          "1.30.6"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-95101"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.7",
+          "1.30.6"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-97629"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.7",
+          "1.30.6"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-97205"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.7",
+          "1.30.6"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-90439"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.6",
+          "1.30.5"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-42533"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.3",
+          "1.30.4"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-60005"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.3",
+          "1.30.4"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-56434"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.3",
+          "1.30.4"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-42530"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.2"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": false
+      },
+      {
+        "cves": [
+          "CVE-2026-42055"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.2",
+          "1.30.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-48142"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.2",
+          "1.30.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-9256"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.1",
+          "1.30.2"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-42926"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.0",
+          "1.30.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-42945"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.0",
+          "1.30.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-42946"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.0",
+          "1.30.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-42934"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.0",
+          "1.30.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-40460"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.0",
+          "1.30.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-40701"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.0",
+          "1.30.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-27654"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.7",
+          "1.28.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-27784"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.7",
+          "1.28.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-32647"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.7",
+          "1.28.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-27651"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.7",
+          "1.28.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-28753"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.7",
+          "1.28.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-28755"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.7",
+          "1.28.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2026-1642"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.5",
+          "1.28.2"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2025-53859"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.29.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2025-23419"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.27.4",
+          "1.26.3"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2024-7347"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.27.1",
+          "1.26.2"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2024-32760"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.27.0",
+          "1.26.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2024-31079"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.27.0",
+          "1.26.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2024-35200"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.27.0",
+          "1.26.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2024-34161"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.27.0",
+          "1.26.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2024-24989"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.25.4"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2024-24990"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.25.4"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2022-41741"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.23.2",
+          "1.22.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2022-41742"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.23.2",
+          "1.22.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2021-23017"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.21.0",
+          "1.20.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2019-9511"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.17.3",
+          "1.16.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2019-9513"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.17.3",
+          "1.16.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2019-9516"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.17.3",
+          "1.16.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2018-16843"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.15.6",
+          "1.14.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2018-16844"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.15.6",
+          "1.14.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2018-16845"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.15.6",
+          "1.14.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2017-7529"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.13.3",
+          "1.12.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2016-4450"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.11.1",
+          "1.10.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2016-0742"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.9.10",
+          "1.8.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2016-0746"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.9.10",
+          "1.8.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2016-0747"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.9.10",
+          "1.8.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2014-3616"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.7.5",
+          "1.6.2"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2014-3556"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.7.4",
+          "1.6.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2014-0133"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.5.12",
+          "1.4.7"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2014-0088"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.5.11"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2013-4547"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.5.7",
+          "1.4.4"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2013-2070"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.5.0",
+          "1.4.1",
+          "1.2.9"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2013-2028"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.5.0",
+          "1.4.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2011-4963"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.3.1",
+          "1.2.1"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2012-2089"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.1.19",
+          "1.0.15"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2012-1180"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.1.17",
+          "1.0.14"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2011-4315"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.1.8",
+          "1.0.10"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2010-2266"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "0.8.41",
+          "0.7.67"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2010-2263"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "0.8.40",
+          "0.7.66"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2009-4487"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [],
+        "vendor_no_fixed_release": true,
+        "fixed_in_same_or_prior_branch": false
+      },
+      {
+        "cves": [
+          "CVE-2009-3555"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "0.8.23",
+          "0.7.64"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2009-3898"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "0.8.17",
+          "0.7.63"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2009-2629"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "0.8.15",
+          "0.7.62",
+          "0.6.39",
+          "0.5.38"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      },
+      {
+        "cves": [
+          "CVE-2009-3896"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "0.8.14",
+          "0.7.62",
+          "0.6.39",
+          "0.5.38"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": true
+      }
+    ],
+    "unresolved": [
+      {
+        "cves": [
+          "CVE-2026-42530"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [
+          "1.31.2"
+        ],
+        "vendor_no_fixed_release": false,
+        "fixed_in_same_or_prior_branch": false
+      },
+      {
+        "cves": [
+          "CVE-2009-4487"
+        ],
+        "installed": "1.30.6",
+        "fixed_branches": [],
+        "vendor_no_fixed_release": true,
+        "fixed_in_same_or_prior_branch": false
+      }
+    ]
+  },
+  "limits": [
+    "Current vendor fixed-range snapshot; absent/undisclosed issues are not disproven.",
+    "Alpine secfixes records published fixes, not all potential unfixed vulnerabilities. PG platform OS/debian source still separate.",
+    "OpenSSL3.0.22 Debian revision must meet backport fixed version; upstream version match alone is not a vulnerability conclusion.",
+    "No blanket final security qualification; broader OS/reachability/vendored/license/network/history/archive/secret checks remain."
+  ]
+}

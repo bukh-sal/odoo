@@ -1,0 +1,65 @@
+{
+  "result": "primary_vendor_inputs_retained",
+  "utc": "2026-11-03T21:17:57.688598+00:00",
+  "sources": [
+    {
+      "name": "openssl4",
+      "url": "https://openssl-library.org/news/vulnerabilities-4.0/index.html",
+      "sha256": "583d25342c5bedaed9286dea1716efa404a3f953a55e324de3aa244840f15f77",
+      "bytes": 201653,
+      "content_type": null,
+      "private_input": ".local\\g7-support-images-02\\vendor\\openssl4.raw"
+    },
+    {
+      "name": "openssl3",
+      "url": "https://openssl-library.org/news/vulnerabilities-3.0/index.html",
+      "sha256": "b99229f111852b23430b58c8424d76d8a705733e159eb4a0ba0927051503d232",
+      "bytes": 319005,
+      "content_type": "text/html",
+      "private_input": ".local\\g7-support-images-02\\vendor\\openssl3.raw"
+    },
+    {
+      "name": "openssl35",
+      "url": "https://openssl-library.org/news/vulnerabilities-3.5/index.html",
+      "sha256": "135a69585550a23f6265d5c978b3253aebbfae34aee960e98aa4f1b2cb8d050a",
+      "bytes": 271561,
+      "content_type": "text/html",
+      "private_input": ".local\\g7-support-images-02\\vendor\\openssl35.raw"
+    },
+    {
+      "name": "postgres",
+      "url": "https://www.postgresql.org/support/security/",
+      "sha256": "6efb1812af87b1d0923223207a350eb8dee8e269b8d676718b15fc84b41e0df4",
+      "bytes": 68575,
+      "content_type": "text/html; charset=utf-8",
+      "private_input": ".local\\g7-support-images-02\\vendor\\postgres.raw"
+    },
+    {
+      "name": "nginx",
+      "url": "https://nginx.org/en/security_advisories.html",
+      "sha256": "081fe69ffd23db9b040f647a41d3110e62c8dcaff505713c8c0db0342d3517ac",
+      "bytes": 25341,
+      "content_type": "text/html; charset=utf-8",
+      "private_input": ".local\\g7-support-images-02\\vendor\\nginx.raw"
+    },
+    {
+      "name": "alpine-main",
+      "url": "https://secdb.alpinelinux.org/v3.24/main.json",
+      "sha256": "0e1ec4b202ea9f6353edcd83d3156cbf48282a1a747a42736749d643ffa1e5b9",
+      "bytes": 93649,
+      "content_type": "application/json",
+      "private_input": ".local\\g7-support-images-02\\vendor\\alpine-main.raw"
+    },
+    {
+      "name": "alpine-community",
+      "url": "https://secdb.alpinelinux.org/v3.24/community.json",
+      "sha256": "70a92a6fc8668ac6c6ba275dd7d1ca30f6701317665de13a6c412b3f1f2e9822",
+      "bytes": 165732,
+      "content_type": "application/json",
+      "private_input": ".local\\g7-support-images-02\\vendor\\alpine-community.raw"
+    }
+  ],
+  "limits": [
+    "Collection only; ranges/backports/reachability need comparison with exact installed identities."
+  ]
+}

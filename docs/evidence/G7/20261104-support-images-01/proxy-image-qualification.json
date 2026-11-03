@@ -1,0 +1,82 @@
+{
+  "result": "candidate_exact_four_package_security_solution_qualified",
+  "utc": "2026-11-03T21:24:07.127723+00:00",
+  "base_image": "sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+  "candidate_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "nginx_binary_sha256": "97f9898b94114a136bd87e1eb7759aa2a15d5007154b670c447ee710e629f54b",
+  "nginx_binary_unchanged": true,
+  "base_layers_exact_prefix": true,
+  "inherited_runtime_configuration_exact": [
+    "Entrypoint",
+    "Cmd",
+    "User",
+    "Env",
+    "ExposedPorts",
+    "WorkingDir",
+    "Volumes",
+    "StopSignal"
+  ],
+  "packages_before": 71,
+  "packages_after": 71,
+  "changes": [
+    {
+      "package": "brotli-libs",
+      "before": {
+        "version": "1.2.0-r1",
+        "origin": "brotli",
+        "license": "MIT"
+      },
+      "after": {
+        "version": "1.2.1-r0",
+        "origin": "brotli",
+        "license": "MIT"
+      }
+    },
+    {
+      "package": "curl",
+      "before": {
+        "version": "8.22.0-r0",
+        "origin": "curl",
+        "license": "curl"
+      },
+      "after": {
+        "version": "8.23.0-r0",
+        "origin": "curl",
+        "license": "curl"
+      }
+    },
+    {
+      "package": "libcurl",
+      "before": {
+        "version": "8.22.0-r0",
+        "origin": "curl",
+        "license": "curl"
+      },
+      "after": {
+        "version": "8.23.0-r0",
+        "origin": "curl",
+        "license": "curl"
+      }
+    },
+    {
+      "package": "libexpat",
+      "before": {
+        "version": "2.9.0-r0",
+        "origin": "expat",
+        "license": "MIT"
+      },
+      "after": {
+        "version": "2.10.0-r0",
+        "origin": "expat",
+        "license": "MIT"
+      }
+    }
+  ],
+  "unrelated_packages_exact": 67,
+  "retained_collectors": 0,
+  "deployment_mutations": 0,
+  "limits": [
+    "No runtime switch; config parse/real ingress/security/WebSocket and release selection still required.",
+    "Not final license/history/archive/secret/security qualification."
+  ]
+}

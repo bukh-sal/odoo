@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "base": "nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+  "recipe_sha256": "9123f8ff96656b5342690b22f8067631a419157bb0cfc3d65a1cd122deb84341",
+  "pins": [
+    "brotli-libs=1.2.1-r0",
+    "curl=8.23.0-r0",
+    "libcurl=8.23.0-r0",
+    "libexpat=2.10.0-r0"
+  ],
+  "packages": [
+    {
+      "file": "brotli-libs-1.2.1-r0.apk",
+      "bytes": 429435,
+      "sha256": "62a7e37e43bbfc1f8525a00ad2125fd5897135dc93b849733884cb78ffd8e26c"
+    },
+    {
+      "file": "c-ares-1.34.9-r0.apk",
+      "bytes": 113179,
+      "sha256": "3539a3e11c1ef1516117d8179a546ac882086e94e0d78ad51d687b3fa2b3b5f2"
+    },
+    {
+      "file": "ca-certificates-bundle-20261020-r0.apk",
+      "bytes": 107116,
+      "sha256": "bb008f6d214b6af7576324659856fb63dc8dcb4373f8345ff706388696f1254d"
+    },
+    {
+      "file": "curl-8.23.0-r0.apk",
+      "bytes": 180007,
+      "sha256": "531ae298451a4c1c44f563fc3b2eedc2c1d7e0a26a33bdfc0efe6faaff6a5942"
+    },
+    {
+      "file": "libcrypto3-3.5.9-r0.apk",
+      "bytes": 1980198,
+      "sha256": "6632d758d8f5e9ea3b650fe966f23bbf9a202f8b8dceecac93da135dec5e3689"
+    },
+    {
+      "file": "libcurl-8.23.0-r0.apk",
+      "bytes": 364567,
+      "sha256": "1f70ca404818805a6465b615bbfe84ef861488a963d7e630108ebd7fbaa51665"
+    },
+    {
+      "file": "libexpat-2.10.0-r0.apk",
+      "bytes": 63634,
+      "sha256": "e7e7408ea787ed06d00159b0ff1f9b65a63cf634f36d9e0fa7512ce2c489a503"
+    },
+    {
+      "file": "libidn2-2.3.8-r0.apk",
+      "bytes": 104623,
+      "sha256": "7d038ac558dde464964b033ce5126dd2eaf84cc414dc15e77c5424a321d0ebee"
+    },
+    {
+      "file": "libpsl-0.21.5-r3.apk",
+      "bytes": 54692,
+      "sha256": "ec665a344b6e887f00f0a47015cc732c3a281b69e84641dc8662ea234fde6cdb"
+    },
+    {
+      "file": "libssl3-3.5.9-r0.apk",
+      "bytes": 381860,
+      "sha256": "05e3393fb95aa5751ca2f9d242f659f6cff82c1cc7767cc2df4a086f7ad01877"
+    },
+    {
+      "file": "libunistring-1.4.2-r0.apk",
+      "bytes": 743597,
+      "sha256": "3aa6030e603e34d96192742f327c0509f409c6769ce2e7b1463685dede38d714"
+    },
+    {
+      "file": "musl-1.2.6-r3.apk",
+      "bytes": 415466,
+      "sha256": "e142255d0fa397f14318996bc10378093dcc069dc3dd1b6818c8f28a789c21da"
+    },
+    {
+      "file": "nghttp2-libs-1.70.0-r0.apk",
+      "bytes": 63259,
+      "sha256": "f0c4014eb2f10308dcdfd84cd49c121673c7b78cb8182b6e7a1388d8ae112a3b"
+    },
+    {
+      "file": "zlib-1.3.2-r1.apk",
+      "bytes": 56210,
+      "sha256": "63aeea03c15a2f9018f81805cfc8aa926bdf5cd68921f22149c2fbb5d0ee9f47"
+    },
+    {
+      "file": "zstd-libs-1.5.7-r2.apk",
+      "bytes": 376646,
+      "sha256": "23c6065b0049b2406441564bcf0032515a43f78e80d76fcb85535a3803ef5d4e"
+    }
+  ],
+  "input_archive_sha256": "d4af7fe80cbdf1f5b475950c60d1b0c6b9101633c84b1222e2a4d05b38c4d794",
+  "source_evidence": "docs/evidence/G7/20261104-support-images-01/proxy-apk-inputs.json",
+  "qualification": "candidate; signature verification/solution diff/actual ingress review required"
+}

@@ -1,0 +1,18 @@
+{
+  "result": "offline_proxy_candidate_built_not_deployed",
+  "utc": "2026-11-03T21:23:29.179407+00:00",
+  "tag": "modular-platform-proxy:g7-security-20261104-01",
+  "image_id": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "base": "nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+  "build_context_sha256": "aabe05e71c839f791aa3a5df5b35da1e2a9c4818c6b9e1fb37d147c613d01a6d",
+  "recipe_sha256": "9123f8ff96656b5342690b22f8067631a419157bb0cfc3d65a1cd122deb84341",
+  "package_lock_sha256": "55e596cffc6e853269bd9e817ac6f3d7ff20b47d32f8cb028512c72e90da776e",
+  "network": "none",
+  "APK_hash_verification": true,
+  "normal_APK_signatures_required": true,
+  "packages": 15,
+  "limits": [
+    "Candidate only; exact installed package solution, libraries, ingress/security/notices/layers/secrets remain required.",
+    "Original and fresh runtime configurations unchanged; one candidate image retained for qualification."
+  ]
+}

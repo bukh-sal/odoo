@@ -1,0 +1,1705 @@
+{
+  "result": "actual_pinned_support_images_collected_review_pending",
+  "utc": "2026-11-03T21:16:53.221620+00:00",
+  "roles": {
+    "postgres": {
+      "image_id": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "pinned_reference": "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "architecture": "amd64",
+      "OS": "linux",
+      "rootfs_layers": [
+        "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+        "sha256:aee8b2888bd5e955a8394f142d363b83fa68f6aa3fcb233965d2b8b52a2d7a1e",
+        "sha256:84e63ec0fc3b5b5209db67f67f49749b384cb9078d458c4d68760a2727f547de",
+        "sha256:4937c8ae37fe60b2a61d3ddd949d4f13074dcc7f7ceed9829ce9790b51d7563d",
+        "sha256:b6807007e7c4c60259fc51247446e92c71d88121ac5fb7a3b30f2f89dba79085",
+        "sha256:99618f179235ba028e0f56cf65a895a15af5727011a0ee5bdf620f43944224d9",
+        "sha256:d437be1bffc2f0ed75600d156b5ea08a36a6c04f64818f336000b71ce6aabfba",
+        "sha256:96e511d85fe2d8c4b20d1a03a6cd2f2dca15588922cf5025e283d517d02226e8",
+        "sha256:452bd072c43b14ecf0fc77a5de941639908d45a09d61f6117e97aa9e1d908ff2",
+        "sha256:8c7bd6f04748d187c87bc3722c116c25387729a1cac8cfbf612b4e2484194143",
+        "sha256:f4aa45fbdf9ce2dd7fe35c19f3ebcf94f50470cfbdd92db7f369e53206886fe4",
+        "sha256:cd02fc8d4145baa9feefbdcdeb573ac6aa9f458d476e5d63fbfbd663701ac5a8",
+        "sha256:d6323df5b0a9e17cc2fb750ba056d07a4b8d93706f754796114238f17d799066",
+        "sha256:8c75fddb232f3cfd661be22798f3a9bb5fd3d1752175ea746648a13791cf6772"
+      ],
+      "version": "postgres (PostgreSQL) 16.15 (Debian 16.15-1.pgdg12+2)",
+      "packages": [
+        {
+          "name": "adduser",
+          "version": "3.134",
+          "architecture": "all",
+          "source_package": "adduser",
+          "source_version": "3.134"
+        },
+        {
+          "name": "apt",
+          "version": "2.6.1",
+          "architecture": "amd64",
+          "source_package": "apt",
+          "source_version": "2.6.1"
+        },
+        {
+          "name": "base-files",
+          "version": "12.4+deb12u15",
+          "architecture": "amd64",
+          "source_package": "base-files",
+          "source_version": "12.4+deb12u15"
+        },
+        {
+          "name": "base-passwd",
+          "version": "3.6.1",
+          "architecture": "amd64",
+          "source_package": "base-passwd",
+          "source_version": "3.6.1"
+        },
+        {
+          "name": "bash",
+          "version": "5.2.15-2+b13",
+          "architecture": "amd64",
+          "source_package": "bash",
+          "source_version": "5.2.15-2"
+        },
+        {
+          "name": "bsdutils",
+          "version": "1:2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "coreutils",
+          "version": "9.1-1",
+          "architecture": "amd64",
+          "source_package": "coreutils",
+          "source_version": "9.1-1"
+        },
+        {
+          "name": "dash",
+          "version": "0.5.12-2",
+          "architecture": "amd64",
+          "source_package": "dash",
+          "source_version": "0.5.12-2"
+        },
+        {
+          "name": "debconf",
+          "version": "1.5.82",
+          "architecture": "all",
+          "source_package": "debconf",
+          "source_version": "1.5.82"
+        },
+        {
+          "name": "debian-archive-keyring",
+          "version": "2023.3+deb12u2",
+          "architecture": "all",
+          "source_package": "debian-archive-keyring",
+          "source_version": "2023.3+deb12u2"
+        },
+        {
+          "name": "debianutils",
+          "version": "5.7-0.5~deb12u1",
+          "architecture": "amd64",
+          "source_package": "debianutils",
+          "source_version": "5.7-0.5~deb12u1"
+        },
+        {
+          "name": "diffutils",
+          "version": "1:3.8-4",
+          "architecture": "amd64",
+          "source_package": "diffutils",
+          "source_version": "1:3.8-4"
+        },
+        {
+          "name": "dirmngr",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "dpkg",
+          "version": "1.21.23",
+          "architecture": "amd64",
+          "source_package": "dpkg",
+          "source_version": "1.21.23"
+        },
+        {
+          "name": "e2fsprogs",
+          "version": "1.47.0-2+b2",
+          "architecture": "amd64",
+          "source_package": "e2fsprogs",
+          "source_version": "1.47.0-2"
+        },
+        {
+          "name": "findutils",
+          "version": "4.9.0-4",
+          "architecture": "amd64",
+          "source_package": "findutils",
+          "source_version": "4.9.0-4"
+        },
+        {
+          "name": "gcc-12-base",
+          "version": "12.2.0-14+deb12u1",
+          "architecture": "amd64",
+          "source_package": "gcc-12",
+          "source_version": "12.2.0-14+deb12u1"
+        },
+        {
+          "name": "gnupg",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "all",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gnupg-l10n",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "all",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gnupg-utils",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gpg",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gpg-agent",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gpg-wks-client",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gpg-wks-server",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gpgconf",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gpgsm",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "gpgv",
+          "version": "2.2.40-1.1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "gnupg2",
+          "source_version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "grep",
+          "version": "3.8-5",
+          "architecture": "amd64",
+          "source_package": "grep",
+          "source_version": "3.8-5"
+        },
+        {
+          "name": "gzip",
+          "version": "1.12-1",
+          "architecture": "amd64",
+          "source_package": "gzip",
+          "source_version": "1.12-1"
+        },
+        {
+          "name": "hostname",
+          "version": "3.23+nmu1",
+          "architecture": "amd64",
+          "source_package": "hostname",
+          "source_version": "3.23+nmu1"
+        },
+        {
+          "name": "init-system-helpers",
+          "version": "1.65.2+deb12u1",
+          "architecture": "all",
+          "source_package": "init-system-helpers",
+          "source_version": "1.65.2+deb12u1"
+        },
+        {
+          "name": "less",
+          "version": "590-2.1~deb12u2",
+          "architecture": "amd64",
+          "source_package": "less",
+          "source_version": "590-2.1~deb12u2"
+        },
+        {
+          "name": "libacl1",
+          "version": "2.3.1-3",
+          "architecture": "amd64",
+          "source_package": "acl",
+          "source_version": "2.3.1-3"
+        },
+        {
+          "name": "libapt-pkg6.0",
+          "version": "2.6.1",
+          "architecture": "amd64",
+          "source_package": "apt",
+          "source_version": "2.6.1"
+        },
+        {
+          "name": "libassuan0",
+          "version": "2.5.5-5",
+          "architecture": "amd64",
+          "source_package": "libassuan",
+          "source_version": "2.5.5-5"
+        },
+        {
+          "name": "libattr1",
+          "version": "1:2.5.1-4",
+          "architecture": "amd64",
+          "source_package": "attr",
+          "source_version": "1:2.5.1-4"
+        },
+        {
+          "name": "libaudit-common",
+          "version": "1:3.0.9-1",
+          "architecture": "all",
+          "source_package": "audit",
+          "source_version": "1:3.0.9-1"
+        },
+        {
+          "name": "libaudit1",
+          "version": "1:3.0.9-1",
+          "architecture": "amd64",
+          "source_package": "audit",
+          "source_version": "1:3.0.9-1"
+        },
+        {
+          "name": "libblkid1",
+          "version": "2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libbsd0",
+          "version": "0.11.7-2",
+          "architecture": "amd64",
+          "source_package": "libbsd",
+          "source_version": "0.11.7-2"
+        },
+        {
+          "name": "libbz2-1.0",
+          "version": "1.0.8-5+b1",
+          "architecture": "amd64",
+          "source_package": "bzip2",
+          "source_version": "1.0.8-5"
+        },
+        {
+          "name": "libc-bin",
+          "version": "2.36-9+deb12u14",
+          "architecture": "amd64",
+          "source_package": "glibc",
+          "source_version": "2.36-9+deb12u14"
+        },
+        {
+          "name": "libc-l10n",
+          "version": "2.36-9+deb12u14",
+          "architecture": "all",
+          "source_package": "glibc",
+          "source_version": "2.36-9+deb12u14"
+        },
+        {
+          "name": "libc6",
+          "version": "2.36-9+deb12u14",
+          "architecture": "amd64",
+          "source_package": "glibc",
+          "source_version": "2.36-9+deb12u14"
+        },
+        {
+          "name": "libcap-ng0",
+          "version": "0.8.3-1+b3",
+          "architecture": "amd64",
+          "source_package": "libcap-ng",
+          "source_version": "0.8.3-1"
+        },
+        {
+          "name": "libcap2",
+          "version": "1:2.66-4+deb12u3+b1",
+          "architecture": "amd64",
+          "source_package": "libcap2",
+          "source_version": "1:2.66-4+deb12u3"
+        },
+        {
+          "name": "libcom-err2",
+          "version": "1.47.0-2+b2",
+          "architecture": "amd64",
+          "source_package": "e2fsprogs",
+          "source_version": "1.47.0-2"
+        },
+        {
+          "name": "libcrypt1",
+          "version": "1:4.4.33-2",
+          "architecture": "amd64",
+          "source_package": "libxcrypt",
+          "source_version": "1:4.4.33-2"
+        },
+        {
+          "name": "libdb5.3",
+          "version": "5.3.28+dfsg2-1",
+          "architecture": "amd64",
+          "source_package": "db5.3",
+          "source_version": "5.3.28+dfsg2-1"
+        },
+        {
+          "name": "libdebconfclient0",
+          "version": "0.270",
+          "architecture": "amd64",
+          "source_package": "cdebconf",
+          "source_version": "0.270"
+        },
+        {
+          "name": "libedit2",
+          "version": "3.1-20221030-2",
+          "architecture": "amd64",
+          "source_package": "libedit",
+          "source_version": "3.1-20221030-2"
+        },
+        {
+          "name": "libext2fs2",
+          "version": "1.47.0-2+b2",
+          "architecture": "amd64",
+          "source_package": "e2fsprogs",
+          "source_version": "1.47.0-2"
+        },
+        {
+          "name": "libffi8",
+          "version": "3.4.4-1",
+          "architecture": "amd64",
+          "source_package": "libffi",
+          "source_version": "3.4.4-1"
+        },
+        {
+          "name": "libgcc-s1",
+          "version": "12.2.0-14+deb12u1",
+          "architecture": "amd64",
+          "source_package": "gcc-12",
+          "source_version": "12.2.0-14+deb12u1"
+        },
+        {
+          "name": "libgcrypt20",
+          "version": "1.10.1-3+deb12u1",
+          "architecture": "amd64",
+          "source_package": "libgcrypt20",
+          "source_version": "1.10.1-3+deb12u1"
+        },
+        {
+          "name": "libgdbm-compat4",
+          "version": "1.23-3",
+          "architecture": "amd64",
+          "source_package": "gdbm",
+          "source_version": "1.23-3"
+        },
+        {
+          "name": "libgdbm6",
+          "version": "1.23-3",
+          "architecture": "amd64",
+          "source_package": "gdbm",
+          "source_version": "1.23-3"
+        },
+        {
+          "name": "libgmp10",
+          "version": "2:6.2.1+dfsg1-1.1",
+          "architecture": "amd64",
+          "source_package": "gmp",
+          "source_version": "2:6.2.1+dfsg1-1.1"
+        },
+        {
+          "name": "libgnutls30",
+          "version": "3.7.9-2+deb12u7",
+          "architecture": "amd64",
+          "source_package": "gnutls28",
+          "source_version": "3.7.9-2+deb12u7"
+        },
+        {
+          "name": "libgpg-error0",
+          "version": "1.46-1",
+          "architecture": "amd64",
+          "source_package": "libgpg-error",
+          "source_version": "1.46-1"
+        },
+        {
+          "name": "libgssapi-krb5-2",
+          "version": "1.20.1-2+deb12u5",
+          "architecture": "amd64",
+          "source_package": "krb5",
+          "source_version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libhogweed6",
+          "version": "3.8.1-2",
+          "architecture": "amd64",
+          "source_package": "nettle",
+          "source_version": "3.8.1-2"
+        },
+        {
+          "name": "libicu72",
+          "version": "72.1-3+deb12u1",
+          "architecture": "amd64",
+          "source_package": "icu",
+          "source_version": "72.1-3+deb12u1"
+        },
+        {
+          "name": "libidn2-0",
+          "version": "2.3.3-1+b1",
+          "architecture": "amd64",
+          "source_package": "libidn2",
+          "source_version": "2.3.3-1"
+        },
+        {
+          "name": "libjson-perl",
+          "version": "4.10000-1",
+          "architecture": "all",
+          "source_package": "libjson-perl",
+          "source_version": "4.10000-1"
+        },
+        {
+          "name": "libk5crypto3",
+          "version": "1.20.1-2+deb12u5",
+          "architecture": "amd64",
+          "source_package": "krb5",
+          "source_version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libkeyutils1",
+          "version": "1.6.3-2",
+          "architecture": "amd64",
+          "source_package": "keyutils",
+          "source_version": "1.6.3-2"
+        },
+        {
+          "name": "libkrb5-3",
+          "version": "1.20.1-2+deb12u5",
+          "architecture": "amd64",
+          "source_package": "krb5",
+          "source_version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libkrb5support0",
+          "version": "1.20.1-2+deb12u5",
+          "architecture": "amd64",
+          "source_package": "krb5",
+          "source_version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libksba8",
+          "version": "1.6.3-2",
+          "architecture": "amd64",
+          "source_package": "libksba",
+          "source_version": "1.6.3-2"
+        },
+        {
+          "name": "libldap-2.5-0",
+          "version": "2.5.13+dfsg-5",
+          "architecture": "amd64",
+          "source_package": "openldap",
+          "source_version": "2.5.13+dfsg-5"
+        },
+        {
+          "name": "libllvm19",
+          "version": "1:19.1.7-3~deb12u1",
+          "architecture": "amd64",
+          "source_package": "llvm-toolchain-19",
+          "source_version": "1:19.1.7-3~deb12u1"
+        },
+        {
+          "name": "liblz4-1",
+          "version": "1.9.4-1",
+          "architecture": "amd64",
+          "source_package": "lz4",
+          "source_version": "1.9.4-1"
+        },
+        {
+          "name": "liblzma5",
+          "version": "5.4.1-1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "xz-utils",
+          "source_version": "5.4.1-1+deb12u2"
+        },
+        {
+          "name": "libmd0",
+          "version": "1.0.4-2",
+          "architecture": "amd64",
+          "source_package": "libmd",
+          "source_version": "1.0.4-2"
+        },
+        {
+          "name": "libmount1",
+          "version": "2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libncursesw6",
+          "version": "6.4-4",
+          "architecture": "amd64",
+          "source_package": "ncurses",
+          "source_version": "6.4-4"
+        },
+        {
+          "name": "libnettle8",
+          "version": "3.8.1-2",
+          "architecture": "amd64",
+          "source_package": "nettle",
+          "source_version": "3.8.1-2"
+        },
+        {
+          "name": "libnpth0",
+          "version": "1.6-3",
+          "architecture": "amd64",
+          "source_package": "npth",
+          "source_version": "1.6-3"
+        },
+        {
+          "name": "libnss-wrapper",
+          "version": "1.1.12-1",
+          "architecture": "amd64",
+          "source_package": "nss-wrapper",
+          "source_version": "1.1.12-1"
+        },
+        {
+          "name": "libp11-kit0",
+          "version": "0.24.1-2",
+          "architecture": "amd64",
+          "source_package": "p11-kit",
+          "source_version": "0.24.1-2"
+        },
+        {
+          "name": "libpam-modules",
+          "version": "1.5.2-6+deb12u2",
+          "architecture": "amd64",
+          "source_package": "pam",
+          "source_version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpam-modules-bin",
+          "version": "1.5.2-6+deb12u2",
+          "architecture": "amd64",
+          "source_package": "pam",
+          "source_version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpam-runtime",
+          "version": "1.5.2-6+deb12u2",
+          "architecture": "all",
+          "source_package": "pam",
+          "source_version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpam0g",
+          "version": "1.5.2-6+deb12u2",
+          "architecture": "amd64",
+          "source_package": "pam",
+          "source_version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpcre2-8-0",
+          "version": "10.42-1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "pcre2",
+          "source_version": "10.42-1+deb12u2"
+        },
+        {
+          "name": "libperl5.36",
+          "version": "5.36.0-7+deb12u4",
+          "architecture": "amd64",
+          "source_package": "perl",
+          "source_version": "5.36.0-7+deb12u4"
+        },
+        {
+          "name": "libpq5",
+          "version": "18.6-1.pgdg12+2",
+          "architecture": "amd64",
+          "source_package": "postgresql-18",
+          "source_version": "18.6-1.pgdg12+2"
+        },
+        {
+          "name": "libreadline8",
+          "version": "8.2-1.3",
+          "architecture": "amd64",
+          "source_package": "readline",
+          "source_version": "8.2-1.3"
+        },
+        {
+          "name": "libsasl2-2",
+          "version": "2.1.28+dfsg-10",
+          "architecture": "amd64",
+          "source_package": "cyrus-sasl2",
+          "source_version": "2.1.28+dfsg-10"
+        },
+        {
+          "name": "libsasl2-modules-db",
+          "version": "2.1.28+dfsg-10",
+          "architecture": "amd64",
+          "source_package": "cyrus-sasl2",
+          "source_version": "2.1.28+dfsg-10"
+        },
+        {
+          "name": "libseccomp2",
+          "version": "2.5.4-1+deb12u1",
+          "architecture": "amd64",
+          "source_package": "libseccomp",
+          "source_version": "2.5.4-1+deb12u1"
+        },
+        {
+          "name": "libselinux1",
+          "version": "3.4-1+b6",
+          "architecture": "amd64",
+          "source_package": "libselinux",
+          "source_version": "3.4-1"
+        },
+        {
+          "name": "libsemanage-common",
+          "version": "3.4-1",
+          "architecture": "all",
+          "source_package": "libsemanage",
+          "source_version": "3.4-1"
+        },
+        {
+          "name": "libsemanage2",
+          "version": "3.4-1+b5",
+          "architecture": "amd64",
+          "source_package": "libsemanage",
+          "source_version": "3.4-1"
+        },
+        {
+          "name": "libsepol2",
+          "version": "3.4-2.1",
+          "architecture": "amd64",
+          "source_package": "libsepol",
+          "source_version": "3.4-2.1"
+        },
+        {
+          "name": "libsmartcols1",
+          "version": "2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libsqlite3-0",
+          "version": "3.40.1-2+deb12u2",
+          "architecture": "amd64",
+          "source_package": "sqlite3",
+          "source_version": "3.40.1-2+deb12u2"
+        },
+        {
+          "name": "libss2",
+          "version": "1.47.0-2+b2",
+          "architecture": "amd64",
+          "source_package": "e2fsprogs",
+          "source_version": "1.47.0-2"
+        },
+        {
+          "name": "libssl3",
+          "version": "3.0.22-1~deb12u1",
+          "architecture": "amd64",
+          "source_package": "openssl",
+          "source_version": "3.0.22-1~deb12u1"
+        },
+        {
+          "name": "libstdc++6",
+          "version": "12.2.0-14+deb12u1",
+          "architecture": "amd64",
+          "source_package": "gcc-12",
+          "source_version": "12.2.0-14+deb12u1"
+        },
+        {
+          "name": "libsystemd0",
+          "version": "252.39-1~deb12u2",
+          "architecture": "amd64",
+          "source_package": "systemd",
+          "source_version": "252.39-1~deb12u2"
+        },
+        {
+          "name": "libtasn1-6",
+          "version": "4.19.0-2+deb12u1",
+          "architecture": "amd64",
+          "source_package": "libtasn1-6",
+          "source_version": "4.19.0-2+deb12u1"
+        },
+        {
+          "name": "libtinfo6",
+          "version": "6.4-4",
+          "architecture": "amd64",
+          "source_package": "ncurses",
+          "source_version": "6.4-4"
+        },
+        {
+          "name": "libudev1",
+          "version": "252.39-1~deb12u2",
+          "architecture": "amd64",
+          "source_package": "systemd",
+          "source_version": "252.39-1~deb12u2"
+        },
+        {
+          "name": "libunistring2",
+          "version": "1.0-2",
+          "architecture": "amd64",
+          "source_package": "libunistring",
+          "source_version": "1.0-2"
+        },
+        {
+          "name": "libuuid1",
+          "version": "2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libxml2",
+          "version": "2.9.14+dfsg-1.3~deb12u6",
+          "architecture": "amd64",
+          "source_package": "libxml2",
+          "source_version": "2.9.14+dfsg-1.3~deb12u6"
+        },
+        {
+          "name": "libxslt1.1",
+          "version": "1.1.35-1+deb12u4",
+          "architecture": "amd64",
+          "source_package": "libxslt",
+          "source_version": "1.1.35-1+deb12u4"
+        },
+        {
+          "name": "libxxhash0",
+          "version": "0.8.1-1",
+          "architecture": "amd64",
+          "source_package": "xxhash",
+          "source_version": "0.8.1-1"
+        },
+        {
+          "name": "libz3-4",
+          "version": "4.8.12-3.1",
+          "architecture": "amd64",
+          "source_package": "z3",
+          "source_version": "4.8.12-3.1"
+        },
+        {
+          "name": "libzstd1",
+          "version": "1.5.4+dfsg2-5",
+          "architecture": "amd64",
+          "source_package": "libzstd",
+          "source_version": "1.5.4+dfsg2-5"
+        },
+        {
+          "name": "locales",
+          "version": "2.36-9+deb12u14",
+          "architecture": "all",
+          "source_package": "glibc",
+          "source_version": "2.36-9+deb12u14"
+        },
+        {
+          "name": "login",
+          "version": "1:4.13+dfsg1-1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "shadow",
+          "source_version": "1:4.13+dfsg1-1+deb12u2"
+        },
+        {
+          "name": "logsave",
+          "version": "1.47.0-2+b2",
+          "architecture": "amd64",
+          "source_package": "e2fsprogs",
+          "source_version": "1.47.0-2"
+        },
+        {
+          "name": "mawk",
+          "version": "1.3.4.20200120-3.1",
+          "architecture": "amd64",
+          "source_package": "mawk",
+          "source_version": "1.3.4.20200120-3.1"
+        },
+        {
+          "name": "mount",
+          "version": "2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "ncurses-base",
+          "version": "6.4-4",
+          "architecture": "all",
+          "source_package": "ncurses",
+          "source_version": "6.4-4"
+        },
+        {
+          "name": "ncurses-bin",
+          "version": "6.4-4",
+          "architecture": "amd64",
+          "source_package": "ncurses",
+          "source_version": "6.4-4"
+        },
+        {
+          "name": "netbase",
+          "version": "6.4",
+          "architecture": "all",
+          "source_package": "netbase",
+          "source_version": "6.4"
+        },
+        {
+          "name": "openssl",
+          "version": "3.0.22-1~deb12u1",
+          "architecture": "amd64",
+          "source_package": "openssl",
+          "source_version": "3.0.22-1~deb12u1"
+        },
+        {
+          "name": "passwd",
+          "version": "1:4.13+dfsg1-1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "shadow",
+          "source_version": "1:4.13+dfsg1-1+deb12u2"
+        },
+        {
+          "name": "perl",
+          "version": "5.36.0-7+deb12u4",
+          "architecture": "amd64",
+          "source_package": "perl",
+          "source_version": "5.36.0-7+deb12u4"
+        },
+        {
+          "name": "perl-base",
+          "version": "5.36.0-7+deb12u4",
+          "architecture": "amd64",
+          "source_package": "perl",
+          "source_version": "5.36.0-7+deb12u4"
+        },
+        {
+          "name": "perl-modules-5.36",
+          "version": "5.36.0-7+deb12u4",
+          "architecture": "all",
+          "source_package": "perl",
+          "source_version": "5.36.0-7+deb12u4"
+        },
+        {
+          "name": "pinentry-curses",
+          "version": "1.2.1-1",
+          "architecture": "amd64",
+          "source_package": "pinentry",
+          "source_version": "1.2.1-1"
+        },
+        {
+          "name": "postgresql-16",
+          "version": "16.15-1.pgdg12+2",
+          "architecture": "amd64",
+          "source_package": "postgresql-16",
+          "source_version": "16.15-1.pgdg12+2"
+        },
+        {
+          "name": "postgresql-client-16",
+          "version": "16.15-1.pgdg12+2",
+          "architecture": "amd64",
+          "source_package": "postgresql-16",
+          "source_version": "16.15-1.pgdg12+2"
+        },
+        {
+          "name": "postgresql-client-common",
+          "version": "293.pgdg12+1",
+          "architecture": "all",
+          "source_package": "postgresql-common",
+          "source_version": "293.pgdg12+1"
+        },
+        {
+          "name": "postgresql-common",
+          "version": "293.pgdg12+1",
+          "architecture": "all",
+          "source_package": "postgresql-common",
+          "source_version": "293.pgdg12+1"
+        },
+        {
+          "name": "readline-common",
+          "version": "8.2-1.3",
+          "architecture": "all",
+          "source_package": "readline",
+          "source_version": "8.2-1.3"
+        },
+        {
+          "name": "sed",
+          "version": "4.9-1+deb12u1",
+          "architecture": "amd64",
+          "source_package": "sed",
+          "source_version": "4.9-1+deb12u1"
+        },
+        {
+          "name": "sensible-utils",
+          "version": "0.0.17+nmu1",
+          "architecture": "all",
+          "source_package": "sensible-utils",
+          "source_version": "0.0.17+nmu1"
+        },
+        {
+          "name": "ssl-cert",
+          "version": "1.1.2",
+          "architecture": "all",
+          "source_package": "ssl-cert",
+          "source_version": "1.1.2"
+        },
+        {
+          "name": "sysvinit-utils",
+          "version": "3.06-4",
+          "architecture": "amd64",
+          "source_package": "sysvinit",
+          "source_version": "3.06-4"
+        },
+        {
+          "name": "tar",
+          "version": "1.34+dfsg-1.2+deb12u1",
+          "architecture": "amd64",
+          "source_package": "tar",
+          "source_version": "1.34+dfsg-1.2+deb12u1"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026c-0+deb12u1",
+          "architecture": "all",
+          "source_package": "tzdata",
+          "source_version": "2026c-0+deb12u1"
+        },
+        {
+          "name": "ucf",
+          "version": "3.0043+nmu1+deb12u1",
+          "architecture": "all",
+          "source_package": "ucf",
+          "source_version": "3.0043+nmu1+deb12u1"
+        },
+        {
+          "name": "usr-is-merged",
+          "version": "37~deb12u1",
+          "architecture": "all",
+          "source_package": "usrmerge",
+          "source_version": "37~deb12u1"
+        },
+        {
+          "name": "util-linux",
+          "version": "2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "util-linux-extra",
+          "version": "2.38.1-5+deb12u3",
+          "architecture": "amd64",
+          "source_package": "util-linux",
+          "source_version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "xz-utils",
+          "version": "5.4.1-1+deb12u2",
+          "architecture": "amd64",
+          "source_package": "xz-utils",
+          "source_version": "5.4.1-1+deb12u2"
+        },
+        {
+          "name": "zlib1g",
+          "version": "1:1.2.13.dfsg-1",
+          "architecture": "amd64",
+          "source_package": "zlib",
+          "source_version": "1:1.2.13.dfsg-1"
+        },
+        {
+          "name": "zstd",
+          "version": "1.5.4+dfsg2-5",
+          "architecture": "amd64",
+          "source_package": "libzstd",
+          "source_version": "1.5.4+dfsg2-5"
+        }
+      ]
+    },
+    "nginx": {
+      "image_id": "sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+      "pinned_reference": "nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+      "architecture": "amd64",
+      "OS": "linux",
+      "rootfs_layers": [
+        "sha256:75c137aedfb2760f88629236cb7b797630aed0c3d91d626d1d1bb694878fc2ba",
+        "sha256:5b91dba2fc11b3e6dab4d25e913db11e6e701065af717028e060dfb5ab8532e4",
+        "sha256:a8a09d37d441c540c613402fa23c75308b04f4801e80f6d193316949f3df4b42",
+        "sha256:d87f6628aa86314e48021285bd5dce15a2cf5166c1c80246d2e03dbb674abaf2",
+        "sha256:313dac429378b98567656151706777045067624f9a6678873dd6fdc7ecf35545",
+        "sha256:2ba21653acee34632d9eab26da39a5ff0cac12021817e6a5e9efac9507628575",
+        "sha256:3212502c73d1691bd2b186efdda493ca750fc99795b6b0b85741af01b4e79aa4",
+        "sha256:8ff2a17964b4a163c6ba0fa456ebd70ed12823a74324ba3b6f49d87bc25c1456"
+      ],
+      "version_and_build": "nginx version: nginx/1.30.6\nbuilt by gcc 15.2.0 (Alpine 15.2.0) \nbuilt with OpenSSL 3.5.8 25 Aug 2026 (running with OpenSSL 3.5.9 29 Sep 2026)\nTLS SNI support enabled\nconfigure arguments: --prefix=/etc/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/run/nginx.pid --lock-path=/run/nginx.lock --http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp --http-scgi-temp-path=/var/cache/nginx/scgi_temp --with-perl_modules_path=/usr/lib/perl5/vendor_perl --user=nginx --group=nginx --with-compat --with-file-aio --with-threads --with-http_addition_module --with-http_auth_request_module --with-http_dav_module --with-http_flv_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_mp4_module --with-http_random_index_module --with-http_realip_module --with-http_secure_link_module --with-http_slice_module --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module --with-http_v2_module --with-http_v3_module --with-mail --with-mail_ssl_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-cc-opt='-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g' --with-ld-opt='-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'\n",
+      "alpine_release": "3.24.3",
+      "packages": [
+        {
+          "name": "alpine-baselayout",
+          "version": "3.7.2-r1",
+          "origin": "alpine-baselayout",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "60a7585bbab2fa0f762504eb617dbca90216e31f",
+          "description": "Alpine base dir structure and init scripts"
+        },
+        {
+          "name": "alpine-baselayout-data",
+          "version": "3.7.2-r1",
+          "origin": "alpine-baselayout",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "60a7585bbab2fa0f762504eb617dbca90216e31f",
+          "description": "Alpine base dir structure and init scripts"
+        },
+        {
+          "name": "alpine-keys",
+          "version": "2.6-r0",
+          "origin": "alpine-keys",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "b9f23becced4d7b3ccc0fa0f28530243ccd314a0",
+          "description": "Public keys for Alpine Linux packages"
+        },
+        {
+          "name": "alpine-release",
+          "version": "3.24.3-r0",
+          "origin": "alpine-base",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "ee92350c8a4509152dc91c693814215a884c07c3",
+          "description": "Alpine release data"
+        },
+        {
+          "name": "aom-libs",
+          "version": "3.14.1-r0",
+          "origin": "aom",
+          "license": "BSD-2-Clause AND custom",
+          "architecture": "x86_64",
+          "source_commit": "ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e",
+          "description": "Alliance for Open Media (AOM) AV1 codec SDK (libraries)"
+        },
+        {
+          "name": "apk-tools",
+          "version": "3.0.8-r0",
+          "origin": "apk-tools",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "4588b452722bd4800efdc6cce4f6e980e02a997f",
+          "description": "Alpine Package Keeper - package manager for alpine"
+        },
+        {
+          "name": "brotli-libs",
+          "version": "1.2.0-r1",
+          "origin": "brotli",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "1ee249c9da168084b1c6c9f7488bdffa2ac33c84",
+          "description": "Generic lossless compressor (libraries)"
+        },
+        {
+          "name": "busybox",
+          "version": "1.37.0-r31",
+          "origin": "busybox",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+          "description": "Size optimized toolbox of many common UNIX utilities"
+        },
+        {
+          "name": "busybox-binsh",
+          "version": "1.37.0-r31",
+          "origin": "busybox",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+          "description": "busybox ash /bin/sh"
+        },
+        {
+          "name": "c-ares",
+          "version": "1.34.9-r0",
+          "origin": "c-ares",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "50f178d7a4c30ea44b54b7d4731ab58558c38b14",
+          "description": "Asynchronous DNS/names resolver library"
+        },
+        {
+          "name": "ca-certificates",
+          "version": "20261020-r0",
+          "origin": "ca-certificates",
+          "license": "MPL-2.0 AND MIT",
+          "architecture": "x86_64",
+          "source_commit": "e78f5987166c6ffbe23f6472e2e8f040298fe2da",
+          "description": "Common CA certificates PEM files from Mozilla"
+        },
+        {
+          "name": "ca-certificates-bundle",
+          "version": "20261020-r0",
+          "origin": "ca-certificates",
+          "license": "MPL-2.0 AND MIT",
+          "architecture": "x86_64",
+          "source_commit": "e78f5987166c6ffbe23f6472e2e8f040298fe2da",
+          "description": "Pre generated bundle of Mozilla certificates"
+        },
+        {
+          "name": "curl",
+          "version": "8.22.0-r0",
+          "origin": "curl",
+          "license": "curl",
+          "architecture": "x86_64",
+          "source_commit": "ab53c408436ac7199ed5b67bde204aaca73003bd",
+          "description": "URL retrieval utility and library"
+        },
+        {
+          "name": "fontconfig",
+          "version": "2.17.1-r1",
+          "origin": "fontconfig",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "07061cb5a28861b108b09adc09ebd4fd962e549f",
+          "description": "Library for configuring and customizing font access"
+        },
+        {
+          "name": "freetype",
+          "version": "2.14.3-r0",
+          "origin": "freetype",
+          "license": "FTL OR GPL-2.0-or-later",
+          "architecture": "x86_64",
+          "source_commit": "ad16b0afc1a315c4095a75ff72ebbe3cfa29b671",
+          "description": "TrueType font rendering library"
+        },
+        {
+          "name": "geoip",
+          "version": "1.6.12-r6",
+          "origin": "geoip",
+          "license": "LGPL-2.1-or-later",
+          "architecture": "x86_64",
+          "source_commit": "6db81e6559d66572861f28962c24459c4a583da1",
+          "description": "Lookup countries by IP addresses"
+        },
+        {
+          "name": "gettext-envsubst",
+          "version": "1.0-r0",
+          "origin": "gettext",
+          "license": "GPL-3.0-or-later AND LGPL-2.1-or-later AND MIT",
+          "architecture": "x86_64",
+          "source_commit": "a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391",
+          "description": "GNU gettext envsubst binary"
+        },
+        {
+          "name": "libapk",
+          "version": "3.0.8-r0",
+          "origin": "apk-tools",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "4588b452722bd4800efdc6cce4f6e980e02a997f",
+          "description": "Alpine Package Keeper - package manager for alpine"
+        },
+        {
+          "name": "libavif",
+          "version": "1.4.1-r0",
+          "origin": "libavif",
+          "license": "BSD-2-Clause",
+          "architecture": "x86_64",
+          "source_commit": "7c091e42619c47958002c5de53dd7f02dd4c83ac",
+          "description": "Library for encoding and decoding .avif files"
+        },
+        {
+          "name": "libbsd",
+          "version": "0.12.2-r0",
+          "origin": "libbsd",
+          "license": "BSD-3-Clause",
+          "architecture": "x86_64",
+          "source_commit": "02365e78d654a7beb23fd35d7d69f4a649009ede",
+          "description": "commonly-used BSD functions not implemented by all libcs"
+        },
+        {
+          "name": "libbz2",
+          "version": "1.0.8-r6",
+          "origin": "bzip2",
+          "license": "bzip2-1.0.6",
+          "architecture": "x86_64",
+          "source_commit": "33283848034c9885d984c8e8697c645c57324938",
+          "description": "Shared library for bz2"
+        },
+        {
+          "name": "libcrypto3",
+          "version": "3.5.9-r0",
+          "origin": "openssl",
+          "license": "Apache-2.0",
+          "architecture": "x86_64",
+          "source_commit": "29b9ec24b1b5b39aeef51fa2a044210e2ec5258e",
+          "description": "Crypto library from openssl"
+        },
+        {
+          "name": "libcurl",
+          "version": "8.22.0-r0",
+          "origin": "curl",
+          "license": "curl",
+          "architecture": "x86_64",
+          "source_commit": "ab53c408436ac7199ed5b67bde204aaca73003bd",
+          "description": "The multiprotocol file transfer library"
+        },
+        {
+          "name": "libdav1d",
+          "version": "1.5.3-r0",
+          "origin": "dav1d",
+          "license": "BSD-2-Clause",
+          "architecture": "x86_64",
+          "source_commit": "6a13170ddff8fdf27712aa7d0e5437aa2407ff56",
+          "description": "small and fast AV1 Decoder (libraries)"
+        },
+        {
+          "name": "libedit",
+          "version": "20260508.3.1-r1",
+          "origin": "libedit",
+          "license": "BSD-3-Clause",
+          "architecture": "x86_64",
+          "source_commit": "7c805161e588c028cdee3f19f500849fb2c75d42",
+          "description": "BSD line editing library"
+        },
+        {
+          "name": "libexpat",
+          "version": "2.9.0-r0",
+          "origin": "expat",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "c10df79ce35862cf273f98f6eb78d52e4f064ac7",
+          "description": "XML Parser library written in C (libraries)"
+        },
+        {
+          "name": "libgcc",
+          "version": "15.2.0-r5",
+          "origin": "gcc",
+          "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+          "architecture": "x86_64",
+          "source_commit": "423a8ad043d07f2c7546c8ec3e2b0384cda360ae",
+          "description": "GNU C compiler runtime libraries"
+        },
+        {
+          "name": "libgd",
+          "version": "2.3.3-r10",
+          "origin": "gd",
+          "license": "GD",
+          "architecture": "x86_64",
+          "source_commit": "bf4ebac970366eda6cc26aa61c8dddae0d6916ee",
+          "description": "Library for the dynamic creation of images by programmers (libraries)"
+        },
+        {
+          "name": "libice",
+          "version": "1.1.2-r0",
+          "origin": "libice",
+          "license": "X11",
+          "architecture": "x86_64",
+          "source_commit": "d4941e833167c30aa1172e6d8420d084698254ab",
+          "description": "X11 Inter-Client Exchange library"
+        },
+        {
+          "name": "libidn2",
+          "version": "2.3.8-r0",
+          "origin": "libidn2",
+          "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+          "architecture": "x86_64",
+          "source_commit": "8240e09aa2fdd8f9979b2016be082273965aff0c",
+          "description": "Encode/Decode library for internationalized domain names"
+        },
+        {
+          "name": "libintl",
+          "version": "1.0-r0",
+          "origin": "gettext",
+          "license": "LGPL-2.1-or-later",
+          "architecture": "x86_64",
+          "source_commit": "a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391",
+          "description": "GNU gettext runtime library"
+        },
+        {
+          "name": "libjpeg-turbo",
+          "version": "3.1.3-r0",
+          "origin": "libjpeg-turbo",
+          "license": "BSD-3-Clause AND IJG AND Zlib",
+          "architecture": "x86_64",
+          "source_commit": "5fe6bebf850fc964a8525c81548397c39cb6f7cd",
+          "description": "Accelerated baseline JPEG compression and decompression library"
+        },
+        {
+          "name": "libmd",
+          "version": "1.2.0-r0",
+          "origin": "libmd",
+          "license": "BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND Public Domain",
+          "architecture": "x86_64",
+          "source_commit": "87b78bc6890645c317d3167bdbb0187502d0cda9",
+          "description": "Message Digest functions from BSD systems"
+        },
+        {
+          "name": "libncursesw",
+          "version": "6.6_p20260516-r0",
+          "origin": "ncurses",
+          "license": "X11",
+          "architecture": "x86_64",
+          "source_commit": "2cee8a7328d061418336ad327b512d96bcd7bc5e",
+          "description": "Console display library (libncursesw)"
+        },
+        {
+          "name": "libpng",
+          "version": "1.6.59-r0",
+          "origin": "libpng",
+          "license": "Libpng",
+          "architecture": "x86_64",
+          "source_commit": "8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b",
+          "description": "Portable Network Graphics library"
+        },
+        {
+          "name": "libpsl",
+          "version": "0.21.5-r3",
+          "origin": "libpsl",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+          "description": "C library for the Publix Suffix List"
+        },
+        {
+          "name": "libsharpyuv",
+          "version": "1.6.0-r0",
+          "origin": "libwebp",
+          "license": "BSD-3-Clause",
+          "architecture": "x86_64",
+          "source_commit": "af8b48fabd19b69b00f5efe192f461896a38cf74",
+          "description": "Libraries for working with WebP images (libsharpyuv library)"
+        },
+        {
+          "name": "libsm",
+          "version": "1.2.6-r0",
+          "origin": "libsm",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "4eaa957537767ad0344894ad0e609068b26bf85d",
+          "description": "X11 Session Management library"
+        },
+        {
+          "name": "libssl3",
+          "version": "3.5.9-r0",
+          "origin": "openssl",
+          "license": "Apache-2.0",
+          "architecture": "x86_64",
+          "source_commit": "29b9ec24b1b5b39aeef51fa2a044210e2ec5258e",
+          "description": "SSL shared libraries"
+        },
+        {
+          "name": "libstdc++",
+          "version": "15.2.0-r5",
+          "origin": "gcc",
+          "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+          "architecture": "x86_64",
+          "source_commit": "423a8ad043d07f2c7546c8ec3e2b0384cda360ae",
+          "description": "GNU C++ standard runtime library"
+        },
+        {
+          "name": "libunistring",
+          "version": "1.4.2-r0",
+          "origin": "libunistring",
+          "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+          "architecture": "x86_64",
+          "source_commit": "30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c",
+          "description": "Library for manipulating Unicode strings and C strings"
+        },
+        {
+          "name": "libuuid",
+          "version": "2.42.3-r1",
+          "origin": "util-linux",
+          "license": "BSD-3-Clause",
+          "architecture": "x86_64",
+          "source_commit": "d98c55af59055e6ca60fbe36e171546918709965",
+          "description": "DCE compatible Universally Unique Identifier library"
+        },
+        {
+          "name": "libwebp",
+          "version": "1.6.0-r0",
+          "origin": "libwebp",
+          "license": "BSD-3-Clause",
+          "architecture": "x86_64",
+          "source_commit": "af8b48fabd19b69b00f5efe192f461896a38cf74",
+          "description": "Libraries for working with WebP images"
+        },
+        {
+          "name": "libx11",
+          "version": "1.8.14-r0",
+          "origin": "libx11",
+          "license": "X11",
+          "architecture": "x86_64",
+          "source_commit": "e129d974905f6cf078e41390b58241a73519f572",
+          "description": "X11 client-side library"
+        },
+        {
+          "name": "libxau",
+          "version": "1.0.12-r0",
+          "origin": "libxau",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+          "description": "X11 authorisation library"
+        },
+        {
+          "name": "libxcb",
+          "version": "1.17.0-r2",
+          "origin": "libxcb",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1",
+          "description": "X11 client-side library"
+        },
+        {
+          "name": "libxdmcp",
+          "version": "1.1.5-r1",
+          "origin": "libxdmcp",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "614e9166706cec427fc3d907b8d981390a42e088",
+          "description": "X11 Display Manager Control Protocol library"
+        },
+        {
+          "name": "libxext",
+          "version": "1.3.7-r0",
+          "origin": "libxext",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942",
+          "description": "X11 miscellaneous extensions library"
+        },
+        {
+          "name": "libxml2",
+          "version": "2.13.9-r2",
+          "origin": "libxml2",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "f1bd5b6767a0e7fdda380c95138a1c938eb6e102",
+          "description": "XML parsing library, version 2"
+        },
+        {
+          "name": "libxpm",
+          "version": "3.5.20-r0",
+          "origin": "libxpm",
+          "license": "X11",
+          "architecture": "x86_64",
+          "source_commit": "f5d3a71d8949514ce4a8057ae2002180a6f42321",
+          "description": "X11 pixmap library"
+        },
+        {
+          "name": "libxslt",
+          "version": "1.1.43-r3",
+          "origin": "libxslt",
+          "license": "X11",
+          "architecture": "x86_64",
+          "source_commit": "730f2f5bdc97be98b2beee33f55134c622e6189c",
+          "description": "XML stylesheet transformation library"
+        },
+        {
+          "name": "libxt",
+          "version": "1.3.1-r0",
+          "origin": "libxt",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "60222ebeadec75e483e49194130c6963d0fcbf75",
+          "description": "X11 toolkit intrinsics library"
+        },
+        {
+          "name": "libyuv",
+          "version": "0.0.1928-r0",
+          "origin": "libyuv",
+          "license": "BSD-3-Clause",
+          "architecture": "x86_64",
+          "source_commit": "6d055fa770a2fbbd807ee496c4dc8c69d00fbee4",
+          "description": "Library for YUV scaling"
+        },
+        {
+          "name": "musl",
+          "version": "1.2.6-r3",
+          "origin": "musl",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "8f79d39391b46d6dbf1800fb68b8212a21d5ee2e",
+          "description": "the musl c library (libc) implementation"
+        },
+        {
+          "name": "musl-utils",
+          "version": "1.2.6-r3",
+          "origin": "musl",
+          "license": "MIT AND BSD-2-Clause AND GPL-2.0-or-later",
+          "architecture": "x86_64",
+          "source_commit": "8f79d39391b46d6dbf1800fb68b8212a21d5ee2e",
+          "description": "the musl c library (libc) implementation"
+        },
+        {
+          "name": "ncurses-terminfo-base",
+          "version": "6.6_p20260516-r0",
+          "origin": "ncurses",
+          "license": "X11",
+          "architecture": "x86_64",
+          "source_commit": "2cee8a7328d061418336ad327b512d96bcd7bc5e",
+          "description": "Descriptions of common terminals"
+        },
+        {
+          "name": "nghttp2-libs",
+          "version": "1.70.0-r0",
+          "origin": "nghttp2",
+          "license": "MIT",
+          "architecture": "x86_64",
+          "source_commit": "d5a34efc88bbe8d18737fda28125071c4aef8517",
+          "description": "HTTP/2 C client, server and proxy (libraries)"
+        },
+        {
+          "name": "nginx",
+          "version": "1.30.6-r1",
+          "origin": "nginx",
+          "license": "2-clause BSD-like license",
+          "architecture": "x86_64",
+          "source_commit": null,
+          "description": "High performance web server"
+        },
+        {
+          "name": "nginx-module-acme",
+          "version": "1.30.6.0.4.1-r1",
+          "origin": "nginx-module-acme",
+          "license": "2-clause BSD-like license",
+          "architecture": "x86_64",
+          "source_commit": null,
+          "description": "nginx nginx-acme"
+        },
+        {
+          "name": "nginx-module-geoip",
+          "version": "1.30.6-r1",
+          "origin": "nginx-module-geoip",
+          "license": "2-clause BSD-like license",
+          "architecture": "x86_64",
+          "source_commit": null,
+          "description": "nginx GeoIP dynamic modules"
+        },
+        {
+          "name": "nginx-module-image-filter",
+          "version": "1.30.6-r1",
+          "origin": "nginx-module-image-filter",
+          "license": "2-clause BSD-like license",
+          "architecture": "x86_64",
+          "source_commit": null,
+          "description": "nginx image filter dynamic module"
+        },
+        {
+          "name": "nginx-module-njs",
+          "version": "1.30.6.1.0.2-r1",
+          "origin": "nginx-module-njs",
+          "license": "2-clause BSD-like license",
+          "architecture": "x86_64",
+          "source_commit": null,
+          "description": "nginx njs dynamic modules"
+        },
+        {
+          "name": "nginx-module-xslt",
+          "version": "1.30.6-r1",
+          "origin": "nginx-module-xslt",
+          "license": "2-clause BSD-like license",
+          "architecture": "x86_64",
+          "source_commit": null,
+          "description": "nginx xslt dynamic module"
+        },
+        {
+          "name": "pcre2",
+          "version": "10.49-r0",
+          "origin": "pcre2",
+          "license": "BSD-3-Clause",
+          "architecture": "x86_64",
+          "source_commit": "3d497cbb3217749c4fb85f90f3b6f7908b0c1f95",
+          "description": "Perl-compatible regular expression library"
+        },
+        {
+          "name": "scanelf",
+          "version": "1.3.9-r1",
+          "origin": "pax-utils",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "c61801eeacb3ffcd9c2025b09e402153bb93fb39",
+          "description": "Scan ELF binaries for stuff"
+        },
+        {
+          "name": "ssl_client",
+          "version": "1.37.0-r31",
+          "origin": "busybox",
+          "license": "GPL-2.0-only",
+          "architecture": "x86_64",
+          "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+          "description": "External ssl_client for busybox wget"
+        },
+        {
+          "name": "tiff",
+          "version": "4.7.2-r0",
+          "origin": "tiff",
+          "license": "libtiff",
+          "architecture": "x86_64",
+          "source_commit": "bbcfbafeadf5dac4744d065ac69338c1b58fc0d1",
+          "description": "Support for the Tag Image File Format or TIFF"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026e-r0",
+          "origin": "tzdata",
+          "license": "Public-Domain",
+          "architecture": "x86_64",
+          "source_commit": "faa135a1a22c90309bf381766a7cc47490dea786",
+          "description": "Timezone data"
+        },
+        {
+          "name": "xz-libs",
+          "version": "5.8.4-r0",
+          "origin": "xz",
+          "license": "GPL-2.0-or-later AND 0BSD AND Public-Domain AND LGPL-2.1-or-later",
+          "architecture": "x86_64",
+          "source_commit": "0c088d609f9fe69eedd6b4c7f4b99cdad847c20a",
+          "description": "Library and CLI tools for XZ and LZMA compressed files (libraries)"
+        },
+        {
+          "name": "zlib",
+          "version": "1.3.2-r1",
+          "origin": "zlib",
+          "license": "Zlib",
+          "architecture": "x86_64",
+          "source_commit": "0afa2da0e8c8051c6f8f64a7a388e5a259904245",
+          "description": "A compression/decompression Library"
+        },
+        {
+          "name": "zstd-libs",
+          "version": "1.5.7-r2",
+          "origin": "zstd",
+          "license": "BSD-3-Clause OR GPL-2.0-or-later",
+          "architecture": "x86_64",
+          "source_commit": "3c6e2ee2b16f403d53eab39c4426eb61f003c322",
+          "description": "Zstandard - Fast real-time compression algorithm (libraries)"
+        }
+      ]
+    }
+  },
+  "images_built": 0,
+  "deployment_mutations": 0,
+  "retained_collectors": 0,
+  "limits": [
+    "Static metadata/package identities, not a full advisory/license/network/history/secret qualification.",
+    "Exact current database/proxy images; no database/config/userdata mounts or runtime restarts."
+  ]
+}

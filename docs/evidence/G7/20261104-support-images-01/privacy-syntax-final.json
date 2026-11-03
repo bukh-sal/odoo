@@ -1,0 +1,10 @@
+{
+  "result": "passed_changed_source_evidence_privacy_and_syntax",
+  "files": 23,
+  "known_values": 112,
+  "findings": 0,
+  "audited_source_literal_false_positives": 0,
+  "reviewed_expression": "repr(password) constructs a private stdin program at runtime; public script contains no credential value",
+  "reviewed_file_sha256": "85c5e8729d1517aada0b4afc025cb50d0c5d024ad700e954a6331aab6cec359a",
+  "scope": "This current release audit checkpoint only; final full image/archive/history/dependency/license/security qualification remains G7."
+}
