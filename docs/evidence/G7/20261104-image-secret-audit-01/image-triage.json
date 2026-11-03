@@ -1,0 +1,771 @@
+{
+  "result": "passed_current_all_unique_image_layers_and_metadata_secret_review",
+  "images": [
+    "modular-platform-proxy@sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+    "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+    "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a"
+  ],
+  "unique_layers": 44,
+  "files": 27080,
+  "bytes": 1038466217,
+  "known_values": 121,
+  "known_generated_findings": 0,
+  "reviewed_generic_findings": 83,
+  "unreviewed_findings": 0,
+  "prior_exact_review_sha256": "355109b5df3a01c650eb918a1604fe4c2add722b17a46007557adf202ce7a4cb",
+  "records": [
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1586912,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1587136,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1587296,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1587616,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1588128,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1588480,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1588768,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1589056,
+      "rule": "private-key-marker",
+      "fingerprint": "476f865a5f21aa68d82e660f",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1589376,
+      "rule": "private-key-marker",
+      "fingerprint": "7149e798ed281eb73b8a2a82",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26/usr/lib/x86_64-linux-gnu/libgnutls.so.30.34.3",
+      "offset": 1590880,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84",
+      "file_sha256": "779b25d20249988bea2c1aa6bbeb218f5ae7ea8a9d30ce4f54ea37372965cc4b",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/1ed00b1e193de039298e5480e169b8d52f92ce3d61cb87d9a480aea70e5a6375/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/__pycache__/ssh.cpython-312.pyc",
+      "offset": 2826,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d",
+      "file_sha256": "494e88c528ff23eebfcba159359250877939501d0b96087b3a7069b5f21d274d",
+      "reason": "Pinned cryptography SSH serialization compiled constant; source AST independently verifies the format-marker constant, not a configured private key.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/1ed00b1e193de039298e5480e169b8d52f92ce3d61cb87d9a480aea70e5a6375/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/ssh.py",
+      "offset": 1980,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d",
+      "file_sha256": "162b177bf9d429d3c67ea10d5612a99a86b399a23ca87f067be5466dcd1dca4c",
+      "reason": "Pinned cryptography SSH serialization source contains the PEM boundary as a bytes constant for format parsing; no key body or platform private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/1ed00b1e193de039298e5480e169b8d52f92ce3d61cb87d9a480aea70e5a6375/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/__pycache__/url.cpython-312.pyc",
+      "offset": 7849,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "7ad0e432473b7e0de53ce18f05b5c208d6a9239e69376a868314a5ba05971a9b",
+      "reason": "Pinned pip-vendored urllib3 compiled Url.url property documentation example; source function docstring independently checked.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/1ed00b1e193de039298e5480e169b8d52f92ce3d61cb87d9a480aea70e5a6375/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/url.py",
+      "offset": 8121,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "b117515dddf2799d7ebca975af25a72b5e4802741c211ee18c4196227598583c",
+      "reason": "Pinned pip-vendored urllib3 Url.url property function documentation example; not a configured proxy connection.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/auth_password_policy/static/src/password_field.xml",
+      "offset": 501,
+      "rule": "credential-literal",
+      "fingerprint": "e728bcaadaf4f9c9fcac64dc",
+      "file_sha256": "c19436ba47ffa3772df7f245996faeba002d426e2955c91ab17b5224d744c859",
+      "reason": "Owl password state binding expression, not a credential value.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 553,
+      "rule": "credential-literal",
+      "fingerprint": "d229518f5422ed51a534b2c8",
+      "file_sha256": "f8685a3f9d16f13ebf3b7b04203666a2860aa4c42d2510056fe890ca08739403",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/auth_totp/tests/test_totp.py",
+      "offset": 5567,
+      "rule": "credential-literal",
+      "fingerprint": "a4d0e3e4a213220fb8bdbf0c",
+      "file_sha256": "f8685a3f9d16f13ebf3b7b04203666a2860aa4c42d2510056fe890ca08739403",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 781,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "77ea1bffa017dbfdd1d1be8abd90db0d9b129f2d02d1008395857be9f0e6f25d",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/auth_totp/views/templates.xml",
+      "offset": 2235,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "77ea1bffa017dbfdd1d1be8abd90db0d9b129f2d02d1008395857be9f0e6f25d",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/bus/tests/test_ir_websocket.py",
+      "offset": 885,
+      "rule": "credential-literal",
+      "fingerprint": "82d6b3ac8c1b0ae9e24c246e",
+      "file_sha256": "f9870e401df775c49596e617637765004fbe0bfaed8c0e7f2d89547d5038835c",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 5627,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6099,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 6716,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/bus/tests/test_websocket_caryall.py",
+      "offset": 13835,
+      "rule": "credential-literal",
+      "fingerprint": "aa4d626d29a5d11227cd2d99",
+      "file_sha256": "1979f6bcb77d5fb28c7aad8a94cf976e113d9fb7917e1241cc588ba44cc7aec9",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/static/lib/hoot/tests/hoot-dom/events.test.js",
+      "offset": 58628,
+      "rule": "HTML-session-token",
+      "fingerprint": "714de0c2acd2062a4eb8be38",
+      "file_sha256": "d54d3845c5aa24c3f7c57552feaf8cd8739852ab4182c8843aa4f2b45652eaee",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 212,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3",
+      "file_sha256": "50fcfdfbb3b7727afde1c8362c3299878ed0c55e06fee4e601f47b9027f9ea4d",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/static/tests/core/file_model.test.js",
+      "offset": 461,
+      "rule": "credential-literal",
+      "fingerprint": "d1c2e0d0d04e011ff04203f3",
+      "file_sha256": "50fcfdfbb3b7727afde1c8362c3299878ed0c55e06fee4e601f47b9027f9ea4d",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/static/tests/webclient/res_user_group_ids_field.test.js",
+      "offset": 1625,
+      "rule": "credential-literal",
+      "fingerprint": "3fd910fc34cc368ff199b77b",
+      "file_sha256": "a0db1edbb6a9a075a17342d6463e9dd62ea68c8fdc3daa9ad5d2584313d86a4a",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_partner.py",
+      "offset": 4871,
+      "rule": "credential-literal",
+      "fingerprint": "e83c29c7eeb1d9117f399471",
+      "file_sha256": "9938cc207e1068d4c6c6306528bf42704197cadb8241fc879b4c46ef119d9058",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 437,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 532,
+      "rule": "credential-literal",
+      "fingerprint": "0470f4c370cdb168fbe122ac",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 638,
+      "rule": "credential-literal",
+      "fingerprint": "47f09c0ec53321a4e8b686bd",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 737,
+      "rule": "credential-literal",
+      "fingerprint": "69517d8afc127a7760d0763d",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 829,
+      "rule": "credential-literal",
+      "fingerprint": "ecb5fb44be34f288b229c86b",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 920,
+      "rule": "credential-literal",
+      "fingerprint": "0b0e63127f5a650769478510",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users.py",
+      "offset": 3310,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "f45cba00b7478f0525ee04330e9954e4bd9147def214f35463b99d245e169784",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/tests/test_res_users_settings.py",
+      "offset": 329,
+      "rule": "credential-literal",
+      "fingerprint": "f1bc641b9ef375224e0c0de8",
+      "file_sha256": "5ae894f36c2be2337899d96c25a5e69be710178a897f50883879cdcb28baf382",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 1231,
+      "rule": "credential-literal",
+      "fingerprint": "0aaeb36989f39b072a9006e1",
+      "file_sha256": "075e913c055a049b1b4c4647dc4cac15b4ec500ac27c66d351372ab93a359458",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/addons/web/views/webclient_templates.xml",
+      "offset": 7114,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "075e913c055a049b1b4c4647dc4cac15b4ec500ac27c66d351372ab93a359458",
+      "reason": "Unrendered QWeb/JavaScript template expression; a per-request token is evaluated at runtime, no issued token literal.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/ssl/client.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "4e166b7ede70c222516dba865622d9842f79dc25f2842f7907a19158e4776e8e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/ssl/self_signed.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "fefdcf41cc5e53c9697d52f18f5a3f46df5446e574a3aa34732602e2d5d93180",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/ssl/server.key.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "3dcc8ac35f140bda2a56aa728f2131b457aed216abf45407cfb7a1f4b4a87226",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_api.py",
+      "offset": 7786,
+      "rule": "credential-literal",
+      "fingerprint": "22e8e033b1b7465eaa52e621",
+      "file_sha256": "9c0e920e15767c4a1870b9a620828b4d05e606aede4484d16f07f0066b10a6bc",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 6587,
+      "rule": "credential-literal",
+      "fingerprint": "af059d0c724f762cc7e3aa84",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 9160,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 21001,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_configmanager.py",
+      "offset": 25252,
+      "rule": "credential-literal",
+      "fingerprint": "c6618e259b7509232c89f7f0",
+      "file_sha256": "3d5a109dfd37e7f1601708e4f0d006b24f6af2168291ba91194ab92c0668d84c",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_ir_mail_server_smtpd.py",
+      "offset": 683,
+      "rule": "credential-literal",
+      "fingerprint": "c34a0f434cb9028f0444d1ef",
+      "file_sha256": "c522a621b0d2f8cdd1b8a888796ff72c72d3fc81cb50203c03b1bf03e206070e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_partner.py",
+      "offset": 19647,
+      "rule": "credential-literal",
+      "fingerprint": "e8a8b0d1152178bb24d6c877",
+      "file_sha256": "63799c25f965f5ee3e8af20ec0e9c50c6f98ec264e99c9e86e090a9775ff45c6",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 751,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 988,
+      "rule": "credential-literal",
+      "fingerprint": "1370d7bb86b50a16589358cc",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 1198,
+      "rule": "credential-literal",
+      "fingerprint": "86ef00cafbc9cbd55c188815",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6594,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 6861,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24362,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24611,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 24836,
+      "rule": "credential-literal",
+      "fingerprint": "0e8b8f1ba0ca0584af37f713",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 27223,
+      "rule": "credential-literal",
+      "fingerprint": "fc75b05e7db1a3741fbaafe5",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/addons/base/tests/test_res_users.py",
+      "offset": 28415,
+      "rule": "credential-literal",
+      "fingerprint": "1e72758257f6b79c024b7769",
+      "file_sha256": "07c5fa14ae7a6be1d4a2ecbde1039b4eac33552d18554f37e160f74a775d831e",
+      "reason": "Exact public upstream automated-test specimen (test user/password, fake token, parser URL or test TLS key); not used to initialize current platform accounts.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/2579969ac3c9abea4dfc3e9dc0c33730459f14be1237f278b670bfcb3f5bebbb/opt/modular/odoo/http.py",
+      "offset": 9513,
+      "rule": "HTML-session-token",
+      "fingerprint": "4aa45e4a930c5521f736aede",
+      "file_sha256": "9d7abdb09e75f899c4492a85f3287a0535988a66cd0266e411d400fb976ffcb9",
+      "reason": "Documentation form template calls request.csrf_token(); no issued token literal.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/418153af13877b8106fd64454296f962d290924fc1f73befa60a85c435d00e79/usr/lib/file/magic.mgc",
+      "offset": 3040,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d",
+      "file_sha256": "3217786eeedc85aadcd389ff3ee281b71081412c78f354458db94f095d55ed59",
+      "reason": "PEM begin/end format recognition string in library/parser or compiled equivalent; no configured private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ee131862682e15664f089e20b9645d57adef6a00d57e3cbbb0014830b6e84bef/etc/ssl/private/ssl-cert-snakeoil.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "11d8718bcf325986019a5fc2f392499656348c61c867cc3b1e77f7b7068af8ed",
+      "reason": "Debian vendor snakeoil certificate key inherited from the pinned base layer, not generated by this project and never configured by platform HTTP/TLS profiles. Actual private edge key is different and independently scanned.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ee131862682e15664f089e20b9645d57adef6a00d57e3cbbb0014830b6e84bef/usr/share/perl/5.36.0/HTTP/Tiny.pm",
+      "offset": 13276,
+      "rule": "credential-url",
+      "fingerprint": "b2052864ebc122da1e26000a",
+      "file_sha256": "a28408da12eb2e156377d63dcb891a27c0d16d79d07dd9794810ee3c8cc33cf8",
+      "reason": "Vendor documentation URL/proxy password example (including compiled docstring); not a configured connection or runtime credential.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/ee131862682e15664f089e20b9645d57adef6a00d57e3cbbb0014830b6e84bef/usr/share/perl/5.36.0/HTTP/Tiny.pm",
+      "offset": 65487,
+      "rule": "credential-url",
+      "fingerprint": "b2052864ebc122da1e26000a",
+      "file_sha256": "a28408da12eb2e156377d63dcb891a27c0d16d79d07dd9794810ee3c8cc33cf8",
+      "reason": "Vendor documentation URL/proxy password example (including compiled docstring); not a configured connection or runtime credential.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f/usr/local/lib/python3.12/site-packages/pip/_vendor/urllib3/util/url.py",
+      "offset": 4898,
+      "rule": "credential-url",
+      "fingerprint": "c6516e15a7a01e7c75816f2e",
+      "file_sha256": "942004ecce66c80f040dd5b4b09bb2c9985507d2bf8f7f258d684702715a5a81",
+      "reason": "Vendor documentation URL/proxy password example (including compiled docstring); not a configured connection or runtime credential.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f/usr/local/lib/python3.12/urllib/request.py",
+      "offset": 2309,
+      "rule": "credential-literal",
+      "fingerprint": "193f558bab92201d367a6381",
+      "file_sha256": "b6a7860356d99186e7ad1b35c47f2f09d7524a398096214d8c276277947b672c",
+      "reason": "Vendor documentation URL/proxy password example (including compiled docstring); not a configured connection or runtime credential.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/__pycache__/ssh.cpython-312.pyc",
+      "offset": 2826,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d",
+      "file_sha256": "25b751c7756cf11e0cf15dd2512b3f23fbba3facc57dd17152f543bc7325c963",
+      "reason": "Application copy of the same cryptography SSH format constant in compiled code; exact source bytes match independently reviewed parser source.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/ssh.py",
+      "offset": 1980,
+      "rule": "private-key-marker",
+      "fingerprint": "21f798e70ba77d24e051025d",
+      "file_sha256": "162b177bf9d429d3c67ea10d5612a99a86b399a23ca87f067be5466dcd1dca4c",
+      "reason": "Pinned cryptography SSH serialization source contains the PEM boundary as a bytes constant for format parsing; no key body or platform private identity.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/2_7_keycert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "3ee48edaa0a681ae1a9fba644acedea75168d7acab40a77d8bce039eba9261c2",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/badcert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84",
+      "file_sha256": "262a107916641c7f211ac5898c0177535cd0bdc5aa872cc6e883842694d8f521",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/badcert.pem",
+      "offset": 964,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84",
+      "file_sha256": "262a107916641c7f211ac5898c0177535cd0bdc5aa872cc6e883842694d8f521",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/badkey.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84",
+      "file_sha256": "81a04af69c7f806ec39ab2cac5f0fa7fa8beb6802601105355fb3e606151405d",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/badkey.pem",
+      "offset": 1081,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84",
+      "file_sha256": "81a04af69c7f806ec39ab2cac5f0fa7fa8beb6802601105355fb3e606151405d",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/keycert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84",
+      "file_sha256": "af4284d561fd795e97e26532929098e439bcfeba1b0528b8cf031c1813ed322e",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/server.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "09723c6e8f24bd3a3723fa349153da6ee434a0706ca0d6e01554f56d6353c0e2",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/test_server.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "e72538418ef98155b04ede1313910a9223a110d1303b478ff681b759307476d9",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/gevent/tests/wrongcert.pem",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "a5271794640fd7f659987a84",
+      "file_sha256": "ea7e2eef071a94d282b6732cabb27763bb8e89ecfdd3564b887dfca04d231943",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/__pycache__/url.cpython-312.pyc",
+      "offset": 7849,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "6234036ca8d99e9017a7af773db80746d7a72292a8b736e3cd5a6734c9e3b7ee",
+      "reason": "Application copy of pip-vendored urllib3 compiled Url.url property documentation; exact source example independently checked.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/url.py",
+      "offset": 8121,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "b117515dddf2799d7ebca975af25a72b5e4802741c211ee18c4196227598583c",
+      "reason": "Pinned pip-vendored urllib3 Url.url property function documentation example; not a configured proxy connection.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/slapdtest/certs/client.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "814a73e184c15a70cf859070972c1ee07b00bf5e77d7e29d2e79790399474235",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/slapdtest/certs/server.key",
+      "offset": 0,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "df296a558cfefdb4adb21c17484fdf5353902dbbf5daf661ab6a93479e9a4141",
+      "reason": "Bundled vendor automated-test TLS specimen in pinned dependency layer; never configured as a platform TLS identity; active private TLS key is different.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/urllib3/util/__pycache__/url.cpython-312.pyc",
+      "offset": 7820,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "e68072600c95a3ebfdeae94af2ca450d9da6a452a85ddb122d3eda37bbe3136c",
+      "reason": "Installed urllib3 compiled Url.url property documentation example; exact source function docstring checked.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    },
+    {
+      "location": "image-layer/blobs/sha256/fed48166ad0d3742866794e8986d02ab2e86c25797ded6e1ca618676428a5495/venv/lib/python3.12/site-packages/urllib3/util/url.py",
+      "offset": 8104,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "6a2814d91987dd9728278d413a154ee5277b15cb262d9945425377f2a693311f",
+      "reason": "Installed urllib3 Url.url property documentation example; not a configured credential.",
+      "disposition": "reviewed_vendor_fixture_format_constant_or_documentation"
+    }
+  ],
+  "limits": [
+    "All exported regular members including hidden/deleted lower-layer files and image config/history metadata; exact file SHA256/offset/rule/fingerprint review.",
+    "Vendor test keys/snakeoil and parser/documentation literals remain explicitly identified by original exact-content review; they are not active platform identities.",
+    "Native dependencies remain trusted code; no universal secret detector or vulnerability-free image claim."
+  ]
+}

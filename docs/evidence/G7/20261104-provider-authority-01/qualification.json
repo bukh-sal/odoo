@@ -1,0 +1,29 @@
+{
+  "result": "passed_current_API07_provider_chain_and_attribution_authority",
+  "acceptance": [
+    "API-07"
+  ],
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "configuration_generation": 5,
+  "native": {
+    "tests": 5,
+    "successful": true,
+    "failures": [],
+    "errors": []
+  },
+  "native_source_sha256": "caada046d9157084fd7f619f195ea4e5a925b8d041a3f7e444dbfd5449c4e5b4",
+  "HTTP_checks": [
+    "viewer create denied despite forged consumer/actor/plugin headers",
+    "foreign note hidden despite forged attribution",
+    "actor fields rejected by strict schema",
+    "viewer labels provider call denied with forged headers",
+    "native RPC private frame rejected"
+  ],
+  "all_fixtures_rolled_back": true,
+  "all17tables_worker_original_configs_exact": true,
+  "helper_removed": true,
+  "limits": [
+    "Supported native call_bound and actual HTTP/legacy RPC attribution boundaries, not a sandbox against fully trusted native code.",
+    "No new plugin endpoint, actor impersonation mechanism, UI or grant schema introduced. No ID08 browser, API03 cancellation or API05 crash qualification claim."
+  ]
+}
