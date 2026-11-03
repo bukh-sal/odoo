@@ -3,4 +3,4 @@ packaging>=25,<27
 jsonschema>=4.26,<5
 rfc8785>=0.1.4,<0.2
 PyJWT[crypto]>=2.15,<3
-cryptography==42.0.8
+cryptography==50.0.2

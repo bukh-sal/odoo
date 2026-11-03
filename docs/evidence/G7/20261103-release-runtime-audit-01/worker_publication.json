@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_worker_publication.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 16,
+  "stdout": "",
+  "stderr": "test_bootstrap_preserves_current_revocation_and_never_resets_generation (test_worker_publication.WorkerPublicationTests.test_bootstrap_preserves_current_revocation_and_never_resets_generation) ... ok\ntest_bootstrap_wrong_hash_or_replaced_empty_volume_refused (test_worker_publication.WorkerPublicationTests.test_bootstrap_wrong_hash_or_replaced_empty_volume_refused) ... ok\ntest_changed_operator_generation_and_immutable_key_reference_refused (test_worker_publication.WorkerPublicationTests.test_changed_operator_generation_and_immutable_key_reference_refused) ... ok\ntest_current_observation_change_refuses_before_publication (test_worker_publication.WorkerPublicationTests.test_current_observation_change_refuses_before_publication) ... ok\ntest_exact_hash_publication_reader_issuer_and_no_replay (test_worker_publication.WorkerPublicationTests.test_exact_hash_publication_reader_issuer_and_no_replay) ... ok\ntest_generation_and_intervening_publication_fence_old_review (test_worker_publication.WorkerPublicationTests.test_generation_and_intervening_publication_fence_old_review) ... ok\ntest_legacy_reader_optional_but_changed_deployment_refused (test_worker_publication.WorkerPublicationTests.test_legacy_reader_optional_but_changed_deployment_refused) ... ok\ntest_operator_composition_reloads_protected_sibling_and_does_not_execute_helper (test_worker_publication.WorkerPublicationTests.test_operator_composition_reloads_protected_sibling_and_does_not_execute_helper) ... ok\ntest_planning_health_retains_approved_descriptor_during_outage (test_worker_publication.WorkerPublicationTests.test_planning_health_retains_approved_descriptor_during_outage) ... ok\ntest_planning_missing_issuer_cannot_claim_healthy_credentials (test_worker_publication.WorkerPublicationTests.test_planning_missing_issuer_cannot_claim_healthy_credentials) ... ok\ntest_planning_missing_verification_key_is_unavailable (test_worker_publication.WorkerPublicationTests.test_planning_missing_verification_key_is_unavailable) ... ok\ntest_planning_new_address_requires_separate_publication (test_worker_publication.WorkerPublicationTests.test_planning_new_address_requires_separate_publication) ... ok\ntest_planning_publication_race_is_refused (test_worker_publication.WorkerPublicationTests.test_planning_publication_race_is_refused) ... ok\ntest_planning_revoked_endpoint_needs_no_runtime_or_keys (test_worker_publication.WorkerPublicationTests.test_planning_revoked_endpoint_needs_no_runtime_or_keys) ... ok\ntest_revoke_with_runtime_down_invalidates_old_reader_snapshot (test_worker_publication.WorkerPublicationTests.test_revoke_with_runtime_down_invalidates_old_reader_snapshot) ... ok\ntest_unsafe_destination_and_unlisted_target_refused (test_worker_publication.WorkerPublicationTests.test_unsafe_destination_and_unlisted_target_refused) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 116.595s\n\nOK\n"
+}

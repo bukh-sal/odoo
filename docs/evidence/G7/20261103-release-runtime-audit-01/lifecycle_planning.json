@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_lifecycle_planning.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 6,
+  "stdout": "",
+  "stderr": "test_current_independent_workspace_state_and_immutable_release_rechecked (test_lifecycle_planning.CurrentImageInstallation.test_current_independent_workspace_state_and_immutable_release_rechecked) ... ok\ntest_existing_site_identity_reused_and_suspended_provider_requires_explicit_enable (test_lifecycle_planning.CurrentImageInstallation.test_existing_site_identity_reused_and_suspended_provider_requires_explicit_enable) ... ok\ntest_install_into_another_workspace_extends_an_existing_scoped_provider (test_lifecycle_planning.CurrentImageInstallation.test_install_into_another_workspace_extends_an_existing_scoped_provider) ... ok\ntest_new_binding_scopes_are_in_the_approved_release_before_install (test_lifecycle_planning.CurrentImageInstallation.test_new_binding_scopes_are_in_the_approved_release_before_install) ... ok\ntest_transitive_install_shared_site_identity_and_independent_reconstruction (test_lifecycle_planning.CurrentImageInstallation.test_transitive_install_shared_site_identity_and_independent_reconstruction) ... ok\ntest_unavailable_code_workspace_and_identity_fail_before_any_mutation (test_lifecycle_planning.CurrentImageInstallation.test_unavailable_code_workspace_and_identity_fail_before_any_mutation) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.204s\n\nOK\n"
+}

@@ -1,0 +1,2425 @@
+{
+  "result": "primary_Debian_status_version_triage_review_pending",
+  "utc": "2026-11-03T21:06:19.949213+00:00",
+  "source_tracker_sha256": "6df822e22f62f0425ef00b897b6baebb6ccd70830ca9ae9c3b4c5a497f3ad035",
+  "matched_source_advisory_pairs": 133,
+  "counts": {
+    "vendor_open_review": 81,
+    "vendor_open_unimportant_review": 49,
+    "published_fix_newer_than_installed": 1,
+    "vendor_undetermined_review": 2
+  },
+  "published_fixes_newer_than_installed": [
+    {
+      "package": "cyrus-sasl2",
+      "installed_version": "2.1.28+dfsg-10",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-107161",
+      "cve": "CVE-2026-107161",
+      "status": "resolved",
+      "urgency": "not yet assigned",
+      "fixed_version": "2.1.28+dfsg-10+deb12u1",
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-107161",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": true,
+      "triage": "published_fix_newer_than_installed"
+    }
+  ],
+  "rows": [
+    {
+      "package": "acl",
+      "installed_version": "2.3.1-3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-54369",
+      "cve": "CVE-2026-54369",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-54369",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "acl",
+      "installed_version": "2.3.1-3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-54370",
+      "cve": "CVE-2026-54370",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-54370",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "apt",
+      "installed_version": "2.6.1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2011-3374",
+      "cve": "CVE-2011-3374",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2011-3374",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "attr",
+      "installed_version": "1:2.5.1-4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-54371",
+      "cve": "CVE-2026-54371",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-54371",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "bzip2",
+      "installed_version": "1.0.8-5",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-42250",
+      "cve": "CVE-2026-42250",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-42250",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "coreutils",
+      "installed_version": "9.1-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2016-2781",
+      "cve": "CVE-2016-2781",
+      "status": "open",
+      "urgency": "low",
+      "fixed_version": null,
+      "nodsa_reason": "ignored",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2016-2781",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "coreutils",
+      "installed_version": "9.1-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2017-18018",
+      "cve": "CVE-2017-18018",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2017-18018",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "coreutils",
+      "installed_version": "9.1-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-5278",
+      "cve": "CVE-2025-5278",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-5278",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "coreutils",
+      "installed_version": "9.1-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-56391",
+      "cve": "CVE-2026-56391",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-56391",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "coreutils",
+      "installed_version": "9.1-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-56392",
+      "cve": "CVE-2026-56392",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-56392",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "cyrus-sasl2",
+      "installed_version": "2.1.28+dfsg-10",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-107161",
+      "cve": "CVE-2026-107161",
+      "status": "resolved",
+      "urgency": "not yet assigned",
+      "fixed_version": "2.1.28+dfsg-10+deb12u1",
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-107161",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": true,
+      "triage": "published_fix_newer_than_installed"
+    },
+    {
+      "package": "dash",
+      "installed_version": "0.5.12-2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-102473",
+      "cve": "CVE-2026-102473",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-102473",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "dash",
+      "installed_version": "0.5.12-2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-102474",
+      "cve": "CVE-2026-102474",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-102474",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "diffutils",
+      "installed_version": "1:3.8-4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-53910",
+      "cve": "CVE-2026-53910",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-53910",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gcc-12",
+      "installed_version": "12.2.0-14+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2022-27943",
+      "cve": "CVE-2022-27943",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2022-27943",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gcc-12",
+      "installed_version": "12.2.0-14+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-102010",
+      "cve": "CVE-2026-102010",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "ignored",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-102010",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gcc-12",
+      "installed_version": "12.2.0-14+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-114690",
+      "cve": "CVE-2026-114690",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-114690",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gcc-12",
+      "installed_version": "12.2.0-14+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-114691",
+      "cve": "CVE-2026-114691",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-114691",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gcc-12",
+      "installed_version": "12.2.0-14+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-115455",
+      "cve": "CVE-2026-115455",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-115455",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gcc-12",
+      "installed_version": "12.2.0-14+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-95619",
+      "cve": "CVE-2026-95619",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-95619",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2010-4756",
+      "cve": "CVE-2010-4756",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2010-4756",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2018-20796",
+      "cve": "CVE-2018-20796",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2019-1010022",
+      "cve": "CVE-2019-1010022",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2019-1010023",
+      "cve": "CVE-2019-1010023",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2019-1010023",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2019-1010024",
+      "cve": "CVE-2019-1010024",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2019-1010024",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2019-1010025",
+      "cve": "CVE-2019-1010025",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2019-9192",
+      "cve": "CVE-2019-9192",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2019-9192",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-18374",
+      "cve": "CVE-2026-18374",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-18374",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-19499",
+      "cve": "CVE-2026-19499",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-19499",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-19542",
+      "cve": "CVE-2026-19542",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-19542",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-5435",
+      "cve": "CVE-2026-5435",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-5435",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-5450",
+      "cve": "CVE-2026-5450",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-5928",
+      "cve": "CVE-2026-5928",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-6238",
+      "cve": "CVE-2026-6238",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-6238",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-6368",
+      "cve": "CVE-2026-6368",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-6368",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-6791",
+      "cve": "CVE-2026-6791",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-77117",
+      "cve": "CVE-2026-77117",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-80489",
+      "cve": "CVE-2026-80489",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-84243",
+      "cve": "CVE-2026-84243",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-84243",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-8674",
+      "cve": "CVE-2026-8674",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-86805",
+      "cve": "CVE-2026-86805",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-86805",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-89092",
+      "cve": "CVE-2026-89092",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-95818",
+      "cve": "CVE-2026-95818",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-95818",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "glibc",
+      "installed_version": "2.36-9+deb12u14",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-97399",
+      "cve": "CVE-2026-97399",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-97399",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gnupg2",
+      "installed_version": "2.2.40-1.1+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2022-3219",
+      "cve": "CVE-2022-3219",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2022-3219",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gnupg2",
+      "installed_version": "2.2.40-1.1+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-30258",
+      "cve": "CVE-2025-30258",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-30258",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gnupg2",
+      "installed_version": "2.2.40-1.1+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-68972",
+      "cve": "CVE-2025-68972",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-68972",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gnupg2",
+      "installed_version": "2.2.40-1.1+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-105712",
+      "cve": "CVE-2026-105712",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-105712",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gnupg2",
+      "installed_version": "2.2.40-1.1+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-57062",
+      "cve": "CVE-2026-57062",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-57062",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gnutls28",
+      "installed_version": "3.7.9-2+deb12u7",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2011-3389",
+      "cve": "CVE-2011-3389",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2011-3389",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gnutls28",
+      "installed_version": "3.7.9-2+deb12u7",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-67693",
+      "cve": "CVE-2026-67693",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-67693",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gnutls28",
+      "installed_version": "3.7.9-2+deb12u7",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-88647",
+      "cve": "CVE-2026-88647",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-88647",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gnutls28",
+      "installed_version": "3.7.9-2+deb12u7",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-88648",
+      "cve": "CVE-2026-88648",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-88648",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gnutls28",
+      "installed_version": "3.7.9-2+deb12u7",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-95184",
+      "cve": "CVE-2026-95184",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-95184",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gnutls28",
+      "installed_version": "3.7.9-2+deb12u7",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-95209",
+      "cve": "CVE-2026-95209",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-95209",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gnutls28",
+      "installed_version": "3.7.9-2+deb12u7",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-95210",
+      "cve": "CVE-2026-95210",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-95210",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "gzip",
+      "installed_version": "1.12-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-41991",
+      "cve": "CVE-2026-41991",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-41991",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "gzip",
+      "installed_version": "1.12-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-41992",
+      "cve": "CVE-2026-41992",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-41992",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "krb5",
+      "installed_version": "1.20.1-2+deb12u5",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2018-5709",
+      "cve": "CVE-2018-5709",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2018-5709",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "krb5",
+      "installed_version": "1.20.1-2+deb12u5",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2024-26458",
+      "cve": "CVE-2024-26458",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2024-26458",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "krb5",
+      "installed_version": "1.20.1-2+deb12u5",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2024-26461",
+      "cve": "CVE-2024-26461",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2024-26461",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "krb5",
+      "installed_version": "1.20.1-2+deb12u5",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-107708",
+      "cve": "CVE-2026-107708",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-107708",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "krb5",
+      "installed_version": "1.20.1-2+deb12u5",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-107778",
+      "cve": "CVE-2026-107778",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-107778",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "krb5",
+      "installed_version": "1.20.1-2+deb12u5",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-11850",
+      "cve": "CVE-2026-11850",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "libgcrypt20",
+      "installed_version": "1.10.1-3+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2018-6829",
+      "cve": "CVE-2018-6829",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2018-6829",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "libgcrypt20",
+      "installed_version": "1.10.1-3+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2024-2236",
+      "cve": "CVE-2024-2236",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2024-2236",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "libtasn1-6",
+      "installed_version": "4.19.0-2+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-13151",
+      "cve": "CVE-2025-13151",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-13151",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "libtirpc",
+      "installed_version": "1.3.3+ds-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-85231",
+      "cve": "CVE-2026-85231",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-85231",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "libtirpc",
+      "installed_version": "1.3.3+ds-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-85977",
+      "cve": "CVE-2026-85977",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-85977",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "ncurses",
+      "installed_version": "6.4-4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2023-50495",
+      "cve": "CVE-2023-50495",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2023-50495",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "ncurses",
+      "installed_version": "6.4-4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-6141",
+      "cve": "CVE-2025-6141",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-6141",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "ncurses",
+      "installed_version": "6.4-4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-69720",
+      "cve": "CVE-2025-69720",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "openldap",
+      "installed_version": "2.5.13+dfsg-5",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2015-3276",
+      "cve": "CVE-2015-3276",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2015-3276",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "openldap",
+      "installed_version": "2.5.13+dfsg-5",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2017-14159",
+      "cve": "CVE-2017-14159",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2017-14159",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "openldap",
+      "installed_version": "2.5.13+dfsg-5",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2017-17740",
+      "cve": "CVE-2017-17740",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2017-17740",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "openldap",
+      "installed_version": "2.5.13+dfsg-5",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2020-15719",
+      "cve": "CVE-2020-15719",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2020-15719",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "openldap",
+      "installed_version": "2.5.13+dfsg-5",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2023-2953",
+      "cve": "CVE-2023-2953",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2023-2953",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "openldap",
+      "installed_version": "2.5.13+dfsg-5",
+      "roles": [
+        "application_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-22185",
+      "cve": "CVE-2026-22185",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-22185",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "openssl",
+      "installed_version": "3.0.22-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-27587",
+      "cve": "CVE-2025-27587",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-27587",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "p11-kit",
+      "installed_version": "0.24.1-2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-13757",
+      "cve": "CVE-2026-13757",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-13757",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "p11-kit",
+      "installed_version": "0.24.1-2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-18938",
+      "cve": "CVE-2026-18938",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-18938",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "pam",
+      "installed_version": "1.5.2-6+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2024-10041",
+      "cve": "CVE-2024-10041",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "ignored",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2024-10041",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "pam",
+      "installed_version": "1.5.2-6+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-8941",
+      "cve": "CVE-2025-8941",
+      "status": "undetermined",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-8941",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_undetermined_review"
+    },
+    {
+      "package": "pam",
+      "installed_version": "1.5.2-6+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-54411",
+      "cve": "CVE-2026-54411",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "perl",
+      "installed_version": "5.36.0-7+deb12u4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2011-4116",
+      "cve": "CVE-2011-4116",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2011-4116",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "perl",
+      "installed_version": "5.36.0-7+deb12u4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2023-31486",
+      "cve": "CVE-2023-31486",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2023-31486",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "perl",
+      "installed_version": "5.36.0-7+deb12u4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-15534",
+      "cve": "CVE-2026-15534",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-15534",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "perl",
+      "installed_version": "5.36.0-7+deb12u4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-82560",
+      "cve": "CVE-2026-82560",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-82560",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "perl",
+      "installed_version": "5.36.0-7+deb12u4",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-9538",
+      "cve": "CVE-2026-9538",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "shadow",
+      "installed_version": "1:4.13+dfsg1-1+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2007-5686",
+      "cve": "CVE-2007-5686",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2007-5686",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "shadow",
+      "installed_version": "1:4.13+dfsg1-1+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2024-56433",
+      "cve": "CVE-2024-56433",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2024-56433",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2021-45346",
+      "cve": "CVE-2021-45346",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2021-45346",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-29088",
+      "cve": "CVE-2025-29088",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-29088",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-70873",
+      "cve": "CVE-2025-70873",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-70873",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-7458",
+      "cve": "CVE-2025-7458",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-7458",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-7709",
+      "cve": "CVE-2025-7709",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-7709",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-11822",
+      "cve": "CVE-2026-11822",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-11822",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-11824",
+      "cve": "CVE-2026-11824",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-11824",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119371",
+      "cve": "CVE-2026-119371",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119371",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119372",
+      "cve": "CVE-2026-119372",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119372",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119373",
+      "cve": "CVE-2026-119373",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119373",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119374",
+      "cve": "CVE-2026-119374",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119374",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119375",
+      "cve": "CVE-2026-119375",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119375",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119376",
+      "cve": "CVE-2026-119376",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119376",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119377",
+      "cve": "CVE-2026-119377",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119377",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119378",
+      "cve": "CVE-2026-119378",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119378",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119379",
+      "cve": "CVE-2026-119379",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119379",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119586",
+      "cve": "CVE-2026-119586",
+      "status": "undetermined",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119586",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_undetermined_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-119591",
+      "cve": "CVE-2026-119591",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-119591",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-50812",
+      "cve": "CVE-2026-50812",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-50812",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "sqlite3",
+      "installed_version": "3.40.1-2+deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-50813",
+      "cve": "CVE-2026-50813",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-50813",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "systemd",
+      "installed_version": "252.39-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2013-4392",
+      "cve": "CVE-2013-4392",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2013-4392",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "systemd",
+      "installed_version": "252.39-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2023-31437",
+      "cve": "CVE-2023-31437",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2023-31437",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "systemd",
+      "installed_version": "252.39-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2023-31438",
+      "cve": "CVE-2023-31438",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2023-31438",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "systemd",
+      "installed_version": "252.39-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2023-31439",
+      "cve": "CVE-2023-31439",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2023-31439",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "systemd",
+      "installed_version": "252.39-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-15059",
+      "cve": "CVE-2026-15059",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-15059",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "systemd",
+      "installed_version": "252.39-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-16742",
+      "cve": "CVE-2026-16742",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-16742",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "systemd",
+      "installed_version": "252.39-1~deb12u2",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-40228",
+      "cve": "CVE-2026-40228",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-40228",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "tar",
+      "installed_version": "1.34+dfsg-1.2+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2005-2541",
+      "cve": "CVE-2005-2541",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2005-2541",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "tar",
+      "installed_version": "1.34+dfsg-1.2+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-18477",
+      "cve": "CVE-2026-18477",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-18477",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "tar",
+      "installed_version": "1.34+dfsg-1.2+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-18508",
+      "cve": "CVE-2026-18508",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "postponed",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-18508",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "tar",
+      "installed_version": "1.34+dfsg-1.2+deb12u1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-5704",
+      "cve": "CVE-2026-5704",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-5704",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2022-0563",
+      "cve": "CVE-2022-0563",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2025-14104",
+      "cve": "CVE-2025-14104",
+      "status": "open",
+      "urgency": "unimportant",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2025-14104",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_unimportant_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-13595",
+      "cve": "CVE-2026-13595",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-13595",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-27456",
+      "cve": "CVE-2026-27456",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-27456",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-3184",
+      "cve": "CVE-2026-3184",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "ignored",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-53613",
+      "cve": "CVE-2026-53613",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-53613",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-53615",
+      "cve": "CVE-2026-53615",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "util-linux",
+      "installed_version": "2.38.1-5+deb12u3",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-78410",
+      "cve": "CVE-2026-78410",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "zlib",
+      "installed_version": "1:1.2.13.dfsg-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2023-45853",
+      "cve": "CVE-2023-45853",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "ignored",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2023-45853",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "zlib",
+      "installed_version": "1:1.2.13.dfsg-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-27171",
+      "cve": "CVE-2026-27171",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": "",
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-27171",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    },
+    {
+      "package": "zlib",
+      "installed_version": "1:1.2.13.dfsg-1",
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisory_id": "DEBIAN-CVE-2026-85091",
+      "cve": "CVE-2026-85091",
+      "status": "open",
+      "urgency": "not yet assigned",
+      "fixed_version": null,
+      "nodsa_reason": null,
+      "vendor_reference": "https://security-tracker.debian.org/tracker/CVE-2026-85091",
+      "OSV_withdrawn": null,
+      "installed_before_published_fix": null,
+      "triage": "vendor_open_review"
+    }
+  ],
+  "limits": [
+    "Uses actual Debian source versions and dpkg ordering; no unimportant/nodsa status automatically means safe or waived.",
+    "Remaining open/undetermined/reachability/binary presence/PG/nginx/vendored scope and remediation decisions require review.",
+    "This is not final security qualification."
+  ]
+}

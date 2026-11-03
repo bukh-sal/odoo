@@ -1,12 +1,19 @@
 {
-  "image_id": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
-  "reference": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "reference": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
   "base": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
-  "requirements_sha256": "683ebc3177b748efebcb5885ddfc8093b1df988c1a83f2d975e9ad49907906cb",
-  "build_evidence": "docs/evidence/G6/20261102-worker-image-upgrade-01/worker-build.json",
-  "inventory": "docs/evidence/G6/20261101-worker-image-02/inventory.json",
-  "previous_image_id": "sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
-  "previous_reference": "modular-document-stats@sha256:1d919d0c5cbb05d927dd163f6f7997486e2baf84277cd9cc3b294d2eab68beca",
-  "runtime_inventory_basis": "docs/evidence/G6/20261101-worker-image-02/inventory.json",
-  "compatible_derivation": "Exact original RootFS/runtime configuration; release labels only. No API/storage/code migration."
+  "requirements_sha256": "e6557f66e398bb61d44ef8114958ff6941613388b78aed3d8344594c93dc42ae",
+  "build_evidence": "docs/evidence/G7/20261103-worker-dependencies-image-01/candidate-build.json",
+  "inventory": "docs/evidence/G7/20261103-release-runtime-audit-01/worker-index.json",
+  "previous_image_id": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "previous_reference": "modular-document-stats@sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "dependency_maintenance": {
+    "evidence": "docs/evidence/G7/20261103-worker-security-transition-01/qualification.json",
+    "fresh_reference": "docs/evidence/G7/20261103-fresh-target21-01/qualification.json",
+    "cryptography": "50.0.2",
+    "pip": "26.3",
+    "protocol_engine_schemas_unchanged": true,
+    "source_files_current": 13
+  },
+  "qualification": "Actual approved runtime transition and fresh reference job qualified; final release advisory/license/network/secrets/reproducibility review remains."
 }

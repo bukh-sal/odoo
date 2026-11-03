@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_core_python_maintenance.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 8,
+  "stdout": "",
+  "stderr": "test_complete_solution_dependency_review_hash_and_independent_reconstruction (test_core_python_maintenance.CorePythonMaintenance.test_complete_solution_dependency_review_hash_and_independent_reconstruction) ... ok\ntest_complete_target_dependency_constraints_and_plugin_constraints_reject_conflicts (test_core_python_maintenance.CorePythonMaintenance.test_complete_target_dependency_constraints_and_plugin_constraints_reject_conflicts) ... ok\ntest_dependency_review_cannot_be_hidden_even_when_envelope_is_rehashed (test_core_python_maintenance.CorePythonMaintenance.test_dependency_review_cannot_be_hidden_even_when_envelope_is_rehashed) ... ok\ntest_downgrade_removal_duplicate_invalid_metadata_and_environment_are_rejected (test_core_python_maintenance.CorePythonMaintenance.test_downgrade_removal_duplicate_invalid_metadata_and_environment_are_rejected) ... ok\ntest_explicit_pypdf_successor_only_and_same_version_content_change_is_reviewed (test_core_python_maintenance.CorePythonMaintenance.test_explicit_pypdf_successor_only_and_same_version_content_change_is_reviewed) ... ok\ntest_normalized_duplicate_cannot_hide_removal_and_base_metadata_is_checked (test_core_python_maintenance.CorePythonMaintenance.test_normalized_duplicate_cannot_hide_removal_and_base_metadata_is_checked) ... ok\ntest_static_and_plugin_operations_remain_closed (test_core_python_maintenance.CorePythonMaintenance.test_static_and_plugin_operations_remain_closed) ... ok\ntest_successor_replaces_only_locked_root_and_retained_plugin_requirement_still_denies (test_core_python_maintenance.CorePythonMaintenance.test_successor_replaces_only_locked_root_and_retained_plugin_requirement_still_denies) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.190s\n\nOK\n"
+}

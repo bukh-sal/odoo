@@ -1,0 +1,78 @@
+{
+  "result": "actual_components_collected_review_pending",
+  "utc": "2026-11-03T21:14:18.461565+00:00",
+  "roles": {
+    "application": {
+      "image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+      "components": {
+        "cryptography_openssl": "OpenSSL 4.0.3 29 Sep 2026",
+        "sasl_mechanism_files": [
+          "/usr/lib/x86_64-linux-gnu/sasl2/libsasldb.so.2.0.25",
+          "/usr/lib/x86_64-linux-gnu/sasl2/libsasldb.so",
+          "/usr/lib/x86_64-linux-gnu/sasl2/libsasldb.so.2"
+        ],
+        "lxml_compiled": [
+          2,
+          14,
+          6
+        ],
+        "lxml_runtime": [
+          2,
+          14,
+          6
+        ],
+        "libxslt": [
+          1,
+          1,
+          43
+        ],
+        "pillow_codecs": [
+          "pil",
+          "freetype2",
+          "littlecms2",
+          "webp",
+          "avif",
+          "libjpeg_turbo",
+          "zlib_ng",
+          "xcb",
+          "jpg",
+          "jpg_2000",
+          "zlib",
+          "libtiff"
+        ],
+        "pillow_versions": {
+          "pil": "13.0.0",
+          "freetype2": "2.14.3",
+          "littlecms2": "2.19",
+          "webp": "1.6.0",
+          "avif": "1.4.2",
+          "libjpeg_turbo": "3.2.0",
+          "zlib_ng": "2.3.3",
+          "xcb": null,
+          "jpg": "6.2",
+          "jpg_2000": "2.5.4",
+          "zlib": "1.2.13",
+          "libtiff": "4.7.2"
+        },
+        "libpq": 150019
+      },
+      "network": "none",
+      "mounts": [],
+      "removed_on_exit": true
+    },
+    "worker": {
+      "image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "components": {
+        "cryptography_openssl": "OpenSSL 4.0.3 29 Sep 2026",
+        "sasl_mechanism_files": []
+      },
+      "network": "none",
+      "mounts": [],
+      "removed_on_exit": true
+    }
+  },
+  "limits": [
+    "Mechanism filenames identify shipped plugins; no generic LDAP/SASL exploitability verdict.",
+    "No package/plugin initialization or deployment changes; bundled component advisories still need review."
+  ]
+}

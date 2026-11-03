@@ -1,0 +1,3171 @@
+{
+  "result": "current_matches_require_review",
+  "utc": "2026-11-03T21:00:25.628199+00:00",
+  "source": "https://api.osv.dev/v1/querybatch",
+  "queries": 177,
+  "pages": [
+    {
+      "page": 0,
+      "queries": 177,
+      "sha256": "8acab79751d92931dbf5e35df906c4e492a689bf5606c388bcf6748eee5c4e9d"
+    }
+  ],
+  "packages_with_matches": 30,
+  "unique_advisories": [
+    "DEBIAN-CVE-2005-2541",
+    "DEBIAN-CVE-2007-5686",
+    "DEBIAN-CVE-2010-4756",
+    "DEBIAN-CVE-2011-3374",
+    "DEBIAN-CVE-2011-3389",
+    "DEBIAN-CVE-2011-4116",
+    "DEBIAN-CVE-2013-4392",
+    "DEBIAN-CVE-2015-3276",
+    "DEBIAN-CVE-2016-2781",
+    "DEBIAN-CVE-2017-14159",
+    "DEBIAN-CVE-2017-17740",
+    "DEBIAN-CVE-2017-18018",
+    "DEBIAN-CVE-2018-20796",
+    "DEBIAN-CVE-2018-5709",
+    "DEBIAN-CVE-2018-6829",
+    "DEBIAN-CVE-2019-1010022",
+    "DEBIAN-CVE-2019-1010023",
+    "DEBIAN-CVE-2019-1010024",
+    "DEBIAN-CVE-2019-1010025",
+    "DEBIAN-CVE-2019-9192",
+    "DEBIAN-CVE-2020-15719",
+    "DEBIAN-CVE-2021-45346",
+    "DEBIAN-CVE-2022-0563",
+    "DEBIAN-CVE-2022-27943",
+    "DEBIAN-CVE-2022-3219",
+    "DEBIAN-CVE-2023-2953",
+    "DEBIAN-CVE-2023-31437",
+    "DEBIAN-CVE-2023-31438",
+    "DEBIAN-CVE-2023-31439",
+    "DEBIAN-CVE-2023-31486",
+    "DEBIAN-CVE-2023-45853",
+    "DEBIAN-CVE-2023-50495",
+    "DEBIAN-CVE-2024-10041",
+    "DEBIAN-CVE-2024-2236",
+    "DEBIAN-CVE-2024-26458",
+    "DEBIAN-CVE-2024-26461",
+    "DEBIAN-CVE-2024-56433",
+    "DEBIAN-CVE-2025-13151",
+    "DEBIAN-CVE-2025-14104",
+    "DEBIAN-CVE-2025-27587",
+    "DEBIAN-CVE-2025-29088",
+    "DEBIAN-CVE-2025-30258",
+    "DEBIAN-CVE-2025-5278",
+    "DEBIAN-CVE-2025-6141",
+    "DEBIAN-CVE-2025-68972",
+    "DEBIAN-CVE-2025-69720",
+    "DEBIAN-CVE-2025-70873",
+    "DEBIAN-CVE-2025-7458",
+    "DEBIAN-CVE-2025-7709",
+    "DEBIAN-CVE-2025-8941",
+    "DEBIAN-CVE-2026-102010",
+    "DEBIAN-CVE-2026-102473",
+    "DEBIAN-CVE-2026-102474",
+    "DEBIAN-CVE-2026-105712",
+    "DEBIAN-CVE-2026-107161",
+    "DEBIAN-CVE-2026-107708",
+    "DEBIAN-CVE-2026-107778",
+    "DEBIAN-CVE-2026-114690",
+    "DEBIAN-CVE-2026-114691",
+    "DEBIAN-CVE-2026-115455",
+    "DEBIAN-CVE-2026-11822",
+    "DEBIAN-CVE-2026-11824",
+    "DEBIAN-CVE-2026-11850",
+    "DEBIAN-CVE-2026-119371",
+    "DEBIAN-CVE-2026-119372",
+    "DEBIAN-CVE-2026-119373",
+    "DEBIAN-CVE-2026-119374",
+    "DEBIAN-CVE-2026-119375",
+    "DEBIAN-CVE-2026-119376",
+    "DEBIAN-CVE-2026-119377",
+    "DEBIAN-CVE-2026-119378",
+    "DEBIAN-CVE-2026-119379",
+    "DEBIAN-CVE-2026-119586",
+    "DEBIAN-CVE-2026-119591",
+    "DEBIAN-CVE-2026-13595",
+    "DEBIAN-CVE-2026-13757",
+    "DEBIAN-CVE-2026-15059",
+    "DEBIAN-CVE-2026-15534",
+    "DEBIAN-CVE-2026-16742",
+    "DEBIAN-CVE-2026-18374",
+    "DEBIAN-CVE-2026-18477",
+    "DEBIAN-CVE-2026-18508",
+    "DEBIAN-CVE-2026-18938",
+    "DEBIAN-CVE-2026-19499",
+    "DEBIAN-CVE-2026-19542",
+    "DEBIAN-CVE-2026-22185",
+    "DEBIAN-CVE-2026-27171",
+    "DEBIAN-CVE-2026-27456",
+    "DEBIAN-CVE-2026-3184",
+    "DEBIAN-CVE-2026-40228",
+    "DEBIAN-CVE-2026-41991",
+    "DEBIAN-CVE-2026-41992",
+    "DEBIAN-CVE-2026-42250",
+    "DEBIAN-CVE-2026-50812",
+    "DEBIAN-CVE-2026-50813",
+    "DEBIAN-CVE-2026-53613",
+    "DEBIAN-CVE-2026-53615",
+    "DEBIAN-CVE-2026-53910",
+    "DEBIAN-CVE-2026-5435",
+    "DEBIAN-CVE-2026-54369",
+    "DEBIAN-CVE-2026-54370",
+    "DEBIAN-CVE-2026-54371",
+    "DEBIAN-CVE-2026-54411",
+    "DEBIAN-CVE-2026-5450",
+    "DEBIAN-CVE-2026-56391",
+    "DEBIAN-CVE-2026-56392",
+    "DEBIAN-CVE-2026-5704",
+    "DEBIAN-CVE-2026-57062",
+    "DEBIAN-CVE-2026-5928",
+    "DEBIAN-CVE-2026-6238",
+    "DEBIAN-CVE-2026-6368",
+    "DEBIAN-CVE-2026-67693",
+    "DEBIAN-CVE-2026-6791",
+    "DEBIAN-CVE-2026-77117",
+    "DEBIAN-CVE-2026-78410",
+    "DEBIAN-CVE-2026-80489",
+    "DEBIAN-CVE-2026-82560",
+    "DEBIAN-CVE-2026-84243",
+    "DEBIAN-CVE-2026-85091",
+    "DEBIAN-CVE-2026-85231",
+    "DEBIAN-CVE-2026-85977",
+    "DEBIAN-CVE-2026-8674",
+    "DEBIAN-CVE-2026-86805",
+    "DEBIAN-CVE-2026-88647",
+    "DEBIAN-CVE-2026-88648",
+    "DEBIAN-CVE-2026-89092",
+    "DEBIAN-CVE-2026-95184",
+    "DEBIAN-CVE-2026-95209",
+    "DEBIAN-CVE-2026-95210",
+    "DEBIAN-CVE-2026-9538",
+    "DEBIAN-CVE-2026-95619",
+    "DEBIAN-CVE-2026-95818",
+    "DEBIAN-CVE-2026-97399",
+    "GHSA-537c-gmf6-5ccf",
+    "GHSA-79v4-65xg-pq4g",
+    "GHSA-h4gh-qq45-vh27",
+    "GHSA-jwv3-5hgf-82ww",
+    "GHSA-m959-cc7f-wv43",
+    "GHSA-r6ph-v2qm-q3c2",
+    "PYSEC-2026-1284",
+    "PYSEC-2026-2141",
+    "PYSEC-2026-35",
+    "PYSEC-2026-3553",
+    "PYSEC-2026-3554"
+  ],
+  "matches": [
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "acl"
+        },
+        "version": "2.3.1-3"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-54369",
+          "modified": "2026-10-26T11:47:39.336837Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-54370",
+          "modified": "2026-10-26T11:47:35.593481Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "adduser"
+        },
+        "version": "3.134"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "apt"
+        },
+        "version": "2.6.1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2011-3374",
+          "modified": "2026-10-23T18:03:44.629010Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "attr"
+        },
+        "version": "1:2.5.1-4"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-54371",
+          "modified": "2026-10-26T11:47:34.709388Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "audit"
+        },
+        "version": "1:3.0.9-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "base-files"
+        },
+        "version": "12.4+deb12u15"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "base-passwd"
+        },
+        "version": "3.6.1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "bash"
+        },
+        "version": "5.2.15-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "bzip2"
+        },
+        "version": "1.0.8-5"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-42250",
+          "modified": "2026-10-01T03:03:23.421371Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "ca-certificates"
+        },
+        "version": "20250419~deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "cdebconf"
+        },
+        "version": "0.270"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "coreutils"
+        },
+        "version": "9.1-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2016-2781",
+          "modified": "2026-09-22T07:01:56.931191Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2017-18018",
+          "modified": "2026-09-01T20:03:46.911345Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-5278",
+          "modified": "2026-10-31T10:00:53.709244Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-56391",
+          "modified": "2026-10-25T09:47:32.522798Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-56392",
+          "modified": "2026-10-25T09:47:33.594758Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "cyrus-sasl2"
+        },
+        "version": "2.1.28+dfsg-10"
+      },
+      "roles": [
+        "application_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-107161",
+          "modified": "2026-10-31T09:47:32.555381Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "dash"
+        },
+        "version": "0.5.12-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-102473",
+          "modified": "2026-10-04T23:00:07.137855Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-102474",
+          "modified": "2026-09-30T09:00:10.075921Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "db5.3"
+        },
+        "version": "5.3.28+dfsg2-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "debconf"
+        },
+        "version": "1.5.82"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "debian-archive-keyring"
+        },
+        "version": "2023.3+deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "debianutils"
+        },
+        "version": "5.7-0.5~deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "diffutils"
+        },
+        "version": "1:3.8-4"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-53910",
+          "modified": "2026-10-25T09:47:31.541191Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "dpkg"
+        },
+        "version": "1.21.23"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "e2fsprogs"
+        },
+        "version": "1.47.0-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "file"
+        },
+        "version": "1:5.44-3"
+      },
+      "roles": [
+        "application_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "findutils"
+        },
+        "version": "4.9.0-4"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "fonts-dejavu"
+        },
+        "version": "2.37-6"
+      },
+      "roles": [
+        "application_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "fonts-liberation"
+        },
+        "version": "1:1.07.4-11"
+      },
+      "roles": [
+        "application_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "gcc-12"
+        },
+        "version": "12.2.0-14+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2022-27943",
+          "modified": "2026-11-03T08:01:11.188606Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-102010",
+          "modified": "2026-11-01T09:47:30.340528Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-114690",
+          "modified": "2026-11-01T22:00:14.132429Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-114691",
+          "modified": "2026-11-01T22:00:14.132318Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-115455",
+          "modified": "2026-11-01T22:00:14.139733Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-95619",
+          "modified": "2026-11-01T09:47:26.072467Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "gdbm"
+        },
+        "version": "1.23-3"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "glibc"
+        },
+        "version": "2.36-9+deb12u14"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2010-4756",
+          "modified": "2026-10-23T17:47:33.474738Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2018-20796",
+          "modified": "2026-10-23T18:03:21.172579Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2019-1010022",
+          "modified": "2026-10-15T07:47:36.478231Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2019-1010023",
+          "modified": "2026-10-15T07:47:28.290179Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2019-1010024",
+          "modified": "2026-10-15T07:47:38.350589Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2019-1010025",
+          "modified": "2026-10-15T07:47:23.355160Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2019-9192",
+          "modified": "2026-09-21T07:03:25.526201Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-18374",
+          "modified": "2026-10-01T03:03:20.389480Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-19499",
+          "modified": "2026-10-01T03:03:19.650344Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-19542",
+          "modified": "2026-10-01T03:02:56.666606Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-5435",
+          "modified": "2026-10-01T03:03:26.331995Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-5450",
+          "modified": "2026-10-01T03:03:18.702569Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-5928",
+          "modified": "2026-10-01T03:03:13.619813Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-6238",
+          "modified": "2026-10-01T03:03:28.882340Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-6368",
+          "modified": "2026-10-01T03:03:29.619109Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-6791",
+          "modified": "2026-10-25T09:47:42.537501Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-77117",
+          "modified": "2026-10-01T03:03:42.030017Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-80489",
+          "modified": "2026-10-01T03:03:47.289858Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-84243",
+          "modified": "2026-10-31T07:47:31.485545Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-8674",
+          "modified": "2026-10-01T03:03:51.367847Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-86805",
+          "modified": "2026-10-11T05:00:07.664962Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-89092",
+          "modified": "2026-10-27T09:47:37.089108Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-95818",
+          "modified": "2026-10-11T05:00:07.687Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-97399",
+          "modified": "2026-10-11T05:00:07.661173Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "gmp"
+        },
+        "version": "2:6.2.1+dfsg1-1.1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "gnupg2"
+        },
+        "version": "2.2.40-1.1+deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2022-3219",
+          "modified": "2026-11-03T08:03:53.312092Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-30258",
+          "modified": "2026-09-01T20:05:45.577298Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-68972",
+          "modified": "2026-10-14T10:00:15.721368Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-105712",
+          "modified": "2026-10-16T05:00:06.697924Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-57062",
+          "modified": "2026-10-01T03:03:27.483944Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "gnutls28"
+        },
+        "version": "3.7.9-2+deb12u7"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2011-3389",
+          "modified": "2026-10-09T23:47:23.271124Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-67693",
+          "modified": "2026-10-23T18:04:40.927041Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-88647",
+          "modified": "2026-10-23T18:05:03.754091Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-88648",
+          "modified": "2026-10-30T09:49:03.025219Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-95184",
+          "modified": "2026-10-23T18:04:44.737097Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-95209",
+          "modified": "2026-10-23T18:04:44.749478Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-95210",
+          "modified": "2026-10-23T18:04:44.684195Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "grep"
+        },
+        "version": "3.8-5"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "gzip"
+        },
+        "version": "1.12-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-41991",
+          "modified": "2026-10-26T11:47:33.825Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-41992",
+          "modified": "2026-10-26T11:47:29.820428Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "hostname"
+        },
+        "version": "3.23+nmu1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "init-system-helpers"
+        },
+        "version": "1.65.2+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "keyutils"
+        },
+        "version": "1.6.3-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "krb5"
+        },
+        "version": "1.20.1-2+deb12u5"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2018-5709",
+          "modified": "2026-10-23T18:03:07.186971Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2024-26458",
+          "modified": "2026-11-03T21:00:06.044589Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2024-26461",
+          "modified": "2026-11-03T21:00:06.037349Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-107708",
+          "modified": "2026-10-14T10:00:29.164236Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-107778",
+          "modified": "2026-10-10T10:00:19.205184Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-11850",
+          "modified": "2026-11-01T09:47:40.013918Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libcap-ng"
+        },
+        "version": "0.8.3-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libcap2"
+        },
+        "version": "1:2.66-4+deb12u3"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libffi"
+        },
+        "version": "3.4.4-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libgcrypt20"
+        },
+        "version": "1.10.1-3+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2018-6829",
+          "modified": "2026-10-23T18:03:24.626905Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2024-2236",
+          "modified": "2026-11-02T12:00:44.246766Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libgpg-error"
+        },
+        "version": "1.46-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libidn2"
+        },
+        "version": "2.3.3-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libmd"
+        },
+        "version": "1.0.4-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libnsl"
+        },
+        "version": "1.3.0-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libseccomp"
+        },
+        "version": "2.5.4-1+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libselinux"
+        },
+        "version": "3.4-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libsemanage"
+        },
+        "version": "3.4-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libsepol"
+        },
+        "version": "3.4-2.1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libtasn1-6"
+        },
+        "version": "4.19.0-2+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2025-13151",
+          "modified": "2026-09-01T20:05:41.053836Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libtirpc"
+        },
+        "version": "1.3.3+ds-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-85231",
+          "modified": "2026-10-31T09:47:29.460949Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-85977",
+          "modified": "2026-10-23T17:47:32.880540Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libunistring"
+        },
+        "version": "1.0-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libxcrypt"
+        },
+        "version": "1:4.4.33-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "libzstd"
+        },
+        "version": "1.5.4+dfsg2-5"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "lz4"
+        },
+        "version": "1.9.4-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "mawk"
+        },
+        "version": "1.3.4.20200120-3.1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "ncurses"
+        },
+        "version": "6.4-4"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2023-50495",
+          "modified": "2026-10-26T18:02:59.424780Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-6141",
+          "modified": "2026-09-01T20:05:55.518314Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-69720",
+          "modified": "2026-09-01T20:05:57.963309Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "netbase"
+        },
+        "version": "6.4"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "nettle"
+        },
+        "version": "3.8.1-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "openldap"
+        },
+        "version": "2.5.13+dfsg-5"
+      },
+      "roles": [
+        "application_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2015-3276",
+          "modified": "2026-09-09T07:00:49.409579Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2017-14159",
+          "modified": "2026-09-01T20:03:43.696543Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2017-17740",
+          "modified": "2026-09-01T20:03:45.829819Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2020-15719",
+          "modified": "2026-10-26T12:02:26.822978Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2023-2953",
+          "modified": "2026-10-26T18:00:51.499350Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-22185",
+          "modified": "2026-10-30T09:49:19.499810Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "openssl"
+        },
+        "version": "3.0.22-1~deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2025-27587",
+          "modified": "2026-09-01T20:05:45.330863Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "p11-kit"
+        },
+        "version": "0.24.1-2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2026-13757",
+          "modified": "2026-10-15T09:47:31.429085Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-18938",
+          "modified": "2026-10-01T03:02:55.974352Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "pam"
+        },
+        "version": "1.5.2-6+deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2024-10041",
+          "modified": "2026-11-02T12:00:20.837560Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-8941",
+          "modified": "2026-09-01T20:05:59.105158Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-54411",
+          "modified": "2026-10-01T03:03:26.627166Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "pcre2"
+        },
+        "version": "10.42-1+deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "perl"
+        },
+        "version": "5.36.0-7+deb12u4"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2011-4116",
+          "modified": "2026-10-23T18:02:48.458580Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2023-31486",
+          "modified": "2026-10-26T18:02:41.109685Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-15534",
+          "modified": "2026-10-24T10:00:40.270849Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-82560",
+          "modified": "2026-09-23T08:47:36.334082Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-9538",
+          "modified": "2026-10-01T03:03:56.260960Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "postgresql-15"
+        },
+        "version": "15.19-0+deb12u1"
+      },
+      "roles": [
+        "application_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "readline"
+        },
+        "version": "8.2-1.3"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "sed"
+        },
+        "version": "4.9-1+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "shadow"
+        },
+        "version": "1:4.13+dfsg1-1+deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2007-5686",
+          "modified": "2026-10-21T17:47:40.849753Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2024-56433",
+          "modified": "2026-11-02T12:03:08.140844Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "sqlite3"
+        },
+        "version": "3.40.1-2+deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2021-45346",
+          "modified": "2026-10-23T18:04:50.797736Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-29088",
+          "modified": "2026-10-15T09:47:44.354003Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-70873",
+          "modified": "2026-10-15T09:47:35.976800Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-7458",
+          "modified": "2026-09-01T20:05:58.888361Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-7709",
+          "modified": "2026-09-01T20:04:41.951680Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-11822",
+          "modified": "2026-10-30T10:00:18.338258Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-11824",
+          "modified": "2026-10-15T09:47:43.891893Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119371",
+          "modified": "2026-11-01T10:00:08.054421Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119372",
+          "modified": "2026-11-01T10:00:09.075587Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119373",
+          "modified": "2026-11-01T10:00:08.680052Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119374",
+          "modified": "2026-11-01T10:00:07.697492Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119375",
+          "modified": "2026-11-01T10:00:08.365020Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119376",
+          "modified": "2026-11-03T10:00:36.467180Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119377",
+          "modified": "2026-11-01T10:00:08.771823Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119378",
+          "modified": "2026-11-01T10:00:08.681252Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119379",
+          "modified": "2026-11-01T10:00:08.573749Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119586",
+          "modified": "2026-11-01T09:00:06.674296Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-119591",
+          "modified": "2026-11-01T09:00:06.680750Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-50812",
+          "modified": "2026-10-01T03:03:24.712983Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-50813",
+          "modified": "2026-10-26T11:47:34.767491Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "systemd"
+        },
+        "version": "252.39-1~deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2013-4392",
+          "modified": "2026-09-01T20:01:59.638107Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2023-31437",
+          "modified": "2026-10-26T18:00:56.786590Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2023-31438",
+          "modified": "2026-10-26T18:02:40.455670Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2023-31439",
+          "modified": "2026-10-26T18:02:41.111461Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-15059",
+          "modified": "2026-10-24T10:00:30.896026Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-16742",
+          "modified": "2026-10-24T10:00:40.383835Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-40228",
+          "modified": "2026-10-01T03:03:11.478613Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "sysvinit"
+        },
+        "version": "3.06-4"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "tar"
+        },
+        "version": "1.34+dfsg-1.2+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2005-2541",
+          "modified": "2026-10-23T03:47:27.432195Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-18477",
+          "modified": "2026-10-31T10:01:23.566846Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-18508",
+          "modified": "2026-10-31T10:00:58.791594Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-5704",
+          "modified": "2026-10-27T10:02:10.180230Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "tzdata"
+        },
+        "version": "2026e-0+deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "usrmerge"
+        },
+        "version": "37~deb12u1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "util-linux"
+        },
+        "version": "2.38.1-5+deb12u3"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2022-0563",
+          "modified": "2026-11-03T08:01:44.234832Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2025-14104",
+          "modified": "2026-10-23T17:47:32.069028Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-13595",
+          "modified": "2026-11-02T11:47:39.940664Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-27456",
+          "modified": "2026-10-01T03:03:07.897942Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-3184",
+          "modified": "2026-10-01T03:02:36.561510Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-53613",
+          "modified": "2026-10-23T17:47:25.667738Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-53615",
+          "modified": "2026-10-23T17:47:34.119790Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-78410",
+          "modified": "2026-11-02T11:47:45.876373Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "xxhash"
+        },
+        "version": "0.8.1-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "xz-utils"
+        },
+        "version": "5.4.1-1+deb12u2"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "Debian:12",
+          "name": "zlib"
+        },
+        "version": "1:1.2.13.dfsg-1"
+      },
+      "roles": [
+        "application_OS",
+        "worker_OS"
+      ],
+      "advisories": [
+        {
+          "id": "DEBIAN-CVE-2023-45853",
+          "modified": "2026-10-26T18:02:35.534653Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-27171",
+          "modified": "2026-10-01T03:03:01.654495Z"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-85091",
+          "modified": "2026-10-04T10:00:16.926722Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "asn1crypto"
+        },
+        "version": "1.5.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "attrs"
+        },
+        "version": "26.1.0"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "babel"
+        },
+        "version": "2.10.3"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "beautifulsoup4"
+        },
+        "version": "4.15.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "cbor2"
+        },
+        "version": "6.2.0.post2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "certifi"
+        },
+        "version": "2026.10.23"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "cffi"
+        },
+        "version": "2.1.1"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "chardet"
+        },
+        "version": "5.2.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "charset-normalizer"
+        },
+        "version": "3.5.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "cryptography"
+        },
+        "version": "42.0.8"
+      },
+      "roles": [
+        "isolated_operator_tooling"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-537c-gmf6-5ccf",
+          "modified": "2026-09-10T03:50:48.298936Z"
+        },
+        {
+          "id": "GHSA-79v4-65xg-pq4g",
+          "modified": "2026-09-10T03:50:22.501671Z"
+        },
+        {
+          "id": "GHSA-h4gh-qq45-vh27",
+          "modified": "2026-09-10T03:50:18.241644Z"
+        },
+        {
+          "id": "GHSA-jwv3-5hgf-82ww",
+          "modified": "2026-09-24T14:45:10.238420Z"
+        },
+        {
+          "id": "GHSA-m959-cc7f-wv43",
+          "modified": "2026-09-10T03:51:00.592317Z"
+        },
+        {
+          "id": "GHSA-r6ph-v2qm-q3c2",
+          "modified": "2026-09-10T03:50:59.750965Z"
+        },
+        {
+          "id": "PYSEC-2026-1284",
+          "modified": "2026-07-07T17:47:34.798935Z"
+        },
+        {
+          "id": "PYSEC-2026-2141",
+          "modified": "2026-07-13T07:15:23.314483Z"
+        },
+        {
+          "id": "PYSEC-2026-35",
+          "modified": "2026-05-20T09:18:55.884138Z"
+        },
+        {
+          "id": "PYSEC-2026-3553",
+          "modified": "2026-08-04T14:30:26.222821Z"
+        },
+        {
+          "id": "PYSEC-2026-3554",
+          "modified": "2026-08-04T14:30:26.230323Z"
+        }
+      ]
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "cryptography"
+        },
+        "version": "50.0.2"
+      },
+      "roles": [
+        "application",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "docopt"
+        },
+        "version": "0.6.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "docutils"
+        },
+        "version": "0.20.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "et-xmlfile"
+        },
+        "version": "2.0.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "freezegun"
+        },
+        "version": "1.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "geoip2"
+        },
+        "version": "2.9.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "gevent"
+        },
+        "version": "24.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "greenlet"
+        },
+        "version": "3.0.3"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "idna"
+        },
+        "version": "3.20"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "isodate"
+        },
+        "version": "0.7.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jinja2"
+        },
+        "version": "3.1.6"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jsonschema"
+        },
+        "version": "4.26.0"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "jsonschema-specifications"
+        },
+        "version": "2025.9.1"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "libsass"
+        },
+        "version": "0.22.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "lxml"
+        },
+        "version": "6.1.3"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "lxml-html-clean"
+        },
+        "version": "0.4.6"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "markupsafe"
+        },
+        "version": "2.1.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "maxminddb"
+        },
+        "version": "3.2.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "num2words"
+        },
+        "version": "0.5.13"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "ofxparse"
+        },
+        "version": "0.21"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "openpyxl"
+        },
+        "version": "3.1.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "packaging"
+        },
+        "version": "26.3"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "passlib"
+        },
+        "version": "1.7.4"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pillow"
+        },
+        "version": "13.0.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pip"
+        },
+        "version": "26.3"
+      },
+      "roles": [
+        "application",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "platformdirs"
+        },
+        "version": "4.13.6"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "polib"
+        },
+        "version": "1.1.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "psutil"
+        },
+        "version": "5.9.8"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "psycopg2"
+        },
+        "version": "2.9.9"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyasn1"
+        },
+        "version": "0.6.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyasn1-modules"
+        },
+        "version": "0.4.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pycparser"
+        },
+        "version": "3.12"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyjwt"
+        },
+        "version": "2.15.1"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyopenssl"
+        },
+        "version": "26.4.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pypdf"
+        },
+        "version": "6.21.4"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pypng"
+        },
+        "version": "0.20220715.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyserial"
+        },
+        "version": "3.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-dateutil"
+        },
+        "version": "2.8.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-ldap"
+        },
+        "version": "3.4.8"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-magic"
+        },
+        "version": "0.4.27"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "python-stdnum"
+        },
+        "version": "1.19"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pytz"
+        },
+        "version": "2026.5"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "pyusb"
+        },
+        "version": "1.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "qrcode"
+        },
+        "version": "7.4.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "referencing"
+        },
+        "version": "0.37.0"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "reportlab"
+        },
+        "version": "4.1.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "requests"
+        },
+        "version": "2.34.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "requests-file"
+        },
+        "version": "3.0.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "requests-toolbelt"
+        },
+        "version": "1.0.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "resolvelib"
+        },
+        "version": "1.2.1"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rfc8785"
+        },
+        "version": "0.1.4"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rjsmin"
+        },
+        "version": "1.2.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "rpds-py"
+        },
+        "version": "2026.9.1"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "setuptools"
+        },
+        "version": "84.2.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "six"
+        },
+        "version": "1.17.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "soupsieve"
+        },
+        "version": "3.0.4"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "typing-extensions"
+        },
+        "version": "4.16.0"
+      },
+      "roles": [
+        "application",
+        "isolated_operator_tooling",
+        "worker"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "urllib3"
+        },
+        "version": "2.8.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "vobject"
+        },
+        "version": "0.9.6.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "werkzeug"
+        },
+        "version": "3.1.9"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "wheel"
+        },
+        "version": "0.48.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "xlrd"
+        },
+        "version": "2.0.1"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "xlsxwriter"
+        },
+        "version": "3.1.9"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "xlwt"
+        },
+        "version": "1.3.0"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "zeep"
+        },
+        "version": "4.3.3"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "zope-event"
+        },
+        "version": "6.2"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "PyPI",
+          "name": "zope-interface"
+        },
+        "version": "8.7"
+      },
+      "roles": [
+        "application"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-aix-ppc64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-darwin-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-darwin-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-freebsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-freebsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-arm"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-loong64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-mips64el"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-ppc64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-riscv64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-s390x"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-linux-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-netbsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-netbsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-openbsd-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-openbsd-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-sunos-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-win32-arm64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "@typescript/typescript-win32-x64"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    },
+    {
+      "query": {
+        "package": {
+          "ecosystem": "npm",
+          "name": "typescript"
+        },
+        "version": "7.0.2"
+      },
+      "roles": [
+        "locked_host_build_tool_or_optional_variant"
+      ],
+      "advisories": []
+    }
+  ],
+  "limits": [
+    "Matches are not an exploitability or final security verdict; details/withdrawals/backports/reachability need primary-source review.",
+    "OS vendor cross-check, bundled libraries/CPython/PG/nginx and image/history/archive/network/license/secret audit remain."
+  ]
+}

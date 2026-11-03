@@ -1,0 +1,31 @@
+{
+  "result": "current_exact_images_collected_review_pending",
+  "roles": {
+    "application": {
+      "image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+      "python": 76,
+      "OS": 113,
+      "notices": 270,
+      "components": {
+        "python": "3.12.16",
+        "openssl": "OpenSSL 3.0.22 25 Aug 2026",
+        "zlib": "1.2.13"
+      }
+    },
+    "worker": {
+      "image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "python": 13,
+      "OS": 105,
+      "notices": 164,
+      "components": {
+        "python": "3.12.16",
+        "openssl": "OpenSSL 3.0.22 25 Aug 2026",
+        "zlib": "1.2.13"
+      }
+    }
+  },
+  "original_protected_configs_exact": true,
+  "fresh17tables_worker_exact": true,
+  "images_built": 0,
+  "retained_collectors": 0
+}

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_release_staging.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 9,
+  "stdout": "",
+  "stderr": "test_actual_immutable_private_record_rejects_image_or_base_configuration_substitution (test_release_staging.PrivateStageStore.test_actual_immutable_private_record_rejects_image_or_base_configuration_substitution) ... ok\ntest_current_image_executor_never_uses_old_image_for_a_staged_plan (test_release_staging.StagedPlans.test_current_image_executor_never_uses_old_image_for_a_staged_plan) ... ok\ntest_exact_image_id_is_hash_bound_even_with_identical_source_inventory (test_release_staging.StagedPlans.test_exact_image_id_is_hash_bound_even_with_identical_source_inventory) ... ok\ntest_forged_staged_pin_and_unknown_scope_fail_before_mutation (test_release_staging.StagedPlans.test_forged_staged_pin_and_unknown_scope_fail_before_mutation) ... ok\ntest_install_does_not_silently_reapprove_existing_revoked_capability (test_release_staging.StagedPlans.test_install_does_not_silently_reapprove_existing_revoked_capability) ... ok\ntest_new_native_publication_requires_a_compatible_planning_profile_reader (test_release_staging.StagedPlans.test_new_native_publication_requires_a_compatible_planning_profile_reader) ... ok\ntest_self_consistent_image_inventory_cannot_substitute_curated_native_bytes (test_release_staging.StagedPlans.test_self_consistent_image_inventory_cannot_substitute_curated_native_bytes) ... ok\ntest_stage_does_not_implicitly_activate_existing_packaged_dependencies (test_release_staging.StagedPlans.test_stage_does_not_implicitly_activate_existing_packaged_dependencies) ... ok\ntest_upgrade_derives_exact_new_capability_and_independent_recompute_rejects_omission (test_release_staging.StagedPlans.test_upgrade_derives_exact_new_capability_and_independent_recompute_rejects_omission) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 4.251s\n\nOK\n"
+}

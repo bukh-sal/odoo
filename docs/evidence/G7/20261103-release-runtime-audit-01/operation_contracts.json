@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_operation_contracts.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 9,
+  "stdout": "",
+  "stderr": "test_additive_examples_embed_exact_plan_and_preserve_golden_hash (test_operation_contracts.OperationContracts.test_additive_examples_embed_exact_plan_and_preserve_golden_hash) ... ok\ntest_app_request_cannot_claim_approval_and_dimensions_remain_distinct (test_operation_contracts.OperationContracts.test_app_request_cannot_claim_approval_and_dimensions_remain_distinct) ... ok\ntest_checkpointed_native_feature_preview_differs_from_retained_short_profile (test_operation_contracts.OperationContracts.test_checkpointed_native_feature_preview_differs_from_retained_short_profile) ... ok\ntest_dimensions_and_catalog_claims_remain_bounded (test_operation_contracts.OperationContracts.test_dimensions_and_catalog_claims_remain_bounded) ... ok\ntest_exact_artifacts_and_workspace_versus_site_scope (test_operation_contracts.OperationContracts.test_exact_artifacts_and_workspace_versus_site_scope) ... ok\ntest_external_metadata_preview_requires_host_restart_without_native_trust (test_operation_contracts.OperationContracts.test_external_metadata_preview_requires_host_restart_without_native_trust) ... ok\ntest_prepared_hash_and_exact_transitive_targets_cannot_diverge (test_operation_contracts.OperationContracts.test_prepared_hash_and_exact_transitive_targets_cannot_diverge) ... ok\ntest_terminal_newlines_fail_all_identity_digest_version_boundaries (test_operation_contracts.OperationContracts.test_terminal_newlines_fail_all_identity_digest_version_boundaries) ... ok\ntest_unknown_authority_fields_and_protocol_majors_rejected (test_operation_contracts.OperationContracts.test_unknown_authority_fields_and_protocol_majors_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.056s\n\nOK\n"
+}

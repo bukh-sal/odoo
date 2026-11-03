@@ -1,0 +1,85 @@
+{
+  "result": "bound_actual_worker_source_lock_base_notices_and_updated_descriptor",
+  "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "source_files": {
+    "services/document_stats/__init__.py": {
+      "image_path": "services/document_stats/__init__.py",
+      "sha256": "49ce86115da36321648d538587649db13b94db012ca2f7003e73ce6ae20c5218"
+    },
+    "services/document_stats/engine.py": {
+      "image_path": "services/document_stats/engine.py",
+      "sha256": "bd9bda44c7abfabbbab95041b1f349de9ccd287e6a172783c03c376fefa1f85e"
+    },
+    "services/document_stats/server.py": {
+      "image_path": "services/document_stats/server.py",
+      "sha256": "3958b71382d822510c994296bb6c6dd7d3ed29afc21972f197e55a807e74098d"
+    },
+    "packages/platform_sdk/modular_platform/__init__.py": {
+      "image_path": "packages/platform_sdk/modular_platform/__init__.py",
+      "sha256": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336"
+    },
+    "packages/platform_sdk/modular_platform/contracts.py": {
+      "image_path": "packages/platform_sdk/modular_platform/contracts.py",
+      "sha256": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50"
+    },
+    "packages/platform_sdk/modular_platform/tokens.py": {
+      "image_path": "packages/platform_sdk/modular_platform/tokens.py",
+      "sha256": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900"
+    },
+    "packages/contracts/v1/worker-request.schema.json": {
+      "image_path": "packages/contracts/v1/worker-request.schema.json",
+      "sha256": "9eb16d02ad52fbd3c2603ad0d3cc3bb83af836bf997fd06bb00ab9acaf31e4e6"
+    },
+    "packages/contracts/v1/worker-response.schema.json": {
+      "image_path": "packages/contracts/v1/worker-response.schema.json",
+      "sha256": "bf47a0228c20403f89b50cc995e239ad2a8904b1d2c764af1136d2316d426b84"
+    },
+    "packages/contracts/v1/worker-claims.schema.json": {
+      "image_path": "packages/contracts/v1/worker-claims.schema.json",
+      "sha256": "3abf73e6625667ac588ec0795cfd513d21c3731af262184f7ad9661ecc4eb69a"
+    },
+    "services/document_stats/requirements.lock": {
+      "image_path": "provenance/requirements.lock",
+      "sha256": "e6557f66e398bb61d44ef8114958ff6941613388b78aed3d8344594c93dc42ae"
+    },
+    "services/document_stats/dependency-provenance.json": {
+      "image_path": "provenance/dependency-provenance.json",
+      "sha256": "66045761ea39cc6a1c4c8a4a8698885ef84f814cb738fea1843c5db333d1456b"
+    },
+    "LICENSE": {
+      "image_path": "provenance/LICENSE",
+      "sha256": "abc09dad5f84a76e1b0279237053cae16c03228ab27d8d467677054c2bd17eeb"
+    },
+    "COPYRIGHT": {
+      "image_path": "provenance/COPYRIGHT",
+      "sha256": "86e49232d2162708d05405ed5ff6dc5594b73ef4b0f25d2749cfae13493b620c"
+    }
+  },
+  "base_image": "python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753",
+  "base_layers_exact": true,
+  "python_locked_packages": {
+    "attrs": "26.1.0",
+    "cffi": "2.1.1",
+    "cryptography": "50.0.2",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "packaging": "26.3",
+    "pip": "26.3",
+    "pycparser": "3.12",
+    "pyjwt": "2.15.1",
+    "referencing": "0.37.0",
+    "rfc8785": "0.1.4",
+    "rpds-py": "2026.9.1",
+    "typing-extensions": "4.16.0"
+  },
+  "all_python_OS_notice_bytes_retained": true,
+  "old_descriptor_image": "sha256:5482020e027debc8a7b3d0a413e36417717b60642ea5b38e168aed328af5bbe0",
+  "new_descriptor_sha256": "e7005ce96f5331f3ee8888ee023b1e911343abc3448b81ee34c60985e3e8f915",
+  "previous_descriptor_sha256": "a427610fb31550afeec51ab94fdcb61ca873501db306ab954e97a797d339f6a5",
+  "descriptor_outside_image_build_context_inputs": true,
+  "runtime_changed": false,
+  "limits": [
+    "Static source/lock/base/notice binding, not full advisory/security/legal/reproducibility qualification.",
+    "Current old548 rollback image retained; no image/volume/runtime modification."
+  ]
+}

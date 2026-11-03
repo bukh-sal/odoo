@@ -1,0 +1,200 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-03T21:14:50.912911+00:00",
+  "contract_major": 1,
+  "revision": 17,
+  "frozen_files": 101,
+  "rows": 8,
+  "inventory_sha256": "5715f386dc1ba001d1937b350001a30d497e3083dff53218224e983df089adac",
+  "previous_revision": 16,
+  "previous_files_retained_exactly": 98,
+  "changed_previous_files": [
+    "deploy/requirements-tooling.in",
+    "deploy/requirements-tooling.lock"
+  ],
+  "added_files": [
+    "docs/architecture-decisions/0047-operator-toolchain-crypto-maintenance.md"
+  ],
+  "old_schema_example_files_unchanged": 72,
+  "host_checks": 232,
+  "typescript": "passed",
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 101,
+    "rows": 8
+  },
+  "consumer_records": [
+    {
+      "name": "contracts",
+      "tests": 20,
+      "record": "contracts.json",
+      "result": "passed"
+    },
+    {
+      "name": "artifacts",
+      "tests": 18,
+      "record": "artifacts.json",
+      "result": "passed"
+    },
+    {
+      "name": "resolution",
+      "tests": 16,
+      "record": "resolution.json",
+      "result": "passed"
+    },
+    {
+      "name": "plans",
+      "tests": 13,
+      "record": "plans.json",
+      "result": "passed"
+    },
+    {
+      "name": "planning_cli",
+      "tests": 5,
+      "record": "planning_cli.json",
+      "result": "passed"
+    },
+    {
+      "name": "client_release",
+      "tests": 7,
+      "record": "client_release.json",
+      "result": "passed"
+    },
+    {
+      "name": "core_upgrade",
+      "tests": 8,
+      "record": "core_upgrade.json",
+      "result": "passed"
+    },
+    {
+      "name": "core_python_maintenance",
+      "tests": 8,
+      "record": "core_python_maintenance.json",
+      "result": "passed"
+    },
+    {
+      "name": "release_staging",
+      "tests": 9,
+      "record": "release_staging.json",
+      "result": "passed"
+    },
+    {
+      "name": "platform_deploy",
+      "tests": 6,
+      "record": "platform_deploy.json",
+      "result": "passed"
+    },
+    {
+      "name": "approval_fences",
+      "tests": 3,
+      "record": "approval_fences.json",
+      "result": "passed"
+    },
+    {
+      "name": "operator_store",
+      "tests": 8,
+      "record": "operator_store.json",
+      "result": "passed"
+    },
+    {
+      "name": "manager_planning",
+      "tests": 8,
+      "record": "manager_planning.json",
+      "result": "passed"
+    },
+    {
+      "name": "manager_contracts",
+      "tests": 6,
+      "record": "manager_contracts.json",
+      "result": "passed"
+    },
+    {
+      "name": "operation_contracts",
+      "tests": 9,
+      "record": "operation_contracts.json",
+      "result": "passed"
+    },
+    {
+      "name": "lifecycle_planning",
+      "tests": 6,
+      "record": "lifecycle_planning.json",
+      "result": "passed"
+    },
+    {
+      "name": "external_planning",
+      "tests": 19,
+      "record": "operator-continuation.json",
+      "result": "passed"
+    },
+    {
+      "name": "platform_compatibility",
+      "tests": 3,
+      "record": "platform_compatibility.json",
+      "result": "passed"
+    },
+    {
+      "name": "distribution_metadata",
+      "tests": 1,
+      "record": "distribution_metadata.json",
+      "result": "passed"
+    },
+    {
+      "name": "start_worker",
+      "tests": 7,
+      "record": "start_worker.json",
+      "result": "passed"
+    },
+    {
+      "name": "workers",
+      "tests": 9,
+      "record": "operator-continuation.json",
+      "result": "passed"
+    },
+    {
+      "name": "worker_authority",
+      "tests": 7,
+      "record": "operator-continuation.json",
+      "result": "passed"
+    },
+    {
+      "name": "worker_publication",
+      "tests": 16,
+      "record": "worker_publication.json",
+      "result": "passed"
+    },
+    {
+      "name": "worker_transition",
+      "tests": 9,
+      "record": "worker_transition.json",
+      "result": "passed"
+    },
+    {
+      "name": "operator_os",
+      "tests": 7,
+      "record": "operator_os.json",
+      "result": "passed"
+    },
+    {
+      "name": "operator_concurrency",
+      "tests": 4,
+      "record": "operator_concurrency.json",
+      "result": "passed"
+    },
+    {
+      "name": "typescript",
+      "tests": null,
+      "record": "typescript.json",
+      "result": "passed"
+    }
+  ],
+  "source_qualification": "docs\\evidence\\G7\\20261103-release-runtime-audit-01\\qualification.json",
+  "continuation": "docs\\evidence\\G7\\20261103-release-runtime-audit-01\\operator-continuation.json",
+  "actual_crypto_old_key_qualification": "docs\\evidence\\G7\\20261103-release-runtime-audit-01\\operator50-runtime.json",
+  "limits": [
+    "Initial failed observations retained; only two stale fixture inputs corrected and SDK path supplied for bounded failed checks. No product guard weakened.",
+    "Linux runtime images already use crypto50; source/schemas exact, prior unaffected Linux evidence retained, not rerun.",
+    "G7 final security/OS/vendor/PG/nginx/network/license/history/archive/secrets/freshbuild/performance/accessibility/runbooks remain."
+  ]
+}

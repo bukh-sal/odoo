@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_worker_authority.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "tests": 1,
+  "stdout": "",
+  "stderr": "test_worker_authority (unittest.loader._FailedTest.test_worker_authority) ... ERROR\n\n======================================================================\nERROR: test_worker_authority (unittest.loader._FailedTest.test_worker_authority)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_worker_authority\nTraceback (most recent call last):\n  File \"C:\\Users\\mesh\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\unittest\\loader.py\", line 396, in _find_test_path\n    module = self._get_module_from_name(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\mesh\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\unittest\\loader.py\", line 339, in _get_module_from_name\n    __import__(name)\n  File \"C:\\Users\\mesh\\Documents\\modular_platform\\tests\\test_worker_authority.py\", line 5, in <module>\n    import tests.test_document_stats_engine as fixtures\n  File \"C:\\Users\\mesh\\Documents\\modular_platform\\tests\\test_document_stats_engine.py\", line 12, in <module>\n    from modular_platform.contracts import validate\nModuleNotFoundError: No module named 'modular_platform'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+}

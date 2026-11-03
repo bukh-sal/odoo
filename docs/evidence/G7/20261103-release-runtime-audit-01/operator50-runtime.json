@@ -1,0 +1,177 @@
+{
+  "result": "isolated_operator_maintained_old_key_compatible",
+  "utc": "2026-11-03T21:13:58.709328+00:00",
+  "cryptography": "50.0.2",
+  "bundled_openssl": "OpenSSL 4.0.3 29 Sep 2026",
+  "stdlib_openssl": "OpenSSL 3.5.9 29 Sep 2026",
+  "packages": [
+    {
+      "name": "PyJWT",
+      "version": "2.15.1"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1"
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0"
+    },
+    {
+      "name": "resolvelib",
+      "version": "1.2.1"
+    },
+    {
+      "name": "rfc8785",
+      "version": "0.1.4"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    }
+  ],
+  "queries": [
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "PyJWT"
+      },
+      "version": "2.15.1"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "attrs"
+      },
+      "version": "26.1.0"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "cffi"
+      },
+      "version": "2.1.1"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "cryptography"
+      },
+      "version": "50.0.2"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "jsonschema"
+      },
+      "version": "4.26.0"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "jsonschema-specifications"
+      },
+      "version": "2025.9.1"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "packaging"
+      },
+      "version": "26.3"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "pycparser"
+      },
+      "version": "3.12"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "referencing"
+      },
+      "version": "0.37.0"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "resolvelib"
+      },
+      "version": "1.2.1"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "rfc8785"
+      },
+      "version": "0.1.4"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "rpds-py"
+      },
+      "version": "2026.9.1"
+    },
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "typing_extensions"
+      },
+      "version": "4.16.0"
+    }
+  ],
+  "matches": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "old_crypto42_generated_RSA_key_read_sign_verify": true,
+  "existing_key_files_unchanged": true,
+  "deployment_or_publication_mutations": 0,
+  "lock_sha256": "b845495afafbb0301761febc5cb04aee4d30583ce3de63659eefb6e0ac41a311",
+  "response_sha256": "461d5eb572d4184ee4f477bdab287ce066b0af5ce944da26eae6334a4919e5bb",
+  "limits": [
+    "Package advisory snapshot only; bundled native libraries require separate review. Test signature is not an approval or runtime token and was not sent or published."
+  ]
+}

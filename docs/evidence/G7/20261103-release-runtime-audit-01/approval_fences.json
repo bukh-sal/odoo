@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_approval_fences.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 3,
+  "stdout": "",
+  "stderr": "test_current_base_security_bindings_endpoints_policy_release_and_catalog_rechecked_before_mutation (test_approval_fences.ApprovalBoundaryTests.test_current_base_security_bindings_endpoints_policy_release_and_catalog_rechecked_before_mutation) ... ok\ntest_exact_expiry_after_reservation_cannot_enter_mutation (test_approval_fences.ApprovalBoundaryTests.test_exact_expiry_after_reservation_cannot_enter_mutation) ... ok\ntest_transplanted_valid_approval_cannot_start_another_operation (test_approval_fences.ApprovalBoundaryTests.test_transplanted_valid_approval_cannot_start_another_operation) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 27.365s\n\nOK\n"
+}

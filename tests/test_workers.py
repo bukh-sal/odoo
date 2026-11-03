@@ -125,7 +125,7 @@ class WorkerAndRecoveryTests(unittest.TestCase):
         base=configuration();image='sha256:'+'b'*64;worker='2'*64
         lock={'core_inventory_digest':'sha256:'+'d'*64,'generation':3,'created_at':STAMP}
         manifest={'configuration':base,'previous_release':{'release_lock':lock}}
-        bundle={'plan':{'created_at':STAMP},'operation_lock':{'release':{'generation':4},'staged_image':{'target_image_id':image}}}
+        bundle={'plan':{'created_at':STAMP},'operation_lock':{'release':{'generation':4,'created_at':STAMP},'staged_image':{'target_image_id':image}}}
         replacement=dict(base,image_id=image,generation=4,worker_id=worker,release_created_at=STAMP)
         record={'container_id':worker,'configuration':replacement,'previous_image_id':base['image_id']}
         target,restored=recovery_configuration(base,manifest,bundle)

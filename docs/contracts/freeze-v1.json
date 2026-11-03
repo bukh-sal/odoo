@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 16,
+  "revision": 17,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -92,7 +92,8 @@
         "docs/architecture-decisions/0036-metadata-preview-restart-consistency.md",
         "packages/contracts/examples/v1/plan-python-maintenance.json",
         "tests/test_core_python_maintenance.py",
-        "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md"
+        "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md",
+        "docs/architecture-decisions/0047-operator-toolchain-crypto-maintenance.md"
       ],
       "g1": []
     },
@@ -224,8 +225,8 @@
     }
   ],
   "files": {
-    "deploy/requirements-tooling.in": "93d4de2b7a2747dc39eb9aae64ec5b9bf66ec4da5d00ceee39abc9ece5dbb38a",
-    "deploy/requirements-tooling.lock": "84094bb9d9c2c07489890f757e0aef2294083ebba2d19ac35ac393aa0648c104",
+    "deploy/requirements-tooling.in": "bf20928dc122ffc72515fd74e1f9423ca5ba0518ce12aafa333f27a34eda948f",
+    "deploy/requirements-tooling.lock": "b845495afafbb0301761febc5cb04aee4d30583ce3de63659eefb6e0ac41a311",
     "docs/architecture-decisions/0003-r1-contracts.md": "28f17f916a860619da1222fd017daa8397be2029aa12a0922f652645a0dd2e2d",
     "docs/architecture-decisions/0004-contract-validation-correction.md": "d8ea40db7cee81f0fe7882ea1b5d2a0f5f7f51e303e0fb8183170dd8a6e4f3ed",
     "docs/architecture-decisions/0005-workspace-admin-contract.md": "238b244eb13f5a602ca3f403137f3eaf6110c6d72dd589e1e3e5e881dd85d4c2",
@@ -323,7 +324,8 @@
     "tests/test_event_contracts.py": "8318a2e843c6b3387e92d464f07b4109f08c9e4bf8da665773d2c0c4a25155e7",
     "tests/test_manager_contracts.py": "e0e2a12c9f88506a1f51619e6c6f78dac22d560a5d7607255b54d17380214667",
     "tests/test_operation_contracts.py": "5e806a26d8ec89d444eabad5bab7bc65c9bfcd8ed0ebcca0f34c8d545bbf899e",
-    "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a"
+    "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
+    "docs/architecture-decisions/0047-operator-toolchain-crypto-maintenance.md": "68aff6ae85678efdb63a05a37d30903446da011981f49b6fef0f677d18e3e65f"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

@@ -155,8 +155,10 @@ class ExternalPlanning(unittest.TestCase):
         with self.assertRaisesRegex(PlanningError,'approved grants outside'):self.prepare('unregister')
 
     def test_upgrade_keeps_native_and_existing_feature_state(self):
-        candidate=copy.deepcopy(self.f.external);candidate['manifest']['plugin']['version']='0.1.3';candidate['digest']='sha256:'+'c'*64
-        self.f.catalog.append(candidate);self.document=self.f.project();pin=dict(plugin_id=self.target['plugin_id'],version='0.1.3',digest=candidate['digest'])
+        candidate=copy.deepcopy(self.f.external)
+        major,minor,patch=map(int,candidate['manifest']['plugin']['version'].split('.'))
+        candidate['manifest']['plugin']['version']=f'{major}.{minor}.{patch+1}';candidate['digest']='sha256:'+'c'*64
+        self.f.catalog.append(candidate);self.document=self.f.project();pin=dict(plugin_id=self.target['plugin_id'],version=candidate['manifest']['plugin']['version'],digest=candidate['digest'])
         bundle=self.prepare('upgrade',selections=[pin])
         self.assertEqual(external_selections(bundle),[pin]);self.assertNotIn('feature_states',bundle['operation_lock'])
         self.assertEqual(next(r for r in bundle['operation_lock']['release']['plugins'] if r['runtime']=='native'),next(r for r in self.document['state']['release_lock']['plugins'] if r['runtime']=='native'))
