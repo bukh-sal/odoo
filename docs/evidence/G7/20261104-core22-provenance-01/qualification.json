@@ -1,0 +1,33 @@
+{
+  "result": "passed_core22_current_source_and_application_notice_delta",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "inventory_digest": "sha256:cd3a04fda2240183ec682d687811f3cdf47b5a767fc27a1035a99826ba8cb602",
+  "configuration_generation": 5,
+  "source_changes": {
+    "addons/mp_core/__manifest__.py": {
+      "previous": "645915f38186570589da34347c89b3d1b37076a303fb2b193a99905c6e68bd3e",
+      "current": "cf4af9041cdd9d0214b682502ebf94a7d37e476a9768cca405db2493ebf62232"
+    },
+    "packages/platform_sdk/modular_platform/projection.py": {
+      "previous": "accb10349d0e35bb599e6b31c2b1a3da30d204154c58570f2b44dcc39f38a0f8",
+      "current": "8601b39c43b8f24e9dfaa1a237a2c089898bae60fcc3f006a45cd7c70d6e09bc"
+    }
+  },
+  "official_source_proof": {
+    "path": "docs/evidence/G7/20261104-source-notices-01/official-source.json",
+    "sha256": "c69ea6b6f7e085c752b5f6a3b39b4c407befa19a6d04920cae67e538280ee873",
+    "all_recorded_source_hashes_match_current_inventory": true
+  },
+  "copied_file_set_exact": true,
+  "generated_patches_exact": true,
+  "OS_package_versions_architecture_copyright_exact": true,
+  "python_distributions": 77,
+  "notices": "notice-bundle.json",
+  "fresh17tables_worker_and_original_configs_exact": true,
+  "collector_removed": true,
+  "images_built": 0,
+  "limits": [
+    "Current application source and preserved notices only; full OPS03/license obligations, support/worker bundles, global secret/network/layer/history audits and second fresh build remain.",
+    "Earlier curated19 archive and host build-node notices retain their own byte-bound evidence; this does not imply they were reinstalled."
+  ]
+}

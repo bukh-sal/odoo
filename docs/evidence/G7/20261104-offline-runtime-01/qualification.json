@@ -1,0 +1,105 @@
+{
+  "result": "passed_current_internal_only_runtime_reference_reads",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "configuration_generation": 5,
+  "containers": [
+    {
+      "id": "ba8f4c12ed1beaf48ab0729d305daab8200a81ca06503b8f0a2ab85462640f03",
+      "image": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-app-release-bbc56ef9bd894c3f900dd33cd8c0b4b4",
+      "started": "2026-11-03T22:43:57.907744779Z",
+      "restarts": 0,
+      "networks": [
+        "mp-r0-r1g7qualb513bc4f50d4_runtime"
+      ]
+    },
+    {
+      "id": "97a0ba35e6096989f1cd3e1dbebe5994edb060087e720450249021783400e3f4",
+      "image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "name": "/mp-disposable-document-stats-g7qual-document-stats-1",
+      "started": "2026-11-03T20:28:38.354063701Z",
+      "restarts": 0,
+      "networks": [
+        "mp-r0-r1g7qualb513bc4f50d4_runtime"
+      ]
+    },
+    {
+      "id": "76ddb8caf89dc2e89c0a5bc1af6df361f6c1ce0f8742ce8514a319b5a63115fa",
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-db-1",
+      "started": "2026-11-03T18:31:01.498276987Z",
+      "restarts": 0,
+      "networks": [
+        "mp-r0-r1g7qualb513bc4f50d4_runtime"
+      ]
+    }
+  ],
+  "networks": {
+    "mp-r0-r1g7qualb513bc4f50d4_runtime": {
+      "id": "b9cbc27ed446a8497285e2bf60c3a1efc9d43efd7754310c5e35a952e8b41b64",
+      "internal": true,
+      "driver": "bridge"
+    }
+  },
+  "positive_local_and_negative_external_TCP_probes": {
+    "application": [
+      {
+        "host": "db",
+        "port": 5432,
+        "connected": true
+      },
+      {
+        "host": "app",
+        "port": 8069,
+        "connected": true
+      },
+      {
+        "host": "1.1.1.1",
+        "port": 443,
+        "connected": false
+      },
+      {
+        "host": "8.8.8.8",
+        "port": 443,
+        "connected": false
+      }
+    ],
+    "worker": [
+      {
+        "host": "db",
+        "port": 5432,
+        "connected": true
+      },
+      {
+        "host": "app",
+        "port": 8069,
+        "connected": true
+      },
+      {
+        "host": "1.1.1.1",
+        "port": 443,
+        "connected": false
+      },
+      {
+        "host": "8.8.8.8",
+        "port": 443,
+        "connected": false
+      }
+    ]
+  },
+  "native_list_form_two_scopes": true,
+  "minimal_Canvas_read": true,
+  "existing_completed_reference_job_read": true,
+  "retained_Odoo_URL_classification": {
+    "path": "docs/evidence/G5/20261029-provenance-01/retained-product-ties.json",
+    "sha256": "0fb73430d73f53f1f0e799a22e6987aafa3295cb7c901b4fd2063fddf92c04e6",
+    "all_reference_source_hashes_match_current_inventory": true
+  },
+  "fresh17tables_worker_original_configs_exact": true,
+  "limits": [
+    "Actual current application and worker have only internal Docker network and no default gateway; healthy boot and reference backend reads work in that topology.",
+    "Read-only current verification; prior ordinary reference job executed with the identical retained worker/network. No new job or CRUD mutation.",
+    "No rendered-browser request interception claim. Edge is deliberately dual-homed for inbound local HTTP; browser followable optional links are distinct from backend runtime requirements.",
+    "Build-time pinned downloads and optional operator-enabled outbound integrations remain separate documented network uses."
+  ]
+}
