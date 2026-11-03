@@ -1,0 +1,34 @@
+{
+  "result": "passed_bounded_core22_native_XML_maintenance",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "inventory_digest": "sha256:cd3a04fda2240183ec682d687811f3cdf47b5a767fc27a1035a99826ba8cb602",
+  "configuration_generation": 5,
+  "dispatch_generation": 15,
+  "platform_version": "0.1.22",
+  "native_core": "19.0.0.1.22",
+  "evidence": [
+    "../20261104-defused-staging-01/static-resolution.json",
+    "../20261104-core22-defused-image-01/candidate-admission.json",
+    "completed.json",
+    "preservation.json",
+    "native-import.json",
+    "http.json",
+    "retirement.json"
+  ],
+  "checks": {
+    "immutable_native_and_parser": 12,
+    "installed_native_import": 3,
+    "HTTP": 4
+  },
+  "preservation": {
+    "tables": 17,
+    "old_files": 38,
+    "completed_job_epoch_updates": 1,
+    "temporary_CRUD_record_removed": true,
+    "expected_owned_outbox_events": 2
+  },
+  "limits": [
+    "No full Expat/native CVE, API05 concurrency/crash, second same-target fresh build, fresh install/restore, accessibility or full release qualification claim.",
+    "Original demo and benchmark remain on their earlier immutable targets."
+  ]
+}

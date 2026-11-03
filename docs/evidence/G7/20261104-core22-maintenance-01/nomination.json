@@ -1,0 +1,61 @@
+{
+  "operation_type": "core_upgrade",
+  "targets": [
+    {
+      "installation_id": "4117555a-41d8-5403-91f6-b37aede113c0",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+      "plugin_id": "org.example.notes_stats",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "4117555a-41d8-5403-91f6-b37aede113c0",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e",
+      "plugin_id": "org.example.notes_stats",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+      "plugin_id": "org.example.notes_labels",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e",
+      "plugin_id": "org.example.notes_labels",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "a219b5d3-27ac-552e-a7ac-d53354b2e505",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+      "plugin_id": "org.example.notes",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "a219b5d3-27ac-552e-a7ac-d53354b2e505",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e",
+      "plugin_id": "org.example.notes",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "a56e60d5-061d-5477-a4a2-632c48eed21c",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+      "plugin_id": "org.example.canvas",
+      "action": "deploy"
+    },
+    {
+      "installation_id": "a56e60d5-061d-5477-a4a2-632c48eed21c",
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e",
+      "plugin_id": "org.example.canvas",
+      "action": "deploy"
+    }
+  ]
+}

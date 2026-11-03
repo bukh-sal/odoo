@@ -1,0 +1,39 @@
+{
+  "result": "passed_actual_core22_fresh_realm_maintenance_preservation",
+  "operation_id": "bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "inventory_digest": "sha256:cd3a04fda2240183ec682d687811f3cdf47b5a767fc27a1035a99826ba8cb602",
+  "configuration_generation": 5,
+  "dispatch_generation": 15,
+  "table_counts": {
+    "mp_job": 1,
+    "mp_outbox": 3,
+    "mp_principal": 4,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_example_note": 2,
+    "mp_plugin_grant": 8,
+    "mp_event_delivery": 0,
+    "mp_service_binding": 15,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 0,
+    "mp_event_subscription": 0,
+    "mp_service_credential": 0,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 0,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 0
+  },
+  "all17tables_exact_except_reviewed_terminal_job_epochs": true,
+  "terminal_job_epoch_updates": 1,
+  "native_modules_exact_except_core21_to22": true,
+  "old_files_exact": 38,
+  "checkpoint_files_exact": true,
+  "installations_bindings_endpoints_exact": true,
+  "worker_identity_image_key_publication_exact": true,
+  "worker_helper_only_advanced_to_approved_image": true,
+  "limits": [
+    "Actual normal maintenance/preservation; installed native parser/import/CRUD and HTTP checks pending.",
+    "No fresh-install/restore/globalExpat/security/reprobuild claim."
+  ]
+}

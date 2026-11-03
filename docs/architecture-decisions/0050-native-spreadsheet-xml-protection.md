@@ -1,7 +1,7 @@
 # ADR0050: reuse openpyxl's optional XML protection
 
-Date: 2026-11-04 (Asia/Riyadh). Status: accepted for bounded dependency staging;
-current application image is not yet changed or qualified with the dependency.
+Date: 2026-11-04 (Asia/Riyadh). Status: accepted; installed core22 maintenance qualified on the existing fresh
+qualification realm. Original working realm retains its previous image.
 
 G7 native-library inspection found Python3.12.16/Expat2.9.0 in the app/worker
 and Python3.12.15/Expat2.8.5 in the former Windows operator. Expat2.10.0's
@@ -38,3 +38,16 @@ functions, parser settings, bounds, vendor backports and transitive input paths.
 The worker reference accepts bounded JSON and gets no implicit XML feature.
 G7 final risk/security and reproducibility remain pending; do not mark them
 passed based on the helper experiment or merely adding a requirement line.
+
+Implemented evidence: `../evidence/G7/20261104-defused-staging-01/static-resolution.json`,
+`../evidence/G7/20261104-core22-defused-image-01/candidate-admission.json` and
+`../evidence/G7/20261104-core22-maintenance-01/qualification.json`.
+Baseline66/R174 retain all earlier pins/hash blocks. Only platform/core version
+constants advance to0.1.22/19.0.0.1.22, as required by the existing maintenance
+guard. No public contract, native model, UI or worker source changes.
+Actual Odoo `base_import.import._read_xlsx` accepts ordinary workbook values;
+scoped native ORM import succeeds; entity input is rejected with openpyxl's
+existing ValueError wrapping EntitiesForbidden. Normal approved eight-scope
+maintenance and subsequent HTTP/native views preserve the working dataset.
+Eight terminal containers were archived and retired. The separate original demo
+and benchmark have not been upgraded, and this does not close final G7 audits.

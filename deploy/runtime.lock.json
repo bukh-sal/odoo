@@ -16,8 +16,8 @@
   "dependency_review": {
     "adr": "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md",
     "evidence": "docs/evidence/G7/20261103-security-locks-01/static-resolution.json",
-    "baseline_packages": 65,
-    "r1_packages": 73,
+    "baseline_packages": 66,
+    "r1_packages": 74,
     "build_packages": 4,
     "worker_packages": 13,
     "qualification": "Actual app570/core21 and worker87, approved maintenance, dependency-fault/fresh restore and fresh reference jobs qualified; final G7 security/provenance/reproducibility remains.",
@@ -34,5 +34,11 @@
     "development_ingress": "docs/evidence/G7/20261104-proxy-ingress-01/qualification.json",
     "production_profile": "docs/evidence/G7/20261104-production-profile-01/qualification.json",
     "qualification": "Selected after actual current dev+production-profile HTTP/TLS/native/rate/upload/WebSocket qualification; release-wide provenance/history/license/secret audit and second fresh application build remain."
+  },
+  "native_XML_maintenance": {
+    "adr": "docs/architecture-decisions/0050-native-spreadsheet-xml-protection.md",
+    "static_solution": "docs/evidence/G7/20261104-defused-staging-01/static-resolution.json",
+    "installed_qualification": "docs/evidence/G7/20261104-core22-maintenance-01/qualification.json",
+    "qualification": "Core22/imageae8 installed on existing fresh realm config5; native XLSX/ORM import/entity refusal, HTTP CRUD and preservation qualified. Current full release audit, second same-target fresh build and remaining acceptance are pending."
   }
 }

@@ -1,0 +1,21 @@
+{
+  "result": "passed_installed_native_XLSX_and_scoped_import",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "configuration_generation": 5,
+  "checks": {
+    "result": "passed",
+    "checks": [
+      "real_native_XLSX_reader_ordinary_values_preserved",
+      "standard_scoped_native_ORM_import_succeeds",
+      "real_native_XLSX_reader_rejects_benign_entity_declaration_with_existing_openpyxl_error_wrapper"
+    ],
+    "DEFUSEDXML": true,
+    "fixtures_rolled_back": true
+  },
+  "all17tables_worker_configs_exact": true,
+  "helper_removed": true,
+  "limits": [
+    "Small benign entity-input refusal and ordinary native import; not all Expat/nativeCVE coverage or broad hostile-file containment.",
+    "All test imports/records/events rolled back; native views remain default, no custom parser."
+  ]
+}

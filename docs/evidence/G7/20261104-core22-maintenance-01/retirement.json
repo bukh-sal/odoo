@@ -1,0 +1,58 @@
+{
+  "result": "passed_exact_completed_operation_cleanup",
+  "retired": [
+    {
+      "id": "99deee7c439beb0ef0e7c30dab74c61bb551609c42c3c62bf126ea85a39d6564",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4-dispatch-enable",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "id": "d58f3f35d112359a695fab92328ddd243f8092090d39e300170aadb71551e779",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4-dispatch-reconcile",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "id": "4923df09b7247b06f69687a580669c49885c067bc8f4fb4a033492377d5435d6",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4-assets",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "id": "83c6a6a70511a720b56eae80550860b5782d55f75696afcdb413a0adf68f798d",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4-metadata",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "id": "29a6493158f63792c9817d494769348649fe9ba97bb02810181794b972438ed5",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4-native",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "id": "c336bb9499371bda02026b2b44b789b098194bbb09a43510796a75c9d949c930",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4-checkpoint",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "id": "4f7bed92c454bf76271a25743b64b4134be9cc012a87817ed28f26e1cf7914a1",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-bbc56ef9-bd89-4c3f-900d-d33cd8c0b4b4-dispatch-fence",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "id": "927eb23eee7df2fcd982d77f7b68345927be91132c410490402fd07a08666f49",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-app-release-119ed496aa1142888e13b15ebd53280c",
+      "exit_code": 0,
+      "removed": true
+    }
+  ],
+  "containers_removed": 8,
+  "images_volumes_networks_removed": 0,
+  "current_app_retained": "ba8f4c12ed1beaf48ab0729d305daab8200a81ca06503b8f0a2ab85462640f03",
+  "worker_issuer_checkpoints_retained": true,
+  "private_diagnostics_archived": true
+}

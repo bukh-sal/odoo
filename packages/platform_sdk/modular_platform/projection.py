@@ -11,7 +11,7 @@ from .plans import data_digest, release_lock
 from .resolution import PlanningError, resolve_release
 
 PUBLISHED_RELEASE_PROTOCOL=1
-PLATFORM_VERSION='0.1.21'
+PLATFORM_VERSION='0.1.22'
 
 
 def catalog_validation_digest(catalog):
