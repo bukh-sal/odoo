@@ -1,0 +1,12 @@
+{
+  "result": "retired_unused_second_fresh_build_image",
+  "image_id": "sha256:e8a4778fc7f3b8f87b2a00b7eb8b061ab834495f3a6b248d31aa0bafa724faea",
+  "tag": "modular-platform:g7-core22-fresh-20261103t231922z",
+  "containers_using_image": 0,
+  "inspect_sha256": "abafb6cab0da9e1418c18f6166e74956a95d66b8191db2d618f71b66f8b243f4",
+  "history_sha256": "5fc30bae45a7b5c1ff7d9609ffe3d2ce2dce5be48ef4db1ec1a9902276f2b9aa",
+  "baseline_current_and_checkpoint_images_retained": true,
+  "images_removed": 1,
+  "containers_volumes_networks_removed": 0,
+  "build_cache": "No global builder prune; shared Docker build cache not indiscriminately removed."
+}
