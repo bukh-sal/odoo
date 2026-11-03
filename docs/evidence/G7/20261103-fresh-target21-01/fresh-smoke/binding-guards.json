@@ -1,0 +1,29 @@
+{
+  "result": "passed_actual_fresh_named_v1_v2_and_missing_mismatch_denials",
+  "cases": [
+    {
+      "case": "v1",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "case": "v2",
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "case": "v2_wrong_v1_binding",
+      "status": 400,
+      "error_code": "VALIDATION_FAILED"
+    },
+    {
+      "case": "v2_missing_binding",
+      "status": 503,
+      "error_code": "DEPENDENCY_UNAVAILABLE"
+    }
+  ],
+  "no_latest_fallback": true,
+  "all17tables_exact": true,
+  "acceptance": "API-06",
+  "scope": "Current actual binding selection with explicit major-specific DTOs; prior unchanged resolver/missing-provider vectors retained separately."
+}

@@ -1,0 +1,54 @@
+{
+  "result": "passed_actual_fresh_target21_reference_end_to_end",
+  "configuration_generation": 4,
+  "host_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "worker_image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "native_Odoo_views": {
+    "A": [
+      "form",
+      "list"
+    ],
+    "B": [
+      "form",
+      "list"
+    ]
+  },
+  "asymmetric_role_and_cross_workspace_denials": true,
+  "labels_write_revision2": true,
+  "named_v1_v2_binding_projection": true,
+  "minimal_canvas_empty_create_save_idempotent_stale_conflict": true,
+  "job_id": "a9531533-03c4-4045-94f7-44857d8c71d3",
+  "original_actor": "alice",
+  "job_attempts": 1,
+  "statistics": {
+    "characters": 28,
+    "words": 4,
+    "lines": 2
+  },
+  "worker_process_image_key_mount_network_publication_exact": true,
+  "original_working17table_hashes_configs_exact": true,
+  "counts": {
+    "mp_job": 1,
+    "mp_outbox": 3,
+    "mp_principal": 4,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_example_note": 2,
+    "mp_plugin_grant": 8,
+    "mp_event_delivery": 0,
+    "mp_service_binding": 15,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 0,
+    "mp_event_subscription": 0,
+    "mp_service_credential": 0,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 0,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 0
+  },
+  "browser_rendering": false,
+  "limits": [
+    "Fresh target reference integration only; final current acceptance/security/license/network/provenance/runbooks/performance/accessibility remain.",
+    "Canvas remains one minimal test board/card; standard Notes list/form uses native Odoo views."
+  ]
+}

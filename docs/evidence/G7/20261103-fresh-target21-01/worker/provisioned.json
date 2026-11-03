@@ -1,0 +1,21 @@
+{
+  "result": "fresh_operator_scoped_worker_published",
+  "scope": {
+    "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+    "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+    "installation_id": "50eca2f7-81ae-5828-ab0f-601e7044e0e3"
+  },
+  "container_id": "97a0ba35e6096989f1cd3e1dbebe5994edb060087e720450249021783400e3f4",
+  "worker_image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "public_config_generation": 1,
+  "endpoint_generation": 1,
+  "publication_generation": 1,
+  "public_volume": "mp-disposable-document-stats-g7qual-public-config",
+  "issuer_volume": "mp-r0-r1g7qualb513bc4f50d4_target21_worker_authority",
+  "private_key_never_mounted_to_worker_or_HTTP": true,
+  "actual_runtime_image_key_scope_network_user_mounts_attested": true,
+  "metadata_not_installed_yet": true,
+  "new_images": 0,
+  "new_runtime_containers": 1,
+  "new_volumes": 2
+}

@@ -1,0 +1,30 @@
+{
+  "result": "passed_actual_simultaneous_named_v1_v2_reads",
+  "independent_authenticated_sessions": 2,
+  "results": [
+    {
+      "version": "1.0",
+      "status": 200,
+      "fields": [
+        "body",
+        "id",
+        "labels",
+        "revision",
+        "title",
+        "updated_at"
+      ]
+    },
+    {
+      "version": "2.0",
+      "status": 200,
+      "fields": [
+        "content",
+        "document_id",
+        "labels",
+        "revision",
+        "updated_at"
+      ]
+    }
+  ],
+  "all17tables_exact": true
+}

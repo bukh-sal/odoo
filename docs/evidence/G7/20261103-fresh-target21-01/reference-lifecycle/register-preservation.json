@@ -1,0 +1,33 @@
+{
+  "result": "passed_fresh_reference_register",
+  "operation_id": "a4ad0c4f-8f22-4676-9d19-a0de8771a370",
+  "configuration_generation": 3,
+  "all12_business_actor_event_job_tables_exact": true,
+  "independent_worker_image_process_key_mounts_network_publication_exact": true,
+  "only_expected_native_module_installed": false,
+  "other_native_modules_versions_exact": true,
+  "plugin": "org.example.document_stats",
+  "version": "0.1.3",
+  "features": 1,
+  "availability": "suspended",
+  "counts": {
+    "mp_job": 0,
+    "mp_outbox": 0,
+    "mp_principal": 4,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_example_note": 0,
+    "mp_plugin_grant": 4,
+    "mp_event_delivery": 0,
+    "mp_service_binding": 10,
+    "mp_workspace_plugin": 7,
+    "mp_event_consumption": 0,
+    "mp_event_subscription": 0,
+    "mp_service_credential": 0,
+    "mp_plugin_installation": 4,
+    "mp_event_consumer_state": 0,
+    "mp_example_canvas_board": 0,
+    "mp_example_note_event_summary": 0
+  },
+  "metadata_controls_no_runtime": true
+}

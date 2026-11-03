@@ -1,0 +1,87 @@
+{
+  "plan": {
+    "authorization_generation": 1,
+    "base_digest": "sha256:20b00fd9f45020dcadbf759512a3241719735c6e6964a450c07053a76df0ac92",
+    "created_at": 1793737735,
+    "deployment_id": "948dc302-717c-461a-9413-0b348ada609a",
+    "document": {
+      "deployment_id": "948dc302-717c-461a-9413-0b348ada609a",
+      "endpoints": [
+        {
+          "addresses": [
+            "10.233.240.53"
+          ],
+          "descriptor": {
+            "allowed_methods": [
+              "analyze"
+            ],
+            "api_version": "1.0",
+            "audience": "mp-document-stats-v1",
+            "destination": "http://document-stats:8080",
+            "endpoint_config": "document_stats_local",
+            "expected_image_digest": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+            "generation": 1,
+            "health_path": "/health",
+            "installation_id": "50eca2f7-81ae-5828-ab0f-601e7044e0e3",
+            "issuer": "modular-platform-host-v1",
+            "issuer_key_ref": "g7target21_issuer",
+            "payload_limit_bytes": 65536,
+            "public_key_ref": "g7target21_public",
+            "schema_version": 1,
+            "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+            "state": "enabled",
+            "timeout_ms": 5000,
+            "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b"
+          },
+          "key_id": "g7-target21-key"
+        }
+      ],
+      "generation": 1,
+      "schema_version": 1,
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca"
+    },
+    "observation": {
+      "addresses": [
+        "10.233.240.53"
+      ],
+      "container_id": "97a0ba35e6096989f1cd3e1dbebe5994edb060087e720450249021783400e3f4",
+      "image_digest": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "key_id": "g7-target21-key",
+      "network_id": "b9cbc27ed446a8497285e2bf60c3a1efc9d43efd7754310c5e35a952e8b41b64",
+      "public_digest": "91decdb7cc2447243183892fd9e8f512531c4f463fcdba7389b44320c40c34cd",
+      "restart_count": 0,
+      "runtime_policy": {
+        "destination": "http://document-stats:8080",
+        "image": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+        "network": "mp-r0-r1g7qualb513bc4f50d4_runtime",
+        "project": "mp-disposable-document-stats-g7qual",
+        "public_config_volume": "mp-disposable-document-stats-g7qual-public-config",
+        "service": "document-stats"
+      },
+      "scope": {
+        "endpoint_generation": 1,
+        "installation_id": "50eca2f7-81ae-5828-ab0f-601e7044e0e3",
+        "key_id": "g7-target21-key",
+        "public_key_file": "/run/worker/public.pem",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b"
+      },
+      "started_at": "2026-11-03T20:28:38.354063701Z"
+    },
+    "operation_id": "677177d1-45eb-4b57-ab73-8c30d4191ec0",
+    "policy_version": 1,
+    "projection": {
+      "application_mount": "/run/worker-authority",
+      "application_uid": 10001,
+      "deployment_id": "948dc302-717c-461a-9413-0b348ada609a",
+      "helper_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+      "kind": "dedicated-docker-volume-v1",
+      "read_only": true,
+      "volume": "mp-r0-r1g7qualb513bc4f50d4_target21_worker_authority"
+    },
+    "public_digest": "91decdb7cc2447243183892fd9e8f512531c4f463fcdba7389b44320c40c34cd",
+    "schema_version": 1,
+    "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca"
+  },
+  "plan_hash": "sha256:ddbc7841ab957123e4598faae783182dc1db0c6114d94a7ed455de988583ac3f"
+}

@@ -1,0 +1,12 @@
+{
+  "operation_type": "enable",
+  "targets": [
+    {
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+      "installation_id": "50eca2f7-81ae-5828-ab0f-601e7044e0e3",
+      "plugin_id": "org.example.document_stats",
+      "action": "enable"
+    }
+  ]
+}
