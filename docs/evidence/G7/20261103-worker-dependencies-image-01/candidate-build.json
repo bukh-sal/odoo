@@ -1,0 +1,54 @@
+{
+  "state": "built_not_started_not_approved",
+  "tag": "modular-document-stats:g7-security-20261103t165941z",
+  "diagnosed_previous": "Docker rejected ambiguous stdin/-f context before any build; root Dockerfile standard tar and explicit buildx load selected",
+  "source_sha256": {
+    "services/document_stats/Dockerfile": "502be53aa7c23194b4430ca0dc50d93cbbafd465fb15ccd010215a12bdffc0ae",
+    "services/document_stats/__init__.py": "49ce86115da36321648d538587649db13b94db012ca2f7003e73ce6ae20c5218",
+    "services/document_stats/engine.py": "bd9bda44c7abfabbbab95041b1f349de9ccd287e6a172783c03c376fefa1f85e",
+    "services/document_stats/server.py": "3958b71382d822510c994296bb6c6dd7d3ed29afc21972f197e55a807e74098d",
+    "services/document_stats/requirements.lock": "e6557f66e398bb61d44ef8114958ff6941613388b78aed3d8344594c93dc42ae",
+    "services/document_stats/dependency-provenance.json": "66045761ea39cc6a1c4c8a4a8698885ef84f814cb738fea1843c5db333d1456b",
+    "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
+    "packages/platform_sdk/modular_platform/contracts.py": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50",
+    "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
+    "packages/contracts/v1/worker-request.schema.json": "9eb16d02ad52fbd3c2603ad0d3cc3bb83af836bf997fd06bb00ab9acaf31e4e6",
+    "packages/contracts/v1/worker-response.schema.json": "bf47a0228c20403f89b50cc995e239ad2a8904b1d2c764af1136d2316d426b84",
+    "packages/contracts/v1/worker-claims.schema.json": "3abf73e6625667ac588ec0795cfd513d21c3731af262184f7ad9661ecc4eb69a",
+    "LICENSE": "abc09dad5f84a76e1b0279237053cae16c03228ab27d8d467677054c2bd17eeb",
+    "COPYRIGHT": "86e49232d2162708d05405ed5ff6dc5594b73ef4b0f25d2749cfae13493b620c"
+  },
+  "context_sha256": "dab8ea59f9d3f60241a02880d923bbf6aafd1574e7d4ad2359d1ca296b0b0324",
+  "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "packages": {
+    "PyJWT": "2.15.1",
+    "attrs": "26.1.0",
+    "cffi": "2.1.1",
+    "cryptography": "50.0.2",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "packaging": "26.3",
+    "pip": "26.3",
+    "pycparser": "3.12",
+    "referencing": "0.37.0",
+    "rfc8785": "0.1.4",
+    "rpds-py": "2026.9.1",
+    "typing_extensions": "4.16.0"
+  },
+  "odoo_absent": true,
+  "command": [
+    "docker",
+    "buildx",
+    "build",
+    "--load",
+    "--label",
+    "com.modular.disposable=mp-g7-worker-security",
+    "-t",
+    "modular-document-stats:g7-security-20261103t165941z",
+    "-"
+  ],
+  "existing_worker_unchanged": true,
+  "limits": [
+    "Candidate build/13distribution import inventory only; no approved worker transition, runtime tokens/HTTP/config/mount/resource/recovery/security qualification."
+  ]
+}

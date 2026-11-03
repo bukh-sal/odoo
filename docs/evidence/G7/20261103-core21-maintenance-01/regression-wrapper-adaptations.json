@@ -1,0 +1,26 @@
+{
+  "result": "unchanged_test_cases_bound_to_actual_core21_release",
+  "adaptations": [
+    {
+      "path": "run_native.py",
+      "from_path": "docs/evidence/G7/20261102-notes8-labels4-read-01/run_native.py",
+      "previous": "cf137613358038663829c51c802e881e1fc9b444df2cc930b9af6125066ec638",
+      "current": "de2c14d6d233fef48fdd6b9899b51c6816e7faa9056a83afb65334856be6037e",
+      "adaptation": "Only installed generation30, label/output, references to unchanged original two class sources and finite helper CPU limit. Six actual test class bodies retained."
+    },
+    {
+      "path": "http_matrix.py",
+      "from_path": "docs/evidence/G7/20261102-notes8-labels4-read-01/http_matrix.py",
+      "previous": "afcc9ddcc43b045752c4fa3c77266732b04a2f219e5c0a3983fa3945460d1b95",
+      "current": "acd0adc14ccd0b11c2e7ba39cd7e53ed30cc10c7509a42409372fd69863fb3e1",
+      "adaptation": "Only generation30 and private/command output labels; all31 actual HTTP case bodies retained."
+    },
+    {
+      "path": "canvas_probe.py",
+      "from_path": "docs/evidence/G7/20261102-notes8-labels4-read-01/canvas_probe.py",
+      "previous": "0e68419e073d852ccd8e4d9886dece0789d62bf5057683ea799996187b1be1ab",
+      "current": "7a6ab3d1fe0d98ff05e4e71b7055eb777a94ad919a85b863a4b70de81a147fb2",
+      "adaptation": "Only generation30 and unique fixture command labels; all real scope/role/reference checks and rollback retained."
+    }
+  ]
+}

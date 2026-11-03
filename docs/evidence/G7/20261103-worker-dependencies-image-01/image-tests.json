@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "tests": 7,
+  "successful": true,
+  "failures": [],
+  "errors": [],
+  "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "source_sha256": {
+    "tests/test_document_stats_engine.py": "fe33f22698a457b1e1e8e92e2776351f433a25e55f59209a2d6a3b602bfebd0c",
+    "tests/test_document_stats_process.py": "27c0b71baf42b81a9641f624985a73198b19f7c12bf56585bf112481912dd293",
+    "packages/contracts/examples/v1/worker-request.json": "40ab052b0f7ca427b84ee77d9ede2f8738423d8e9794bf7fdac8c6f3386647ed"
+  },
+  "actual_immutable_worker_code": true,
+  "ephemeral_fixture_keys_only": true,
+  "no_network_config_db_issuer_operator_mounts": true,
+  "temporary_container_removed": true,
+  "limits": [
+    "Real isolated engine/HTTP process compatibility tests, not an approved active endpoint/runtime transition or final security/recovery qualification."
+  ]
+}

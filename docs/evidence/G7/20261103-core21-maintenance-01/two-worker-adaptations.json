@@ -1,0 +1,6 @@
+{
+  "source": "docs/evidence/G6/20261101-identity12-upgrade-01/http_probe_attempt02.py",
+  "source_sha256": "7849f64b8c352a23339038088302f90c8921ac83a3f687056bb2caad2de6372d",
+  "current_sha256": "a31a33b737ca0abc9b1a79a049b018a0a081b7e6624112cae4ac12f269b99058",
+  "adaptation": "Only current context wrapper, generation30, unique owned labels/private paths and loopback18090; all actual CRUD/forged/service/warm-revocation case bodies retained."
+}

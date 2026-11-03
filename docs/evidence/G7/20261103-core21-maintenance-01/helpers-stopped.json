@@ -1,0 +1,6 @@
+{
+  "result": "passed",
+  "owned_secondary_and_edge_stopped_exit0": true,
+  "primary_worker_unchanged": "ff32b33ded8567e0d6527bd5a301e150cbe88bb21a49b3aa4078e2db54482987",
+  "no_database_reset_or_container_deletion": true
+}

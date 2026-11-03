@@ -1,0 +1,15 @@
+{
+  "result": "passed_current_idempotency_conflict_legacy_rpc_omission_data_addon_refusal",
+  "configuration_generation": 30,
+  "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "same_key_replay_positive": "remote-job.json",
+  "changed_input_conflicts409": true,
+  "legacy_jsonrpc_omitted404": true,
+  "actual_current_image_data_addon_injection_refused_before_native_import": true,
+  "injected_container": "mp-r0-r1g64bb76636070f-core21-data-addon-refusal",
+  "injected_exit": 1,
+  "captured37jobs_other16tables_exact": true,
+  "limits": [
+    "Actual supported-entrypoint and wire checks, not hostile-native containment or a full final release/security audit."
+  ]
+}

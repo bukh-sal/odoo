@@ -1,0 +1,8 @@
+{
+  "result": "fixture_precondition_refused_before_mutation",
+  "observed_original_A_role": "administrator",
+  "prior_harness_assumed": "editor",
+  "owned_notes_created": 0,
+  "membership_unchanged": true,
+  "next": "Reuse ready exact guarded workers, temporarily select editor as original flexible-role harness did, restore actual original administrator in finally; all assertions retained"
+}

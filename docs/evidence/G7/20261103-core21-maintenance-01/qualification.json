@@ -1,0 +1,69 @@
+{
+  "result": "passed_installed_core21_normal_upgrade_and_bounded_current_backend_requalification",
+  "utc": "2026-11-03T17:33:35.317823+00:00",
+  "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "inventory_digest": "sha256:7993431065b3edefd8dc5e322c7952e241de1c500aa0aed8665fd76d100fe856",
+  "configuration_generation": 30,
+  "dispatch_generation": 135,
+  "operation_id": "98594deb-91c1-4e9f-9df4-01ca517f298f",
+  "native_tests": 63,
+  "http_cases": 31,
+  "two_actual_guarded_workers": [
+    "ff32b33ded8567e0d6527bd5a301e150cbe88bb21a49b3aa4078e2db54482987",
+    "d5f41682d7e88c44d9f530fb0d8ea650fdd4e5399936ba9f4a0998063f899ac2"
+  ],
+  "remote_once_job": "cfb5133f-d93d-4bbd-93a7-f81e46a2f6e0",
+  "retired_helpers": 13,
+  "final_counts": {
+    "mp_job": 37,
+    "mp_outbox": 55,
+    "mp_principal": 4,
+    "mp_workspace": 3,
+    "mp_membership": 8,
+    "mp_example_note": 30,
+    "mp_plugin_grant": 6,
+    "mp_event_delivery": 251,
+    "mp_service_binding": 14,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 3,
+    "mp_event_subscription": 35,
+    "mp_service_credential": 3,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 1,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 3
+  },
+  "original_files_exact": 50,
+  "acceptance_requalified": {
+    "BOOT-03": "Current selected base/web guarded workers and actual omitted legacy /jsonrpc404; same image policy.",
+    "BOOT-04": "Strict full native module state matches baseline except core version, installed native set17 remains exact allowed image graph; no ERP activation.",
+    "BOOT-05": "Actual current image rejects injected writable data-dir addon before native import; exact inventoried source/startup readers unchanged.",
+    "BOOT-06": "Actual old31 image refused before native import/serving; current two guarded workers start without initialization/migration flags and schema stays exact.",
+    "ID-01": "Actual native63/HTTP31 and two-worker positive CRUD/private workspace isolation; captured originals preserved.",
+    "ID-02": "Actual forged uid/su/database/company/private frames/workspace inputs denied in two-worker and native regressions.",
+    "ID-03": "Actual native export/import/binary/token/id-only/cache/job paths and current HTTP31/Canvas reference guards.",
+    "ID-04": "Actual service cookie/native technical identity cannot map to implicit administrator authority; current job guards.",
+    "ID-05": "Committed demotion/removal/restoration honored on first warmed/new requests on both distinct guarded workers; pending/cache read guard regressions.",
+    "ID-06": "Workspace administrator actual manager API403 and native installation read/create AccessError; exact OS-approved operator path preserved.",
+    "ID-07": "Current direct native RPC/model and suspension/cache guard checks; strict image inventory entrypoint.",
+    "ID-09": "Same actual Alice temporarily editorA/viewerB with native/API checks; global native groups and original authority restored exactly.",
+    "ID-10": "Both actual guarded worker container IDs warm reads, then deny after committed demotion/revocation; source actor scope counters remain monotonic.",
+    "API-01": "Actual declared methods work, undeclared sudo404, forbidden authority field400; native registered bound chain/DTO validation regressions.",
+    "API-02": "Actual remote analyze same-key response replay returns identical outcome; changed same-key input returns409 without extra job.",
+    "API-04": "Current public validation/not-found/forbidden responses, normalized native errors and typed DTO checks; no debug/traceback in tested wire denial.",
+    "MIG-08": "Actual previous image refuses current release inventory; old33job claims advance epoch, all previous outcomes/inputs/attempts preserved, readiness/drain generation132\u2192135.",
+    "SEC-07": "Same exact independently reconstructed new Python diff approved/applied; current8new source cases cover rehashed review omission/forgery. Host authority implementation exactly matches180host/65Linux qualified revision16, retaining expiry/revoke/stale/replay vectors; no claim all old runtime cases rerun."
+  },
+  "unchanged_qualified_host_authority_sha256": {
+    "packages/platform_sdk/modular_platform/operator_store.py": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+    "packages/platform_sdk/modular_platform/approval_validation.py": "fffa098f08001bd5a00c26cd02abc950a6d07a896419378dba26ba02455079f5",
+    "packages/platform_sdk/modular_platform/operator_os.py": "bbf98612bd1aaf6d3b0c99fc0588d0b355d33ca5b984f47453e8e1a39a3b7477",
+    "packages/platform_sdk/modular_platform/contracts.py": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50"
+  },
+  "retained_source_checks": "docs/evidence/G7/20261103-python-maintenance-source-01/qualification.json and linux-consumers02.json",
+  "current_coverage_limits": [
+    "Not dependency-changing post-commit fault/fresh restore/resume, full fresh release, final security/provenance/network/secrets/runbooks or updated worker runtime qualification.",
+    "ID08 real browser revalidation and UI09 remain separate; no frontend or Canvas expansion.",
+    "Synthetic test history is intentionally retained: one new completed job, six producer events, A policy+4 and original membership audit timestamp. All other captured data exact."
+  ]
+}

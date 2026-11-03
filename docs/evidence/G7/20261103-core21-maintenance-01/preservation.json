@@ -1,0 +1,42 @@
+{
+  "result": "passed_actual_populated_core21_dependency_upgrade",
+  "operation_id": "98594deb-91c1-4e9f-9df4-01ca517f298f",
+  "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "inventory_digest": "sha256:7993431065b3edefd8dc5e322c7952e241de1c500aa0aed8665fd76d100fe856",
+  "configuration_generation": 30,
+  "dispatch_generation": 135,
+  "counts": {
+    "mp_job": 36,
+    "mp_outbox": 49,
+    "mp_principal": 4,
+    "mp_workspace": 3,
+    "mp_membership": 8,
+    "mp_example_note": 30,
+    "mp_plugin_grant": 6,
+    "mp_event_delivery": 251,
+    "mp_service_binding": 14,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 3,
+    "mp_event_subscription": 35,
+    "mp_service_credential": 3,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 1,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 3
+  },
+  "schema_columns_exact": true,
+  "native_modules_exact_except_core20_to21": true,
+  "old_filestore_files_exact": 50,
+  "checkpoint_files_exact": 50,
+  "all_17tables_preserved_except_explicit_queue_epoch_and_active_receipt_closure": true,
+  "old_job_outcomes_inputs_attempts_preserved": 36,
+  "jobs_epoch_updated": 33,
+  "active_subscriptions_closed": 0,
+  "plugin_scopes_bindings_endpoints_unchanged": true,
+  "actual_python_lock_and_complete_solution_published": true,
+  "external_worker_image_start_restart_identity_mounts_network_key_publication_exact": true,
+  "worker_helper_only_moved_to_approved_image": true,
+  "limits": [
+    "Normal reviewed upgrade/preservation only; current native/HTTP/security regressions and dependency-changing failure/recovery/fresh release/worker rebuild remain."
+  ]
+}

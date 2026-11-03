@@ -1,0 +1,30 @@
+{
+  "result": "passed_current_core21_original_actor_remote_job",
+  "job_id": "cfb5133f-d93d-4bbd-93a7-f81e46a2f6e0",
+  "attempts": 1,
+  "idempotent_gateway_replay": true,
+  "native_views": {
+    "A": [
+      "form",
+      "list"
+    ],
+    "B": [
+      "form",
+      "list"
+    ],
+    "C": [
+      "form",
+      "list"
+    ]
+  },
+  "statistics_match_saved_note_revision": true,
+  "old_jobs_preserved": 36,
+  "other16tables_worker_exact": true,
+  "actual_helper_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "independent_worker_image": "retained_original548",
+  "manager_healthy_enabled": true,
+  "limits": [
+    "New host/helper Python dependencies interoperate with old approved worker; updated worker image still requires its own build/approval/qualification.",
+    "No browser rendering, full proxy/security or recovery qualification."
+  ]
+}

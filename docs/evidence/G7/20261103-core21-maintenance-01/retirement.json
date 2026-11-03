@@ -1,0 +1,121 @@
+{
+  "result": "retired_exact_terminal_helpers_and_verified_final_dataset",
+  "retired": [
+    {
+      "name": "mp-r0-r1g64bb76636070f-core21-data-addon-refusal",
+      "id": "28f5e32517279a0a7af019e0af429aa6be8f5eb3e8ac256abe77670cf5e88192",
+      "exit_code": 1,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-op-98594deb-91c1-4e9f-9df4-01ca517f298f-checkpoint",
+      "id": "33a890c034769e0b00a65ba89074a0ced136e9329e8bb9ca44838206697623ab",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-op-98594deb-91c1-4e9f-9df4-01ca517f298f-assets",
+      "id": "370fd1a1be40ebfd5a32bdc7789b35fa8e0164bdde1719bf475289c42f796a16",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-op-98594deb-91c1-4e9f-9df4-01ca517f298f-metadata",
+      "id": "5b1fb657b419724996fcba8a72a7f76c9bc36bdacebad5a1849a1edd17d9e70a",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-g7-core21-canvas-paths-02",
+      "id": "7627288df1cfe268973b5d52b556c2f6a4ceccc98d08e00a7f04886a733c66bc",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-core21-http-edge-01",
+      "id": "7fd55668689127b9121da7d02bf5521bb066498673944a13a71c0edd65b538b7",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-g7-read-core21-installed-native-01",
+      "id": "8ff261192a717eaba2656d132937554bee456883f80d3dd695602bb0f8dd6683",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-op-98594deb-91c1-4e9f-9df4-01ca517f298f-dispatch-reconcile",
+      "id": "9dc7033edc7ed9567073764e385e6e25cce483a34c0413d999139806a990ad23",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-core21-stale-image-refusal",
+      "id": "a5b4bf07dfe7d7594582f23c3f482cd80a6d593703e9f86af20862e5e804a046",
+      "exit_code": 1,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-op-98594deb-91c1-4e9f-9df4-01ca517f298f-dispatch-enable",
+      "id": "c858e78cf9781cf97e68640eb90cfa894555a66ed8a553d280e0d1dda17dba01",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-op-98594deb-91c1-4e9f-9df4-01ca517f298f-native",
+      "id": "d3a506ac3adb51693ea62da559acdb30318f30fe846417b4701dc1cced3de33f",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-core21-http-worker-01",
+      "id": "d5f41682d7e88c44d9f530fb0d8ea650fdd4e5399936ba9f4a0998063f899ac2",
+      "exit_code": 0,
+      "removed": true
+    },
+    {
+      "name": "mp-r0-r1g64bb76636070f-op-98594deb-91c1-4e9f-9df4-01ca517f298f-dispatch-fence",
+      "id": "f7795c9b359a5610fb620fa563af03af169d62d1e7bc51fa795ccea0e4825d4a",
+      "exit_code": 0,
+      "removed": true
+    }
+  ],
+  "images_volumes_networks_removed": 0,
+  "current_app_retained": "ff32b33ded8567e0d6527bd5a301e150cbe88bb21a49b3aa4078e2db54482987",
+  "current_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "rollback_images_checkpoints_issuer_retained": true,
+  "counts": {
+    "mp_job": 37,
+    "mp_outbox": 55,
+    "mp_principal": 4,
+    "mp_workspace": 3,
+    "mp_membership": 8,
+    "mp_example_note": 30,
+    "mp_plugin_grant": 6,
+    "mp_event_delivery": 251,
+    "mp_service_binding": 14,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 3,
+    "mp_event_subscription": 35,
+    "mp_service_credential": 3,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 1,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 3
+  },
+  "original_17tables_preserved_except_explicit_upgrade_and_owned_test_effects": true,
+  "changes": {
+    "old_jobs_epoch_updates": 33,
+    "new_completed_remote_test_job": "cfb5133f-d93d-4bbd-93a7-f81e46a2f6e0",
+    "two_owned_notes_created_updated_deleted": true,
+    "six_owned_outbox_events_retained": true,
+    "A_policy_generation_increment": 4,
+    "A_membership_authority_restored_audit_timestamp_only": true
+  },
+  "original_files_exact": 50,
+  "schema_exact": true,
+  "independent_worker_image_key_start_mount_network_publication_exact": true,
+  "limits": [
+    "Current normal upgrade and bounded backend qualification, not dependency-changing fault/restore/fresh release/final security or updated worker approval."
+  ]
+}

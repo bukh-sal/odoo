@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "tests": 63,
+  "successful": true,
+  "failures": [],
+  "errors": [],
+  "image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "native_configuration_generation": 30,
+  "installed_correction": true,
+  "all36jobs_other16tables_worker_exact": true,
+  "all_fixtures_rolled_back": true,
+  "actual_classes_not_monkeypatched": true,
+  "test_sha256": {
+    "docs\\evidence\\G7\\20261102-cached-fields-01\\native_cache.py": "9e606b8c1ad3d89bb4a240dc5c1a9ce0dab08df76829cbb186fd41fa8e660a97",
+    "docs\\evidence\\G7\\20261102-native-paths-01\\native_paths.py": "265ee90b2060368f7434e93153df73dd67577e822a2b321ec28e5285808c5980",
+    "docs\\evidence\\G6\\20261102-current-backend-audit-01\\native_guards.py": "981db3331b384513599a068659087f5f378e78f026b6bbfa8b975b44e2724440",
+    "docs\\evidence\\G6\\20261101-notes7-upgrade-01\\native_batch.py": "20c92aea4c510503737856892424bcd17b8e4efd030bf12ee81d0c33ab6bf6e4",
+    "docs\\evidence\\G7\\20261102-notes8-labels4-read-01\\native_window.py": "3068508e1d45f7f144d8337308ab81cb32b878ef118498022b8daa66935f5b45",
+    "docs\\evidence\\G7\\20261102-notes8-labels4-read-01\\native_labels_read.py": "11248b1bca4a3d4fc3da334210560eae5aee87301e8d2880e56b0ae09d06b329"
+  },
+  "fixture_adaptation": "Only retained lifecycle observer receives exact current reference policy. Candidate-only shell uses same unchanged schema, no HTTP/cron, read-only filestore, rollback-only fixtures; no admission/installed claim. Candidate-readonly uses existing Notes to avoid event creation correctly fenced by the mismatched installed release inventory."
+}

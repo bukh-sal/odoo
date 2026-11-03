@@ -1,0 +1,5 @@
+{
+  "result": "ownership_selection_refused_before_any_deletion",
+  "reason": "SDK lifecycle helpers use exact operation/deployment labels, not test disposable label",
+  "next": "Union both exact owned sets, retain name prefix/expected operation/deployment/image/terminal checks; all other resources unchanged"
+}
