@@ -1,0 +1,162 @@
+{
+  "result": "passed_current_curated19_archives_source_and_notices",
+  "artifacts": [
+    {
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.2",
+      "digest": "sha256:1edaadc63fd0a0184f003eead17dc559d4fdab5e1cd631b4c18f692f8d212b37",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 14
+    },
+    {
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.3",
+      "digest": "sha256:686350c499dfacaaed8ef7287c8861e02b7dc996ec9f30c8d1c7cc7f98ffdcfe",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 14
+    },
+    {
+      "plugin_id": "org.example.canvas",
+      "version": "0.1.4",
+      "digest": "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 14
+    },
+    {
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.0",
+      "digest": "sha256:bc1170197c19fb1503f1e786a157c4d2e14ec18a8a50d2d7fff7a64a2fdd97b7",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 4
+    },
+    {
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.1",
+      "digest": "sha256:af46bd92f01fdc6ac635ab1de60d3e0112effd8998051952d02110c293bec05a",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 4
+    },
+    {
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.2",
+      "digest": "sha256:64a774c6fad1ffed9f8c78f6f17e75c2a172e2fadda2bf101427413757694925",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 4
+    },
+    {
+      "plugin_id": "org.example.document_stats",
+      "version": "0.1.3",
+      "digest": "sha256:586a51a13e814078cf2b1111b268600498be4b0e9029264236e4c04a291948b6",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 4
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "version": "0.2.1",
+      "digest": "sha256:160e27bfb22325a54c385ab32a35bc33a7c27bae9dbbc4ece7a954a9340bebc1",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 14
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "version": "0.2.2",
+      "digest": "sha256:fb7e53192237dcbe4877e52eb414330dcf963ff6fae03d83934567863b435ac6",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 14
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "version": "0.2.3",
+      "digest": "sha256:8783acff040d97d678bc4c1b0a9a9843f12d0a787e3abf40423e9bb345cad6e6",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 16
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "version": "0.2.6",
+      "digest": "sha256:95d74f8efae9ecf9ed1d59af496df577f912057c4b400ab0ef8ad280cf0c0ad4",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 18
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "version": "0.2.7",
+      "digest": "sha256:d24876c930fd9b852498f93c90a06f05bf26fd5b98d4de559a3cd0ee50a4bcad",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 18
+    },
+    {
+      "plugin_id": "org.example.notes",
+      "version": "0.2.8",
+      "digest": "sha256:b7b4a934fbbab8e8c0a423e04307ac735cd99872f9950a49504ed04bb94fa562",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 18
+    },
+    {
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.0",
+      "digest": "sha256:b5b17ac770503f62b1fc1e432979df3bc9fba6396dd13cf6e460c4694ea1a7e0",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 10
+    },
+    {
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.1",
+      "digest": "sha256:3a4b89cbd8d680e95f77e3dcd2a10004bbd4481f3bbc9584a63203feadcf71f2",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 10
+    },
+    {
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.3",
+      "digest": "sha256:e0e61f52454757397f8b6a3e6fea3e8d2860acb63bcd74b38653f95e43218211",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 12
+    },
+    {
+      "plugin_id": "org.example.notes_labels",
+      "version": "0.2.4",
+      "digest": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 12
+    },
+    {
+      "plugin_id": "org.example.notes_stats",
+      "version": "0.1.0",
+      "digest": "sha256:2591d6266fe5837ad3fdbad13d5d8e6023b8285921da009f0c495c6d115119cd",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 10
+    },
+    {
+      "plugin_id": "org.example.notes_stats",
+      "version": "0.1.1",
+      "digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+      "license": "LGPL-3.0-only",
+      "root_notices_exact": true,
+      "provenance_files": 11
+    }
+  ],
+  "catalog_source": "fresh_target21_independent_curated_catalog",
+  "moving_latest_used": false,
+  "limits": [
+    "Curated archived metadata/source/notices; no new installation, trust approval or commercial relicensing conclusion."
+  ]
+}

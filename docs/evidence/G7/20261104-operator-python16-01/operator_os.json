@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_operator_os.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 7,
+  "stdout": "",
+  "stderr": "test_child_crash_releases_os_lock_without_lease_timeout_or_file_removal (test_operator_os.OperatorOS.test_child_crash_releases_os_lock_without_lease_timeout_or_file_removal) ... ok\ntest_deployment_lock_precedes_sites_and_failed_acquire_releases_partial_set (test_operator_os.OperatorOS.test_deployment_lock_precedes_sites_and_failed_acquire_releases_partial_set) ... ok\ntest_existing_broad_directory_fails_closed_instead_of_resetting_permissions (test_operator_os.OperatorOS.test_existing_broad_directory_fails_closed_instead_of_resetting_permissions) ... ok\ntest_identity_is_os_authenticated_and_private_acl_ignores_user_module_env (test_operator_os.OperatorOS.test_identity_is_os_authenticated_and_private_acl_ignores_user_module_env) ... ok\ntest_links_and_unstructured_lock_names_are_rejected (test_operator_os.OperatorOS.test_links_and_unstructured_lock_names_are_rejected) ... ok\ntest_lock_loss_fences_further_work (test_operator_os.OperatorOS.test_lock_loss_fences_further_work) ... ok\ntest_second_handle_cannot_steal_and_persistent_file_survives_release (test_operator_os.OperatorOS.test_second_handle_cannot_steal_and_persistent_file_survives_release) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 9.021s\n\nOK\n"
+}

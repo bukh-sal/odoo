@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_worker_authority.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 7,
+  "stdout": "",
+  "stderr": "test_atomic_revocation_removal_and_generation_change_reject_old_snapshot (test_worker_authority.PublishedAuthorityTests.test_atomic_revocation_removal_and_generation_change_reject_old_snapshot) ... ok\ntest_duplicate_json_properties_and_nonfinite_json_refused (test_worker_authority.PublishedAuthorityTests.test_duplicate_json_properties_and_nonfinite_json_refused) ... ok\ntest_foreign_scope_and_key_reference_cannot_select_issuer (test_worker_authority.PublishedAuthorityTests.test_foreign_scope_and_key_reference_cannot_select_issuer) ... ok\ntest_key_replacement_cannot_reuse_old_publication_snapshot (test_worker_authority.PublishedAuthorityTests.test_key_replacement_cannot_reuse_old_publication_snapshot) ... ok\ntest_public_verification_key_cannot_be_used_as_private_issuer (test_worker_authority.PublishedAuthorityTests.test_public_verification_key_cannot_be_used_as_private_issuer) ... ok\ntest_scope_snapshot_and_matching_public_private_issuer (test_worker_authority.PublishedAuthorityTests.test_scope_snapshot_and_matching_public_private_issuer) ... ok\ntest_wrong_target_duplicate_scope_and_unapproved_address_fail_closed (test_worker_authority.PublishedAuthorityTests.test_wrong_target_duplicate_scope_and_unapproved_address_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.348s\n\nOK\n"
+}

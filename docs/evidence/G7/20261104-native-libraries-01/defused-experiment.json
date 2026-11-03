@@ -1,0 +1,52 @@
+{
+  "result": "existing_openpyxl_defused_support_stops_entity_input_preserves_workbook",
+  "utc": "2026-11-03T22:24:42.859556+00:00",
+  "actual_base_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "source": {
+    "package": "defusedxml",
+    "version": "0.7.1",
+    "metadata_url": "https://pypi.org/pypi/defusedxml/0.7.1/json",
+    "metadata_sha256": "f015c37fa0b87a1d7fad57bea96c5c34856df2cbb29626004dee2122d510136a",
+    "wheel_url": "https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl",
+    "filename": "defusedxml-0.7.1-py2.py3-none-any.whl",
+    "sha256": "a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61",
+    "bytes": 25604,
+    "license": "PSFL"
+  },
+  "rows": [
+    {
+      "mode": "baseline",
+      "openpyxl": "3.1.2",
+      "LXML": true,
+      "DEFUSEDXML": false,
+      "iterparse_module": "xml.etree.ElementTree",
+      "tiny_entity_input": {
+        "expanded": true,
+        "value": "probe_value"
+      },
+      "ordinary_XLSX_roundtrip": true
+    },
+    {
+      "mode": "protected",
+      "openpyxl": "3.1.2",
+      "LXML": true,
+      "DEFUSEDXML": true,
+      "iterparse_module": "defusedxml.common",
+      "tiny_entity_input": {
+        "expanded": false,
+        "exception": "EntitiesForbidden"
+      },
+      "ordinary_XLSX_roundtrip": true
+    }
+  ],
+  "images_built": 0,
+  "retained_helpers": 0,
+  "active_deployments_changed": false,
+  "dependency_locks_changed": false,
+  "next_action": "Inspect existing independently reviewed Python-maintenance path and stage exact defusedxml app dependency with required compatible/versioned release qualification; no custom parser.",
+  "limits": [
+    "Tiny benign entity declaration demonstrates actual parser selection and explicit refusal, not an exploit or proof all ExpatCVEs are fixed.",
+    "Wheel imports only in disposable no-network/no-config helpers; current app image remains without this candidate dependency.",
+    "Remaining vendor/CVE-specific reachability and full G7/security/reprobuild/release-kit still required."
+  ]
+}

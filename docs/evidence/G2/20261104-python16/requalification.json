@@ -1,0 +1,21 @@
+{
+  "gate": "G2",
+  "result": "passed_unchanged_revision17_on_new_isolated_Windows_interpreter",
+  "revision": 17,
+  "contract_major": 1,
+  "frozen_files": 101,
+  "rows": 8,
+  "changed_frozen_files": [],
+  "inventory_sha256": "5715f386dc1ba001d1937b350001a30d497e3083dff53218224e983df089adac",
+  "host_checks": 232,
+  "typescript": "passed",
+  "freeze": "passed",
+  "selected_interpreter": ".local/toolchain/operator-python16/Scripts/python.exe",
+  "source": "docs/evidence/G7/20261104-operator-python16-01/runtime-qualification.json",
+  "previous_source": "docs/evidence/G2/20261104-operator17/gate-G2.json",
+  "limits": [
+    "Only compatible host interpreter maintenance; no public contract/schema or Linux application/worker environment change.",
+    "Prior Linux source/feasibility evidence retained with exact unchanged source; not rerun or newly claimed.",
+    "No final native-library/advisory/G7 release pass."
+  ]
+}

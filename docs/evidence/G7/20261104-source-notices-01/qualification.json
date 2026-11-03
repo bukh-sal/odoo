@@ -1,0 +1,22 @@
+{
+  "result": "passed_current_official_source_and_application_notices_and19archives",
+  "utc": "2026-11-03T22:09:15.896073+00:00",
+  "application_image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "inventory_digest": "sha256:7993431065b3edefd8dc5e322c7952e241de1c500aa0aed8665fd76d100fe856",
+  "records_sha256": {
+    "official-source.json": "c69ea6b6f7e085c752b5f6a3b39b4c407befa19a6d04920cae67e538280ee873",
+    "notice-bundle.json": "7ad9d01421e14aa4e478ace267a8c8d7c6cfe6b00feac8dc265f58b2c654ccc9",
+    "artifact-provenance.json": "6c4742996ac7afb69186d60fcbd6819616adc78a7e92d80a863a8b059919388e"
+  },
+  "python_distributions": 76,
+  "OS_packages": 113,
+  "native_addons": 17,
+  "curated_archives": 19,
+  "deployment_mutations": 0,
+  "images_built": 0,
+  "continuation_reason": "First audit completed all static records before its local notice-loop f dictionary shadowed the fixture alias at final guard; no runtime/source defect or repeated build.",
+  "limits": [
+    "Static source/notice subset only; not fullOPS03 or final G7/security/legal compatibility opinion.",
+    "Worker/support image notices, vendored components, advisories/network/history/layers/archives/secrets/reprobuild/release-kit still require current evidence."
+  ]
+}

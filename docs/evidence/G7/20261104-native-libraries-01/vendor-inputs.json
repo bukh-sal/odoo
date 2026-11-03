@@ -1,0 +1,33 @@
+{
+  "result": "native_vendor_inputs_retained_review_pending",
+  "utc": "2026-11-03T22:26:37.574441+00:00",
+  "sources": [
+    {
+      "name": "python16",
+      "url": "https://www.python.org/downloads/release/python-31216/",
+      "sha256": "255e3cb79655340b619035136b34a1a7cca181596c71ec03715570eff9e03557",
+      "bytes": 38804
+    },
+    {
+      "name": "expat210",
+      "url": "https://raw.githubusercontent.com/libexpat/libexpat/R_2_10_0/expat/Changes",
+      "sha256": "b200119004e21b89102f35b551bcdd26a479d0b882c98435e6b53e08ca75dd39",
+      "bytes": 124207
+    },
+    {
+      "name": "node_security",
+      "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+      "sha256": "2ecb185e3ee72a1500586a7d8f671fe852f9c51817d19814892b38a4a2b5b597",
+      "bytes": 298706
+    }
+  ],
+  "findings": {
+    "operator_Python": "Official3.12.16 security release covers compromisedCA and bundledExpat/other stdlib changes; old15 checkpoint retained, selected project-only16 separately qualified.",
+    "Node": "Vendor October security release lists24.22.1 and BrotliCVE-2026-111497 fix. Actual process reportsBrotli1.2.0; do not classify a vendor-patched binary by upstream embedded version alone.",
+    "Expat": "New2.10.0 contains4security fixes. Actual app standardXLSX streamreader lackedoptionaldefusedxml; controlled experiment demonstrates existing optional entity protection without breaking an ordinary workbook."
+  },
+  "limits": [
+    "Selected primary vendor notices, not an exhaustive native-library/CVE risk acceptance.",
+    "No blanket bug-fixed or final G7 claim; actual parser paths/metadata and pending ADR0050 staged mitigation are separate evidence."
+  ]
+}

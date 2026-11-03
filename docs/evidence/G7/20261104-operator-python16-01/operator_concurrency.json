@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_operator_concurrency.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 4,
+  "stdout": "",
+  "stderr": "test_disjoint_deployment_and_site_can_progress_independently (test_operator_concurrency.OperatorConcurrency.test_disjoint_deployment_and_site_can_progress_independently) ... ok\ntest_same_deployment_different_sites_rejects_competing_process (test_operator_concurrency.OperatorConcurrency.test_same_deployment_different_sites_rejects_competing_process) ... ok\ntest_shared_site_rejects_other_deployment_and_releases_partial_lock (test_operator_concurrency.OperatorConcurrency.test_shared_site_rejects_other_deployment_and_releases_partial_lock) ... ok\ntest_simultaneous_contenders_have_exactly_one_live_owner (test_operator_concurrency.OperatorConcurrency.test_simultaneous_contenders_have_exactly_one_live_owner) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 9.151s\n\nOK\n"
+}

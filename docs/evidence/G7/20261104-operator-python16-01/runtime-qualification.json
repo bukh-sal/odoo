@@ -1,0 +1,156 @@
+{
+  "result": "passed_isolated_Python16_exact_unchanged_packages_old_keys_and232consumers",
+  "utc": "2026-11-03T22:18:20.998301+00:00",
+  "Python": "3.12.16",
+  "environment": ".local/toolchain/operator-python16",
+  "interpreter": ".local/toolchain/operator-python16/Scripts/python.exe",
+  "stdlib": {
+    "Expat": "expat_2.9.0",
+    "SQLite": "3.53.1",
+    "OpenSSL": "OpenSSL 3.5.9 29 Sep 2026"
+  },
+  "crypto_bundled_OpenSSL": "OpenSSL 4.0.3 29 Sep 2026",
+  "packages": [
+    {
+      "name": "PyJWT",
+      "version": "2.15.1"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1"
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0"
+    },
+    {
+      "name": "resolvelib",
+      "version": "1.2.1"
+    },
+    {
+      "name": "rfc8785",
+      "version": "0.1.4"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    }
+  ],
+  "package_versions_unchanged": true,
+  "old_RSA_read_sign_verify": true,
+  "old_keys_bytes_unchanged": true,
+  "old_environment_retained": {
+    "Python": "3.12.15",
+    "stdlib_OpenSSL": "OpenSSL 3.5.9 29 Sep 2026"
+  },
+  "source": {
+    "commit": "13f376785a6d213c035d14372e4b40a0322031dc",
+    "url": "https://raw.githubusercontent.com/astral-sh/uv/13f376785a6d213c035d14372e4b40a0322031dc/crates/uv-python-managed/download-metadata.json",
+    "sha256": "81372e1cbff3dd87a786674ef00e01b3743638e3d8e58117d73e32a8e11eae05",
+    "target": {
+      "name": "cpython",
+      "arch": {
+        "family": "x86_64",
+        "variant": null
+      },
+      "os": "windows",
+      "libc": "none",
+      "major": 3,
+      "minor": 12,
+      "patch": 16,
+      "prerelease": "",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.12.16%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+      "sha256": "1f2ab53880fc67ea323398c6388e05af28addc99a8e389209f08a51fdff4b149",
+      "variant": null,
+      "build": "20261026"
+    }
+  },
+  "core_interpreter_files": {
+    "python.exe": {
+      "bytes": 91648,
+      "sha256": "246221b571e7a692a8b26818b628cac4c163e836de9897812eaebc2a8e1efa90"
+    },
+    "python312.dll": {
+      "bytes": 6970368,
+      "sha256": "00f1e27a720f04606d9f6eac703b89418265fde213d6cb9378a0a4854b5d4669"
+    },
+    "LICENSE.txt": {
+      "bytes": 25066,
+      "sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a"
+    },
+    "Lib/ssl.py": {
+      "bytes": 51536,
+      "sha256": "0061d6ef21088283498491064b79605b5c26c35dff527ac850a417994d580ad3"
+    },
+    "Lib/tarfile.py": {
+      "bytes": 114915,
+      "sha256": "46f35ef6fc129a6968dd113c2c3c06208a9b559897eb8a28c992112dd79a67a7"
+    },
+    "Lib/tempfile.py": {
+      "bytes": 35406,
+      "sha256": "3ec83814c27f9f99f97a3c016baa398616111d50d0627d99612c8376c69447f1"
+    },
+    "DLLs/pyexpat.pyd": {
+      "bytes": 211456,
+      "sha256": "48595059edc8d5c049edada829a71056971473855a39e65e872f4112fc97d258"
+    },
+    "DLLs/_sqlite3.pyd": {
+      "bytes": 112128,
+      "sha256": "8d1ef0cf074a10f7e28835c235260293e4bdb07c1952852f01acc2136f952b66"
+    },
+    "DLLs/_ssl.pyd": {
+      "bytes": 165888,
+      "sha256": "27b8579d4c14134f7c97266956f4a6218f13d4c15e242c67b93b2b03adbad1a2"
+    }
+  },
+  "global_python_PATH_registry_change": false,
+  "installer_flags": [
+    "--install-dir project-owned",
+    "--no-bin",
+    "--no-registry",
+    "exact3.12.16",
+    "pinned_official_Astral_JSON_metadata"
+  ],
+  "consumer_qualification": "qualification.json",
+  "checks": 232,
+  "typescript": "passed",
+  "freeze": {
+    "result": "passed",
+    "files": 101,
+    "rows": 8,
+    "revision": 17
+  },
+  "limits": [
+    "Trusted binary installer uses pinned official Astral metadata/archive SHA; no global/shared interpreter replacement.",
+    "VendorPython3.12.16 security maintenance, not a blanket native-library/advisory/G7 pass. Expat2.10.0 and SQLite reachability/vendor review remain.",
+    "No application/worker image, endpoint, key, publication, schema, approval or native lifecycle mutation."
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Qualified local Windows operator and host SDK development tooling; Linux application pins remain runtime.lock.json.",
-  "Python": "3.12.15",
+  "Python": "3.12.16",
   "host_platform": "win32",
   "host_architecture": "AMD64",
   "Node": "24.22.1",
@@ -12,5 +12,14 @@
     "deploy/requirements-operator.lock"
   ],
   "node_dependencies": "packages/host_sdk/package-lock.json",
-  "setup": "Use an isolated .venv, hash-locked dependencies and npm ci --ignore-scripts. Do not change global Python."
+  "setup": "Use the selected project-only interpreter and unchanged hash-locked binary dependencies; docs/operator-toolchain.md. No global Python/PATH/registry change; prior .venv remains a checkpoint.",
+  "selected_interpreter": ".local/toolchain/operator-python16/Scripts/python.exe",
+  "python_provenance": {
+    "metadata_url": "https://raw.githubusercontent.com/astral-sh/uv/13f376785a6d213c035d14372e4b40a0322031dc/crates/uv-python-managed/download-metadata.json",
+    "metadata_sha256": "81372e1cbff3dd87a786674ef00e01b3743638e3d8e58117d73e32a8e11eae05",
+    "archive_url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.12.16%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+    "archive_sha256": "1f2ab53880fc67ea323398c6388e05af28addc99a8e389209f08a51fdff4b149",
+    "vendor": "Astral python-build-standalone; exact CPython3.12.16 Windows x86_64",
+    "qualification": "docs/evidence/G7/20261104-operator-python16-01/runtime-qualification.json"
+  }
 }

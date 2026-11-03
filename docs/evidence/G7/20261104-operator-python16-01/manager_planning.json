@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_manager_planning.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 8,
+  "stdout": "",
+  "stderr": "test_browser_cannot_supply_image_command_identity_or_approval (test_manager_planning.ManagerPlans.test_browser_cannot_supply_image_command_identity_or_approval) ... ok\ntest_current_image_install_uses_same_stage_and_permission_review (test_manager_planning.ManagerPlans.test_current_image_install_uses_same_stage_and_permission_review) ... ok\ntest_publication_excludes_operator_configuration_and_clears_stage_by_default (test_manager_planning.ManagerPlans.test_publication_excludes_operator_configuration_and_clears_stage_by_default) ... ok\ntest_shared_upgrade_includes_all_suspended_scopes (test_manager_planning.ManagerPlans.test_shared_upgrade_includes_all_suspended_scopes) ... ok\ntest_stale_or_fabricated_preview_does_not_become_authority (test_manager_planning.ManagerPlans.test_stale_or_fabricated_preview_does_not_become_authority) ... ok\ntest_transitive_install_needs_consent_and_lists_exact_new_scope (test_manager_planning.ManagerPlans.test_transitive_install_needs_consent_and_lists_exact_new_scope) ... ok\ntest_upgrade_reconstructs_independently_and_does_not_mutate_inputs (test_manager_planning.ManagerPlans.test_upgrade_reconstructs_independently_and_does_not_mutate_inputs) ... ok\ntest_wrong_artifact_same_version_and_unknown_scope_fail_closed (test_manager_planning.ManagerPlans.test_wrong_artifact_same_version_and_unknown_scope_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.193s\n\nOK\n"
+}

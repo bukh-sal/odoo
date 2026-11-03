@@ -3,6 +3,8 @@
 For a new environment, build/load the selected [locked proxy](proxy-build.md)
 before using Compose. Its local immutable digest is independent of the app's
 approved release/inventory; changing a template does not update running sites.
+Use the explicit [selected operator interpreter](operator-toolchain.md); the
+older local `.venv` is retained only as a checkpoint.
 
 The current independent executor is the supported G5 lifecycle path. Read its private deployment configuration and journal rather than the historical bootstrap Compose file. Do not restart, initialize or seed an existing site to refresh its image.
 

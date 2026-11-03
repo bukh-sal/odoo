@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_worker_transition.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 9,
+  "stdout": "",
+  "stderr": "test_active_partial_duplicate_and_foreign_scope_refused (test_worker_transition.WorkerTransitionTests.test_active_partial_duplicate_and_foreign_scope_refused) ... ok\ntest_current_endpoint_health_and_image_must_match_review (test_worker_transition.WorkerTransitionTests.test_current_endpoint_health_and_image_must_match_review) ... ok\ntest_exact_stored_upgrade_allows_only_suspended_mismatch (test_worker_transition.WorkerTransitionTests.test_exact_stored_upgrade_allows_only_suspended_mismatch) ... ok\ntest_native_child_rechecks_exact_old_metadata_and_full_suspended_scope (test_worker_transition.WorkerTransitionTests.test_native_child_rechecks_exact_old_metadata_and_full_suspended_scope) ... ok\ntest_native_default_and_unneeded_or_malformed_proof_refused (test_worker_transition.WorkerTransitionTests.test_native_default_and_unneeded_or_malformed_proof_refused) ... ok\ntest_plan_identity_and_native_artifact_mismatch_refused (test_worker_transition.WorkerTransitionTests.test_plan_identity_and_native_artifact_mismatch_refused) ... ok\ntest_recovery_preserves_later_revocations_rotation_but_not_destination_or_image (test_worker_transition.WorkerTransitionTests.test_recovery_preserves_later_revocations_rotation_but_not_destination_or_image) ... ok\ntest_stored_authorization_is_rechecked_not_cached (test_worker_transition.WorkerTransitionTests.test_stored_authorization_is_rechecked_not_cached) ... ok\ntest_target_image_contract_code_and_version_refused (test_worker_transition.WorkerTransitionTests.test_target_image_contract_code_and_version_refused) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.156s\n\nOK\n"
+}

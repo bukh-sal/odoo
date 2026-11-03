@@ -1,0 +1,75 @@
+{
+  "result": "actual_native_components_collected_advisory_review_pending",
+  "utc": "2026-11-03T22:09:36.563963+00:00",
+  "roles": {
+    "application": {
+      "image_id": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+      "components": {
+        "python": "3.12.16",
+        "expat": "expat_2.9.0",
+        "sqlite": "3.40.1",
+        "openssl": "OpenSSL 3.0.22 25 Aug 2026",
+        "zlib": "1.2.13"
+      },
+      "no_mounts": true,
+      "network": "none",
+      "collector_removed": true
+    },
+    "worker": {
+      "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "components": {
+        "python": "3.12.16",
+        "expat": "expat_2.9.0",
+        "sqlite": "3.40.1",
+        "openssl": "OpenSSL 3.0.22 25 Aug 2026",
+        "zlib": "1.2.13"
+      },
+      "no_mounts": true,
+      "network": "none",
+      "collector_removed": true
+    },
+    "isolated_operator": {
+      "python": "3.12.15",
+      "expat": "expat_2.8.5",
+      "sqlite": "3.53.1",
+      "openssl": "OpenSSL 3.5.9 29 Sep 2026"
+    },
+    "host_build_node": {
+      "node": "24.22.1",
+      "acorn": "8.18.0",
+      "ada": "4.0.0",
+      "amaro": "1.1.11",
+      "ares": "1.34.9",
+      "brotli": "1.2.0",
+      "cldr": "48.0",
+      "icu": "78.3",
+      "llhttp": "9.4.3",
+      "merve": "1.2.2",
+      "modules": "137",
+      "napi": "10",
+      "nbytes": "0.1.4",
+      "ncrypto": "0.0.1",
+      "nghttp2": "1.70.0",
+      "nghttp3": "",
+      "ngtcp2": "",
+      "openssl": "3.5.9",
+      "simdjson": "4.6.11",
+      "simdutf": "6.4.0",
+      "sqlite": "3.53.4",
+      "tz": "2026e",
+      "undici": "7.30.1",
+      "unicode": "17.0",
+      "uv": "1.52.1",
+      "uvwasi": "0.0.23",
+      "v8": "13.6.233.17-node.58",
+      "zlib": "1.3.2.1-motley-285e94b",
+      "zstd": "1.5.7"
+    }
+  },
+  "deployment_mutations": 0,
+  "images_built": 0,
+  "limits": [
+    "Exact actual native component versions, not a security verdict. Bundled libraries may differ from OS package and Python distribution versions.",
+    "No plugin imports/config/DB/issuer mounts or runtime restarts."
+  ]
+}

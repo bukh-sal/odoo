@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_platform_compatibility.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 3,
+  "stdout": "",
+  "stderr": "test_invalid_static_version_never_becomes_authority (test_platform_compatibility.PlatformCompatibilityTests.test_invalid_static_version_never_becomes_authority) ... ok\ntest_legacy_image_retains_platform_010_without_host_version_inference (test_platform_compatibility.PlatformCompatibilityTests.test_legacy_image_retains_platform_010_without_host_version_inference) ... ok\ntest_new_image_requires_its_matching_native_core_version (test_platform_compatibility.PlatformCompatibilityTests.test_new_image_requires_its_matching_native_core_version) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+}

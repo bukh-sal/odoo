@@ -15,7 +15,7 @@ or obtain it with the other immutable release images.
 From the project root, using the isolated interpreter:
 
 ```powershell
-.\.venv\Scripts\python.exe -X utf8 deploy/build_proxy.py --apk-archive .local/g7-support-images-02/proxy-apks.tar --output .local/proxy-build-new --tag modular-platform-proxy:r1-local
+.\.local\toolchain\operator-python16\Scripts\python.exe -X utf8 deploy/build_proxy.py --apk-archive .local/g7-support-images-02/proxy-apks.tar --output .local/proxy-build-new --tag modular-platform-proxy:r1-local
 ```
 
 Choose a new output directory/tag for each build. `--prepare-only` validates

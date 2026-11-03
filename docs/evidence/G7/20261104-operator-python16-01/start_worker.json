@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_start_worker.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 7,
+  "stdout": "",
+  "stderr": "test_bytecode_in_any_executable_root_is_rejected (test_start_worker.AdditionalSourceTests.test_bytecode_in_any_executable_root_is_rejected) ... ok\ntest_source_and_data_symlinks_rejected (test_start_worker.AdditionalSourceTests.test_source_and_data_symlinks_rejected) ... skipped 'Real Linux symlink probes qualify runtime policy'\ntest_baseline_keeps_native_arguments (test_start_worker.DefaultStartupTests.test_baseline_keeps_native_arguments) ... ok\ntest_inventory_cannot_downgrade_image_profile_or_bless_modified_guard (test_start_worker.DefaultStartupTests.test_inventory_cannot_downgrade_image_profile_or_bless_modified_guard) ... ok\ntest_pins_and_fixed_arguments_checked_before_sdk_execution (test_start_worker.DefaultStartupTests.test_pins_and_fixed_arguments_checked_before_sdk_execution) ... ok\ntest_verified_guard_receives_exact_independent_pins (test_start_worker.DefaultStartupTests.test_verified_guard_receives_exact_independent_pins) ... ok\ntest_writable_addons_empty_directories_only (test_start_worker.DefaultStartupTests.test_writable_addons_empty_directories_only) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.104s\n\nOK (skipped=1)\n"
+}

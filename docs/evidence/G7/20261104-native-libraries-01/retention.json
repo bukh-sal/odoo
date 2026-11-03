@@ -1,0 +1,10 @@
+{
+  "result": "all_native_library_experiment_helpers_removed",
+  "utc": "2026-11-03T22:29:58.746368+00:00",
+  "retained_helpers": 0,
+  "new_images": 0,
+  "new_volumes": 0,
+  "new_networks": 0,
+  "existing_sites_unchanged": true,
+  "global_prune": false
+}

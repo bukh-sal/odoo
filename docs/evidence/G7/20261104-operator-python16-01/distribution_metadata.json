@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_distribution_metadata.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 1,
+  "stdout": "",
+  "stderr": "test_retained_catalog_references_resolve_without_excluded_addons (test_distribution_metadata.CategoryMetadataTest.test_retained_catalog_references_resolve_without_excluded_addons) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.027s\n\nOK\n"
+}

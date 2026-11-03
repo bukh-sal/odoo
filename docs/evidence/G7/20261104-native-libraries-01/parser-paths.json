@@ -1,0 +1,50 @@
+{
+  "result": "direct_native_imports_and_actual_XLSX_parser_paths_recorded_review_pending",
+  "utc": "2026-11-03T22:22:21.641723+00:00",
+  "image": "sha256:570275717add25f201d315ebfbd71ca63882bf7f4a6a7708077ae9e18ebc1886",
+  "direct_imports": [
+    {
+      "image_path": "odoo/service/db.py",
+      "line": 14,
+      "module": "xml.etree",
+      "image_source_sha256": "b8269f96c59437fc7b1b75808cf684971417bcef6ba637ff5801b221fbe892ff"
+    },
+    {
+      "image_path": "odoo/tools/test_reports.py",
+      "line": 193,
+      "module": "xml.dom",
+      "image_source_sha256": "f721c98e991ea5de424f238d921484ff86f6682cdb9169970c6538549c76d01c"
+    },
+    {
+      "image_path": "packages/platform_sdk/modular_platform/catalog.py",
+      "line": 10,
+      "module": "sqlite3",
+      "image_source_sha256": "671909cfcf3c2c019dc71e03ce49b72f833d39facbac56df9d87873137e06767"
+    },
+    {
+      "image_path": "packages/platform_sdk/modular_platform/operator_store.py",
+      "line": 15,
+      "module": "sqlite3",
+      "image_source_sha256": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630"
+    }
+  ],
+  "XLSX": {
+    "openpyxl": "3.1.2",
+    "LXML": true,
+    "DEFUSEDXML": false,
+    "fromstring_module": "lxml.etree",
+    "iterparse_module": "xml.etree.ElementTree",
+    "iterparse_signature": "(source, events=None, parser=None)",
+    "actual_minimal_XLSX_roundtrip": true
+  },
+  "context": {
+    "odoo_service_db": "ElementTree parses the pinned installed res_country_data.xml during database bootstrap; source SHA in inventory.",
+    "odoo_test_reports": "minidom parses native view architecture in the test report helper; production test endpoints/modes are separately disabled.",
+    "SQLite": "Direct selected source imports in catalog.py/operator_store.py; private OS operator stores, not a public SQL execution API."
+  },
+  "limits": [
+    "Direct AST imports are not an exhaustive dynamic/transitive reachability proof.",
+    "Defused entity/externals defaults and selected lxml parser are actual observations, not a blanket fix for all Expat/native-library CVEs.",
+    "No malicious payload or safety-bound relaxation; full vendor/CVE-specific supported path review still pending."
+  ]
+}

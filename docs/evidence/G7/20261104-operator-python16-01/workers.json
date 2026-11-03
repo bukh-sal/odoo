@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_workers.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 9,
+  "stdout": "",
+  "stderr": "test_pin_source_and_extra_addon_tampering_are_rejected (test_workers.BootstrapTests.test_pin_source_and_extra_addon_tampering_are_rejected) ... ok\ntest_unsafe_boot_options_are_rejected (test_workers.BootstrapTests.test_unsafe_boot_options_are_rejected) ... ok\ntest_validates_data_only_without_importing_native_addons (test_workers.BootstrapTests.test_validates_data_only_without_importing_native_addons) ... ok\ntest_wrong_database_pending_states_and_version_mismatch_never_start_migrations (test_workers.BootstrapTests.test_wrong_database_pending_states_and_version_mismatch_never_start_migrations) ... ok\ntest_fresh_worker_retains_and_disconnects_stopped_old_worker (test_workers.WorkerAndRecoveryTests.test_fresh_worker_retains_and_disconnects_stopped_old_worker) ... ok\ntest_readiness_preserves_suspended_scopes_and_checks_exact_grants (test_workers.WorkerAndRecoveryTests.test_readiness_preserves_suspended_scopes_and_checks_exact_grants) ... ok\ntest_recovery_accepts_only_exact_base_or_privately_recorded_approved_target (test_workers.WorkerAndRecoveryTests.test_recovery_accepts_only_exact_base_or_privately_recorded_approved_target) ... ok\ntest_retained_same_image_worker_selection_requires_exact_private_id (test_workers.WorkerAndRecoveryTests.test_retained_same_image_worker_selection_requires_exact_private_id) ... ok\ntest_running_worker_prevents_creation_before_any_docker_mutation (test_workers.WorkerAndRecoveryTests.test_running_worker_prevents_creation_before_any_docker_mutation) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.069s\n\nOK\n"
+}
