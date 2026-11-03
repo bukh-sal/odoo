@@ -1,0 +1,115 @@
+{
+  "result": "passed_current_API03_API05_request_outcomes",
+  "acceptance": [
+    "API-03",
+    "API-05"
+  ],
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "configuration_generation": 5,
+  "request_results": "request-results.json",
+  "durable_outcomes": [
+    {
+      "key": "cancel-fbc4022f770d4298a405461ed9696330",
+      "state": "completed",
+      "method": "create",
+      "result": {
+        "id": "09511f21-6973-4a95-894b-5b2fa9b96888",
+        "body": "Committed before abort",
+        "title": "Owned postcommit cancellation fbc4022f770d4298a405461ed9696330",
+        "labels": [],
+        "revision": 1,
+        "updated_at": "2026-11-03T23:46:41.463519Z"
+      },
+      "actor_id": "dbc25e64-20a3-4a6b-a42c-8aa1a1e6863e",
+      "service_id": "org.example.notes.documents",
+      "input_digest": "b9fe36e4846ca774178a7337700f3e76864af8a4cc711f181bb3b1bc9be7275d",
+      "workspace_id": 1
+    },
+    {
+      "key": "crash-fbc4022f770d4298a405461ed9696330",
+      "state": "completed",
+      "method": "create",
+      "result": {
+        "id": "4dfc8433-cc3c-41b3-a8ef-7b2d1bac3c9c",
+        "body": "Committed before lost response",
+        "title": "Owned postcommit crash fbc4022f770d4298a405461ed9696330",
+        "labels": [],
+        "revision": 1,
+        "updated_at": "2026-11-03T23:46:41.265830Z"
+      },
+      "actor_id": "dbc25e64-20a3-4a6b-a42c-8aa1a1e6863e",
+      "service_id": "org.example.notes.documents",
+      "input_digest": "46f1ece3ede56cacc9c179a9ee47381fb0e7645c06f48ba7b40b58d808868dd3",
+      "workspace_id": 1
+    },
+    {
+      "key": "parallel-fbc4022f770d4298a405461ed9696330",
+      "state": "completed",
+      "method": "create",
+      "result": {
+        "id": "f8c6d1ea-592c-436a-b37d-8e3c3153f755",
+        "body": "Same database effect",
+        "title": "Owned parallel fbc4022f770d4298a405461ed9696330",
+        "labels": [],
+        "revision": 1,
+        "updated_at": "2026-11-03T23:46:39.520051Z"
+      },
+      "actor_id": "dbc25e64-20a3-4a6b-a42c-8aa1a1e6863e",
+      "service_id": "org.example.notes.documents",
+      "input_digest": "96a747cff939e519371a585184194b392448cf62a2621db240eb8c13b830c090",
+      "workspace_id": 1
+    }
+  ],
+  "owned_records_deleted": [
+    "09511f21-6973-4a95-894b-5b2fa9b96888",
+    "4dfc8433-cc3c-41b3-a8ef-7b2d1bac3c9c",
+    "f8c6d1ea-592c-436a-b37d-8e3c3153f755"
+  ],
+  "all17original_tables_exact_except_six_owned_outbox_events": true,
+  "old_notes_Canvas_jobs_authority_worker_primary_runtime_exact": true,
+  "counts": {
+    "mp_job": 1,
+    "mp_outbox": 11,
+    "mp_principal": 4,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_example_note": 2,
+    "mp_plugin_grant": 8,
+    "mp_event_delivery": 0,
+    "mp_service_binding": 15,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 0,
+    "mp_event_subscription": 0,
+    "mp_service_credential": 0,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 0,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 0
+  },
+  "cleanup": {
+    "retired": [
+      {
+        "name": "mp-r0-r1g7qualb513bc4f50d4-g7-request-fault-edge01",
+        "id": "533d84f1dda72051e8fcd15a616f27003bf1de746eebdc69b85fd823536f0e0b",
+        "exit_code": 0,
+        "removed": true
+      },
+      {
+        "name": "mp-r0-r1g7qualb513bc4f50d4-g7-request-fault01",
+        "id": "ed342c013a5f63c11641bd662cfdb45b603a1e7336eadceb5b545bb92a189006",
+        "exit_code": 0,
+        "removed": true
+      }
+    ],
+    "containers_removed": 2,
+    "volumes_networks_images_created_or_removed": 0,
+    "main_fault_environment_mount_absent": true
+  },
+  "native_fault_source_sha256": "754d5cec10067404db7eb8c2726cde23dc40554000332399c638728623d40802",
+  "SDK_source_sha256": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+  "limits": [
+    "Secondary explicit operator-only native fixture profile uses exact release image plus existing non-installed fault addon; normal guarded main runtime/worker unchanged. No public arming endpoint/default activation.",
+    "Actual unchanged SDK json/callService methods and release fence run in Node against real HTTP, with manual test-session Cookie transport and server-observed postcommit trigger. This is backend/SDK cancellation qualification, not rendered browser/accessibility/ID08 proof.",
+    "Eight concurrent same-key writes, real postcommit worker exit86/lost response and actual postcommit abort each preserve one same-database outcome; not arbitrary external-effect exactly-once or rollback guarantees."
+  ]
+}

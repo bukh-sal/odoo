@@ -1,0 +1,20 @@
+{
+  "result": "passed_executed_source_binding_and_new_diagnostic_secret_scan",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "fault_source_matches_audited_physical_image_member": {
+    "location": "image-layer/blobs/sha256/e84909382908fe335c9758b1819f7158be88fa2f79a4576f15fd4e861148ab6e/opt/modular/fixtures/v1/mp_r1_fault/controllers.py",
+    "size": 2684,
+    "sha256": "754d5cec10067404db7eb8c2726cde23dc40554000332399c638728623d40802"
+  },
+  "SDK_source_matches_declared_immutable_image_inventory": true,
+  "private_log_files": 22,
+  "known_values": 121,
+  "known_or_generic_findings": 0,
+  "helpers_absent": true,
+  "normal_primary_fault_surface_absent": true,
+  "limits": [
+    "Existing exact secret corpus plus structural rules on this new diagnostic scope; complete earlier SEC03 proof retained separately.",
+    "Fixture emits marker immediately before fixed os._exit(86); observed lost HTTP response and durable result replay qualify crash behavior. Worker exit-code constant is source-bound, not a separately captured process wait status.",
+    "No additional request, fixture replay, deployment or schema change."
+  ]
+}

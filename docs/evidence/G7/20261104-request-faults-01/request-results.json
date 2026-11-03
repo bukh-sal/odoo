@@ -1,0 +1,70 @@
+{
+  "result": "passed_current_concurrency_crash_and_SDK_cancel",
+  "concurrent_requests": 8,
+  "parallel_identical_one_effect": true,
+  "crash": {
+    "key": "crash-fbc4022f770d4298a405461ed9696330",
+    "values": {
+      "title": "Owned postcommit crash fbc4022f770d4298a405461ed9696330",
+      "body": "Committed before lost response"
+    },
+    "nonce": "8146dbe0545947ab89a38fbcac923af0",
+    "mode": "exit_after_commit",
+    "note": {
+      "id": "4dfc8433-cc3c-41b3-a8ef-7b2d1bac3c9c",
+      "body": "Committed before lost response",
+      "title": "Owned postcommit crash fbc4022f770d4298a405461ed9696330",
+      "labels": [],
+      "revision": 1,
+      "updated_at": "2026-11-03T23:46:41.265830Z"
+    },
+    "events": [
+      "MP_R1_POSTCOMMIT_EXIT pid=10 nonce=8146dbe0545947ab89a38fbcac923af0"
+    ],
+    "lost_response_status": 502
+  },
+  "cancel": {
+    "key": "cancel-fbc4022f770d4298a405461ed9696330",
+    "values": {
+      "title": "Owned postcommit cancellation fbc4022f770d4298a405461ed9696330",
+      "body": "Committed before abort"
+    },
+    "nonce": "9413a549d56f4d6a8b4f740a27dd9952",
+    "mode": "delay_after_commit",
+    "note": {
+      "id": "09511f21-6973-4a95-894b-5b2fa9b96888",
+      "body": "Committed before abort",
+      "title": "Owned postcommit cancellation fbc4022f770d4298a405461ed9696330",
+      "labels": [],
+      "revision": 1,
+      "updated_at": "2026-11-03T23:46:41.463519Z"
+    },
+    "events": [
+      "MP_R1_POSTCOMMIT_DELAY_START pid=9 nonce=9413a549d56f4d6a8b4f740a27dd9952",
+      "MP_R1_POSTCOMMIT_DELAY_END pid=9 nonce=9413a549d56f4d6a8b4f740a27dd9952"
+    ],
+    "SDK_results": [
+      {
+        "phase": "pre_aborted",
+        "code": "CANCELLED",
+        "outcome": "not_started",
+        "requests": 0
+      },
+      {
+        "phase": "cancelled_after_observed_commit",
+        "code": "CANCELLED",
+        "outcome": "unknown",
+        "requests": 1,
+        "host_sha256": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675"
+      }
+    ]
+  },
+  "deadline": {
+    "status": 504,
+    "outcome": "not_started",
+    "record_created": false
+  },
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "SDK_source_sha256": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+  "fault_source_sha256": "754d5cec10067404db7eb8c2726cde23dc40554000332399c638728623d40802"
+}
