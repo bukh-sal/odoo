@@ -1,0 +1,8 @@
+{
+  "result": "verified_rehearsal_source_parity_and_current_kit_integrity",
+  "recorded_application_build_inputs_exact": 374,
+  "kit_source_commit": "5f8d6b35eaabeaec6d7a0b666c16bcaad1b7efb6",
+  "rehearsal_source_commit": "94c4ecd047affe87948a8b76d0317f5777ff5506",
+  "non_application_source_refresh_not_yet_synced_to_working_copy": true,
+  "kit_files": 50
+}
