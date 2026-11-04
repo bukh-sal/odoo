@@ -1,0 +1,332 @@
+{
+  "result": "exact_npm_gap_artifacts_checked",
+  "records": [
+    {
+      "name": "@npmcli/agent",
+      "version": "4.0.2",
+      "license": "ISC",
+      "metadata_url": "https://registry.npmjs.org/%40npmcli%2Fagent/4.0.2",
+      "metadata_sha256": "90cefd98869a94ef76706acbb011162ca2171f1a5454053ea48dc080bcb3c42c",
+      "tarball_url": "https://registry.npmjs.org/@npmcli/agent/-/agent-4.0.2.tgz",
+      "tarball_sha512": "sha512-EUEuWAxnL07Sp5/iC/1X6Xj+XThUvnbei9zfRWZdEXa7lss9RTHMhAHBeg+MZ5To9s/gGaSI+UwZTPdYMvKSeg==",
+      "tarball_sha256": "88dcd3e47fbb0ab7b9160014531c0e99a7ab478656d465a7985c25c759701b9a",
+      "installed_semantic_manifest_exact": true,
+      "installed_content_files_bound": 6,
+      "content_bindings": [
+        {
+          "member": "package/lib/agents.js",
+          "registry_sha256": "279bce54b61f9c92776588c52f98de50a2df60ed6b42e56dbae32daf6a847b1d",
+          "installed_sha256": "c91a22c099b39247eb419a472c7c74d3be049813200d6639dbbb320071fed6b9",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/lib/dns.js",
+          "registry_sha256": "58a0abcfb7ab16ece73a1fea304b8cb4539f650c4f2726e2d5980c285a96351b",
+          "installed_sha256": "bae94e10520484098333d687326d0777df605b2d85546413b82e4a074b383181",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/lib/errors.js",
+          "registry_sha256": "f4ee0f8a8ac25830be4a902246059d260e5254ba9e2e766eef84972eeb66926d",
+          "installed_sha256": "0534b2c37fd36794c564f3ee6d3f25a3a4461a7878ff5964b33a59eec6d8e32a",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/lib/index.js",
+          "registry_sha256": "8d7b321c0eb45d3ddacc78b48448b2ed02ad79284f931d73f4bd0a67d0f5a4dd",
+          "installed_sha256": "8d49a29f69a7845a024d3d44dd02cfd31c624cc8f677722a7f8f9b319ecb864b",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/lib/options.js",
+          "registry_sha256": "48e8f0b96759af231e2c8b7c5e967eda781da15f0a62e3f5247c1fef4f8bd0d8",
+          "installed_sha256": "ef502a85a707950ab7e6032c2d22444a86b34b53ed784bbed96c7015a1004c8b",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/lib/proxy.js",
+          "registry_sha256": "192a78a72232f67d0cbd46fe8f9dbd994f98c197cb345570c312aaac12831111",
+          "installed_sha256": "60ce371739f326470f2d020703a8d1b11ff7266fe8f913280036e3d6bf1ae5a7",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        }
+      ],
+      "manifest_formatting_only_difference": true,
+      "gitHead": "db7852869c74ceb8985d7c36b291a2e7a866741c",
+      "repository": {
+        "url": "git+https://github.com/npm/agent.git",
+        "type": "git"
+      },
+      "homepage": "https://github.com/npm/agent#readme",
+      "notices": [],
+      "result": "exact_registry_artifact_also_has_no_standalone_notice"
+    },
+    {
+      "name": "@sigstore/verify",
+      "version": "3.1.1",
+      "license": "Apache-2.0",
+      "metadata_url": "https://registry.npmjs.org/%40sigstore%2Fverify/3.1.1",
+      "metadata_sha256": "7cead1cde06711831659064e65f873652590c787a6239baed755b5bba04323e9",
+      "tarball_url": "https://registry.npmjs.org/@sigstore/verify/-/verify-3.1.1.tgz",
+      "tarball_sha512": "sha512-qv7+G3J2cc6wwFj3yKvXOamzqhMwSk1ogPGmhpS8iXllcPrJaIIBA+4HbttlHVu1pqWTdmaCH/WE7UOC51kdoA==",
+      "tarball_sha256": "66fba97654e6850703065d461678965f604aba69f6f792b3fed316a6ffba4154",
+      "installed_semantic_manifest_exact": true,
+      "installed_content_files_bound": 23,
+      "content_bindings": [
+        {
+          "member": "package/dist/key/certificate.js",
+          "registry_sha256": "7b9d95a9fcca243e7a52cf1742e961521590de48d26c1d3fbfd5dbcdd5433a88",
+          "installed_sha256": "824126baad0ea9612c8dfbd78b63494968f4603ac911c85c5536d5183a2c549b",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/tlog/checkpoint.js",
+          "registry_sha256": "abd69f246e47bdc3c7447d83ac7e216c504f0bd4b14e086a0fd29c07a8bf6055",
+          "installed_sha256": "0f15ef930ae471ec415d84a67e0152d9f1c146d7dca76203cefcdc74e2bbaa8f",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/bundle/dsse.js",
+          "registry_sha256": "55475f6f17c4342eab1e43f6f409027d0130deb5361e2f4178d795def97f7361",
+          "installed_sha256": "5f6effdba4c61f20ec4fc900fc87538fa9aea5420aa2e1ccd21477aaf250a6d6",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/tlog/dsse.js",
+          "registry_sha256": "5a79efe3de770dc87795d823d447395f5ae6f28dbf6edc0f81421d2f34ac5c5d",
+          "installed_sha256": "0dd39239fc3b1a9a284b019cf7a85ac4627d3d96784533c4533a2256acd4d28e",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/error.js",
+          "registry_sha256": "a311acc9849072841c37aa530f85c8e0978c35880b8f64c62e32437502c20adb",
+          "installed_sha256": "d137214c02023f5c701a28ec798f9fb64b768cb6716360975c9fa73075b9bbd7",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/trust/filter.js",
+          "registry_sha256": "38b3126be45b639685ceb7e96c489ecb27bee211e32c468798b9a2e7fbf3a6d0",
+          "installed_sha256": "dd0e58b68011a1ae1a4069df8f76eee91497cce86122cc5cee087924b73f564e",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/tlog/hashedrekord.js",
+          "registry_sha256": "663b4c289113570a1af6ac613ee581768e873cca767f7569c647cb92d6161a6f",
+          "installed_sha256": "d4c8c82d9fd68d57c69d16dbac8b7fbb7163d2e49f1842f5b984fe116e40bdb6",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/bundle/index.js",
+          "registry_sha256": "125e8124a017db263cbf165d556f43e7316080336fb3756c98eff6af18bc0730",
+          "installed_sha256": "51fe55bc1cf93d0e08bbcef272bee59929f6612534d5dac9d3aadbcd1f402eed",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/index.js",
+          "registry_sha256": "1edb0652ccb4bf7490f288a522fc2d9807c7d8780f4a7ff294c37259b0f30f84",
+          "installed_sha256": "6daf4bf287191348e1fe4face1938ee4de9c7675367fc2c23884acec35e6956d",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/key/index.js",
+          "registry_sha256": "9298103950bc64ca9986e54b968a84a53424395540999e2da215eb214f61e6f8",
+          "installed_sha256": "0edd19d34a84593492c214d5cf9ec709d2cde10ba53876afaa7f1220a51eac77",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/timestamp/index.js",
+          "registry_sha256": "a92bf7a691101c83e9ed42e4aafe367578ceb20b5329a894ab76753493c9a86f",
+          "installed_sha256": "c2af0ed51ff24a5730249a8c7bde49e94e4f4f28964b5c826167e9cd3f44073c",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/tlog/index.js",
+          "registry_sha256": "2057d83e5bdf87b4a4fde94db00dddbc0b2a91450cabf40df3cd1b45c4ed6c45",
+          "installed_sha256": "3c96b6b0a95bc02be15fbf1e239d6fe64b6e184dccec94f271c79ecc9f5fb55a",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/trust/index.js",
+          "registry_sha256": "6f8874d9bc842fb09162621aabfac9d355e015350518b8d8ab134d797d0b4757",
+          "installed_sha256": "9b3fea538473477451f9fd0410cfb726880744f8525bd837a251ca26bd7bceb8",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/tlog/intoto.js",
+          "registry_sha256": "cb68fbf291a74ad0689355b09332ca7c025a094765766fffc7a733de98a835d4",
+          "installed_sha256": "4575ebcb2ce50688b07ce867bb8e7b1e27f69b8f9f9dc2c188a8d9f61335a9b2",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/tlog/merkle.js",
+          "registry_sha256": "ddc4d51871d76611cead62947dcdb33c7b73d354b358595e531cde55b9b899d7",
+          "installed_sha256": "7c5dc0714e9aa2455d6f1a60aef44ae1b7a90e4aaa633fec37376c7f0a8c3668",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/bundle/message.js",
+          "registry_sha256": "5f324332fd9837407514c395a97f6ba34bc3abfcb2dbd1324e6b5c4e3ce7d4eb",
+          "installed_sha256": "6f43cfb70015519712ebeec902e946f65d1ee7bd87c4943578481938a486f2d2",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/policy.js",
+          "registry_sha256": "d220912ead5720f07773ef5e190e72a8cb41462cb5b9855ab0604d6d5ec385e7",
+          "installed_sha256": "a3a1c5e737de146a5abe101170cd2c72f107ee3b0caafed55121b08a120e8639",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/key/sct.js",
+          "registry_sha256": "d45dc2e67ee382746aa6a0442dfca5fd10d74db34c7659e3493632284c1407e4",
+          "installed_sha256": "c9becf47e0135e547f4b387528399f91e29deb4068421f2c628511ac87a48ead",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/tlog/set.js",
+          "registry_sha256": "a1927245ae0bb1b8f91fead209d16ae884d076f91700335bbe3bd42d992966c5",
+          "installed_sha256": "26c07ed31b5a77e048c43862a815567f91674530ed0c2edaeabbd7ed89f3b111",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/shared.types.js",
+          "registry_sha256": "d43aa81f5bc89faa359e0f97c814ba25155591ff078fbb9bfd40f8c7c9683230",
+          "installed_sha256": "ef1f170ad28f2d870a474d2f96ae353d770fff5f20e642cd8f9b6f1d7742df13",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/trust/trust.types.js",
+          "registry_sha256": "d43aa81f5bc89faa359e0f97c814ba25155591ff078fbb9bfd40f8c7c9683230",
+          "installed_sha256": "ef1f170ad28f2d870a474d2f96ae353d770fff5f20e642cd8f9b6f1d7742df13",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/timestamp/tsa.js",
+          "registry_sha256": "da992ca078d3ba149cff2e434185ab007c5449ebecb56d3948a10e510960a280",
+          "installed_sha256": "04e95c97fd535ff779512e11d172518e8f1333f4144b30d76e8b8c960f8733c7",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/dist/verifier.js",
+          "registry_sha256": "7cbf3baf2e23d0ab1c2dc5baf5efdd55b38ab39abf8174d2c1c435c1ff8d56a6",
+          "installed_sha256": "9e390d38cae53e4806cba6cc7aa44985e714d5f43fb228bdb8b36710c3e21fd0",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        }
+      ],
+      "manifest_formatting_only_difference": true,
+      "gitHead": "c1dc7d4778a450787fc72b083f2490ad02b714c6",
+      "repository": {
+        "url": "git+https://github.com/sigstore/sigstore-js.git",
+        "type": "git"
+      },
+      "homepage": "https://github.com/sigstore/sigstore-js/tree/main/packages/verify#readme",
+      "notices": [],
+      "result": "exact_registry_artifact_also_has_no_standalone_notice"
+    },
+    {
+      "name": "spdx-exceptions",
+      "version": "2.5.0",
+      "license": "CC-BY-3.0",
+      "metadata_url": "https://registry.npmjs.org/spdx-exceptions/2.5.0",
+      "metadata_sha256": "1b2795b394da9b14d39f328441e9be1c099c32d9833bd2ddf9234ecc7c68db08",
+      "tarball_url": "https://registry.npmjs.org/spdx-exceptions/-/spdx-exceptions-2.5.0.tgz",
+      "tarball_sha512": "sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==",
+      "tarball_sha256": "c5295dd22415e8b60a5af2560e7461954f660bcb591be7c5622e463956d33256",
+      "installed_semantic_manifest_exact": true,
+      "installed_content_files_bound": 2,
+      "content_bindings": [
+        {
+          "member": "package/deprecated.json",
+          "registry_sha256": "bf84cb52b5bc8e2b1e6b4341765204d23b7bbce74b06ae8aec1cfee7f76faa24",
+          "installed_sha256": "e8521473599f4d00cff00d222749455f8e624192d2389149e9e37c94066df8a1",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/index.json",
+          "registry_sha256": "26144efbe0f61f41b0f8751e266b8b828ac53eb3f28f9041620442892228e92b",
+          "installed_sha256": "316b0f3b5e05f3531c36b8a7901f0ca4bfe5b016e334828118f8412c3610b584",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        }
+      ],
+      "manifest_formatting_only_difference": true,
+      "gitHead": "3aa64bec339abc6a3eca00c3436aaa7e154b8799",
+      "repository": {
+        "url": "git+https://github.com/kemitchell/spdx-exceptions.json.git",
+        "type": "git"
+      },
+      "homepage": "https://github.com/kemitchell/spdx-exceptions.json#readme",
+      "notices": [],
+      "result": "exact_registry_artifact_also_has_no_standalone_notice"
+    },
+    {
+      "name": "spdx-license-ids",
+      "version": "3.0.23",
+      "license": "CC0-1.0",
+      "metadata_url": "https://registry.npmjs.org/spdx-license-ids/3.0.23",
+      "metadata_sha256": "46a25a08a8d24098579f0cd3dc9962a22d8ccf314379d385208722bb4c5110cb",
+      "tarball_url": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.23.tgz",
+      "tarball_sha512": "sha512-CWLcCCH7VLu13TgOH+r8p1O/Znwhqv/dbb6lqWy67G+pT1kHmeD/+V36AVb/vq8QMIQwVShJ6Ssl5FPh0fuSdw==",
+      "tarball_sha256": "fea7d95340e83a403c73463ea683cdde960029d956a86a023af6e283fd1e82fe",
+      "installed_semantic_manifest_exact": true,
+      "installed_content_files_bound": 2,
+      "content_bindings": [
+        {
+          "member": "package/deprecated.json",
+          "registry_sha256": "29c9e630daa0adc09dec96ddeb6f81d1046210e81824bebda6486250450fb130",
+          "installed_sha256": "ed94e54015818d3dbc27ff1a28098190dbd7f4da6856648118fb0515f5932faf",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        },
+        {
+          "member": "package/index.json",
+          "registry_sha256": "d5ef45aff38fd904a68c563bf5814172bb0caa656220be820b3a81601e637241",
+          "installed_sha256": "63b0cb805032d28e3aeed7994eb62630f153caffc20cee0194c95e10790984c5",
+          "official_Node_archive_exact": true,
+          "registry_difference": "CRLF_only"
+        }
+      ],
+      "manifest_formatting_only_difference": true,
+      "gitHead": "a2a975daf48bbc2afdc8e7c304405b44c656fd53",
+      "repository": {
+        "url": "git+https://github.com/jslicense/spdx-license-ids.git",
+        "type": "git"
+      },
+      "homepage": "https://github.com/jslicense/spdx-license-ids#readme",
+      "notices": [],
+      "result": "exact_registry_artifact_also_has_no_standalone_notice"
+    }
+  ],
+  "downloaded_code_executed": false,
+  "limits": [
+    "Exact source artifact inspection only. Remaining absent notices require version/commit-bound source attribution review; metadata alone is not a permission text."
+  ]
+}

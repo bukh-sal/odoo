@@ -1,0 +1,4159 @@
+{
+  "result": "passed_actual_selected_host_notice_collection",
+  "python": [
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Typing :: Typed"
+      ],
+      "metadata_sha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+      "requires_dist": [],
+      "notices": [
+        {
+          "path": "host/operator-python/attrs-26.1.0.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\attrs-26.1.0.dist-info\\licenses\\LICENSE",
+          "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f",
+          "bytes": 1109
+        }
+      ]
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "license_expression": "MIT-0",
+      "license_field": null,
+      "license_classifiers": [
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: 3.15",
+        "Programming Language :: Python :: Free Threading :: 2 - Beta",
+        "Programming Language :: Python :: Implementation :: CPython"
+      ],
+      "metadata_sha256": "67b6a7595df7ede2195016a05d285faa7d362a8f57c238984edb8bb674b5770d",
+      "requires_dist": [
+        "pycparser; implementation_name != \"PyPy\""
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/cffi-2.1.1.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\cffi-2.1.1.dist-info\\licenses\\LICENSE",
+          "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63",
+          "bytes": 1123
+        }
+      ]
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2",
+      "license_expression": "Apache-2.0 OR BSD-3-Clause",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Operating System :: MacOS :: MacOS X",
+        "Operating System :: POSIX",
+        "Operating System :: POSIX :: BSD",
+        "Operating System :: POSIX :: Linux",
+        "Operating System :: Microsoft :: Windows",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: 3.15",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Programming Language :: Python :: Free Threading :: 3 - Stable",
+        "Topic :: Security :: Cryptography"
+      ],
+      "metadata_sha256": "047cfc71226409de4318b360aef15c63a2adf609731e3dcf7fe932f14ea042ee",
+      "requires_dist": [
+        "cffi>=2.0.0 ; platform_python_implementation != 'PyPy'",
+        "typing-extensions>=4.13.2 ; python_full_version < '3.11'",
+        "bcrypt>=3.1.5 ; extra == 'ssh'"
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\cryptography-50.0.2.dist-info\\licenses\\LICENSE",
+          "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+          "bytes": 197
+        },
+        {
+          "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE.APACHE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\cryptography-50.0.2.dist-info\\licenses\\LICENSE.APACHE",
+          "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+          "bytes": 11360
+        },
+        {
+          "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE.BSD",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\cryptography-50.0.2.dist-info\\licenses\\LICENSE.BSD",
+          "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb",
+          "bytes": 1532
+        }
+      ]
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Topic :: File Formats :: JSON",
+        "Topic :: File Formats :: JSON :: JSON Schema"
+      ],
+      "metadata_sha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2",
+      "requires_dist": [
+        "attrs>=22.2.0",
+        "jsonschema-specifications>=2023.03.6",
+        "referencing>=0.28.4",
+        "rpds-py>=0.25.0",
+        "fqdn; extra == 'format'",
+        "idna; extra == 'format'",
+        "isoduration; extra == 'format'",
+        "jsonpointer>1.13; extra == 'format'",
+        "rfc3339-validator; extra == 'format'",
+        "rfc3987; extra == 'format'",
+        "uri-template; extra == 'format'",
+        "webcolors>=1.11; extra == 'format'",
+        "fqdn; extra == 'format-nongpl'",
+        "idna; extra == 'format-nongpl'",
+        "isoduration; extra == 'format-nongpl'",
+        "jsonpointer>1.13; extra == 'format-nongpl'",
+        "rfc3339-validator; extra == 'format-nongpl'",
+        "rfc3986-validator>0.1.0; extra == 'format-nongpl'",
+        "rfc3987-syntax>=1.1.0; extra == 'format-nongpl'",
+        "uri-template; extra == 'format-nongpl'",
+        "webcolors>=24.6.0; extra == 'format-nongpl'"
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/jsonschema-4.26.0.dist-info/licenses/COPYING",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\jsonschema-4.26.0.dist-info\\licenses\\COPYING",
+          "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439",
+          "bytes": 1057
+        }
+      ]
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Topic :: File Formats :: JSON",
+        "Topic :: File Formats :: JSON :: JSON Schema"
+      ],
+      "metadata_sha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d",
+      "requires_dist": [
+        "referencing>=0.31.0"
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\jsonschema_specifications-2025.9.1.dist-info\\licenses\\COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+          "bytes": 1057
+        }
+      ]
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: 3.15",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Programming Language :: Python :: Free Threading :: 4 - Resilient",
+        "Typing :: Typed"
+      ],
+      "metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+      "requires_dist": [],
+      "notices": [
+        {
+          "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\packaging-26.3.dist-info\\licenses\\LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\packaging-26.3.dist-info\\licenses\\LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\packaging-26.3.dist-info\\licenses\\LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        }
+      ]
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12",
+      "license_expression": "BSD-3-Clause",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: 3.15"
+      ],
+      "metadata_sha256": "ad8db5fe2b0e0a3b0e8419fe5041b80be92470a40b06bd9c1462a0a8bb637c92",
+      "requires_dist": [],
+      "notices": [
+        {
+          "path": "host/operator-python/pycparser-3.12.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\pycparser-3.12.dist-info\\licenses\\LICENSE",
+          "sha256": "0a9e78156ae8b96caf1b4f11ac2df424b83de29736f9e757630548a6272fdf90",
+          "bytes": 1543
+        }
+      ]
+    },
+    {
+      "name": "PyJWT",
+      "version": "2.15.1",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: 3.15",
+        "Topic :: Utilities"
+      ],
+      "metadata_sha256": "1ea0c9f139b8c928276b3628af165955f6f764491448a6ad8f103cdcbb382da3",
+      "requires_dist": [
+        "typing_extensions>=4.0; python_version < \"3.11\"",
+        "cryptography>=3.4.0; extra == \"crypto\""
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/pyjwt-2.15.1.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\pyjwt-2.15.1.dist-info\\licenses\\LICENSE",
+          "sha256": "797a7a20231d4c433e9f1911db1731d06b5828b98f499819a034f7c0f56f5ce5",
+          "bytes": 1085
+        }
+      ]
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Topic :: File Formats :: JSON",
+        "Topic :: File Formats :: JSON :: JSON Schema"
+      ],
+      "metadata_sha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a",
+      "requires_dist": [
+        "attrs>=22.2.0",
+        "rpds-py>=0.7.0",
+        "typing-extensions>=4.4.0; python_version < '3.13'"
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/referencing-0.37.0.dist-info/licenses/COPYING",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\referencing-0.37.0.dist-info\\licenses\\COPYING",
+          "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+          "bytes": 1057
+        }
+      ]
+    },
+    {
+      "name": "resolvelib",
+      "version": "1.2.1",
+      "license_expression": null,
+      "license_field": "ISC License",
+      "license_classifiers": [
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: ISC License (ISCL)",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Topic :: Software Development :: Libraries :: Python Modules"
+      ],
+      "metadata_sha256": "7cd9798f05f86072f220f701d9ed3d38530f97de6d6d1d41b4c7aed4513d4700",
+      "requires_dist": [
+        "ruff; extra == \"lint\"",
+        "mypy; extra == \"lint\"",
+        "types-requests; extra == \"lint\"",
+        "packaging; extra == \"test\"",
+        "pytest; extra == \"test\"",
+        "build; extra == \"release\"",
+        "towncrier; extra == \"release\"",
+        "twine; extra == \"release\""
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/resolvelib-1.2.1.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\resolvelib-1.2.1.dist-info\\licenses\\LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+          "bytes": 751
+        }
+      ]
+    },
+    {
+      "name": "rfc8785",
+      "version": "0.1.4",
+      "license_expression": null,
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 4 - Beta",
+        "License :: OSI Approved :: Apache Software License",
+        "Programming Language :: Python :: 3",
+        "Topic :: File Formats :: JSON",
+        "Topic :: Security :: Cryptography"
+      ],
+      "metadata_sha256": "9dfbf420c8c18077dd7697ec12fe2838b5901683573ae128df2d3403330f7aa9",
+      "requires_dist": [
+        "rfc8785[doc,test,lint] ; extra == \"dev\"",
+        "build ; extra == \"dev\"",
+        "pdoc ; extra == \"doc\"",
+        "ruff ~= 0.3 ; extra == \"lint\"",
+        "mypy >= 1.0 ; extra == \"lint\"",
+        "interrogate ; extra == \"lint\"",
+        "pytest ; extra == \"test\"",
+        "pytest-cov ; extra == \"test\"",
+        "coverage ; extra == \"test\""
+      ],
+      "notices": [
+        {
+          "path": "host/operator-python/rfc8785-0.1.4.dist-info/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\rfc8785-0.1.4.dist-info\\LICENSE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        }
+      ]
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "license_expression": "MIT",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Rust",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: 3.15",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy"
+      ],
+      "metadata_sha256": "778fb36890d26c5657d256db3e61a05a637468aa4cf607f8d1059c5079fcefd8",
+      "requires_dist": [],
+      "notices": [
+        {
+          "path": "host/operator-python/rpds_py-2026.9.1.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\rpds_py-2026.9.1.dist-info\\licenses\\LICENSE",
+          "sha256": "8bcb72c82ea8ae74802293c41d93ad7d51434001b0ae45a603a5af0f507aee0a",
+          "bytes": 1076
+        }
+      ]
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "license_expression": "PSF-2.0",
+      "license_field": null,
+      "license_classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Programming Language :: Python :: 3.15",
+        "Topic :: Software Development"
+      ],
+      "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+      "requires_dist": [],
+      "notices": [
+        {
+          "path": "host/operator-python/typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Lib\\site-packages\\typing_extensions-4.16.0.dist-info\\licenses\\LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+          "bytes": 13936
+        }
+      ]
+    }
+  ],
+  "base_interpreter": {
+    "version": "3.12.16",
+    "base_prefix": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none",
+    "provenance": {
+      "metadata_url": "https://raw.githubusercontent.com/astral-sh/uv/13f376785a6d213c035d14372e4b40a0322031dc/crates/uv-python-managed/download-metadata.json",
+      "metadata_sha256": "81372e1cbff3dd87a786674ef00e01b3743638e3d8e58117d73e32a8e11eae05",
+      "archive_url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.12.16%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+      "archive_sha256": "1f2ab53880fc67ea323398c6388e05af28addc99a8e389209f08a51fdff4b149",
+      "vendor": "Astral python-build-standalone; exact CPython3.12.16 Windows x86_64",
+      "qualification": "docs/evidence/G7/20261104-operator-python16-01/runtime-qualification.json"
+    },
+    "notices": [
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/cachecontrol/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+        "bytes": 558
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/certifi/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\certifi\\LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+        "bytes": 989
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/distlib/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+        "bytes": 14531
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/distro/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\distro\\LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+        "bytes": 11325
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/idna/LICENSE.md",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\idna\\LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+        "bytes": 1541
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/msgpack/COPYING",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\msgpack\\COPYING",
+        "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+        "bytes": 614
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\packaging\\LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+        "bytes": 197
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE.APACHE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\packaging\\LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "bytes": 10174
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE.BSD",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\packaging\\LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+        "bytes": 1344
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/pkg_resources/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\pkg_resources\\LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+        "bytes": 1023
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/platformdirs/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\platformdirs\\LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+        "bytes": 1089
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/pygments/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\pygments\\LICENSE",
+        "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+        "bytes": 1331
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/pyproject_hooks/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+        "bytes": 1081
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/requests/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\requests\\LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+        "bytes": 10142
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/resolvelib/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\resolvelib\\LICENSE",
+        "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+        "bytes": 751
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/rich/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\rich\\LICENSE",
+        "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+        "bytes": 1056
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/tomli/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\tomli\\LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/tomli_w/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\tomli_w\\LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/truststore/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\truststore\\LICENSE",
+        "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+        "bytes": 1086
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip/_vendor/urllib3/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+        "bytes": 1093
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\LICENSE.txt",
+        "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+        "bytes": 1093
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+        "bytes": 558
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\certifi\\LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+        "bytes": 989
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+        "bytes": 14531
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\distro\\LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+        "bytes": 11325
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\idna\\LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+        "bytes": 1541
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\msgpack\\COPYING",
+        "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+        "bytes": 614
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\packaging\\LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+        "bytes": 197
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\packaging\\LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "bytes": 10174
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\packaging\\LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+        "bytes": 1344
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\pkg_resources\\LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+        "bytes": 1023
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\platformdirs\\LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+        "bytes": 1089
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\pygments\\LICENSE",
+        "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+        "bytes": 1331
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\pyproject_hooks\\LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+        "bytes": 1081
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\requests\\LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+        "bytes": 10142
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\resolvelib\\LICENSE",
+        "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+        "bytes": 751
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\rich\\LICENSE",
+        "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+        "bytes": 1056
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\tomli\\LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\tomli_w\\LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\truststore\\LICENSE",
+        "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+        "bytes": 1086
+      },
+      {
+        "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\Lib\\site-packages\\pip-26.2.2.dist-info\\licenses\\src\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+        "bytes": 1093
+      },
+      {
+        "path": "host/python-base/LICENSE.txt",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\LICENSE.txt",
+        "sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a",
+        "bytes": 25066
+      },
+      {
+        "path": "host/python-base/tcl/tk8.6/demos/license.terms",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\tcl\\tk8.6\\demos\\license.terms",
+        "sha256": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5",
+        "bytes": 2307
+      },
+      {
+        "path": "host/python-base/tcl/tk8.6/license.terms",
+        "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\python16\\cpython-3.12.16-windows-x86_64-none\\tcl\\tk8.6\\license.terms",
+        "sha256": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5",
+        "bytes": 2307
+      }
+    ],
+    "bootstrap_pip": {
+      "version": "26.2.2",
+      "included_in_selected_venv": false,
+      "metadata_sha256": "fe157a60a970b288770fad79a124001f538a325b0a2270c594792b6a475eb798"
+    }
+  },
+  "node": {
+    "version": "24.22.1",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "executable_sha256": "d702daa815eabbff763c7d3808e235cf031cf2ca70211b56847bc72f51e240e5",
+    "archive_url": "https://nodejs.org/download/release/v24.22.1/node-v24.22.1-win-x64.zip",
+    "archive_sha256": "d2046d28c2c3dcd211ac5145c0bf30e2047ef9dfb306693c8c6e2eccd8b95fa5",
+    "archive_bytes": 37748064,
+    "manifest_url": "https://nodejs.org/download/release/v24.22.1/SHASUMS256.txt",
+    "manifest_sha256": "fdfbffc969c0f604beff0124d409b33a43b53f5c681d6220f80023e0d6df9dc4",
+    "installed_binary_matches_official_archive": true,
+    "notice": {
+      "path": "host/node/LICENSE",
+      "sha256": "ed34dd8e3f0a78dbaf00d0444ce8e285b015b765379c2e17880455f70370f8e9",
+      "bytes": 160555
+    },
+    "bundled_packages": [
+      {
+        "name": "corepack",
+        "version": "0.36.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/corepack/package.json",
+        "metadata_sha256": "3e104dfd34c8eb3994a72381017a137a2b7426a2911ea7d411c63224a7997c41",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/corepack/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\corepack\\LICENSE.md",
+            "sha256": "517d52969f11b2b587f2e5116069aea3887ff08251689a198a857a115f250dbf",
+            "bytes": 1070
+          }
+        ]
+      },
+      {
+        "name": "@gar/promise-retry",
+        "version": "1.0.3",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/@gar/promise-retry/package.json",
+        "metadata_sha256": "a9e81ffdc9933ee3db2e1d5272a0509205b097521053f94f5f56fc722f7b9638",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@gar/promise-retry/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@gar\\promise-retry\\LICENSE",
+            "sha256": "774997ec2f9544d18557c0567c46a86e42ccef65d718b5756503bef3bc460097",
+            "bytes": 1176
+          }
+        ]
+      },
+      {
+        "name": "@isaacs/fs-minipass",
+        "version": "4.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@isaacs/fs-minipass/package.json",
+        "metadata_sha256": "ba4e393bcbdd18341715e5d52e7ddd885ec3f5e4a6bf8dbfb42919abf8cb3496",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@isaacs/fs-minipass/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@isaacs\\fs-minipass\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "@isaacs/string-locale-compare",
+        "version": "1.1.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@isaacs/string-locale-compare/package.json",
+        "metadata_sha256": "856109092214653787fbf70e16eb76a33255e21258d8227625fc124c00aeee81",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@isaacs/string-locale-compare/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@isaacs\\string-locale-compare\\LICENSE",
+            "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+            "bytes": 763
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/agent",
+        "version": "4.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/agent/package.json",
+        "metadata_sha256": "cf25c711f6336b3cac38be8f8c55e540a14013387318618c4607fdd00bae352a",
+        "official_archive_metadata_exact": true,
+        "notices": []
+      },
+      {
+        "name": "@npmcli/arborist",
+        "version": "9.9.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/arborist/package.json",
+        "metadata_sha256": "8b88c29ed63376298cd30145f84bd90ab740fec1520a621bf89b2728f5a13cf6",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/arborist/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\arborist\\LICENSE.md",
+            "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+            "bytes": 818
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/config",
+        "version": "10.12.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/config/package.json",
+        "metadata_sha256": "275224c1263dede4f6751b933ec440ab557b364197dc68ce7305c2f7f91e9f52",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/config/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\config\\LICENSE",
+            "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+            "bytes": 754
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/fs",
+        "version": "5.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/fs/package.json",
+        "metadata_sha256": "1f834167de7bc69d8036da994f12f03c8fd9673450cd63cf1b1f277f2095a3c7",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/fs/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\fs\\LICENSE.md",
+            "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+            "bytes": 818
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/git",
+        "version": "7.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/git/package.json",
+        "metadata_sha256": "34b4a47b0ae0eb9ef46b537003b6f6cd79065e79449330164e7557331244467e",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/git/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\git\\LICENSE",
+            "sha256": "c7ec219b06de947768be869516c7021648e4d1445a07759e1327922de636ff45",
+            "bytes": 748
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/installed-package-contents",
+        "version": "4.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/installed-package-contents/package.json",
+        "metadata_sha256": "c0e655c5a47a3a5a9d9a5bf4323514f040aa0d1d7f2280e415d9b83591d8bb91",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/installed-package-contents/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\installed-package-contents\\LICENSE",
+            "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+            "bytes": 754
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/map-workspaces",
+        "version": "5.0.3",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/map-workspaces/package.json",
+        "metadata_sha256": "9c8c32c258c53758bc3723682a2c9497ed1794d2376668110451234a197b6a50",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/map-workspaces/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\map-workspaces\\LICENSE.md",
+            "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+            "bytes": 818
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/metavuln-calculator",
+        "version": "9.0.3",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/metavuln-calculator/package.json",
+        "metadata_sha256": "e9caf754da5af70e749c9183de5f61008bc83fcb42fcbc57f7c08150460b89e8",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/metavuln-calculator/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\metavuln-calculator\\LICENSE",
+            "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+            "bytes": 754
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/name-from-folder",
+        "version": "4.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/name-from-folder/package.json",
+        "metadata_sha256": "cbdb7e2386e13d58793cf81b4047b14a45086d3b9c8c55b393dd605e815ff326",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/name-from-folder/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\name-from-folder\\LICENSE",
+            "sha256": "91d1e08e62edb2d6d0d291cfa7c5a366df6bc52cf8314d68596642f552adff13",
+            "bytes": 736
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/node-gyp",
+        "version": "5.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/node-gyp/package.json",
+        "metadata_sha256": "b80f6b2fa0f1e35624a7776ca1a581783bbcf64188003a3e100f80b2017b23bd",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/node-gyp/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\node-gyp\\LICENSE",
+            "sha256": "8efb18bbd2e321a1dc0b411574fa2b577c376e57e319a009b86d2f410f57676e",
+            "bytes": 753
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/package-json",
+        "version": "7.0.5",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/package-json/package.json",
+        "metadata_sha256": "9f3ebfb24119ad8d2a522cb7c7adea0bf78c841446ea758466e5b9eb787ec153",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/package-json/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\package-json\\LICENSE",
+            "sha256": "004dc539bb082ec99bc9f764e77a60ca0edb4e681464a73a46f534974ada5c48",
+            "bytes": 737
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/promise-spawn",
+        "version": "9.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/promise-spawn/package.json",
+        "metadata_sha256": "0b1bf7f09a43ee73b8ec45b0886790e70f193358113eee7228153cead1bf61c6",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/promise-spawn/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\promise-spawn\\LICENSE",
+            "sha256": "c7ec219b06de947768be869516c7021648e4d1445a07759e1327922de636ff45",
+            "bytes": 748
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/query",
+        "version": "5.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/query/package.json",
+        "metadata_sha256": "a84a3ba32729a14f11da917f07319a2e1c8261b7a152c0f44392396077d499a2",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/query/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\query\\LICENSE",
+            "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+            "bytes": 818
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/redact",
+        "version": "4.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/redact/package.json",
+        "metadata_sha256": "6d4b90e76fa100db785921a275339b618c7827b8ed42877d7d6ca8964b3bfdb4",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/redact/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\redact\\LICENSE",
+            "sha256": "4e95371e332c07aca97824564ffe6550a417df5b8a4d1641c06e2d9f3177474e",
+            "bytes": 1081
+          }
+        ]
+      },
+      {
+        "name": "@npmcli/run-script",
+        "version": "10.0.4",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/@npmcli/run-script/package.json",
+        "metadata_sha256": "370b1546bde24b359e31cc9c43f4cf055650350c9dc249d19a9da6b4aef088c0",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@npmcli/run-script/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\LICENSE",
+            "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+            "bytes": 754
+          }
+        ]
+      },
+      {
+        "name": "@sigstore/bundle",
+        "version": "4.0.0",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/@sigstore/bundle/package.json",
+        "metadata_sha256": "9b7f388dd8b998c63501999f0e65bf6d4abe9b87d398952c3e6348c26b6ae801",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@sigstore/bundle/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@sigstore\\bundle\\LICENSE",
+            "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+            "bytes": 11553
+          }
+        ]
+      },
+      {
+        "name": "@sigstore/core",
+        "version": "3.2.1",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/@sigstore/core/package.json",
+        "metadata_sha256": "a90f970515b3f538f77e2ee0d6b33f9d2d04c5b7181a3dc032c49fdde65a9506",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@sigstore/core/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@sigstore\\core\\LICENSE",
+            "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+            "bytes": 11553
+          }
+        ]
+      },
+      {
+        "name": "@sigstore/protobuf-specs",
+        "version": "0.5.1",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/@sigstore/protobuf-specs/package.json",
+        "metadata_sha256": "ab2f255fc1100a3a9cbba52ad32ef1460e1a26be9d24a6d951f1daea0375d9bb",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@sigstore/protobuf-specs/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@sigstore\\protobuf-specs\\LICENSE",
+            "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+            "bytes": 11553
+          }
+        ]
+      },
+      {
+        "name": "@sigstore/sign",
+        "version": "4.1.1",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/@sigstore/sign/package.json",
+        "metadata_sha256": "5b7516b07b816aea397945ae804340df4cefe22de49dea6444c73c885277e01d",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@sigstore/sign/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@sigstore\\sign\\LICENSE",
+            "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+            "bytes": 11553
+          }
+        ]
+      },
+      {
+        "name": "@sigstore/tuf",
+        "version": "4.0.2",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/@sigstore/tuf/package.json",
+        "metadata_sha256": "8d5a93bde3aacf969f5e281496eef2f01a9d201d0b3f426d789ecaaa142e6d9a",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@sigstore/tuf/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@sigstore\\tuf\\LICENSE",
+            "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+            "bytes": 11553
+          }
+        ]
+      },
+      {
+        "name": "@sigstore/verify",
+        "version": "3.1.1",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/@sigstore/verify/package.json",
+        "metadata_sha256": "3af5c9427fa5b4c2be73a39ce6346b545e268d01adced3f36c5bd04c6018d335",
+        "official_archive_metadata_exact": true,
+        "notices": []
+      },
+      {
+        "name": "@tufjs/canonical-json",
+        "version": "2.0.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/@tufjs/canonical-json/package.json",
+        "metadata_sha256": "93149c960fa30d5826e941144832987e035eee23e0061480f1efb35a479865ec",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@tufjs/canonical-json/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@tufjs\\canonical-json\\LICENSE",
+            "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+            "bytes": 1109
+          }
+        ]
+      },
+      {
+        "name": "@tufjs/models",
+        "version": "4.1.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/@tufjs/models/package.json",
+        "metadata_sha256": "ced9b0732874188767acbe8d02da2dc4934e902b88218ed000421915e50d564e",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/@tufjs/models/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@tufjs\\models\\LICENSE",
+            "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+            "bytes": 1109
+          }
+        ]
+      },
+      {
+        "name": "abbrev",
+        "version": "4.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/abbrev/package.json",
+        "metadata_sha256": "e7671569440b427332662fceb1f4145dbf935e8e37e1da8333710af6b6e564e8",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/abbrev/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\abbrev\\LICENSE",
+            "sha256": "52e0397bbc1859a7891cd601cff0b9433ab9c235ce6b116f8bcf9a17c41a4b94",
+            "bytes": 2057
+          }
+        ]
+      },
+      {
+        "name": "agent-base",
+        "version": "7.1.4",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/agent-base/package.json",
+        "metadata_sha256": "53fa6cf0d78bada935927b14393eb81326eed4d7accc12c9d2aa881b3626af34",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/agent-base/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\agent-base\\LICENSE",
+            "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+            "bytes": 1122
+          }
+        ]
+      },
+      {
+        "name": "aproba",
+        "version": "2.1.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/aproba/package.json",
+        "metadata_sha256": "88e4d558ce0ebc87af49743cb4e4347cfca8f6a5e9d7b70e4f871810b674ac7a",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/aproba/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\aproba\\LICENSE",
+            "sha256": "1b94c9898885c681c1e0ebbf96494e49662842f88ac1e4dd8ffad0ac047108ae",
+            "bytes": 766
+          }
+        ]
+      },
+      {
+        "name": "archy",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/archy/package.json",
+        "metadata_sha256": "6548d0ff9001e3322017e6ccea83b2cf085a4ddaa248b776fa81065cca60d21a",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/archy/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\archy\\LICENSE",
+            "sha256": "a9ecf3da3825b3e7232f29c970a2869bb1752c900bd75ba7cbabeb69b8f032b4",
+            "bytes": 1091
+          }
+        ]
+      },
+      {
+        "name": "balanced-match",
+        "version": "4.0.4",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/balanced-match/package.json",
+        "metadata_sha256": "e97ddced5a45fbef8f4d487317b8b8c6574346420db34130ceda70464a9ea199",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/balanced-match/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\balanced-match\\LICENSE.md",
+            "sha256": "562a98e4679fb644862686d948cd3c002aef38db2fd1a34a46a48d294fa57f1c",
+            "bytes": 1178
+          }
+        ]
+      },
+      {
+        "name": "bin-links",
+        "version": "6.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/bin-links/package.json",
+        "metadata_sha256": "2758c37dba134ae1b2d43c467c4aa5e9f4a521663ffece794551097932818214",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/bin-links/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\bin-links\\LICENSE",
+            "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+            "bytes": 754
+          }
+        ]
+      },
+      {
+        "name": "binary-extensions",
+        "version": "3.1.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/binary-extensions/package.json",
+        "metadata_sha256": "4f11efa1d0c6a1f819a2c4c70e2712b63f3728c84a7ed6c17c54dbdf69f7243b",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/binary-extensions/license",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\binary-extensions\\license",
+            "sha256": "1e932c8b356239b8a54fe6451a356e4e6e83e11db4976e74bfe80adb3557f20e",
+            "bytes": 1177
+          }
+        ]
+      },
+      {
+        "name": "brace-expansion",
+        "version": "5.0.9",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/brace-expansion/package.json",
+        "metadata_sha256": "4fa04b4b11020d2b38470e9e06173f8483316408045cf5eb3a2e6ec1630ba96f",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/brace-expansion/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\brace-expansion\\LICENSE",
+            "sha256": "00066d466bca492ed42048afc15b035697444dad86a956bbaeada068f8382b87",
+            "bytes": 1167
+          }
+        ]
+      },
+      {
+        "name": "cacache",
+        "version": "20.0.4",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/cacache/package.json",
+        "metadata_sha256": "89842c0c05ce6790c6f38da53ce192c3e3bb9d48bfff94ffa04ecc857db9570c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/cacache/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\cacache\\LICENSE.md",
+            "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+            "bytes": 771
+          }
+        ]
+      },
+      {
+        "name": "chalk",
+        "version": "5.6.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/chalk/package.json",
+        "metadata_sha256": "acaf8fa6515207489dc10efcb04768d500ff893ef1ae11d35bad93e120717267",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/chalk/license",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\chalk\\license",
+            "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+            "bytes": 1126
+          }
+        ]
+      },
+      {
+        "name": "chownr",
+        "version": "3.0.0",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/chownr/package.json",
+        "metadata_sha256": "b8f564195d3590485b5eebf890917aceae6cdba45a1c643d9d2d6a799daf990e",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/chownr/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\chownr\\LICENSE.md",
+            "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+            "bytes": 1827
+          }
+        ]
+      },
+      {
+        "name": "ci-info",
+        "version": "4.4.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/ci-info/package.json",
+        "metadata_sha256": "52190c0fd963f64821da5073e286e89af323712e8f1ad48effa2a496dbb316ae",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/ci-info/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\ci-info\\LICENSE",
+            "sha256": "9886ff4a999c5f71e923fcbe508bd109cea8c532afe6b80dfcdc5b13d9f4bb3f",
+            "bytes": 1107
+          }
+        ]
+      },
+      {
+        "name": "cidr-regex",
+        "version": "5.0.5",
+        "license": "BSD-2-Clause",
+        "metadata_path": "node_modules/npm/node_modules/cidr-regex/package.json",
+        "metadata_sha256": "2c43bb8da59b4bcba5485e5d3e31b7ec7bbe38318d70f4feddfe5115d4b19471",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/cidr-regex/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\cidr-regex\\LICENSE",
+            "sha256": "73f22b23c0069037f86eae441acd720dfa7c1637e1f91112e9bc1c533352e222",
+            "bytes": 1312
+          }
+        ]
+      },
+      {
+        "name": "cmd-shim",
+        "version": "8.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/cmd-shim/package.json",
+        "metadata_sha256": "b6cc31ba8ecf29edb5a801b95df2cac2d5aa9a6ecbe814b2dce08f77fcc8d379",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/cmd-shim/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\cmd-shim\\LICENSE",
+            "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+            "bytes": 771
+          }
+        ]
+      },
+      {
+        "name": "common-ancestor-path",
+        "version": "2.0.0",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/common-ancestor-path/package.json",
+        "metadata_sha256": "8b4580492c988e792be45e7954bbbc61c9bcae99d22267dc586ca7098ca8f850",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/common-ancestor-path/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\common-ancestor-path\\LICENSE.md",
+            "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+            "bytes": 1607
+          }
+        ]
+      },
+      {
+        "name": "cssesc",
+        "version": "3.0.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/cssesc/package.json",
+        "metadata_sha256": "1c4dd4e3cb7b8b8ed22e3d5859f4bc3517c0f9274d23146cc633be7f9cb65f2a",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/cssesc/LICENSE-MIT.txt",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\cssesc\\LICENSE-MIT.txt",
+            "sha256": "f996f6e050e6fc18086162b4b44e301bba345c87deca83f57a27e6d54195556e",
+            "bytes": 1097
+          }
+        ]
+      },
+      {
+        "name": "debug",
+        "version": "4.4.3",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/debug/package.json",
+        "metadata_sha256": "782599a2bbfcb82a145f595b5e2b170d9ebf8d4f3c0e6dd3f1c383512c531fca",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/debug/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\debug\\LICENSE",
+            "sha256": "b42cd0a02e61c640f8b4132820ba6a3da322d094b32d3b5ef7feefb7099738e3",
+            "bytes": 1159
+          }
+        ]
+      },
+      {
+        "name": "diff",
+        "version": "8.0.4",
+        "license": "BSD-3-Clause",
+        "metadata_path": "node_modules/npm/node_modules/diff/package.json",
+        "metadata_sha256": "5de8f6605cd3857683623d0d8a50fb4719fa6061f4b79e0392a3fa45de99afe4",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/diff/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\diff\\LICENSE",
+            "sha256": "278c03ecada65be046e65cf7091e4378b2749eec2309eeb242650e195864d863",
+            "bytes": 1575
+          }
+        ]
+      },
+      {
+        "name": "env-paths",
+        "version": "2.2.1",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/env-paths/package.json",
+        "metadata_sha256": "3de2da388c3fb4f491d5c22f19624273970acfbad2e6674ad568012b7d1faf65",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/env-paths/license",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\env-paths\\license",
+            "sha256": "67292c32894c8ac99db06ffa1cb8e9a5171ef988120723ebe673bf76712260ec",
+            "bytes": 1118
+          }
+        ]
+      },
+      {
+        "name": "exponential-backoff",
+        "version": "3.1.3",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/exponential-backoff/package.json",
+        "metadata_sha256": "97dd614fdb6da21bb4fce2f6ddfff24e65a7ccf193ed6053a6ebd38a5245fc55",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/exponential-backoff/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\exponential-backoff\\LICENSE",
+            "sha256": "5ebd9035b6813650acaea03024934d8b6fb5f62b2887e29dbd0dfcdb34bee88f",
+            "bytes": 11553
+          }
+        ]
+      },
+      {
+        "name": "fastest-levenshtein",
+        "version": "1.0.16",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/fastest-levenshtein/package.json",
+        "metadata_sha256": "05c1378bdb37a28ba95e03ba2292aff2bab39d79025f1b40677629324aac773f",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/fastest-levenshtein/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\fastest-levenshtein\\LICENSE.md",
+            "sha256": "37304238fcfbe46a5b6038bd9c0f0a378d9b6b49b76c5012f0a887701fe29de6",
+            "bytes": 1092
+          }
+        ]
+      },
+      {
+        "name": "fs-minipass",
+        "version": "3.0.3",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/fs-minipass/package.json",
+        "metadata_sha256": "ee4aa4f18ff289b0be9e438400338b8931d07e7dede63e5fe1d6ca51dca6bcb3",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/fs-minipass/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\fs-minipass\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "glob",
+        "version": "13.0.6",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/glob/package.json",
+        "metadata_sha256": "b70a1e72600e0084ceac4ec53a0b24a91b7757f868f94b88995f7f4bb289c00e",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/glob/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\glob\\LICENSE.md",
+            "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+            "bytes": 1827
+          }
+        ]
+      },
+      {
+        "name": "graceful-fs",
+        "version": "4.2.11",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/graceful-fs/package.json",
+        "metadata_sha256": "2dcd4b0786f9ca9b80418d56a57a5aa4649732d667e389cf1afa4b12ed618266",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/graceful-fs/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\graceful-fs\\LICENSE",
+            "sha256": "dc1514d1b920fdea5307f3b3baaae6091918f2c7019343ebba5e4e48b4f510e0",
+            "bytes": 806
+          }
+        ]
+      },
+      {
+        "name": "hosted-git-info",
+        "version": "9.0.3",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/hosted-git-info/package.json",
+        "metadata_sha256": "a998ec02be37892cf6b246a81b341c6717a84c0dc9f5a5b9284f855c556e7a8e",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/hosted-git-info/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\hosted-git-info\\LICENSE",
+            "sha256": "ac8c5bf1568ae996712633646201100150eb805c35ab90a893ba1b54cc575adf",
+            "bytes": 746
+          }
+        ]
+      },
+      {
+        "name": "http-cache-semantics",
+        "version": "4.2.0",
+        "license": "BSD-2-Clause",
+        "metadata_path": "node_modules/npm/node_modules/http-cache-semantics/package.json",
+        "metadata_sha256": "a718d392ca70a3e8738471abb61b8c085501d5845087a0cecf9be62e14b27317",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/http-cache-semantics/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\http-cache-semantics\\LICENSE",
+            "sha256": "1fbc6f0d4289ef63086faf6f1d6256969f0919a76262d70465ba06f771132ac8",
+            "bytes": 1283
+          }
+        ]
+      },
+      {
+        "name": "http-proxy-agent",
+        "version": "7.0.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/http-proxy-agent/package.json",
+        "metadata_sha256": "aa0957fee472820717aa693975e6e2aaedbedc4894f84b0820a22a9e6c1331e5",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/http-proxy-agent/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\http-proxy-agent\\LICENSE",
+            "sha256": "9b23600356d202082aee46de3e9878e9ff66f0b251438a2559cdc8609c930ab7",
+            "bytes": 1124
+          }
+        ]
+      },
+      {
+        "name": "https-proxy-agent",
+        "version": "7.0.6",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/https-proxy-agent/package.json",
+        "metadata_sha256": "38492011235817eebcffae62e408eae38115c043226c2566caa9033cfc82c83d",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/https-proxy-agent/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\https-proxy-agent\\LICENSE",
+            "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+            "bytes": 1122
+          }
+        ]
+      },
+      {
+        "name": "iconv-lite",
+        "version": "0.7.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/iconv-lite/package.json",
+        "metadata_sha256": "c61f5702ffd277623e0364b277430723332bf656913008c1756548edd29fabd7",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/iconv-lite/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\iconv-lite\\LICENSE",
+            "sha256": "bae26f6bd2f7c50fc43e7a8afc1507ceccffc77a62133c84565e7874b5289058",
+            "bytes": 1085
+          }
+        ]
+      },
+      {
+        "name": "ignore-walk",
+        "version": "8.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/ignore-walk/package.json",
+        "metadata_sha256": "eb30b85b0a1fefd1ff69d3541fb17ac33ce31dec6e0dc011ffb250a43961264c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/ignore-walk/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\ignore-walk\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "ini",
+        "version": "6.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/ini/package.json",
+        "metadata_sha256": "eb9b0b3af32079c90fa9bedeb5539c8415b817eafea0daf113384dc93276c587",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/ini/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\ini\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "init-package-json",
+        "version": "8.2.5",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/init-package-json/package.json",
+        "metadata_sha256": "929383f1cf39b17b9bbdc43bcfad4415d1ebde8cc07c8c8dafab5b96ae620fcf",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/init-package-json/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\init-package-json\\LICENSE.md",
+            "sha256": "30ae8a003712dae3986756f28f24c0ea8c8f85b233a542f7e9181b2d2af7fe5e",
+            "bytes": 735
+          }
+        ]
+      },
+      {
+        "name": "ip-address",
+        "version": "10.5.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/ip-address/package.json",
+        "metadata_sha256": "2f8caf6f753371a19b1893783a38bebb2b889d72cd46e291240cdb80f1d0b6dd",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/ip-address/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\ip-address\\LICENSE",
+            "sha256": "40e3d8bff0eba21e2c8a4ca7f7ad3f48c9ffa200de4aa6637d677a7d65514825",
+            "bytes": 1080
+          }
+        ]
+      },
+      {
+        "name": "is-cidr",
+        "version": "6.0.4",
+        "license": "BSD-2-Clause",
+        "metadata_path": "node_modules/npm/node_modules/is-cidr/package.json",
+        "metadata_sha256": "9778e89518040de8b2115d31b08fc675149d923e8d552d07374ea32b72e1e6fe",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/is-cidr/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\is-cidr\\LICENSE",
+            "sha256": "73f22b23c0069037f86eae441acd720dfa7c1637e1f91112e9bc1c533352e222",
+            "bytes": 1312
+          }
+        ]
+      },
+      {
+        "name": "isexe",
+        "version": "4.0.0",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/isexe/package.json",
+        "metadata_sha256": "835ed0d3e8aa96d9ec4250bdc486f2e73f5d9f3103fc6e2d5a99b5cef8ec7556",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/isexe/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\isexe\\LICENSE.md",
+            "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+            "bytes": 1607
+          }
+        ]
+      },
+      {
+        "name": "json-parse-even-better-errors",
+        "version": "5.0.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/json-parse-even-better-errors/package.json",
+        "metadata_sha256": "d90d80c006df07452f3e45100db6045cbcae6006a69fedfdfef2547a3a8f84c2",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/json-parse-even-better-errors/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\json-parse-even-better-errors\\LICENSE.md",
+            "sha256": "d2de5571e57dbcae5949f369d0d9894bf2ff7c0874d3759628652639b3e8167a",
+            "bytes": 1234
+          }
+        ]
+      },
+      {
+        "name": "json-stringify-nice",
+        "version": "1.1.4",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/json-stringify-nice/package.json",
+        "metadata_sha256": "28a2ab8687904d8b5e4e6e6264163508923f7bf8113e4ef4328a924f0786a033",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/json-stringify-nice/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\json-stringify-nice\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "jsonparse",
+        "version": "1.3.1",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/jsonparse/package.json",
+        "metadata_sha256": "c53ed54f0251614c2b5fe04f8a1052268a0010b6c080d33e9a7a3657118da9ca",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/jsonparse/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\jsonparse\\LICENSE",
+            "sha256": "c8e0305cd798b12d8d759594c69ca58d8d62c2e38448eabaeefa8dfac2480ae4",
+            "bytes": 1111
+          }
+        ]
+      },
+      {
+        "name": "just-diff",
+        "version": "6.0.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/just-diff/package.json",
+        "metadata_sha256": "a805c61ef4bd4c6fecb3392b2b3cee498ce50475d283bbeb2f244c0cb885de62",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/just-diff/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\just-diff\\LICENSE",
+            "sha256": "c4f5a45599ea54331e65a21df7c3738f8c9b3e688e1913caf47facee9017a439",
+            "bytes": 1099
+          }
+        ]
+      },
+      {
+        "name": "just-diff-apply",
+        "version": "5.5.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/just-diff-apply/package.json",
+        "metadata_sha256": "8743f15358ad666cf03eafb2ac526beaca07a26a5210c54743132b662b26e71a",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/just-diff-apply/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\just-diff-apply\\LICENSE",
+            "sha256": "c4f5a45599ea54331e65a21df7c3738f8c9b3e688e1913caf47facee9017a439",
+            "bytes": 1099
+          }
+        ]
+      },
+      {
+        "name": "libnpmaccess",
+        "version": "10.0.3",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmaccess/package.json",
+        "metadata_sha256": "bef1b8d3a00f6a3c4aae7dec94fe47c4ce5d23454c02272d50869e2547ef88e1",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmaccess/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmaccess\\LICENSE",
+            "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+            "bytes": 730
+          }
+        ]
+      },
+      {
+        "name": "libnpmdiff",
+        "version": "8.1.12",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmdiff/package.json",
+        "metadata_sha256": "cb1376faf5892427690a0f35cdc36d8684845752601f7d65e29ee6d9fb1bdefd",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmdiff/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmdiff\\LICENSE",
+            "sha256": "60aa4cf74af0ae39c694e32cab95606789180da3b79cb584e1b7f310242d6329",
+            "bytes": 756
+          }
+        ]
+      },
+      {
+        "name": "libnpmexec",
+        "version": "10.3.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmexec/package.json",
+        "metadata_sha256": "15d6f07bd7c5cd6b780d152ed052f5f2a6780cd039e410e4e9e961a3c6651903",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmexec/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmexec\\LICENSE",
+            "sha256": "60aa4cf74af0ae39c694e32cab95606789180da3b79cb584e1b7f310242d6329",
+            "bytes": 756
+          }
+        ]
+      },
+      {
+        "name": "libnpmfund",
+        "version": "7.0.26",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmfund/package.json",
+        "metadata_sha256": "c3f6b12e28bba996e18d2a661b1caac84d6019e879294aab234b291cd5f5643f",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmfund/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmfund\\LICENSE",
+            "sha256": "ae23f46306824f42c6ab243b232b571bb98d8dfa25c58bf02e1dac2520a4f44a",
+            "bytes": 753
+          }
+        ]
+      },
+      {
+        "name": "libnpmorg",
+        "version": "8.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmorg/package.json",
+        "metadata_sha256": "aec8ea4151dd8aeb03bc5694319655a4563837876004b4b656faf116a55e3f13",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmorg/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmorg\\LICENSE",
+            "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+            "bytes": 730
+          }
+        ]
+      },
+      {
+        "name": "libnpmpack",
+        "version": "9.1.13",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmpack/package.json",
+        "metadata_sha256": "38b50ba07011025d467733bf43363d00061ec970223db0996abf1dc4f8e81d9b",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmpack/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmpack\\LICENSE",
+            "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+            "bytes": 730
+          }
+        ]
+      },
+      {
+        "name": "libnpmpublish",
+        "version": "11.2.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmpublish/package.json",
+        "metadata_sha256": "d461d593da5ab7b076bba25b667ed7324950b98f5d37889bb5feb77964ac0961",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmpublish/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmpublish\\LICENSE",
+            "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+            "bytes": 730
+          }
+        ]
+      },
+      {
+        "name": "libnpmsearch",
+        "version": "9.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmsearch/package.json",
+        "metadata_sha256": "ce2205d38dc990497f16439177cc479afb6797d88767883dd1490a707cefc9b9",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmsearch/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmsearch\\LICENSE",
+            "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+            "bytes": 730
+          }
+        ]
+      },
+      {
+        "name": "libnpmteam",
+        "version": "8.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmteam/package.json",
+        "metadata_sha256": "a1ccff7fc5392e23754aceb2a289c6076906e5fa12815839e52aa30241e5259c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmteam/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmteam\\LICENSE",
+            "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+            "bytes": 730
+          }
+        ]
+      },
+      {
+        "name": "libnpmversion",
+        "version": "8.0.4",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/libnpmversion/package.json",
+        "metadata_sha256": "65ed193e6311b9ce2cd5b138a20a36f1679b9e80bf6613a53be36755edc755f4",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/libnpmversion/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpmversion\\LICENSE",
+            "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+            "bytes": 763
+          }
+        ]
+      },
+      {
+        "name": "lru-cache",
+        "version": "11.5.1",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/lru-cache/package.json",
+        "metadata_sha256": "b0167cf34d7195fb8562e83d564f44ea5c550b1ba499d8a3f1b7d228ff9c1a88",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/lru-cache/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\lru-cache\\LICENSE.md",
+            "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+            "bytes": 1607
+          }
+        ]
+      },
+      {
+        "name": "make-fetch-happen",
+        "version": "15.0.6",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/make-fetch-happen/package.json",
+        "metadata_sha256": "bf41ece6e1203d33b6de7b97d500201054fe0cf449231b77772c146bfdc7702c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/make-fetch-happen/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\make-fetch-happen\\LICENSE",
+            "sha256": "c49d79211841d8fa00e008dcd7d9531baa35804d05f40e011615c28f970d14da",
+            "bytes": 781
+          }
+        ]
+      },
+      {
+        "name": "minimatch",
+        "version": "10.2.5",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/minimatch/package.json",
+        "metadata_sha256": "c0ae698f965a7b79d9998cd5d96c1e2c69d1c8aa5864b4aa344a65bcf658f6ef",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minimatch/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minimatch\\LICENSE.md",
+            "sha256": "fd54a96ff95433409fdb1c7957a43a6383184363b4872df9035b36fbb4b68a2e",
+            "bytes": 1605
+          }
+        ]
+      },
+      {
+        "name": "minipass",
+        "version": "7.1.3",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/minipass/package.json",
+        "metadata_sha256": "60af8dafc915e6962a233583a22356da2bd846be6276d1f85b2ddee1f2ed56ab",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass\\LICENSE.md",
+            "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+            "bytes": 1607
+          }
+        ]
+      },
+      {
+        "name": "minipass-collect",
+        "version": "2.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/minipass-collect/package.json",
+        "metadata_sha256": "88d22a200b892f69118b079feb9350a7c75597f983c0eb9eed6a7369ada699d2",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass-collect/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass-collect\\LICENSE",
+            "sha256": "ca2d3d147116e1df566aa0e476273edb77229db7bb5849dd2e9ba2d43089c648",
+            "bytes": 790
+          }
+        ]
+      },
+      {
+        "name": "minipass-fetch",
+        "version": "5.0.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/minipass-fetch/package.json",
+        "metadata_sha256": "9aae0bb86d6006b156880568990d64761733dac1df2c79bc111194fd2bd730cc",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass-fetch/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass-fetch\\LICENSE",
+            "sha256": "4457272cd4dbc8fc4f3502bc7656eda8e5414c2feecff8c9daa22ff73852e949",
+            "bytes": 1336
+          }
+        ]
+      },
+      {
+        "name": "minipass-flush",
+        "version": "1.0.6",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/minipass-flush/package.json",
+        "metadata_sha256": "e396991f326d468b91b588d6a052da39e16ad82d9c973e7735108f9926acda25",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass-flush/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass-flush\\LICENSE.md",
+            "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+            "bytes": 1607
+          }
+        ]
+      },
+      {
+        "name": "minipass",
+        "version": "3.3.6",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/package.json",
+        "metadata_sha256": "c3052bd85910be313e38ad355528d527b565e70ef15a784db3279649eee2ded5",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass-pipeline\\node_modules\\minipass\\LICENSE",
+            "sha256": "04400db77d925de5b0264f6db5b44fe6f8b94f9419ad3473caaa8065c525c0be",
+            "bytes": 802
+          }
+        ]
+      },
+      {
+        "name": "yallist",
+        "version": "4.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/minipass-pipeline/node_modules/yallist/package.json",
+        "metadata_sha256": "dde09da512899f5055cd65b5aab85911ffecc22fcb9f2e38d0c1432fe94810eb",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/node_modules/yallist/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass-pipeline\\node_modules\\yallist\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "minipass-pipeline",
+        "version": "1.2.4",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/minipass-pipeline/package.json",
+        "metadata_sha256": "f712951781da97b91469e8063a5a1f417ce7fb502617ec86c9a36d2a4ddc1237",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass-pipeline\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "minipass-sized",
+        "version": "2.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/minipass-sized/package.json",
+        "metadata_sha256": "cd80d9ef8c3f1ea93fb4b25dad2c98cd44a562bcf532a5c5002161fe8dca4aaa",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minipass-sized/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minipass-sized\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "minizlib",
+        "version": "3.1.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/minizlib/package.json",
+        "metadata_sha256": "3cdd2f10767b53206115b229038c4438ed4ec2326d84d9da020fc903efd655cf",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/minizlib/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\minizlib\\LICENSE",
+            "sha256": "cf7f1747f25b023e8f304670601ba231456a7218f70548d9196b6015f1eaf84c",
+            "bytes": 1365
+          }
+        ]
+      },
+      {
+        "name": "ms",
+        "version": "2.1.3",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/ms/package.json",
+        "metadata_sha256": "1484e98e0fb8eee7f0d51ca41307e389742c5c9b5f2c6c5bf0669840abf27521",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/ms/license.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\ms\\license.md",
+            "sha256": "7e7740f8b42ce676ef87bcc2d721d62e538c0b7393c4186256ac3ee77ee756fc",
+            "bytes": 1100
+          }
+        ]
+      },
+      {
+        "name": "mute-stream",
+        "version": "3.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/mute-stream/package.json",
+        "metadata_sha256": "ef84395189d01959b7a8a90adfc2730e6bd5e465009678606b67d93fc0c00bc5",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/mute-stream/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\mute-stream\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "negotiator",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/negotiator/package.json",
+        "metadata_sha256": "8fa55756416154d058e01bbbaad224a7e4dfc858ebfd415a7b1ba1e91dfb575b",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/negotiator/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\negotiator\\LICENSE",
+            "sha256": "afe9200bfd30d914879879f17f10b970a455b049d8916b6bb299ca515ce44994",
+            "bytes": 1201
+          }
+        ]
+      },
+      {
+        "name": "node-gyp",
+        "version": "12.4.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/node-gyp/package.json",
+        "metadata_sha256": "52b599644a4b8b1ef24b625e2432f4a8251cfa6b34cacd1cb5e98af1421b4f1f",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/node-gyp/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\LICENSE",
+            "sha256": "855ae36906c2d355c6ad1b8ee53ebbe81afcdb79a1236f6436e0af3a7f2bc85d",
+            "bytes": 1126
+          }
+        ]
+      },
+      {
+        "name": "nopt",
+        "version": "9.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/nopt/package.json",
+        "metadata_sha256": "4e2cda6365536a7e958a6a91dffbb890e3e2f9e03cefa43f32ac5b0da9511ec1",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/nopt/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\nopt\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "npm-audit-report",
+        "version": "7.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-audit-report/package.json",
+        "metadata_sha256": "8f8764a7f53d76ee878129f93459271e05295336c8c84223a1e66c756b20b3bc",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-audit-report/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-audit-report\\LICENSE",
+            "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+            "bytes": 771
+          }
+        ]
+      },
+      {
+        "name": "npm-bundled",
+        "version": "5.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-bundled/package.json",
+        "metadata_sha256": "37a1a9f9659818bd1e25c338027c6915e49f970368d58f707e0e97aa762e5af5",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-bundled/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-bundled\\LICENSE",
+            "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+            "bytes": 771
+          }
+        ]
+      },
+      {
+        "name": "npm-install-checks",
+        "version": "8.0.0",
+        "license": "BSD-2-Clause",
+        "metadata_path": "node_modules/npm/node_modules/npm-install-checks/package.json",
+        "metadata_sha256": "6386ce1d358d1bcbe48a8fc9823082a7c05bbe6238b05881308389ac8a41cc7c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-install-checks/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-install-checks\\LICENSE",
+            "sha256": "8cacac5768d7ac631777d647f59ced980bc551fa469ca1b9be5538b6765d835c",
+            "bytes": 1360
+          }
+        ]
+      },
+      {
+        "name": "npm-normalize-package-bin",
+        "version": "5.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-normalize-package-bin/package.json",
+        "metadata_sha256": "b27d5749fd8da6fc499cc9b8209f6075c443957fb21a6e35435061b4bcea15e5",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-normalize-package-bin/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-normalize-package-bin\\LICENSE",
+            "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+            "bytes": 754
+          }
+        ]
+      },
+      {
+        "name": "npm-package-arg",
+        "version": "13.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-package-arg/package.json",
+        "metadata_sha256": "20038247c8ee673e4630c4f92e2b3bf41c94e7cbf73c67810682d680ab05a210",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-package-arg/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-package-arg\\LICENSE",
+            "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+            "bytes": 754
+          }
+        ]
+      },
+      {
+        "name": "npm-packlist",
+        "version": "10.0.4",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-packlist/package.json",
+        "metadata_sha256": "02bcfa7eefadf3962b74b3c150bd1942e96b274205b3da1e0fd354d006031daf",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-packlist/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-packlist\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "npm-pick-manifest",
+        "version": "11.0.3",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-pick-manifest/package.json",
+        "metadata_sha256": "4ce17855c1d62e57a4e353addba78b0968573b057337665857a4921467f116e9",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-pick-manifest/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-pick-manifest\\LICENSE.md",
+            "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+            "bytes": 771
+          }
+        ]
+      },
+      {
+        "name": "npm-profile",
+        "version": "12.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-profile/package.json",
+        "metadata_sha256": "0a06fafa21b05a4a37634741998d6500c60df311c1e2c821ed4bea435ef45b25",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-profile/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-profile\\LICENSE.md",
+            "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+            "bytes": 818
+          }
+        ]
+      },
+      {
+        "name": "npm-registry-fetch",
+        "version": "19.1.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/npm-registry-fetch/package.json",
+        "metadata_sha256": "ad2b774d7e4e4208371cac546ed49539f277232b0e587cc079cce2f545611fa7",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-registry-fetch/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-registry-fetch\\LICENSE.md",
+            "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+            "bytes": 818
+          }
+        ]
+      },
+      {
+        "name": "npm-user-validate",
+        "version": "4.0.0",
+        "license": "BSD-2-Clause",
+        "metadata_path": "node_modules/npm/node_modules/npm-user-validate/package.json",
+        "metadata_sha256": "cac15eb5686a7e6741fd12df0241f959fbb92cedffa8fc3e79545cc662ff0bbc",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/npm-user-validate/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\npm-user-validate\\LICENSE",
+            "sha256": "c0846374a35a39d265a3f01fa0099d4acac288c03aebfeaf4f68179f6794c3b6",
+            "bytes": 1321
+          }
+        ]
+      },
+      {
+        "name": "p-map",
+        "version": "7.0.4",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/p-map/package.json",
+        "metadata_sha256": "52fbdd62f6e060f43bc84532326bec070e2fae3e3750ff8b9299659e11cd3f2d",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/p-map/license",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\p-map\\license",
+            "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+            "bytes": 1126
+          }
+        ]
+      },
+      {
+        "name": "pacote",
+        "version": "21.5.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/pacote/package.json",
+        "metadata_sha256": "f5f5f5c08f8480bb5b734a5ab5fa8de623cfd577527e2c25a0b891650f59cf10",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/pacote/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\pacote\\LICENSE",
+            "sha256": "7453dacb5bd21525d4a669d1bc06656030af39000ecbdcda8e5118d36cedc9be",
+            "bytes": 806
+          }
+        ]
+      },
+      {
+        "name": "parse-conflict-json",
+        "version": "5.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/parse-conflict-json/package.json",
+        "metadata_sha256": "e863b58d1c6f8b47738c37f9c7cc346c56367834447b9fdcfa27e64653287df8",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/parse-conflict-json/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\parse-conflict-json\\LICENSE.md",
+            "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+            "bytes": 818
+          }
+        ]
+      },
+      {
+        "name": "path-scurry",
+        "version": "2.0.2",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/path-scurry/package.json",
+        "metadata_sha256": "21b1b222ce56ac3e403c569fc9b5add1efb3c88ac17b3fbec4c01346d9d83a7b",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/path-scurry/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\path-scurry\\LICENSE.md",
+            "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+            "bytes": 1607
+          }
+        ]
+      },
+      {
+        "name": "postcss-selector-parser",
+        "version": "7.1.4",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/postcss-selector-parser/package.json",
+        "metadata_sha256": "01c3bf36deb580da02bf3eb589d63be1e450f02664139dd371651f8714d518eb",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/postcss-selector-parser/LICENSE-MIT",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\postcss-selector-parser\\LICENSE-MIT",
+            "sha256": "a562b4aeed0a03767c6ce2da49f1205f09b7d15705b226cf3c32e26d0fb7641b",
+            "bytes": 1114
+          }
+        ]
+      },
+      {
+        "name": "proc-log",
+        "version": "6.1.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/proc-log/package.json",
+        "metadata_sha256": "132b6ca5aec09465a17ecf2e95ecffc01fce34e3a7911c784ad624e4e065c6f1",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/proc-log/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\proc-log\\LICENSE",
+            "sha256": "a5103404e4615fa1ed46aef13082dd287bf4b95964e71ffdf198984b3d5882b8",
+            "bytes": 757
+          }
+        ]
+      },
+      {
+        "name": "proggy",
+        "version": "4.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/proggy/package.json",
+        "metadata_sha256": "3758d88390ae35b9caec2ba8aa305369c45917dcf3ff6dd2ce56cf8f97130250",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/proggy/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\proggy\\LICENSE",
+            "sha256": "a5103404e4615fa1ed46aef13082dd287bf4b95964e71ffdf198984b3d5882b8",
+            "bytes": 757
+          }
+        ]
+      },
+      {
+        "name": "promise-all-reject-late",
+        "version": "1.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/promise-all-reject-late/package.json",
+        "metadata_sha256": "08f9d11db020d6d6750636d04a48313bd1f7d5819f5e958424a6d07b1db2d684",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/promise-all-reject-late/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\promise-all-reject-late\\LICENSE",
+            "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+            "bytes": 763
+          }
+        ]
+      },
+      {
+        "name": "promise-call-limit",
+        "version": "3.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/promise-call-limit/package.json",
+        "metadata_sha256": "fadf381cdcd26f761e187a49f4d6da9f2bb48f61d97e8a4c0dc1ebe381b1efc9",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/promise-call-limit/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\promise-call-limit\\LICENSE",
+            "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+            "bytes": 763
+          }
+        ]
+      },
+      {
+        "name": "promzard",
+        "version": "3.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/promzard/package.json",
+        "metadata_sha256": "f75205747aa795086d12041f9e30b7c5643f1738d76f1dc62a91b5def16ca8ba",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/promzard/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\promzard\\LICENSE",
+            "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+            "bytes": 763
+          }
+        ]
+      },
+      {
+        "name": "qrcode-terminal",
+        "version": "0.12.0",
+        "license": null,
+        "metadata_path": "node_modules/npm/node_modules/qrcode-terminal/package.json",
+        "metadata_sha256": "e3bc2c19916230e78ccea8f9b933c38b3d063de0bd9eaeaf87038317d4945e8a",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/qrcode-terminal/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\qrcode-terminal\\LICENSE",
+            "sha256": "b0c4d64802d2d91b929ad494b484751b472f40ce5abf0aa102277fc16f648ae7",
+            "bytes": 12184
+          }
+        ]
+      },
+      {
+        "name": "read",
+        "version": "5.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/read/package.json",
+        "metadata_sha256": "75201d4961edf9f50a9410697142dfaec7e7c6b1a5c875180f2a7974f43fa813",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/read/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\read\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "read-cmd-shim",
+        "version": "6.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/read-cmd-shim/package.json",
+        "metadata_sha256": "2a2168b5711ff840c9ae66d2aea3432b08505734d8e502ac6161a92203053576",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/read-cmd-shim/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\read-cmd-shim\\LICENSE",
+            "sha256": "1b94c9898885c681c1e0ebbf96494e49662842f88ac1e4dd8ffad0ac047108ae",
+            "bytes": 766
+          }
+        ]
+      },
+      {
+        "name": "safer-buffer",
+        "version": "2.1.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/safer-buffer/package.json",
+        "metadata_sha256": "4a9a597cb284b52830ac0d51ab97aad882399dcd1b1f3be97eba933e689f5c53",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/safer-buffer/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\safer-buffer\\LICENSE",
+            "sha256": "e15582df774daf2392ca0c9248b08d5bb0522c875699de6c062f8be2fdc3e919",
+            "bytes": 1115
+          }
+        ]
+      },
+      {
+        "name": "semver",
+        "version": "7.8.5",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/semver/package.json",
+        "metadata_sha256": "84c9df3ebd1153d5177e92d7079118c0a5890c25008e31cb43d1426835d0c24c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/semver/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\semver\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "signal-exit",
+        "version": "4.1.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/signal-exit/package.json",
+        "metadata_sha256": "9c01bfd347facc04883e35accdb9bd5b6fc85295810f33fe9c0ab942bb525045",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/signal-exit/LICENSE.txt",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\signal-exit\\LICENSE.txt",
+            "sha256": "a71b19749ebde7c65ee97c76dbb6a0287f09880e019fa554b04364c48aa15794",
+            "bytes": 806
+          }
+        ]
+      },
+      {
+        "name": "sigstore",
+        "version": "4.1.1",
+        "license": "Apache-2.0",
+        "metadata_path": "node_modules/npm/node_modules/sigstore/package.json",
+        "metadata_sha256": "2fea2d1af0983b997eaba7bcbe172d3964a07ed0a80a5dc77ecb3e7d45ecf69e",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/sigstore/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\sigstore\\LICENSE",
+            "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+            "bytes": 11553
+          }
+        ]
+      },
+      {
+        "name": "smart-buffer",
+        "version": "4.2.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/smart-buffer/package.json",
+        "metadata_sha256": "f8c5b221fdc51ba746ce9557effbae61a9f48894904bdca63b3366b8569cfc83",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/smart-buffer/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\smart-buffer\\LICENSE",
+            "sha256": "41f40a85a2ba5eb382752c6d235497ffc70445044866b62cf15995cc2c143409",
+            "bytes": 1107
+          }
+        ]
+      },
+      {
+        "name": "socks",
+        "version": "2.8.9",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/socks/package.json",
+        "metadata_sha256": "3e51046b0897000c63458025385253d86d1642fb7367ac73fcaf30e7c15a30f8",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/socks/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\socks\\LICENSE",
+            "sha256": "03fadbf0195740caca88c2de89aedc0f24c727e0a3f39decea4d0dc4f87aeff6",
+            "bytes": 1102
+          }
+        ]
+      },
+      {
+        "name": "socks-proxy-agent",
+        "version": "8.0.5",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/socks-proxy-agent/package.json",
+        "metadata_sha256": "295d665cf0c2c6a9d3fb15fa2e22268eaec78337e3a00266dd48eb6a4ec4731c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/socks-proxy-agent/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\socks-proxy-agent\\LICENSE",
+            "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+            "bytes": 1122
+          }
+        ]
+      },
+      {
+        "name": "spdx-exceptions",
+        "version": "2.5.0",
+        "license": "CC-BY-3.0",
+        "metadata_path": "node_modules/npm/node_modules/spdx-exceptions/package.json",
+        "metadata_sha256": "ef439b9ace2734bd6ba894dc7a496ca6c227a0bf6d0c57776cb7f6a8062506b7",
+        "official_archive_metadata_exact": true,
+        "notices": []
+      },
+      {
+        "name": "spdx-expression-parse",
+        "version": "4.0.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/spdx-expression-parse/package.json",
+        "metadata_sha256": "a63cf227ca69bc9fdc5b7780d7397e2914f9a8808faea012127b5a8ed18ff9f1",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/spdx-expression-parse/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\spdx-expression-parse\\LICENSE",
+            "sha256": "9874348297d23c486dfb13b9df158f3fe2f57153ddfd0513507d22f0438ea204",
+            "bytes": 1133
+          }
+        ]
+      },
+      {
+        "name": "spdx-license-ids",
+        "version": "3.0.23",
+        "license": "CC0-1.0",
+        "metadata_path": "node_modules/npm/node_modules/spdx-license-ids/package.json",
+        "metadata_sha256": "15dfa44b498f7b82acff2d6362de8e3b9e4445d87b5b671760e68bdfac02ac1d",
+        "official_archive_metadata_exact": true,
+        "notices": []
+      },
+      {
+        "name": "ssri",
+        "version": "13.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/ssri/package.json",
+        "metadata_sha256": "30cec5d53d42c021d17873e51e452e6c9f11b69388177bfc30ad572e48f2d320",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/ssri/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\ssri\\LICENSE.md",
+            "sha256": "030c94ef243985fac9d59646ff042e58a73a090bdc6f5991786819a4261290ef",
+            "bytes": 776
+          }
+        ]
+      },
+      {
+        "name": "supports-color",
+        "version": "10.2.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/supports-color/package.json",
+        "metadata_sha256": "a87e25f77dc7ee21ae91bc2413546155712c4c4805e384a302983a941f94eb28",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/supports-color/license",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\supports-color\\license",
+            "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+            "bytes": 1126
+          }
+        ]
+      },
+      {
+        "name": "tar",
+        "version": "7.5.22",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/tar/package.json",
+        "metadata_sha256": "95c2b5f991679a566e2492169bb26a584b49fd1c61f5d173becc5f09dbdf923f",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/tar/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\tar\\LICENSE.md",
+            "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+            "bytes": 1607
+          }
+        ]
+      },
+      {
+        "name": "text-table",
+        "version": "0.2.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/text-table/package.json",
+        "metadata_sha256": "554185c00ecaff8523c40b6d65a70d37cff1b7dd234d0b67dcd59eb16750bfa2",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/text-table/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\text-table\\LICENSE",
+            "sha256": "a9ecf3da3825b3e7232f29c970a2869bb1752c900bd75ba7cbabeb69b8f032b4",
+            "bytes": 1091
+          }
+        ]
+      },
+      {
+        "name": "tiny-relative-date",
+        "version": "2.0.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/tiny-relative-date/package.json",
+        "metadata_sha256": "32e66ff15cc09886906d0d3cbaddca542b05dafda564e0943ebb7e9340218225",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/tiny-relative-date/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\tiny-relative-date\\LICENSE.md",
+            "sha256": "a487062cbc5f9c5197614c3782b13f9049bd7321d8fe4d5e08283edac48fa199",
+            "bytes": 1089
+          }
+        ]
+      },
+      {
+        "name": "fdir",
+        "version": "6.5.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/tinyglobby/node_modules/fdir/package.json",
+        "metadata_sha256": "384bca57e10ce12e25e6f7fa840545e2424e8361959d0b921f53c07bc90dacc4",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/tinyglobby/node_modules/fdir/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\tinyglobby\\node_modules\\fdir\\LICENSE",
+            "sha256": "dd9d2fde1db2a559d7f534313f4754ba7c322dec0d39e584a2d1b41f0e976c2e",
+            "bytes": 1060
+          }
+        ]
+      },
+      {
+        "name": "picomatch",
+        "version": "4.0.4",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/tinyglobby/node_modules/picomatch/package.json",
+        "metadata_sha256": "7fe7af22f0c751144a8f3a3675d726723a965a0ac8ee6f37cb80a93e30762697",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/tinyglobby/node_modules/picomatch/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\tinyglobby\\node_modules\\picomatch\\LICENSE",
+            "sha256": "060522635e5e0d1bdcbea583064dd47afbf52af9607b6e0e463087b9a06876b8",
+            "bytes": 1112
+          }
+        ]
+      },
+      {
+        "name": "tinyglobby",
+        "version": "0.2.17",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/tinyglobby/package.json",
+        "metadata_sha256": "f8fe91bc292a7d08f29607cf0f7358c6376854fa734e16fc835fa98fb0f91182",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/tinyglobby/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\tinyglobby\\LICENSE",
+            "sha256": "885542bb1f08221d2c8a4075df7bbe4453bdeab11815b4d5281595435919d012",
+            "bytes": 1097
+          }
+        ]
+      },
+      {
+        "name": "treeverse",
+        "version": "3.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/treeverse/package.json",
+        "metadata_sha256": "c073046613b75d69101c582fb495f22c9ac45e71a8fb1d496f6513ca127515ee",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/treeverse/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\treeverse\\LICENSE",
+            "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+            "bytes": 771
+          }
+        ]
+      },
+      {
+        "name": "tuf-js",
+        "version": "4.1.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/tuf-js/package.json",
+        "metadata_sha256": "373c29183983d4fccfb10a922b32b4230139930c9f751708f2e6f7612f8db790",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/tuf-js/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\tuf-js\\LICENSE",
+            "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+            "bytes": 1109
+          }
+        ]
+      },
+      {
+        "name": "undici",
+        "version": "6.28.0",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/undici/package.json",
+        "metadata_sha256": "7ff264b99d44a5658d64992c3ce3d1ca594069e41733444767bd4da4ea66b87b",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/undici/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\undici\\LICENSE",
+            "sha256": "5dc815ee169aecfdfa69b4c4c98745160d80a29d94cb08450a4d83cad11ebea5",
+            "bytes": 1111
+          }
+        ]
+      },
+      {
+        "name": "util-deprecate",
+        "version": "1.0.2",
+        "license": "MIT",
+        "metadata_path": "node_modules/npm/node_modules/util-deprecate/package.json",
+        "metadata_sha256": "6472e5a738ac6fa330d07d070f8ca3d2b7ee675afee7b16678a385818dea7637",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/util-deprecate/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\util-deprecate\\LICENSE",
+            "sha256": "140afde889594d07da403cf87c73ecfd55e1b8870fff358fa86f475dc3acde7a",
+            "bytes": 1126
+          }
+        ]
+      },
+      {
+        "name": "validate-npm-package-name",
+        "version": "7.0.2",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/validate-npm-package-name/package.json",
+        "metadata_sha256": "96ea74071e5f30dcd0f3d10c8f015937b2b6fe68b10a657011bbc6ec0ad1416c",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/validate-npm-package-name/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\validate-npm-package-name\\LICENSE",
+            "sha256": "218f573aa405a239f1265a3f7b80d8296739b87d2158c56568e6df1153ace95b",
+            "bytes": 734
+          }
+        ]
+      },
+      {
+        "name": "walk-up-path",
+        "version": "4.0.0",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/walk-up-path/package.json",
+        "metadata_sha256": "3a3641a678348a7becbfe5840320fd51afb843d5728efba222fa133571e17395",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/walk-up-path/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\walk-up-path\\LICENSE",
+            "sha256": "56aae31e19b0fdb567348896d26f7a76b0ee89e8755a9988d445429dd04a6e5f",
+            "bytes": 773
+          }
+        ]
+      },
+      {
+        "name": "which",
+        "version": "6.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/which/package.json",
+        "metadata_sha256": "cad08b69c9f6968f55556d54e64fdd45483623ed6a309bf1611865cc73ec0390",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/which/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\which\\LICENSE",
+            "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+            "bytes": 780
+          }
+        ]
+      },
+      {
+        "name": "write-file-atomic",
+        "version": "7.0.1",
+        "license": "ISC",
+        "metadata_path": "node_modules/npm/node_modules/write-file-atomic/package.json",
+        "metadata_sha256": "ee5e32b136abcc9d23069236f41d8154a6447185037032a641d4802c2cae7032",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/write-file-atomic/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\write-file-atomic\\LICENSE.md",
+            "sha256": "009605dbf12d443d9ad128327f8b382086b3a817f1114d6c3e85b23538781c37",
+            "bytes": 738
+          }
+        ]
+      },
+      {
+        "name": "yallist",
+        "version": "5.0.0",
+        "license": "BlueOak-1.0.0",
+        "metadata_path": "node_modules/npm/node_modules/yallist/package.json",
+        "metadata_sha256": "ee027d26cc0cfbcdd0f777d36d920f1351439cacdf43383f2a834b06f4ac8541",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/node_modules/yallist/LICENSE.md",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\yallist\\LICENSE.md",
+            "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+            "bytes": 1827
+          }
+        ]
+      },
+      {
+        "name": "npm",
+        "version": "11.19.1",
+        "license": "Artistic-2.0",
+        "metadata_path": "node_modules/npm/package.json",
+        "metadata_sha256": "d5b859b88af16e893fbc2d28819db601a8543b241f8c80459f70898be2777c12",
+        "official_archive_metadata_exact": true,
+        "notices": [
+          {
+            "path": "host/node/node_modules/npm/LICENSE",
+            "source_path": "C:\\Program Files\\nodejs\\node_modules\\npm\\LICENSE",
+            "sha256": "af1573a67c9d9051fbf8a9c123a22b7f51ec58cb6a588b4c23bead776dd046ab",
+            "bytes": 9977
+          }
+        ]
+      }
+    ]
+  },
+  "typescript": [
+    {
+      "name": "typescript",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz",
+      "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+      "metadata_sha256": "3722b30210616a13a3213ded11575ba6b2dbab10c32a5ef67afca8513e27017e",
+      "notices": [
+        {
+          "path": "host/typescript/typescript/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\packages\\host_sdk\\node_modules\\typescript\\LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "path": "host/typescript/typescript/NOTICE.txt",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\packages\\host_sdk\\node_modules\\typescript\\NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+          "bytes": 48860
+        }
+      ]
+    },
+    {
+      "name": "@typescript/typescript-win32-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "resolved": "https://registry.npmjs.org/@typescript/typescript-win32-x64/-/typescript-win32-x64-7.0.2.tgz",
+      "integrity": "sha512-0BQ3HkAHHlKLSp1qRvf3SUhGpGsDuhB/jgFw75guyqbxJqEaS0Cw/VFO8i2nHglJUzQCRtMMR/IBAKE3ETMC4g==",
+      "metadata_sha256": "6d8ec7623880a902bb225c53571112e2bbf0273412b2c534070b1193d2be0f6b",
+      "notices": [
+        {
+          "path": "host/typescript/@typescript/typescript-win32-x64/LICENSE",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\packages\\host_sdk\\node_modules\\@typescript\\typescript-win32-x64\\LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "path": "host/typescript/@typescript/typescript-win32-x64/NOTICE.txt",
+          "source_path": "C:\\Users\\mesh\\Documents\\modular_platform\\packages\\host_sdk\\node_modules\\@typescript\\typescript-win32-x64\\NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+          "bytes": 48860
+        }
+      ]
+    }
+  ],
+  "notice_archive": ".local/g7-host-notices-01/host-notices.zip",
+  "notice_archive_sha256": "7d4b47f1f0d5524968ad2086564fea2cbcb551d12082a2a0630244475f498e46",
+  "files": [
+    {
+      "path": "host/node/LICENSE",
+      "sha256": "ed34dd8e3f0a78dbaf00d0444ce8e285b015b765379c2e17880455f70370f8e9",
+      "bytes": 160555
+    },
+    {
+      "path": "host/node/node_modules/corepack/LICENSE.md",
+      "sha256": "517d52969f11b2b587f2e5116069aea3887ff08251689a198a857a115f250dbf",
+      "bytes": 1070
+    },
+    {
+      "path": "host/node/node_modules/npm/LICENSE",
+      "sha256": "af1573a67c9d9051fbf8a9c123a22b7f51ec58cb6a588b4c23bead776dd046ab",
+      "bytes": 9977
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@gar/promise-retry/LICENSE",
+      "sha256": "774997ec2f9544d18557c0567c46a86e42ccef65d718b5756503bef3bc460097",
+      "bytes": 1176
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@isaacs/fs-minipass/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@isaacs/string-locale-compare/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/arborist/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/config/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/fs/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/git/LICENSE",
+      "sha256": "c7ec219b06de947768be869516c7021648e4d1445a07759e1327922de636ff45",
+      "bytes": 748
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/installed-package-contents/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/map-workspaces/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/metavuln-calculator/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/name-from-folder/LICENSE",
+      "sha256": "91d1e08e62edb2d6d0d291cfa7c5a366df6bc52cf8314d68596642f552adff13",
+      "bytes": 736
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/node-gyp/LICENSE",
+      "sha256": "8efb18bbd2e321a1dc0b411574fa2b577c376e57e319a009b86d2f410f57676e",
+      "bytes": 753
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/package-json/LICENSE",
+      "sha256": "004dc539bb082ec99bc9f764e77a60ca0edb4e681464a73a46f534974ada5c48",
+      "bytes": 737
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/promise-spawn/LICENSE",
+      "sha256": "c7ec219b06de947768be869516c7021648e4d1445a07759e1327922de636ff45",
+      "bytes": 748
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/query/LICENSE",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/redact/LICENSE",
+      "sha256": "4e95371e332c07aca97824564ffe6550a417df5b8a4d1641c06e2d9f3177474e",
+      "bytes": 1081
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/run-script/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/bundle/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/core/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/protobuf-specs/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/sign/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/tuf/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@tufjs/canonical-json/LICENSE",
+      "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+      "bytes": 1109
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@tufjs/models/LICENSE",
+      "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+      "bytes": 1109
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/abbrev/LICENSE",
+      "sha256": "52e0397bbc1859a7891cd601cff0b9433ab9c235ce6b116f8bcf9a17c41a4b94",
+      "bytes": 2057
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/agent-base/LICENSE",
+      "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+      "bytes": 1122
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/aproba/LICENSE",
+      "sha256": "1b94c9898885c681c1e0ebbf96494e49662842f88ac1e4dd8ffad0ac047108ae",
+      "bytes": 766
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/archy/LICENSE",
+      "sha256": "a9ecf3da3825b3e7232f29c970a2869bb1752c900bd75ba7cbabeb69b8f032b4",
+      "bytes": 1091
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/balanced-match/LICENSE.md",
+      "sha256": "562a98e4679fb644862686d948cd3c002aef38db2fd1a34a46a48d294fa57f1c",
+      "bytes": 1178
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/bin-links/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/binary-extensions/license",
+      "sha256": "1e932c8b356239b8a54fe6451a356e4e6e83e11db4976e74bfe80adb3557f20e",
+      "bytes": 1177
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/brace-expansion/LICENSE",
+      "sha256": "00066d466bca492ed42048afc15b035697444dad86a956bbaeada068f8382b87",
+      "bytes": 1167
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cacache/LICENSE.md",
+      "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/chalk/license",
+      "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/chownr/LICENSE.md",
+      "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+      "bytes": 1827
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ci-info/LICENSE",
+      "sha256": "9886ff4a999c5f71e923fcbe508bd109cea8c532afe6b80dfcdc5b13d9f4bb3f",
+      "bytes": 1107
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cidr-regex/LICENSE",
+      "sha256": "73f22b23c0069037f86eae441acd720dfa7c1637e1f91112e9bc1c533352e222",
+      "bytes": 1312
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cmd-shim/LICENSE",
+      "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/common-ancestor-path/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cssesc/LICENSE-MIT.txt",
+      "sha256": "f996f6e050e6fc18086162b4b44e301bba345c87deca83f57a27e6d54195556e",
+      "bytes": 1097
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/debug/LICENSE",
+      "sha256": "b42cd0a02e61c640f8b4132820ba6a3da322d094b32d3b5ef7feefb7099738e3",
+      "bytes": 1159
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/diff/LICENSE",
+      "sha256": "278c03ecada65be046e65cf7091e4378b2749eec2309eeb242650e195864d863",
+      "bytes": 1575
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/env-paths/license",
+      "sha256": "67292c32894c8ac99db06ffa1cb8e9a5171ef988120723ebe673bf76712260ec",
+      "bytes": 1118
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/exponential-backoff/LICENSE",
+      "sha256": "5ebd9035b6813650acaea03024934d8b6fb5f62b2887e29dbd0dfcdb34bee88f",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/fastest-levenshtein/LICENSE.md",
+      "sha256": "37304238fcfbe46a5b6038bd9c0f0a378d9b6b49b76c5012f0a887701fe29de6",
+      "bytes": 1092
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/fs-minipass/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/glob/LICENSE.md",
+      "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+      "bytes": 1827
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/graceful-fs/LICENSE",
+      "sha256": "dc1514d1b920fdea5307f3b3baaae6091918f2c7019343ebba5e4e48b4f510e0",
+      "bytes": 806
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/hosted-git-info/LICENSE",
+      "sha256": "ac8c5bf1568ae996712633646201100150eb805c35ab90a893ba1b54cc575adf",
+      "bytes": 746
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/http-cache-semantics/LICENSE",
+      "sha256": "1fbc6f0d4289ef63086faf6f1d6256969f0919a76262d70465ba06f771132ac8",
+      "bytes": 1283
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/http-proxy-agent/LICENSE",
+      "sha256": "9b23600356d202082aee46de3e9878e9ff66f0b251438a2559cdc8609c930ab7",
+      "bytes": 1124
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/https-proxy-agent/LICENSE",
+      "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+      "bytes": 1122
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/iconv-lite/LICENSE",
+      "sha256": "bae26f6bd2f7c50fc43e7a8afc1507ceccffc77a62133c84565e7874b5289058",
+      "bytes": 1085
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ignore-walk/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ini/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/init-package-json/LICENSE.md",
+      "sha256": "30ae8a003712dae3986756f28f24c0ea8c8f85b233a542f7e9181b2d2af7fe5e",
+      "bytes": 735
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ip-address/LICENSE",
+      "sha256": "40e3d8bff0eba21e2c8a4ca7f7ad3f48c9ffa200de4aa6637d677a7d65514825",
+      "bytes": 1080
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/is-cidr/LICENSE",
+      "sha256": "73f22b23c0069037f86eae441acd720dfa7c1637e1f91112e9bc1c533352e222",
+      "bytes": 1312
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/isexe/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/json-parse-even-better-errors/LICENSE.md",
+      "sha256": "d2de5571e57dbcae5949f369d0d9894bf2ff7c0874d3759628652639b3e8167a",
+      "bytes": 1234
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/json-stringify-nice/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/jsonparse/LICENSE",
+      "sha256": "c8e0305cd798b12d8d759594c69ca58d8d62c2e38448eabaeefa8dfac2480ae4",
+      "bytes": 1111
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/just-diff-apply/LICENSE",
+      "sha256": "c4f5a45599ea54331e65a21df7c3738f8c9b3e688e1913caf47facee9017a439",
+      "bytes": 1099
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/just-diff/LICENSE",
+      "sha256": "c4f5a45599ea54331e65a21df7c3738f8c9b3e688e1913caf47facee9017a439",
+      "bytes": 1099
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmaccess/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmdiff/LICENSE",
+      "sha256": "60aa4cf74af0ae39c694e32cab95606789180da3b79cb584e1b7f310242d6329",
+      "bytes": 756
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmexec/LICENSE",
+      "sha256": "60aa4cf74af0ae39c694e32cab95606789180da3b79cb584e1b7f310242d6329",
+      "bytes": 756
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmfund/LICENSE",
+      "sha256": "ae23f46306824f42c6ab243b232b571bb98d8dfa25c58bf02e1dac2520a4f44a",
+      "bytes": 753
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmorg/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmpack/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmpublish/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmsearch/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmteam/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmversion/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/lru-cache/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/make-fetch-happen/LICENSE",
+      "sha256": "c49d79211841d8fa00e008dcd7d9531baa35804d05f40e011615c28f970d14da",
+      "bytes": 781
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minimatch/LICENSE.md",
+      "sha256": "fd54a96ff95433409fdb1c7957a43a6383184363b4872df9035b36fbb4b68a2e",
+      "bytes": 1605
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-collect/LICENSE",
+      "sha256": "ca2d3d147116e1df566aa0e476273edb77229db7bb5849dd2e9ba2d43089c648",
+      "bytes": 790
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-fetch/LICENSE",
+      "sha256": "4457272cd4dbc8fc4f3502bc7656eda8e5414c2feecff8c9daa22ff73852e949",
+      "bytes": 1336
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-flush/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/LICENSE",
+      "sha256": "04400db77d925de5b0264f6db5b44fe6f8b94f9419ad3473caaa8065c525c0be",
+      "bytes": 802
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/node_modules/yallist/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-sized/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minizlib/LICENSE",
+      "sha256": "cf7f1747f25b023e8f304670601ba231456a7218f70548d9196b6015f1eaf84c",
+      "bytes": 1365
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ms/license.md",
+      "sha256": "7e7740f8b42ce676ef87bcc2d721d62e538c0b7393c4186256ac3ee77ee756fc",
+      "bytes": 1100
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/mute-stream/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/negotiator/LICENSE",
+      "sha256": "afe9200bfd30d914879879f17f10b970a455b049d8916b6bb299ca515ce44994",
+      "bytes": 1201
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/node-gyp/LICENSE",
+      "sha256": "855ae36906c2d355c6ad1b8ee53ebbe81afcdb79a1236f6436e0af3a7f2bc85d",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/nopt/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-audit-report/LICENSE",
+      "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-bundled/LICENSE",
+      "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-install-checks/LICENSE",
+      "sha256": "8cacac5768d7ac631777d647f59ced980bc551fa469ca1b9be5538b6765d835c",
+      "bytes": 1360
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-normalize-package-bin/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-package-arg/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-packlist/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-pick-manifest/LICENSE.md",
+      "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-profile/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-registry-fetch/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-user-validate/LICENSE",
+      "sha256": "c0846374a35a39d265a3f01fa0099d4acac288c03aebfeaf4f68179f6794c3b6",
+      "bytes": 1321
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/p-map/license",
+      "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/pacote/LICENSE",
+      "sha256": "7453dacb5bd21525d4a669d1bc06656030af39000ecbdcda8e5118d36cedc9be",
+      "bytes": 806
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/parse-conflict-json/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/path-scurry/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/postcss-selector-parser/LICENSE-MIT",
+      "sha256": "a562b4aeed0a03767c6ce2da49f1205f09b7d15705b226cf3c32e26d0fb7641b",
+      "bytes": 1114
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/proc-log/LICENSE",
+      "sha256": "a5103404e4615fa1ed46aef13082dd287bf4b95964e71ffdf198984b3d5882b8",
+      "bytes": 757
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/proggy/LICENSE",
+      "sha256": "a5103404e4615fa1ed46aef13082dd287bf4b95964e71ffdf198984b3d5882b8",
+      "bytes": 757
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/promise-all-reject-late/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/promise-call-limit/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/promzard/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/qrcode-terminal/LICENSE",
+      "sha256": "b0c4d64802d2d91b929ad494b484751b472f40ce5abf0aa102277fc16f648ae7",
+      "bytes": 12184
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/read-cmd-shim/LICENSE",
+      "sha256": "1b94c9898885c681c1e0ebbf96494e49662842f88ac1e4dd8ffad0ac047108ae",
+      "bytes": 766
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/read/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/safer-buffer/LICENSE",
+      "sha256": "e15582df774daf2392ca0c9248b08d5bb0522c875699de6c062f8be2fdc3e919",
+      "bytes": 1115
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/semver/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/signal-exit/LICENSE.txt",
+      "sha256": "a71b19749ebde7c65ee97c76dbb6a0287f09880e019fa554b04364c48aa15794",
+      "bytes": 806
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/sigstore/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/smart-buffer/LICENSE",
+      "sha256": "41f40a85a2ba5eb382752c6d235497ffc70445044866b62cf15995cc2c143409",
+      "bytes": 1107
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/socks-proxy-agent/LICENSE",
+      "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+      "bytes": 1122
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/socks/LICENSE",
+      "sha256": "03fadbf0195740caca88c2de89aedc0f24c727e0a3f39decea4d0dc4f87aeff6",
+      "bytes": 1102
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/spdx-expression-parse/LICENSE",
+      "sha256": "9874348297d23c486dfb13b9df158f3fe2f57153ddfd0513507d22f0438ea204",
+      "bytes": 1133
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ssri/LICENSE.md",
+      "sha256": "030c94ef243985fac9d59646ff042e58a73a090bdc6f5991786819a4261290ef",
+      "bytes": 776
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/supports-color/license",
+      "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tar/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/text-table/LICENSE",
+      "sha256": "a9ecf3da3825b3e7232f29c970a2869bb1752c900bd75ba7cbabeb69b8f032b4",
+      "bytes": 1091
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tiny-relative-date/LICENSE.md",
+      "sha256": "a487062cbc5f9c5197614c3782b13f9049bd7321d8fe4d5e08283edac48fa199",
+      "bytes": 1089
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tinyglobby/LICENSE",
+      "sha256": "885542bb1f08221d2c8a4075df7bbe4453bdeab11815b4d5281595435919d012",
+      "bytes": 1097
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tinyglobby/node_modules/fdir/LICENSE",
+      "sha256": "dd9d2fde1db2a559d7f534313f4754ba7c322dec0d39e584a2d1b41f0e976c2e",
+      "bytes": 1060
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tinyglobby/node_modules/picomatch/LICENSE",
+      "sha256": "060522635e5e0d1bdcbea583064dd47afbf52af9607b6e0e463087b9a06876b8",
+      "bytes": 1112
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/treeverse/LICENSE",
+      "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tuf-js/LICENSE",
+      "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+      "bytes": 1109
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/undici/LICENSE",
+      "sha256": "5dc815ee169aecfdfa69b4c4c98745160d80a29d94cb08450a4d83cad11ebea5",
+      "bytes": 1111
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/util-deprecate/LICENSE",
+      "sha256": "140afde889594d07da403cf87c73ecfd55e1b8870fff358fa86f475dc3acde7a",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/validate-npm-package-name/LICENSE",
+      "sha256": "218f573aa405a239f1265a3f7b80d8296739b87d2158c56568e6df1153ace95b",
+      "bytes": 734
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/walk-up-path/LICENSE",
+      "sha256": "56aae31e19b0fdb567348896d26f7a76b0ee89e8755a9988d445429dd04a6e5f",
+      "bytes": 773
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/which/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/write-file-atomic/LICENSE.md",
+      "sha256": "009605dbf12d443d9ad128327f8b382086b3a817f1114d6c3e85b23538781c37",
+      "bytes": 738
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/yallist/LICENSE.md",
+      "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+      "bytes": 1827
+    },
+    {
+      "path": "host/operator-python/attrs-26.1.0.dist-info/licenses/LICENSE",
+      "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f",
+      "bytes": 1109
+    },
+    {
+      "path": "host/operator-python/cffi-2.1.1.dist-info/licenses/LICENSE",
+      "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63",
+      "bytes": 1123
+    },
+    {
+      "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE",
+      "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+      "bytes": 197
+    },
+    {
+      "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE.APACHE",
+      "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+      "bytes": 11360
+    },
+    {
+      "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE.BSD",
+      "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb",
+      "bytes": 1532
+    },
+    {
+      "path": "host/operator-python/jsonschema-4.26.0.dist-info/licenses/COPYING",
+      "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439",
+      "bytes": 1057
+    },
+    {
+      "path": "host/operator-python/jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+      "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+      "bytes": 1057
+    },
+    {
+      "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    },
+    {
+      "path": "host/operator-python/pycparser-3.12.dist-info/licenses/LICENSE",
+      "sha256": "0a9e78156ae8b96caf1b4f11ac2df424b83de29736f9e757630548a6272fdf90",
+      "bytes": 1543
+    },
+    {
+      "path": "host/operator-python/pyjwt-2.15.1.dist-info/licenses/LICENSE",
+      "sha256": "797a7a20231d4c433e9f1911db1731d06b5828b98f499819a034f7c0f56f5ce5",
+      "bytes": 1085
+    },
+    {
+      "path": "host/operator-python/referencing-0.37.0.dist-info/licenses/COPYING",
+      "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+      "bytes": 1057
+    },
+    {
+      "path": "host/operator-python/resolvelib-1.2.1.dist-info/licenses/LICENSE",
+      "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+      "bytes": 751
+    },
+    {
+      "path": "host/operator-python/rfc8785-0.1.4.dist-info/LICENSE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/operator-python/rpds_py-2026.9.1.dist-info/licenses/LICENSE",
+      "sha256": "8bcb72c82ea8ae74802293c41d93ad7d51434001b0ae45a603a5af0f507aee0a",
+      "bytes": 1076
+    },
+    {
+      "path": "host/operator-python/typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "bytes": 13936
+    },
+    {
+      "path": "host/python-base/LICENSE.txt",
+      "sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a",
+      "bytes": 25066
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/LICENSE.txt",
+      "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+      "bytes": 1093
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+      "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+      "bytes": 558
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+      "bytes": 989
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+      "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+      "bytes": 14531
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+      "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+      "bytes": 11325
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+      "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+      "bytes": 1541
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+      "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+      "bytes": 614
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+      "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+      "bytes": 1023
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+      "bytes": 1089
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+      "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+      "bytes": 1331
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+      "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+      "bytes": 1081
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "bytes": 10142
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+      "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+      "bytes": 751
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+      "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+      "bytes": 1056
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+      "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+      "bytes": 1086
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+      "bytes": 1093
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/cachecontrol/LICENSE.txt",
+      "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+      "bytes": 558
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/certifi/LICENSE",
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+      "bytes": 989
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/distlib/LICENSE.txt",
+      "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+      "bytes": 14531
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/distro/LICENSE",
+      "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+      "bytes": 11325
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/idna/LICENSE.md",
+      "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+      "bytes": 1541
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/msgpack/COPYING",
+      "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+      "bytes": 614
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/pkg_resources/LICENSE",
+      "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+      "bytes": 1023
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/platformdirs/LICENSE",
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+      "bytes": 1089
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/pygments/LICENSE",
+      "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+      "bytes": 1331
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/pyproject_hooks/LICENSE",
+      "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+      "bytes": 1081
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/requests/LICENSE",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "bytes": 10142
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/resolvelib/LICENSE",
+      "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+      "bytes": 751
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/rich/LICENSE",
+      "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+      "bytes": 1056
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/tomli/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/tomli_w/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/truststore/LICENSE",
+      "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+      "bytes": 1086
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/urllib3/LICENSE.txt",
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+      "bytes": 1093
+    },
+    {
+      "path": "host/python-base/tcl/tk8.6/demos/license.terms",
+      "sha256": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5",
+      "bytes": 2307
+    },
+    {
+      "path": "host/python-base/tcl/tk8.6/license.terms",
+      "sha256": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5",
+      "bytes": 2307
+    },
+    {
+      "path": "host/typescript/@typescript/typescript-win32-x64/LICENSE",
+      "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+      "bytes": 9197
+    },
+    {
+      "path": "host/typescript/@typescript/typescript-win32-x64/NOTICE.txt",
+      "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+      "bytes": 48860
+    },
+    {
+      "path": "host/typescript/typescript/LICENSE",
+      "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+      "bytes": 9197
+    },
+    {
+      "path": "host/typescript/typescript/NOTICE.txt",
+      "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+      "bytes": 48860
+    }
+  ],
+  "toolchain_lock_sha256": "49833bd414be09c7caf4824658c8fb9fc93ac97c4a4b6b8c6ccb335ce30826aa",
+  "global_toolchain_or_runtime_mutations": 0,
+  "limits": [
+    "Actual installed notice bytes and Node binary/metadata archive binding; no global install/update or execution of downloaded code.",
+    "Base bootstrap pip is separately inventoried and not on the selected isolated operator path.",
+    "Npm bundled package notice gaps, host/native vendor coverage and dated vulnerability dispositions require explicit review; not full OPS03/G7."
+  ]
+}

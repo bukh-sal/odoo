@@ -1,0 +1,1216 @@
+{
+  "result": "passed_selected_host_notice_preservation_and_official_Node_binding",
+  "Python": "3.12.16",
+  "isolated_operator_distributions": 13,
+  "base_interpreter_notices": 44,
+  "base_bootstrap_pip_not_in_selected_operator": true,
+  "Node": "24.22.1",
+  "npm": "11.19.1",
+  "Node_installed_binary_and145bundled_manifests_official_archive_exact": true,
+  "all_furnished_Node_bundled_notice_bytes_official_archive_exact": true,
+  "typescript_packages": 2,
+  "npm_supplement_dispositions": [
+    {
+      "name": "@npmcli/agent",
+      "version": "4.0.2",
+      "license": "ISC",
+      "source_commit": "db7852869c74ceb8985d7c36b291a2e7a866741c",
+      "notices": [
+        {
+          "path": "host/npm-supplements/npmcli--agent/README.md",
+          "sha256": "838746c5f90e2560312ec35c4a83928027d94fe5bcdf8a80451eb9d73ed95ebe",
+          "bytes": 1958,
+          "url": "https://raw.githubusercontent.com/npm/agent/db7852869c74ceb8985d7c36b291a2e7a866741c/README.md"
+        }
+      ],
+      "publisher_metadata": "host/npm-supplements/npmcli--agent/registry-metadata.json",
+      "disposition": "furnished_README_and_registry_source_license_declaration_preserved_no_standalone_license",
+      "missing_permission_or_copyright_statement_invented": false
+    },
+    {
+      "name": "@sigstore/verify",
+      "version": "3.1.1",
+      "license": "Apache-2.0",
+      "source_commit": "c1dc7d4778a450787fc72b083f2490ad02b714c6",
+      "notices": [
+        {
+          "path": "host/npm-supplements/sigstore--verify/LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351,
+          "url": "https://raw.githubusercontent.com/sigstore/sigstore-js/c1dc7d4778a450787fc72b083f2490ad02b714c6/LICENSE"
+        },
+        {
+          "path": "host/npm-supplements/sigstore--verify/README.md",
+          "sha256": "ff537afd5996cb67a319d6b0d3e65a330480068398a90bd81ea823a0566512c8",
+          "bytes": 2813,
+          "url": "https://raw.githubusercontent.com/sigstore/sigstore-js/c1dc7d4778a450787fc72b083f2490ad02b714c6/README.md"
+        }
+      ],
+      "publisher_metadata": "host/npm-supplements/sigstore--verify/registry-metadata.json",
+      "disposition": "source_root_license_and_attribution_preserved",
+      "missing_permission_or_copyright_statement_invented": false
+    },
+    {
+      "name": "spdx-exceptions",
+      "version": "2.5.0",
+      "license": "CC-BY-3.0",
+      "source_commit": "3aa64bec339abc6a3eca00c3436aaa7e154b8799",
+      "notices": [
+        {
+          "path": "host/npm-supplements/spdx-exceptions/README.md",
+          "sha256": "554b19eee11d2964e9f7b244e47944c08d52ca75539260a04f3227e6c0144513",
+          "bytes": 1243,
+          "url": "https://raw.githubusercontent.com/kemitchell/spdx-exceptions.json/3aa64bec339abc6a3eca00c3436aaa7e154b8799/README.md"
+        }
+      ],
+      "publisher_metadata": "host/npm-supplements/spdx-exceptions/registry-metadata.json",
+      "disposition": "furnished_README_and_registry_source_license_declaration_preserved_no_standalone_license",
+      "missing_permission_or_copyright_statement_invented": false
+    },
+    {
+      "name": "spdx-license-ids",
+      "version": "3.0.23",
+      "license": "CC0-1.0",
+      "source_commit": "a2a975daf48bbc2afdc8e7c304405b44c656fd53",
+      "notices": [
+        {
+          "path": "host/npm-supplements/spdx-license-ids/README.md",
+          "sha256": "b4807793db6058c819f76c023362b7d522b3d19c9b41563fcc01c2b2c5b1ccd3",
+          "bytes": 1394,
+          "url": "https://raw.githubusercontent.com/jslicense/spdx-license-ids/a2a975daf48bbc2afdc8e7c304405b44c656fd53/README.md"
+        }
+      ],
+      "publisher_metadata": "host/npm-supplements/spdx-license-ids/registry-metadata.json",
+      "disposition": "furnished_README_and_registry_source_license_declaration_preserved_no_standalone_license",
+      "missing_permission_or_copyright_statement_invented": false
+    }
+  ],
+  "version_specific_reference_terms": [
+    {
+      "identifier": "CC-BY-3.0",
+      "canonical_url": "https://creativecommons.org/licenses/by/3.0/legalcode.txt",
+      "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC-BY-3.0.txt",
+      "source_commit": "31846481de7ea17d92f2f46fad76abe58b2e9bb0",
+      "path": "host/npm-supplements/reference-terms/CC-BY-3.0.txt",
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+      "bytes": 19467,
+      "canonical_fetch_limitation": "Python HTTPS fetch403; canonical text verified through web source, exact companion text preserved from official SPDX data at pinned commit"
+    },
+    {
+      "identifier": "CC0-1.0",
+      "canonical_url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt",
+      "source_commit": "31846481de7ea17d92f2f46fad76abe58b2e9bb0",
+      "path": "host/npm-supplements/reference-terms/CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048,
+      "canonical_fetch_limitation": "Python HTTPS fetch403; canonical text verified through web source, exact companion text preserved from official SPDX data at pinned commit"
+    }
+  ],
+  "notice_files": 218,
+  "files": [
+    {
+      "path": "host/node/LICENSE",
+      "sha256": "ed34dd8e3f0a78dbaf00d0444ce8e285b015b765379c2e17880455f70370f8e9",
+      "bytes": 160555
+    },
+    {
+      "path": "host/node/node_modules/corepack/LICENSE.md",
+      "sha256": "517d52969f11b2b587f2e5116069aea3887ff08251689a198a857a115f250dbf",
+      "bytes": 1070
+    },
+    {
+      "path": "host/node/node_modules/npm/LICENSE",
+      "sha256": "af1573a67c9d9051fbf8a9c123a22b7f51ec58cb6a588b4c23bead776dd046ab",
+      "bytes": 9977
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@gar/promise-retry/LICENSE",
+      "sha256": "774997ec2f9544d18557c0567c46a86e42ccef65d718b5756503bef3bc460097",
+      "bytes": 1176
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@isaacs/fs-minipass/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@isaacs/string-locale-compare/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/arborist/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/config/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/fs/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/git/LICENSE",
+      "sha256": "c7ec219b06de947768be869516c7021648e4d1445a07759e1327922de636ff45",
+      "bytes": 748
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/installed-package-contents/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/map-workspaces/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/metavuln-calculator/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/name-from-folder/LICENSE",
+      "sha256": "91d1e08e62edb2d6d0d291cfa7c5a366df6bc52cf8314d68596642f552adff13",
+      "bytes": 736
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/node-gyp/LICENSE",
+      "sha256": "8efb18bbd2e321a1dc0b411574fa2b577c376e57e319a009b86d2f410f57676e",
+      "bytes": 753
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/package-json/LICENSE",
+      "sha256": "004dc539bb082ec99bc9f764e77a60ca0edb4e681464a73a46f534974ada5c48",
+      "bytes": 737
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/promise-spawn/LICENSE",
+      "sha256": "c7ec219b06de947768be869516c7021648e4d1445a07759e1327922de636ff45",
+      "bytes": 748
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/query/LICENSE",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/redact/LICENSE",
+      "sha256": "4e95371e332c07aca97824564ffe6550a417df5b8a4d1641c06e2d9f3177474e",
+      "bytes": 1081
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@npmcli/run-script/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/bundle/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/core/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/protobuf-specs/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/sign/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@sigstore/tuf/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@tufjs/canonical-json/LICENSE",
+      "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+      "bytes": 1109
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/@tufjs/models/LICENSE",
+      "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+      "bytes": 1109
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/abbrev/LICENSE",
+      "sha256": "52e0397bbc1859a7891cd601cff0b9433ab9c235ce6b116f8bcf9a17c41a4b94",
+      "bytes": 2057
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/agent-base/LICENSE",
+      "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+      "bytes": 1122
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/aproba/LICENSE",
+      "sha256": "1b94c9898885c681c1e0ebbf96494e49662842f88ac1e4dd8ffad0ac047108ae",
+      "bytes": 766
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/archy/LICENSE",
+      "sha256": "a9ecf3da3825b3e7232f29c970a2869bb1752c900bd75ba7cbabeb69b8f032b4",
+      "bytes": 1091
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/balanced-match/LICENSE.md",
+      "sha256": "562a98e4679fb644862686d948cd3c002aef38db2fd1a34a46a48d294fa57f1c",
+      "bytes": 1178
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/bin-links/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/binary-extensions/license",
+      "sha256": "1e932c8b356239b8a54fe6451a356e4e6e83e11db4976e74bfe80adb3557f20e",
+      "bytes": 1177
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/brace-expansion/LICENSE",
+      "sha256": "00066d466bca492ed42048afc15b035697444dad86a956bbaeada068f8382b87",
+      "bytes": 1167
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cacache/LICENSE.md",
+      "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/chalk/license",
+      "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/chownr/LICENSE.md",
+      "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+      "bytes": 1827
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ci-info/LICENSE",
+      "sha256": "9886ff4a999c5f71e923fcbe508bd109cea8c532afe6b80dfcdc5b13d9f4bb3f",
+      "bytes": 1107
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cidr-regex/LICENSE",
+      "sha256": "73f22b23c0069037f86eae441acd720dfa7c1637e1f91112e9bc1c533352e222",
+      "bytes": 1312
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cmd-shim/LICENSE",
+      "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/common-ancestor-path/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/cssesc/LICENSE-MIT.txt",
+      "sha256": "f996f6e050e6fc18086162b4b44e301bba345c87deca83f57a27e6d54195556e",
+      "bytes": 1097
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/debug/LICENSE",
+      "sha256": "b42cd0a02e61c640f8b4132820ba6a3da322d094b32d3b5ef7feefb7099738e3",
+      "bytes": 1159
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/diff/LICENSE",
+      "sha256": "278c03ecada65be046e65cf7091e4378b2749eec2309eeb242650e195864d863",
+      "bytes": 1575
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/env-paths/license",
+      "sha256": "67292c32894c8ac99db06ffa1cb8e9a5171ef988120723ebe673bf76712260ec",
+      "bytes": 1118
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/exponential-backoff/LICENSE",
+      "sha256": "5ebd9035b6813650acaea03024934d8b6fb5f62b2887e29dbd0dfcdb34bee88f",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/fastest-levenshtein/LICENSE.md",
+      "sha256": "37304238fcfbe46a5b6038bd9c0f0a378d9b6b49b76c5012f0a887701fe29de6",
+      "bytes": 1092
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/fs-minipass/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/glob/LICENSE.md",
+      "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+      "bytes": 1827
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/graceful-fs/LICENSE",
+      "sha256": "dc1514d1b920fdea5307f3b3baaae6091918f2c7019343ebba5e4e48b4f510e0",
+      "bytes": 806
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/hosted-git-info/LICENSE",
+      "sha256": "ac8c5bf1568ae996712633646201100150eb805c35ab90a893ba1b54cc575adf",
+      "bytes": 746
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/http-cache-semantics/LICENSE",
+      "sha256": "1fbc6f0d4289ef63086faf6f1d6256969f0919a76262d70465ba06f771132ac8",
+      "bytes": 1283
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/http-proxy-agent/LICENSE",
+      "sha256": "9b23600356d202082aee46de3e9878e9ff66f0b251438a2559cdc8609c930ab7",
+      "bytes": 1124
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/https-proxy-agent/LICENSE",
+      "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+      "bytes": 1122
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/iconv-lite/LICENSE",
+      "sha256": "bae26f6bd2f7c50fc43e7a8afc1507ceccffc77a62133c84565e7874b5289058",
+      "bytes": 1085
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ignore-walk/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ini/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/init-package-json/LICENSE.md",
+      "sha256": "30ae8a003712dae3986756f28f24c0ea8c8f85b233a542f7e9181b2d2af7fe5e",
+      "bytes": 735
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ip-address/LICENSE",
+      "sha256": "40e3d8bff0eba21e2c8a4ca7f7ad3f48c9ffa200de4aa6637d677a7d65514825",
+      "bytes": 1080
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/is-cidr/LICENSE",
+      "sha256": "73f22b23c0069037f86eae441acd720dfa7c1637e1f91112e9bc1c533352e222",
+      "bytes": 1312
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/isexe/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/json-parse-even-better-errors/LICENSE.md",
+      "sha256": "d2de5571e57dbcae5949f369d0d9894bf2ff7c0874d3759628652639b3e8167a",
+      "bytes": 1234
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/json-stringify-nice/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/jsonparse/LICENSE",
+      "sha256": "c8e0305cd798b12d8d759594c69ca58d8d62c2e38448eabaeefa8dfac2480ae4",
+      "bytes": 1111
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/just-diff-apply/LICENSE",
+      "sha256": "c4f5a45599ea54331e65a21df7c3738f8c9b3e688e1913caf47facee9017a439",
+      "bytes": 1099
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/just-diff/LICENSE",
+      "sha256": "c4f5a45599ea54331e65a21df7c3738f8c9b3e688e1913caf47facee9017a439",
+      "bytes": 1099
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmaccess/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmdiff/LICENSE",
+      "sha256": "60aa4cf74af0ae39c694e32cab95606789180da3b79cb584e1b7f310242d6329",
+      "bytes": 756
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmexec/LICENSE",
+      "sha256": "60aa4cf74af0ae39c694e32cab95606789180da3b79cb584e1b7f310242d6329",
+      "bytes": 756
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmfund/LICENSE",
+      "sha256": "ae23f46306824f42c6ab243b232b571bb98d8dfa25c58bf02e1dac2520a4f44a",
+      "bytes": 753
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmorg/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmpack/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmpublish/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmsearch/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmteam/LICENSE",
+      "sha256": "2ef361317adeda98117f14c5110182c28eae233af1f7050c83d4396961d14013",
+      "bytes": 730
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/libnpmversion/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/lru-cache/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/make-fetch-happen/LICENSE",
+      "sha256": "c49d79211841d8fa00e008dcd7d9531baa35804d05f40e011615c28f970d14da",
+      "bytes": 781
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minimatch/LICENSE.md",
+      "sha256": "fd54a96ff95433409fdb1c7957a43a6383184363b4872df9035b36fbb4b68a2e",
+      "bytes": 1605
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-collect/LICENSE",
+      "sha256": "ca2d3d147116e1df566aa0e476273edb77229db7bb5849dd2e9ba2d43089c648",
+      "bytes": 790
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-fetch/LICENSE",
+      "sha256": "4457272cd4dbc8fc4f3502bc7656eda8e5414c2feecff8c9daa22ff73852e949",
+      "bytes": 1336
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-flush/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/LICENSE",
+      "sha256": "04400db77d925de5b0264f6db5b44fe6f8b94f9419ad3473caaa8065c525c0be",
+      "bytes": 802
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-pipeline/node_modules/yallist/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass-sized/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minipass/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/minizlib/LICENSE",
+      "sha256": "cf7f1747f25b023e8f304670601ba231456a7218f70548d9196b6015f1eaf84c",
+      "bytes": 1365
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ms/license.md",
+      "sha256": "7e7740f8b42ce676ef87bcc2d721d62e538c0b7393c4186256ac3ee77ee756fc",
+      "bytes": 1100
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/mute-stream/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/negotiator/LICENSE",
+      "sha256": "afe9200bfd30d914879879f17f10b970a455b049d8916b6bb299ca515ce44994",
+      "bytes": 1201
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/node-gyp/LICENSE",
+      "sha256": "855ae36906c2d355c6ad1b8ee53ebbe81afcdb79a1236f6436e0af3a7f2bc85d",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/nopt/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-audit-report/LICENSE",
+      "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-bundled/LICENSE",
+      "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-install-checks/LICENSE",
+      "sha256": "8cacac5768d7ac631777d647f59ced980bc551fa469ca1b9be5538b6765d835c",
+      "bytes": 1360
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-normalize-package-bin/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-package-arg/LICENSE",
+      "sha256": "45e433413760dc3ae8169be5ed9c2c77adc31ad4d1bc5a28939576df240f29a0",
+      "bytes": 754
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-packlist/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-pick-manifest/LICENSE.md",
+      "sha256": "b49c8d25a8b57fa92b2902d09c4b8a809157ee32fc10d17b7dbb43c4a8038f79",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-profile/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-registry-fetch/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/npm-user-validate/LICENSE",
+      "sha256": "c0846374a35a39d265a3f01fa0099d4acac288c03aebfeaf4f68179f6794c3b6",
+      "bytes": 1321
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/p-map/license",
+      "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/pacote/LICENSE",
+      "sha256": "7453dacb5bd21525d4a669d1bc06656030af39000ecbdcda8e5118d36cedc9be",
+      "bytes": 806
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/parse-conflict-json/LICENSE.md",
+      "sha256": "733dcbf5b1c95dc765b76db969b998ce0cbb26f01be2e55e7bccd6c7af29cb04",
+      "bytes": 818
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/path-scurry/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/postcss-selector-parser/LICENSE-MIT",
+      "sha256": "a562b4aeed0a03767c6ce2da49f1205f09b7d15705b226cf3c32e26d0fb7641b",
+      "bytes": 1114
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/proc-log/LICENSE",
+      "sha256": "a5103404e4615fa1ed46aef13082dd287bf4b95964e71ffdf198984b3d5882b8",
+      "bytes": 757
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/proggy/LICENSE",
+      "sha256": "a5103404e4615fa1ed46aef13082dd287bf4b95964e71ffdf198984b3d5882b8",
+      "bytes": 757
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/promise-all-reject-late/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/promise-call-limit/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/promzard/LICENSE",
+      "sha256": "1fccd0ad2e7e0e31ddfadeaf0660d7318947b425324645aa85afd7227cab52d7",
+      "bytes": 763
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/qrcode-terminal/LICENSE",
+      "sha256": "b0c4d64802d2d91b929ad494b484751b472f40ce5abf0aa102277fc16f648ae7",
+      "bytes": 12184
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/read-cmd-shim/LICENSE",
+      "sha256": "1b94c9898885c681c1e0ebbf96494e49662842f88ac1e4dd8ffad0ac047108ae",
+      "bytes": 766
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/read/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/safer-buffer/LICENSE",
+      "sha256": "e15582df774daf2392ca0c9248b08d5bb0522c875699de6c062f8be2fdc3e919",
+      "bytes": 1115
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/semver/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/signal-exit/LICENSE.txt",
+      "sha256": "a71b19749ebde7c65ee97c76dbb6a0287f09880e019fa554b04364c48aa15794",
+      "bytes": 806
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/sigstore/LICENSE",
+      "sha256": "7b0ce3425a26fdba501cb13508af096ade77e4036dd2bd8849031ddecf64f7c9",
+      "bytes": 11553
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/smart-buffer/LICENSE",
+      "sha256": "41f40a85a2ba5eb382752c6d235497ffc70445044866b62cf15995cc2c143409",
+      "bytes": 1107
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/socks-proxy-agent/LICENSE",
+      "sha256": "22427a9ca2a0ff9c27dde9e26fe6e940529aee030b342a70b435366af0fcc51b",
+      "bytes": 1122
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/socks/LICENSE",
+      "sha256": "03fadbf0195740caca88c2de89aedc0f24c727e0a3f39decea4d0dc4f87aeff6",
+      "bytes": 1102
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/spdx-expression-parse/LICENSE",
+      "sha256": "9874348297d23c486dfb13b9df158f3fe2f57153ddfd0513507d22f0438ea204",
+      "bytes": 1133
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/ssri/LICENSE.md",
+      "sha256": "030c94ef243985fac9d59646ff042e58a73a090bdc6f5991786819a4261290ef",
+      "bytes": 776
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/supports-color/license",
+      "sha256": "fcf1a18be2e25ba82acf2c59821b030d8ee764e4e201db6ef3c51900d385515f",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tar/LICENSE.md",
+      "sha256": "865576de51d520f97c8869b9b9f96caf8efd69b82bb6e575fc00b0964dc7a3ca",
+      "bytes": 1607
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/text-table/LICENSE",
+      "sha256": "a9ecf3da3825b3e7232f29c970a2869bb1752c900bd75ba7cbabeb69b8f032b4",
+      "bytes": 1091
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tiny-relative-date/LICENSE.md",
+      "sha256": "a487062cbc5f9c5197614c3782b13f9049bd7321d8fe4d5e08283edac48fa199",
+      "bytes": 1089
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tinyglobby/LICENSE",
+      "sha256": "885542bb1f08221d2c8a4075df7bbe4453bdeab11815b4d5281595435919d012",
+      "bytes": 1097
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tinyglobby/node_modules/fdir/LICENSE",
+      "sha256": "dd9d2fde1db2a559d7f534313f4754ba7c322dec0d39e584a2d1b41f0e976c2e",
+      "bytes": 1060
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tinyglobby/node_modules/picomatch/LICENSE",
+      "sha256": "060522635e5e0d1bdcbea583064dd47afbf52af9607b6e0e463087b9a06876b8",
+      "bytes": 1112
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/treeverse/LICENSE",
+      "sha256": "24b8d53712087b867030d18f2bd6d1a72c78f9fb4dee0ce025374da25e4443b9",
+      "bytes": 771
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/tuf-js/LICENSE",
+      "sha256": "6ba2fb4cc004819b1d872168a7ba6ac4a5a07400366680750321058fe21dd36b",
+      "bytes": 1109
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/undici/LICENSE",
+      "sha256": "5dc815ee169aecfdfa69b4c4c98745160d80a29d94cb08450a4d83cad11ebea5",
+      "bytes": 1111
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/util-deprecate/LICENSE",
+      "sha256": "140afde889594d07da403cf87c73ecfd55e1b8870fff358fa86f475dc3acde7a",
+      "bytes": 1126
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/validate-npm-package-name/LICENSE",
+      "sha256": "218f573aa405a239f1265a3f7b80d8296739b87d2158c56568e6df1153ace95b",
+      "bytes": 734
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/walk-up-path/LICENSE",
+      "sha256": "56aae31e19b0fdb567348896d26f7a76b0ee89e8755a9988d445429dd04a6e5f",
+      "bytes": 773
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/which/LICENSE",
+      "sha256": "3f24d692d165989cd9a00fe35ca15a2bc6859e3361fa42aa20babd435f2e4706",
+      "bytes": 780
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/write-file-atomic/LICENSE.md",
+      "sha256": "009605dbf12d443d9ad128327f8b382086b3a817f1114d6c3e85b23538781c37",
+      "bytes": 738
+    },
+    {
+      "path": "host/node/node_modules/npm/node_modules/yallist/LICENSE.md",
+      "sha256": "a638a0768dbec922fd821d0b6cce6275231c4b57cfcddf584defce530fbfbbf5",
+      "bytes": 1827
+    },
+    {
+      "path": "host/npm-supplements/npmcli--agent/README.md",
+      "sha256": "838746c5f90e2560312ec35c4a83928027d94fe5bcdf8a80451eb9d73ed95ebe",
+      "bytes": 1958
+    },
+    {
+      "path": "host/npm-supplements/npmcli--agent/registry-metadata.json",
+      "sha256": "90cefd98869a94ef76706acbb011162ca2171f1a5454053ea48dc080bcb3c42c",
+      "bytes": 2573
+    },
+    {
+      "path": "host/npm-supplements/reference-terms/CC-BY-3.0.txt",
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+      "bytes": 19467
+    },
+    {
+      "path": "host/npm-supplements/reference-terms/CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048
+    },
+    {
+      "path": "host/npm-supplements/sigstore--verify/LICENSE",
+      "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+      "bytes": 11351
+    },
+    {
+      "path": "host/npm-supplements/sigstore--verify/README.md",
+      "sha256": "ff537afd5996cb67a319d6b0d3e65a330480068398a90bd81ea823a0566512c8",
+      "bytes": 2813
+    },
+    {
+      "path": "host/npm-supplements/sigstore--verify/registry-metadata.json",
+      "sha256": "7cead1cde06711831659064e65f873652590c787a6239baed755b5bba04323e9",
+      "bytes": 1887
+    },
+    {
+      "path": "host/npm-supplements/spdx-exceptions/README.md",
+      "sha256": "554b19eee11d2964e9f7b244e47944c08d52ca75539260a04f3227e6c0144513",
+      "bytes": 1243
+    },
+    {
+      "path": "host/npm-supplements/spdx-exceptions/registry-metadata.json",
+      "sha256": "1b2795b394da9b14d39f328441e9be1c099c32d9833bd2ddf9234ecc7c68db08",
+      "bytes": 1478
+    },
+    {
+      "path": "host/npm-supplements/spdx-license-ids/README.md",
+      "sha256": "b4807793db6058c819f76c023362b7d522b3d19c9b41563fcc01c2b2c5b1ccd3",
+      "bytes": 1394
+    },
+    {
+      "path": "host/npm-supplements/spdx-license-ids/registry-metadata.json",
+      "sha256": "46a25a08a8d24098579f0cd3dc9962a22d8ccf314379d385208722bb4c5110cb",
+      "bytes": 1596
+    },
+    {
+      "path": "host/operator-python/attrs-26.1.0.dist-info/licenses/LICENSE",
+      "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f",
+      "bytes": 1109
+    },
+    {
+      "path": "host/operator-python/cffi-2.1.1.dist-info/licenses/LICENSE",
+      "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63",
+      "bytes": 1123
+    },
+    {
+      "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE",
+      "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+      "bytes": 197
+    },
+    {
+      "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE.APACHE",
+      "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+      "bytes": 11360
+    },
+    {
+      "path": "host/operator-python/cryptography-50.0.2.dist-info/licenses/LICENSE.BSD",
+      "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb",
+      "bytes": 1532
+    },
+    {
+      "path": "host/operator-python/jsonschema-4.26.0.dist-info/licenses/COPYING",
+      "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439",
+      "bytes": 1057
+    },
+    {
+      "path": "host/operator-python/jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING",
+      "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+      "bytes": 1057
+    },
+    {
+      "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/operator-python/packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    },
+    {
+      "path": "host/operator-python/pycparser-3.12.dist-info/licenses/LICENSE",
+      "sha256": "0a9e78156ae8b96caf1b4f11ac2df424b83de29736f9e757630548a6272fdf90",
+      "bytes": 1543
+    },
+    {
+      "path": "host/operator-python/pyjwt-2.15.1.dist-info/licenses/LICENSE",
+      "sha256": "797a7a20231d4c433e9f1911db1731d06b5828b98f499819a034f7c0f56f5ce5",
+      "bytes": 1085
+    },
+    {
+      "path": "host/operator-python/referencing-0.37.0.dist-info/licenses/COPYING",
+      "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c",
+      "bytes": 1057
+    },
+    {
+      "path": "host/operator-python/resolvelib-1.2.1.dist-info/licenses/LICENSE",
+      "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+      "bytes": 751
+    },
+    {
+      "path": "host/operator-python/rfc8785-0.1.4.dist-info/LICENSE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/operator-python/rpds_py-2026.9.1.dist-info/licenses/LICENSE",
+      "sha256": "8bcb72c82ea8ae74802293c41d93ad7d51434001b0ae45a603a5af0f507aee0a",
+      "bytes": 1076
+    },
+    {
+      "path": "host/operator-python/typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "bytes": 13936
+    },
+    {
+      "path": "host/python-base/LICENSE.txt",
+      "sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a",
+      "bytes": 25066
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/LICENSE.txt",
+      "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+      "bytes": 1093
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+      "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+      "bytes": 558
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+      "bytes": 989
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+      "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+      "bytes": 14531
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+      "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+      "bytes": 11325
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+      "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+      "bytes": 1541
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+      "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+      "bytes": 614
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+      "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+      "bytes": 1023
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+      "bytes": 1089
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+      "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+      "bytes": 1331
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+      "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+      "bytes": 1081
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "bytes": 10142
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+      "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+      "bytes": 751
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+      "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+      "bytes": 1056
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+      "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+      "bytes": 1086
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+      "bytes": 1093
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/cachecontrol/LICENSE.txt",
+      "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+      "bytes": 558
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/certifi/LICENSE",
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+      "bytes": 989
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/distlib/LICENSE.txt",
+      "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+      "bytes": 14531
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/distro/LICENSE",
+      "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+      "bytes": 11325
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/idna/LICENSE.md",
+      "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+      "bytes": 1541
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/msgpack/COPYING",
+      "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+      "bytes": 614
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/packaging/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/pkg_resources/LICENSE",
+      "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+      "bytes": 1023
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/platformdirs/LICENSE",
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+      "bytes": 1089
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/pygments/LICENSE",
+      "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+      "bytes": 1331
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/pyproject_hooks/LICENSE",
+      "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+      "bytes": 1081
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/requests/LICENSE",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "bytes": 10142
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/resolvelib/LICENSE",
+      "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+      "bytes": 751
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/rich/LICENSE",
+      "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+      "bytes": 1056
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/tomli/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/tomli_w/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "bytes": 1072
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/truststore/LICENSE",
+      "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+      "bytes": 1086
+    },
+    {
+      "path": "host/python-base/Lib/site-packages/pip/_vendor/urllib3/LICENSE.txt",
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+      "bytes": 1093
+    },
+    {
+      "path": "host/python-base/tcl/tk8.6/demos/license.terms",
+      "sha256": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5",
+      "bytes": 2307
+    },
+    {
+      "path": "host/python-base/tcl/tk8.6/license.terms",
+      "sha256": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5",
+      "bytes": 2307
+    },
+    {
+      "path": "host/typescript/@typescript/typescript-win32-x64/LICENSE",
+      "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+      "bytes": 9197
+    },
+    {
+      "path": "host/typescript/@typescript/typescript-win32-x64/NOTICE.txt",
+      "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+      "bytes": 48860
+    },
+    {
+      "path": "host/typescript/typescript/LICENSE",
+      "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+      "bytes": 9197
+    },
+    {
+      "path": "host/typescript/typescript/NOTICE.txt",
+      "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+      "bytes": 48860
+    }
+  ],
+  "final_archive": ".local/g7-host-notices-01/host-notices-final.zip",
+  "archive_sha256": "4b59c9a2d297776e7dabda7277c854533e543d89886e54b2cc9d75f5fc6ba6bb",
+  "initial_archive_sha256": "7d4b47f1f0d5524968ad2086564fea2cbcb551d12082a2a0630244475f498e46",
+  "initial207entries_preserved": true,
+  "superseded_owned_ZIP_retired": true,
+  "downloaded_source_executed": false,
+  "global_install_or_toolchain_mutations": 0,
+  "new_Docker_assets": 0,
+  "limits": [
+    "Preserves all furnished installed/source attribution and explicit absent-notice cases. No fabricated ISC copyright holder/permission statement for @npmcli/agent.",
+    "The source READMEs preserve SPDX data attribution/declarations; exact version legal-code reference texts accompany them.",
+    "Official Node archive and registry artifacts are verified data inputs. Runtime/tooling vulnerability dispositions and final release-kit/G7 remain separate."
+  ]
+}

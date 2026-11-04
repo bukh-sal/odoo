@@ -1,0 +1,97 @@
+{
+  "result": "exact_source_commit_npm_notices_preserved",
+  "records": [
+    {
+      "name": "@npmcli/agent",
+      "version": "4.0.2",
+      "declared_license": "ISC",
+      "repository": "https://github.com/npm/agent",
+      "source_commit": "db7852869c74ceb8985d7c36b291a2e7a866741c",
+      "registry_artifact_binding": "sha512-EUEuWAxnL07Sp5/iC/1X6Xj+XThUvnbei9zfRWZdEXa7lss9RTHMhAHBeg+MZ5To9s/gGaSI+UwZTPdYMvKSeg==",
+      "listing_url": "https://api.github.com/repos/npm/agent/contents?ref=db7852869c74ceb8985d7c36b291a2e7a866741c",
+      "listing_sha256": "0c9db6327af6fdcbb120917c53c5a7b402e7b69f8b25723df027da9401e2b5da",
+      "notices": [
+        {
+          "source_path": "README.md",
+          "url": "https://raw.githubusercontent.com/npm/agent/db7852869c74ceb8985d7c36b291a2e7a866741c/README.md",
+          "sha256": "838746c5f90e2560312ec35c4a83928027d94fe5bcdf8a80451eb9d73ed95ebe",
+          "bytes": 1958,
+          "private_file": ".local/g7-host-notices-01/upstream-notices/npmcli--agent--README.md"
+        }
+      ],
+      "standalone_license_found": false
+    },
+    {
+      "name": "@sigstore/verify",
+      "version": "3.1.1",
+      "declared_license": "Apache-2.0",
+      "repository": "https://github.com/sigstore/sigstore-js",
+      "source_commit": "c1dc7d4778a450787fc72b083f2490ad02b714c6",
+      "registry_artifact_binding": "sha512-qv7+G3J2cc6wwFj3yKvXOamzqhMwSk1ogPGmhpS8iXllcPrJaIIBA+4HbttlHVu1pqWTdmaCH/WE7UOC51kdoA==",
+      "listing_url": "https://api.github.com/repos/sigstore/sigstore-js/contents?ref=c1dc7d4778a450787fc72b083f2490ad02b714c6",
+      "listing_sha256": "a3375c14bcc726187feb725bacd0d8007bd87345829c41aec55e6165ed15e787",
+      "notices": [
+        {
+          "source_path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/sigstore/sigstore-js/c1dc7d4778a450787fc72b083f2490ad02b714c6/LICENSE",
+          "sha256": "364a130d2ca340bd56eb1e6d045fc6929bb0f9d0aa018f2c1949b29517e1cdd0",
+          "bytes": 11351,
+          "private_file": ".local/g7-host-notices-01/upstream-notices/sigstore--verify--LICENSE"
+        },
+        {
+          "source_path": "README.md",
+          "url": "https://raw.githubusercontent.com/sigstore/sigstore-js/c1dc7d4778a450787fc72b083f2490ad02b714c6/README.md",
+          "sha256": "ff537afd5996cb67a319d6b0d3e65a330480068398a90bd81ea823a0566512c8",
+          "bytes": 2813,
+          "private_file": ".local/g7-host-notices-01/upstream-notices/sigstore--verify--README.md"
+        }
+      ],
+      "standalone_license_found": true
+    },
+    {
+      "name": "spdx-exceptions",
+      "version": "2.5.0",
+      "declared_license": "CC-BY-3.0",
+      "repository": "https://github.com/kemitchell/spdx-exceptions.json",
+      "source_commit": "3aa64bec339abc6a3eca00c3436aaa7e154b8799",
+      "registry_artifact_binding": "sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==",
+      "listing_url": "https://api.github.com/repos/kemitchell/spdx-exceptions.json/contents?ref=3aa64bec339abc6a3eca00c3436aaa7e154b8799",
+      "listing_sha256": "38099234d7c6a1dcebc40b717486bb41df824b5a2e7477dc61ecb7049052b9a5",
+      "notices": [
+        {
+          "source_path": "README.md",
+          "url": "https://raw.githubusercontent.com/kemitchell/spdx-exceptions.json/3aa64bec339abc6a3eca00c3436aaa7e154b8799/README.md",
+          "sha256": "554b19eee11d2964e9f7b244e47944c08d52ca75539260a04f3227e6c0144513",
+          "bytes": 1243,
+          "private_file": ".local/g7-host-notices-01/upstream-notices/spdx-exceptions--README.md"
+        }
+      ],
+      "standalone_license_found": false
+    },
+    {
+      "name": "spdx-license-ids",
+      "version": "3.0.23",
+      "declared_license": "CC0-1.0",
+      "repository": "https://github.com/jslicense/spdx-license-ids",
+      "source_commit": "a2a975daf48bbc2afdc8e7c304405b44c656fd53",
+      "registry_artifact_binding": "sha512-CWLcCCH7VLu13TgOH+r8p1O/Znwhqv/dbb6lqWy67G+pT1kHmeD/+V36AVb/vq8QMIQwVShJ6Ssl5FPh0fuSdw==",
+      "listing_url": "https://api.github.com/repos/jslicense/spdx-license-ids/contents?ref=a2a975daf48bbc2afdc8e7c304405b44c656fd53",
+      "listing_sha256": "0fd0a3885a5ee72438b830d89bd1d1ad2f04dbcf934fa65b74beab1528ae61cf",
+      "notices": [
+        {
+          "source_path": "README.md",
+          "url": "https://raw.githubusercontent.com/jslicense/spdx-license-ids/a2a975daf48bbc2afdc8e7c304405b44c656fd53/README.md",
+          "sha256": "b4807793db6058c819f76c023362b7d522b3d19c9b41563fcc01c2b2c5b1ccd3",
+          "bytes": 1394,
+          "private_file": ".local/g7-host-notices-01/upstream-notices/spdx-license-ids--README.md"
+        }
+      ],
+      "standalone_license_found": false
+    }
+  ],
+  "source_executed": false,
+  "limits": [
+    "Preserves furnished source license/README attribution and raw package declarations without inventing a permission statement.",
+    "Missing standalone source license files remain explicit for final disposition; no commercial compatibility opinion."
+  ]
+}
