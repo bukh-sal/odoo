@@ -10,6 +10,7 @@ from modular_platform.catalog import Catalog
 from modular_platform.deployment import inspect_image
 from modular_platform.operator_os import protect_directory
 from verify import digest,verify
+from application_inputs import load_application_inputs
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -17,11 +18,16 @@ def main():
     parser.add_argument('--catalog',type=Path,required=True)
     parser.add_argument('--trust',type=Path,required=True)
     parser.add_argument('--receipt',type=Path,required=True)
+    parser.add_argument('--application-reproduction',type=Path,required=True,
+                        help='Operator-selected passed no-cache application reproduction receipt')
+    parser.add_argument('--application-build',type=Path,required=True,
+                        help='Matching candidate-build.json; recorded source inputs must match this checkout')
     args=parser.parse_args()
     output=args.output.resolve()
     if output.exists() or not output.is_relative_to(ROOT/'.local/releases'):raise ValueError('Fresh project-owned .local/releases path required')
     if subprocess.run(['git','diff','--quiet','HEAD','--'],cwd=ROOT).returncode:raise ValueError('Commit source before packaging')
     head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip()
+    application=load_application_inputs(ROOT,args.application_reproduction,args.application_build)
     protect_directory(output)
     state=dict(phase='assembling',source_commit=head,completed_files={})
     receipt=args.receipt.resolve();receipt.parent.mkdir(parents=True,exist_ok=True)
@@ -52,7 +58,7 @@ def main():
         with target.open('xb') as stream:stream.write(raw)
         register(name)
     runtime=json.loads((ROOT/'deploy/runtime.lock.json').read_bytes())
-    reproduction=json.loads((ROOT/'docs/evidence/G7/20261104-core23-repro-01/qualification.json').read_bytes())
+    reproduction=application['reproduction']
     worker=json.loads((ROOT/'services/document_stats/image.lock.json').read_bytes())
     selected={'application':reproduction['reference_image'],'dependency_base':reproduction['dependency_base'],
               'worker':worker['reference'],'postgres':runtime['postgres_image'],'proxy':runtime['reverse_proxy_image']}
@@ -71,6 +77,12 @@ def main():
     images['worker']['archive_reference']=worker_tag
     actual=inspect_image(images['application']['image_id'])
     if actual['inventory_digest']!=reproduction['inventory_digest']:raise ValueError('Unqualified app inventory')
+    if any(actual[key] for key in ['modified_files','unexpected_addon_files','missing_addon_files']):raise ValueError('Application source inventory drift')
+    for name,raw in [('qualification/application-reproduction.json',application['reproduction_bytes']),
+                     ('qualification/application-build.json',application['build_bytes'])]:
+        target=output/name;target.parent.mkdir(parents=True,exist_ok=True)
+        with target.open('xb') as stream:stream.write(raw)
+        register(name)
     write('images.json',dict(images=images,application_inventory_digest=actual['inventory_digest'],platform_version=actual['platform_version']))
     phase('verified_catalog')
     validator=configuration(args.trust);catalog=Catalog(args.catalog,validator,readonly=True)
@@ -148,6 +160,7 @@ def main():
     phase('draft_verified_requires_operator_and_install_rehearsal')
     report=dict(result=state['phase'],source_commit=head,kit=output.relative_to(ROOT).as_posix(),files=len(manifest['files']),bytes=sum(r['bytes'] for r in manifest['files'].values()),
                 manifest_sha256=digest(output/'kit-inventory.json'),packages=len(packages),wheels=len(list(wheels.iterdir())),images=images,
+                application_inputs={key:application[key] for key in ['reproduction_sha256','build_sha256','source_files_verified']},
                 no_existing_control_or_application_data_copied=True,new_Docker_assets=0,limits=['Draft artifact assembly only, not clean-install/OPS03/G7 qualification. Host interpreter archive/wheels are verified data inputs; no global Python installation occurred.'])
     receipt.write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
     print(json.dumps(report),flush=True)

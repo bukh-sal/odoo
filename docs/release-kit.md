@@ -10,7 +10,7 @@ the exact qualified local images and an independently selected catalog/trust
 file. For the current disposable qualification, create one fresh destination:
 
 ```powershell
-.local/toolchain/operator-python16/Scripts/python.exe -X utf8 release/assemble.py --output .local/releases/r1-0.1.23 --catalog .local/g7-fresh-release-01/target21/operator/catalog --trust .local/g7-fresh-release-01/target21/operator/trust.json --receipt docs/evidence/G7/20261104-release-kit-01/assembly.json
+.local/toolchain/operator-python16/Scripts/python.exe -X utf8 release/assemble.py --output .local/releases/r1-final --catalog <operator-selected-catalog> --trust <operator-selected-trust.json> --application-build <qualified-candidate-build.json> --application-reproduction <passed-reproduction.json> --receipt <fresh-assembly-receipt.json>
 ```
 
 The producer refuses an existing destination and records its phase/components.
@@ -19,6 +19,16 @@ continuation. Do not rerun it hoping an existing partial directory will work.
 No live application data or executor authority is copied. Native plugins and
 same-origin pages are trusted; reference digest curation never grants execution
 approval.
+
+The producer now requires explicit matching build/reproduction evidence and
+current build-source hashes ([ADR0058](architecture-decisions/0058-explicit-release-application-inputs.md)).
+Replace every angle-bracket placeholder with independently selected actual paths;
+the command above describes the final producer, not an executed final assembly.
+The existing `r1-0.1.23` draft and the consumer examples below retain their dated
+qualification scope. Source-only `refresh_draft.py` likewise requires both receipt
+options and refuses an image/base/inventory mismatch. It cannot update an old
+kit's application image by refreshing source alone. Do not rerun assembly against
+the existing draft or reuse its old receipts to conceal changed application inputs.
 
 Once assembled, verify the kit before consuming its files:
 

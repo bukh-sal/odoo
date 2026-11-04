@@ -5,13 +5,22 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.dont_write_bytecode=True
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from verify import digest,verify
+from application_inputs import load_application_inputs
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('kit',type=Path);p.add_argument('--receipt',type=Path,required=True);args=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('kit',type=Path);p.add_argument('--receipt',type=Path,required=True)
+    p.add_argument('--application-reproduction',type=Path,required=True)
+    p.add_argument('--application-build',type=Path,required=True);args=p.parse_args()
     kit=args.kit.resolve();old=verify(kit)
     if not kit.is_relative_to(ROOT/'.local/releases') or old['stage']!='draft_requires_clean_install_and_G7_closure':raise ValueError('Owned draft kit required')
     if args.receipt.exists():raise ValueError('Fresh refresh receipt required')
     if subprocess.run(['git','diff','--quiet','HEAD','--'],cwd=ROOT).returncode:raise ValueError('Commit source before refresh')
+    application=load_application_inputs(ROOT,args.application_reproduction,args.application_build)
+    images=json.loads((kit/'images.json').read_bytes())
+    if (images['images']['application']['image_id']!=application['reproduction']['reference_image']
+            or images['application_inventory_digest']!=application['reproduction']['inventory_digest']
+            or images['images']['dependency_base']['image_id']!=application['reproduction']['dependency_base']):
+        raise ValueError('Kit image differs from selected reproduced application; source refresh cannot replace images')
     head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip()
     if head==old['source_commit']:raise ValueError('No source update to refresh')
     temporary=kit/'source-refresh.zip';assert not temporary.exists()
@@ -33,6 +42,7 @@ def main():
     (kit/'SHA256SUMS').write_text(''.join(value+'  '+name+'\n' for name,value in sorted(sums.items())),encoding='utf8')
     verify(kit)
     report=dict(result='verified_committed_source_refresh_of_unsealed_kit',source_before=old['source_commit'],source_after=head,changed=changed,
+                application_inputs={key:application[key] for key in ['reproduction_sha256','build_sha256','source_files_verified']},
                 unchanged_components=sum(row==old['files'][name] for name,row in updated['files'].items()),
                 manifest_sha256=digest(kit/'kit-inventory.json'),large_images_plugins_notices_toolchain_reused=True,
                 limits=['Draft operator source refresh only; no application deployment, lifecycle mutation or new Docker asset. Kit remains unsealed/unqualified for full G7.'])
