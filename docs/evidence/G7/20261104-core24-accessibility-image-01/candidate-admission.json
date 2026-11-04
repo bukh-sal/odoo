@@ -1,0 +1,174 @@
+{
+  "result": "passed_static_core24_shell11_candidate_admission_not_deployed",
+  "utc": "2026-11-04T07:35:12.228030+00:00",
+  "image_id": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "inventory_digest": "sha256:0d4b7b4a419d39db4679d14285ab1b5ad9fe0d80a5ecf7230e9e30ab80bef1df",
+  "base_image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "source_changes": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "26b7d4d8ad9a2f330665c6bcf67d41760a0adcbbd9c130211374642b6a848766",
+      "target_sha256": "6d1ed68a613b48b909a1c8639856c542ba332ca155d00ac74ae272f4c833d776"
+    },
+    {
+      "path": "addons/mp_shell/__manifest__.py",
+      "previous_sha256": "5ec30ec18314445bcad11db2b32442fcc3fa8cc854ff529f2cd34754662b143f",
+      "target_sha256": "c4a5722cd492490e3bf7e7113e868df7769f1a8417070120669e657df2680aca"
+    },
+    {
+      "path": "addons/mp_shell/static/src/host.css",
+      "previous_sha256": "234e710f54153564b52279c33a0fd7a91439bbb02607c4da3838580020401def",
+      "target_sha256": "f8fe17ee2140e0c38b0e4b6ce8037cbf9101a0787a7ff7af3999ce1ac9cd9422"
+    },
+    {
+      "path": "addons/mp_shell/static/src/host.js",
+      "previous_sha256": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+      "target_sha256": "854095d462a92cdc2ad2a3e70f539992d4b68117194c40138bbede7bdaef8f4f"
+    },
+    {
+      "path": "addons/mp_shell/views/bootstrap.xml",
+      "previous_sha256": "5a35778ae67324354ecc0ae1b7f2c5c9063dd2f5c552676c57529fba78d5efde",
+      "target_sha256": "f2812e09ece8347ecee47bed65a68ff1fd144879fbed6804f2ace70ee596a82f"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "22a5a6b040f1ae737f496b8ba47de015e95905b61b658b7dcec95bef4d876a9d",
+      "target_sha256": "fae2d094d212a3ed71ae4db80dc4085553547290e90212bf4560aba6be092c3b"
+    }
+  ],
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.23",
+      "target_version": "19.0.0.1.24",
+      "migrations": []
+    },
+    {
+      "addon": "mp_shell",
+      "previous_version": "19.0.0.1.10",
+      "target_version": "19.0.0.1.11",
+      "migrations": []
+    }
+  ],
+  "python_distributions": 77,
+  "python_metadata_and_lock_exact": true,
+  "python_dependency_changes": [],
+  "packaged_artifacts_and_policy_exact": true,
+  "affected_host_checks": [
+    {
+      "name": "core-upgrade",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_core_upgrade.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c62b1ae2c90850eb9cd0e09f615c99e37165257302136804d2bc9c1b11b3fc53"
+    },
+    {
+      "name": "platform-compatibility",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_platform_compatibility.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "d23e20c19f068e182ea7acec3873c6ce00ff70750fa1c6af7ad022e16edc7f11"
+    },
+    {
+      "name": "platform-deploy",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_platform_deploy.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e11a22488b3d043c111a71a162afff70c45f08bf2b6bbdabb7d58e70d8ce2a02"
+    },
+    {
+      "name": "native-interactions",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tests/test_native_interactions.mjs"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9eefb5feb019bdd14f7006e3af2a6cce01dd92ffa8ec27340b6e9f82ece0df40",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "syntax",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--check",
+        "platform_addons/mp_shell/static/src/host.js"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "freeze",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "562ed32f33d372ba83c2fe158ddf03bd0344a24bc71e3b8aaed2271593ec0742",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "frozen_contracts": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 106,
+    "rows": 8
+  },
+  "all4_running_runtime_process_image_mount_network_identities_preserved": true,
+  "temporary_dependency_alias_removed": true,
+  "new_persistent_container_volume_network": 0,
+  "privacy": {
+    "known_values": 133,
+    "files": 3,
+    "findings": 0
+  },
+  "evidence_sha256": {
+    "build.log": "f8861fc1bee6c6536cccbda93ff0f495f15cc77674b9444d432c03ea9b8373b6",
+    "candidate-build.json": "83143bb325f909f50453dbbdbe210aade6f9aefb1b195b2dc3d97b16312ec782",
+    "admit_candidate.py": "50d63681dd7f8099c676b5d7c80d7a03eddf44d7b65a7aa29173c4541bd436cc"
+  },
+  "limits": [
+    "Immutable build/static source/environment admission only. No installed core upgrade or UI09 pass.",
+    "Exactly six owned source/version changes; native core24/Shell11 strictly increase. No migrations, packaged plugin/API/schema/authority/dependency changes.",
+    "Native RPC/View/retirement/authority/activation source seams remain exact per source24-checks.json. Installed rendering/contrast/focus/close/language/RTL checks remain mandatory.",
+    "One new uniquely tagged candidate image; borrowed14de dependency alias removed by verified identity. Existing runtime/worker/realm untouched."
+  ]
+}
