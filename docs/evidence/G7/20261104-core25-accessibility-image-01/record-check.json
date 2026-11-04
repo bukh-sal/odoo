@@ -1,0 +1,16 @@
+{
+  "result": "passed_candidate_and_status_record_privacy_syntax",
+  "known_values": 133,
+  "findings": 0,
+  "files_sha256": {
+    "docs/evidence/G7/20261104-core25-accessibility-image-01/admit.py": "7ed81604ba298ca3fce107fffca5d3cd1993ab39e029e9dd95534bc496c53a24",
+    "docs/evidence/G7/20261104-core25-accessibility-image-01/build.log": "8d2223357f437d2f7375aa4f95ff5e0b2bac7fe8228a7758227dde7cb8186b51",
+    "docs/evidence/G7/20261104-core25-accessibility-image-01/candidate-admission.json": "8c94cee68ff3d49aa1ab6e0b4f9bbc23c65c3f84462e3704a82c8e40cbf951d8",
+    "docs/evidence/G7/20261104-core25-accessibility-image-01/candidate-build.json": "5ab9dacdd029b3d4b2f29ebd9b6d2af973edab231c0c04f9fdd19d202b3a0376",
+    "docs/implementation-status.md": "b0d5ba0709f3ec2c0401e638ddab9ccbaed00cc411a7d7a5af1610878abffae8",
+    "docs/work-log.md": "941d56a2262dde5fd86c7116f116ca23e90a3a21d695820a82257e09dd2ad60f"
+  },
+  "limits": [
+    "Static candidate records only; no installed UI09/reproduction/final-release assertion."
+  ]
+}

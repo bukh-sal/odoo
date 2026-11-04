@@ -1,0 +1,69 @@
+{
+  "result": "passed_static_core25_shell12_admission_not_deployed",
+  "utc": "2026-11-04T08:54:39.977962+00:00",
+  "image_id": "sha256:602865058c7c3addb4c98bfd415c2964c954001743959664c4b0ec757c1b29d6",
+  "inventory_digest": "sha256:1b12d51b9e584021ca22eb9c69c5d71c7e828833e563e60f5d07e91bb6f3e745",
+  "base_image_id": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "source_changes": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "6d1ed68a613b48b909a1c8639856c542ba332ca155d00ac74ae272f4c833d776",
+      "target_sha256": "1dfa07aa8b1d710f94ed5517da2e7631c871f32cb078ccbedb97e7a21d93c447"
+    },
+    {
+      "path": "addons/mp_shell/__manifest__.py",
+      "previous_sha256": "c4a5722cd492490e3bf7e7113e868df7769f1a8417070120669e657df2680aca",
+      "target_sha256": "c4a8c7c53f5ac30bd3379d6eaf926b214bdb4fed3e1cc260bb8df03768607529"
+    },
+    {
+      "path": "addons/mp_shell/static/src/dialog_accessibility.xml",
+      "previous_sha256": null,
+      "target_sha256": "711739012a44113a09eaa6a7f811ea91729f8c40936fb6ba71c9df6e7215b439"
+    },
+    {
+      "path": "addons/mp_shell/static/src/host.css",
+      "previous_sha256": "f8fe17ee2140e0c38b0e4b6ce8037cbf9101a0787a7ff7af3999ce1ac9cd9422",
+      "target_sha256": "c036400f4398ed27e962099ace0d94624b8f78b88e465506d70666292583040a"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "fae2d094d212a3ed71ae4db80dc4085553547290e90212bf4560aba6be092c3b",
+      "target_sha256": "3b7c63bbc37d73a8f582c285417e960582486e787ac2be47e2ffa4bbb6a76458"
+    }
+  ],
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.24",
+      "target_version": "19.0.0.1.25",
+      "migrations": []
+    },
+    {
+      "addon": "mp_shell",
+      "previous_version": "19.0.0.1.11",
+      "target_version": "19.0.0.1.12",
+      "migrations": []
+    }
+  ],
+  "python_distributions": 77,
+  "dependency_environment_exact": true,
+  "packaged_artifacts_and_policy_exact": true,
+  "all_build_source_hashes_exact": true,
+  "four_running_runtimes_exact": true,
+  "dependency_alias_removed": true,
+  "privacy": {
+    "known_values": 133,
+    "findings": 0
+  },
+  "evidence_sha256": {
+    "build.log": "8d2223357f437d2f7375aa4f95ff5e0b2bac7fe8228a7758227dde7cb8186b51",
+    "candidate-build.json": "5ab9dacdd029b3d4b2f29ebd9b6d2af973edab231c0c04f9fdd19d202b3a0376",
+    "admit.py": "7ed81604ba298ca3fce107fffca5d3cd1993ab39e029e9dd95534bc496c53a24"
+  },
+  "limits": [
+    "One immutable candidate only; current567d/config5 remains selected. No stage/review/approval/apply has occurred.",
+    "Five inventoried owned correction/version source changes; unchanged host/dialog interaction behavior; actual compiled title label/close rendering still unverified.",
+    "New package_reference.py tool from the source developer-path work is included by the existing Docker tools COPY and recorded build-source hashes; no new application route/execution approval.",
+    "No new persistent container/volume/network; one candidate image retained for next normal independent maintenance. No UI09/BOOT02/OPS03 pass."
+  ]
+}
