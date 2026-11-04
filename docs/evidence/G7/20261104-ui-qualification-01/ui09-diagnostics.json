@@ -1,0 +1,101 @@
+{
+  "result": "verified_UI09_diagnostics_with_required_defects_not_pass",
+  "utc": "2026-11-04T07:28:32.866478+00:00",
+  "acceptance": "UI-09",
+  "acceptance_result": "failed",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "required_defects": [
+    {
+      "id": "UI09-C01",
+      "behavior": "Light subtitle4.38contrast below4.5normal text"
+    },
+    {
+      "id": "UI09-C02",
+      "behavior": "Dark Members h3 and native confirmation h4 inherit black on dark surface"
+    },
+    {
+      "id": "UI09-L01",
+      "behavior": "HTML language unset for English/Arabic shell; Arabic Settings labels/help remain English"
+    },
+    {
+      "id": "UI09-F01",
+      "behavior": "Native text fields/Labels textarea have no explicit shell focus outline; native close glyph obscured by generic background shorthand"
+    }
+  ],
+  "resolved_harness_observations": [
+    "Enter character event was missing; actual corrected keyboard Labels and Odoo confirmation open/Escape/restore checks completed.",
+    "Canvas reload requires explicit Unsaved board confirmation. Corrected keyboard lane change, local84character mixed input and two discarded reloads completed; no Save.",
+    "Native main is main.o_content; command search is its input combobox with accessible name Commands.",
+    "Native HTML dialog may report BODY between controls; attempted focus of inert background app button fails. UA modal boundary and Escape/initiator restore retained; no replacement trap."
+  ],
+  "remaining_scope": [
+    "Normal immutable core24/Shell11 candidate/admission/independent review/upgrade and actual installed UI09 requalification.",
+    "Contrast all headings/dialogs, field focus, native close image, document/Settings language/RTL/narrow/equivalent200%reflow after correction.",
+    "Reconcile physical browser-chrome zoom/screen-reader scope and standard SDK locale-formatting evidence rather than claiming them from emulation alone.",
+    "Canvas move loses local selection focus but keyboard move/reload work; final scope review must distinguish required behavior from optional reference polish.",
+    "Final source-kit/privacy/release/section28 handoff."
+  ],
+  "all17_business_authority_job_event_tables_exact": true,
+  "all4_runtime_process_image_mount_network_identities_exact": true,
+  "three_owned_browsers_exited0_no_profile_process_remaining": true,
+  "no_business_Save_Delete_Labels_submission": true,
+  "new_profiles_or_Docker_assets": 0,
+  "privacy": {
+    "known_values": 133,
+    "files": 72,
+    "findings": 0,
+    "controlled_fixture_screenshots_visually_reviewed": true,
+    "redacted_BODY_focus_descriptions": [
+      "ui09-02/observations.json/observations/0/value/cycle/2/name",
+      "ui09-02/observations.json/observations/4/value/afterMove/name"
+    ]
+  },
+  "private_actual_response_sha256": {
+    ".local\\g7-ui-qualification-01\\ui09-01\\observations.json": "57bb14bd4b178d2926df4b1f205c754b389112faecf3ac42264a8c0a59edab27",
+    ".local\\g7-ui-qualification-01\\ui09-01\\network.json": "3efabf444c1a79ff6bbd4a2c5efd52b805465f3620db6c4a45bf18ee9b8dcb4c",
+    ".local\\g7-ui-qualification-01\\ui09-02\\observations.json": "121d4433c7292869127ded13ed1c151807fb40410f3df234b287ec6af6ca907f",
+    ".local\\g7-ui-qualification-01\\ui09-02\\network.json": "9f2a8f60d9acfc19e25c011b40b44848abcde79783b7954db285fb2051422ba7",
+    ".local\\g7-ui-qualification-01\\ui09-03\\observations.json": "603f781098b379d9ab696d372b9a05fd0b228610792f71543113e0ab5d47ee7b",
+    ".local\\g7-ui-qualification-01\\ui09-03\\network.json": "e24ef5b2842a004e8e8722e444ff961501c13222c2fbb0202e7ba6addf9cb0c4"
+  },
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-01\\observations.json": "f9d9a014a1db7b7023a68b13a15a694d535a9bca1aa5d4edc14c9ed6ad5f5f2c",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-01\\network.json": "b9fe90ea3fb35f34532aae1489eba4bf7618b4327d1788c3b75c7a341b16ad19",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-02\\observations.json": "633fc9b2e59b07563b79f5c649b93a3d114ba0f2d1a9564e3e9c4a1e4da9bfd5",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-02\\network.json": "aea5f6eb1c4f2f491abbffcab94646279dfe5c7143a97a5c1fd660f0bfe604f5",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-03\\observations.json": "a34bc28fb415bca3faa069dc9b014df9e5d1a526898ce777246e25d234f59de3",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-03\\network.json": "e0f7bdac099821d92345e9bc591b13d830f2aa20051b5a23e748a44202b87ccd",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-01\\Arabic-settings.png": "67c2a21c133c85f14844730eb0b5614b8e48a2252bafd8f5f0b8ed05354be14b",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-01\\theme-light-native.png": "653eab9d30295ca6e85385c80473c075c4b386658fea7f954de48365dc023675",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-01\\theme-dark-native.png": "c4d3b2ac72bacd29b91732719bc343b5234bfef4b04020978f25dc7809742e71",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-01\\narrow-settings.png": "c2a298af5c3533fca1a658539326b48049439f82f83507d8467e820dd9097e5c",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-01\\two_hundred_percent_equivalent-settings.png": "ebef22532e751a1de982aee0cface93d679b17e668c4b9747f1f20f0f37e3bd5",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-02\\Labels-keyboard.png": "ec2927029a091bd817ebace713ae8a17dd7cbafe6207572671518336a4fc5ab8",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-02\\Odoo-confirm-keyboard.png": "dd6fde58c2af8eb818a4e593dc0d58139833c3bbc776ecda1d757e7f4cba037b",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-02\\Canvas-keyboard.png": "8dd13e1ac52c8a896965d61b89f8459233306495721f1e93334388cadda83b2f",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-03\\dark-labels.png": "0553946f55506528c69368285601af3076232457cb92a77d221e7bcf5245f5d7",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\ui09-03\\dark-Odoo-confirm.png": "1bc6ff788210d2e120cae064e462b835eec625883ffdc3b73fc32f0432d58169",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\accessibility01.mjs": "13d5865d4c2bc15e0f6a9676e4e3b016cd19fc5deb547d841e9ae59d63ac6d95",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\accessibility02.mjs": "a0d55ef5bac78af08cf4ea6d9871c58fd6ca30c2ec5a25b5db6d6a36b7e0af74",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\accessibility03.mjs": "3c0f4a0ff863606ae827952eb5bc94c6315417894f3eb81121aac2cf73f4bda4",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\browser_runtime.mjs": "7d3b81297de908e8e7c56bacd3a7dc78e79b7043f2691ae3e584a982f2de2eb2",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\browser_runtime02.mjs": "19a47afa65d00f7ab01a78a136e151e7f2812e6d8c545d2e7b5135445af9b965",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\source24_checks.py": "734085874c18046727b60adfb61e3e7972a6799a0fbb052c4d6f79011126a178",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\source24-checks.json": "2af7a0a43bedc491b429c74ad7a2ac786bede66a447c92f1c21f02285bb084e4",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\qualify_diagnostics.py": "62885bc47419584346fcaad38858afb0b314b0f5b90e635020ca2ce928a74f52",
+    "platform_addons\\mp_shell\\static\\src\\host.js": "854095d462a92cdc2ad2a3e70f539992d4b68117194c40138bbede7bdaef8f4f",
+    "platform_addons\\mp_shell\\static\\src\\host.css": "f8fe17ee2140e0c38b0e4b6ce8037cbf9101a0787a7ff7af3999ce1ac9cd9422",
+    "platform_addons\\mp_shell\\views\\bootstrap.xml": "f2812e09ece8347ecee47bed65a68ff1fd144879fbed6804f2ace70ee596a82f",
+    "platform_addons\\mp_shell\\__manifest__.py": "c4a5722cd492490e3bf7e7113e868df7769f1a8417070120669e657df2680aca",
+    "platform_addons\\mp_core\\__manifest__.py": "6d1ed68a613b48b909a1c8639856c542ba332ca155d00ac74ae272f4c833d776",
+    "packages\\platform_sdk\\modular_platform\\projection.py": "fae2d094d212a3ed71ae4db80dc4085553547290e90212bf4560aba6be092c3b",
+    "docs\\architecture-decisions\\0057-shell-accessibility-correction.md": "dd113bf13e16bacde995b461e86ce79900507286ca48094b72b395bc6b6c6cb6"
+  },
+  "limits": [
+    "Failed/current14de observations; source24 fixes have only host checks, no installed candidate/runtime pass.",
+    "Finite read-only DOM/AX/style/keyboard/network observations and visual review, not a full WCAG compliance certification.",
+    "Raw session/profile, whole-table preservation snapshots and actual controlled-fixture helper streams stay private. Public BODY focus text reduced; no authentication headers/bodies/cookies captured."
+  ]
+}

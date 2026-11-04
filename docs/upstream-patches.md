@@ -19,3 +19,14 @@ ADR0048 proxy packaging: deploy/proxy.Dockerfile keeps the exact official nginx 
 ADR0048 selection: proxydece6f passes currentdev/isolatedproductionsecurity/native/transport (G7/20261104-production-profile-01/qualification.json). Compose/runtime defaultsselectit; working sitesunchanged. Host-onlydeploy/build_proxy.py rebuildsexactofflinecontext fromsigned/hashlockedinputs; no upstream/Odoo/nginx sourceedit ornewapp runtimehelper. FinalG7provenance/security/kit remains pending.
 
 ADR0052 adds an optional code-only maintenance build from an exact independently selected qualified application image. It materializes a fresh allowlisted source distribution while preserving the actual Python/OS environment; normal staged source/version/approval/recovery checks remain enforced. This is owned distribution packaging, with no upstream source edit. Core23 admission/installed maintenance preserves all77 actual Python distribution digests and the lock; the first newly compiled candidate was refused and retired. See G7/20261104-core23-uninstall-image-03/candidate-admission.json and core23-maintenance-01/preservation.json. Retain the immutable dependency base and its source/notices as release inputs; full final reproducibility/provenance remains required.
+
+ADR0057 corrects measured UI09 defects in owned `mp_shell` adapters only:
+muted text/all heading contrast, native field focus rings, preservation of the
+existing Odoo close image/dark filter, document language/direction and Settings
+translations. Native RPC/release/retirement/authority/activation/View seams stay
+byte-exact. No stock Odoo source, packaged plugin or public contract change.
+Core24/Shell11 source passes affected host checks; normal immutable candidate
+admission/independent core upgrade and installed qualification remain required.
+See G7/20261104-ui-qualification-01/ui09-diagnostics.json/source24-checks.json.
+Remove or simplify these adapters when retained upstream presentation satisfies
+the chosen platform theme and language requirements, with actual UI evidence.

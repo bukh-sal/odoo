@@ -1,0 +1,237 @@
+{
+  "result": "actual_modal_focus_boundary_and_dark_control_measurements",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "generation": 4,
+  "nativeField": [
+    {
+      "tag": "INPUT",
+      "class": "o_input",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgba(0, 0, 0, 0)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": true,
+      "font_size": "14px"
+    },
+    {
+      "tag": "TEXTAREA",
+      "class": "o_input",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgba(0, 0, 0, 0)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    }
+  ],
+  "labelColors": [
+    {
+      "tag": "DIALOG",
+      "class": "mp_label_dialog",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgb(32, 41, 56)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    },
+    {
+      "tag": "H2",
+      "class": "",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgba(0, 0, 0, 0)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "21px"
+    },
+    {
+      "tag": "TEXTAREA",
+      "class": "",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(255, 255, 255)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(0, 0, 0)",
+      "focus_visible": true,
+      "font_size": "14px"
+    },
+    {
+      "tag": "P",
+      "class": "",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgba(0, 0, 0, 0)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    },
+    {
+      "tag": "P",
+      "class": "",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgba(0, 0, 0, 0)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgb(32, 41, 56)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgb(32, 41, 56)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    }
+  ],
+  "cycle": [
+    {
+      "tag": "BUTTON",
+      "page_has_focus": true,
+      "inside_labels": true,
+      "inside_modal": false
+    },
+    {
+      "tag": "BUTTON",
+      "page_has_focus": true,
+      "inside_labels": true,
+      "inside_modal": false
+    },
+    {
+      "tag": "BODY",
+      "page_has_focus": true,
+      "inside_labels": false,
+      "inside_modal": false
+    },
+    {
+      "tag": "TEXTAREA",
+      "page_has_focus": true,
+      "inside_labels": true,
+      "inside_modal": false
+    },
+    {
+      "tag": "BUTTON",
+      "page_has_focus": true,
+      "inside_labels": true,
+      "inside_modal": false
+    },
+    {
+      "tag": "BUTTON",
+      "page_has_focus": true,
+      "inside_labels": true,
+      "inside_modal": false
+    },
+    {
+      "tag": "BODY",
+      "page_has_focus": false,
+      "inside_labels": false,
+      "inside_modal": false
+    },
+    {
+      "tag": "TEXTAREA",
+      "page_has_focus": true,
+      "inside_labels": true,
+      "inside_modal": false
+    }
+  ],
+  "background_focus_attempts": [
+    {
+      "background_button_focused": false,
+      "active_tag": "BODY",
+      "open_modal": true,
+      "page_has_focus": true
+    },
+    {
+      "background_button_focused": false,
+      "active_tag": "BODY",
+      "open_modal": true,
+      "page_has_focus": false
+    }
+  ],
+  "confirmColors": [
+    {
+      "tag": "DIV",
+      "class": "modal-content",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgb(32, 41, 56)",
+      "outline_style": "none",
+      "outline_width": "0px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    },
+    {
+      "tag": "H4",
+      "class": "modal-title text-break flex-grow-1",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgba(0, 0, 0, 0)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(0, 0, 0)",
+      "focus_visible": false,
+      "font_size": "16.8px"
+    },
+    {
+      "tag": "MAIN",
+      "class": "modal-body",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgba(0, 0, 0, 0)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    },
+    {
+      "tag": "BUTTON",
+      "class": "btn btn-danger",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgb(32, 41, 56)",
+      "outline_style": "solid",
+      "outline_width": "3px",
+      "outline_color": "rgb(144, 170, 255)",
+      "focus_visible": true,
+      "font_size": "14px"
+    },
+    {
+      "tag": "BUTTON",
+      "class": "btn btn-secondary",
+      "color": "rgb(236, 240, 246)",
+      "background": "rgb(32, 41, 56)",
+      "outline_style": "none",
+      "outline_width": "3px",
+      "outline_color": "rgb(236, 240, 246)",
+      "focus_visible": false,
+      "font_size": "14px"
+    }
+  ],
+  "foreign_requests": [],
+  "runtime_exceptions": [],
+  "appearance_restored": true,
+  "limits": [
+    "The native HTML dialog may focus browser chrome; document.hasFocus and attempted focus of an inert background control distinguish that from app focus escape.",
+    "No programmatic focus trap added or app functions replaced. Both dialogs canceled; no business mutation.",
+    "CSS colors/AX focus are diagnostic observations, not a blanket WCAG qualification."
+  ]
+}

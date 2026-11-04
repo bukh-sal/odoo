@@ -1,0 +1,123 @@
+{
+  "result": "passed_core24_shell11_affected_host_checks_not_installed_UI",
+  "utc": "2026-11-04T07:26:22.103929+00:00",
+  "checks": [
+    {
+      "name": "core-upgrade",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_core_upgrade.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c62b1ae2c90850eb9cd0e09f615c99e37165257302136804d2bc9c1b11b3fc53"
+    },
+    {
+      "name": "platform-compatibility",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_platform_compatibility.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "d23e20c19f068e182ea7acec3873c6ce00ff70750fa1c6af7ad022e16edc7f11"
+    },
+    {
+      "name": "platform-deploy",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_platform_deploy.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e11a22488b3d043c111a71a162afff70c45f08bf2b6bbdabb7d58e70d8ce2a02"
+    },
+    {
+      "name": "native-interactions",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tests/test_native_interactions.mjs"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9eefb5feb019bdd14f7006e3af2a6cce01dd92ffa8ec27340b6e9f82ece0df40",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "syntax",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--check",
+        "platform_addons/mp_shell/static/src/host.js"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "freeze",
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/check_contract_freeze.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "562ed32f33d372ba83c2fe158ddf03bd0344a24bc71e3b8aaed2271593ec0742",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "contract_freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 106,
+    "rows": 8
+  },
+  "owned_shell_and_bootstrap_XML_valid": true,
+  "native_RPC_release_retirement_authority_activation_exact_segments": {
+    "let workspace = null;": "3711691aa98e25f44fdc5a4a4fed0531ac7c0d7b7794395f8a31321722f08beb",
+    "async retire(": "ad26bb82f4da0b14e245d3b80eada294558a4f2732aa0ae416c1a28e8208f4ea",
+    "async refreshAuthority(": "b6036bf085ca2c289b1403b0288e1eadfcbb6d5830075ebfbfcc940f1a1074bf",
+    "async activate(": "94d654d564418f72c7f344026003e90f53763cacf44c512ba0498ee9550d606a"
+  },
+  "nativeView_function_exact_to_baseline": true,
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/host.js": "854095d462a92cdc2ad2a3e70f539992d4b68117194c40138bbede7bdaef8f4f",
+    "platform_addons/mp_shell/static/src/host.css": "f8fe17ee2140e0c38b0e4b6ce8037cbf9101a0787a7ff7af3999ce1ac9cd9422",
+    "platform_addons/mp_shell/views/bootstrap.xml": "f2812e09ece8347ecee47bed65a68ff1fd144879fbed6804f2ace70ee596a82f",
+    "platform_addons/mp_shell/__manifest__.py": "c4a5722cd492490e3bf7e7113e868df7769f1a8417070120669e657df2680aca",
+    "platform_addons/mp_core/__manifest__.py": "6d1ed68a613b48b909a1c8639856c542ba332ca155d00ac74ae272f4c833d776",
+    "packages/platform_sdk/modular_platform/projection.py": "fae2d094d212a3ed71ae4db80dc4085553547290e90212bf4560aba6be092c3b"
+  },
+  "limits": [
+    "Core24/Shell11 source only. Current managed app remains immutable14de/core23/config4; candidate build/admission/review/upgrade/installedUI09 are not yet qualified.",
+    "Existing native behavioral seams unchanged; this does not replace actual contrast/focus/close-image/document-language/RTL/native smoke checks after normal rollout.",
+    "Public106contract files/eight rows unchanged. No packaged plugin, dependency lock or DB schema/authority change."
+  ]
+}

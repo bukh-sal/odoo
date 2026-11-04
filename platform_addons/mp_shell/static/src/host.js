@@ -47,6 +47,17 @@ const words={
     'ar':{workspace:'مساحة العمل',notes:'الملاحظات',settings:'الإعدادات',export:'تصدير الملاحظات',search:'الأوامر',theme:'المظهر',language:'اللغة',back:'كل الملاحظات',retry:'إعادة المحاولة',empty:'اختر مساحة عمل للبدء',subtitle:'أفكارك في مكان واحد.',saved:'تم الحفظ',light:'فاتح',dark:'داكن',eventsUnavailable:'التحديثات المباشرة غير متاحة. حدّث الصفحة لإعادة المحاولة.',eventsReview:'تعذر تطبيق بعض تحديثات مساحة العمل.',retryUpdates:'إعادة محاولة التحديثات'},
 };
 
+Object.assign(words['en-US'],{
+    preferences:'Preferences',workspaceAdministration:'Workspace administration',workspaceAccessHelp:'Workspace access is checked for every operation. Installation and deployment require a separate local operator.',
+    workspaceName:'Workspace name',defaultLanguage:'Default language',timezone:'Time zone',saveWorkspaceSettings:'Save workspace settings',members:'Members',memberHelp:'Use the public principal ID supplied by your operator. Account provisioning remains an operator action.',
+    member:'Member',role:'Role',access:'Access',viewer:'Viewer',editor:'Editor',administrator:'Administrator',roleFor:'Role for ',revokeAccess:'Revoke access',revokeFor:'Revoke access for ',principalID:'Principal ID',memberRole:'Member role',addMember:'Add member',
+});
+Object.assign(words.ar,{
+    preferences:'التفضيلات',workspaceAdministration:'إدارة مساحة العمل',workspaceAccessHelp:'يُتحقق من الوصول إلى مساحة العمل في كل عملية. يتطلب التثبيت والنشر مشغّلاً محلياً مستقلاً.',
+    workspaceName:'اسم مساحة العمل',defaultLanguage:'اللغة الافتراضية',timezone:'المنطقة الزمنية',saveWorkspaceSettings:'حفظ إعدادات مساحة العمل',members:'الأعضاء',memberHelp:'استخدم معرّف المستخدم العام الذي يقدمه المشغّل. يظل إنشاء الحسابات من مهام المشغّل.',
+    member:'العضو',role:'الدور',access:'الوصول',viewer:'مشاهد',editor:'محرر',administrator:'مسؤول',roleFor:'دور ',revokeAccess:'إلغاء الوصول',revokeFor:'إلغاء الوصول عن ',principalID:'المعرّف العام',memberRole:'دور العضو',addMember:'إضافة عضو',
+});
+
 class Shell extends Component {
     static components={View,MainComponentsContainer,OperationsPanel};
     static props={};
@@ -87,31 +98,31 @@ class Shell extends Component {
                 <button t-if="canRecoverDraft" t-on-click="downloadDraft">Download unsaved draft</button>
             </div>
             <p t-if="state.loading" role="status">Loading…</p>
-            <section t-if="state.settings" class="mp_notice" aria-label="Preferences">
-                <h2>Preferences</h2><label><t t-esc="t('theme')"/> <select t-on-change="setTheme" aria-label="Theme"><option value="light" t-att-selected="state.theme==='light'" t-esc="t('light')"/><option value="dark" t-att-selected="state.theme==='dark'" t-esc="t('dark')"/></select></label>
-                <label><t t-esc="t('language')"/> <select t-on-change="setLanguage" aria-label="Language"><option value="en-US" t-att-selected="state.language==='en-US'">English</option><option value="ar" t-att-selected="state.language==='ar'">العربية</option></select></label>
-                <p>Workspace access is checked for every operation. Installation and deployment require a separate local operator.</p>
+            <section t-if="state.settings" class="mp_notice" t-att-aria-label="t('preferences')">
+                <h2 t-esc="t('preferences')"/><label><t t-esc="t('theme')"/> <select id="mp_shell_theme" t-on-change="setTheme" t-att-aria-label="t('theme')"><option value="light" t-att-selected="state.theme==='light'" t-esc="t('light')"/><option value="dark" t-att-selected="state.theme==='dark'" t-esc="t('dark')"/></select></label>
+                <label><t t-esc="t('language')"/> <select id="mp_shell_language" t-on-change="setLanguage" t-att-aria-label="t('language')"><option value="en-US" t-att-selected="state.language==='en-US'">English</option><option value="ar" t-att-selected="state.language==='ar'">العربية</option></select></label>
+                <p t-esc="t('workspaceAccessHelp')"/>
             </section>
-            <section t-if="state.settings and isWorkspaceAdministrator and state.workspaceSettings" class="mp_notice" aria-label="Workspace administration">
-                <h2>Workspace administration</h2>
+            <section t-if="state.settings and isWorkspaceAdministrator and state.workspaceSettings" class="mp_notice" t-att-aria-label="t('workspaceAdministration')">
+                <h2 t-esc="t('workspaceAdministration')"/>
                 <form t-on-submit.prevent="saveWorkspaceConfiguration" t-on-input="markSettingsDirty" class="mp_settings_form">
-                    <label for="mp_workspace_name">Workspace name</label><input id="mp_workspace_name" t-model="state.workspaceSettings.name" maxlength="100" required="required"/>
-                    <label for="mp_workspace_locale">Default language</label><select id="mp_workspace_locale" t-model="state.workspaceSettings.default_locale"><option value="en-US">English</option><option value="ar">العربية</option></select>
-                    <label for="mp_workspace_timezone">Time zone</label><input id="mp_workspace_timezone" t-model="state.workspaceSettings.timezone" maxlength="64" required="required"/>
-                    <button type="submit" t-att-disabled="state.adminBusy">Save workspace settings</button>
+                    <label for="mp_workspace_name" t-esc="t('workspaceName')"/><input id="mp_workspace_name" t-model="state.workspaceSettings.name" maxlength="100" required="required"/>
+                    <label for="mp_workspace_locale" t-esc="t('defaultLanguage')"/><select id="mp_workspace_locale" t-model="state.workspaceSettings.default_locale"><option value="en-US">English</option><option value="ar">العربية</option></select>
+                    <label for="mp_workspace_timezone" t-esc="t('timezone')"/><input id="mp_workspace_timezone" t-model="state.workspaceSettings.timezone" maxlength="64" required="required"/>
+                    <button type="submit" t-att-disabled="state.adminBusy" t-esc="t('saveWorkspaceSettings')"/>
                 </form>
-                <h3>Members</h3><p>Use the public principal ID supplied by your operator. Account provisioning remains an operator action.</p>
-                <table class="mp_members"><thead><tr><th scope="col">Member</th><th scope="col">Role</th><th scope="col">Access</th></tr></thead><tbody>
+                <h3 t-esc="t('members')"/><p t-esc="t('memberHelp')"/>
+                <table class="mp_members"><thead><tr><th scope="col" t-esc="t('member')"/><th scope="col" t-esc="t('role')"/><th scope="col" t-esc="t('access')"/></tr></thead><tbody>
                     <tr t-foreach="state.members" t-as="member" t-key="member.principal_id">
-                        <td t-esc="member.display_name"/><td><select t-att-aria-label="'Role for '+member.display_name" t-on-change="event=>this.changeWorkspaceMember(member.principal_id,event.target.value,event.target)" t-att-disabled="state.adminBusy">
-                            <option value="viewer" t-att-selected="member.role==='viewer'">Viewer</option><option value="editor" t-att-selected="member.role==='editor'">Editor</option><option value="administrator" t-att-selected="member.role==='administrator'" t-att-disabled="member.kind==='service'">Administrator</option>
-                        </select></td><td><button t-on-click="()=>this.removeWorkspaceMember(member)" t-att-aria-label="'Revoke access for '+member.display_name" t-att-disabled="state.adminBusy">Revoke access</button></td>
+                        <td t-esc="member.display_name"/><td><select t-att-aria-label="t('roleFor')+member.display_name" t-on-change="event=>this.changeWorkspaceMember(member.principal_id,event.target.value,event.target)" t-att-disabled="state.adminBusy">
+                            <option value="viewer" t-att-selected="member.role==='viewer'" t-esc="t('viewer')"/><option value="editor" t-att-selected="member.role==='editor'" t-esc="t('editor')"/><option value="administrator" t-att-selected="member.role==='administrator'" t-att-disabled="member.kind==='service'" t-esc="t('administrator')"/>
+                        </select></td><td><button t-on-click="()=>this.removeWorkspaceMember(member)" t-att-aria-label="t('revokeFor')+member.display_name" t-att-disabled="state.adminBusy" t-esc="t('revokeAccess')"/></td>
                     </tr>
                 </tbody></table>
                 <form t-on-submit.prevent="addWorkspaceMember" class="mp_settings_form">
-                    <label for="mp_member_principal">Principal ID</label><input id="mp_member_principal" t-model="state.memberPrincipal" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" required="required"/>
-                    <label for="mp_member_role">Member role</label><select id="mp_member_role" t-model="state.memberRole"><option value="viewer">Viewer</option><option value="editor">Editor</option><option value="administrator">Administrator</option></select>
-                    <button type="submit" t-att-disabled="state.adminBusy">Add member</button>
+                    <label for="mp_member_principal" t-esc="t('principalID')"/><input id="mp_member_principal" t-model="state.memberPrincipal" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" required="required"/>
+                    <label for="mp_member_role" t-esc="t('memberRole')"/><select id="mp_member_role" t-model="state.memberRole"><option value="viewer" t-esc="t('viewer')"/><option value="editor" t-esc="t('editor')"/><option value="administrator" t-esc="t('administrator')"/></select>
+                    <button type="submit" t-att-disabled="state.adminBusy" t-esc="t('addMember')"/>
                 </form>
             </section>
             <OperationsPanel t-if="state.operations and !state.releaseChanged" api="operationsAPI" onSession="operatorSession" onDenied="operatorDenied" initialWorkspace="state.workspace"/>
@@ -284,7 +295,7 @@ class Shell extends Component {
         }
         this.interactions.setCommands(entries);
     }
-    applyAppearance(){document.body.dataset.theme=this.state.theme;document.body.dir=this.state.language==='ar'?'rtl':'ltr';}
+    applyAppearance(){document.body.dataset.theme=this.state.theme;document.body.dir=this.state.language==='ar'?'rtl':'ltr';document.documentElement.lang=this.state.language;document.documentElement.dir=document.body.dir;}
     setTheme(event){this.state.theme=event.target.value;localStorage.setItem('mp.theme',this.state.theme);this.applyAppearance();for(const callback of this.themeListeners)callback(this.theme());}
     toggleTheme(){this.setTheme({target:{value:this.state.theme==='dark'?'light':'dark'}});}
     async setLanguage(event){if(!await this.canLeave()){event.target.value=this.state.language;return;}this.state.settingsDirty=false;this.settingsRecovery=null;this.state.language=event.target.value;localStorage.setItem('mp.language',this.state.language);this.applyAppearance();for(const callback of this.localeListeners)callback(this.locale());await this.activate(true);}

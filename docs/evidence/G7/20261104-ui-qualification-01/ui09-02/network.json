@@ -1,0 +1,678 @@
+{
+  "responses": [
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/login",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9d47ad5/web.assets_frontend.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/binary/company_logo",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/b056235/web.assets_frontend_minimal.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/7b991c5/web.assets_frontend_lazy.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/translations",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/session/authenticate",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/org.example.notes/",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/action/load",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/ui/slot",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/org.example.notes/",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/action/load",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/ui/slot",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/org.example.notes/",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/action/load",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/ui/slot",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/settings",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/org.example.canvas/",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/list",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.canvas.boards/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.canvas.boards/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.canvas.boards/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/settings",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    }
+  ],
+  "blocked": [
+    {
+      "origin": "https://example.invalid",
+      "path": "/mp-ui09-network-probe",
+      "type": "XHR"
+    }
+  ],
+  "websockets": []
+}

@@ -1,0 +1,295 @@
+{
+  "result": "targeted_UI09_diagnostic_resolution_not_qualification",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "generation": 4,
+  "observations": [
+    {
+      "name": "01-label-dialog",
+      "completed": true,
+      "value": {
+        "initiator": {
+          "tag": "BUTTON",
+          "name": "Edit labels",
+          "in_labels": false,
+          "in_modal": false,
+          "outline": "solid",
+          "outline_width": "3px",
+          "focus_visible": true
+        },
+        "entered": {
+          "tag": "TEXTAREA",
+          "name": "mp_labels_input",
+          "in_labels": true,
+          "in_modal": false,
+          "outline": "none",
+          "outline_width": "3px",
+          "focus_visible": true
+        },
+        "dialogAX": [
+          {
+            "role": "dialog",
+            "name": "Edit note labels",
+            "ignored": false
+          }
+        ],
+        "fieldAX": [
+          {
+            "role": "textbox",
+            "name": "Labels, one per line",
+            "ignored": false
+          }
+        ],
+        "cycle": [
+          {
+            "tag": "BUTTON",
+            "name": "Save labels",
+            "in_labels": true,
+            "in_modal": false,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "in_labels": true,
+            "in_modal": false,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BODY",
+            "name": "(document body; no app control focused)",
+            "in_labels": false,
+            "in_modal": false,
+            "outline": "none",
+            "outline_width": "3px",
+            "focus_visible": false
+          },
+          {
+            "tag": "TEXTAREA",
+            "name": "mp_labels_input",
+            "in_labels": true,
+            "in_modal": false,
+            "outline": "none",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Save labels",
+            "in_labels": true,
+            "in_modal": false,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "in_labels": true,
+            "in_modal": false,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          }
+        ],
+        "restored": {
+          "tag": "BUTTON",
+          "name": "Edit labels",
+          "in_labels": false,
+          "in_modal": false,
+          "outline": "solid",
+          "outline_width": "3px",
+          "focus_visible": true
+        }
+      }
+    },
+    {
+      "name": "02-Odoo-confirm",
+      "completed": true,
+      "value": {
+        "initiator": {
+          "tag": "BUTTON",
+          "name": "Delete note",
+          "in_labels": false,
+          "in_modal": false,
+          "outline": "solid",
+          "outline_width": "3px",
+          "focus_visible": true
+        },
+        "entered": {
+          "tag": "BUTTON",
+          "name": "Delete",
+          "in_labels": false,
+          "in_modal": true,
+          "outline": "solid",
+          "outline_width": "3px",
+          "focus_visible": true
+        },
+        "dialogAX": [
+          {
+            "role": "dialog",
+            "name": "",
+            "ignored": false
+          }
+        ],
+        "cycle": [
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "in_labels": false,
+            "in_modal": true,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "in_labels": false,
+            "in_modal": true,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "in_labels": false,
+            "in_modal": true,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "in_labels": false,
+            "in_modal": true,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "in_labels": false,
+            "in_modal": true,
+            "outline": "solid",
+            "outline_width": "3px",
+            "focus_visible": true
+          }
+        ],
+        "restored": {
+          "tag": "BUTTON",
+          "name": "Delete note",
+          "in_labels": false,
+          "in_modal": false,
+          "outline": "solid",
+          "outline_width": "3px",
+          "focus_visible": true
+        },
+        "confirmed": false
+      }
+    },
+    {
+      "name": "03-AX-targets",
+      "completed": true,
+      "value": {
+        "native_main": [
+          {
+            "role": "main",
+            "name": "",
+            "ignored": false
+          }
+        ],
+        "palette_search": [
+          {
+            "role": "combobox",
+            "name": "Commands",
+            "ignored": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "04-dark-all-headings",
+      "completed": true,
+      "value": [
+        {
+          "tag": "H1",
+          "text": "Settings",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font_size": "26px",
+          "font_weight": "650"
+        },
+        {
+          "tag": "H2",
+          "text": "Preferences",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "font_size": "21px",
+          "font_weight": "500"
+        },
+        {
+          "tag": "H2",
+          "text": "Workspace administration",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "font_size": "21px",
+          "font_weight": "500"
+        },
+        {
+          "tag": "H3",
+          "text": "Members",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(32, 41, 56)",
+          "font_size": "18.2px",
+          "font_weight": "500"
+        }
+      ]
+    },
+    {
+      "name": "05-Canvas-keyboard-discard",
+      "completed": true,
+      "value": {
+        "initial": "inbox",
+        "moved": "doing",
+        "afterMove": {
+          "tag": "BODY",
+          "name": "(document body; no app control focused)",
+          "in_labels": false,
+          "in_modal": false,
+          "outline": "none",
+          "outline_width": "3px",
+          "focus_visible": false
+        },
+        "longInput": {
+          "length": 84,
+          "width": 163,
+          "root_width": 996
+        },
+        "discard_confirmed_twice": true,
+        "server_save_clicked": false,
+        "original_name_restored": true
+      }
+    }
+  ],
+  "findings": [
+    {
+      "check": "Labels_focus",
+      "reason": "Dialog trapping or initiator restoration failed"
+    }
+  ],
+  "foreign_requests": [],
+  "runtime_exceptions": [],
+  "limits": [
+    "Adds actual Enter character to CDP keyDown to produce native keypress/default button activation; initial harness omitted it.",
+    "Canvas discard confirmation explicitly accepted only for Unsaved board; no server Save/Delete/Labels submission.",
+    "Native main and palette input selectors corrected to actual semantic elements.",
+    "Dark h3 measurement and initial contrast/document-language findings remain required source fixes."
+  ]
+}

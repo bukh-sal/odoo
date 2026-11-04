@@ -1,5 +1,6 @@
 <odoo><template id="bootstrap"><t t-call="web.layout">
     <t t-set="title">Modular Platform</t>
+    <t t-set="html_data" t-value="{'lang': 'en-US', 'dir': 'ltr'}"/>
     <t t-set="head">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <script type="text/javascript">

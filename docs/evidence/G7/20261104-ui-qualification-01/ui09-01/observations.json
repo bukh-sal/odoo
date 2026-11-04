@@ -1,0 +1,2396 @@
+{
+  "result": "actual_UI09_diagnostic_pass_not_qualification",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "observations": [
+    {
+      "name": "01-loading-semantics",
+      "completed": true,
+      "data": {
+        "loading": "Loading\u2026",
+        "role": "status",
+        "html_language": "",
+        "body_dir": "ltr"
+      }
+    },
+    {
+      "name": "02-keyboard-commands",
+      "completed": true,
+      "data": {
+        "initiator": {
+          "tag": "BUTTON",
+          "name": "Commands",
+          "id": "",
+          "outline": "solid",
+          "outline_width": "3px",
+          "focus_visible": true,
+          "in_labels": false,
+          "in_modal": false,
+          "in_palette": false
+        },
+        "focused": {
+          "tag": "INPUT",
+          "name": "",
+          "id": "",
+          "outline": "none",
+          "outline_width": "0px",
+          "focus_visible": true,
+          "in_labels": false,
+          "in_modal": true,
+          "in_palette": true
+        },
+        "restored": {
+          "tag": "BUTTON",
+          "name": "Commands",
+          "id": "",
+          "outline": "solid",
+          "outline_width": "3px",
+          "focus_visible": true,
+          "in_labels": false,
+          "in_modal": false,
+          "in_palette": false
+        },
+        "paletteAX": [
+          {
+            "role": "generic",
+            "name": "",
+            "ignored": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "03-native-form-semantics",
+      "completed": true,
+      "data": {
+        "titleAX": [
+          {
+            "role": "textbox",
+            "name": "Title",
+            "ignored": false
+          }
+        ],
+        "bodyAX": [
+          {
+            "role": "textbox",
+            "name": "Note",
+            "ignored": false
+          }
+        ],
+        "mainAX": [
+          {
+            "role": "none",
+            "ignored": true
+          }
+        ],
+        "navigationAX": [
+          {
+            "role": "navigation",
+            "name": "Applications",
+            "ignored": false
+          }
+        ],
+        "headingAX": [
+          {
+            "role": "heading",
+            "name": "Notes",
+            "ignored": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "04-label-dialog-keyboard",
+      "completed": false,
+      "data": {
+        "error": "Timed out: native HTML labels dialog"
+      }
+    },
+    {
+      "name": "05-Odoo-confirm-keyboard",
+      "completed": false,
+      "data": {
+        "error": "Timed out: Odoo confirmation"
+      }
+    },
+    {
+      "name": "06-theme-contrast",
+      "completed": true,
+      "data": {
+        "light": {
+          "settings": [
+            {
+              "tag": "SPAN",
+              "class": "mp_mark",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                55,
+                91,
+                204
+              ],
+              "contrast": 5.948,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "STRONG",
+              "class": "",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Workspace",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                104,
+                116,
+                135
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 4.733,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                104,
+                116,
+                135
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 4.733,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "600",
+              "foreground": [
+                55,
+                91,
+                204
+              ],
+              "background": [
+                235.0156862745098,
+                237.97254901960784,
+                250.00392156862745
+              ],
+              "contrast": 5.138,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "H1",
+              "class": "",
+              "aria_label": null,
+              "font_size": "26px",
+              "font_weight": "650",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                245,
+                246,
+                249
+              ],
+              "contrast": 13.725,
+              "required": 3,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "mp_subtitle",
+              "aria_label": null,
+              "font_size": "13px",
+              "font_weight": "400",
+              "foreground": [
+                104,
+                116,
+                135
+              ],
+              "background": [
+                245,
+                246,
+                249
+              ],
+              "contrast": 4.38,
+              "required": 4.5,
+              "pass": false
+            },
+            {
+              "tag": "H2",
+              "class": "",
+              "aria_label": null,
+              "font_size": "21px",
+              "font_weight": "500",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Theme",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Language",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "H2",
+              "class": "",
+              "aria_label": null,
+              "font_size": "21px",
+              "font_weight": "500",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Role for Reference Alice",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": "Revoke access for Reference Alice",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Role for Reference Operator",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": "Revoke access for Reference Operator",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Role for Reference Worker",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": "Revoke access for Reference Worker",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            }
+          ],
+          "native_form": [
+            {
+              "tag": "SPAN",
+              "class": "mp_mark",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                55,
+                91,
+                204
+              ],
+              "contrast": 5.948,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "STRONG",
+              "class": "",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Workspace",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                104,
+                116,
+                135
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 4.733,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "600",
+              "foreground": [
+                55,
+                91,
+                204
+              ],
+              "background": [
+                235.0156862745098,
+                237.97254901960784,
+                250.00392156862745
+              ],
+              "contrast": 5.138,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                104,
+                116,
+                135
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 4.733,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "H1",
+              "class": "",
+              "aria_label": null,
+              "font_size": "26px",
+              "font_weight": "650",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                245,
+                246,
+                249
+              ],
+              "contrast": 13.725,
+              "required": 3,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "mp_subtitle",
+              "aria_label": null,
+              "font_size": "13px",
+              "font_weight": "400",
+              "foreground": [
+                104,
+                116,
+                135
+              ],
+              "background": [
+                245,
+                246,
+                249
+              ],
+              "contrast": 4.38,
+              "required": 4.5,
+              "pass": false
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "o_form_label",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "500",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "o_form_label o_form_label_readonly",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "o_form_label",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "500",
+              "foreground": [
+                30,
+                40,
+                56
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrast": 14.832,
+              "required": 4.5,
+              "pass": true
+            }
+          ]
+        },
+        "dark": {
+          "settings": [
+            {
+              "tag": "SPAN",
+              "class": "mp_mark",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                32,
+                41,
+                56
+              ],
+              "background": [
+                144,
+                170,
+                255
+              ],
+              "contrast": 6.533,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "STRONG",
+              "class": "",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Workspace",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                170,
+                182,
+                200
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 7.129,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                170,
+                182,
+                200
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 7.129,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "600",
+              "foreground": [
+                144,
+                170,
+                255
+              ],
+              "background": [
+                43.72549019607843,
+                53.84705882352941,
+                76.29019607843136
+              ],
+              "contrast": 5.403,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "H1",
+              "class": "",
+              "aria_label": null,
+              "font_size": "26px",
+              "font_weight": "650",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                21,
+                27,
+                38
+              ],
+              "contrast": 15.092,
+              "required": 3,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "mp_subtitle",
+              "aria_label": null,
+              "font_size": "13px",
+              "font_weight": "400",
+              "foreground": [
+                170,
+                182,
+                200
+              ],
+              "background": [
+                21,
+                27,
+                38
+              ],
+              "contrast": 8.412,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "H2",
+              "class": "",
+              "aria_label": null,
+              "font_size": "21px",
+              "font_weight": "500",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Theme",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Language",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "H2",
+              "class": "",
+              "aria_label": null,
+              "font_size": "21px",
+              "font_weight": "500",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Role for Reference Alice",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": "Revoke access for Reference Alice",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Role for Reference Operator",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": "Revoke access for Reference Operator",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Role for Reference Worker",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": "Revoke access for Reference Worker",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            }
+          ],
+          "native_form": [
+            {
+              "tag": "SPAN",
+              "class": "mp_mark",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                32,
+                41,
+                56
+              ],
+              "background": [
+                144,
+                170,
+                255
+              ],
+              "contrast": 6.533,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "STRONG",
+              "class": "",
+              "aria_label": null,
+              "font_size": "17px",
+              "font_weight": "700",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "SELECT",
+              "class": "",
+              "aria_label": "Workspace",
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                170,
+                182,
+                200
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 7.129,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "600",
+              "foreground": [
+                144,
+                170,
+                255
+              ],
+              "background": [
+                43.72549019607843,
+                53.84705882352941,
+                76.29019607843136
+              ],
+              "contrast": 5.403,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "A",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                170,
+                182,
+                200
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 7.129,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "H1",
+              "class": "",
+              "aria_label": null,
+              "font_size": "26px",
+              "font_weight": "650",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                21,
+                27,
+                38
+              ],
+              "contrast": 15.092,
+              "required": 3,
+              "pass": true
+            },
+            {
+              "tag": "P",
+              "class": "mp_subtitle",
+              "aria_label": null,
+              "font_size": "13px",
+              "font_weight": "400",
+              "foreground": [
+                170,
+                182,
+                200
+              ],
+              "background": [
+                21,
+                27,
+                38
+              ],
+              "contrast": 8.412,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "o_form_label",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "500",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "o_form_label o_form_label_readonly",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "400",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            },
+            {
+              "tag": "LABEL",
+              "class": "o_form_label",
+              "aria_label": null,
+              "font_size": "14px",
+              "font_weight": "500",
+              "foreground": [
+                236,
+                240,
+                246
+              ],
+              "background": [
+                32,
+                41,
+                56
+              ],
+              "contrast": 12.789,
+              "required": 4.5,
+              "pass": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "07-reduced-motion",
+      "completed": true,
+      "data": {
+        "media": true,
+        "nonzero_motion": []
+      }
+    },
+    {
+      "name": "08-RTL-localization",
+      "completed": true,
+      "data": {
+        "html_language": "",
+        "body_dir": "rtl",
+        "root_dir": "rtl",
+        "heading": "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u0627\u062a",
+        "preferences_heading": "Preferences",
+        "selected_language": "ar",
+        "workspace_value": "Reference A",
+        "layout": {
+          "width": 1280,
+          "document_width": 1280
+        }
+      }
+    },
+    {
+      "name": "09-zoom-and-narrow-reflow",
+      "completed": true,
+      "data": {
+        "baseline": {
+          "width": 1280,
+          "height": 900,
+          "dpr": 1,
+          "visual_scale": 1,
+          "document_width": 1280,
+          "root_width": 1280,
+          "main_width": 1045,
+          "main_scroll_width": 1045,
+          "offscreen_controls": []
+        },
+        "renderer_shortcut_zoom": {
+          "width": 1280,
+          "height": 900,
+          "dpr": 1,
+          "visual_scale": 1,
+          "document_width": 1280,
+          "root_width": 1280,
+          "main_width": 1045,
+          "main_scroll_width": 1045,
+          "offscreen_controls": []
+        },
+        "two_hundred_percent_equivalent": {
+          "width": 640,
+          "height": 450,
+          "dpr": 2,
+          "visual_scale": 1,
+          "document_width": 640,
+          "root_width": 640,
+          "main_width": 625,
+          "main_scroll_width": 625,
+          "offscreen_controls": []
+        },
+        "narrow": {
+          "width": 320,
+          "height": 700,
+          "dpr": 1,
+          "visual_scale": 1,
+          "document_width": 320,
+          "root_width": 320,
+          "main_width": 305,
+          "main_scroll_width": 305,
+          "offscreen_controls": []
+        },
+        "limits": [
+          "CDP renderer shortcut zoom support measured, not assumed.640CSSpx at2DPR emulates200%effective reflow from1280;320CSSpx independently tests narrow layout. No claim of physical browser-chrome zoom interaction."
+        ]
+      }
+    },
+    {
+      "name": "10-Canvas-keyboard-and-long-input",
+      "completed": false,
+      "data": {
+        "error": "Timed out: saved board reloaded"
+      }
+    },
+    {
+      "name": "11-error-announcement",
+      "completed": true,
+      "data": {
+        "AX": [
+          {
+            "role": "alert",
+            "name": "",
+            "ignored": false
+          }
+        ],
+        "structure": {
+          "role": "alert",
+          "message": "not found",
+          "request_id_present": true,
+          "foreign_title_present": false
+        }
+      }
+    }
+  ],
+  "findings": [
+    {
+      "check": "04-label-dialog-keyboard",
+      "reason": "Timed out: native HTML labels dialog"
+    },
+    {
+      "check": "05-Odoo-confirm-keyboard",
+      "reason": "Timed out: Odoo confirmation"
+    },
+    {
+      "check": "contrast_light",
+      "failed_samples": 2,
+      "minimum": 4.38
+    },
+    {
+      "check": "document_language",
+      "reason": "Arabic shell lacks matching HTML language",
+      "actual": ""
+    },
+    {
+      "check": "10-Canvas-keyboard-and-long-input",
+      "reason": "Timed out: saved board reloaded"
+    }
+  ],
+  "foreign_requests": [],
+  "websockets": [],
+  "runtime_exceptions": [],
+  "appearance_restored": {
+    "language": "en-US",
+    "theme": "light"
+  },
+  "limits": [
+    "Diagnostic pass: no blanket WCAG2.2AA claim, no physical screen-reader audit or browser-chrome zoom claim.",
+    "Real keyboard/native dialogs/current DOM AX/computed styles, no app function or HTTP response body replacement.",
+    "No persisted business edits. Labels/Delete dialogs canceled; Canvas local keyboard/long-input changes explicitly reloaded without Save."
+  ]
+}

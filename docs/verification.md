@@ -346,3 +346,8 @@ G7 currentsource/notices: `evidence/G7/20261104-source-notices-01/qualification.
 ## Current ID08 browser qualification (4 November 2026)
 
 [Actual current two-tab native/cache/role/late-response qualification](evidence/G7/20261104-ui-qualification-01/identity-qualification.json): same Alice session Aadministrator/Bviewer; own native lists/forms, editable versus readonly, real held BHTTP200read canceled on disposal, both tabs isolated afterward. [Actual observations](evidence/G7/20261104-ui-qualification-01/identity-result.json) and reviewed native form screenshots bind current14de/config4.17tables/fourruntime identities exact; no foreign requests/exceptions, owned browser exited0,133valueprivacy0. ID08 passes; UI09/OPS03/finalG7 remain. Initial harness timeout is retained separately.
+
+
+## Current UI09 findings and pending correction (4 November 2026)
+
+[Actual failed UI09 diagnostics/preservation/privacy](evidence/G7/20261104-ui-qualification-01/ui09-diagnostics.json) records light/dark contrast, document language, focus/close presentation and remaining test scope. Corrected keyboard followups distinguish native dialog behavior from harness Enter/discard assumptions. [Core24/Shell11 affected host checks](evidence/G7/20261104-ui-qualification-01/source24-checks.json) pass23tests/validXML/syntax/106frozenfiles and unchanged critical native seams; this is not an installed UI pass. [ADR0057](architecture-decisions/0057-shell-accessibility-correction.md) requires normal immutable candidate/admission/independent core upgrade and actual requalification. UI09failed/OPS03invalidated/fullG7open.
