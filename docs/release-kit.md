@@ -74,8 +74,8 @@ operator and committed initializer: three native reference plugins, six workspac
 activations, distinct fresh credentials and a new independent control store.
 The HTTP walkthrough has now passed five checks with two Notes/one board;
 [backend qualification](evidence/G7/20261104-release-kit-01/application-bootstrap.json)
-records the actual source overlays and narrow pre-data DNS continuation. External
-worker and complete twelve-case operational handoff still require qualification.
+records the actual source overlays and narrow pre-data DNS continuation. Worker
+integration passed subsequently below; twelve-case operational handoff is open.
 No full G7 claim follows from these commands.
 
 The worker is a separate operator action, after that backend walkthrough:
@@ -88,7 +88,7 @@ This once-only helper has passed its initial qualification. It starts the
 locked reference Compose worker on the existing internal network, provisions
 new scoped keys and two dedicated volumes, then independently reviews/publishes
 the exact authority hash. It does not install metadata or select a connector;
-those and an actual queued job remain required. Continue once, in order:
+the following separate integration steps follow once, in order:
 
 ```powershell
 .local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py register --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
@@ -96,10 +96,28 @@ those and an actual queued job remain required. Continue once, in order:
 .local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py job --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
 ```
 
-These three integration steps are prepared but not yet qualified. Registration
+These three integration steps have passed the backend rehearsal. Registration
 uses exact curated metadata, endpoint health and independent capability review;
 the connector installs through normal native lifecycle approval. The job checks
 saved revision and statistics under a fresh Alice session. Worker runtime must
 remain identical. The helper records each phase before acting. Its state is in
 `private/reference/worker/integration.json`. Worker provisioning phase is in
 `private/reference/worker/state.json`; never replay an uncertain publication.
+
+The actual final realm has five site installations/eight workspace activations,
+two Notes, one board and one completed original-actor analysis job. Three lifecycle
+operations completed under independent approval; the worker's original runtime
+and publication stayed exact. [Integration evidence](evidence/G7/20261104-release-kit-01/worker-integration.json)
+also verifies raw Notes rows against the actual pre-registration checkpoint.
+Twenty-nine successful temporary helpers/replaced apps were retired; the four
+current services and required storage/checkpoints remain.
+
+A second empty host-only workspace also passed the full corrected offline
+bootstrap command: [qualification](evidence/G7/20261104-release-kit-01/full-bootstrap-qualified.json).
+It verified all thirteen selected packages and all374qualified application build
+inputs, without creating a site or Docker assets. This closes the earlier
+full-command-unexecuted limitation while preserving the first diagnosed record.
+
+The twelve required procedures are in [operator runbooks](operator-runbooks.md).
+Their final current-kit cross-check, complete artifact privacy/provenance closure,
+performance, browser checks and G7 handoff still remain. The kit stays a draft.

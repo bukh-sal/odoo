@@ -1,0 +1,74 @@
+{
+  "result": "passed_full_corrected_offline_operator_setup_from_empty_workdir",
+  "utc": "2026-11-04T04:39:47.169745+00:00",
+  "source_commit": "d6ba6241f2517ba1cacf68cb398456cd7139e593",
+  "python": "3.12.16",
+  "packages": [
+    [
+      "PyJWT",
+      "2.15.1"
+    ],
+    [
+      "attrs",
+      "26.1.0"
+    ],
+    [
+      "cffi",
+      "2.1.1"
+    ],
+    [
+      "cryptography",
+      "50.0.2"
+    ],
+    [
+      "jsonschema",
+      "4.26.0"
+    ],
+    [
+      "jsonschema-specifications",
+      "2025.9.1"
+    ],
+    [
+      "packaging",
+      "26.3"
+    ],
+    [
+      "pycparser",
+      "3.12"
+    ],
+    [
+      "referencing",
+      "0.37.0"
+    ],
+    [
+      "resolvelib",
+      "1.2.1"
+    ],
+    [
+      "rfc8785",
+      "0.1.4"
+    ],
+    [
+      "rpds-py",
+      "2026.9.1"
+    ],
+    [
+      "typing_extensions",
+      "4.16.0"
+    ]
+  ],
+  "private_owner_verified": true,
+  "selected_operator_has_no_pip": true,
+  "all374_qualified_build_inputs_exact": true,
+  "private_child_empty": true,
+  "new_application_or_Docker_assets": 0,
+  "privacy": {
+    "actual_streams": 4,
+    "known_values": 133,
+    "findings": 0
+  },
+  "limits": [
+    "Second explicitly new host-only validation workspace; existing main rehearsal environment/data unchanged.",
+    "This supersedes only the earlier full-bootstrap-command-unexecuted limitation; no blank-machine/second-Docker-daemon or full G7 claim."
+  ]
+}

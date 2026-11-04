@@ -1,0 +1,8 @@
+{
+  "result": "committed_reference_integration_helper_synced_only",
+  "source_commit": "d6ba6241f2517ba1cacf68cb398456cd7139e593",
+  "path": "release/connect_worker.py",
+  "sha256": "40a9b72a69f2f69db88d1dad7ee7714c94a1f854b551f184630b054b377fb0fe",
+  "bytes": 8335,
+  "other_working_source": "94c4ecd047affe87948a8b76d0317f5777ff5506 with previously recorded helper overlays"
+}

@@ -1,0 +1,11 @@
+{
+  "result": "passed_changed_records_privacy_and_twelve_runbook_heading_link_inventory",
+  "known_values": 133,
+  "public_files": 10,
+  "findings": 0,
+  "runbook_cases": 12,
+  "relative_links_resolve": true,
+  "limits": [
+    "Heading/link inventory and incremental privacy only; final runbook functional evidence cross-check/full kit expanded archive privacy remain required."
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "result": "passed_actual_portable_provider_connector_original_actor_job",
+  "utc": "2026-11-04T04:42:43.289587+00:00",
+  "source_commit": "d6ba6241f2517ba1cacf68cb398456cd7139e593",
+  "project": "mp-r0-r1release0afebf4f833b",
+  "database": "mp_disposable_r0_r1_release_0afebf4f833b",
+  "url": "http://release-0afebf4f833b.localhost:18100",
+  "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory_digest": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "configuration_generation": 4,
+  "actual_counts": {
+    "jobs": 1,
+    "notes": 2,
+    "boards": 1,
+    "features": 8,
+    "principals": 4,
+    "workspaces": 2,
+    "memberships": 6,
+    "installations": 5
+  },
+  "operations": [
+    {
+      "operation_id": "08a4f967-1272-4147-939b-2f939e37c6f8",
+      "plan_hash": "sha256:8e69a5e165055ad8bd1f9e51e7905d5dfe6e470784475953f4650353675947f1",
+      "state": "completed",
+      "phase": "completed",
+      "mutation_started": 1,
+      "traffic_resumed": 1
+    },
+    {
+      "operation_id": "2e415c49-254a-4543-bedb-7cf9ac8c9f4a",
+      "plan_hash": "sha256:a2467908da1b693c6d4cd82d38a128ea8ae49a26377e2ebf0e97bab2bf7ec851",
+      "state": "completed",
+      "phase": "completed",
+      "mutation_started": 1,
+      "traffic_resumed": 1
+    },
+    {
+      "operation_id": "2f785fbc-9b5c-4b39-87e2-eada8c945e0e",
+      "plan_hash": "sha256:24b47b833a6445c00a577ef63723ce19d23efa3d5d6fc1565ea73f7712158644",
+      "state": "completed",
+      "phase": "completed",
+      "mutation_started": 1,
+      "traffic_resumed": 1
+    }
+  ],
+  "job": {
+    "id": "fc31f5dc-6f67-4593-9f51-401c6e156836",
+    "actor": "95dab061-ad5a-4596-8d8d-f37b5464cd4f",
+    "state": "completed",
+    "result": {
+      "note_id": "a4d4b781-1c62-45c2-b40e-978938493fe6",
+      "revision": 2,
+      "statistics": {
+        "lines": 1,
+        "words": 3,
+        "characters": 30
+      }
+    },
+    "attempts": 1,
+    "workspace": "e0f4ae9b-761e-415f-aad7-4418e8f87772"
+  },
+  "worker_attestation": {
+    "runtime_policy": {
+      "project": "mp-disposable-document-stats-release-0afebf4f833b",
+      "service": "document-stats",
+      "network": "mp-r0-r1release0afebf4f833b_runtime",
+      "public_config_volume": "mp-disposable-document-stats-release-0afebf4f833b-public-config",
+      "image": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "destination": "http://document-stats:8080"
+    },
+    "container_id": "4daa036c0e3a871ec20c95de8a4784f9432fbf3bd131bb31eb5d7839181af9f8",
+    "image_digest": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+    "network_id": "221c63f94f5250e5c9f9b33dc8f510991bf65f024092295223ed8dec36aea3f1",
+    "addresses": [
+      "192.168.16.5"
+    ],
+    "started_at": "2026-11-04T04:29:18.62598274Z",
+    "restart_count": 0,
+    "public_digest": "cda35721dfc110063b5fdc197576cdde582941b2490bbc49241b71efe83d00d9",
+    "key_id": "release-reference-key",
+    "scope": {
+      "site_id": "ec086968-56da-42c8-a247-85835672c564",
+      "workspace_id": "e0f4ae9b-761e-415f-aad7-4418e8f87772",
+      "installation_id": "44648cad-0049-5cff-a0d9-f0e4cdf8e853",
+      "public_key_file": "/run/worker/public.pem",
+      "key_id": "release-reference-key",
+      "endpoint_generation": 1
+    }
+  },
+  "notes_raw_copy_rows_exact_to_actual_pre_registration_checkpoint": true,
+  "notes_title_body_revision_labels_DTO_exact": true,
+  "worker_runtime_publication_exact": true,
+  "http_app_has_no_issuer_mount": true,
+  "running_containers": [
+    {
+      "container_id": "10ac11a2f0db469c1e00e90f47f3ac3426ddd728909c1be6224fe8869586b9df",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-08a4f96712724147939b2f939e37c6f8",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": true,
+      "exit_code": 0
+    },
+    {
+      "container_id": "4daa036c0e3a871ec20c95de8a4784f9432fbf3bd131bb31eb5d7839181af9f8",
+      "name": "/mp-disposable-document-stats-release-0afebf4f833b-document-stats-1",
+      "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "running": true,
+      "exit_code": 0
+    },
+    {
+      "container_id": "57ce486c67331b68873d6b062f86b7a3eda445e26a0d9a61454a2716af189667",
+      "name": "/mp-r0-r1release0afebf4f833b-db-1",
+      "image_id": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "running": true,
+      "exit_code": 0
+    },
+    {
+      "container_id": "c4721d9db8733077fb3439fe0356892ff3875c036a76a2409a714b3d0d8da2a9",
+      "name": "/mp-r0-r1release0afebf4f833b-edge-1",
+      "image_id": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "running": true,
+      "exit_code": 0
+    }
+  ],
+  "retained_unqualified_terminal_containers": [],
+  "retired_exact_exited_zero_containers": [
+    {
+      "container_id": "0372c93b2b093ca63197146463b0206ce42a3745325d67f762a1cc6ddafdc330",
+      "name": "/mp-r0-r1release0afebf4f833b-op-08a4f967-1272-4147-939b-2f939e37c6f8-assets",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "0bd586eade14e348a867b4361eda1c0fa1f1fdda58e00e7cbdb3462e1e5192a7",
+      "name": "/mp-r0-r1release0afebf4f833b-op-3490598e-e00f-4e42-8ac7-ec4c924f6589-assets",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "11f67d545aede7b6d46abac437d0973f187bedf858cc5c907fb2a9bfe6e5f056",
+      "name": "/mp-r0-r1release0afebf4f833b-op-1305fd57-5ae9-4a81-9dbe-e54b8e666efd-dispatch-observe",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "2b61168e04132cf4eed75346460a257e53c0adc0d04962e33514725b64e72f6c",
+      "name": "/mp-r0-r1release0afebf4f833b-op-08a4f967-1272-4147-939b-2f939e37c6f8-checkpoint",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "306704ce92f40e8a473f9534f5055cba7e1ffa1ce34868d353c96a2070562c5e",
+      "name": "/mp-r0-r1release0afebf4f833b-op-1e905acd-5e0c-4fb9-84d9-c13c2c7a9f06-dispatch-observe",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "33fdf0ad675490e792115c036f8429e9ec0a1eaa48e7cd4015f4b04e5b0078cb",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2f785fbc-9b5c-4b39-87e2-eada8c945e0e-dispatch-fence",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "3e9adda09addab3f5a97b72dca68e2a347725bd0f0b1d04e5bde384082915808",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2e415c49-254a-4543-bedb-7cf9ac8c9f4a-native",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "40bb853790b5082f1b73140c340ec11c348eb4b5683a5c3c161f8c6cfe24d611",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2e415c49-254a-4543-bedb-7cf9ac8c9f4a-metadata",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "440cca44bc1a63a14fa681f632205154e12e148d836c9b8cf5100b49a40d97b5",
+      "name": "/mp-r0-r1release0afebf4f833b-op-358d4950-34b3-4f91-8d74-2a0b312ae37a-dispatch-observe",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "48da80219d92913b9996a0e6b7c759cec7de3632c7cd0650863a1ba58e272b8f",
+      "name": "/mp-r0-r1release0afebf4f833b-op-08a4f967-1272-4147-939b-2f939e37c6f8-native",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "55c49ec0580d550e2e13e7a4bbe23e962f1c9ce286ce1599fdc4170da8e03283",
+      "name": "/mp-r0-r1release0afebf4f833b-op-08a4f967-1272-4147-939b-2f939e37c6f8-metadata",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "594fdc9130fefc3ad59b4eab805024fdb1a126ad97f01f3fb025e09b965f6cc5",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-2e415c49254a4543bedb7cf9ac8c9f4a",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "6059c93ea6eb4cd308560f27439430fcc52896e25dc2435c25064025f6b35cf9",
+      "name": "/mp-r0-r1release0afebf4f833b-op-af844641-ed5d-49af-a4d3-17e187e71d06-dispatch-observe",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "6088e5131c489123b9bc44d0f3ea0efd9ee12721b668d9ec29eb164b091503ef",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2e415c49-254a-4543-bedb-7cf9ac8c9f4a-dispatch-reconcile",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "63b08d0b76393533b88db2677d1cf87181bdcacc745d421ad2bbb44766fe8bfa",
+      "name": "/mp-r0-r1release0afebf4f833b-op-08a4f967-1272-4147-939b-2f939e37c6f8-dispatch-fence",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "77c29228d700d4268229f9b8a875f85b65e4d7ec2bc496a1a3d970e03d30d0b3",
+      "name": "/mp-r0-r1release0afebf4f833b-op-539e2435-3a8c-4bb1-b9c0-447fff71b530-dispatch-observe",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "9919ef78270ea51178050222198b96b5913822b583a920857d20f88044c13f09",
+      "name": "/mp-r0-r1release0afebf4f833b-op-8747542e-55b2-454b-9c3b-10879f3e984d-dispatch-observe",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "99ace72bef2ec8d33b540742354eff2952b155a9be54e8ec844f2c7e5a282194",
+      "name": "/mp-r0-r1release0afebf4f833b-op-08a4f967-1272-4147-939b-2f939e37c6f8-dispatch-reconcile",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "aa2dd217281f52bd89a8f355836702576b7b9d0fdd25843320fecbed38965ad0",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2e415c49-254a-4543-bedb-7cf9ac8c9f4a-checkpoint",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "b6432bc3632b55f5f098bafb417f282892967c133f0ffdb8b18f96065c6e45a6",
+      "name": "/mp-r0-r1release0afebf4f833b-op-08a4f967-1272-4147-939b-2f939e37c6f8-dispatch-enable",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "c0303c95e1168b830f7b43bca9124e1647b4c1f7210c35b047bc8a345bccd7c3",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2f785fbc-9b5c-4b39-87e2-eada8c945e0e-metadata",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "c8272206c59f2d3c0148141c0d8e03257b1349c7b3c6a78065f69499e2f1cc45",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2f785fbc-9b5c-4b39-87e2-eada8c945e0e-dispatch-reconcile",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "d2ce630220922d3e68711d0a07ea75eb417775340423ee7c7b37ef677e319349",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2e415c49-254a-4543-bedb-7cf9ac8c9f4a-assets",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "d568de8898edc78baa2d177279ef646fd1f29463a07f9c984211d9a75816e325",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2e415c49-254a-4543-bedb-7cf9ac8c9f4a-dispatch-enable",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "d8bf09e27c1deaafaacbc9744765194d40005038229be4c862b5e1209f14c6d9",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2e415c49-254a-4543-bedb-7cf9ac8c9f4a-dispatch-fence",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "da0fc50c06bc89030c293f30bfe0b1c84245254cdb609c8eb42543276cc4237c",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2f785fbc-9b5c-4b39-87e2-eada8c945e0e-dispatch-enable",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "ebdf476939e52ea91bb2b5d65b4ac947be794de43a971a4d88eaee7c36cbf1a0",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-2f785fbc9b5c4b3987e2eada8c945e0e",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "f5b802985dda4e56a42560f9785e687c4adc6cb855e3f3b2a728ee89cda6352a",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2f785fbc-9b5c-4b39-87e2-eada8c945e0e-checkpoint",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    },
+    {
+      "container_id": "fa1df228a6300de8cce8f378926903e81564b01e05309bbd87719ba6a6083523",
+      "name": "/mp-r0-r1release0afebf4f833b-op-2f785fbc-9b5c-4b39-87e2-eada8c945e0e-assets",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "running": false,
+      "exit_code": 0
+    }
+  ],
+  "privacy": {
+    "known_values": 133,
+    "actual_diagnostic_streams": 142,
+    "findings": 0
+  },
+  "limits": [
+    "Backend fresh-kit installation/runtime/reference job only; full-kit archive privacy, twelve-case final runbook walkthrough, browser/performance and final G7 remain.",
+    "Existing qualified targets/checkpoints/authority and this realm volumes/network/current four services retained."
+  ]
+}
