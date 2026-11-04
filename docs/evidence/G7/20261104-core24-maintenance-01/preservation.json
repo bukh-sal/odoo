@@ -1,0 +1,87 @@
+{
+  "result": "passed_actual_core24_shell11_maintenance_preservation",
+  "utc": "2026-11-04T07:55:02.379336+00:00",
+  "operation_id": "04fa2cfb-b2d1-4ae3-b251-75b9c931630a",
+  "plan_hash": "sha256:2b0ca4cdec06d747c56a1ef87c8f6b0695241d945e63602b39aef02f1bd5f871",
+  "generation": 5,
+  "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "inventory": "sha256:0d4b7b4a419d39db4679d14285ab1b5ad9fe0d80a5ecf7230e9e30ab80bef1df",
+  "native_scopes": 7,
+  "native_module_changes": [
+    {
+      "addon": "mp_core",
+      "migrations": [],
+      "previous_version": "19.0.0.1.23",
+      "target_version": "19.0.0.1.24"
+    },
+    {
+      "addon": "mp_shell",
+      "migrations": [],
+      "previous_version": "19.0.0.1.10",
+      "target_version": "19.0.0.1.11"
+    }
+  ],
+  "no_schema_migrations": true,
+  "dispatch_generations": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "all17tables_exact_except_declared_completed_job_release_fences": true,
+  "completed_job_fence_changes": [
+    {
+      "job_id": "fc31f5dc-6f67-4593-9f51-401c6e156836",
+      "changed_fields": [
+        "claim_generation",
+        "dispatch_generation",
+        "release_digest"
+      ]
+    }
+  ],
+  "business_counts": {
+    "mp_job": 1,
+    "mp_outbox": 3,
+    "mp_principal": 4,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_example_note": 2,
+    "mp_plugin_grant": 6,
+    "mp_event_delivery": 0,
+    "mp_service_binding": 13,
+    "mp_workspace_plugin": 8,
+    "mp_event_consumption": 0,
+    "mp_event_subscription": 0,
+    "mp_service_credential": 0,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 0,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 0
+  },
+  "independent_worker_process_image_key_publication_mounts_network_exact": true,
+  "plugin_installations_features_bindings_endpoints_exact": true,
+  "all_checkpoint_files_byte_exact": 46,
+  "all_prior_files_retained": true,
+  "worker_helper_pin_only_updated": true,
+  "actual_independent_heartbeat_during_native_maintenance": {
+    "action": "apply",
+    "age_seconds": 0.905,
+    "elapsed_seconds": 65.157,
+    "invocation_id": "81cb6263-bc62-405b-a373-456d6093c5d8",
+    "meaning": "Observation only; use journal for outcome. Stale is not proof of failure or rollback.",
+    "observation_state": "observing",
+    "observed_at": "2026-11-04T07:48:12.606871+00:00",
+    "operation_id": "04fa2cfb-b2d1-4ae3-b251-75b9c931630a",
+    "plan_hash": "sha256:2b0ca4cdec06d747c56a1ef87c8f6b0695241d945e63602b39aef02f1bd5f871",
+    "process_id": 39780,
+    "schema_version": 1,
+    "stale_after_seconds": 20,
+    "started_at": "2026-11-04T07:47:07.447397+00:00",
+    "state": "observing"
+  },
+  "limits": [
+    "One actual approved core upgrade, no apply/replay/fault/newjob. Native views/Labels/UI09/browser/HTTP and complete release closure remain.",
+    "Helper image pin update is an OS-owned configuration change; independent worker87/key/endpoint/publication/process stay exact.",
+    "Checkpoint archives and whole-table snapshots remain private; only counts/fence fields/source and status summaries are public."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "result": "retired_eight_exact_successful_helpers_and_replaced_app",
+  "containers": [
+    {
+      "id": "1a9aa6cc62b90ea923acb6f99ee53ceb5e4381d46ec849a7236d5bb89cbb734a",
+      "name": "/mp-r0-r1release0afebf4f833b-op-04fa2cfb-b2d1-4ae3-b251-75b9c931630a-dispatch-enable",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+      "exit_code": 0,
+      "log_driver": "none"
+    },
+    {
+      "id": "55d247439c124200588acf2eba640caa6effd81d73b7fc289dac0aa9a0bcbf5e",
+      "name": "/mp-r0-r1release0afebf4f833b-op-04fa2cfb-b2d1-4ae3-b251-75b9c931630a-dispatch-reconcile",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+      "exit_code": 0,
+      "log_driver": "none"
+    },
+    {
+      "id": "d5e5b95fee18d76d0b5592ad3774e990c2021904a252cd53cbd47cd07a0efda9",
+      "name": "/mp-r0-r1release0afebf4f833b-op-04fa2cfb-b2d1-4ae3-b251-75b9c931630a-assets",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+      "exit_code": 0,
+      "log_driver": "none"
+    },
+    {
+      "id": "75341967fc151580f5d4b030fe542da8b05f0b696b691ef3ba715aebf6b9ad42",
+      "name": "/mp-r0-r1release0afebf4f833b-op-04fa2cfb-b2d1-4ae3-b251-75b9c931630a-metadata",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+      "exit_code": 0,
+      "log_driver": "none"
+    },
+    {
+      "id": "e9ab98ac98e818125d05159340e7866feacee1bd4efcc5cc5c07f749df3c8c79",
+      "name": "/mp-r0-r1release0afebf4f833b-op-04fa2cfb-b2d1-4ae3-b251-75b9c931630a-native",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+      "exit_code": 0,
+      "log_driver": "none"
+    },
+    {
+      "id": "4f51e6659f134901a1502b7105afc21ddb29e8f11906f8d68251ef099bfab4ca",
+      "name": "/mp-r0-r1release0afebf4f833b-op-04fa2cfb-b2d1-4ae3-b251-75b9c931630a-checkpoint",
+      "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "exit_code": 0,
+      "log_driver": "none"
+    },
+    {
+      "id": "8e1616f8957e85340eb4f276e5cee93242300ecb252a18ceba52ba7ff51d2e31",
+      "name": "/mp-r0-r1release0afebf4f833b-op-04fa2cfb-b2d1-4ae3-b251-75b9c931630a-dispatch-fence",
+      "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "exit_code": 0,
+      "log_driver": "none"
+    },
+    {
+      "id": "10ac11a2f0db469c1e00e90f47f3ac3426ddd728909c1be6224fe8869586b9df",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-08a4f96712724147939b2f939e37c6f8",
+      "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "exit_code": 0,
+      "log_driver": "local"
+    }
+  ],
+  "images_volumes_networks_databases_removed": 0,
+  "private_checkpoint_and_diagnostics_retained": true
+}

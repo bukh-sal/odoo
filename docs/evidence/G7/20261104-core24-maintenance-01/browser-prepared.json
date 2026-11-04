@@ -1,0 +1,9 @@
+{
+  "result": "prepared_current_core24_snapshot_reusing_same_owned_profile",
+  "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "inventory": "sha256:0d4b7b4a419d39db4679d14285ab1b5ad9fe0d80a5ecf7230e9e30ab80bef1df",
+  "generation": 5,
+  "new_profiles": 0,
+  "new_Docker_assets": 0,
+  "all17tables_exact_to_verified_native_result": true
+}

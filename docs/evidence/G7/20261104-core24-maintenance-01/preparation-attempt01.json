@@ -1,0 +1,6 @@
+{
+  "result": "readonly_catalog_path_refusal_before_observation_or_stage",
+  "reason": "The harness reused an older fixture's operator/catalog layout. The actual kit-owned curated catalog is .local/release-kit-rehearsal/private/catalog, established by the original curate_from_kit.py procedure.",
+  "actual_state": "Only the new protected maintenance/state.json observing record exists; no snapshot, staged descriptor, plan, registration, approval or native mutation.",
+  "resolution": "Use the actual existing nineteen-artifact catalog. Resume only when private phase and complete directory contents exactly match this refused pre-observation state; do not reinitialize catalog/control/runtime or replay any operation."
+}

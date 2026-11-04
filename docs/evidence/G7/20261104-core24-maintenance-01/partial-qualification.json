@@ -1,0 +1,66 @@
+{
+  "result": "qualified_core24_native_preservation_and_partial_UI_with_residual_defect",
+  "utc": "2026-11-04T08:11:00.181105+00:00",
+  "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "inventory": "sha256:0d4b7b4a419d39db4679d14285ab1b5ad9fe0d80a5ecf7230e9e30ab80bef1df",
+  "generation": 5,
+  "operation_id": "04fa2cfb-b2d1-4ae3-b251-75b9c931630a",
+  "native_maintenance_completed": true,
+  "all17tables_preserved_except_predeclared_job_fences": true,
+  "all17tables_exact_after_readonly_UI": true,
+  "independent_worker_exact": true,
+  "owned_browser_exit0_no_profile_process": true,
+  "privacy": {
+    "known_values": 133,
+    "actual_command_streams": 28,
+    "public_and_smoke_files": 25,
+    "findings": 0
+  },
+  "remaining_defects": [
+    "Visual review: dark native close glyph remains indistinct because the white-close filter also inverts the generic filled button background. Keep native close appearance outside the generic button fill; no behavior rewrite."
+  ],
+  "remaining_qualification": [
+    "Full installed UI09 contrast/focus/RTL/reflow/zoom/locale reconciliation, including waiting for workspace settings loading to finish before asserting translated administration labels.",
+    "Current final-image no-cache reproduction, provenance/privacy/kit/fresh developer path and final G7 audit."
+  ],
+  "limits": [
+    "Smoke found no protocol/exceptions/missing image URL; visual review caught the residual, so UI09 remains FAILED.",
+    "Arabic HTML language updates immediately; this smoke screenshot captured loading, not a complete administration-locale walkthrough.",
+    "Old14de UI/performance/security proofs retain only their exact unchanged source scopes. Current selected567d has not yet passed independent reproduction; BOOT02 must be invalidated until qualified final-image reproduction.",
+    "Complete table stdout/snapshots and native/config/database/filestore checkpoint archives remain protected intentional inputs, excluded from clean command-log scope."
+  ],
+  "intentional_private_table_stream_sha256": {
+    "data-before-UI24.stdout": "74e1e7766b5fa0f04b2e249e08080129a29ca53c29777a569ef84b891aaf6088",
+    "data-after-review.stdout": "5c5a26ce5121cede3fc0ac31e8d5926f4d23b25edd9847b6dd19c74cd0e2a90e",
+    "data-before.stdout": "5c5a26ce5121cede3fc0ac31e8d5926f4d23b25edd9847b6dd19c74cd0e2a90e",
+    "data-after-UI24.stdout": "74e1e7766b5fa0f04b2e249e08080129a29ca53c29777a569ef84b891aaf6088",
+    "data-after.stdout": "74e1e7766b5fa0f04b2e249e08080129a29ca53c29777a569ef84b891aaf6088"
+  },
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\approval-status.json": "e855d3bd9119cfc07509fda4872ed9dd6343b4ca3902c85bf6fa841f6cd0017d",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\browser-prepared.json": "f34c20b4c0f9f8746c26dac443a49d816cc61864bf64abcc29a8c92f26a1e140",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\browser_runtime.mjs": "d0208534cdefb8ed078bb8df62730eca4b2ce13324d186238f152c772595696c",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\bundle.json": "8ddd67d6245021f3cadf66338fd99f6c8370ca3ad7678343c51ff3eb57231263",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\completed.json": "f4b01e7720c1b37af55d79097446a841f6848b875a02120c6545b1f0c5507ead",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\independent-review.json": "b4b4ac60d56d2518a68bdb7d06657771d217e9888118eed6f88a3db5ecbae919",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\maintain.py": "7bcbff7cb139293e97bc38c9bb0bdbb853c41880d1dcee532f018dda74ab5073",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\nomination.json": "0c9e859e227f85056be0657434860304e42430e7b1998e4ca28b9c97adb58bfc",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\preparation-attempt01.json": "fb699318e0c9eca7d4f22bf16e4a5abe1563c74e56b7d3e1e8d9937bf1a7e670",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\preparation.json": "0042251a5f0d85303cfc00216cfcb696c6d5cf502a049b8d993daa1a53fbe77b",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\prepare_browser.py": "07d16c66dcb196e5869e991d9b86a05af5aba1f4e3e2d709769568eb711bd61a",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\preservation.json": "4c05981385211e679b77937bba9853922b5237391f537cefc141f5305f244841",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\qualify_partial.py": "ea2474deb71be3590cb73ae0d9d1254639baed37737ec1e34dea2d97c0cc420e",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\smoke.mjs": "7e4ee6888c82a35ef2006814a2de5bef4476bd91a6c4c4087665a857e1b1e87a",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\staged-image.json": "50e91f9bac1e9df40ae2ee85d25405d8e92c99fac02d65fee5ba271fc5b5be9f",
+    "docs\\evidence\\G7\\20261104-core24-maintenance-01\\verify.py": "ee6df8027487612e11d2ae70cc6188667d4495d20fa726b96fca09ae72ac108e",
+    ".local\\g7-ui-core24-01\\smoke01\\observations.json": "ee94d928c8994aae91383efbae2aa10facdb57737a1f0d86f68c886d7f7886dc",
+    ".local\\g7-ui-core24-01\\smoke01\\network.json": "36b0e8a74e458ae0c15a7f75ad93991c2b834d32830083c53e2af45894930b62",
+    ".local\\g7-ui-core24-01\\smoke01\\Arabic-settings.png": "50b0f8006e323c08bfdfddd36048af4e25937fabc018eeec3b9b5d2b3f099c3c",
+    ".local\\g7-ui-core24-01\\smoke01\\dark-confirm.png": "20f19aec4c0ad5710999be0b21c4210e79d709140d31bbce1c552d901339ed75",
+    ".local\\g7-ui-core24-01\\smoke01\\dark-labels.png": "2b7455b94090bf3f8f6e04a3201fc3fee558105660d7a7c1e23b5e4afb6d81e1",
+    ".local\\g7-ui-core24-01\\smoke01\\dark-settings.png": "45c6032f1fc8dda06877938a233d6ac592740580cf547fb97cd6812be028a610",
+    ".local\\g7-ui-core24-01\\smoke01\\light-confirm.png": "912c0ffd3237ebcbfde981bb54736d377a005f6843cd30d94d12fa8c803797e3",
+    ".local\\g7-ui-core24-01\\smoke01\\light-labels.png": "50da1e1a6d11ac24c32acb9a3cabe9a6ebb48f7442979a7d6e54205c8798a518",
+    ".local\\g7-ui-core24-01\\smoke01\\light-settings.png": "c51f7bcc891d49037614696a29463bdf0302306dea34e54cdbde0a10afa2a106"
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "result": "actual_installed_core24_correction_smoke_not_full_UI09",
+  "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "inventory": "sha256:0d4b7b4a419d39db4679d14285ab1b5ad9fe0d80a5ecf7230e9e30ab80bef1df",
+  "generation": 5,
+  "observations": [
+    {
+      "theme": "light",
+      "settings": [
+        {
+          "tag": "H1",
+          "text": "Settings",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "P",
+          "text": "Your ideas, in one place.",
+          "class": "mp_subtitle",
+          "color": "rgb(95, 107, 123)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(95, 107, 123)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "H2",
+          "text": "Preferences",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "focused": false,
+          "inside_root": true
+        }
+      ],
+      "native_fields": [
+        {
+          "tag": "INPUT",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(55, 91, 204)",
+          "focused": true,
+          "inside_root": true
+        }
+      ],
+      "Labels": [
+        {
+          "tag": "H2",
+          "text": "Edit note labels",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(55, 91, 204)",
+          "focused": true,
+          "inside_root": true
+        }
+      ],
+      "Odoo_modal": [
+        {
+          "tag": "DIV",
+          "text": "Delete notePermanently delete this note?DeleteCancel",
+          "class": "modal-content",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "0px",
+          "outline_color": "rgb(30, 40, 56)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "H4",
+          "text": "Delete note",
+          "class": "modal-title text-break flex-grow-1",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "class": "btn-close",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "background_image": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e\")",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "focused": false,
+          "inside_root": true
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "settings": [
+        {
+          "tag": "H1",
+          "text": "Settings",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "P",
+          "text": "Your ideas, in one place.",
+          "class": "mp_subtitle",
+          "color": "rgb(170, 182, 200)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(170, 182, 200)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "H2",
+          "text": "Preferences",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "focused": false,
+          "inside_root": true
+        }
+      ],
+      "native_fields": [
+        {
+          "tag": "INPUT",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(144, 170, 255)",
+          "focused": true,
+          "inside_root": true
+        }
+      ],
+      "Labels": [
+        {
+          "tag": "H2",
+          "text": "Edit note labels",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(144, 170, 255)",
+          "focused": true,
+          "inside_root": true
+        }
+      ],
+      "Odoo_modal": [
+        {
+          "tag": "DIV",
+          "text": "Delete notePermanently delete this note?DeleteCancel",
+          "class": "modal-content",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "0px",
+          "outline_color": "rgb(236, 240, 246)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "H4",
+          "text": "Delete note",
+          "class": "modal-title text-break flex-grow-1",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "background_image": "none",
+          "filter": "none",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "focused": false,
+          "inside_root": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "class": "btn-close",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "background_image": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e\")",
+          "filter": "invert(1) grayscale(1) brightness(2)",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "focused": false,
+          "inside_root": true
+        }
+      ]
+    }
+  ],
+  "Arabic": {
+    "lang": "ar",
+    "dir": "rtl",
+    "heading": "Settings",
+    "section_headings": [
+      "Preferences",
+      "Workspace administration",
+      "Members"
+    ],
+    "field_name": "Language",
+    "labels": [
+      "Workspace name",
+      "Default language",
+      "Time zone",
+      "Principal ID",
+      "Member role"
+    ]
+  },
+  "findings": [],
+  "foreign_requests": [],
+  "runtime_exceptions": [],
+  "default_appearance_restored": true,
+  "no_Save_Delete_Labels_submission": true,
+  "limits": [
+    "Rendered UI and computed styles on the actual reviewed installed image, not injected CSS or source.",
+    "Full contrast calculation/visual review/remaining UI09 and final release closure remain."
+  ]
+}

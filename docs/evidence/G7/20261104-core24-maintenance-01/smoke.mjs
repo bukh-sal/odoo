@@ -1,0 +1,24 @@
+// Actual installed correction checks. No source/CSS overlay or business writes.
+import path from 'node:path';import {browserRuntime} from './browser_runtime.mjs';
+const b=await browserRuntime(path.join(process.cwd(),'.local/g7-ui-core24-01/smoke01'));
+const {input,before}=b,A=input.fixture.workspaces.A,note=before.mp_example_note.find(n=>n.workspace_id===A.id);
+const settings=input.base+'/app/settings?workspace='+A.public_id,form=input.base+'/app/org.example.notes/?workspace='+A.public_id+'&note='+note.public_id;
+const observations=[],findings=[];
+async function nav(url,selector){await b.navigate(url);await b.until(()=>b.evaluate(`!!document.querySelector(${JSON.stringify(selector)})&&!document.querySelector('.mp_notice[role="alert"]')`),'ready '+selector);}
+const info=selector=>b.evaluate(`[...document.querySelectorAll(${JSON.stringify(selector)})].map(e=>{const s=getComputedStyle(e);return {tag:e.tagName,text:e.matches('input,textarea')?'(field)':e.textContent.trim(),class:e.className,color:s.color,background:s.backgroundColor,background_image:s.backgroundImage,filter:s.filter,outline:s.outlineStyle,outline_width:s.outlineWidth,outline_color:s.outlineColor,focused:e===document.activeElement,inside_root:!!e.closest('.mp_root')}})`);
+try{
+ await nav(settings,'#mp_shell_language');
+ for(const theme of ['light','dark']){
+  await b.select('#mp_shell_theme',theme);await b.until(()=>b.evaluate(`document.body.dataset.theme===${JSON.stringify(theme)}`),'theme changed');
+  const settingsInfo=await info('h1,h2,h3,.mp_subtitle');await b.screenshot(theme+'-settings.png');
+  await nav(form,'.o_form_view');await b.evaluate(`document.querySelector('.o_field_widget[name="title"] input').focus()`);await b.key('Tab','Tab',9);const fields=await info('.o_field_widget input,.o_field_widget textarea');
+  await b.clickText('.mp_root button','Edit labels');await b.until(()=>b.evaluate(`!!document.querySelector('.mp_label_dialog[open]')`),'Labels');const labelInfo=await info('.mp_label_dialog textarea,.mp_label_dialog h2');await b.screenshot(theme+'-labels.png');await b.key('Escape','Escape',27);await b.until(()=>b.evaluate(`!document.querySelector('.mp_label_dialog')`),'Labels canceled');
+  await b.clickText('.mp_root button','Delete note');await b.until(()=>b.evaluate(`!!document.querySelector('.modal .modal-content')`),'Odoo confirmation');const modal=await info('.modal-title,.modal .btn-close,.modal-content');await b.screenshot(theme+'-confirm.png');await b.key('Escape','Escape',27);await b.until(()=>b.evaluate(`!document.querySelector('.modal .modal-content')`),'Odoo canceled');
+  observations.push({theme,settings:settingsInfo,native_fields:fields,Labels:labelInfo,Odoo_modal:modal});
+  if(labelInfo.find(x=>x.tag==='TEXTAREA')?.outline!=='solid')findings.push({theme,reason:'Labels field focus ring absent'});
+  if(modal.find(x=>x.class.includes('btn-close'))?.background_image==='none')findings.push({theme,reason:'Native close image absent'});
+  await nav(settings,'#mp_shell_language');
+ }
+ await b.select('#mp_shell_language','ar');await b.until(()=>b.evaluate(`document.documentElement.lang==='ar'&&document.body.dir==='rtl'`),'Arabic HTML language');const arabic=await b.evaluate(`({lang:document.documentElement.lang,dir:document.documentElement.dir,heading:document.querySelector('h1').textContent,section_headings:[...document.querySelectorAll('h2,h3')].map(e=>e.textContent),field_name:document.querySelector('#mp_shell_language').getAttribute('aria-label'),labels:[...document.querySelectorAll('.mp_settings_form label')].map(e=>e.textContent)})`);await b.screenshot('Arabic-settings.png');await b.select('#mp_shell_language','en-US');await b.until(()=>b.evaluate(`document.documentElement.lang==='en-US'`),'English HTML restored');await b.select('#mp_shell_theme','light');
+ const foreign=b.blocked.filter(x=>x.path!=='/mp-ui09-network-probe');await b.save('observations.json',{result:'actual_installed_core24_correction_smoke_not_full_UI09',image:input.image_id,inventory:input.inventory_digest,generation:5,observations,Arabic:arabic,findings,foreign_requests:foreign,runtime_exceptions:b.exceptions,default_appearance_restored:true,no_Save_Delete_Labels_submission:true,limits:['Rendered UI and computed styles on the actual reviewed installed image, not injected CSS or source.','Full contrast calculation/visual review/remaining UI09 and final release closure remain.']});await b.save('network.json',{responses:b.network,blocked:b.blocked,websockets:b.websockets});console.log(JSON.stringify({result:'installed_core24_smoke_completed',themes:observations.length,Arabic_HTML:arabic.lang,findings,foreign_requests:foreign.length,exceptions:b.exceptions.length}));
+}catch(error){await b.save('fatal.json',{message:error.message,observations,findings});throw error;}finally{await b.close();}

@@ -354,3 +354,8 @@ G7 currentsource/notices: `evidence/G7/20261104-source-notices-01/qualification.
 
 
 - Core24/Shell11 correction candidate: [actual build](evidence/G7/20261104-core24-accessibility-image-01/candidate-build.json) and [static admission](evidence/G7/20261104-core24-accessibility-image-01/candidate-admission.json). Image567d/inventory0d4b, exact14de dependencybase,6ownedsource changes/77distributionmetadata+lock/artifacts unchanged; existing runtimes untouched. No installedUI09 or gate point; ordinary reviewed core upgrade/current UI qualification remains required.
+
+
+## Core24 actual maintenance and partial UI result (4 November 2026)
+
+[Actual normal approval/completion](evidence/G7/20261104-core24-maintenance-01/completed.json), [native/data/files/worker preservation](evidence/G7/20261104-core24-maintenance-01/preservation.json), [partial installed UI/privacy/residual](evidence/G7/20261104-core24-maintenance-01/partial-qualification.json), and [eight exact helper retirements](evidence/G7/20261104-core24-maintenance-01/helper-retirement.json). Current567d/0d4b/config5/core24/Shell11; dispatch9→10→11→12,46oldfiles and businessdata/worker preserved. Visualreview catches darkcloseglyphresidual despite imageURLpresent; UI09FAILED/fullcurrentwalkthrough remains. BOOT02invalidatedfor finalcurrent-image reproduction,0.5pointwithheld. No fullG7/OPS03claim.
