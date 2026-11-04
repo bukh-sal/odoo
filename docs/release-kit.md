@@ -40,7 +40,37 @@ they do not authenticate a publisher against an attacker replacing the entire
 kit. The source ZIP records its Git commit. Follow the documented native
 code/permission review when importing reference archives into a new catalog.
 
-Application initialization/install commands and the twelve operational
-runbook cases in spec24.4 are the next qualification work. This document does
-not yet claim that draft assembly or operator setup proves a clean application
-installation. Standard record screens remain native Odoo; Canvas stays minimal.
+For a new operator workspace, the trusted reference initializer creates one new
+loopback-only disposable realm. Use the interpreter and source paths recorded
+in its `operator-setup.json`; these examples use the default rehearsal paths:
+
+```powershell
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_reference.py prepare --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal --reference-fixture --port 18100
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_reference.py initialize --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_reference.py install --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/check_reference.py --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+```
+
+Run each phase once, sequentially. Preparation verifies/loads the five exact
+images, reserves new named networks/volumes and creates fresh private credentials
+and scoped operator authority. `--reference-fixture` explicitly enables unattended
+exact-hash approval only for this new disposable realm. Core initialization uses
+an empty database; reference plugins then use ordinary independent
+register/approve/apply, including native-code and permission acknowledgments.
+The walkthrough creates only two Notes and one one-card Canvas board. Standard
+record screens use native Odoo list/form descriptors.
+
+`private/reference/state.json`, `logs/`, `operator/control/` and
+`reference-checks.json` record the exact phase, diagnostics, independent journal
+and minimal effects. A failure does not authorize replay: inspect the process,
+Docker child, marker, database and journal before choosing a narrow continuation.
+Never delete the workdir or rerun initialization against its existing database.
+Passwords remain in the protected `private/reference/account-passwords.json`;
+they are neither printed nor included in this public-input kit. Do not copy an
+existing operator journal/issuer into a new installation.
+
+The current rehearsal has actually reached `references_installed` from the kit
+operator and committed initializer: three native reference plugins, six workspace
+activations, distinct fresh credentials and a new independent control store.
+The HTTP walkthrough, external worker and complete twelve-case operational
+handoff still require qualification. No full G7 claim follows from these commands.
