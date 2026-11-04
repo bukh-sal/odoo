@@ -1,6 +1,6 @@
 # ADR0052: preserve the immutable dependency environment during code maintenance
 
-Date: 2026-11-04. Status: accepted; actual candidate qualification pending.
+Date: 2026-11-04. Status: accepted; actual core23 candidate and installed eight-scope maintenance qualified in `../evidence/G7/20261104-core23-maintenance-01/`. All77 distribution digests/lock preserved. Final release reproducibility/provenance remains G7 work.
 
 The first core23 build was refused by the existing staging guard: unchanged
 dependency lock/versions, but different actual psycopg2 and python-ldap native

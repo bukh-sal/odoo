@@ -1,0 +1,148 @@
+{
+  "result": "passed_exact_terminal_recovery_helper_cleanup",
+  "retired": [
+    {
+      "id": "ae839d8ea7b991a5365bed2247e53b89f7d38f8af0cfbabfd52587c38c0e27f5",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-dispatch-enable-3c7ac5b407cc43dfae25feebddb64c4b",
+      "exit_code": 0
+    },
+    {
+      "id": "32ea1cf7178d12630a5c8c9ffa961c00b685161cde46caa606bcd7d423c6ac57",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-dispatch-reconcile-b07fa8f6546646c296b2bb1bbbc9d3ff",
+      "exit_code": 0
+    },
+    {
+      "id": "6f543f7e7d14e489159a800e2ed6d4e186422a1d92aa6608632776d3b6a98b99",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-restored-assets",
+      "exit_code": 0
+    },
+    {
+      "id": "6f695ac0eea7c79bb389840c13906e1ca8b2eeaa5d6b68f133700a73866df36f",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-read-config",
+      "exit_code": 0
+    },
+    {
+      "id": "513c43d44b0e9e5deb05be6cbbc51a99e5a309494e82fa25dec43422516978ea",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-dispatch-fence-b07fa8f6546646c296b2bb1bbbc9d3ff",
+      "exit_code": 0
+    },
+    {
+      "id": "bcf3f29436a841ba99939623c5ab0f7299505a5eb4141f163e8e30498e56a860",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-restore-filestore",
+      "exit_code": 0
+    },
+    {
+      "id": "3ba7a9f242436cf69afc5c280a8195e573d69ddb0a887d4f837da700b5a104fd",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-native",
+      "exit_code": 0
+    },
+    {
+      "id": "5b7edbe269c2e1498c0e8e4b483891520e0cd4ab1992578cfff8af9ef3014b88",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-checkpoint",
+      "exit_code": 0
+    },
+    {
+      "id": "ecf61e2e8485837cbd3119defb304a479b4eb6d072f34379d5e9ad1000dbd4fe",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-857c7072-15c2-470e-8aa9-d3c527ff1cd6-dispatch-fence",
+      "exit_code": 0
+    },
+    {
+      "id": "48c2a2846bd4b20763dca57b7e5f9c06fdeb5999697db0cbb2c625b62214f362",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-app-release-d057daec818f4fe2b67f0575e2102e45",
+      "exit_code": 0
+    },
+    {
+      "id": "d0fced98cca0772efcc872d9e6f79e86ea2159267dd9872e719d22d6064ae009",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-0893f523-b816-45ec-93b3-7710a6a99579-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "b6f5723366d506d7284e7b120214f51c9c9f0bc8f32203ba85ac537da7930b1f",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d0e7b3c6-465e-4a37-b03b-5f70152ce77f-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "d0d57321593bd84ead1fb956786bb0dd55d695024560f9617b195e4e5e9c848a",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-dfec24b2-ccf6-4d53-8f62-c28fff0859a6-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "5a6de9915bf7fb04960cfb27ab3c1e702e06570884bf990025702fca0c8af930",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-15ba1e9b-e2ff-45d7-a3cb-a4635f9b3cc3-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "7128822501f2135137c8089ec7e319263c760be9092fba42b33916ff57230f10",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-55169eee-169d-4820-88d7-95910f588b72-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "50e279f3df0df8a12d0eb13ebc24616437a8e8828546a2047ad1ed31da4c0691",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-66bfcaa8-d198-4b19-8dfb-cdfffecd62da-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "a69d9b1bd051959092d5c562c2d68492abddb6bd041b53d67ead042bff412e38",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-8dd08081-bc03-4691-b156-1becfc685d0f-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "e94460fc327e7084a61283bbb9dd7d4add417fe55657c8793ffa7bf6bbf303a3",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-18d2af1d-1b21-432a-86cd-2366dfedf69a-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "5c86aadd02718ebbb8ddf474ba9f7e81eca25cae41dfada950ddc0197eecc2cc",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-f985d843-4fe9-4fbf-89b4-5e7f95a91993-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "73d0f7bc67705e76d98208c99ff0bc59c1cf1929ee96f1d37188e61a4ae151f7",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-eadf118e-1ed5-44c7-8be8-053bf85fc75e-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "426446f0b319b0aa6ac93753b0edec90b951f8431938d2b12910a0d5836bdd98",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-2f43ae00-2569-488f-9576-7309b3520da1-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "0f1bf6c715439aa8aff197534e99402463c490d20c70304c30efc5b74b720135",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-c0111341-bb29-42da-81ba-e3aee88abea8-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "f7a799994978ccaaed8a17982bd60a8e977b4ae2b7ea373b54aa5f81a49cfcc9",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-820254ac-d404-45e3-8df4-eb4baf7391c4-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "b84997c0b664f51d6463cde1b4e79165954e0e79a5f23967e87f166b66bb82c3",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-1fdf353a-abda-4d84-adfc-bf438ed2df9f-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "426c4cc2660381dfaca2c54ac8a86f1c1b11d55781a59c479722563e7672deb9",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-5e4efd0d-f2ad-4954-b789-9a0db7d07fee-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "1f97e9024cfa55cac470093c1354e06e239bff87a6b30ca3d9bce3faa0f8cf98",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-73d6a9db-f1aa-4231-b554-2e9199952e48-dispatch-observe",
+      "exit_code": 0
+    },
+    {
+      "id": "8f077757591252331ad142bff223140bc6b73f50201e9e6f386266dc8c1f3788",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-92280247-eccc-43f5-b2bf-3bb02205f58c-dispatch-observe",
+      "exit_code": 0
+    }
+  ],
+  "containers_removed": 27,
+  "dispatch_observers_removed": 17,
+  "ordinary_job_helper_auto_removed": true,
+  "images_volumes_networks_removed": 0,
+  "current_app_retained": "8718fd49308561e18bb38a2f7a3ca2f4b8323d71f63bc605c5c26dda3cd94910",
+  "worker_issuer_checkpoint_and_failed_database_retained": true,
+  "private_diagnostics_archived": true,
+  "all_final17tables_and_worker_exact": true
+}

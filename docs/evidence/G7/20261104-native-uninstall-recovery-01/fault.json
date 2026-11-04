@@ -1,0 +1,157 @@
+{
+  "result": "passed_actual_native_uninstall_commit_fault_closed",
+  "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+  "status": {
+    "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+    "plan_hash": "sha256:d5025377a298e68e199a0eaa97eca3e907d592a523bd24b5b5452cb819fdcd39",
+    "state": "recovery_required",
+    "phase": "mutation_started",
+    "mutation_started": true,
+    "traffic_resumed": false,
+    "backup_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+    "approval_expires_at": "2026-11-04T00:59:19Z",
+    "history": [
+      {
+        "sequence": 97,
+        "utc": "2026-11-04T00:43:17Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:d5025377a298e68e199a0eaa97eca3e907d592a523bd24b5b5452cb819fdcd39"
+        }
+      },
+      {
+        "sequence": 98,
+        "utc": "2026-11-04T00:43:17Z",
+        "code": "application_request_imported",
+        "details": {
+          "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+          "plan_hash": "sha256:d5025377a298e68e199a0eaa97eca3e907d592a523bd24b5b5452cb819fdcd39",
+          "request_id": "4fac6374-163f-46ee-8582-d1472a83d0e0",
+          "requested_by": "d828b26e-8cfa-4290-a01e-7a401d717b58",
+          "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca"
+        }
+      },
+      {
+        "sequence": 99,
+        "utc": "2026-11-04T00:44:19Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:d5025377a298e68e199a0eaa97eca3e907d592a523bd24b5b5452cb819fdcd39"
+        }
+      },
+      {
+        "sequence": 100,
+        "utc": "2026-11-04T00:45:03Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 27768,
+          "lock_owner_digest": "sha256:73fb923cb17afc849b8fb6dab8a21ef45dc384638533bef69f7e9d6fe3658faa"
+        }
+      },
+      {
+        "sequence": 101,
+        "utc": "2026-11-04T00:45:29Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 102,
+        "utc": "2026-11-04T00:45:41Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 103,
+        "utc": "2026-11-04T00:45:50Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 104,
+        "utc": "2026-11-04T00:46:07Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6"
+        }
+      },
+      {
+        "sequence": 105,
+        "utc": "2026-11-04T00:46:16Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 106,
+        "utc": "2026-11-04T00:46:20Z",
+        "code": "recovery_required",
+        "details": {
+          "code": "MUTATION_FAILED"
+        }
+      }
+    ]
+  },
+  "native_effect": {
+    "notes": 2,
+    "boards": 1,
+    "labels_state": "uninstalled",
+    "labels_column": false
+  },
+  "checkpoint_dispatch_exact_after_native_uninstall": true,
+  "dispatch": {
+    "profile": "r1-reference-stateless-dispatch-v1",
+    "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+    "release_digest": "sha256:b27344b46ccadad22ca2c07aa449ed2c0cb3c594039fb833f18fad715762ff91",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "control": {
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "release_digest": "sha256:b27344b46ccadad22ca2c07aa449ed2c0cb3c594039fb833f18fad715762ff91",
+      "state": "paused",
+      "generation": 22
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "9519e8d9c5b216c0e03b888f60b72c90d9a9c7894d0444705b4d1da7cf57b082"
+      },
+      "mp_event_consumer_state": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_consumption": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_delivery": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_subscription": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_job": {
+        "rows": 1,
+        "sha256": "56731d599f71822d820492ff0889bd6073b55670bda283073590e7f4e4e833f8"
+      },
+      "mp_outbox": {
+        "rows": 11,
+        "sha256": "b0a6a46b6c9333281586aa369a3b3b8c9f9805f2602660f0123a87fdf42cb086"
+      }
+    },
+    "job_states": {
+      "completed": 1
+    },
+    "event_receipts": true,
+    "external_installations": 1,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "uncertain_jobs": 0,
+    "reference_policy_digest": "sha256:c7377e5e51c66ace53436ad6a51d6ee203c79d5f88cfd3248f863eefb08d6449",
+    "state_digest": "sha256:abce5de4bc330beb84d514891af07f04f6fe9cffd668f803d297c34f67158661"
+  },
+  "worker_identity_image_key_publication_exact": true,
+  "configuration_unchanged": true,
+  "limits": [
+    "Actual native commit and controlled failure, not restored/resumed yet. Current native data missing Labels column; preserve failed DB and authority."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "result": "exact_private_recovery_review",
+  "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+  "decision_hash": "sha256:1718816f4ea73d8367c085bbe63438970842eedbb0fac650d120d679ddc55ff1",
+  "review": {
+    "expires_at": "2026-11-04T01:01:56Z",
+    "issued_at": "2026-11-04T00:46:56Z",
+    "operator_authorization_generation": 1,
+    "policy_version": 1,
+    "review_id": "b07fa8f6-5466-46c2-96b2-bb1bbbc9d3ff"
+  },
+  "action": "restore_to_fresh_database"
+}

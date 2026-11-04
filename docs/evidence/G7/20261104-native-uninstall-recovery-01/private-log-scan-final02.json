@@ -1,0 +1,6 @@
+{
+  "result": "passed_current_native_uninstall_recovery_diagnostics",
+  "streams": 145,
+  "known_values": 123,
+  "findings": 0
+}

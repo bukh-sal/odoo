@@ -1,0 +1,16 @@
+{
+  "result": "passed_current_restored_native_HTTP_and_security_fences",
+  "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+  "configuration_generation": 8,
+  "dispatch_generation": 25,
+  "native_list_form_A_B": true,
+  "old_session_401": true,
+  "old_gateway_client_release_409": true,
+  "old_native_client_release_mismatch": true,
+  "retired_plan_refused_journal_exact": true,
+  "all17tables_worker_exact": true,
+  "required_provider_closure_plugins": 4,
+  "required_provider_closure_scopes": 8,
+  "one_unrequested_application_preview": "3f619f8a-7ec0-44d7-b981-28d98dbda894",
+  "browser_rendering": false
+}

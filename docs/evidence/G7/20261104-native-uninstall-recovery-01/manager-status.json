@@ -1,0 +1,226 @@
+{
+  "result": "passed_current_independent_status_mirror_readback",
+  "publication": {
+    "approval_expires_at": "2026-11-04T00:59:19Z",
+    "control_authority": "independent_local_os",
+    "dimensions": [
+      {
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "feature_state": "enabled",
+        "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c",
+        "plugin_id": "org.example.notes_labels",
+        "release_state": "planned",
+        "service_state": null,
+        "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b"
+      },
+      {
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "feature_state": "enabled",
+        "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c",
+        "plugin_id": "org.example.notes_labels",
+        "release_state": "planned",
+        "service_state": null,
+        "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e"
+      }
+    ],
+    "error_code": "MUTATION_FAILED",
+    "history": [
+      {
+        "code": "prepared",
+        "sequence": 97,
+        "utc": "2026-11-04T00:43:17Z"
+      },
+      {
+        "code": "application_request_imported",
+        "sequence": 98,
+        "utc": "2026-11-04T00:43:17Z"
+      },
+      {
+        "code": "approved",
+        "sequence": 99,
+        "utc": "2026-11-04T00:44:19Z"
+      },
+      {
+        "code": "reserved",
+        "sequence": 100,
+        "utc": "2026-11-04T00:45:03Z"
+      },
+      {
+        "code": "staged",
+        "sequence": 101,
+        "utc": "2026-11-04T00:45:29Z"
+      },
+      {
+        "code": "maintenance",
+        "sequence": 102,
+        "utc": "2026-11-04T00:45:41Z"
+      },
+      {
+        "code": "drained",
+        "sequence": 103,
+        "utc": "2026-11-04T00:45:50Z"
+      },
+      {
+        "code": "checkpointed",
+        "sequence": 104,
+        "utc": "2026-11-04T00:46:07Z"
+      },
+      {
+        "code": "mutation_started",
+        "sequence": 105,
+        "utc": "2026-11-04T00:46:16Z"
+      },
+      {
+        "code": "recovery_required",
+        "sequence": 106,
+        "utc": "2026-11-04T00:46:20Z"
+      },
+      {
+        "code": "restore_authorized",
+        "sequence": 107,
+        "utc": "2026-11-04T00:47:56Z"
+      },
+      {
+        "code": "restore_target_created",
+        "sequence": 108,
+        "utc": "2026-11-04T00:48:06Z"
+      },
+      {
+        "code": "restore_verified",
+        "sequence": 109,
+        "utc": "2026-11-04T00:49:24Z"
+      },
+      {
+        "code": "restore_traffic_resumed",
+        "sequence": 110,
+        "utc": "2026-11-04T00:51:47Z"
+      }
+    ],
+    "kind": "status",
+    "observed_at": "2026-11-04T01:02:34Z",
+    "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+    "phase": "restore_traffic_resumed",
+    "plan_hash": "sha256:d5025377a298e68e199a0eaa97eca3e907d592a523bd24b5b5452cb819fdcd39",
+    "requested_by": "d828b26e-8cfa-4290-a01e-7a401d717b58",
+    "schema_version": 1,
+    "source": "operator_journal_mirror",
+    "stale": false,
+    "state": "revoked"
+  },
+  "manager_status": {
+    "kind": "status",
+    "phase": "restore_traffic_resumed",
+    "stale": false,
+    "state": "revoked",
+    "source": "operator_journal_mirror",
+    "history": [
+      {
+        "utc": "2026-11-04T00:43:17Z",
+        "code": "prepared",
+        "sequence": 97
+      },
+      {
+        "utc": "2026-11-04T00:43:17Z",
+        "code": "application_request_imported",
+        "sequence": 98
+      },
+      {
+        "utc": "2026-11-04T00:44:19Z",
+        "code": "approved",
+        "sequence": 99
+      },
+      {
+        "utc": "2026-11-04T00:45:03Z",
+        "code": "reserved",
+        "sequence": 100
+      },
+      {
+        "utc": "2026-11-04T00:45:29Z",
+        "code": "staged",
+        "sequence": 101
+      },
+      {
+        "utc": "2026-11-04T00:45:41Z",
+        "code": "maintenance",
+        "sequence": 102
+      },
+      {
+        "utc": "2026-11-04T00:45:50Z",
+        "code": "drained",
+        "sequence": 103
+      },
+      {
+        "utc": "2026-11-04T00:46:07Z",
+        "code": "checkpointed",
+        "sequence": 104
+      },
+      {
+        "utc": "2026-11-04T00:46:16Z",
+        "code": "mutation_started",
+        "sequence": 105
+      },
+      {
+        "utc": "2026-11-04T00:46:20Z",
+        "code": "recovery_required",
+        "sequence": 106
+      },
+      {
+        "utc": "2026-11-04T00:47:56Z",
+        "code": "restore_authorized",
+        "sequence": 107
+      },
+      {
+        "utc": "2026-11-04T00:48:06Z",
+        "code": "restore_target_created",
+        "sequence": 108
+      },
+      {
+        "utc": "2026-11-04T00:49:24Z",
+        "code": "restore_verified",
+        "sequence": 109
+      },
+      {
+        "utc": "2026-11-04T00:51:47Z",
+        "code": "restore_traffic_resumed",
+        "sequence": 110
+      }
+    ],
+    "plan_hash": "sha256:d5025377a298e68e199a0eaa97eca3e907d592a523bd24b5b5452cb819fdcd39",
+    "dimensions": [
+      {
+        "plugin_id": "org.example.notes_labels",
+        "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+        "feature_state": "enabled",
+        "release_state": "planned",
+        "service_state": null,
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c"
+      },
+      {
+        "plugin_id": "org.example.notes_labels",
+        "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e",
+        "feature_state": "enabled",
+        "release_state": "planned",
+        "service_state": null,
+        "artifact_state": "verified",
+        "database_state": "installed",
+        "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c"
+      }
+    ],
+    "error_code": "MUTATION_FAILED",
+    "observed_at": "2026-11-04T01:02:34Z",
+    "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+    "requested_by": "d828b26e-8cfa-4290-a01e-7a401d717b58",
+    "schema_version": 1,
+    "control_authority": "independent_local_os",
+    "approval_expires_at": "2026-11-04T00:59:19Z"
+  },
+  "current_state": "revoked",
+  "all17tables_exact": true,
+  "limits": [
+    "Existing explicit operator mirror-status command, no frontend code/rendering change."
+  ]
+}

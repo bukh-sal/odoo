@@ -1,0 +1,22 @@
+{
+  "result": "passed_current_native_uninstall_fresh_restore_closed",
+  "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+  "configuration_generation": 8,
+  "fresh_database": "mp_disposable_r0_r1_restore_857c707215c2470e8aa9d3c527ff1cd6",
+  "failed_database_retained": "mp_disposable_r0_r1_g6_g7target_b513bc4f50d4",
+  "checkpoint_native_relations_columns_constraints_counts_and_versions_exact": true,
+  "all17tables_exact_except_reviewed_workspace_security_and_terminal_job_epochs": true,
+  "terminal_job_epoch_updates": 1,
+  "current_native_authority_and_private_auth_exact": true,
+  "session_secret_rotated": true,
+  "technical_credentials_revoked": true,
+  "checkpoint_files_exact": 38,
+  "independent_worker_process_image_key_publication_exact": true,
+  "dispatch_generation": 24,
+  "dispatch_paused": true,
+  "edge_stopped": true,
+  "separate_resume_required": true,
+  "limits": [
+    "Actual fresh restore verified while traffic remains closed; no completed resume or generic external-effect undo claim."
+  ]
+}

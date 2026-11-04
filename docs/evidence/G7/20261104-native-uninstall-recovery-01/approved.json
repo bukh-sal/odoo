@@ -1,0 +1,24 @@
+{
+  "result": "installed_manager_native_uninstall_exact_approval",
+  "operation_id": "857c7072-15c2-470e-8aa9-d3c527ff1cd6",
+  "plan_hash": "sha256:d5025377a298e68e199a0eaa97eca3e907d592a523bd24b5b5452cb819fdcd39",
+  "configuration": 6,
+  "scopes": 2,
+  "missing_destructive_ack_refused_without_journal_change": true,
+  "impact_dispatch": {
+    "state": "present_requires_fence",
+    "tables": [
+      "mp_dispatch_control",
+      "mp_event_consumer_state",
+      "mp_event_consumption",
+      "mp_event_delivery",
+      "mp_event_subscription",
+      "mp_job",
+      "mp_outbox"
+    ]
+  },
+  "native_closure": [
+    "mp_example_notes_labels"
+  ],
+  "mutation_started": false
+}

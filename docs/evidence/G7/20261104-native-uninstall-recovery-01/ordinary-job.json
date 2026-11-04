@@ -1,0 +1,35 @@
+{
+  "result": "passed_actual_restored_original_actor_reference_job",
+  "configuration_generation": 8,
+  "job": {
+    "id": "dc496929-b928-45e7-b724-a7bd3a90a489",
+    "state": "completed",
+    "progress": 100,
+    "attempts": 1,
+    "error_code": null,
+    "result": {
+      "note_id": "0dc0cf60-ff7c-4f2b-83db-0b32fb282530",
+      "revision": 2,
+      "statistics": {
+        "lines": 2,
+        "words": 4,
+        "characters": 28
+      }
+    }
+  },
+  "ordinary_independent_CLI": true,
+  "original_actor": "alice",
+  "attempts": 1,
+  "expected_statistics": {
+    "characters": 28,
+    "words": 4,
+    "lines": 2
+  },
+  "all_old_job_history_and_other16tables_exact": true,
+  "same_worker_process_image_key_publication": true,
+  "new_completed_job_rows": 1,
+  "new_business_records_or_outbox_events": 0,
+  "limits": [
+    "Bounded stateless reference worker only; no generic non-idempotent effect reconciliation claim."
+  ]
+}
