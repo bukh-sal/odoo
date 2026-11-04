@@ -1,0 +1,10 @@
+{
+  "result": "retired_exact_owned_image_export_after_verified_fsynced_proof",
+  "archive_sha256": "67201bc45edfa9aad259120b268ade4018c01890ab6e697fe0f26cde7a66f40a",
+  "bytes_released": 210151936,
+  "images_removed": 0,
+  "containers_created": 0,
+  "volumes_created": 0,
+  "unknown_assets_touched": 0,
+  "private_inventory_and_finding_cache_retained": true
+}

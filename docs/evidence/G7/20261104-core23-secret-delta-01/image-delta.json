@@ -1,0 +1,25 @@
+{
+  "result": "current_app_layer_delta_scanned_triage_required",
+  "utc": "2026-11-04T02:25:55.623507+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "base_image": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "base_layers_identical": true,
+  "prior_qualification": "../20261104-image-secret-audit-01/qualification.json",
+  "known_values": 123,
+  "new_unique_values": 2,
+  "layers": 18,
+  "regular_members": 23913,
+  "bytes": 772386171,
+  "reused_identical_member_scans": 23893,
+  "new_byte_sequences_scanned": 20,
+  "newly_generated_value_hits": 0,
+  "findings": [],
+  "export_bytes": 210151936,
+  "inventory_sha256": "f14121e24dee8939d2634fa458c8aef763475c2feab30068266c98b30f55fc6d",
+  "elapsed_seconds": 9.969,
+  "limits": [
+    "Every current app exported regular member/history/config is hashed; prior generic/121-secret scan is reused only for byte-identical members with existing final triage. Two new secret values are checked against every member.",
+    "Unchanged worker/PostgreSQL/proxy layers retain prior exact-image qualification. Git history/current diagnostics/archives/assets require separately scoped evidence.",
+    "No image build, container, volume, network, running configuration or database mutation. Export is retained privately until result/any findings are reviewed."
+  ]
+}

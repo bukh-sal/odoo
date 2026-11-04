@@ -1,0 +1,20 @@
+{
+  "result": "passed_current_app_layer_secret_delta",
+  "utc": "2026-11-04T02:26:49.518085+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "base_image": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "known_values": 123,
+  "prior_qualified_identical_members": 23893,
+  "current_regular_members": 23913,
+  "new_byte_sequences_scanned": 20,
+  "new_secret_value_hits": 0,
+  "unreviewed_findings": 0,
+  "prior_scope": "../20261104-image-secret-audit-01/qualification.json",
+  "delta": "image-delta.json",
+  "archive_sha256": "67201bc45edfa9aad259120b268ade4018c01890ab6e697fe0f26cde7a66f40a",
+  "archive_bytes": 210151936,
+  "limits": [
+    "Current immutable app layer/config/history delta only; prior final exact-image proof retained for unchanged worker/PostgreSQL/selected proxy.",
+    "This does not independently close Git history/current served assets/diagnostics, bundled vulnerability review, reproducibility or complete OPS03/G7."
+  ]
+}
