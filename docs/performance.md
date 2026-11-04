@@ -1,0 +1,64 @@
+# R1 performance qualification
+
+The current read target passed on the retained 10,000-note fixture with image14de,
+PostgreSQLd81 and proxydece. [Actual qualification](evidence/G7/20261104-performance-current-01/read-qualification.json)
+binds the source, resources, raw samples, dataset and preservation checks.
+This completes the read half of the performance slice, not full G7.
+
+| Ordinary authenticated path | Samples | Median ms | p95 ms | Max ms |
+| --- | --- | --- | --- | --- |
+| Native Odoo list,80rows |200|153.311|303.779|1089.874|
+| Native Odoo detail,9600byte body |200|57.795|107.879|1037.560|
+| Gateway list,25rows |200|125.764|360.509|1092.501|
+| Gateway detail,9600byte body |200|91.218|162.812|1085.332|
+
+All 800 requests succeeded. Each case used 20 independently authenticated sessions,
+three warmups and ten batches released through a barrier, with1.15seconds
+between completed batches. Normal workspace/release/binding/CSRF checks and
+proxy admission remained enabled. This measures concurrency bursts; it is not
+a sustained 20 requests/second throughput claim. All 37 requests above 500 ms remain
+in the raw evidence; the specified p95 target is not a uniform latency bound.
+
+The database has 10,006 Notes, including exactly 10,000 in workspace A and 9,976 retained
+synthetic rows with the original deterministic body distribution. Server-side
+filtering,80row native limits and disjoint25row gateway pages were verified.
+The Note dataset, all17benchmark business/authorization/job/event tables,
+paused copied dispatch and revoked technical credentials remained exact.
+The original site's17tables and protected PostgreSQL/worker identity also stayed
+exact. No image, volume, network, database or reseeded dataset was added.
+
+Docker reported16CPUs and8,290,824,192bytes of memory. The benchmark app retained
+2CPU/1536MiB/two workers, and the shared PostgreSQL process1CPU/512MiB. The
+proxy retained 0.5 CPU/128 MiB. Other containers and the physical host/network are
+shared; [actual resource metadata](evidence/G7/20261104-performance-current-01/resources.json)
+does not imply dedicated4CPU/8GiB hardware or arbitrary deployment guarantees.
+
+The earlier31-image benchmark's gateway-list p95 was 254.463 ms versus 360.509 ms
+now; medians were 127.169 ms versus 125.764 ms. Both datasets and the methodology
+are retained, but dependencies/background conditions differ, so this is not a
+controlled causal regression or improvement claim. All four current p95values
+are below 500 ms. The warm upstream session control was 7.724 ms p95; its coarse,
+different-actor/environment R0reference31ms is contextual. The remaining
+performance review must retain those comparison limits.
+
+[ADR0054](architecture-decisions/0054-current-read-benchmark-fixture.md) explains
+the explicitly unmanaged fixture alignment. Product lifecycle approval was
+already qualified separately and was not replaced by this test setup. The copy
+has no issuer, executor, scheduler or live external endpoint. Private database,
+configuration/filestore checkpoints and preservation snapshots are recovery/test
+inputs; they are not public diagnostics. Three exact successful obsolete
+containers were retired after checkpoint/inspection/native diagnostic capture.
+
+The fixture is retained at port18089. Its once-only setup/qualification scripts
+and `.local/g7-performance-current-01`/`.local/g7-performance-10k-01` records
+must be inspected before any new measurement. Do not rerun setup, reseed,
+reset its database or replay its core initialization. New measurements need an
+explicit new output record and confirmed current target identity.
+
+Required work still open under G-01c4/spec24.1–24.3:
+
+- Shell usable within 3 seconds after login on a warm server with production assets.
+- 100 custom-page mount/dispose cycles with bounded retained memory/resources.
+- Current-source R0 comparison, deployment/job heartbeat and bounded failure
+  detection/revocation evidence reconciled to the actual runtime.
+- Browser/network, identity-cache and accessibility checks plus final G7 handoff.

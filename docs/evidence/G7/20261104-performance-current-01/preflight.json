@@ -1,0 +1,42 @@
+{
+  "result": "read_only_retained_benchmark_preflight_passed",
+  "utc": "2026-11-04T05:26:47.677977+00:00",
+  "project": "mp-g7-perf-6fafdba2c44c",
+  "database": "mp_disposable_r0_r1_g7_perf_6fafdba2c44c",
+  "old_image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+  "new_image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "new_inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "native_version_changes": [
+    {
+      "addon": "mp_core",
+      "before": "19.0.0.1.20",
+      "after": "19.0.0.1.23"
+    }
+  ],
+  "notes": 10006,
+  "synthetic_notes": 9976,
+  "source_notes": 30,
+  "dispatch_paused": true,
+  "copied_technical_credentials_revoked": true,
+  "app_issuer_absent": true,
+  "shared_PostgreSQL_explicit": true,
+  "original_runtime_alias_app_not_used_by_benchmark": true,
+  "actual_app_limits": {
+    "memory": 1610612736,
+    "nano_cpus": 2000000000
+  },
+  "private_snapshot_sha256": {
+    "benchmark-tables-before.json": "576d88459eac95c2c7c62314d4b2f8bb361f04830e683f6f516c4fc92899bfd8",
+    "original-tables-before.json": "450e2d5d8ee82755a22f0dd3117115779f1494372d9e92af470d380285250a2b",
+    "benchmark-publication-before.json": "86a62801639116f09268d440466365eddd3b205efc20ceac700984652398bfe4",
+    "old-runtime.json": "ca6d74d5a49a915ac9c21fb4abe164a7133051797cdc82913994d198813eb04f",
+    "new-runtime.json": "8a4384245aa5bb8ca8af5fde326c6df44e062b007886d2e79ab2b735d78a84fa",
+    "protected-runtime-before.json": "38b469ebd68591c94481884957fcc2a7047f3f96fd53ad889da09eb0efe08e8c",
+    "record-before.json": "54a4c1cf246c700cb4893e5b959927def2edfe03b77530895cc344a62a5c2242"
+  },
+  "diagnosed_first_attempt": "Docker reports Aliases:null; read-only observer now treats absence as empty. Prior snapshots/image inspections reused, actual protected runtime identities rechecked; no mutations/replays.",
+  "limits": [
+    "Observation only; no schema/configuration/container/approval changes.",
+    "Next benchmark-only fixture initialization needs explicit checkpoint/isolated target guards; it grants no product deployment or lifecycle qualification."
+  ]
+}

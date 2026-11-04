@@ -1,0 +1,11 @@
+{
+  "result": "passed_current_read_qualification_checkpoint_privacy",
+  "known_values": 133,
+  "public_files": 26,
+  "findings": 0,
+  "weighted_points": 94.5,
+  "acceptance_counts_unchanged": true,
+  "limits": [
+    "Incremental public source/records check;56actual private command/runtime diagnostic streams checked separately in privacy-syntax.json. Intentional private checkpoints/table-preservation snapshots excluded from publiccleanlog claims."
+  ]
+}

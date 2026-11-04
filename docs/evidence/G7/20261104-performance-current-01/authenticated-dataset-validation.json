@@ -1,0 +1,12 @@
+{
+  "result": "passed_current_authenticated_10k_server_filters_disjoint_pagination",
+  "workspace_count": 10000,
+  "total_notes": 10006,
+  "native_filtered_rows": 80,
+  "gateway_page_sizes": [
+    25,
+    25
+  ],
+  "detail_bytes": 9600,
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93"
+}

@@ -1,0 +1,24 @@
+{
+  "result": "three_exact_successful_obsolete_fixture_containers_retired",
+  "containers": [
+    {
+      "container_id": "7eaaddf33b187ae80c110523b8080de65cb58d9be7546a11756f516f37fd6564",
+      "name": "/mp-g7-perf-6fafdba2c44c-app-old31",
+      "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+      "exit_code": 0
+    },
+    {
+      "container_id": "57d96b4c0525647d92441db4c4b04e76549cf6ba159c3fa93068fb1de1c06392",
+      "name": "/mp-g7-perf-6fafdba2c44c-edge-old479",
+      "image": "sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+      "exit_code": 0
+    },
+    {
+      "container_id": "cecc2818e14a942a7d059bfbb1a7e9abc59399f7a6d958e88ca791892b0ac7f2",
+      "name": "/mp-g7-perf-6fafdba2c44c-core23-fixture-alignment",
+      "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "exit_code": 0
+    }
+  ],
+  "images_volumes_networks_databases_removed": 0
+}

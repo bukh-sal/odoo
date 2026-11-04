@@ -1,0 +1,14 @@
+{
+  "result": "passed_current_benchmark_source_public_records_and_actual_diagnostics_privacy",
+  "known_values": 133,
+  "source_and_record_files": 21,
+  "actual_clean_diagnostic_streams": 56,
+  "findings": 0,
+  "private_exclusions": [
+    "Intentional DB/combined-volume recovery archives under checkpoints/",
+    "Whole17table preservation JSON snapshots under owner-protected benchmark/private root"
+  ],
+  "limits": [
+    "No new credential generated. Private recovery/preservation data are not public assets or declared clean diagnostics. Selected app/proxy actual measured runtime stdout/stderr included; no entire user documents logged by application."
+  ]
+}

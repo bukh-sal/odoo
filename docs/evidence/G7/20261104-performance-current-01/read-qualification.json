@@ -1,0 +1,178 @@
+{
+  "result": "passed_current_required_10k_20concurrent_standard_read_target",
+  "work_item": "G-01c3",
+  "spec_section": "24.1",
+  "utc": "2026-11-04T05:42:07.558763+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 30,
+  "shared_database_image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+  "proxy_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "dataset": {
+    "workspace_notes": 10000,
+    "total_notes": 10006,
+    "synthetic_added": 9976,
+    "detail_body_bytes": 9600,
+    "sha256": "7eee3872ac3505877b6444caf269b85d51dfb4807a3e14756c642d9740c652f8"
+  },
+  "metrics": {
+    "native_list80": {
+      "samples": 200,
+      "median_ms": 153.311,
+      "p95_ms": 303.779,
+      "max_ms": 1089.874,
+      "requests_over_500ms": 10,
+      "errors": 0
+    },
+    "native_detail": {
+      "samples": 200,
+      "median_ms": 57.795,
+      "p95_ms": 107.879,
+      "max_ms": 1037.56,
+      "requests_over_500ms": 9,
+      "errors": 0
+    },
+    "gateway_list25": {
+      "samples": 200,
+      "median_ms": 125.764,
+      "p95_ms": 360.509,
+      "max_ms": 1092.501,
+      "requests_over_500ms": 10,
+      "errors": 0
+    },
+    "gateway_detail": {
+      "samples": 200,
+      "median_ms": 91.218,
+      "p95_ms": 162.812,
+      "max_ms": 1085.332,
+      "requests_over_500ms": 8,
+      "errors": 0
+    }
+  },
+  "requests": 800,
+  "total_errors": 0,
+  "unmodified_current_app_ordinary_authorized_paths": true,
+  "normal_CSRF_binding_release_and_proxy_admission": true,
+  "benchmark17tables_and_fences_exact": true,
+  "original17tables_PG_worker_identity_exact": true,
+  "selected_current_app_PG_proxy_images_exact": true,
+  "actual_environment": {
+    "ServerVersion": "29.9.2",
+    "KernelVersion": "7.0.14-linuxkit",
+    "OperatingSystem": "Docker Desktop",
+    "Architecture": "x86_64",
+    "NCPU": 16,
+    "MemTotal": 8290824192,
+    "Driver": "overlayfs",
+    "DriverStatus": [
+      [
+        "driver-type",
+        "io.containerd.snapshotter.v1"
+      ]
+    ]
+  },
+  "app_limits": {
+    "role": "benchmark_app",
+    "container_id": "b8e4897bf9da483df29db685f1ee23409c4d8ed7e501b675be282ab445526598",
+    "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+    "user": "10001:10001",
+    "memory_limit_bytes": 1610612736,
+    "nano_cpus": 2000000000,
+    "readonly_root": true
+  },
+  "shared_PG_limits": {
+    "role": "shared_database",
+    "container_id": "4709fdc65f4733dc9b37bb164c28e0d85d3ee94faa8678322766077b02996cc9",
+    "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "user": "",
+    "memory_limit_bytes": 536870912,
+    "nano_cpus": 1000000000,
+    "readonly_root": false
+  },
+  "comparison_to_prior31": {
+    "native_list80": {
+      "prior31_p95_ms": 323.262,
+      "current14de_p95_ms": 303.779,
+      "prior_median_ms": 166.32,
+      "current_median_ms": 153.311
+    },
+    "native_detail": {
+      "prior31_p95_ms": 120.154,
+      "current14de_p95_ms": 107.879,
+      "prior_median_ms": 64.007,
+      "current_median_ms": 57.795
+    },
+    "gateway_list25": {
+      "prior31_p95_ms": 254.463,
+      "current14de_p95_ms": 360.509,
+      "prior_median_ms": 127.169,
+      "current_median_ms": 125.764
+    },
+    "gateway_detail": {
+      "prior31_p95_ms": 182.166,
+      "current14de_p95_ms": 162.812,
+      "prior_median_ms": 102.336,
+      "current_median_ms": 91.218
+    }
+  },
+  "warm_upstream_session_control": {
+    "samples": 20,
+    "median_ms": 6.774,
+    "p95_ms": 7.724,
+    "max_ms": 8.155,
+    "requests_over_500ms": 0
+  },
+  "retired_exact_obsolete_helpers": [
+    {
+      "container_id": "7eaaddf33b187ae80c110523b8080de65cb58d9be7546a11756f516f37fd6564",
+      "name": "/mp-g7-perf-6fafdba2c44c-app-old31",
+      "image": "sha256:31a673ebbc53fbdecbc5cbfdb5f0eac30d11367630da306d47b5e14cfce17345",
+      "exit_code": 0
+    },
+    {
+      "container_id": "57d96b4c0525647d92441db4c4b04e76549cf6ba159c3fa93068fb1de1c06392",
+      "name": "/mp-g7-perf-6fafdba2c44c-edge-old479",
+      "image": "sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951",
+      "exit_code": 0
+    },
+    {
+      "container_id": "cecc2818e14a942a7d059bfbb1a7e9abc59399f7a6d958e88ca791892b0ac7f2",
+      "name": "/mp-g7-perf-6fafdba2c44c-core23-fixture-alignment",
+      "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "exit_code": 0
+    }
+  ],
+  "evidence_sha256": {
+    "preflight.json": "6d2941c62631735320ca86835aaba674dc89c1af52e52323567e51a9b8cc1509",
+    "checkpoint.json": "46bc8265ceba34f9d952c67e3df98c162a733c7f9306e8848740dc6712868e5a",
+    "core-alignment.json": "0dc54aa6e31d3b3d066fe763300180d5058b01d50f8d5d60d53f68413db8d3c7",
+    "fixture-publication.json": "a0b306ad0e922b4ba534526553168cab5f5b5adf8811d6076e4840f176613e02",
+    "current-ready.json": "16c381baf317b2cec0a4c570a321ce87529c14c129383b5ea16b368f85ff0ad0",
+    "resources.json": "fc1d754589fa73118238a01d12a63563e7b42ff13f796ae18db4d6e580749dfe",
+    "authenticated-dataset-validation.json": "c5154eda6b3482793394e6ca0d7332fbdb61d14714d3a167ba45bb1ec263da31",
+    "read-benchmark.json": "fb7a57de87d72130be293c551fbcc183d4dc4301ada0096062f83ec367817e00"
+  },
+  "limits": [
+    "Only1/2performance points: shell<3s,100mount/dispose cycles, R0/heartbeat/revocation mapping and fullG7 remain.",
+    "ADR0054 unmanaged synthetic-fixture schema/publication initialization is not product lifecycle qualification; no issuer/executor/scheduler in clone.",
+    "Gateway-list p95360.509ms versus prior254.463ms is retained; medians125.764vs127.169ms. Different image/dependencies/background environment; no controlled causal regression/improvement claim. All four current targets pass. Upstream session7.724ms versus coarse/different R0 context31ms is contextual.",
+    "Max~1.1s and all37over500ms samples retained across800requests; p95 target is not a uniform latency bound. SharedPG/hardware/network/background containers and actual16CPU/~8GBengine are recorded; per-container limits unchanged.",
+    "No image/volume/network/newdatabase or dataset reseed. Private checkpoint configuration/data remain protected, outside public/clean-log scope."
+  ],
+  "measurement_source_sha256": "a442a0b96fc88c30fc9914296d60bb355074d045188fa89b5a80792abec68ae8",
+  "finalized_fixture_sources_sha256": {
+    "align_core.py": "dde01b41c279270fba6eb5bde7e473ed180f0d23d2bdf80d13b62059db55c4c0",
+    "checkpoint.py": "7dd2da969a76e3d41821e0a79b4beff7ec11da7efdf82cff97f63dabee9c3986",
+    "finalize_preflight.py": "34df5ec787127a24864288c9b78338a2afa4529e90a1d879ea9cb65e18507521",
+    "preflight.py": "cee8ed32223a6fd88d8bf4750435cab88b99d3d261d75ff58ed0217058373421",
+    "publish_fixture.py": "a6c52a097212546b505ed93a968a23e9c5f944d0d10e0734f754db4e1cc6a151",
+    "qualify_reads.py": "1dfcbe3ba40fe6b216fea2cf9940a85292d228f95de81e8121ed6914fced2379",
+    "read_benchmark.py": "a442a0b96fc88c30fc9914296d60bb355074d045188fa89b5a80792abec68ae8",
+    "start_current.py": "c73e977478a205e34df40033e36b4d1172d7ecfbae689a326b7bac059073a6e4"
+  },
+  "source_identity_notes": [
+    "Measurement source is unchanged from the actual800request run. Runtime source is bound by immutable14de/inventory1a411; selectedPG/proxy exact.",
+    "Finalized checkpoint/alignment fixture wrappers route sensitive archives/table-preservation snapshots directly to protected nonlog paths; the actual run initially captured then exactly relocated those intentional private records, with retention receipts and no setup/native replay.",
+    "PreflightDocker nullAliases observation was corrected after a read-only refusal; finalized explicit observation reused private immutable image snapshots and rechecked actual running identities."
+  ]
+}

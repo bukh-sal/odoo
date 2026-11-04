@@ -1,0 +1,27 @@
+{
+  "result": "current_guarded_unmanaged_benchmark_app_proxy_ready",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 30,
+  "new_app": "b8e4897bf9da483df29db685f1ee23409c4d8ed7e501b675be282ab445526598",
+  "new_edge": "a2e23e723a16e057f7035fd42a0f69b22b79f27d9a1c7174b697d50b659db424",
+  "proxy_image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+  "proxy_template_sha256": "0906158aa61e013d8f8d9134649555922cbf1d73d970e6d35360f7c12bf01756",
+  "port": 18089,
+  "app_limits": {
+    "CPUs": 2,
+    "memory": 1610612736,
+    "workers": 2
+  },
+  "retained_old_containers": [
+    "7eaaddf33b187ae80c110523b8080de65cb58d9be7546a11756f516f37fd6564",
+    "57d96b4c0525647d92441db4c4b04e76549cf6ba159c3fa93068fb1de1c06392"
+  ],
+  "existing_volume_networks_database_reused": true,
+  "new_images_volumes_networks_databases": 0,
+  "no_original_app_alias_or_compose_project_claim": true,
+  "limits": [
+    "Read fixture setup only; actual authenticated dataset/ordinary20session benchmark/preservation checks required.",
+    "Old containers/checkpoints retained until verification; original app/worker/PG remain separate, shared physical/network resources explicitly reported."
+  ]
+}

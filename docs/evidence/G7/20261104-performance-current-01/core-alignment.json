@@ -1,0 +1,23 @@
+{
+  "result": "current_unmanaged_fixture_core_initialized_with_exact17table_preservation",
+  "utc": "2026-11-04T05:31:31.367847+00:00",
+  "project": "mp-g7-perf-6fafdba2c44c",
+  "database": "mp_disposable_r0_r1_g7_perf_6fafdba2c44c",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "native_version": {
+    "state": "installed",
+    "version": "19.0.0.1.23"
+  },
+  "benchmark17tables_exact": true,
+  "original17tables_exact": true,
+  "notes": 10006,
+  "workspace_target_notes": 10000,
+  "issuer_not_mounted": true,
+  "dispatch_and_credentials_unchanged": true,
+  "native_child": "mp-g7-perf-6fafdba2c44c-core23-fixture-alignment",
+  "limits": [
+    "Benchmark test-fixture initialization under ADR0054, not an independent product lifecycle upgrade/recovery qualification.",
+    "Fixture remains stopped; guarded current app/client-release publication and actual measurements remain required."
+  ]
+}

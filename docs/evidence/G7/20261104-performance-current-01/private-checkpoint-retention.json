@@ -1,0 +1,20 @@
+{
+  "result": "exact_binary_checkpoints_retained_under_private_checkpoint_paths",
+  "archives": [
+    {
+      "source": "database-checkpoint.stdout",
+      "destination": "checkpoints/database.dump",
+      "sha256": "f4faa01a4378d02593e2ab40c8c478b1a44d13b668bdf65e9493553ae1e70ff5",
+      "classification": "intentional_protected_checkpoint_not_clean_diagnostic"
+    },
+    {
+      "source": "private-volume-checkpoint.stdout",
+      "destination": "checkpoints/volume.tar.gz",
+      "sha256": "e12793fa883386e0cb1e535c65bee69557156fc16db253043796bb5b6443d5c1",
+      "classification": "intentional_protected_checkpoint_not_clean_diagnostic"
+    }
+  ],
+  "limits": [
+    "Intentional database/configuration secret recovery inputs; excluded from public clean-log claim. No checkpoint recapture or runtime mutation."
+  ]
+}

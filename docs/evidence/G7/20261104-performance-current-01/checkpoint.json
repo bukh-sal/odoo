@@ -1,0 +1,25 @@
+{
+  "result": "exact_unmanaged_benchmark_stopped_and_checkpointed",
+  "project": "mp-g7-perf-6fafdba2c44c",
+  "database": "mp_disposable_r0_r1_g7_perf_6fafdba2c44c",
+  "checkpoints": {
+    "database": {
+      "bytes": 4585991,
+      "sha256": "f4faa01a4378d02593e2ab40c8c478b1a44d13b668bdf65e9493553ae1e70ff5"
+    },
+    "private_combined_volume": {
+      "bytes": 4167689,
+      "sha256": "e12793fa883386e0cb1e535c65bee69557156fc16db253043796bb5b6443d5c1"
+    }
+  },
+  "stopped_exact_containers": [
+    "57d96b4c0525647d92441db4c4b04e76549cf6ba159c3fa93068fb1de1c06392",
+    "7eaaddf33b187ae80c110523b8080de65cb58d9be7546a11756f516f37fd6564"
+  ],
+  "shared_PostgreSQL_not_stopped": true,
+  "new_images_volumes_networks_databases": 0,
+  "limits": [
+    "Private combined-volume checkpoint intentionally includes fixture DB configuration secrets and stays protected; not a public/clean diagnostic.",
+    "No native alignment executed yet; this grants no product lifecycle approval."
+  ]
+}

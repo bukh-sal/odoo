@@ -1,0 +1,80 @@
+{
+  "docker": {
+    "ServerVersion": "29.9.2",
+    "KernelVersion": "7.0.14-linuxkit",
+    "OperatingSystem": "Docker Desktop",
+    "Architecture": "x86_64",
+    "NCPU": 16,
+    "MemTotal": 8290824192,
+    "Driver": "overlayfs",
+    "DriverStatus": [
+      [
+        "driver-type",
+        "io.containerd.snapshotter.v1"
+      ]
+    ]
+  },
+  "host_OS": "Windows-11-10.0.26300-SP0",
+  "host_operator_Python": "3.12.16",
+  "clocks": {
+    "monotonic": {
+      "implementation": "GetTickCount64()",
+      "resolution": 0.015625
+    },
+    "perf_counter": {
+      "implementation": "QueryPerformanceCounter()",
+      "resolution": 1e-07
+    }
+  },
+  "runtimes": [
+    {
+      "role": "benchmark_app",
+      "container_id": "b8e4897bf9da483df29db685f1ee23409c4d8ed7e501b675be282ab445526598",
+      "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "user": "10001:10001",
+      "memory_limit_bytes": 1610612736,
+      "nano_cpus": 2000000000,
+      "readonly_root": true
+    },
+    {
+      "role": "shared_database",
+      "container_id": "4709fdc65f4733dc9b37bb164c28e0d85d3ee94faa8678322766077b02996cc9",
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "user": "",
+      "memory_limit_bytes": 536870912,
+      "nano_cpus": 1000000000,
+      "readonly_root": false
+    },
+    {
+      "role": "benchmark_edge",
+      "container_id": "a2e23e723a16e057f7035fd42a0f69b22b79f27d9a1c7174b697d50b659db424",
+      "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "user": "101:101",
+      "memory_limit_bytes": 134217728,
+      "nano_cpus": 500000000,
+      "readonly_root": true
+    },
+    {
+      "role": "preserved_original_worker",
+      "container_id": "ec8a77f570ff5679558021b149299b2adfd67be3594b11f3fa2c977b514da0ad",
+      "image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "user": "10002:10002",
+      "memory_limit_bytes": 268435456,
+      "nano_cpus": 1000000000,
+      "readonly_root": true
+    }
+  ],
+  "actual_app_settings": {
+    "workers": "2",
+    "db_maxconn": "12",
+    "max_cron_threads": "0",
+    "limit_memory_soft": "536870912",
+    "limit_memory_hard": "671088640",
+    "dev_mode": null
+  },
+  "global_running_container_count": 21,
+  "limits": [
+    "Recorded actual engine/container allocation and shared background workload, not dedicated4CPU/8GiB equivalence.",
+    "Same benchmark app2CPU/1536MiB/twoworkers, sharedPG1CPU/512MiB and unmodified proxy admission; no limit increase for a passing result."
+  ]
+}

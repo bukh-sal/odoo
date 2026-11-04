@@ -1,0 +1,15 @@
+{
+  "result": "current_unmanaged_fixture_public_metadata_published",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 30,
+  "release_digest": "sha256:4f1171806716feac6f8304b9ae22601fd23689e30017c5ae0e0b746a8bce4adb",
+  "external_endpoints": [],
+  "external_features_suspended": true,
+  "issuer_or_executor_registered": false,
+  "projection_and_profile_writer_unchanged": true,
+  "limits": [
+    "OS-side synthetic benchmark metadata initialization under ADR0054; public profile grants no approval or technical authority.",
+    "Guarded app start and actual current read measurements remain unqualified."
+  ]
+}

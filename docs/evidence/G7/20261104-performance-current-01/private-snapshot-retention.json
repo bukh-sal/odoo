@@ -1,0 +1,20 @@
+{
+  "result": "exact_private_verification_snapshots_retained_separately_from_logs",
+  "snapshots": [
+    {
+      "source": "benchmark-after-core.stdout",
+      "destination": "benchmark-tables-after-core.json",
+      "sha256": "416e684e3bc388ef9f34d453e5cc19e5e9fbb928ad3cc62c0f46e19aeafd2f1d",
+      "purpose": "private_exact_table_preservation_snapshot_not_application_diagnostic"
+    },
+    {
+      "source": "original-after-core.stdout",
+      "destination": "original-tables-after-core.json",
+      "sha256": "5bc2582dc5ad35d8bca2c591dc3a7bda9cbd57f757302c53d537996b962415dc",
+      "purpose": "private_exact_table_preservation_snapshot_not_application_diagnostic"
+    }
+  ],
+  "limits": [
+    "Intentional private whole-table preservation inputs; do not publish or count as clean diagnostic. Future fixture source writes directly to snapshot paths. No SQL recapture or migration replay."
+  ]
+}
