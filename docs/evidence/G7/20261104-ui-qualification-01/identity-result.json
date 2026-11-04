@@ -1,0 +1,52 @@
+{
+  "result": "actual_current_two_tab_workspace_native_view_and_late_response_isolation",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Edg/156.0.4314.50",
+    "revision": "@af2ba23ae0ecf7084d900446fc59d5119dd5fd5e",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+    "jsVersion": "15.6.12.7"
+  },
+  "initial_native_lists": {
+    "A": true,
+    "B": true
+  },
+  "after_actual_late_response": {
+    "A": true,
+    "B": true
+  },
+  "actual_backend_response_held_status": 200,
+  "late_response_release": "already_canceled_by_disposal",
+  "late_request_cancellation_observed": true,
+  "native_forms": {
+    "A": {
+      "title": "Release reference A",
+      "editable": true,
+      "native_form": true,
+      "workspace": "e0f4ae9b-761e-415f-aad7-4418e8f87772"
+    },
+    "B": {
+      "title": "Release reference B",
+      "editable": false,
+      "native_form": true,
+      "workspace": "a958a4cc-6463-4d32-b486-42e86e5bdcdd"
+    }
+  },
+  "same_authenticated_Alice_session": true,
+  "A_administrator_B_viewer": true,
+  "app_foreign_requests": [],
+  "foreign_websockets": [],
+  "runtime_exception_count": 0,
+  "positive_foreign_control_observed": true,
+  "business_mutations_attempted": 0,
+  "personal_browser_used": false,
+  "new_profile_or_Docker_assets": 0,
+  "limits": [
+    "Real native lists/forms and selector navigation; no application function or response-body replacement.",
+    "Only actual native B response paused at response stage, then continued or observed canceled by real disposal; both tabs verified after late response.",
+    "No Note/board edit or Labels action here. UI09 and full release closure remain separate."
+  ]
+}

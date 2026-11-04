@@ -1,0 +1,8 @@
+{
+  "result": "not_qualified_timeout_waiting_for_new_list_while_holding_response",
+  "private_output": ".local/g7-ui-qualification-01/identity-*.json and identity-tab-*-list.png",
+  "actual_observations": "Separate A/B native lists matched their own workspace. A real B native read returned200 and was held. Returning to A canceled the held request; no runtime exceptions recorded. Waiting for a fully rendered A list before releasing the interception timed out.",
+  "owned_browser": "PID30944 exited0; independent profile-process inventory empty before attempt02.",
+  "harness_corrections": "Activate foreground tab before UI interactions/screenshots; hidden tabs intentionally hide content until current-authority refresh. Release the real delayed response after route/workspace selection changes, then verify the final native lists. Capture safe structural diagnostics on any further failure.",
+  "preservation": "Original script/results retained. Attempt02 has a separate owned output subdirectory and reuses the same browser profile. No product code, native lifecycle, setup or business edit."
+}

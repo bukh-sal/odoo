@@ -341,3 +341,8 @@ G7 currentsource/notices: `evidence/G7/20261104-source-notices-01/qualification.
 ## Current G7 network subresults (4 November 2026)
 
 [Backend/static qualification](evidence/G7/20261104-network-independence-01/backend-qualification.json) binds actual current4159source hashes, product-tie classification, per-role internal topology, TCPcontrols, selected proxy bytes and17table/four-runtime preservation. [Extended alias/CSS qualification](evidence/G7/20261104-network-independence-01/alias-qualification.json) adds optional report-font CDN disposition and actual current productionCSS0remote resources/imports. [Architecture explanation](network-independence.md) preserves optional links/attribution and finite scope. OPS03, required current browser identity/accessibility/network coverage and final source-kit/release closure remain open; no fullG7pass.
+
+
+## Current ID08 browser qualification (4 November 2026)
+
+[Actual current two-tab native/cache/role/late-response qualification](evidence/G7/20261104-ui-qualification-01/identity-qualification.json): same Alice session Aadministrator/Bviewer; own native lists/forms, editable versus readonly, real held BHTTP200read canceled on disposal, both tabs isolated afterward. [Actual observations](evidence/G7/20261104-ui-qualification-01/identity-result.json) and reviewed native form screenshots bind current14de/config4.17tables/fourruntime identities exact; no foreign requests/exceptions, owned browser exited0,133valueprivacy0. ID08 passes; UI09/OPS03/finalG7 remain. Initial harness timeout is retained separately.

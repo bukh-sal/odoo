@@ -1,0 +1,44 @@
+{
+  "result": "passed_current_ID08_native_two_tab_workspace_role_cache_and_late_response_isolation",
+  "utc": "2026-11-04T06:56:01.077048+00:00",
+  "acceptance": [
+    "ID-08"
+  ],
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "same_actor_tabs_A_administrator_B_viewer": true,
+  "native_lists_and_forms_default": true,
+  "actual_late_backend_reply_canceled_by_disposal_no_cross_tab_contamination": true,
+  "all17_business_authority_job_event_tables_exact": true,
+  "all4_runtime_process_image_mount_network_identities_exact": true,
+  "owned_browser_exit0_no_profile_process_remaining": true,
+  "app_foreign_requests": 0,
+  "foreign_websockets": 0,
+  "runtime_exceptions": 0,
+  "positive_foreign_control_observed": true,
+  "privacy": {
+    "known_values": 133,
+    "files": 15,
+    "findings": 0,
+    "controlled_fixture_screenshots_visually_reviewed": true
+  },
+  "new_profiles_or_Docker_assets": 0,
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity-result.json": "18643a2c55fcfdf7c60e22d6456aa9b410ac6a1aedee163317c5d98f5f48572a",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity-network.json": "1170f8bfb5fbf93961eb9864aa60a6e060cf9d8f1e5d8f27c9d0ad58a923036b",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity-tab-A-list.png": "a57bd2366132e0628b7f0d47c3394a52a2e94643db9e96bf5bb58420e3a7123b",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity-tab-B-list.png": "16d867438768dd481316972b989ceb1f1356215d6edf5c5dec269a679e7cbcce",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity-tab-A-form.png": "be050a2dd95c830eeb12d7266ef4ab4c5230732a3d63ee2119e2f442d91a08c4",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity-tab-B-form.png": "ddd255de54e130639e38a77aaacdd87b22fa9c6e979e3717b458cddd1d58b6e7",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity.mjs": "a5b3e145158e665c2ef41a0ef66edc7c9cbab34b892b406e2699ea53ed551f5d",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity02.mjs": "54463b77a93469fa0fd05b9b37aabe74da264c55bed1bdac6164db374f2a47b9",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\identity-attempt01.json": "8fb3bc0adc4bd169716d37942043073c3e8ecff43cbd13b1c34819bda74f4c60"
+  },
+  "limits": [
+    "Actual HTTP200 native read response was held and canceled on route disposal; its body was not inspected or replaced. Separate actual native lists/forms prove successful own-workspace reads and role separation.",
+    "Initial harness timeout/hidden-tab screenshot preserved. Corrected run foregrounds tabs and releases after actual route selection, then checks native lists/forms.",
+    "No Note/board/Labels edit. UI09 and full native Labels/RTL/release closure remain required.",
+    "Protected profile/session and whole-table snapshots remain private; finite byte scanner plus visual screenshot review is not a universal secret detector."
+  ]
+}
