@@ -1,0 +1,10 @@
+{
+  "result": "passed_current_native_review_public_and_actual_diagnostic_privacy_syntax",
+  "public_files": 9,
+  "actual_private_streams": 2,
+  "known_values": 123,
+  "findings": 0,
+  "limits": [
+    "Incremental review files and actual observer diagnostics only; full current Git/history/assets/log delta remains the next work item."
+  ]
+}

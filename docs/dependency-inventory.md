@@ -1,5 +1,24 @@
 # Foundation dependency inventory
 
+## Current R1 security review checkpoint
+
+The current core23 dependency bytes and notices are bound in
+[the actual source/dependency record](evidence/G7/20261104-core23-provenance-01/source-dependency-binding.json).
+[The dated OS review](evidence/G7/20261104-cve-dispositions-01/complete-debian-dispositions.json)
+records 159 decisions. [The native review](evidence/G7/20261104-native-review-02/README.md)
+adds 72 component-scoped decisions for Expat, embedded XML/XSLT, codec candidates,
+Node, compression, SQLite and the proxy, with explicit scope and review dates.
+
+Accepted findings are not library fixes. Potential XML/image parser memory
+corruption and availability risks remain relevant to untrusted imports;
+defusedxml only mitigates specific entity input paths. Before enabling new
+input pipelines or public deployment, review the recorded conditions and adopt
+appropriate vendor fixes. This checkpoint is not complete OPS-03 or G7
+qualification. The remaining release work is tracked in
+[implementation status](implementation-status.md).
+
+## Retained substrate and dependency closure
+
 The executable allowlist is `deploy/distribution.json`; build verifies native manifest dependency closure without importing addons, materializes a fresh source tree and hashes its files into the image's `distribution-inventory.json`. All official source remains in Git, including excluded business addons. No ERP source is needed in the runtime distribution just to create catalog categories.
 
 | Addon | Why retained | Installation behavior |

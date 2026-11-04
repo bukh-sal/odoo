@@ -1,0 +1,1626 @@
+{
+  "result": "dated_known_native_findings_and_component_mapping_recorded",
+  "utc": "2026-11-04T02:40:34.086931+00:00",
+  "decisions": [
+    {
+      "component": "Expat2.9.0",
+      "cve": "CVE-2026-113351",
+      "roles": [
+        "application",
+        "worker",
+        "operator16"
+      ],
+      "decision": "excluded_selected_Python_wrapper_precondition",
+      "rationale": "The actual app binding has no Reset API; exact CPython3.12.16 pyexpat/ElementTree wrapper sources contain no XML_ParserReset call. Selected worker/operator use that CPython release and Expat2.9.0. This exclusion covers those supported Python wrapper paths, not trusted C extensions/ctypes directly calling Expat.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Expat2.9.0",
+      "cve": "CVE-2026-115506",
+      "roles": [
+        "application",
+        "worker",
+        "operator16"
+      ],
+      "decision": "accepted_mitigated_input_residual",
+      "rationale": "Current native XLSX uses defusedxml with entities/external references forbidden; real native ordinary import and entity refusal were qualified after core22. Fixed source country XML and disabled test helpers differ from arbitrary XML. The newer Expat amplification fix is not installed; unknown transitive XML paths remain residual. Worker reference accepts JSON, and compression/body limits alone are not a proof against expansion.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-core22-maintenance-01/qualification.json",
+        "../20261104-native-libraries-01/parser-paths.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Expat2.9.0",
+      "cve": "CVE-2026-117610",
+      "roles": [
+        "application",
+        "worker",
+        "operator16"
+      ],
+      "decision": "accepted_dormant_API_residual",
+      "rationale": "ExternalEntityParserCreate is actually exposed, so a global missing-API exclusion would be false. Supported defused XLSX rejects external entities and the worker has no XML task API; no supported workflow intentionally creates an external subparser and makes the vulnerable initial empty non-final parse. Arbitrary trusted native/Python use remains possible. The library is not claimed fixed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Expat2.9.0",
+      "cve": "CVE-2026-118370",
+      "roles": [
+        "application",
+        "worker",
+        "operator16"
+      ],
+      "decision": "accepted_memory_safety_residual",
+      "rationale": "Attribute/namespace counter overflow is separate from entity expansion. Defusedxml does not fix it. Retain potential parser memory-corruption/availability risk for the local reference, including authenticated imports; no unproved payload-size threshold or universal resource-limit protection is claimed. A vendor-fixed Expat build and actual import qualification are required before broad untrusted/public input exposure.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-0989",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "Nested hostile RelaxNG include recursion; R1 does not accept arbitrary uploaded validation schemas as an execution feature. Pinned schema use differs from an untrusted schema service. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-0990",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "Self-referential URI delegation in an XML catalog; no public catalog configuration interface is supplied. Added custom resolvers/catalogs invalidate this decision. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-0992",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "Repeated downstream XML catalog traversal; no user catalog upload/execution workflow is supplied. This is not a proof that all resource resolution is safe. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-6732",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "XSD/internal-entity type confusion is relevant to libxml2.14.6 even though Debian Bookworm marks its older source not affected. No backport is established for this wheel. Uploaded XSD validation is not an R1 feature; retain a conditional memory-safety risk for native schema/parser use. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-76781",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "Malformed nextCatalog can crash catalog resolution. No browser-controlled catalog is configured; custom/native resolver additions require renewed review. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86137",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "XML regexp character-group out-of-bounds read; no arbitrary user-supplied schema/regexp execution API is provided, but transitive native validation is not exhaustively excluded. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86138",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "QName dictionary integer overflow can affect XML parsing. XML/HTML inputs are supported, so do not exclude this merely because DTD/entity loading is restricted. Accept potential memory-safety/availability risk in the local reference; request limits do not prove the native function fixed. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86139",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "URI escaping integer overflow may be reached by native XML/HTML processing; no proof of the newer fix in the older bundled library exists. Retain conditional memory-safety/resource risk rather than inheriting Debian not-affected status. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86140",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "DTD diagnostic element formatting overflow. Default/non-expanding parser use reduces some inputs but is not a universal mitigation; supported import/native XML parsing retains conditional memory-safety risk. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86141",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "XML regexp error path can dereference NULL after failed allocation. Native validation can still fail under memory pressure; no complete allocation-failure safety guarantee is made. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86142",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "XPointer expression overflow. R1 has no arbitrary user XPointer execution feature; a fixed XPath used by code is not the same API. Trusted custom/native XML features could enable it. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86143",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "Negative lengths at XML output callbacks can affect serialization; no native fix is established from the version or Python wrapper. Retain potential memory-safety risk; ordinary serialization success is not adversarial proof. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-86144",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_local_reference_residual",
+      "rationale": "XInclude flag propagation may lose NONET. No owned R1 plugin invokes XInclude on uploaded documents; NONET alone must not be treated as an SSRF or filesystem safety guarantee if a future feature does. Current lxml build source names a libxslt patch only; no libxml2 backport is presumed. Review before broad untrusted/public deployment.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-11979",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_specific_component_or_range",
+      "rationale": "Affected xmlcatalog CLI is not the lxml Python binding or a shipped user service.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-1757",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_specific_component_or_range",
+      "rationale": "Affected xmllint interactive shell is not the lxml Python binding or a shipped user service.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-6653",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_specific_component_or_range",
+      "rationale": "Retained upstream affected range2.9.11..2.11.0 excludes the observed2.14.6; this does not exclude newer libxml2 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxml2.14.6",
+      "cve": "CVE-2026-74860",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_specific_component_or_range",
+      "rationale": "Affected standalone libxml2 Python SAX wrapper is different from lxml Cython bindings; that standalone wrapper is not installed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxslt1.1.43",
+      "cve": "CVE-2025-7424",
+      "roles": [
+        "application"
+      ],
+      "decision": "vendor_documented_backport",
+      "rationale": "Exact lxml release notes document Linux wheel patches for these two issues; the exact-tag build mapping selects libxslt-1.1.43-backport1.patch and its retained source changes the affected transformation logic. Actual wheel distribution bytes and embedded libxslt1.1.43 are bound; embedded version alone must not override the documented backport. This is vendor/source provenance, not a new exploit regression test.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxslt1.1.43",
+      "cve": "CVE-2025-11731",
+      "roles": [
+        "application"
+      ],
+      "decision": "vendor_documented_backport",
+      "rationale": "Exact lxml release notes document Linux wheel patches for these two issues; the exact-tag build mapping selects libxslt-1.1.43-backport1.patch and its retained source changes the affected transformation logic. Actual wheel distribution bytes and embedded libxslt1.1.43 are bound; embedded version alone must not override the documented backport. This is vendor/source provenance, not a new exploit regression test.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxslt1.1.43",
+      "cve": "CVE-2025-24855",
+      "roles": [
+        "application"
+      ],
+      "decision": "outside_upstream_affected_range",
+      "rationale": "Upstream libxslt NEWS records the fix in1.1.43, which is actually embedded. The later backport cases are separate.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxslt1.1.43",
+      "cve": "CVE-2025-10911",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_stylesheet_input_residual",
+      "rationale": "No proof the specifically described document/attribute lifetime issue is covered by the two named vendor backports. R1 does not offer arbitrary uploaded XSLT execution; installed transformations use trusted code/schema inputs. Retain potential use-after-free/memory corruption if a custom native feature processes hostile stylesheets; do not infer fixed solely from libxslt version or a different CVE patch.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "lxml6.1.3/libxslt1.1.43",
+      "cve": "CVE-2025-7425",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_stylesheet_input_residual",
+      "rationale": "No proof the specifically described document/attribute lifetime issue is covered by the two named vendor backports. R1 does not offer arbitrary uploaded XSLT execution; installed transformations use trusted code/schema inputs. Retain potential use-after-free/memory corruption if a custom native feature processes hostile stylesheets; do not infer fixed solely from libxslt version or a different CVE patch.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "binding-observation.json",
+        "../20261104-cve-dispositions-01/primary-notes.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/freetype2.14.3",
+      "cve": "CVE-2026-23865",
+      "roles": [
+        "application"
+      ],
+      "decision": "outside_described_upstream_range",
+      "rationale": "The description identifies FreeType2.13.2/2.13.3 and fix2.14.2; actual embedded2.14.3 is beyond that range. Do not extend this to the two newer FreeType findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/freetype2.14.3",
+      "cve": "CVE-2026-50811",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "Actual FreeType2.14.3 may contain the described variation/CID font defects. No user-supplied server font API is provided by Notes/Canvas/native record screens. Browser fonts are a different pipeline. Trusted native font-processing additions invalidate this decision; no vendor backport is presumed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/freetype2.14.3",
+      "cve": "CVE-2026-95512",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "Actual FreeType2.14.3 may contain the described variation/CID font defects. No user-supplied server font API is provided by Notes/Canvas/native record screens. Browser fonts are a different pipeline. Trusted native font-processing additions invalidate this decision; no vendor backport is presumed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/lcms22.19",
+      "cve": "CVE-2026-41254",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_upstream_range_revision_discrepancy",
+      "rationale": "Descriptions limit the Cube/ParseCube defects to versions through2.18 or before2.19, while Debian revision fix levels differ. Embedded LittleCMS is2.19. Preserve the range/revision distinction rather than claiming a Debian package backport applies to the wheel. No arbitrary LUT program upload feature is supplied; ICC/native image processing still carries residual parser risk.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/lcms22.19",
+      "cve": "CVE-2026-42798",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_upstream_range_revision_discrepancy",
+      "rationale": "Descriptions limit the Cube/ParseCube defects to versions through2.18 or before2.19, while Debian revision fix levels differ. Embedded LittleCMS is2.19. Preserve the range/revision distinction rather than claiming a Debian package backport applies to the wheel. No arbitrary LUT program upload feature is supplied; ICC/native image processing still carries residual parser risk.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/libjpeg-turbo3.2.0",
+      "cve": "CVE-2026-75466",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "The described PNG defect uses tj3LoadImage12/16, not ordinary libjpeg JPEG scanline decoding. Pillow PNG handling is separate, and R1 supplies no TurboJPEG file-loader API. Embedded3.2.0 is not claimed patched; arbitrary trusted native use of that loader remains possible.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/openjpeg22.5.4",
+      "cve": "CVE-2026-107080",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "The described defects concern JPEG2000 encoding. Embedded OpenJPEG2.5.4 is not claimed patched. Reference record image processing does not offer a public JPEG2000 encoder parameter interface; custom native encoding/large geometry can introduce the affected paths. Retain conditional memory-safety/availability risk.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/openjpeg22.5.4",
+      "cve": "CVE-2026-6192",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "The described defects concern JPEG2000 encoding. Embedded OpenJPEG2.5.4 is not claimed patched. Reference record image processing does not offer a public JPEG2000 encoder parameter interface; custom native encoding/large geometry can introduce the affected paths. Retain conditional memory-safety/availability risk.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/tiff4.7.2",
+      "cve": "CVE-2026-12912",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "Actual libtiff4.7.2 is inventoried, but Debian revision fix levels alone are not proof of this wheel backport. The described PixarLog/tile/SamplesPerPixel decoding can be input dependent. Native image parsing remains a potential resource/memory-safety risk; Odoo has a50M-pixel guard only for callers enabling verify_resolution, not a blanket malformed-image defense. Retain as residual instead of claiming exhaustive decoder safety.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/tiff4.7.2",
+      "cve": "CVE-2026-18495",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_codec_CLI_component",
+      "rationale": "The affected tiff2pdf/tiffcrop/thumbnail/rgb2ycbcr executable is separate from the Pillow libtiff decoder; the runtime supplies no such CLI input service. This exclusion does not cover libtiff decoder findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/tiff4.7.2",
+      "cve": "CVE-2026-36849",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "Actual libtiff4.7.2 is inventoried, but Debian revision fix levels alone are not proof of this wheel backport. The described PixarLog/tile/SamplesPerPixel decoding can be input dependent. Native image parsing remains a potential resource/memory-safety risk; Odoo has a50M-pixel guard only for callers enabling verify_resolution, not a blanket malformed-image defense. Retain as residual instead of claiming exhaustive decoder safety.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/tiff4.7.2",
+      "cve": "CVE-2026-4775",
+      "roles": [
+        "application"
+      ],
+      "decision": "accepted_native_codec_input_residual",
+      "rationale": "Actual libtiff4.7.2 is inventoried, but Debian revision fix levels alone are not proof of this wheel backport. The described PixarLog/tile/SamplesPerPixel decoding can be input dependent. Native image parsing remains a potential resource/memory-safety risk; Odoo has a50M-pixel guard only for callers enabling verify_resolution, not a blanket malformed-image defense. Retain as residual instead of claiming exhaustive decoder safety.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/tiff4.7.2",
+      "cve": "CVE-2026-52490",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_codec_CLI_component",
+      "rationale": "The affected tiff2pdf/tiffcrop/thumbnail/rgb2ycbcr executable is separate from the Pillow libtiff decoder; the runtime supplies no such CLI input service. This exclusion does not cover libtiff decoder findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/tiff4.7.2",
+      "cve": "CVE-2026-52491",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_codec_CLI_component",
+      "rationale": "The affected tiff2pdf/tiffcrop/thumbnail/rgb2ycbcr executable is separate from the Pillow libtiff decoder; the runtime supplies no such CLI input service. This exclusion does not cover libtiff decoder findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Pillow13.0.0/tiff4.7.2",
+      "cve": "CVE-2026-52492",
+      "roles": [
+        "application"
+      ],
+      "decision": "excluded_codec_CLI_component",
+      "rationale": "The affected tiff2pdf/tiffcrop/thumbnail/rgb2ycbcr executable is separate from the Pillow libtiff decoder; the runtime supplies no such CLI input service. This exclusion does not cover libtiff decoder findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-core23-provenance-01/source-dependency-binding.json",
+        "../../../../odoo/tools/image.py",
+        "vendor-sources.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Node24.22.1/c-ares",
+      "cve": "CVE-2026-33630",
+      "roles": [
+        "host_build_tooling"
+      ],
+      "decision": "outside_described_upstream_range",
+      "rationale": "The retained descriptions fix these DNS callback/pointer/resource defects in c-ares1.34.7. Actual selected Node embeds1.34.9; official binary identity is independently bound. This is a numeric upstream-range comparison, not a Debian revision comparison.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-host-notices-01/host-notices-final.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Node24.22.1/c-ares",
+      "cve": "CVE-2026-69184",
+      "roles": [
+        "host_build_tooling"
+      ],
+      "decision": "outside_described_upstream_range",
+      "rationale": "The retained descriptions fix these DNS callback/pointer/resource defects in c-ares1.34.7. Actual selected Node embeds1.34.9; official binary identity is independently bound. This is a numeric upstream-range comparison, not a Debian revision comparison.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-host-notices-01/host-notices-final.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Node24.22.1/c-ares",
+      "cve": "CVE-2026-69186",
+      "roles": [
+        "host_build_tooling"
+      ],
+      "decision": "outside_described_upstream_range",
+      "rationale": "The retained descriptions fix these DNS callback/pointer/resource defects in c-ares1.34.7. Actual selected Node embeds1.34.9; official binary identity is independently bound. This is a numeric upstream-range comparison, not a Debian revision comparison.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-host-notices-01/host-notices-final.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Node24.22.1/nghttp2",
+      "cve": "CVE-2026-27135",
+      "roles": [
+        "host_build_tooling"
+      ],
+      "decision": "outside_described_upstream_range",
+      "rationale": "The retained description fixes the HTTP2 termination/assertion issue in1.68.1. Actual selected Node embeds nghttp2 1.70.0.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-host-notices-01/host-notices-final.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Node24.22.1/nghttp2",
+      "cve": "CVE-2026-58055",
+      "roles": [
+        "host_build_tooling"
+      ],
+      "decision": "excluded_proxy_executable_component",
+      "rationale": "The described request smuggling defect is in the nghttpx proxy, not Node HTTP2 library bindings. The selected build tool is Node, not an nghttpx service; no such proxy input workflow is supplied.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-host-notices-01/host-notices-final.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "Node24.22.1/Brotli1.2.0",
+      "cve": "CVE-2026-111497",
+      "roles": [
+        "host_build_tooling"
+      ],
+      "decision": "vendor_documented_backport",
+      "rationale": "The retained official October Node security bulletin identifies24.22.1 as fixed, despite the embedded Brotli1.2.0 string. Installed node.exe is byte-identical to the SHA256-verified official Windows ZIP. Do not replace this vendor-bound result with an upstream-only version flag.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-native-libraries-01/vendor-inputs.json",
+        "../20261104-host-notices-01/host-notices-final.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "native_zlib_variants",
+      "cve": "CVE-2026-22184",
+      "roles": [
+        "application",
+        "host_build_tooling",
+        "selected_proxy"
+      ],
+      "decision": "accepted_variant_specific_input_residual",
+      "rationale": "untgz is a contrib demonstration utility, combine64 loops require the special combine API, and gz_vacate requires nonblocking gzprintf/gzwrite stalls. Python ZIP/XLSX and Node compression bindings do not provide those CLI/C-stdio workflows directly; future native callers may. App system/Pillow reports1.2.13, Pillow also reports zlib-ng2.3.3, lxml vendor history declares zlib1.3.2, Node reports1.3.2.1-motley. No universal patch equivalence between these variants is asserted. Selected proxy zlib1.3.2-r1 has an exact retained recipe/secfix backport for CVE2026-85091. Preserve conditional native compression risk rather than incorrectly marking every variant fixed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-cve-dispositions-01/primary-notes.json",
+        "../20261104-support-images-01/vendor-findings-review.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "native_zlib_variants",
+      "cve": "CVE-2026-27171",
+      "roles": [
+        "application",
+        "host_build_tooling",
+        "selected_proxy"
+      ],
+      "decision": "accepted_variant_specific_input_residual",
+      "rationale": "untgz is a contrib demonstration utility, combine64 loops require the special combine API, and gz_vacate requires nonblocking gzprintf/gzwrite stalls. Python ZIP/XLSX and Node compression bindings do not provide those CLI/C-stdio workflows directly; future native callers may. App system/Pillow reports1.2.13, Pillow also reports zlib-ng2.3.3, lxml vendor history declares zlib1.3.2, Node reports1.3.2.1-motley. No universal patch equivalence between these variants is asserted. Selected proxy zlib1.3.2-r1 has an exact retained recipe/secfix backport for CVE2026-85091. Preserve conditional native compression risk rather than incorrectly marking every variant fixed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-cve-dispositions-01/primary-notes.json",
+        "../20261104-support-images-01/vendor-findings-review.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "native_zlib_variants",
+      "cve": "CVE-2026-85091",
+      "roles": [
+        "application",
+        "host_build_tooling",
+        "selected_proxy"
+      ],
+      "decision": "accepted_variant_specific_input_residual",
+      "rationale": "untgz is a contrib demonstration utility, combine64 loops require the special combine API, and gz_vacate requires nonblocking gzprintf/gzwrite stalls. Python ZIP/XLSX and Node compression bindings do not provide those CLI/C-stdio workflows directly; future native callers may. App system/Pillow reports1.2.13, Pillow also reports zlib-ng2.3.3, lxml vendor history declares zlib1.3.2, Node reports1.3.2.1-motley. No universal patch equivalence between these variants is asserted. Selected proxy zlib1.3.2-r1 has an exact retained recipe/secfix backport for CVE2026-85091. Preserve conditional native compression risk rather than incorrectly marking every variant fixed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261103-release-runtime-audit-01/bundled-components.json",
+        "../20261104-native-libraries-01/inventory.json",
+        "../20261104-cve-dispositions-01/primary-notes.json",
+        "../20261104-support-images-01/vendor-findings-review.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "nginx1.30.6",
+      "cve": "CVE-2009-4487",
+      "roles": [
+        "selected_proxy"
+      ],
+      "decision": "accepted_diagnostic_log_residual",
+      "rationale": "Reference error logging is crit; access logging omits bodies/cookies/query strings. This reduces exposure but does not sanitize every arbitrary diagnostic byte. Logs must not be treated as HTML or executed as terminal controls. No patched release is claimed.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-support-images-01/vendor-findings-review.json",
+        "../../../../docs/http-security.md"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2021-45346",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2025-29088",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2025-70873",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2025-7458",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2025-7709",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-11822",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-11824",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119371",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119372",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119373",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119374",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119375",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119376",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119377",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119378",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119379",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119586",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-119591",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-50812",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "operator_SQLite3.53.1/Node_SQLite3.53.4",
+      "cve": "CVE-2026-50813",
+      "roles": [
+        "operator16",
+        "host_build_tooling"
+      ],
+      "decision": "accepted_private_SQL_or_dormant_builtin_residual",
+      "rationale": "The operator uses the already reviewed44 constant SQL calls on private catalog/control files, not user-supplied SQL/DB/WAL/changeset imports. Node is a build tool; R1 has no Node SQLite runtime service or imported node:sqlite workflow. Different embedded versions may already fix some findings, but no Debian revision status is transferred to them. Retain the input-boundary residual, especially for newer before3.54.0 findings.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "evidence": [
+        "../20261104-cve-dispositions-01/sqlite-preconditions.json",
+        "../20261104-operator-python16-01/runtime-qualification.json",
+        "../20261104-native-libraries-01/inventory.json"
+      ],
+      "remediation": "Adopt vendor fixes or remove the affected input path before enabling it; requalify actual imports and native compatibility. Residual acceptance does not assert all transitive calls safe."
+    },
+    {
+      "component": "selected_proxy_optional_XML_image_modules",
+      "cve": "NATIVE-PROXY-MODULE-INPUT-01",
+      "roles": [
+        "selected_proxy"
+      ],
+      "decision": "accepted_unconfigured_module_residual",
+      "rationale": "Selected image contains optional XSLT/image-filter modules and libxml2/libxslt/codec dependencies. The qualified generated reference profile neither loads dynamic modules nor configures XSLT/image-filter processing. Do not inherit application wheel backports or mark every installed proxy library fixed. XML/stylesheet/image CVEs reviewed above can require reassessment if those modules/features are enabled; current profile does not provide that input pipeline.",
+      "reviewed_on": "2026-11-04",
+      "review_by": "2026-11-11",
+      "evidence": [
+        "../../../../deploy/nginx-r0.conf",
+        "../../../../tools/http_profile.py",
+        "../20261104-production-profile-01/qualification.json",
+        "../20261104-support-images-01/inventory.json"
+      ],
+      "invalidate_on": [
+        "Changed image/library/plugin/input/parser configuration",
+        "Before nonlocal/public/production deployment"
+      ],
+      "remediation": "Re-review affected native XML/image libraries and qualify module configuration before exposing those input paths."
+    }
+  ],
+  "decision_count": 72,
+  "codec_candidate_coverage": [
+    {
+      "source_component": "freetype",
+      "actual_version": "2.14.3",
+      "matched_2026_candidates": 3,
+      "scope": "retained_primary_tracker_candidates_not_a_Debian_binary_version_equivalence"
+    },
+    {
+      "source_component": "lcms2",
+      "actual_version": "2.19",
+      "matched_2026_candidates": 2,
+      "scope": "retained_primary_tracker_candidates_not_a_Debian_binary_version_equivalence"
+    },
+    {
+      "source_component": "libwebp",
+      "actual_version": "1.6.0",
+      "matched_2026_candidates": 0,
+      "scope": "retained_primary_tracker_candidates_not_a_Debian_binary_version_equivalence"
+    },
+    {
+      "source_component": "libavif",
+      "actual_version": "1.4.2",
+      "matched_2026_candidates": 0,
+      "scope": "retained_primary_tracker_candidates_not_a_Debian_binary_version_equivalence"
+    },
+    {
+      "source_component": "libjpeg-turbo",
+      "actual_version": "3.2.0",
+      "matched_2026_candidates": 1,
+      "scope": "retained_primary_tracker_candidates_not_a_Debian_binary_version_equivalence"
+    },
+    {
+      "source_component": "openjpeg2",
+      "actual_version": "2.5.4",
+      "matched_2026_candidates": 2,
+      "scope": "retained_primary_tracker_candidates_not_a_Debian_binary_version_equivalence"
+    },
+    {
+      "source_component": "tiff",
+      "actual_version": "4.7.2",
+      "matched_2026_candidates": 7,
+      "scope": "retained_primary_tracker_candidates_not_a_Debian_binary_version_equivalence"
+    }
+  ],
+  "node_component_inventory": {
+    "node": "24.22.1",
+    "acorn": "8.18.0",
+    "ada": "4.0.0",
+    "amaro": "1.1.11",
+    "ares": "1.34.9",
+    "brotli": "1.2.0",
+    "cldr": "48.0",
+    "icu": "78.3",
+    "llhttp": "9.4.3",
+    "merve": "1.2.2",
+    "modules": "137",
+    "napi": "10",
+    "nbytes": "0.1.4",
+    "ncrypto": "0.0.1",
+    "nghttp2": "1.70.0",
+    "nghttp3": "",
+    "ngtcp2": "",
+    "openssl": "3.5.9",
+    "simdjson": "4.6.11",
+    "simdutf": "6.4.0",
+    "sqlite": "3.53.4",
+    "tz": "2026e",
+    "undici": "7.30.1",
+    "unicode": "17.0",
+    "uv": "1.52.1",
+    "uvwasi": "0.0.23",
+    "v8": "13.6.233.17-node.58",
+    "zlib": "1.3.2.1-motley-285e94b",
+    "zstd": "1.5.7"
+  },
+  "preserved_crypto_vendor_review": "../20261104-support-images-01/vendor-findings-review.json",
+  "source_and_notice_binding": "../20261104-core23-provenance-01/source-dependency-binding.json",
+  "limits": [
+    "Known native candidate review complements full-history Python-package/OS scans; it is not an exhaustive all-history native CVE database or certification of safe arbitrary image/font/XML input.",
+    "Codec candidates enumerate every2026 record for the seven named sources in the retained tracker, including records marked Debian not-affected; Debian status is not automatically native-wheel status. No new package/image or public runtime capability was introduced.",
+    "Native memory-safety/availability residuals are material release caveats with review dates and change triggers; accepted findings are not called fixed.",
+    "All159 Debian OS decisions remain separate. Existing crypto/libpq/nginx affected-range/Alpine secfix reviews retain their exact image/snapshot scopes. No complete OPS03/G7 claim."
+  ],
+  "reference_proxy_profile_sha256": "f372660c0e6cb82919986326e662d08431c52f9bbca675d5db157e62b6076b1d"
+}
