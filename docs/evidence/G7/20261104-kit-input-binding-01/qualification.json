@@ -1,0 +1,47 @@
+{
+  "result": "passed_actual_stale_receipt_refusals_and_source_binding_tests",
+  "utc": "2026-11-04T08:38:57.199941+00:00",
+  "source_commit": "802dd108d75f673b8c3f5a1bf0852d77d78ffebb",
+  "actual_commands": [
+    {
+      "command": "assembly",
+      "exit_code": 1,
+      "reason": "checkout_build_source_input_set_differs",
+      "output_or_receipt_created": false,
+      "stream_sha256": "57d3f83074b0fac65c374010d7859c302406272153728cb1b91c198b11e97356"
+    },
+    {
+      "command": "refresh",
+      "exit_code": 1,
+      "reason": "checkout_build_source_input_set_differs",
+      "output_or_receipt_created": false,
+      "stream_sha256": "d9d008188c64829a5eb25e5da39ac34eed2e01e5c4a87251a10de4d1da4858d0"
+    }
+  ],
+  "existing_kit_components_verified_unchanged": 50,
+  "unit_test": {
+    "command": "python -I -m unittest discover -s tests -p test_release_application_inputs.py -v",
+    "tests": 9,
+    "result": "passed_before_this_CLI_check",
+    "scope": "temporary inputs plus real tiny-kit refresh identity guards"
+  },
+  "source_sha256": {
+    "release\\application_inputs.py": "2a72950fb86128762747abb3506cb5ae0a853f5f4a4b79dc10919934507bb2e8",
+    "release\\assemble.py": "9dd208f3089d04c76aea06461103b167b041071ecedf7a4b611b8ac1c8892a3c",
+    "release\\refresh_draft.py": "374f6065cc61d040224b0b693c47e9f7f19370c6dddaca7fcc6f7a01d1c5d29a",
+    "tests\\test_release_application_inputs.py": "b9611105ba20b6af4553f84524191654dc952d89a752e9f21b329db6abc9ca17",
+    "docs\\release-kit.md": "5b558d379e83b43592ba2633cb6c8446e6d1f008a22406e67822b901127cbca4",
+    "docs\\architecture-decisions\\0058-explicit-release-application-inputs.md": "59f9f160b7fdda281b875dd3a197f0572fbacbd4320bc538a0acafb543171341",
+    "docs\\evidence\\G7\\20261104-kit-input-binding-01\\check.py": "748190aa50a978b06fc143056c349ca48116024987cbb0df267228b4eda21527"
+  },
+  "privacy": {
+    "known_values": 133,
+    "findings": 0
+  },
+  "limits": [
+    "Both actual CLIs refused before output/receipt creation, Git archive, image inspection/export or deployment; no Docker asset or application data changed.",
+    "Existing draft is preserved at its historical source/image identity, not promoted to final release.",
+    "Actual final qualified candidate/build/reproduction is still required; valid fixture tests are not final kit assembly, BOOT02 or OPS03.",
+    "Receipt selection is operator-reviewed evidence, not publisher authentication or independent execution approval."
+  ]
+}

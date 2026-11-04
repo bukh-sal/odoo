@@ -24,6 +24,12 @@ observation exists; it does not mean the entire final release passed.
   still packages image14de; its source differs from current code in eight paths.
   Include `tools/operation_progress.py`, updated `tools/modular.py`, runbooks and
   the final shell/version sources. Retain exact unchanged large inputs.
+- [x] Remove the producer's hardcoded core23 selection and bind source refresh to
+  explicit matching build/reproduction/image evidence:
+  [ADR0058](architecture-decisions/0058-explicit-release-application-inputs.md),
+  [actual refusal proof](evidence/G7/20261104-kit-input-binding-01/qualification.json).
+  Nine tests and both real old-receipt refusals pass; all50 draft components
+  remain unchanged. This is a producer guard, not final kit assembly.
 - [ ] Qualify new source/image/archive/history/log privacy deltas and current
   provenance/network scope before OPS-03 is restored. Existing finite scans do
   not establish an unrestricted absence-of-secrets claim.
