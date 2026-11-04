@@ -1,0 +1,6 @@
+{
+  "result": "denied_wrong_exact_recovery_hash",
+  "exit_code": 2,
+  "journal_unchanged": true,
+  "traffic_workers_remain_closed": true
+}

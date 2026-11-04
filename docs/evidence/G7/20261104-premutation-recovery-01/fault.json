@@ -1,0 +1,143 @@
+{
+  "result": "passed_actual_current_checkpointed_failure_before_mutation",
+  "operation_id": "ce86e024-e537-46c2-87d6-3c8b68d1356f",
+  "status": {
+    "operation_id": "ce86e024-e537-46c2-87d6-3c8b68d1356f",
+    "plan_hash": "sha256:bf9e15924b1f7416b3dfdc8065e594605710fcc483dbe7452b81012671f10ec7",
+    "state": "failed_before_mutation",
+    "phase": "checkpointed",
+    "mutation_started": false,
+    "traffic_resumed": false,
+    "backup_id": "ce86e024-e537-46c2-87d6-3c8b68d1356f",
+    "approval_expires_at": "2026-11-04T00:12:44Z",
+    "history": [
+      {
+        "sequence": 71,
+        "utc": "2026-11-03T23:57:05Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:bf9e15924b1f7416b3dfdc8065e594605710fcc483dbe7452b81012671f10ec7"
+        }
+      },
+      {
+        "sequence": 72,
+        "utc": "2026-11-03T23:57:05Z",
+        "code": "application_request_imported",
+        "details": {
+          "operation_id": "ce86e024-e537-46c2-87d6-3c8b68d1356f",
+          "plan_hash": "sha256:bf9e15924b1f7416b3dfdc8065e594605710fcc483dbe7452b81012671f10ec7",
+          "request_id": "70fdb55b-27e6-42e5-8658-c8f2f9fe9881",
+          "requested_by": "d828b26e-8cfa-4290-a01e-7a401d717b58",
+          "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca"
+        }
+      },
+      {
+        "sequence": 73,
+        "utc": "2026-11-03T23:57:44Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:bf9e15924b1f7416b3dfdc8065e594605710fcc483dbe7452b81012671f10ec7"
+        }
+      },
+      {
+        "sequence": 74,
+        "utc": "2026-11-03T23:58:45Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 8832,
+          "lock_owner_digest": "sha256:1c08da920f1701f55494c259ba16f3448e87e4844fcec6eb43d5417e6b4ef3c3"
+        }
+      },
+      {
+        "sequence": 75,
+        "utc": "2026-11-03T23:59:10Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 76,
+        "utc": "2026-11-03T23:59:20Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 77,
+        "utc": "2026-11-03T23:59:29Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 78,
+        "utc": "2026-11-03T23:59:46Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "ce86e024-e537-46c2-87d6-3c8b68d1356f"
+        }
+      },
+      {
+        "sequence": 79,
+        "utc": "2026-11-03T23:59:46Z",
+        "code": "failed_before_mutation",
+        "details": {
+          "code": "MUTATION_FAILED"
+        }
+      }
+    ]
+  },
+  "configuration_unchanged": true,
+  "all17tables_worker_exact": true,
+  "traffic_and_dispatch_closed": true,
+  "dispatch": {
+    "profile": "r1-reference-stateless-dispatch-v1",
+    "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+    "release_digest": "sha256:b142506e51fc33361f45d4a715d6f45b55c7c5f039f590658c325200d6e98845",
+    "schema_digest": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+    "control": {
+      "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+      "release_digest": "sha256:b142506e51fc33361f45d4a715d6f45b55c7c5f039f590658c325200d6e98845",
+      "state": "paused",
+      "generation": 16
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "4300cdfcf004d84c13cfb4aa8a9248ca03946a0f884615655956df3404897862"
+      },
+      "mp_event_consumer_state": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_consumption": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_delivery": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_subscription": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_job": {
+        "rows": 1,
+        "sha256": "dfc464d4457679c0300e98ba3bdf31143a64efbe762ceed495d673af4225458a"
+      },
+      "mp_outbox": {
+        "rows": 11,
+        "sha256": "b0a6a46b6c9333281586aa369a3b3b8c9f9805f2602660f0123a87fdf42cb086"
+      }
+    },
+    "job_states": {
+      "completed": 1
+    },
+    "event_receipts": true,
+    "external_installations": 1,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "uncertain_jobs": 0,
+    "reference_policy_digest": "sha256:c7377e5e51c66ace53436ad6a51d6ee203c79d5f88cfd3248f863eefb08d6449",
+    "state_digest": "sha256:50b05ef6be79c8c22e4b832e617a0166d07f8977f5d140c24d3ea264b146c077"
+  },
+  "verification_continuation": "Fault completed correctly; first verifier incorrectly used running-only _container to locate expected-stopped app. Pinned worker_id/project edge IDs used without replay."
+}

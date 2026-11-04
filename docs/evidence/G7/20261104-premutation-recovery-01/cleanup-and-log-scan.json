@@ -1,0 +1,77 @@
+{
+  "result": "passed_owned_helper_retirement_and_new_log_scan",
+  "retired": [
+    {
+      "id": "7ae2b503493b4b4ddad1be0b8fee124001d62e3f337d9048147f7a8922f808a3",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-f21bb082-aaba-46c2-94dd-09fdc7f46d8d-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "0d3ddfc80541e9f63460e61eacf83c12015e1c910c0423ac412dd4476dfc2f14",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-ce86e024-e537-46c2-87d6-3c8b68d1356f-dispatch-enable-99c669d331db4812bf5fdacea2ce2392",
+      "removed": true
+    },
+    {
+      "id": "7bd87819ad122355d4ad47fa83aea1db03bbf8e4a00b4f7b56de1b8670eefa84",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-860277dd-5b61-407a-850c-8b68756a05af-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "445d2e70ad16e736bb363a3b633b25baa06b23a92a64b0581c0bd0e08acf60f9",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-ce86e024-e537-46c2-87d6-3c8b68d1356f-dispatch-reconcile-99c669d331db4812bf5fdacea2ce2392",
+      "removed": true
+    },
+    {
+      "id": "c99149f01a49e6f6d35612d56bf9de7c73bba5dacafd9206741b70df966d8834",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-d8891a37-c9d5-48a6-8921-7f040daf3610-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "181d9b94ac55e562b7af9487bdaff64d5631d64e13e84419ecc55b200781cbd8",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-ead4838c-8809-41af-b4f9-7ba37455e160-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "1b3abd1c6f565b0f176c803ee4a320a5cec8c44b105c877a9ba06ff86ada5721",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-c4cb6dc4-2d61-454c-be00-f6371dcd8a71-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "13d54fb1c3cf363aed7150138079d8919b0d3d3482613fca3cbd48f4a0dfbd2f",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-a977163d-7ed9-4fb1-91c7-50645a7c724b-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "992f3def718f18e60fcf6b7362de8f32fcfa14bb4306f7a1234467678fe7726a",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-23e12cd6-935d-472b-8b47-942a28334a1c-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "4fd6946f7ac05b235712992eb62cd549d42cf6a8755b10c55e211d10d050061c",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-b3f85ab1-afc2-4b44-a435-77011cb2d4ab-dispatch-observe",
+      "removed": true
+    },
+    {
+      "id": "88e7ae2afb60039b2db4c302113c9c74b2c7383e1897bd1f7aa096afb39dcbfb",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-ce86e024-e537-46c2-87d6-3c8b68d1356f-checkpoint",
+      "removed": true
+    },
+    {
+      "id": "aae7bc1ce7d7e64e841fe79d46c35bad6bd3eb2ec5f161ace49729d41f506fa8",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-ce86e024-e537-46c2-87d6-3c8b68d1356f-dispatch-fence",
+      "removed": true
+    },
+    {
+      "id": "66a4eadc05135ca1b7ab3754a771c3441108ab15ebb61ac3fcf16d01bb72c56d",
+      "name": "mp-r0-r1g7qualb513bc4f50d4-op-47ba4692-ddfa-4a61-a6eb-148bf7162e3d-dispatch-observe",
+      "removed": true
+    }
+  ],
+  "containers_removed": 13,
+  "images_volumes_networks_removed": 0,
+  "private_log_files": 34,
+  "known_values": 121,
+  "known_or_generic_findings": 0,
+  "real_checkpoint_and_current_authority_retained": true,
+  "current_primary_worker_issuer_unaffected": true
+}
