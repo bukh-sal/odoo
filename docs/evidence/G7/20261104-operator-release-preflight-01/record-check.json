@@ -1,0 +1,18 @@
+{
+  "result": "passed_final_record_privacy_syntax_and_closure_links",
+  "known_values": 133,
+  "findings": 0,
+  "links": 15,
+  "files_sha256": {
+    "docs/implementation-status.md": "2481bd7fd752325071ddc491b255a15600847a7951164cdbda5947a1353d1269",
+    "docs/work-log.md": "381c135dd0349f2fe6abb16f0ea857c38ef83c20ff0339429a77ebb4b5fd195c",
+    "docs/verification.md": "66b7354eee1f71603d2c1c9f001b1501d4df7ac78f9d52d43f42270bf7bdeb15",
+    "docs/r1-release-checklist.md": "75fb2cd288e76d9cc1f7580e5de3ffb5a245effa243c2faeb3f55970677065bd",
+    "docs/evidence/G7/20261104-operator-release-preflight-01/check.py": "5f19128b6c52f17811f242e6f49640d72f2b65d871cfd57eb695faf558fb88dd",
+    "docs/evidence/G7/20261104-operator-release-preflight-01/check01.py": "0a684c893060f195a186755f9f1018c9036f079e0261800cefb125888172736e",
+    "docs/evidence/G7/20261104-operator-release-preflight-01/qualification.json": "352bf307a21a7b7ea43636c9732dbb48a05781f1cb2785e26e9d5af37fbfc601"
+  },
+  "limits": [
+    "Finite known-value/structural scan; no full release-kit or image privacy requalification."
+  ]
+}

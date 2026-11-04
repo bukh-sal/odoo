@@ -1,0 +1,90 @@
+{
+  "result": "passed_current_operator_on_kit_environment_with_explicit_source_gap",
+  "utc": "2026-11-04T08:23:29.786713+00:00",
+  "source_commit": "aeb16222eee1c9452f2b839fb1b033e53c027bc4",
+  "kit_source_commit": "5456abf4d56572ee4b545cb0c24109dce22df357",
+  "kit_components_verified": 50,
+  "code_delta": [
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "kit_sha256": "22a5a6b040f1ae737f496b8ba47de015e95905b61b658b7dcec95bef4d876a9d",
+      "current_sha256": "fae2d094d212a3ed71ae4db80dc4085553547290e90212bf4560aba6be092c3b"
+    },
+    {
+      "path": "platform_addons/mp_core/__manifest__.py",
+      "kit_sha256": "26b7d4d8ad9a2f330665c6bcf67d41760a0adcbbd9c130211374642b6a848766",
+      "current_sha256": "6d1ed68a613b48b909a1c8639856c542ba332ca155d00ac74ae272f4c833d776"
+    },
+    {
+      "path": "platform_addons/mp_shell/__manifest__.py",
+      "kit_sha256": "5ec30ec18314445bcad11db2b32442fcc3fa8cc854ff529f2cd34754662b143f",
+      "current_sha256": "c4a5722cd492490e3bf7e7113e868df7769f1a8417070120669e657df2680aca"
+    },
+    {
+      "path": "platform_addons/mp_shell/static/src/host.css",
+      "kit_sha256": "234e710f54153564b52279c33a0fd7a91439bbb02607c4da3838580020401def",
+      "current_sha256": "f8fe17ee2140e0c38b0e4b6ce8037cbf9101a0787a7ff7af3999ce1ac9cd9422"
+    },
+    {
+      "path": "platform_addons/mp_shell/static/src/host.js",
+      "kit_sha256": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+      "current_sha256": "854095d462a92cdc2ad2a3e70f539992d4b68117194c40138bbede7bdaef8f4f"
+    },
+    {
+      "path": "platform_addons/mp_shell/views/bootstrap.xml",
+      "kit_sha256": "5a35778ae67324354ecc0ae1b7f2c5c9063dd2f5c552676c57529fba78d5efde",
+      "current_sha256": "f2812e09ece8347ecee47bed65a68ff1fd144879fbed6804f2ace70ee596a82f"
+    },
+    {
+      "path": "tools/modular.py",
+      "kit_sha256": "9c9faddeb25a312c1242c9e9a7ab66c4cdc631f06eb5982ce436a6624a73435b",
+      "current_sha256": "189b3e155bc91dfacef528967f8d308beaf68d220875fdae6dc65e68e2fa33d7"
+    },
+    {
+      "path": "tools/operation_progress.py",
+      "kit_sha256": null,
+      "current_sha256": "f2bba1df8a51ddad34d6504245d5ca2d0288c394f9c3cb9de75bb74b4a49d136"
+    }
+  ],
+  "tests": [
+    {
+      "pattern": "test_operation_progress.py",
+      "tests": 6,
+      "exit_code": 0,
+      "stream_sha256": "590ccaf2291a6cc1bbbe9283399cde1b34e6a2c08b7a9cb377aa8fcd2299a022"
+    },
+    {
+      "pattern": "test_metadata_executor.py",
+      "tests": 8,
+      "exit_code": 0,
+      "stream_sha256": "3b3a9bb5b4c732904d8faa5c47b2778f84a136a6de8b041d7bb95357658457dc"
+    },
+    {
+      "pattern": "test_executor_crash_fence.py",
+      "tests": 5,
+      "exit_code": 0,
+      "stream_sha256": "47e9cfaf4431584abac1dd0cfc4f174f65ece2fab12662750cdd28e629ba385b"
+    }
+  ],
+  "current_completed_operation_readback": true,
+  "kit_legacy_journal_fields_exact": true,
+  "current_observation_state": "returned",
+  "durable_control_files_exact": 174,
+  "four_runtimes_exact": true,
+  "initial_attempt": "check01 completed both live readbacks and all tests; final full-State comparison included changing Docker health-check timestamps. Corrected stable identity comparison; exact existing command/test streams reused, no replay.",
+  "privacy": {
+    "known_values": 133,
+    "findings": 0
+  },
+  "limits": [
+    "Existing kit source lacks the independent CLI observation addition; current source works with its separately installed operator environment.",
+    "Kit remains draft and still packages old14de image. No source refresh, image export, release seal or OPS03/BOOT02/UI09 pass.",
+    "No lifecycle operation, database query/write, browser, new Docker asset or cleanup was executed.",
+    "Tests use isolated temporary stores; completed live operation is only read, never replayed."
+  ],
+  "current_source_sha256": {
+    "docs/operator-runbooks.md": "a9a804847373ad86f357254f97a433fa4e9f4ff2cfcfa7557ff088efd69b790a",
+    "tools/modular.py": "189b3e155bc91dfacef528967f8d308beaf68d220875fdae6dc65e68e2fa33d7",
+    "tools/operation_progress.py": "f2bba1df8a51ddad34d6504245d5ca2d0288c394f9c3cb9de75bb74b4a49d136"
+  }
+}

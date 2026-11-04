@@ -2,8 +2,9 @@
 
 Current release status is in [implementation-status.md](implementation-status.md).
 The dated entries below retain their original scope and limitations; their old
-progress figures are historical, not current gate status. G0-G5 passed for their
-qualified profiles; G6 is active and G7 remains required.
+progress figures are historical, not current gate status. G0–G6 passed for their
+qualified profiles; G7 is active. See the [release closure checklist](r1-release-checklist.md)
+and [current operator/kit preflight](evidence/G7/20261104-operator-release-preflight-01/qualification.json).
 
 Latest G6 lifecycle evidence:
 
