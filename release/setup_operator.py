@@ -36,9 +36,13 @@ def main():
             name=Path(info.filename)
             if name.is_absolute() or '..' in name.parts or '\\' in info.filename:raise ValueError('Invalid source path')
         archive.extractall(source)
+    # Public source/toolchain workspace is not an existing executor store. Let
+    # the SDK create a NEW canonical private child; it correctly refuses to
+    # replace the ACL on an already-created directory.
+    private=work/'private'
     code="import sys;sys.path.insert(0,sys.argv[1]);from modular_platform.operator_os import protect_directory;protect_directory(sys.argv[2]);print('Operator SDK and private OS boundary ready')"
-    subprocess.run([str(selected),'-I','-c',code,str(source/'packages/platform_sdk'),str(work)],check=True,timeout=30)
-    result=dict(stage='operator_ready_application_not_initialized',source_commit=manifest['source_commit'],python=str(selected),source=str(source))
+    subprocess.run([str(selected),'-I','-c',code,str(source/'packages/platform_sdk'),str(private)],check=True,timeout=30)
+    result=dict(stage='operator_ready_application_not_initialized',source_commit=manifest['source_commit'],python=str(selected),source=str(source),private=str(private))
     (work/'operator-setup.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf8')
     print(json.dumps(result))
 

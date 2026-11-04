@@ -1,0 +1,35 @@
+{
+  "result": "verified_committed_source_refresh_of_unsealed_kit",
+  "source_before": "6a1b9cf19894ed4986058680ffc1240d28951f44",
+  "source_after": "94c4ecd047affe87948a8b76d0317f5777ff5506",
+  "changed": [
+    {
+      "path": "source.zip",
+      "before": {
+        "bytes": 276401602,
+        "sha256": "c03c22ee2209820292bdff67d05f51e83860612599d99a07cb576cf83fefccee"
+      },
+      "after": {
+        "bytes": 276412256,
+        "sha256": "40841bc0c71c6d15506cf7b4359906755a000105521c7ed973e5f84296407039"
+      }
+    },
+    {
+      "path": "scripts/setup_operator.py",
+      "before": {
+        "bytes": 3100,
+        "sha256": "970ce64860bd8dc7c4fcc5297de97cffe10cff6143656351c4763b86d1b27b6b"
+      },
+      "after": {
+        "bytes": 3129,
+        "sha256": "43be4455692bdf565d4c9e3d24f3a364d78e3c9a70c953d9dfeabd07509bbcdf"
+      }
+    }
+  ],
+  "unchanged_components": 48,
+  "manifest_sha256": "7299cf0e9673f6d5bcb5240eaba1aa97c18a45f4243e43bfea6566d7fc0e48b2",
+  "large_images_plugins_notices_toolchain_reused": true,
+  "limits": [
+    "Draft operator source refresh only; no application deployment, lifecycle mutation or new Docker asset. Kit remains unsealed/unqualified for full G7."
+  ]
+}

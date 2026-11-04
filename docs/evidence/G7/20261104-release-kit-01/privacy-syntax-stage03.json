@@ -1,0 +1,10 @@
+{
+  "result": "passed_operator_catalog_results_and_fix_public_diagnostic_privacy_syntax",
+  "files": 9,
+  "actual_private_streams": 4,
+  "known_values": 123,
+  "findings": 0,
+  "limits": [
+    "Operator/catalog scope only; no application or complete kit-payload qualification."
+  ]
+}

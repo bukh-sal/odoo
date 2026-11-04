@@ -1,0 +1,72 @@
+{
+  "result": "passed_offline_kit_operator_install_and_existing_SDK_private_child",
+  "utc": "2026-11-04T03:48:47.551867+00:00",
+  "source_commit": "94c4ecd047affe87948a8b76d0317f5777ff5506",
+  "Python": "3.12.16",
+  "packages": [
+    [
+      "PyJWT",
+      "2.15.1"
+    ],
+    [
+      "attrs",
+      "26.1.0"
+    ],
+    [
+      "cffi",
+      "2.1.1"
+    ],
+    [
+      "cryptography",
+      "50.0.2"
+    ],
+    [
+      "jsonschema",
+      "4.26.0"
+    ],
+    [
+      "jsonschema-specifications",
+      "2025.9.1"
+    ],
+    [
+      "packaging",
+      "26.3"
+    ],
+    [
+      "pycparser",
+      "3.12"
+    ],
+    [
+      "referencing",
+      "0.37.0"
+    ],
+    [
+      "resolvelib",
+      "1.2.1"
+    ],
+    [
+      "rfc8785",
+      "0.1.4"
+    ],
+    [
+      "rpds-py",
+      "2026.9.1"
+    ],
+    [
+      "typing_extensions",
+      "4.16.0"
+    ]
+  ],
+  "selected13_versions_exact": true,
+  "no_runtime_pip_in_selected_environment": true,
+  "private_directory_verified": true,
+  "OS_identity_sha256": "eae950ec9a81a8bc08de1c1d7fba5f81d92b8ee6baabb06d2612a0573c27c9d1",
+  "offline_binary_wheel_install": true,
+  "original_application_and_operator_stores_not_copied": true,
+  "prior_failure": "Workspace root mode0700 has an OWNER RIGHTS ACE rejected by canonical SDK policy; public source workspace is not the private executor store.",
+  "continuation": "Reused already-installed13 packages/extracted source; existing SDK created and verified a new private child. No reinstall/extraction/ACL reset of existing paths.",
+  "limits": [
+    "Operator setup only; no application initialization/catalog/worker/site data or Docker resources created. Separate portable application initializer and clean-install proof remain required.",
+    "This is a diagnosed continuation of the original actual offline install; no claim that the corrected full setup command was independently rerun from an empty directory."
+  ]
+}

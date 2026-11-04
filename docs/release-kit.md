@@ -30,8 +30,10 @@ python .local/releases/r1-0.1.23/scripts/setup_operator.py .local/releases/r1-0.
 The initial `python` needs a trusted Python3.12-or-newer installation only for
 standard-library verification/extraction. The selected Windows interpreter and
 hash-locked binary wheels then create a fresh project-local operator without
-global Python/PATH/registry changes or runtime pip dependencies. SDK private
-directory checks run after setup. Existing workdirs are refused.
+global Python/PATH/registry changes or runtime pip dependencies. The SDK creates
+and verifies a new `private` child for control/configuration/authority data.
+The public source/toolchain workspace is separate; the SDK never resets an
+existing directory's ACL. Existing workdirs are refused.
 
 Checksums detect corruption against an operator-selected trusted inventory;
 they do not authenticate a publisher against an attacker replacing the entire
