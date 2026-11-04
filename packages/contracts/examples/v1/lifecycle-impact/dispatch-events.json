@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "kind": "native_uninstall_impact",
+  "operation_id": "00000000-0000-0000-0000-000000000500",
+  "plan_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "impact_digest": "sha256:562d9338bafae77c3d58b1d649805f106410152b19f1a28cbcd83f53f23a50fe",
+  "impact": {
+    "site_id": "00000000-0000-0000-0000-000000000020",
+    "requested_addons": [
+      "mp_example_notes_labels"
+    ],
+    "native_closure": [
+      "mp_example_notes_labels"
+    ],
+    "plugins": [
+      {
+        "plugin_id": "org.example.notes_labels",
+        "installation_id": "00000000-0000-0000-0000-000000000100",
+        "native_addon": "mp_example_notes_labels",
+        "artifact_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "version": "0.2.1",
+        "workspace_ids": [
+          "00000000-0000-0000-0000-000000000030"
+        ]
+      }
+    ],
+    "models": [],
+    "fields": [
+      {
+        "model": "mp.example.note",
+        "field": "x_notes_labels",
+        "relation": "mp_example_note",
+        "column": "x_notes_labels",
+        "mapping": "static_declaration",
+        "non_null_records": 4,
+        "unknown_reason": null
+      }
+    ],
+    "constraints": [],
+    "foreign_references": [],
+    "metadata_records": [
+      {
+        "native_addon": "mp_example_notes_labels",
+        "model": "ir.model.fields",
+        "records": 1
+      }
+    ],
+    "assets": [
+      {
+        "native_addon": "mp_example_notes_labels",
+        "path": "mp_example_notes_labels/static/src/labels.js",
+        "source": "declared_source"
+      }
+    ],
+    "dispatch": {
+      "state": "present_requires_fence",
+      "tables": [
+        "mp_dispatch_control",
+        "mp_event_consumer_state",
+        "mp_event_consumption",
+        "mp_event_delivery",
+        "mp_event_subscription",
+        "mp_job",
+        "mp_outbox"
+      ]
+    },
+    "warnings": [
+      "Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects."
+    ]
+  },
+  "database_action": "native_uninstall",
+  "artifact_action": "retain_in_runtime",
+  "destructive": true,
+  "requires_backup": true,
+  "native_code_fully_trusted": true,
+  "completeness": "known_effects_only",
+  "control_authority": "independent_local_os",
+  "observed_at": "2026-10-29T00:30:00Z"
+}

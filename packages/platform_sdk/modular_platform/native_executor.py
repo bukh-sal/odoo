@@ -376,10 +376,16 @@ class NativeExecutor:
                 if plan['operation_type']=='uninstall':
                     arguments, child = self._child(operation, 'native', writable=True, image_id=image)
                     arguments.insert(2,'-i')
+                    saved = load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())
+                    dispatch_snapshot = saved.get('dispatch_profile')
+                    dispatch_scope = (dict(site_id=self.config['sites'][0]['site_id'],
+                        release_digest=dispatch_snapshot['release_digest'], reference=saved.get('reference_policy'))
+                        if dispatch_snapshot is not None else None)
                     native_payload=dict(database=self.config['sites'][0]['database'],site_id=self.config['sites'][0]['site_id'],
                         deployment_id=self.config['deployment_id'],operation_id=operation,plan_hash=bundle['plan_hash'],
                         impact=bundle['operation_lock']['native_uninstall_impact'],plugins=plugins,
-                        inventory_digest=bundle['operation_lock']['release']['core_inventory_digest'])
+                        inventory_digest=bundle['operation_lock']['release']['core_inventory_digest'],
+                        dispatch_snapshot=dispatch_snapshot,dispatch_scope=dispatch_scope)
                     self._private_command(arguments+['-c',Path(__file__).with_name('native_uninstall.py').read_text(encoding='utf8')],
                                           directory/'native.log',input=json.dumps(native_payload).encode())
                     effects=[]

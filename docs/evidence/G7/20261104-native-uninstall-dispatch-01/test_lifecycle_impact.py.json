@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_lifecycle_impact.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_declared_reference_mapping_and_extension (test_lifecycle_impact.LifecycleImpactTests.test_actual_declared_reference_mapping_and_extension) ... ok\r\ntest_archive_and_individual_source_bytes_are_both_bound (test_lifecycle_impact.LifecycleImpactTests.test_archive_and_individual_source_bytes_are_both_bound) ... ok\r\ntest_closure_includes_all_installed_dependents_and_checks_both_graphs (test_lifecycle_impact.LifecycleImpactTests.test_closure_includes_all_installed_dependents_and_checks_both_graphs) ... ok\r\ntest_count_drift_and_cross_operation_binding_are_detected (test_lifecycle_impact.LifecycleImpactTests.test_count_drift_and_cross_operation_binding_are_detected) ... ok\r\ntest_custom_table_never_guessed_from_model_name (test_lifecycle_impact.LifecycleImpactTests.test_custom_table_never_guessed_from_model_name) ... ok\r\ntest_dynamic_definition_and_duplicate_root_fail_closed_without_execution (test_lifecycle_impact.LifecycleImpactTests.test_dynamic_definition_and_duplicate_root_fail_closed_without_execution) ... ok\r\ntest_unresolved_view_inheritance_and_python_bases_are_unknown (test_lifecycle_impact.LifecycleImpactTests.test_unresolved_view_inheritance_and_python_bases_are_unknown) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 7 tests in 0.028s\r\n\r\nOK\r\n",
+  "tests": 7
+}

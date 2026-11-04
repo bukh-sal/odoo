@@ -22,7 +22,7 @@ root=pathlib.Path('/opt/modular')
 inventory_raw=(root/'distribution-inventory.json').read_bytes()
 assert 'sha256:'+hashlib.sha256(inventory_raw).hexdigest()==data['inventory_digest']
 inventory=json.loads(inventory_raw)
-addons={'mp_identity'}|{d['manifest']['runtime']['addon_name'] for d in data['descriptors']}
+addons={'mp_identity'}|{d['manifest']['runtime']['addon_name'] for d in data['descriptors'] if d['manifest']['runtime']['kind']=='native'}
 sources={}
 for name,digest in inventory['files'].items():
  if name.startswith('addons/') and name.endswith('.py') and name.split('/')[1] in addons:
@@ -54,12 +54,13 @@ def observe_native_impact(observer, observation, catalog, *, site_id, requested)
     target = next((s for s in observer.config['sites'] if s['site_id'] == site_id), None)
     if target is None or observation['image_id'] != observer.config['image_id'] or len(observer.config['sites']) != 1:
         raise PlanningError('Native impact requires the independently configured single-site Docker profile')
-    selected, _, _ = runtime_inputs(observation['runtime'], catalog.snapshot())
-    if any(d['manifest']['runtime']['kind'] != 'native' for d in selected):
-        raise PlanningError('External runtime impact needs the G6 lifecycle adapter')
+    external = [pin for pin in observer.config.get('published_release', {}).get('plugins', [])
+                if pin['runtime'] == 'external_service']
+    selected, _, _ = runtime_inputs(observation['runtime'], catalog.snapshot(), external_plugins=external)
     sources = {}
     for descriptor in selected:
-        sources.update(verified_archive_sources(catalog.path(descriptor['digest']), descriptor))
+        if descriptor['manifest']['runtime']['kind'] == 'native':
+            sources.update(verified_archive_sources(catalog.path(descriptor['digest']), descriptor))
     payload = dict(site_id=site_id, database=target['database'], requested=requested, descriptors=selected,
                    archive_source_hashes={name: hashlib.sha256(raw).hexdigest() for name, raw in sources.items()},
                    inventory_digest=observation['runtime']['inventory_digest'])

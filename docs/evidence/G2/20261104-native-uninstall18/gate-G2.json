@@ -1,0 +1,24 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-04T00:26:28.628231+00:00",
+  "contract_major": 1,
+  "revision": 18,
+  "frozen_files": 106,
+  "inventory_sha256": "f26df49f71daa75c0692f9da18beb663cb9f2ec4041b673b1b46ffdaffd41773",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0051 adds observational present_requires_fence for exact durable schemas; old payloads remain valid, old strict readers require coordinated immutable maintenance. Native uninstall source guards remain enforced.",
+  "runtime_qualification": "Current core22 untouched. Corrected host readonly preview on actual populated reference site passes two scoped Labels targets with all17tables/worker exact. Installed core23/native uninstall/fault/fresh restore/separate resume remain mandatory.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "e300ca67a39af6752bb93f5cf3afa540a32f4783"
+}

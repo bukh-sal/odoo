@@ -1,0 +1,13 @@
+{
+  "result": "rejected_owned_candidate_retired",
+  "image_id": "sha256:b72ebe5724ee41b478421ec17caa3dc0b47f7bfb7bea828906a592d00eaf4a98",
+  "tag": "modular-platform:stage-20261104t002747301526z",
+  "containers_before": 0,
+  "retained_private_inventory_history": true,
+  "current_candidate_and_current_checkpoint_images_retained": true,
+  "removed_containers_volumes_networks": 0,
+  "global_prune": false,
+  "rejected_admission": "Unchanged lock but two rebuilt native distributions differ from current qualified dependency bytes; guard retained.",
+  "failed_second_build": "Dockerfile FROM interpreted bare sha256 ID as a registry repository; terminal no image. Unique temporary exact-ID alias fixed in third build and removed.",
+  "qualified_candidate": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93"
+}

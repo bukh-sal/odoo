@@ -1,0 +1,12 @@
+{
+  "result": "current_native_uninstall_impact_refused_readonly",
+  "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "configuration_generation": 5,
+  "public_error": "Read-only native impact inspection failed; no proposal can be approved",
+  "child": {
+    "exit_code": 1,
+    "stderr_sha256": "b2289d19b9e09c65124658fb55b18b85aaa48d9f8d4a459c2646a869f4bb56c2"
+  },
+  "all17tables_worker_exact": true,
+  "plan_approval_mutation_created": false
+}

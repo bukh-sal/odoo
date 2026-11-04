@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+# Code-only maintenance: preserve the exact independently selected dependencies.
+ARG DEPENDENCY_BASE_IMAGE
+FROM ${DEPENDENCY_BASE_IMAGE} AS builder
+USER 0:0
+ARG DISTRIBUTION_POLICY
+COPY . /source
+RUN /venv/bin/python /source/tools/build_distribution.py /source /release --policy "$DISTRIBUTION_POLICY"
+
+FROM ${DEPENDENCY_BASE_IMAGE} AS runtime
+USER 0:0
+ARG RUNTIME_REQUIREMENTS
+ARG SDK_PYTHONPATH
+ENV PYTHONPATH=$SDK_PYTHONPATH
+WORKDIR /
+RUN rm -rf /opt/modular
+COPY --from=builder /release /opt/modular
+COPY tools /opt/modular/tools
+COPY ${RUNTIME_REQUIREMENTS} /opt/modular/requirements.lock
+COPY tests/fixtures/addons /opt/modular/fixtures
+RUN printf 'r1\n' > /opt/modular/startup-profile
+WORKDIR /opt/modular
+USER 10001:10001

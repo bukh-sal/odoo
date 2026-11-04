@@ -130,7 +130,9 @@ def native_impact(profile, requested):
     try:
         with connection:
             with connection.cursor() as cursor: cursor.execute("SET LOCAL statement_timeout='5s'")
-            selected, _, _ = runtime_inputs(profile['runtime'], profile['catalog'])
+            external = [pin for pin in profile['configuration'].get('published_release', {}).get('plugins', [])
+                        if pin['runtime'] == 'external_service']
+            selected, _, _ = runtime_inputs(profile['runtime'], profile['catalog'], external_plugins=external)
             return inspect_current_image(connection, root='/opt/modular', inventory_digest=profile['runtime']['inventory_digest'],
                                          descriptors=selected, site_id=site_id(), requested=requested)
     finally: connection.close()

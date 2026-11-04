@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_uninstall_planning.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_complete_closure_can_remove_all_native_features_without_source_removal (test_uninstall_planning.UninstallPlanning.test_complete_closure_can_remove_all_native_features_without_source_removal) ... ok\r\ntest_complete_impact_and_installation_identity_and_dispatch_are_bound (test_uninstall_planning.UninstallPlanning.test_complete_impact_and_installation_identity_and_dispatch_are_bound) ... ok\r\ntest_epoch_preserves_executables_and_exact_surviving_binding_identities (test_uninstall_planning.UninstallPlanning.test_epoch_preserves_executables_and_exact_surviving_binding_identities) ... ok\r\ntest_impact_drift_cannot_be_fixed_by_rehashing_proposal (test_uninstall_planning.UninstallPlanning.test_impact_drift_cannot_be_fixed_by_rehashing_proposal) ... ok\r\ntest_independent_boundary_rejects_unknown_impact_fields_before_database_inspection (test_uninstall_planning.UninstallPlanning.test_independent_boundary_rejects_unknown_impact_fields_before_database_inspection) ... ok\r\ntest_omitted_workspace_or_native_dependent_is_rejected_including_suspension (test_uninstall_planning.UninstallPlanning.test_omitted_workspace_or_native_dependent_is_rejected_including_suspension) ... ok\r\ntest_revocations_are_explicit_and_independently_bound_to_affected_scopes (test_uninstall_planning.UninstallPlanning.test_revocations_are_explicit_and_independently_bound_to_affected_scopes) ... ok\r\ntest_uninstall_does_not_accept_provider_switch_or_unrelated_permission_change (test_uninstall_planning.UninstallPlanning.test_uninstall_does_not_accept_provider_switch_or_unrelated_permission_change) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 8 tests in 2.830s\r\n\r\nOK\r\n",
+  "tests": 8
+}

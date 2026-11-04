@@ -40,6 +40,30 @@ def require_exact_native_closure(approved, actual):
         raise ValueError('Actual upstream native dependent closure differs from the approved module set')
 
 
+def require_dispatch_snapshot(connection, expected, scope):
+    """Compare private checkpoint state, not a proposal's permission flag."""
+    from modular_platform.dispatch_lifecycle import LifecycleScope, observe
+    from modular_platform.plans import data_digest
+    if scope is None:
+        if expected is not None:
+            raise ValueError('Dispatch checkpoint requires its exact private scope')
+        return None
+    if (not isinstance(scope, dict) or set(scope) != {'site_id', 'release_digest', 'reference'}
+            or not isinstance(expected, dict)):
+        raise ValueError('Exact private checkpoint dispatch scope required')
+    with connection.cursor() as cursor:
+        actual = observe(cursor, LifecycleScope(**scope))
+    reference = scope['reference']
+    profile = 'r1-reference-stateless-dispatch-v1' if reference is not None else 'r1-native-dispatch-v1'
+    if (actual != expected or actual is None or actual['profile'] != profile
+            or actual['state_digest'] != data_digest({k: v for k, v in actual.items() if k != 'state_digest'})
+            or not actual['control'] or actual['control']['state'] not in {'paused', 'restoring'}
+            or any(actual[k] != 0 for k in ['active_credentials', 'api_keys', 'uncertain_jobs'])
+            or actual['external_installations'] != (len(reference['registrations']) if reference is not None else 0)):
+        raise ValueError('Closed reconciled dispatch differs from the coordinated checkpoint')
+    return actual
+
+
 def main():
     import psycopg2
     from modular_platform.lifecycle_impact import impact_view, inspect_native_impact
@@ -47,9 +71,14 @@ def main():
 
     data = json.load(sys.stdin)
     assert set(data) == {'database', 'site_id', 'deployment_id', 'operation_id', 'plan_hash',
-                         'impact', 'plugins', 'inventory_digest'}
+                         'impact', 'plugins', 'inventory_digest', 'dispatch_snapshot', 'dispatch_scope'}
     impact_view(data['impact'], operation_id=data['operation_id'], plan_hash=data['plan_hash'], observed_at='2026-10-29T00:00:00Z')
-    assert data['impact']['site_id'] == data['site_id'] and data['impact']['dispatch']['state'] == 'not_present'
+    assert data['impact']['site_id'] == data['site_id']
+    dispatch_present = data['impact']['dispatch']['state'] == 'present_requires_fence'
+    assert data['impact']['dispatch']['state'] in {'not_present', 'present_requires_fence'}
+    assert dispatch_present == (data['dispatch_snapshot'] is not None) == (data['dispatch_scope'] is not None)
+    if dispatch_present:
+        assert data['dispatch_scope']['site_id'] == data['site_id']
     config = configparser.ConfigParser(); config.read('/run/secrets/odoo_config'); options = config['options']
     assert options['db_name'] == data['database'], 'Controlled maintenance target mismatch'
     root = Path('/opt/modular')
@@ -57,14 +86,15 @@ def main():
     assert 'sha256:' + hashlib.sha256(raw_inventory).hexdigest() == data['inventory_digest'], 'Controlled image inventory mismatch'
     inventory = json.loads(raw_inventory)
     descriptors = list(data['plugins'].values())
-    addons = {'mp_identity'} | {d['manifest']['runtime']['addon_name'] for d in descriptors}
+    natives = [d for d in descriptors if d['manifest']['runtime']['kind'] == 'native']
+    addons = {'mp_identity'} | {d['manifest']['runtime']['addon_name'] for d in natives}
     sources = {}
     for name, digest in inventory['files'].items():
         if name.startswith('addons/') and name.endswith('.py') and name.split('/')[1] in addons:
             raw = (root / name).read_bytes()
             assert hashlib.sha256(raw).hexdigest() == digest, 'Controlled native source drift'
             sources[name[len('addons/'):]] = raw
-    for descriptor in descriptors:
+    for descriptor in natives:
         addon = descriptor['manifest']['runtime']['addon_name']; prefix = 'backend/odoo_addons/' + addon + '/'
         for name, digest in descriptor['inventory'].items():
             if name.startswith(prefix) and name.endswith('.py'):
@@ -87,6 +117,7 @@ def main():
         current = inspect_native_impact(connection, site_id=data['site_id'], requested=data['impact']['requested_addons'],
                                         descriptors=descriptors, sources=sources)
         assert current == data['impact'], 'Uninstall counts/schema/ownership changed after approval'
+        require_dispatch_snapshot(connection, data['dispatch_snapshot'], data['dispatch_scope'])
         before = snapshot_relations(connection, current)
     connection.close()
     print(json.dumps(dict(kind='native_uninstall_before', operation_id=data['operation_id'], plan_hash=data['plan_hash'],
@@ -122,6 +153,7 @@ def main():
             cursor.execute('SELECT module,model,count(*) FROM ir_model_data WHERE module=ANY(%s) GROUP BY module,model ORDER BY module,model', [approved])
             remaining_metadata = [dict(native_addon=addon, model=model, records=count) for addon, model, count in cursor.fetchall()]
         after = snapshot_relations(connection, current)
+        require_dispatch_snapshot(connection, data['dispatch_snapshot'], data['dispatch_scope'])
     connection.close()
     print(json.dumps(dict(kind='native_uninstall_effects', operation_id=data['operation_id'], plan_hash=data['plan_hash'],
         impact_digest=data_digest(current), before=before, after=after, native_after=removed,

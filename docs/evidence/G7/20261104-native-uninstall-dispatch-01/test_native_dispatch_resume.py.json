@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_native_dispatch_resume.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_enable_failure_does_not_open_ingress_or_erase_effects_fence (test_native_dispatch_resume.NativeDispatchResumeTests.test_enable_failure_does_not_open_ingress_or_erase_effects_fence) ... ok\r\ntest_journal_fence_precedes_dispatch_and_ingress (test_native_dispatch_resume.NativeDispatchResumeTests.test_journal_fence_precedes_dispatch_and_ingress) ... ok\r\ntest_late_queue_change_rejects_before_journal_or_enable (test_native_dispatch_resume.NativeDispatchResumeTests.test_late_queue_change_rejects_before_journal_or_enable) ... ok\r\ntest_legacy_result_does_not_silently_admit_dispatch_tables (test_native_dispatch_resume.NativeDispatchResumeTests.test_legacy_result_does_not_silently_admit_dispatch_tables) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 4 tests in 0.094s\r\n\r\nOK\r\n",
+  "tests": 4
+}

@@ -61,11 +61,12 @@ def inspect_current_image(connection, *, root, inventory_digest, descriptors, si
         raise PlanningError('Native preview differs from the running image inventory')
     inventory = load_json(raw)
     artifacts = inventory['artifacts']
-    if {d['plugin_id'] for d in descriptors} != set(artifacts):
+    natives = [d for d in descriptors if d['manifest']['runtime']['kind'] == 'native']
+    if {d['plugin_id'] for d in natives} != set(artifacts):
         raise PlanningError('Native preview must cover every actual image package')
     validator = ArtifactValidator(TrustPolicy(approved_digests=frozenset(a['digest'] for a in artifacts.values())))
     addons, sources = {'mp_identity'}, {}
-    for descriptor in descriptors:
+    for descriptor in natives:
         artifact = artifacts[descriptor['plugin_id']]
         if (artifact['digest'], artifact['version'], artifact['addon']) != (
                 descriptor['digest'], descriptor['version'], descriptor['manifest']['runtime'].get('addon_name')):
@@ -259,9 +260,9 @@ def inspect_native_impact(connection, *, site_id, requested, descriptors, source
             WHERE m.state IN ('installed','to install','to upgrade','to remove') GROUP BY m.name,m.state,m.latest_version ORDER BY m.name''')]
         by_addon = {d['manifest']['runtime']['addon_name']: d for d in descriptors if d['manifest']['runtime']['kind'] == 'native'}
         by_plugin = {d['plugin_id']: d for d in descriptors}
-        installations = {public_id: (plugin, runtime) for public_id, plugin, runtime in _rows(cursor,
-            'SELECT public_id,plugin_id,runtime FROM mp_plugin_installation ORDER BY public_id')}
-        required_consumers = []
+        installations = {row[0]: row[1:] for row in _rows(cursor,
+            'SELECT public_id,plugin_id,runtime,version,artifact_digest,manifest FROM mp_plugin_installation ORDER BY public_id')}
+        required_consumers, external_consumers = [], []
         for (binding,) in _rows(cursor, 'SELECT descriptor FROM mp_service_binding ORDER BY public_id'):
             validate('binding', binding)
             consumer = installations.get(binding['consumer_installation_id'])
@@ -269,6 +270,11 @@ def inspect_native_impact(connection, *, site_id, requested, descriptors, source
             if (binding['site_id'] != site_id or not consumer or not provider
                     or provider[0] != binding['provider_plugin_id'] or consumer[0] not in by_plugin or provider[0] not in by_plugin):
                 raise PlanningError('Native impact has an unavailable service binding identity')
+            for installed in (consumer, provider):
+                descriptor = by_plugin[installed[0]]
+                if installed[1:] != (descriptor['manifest']['runtime']['kind'], descriptor['version'],
+                                     descriptor['digest'], descriptor['manifest']):
+                    raise PlanningError('Native impact binding package differs from its exact published descriptor')
             requirement = next((r for r in by_plugin[consumer[0]]['manifest']['services']['requires'] if r['alias'] == binding['alias']), None)
             if requirement is None or requirement.get('optional', False) != binding['optional']:
                 raise PlanningError('Native impact binding differs from its verified requirement')
@@ -279,11 +285,14 @@ def inspect_native_impact(connection, *, site_id, requested, descriptors, source
             validate_binding(binding, requirement, {**provided, 'plugin_id': provider[0],
                                                      'installation_id': binding['provider_installation_id']})
             if not requirement.get('optional', False):
-                if consumer[1] != 'native' or provider[1] != 'native':
-                    raise PlanningError('External required consumers need the G6 lifecycle adapter')
-                required_consumers.append((by_plugin[consumer[0]]['manifest']['runtime']['addon_name'],
-                                           by_plugin[provider[0]]['manifest']['runtime']['addon_name']))
+                if consumer[1] == provider[1] == 'native':
+                    required_consumers.append((by_plugin[consumer[0]]['manifest']['runtime']['addon_name'],
+                                               by_plugin[provider[0]]['manifest']['runtime']['addon_name']))
+                elif consumer[1] != 'native' and provider[1] == 'native':
+                    external_consumers.append(by_plugin[provider[0]]['manifest']['runtime']['addon_name'])
         closure = native_closure(requested, modules, descriptors, required_consumers)
+        if set(closure).intersection(external_consumers):
+            raise PlanningError('Unregister required external consumers before native provider uninstall')
         plugins = []
         for addon in closure:
             descriptor = by_addon[addon]
@@ -355,14 +364,22 @@ def inspect_native_impact(connection, *, site_id, requested, descriptors, source
             JOIN pg_class c ON c.oid=k.conrelid JOIN pg_class t ON t.oid=k.confrelid
             JOIN pg_namespace n ON n.oid=t.relnamespace WHERE k.contype='f' AND n.nspname='public'
             AND t.relname=ANY(%s) ORDER BY c.relname,k.conname''', [sorted(affected)])]
+        from .dispatch_lifecycle import SCHEMA, _schema, DispatchLifecycleError
         dispatch = [name for (name,) in _rows(cursor,
-            "SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name IN ('mp_job','mp_outbox') ORDER BY table_name")]
+            "SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name=ANY(%s) ORDER BY table_name",
+            [list(SCHEMA)])]
+        try:
+            known_dispatch = _schema(cursor)
+        except DispatchLifecycleError:
+            dispatch_state = 'unsupported'
+        else:
+            dispatch_state = 'present_requires_fence' if known_dispatch else 'not_present'
         assets = sorted({(addon, path) for addon in closure
                          for paths in by_addon[addon]['native_manifest'].get('assets', {}).values() for path in paths})
         impact = dict(site_id=site_id, requested_addons=sorted(requested), native_closure=closure, plugins=plugins,
                       models=models, fields=fields, constraints=constraints, foreign_references=references,
                       metadata_records=metadata, assets=[dict(native_addon=addon, path=path, source='declared_source') for addon, path in assets],
-                      dispatch=dict(state='unsupported' if dispatch else 'not_present', tables=dispatch),
+                      dispatch=dict(state=dispatch_state, tables=dispatch),
                       warnings=[WARNING, 'Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted.'])
         return impact
 

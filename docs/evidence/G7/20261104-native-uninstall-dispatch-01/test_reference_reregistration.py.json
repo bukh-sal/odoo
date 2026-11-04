@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_reference_reregistration.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_absent_and_revoked_approvals_remain_inert (test_reference_reregistration.ReferenceReregistrationTests.test_absent_and_revoked_approvals_remain_inert) ... ok\r\ntest_active_provider_and_consumer_bindings_are_refused (test_reference_reregistration.ReferenceReregistrationTests.test_active_provider_and_consumer_bindings_are_refused) ... ok\r\ntest_approved_endpoint_before_reregistration_is_inert_even_when_worker_down (test_reference_reregistration.ReferenceReregistrationTests.test_approved_endpoint_before_reregistration_is_inert_even_when_worker_down) ... ok\r\ntest_enabled_preregistration_requires_exact_site_and_both_image_pins (test_reference_reregistration.ReferenceReregistrationTests.test_enabled_preregistration_requires_exact_site_and_both_image_pins) ... ok\r\ntest_installed_scope_still_requires_endpoint_and_matching_image (test_reference_reregistration.ReferenceReregistrationTests.test_installed_scope_still_requires_endpoint_and_matching_image) ... ok\r\ntest_removed_feature_or_approved_grant_cannot_be_revived (test_reference_reregistration.ReferenceReregistrationTests.test_removed_feature_or_approved_grant_cannot_be_revived) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 6 tests in 0.110s\r\n\r\nOK\r\n",
+  "tests": 6
+}

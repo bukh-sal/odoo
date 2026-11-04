@@ -510,7 +510,8 @@
             "state": {
               "enum": [
                 "not_present",
-                "unsupported"
+                "unsupported",
+                "present_requires_fence"
               ]
             },
             "tables": {
@@ -550,6 +551,41 @@
                 "properties": {
                   "tables": {
                     "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "state": {
+                    "const": "present_requires_fence"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "tables": {
+                    "oneOf": [
+                      {
+                        "const": [
+                          "mp_dispatch_control",
+                          "mp_job",
+                          "mp_outbox"
+                        ]
+                      },
+                      {
+                        "const": [
+                          "mp_dispatch_control",
+                          "mp_event_consumer_state",
+                          "mp_event_consumption",
+                          "mp_event_delivery",
+                          "mp_event_subscription",
+                          "mp_job",
+                          "mp_outbox"
+                        ]
+                      }
+                    ]
                   }
                 }
               }

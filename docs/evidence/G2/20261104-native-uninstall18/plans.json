@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_plans.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_adjacent_skipped_and_fresh_migration_selection_is_numeric (test_plans.Plans.test_adjacent_skipped_and_fresh_migration_selection_is_numeric) ... ok\r\ntest_artifact_removal_blocked_while_any_site_needs_it (test_plans.Plans.test_artifact_removal_blocked_while_any_site_needs_it) ... ok\r\ntest_enable_requires_scoped_provider_or_explicit_enable_cascade (test_plans.Plans.test_enable_requires_scoped_provider_or_explicit_enable_cascade) ... ok\r\ntest_install_exact_hash_targets_and_backup_no_state_mutation (test_plans.Plans.test_install_exact_hash_targets_and_backup_no_state_mutation) ... ok\r\ntest_installation_identity_unknown_action_duplicate_and_bad_site (test_plans.Plans.test_installation_identity_unknown_action_duplicate_and_bad_site) ... ok\r\ntest_migration_phase_order_matches_native_wide_rollover_and_script_names (test_plans.Plans.test_migration_phase_order_matches_native_wide_rollover_and_script_names) ... ok\r\ntest_native_uninstall_is_destructive_preserves_source_and_covers_database (test_plans.Plans.test_native_uninstall_is_destructive_preserves_source_and_covers_database) ... ok\r\ntest_permission_declaration_expansion_changes_approved_hash (test_plans.Plans.test_permission_declaration_expansion_changes_approved_hash) ... ok\r\ntest_scoped_alias_binding_cannot_cross_workspace_or_substitute_provider (test_plans.Plans.test_scoped_alias_binding_cannot_cross_workspace_or_substitute_provider) ... ok\r\ntest_stale_generation_permissions_policy_endpoint_and_operator_authority (test_plans.Plans.test_stale_generation_permissions_policy_endpoint_and_operator_authority) ... ok\r\ntest_suspending_provider_requires_dependent_scope_target (test_plans.Plans.test_suspending_provider_requires_dependent_scope_target) ... ok\r\ntest_transitive_changes_and_all_shared_installations_need_explicit_targets (test_plans.Plans.test_transitive_changes_and_all_shared_installations_need_explicit_targets) ... ok\r\ntest_workspace_tamper_and_misleading_display_fail_closed (test_plans.Plans.test_workspace_tamper_and_misleading_display_fail_closed) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.161s\r\n\r\nOK\r\n"
+}

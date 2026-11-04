@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_restore_dispatch.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_already_open_or_late_open_edge_requires_reconciliation (test_restore_dispatch.RestoreDispatchTests.test_already_open_or_late_open_edge_requires_reconciliation) ... ok\r\ntest_authority_changed_after_readiness_invalidates_review (test_restore_dispatch.RestoreDispatchTests.test_authority_changed_after_readiness_invalidates_review) ... ok\r\ntest_clean_resume_records_conservative_fence_before_edge_start (test_restore_dispatch.RestoreDispatchTests.test_clean_resume_records_conservative_fence_before_edge_start) ... ok\r\ntest_clear_profile_binds_effects_and_human_authority_without_writes (test_restore_dispatch.RestoreDispatchTests.test_clear_profile_binds_effects_and_human_authority_without_writes) ... ok\r\ntest_each_unsupported_effect_denies_a_resume_proposal (test_restore_dispatch.RestoreDispatchTests.test_each_unsupported_effect_denies_a_resume_proposal) ... ok\r\ntest_malformed_effect_snapshot_fails_closed (test_restore_dispatch.RestoreDispatchTests.test_malformed_effect_snapshot_fails_closed) ... ok\r\ntest_native_password_or_passkey_change_after_readiness_invalidates_review (test_restore_dispatch.RestoreDispatchTests.test_native_password_or_passkey_change_after_readiness_invalidates_review) ... ok\r\ntest_old_restoration_without_native_credential_proof_cannot_resume (test_restore_dispatch.RestoreDispatchTests.test_old_restoration_without_native_credential_proof_cannot_resume) ... ok\r\ntest_queue_arriving_after_readiness_stays_before_traffic_fence (test_restore_dispatch.RestoreDispatchTests.test_queue_arriving_after_readiness_stays_before_traffic_fence) ... ok\r\ntest_readiness_error_cannot_record_open_traffic (test_restore_dispatch.RestoreDispatchTests.test_readiness_error_cannot_record_open_traffic) ... ok\r\ntest_technical_identity_reappearing_after_readiness_stays_fenced (test_restore_dispatch.RestoreDispatchTests.test_technical_identity_reappearing_after_readiness_stays_fenced) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 11 tests in 0.079s\r\n\r\nOK\r\n",
+  "tests": 11
+}

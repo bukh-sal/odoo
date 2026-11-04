@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_reference_recovery.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_bad_previous_hash_or_current_uncertainty_refused (test_reference_recovery.ReferenceRecoveryTests.test_bad_previous_hash_or_current_uncertainty_refused) ... ok\r\ntest_checkpoint_comparison_relaxes_only_outer_epoch_and_current_publication (test_reference_recovery.ReferenceRecoveryTests.test_checkpoint_comparison_relaxes_only_outer_epoch_and_current_publication) ... ok\r\ntest_exact_checkpoint_derived_fresh_epoch_accepted (test_reference_recovery.ReferenceRecoveryTests.test_exact_checkpoint_derived_fresh_epoch_accepted) ... ok\r\ntest_known_release_with_wrong_epoch_or_inventory_refused (test_reference_recovery.ReferenceRecoveryTests.test_known_release_with_wrong_epoch_or_inventory_refused) ... ok\r\ntest_mutated_fresh_epoch_database_or_native_pins_refused (test_reference_recovery.ReferenceRecoveryTests.test_mutated_fresh_epoch_database_or_native_pins_refused) ... ok\r\ntest_new_review_may_bind_current_publication_without_restoring_old_authority (test_reference_recovery.ReferenceRecoveryTests.test_new_review_may_bind_current_publication_without_restoring_old_authority) ... ok\r\ntest_policy_scope_image_and_queue_changes_cannot_be_hidden_as_publication_update (test_reference_recovery.ReferenceRecoveryTests.test_policy_scope_image_and_queue_changes_cannot_be_hidden_as_publication_update) ... ok\r\ntest_profile_detection_includes_failed_first_registration_and_null_native_checkpoint (test_reference_recovery.ReferenceRecoveryTests.test_profile_detection_includes_failed_first_registration_and_null_native_checkpoint) ... ok\r\ntest_restored_database_tag_must_equal_reviewed_configuration (test_reference_recovery.ReferenceRecoveryTests.test_restored_database_tag_must_equal_reviewed_configuration) ... ok\r\ntest_scope_allows_only_same_deployment_site_and_exact_fresh_database (test_reference_recovery.ReferenceRecoveryTests.test_scope_allows_only_same_deployment_site_and_exact_fresh_database) ... ok\r\ntest_source_accepts_only_known_checkpoint_or_exact_approved_target (test_reference_recovery.ReferenceRecoveryTests.test_source_accepts_only_known_checkpoint_or_exact_approved_target) ... ok\r\ntest_wrong_checkpoint_or_approved_release_refused (test_reference_recovery.ReferenceRecoveryTests.test_wrong_checkpoint_or_approved_release_refused) ... ok\r\ntest_metadata_change_since_verified_result_denies_resume (test_reference_recovery.ReferenceResumeTests.test_metadata_change_since_verified_result_denies_resume) ... ok\r\ntest_publication_change_after_review_requires_fresh_review_before_enable (test_reference_recovery.ReferenceResumeTests.test_publication_change_after_review_requires_fresh_review_before_enable) ... ok\r\ntest_reference_resume_binds_current_publication_and_fences_before_queue_enable (test_reference_recovery.ReferenceResumeTests.test_reference_resume_binds_current_publication_and_fences_before_queue_enable) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 15 tests in 0.045s\r\n\r\nOK\r\n",
+  "tests": 15
+}

@@ -20,6 +20,17 @@ def example(name='lifecycle-impact'):
 
 
 class LifecycleContracts(unittest.TestCase):
+    def test_dispatch_extension_requires_complete_recognized_schema(self):
+        for name in ('dispatch-base', 'dispatch-events'):
+            value = json.loads((EXAMPLES / f'lifecycle-impact/{name}.json').read_text())
+            validate('lifecycle-impact', value)
+            self.assertEqual(value['impact_digest'], data_digest(value['impact']))
+            for tables in ([], ['mp_job'], value['impact']['dispatch']['tables'] + ['unknown_queue']):
+                wrong = copy.deepcopy(value)
+                wrong['impact']['dispatch']['tables'] = tables
+                with self.subTest(name=name, tables=tables), self.assertRaises(ContractError):
+                    validate('lifecycle-impact', wrong)
+
     def test_known_unknown_examples_and_old_consumers(self):
         for name in ('lifecycle-impact', 'lifecycle-impact-unknown'):
             value = example(name)

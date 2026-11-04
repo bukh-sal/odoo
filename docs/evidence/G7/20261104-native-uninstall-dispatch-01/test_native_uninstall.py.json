@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_native_uninstall.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_upstream_closure_must_equal_the_approved_native_set (test_native_uninstall.NativeUninstallGuards.test_actual_upstream_closure_must_equal_the_approved_native_set) ... ok\r\ntest_closed_checkpoint_required_and_exact_across_native_commit (test_native_uninstall.NativeUninstallGuards.test_closed_checkpoint_required_and_exact_across_native_commit) ... ok\r\ntest_maintenance_source_and_schema_must_match_the_approved_image (test_native_uninstall.NativeUninstallGuards.test_maintenance_source_and_schema_must_match_the_approved_image) ... ok\r\ntest_ready_uninstall_requires_stable_suspended_tombstone_and_revoked_grants (test_native_uninstall.NativeUninstallGuards.test_ready_uninstall_requires_stable_suspended_tombstone_and_revoked_grants) ... ok\r\ntest_reference_checkpoint_needs_exact_known_registration_and_no_unknown_effects (test_native_uninstall.NativeUninstallGuards.test_reference_checkpoint_needs_exact_known_registration_and_no_unknown_effects) ... ok\r\ntest_uninstall_uses_only_fixed_child_and_never_i_u_or_core_maintenance (test_native_uninstall.NativeUninstallGuards.test_uninstall_uses_only_fixed_child_and_never_i_u_or_core_maintenance) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 6 tests in 0.010s\r\n\r\nOK\r\n",
+  "tests": 6
+}

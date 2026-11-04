@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 17,
+  "revision": 18,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -93,7 +93,12 @@
         "packages/contracts/examples/v1/plan-python-maintenance.json",
         "tests/test_core_python_maintenance.py",
         "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md",
-        "docs/architecture-decisions/0047-operator-toolchain-crypto-maintenance.md"
+        "docs/architecture-decisions/0047-operator-toolchain-crypto-maintenance.md",
+        "packages/contracts/examples/v1/lifecycle-impact/dispatch-base.json",
+        "packages/contracts/examples/v1/lifecycle-impact/dispatch-events.json",
+        "docs/architecture-decisions/0051-native-uninstall-dispatch-integration.md",
+        "tests/test_lifecycle_contracts.py",
+        "tests/test_native_uninstall.py"
       ],
       "g1": []
     },
@@ -292,7 +297,7 @@
     "packages/contracts/v1/endpoint.schema.json": "edf6ea539ce98c8230e2ed332a22d7c599eb65986e86877ce2d0effda360723a",
     "packages/contracts/v1/event-transport.schema.json": "f90b6d124a86563bbb0a1d3fd3bd9840517cf10b3f99392a527fd1c34ac8f562",
     "packages/contracts/v1/host-context.schema.json": "a0c4ad4c83d2d386a6a9b4787880cab491870eabc5b14adf9b4ed856647da7a9",
-    "packages/contracts/v1/lifecycle-impact.schema.json": "82c0a23ee4b8978c62fb37dec2aa85612008fdc7f90a22cf1ec1b57cc26b7d79",
+    "packages/contracts/v1/lifecycle-impact.schema.json": "0dc239be335a3776fdbccfcc2f511ed4bc8367d8e6b7f96ca8911f5b962fbf24",
     "packages/contracts/v1/manager-view.schema.json": "7181c83adb6574cbd33f9ad40e332975f72c736c57e73acd722fc2a29e7c828d",
     "packages/contracts/v1/manifest.schema.json": "992d612b7c806be5e16d0f6898cd376cfffc4ab3f8e3cb876cf87dca1d1ad1e4",
     "packages/contracts/v1/note-detail-actions.schema.json": "89ef9e21b6d7585bca5e64420054302db7f1b9bc1b5de63849de933971803850",
@@ -325,7 +330,12 @@
     "tests/test_manager_contracts.py": "e0e2a12c9f88506a1f51619e6c6f78dac22d560a5d7607255b54d17380214667",
     "tests/test_operation_contracts.py": "5e806a26d8ec89d444eabad5bab7bc65c9bfcd8ed0ebcca0f34c8d545bbf899e",
     "tools/check_contract_freeze.py": "dc012e345a1352d800d41b7bcfa25bf346b2b079ee5c6602047d5eba038e774a",
-    "docs/architecture-decisions/0047-operator-toolchain-crypto-maintenance.md": "68aff6ae85678efdb63a05a37d30903446da011981f49b6fef0f677d18e3e65f"
+    "docs/architecture-decisions/0047-operator-toolchain-crypto-maintenance.md": "68aff6ae85678efdb63a05a37d30903446da011981f49b6fef0f677d18e3e65f",
+    "packages/contracts/examples/v1/lifecycle-impact/dispatch-base.json": "4dde62661e6274a47f5dd1361d6eb7d57fbec17fca080dd1edbf558c835eba1c",
+    "packages/contracts/examples/v1/lifecycle-impact/dispatch-events.json": "03aefc73bb742619185069b912d58f621871404dc04ad905cbc34d1e64a45ea2",
+    "docs/architecture-decisions/0051-native-uninstall-dispatch-integration.md": "4809c5242190ebb80a6660b5ffe399422a7df10d576bc59561692349209c3ff8",
+    "tests/test_lifecycle_contracts.py": "af953ead03868692fdd5a9f7b480aa225345c7ae69fff8c35b6f609570092223",
+    "tests/test_native_uninstall.py": "8a4c4ea9931d456ee76095ad8161038fa46d5636a559674b829c5e403010cdf4"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

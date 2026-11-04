@@ -1,0 +1,88 @@
+{
+  "result": "passed_static_candidate_admission",
+  "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory_digest": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "base_image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "source_changes": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "cf4af9041cdd9d0214b682502ebf94a7d37e476a9768cca405db2493ebf62232",
+      "target_sha256": "26b7d4d8ad9a2f330665c6bcf67d41760a0adcbbd9c130211374642b6a848766"
+    },
+    {
+      "path": "addons/mp_core/operations.py",
+      "previous_sha256": "007ebab44beb277830bd9741b97b24874feb322ec78a7bb26b1ad521021a0bf8",
+      "target_sha256": "e036ae0d843c5a74aa94f9a11871f3d2a8fb27efc984ceaac6d38bb6875d424d"
+    },
+    {
+      "path": "packages/contracts/examples/v1/lifecycle-impact/dispatch-base.json",
+      "previous_sha256": null,
+      "target_sha256": "4dde62661e6274a47f5dd1361d6eb7d57fbec17fca080dd1edbf558c835eba1c"
+    },
+    {
+      "path": "packages/contracts/examples/v1/lifecycle-impact/dispatch-events.json",
+      "previous_sha256": null,
+      "target_sha256": "03aefc73bb742619185069b912d58f621871404dc04ad905cbc34d1e64a45ea2"
+    },
+    {
+      "path": "packages/contracts/v1/lifecycle-impact.schema.json",
+      "previous_sha256": "82c0a23ee4b8978c62fb37dec2aa85612008fdc7f90a22cf1ec1b57cc26b7d79",
+      "target_sha256": "0dc239be335a3776fdbccfcc2f511ed4bc8367d8e6b7f96ca8911f5b962fbf24"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/lifecycle_impact.py",
+      "previous_sha256": "1c19985cb544afcff8b427cfc680afa49d972019aeace0ebb6bddeb98111d87f",
+      "target_sha256": "4f1256253fc42de039654cd92a3291a26352382be09339c5921ddf3056ab5fa8"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/lifecycle_observation.py",
+      "previous_sha256": "35851c2893bd37d34e63cb47144621cc295ada7d3b206ffc5e8e91eaaa8a4ffa",
+      "target_sha256": "fe53ece3b54aa02f9d25d9985bcaa5cefd845196d9a650db2f0f62ab9810648b"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/native_executor.py",
+      "previous_sha256": "2a5bdb1ed793caeff02806361cc8eff7b9addccdbc6ff4a4a1e289b7d6c796c8",
+      "target_sha256": "41eaf76d81cb28d0d42c8f0a8d4eb133fff11c02f6ac181706330b8de46e0694"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/native_uninstall.py",
+      "previous_sha256": "990dd2c1ae92e4b1426cc014a238320c88914e7bf70558def4b08f8d2c9b4f58",
+      "target_sha256": "5ef431827250172bea0e65689c8bbfea7fe364e084839c52e4dec148bf46de22"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "8601b39c43b8f24e9dfaa1a237a2c089898bae60fcc3f006a45cd7c70d6e09bc",
+      "target_sha256": "22a5a6b040f1ae737f496b8ba47de015e95905b61b658b7dcec95bef4d876a9d"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/uninstall_planning.py",
+      "previous_sha256": "c94e646b37c75632705222775415b2bc3067eafb0f810bb46982223fe18eb564",
+      "target_sha256": "c486b28141a9c13c95b73b96fa71d37a28367c4bf0f200262121874a0f83f489"
+    }
+  ],
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.22",
+      "target_version": "19.0.0.1.23",
+      "migrations": []
+    }
+  ],
+  "python_dependency_changes": null,
+  "python_packages": 77,
+  "python_metadata_and_lock_exact": true,
+  "linux": {
+    "tests": 13,
+    "successful": true
+  },
+  "test_source_sha256": {
+    "test_native_uninstall": "8a4c4ea9931d456ee76095ad8161038fa46d5636a559674b829c5e403010cdf4",
+    "test_lifecycle_contracts": "af953ead03868692fdd5a9f7b480aa225345c7ae69fff8c35b6f609570092223",
+    "test_plans": "5e01d1bd94aef7315629201d15706d47d71796b8d305020c4689cf1c250afda5"
+  },
+  "isolated_helper_removed": true,
+  "network_config_database_authority_mounts": false,
+  "limits": [
+    "Immutable build/inventory and isolated Linux guard/schema checks only. No installed upgrade, uninstall or recovery acceptance."
+  ]
+}

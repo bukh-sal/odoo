@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_lifecycle_contracts.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_authority_commands_credentials_and_unknown_keys_rejected (test_lifecycle_contracts.LifecycleContracts.test_authority_commands_credentials_and_unknown_keys_rejected) ... ok\r\ntest_cannot_claim_non_destructive_keep_data_or_untrusted_execution (test_lifecycle_contracts.LifecycleContracts.test_cannot_claim_non_destructive_keep_data_or_untrusted_execution) ... ok\r\ntest_database_names_are_data_not_lowercase_native_addon_identifiers (test_lifecycle_contracts.LifecycleContracts.test_database_names_are_data_not_lowercase_native_addon_identifiers) ... ok\r\ntest_dispatch_extension_requires_complete_recognized_schema (test_lifecycle_contracts.LifecycleContracts.test_dispatch_extension_requires_complete_recognized_schema) ... ok\r\ntest_known_unknown_examples_and_old_consumers (test_lifecycle_contracts.LifecycleContracts.test_known_unknown_examples_and_old_consumers) ... ok\r\ntest_limits_protocol_identifiers_and_dispatch_consistency (test_lifecycle_contracts.LifecycleContracts.test_limits_protocol_identifiers_and_dispatch_consistency) ... ok\r\ntest_unknown_relation_mapping_cannot_invent_counts_or_columns (test_lifecycle_contracts.LifecycleContracts.test_unknown_relation_mapping_cannot_invent_counts_or_columns) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 7 tests in 0.159s\r\n\r\nOK\r\n",
+  "tests": 7
+}

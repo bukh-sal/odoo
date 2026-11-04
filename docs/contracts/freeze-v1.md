@@ -1,6 +1,6 @@
 # Contract freeze v1
 
-Status: **passed G2 revision16**,3 November2026. Historical revision15 remains qualified for the installed runtime. Contract major1; additive scoped event delivery under ADR0031 (manager/lifecycle contracts retained). Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
+Status: **passed G2 revision18**,4 November2026. Contract major1; [ADR0051](../architecture-decisions/0051-native-uninstall-dispatch-integration.md) extends the native-uninstall impact observation for existing durable dispatch schemas. Existing payloads remain valid; old strict readers require coordinated immutable maintenance before accepting the new enum.106files/eight ownership rows; [consumer, TypeScript and freeze evidence](../evidence/G2/20261104-native-uninstall18/gate-G2.json). Current core22 remains unchanged; installed core23 lifecycle/recovery acceptance is pending. Prerequisite: qualified G1 at commit `73d8ebd2`, with real native/PostgreSQL/browser evidence. Runtime feature acceptance remains at G3-G7.
 
 Normative semantics: [protocol-v1.md](protocol-v1.md), [ADR0003](../architecture-decisions/0003-r1-contracts.md). Machine inventory [freeze-v1.json](freeze-v1.json) contains exact SHA256 for every schema/type/example/validator/test/lock and maps owning phase, acceptance IDs and G1 correspondence. It excludes itself and unrelated evidence/status to avoid self-reference. Every path in the table has an exact digest in that inventory.
 

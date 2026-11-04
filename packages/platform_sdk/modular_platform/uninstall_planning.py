@@ -14,8 +14,8 @@ def validate_uninstall_targets(document, sites, impact, targets, *, operation_id
     # Validate the strict standalone impact through its DTO; this synthetic hash
     # is not an executable proposal or approval. The final hash is made below.
     impact_view(impact, operation_id=operation_id, plan_hash='sha256:' + '0' * 64, observed_at=created_at)
-    if impact['dispatch']['state'] != 'not_present':
-        raise PlanningError('Native uninstall requires the G6 durable dispatch drain adapter')
+    if impact['dispatch']['state'] not in {'not_present', 'present_requires_fence'}:
+        raise PlanningError('Native uninstall refuses an unknown or partial durable dispatch schema')
     site = next((s for s in sites if s['site_id'] == impact['site_id']), None)
     if site is None:
         raise PlanningError('Native uninstall site is outside the observed deployment')

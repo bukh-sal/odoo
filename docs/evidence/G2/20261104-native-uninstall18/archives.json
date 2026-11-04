@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_artifacts.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_all_six_limits_accept_boundary_and_reject_one_over (test_artifacts.Artifacts.test_all_six_limits_accept_boundary_and_reject_one_over) ... ok\r\ntest_catalog_immutable_version_conflicts_trust_change_quarantine_and_corruption (test_artifacts.Artifacts.test_catalog_immutable_version_conflicts_trust_change_quarantine_and_corruption) ... ok\r\ntest_curated_exact_digest_development_opt_in_and_no_self_trust (test_artifacts.Artifacts.test_curated_exact_digest_development_opt_in_and_no_self_trust) ... ok\r\ntest_duplicate_case_unicode_and_file_prefix_collisions (test_artifacts.Artifacts.test_duplicate_case_unicode_and_file_prefix_collisions) ... ok\r\ntest_external_metadata_accepts_data_and_rejects_every_executable_layout (test_artifacts.Artifacts.test_external_metadata_accepts_data_and_rejects_every_executable_layout) ... ok\r\ntest_extras_comments_encryption_sfx_trailing_and_header_inconsistency (test_artifacts.Artifacts.test_extras_comments_encryption_sfx_trailing_and_header_inconsistency) ... ok\r\ntest_missing_schema_remote_ref_bad_schema_and_missing_prebuilt_page (test_artifacts.Artifacts.test_missing_schema_remote_ref_bad_schema_and_missing_prebuilt_page) ... ok\r\ntest_multiple_roots_loose_files_and_root_manifest_disagreement (test_artifacts.Artifacts.test_multiple_roots_loose_files_and_root_manifest_disagreement) ... ok\r\ntest_native_manifest_is_static_and_rejects_hooks_activation_version_and_assets (test_artifacts.Artifacts.test_native_manifest_is_static_and_rejects_hooks_activation_version_and_assets) ... ok\r\ntest_never_imports_native_code_and_staging_hashes_written_files (test_artifacts.Artifacts.test_never_imports_native_code_and_staging_hashes_written_files) ... ok\r\ntest_outer_digest_inventory_exclusion_extra_file_and_provenance (test_artifacts.Artifacts.test_outer_digest_inventory_exclusion_extra_file_and_provenance) ... ok\r\ntest_real_cli_and_strict_operator_configuration (test_artifacts.Artifacts.test_real_cli_and_strict_operator_configuration) ... ok\r\ntest_secret_and_remote_script_lint_redacts_source (test_artifacts.Artifacts.test_secret_and_remote_script_lint_redacts_source) ... ok\r\ntest_symlink_fifo_device_and_directory_mode_confusion (test_artifacts.Artifacts.test_symlink_fifo_device_and_directory_mode_confusion) ... ok\r\ntest_three_actual_reference_archives_and_exact_reproducibility (test_artifacts.Artifacts.test_three_actual_reference_archives_and_exact_reproducibility) ... ok\r\ntest_traversal_absolute_drive_unc_mixed_device_and_control_paths (test_artifacts.Artifacts.test_traversal_absolute_drive_unc_mixed_device_and_control_paths) ... ok\r\ntest_unknown_sensitive_manifest_keys_and_unsupported_protocols (test_artifacts.Artifacts.test_unknown_sensitive_manifest_keys_and_unsupported_protocols) ... ok\r\ntest_zip_bomb_and_forged_directory_entry_counts (test_artifacts.Artifacts.test_zip_bomb_and_forged_directory_entry_counts) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 18 tests in 4.213s\r\n\r\nOK\r\n"
+}

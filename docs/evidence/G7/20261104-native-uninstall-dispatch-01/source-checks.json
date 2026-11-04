@@ -1,0 +1,54 @@
+{
+  "result": "passed",
+  "tests": 70,
+  "records": [
+    {
+      "pattern": "test_lifecycle_contracts.py",
+      "exit_code": 0,
+      "tests": 7
+    },
+    {
+      "pattern": "test_lifecycle_impact.py",
+      "exit_code": 0,
+      "tests": 7
+    },
+    {
+      "pattern": "test_uninstall_planning.py",
+      "exit_code": 0,
+      "tests": 8
+    },
+    {
+      "pattern": "test_native_uninstall.py",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "pattern": "test_lifecycle_planning.py",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "pattern": "test_reference_recovery.py",
+      "exit_code": 0,
+      "tests": 15
+    },
+    {
+      "pattern": "test_reference_reregistration.py",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "pattern": "test_restore_dispatch.py",
+      "exit_code": 0,
+      "tests": 11
+    },
+    {
+      "pattern": "test_native_dispatch_resume.py",
+      "exit_code": 0,
+      "tests": 4
+    }
+  ],
+  "limits": [
+    "Host source and guard checks only; installed native uninstall/fault/restore still required."
+  ]
+}

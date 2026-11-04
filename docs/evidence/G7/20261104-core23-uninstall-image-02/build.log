@@ -1,0 +1,34 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.core-maintenance
+#1 transferring dockerfile: 887B done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#2 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a
+#4 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/library/sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a:
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+ - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 10)
+Dockerfile.core-maintenance:4
+--------------------
+   2 |     # Code-only maintenance: preserve the exact independently selected dependencies.
+   3 |     ARG DEPENDENCY_BASE_IMAGE
+   4 | >>> FROM ${DEPENDENCY_BASE_IMAGE} AS builder
+   5 |     USER 0:0
+   6 |     ARG DISTRIBUTION_POLICY
+--------------------
+ERROR: failed to build: failed to solve: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/lte0grtdqjbyoddgbz0x3hhxp
