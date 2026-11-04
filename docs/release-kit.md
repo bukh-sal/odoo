@@ -119,5 +119,13 @@ inputs, without creating a site or Docker assets. This closes the earlier
 full-command-unexecuted limitation while preserving the first diagnosed record.
 
 The twelve required procedures are in [operator runbooks](operator-runbooks.md).
-Their final current-kit cross-check, complete artifact privacy/provenance closure,
-performance, browser checks and G7 handoff still remain. The kit stays a draft.
+[CLI/retained evidence cross-check](evidence/G7/20261104-release-kit-01/runbook-cross-check.json)
+and [complete artifact privacy/source binding](evidence/G7/20261104-release-kit-01/kit-qualified.json)
+have passed. The latter covers expanded/nested archives and image layers, all
+54,196 source files against Git, and 133 known secret values. Eight exact upstream
+documentation examples/compiled equivalents were reviewed individually.
+
+The qualified kit source snapshot is `5456abf4`; later audit receipts are linked
+from the repository evidence index, not claimed to be inside that earlier ZIP.
+The kit remains a draft until browser/network, performance, accessibility and
+the final G7/section28 operator/developer handoff pass. No full R1 claim is made.

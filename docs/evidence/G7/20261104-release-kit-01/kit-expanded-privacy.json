@@ -1,0 +1,88 @@
+{
+  "result": "actual_complete_kit_members_scanned_triage_required",
+  "utc": "2026-11-04T05:04:19.417239+00:00",
+  "source_commit": "5456abf4d56572ee4b545cb0c24109dce22df357",
+  "prior_source_commit": "d0580ed9c6d580b2146148242f479091fb988a49",
+  "kit_manifest_sha256": "d3b6e745286f9c36d28a4e148db2cd859df23dec6450eaef57be61391474558d",
+  "known_values": 133,
+  "new_known_values": 10,
+  "top_level_files": 52,
+  "expanded_members": 101736,
+  "unique_contents": 78026,
+  "member_categories": {
+    "component": 61259,
+    "image-link": 2703,
+    "image-layer": 31352,
+    "image-metadata": 28,
+    "image-transport": 3,
+    "git-history": 103,
+    "git-history-prior": 6288
+  },
+  "findings": [
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/docs/content/using-npm/config.md",
+      "offset": 60455,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "a9247377e52c3f67b5d78182185b89ebaee151d9659c965527a89f090dfefe01"
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/docs/output/using-npm/config.html",
+      "offset": 93559,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "15833bbb2b396a4575cdc6cc7f4a7d614c3bc038a7fb32a4858d92857e92f18e"
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/man/man7/config.7",
+      "offset": 69832,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "74453994a7402bb8517ed42eda81976529097caf2e1f25f3b4cec6ecf045fd0f"
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/node_modules/@npmcli/arborist/README.md",
+      "offset": 1821,
+      "rule": "credential-literal",
+      "fingerprint": "4287079a968c6ab731af41d1",
+      "file_sha256": "444fbea76f551ef73946db39bbbab3b84047c2c4dd6553ebb3e8e514dabb2b84"
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/node_modules/@npmcli/config/lib/definitions/definitions.js",
+      "offset": 43105,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "6b5b2a453284d60a99c3a6d84bb7db548ac25aea001abea6a3692bafcdd8252f"
+    },
+    {
+      "location": "component/toolchain/python-windows.tar.gz/python/Lib/site-packages/pip/_vendor/urllib3/util/__pycache__/url.cpython-312.pyc",
+      "offset": 5771,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "406729a625f7b20f9497f67128a8648c6d9cfad3cc9afa897eb0f2f88c3109db"
+    },
+    {
+      "location": "component/toolchain/python-windows.tar.gz/python/Lib/site-packages/pip/_vendor/urllib3/util/url.py",
+      "offset": 6099,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "3c40d0332a6276e75ed2701972d2cb8852bd7a937e2cf9d21fb2a938b2f0a87d"
+    },
+    {
+      "location": "component/toolchain/python-windows.tar.gz/python/Lib/urllib/__pycache__/request.cpython-312.pyc",
+      "offset": 3825,
+      "rule": "credential-literal",
+      "fingerprint": "193f558bab92201d367a6381",
+      "file_sha256": "3dfd44f7973e84a782b480fe2e8486157cd0d8eba265a5719666b3b6cf284681"
+    }
+  ],
+  "inventory_sha256": "8a37bb4cc2796d7e77f7e00f4a935d46f451e61f50ca7d164c766ddda106cd4a",
+  "elapsed_seconds": 766.75,
+  "limits": [
+    "Actual top-level bytes plus expanded regular source/plugin/notice/wheel/Windows Python/Node/OCI layer members, link targets and new reachable Git history. No archive code executes and nothing is extracted to archive-selected paths.",
+    "Prior generic/123-value proof reused only for exact qualified source Git blobs or image member SHA256; every reused unique byte sequence is checked for all ten newly generated values/encodings. Other unique bytes receive full generic/133-value inspection.",
+    "Known benign static findings require exact per-file/offset/fingerprint review; this collector never suppresses them.",
+    "Earlier implementation-history generic/123-value proof retains its existing qualification; all its recorded blobs also receive the new10-value check. Pinned upstream historical ancestry outside the original implementation-history scope remains excluded.",
+    "This does not close browser network/accessibility/performance or final G7."
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "result": "reviewed_all_eight_exact_vendor_static_findings",
+  "utc": "2026-11-04T05:13:40.231525+00:00",
+  "known_values": 133,
+  "known_generated_findings": 0,
+  "unreviewed_findings": 0,
+  "reviewed": [
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/docs/content/using-npm/config.md",
+      "offset": 60455,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "a9247377e52c3f67b5d78182185b89ebaee151d9659c965527a89f090dfefe01",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "example_word_and_XXXX_in_exact_context": true,
+        "complete_private_PEM_blocks": 0
+      },
+      "reason": "npm TLS key-format documentation/description uses XXXX placeholder lines; no complete PEM key. Four exact doc/source representations retained."
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/docs/output/using-npm/config.html",
+      "offset": 93559,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "15833bbb2b396a4575cdc6cc7f4a7d614c3bc038a7fb32a4858d92857e92f18e",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "example_word_and_XXXX_in_exact_context": true,
+        "complete_private_PEM_blocks": 0
+      },
+      "reason": "npm TLS key-format documentation/description uses XXXX placeholder lines; no complete PEM key. Four exact doc/source representations retained."
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/man/man7/config.7",
+      "offset": 69832,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "74453994a7402bb8517ed42eda81976529097caf2e1f25f3b4cec6ecf045fd0f",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "example_word_and_XXXX_in_exact_context": true,
+        "complete_private_PEM_blocks": 0
+      },
+      "reason": "npm TLS key-format documentation/description uses XXXX placeholder lines; no complete PEM key. Four exact doc/source representations retained."
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/node_modules/@npmcli/arborist/README.md",
+      "offset": 1821,
+      "rule": "credential-literal",
+      "fingerprint": "4287079a968c6ab731af41d1",
+      "file_sha256": "444fbea76f551ef73946db39bbbab3b84047c2c4dd6553ebb3e8e514dabb2b84",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "fenced_Arborist_configuration_example": true,
+        "base64_password_placeholder_prose": true
+      },
+      "reason": "Arborist README fenced configuration example documents a base64-encoded password-placeholder phrase. README is documentation, not active credentials; none of the133 issued values match."
+    },
+    {
+      "location": "component/toolchain/node-windows.zip/node-v24.22.1-win-x64/node_modules/npm/node_modules/@npmcli/config/lib/definitions/definitions.js",
+      "offset": 43105,
+      "rule": "private-key-marker",
+      "fingerprint": "0dd77d4390f097e4e56f4ec0",
+      "file_sha256": "6b5b2a453284d60a99c3a6d84bb7db548ac25aea001abea6a3692bafcdd8252f",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "example_word_and_XXXX_in_exact_context": true,
+        "complete_private_PEM_blocks": 0
+      },
+      "reason": "npm TLS key-format documentation/description uses XXXX placeholder lines; no complete PEM key. Four exact doc/source representations retained."
+    },
+    {
+      "location": "component/toolchain/python-windows.tar.gz/python/Lib/site-packages/pip/_vendor/urllib3/util/__pycache__/url.cpython-312.pyc",
+      "offset": 5771,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "406729a625f7b20f9497f67128a8648c6d9cfad3cc9afa897eb0f2f88c3109db",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "pyc_magic_matches_selected_Python": true,
+        "no_trailing_marshal_bytes": true,
+        "code_object_equals_compile_of_exact_bundled_source": true,
+        "source_sha256": "3c40d0332a6276e75ed2701972d2cb8852bd7a937e2cf9d21fb2a938b2f0a87d",
+        "placeholder_userinfo": true,
+        "AST_docstring_owners": [
+          "url"
+        ]
+      },
+      "reason": "urllib3 URL property documentation uses literal username/password placeholders. Compiled representation, where present, equals the bundled source; no code is executed for review."
+    },
+    {
+      "location": "component/toolchain/python-windows.tar.gz/python/Lib/site-packages/pip/_vendor/urllib3/util/url.py",
+      "offset": 6099,
+      "rule": "credential-url",
+      "fingerprint": "4dab902678fbe605d8b41400",
+      "file_sha256": "3c40d0332a6276e75ed2701972d2cb8852bd7a937e2cf9d21fb2a938b2f0a87d",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "placeholder_userinfo": true,
+        "AST_docstring_owners": [
+          "url"
+        ]
+      },
+      "reason": "urllib3 URL property documentation uses literal username/password placeholders. Compiled representation, where present, equals the bundled source; no code is executed for review."
+    },
+    {
+      "location": "component/toolchain/python-windows.tar.gz/python/Lib/urllib/__pycache__/request.cpython-312.pyc",
+      "offset": 3825,
+      "rule": "credential-literal",
+      "fingerprint": "193f558bab92201d367a6381",
+      "file_sha256": "3dfd44f7973e84a782b480fe2e8486157cd0d8eba265a5719666b3b6cf284681",
+      "decision": "benign_upstream_static_example",
+      "evidence": {
+        "pyc_magic_matches_selected_Python": true,
+        "no_trailing_marshal_bytes": true,
+        "code_object_equals_compile_of_exact_bundled_source": true,
+        "source_sha256": "b6a7860356d99186e7ad1b35c47f2f09d7524a398096214d8c276277947b672c",
+        "module_docstring_BasicAuth_example": true,
+        "source_credential_literals_confined_to_documentation": true
+      },
+      "reason": "CPython urllib.request module documentation contains a BasicAuth usage example. The exact compiled code object equals the bundled source; structural match is in the serialized documentation, not an issued account value."
+    }
+  ],
+  "limits": [
+    "Each decision binds exact content hash, offset, rule and keyed fingerprint; no path/rule-wide exclusion or vendor-source modification.",
+    "Compiled code is parsed/compiled for equality, never executed. External credentials are never tested.",
+    "Final qualification still needs nested-member result and complete prior-proof hash reconciliation."
+  ]
+}

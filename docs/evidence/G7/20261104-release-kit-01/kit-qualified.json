@@ -1,0 +1,42 @@
+{
+  "result": "passed_current_local_kit_privacy_source_identity_and_installation_binding",
+  "utc": "2026-11-04T05:15:28.749837+00:00",
+  "source_commit": "5456abf4d56572ee4b545cb0c24109dce22df357",
+  "kit_manifest_sha256": "d3b6e745286f9c36d28a4e148db2cd859df23dec6450eaef57be61391474558d",
+  "kit_components": 50,
+  "known_values": 133,
+  "main_member_history_instances": 101736,
+  "nested_member_instances": 36532,
+  "main_unique_contents": 78026,
+  "new_unique_nested_contents": 1264,
+  "combined_unique_contents": 79290,
+  "source_files_exact_to_Git": 54196,
+  "prior_implementation_history_blobs_new10_checked": 6288,
+  "older_image_contents_with_two_additional_values_checked": 5276,
+  "actual_reused_older_image_hashes_covered": 5276,
+  "known_generated_findings": 0,
+  "reviewed_exact_static_findings": 8,
+  "unreviewed_findings": 0,
+  "proof_sha256": {
+    "kit-expanded-privacy.json": "300975fd031f1011a31c3924136deb29d69dd0f851775171a4a666e913d0192c",
+    "kit-nested-privacy.json": "cec202ccb424b3852638145706ba9105bc1794404a66304be40ca054780858bd",
+    "kit-static-triage.json": "c417eb5966f51f9ca6e3f3a1a570d43122e3dfc1199d030bfdef69412db0ae2d",
+    "legacy-image-value-extension.json": "3106a4d8f8ae10990678f3b8aa309aa2bd74b1ded5e0cdc1d0d2f48e15c4d3ed",
+    "full-bootstrap-qualified.json": "760e039eafd7b2537ae29de6eaaf1e7ed9b61995ba7199b6ff9564c3d38bf736",
+    "application-bootstrap.json": "e9907bb03c832a3124186b466815382a530528de2bfdedecc4a0ecb6c6f04053",
+    "worker-integration.json": "0c6b422a98de2ef4ed0d73eda4d33b652bc4464b245970ad131f17f0f3ac2df6",
+    "runbook-cross-check.json": "3159bb06959a8bdbda461f0377f66ee2b56842b68a731dcf45dbc818fa82a8fd",
+    "image-transport-load.json": "690135457ad28110914266cdafe2ebf574c2820a6b19594d0004c222c01ba0e6"
+  },
+  "qualified_scope": [
+    "Actual kit50components/expandedZIP,TAR,gzip members, allOCI layers/config/history, source/current+priorimplementationGit history and nested recognized containers; no archive execution or selected-path extraction.",
+    "Exact private inventory hashes match committed prior image proofs. Its121-value-only hashes are explicitly extended for two values, then the main audit supplies the ten later values. Prior source123 proof reused only by Git blob identity.",
+    "All eight generic matches are exact upstream documentation examples/compiled-source equivalents; no detector rule or vendor document was removed. Nested new-content count is derived from actual hash sets, not the collector mutable mode summary.",
+    "Actual fresh native/reference/worker original-actor job, corrected empty-workdir offline bootstrap and twelve-case CLI/evidence runbook cross-check are separately bound."
+  ],
+  "limits": [
+    "Finite detector/encoding/archive-format scope; no universal secret/vulnerability guarantee, arbitrary encrypted/media decoding or hostile-native sandbox.",
+    "Pinned upstream ancestry outside original implementation-history scope remains excluded. Authenticated dynamic session transport and actual private site/configuration/control/issuer stores remain private, outside this public-input artifact.",
+    "Kit remains draft pending browser network/identity/accessibility/performance and final G7/section28 handoff. No production/commercial distribution or blank-second-Docker-daemon qualification."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "result": "reviewed_exact_root_source_archive_size_guard_refusal",
+  "attempt01_session": 88500,
+  "terminal_exit": 1,
+  "signature": "root source ZIP expanded bytes exceed1GiB before source traversal",
+  "source_sha256": "41d5406bdccfa2a5f93ad0341cc432ab089cc20b3dab8c43c20e7ff4807c8f12",
+  "expanded_bytes": 1190686365,
+  "entries": 63106,
+  "reviewed_limit_bytes": 2147483648,
+  "other_container_limits_unchanged": true,
+  "scope": "Read-only archive audit; no database/Docker/app actions. First run reported0findings through28022members; no final proof claimed. Subsequent pass uses corrected exact-root budget and progress snapshots."
+}

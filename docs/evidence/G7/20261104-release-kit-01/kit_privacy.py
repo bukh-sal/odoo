@@ -15,8 +15,10 @@ old={k:base64.b64decode(v) for k,v in load(ROOT/'.local/g7-core23-secret-delta-0
 added={k:v for k,v in values.items() if v not in set(old.values())};assert len(values)==133 and len(added)==10
 key=(ROOT/'.local/g5-secret-scan/fingerprint-key').read_bytes();full=Scanner(key,values);delta=Scanner(key,added);delta.generic={}
 trusted=set()
-for name in ['g7-core23-secret-delta-01','g7-image-secret-audit-01']:
- trusted.update(row['sha256'] for row in load(ROOT/'.local'/name/'inventory.json'))
+for name,receipt in [('g7-core23-secret-delta-01','image-delta.json'),('g7-image-secret-audit-01','image-layers.json')]:
+ path=ROOT/'.local'/name/'inventory.json';proof=ROOT/'docs/evidence/G7'/('20261104-'+name.removeprefix('g7-'))/receipt
+ assert hashlib.sha256(path.read_bytes()).hexdigest()==load(proof)['inventory_sha256']
+ trusted.update(row['sha256'] for row in load(path))
 base_oids=set()
 for row in subprocess.check_output(['git','ls-tree','-rz','--full-tree',base]).split(b'\0'):
  if row:
@@ -29,7 +31,7 @@ def scan(raw,location,*,prior=False):
  sha=hashlib.sha256(raw).hexdigest();counts[location.split('/',1)[0]]=counts.get(location.split('/',1)[0],0)+1
  if sha in seen:mode='same_current_bytes_reused'
  else:
-  reuse=prior or sha in trusted;scanner=delta if reuse else full;mode='prior_exact_generic_123_values_plus_actual_new10' if reuse else 'actual_full_generic_133_values'
+  reuse=prior or sha in trusted;scanner=delta if reuse else full;mode='prior_exact_generic_proof_plus_actual_new10' if reuse else 'actual_full_generic_133_values'
   hits=scanner.inspect_bytes(raw,location)
   for hit in hits:hit['file_sha256']=sha;findings.append(hit)
   if hits:
@@ -114,7 +116,7 @@ finally:
 (PRIVATE/'findings.json').write_text(json.dumps(findings,indent=2)+'\n',encoding='utf8')
 report=dict(result='actual_complete_kit_members_scanned_triage_required' if findings else 'passed_actual_complete_kit_members_and_history_privacy',utc=datetime.now(timezone.utc).isoformat(),source_commit=head,prior_source_commit=base,kit_manifest_sha256=hashlib.sha256((KIT/'kit-inventory.json').read_bytes()).hexdigest(),known_values=len(values),new_known_values=len(added),top_level_files=len(top),expanded_members=len(inventory),unique_contents=len(seen),member_categories=counts,findings=findings,inventory_sha256=hashlib.sha256((PRIVATE/'inventory.json').read_bytes()).hexdigest(),elapsed_seconds=round(time.monotonic()-started,3),
  limits=['Actual top-level bytes plus expanded regular source/plugin/notice/wheel/Windows Python/Node/OCI layer members, link targets and new reachable Git history. No archive code executes and nothing is extracted to archive-selected paths.',
- 'Prior generic/123-value proof reused only for exact qualified source Git blobs or image member SHA256; every reused unique byte sequence is checked for all ten newly generated values/encodings. Other unique bytes receive full generic/133-value inspection.',
+ 'Prior source123/image121-or123 proof reused only for exact qualified source Git blobs or image member SHA256; every reused unique byte sequence is checked for all ten newly generated values/encodings. Older-image two-value extension must reconcile before final qualification. Other unique bytes receive full generic/133-value inspection.',
  'Known benign static findings require exact per-file/offset/fingerprint review; this collector never suppresses them.',
  'Earlier implementation-history generic/123-value proof retains its existing qualification; all its recorded blobs also receive the new10-value check. Pinned upstream historical ancestry outside the original implementation-history scope remains excluded.',
  'This does not close browser network/accessibility/performance or final G7.'])

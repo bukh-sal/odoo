@@ -1,0 +1,10 @@
+{
+  "result": "passed_current_artifact_qualification_records_and_audit_source_checkpoint",
+  "known_values": 133,
+  "public_files": 16,
+  "findings": 0,
+  "nested_first_mode_counter_verified_from_actual_inventory": 1264,
+  "limits": [
+    "Incremental checkpoint records/audit-code correction only; no claim later records are inside the earlier source5456kit. Qualified artifact scope remains kit-qualified.json."
+  ]
+}
