@@ -1,0 +1,90 @@
+{
+  "result": "passed_current_internal_network_and_TCP_controls",
+  "utc": "2026-11-04T06:37:53.018155+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "generation": 4,
+  "runtimes": [
+    {
+      "id": "10ac11a2f0db469c1e00e90f47f3ac3426ddd728909c1be6224fe8869586b9df",
+      "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "started_at": "2026-11-04T04:37:42.52366908Z",
+      "networks": [
+        "mp-r0-r1release0afebf4f833b_runtime"
+      ],
+      "published_ports": {
+        "8069/tcp": null
+      }
+    },
+    {
+      "id": "57ce486c67331b68873d6b062f86b7a3eda445e26a0d9a61454a2716af189667",
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "started_at": "2026-11-04T04:15:49.606308336Z",
+      "networks": [
+        "mp-r0-r1release0afebf4f833b_runtime"
+      ],
+      "published_ports": {
+        "5432/tcp": null
+      }
+    },
+    {
+      "id": "c4721d9db8733077fb3439fe0356892ff3875c036a76a2409a714b3d0d8da2a9",
+      "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "started_at": "2026-11-04T04:38:33.228038866Z",
+      "networks": [
+        "mp-r0-r1release0afebf4f833b_edge",
+        "mp-r0-r1release0afebf4f833b_runtime"
+      ],
+      "published_ports": {
+        "8069/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18100"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4daa036c0e3a871ec20c95de8a4784f9432fbf3bd131bb31eb5d7839181af9f8",
+      "image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "started_at": "2026-11-04T04:29:18.62598274Z",
+      "networks": [
+        "mp-r0-r1release0afebf4f833b_runtime"
+      ],
+      "published_ports": {
+        "8080/tcp": null
+      }
+    }
+  ],
+  "networks": [
+    {
+      "id": "221c63f94f5250e5c9f9b33dc8f510991bf65f024092295223ed8dec36aea3f1",
+      "name": "mp-r0-r1release0afebf4f833b_runtime",
+      "internal": true,
+      "driver": "bridge"
+    },
+    {
+      "id": "cdf8a8d671a31d0f7abc1f4c89eccd778edf2c2eb4c1a5e9aa188e42d1f846ac",
+      "name": "mp-r0-r1release0afebf4f833b_edge",
+      "internal": false,
+      "driver": "bridge"
+    }
+  ],
+  "actual_app_controls": {
+    "app_no_IPv4_default_route": true,
+    "internal_database_TCP_succeeded": true,
+    "public_TCP_blocked": true,
+    "public_control_destination": "1.1.1.1:443",
+    "public_application_bytes_sent": 0,
+    "error_type": "OSError",
+    "elapsed_seconds": 0.008
+  },
+  "retained_fresh_boot_proof": "docs/evidence/G7/20261104-release-kit-01/application-bootstrap.json",
+  "retained_reference_worker_job_proof": "docs/evidence/G7/20261104-release-kit-01/worker-integration.json",
+  "retained_browser_blocked_foreign_control_proof": "docs/evidence/G7/20261104-ui-qualification-01/performance-qualification.json",
+  "limits": [
+    "Read-only runtime inspection/source hash verification/TCP controls. No container restarts, new Docker assets or business mutation.",
+    "Browser page-origin interception covers application requests during recorded flows, not Edge background services, OS/host, arbitrary plugins or user-followed external links.",
+    "Current reference boot, native/reference UI and worker job are separately evidenced on the same internal-network topology; no repeated bootstrap/job.",
+    "Build/package acquisition and optional external user links are distinct network uses."
+  ]
+}

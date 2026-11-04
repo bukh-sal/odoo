@@ -1,0 +1,6 @@
+{
+  "result": "classifier_process_not_started_windows_argument_limit",
+  "reason": "Embedding the complete already collected source-reference JSON into a command argument exceeded Windows CreateProcess length limits (WinError206).",
+  "mutation": false,
+  "resolution": "Pass candidate JSON as data through docker exec -i stdin to a fixed read-only script. No input JSON is evaluated as code. Preserve actual returned classifier streams in the owned private network evidence directory."
+}

@@ -1,0 +1,1145 @@
+{
+  "result": "collected_extended_Odoo_host_aliases_and_current_production_CSS",
+  "utc": "2026-11-04T06:47:41.306836+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "records": [
+    {
+      "path": "addons/web/static/fonts/fonts.scss",
+      "sha256": "c583d37fe91a0a2a3d402224cea6db6ab882202872bb4544628709f90ab97b64",
+      "matches": [
+        {
+          "line": 10,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 11,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 12,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 20,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 21,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 22,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 30,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 31,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 32,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 40,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 41,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        },
+        {
+          "line": 42,
+          "hosts": [
+            "fonts.odoocdn.com"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "addons/web/static/tests/views/fields/url_field.test.js",
+      "sha256": "d46a40d9d106d3cdcca4896b45032ccfdd4a99deda064b8b662e6d5e00d5f0ec",
+      "matches": [
+        {
+          "line": 195,
+          "hosts": [
+            "odoo"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/af.po",
+      "sha256": "44d6201fba6f2280bef06316b71b9d31b9d5940b85775319d2576d53fecea5a5",
+      "matches": [
+        {
+          "line": 4210,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/am.po",
+      "sha256": "99b3ed228e5a920eaa48b30d22564aa43998e2b428c49b2bcad7a97ec0ac8dc8",
+      "matches": [
+        {
+          "line": 4206,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ar.po",
+      "sha256": "a190766a6f2c4d94afcc181f982c993d105cb6ee150ac16665c300a4cd7f3958",
+      "matches": [
+        {
+          "line": 7947,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7964,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 57743,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 57763,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/az.po",
+      "sha256": "b245497930d4bc0b781e760d2231ccbc6c4477029dcf0ceadb579d353fb5a156",
+      "matches": [
+        {
+          "line": 5272,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/bg.po",
+      "sha256": "0197546a074b4ac2f320c2535a9c3a89eebd082a358f3e059083d7755c7b945f",
+      "matches": [
+        {
+          "line": 8067,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8084,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/bs.po",
+      "sha256": "50132746e073b33ca2c3c9ad430f6833842c743337bbd6d201ae60d84aa3d549",
+      "matches": [
+        {
+          "line": 7963,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7980,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ca.po",
+      "sha256": "f537eff30fbdb34e045cd949f988efc9a510e3feb06e0ad4d223c01530710f48",
+      "matches": [
+        {
+          "line": 5802,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/cs.po",
+      "sha256": "fce786351609181565d50426c815032d75cf794ae111150248aafec9d31f0d7b",
+      "matches": [
+        {
+          "line": 7661,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7678,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/da.po",
+      "sha256": "efae065b47f753646d366d9fbeefba453cbb5fb558919eb363f3156ec9fdcc6c",
+      "matches": [
+        {
+          "line": 7453,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7471,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/de.po",
+      "sha256": "80ac75967c5b1c0aa53a4f981e5d9ed92e5a73e1fd1d46f68ac0f2a0d1ba3a47",
+      "matches": [
+        {
+          "line": 8161,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8179,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 59336,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 59357,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/el.po",
+      "sha256": "e3384255dfe0d68ef77de42385f4557ea2e054adf331940500320c2693488c6c",
+      "matches": [
+        {
+          "line": 5105,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/es.po",
+      "sha256": "aad10c42d6c21249f9aa375b3feaa71c9b87d0eec382ccb5b5472059fa2206fc",
+      "matches": [
+        {
+          "line": 8033,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8050,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/es_419.po",
+      "sha256": "03511b4515b607d290f77557989f187726527b3700347bbdc03bb7f99cc3981b",
+      "matches": [
+        {
+          "line": 8099,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8118,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/es_CL.po",
+      "sha256": "ecedd730d3af2a2be52214f81d2dfbaf2d74d5e75c987c24032dea79340ceb44",
+      "matches": [
+        {
+          "line": 4210,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/et.po",
+      "sha256": "3076678cfc056f10f0282d32b019c09e0be231153125b352c4944d347a5495b8",
+      "matches": [
+        {
+          "line": 6245,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/eu.po",
+      "sha256": "97efd55de196f96f09e6f20473a324e8de703f886018e90258a7059444a57e78",
+      "matches": [
+        {
+          "line": 4209,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/fa.po",
+      "sha256": "e8dd83fed9c32b7f1b127b29b27000226c59df43c43b7f8e45e8e8d71a0e9e38",
+      "matches": [
+        {
+          "line": 7812,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/fi.po",
+      "sha256": "d65b824aea5423417a1e5458f2057664ddfa9b020ce10bf5388d3187c113e1f4",
+      "matches": [
+        {
+          "line": 8071,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8088,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/fo.po",
+      "sha256": "2f7518797ae05b83c73a578c128fe7824031c2b7edcf6196bf82792dd898581e",
+      "matches": [
+        {
+          "line": 4209,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/fr.po",
+      "sha256": "971b4632056a5781229acf17f841b2dd55aa71fa4dfe8cb5f7c6688bff3ad912",
+      "matches": [
+        {
+          "line": 8144,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 59482,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 59504,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/fr_BE.po",
+      "sha256": "4257c81d94e8ce5382ce85f6e5c310a5d779e7a523177bebdad1ed668b27b182",
+      "matches": [
+        {
+          "line": 4204,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/fr_CA.po",
+      "sha256": "3531ffaf8980650c27c9bef1c4ac49b058d3918cbc4aa6d4d361ba11e1d04427",
+      "matches": [
+        {
+          "line": 4209,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/gl.po",
+      "sha256": "44928775c92c39556cc9b1fabbcd2f3045899d2f4c8fa5606825f48e196780b3",
+      "matches": [
+        {
+          "line": 4209,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/gu.po",
+      "sha256": "de8091e31bf357430de343905de7330181764cbf2016b20c2d883accabaa0cbc",
+      "matches": [
+        {
+          "line": 4217,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/he.po",
+      "sha256": "48cf976697abd6ea89d321d5bafd6c67ddc255d3b90f4828480c16eb2cd793ee",
+      "matches": [
+        {
+          "line": 5262,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/hi.po",
+      "sha256": "a359a15a9277a8ad7196bcb2e645e4623100a086d671e00d96821351a5a9dbb6",
+      "matches": [
+        {
+          "line": 5684,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/hr.po",
+      "sha256": "5a610141a084efbe4c0b3b6d9b59c58113fa0df9676eb3b0aceeedb5102effd3",
+      "matches": [
+        {
+          "line": 5210,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/hu.po",
+      "sha256": "dd92bd2d7ae47246df214cb989b44b631223cbc277eb2e47a8c17b9f827d850a",
+      "matches": [
+        {
+          "line": 5193,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/id.po",
+      "sha256": "101c27b741b2ec4f74086db1f9b853fdaf93c8f695ad570e9554f676c64efd66",
+      "matches": [
+        {
+          "line": 7779,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7796,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 57501,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 57521,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/is.po",
+      "sha256": "4e17a521348f9ea9e71997d58e6cf5495fe3a3b0f330acf8fcc520bdc1a0cdac",
+      "matches": [
+        {
+          "line": 4486,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/it.po",
+      "sha256": "087377cf8ab66745ff8498423a7128e117ba75c9642cd59aec34628814d3594f",
+      "matches": [
+        {
+          "line": 8099,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8117,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ja.po",
+      "sha256": "02864bbd1f8a270f61eb1e6a85db501081d67d3e5ab171bb0dd422ccf8b39028",
+      "matches": [
+        {
+          "line": 7814,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7828,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ka.po",
+      "sha256": "f632a2d0f63d7206687937296dd4e4052fd2d35864c0bf9faeda717d77d6a74c",
+      "matches": [
+        {
+          "line": 4209,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/kab.po",
+      "sha256": "90917b52eb91b246aff48253c1254598c4b5f488cb64a589151ed5f099a43604",
+      "matches": [
+        {
+          "line": 5070,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/km.po",
+      "sha256": "ef763d7318fe1c0e2a90b062be1af533750cfdd435ab9866eeb53c988c0d6311",
+      "matches": [
+        {
+          "line": 4214,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ko.po",
+      "sha256": "ba1a2a4e26beb14531534b6f817aff2edb677d488a15c7723043dca3980a9174",
+      "matches": [
+        {
+          "line": 7780,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7799,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ku.po",
+      "sha256": "b67e80786417dd7c33ced7a62ecf226ef04adeecc78481e3ff417d42207ff056",
+      "matches": [
+        {
+          "line": 5085,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/lb.po",
+      "sha256": "e7553fe545b30647536047e046cb4da3d3e33462ee308b84f2670241be158a86",
+      "matches": [
+        {
+          "line": 4210,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/lo.po",
+      "sha256": "afb0b8c229ea0c262a20df17b936c6f00574b79b0a257c164583ce3f7b1037b0",
+      "matches": [
+        {
+          "line": 6207,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/lt.po",
+      "sha256": "9fb0e94047dd8d435b5570be68b2d1aed1c6cc21a052ec52bd412f263ef016b6",
+      "matches": [
+        {
+          "line": 6228,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/lv.po",
+      "sha256": "4e358e2cbe4121d2cfe32aff4e4505beb4a70edfc4eec3b0d2c23112426bd168",
+      "matches": [
+        {
+          "line": 5587,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/mk.po",
+      "sha256": "2c37f887a2056f41efe72b6b5e0e47091a74c8633eeef52b92cc284ea11fdfae",
+      "matches": [
+        {
+          "line": 4209,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/mn.po",
+      "sha256": "dab29fc4db1ba6af0285bb5ba69d87920f19b9c662ebea768d137e4dcda055b8",
+      "matches": [
+        {
+          "line": 5411,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/my.po",
+      "sha256": "ca62ea5fa935b508d3cf403f38062e1619500bd6a0517f7d22b49b8b2a7cb502",
+      "matches": [
+        {
+          "line": 5070,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/nb.po",
+      "sha256": "d8df3eb4e68b238ebb75b5642c56d0a85acac2be5a1c37866864fde2aec4cd3c",
+      "matches": [
+        {
+          "line": 5089,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/nl.po",
+      "sha256": "d45714be04de5404636bcb00c1866668138be31a96a8b8089a6c3ec1baebae7e",
+      "matches": [
+        {
+          "line": 8106,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8123,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 58862,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 58882,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/pl.po",
+      "sha256": "63765940ff33a3aa0db517ce9eba3df58ca8bb08115ba75c74bb41fc0640f8ff",
+      "matches": [
+        {
+          "line": 8118,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8135,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/pt.po",
+      "sha256": "a91c32d88d563170aa5e11a34574ca2fd45c9af4d03a9bb82ac4c2c872c10e50",
+      "matches": [
+        {
+          "line": 5622,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/pt_BR.po",
+      "sha256": "8eda5a91ee3684f295f730b6300da0ab53b98262dfc7e61412d06dbb34e18152",
+      "matches": [
+        {
+          "line": 7936,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7953,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ro.po",
+      "sha256": "41be4589eaa8d5f14d2925cd9ca0489f5ae2590d8fa527a61a962acc6f5878f1",
+      "matches": [
+        {
+          "line": 7864,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7881,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/ru.po",
+      "sha256": "925611db06c44fd302847e9febe1da2a612cf23c006052fcc33dd8fcec4cab31",
+      "matches": [
+        {
+          "line": 8030,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 8047,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 55987,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 56006,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/sk.po",
+      "sha256": "731b755e09c2d35be14569e7a8c59f1cc0f20461718f365069cadeabd10832bf",
+      "matches": [
+        {
+          "line": 7902,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7919,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/sl.po",
+      "sha256": "3cf667023115dc476294e7fd01ad7f53c86b9132e482b8f9306a4d1c4c0fe76d",
+      "matches": [
+        {
+          "line": 7953,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7969,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/sq.po",
+      "sha256": "acd0cac5ee423bc50ffd3e38b444922b03e3410a5e971cc172965b501b61c3cf",
+      "matches": [
+        {
+          "line": 5067,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/sr@latin.po",
+      "sha256": "94b4bc6f27eee5eaa258ded1772407cb46e5f4ac1a53f88feabdee3be8e730a5",
+      "matches": [
+        {
+          "line": 5081,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/sv.po",
+      "sha256": "30fbf39fd1b03d7684abadc3d317ca760605929f2d348446ccd5d637b0f8033b",
+      "matches": [
+        {
+          "line": 7894,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/th.po",
+      "sha256": "eaac221a21030a553146cc7376c39744fe62988b598055ce59efdffe06d04527",
+      "matches": [
+        {
+          "line": 6974,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 6987,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/tr.po",
+      "sha256": "dddd33cdacb23edc17bbcf76bdc2db2ff045a66747f61ff8ffa3670656b98991",
+      "matches": [
+        {
+          "line": 7903,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7920,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 58050,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 58070,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/uk.po",
+      "sha256": "a7de6589931a7c3b2984282b7bddfed35ec301d9629fcb4456d446fddbd2dc9d",
+      "matches": [
+        {
+          "line": 7579,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 55432,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 55453,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/uz.po",
+      "sha256": "949a27dddf6b279fa11ec2a73cf5b2ff1d8b5a7215ac7eddbb58fb51911c3284",
+      "matches": [
+        {
+          "line": 7255,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7271,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/vi.po",
+      "sha256": "acabf94902ca953774bfe877b12f2567fdd4dbff22b3c249e296e9574d0812d2",
+      "matches": [
+        {
+          "line": 7960,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7979,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/zh_CN.po",
+      "sha256": "5826b92b9120b6b7bd27a72bea7d1e8b0ed5dfb460c847cc42375c3d3be8d011",
+      "matches": [
+        {
+          "line": 7248,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7265,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 55835,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 55852,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "odoo/addons/base/i18n/zh_TW.po",
+      "sha256": "4ee2b07873153d3026fbcfd941fc4dceb945b3a3573022b2a2c4511628b7ef35",
+      "matches": [
+        {
+          "line": 7304,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        },
+        {
+          "line": 7321,
+          "hosts": [
+            "service.odoo.co.in"
+          ]
+        }
+      ]
+    }
+  ],
+  "remote_font_declaring_bundles": [
+    "web.report_assets_common"
+  ],
+  "production_CSS": [
+    {
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "bytes": 751605,
+      "URL_hosts": [
+        "www.w3.org"
+      ]
+    },
+    {
+      "path": "/web/assets/9d47ad5/web.assets_frontend.min.css",
+      "sha256": "87752b0485554df24c093542cf17e393dbcc60232dc79672b36ef7e2d77a3610",
+      "bytes": 374552,
+      "URL_hosts": [
+        "www.w3.org"
+      ]
+    }
+  ],
+  "limits": [
+    "Read-only actual retained-source URL-host scan adds branded aliases such as odoocdn and od oo.github.io beyond initial root-domain detector. Explicit per-family disposition required before final qualification.",
+    "Only actual production CSS paths observed by the completed shell run are fetched, through local loopback/canonical Host, without cookies or credentials. No additional browser flow or business mutation.",
+    "Optional report asset bundle is distinct from ordinary shell/reference/native view assets. A report feature would require local-font substitution or explicit external policy and requalification."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "result": "passed_extended_branded_host_and_current_CSS_dispositions",
+  "utc": "2026-11-04T06:48:49.374507+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "additional_runtime_family": "addons/web/static/fonts/fonts.scss",
+  "decision": "Optional report font CDN; actual manifest confines declaration to web.report_assets_common, absent from current reference production CSS. No R1 reference report feature exposed. Future report integration requires local fonts or explicit external policy/requalification.",
+  "symbolic_test_host": "odoo",
+  "inherited_translation_host": "service.odoo.co.in",
+  "translation_host_ownership_not_asserted": true,
+  "production_CSS": [
+    {
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "sha256": "14296db6b9f5b3802c2e3e04e375163ae4206783084ec0031cd7c1bd23fcf677",
+      "remote_CSS_URL_resources": 0,
+      "remote_CSS_imports": 0,
+      "W3C_namespace_strings_are_not_resource_requests": true
+    },
+    {
+      "path": "/web/assets/9d47ad5/web.assets_frontend.min.css",
+      "sha256": "87752b0485554df24c093542cf17e393dbcc60232dc79672b36ef7e2d77a3610",
+      "remote_CSS_URL_resources": 0,
+      "remote_CSS_imports": 0,
+      "W3C_namespace_strings_are_not_resource_requests": true
+    }
+  ],
+  "privacy": {
+    "known_values": 133,
+    "files": 14,
+    "findings": 0
+  },
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-network-independence-01\\aliases.py": "13b0febbafecb1dbad8576fa3514f9c35f46969592ae5694f620508b2b54f179",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\attempt01.json": "ab793b73b24d957c951c026586155d71c509775b6708f7d5cef1ff905f461985",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\attempt02.json": "7141737e53834b60c0954e52404237f21e5d35976ce0a96f57f96bf36ef4751e",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\attempt03.json": "1c2b568b935702cf294fc62287e761796436d8240a45db1309d1af1cd929358a",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\backend-qualification.json": "bae106865c093f1504f1ac9488de987728af1c567071e4204f65d74576b8cd21",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\classify.py": "dddb4c3915dc7a90edc893ea8224d87dd3673516d933a516cff7a410cafd2c7c",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\collect.py": "fabf321f2cb7de353f71fcc0152a90009d080ba2cd7c62944a61b48f325f9089",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\extended-hosts-and-CSS.json": "50b189095493fcb167aaf37a21ee7ec2fb1feb38a5339e909dc7810b9d5c1565",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\qualify_aliases.py": "39a8bfdba692e4ab4edfeba06bcb8edf0f2714ee6a46f11d4b861ca4a9a05ed5",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\qualify_backend.py": "e646f279d9e31a1b5127818cf7c60e9b344dec7f81d4592685e1645c01a04752",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\retained-reference-candidates.json": "c8bbf33b0b38c15c1535901de94203af94d4d65f68ffac44b6cd31fbb7ebabbe",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\reviewed-product-ties.json": "de2ef5c95b10d0ecdaa06b68e886b27294ed202c778d7eef06ac351e70d62209",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\runtime-network-boundary.json": "e67bbfbd5a54687878c2f8f4cab890bf77bbbe79c5377416a186371b16ba539c",
+    "docs\\network-independence.md": "8e73f1715685eb62caffae841b5f6f67871b9805ef45037d873c561b728704e5"
+  },
+  "limits": [
+    "Supplements backend-qualification.json, does not erase its earlier finite root-domain scope. Initial24runtime families plus1report-font family reviewed.",
+    "Broader URL-host scan is heuristic; arbitrary dynamic/obfuscated hosts/native code/OS/browser background behavior are outside scope.",
+    "Current native-form/Labels/two-tab/RTL browser coverage, source-kit/privacy/release closure and final G7 remain. No additional weighted point or acceptance pass.",
+    "CSS fetched twice for additional parser verification with exact prior content hashes; no bootstrap/job/lifecycle/100cycle/browser replay."
+  ]
+}

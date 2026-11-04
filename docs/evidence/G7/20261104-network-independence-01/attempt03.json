@@ -1,0 +1,7 @@
+{
+  "result": "readonly_classifier_stopped_at_overly_strict_consumer_assertion",
+  "actual_work": "Actual immutable candidate refinement and full retained Python/XML/JS publisher-warranty mention scan completed; original stdout/stderr preserved.",
+  "reason": "The assertion expected only the option declaration; actual scan also found five config-manager test fixture values.",
+  "resolution": "Inspect the five fixture occurrences, classify them explicitly as config parsing/export tests. Reuse original actual scanner response with empty stderr; no new container/SQL/probe execution. Report includes both the parser declaration and tests rather than hiding them.",
+  "mutation": false
+}

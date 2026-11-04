@@ -1,0 +1,7 @@
+{
+  "result": "readonly_topology_observer_refused_overbroad_assumption",
+  "actual_work": "4159 actual immutable runtime inventory files verified; retained reference candidates preserved.",
+  "reason": "Harness incorrectly required every network, including the browser-facing edge ingress bridge, to be internal.",
+  "resolution": "Inspect actual per-role topology. Require app/database/worker internal-only; permit only the named edge ingress network as noninternal. Reuse already hash-bound reference candidates; recheck actual current identities before the TCP control.",
+  "mutation": false
+}

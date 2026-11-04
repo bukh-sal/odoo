@@ -1,0 +1,46 @@
+{
+  "result": "passed_backend_static_network_independence_subresult",
+  "utc": "2026-11-04T06:45:41.601679+00:00",
+  "work_item": "G-01d2",
+  "spec_section": "27",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "immutable_files_verified": 4159,
+  "reviewed_runtime_families": 24,
+  "explicit_false_positive_matches": 11,
+  "app_database_worker_internal_only": true,
+  "only_named_ingress_bridge_noninternal": true,
+  "actual_TCP_positive_and_negative_controls": true,
+  "proxy_config_sha256": "f372660c0e6cb82919986326e662d08431c52f9bbca675d5db157e62b6076b1d",
+  "all17_business_authority_job_event_tables_exact": true,
+  "all4_runtime_process_image_mount_network_identities_exact": true,
+  "new_Docker_assets": 0,
+  "privacy": {
+    "known_values": 133,
+    "files": 12,
+    "findings": 0
+  },
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-network-independence-01\\attempt01.json": "ab793b73b24d957c951c026586155d71c509775b6708f7d5cef1ff905f461985",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\attempt02.json": "7141737e53834b60c0954e52404237f21e5d35976ce0a96f57f96bf36ef4751e",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\attempt03.json": "1c2b568b935702cf294fc62287e761796436d8240a45db1309d1af1cd929358a",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\classify.py": "dddb4c3915dc7a90edc893ea8224d87dd3673516d933a516cff7a410cafd2c7c",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\collect.py": "fabf321f2cb7de353f71fcc0152a90009d080ba2cd7c62944a61b48f325f9089",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\qualify_backend.py": "e646f279d9e31a1b5127818cf7c60e9b344dec7f81d4592685e1645c01a04752",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\retained-reference-candidates.json": "c8bbf33b0b38c15c1535901de94203af94d4d65f68ffac44b6cd31fbb7ebabbe",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\reviewed-product-ties.json": "de2ef5c95b10d0ecdaa06b68e886b27294ed202c778d7eef06ac351e70d62209",
+    "docs\\evidence\\G7\\20261104-network-independence-01\\runtime-network-boundary.json": "e67bbfbd5a54687878c2f8f4cab890bf77bbbe79c5377416a186371b16ba539c",
+    "docs\\network-independence.md": "b2cffcaf38adb85ed55d7d1626f9e453b04098501dcc0a836d083c0d77eb563a"
+  },
+  "remaining": [
+    "Required current native-form/Labels/two-tab/RTL/keyboard browser flows and full observed network reconciliation.",
+    "Final current operator-tool source kit refresh/privacy delta and release closure; OPS03 remains invalidated until complete.",
+    "ID08/UI09 and finalsection28audit/developer handoff remain."
+  ],
+  "limits": [
+    "Backend/static subresult only, no additional weighted point or full acceptance/gate pass.",
+    "Finite source/domain/consumer scan and observed TCP/current internal topology, not universal absence of obfuscated calls or hostile native/browser/OS containment.",
+    "Initial overbroad network assumption, Windows argument limit and config-test-consumer assertion refusals preserved; actual source/sample responses reused. No bootstrap/job/native lifecycle replay."
+  ]
+}
