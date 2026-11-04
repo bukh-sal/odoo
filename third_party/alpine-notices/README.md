@@ -6,6 +6,11 @@ terms; the platform's root license does not replace them. Source files containin
 embedded notices are preserved in full as opaque text and are never installed or
 executed by the platform.
 
+The directory's Git attributes preserve these content-addressed bytes without
+line-ending normalization or textual diff checks. Original spacing and heading
+separators are retained exactly; their integrity is checked against the indexed
+source hashes. This rule applies only to the notice blobs, not owned code or docs.
+
 The machine-readable `index.json` maps the selected proxy's 71 packages and
 59 source origins to notice files, exact source recipes and source archive hashes.
 The six official nginx package notices remain in the separately retained,

@@ -1,0 +1,6 @@
+{
+  "result": "passed_offline_current_collector_diagnostics",
+  "streams": 2,
+  "known_values": 123,
+  "findings": 0
+}

@@ -1,0 +1,10 @@
+{
+  "result": "passed_exact_committed_upstream_notice_bytes",
+  "commit": "cc9b4cf10b9ef9f601fac065ea5cb67135478213",
+  "notice_blobs": 214,
+  "exact_SHA256_matches": 214,
+  "path_attributes": "third_party/alpine-notices/.gitattributes: texts/*.txt -text -diff -whitespace",
+  "original_upstream_spacing_preserved": true,
+  "scope": "Only immutable content-addressed upstream notice texts; owned code/document checks remain enabled.",
+  "original_heading_separators_are_not_merge_conflicts": true
+}

@@ -1,0 +1,2 @@
+# Content-addressed original upstream bytes: preserve line endings and spacing.
+texts/*.txt -text -diff -whitespace
