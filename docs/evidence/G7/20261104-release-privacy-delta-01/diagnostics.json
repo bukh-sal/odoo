@@ -1,0 +1,14 @@
+{
+  "result": "retained_diagnostics_scanned_triage_required",
+  "utc": "2026-11-04T02:52:34.223216+00:00",
+  "files": 6340,
+  "bytes": 170247451,
+  "known_values": 123,
+  "inventory_sha256": "f15aaa04f4bf8cf1eaa9a8a1af4b6cb4c3f6fa5f5d3e2c2d5dbc14bde8d4120e",
+  "findings": [],
+  "limits": [
+    "Actual current G6/G7 stdout/stderr/log corpus, not configured secret stores/checkpoints/DB/filestore/browser sessions or source archives.",
+    "Prior5922-file aggregate has no reusable per-file hashes; full current corpus checked once with123 values instead of assuming mtime proves unchanged bytes. New per-file private hashes permit future exact reuse.",
+    "The old audit directory remains separately protected with its retained positive findings and secret transport relocation; it is not silently reclassified clean."
+  ]
+}

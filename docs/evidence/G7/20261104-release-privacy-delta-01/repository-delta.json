@@ -1,0 +1,21 @@
+{
+  "result": "repository_delta_scanned_triage_required",
+  "utc": "2026-11-04T02:49:40.484607+00:00",
+  "source_head": "d0580ed9c6d580b2146148242f479091fb988a49",
+  "prior_qualified_head": "8ad57b3d9f43b2d5f66c284153dca8aa368cec7b",
+  "known_values": 123,
+  "new_value_variants": 16,
+  "current_tracked_files": 54124,
+  "identical_prior_tree_members": 53678,
+  "new_history_blobs": 466,
+  "new_history_bytes": 12558413,
+  "prior_implementation_blobs_checked_for_new_values": 5822,
+  "all_current_tree_and_prior_implementation_checked_for_new_value_variants": true,
+  "findings": [],
+  "elapsed_seconds": 58.813,
+  "limits": [
+    "Prior generic/121-value current-tree and full implementation history proof is reused only through its exact qualified commit/blob identities. New reachable blobs are scanned with all123 values/generic rules, including deleted/replaced versions.",
+    "All current tracked bytes and prior implementation history blobs are also checked for both newly generated values and all scanner-supported encodings. Pinned upstream historical ancestry outside implementation remains outside this release-history scope.",
+    "Current untracked audit files and later commits/diagnostics/served assets are separate. No Git rewrite or publication."
+  ]
+}

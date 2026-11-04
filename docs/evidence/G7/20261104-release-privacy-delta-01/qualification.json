@@ -1,0 +1,79 @@
+{
+  "result": "passed_current_release_privacy_delta",
+  "utc": "2026-11-04T02:55:16.567618+00:00",
+  "acceptance": [
+    "SEC-03"
+  ],
+  "source_head": "d0580ed9c6d580b2146148242f479091fb988a49",
+  "prior_qualified_head": "8ad57b3d9f43b2d5f66c284153dca8aa368cec7b",
+  "known_values": 123,
+  "tracked_files": 54124,
+  "new_history_blobs": 466,
+  "prior_history_blobs_checked_with_new_values": 5822,
+  "curated_archives": 19,
+  "curated_expanded_members": 259,
+  "served_static_assets": 2,
+  "current_container_logs": 8,
+  "retained_diagnostic_files": 6340,
+  "known_generated_findings": 0,
+  "unreviewed_findings": 0,
+  "reviewed_static_match": {
+    "location": "served-static/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+    "offset": 3061693,
+    "rule": "credential-literal",
+    "fingerprint": "e728bcaadaf4f9c9fcac64dc",
+    "file_sha256": "b16d35a66f5a4befc6a2aea98b19242cac9893b9ea1366ac203473059d975464",
+    "source_path": "addons/auth_password_policy/static/src/password_field.xml",
+    "source_sha256": "c19436ba47ffa3772df7f245996faeba002d426e2955c91ab17b5224d744c859",
+    "reason": "Exact pinned Owl binding to current password-field state; static template expression, no issued account credential."
+  },
+  "actual_current_app_layer_delta": "../20261104-core23-secret-delta-01/qualification.json",
+  "phase_hashes": {
+    "repository-delta.json": "84ae49f0fadd0926a290136fbac9b101e4f4839561808193b779a9fde6953169",
+    "packages-assets-logs.json": "9ea66154626affbde2a68fb1500049ad2ab75767cf4437ffe951aaa3a424b920",
+    "diagnostics.json": "325ebb5adb1cc7e7bec50ae6633b285a1bb7f0166ad1fa8389e822ac83d6a8a0"
+  },
+  "pending_evidence": [
+    {
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/assets_logs.py",
+      "sha256": "d70f80f2e3915c25a8d4f3c55b1ddb62822a70860ac543e2cde7dc0f465b53de",
+      "bytes": 5138
+    },
+    {
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/diagnostics.json",
+      "sha256": "325ebb5adb1cc7e7bec50ae6633b285a1bb7f0166ad1fa8389e822ac83d6a8a0",
+      "bytes": 841
+    },
+    {
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/diagnostics.py",
+      "sha256": "ffca7d5f4af7efac812b67438136be31b12fe56aad622df5e6daa0610141fcc0",
+      "bytes": 2660
+    },
+    {
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/finalize.py",
+      "sha256": "10641eb571848b921552ac32f273fd69260323557ac3c728d8e4f02d56dd7893",
+      "bytes": 4494
+    },
+    {
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/packages-assets-logs.json",
+      "sha256": "9ea66154626affbde2a68fb1500049ad2ab75767cf4437ffe951aaa3a424b920",
+      "bytes": 7701
+    },
+    {
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/repository-delta.json",
+      "sha256": "84ae49f0fadd0926a290136fbac9b101e4f4839561808193b779a9fde6953169",
+      "bytes": 1292
+    },
+    {
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/repository.py",
+      "sha256": "1c75d707457b275eaac7401d30af2df3e56fd0d2d76870a40096f111573dc47c",
+      "bytes": 6061
+    }
+  ],
+  "limits": [
+    "Current core23/config8; exact prior source/history/layer/fixture proof retained and extended with123-value encoded variants. No universal secret detector/native sandbox claim.",
+    "One static Owl state binding is byte-identical to the previously reviewed bundle/pinned source. Its URL changed, its bytes did not. No path-only suppression.",
+    "Authenticated dynamic bootstrap, actual credential/config/checkpoint stores and prior explicitly relocated secret transports remain protected/excluded from release assets.",
+    "No new SEC03 acceptance credit; already passed. Later source/evidence/log changes require scoped delta. No browser-network or full OPS03/G7 claim."
+  ]
+}
