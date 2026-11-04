@@ -1,0 +1,8 @@
+{
+  "result": "committed_worker_initializer_synced_only",
+  "source_commit": "4e2ee52467a4ee95463c17906837d776a5f54083",
+  "path": "release/initialize_worker.py",
+  "sha256": "dfed7204c8c6921380241f1202720a68593d8462925b1542f2820ca6b7807520",
+  "bytes": 7288,
+  "other_working_source": "94c4ecd047affe87948a8b76d0317f5777ff5506 with previously recorded helper overlays"
+}

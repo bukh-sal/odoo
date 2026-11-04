@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-04T04:06:32.058724+00:00
+- Updated UTC: 2026-11-04T04:32:13.958005+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -11,7 +11,12 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Active item: **G-01d2: release security/dependencies/operational qualification.** Current CVE/source/notices/privacy and actual second no-cache declared-inventory reproduction recorded. Next releasekit/runbooks/clean artifact installation; browser network remains separate. One active leaf.
 - Current result: **96/99passed,2invalidated(ID08,OPS03),UI09not_run;93weighted points≈93%.** BOOT02 requalified by actual no-cache current source reproduction. Current core23/config8/image14de/inventory1a411/dispatch25/2Notes/Canvasrev2/11outbox/2completedjobs; original570/perf31/bothworker87/issuer/checkpoints/failedDB preserved. No livehandle or uncertainmutation.
 
-## Current continuation: fresh kit backend reference qualified; worker transport next
+## Current continuation: portable worker independently published; metadata/connector/job next
+
+- Actual source-refresh06/session98896 terminal0: kit source4e2ee524/one sourceZIP updated/49reused; helper-sync06 binds only new committed initialize_worker.py overlay. Actual selected kit interpreter worker13569 terminal0: one worker4daa036c0e3a871ec20c95de8a4784f9432fbf3bd131bb31eb5d7839181af9f8/projectmp-disposable-document-stats-release-0afebf4f833b, existing internal network, two new dedicated owned volumes, fresh private/public issuer keys. Ordinary CLI provision/prepare/review/exacthashpublish passed. Generation1/endpoint1 scoped A, observed image87/user/mounts/internal address/public key/health exact. worker-provision.json. No metadata installed or job executed yet.
+- New connect_worker.py prepared for separate provider metadata exact-pin install with enabled feature, approved native Notes connector install, then one saved-revision/original-actor job. Reuses current source manifests/catalog pins/SDK/ordinary CLI; no inferred version pins or new product behavior. NEXT commit and draft source-refresh07, sync exact committed helper, run register/connect/job in sequence; inspect marker/journal before any continuation. Keep current realm/core data/worker identity. No livehandles or uncertainmutation;96passed/2invalidID08OPS03/UI09notrun/93points unchanged.
+
+## Previous continuation: fresh kit backend reference qualified; worker transport next
 
 - Actual prepare99544/initialize82718/install54258 all terminal0 in NEW projectmp-r0-r1release0afebf4f833b/DBmp_disposable_r0_r1_release_0afebf4f833b/port18100; kit-selected14de/proxydece/PGd81, fresh credentials/private control and empty storage, no old catalog/authority/site copied. Exact independent operation2e415c49-254a-4543-bedb-7cf9ac8c9f4a completed with mutation/traffic journal true. Three native plugins/six workspace activations.
 - Actual HTTP walkthrough terminal0: five checks, two Notes/one minimal one-card Canvas, fresh Alice/Bob authentication, native Odoo list/form descriptors/scoped reads, viewer-write and foreign-record denials, Labels binding. First walkthrough stopped on Windows getaddrinfo11001 before network/data; original pre-data marker retained, SQL confirmed0Notes/0boards, only walkthrough resumed with explicit loopback/Host; no core or install replay. application-bootstrap.json binds source/kit/mixed-source receipts and actual SQL/runtime/journal. 57command/stdout streams plus three actual service stderr streams clean against131known secrets. Three exact exited0 helpers/replacedapp retired; three running services and all volumes/networks retained.
@@ -297,7 +302,7 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
-**Latest next action:** continue G-01d2 fresh kit worker/transport from current continuation above and evidence/G7/20261104-release-kit-01/application-bootstrap.json. New reference phase=minimal_backend_reference_qualified, projectmp-r0-r1release0afebf4f833b/18100,3runningservices/2Notes/1board. Initializer/install never replay. Kit remains draft746781d6; worker archive binding repaired and actual new-repository load qualified; next commit/refresh06/sync new initialize_worker.py then one actual worker provisioning/publication. Metadata/connector/job still unqualified. No livehandles.93points/96passed unchanged. Earlier capsule entries below are historical.
+**Latest next action:** continue G-01d2 portable worker metadata/connector/job from current continuation above and evidence/G7/20261104-release-kit-01/application-bootstrap.json. New reference phase=minimal_backend_reference_qualified, projectmp-r0-r1release0afebf4f833b/18100,3runningservices/2Notes/1board. Initializer/install never replay. Kit remains draft746781d6; worker archive binding repaired/new-repository load qualified; actual worker provision/publication13569 terminal0/generation1/worker4daa. NEXT commit/refresh07/sync connect_worker.py, then ordinary register/connect/job ONCE each. Worker marker=scoped_worker_published_metadata_not_installed; integration not started. Metadata/connector/job still unqualified. No livehandles.93points/96passed unchanged. Earlier capsule entries below are historical.
 
 
 - **Active work:** G-01d2, final release security/provenance qualification. Use `.local/toolchain/operator-python16/Scripts/python.exe -X utf8`. No live process or uncertain lifecycle action remains.

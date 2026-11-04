@@ -1,0 +1,10 @@
+{
+  "result": "passed_changed_source_and_actual_worker_command_projection_streams",
+  "known_values": 133,
+  "actual_streams": 80,
+  "public_files": 7,
+  "findings": 0,
+  "limits": [
+    "Incremental privacy only; full-kit/archive recursive privacy remains separate."
+  ]
+}

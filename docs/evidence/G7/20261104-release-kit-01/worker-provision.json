@@ -1,0 +1,53 @@
+{
+  "result": "passed_portable_once_only_worker_provision_and_exact_independent_publication",
+  "utc": "2026-11-04T04:32:13.623983+00:00",
+  "source_commit": "4e2ee52467a4ee95463c17906837d776a5f54083",
+  "project": "mp-disposable-document-stats-release-0afebf4f833b",
+  "scope": {
+    "site_id": "ec086968-56da-42c8-a247-85835672c564",
+    "workspace_id": "e0f4ae9b-761e-415f-aad7-4418e8f87772",
+    "installation_id": "44648cad-0049-5cff-a0d9-f0e4cdf8e853"
+  },
+  "new_owned_volumes": [
+    "mp-disposable-document-stats-release-0afebf4f833b-public-config",
+    "mp-r0-r1release0afebf4f833b_worker_authority"
+  ],
+  "publication_result": {
+    "generation": 1,
+    "operation_id": "dd390e94-6c78-447d-b9a5-f73bdf230b72",
+    "state": "enabled"
+  },
+  "attestation": {
+    "runtime_policy": {
+      "project": "mp-disposable-document-stats-release-0afebf4f833b",
+      "service": "document-stats",
+      "network": "mp-r0-r1release0afebf4f833b_runtime",
+      "public_config_volume": "mp-disposable-document-stats-release-0afebf4f833b-public-config",
+      "image": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "destination": "http://document-stats:8080"
+    },
+    "container_id": "4daa036c0e3a871ec20c95de8a4784f9432fbf3bd131bb31eb5d7839181af9f8",
+    "image_digest": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+    "network_id": "221c63f94f5250e5c9f9b33dc8f510991bf65f024092295223ed8dec36aea3f1",
+    "addresses": [
+      "192.168.16.5"
+    ],
+    "started_at": "2026-11-04T04:29:18.62598274Z",
+    "restart_count": 0,
+    "public_digest": "cda35721dfc110063b5fdc197576cdde582941b2490bbc49241b71efe83d00d9",
+    "key_id": "release-reference-key",
+    "scope": {
+      "site_id": "ec086968-56da-42c8-a247-85835672c564",
+      "workspace_id": "e0f4ae9b-761e-415f-aad7-4418e8f87772",
+      "installation_id": "44648cad-0049-5cff-a0d9-f0e4cdf8e853",
+      "public_key_file": "/run/worker/public.pem",
+      "key_id": "release-reference-key",
+      "endpoint_generation": 1
+    }
+  },
+  "metadata_installed": false,
+  "job_executed": false,
+  "limits": [
+    "Independent worker runtime/publication only; metadata/connector/job and complete kit qualification remain required."
+  ]
+}

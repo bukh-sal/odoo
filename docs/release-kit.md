@@ -84,9 +84,22 @@ The worker is a separate operator action, after that backend walkthrough:
 .local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_worker.py --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
 ```
 
-This new once-only helper is awaiting its first qualification. It starts the
+This once-only helper has passed its initial qualification. It starts the
 locked reference Compose worker on the existing internal network, provisions
 new scoped keys and two dedicated volumes, then independently reviews/publishes
 the exact authority hash. It does not install metadata or select a connector;
-those and an actual queued job remain required. Its phase is in
+those and an actual queued job remain required. Continue once, in order:
+
+```powershell
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py register --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py connect --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py job --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+```
+
+These three integration steps are prepared but not yet qualified. Registration
+uses exact curated metadata, endpoint health and independent capability review;
+the connector installs through normal native lifecycle approval. The job checks
+saved revision and statistics under a fresh Alice session. Worker runtime must
+remain identical. The helper records each phase before acting. Its state is in
+`private/reference/worker/integration.json`. Worker provisioning phase is in
 `private/reference/worker/state.json`; never replay an uncertain publication.
