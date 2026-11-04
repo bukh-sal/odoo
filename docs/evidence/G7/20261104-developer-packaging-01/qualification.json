@@ -1,0 +1,44 @@
+{
+  "result": "passed_documented_reference_packaging_only",
+  "utc": "2026-11-04T08:30:20.085551+00:00",
+  "examples": [
+    {
+      "example": "notes_labels",
+      "version": "0.2.5",
+      "digest": "sha256:fdf5d88b5b2704c40ec593b24a357ea0152f45aed0c5769d4063d4f571329773",
+      "bytes": 26583,
+      "curated_validator_passed": true,
+      "reproduced_byte_exact": true,
+      "mismatched_versions_no_output": true,
+      "overwrite_refused_bytes_preserved": true,
+      "modified_presentation_in_archive": true
+    },
+    {
+      "example": "canvas",
+      "version": "0.1.5",
+      "digest": "sha256:ff83f6b7f2dccf6f2de346ab7478d241bf2b6ab065c1fbb8ca36440bbb048247",
+      "bytes": 29708,
+      "curated_validator_passed": true,
+      "reproduced_byte_exact": true,
+      "mismatched_versions_no_output": true,
+      "overwrite_refused_bytes_preserved": true,
+      "modified_presentation_in_archive": true
+    }
+  ],
+  "cli_processes": 8,
+  "operator_environment": "existing_isolated_kit_Python",
+  "known_values": 133,
+  "privacy_findings": 0,
+  "document_links_verified": 7,
+  "source_sha256": {
+    "tools\\package_reference.py": "d1de5bd78981883d400fe660f46b0647a34f1c600c60a156d62228020c112feb",
+    "docs\\developer-guide.md": "958c6ea26d2115c582248ec98cdb5c0f7887440e65c152c80eb6f589342b6320",
+    "docs\\evidence\\G7\\20261104-developer-packaging-01\\check.py": "b7766b675a1f2fffaada2646b0a709d65f44399b3dc87fa36d296906849f0b8b"
+  },
+  "limits": [
+    "Isolated copies only; no tracked native plugin/version changes, import of native addon code or live catalog/trust changes.",
+    "No Docker command, browser, database write, deployment, approval or worker restart was executed.",
+    "Two synthetic example artifacts were independently validated and byte-reproduced; this is not final application image reproduction/BOOT02.",
+    "Full final-kit fresh developer installation/extension/custom-page/permission/recovery and separate worker proof remains required."
+  ]
+}

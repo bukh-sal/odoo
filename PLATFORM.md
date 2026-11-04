@@ -1,7 +1,20 @@
-# Modular Platform
+# Modular Platform R1
 
-Implementation of [the specification](planning/modular_platform_spec.md) through R1 is in progress. The authoritative [checklist and resume record](docs/implementation-status.md) distinguishes implemented work, actual acceptance results and remaining gates. Upstream README/legal files remain intact.
+Start with the [developer guide](docs/developer-guide.md) for isolated setup,
+native Notes/Labels extension and optional custom-page packaging. Standard record
+screens use native Odoo views. Canvas and the independent Stats worker are
+minimal reference examples.
 
-G0-G4 are qualified: the local platform has workspace identity, a neutral shell, native Notes, the Labels extension and a custom Canvas page. G5 is in progress: [archive/catalog](docs/packaging.md), [pure/live planning](docs/planning-core.md) and [independent OS approval/journal primitives](docs/operations.md) are implemented. The operations UI, native executor and recoverable lifecycle remain next. Start with the [checklist](docs/implementation-status.md) and [baseline commands](docs/baseline.md). Jobs, the external worker and final release qualification remain G6/G7.
+The [implementation status](docs/implementation-status.md) records the active gate,
+verified progress, failed/pending checks and next action. The [release checklist](docs/r1-release-checklist.md)
+maps the remaining R1 deliverables. G7 is in progress; the existing local release
+kit is a draft.
 
-Do not publish this development profile, use production credentials/data, or treat native plugins as sandboxed. The local test harness owns only its generated disposable targets and keeps raw backup/credential material under ignored `.local/r0`.
+Use the [operator runbooks](docs/operator-runbooks.md) for installation, exact-hash
+approval, upgrade and recovery. [Verification](docs/verification.md) links dated
+evidence with its original source/environment limits. Native Python and
+same-origin plugins are fully trusted code; see the [security](docs/http-security.md)
+and [network](docs/network-independence.md) boundaries.
+
+Pinned Odoo source, upstream README/license notices and the [patch ledger](docs/upstream-patches.md)
+are retained. The specification is [planning/modular_platform_spec.md](planning/modular_platform_spec.md).

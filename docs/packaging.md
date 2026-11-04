@@ -1,6 +1,6 @@
 # R1 artifact and catalog workflow
 
-Implemented E-01a; lifecycle execution and the release planner remain later G5 work. [Current status](implementation-status.md) is authoritative. Native Python and same-origin frontend code run with host trust after approval. Archive inspection never imports them or runs build tools.
+Catalog, planning and lifecycle work passed G5 for the recorded profiles; final G7 release qualification remains open. [Current status](implementation-status.md) is authoritative. The [developer guide](developer-guide.md) supplies current isolated setup and reference packaging commands. Native Python and same-origin frontend code run with host trust after approval. Archive inspection never imports them or runs build tools.
 
 R1 curated trust means an operator approves the **exact outer SHA-256 digest** in an independently owned JSON configuration. No signature verification is implemented or advertised. Package provenance describes claimed inputs; neither it nor a publisher key inside a package grants trust. Development accepts unsigned artifacts only with `mode: "development"` and `allow_unsigned_development: true`; every successful CLI result displays a warning. Open-marketplace policy is rejected.
 

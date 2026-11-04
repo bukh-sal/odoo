@@ -30,13 +30,17 @@ observation exists; it does not mean the entire final release passed.
 - [ ] Reconcile final fresh-developer proof and complete the §28 audit/handoff.
   The old kit's actual fresh setup is retained evidence, not proof that the
   current final kit was installed or that a new developer extended a plugin.
+- [x] Add a source developer entry point and exercise its reference packaging
+  commands: [guide](developer-guide.md), [packaging proof](evidence/G7/20261104-developer-packaging-01/qualification.json).
+  Two isolated versioned examples validate/reproduce; mismatch and overwrite
+  refusals preserve output. This does not check off the full fresh-developer path.
 
 | §28 deliverable | Existing entry point / observation | Final closure still required |
 | --- | --- | --- |
 | 1 Source/branch | Local `platform/r1`; exact source commits in receipts | Identify final commit and clean working tree |
 | 2 Upstream/patches | [Patch ledger](upstream-patches.md), pinned substrate | Include final source/notice inventory |
 | 3 Reproducible environment/build | [Baseline](baseline.md), [toolchain](operator-toolchain.md), ADR0052 | BOOT-02 on final image and its exact dependency base |
-| 4 Native/custom UI SDK | `packages/platform_sdk`, `packages/host_sdk`, native Notes and Canvas examples | Document and exercise a fresh developer extension/custom-page path |
+| 4 Native/custom UI SDK | `packages/platform_sdk`, `packages/host_sdk`, [developer guide](developer-guide.md), two actual packaging exercises | Exercise installed final-kit extension/custom-page path |
 | 5 Schema/planner | [Frozen contracts](contracts/freeze-v1.md), [planning](planning-core.md) | Bind final source to unchanged contracts or requalify affected changes |
 | 6 Catalog/install | [Packaging](packaging.md), actual kit install | Reconcile final kit inputs; historical prose is not latest lifecycle state |
 | 7 Lifecycle/executor | [Operations](operations.md), [runbooks](operator-runbooks.md), current core24 receipt | Package qualified CLI observation addition |
@@ -44,7 +48,7 @@ observation exists; it does not mean the entire final release passed.
 | 9 Reference plugins/worker | Native Notes/Labels, minimal Canvas, separately managed Stats | Preserve examples and separate worker startup; no product expansion |
 | 10 Mapped tests | Full acceptance ledger in status | Resolve BOOT-02, OPS-03, UI-09; verify all 99 required R1 checks |
 | 11 Fresh install/restore | [Kit rehearsal](release-kit.md), [recovery](recovery-rehearsal.md) | Explicit final-image/source compatibility and fresh developer reconciliation |
-| 12 Operator/developer docs | Twelve runbooks; setup, security and SDK sources | Add a concise executable developer entry point; check commands against final kit |
+| 12 Operator/developer docs | Twelve runbooks; setup, security and [developer entry point](developer-guide.md) | Check commands and full installed workflow against final kit |
 | 13 Limitations/security | [HTTP security](http-security.md), [network](network-independence.md), native trust warnings | Carry residual advisory/license/authority limits into handoff |
 | 14 Release/lock inventory | Draft kit, dependency locks and hash-bound receipts | Final kit inventory/source/image/privacy binding |
 | 15 Final handoff | Status, evidence and runbooks exist | Final startup/test/example/recovery commands, URL/account setup, risks and milestone |

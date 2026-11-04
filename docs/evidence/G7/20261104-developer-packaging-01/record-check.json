@@ -1,0 +1,20 @@
+{
+  "result": "passed_developer_entrypoint_links_syntax_privacy_and_no_runtime_source_change",
+  "links": 35,
+  "known_values": 133,
+  "findings": 0,
+  "files_sha256": {
+    "PLATFORM.md": "54e2b7702586f376868f3ac48e3f8830ff72fc25483e4b7684b2777b6cd2b352",
+    "tools/package_reference.py": "d1de5bd78981883d400fe660f46b0647a34f1c600c60a156d62228020c112feb",
+    "docs/developer-guide.md": "958c6ea26d2115c582248ec98cdb5c0f7887440e65c152c80eb6f589342b6320",
+    "docs/packaging.md": "23187f0761d474a913c35184c61eff08cda08d919e30a08d782b084993d74c75",
+    "docs/r1-release-checklist.md": "6177c1d339b6a553c164b9355dba63a47a6f3c8684defb13736ac3ffeeee23de",
+    "docs/implementation-status.md": "1bcaafb58a42659897e2ac744371bc6522826aa381ead7df9ce6e76461f07ac7",
+    "docs/work-log.md": "10c416fdea0c2d201d0203a10d803646157d131abd55739872b04024ca5d7f3f",
+    "docs/evidence/G7/20261104-developer-packaging-01/check.py": "b7766b675a1f2fffaada2646b0a709d65f44399b3dc87fa36d296906849f0b8b",
+    "docs/evidence/G7/20261104-developer-packaging-01/qualification.json": "2e7046617ecf29167f1f15dbd0f79f8f5110a668b1f4e8e08f7d2a2d7ad12eac"
+  },
+  "limits": [
+    "No full final-kit or installed developer-flow claim; existing privacy scope remains finite."
+  ]
+}
