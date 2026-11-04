@@ -1,0 +1,42 @@
+{
+  "result": "passed_actual_independent_operator_observation",
+  "utc": "2026-11-04T06:28:53.477021+00:00",
+  "heartbeat_advance_seconds": 5.031,
+  "forced_process_exit_code": 1,
+  "stale_detected_after_kill_seconds": 19.86,
+  "stale_after_seconds": 20,
+  "concurrent_process_refused": true,
+  "return_vs_exception_distinguished": true,
+  "all_owned_processes_exited": true,
+  "current_completed_journal_exact_readonly_legacy_not_recorded": true,
+  "current_operation_id": "08a4f967-1272-4147-939b-2f939e37c6f8",
+  "unit_suites": [
+    {
+      "pattern": "test_operation_progress.py",
+      "exit_code": 0,
+      "stream_sha256": "0bbffe51e485faf0918ff0e80fbcbc072f4ff75b7572e82b0fd726390d8665a6"
+    },
+    {
+      "pattern": "test_metadata_executor.py",
+      "exit_code": 0,
+      "stream_sha256": "77eccf41c44eecd3651c7bbdfd818fc8e887af8b4aeb1d72f28ce21acd706082"
+    },
+    {
+      "pattern": "test_executor_crash_fence.py",
+      "exit_code": 0,
+      "stream_sha256": "47e9cfaf4431584abac1dd0cfc4f174f65ece2fab12662750cdd28e629ba385b"
+    }
+  ],
+  "source_sha256": {
+    "tools/operation_progress.py": "f2bba1df8a51ddad34d6504245d5ca2d0288c394f9c3cb9de75bb74b4a49d136",
+    "tools/modular.py": "189b3e155bc91dfacef528967f8d308beaf68d220875fdae6dc65e68e2fa33d7",
+    "tests/test_operation_progress.py": "113d8a057c5c611db06c11da4018586e629492ee17094575f37e45fc48e816d2",
+    "tests/test_metadata_executor.py": "3a56d1bd70f3055245bcf89f7e52ef7399e649c8c01f90a81bb2c32e20139330"
+  },
+  "limits": [
+    "Real subprocesses and OS locks/private files with synthetic observation metadata, not a native deployment execution.",
+    "Current completed real CLI journal read only; no lifecycle replay, approval change, Docker asset, database write or app image change.",
+    "Heartbeat means observer thread ran; stale is not proof of executor/child failure, rollback or safe retry.",
+    "Direct SDK callers are not wrapped; supported operator CLI apply/restore/resume are wrapped. Public HTTP DTO unchanged. Final operator kit source update pending."
+  ]
+}

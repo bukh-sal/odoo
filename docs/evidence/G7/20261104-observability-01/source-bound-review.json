@@ -1,0 +1,91 @@
+{
+  "result": "passed_current_source_binding_and_structured_diagnostic_sample",
+  "utc": "2026-11-04T06:31:33.215089+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "generation": 4,
+  "current_live_source_sha256": {
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "packages/platform_sdk/modular_platform/job_runner.py": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+    "packages/platform_sdk/modular_platform/worker_dispatch.py": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5",
+    "packages/platform_sdk/modular_platform/worker_start.py": "ccc71afcb082184567c45472ed41cd0a14aee6c6a7c1894c953fa0601002221b",
+    "packages/platform_sdk/modular_platform/native_executor.py": "41eaf76d81cb28d0d42c8f0a8d4eb133fff11c02f6ac181706330b8de46e0694",
+    "packages/platform_sdk/modular_platform/operator_store.py": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+    "packages/platform_sdk/modular_platform/deployment.py": "aec84a0d03372fe91f7cb7caee81ee6876035428d1e0751212ad52f4283e5a56",
+    "packages/platform_sdk/modular_platform/app_channel.py": "d2356d6e1aae103ff98912d4ebfaad189cf14100234bd68e0a846d3d65c8292b",
+    "packages/platform_sdk/modular_platform/workers.py": "9a9a16189d271441e9b7cf327fcb3c6ae7d74cf427f36aae9396daa7c05e1733",
+    "platform_addons/mp_core/job_dispatch.py": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+    "platform_addons/mp_core/external_job.py": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+    "platform_addons/mp_core/operations.py": "e036ae0d843c5a74aa94f9a11871f3d2a8fb27efc984ceaac6d38bb6875d424d",
+    "platform_addons/mp_core/controllers.py": "5972590705fa0c9194d220959403e4fe10cf56530bef3d72c39871e922db0178",
+    "platform_addons/mp_identity/read_window.py": "b0eb5b311a25d6c4510ca268c70c2812529c83648fd1a0c716c072536b11f2bc",
+    "platform_addons/mp_identity/release.py": "f2463661c9f1c95ed065552ae4be2aeb30118d17a160a54738928415a32dd52a",
+    "platform_addons/mp_identity/scopes.py": "4e16d19a3aaa23f3d0d02e41d962f55240e6fb6ffbd52b27e7abcf3a9bc15fe7",
+    "platform_addons/mp_shell/static/src/operations.js": "0c82cee17fcab30d60b2fccf37b3d5f0d689a9b7abb8ff73a983eb8b814616db",
+    "platform_addons/mp_shell/static/src/host.js": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0",
+    "platform_addons/mp_example_notes_stats/static/src/analysis.js": "e75d97785ccf20cd4c46b97446189dafb870ae2e0036f1c85d0b7eae20ae41bd",
+    "platform_addons/mp_example_notes_stats/jobs.py": "d2a06f78231d20dfdd546bcb8d1e58bff44960b9f4bc52751d0ee839c231a411"
+  },
+  "retained_G6_whole_file_exact": {
+    "packages/platform_sdk/modular_platform/durable.py": "b15afcd1e090b60b63e909820f923926c87f25108286b7c2495135f010a01991",
+    "packages/platform_sdk/modular_platform/job_runner.py": "85a4ed9da250fa92654025cae2df199fe50dc863dd5f4343f3303ac4aafeea67",
+    "packages/platform_sdk/modular_platform/worker_dispatch.py": "806dcd543c0beac868699da46351cac4748f61eaa9e54204fa2eeae988ab0ef5",
+    "packages/platform_sdk/modular_platform/operator_store.py": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+    "platform_addons/mp_core/job_dispatch.py": "c390fd6a828934ae7fc05e467020d221be26707fe43759ccde17ed99750b22c0",
+    "platform_addons/mp_core/external_job.py": "52e2cc8ed0e146d9cb48333b8f55fe3dfcf44bca1ac385e0640d2064380dfe86",
+    "platform_addons/mp_core/controllers.py": "5972590705fa0c9194d220959403e4fe10cf56530bef3d72c39871e922db0178",
+    "platform_addons/mp_shell/static/src/host.js": "07a241fccfcadf403c49b8a44a06136f25547462fb5e35ee18b54919cc171675",
+    "platform_addons/mp_shell/static/src/native_interactions.js": "1c0d72ac1d0d71df72a21fee58680f95f28b900d41b652f6902c274e78bdb0e0",
+    "platform_addons/mp_example_notes_stats/jobs.py": "d2a06f78231d20dfdd546bcb8d1e58bff44960b9f4bc52751d0ee839c231a411"
+  },
+  "bounds": {
+    "deployment": {
+      "independent_CLI_heartbeat_seconds": 5,
+      "stale_after_seconds": 20,
+      "actual_process_kill_probe": "progress-qualification.json",
+      "general_Docker_command_timeout_seconds": 60,
+      "private_native_child_command_timeout_seconds": 300,
+      "readiness_deadline_seconds": 90,
+      "readiness_probe_timeout_seconds": 5,
+      "app_mirror_stale_after_seconds": 30,
+      "visible_app_poll_interval_seconds": 5,
+      "app_request_timeout_seconds": 10,
+      "meaning": "Timeout/stale means unknown or recovery-required observation, not child rollback. CLI journal is independent while app/edge are stopped. Hung external daemon/OS scheduling is outside real-time guarantees."
+    },
+    "jobs": {
+      "default_lease_seconds": 30,
+      "default_job_deadline_seconds": 120,
+      "default_runner_poll_seconds": 1,
+      "allowed_runner_poll_seconds": [
+        0.1,
+        30
+      ],
+      "UI_poll_seconds": 1,
+      "UI_observation_budget_seconds": 200,
+      "meaning": "With a running compatible scheduler, expiry is processed on next available claim sweep. A stopped scheduler has no reaping-time guarantee; browser observation stops with pending/unknown rather than fabricated failure. No native-code preemption or timeout undo."
+    },
+    "authorization": {
+      "supported_request_and_write_rechecks": "fresh current authority at entry/application; no persisted role snapshot grants execution",
+      "private_internal_read_snapshot_max_seconds": 0.02,
+      "meaning": "Only cooperating serializers on same actor/cursor/thread/model/recordset. Exit/mutations/dirty state invalidate; no cross-operation cache or native-code sandbox. External dispatch and final application recheck current endpoint/publication/actor."
+    }
+  },
+  "R0_comparison": {
+    "baseline_evidence_sha256": "1872ba9339c39ff44ffacf050bd7c3280c2c6855649f3fe067b507eb2bed0fe1",
+    "R0_session_p95_ms": 31,
+    "current_session_p95_ms": 7.724,
+    "decision": "No material regression observed in the retained upstream session control. R0 samples are coarse and actors/resource/background contexts differ; no controlled speedup claim. No matched R0 Notes/custom-shell dataset existed. Added authorization/release isolation work is an explicit tradeoff evaluated against passing current standard-read/shell targets."
+  },
+  "readiness": {
+    "current_startup_guard_and_expected_inventory": true,
+    "actual_current_four_runtime_identities_preserved": true,
+    "semantic_release_readiness_separate_from_process_liveness": true,
+    "retained_failure_proof": "20261104-native-uninstall-recovery-01/qualification.json",
+    "retained_optional_worker_outage_UI_proof": "G6/20261102-headless-ui-01/qualification.json"
+  },
+  "limits": [
+    "Source-bound reuse is restricted to exact unchanged files. Current native lifecycle/restore/fresh managed reference proof is separately retained.",
+    "This review adds no new lifecycle execution, native/worker image, Docker asset or business mutation.",
+    "Remaining operator-tool source kit refresh, complete browser network/ID08/UI09 and final handoff are separate."
+  ]
+}

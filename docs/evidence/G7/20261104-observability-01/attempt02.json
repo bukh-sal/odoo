@@ -1,0 +1,6 @@
+{
+  "result": "read_only_bounds_review_stopped_after_diagnostic_capture",
+  "reason": "Harness expected nested timing in current session-control JSON; actual retained p95_ms is a direct key.",
+  "actual_work_before_refusal": "Current live source hashes, current runtime identities and structured SQL/resource aggregates captured. No business mutation or lifecycle replay.",
+  "resolution": "Corrected actual field lookup. Retain/reuse the original diagnostic sample and recheck current immutable source/runtime identities; do not recapture SQL/resources. Finalized descriptive limit wording reflects the actual pending outbox count."
+}

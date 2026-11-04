@@ -1,0 +1,50 @@
+{
+  "result": "passed_remaining_performance_and_operational_observation_slice",
+  "utc": "2026-11-04T06:33:31.318313+00:00",
+  "work_item": "G-01c4",
+  "spec_sections": [
+    "24.1",
+    "24.2",
+    "24.3"
+  ],
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "native_Odoo_views_default": true,
+  "performance_points_total": 2,
+  "additional_weighted_point": 1,
+  "all17_current_business_authority_job_event_tables_exact": true,
+  "contract_freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 106,
+    "rows": 8
+  },
+  "actual_affected_unit_tests": 19,
+  "privacy": {
+    "known_values": 133,
+    "files": 35,
+    "findings": 0
+  },
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-observability-01\\attempt01.json": "8d65ff98562c3fd42fcb7263d37d9e0d9abe13451ccf7f2fa3375d4891e9c67f",
+    "docs\\evidence\\G7\\20261104-observability-01\\attempt02.json": "6adaf0544f58372492225b56cdb16e3f47e80631d63a68036cb15215c778cf6b",
+    "docs\\evidence\\G7\\20261104-observability-01\\bound_review.py": "9fed6e4f647e6f70c05a7fd1e325d74514f69a1bf2e9efc8fcabdc6fb86294b3",
+    "docs\\evidence\\G7\\20261104-observability-01\\probe_progress.py": "5d4781715da5a9c76836d4a55185112847c95bb4941d0f75560acb0cc4243f92",
+    "docs\\evidence\\G7\\20261104-observability-01\\progress-qualification.json": "a0adde40a4c0d7bb5c408fd565ef26fdead4fd50f4455a82a5894d75a6208af1",
+    "docs\\evidence\\G7\\20261104-observability-01\\qualify.py": "2835caab5a0982201ab54298d2679f4c2b0e6e243dfa4a9479efc61f3d26596e",
+    "docs\\evidence\\G7\\20261104-observability-01\\source-bound-review.json": "5266e6ca6cca25786c727cec54d3014704155685b2f28328b8b79aca6a3d26de",
+    "docs\\evidence\\G7\\20261104-observability-01\\structured-diagnostics.json": "ccdcf747c542f9716ae151ee568940039aca373aaac68c4d4c6023d937ea0ce6",
+    "docs\\performance.md": "27d3581b203192fa887d09cb88ba55582218fcb0f5f0859456c75f74b15c64c4",
+    "docs\\operator-runbooks.md": "a9a804847373ad86f357254f97a433fa4e9f4ff2cfcfa7557ff088efd69b790a",
+    "docs\\architecture-decisions\\0056-independent-executor-observation.md": "a2ee826ba3ac341646fe76dc56e643b5e38e9e11a54c9f6e1aa07ac6595f8b8e"
+  },
+  "scope": [
+    "Current10k/20session reads, current shell timing/100disposal cycles, current source bounds and diagnostic equivalents combined.",
+    "Actual independent CLI observation/process-death qualification, source-bound G6 lease/worker failure/revocation proof and current native failure/fresh restore evidence."
+  ],
+  "limits": [
+    "No full G7/ID08/UI09/OPS03 claim. Security/network/operator-source-kit closure and final audit remain.",
+    "Heartbeat is observation, not work advancement or rollback. Direct SDK callers and legacy operations have no new wrapper pulse.",
+    "Scheduler-dependent lease expiry, native code/OS/daemon limitations and R0 comparison limits remain explicit in source-bound-review.json/docs/performance.md.",
+    "No new Docker asset or product data mutation. First probe launcher-PID and second read-only JSON-field refusal preserved; no native/lifecycle replay."
+  ]
+}

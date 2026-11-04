@@ -1,0 +1,46 @@
+"""Current immutable-source binding and read-only structured diagnostic sample."""
+import base64,hashlib,json,subprocess,sys
+from datetime import datetime,timezone
+from pathlib import Path
+ROOT=Path.cwd();OUT=Path(__file__).parent;PRIVATE=ROOT/'.local/g7-observability-02'
+def load(p):return json.loads(p.read_bytes())
+def call(args):return subprocess.check_output(args,stderr=subprocess.PIPE,timeout=60)
+def write(name,value):
+ with (OUT/name).open('x',encoding='utf8') as f:json.dump(value,f,indent=2);f.write('\n')
+record=load(ROOT/'.local/g7-ui-qualification-01/browser-input.json');target=load(ROOT/'.local/release-kit-rehearsal/private/reference/operator/target.json')
+assert target['image_id']==record['image_id'] and target['generation']==4
+paths=['packages/platform_sdk/modular_platform/'+p for p in ['durable.py','job_runner.py','worker_dispatch.py','worker_start.py','native_executor.py','operator_store.py','deployment.py','app_channel.py','workers.py']]
+paths+=['platform_addons/'+p for p in ['mp_core/job_dispatch.py','mp_core/external_job.py','mp_core/operations.py','mp_core/controllers.py','mp_identity/read_window.py','mp_identity/release.py','mp_identity/scopes.py','mp_shell/static/src/operations.js','mp_shell/static/src/host.js','mp_shell/static/src/native_interactions.js','mp_example_notes_stats/static/src/analysis.js','mp_example_notes_stats/jobs.py']]
+mapped={p:p.replace('platform_addons/','addons/',1) if p.startswith('platform_addons/') else p for p in paths}
+script='import hashlib,json,pathlib;paths=json.loads('+repr(json.dumps(mapped))+');print(json.dumps({k:hashlib.sha256((pathlib.Path("/opt/modular")/v).read_bytes()).hexdigest() for k,v in paths.items()}))'
+actual=json.loads(call(['docker','exec',target['worker_id'],'/venv/bin/python','-c',script]));expected={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths};assert actual==expected
+old=load(ROOT/'docs/evidence/G6/20261102-current-backend-audit-01/coverage.json');retained={p:expected[p] for p in paths if p in old['source_sha256'] and old['source_sha256'][p]==expected[p]}
+for suffix in ['durable.py','job_runner.py','worker_dispatch.py','mp_core/job_dispatch.py','mp_core/external_job.py','mp_shell/static/src/host.js']:
+ assert any(p.endswith(suffix) for p in retained),suffix
+# Structured equivalents: aggregate only, never query text, tokens or bodies.
+sql="""BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY;
+SELECT jsonb_build_object(
+'job_states',COALESCE((SELECT jsonb_agg(t) FROM (SELECT state,count(*) AS jobs,max(attempts) AS maximum_attempts,min(created_at) AS oldest_created_at FROM mp_job GROUP BY state ORDER BY state)t),'[]'::jsonb),
+'queued_jobs',(SELECT count(*) FROM mp_job WHERE state IN ('pending','retry','running')),
+'oldest_queue_age_seconds',(SELECT COALESCE(EXTRACT(EPOCH FROM timezone('UTC',now())-min(created_at)),0) FROM mp_job WHERE state IN ('pending','retry','running')),
+'outbox_states',COALESCE((SELECT jsonb_agg(t) FROM (SELECT state,count(*) AS events FROM mp_outbox GROUP BY state ORDER BY state)t),'[]'::jsonb),
+'oldest_unpublished_outbox_age_seconds',(SELECT COALESCE(EXTRACT(EPOCH FROM timezone('UTC',now())-min(occurred_at)),0) FROM mp_outbox WHERE state='pending'),
+'delivery_states',COALESCE((SELECT jsonb_agg(t) FROM (SELECT state,count(*) AS deliveries,max(attempts) AS maximum_attempts FROM mp_event_delivery GROUP BY state ORDER BY state)t),'[]'::jsonb),
+'database_connections',COALESCE((SELECT jsonb_agg(t) FROM (SELECT state,count(*) AS connections FROM pg_stat_activity WHERE datname=current_database() GROUP BY state ORDER BY state)t),'[]'::jsonb),
+'cluster_total_connections',(SELECT count(*) FROM pg_stat_activity),
+'cluster_max_connections',current_setting('max_connections')::int,
+'installed_native_modules',COALESCE((SELECT jsonb_agg(t) FROM (SELECT name,latest_version FROM ir_module_module WHERE state='installed' ORDER BY name)t),'[]'::jsonb));ROLLBACK;"""
+existing=load(OUT/'structured-diagnostics.json') if (OUT/'structured-diagnostics.json').exists() else None
+if existing:assert existing['image']==record['image_id'] and existing['generation']==4
+sample=existing['read_only_aggregates'] if existing else json.loads(call(['docker','exec',record['project']+'-db-1','psql','-X','-qAt','-v','ON_ERROR_STOP=1','-U','postgres','-d',record['database'],'-c',sql]));assert sample['queued_jobs']==0 and sample['job_states'][0]['state']=='completed' and sample['job_states'][0]['jobs']==1
+runtime_before=load(ROOT/'.local/g7-ui-qualification-01/runtimes-before.json');ids=[r['Id'] for r in runtime_before]
+resources=existing['Docker_resource_samples'] if existing else [json.loads(line) for line in call(['docker','stats','--no-stream','--format','{{json .}}',*ids]).decode().splitlines()];assert len(resources)==4
+rows=json.loads(call(['docker','inspect',*ids]));assert all(r['State']['Running'] for r in rows)
+for oldrow,new in zip(runtime_before,rows):
+ assert oldrow['Id']==new['Id'] and oldrow['Image']==new['Image'] and oldrow['State']['StartedAt']==new['State']['StartedAt'] and oldrow['Mounts']==new['Mounts'] and oldrow['NetworkSettings']==new['NetworkSettings']
+if not existing:write('structured-diagnostics.json',dict(utc=datetime.now(timezone.utc).isoformat(),image=record['image_id'],generation=4,read_only_aggregates=sample,Docker_resource_samples=resources,limits=['Point-in-time structured diagnostic equivalents, not a new metrics service or alert delivery guarantee.','Completed job and pending outbox counts/age only; no new publication/effect test. Populated failure/lag behavior retains source-bound G6 evidence.','Connection counts include the observer transaction and other local realms share the host. No SQL bodies/parameters/credentials captured.']))
+r0path=ROOT/'docs/evidence/G0/20261027t234238z/20261028T001320256156Z-http-probe.json';r0=load(r0path);reads=load(ROOT/'docs/evidence/G7/20261104-performance-current-01/read-benchmark.json')
+assert r0['warm_session_ms']['p95']==31.0 and reads['warm_sequential_upstream_session_control']['p95_ms']==7.724
+current_bounds=dict(deployment=dict(independent_CLI_heartbeat_seconds=5,stale_after_seconds=20,actual_process_kill_probe='progress-qualification.json',general_Docker_command_timeout_seconds=60,private_native_child_command_timeout_seconds=300,readiness_deadline_seconds=90,readiness_probe_timeout_seconds=5,app_mirror_stale_after_seconds=30,visible_app_poll_interval_seconds=5,app_request_timeout_seconds=10,meaning='Timeout/stale means unknown or recovery-required observation, not child rollback. CLI journal is independent while app/edge are stopped. Hung external daemon/OS scheduling is outside real-time guarantees.'),jobs=dict(default_lease_seconds=30,default_job_deadline_seconds=120,default_runner_poll_seconds=1,allowed_runner_poll_seconds=[.1,30],UI_poll_seconds=1,UI_observation_budget_seconds=200,meaning='With a running compatible scheduler, expiry is processed on next available claim sweep. A stopped scheduler has no reaping-time guarantee; browser observation stops with pending/unknown rather than fabricated failure. No native-code preemption or timeout undo.'),authorization=dict(supported_request_and_write_rechecks='fresh current authority at entry/application; no persisted role snapshot grants execution',private_internal_read_snapshot_max_seconds=.020,meaning='Only cooperating serializers on same actor/cursor/thread/model/recordset. Exit/mutations/dirty state invalidate; no cross-operation cache or native-code sandbox. External dispatch and final application recheck current endpoint/publication/actor.'))
+write('source-bound-review.json',dict(result='passed_current_source_binding_and_structured_diagnostic_sample',utc=datetime.now(timezone.utc).isoformat(),image=record['image_id'],generation=4,current_live_source_sha256=actual,retained_G6_whole_file_exact=retained,bounds=current_bounds,R0_comparison=dict(baseline_evidence_sha256=hashlib.sha256(r0path.read_bytes()).hexdigest(),R0_session_p95_ms=31,current_session_p95_ms=7.724,decision='No material regression observed in the retained upstream session control. R0 samples are coarse and actors/resource/background contexts differ; no controlled speedup claim. No matched R0 Notes/custom-shell dataset existed. Added authorization/release isolation work is an explicit tradeoff evaluated against passing current standard-read/shell targets.'),readiness=dict(current_startup_guard_and_expected_inventory=True,actual_current_four_runtime_identities_preserved=True,semantic_release_readiness_separate_from_process_liveness=True,retained_failure_proof='20261104-native-uninstall-recovery-01/qualification.json',retained_optional_worker_outage_UI_proof='G6/20261102-headless-ui-01/qualification.json'),limits=['Source-bound reuse is restricted to exact unchanged files. Current native lifecycle/restore/fresh managed reference proof is separately retained.','This review adds no new lifecycle execution, native/worker image, Docker asset or business mutation.','Remaining operator-tool source kit refresh, complete browser network/ID08/UI09 and final handoff are separate.']))
+print(json.dumps(dict(result='passed_current_source_binding_and_structured_diagnostic_sample',live_source_files_exact=len(actual),retained_G6_exact_files=len(retained),runtime_identities_exact=4)))

@@ -1,0 +1,158 @@
+{
+  "utc": "2026-11-04T06:30:41.408780+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "generation": 4,
+  "read_only_aggregates": {
+    "job_states": [
+      {
+        "jobs": 1,
+        "state": "completed",
+        "maximum_attempts": 1,
+        "oldest_created_at": "2026-11-04T04:39:03.675291"
+      }
+    ],
+    "queued_jobs": 0,
+    "outbox_states": [
+      {
+        "state": "pending",
+        "events": 3
+      }
+    ],
+    "delivery_states": [],
+    "database_connections": [
+      {
+        "state": "active",
+        "connections": 1
+      },
+      {
+        "state": "idle",
+        "connections": 4
+      }
+    ],
+    "cluster_max_connections": 64,
+    "installed_native_modules": [
+      {
+        "name": "auth_passkey",
+        "latest_version": "19.0.1.1"
+      },
+      {
+        "name": "auth_password_policy",
+        "latest_version": "19.0.1.0"
+      },
+      {
+        "name": "auth_totp",
+        "latest_version": "19.0.1.0"
+      },
+      {
+        "name": "base",
+        "latest_version": "19.0.1.3"
+      },
+      {
+        "name": "base_import",
+        "latest_version": "19.0.2.0"
+      },
+      {
+        "name": "base_setup",
+        "latest_version": "19.0.1.0"
+      },
+      {
+        "name": "bus",
+        "latest_version": "19.0.1.0"
+      },
+      {
+        "name": "mp_compat",
+        "latest_version": "19.0.0.1.1"
+      },
+      {
+        "name": "mp_core",
+        "latest_version": "19.0.0.1.23"
+      },
+      {
+        "name": "mp_example_canvas",
+        "latest_version": "19.0.0.1.4"
+      },
+      {
+        "name": "mp_example_notes",
+        "latest_version": "19.0.0.2.8"
+      },
+      {
+        "name": "mp_example_notes_labels",
+        "latest_version": "19.0.0.2.4"
+      },
+      {
+        "name": "mp_example_notes_stats",
+        "latest_version": "19.0.0.1.1"
+      },
+      {
+        "name": "mp_identity",
+        "latest_version": "19.0.0.1.5"
+      },
+      {
+        "name": "mp_shell",
+        "latest_version": "19.0.0.1.10"
+      },
+      {
+        "name": "web",
+        "latest_version": "19.0.1.0"
+      },
+      {
+        "name": "web_tour",
+        "latest_version": "19.0.1.0"
+      }
+    ],
+    "oldest_queue_age_seconds": 0,
+    "cluster_total_connections": 11,
+    "oldest_unpublished_outbox_age_seconds": 7812.631238
+  },
+  "Docker_resource_samples": [
+    {
+      "BlockIO": "18.8MB / 1.95MB",
+      "CPUPerc": "0.00%",
+      "Container": "10ac11a2f0db469c1e00e90f47f3ac3426ddd728909c1be6224fe8869586b9df",
+      "ID": "10ac11a2f0db",
+      "MemPerc": "18.75%",
+      "MemUsage": "288MiB / 1.5GiB",
+      "Name": "mp-r0-r1release0afebf4f833b-app-release-08a4f96712724147939b2f939e37c6f8",
+      "NetIO": "14.5MB / 19.2MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "27.8MB / 137MB",
+      "CPUPerc": "0.00%",
+      "Container": "57ce486c67331b68873d6b062f86b7a3eda445e26a0d9a61454a2716af189667",
+      "ID": "57ce486c6733",
+      "MemPerc": "18.63%",
+      "MemUsage": "95.37MiB / 512MiB",
+      "Name": "mp-r0-r1release0afebf4f833b-db-1",
+      "NetIO": "25.7MB / 23.7MB",
+      "PIDs": "11"
+    },
+    {
+      "BlockIO": "926kB / 0B",
+      "CPUPerc": "0.00%",
+      "Container": "c4721d9db8733077fb3439fe0356892ff3875c036a76a2409a714b3d0d8da2a9",
+      "ID": "c4721d9db873",
+      "MemPerc": "11.83%",
+      "MemUsage": "15.14MiB / 128MiB",
+      "Name": "mp-r0-r1release0afebf4f833b-edge-1",
+      "NetIO": "8.67MB / 8.87MB",
+      "PIDs": "17"
+    },
+    {
+      "BlockIO": "6.3MB / 0B",
+      "CPUPerc": "0.01%",
+      "Container": "4daa036c0e3a871ec20c95de8a4784f9432fbf3bd131bb31eb5d7839181af9f8",
+      "ID": "4daa036c0e3a",
+      "MemPerc": "12.15%",
+      "MemUsage": "31.1MiB / 256MiB",
+      "Name": "mp-disposable-document-stats-release-0afebf4f833b-document-stats-1",
+      "NetIO": "6.84kB / 1.11kB",
+      "PIDs": "1"
+    }
+  ],
+  "limits": [
+    "Point-in-time structured diagnostic equivalents, not a new metrics service or alert delivery guarantee.",
+    "Completed job and pending outbox counts/age only; no new publication/effect test. Populated failure/lag behavior retains source-bound G6 evidence.",
+    "Connection counts include the observer transaction and other local realms share the host. No SQL bodies/parameters/credentials captured."
+  ]
+}

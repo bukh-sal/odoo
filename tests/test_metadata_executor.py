@@ -99,6 +99,7 @@ class MetadataExecutorTests(unittest.TestCase):
             args=['--config',str(trust),'plugin','apply',bundle['plan']['operation_id'],'--store',str(Path(folder)/'control'),
                 '--deployment-config',str(Path(folder)/'target.json'),'--catalog',str(Path(folder)/'catalog')]
             with patch('modular_platform.operator_store.OperatorStore',return_value=store),patch('modular_platform.metadata_executor.ReferenceMetadataExecutor',return_value=executor),\
+                    patch('operation_progress.observe_execution',return_value=nullcontext()),\
                     patch('modular_platform.feature_executor.FeatureExecutor',side_effect=AssertionError('Metadata must not use legacy short feature execution')),redirect_stdout(io.StringIO()),redirect_stderr(io.StringIO()):
                 self.assertEqual(cli.main(args),0)
         executor.apply.assert_called_once_with(bundle['plan']['operation_id'])

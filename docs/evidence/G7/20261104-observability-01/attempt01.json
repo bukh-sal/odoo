@@ -1,0 +1,9 @@
+{
+  "result": "probe_refused_launcher_PID_mismatch_not_qualified",
+  "private_directory": ".local/g7-observability-01",
+  "reason": "Selected Windows venv python.exe launches a separate actual Python process; Popen launcher PID did not equal self-reported heartbeat PID.",
+  "observation_file_written": true,
+  "business_or_Docker_mutation": false,
+  "preserved": "Original synthetic-control heartbeat/lock/stdout/stderr remain private. No reset or overwrite.",
+  "resolution": "Read-only OS process inventory confirmed no probe_progress.py Python process remained. Corrected harness uses the exact selected base Python with selected venv site-packages; new .local/g7-observability-02 output. No product heartbeat logic changed."
+}

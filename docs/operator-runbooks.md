@@ -73,6 +73,22 @@ reviewing that exact destructive plan. App requests/cached approval flags and
 curated trust never replace the independent approval. Verify current feature,
 native schema/view and permission outcomes after completion.
 
+`operations show` now supplements the independent journal with
+`executor_observation` for supported CLI apply/restore/resume invocations. The
+private observer writes every5seconds; an unfinished observation older than
+20seconds reports stale. Repeat the read-only show command while an operation
+runs. Read its phase/history timestamps alongside the observation. `returned`
+means the CLI call returned, not that the journal necessarily says completed.
+`interrupted` means it raised. `not_recorded` is expected for older operations
+and direct SDK calls. A fresh heartbeat proves only the observation thread ran.
+
+Stale, unavailable or clock-changed observation is uncertainty, never permission
+to retry or restore. A Docker/native child may still be running after the CLI
+dies. Keep traffic fenced and use the separately reviewed recovery path. Native
+maintenance stops the app; its HTTP progress screen may be unavailable or stale.
+Use this OS-owned journal during that interval. The new operator tool must be
+included in the final source kit; an earlier draft kit lacks this addition.
+
 ## 3. Schema upgrade
 
 Build/inspect a separately selected immutable candidate with exact dependency

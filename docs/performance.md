@@ -72,8 +72,59 @@ browser exited0 and no process using its profile remained. The profile stays
 private for subsequent justified tests. Screenshots and diagnostics were checked
 against133known credential values with no findings.
 
-Required work still open under G-01c4/spec24.1–24.3:
+The remaining source-bound observability review passed in
+[the current review](evidence/G7/20261104-observability-01/source-bound-review.json).
+Twenty-one actual live app files match current source, including ten complete
+files unchanged from qualified G6. The upstream session control is7.724ms p95
+against the coarse R0reference31ms; different conditions preclude a speedup
+claim. R0 had no matched Notes/custom-shell dataset. The additional authority and
+release checks are an explicit cost covered by the passing current read targets.
 
-- Current-source R0 comparison, deployment/job heartbeat and bounded failure
-  detection/revocation evidence reconciled to the actual runtime.
+The review found and corrected a private operator diagnostic gap:
+[ADR0056](architecture-decisions/0056-independent-executor-observation.md) adds
+a5second observation heartbeat and20second stale warning to independent CLI
+apply/restore/resume and show. The actual forced-death test detected staleness
+19.860seconds after kill; concurrent writers were refused.19affected tests
+passed. This changes operator tools only; public HTTP DTOs, SDK and immutable
+app/worker code remain unchanged. Final source-kit inclusion is still required.
+
+Supported native child commands time out after300seconds, general Docker
+commands after60seconds, and readiness has a90second deadline with bounded
+probes. These bound observation/waits; killing a Docker client never proves its
+child rolled back. Phase history and possible-effect fences remain authoritative.
+Readiness includes expected inventory/release/registry and metadata verification,
+separate from process liveness. Actual native failure/restore and optional worker
+outage behavior retain their qualified proofs at the unchanged source boundaries.
+
+Jobs default to a30second lease and120second deadline. A running compatible
+runner sweeps on the next available claim iteration, normally at1second idle
+polling. A stopped runner has no reaping-time guarantee; the reference UI uses
+bounded observation and reports pending/unknown. No scheduler, OS scheduling or
+trusted native code preemption guarantee is implied. Current request/write and
+external result application recheck authority. Internal serializer snapshots
+expire within20ms and invalidate on exit or mutation; they are not cross-operation
+authorization caches.
+
+Structured diagnostic equivalents are recorded in
+[the read-only current sample](evidence/G7/20261104-observability-01/structured-diagnostics.json):
+
+| §24.2 requirement | Diagnostic source |
+| --- | --- |
+| Request latency/error rate | Retained800request benchmark, proxy/Werkzeug status and duration; audit request IDs |
+| Registry readiness/release | Guarded startup, expected inventory/release, independently verified native publication |
+| Plugin health | Scoped manager health projection; qualified optional-worker outage UI/errors |
+| Job depth/attempts/age | Current read-only aggregate sample and actor-authorized job state/progress |
+| Outbox failures/lag | Pending count/oldest age and delivery state/attempt aggregates; qualified G6 failures |
+| Deployment phase/duration | Independent UTC phase history, elapsed observation and stale warning |
+| DB saturation | Current pg_stat_activity counts and max_connections, without query bodies |
+| Worker CPU/memory | Actual four-container Docker resource samples |
+| UI mount/release errors | Structured code/request ID alert and qualified release mismatch/disposal behavior |
+
+The sample has one completed job and three pending outbox events; their actual
+age remains visible. It is a point-in-time observation, not a new publication
+test, metrics daemon or alert-delivery guarantee. No document bodies are logged.
+
+The performance slice is qualified; required work remaining outside it:
+
 - Browser/network, identity-cache and accessibility checks plus final G7 handoff.
+- Final operator-tool source-kit refresh and release/privacy closure.

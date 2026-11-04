@@ -17,6 +17,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
+sys.path.insert(0, str(ROOT / 'tools'))
 from modular_platform.artifacts import ArchiveLimits, ArtifactError, ArtifactValidator, TrustPolicy
 from modular_platform.catalog import Catalog
 from modular_platform.contracts import ContractError, load_json
@@ -246,6 +247,8 @@ def main(argv=None):
                     result = store.status(args.operation_id)
                 else:
                     result = store.status(args.operation_id)
+                    from operation_progress import read_observation
+                    result['executor_observation']=read_observation(store,args.operation_id)
         elif args.group == 'plugin' and args.action == 'plan-external':
             from datetime import datetime,timezone
             from uuid import uuid4
@@ -316,7 +319,9 @@ def main(argv=None):
                     result=recovery.revoke_review(decision,exact_hash=args.decision_hash)
                 else:
                     method = recovery.execute if args.recovery_action=='restore' else recovery.resume
-                    result = method(decision,exact_hash=args.decision_hash,noninteractive=args.noninteractive)
+                    from operation_progress import observe_execution
+                    with observe_execution(store,args.operation_id,args.recovery_action):
+                        result = method(decision,exact_hash=args.decision_hash,noninteractive=args.noninteractive)
         elif args.group == 'plugin' and args.action == 'apply':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.native_executor import NativeExecutor
@@ -337,7 +342,9 @@ def main(argv=None):
                 else:
                     from modular_platform.feature_executor import FeatureExecutor
                     executor=FeatureExecutor(executor)
-            result=executor.apply(args.operation_id)
+            from operation_progress import observe_execution
+            with observe_execution(store,args.operation_id,'apply'):
+                result=executor.apply(args.operation_id)
         elif args.group == 'plugin' and args.action == 'plan-current-install':
             from datetime import datetime, timezone
             from uuid import uuid4
