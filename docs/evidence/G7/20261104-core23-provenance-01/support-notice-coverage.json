@@ -1,0 +1,2877 @@
+{
+  "result": "passed_postgres_complete_notice_link_coverage_proxy_supplements_pending",
+  "postgres": {
+    "image": "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "packages": [
+      {
+        "name": "adduser",
+        "version": "3.134",
+        "architecture": "all",
+        "source_package": "adduser",
+        "source_version": "3.134",
+        "copyright": {
+          "requested_path": "usr/share/doc/adduser/copyright",
+          "resolved_path": "usr/share/doc/adduser/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b143053a4862ab354831487b5f8bd31dc9ffdc589d15de9d9c764332a0209796",
+          "bytes": 12432,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "apt",
+        "version": "2.6.1",
+        "architecture": "amd64",
+        "source_package": "apt",
+        "source_version": "2.6.1",
+        "copyright": {
+          "requested_path": "usr/share/doc/apt/copyright",
+          "resolved_path": "usr/share/doc/apt/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b4701305243d8d746f4acaafe15d94f946251b05691bd6917fef41dd15e9ee12",
+          "bytes": 7668,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "base-files",
+        "version": "12.4+deb12u15",
+        "architecture": "amd64",
+        "source_package": "base-files",
+        "source_version": "12.4+deb12u15",
+        "copyright": {
+          "requested_path": "usr/share/doc/base-files/copyright",
+          "resolved_path": "usr/share/doc/base-files/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "fd7e4aae7e7b05f217bcf2d02322825c360e66c52c4c2f1b28d784d6297a1c23",
+          "bytes": 1208,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "base-passwd",
+        "version": "3.6.1",
+        "architecture": "amd64",
+        "source_package": "base-passwd",
+        "source_version": "3.6.1",
+        "copyright": {
+          "requested_path": "usr/share/doc/base-passwd/copyright",
+          "resolved_path": "usr/share/doc/base-passwd/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "0f1cde79bd80a75f9029ae9a8c252b642223027ef36f6989c63a8230aae576a7",
+          "bytes": 798,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "bash",
+        "version": "5.2.15-2+b13",
+        "architecture": "amd64",
+        "source_package": "bash",
+        "source_version": "5.2.15-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/bash/copyright",
+          "resolved_path": "usr/share/doc/bash/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "06319d84c3e5ed096036f6a9310a030c7e84e50dff2b8a6792285c83ec0ada73",
+          "bytes": 9764,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "bsdutils",
+        "version": "1:2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/bsdutils/copyright",
+          "resolved_path": "usr/share/doc/bsdutils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "coreutils",
+        "version": "9.1-1",
+        "architecture": "amd64",
+        "source_package": "coreutils",
+        "source_version": "9.1-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/coreutils/copyright",
+          "resolved_path": "usr/share/doc/coreutils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "24e86c5ca53d6bfd8e0c47988160daa62d10a74997fe11f651e1d9533c78bff6",
+          "bytes": 5552,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "dash",
+        "version": "0.5.12-2",
+        "architecture": "amd64",
+        "source_package": "dash",
+        "source_version": "0.5.12-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/dash/copyright",
+          "resolved_path": "usr/share/doc/dash/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "d98c53f281321baad38164aa9ae6e368a9253be6ec51bd26a759b5e72b326f4a",
+          "bytes": 3878,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "debconf",
+        "version": "1.5.82",
+        "architecture": "all",
+        "source_package": "debconf",
+        "source_version": "1.5.82",
+        "copyright": {
+          "requested_path": "usr/share/doc/debconf/copyright",
+          "resolved_path": "usr/share/doc/debconf/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "57163c71bd8a5289660892827dd0dfaa7fef47f89deedc9dc6711ced7d0a28d7",
+          "bytes": 2764,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "debian-archive-keyring",
+        "version": "2023.3+deb12u2",
+        "architecture": "all",
+        "source_package": "debian-archive-keyring",
+        "source_version": "2023.3+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/debian-archive-keyring/copyright",
+          "resolved_path": "usr/share/doc/debian-archive-keyring/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b32aecaae84643700a33bc9ee83fa9b36938d35aa7b61b5042092eca77ddb732",
+          "bytes": 1243,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "debianutils",
+        "version": "5.7-0.5~deb12u1",
+        "architecture": "amd64",
+        "source_package": "debianutils",
+        "source_version": "5.7-0.5~deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/debianutils/copyright",
+          "resolved_path": "usr/share/doc/debianutils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "fd2d797e208bcfb713510e47a89867191180943e1167d44c2acd8ff1b88e5c10",
+          "bytes": 9055,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "diffutils",
+        "version": "1:3.8-4",
+        "architecture": "amd64",
+        "source_package": "diffutils",
+        "source_version": "1:3.8-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/diffutils/copyright",
+          "resolved_path": "usr/share/doc/diffutils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "8654d7cc7cdae1f31bb67a3ce5bf35d512c0bdfffd071df757edc54153cc7930",
+          "bytes": 16112,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "dirmngr",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/dirmngr/copyright",
+          "resolved_path": "usr/share/doc/dirmngr/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "dpkg",
+        "version": "1.21.23",
+        "architecture": "amd64",
+        "source_package": "dpkg",
+        "source_version": "1.21.23",
+        "copyright": {
+          "requested_path": "usr/share/doc/dpkg/copyright",
+          "resolved_path": "usr/share/doc/dpkg/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "7442bdadcd44e818fddd786057db07639cc68225c389c7c240d3bb3984b05173",
+          "bytes": 7943,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "e2fsprogs",
+        "version": "1.47.0-2+b2",
+        "architecture": "amd64",
+        "source_package": "e2fsprogs",
+        "source_version": "1.47.0-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/e2fsprogs/copyright",
+          "resolved_path": "usr/share/doc/e2fsprogs/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+          "bytes": 15209,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "findutils",
+        "version": "4.9.0-4",
+        "architecture": "amd64",
+        "source_package": "findutils",
+        "source_version": "4.9.0-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/findutils/copyright",
+          "resolved_path": "usr/share/doc/findutils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "8fbcc77ed31f480a85654e9b6d1d25cbb95b62e9dc5159ae1565bca684c3e1dc",
+          "bytes": 24782,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gcc-12-base",
+        "version": "12.2.0-14+deb12u1",
+        "architecture": "amd64",
+        "source_package": "gcc-12",
+        "source_version": "12.2.0-14+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/gcc-12-base/copyright",
+          "resolved_path": "usr/share/doc/gcc-12-base/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+          "bytes": 68194,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gnupg",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "all",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gnupg/copyright",
+          "resolved_path": "usr/share/doc/gnupg/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gnupg-l10n",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "all",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gnupg-l10n/copyright",
+          "resolved_path": "usr/share/doc/gnupg-l10n/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gnupg-utils",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gnupg-utils/copyright",
+          "resolved_path": "usr/share/doc/gnupg-utils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gpg",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gpg/copyright",
+          "resolved_path": "usr/share/doc/gpg/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gpg-agent",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gpg-agent/copyright",
+          "resolved_path": "usr/share/doc/gpg-agent/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gpg-wks-client",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gpg-wks-client/copyright",
+          "resolved_path": "usr/share/doc/gpg-wks-client/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gpg-wks-server",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gpg-wks-server/copyright",
+          "resolved_path": "usr/share/doc/gpg-wks-server/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gpgconf",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gpgconf/copyright",
+          "resolved_path": "usr/share/doc/gpgconf/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gpgsm",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gpgsm/copyright",
+          "resolved_path": "usr/share/doc/gpgsm/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gpgv",
+        "version": "2.2.40-1.1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "gnupg2",
+        "source_version": "2.2.40-1.1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/gpgv/copyright",
+          "resolved_path": "usr/share/doc/gpgv/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "84dab06b5c1baf3a7a45c3cdc5f98fb121234e98fdd6266c3f773d54fcdc4f54",
+          "bytes": 10555,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "grep",
+        "version": "3.8-5",
+        "architecture": "amd64",
+        "source_package": "grep",
+        "source_version": "3.8-5",
+        "copyright": {
+          "requested_path": "usr/share/doc/grep/copyright",
+          "resolved_path": "usr/share/doc/grep/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "42d9b4d610396b1e8d1303dcb9487af3f5a2d2709623cf03a04cf76acdf6c5e3",
+          "bytes": 1807,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "gzip",
+        "version": "1.12-1",
+        "architecture": "amd64",
+        "source_package": "gzip",
+        "source_version": "1.12-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/gzip/copyright",
+          "resolved_path": "usr/share/doc/gzip/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "1ca5dd5098fe2e1c0f0d05196f5b3da8b414a807702e6ca8b536eb5fd3059130",
+          "bytes": 2895,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "hostname",
+        "version": "3.23+nmu1",
+        "architecture": "amd64",
+        "source_package": "hostname",
+        "source_version": "3.23+nmu1",
+        "copyright": {
+          "requested_path": "usr/share/doc/hostname/copyright",
+          "resolved_path": "usr/share/doc/hostname/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "94189fc5a9a7b7224d96e1a0cfdfe9be0df2018b04bf21d591627ab96b30cad1",
+          "bytes": 1273,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "init-system-helpers",
+        "version": "1.65.2+deb12u1",
+        "architecture": "all",
+        "source_package": "init-system-helpers",
+        "source_version": "1.65.2+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/init-system-helpers/copyright",
+          "resolved_path": "usr/share/doc/init-system-helpers/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "7534601cc4fa513804d16490359f5831e7b6a1212da3bbf948bebdd4c8799783",
+          "bytes": 3133,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "less",
+        "version": "590-2.1~deb12u2",
+        "architecture": "amd64",
+        "source_package": "less",
+        "source_version": "590-2.1~deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/less/copyright",
+          "resolved_path": "usr/share/doc/less/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "e769e64d04abc3d772e5f397d2848d193c1e2015ff4ca92d7b73dfec8ca791a5",
+          "bytes": 4579,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libacl1",
+        "version": "2.3.1-3",
+        "architecture": "amd64",
+        "source_package": "acl",
+        "source_version": "2.3.1-3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libacl1/copyright",
+          "resolved_path": "usr/share/doc/libacl1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "9a2dfb4a5abc7e84be2cc41f1089be665519c9409549296f6c19de57ab1d37c2",
+          "bytes": 2048,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libapt-pkg6.0",
+        "version": "2.6.1",
+        "architecture": "amd64",
+        "source_package": "apt",
+        "source_version": "2.6.1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libapt-pkg6.0/copyright",
+          "resolved_path": "usr/share/doc/libapt-pkg6.0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b4701305243d8d746f4acaafe15d94f946251b05691bd6917fef41dd15e9ee12",
+          "bytes": 7668,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libassuan0",
+        "version": "2.5.5-5",
+        "architecture": "amd64",
+        "source_package": "libassuan",
+        "source_version": "2.5.5-5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libassuan0/copyright",
+          "resolved_path": "usr/share/doc/libassuan0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "4ebaa5bc59e454e68f4acd5af948938b9a0759cef31cc8d6afcec9c9fd1d10eb",
+          "bytes": 3388,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libattr1",
+        "version": "1:2.5.1-4",
+        "architecture": "amd64",
+        "source_package": "attr",
+        "source_version": "1:2.5.1-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/libattr1/copyright",
+          "resolved_path": "usr/share/doc/libattr1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "0cbec745d85ea775450b2d54fac55277197f429e52d611f72852ed420450620e",
+          "bytes": 1947,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libaudit-common",
+        "version": "1:3.0.9-1",
+        "architecture": "all",
+        "source_package": "audit",
+        "source_version": "1:3.0.9-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libaudit-common/copyright",
+          "resolved_path": "usr/share/doc/libaudit-common/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "6c7011e93f643b112c4cc3622131e28a30477afad6c4f5efe466b13aa7f603cc",
+          "bytes": 1596,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libaudit1",
+        "version": "1:3.0.9-1",
+        "architecture": "amd64",
+        "source_package": "audit",
+        "source_version": "1:3.0.9-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libaudit1/copyright",
+          "resolved_path": "usr/share/doc/libaudit1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "6c7011e93f643b112c4cc3622131e28a30477afad6c4f5efe466b13aa7f603cc",
+          "bytes": 1596,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libblkid1",
+        "version": "2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libblkid1/copyright",
+          "resolved_path": "usr/share/doc/libblkid1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libbsd0",
+        "version": "0.11.7-2",
+        "architecture": "amd64",
+        "source_package": "libbsd",
+        "source_version": "0.11.7-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libbsd0/copyright",
+          "resolved_path": "usr/share/doc/libbsd0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "00fd7be5d907a6bcc409a80f2d565f508673db4761d54623691f89ae3aa20fc7",
+          "bytes": 23960,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libbz2-1.0",
+        "version": "1.0.8-5+b1",
+        "architecture": "amd64",
+        "source_package": "bzip2",
+        "source_version": "1.0.8-5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libbz2-1.0/copyright",
+          "resolved_path": "usr/share/doc/libbz2-1.0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "832ed535ff3c3d025a8d2348eb1b697b89addcf2eaadbc17650262040b9145e2",
+          "bytes": 2228,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libc-bin",
+        "version": "2.36-9+deb12u14",
+        "architecture": "amd64",
+        "source_package": "glibc",
+        "source_version": "2.36-9+deb12u14",
+        "copyright": {
+          "requested_path": "usr/share/doc/libc-bin/copyright",
+          "resolved_path": "usr/share/doc/libc-bin/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "40c7e1f2118531f038ca22999bd976901254e1bc5cd1b0f0211bdd064c599987",
+          "bytes": 25467,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libc-l10n",
+        "version": "2.36-9+deb12u14",
+        "architecture": "all",
+        "source_package": "glibc",
+        "source_version": "2.36-9+deb12u14",
+        "copyright": {
+          "requested_path": "usr/share/doc/libc-l10n/copyright",
+          "resolved_path": "usr/share/doc/libc-l10n/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "40c7e1f2118531f038ca22999bd976901254e1bc5cd1b0f0211bdd064c599987",
+          "bytes": 25467,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libc6",
+        "version": "2.36-9+deb12u14",
+        "architecture": "amd64",
+        "source_package": "glibc",
+        "source_version": "2.36-9+deb12u14",
+        "copyright": {
+          "requested_path": "usr/share/doc/libc6/copyright",
+          "resolved_path": "usr/share/doc/libc6/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "40c7e1f2118531f038ca22999bd976901254e1bc5cd1b0f0211bdd064c599987",
+          "bytes": 25467,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libcap-ng0",
+        "version": "0.8.3-1+b3",
+        "architecture": "amd64",
+        "source_package": "libcap-ng",
+        "source_version": "0.8.3-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libcap-ng0/copyright",
+          "resolved_path": "usr/share/doc/libcap-ng0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "49b5db19990a3e3cc1a9ed716aed231f6f3c1c217e58f62ae4dc2818c6d3e9cc",
+          "bytes": 2035,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libcap2",
+        "version": "1:2.66-4+deb12u3+b1",
+        "architecture": "amd64",
+        "source_package": "libcap2",
+        "source_version": "1:2.66-4+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libcap2/copyright",
+          "resolved_path": "usr/share/doc/libcap2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "e60a5642e12e340060e4e519a65b2eb0330be2917854841c644e36268f607d54",
+          "bytes": 4631,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libcom-err2",
+        "version": "1.47.0-2+b2",
+        "architecture": "amd64",
+        "source_package": "e2fsprogs",
+        "source_version": "1.47.0-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libcom-err2/copyright",
+          "resolved_path": "usr/share/doc/libcom-err2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+          "bytes": 15209,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libcrypt1",
+        "version": "1:4.4.33-2",
+        "architecture": "amd64",
+        "source_package": "libxcrypt",
+        "source_version": "1:4.4.33-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libcrypt1/copyright",
+          "resolved_path": "usr/share/doc/libcrypt1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "5a5e7ca0e9f3f9679977e3a3e9ede45ad92885a3297ea78e766979f9866c5a16",
+          "bytes": 6010,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libdb5.3",
+        "version": "5.3.28+dfsg2-1",
+        "architecture": "amd64",
+        "source_package": "db5.3",
+        "source_version": "5.3.28+dfsg2-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libdb5.3/copyright",
+          "resolved_path": "usr/share/doc/libdb5.3/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "8b53da37d73289d9df7317b3a2dbe16491f1fa9fec8b77b86d69704b40ce2c26",
+          "bytes": 17177,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libdebconfclient0",
+        "version": "0.270",
+        "architecture": "amd64",
+        "source_package": "cdebconf",
+        "source_version": "0.270",
+        "copyright": {
+          "requested_path": "usr/share/doc/libdebconfclient0/copyright",
+          "resolved_path": "usr/share/doc/libdebconfclient0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "cf63099896d1c0f6529c41b8d95738e6fea342ffba609187d339c4f38ce36ecc",
+          "bytes": 5856,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libedit2",
+        "version": "3.1-20221030-2",
+        "architecture": "amd64",
+        "source_package": "libedit",
+        "source_version": "3.1-20221030-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libedit2/copyright",
+          "resolved_path": "usr/share/doc/libedit2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "2b53671050f6319be6fcdcafa434e8ccb8af629359b4afc83185867204f3927d",
+          "bytes": 1840,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libext2fs2",
+        "version": "1.47.0-2+b2",
+        "architecture": "amd64",
+        "source_package": "e2fsprogs",
+        "source_version": "1.47.0-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libext2fs2/copyright",
+          "resolved_path": "usr/share/doc/libext2fs2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+          "bytes": 15209,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libffi8",
+        "version": "3.4.4-1",
+        "architecture": "amd64",
+        "source_package": "libffi",
+        "source_version": "3.4.4-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libffi8/copyright",
+          "resolved_path": "usr/share/doc/libffi8/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "f83d2ecba1ea4d99957e81c50bebbd076a128194288a3ec22cc8ccdb77c43087",
+          "bytes": 10165,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libgcc-s1",
+        "version": "12.2.0-14+deb12u1",
+        "architecture": "amd64",
+        "source_package": "gcc-12",
+        "source_version": "12.2.0-14+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgcc-s1/copyright",
+          "resolved_path": "usr/share/doc/gcc-12-base/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+          "bytes": 68194,
+          "link_chain": [
+            {
+              "path": "usr/share/doc/libgcc-s1",
+              "target": "usr/share/doc/gcc-12-base"
+            }
+          ]
+        }
+      },
+      {
+        "name": "libgcrypt20",
+        "version": "1.10.1-3+deb12u1",
+        "architecture": "amd64",
+        "source_package": "libgcrypt20",
+        "source_version": "1.10.1-3+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgcrypt20/copyright",
+          "resolved_path": "usr/share/doc/libgcrypt20/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "95db2f9da663f2bfe2aabe9c72fce9d6c9ae767b912f397d7823f50bd55a1a7d",
+          "bytes": 24896,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libgdbm-compat4",
+        "version": "1.23-3",
+        "architecture": "amd64",
+        "source_package": "gdbm",
+        "source_version": "1.23-3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgdbm-compat4/copyright",
+          "resolved_path": "usr/share/doc/libgdbm-compat4/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "8bea8cf2f94cd8b37a0b8b3a2b974122b9194c1165e6ad508e366c74679e8817",
+          "bytes": 2701,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libgdbm6",
+        "version": "1.23-3",
+        "architecture": "amd64",
+        "source_package": "gdbm",
+        "source_version": "1.23-3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgdbm6/copyright",
+          "resolved_path": "usr/share/doc/libgdbm6/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "8bea8cf2f94cd8b37a0b8b3a2b974122b9194c1165e6ad508e366c74679e8817",
+          "bytes": 2701,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libgmp10",
+        "version": "2:6.2.1+dfsg1-1.1",
+        "architecture": "amd64",
+        "source_package": "gmp",
+        "source_version": "2:6.2.1+dfsg1-1.1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgmp10/copyright",
+          "resolved_path": "usr/share/doc/libgmp10/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "7d366aef5ba325150246de1d7820c4c9926cd27ca61a69948492b26cd3b61601",
+          "bytes": 4153,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libgnutls30",
+        "version": "3.7.9-2+deb12u7",
+        "architecture": "amd64",
+        "source_package": "gnutls28",
+        "source_version": "3.7.9-2+deb12u7",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgnutls30/copyright",
+          "resolved_path": "usr/share/doc/libgnutls30/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "bb7e5c24b3e27bbba5671dd710d159a0066833bda4caa1d55d8027ffed539337",
+          "bytes": 51588,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libgpg-error0",
+        "version": "1.46-1",
+        "architecture": "amd64",
+        "source_package": "libgpg-error",
+        "source_version": "1.46-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgpg-error0/copyright",
+          "resolved_path": "usr/share/doc/libgpg-error0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "8760fd36efa1d7186f8769d4e76a3e678045b94d54465bf6f2db5eb871c7c27f",
+          "bytes": 4903,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libgssapi-krb5-2",
+        "version": "1.20.1-2+deb12u5",
+        "architecture": "amd64",
+        "source_package": "krb5",
+        "source_version": "1.20.1-2+deb12u5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libgssapi-krb5-2/copyright",
+          "resolved_path": "usr/share/doc/libgssapi-krb5-2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+          "bytes": 63047,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libhogweed6",
+        "version": "3.8.1-2",
+        "architecture": "amd64",
+        "source_package": "nettle",
+        "source_version": "3.8.1-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libhogweed6/copyright",
+          "resolved_path": "usr/share/doc/libhogweed6/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "ca2ca597320220c00ef6dc0fe5d0d82025548d6d4ba80e85615eb691f9021f93",
+          "bytes": 24923,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libicu72",
+        "version": "72.1-3+deb12u1",
+        "architecture": "amd64",
+        "source_package": "icu",
+        "source_version": "72.1-3+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libicu72/copyright",
+          "resolved_path": "usr/share/doc/libicu72/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "5bbff5f646ce750ac0a347e7f91793279b7422a1119820b5f75d98879c201c68",
+          "bytes": 2214,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libidn2-0",
+        "version": "2.3.3-1+b1",
+        "architecture": "amd64",
+        "source_package": "libidn2",
+        "source_version": "2.3.3-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libidn2-0/copyright",
+          "resolved_path": "usr/share/doc/libidn2-0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "41702469f28e8ff406345e3d1dd0c741f11bdfca319264f67036efd6aaa79e4b",
+          "bytes": 5348,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libjson-perl",
+        "version": "4.10000-1",
+        "architecture": "all",
+        "source_package": "libjson-perl",
+        "source_version": "4.10000-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libjson-perl/copyright",
+          "resolved_path": "usr/share/doc/libjson-perl/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a386cd51aa512e321a9e132b0db989d19c43b090029f33f554f1c98785992584",
+          "bytes": 1391,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libk5crypto3",
+        "version": "1.20.1-2+deb12u5",
+        "architecture": "amd64",
+        "source_package": "krb5",
+        "source_version": "1.20.1-2+deb12u5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libk5crypto3/copyright",
+          "resolved_path": "usr/share/doc/libk5crypto3/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+          "bytes": 63047,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libkeyutils1",
+        "version": "1.6.3-2",
+        "architecture": "amd64",
+        "source_package": "keyutils",
+        "source_version": "1.6.3-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libkeyutils1/copyright",
+          "resolved_path": "usr/share/doc/libkeyutils1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "c62fe37d22203046611112bc10a9e03a39a7f73bec1b061e7c615326166d9ff5",
+          "bytes": 2104,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libkrb5-3",
+        "version": "1.20.1-2+deb12u5",
+        "architecture": "amd64",
+        "source_package": "krb5",
+        "source_version": "1.20.1-2+deb12u5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libkrb5-3/copyright",
+          "resolved_path": "usr/share/doc/libkrb5-3/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+          "bytes": 63047,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libkrb5support0",
+        "version": "1.20.1-2+deb12u5",
+        "architecture": "amd64",
+        "source_package": "krb5",
+        "source_version": "1.20.1-2+deb12u5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libkrb5support0/copyright",
+          "resolved_path": "usr/share/doc/libkrb5support0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "936728f4181718f42951b881c1e8f1386bf6b2723c4fbc533c374d6f42c71816",
+          "bytes": 63047,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libksba8",
+        "version": "1.6.3-2",
+        "architecture": "amd64",
+        "source_package": "libksba",
+        "source_version": "1.6.3-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libksba8/copyright",
+          "resolved_path": "usr/share/doc/libksba8/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b84c864ba35df1f3160ad00a4e4ee32e8a95783c3d3604301b2909163ff198cf",
+          "bytes": 4868,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libldap-2.5-0",
+        "version": "2.5.13+dfsg-5",
+        "architecture": "amd64",
+        "source_package": "openldap",
+        "source_version": "2.5.13+dfsg-5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libldap-2.5-0/copyright",
+          "resolved_path": "usr/share/doc/libldap-2.5-0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b4081907f0d9a4110736fa6540dc8ca9d7d60a20878b5d78f84916cc04907bdc",
+          "bytes": 62837,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libllvm19",
+        "version": "1:19.1.7-3~deb12u1",
+        "architecture": "amd64",
+        "source_package": "llvm-toolchain-19",
+        "source_version": "1:19.1.7-3~deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libllvm19/copyright",
+          "resolved_path": "usr/share/doc/libllvm19/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "4c22cf66ddd6dfae2ac4e034342f93a9c96581d5e88c7bb700a125a71cf66cd7",
+          "bytes": 6967,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "liblz4-1",
+        "version": "1.9.4-1",
+        "architecture": "amd64",
+        "source_package": "lz4",
+        "source_version": "1.9.4-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/liblz4-1/copyright",
+          "resolved_path": "usr/share/doc/liblz4-1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "d3be0f43fe14da244f97c451bbae789c0acf868612598a69f5f22a289abeca40",
+          "bytes": 3275,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "liblzma5",
+        "version": "5.4.1-1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "xz-utils",
+        "source_version": "5.4.1-1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/liblzma5/copyright",
+          "resolved_path": "usr/share/doc/liblzma5/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a2dc8fac0f496e1c58aff67018cf0c6b88336316afa5642f9335b71642e28aa8",
+          "bytes": 15465,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libmd0",
+        "version": "1.0.4-2",
+        "architecture": "amd64",
+        "source_package": "libmd",
+        "source_version": "1.0.4-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libmd0/copyright",
+          "resolved_path": "usr/share/doc/libmd0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "4365ef6255ad553fce69dd4bc0e093472c5d0e41b8ea493a545cc926ce171aa6",
+          "bytes": 8018,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libmount1",
+        "version": "2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libmount1/copyright",
+          "resolved_path": "usr/share/doc/libmount1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libncursesw6",
+        "version": "6.4-4",
+        "architecture": "amd64",
+        "source_package": "ncurses",
+        "source_version": "6.4-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/libncursesw6/copyright",
+          "resolved_path": "usr/share/doc/libtinfo6/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+          "bytes": 4670,
+          "link_chain": [
+            {
+              "path": "usr/share/doc/libncursesw6",
+              "target": "usr/share/doc/libtinfo6"
+            }
+          ]
+        }
+      },
+      {
+        "name": "libnettle8",
+        "version": "3.8.1-2",
+        "architecture": "amd64",
+        "source_package": "nettle",
+        "source_version": "3.8.1-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libnettle8/copyright",
+          "resolved_path": "usr/share/doc/libnettle8/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "ca2ca597320220c00ef6dc0fe5d0d82025548d6d4ba80e85615eb691f9021f93",
+          "bytes": 24923,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libnpth0",
+        "version": "1.6-3",
+        "architecture": "amd64",
+        "source_package": "npth",
+        "source_version": "1.6-3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libnpth0/copyright",
+          "resolved_path": "usr/share/doc/libnpth0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "df6909abb38f4e84d237d8617e948bdbb391b2004ecf573863011d54a88ccf22",
+          "bytes": 1164,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libnss-wrapper",
+        "version": "1.1.12-1",
+        "architecture": "amd64",
+        "source_package": "nss-wrapper",
+        "source_version": "1.1.12-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libnss-wrapper/copyright",
+          "resolved_path": "usr/share/doc/libnss-wrapper/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "8ad646968023de9a62351eba9ff206961f62afb5708cfb43d9c35f8262b559af",
+          "bytes": 2319,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libp11-kit0",
+        "version": "0.24.1-2",
+        "architecture": "amd64",
+        "source_package": "p11-kit",
+        "source_version": "0.24.1-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libp11-kit0/copyright",
+          "resolved_path": "usr/share/doc/libp11-kit0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "ed139379f7c874f0ee75f3ddcc2e01091dd828d84ee1a0bdff6a1c5673ee6e58",
+          "bytes": 8646,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libpam-modules",
+        "version": "1.5.2-6+deb12u2",
+        "architecture": "amd64",
+        "source_package": "pam",
+        "source_version": "1.5.2-6+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libpam-modules/copyright",
+          "resolved_path": "usr/share/doc/libpam-modules/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+          "bytes": 9477,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libpam-modules-bin",
+        "version": "1.5.2-6+deb12u2",
+        "architecture": "amd64",
+        "source_package": "pam",
+        "source_version": "1.5.2-6+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libpam-modules-bin/copyright",
+          "resolved_path": "usr/share/doc/libpam-modules-bin/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+          "bytes": 9477,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libpam-runtime",
+        "version": "1.5.2-6+deb12u2",
+        "architecture": "all",
+        "source_package": "pam",
+        "source_version": "1.5.2-6+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libpam-runtime/copyright",
+          "resolved_path": "usr/share/doc/libpam-runtime/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+          "bytes": 9477,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libpam0g",
+        "version": "1.5.2-6+deb12u2",
+        "architecture": "amd64",
+        "source_package": "pam",
+        "source_version": "1.5.2-6+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libpam0g/copyright",
+          "resolved_path": "usr/share/doc/libpam0g/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "9596b9028339d66c285422237728d6170e1e29d0b0d9adf0e9f1bda82e2391ce",
+          "bytes": 9477,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libpcre2-8-0",
+        "version": "10.42-1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "pcre2",
+        "source_version": "10.42-1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libpcre2-8-0/copyright",
+          "resolved_path": "usr/share/doc/libpcre2-8-0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "030511beb4d9d620ad09914c369c36ec0528dcf301d1923cc643c948ee7c6a38",
+          "bytes": 6626,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libperl5.36",
+        "version": "5.36.0-7+deb12u4",
+        "architecture": "amd64",
+        "source_package": "perl",
+        "source_version": "5.36.0-7+deb12u4",
+        "copyright": {
+          "requested_path": "usr/share/doc/libperl5.36/copyright",
+          "resolved_path": "usr/share/doc/libperl5.36/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b52f3ca17b45473cb0da6ec46748949101fcf0dda1fd5d8b306e6c97fd41af4d",
+          "bytes": 109772,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libpq5",
+        "version": "18.6-1.pgdg12+2",
+        "architecture": "amd64",
+        "source_package": "postgresql-18",
+        "source_version": "18.6-1.pgdg12+2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libpq5/copyright",
+          "resolved_path": "usr/share/doc/libpq5/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "afcc052a946b4117667527211b4ca303f07044f5585222f4c8f577e0764b2123",
+          "bytes": 12934,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libreadline8",
+        "version": "8.2-1.3",
+        "architecture": "amd64",
+        "source_package": "readline",
+        "source_version": "8.2-1.3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libreadline8/copyright",
+          "resolved_path": "usr/share/doc/libreadline8/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "3591a8e4de849d910c5ee9045388344ef151c23b10cf8c6b1950f89f1ba1569c",
+          "bytes": 4414,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libsasl2-2",
+        "version": "2.1.28+dfsg-10",
+        "architecture": "amd64",
+        "source_package": "cyrus-sasl2",
+        "source_version": "2.1.28+dfsg-10",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsasl2-2/copyright",
+          "resolved_path": "usr/share/doc/libsasl2-2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "5e77ddcac7fb682d696bc4b034dc2869e5a9011e8c2ed3c570ab8db0f4506931",
+          "bytes": 32354,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libsasl2-modules-db",
+        "version": "2.1.28+dfsg-10",
+        "architecture": "amd64",
+        "source_package": "cyrus-sasl2",
+        "source_version": "2.1.28+dfsg-10",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsasl2-modules-db/copyright",
+          "resolved_path": "usr/share/doc/libsasl2-modules-db/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "5e77ddcac7fb682d696bc4b034dc2869e5a9011e8c2ed3c570ab8db0f4506931",
+          "bytes": 32354,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libseccomp2",
+        "version": "2.5.4-1+deb12u1",
+        "architecture": "amd64",
+        "source_package": "libseccomp",
+        "source_version": "2.5.4-1+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libseccomp2/copyright",
+          "resolved_path": "usr/share/doc/libseccomp2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "6da0653a365b80ab31478dbfe9e7c358e80d58b6d2b52b4e16b4dbb42d7d9f5c",
+          "bytes": 1429,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libselinux1",
+        "version": "3.4-1+b6",
+        "architecture": "amd64",
+        "source_package": "libselinux",
+        "source_version": "3.4-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libselinux1/copyright",
+          "resolved_path": "usr/share/doc/libselinux1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "641806738b0c6a3d03168c2649e6b94205198bb66cd557e6bae3a20b71c9bb0b",
+          "bytes": 3131,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libsemanage-common",
+        "version": "3.4-1",
+        "architecture": "all",
+        "source_package": "libsemanage",
+        "source_version": "3.4-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsemanage-common/copyright",
+          "resolved_path": "usr/share/doc/libsemanage-common/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "e00e6a86c598f9e24ced0180a70a5f2f2e45e133d93adf2b17ce8a06ce4b1b51",
+          "bytes": 1830,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libsemanage2",
+        "version": "3.4-1+b5",
+        "architecture": "amd64",
+        "source_package": "libsemanage",
+        "source_version": "3.4-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsemanage2/copyright",
+          "resolved_path": "usr/share/doc/libsemanage2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "e00e6a86c598f9e24ced0180a70a5f2f2e45e133d93adf2b17ce8a06ce4b1b51",
+          "bytes": 1830,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libsepol2",
+        "version": "3.4-2.1",
+        "architecture": "amd64",
+        "source_package": "libsepol",
+        "source_version": "3.4-2.1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsepol2/copyright",
+          "resolved_path": "usr/share/doc/libsepol2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "78d2a34606a0302057ec499a3b3c07bcbc43ca334064ce4c80891a0f69c8f6c6",
+          "bytes": 3750,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libsmartcols1",
+        "version": "2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsmartcols1/copyright",
+          "resolved_path": "usr/share/doc/libsmartcols1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libsqlite3-0",
+        "version": "3.40.1-2+deb12u2",
+        "architecture": "amd64",
+        "source_package": "sqlite3",
+        "source_version": "3.40.1-2+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsqlite3-0/copyright",
+          "resolved_path": "usr/share/doc/libsqlite3-0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "78e9df8f8153c91c762ec970b82d224ac4d30f05aa7773e7e17e268141e53873",
+          "bytes": 1833,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libss2",
+        "version": "1.47.0-2+b2",
+        "architecture": "amd64",
+        "source_package": "e2fsprogs",
+        "source_version": "1.47.0-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libss2/copyright",
+          "resolved_path": "usr/share/doc/libss2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+          "bytes": 15209,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libssl3",
+        "version": "3.0.22-1~deb12u1",
+        "architecture": "amd64",
+        "source_package": "openssl",
+        "source_version": "3.0.22-1~deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libssl3/copyright",
+          "resolved_path": "usr/share/doc/libssl3/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "6a7da622fe0637a334d2a8fc470852d2ffb77d9a2b2f930f854e32a41ad6ef35",
+          "bytes": 2543,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libstdc++6",
+        "version": "12.2.0-14+deb12u1",
+        "architecture": "amd64",
+        "source_package": "gcc-12",
+        "source_version": "12.2.0-14+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libstdc++6/copyright",
+          "resolved_path": "usr/share/doc/gcc-12-base/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+          "bytes": 68194,
+          "link_chain": [
+            {
+              "path": "usr/share/doc/libstdc++6",
+              "target": "usr/share/doc/gcc-12-base"
+            }
+          ]
+        }
+      },
+      {
+        "name": "libsystemd0",
+        "version": "252.39-1~deb12u2",
+        "architecture": "amd64",
+        "source_package": "systemd",
+        "source_version": "252.39-1~deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libsystemd0/copyright",
+          "resolved_path": "usr/share/doc/libsystemd0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a7d06854714a1ca99f6dbd1a1641dde5bcf28635be149f6554449618f8f427f3",
+          "bytes": 12776,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libtasn1-6",
+        "version": "4.19.0-2+deb12u1",
+        "architecture": "amd64",
+        "source_package": "libtasn1-6",
+        "source_version": "4.19.0-2+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libtasn1-6/copyright",
+          "resolved_path": "usr/share/doc/libtasn1-6/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "572ad60ad184d8f52c6dc66d83a61a68f137db560b3452ce00588c9ecf128a65",
+          "bytes": 3451,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libtinfo6",
+        "version": "6.4-4",
+        "architecture": "amd64",
+        "source_package": "ncurses",
+        "source_version": "6.4-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/libtinfo6/copyright",
+          "resolved_path": "usr/share/doc/libtinfo6/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+          "bytes": 4670,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libudev1",
+        "version": "252.39-1~deb12u2",
+        "architecture": "amd64",
+        "source_package": "systemd",
+        "source_version": "252.39-1~deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libudev1/copyright",
+          "resolved_path": "usr/share/doc/libudev1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a7d06854714a1ca99f6dbd1a1641dde5bcf28635be149f6554449618f8f427f3",
+          "bytes": 12776,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libunistring2",
+        "version": "1.0-2",
+        "architecture": "amd64",
+        "source_package": "libunistring",
+        "source_version": "1.0-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/libunistring2/copyright",
+          "resolved_path": "usr/share/doc/libunistring2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "0035f89e5317f3cec389383e8727788521b0fde3e75cea881fa0e92e1d48cb57",
+          "bytes": 6068,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libuuid1",
+        "version": "2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/libuuid1/copyright",
+          "resolved_path": "usr/share/doc/libuuid1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libxml2",
+        "version": "2.9.14+dfsg-1.3~deb12u6",
+        "architecture": "amd64",
+        "source_package": "libxml2",
+        "source_version": "2.9.14+dfsg-1.3~deb12u6",
+        "copyright": {
+          "requested_path": "usr/share/doc/libxml2/copyright",
+          "resolved_path": "usr/share/doc/libxml2/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "ee746b96cfa5be73c3ea3e4cfb1285e9b315d4c9267f99b2ee9c5d911d9fe3f4",
+          "bytes": 3067,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libxslt1.1",
+        "version": "1.1.35-1+deb12u4",
+        "architecture": "amd64",
+        "source_package": "libxslt",
+        "source_version": "1.1.35-1+deb12u4",
+        "copyright": {
+          "requested_path": "usr/share/doc/libxslt1.1/copyright",
+          "resolved_path": "usr/share/doc/libxslt1.1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "4b82c8dd6e55001a5921bea1d6db20be5c51e5976d892e870324026c23f37b6f",
+          "bytes": 3282,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libxxhash0",
+        "version": "0.8.1-1",
+        "architecture": "amd64",
+        "source_package": "xxhash",
+        "source_version": "0.8.1-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libxxhash0/copyright",
+          "resolved_path": "usr/share/doc/libxxhash0/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a123c93b07e781919ae996276ac02bb1c8b19dfde88176cd1240ab277c14a4ce",
+          "bytes": 2579,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libz3-4",
+        "version": "4.8.12-3.1",
+        "architecture": "amd64",
+        "source_package": "z3",
+        "source_version": "4.8.12-3.1",
+        "copyright": {
+          "requested_path": "usr/share/doc/libz3-4/copyright",
+          "resolved_path": "usr/share/doc/libz3-4/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "807f874c81a0dbce7d4e32b1a4e1ef1e094b9a3fe8579f34e60fda4f2077289c",
+          "bytes": 2283,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "libzstd1",
+        "version": "1.5.4+dfsg2-5",
+        "architecture": "amd64",
+        "source_package": "libzstd",
+        "source_version": "1.5.4+dfsg2-5",
+        "copyright": {
+          "requested_path": "usr/share/doc/libzstd1/copyright",
+          "resolved_path": "usr/share/doc/libzstd1/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "35e85e8e9bbb71492c5f5dddf39ed65b68775a02ad8d710c25d097b497f06c49",
+          "bytes": 5389,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "locales",
+        "version": "2.36-9+deb12u14",
+        "architecture": "all",
+        "source_package": "glibc",
+        "source_version": "2.36-9+deb12u14",
+        "copyright": {
+          "requested_path": "usr/share/doc/locales/copyright",
+          "resolved_path": "usr/share/doc/locales/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "40c7e1f2118531f038ca22999bd976901254e1bc5cd1b0f0211bdd064c599987",
+          "bytes": 25467,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "login",
+        "version": "1:4.13+dfsg1-1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "shadow",
+        "source_version": "1:4.13+dfsg1-1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/login/copyright",
+          "resolved_path": "usr/share/doc/login/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a4c3e5b19700dd3cc5961663d204bd7150f65f913314682aede5931548c436d5",
+          "bytes": 7044,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "logsave",
+        "version": "1.47.0-2+b2",
+        "architecture": "amd64",
+        "source_package": "e2fsprogs",
+        "source_version": "1.47.0-2",
+        "copyright": {
+          "requested_path": "usr/share/doc/logsave/copyright",
+          "resolved_path": "usr/share/doc/logsave/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "1ca415a294c0e56958c4f795b3f1f69ea3479bca53d7811f5cdd020a258949db",
+          "bytes": 15209,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "mawk",
+        "version": "1.3.4.20200120-3.1",
+        "architecture": "amd64",
+        "source_package": "mawk",
+        "source_version": "1.3.4.20200120-3.1",
+        "copyright": {
+          "requested_path": "usr/share/doc/mawk/copyright",
+          "resolved_path": "usr/share/doc/mawk/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "167d04422f2fdf76ab565878c23be8ba0c2ebb2c57a5dac0a5a59ccd27e747a5",
+          "bytes": 22591,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "mount",
+        "version": "2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/mount/copyright",
+          "resolved_path": "usr/share/doc/mount/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "ncurses-base",
+        "version": "6.4-4",
+        "architecture": "all",
+        "source_package": "ncurses",
+        "source_version": "6.4-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/ncurses-base/copyright",
+          "resolved_path": "usr/share/doc/ncurses-base/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+          "bytes": 4670,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "ncurses-bin",
+        "version": "6.4-4",
+        "architecture": "amd64",
+        "source_package": "ncurses",
+        "source_version": "6.4-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/ncurses-bin/copyright",
+          "resolved_path": "usr/share/doc/ncurses-bin/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "f0974fb41778e23c94111ff90da0546de8971f8270c58877283d372e6bd7f17e",
+          "bytes": 4670,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "netbase",
+        "version": "6.4",
+        "architecture": "all",
+        "source_package": "netbase",
+        "source_version": "6.4",
+        "copyright": {
+          "requested_path": "usr/share/doc/netbase/copyright",
+          "resolved_path": "usr/share/doc/netbase/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "795b66147ea5ad692991caa7008ece551fb0fa88b9c53656223bd1518dc58ab2",
+          "bytes": 1234,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "openssl",
+        "version": "3.0.22-1~deb12u1",
+        "architecture": "amd64",
+        "source_package": "openssl",
+        "source_version": "3.0.22-1~deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/openssl/copyright",
+          "resolved_path": "usr/share/doc/openssl/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "6a7da622fe0637a334d2a8fc470852d2ffb77d9a2b2f930f854e32a41ad6ef35",
+          "bytes": 2543,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "passwd",
+        "version": "1:4.13+dfsg1-1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "shadow",
+        "source_version": "1:4.13+dfsg1-1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/passwd/copyright",
+          "resolved_path": "usr/share/doc/passwd/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a4c3e5b19700dd3cc5961663d204bd7150f65f913314682aede5931548c436d5",
+          "bytes": 7044,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "perl",
+        "version": "5.36.0-7+deb12u4",
+        "architecture": "amd64",
+        "source_package": "perl",
+        "source_version": "5.36.0-7+deb12u4",
+        "copyright": {
+          "requested_path": "usr/share/doc/perl/copyright",
+          "resolved_path": "usr/share/doc/perl/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b52f3ca17b45473cb0da6ec46748949101fcf0dda1fd5d8b306e6c97fd41af4d",
+          "bytes": 109772,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "perl-base",
+        "version": "5.36.0-7+deb12u4",
+        "architecture": "amd64",
+        "source_package": "perl",
+        "source_version": "5.36.0-7+deb12u4",
+        "copyright": {
+          "requested_path": "usr/share/doc/perl-base/copyright",
+          "resolved_path": "usr/share/doc/perl-base/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b52f3ca17b45473cb0da6ec46748949101fcf0dda1fd5d8b306e6c97fd41af4d",
+          "bytes": 109772,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "perl-modules-5.36",
+        "version": "5.36.0-7+deb12u4",
+        "architecture": "all",
+        "source_package": "perl",
+        "source_version": "5.36.0-7+deb12u4",
+        "copyright": {
+          "requested_path": "usr/share/doc/perl-modules-5.36/copyright",
+          "resolved_path": "usr/share/doc/perl-modules-5.36/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b52f3ca17b45473cb0da6ec46748949101fcf0dda1fd5d8b306e6c97fd41af4d",
+          "bytes": 109772,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "pinentry-curses",
+        "version": "1.2.1-1",
+        "architecture": "amd64",
+        "source_package": "pinentry",
+        "source_version": "1.2.1-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/pinentry-curses/copyright",
+          "resolved_path": "usr/share/doc/pinentry-curses/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "77de76c8641705a00dd174939155bc26b6cfa03e3d6a2d8d41990940a59fad82",
+          "bytes": 5775,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "postgresql-16",
+        "version": "16.15-1.pgdg12+2",
+        "architecture": "amd64",
+        "source_package": "postgresql-16",
+        "source_version": "16.15-1.pgdg12+2",
+        "copyright": {
+          "requested_path": "usr/share/doc/postgresql-16/copyright",
+          "resolved_path": "usr/share/doc/postgresql-16/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "afcc052a946b4117667527211b4ca303f07044f5585222f4c8f577e0764b2123",
+          "bytes": 12934,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "postgresql-client-16",
+        "version": "16.15-1.pgdg12+2",
+        "architecture": "amd64",
+        "source_package": "postgresql-16",
+        "source_version": "16.15-1.pgdg12+2",
+        "copyright": {
+          "requested_path": "usr/share/doc/postgresql-client-16/copyright",
+          "resolved_path": "usr/share/doc/postgresql-client-16/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "afcc052a946b4117667527211b4ca303f07044f5585222f4c8f577e0764b2123",
+          "bytes": 12934,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "postgresql-client-common",
+        "version": "293.pgdg12+1",
+        "architecture": "all",
+        "source_package": "postgresql-common",
+        "source_version": "293.pgdg12+1",
+        "copyright": {
+          "requested_path": "usr/share/doc/postgresql-client-common/copyright",
+          "resolved_path": "usr/share/doc/postgresql-client-common/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "292dcc67fc22ad11156da2b7a154da74b65e63e0f673f3d301a5ed6df85327fe",
+          "bytes": 812,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "postgresql-common",
+        "version": "293.pgdg12+1",
+        "architecture": "all",
+        "source_package": "postgresql-common",
+        "source_version": "293.pgdg12+1",
+        "copyright": {
+          "requested_path": "usr/share/doc/postgresql-common/copyright",
+          "resolved_path": "usr/share/doc/postgresql-common/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "292dcc67fc22ad11156da2b7a154da74b65e63e0f673f3d301a5ed6df85327fe",
+          "bytes": 812,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "readline-common",
+        "version": "8.2-1.3",
+        "architecture": "all",
+        "source_package": "readline",
+        "source_version": "8.2-1.3",
+        "copyright": {
+          "requested_path": "usr/share/doc/readline-common/copyright",
+          "resolved_path": "usr/share/doc/readline-common/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "3591a8e4de849d910c5ee9045388344ef151c23b10cf8c6b1950f89f1ba1569c",
+          "bytes": 4414,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "sed",
+        "version": "4.9-1+deb12u1",
+        "architecture": "amd64",
+        "source_package": "sed",
+        "source_version": "4.9-1+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/sed/copyright",
+          "resolved_path": "usr/share/doc/sed/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "719320e425e8e6da53a55e0fcfa2f2ed9b1332cea16abd65321bd651b2a88568",
+          "bytes": 8618,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "sensible-utils",
+        "version": "0.0.17+nmu1",
+        "architecture": "all",
+        "source_package": "sensible-utils",
+        "source_version": "0.0.17+nmu1",
+        "copyright": {
+          "requested_path": "usr/share/doc/sensible-utils/copyright",
+          "resolved_path": "usr/share/doc/sensible-utils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a3f046d279b767f56f9bfbd7bdc66561be99da2c52a4d78cda108c58f975f1b5",
+          "bytes": 5427,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "ssl-cert",
+        "version": "1.1.2",
+        "architecture": "all",
+        "source_package": "ssl-cert",
+        "source_version": "1.1.2",
+        "copyright": {
+          "requested_path": "usr/share/doc/ssl-cert/copyright",
+          "resolved_path": "usr/share/doc/ssl-cert/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "b99b8bf533b7f509c0087da904b7c5a35373cf2cf5691c274368520318500a12",
+          "bytes": 1867,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "sysvinit-utils",
+        "version": "3.06-4",
+        "architecture": "amd64",
+        "source_package": "sysvinit",
+        "source_version": "3.06-4",
+        "copyright": {
+          "requested_path": "usr/share/doc/sysvinit-utils/copyright",
+          "resolved_path": "usr/share/doc/sysvinit-utils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "ad7cb339e58a88918a883d553ca236795191f027e158788a8b33f747ff502fb2",
+          "bytes": 4689,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "tar",
+        "version": "1.34+dfsg-1.2+deb12u1",
+        "architecture": "amd64",
+        "source_package": "tar",
+        "source_version": "1.34+dfsg-1.2+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/tar/copyright",
+          "resolved_path": "usr/share/doc/tar/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "bea61e0c172868e07845cf50423f97f093a9a46de167dbbe333a38be610c8e00",
+          "bytes": 3798,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "tzdata",
+        "version": "2026c-0+deb12u1",
+        "architecture": "all",
+        "source_package": "tzdata",
+        "source_version": "2026c-0+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/tzdata/copyright",
+          "resolved_path": "usr/share/doc/tzdata/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "cb61132bc0fc7b26ef5a82ee18b2fb644a1362f4f286ed980ff22e408471f59a",
+          "bytes": 375,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "ucf",
+        "version": "3.0043+nmu1+deb12u1",
+        "architecture": "all",
+        "source_package": "ucf",
+        "source_version": "3.0043+nmu1+deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/ucf/copyright",
+          "resolved_path": "usr/share/doc/ucf/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "67dd4031ca283ba2f0def195329740f237e7ba30ef26e3dce3afa7f73cb62c8b",
+          "bytes": 4161,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "usr-is-merged",
+        "version": "37~deb12u1",
+        "architecture": "all",
+        "source_package": "usrmerge",
+        "source_version": "37~deb12u1",
+        "copyright": {
+          "requested_path": "usr/share/doc/usr-is-merged/copyright",
+          "resolved_path": "usr/share/doc/usr-is-merged/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "9836bfe2ef94505bbf29701e8c90799ab1a5fd966d26d60d019a822cdbf3d61a",
+          "bytes": 987,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "util-linux",
+        "version": "2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/util-linux/copyright",
+          "resolved_path": "usr/share/doc/util-linux/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "util-linux-extra",
+        "version": "2.38.1-5+deb12u3",
+        "architecture": "amd64",
+        "source_package": "util-linux",
+        "source_version": "2.38.1-5+deb12u3",
+        "copyright": {
+          "requested_path": "usr/share/doc/util-linux-extra/copyright",
+          "resolved_path": "usr/share/doc/util-linux-extra/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "30539a2df6a89d844f43c727505a3193a60515f8ec6cdede8cc515ed22941d1c",
+          "bytes": 23237,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "xz-utils",
+        "version": "5.4.1-1+deb12u2",
+        "architecture": "amd64",
+        "source_package": "xz-utils",
+        "source_version": "5.4.1-1+deb12u2",
+        "copyright": {
+          "requested_path": "usr/share/doc/xz-utils/copyright",
+          "resolved_path": "usr/share/doc/xz-utils/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "a2dc8fac0f496e1c58aff67018cf0c6b88336316afa5642f9335b71642e28aa8",
+          "bytes": 15465,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "zlib1g",
+        "version": "1:1.2.13.dfsg-1",
+        "architecture": "amd64",
+        "source_package": "zlib",
+        "source_version": "1:1.2.13.dfsg-1",
+        "copyright": {
+          "requested_path": "usr/share/doc/zlib1g/copyright",
+          "resolved_path": "usr/share/doc/zlib1g/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "9e5b96d63773a5d177ba264254390f792be07e41748ebd94730981c6cac31cc6",
+          "bytes": 2927,
+          "link_chain": []
+        }
+      },
+      {
+        "name": "zstd",
+        "version": "1.5.4+dfsg2-5",
+        "architecture": "amd64",
+        "source_package": "libzstd",
+        "source_version": "1.5.4+dfsg2-5",
+        "copyright": {
+          "requested_path": "usr/share/doc/zstd/copyright",
+          "resolved_path": "usr/share/doc/zstd/copyright",
+          "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+          "sha256": "35e85e8e9bbb71492c5f5dddf39ed65b68775a02ad8d710c25d097b497f06c49",
+          "bytes": 5389,
+          "link_chain": []
+        }
+      }
+    ],
+    "packages_with_notices": 144,
+    "reused_archive": ".local/g7-image-secret-audit-01/postgres-documentation.zip",
+    "archive_sha256": "c19f3e34e6d5e749344f2d4135643211410be50dcff2047d2ae5738aa32232e1",
+    "exact_documentation_aliases": 3
+  },
+  "proxy": {
+    "image": "modular-platform-proxy@sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+    "packages": [
+      {
+        "name": "alpine-baselayout",
+        "version": "3.7.2-r1",
+        "origin": "alpine-baselayout",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "60a7585bbab2fa0f762504eb617dbca90216e31f",
+        "description": "Alpine base dir structure and init scripts"
+      },
+      {
+        "name": "alpine-baselayout-data",
+        "version": "3.7.2-r1",
+        "origin": "alpine-baselayout",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "60a7585bbab2fa0f762504eb617dbca90216e31f",
+        "description": "Alpine base dir structure and init scripts"
+      },
+      {
+        "name": "alpine-keys",
+        "version": "2.6-r0",
+        "origin": "alpine-keys",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "b9f23becced4d7b3ccc0fa0f28530243ccd314a0",
+        "description": "Public keys for Alpine Linux packages"
+      },
+      {
+        "name": "alpine-release",
+        "version": "3.24.3-r0",
+        "origin": "alpine-base",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "ee92350c8a4509152dc91c693814215a884c07c3",
+        "description": "Alpine release data"
+      },
+      {
+        "name": "aom-libs",
+        "version": "3.14.1-r0",
+        "origin": "aom",
+        "license": "BSD-2-Clause AND custom",
+        "architecture": "x86_64",
+        "source_commit": "ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e",
+        "description": "Alliance for Open Media (AOM) AV1 codec SDK (libraries)"
+      },
+      {
+        "name": "apk-tools",
+        "version": "3.0.8-r0",
+        "origin": "apk-tools",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "4588b452722bd4800efdc6cce4f6e980e02a997f",
+        "description": "Alpine Package Keeper - package manager for alpine"
+      },
+      {
+        "name": "brotli-libs",
+        "version": "1.2.1-r0",
+        "origin": "brotli",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "8313352127992a9d82e2c2024494f6c38a4dffb4",
+        "description": "Generic lossless compressor (libraries)"
+      },
+      {
+        "name": "busybox",
+        "version": "1.37.0-r31",
+        "origin": "busybox",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+        "description": "Size optimized toolbox of many common UNIX utilities"
+      },
+      {
+        "name": "busybox-binsh",
+        "version": "1.37.0-r31",
+        "origin": "busybox",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+        "description": "busybox ash /bin/sh"
+      },
+      {
+        "name": "c-ares",
+        "version": "1.34.9-r0",
+        "origin": "c-ares",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "50f178d7a4c30ea44b54b7d4731ab58558c38b14",
+        "description": "Asynchronous DNS/names resolver library"
+      },
+      {
+        "name": "ca-certificates",
+        "version": "20261020-r0",
+        "origin": "ca-certificates",
+        "license": "MPL-2.0 AND MIT",
+        "architecture": "x86_64",
+        "source_commit": "e78f5987166c6ffbe23f6472e2e8f040298fe2da",
+        "description": "Common CA certificates PEM files from Mozilla"
+      },
+      {
+        "name": "ca-certificates-bundle",
+        "version": "20261020-r0",
+        "origin": "ca-certificates",
+        "license": "MPL-2.0 AND MIT",
+        "architecture": "x86_64",
+        "source_commit": "e78f5987166c6ffbe23f6472e2e8f040298fe2da",
+        "description": "Pre generated bundle of Mozilla certificates"
+      },
+      {
+        "name": "curl",
+        "version": "8.23.0-r0",
+        "origin": "curl",
+        "license": "curl",
+        "architecture": "x86_64",
+        "source_commit": "c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce",
+        "description": "URL retrieval utility and library"
+      },
+      {
+        "name": "fontconfig",
+        "version": "2.17.1-r1",
+        "origin": "fontconfig",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "07061cb5a28861b108b09adc09ebd4fd962e549f",
+        "description": "Library for configuring and customizing font access"
+      },
+      {
+        "name": "freetype",
+        "version": "2.14.3-r0",
+        "origin": "freetype",
+        "license": "FTL OR GPL-2.0-or-later",
+        "architecture": "x86_64",
+        "source_commit": "ad16b0afc1a315c4095a75ff72ebbe3cfa29b671",
+        "description": "TrueType font rendering library"
+      },
+      {
+        "name": "geoip",
+        "version": "1.6.12-r6",
+        "origin": "geoip",
+        "license": "LGPL-2.1-or-later",
+        "architecture": "x86_64",
+        "source_commit": "6db81e6559d66572861f28962c24459c4a583da1",
+        "description": "Lookup countries by IP addresses"
+      },
+      {
+        "name": "gettext-envsubst",
+        "version": "1.0-r0",
+        "origin": "gettext",
+        "license": "GPL-3.0-or-later AND LGPL-2.1-or-later AND MIT",
+        "architecture": "x86_64",
+        "source_commit": "a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391",
+        "description": "GNU gettext envsubst binary"
+      },
+      {
+        "name": "libapk",
+        "version": "3.0.8-r0",
+        "origin": "apk-tools",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "4588b452722bd4800efdc6cce4f6e980e02a997f",
+        "description": "Alpine Package Keeper - package manager for alpine"
+      },
+      {
+        "name": "libavif",
+        "version": "1.4.1-r0",
+        "origin": "libavif",
+        "license": "BSD-2-Clause",
+        "architecture": "x86_64",
+        "source_commit": "7c091e42619c47958002c5de53dd7f02dd4c83ac",
+        "description": "Library for encoding and decoding .avif files"
+      },
+      {
+        "name": "libbsd",
+        "version": "0.12.2-r0",
+        "origin": "libbsd",
+        "license": "BSD-3-Clause",
+        "architecture": "x86_64",
+        "source_commit": "02365e78d654a7beb23fd35d7d69f4a649009ede",
+        "description": "commonly-used BSD functions not implemented by all libcs"
+      },
+      {
+        "name": "libbz2",
+        "version": "1.0.8-r6",
+        "origin": "bzip2",
+        "license": "bzip2-1.0.6",
+        "architecture": "x86_64",
+        "source_commit": "33283848034c9885d984c8e8697c645c57324938",
+        "description": "Shared library for bz2"
+      },
+      {
+        "name": "libcrypto3",
+        "version": "3.5.9-r0",
+        "origin": "openssl",
+        "license": "Apache-2.0",
+        "architecture": "x86_64",
+        "source_commit": "29b9ec24b1b5b39aeef51fa2a044210e2ec5258e",
+        "description": "Crypto library from openssl"
+      },
+      {
+        "name": "libcurl",
+        "version": "8.23.0-r0",
+        "origin": "curl",
+        "license": "curl",
+        "architecture": "x86_64",
+        "source_commit": "c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce",
+        "description": "The multiprotocol file transfer library"
+      },
+      {
+        "name": "libdav1d",
+        "version": "1.5.3-r0",
+        "origin": "dav1d",
+        "license": "BSD-2-Clause",
+        "architecture": "x86_64",
+        "source_commit": "6a13170ddff8fdf27712aa7d0e5437aa2407ff56",
+        "description": "small and fast AV1 Decoder (libraries)"
+      },
+      {
+        "name": "libedit",
+        "version": "20260508.3.1-r1",
+        "origin": "libedit",
+        "license": "BSD-3-Clause",
+        "architecture": "x86_64",
+        "source_commit": "7c805161e588c028cdee3f19f500849fb2c75d42",
+        "description": "BSD line editing library"
+      },
+      {
+        "name": "libexpat",
+        "version": "2.10.0-r0",
+        "origin": "expat",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "af0fa42036cd6e626768c0d65fddaa1d1b30cf21",
+        "description": "XML Parser library written in C (libraries)"
+      },
+      {
+        "name": "libgcc",
+        "version": "15.2.0-r5",
+        "origin": "gcc",
+        "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+        "architecture": "x86_64",
+        "source_commit": "423a8ad043d07f2c7546c8ec3e2b0384cda360ae",
+        "description": "GNU C compiler runtime libraries"
+      },
+      {
+        "name": "libgd",
+        "version": "2.3.3-r10",
+        "origin": "gd",
+        "license": "GD",
+        "architecture": "x86_64",
+        "source_commit": "bf4ebac970366eda6cc26aa61c8dddae0d6916ee",
+        "description": "Library for the dynamic creation of images by programmers (libraries)"
+      },
+      {
+        "name": "libice",
+        "version": "1.1.2-r0",
+        "origin": "libice",
+        "license": "X11",
+        "architecture": "x86_64",
+        "source_commit": "d4941e833167c30aa1172e6d8420d084698254ab",
+        "description": "X11 Inter-Client Exchange library"
+      },
+      {
+        "name": "libidn2",
+        "version": "2.3.8-r0",
+        "origin": "libidn2",
+        "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+        "architecture": "x86_64",
+        "source_commit": "8240e09aa2fdd8f9979b2016be082273965aff0c",
+        "description": "Encode/Decode library for internationalized domain names"
+      },
+      {
+        "name": "libintl",
+        "version": "1.0-r0",
+        "origin": "gettext",
+        "license": "LGPL-2.1-or-later",
+        "architecture": "x86_64",
+        "source_commit": "a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391",
+        "description": "GNU gettext runtime library"
+      },
+      {
+        "name": "libjpeg-turbo",
+        "version": "3.1.3-r0",
+        "origin": "libjpeg-turbo",
+        "license": "BSD-3-Clause AND IJG AND Zlib",
+        "architecture": "x86_64",
+        "source_commit": "5fe6bebf850fc964a8525c81548397c39cb6f7cd",
+        "description": "Accelerated baseline JPEG compression and decompression library"
+      },
+      {
+        "name": "libmd",
+        "version": "1.2.0-r0",
+        "origin": "libmd",
+        "license": "BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND Public Domain",
+        "architecture": "x86_64",
+        "source_commit": "87b78bc6890645c317d3167bdbb0187502d0cda9",
+        "description": "Message Digest functions from BSD systems"
+      },
+      {
+        "name": "libncursesw",
+        "version": "6.6_p20260516-r0",
+        "origin": "ncurses",
+        "license": "X11",
+        "architecture": "x86_64",
+        "source_commit": "2cee8a7328d061418336ad327b512d96bcd7bc5e",
+        "description": "Console display library (libncursesw)"
+      },
+      {
+        "name": "libpng",
+        "version": "1.6.59-r0",
+        "origin": "libpng",
+        "license": "Libpng",
+        "architecture": "x86_64",
+        "source_commit": "8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b",
+        "description": "Portable Network Graphics library"
+      },
+      {
+        "name": "libpsl",
+        "version": "0.21.5-r3",
+        "origin": "libpsl",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+        "description": "C library for the Publix Suffix List"
+      },
+      {
+        "name": "libsharpyuv",
+        "version": "1.6.0-r0",
+        "origin": "libwebp",
+        "license": "BSD-3-Clause",
+        "architecture": "x86_64",
+        "source_commit": "af8b48fabd19b69b00f5efe192f461896a38cf74",
+        "description": "Libraries for working with WebP images (libsharpyuv library)"
+      },
+      {
+        "name": "libsm",
+        "version": "1.2.6-r0",
+        "origin": "libsm",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "4eaa957537767ad0344894ad0e609068b26bf85d",
+        "description": "X11 Session Management library"
+      },
+      {
+        "name": "libssl3",
+        "version": "3.5.9-r0",
+        "origin": "openssl",
+        "license": "Apache-2.0",
+        "architecture": "x86_64",
+        "source_commit": "29b9ec24b1b5b39aeef51fa2a044210e2ec5258e",
+        "description": "SSL shared libraries"
+      },
+      {
+        "name": "libstdc++",
+        "version": "15.2.0-r5",
+        "origin": "gcc",
+        "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+        "architecture": "x86_64",
+        "source_commit": "423a8ad043d07f2c7546c8ec3e2b0384cda360ae",
+        "description": "GNU C++ standard runtime library"
+      },
+      {
+        "name": "libunistring",
+        "version": "1.4.2-r0",
+        "origin": "libunistring",
+        "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+        "architecture": "x86_64",
+        "source_commit": "30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c",
+        "description": "Library for manipulating Unicode strings and C strings"
+      },
+      {
+        "name": "libuuid",
+        "version": "2.42.3-r1",
+        "origin": "util-linux",
+        "license": "BSD-3-Clause",
+        "architecture": "x86_64",
+        "source_commit": "d98c55af59055e6ca60fbe36e171546918709965",
+        "description": "DCE compatible Universally Unique Identifier library"
+      },
+      {
+        "name": "libwebp",
+        "version": "1.6.0-r0",
+        "origin": "libwebp",
+        "license": "BSD-3-Clause",
+        "architecture": "x86_64",
+        "source_commit": "af8b48fabd19b69b00f5efe192f461896a38cf74",
+        "description": "Libraries for working with WebP images"
+      },
+      {
+        "name": "libx11",
+        "version": "1.8.14-r0",
+        "origin": "libx11",
+        "license": "X11",
+        "architecture": "x86_64",
+        "source_commit": "e129d974905f6cf078e41390b58241a73519f572",
+        "description": "X11 client-side library"
+      },
+      {
+        "name": "libxau",
+        "version": "1.0.12-r0",
+        "origin": "libxau",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+        "description": "X11 authorisation library"
+      },
+      {
+        "name": "libxcb",
+        "version": "1.17.0-r2",
+        "origin": "libxcb",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1",
+        "description": "X11 client-side library"
+      },
+      {
+        "name": "libxdmcp",
+        "version": "1.1.5-r1",
+        "origin": "libxdmcp",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "614e9166706cec427fc3d907b8d981390a42e088",
+        "description": "X11 Display Manager Control Protocol library"
+      },
+      {
+        "name": "libxext",
+        "version": "1.3.7-r0",
+        "origin": "libxext",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942",
+        "description": "X11 miscellaneous extensions library"
+      },
+      {
+        "name": "libxml2",
+        "version": "2.13.9-r2",
+        "origin": "libxml2",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "f1bd5b6767a0e7fdda380c95138a1c938eb6e102",
+        "description": "XML parsing library, version 2"
+      },
+      {
+        "name": "libxpm",
+        "version": "3.5.20-r0",
+        "origin": "libxpm",
+        "license": "X11",
+        "architecture": "x86_64",
+        "source_commit": "f5d3a71d8949514ce4a8057ae2002180a6f42321",
+        "description": "X11 pixmap library"
+      },
+      {
+        "name": "libxslt",
+        "version": "1.1.43-r3",
+        "origin": "libxslt",
+        "license": "X11",
+        "architecture": "x86_64",
+        "source_commit": "730f2f5bdc97be98b2beee33f55134c622e6189c",
+        "description": "XML stylesheet transformation library"
+      },
+      {
+        "name": "libxt",
+        "version": "1.3.1-r0",
+        "origin": "libxt",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "60222ebeadec75e483e49194130c6963d0fcbf75",
+        "description": "X11 toolkit intrinsics library"
+      },
+      {
+        "name": "libyuv",
+        "version": "0.0.1928-r0",
+        "origin": "libyuv",
+        "license": "BSD-3-Clause",
+        "architecture": "x86_64",
+        "source_commit": "6d055fa770a2fbbd807ee496c4dc8c69d00fbee4",
+        "description": "Library for YUV scaling"
+      },
+      {
+        "name": "musl",
+        "version": "1.2.6-r3",
+        "origin": "musl",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "8f79d39391b46d6dbf1800fb68b8212a21d5ee2e",
+        "description": "the musl c library (libc) implementation"
+      },
+      {
+        "name": "musl-utils",
+        "version": "1.2.6-r3",
+        "origin": "musl",
+        "license": "MIT AND BSD-2-Clause AND GPL-2.0-or-later",
+        "architecture": "x86_64",
+        "source_commit": "8f79d39391b46d6dbf1800fb68b8212a21d5ee2e",
+        "description": "the musl c library (libc) implementation"
+      },
+      {
+        "name": "ncurses-terminfo-base",
+        "version": "6.6_p20260516-r0",
+        "origin": "ncurses",
+        "license": "X11",
+        "architecture": "x86_64",
+        "source_commit": "2cee8a7328d061418336ad327b512d96bcd7bc5e",
+        "description": "Descriptions of common terminals"
+      },
+      {
+        "name": "nghttp2-libs",
+        "version": "1.70.0-r0",
+        "origin": "nghttp2",
+        "license": "MIT",
+        "architecture": "x86_64",
+        "source_commit": "d5a34efc88bbe8d18737fda28125071c4aef8517",
+        "description": "HTTP/2 C client, server and proxy (libraries)"
+      },
+      {
+        "name": "nginx",
+        "version": "1.30.6-r1",
+        "origin": "nginx",
+        "license": "2-clause BSD-like license",
+        "architecture": "x86_64",
+        "source_commit": null,
+        "description": "High performance web server"
+      },
+      {
+        "name": "nginx-module-acme",
+        "version": "1.30.6.0.4.1-r1",
+        "origin": "nginx-module-acme",
+        "license": "2-clause BSD-like license",
+        "architecture": "x86_64",
+        "source_commit": null,
+        "description": "nginx nginx-acme"
+      },
+      {
+        "name": "nginx-module-geoip",
+        "version": "1.30.6-r1",
+        "origin": "nginx-module-geoip",
+        "license": "2-clause BSD-like license",
+        "architecture": "x86_64",
+        "source_commit": null,
+        "description": "nginx GeoIP dynamic modules"
+      },
+      {
+        "name": "nginx-module-image-filter",
+        "version": "1.30.6-r1",
+        "origin": "nginx-module-image-filter",
+        "license": "2-clause BSD-like license",
+        "architecture": "x86_64",
+        "source_commit": null,
+        "description": "nginx image filter dynamic module"
+      },
+      {
+        "name": "nginx-module-njs",
+        "version": "1.30.6.1.0.2-r1",
+        "origin": "nginx-module-njs",
+        "license": "2-clause BSD-like license",
+        "architecture": "x86_64",
+        "source_commit": null,
+        "description": "nginx njs dynamic modules"
+      },
+      {
+        "name": "nginx-module-xslt",
+        "version": "1.30.6-r1",
+        "origin": "nginx-module-xslt",
+        "license": "2-clause BSD-like license",
+        "architecture": "x86_64",
+        "source_commit": null,
+        "description": "nginx xslt dynamic module"
+      },
+      {
+        "name": "pcre2",
+        "version": "10.49-r0",
+        "origin": "pcre2",
+        "license": "BSD-3-Clause",
+        "architecture": "x86_64",
+        "source_commit": "3d497cbb3217749c4fb85f90f3b6f7908b0c1f95",
+        "description": "Perl-compatible regular expression library"
+      },
+      {
+        "name": "scanelf",
+        "version": "1.3.9-r1",
+        "origin": "pax-utils",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "c61801eeacb3ffcd9c2025b09e402153bb93fb39",
+        "description": "Scan ELF binaries for stuff"
+      },
+      {
+        "name": "ssl_client",
+        "version": "1.37.0-r31",
+        "origin": "busybox",
+        "license": "GPL-2.0-only",
+        "architecture": "x86_64",
+        "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+        "description": "External ssl_client for busybox wget"
+      },
+      {
+        "name": "tiff",
+        "version": "4.7.2-r0",
+        "origin": "tiff",
+        "license": "libtiff",
+        "architecture": "x86_64",
+        "source_commit": "bbcfbafeadf5dac4744d065ac69338c1b58fc0d1",
+        "description": "Support for the Tag Image File Format or TIFF"
+      },
+      {
+        "name": "tzdata",
+        "version": "2026e-r0",
+        "origin": "tzdata",
+        "license": "Public-Domain",
+        "architecture": "x86_64",
+        "source_commit": "faa135a1a22c90309bf381766a7cc47490dea786",
+        "description": "Timezone data"
+      },
+      {
+        "name": "xz-libs",
+        "version": "5.8.4-r0",
+        "origin": "xz",
+        "license": "GPL-2.0-or-later AND 0BSD AND Public-Domain AND LGPL-2.1-or-later",
+        "architecture": "x86_64",
+        "source_commit": "0c088d609f9fe69eedd6b4c7f4b99cdad847c20a",
+        "description": "Library and CLI tools for XZ and LZMA compressed files (libraries)"
+      },
+      {
+        "name": "zlib",
+        "version": "1.3.2-r1",
+        "origin": "zlib",
+        "license": "Zlib",
+        "architecture": "x86_64",
+        "source_commit": "0afa2da0e8c8051c6f8f64a7a388e5a259904245",
+        "description": "A compression/decompression Library"
+      },
+      {
+        "name": "zstd-libs",
+        "version": "1.5.7-r2",
+        "origin": "zstd",
+        "license": "BSD-3-Clause OR GPL-2.0-or-later",
+        "architecture": "x86_64",
+        "source_commit": "3c6e2ee2b16f403d53eab39c4426eb61f003c322",
+        "description": "Zstandard - Fast real-time compression algorithm (libraries)"
+      }
+    ],
+    "source_collection_sha256": "bd33be13cc7bfda41747aa4cf5bd1e672bb52a1011391f77a59b2f59160eb864",
+    "shipped_documents": [
+      {
+        "path": "usr/share/doc/nginx-module-njs/CHANGES",
+        "bytes": 87474,
+        "sha256": "36f82e28b5628edc98667f451a82b1d1400707457bcc2a5eb5402f50846b588f"
+      },
+      {
+        "path": "usr/share/licenses/nginx/COPYRIGHT",
+        "bytes": 1377,
+        "sha256": "4f72e2bccf0bcd839dd447ab6f359336f428caa1987a9afec2bc9ade5711658a"
+      },
+      {
+        "path": "usr/share/licenses/nginx-module-acme/COPYRIGHT",
+        "bytes": 11357,
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+      },
+      {
+        "path": "usr/share/licenses/nginx-module-geoip/COPYRIGHT",
+        "bytes": 1377,
+        "sha256": "4f72e2bccf0bcd839dd447ab6f359336f428caa1987a9afec2bc9ade5711658a"
+      },
+      {
+        "path": "usr/share/licenses/nginx-module-xslt/COPYRIGHT",
+        "bytes": 1377,
+        "sha256": "4f72e2bccf0bcd839dd447ab6f359336f428caa1987a9afec2bc9ade5711658a"
+      },
+      {
+        "path": "usr/share/licenses/nginx-module-njs/COPYRIGHT",
+        "bytes": 1485,
+        "sha256": "bf0746e75035cc2b9c3346feb08fd7aa414c088719c00e76734c6d7fe9c0647d"
+      },
+      {
+        "path": "usr/share/licenses/nginx-module-image-filter/COPYRIGHT",
+        "bytes": 1377,
+        "sha256": "4f72e2bccf0bcd839dd447ab6f359336f428caa1987a9afec2bc9ade5711658a"
+      }
+    ],
+    "archive_sha256": "c59c6ba3ba9ee35d96ebe7b799dd1a1908004c6a8a2041a281662f4c9dce71f9",
+    "missing_standalone_notice_supplements_require_review": true
+  },
+  "no_new_collector_or_archive": true,
+  "limits": [
+    "All144 PostgreSQL package copyright paths resolve to141 preserved actual files; three directory aliases are explicit, not missing notices.",
+    "Alpine metadata declares licenses but does not supply all upstream license text. Exact source-origin/commit supplements remain required before OPS03.",
+    "Notice/source preservation only; no proprietary relicensing, publication permission or legal compatibility opinion."
+  ]
+}

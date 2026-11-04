@@ -1,0 +1,17 @@
+{
+  "result": "exact_expat_canonical_recipe_unavailable",
+  "source_commit": "af0fa42036cd6e626768c0d65fddaa1d1b30cf21",
+  "found": null,
+  "attempts": [
+    {
+      "url": "https://gitlab.alpinelinux.org/alpine/aports/-/raw/af0fa42036cd6e626768c0d65fddaa1d1b30cf21/main/expat/APKBUILD",
+      "status": 418
+    },
+    {
+      "url": "https://git.alpinelinux.org/aports/plain/main/expat/APKBUILD?id=af0fa42036cd6e626768c0d65fddaa1d1b30cf21",
+      "status": 403
+    }
+  ],
+  "moving_revision_used": false,
+  "shell_executed": false
+}

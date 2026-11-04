@@ -1,0 +1,119 @@
+{
+  "result": "passed_declared_additional_sources_and_referenced_freetype_license_texts",
+  "additional_source_archives": [
+    {
+      "origin": "freetype",
+      "source_archive": "ft2demos-2.14.3.tar.xz",
+      "source_sha512": "e59c1266010330a8cbfd25dec096a72ce7539b64f9c057de062a281261b3ad658240f58e75b53d7a880d7ad5e020206316a6e9e82b03dec2e4d999f3f56cb39a",
+      "recipe_sha256": "f3a9cd80e85de497c7811222fbdb2ce5805b8fbc4866b214171e10ee809c8609",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/ft2demos-2.14.3.tar.xz",
+      "notices": [],
+      "result": "verified_additional_source_no_standalone_notice",
+      "origin_primary_notices": [
+        {
+          "member": "freetype-2.14.3/LICENSE.TXT",
+          "bytes": 2149,
+          "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b",
+          "path": "third_party/alpine-notices/texts/bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b.txt"
+        }
+      ]
+    },
+    {
+      "origin": "libavif",
+      "source_archive": "libavif-libargparse-ee74d1b53bd680748af14e737378de57e2a0a954.tar.gz",
+      "source_sha512": "6d6e47f4c1a63f085a90bc4d9f6dca7462f5e72d2a4a3b7a6d6df54632edbd4a9deb8f9b8c08517031b0c9ca89e0a1b48bb35261b3e660e4601e28a39f8e7ef1",
+      "recipe_sha256": "aaea4dbac842846447a5231e49da67c7a5a8e7acfdfcc38158cb7fcd3b1e3bda",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libavif-libargparse-ee74d1b53bd680748af14e737378de57e2a0a954.tar.gz",
+      "notices": [
+        {
+          "member": "libargparse-ee74d1b53bd680748af14e737378de57e2a0a954/LICENSE.md",
+          "bytes": 1072,
+          "sha256": "8a31ece065fe8c44b777e017da52e64bd0d803b1e5a7e38f66ecb043b7200333",
+          "path": "third_party/alpine-notices/texts/8a31ece065fe8c44b777e017da52e64bd0d803b1e5a7e38f66ecb043b7200333.txt"
+        }
+      ],
+      "result": "verified_additional_source_notices_preserved",
+      "origin_primary_notices": [
+        {
+          "member": "libavif-1.4.1/LICENSE",
+          "bytes": 20415,
+          "sha256": "165abf92cc04b39e80d29cadea7a6a7e8fddf59407d4ad2616507a7ebe8216f9",
+          "path": "third_party/alpine-notices/texts/165abf92cc04b39e80d29cadea7a6a7e8fddf59407d4ad2616507a7ebe8216f9.txt"
+        },
+        {
+          "member": "libavif-1.4.1/third_party/libyuv/AUTHORS",
+          "bytes": 148,
+          "sha256": "406e9dee7651ff7a415ef126fe6f649b29312ea3f2b28f11bb7f0bf458edb3bd",
+          "path": "third_party/alpine-notices/texts/406e9dee7651ff7a415ef126fe6f649b29312ea3f2b28f11bb7f0bf458edb3bd.txt"
+        }
+      ]
+    },
+    {
+      "origin": "tzdata",
+      "source_archive": "tzdata2026e.tar.gz",
+      "source_sha512": "5be2f875f73b75e5783c474bf7a6c768e433cc90283f8fc6a75e3d05bd92aec97936e8a55ccca5e880b5dacc18ba65932bab0e783e1ed5d2af4a3a4df95512be",
+      "recipe_sha256": "5752b55671903e735f429367a0dc4673cf78562ef4cf5d358838f56de286a7c8",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/tzdata2026e.tar.gz",
+      "notices": [
+        {
+          "member": "LICENSE",
+          "bytes": 252,
+          "sha256": "0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf",
+          "path": "third_party/alpine-notices/texts/0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf.txt"
+        }
+      ],
+      "result": "verified_additional_source_notices_preserved",
+      "origin_primary_notices": [
+        {
+          "member": "LICENSE",
+          "bytes": 252,
+          "sha256": "0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf",
+          "path": "third_party/alpine-notices/texts/0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf.txt"
+        }
+      ]
+    },
+    {
+      "origin": "tzdata",
+      "source_archive": "posixtz-0.5.tar.xz",
+      "source_sha512": "68dbaab9f4aef166ac2f2d40b49366527b840bebe17a47599fe38345835e4adb8a767910745ece9c384b57af815a871243c3e261a29f41d71f8054df3061b3fd",
+      "recipe_sha256": "5752b55671903e735f429367a0dc4673cf78562ef4cf5d358838f56de286a7c8",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/posixtz-0.5.tar.xz",
+      "notices": [],
+      "result": "verified_additional_source_no_standalone_notice",
+      "origin_primary_notices": [
+        {
+          "member": "LICENSE",
+          "bytes": 252,
+          "sha256": "0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf",
+          "path": "third_party/alpine-notices/texts/0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf.txt"
+        }
+      ]
+    }
+  ],
+  "referenced_license_files": [
+    {
+      "origin": "freetype",
+      "source_sha512": "43de86ea70b4b47f6efaae67f3440f65a24ffac29dc6d11203a9764e4f1a749ce1ba7645acd23525220b3ba12ddad8687b962b9f1254e2c0a86070854e85d5a0",
+      "member": "freetype-2.14.3/docs/FTL.TXT",
+      "sha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f",
+      "bytes": 6743,
+      "path": "third_party/alpine-notices/texts/5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f.txt"
+    },
+    {
+      "origin": "freetype",
+      "source_sha512": "43de86ea70b4b47f6efaae67f3440f65a24ffac29dc6d11203a9764e4f1a749ce1ba7645acd23525220b3ba12ddad8687b962b9f1254e2c0a86070854e85d5a0",
+      "member": "freetype-2.14.3/docs/GPLv2.TXT",
+      "sha256": "c4120c6752c910c299e3bd9cb3a46ff262c268303ca2069b61f92f10a5656c18",
+      "bytes": 17994,
+      "path": "third_party/alpine-notices/texts/c4120c6752c910c299e3bd9cb3a46ff262c268303ca2069b61f92f10a5656c18.txt"
+    }
+  ],
+  "owned_reader_source_sha256": "77d81fc71ff2bfdb85afbeaafdd165c757a3b671400c5af7452f3049b7d8dde2",
+  "owned_reader_adapted_sha256": "d06734197b84d83f9dbbe9099287933f26979d62785713061e1c6ac8ae2bceb4",
+  "upstream_scripts_executed": false,
+  "source_installed": false,
+  "limits": [
+    "Only exact declared additional source checksums are accepted; an existing completed transfer is reused after full SHA512 verification. No shell evaluation.",
+    "Alpine base/key/source-header and Expat notice coverage remain separate obligations."
+  ]
+}

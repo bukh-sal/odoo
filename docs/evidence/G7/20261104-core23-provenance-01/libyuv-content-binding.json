@@ -1,0 +1,64 @@
+{
+  "result": "passed_exact_libyuv_recipe_prescribed_source_content_digest",
+  "origin": "libyuv",
+  "source_commit": "94644361b4fc21befdadbf425a5d256b17f20565",
+  "recipe": {
+    "origin": "libyuv",
+    "source_commit": "6d055fa770a2fbbd807ee496c4dc8c69d00fbee4",
+    "packages": [
+      "libyuv"
+    ],
+    "installed_versions": [
+      "0.0.1928-r0"
+    ],
+    "declared": {
+      "pkgver": "0.0.1928",
+      "pkgrel": "0",
+      "license": "BSD-3-Clause",
+      "url": "https://chromium.googlesource.com/libyuv/libyuv/"
+    },
+    "declared_version": "0.0.1928-r0",
+    "version_matches_literal": true,
+    "url": "https://raw.githubusercontent.com/alpinelinux/aports/6d055fa770a2fbbd807ee496c4dc8c69d00fbee4/main/libyuv/APKBUILD",
+    "sha256": "f1ee165c6c826e2666d043347ccea96a882677d1140e10ebbcb360415a202dc6",
+    "bytes": 2884,
+    "private_file": ".local/g7-proxy-source-notices-01/libyuv-6d055fa770a2fbbd807ee496c4dc8c69d00fbee4.APKBUILD",
+    "attempts": [
+      {
+        "url": "https://raw.githubusercontent.com/alpinelinux/aports/6d055fa770a2fbbd807ee496c4dc8c69d00fbee4/main/libyuv/APKBUILD",
+        "status": 200
+      }
+    ],
+    "result": "recipe_preserved_as_data"
+  },
+  "raw_archive_sha512": "956db6b968a405d5bcd9fd50c2a1ab9765abf5971fb5c707703a1162706a3b82c0965949171d5cbea73ed6963accf76896378c8f38651104e580da0ef5a4c5b6",
+  "raw_archive_checksum_mismatch_retained": true,
+  "recipe_content_sha512": "b92d034854b4b1f5b67ec10aec9ff242c5a46597fc1f02e92feb9defa73fe863abd6c45140e54cb4b76a5831830bcaf695eff44c6362faedd47817051683f80d",
+  "actual_content_sha512": "b92d034854b4b1f5b67ec10aec9ff242c5a46597fc1f02e92feb9defa73fe863abd6c45140e54cb4b76a5831830bcaf695eff44c6362faedd47817051683f80d",
+  "ordered_regular_files": 190,
+  "notices": [
+    {
+      "member": "AUTHORS",
+      "bytes": 179,
+      "sha256": "0c4a51c72a06b3431bb2b750e3b04dbe3694b22e2fcae6e370216424eec56d52",
+      "path": "third_party/alpine-notices/texts/0c4a51c72a06b3431bb2b750e3b04dbe3694b22e2fcae6e370216424eec56d52.txt"
+    },
+    {
+      "member": "LICENSE",
+      "bytes": 1506,
+      "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
+      "path": "third_party/alpine-notices/texts/2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f.txt"
+    },
+    {
+      "member": "PATENTS",
+      "bytes": 1387,
+      "sha256": "4da84211f947c6f9f7dd8fbce513e1522e01833407ae732b8c9a2bbb75fed495",
+      "path": "third_party/alpine-notices/texts/4da84211f947c6f9f7dd8fbce513e1522e01833407ae732b8c9a2bbb75fed495.txt"
+    }
+  ],
+  "recipe_or_shell_executed": false,
+  "explanation": "The exact installed recipe explicitly bypasses the timestamp-varying Gitiles TAR digest and checks concatenated sorted regular-file contents before patches. The same content digest is verified here without executing its shell.",
+  "limits": [
+    "Specific to this exact recipe/content hash. Generic checksum mismatches remain refused. No build or source patch is executed."
+  ]
+}

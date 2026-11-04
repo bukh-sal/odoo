@@ -1,0 +1,435 @@
+{
+  "result": "passed_complete_retained_source_input_accounting",
+  "archives": 53,
+  "bytes": 266459466,
+  "records": [
+    {
+      "origin": "aom",
+      "path": ".local/g7-proxy-source-notices-01/archives/libaom-3.14.1.tar.gz",
+      "bytes": 6368868,
+      "actual_archive_sha512": "a4c3427db0bb4cd49b8873ffae0a287570b86d6f0733da52798b08470519755ffe08198222be86d3bc8c9bd0052477017dc595b98bbbd77f76bfe7b9ce48d7fa",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "apk-tools",
+      "path": ".local/g7-proxy-source-notices-01/archives/apk-tools-v3.0.8.tar.gz",
+      "bytes": 390114,
+      "actual_archive_sha512": "3616435508dead5240f8d9fe74e87e2aa93262f9e466f50af8f60100e166403393b1e491c115395864d4179b219699831ecb61dc60960b5dfb1f10816d75f95f",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "brotli",
+      "path": ".local/g7-proxy-source-notices-01/archives/brotli-1.2.1.tar.gz",
+      "bytes": 646598,
+      "actual_archive_sha512": "460591287d428c8b5a8a2766b5b424d14501fcda12c7118b8f3cc4bfae44b90ac75ca156557f07b6e22542612724d904533e5f70019be07dbbb604c46f03ab69",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "busybox",
+      "path": ".local/g7-proxy-source-notices-01/archives/busybox-1.37.0.tar.bz2",
+      "bytes": 2565764,
+      "actual_archive_sha512": "ad8fd06f082699774f990a53d7a73b189ed404fe0a2166aff13eae4d9d8ee5c9239493befe949c98801fe7897520dbff3ed0224faa7205854ce4fa975e18467e",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "bzip2",
+      "path": ".local/g7-proxy-source-notices-01/archives/bzip2-1.0.8.tar.gz",
+      "bytes": 810029,
+      "actual_archive_sha512": "083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "c-ares",
+      "path": ".local/g7-proxy-source-notices-01/archives/c-ares-1.34.9.tar.gz",
+      "bytes": 1083895,
+      "actual_archive_sha512": "f4be5818d14cec48e96cc66d3f7dea3de60e3ae3d990972cf2e055140ad995a3bbf38f2a6ffd5c671f04b5f105f28ef022af721477a2d126be0803355c7c297a",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "ca-certificates",
+      "path": ".local/g7-proxy-source-notices-01/archives/ca-certificates-20261020.tar.bz2",
+      "bytes": 230531,
+      "actual_archive_sha512": "d28eb01751b1a914ffb5d8cb99e662f0a35a95148c21dcf98de1ab3108b54db9714a99472d07715023867f4f76a21f2a79a2bc1c7e9876ce5167fdd865ad2dd7",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "curl",
+      "path": ".local/g7-proxy-source-notices-01/archives/curl-8.23.0.tar.xz",
+      "bytes": 2990916,
+      "actual_archive_sha512": "69cf0feafdc79fbad007cf2fc977b777ce6ccb05d01afd17b5a42f8bedbfcc342fc3a48193faa7f3eafe6800cd7d07948916e8733db1b9de60287ed06219b840",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "dav1d",
+      "path": ".local/g7-proxy-source-notices-01/archives/dav1d-1.5.3.tar.gz",
+      "bytes": 1713950,
+      "actual_archive_sha512": "8d976b93135213d41385c20205475269a6826a68ebfd716c4d9a7a3ff2a79703e8df0573e43207c81b5db44807d2721db18ec84c0fc6bef98efab86a2cccb6cc",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "fontconfig",
+      "path": ".local/g7-proxy-source-notices-01/archives/fontconfig-2.17.1.tar.xz",
+      "bytes": 1326312,
+      "actual_archive_sha512": "c09c1f041f61ee0d220ff906a86b5c4b329106dc96f8c04b23f8fdeb480df626717fe3613bccb41cb39e86334078139322710377f5ddaa3abe48569e798161c9",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "freetype",
+      "path": ".local/g7-proxy-source-notices-01/archives/freetype-2.14.3.tar.xz",
+      "bytes": 2670220,
+      "actual_archive_sha512": "43de86ea70b4b47f6efaae67f3440f65a24ffac29dc6d11203a9764e4f1a749ce1ba7645acd23525220b3ba12ddad8687b962b9f1254e2c0a86070854e85d5a0",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "gcc",
+      "path": ".local/g7-proxy-source-notices-01/archives/gcc-15.2.0.tar.xz",
+      "bytes": 101056276,
+      "actual_archive_sha512": "89047a2e07bd9da265b507b516ed3635adb17491c7f4f67cf090f0bd5b3fc7f2ee6e4cc4008beef7ca884b6b71dffe2bb652b21f01a702e17b468cca2d10b2de",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "gd",
+      "path": ".local/g7-proxy-source-notices-01/archives/libgd-2.3.3.tar.xz",
+      "bytes": 2809056,
+      "actual_archive_sha512": "aa49d4381d604a4360d556419d603df2ffd689a6dcc10f8e5e1d158ddaa3ab89912f6077ca77da4e370055074007971cf6d356ec9bf26dcf39bcff3208bc7e6c",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "geoip",
+      "path": ".local/g7-proxy-source-notices-01/archives/GeoIP-1.6.12.tar.gz",
+      "bytes": 473914,
+      "actual_archive_sha512": "a1c8120692a7ba6de5836550917f86f4797dd236a8b7d71b6f92b5389e4b071d89e57036654f5de1d4b762730a2a5c331c31414eab0c889c9befaa097941fee7",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "gettext",
+      "path": ".local/g7-proxy-source-notices-01/archives/gettext-1.0.tar.xz",
+      "bytes": 10721600,
+      "actual_archive_sha512": "fa657faf5685dae7121a9b0293d3308a3910a72b90943a7a493b88cf88e95f29c5758e1573320169fe9beac6f101ef76f4165a279a7f3294155d7a773e2fa09f",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libavif",
+      "path": ".local/g7-proxy-source-notices-01/archives/libavif-v1.4.1.tar.gz",
+      "bytes": 14528943,
+      "actual_archive_sha512": "103a54cbc20a1ae1c948bf5e09cb7696b966c55445f9fd951207fbf651039ebd56e0ad04a6fdf5538299af5ee96339a760fe1cb904af47f51072642a750fd699",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libbsd",
+      "path": ".local/g7-proxy-source-notices-01/archives/libbsd-0.12.2.tar.xz",
+      "bytes": 446032,
+      "actual_archive_sha512": "ce43e4f0486d5f00d4a8119ee863eaaa2f968cae4aa3d622976bb31ad601dfc565afacef7ebade5eba33fff1c329b5296c6387c008d1e1805d878431038f8b21",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libedit",
+      "path": ".local/g7-proxy-source-notices-01/archives/libedit-20260508-3.1.tar.gz",
+      "bytes": 550497,
+      "actual_archive_sha512": "862d24687eb0dfd30735c34ce56bf8f64302e1c65835cac67656a97535317e1d29eec2c1ef271d7b971bdab872afc6d13d0b055982fd3d958c73e96afc87d10a",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libice",
+      "path": ".local/g7-proxy-source-notices-01/archives/libICE-1.1.2.tar.xz",
+      "bytes": 342900,
+      "actual_archive_sha512": "340f51ffa1f14ed442ab8bcea92dd63df147c48242e232e818cafe02f43de7ab6e99c5430b9cb8d0dc661295239d2b3f6bdb6a092ce51a98afa06235257e9b1f",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libidn2",
+      "path": ".local/g7-proxy-source-notices-01/archives/libidn2-2.3.8.tar.gz",
+      "bytes": 2234804,
+      "actual_archive_sha512": "4d8427c0f115268132f7544e80a808c883ab1406338f6c529b1a586b016d57aedb0857f66166eb8d9f37d70efc9dccf907b673b43b17bcf258c8797db1e829ce",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libjpeg-turbo",
+      "path": ".local/g7-proxy-source-notices-01/archives/libjpeg-turbo-3.1.3.tar.gz",
+      "bytes": 2516606,
+      "actual_archive_sha512": "d3410a072044b4962c1aa08eb144b4e4b959f4f65203dfac4013b14e2fd987b9a6ee9b59f5570980fa691ddf5e9f9d3aa328a63afb487a46c2e76de722f3d693",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libmd",
+      "path": ".local/g7-proxy-source-notices-01/archives/libmd-1.2.0.tar.xz",
+      "bytes": 287992,
+      "actual_archive_sha512": "03684ab0c7724bb5cd22026ed39430abc47707e44f6756c372ad317e94b977b1b9d83c0ade614b39be1ca2208a0873e940968659476fe62a32c7195530d022a5",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libpng",
+      "path": ".local/g7-proxy-source-notices-01/archives/libpng-1.6.59.tar.gz",
+      "bytes": 1600400,
+      "actual_archive_sha512": "2d753e764846a0a75a10f2a00c6f4ae23d2ae37237c69d59d5e619da3f143d59f4ea9ce29c1fb39435df1cef77877c83b042a2275934c353a6603061da2d2dd9",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libpsl",
+      "path": ".local/g7-proxy-source-notices-01/archives/libpsl-0.21.5.tar.gz",
+      "bytes": 7624251,
+      "actual_archive_sha512": "c14d575cecc0f1693894dd79565b6b9220084ddfa43b908a1cefe16d147cdd5ec47796eb0c2135e2f829a951abaf39d8a371ab5c1352f57b36e610e25adf91f5",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libsm",
+      "path": ".local/g7-proxy-source-notices-01/archives/libSM-1.2.6.tar.xz",
+      "bytes": 314040,
+      "actual_archive_sha512": "e544a1dc49a03390f76af35837bfd01f749b806d88d3ee806f20311c47ff53d0aeea4744feb875958031b17d50b57a89dcc41d81241c09333c88b268c44653a7",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libunistring",
+      "path": ".local/g7-proxy-source-notices-01/archives/libunistring-1.4.2.tar.xz",
+      "bytes": 2786084,
+      "actual_archive_sha512": "0215f7f40f426227eca5174140654a3fa43ac1520eeb212c2ba08043470f905687b2703afdda12e9635359a6187643900136b6bb11b422bd7567d17ca71b555f",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libwebp",
+      "path": ".local/g7-proxy-source-notices-01/archives/libwebp-1.6.0.tar.gz",
+      "bytes": 4296070,
+      "actual_archive_sha512": "5c159d9760efcb92749092536daada22c0a73c20926c76097a5f0448ddbf874cf761324ca97925ca5f578b30477564b2b072b47667e504673797128b31cafcbf",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libx11",
+      "path": ".local/g7-proxy-source-notices-01/archives/libX11-1.8.14.tar.xz",
+      "bytes": 1897544,
+      "actual_archive_sha512": "4d61596d06235791d6afab823d0457dc42d2769717eb80d4c7e5bc825bb08db6fae46a75561547c679b5f892f24ebd0e1129b60bd4a574f7d1edb3cbfc91df0c",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxau",
+      "path": ".local/g7-proxy-source-notices-01/archives/libXau-1.0.12.tar.xz",
+      "bytes": 282624,
+      "actual_archive_sha512": "4bbe8796f4a14340499d5f75046955905531ea2948944dfc3d6069f8b86c1710042bfc7918d459320557883e6631359d48e6173c69c62ff572314e864ff97c5e",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxcb",
+      "path": ".local/g7-proxy-source-notices-01/archives/libxcb-1.17.0.tar.xz",
+      "bytes": 455208,
+      "actual_archive_sha512": "945b1f28e8b407a4d0ebf88c99ef3cbef763fd75e6eaa8e971946e44ce8dbe9b478c56ae85aaaadab7fdb25987e88570d9d4fb9ad2febd6d6bf21d644a0e10d0",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxdmcp",
+      "path": ".local/g7-proxy-source-notices-01/archives/libXdmcp-1.1.5.tar.xz",
+      "bytes": 297596,
+      "actual_archive_sha512": "d7a1d70a58b7d34ddd01a91d3ccbc086a36626b7081cfcbb150d24288c6adad612b042ba7ea63a218595afb2ee04384c0f8ba84ee3c6bd29913724b54e898d83",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxext",
+      "path": ".local/g7-proxy-source-notices-01/archives/libXext-1.3.7.tar.xz",
+      "bytes": 347068,
+      "actual_archive_sha512": "09cd230da472e87e4fdbc9b0f83a9181cc44af04c06fa4a7d8aa405e0f8551d3ac3a4b379249c44d97e1025b60d1c52f8ca13817eed0206e2bf3d66a55d89701",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxml2",
+      "path": ".local/g7-proxy-source-notices-01/archives/libxml2-2.13.9.tar.xz",
+      "bytes": 2426164,
+      "actual_archive_sha512": "62d4813860124c969f204aaf33b497105dbc32a6c5655f5a86168743660e10987d687d7e5e7ee49fdfdeb8f6ad9fa4503f81fcce2e4d459094895f02436d1b13",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxpm",
+      "path": ".local/g7-proxy-source-notices-01/archives/libXpm-3.5.20.tar.xz",
+      "bytes": 473428,
+      "actual_archive_sha512": "389f1f3a228d9953587f707b6be455dceebc28e7ff181f01fc9089ea2b6fe67d09f0aaef7d18eaf292bab1c7a7baf10f25928006a272c5d8f3b021d0a82f4225",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxslt",
+      "path": ".local/g7-proxy-source-notices-01/archives/libxslt-1.1.43.tar.xz",
+      "bytes": 1518364,
+      "actual_archive_sha512": "96110b0397a8f5791f489127574e2143845feb61bea0581d7b7e3c1101fd0718483bae81a7ce417b971bd678293bfd95daddad0dadd3e256c87d41a69faed85a",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libxt",
+      "path": ".local/g7-proxy-source-notices-01/archives/libXt-1.3.1.tar.xz",
+      "bytes": 691200,
+      "actual_archive_sha512": "c220292f60b0f53134cf9364831a32bbaa9fa6bbb3a7143e917920957b7a48c616e946042747089f29ea9d8a18ecd64de620bcaf56d82462e7107de906f5db38",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libyuv",
+      "path": ".local/g7-proxy-source-notices-01/archives/libyuv-0.0.1928.tar.gz",
+      "bytes": 579770,
+      "actual_archive_sha512": "956db6b968a405d5bcd9fd50c2a1ab9765abf5971fb5c707703a1162706a3b82c0965949171d5cbea73ed6963accf76896378c8f38651104e580da0ef5a4c5b6",
+      "validation": "exact_recipe_prescribed_sorted_regular_file_content_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "musl",
+      "path": ".local/g7-proxy-source-notices-01/archives/musl-1.2.6.tar.gz",
+      "bytes": 1082499,
+      "actual_archive_sha512": "1adad96eddb3a2eb0cacb3e363b0046568925fcdd75cf8b0503f2139df1f693d64730779ca0ce8131b7624ab2d37f4247bb1d3393c523de6e30d2b1d7732555c",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "ncurses",
+      "path": ".local/g7-proxy-source-notices-01/archives/ncurses-6.6-20260516.tgz",
+      "bytes": 3803559,
+      "actual_archive_sha512": "20ffc27f3266b078b410f712422db00d77f5fd497e398b7be252fd207ab70ebd72a2bdf8fd6c94e2a9e41bd2b64d1c6502240c0b8423c99add073bd1226f5859",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "nghttp2",
+      "path": ".local/g7-proxy-source-notices-01/archives/nghttp2-1.70.0.tar.xz",
+      "bytes": 2018996,
+      "actual_archive_sha512": "8d8a95dcd05dfe8a032b78d99b7d32a9f0ad2c952c4548de4c6b4af0d2f3c584b0a2854b31516eca20b0c9c30f20d0d040edfe9961a3084e96353012f711b9d1",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "openssl",
+      "path": ".local/g7-proxy-source-notices-01/archives/openssl-3.5.9.tar.gz",
+      "bytes": 53279637,
+      "actual_archive_sha512": "c4c8136fd2c98d13bb85a57bfb0def25c906f47f1fe97675cd114594944eab957b5b81a3e0f48826e1a0f093afff5e83766b539d49768f6db68310fd678d7de6",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "pax-utils",
+      "path": ".local/g7-proxy-source-notices-01/archives/pax-utils-1.3.9.tar.xz",
+      "bytes": 123560,
+      "actual_archive_sha512": "96caf7f2087bedc7949db828d966835f7d691e29ef8177dee00605c10d433d4c5b5770a3d7f2e25e3c0218f5b9a6c6967669a3dea18cf138d6f0111d2bb5288b",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "pcre2",
+      "path": ".local/g7-proxy-source-notices-01/archives/pcre2-10.49.tar.bz2",
+      "bytes": 2185271,
+      "actual_archive_sha512": "eb8351788a479cb24bcc263243d6a00d28cc7285f26901d7f6001826aba7f7171a5bb3e7c944725432df6f303c10a794fd3a398429483bf4c1104df3de159687",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "tiff",
+      "path": ".local/g7-proxy-source-notices-01/archives/tiff-4.7.2.tar.gz",
+      "bytes": 4083368,
+      "actual_archive_sha512": "bad66954a7e7e158c6dcbfc0e2d0032b8f3e2a354b6d0fdbb8038a7963e36c5b8a433dd4ee81c6c4dabfb50094152d440aa1f32b5299098c9ae29e55de2e41fc",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "tzdata",
+      "path": ".local/g7-proxy-source-notices-01/archives/tzcode2026e.tar.gz",
+      "bytes": 329138,
+      "actual_archive_sha512": "623af2d5c611ce5d9f6d07ceeb09721db03ed90e8e74e027f96fc402eb948fc8a7e9aecac2611e41fb501bdc2592a78020375ad677d887beaacb2fd5da9b9815",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "util-linux",
+      "path": ".local/g7-proxy-source-notices-01/archives/util-linux-2.42.3.tar.xz",
+      "bytes": 10716216,
+      "actual_archive_sha512": "2a307943d4fbb34ac02131e10ff7260f181dd706b21e68a891d25d6eb30476a612bcc19b674bb2256283c9c716146e0d79909f37324efc9aa9d45a44e0d58988",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "xz",
+      "path": ".local/g7-proxy-source-notices-01/archives/xz-5.8.4.tar.gz",
+      "bytes": 1670561,
+      "actual_archive_sha512": "6a0e9c3b05f9c20255c5e35c06fdcd44b9e201f4ed566d1dec052b6cfda6cdfb42f73ffd258eaad2d8b7737c66b78ae353aebd44502e24a3d89d8765d698dcae",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "zlib",
+      "path": ".local/g7-proxy-source-notices-01/archives/zlib-1.3.2.tar.gz",
+      "bytes": 1502830,
+      "actual_archive_sha512": "70963771ea5d763614278a69b474f09b7d237ef8f53b675a10fe31d9923aeef601504b35d7ebd1b1e7f347e9ebb048e6b3b47fffdf137e7bdc7e8d5eb4ec4692",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "zstd",
+      "path": ".local/g7-proxy-source-notices-01/archives/zstd-1.5.7.tar.gz",
+      "bytes": 2451884,
+      "actual_archive_sha512": "26e441267305f6e58080460f96ab98645219a90d290a533410b1b0b1d2f870721c95f8384e342ee647c5e968385a5b7e30c2d04340c37f59b3e6d86762c3260c",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "freetype",
+      "path": ".local/g7-proxy-source-notices-01/archives/ft2demos-2.14.3.tar.xz",
+      "bytes": 347960,
+      "actual_archive_sha512": "e59c1266010330a8cbfd25dec096a72ce7539b64f9c057de062a281261b3ad658240f58e75b53d7a880d7ad5e020206316a6e9e82b03dec2e4d999f3f56cb39a",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "libavif",
+      "path": ".local/g7-proxy-source-notices-01/archives/libavif-libargparse-ee74d1b53bd680748af14e737378de57e2a0a954.tar.gz",
+      "bytes": 22394,
+      "actual_archive_sha512": "6d6e47f4c1a63f085a90bc4d9f6dca7462f5e72d2a4a3b7a6d6df54632edbd4a9deb8f9b8c08517031b0c9ca89e0a1b48bb35261b3e660e4601e28a39f8e7ef1",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "tzdata",
+      "path": ".local/g7-proxy-source-notices-01/archives/tzdata2026e.tar.gz",
+      "bytes": 481989,
+      "actual_archive_sha512": "5be2f875f73b75e5783c474bf7a6c768e433cc90283f8fc6a75e3d05bd92aec97936e8a55ccca5e880b5dacc18ba65932bab0e783e1ed5d2af4a3a4df95512be",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    },
+    {
+      "origin": "tzdata",
+      "path": ".local/g7-proxy-source-notices-01/archives/posixtz-0.5.tar.xz",
+      "bytes": 3976,
+      "actual_archive_sha512": "68dbaab9f4aef166ac2f2d40b49366527b840bebe17a47599fe38345835e4adb8a767910745ece9c384b57af815a871243c3e261a29f41d71f8054df3061b3fd",
+      "validation": "exact_recipe_source_archive_sha512",
+      "retained_role": "current_source_provenance_and_release_notice_input"
+    }
+  ],
+  "unchecked_or_orphan_inputs": 0,
+  "duplicate_notice_ZIPs_created": 0,
+  "new_Docker_images_volumes_networks": 0,
+  "retention": "Verified current source inputs for provenance/release assembly. No global cache pruning or unknown data deletion. Materialize the final kit before considering exact source-transport retirement."
+}

@@ -1,0 +1,2567 @@
+{
+  "result": "checksum_verified_proxy_source_notices_collected_review_pending",
+  "origins": 53,
+  "records": [
+    {
+      "origin": "alpine-base",
+      "result": "no_source_archive_in_recipe",
+      "recipe_sha256": "51cb91f683941e1d9d89fe9e600d5c11bbae4b7baa45a870dba4a969516c7f3f"
+    },
+    {
+      "origin": "alpine-baselayout",
+      "result": "no_source_archive_in_recipe",
+      "recipe_sha256": "aef255516b71e39109860b92eb027a0986d90197427fb93ec91ebcd04bf59763"
+    },
+    {
+      "origin": "alpine-keys",
+      "result": "no_source_archive_in_recipe",
+      "recipe_sha256": "cb352e13b9e481b424763bd36d3afdb81ac308e508abed15eb7175530050bd3f"
+    },
+    {
+      "origin": "aom",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "aom-libs"
+      ],
+      "installed_versions": [
+        "3.14.1-r0"
+      ],
+      "source_commit": "ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e/main/aom/APKBUILD",
+      "recipe_sha256": "d8e6849aa59ed4d40cf927913e6f5c7a483a2b126851804986df0c21d8ad54b1",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libaom-3.14.1.tar.gz",
+      "source_archive": "libaom-3.14.1.tar.gz",
+      "source_bytes": 6368868,
+      "source_sha512": "a4c3427db0bb4cd49b8873ffae0a287570b86d6f0733da52798b08470519755ffe08198222be86d3bc8c9bd0052477017dc595b98bbbd77f76bfe7b9ce48d7fa",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libaom-3.14.1.tar.gz",
+      "notices": [
+        {
+          "member": "libaom-3.14.1/AUTHORS",
+          "bytes": 13105,
+          "sha256": "1bf4faf64255fc1ffe1428e56f58f36050eeaac47a6401e532ca15823d21e9ac",
+          "path": "third_party/alpine-notices/texts/1bf4faf64255fc1ffe1428e56f58f36050eeaac47a6401e532ca15823d21e9ac.txt"
+        },
+        {
+          "member": "libaom-3.14.1/LICENSE",
+          "bytes": 1316,
+          "sha256": "4764a286d8b2faeaf42f4418e7d7a28d58fc8fd4d00a3d0a7f44b0a4099de7f2",
+          "path": "third_party/alpine-notices/texts/4764a286d8b2faeaf42f4418e7d7a28d58fc8fd4d00a3d0a7f44b0a4099de7f2.txt"
+        },
+        {
+          "member": "libaom-3.14.1/PATENTS",
+          "bytes": 5701,
+          "sha256": "661fb8e504744e95587b556b94a58343448300606a41bea8c7a9b97125696e61",
+          "path": "third_party/alpine-notices/texts/661fb8e504744e95587b556b94a58343448300606a41bea8c7a9b97125696e61.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/fastfeat/LICENSE",
+          "bytes": 1504,
+          "sha256": "499041ddee5227b6f29ca06c17803e5fe24d60f243c69635cd76b7ba08d0ddd5",
+          "path": "third_party/alpine-notices/texts/499041ddee5227b6f29ca06c17803e5fe24d60f243c69635cd76b7ba08d0ddd5.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/googletest/src/LICENSE",
+          "bytes": 1475,
+          "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+          "path": "third_party/alpine-notices/texts/9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/highway/LICENSE-BSD3",
+          "bytes": 1515,
+          "sha256": "d25e82e26acd42ca3ccc9993622631163425b869b9e16284226d534cff6470f2",
+          "path": "third_party/alpine-notices/texts/d25e82e26acd42ca3ccc9993622631163425b869b9e16284226d534cff6470f2.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/libwebm/AUTHORS.TXT",
+          "bytes": 137,
+          "sha256": "3edb5f5496bfff3d6d4a62fa75fe996b814920d0d6e348c2e65c589e7ac5d177",
+          "path": "third_party/alpine-notices/texts/3edb5f5496bfff3d6d4a62fa75fe996b814920d0d6e348c2e65c589e7ac5d177.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/libwebm/LICENSE.TXT",
+          "bytes": 1496,
+          "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf",
+          "path": "third_party/alpine-notices/texts/5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/libwebm/PATENTS.TXT",
+          "bytes": 1436,
+          "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+          "path": "third_party/alpine-notices/texts/cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/libyuv/LICENSE",
+          "bytes": 1506,
+          "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
+          "path": "third_party/alpine-notices/texts/2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/vector/LICENSE",
+          "bytes": 1084,
+          "sha256": "ff6c857ce2708e87701323078aef115c1872a1f80a9649f86dc899b48083bc60",
+          "path": "third_party/alpine-notices/texts/ff6c857ce2708e87701323078aef115c1872a1f80a9649f86dc899b48083bc60.txt"
+        },
+        {
+          "member": "libaom-3.14.1/third_party/x86inc/LICENSE",
+          "bytes": 936,
+          "sha256": "719d8fa235f2068e0ae6d6a7dceb0a7720d7840f0f0ebed29957989e6ded3cd8",
+          "path": "third_party/alpine-notices/texts/719d8fa235f2068e0ae6d6a7dceb0a7720d7840f0f0ebed29957989e6ded3cd8.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "apk-tools",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "apk-tools",
+        "libapk"
+      ],
+      "installed_versions": [
+        "3.0.8-r0"
+      ],
+      "source_commit": "4588b452722bd4800efdc6cce4f6e980e02a997f",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/4588b452722bd4800efdc6cce4f6e980e02a997f/main/apk-tools/APKBUILD",
+      "recipe_sha256": "492db5ec3ca2ca6cfd3cc4e5b52a0262ca7bd9c77299344efb4d786c596b7005",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/apk-tools-v3.0.8.tar.gz",
+      "source_archive": "apk-tools-v3.0.8.tar.gz",
+      "source_bytes": 390114,
+      "source_sha512": "3616435508dead5240f8d9fe74e87e2aa93262f9e466f50af8f60100e166403393b1e491c115395864d4179b219699831ecb61dc60960b5dfb1f10816d75f95f",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/apk-tools-v3.0.8.tar.gz",
+      "notices": [
+        {
+          "member": "apk-tools-v3.0.8/AUTHORS",
+          "bytes": 61,
+          "sha256": "c238557e70557a79ea0ac30ea6d05342144f02b07ae4e9988171f70de3d66f2e",
+          "path": "third_party/alpine-notices/texts/c238557e70557a79ea0ac30ea6d05342144f02b07ae4e9988171f70de3d66f2e.txt"
+        },
+        {
+          "member": "apk-tools-v3.0.8/LICENSE",
+          "bytes": 17622,
+          "sha256": "b3c87315aae4c9f276c37168f2655dd8bd990544d7a0bbfb929664155c7ab257",
+          "path": "third_party/alpine-notices/texts/b3c87315aae4c9f276c37168f2655dd8bd990544d7a0bbfb929664155c7ab257.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "brotli",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "brotli-libs"
+      ],
+      "installed_versions": [
+        "1.2.1-r0"
+      ],
+      "source_commit": "8313352127992a9d82e2c2024494f6c38a4dffb4",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/8313352127992a9d82e2c2024494f6c38a4dffb4/main/brotli/APKBUILD",
+      "recipe_sha256": "f9a8f0e7a72518e32c90098916a889a18469aa0148fa0c088be4e4c5d9473f29",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/brotli-1.2.1.tar.gz",
+      "source_archive": "brotli-1.2.1.tar.gz",
+      "source_bytes": 646598,
+      "source_sha512": "460591287d428c8b5a8a2766b5b424d14501fcda12c7118b8f3cc4bfae44b90ac75ca156557f07b6e22542612724d904533e5f70019be07dbbb604c46f03ab69",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/brotli-1.2.1.tar.gz",
+      "notices": [
+        {
+          "member": "brotli-1.2.1/LICENSE",
+          "bytes": 1084,
+          "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+          "path": "third_party/alpine-notices/texts/3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "busybox",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "busybox",
+        "busybox-binsh",
+        "ssl_client"
+      ],
+      "installed_versions": [
+        "1.37.0-r31"
+      ],
+      "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/c3ef5d10e6ef6528852c51f0564963e2f8c1be19/main/busybox/APKBUILD",
+      "recipe_sha256": "98f019f62291aff63cb798f046fb59dfd43340885de63ca2f127651fc21d0450",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/busybox-1.37.0.tar.bz2",
+      "source_archive": "busybox-1.37.0.tar.bz2",
+      "source_bytes": 2565764,
+      "source_sha512": "ad8fd06f082699774f990a53d7a73b189ed404fe0a2166aff13eae4d9d8ee5c9239493befe949c98801fe7897520dbff3ed0224faa7205854ce4fa975e18467e",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/busybox-1.37.0.tar.bz2",
+      "notices": [
+        {
+          "member": "busybox-1.37.0/AUTHORS",
+          "bytes": 5386,
+          "sha256": "384fc3a9cfc7c435bdd9d169e5ec60a7d898d9ef9557ec859394d7f97b4b6f07",
+          "path": "third_party/alpine-notices/texts/384fc3a9cfc7c435bdd9d169e5ec60a7d898d9ef9557ec859394d7f97b4b6f07.txt"
+        },
+        {
+          "member": "busybox-1.37.0/LICENSE",
+          "bytes": 18348,
+          "sha256": "bbfc9843646d483c334664f651c208b9839626891d8f17604db2146962f43548",
+          "path": "third_party/alpine-notices/texts/bbfc9843646d483c334664f651c208b9839626891d8f17604db2146962f43548.txt"
+        },
+        {
+          "member": "busybox-1.37.0/archival/libarchive/bz/LICENSE",
+          "bytes": 1999,
+          "sha256": "b5a136ed67798e51fe2e0ca0b2a21cb01b904ff0c9f7d563a6292e276607e58f",
+          "path": "third_party/alpine-notices/texts/b5a136ed67798e51fe2e0ca0b2a21cb01b904ff0c9f7d563a6292e276607e58f.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "bzip2",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libbz2"
+      ],
+      "installed_versions": [
+        "1.0.8-r6"
+      ],
+      "source_commit": "33283848034c9885d984c8e8697c645c57324938",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/33283848034c9885d984c8e8697c645c57324938/main/bzip2/APKBUILD",
+      "recipe_sha256": "7e046e9c4b1c265af9791a790049ed864c361c0949b9cd68564a48bc0f672de2",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/bzip2-1.0.8.tar.gz",
+      "source_archive": "bzip2-1.0.8.tar.gz",
+      "source_bytes": 810029,
+      "source_sha512": "083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/bzip2-1.0.8.tar.gz",
+      "notices": [
+        {
+          "member": "bzip2-1.0.8/LICENSE",
+          "bytes": 1896,
+          "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+          "path": "third_party/alpine-notices/texts/c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "c-ares",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "c-ares"
+      ],
+      "installed_versions": [
+        "1.34.9-r0"
+      ],
+      "source_commit": "50f178d7a4c30ea44b54b7d4731ab58558c38b14",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/50f178d7a4c30ea44b54b7d4731ab58558c38b14/main/c-ares/APKBUILD",
+      "recipe_sha256": "c15c4c8efe5fad0961f612cffb05f8ab8848ce1e3c108b65af25377b86807c40",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/c-ares-1.34.9.tar.gz",
+      "source_archive": "c-ares-1.34.9.tar.gz",
+      "source_bytes": 1083895,
+      "source_sha512": "f4be5818d14cec48e96cc66d3f7dea3de60e3ae3d990972cf2e055140ad995a3bbf38f2a6ffd5c671f04b5f105f28ef022af721477a2d126be0803355c7c297a",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/c-ares-1.34.9.tar.gz",
+      "notices": [
+        {
+          "member": "c-ares-1.34.9/LICENSE.md",
+          "bytes": 1211,
+          "sha256": "460f5e768fda3752ca2169a95df062578a10fb126bfd65f3b9b1a1bed2f84807",
+          "path": "third_party/alpine-notices/texts/460f5e768fda3752ca2169a95df062578a10fb126bfd65f3b9b1a1bed2f84807.txt"
+        },
+        {
+          "member": "c-ares-1.34.9/AUTHORS",
+          "bytes": 1258,
+          "sha256": "10274d04e1aa59b340e84dbef26550bfc9827fc70908f78bfa755e1a8729939b",
+          "path": "third_party/alpine-notices/texts/10274d04e1aa59b340e84dbef26550bfc9827fc70908f78bfa755e1a8729939b.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "ca-certificates",
+      "result": "verified_source_no_standalone_notice",
+      "packages": [
+        "ca-certificates",
+        "ca-certificates-bundle"
+      ],
+      "installed_versions": [
+        "20261020-r0"
+      ],
+      "source_commit": "e78f5987166c6ffbe23f6472e2e8f040298fe2da",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/e78f5987166c6ffbe23f6472e2e8f040298fe2da/main/ca-certificates/APKBUILD",
+      "recipe_sha256": "7b35fb8e11790105578f47d57a3b22831227b0d8ad7d064e575bad146023f3da",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/ca-certificates-20261020.tar.bz2",
+      "source_archive": "ca-certificates-20261020.tar.bz2",
+      "source_bytes": 230531,
+      "source_sha512": "d28eb01751b1a914ffb5d8cb99e662f0a35a95148c21dcf98de1ab3108b54db9714a99472d07715023867f4f76a21f2a79a2bc1c7e9876ce5167fdd865ad2dd7",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/ca-certificates-20261020.tar.bz2",
+      "notices": [],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "curl",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "curl",
+        "libcurl"
+      ],
+      "installed_versions": [
+        "8.23.0-r0"
+      ],
+      "source_commit": "c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce/main/curl/APKBUILD",
+      "recipe_sha256": "13e89ad8f7bcf78396b626a0dd38e307a347a0680aae3b58600009ba00d86a3f",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/curl-8.23.0.tar.xz",
+      "source_archive": "curl-8.23.0.tar.xz",
+      "source_bytes": 2990916,
+      "source_sha512": "69cf0feafdc79fbad007cf2fc977b777ce6ccb05d01afd17b5a42f8bedbfcc342fc3a48193faa7f3eafe6800cd7d07948916e8733db1b9de60287ed06219b840",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/curl-8.23.0.tar.xz",
+      "notices": [
+        {
+          "member": "curl-8.23.0/COPYING",
+          "bytes": 1088,
+          "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681",
+          "path": "third_party/alpine-notices/texts/82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "dav1d",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libdav1d"
+      ],
+      "installed_versions": [
+        "1.5.3-r0"
+      ],
+      "source_commit": "6a13170ddff8fdf27712aa7d0e5437aa2407ff56",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/6a13170ddff8fdf27712aa7d0e5437aa2407ff56/main/dav1d/APKBUILD",
+      "recipe_sha256": "0ca482efbfb2b8b8a3a2b206773e1cb4a3165353b95a08df34e0db4bfd640d75",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/dav1d-1.5.3.tar.gz",
+      "source_archive": "dav1d-1.5.3.tar.gz",
+      "source_bytes": 1713950,
+      "source_sha512": "8d976b93135213d41385c20205475269a6826a68ebfd716c4d9a7a3ff2a79703e8df0573e43207c81b5db44807d2721db18ec84c0fc6bef98efab86a2cccb6cc",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/dav1d-1.5.3.tar.gz",
+      "notices": [
+        {
+          "member": "dav1d-1.5.3/COPYING",
+          "bytes": 1317,
+          "sha256": "dd92c3c2247c5651606fc23a5e2d6a1ebc5ace9a3e49cbde0e12f05ad1cb1ee5",
+          "path": "third_party/alpine-notices/texts/dd92c3c2247c5651606fc23a5e2d6a1ebc5ace9a3e49cbde0e12f05ad1cb1ee5.txt"
+        },
+        {
+          "member": "dav1d-1.5.3/doc/PATENTS",
+          "bytes": 5730,
+          "sha256": "335eca574598bf4ca181b12f708d6669e5a5e78c8e1513e5b35fa1f03901484b",
+          "path": "third_party/alpine-notices/texts/335eca574598bf4ca181b12f708d6669e5a5e78c8e1513e5b35fa1f03901484b.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "expat",
+      "result": "exact_recipe_unavailable"
+    },
+    {
+      "origin": "fontconfig",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "fontconfig"
+      ],
+      "installed_versions": [
+        "2.17.1-r1"
+      ],
+      "source_commit": "07061cb5a28861b108b09adc09ebd4fd962e549f",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/07061cb5a28861b108b09adc09ebd4fd962e549f/main/fontconfig/APKBUILD",
+      "recipe_sha256": "4648e5c02e92ebdd7cc0a3cdb837f8054842318cf6708ed3995c871ecb6f0d40",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/fontconfig-2.17.1.tar.xz",
+      "source_archive": "fontconfig-2.17.1.tar.xz",
+      "source_bytes": 1326312,
+      "source_sha512": "c09c1f041f61ee0d220ff906a86b5c4b329106dc96f8c04b23f8fdeb480df626717fe3613bccb41cb39e86334078139322710377f5ddaa3abe48569e798161c9",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/fontconfig-2.17.1.tar.xz",
+      "notices": [
+        {
+          "member": "fontconfig-2.17.1/AUTHORS",
+          "bytes": 62,
+          "sha256": "db6d73a160bb2de10268f88ef60aae91771fefdeee4992b791c76ce6592a4a4b",
+          "path": "third_party/alpine-notices/texts/db6d73a160bb2de10268f88ef60aae91771fefdeee4992b791c76ce6592a4a4b.txt"
+        },
+        {
+          "member": "fontconfig-2.17.1/COPYING",
+          "bytes": 8616,
+          "sha256": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067",
+          "path": "third_party/alpine-notices/texts/51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "freetype",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "freetype"
+      ],
+      "installed_versions": [
+        "2.14.3-r0"
+      ],
+      "source_commit": "ad16b0afc1a315c4095a75ff72ebbe3cfa29b671",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/ad16b0afc1a315c4095a75ff72ebbe3cfa29b671/main/freetype/APKBUILD",
+      "recipe_sha256": "f3a9cd80e85de497c7811222fbdb2ce5805b8fbc4866b214171e10ee809c8609",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/freetype-2.14.3.tar.xz",
+      "source_archive": "freetype-2.14.3.tar.xz",
+      "source_bytes": 2670220,
+      "source_sha512": "43de86ea70b4b47f6efaae67f3440f65a24ffac29dc6d11203a9764e4f1a749ce1ba7645acd23525220b3ba12ddad8687b962b9f1254e2c0a86070854e85d5a0",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/freetype-2.14.3.tar.xz",
+      "notices": [
+        {
+          "member": "freetype-2.14.3/LICENSE.TXT",
+          "bytes": 2149,
+          "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b",
+          "path": "third_party/alpine-notices/texts/bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b.txt"
+        }
+      ],
+      "additional_source_archives": [
+        {
+          "name": "ft2demos-2.14.3.tar.xz",
+          "sha512": "e59c1266010330a8cbfd25dec096a72ce7539b64f9c057de062a281261b3ad658240f58e75b53d7a880d7ad5e020206316a6e9e82b03dec2e4d999f3f56cb39a"
+        }
+      ]
+    },
+    {
+      "origin": "gcc",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libgcc",
+        "libstdc++"
+      ],
+      "installed_versions": [
+        "15.2.0-r5"
+      ],
+      "source_commit": "423a8ad043d07f2c7546c8ec3e2b0384cda360ae",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/423a8ad043d07f2c7546c8ec3e2b0384cda360ae/main/gcc/APKBUILD",
+      "recipe_sha256": "71d831dbef88c2b0ff7b36b7422e878a07751419583a44b06cda2e561cdb82d4",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/gcc-15.2.0.tar.xz",
+      "source_archive": "gcc-15.2.0.tar.xz",
+      "source_bytes": 101056276,
+      "source_sha512": "89047a2e07bd9da265b507b516ed3635adb17491c7f4f67cf090f0bd5b3fc7f2ee6e4cc4008beef7ca884b6b71dffe2bb652b21f01a702e17b468cca2d10b2de",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/gcc-15.2.0.tar.xz",
+      "notices": [
+        {
+          "member": "gcc-15.2.0/include/COPYING",
+          "bytes": 18002,
+          "sha256": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
+          "path": "third_party/alpine-notices/texts/231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libffi/LICENSE-BUILDTOOLS",
+          "bytes": 18698,
+          "sha256": "e67978cd18816c0cb7d29aaaacde7b7447402c2fb321a051698890a8eaedda94",
+          "path": "third_party/alpine-notices/texts/e67978cd18816c0cb7d29aaaacde7b7447402c2fb321a051698890a8eaedda94.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libffi/LICENSE",
+          "bytes": 1132,
+          "sha256": "a61d06e8f7be57928e71e800eb9273b05cb8868c484108afe41e4305bb320dde",
+          "path": "third_party/alpine-notices/texts/a61d06e8f7be57928e71e800eb9273b05cb8868c484108afe41e4305bb320dde.txt"
+        },
+        {
+          "member": "gcc-15.2.0/zlib/contrib/dotzlib/LICENSE_1_0.txt",
+          "bytes": 1359,
+          "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951",
+          "path": "third_party/alpine-notices/texts/36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libsanitizer/LICENSE.TXT",
+          "bytes": 4506,
+          "sha256": "74c2b24539a53c34abddb559266d89cb653b0198cd2faf9c04763d3223db7f6d",
+          "path": "third_party/alpine-notices/texts/74c2b24539a53c34abddb559266d89cb653b0198cd2faf9c04763d3223db7f6d.txt"
+        },
+        {
+          "member": "gcc-15.2.0/COPYING.RUNTIME",
+          "bytes": 3324,
+          "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+          "path": "third_party/alpine-notices/texts/9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libphobos/libdruntime/LICENSE.txt",
+          "bytes": 1338,
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "path": "third_party/alpine-notices/texts/c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libphobos/src/LICENSE_1_0.txt",
+          "bytes": 1338,
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "path": "third_party/alpine-notices/texts/c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/LICENSE",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "path": "third_party/alpine-notices/texts/2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+          "path": "third_party/alpine-notices/texts/96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/xerrors/LICENSE",
+          "bytes": 1479,
+          "sha256": "84d554e7a5d139b7c7b5d6ef0670ae556c4cdcfa354eaad72a1c07c08012c96f",
+          "path": "third_party/alpine-notices/texts/84d554e7a5d139b7c7b5d6ef0670ae556c4cdcfa354eaad72a1c07c08012c96f.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/xerrors/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+          "path": "third_party/alpine-notices/texts/96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/tools/LICENSE",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "path": "third_party/alpine-notices/texts/2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/tools/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+          "path": "third_party/alpine-notices/texts/96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/sync/LICENSE",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "path": "third_party/alpine-notices/texts/2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/sync/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+          "path": "third_party/alpine-notices/texts/96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/sync/AUTHORS",
+          "bytes": 173,
+          "sha256": "b82446c166daa6932dc33418961ed7a7f06c5a9fee17e9d214e16079e3442757",
+          "path": "third_party/alpine-notices/texts/b82446c166daa6932dc33418961ed7a7f06c5a9fee17e9d214e16079e3442757.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/mod/LICENSE",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "path": "third_party/alpine-notices/texts/2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgo/go/golang.org/x/mod/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+          "path": "third_party/alpine-notices/texts/96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/rust/checks/errors/borrowck/ffi-polonius/vendor/rustc-hash/LICENSE-MIT",
+          "bytes": 1023,
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "path": "third_party/alpine-notices/texts/23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/rust/checks/errors/borrowck/ffi-polonius/vendor/rustc-hash/LICENSE-APACHE",
+          "bytes": 10847,
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "path": "third_party/alpine-notices/texts/a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/rust/checks/errors/borrowck/ffi-polonius/vendor/datafrog/LICENSE-MIT",
+          "bytes": 1023,
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "path": "third_party/alpine-notices/texts/23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/rust/checks/errors/borrowck/ffi-polonius/vendor/datafrog/LICENSE-APACHE",
+          "bytes": 10847,
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "path": "third_party/alpine-notices/texts/a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/rust/checks/errors/borrowck/ffi-polonius/vendor/log/LICENSE-MIT",
+          "bytes": 1071,
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+          "path": "third_party/alpine-notices/texts/6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/rust/checks/errors/borrowck/ffi-polonius/vendor/log/LICENSE-APACHE",
+          "bytes": 10847,
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "path": "third_party/alpine-notices/texts/a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/doc/include/gpl_v3.texi",
+          "bytes": 35481,
+          "sha256": "f18dda6b4e81bb128dc65f48145df9ea11f38a2d69ea9c687512b082f732ba92",
+          "path": "third_party/alpine-notices/texts/f18dda6b4e81bb128dc65f48145df9ea11f38a2d69ea9c687512b082f732ba92.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/doc/gpl.7",
+          "bytes": 41344,
+          "sha256": "9a028853c56002901df348e20da1763bbe0716a8b23658d19fd038c6b600590c",
+          "path": "third_party/alpine-notices/texts/9a028853c56002901df348e20da1763bbe0716a8b23658d19fd038c6b600590c.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/config/i386/bsd.h",
+          "bytes": 3352,
+          "sha256": "359b062f218a5a010927be75f4a2ee65b6f83b35c3341205e5e43bc5c07a3731",
+          "path": "third_party/alpine-notices/texts/359b062f218a5a010927be75f4a2ee65b6f83b35c3341205e5e43bc5c07a3731.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/COPYING.LIB",
+          "bytes": 26440,
+          "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+          "path": "third_party/alpine-notices/texts/32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/testsuite/gcc.dg/vect/tsvc/license.txt",
+          "bytes": 1738,
+          "sha256": "0bf700c6654f3e72308035d7ebb60abcc486e673ee8a72d19101f80812288f1c",
+          "path": "third_party/alpine-notices/texts/0bf700c6654f3e72308035d7ebb60abcc486e673ee8a72d19101f80812288f1c.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/testsuite/gcc.dg/params/LICENSE",
+          "bytes": 1901,
+          "sha256": "4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204",
+          "path": "third_party/alpine-notices/texts/4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/m2/COPYING.RUNTIME",
+          "bytes": 3329,
+          "sha256": "86c57afef00e0462173a19ab20387dec082f10b6dc59b7eda74d3da76b3142c2",
+          "path": "third_party/alpine-notices/texts/86c57afef00e0462173a19ab20387dec082f10b6dc59b7eda74d3da76b3142c2.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/m2/COPYING.FDL",
+          "bytes": 20355,
+          "sha256": "2ef8d66a88441327f071f98bc92ec1c7aec02e983c19fb49f6fb21d624fcaaf2",
+          "path": "third_party/alpine-notices/texts/2ef8d66a88441327f071f98bc92ec1c7aec02e983c19fb49f6fb21d624fcaaf2.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/m2/target-independent/m2/gpl_v3_without_node.texi",
+          "bytes": 35467,
+          "sha256": "727c284c6cdc5afe74586515d95b3b0ab17dad7a0268d1c9c496725c2d2669b3",
+          "path": "third_party/alpine-notices/texts/727c284c6cdc5afe74586515d95b3b0ab17dad7a0268d1c9c496725c2d2669b3.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/m2/images/LICENSE.IMG",
+          "bytes": 762,
+          "sha256": "abf1864372fc6dd8331f40970442e6578c7956d0a95103fc054c986e45279a8b",
+          "path": "third_party/alpine-notices/texts/abf1864372fc6dd8331f40970442e6578c7956d0a95103fc054c986e45279a8b.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/ada/doc/share/copyright.tex",
+          "bytes": 695,
+          "sha256": "c0a2678e14049ef3d4ba0d9dd7abf8b0dbb8335d6e2311b2d2f568035321f2b7",
+          "path": "third_party/alpine-notices/texts/c0a2678e14049ef3d4ba0d9dd7abf8b0dbb8335d6e2311b2d2f568035321f2b7.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/go/gofrontend/LICENSE",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "path": "third_party/alpine-notices/texts/2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/go/gofrontend/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+          "path": "third_party/alpine-notices/texts/96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc.txt"
+        },
+        {
+          "member": "gcc-15.2.0/gcc/COPYING",
+          "bytes": 18002,
+          "sha256": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
+          "path": "third_party/alpine-notices/texts/231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c.txt"
+        },
+        {
+          "member": "gcc-15.2.0/COPYING.LIB",
+          "bytes": 26527,
+          "sha256": "a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861",
+          "path": "third_party/alpine-notices/texts/a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgcobol/LICENSE",
+          "bytes": 1478,
+          "sha256": "e928a2c9b73e5548dddb9e74f83dc5bb58e8856fc6e8c21b7107f9b5098bcff7",
+          "path": "third_party/alpine-notices/texts/e928a2c9b73e5548dddb9e74f83dc5bb58e8856fc6e8c21b7107f9b5098bcff7.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libstdc++-v3/include/pstl/LICENSE.txt",
+          "bytes": 16700,
+          "sha256": "0ca8cbe9219a841f9bc8fbb1f8ecdf5e39b1b0e23ee10fb6b0c090d8987dd1eb",
+          "path": "third_party/alpine-notices/texts/0ca8cbe9219a841f9bc8fbb1f8ecdf5e39b1b0e23ee10fb6b0c090d8987dd1eb.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libstdc++-v3/doc/html/manual/license.html",
+          "bytes": 8434,
+          "sha256": "6ef2606fad7fce5ba388fef9d8d137178d0135f3d2c538b664229b58eae5ce06",
+          "path": "third_party/alpine-notices/texts/6ef2606fad7fce5ba388fef9d8d137178d0135f3d2c538b664229b58eae5ce06.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libstdc++-v3/doc/xml/authors.xml",
+          "bytes": 3512,
+          "sha256": "5300074c44853ce8f728eef46916a8d428edf8147a48f4903a97e43f69d6c2d3",
+          "path": "third_party/alpine-notices/texts/5300074c44853ce8f728eef46916a8d428edf8147a48f4903a97e43f69d6c2d3.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libstdc++-v3/doc/xml/gnu/gpl-3.0.xml",
+          "bytes": 42708,
+          "sha256": "164f1889aa0cc10bd2cc9bd4597aae587892fc6743331cb8a341ab09fd1a55ff",
+          "path": "third_party/alpine-notices/texts/164f1889aa0cc10bd2cc9bd4597aae587892fc6743331cb8a341ab09fd1a55ff.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgrust/libformat_parser/vendor/libc/LICENSE-MIT",
+          "bytes": 1076,
+          "sha256": "a8d47ff51ca256f56a8932dba07660672dbfe3004257ca8de708aac1415937a1",
+          "path": "third_party/alpine-notices/texts/a8d47ff51ca256f56a8932dba07660672dbfe3004257ca8de708aac1415937a1.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgrust/libformat_parser/vendor/libc/LICENSE-APACHE",
+          "bytes": 9723,
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+          "path": "third_party/alpine-notices/texts/62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgrust/libformat_parser/vendor/unicode-xid/LICENSE-MIT",
+          "bytes": 1071,
+          "sha256": "7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0",
+          "path": "third_party/alpine-notices/texts/7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgrust/libformat_parser/vendor/unicode-xid/LICENSE-APACHE",
+          "bytes": 10847,
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "path": "third_party/alpine-notices/texts/a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libgrust/libformat_parser/vendor/unicode-xid/COPYRIGHT",
+          "bytes": 321,
+          "sha256": "23860c2a7b5d96b21569afedf033469bab9fe14a1b24a35068b8641c578ce24d",
+          "path": "third_party/alpine-notices/texts/23860c2a7b5d96b21569afedf033469bab9fe14a1b24a35068b8641c578ce24d.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libiberty/copying-lib.texi",
+          "bytes": 26755,
+          "sha256": "6b1a482626fb7e7a839732f48d9e5f4a38a67bb579dbeb06d783528ec553c8b9",
+          "path": "third_party/alpine-notices/texts/6b1a482626fb7e7a839732f48d9e5f4a38a67bb579dbeb06d783528ec553c8b9.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libiberty/COPYING.LIB",
+          "bytes": 26440,
+          "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+          "path": "third_party/alpine-notices/texts/32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libquadmath/COPYING.LIB",
+          "bytes": 26440,
+          "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+          "path": "third_party/alpine-notices/texts/32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b.txt"
+        },
+        {
+          "member": "gcc-15.2.0/libcody/LICENSE",
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "path": "third_party/alpine-notices/texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt"
+        },
+        {
+          "member": "gcc-15.2.0/COPYING",
+          "bytes": 18002,
+          "sha256": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
+          "path": "third_party/alpine-notices/texts/231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "gd",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libgd"
+      ],
+      "installed_versions": [
+        "2.3.3-r10"
+      ],
+      "source_commit": "bf4ebac970366eda6cc26aa61c8dddae0d6916ee",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/bf4ebac970366eda6cc26aa61c8dddae0d6916ee/main/gd/APKBUILD",
+      "recipe_sha256": "df5658524b7459d2a649bd8d365943bdff6b0bc5f9c4c3f164ccf2b1940ff3fb",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libgd-2.3.3.tar.xz",
+      "source_archive": "libgd-2.3.3.tar.xz",
+      "source_bytes": 2809056,
+      "source_sha512": "aa49d4381d604a4360d556419d603df2ffd689a6dcc10f8e5e1d158ddaa3ab89912f6077ca77da4e370055074007971cf6d356ec9bf26dcf39bcff3208bc7e6c",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libgd-2.3.3.tar.xz",
+      "notices": [
+        {
+          "member": "libgd-2.3.3/docs/naturaldocs/html/files/license-txt.html",
+          "bytes": 11238,
+          "sha256": "e1f0e143cd0a961a6e30868741acc4be5e69ee3222932da3ec2c4f5652277ec4",
+          "path": "third_party/alpine-notices/texts/e1f0e143cd0a961a6e30868741acc4be5e69ee3222932da3ec2c4f5652277ec4.txt"
+        },
+        {
+          "member": "libgd-2.3.3/COPYING",
+          "bytes": 2991,
+          "sha256": "005f4b6b0141d1bd11d371bbf7d4f67947f85a4906b7f5465f942204cf918ba3",
+          "path": "third_party/alpine-notices/texts/005f4b6b0141d1bd11d371bbf7d4f67947f85a4906b7f5465f942204cf918ba3.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "geoip",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "geoip"
+      ],
+      "installed_versions": [
+        "1.6.12-r6"
+      ],
+      "source_commit": "6db81e6559d66572861f28962c24459c4a583da1",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/6db81e6559d66572861f28962c24459c4a583da1/main/geoip/APKBUILD",
+      "recipe_sha256": "8f9e47a0405fbc2ba289cd690f98c9caeb3098a1b9853c90e098763cd573c370",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/GeoIP-1.6.12.tar.gz",
+      "source_archive": "GeoIP-1.6.12.tar.gz",
+      "source_bytes": 473914,
+      "source_sha512": "a1c8120692a7ba6de5836550917f86f4797dd236a8b7d71b6f92b5389e4b071d89e57036654f5de1d4b762730a2a5c331c31414eab0c889c9befaa097941fee7",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/GeoIP-1.6.12.tar.gz",
+      "notices": [
+        {
+          "member": "GeoIP-1.6.12/AUTHORS",
+          "bytes": 35,
+          "sha256": "0cfa2de95ab4f61488224f7ff086b12fd848e13ce7b8f5a3ce37949cdf76df09",
+          "path": "third_party/alpine-notices/texts/0cfa2de95ab4f61488224f7ff086b12fd848e13ce7b8f5a3ce37949cdf76df09.txt"
+        },
+        {
+          "member": "GeoIP-1.6.12/COPYING",
+          "bytes": 26434,
+          "sha256": "36b6d3fa47916943fd5fec313c584784946047ec1337a78b440e5992cb595f89",
+          "path": "third_party/alpine-notices/texts/36b6d3fa47916943fd5fec313c584784946047ec1337a78b440e5992cb595f89.txt"
+        },
+        {
+          "member": "GeoIP-1.6.12/LICENSE",
+          "bytes": 1144,
+          "sha256": "d0c01186cb63bcbfded70b18b8271864cfcab29618d4bf35918380d49ce1af3d",
+          "path": "third_party/alpine-notices/texts/d0c01186cb63bcbfded70b18b8271864cfcab29618d4bf35918380d49ce1af3d.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "gettext",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "gettext-envsubst",
+        "libintl"
+      ],
+      "installed_versions": [
+        "1.0-r0"
+      ],
+      "source_commit": "a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391/main/gettext/APKBUILD",
+      "recipe_sha256": "e22f0eecaf4e5f1f5febe725f47ee019481ded75cdcf76d3c9dd5e7a9e590d13",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/gettext-1.0.tar.xz",
+      "source_archive": "gettext-1.0.tar.xz",
+      "source_bytes": 10721600,
+      "source_sha512": "fa657faf5685dae7121a9b0293d3308a3910a72b90943a7a493b88cf88e95f29c5758e1573320169fe9beac6f101ef76f4165a279a7f3294155d7a773e2fa09f",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/gettext-1.0.tar.xz",
+      "notices": [
+        {
+          "member": "gettext-1.0/AUTHORS",
+          "bytes": 2637,
+          "sha256": "167b04ed012e59c2d2cfc87d420d8c8a8f5c528ef1fd068598b36d57f39db203",
+          "path": "third_party/alpine-notices/texts/167b04ed012e59c2d2cfc87d420d8c8a8f5c528ef1fd068598b36d57f39db203.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/AUTHORS",
+          "bytes": 145,
+          "sha256": "136ea88816ec1990c2fc060970013b9e94c875ba8b387f9bb3d62e77c90bc9b4",
+          "path": "third_party/alpine-notices/texts/136ea88816ec1990c2fc060970013b9e94c875ba8b387f9bb3d62e77c90bc9b4.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/intl/AUTHORS",
+          "bytes": 96,
+          "sha256": "4bd9e2cd15ab6d68b30965512b63a1d4aae95f4c1dd040657a4d1300252a695f",
+          "path": "third_party/alpine-notices/texts/4bd9e2cd15ab6d68b30965512b63a1d4aae95f4c1dd040657a4d1300252a695f.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/libasprintf/AUTHORS",
+          "bytes": 33,
+          "sha256": "590f1c4aa72c2c14dd52b0e230bf652e2109d00099fc7bb272e4594b800913d0",
+          "path": "third_party/alpine-notices/texts/590f1c4aa72c2c14dd52b0e230bf652e2109d00099fc7bb272e4594b800913d0.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/AUTHORS",
+          "bytes": 60,
+          "sha256": "4027705b723299dd8e6153939ab73395e22685503994cc8de92fa2ebaa432a49",
+          "path": "third_party/alpine-notices/texts/4027705b723299dd8e6153939ab73395e22685503994cc8de92fa2ebaa432a49.txt"
+        },
+        {
+          "member": "gettext-1.0/libtextstyle/AUTHORS",
+          "bytes": 271,
+          "sha256": "71c0580cb05d28848b341e5a4da2761d4a8eb482592358d646dab104648a8303",
+          "path": "third_party/alpine-notices/texts/71c0580cb05d28848b341e5a4da2761d4a8eb482592358d646dab104648a8303.txt"
+        },
+        {
+          "member": "gettext-1.0/COPYING",
+          "bytes": 35151,
+          "sha256": "e79e9c8a0c85d735ff98185918ec94ed7d175efc377012787aebcf3b80f0d90b",
+          "path": "third_party/alpine-notices/texts/e79e9c8a0c85d735ff98185918ec94ed7d175efc377012787aebcf3b80f0d90b.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/COPYING",
+          "bytes": 495,
+          "sha256": "7ef2cdfe58e0c0460657b6598b49af29d4e03c1e41cbaf0e1da1eb8ad74b95d0",
+          "path": "third_party/alpine-notices/texts/7ef2cdfe58e0c0460657b6598b49af29d4e03c1e41cbaf0e1da1eb8ad74b95d0.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/libasprintf/COPYING",
+          "bytes": 65,
+          "sha256": "03133addae5b99a6148c538300e6d97074453089be1423b741bd081f18e2b298",
+          "path": "third_party/alpine-notices/texts/03133addae5b99a6148c538300e6d97074453089be1423b741bd081f18e2b298.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/COPYING",
+          "bytes": 78,
+          "sha256": "5d4cff30d5038f82a0edc79798456049b61e1752fdb7e9ab1f4bfb9fae3a7303",
+          "path": "third_party/alpine-notices/texts/5d4cff30d5038f82a0edc79798456049b61e1752fdb7e9ab1f4bfb9fae3a7303.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/gnulib-lib/libxml/COPYING",
+          "bytes": 1289,
+          "sha256": "c5c63674f8a83c4d2e385d96d1c670a03cb871ba2927755467017317878574bd",
+          "path": "third_party/alpine-notices/texts/c5c63674f8a83c4d2e385d96d1c670a03cb871ba2927755467017317878574bd.txt"
+        },
+        {
+          "member": "gettext-1.0/gnulib-local/lib/libxml/COPYING",
+          "bytes": 1289,
+          "sha256": "c5c63674f8a83c4d2e385d96d1c670a03cb871ba2927755467017317878574bd",
+          "path": "third_party/alpine-notices/texts/c5c63674f8a83c4d2e385d96d1c670a03cb871ba2927755467017317878574bd.txt"
+        },
+        {
+          "member": "gettext-1.0/libtextstyle/COPYING",
+          "bytes": 35151,
+          "sha256": "e79e9c8a0c85d735ff98185918ec94ed7d175efc377012787aebcf3b80f0d90b",
+          "path": "third_party/alpine-notices/texts/e79e9c8a0c85d735ff98185918ec94ed7d175efc377012787aebcf3b80f0d90b.txt"
+        },
+        {
+          "member": "gettext-1.0/libtextstyle/lib/libxml/COPYING",
+          "bytes": 1289,
+          "sha256": "c5c63674f8a83c4d2e385d96d1c670a03cb871ba2927755467017317878574bd",
+          "path": "third_party/alpine-notices/texts/c5c63674f8a83c4d2e385d96d1c670a03cb871ba2927755467017317878574bd.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/intl/COPYING.LIB",
+          "bytes": 26419,
+          "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+          "path": "third_party/alpine-notices/texts/20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/libasprintf/COPYING.LIB",
+          "bytes": 26419,
+          "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+          "path": "third_party/alpine-notices/texts/20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/tree-sitter-0.23.2/LICENSE",
+          "bytes": 1085,
+          "sha256": "5f9cf9fb6acb1972b35ae29119ce563bb60ec097656bc4b69b9bac2d04c7a147",
+          "path": "third_party/alpine-notices/texts/5f9cf9fb6acb1972b35ae29119ce563bb60ec097656bc4b69b9bac2d04c7a147.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/tree-sitter-0.23.2/lib/src/unicode/LICENSE",
+          "bytes": 21001,
+          "sha256": "6a18c5fac70d7860b57f5b72b4e2c9a1ba6b3d2741eef7ff9767c5379364f10d",
+          "path": "third_party/alpine-notices/texts/6a18c5fac70d7860b57f5b72b4e2c9a1ba6b3d2741eef7ff9767c5379364f10d.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/tree-sitter-d-0.8.2/LICENSE",
+          "bytes": 1040,
+          "sha256": "ecf206b1a27e8e4ea07f1e1529cb111b4be5ce8420bd27b8269981d9c0c389f8",
+          "path": "third_party/alpine-notices/texts/ecf206b1a27e8e4ea07f1e1529cb111b4be5ce8420bd27b8269981d9c0c389f8.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/tree-sitter-go-0.23.4/LICENSE",
+          "bytes": 1080,
+          "sha256": "2e0110e07abef7c2548b26ec9d6969775617ca539a0dc8dbeeb14d6452c711d1",
+          "path": "third_party/alpine-notices/texts/2e0110e07abef7c2548b26ec9d6969775617ca539a0dc8dbeeb14d6452c711d1.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/tree-sitter-ocaml-0.23.2/LICENSE",
+          "bytes": 1094,
+          "sha256": "f977a20805dd6e275f14bc090a5f8e638401dad4df366841c1060f12c75b74ae",
+          "path": "third_party/alpine-notices/texts/f977a20805dd6e275f14bc090a5f8e638401dad4df366841c1060f12c75b74ae.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/tree-sitter-rust-0.23.2/LICENSE",
+          "bytes": 1080,
+          "sha256": "31d5b6f4243d5c7c6e1c4ebbbb9f6407bd1457a08bcc4f706521710341acba36",
+          "path": "third_party/alpine-notices/texts/31d5b6f4243d5c7c6e1c4ebbbb9f6407bd1457a08bcc4f706521710341acba36.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/tree-sitter-typescript-0.23.2/LICENSE",
+          "bytes": 1080,
+          "sha256": "49bf33cf78ef5897e4e161ce1517df7de1ae5042a65b6bcfd44401e0fc606559",
+          "path": "third_party/alpine-notices/texts/49bf33cf78ef5897e4e161ce1517df7de1ae5042a65b6bcfd44401e0fc606559.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/libasprintf/gpl.texi",
+          "bytes": 18223,
+          "sha256": "e125c8d295908f4e99caa16076abcfd61b41b0d7d679227c29fafdf95989c671",
+          "path": "third_party/alpine-notices/texts/e125c8d295908f4e99caa16076abcfd61b41b0d7d679227c29fafdf95989c671.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/doc/gpl.texi",
+          "bytes": 18223,
+          "sha256": "e125c8d295908f4e99caa16076abcfd61b41b0d7d679227c29fafdf95989c671",
+          "path": "third_party/alpine-notices/texts/e125c8d295908f4e99caa16076abcfd61b41b0d7d679227c29fafdf95989c671.txt"
+        },
+        {
+          "member": "gettext-1.0/libtextstyle/doc/gpl.texi",
+          "bytes": 35089,
+          "sha256": "e3189873c8fc0b9bff643a9a3fc7863c971d925f493384d16cde633068c502df",
+          "path": "third_party/alpine-notices/texts/e3189873c8fc0b9bff643a9a3fc7863c971d925f493384d16cde633068c502df.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-runtime/libasprintf/lgpl.texi",
+          "bytes": 26458,
+          "sha256": "c47c88ec7fc6cecd868fd81caaee85613da391960c64d5441765260fd4f924b5",
+          "path": "third_party/alpine-notices/texts/c47c88ec7fc6cecd868fd81caaee85613da391960c64d5441765260fd4f924b5.txt"
+        },
+        {
+          "member": "gettext-1.0/gettext-tools/doc/lgpl.texi",
+          "bytes": 26458,
+          "sha256": "c47c88ec7fc6cecd868fd81caaee85613da391960c64d5441765260fd4f924b5",
+          "path": "third_party/alpine-notices/texts/c47c88ec7fc6cecd868fd81caaee85613da391960c64d5441765260fd4f924b5.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libavif",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libavif"
+      ],
+      "installed_versions": [
+        "1.4.1-r0"
+      ],
+      "source_commit": "7c091e42619c47958002c5de53dd7f02dd4c83ac",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/7c091e42619c47958002c5de53dd7f02dd4c83ac/main/libavif/APKBUILD",
+      "recipe_sha256": "aaea4dbac842846447a5231e49da67c7a5a8e7acfdfcc38158cb7fcd3b1e3bda",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libavif-v1.4.1.tar.gz",
+      "source_archive": "libavif-v1.4.1.tar.gz",
+      "source_bytes": 14528943,
+      "source_sha512": "103a54cbc20a1ae1c948bf5e09cb7696b966c55445f9fd951207fbf651039ebd56e0ad04a6fdf5538299af5ee96339a760fe1cb904af47f51072642a750fd699",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libavif-v1.4.1.tar.gz",
+      "notices": [
+        {
+          "member": "libavif-1.4.1/LICENSE",
+          "bytes": 20415,
+          "sha256": "165abf92cc04b39e80d29cadea7a6a7e8fddf59407d4ad2616507a7ebe8216f9",
+          "path": "third_party/alpine-notices/texts/165abf92cc04b39e80d29cadea7a6a7e8fddf59407d4ad2616507a7ebe8216f9.txt"
+        },
+        {
+          "member": "libavif-1.4.1/third_party/libyuv/AUTHORS",
+          "bytes": 148,
+          "sha256": "406e9dee7651ff7a415ef126fe6f649b29312ea3f2b28f11bb7f0bf458edb3bd",
+          "path": "third_party/alpine-notices/texts/406e9dee7651ff7a415ef126fe6f649b29312ea3f2b28f11bb7f0bf458edb3bd.txt"
+        }
+      ],
+      "additional_source_archives": [
+        {
+          "name": "libavif-libargparse-ee74d1b53bd680748af14e737378de57e2a0a954.tar.gz",
+          "sha512": "6d6e47f4c1a63f085a90bc4d9f6dca7462f5e72d2a4a3b7a6d6df54632edbd4a9deb8f9b8c08517031b0c9ca89e0a1b48bb35261b3e660e4601e28a39f8e7ef1"
+        }
+      ]
+    },
+    {
+      "origin": "libbsd",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libbsd"
+      ],
+      "installed_versions": [
+        "0.12.2-r0"
+      ],
+      "source_commit": "02365e78d654a7beb23fd35d7d69f4a649009ede",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/02365e78d654a7beb23fd35d7d69f4a649009ede/main/libbsd/APKBUILD",
+      "recipe_sha256": "db881fac5ce6d33e7b09a30abf01ab56643e51ed267ca7402677b00592830fbb",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libbsd-0.12.2.tar.xz",
+      "source_archive": "libbsd-0.12.2.tar.xz",
+      "source_bytes": 446032,
+      "source_sha512": "ce43e4f0486d5f00d4a8119ee863eaaa2f968cae4aa3d622976bb31ad601dfc565afacef7ebade5eba33fff1c329b5296c6387c008d1e1805d878431038f8b21",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libbsd-0.12.2.tar.xz",
+      "notices": [
+        {
+          "member": "libbsd-0.12.2/COPYING",
+          "bytes": 22396,
+          "sha256": "978426553ab7b9cfb4503d98e578a77b8c3142c099100aa9791fd21be5a95f97",
+          "path": "third_party/alpine-notices/texts/978426553ab7b9cfb4503d98e578a77b8c3142c099100aa9791fd21be5a95f97.txt"
+        },
+        {
+          "member": "libbsd-0.12.2/include/bsd/bsd.h",
+          "bytes": 1880,
+          "sha256": "ec7420f1632e82cc587b7838e3a655e9ea217c8bd29a9cf9de3c02a5bd44e57f",
+          "path": "third_party/alpine-notices/texts/ec7420f1632e82cc587b7838e3a655e9ea217c8bd29a9cf9de3c02a5bd44e57f.txt"
+        },
+        {
+          "member": "libbsd-0.12.2/src/bsd_getopt.c",
+          "bytes": 1736,
+          "sha256": "68beb90098a58ee519156c5305e3eab7e3bcb7d99e5f1fa85f12e7851b03d8f9",
+          "path": "third_party/alpine-notices/texts/68beb90098a58ee519156c5305e3eab7e3bcb7d99e5f1fa85f12e7851b03d8f9.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libedit",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libedit"
+      ],
+      "installed_versions": [
+        "20260508.3.1-r1"
+      ],
+      "source_commit": "7c805161e588c028cdee3f19f500849fb2c75d42",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/7c805161e588c028cdee3f19f500849fb2c75d42/main/libedit/APKBUILD",
+      "recipe_sha256": "66ddaa5408a8b129aa985e388100cdc6a700c23a2422fd1b120fb1b85ac6bf16",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libedit-20260508-3.1.tar.gz",
+      "source_archive": "libedit-20260508-3.1.tar.gz",
+      "source_bytes": 550497,
+      "source_sha512": "862d24687eb0dfd30735c34ce56bf8f64302e1c65835cac67656a97535317e1d29eec2c1ef271d7b971bdab872afc6d13d0b055982fd3d958c73e96afc87d10a",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libedit-20260508-3.1.tar.gz",
+      "notices": [
+        {
+          "member": "libedit-20260508-3.1/COPYING",
+          "bytes": 1615,
+          "sha256": "9da6c9c74987a36c84302982799d17d2f748ba1c1c0c471425716173c1d07649",
+          "path": "third_party/alpine-notices/texts/9da6c9c74987a36c84302982799d17d2f748ba1c1c0c471425716173c1d07649.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libice",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libice"
+      ],
+      "installed_versions": [
+        "1.1.2-r0"
+      ],
+      "source_commit": "d4941e833167c30aa1172e6d8420d084698254ab",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/d4941e833167c30aa1172e6d8420d084698254ab/main/libice/APKBUILD",
+      "recipe_sha256": "c20d0dddc17219ea918c6e1626d238b29a219352ec887c3b5094d8f00339407c",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libICE-1.1.2.tar.xz",
+      "source_archive": "libICE-1.1.2.tar.xz",
+      "source_bytes": 342900,
+      "source_sha512": "340f51ffa1f14ed442ab8bcea92dd63df147c48242e232e818cafe02f43de7ab6e99c5430b9cb8d0dc661295239d2b3f6bdb6a092ce51a98afa06235257e9b1f",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libICE-1.1.2.tar.xz",
+      "notices": [
+        {
+          "member": "libICE-1.1.2/AUTHORS",
+          "bytes": 190,
+          "sha256": "20c8034cbb5400cc747423afb4789ff88a6bfa0f32449abdc515c040f2a7425b",
+          "path": "third_party/alpine-notices/texts/20c8034cbb5400cc747423afb4789ff88a6bfa0f32449abdc515c040f2a7425b.txt"
+        },
+        {
+          "member": "libICE-1.1.2/COPYING",
+          "bytes": 1169,
+          "sha256": "60105b7ea93cb07a67fee8443b092b727e3db7f0dff4fbe05bc6cd7747fb53c8",
+          "path": "third_party/alpine-notices/texts/60105b7ea93cb07a67fee8443b092b727e3db7f0dff4fbe05bc6cd7747fb53c8.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libidn2",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libidn2"
+      ],
+      "installed_versions": [
+        "2.3.8-r0"
+      ],
+      "source_commit": "8240e09aa2fdd8f9979b2016be082273965aff0c",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/8240e09aa2fdd8f9979b2016be082273965aff0c/main/libidn2/APKBUILD",
+      "recipe_sha256": "b10c820249ffdf9eea4864bee27618a56163a297f06708362203d553de54a34a",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libidn2-2.3.8.tar.gz",
+      "source_archive": "libidn2-2.3.8.tar.gz",
+      "source_bytes": 2234804,
+      "source_sha512": "4d8427c0f115268132f7544e80a808c883ab1406338f6c529b1a586b016d57aedb0857f66166eb8d9f37d70efc9dccf907b673b43b17bcf258c8797db1e829ce",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libidn2-2.3.8.tar.gz",
+      "notices": [
+        {
+          "member": "libidn2-2.3.8/AUTHORS",
+          "bytes": 212,
+          "sha256": "7719304df806ca5cd68c1f1c7e0139e0c11ed14fede560ae192d3c4d1989e839",
+          "path": "third_party/alpine-notices/texts/7719304df806ca5cd68c1f1c7e0139e0c11ed14fede560ae192d3c4d1989e839.txt"
+        },
+        {
+          "member": "libidn2-2.3.8/COPYING",
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "path": "third_party/alpine-notices/texts/3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986.txt"
+        },
+        {
+          "member": "libidn2-2.3.8/COPYING.LESSERv3",
+          "bytes": 7652,
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+          "path": "third_party/alpine-notices/texts/e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118.txt"
+        },
+        {
+          "member": "libidn2-2.3.8/COPYING.unicode",
+          "bytes": 8782,
+          "sha256": "01d621eef165cf4d3d3dbb737aa0699178d94c6f18cf87e9dde6db3ca7790f46",
+          "path": "third_party/alpine-notices/texts/01d621eef165cf4d3d3dbb737aa0699178d94c6f18cf87e9dde6db3ca7790f46.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libjpeg-turbo",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libjpeg-turbo"
+      ],
+      "installed_versions": [
+        "3.1.3-r0"
+      ],
+      "source_commit": "5fe6bebf850fc964a8525c81548397c39cb6f7cd",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/5fe6bebf850fc964a8525c81548397c39cb6f7cd/main/libjpeg-turbo/APKBUILD",
+      "recipe_sha256": "1218c9432f4de37d43ed320d4ddb78989f0e9f8660f00c67df8505240821de61",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libjpeg-turbo-3.1.3.tar.gz",
+      "source_archive": "libjpeg-turbo-3.1.3.tar.gz",
+      "source_bytes": 2516606,
+      "source_sha512": "d3410a072044b4962c1aa08eb144b4e4b959f4f65203dfac4013b14e2fd987b9a6ee9b59f5570980fa691ddf5e9f9d3aa328a63afb487a46c2e76de722f3d693",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libjpeg-turbo-3.1.3.tar.gz",
+      "notices": [
+        {
+          "member": "libjpeg-turbo-3.1.3/LICENSE.md",
+          "bytes": 5620,
+          "sha256": "2189dc45a8fe96204069f8124caa53a148dfdc193f50f584c6ca7849a6072872",
+          "path": "third_party/alpine-notices/texts/2189dc45a8fe96204069f8124caa53a148dfdc193f50f584c6ca7849a6072872.txt"
+        },
+        {
+          "member": "libjpeg-turbo-3.1.3/java/doc/legal/LICENSE",
+          "bytes": 19274,
+          "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
+          "path": "third_party/alpine-notices/texts/4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726.txt"
+        },
+        {
+          "member": "libjpeg-turbo-3.1.3/release/License.rtf",
+          "bytes": 2178,
+          "sha256": "d26120ab237f87dea10aa4fa7fd4243cadffd26e54eb2f3903d5fb0f8ed336b2",
+          "path": "third_party/alpine-notices/texts/d26120ab237f87dea10aa4fa7fd4243cadffd26e54eb2f3903d5fb0f8ed336b2.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libmd",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libmd"
+      ],
+      "installed_versions": [
+        "1.2.0-r0"
+      ],
+      "source_commit": "87b78bc6890645c317d3167bdbb0187502d0cda9",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/87b78bc6890645c317d3167bdbb0187502d0cda9/main/libmd/APKBUILD",
+      "recipe_sha256": "666cbb883c1723674806743c02246f75b391fab030f066481b927dc53bd15716",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libmd-1.2.0.tar.xz",
+      "source_archive": "libmd-1.2.0.tar.xz",
+      "source_bytes": 287992,
+      "source_sha512": "03684ab0c7724bb5cd22026ed39430abc47707e44f6756c372ad317e94b977b1b9d83c0ade614b39be1ca2208a0873e940968659476fe62a32c7195530d022a5",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libmd-1.2.0.tar.xz",
+      "notices": [
+        {
+          "member": "libmd-1.2.0/COPYING",
+          "bytes": 9449,
+          "sha256": "4971a2b7065117a01cb04430b53ba37c4c6181d4aa8a3a983a3f7042d1625f19",
+          "path": "third_party/alpine-notices/texts/4971a2b7065117a01cb04430b53ba37c4c6181d4aa8a3a983a3f7042d1625f19.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libpng",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libpng"
+      ],
+      "installed_versions": [
+        "1.6.59-r0"
+      ],
+      "source_commit": "8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b/main/libpng/APKBUILD",
+      "recipe_sha256": "1de1354d00b75a9acec130edbcc5c3eeceb8d65a37b73737c6e716fe2dc176b2",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libpng-1.6.59.tar.gz",
+      "source_archive": "libpng-1.6.59.tar.gz",
+      "source_bytes": 1600400,
+      "source_sha512": "2d753e764846a0a75a10f2a00c6f4ae23d2ae37237c69d59d5e619da3f143d59f4ea9ce29c1fb39435df1cef77877c83b042a2275934c353a6603061da2d2dd9",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libpng-1.6.59.tar.gz",
+      "notices": [
+        {
+          "member": "libpng-1.6.59/AUTHORS",
+          "bytes": 1810,
+          "sha256": "b55efa9a0bb709187cfb609860e926535b462a28bbf61b4294bc2e724747cb8e",
+          "path": "third_party/alpine-notices/texts/b55efa9a0bb709187cfb609860e926535b462a28bbf61b4294bc2e724747cb8e.txt"
+        },
+        {
+          "member": "libpng-1.6.59/LICENSE",
+          "bytes": 5345,
+          "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526",
+          "path": "third_party/alpine-notices/texts/bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526.txt"
+        },
+        {
+          "member": "libpng-1.6.59/LICENSES/MIT-0.txt",
+          "bytes": 878,
+          "sha256": "8876cdca96eb380d16d5ea32bf4529d85e87dedc7765ae2861a9bec7f34acbed",
+          "path": "third_party/alpine-notices/texts/8876cdca96eb380d16d5ea32bf4529d85e87dedc7765ae2861a9bec7f34acbed.txt"
+        },
+        {
+          "member": "libpng-1.6.59/LICENSES/MIT.txt",
+          "bytes": 1036,
+          "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+          "path": "third_party/alpine-notices/texts/508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1.txt"
+        },
+        {
+          "member": "libpng-1.6.59/contrib/gregbook/COPYING",
+          "bytes": 18097,
+          "sha256": "d6cb0e9e560f51085556949a84af12b79a00f10ab8b66c752537faf7cd665572",
+          "path": "third_party/alpine-notices/texts/d6cb0e9e560f51085556949a84af12b79a00f10ab8b66c752537faf7cd665572.txt"
+        },
+        {
+          "member": "libpng-1.6.59/contrib/gregbook/LICENSE",
+          "bytes": 2373,
+          "sha256": "b6a03c1803eb58ffb1f1278d5c7d4096c4c116e66dce8a7553e8c77d163c3438",
+          "path": "third_party/alpine-notices/texts/b6a03c1803eb58ffb1f1278d5c7d4096c4c116e66dce8a7553e8c77d163c3438.txt"
+        },
+        {
+          "member": "libpng-1.6.59/contrib/pngexif/LICENSE_MIT.txt",
+          "bytes": 1036,
+          "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+          "path": "third_party/alpine-notices/texts/508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1.txt"
+        },
+        {
+          "member": "libpng-1.6.59/contrib/pngminus/LICENSE.txt",
+          "bytes": 1164,
+          "sha256": "1806f1f10d393e9e377b3a8d1b968452b54f1a90378f14eeef45426946ace330",
+          "path": "third_party/alpine-notices/texts/1806f1f10d393e9e377b3a8d1b968452b54f1a90378f14eeef45426946ace330.txt"
+        },
+        {
+          "member": "libpng-1.6.59/scripts/cmake/AUTHORS.md",
+          "bytes": 925,
+          "sha256": "041eb1a61714e564f39735695377093c4e8eace8f7b460be2d4ce8876e4a6466",
+          "path": "third_party/alpine-notices/texts/041eb1a61714e564f39735695377093c4e8eace8f7b460be2d4ce8876e4a6466.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libpsl",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libpsl"
+      ],
+      "installed_versions": [
+        "0.21.5-r3"
+      ],
+      "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/6bd45b53fb316dc01bda59f5feaf1e127eb64f22/main/libpsl/APKBUILD",
+      "recipe_sha256": "b68a1b2d744a902cf296a641631f013d172a3dee2ec78c324e9ec73031a7d2ad",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libpsl-0.21.5.tar.gz",
+      "source_archive": "libpsl-0.21.5.tar.gz",
+      "source_bytes": 7624251,
+      "source_sha512": "c14d575cecc0f1693894dd79565b6b9220084ddfa43b908a1cefe16d147cdd5ec47796eb0c2135e2f829a951abaf39d8a371ab5c1352f57b36e610e25adf91f5",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libpsl-0.21.5.tar.gz",
+      "notices": [
+        {
+          "member": "libpsl-0.21.5/src/LICENSE.chromium",
+          "bytes": 1664,
+          "sha256": "1d7f52747a9169751cdf2641a8299c0098e9ecdf9429296ffd55bdb14c9ed5b3",
+          "path": "third_party/alpine-notices/texts/1d7f52747a9169751cdf2641a8299c0098e9ecdf9429296ffd55bdb14c9ed5b3.txt"
+        },
+        {
+          "member": "libpsl-0.21.5/COPYING",
+          "bytes": 1060,
+          "sha256": "322392e6001b2b3b0fca705dc9f11f26e12441188ecde50eb1d22909980b2925",
+          "path": "third_party/alpine-notices/texts/322392e6001b2b3b0fca705dc9f11f26e12441188ecde50eb1d22909980b2925.txt"
+        },
+        {
+          "member": "libpsl-0.21.5/AUTHORS",
+          "bytes": 916,
+          "sha256": "f8583862f775c397643c7eac9c6645abfdd3f6d2918311e35f0fba719f8fa818",
+          "path": "third_party/alpine-notices/texts/f8583862f775c397643c7eac9c6645abfdd3f6d2918311e35f0fba719f8fa818.txt"
+        },
+        {
+          "member": "libpsl-0.21.5/LICENSE",
+          "bytes": 1060,
+          "sha256": "322392e6001b2b3b0fca705dc9f11f26e12441188ecde50eb1d22909980b2925",
+          "path": "third_party/alpine-notices/texts/322392e6001b2b3b0fca705dc9f11f26e12441188ecde50eb1d22909980b2925.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libsm",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libsm"
+      ],
+      "installed_versions": [
+        "1.2.6-r0"
+      ],
+      "source_commit": "4eaa957537767ad0344894ad0e609068b26bf85d",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/4eaa957537767ad0344894ad0e609068b26bf85d/main/libsm/APKBUILD",
+      "recipe_sha256": "9e651738f9f00af5323eebe66bf0800af11d4fa4697283a721aefa8ecd0df8a2",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libSM-1.2.6.tar.xz",
+      "source_archive": "libSM-1.2.6.tar.xz",
+      "source_bytes": 314040,
+      "source_sha512": "e544a1dc49a03390f76af35837bfd01f749b806d88d3ee806f20311c47ff53d0aeea4744feb875958031b17d50b57a89dcc41d81241c09333c88b268c44653a7",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libSM-1.2.6.tar.xz",
+      "notices": [
+        {
+          "member": "libSM-1.2.6/AUTHORS",
+          "bytes": 206,
+          "sha256": "9d678c3c325ab473374ff8abb945505bd9b757dad14e3838b9d6b3832e5b9edb",
+          "path": "third_party/alpine-notices/texts/9d678c3c325ab473374ff8abb945505bd9b757dad14e3838b9d6b3832e5b9edb.txt"
+        },
+        {
+          "member": "libSM-1.2.6/COPYING",
+          "bytes": 2244,
+          "sha256": "136fb258a67a2810302c6cd99525b068e6f875b8f1031a93b34edad3ffc740a5",
+          "path": "third_party/alpine-notices/texts/136fb258a67a2810302c6cd99525b068e6f875b8f1031a93b34edad3ffc740a5.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libunistring",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libunistring"
+      ],
+      "installed_versions": [
+        "1.4.2-r0"
+      ],
+      "source_commit": "30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c/main/libunistring/APKBUILD",
+      "recipe_sha256": "897e2505f928b37f16ebae9fa0b31d0ef67a8523f3dd5c4dcebc825c13d2fcfa",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libunistring-1.4.2.tar.xz",
+      "source_archive": "libunistring-1.4.2.tar.xz",
+      "source_bytes": 2786084,
+      "source_sha512": "0215f7f40f426227eca5174140654a3fa43ac1520eeb212c2ba08043470f905687b2703afdda12e9635359a6187643900136b6bb11b422bd7567d17ca71b555f",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libunistring-1.4.2.tar.xz",
+      "notices": [
+        {
+          "member": "libunistring-1.4.2/doc/lgpl.texi",
+          "bytes": 7762,
+          "sha256": "44b57bf6b59d819709fa824b5aa4673ebe176e368f23eb52e263b7bc16f4b506",
+          "path": "third_party/alpine-notices/texts/44b57bf6b59d819709fa824b5aa4673ebe176e368f23eb52e263b7bc16f4b506.txt"
+        },
+        {
+          "member": "libunistring-1.4.2/doc/gpl.texi",
+          "bytes": 35089,
+          "sha256": "e3189873c8fc0b9bff643a9a3fc7863c971d925f493384d16cde633068c502df",
+          "path": "third_party/alpine-notices/texts/e3189873c8fc0b9bff643a9a3fc7863c971d925f493384d16cde633068c502df.txt"
+        },
+        {
+          "member": "libunistring-1.4.2/COPYING.LIB",
+          "bytes": 7639,
+          "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+          "path": "third_party/alpine-notices/texts/a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c.txt"
+        },
+        {
+          "member": "libunistring-1.4.2/AUTHORS",
+          "bytes": 444,
+          "sha256": "9877ee5d24b5fa059fcc3ff2f4af36918f7c5676de000b9cb5ec11efa6aac149",
+          "path": "third_party/alpine-notices/texts/9877ee5d24b5fa059fcc3ff2f4af36918f7c5676de000b9cb5ec11efa6aac149.txt"
+        },
+        {
+          "member": "libunistring-1.4.2/COPYING",
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "path": "third_party/alpine-notices/texts/3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libwebp",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libsharpyuv",
+        "libwebp"
+      ],
+      "installed_versions": [
+        "1.6.0-r0"
+      ],
+      "source_commit": "af8b48fabd19b69b00f5efe192f461896a38cf74",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/af8b48fabd19b69b00f5efe192f461896a38cf74/main/libwebp/APKBUILD",
+      "recipe_sha256": "fa01d83adb827d69372ef67b622ad667f4e39f94b4a85aeabef733e88d9f3d8a",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libwebp-1.6.0.tar.gz",
+      "source_archive": "libwebp-1.6.0.tar.gz",
+      "source_bytes": 4296070,
+      "source_sha512": "5c159d9760efcb92749092536daada22c0a73c20926c76097a5f0448ddbf874cf761324ca97925ca5f578b30477564b2b072b47667e504673797128b31cafcbf",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libwebp-1.6.0.tar.gz",
+      "notices": [
+        {
+          "member": "libwebp-1.6.0/PATENTS",
+          "bytes": 1436,
+          "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+          "path": "third_party/alpine-notices/texts/cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c.txt"
+        },
+        {
+          "member": "libwebp-1.6.0/COPYING",
+          "bytes": 1496,
+          "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf",
+          "path": "third_party/alpine-notices/texts/5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf.txt"
+        },
+        {
+          "member": "libwebp-1.6.0/AUTHORS",
+          "bytes": 3279,
+          "sha256": "f251be89fd442bd9d701360730aea163cc8e2076ff03528f59267dc2c4f8b60a",
+          "path": "third_party/alpine-notices/texts/f251be89fd442bd9d701360730aea163cc8e2076ff03528f59267dc2c4f8b60a.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libx11",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libx11"
+      ],
+      "installed_versions": [
+        "1.8.14-r0"
+      ],
+      "source_commit": "e129d974905f6cf078e41390b58241a73519f572",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/e129d974905f6cf078e41390b58241a73519f572/main/libx11/APKBUILD",
+      "recipe_sha256": "c159d58e883895ef75e4bcd635857b4a08f4122d7688d7515f45c363cda100df",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libX11-1.8.14.tar.xz",
+      "source_archive": "libX11-1.8.14.tar.xz",
+      "source_bytes": 1897544,
+      "source_sha512": "4d61596d06235791d6afab823d0457dc42d2769717eb80d4c7e5bc825bb08db6fae46a75561547c679b5f892f24ebd0e1129b60bd4a574f7d1edb3cbfc91df0c",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libX11-1.8.14.tar.xz",
+      "notices": [
+        {
+          "member": "libX11-1.8.14/COPYING",
+          "bytes": 45013,
+          "sha256": "eda0c2ed1cae0280c7fe79762eaad8ad31c044afc64e71e92ef2c6f3cd7bc395",
+          "path": "third_party/alpine-notices/texts/eda0c2ed1cae0280c7fe79762eaad8ad31c044afc64e71e92ef2c6f3cd7bc395.txt"
+        },
+        {
+          "member": "libX11-1.8.14/AUTHORS",
+          "bytes": 1734,
+          "sha256": "cb356a611127b9e2267be82c79db15b6ad87a6038f91f55cf5ae2b585fb879f2",
+          "path": "third_party/alpine-notices/texts/cb356a611127b9e2267be82c79db15b6ad87a6038f91f55cf5ae2b585fb879f2.txt"
+        },
+        {
+          "member": "libX11-1.8.14/src/xlibi18n/lcUniConv/COPYRIGHT",
+          "bytes": 1824,
+          "sha256": "b7492b0e0cb9117d13dc928130ca8303185008f7231bc91a9a2071b381f5f490",
+          "path": "third_party/alpine-notices/texts/b7492b0e0cb9117d13dc928130ca8303185008f7231bc91a9a2071b381f5f490.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxau",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxau"
+      ],
+      "installed_versions": [
+        "1.0.12-r0"
+      ],
+      "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/6bd45b53fb316dc01bda59f5feaf1e127eb64f22/main/libxau/APKBUILD",
+      "recipe_sha256": "fb79c8b54af8d1700d7ac25ebda40c50d9d6acb2543aa36edbd6179fc2562d64",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libXau-1.0.12.tar.xz",
+      "source_archive": "libXau-1.0.12.tar.xz",
+      "source_bytes": 282624,
+      "source_sha512": "4bbe8796f4a14340499d5f75046955905531ea2948944dfc3d6069f8b86c1710042bfc7918d459320557883e6631359d48e6173c69c62ff572314e864ff97c5e",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libXau-1.0.12.tar.xz",
+      "notices": [
+        {
+          "member": "libXau-1.0.12/AUTHORS",
+          "bytes": 71,
+          "sha256": "151282e906d23afcd2e40762782124616083d81de5205be74f668714b9bf168b",
+          "path": "third_party/alpine-notices/texts/151282e906d23afcd2e40762782124616083d81de5205be74f668714b9bf168b.txt"
+        },
+        {
+          "member": "libXau-1.0.12/COPYING",
+          "bytes": 1148,
+          "sha256": "56abe29bb1d9806a9e04fa9f80fed2c0f18027594df3f098148d814aef6bddfa",
+          "path": "third_party/alpine-notices/texts/56abe29bb1d9806a9e04fa9f80fed2c0f18027594df3f098148d814aef6bddfa.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxcb",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxcb"
+      ],
+      "installed_versions": [
+        "1.17.0-r2"
+      ],
+      "source_commit": "5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1/main/libxcb/APKBUILD",
+      "recipe_sha256": "8bac16e286e2e6284340ff21443b02a35c399f8c6283e803a7ab268114d10db9",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libxcb-1.17.0.tar.xz",
+      "source_archive": "libxcb-1.17.0.tar.xz",
+      "source_bytes": 455208,
+      "source_sha512": "945b1f28e8b407a4d0ebf88c99ef3cbef763fd75e6eaa8e971946e44ce8dbe9b478c56ae85aaaadab7fdb25987e88570d9d4fb9ad2febd6d6bf21d644a0e10d0",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libxcb-1.17.0.tar.xz",
+      "notices": [
+        {
+          "member": "libxcb-1.17.0/COPYING",
+          "bytes": 1337,
+          "sha256": "c5ffbfeaa501071ceeb97b7de2c0d703fdaa35de01c0fb6cbac1c28453a3e9fd",
+          "path": "third_party/alpine-notices/texts/c5ffbfeaa501071ceeb97b7de2c0d703fdaa35de01c0fb6cbac1c28453a3e9fd.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxdmcp",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxdmcp"
+      ],
+      "installed_versions": [
+        "1.1.5-r1"
+      ],
+      "source_commit": "614e9166706cec427fc3d907b8d981390a42e088",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/614e9166706cec427fc3d907b8d981390a42e088/main/libxdmcp/APKBUILD",
+      "recipe_sha256": "f47cf4f70e4553c3a7996f24466556b49d42b4eb51b7be4b863509b06b13ae44",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libXdmcp-1.1.5.tar.xz",
+      "source_archive": "libXdmcp-1.1.5.tar.xz",
+      "source_bytes": 297596,
+      "source_sha512": "d7a1d70a58b7d34ddd01a91d3ccbc086a36626b7081cfcbb150d24288c6adad612b042ba7ea63a218595afb2ee04384c0f8ba84ee3c6bd29913724b54e898d83",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libXdmcp-1.1.5.tar.xz",
+      "notices": [
+        {
+          "member": "libXdmcp-1.1.5/COPYING",
+          "bytes": 1178,
+          "sha256": "8a3c3f35b0dbcb60a4e242b9e4394a352a65bb27deb2938ea1e2e62a626e16e9",
+          "path": "third_party/alpine-notices/texts/8a3c3f35b0dbcb60a4e242b9e4394a352a65bb27deb2938ea1e2e62a626e16e9.txt"
+        },
+        {
+          "member": "libXdmcp-1.1.5/AUTHORS",
+          "bytes": 227,
+          "sha256": "81b60a90982e139aaa3e71beaefdf00a5b7d6dbd3efe3d9724eac5d0992cc68f",
+          "path": "third_party/alpine-notices/texts/81b60a90982e139aaa3e71beaefdf00a5b7d6dbd3efe3d9724eac5d0992cc68f.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxext",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxext"
+      ],
+      "installed_versions": [
+        "1.3.7-r0"
+      ],
+      "source_commit": "4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942/main/libxext/APKBUILD",
+      "recipe_sha256": "40f385d173a94ac0e8e7725936554f6c5b71e918c21bbdcfdb69adcdc8853561",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libXext-1.3.7.tar.xz",
+      "source_archive": "libXext-1.3.7.tar.xz",
+      "source_bytes": 347068,
+      "source_sha512": "09cd230da472e87e4fdbc9b0f83a9181cc44af04c06fa4a7d8aa405e0f8551d3ac3a4b379249c44d97e1025b60d1c52f8ca13817eed0206e2bf3d66a55d89701",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libXext-1.3.7.tar.xz",
+      "notices": [
+        {
+          "member": "libXext-1.3.7/AUTHORS",
+          "bytes": 922,
+          "sha256": "0fec8da1b5c74ba9919d8f57ba27035f0dfbbd441b2994fbc537c631d3cda608",
+          "path": "third_party/alpine-notices/texts/0fec8da1b5c74ba9919d8f57ba27035f0dfbbd441b2994fbc537c631d3cda608.txt"
+        },
+        {
+          "member": "libXext-1.3.7/COPYING",
+          "bytes": 11101,
+          "sha256": "fd62910be4b13829d94e76c1447cf840953f0e225c4dc6c79349c84dd0557f22",
+          "path": "third_party/alpine-notices/texts/fd62910be4b13829d94e76c1447cf840953f0e225c4dc6c79349c84dd0557f22.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxml2",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxml2"
+      ],
+      "installed_versions": [
+        "2.13.9-r2"
+      ],
+      "source_commit": "f1bd5b6767a0e7fdda380c95138a1c938eb6e102",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/f1bd5b6767a0e7fdda380c95138a1c938eb6e102/main/libxml2/APKBUILD",
+      "recipe_sha256": "843a8013c86b73c9873735bfe5f155f4b9b6b4cbfbf9794a6c98b57d141a52ab",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libxml2-2.13.9.tar.xz",
+      "source_archive": "libxml2-2.13.9.tar.xz",
+      "source_bytes": 2426164,
+      "source_sha512": "62d4813860124c969f204aaf33b497105dbc32a6c5655f5a86168743660e10987d687d7e5e7ee49fdfdeb8f6ad9fa4503f81fcce2e4d459094895f02436d1b13",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libxml2-2.13.9.tar.xz",
+      "notices": [
+        {
+          "member": "libxml2-2.13.9/Copyright",
+          "bytes": 1273,
+          "sha256": "c99aae1afe013e50b8b3701e089222b351258043c3025b64053a233fd25b4be7",
+          "path": "third_party/alpine-notices/texts/c99aae1afe013e50b8b3701e089222b351258043c3025b64053a233fd25b4be7.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxpm",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxpm"
+      ],
+      "installed_versions": [
+        "3.5.20-r0"
+      ],
+      "source_commit": "f5d3a71d8949514ce4a8057ae2002180a6f42321",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/f5d3a71d8949514ce4a8057ae2002180a6f42321/main/libxpm/APKBUILD",
+      "recipe_sha256": "87234ad44088d25aa5cf5e8f5d966facec77103b6df14bb355322f4fef0b6cda",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libXpm-3.5.20.tar.xz",
+      "source_archive": "libXpm-3.5.20.tar.xz",
+      "source_bytes": 473428,
+      "source_sha512": "389f1f3a228d9953587f707b6be455dceebc28e7ff181f01fc9089ea2b6fe67d09f0aaef7d18eaf292bab1c7a7baf10f25928006a272c5d8f3b021d0a82f4225",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libXpm-3.5.20.tar.xz",
+      "notices": [
+        {
+          "member": "libXpm-3.5.20/COPYING",
+          "bytes": 4898,
+          "sha256": "a80d706759624a04aa90fd62bc644a360fc3d72e08dcbfb129f167c11ca285de",
+          "path": "third_party/alpine-notices/texts/a80d706759624a04aa90fd62bc644a360fc3d72e08dcbfb129f167c11ca285de.txt"
+        },
+        {
+          "member": "libXpm-3.5.20/AUTHORS",
+          "bytes": 170,
+          "sha256": "7f514bb4972fc89eade8a4fec8502054add8fd3f0ff68d5d1fcf6834f5a18356",
+          "path": "third_party/alpine-notices/texts/7f514bb4972fc89eade8a4fec8502054add8fd3f0ff68d5d1fcf6834f5a18356.txt"
+        },
+        {
+          "member": "libXpm-3.5.20/COPYRIGHT",
+          "bytes": 1705,
+          "sha256": "cbe4ced0abc8a32bea471204ae01038c202758ce4e772d3d329a341ffa761e71",
+          "path": "third_party/alpine-notices/texts/cbe4ced0abc8a32bea471204ae01038c202758ce4e772d3d329a341ffa761e71.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxslt",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxslt"
+      ],
+      "installed_versions": [
+        "1.1.43-r3"
+      ],
+      "source_commit": "730f2f5bdc97be98b2beee33f55134c622e6189c",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/730f2f5bdc97be98b2beee33f55134c622e6189c/main/libxslt/APKBUILD",
+      "recipe_sha256": "c87fd50056df1a64f4eb0de1948f9c64a98db981fa589a8ee85eaf0213190fb8",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libxslt-1.1.43.tar.xz",
+      "source_archive": "libxslt-1.1.43.tar.xz",
+      "source_bytes": 1518364,
+      "source_sha512": "96110b0397a8f5791f489127574e2143845feb61bea0581d7b7e3c1101fd0718483bae81a7ce417b971bd678293bfd95daddad0dadd3e256c87d41a69faed85a",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libxslt-1.1.43.tar.xz",
+      "notices": [
+        {
+          "member": "libxslt-1.1.43/AUTHORS",
+          "bytes": 2080,
+          "sha256": "05bd0eb6e913e96da423efd14013c562e1d77c345c447aea8b67910469d9910d",
+          "path": "third_party/alpine-notices/texts/05bd0eb6e913e96da423efd14013c562e1d77c345c447aea8b67910469d9910d.txt"
+        },
+        {
+          "member": "libxslt-1.1.43/Copyright",
+          "bytes": 2968,
+          "sha256": "7e48e290b6bfccc2ec1b297023a1d77f2fd87417f71fbb9f50aabef40a851819",
+          "path": "third_party/alpine-notices/texts/7e48e290b6bfccc2ec1b297023a1d77f2fd87417f71fbb9f50aabef40a851819.txt"
+        },
+        {
+          "member": "libxslt-1.1.43/tests/docbook/dtd/3.1.7/COPYRIGHT",
+          "bytes": 1095,
+          "sha256": "0bee12b76c0229ef2098650db83ab88fc60f75f60230cb5fb49af96e58cfa59a",
+          "path": "third_party/alpine-notices/texts/0bee12b76c0229ef2098650db83ab88fc60f75f60230cb5fb49af96e58cfa59a.txt"
+        },
+        {
+          "member": "libxslt-1.1.43/tests/docbook/dtd/simple/3.1.7.1/COPYRIGHT",
+          "bytes": 1151,
+          "sha256": "66ea6d01c5eb87efbb48748157e1f440e4193a4333f92078431dbe0b8ba47564",
+          "path": "third_party/alpine-notices/texts/66ea6d01c5eb87efbb48748157e1f440e4193a4333f92078431dbe0b8ba47564.txt"
+        },
+        {
+          "member": "libxslt-1.1.43/tests/docbook/dtd/simple/4.1.2.4/COPYRIGHT",
+          "bytes": 1073,
+          "sha256": "ccd62010471aeec715e14bbf5f33bf3d3ea090e5b5f57ebbbcfb61b13dbf91d6",
+          "path": "third_party/alpine-notices/texts/ccd62010471aeec715e14bbf5f33bf3d3ea090e5b5f57ebbbcfb61b13dbf91d6.txt"
+        },
+        {
+          "member": "libxslt-1.1.43/tests/docbook/doc/copyright.html",
+          "bytes": 1575,
+          "sha256": "2603fdfb55d284663aa262c04ec740d1f00ef7f4fec565170e18d78e8992e8a6",
+          "path": "third_party/alpine-notices/texts/2603fdfb55d284663aa262c04ec740d1f00ef7f4fec565170e18d78e8992e8a6.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libxt",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libxt"
+      ],
+      "installed_versions": [
+        "1.3.1-r0"
+      ],
+      "source_commit": "60222ebeadec75e483e49194130c6963d0fcbf75",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/60222ebeadec75e483e49194130c6963d0fcbf75/main/libxt/APKBUILD",
+      "recipe_sha256": "76e6c124a48b28e1f6b0d6631b0b9e895d1f5771bd983d62ef3077bf8ca0703f",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libXt-1.3.1.tar.xz",
+      "source_archive": "libXt-1.3.1.tar.xz",
+      "source_bytes": 691200,
+      "source_sha512": "c220292f60b0f53134cf9364831a32bbaa9fa6bbb3a7143e917920957b7a48c616e946042747089f29ea9d8a18ecd64de620bcaf56d82462e7107de906f5db38",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libXt-1.3.1.tar.xz",
+      "notices": [
+        {
+          "member": "libXt-1.3.1/COPYING",
+          "bytes": 6727,
+          "sha256": "75c5574ca04731d739b1420f55f2b7b47f30df895817f1b03d0d7f5c1fbee534",
+          "path": "third_party/alpine-notices/texts/75c5574ca04731d739b1420f55f2b7b47f30df895817f1b03d0d7f5c1fbee534.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "libyuv",
+      "result": "source_checksum_mismatch",
+      "url": "https://distfiles.alpinelinux.org/distfiles/v3.24/libyuv-0.0.1928.tar.gz",
+      "bytes": 579770,
+      "expected_sha512": "86c66efa2e167a3291c809dbe5b17175674899e5e3010c6845fead6f82f0917e0dfea1e2c0f4523536db66a737efda56d3f458186011f1a2fcbdcda2614413e7",
+      "actual_sha512": "956db6b968a405d5bcd9fd50c2a1ab9765abf5971fb5c707703a1162706a3b82c0965949171d5cbea73ed6963accf76896378c8f38651104e580da0ef5a4c5b6",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/libyuv-0.0.1928.tar.gz"
+    },
+    {
+      "origin": "musl",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "musl",
+        "musl-utils"
+      ],
+      "installed_versions": [
+        "1.2.6-r3"
+      ],
+      "source_commit": "8f79d39391b46d6dbf1800fb68b8212a21d5ee2e",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/8f79d39391b46d6dbf1800fb68b8212a21d5ee2e/main/musl/APKBUILD",
+      "recipe_sha256": "22c5adb3f3b68ab84e5ff7d20df68447063d1ecb5c7b39afd5a04a1dfd444a35",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/musl-1.2.6.tar.gz",
+      "source_archive": "musl-1.2.6.tar.gz",
+      "source_bytes": 1082499,
+      "source_sha512": "1adad96eddb3a2eb0cacb3e363b0046568925fcdd75cf8b0503f2139df1f693d64730779ca0ce8131b7624ab2d37f4247bb1d3393c523de6e30d2b1d7732555c",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/musl-1.2.6.tar.gz",
+      "notices": [
+        {
+          "member": "musl-1.2.6/COPYRIGHT",
+          "bytes": 6196,
+          "sha256": "b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b",
+          "path": "third_party/alpine-notices/texts/b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "ncurses",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libncursesw",
+        "ncurses-terminfo-base"
+      ],
+      "installed_versions": [
+        "6.6_p20260516-r0"
+      ],
+      "source_commit": "2cee8a7328d061418336ad327b512d96bcd7bc5e",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/2cee8a7328d061418336ad327b512d96bcd7bc5e/main/ncurses/APKBUILD",
+      "recipe_sha256": "9801a0e262437b470ddfd6c35e55c231a79b6903262fe68df8a547845d095d6a",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/ncurses-6.6-20260516.tgz",
+      "source_archive": "ncurses-6.6-20260516.tgz",
+      "source_bytes": 3803559,
+      "source_sha512": "20ffc27f3266b078b410f712422db00d77f5fd497e398b7be252fd207ab70ebd72a2bdf8fd6c94e2a9e41bd2b64d1c6502240c0b8423c99add073bd1226f5859",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/ncurses-6.6-20260516.tgz",
+      "notices": [
+        {
+          "member": "ncurses-6.6-20260516/Ada95/package/debian/copyright",
+          "bytes": 3141,
+          "sha256": "84c16ad7e959cf47be61cbe541736a0d99f8c2b6f16cf0e301b75ce7059cbd4c",
+          "path": "third_party/alpine-notices/texts/84c16ad7e959cf47be61cbe541736a0d99f8c2b6f16cf0e301b75ce7059cbd4c.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/package/debian-mingw64/copyright",
+          "bytes": 5272,
+          "sha256": "06ec2240345d458b57ccac0a9a608f3decb0764f4e4eae63156a3b95ba73c813",
+          "path": "third_party/alpine-notices/texts/06ec2240345d458b57ccac0a9a608f3decb0764f4e4eae63156a3b95ba73c813.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/package/debian-mingw/copyright",
+          "bytes": 5272,
+          "sha256": "06ec2240345d458b57ccac0a9a608f3decb0764f4e4eae63156a3b95ba73c813",
+          "path": "third_party/alpine-notices/texts/06ec2240345d458b57ccac0a9a608f3decb0764f4e4eae63156a3b95ba73c813.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/package/debian/copyright",
+          "bytes": 5272,
+          "sha256": "06ec2240345d458b57ccac0a9a608f3decb0764f4e4eae63156a3b95ba73c813",
+          "path": "third_party/alpine-notices/texts/06ec2240345d458b57ccac0a9a608f3decb0764f4e4eae63156a3b95ba73c813.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/AUTHORS",
+          "bytes": 2651,
+          "sha256": "94ee3c58154b9fe6c800e4d3801d95cde5f8fa409241f4ed661afffe4a892b11",
+          "path": "third_party/alpine-notices/texts/94ee3c58154b9fe6c800e4d3801d95cde5f8fa409241f4ed661afffe4a892b11.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/test/package/debian-mingw64/copyright",
+          "bytes": 3421,
+          "sha256": "b541099ff7201d84f42a7bce043b186080d3029c4161a4690d27b28ab61dabdb",
+          "path": "third_party/alpine-notices/texts/b541099ff7201d84f42a7bce043b186080d3029c4161a4690d27b28ab61dabdb.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/test/package/debian-mingw/copyright",
+          "bytes": 3421,
+          "sha256": "b541099ff7201d84f42a7bce043b186080d3029c4161a4690d27b28ab61dabdb",
+          "path": "third_party/alpine-notices/texts/b541099ff7201d84f42a7bce043b186080d3029c4161a4690d27b28ab61dabdb.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/test/package/debian/copyright",
+          "bytes": 3421,
+          "sha256": "b541099ff7201d84f42a7bce043b186080d3029c4161a4690d27b28ab61dabdb",
+          "path": "third_party/alpine-notices/texts/b541099ff7201d84f42a7bce043b186080d3029c4161a4690d27b28ab61dabdb.txt"
+        },
+        {
+          "member": "ncurses-6.6-20260516/COPYING",
+          "bytes": 1447,
+          "sha256": "a85ca5bef8ce71f013bc5f4306c681881b248450f3b63722589891f0b69ea52d",
+          "path": "third_party/alpine-notices/texts/a85ca5bef8ce71f013bc5f4306c681881b248450f3b63722589891f0b69ea52d.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "nghttp2",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "nghttp2-libs"
+      ],
+      "installed_versions": [
+        "1.70.0-r0"
+      ],
+      "source_commit": "d5a34efc88bbe8d18737fda28125071c4aef8517",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/d5a34efc88bbe8d18737fda28125071c4aef8517/main/nghttp2/APKBUILD",
+      "recipe_sha256": "a4428f82a616800eaaae34b7d8c1020199fc38d672ac639b452f21274c22c7dd",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/nghttp2-1.70.0.tar.xz",
+      "source_archive": "nghttp2-1.70.0.tar.xz",
+      "source_bytes": 2018996,
+      "source_sha512": "8d8a95dcd05dfe8a032b78d99b7d32a9f0ad2c952c4548de4c6b4af0d2f3c584b0a2854b31516eca20b0c9c30f20d0d040edfe9961a3084e96353012f711b9d1",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/nghttp2-1.70.0.tar.xz",
+      "notices": [
+        {
+          "member": "nghttp2-1.70.0/tests/munit/COPYING",
+          "bytes": 1106,
+          "sha256": "551a04ab9278e48e3d4ef8b0381ad54e54e84fac1a225c50247fa3669dfdef75",
+          "path": "third_party/alpine-notices/texts/551a04ab9278e48e3d4ef8b0381ad54e54e84fac1a225c50247fa3669dfdef75.txt"
+        },
+        {
+          "member": "nghttp2-1.70.0/COPYING",
+          "bytes": 1156,
+          "sha256": "6b94f3abc1aabd0c72a7c7d92a77f79dda7c8a0cb3df839a97890b4116a2de2a",
+          "path": "third_party/alpine-notices/texts/6b94f3abc1aabd0c72a7c7d92a77f79dda7c8a0cb3df839a97890b4116a2de2a.txt"
+        },
+        {
+          "member": "nghttp2-1.70.0/doc/_exts/rubydomain/LICENSE.rubydomain",
+          "bytes": 1418,
+          "sha256": "2dee6027d254030e382dd8e9f0f1b4ac2c186bd409c85ca2bef80d38b4da283c",
+          "path": "third_party/alpine-notices/texts/2dee6027d254030e382dd8e9f0f1b4ac2c186bd409c85ca2bef80d38b4da283c.txt"
+        },
+        {
+          "member": "nghttp2-1.70.0/third-party/mruby/LICENSE",
+          "bytes": 1061,
+          "sha256": "07dc3c033f3f0ee600f76ac52211a04cbb67e722f8da44767687e86151586170",
+          "path": "third_party/alpine-notices/texts/07dc3c033f3f0ee600f76ac52211a04cbb67e722f8da44767687e86151586170.txt"
+        },
+        {
+          "member": "nghttp2-1.70.0/third-party/mruby/tools/lrama/MIT",
+          "bytes": 1082,
+          "sha256": "855a1fe0951c787f76a0017398e1fbd8c6967570d760e1bbf53e44342f9bbf61",
+          "path": "third_party/alpine-notices/texts/855a1fe0951c787f76a0017398e1fbd8c6967570d760e1bbf53e44342f9bbf61.txt"
+        },
+        {
+          "member": "nghttp2-1.70.0/third-party/mruby/mrbgems/mruby-set/LICENSE",
+          "bytes": 1131,
+          "sha256": "2c78d80cafa36acdd728d6a5ddd68aef42e603ae246b3d0c9ac85f09d87d7e17",
+          "path": "third_party/alpine-notices/texts/2c78d80cafa36acdd728d6a5ddd68aef42e603ae246b3d0c9ac85f09d87d7e17.txt"
+        },
+        {
+          "member": "nghttp2-1.70.0/third-party/mruby/AUTHORS",
+          "bytes": 11848,
+          "sha256": "491fa84d35e6a7757e557c16833de8a94b48c1b93fecbdfe36302257aeb82529",
+          "path": "third_party/alpine-notices/texts/491fa84d35e6a7757e557c16833de8a94b48c1b93fecbdfe36302257aeb82529.txt"
+        },
+        {
+          "member": "nghttp2-1.70.0/AUTHORS",
+          "bytes": 2870,
+          "sha256": "f626fcc7413bc00c930ec8e4e62dcd9fe2485be141f503f7ce03ddc0ef4d341c",
+          "path": "third_party/alpine-notices/texts/f626fcc7413bc00c930ec8e4e62dcd9fe2485be141f503f7ce03ddc0ef4d341c.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "openssl",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libcrypto3",
+        "libssl3"
+      ],
+      "installed_versions": [
+        "3.5.9-r0"
+      ],
+      "source_commit": "29b9ec24b1b5b39aeef51fa2a044210e2ec5258e",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/29b9ec24b1b5b39aeef51fa2a044210e2ec5258e/main/openssl/APKBUILD",
+      "recipe_sha256": "ea459c051ee8d846c06f1d47d09d0f737778502c01de88c9696e96a208de5943",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/openssl-3.5.9.tar.gz",
+      "source_archive": "openssl-3.5.9.tar.gz",
+      "source_bytes": 53279637,
+      "source_sha512": "c4c8136fd2c98d13bb85a57bfb0def25c906f47f1fe97675cd114594944eab957b5b81a3e0f48826e1a0f093afff5e83766b539d49768f6db68310fd678d7de6",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/openssl-3.5.9.tar.gz",
+      "notices": [
+        {
+          "member": "openssl-3.5.9/AUTHORS.md",
+          "bytes": 1022,
+          "sha256": "b9f638dfc06b59c2d3b808186c3b30f713805a5db390f5b77b1703ac58acb83e",
+          "path": "third_party/alpine-notices/texts/b9f638dfc06b59c2d3b808186c3b30f713805a5db390f5b77b1703ac58acb83e.txt"
+        },
+        {
+          "member": "openssl-3.5.9/LICENSE.txt",
+          "bytes": 10175,
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+          "path": "third_party/alpine-notices/texts/7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a.txt"
+        },
+        {
+          "member": "openssl-3.5.9/external/perl/Text-Template-1.56/LICENSE",
+          "bytes": 18412,
+          "sha256": "9837f05336ef3cbacb6a96e1672a0426d81ad01191f214b8d48e22ca62338181",
+          "path": "third_party/alpine-notices/texts/9837f05336ef3cbacb6a96e1672a0426d81ad01191f214b8d48e22ca62338181.txt"
+        },
+        {
+          "member": "openssl-3.5.9/util/perl/OpenSSL/copyright.pm",
+          "bytes": 1145,
+          "sha256": "04213b69dbebc8ba0dd8a6216af1d9422f9b63619c1cf2f1d8aa107b83bbb608",
+          "path": "third_party/alpine-notices/texts/04213b69dbebc8ba0dd8a6216af1d9422f9b63619c1cf2f1d8aa107b83bbb608.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "pax-utils",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "scanelf"
+      ],
+      "installed_versions": [
+        "1.3.9-r1"
+      ],
+      "source_commit": "c61801eeacb3ffcd9c2025b09e402153bb93fb39",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/c61801eeacb3ffcd9c2025b09e402153bb93fb39/main/pax-utils/APKBUILD",
+      "recipe_sha256": "f33df75f467601dcd73038b4e15029de60338a5f3f7d9a37574475a723b07c20",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/pax-utils-1.3.9.tar.xz",
+      "source_archive": "pax-utils-1.3.9.tar.xz",
+      "source_bytes": 123560,
+      "source_sha512": "96caf7f2087bedc7949db828d966835f7d691e29ef8177dee00605c10d433d4c5b5770a3d7f2e25e3c0218f5b9a6c6967669a3dea18cf138d6f0111d2bb5288b",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/pax-utils-1.3.9.tar.xz",
+      "notices": [
+        {
+          "member": "pax-utils-1.3.9/COPYING",
+          "bytes": 18011,
+          "sha256": "e6d6a009505e345fe949e1310334fcb0747f28dae2856759de102ab66b722cb4",
+          "path": "third_party/alpine-notices/texts/e6d6a009505e345fe949e1310334fcb0747f28dae2856759de102ab66b722cb4.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "pcre2",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "pcre2"
+      ],
+      "installed_versions": [
+        "10.49-r0"
+      ],
+      "source_commit": "3d497cbb3217749c4fb85f90f3b6f7908b0c1f95",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/3d497cbb3217749c4fb85f90f3b6f7908b0c1f95/main/pcre2/APKBUILD",
+      "recipe_sha256": "49a612c42929ff12532525282be2e7bb2146b40321e170ca8c03ec6824de25be",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/pcre2-10.49.tar.bz2",
+      "source_archive": "pcre2-10.49.tar.bz2",
+      "source_bytes": 2185271,
+      "source_sha512": "eb8351788a479cb24bcc263243d6a00d28cc7285f26901d7f6001826aba7f7171a5bb3e7c944725432df6f303c10a794fd3a398429483bf4c1104df3de159687",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/pcre2-10.49.tar.bz2",
+      "notices": [
+        {
+          "member": "pcre2-10.49/AUTHORS.md",
+          "bytes": 4232,
+          "sha256": "412ace3355a4d6a4d835c350a7df172903811eafda7b13500dacf58429ee757e",
+          "path": "third_party/alpine-notices/texts/412ace3355a4d6a4d835c350a7df172903811eafda7b13500dacf58429ee757e.txt"
+        },
+        {
+          "member": "pcre2-10.49/COPYING",
+          "bytes": 97,
+          "sha256": "99272c55f3dcfa07a8a7e15a5c1a33096e4727de74241d65fa049fccfdd59507",
+          "path": "third_party/alpine-notices/texts/99272c55f3dcfa07a8a7e15a5c1a33096e4727de74241d65fa049fccfdd59507.txt"
+        },
+        {
+          "member": "pcre2-10.49/deps/sljit/LICENSE",
+          "bytes": 1444,
+          "sha256": "5f216505c0f6ea3273caec89e766eef93cdeb7bbb0c429f9360116d7c938feeb",
+          "path": "third_party/alpine-notices/texts/5f216505c0f6ea3273caec89e766eef93cdeb7bbb0c429f9360116d7c938feeb.txt"
+        },
+        {
+          "member": "pcre2-10.49/cmake/COPYING-CMAKE-SCRIPTS",
+          "bytes": 1326,
+          "sha256": "c666ec2313dba24523ccad88f4c04ea4b24fad6545263a35b1d4ab2b08efe50a",
+          "path": "third_party/alpine-notices/texts/c666ec2313dba24523ccad88f4c04ea4b24fad6545263a35b1d4ab2b08efe50a.txt"
+        },
+        {
+          "member": "pcre2-10.49/LICENCE.md",
+          "bytes": 4011,
+          "sha256": "197d8a73ffee0d6b09adba2f9c677b5f5aede24edf89258a68e48248d010d811",
+          "path": "third_party/alpine-notices/texts/197d8a73ffee0d6b09adba2f9c677b5f5aede24edf89258a68e48248d010d811.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "tiff",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "tiff"
+      ],
+      "installed_versions": [
+        "4.7.2-r0"
+      ],
+      "source_commit": "bbcfbafeadf5dac4744d065ac69338c1b58fc0d1",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/bbcfbafeadf5dac4744d065ac69338c1b58fc0d1/main/tiff/APKBUILD",
+      "recipe_sha256": "8b7e2998b389cb5ece3c8951a59935675fdef3052847dcf35bf875b34a4a3b7a",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/tiff-4.7.2.tar.gz",
+      "source_archive": "tiff-4.7.2.tar.gz",
+      "source_bytes": 4083368,
+      "source_sha512": "bad66954a7e7e158c6dcbfc0e2d0032b8f3e2a354b6d0fdbb8038a7963e36c5b8a433dd4ee81c6c4dabfb50094152d440aa1f32b5299098c9ae29e55de2e41fc",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/tiff-4.7.2.tar.gz",
+      "notices": [
+        {
+          "member": "tiff-4.7.2/doc/html-prebuilt/_sources/project/license.rst.txt",
+          "bytes": 1181,
+          "sha256": "02e86af3b805e0f2075ebb5ac512831f6ab2a97ddeb186de076c418956418ba1",
+          "path": "third_party/alpine-notices/texts/02e86af3b805e0f2075ebb5ac512831f6ab2a97ddeb186de076c418956418ba1.txt"
+        },
+        {
+          "member": "tiff-4.7.2/doc/html-prebuilt/project/license.html",
+          "bytes": 5663,
+          "sha256": "6c9436f8e9f58a79e044949e360291b9c910715fad31cdaed66bc61b0dcf33e6",
+          "path": "third_party/alpine-notices/texts/6c9436f8e9f58a79e044949e360291b9c910715fad31cdaed66bc61b0dcf33e6.txt"
+        },
+        {
+          "member": "tiff-4.7.2/doc/project/license.rst",
+          "bytes": 1181,
+          "sha256": "02e86af3b805e0f2075ebb5ac512831f6ab2a97ddeb186de076c418956418ba1",
+          "path": "third_party/alpine-notices/texts/02e86af3b805e0f2075ebb5ac512831f6ab2a97ddeb186de076c418956418ba1.txt"
+        },
+        {
+          "member": "tiff-4.7.2/LICENSE.md",
+          "bytes": 2416,
+          "sha256": "0e27c2382d7b8147972bbb746e04059a1152c8d0fda9d03ef1399d1a433c4ade",
+          "path": "third_party/alpine-notices/texts/0e27c2382d7b8147972bbb746e04059a1152c8d0fda9d03ef1399d1a433c4ade.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "tzdata",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "tzdata"
+      ],
+      "installed_versions": [
+        "2026e-r0"
+      ],
+      "source_commit": "faa135a1a22c90309bf381766a7cc47490dea786",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/faa135a1a22c90309bf381766a7cc47490dea786/main/tzdata/APKBUILD",
+      "recipe_sha256": "5752b55671903e735f429367a0dc4673cf78562ef4cf5d358838f56de286a7c8",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/tzcode2026e.tar.gz",
+      "source_archive": "tzcode2026e.tar.gz",
+      "source_bytes": 329138,
+      "source_sha512": "623af2d5c611ce5d9f6d07ceeb09721db03ed90e8e74e027f96fc402eb948fc8a7e9aecac2611e41fb501bdc2592a78020375ad677d887beaacb2fd5da9b9815",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/tzcode2026e.tar.gz",
+      "notices": [
+        {
+          "member": "LICENSE",
+          "bytes": 252,
+          "sha256": "0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf",
+          "path": "third_party/alpine-notices/texts/0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf.txt"
+        }
+      ],
+      "additional_source_archives": [
+        {
+          "name": "tzdata2026e.tar.gz",
+          "sha512": "5be2f875f73b75e5783c474bf7a6c768e433cc90283f8fc6a75e3d05bd92aec97936e8a55ccca5e880b5dacc18ba65932bab0e783e1ed5d2af4a3a4df95512be"
+        },
+        {
+          "name": "posixtz-0.5.tar.xz",
+          "sha512": "68dbaab9f4aef166ac2f2d40b49366527b840bebe17a47599fe38345835e4adb8a767910745ece9c384b57af815a871243c3e261a29f41d71f8054df3061b3fd"
+        }
+      ]
+    },
+    {
+      "origin": "util-linux",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "libuuid"
+      ],
+      "installed_versions": [
+        "2.42.3-r1"
+      ],
+      "source_commit": "d98c55af59055e6ca60fbe36e171546918709965",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/d98c55af59055e6ca60fbe36e171546918709965/main/util-linux/APKBUILD",
+      "recipe_sha256": "5347f9d386c8684e7f5cc160ae8595c5c3d3cfedcfdc758f5e022a46e560b944",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/util-linux-2.42.3.tar.xz",
+      "source_archive": "util-linux-2.42.3.tar.xz",
+      "source_bytes": 10716216,
+      "source_sha512": "2a307943d4fbb34ac02131e10ff7260f181dd706b21e68a891d25d6eb30476a612bcc19b674bb2256283c9c716146e0d79909f37324efc9aa9d45a44e0d58988",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/util-linux-2.42.3.tar.xz",
+      "notices": [
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.BSD-2-Clause",
+          "bytes": 1245,
+          "sha256": "527f738966ca396cd5a68c1509390de2a780c6b614d9ee57f7544a6161938ed1",
+          "path": "third_party/alpine-notices/texts/527f738966ca396cd5a68c1509390de2a780c6b614d9ee57f7544a6161938ed1.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.BSD-3-Clause",
+          "bytes": 1391,
+          "sha256": "9b718a9460fed5952466421235bc79eb49d4e9eacc920d7a9dd6285ab8fd6c6d",
+          "path": "third_party/alpine-notices/texts/9b718a9460fed5952466421235bc79eb49d4e9eacc920d7a9dd6285ab8fd6c6d.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.BSD-4-Clause-UC",
+          "bytes": 1824,
+          "sha256": "ba7640f00d93e72e92b94b9d71f25ec53bac2f1682f5c4adcccb0018359f60f8",
+          "path": "third_party/alpine-notices/texts/ba7640f00d93e72e92b94b9d71f25ec53bac2f1682f5c4adcccb0018359f60f8.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.EUPL-1.2",
+          "bytes": 13827,
+          "sha256": "6fc9e709ccbfe0d77fbffa2427a983282be2eb88e47b1cdb49f21a83b4d1e665",
+          "path": "third_party/alpine-notices/texts/6fc9e709ccbfe0d77fbffa2427a983282be2eb88e47b1cdb49f21a83b4d1e665.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.GPL-2.0-only",
+          "bytes": 18092,
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+          "path": "third_party/alpine-notices/texts/8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.GPL-2.0-or-later",
+          "bytes": 18092,
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+          "path": "third_party/alpine-notices/texts/8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.GPL-3.0-or-later",
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "path": "third_party/alpine-notices/texts/3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.ISC",
+          "bytes": 697,
+          "sha256": "e53348ce276358e9997014071c5294b36a18c4b34f32f00ee57b9acce0aafd63",
+          "path": "third_party/alpine-notices/texts/e53348ce276358e9997014071c5294b36a18c4b34f32f00ee57b9acce0aafd63.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.LGPL-2.1-or-later",
+          "bytes": 26530,
+          "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+          "path": "third_party/alpine-notices/texts/dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/Documentation/licenses/COPYING.MIT",
+          "bytes": 1054,
+          "sha256": "8555341619542abb48c102afd954e42d4478e5be16ad3d5af7b0ff71009e7348",
+          "path": "third_party/alpine-notices/texts/8555341619542abb48c102afd954e42d4478e5be16ad3d5af7b0ff71009e7348.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/libblkid/src/partitions/bsd.c",
+          "bytes": 5633,
+          "sha256": "057aab18cb6b989e16e127a7c3dc82db6ca6ba0ef5034ae2c66314e2aa08549a",
+          "path": "third_party/alpine-notices/texts/057aab18cb6b989e16e127a7c3dc82db6ca6ba0ef5034ae2c66314e2aa08549a.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/libblkid/COPYING",
+          "bytes": 361,
+          "sha256": "f03b01c1251bc3bfee959aea99ed7906a0b08a2ff132d55a1ece18ee573a52a1",
+          "path": "third_party/alpine-notices/texts/f03b01c1251bc3bfee959aea99ed7906a0b08a2ff132d55a1ece18ee573a52a1.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/libfdisk/src/bsd.c",
+          "bytes": 27150,
+          "sha256": "1140ed3423ba580df31038db921013d0c288cc80d2f69bbb99889649fbc2fe50",
+          "path": "third_party/alpine-notices/texts/1140ed3423ba580df31038db921013d0c288cc80d2f69bbb99889649fbc2fe50.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/libfdisk/COPYING",
+          "bytes": 361,
+          "sha256": "f03b01c1251bc3bfee959aea99ed7906a0b08a2ff132d55a1ece18ee573a52a1",
+          "path": "third_party/alpine-notices/texts/f03b01c1251bc3bfee959aea99ed7906a0b08a2ff132d55a1ece18ee573a52a1.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/liblastlog2/COPYING",
+          "bytes": 1303,
+          "sha256": "d0a359f02d74adc85263c88a1f2e9911e96619fef67067e832ef7936b0606863",
+          "path": "third_party/alpine-notices/texts/d0a359f02d74adc85263c88a1f2e9911e96619fef67067e832ef7936b0606863.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/libmount/COPYING",
+          "bytes": 355,
+          "sha256": "5f12c2408a84be40fbff8ad7e281aa4e884fb92ee3f9a61aedf886a9503d3500",
+          "path": "third_party/alpine-notices/texts/5f12c2408a84be40fbff8ad7e281aa4e884fb92ee3f9a61aedf886a9503d3500.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/libsmartcols/COPYING",
+          "bytes": 361,
+          "sha256": "f03b01c1251bc3bfee959aea99ed7906a0b08a2ff132d55a1ece18ee573a52a1",
+          "path": "third_party/alpine-notices/texts/f03b01c1251bc3bfee959aea99ed7906a0b08a2ff132d55a1ece18ee573a52a1.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/libuuid/COPYING",
+          "bytes": 224,
+          "sha256": "5068749ee9c2f2c545af4a4de9fde3c39dc8d90af47cc0b3a42700116f9b7e71",
+          "path": "third_party/alpine-notices/texts/5068749ee9c2f2c545af4a4de9fde3c39dc8d90af47cc0b3a42700116f9b7e71.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/pam_lastlog2/COPYING",
+          "bytes": 1303,
+          "sha256": "d0a359f02d74adc85263c88a1f2e9911e96619fef67067e832ef7936b0606863",
+          "path": "third_party/alpine-notices/texts/d0a359f02d74adc85263c88a1f2e9911e96619fef67067e832ef7936b0606863.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/tests/expected/fdisk/bsd_0_64.BE",
+          "bytes": 9018,
+          "sha256": "fb25ef1354419467db87cb06ae3f40863ad963896c33d542725f670c8dccf9c2",
+          "path": "third_party/alpine-notices/texts/fb25ef1354419467db87cb06ae3f40863ad963896c33d542725f670c8dccf9c2.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/tests/expected/fdisk/bsd_0_64.LE",
+          "bytes": 9018,
+          "sha256": "657f8e8639b870f9278928fbc0e42b9249087f0e9acec0f54197e67738f603e7",
+          "path": "third_party/alpine-notices/texts/657f8e8639b870f9278928fbc0e42b9249087f0e9acec0f54197e67738f603e7.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/tests/expected/fdisk/bsd_0_64_alpha.LE",
+          "bytes": 9186,
+          "sha256": "0bf9f2df0cf5e358b304300265bd1a1b5b6e52bb8385cddae22a765b9f3686d3",
+          "path": "third_party/alpine-notices/texts/0bf9f2df0cf5e358b304300265bd1a1b5b6e52bb8385cddae22a765b9f3686d3.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/tests/expected/fdisk/bsd_1_0.BE",
+          "bytes": 9017,
+          "sha256": "533313de5d7fe10be50cef351ff45aa3113eae67b62d08833575b10095fddbfe",
+          "path": "third_party/alpine-notices/texts/533313de5d7fe10be50cef351ff45aa3113eae67b62d08833575b10095fddbfe.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/tests/expected/fdisk/bsd_1_0.LE",
+          "bytes": 9017,
+          "sha256": "167b716f763fc43f46ced31dadf9e99ed36a71b85881f45431d30b6d508ba555",
+          "path": "third_party/alpine-notices/texts/167b716f763fc43f46ced31dadf9e99ed36a71b85881f45431d30b6d508ba555.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/tests/ts/fdisk/bsd",
+          "bytes": 4689,
+          "sha256": "b70508eb7eea95946b88feaf1994ae01fc904c1ac37f20acef08d363ebf743a8",
+          "path": "third_party/alpine-notices/texts/b70508eb7eea95946b88feaf1994ae01fc904c1ac37f20acef08d363ebf743a8.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/AUTHORS",
+          "bytes": 4499,
+          "sha256": "00543cc35375cdca7546340d5d078f319c026c50a0ffcce25b7801971522c3e2",
+          "path": "third_party/alpine-notices/texts/00543cc35375cdca7546340d5d078f319c026c50a0ffcce25b7801971522c3e2.txt"
+        },
+        {
+          "member": "util-linux-2.42.3/COPYING",
+          "bytes": 18092,
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+          "path": "third_party/alpine-notices/texts/8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "xz",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "xz-libs"
+      ],
+      "installed_versions": [
+        "5.8.4-r0"
+      ],
+      "source_commit": "0c088d609f9fe69eedd6b4c7f4b99cdad847c20a",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/0c088d609f9fe69eedd6b4c7f4b99cdad847c20a/main/xz/APKBUILD",
+      "recipe_sha256": "e66901db8f5fe99356c3ccda131290c2639a940238c998fec2ce30d7c06982c3",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/xz-5.8.4.tar.gz",
+      "source_archive": "xz-5.8.4.tar.gz",
+      "source_bytes": 1670561,
+      "source_sha512": "6a0e9c3b05f9c20255c5e35c06fdcd44b9e201f4ed566d1dec052b6cfda6cdfb42f73ffd258eaad2d8b7737c66b78ae353aebd44502e24a3d89d8765d698dcae",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/xz-5.8.4.tar.gz",
+      "notices": [
+        {
+          "member": "xz-5.8.4/AUTHORS",
+          "bytes": 2146,
+          "sha256": "01e6df90d71d591f4307db3f397a5a4fac93b18533f5a3862156f1a0a7dc8610",
+          "path": "third_party/alpine-notices/texts/01e6df90d71d591f4307db3f397a5a4fac93b18533f5a3862156f1a0a7dc8610.txt"
+        },
+        {
+          "member": "xz-5.8.4/COPYING",
+          "bytes": 3119,
+          "sha256": "616a3ad264ce29b8f1cb97e53037b139d406899ca8d1f799651e17bfa09830b8",
+          "path": "third_party/alpine-notices/texts/616a3ad264ce29b8f1cb97e53037b139d406899ca8d1f799651e17bfa09830b8.txt"
+        },
+        {
+          "member": "xz-5.8.4/COPYING.0BSD",
+          "bytes": 607,
+          "sha256": "0b01625d853911cd0e2e088dcfb743261034a091bb379246cb25a14cc4c74bf1",
+          "path": "third_party/alpine-notices/texts/0b01625d853911cd0e2e088dcfb743261034a091bb379246cb25a14cc4c74bf1.txt"
+        },
+        {
+          "member": "xz-5.8.4/COPYING.GPLv2",
+          "bytes": 17984,
+          "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+          "path": "third_party/alpine-notices/texts/edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6.txt"
+        },
+        {
+          "member": "xz-5.8.4/COPYING.GPLv3",
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "path": "third_party/alpine-notices/texts/3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986.txt"
+        },
+        {
+          "member": "xz-5.8.4/COPYING.LGPLv2.1",
+          "bytes": 26419,
+          "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+          "path": "third_party/alpine-notices/texts/20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95.txt"
+        },
+        {
+          "member": "xz-5.8.4/build-aux/license-check.sh",
+          "bytes": 5127,
+          "sha256": "2b3fa1d23cb2ab084f3d919908159473cc0e1eed059d106e2a2857c0ec8af98a",
+          "path": "third_party/alpine-notices/texts/2b3fa1d23cb2ab084f3d919908159473cc0e1eed059d106e2a2857c0ec8af98a.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "zlib",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "zlib"
+      ],
+      "installed_versions": [
+        "1.3.2-r1"
+      ],
+      "source_commit": "0afa2da0e8c8051c6f8f64a7a388e5a259904245",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/0afa2da0e8c8051c6f8f64a7a388e5a259904245/main/zlib/APKBUILD",
+      "recipe_sha256": "c9348892bf3857602fe74fcc1d411e263b408b7d70344170396f5993a62bbe26",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/zlib-1.3.2.tar.gz",
+      "source_archive": "zlib-1.3.2.tar.gz",
+      "source_bytes": 1502830,
+      "source_sha512": "70963771ea5d763614278a69b474f09b7d237ef8f53b675a10fe31d9923aeef601504b35d7ebd1b1e7f347e9ebb048e6b3b47fffdf137e7bdc7e8d5eb4ec4692",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/zlib-1.3.2.tar.gz",
+      "notices": [
+        {
+          "member": "zlib-1.3.2/LICENSE",
+          "bytes": 1002,
+          "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
+          "path": "third_party/alpine-notices/texts/e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2.txt"
+        },
+        {
+          "member": "zlib-1.3.2/contrib/dotzlib/LICENSE_1_0.txt",
+          "bytes": 1359,
+          "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951",
+          "path": "third_party/alpine-notices/texts/36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951.txt"
+        },
+        {
+          "member": "zlib-1.3.2/contrib/minizip/LICENSE.Info-Zip",
+          "bytes": 3509,
+          "sha256": "fc686023047ce5ce3a18a9b8a777156f0e475929d3de06bac279f3c025d2b2ca",
+          "path": "third_party/alpine-notices/texts/fc686023047ce5ce3a18a9b8a777156f0e475929d3de06bac279f3c025d2b2ca.txt"
+        }
+      ],
+      "additional_source_archives": []
+    },
+    {
+      "origin": "zstd",
+      "result": "verified_primary_source_notices_preserved",
+      "packages": [
+        "zstd-libs"
+      ],
+      "installed_versions": [
+        "1.5.7-r2"
+      ],
+      "source_commit": "3c6e2ee2b16f403d53eab39c4426eb61f003c322",
+      "recipe_url": "https://raw.githubusercontent.com/alpinelinux/aports/3c6e2ee2b16f403d53eab39c4426eb61f003c322/main/zstd/APKBUILD",
+      "recipe_sha256": "635134417b866a71fc0684bfbc1f8b5ff660c3edcd68f1b0b1335f04963ef5c1",
+      "source_url": "https://distfiles.alpinelinux.org/distfiles/v3.24/zstd-1.5.7.tar.gz",
+      "source_archive": "zstd-1.5.7.tar.gz",
+      "source_bytes": 2451884,
+      "source_sha512": "26e441267305f6e58080460f96ab98645219a90d290a533410b1b0b1d2f870721c95f8384e342ee647c5e968385a5b7e30c2d04340c37f59b3e6d86762c3260c",
+      "private_archive": ".local/g7-proxy-source-notices-01/archives/zstd-1.5.7.tar.gz",
+      "notices": [
+        {
+          "member": "zstd-1.5.7/COPYING",
+          "bytes": 18091,
+          "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505",
+          "path": "third_party/alpine-notices/texts/f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505.txt"
+        },
+        {
+          "member": "zstd-1.5.7/LICENSE",
+          "bytes": 1549,
+          "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+          "path": "third_party/alpine-notices/texts/7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8.txt"
+        },
+        {
+          "member": "zstd-1.5.7/build/LICENSE",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "third_party/alpine-notices/texts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.txt"
+        }
+      ],
+      "additional_source_archives": []
+    }
+  ],
+  "source_recipes_executed": false,
+  "code_installed": false,
+  "archive_members_extracted_to_filesystem": false,
+  "limits": [
+    "Only matching standalone notice/license/attribution text is preserved as opaque bytes. This is not a compatibility opinion.",
+    "Additional bundled source archives, origins without archive/license files and exact Expat recipe availability remain explicit coverage gaps.",
+    "Verified compressed source archives are private retained provenance inputs; preserve or retire with exact receipts, never global cleanup."
+  ]
+}

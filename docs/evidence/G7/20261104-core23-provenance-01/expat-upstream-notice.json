@@ -1,0 +1,31 @@
+{
+  "result": "passed_expat_2_10_upstream_notice_at_exact_release_commit",
+  "origin": "expat",
+  "upstream_release": "2.10.0",
+  "upstream_commit": "a70841d9ffa64ddde29ab824ed6305035ebe4c47",
+  "release_resolution": [
+    {
+      "url": "https://api.github.com/repos/libexpat/libexpat/git/ref/tags/R_2_10_0",
+      "sha256": "0ca7428887949add570c03fcbd63232fff678a242505e1dffae9275250a99a8f"
+    },
+    {
+      "url": "https://api.github.com/repos/libexpat/libexpat/git/tags/c5dc9f930efb4a7584c7be96e60d469ab5f1b767",
+      "sha256": "57283b40eb733b088c11bf18a0295a815c0e4accf29bf7be206a74b77e0eb1ed"
+    }
+  ],
+  "changes_url": "https://raw.githubusercontent.com/libexpat/libexpat/a70841d9ffa64ddde29ab824ed6305035ebe4c47/expat/Changes",
+  "changes_sha256": "b200119004e21b89102f35b551bcdd26a479d0b882c98435e6b53e08ca75dd39",
+  "retained_primary_vendor_changes_exact": true,
+  "notice": {
+    "url": "https://raw.githubusercontent.com/libexpat/libexpat/a70841d9ffa64ddde29ab824ed6305035ebe4c47/expat/COPYING",
+    "bytes": 1144,
+    "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+    "path": "third_party/alpine-notices/texts/31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87.txt"
+  },
+  "installed_Alpine_version": "2.10.0-r0",
+  "Alpine_recipe_substituted": false,
+  "unresolved_recipe_transport": "Exact package source_commit remains preserved as declared in the signed APK. Its GitHub mirror path404 and canonical Alpine endpoints418/403 are retained; this upstream notice does not claim the unavailable packaging recipe was reproduced.",
+  "limits": [
+    "Copyright/license text and source origin for the exact upstream release only; no fabricated Alpine recipe or updated package/source hashes."
+  ]
+}

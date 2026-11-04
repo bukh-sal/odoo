@@ -1,0 +1,74 @@
+{
+  "result": "passed_current_core23_actual_source_dependency_notice_binding",
+  "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory_digest": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "configuration_generation": 8,
+  "source_changes": {
+    "packages/platform_sdk/modular_platform/lifecycle_impact.py": {
+      "previous": "1c19985cb544afcff8b427cfc680afa49d972019aeace0ebb6bddeb98111d87f",
+      "current": "4f1256253fc42de039654cd92a3291a26352382be09339c5921ddf3056ab5fa8"
+    },
+    "packages/contracts/examples/v1/lifecycle-impact/dispatch-base.json": {
+      "previous": null,
+      "current": "4dde62661e6274a47f5dd1361d6eb7d57fbec17fca080dd1edbf558c835eba1c"
+    },
+    "addons/mp_core/operations.py": {
+      "previous": "007ebab44beb277830bd9741b97b24874feb322ec78a7bb26b1ad521021a0bf8",
+      "current": "e036ae0d843c5a74aa94f9a11871f3d2a8fb27efc984ceaac6d38bb6875d424d"
+    },
+    "packages/contracts/examples/v1/lifecycle-impact/dispatch-events.json": {
+      "previous": null,
+      "current": "03aefc73bb742619185069b912d58f621871404dc04ad905cbc34d1e64a45ea2"
+    },
+    "packages/platform_sdk/modular_platform/lifecycle_observation.py": {
+      "previous": "35851c2893bd37d34e63cb47144621cc295ada7d3b206ffc5e8e91eaaa8a4ffa",
+      "current": "fe53ece3b54aa02f9d25d9985bcaa5cefd845196d9a650db2f0f62ab9810648b"
+    },
+    "packages/platform_sdk/modular_platform/native_executor.py": {
+      "previous": "2a5bdb1ed793caeff02806361cc8eff7b9addccdbc6ff4a4a1e289b7d6c796c8",
+      "current": "41eaf76d81cb28d0d42c8f0a8d4eb133fff11c02f6ac181706330b8de46e0694"
+    },
+    "packages/contracts/v1/lifecycle-impact.schema.json": {
+      "previous": "82c0a23ee4b8978c62fb37dec2aa85612008fdc7f90a22cf1ec1b57cc26b7d79",
+      "current": "0dc239be335a3776fdbccfcc2f511ed4bc8367d8e6b7f96ca8911f5b962fbf24"
+    },
+    "addons/mp_core/__manifest__.py": {
+      "previous": "cf4af9041cdd9d0214b682502ebf94a7d37e476a9768cca405db2493ebf62232",
+      "current": "26b7d4d8ad9a2f330665c6bcf67d41760a0adcbbd9c130211374642b6a848766"
+    },
+    "packages/platform_sdk/modular_platform/projection.py": {
+      "previous": "8601b39c43b8f24e9dfaa1a237a2c089898bae60fcc3f006a45cd7c70d6e09bc",
+      "current": "22a5a6b040f1ae737f496b8ba47de015e95905b61b658b7dcec95bef4d876a9d"
+    },
+    "packages/platform_sdk/modular_platform/uninstall_planning.py": {
+      "previous": "c94e646b37c75632705222775415b2bc3067eafb0f810bb46982223fe18eb564",
+      "current": "c486b28141a9c13c95b73b96fa71d37a28367c4bf0f200262121874a0f83f489"
+    },
+    "packages/platform_sdk/modular_platform/native_uninstall.py": {
+      "previous": "990dd2c1ae92e4b1426cc014a238320c88914e7bf70558def4b08f8d2c9b4f58",
+      "current": "5ef431827250172bea0e65689c8bbfea7fe364e084839c52e4dec148bf46de22"
+    }
+  },
+  "complete_recorded_build_inputs_match_current_checkout": 374,
+  "dependency_base_image": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "python_distributions": 77,
+  "OS_packages": 113,
+  "native_addons": 17,
+  "actual_python_metadata_digests_and_lock_exact": true,
+  "actual_OS_copyright_and_python_notice_bytes_exact": true,
+  "official_source_proof": {
+    "path": "docs/evidence/G7/20261104-source-notices-01/official-source.json",
+    "sha256": "c69ea6b6f7e085c752b5f6a3b39b4c407befa19a6d04920cae67e538280ee873",
+    "recorded_source_hashes_match": 3939,
+    "official_files_physically_matched": 3937,
+    "exact_generated_exceptions": 2
+  },
+  "generated_patches_exact": true,
+  "all17tables_worker_original_configuration_exact": true,
+  "collector_removed": true,
+  "new_images_volumes_networks": 0,
+  "limits": [
+    "Actual current source/dependency/notice binding only; support/host/vendor obligation supplements and dated vulnerability dispositions remain separate requirements.",
+    "No final OPS03, security, fresh reproducibility or complete G7 pass. Retained notice archive reused after exact content verification."
+  ]
+}

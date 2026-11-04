@@ -1,0 +1,14 @@
+{
+  "result": "selected_proxy_all_package_notice_dispositions_recorded",
+  "index": "third_party/alpine-notices/index.json",
+  "sha256": "66c86a6b97b84465455f82573bb536e96667fdd8f32af2724a51c2c07ea64d7b",
+  "packages": 71,
+  "origins": 59,
+  "unique_notice_texts": 214,
+  "all_preserved_bytes_verified": true,
+  "limits": [
+    "Preserves actual furnished declarations/attribution and explicitly records no-standalone-notice cases. No fabricated permission statement.",
+    "Expat upstream release notice is exact; unavailable Alpine packaging recipe is a recorded transport limitation, not reproduced source.",
+    "No legal compatibility opinion, final vulnerability clearance or complete OPS03/G7 claim."
+  ]
+}

@@ -1,0 +1,1603 @@
+{
+  "result": "exact_proxy_source_recipes_collected_review_pending",
+  "origins": 53,
+  "records": [
+    {
+      "origin": "alpine-base",
+      "source_commit": "ee92350c8a4509152dc91c693814215a884c07c3",
+      "packages": [
+        "alpine-release"
+      ],
+      "installed_versions": [
+        "3.24.3-r0"
+      ],
+      "declared": {
+        "pkgver": "3.24.3",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://alpinelinux.org"
+      },
+      "declared_version": "3.24.3-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/ee92350c8a4509152dc91c693814215a884c07c3/main/alpine-base/APKBUILD",
+      "sha256": "51cb91f683941e1d9d89fe9e600d5c11bbae4b7baa45a870dba4a969516c7f3f",
+      "bytes": 1507,
+      "private_file": ".local/g7-proxy-source-notices-01/alpine-base-ee92350c8a4509152dc91c693814215a884c07c3.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/ee92350c8a4509152dc91c693814215a884c07c3/main/alpine-base/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "alpine-baselayout",
+      "source_commit": "60a7585bbab2fa0f762504eb617dbca90216e31f",
+      "packages": [
+        "alpine-baselayout",
+        "alpine-baselayout-data"
+      ],
+      "installed_versions": [
+        "3.7.2-r1"
+      ],
+      "declared": {
+        "pkgver": "3.7.2",
+        "pkgrel": "1",
+        "license": "GPL-2.0-only",
+        "url": "https://gitlab.alpinelinux.org/alpine/aports/-/tree/master/main/alpine-baselayout"
+      },
+      "declared_version": "3.7.2-r1",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/60a7585bbab2fa0f762504eb617dbca90216e31f/main/alpine-baselayout/APKBUILD",
+      "sha256": "aef255516b71e39109860b92eb027a0986d90197427fb93ec91ebcd04bf59763",
+      "bytes": 8670,
+      "private_file": ".local/g7-proxy-source-notices-01/alpine-baselayout-60a7585bbab2fa0f762504eb617dbca90216e31f.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/60a7585bbab2fa0f762504eb617dbca90216e31f/main/alpine-baselayout/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "alpine-keys",
+      "source_commit": "b9f23becced4d7b3ccc0fa0f28530243ccd314a0",
+      "packages": [
+        "alpine-keys"
+      ],
+      "installed_versions": [
+        "2.6-r0"
+      ],
+      "declared": {
+        "pkgver": "2.6",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://alpinelinux.org"
+      },
+      "declared_version": "2.6-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/b9f23becced4d7b3ccc0fa0f28530243ccd314a0/main/alpine-keys/APKBUILD",
+      "sha256": "cb352e13b9e481b424763bd36d3afdb81ac308e508abed15eb7175530050bd3f",
+      "bytes": 5259,
+      "private_file": ".local/g7-proxy-source-notices-01/alpine-keys-b9f23becced4d7b3ccc0fa0f28530243ccd314a0.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/b9f23becced4d7b3ccc0fa0f28530243ccd314a0/main/alpine-keys/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "aom",
+      "source_commit": "ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e",
+      "packages": [
+        "aom-libs"
+      ],
+      "installed_versions": [
+        "3.14.1-r0"
+      ],
+      "declared": {
+        "pkgver": "3.14.1",
+        "pkgrel": "0",
+        "license": "BSD-2-Clause AND custom",
+        "url": "https://aomedia.org/"
+      },
+      "declared_version": "3.14.1-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e/main/aom/APKBUILD",
+      "sha256": "d8e6849aa59ed4d40cf927913e6f5c7a483a2b126851804986df0c21d8ad54b1",
+      "bytes": 2069,
+      "private_file": ".local/g7-proxy-source-notices-01/aom-ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/ca6a710df98ad5e2b596cf06b44cd82a5ceefc4e/main/aom/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "apk-tools",
+      "source_commit": "4588b452722bd4800efdc6cce4f6e980e02a997f",
+      "packages": [
+        "apk-tools",
+        "libapk"
+      ],
+      "installed_versions": [
+        "3.0.8-r0"
+      ],
+      "declared": {
+        "pkgver": "3.0.8",
+        "pkgrel": "0",
+        "license": "GPL-2.0-only",
+        "url": "https://gitlab.alpinelinux.org/alpine/apk-tools"
+      },
+      "declared_version": "3.0.8-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/4588b452722bd4800efdc6cce4f6e980e02a997f/main/apk-tools/APKBUILD",
+      "sha256": "492db5ec3ca2ca6cfd3cc4e5b52a0262ca7bd9c77299344efb4d786c596b7005",
+      "bytes": 3962,
+      "private_file": ".local/g7-proxy-source-notices-01/apk-tools-4588b452722bd4800efdc6cce4f6e980e02a997f.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/4588b452722bd4800efdc6cce4f6e980e02a997f/main/apk-tools/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "brotli",
+      "source_commit": "8313352127992a9d82e2c2024494f6c38a4dffb4",
+      "packages": [
+        "brotli-libs"
+      ],
+      "installed_versions": [
+        "1.2.1-r0"
+      ],
+      "declared": {
+        "pkgver": "1.2.1",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://github.com/google/brotli"
+      },
+      "declared_version": "1.2.1-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/8313352127992a9d82e2c2024494f6c38a4dffb4/main/brotli/APKBUILD",
+      "sha256": "f9a8f0e7a72518e32c90098916a889a18469aa0148fa0c088be4e4c5d9473f29",
+      "bytes": 2460,
+      "private_file": ".local/g7-proxy-source-notices-01/brotli-8313352127992a9d82e2c2024494f6c38a4dffb4.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/8313352127992a9d82e2c2024494f6c38a4dffb4/main/brotli/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "busybox",
+      "source_commit": "c3ef5d10e6ef6528852c51f0564963e2f8c1be19",
+      "packages": [
+        "busybox",
+        "busybox-binsh",
+        "ssl_client"
+      ],
+      "installed_versions": [
+        "1.37.0-r31"
+      ],
+      "declared": {
+        "pkgver": "1.37.0",
+        "pkgrel": "31",
+        "license": "GPL-2.0-only",
+        "url": "https://busybox.net/"
+      },
+      "declared_version": "1.37.0-r31",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/c3ef5d10e6ef6528852c51f0564963e2f8c1be19/main/busybox/APKBUILD",
+      "sha256": "98f019f62291aff63cb798f046fb59dfd43340885de63ca2f127651fc21d0450",
+      "bytes": 24569,
+      "private_file": ".local/g7-proxy-source-notices-01/busybox-c3ef5d10e6ef6528852c51f0564963e2f8c1be19.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/c3ef5d10e6ef6528852c51f0564963e2f8c1be19/main/busybox/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "bzip2",
+      "source_commit": "33283848034c9885d984c8e8697c645c57324938",
+      "packages": [
+        "libbz2"
+      ],
+      "installed_versions": [
+        "1.0.8-r6"
+      ],
+      "declared": {
+        "pkgver": "1.0.8",
+        "pkgrel": "6",
+        "license": "bzip2-1.0.6",
+        "url": "https://sourceware.org/bzip2/"
+      },
+      "declared_version": "1.0.8-r6",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/33283848034c9885d984c8e8697c645c57324938/main/bzip2/APKBUILD",
+      "sha256": "7e046e9c4b1c265af9791a790049ed864c361c0949b9cd68564a48bc0f672de2",
+      "bytes": 2540,
+      "private_file": ".local/g7-proxy-source-notices-01/bzip2-33283848034c9885d984c8e8697c645c57324938.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/33283848034c9885d984c8e8697c645c57324938/main/bzip2/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "c-ares",
+      "source_commit": "50f178d7a4c30ea44b54b7d4731ab58558c38b14",
+      "packages": [
+        "c-ares"
+      ],
+      "installed_versions": [
+        "1.34.9-r0"
+      ],
+      "declared": {
+        "pkgver": "1.34.9",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://c-ares.org/"
+      },
+      "declared_version": "1.34.9-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/50f178d7a4c30ea44b54b7d4731ab58558c38b14/main/c-ares/APKBUILD",
+      "sha256": "c15c4c8efe5fad0961f612cffb05f8ab8848ce1e3c108b65af25377b86807c40",
+      "bytes": 1288,
+      "private_file": ".local/g7-proxy-source-notices-01/c-ares-50f178d7a4c30ea44b54b7d4731ab58558c38b14.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/50f178d7a4c30ea44b54b7d4731ab58558c38b14/main/c-ares/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "ca-certificates",
+      "source_commit": "e78f5987166c6ffbe23f6472e2e8f040298fe2da",
+      "packages": [
+        "ca-certificates",
+        "ca-certificates-bundle"
+      ],
+      "installed_versions": [
+        "20261020-r0"
+      ],
+      "declared": {
+        "pkgver": "20261020",
+        "pkgrel": "0",
+        "license": "MPL-2.0 AND MIT",
+        "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/"
+      },
+      "declared_version": "20261020-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/e78f5987166c6ffbe23f6472e2e8f040298fe2da/main/ca-certificates/APKBUILD",
+      "sha256": "7b35fb8e11790105578f47d57a3b22831227b0d8ad7d064e575bad146023f3da",
+      "bytes": 2520,
+      "private_file": ".local/g7-proxy-source-notices-01/ca-certificates-e78f5987166c6ffbe23f6472e2e8f040298fe2da.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/e78f5987166c6ffbe23f6472e2e8f040298fe2da/main/ca-certificates/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "curl",
+      "source_commit": "c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce",
+      "packages": [
+        "curl",
+        "libcurl"
+      ],
+      "installed_versions": [
+        "8.23.0-r0"
+      ],
+      "declared": {
+        "pkgver": "8.23.0",
+        "pkgrel": "0",
+        "license": "curl",
+        "url": "https://curl.se/"
+      },
+      "declared_version": "8.23.0-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce/main/curl/APKBUILD",
+      "sha256": "13e89ad8f7bcf78396b626a0dd38e307a347a0680aae3b58600009ba00d86a3f",
+      "bytes": 7759,
+      "private_file": ".local/g7-proxy-source-notices-01/curl-c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/c65a7b3f6d6bc4b3c0a8a6fff759d8fd05a167ce/main/curl/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "dav1d",
+      "source_commit": "6a13170ddff8fdf27712aa7d0e5437aa2407ff56",
+      "packages": [
+        "libdav1d"
+      ],
+      "installed_versions": [
+        "1.5.3-r0"
+      ],
+      "declared": {
+        "pkgver": "1.5.3",
+        "pkgrel": "0",
+        "license": "BSD-2-Clause",
+        "url": "https://code.videolan.org/videolan/dav1d"
+      },
+      "declared_version": "1.5.3-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/6a13170ddff8fdf27712aa7d0e5437aa2407ff56/main/dav1d/APKBUILD",
+      "sha256": "0ca482efbfb2b8b8a3a2b206773e1cb4a3165353b95a08df34e0db4bfd640d75",
+      "bytes": 906,
+      "private_file": ".local/g7-proxy-source-notices-01/dav1d-6a13170ddff8fdf27712aa7d0e5437aa2407ff56.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/6a13170ddff8fdf27712aa7d0e5437aa2407ff56/main/dav1d/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "expat",
+      "source_commit": "af0fa42036cd6e626768c0d65fddaa1d1b30cf21",
+      "result": "not_found_at_exact_commit",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/af0fa42036cd6e626768c0d65fddaa1d1b30cf21/main/expat/APKBUILD",
+          "status": 404
+        },
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/af0fa42036cd6e626768c0d65fddaa1d1b30cf21/community/expat/APKBUILD",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "origin": "fontconfig",
+      "source_commit": "07061cb5a28861b108b09adc09ebd4fd962e549f",
+      "packages": [
+        "fontconfig"
+      ],
+      "installed_versions": [
+        "2.17.1-r1"
+      ],
+      "declared": {
+        "pkgver": "2.17.1",
+        "pkgrel": "1",
+        "license": "MIT",
+        "url": "https://www.freedesktop.org/wiki/Software/fontconfig"
+      },
+      "declared_version": "2.17.1-r1",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/07061cb5a28861b108b09adc09ebd4fd962e549f/main/fontconfig/APKBUILD",
+      "sha256": "4648e5c02e92ebdd7cc0a3cdb837f8054842318cf6708ed3995c871ecb6f0d40",
+      "bytes": 1579,
+      "private_file": ".local/g7-proxy-source-notices-01/fontconfig-07061cb5a28861b108b09adc09ebd4fd962e549f.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/07061cb5a28861b108b09adc09ebd4fd962e549f/main/fontconfig/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "freetype",
+      "source_commit": "ad16b0afc1a315c4095a75ff72ebbe3cfa29b671",
+      "packages": [
+        "freetype"
+      ],
+      "installed_versions": [
+        "2.14.3-r0"
+      ],
+      "declared": {
+        "pkgver": "2.14.3",
+        "pkgrel": "0",
+        "license": "FTL OR GPL-2.0-or-later",
+        "url": "https://www.freetype.org/"
+      },
+      "declared_version": "2.14.3-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/ad16b0afc1a315c4095a75ff72ebbe3cfa29b671/main/freetype/APKBUILD",
+      "sha256": "f3a9cd80e85de497c7811222fbdb2ce5805b8fbc4866b214171e10ee809c8609",
+      "bytes": 2275,
+      "private_file": ".local/g7-proxy-source-notices-01/freetype-ad16b0afc1a315c4095a75ff72ebbe3cfa29b671.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/ad16b0afc1a315c4095a75ff72ebbe3cfa29b671/main/freetype/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "gcc",
+      "source_commit": "423a8ad043d07f2c7546c8ec3e2b0384cda360ae",
+      "packages": [
+        "libgcc",
+        "libstdc++"
+      ],
+      "installed_versions": [
+        "15.2.0-r5"
+      ],
+      "declared": {
+        "pkgver": "15.2.0",
+        "pkgrel": "5",
+        "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+        "url": "https://gcc.gnu.org"
+      },
+      "declared_version": "15.2.0-r5",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/423a8ad043d07f2c7546c8ec3e2b0384cda360ae/main/gcc/APKBUILD",
+      "sha256": "71d831dbef88c2b0ff7b36b7422e878a07751419583a44b06cda2e561cdb82d4",
+      "bytes": 31920,
+      "private_file": ".local/g7-proxy-source-notices-01/gcc-423a8ad043d07f2c7546c8ec3e2b0384cda360ae.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/423a8ad043d07f2c7546c8ec3e2b0384cda360ae/main/gcc/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "gd",
+      "source_commit": "bf4ebac970366eda6cc26aa61c8dddae0d6916ee",
+      "packages": [
+        "libgd"
+      ],
+      "installed_versions": [
+        "2.3.3-r10"
+      ],
+      "declared": {
+        "pkgver": "2.3.3",
+        "pkgrel": "10",
+        "license": "GD",
+        "url": "https://libgd.github.io/"
+      },
+      "declared_version": "2.3.3-r10",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/bf4ebac970366eda6cc26aa61c8dddae0d6916ee/main/gd/APKBUILD",
+      "sha256": "df5658524b7459d2a649bd8d365943bdff6b0bc5f9c4c3f164ccf2b1940ff3fb",
+      "bytes": 1801,
+      "private_file": ".local/g7-proxy-source-notices-01/gd-bf4ebac970366eda6cc26aa61c8dddae0d6916ee.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/bf4ebac970366eda6cc26aa61c8dddae0d6916ee/main/gd/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "geoip",
+      "source_commit": "6db81e6559d66572861f28962c24459c4a583da1",
+      "packages": [
+        "geoip"
+      ],
+      "installed_versions": [
+        "1.6.12-r6"
+      ],
+      "declared": {
+        "pkgver": "1.6.12",
+        "pkgrel": "6",
+        "license": "LGPL-2.1-or-later",
+        "url": "http://www.maxmind.com/app/ip-location"
+      },
+      "declared_version": "1.6.12-r6",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/6db81e6559d66572861f28962c24459c4a583da1/main/geoip/APKBUILD",
+      "sha256": "8f9e47a0405fbc2ba289cd690f98c9caeb3098a1b9853c90e098763cd573c370",
+      "bytes": 951,
+      "private_file": ".local/g7-proxy-source-notices-01/geoip-6db81e6559d66572861f28962c24459c4a583da1.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/6db81e6559d66572861f28962c24459c4a583da1/main/geoip/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "gettext",
+      "source_commit": "a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391",
+      "packages": [
+        "gettext-envsubst",
+        "libintl"
+      ],
+      "installed_versions": [
+        "1.0-r0"
+      ],
+      "declared": {
+        "pkgver": "1.0",
+        "pkgrel": "0",
+        "license": "GPL-3.0-or-later AND LGPL-2.1-or-later AND MIT",
+        "url": "https://www.gnu.org/software/gettext/gettext.html"
+      },
+      "declared_version": "1.0-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391/main/gettext/APKBUILD",
+      "sha256": "e22f0eecaf4e5f1f5febe725f47ee019481ded75cdcf76d3c9dd5e7a9e590d13",
+      "bytes": 3072,
+      "private_file": ".local/g7-proxy-source-notices-01/gettext-a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/a0b12dbf67fb047e79a1b76c6dfe6f2904d0d391/main/gettext/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libavif",
+      "source_commit": "7c091e42619c47958002c5de53dd7f02dd4c83ac",
+      "packages": [
+        "libavif"
+      ],
+      "installed_versions": [
+        "1.4.1-r0"
+      ],
+      "declared": {
+        "pkgver": "1.4.1",
+        "pkgrel": "0",
+        "license": "BSD-2-Clause",
+        "url": "https://aomediacodec.github.io/av1-avif/"
+      },
+      "declared_version": "1.4.1-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/7c091e42619c47958002c5de53dd7f02dd4c83ac/main/libavif/APKBUILD",
+      "sha256": "aaea4dbac842846447a5231e49da67c7a5a8e7acfdfcc38158cb7fcd3b1e3bda",
+      "bytes": 1880,
+      "private_file": ".local/g7-proxy-source-notices-01/libavif-7c091e42619c47958002c5de53dd7f02dd4c83ac.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/7c091e42619c47958002c5de53dd7f02dd4c83ac/main/libavif/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libbsd",
+      "source_commit": "02365e78d654a7beb23fd35d7d69f4a649009ede",
+      "packages": [
+        "libbsd"
+      ],
+      "installed_versions": [
+        "0.12.2-r0"
+      ],
+      "declared": {
+        "pkgver": "0.12.2",
+        "pkgrel": "0",
+        "license": "BSD-3-Clause",
+        "url": "https://libbsd.freedesktop.org/"
+      },
+      "declared_version": "0.12.2-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/02365e78d654a7beb23fd35d7d69f4a649009ede/main/libbsd/APKBUILD",
+      "sha256": "db881fac5ce6d33e7b09a30abf01ab56643e51ed267ca7402677b00592830fbb",
+      "bytes": 1216,
+      "private_file": ".local/g7-proxy-source-notices-01/libbsd-02365e78d654a7beb23fd35d7d69f4a649009ede.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/02365e78d654a7beb23fd35d7d69f4a649009ede/main/libbsd/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libedit",
+      "source_commit": "7c805161e588c028cdee3f19f500849fb2c75d42",
+      "packages": [
+        "libedit"
+      ],
+      "installed_versions": [
+        "20260508.3.1-r1"
+      ],
+      "declared": {
+        "pkgver": "20260508.3.1",
+        "pkgrel": "1",
+        "license": "BSD-3-Clause",
+        "url": "https://www.thrysoee.dk/editline"
+      },
+      "declared_version": "20260508.3.1-r1",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/7c805161e588c028cdee3f19f500849fb2c75d42/main/libedit/APKBUILD",
+      "sha256": "66ddaa5408a8b129aa985e388100cdc6a700c23a2422fd1b120fb1b85ac6bf16",
+      "bytes": 1278,
+      "private_file": ".local/g7-proxy-source-notices-01/libedit-7c805161e588c028cdee3f19f500849fb2c75d42.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/7c805161e588c028cdee3f19f500849fb2c75d42/main/libedit/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libice",
+      "source_commit": "d4941e833167c30aa1172e6d8420d084698254ab",
+      "packages": [
+        "libice"
+      ],
+      "installed_versions": [
+        "1.1.2-r0"
+      ],
+      "declared": {
+        "pkgver": "1.1.2",
+        "pkgrel": "0",
+        "license": "X11",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "1.1.2-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/d4941e833167c30aa1172e6d8420d084698254ab/main/libice/APKBUILD",
+      "sha256": "c20d0dddc17219ea918c6e1626d238b29a219352ec887c3b5094d8f00339407c",
+      "bytes": 893,
+      "private_file": ".local/g7-proxy-source-notices-01/libice-d4941e833167c30aa1172e6d8420d084698254ab.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/d4941e833167c30aa1172e6d8420d084698254ab/main/libice/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libidn2",
+      "source_commit": "8240e09aa2fdd8f9979b2016be082273965aff0c",
+      "packages": [
+        "libidn2"
+      ],
+      "installed_versions": [
+        "2.3.8-r0"
+      ],
+      "declared": {
+        "pkgver": "2.3.8",
+        "pkgrel": "0",
+        "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+        "url": "https://www.gnu.org/software/libidn#libidn2"
+      },
+      "declared_version": "2.3.8-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/8240e09aa2fdd8f9979b2016be082273965aff0c/main/libidn2/APKBUILD",
+      "sha256": "b10c820249ffdf9eea4864bee27618a56163a297f06708362203d553de54a34a",
+      "bytes": 1132,
+      "private_file": ".local/g7-proxy-source-notices-01/libidn2-8240e09aa2fdd8f9979b2016be082273965aff0c.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/8240e09aa2fdd8f9979b2016be082273965aff0c/main/libidn2/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libjpeg-turbo",
+      "source_commit": "5fe6bebf850fc964a8525c81548397c39cb6f7cd",
+      "packages": [
+        "libjpeg-turbo"
+      ],
+      "installed_versions": [
+        "3.1.3-r0"
+      ],
+      "declared": {
+        "pkgver": "3.1.3",
+        "pkgrel": "0",
+        "license": "BSD-3-Clause AND IJG AND Zlib",
+        "url": "https://libjpeg-turbo.org/"
+      },
+      "declared_version": "3.1.3-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/5fe6bebf850fc964a8525c81548397c39cb6f7cd/main/libjpeg-turbo/APKBUILD",
+      "sha256": "1218c9432f4de37d43ed320d4ddb78989f0e9f8660f00c67df8505240821de61",
+      "bytes": 2667,
+      "private_file": ".local/g7-proxy-source-notices-01/libjpeg-turbo-5fe6bebf850fc964a8525c81548397c39cb6f7cd.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/5fe6bebf850fc964a8525c81548397c39cb6f7cd/main/libjpeg-turbo/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libmd",
+      "source_commit": "87b78bc6890645c317d3167bdbb0187502d0cda9",
+      "packages": [
+        "libmd"
+      ],
+      "installed_versions": [
+        "1.2.0-r0"
+      ],
+      "declared": {
+        "pkgver": "1.2.0",
+        "pkgrel": "0",
+        "license": "BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND Public Domain",
+        "url": "https://www.hadrons.org/software/libmd/"
+      },
+      "declared_version": "1.2.0-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/87b78bc6890645c317d3167bdbb0187502d0cda9/main/libmd/APKBUILD",
+      "sha256": "666cbb883c1723674806743c02246f75b391fab030f066481b927dc53bd15716",
+      "bytes": 920,
+      "private_file": ".local/g7-proxy-source-notices-01/libmd-87b78bc6890645c317d3167bdbb0187502d0cda9.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/87b78bc6890645c317d3167bdbb0187502d0cda9/main/libmd/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libpng",
+      "source_commit": "8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b",
+      "packages": [
+        "libpng"
+      ],
+      "installed_versions": [
+        "1.6.59-r0"
+      ],
+      "declared": {
+        "pkgver": "1.6.59",
+        "pkgrel": "0",
+        "license": "Libpng",
+        "url": "http://www.libpng.org"
+      },
+      "declared_version": "1.6.59-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b/main/libpng/APKBUILD",
+      "sha256": "1de1354d00b75a9acec130edbcc5c3eeceb8d65a37b73737c6e716fe2dc176b2",
+      "bytes": 2087,
+      "private_file": ".local/g7-proxy-source-notices-01/libpng-8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/8f222b50cd6e31c83f7dd69ab7c00e7471e11d4b/main/libpng/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libpsl",
+      "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+      "packages": [
+        "libpsl"
+      ],
+      "installed_versions": [
+        "0.21.5-r3"
+      ],
+      "declared": {
+        "pkgver": "0.21.5",
+        "pkgrel": "3",
+        "license": "MIT",
+        "url": "https://rockdaboot.github.io/libpsl"
+      },
+      "declared_version": "0.21.5-r3",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/6bd45b53fb316dc01bda59f5feaf1e127eb64f22/main/libpsl/APKBUILD",
+      "sha256": "b68a1b2d744a902cf296a641631f013d172a3dee2ec78c324e9ec73031a7d2ad",
+      "bytes": 1146,
+      "private_file": ".local/g7-proxy-source-notices-01/libpsl-6bd45b53fb316dc01bda59f5feaf1e127eb64f22.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/6bd45b53fb316dc01bda59f5feaf1e127eb64f22/main/libpsl/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libsm",
+      "source_commit": "4eaa957537767ad0344894ad0e609068b26bf85d",
+      "packages": [
+        "libsm"
+      ],
+      "installed_versions": [
+        "1.2.6-r0"
+      ],
+      "declared": {
+        "pkgver": "1.2.6",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "1.2.6-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/4eaa957537767ad0344894ad0e609068b26bf85d/main/libsm/APKBUILD",
+      "sha256": "9e651738f9f00af5323eebe66bf0800af11d4fa4697283a721aefa8ecd0df8a2",
+      "bytes": 854,
+      "private_file": ".local/g7-proxy-source-notices-01/libsm-4eaa957537767ad0344894ad0e609068b26bf85d.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/4eaa957537767ad0344894ad0e609068b26bf85d/main/libsm/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libunistring",
+      "source_commit": "30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c",
+      "packages": [
+        "libunistring"
+      ],
+      "installed_versions": [
+        "1.4.2-r0"
+      ],
+      "declared": {
+        "pkgver": "1.4.2",
+        "pkgrel": "0",
+        "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+        "url": "https://www.gnu.org/software/libunistring/"
+      },
+      "declared_version": "1.4.2-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c/main/libunistring/APKBUILD",
+      "sha256": "897e2505f928b37f16ebae9fa0b31d0ef67a8523f3dd5c4dcebc825c13d2fcfa",
+      "bytes": 926,
+      "private_file": ".local/g7-proxy-source-notices-01/libunistring-30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/30d9f19340385b2cd16eaf1cc6a9a8b30c4afe1c/main/libunistring/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libwebp",
+      "source_commit": "af8b48fabd19b69b00f5efe192f461896a38cf74",
+      "packages": [
+        "libsharpyuv",
+        "libwebp"
+      ],
+      "installed_versions": [
+        "1.6.0-r0"
+      ],
+      "declared": {
+        "pkgver": "1.6.0",
+        "pkgrel": "0",
+        "license": "BSD-3-Clause",
+        "url": "https://developers.google.com/speed/webp"
+      },
+      "declared_version": "1.6.0-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/af8b48fabd19b69b00f5efe192f461896a38cf74/main/libwebp/APKBUILD",
+      "sha256": "fa01d83adb827d69372ef67b622ad667f4e39f94b4a85aeabef733e88d9f3d8a",
+      "bytes": 1423,
+      "private_file": ".local/g7-proxy-source-notices-01/libwebp-af8b48fabd19b69b00f5efe192f461896a38cf74.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/af8b48fabd19b69b00f5efe192f461896a38cf74/main/libwebp/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libx11",
+      "source_commit": "e129d974905f6cf078e41390b58241a73519f572",
+      "packages": [
+        "libx11"
+      ],
+      "installed_versions": [
+        "1.8.14-r0"
+      ],
+      "declared": {
+        "pkgver": "1.8.14",
+        "pkgrel": "0",
+        "license": "X11",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "1.8.14-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/e129d974905f6cf078e41390b58241a73519f572/main/libx11/APKBUILD",
+      "sha256": "c159d58e883895ef75e4bcd635857b4a08f4122d7688d7515f45c363cda100df",
+      "bytes": 1345,
+      "private_file": ".local/g7-proxy-source-notices-01/libx11-e129d974905f6cf078e41390b58241a73519f572.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/e129d974905f6cf078e41390b58241a73519f572/main/libx11/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxau",
+      "source_commit": "6bd45b53fb316dc01bda59f5feaf1e127eb64f22",
+      "packages": [
+        "libxau"
+      ],
+      "installed_versions": [
+        "1.0.12-r0"
+      ],
+      "declared": {
+        "pkgver": "1.0.12",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "1.0.12-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/6bd45b53fb316dc01bda59f5feaf1e127eb64f22/main/libxau/APKBUILD",
+      "sha256": "fb79c8b54af8d1700d7ac25ebda40c50d9d6acb2543aa36edbd6179fc2562d64",
+      "bytes": 803,
+      "private_file": ".local/g7-proxy-source-notices-01/libxau-6bd45b53fb316dc01bda59f5feaf1e127eb64f22.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/6bd45b53fb316dc01bda59f5feaf1e127eb64f22/main/libxau/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxcb",
+      "source_commit": "5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1",
+      "packages": [
+        "libxcb"
+      ],
+      "installed_versions": [
+        "1.17.0-r2"
+      ],
+      "declared": {
+        "pkgver": "1.17.0",
+        "pkgrel": "2",
+        "license": "MIT",
+        "url": "https://xcb.freedesktop.org/"
+      },
+      "declared_version": "1.17.0-r2",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1/main/libxcb/APKBUILD",
+      "sha256": "8bac16e286e2e6284340ff21443b02a35c399f8c6283e803a7ab268114d10db9",
+      "bytes": 903,
+      "private_file": ".local/g7-proxy-source-notices-01/libxcb-5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/5e1b822309fb17cc2ebd46d6fbacb1763acbcdd1/main/libxcb/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxdmcp",
+      "source_commit": "614e9166706cec427fc3d907b8d981390a42e088",
+      "packages": [
+        "libxdmcp"
+      ],
+      "installed_versions": [
+        "1.1.5-r1"
+      ],
+      "declared": {
+        "pkgver": "1.1.5",
+        "pkgrel": "1",
+        "license": "MIT",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "1.1.5-r1",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/614e9166706cec427fc3d907b8d981390a42e088/main/libxdmcp/APKBUILD",
+      "sha256": "f47cf4f70e4553c3a7996f24466556b49d42b4eb51b7be4b863509b06b13ae44",
+      "bytes": 814,
+      "private_file": ".local/g7-proxy-source-notices-01/libxdmcp-614e9166706cec427fc3d907b8d981390a42e088.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/614e9166706cec427fc3d907b8d981390a42e088/main/libxdmcp/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxext",
+      "source_commit": "4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942",
+      "packages": [
+        "libxext"
+      ],
+      "installed_versions": [
+        "1.3.7-r0"
+      ],
+      "declared": {
+        "pkgver": "1.3.7",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "1.3.7-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942/main/libxext/APKBUILD",
+      "sha256": "40f385d173a94ac0e8e7725936554f6c5b71e918c21bbdcfdb69adcdc8853561",
+      "bytes": 858,
+      "private_file": ".local/g7-proxy-source-notices-01/libxext-4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/4ec252fa3e6e8edf16d0d6da3fe6dd39e2263942/main/libxext/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxml2",
+      "source_commit": "f1bd5b6767a0e7fdda380c95138a1c938eb6e102",
+      "packages": [
+        "libxml2"
+      ],
+      "installed_versions": [
+        "2.13.9-r2"
+      ],
+      "declared": {
+        "pkgver": "2.13.9",
+        "pkgrel": "2",
+        "license": "MIT",
+        "url": "https://gitlab.gnome.org/GNOME/libxml2"
+      },
+      "declared_version": "2.13.9-r2",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/f1bd5b6767a0e7fdda380c95138a1c938eb6e102/main/libxml2/APKBUILD",
+      "sha256": "843a8013c86b73c9873735bfe5f155f4b9b6b4cbfbf9794a6c98b57d141a52ab",
+      "bytes": 3006,
+      "private_file": ".local/g7-proxy-source-notices-01/libxml2-f1bd5b6767a0e7fdda380c95138a1c938eb6e102.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/f1bd5b6767a0e7fdda380c95138a1c938eb6e102/main/libxml2/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxpm",
+      "source_commit": "f5d3a71d8949514ce4a8057ae2002180a6f42321",
+      "packages": [
+        "libxpm"
+      ],
+      "installed_versions": [
+        "3.5.20-r0"
+      ],
+      "declared": {
+        "pkgver": "3.5.20",
+        "pkgrel": "0",
+        "license": "X11",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "3.5.20-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/f5d3a71d8949514ce4a8057ae2002180a6f42321/main/libxpm/APKBUILD",
+      "sha256": "87234ad44088d25aa5cf5e8f5d966facec77103b6df14bb355322f4fef0b6cda",
+      "bytes": 1110,
+      "private_file": ".local/g7-proxy-source-notices-01/libxpm-f5d3a71d8949514ce4a8057ae2002180a6f42321.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/f5d3a71d8949514ce4a8057ae2002180a6f42321/main/libxpm/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxslt",
+      "source_commit": "730f2f5bdc97be98b2beee33f55134c622e6189c",
+      "packages": [
+        "libxslt"
+      ],
+      "installed_versions": [
+        "1.1.43-r3"
+      ],
+      "declared": {
+        "pkgver": "1.1.43",
+        "pkgrel": "3",
+        "license": "X11",
+        "url": "http://xmlsoft.org/XSLT/"
+      },
+      "declared_version": "1.1.43-r3",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/730f2f5bdc97be98b2beee33f55134c622e6189c/main/libxslt/APKBUILD",
+      "sha256": "c87fd50056df1a64f4eb0de1948f9c64a98db981fa589a8ee85eaf0213190fb8",
+      "bytes": 1369,
+      "private_file": ".local/g7-proxy-source-notices-01/libxslt-730f2f5bdc97be98b2beee33f55134c622e6189c.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/730f2f5bdc97be98b2beee33f55134c622e6189c/main/libxslt/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libxt",
+      "source_commit": "60222ebeadec75e483e49194130c6963d0fcbf75",
+      "packages": [
+        "libxt"
+      ],
+      "installed_versions": [
+        "1.3.1-r0"
+      ],
+      "declared": {
+        "pkgver": "1.3.1",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://xorg.freedesktop.org/"
+      },
+      "declared_version": "1.3.1-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/60222ebeadec75e483e49194130c6963d0fcbf75/main/libxt/APKBUILD",
+      "sha256": "76e6c124a48b28e1f6b0d6631b0b9e895d1f5771bd983d62ef3077bf8ca0703f",
+      "bytes": 857,
+      "private_file": ".local/g7-proxy-source-notices-01/libxt-60222ebeadec75e483e49194130c6963d0fcbf75.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/60222ebeadec75e483e49194130c6963d0fcbf75/main/libxt/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "libyuv",
+      "source_commit": "6d055fa770a2fbbd807ee496c4dc8c69d00fbee4",
+      "packages": [
+        "libyuv"
+      ],
+      "installed_versions": [
+        "0.0.1928-r0"
+      ],
+      "declared": {
+        "pkgver": "0.0.1928",
+        "pkgrel": "0",
+        "license": "BSD-3-Clause",
+        "url": "https://chromium.googlesource.com/libyuv/libyuv/"
+      },
+      "declared_version": "0.0.1928-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/6d055fa770a2fbbd807ee496c4dc8c69d00fbee4/main/libyuv/APKBUILD",
+      "sha256": "f1ee165c6c826e2666d043347ccea96a882677d1140e10ebbcb360415a202dc6",
+      "bytes": 2884,
+      "private_file": ".local/g7-proxy-source-notices-01/libyuv-6d055fa770a2fbbd807ee496c4dc8c69d00fbee4.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/6d055fa770a2fbbd807ee496c4dc8c69d00fbee4/main/libyuv/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "musl",
+      "source_commit": "8f79d39391b46d6dbf1800fb68b8212a21d5ee2e",
+      "packages": [
+        "musl",
+        "musl-utils"
+      ],
+      "installed_versions": [
+        "1.2.6-r3"
+      ],
+      "declared": {
+        "pkgver": "1.2.6",
+        "pkgrel": "3",
+        "license": "MIT",
+        "url": "https://musl.libc.org/"
+      },
+      "declared_version": "1.2.6-r3",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/8f79d39391b46d6dbf1800fb68b8212a21d5ee2e/main/musl/APKBUILD",
+      "sha256": "22c5adb3f3b68ab84e5ff7d20df68447063d1ecb5c7b39afd5a04a1dfd444a35",
+      "bytes": 6495,
+      "private_file": ".local/g7-proxy-source-notices-01/musl-8f79d39391b46d6dbf1800fb68b8212a21d5ee2e.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/8f79d39391b46d6dbf1800fb68b8212a21d5ee2e/main/musl/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "ncurses",
+      "source_commit": "2cee8a7328d061418336ad327b512d96bcd7bc5e",
+      "packages": [
+        "libncursesw",
+        "ncurses-terminfo-base"
+      ],
+      "installed_versions": [
+        "6.6_p20260516-r0"
+      ],
+      "declared": {
+        "pkgver": "6.6_p20260516",
+        "pkgrel": "0",
+        "license": "X11",
+        "url": "https://invisible-island.net/ncurses/"
+      },
+      "declared_version": "6.6_p20260516-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/2cee8a7328d061418336ad327b512d96bcd7bc5e/main/ncurses/APKBUILD",
+      "sha256": "9801a0e262437b470ddfd6c35e55c231a79b6903262fe68df8a547845d095d6a",
+      "bytes": 4624,
+      "private_file": ".local/g7-proxy-source-notices-01/ncurses-2cee8a7328d061418336ad327b512d96bcd7bc5e.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/2cee8a7328d061418336ad327b512d96bcd7bc5e/main/ncurses/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "nghttp2",
+      "source_commit": "d5a34efc88bbe8d18737fda28125071c4aef8517",
+      "packages": [
+        "nghttp2-libs"
+      ],
+      "installed_versions": [
+        "1.70.0-r0"
+      ],
+      "declared": {
+        "pkgver": "1.70.0",
+        "pkgrel": "0",
+        "license": "MIT",
+        "url": "https://nghttp2.org"
+      },
+      "declared_version": "1.70.0-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/d5a34efc88bbe8d18737fda28125071c4aef8517/main/nghttp2/APKBUILD",
+      "sha256": "a4428f82a616800eaaae34b7d8c1020199fc38d672ac639b452f21274c22c7dd",
+      "bytes": 1909,
+      "private_file": ".local/g7-proxy-source-notices-01/nghttp2-d5a34efc88bbe8d18737fda28125071c4aef8517.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/d5a34efc88bbe8d18737fda28125071c4aef8517/main/nghttp2/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "openssl",
+      "source_commit": "29b9ec24b1b5b39aeef51fa2a044210e2ec5258e",
+      "packages": [
+        "libcrypto3",
+        "libssl3"
+      ],
+      "installed_versions": [
+        "3.5.9-r0"
+      ],
+      "declared": {
+        "pkgver": "3.5.9",
+        "pkgrel": "0",
+        "license": "Apache-2.0",
+        "url": "https://www.openssl.org/"
+      },
+      "declared_version": "3.5.9-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/29b9ec24b1b5b39aeef51fa2a044210e2ec5258e/main/openssl/APKBUILD",
+      "sha256": "ea459c051ee8d846c06f1d47d09d0f737778502c01de88c9696e96a208de5943",
+      "bytes": 7297,
+      "private_file": ".local/g7-proxy-source-notices-01/openssl-29b9ec24b1b5b39aeef51fa2a044210e2ec5258e.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/29b9ec24b1b5b39aeef51fa2a044210e2ec5258e/main/openssl/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "pax-utils",
+      "source_commit": "c61801eeacb3ffcd9c2025b09e402153bb93fb39",
+      "packages": [
+        "scanelf"
+      ],
+      "installed_versions": [
+        "1.3.9-r1"
+      ],
+      "declared": {
+        "pkgver": "1.3.9",
+        "pkgrel": "1",
+        "license": "GPL-2.0-only",
+        "url": "https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities"
+      },
+      "declared_version": "1.3.9-r1",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/c61801eeacb3ffcd9c2025b09e402153bb93fb39/main/pax-utils/APKBUILD",
+      "sha256": "f33df75f467601dcd73038b4e15029de60338a5f3f7d9a37574475a723b07c20",
+      "bytes": 1568,
+      "private_file": ".local/g7-proxy-source-notices-01/pax-utils-c61801eeacb3ffcd9c2025b09e402153bb93fb39.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/c61801eeacb3ffcd9c2025b09e402153bb93fb39/main/pax-utils/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "pcre2",
+      "source_commit": "3d497cbb3217749c4fb85f90f3b6f7908b0c1f95",
+      "packages": [
+        "pcre2"
+      ],
+      "installed_versions": [
+        "10.49-r0"
+      ],
+      "declared": {
+        "pkgver": "10.49",
+        "pkgrel": "0",
+        "license": "BSD-3-Clause",
+        "url": "https://pcre.org/"
+      },
+      "declared_version": "10.49-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/3d497cbb3217749c4fb85f90f3b6f7908b0c1f95/main/pcre2/APKBUILD",
+      "sha256": "49a612c42929ff12532525282be2e7bb2146b40321e170ca8c03ec6824de25be",
+      "bytes": 1871,
+      "private_file": ".local/g7-proxy-source-notices-01/pcre2-3d497cbb3217749c4fb85f90f3b6f7908b0c1f95.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/3d497cbb3217749c4fb85f90f3b6f7908b0c1f95/main/pcre2/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "tiff",
+      "source_commit": "bbcfbafeadf5dac4744d065ac69338c1b58fc0d1",
+      "packages": [
+        "tiff"
+      ],
+      "installed_versions": [
+        "4.7.2-r0"
+      ],
+      "declared": {
+        "pkgver": "4.7.2",
+        "pkgrel": "0",
+        "license": "libtiff",
+        "url": "https://gitlab.com/libtiff/libtiff"
+      },
+      "declared_version": "4.7.2-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/bbcfbafeadf5dac4744d065ac69338c1b58fc0d1/main/tiff/APKBUILD",
+      "sha256": "8b7e2998b389cb5ece3c8951a59935675fdef3052847dcf35bf875b34a4a3b7a",
+      "bytes": 3251,
+      "private_file": ".local/g7-proxy-source-notices-01/tiff-bbcfbafeadf5dac4744d065ac69338c1b58fc0d1.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/bbcfbafeadf5dac4744d065ac69338c1b58fc0d1/main/tiff/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "tzdata",
+      "source_commit": "faa135a1a22c90309bf381766a7cc47490dea786",
+      "packages": [
+        "tzdata"
+      ],
+      "installed_versions": [
+        "2026e-r0"
+      ],
+      "declared": {
+        "pkgver": "2026e",
+        "pkgrel": "0",
+        "license": "Public-Domain",
+        "url": "https://www.iana.org/time-zones"
+      },
+      "declared_version": "2026e-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/faa135a1a22c90309bf381766a7cc47490dea786/main/tzdata/APKBUILD",
+      "sha256": "5752b55671903e735f429367a0dc4673cf78562ef4cf5d358838f56de286a7c8",
+      "bytes": 2933,
+      "private_file": ".local/g7-proxy-source-notices-01/tzdata-faa135a1a22c90309bf381766a7cc47490dea786.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/faa135a1a22c90309bf381766a7cc47490dea786/main/tzdata/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "util-linux",
+      "source_commit": "d98c55af59055e6ca60fbe36e171546918709965",
+      "packages": [
+        "libuuid"
+      ],
+      "installed_versions": [
+        "2.42.3-r1"
+      ],
+      "declared": {
+        "pkgver": "2.42.3",
+        "pkgrel": "1",
+        "license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND",
+        "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git"
+      },
+      "declared_version": "2.42.3-r1",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/d98c55af59055e6ca60fbe36e171546918709965/main/util-linux/APKBUILD",
+      "sha256": "5347f9d386c8684e7f5cc160ae8595c5c3d3cfedcfdc758f5e022a46e560b944",
+      "bytes": 11509,
+      "private_file": ".local/g7-proxy-source-notices-01/util-linux-d98c55af59055e6ca60fbe36e171546918709965.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/d98c55af59055e6ca60fbe36e171546918709965/main/util-linux/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "xz",
+      "source_commit": "0c088d609f9fe69eedd6b4c7f4b99cdad847c20a",
+      "packages": [
+        "xz-libs"
+      ],
+      "installed_versions": [
+        "5.8.4-r0"
+      ],
+      "declared": {
+        "pkgver": "5.8.4",
+        "pkgrel": "0",
+        "license": "GPL-2.0-or-later AND 0BSD AND Public-Domain AND LGPL-2.1-or-later",
+        "url": "https://tukaani.org/xz/"
+      },
+      "declared_version": "5.8.4-r0",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/0c088d609f9fe69eedd6b4c7f4b99cdad847c20a/main/xz/APKBUILD",
+      "sha256": "e66901db8f5fe99356c3ccda131290c2639a940238c998fec2ce30d7c06982c3",
+      "bytes": 1571,
+      "private_file": ".local/g7-proxy-source-notices-01/xz-0c088d609f9fe69eedd6b4c7f4b99cdad847c20a.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/0c088d609f9fe69eedd6b4c7f4b99cdad847c20a/main/xz/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "zlib",
+      "source_commit": "0afa2da0e8c8051c6f8f64a7a388e5a259904245",
+      "packages": [
+        "zlib"
+      ],
+      "installed_versions": [
+        "1.3.2-r1"
+      ],
+      "declared": {
+        "pkgver": "1.3.2",
+        "pkgrel": "1",
+        "license": "Zlib",
+        "url": "https://zlib.net/"
+      },
+      "declared_version": "1.3.2-r1",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/0afa2da0e8c8051c6f8f64a7a388e5a259904245/main/zlib/APKBUILD",
+      "sha256": "c9348892bf3857602fe74fcc1d411e263b408b7d70344170396f5993a62bbe26",
+      "bytes": 1134,
+      "private_file": ".local/g7-proxy-source-notices-01/zlib-0afa2da0e8c8051c6f8f64a7a388e5a259904245.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/0afa2da0e8c8051c6f8f64a7a388e5a259904245/main/zlib/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    },
+    {
+      "origin": "zstd",
+      "source_commit": "3c6e2ee2b16f403d53eab39c4426eb61f003c322",
+      "packages": [
+        "zstd-libs"
+      ],
+      "installed_versions": [
+        "1.5.7-r2"
+      ],
+      "declared": {
+        "pkgver": "1.5.7",
+        "pkgrel": "2",
+        "license": "BSD-3-Clause OR GPL-2.0-or-later",
+        "url": "https://facebook.github.io/zstd/"
+      },
+      "declared_version": "1.5.7-r2",
+      "version_matches_literal": true,
+      "url": "https://raw.githubusercontent.com/alpinelinux/aports/3c6e2ee2b16f403d53eab39c4426eb61f003c322/main/zstd/APKBUILD",
+      "sha256": "635134417b866a71fc0684bfbc1f8b5ff660c3edcd68f1b0b1335f04963ef5c1",
+      "bytes": 2381,
+      "private_file": ".local/g7-proxy-source-notices-01/zstd-3c6e2ee2b16f403d53eab39c4426eb61f003c322.APKBUILD",
+      "attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/alpinelinux/aports/3c6e2ee2b16f403d53eab39c4426eb61f003c322/main/zstd/APKBUILD",
+          "status": 200
+        }
+      ],
+      "result": "recipe_preserved_as_data"
+    }
+  ],
+  "packages_without_aports_commit": [
+    {
+      "name": "nginx",
+      "version": "1.30.6-r1",
+      "origin": "nginx",
+      "license": "2-clause BSD-like license",
+      "architecture": "x86_64",
+      "source_commit": null,
+      "description": "High performance web server"
+    },
+    {
+      "name": "nginx-module-acme",
+      "version": "1.30.6.0.4.1-r1",
+      "origin": "nginx-module-acme",
+      "license": "2-clause BSD-like license",
+      "architecture": "x86_64",
+      "source_commit": null,
+      "description": "nginx nginx-acme"
+    },
+    {
+      "name": "nginx-module-geoip",
+      "version": "1.30.6-r1",
+      "origin": "nginx-module-geoip",
+      "license": "2-clause BSD-like license",
+      "architecture": "x86_64",
+      "source_commit": null,
+      "description": "nginx GeoIP dynamic modules"
+    },
+    {
+      "name": "nginx-module-image-filter",
+      "version": "1.30.6-r1",
+      "origin": "nginx-module-image-filter",
+      "license": "2-clause BSD-like license",
+      "architecture": "x86_64",
+      "source_commit": null,
+      "description": "nginx image filter dynamic module"
+    },
+    {
+      "name": "nginx-module-njs",
+      "version": "1.30.6.1.0.2-r1",
+      "origin": "nginx-module-njs",
+      "license": "2-clause BSD-like license",
+      "architecture": "x86_64",
+      "source_commit": null,
+      "description": "nginx njs dynamic modules"
+    },
+    {
+      "name": "nginx-module-xslt",
+      "version": "1.30.6-r1",
+      "origin": "nginx-module-xslt",
+      "license": "2-clause BSD-like license",
+      "architecture": "x86_64",
+      "source_commit": null,
+      "description": "nginx xslt dynamic module"
+    }
+  ],
+  "network_requests_contain_only_public_origin_commit_paths": true,
+  "shell_executed": false,
+  "limits": [
+    "Exact build recipes/license declarations and source URLs only; upstream license-text supplements still required.",
+    "No APKBUILD source, installer, hooks, commands or downloaded metadata is executed. Nonliteral versions require manual source review."
+  ]
+}

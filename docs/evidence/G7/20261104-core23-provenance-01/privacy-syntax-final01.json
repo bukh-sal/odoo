@@ -1,0 +1,15 @@
+{
+  "result": "passed_changed_source_evidence_privacy_and_syntax",
+  "files": 242,
+  "known_values": 123,
+  "findings": 0,
+  "audited_source_literal_false_positives": 0,
+  "reviewed_expression": "repr(password) constructs a private stdin program at runtime; public script contains no credential value",
+  "reviewed_file_sha256": "85c5e8729d1517aada0b4afc025cb50d0c5d024ad700e954a6331aab6cec359a",
+  "scope": "Current changed source/evidence only; complete SEC03 result is separately recorded in ../20261104-image-secret-audit-01/qualification.json.",
+  "reviewed_negative_fixture": {
+    "source_sha256": "980baf60ecf3c56d9c755a4767e2e3f46182d5f6603707a4a603022ce1df4486",
+    "expression": "INTENTIONALLY_DIFFERENT is an intentionally wrong test configuration value; no generated secret",
+    "findings": 0
+  }
+}
