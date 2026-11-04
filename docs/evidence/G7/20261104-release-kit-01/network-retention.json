@@ -1,0 +1,26 @@
+{
+  "result": "retired_two_exact_unused_archived_fixture_networks",
+  "utc": "2026-11-04T03:16:22.054954+00:00",
+  "parent_work_item": "G-01d2 releasekit clean-install prerequisite",
+  "project": "mp-r0-r1lifef99acae9d906",
+  "retired": [
+    {
+      "id": "3d1e6846170047fcc537515cff2591e8cbb80f7790044b2de59a71ff8e1968f4",
+      "name": "mp-r0-r1lifef99acae9d906_edge",
+      "endpoints": 0
+    },
+    {
+      "id": "ec288be9e8504fa35443492b5c21854e7fc820cf7345936e749494fe169090d7",
+      "name": "mp-r0-r1lifef99acae9d906_runtime",
+      "endpoints": 0
+    }
+  ],
+  "prior_container_retirement": {
+    "path": "docs/evidence/G7/20261102-docker-retention-01/container-retirement.json",
+    "sha256": "7835948d024fc0a2d1eb9baaf21a29b35635caabc120b8fad2db211321f16a81"
+  },
+  "all_other_existing_network_ids_preserved": true,
+  "containers_images_volumes_removed": 0,
+  "global_prune": false,
+  "purpose": "Earlier Docker default address pool exhaustion; free exactly two unused owned subnets before one clean artifact-rehearsal realm. No active/unknown network deletion or existing user data touched."
+}

@@ -1,0 +1,10 @@
+{
+  "result": "passed_draft_kit_source_and_network_diagnostic_privacy_syntax",
+  "public_files": 9,
+  "actual_private_streams": 2,
+  "known_values": 123,
+  "findings": 0,
+  "limits": [
+    "No kit assembly/operator/application qualification implied."
+  ]
+}
