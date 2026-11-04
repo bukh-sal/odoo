@@ -1,0 +1,50 @@
+{
+  "result": "passed_exact_completed_operation_cleanup",
+  "retired": [
+    {
+      "id": "0f8fc6ec30129f895b5c25bbcb61ce6239e7c70b381c2e39dbcdea0ad45def26",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d057daec-818f-4fe2-b67f-0575e2102e45-dispatch-enable",
+      "exit_code": 0
+    },
+    {
+      "id": "04195f9df9b5b8056e004364934fd9c82db1ec0e2d87741585b937a193a4210f",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d057daec-818f-4fe2-b67f-0575e2102e45-dispatch-reconcile",
+      "exit_code": 0
+    },
+    {
+      "id": "4aaaa2bfc5afc36825f2b9f26ead642911776bbd5c56821305683c09c9792735",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d057daec-818f-4fe2-b67f-0575e2102e45-assets",
+      "exit_code": 0
+    },
+    {
+      "id": "0263a71578c91c83b5c2f9c3d1a23ed282c23e06eec292e64d8781642ec4ea76",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d057daec-818f-4fe2-b67f-0575e2102e45-metadata",
+      "exit_code": 0
+    },
+    {
+      "id": "bc8ca6fe8395722169d80f99f0b5069e7095ad2ee6062ded6de39f0a500d895e",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d057daec-818f-4fe2-b67f-0575e2102e45-native",
+      "exit_code": 0
+    },
+    {
+      "id": "fa6bdc83abd4267f2715f47aeca616c8cf0b1f97a1d28299ebfd6189b384c42b",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d057daec-818f-4fe2-b67f-0575e2102e45-checkpoint",
+      "exit_code": 0
+    },
+    {
+      "id": "4d0d0c325cc90ba5100d368e53efd3bc2ca64294f193b6d8c6f0d8829e7a2680",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-op-d057daec-818f-4fe2-b67f-0575e2102e45-dispatch-fence",
+      "exit_code": 0
+    },
+    {
+      "id": "ba8f4c12ed1beaf48ab0729d305daab8200a81ca06503b8f0a2ab85462640f03",
+      "name": "/mp-r0-r1g7qualb513bc4f50d4-app-release-bbc56ef9bd894c3f900dd33cd8c0b4b4",
+      "exit_code": 0
+    }
+  ],
+  "containers_removed": 8,
+  "images_volumes_networks_removed": 0,
+  "current_app_retained": "48c2a2846bd4b20763dca57b7e5f9c06fdeb5999697db0cbb2c625b62214f362",
+  "worker_issuer_checkpoints_and_prior_images_retained": true,
+  "private_diagnostics_archived": true
+}

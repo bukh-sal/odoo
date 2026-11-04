@@ -1,0 +1,633 @@
+{
+  "operation_id": "d057daec-818f-4fe2-b67f-0575e2102e45",
+  "plan_hash": "sha256:e30c3f2bbb1b616ed470ca381704d4c00666662d47dc1aa5b642fb1efcb614ae",
+  "display": {
+    "artifact_trust": [
+      {
+        "digest": "sha256:b7b4a934fbbab8e8c0a423e04307ac735cd99872f9950a49504ed04bb94fa562",
+        "plugin_id": "org.example.notes",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "policy_generation": 13,
+          "signature_verified": false,
+          "warnings": []
+        }
+      },
+      {
+        "digest": "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+        "plugin_id": "org.example.canvas",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "policy_generation": 13,
+          "signature_verified": false,
+          "warnings": []
+        }
+      },
+      {
+        "digest": "sha256:586a51a13e814078cf2b1111b268600498be4b0e9029264236e4c04a291948b6",
+        "plugin_id": "org.example.document_stats",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "policy_generation": 13,
+          "signature_verified": false,
+          "warnings": []
+        }
+      },
+      {
+        "digest": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+        "plugin_id": "org.example.notes_labels",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "policy_generation": 13,
+          "signature_verified": false,
+          "warnings": []
+        }
+      },
+      {
+        "digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+        "plugin_id": "org.example.notes_stats",
+        "trust": {
+          "model": "operator-approved-exact-digest",
+          "policy_generation": 13,
+          "signature_verified": false,
+          "warnings": []
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "action": "deploy",
+        "digest": "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+        "migration_digests": [],
+        "native_addon": "mp_example_canvas",
+        "plugin_id": "org.example.canvas",
+        "runtime": "native",
+        "version": "0.1.4"
+      },
+      {
+        "action": "deploy",
+        "digest": "sha256:b7b4a934fbbab8e8c0a423e04307ac735cd99872f9950a49504ed04bb94fa562",
+        "migration_digests": [],
+        "native_addon": "mp_example_notes",
+        "plugin_id": "org.example.notes",
+        "runtime": "native",
+        "version": "0.2.8"
+      },
+      {
+        "action": "deploy",
+        "digest": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+        "migration_digests": [],
+        "native_addon": "mp_example_notes_labels",
+        "plugin_id": "org.example.notes_labels",
+        "runtime": "native",
+        "version": "0.2.4"
+      },
+      {
+        "action": "deploy",
+        "digest": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+        "migration_digests": [],
+        "native_addon": "mp_example_notes_stats",
+        "plugin_id": "org.example.notes_stats",
+        "runtime": "native",
+        "version": "0.1.1"
+      }
+    ],
+    "backup": {
+      "policy_id": "development_checkpoint",
+      "required": true,
+      "retain_previous_release": true
+    },
+    "current_catalog_validation_digest": "sha256:118934c20ff33a4005222fe6cd5beb80fff46e700dcd080368c85bbb0019ef55",
+    "declaration_changes": {},
+    "destructive": true,
+    "feature_suspension_unloads_code": false,
+    "known_unknowns": [
+      "Native Python and same-origin frontend code is fully trusted.",
+      "Author destructive=false does not prove migration safety.",
+      "The staged image includes fully trusted native core/runtime code; image rollback alone does not restore database state."
+    ],
+    "native_code_requires_trust": true,
+    "native_core_changes": [
+      {
+        "addon": "mp_core",
+        "migrations": [],
+        "previous_version": "19.0.0.1.22",
+        "target_version": "19.0.0.1.23"
+      }
+    ],
+    "permission_changes": [],
+    "platform_source_diff": [
+      {
+        "path": "addons/mp_core/__manifest__.py",
+        "previous_sha256": "cf4af9041cdd9d0214b682502ebf94a7d37e476a9768cca405db2493ebf62232",
+        "target_sha256": "26b7d4d8ad9a2f330665c6bcf67d41760a0adcbbd9c130211374642b6a848766"
+      },
+      {
+        "path": "addons/mp_core/operations.py",
+        "previous_sha256": "007ebab44beb277830bd9741b97b24874feb322ec78a7bb26b1ad521021a0bf8",
+        "target_sha256": "e036ae0d843c5a74aa94f9a11871f3d2a8fb27efc984ceaac6d38bb6875d424d"
+      },
+      {
+        "path": "packages/contracts/examples/v1/lifecycle-impact/dispatch-base.json",
+        "previous_sha256": null,
+        "target_sha256": "4dde62661e6274a47f5dd1361d6eb7d57fbec17fca080dd1edbf558c835eba1c"
+      },
+      {
+        "path": "packages/contracts/examples/v1/lifecycle-impact/dispatch-events.json",
+        "previous_sha256": null,
+        "target_sha256": "03aefc73bb742619185069b912d58f621871404dc04ad905cbc34d1e64a45ea2"
+      },
+      {
+        "path": "packages/contracts/v1/lifecycle-impact.schema.json",
+        "previous_sha256": "82c0a23ee4b8978c62fb37dec2aa85612008fdc7f90a22cf1ec1b57cc26b7d79",
+        "target_sha256": "0dc239be335a3776fdbccfcc2f511ed4bc8367d8e6b7f96ca8911f5b962fbf24"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/lifecycle_impact.py",
+        "previous_sha256": "1c19985cb544afcff8b427cfc680afa49d972019aeace0ebb6bddeb98111d87f",
+        "target_sha256": "4f1256253fc42de039654cd92a3291a26352382be09339c5921ddf3056ab5fa8"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/lifecycle_observation.py",
+        "previous_sha256": "35851c2893bd37d34e63cb47144621cc295ada7d3b206ffc5e8e91eaaa8a4ffa",
+        "target_sha256": "fe53ece3b54aa02f9d25d9985bcaa5cefd845196d9a650db2f0f62ab9810648b"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/native_executor.py",
+        "previous_sha256": "2a5bdb1ed793caeff02806361cc8eff7b9addccdbc6ff4a4a1e289b7d6c796c8",
+        "target_sha256": "41eaf76d81cb28d0d42c8f0a8d4eb133fff11c02f6ac181706330b8de46e0694"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/native_uninstall.py",
+        "previous_sha256": "990dd2c1ae92e4b1426cc014a238320c88914e7bf70558def4b08f8d2c9b4f58",
+        "target_sha256": "5ef431827250172bea0e65689c8bbfea7fe364e084839c52e4dec148bf46de22"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/projection.py",
+        "previous_sha256": "8601b39c43b8f24e9dfaa1a237a2c089898bae60fcc3f006a45cd7c70d6e09bc",
+        "target_sha256": "22a5a6b040f1ae737f496b8ba47de015e95905b61b658b7dcec95bef4d876a9d"
+      },
+      {
+        "path": "packages/platform_sdk/modular_platform/uninstall_planning.py",
+        "previous_sha256": "c94e646b37c75632705222775415b2bc3067eafb0f810bb46982223fe18eb564",
+        "target_sha256": "c486b28141a9c13c95b73b96fa71d37a28367c4bf0f200262121874a0f83f489"
+      }
+    ],
+    "required_local_step": "Independent local operator approval of the exact plan hash, then CLI apply.",
+    "resolution_reasons": {
+      "plugin:org.example.canvas": [
+        "plugin:org.example.canvas==0.1.4:boards ",
+        "requested ==0.1.4"
+      ],
+      "plugin:org.example.document_stats": [
+        "requested ==0.1.3"
+      ],
+      "plugin:org.example.notes": [
+        "plugin:org.example.canvas==0.1.4 >=0.2,<0.3",
+        "plugin:org.example.canvas==0.1.4:documents ",
+        "plugin:org.example.notes==0.2.8:documents ",
+        "plugin:org.example.notes_labels==0.2.4 >=0.2.8,<0.3",
+        "plugin:org.example.notes_labels==0.2.4:documents ",
+        "plugin:org.example.notes_stats==0.1.1 >=0.2.7,<0.3",
+        "plugin:org.example.notes_stats==0.1.1:documents ",
+        "requested ==0.2.8"
+      ],
+      "plugin:org.example.notes_labels": [
+        "plugin:org.example.notes_labels==0.2.4:labels ",
+        "requested ==0.2.4"
+      ],
+      "plugin:org.example.notes_stats": [
+        "plugin:org.example.notes_stats==0.1.1:jobs ",
+        "requested ==0.1.1"
+      ],
+      "python:asn1crypto": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.5.1"
+      ],
+      "python:attrs": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.1.0",
+        "python:jsonschema==4.26.0 >=22.2.0",
+        "python:referencing==0.37.0 >=22.2.0",
+        "python:zeep==4.3.3 >=17.2.0"
+      ],
+      "python:babel": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.10.3"
+      ],
+      "python:beautifulsoup4": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.15.0",
+        "python:ofxparse==0.21 "
+      ],
+      "python:cbor2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==6.2.0.post2"
+      ],
+      "python:certifi": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.10.23",
+        "python:requests==2.34.2 >=2023.5.7"
+      ],
+      "python:cffi": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.1.1",
+        "python:cryptography==50.0.2 >=2.0.0"
+      ],
+      "python:chardet": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.2.0",
+        "python:reportlab==4.1.0 "
+      ],
+      "python:charset-normalizer": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.5.2",
+        "python:requests==2.34.2 <4,>=2"
+      ],
+      "python:cryptography": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==50.0.2",
+        "python:pyopenssl==26.4.0 <51,>=49.0.0"
+      ],
+      "python:defusedxml": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.7.1"
+      ],
+      "python:docopt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.6.2",
+        "python:num2words==0.5.13 >=0.6.2"
+      ],
+      "python:docutils": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.20.1"
+      ],
+      "python:et-xmlfile": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.0",
+        "python:openpyxl==3.1.2 "
+      ],
+      "python:freezegun": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:geoip2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.9.0"
+      ],
+      "python:gevent": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==24.2.1"
+      ],
+      "python:greenlet": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.3",
+        "python:gevent==24.2.1 >=3.0rc3"
+      ],
+      "python:idna": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.20",
+        "python:requests==2.34.2 <4,>=2.5"
+      ],
+      "python:isodate": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.7.2",
+        "python:zeep==4.3.3 >=0.5.4"
+      ],
+      "python:jinja2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.6"
+      ],
+      "python:jsonschema": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.26.0"
+      ],
+      "python:jsonschema-specifications": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2025.9.1",
+        "python:jsonschema==4.26.0 >=2023.03.6"
+      ],
+      "python:libsass": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.22.0"
+      ],
+      "python:lxml": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==6.1.3",
+        "python:lxml-html-clean==0.4.6 >=6.1.1",
+        "python:ofxparse==0.21 ",
+        "python:zeep==4.3.3 >=4.6.0"
+      ],
+      "python:lxml-html-clean": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.6"
+      ],
+      "python:markupsafe": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.1.5",
+        "python:jinja2==3.1.6 >=2.0",
+        "python:werkzeug==3.1.9 >=2.1.1"
+      ],
+      "python:maxminddb": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.2.0",
+        "python:geoip2==2.9.0 >=1.4.0"
+      ],
+      "python:num2words": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.5.13"
+      ],
+      "python:ofxparse": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.21"
+      ],
+      "python:openpyxl": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.2"
+      ],
+      "python:packaging": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.3",
+        "python:wheel==0.48.0 >=24.0"
+      ],
+      "python:passlib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.7.4"
+      ],
+      "python:pillow": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==13.0.0",
+        "python:reportlab==4.1.0 >=9.0.0"
+      ],
+      "python:pip": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.3"
+      ],
+      "python:platformdirs": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.13.6",
+        "python:zeep==4.3.3 >=1.4.0"
+      ],
+      "python:polib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.1.1"
+      ],
+      "python:psutil": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==5.9.8"
+      ],
+      "python:psycopg2": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.9.9"
+      ],
+      "python:pyasn1": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.6.5",
+        "python:pyasn1-modules==0.4.2 <0.7.0,>=0.6.1",
+        "python:python-ldap==3.4.8 >=0.3.7"
+      ],
+      "python:pyasn1-modules": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.2",
+        "python:python-ldap==3.4.8 >=0.1.5"
+      ],
+      "python:pycparser": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.12",
+        "python:cffi==2.1.1 "
+      ],
+      "python:pyjwt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.15.1"
+      ],
+      "python:pyopenssl": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==26.4.0"
+      ],
+      "python:pypdf": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==6.21.4"
+      ],
+      "python:pypng": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.20220715.0",
+        "python:qrcode==7.4.2 "
+      ],
+      "python:pyserial": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.5"
+      ],
+      "python:python-dateutil": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.8.2",
+        "python:freezegun==1.2.1 >=2.7",
+        "python:vobject==0.9.6.1 >=2.4.0"
+      ],
+      "python:python-ldap": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.4.8"
+      ],
+      "python:python-magic": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.4.27"
+      ],
+      "python:python-stdnum": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.19"
+      ],
+      "python:pytz": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.5",
+        "python:babel==2.10.3 >=2015.7"
+      ],
+      "python:pyusb": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:qrcode": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==7.4.2"
+      ],
+      "python:referencing": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.37.0",
+        "python:jsonschema-specifications==2025.9.1 >=0.31.0",
+        "python:jsonschema==4.26.0 >=0.28.4"
+      ],
+      "python:reportlab": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.1.0"
+      ],
+      "python:requests": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.34.2",
+        "python:geoip2==2.9.0 >=2.9",
+        "python:requests-file==3.0.1 >=1.0.0",
+        "python:requests-toolbelt==1.0.0 <3.0.0,>=2.0.1",
+        "python:zeep==4.3.3 >=2.7.0"
+      ],
+      "python:requests-file": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.1",
+        "python:zeep==4.3.3 >=1.5.1"
+      ],
+      "python:requests-toolbelt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.0.0",
+        "python:zeep==4.3.3 >=0.7.1"
+      ],
+      "python:resolvelib": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.1"
+      ],
+      "python:rfc8785": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.1.4"
+      ],
+      "python:rjsmin": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.2.0"
+      ],
+      "python:rpds-py": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2026.9.1",
+        "python:jsonschema==4.26.0 >=0.25.0",
+        "python:referencing==0.37.0 >=0.7.0"
+      ],
+      "python:setuptools": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==84.2.1"
+      ],
+      "python:six": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.17.0",
+        "python:ofxparse==0.21 ",
+        "python:python-dateutil==2.8.2 >=1.5"
+      ],
+      "python:soupsieve": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.0.4",
+        "python:beautifulsoup4==4.15.0 >=1.6.1"
+      ],
+      "python:typing-extensions": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.16.0",
+        "python:beautifulsoup4==4.15.0 >=4.0.0",
+        "python:pyopenssl==26.4.0 >=4.9",
+        "python:qrcode==7.4.2 ",
+        "python:referencing==0.37.0 >=4.4.0"
+      ],
+      "python:urllib3": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.8.0",
+        "python:requests==2.34.2 <3,>=1.26"
+      ],
+      "python:vobject": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.9.6.1"
+      ],
+      "python:werkzeug": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.9"
+      ],
+      "python:wheel": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==0.48.0"
+      ],
+      "python:xlrd": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==2.0.1"
+      ],
+      "python:xlsxwriter": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==3.1.9"
+      ],
+      "python:xlwt": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==1.3.0"
+      ],
+      "python:zeep": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==4.3.3"
+      ],
+      "python:zope-event": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==6.2",
+        "python:gevent==24.2.1 "
+      ],
+      "python:zope-interface": [
+        "currently locked Python runtime ",
+        "platform Python runtime ==8.7",
+        "python:gevent==24.2.1 "
+      ]
+    },
+    "restart_required": true,
+    "staged_image": {
+      "base_image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+      "inventory_digest": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+      "runtime_digest": "sha256:ca200e0f424e9797175b1e9264e328b026c50e7521dc37ede8726835a77d90b8",
+      "stage_digest": "sha256:275b5ad541d9571a802d674903b273e780dbc0eab250b0111a75cb5338aedff6",
+      "target_image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93"
+    },
+    "targets": [
+      {
+        "action": "deploy",
+        "installation_id": "a56e60d5-061d-5477-a4a2-632c48eed21c",
+        "plugin_id": "org.example.canvas",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b"
+      },
+      {
+        "action": "deploy",
+        "installation_id": "a219b5d3-27ac-552e-a7ac-d53354b2e505",
+        "plugin_id": "org.example.notes",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b"
+      },
+      {
+        "action": "deploy",
+        "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c",
+        "plugin_id": "org.example.notes_labels",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b"
+      },
+      {
+        "action": "deploy",
+        "installation_id": "4117555a-41d8-5403-91f6-b37aede113c0",
+        "plugin_id": "org.example.notes_stats",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "12ddde53-1729-49ab-9589-0b9d2cdb355b"
+      },
+      {
+        "action": "deploy",
+        "installation_id": "a56e60d5-061d-5477-a4a2-632c48eed21c",
+        "plugin_id": "org.example.canvas",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e"
+      },
+      {
+        "action": "deploy",
+        "installation_id": "a219b5d3-27ac-552e-a7ac-d53354b2e505",
+        "plugin_id": "org.example.notes",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e"
+      },
+      {
+        "action": "deploy",
+        "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c",
+        "plugin_id": "org.example.notes_labels",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e"
+      },
+      {
+        "action": "deploy",
+        "installation_id": "4117555a-41d8-5403-91f6-b37aede113c0",
+        "plugin_id": "org.example.notes_stats",
+        "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+        "workspace_id": "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e"
+      }
+    ],
+    "trust_changes": []
+  },
+  "approval_lifetime_seconds": 900
+}

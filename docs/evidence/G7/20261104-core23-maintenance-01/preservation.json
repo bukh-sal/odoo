@@ -1,0 +1,39 @@
+{
+  "result": "passed_actual_core23_maintenance_preservation",
+  "operation_id": "d057daec-818f-4fe2-b67f-0575e2102e45",
+  "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory_digest": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "configuration_generation": 6,
+  "dispatch_generation": 21,
+  "table_counts": {
+    "mp_job": 1,
+    "mp_outbox": 11,
+    "mp_principal": 4,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_example_note": 2,
+    "mp_plugin_grant": 8,
+    "mp_event_delivery": 0,
+    "mp_service_binding": 15,
+    "mp_workspace_plugin": 9,
+    "mp_event_consumption": 0,
+    "mp_event_subscription": 0,
+    "mp_service_credential": 0,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 0,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 0
+  },
+  "all17tables_exact_except_reviewed_terminal_job_epochs": true,
+  "terminal_job_epoch_updates": 1,
+  "native_modules_exact_except_core22_to23": true,
+  "old_files_exact": 38,
+  "checkpoint_files_exact": true,
+  "installations_bindings_endpoints_exact": true,
+  "worker_identity_image_key_publication_exact": true,
+  "worker_helper_only_advanced_to_approved_image": true,
+  "installed_readonly_uninstall_impact_scopes": 2,
+  "limits": [
+    "Actual upgrade/preservation/read-only operator preview only; HTTP native views, app preview and actual uninstall/recovery still required."
+  ]
+}

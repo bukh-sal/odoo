@@ -1,0 +1,11 @@
+{
+  "result": "passed_current_core23_native_list_form_scope_HTTP",
+  "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "configuration_generation": 6,
+  "actors": 2,
+  "workspaces": 2,
+  "all17tables_worker_exact": true,
+  "limits": [
+    "Read-only native view/API checks; app manager uninstall request, actual uninstall and recovery remain required. No rendered browser or performance/accessibility credit."
+  ]
+}

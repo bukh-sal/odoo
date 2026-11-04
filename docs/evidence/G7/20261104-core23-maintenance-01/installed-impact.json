@@ -1,0 +1,268 @@
+{
+  "site_id": "1d6dd6a4-8399-44c5-8253-4e8156dcfeca",
+  "requested_addons": [
+    "mp_example_notes_labels"
+  ],
+  "native_closure": [
+    "mp_example_notes_labels"
+  ],
+  "plugins": [
+    {
+      "plugin_id": "org.example.notes_labels",
+      "installation_id": "7bcab7aa-ebd4-5966-963c-616a87c3703c",
+      "native_addon": "mp_example_notes_labels",
+      "artifact_digest": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+      "version": "0.2.4",
+      "workspace_ids": [
+        "12ddde53-1729-49ab-9589-0b9d2cdb355b",
+        "316333e0-d989-4ec6-9b2a-d8b3ff48ad9e"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "model": "mp.example.note.event.summary",
+      "relation": "mp_example_note_event_summary",
+      "mapping": "static_declaration",
+      "records": 0,
+      "unknown_reason": null
+    }
+  ],
+  "fields": [
+    {
+      "model": "mp.example.note",
+      "field": "x_notes_labels",
+      "relation": "mp_example_note",
+      "column": "x_notes_labels",
+      "mapping": "static_declaration",
+      "non_null_records": 1,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "create_date",
+      "relation": "mp_example_note_event_summary",
+      "column": "create_date",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "create_uid",
+      "relation": "mp_example_note_event_summary",
+      "column": "create_uid",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "display_name",
+      "relation": null,
+      "column": null,
+      "mapping": "unknown",
+      "non_null_records": null,
+      "unknown_reason": "No unambiguous stored scalar-column mapping."
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "event_count",
+      "relation": "mp_example_note_event_summary",
+      "column": "event_count",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "id",
+      "relation": "mp_example_note_event_summary",
+      "column": "id",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "installation_id",
+      "relation": "mp_example_note_event_summary",
+      "column": "installation_id",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "last_revision",
+      "relation": "mp_example_note_event_summary",
+      "column": "last_revision",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "note_id",
+      "relation": "mp_example_note_event_summary",
+      "column": "note_id",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "public_id",
+      "relation": "mp_example_note_event_summary",
+      "column": "public_id",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "workspace_id",
+      "relation": "mp_example_note_event_summary",
+      "column": "workspace_id",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "write_date",
+      "relation": "mp_example_note_event_summary",
+      "column": "write_date",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    },
+    {
+      "model": "mp.example.note.event.summary",
+      "field": "write_uid",
+      "relation": "mp_example_note_event_summary",
+      "column": "write_uid",
+      "mapping": "static_declaration",
+      "non_null_records": 0,
+      "unknown_reason": null
+    }
+  ],
+  "constraints": [
+    {
+      "relation": "mp_example_note",
+      "name": "mp_example_note_author_id_fkey",
+      "definition": "FOREIGN KEY (author_id) REFERENCES mp_principal(id) ON DELETE RESTRICT"
+    },
+    {
+      "relation": "mp_example_note",
+      "name": "mp_example_note_create_uid_fkey",
+      "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+    },
+    {
+      "relation": "mp_example_note",
+      "name": "mp_example_note_pkey",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "mp_example_note",
+      "name": "mp_example_note_public_unique",
+      "definition": "UNIQUE (public_id)"
+    },
+    {
+      "relation": "mp_example_note",
+      "name": "mp_example_note_revision_positive",
+      "definition": "CHECK ((revision > 0))"
+    },
+    {
+      "relation": "mp_example_note",
+      "name": "mp_example_note_workspace_id_fkey",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+    },
+    {
+      "relation": "mp_example_note",
+      "name": "mp_example_note_write_uid_fkey",
+      "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+    },
+    {
+      "relation": "mp_example_note_event_summary",
+      "name": "mp_example_note_event_summary_create_uid_fkey",
+      "definition": "FOREIGN KEY (create_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+    },
+    {
+      "relation": "mp_example_note_event_summary",
+      "name": "mp_example_note_event_summary_installation_id_fkey",
+      "definition": "FOREIGN KEY (installation_id) REFERENCES mp_plugin_installation(id) ON DELETE RESTRICT"
+    },
+    {
+      "relation": "mp_example_note_event_summary",
+      "name": "mp_example_note_event_summary_pkey",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "mp_example_note_event_summary",
+      "name": "mp_example_note_event_summary_scope_unique",
+      "definition": "UNIQUE (workspace_id, installation_id, note_id)"
+    },
+    {
+      "relation": "mp_example_note_event_summary",
+      "name": "mp_example_note_event_summary_workspace_id_fkey",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES mp_workspace(id) ON DELETE RESTRICT"
+    },
+    {
+      "relation": "mp_example_note_event_summary",
+      "name": "mp_example_note_event_summary_write_uid_fkey",
+      "definition": "FOREIGN KEY (write_uid) REFERENCES res_users(id) ON DELETE SET NULL"
+    }
+  ],
+  "foreign_references": [],
+  "metadata_records": [
+    {
+      "native_addon": "mp_example_notes_labels",
+      "model": "ir.model",
+      "records": 2
+    },
+    {
+      "native_addon": "mp_example_notes_labels",
+      "model": "ir.model.access",
+      "records": 1
+    },
+    {
+      "native_addon": "mp_example_notes_labels",
+      "model": "ir.model.constraint",
+      "records": 1
+    },
+    {
+      "native_addon": "mp_example_notes_labels",
+      "model": "ir.model.fields",
+      "records": 15
+    },
+    {
+      "native_addon": "mp_example_notes_labels",
+      "model": "ir.model.inherit",
+      "records": 1
+    }
+  ],
+  "assets": [
+    {
+      "native_addon": "mp_example_notes_labels",
+      "path": "mp_example_notes_labels/static/src/labels.js",
+      "source": "declared_source"
+    }
+  ],
+  "dispatch": {
+    "state": "present_requires_fence",
+    "tables": [
+      "mp_dispatch_control",
+      "mp_event_consumer_state",
+      "mp_event_consumption",
+      "mp_event_delivery",
+      "mp_event_subscription",
+      "mp_job",
+      "mp_outbox"
+    ]
+  },
+  "warnings": [
+    "Static declarations and database metadata identify known effects only; arbitrary trusted native code or hooks may have additional effects.",
+    "Shared metadata with surviving XML IDs is retained by native uninstall. Constraints and foreign references describe affected relations; not every listed constraint is deleted."
+  ]
+}
