@@ -1,0 +1,11 @@
+{
+  "result": "retired_exact_owned_reproduction_tag_after_fsynced_proof",
+  "tag": "modular-platform:disposable-core23-repro-0f8906390a81",
+  "image": "sha256:25035acee6cbbb5e67c49017af73ac92d6d3a81730bf91653c9433228d7bee5c",
+  "dependency_alias_retired": true,
+  "container_references_before": 0,
+  "retained_reference_image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "retained_dependency_base": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+  "volumes_networks_created": 0,
+  "deployed_targets_untouched": true
+}

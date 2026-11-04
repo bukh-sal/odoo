@@ -1,5 +1,24 @@
 # Release provenance and retained notices
 
+## Current reproduction checkpoint
+
+[The second core23 build](evidence/G7/20261104-core23-repro-01/qualification.json)
+executes source materialization with `--no-cache` and network disabled for build
+steps. Its complete 4,159-file declared inventory, all 77 actual Python
+distribution metadata records, interpreter/architecture/markers and dependency
+lock match the deployed reference exactly. All 374 recorded source inputs are
+unchanged. BOOT-02 is requalified; the temporary reproduction tag and exact
+dependency alias were retired after the proof was saved and verified.
+
+The exact qualified dependency image is an explicit build input under
+[ADR0052](architecture-decisions/0052-code-maintenance-dependency-base.md).
+This proves a fresh source build with that immutable dependency artifact; it
+does not promise identical image timestamps/IDs or byte-identical native
+extensions compiled again under different OS/compiler inputs. Preserve that
+base image and its source/notices in the release kit. Current privacy evidence
+is [the repository/assets/log delta](evidence/G7/20261104-release-privacy-delta-01/qualification.json).
+Release packaging, clean installation and remaining G7 checks are still open.
+
 Current qualified application: platform/core0.1.23, image `sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93`, inventory `sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b`, fresh restored configuration8. Notes0.2.8, Labels0.2.4, Canvas0.1.4 and native NotesStats0.1.1 remain unchanged. The independently operated reference worker remains image `sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f` with metadata package0.1.3. Native record screens continue using Odoo; Canvas remains a minimal reference plugin.
 
 [Current actual source/dependency/notice binding](evidence/G7/20261104-core23-provenance-01/source-dependency-binding.json) verifies11expected owned-source changes from core22, all recorded build inputs,77actual Python distribution digests and dependency lock,113OS package/copyright records and17native license declarations.3,937 official upstream files plus two exactly reproduced generated exceptions bind all3,939 recorded source hashes. The [patch ledger](upstream-patches.md) explains the generated changes. Root copyright/license and other upstream bytes remain preserved.

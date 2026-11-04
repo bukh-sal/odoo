@@ -1,0 +1,98 @@
+{
+  "result": "passed_reproduction_buildlog_results_and_checkpoint_history_privacy_syntax",
+  "known_values": 123,
+  "findings": 0,
+  "history_base": "d0580ed9",
+  "source_head": "cc45081fc7afd41287b0dfcc004e3adc08b030f3",
+  "history_blobs": [
+    {
+      "oid": "5299abb95e0d48916962d33e1a89d07f9d4a3c4f",
+      "path": "docs/evidence/G7/20261104-core23-repro-01/reproduce.py",
+      "sha256": "c837cdf6480d8ff1fb17f9f3c9af4e136904c738985b194ca8507702431f629b"
+    },
+    {
+      "oid": "6ac2dfff598aa608d545ecc8f6aa5aebf434e3eb",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/assets_logs.py",
+      "sha256": "d70f80f2e3915c25a8d4f3c55b1ddb62822a70860ac543e2cde7dc0f465b53de"
+    },
+    {
+      "oid": "352a455acf0fb00c8474d368eacf3dda784466f5",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/diagnostics.json",
+      "sha256": "325ebb5adb1cc7e7bec50ae6633b285a1bb7f0166ad1fa8389e822ac83d6a8a0"
+    },
+    {
+      "oid": "460ef062109fa19e48bd271864d0aa7d7e140a23",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/diagnostics.py",
+      "sha256": "ffca7d5f4af7efac812b67438136be31b12fe56aad622df5e6daa0610141fcc0"
+    },
+    {
+      "oid": "d8aea340afd227a375f1e1c7391559fffa82deb2",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/finalize.py",
+      "sha256": "10641eb571848b921552ac32f273fd69260323557ac3c728d8e4f02d56dd7893"
+    },
+    {
+      "oid": "3e13886337cd387036e124bec0467a47a9eeeb11",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/packages-assets-logs.json",
+      "sha256": "9ea66154626affbde2a68fb1500049ad2ab75767cf4437ffe951aaa3a424b920"
+    },
+    {
+      "oid": "db2e7c50336ca5539f9c8db22ac70c4eb25c86af",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/privacy-syntax-final.json",
+      "sha256": "922c7054972dcb1aa05b7038134a301095ef3f2ac9f8df422233b2b013e8152f"
+    },
+    {
+      "oid": "7f723b22f4e5b778bbf83cc0f2630a0b4715db3a",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/qualification.json",
+      "sha256": "bf354a58cdcd8979a9d2f9c1ac1f07c4abb08166e17e7898ae77e98fb7b9459a"
+    },
+    {
+      "oid": "7568cd197eb67016802889e0b31179912cc09888",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/repository-delta.json",
+      "sha256": "84ae49f0fadd0926a290136fbac9b101e4f4839561808193b779a9fde6953169"
+    },
+    {
+      "oid": "e0aaf46a8caca34fc4a17179371836cea7909aa2",
+      "path": "docs/evidence/G7/20261104-release-privacy-delta-01/repository.py",
+      "sha256": "1c75d707457b275eaac7401d30af2df3e56fd0d2d76870a40096f111573dc47c"
+    },
+    {
+      "oid": "b4988ec0c6b7544f1c8fef9ecc31ef437cd90f15",
+      "path": "docs/implementation-status.md",
+      "sha256": "20d57e622bc3e5daa2603f91582172f422d04c45c7eab6e6e5435b3cb90e6ba3"
+    },
+    {
+      "oid": "5dc74b6486b233519f8d65439dd7792c9ae4698c",
+      "path": "docs/work-log.md",
+      "sha256": "5535f4e10b2eebf21bd9f5f696105ba1524050f9047873ec6fb1248fc0656495"
+    }
+  ],
+  "public_files": [
+    {
+      "path": "docs/evidence/G7/20261104-core23-repro-01/build.log",
+      "sha256": "28e27106bbe7b8a767181919881fd76b250ca6ef35204a7187d29d9b0c3554f0"
+    },
+    {
+      "path": "docs/evidence/G7/20261104-core23-repro-01/qualification.json",
+      "sha256": "a1e2cd1ca1d586b18fd233f078cd17b1f8e40e4604fde6096d1504c58453693c"
+    },
+    {
+      "path": "docs/evidence/G7/20261104-core23-repro-01/retention.json",
+      "sha256": "d93e51ed44951f27be5087033a683ec4d83ccaa52ec20aa923995df2ef50cc05"
+    },
+    {
+      "path": "docs/implementation-status.md",
+      "sha256": "73041c743d6f9c7a55bd5ebcfea3e0deeba744fb96885f1c78e65b2c554565d3"
+    },
+    {
+      "path": "docs/provenance.md",
+      "sha256": "6af0da7c2b2192fd89bd3e9db182496ddafd6c2d284aa30e11ea297e464a8e50"
+    },
+    {
+      "path": "docs/work-log.md",
+      "sha256": "5bfa9ef3fb8e16481742b4367e8f3ab453a45a144469e0d2fc1ab40f32aab9db"
+    }
+  ],
+  "limits": [
+    "Current build log/results/checkpoint history and pending source only; broader current source/assets/log/layer evidence linked separately."
+  ]
+}
