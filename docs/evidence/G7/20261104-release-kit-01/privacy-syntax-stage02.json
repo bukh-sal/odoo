@@ -1,0 +1,9 @@
+{
+  "result": "passed_assembly_and_bootstrap_fix_incremental_public_privacy_syntax",
+  "files": 11,
+  "known_values": 123,
+  "findings": 0,
+  "limits": [
+    "Actual kit payload recursive inspection/operator/application qualification remains separate; public assembly pip/save diagnostics included in this scan."
+  ]
+}

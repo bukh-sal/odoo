@@ -1,0 +1,47 @@
+{
+  "result": "draft_verified_requires_operator_and_install_rehearsal",
+  "source_commit": "6a1b9cf19894ed4986058680ffc1240d28951f44",
+  "kit": ".local/releases/r1-0.1.23",
+  "files": 50,
+  "bytes": 731003896,
+  "manifest_sha256": "6edeb39d8ff738cc4c442e05194bf5aa5781bd0db777d2f419ed2355de56bcc3",
+  "packages": 19,
+  "wheels": 13,
+  "images": {
+    "application": {
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "source_reference": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "architecture": "amd64",
+      "OS": "linux"
+    },
+    "dependency_base": {
+      "image_id": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+      "source_reference": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+      "architecture": "amd64",
+      "OS": "linux"
+    },
+    "worker": {
+      "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "source_reference": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "architecture": "amd64",
+      "OS": "linux"
+    },
+    "postgres": {
+      "image_id": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "source_reference": "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "architecture": "amd64",
+      "OS": "linux"
+    },
+    "proxy": {
+      "image_id": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "source_reference": "modular-platform-proxy@sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "architecture": "amd64",
+      "OS": "linux"
+    }
+  },
+  "no_existing_control_or_application_data_copied": true,
+  "new_Docker_assets": 0,
+  "limits": [
+    "Draft artifact assembly only, not clean-install/OPS03/G7 qualification. Host interpreter archive/wheels are verified data inputs; no global Python installation occurred."
+  ]
+}

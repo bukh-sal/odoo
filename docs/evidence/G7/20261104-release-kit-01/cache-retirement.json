@@ -1,0 +1,13 @@
+{
+  "result": "retired_exact_generated_bootstrap_cache",
+  "file": "scripts/__pycache__/verify.cpython-312.pyc",
+  "sha256": "6b35ae4a36d997687cee67bfd2ae11e14f9c537196c9bb9d3bd77626fc852c8f",
+  "source_sha256": "9211cc5980114064b373e48b632399f994eaed4a577a93d24b4a452d26e74d0c",
+  "compiler_and_source_identity_verified": true,
+  "original_manifest_and_50_components_unchanged": true,
+  "operator_workdir_created": false,
+  "private_cache_copy_retained": true,
+  "limits": [
+    "No unknown member ignored or removed; strict kit verifier retained. No operator/app/Docker mutation."
+  ]
+}
