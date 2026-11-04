@@ -1,0 +1,12 @@
+{
+  "result": "prepared_actual_core24_readonly_UI_audit_same_profile",
+  "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "generation": 5,
+  "original_runtime_sha256": "d0208534cdefb8ed078bb8df62730eca4b2ce13324d186238f152c772595696c",
+  "changes": [
+    "Skip CDP device metrics override; use real1280x900 browser window.",
+    "Only existing owned profile; reversible selected zoom preferences, original keys privately recorded."
+  ],
+  "new_profiles": 0,
+  "new_Docker_assets": 0
+}

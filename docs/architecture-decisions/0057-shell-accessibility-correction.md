@@ -42,3 +42,29 @@ chrome zoom and locale-formatting scope must be reconciled, not silently claimed
 
 Revisit on upstream/style/asset/locale changes. Retain inherited source/notices.
 This changes owned adapters only; no stock Odoo source or public DTO change.
+
+## Installed core24 follow-up
+
+Actual reviewed core24/Shell11/config5 installed audit at
+`../evidence/G7/20261104-core24-ui-audit-01/qualification.json` records two real
+owned Edge runs and36 observations. The same1280px window changes1256→628CSSpx
+and DPR1→2 at genuine200percent engine zoom without device emulation. English
+and fully loaded Arabic administration have no horizontal document overflow;
+sampled light/dark text contrast, native confirmation keyboard cycling/Escape/
+restoration and Labels names/restoration pass. Physical screen-reader speech,
+final narrow/locale-formatting/pluralization scope remain explicit open work.
+
+Two actual residuals require one further immutable correction. The dark close
+glyph remains visually blank because its filter also inverts the generic filled
+button background. Exclude `.btn-close` from generic button presentation with
+`:where(:not(.btn-close))`, preserving selector specificity and native Bootstrap
+image/background/padding. The upstream modal also has an empty AX name despite
+its visible title. Add `aria-label=props.title` to `web.Dialog` through the owned
+`dialog_accessibility.xml` asset extension. No upstream file or native dialog
+behavior is replaced. The dialog title is already provided by the native service.
+
+Source candidate platform0.1.25/core19.0.0.1.25/Shell19.0.0.1.12 carries these two
+presentation/semantic fixes plus version/asset declarations. Use the current
+exact567d dependency image under ADR0052, normal static admission/separate review/
+checkpoint/core_upgrade/installed proof. Current567d remains unchanged until then.
+The source addition alone is neither UI09 nor actual assistive-technology proof.

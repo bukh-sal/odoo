@@ -1,0 +1,86 @@
+{
+  "result": "qualified_core24_real_zoom_and_bounded_UI_observations_UI09_still_failed",
+  "utc": "2026-11-04T08:48:20.942125+00:00",
+  "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "generation": 5,
+  "actual_browser_runs": 2,
+  "observed_cases": 36,
+  "text_contrast_findings": 0,
+  "actual_zoom": {
+    "baseline": {
+      "inner_width": 1256,
+      "inner_height": 808,
+      "outer_width": 1280,
+      "outer_height": 900,
+      "dpr": 1,
+      "visual_scale": 1,
+      "root_width": 1256,
+      "scroll_width": 1256,
+      "lang": "en-US",
+      "dir": "ltr"
+    },
+    "zoom200": {
+      "inner_width": 628,
+      "inner_height": 404,
+      "outer_width": 1280,
+      "outer_height": 900,
+      "dpr": 2,
+      "visual_scale": 1,
+      "root_width": 628,
+      "scroll_width": 628,
+      "lang": "en-US",
+      "dir": "ltr"
+    },
+    "engine_zoom_without_device_metrics_override": true
+  },
+  "verified": [
+    "Both themes sampled headings/controls/native fields/Labels text contrast; disabled controls excluded.",
+    "Native confirmation keyboard cycling/Escape/initiator restoration; Labels names/Escape/initiator restoration.",
+    "Fully loaded Arabic administration labels/document language/direction and English restoration.",
+    "Real100/200percent English/Arabic no horizontal document overflow; reduced motion no active settled animations.",
+    "Foreign record error alert semantics; native main/title textbox and command combobox semantics.",
+    "Two browsers exit0/no owned-profile processes; selected zoom preferences restored; all17tables/four runtimes/independent worker exact."
+  ],
+  "defects": [
+    "Dark native close glyph remains blank/indistinct at100percent: white-close filter also affects generic filled button background.",
+    "Native Odoo confirmation has role=dialog but no accessible name. Actual AX name empty in both themes/zooms; upstream Dialog template supplies no aria-label/labelledby. Add title association through an owned template extension while retaining native behavior."
+  ],
+  "remaining": [
+    "Apply minimal owned native-close styling/title-label extension through normal versioned candidate gates and installed proof.",
+    "Narrow viewport/mixed text/locale formatting/pluralization and actual assistive-technology announcement scope still require final reconciliation; this is not a blanket WCAG2.2AA claim.",
+    "Independent final-image reproduction/current final kit/privacy/fresh-developer installed path/fullG7 audit."
+  ],
+  "primary_zoom_source": "https://chromium.googlesource.com/chromium/src/+/lkgr/chrome/browser/ui/zoom/chrome_zoom_level_prefs.cc",
+  "zoom_source_scope": "Default partition key x and default zoom-level dictionary; browser behavior independently verifies applied200percent. Only owned profile preferences changed.",
+  "privacy": {
+    "known_values": 133,
+    "findings": 0,
+    "private_table_streams_excluded": true,
+    "private_zoom_backup_excluded": true
+  },
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\prepare.py": "cbc5b278af36e2c7c65f99bfd3fb76896d4cb5e4d67354b14f224520404254ff",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\qualify.py": "43a9f15afc38aba4086cb9704274fcad3e0c16a7ebadfb0ee6d9a7536b56255f",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\zoom_pref.py": "f07b62964cf794f210ce1d05de2fb047c8f3e05c2a5119fa84e1c0139f5da755",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\audit.mjs": "021530609ad00e16e6d5c758ee80a4ea2b6cd5bd17d57249b973b695846f5f54",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\browser_runtime.mjs": "91f3b97dc0d70552360e68cb71eff26b0b0e87dd36761f10d0b4aac649ddda1b",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\preparation.json": "730c23479c528631d1f389a98f79bc267a1c31f9ea8e3445fd2792b48f885108",
+    ".local\\g7-core24-ui-audit-01\\baseline\\observations.json": "eb5356b83c6496f9bfc019cec297b3554c55134aae88e749707577fee9122359",
+    ".local\\g7-core24-ui-audit-01\\baseline\\network.json": "abc2bb050ecdbb2af896b4744e5bedace5f742bd7f19aea9bcd3e0344c34e448",
+    ".local\\g7-core24-ui-audit-01\\baseline\\process.json": "8b8351f4ef8f0b22e752440ca5018cf772eaf96b43c7763dccbeea9122689286",
+    ".local\\g7-core24-ui-audit-01\\baseline\\edge.log": "4899f73f9a1501ff092c5e587d996b0e7724ebff90136eb8a905462c163c5d02",
+    ".local\\g7-core24-ui-audit-01\\zoom200\\observations.json": "987baaa9301fc4b931e9810465f441ab0cdc494d409a2ef64106792db66f4c14",
+    ".local\\g7-core24-ui-audit-01\\zoom200\\network.json": "11e9201091efffd69230b1d6a04a7d85d5cdb24f997c1a636ac406d54f81e976",
+    ".local\\g7-core24-ui-audit-01\\zoom200\\process.json": "b6f40d4c9d38a58a313a260136230be7dae7307f9798fe0e43a51043f2af6da4",
+    ".local\\g7-core24-ui-audit-01\\zoom200\\edge.log": "0a8a99091757fcfc29650049edfecca942a25160722e87bb1e41980dac9e7d28",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\baseline-dark-confirm.png": "5d97934d5509f17b7f81c49fe361fe66852eac257f56f90ad7f6558fea35590d",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\zoom200-dark-confirm.png": "8e258099858b0668ff6d1400808334ec45e53552871c8d9addd3f0b0bc848fb5",
+    "docs\\evidence\\G7\\20261104-core24-ui-audit-01\\zoom200-Arabic-settings.png": "e0884d29a24b34ee95f50cf7cf516feb38ffe472c195e1c53acdfb5938a96e2c"
+  },
+  "limits": [
+    "CSS contrast excludes filtered raster glyphs; visual review catches close icon independently.",
+    "No physical screen-reader speech test; AX live-region/role inspection alone is not a spoken-announcement certification.",
+    "Complete SQL snapshots/streams and profile preferences remain protected intentional private inputs, not clean public logs.",
+    "No Save/Delete/Labels submission, new profile, Docker asset, lifecycle operation or app source overlay."
+  ]
+}

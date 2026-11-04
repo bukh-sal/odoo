@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Preserve Odoo's dialog lifecycle, keyboard and focus behavior. -->
+    <t t-name="mp_shell.DialogAccessibility" t-inherit="web.Dialog" t-inherit-mode="extension">
+        <xpath expr="//div[@role='dialog']" position="attributes">
+            <attribute name="t-att-aria-label">props.title</attribute>
+        </xpath>
+    </t>
+</templates>

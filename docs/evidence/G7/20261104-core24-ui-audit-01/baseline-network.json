@@ -1,0 +1,834 @@
+{
+  "responses": [
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/login",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9d47ad5/web.assets_frontend.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/binary/company_logo",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/b056235/web.assets_frontend_minimal.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/7b991c5/web.assets_frontend_lazy.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/translations",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/session/authenticate",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/settings",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/c03ea52b01937f92a06fba206f8b4d64bdccc199446684fb866ba3d999f45add/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ad0f3757a6f40443281df8f29693827852554f8b3540d70fb8e6c4697584023/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' viewBox='0 0 7 4'><polygon fill='%23212529' points='3.5 4 7 0 0 0'/></svg>",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/org.example.notes/",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/c03ea52b01937f92a06fba206f8b4d64bdccc199446684fb866ba3d999f45add/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ad0f3757a6f40443281df8f29693827852554f8b3540d70fb8e6c4697584023/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' viewBox='0 0 7 4'><polygon fill='%23212529' points='3.5 4 7 0 0 0'/></svg>",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/action/load",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/ui/slot",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/settings",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/c03ea52b01937f92a06fba206f8b4d64bdccc199446684fb866ba3d999f45add/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ad0f3757a6f40443281df8f29693827852554f8b3540d70fb8e6c4697584023/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' viewBox='0 0 7 4'><polygon fill='%23212529' points='3.5 4 7 0 0 0'/></svg>",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/org.example.notes/",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/c03ea52b01937f92a06fba206f8b4d64bdccc199446684fb866ba3d999f45add/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ad0f3757a6f40443281df8f29693827852554f8b3540d70fb8e6c4697584023/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' viewBox='0 0 7 4'><polygon fill='%23212529' points='3.5 4 7 0 0 0'/></svg>",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/action/load",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/ui/slot",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/get_views",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw/mp.example.note/web_read",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/services/org.example.notes.documents/get",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/settings",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/c03ea52b01937f92a06fba206f8b4d64bdccc199446684fb866ba3d999f45add/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ad0f3757a6f40443281df8f29693827852554f8b3540d70fb8e6c4697584023/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' viewBox='0 0 7 4'><polygon fill='%23212529' points='3.5 4 7 0 0 0'/></svg>",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/org.example.notes/",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/c03ea52b01937f92a06fba206f8b4d64bdccc199446684fb866ba3d999f45add/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ad0f3757a6f40443281df8f29693827852554f8b3540d70fb8e6c4697584023/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' viewBox='0 0 7 4'><polygon fill='%23212529' points='3.5 4 7 0 0 0'/></svg>",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/action/load",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/dataset/call_kw",
+      "status": 200,
+      "type": "XHR"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/app/settings",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/c03ea52b01937f92a06fba206f8b4d64bdccc199446684fb866ba3d999f45add/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ad0f3757a6f40443281df8f29693827852554f8b3540d70fb8e6c4697584023/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2",
+      "status": 200,
+      "type": "Font"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/webclient/load_menus",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "null",
+      "path": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' viewBox='0 0 7 4'><polygon fill='%23212529' points='3.5 4 7 0 0 0'/></svg>",
+      "status": 200,
+      "type": "Image"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/session",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspaces",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/operations/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/navigation",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/context",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/members",
+      "status": 200,
+      "type": "Fetch"
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/api/v1/workspace/settings",
+      "status": 200,
+      "type": "Fetch"
+    }
+  ],
+  "blocked": [
+    {
+      "origin": "https://example.invalid",
+      "path": "/mp-ui09-network-probe",
+      "type": "XHR"
+    }
+  ],
+  "websockets": []
+}

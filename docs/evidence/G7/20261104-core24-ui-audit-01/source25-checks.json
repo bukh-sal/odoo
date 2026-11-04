@@ -1,0 +1,98 @@
+{
+  "result": "passed_core25_owned_close_and_dialog_name_source_checks_not_installed",
+  "utc": "2026-11-04T08:50:19.936542+00:00",
+  "checks": [
+    {
+      "name": "core-upgrade",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_core_upgrade.py",
+        "-v"
+      ],
+      "stream_sha256": "3e73dcd5bf991bfb59acdedbc8c05e5087c88bd1553120a512537a65c6a7bbae"
+    },
+    {
+      "name": "compatibility",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_platform_compatibility.py",
+        "-v"
+      ],
+      "stream_sha256": "d23e20c19f068e182ea7acec3873c6ce00ff70750fa1c6af7ad022e16edc7f11"
+    },
+    {
+      "name": "deploy",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_platform_deploy.py",
+        "-v"
+      ],
+      "stream_sha256": "8992379b9c97807e3ed12093c0fde97f456058a57c86d9d3a8947ec7ffb73701"
+    },
+    {
+      "name": "native-interactions",
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tests/test_native_interactions.mjs"
+      ],
+      "stream_sha256": "b182e59d3765985bb1d4eb27c338e05fbb4d62fc8f20004e3b806c99c6dd5e34"
+    },
+    {
+      "name": "freeze",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+        "-I",
+        "tools/check_contract_freeze.py"
+      ],
+      "stream_sha256": "562ed32f33d372ba83c2fe158ddf03bd0344a24bc71e3b8aaed2271593ec0742"
+    }
+  ],
+  "freeze_files": 106,
+  "freeze_rows": 8,
+  "unchanged_full_source": [
+    "platform_addons/mp_shell/static/src/host.js",
+    "platform_addons/mp_shell/static/src/native_interactions.js",
+    "platform_addons/mp_shell/static/src/client_release.js",
+    "platform_addons/mp_shell/views/bootstrap.xml"
+  ],
+  "owned_XML_extension_target_unique": true,
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/host.css": "c036400f4398ed27e962099ace0d94624b8f78b88e465506d70666292583040a",
+    "platform_addons/mp_shell/static/src/dialog_accessibility.xml": "711739012a44113a09eaa6a7f811ea91729f8c40936fb6ba71c9df6e7215b439",
+    "platform_addons/mp_shell/__manifest__.py": "c4a8c7c53f5ac30bd3379d6eaf926b214bdb4fed3e1cc260bb8df03768607529",
+    "platform_addons/mp_core/__manifest__.py": "1dfa07aa8b1d710f94ed5517da2e7631c871f32cb078ccbedb97e7a21d93c447",
+    "packages/platform_sdk/modular_platform/projection.py": "3b7c63bbc37d73a8f582c285417e960582486e787ac2be47e2ffa4bbb6a76458"
+  },
+  "known_values": 133,
+  "privacy_findings": 0,
+  "limits": [
+    "Source/tests/XML/freeze only; actual asset compilation/native template accessibility name and close glyph need immutable candidate/installed proof.",
+    "No actual image build/approval/deployment or upstream file edit. Current567d/config5 stays selected; UI09 remains failed."
+  ]
+}

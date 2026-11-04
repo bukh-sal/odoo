@@ -1,0 +1,2170 @@
+{
+  "result": "actual_installed_UI09_audit_not_final_pass",
+  "mode": "zoom200",
+  "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "generation": 5,
+  "observations": [
+    {
+      "name": "actual_window_zoom_metrics",
+      "data": {
+        "inner_width": 628,
+        "inner_height": 404,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 2,
+        "visual_scale": 1,
+        "root_width": 628,
+        "scroll_width": 628,
+        "lang": "en-US",
+        "dir": "ltr"
+      }
+    },
+    {
+      "name": "light-settings-all-headings-and-controls",
+      "data": [
+        {
+          "tag": "LABEL",
+          "text": "WorkspaceWorkspaceReference AReference B",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "WorkspaceReference AReference B",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Commands",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Dark",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H1",
+          "text": "Settings",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            245,
+            246,
+            249
+          ],
+          "ratio": 13.725,
+          "required": 3,
+          "disabled": false,
+          "font_size": "26px",
+          "font_weight": "650",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "P",
+          "text": "Your ideas, in one place.",
+          "class": "mp_subtitle",
+          "color": "rgb(95, 107, 123)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            245,
+            246,
+            249
+          ],
+          "ratio": 5.014,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "13px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(95, 107, 123)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H2",
+          "text": "Preferences",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Theme LightDark",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "LightDark",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Language Englishالعربية",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "Englishالعربية",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H2",
+          "text": "Workspace administration",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Workspace name",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Default language",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "Englishالعربية",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Time zone",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Save workspace settings",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H3",
+          "text": "Members",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Revoke access",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Revoke access",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Revoke access",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Principal ID",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Member role",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add member",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        }
+      ]
+    },
+    {
+      "name": "light-native-fields",
+      "data": [
+        {
+          "tag": "INPUT",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(55, 91, 204)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": true,
+          "focus_visible": true
+        }
+      ]
+    },
+    {
+      "name": "light-native-modal",
+      "data": [
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "class": "btn oi oi-arrow-left",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H4",
+          "text": "Delete note",
+          "class": "modal-title text-break flex-grow-1 me-auto",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Delete",
+          "class": "btn btn-danger",
+          "color": "rgb(36, 45, 61)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.836,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "500",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(55, 91, 204)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": true,
+          "focus_visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Cancel",
+          "class": "btn btn-secondary",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        }
+      ]
+    },
+    {
+      "name": "light-native-modal-keyboard",
+      "data": {
+        "main": [
+          {
+            "role": "main",
+            "name": "",
+            "ignored": false
+          }
+        ],
+        "title": [
+          {
+            "role": "textbox",
+            "name": "Title",
+            "ignored": false
+          }
+        ],
+        "initiator": {
+          "tag": "BUTTON",
+          "name": "Delete note",
+          "inside_modal": false,
+          "inside_labels": false
+        },
+        "modalAX": [
+          {
+            "role": "dialog",
+            "name": "",
+            "ignored": false
+          }
+        ],
+        "cycle": [
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "inside_modal": true,
+            "inside_labels": false
+          }
+        ],
+        "restored": {
+          "tag": "BUTTON",
+          "name": "Delete note",
+          "inside_modal": false,
+          "inside_labels": false
+        },
+        "confirmed": false
+      }
+    },
+    {
+      "name": "light-Labels",
+      "data": [
+        {
+          "tag": "H2",
+          "text": "Edit note labels",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 21,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(55, 91, 204)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": true,
+          "focus_visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Save labels",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Cancel",
+          "class": "",
+          "color": "rgb(30, 40, 56)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 14.832,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(30, 40, 56)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        }
+      ]
+    },
+    {
+      "name": "light-Labels-keyboard",
+      "data": {
+        "labelAX": [
+          {
+            "role": "dialog",
+            "name": "Edit note labels",
+            "ignored": false
+          }
+        ],
+        "fieldAX": [
+          {
+            "role": "textbox",
+            "name": "Labels, one per line",
+            "ignored": false
+          }
+        ],
+        "restored": {
+          "tag": "BUTTON",
+          "name": "Edit labels",
+          "inside_modal": false,
+          "inside_labels": false
+        },
+        "submitted": false
+      }
+    },
+    {
+      "name": "dark-settings-all-headings-and-controls",
+      "data": [
+        {
+          "tag": "LABEL",
+          "text": "WorkspaceWorkspaceReference AReference B",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "WorkspaceReference AReference B",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Commands",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Light",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H1",
+          "text": "Settings",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            21,
+            27,
+            38
+          ],
+          "ratio": 15.092,
+          "required": 3,
+          "disabled": false,
+          "font_size": "26px",
+          "font_weight": "650",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "P",
+          "text": "Your ideas, in one place.",
+          "class": "mp_subtitle",
+          "color": "rgb(170, 182, 200)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            21,
+            27,
+            38
+          ],
+          "ratio": 8.412,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "13px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(170, 182, 200)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H2",
+          "text": "Preferences",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Theme LightDark",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "LightDark",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Language Englishالعربية",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "Englishالعربية",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H2",
+          "text": "Workspace administration",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Workspace name",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Default language",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "Englishالعربية",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Time zone",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Save workspace settings",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H3",
+          "text": "Members",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Revoke access",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Revoke access",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Revoke access",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Principal ID",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "LABEL",
+          "text": "Member role",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "SELECT",
+          "text": "ViewerEditorAdministrator",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "present",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add member",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        }
+      ]
+    },
+    {
+      "name": "dark-native-fields",
+      "data": [
+        {
+          "tag": "INPUT",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "o_input",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(144, 170, 255)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": true,
+          "focus_visible": true
+        }
+      ]
+    },
+    {
+      "name": "dark-native-modal",
+      "data": [
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "class": "btn oi oi-arrow-left",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "H4",
+          "text": "Delete note",
+          "class": "modal-title text-break flex-grow-1 me-auto",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Delete",
+          "class": "btn btn-danger",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "500",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(144, 170, 255)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": true,
+          "focus_visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Cancel",
+          "class": "btn btn-secondary",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        }
+      ]
+    },
+    {
+      "name": "dark-native-modal-keyboard",
+      "data": {
+        "main": [
+          {
+            "role": "main",
+            "name": "",
+            "ignored": false
+          }
+        ],
+        "title": [
+          {
+            "role": "textbox",
+            "name": "Title",
+            "ignored": false
+          }
+        ],
+        "initiator": {
+          "tag": "BUTTON",
+          "name": "Delete note",
+          "inside_modal": false,
+          "inside_labels": false
+        },
+        "modalAX": [
+          {
+            "role": "dialog",
+            "name": "",
+            "ignored": false
+          }
+        ],
+        "cycle": [
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Delete",
+            "inside_modal": true,
+            "inside_labels": false
+          },
+          {
+            "tag": "BUTTON",
+            "name": "Cancel",
+            "inside_modal": true,
+            "inside_labels": false
+          }
+        ],
+        "restored": {
+          "tag": "BUTTON",
+          "name": "Delete note",
+          "inside_modal": false,
+          "inside_labels": false
+        },
+        "confirmed": false
+      }
+    },
+    {
+      "name": "dark-Labels",
+      "data": [
+        {
+          "tag": "H2",
+          "text": "Edit note labels",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgba(0, 0, 0, 0)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "16px",
+          "font_weight": "500",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "(field)",
+          "class": "",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "effective_background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 21,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "solid",
+          "outline_width": "3px",
+          "outline_color": "rgb(144, 170, 255)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": true,
+          "focus_visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Save labels",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Cancel",
+          "class": "",
+          "color": "rgb(236, 240, 246)",
+          "background": "rgb(32, 41, 56)",
+          "effective_background": [
+            32,
+            41,
+            56
+          ],
+          "ratio": 12.789,
+          "required": 4.5,
+          "disabled": false,
+          "font_size": "14px",
+          "font_weight": "400",
+          "outline": "none",
+          "outline_width": "3px",
+          "outline_color": "rgb(236, 240, 246)",
+          "filter": "none",
+          "background_image": "none",
+          "focused": false,
+          "focus_visible": false
+        }
+      ]
+    },
+    {
+      "name": "dark-Labels-keyboard",
+      "data": {
+        "labelAX": [
+          {
+            "role": "dialog",
+            "name": "Edit note labels",
+            "ignored": false
+          }
+        ],
+        "fieldAX": [
+          {
+            "role": "textbox",
+            "name": "Labels, one per line",
+            "ignored": false
+          }
+        ],
+        "restored": {
+          "tag": "BUTTON",
+          "name": "Edit labels",
+          "inside_modal": false,
+          "inside_labels": false
+        },
+        "submitted": false
+      }
+    },
+    {
+      "name": "command-search",
+      "data": [
+        {
+          "role": "combobox",
+          "name": "Commands",
+          "ignored": false
+        }
+      ]
+    },
+    {
+      "name": "reduced-motion",
+      "data": {
+        "reduce": true,
+        "active_animations": 0
+      }
+    },
+    {
+      "name": "complete-Arabic-admin",
+      "data": {
+        "lang": "ar",
+        "dir": "rtl",
+        "headings": [
+          "الإعدادات",
+          "التفضيلات",
+          "إدارة مساحة العمل",
+          "الأعضاء"
+        ],
+        "labels": [
+          "مساحة العملمساحة العملReference AReference B",
+          "المظهر فاتحداكن",
+          "اللغة Englishالعربية",
+          "اسم مساحة العمل",
+          "اللغة الافتراضية",
+          "المنطقة الزمنية",
+          "المعرّف العام",
+          "دور العضو"
+        ],
+        "theme_name": "المظهر",
+        "language_name": "اللغة"
+      }
+    },
+    {
+      "name": "Arabic-window-metrics",
+      "data": {
+        "inner_width": 628,
+        "inner_height": 404,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 2,
+        "visual_scale": 1,
+        "root_width": 628,
+        "scroll_width": 628,
+        "lang": "ar",
+        "dir": "rtl"
+      }
+    },
+    {
+      "name": "foreign-record-error",
+      "data": [
+        {
+          "role": "alert",
+          "name": "",
+          "ignored": false
+        }
+      ]
+    }
+  ],
+  "findings": [],
+  "foreign_requests": [],
+  "runtime_exceptions": [],
+  "no_business_save_or_delete": true,
+  "appearance_restored": true,
+  "limits": [
+    "Real browser window without CDP device metrics override; selected owned-profile zoom preference is recorded separately.",
+    "Computed CSS contrast plus screenshots/AX/keyboard observations; no physical screen-reader speech or blanket WCAG compliance claim.",
+    "Already measured dark native close glyph residual requires source correction regardless of text-only contrast ratios."
+  ]
+}

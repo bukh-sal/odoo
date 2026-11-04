@@ -1,0 +1,30 @@
+{
+  "result": "passed_public_UI_audit_and_source_record_privacy_syntax",
+  "known_values": 133,
+  "findings": 0,
+  "files_sha256": {
+    "docs/evidence/G7/20261104-core24-ui-audit-01/audit.mjs": "021530609ad00e16e6d5c758ee80a4ea2b6cd5bd17d57249b973b695846f5f54",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/baseline-dark-confirm.png": "5d97934d5509f17b7f81c49fe361fe66852eac257f56f90ad7f6558fea35590d",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/baseline-network.json": "abc2bb050ecdbb2af896b4744e5bedace5f742bd7f19aea9bcd3e0344c34e448",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/baseline-observations.json": "eb5356b83c6496f9bfc019cec297b3554c55134aae88e749707577fee9122359",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/browser_runtime.mjs": "91f3b97dc0d70552360e68cb71eff26b0b0e87dd36761f10d0b4aac649ddda1b",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/preparation.json": "730c23479c528631d1f389a98f79bc267a1c31f9ea8e3445fd2792b48f885108",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/prepare.py": "cbc5b278af36e2c7c65f99bfd3fb76896d4cb5e4d67354b14f224520404254ff",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/qualification.json": "0a1c648593b01763761637d9c9c48c5bdec0dc5c3c1edba462b36ad23d147fd0",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/qualify.py": "43a9f15afc38aba4086cb9704274fcad3e0c16a7ebadfb0ee6d9a7536b56255f",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/source25-checks.json": "d357c22630d1d7bffa8629aef6c334af7516fb6e064315ce0f665f019b59ae1b",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/source25_checks.py": "97c47b7b5f8f45a5aa097310ca906870a0b4280be51369053aa1d7a3c72252b7",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/zoom200-Arabic-settings.png": "e0884d29a24b34ee95f50cf7cf516feb38ffe472c195e1c53acdfb5938a96e2c",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/zoom200-dark-confirm.png": "8e258099858b0668ff6d1400808334ec45e53552871c8d9addd3f0b0bc848fb5",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/zoom200-network.json": "11e9201091efffd69230b1d6a04a7d85d5cdb24f997c1a636ac406d54f81e976",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/zoom200-observations.json": "987baaa9301fc4b931e9810465f441ab0cdc494d409a2ef64106792db66f4c14",
+    "docs/evidence/G7/20261104-core24-ui-audit-01/zoom_pref.py": "f07b62964cf794f210ce1d05de2fb047c8f3e05c2a5119fa84e1c0139f5da755",
+    "docs/implementation-status.md": "6820eb745c6893aa776bb705a8ebc9744aff9f35142e48b9534b85e90d64f90e",
+    "docs/work-log.md": "4e30c9535cc40a4784378f6e5ef3b15de48220485fc5ab973b2fac1ae8045e45",
+    "docs/architecture-decisions/0057-shell-accessibility-correction.md": "100ba0f245bd81654b6af1f64f2ae4a75d2184c12f492f6b66654874c764a59c",
+    "platform_addons/mp_shell/static/src/dialog_accessibility.xml": "711739012a44113a09eaa6a7f811ea91729f8c40936fb6ba71c9df6e7215b439"
+  },
+  "limits": [
+    "Selected synthetic screenshots manually reviewed; byte scanning is not OCR. Private table snapshots/streams/profile data excluded."
+  ]
+}
