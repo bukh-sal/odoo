@@ -55,10 +55,25 @@ must be inspected before any new measurement. Do not rerun setup, reseed,
 reset its database or replay its core initialization. New measurements need an
 explicit new output record and confirmed current target identity.
 
+The current managed release reference also passed the shell and disposal checks
+in [the actual browser qualification](evidence/G7/20261104-ui-qualification-01/performance-qualification.json).
+Edge156 used production minified assets and one protected owned profile, with
+no personal browser or additional Docker assets. Login to interactive native
+Notes plus the actual Odoo command palette took990.425ms with cold browser
+cache and586.731/887.474/742.008ms with warm cache. The server was warm.
+
+After five warmup cycles,100actual Canvas→Settings transitions left every
+Canvas root disposed. Post-GC heap grew95,568bytes from7,283,236to7,378,804;
+documents33/nodes2630/listeners151 stayed constant. The full six-point curve
+and predeclared limits are retained. This establishes no unbounded growth
+observed in this finite run. All17business/authority/job/event tables and all
+four runtime process/image/mount/network identities remained exact. The owned
+browser exited0 and no process using its profile remained. The profile stays
+private for subsequent justified tests. Screenshots and diagnostics were checked
+against133known credential values with no findings.
+
 Required work still open under G-01c4/spec24.1–24.3:
 
-- Shell usable within 3 seconds after login on a warm server with production assets.
-- 100 custom-page mount/dispose cycles with bounded retained memory/resources.
 - Current-source R0 comparison, deployment/job heartbeat and bounded failure
   detection/revocation evidence reconciled to the actual runtime.
 - Browser/network, identity-cache and accessibility checks plus final G7 handoff.

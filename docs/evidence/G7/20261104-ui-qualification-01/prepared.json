@@ -1,0 +1,19 @@
+{
+  "result": "prepared_exact_current_managed_realm_and_one_owned_profile",
+  "utc": "2026-11-04T06:05:33.617147+00:00",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "url": "http://release-0afebf4f833b.localhost:18100",
+  "native_views_default": true,
+  "minimal_Canvas_board": 1,
+  "notes": 2,
+  "job_completed": 1,
+  "private_snapshot_sha256": "725160e7b577c8caaceecb1cf52b3642b21f4a23d28589d5bb61c3c5a4979ef8",
+  "app_network_internal": true,
+  "personal_browser_used": false,
+  "new_Docker_assets": 0,
+  "limits": [
+    "Preparation only; browser process/measurements/network/ID08/UI09 not yet qualified."
+  ]
+}

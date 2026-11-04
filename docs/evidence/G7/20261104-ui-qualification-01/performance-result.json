@@ -1,0 +1,210 @@
+{
+  "result": "actual_current_shell_and100mount_dispose_measurements",
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "generation": 4,
+  "realm": "http://release-0afebf4f833b.localhost:18100",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "shellSamples": [
+    {
+      "sample": 0,
+      "browser_cache": "cold",
+      "login_to_native_ready_ms": 944.7394000000002,
+      "login_to_interactive_Odoo_commands_ms": 990.4251000000002,
+      "under3000ms": true
+    },
+    {
+      "sample": 1,
+      "browser_cache": "warm",
+      "login_to_native_ready_ms": 577.8669,
+      "login_to_interactive_Odoo_commands_ms": 586.7307999999998,
+      "under3000ms": true
+    },
+    {
+      "sample": 2,
+      "browser_cache": "warm",
+      "login_to_native_ready_ms": 869.7728000000002,
+      "login_to_interactive_Odoo_commands_ms": 887.4743000000003,
+      "under3000ms": true
+    },
+    {
+      "sample": 3,
+      "browser_cache": "warm",
+      "login_to_native_ready_ms": 694.7271000000001,
+      "login_to_interactive_Odoo_commands_ms": 742.0077000000001,
+      "under3000ms": true
+    }
+  ],
+  "shell_target_passed": true,
+  "cycles": 100,
+  "warmup_cycles": 5,
+  "memorySamples": [
+    {
+      "label": "baseline_after5warmups",
+      "heap_used_bytes": 7283236,
+      "heap_total_bytes": 7864320,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after20",
+      "heap_used_bytes": 7354668,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after40",
+      "heap_used_bytes": 7366872,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after60",
+      "heap_used_bytes": 7382952,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after80",
+      "heap_used_bytes": 7376692,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after100",
+      "heap_used_bytes": 7378804,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    }
+  ],
+  "limits": {
+    "final_heap_growth": 4194304,
+    "late_heap_growth": 1048576,
+    "dom_listener_allowance": 32
+  },
+  "memory_checks": {
+    "all100cycles_disposed": true,
+    "final_heap_bounded": true,
+    "late_heap_bounded": true,
+    "documents_stable": true,
+    "nodes_bounded": true,
+    "listeners_bounded": true
+  },
+  "memory_target_passed": true,
+  "runtime_exception_count": 0,
+  "app_foreign_requests": [],
+  "foreign_websockets": [],
+  "outbound_control_observed_and_refused": true,
+  "production_assets": [
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/b056235/web.assets_frontend_minimal.min.js",
+      "status": 200,
+      "type": "Script",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9d47ad5/web.assets_frontend.min.css",
+      "status": 200,
+      "type": "Stylesheet",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script",
+      "fromDiskCache": false
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/4be66d1de61eb445784021ae9c4202a3c8ce7f8a096f48a41b9dfd8a28a5c2be/mp_shell.assets_host.min.css",
+      "status": 200,
+      "type": "Stylesheet",
+      "fromDiskCache": true
+    },
+    {
+      "origin": "http://release-0afebf4f833b.localhost:18100",
+      "path": "/web/assets/9ba9f8b713738b8576d49dc363fe74da0ecfa4c3dd41710ab2fc9a46dcde9c0e/mp_shell.assets_host.min.js",
+      "status": 200,
+      "type": "Script",
+      "fromDiskCache": true
+    }
+  ],
+  "network_response_count": 991,
+  "personal_browser_used": false,
+  "boundaries": [
+    "Numeric post-GC diagnostics only, no heap snapshot or credential/header/body logging.",
+    "Existing minimal one-card Canvas mounted/disposed via real navigation; no board/Note edit/save or application function replacement.",
+    "Finite100cycle observation and conservative predeclared bounds, not a universal memory/browser guarantee."
+  ]
+}

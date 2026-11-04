@@ -1,0 +1,136 @@
+{
+  "result": "passed_current_shell_and100mount_dispose_targets",
+  "utc": "2026-11-04T06:20:06.593194+00:00",
+  "work_item": "G-01c4",
+  "spec_sections": [
+    "24.1"
+  ],
+  "image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "generation": 4,
+  "realm": "http://release-0afebf4f833b.localhost:18100",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Edg/156.0.4314.50",
+    "revision": "@af2ba23ae0ecf7084d900446fc59d5119dd5fd5e",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+    "jsVersion": "15.6.12.7"
+  },
+  "shell_samples": [
+    {
+      "sample": 0,
+      "browser_cache": "cold",
+      "login_to_native_ready_ms": 944.7394000000002,
+      "login_to_interactive_Odoo_commands_ms": 990.4251000000002,
+      "under3000ms": true
+    },
+    {
+      "sample": 1,
+      "browser_cache": "warm",
+      "login_to_native_ready_ms": 577.8669,
+      "login_to_interactive_Odoo_commands_ms": 586.7307999999998,
+      "under3000ms": true
+    },
+    {
+      "sample": 2,
+      "browser_cache": "warm",
+      "login_to_native_ready_ms": 869.7728000000002,
+      "login_to_interactive_Odoo_commands_ms": 887.4743000000003,
+      "under3000ms": true
+    },
+    {
+      "sample": 3,
+      "browser_cache": "warm",
+      "login_to_native_ready_ms": 694.7271000000001,
+      "login_to_interactive_Odoo_commands_ms": 742.0077000000001,
+      "under3000ms": true
+    }
+  ],
+  "memory_samples": [
+    {
+      "label": "baseline_after5warmups",
+      "heap_used_bytes": 7283236,
+      "heap_total_bytes": 7864320,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after20",
+      "heap_used_bytes": 7354668,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after40",
+      "heap_used_bytes": 7366872,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after60",
+      "heap_used_bytes": 7382952,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after80",
+      "heap_used_bytes": 7376692,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    },
+    {
+      "label": "after100",
+      "heap_used_bytes": 7378804,
+      "heap_total_bytes": 8126464,
+      "documents": 33,
+      "nodes": 2630,
+      "jsEventListeners": 151,
+      "canvas_roots": 0
+    }
+  ],
+  "retained_heap_growth_bytes": 95568,
+  "all100Canvas_roots_disposed": true,
+  "all17_business_authority_job_event_tables_exact": true,
+  "all4_runtime_process_image_mount_network_identities_exact": true,
+  "owned_browser_stopped_exit0_no_profile_process_remaining": true,
+  "personal_browser_used": false,
+  "Docker_assets_added": 0,
+  "privacy": {
+    "known_values": 133,
+    "files": 13,
+    "findings": 0
+  },
+  "evidence_sha256": {
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\prepare.py": "494501c233256fcb8d86ad38ab3897760a028a2175248ec1fcb1da81f9e1b9e8",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\qualify_performance.py": "aec06d63cba4c2102e4a0126bb1ee92cabf22be0d3cd102fb22047ddb65f10e6",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\performance.mjs": "101b3f15dbfdabee52610f78b49ee36d5d8c4ed34884471241d4ff3fc47be74b",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\prepared.json": "044d3f578014373ec988551486869fe3bcb2c3cc0dfeb94f36144a2d3c766008",
+    "docs\\architecture-decisions\\0055-headless-qualification-measurements.md": "3a6f58f1a1d7c2d89a2493c3f26300c6aff09dd337218e0c0889b43cd996b2ee",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\performance-result.json": "7738384eda4a95f160677ef67aca829a810482e15212e07af1d91ecf6b7e10dc",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\network-sanitized.json": "b54fbc7ba00f62afcf6e03743c1d441f737c64293fc309dd3197509b040b03aa",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\browser-version.json": "df865f89ad4143de742acd1ce6c9757435fcb2fa79edb17fee54633944cb316f",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\native-shell.png": "c51a85848a5d837cb94ec38041ca0a98ef9ce1fbe419d2861ef4486244c4dcb8",
+    "docs\\evidence\\G7\\20261104-ui-qualification-01\\after100-settings.png": "10090dbf2813adf66c8120614ea4b7a799fc6ebec4c77c1b65810fd112f94748"
+  },
+  "limits": [
+    "Subresults only: no additional performance point until R0/heartbeat/revocation/diagnostics/readiness mapping closes.",
+    "Network interception positive control passed and no app foreign requests observed during these paths; complete section27 classification is separate.",
+    "ID08 and UI09 were not exercised by this measurement.",
+    "Numeric post-GC metrics and reviewed screenshots only. Protected profile/session and whole-table snapshots remain private.",
+    "Finite local100cycle observation; no universal leak guarantee or WCAG/production claim."
+  ]
+}
