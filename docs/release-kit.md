@@ -72,5 +72,21 @@ existing operator journal/issuer into a new installation.
 The current rehearsal has actually reached `references_installed` from the kit
 operator and committed initializer: three native reference plugins, six workspace
 activations, distinct fresh credentials and a new independent control store.
-The HTTP walkthrough, external worker and complete twelve-case operational
-handoff still require qualification. No full G7 claim follows from these commands.
+The HTTP walkthrough has now passed five checks with two Notes/one board;
+[backend qualification](evidence/G7/20261104-release-kit-01/application-bootstrap.json)
+records the actual source overlays and narrow pre-data DNS continuation. External
+worker and complete twelve-case operational handoff still require qualification.
+No full G7 claim follows from these commands.
+
+The worker is a separate operator action, after that backend walkthrough:
+
+```powershell
+.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_worker.py --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+```
+
+This new once-only helper is awaiting its first qualification. It starts the
+locked reference Compose worker on the existing internal network, provisions
+new scoped keys and two dedicated volumes, then independently reviews/publishes
+the exact authority hash. It does not install metadata or select a connector;
+those and an actual queued job remain required. Its phase is in
+`private/reference/worker/state.json`; never replay an uncertain publication.

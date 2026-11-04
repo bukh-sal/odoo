@@ -1,0 +1,70 @@
+{
+  "result": "draft_transport_repaired_verified_no_duplicate_archive",
+  "before": {
+    "images": {
+      "bytes": 386572288,
+      "sha256": "7f81d9faae7e4cc2eeae66d2cc9103426e7d20a61c2bc0faa6a5a3ce434db51a"
+    },
+    "metadata": {
+      "bytes": 1597,
+      "sha256": "4853c8eca2c126b468bcc582a7adc78a5358ecb2bd3da95a9e894377d7304cf2"
+    }
+  },
+  "after": {
+    "images.tar": {
+      "bytes": 386572800,
+      "sha256": "3fe1f40c77692e511c878b6482d7a8fb8d95383c16445811ec9982b206fbebff"
+    },
+    "images.json": {
+      "bytes": 1695,
+      "sha256": "82d009c4a9110aa8b6441fa464140d732e94d27bf834d3debaac722b511e9184"
+    }
+  },
+  "index": {
+    "schemaVersion": 2,
+    "mediaType": "application/vnd.oci.image.index.v1+json",
+    "manifests": [
+      {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+        "size": 856,
+        "annotations": {
+          "io.containerd.image.name": "docker.io/library/modular-document-stats:release-87ad9d2d1c95",
+          "org.opencontainers.image.ref.name": "release-87ad9d2d1c95"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+        "size": 856
+      },
+      {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+        "size": 6496,
+        "annotations": {
+          "containerd.io/distribution.source.docker.io": "library/postgres"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+        "size": 856
+      },
+      {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:ae8bb33d618305d2d2b000e94e98bf9180e7e8c550e566d0dce0f5c97a2dd73a",
+        "size": 856,
+        "annotations": {
+          "containerd.io/distribution.source.docker.io": "library/modular-platform"
+        }
+      }
+    ]
+  },
+  "source_commit_unchanged": "746781d666ae3e141596d80861c3562eb8f7443d",
+  "unchanged_components": 48,
+  "no_new_images_containers_volumes_networks": true,
+  "limits": [
+    "Draft archive reference transport repair, not worker runtime/clean-image-store installation qualification. Actual reference initializer previously consumed ID-only archive; its backend result remains scoped as recorded."
+  ]
+}

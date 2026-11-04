@@ -1,0 +1,9 @@
+{
+  "result": "committed_walkthrough_helper_synced_only",
+  "source_commit": "d59e1323c0023f789487347ced955ed3b4b0bc32",
+  "path": "release/check_reference.py",
+  "sha256": "4d3ca0232758f265c598cde04f329ed11123055d51b10d8c01f020030aa5f63f",
+  "bytes": 7270,
+  "initializer_commit": "0e5466becaa4e988bdfe751872bcfac3b819ee90",
+  "other_working_source": "94c4ecd047affe87948a8b76d0317f5777ff5506"
+}

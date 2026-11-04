@@ -55,11 +55,20 @@ def main():
     reproduction=json.loads((ROOT/'docs/evidence/G7/20261104-core23-repro-01/qualification.json').read_bytes())
     worker=json.loads((ROOT/'services/document_stats/image.lock.json').read_bytes())
     selected={'application':reproduction['reference_image'],'dependency_base':reproduction['dependency_base'],
-              'worker':worker['image_id'],'postgres':runtime['postgres_image'],'proxy':runtime['reverse_proxy_image']}
+              'worker':worker['reference'],'postgres':runtime['postgres_image'],'proxy':runtime['reverse_proxy_image']}
     images={}
     for role,reference in selected.items():
         data=json.loads(subprocess.check_output(['docker','image','inspect',reference]))[0]
         images[role]=dict(image_id=data['Id'],source_reference=reference,architecture=data['Architecture'],OS=data['Os'])
+    # Docker's digest-form export omits repository names too. A checked local
+    # tag carries the repository binding through save/load; authority still
+    # selects and verifies the immutable digest, never this mutable tag.
+    worker_tag='modular-document-stats:release-'+worker['image_id'][7:19]
+    existing=subprocess.run(['docker','image','inspect',worker_tag],capture_output=True)
+    if existing.returncode==0:
+        if json.loads(existing.stdout)[0]['Id']!=worker['image_id']:raise ValueError('Release worker tag already names different bytes')
+    else:subprocess.run(['docker','image','tag',worker['image_id'],worker_tag],check=True)
+    images['worker']['archive_reference']=worker_tag
     actual=inspect_image(images['application']['image_id'])
     if actual['inventory_digest']!=reproduction['inventory_digest']:raise ValueError('Unqualified app inventory')
     write('images.json',dict(images=images,application_inventory_digest=actual['inventory_digest'],platform_version=actual['platform_version']))
@@ -124,7 +133,10 @@ def main():
         copy(ROOT/'release'/name,'scripts/'+name)
     phase('exporting_exact_images')
     with receipt.with_suffix('.save.stderr').open('xb') as err:
-        subprocess.run(['docker','image','save','--output',str(output/'images.tar'),*sorted({row['image_id'] for row in images.values()})],stderr=err,check=True,timeout=240)
+        # Preserve repository bindings as well as bytes. Worker attestation
+        # requires the independently selected immutable repository reference;
+        # an ID-only OCI export has no name to restore on a clean image store.
+        subprocess.run(['docker','image','save','--output',str(output/'images.tar'),*sorted({row.get('archive_reference',row['source_reference']) for row in images.values()})],stderr=err,check=True,timeout=240)
     register('images.tar')
     manifest=dict(format='modular-platform-local-kit-1',stage='draft_requires_clean_install_and_G7_closure',source_commit=head,
                   created_utc=datetime.now(timezone.utc).isoformat(),files=state['completed_files'],images=images,

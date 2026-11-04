@@ -1,0 +1,18 @@
+{
+  "result": "two_committed_helpers_synced_only",
+  "source_commit": "0e5466becaa4e988bdfe751872bcfac3b819ee90",
+  "files": [
+    {
+      "path": "release/initialize_reference.py",
+      "sha256": "bde76e5a909d010c65d08538a6eb9c9bb52262d530d1f36f0a1676ae4b00565e",
+      "bytes": 17817
+    },
+    {
+      "path": "release/reference_seed.py",
+      "sha256": "89677cc947f24d2a7d430ebf7690c587fd16ceb4475ece6fe400d2e0520ef73a",
+      "bytes": 1996
+    }
+  ],
+  "other_working_source_remains": "94c4ecd047affe87948a8b76d0317f5777ff5506",
+  "all374_qualified_inputs_unchanged": true
+}

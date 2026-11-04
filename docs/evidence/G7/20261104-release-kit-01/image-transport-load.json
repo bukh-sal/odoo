@@ -1,0 +1,18 @@
+{
+  "result": "passed_real_load_restores_new_repository_digest_binding_from_tagged_archive",
+  "worker_image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "previous_repository_and_tag_absent": true,
+  "archive_metadata_changes": [
+    "index.json",
+    "manifest.json"
+  ],
+  "immutable_blob_members_copied_verbatim": 78,
+  "probe_archive_sha256": "a2e8eee92b7d6f2ce90e780a1d04cd7796fe3b3c89414ced28620eb022b433e7",
+  "probe_archive_bytes": 386580480,
+  "restored_repository": "mp-kit-transport-probe@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "restored_tag": "mp-kit-transport-probe:release-87ad9d2d1c95",
+  "limits": [
+    "Actual new repository namespace on existing Docker image store, not a blank second daemon or full fresh-machine installation. Shared immutable blob cache is retained.",
+    "Only probe archive metadata was renamed; kit archive and canonical worker/runtime references untouched."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "result": "passed_actual_three_running_reference_service_stderr",
+  "known_values": 131,
+  "findings": 0,
+  "streams": [
+    {
+      "container_id": "57ce486c67331b68873d6b062f86b7a3eda445e26a0d9a61454a2716af189667",
+      "stderr_bytes": 897
+    },
+    {
+      "container_id": "594fdc9130fefc3ad59b4eab805024fdb1a126ad97f01f3fb025e09b965f6cc5",
+      "stderr_bytes": 4732
+    },
+    {
+      "container_id": "c4721d9db8733077fb3439fe0356892ff3875c036a76a2409a714b3d0d8da2a9",
+      "stderr_bytes": 7573
+    }
+  ],
+  "limits": [
+    "Supplements stdout/command-stream proof in application-bootstrap.json; full kit/archive scan remains separate."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "result": "passed_new_kit_operator_fresh_native_reference_install_and_minimal_backend_HTTP",
+  "utc": "2026-11-04T04:21:17.864629+00:00",
+  "source_commit_initializer": "0e5466becaa4e988bdfe751872bcfac3b819ee90",
+  "source_commit_walkthrough": "746781d666ae3e141596d80861c3562eb8f7443d",
+  "current_kit_source_commit": "746781d666ae3e141596d80861c3562eb8f7443d",
+  "mixed_working_source_provenance": [
+    "Existing offline-extracted source94c4ecd0; all374 qualified app/SDK/tool/deploy inputs exact per source-parity.json.",
+    "Only committed initializer/seeder/check helper files overlaid from verified kit snapshots; helper-sync03/04/05.json preserve exact identities."
+  ],
+  "project": "mp-r0-r1release0afebf4f833b",
+  "database": "mp_disposable_r0_r1_release_0afebf4f833b",
+  "url": "http://release-0afebf4f833b.localhost:18100",
+  "configuration_generation": 2,
+  "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "inventory_digest": "sha256:1a41187aa30e22da354ccb95ff7374e626a3b83ac4a3627cffcaef94a7165e1b",
+  "actual_database_counts": {
+    "jobs": 0,
+    "notes": 2,
+    "boards": 1,
+    "features": 6,
+    "principals": 4,
+    "workspaces": 2,
+    "memberships": 6,
+    "native_installations": 3
+  },
+  "independent_operation": {
+    "operation_id": "2e415c49-254a-4543-bedb-7cf9ac8c9f4a",
+    "plan_hash": "sha256:a2467908da1b693c6d4cd82d38a128ea8ae49a26377e2ebf0e97bab2bf7ec851",
+    "state": "completed",
+    "phase": "completed",
+    "mutation_started": 1,
+    "traffic_resumed": 1
+  },
+  "checks": [
+    "fresh distinct-credential human sessions and current client release",
+    "one scoped Note in each workspace; native Odoo list/form descriptors and scoped record reads",
+    "Alice viewer write denied in B; Bob cannot read A record",
+    "native Notes Labels extension through its registered binding",
+    "minimal optional Canvas reference uses native creation and registered custom-page service"
+  ],
+  "running_containers": [
+    {
+      "container_id": "57ce486c67331b68873d6b062f86b7a3eda445e26a0d9a61454a2716af189667",
+      "image_id": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "name": "/mp-r0-r1release0afebf4f833b-db-1"
+    },
+    {
+      "container_id": "594fdc9130fefc3ad59b4eab805024fdb1a126ad97f01f3fb025e09b965f6cc5",
+      "image_id": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-2e415c49254a4543bedb7cf9ac8c9f4a"
+    },
+    {
+      "container_id": "c4721d9db8733077fb3439fe0356892ff3875c036a76a2409a714b3d0d8da2a9",
+      "image_id": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "name": "/mp-r0-r1release0afebf4f833b-edge-1"
+    }
+  ],
+  "retired_exact_terminal_helpers": [
+    {
+      "container_id": "7a1dd6e59810d133cb4179f11786fc29ed016cf10890175231a48987503e860e",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-3490598ee00f4e428ac7ec4c924f6589",
+      "exit_code": 0
+    },
+    {
+      "container_id": "9110cb7f609787bf5afa72683ffdbe6f1b8179d66cf51e1a06b02a28d5b659bb",
+      "name": "/mp-r0-r1release0afebf4f833b-core-provision",
+      "exit_code": 0
+    },
+    {
+      "container_id": "ee9a773037d499b41db0cf5242616f7e09c868bafda8eb991eee6a711838cb89",
+      "name": "/mp-r0-r1release0afebf4f833b-core-init",
+      "exit_code": 0
+    }
+  ],
+  "retained_volumes_networks": true,
+  "no_new_images_built": true,
+  "privacy": {
+    "known_values": 131,
+    "diagnostic_streams": 57,
+    "findings": 0,
+    "scope": "New reference command/runtime stdout diagnostics and new helper/source-refresh receipts; full kit recursive/archive privacy remains separate."
+  },
+  "diagnosed_walkthrough_failure": {
+    "signature": "Windows getaddrinfo11001 for generated *.localhost before first HTTP request",
+    "retained_predata_marker": "reference-checks.before-data-attempt01.json",
+    "reconciled_actual_note_board_counts": [
+      0,
+      0
+    ],
+    "continuation": "Explicit loopback transport plus selected Host; only pre-data walkthrough resumed, no core install or lifecycle replay"
+  },
+  "limits": [
+    "Existing corrected full setup_operator command not rerun from empty; actual offline installation plus private-child diagnosed continuation qualified separately.",
+    "No external worker initialized in this realm yet; jobs=0.",
+    "Native list/form descriptors and HTTP API checked; browser rendering/accessibility/performance/whole G7 not implied.",
+    "Artifact remains draft; twelve runbooks/full-kit privacy/final qualification remain."
+  ]
+}

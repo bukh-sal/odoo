@@ -1,0 +1,8 @@
+{
+  "result": "digest_form_export_still_omits_worker_repository_binding",
+  "archive_sha256": "d6b7f5efdc3e52c0d29ad19c9de623598539caa3bc38011c058fa54f5a5db258",
+  "archive_bytes": 386572288,
+  "kit_unchanged": true,
+  "new_fact": "Named tag export required; immutable repo@digest input also omits names in this engine.",
+  "candidate_retired": true
+}

@@ -1,0 +1,8 @@
+{
+  "result": "single_reviewed_helper_updated_from_committed_kit",
+  "source_commit": "746781d666ae3e141596d80861c3562eb8f7443d",
+  "path": "release/check_reference.py",
+  "before_sha256": "4d3ca0232758f265c598cde04f329ed11123055d51b10d8c01f020030aa5f63f",
+  "sha256": "0797e63f032e9bcc2e78669d170164d744a01f65f349312c9d4b588a8ffcae33",
+  "bytes": 8267
+}

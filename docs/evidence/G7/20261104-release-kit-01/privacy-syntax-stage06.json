@@ -1,0 +1,17 @@
+{
+  "result": "passed_changed_source_receipts_and_actual_transport_diagnostics",
+  "known_values": 131,
+  "changed_public_files": 19,
+  "actual_transport_streams": [
+    "export-references.stdout",
+    "export-references.stderr",
+    "export-tag02.stdout",
+    "export-tag02.stderr",
+    "load-probe.stdout",
+    "load-probe.stderr"
+  ],
+  "findings": 0,
+  "limits": [
+    "Incremental privacy only; full kit/archive recursive privacy remains required."
+  ]
+}

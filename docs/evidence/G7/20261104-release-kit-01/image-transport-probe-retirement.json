@@ -1,0 +1,6 @@
+{
+  "result": "exact_new_probe_tag_and_archive_retired",
+  "tag": "mp-kit-transport-probe:release-87ad9d2d1c95",
+  "archive_sha256": "a2e8eee92b7d6f2ce90e780a1d04cd7796fe3b3c89414ced28620eb022b433e7",
+  "canonical_image_preserved": true
+}

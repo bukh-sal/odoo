@@ -1,0 +1,24 @@
+{
+  "result": "verified_committed_source_refresh_of_unsealed_kit",
+  "source_before": "5f8d6b35eaabeaec6d7a0b666c16bcaad1b7efb6",
+  "source_after": "0e5466becaa4e988bdfe751872bcfac3b819ee90",
+  "changed": [
+    {
+      "path": "source.zip",
+      "before": {
+        "bytes": 276420431,
+        "sha256": "742ea2ec23bedaff0eeca691e8a38b2b8a7ec9d24fed4a8671d727d3992c1b72"
+      },
+      "after": {
+        "bytes": 276430605,
+        "sha256": "211a6d05aa689db8bc28067794edcb188ad883fb87dea63dc78f7ab5830f07be"
+      }
+    }
+  ],
+  "unchanged_components": 49,
+  "manifest_sha256": "9766bb3b2627339ee1484b19eb747244c7f48bbb9b4958b3b3d59afea4acf4f0",
+  "large_images_plugins_notices_toolchain_reused": true,
+  "limits": [
+    "Draft operator source refresh only; no application deployment, lifecycle mutation or new Docker asset. Kit remains unsealed/unqualified for full G7."
+  ]
+}
