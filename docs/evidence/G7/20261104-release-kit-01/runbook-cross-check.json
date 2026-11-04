@@ -1,0 +1,247 @@
+{
+  "result": "passed_runbook_CLI_link_and_retained_functional_evidence_crosscheck",
+  "utc": "2026-11-04T04:47:38.120629+00:00",
+  "runbook_sha256": "f27189e7d87669a5047753f9e7e8d0d74716dc6c1290a0d12dbe8e7027b917f3",
+  "cli_help_checks": [
+    {
+      "command": "plugin validate",
+      "exit_code": 0,
+      "usage_sha256": "59ddcbc6f574915f8051297c095eb8ef59f1d31f38d84558901600641779cf7f"
+    },
+    {
+      "command": "plugin apply",
+      "exit_code": 0,
+      "usage_sha256": "12bca1ec22fd7bc7f3b1c9c4ecb48f06e4ed25d70cc3bde68d234e8999ea52ae"
+    },
+    {
+      "command": "plugin stage-image",
+      "exit_code": 0,
+      "usage_sha256": "ce07386161cd82a62f82630ec7f5402d094b2d21828fcd61c9f7255be977f4b3"
+    },
+    {
+      "command": "plugin plan-staged",
+      "exit_code": 0,
+      "usage_sha256": "2c737d40d9a82f67d6f788b2978d0f01fd985a635f1600066882a51cf88d3aa9"
+    },
+    {
+      "command": "plugin plan-external",
+      "exit_code": 0,
+      "usage_sha256": "96fcb8f94b24d3c0260eac8348c74dffd03b9062ce893bdf4a8f4122430d72c6"
+    },
+    {
+      "command": "plugin recover",
+      "exit_code": 0,
+      "usage_sha256": "8c0de20e2b5a4d3f67172c960e6d5448612793b0bc557e512aaddaf6a999201d"
+    },
+    {
+      "command": "catalog add",
+      "exit_code": 0,
+      "usage_sha256": "4a2d3777261e0c0e780c87c88780f854a8dcd286ac4db6f00ee161afd455c4f7"
+    },
+    {
+      "command": "catalog quarantine",
+      "exit_code": 0,
+      "usage_sha256": "ec42d4a262daccae5d72303bfc116432ed4c72eaf13deec9978dcb85b280aac4"
+    },
+    {
+      "command": "operations register",
+      "exit_code": 0,
+      "usage_sha256": "ce58cf5596192a5a53c3d6af9193bdfa5d843a7ea48c90d5eae227cf180c635f"
+    },
+    {
+      "command": "operations import-request",
+      "exit_code": 0,
+      "usage_sha256": "c2808901afa13b2887d013b9e8c6ca8642341979764ac8c40d7bed4d0eb7d4ee"
+    },
+    {
+      "command": "operations approve",
+      "exit_code": 0,
+      "usage_sha256": "82e946be3b716bfa26ffe809f30cfd39b615deaf247661c7c8a126c252bf2121"
+    },
+    {
+      "command": "operations show",
+      "exit_code": 0,
+      "usage_sha256": "d494bd4d09ce76e9e2ff96fb27f842a32dcfd4c93b82b2dade87e4fd62588e2b"
+    },
+    {
+      "command": "worker prepare",
+      "exit_code": 0,
+      "usage_sha256": "73303751b34d02fc90a0fb7c79bbce1d24d8eb59a283838315b79cdffda968bc"
+    },
+    {
+      "command": "worker publish",
+      "exit_code": 0,
+      "usage_sha256": "dda456e750232ca629c252329ead1b615e9ecf602c1bc262f4a94c4e0c412682"
+    },
+    {
+      "command": "worker run-job-once",
+      "exit_code": 0,
+      "usage_sha256": "d877b70304c0461aad6355048e96349bb2c2214e092c578584ab63a111c96748"
+    }
+  ],
+  "cases": [
+    {
+      "number": 1,
+      "case": "Fresh deployment",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-release-kit-01/full-bootstrap-qualified.json",
+          "sha256": "760e039eafd7b2537ae29de6eaaf1e7ed9b61995ba7199b6ff9564c3d38bf736",
+          "reported_result": "passed_full_corrected_offline_operator_setup_from_empty_workdir"
+        },
+        {
+          "path": "docs/evidence/G7/20261104-release-kit-01/application-bootstrap.json",
+          "sha256": "e9907bb03c832a3124186b466815382a530528de2bfdedecc4a0ecb6c6f04053",
+          "reported_result": "passed_new_kit_operator_fresh_native_reference_install_and_minimal_backend_HTTP"
+        },
+        {
+          "path": "docs/evidence/G7/20261104-release-kit-01/worker-integration.json",
+          "sha256": "0c6b422a98de2ef4ed0d73eda4d33b652bc4464b245970ad131f17f0f3ac2df6",
+          "reported_result": "passed_actual_portable_provider_connector_original_actor_job"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "case": "Plugin install and permission approval",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-release-kit-01/worker-integration.json",
+          "sha256": "0c6b422a98de2ef4ed0d73eda4d33b652bc4464b245970ad131f17f0f3ac2df6",
+          "reported_result": "passed_actual_portable_provider_connector_original_actor_job"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "case": "Schema upgrade",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-core23-maintenance-01/completed.json",
+          "sha256": "67855297c4c89965ddd40cc9a3dce2df3cb550f7c3913ca1a1d733d5345976a7",
+          "reported_result": "completed"
+        },
+        {
+          "path": "docs/evidence/G7/20261104-core23-maintenance-01/preservation.json",
+          "sha256": "968772cc8d0505f5097b8a0a840c57c992cb3f7674c392ee83768ababf15f1eb",
+          "reported_result": "passed_actual_core23_maintenance_preservation"
+        },
+        {
+          "path": "docs/evidence/G7/20261104-core23-maintenance-01/http.json",
+          "sha256": "bd29979314728fd0fc9960e2c48d0a036ec1e5da06f07ae31c875c4785cce02a",
+          "reported_result": "passed_current_core23_native_list_form_scope_HTTP"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "case": "Failed startup",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G5/20261029-premutation-fault-01/resume-qualification.json",
+          "sha256": "2ad6311113060bfb6db700f84188ed8ab5cf5770835e7d0c56b6d1e408002cb7",
+          "reported_result": "passed_actual_unchanged_release_resume"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "case": "Failed migration",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-native-uninstall-recovery-01/qualification.json",
+          "sha256": "33cf7e2d7ad4d0ffc5496b04164444657ea61d34289291ba3d582bf982773371",
+          "reported_result": "passed_current_native_uninstall_fresh_restore_separate_resume"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "case": "Worker outage",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G6/20261102-headless-ui-01/qualification.json",
+          "sha256": "8d5429cb8531a2a42f102f2abb6a3c4fad27ed292cf0ca5b9ddcaf40d888cf61",
+          "reported_result": "passed_SVC02_actual_native_UI_timeout_crash_navigation_and_recovery"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "case": "Expired/revoked credentials",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-native-uninstall-recovery-01/qualification.json",
+          "sha256": "33cf7e2d7ad4d0ffc5496b04164444657ea61d34289291ba3d582bf982773371",
+          "reported_result": "passed_current_native_uninstall_fresh_restore_separate_resume"
+        },
+        {
+          "path": "docs/evidence/G7/20261103-worker-security-transition-01/qualification.json",
+          "sha256": "9e19c0604f0f191612d7ca79cf40e062a02da59df892a6e4bb8b46ef79fccd6b",
+          "reported_result": "passed_actual_dependency_worker_transition_and_bounded_acceptance"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "case": "Backup and restoration",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-native-uninstall-recovery-01/qualification.json",
+          "sha256": "33cf7e2d7ad4d0ffc5496b04164444657ea61d34289291ba3d582bf982773371",
+          "reported_result": "passed_current_native_uninstall_fresh_restore_separate_resume"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "case": "Compromised native plugin",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-operator-isolation-01/qualification.json",
+          "sha256": "eeeb74dfb0d5996ee337b3431214b143923484e56364195d4449913b59e09497",
+          "reported_result": "passed_current_SEC08_application_operator_separation"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "case": "Artifact/catalog trust failure",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G5/20261028T0508474407833Z/archive-catalog.json",
+          "sha256": "58362543d57888e039caf48770ab582c9eac1d1326523c0fd268f2b5cce7742d",
+          "reported_result": "passed"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "case": "Upstream patch/security update",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-core23-repro-01/qualification.json",
+          "sha256": "a1e2cd1ca1d586b18fd233f078cd17b1f8e40e4604fde6096d1504c58453693c",
+          "reported_result": "passed_second_no_cache_build_declared_inventory_reproduction"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "case": "Data export/destructive removal",
+      "retained_qualification": [
+        {
+          "path": "docs/evidence/G7/20261104-native-uninstall-recovery-01/qualification.json",
+          "sha256": "33cf7e2d7ad4d0ffc5496b04164444657ea61d34289291ba3d582bf982773371",
+          "reported_result": "passed_current_native_uninstall_fresh_restore_separate_resume"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    "Help confirms command syntax, never runtime approval or recovery success. Actual fresh install/job/full bootstrap and retained failure/recovery evidence are separately hash-bound.",
+    "Retained qualifications keep their original source/environment/profile limits; this cross-check does not rerun them or relabel historical evidence as a new fresh-realm fault.",
+    "Compromise containment/data-exfiltration response and security update decisions are operator procedures; no malware exercise, generic external undo, scheduled backup command or production authorization is claimed.",
+    "Full kit expanded privacy and final section28 operator/browser/performance review remain required."
+  ]
+}
