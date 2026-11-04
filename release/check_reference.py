@@ -22,7 +22,10 @@ class Client:
         if self.token:headers['X-MP-Client-Release']=self.token
         if workspace:headers['X-MP-Workspace']=self.fixture['workspaces'][workspace]['public_id']
         if payload is not None:headers['Content-Type']='application/json'
-        request=urllib.request.Request(self.state['url']+path,headers=headers,data=json.dumps(payload).encode() if payload is not None else None)
+        # Windows' OS resolver need not map arbitrary *.localhost names. The
+        # fixture publishes only loopback; preserve its selected HTTP host.
+        headers['Host']=self.state['hostname']+':'+str(self.state['port'])
+        request=urllib.request.Request('http://127.0.0.1:'+str(self.state['port'])+path,headers=headers,data=json.dumps(payload).encode() if payload is not None else None)
         try:response=self.http.open(request,timeout=30)
         except urllib.error.HTTPError as error:response=error
         with response:return response.status,json.loads(response.read())
@@ -41,10 +44,17 @@ class Client:
         return value['result']
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--kit',type=Path,required=True);parser.add_argument('--workdir',type=Path,required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--kit',type=Path,required=True);parser.add_argument('--workdir',type=Path,required=True);parser.add_argument('--resume-before-data',action='store_true');args=parser.parse_args()
     reference=Reference(args);state=reference.state();assert state['phase']=='references_installed'
     marker=reference.local/'reference-checks.json'
-    if marker.exists():raise ValueError('Walkthrough attempted; inspect saved step and actual effects before continuation')
+    if marker.exists():
+        if not args.resume_before_data:raise ValueError('Walkthrough attempted; inspect saved step and actual effects before continuation')
+        previous=load(marker)
+        assert previous['phase']=='authenticating' and previous['checks']==[] and previous['notes']=={}
+        counts=reference.sql(state,'reconcile-walkthrough-before-data',"SELECT jsonb_build_array((SELECT count(*) FROM mp_example_note),(SELECT count(*) FROM mp_example_canvas_board));")
+        assert json.loads(counts)==[0,0],'Existing data requires manual reconciliation'
+        retained=marker.with_name('reference-checks.before-data-attempt01.json');assert not retained.exists();marker.rename(retained)
+    elif args.resume_before_data:raise ValueError('No prior pre-data walkthrough to reconcile')
     record=dict(phase='authenticating',run_id=str(uuid4()),checks=[],notes={});write(marker,record)
     def step(name):record['phase']=name;write(marker,record)
     def passed(name):record['checks'].append(name);write(marker,record)
