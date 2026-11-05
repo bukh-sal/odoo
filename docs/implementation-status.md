@@ -2,13 +2,13 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T19:28:19.4459812Z
+- Updated UTC: 2026-11-05T19:28:59.5258997Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **G7 in progress. Core26/Shell13 runs at configuration7, imagefb02 and inventory2747. Installed UI09 and independent reproduction passed.**
-- Active item: **G-01e. Complete the §28 fresh developer walkthrough and final handoff.** Browser work is deferred at the user's direction.
+- Active item: **G-01e. Complete the §28 fresh developer walkthrough and final handoff.** Browser work is deferred at the user's direction. G-01e is blocked pending resumption of that walkthrough.
 - Current result: **99/99 acceptance checks passed and 99 weighted points.** G7 remains open for the §28 completion audit.
 - The user confirmed that browser verification should remain deferred after backend qualification. The generation5 target and its separate worker are running. Its protected walkthrough inputs are prepared.
 
@@ -426,7 +426,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |
-| G7-FRESH-BROWSER-01 | Deferred at user direction | User confirmed the deferral after backend qualification. Existing core26 UI09 remains passed. Generation5 walkthrough inputs are prepared and the browser remains unopened. |
+| G7-FRESH-BROWSER-01 | Blocked by user-directed deferral | User confirmed the deferral after backend qualification. Existing core26 UI09 remains passed. Generation5 walkthrough inputs are prepared and the browser remains unopened. |
 | G7-ID08-CURRENT-01 | resolved; current ID08 passed |20261104-ui-qualification-01/identity-qualification.json actual sameAlice Aadmin/Bviewer native lists/forms/lateHTTP200 response cancellation, no crosstab cache/data/role contamination.17tables/fourruntimes exact; no foreign requests/exceptions; ownedprofile process exited0. UI09/fullrelease still open. |
 | G7-NETWORK-INDEPENDENCE-01 | backend/static qualified; current browser/release closure still open |20261104-network-independence-01/backend-qualification.json+alias-qualification.json: actual internal app/DB/worker topology/TCPcontrols,4159source hashes,24root families+optional reportfont CDN, actual2CSS0remote resources,17tables/fourruntimes exact. No arbitrary native/browser/OS containment claim. OPS03 not yet requalified. |
 | G7-OPERATOR-KIT-01 | explicit final-release gap; environment preflight passed | Draft source lacks current heartbeat and still packages14de. Current-source CLI works in kit Python/19tests; actual completed readbacks agree and174control files/fourruntimes exact. Final qualified source/image refresh and delta privacy required, including heartbeat/package_reference/developer guide/PLATFORM and ADR0058 release-input helpers. Nine tests/actual stale-receipt refusal prove producer guard only; no lifecycle replay. |
