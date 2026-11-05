@@ -44,7 +44,14 @@ observation exists; it does not mean the entire final release passed.
   [Provenance](evidence/G7/20261105-core26-release-kit-01/provenance.json),
   [kit privacy](evidence/G7/20261105-core26-release-kit-01/privacy-delta.json) and
   [log privacy](evidence/G7/20261105-core26-release-kit-01/fresh-log-privacy.json)
-- [ ] Verify expanded privacy and Git identity after the source-only refresh.
+- [x] Verify expanded privacy and Git identity after the source-only refresh.
+  The fresh run used the prior source snapshot. The refresh changed the source
+  archive alone and the new catalog preflight passed a separate boundary test.
+  [Source refresh](evidence/G7/20261105-core26-release-kit-01/source-refresh.json)
+  and [final privacy](evidence/G7/20261105-core26-release-kit-01/privacy-delta-final.json)
+- [x] Bind retained core23 fault/restore/resume evidence to the current recovery
+  implementation. The observed failure and recovery remain scoped to core23.
+  [Recovery binding](evidence/G7/20261105-core26-release-kit-01/retained-recovery-binding.json)
 - [ ] Reconcile final fresh-developer proof and complete the §28 audit/handoff.
   The old kit's actual fresh setup is retained evidence, not proof that the
   current final kit was installed or that a new developer extended a plugin.
@@ -64,11 +71,11 @@ observation exists; it does not mean the entire final release passed.
 | 7 Lifecycle/executor | [Operations](operations.md), [runbooks](operator-runbooks.md), current core24 receipt | Package qualified CLI observation addition |
 | 8 Workspace/identity | Acceptance ID/TEN/API evidence in status; ID08 current-line two-tab proof | Retain exact unchanged seams; requalify any affected final change |
 | 9 Reference plugins/worker | Native Notes/Labels, minimal Canvas, separately managed Stats | Preserve examples and separate worker startup; no product expansion |
-| 10 Mapped tests | Full acceptance ledger in status | Resolve BOOT-02, OPS-03, UI-09; verify all 99 required R1 checks |
+| 10 Mapped tests | All 99 required checks passed in the status ledger | Include the verified count and exact current receipts in the final handoff |
 | 11 Fresh install/restore | [Kit rehearsal](release-kit.md), [recovery](recovery-rehearsal.md) | Explicit final-image/source compatibility and fresh developer reconciliation |
 | 12 Operator/developer docs | Twelve runbooks; setup, security and [developer entry point](developer-guide.md) | Check commands and full installed workflow against final kit |
 | 13 Limitations/security | [HTTP security](http-security.md), [network](network-independence.md), native trust warnings | Carry residual advisory/license/authority limits into handoff |
-| 14 Release/lock inventory | Draft kit, dependency locks and hash-bound receipts | Final kit inventory/source/image/privacy binding |
+| 14 Release/lock inventory | Verified 52-component draft kit, source/image/privacy binding, dependency locks | Identify final local draft location and manifest in the handoff |
 | 15 Final handoff | Status, evidence and runbooks exist | Final startup/test/example/recovery commands, URL/account setup, risks and milestone |
 
 Do not replay completed lifecycle operations, recreate the benchmark or start

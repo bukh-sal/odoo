@@ -1,0 +1,30 @@
+{
+  "result": "retained_fault_restore_evidence_bound_to_current_implementation",
+  "historical_fault_recovery_image": "sha256:14de369e46f20616e76847cbcacbcb66d5bb791808b950aaf97bc607d31d6b93",
+  "current_core26_image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+  "matching_source_sha256": {
+    "packages/platform_sdk/modular_platform/native_executor.py": "41eaf76d81cb28d0d42c8f0a8d4eb133fff11c02f6ac181706330b8de46e0694",
+    "packages/platform_sdk/modular_platform/native_uninstall.py": "5ef431827250172bea0e65689c8bbfea7fe364e084839c52e4dec148bf46de22",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "ccf6128dc1477dd59f17de106d705cfed8ac2d604419a6abb2b758b26c15276b",
+    "packages/platform_sdk/modular_platform/lifecycle_impact.py": "4f1256253fc42de039654cd92a3291a26352382be09339c5921ddf3056ab5fa8",
+    "packages/platform_sdk/modular_platform/lifecycle_observation.py": "fe53ece3b54aa02f9d25d9985bcaa5cefd845196d9a650db2f0f62ab9810648b",
+    "packages/platform_sdk/modular_platform/operator_store.py": "f01a1fb449865aeb0fad699e1cc2167ff0895b2d76471e142be094d938896630",
+    "packages/platform_sdk/modular_platform/uninstall_planning.py": "c486b28141a9c13c95b73b96fa71d37a28367c4bf0f200262121874a0f83f489"
+  },
+  "changed_application_build_inputs": [
+    "packages/platform_sdk/modular_platform/projection.py",
+    "platform_addons/mp_core/__manifest__.py",
+    "platform_addons/mp_shell/__manifest__.py",
+    "platform_addons/mp_shell/static/src/dialog_accessibility.xml",
+    "platform_addons/mp_shell/static/src/host.css",
+    "platform_addons/mp_shell/static/src/host.js",
+    "platform_addons/mp_shell/static/src/operations.js",
+    "platform_addons/mp_shell/views/bootstrap.xml",
+    "tools/modular.py",
+    "tools/operation_progress.py",
+    "tools/package_reference.py"
+  ],
+  "projection_change": "Only the declared platform version changed.",
+  "operator_cli_change": "Apply and recovery calls wrapped in qualified executor observation. Existing restore and resume methods and exact-hash parameters remain.",
+  "scope": "Source and build receipt comparison, plus prior independently observed CLI and current clean apply/worker evidence. The native fault and restore ran on core23 and were not replayed."
+}
