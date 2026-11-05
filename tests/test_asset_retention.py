@@ -95,13 +95,23 @@ class PreparationTests(unittest.TestCase):
     def setUp(self):
         self.bundle=CompileBundle();self.calls=[]
         def get(name,**kwargs):self.calls.append((name,kwargs));return self.bundle
-        self.env={'ir.qweb':SimpleNamespace(_get_asset_bundle=get)}
+        self.env={'ir.qweb':SimpleNamespace(_get_asset_bundle=get),
+                  'ir.module.module':SimpleNamespace(search_count=lambda domain: 1)}
 
     def test_regular_public_assets_have_exact_hashes_and_fixed_bundle(self):
         rows=prepare(self.env)
         self.assertEqual(len(rows),2)
         self.assertEqual(self.calls,[('mp_shell.assets_host',{'css':True,'js':True,'rtl':False})])
         self.assertEqual(rows[0]['sha256'],hashlib.sha256(b'public css').hexdigest())
+
+    def test_stock_webclient_assets_when_shell_is_absent(self):
+        self.env['ir.module.module'].search_count = lambda domain: 0
+        for kind in ('css', 'js'):
+            asset = self.bundle.outputs[kind][0]
+            asset.url = asset.url.replace('mp_shell.assets_host', 'web.assets_web')
+        rows = prepare(self.env)
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(self.calls, [('web.assets_web', {'css': True, 'js': True, 'rtl': False})])
 
     def test_private_payload_cannot_override_the_fixed_database_selector(self):
         with tempfile.TemporaryDirectory() as directory:

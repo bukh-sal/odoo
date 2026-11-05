@@ -1,6 +1,6 @@
 """Fixed operator maintenance child: compile public host assets before ready.
 
-Only the installed release's fixed host bundle is compiled. Plans supply target
+Only the installed release's fixed WebClient bundle is compiled. Plans supply target
 identities, never paths, source text, SQL, bundle names or commands. This is not
 an HTTP endpoint or a default-worker startup migration.
 """
@@ -21,10 +21,11 @@ def validate_configuration(path, data):
 
 def prepare(env):
     rows = {}
-    # Current bootstrap publishes the regular minified host bundle. Debug and
-    # native locale/RTL variants retain their native generation path; they are
-    # not falsely declared precompiled by this regular-release preflight.
-    bundle = env['ir.qweb']._get_asset_bundle('mp_shell.assets_host', css=True, js=True, rtl=False)
+    # Pick from fixed bundles using installed registry state, never plan input.
+    # Debug, dark, print and locale/RTL variants use native generation.
+    shell = env['ir.module.module'].search_count([('name', '=', 'mp_shell'), ('state', '=', 'installed')])
+    name = 'mp_shell.assets_host' if shell else 'web.assets_web'
+    bundle = env['ir.qweb']._get_asset_bundle(name, css=True, js=True, rtl=False)
     for asset in bundle.files:
         if asset.get('filename') and not Path(asset['filename']).is_file():
             raise ValueError('Public host asset source missing')
@@ -40,7 +41,7 @@ def prepare(env):
         for asset in attachments:
             if (not asset.public or asset.res_model != 'ir.ui.view' or asset.res_id != 0
                     or asset.create_uid.id != 1 or not re.fullmatch(
-                        r'/web/assets/(?:[0-9a-f]{7}|[0-9a-f]{64})/mp_shell\.assets_host(?:\.rtl)?\.min\.(?:js|css)', asset.url)
+                        rf'/web/assets/(?:[0-9a-f]{{7}}|[0-9a-f]{{64}})/{re.escape(name)}(?:\.rtl)?\.min\.{kind}', asset.url)
                     or asset.mimetype not in ('application/javascript', 'text/javascript', 'text/css')):
                 raise ValueError('Unexpected public host asset metadata')
             raw = asset.raw

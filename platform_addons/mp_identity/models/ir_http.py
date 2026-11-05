@@ -3,11 +3,20 @@ from odoo.exceptions import AccessError
 from odoo.http import request
 
 from ..scopes import resolve_scope
-from ..release import require_client_release
+from ..release import ClientReleaseUnavailable, current_release, require_client_release
 
 
 class IrHttp(models.AbstractModel):
     _inherit = "ir.http"
+
+    def webclient_rendering_context(self):
+        context = super().webclient_rendering_context()
+        try:
+            context["session_info"]["mp_client_release_token"] = current_release(self.env)["token"]
+        except ClientReleaseUnavailable:
+            # The dataset fence still refuses calls while publication is unavailable.
+            pass
+        return context
 
     @classmethod
     def _pre_dispatch(cls, rule, args):

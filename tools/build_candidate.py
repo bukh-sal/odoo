@@ -83,7 +83,7 @@ def main():
     for name,digest in source.items():
         if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise RuntimeError('Build inputs changed; inspect candidate without deploying it')
     report=record|{'state':'built','image_id':image_id,'utc':datetime.now(timezone.utc).isoformat(),
-        'inventory_digest':runtime['inventory_digest'],'artifacts':runtime['inventory']['artifacts'],
+        'inventory_digest':runtime['inventory_digest'],'artifacts':runtime['inventory'].get('artifacts',{}),
         'deployment_changed':False,'result':'built_not_deployed'}
     (output/'candidate-build.json').write_text(json.dumps(report,indent=2)+'\n')
     record_path.write_text(json.dumps(report,indent=2)+'\n')

@@ -1,6 +1,6 @@
 """Once-only local reference deployment from a verified kit; never resets old data."""
 from __future__ import annotations
-import argparse,configparser,json,secrets,shutil,socket,subprocess,sys
+import argparse,configparser,json,secrets,socket,subprocess,sys
 from datetime import datetime,timezone
 from pathlib import Path
 from uuid import uuid4
@@ -55,18 +55,21 @@ class Reference:
         return self.command(label,command+['-c','/run/secrets/odoo_config','-d',state['database'],'--no-http','--workers=0','--max-cron-threads=0']+args,data=code.encode() if code else None,timeout=300)
     def prepare(self):
         if not self.args.reference_fixture:raise ValueError('Explicit --reference-fixture acknowledgement required')
+        self.prepare_resources(load(self.kit/'images.json'), self.manifest['source_commit'],
+                               (self.kit/'plugins/curated-trust.json').read_bytes(), self.kit/'images.tar')
+    def prepare_resources(self,images,source_commit,trust,image_archive=None,*,subnets=None):
         if self.local.exists():raise ValueError('Reference already attempted; inspect its state, never reset it')
         protect_directory(self.local);protect_directory(self.local/'logs');protect_directory(self.local/'operator')
         nonce=secrets.token_hex(6);project='mp-r0-r1release'+nonce;database='mp_disposable_r0_r1_release_'+nonce
         port=self.args.port
         with socket.socket() as connection:connection.bind(('127.0.0.1',port))
-        images=load(self.kit/'images.json');app=images['images']['application']['image_id']
+        app=images['images']['application']['image_id']
         state=dict(phase='preparing',project=project,database=database,image_id=app,inventory_digest=images['application_inventory_digest'],
                    port=port,hostname='release-'+nonce+'.localhost',site_id=str(uuid4()),deployment_id=str(uuid4()),bootstrap_id=str(uuid4()),
-                   created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),source_commit=self.manifest['source_commit'],
+                   created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),source_commit=source_commit,
                    owned_resources=dict(networks=[project+'_runtime',project+'_edge'],volumes=[project+'_'+n for n in ['appconfig','dbconfig','bootstrap','proxyconfig','filestore','pgdata']]))
         state['url']='http://'+state['hostname']+':'+str(port);write(self.local/'state.json',state)
-        self.command('load-kit-images',['docker','load','--input',str(self.kit/'images.tar')],timeout=240)
+        if image_archive is not None:self.command('load-kit-images',['docker','load','--input',str(image_archive)],timeout=240)
         for role,row in images['images'].items():
             actual=json.loads(self.command('inspect-'+role,['docker','image','inspect',row['image_id']]))[0]
             if actual['Id']!=row['image_id']:raise ValueError('Loaded image differs')
@@ -76,6 +79,7 @@ class Reference:
             full=project+'_'+name
             if subprocess.run(['docker','network','inspect',full],capture_output=True).returncode==0:raise ValueError('Network already exists')
             self.command('network-'+name,['docker','network','create',*(['--internal'] if name=='runtime' else []),
+                *(['--subnet',subnets[name]] if subnets else []),
                 '--label','com.docker.compose.project='+project,'--label','com.docker.compose.network='+name,'--label','com.modular.disposable='+project,full])
         for name in ['appconfig','dbconfig','bootstrap','proxyconfig','filestore','pgdata']:
             full=project+'_'+name
@@ -111,7 +115,7 @@ print('New owned configuration volumes seeded')
                 ports=['127.0.0.1:'+str(port)+':8069'],read_only=True,tmpfs=['/tmp','/var/cache/nginx:uid=101,gid=101,mode=0755','/var/run:uid=101,gid=101,mode=0755'],mem_limit='128m',cpus=.5,networks=['runtime','edge'])},
             volumes={name:dict(external=True,name=project+'_'+name) for name in groups},networks={name:dict(external=True,name=project+'_'+name) for name in ['runtime','edge']})
         write(self.local/'compose.json',compose)
-        shutil.copyfile(self.kit/'plugins/curated-trust.json',self.local/'operator/trust.json')
+        (self.local/'operator/trust.json').write_bytes(trust)
         store=OperatorStore.initialize(self.local/'operator/control',{state['deployment_id']:[state['site_id']]},allow_noninteractive=True)
         state.update(policy_version=store.policy['policy_version'],operator_authorization_generation=store.policy['authorization_generation'])
         self.phase(state,'configured')
@@ -123,16 +127,19 @@ print('New owned configuration volumes seeded')
         required={row['digest'] for row in load(self.kit/'plugins/index.json')['packages']}
         if not required.issubset({row['digest'] for row in catalog.snapshot()}):
             raise ValueError('Import all reviewed reference kit archives before initialization')
+        self.initialize_core(state,'mp_shell,auth_password_policy')
+        self.publish(state)
+    def initialize_core(self,state,addons):
         self.phase(state,'starting_empty_database')
         self.compose(state,'up','-d','--wait','--no-deps','db')
         if self.sql(state,'assert-new-database',"SELECT count(*) FROM pg_database WHERE datname='"+state['database']+"';",database='postgres').strip()!=b'0':raise ValueError('Database exists; never overwrite')
         self.command('create-empty-database',['docker','exec',state['project']+'-db-1','createdb','-U','postgres','-O','modular','-T','template0',state['database']])
-        self.native(state,'core-init',['-i','mp_shell,auth_password_policy','--stop-after-init','--without-demo'])
+        self.native(state,'core-init',['-i',addons,'--stop-after-init','--without-demo'])
         raw=self.native(state,'core-provision',[],(ROOT/'release/reference_seed.py').read_text())
         rows=[line.split('MP_REFERENCE_RESULT=',1)[1] for line in raw.decode().splitlines() if line.startswith('MP_REFERENCE_RESULT=')]
         if len(rows)!=1:raise ValueError('Provisioning result uncertain; inspect native state before any retry')
-        write(self.local/'fixtures.json',json.loads(rows[0]));self.publish(state)
-    def publish(self,state):
+        write(self.local/'fixtures.json',json.loads(rows[0]))
+    def publish(self,state,*,prepare_assets=True):
         self.phase(state,'publishing_core_bootstrap')
         target=self.local/'operator/target.json';trust=configuration(self.local/'operator/trust.json')
         catalog=Catalog(self.private/'catalog',trust,readonly=True)
@@ -148,7 +155,8 @@ print('New owned configuration volumes seeded')
         self.command('start-guarded-core',['docker','start',worker]);wait_ready(worker)
         reader=DockerObserver(config);observed=reader.read();document=reader.state(observed,catalog.snapshot())
         if document['state']['installations']:raise ValueError('Unexpected existing installations')
-        NativeExecutor(OperatorStore(self.local/'operator/control'),target,self.private/'catalog',trust)._prepare_assets(state['bootstrap_id'],config,document['state'],observed,protect_directory(self.local/'operator/bootstrap-assets'))
+        if prepare_assets:
+            NativeExecutor(OperatorStore(self.local/'operator/control'),target,self.private/'catalog',trust)._prepare_assets(state['bootstrap_id'],config,document['state'],observed,protect_directory(self.local/'operator/bootstrap-assets'))
         publish_profile(reader,catalog)
         self.command('start-core-edge',['docker','compose','-f',str(self.local/'compose.json'),'up','-d','--no-deps','edge'])
         self.phase(state,'core_only_ready')

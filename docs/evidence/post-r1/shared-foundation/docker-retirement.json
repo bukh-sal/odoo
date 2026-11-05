@@ -1,0 +1,45 @@
+{
+  "projects": {
+    "mp-r0-r1release8b5481d9db7d": {
+      "containers_removed": 50,
+      "volumes_removed": [
+        "mp-r0-r1release8b5481d9db7d_appconfig",
+        "mp-r0-r1release8b5481d9db7d_dbconfig",
+        "mp-r0-r1release8b5481d9db7d_bootstrap",
+        "mp-r0-r1release8b5481d9db7d_proxyconfig",
+        "mp-r0-r1release8b5481d9db7d_filestore",
+        "mp-r0-r1release8b5481d9db7d_pgdata"
+      ],
+      "networks_removed": [
+        "mp-r0-r1release8b5481d9db7d_runtime",
+        "mp-r0-r1release8b5481d9db7d_edge"
+      ]
+    },
+    "mp-r0-r1release42a87d18d78b": {
+      "containers_removed": 26,
+      "volumes_removed": [
+        "mp-r0-r1release42a87d18d78b_appconfig",
+        "mp-r0-r1release42a87d18d78b_dbconfig",
+        "mp-r0-r1release42a87d18d78b_bootstrap",
+        "mp-r0-r1release42a87d18d78b_proxyconfig",
+        "mp-r0-r1release42a87d18d78b_filestore",
+        "mp-r0-r1release42a87d18d78b_pgdata"
+      ],
+      "networks_removed": [
+        "mp-r0-r1release42a87d18d78b_runtime",
+        "mp-r0-r1release42a87d18d78b_edge"
+      ]
+    }
+  },
+  "image_tags": [
+    "modular-platform:retained-13d716cc-e567-411a-b2e3-914cbb67c5c6",
+    "modular-platform:retained-b11cbb29-65be-4278-a304-c1f8f80a82bc",
+    "modular-platform:stage-20261105t202237729397z",
+    "modular-platform:retained-042ee7fe-561b-46d5-89d4-a22746642d1b",
+    "modular-platform:retained-e55811c2-d638-4242-ac47-659105a504cb",
+    "modular-platform:retained-e7558b48-f0b2-4758-8599-692bd0f1ccbc",
+    "modular-platform:stage-20261105t202941969135z",
+    "modular-platform:stage-20261105t203018102102z"
+  ],
+  "result": "retired_owned_docker_assets"
+}

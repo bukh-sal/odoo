@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T19:35:36.771508+00:00
+- Updated UTC: 2026-11-05T20:46:00Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -16,10 +16,14 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora
-Tasks slice. The offline Maintenance import, registry, workflow and permission
-probe passed. Its first attempt exposed the HTML editor's undeclared IAP
-import. The active item is the Aurora native workflow and stock WebClient
-integration. The two-deployment upgrade and recovery remain pending.
+Tasks slice. Both passed offline registry and access checks, and both changed
+persisted workflow state through the stock Odoo interface. The shared Notes
+fixture verified separate workspace tabs and viewer restrictions. Both adopted
+the same core27 image with independent approvals and checkpoints. Aurora
+restored to a fresh database and separately resumed while Maintenance remained
+live on core27. Both saved a new change through stock Odoo after the update.
+All four stress checkpoints passed, and the disposable Docker assets were
+retired. [Lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json)
 [Plan and checkpoint](../planning/shared_foundation_stress_test.md)
 
 ## Last backend continuation — Windows regression fixtures corrected
@@ -511,6 +515,7 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
+- Post-R1 shared foundation stress test complete. The two Docker deployments were retired after the successor browser checks. Start any new proof with fresh disposable targets. The private site journals and checkpoint receipts remain in `.local/foundation-stress/sites-02`, with build records in `.local/foundation-stress/builds`. Scoped baseline `a0b2f85f` and successor `20f71fb9` are retired. See the [stress checklist](../planning/shared_foundation_stress_test.md) and [lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json).
 - Local R1 is qualified. Read [the handoff](r1-handoff.md), [closure map](r1-release-checklist.md) and [gate decision](evidence/G7/20261105-section28-audit-01/gate-G7.json). The developer reference tab remains open at Canvas.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
 - Operation `966c6bbf-37bd-412f-b1fe-c5d55ed7d207` completed. Its preservation and eight container retirements are recorded in `evidence/G7/20261105-core26-maintenance-01/`. All apply, browser and reproduction handles are terminal. Follow the recorded state for new work.

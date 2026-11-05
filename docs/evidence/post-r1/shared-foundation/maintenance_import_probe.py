@@ -48,7 +48,7 @@ else:
 assert requests.with_user(manager).get_views([(False, 'list'), (False, 'form')])['views'].keys() >= {'list', 'form'}
 modules = env['ir.module.module'].search([('name', 'in', ['html_editor', 'iap', 'mail', 'maintenance'])])
 assert set(modules.mapped('state')) == {'installed'} and len(modules) == 4
-print('MP_MAINTENANCE_RESULT ' + json.dumps({'installed': sorted(modules.mapped('name')),
+print('MP_NATIVE_RESULT ' + json.dumps({'installed': sorted(modules.mapped('name')),
     'equipment_created': True, 'request_advanced': True, 'native_list_form': True,
     'outsider_search_and_direct_read_denied': True}))
 """
@@ -75,10 +75,11 @@ def manifest_closure(installed, root):
     return added
 
 
-def registry_probe(image, suffix):
-    db_name = 'mp_maintenance_probe'
+def registry_probe(image, suffix, *, addon='maintenance', workflow=WORKFLOW,
+                   addons_path='/opt/modular/addons,/probe/declared,/probe/implicit'):
+    db_name = 'mp_native_probe'
     db_user = 'mp_probe_db'
-    db_container = 'mp-maintenance-db-' + suffix
+    db_container = 'mp-native-probe-db-' + suffix
     password = secrets.token_urlsafe(24)
     environment = {**os.environ, 'POSTGRES_PASSWORD': password, 'PGPASSWORD': password}
     db_id = command('docker', 'run', '-d', '--rm', '--pull', 'never', '--network', 'none',
@@ -99,17 +100,17 @@ def registry_probe(image, suffix):
                '--read-only', '--tmpfs', '/tmp', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges',
                '--env', 'PGPASSWORD', '--entrypoint', '/venv/bin/python', image, '-B', '/opt/modular/odoo-bin']
         config = ['--db_host=127.0.0.1', '--db_user=' + db_user, '-d', db_name, '--no-http', '--max-cron-threads=0',
-                  '--data-dir=/tmp/odoo', '--addons-path=/opt/modular/addons,/probe/declared,/probe/implicit']
-        install = command('docker', 'run', '--name', 'mp-maintenance-install-' + suffix,
-                          *run, *config, '-i', 'maintenance', '--without-demo=True',
+                  '--data-dir=/tmp/odoo', '--addons-path=' + addons_path]
+        install = command('docker', 'run', '--name', 'mp-native-probe-install-' + suffix,
+                          *run, *config, '-i', addon, '--without-demo=True',
                           '--stop-after-init', env=environment, check=False)
         if install.returncode:
             return {'installed': False, 'error': install.stderr[-4500:]}
-        workflow = command('docker', 'run', '--name', 'mp-maintenance-workflow-' + suffix,
-                           *run, 'shell', *config, input=WORKFLOW, env=environment, check=False)
-        result = next((line for line in workflow.stdout.splitlines() if line.startswith('MP_MAINTENANCE_RESULT ')), None)
-        if workflow.returncode or not result:
-            return {'installed': True, 'workflow_passed': False, 'error': workflow.stderr[-4500:]}
+        run_workflow = command('docker', 'run', '--name', 'mp-native-probe-workflow-' + suffix,
+                               *run, 'shell', *config, input=workflow, env=environment, check=False)
+        result = next((line for line in run_workflow.stdout.splitlines() if line.startswith('MP_NATIVE_RESULT ')), None)
+        if run_workflow.returncode or not result:
+            return {'installed': True, 'workflow_passed': False, 'error': run_workflow.stderr[-4500:]}
         return {'workflow_passed': True, **json.loads(result.split(' ', 1)[1])}
     finally:
         assert command('docker', 'inspect', db_id, '--format', '{{.Name}}').stdout.strip() == '/' + db_container

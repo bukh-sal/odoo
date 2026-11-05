@@ -4,6 +4,8 @@ Date: 2026-10-28 (Asia/Riyadh).
 
 Status: accepted direction; native dialog/notification/command adapters implemented and qualified. The bounded action-service seam experiment below is complete: retain native View hosting for R1. Client release fencing remains G5 work. No full WebClient replacement follows from this ADR.
 
+The later foundation stress test uses the stock Odoo WebClient and defers appearance changes. See [ADR 0059](0059-stock-webclient-foundation-stress.md) for that deployment shape.
+
 ## Clarification and retained work
 
 The frontend goal is **maximum practical reuse of Odoo's existing UI infrastructure, with our own appearance and platform-specific additions**. Stock Odoo appearance is not a requirement. A custom layout does not itself justify replacing working code, and retaining Owl/assets does not by itself establish reuse of action, routing or interaction behavior.

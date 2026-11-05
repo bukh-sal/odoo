@@ -1,0 +1,255 @@
+{
+  "result": "passed",
+  "sites": {
+    "aurora": {
+      "project": "mp-r0-r1release8b5481d9db7d",
+      "operations": {
+        "install": {
+          "operation_id": "13d716cc-e567-411a-b2e3-914cbb67c5c6",
+          "plan_hash": "sha256:4780532ba3ebc146ebb86891d7c08e8d18d67e6b1764919febd6447fbf156edd",
+          "business_before": "sha256:ac7628d9569ed397da92e1e812c94c871c9cdf5cf8f60e66ac398adf0c043449",
+          "review_digest": "sha256:e22c9813fccae196bb75b5547d58600f1ee89d85e4be924e523ac7cc22bf08a8",
+          "approval_digest": "sha256:7d15bda8919b84fd0fb4e169a21add1c7b0e78ebece4fb33e2d02eaf3c121855",
+          "checkpoint_manifest_digest": "sha256:2debf86656d35ab59e500c20a89fefe3c51f974309e053a938655adb87f9b37c",
+          "post_install_comparison": {
+            "operation_id": "13d716cc-e567-411a-b2e3-914cbb67c5c6",
+            "generation": 2,
+            "image": "sha256:a0b2f85fa6cda817082c1caa4963b248c5f494593f313e2ae0a6886d0c790be2",
+            "business_preserved": true,
+            "activation_advanced_each_workspace_policy_once": true
+          }
+        },
+        "fault-recover": {
+          "operation_id": "e55811c2-d638-4242-ac47-659105a504cb",
+          "plan_hash": "sha256:f147d64a46446e2e715e2e0cf7b1b88b7aa612a63efc9d8e61a6205904b0beda",
+          "business_before": "sha256:ceac52055a2578b2295928663bf089a6fbf079cfd4e5a3fc532493b160bd0614",
+          "review_digest": "sha256:75c85fb81e41bfd5182852985fc2b7cb12169538e438e37cd3d08e5b133a1ec1",
+          "approval_digest": "sha256:46c5e388290a16b02282bc9a71726bc74e133acb6e721f6c70644ddcf62f67b2",
+          "generation": 4,
+          "result_image": "sha256:a0b2f85fa6cda817082c1caa4963b248c5f494593f313e2ae0a6886d0c790be2",
+          "fresh_database": true,
+          "app_and_authority_rows_preserved": true,
+          "restored_policy_advanced_once": true,
+          "retained_files_preserved": true,
+          "restored_files": 42,
+          "peer_image": "sha256:20f71fb9155b1c3cee7aaeded566839a4d4d544b30275e03574989f9c4ceabd9",
+          "peer_worker_unchanged": true,
+          "restore_digest": "sha256:1d350236be6614961195e28266b065292a05feb7c43bfb1aaaa8bdbf3e26ed99",
+          "resume_digest": "sha256:6f53e708095fdaa13d5b18d8a288978f29d84652f41cadf07a485706101439f4",
+          "checkpoint_manifest_digest": "sha256:de6863b70329129175f354d476de477816833282f7f267e1d7709602930efed3"
+        },
+        "upgrade": {
+          "operation_id": "e7558b48-f0b2-4758-8599-692bd0f1ccbc",
+          "plan_hash": "sha256:685fe63c0f6ed42ad4db7635bacf30e5c41772c97f1618393d2d220c2f8af117",
+          "business_before": "sha256:948404603c733d84bd16a8a313f347f14b68932a0752e9685dbe8a744cc26967",
+          "review_digest": "sha256:df9a3bb9b76c6f6e11d99acc2791c050aafb2f77b8641ec713f869190ae532cb",
+          "approval_digest": "sha256:bb8c61c23f83608770931d24044323aff8b31f5347e62635bedccf18d3fdd871",
+          "generation": 5,
+          "result_image": "sha256:20f71fb9155b1c3cee7aaeded566839a4d4d544b30275e03574989f9c4ceabd9",
+          "app_and_authority_rows_preserved": true,
+          "retained_files_preserved": true,
+          "checkpoint_manifest_digest": "sha256:c383ee2abf38779a8c03b19ea247a679c7176187c078d15fe52cc2d20f3fa713",
+          "native_core": "19.0.0.1.27",
+          "app": "mp_aurora_tasks",
+          "prewarmed_assets": [
+            {
+              "url": "/web/assets/1e45475/web.assets_web.min.css",
+              "mimetype": "text/css",
+              "bytes": 851792,
+              "sha256": "a82db4cf1f1098900c1f688145c91c44ae6c350adf4304dd716d5a05f5359eee"
+            },
+            {
+              "url": "/web/assets/a150614/web.assets_web.min.js",
+              "mimetype": "application/javascript",
+              "bytes": 4072117,
+              "sha256": "1f4e48c4e784c6518e1348a835d6b4c09bc6fe14c265c6487ea70f6d4b518ee0"
+            }
+          ]
+        }
+      },
+      "http": {
+        "baseline": {
+          "site": "aurora",
+          "label": "baseline",
+          "generation": 2,
+          "image": "sha256:a0b2f85fa6cda817082c1caa4963b248c5f494593f313e2ae0a6886d0c790be2",
+          "native_workflow_record_preserved": true,
+          "outsider_read_denied": true,
+          "notes_workspace_search_isolated": true,
+          "notes_cross_scope_read_and_viewer_create_denied": true,
+          "notes": {
+            "A": 1,
+            "B": 2
+          }
+        },
+        "restored": {
+          "site": "aurora",
+          "label": "restored",
+          "generation": 4,
+          "image": "sha256:a0b2f85fa6cda817082c1caa4963b248c5f494593f313e2ae0a6886d0c790be2",
+          "native_workflow_record_preserved": true,
+          "outsider_read_denied": true,
+          "notes_workspace_search_isolated": true,
+          "notes_cross_scope_read_and_viewer_create_denied": true,
+          "prior_release_token_denied": true,
+          "notes": {
+            "A": 1,
+            "B": 2
+          }
+        },
+        "successor": {
+          "site": "aurora",
+          "label": "successor",
+          "generation": 5,
+          "image": "sha256:20f71fb9155b1c3cee7aaeded566839a4d4d544b30275e03574989f9c4ceabd9",
+          "native_workflow_record_preserved": true,
+          "outsider_read_denied": true,
+          "notes_workspace_search_isolated": true,
+          "notes_cross_scope_read_and_viewer_create_denied": true,
+          "prior_release_token_denied": true,
+          "notes": {
+            "A": 1,
+            "B": 2
+          }
+        }
+      }
+    },
+    "maintenance": {
+      "project": "mp-r0-r1release42a87d18d78b",
+      "operations": {
+        "install": {
+          "operation_id": "b11cbb29-65be-4278-a304-c1f8f80a82bc",
+          "plan_hash": "sha256:52b717c7f7c22bba829f64c0753b8708f69b56c529a1eae7884ec0fb72ae59ba",
+          "business_before": "sha256:eb10cbab154de7434787adeb2e56b404713c789105af0e4b417c836d9c83c7fb",
+          "review_digest": "sha256:9df0b42fcd7d10fc225e8205659eb27c6cde4657dd0543f54e4ecc508f23c6bb",
+          "approval_digest": "sha256:b9cf2744457535bed9a646f6c6404c493abb955d58b799511c0823e810f2ae57",
+          "checkpoint_manifest_digest": "sha256:9b38f59d75a3ebb5ab01a2071cdbc28522bbc0f5bf72463ed548cdf7f1ba6755",
+          "post_install_comparison": {
+            "operation_id": "b11cbb29-65be-4278-a304-c1f8f80a82bc",
+            "generation": 2,
+            "image": "sha256:a0b2f85fa6cda817082c1caa4963b248c5f494593f313e2ae0a6886d0c790be2",
+            "business_preserved": true,
+            "activation_advanced_each_workspace_policy_once": true
+          }
+        },
+        "upgrade": {
+          "operation_id": "042ee7fe-561b-46d5-89d4-a22746642d1b",
+          "plan_hash": "sha256:04e7ce85d4d64c88498f8e35459e27a3dcc7d39f14748555e60c4d8fce03d1e9",
+          "business_before": "sha256:6635b0809c1eadf3af0eee43a7843970ab00fa82d57cf852b0b8581137215527",
+          "review_digest": "sha256:c1fee3b32cefff358bb007b8da531f42e25109523b05c77c5e172fd53e259cd9",
+          "approval_digest": "sha256:b32fdd97a9607a88a6b9c594f134293f1e722aed40b2a5a79da531f42bf6ef3b",
+          "generation": 3,
+          "result_image": "sha256:20f71fb9155b1c3cee7aaeded566839a4d4d544b30275e03574989f9c4ceabd9",
+          "app_and_authority_rows_preserved": true,
+          "retained_files_preserved": true,
+          "checkpoint_manifest_digest": "sha256:0209b1fbbed3ca548c3a17dd6313e78afbb9ba45f64ada6eeea70aaf76cafeb8",
+          "native_core": "19.0.0.1.27",
+          "app": "maintenance",
+          "prewarmed_assets": [
+            {
+              "url": "/web/assets/26dcf3d/web.assets_web.min.css",
+              "mimetype": "text/css",
+              "bytes": 953071,
+              "sha256": "c665098e4ca188945cc5e2abb297c5f73f2b04c5dd0915c3d8ac6a3f9f4baa9b"
+            },
+            {
+              "url": "/web/assets/37595c1/web.assets_web.min.js",
+              "mimetype": "application/javascript",
+              "bytes": 5505558,
+              "sha256": "42f2f7507c6d56c436624db7d5eba12040b6eab7f1d1e05db7b899939bfec092"
+            }
+          ]
+        }
+      },
+      "http": {
+        "baseline": {
+          "site": "maintenance",
+          "label": "baseline",
+          "generation": 2,
+          "image": "sha256:a0b2f85fa6cda817082c1caa4963b248c5f494593f313e2ae0a6886d0c790be2",
+          "native_workflow_record_preserved": true,
+          "outsider_read_denied": true,
+          "notes_workspace_search_isolated": true,
+          "notes_cross_scope_read_and_viewer_create_denied": true,
+          "notes": {
+            "A": 1,
+            "B": 2
+          }
+        },
+        "successor": {
+          "site": "maintenance",
+          "label": "successor",
+          "generation": 3,
+          "image": "sha256:20f71fb9155b1c3cee7aaeded566839a4d4d544b30275e03574989f9c4ceabd9",
+          "native_workflow_record_preserved": true,
+          "outsider_read_denied": true,
+          "notes_workspace_search_isolated": true,
+          "notes_cross_scope_read_and_viewer_create_denied": true,
+          "notes": {
+            "A": 1,
+            "B": 2
+          }
+        },
+        "peer-during-recovery": {
+          "site": "maintenance",
+          "label": "peer-during-recovery",
+          "generation": 3,
+          "image": "sha256:20f71fb9155b1c3cee7aaeded566839a4d4d544b30275e03574989f9c4ceabd9",
+          "native_workflow_record_preserved": true,
+          "outsider_read_denied": true,
+          "notes_workspace_search_isolated": true,
+          "notes_cross_scope_read_and_viewer_create_denied": true,
+          "prior_release_token_denied": true,
+          "notes": {
+            "A": 1,
+            "B": 2
+          }
+        }
+      }
+    }
+  },
+  "builds": {
+    "initial": {
+      "image_id": "sha256:03973137ca62fc124d7f4a90c27843303317664ed5be3c2961f94d5819d93fb4",
+      "inventory_digest": "sha256:7984c587b318702f9f3c7b2e13fb5795c265ec13c9349c45f35c291333fe730a",
+      "distribution_policy": "deploy/distribution-r1-foundation-stress.json",
+      "build_receipt_sha256": "b140aeb420a863736293f9f77c48a9f67561d0992349ceda570c2eb8904995d5"
+    },
+    "common_baseline": {
+      "image_id": "sha256:a0b2f85fa6cda817082c1caa4963b248c5f494593f313e2ae0a6886d0c790be2",
+      "inventory_digest": "sha256:c45bec91992e319933f966806b87b3b100acfd0937fafaaeb71c64aade26edd9",
+      "distribution_policy": "deploy/distribution-r1-foundation-stress-scoped.json",
+      "build_receipt_sha256": "a7af7a73dbc0c2fe83517fce33f2da4c3499343477a59d55b3f8732c670a7a91"
+    },
+    "shared_successor": {
+      "image_id": "sha256:20f71fb9155b1c3cee7aaeded566839a4d4d544b30275e03574989f9c4ceabd9",
+      "inventory_digest": "sha256:d312fc439a8ee15ea6b3f417e0f5a739daa523152c7b58d58698bc6c7bbefe12",
+      "distribution_policy": "deploy/distribution-r1-foundation-stress-scoped.json",
+      "build_receipt_sha256": "d4aaf5958803d6b3caffecbc198ce577872d9c69dd48114ebd8fa17a6cc09c81"
+    }
+  },
+  "in_app_browser": {
+    "baseline": [
+      "Aurora task saved as Done",
+      "Maintenance request advanced to In Progress",
+      "Two simultaneous Notes tabs in the same session displayed different workspace rows",
+      "Viewer form lacked create and edit controls"
+    ],
+    "restored": [
+      "Aurora reopened after sign-in with the original task at Done and its original assignee"
+    ],
+    "successor": [
+      "Maintenance retained its original equipment and request stage, then saved Repaired and reloaded it",
+      "Aurora retained its stage and assignment, then saved a description and reloaded it",
+      "The Aurora viewer tab displayed only its workspace row"
+    ],
+    "stale_tab": "Stock Odoo showed a generic error when the old Maintenance tab attempted a dataset operation. Reload opened the successor normally."
+  },
+  "regression": {
+    "windows_passed": 538,
+    "windows_platform_skipped": 1,
+    "linux_startup_passed": 7,
+    "frozen_files": 106,
+    "frozen_rows": 8
+  }
+}

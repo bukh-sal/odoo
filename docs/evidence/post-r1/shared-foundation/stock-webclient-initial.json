@@ -1,0 +1,17 @@
+{
+  "result": "passed_initial_native_workflows",
+  "baseline_image": "sha256:03973137ca62fc124d7f4a90c27843303317664ed5be3c2961f94d5819d93fb4",
+  "browser": "Codex in-app browser",
+  "aurora": {
+    "project": "mp-r0-r1release8b5481d9db7d",
+    "generation": 1,
+    "observed": ["Stock task list with persisted list, assignee and due date", "Stock task form", "Native stage picker", "Task saved as Done"]
+  },
+  "maintenance": {
+    "project": "mp-r0-r1release42a87d18d78b",
+    "generation": 1,
+    "observed": ["Stock app menu and Maintenance dashboard", "Native request Kanban and form", "Request advanced to In Progress", "Chatter recorded the stage transition"]
+  },
+  "workspace_context": ["Aurora record URL retained its workspace through native navigation", "Two tabs opened with different workspace selections in the same session", "An unavailable workspace produced a native access dialog while the original tab continued rendering"],
+  "limits": ["Aurora Tasks uses its native participation rules and Maintenance uses upstream record rules", "The initial two-tab check exercised the workspace header, not workspace-scoped business data", "Native Notes isolation and lifecycle comparisons require their own checks"]
+}
