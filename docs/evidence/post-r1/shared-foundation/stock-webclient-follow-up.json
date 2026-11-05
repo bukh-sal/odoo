@@ -1,0 +1,63 @@
+{
+  "result": "passed",
+  "site": "mp-r0-r1releaseab6847fa2070",
+  "operations": {
+    "install": {
+      "operation_id": "35ac697b-6f75-430d-acb4-845df83c77e6",
+      "plan_hash": "sha256:be95f37da350f4401d8ac199dda10f882247bcaf833af88ea869b5fc1485533c",
+      "review_digest": "sha256:f05ad0fa752ca26acd3175681c516e92aca5d13282c7ea1f23b47f41a6096a86",
+      "approval_digest": "sha256:53ddb05153dfac2e55e8189770baccd608e9354a19a41f96214a97f87a22dedb",
+      "generation": 2,
+      "base_image": "sha256:d4d0271dfea5055d6bee609508266ba8d1b97084444c2c385f26cf803808d2a3",
+      "result_image": "sha256:0102e64358994e4f490d869c7f5f88bbe3385f981d4a570f72eb1ec789f8b130",
+      "app_and_authority_rows_preserved": true,
+      "retained_files_preserved": true,
+      "checkpoint_manifest_digest": "sha256:532447577253c2acc3f287a03609be515ec793f74d9798fed5f25afbb1e3dcc6"
+    },
+    "notes-upgrade": {
+      "operation_id": "176fd01e-8715-4978-8fb5-bd39eebd3822",
+      "plan_hash": "sha256:1675b2e019f6e20434166596b46ef7dcf59fb78a1f99338931e860846d7b42c4",
+      "review_digest": "sha256:a47b3bdaa373278b693826a08c69bd38cf5f2c1e792a4c581b5555b84c33728e",
+      "approval_digest": "sha256:e8812ac5947a875afcf74c882eba9b4b65a033eeb5c1071cb69739f1b2342545",
+      "generation": 3,
+      "base_image": "sha256:0102e64358994e4f490d869c7f5f88bbe3385f981d4a570f72eb1ec789f8b130",
+      "result_image": "sha256:7a1755f568b3e16037c445a7681d197b0592481b1f3a0868321558a7a3b18c3e",
+      "app_and_authority_rows_preserved": true,
+      "retained_files_preserved": true,
+      "checkpoint_manifest_digest": "sha256:2d0529af55365ea65f0a1d8540dd591c7ac097025c140bbb2b54e3b0d7597c57"
+    }
+  },
+  "stock_browser": {
+    "stale_release_save_refused": true,
+    "one_native_recovery_notice": true,
+    "recovery_opened_same_record_and_workspace_in_new_tab": true,
+    "new_tab_save_reloaded": true,
+    "original_unsaved_input_remained": true,
+    "note_saved_at_revision_2": true,
+    "concurrent_stale_revision_1_save_refused": true,
+    "viewer_form_read_only": true,
+    "stale_note_conflict_display": "Generic Odoo error. Old input stayed in the form."
+  },
+  "dataset_negative_checks": {
+    "stale_note_write_denied": true,
+    "viewer_write_denied": true,
+    "stored_rows_unchanged_after_denial": true
+  },
+  "regression": {
+    "python_passed": 38,
+    "node_passed": 7,
+    "frozen_files": 106
+  },
+  "retired_docker_assets": {
+    "containers": 26,
+    "volumes": 6,
+    "networks": 2,
+    "image_tags": [
+      "modular-platform:retained-35ac697b-6f75-430d-acb4-845df83c77e6",
+      "modular-platform:stage-20261105t214211920433z",
+      "modular-platform:retained-176fd01e-8715-4978-8fb5-bd39eebd3822",
+      "modular-platform:stage-20261105t214251353263z",
+      "modular-platform:stage-20261105t214507413552z"
+    ]
+  }
+}

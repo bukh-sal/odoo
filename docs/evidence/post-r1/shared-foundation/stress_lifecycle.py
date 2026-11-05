@@ -59,9 +59,10 @@ def checkpoint_files(control, operation, database):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=['install', 'verify-install', 'upgrade', 'fault-recover', 'resume-restored'])
+    parser.add_argument('phase', choices=['install', 'verify-install', 'notes-upgrade', 'upgrade', 'fault-recover', 'resume-restored'])
     parser.add_argument('site', choices=ADDONS)
     parser.add_argument('--candidate', required=True, type=Path)
+    parser.add_argument('--run', choices=['sites-02', 'stock-release-notice'], default='sites-02')
     args = parser.parse_args()
     if args.phase in ('fault-recover', 'resume-restored') and args.site != 'aurora':
         raise ValueError('Only the nominated Aurora test deployment may receive a fault')
@@ -129,6 +130,7 @@ def main():
     if receipt.exists():
         raise ValueError('Inspect the recorded lifecycle attempt before further mutation')
     install = args.phase == 'install'
+    notes_upgrade = args.phase == 'notes-upgrade'
     state = {'phase': 'preparing', 'site': args.site, 'candidate': image, 'base_image': target['image_id']}
 
     def phase(name, **details):
@@ -140,13 +142,23 @@ def main():
     trust_path = private / 'trust.json'
     catalog_path = private / 'catalog'
     digest = candidate['artifacts'][NOTES]['digest']
-    if install:
+    if install or notes_upgrade:
         trust = load(trust_path)
-        assert trust['approved_digests'] == []
-        trust['approved_digests'] = [digest]
+        assert digest not in trust['approved_digests']
+        if notes_upgrade:
+            from reference_package import assemble
+
+            _, raw, _ = assemble(ROOT, ROOT / 'plugins/notes/plugin.toml')
+            assert 'sha256:' + hashlib.sha256(raw).hexdigest() == digest
+            archive = private / candidate['artifacts'][NOTES]['file']
+            with archive.open('xb') as handle:
+                handle.write(raw)
+        else:
+            assert trust['approved_digests'] == []
+            archive = ROOT / '.local/release-kit-rehearsal/private/catalog/blobs' / (digest[7:] + '.mplug')
+        trust['approved_digests'].append(digest)
         trust['generation'] += 1
         write(trust_path, trust)
-        archive = ROOT / '.local/release-kit-rehearsal/private/catalog/blobs' / (digest[7:] + '.mplug')
         Catalog(catalog_path, configuration(trust_path)).add(archive, expected_digest=digest)
     validator = configuration(trust_path)
     catalog = Catalog(catalog_path, validator, readonly=True)
@@ -167,13 +179,13 @@ def main():
                    for workspace in fixtures['workspaces'].values()]
     else:
         targets = [{key: row[key] for key in ('installation_id', 'site_id', 'workspace_id', 'plugin_id')}
-                   | {'action': 'deploy'} for row in before['state']['installations']]
+                   | {'action': 'upgrade' if notes_upgrade else 'deploy'} for row in before['state']['installations']]
     bundle = prepare_staged_plan(before, observed['sites'], catalog.snapshot(), staged['runtime'], descriptor,
-        targets=targets, operation_type='install' if install else 'core_upgrade', operation_id=str(uuid4()),
+        targets=targets, operation_type='install' if install else 'upgrade' if notes_upgrade else 'core_upgrade', operation_id=str(uuid4()),
         created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), base_runtime=observed['runtime'])
     operation = bundle['plan']['operation_id']
     assert bundle['plan']['backup']['required']
-    if not install:
+    if not install and not notes_upgrade:
         assert bundle['plan']['destructive'] and not bundle['plan']['permission_changes']
     executor = StagedNativeExecutor(store, target_path, catalog_path, validator)
     validate = executor._validate()
@@ -234,13 +246,17 @@ def main():
     current = load(target_path)
     if args.phase != 'fault-recover':
         assert current['image_id'] == image
-    assert snapshot(current, args.site, notes=not install, policy_advanced=install or args.phase == 'fault-recover') == business_before
+    assert snapshot(current, args.site, notes=not install, policy_advanced=install or notes_upgrade or args.phase == 'fault-recover') == business_before
     reader = DockerObserver(current)
     after_observation = reader.read()
     after = reader.state(after_observation, catalog.snapshot())['state']
     new_files = files(reader)
     assert all(new_files.get(name) == value for name, value in files_before.items())
-    if not install:
+    if notes_upgrade:
+        assert len(after['installations']) == len(before['state']['installations'])
+        assert all(row['plugin_id'] == NOTES and row['feature_state'] == 'enabled' for row in after['installations'])
+        assert after['bindings'] == before['state']['bindings']
+    elif not install:
         assert after['installations'] == before['state']['installations']
         assert after['bindings'] == before['state']['bindings']
     modules = {row['addon']: row['version'] for row in after_observation['sites'][0]['native_modules']}

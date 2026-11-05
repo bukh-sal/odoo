@@ -37,7 +37,9 @@ The pass requires both real workflows and the shared update. Import smoke, copie
 
 The adapter loads into the stock WebClient and forwards the pinned release token plus the tab's explicit workspace on dataset calls. It preserves Odoo's menus, router, views and dialogs. Dataset responses bypass the client RPC cache where the default key would omit that scope. The original shell remains available for the previously qualified R1 flow. [Initial browser evidence](../docs/evidence/post-r1/shared-foundation/stock-webclient-initial.json)
 
-Core27 changes release asset preparation and runs a real native module update. It does not exercise an Odoo major-version transition or a business schema migration. The stale browser tab showed a generic Odoo error and a reload reopened the successor. The scoped Notes test covers native reads, viewer restrictions and scoped creates through dataset calls. Editing existing Notes still requires its revision-aware caller. The planner currently requires at least one registered plugin scope for core upgrades, which the shared Notes fixture supplied.
+Core27 changes release asset preparation and runs a real native module update. The shared rehearsal leaves business schema migrations and future platform major releases for their own qualification. The platform owns its release path as an independent fork. The stale browser tab showed a generic Odoo error and a reload reopened the successor. The scoped Notes test covers native reads, viewer restrictions and scoped creates through dataset calls. Editing existing Notes still requires its revision-aware caller. The planner currently requires at least one registered plugin scope for core upgrades, which the shared Notes fixture supplied. [Fork release policy](../docs/architecture-decisions/0060-independent-fork-release-policy.md) · [Remaining checks](remaining_checks.md)
+
+The later stock WebClient follow-up verified the release recovery notice and revision-aware Notes form after real staged release changes. [Follow-up evidence](../docs/evidence/post-r1/shared-foundation/stock-webclient-follow-up.json)
 
 To repeat the native database probe from this repository:
 

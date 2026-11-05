@@ -63,7 +63,7 @@ print('MP_STRESS_RESULT=' + json.dumps(result))
 class StressSite(Reference):
     def __init__(self, args):
         self.args = args
-        self.local = ROOT / '.local/foundation-stress/sites-02' / args.site
+        self.local = ROOT / '.local/foundation-stress' / getattr(args, 'run', 'sites-02') / args.site
         self.private = self.local / 'operator'
 
     def prepare(self):
@@ -100,6 +100,7 @@ if __name__ == '__main__':
     parser.add_argument('action', choices=['prepare', 'initialize', 'status'])
     parser.add_argument('site', choices=ADDONS)
     parser.add_argument('--candidate', type=Path)
+    parser.add_argument('--run', choices=['sites-02', 'stock-release-notice'], default='sites-02')
     args = parser.parse_args()
     args.port = {'aurora': 18104, 'maintenance': 18105}[args.site]
     getattr(StressSite(args), args.action)()

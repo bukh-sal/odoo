@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T20:46:00Z
+- Updated UTC: 2026-11-05T21:35:45Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -25,6 +25,17 @@ live on core27. Both saved a new change through stock Odoo after the update.
 All four stress checkpoints passed, and the disposable Docker assets were
 retired. [Lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json)
 [Plan and checkpoint](../planning/shared_foundation_stress_test.md)
+
+The platform now has an independent fork release policy. Future major upgrade
+checks target the platform's own releases. See [ADR 0060](architecture-decisions/0060-independent-fork-release-policy.md)
+and the [remaining-check inventory](../planning/remaining_checks.md).
+
+The stock WebClient follow-up verified the new release notice across a staged
+release change, including the original unsaved form and a persisted edit in the
+new tab. Notes 0.2.9 passed current save, stale save and viewer denial. The test
+site's Docker assets were retired. The next item is to define the supported
+stock release profile and bind its qualification to an exact kit. Background
+execution is deferred. [Evidence](evidence/post-r1/shared-foundation/stock-webclient-follow-up.json)
 
 ## Last backend continuation — Windows regression fixtures corrected
 
