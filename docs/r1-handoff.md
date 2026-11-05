@@ -3,8 +3,9 @@
 The local branch is `platform/r1`. The selected kit is
 `.local/releases/r1-0.1.26`. Its `kit-inventory.json` records the exact source
 commit, and `SHA256SUMS` identifies the manifest.
-The status ledger identifies the active gate and the closure checklist tracks
-the remaining §28 evidence. The kit is local and remains a draft while G7 is open.
+G7 and the §28 local R1 handoff passed. The kit retains the producer's
+draft metadata; the separate gate receipt records its qualification.
+[G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 [Implementation status](implementation-status.md) and [release checklist](r1-release-checklist.md)
 
 ## Start and verify a disposable installation
@@ -83,10 +84,11 @@ journal for its actual state and the recovery runbook for a failed fixture.
   verified the modified Labels action, the served Canvas asset and scoped
   permissions, with business data and the separate worker preserved. This
   developer exercise uses its own image on port 18101. The release kit and
-  reference on port 18100 retain the shipped variants. Fresh browser rendering
-  is pending.
+  reference on port 18100 retain the shipped variants. The in-app browser
+  verified native Notes, the editor-only Labels dialog and the one-card Canvas.
   [Review](evidence/G7/20261105-core26-developer-install-01/review.json) and
-  [installed backend](evidence/G7/20261105-core26-developer-install-01/backend-verification.json)
+  [installed backend](evidence/G7/20261105-core26-developer-install-01/backend-verification.json) and
+  [browser observations](evidence/G7/20261105-section28-audit-01/in-app-browser.json)
 - The fixture uses loopback ingress and an internal runtime network. Native
   Python and same-origin plugin code are trusted with their runtime authority.
   Independent operator review governs execution and grants constrain supported

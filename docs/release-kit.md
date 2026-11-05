@@ -1,8 +1,8 @@
 # Local R1 release kit rehearsal
 
-G7 is in progress. The selected local draft is `.local/releases/r1-0.1.26`.
-Its clean offline operator, fresh application and separate worker passed backend
-qualification. The fresh browser walkthrough and final audit are pending.
+G7 passed for the selected local kit at `.local/releases/r1-0.1.26`. The clean
+offline operator, fresh install, independent worker and developer walkthrough
+passed. [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json) and [local handoff](r1-handoff.md)
 [Status](implementation-status.md) tracks closure.
 [ADR0053](architecture-decisions/0053-local-release-kit.md) defines the artifact
 and trust boundaries.

@@ -3,13 +3,13 @@
 Current release status is in [implementation-status.md](implementation-status.md).
 The dated entries below retain their original scope and limitations; their old
 progress figures are historical, not current gate status. G0–G6 passed for their
-qualified profiles; G7 is active. See the [release closure checklist](r1-release-checklist.md)
+qualified profiles and G7 passed for local R1. See the [release closure checklist](r1-release-checklist.md)
 and [current operator/kit preflight](evidence/G7/20261104-operator-release-preflight-01/qualification.json).
 
 The [§28 backend audit](evidence/G7/20261105-section28-audit-01/backend-audit-regression.json)
 ties the selected kit and both live references to their release receipts, checks
 the failed-upgrade recovery evidence and matches the acceptance ledger to the
-specification. The [local handoff](r1-handoff.md) links the remaining browser work.
+specification. The [local handoff](r1-handoff.md) links the G7 gate decision and in-app browser observations.
 
 Latest G6 lifecycle evidence:
 

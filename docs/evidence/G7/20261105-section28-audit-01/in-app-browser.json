@@ -1,0 +1,25 @@
+{
+  "result": "passed_fresh_developer_walkthrough_in_app_browser",
+  "utc": "2026-11-05T19:34:14.449968+00:00",
+  "target": {
+    "loopback_url": "http://release-1c1f3b9c7a85.localhost:18101",
+    "application_image": "sha256:a5b4b8edd67175221442ad7ba006603b06626cd9270985c3a9488ad19143b2e3",
+    "generation": 5,
+    "operation_id": "e68a26a9-a065-40a2-a237-bc09cd28275e"
+  },
+  "surface": "ChatGPT in-app browser",
+  "observations": {
+    "synthetic_alice_session": true,
+    "reference_a_native_notes_list_and_form": true,
+    "updated_labels_button": "Edit labels (developer example)",
+    "named_labels_dialog": "Edit note labels",
+    "escape_closed_dialog": true,
+    "reference_b_own_note_visible_and_a_note_absent": true,
+    "reference_b_native_form_without_labels_action": true,
+    "canvas_subtitle": "Developer reference page",
+    "canvas_card_count": 1,
+    "notes_canvas_and_completed_job_rows_exact_to_postupgrade": true
+  },
+  "developer_fixture_cosmetic_observation": "A doubled middle-dot encoding appears in the disposable developer variant. The Windows evidence helper decoded the source with a platform default. The helper now reads UTF-8 explicitly and a temporary-copy test verified only the subtitle changes. The shipped source in the selected kit has the correct separator.",
+  "scope": "Browser rendering and navigation of the installed developer exercise, no business writes. Prior network, accessibility, authorization, lifecycle and recovery receipts retain their own scopes."
+}

@@ -7,8 +7,8 @@ minimal reference examples.
 
 The [implementation status](docs/implementation-status.md) records the active gate,
 verified progress, failed/pending checks and next action. The [release checklist](docs/r1-release-checklist.md)
-maps the remaining R1 deliverables. G7 is in progress; the existing local release
-kit is a draft.
+maps all R1 deliverables. G7 passed for the qualified local kit.
+[Local handoff](docs/r1-handoff.md)
 
 Use the [operator runbooks](docs/operator-runbooks.md) for installation, exact-hash
 approval, upgrade and recovery. [Verification](docs/verification.md) links dated

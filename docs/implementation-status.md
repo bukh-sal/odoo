@@ -2,17 +2,17 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T19:28:59.5258997Z
+- Updated UTC: 2026-11-05T19:35:36.771508+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **G7 in progress. Core26/Shell13 runs at configuration7, imagefb02 and inventory2747. Installed UI09 and independent reproduction passed.**
-- Active item: **G-01e. Complete the §28 fresh developer walkthrough and final handoff.** Browser work is deferred at the user's direction. G-01e is blocked pending resumption of that walkthrough.
-- Current result: **99/99 acceptance checks passed and 99 weighted points.** G7 remains open for the §28 completion audit.
-- The user confirmed that browser verification should remain deferred after backend qualification. The generation5 target and its separate worker are running. Its protected walkthrough inputs are prepared.
+- Current phase/gate: **G7 passed for local R1.** Core26/Shell13 remains the qualified release.
+- Active item: **G-01e complete.** The in-app browser walkthrough and §28 handoff passed.
+- Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
+- The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
-## Current continuation — Windows regression fixtures corrected
+## Last backend continuation — Windows regression fixtures corrected
 
 - The supplemental Windows sweep ran 538 tests with one failure, two errors and one skip. Two metadata upgrade tests selected the current Stats version instead of a successor. A retained-scope enablement test still expected the old no-checkpoint path. The corrected tests keep downgrade refusal and explicit permission acknowledgment coverage, require the current checkpoint/restart, and verify that the executable release stays pinned. Runtime source is unchanged. The two affected test modules pass all 27 tests. [Regression triage](evidence/G7/20261105-section28-audit-01/regression-triage.json)
 - The full Windows rerun completed with 537 passes and one platform skip. All seven startup tests passed on the exact core26 Linux image, including the skipped symlink case. The temporary container auto-removed. The Node suite's 46 passes and TypeScript 7.0.2 check remain recorded. [Regression evidence](evidence/G7/20261105-section28-audit-01/regression-results.json)
@@ -301,7 +301,7 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 
 ## Progress estimate
 
-**99 weighted points overall.** G0–G6 contribute 90 and G7 contributes 9/10. All 99 required acceptance checks passed and five R2 checks are excluded. The remaining point covers the fresh developer walkthrough and final §28 audit and handoff.
+**100 weighted points overall.** G0–G6 contribute 90 and G7 contributes 10. All 99 required acceptance checks passed and five R2 checks are excluded.
 
 ## Gate checklist
 
@@ -314,7 +314,7 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 | G4 | D: composition and Canvas | passed | 10 | Same requalification/current source; packaged/native extension checks retained, actual core operation/UI07 remain G5 |
 | G5 | E: lifecycle and packaging | passed_qualified_profiles_current_integration_requalified | 25 | Historical gate-G5/native normal uninstall/reinstall/source-removal plus current core23 combined native child/fault/fresh restore/separate resume in G7/20261104-native-uninstall-recovery-01/qualification.json. Final current-release OPS03 remains G7. |
 | G6 | F: jobs/events/services | passed | 10 | `evidence/G6/20261102-headless-ui-01/gate-G6.json`; all11JOB/EVT/SVC checks. Current backend coverage plus actual native UI timeout/crash/navigation/recovery and exact preservation. |
-| G7 | G: qualification | in_progress | 10 | 9/10 earned. Final §28 walkthrough, audit and handoff remain. |
+| G7 | G: qualification | passed | 10 | In-app browser, backend audit and §28 handoff passed. See 20261105-section28-audit-01/gate-G7.json. |
 
 ## Work checklist
 
@@ -365,7 +365,7 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | F-01e2 | External completion/credential reconciliation | passed | JOB-03; SVC; shared recovery | F-01c/d and F-01e1 | Actual reference-restore-01 terminal-history fault/freshDB/current-key/approval/fresh-review/ordinary-job resume plus job03-01 real non-idempotent effect/crash/unknown reporting/no retry/guarded resume refusal qualify bounded R1 behavior. Effect-specific manual reconciliation required; no generic automatic undo/resolver claim. |
 | F-01f | Complete G6 integration and qualification | passed | all JOB/EVT/SVC; applicable ID/API/security/recovery | F-01c/d/e2 | current-backend-audit-01/coverage.json plus headless-ui-01/gate-G6.json: all11G6 acceptance IDs bound to current source/real native+UI evidence. |
 | F-01f-a | Audit current installed backend coverage | passed | JOB/EVT/SVC backend evidence; no UI acceptance credit | Current24/117 and retained qualified profiles | current-backend-audit-01/coverage.json and retirement.json:12nativecases,14event-hostpaths,6matrixfiles,16SDKfiles; unchanged data/worker,4terminalchildren removed. |
-| G-01 | Qualify full R1 and reproduce release/runbooks | in_progress | all R0/R1 | G6 | G-01e is active. Current UI09, reproduction and OPS-03 passed. Final §28 walkthrough and handoff remain. |
+| G-01 | Qualify full R1 and reproduce release/runbooks | passed | all R0/R1 | G6 | G-01e completed with §28 walkthrough and handoff. |
 | G-01a | Audit supported native scope paths | passed | ID-03; §§11/23 | G6 | notes8-labels4-read-01/qualification.json: actual29/132/Notes8/Labels4/core20/identity1.5,63native/31HTTP/Canvas; pending Labels installation/feature revocation fixed, original binary/server-action proofs retained. Data/schema/files/worker preserved.1G7point. |
 | G-01b | Accessibility and RTL walkthrough | passed | UI-09; §17.4 | G6; current ID08 | Installed core26 closes UI09. See G-01b5 and 20261105-core26-maintenance-01/installed-observations.json. |
 | G-01b1 | Correct measured shell accessibility through immutable core maintenance | passed | UI09 prerequisite; no gate point | ADR0057/0052 | Core24/Shell11 candidate admission and actual rollout are retained as intermediate evidence. |
@@ -388,7 +388,7 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | G-01d2a | Check current operator in kit environment without lifecycle replay | passed_bounded_preflight | OPS03 prerequisite; no point | G-01d2 | 20261104-operator-release-preflight-01/qualification.json:50 kit components/eight code deltas/19tests/current completed journal exact/174control files/fourruntimes exact/133valueprivacy0. Final source/image kit still pending. |
 | G-01d2b | Developer entry point and versioned reference packaging | passed_bounded_packaging | §28/OPS03 prerequisite; no point | G-01d2a | PLATFORM.md/developer-guide.md/package_reference.py; actual kitPython/eightCLI/two versioned archives validated+byte-reproduced, mismatch-nooutput/overwrite-preserved,133privacy0. Full final-kit installed developer workflow remains required. |
 | G-01d2c | Bind release producer/source refresh to explicit application proof | passed_bounded_guard | BOOT02/OPS03/§28 prerequisite; no point | G-01d2b; ADR0058 | 9tests/real assemble+refresh oldreceipt refusals beforeoutput/current50kitcomponents unchanged/133privacy0. Current final candidate/reproduction/kit stillrequired. |
-| G-01e | Final release evidence and handoff | in_progress | All R1; §28 | G-01a..d | Installed examples and the current backend audit passed. Fresh browser rendering is deferred. Record the final 15-deliverable result after the browser walkthrough. |
+| G-01e | Final release evidence and handoff | passed | All R1; §28 | G-01a..d | Fresh browser, backend and 15-deliverable audit passed. |
 
 ## G5 exit criteria: complete
 
@@ -426,7 +426,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |
-| G7-FRESH-BROWSER-01 | Blocked by user-directed deferral | User confirmed the deferral after backend qualification. Existing core26 UI09 remains passed. Generation5 walkthrough inputs are prepared and the browser remains unopened. |
+| G7-FRESH-BROWSER-01 | Resolved | User selected the in-app browser. Generation5 native Notes, Labels and Canvas walkthrough passed. |
 | G7-ID08-CURRENT-01 | resolved; current ID08 passed |20261104-ui-qualification-01/identity-qualification.json actual sameAlice Aadmin/Bviewer native lists/forms/lateHTTP200 response cancellation, no crosstab cache/data/role contamination.17tables/fourruntimes exact; no foreign requests/exceptions; ownedprofile process exited0. UI09/fullrelease still open. |
 | G7-NETWORK-INDEPENDENCE-01 | backend/static qualified; current browser/release closure still open |20261104-network-independence-01/backend-qualification.json+alias-qualification.json: actual internal app/DB/worker topology/TCPcontrols,4159source hashes,24root families+optional reportfont CDN, actual2CSS0remote resources,17tables/fourruntimes exact. No arbitrary native/browser/OS containment claim. OPS03 not yet requalified. |
 | G7-OPERATOR-KIT-01 | explicit final-release gap; environment preflight passed | Draft source lacks current heartbeat and still packages14de. Current-source CLI works in kit Python/19tests; actual completed readbacks agree and174control files/fourruntimes exact. Final qualified source/image refresh and delta privacy required, including heartbeat/package_reference/developer guide/PLATFORM and ADR0058 release-input helpers. Nine tests/actual stale-receipt refusal prove producer guard only; no lifecycle replay. |
@@ -497,11 +497,11 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 1. The exact versioned developer upgrade completed on the fresh rehearsal. It serves the changed Labels action and Canvas asset with the existing data and worker.
 2. Retired the refused candidate image and ten completed containers. The fresh reference, original release reference and retained recovery storage remain available.
-3. The local handoff and closure checklist are linked. G-01e remains open for the deferred browser walkthrough and final §28 audit.
+3. The in-app browser verified the modified examples. The §28 handoff and G7 decision record closure.
 
 ## Resume capsule
 
-- G-01e is active. Read [the closure map](r1-release-checklist.md), [handoff](r1-handoff.md) and the [backend audit](evidence/G7/20261105-section28-audit-01/backend-audit-regression.json). The fresh operator in `.local/release-kit-core26-rehearsal` serves the modified examples at `http://release-1c1f3b9c7a85.localhost:18101`, generation5, candidate image a5b4. Its selected operator trust is `.local/g7-core26-developer-install/upgrade/trust.json`. All backend handles are terminal. The protected inputs in `.local/g7-core26-fresh-browser` are ready. When the user resumes browser checks, verify the same live target and run `fresh_browser.mjs` in `evidence/G7/20261105-core26-release-kit-01/` directly. Then record final §28/G7 closure.
+- Local R1 is qualified. Read [the handoff](r1-handoff.md), [closure map](r1-release-checklist.md) and [gate decision](evidence/G7/20261105-section28-audit-01/gate-G7.json). The developer reference tab remains open at Canvas.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
 - Operation `966c6bbf-37bd-412f-b1fe-c5d55ed7d207` completed. Its preservation and eight container retirements are recorded in `evidence/G7/20261105-core26-maintenance-01/`. All apply, browser and reproduction handles are terminal. Follow the recorded state for new work.
 - Preserve prior recovery realms, selected dependency images and protected browser profiles. The existing kit r1-0.1.23 is retained as historical evidence.

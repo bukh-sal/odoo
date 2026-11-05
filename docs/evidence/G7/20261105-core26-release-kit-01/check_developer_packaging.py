@@ -29,7 +29,7 @@ def run(label,example,output,ok=True):
     assert (result.returncode==0)==ok,label+' unexpected result; inspect private diagnostics'
     return result
 def edit(path,before,after):
-    text=path.read_text();assert before in text;path.write_text(text.replace(before,after),encoding='utf8')
+    text=path.read_text(encoding='utf8');assert before in text;path.write_text(text.replace(before,after),encoding='utf8')
 for example,addon,old,new,visible_file,old_text,new_text in [
     ('notes_labels','mp_example_notes_labels','0.2.4','0.2.5','plugins/notes_labels/plugin.toml','Edit labels','Edit labels (developer example)'),
     ('canvas','mp_example_canvas','0.1.4','0.1.5','platform_addons/mp_example_canvas/static/src/page.js','Collect ideas. Move them forward.','Developer reference page')]:
