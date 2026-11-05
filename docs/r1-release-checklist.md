@@ -63,23 +63,23 @@ observation exists; it does not mean the entire final release passed.
   Two isolated versioned examples validate/reproduce; mismatch and overwrite
   refusals preserve output. This does not check off the full fresh-developer path.
 
-| §28 deliverable | Existing entry point / observation | Final closure still required |
+| §28 deliverable | Audited evidence | Remaining |
 | --- | --- | --- |
-| 1 Source/branch | Local `platform/r1`; exact source commits in receipts | Identify final commit and clean working tree |
-| 2 Upstream/patches | [Patch ledger](upstream-patches.md), pinned substrate | Include final source/notice inventory |
-| 3 Reproducible environment/build | [Baseline](baseline.md), [toolchain](operator-toolchain.md), ADR0052 | BOOT-02 on final image and its exact dependency base |
-| 4 Native/custom UI SDK | `packages/platform_sdk`, `packages/host_sdk`, [developer guide](developer-guide.md), two installed developer examples verified over HTTP | Verify the modified examples in the browser |
-| 5 Schema/planner | [Frozen contracts](contracts/freeze-v1.md), [planning](planning-core.md) | Bind final source to unchanged contracts or requalify affected changes |
-| 6 Catalog/install | [Packaging](packaging.md), actual kit install | Reconcile final kit inputs; historical prose is not latest lifecycle state |
-| 7 Lifecycle/executor | [Operations](operations.md), [runbooks](operator-runbooks.md), current core24 receipt | Package qualified CLI observation addition |
-| 8 Workspace/identity | Acceptance ID/TEN/API evidence in status; ID08 current-line two-tab proof | Retain exact unchanged seams; requalify any affected final change |
-| 9 Reference plugins/worker | Native Notes/Labels, minimal Canvas, separately managed Stats | Preserve examples and separate worker startup; no product expansion |
-| 10 Mapped tests | All 99 required checks passed in the status ledger | Include the verified count and exact current receipts in the final handoff |
-| 11 Fresh install/restore | [Kit rehearsal](release-kit.md), [recovery](recovery-rehearsal.md) | Explicit final-image/source compatibility and fresh developer reconciliation |
-| 12 Operator/developer docs | Twelve runbooks; setup, security and [developer entry point](developer-guide.md) | Check commands and full installed workflow against final kit |
-| 13 Limitations/security | [HTTP security](http-security.md), [network](network-independence.md), native trust warnings | Carry residual advisory/license/authority limits into handoff |
-| 14 Release/lock inventory | Verified 52-component draft kit, source/image/privacy binding, dependency locks | Identify final local draft location and manifest in the handoff |
-| 15 Final handoff | [Local handoff](r1-handoff.md) ties commands, URL/account setup, test results and risks to receipts | Add final gate result after browser verification |
+| 1 Source/branch | Local `platform/r1`, exact Git source snapshot and unchanged executable inputs | Record closure commit and verify clean worktree |
+| 2 Upstream/patches | [Patch ledger](upstream-patches.md) and [actual source/notice inventory](evidence/G7/20261105-core26-release-kit-01/provenance.json) | — |
+| 3 Reproducible environment/build | [Offline operator](evidence/G7/20261105-core26-release-kit-01/operator-setup.json) and [BOOT-02](evidence/G7/20261105-core26-repro-01/qualification.json) bound to the kit image and exact base | — |
+| 4 Native/custom UI SDK | `packages/platform_sdk`, `packages/host_sdk`, [developer guide](developer-guide.md) and two installed developer examples verified over HTTP | Verify the modified examples in the browser |
+| 5 Schema/planner | [Frozen contracts](contracts/freeze-v1.md) and [planning](planning-core.md). Current and archived freeze inventory matches G2 revision 18, 106 files and eight rows | — |
+| 6 Catalog/install | [Packaging](packaging.md), [fresh install](evidence/G7/20261105-core26-release-kit-01/fresh-backend.json) and [exact catalog reconciliation](evidence/G7/20261105-core26-release-kit-01/catalog-and-publication-reconciliation.json). Refreshed initializer guard tested separately | — |
+| 7 Lifecycle/executor | [Operations](operations.md), [runbooks](operator-runbooks.md), current reviewed upgrade, retained recovery and actual observation through the extracted CLI | — |
+| 8 Workspace/identity | ID/TEN/API ledger, retained [ID08 two-tab evidence](evidence/G7/20261104-ui-qualification-01/identity-qualification.json) and fresh current backend denials | — |
+| 9 Reference plugins/worker | [Fresh install](evidence/G7/20261105-core26-release-kit-01/fresh-backend.json) and [installed developer variants](evidence/G7/20261105-core26-developer-install-01/backend-verification.json). Standard Notes CRUD uses Odoo. Canvas and the separate worker remain minimal references | Browser proof in item 4 |
+| 10 Mapped tests | All 104 specification IDs matched the ledger, with 99 passes and five R2 exclusions. [Backend audit](evidence/G7/20261105-section28-audit-01/backend-audit.json) | — |
+| 11 Fresh install/restore | [Kit rehearsal](release-kit.md), [actual failed-upgrade restore](evidence/G7/20261103-fresh-release-01/dependency-recovery/qualification-corrected.json) and [later executor binding](evidence/G7/20261105-core26-release-kit-01/retained-recovery-binding.json). Fault evidence retains original image and scope | — |
+| 12 Operator/developer docs | Twelve runbooks and fifteen real CLI help checks. [Runbooks](operator-runbooks.md) and [developer guide](developer-guide.md) | Browser portion of developer walkthrough |
+| 13 Limitations/security | Trust, runtime, network and residual advisory limits linked in the [local handoff](r1-handoff.md) | — |
+| 14 Release/lock inventory | Verified 52-component draft kit and source/image/privacy binding. Exact location and manifest in the [handoff](r1-handoff.md) | — |
+| 15 Final handoff | [Local handoff](r1-handoff.md) links commands, URLs, credential setup, status, evidence index, tests and risks | Add final gate result after browser verification |
 
 Do not replay completed lifecycle operations, recreate the benchmark or start
 another disposable realm merely to make a checklist look current. Retain prior

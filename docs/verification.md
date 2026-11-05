@@ -6,6 +6,11 @@ progress figures are historical, not current gate status. G0–G6 passed for the
 qualified profiles; G7 is active. See the [release closure checklist](r1-release-checklist.md)
 and [current operator/kit preflight](evidence/G7/20261104-operator-release-preflight-01/qualification.json).
 
+The [§28 backend audit](evidence/G7/20261105-section28-audit-01/backend-audit.json)
+ties the selected kit and both live references to their release receipts, checks
+the failed-upgrade recovery evidence and matches the acceptance ledger to the
+specification. The [local handoff](r1-handoff.md) links the remaining browser work.
+
 Latest G6 lifecycle evidence:
 
 - [Actual corrective core15 upgrade](evidence/G6/20261102-core15-upgrade-01/README.md) and [installed manager HTTP suspension/handoff](evidence/G6/20261102-manager-feature-02/README.md): config15/control70, exact data/jobs/schema/files/worker preservation, scoped denial/native views, completed mirror and explicit CLI context qualified;15terminalhelpers retired. Browser/remaining lifecycle/remote/recovery still required.

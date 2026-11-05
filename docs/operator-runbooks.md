@@ -86,8 +86,10 @@ Stale, unavailable or clock-changed observation is uncertainty, never permission
 to retry or restore. A Docker/native child may still be running after the CLI
 dies. Keep traffic fenced and use the separately reviewed recovery path. Native
 maintenance stops the app; its HTTP progress screen may be unavailable or stale.
-Use this OS-owned journal during that interval. The new operator tool must be
-included in the final source kit; an earlier draft kit lacks this addition.
+Use this OS-owned journal during that interval. The selected core26 kit includes
+the observation tool. The backend audit verified it against a completed
+developer upgrade using the extracted operator CLI.
+[Current audit](evidence/G7/20261105-section28-audit-01/backend-audit.json)
 
 ## 3. Schema upgrade
 
@@ -131,14 +133,17 @@ ordinary failure. Never repair the journal into a completed state.
 & $mpPython @mpCli plugin recover resume $mpOperation --decision $mpResumeDecision --decision-hash $mpResumeHash --store $mpControl @mpTargetArgs
 ```
 
-Save each returned private review; inspect target/checkpoint/current authority
-and its exact hash before the corresponding execution. Restore creates a fresh
-named database. Before resume, verify records/schema/files, newer release and
+Each prepare command returns a private review wrapper. Save its inner
+`decision` object as the JSON file for `--decision`, and use the matching
+`decision_hash` for `--decision-hash`. Review the target, checkpoint and current
+authority before executing that decision. Restore creates a fresh named
+database. Before resume, verify records/schema/files, newer release and
 dispatch epochs, session rotation, revoked technical credentials, old-client
 and failed-plan refusals. Restore/resume are separate reviews. Expired, altered,
 revoked or mismatched reviews must be newly prepared, never extended by editing.
-[Current combined recovery evidence](evidence/G7/20261104-native-uninstall-recovery-01/qualification.json)
-and [recovery profile](recovery-rehearsal.md) define its bounded guarantees.
+[Failed dependency upgrade and restore](evidence/G7/20261103-fresh-release-01/dependency-recovery/qualification-corrected.json),
+[later native uninstall recovery](evidence/G7/20261104-native-uninstall-recovery-01/qualification.json)
+and the [recovery profile](recovery-rehearsal.md) define the observed scope.
 
 ## 6. Worker outage
 
