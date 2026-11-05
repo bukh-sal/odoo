@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T19:12:51.0167100Z
+- Updated UTC: 2026-11-05T19:17:17.0979061Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -11,12 +11,17 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Active item: **G-01e. Complete the §28 fresh developer walkthrough and final handoff.** Browser work is deferred at the user's direction.
 - Current result: **99/99 acceptance checks passed and 99 weighted points.** G7 remains open for the §28 completion audit.
 
-## Current continuation — §28 backend audit complete
+## Current continuation — Windows regression fixtures corrected
+
+- The supplemental Windows sweep ran 538 tests with one failure, two errors and one skip. Two metadata upgrade tests selected the current Stats version instead of a successor. A retained-scope enablement test still expected the old no-checkpoint path. The corrected tests keep downgrade refusal and explicit permission acknowledgment coverage, require the current checkpoint/restart, and verify that the executable release stays pinned. Runtime source is unchanged. The two affected test modules pass all 27 tests. [Regression triage](evidence/G7/20261105-section28-audit-01/regression-triage.json)
+- Full Windows rerun session `35304` uses the extracted Python 3.12.16 operator. Inspect `.local/g7-section28-audit/python-tests-after-fix.log` and poll the existing handle before considering a new run. Refresh the kit source to carry the test fixes and reverify the 51 unchanged components. Browser verification remains deferred.
+
+## Previous continuation — §28 backend audit complete
 
 - The current backend audit verified both running reference images and independent workers, matched every specification acceptance ID to the ledger, verified the 52-component kit and matched all 377 recorded build inputs to the current checkout and archived source. It confirmed the completed developer-upgrade journal with the extracted CLI and checked twelve runbooks and fifteen CLI commands. [Backend audit](evidence/G7/20261105-section28-audit-01/backend-audit.json)
 - The actual dependency-changing fixture upgrade failed after its native commit. Fifteen hashed records verify the observed failure, new-database restore and separate resume. Nine host lifecycle modules still match. The later core23 fault and current core26 source binding cover the changed native executor. The fault itself retains its original environment. [Failed-upgrade evidence](evidence/G7/20261103-fresh-release-01/dependency-recovery/qualification-corrected.json) and [recovery binding](evidence/G7/20261105-core26-release-kit-01/retained-recovery-binding.json)
 - The audited §28 deliverable map and local handoff identify the two loopback URLs, credential setup and current evidence. The remaining execution is the deferred browser walkthrough of the two installed developer variants. Final gate recording follows that check. [Release checklist](r1-release-checklist.md) and [handoff](r1-handoff.md)
-- The current Node source regression suite passed 46 tests and the TypeScript check passed with 7.0.2. The supplemental Windows Python regression sweep is still running under the extracted Python 3.12.16 operator. Poll exec session `34056` and inspect the protected `.local/g7-section28-audit/python-tests.log` before considering a rerun. Its result is not counted yet.
+- The Node source regression suite passed 46 tests and the TypeScript check passed with 7.0.2. Initial Windows sweep `34056` ended with the fixture failures described above.
 
 ## Previous continuation — developer examples installed and verified over HTTP
 
@@ -494,7 +499,7 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
-- G-01e is active. Read [the closure map](r1-release-checklist.md), [handoff](r1-handoff.md) and the [backend audit](evidence/G7/20261105-section28-audit-01/backend-audit.json). The fresh operator in `.local/release-kit-core26-rehearsal` serves the modified examples at `http://release-1c1f3b9c7a85.localhost:18101`, generation5, candidate image a5b4. Its selected operator trust is `.local/g7-core26-developer-install/upgrade/trust.json`. Do not replay any completed mutation. The supplemental Python sweep is live in exec session `34056` at this checkpoint. When browser checks resume, use the prepared `prepare_fresh_browser.py` and `fresh_browser.mjs` in `evidence/G7/20261105-core26-release-kit-01/`; they check the current generation, updated Labels action and Canvas subtitle. Then record final §28/G7 closure.
+- G-01e is active. Read [the closure map](r1-release-checklist.md), [handoff](r1-handoff.md) and the [backend audit](evidence/G7/20261105-section28-audit-01/backend-audit.json). The fresh operator in `.local/release-kit-core26-rehearsal` serves the modified examples at `http://release-1c1f3b9c7a85.localhost:18101`, generation5, candidate image a5b4. Its selected operator trust is `.local/g7-core26-developer-install/upgrade/trust.json`. Do not replay any completed mutation. The full Python rerun is live in exec session `35304`. When browser checks resume, use the prepared `prepare_fresh_browser.py` and `fresh_browser.mjs` in `evidence/G7/20261105-core26-release-kit-01/` for the updated Labels action and Canvas subtitle. Then record final §28/G7 closure.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
 - Operation `966c6bbf-37bd-412f-b1fe-c5d55ed7d207` completed. Its preservation and eight container retirements are recorded in `evidence/G7/20261105-core26-maintenance-01/`. All apply, browser and reproduction handles are terminal. Follow the recorded state for new work.
 - Preserve prior recovery realms, selected dependency images and protected browser profiles. The existing kit r1-0.1.23 is retained as historical evidence.

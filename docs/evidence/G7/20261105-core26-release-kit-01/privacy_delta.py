@@ -18,9 +18,11 @@ KIT = ROOT / '.local/releases/r1-0.1.26'
 OLD_KIT = ROOT / '.local/releases/r1-0.1.23'
 OLD_PROOF = OUT.parent / '20261104-release-kit-01'
 OLD_SCAN = ROOT / '.local/g7-release-kit-privacy-01'
-AFTER_REFRESH = sys.argv[1:] == ['--after-refresh']
-assert AFTER_REFRESH or not sys.argv[1:]
-RUN = 'final' if AFTER_REFRESH else 'streamed'
+RUN, REPORT = {
+    (): ('streamed', 'privacy-delta.json'),
+    ('--after-refresh',): ('final', 'privacy-delta-final.json'),
+    ('--after-regression-refresh',): ('regression', 'privacy-delta-regression.json'),
+}[tuple(sys.argv[1:])]
 PRIVATE = ROOT / f'.local/g7-core26-kit-privacy-{RUN}'
 sys.path[:0] = [str(ROOT / 'release'), str(ROOT / 'tools'), str(ROOT / 'packages/platform_sdk')]
 from modular_platform.operator_os import protect_directory
@@ -206,6 +208,6 @@ report = {
     'prior_scan_attempt': 'Stopped owned read-only process after 419 CPU seconds. Source identity had passed. The first implementation rescanned compressed layers and whole expanded tar buffers.',
     'scope': 'Exact previous audited bytes plus current transport, ZIP, TAR, gzip and Git delta. Bounded detector scope.',
 }
-save_report(OUT / ('privacy-delta-final.json' if AFTER_REFRESH else 'privacy-delta.json'), report)
+save_report(OUT / REPORT, report)
 print(json.dumps({key: report[key] for key in ('result', 'source_files_exact_to_git', 'counts')}))
 assert not findings, 'Review redacted finding records before any release claim'

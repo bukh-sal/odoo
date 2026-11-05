@@ -33,6 +33,17 @@ class ManagerExternal(unittest.TestCase):
             descriptor=descriptor or self.f.f.external
             self.nomination.update(artifact_version=descriptor['manifest']['plugin']['version'],artifact_digest=descriptor['digest'])
 
+    def select_successor(self):
+        candidate = copy.deepcopy(self.f.f.external)
+        plugin = candidate['manifest']['plugin']
+        major, minor, patch = map(int, plugin['version'].split('.'))
+        plugin['version'] = f'{major}.{minor}.{patch + 1}'
+        candidate['digest'] = 'sha256:' + 'c' * 64
+        self.f.f.catalog.append(candidate)
+        self.f.document = self.f.f.project()
+        self.select('upgrade', candidate)
+        return dict(plugin_id=plugin['id'], version=plugin['version'], digest=candidate['digest'])
+
     def test_suspended_registration_without_staging_reconstructs_and_does_not_mutate(self):
         self.f.unregistered();self.select('install')
         before=copy.deepcopy((self.f.document,self.f.f.site,self.f.f.external_state))
@@ -59,10 +70,9 @@ class ManagerExternal(unittest.TestCase):
         with self.assertRaises((OperatorError,PlanningError)):self.f.independent()(bundle)
 
     def test_upgrade_is_exact_and_retains_feature_state_and_native_roots(self):
-        candidate=copy.deepcopy(self.f.f.external);candidate['manifest']['plugin']['version']='0.1.3';candidate['digest']='sha256:'+'c'*64
-        self.f.f.catalog.append(candidate);self.f.document=self.f.f.project();self.select('upgrade',candidate)
+        selection = self.select_successor()
         bundle=self.prepare()
-        self.assertEqual(bundle,self.f.prepare('upgrade',selections=[dict(plugin_id=self.f.target['plugin_id'],version='0.1.3',digest=candidate['digest'])]))
+        self.assertEqual(bundle,self.f.prepare('upgrade',selections=[selection]))
         self.assertNotIn('feature_states',bundle['operation_lock'])
         self.assertEqual(self.f.independent()(bundle),self.f.document['state'])
 
@@ -140,8 +150,8 @@ class ManagerExternal(unittest.TestCase):
         self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
         self.setUp();self.f.unregistered();self.select('install')
         self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
-        self.setUp();candidate=copy.deepcopy(self.f.f.external);candidate['manifest']['plugin']['version']='0.1.3';candidate['digest']='sha256:'+'c'*64
-        self.f.f.catalog.append(candidate);self.f.document=self.f.f.project();self.select('upgrade',candidate)
+        self.setUp()
+        self.select_successor()
         self.assertTrue(prepared_view(self.prepare(),observed_at=STAMP)['restart_required'])
 
     def view(self,external=True):

@@ -1,9 +1,8 @@
 # R1 local handoff
 
 The local branch is `platform/r1`. The selected kit is
-`.local/releases/r1-0.1.26`. Its source snapshot is
-`38ca47098c68c8bd0ea0fe8839386d2052560ac5` and its manifest SHA-256 is
-`0f1723649020a736ef6f2a1b0c388b84d6726b407af44a83012c6f9f845bfc26`.
+`.local/releases/r1-0.1.26`. Its `kit-inventory.json` records the exact source
+commit, and `SHA256SUMS` identifies the manifest.
 The status ledger identifies the active gate and the closure checklist tracks
 the remaining §28 evidence. The kit is local and remains a draft while G7 is open.
 [Implementation status](implementation-status.md) and [release checklist](r1-release-checklist.md)

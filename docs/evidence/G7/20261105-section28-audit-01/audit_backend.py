@@ -22,6 +22,10 @@ ORIGINAL = ROOT / '.local/release-kit-rehearsal/private/reference'
 sys.path.insert(0, str(ROOT / 'release'))
 from verify import verify
 
+REGRESSION_REFRESH = sys.argv[1:] == ['--after-regression-refresh']
+assert REGRESSION_REFRESH or not sys.argv[1:]
+REPORT = 'backend-audit-regression.json' if REGRESSION_REFRESH else 'backend-audit.json'
+
 
 def load(path):
     return json.loads(path.read_bytes())
@@ -64,7 +68,7 @@ for number, relative in enumerate(gate_paths):
 
 manifest = verify(KIT)
 manifest_sha = sha((KIT / 'kit-inventory.json').read_bytes())
-privacy = load(CORE / 'privacy-delta-final.json')
+privacy = load(CORE / ('privacy-delta-regression.json' if REGRESSION_REFRESH else 'privacy-delta-final.json'))
 assert manifest_sha == privacy['kit_manifest_sha256']
 assert manifest['source_commit'] == privacy['source_commit'] and not privacy['findings']
 assert len(manifest['files']) == 52
@@ -141,7 +145,7 @@ assert binding['current_core26_image'] == build['image_id']
 handoff = DOCS / 'r1-handoff.md'
 links = re.findall(r'\]\(([^)]+)\)', handoff.read_text(encoding='utf8'))
 local_links = [link for link in links if '://' not in link]
-assert all((DOCS / link).is_file() or link == OUT.relative_to(DOCS).as_posix() + '/backend-audit.json'
+assert all((DOCS / link).is_file() or link == OUT.relative_to(DOCS).as_posix() + '/' + REPORT
            for link in local_links)
 assert set(links) - set(local_links) == {
     load(ref / 'state.json')['url'] for ref in (ORIGINAL, REFERENCE)
@@ -162,7 +166,7 @@ report = {
         'scope': 'Actual dependency-changing fixture fault on core20 to core21. Later core23 recovery covers the changed executor, and core26 receipts bind its current bytes.',
     },
 }
-with (OUT / 'backend-audit.json').open('x', encoding='utf8') as handle:
+with (OUT / REPORT).open('x', encoding='utf8') as handle:
     json.dump(report, handle, indent=2)
     handle.write('\n')
 print(json.dumps({'acceptance': report['acceptance_ids_match_specification'], 'kit': 52, 'runbooks': 12,

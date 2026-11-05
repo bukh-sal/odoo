@@ -211,7 +211,9 @@ class ReinstallPlanning(unittest.TestCase):
         self.assertTrue(enabled['plan']['permission_changes'])
         self.assertTrue(all(r['workspace_id']==ident(31) and r['action']=='grant' for r in enabled['plan']['permission_changes']))
         self.assertEqual(self.validator()(enabled),post)
-        self.assertFalse(enabled['plan']['backup']['required'] or enabled['display']['restart_required'])
+        self.assertTrue(enabled['plan']['backup']['required'])
+        self.assertTrue(enabled['display']['restart_required'])
+        self.assertEqual(enabled['plan']['target_release_digest'], post['release_digest'])
         with tempfile.TemporaryDirectory() as directory:
             store=OperatorStore.initialize(Path(directory)/'control',{post['deployment_id']:post['site_ids']})
             check=lambda _:copy.deepcopy(post)

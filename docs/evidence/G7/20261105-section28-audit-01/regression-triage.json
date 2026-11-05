@@ -1,0 +1,24 @@
+{
+  "result": "stale_regression_fixtures_corrected_targeted_tests_passed",
+  "initial_windows_run": {
+    "tests": 538,
+    "failures": 1,
+    "errors": 2,
+    "skipped": 1,
+    "private_log_sha256": "0f3c90508965ff31356a600bae5785575748427342e82a185e463fa842a74276",
+    "failed_tests": [
+      "test_every_metadata_lifecycle_round_trips_through_actual_public_preview (test_manager_external.ManagerExternal.test_every_metadata_lifecycle_round_trips_through_actual_public_preview)",
+      "test_upgrade_is_exact_and_retains_feature_state_and_native_roots (test_manager_external.ManagerExternal.test_upgrade_is_exact_and_retains_feature_state_and_native_roots)",
+      "test_retained_scope_enable_requires_explicit_permission_acknowledgment_and_ready_grants (test_reinstall_planning.ReinstallPlanning.test_retained_scope_enable_requires_explicit_permission_acknowledgment_and_ready_grants)"
+    ]
+  },
+  "causes": [
+    "The two manager tests used 0.1.3, now the installed Stats version, as a successor.",
+    "The retained-scope enablement test asserted the obsolete no-checkpoint feature path."
+  ],
+  "corrected_targeted_tests": {
+    "test_manager_external.py": 18,
+    "test_reinstall_planning.py": 9
+  },
+  "scope": "Test changes only. The actual pinned release, dependencies, runtime code and contracts stay unchanged. Full rerun pending."
+}
