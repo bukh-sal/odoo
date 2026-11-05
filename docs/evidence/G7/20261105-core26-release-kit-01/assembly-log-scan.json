@@ -1,0 +1,13 @@
+{
+  "known_values": 133,
+  "findings": 0,
+  "sha256": {
+    "assembly.json": "848888788ec527c38905c00c6399216e61801ec44f32d0dd88ed580f718be580",
+    "assembly.pip.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assembly.pip.stdout": "c1e2a27c1c259a8bd05c0f79a9a1f115fa4e5979496adaefa78e2c0f238c14fe",
+    "assembly.save.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assembly.state.json": "efc6dd563adaca73d68c4d6ad8233fd704c5ba8702c1b4e10c5b4ce263429e16",
+    "operator-setup.json": "dd3524278b90e352ebe802a8361da6557aeae71efc305725227ae8f6ca48dd23"
+  },
+  "scope": "Assembly receipts and command logs. Expanded kit privacy qualification remains pending."
+}

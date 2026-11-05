@@ -21,10 +21,12 @@ observation exists; it does not mean the entire final release passed.
   keyboard workflows. [Installed evidence](evidence/G7/20261105-core26-maintenance-01/installed-observations.json)
 - [x] Independently reproduce the selected core26 runtime inventory and
   dependency environment (BOOT-02). [Build evidence](evidence/G7/20261105-core26-repro-01/qualification.json)
-- [ ] Refresh the draft kit once against the qualified image/source. Current kit
-  still packages image14de; its source differs from current code in eight paths.
-  Include `tools/operation_progress.py`, updated `tools/modular.py`, runbooks and
-  the final shell/version sources. Retain exact unchanged large inputs.
+- [x] Assemble the core26 draft kit from the reproduced image and current source.
+  The manifest covers 52 components and binds the build and reproduction receipts.
+  [Assembly evidence](evidence/G7/20261105-core26-release-kit-01/assembly.json)
+- [x] Set up the clean operator offline from the core26 kit and check its
+  private boundary, CLI and contract freeze. [Operator setup](evidence/G7/20261105-core26-release-kit-01/operator-setup.json)
+- [ ] Qualify the core26 kit's clean application install and developer workflow.
 - [x] Remove the producer's hardcoded core23 selection and bind source refresh to
   explicit matching build/reproduction/image evidence:
   [ADR0058](architecture-decisions/0058-explicit-release-application-inputs.md),

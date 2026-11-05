@@ -1,0 +1,17 @@
+{
+  "result": "passed_clean_offline_operator_setup",
+  "source_commit": "e7a5458d856d7d0e7b9815d3b6bf47d358c3c214",
+  "kit_manifest_sha256": "b4ce8f9c2f14043d7f34872fd18f40638fed1b6ee4d899c83161022d0c7a6c3c",
+  "python": "3.12.16",
+  "private_os_boundary_verified": true,
+  "locked_wheels_installed": 13,
+  "extracted_source_freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 106,
+    "rows": 8
+  },
+  "cli_help_sha256": "c3e94cf7135ec468709d632647d198935cffd0d373213f30025637b1b3ed7268",
+  "application_initialized": false,
+  "workdir": ".local/release-kit-core26-rehearsal"
+}
