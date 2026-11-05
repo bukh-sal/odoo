@@ -11,7 +11,6 @@
   "explicit_install": ["web", "auth_password_policy", "mp_shell"],
   "platform_sdk": true,
   "stock_webclient": true,
-  "stock_rtl_prewarm": true,
   "profile": "Stock Odoo WebClient with scoped Notes and explicit platform custom-page links",
   "reference_packages": [
     "plugins/notes/plugin.toml", "plugins/notes_labels/plugin.toml",

@@ -33,6 +33,7 @@ class RetainedHostBundle(ReleaseVersionedBundle):
 
 class IrQWeb(models.AbstractModel):
     _inherit = 'ir.qweb'
+    _mp_stock_rtl_assets = True
 
     def _get_asset_bundle(self, bundle_name, css=True, js=True, debug_assets=False,
                           rtl=False, assets_params=None, autoprefix=False):

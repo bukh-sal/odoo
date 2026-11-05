@@ -91,8 +91,9 @@ def main():
             raise ValueError('Asset preparation target/publication changed')
         env = api.Environment(cursor, SUPERUSER_ID, {'lang': 'en_US'})
         policy = json.loads(inventory)['policy']
-        rows = prepare(env, stock_webclient=policy.get('stock_webclient') is True,
-                       stock_rtl=policy.get('stock_rtl_prewarm') is True)
+        stock_webclient = policy.get('stock_webclient') is True
+        stock_rtl = stock_webclient and getattr(env['ir.qweb'], '_mp_stock_rtl_assets', False)
+        rows = prepare(env, stock_webclient=stock_webclient, stock_rtl=stock_rtl)
         cursor.commit()
     print(json.dumps({'result': 'prepared', 'generation': data['generation'],
                       'inventory_digest': data['inventory_digest'], 'assets': rows}))
