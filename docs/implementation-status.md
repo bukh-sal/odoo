@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T19:26:42.4265541Z
+- Updated UTC: 2026-11-05T19:28:19.4459812Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -10,6 +10,7 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Current phase/gate: **G7 in progress. Core26/Shell13 runs at configuration7, imagefb02 and inventory2747. Installed UI09 and independent reproduction passed.**
 - Active item: **G-01e. Complete the §28 fresh developer walkthrough and final handoff.** Browser work is deferred at the user's direction.
 - Current result: **99/99 acceptance checks passed and 99 weighted points.** G7 remains open for the §28 completion audit.
+- The user confirmed that browser verification should remain deferred after backend qualification. The generation5 target and its separate worker are running. Its protected walkthrough inputs are prepared.
 
 ## Current continuation — Windows regression fixtures corrected
 
@@ -425,7 +426,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |
-| G7-FRESH-BROWSER-01 | Deferred at user direction | Existing core26 installed UI09 remains passed. The independent clean-kit browser/developer walkthrough remains open. No browser was started for this continuation. |
+| G7-FRESH-BROWSER-01 | Deferred at user direction | User confirmed the deferral after backend qualification. Existing core26 UI09 remains passed. Generation5 walkthrough inputs are prepared and the browser remains unopened. |
 | G7-ID08-CURRENT-01 | resolved; current ID08 passed |20261104-ui-qualification-01/identity-qualification.json actual sameAlice Aadmin/Bviewer native lists/forms/lateHTTP200 response cancellation, no crosstab cache/data/role contamination.17tables/fourruntimes exact; no foreign requests/exceptions; ownedprofile process exited0. UI09/fullrelease still open. |
 | G7-NETWORK-INDEPENDENCE-01 | backend/static qualified; current browser/release closure still open |20261104-network-independence-01/backend-qualification.json+alias-qualification.json: actual internal app/DB/worker topology/TCPcontrols,4159source hashes,24root families+optional reportfont CDN, actual2CSS0remote resources,17tables/fourruntimes exact. No arbitrary native/browser/OS containment claim. OPS03 not yet requalified. |
 | G7-OPERATOR-KIT-01 | explicit final-release gap; environment preflight passed | Draft source lacks current heartbeat and still packages14de. Current-source CLI works in kit Python/19tests; actual completed readbacks agree and174control files/fourruntimes exact. Final qualified source/image refresh and delta privacy required, including heartbeat/package_reference/developer guide/PLATFORM and ADR0058 release-input helpers. Nine tests/actual stale-receipt refusal prove producer guard only; no lifecycle replay. |
@@ -500,7 +501,7 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
-- G-01e is active. Read [the closure map](r1-release-checklist.md), [handoff](r1-handoff.md) and the [backend audit](evidence/G7/20261105-section28-audit-01/backend-audit-regression.json). The fresh operator in `.local/release-kit-core26-rehearsal` serves the modified examples at `http://release-1c1f3b9c7a85.localhost:18101`, generation5, candidate image a5b4. Its selected operator trust is `.local/g7-core26-developer-install/upgrade/trust.json`. All backend handles are terminal. Do not replay any completed mutation or regression run. When browser checks resume, use the prepared `prepare_fresh_browser.py` and `fresh_browser.mjs` in `evidence/G7/20261105-core26-release-kit-01/` for the updated Labels action and Canvas subtitle. Then record final §28/G7 closure.
+- G-01e is active. Read [the closure map](r1-release-checklist.md), [handoff](r1-handoff.md) and the [backend audit](evidence/G7/20261105-section28-audit-01/backend-audit-regression.json). The fresh operator in `.local/release-kit-core26-rehearsal` serves the modified examples at `http://release-1c1f3b9c7a85.localhost:18101`, generation5, candidate image a5b4. Its selected operator trust is `.local/g7-core26-developer-install/upgrade/trust.json`. All backend handles are terminal. The protected inputs in `.local/g7-core26-fresh-browser` are ready. When the user resumes browser checks, verify the same live target and run `fresh_browser.mjs` in `evidence/G7/20261105-core26-release-kit-01/` directly. Then record final §28/G7 closure.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
 - Operation `966c6bbf-37bd-412f-b1fe-c5d55ed7d207` completed. Its preservation and eight container retirements are recorded in `evidence/G7/20261105-core26-maintenance-01/`. All apply, browser and reproduction handles are terminal. Follow the recorded state for new work.
 - Preserve prior recovery realms, selected dependency images and protected browser profiles. The existing kit r1-0.1.23 is retained as historical evidence.

@@ -19,10 +19,14 @@ state = load(REFERENCE / 'state.json')
 assert state['phase'] == 'kit_backend_worker_reference_qualified'
 target = load(REFERENCE / 'operator/target.json')
 assert target['project'] == state['project']
+inventory_digest = state['inventory_digest']
 developer = Path(__file__).parent.parent / '20261105-core26-developer-install-01/backend-verification.json'
 if developer.exists():
     installed = load(developer)
     assert (target['image_id'], target['generation']) == (installed['app_image'], installed['app_generation'])
+    candidate = load(developer.with_name('candidate-build.json'))
+    assert candidate['image_id'] == target['image_id']
+    inventory_digest = candidate['inventory_digest']
 else:
     assert target['image_id'] == state['image_id']
 fixture = load(REFERENCE / 'fixtures.json')
@@ -31,18 +35,26 @@ assert checks['phase'] == 'passed' and len(checks['notes']) == 2
 profile = Path(load(ROOT / '.local/g7-ui-core26-01/browser-input.json')['profile'])
 assert profile.resolve() == (ROOT / '.local/g7-ui-qualification-01/profile').resolve()
 verify_private_directory(profile)
-assert not OUT.exists()
-protect_directory(OUT)
-protect_directory(OUT / 'browser')
 record = {
     'base': state['url'], 'database': state['database'], 'project': state['project'],
-    'image_id': target['image_id'], 'inventory_digest': target['inventory_digest'],
+    'image_id': target['image_id'], 'inventory_digest': inventory_digest,
     'generation': target['generation'], 'fixture': fixture,
     'password_file': str(REFERENCE / 'account-passwords.json'), 'actor': 'alice',
     'profile': str(profile), 'note_id': checks['notes']['A']['id'],
     'labels_button': 'Edit labels (developer example)' if developer.exists() else 'Edit labels',
     'canvas_subtitle': 'Developer reference page' if developer.exists() else 'Collect ideas. Move them forward.',
 }
+resume = sys.argv[1:] == ['--resume-empty-preparation']
+assert resume or not sys.argv[1:]
+if resume:
+    verify_private_directory(OUT)
+    verify_private_directory(OUT / 'browser')
+    assert set(OUT.iterdir()) == {OUT / 'browser'} and not any((OUT / 'browser').iterdir())
+else:
+    assert not OUT.exists()
+    protect_directory(OUT)
+    protect_directory(OUT / 'browser')
+
 for path, value in [(OUT / 'browser-input.json', record), (OUT / 'tables-before.json', {})]:
     with path.open('x', encoding='utf8') as handle:
         json.dump(value, handle, indent=2)
