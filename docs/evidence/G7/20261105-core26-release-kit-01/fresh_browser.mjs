@@ -12,13 +12,17 @@ try {
     await b.until(() => b.evaluate('!!document.querySelector(".o_list_view")'), 'native Notes list');
     await b.navigate(notes + '&note=' + input.note_id);
     await b.until(() => b.evaluate('!!document.querySelector(".o_form_view .o_field_widget[name=title]")'), 'native Note form');
-    await b.clickText('.mp_page_header button', 'Edit labels');
+    await b.until(() => b.evaluate(`[...document.querySelectorAll('.mp_page_header button')]
+        .some(button => button.textContent.trim() === ${JSON.stringify(input.labels_button)})`), 'installed Labels action');
+    await b.clickText('.mp_page_header button', input.labels_button);
     await b.until(() => b.evaluate('!!document.querySelector(".mp_label_dialog[open]")'), 'native Labels extension action');
     const labels = await b.ax('.mp_label_dialog');
     await b.key('Escape', 'Escape', 27);
     await b.until(() => b.evaluate('!document.querySelector(".mp_label_dialog[open]")'), 'Labels dialog closed');
     await b.navigate(canvas);
     await b.until(() => b.evaluate('document.querySelectorAll(".mp_canvas_card").length === 1'), 'one-card custom page');
+    await b.until(() => b.evaluate(`document.querySelector('.mp_root')?.innerText
+        .includes(${JSON.stringify(input.canvas_subtitle)})`), 'installed Canvas subtitle');
     const nav = await b.ax('.mp_root nav');
     const foreign = b.blocked.filter(entry => entry.path !== '/mp-ui09-network-probe');
     if (foreign.length || b.exceptions.length || labels[0]?.role !== 'dialog' || nav[0]?.role !== 'navigation') {
@@ -27,7 +31,8 @@ try {
     await b.save('fresh-browser.json', {
         result: 'fresh_kit_native_views_labels_and_custom_page_passed',
         image: input.image_id, generation: input.generation,
-        nativeListAndForm: true, labels, canvasCards: 1, navigation: nav,
+        nativeListAndForm: true, labels, labelsButton: input.labels_button,
+        canvasCards: 1, canvasSubtitle: input.canvas_subtitle, navigation: nav,
         foreignRequests: foreign, runtimeExceptions: b.exceptions, wroteBusinessData: false,
     });
     console.log('Fresh kit browser verified native Notes, Labels and one-card Canvas');

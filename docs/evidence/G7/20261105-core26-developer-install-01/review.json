@@ -1,0 +1,15 @@
+{
+  "result": "staged_and_independently_reviewed",
+  "operation_id": "e68a26a9-a065-40a2-a237-bc09cd28275e",
+  "plan_hash": "sha256:4314e37c43bdd5a85647995b2ae6c9fb61932815f7da7032fb4a4b78c923faf1",
+  "target_generation": 4,
+  "candidate_image": "sha256:a5b4b8edd67175221442ad7ba006603b06626cd9270985c3a9488ad19143b2e3",
+  "upgraded_plugins": [
+    "org.example.canvas",
+    "org.example.notes_labels"
+  ],
+  "scopes": 4,
+  "checkpoint_required": true,
+  "no_permission_binding_or_endpoint_changes": true,
+  "deployment_changed": false
+}

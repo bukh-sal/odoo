@@ -30,9 +30,13 @@ observation exists; it does not mean the entire final release passed.
   separate worker. [Backend evidence](evidence/G7/20261105-core26-release-kit-01/fresh-backend.json)
 - [x] Validate and reproduce versioned Labels and Canvas examples in the clean
   operator. [Packaging evidence](evidence/G7/20261105-core26-release-kit-01/developer-packaging.json)
+- [x] Build a candidate from the exact edited packages and active distribution
+  policy, review and upgrade four scopes, and verify the installed variants
+  over HTTP. [Review](evidence/G7/20261105-core26-developer-install-01/review.json)
+  and [installed backend](evidence/G7/20261105-core26-developer-install-01/backend-verification.json)
 - [ ] Exercise the fresh developer walkthrough in the browser when UI checks
-  resume. Backend HTTP verified the shipped extensions. The versioned packaging
-  examples were exercised in isolation.
+  resume. The browser should open native Notes list/form, invoke the updated
+  Labels action, and render the one-card Canvas with the changed subtitle.
 - [x] Remove the producer's hardcoded core23 selection and bind source refresh to
   explicit matching build/reproduction/image evidence:
   [ADR0058](architecture-decisions/0058-explicit-release-application-inputs.md),
@@ -52,9 +56,8 @@ observation exists; it does not mean the entire final release passed.
 - [x] Bind retained core23 fault/restore/resume evidence to the current recovery
   implementation. The observed failure and recovery remain scoped to core23.
   [Recovery binding](evidence/G7/20261105-core26-release-kit-01/retained-recovery-binding.json)
-- [ ] Reconcile final fresh-developer proof and complete the §28 audit/handoff.
-  The old kit's actual fresh setup is retained evidence, not proof that the
-  current final kit was installed or that a new developer extended a plugin.
+- [ ] Reconcile final browser proof with the backend developer walkthrough and
+  complete the §28 audit. [Local handoff](r1-handoff.md)
 - [x] Add a source developer entry point and exercise its reference packaging
   commands: [guide](developer-guide.md), [packaging proof](evidence/G7/20261104-developer-packaging-01/qualification.json).
   Two isolated versioned examples validate/reproduce; mismatch and overwrite
@@ -65,7 +68,7 @@ observation exists; it does not mean the entire final release passed.
 | 1 Source/branch | Local `platform/r1`; exact source commits in receipts | Identify final commit and clean working tree |
 | 2 Upstream/patches | [Patch ledger](upstream-patches.md), pinned substrate | Include final source/notice inventory |
 | 3 Reproducible environment/build | [Baseline](baseline.md), [toolchain](operator-toolchain.md), ADR0052 | BOOT-02 on final image and its exact dependency base |
-| 4 Native/custom UI SDK | `packages/platform_sdk`, `packages/host_sdk`, [developer guide](developer-guide.md), two actual packaging exercises | Exercise installed final-kit extension/custom-page path |
+| 4 Native/custom UI SDK | `packages/platform_sdk`, `packages/host_sdk`, [developer guide](developer-guide.md), two installed developer examples verified over HTTP | Verify the modified examples in the browser |
 | 5 Schema/planner | [Frozen contracts](contracts/freeze-v1.md), [planning](planning-core.md) | Bind final source to unchanged contracts or requalify affected changes |
 | 6 Catalog/install | [Packaging](packaging.md), actual kit install | Reconcile final kit inputs; historical prose is not latest lifecycle state |
 | 7 Lifecycle/executor | [Operations](operations.md), [runbooks](operator-runbooks.md), current core24 receipt | Package qualified CLI observation addition |
@@ -76,7 +79,7 @@ observation exists; it does not mean the entire final release passed.
 | 12 Operator/developer docs | Twelve runbooks; setup, security and [developer entry point](developer-guide.md) | Check commands and full installed workflow against final kit |
 | 13 Limitations/security | [HTTP security](http-security.md), [network](network-independence.md), native trust warnings | Carry residual advisory/license/authority limits into handoff |
 | 14 Release/lock inventory | Verified 52-component draft kit, source/image/privacy binding, dependency locks | Identify final local draft location and manifest in the handoff |
-| 15 Final handoff | Status, evidence and runbooks exist | Final startup/test/example/recovery commands, URL/account setup, risks and milestone |
+| 15 Final handoff | [Local handoff](r1-handoff.md) ties commands, URL/account setup, test results and risks to receipts | Add final gate result after browser verification |
 
 Do not replay completed lifecycle operations, recreate the benchmark or start
 another disposable realm merely to make a checklist look current. Retain prior

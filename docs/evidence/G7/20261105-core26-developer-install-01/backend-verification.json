@@ -1,0 +1,15 @@
+{
+  "result": "passed_installed_developer_examples_backend",
+  "operation_id": "e68a26a9-a065-40a2-a237-bc09cd28275e",
+  "app_image": "sha256:a5b4b8edd67175221442ad7ba006603b06626cd9270985c3a9488ad19143b2e3",
+  "app_generation": 5,
+  "native_list_form_descriptors": true,
+  "developer_labels_contribution_visible_to_editor_only": true,
+  "canvas_registered_custom_page_and_changed_asset_served": true,
+  "canvas_asset_sha256": "e46e24b8c1a42828fb15e47d51dd30cdbd3372200b2ad3b4e44481fae855720d",
+  "foreign_record_denied": true,
+  "notes_and_board_rows_exact": true,
+  "completed_job_outcome_preserved": true,
+  "independent_worker_unchanged": true,
+  "browser_rendering_deferred": true
+}

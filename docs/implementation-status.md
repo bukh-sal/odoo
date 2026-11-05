@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T18:49:00.7858916Z
+- Updated UTC: 2026-11-05T19:03:43.8758110Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -11,7 +11,14 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Active item: **G-01e. Complete the §28 fresh developer walkthrough and final handoff.** Browser work is deferred at the user's direction.
 - Current result: **99/99 acceptance checks passed and 99 weighted points.** G7 remains open for the §28 completion audit.
 
-## Current continuation — fresh core26 backend qualified
+## Current continuation — developer examples installed and verified over HTTP
+
+- The documented packaging path produced exact Labels 0.2.5 and Canvas 0.1.5 bytes in the clean operator. A fresh candidate build copied five modified inputs into an isolated source context and retained the exact core26 dependency environment. The first attempt stopped before build because the isolated operator lock directory was missing. The first built image used the default policy and omitted the installed Notes Stats connector. The staged planner refused it before registration. The corrected build used the selected release's exact policy, preserved Notes and the connector, and superseded the refused image. [Candidate](evidence/G7/20261105-core26-developer-install-01/candidate-build.json) and [refused image retirement](evidence/G7/20261105-core26-developer-install-01/refused-image-retired.json)
+- Exact operation `e68a26a9-a065-40a2-a237-bc09cd28275e` checkpointed and upgraded the two variants across four workspace scopes with no permission, binding or endpoint change. The fresh rehearsal on port 18101 runs generation5 and image `sha256:a5b4b8edd67175221442ad7ba006603b06626cd9270985c3a9488ad19143b2e3`. The selected core26 kit and original reference on port 18100 retain the shipped versions. [Independent review](evidence/G7/20261105-core26-developer-install-01/review.json) and [apply result](evidence/G7/20261105-core26-developer-install-01/apply.json)
+- HTTP verified the updated Labels action for the editor and its absence for a viewer, native Odoo Notes list/form, foreign Note denial, the existing Canvas board, and the served bundle containing the modified Canvas subtitle. The Notes and board rows, completed job outcome and independent worker identity were preserved. Retired ten exact exited containers, including the superseded app, after 32 diagnostic streams passed the bounded scan. [Installed backend](evidence/G7/20261105-core26-developer-install-01/backend-verification.json) and [helper retirement](evidence/G7/20261105-core26-developer-install-01/helper-retirement.json)
+- The local handoff records startup, fixture credential locations, branch, tests, recovery and residual risks. The remaining G-01e verification is the fresh browser walkthrough and final gate audit. The scope remains 99/99 and 99 weighted points. [Local handoff](r1-handoff.md)
+
+## Previous continuation — fresh core26 backend qualified
 
 - The clean consumer installed Core26 and three native reference plugins in a fresh disposable database. Five actual HTTP checks passed, including scoped native Odoo Notes list/form descriptors, Labels, minimal Canvas and foreign access denial. The separate locked worker completed one original-actor job in one attempt. Only the loopback edge publishes a port. [Backend evidence](evidence/G7/20261105-core26-release-kit-01/fresh-backend.json)
 - Docker default address pools were exhausted before the first fresh project created assets. Two verified empty networks from a retired project were removed. The next prepare succeeded. The first initialization reached clean core provisioning and stopped because the guide omitted the reviewed catalog import. All 19 exact digests were imported through the clean CLI, then publication resumed from the verified pre-install state. The corrected initializer refuses missing or incomplete catalogs before database startup. [Network evidence](evidence/G7/20261105-core26-release-kit-01/network-capacity.json), [reconciliation](evidence/G7/20261105-core26-release-kit-01/catalog-and-publication-reconciliation.json) and [preflight test](evidence/G7/20261105-core26-release-kit-01/catalog-preflight.json)
@@ -367,7 +374,7 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | G-01d2a | Check current operator in kit environment without lifecycle replay | passed_bounded_preflight | OPS03 prerequisite; no point | G-01d2 | 20261104-operator-release-preflight-01/qualification.json:50 kit components/eight code deltas/19tests/current completed journal exact/174control files/fourruntimes exact/133valueprivacy0. Final source/image kit still pending. |
 | G-01d2b | Developer entry point and versioned reference packaging | passed_bounded_packaging | §28/OPS03 prerequisite; no point | G-01d2a | PLATFORM.md/developer-guide.md/package_reference.py; actual kitPython/eightCLI/two versioned archives validated+byte-reproduced, mismatch-nooutput/overwrite-preserved,133privacy0. Full final-kit installed developer workflow remains required. |
 | G-01d2c | Bind release producer/source refresh to explicit application proof | passed_bounded_guard | BOOT02/OPS03/§28 prerequisite; no point | G-01d2b; ADR0058 | 9tests/real assemble+refresh oldreceipt refusals beforeoutput/current50kitcomponents unchanged/133privacy0. Current final candidate/reproduction/kit stillrequired. |
-| G-01e | Final release evidence and handoff | in_progress | All R1; §28 | G-01a..d | Fresh browser/developer walkthrough deferred by user. Reconcile proof scope and complete the 15-deliverable audit and handoff before passing G7. |
+| G-01e | Final release evidence and handoff | in_progress | All R1; §28 | G-01a..d | The modified examples passed actual install/upgrade and HTTP. Fresh browser rendering is deferred. Complete that walkthrough and the 15-deliverable audit before passing G7. |
 
 ## G5 exit criteria: complete
 
@@ -474,13 +481,13 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Last material outcomes
 
-1. The fresh core26 consumer and separate worker passed. Two empty retired networks and 32 exited helpers were removed after ownership checks. The catalog preflight now refuses incomplete inputs before database startup.
-2. The refreshed kit retained 51 exact components. Expanded kit privacy, fresh diagnostic privacy, build/source/license provenance and the recovery source binding passed.
-3. OPS-03 is restored, bringing the ledger to 99/99. G-01e remains open for the §28 walkthrough and handoff.
+1. The exact versioned developer upgrade completed on the fresh rehearsal. It serves the changed Labels action and Canvas asset with the existing data and worker.
+2. Retired the refused candidate image and ten completed containers. The fresh reference, original release reference and retained recovery storage remain available.
+3. The local handoff and closure checklist are linked. G-01e remains open for the deferred browser walkthrough and final §28 audit.
 
 ## Resume capsule
 
-- G-01e is active. Read [the closure map](r1-release-checklist.md) and `evidence/G7/20261105-core26-release-kit-01/` for the current kit/source/privacy and backend evidence. The fresh operator in `.local/release-kit-core26-rehearsal` reached `kit_backend_worker_reference_qualified` at `http://release-1c1f3b9c7a85.localhost:18101`. All fresh backend and release scan commands ended. Do not replay prepare, initialization, installation, reference fixture writes or worker publication. When browser checks resume, inspect the recorded fresh target and use the prepared `prepare_fresh_browser.py` and `fresh_browser.mjs` walkthrough in that evidence directory for native Notes/Labels and minimal Canvas. Then reconcile the isolated modified examples, retained recovery evidence and the §28 handoff.
+- G-01e is active. Read [the closure map](r1-release-checklist.md), [handoff](r1-handoff.md) and `evidence/G7/20261105-core26-developer-install-01/backend-verification.json`. The fresh operator in `.local/release-kit-core26-rehearsal` now serves the modified examples at `http://release-1c1f3b9c7a85.localhost:18101`, generation5, candidate image a5b4. Its selected operator trust for this candidate is `.local/g7-core26-developer-install/upgrade/trust.json`. All backend commands ended. Do not replay any completed mutation. When browser checks resume, use the prepared `prepare_fresh_browser.py` and `fresh_browser.mjs` in `evidence/G7/20261105-core26-release-kit-01/`; they check the current generation, updated Labels action and Canvas subtitle. Then complete the §28 audit and handoff.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
 - Operation `966c6bbf-37bd-412f-b1fe-c5d55ed7d207` completed. Its preservation and eight container retirements are recorded in `evidence/G7/20261105-core26-maintenance-01/`. All apply, browser and reproduction handles are terminal. Follow the recorded state for new work.
 - Preserve prior recovery realms, selected dependency images and protected browser profiles. The existing kit r1-0.1.23 is retained as historical evidence.

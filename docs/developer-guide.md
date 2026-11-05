@@ -1,9 +1,7 @@
 # R1 developer entry point
 
 R1 qualification is still in progress. Read [current status](implementation-status.md)
-and the [release checklist](r1-release-checklist.md) before choosing a kit. The
-existing `r1-0.1.23` draft predates the current shell and operator tools; this guide
-is source for the final kit, not a claim that the draft contains these additions.
+and the [release checklist](r1-release-checklist.md) before choosing a kit.
 Keep the upstream README and license notices intact.
 
 ## Start a new disposable installation
@@ -144,7 +142,12 @@ the CLI's `--help`; see [operations.md](operations.md) and
 [operator-runbooks.md](operator-runbooks.md). Do not call `-u`, edit a running
 container, replace its release lock or reuse a completed operation. If dependency
 inputs are unchanged, ADR0052 describes the exact-image code-maintenance path;
-changing dependencies requires their own qualification.
+changing dependencies requires their own qualification. Pass the active release's
+exact distribution policy to `build_candidate.py --policy`. For the core26
+reference with the Stats connector, use `deploy/distribution-r1-notes-stats.json`.
+The build receipt must retain the unchanged native packages as well as the edited
+examples. Build in the separate checkout with an initialized private operator
+lock directory. Review the candidate's complete artifact set before staging.
 
 On a fresh disposable fixture, verify the administrator/editor can use the
 enabled feature, a viewer cannot mutate it, the other workspace cannot read its
