@@ -1,0 +1,25 @@
+{
+  "result": "passed_source_checks",
+  "tests": {
+    "node_passed": 12,
+    "core_upgrade_passed": 8,
+    "frozen_files": 106,
+    "frozen_rows": 8,
+    "xml_templates_parsed": 2
+  },
+  "source_sha256": {
+    "platform_addons/mp_shell/static/src/host.js": "f0829d3f63d244064091fd3018ea083cdfeee6f4af2ec463247764cf940ca1e6",
+    "platform_addons/mp_shell/static/src/operations.js": "367f4ea25fdbf8d7a0857ed462257c0bf2d14d1c2406ccc300e933823df5df96",
+    "platform_addons/mp_shell/__manifest__.py": "36934b869f98cbbcceb586107e2f70ea14d3987319a9eac99bac681f0f78aee6",
+    "platform_addons/mp_core/__manifest__.py": "2cffd94665377b8247100ca51aa8e351794af18a20ee8bbab8f8cb72639c227a",
+    "packages/platform_sdk/modular_platform/projection.py": "799f89a61cb968995db19a1fb69d7c99dad6c110d78fba0d78e4049371aac7ff",
+    "tests/test_operations_resume.mjs": "56e6274750ac67ec7b27ce0bc64960810b29708541646598e1f841acce8e0a05"
+  },
+  "initial_test_failure": "Arabic ICU chose Latin digits while translating the month. The revised test checks the actual localized month and UTC semantics.",
+  "remaining": [
+    "Real template compilation",
+    "Installed live region updates",
+    "Assistive technology verification",
+    "Installed locale formatting"
+  ]
+}

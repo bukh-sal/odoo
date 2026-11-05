@@ -1,0 +1,38 @@
+{
+  "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8",
+  "generation": 6,
+  "before": [],
+  "loading": [
+    {
+      "role": "status",
+      "atomic": null,
+      "empty": false
+    }
+  ],
+  "loadingAX": [
+    {
+      "role": "status",
+      "name": "",
+      "ignored": false
+    }
+  ],
+  "error": [
+    {
+      "role": "alert",
+      "atomic": null,
+      "empty": false
+    }
+  ],
+  "errorAX": [
+    {
+      "role": "alert",
+      "name": "",
+      "ignored": false
+    }
+  ],
+  "foreignRequests": [],
+  "runtimeExceptions": [],
+  "browser_exit": 0,
+  "result": "regions_inserted_with_content",
+  "spoken_announcement_tested": false
+}

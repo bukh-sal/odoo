@@ -7,6 +7,17 @@ const source=await readFile(new URL('../platform_addons/mp_shell/static/src/oper
 const isolated=source.replace(/import \{[^}]+\} from '@odoo\/owl';/,
     'const Component=class {};const xml=(text)=>text.join("");const useState=x=>x;const onMounted=()=>{};const onWillDestroy=()=>{};');
 const {OperationsPanel}=await import('data:text/javascript;base64,'+Buffer.from(isolated).toString('base64'));
+
+test('operator timestamps use the selected language and journal UTC', () => {
+    const panel = Object.create(OperationsPanel.prototype);
+    const timestamp = '2026-11-05T18:03:07Z';
+    panel.props = {language: 'en-US'};
+    assert.match(panel.formatTimestamp(timestamp), /Nov 5, 2026.*6:03:07.*UTC/);
+    panel.props.language = 'ar';
+    const arabic = panel.formatTimestamp(timestamp);
+    assert.match(arabic, /نوفمبر/u);
+    assert.match(arabic, /UTC/);
+});
 const id='00000000-0000-4000-8000-000000000001',nonce='00000000-0000-4000-8000-000000000002';
 const site='00000000-0000-4000-8000-000000000003',alice='00000000-0000-4000-8000-000000000004',bob='00000000-0000-4000-8000-000000000005';
 const hash='sha256:'+'a'.repeat(64);

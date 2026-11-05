@@ -2,16 +2,23 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-05T18:00:29.191067+00:00
+- Updated UTC: 2026-11-05T18:06:06.587927+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **G7 in progress. The disposable reference runs core25/Shell12, image8658, inventory1b12 and configuration6. The reviewed upgrade, dialog fixes, reflow samples and independent reproduction passed.**
-- Active item: **G-01b5. Close the remaining UI09 localization and assistive technology checks on the installed core25 target.**
+- Active item: **G-01b5. Build and qualify the core26 announcement and localization correction.**
 - Current result: **97/99 acceptance checks passed and 95.5 weighted points.** OPS-03 and UI-09 still require final qualification.
 
-## Current continuation: core25 installed and reproduced
+## Current continuation: UI09 announcement and localization correction
+
+- The installed core25 browser probe held an actual Notes navigation response and exercised a denied foreign Note. The loaded shell had no status or alert region before either message. Edge exposed the respective roles after insertion. This proves the timing gap in the live-region markup. [Baseline probe](evidence/G7/20261105-ui09-live-region-01/baseline.json).
+- Shell13 keeps the shell and Operations loading and error regions mounted with atomic announcements. Settings now uses the browser's locale-aware number and plural formatting for the member count. Operations formats existing timestamps in the selected language and explicitly displays UTC for the deployment journal. Machine-readable timestamps and the SDK wire contracts retain their existing format.
+- The first timestamp test assumed Arabic-Indic digits. The installed ICU selected Latin digits and localized the month. The revised test checks localization and UTC semantics. The affected Node suites passed 12 tests, the core upgrade suite passed 8, and the freeze verified 106 files across eight rows. Both edited XML templates parse. [Source checks](evidence/G7/20261105-ui09-live-region-01/source-checks.json).
+- Core26/Shell13 requires an immutable build and independent maintenance before installed proof. Core25/configuration6 remains the selected runtime, so its BOOT-02 evidence still applies. UI09 and OPS-03 remain open. 97/99 passed and 95.5 weighted points.
+
+## Previous continuation: core25 installed and reproduced
 
 - During the pause the four reference containers stopped and Docker lost the unreferenced core25 candidate and worker image. The existing containers restarted with their data volumes. The verified 50-file kit restored the worker image. The rebuilt candidate matched all 377 source input hashes and the full admitted runtime inventory. Two ordinary probe calls timed out during Docker auto-removal. A named read-only probe verified the inventory and was removed. After Docker cleared both auto-removal containers, the ordinary observer passed.
 - The separately reviewed operation `943509b3-e2b1-4dce-95cd-5771cd5e6642` applied the five owned changes across seven native scopes. The verifier checked all 50 checkpoint files, the independent worker binding and the 17 tables. The completed job had the expected release and dispatch fence updates. Seven successful helpers and the superseded app container were removed after their logs were retained. [Upgrade preservation](evidence/G7/20261105-core25-maintenance-01/preservation.json) and [helper retirement](evidence/G7/20261105-core25-maintenance-01/helper-retirement.json).
@@ -320,7 +327,7 @@ All items owned by the primary implementation agent. Later umbrella items are de
 | G-01b2 | Install admitted shell correction and qualify current UI09 | in_progress | UI09; §§17.4/24/27 | G-01b1; current managed reference | Actual core24/Shell11 operation04fa/2b0c/sevennative scopes completed config5/567d, dispatch9→10→11→12,16tablesexact+completedjob3fencesonly/46files/worker87 exact. Installed smoke fixes HTMLlang/Settings/nativeheadings/focus/imageURL but visual darkclose glyph remains indistinct from filteredfilledbackground. Next fullcurrent UI09 scope/metrics then minimal nextCSSfix; no apply/rebuild replay. |
 | G-01b3 | Build/admit remaining owned close/title accessibility correction | passed_static_candidate_not_installed | UI09 prerequisite; no point | G-01b2 audit; ADR0057/0052 | Current567d actual36observations/real200percent/17tables+4runtimes preserved. Source25/Shell12 CSSnativeclose+ownedDialogtitle extension,17Python+JS/XML/106freeze pass. Actual onebuild36511exit0/candidate6028+inventory1b12 admitted5sourcechanges/77distributionsexact/artifacts+policyexact/fourruntimesexact/133privacy0; ordinaryupgrade/installedproof pending. |
 | G-01b4 | Install core25 and verify native dialog corrections | passed | UI09 prerequisite | G-01b3 | Reviewed upgrade and preservation passed. Installed name, glyph, zoom and reflow evidence retained. |
-| G-01b5 | Close UI09 scope | in_progress | UI09 and §17.4 | G-01b4 | Verify locale formatting and assistive technology announcements on the installed target. |
+| G-01b5 | Close UI09 scope | in_progress | UI09 and §17.4 | G-01b4 | Installed core25 probe found regions inserted with content. Core26/Shell13 source correction and affected checks pass. Build, review, apply and verify installed behavior. |
 | G-01c | Performance and reliability qualification | passed | §§24.1–24.3 | G6 | Current14de10k/20session reads, shell586–990ms/100disposal cycles and source-bound observability qualified.20261104-observability-01/qualification.json binds actual evidence and limits;2/2performancepoints. |
 | G-01c1 | Record resources and measure read preflight | completed_diagnostic_target_not_run | §24.1 prerequisite; no target credit at30Notes | G-01a; G-01d0; G-01d1 | performance-preflight-01/resources.json/read-preflight.json/query-profile.json: engine16CPU/8.291GB, app2CPU1.5GiB+DB1CPU512MiB,2workers; listlatency2.0/3.5s,519/816SQL queries for24rows,0errors.30Notes not10kqualification. |
 | G-01c2 | Bound authorization reuse during pure read serialization | passed_bounded_correction | §24.1 prerequisite; ID03 requalified | G-01c1 | Core20/Notes8/Labels4 installed scope/security/preservation pass, realHTTP30Note20concurrent p95native178/120ms and gateway187/156ms,0errors. No10k target/extra performance points. |
@@ -448,7 +455,7 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
-- G-01b5 is active. Begin with §17.4 and the installed observations. Determine how the host SDK and native screens exercise date, number, time zone and plural formatting. Verify loading and error announcements with assistive technology before granting UI09 credit.
+- G-01b5 is active. Build core26/Shell13 from the exact selected core25 dependency image. Read the live-region baseline and source checks in `evidence/G7/20261105-ui09-live-region-01/`. Review and apply a new core upgrade, then verify stable installed announcement regions, localized counts and journal dates before the remaining AT check and independent reproduction.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration6, core25/Shell12, image `sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8`, inventory `sha256:1b12d51b9e584021ca22eb9c69c5d71c7e828833e563e60f5d07e91bb6f3e745`. Use project `mp-r0-r1release0afebf4f833b`, port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
 - Operation `943509b3-e2b1-4dce-95cd-5771cd5e6642` completed and its eight retired containers are recorded. All handles are terminal. Read the preservation and installed-observations receipts in `evidence/G7/20261105-core25-maintenance-01/`. Continue from that state.
 - If current source qualifies for release, assemble with `evidence/G7/20261105-core25-resume-image-01/candidate-build.json` and `evidence/G7/20261105-core25-repro-01/qualification.json` through the ADR0058 guards. Then verify the kit, check source and image privacy and provenance, exercise the fresh developer path, and audit the full G7 ledger. Current kit r1-0.1.23 is historical.

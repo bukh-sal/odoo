@@ -2,7 +2,7 @@
 import { Component, xml, useState, onMounted, onWillDestroy } from '@odoo/owl';
 
 export class OperationsPanel extends Component {
-    static props={api:Function,onSession:Function,onDenied:Function,initialWorkspace:{type:String,optional:true}};
+    static props={api:Function,onSession:Function,onDenied:Function,initialWorkspace:{type:String,optional:true},language:{type:String,optional:true}};
     static template=xml`<section class="mp_operations" aria-label="Plugin operations">
         <p>Prepare a plan, request the operation, then use local operator approval and apply.</p>
         <p>New native code requires a local operator to stage the release first. External services are provisioned separately by the operator; registration installs metadata in a suspended state, followed by a separate enable. Every operation requires exact local approval. Uploading or selecting an artifact does not execute it.</p>
@@ -39,8 +39,8 @@ export class OperationsPanel extends Component {
             <button t-if="state.installedNext!==null" t-on-click="()=>this.loadInstalled(state.installedNext)">Next installations</button>
             <button t-on-click="load">Refresh metadata</button>
         </section>
-        <div t-if="state.error" class="mp_notice" role="alert"><strong t-esc="state.error"/><button t-on-click="load">Refresh</button></div>
-        <p t-if="state.loading" role="status">Loading operator metadata…</p>
+        <div t-att-class="state.error?'mp_notice':'visually-hidden'" role="alert" aria-atomic="true"><t t-if="state.error"><strong t-esc="state.error"/><button t-on-click="load">Refresh</button></t></div>
+        <p t-att-class="state.loading?'':'visually-hidden'" role="status" aria-atomic="true" t-esc="state.loading?loadingLabel:''"/>
         <form t-if="state.context" t-on-submit.prevent="prepare" class="mp_operation_form">
             <label for="mp_operation_artifact">Plugin and version</label>
             <select id="mp_operation_artifact" t-model="state.digest" required="required" t-on-change="clearPlan">
@@ -133,15 +133,27 @@ export class OperationsPanel extends Component {
             <h2>Operation progress</h2><p role="status"><strong t-esc="state.status.state"/> · <t t-esc="state.status.phase"/></p>
             <p t-if="state.status.stale">Progress observation is stale. Refresh or inspect the local operator journal.</p>
             <p>Operation ID: <code t-esc="state.status.operation_id"/></p><p>Exact plan hash: <code t-esc="state.status.plan_hash"/></p>
-            <p t-if="state.status.approval_expires_at">Start approval expires: <time t-att-datetime="state.status.approval_expires_at" t-esc="state.status.approval_expires_at"/></p>
+            <p t-if="state.status.approval_expires_at">Start approval expires: <time dir="auto" t-att-datetime="state.status.approval_expires_at" t-esc="formatTimestamp(state.status.approval_expires_at)"/></p>
             <p t-if="state.status.state==='awaiting_operator_approval'">Next: local operator approval for this exact hash, followed by local apply.</p>
             <pre t-if="state.status.state==='awaiting_operator_approval'" t-esc="approvalCommand"/>
             <p t-if="state.status.state==='awaiting_operator_approval'">Replace the uppercase path placeholders with the independently configured local operator paths. Review the full plan and supply any required trust, permission or destructive acknowledgements locally.</p>
             <button t-if="!state.prepared &amp;&amp; !state.submitted &amp;&amp; requestId" t-on-click="submit" t-att-disabled="state.busy">Request this prepared operation</button>
-            <ol><li t-foreach="state.status.history" t-as="event" t-key="event.sequence"><time t-att-datetime="event.utc" t-esc="event.utc"/> · <t t-esc="event.code"/></li></ol>
+            <ol><li t-foreach="state.status.history" t-as="event" t-key="event.sequence"><time dir="auto" t-att-datetime="event.utc" t-esc="formatTimestamp(event.utc)"/> · <t t-esc="event.code"/></li></ol>
             <table t-if="state.status.dimensions.length"><thead><tr><th>Plugin</th><th>Artifact</th><th>Release</th><th>Database</th><th>Feature</th><th>Service runtime</th></tr></thead><tbody><tr t-foreach="state.status.dimensions" t-as="item" t-key="item.installation_id+item.workspace_id"><td t-esc="item.plugin_id"/><td t-esc="item.artifact_state"/><td t-esc="item.release_state"/><td t-esc="item.database_state"/><td t-esc="item.feature_state||'Not enabled'"/><td t-esc="item.service_state||'Not applicable'"/></tr></tbody></table>
         </section>
     </section>`;
+
+    get loadingLabel() {
+        return this.props.language === 'ar' ? 'جارٍ تحميل بيانات المشغّل…' : 'Loading operator metadata…';
+    }
+
+    formatTimestamp(value) {
+        // The operator journal covers the deployment, so display its times in UTC.
+        return new Intl.DateTimeFormat(this.props.language || 'en-US', {
+            timeZone: 'UTC', year: 'numeric', month: 'short', day: 'numeric',
+            hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short',
+        }).format(new Date(value));
+    }
 
     setup(){
         this.state=useState({context:null,catalog:[],catalogNext:null,catalogBusy:false,installed:[],installedOffset:0,installedNext:null,inspectionStale:false,details:null,uploadName:'',uploadBusy:false,uploadResult:null,digest:'',action:'suspend',workspace:this.props.initialWorkspace||'',cascade:false,prepared:null,status:null,impact:null,featureStates:[],destructiveConfirmed:false,error:'',loading:true,busy:false,submitted:false});

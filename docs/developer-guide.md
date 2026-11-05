@@ -112,6 +112,28 @@ supplies standard view, dialog, notification and command infrastructure. Custom
 pages remain optional; same-origin pages and native Python are trusted, not
 sandboxed by grant metadata.
 
+For custom page text, read `host.locale.current()` when mounting and use its
+language and time zone with the browser's `Intl` formatters. Keep the original
+UTC timestamp in the service DTO and in the `datetime` attribute of a
+`<time>` element. Choose the translated message using its plural category.
+
+```js
+const { language, direction, timezone } = host.locale.current();
+element.dir = direction;
+const countText = new Intl.NumberFormat(language).format(count);
+const category = new Intl.PluralRules(language).select(count);
+const dateText = new Intl.DateTimeFormat(language, {
+    timeZone: timezone, year: 'numeric', month: 'short', day: 'numeric',
+    hour: 'numeric', minute: 'numeric', timeZoneName: 'short',
+}).format(new Date(utcTimestamp));
+```
+
+Mount empty status and alert regions before changing their text. Use polite
+status announcements for loading and assertive alerts for errors that require
+attention. Keep focus on the active control unless the interaction requires a
+focus change. [Status technique](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA22)
+and [error technique](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA19).
+
 ## Install, validate permissions and recover
 
 Packaging alone never deploys code. New native executable bytes require a

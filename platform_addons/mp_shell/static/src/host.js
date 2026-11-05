@@ -48,11 +48,13 @@ const words={
 };
 
 Object.assign(words['en-US'],{
+    loading:'Loading…',memberCount:{one:'{count} member',other:'{count} members'},
     preferences:'Preferences',workspaceAdministration:'Workspace administration',workspaceAccessHelp:'Workspace access is checked for every operation. Installation and deployment require a separate local operator.',
     workspaceName:'Workspace name',defaultLanguage:'Default language',timezone:'Time zone',saveWorkspaceSettings:'Save workspace settings',members:'Members',memberHelp:'Use the public principal ID supplied by your operator. Account provisioning remains an operator action.',
     member:'Member',role:'Role',access:'Access',viewer:'Viewer',editor:'Editor',administrator:'Administrator',roleFor:'Role for ',revokeAccess:'Revoke access',revokeFor:'Revoke access for ',principalID:'Principal ID',memberRole:'Member role',addMember:'Add member',
 });
 Object.assign(words.ar,{
+    loading:'جارٍ التحميل…',memberCount:{zero:'لا أعضاء',one:'عضو واحد',two:'عضوان',few:'{count} أعضاء',many:'{count} عضوًا',other:'{count} عضو'},
     preferences:'التفضيلات',workspaceAdministration:'إدارة مساحة العمل',workspaceAccessHelp:'يُتحقق من الوصول إلى مساحة العمل في كل عملية. يتطلب التثبيت والنشر مشغّلاً محلياً مستقلاً.',
     workspaceName:'اسم مساحة العمل',defaultLanguage:'اللغة الافتراضية',timezone:'المنطقة الزمنية',saveWorkspaceSettings:'حفظ إعدادات مساحة العمل',members:'الأعضاء',memberHelp:'استخدم معرّف المستخدم العام الذي يقدمه المشغّل. يظل إنشاء الحسابات من مهام المشغّل.',
     member:'العضو',role:'الدور',access:'الوصول',viewer:'مشاهد',editor:'محرر',administrator:'مسؤول',roleFor:'دور ',revokeAccess:'إلغاء الوصول',revokeFor:'إلغاء الوصول عن ',principalID:'المعرّف العام',memberRole:'دور العضو',addMember:'إضافة عضو',
@@ -90,14 +92,15 @@ class Shell extends Component {
             </div>
             <div t-if="state.detailLabels.length" class="mp_labels" aria-label="Note labels"><span t-foreach="state.detailLabels" t-as="label" t-key="label" t-esc="label"/></div>
             <div t-if="state.recoveryDraft and state.context" class="mp_notice" role="status">Your unsaved draft is available locally. <button t-on-click="downloadDraft">Download unsaved draft</button></div>
-            <div t-if="state.error" class="mp_notice" role="alert"><strong t-esc="state.error.message"/><p t-esc="state.error.request_id"/>
+            <div t-att-class="state.error?'mp_notice':'visually-hidden'" role="alert" aria-atomic="true">
+                <t t-if="state.error"><strong t-esc="state.error.message"/><p t-esc="state.error.request_id"/>
                 <p t-if="state.error.field and state.error.field!=='client_release'">Field: <t t-esc="state.error.field"/></p>
                 <button t-if="!state.releaseChanged" t-on-click="retry" t-esc="t('retry')"/>
                 <button t-if="state.releaseChanged" t-on-click="reloadRelease">Refresh platform</button>
                 <a t-if="state.error.code==='UNAUTHENTICATED'" t-att-href="loginURL">Sign in</a>
-                <button t-if="canRecoverDraft" t-on-click="downloadDraft">Download unsaved draft</button>
+                <button t-if="canRecoverDraft" t-on-click="downloadDraft">Download unsaved draft</button></t>
             </div>
-            <p t-if="state.loading" role="status">Loading…</p>
+            <p t-att-class="state.loading?'':'visually-hidden'" role="status" aria-atomic="true" t-esc="state.loading?t('loading'):''"/>
             <section t-if="state.settings" class="mp_notice" t-att-aria-label="t('preferences')">
                 <h2 t-esc="t('preferences')"/><label><t t-esc="t('theme')"/> <select id="mp_shell_theme" t-on-change="setTheme" t-att-aria-label="t('theme')"><option value="light" t-att-selected="state.theme==='light'" t-esc="t('light')"/><option value="dark" t-att-selected="state.theme==='dark'" t-esc="t('dark')"/></select></label>
                 <label><t t-esc="t('language')"/> <select id="mp_shell_language" t-on-change="setLanguage" t-att-aria-label="t('language')"><option value="en-US" t-att-selected="state.language==='en-US'">English</option><option value="ar" t-att-selected="state.language==='ar'">العربية</option></select></label>
@@ -111,7 +114,7 @@ class Shell extends Component {
                     <label for="mp_workspace_timezone" t-esc="t('timezone')"/><input id="mp_workspace_timezone" t-model="state.workspaceSettings.timezone" maxlength="64" required="required"/>
                     <button type="submit" t-att-disabled="state.adminBusy" t-esc="t('saveWorkspaceSettings')"/>
                 </form>
-                <h3 t-esc="t('members')"/><p t-esc="t('memberHelp')"/>
+                <h3 t-esc="t('members')"/><p t-esc="memberCount()"/><p t-esc="t('memberHelp')"/>
                 <table class="mp_members"><thead><tr><th scope="col" t-esc="t('member')"/><th scope="col" t-esc="t('role')"/><th scope="col" t-esc="t('access')"/></tr></thead><tbody>
                     <tr t-foreach="state.members" t-as="member" t-key="member.principal_id">
                         <td t-esc="member.display_name"/><td><select t-att-aria-label="t('roleFor')+member.display_name" t-on-change="event=>this.changeWorkspaceMember(member.principal_id,event.target.value,event.target)" t-att-disabled="state.adminBusy">
@@ -125,7 +128,7 @@ class Shell extends Component {
                     <button type="submit" t-att-disabled="state.adminBusy" t-esc="t('addMember')"/>
                 </form>
             </section>
-            <OperationsPanel t-if="state.operations and !state.releaseChanged" api="operationsAPI" onSession="operatorSession" onDenied="operatorDenied" initialWorkspace="state.workspace"/>
+            <OperationsPanel t-if="state.operations and !state.releaseChanged" api="operationsAPI" onSession="operatorSession" onDenied="operatorDenied" initialWorkspace="state.workspace" language="state.language"/>
             <div class="mp_content" t-if="!state.settings and !state.operations">
                 <div t-ref="custom"/>
                 <View t-if="state.nativeProps" t-key="state.generation" t-props="state.nativeProps"/>
@@ -191,6 +194,13 @@ class Shell extends Component {
         onWillDestroy(()=>{clearInterval(this.timer);this.closeReleaseNotice?.();releaseFence.onChange=null;this.removeCommandHotkey();window.removeEventListener('beforeunload',this.onBeforeUnload);window.removeEventListener('popstate',this.onPop);document.removeEventListener('visibilitychange',this.onVisibility);this.retire();});
     }
     t(key){return words[this.state.language][key]||key;}
+    memberCount() {
+        const { language, members } = this.state;
+        const count = members.length;
+        const category = new Intl.PluralRules(language).select(count);
+        const patterns = words[language].memberCount;
+        return (patterns[category] || patterns.other).replace('{count}', new Intl.NumberFormat(language).format(count));
+    }
     get loginURL(){return '/web/login?redirect='+encodeURIComponent(location.pathname+location.search);}
     async json(path,body,options={}){
         releaseFence.assert(path);
