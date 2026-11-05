@@ -37,15 +37,20 @@ site's Docker assets were retired. The next item is to define the supported
 stock release profile and bind its qualification to an exact kit. Background
 execution is deferred. [Evidence](evidence/post-r1/shared-foundation/stock-webclient-follow-up.json)
 
-The stock release implementation goal is active at **SW-04, exact replacement
-qualification**. Draft `b9e0048b` passed fresh install, native browser and
-worker workflows, dirty-form recovery, HTTP boundaries, and a checkpointed
-upgrade with a pre-traffic fault and separate resume. Its Arabic UI still
-laid out left to right. Source `6e2b877e` adds the locked RTL compiler and
-reproduced application and compiler bytes across independent builds. The
-replacement kit is assembling and its transition rehearsal has been
-approved. A draft load test missed the native list target during the build.
-Measure the exact replacement after heavy concurrent work finishes.
+The stock release implementation goal is active at **SW-04, final
+qualification** (roughly 80% of stock release work). Draft `b9e0048b`
+passed the core browser, worker and lifecycle checks, then exposed an
+LTR stylesheet in Arabic. Draft `92374f55` added the compiler and passed
+fresh workflows, exact reproduction, diagnostic and artifact scans, draft
+recovery and the checkpointed transition. Its Arabic catalog activation
+failed on missing Odoo PO entry markers. Source `a90daeef` corrects both
+catalogs and passed Odoo's actual parser in each build. The `4309ed25`
+draft then passed clean installation, privacy, HTTP, native draft recovery
+and a quiet load run, with list p95 407.581 ms and detail p95 138.551 ms.
+Live RTL failed when Node's default JIT reservation inherited Odoo's
+640 MiB address-space limit. The bounded launcher passed on the actual
+744 KB stylesheet. The next build adds release-versioned RTL CSS and
+operator preflight validation before traffic.
 [Stock release gates](../planning/stock_webclient_release.md)
 
 ## Last backend continuation — Windows regression fixtures corrected
@@ -461,8 +466,8 @@ No current environment blocker: isolated protected headless Edge now provides ac
 
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
-| STOCK-RTL-01 | Replacement built. Live retest pending. | Draft translated native controls but served LTR rules under the RTL stylesheet name. Compiler is now packaged. Verify RTL, labels and focus on the selected installed image. |
-| STOCK-PERF-01 | Draft list p95 missed. Exact replacement test pending. | 200 native list reads p95 908.527 ms during build. Detail p95 212.453 ms. Match the historical query shape and analyzed fixture, then run after build and restore finish. |
+| STOCK-RTL-01 | Actual stylesheet compiled with bounded Node. Release retest pending. | Odoo accepted all 13 corrected Arabic entries. Its HTTP worker exceeded the default Node JIT reservation at a 640 MiB virtual-memory limit. The bounded launcher mirrors the full stylesheet under that limit. Native asset validation and release-versioned URLs prevent stale fallback. |
+| STOCK-PERF-01 | Quiet draft target passed. Final exact run pending. | Matching the analyzed historical workload after builds stopped gave list p95 407.581 ms and detail p95 138.551 ms. Repeat on the selected image. |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |
 | G7-FRESH-BROWSER-01 | Resolved | User selected the in-app browser. Generation5 native Notes, Labels and Canvas walkthrough passed. |
 | G7-ID08-CURRENT-01 | resolved; current ID08 passed |20261104-ui-qualification-01/identity-qualification.json actual sameAlice Aadmin/Bviewer native lists/forms/lateHTTP200 response cancellation, no crosstab cache/data/role contamination.17tables/fourruntimes exact; no foreign requests/exceptions; ownedprofile process exited0. UI09/fullrelease still open. |
@@ -539,14 +544,15 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
-- Stock qualification uses replacement image `92374f55` from `6e2b877e`.
-  The pipeline assembles `.local/releases/stock-0.1.28-rtl` then provisions
-  its clean site on port 18108. The port 18106 rehearsal is applying the
-  replacement through a separate failure, fresh restore and resume. Check
-  private state and live command outcomes before resuming either. Requalify
-  the exact replacement's browser recovery, RTL, HTTP/worker and outbound
-  boundaries, then measure the load test and retire disposable targets.
-  [Replacement reproduction](evidence/G7/20261105-stock-rtl-repro-01/qualification.json)
+- Stock qualification uses final image `4309ed25` from `a90daeef`.
+  The pipeline assembles `.local/releases/stock-0.1.28-final` then provisions
+  its clean site on port 18109. The port 18108 rehearsal applies the final
+  image with an injected publication fault, fresh restore and separate
+  resume. Inspect the protected markers before continuing. Run the final
+  browser and HTTP checks, verify performance when other workloads are
+  idle, and retire only the exact disposable targets. Ports 18106 and
+  18107 have already been retired.
+  [Final reproduction](evidence/G7/20261105-stock-final-repro/qualification.json)
 - Post-R1 shared foundation stress test complete. The two Docker deployments were retired after the successor browser checks. Start any new proof with fresh disposable targets. The private site journals and checkpoint receipts remain in `.local/foundation-stress/sites-02`, with build records in `.local/foundation-stress/builds`. Scoped baseline `a0b2f85f` and successor `20f71fb9` are retired. See the [stress checklist](../planning/shared_foundation_stress_test.md) and [lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json).
 - Local R1 is qualified. Read [the handoff](r1-handoff.md), [closure map](r1-release-checklist.md) and [gate decision](evidence/G7/20261105-section28-audit-01/gate-G7.json). The developer reference tab remains open at Canvas.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.

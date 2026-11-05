@@ -36,3 +36,9 @@ set from `deploy/Dockerfile.stock-rtl`. Odoo uses the compiler to mirror its
 native styles. The release retains Node and package notices. This distribution
 change leaves the pinned Odoo source intact. The workspace trigger focus and
 Arabic messages live in the platform addons.
+
+The stock RTL launcher disables JIT and bounds the Node heap within Odoo's
+640 MiB HTTP worker address space. The owned asset adapter versions the two
+native RTL bundles with the release inventory and lets Odoo clean their old
+attachments. The operator verifies the mirrored screen CSS before opening
+traffic. Earlier profile versions keep their original asset preparation.

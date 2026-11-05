@@ -10,8 +10,8 @@ USER 0:0
 COPY --from=compiler /usr/local/bin/node /usr/local/bin/node
 COPY --from=compiler /usr/local/LICENSE /opt/stock-rtl/Node-LICENSE
 COPY --from=compiler /opt/stock-rtl /opt/stock-rtl
-RUN ln -s /opt/stock-rtl/node_modules/.bin/rtlcss /usr/local/bin/rtlcss \
-    && test "$(node --version)" = v24.22.2 \
+COPY --chmod=0755 deploy/stock-rtl/rtlcss /usr/local/bin/rtlcss
+RUN test "$(node --version)" = v24.22.2 \
     && test "$(node -p "require('/opt/stock-rtl/node_modules/rtlcss/package.json').version")" = 4.3.0 \
     && printf '.probe{direction:ltr;margin-left:1px}' | rtlcss - | grep -F 'margin-right:1px'
 USER 10001:10001

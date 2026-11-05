@@ -36,6 +36,7 @@ class FactoryTests(unittest.TestCase):
         odoo=ModuleType('odoo');odoo.models=SimpleNamespace(AbstractModel=FakeQWeb)
         native=ModuleType('odoo.addons.base.models.assetsbundle');native.AssetsBundle=FakeBundle
         release=ModuleType('odoo.addons.mp_identity.release');release.image_inventory_digest=lambda:'sha256:'+'a'*64
+        release.stock_webclient_default=lambda:True
         with patch.dict(sys.modules,{'odoo':odoo,'odoo.addons.base.models.assetsbundle':native,'odoo.addons.mp_identity.release':release}):
             self.adapter=runpy.run_path(str(ROOT/'platform_addons/mp_shell/models/assets.py'))
         self.qweb=self.adapter['IrQWeb']()
@@ -54,6 +55,15 @@ class FactoryTests(unittest.TestCase):
                 bundle=self.qweb._get_asset_bundle(name,debug_assets=debug,assets_params={'custom':'fixed'})
                 self.assertIs(type(bundle),FakeBundle);self.assertTrue(bundle.kwargs['delegated'])
                 bundle._clean_attachments('min.js','keep');self.assertTrue(bundle.deleted)
+
+    def test_stock_rtl_css_versions_without_retaining_old_attachments(self):
+        for name in ('web.assets_web', 'web.assets_web_print'):
+            bundle = self.qweb._get_asset_bundle(name, css=True, js=False, rtl=True)
+            self.assertIs(type(bundle), self.adapter['ReleaseVersionedBundle'])
+            self.assertEqual(len(bundle.get_version('css')), 64)
+            bundle._clean_attachments('min.css', 'keep')
+            self.assertTrue(bundle.deleted)
+        self.assertIs(type(self.qweb._get_asset_bundle('web.assets_web', css=False, rtl=True)), FakeBundle)
 
     def test_explicit_asset_parameters_are_not_replaced(self):
         params={'fixed':1};bundle=self.qweb._get_asset_bundle('mp_shell.assets_host',assets_params=params)
@@ -112,6 +122,34 @@ class PreparationTests(unittest.TestCase):
         rows = prepare(self.env)
         self.assertEqual(len(rows), 2)
         self.assertEqual(self.calls, [('web.assets_web', {'css': True, 'js': True, 'rtl': False})])
+
+    def test_stock_rtl_prepares_css_and_rejects_cached_fallback(self):
+        def get(name, **options):
+            self.calls.append((name, options))
+            bundle = CompileBundle()
+            for kind, (asset,) in bundle.outputs.items():
+                asset.url = asset.url.replace('mp_shell.assets_host', name)
+                if options['rtl']:
+                    asset.url = asset.url.replace('.min.', '.rtl.min.')
+                    asset.raw = b'.o_web_client{direction:rtl}'
+                    asset.checksum = hashlib.sha1(asset.raw).hexdigest()
+            return bundle
+
+        self.env['ir.qweb']._get_asset_bundle = get
+        self.assertEqual(len(prepare(self.env, stock_webclient=True, stock_rtl=True)), 6)
+        self.assertEqual([name for name, options in self.calls if options['rtl']], ['web.assets_web', 'web.assets_web_print'])
+
+        def cached_error(name, **options):
+            bundle = get(name, **options)
+            if options['rtl']:
+                asset, = bundle.outputs['css']
+                asset.raw = b'/* ## CSS error message ##*/'
+                asset.checksum = hashlib.sha1(asset.raw).hexdigest()
+            return bundle
+
+        self.env['ir.qweb']._get_asset_bundle = cached_error
+        with self.assertRaisesRegex(ValueError, 'Stock RTL CSS'):
+            prepare(self.env, stock_webclient=True, stock_rtl=True)
 
     def test_private_payload_cannot_override_the_fixed_database_selector(self):
         with tempfile.TemporaryDirectory() as directory:

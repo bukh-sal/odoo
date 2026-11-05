@@ -19,26 +19,30 @@ def validate_configuration(path, data):
         raise ValueError('Asset preparation database differs from fixed configuration')
 
 
-def prepare(env, *, stock_webclient=False):
+def prepare(env, *, stock_webclient=False, stock_rtl=False):
     # Pick from fixed bundles using installed registry state, never plan input.
-    # Debug, dark, print and locale/RTL variants use native generation.
     shell = env['ir.module.module'].search_count([('name', '=', 'mp_shell'), ('state', '=', 'installed')])
     names = ['mp_shell.assets_host'] if shell else []
     if stock_webclient or not shell:
         names.append('web.assets_web')
-    return sorted((row for name in names for row in prepare_bundle(env, name)), key=lambda item: item['url'])
+    rows = [row for name in names for row in prepare_bundle(env, name)]
+    if stock_rtl:
+        for name in ('web.assets_web', 'web.assets_web_print'):
+            rows.extend(prepare_bundle(env, name, rtl=True))
+    return sorted(rows, key=lambda item: item['url'])
 
 
-def prepare_bundle(env, name):
+def prepare_bundle(env, name, *, rtl=False):
     rows = {}
-    bundle = env['ir.qweb']._get_asset_bundle(name, css=True, js=True, rtl=False)
+    bundle = env['ir.qweb']._get_asset_bundle(name, css=True, js=not rtl, rtl=rtl)
     for asset in bundle.files:
         if asset.get('filename') and not Path(asset['filename']).is_file():
             raise ValueError('Public host asset source missing')
     # Native generate_xml_bundle turns XML errors into browser error code;
     # validate directly so malformed templates fail before traffic opens.
-    bundle.xml()
-    for kind in ('js', 'css'):
+    if not rtl:
+        bundle.xml()
+    for kind in ('css',) if rtl else ('js', 'css'):
         attachments = getattr(bundle, kind)()
         if bundle.css_errors:
             raise ValueError('Public host asset compilation failed')
@@ -53,6 +57,9 @@ def prepare_bundle(env, name):
             raw = asset.raw
             if not isinstance(raw, bytes) or not raw or hashlib.sha1(raw).hexdigest() != asset.checksum:
                 raise ValueError('Public host asset bytes/checksum mismatch')
+            if rtl and (b'/* ## CSS error message ##*/' in raw or
+                    (name == 'web.assets_web' and not re.search(rb'\.o_web_client\s*\{[^}]*\bdirection\s*:\s*rtl\b', raw))):
+                raise ValueError('Stock RTL CSS did not compile into right-to-left rules')
             rows[asset.url] = {'url': asset.url, 'mimetype': asset.mimetype,
                                'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
     return rows.values()
@@ -83,7 +90,9 @@ def main():
         if dict(cursor.fetchall()) != expected:
             raise ValueError('Asset preparation target/publication changed')
         env = api.Environment(cursor, SUPERUSER_ID, {'lang': 'en_US'})
-        rows = prepare(env, stock_webclient=json.loads(inventory)['policy'].get('stock_webclient') is True)
+        policy = json.loads(inventory)['policy']
+        rows = prepare(env, stock_webclient=policy.get('stock_webclient') is True,
+                       stock_rtl=policy.get('stock_rtl_prewarm') is True)
         cursor.commit()
     print(json.dumps({'result': 'prepared', 'generation': data['generation'],
                       'inventory_digest': data['inventory_digest'], 'assets': rows}))

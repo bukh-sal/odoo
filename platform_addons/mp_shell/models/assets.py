@@ -8,13 +8,14 @@ import hashlib
 
 from odoo import models
 from odoo.addons.base.models.assetsbundle import AssetsBundle
-from odoo.addons.mp_identity.release import image_inventory_digest
+from odoo.addons.mp_identity.release import image_inventory_digest, stock_webclient_default
 
 
 HOST_BUNDLE = 'mp_shell.assets_host'
+STOCK_RTL_BUNDLES = {'web.assets_web', 'web.assets_web_print'}
 
 
-class RetainedHostBundle(AssetsBundle):
+class ReleaseVersionedBundle(AssetsBundle):
     def get_version(self, asset_type):
         # Native versions truncate a timestamp/path descriptor to seven hex
         # characters. Bind its full variant descriptor to immutable image
@@ -22,6 +23,8 @@ class RetainedHostBundle(AssetsBundle):
         identity=':'.join((image_inventory_digest(),self.name,asset_type,self.get_checksum(asset_type)))
         return hashlib.sha256(identity.encode()).hexdigest()
 
+
+class RetainedHostBundle(ReleaseVersionedBundle):
     def _clean_attachments(self, extension, keep_url):
         # Called only for HOST_BUNDLE by the factory below. No global monkey
         # patch and no change to private/workspace attachment authorization.
@@ -33,13 +36,19 @@ class IrQWeb(models.AbstractModel):
 
     def _get_asset_bundle(self, bundle_name, css=True, js=True, debug_assets=False,
                           rtl=False, assets_params=None, autoprefix=False):
-        if bundle_name != HOST_BUNDLE or debug_assets:
+        factory = None
+        if not debug_assets:
+            if bundle_name == HOST_BUNDLE:
+                factory = RetainedHostBundle
+            elif rtl and css and not js and bundle_name in STOCK_RTL_BUNDLES and stock_webclient_default():
+                factory = ReleaseVersionedBundle
+        if factory is None:
             return super()._get_asset_bundle(bundle_name, css=css, js=js,
                 debug_assets=debug_assets, rtl=rtl, assets_params=assets_params,
                 autoprefix=autoprefix)
         if assets_params is None:
             assets_params = self.env['ir.asset']._get_asset_params()
         files, external = self._get_asset_content(bundle_name, assets_params)
-        return RetainedHostBundle(bundle_name, files, external, env=self.env,
+        return factory(bundle_name, files, external, env=self.env,
             css=css, js=js, debug_assets=debug_assets, rtl=rtl,
             assets_params=assets_params, autoprefix=autoprefix)

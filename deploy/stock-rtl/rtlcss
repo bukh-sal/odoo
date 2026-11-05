@@ -1,0 +1,4 @@
+#!/bin/sh
+# This child inherits the Odoo HTTP worker's address-space limit.
+exec /usr/local/bin/node --jitless --max-old-space-size=128 --max-semi-space-size=4 --v8-pool-size=1 \
+    /opt/stock-rtl/node_modules/rtlcss/bin/rtlcss.js "$@"
