@@ -37,10 +37,14 @@ site's Docker assets were retired. The next item is to define the supported
 stock release profile and bind its qualification to an exact kit. Background
 execution is deferred. [Evidence](evidence/post-r1/shared-foundation/stock-webclient-follow-up.json)
 
-The stock release implementation goal is active at SW-01. The selected kit
-uses stock Odoo for records and explicit links to the existing custom-page
-host and independently managed worker. Verify stock navigation and draft
-recovery before freezing build inputs. [Stock release gates](../planning/stock_webclient_release.md)
+The stock release implementation goal is active at **SW-01, live draft
+recovery**. SW-02 passed for the exact kit built from `6ca7d552` and
+independently rebuilt without cache or build network. The selected kit
+installed into a fresh environment and passed the five backend reference
+checks. In-app verification confirmed the stock redirect, keyboard workspace
+selection, native Notes list and form, the editor's Labels action and the
+minimal Canvas board. The separate worker integration and the first-to-selected
+release recovery rehearsal are in progress. [Stock release gates](../planning/stock_webclient_release.md)
 
 ## Last backend continuation — Windows regression fixtures corrected
 
@@ -531,6 +535,13 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
+- Stock qualification uses `.local/releases/stock-0.1.28-02` (manifest
+  `d7554222`) and the fresh site on port 18107. Continue the active SW-01
+  item after its connector operation reopens ingress. Check native dirty
+  reload/close and expired-session recovery before signing off the browser.
+  The separate baseline site on port 18106 is running the staged recovery
+  rehearsal. Preserve both site journals and finish the boundary measurements
+  before retiring either project. [Candidate evidence](evidence/G7/20261105-stock-kit-repro-02/)
 - Post-R1 shared foundation stress test complete. The two Docker deployments were retired after the successor browser checks. Start any new proof with fresh disposable targets. The private site journals and checkpoint receipts remain in `.local/foundation-stress/sites-02`, with build records in `.local/foundation-stress/builds`. Scoped baseline `a0b2f85f` and successor `20f71fb9` are retired. See the [stress checklist](../planning/shared_foundation_stress_test.md) and [lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json).
 - Local R1 is qualified. Read [the handoff](r1-handoff.md), [closure map](r1-release-checklist.md) and [gate decision](evidence/G7/20261105-section28-audit-01/gate-G7.json). The developer reference tab remains open at Canvas.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.

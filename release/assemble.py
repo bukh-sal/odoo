@@ -1,6 +1,6 @@
 """Assemble one draft R1 kit from qualified local artifacts, never active control/data."""
 from __future__ import annotations
-import argparse,hashlib,json,shutil,subprocess,sys,urllib.request,zipfile
+import argparse,hashlib,io,json,shutil,subprocess,sys,tarfile,urllib.request,zipfile
 from datetime import datetime,timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -11,6 +11,31 @@ from modular_platform.deployment import inspect_image
 from modular_platform.operator_os import protect_directory
 from verify import digest,verify
 from application_inputs import load_application_inputs
+
+
+def stock_rtl_notices(image, output):
+    command = ['docker', 'run', '--rm', '--network', 'none', '--read-only', '--entrypoint']
+    version = subprocess.check_output(command + ['/usr/local/bin/rtlcss', image, '--version'], timeout=30)
+    if version.strip() != b'rtlcss version: 4.3.0':
+        raise ValueError('Selected stock image is missing the locked RTL compiler')
+    root = '/opt/stock-rtl'
+    license_files = subprocess.check_output(command + ['find', image, root + '/node_modules',
+        '-type', 'f', '-iname', 'license*'], timeout=30).decode().splitlines()
+    expected = set(json.loads((ROOT/'deploy/stock-rtl/package-lock.json').read_bytes())['packages']) - {''}
+    relative = [Path(name).relative_to(root).as_posix() for name in license_files]
+    if {name.rsplit('/', 1)[0] for name in relative} != expected:
+        raise ValueError('Missing or unexpected stock RTL package notices')
+    files = sorted(relative + ['Node-LICENSE', 'package-lock.json'])
+    raw = subprocess.check_output(command + ['tar', image, '-C', root, '-cf', '-', *files], timeout=30)
+    with tarfile.open(fileobj=io.BytesIO(raw)) as source, zipfile.ZipFile(output, 'x', zipfile.ZIP_DEFLATED) as archive:
+        if sorted(source.getnames()) != files:
+            raise ValueError('Stock RTL notice inventory differs from the selected image')
+        for name in files:
+            member = source.getmember(name)
+            if not member.isfile() or not 0 < member.size < 1024 * 1024:
+                raise ValueError('Invalid stock RTL notice file')
+            archive.writestr(zipfile.ZipInfo(name), source.extractfile(member).read(), compress_type=zipfile.ZIP_DEFLATED)
+
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -116,6 +141,10 @@ def main():
         with zipfile.ZipFile(path) as archive:
             if archive.testzip() is not None:raise ValueError('Notice ZIP CRC mismatch')
         copy(path,'notices/'+role+'.zip',notice_hashes[role])
+    if actual['inventory']['policy'].get('stock_webclient'):
+        name = 'notices/stock-rtl.zip'
+        stock_rtl_notices(images['application']['image_id'], output/name)
+        register(name)
     phase('retaining_toolchain')
     toolchain=json.loads((ROOT/'deploy/host-toolchain.lock.json').read_bytes())
     python=toolchain['python_provenance']

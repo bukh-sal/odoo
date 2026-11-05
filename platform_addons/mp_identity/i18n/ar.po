@@ -1,0 +1,36 @@
+# Translation of the Modular Platform WebClient recovery notices.
+msgid ""
+msgstr ""
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. odoo-javascript
+#: code:addons/mp_identity/static/src/native_webclient.js:0
+msgid "Session expired"
+msgstr "انتهت صلاحية الجلسة"
+
+#. odoo-javascript
+#: code:addons/mp_identity/static/src/native_webclient.js:0
+msgid "Sign in in a new tab. Keep this tab open to copy any unsaved changes."
+msgstr "سجّل الدخول في علامة تبويب جديدة. أبقِ علامة التبويب هذه مفتوحة لنسخ أي تغييرات غير محفوظة."
+
+#. odoo-javascript
+#: code:addons/mp_identity/static/src/native_webclient.js:0
+msgid "Sign in again"
+msgstr "سجّل الدخول مجددًا"
+
+#. odoo-javascript
+#: code:addons/mp_identity/static/src/native_webclient.js:0
+msgid "Platform updated"
+msgstr "تم تحديث المنصة"
+
+#. odoo-javascript
+#: code:addons/mp_identity/static/src/native_webclient.js:0
+msgid "Open the current release in a new tab. Keep this tab open to copy any unsaved changes."
+msgstr "افتح الإصدار الحالي في علامة تبويب جديدة. أبقِ علامة التبويب هذه مفتوحة لنسخ أي تغييرات غير محفوظة."
+
+#. odoo-javascript
+#: code:addons/mp_identity/static/src/native_webclient.js:0
+msgid "Open current release"
+msgstr "افتح الإصدار الحالي"

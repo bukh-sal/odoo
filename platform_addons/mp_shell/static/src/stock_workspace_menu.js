@@ -11,7 +11,7 @@ class StockWorkspaceMenu extends Component {
     static props = {};
     static template = xml`
         <Dropdown>
-            <button type="button" aria-haspopup="menu" t-esc="label"/>
+            <button type="button" class="mp_stock_workspace" aria-haspopup="menu" t-esc="label"/>
             <t t-set-slot="content">
                 <DropdownItem t-foreach="workspaces" t-as="space" t-key="space.id"
                     onSelected="() => this.open('/odoo', space.id)">
@@ -19,16 +19,18 @@ class StockWorkspaceMenu extends Component {
                 </DropdownItem>
                 <t t-if="selected">
                     <div class="dropdown-divider" role="separator"/>
-                    <DropdownItem onSelected="() => this.open('/odoo/action-mp_example_notes.action_notes', selected.id)">Notes</DropdownItem>
-                    <DropdownItem onSelected="() => this.open('/app/org.example.canvas/', selected.id)">Canvas</DropdownItem>
-                    <DropdownItem onSelected="() => this.open('/app/settings', selected.id)">Platform settings</DropdownItem>
-                    <DropdownItem onSelected="() => this.open('/app/org.example.notes/', selected.id)">Notes tools</DropdownItem>
+                    <DropdownItem onSelected="() => this.open('/odoo/action-mp_example_notes.action_notes', selected.id)"><t t-esc="messages.notes"/></DropdownItem>
+                    <DropdownItem onSelected="() => this.open('/app/org.example.canvas/', selected.id)"><t t-esc="messages.canvas"/></DropdownItem>
+                    <DropdownItem onSelected="() => this.open('/app/settings', selected.id)"><t t-esc="messages.settings"/></DropdownItem>
+                    <DropdownItem onSelected="() => this.open('/app/org.example.notes/', selected.id)"><t t-esc="messages.tools"/></DropdownItem>
                 </t>
                 <span t-if="!workspaces.length" class="dropdown-item-text" t-esc="emptyMessage"/>
             </t>
         </Dropdown>`;
 
     setup() {
+        this.messages = { notes: _t("Notes"), canvas: _t("Canvas"),
+            settings: _t("Platform settings"), tools: _t("Notes tools") };
         this.workspaces = [];
         this.emptyMessage = _t("No workspaces available");
         onWillStart(async () => {

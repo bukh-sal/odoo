@@ -37,6 +37,13 @@ def main():
             or not re.fullmatch(r'distribution-r1(?:-[A-Za-z0-9_-]+)?\.json',policy.name)):
         raise ValueError('Existing operator-owned deploy/distribution-r1*.json policy required')
     policy_name=policy.relative_to(ROOT).as_posix()
+    if json.loads(policy.read_bytes()).get('stock_webclient'):
+        if not dependency_base:
+            raise ValueError('Stock WebClient requires the pinned RTL dependency image from Dockerfile.stock-rtl')
+        version = subprocess.check_output(['docker', 'run', '--rm', '--network', 'none', '--read-only',
+            '--entrypoint', '/usr/local/bin/rtlcss', args.dependency_base_image, '--version'], timeout=30)
+        if version.strip() != b'rtlcss version: 4.3.0':
+            raise ValueError('Selected stock WebClient dependency image has the wrong RTL compiler')
     output=args.output.resolve()
     if not output.is_relative_to(ROOT/'docs/evidence'/args.gate) or output.exists() or not re.fullmatch('[A-Za-z0-9_-]+',output.name):
         raise ValueError('Fresh named evidence directory under the owning gate required')

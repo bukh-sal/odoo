@@ -30,3 +30,9 @@ admission/independent core upgrade and installed qualification remain required.
 See G7/20261104-ui-qualification-01/ui09-diagnostics.json/source24-checks.json.
 Remove or simplify these adapters when retained upstream presentation satisfies
 the chosen platform theme and language requirements, with actual UI evidence.
+
+The stock WebClient release carries Node and the hash-locked RTLCSS package
+set from `deploy/Dockerfile.stock-rtl`. Odoo uses the compiler to mirror its
+native styles. The release retains Node and package notices. This distribution
+change leaves the pinned Odoo source intact. The workspace trigger focus and
+Arabic messages live in the platform addons.

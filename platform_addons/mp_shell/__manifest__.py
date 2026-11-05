@@ -1,7 +1,9 @@
 {
-    'name':'Modular Platform Shell','version':'19.0.0.1.15','depends':['mp_core'],
+    'name':'Modular Platform Shell','version':'19.0.0.1.16','depends':['mp_core'],
     'license':'LGPL-3','author':'Modular Platform','data':['views/bootstrap.xml'],
-    'assets': {'web.assets_backend': ['mp_shell/static/src/stock_workspace_menu.js'], 'mp_shell.assets_host': [
+    'assets': {'web.assets_backend': [
+        'mp_shell/static/src/stock_workspace_menu.js','mp_shell/static/src/stock_workspace_menu.scss',
+    ], 'mp_shell.assets_host': [
         ('include','web.assets_web'),('remove','web/static/src/main.js'),
         'mp_shell/static/src/operations.js','mp_shell/static/src/native_interactions.js','mp_shell/static/src/client_release.js','mp_shell/static/src/event_contract.js','mp_shell/static/src/event_client.js','mp_shell/static/src/host.js','mp_shell/static/src/host.css','mp_shell/static/src/dialog_accessibility.xml',
     ]},

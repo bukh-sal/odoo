@@ -1,0 +1,17 @@
+# syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+ARG DEPENDENCY_BASE_IMAGE
+FROM node:24.22.2-bookworm-slim@sha256:c0a93797ee78814ae6d32fcca2561fdbbe423149c3f5389aad32d86e9fd85bd4 AS compiler
+WORKDIR /opt/stock-rtl
+COPY deploy/stock-rtl/package.json deploy/stock-rtl/package-lock.json ./
+RUN npm ci --ignore-scripts --omit=dev --no-audit --no-fund
+
+FROM ${DEPENDENCY_BASE_IMAGE}
+USER 0:0
+COPY --from=compiler /usr/local/bin/node /usr/local/bin/node
+COPY --from=compiler /usr/local/LICENSE /opt/stock-rtl/Node-LICENSE
+COPY --from=compiler /opt/stock-rtl /opt/stock-rtl
+RUN ln -s /opt/stock-rtl/node_modules/.bin/rtlcss /usr/local/bin/rtlcss \
+    && test "$(node --version)" = v24.22.2 \
+    && test "$(node -p "require('/opt/stock-rtl/node_modules/rtlcss/package.json').version")" = 4.3.0 \
+    && printf '.probe{direction:ltr;margin-left:1px}' | rtlcss - | grep -F 'margin-right:1px'
+USER 10001:10001
