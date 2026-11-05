@@ -37,6 +37,11 @@ site's Docker assets were retired. The next item is to define the supported
 stock release profile and bind its qualification to an exact kit. Background
 execution is deferred. [Evidence](evidence/post-r1/shared-foundation/stock-webclient-follow-up.json)
 
+The stock release implementation goal is active at SW-01. The selected kit
+uses stock Odoo for records and explicit links to the existing custom-page
+host and independently managed worker. Verify stock navigation and draft
+recovery before freezing build inputs. [Stock release gates](../planning/stock_webclient_release.md)
+
 ## Last backend continuation — Windows regression fixtures corrected
 
 - The supplemental Windows sweep ran 538 tests with one failure, two errors and one skip. Two metadata upgrade tests selected the current Stats version instead of a successor. A retained-scope enablement test still expected the old no-checkpoint path. The corrected tests keep downgrade refusal and explicit permission acknowledgment coverage, require the current checkpoint/restart, and verify that the executable release stays pinned. Runtime source is unchanged. The two affected test modules pass all 27 tests. [Regression triage](evidence/G7/20261105-section28-audit-01/regression-triage.json)

@@ -1,6 +1,7 @@
 """HTTP compatibility fence, independent of workspace/actor authorization."""
 from functools import lru_cache
 import hashlib
+import json
 from pathlib import Path
 
 from odoo.exceptions import AccessError
@@ -19,6 +20,15 @@ class ClientReleaseUnavailable(AccessError):
 @lru_cache(maxsize=1)
 def image_inventory_digest():
     return 'sha256:'+hashlib.sha256(Path('/opt/modular/distribution-inventory.json').read_bytes()).hexdigest()
+
+
+@lru_cache(maxsize=1)
+def stock_webclient_default():
+    path = Path('/opt/modular/distribution-inventory.json')
+    try:
+        return json.loads(path.read_bytes())['policy'].get('stock_webclient') is True
+    except FileNotFoundError:
+        return False
 
 
 def current_release(env):

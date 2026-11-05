@@ -1,7 +1,7 @@
 from odoo import http
 from odoo.http import request
 from odoo.addons.mp_identity.scopes import current_scope
-from odoo.addons.mp_identity.release import current_release
+from odoo.addons.mp_identity.release import current_release, stock_webclient_default
 from odoo.addons.mp_core.controllers import result
 from odoo.addons.web.controllers.home import Home
 
@@ -10,10 +10,12 @@ class ShellHome(Home):
     def _login_redirect(self,uid,redirect=None):
         # Preserve native MFA/session redirect processing; change only the
         # successful default destination, not explicit/deep-link redirects.
-        return super()._login_redirect(uid,redirect or '/')
+        return super()._login_redirect(uid,redirect or ('/odoo' if stock_webclient_default() else '/'))
 
     @http.route('/',type='http',auth='user',methods=['GET'])
     def index(self,**kwargs):
+        if stock_webclient_default():
+            return request.redirect('/odoo')
         # Narrow authenticated navigation metadata. Never choose a workspace on
         # the actor's behalf or expose arbitrary model/business dispatch here.
         request.env.cr.execute("""SELECT i.plugin_id,i.manifest FROM mp_plugin_installation i

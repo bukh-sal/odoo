@@ -20,7 +20,10 @@ def main():
     parser.add_argument('--gate',choices=['G5','G6','G7'],default='G5',help='Owning implementation gate for recorded build evidence')
     parser.add_argument('--policy',type=Path,default=Path('deploy/distribution-r1.json'),help='Operator-owned R1 distribution policy under deploy/; never an application-selected path')
     parser.add_argument('--dependency-base-image',help='Exact sha256 image for code-only maintenance; preserves its Python/OS environment, independently rechecked after build')
+    parser.add_argument('--reproduction', action='store_true', help='Rebuild from the exact dependency image without build cache or RUN network access')
     args=parser.parse_args()
+    if args.reproduction and not args.dependency_base_image:
+        parser.error('--reproduction requires --dependency-base-image')
     dependency_base=None
     if args.dependency_base_image:
         if not re.fullmatch(r'sha256:[0-9a-f]{64}',args.dependency_base_image):
@@ -55,6 +58,8 @@ def main():
         # Dockerfile FROM treats a bare sha256 image ID as a repository name.
         # Bind one owned temporary alias, verify it, and remove only that alias.
         command[2:2]=['--build-arg','DEPENDENCY_BASE_IMAGE='+dependency_tag]
+    if args.reproduction:
+        command[2:2]=['--no-cache', '--network=none']
     record={'state':'building','tag':tag,'output':str(output.relative_to(ROOT)),'command':command,'distribution_policy':policy_name,
         'git_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),'source_sha256':source,
         'dependency_base_image':args.dependency_base_image}

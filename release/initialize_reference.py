@@ -1,6 +1,6 @@
 """Once-only local reference deployment from a verified kit; never resets old data."""
 from __future__ import annotations
-import argparse,configparser,json,secrets,socket,subprocess,sys
+import argparse,configparser,ipaddress,json,secrets,socket,subprocess,sys
 from datetime import datetime,timezone
 from pathlib import Path
 from uuid import uuid4
@@ -55,8 +55,14 @@ class Reference:
         return self.command(label,command+['-c','/run/secrets/odoo_config','-d',state['database'],'--no-http','--workers=0','--max-cron-threads=0']+args,data=code.encode() if code else None,timeout=300)
     def prepare(self):
         if not self.args.reference_fixture:raise ValueError('Explicit --reference-fixture acknowledgement required')
+        subnets = None
+        if self.args.subnets:
+            runtime, edge = (ipaddress.IPv4Network(value) for value in self.args.subnets)
+            if not runtime.is_private or not edge.is_private or runtime.overlaps(edge):
+                raise ValueError('Two distinct private fixture subnets required')
+            subnets = {'runtime': str(runtime), 'edge': str(edge)}
         self.prepare_resources(load(self.kit/'images.json'), self.manifest['source_commit'],
-                               (self.kit/'plugins/curated-trust.json').read_bytes(), self.kit/'images.tar')
+                               (self.kit/'plugins/curated-trust.json').read_bytes(), self.kit/'images.tar', subnets=subnets)
     def prepare_resources(self,images,source_commit,trust,image_archive=None,*,subnets=None):
         if self.local.exists():raise ValueError('Reference already attempted; inspect its state, never reset it')
         protect_directory(self.local);protect_directory(self.local/'logs');protect_directory(self.local/'operator')
@@ -188,4 +194,5 @@ def load_bytes(raw):return json.loads(raw)
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=['prepare','initialize','install','status']);parser.add_argument('--kit',type=Path,required=True);parser.add_argument('--workdir',type=Path,required=True)
     parser.add_argument('--reference-fixture',action='store_true');parser.add_argument('--port',type=int,default=18100)
+    parser.add_argument('--subnets', nargs=2, metavar=('RUNTIME', 'EDGE'))
     args=parser.parse_args();getattr(Reference(args),args.action)()

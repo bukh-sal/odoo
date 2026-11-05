@@ -6,7 +6,7 @@ The current execution order is:
 
 1. [x] Fix the known stale-tab failure in stock Odoo. The in-app browser verified that an old save was refused after an approved release change, the notice opened the same record and workspace in a new tab, the original input remained visible, and the new tab saved successfully.
 2. [x] Qualify Notes revision checks through the stock form. Notes 0.2.9 uses the revision the editor loaded. A current save advanced revision 1 to 2, a second tab's stale save preserved revision 2, and the viewer's write was denied. The stale edit still shows Odoo's generic error.
-3. [ ] Close gaps in the stock release profile after those browser checks. Bind each remaining release claim to the candidate and rerun the checks affected by the profile change.
+3. [ ] Close gaps in the stock release profile after those browser checks. Bind each remaining release claim to the candidate and rerun the checks affected by the profile change. [Active stock release gates](stock_webclient_release.md)
 
 Plugin-free upgrades, shared migrations and platform major upgrades depend on a selected deployment shape or a concrete release change. Background execution is deferred at the user's direction. R2 and R3 retain their separate scope.
 

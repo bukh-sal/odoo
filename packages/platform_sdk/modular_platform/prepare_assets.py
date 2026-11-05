@@ -19,12 +19,18 @@ def validate_configuration(path, data):
         raise ValueError('Asset preparation database differs from fixed configuration')
 
 
-def prepare(env):
-    rows = {}
+def prepare(env, *, stock_webclient=False):
     # Pick from fixed bundles using installed registry state, never plan input.
     # Debug, dark, print and locale/RTL variants use native generation.
     shell = env['ir.module.module'].search_count([('name', '=', 'mp_shell'), ('state', '=', 'installed')])
-    name = 'mp_shell.assets_host' if shell else 'web.assets_web'
+    names = ['mp_shell.assets_host'] if shell else []
+    if stock_webclient or not shell:
+        names.append('web.assets_web')
+    return sorted((row for name in names for row in prepare_bundle(env, name)), key=lambda item: item['url'])
+
+
+def prepare_bundle(env, name):
+    rows = {}
     bundle = env['ir.qweb']._get_asset_bundle(name, css=True, js=True, rtl=False)
     for asset in bundle.files:
         if asset.get('filename') and not Path(asset['filename']).is_file():
@@ -49,7 +55,7 @@ def prepare(env):
                 raise ValueError('Public host asset bytes/checksum mismatch')
             rows[asset.url] = {'url': asset.url, 'mimetype': asset.mimetype,
                                'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
-    return sorted(rows.values(), key=lambda item: item['url'])
+    return rows.values()
 
 
 def main():
@@ -77,7 +83,7 @@ def main():
         if dict(cursor.fetchall()) != expected:
             raise ValueError('Asset preparation target/publication changed')
         env = api.Environment(cursor, SUPERUSER_ID, {'lang': 'en_US'})
-        rows = prepare(env)
+        rows = prepare(env, stock_webclient=json.loads(inventory)['policy'].get('stock_webclient') is True)
         cursor.commit()
     print(json.dumps({'result': 'prepared', 'generation': data['generation'],
                       'inventory_digest': data['inventory_digest'], 'assets': rows}))
