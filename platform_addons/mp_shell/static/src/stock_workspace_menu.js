@@ -11,7 +11,7 @@ class StockWorkspaceMenu extends Component {
     static props = {};
     static template = xml`
         <Dropdown>
-            <span t-esc="label"/>
+            <button type="button" aria-haspopup="menu" t-esc="label"/>
             <t t-set-slot="content">
                 <DropdownItem t-foreach="workspaces" t-as="space" t-key="space.id"
                     onSelected="() => this.open('/odoo', space.id)">
