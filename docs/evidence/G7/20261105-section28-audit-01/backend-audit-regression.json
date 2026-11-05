@@ -1,0 +1,81 @@
+{
+  "result": "passed_current_backend_and_retained_evidence_crosscheck",
+  "scope": "Read-only backend and evidence audit. Fresh browser rendering and G7 closure remain pending.",
+  "branch": "platform/r1",
+  "git_head_before_audit_receipts": "d0746974f8bd6905a1c61415475db2f941342060",
+  "acceptance_ids_match_specification": {
+    "passed": 99,
+    "excluded_R2": 5
+  },
+  "gate_receipt_sha256": {
+    "G0/20261027t234238z/gate-G0.json": "32bb8abc5b6630689a4394269f0af39cbfc335020fa4c5ff1a6eb648d545ea13",
+    "G1/20261028t003753z/gate-G1.json": "45475daed7c81bef9c516a7ed0590d2c53a8f9c26c392e71d10378a335c8cbfe",
+    "G2/20261104-native-uninstall18/gate-G2.json": "d7f33fb8b6e11cd0d7eaa3a64160ad93695ba097a84b4a42a91d250eebc46e5c",
+    "G3/20261028t011619z/gate-G3.json": "2a6caa9aa4860030cb9f9adbf87aad4b28e85bfd7a008818a282246661dc1f15",
+    "G4/20261028T161000Z-reuse-requalification/gate-G4.json": "debef41a34afbc1d907d4574c5c7b8b65014d348f71ecd3417708952a4cbaed7",
+    "G5/20261029-provenance-01/gate-G5.json": "ffdb1c6ecf1335a02f5a3bb8d4746662f95b4c3730cf535b6aa2e2c992120fdb",
+    "G6/20261102-headless-ui-01/gate-G6.json": "cb2708ee0e8281a6b472635dfa49996060e8e794b2ea1c4d71eba3e6816df1eb"
+  },
+  "contract_freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 106,
+    "rows": 8
+  },
+  "kit_manifest_sha256": "399fe59efd43b4af5fce746874c19e9258880f4802a374129ae29b9d5e90f1fd",
+  "kit_source_commit": "d0746974f8bd6905a1c61415475db2f941342060",
+  "verified_kit_components": 52,
+  "build_source_inputs_exact": 377,
+  "live_targets": {
+    "release": {
+      "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+      "generation": 7,
+      "separate_worker_running": true
+    },
+    "developer": {
+      "image": "sha256:a5b4b8edd67175221442ad7ba006603b06626cd9270985c3a9488ad19143b2e3",
+      "generation": 5,
+      "separate_worker_running": true
+    }
+  },
+  "operation": "e68a26a9-a065-40a2-a237-bc09cd28275e",
+  "independent_journal_completed": true,
+  "runbooks": 12,
+  "runbook_command_usage_sha256": {
+    "plugin validate": "59ddcbc6f574915f8051297c095eb8ef59f1d31f38d84558901600641779cf7f",
+    "plugin apply": "12bca1ec22fd7bc7f3b1c9c4ecb48f06e4ed25d70cc3bde68d234e8999ea52ae",
+    "plugin stage-image": "ce07386161cd82a62f82630ec7f5402d094b2d21828fcd61c9f7255be977f4b3",
+    "plugin plan-staged": "2c737d40d9a82f67d6f788b2978d0f01fd985a635f1600066882a51cf88d3aa9",
+    "plugin plan-external": "96fcb8f94b24d3c0260eac8348c74dffd03b9062ce893bdf4a8f4122430d72c6",
+    "plugin recover": "8c0de20e2b5a4d3f67172c960e6d5448612793b0bc557e512aaddaf6a999201d",
+    "catalog add": "4a2d3777261e0c0e780c87c88780f854a8dcd286ac4db6f00ee161afd455c4f7",
+    "catalog quarantine": "ec42d4a262daccae5d72303bfc116432ed4c72eaf13deec9978dcb85b280aac4",
+    "operations register": "ce58cf5596192a5a53c3d6af9193bdfa5d843a7ea48c90d5eae227cf180c635f",
+    "operations import-request": "c2808901afa13b2887d013b9e8c6ca8642341979764ac8c40d7bed4d0eb7d4ee",
+    "operations approve": "82e946be3b716bfa26ffe809f30cfd39b615deaf247661c7c8a126c252bf2121",
+    "operations show": "d494bd4d09ce76e9e2ff96fb27f842a32dcfd4c93b82b2dade87e4fd62588e2b",
+    "worker prepare": "73303751b34d02fc90a0fb7c79bbce1d24d8eb59a283838315b79cdffda968bc",
+    "worker publish": "dda456e750232ca629c252329ead1b615e9ecf602c1bc262f4a94c4e0c412682",
+    "worker run-job-once": "d877b70304c0461aad6355048e96349bb2c2214e092c578584ab63a111c96748"
+  },
+  "handoff_links_checked": 28,
+  "historical_failed_upgrade": {
+    "operation_id": "f6511684-b8de-4f3a-9d35-ba63ab3d05f4",
+    "verified_receipts": 15,
+    "current_matching_host_modules": [
+      "packages/platform_sdk/modular_platform/dispatch_lifecycle.py",
+      "packages/platform_sdk/modular_platform/dispatch_operator.py",
+      "packages/platform_sdk/modular_platform/native_auth_recovery.py",
+      "packages/platform_sdk/modular_platform/operator_store.py",
+      "packages/platform_sdk/modular_platform/plans.py",
+      "packages/platform_sdk/modular_platform/recovery_reviews.py",
+      "packages/platform_sdk/modular_platform/release_staging.py",
+      "packages/platform_sdk/modular_platform/restore_continuation.py",
+      "packages/platform_sdk/modular_platform/restore_executor.py"
+    ],
+    "later_native_executor_binding": [
+      "packages/platform_sdk/modular_platform/native_executor.py"
+    ],
+    "scope": "Actual dependency-changing fixture fault on core20 to core21. Later core23 recovery covers the changed executor, and core26 receipts bind its current bytes."
+  }
+}

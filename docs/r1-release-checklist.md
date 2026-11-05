@@ -53,6 +53,12 @@ observation exists; it does not mean the entire final release passed.
   archive alone and the new catalog preflight passed a separate boundary test.
   [Source refresh](evidence/G7/20261105-core26-release-kit-01/source-refresh.json)
   and [final privacy](evidence/G7/20261105-core26-release-kit-01/privacy-delta-final.json)
+- [x] Carry the corrected Windows test fixtures in the selected kit. Verify
+  the 51 unchanged components and recheck the source privacy and backend scope.
+  [Current refresh](evidence/G7/20261105-core26-release-kit-01/source-refresh-regression.json)
+  and [current audit](evidence/G7/20261105-section28-audit-01/backend-audit-regression.json)
+- [x] Finish the supplemental Windows suite and exercise the Linux-only skip
+  in the selected core26 image. [Regression results](evidence/G7/20261105-section28-audit-01/regression-results.json)
 - [x] Bind retained core23 fault/restore/resume evidence to the current recovery
   implementation. The observed failure and recovery remain scoped to core23.
   [Recovery binding](evidence/G7/20261105-core26-release-kit-01/retained-recovery-binding.json)
@@ -74,7 +80,7 @@ observation exists; it does not mean the entire final release passed.
 | 7 Lifecycle/executor | [Operations](operations.md), [runbooks](operator-runbooks.md), current reviewed upgrade, retained recovery and actual observation through the extracted CLI | — |
 | 8 Workspace/identity | ID/TEN/API ledger, retained [ID08 two-tab evidence](evidence/G7/20261104-ui-qualification-01/identity-qualification.json) and fresh current backend denials | — |
 | 9 Reference plugins/worker | [Fresh install](evidence/G7/20261105-core26-release-kit-01/fresh-backend.json) and [installed developer variants](evidence/G7/20261105-core26-developer-install-01/backend-verification.json). Standard Notes CRUD uses Odoo. Canvas and the separate worker remain minimal references | Browser proof in item 4 |
-| 10 Mapped tests | All 104 specification IDs matched the ledger, with 99 passes and five R2 exclusions. [Backend audit](evidence/G7/20261105-section28-audit-01/backend-audit.json) | — |
+| 10 Mapped tests | All 104 specification IDs matched the ledger, with 99 passes and five R2 exclusions. Windows suite and Linux startup checks passed. [Backend audit](evidence/G7/20261105-section28-audit-01/backend-audit-regression.json) and [regression results](evidence/G7/20261105-section28-audit-01/regression-results.json) | — |
 | 11 Fresh install/restore | [Kit rehearsal](release-kit.md), [actual failed-upgrade restore](evidence/G7/20261103-fresh-release-01/dependency-recovery/qualification-corrected.json) and [later executor binding](evidence/G7/20261105-core26-release-kit-01/retained-recovery-binding.json). Fault evidence retains original image and scope | — |
 | 12 Operator/developer docs | Twelve runbooks and fifteen real CLI help checks. [Runbooks](operator-runbooks.md) and [developer guide](developer-guide.md) | Browser portion of developer walkthrough |
 | 13 Limitations/security | Trust, runtime, network and residual advisory limits linked in the [local handoff](r1-handoff.md) | — |

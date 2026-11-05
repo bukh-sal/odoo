@@ -1,0 +1,38 @@
+{
+  "result": "passed_windows_regression_and_linux_startup",
+  "kit_source_commit": "d0746974f8bd6905a1c61415475db2f941342060",
+  "windows": {
+    "python": "3.12.16",
+    "exit_code": 0,
+    "tests": 538,
+    "passed": 537,
+    "skipped": 1,
+    "skip": "test_source_and_data_symlinks_rejected",
+    "scope": "Complete host Python suite"
+  },
+  "linux": {
+    "exit_code": 0,
+    "tests": 7,
+    "passed": 7,
+    "skipped": 0,
+    "windows_skip_covered": true,
+    "runtime_image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+    "network_disabled": true,
+    "temporary_container_removed": true
+  },
+  "node": {
+    "version": "24.22.1",
+    "passed": 46,
+    "failed": 0
+  },
+  "typescript": {
+    "version": "7.0.2",
+    "exit_code": 0
+  },
+  "private_log_sha256": {
+    "windows": "f5db6511ccfd0005c9b9e94e74af3eed343b1e7fc5eafdcdd479ab81a5214110",
+    "linux": "4d84090c54b3ba2eab64d2f5b32fba948a08033b8c4869185ee5f32381ce3493",
+    "node": "3a2ec3c8146d1a9357df8a969b0d97baeb2cba6baa181b4ddca64a3da1faea50"
+  },
+  "scope": "Supplemental host regression and Linux startup. Fresh developer browser walkthrough remains deferred."
+}

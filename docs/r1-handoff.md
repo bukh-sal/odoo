@@ -54,7 +54,11 @@ journal for its actual state and the recovery runbook for a failed fixture.
   [Feasibility](evidence/G1/20261028t003753z/gate-G1.json),
   [contract freeze](contracts/freeze-v1.md), [work log](work-log.md),
   [evidence index](verification.md) and
-  [backend audit](evidence/G7/20261105-section28-audit-01/backend-audit.json)
+  [backend audit](evidence/G7/20261105-section28-audit-01/backend-audit-regression.json)
+- The full Windows Python suite finished with 537 passes and one platform
+  skip. The seven Linux startup tests on core26 passed, including the skipped
+  symlink case. The Node suite passed 46 tests and TypeScript 7.0.2 passed its
+  check. [Regression results](evidence/G7/20261105-section28-audit-01/regression-results.json)
 - The kit carries 52 verified components, 19 plugin archives, five images and
   13 wheels. Its selected core26 image has an independent no-cache runtime
   inventory reproduction. The provenance receipt binds upstream source, build
@@ -62,7 +66,7 @@ journal for its actual state and the recovery runbook for a failed fixture.
   these final repository records.
   [Reproduction](evidence/G7/20261105-core26-repro-01/qualification.json),
   [provenance](evidence/G7/20261105-core26-release-kit-01/provenance.json),
-  [source refresh](evidence/G7/20261105-core26-release-kit-01/source-refresh.json)
+  [source refresh](evidence/G7/20261105-core26-release-kit-01/source-refresh-regression.json)
   and [upstream patch ledger](upstream-patches.md)
 - The fresh core26 rehearsal passed scoped HTTP, native view descriptors,
   Labels, Canvas and separate worker execution. A dependency-changing fixture
@@ -91,4 +95,4 @@ journal for its actual state and the recovery runbook for a failed fixture.
   detectors and known values. This handoff covers local disposable use.
   [HTTP security](http-security.md), [network](network-independence.md),
   [dependency inventory](dependency-inventory.md) and
-  [final kit privacy](evidence/G7/20261105-core26-release-kit-01/privacy-delta-final.json)
+  [current kit privacy](evidence/G7/20261105-core26-release-kit-01/privacy-delta-regression.json)
