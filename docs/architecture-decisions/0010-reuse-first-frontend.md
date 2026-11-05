@@ -77,6 +77,24 @@ Decision: keep the existing native View adapter for R1. It already reuses Odoo l
 
 This is a discriminating source-function experiment, **not** a complete browser/clone pilot or proof that every WebClient integration is incompatible. Source inspection found a concrete seam mismatch before a live prototype was warranted; the bounded experiment resolves this R1 design choice without a candidate rebuild or site/database mutation. No new UI acceptance pass or progress increase follows. Historical references above to a future action/view pilot describe the earlier sequence; this result closes that assessment, not UI07 or full UI09.
 
+## Post-R1 stock WebClient preview
+
+The user asked to try Odoo's own interface as the basis for standard workflows.
+The live stock WebClient reached the registered Notes action, then failed
+closed at the dataset boundary without the workspace and release headers.
+A disposable read-only relay supplied that context for one workspace. The
+in-app browser rendered the existing native list and form inside Odoo's own
+action stack, with working breadcrumbs and record reload.
+[Preview evidence](../evidence/G7/native-webclient-preview/README.md)
+
+For a product integration, use a small Odoo WebClient extension to convey
+explicit per-tab workspace selection and a pinned release on native calls.
+Keep Odoo's action, router, menus and view rendering. Exercise scoped create,
+revision-checked save and deletion, live revocation, stale-release handling
+and two-tab isolation before making native navigation the default. Keep
+Canvas available as an optional custom page and carry forward the platform
+workspace and plugin workflows at their existing authority boundaries.
+
 For UI07, inspected upstream `addons/bus/static/src/services/assets_watchdog_service.js` and `addons/bus/static/src/outdated_page_watcher_service.js`. They reuse native notification/reload presentation, but only warn on bus/server-version/missed-notification signals; they do not compare the platform's published release epoch or fence stale mutations. Reuse native notification/dialog/browser facilities for controlled reload while implementing the necessary platform release comparison, mutation fencing and draft handling. Do not add bus merely to obtain an advisory refresh message. If a backend endpoint/dispatch change is required, ADR0015's static-only deploy restrictions still apply: implement explicit versioned native-core maintenance rather than relaxing them.
 
 User clarification, 2026-10-28: Canvas remains a minimal reference/test plugin, not a separate product. UI changes are for required demonstrations, accessibility or defect correction. Keep native Odoo views for standard CRUD. Fresh-reference setup may use an explicit reproducible workspace-scoped fixture provisioning procedure; a new public create API, self-service product UI or Canvas polish is not required merely to seed this demonstration. Keep this distinct from claiming the existing one-off board already proves fresh installation.
