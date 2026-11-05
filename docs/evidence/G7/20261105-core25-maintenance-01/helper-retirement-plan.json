@@ -1,0 +1,44 @@
+{
+  "containers": [
+    {
+      "id": "bbbcf1c3dfa48ba4837aee7cb9e718836472d4b9a905bc34d8c6729e966bbd88",
+      "name": "/mp-r0-r1release0afebf4f833b-op-943509b3-e2b1-4dce-95cd-5771cd5e6642-dispatch-enable",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    },
+    {
+      "id": "9a686faf170ffbabf4229d510846c43405b0426436cd4177519878c431e63ade",
+      "name": "/mp-r0-r1release0afebf4f833b-op-943509b3-e2b1-4dce-95cd-5771cd5e6642-dispatch-reconcile",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    },
+    {
+      "id": "e4aed3ea0f61062c1d56594b18a4b6f35838d1c432633cc213c8619c14f0ad78",
+      "name": "/mp-r0-r1release0afebf4f833b-op-943509b3-e2b1-4dce-95cd-5771cd5e6642-assets",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    },
+    {
+      "id": "f7bba48dae55e89f0becafc9c257dcd1b36654f271b2dfbe73d2bee4addd139e",
+      "name": "/mp-r0-r1release0afebf4f833b-op-943509b3-e2b1-4dce-95cd-5771cd5e6642-metadata",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    },
+    {
+      "id": "63397ef014f874eacecae2e8c066883bc5d583f110413084588ef05b6effe530",
+      "name": "/mp-r0-r1release0afebf4f833b-op-943509b3-e2b1-4dce-95cd-5771cd5e6642-native",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    },
+    {
+      "id": "c43c79607008abb2a754c3c96a3aaa82690b93305a3724cc5436b870f9352a98",
+      "name": "/mp-r0-r1release0afebf4f833b-op-943509b3-e2b1-4dce-95cd-5771cd5e6642-checkpoint",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd"
+    },
+    {
+      "id": "457ebd2e534d3058fdaf1d92a1de6d42af42ff0574b08975c26d7ddcba7ac9a2",
+      "name": "/mp-r0-r1release0afebf4f833b-op-943509b3-e2b1-4dce-95cd-5771cd5e6642-dispatch-fence",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd"
+    },
+    {
+      "id": "f3ba5544b3fe48d379a721f6c6b5da1b423314aac3f54de2e47519e0e015a6db",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-04fa2cfbb2d14ae3b25175b9c931630a",
+      "image": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd"
+    }
+  ]
+}

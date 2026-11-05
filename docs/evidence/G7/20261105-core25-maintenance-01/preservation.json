@@ -1,0 +1,71 @@
+{
+  "result": "passed_actual_core25_shell12_maintenance_preservation",
+  "utc": "2026-11-05T17:55:10.162652+00:00",
+  "operation_id": "943509b3-e2b1-4dce-95cd-5771cd5e6642",
+  "plan_hash": "sha256:71442c5b86ceb2ca706c3bc695ecbdc55e11ad7d933a4da7bd49fcac50c8a812",
+  "generation": 6,
+  "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8",
+  "inventory": "sha256:1b12d51b9e584021ca22eb9c69c5d71c7e828833e563e60f5d07e91bb6f3e745",
+  "native_scopes": 7,
+  "native_module_changes": [
+    {
+      "addon": "mp_core",
+      "migrations": [],
+      "previous_version": "19.0.0.1.24",
+      "target_version": "19.0.0.1.25"
+    },
+    {
+      "addon": "mp_shell",
+      "migrations": [],
+      "previous_version": "19.0.0.1.11",
+      "target_version": "19.0.0.1.12"
+    }
+  ],
+  "no_schema_migrations": true,
+  "dispatch_generations": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "all17tables_exact_except_declared_completed_job_release_fences": true,
+  "completed_job_fence_changes": [
+    {
+      "job_id": "fc31f5dc-6f67-4593-9f51-401c6e156836",
+      "changed_fields": [
+        "claim_generation",
+        "dispatch_generation",
+        "release_digest"
+      ]
+    }
+  ],
+  "business_counts": {
+    "mp_job": 1,
+    "mp_outbox": 3,
+    "mp_principal": 4,
+    "mp_workspace": 2,
+    "mp_membership": 6,
+    "mp_example_note": 2,
+    "mp_plugin_grant": 6,
+    "mp_event_delivery": 0,
+    "mp_service_binding": 13,
+    "mp_workspace_plugin": 8,
+    "mp_event_consumption": 0,
+    "mp_event_subscription": 0,
+    "mp_service_credential": 0,
+    "mp_plugin_installation": 5,
+    "mp_event_consumer_state": 0,
+    "mp_example_canvas_board": 1,
+    "mp_example_note_event_summary": 0
+  },
+  "independent_worker_process_image_key_publication_mounts_network_exact": true,
+  "plugin_installations_features_bindings_endpoints_exact": true,
+  "all_checkpoint_files_byte_exact": 50,
+  "all_prior_files_retained": true,
+  "worker_helper_pin_only_updated": true,
+  "limits": [
+    "One actual approved core upgrade, no apply/replay/fault/newjob. Native views/Labels/UI09/browser/HTTP and complete release closure remain.",
+    "Helper image pin update is an OS-owned configuration change; independent worker87/key/endpoint/publication/process stay exact.",
+    "Checkpoint archives and whole-table snapshots remain private; only counts/fence fields/source and status summaries are public."
+  ]
+}

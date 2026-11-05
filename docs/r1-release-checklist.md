@@ -13,13 +13,13 @@ observation exists; it does not mean the entire final release passed.
   tests pass, actual completed operation is read without replay, legacy journal
   fields agree, 174 durable control files and four runtimes remain exact:
   [operator preflight](evidence/G7/20261104-operator-release-preflight-01/qualification.json).
-- [ ] Finish UI09 observation and the required native close-button presentation
-  correction. Browser work is deferred while following the user's backend-first
-  direction. Standard record screens retain native Odoo views; Canvas stays minimal.
-- [ ] Qualify the corrected immutable candidate through normal independent
-  maintenance gates and installed UI09; no live source overlays.
-- [ ] Independently reproduce that final image (BOOT-02). Do not reproduce the
-  known residual core24 candidate just to regain a progress point.
+- [x] Install core25 through the independent maintenance gates and verify data,
+  checkpoint files and worker preservation. [Upgrade evidence](evidence/G7/20261105-core25-maintenance-01/preservation.json)
+- [x] Verify the installed dialog name, close glyph, keyboard focus, 200% zoom,
+  RTL and 320 CSS pixel reflow. [Browser evidence](evidence/G7/20261105-core25-maintenance-01/installed-observations.json)
+- [ ] Finish UI09 localization and assistive technology qualification.
+- [x] Independently reproduce the selected core25 runtime inventory and
+  dependency environment (BOOT-02). [Build evidence](evidence/G7/20261105-core25-repro-01/qualification.json)
 - [ ] Refresh the draft kit once against the qualified image/source. Current kit
   still packages image14de; its source differs from current code in eight paths.
   Include `tools/operation_progress.py`, updated `tools/modular.py`, runbooks and

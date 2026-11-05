@@ -1,0 +1,51 @@
+{
+  "result": "passed_second_no_cache_build_declared_inventory_reproduction",
+  "utc": "2026-11-05T17:56:21.081529+00:00",
+  "acceptance": [
+    "BOOT-02"
+  ],
+  "source_head": "7d2862d1bc76ea1555369da861c57954967f4554",
+  "reference_image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8",
+  "candidate_image": "sha256:4e7fd40b28ab5b8268c1102b73f31ac8ba3ec6ba7adcc5cac4ef5d5661e91931",
+  "dependency_base": "sha256:567d2e6affdcb6a3d79789689d9d40d4c077c28e839d4f7b36f47dad3d32a1bd",
+  "command": [
+    "docker",
+    "build",
+    "--no-cache",
+    "--network=none",
+    "--build-arg",
+    "DEPENDENCY_BASE_IMAGE=modular-platform:disposable-repro-base-564523a5684f",
+    "-f",
+    "deploy/Dockerfile.core-maintenance",
+    "--build-arg",
+    "DISTRIBUTION_POLICY=deploy/distribution-r1-notes-stats.json",
+    "--build-arg",
+    "RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock",
+    "--build-arg",
+    "SDK_PYTHONPATH=/opt/modular/packages/platform_sdk",
+    "-t",
+    "modular-platform:disposable-core25-repro-564523a5684f",
+    "."
+  ],
+  "comparisons": {
+    "inventory_digest": true,
+    "inventory": true,
+    "python": true,
+    "architecture": true,
+    "markers": true,
+    "python_lock_digest": true,
+    "python_metadata": true,
+    "modified_files": true,
+    "unexpected_addon_files": true,
+    "missing_addon_files": true
+  },
+  "inventory_digest": "sha256:1b12d51b9e584021ca22eb9c69c5d71c7e828833e563e60f5d07e91bb6f3e745",
+  "unchanged_recorded_source_inputs": 377,
+  "actual_source_file_count": 4160,
+  "actual_python_distributions": 77,
+  "limits": [
+    "A second independent no-cache source/materialization build from the exact locked qualified dependency image, as ADR0052. RUN has network disabled. No ordinary Dockerfile cache hit is used as reproduction proof.",
+    "Does not claim byte-identical image IDs/timestamps or repeat native dependency compilation under floating OS/compiler inputs. Exact dependency image is a required release artifact, with its own source/notices/qualification.",
+    "No installation/deployment/runtime/database/worker changes. Fresh releasekit installation and remaining OPS03/G7 checks stay separate."
+  ]
+}

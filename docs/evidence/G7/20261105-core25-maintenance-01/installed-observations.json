@@ -1,0 +1,162 @@
+{
+  "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8",
+  "generation": 6,
+  "operation": "943509b3-e2b1-4dce-95cd-5771cd5e6642",
+  "ui09": "partial_installed_evidence",
+  "dialog_name_both_themes_and_zoom_levels": "Delete note",
+  "glyph_contrast": [
+    {
+      "theme": "light",
+      "screenshot_sha256": "29588bf2c4f95b2a749f36fb7bb468ec345c2b3dd98965dedd6335d9e67e7ef9",
+      "sampled_crop": [
+        914,
+        328,
+        927,
+        341
+      ],
+      "background_point": [
+        910,
+        335
+      ],
+      "background": [
+        255,
+        255,
+        255
+      ],
+      "pixels_at_least_3_to_1": 28,
+      "peak_ratio": 4.06,
+      "peak_pixel": [
+        126,
+        126,
+        126
+      ]
+    },
+    {
+      "theme": "dark",
+      "screenshot_sha256": "aa8e7bd24712152ac32f94b417448373a878b36a5ca3c1949974a55fba90e3d9",
+      "sampled_crop": [
+        914,
+        328,
+        927,
+        341
+      ],
+      "background_point": [
+        910,
+        335
+      ],
+      "background": [
+        32,
+        41,
+        56
+      ],
+      "pixels_at_least_3_to_1": 76,
+      "peak_ratio": 4.807,
+      "peak_pixel": [
+        144,
+        148,
+        156
+      ]
+    }
+  ],
+  "zoom_metrics": {
+    "baseline": {
+      "actual_window_zoom_metrics": {
+        "inner_width": 1256,
+        "inner_height": 808,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 1,
+        "visual_scale": 1,
+        "root_width": 1256,
+        "scroll_width": 1256,
+        "lang": "en-US",
+        "dir": "ltr"
+      },
+      "Arabic-window-metrics": {
+        "inner_width": 1256,
+        "inner_height": 808,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 1,
+        "visual_scale": 1,
+        "root_width": 1256,
+        "scroll_width": 1256,
+        "lang": "ar",
+        "dir": "rtl"
+      }
+    },
+    "zoom200": {
+      "actual_window_zoom_metrics": {
+        "inner_width": 628,
+        "inner_height": 404,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 2,
+        "visual_scale": 1,
+        "root_width": 628,
+        "scroll_width": 628,
+        "lang": "en-US",
+        "dir": "ltr"
+      },
+      "Arabic-window-metrics": {
+        "inner_width": 628,
+        "inner_height": 404,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 2,
+        "visual_scale": 1,
+        "root_width": 628,
+        "scroll_width": 628,
+        "lang": "ar",
+        "dir": "rtl"
+      }
+    }
+  },
+  "narrow": [
+    {
+      "name": "english-settings",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "en-US",
+      "direction": "ltr"
+    },
+    {
+      "name": "native-note",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "en-US",
+      "direction": "ltr"
+    },
+    {
+      "name": "arabic-settings",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "ar",
+      "direction": "rtl"
+    }
+  ],
+  "tables_exact_after_read_only_ui": 17,
+  "worker_preserved": true,
+  "browser_runs_closed": 3,
+  "zoom_preferences_restored": true,
+  "privacy": {
+    "known_values": 133,
+    "streams": 25,
+    "evidence_files": 42,
+    "findings": 0
+  },
+  "scope_remaining": [
+    "Reconcile localized dates, numbers, time zones and pluralization",
+    "Verify loading and error announcements with assistive technology",
+    "Complete UI09 scope and final release audit"
+  ]
+}

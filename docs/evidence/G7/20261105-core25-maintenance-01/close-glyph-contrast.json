@@ -1,0 +1,54 @@
+[
+  {
+    "theme": "light",
+    "screenshot_sha256": "29588bf2c4f95b2a749f36fb7bb468ec345c2b3dd98965dedd6335d9e67e7ef9",
+    "sampled_crop": [
+      914,
+      328,
+      927,
+      341
+    ],
+    "background_point": [
+      910,
+      335
+    ],
+    "background": [
+      255,
+      255,
+      255
+    ],
+    "pixels_at_least_3_to_1": 28,
+    "peak_ratio": 4.06,
+    "peak_pixel": [
+      126,
+      126,
+      126
+    ]
+  },
+  {
+    "theme": "dark",
+    "screenshot_sha256": "aa8e7bd24712152ac32f94b417448373a878b36a5ca3c1949974a55fba90e3d9",
+    "sampled_crop": [
+      914,
+      328,
+      927,
+      341
+    ],
+    "background_point": [
+      910,
+      335
+    ],
+    "background": [
+      32,
+      41,
+      56
+    ],
+    "pixels_at_least_3_to_1": 76,
+    "peak_ratio": 4.807,
+    "peak_pixel": [
+      144,
+      148,
+      156
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "result": "core25_seven_native_scopes_staged_registered_independently_reviewed_not_approved",
+  "operation_id": "943509b3-e2b1-4dce-95cd-5771cd5e6642",
+  "plan_hash": "sha256:71442c5b86ceb2ca706c3bc695ecbdc55e11ad7d933a4da7bd49fcac50c8a812",
+  "native_plugins": [
+    "org.example.canvas",
+    "org.example.notes",
+    "org.example.notes_labels",
+    "org.example.notes_stats"
+  ],
+  "native_scopes": 7,
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.24",
+      "target_version": "19.0.0.1.25",
+      "migrations": []
+    },
+    {
+      "addon": "mp_shell",
+      "previous_version": "19.0.0.1.11",
+      "target_version": "19.0.0.1.12",
+      "migrations": []
+    }
+  ],
+  "all17_tables_exact": true,
+  "independent_worker_exact": true,
+  "external_provider_unchanged": true,
+  "no_permission_binding_endpoint_change": true,
+  "backup_required": true,
+  "destructive_review_required": true,
+  "limits": [
+    "No approval/apply yet. Native core maintenance marked destructive conservatively; schema migrations empty. No destructive uninstall or packaged plugin change."
+  ]
+}
