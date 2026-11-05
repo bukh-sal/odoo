@@ -1,0 +1,31 @@
+{
+  "result": "passed_offline_import_with_explicit_iap",
+  "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+  "base_image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+  "probe_image": "sha256:783d07b97cbd2e2982b1c8945ba0f904972a1ee3a167416932a9a6d3c77e1c4e",
+  "declared_additions": [
+    "html_editor",
+    "mail",
+    "maintenance"
+  ],
+  "declared_external_dependencies": {},
+  "undeclared_import": "odoo.addons.iap",
+  "declared_only_exit": 1,
+  "with_iap_exit": 0,
+  "with_iap_error": null,
+  "scope": "Python addon imports in a network-disabled container. Database installation and hosted integration behavior require separate checks.",
+  "registry": {
+    "workflow_passed": true,
+    "installed": [
+      "html_editor",
+      "iap",
+      "mail",
+      "maintenance"
+    ],
+    "equipment_created": true,
+    "request_advanced": true,
+    "native_list_form": true,
+    "outsider_search_and_direct_read_denied": true
+  },
+  "probe_tag_removed": true
+}

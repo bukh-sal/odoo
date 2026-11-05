@@ -12,6 +12,16 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
+## Post-R1 work
+
+The shared foundation stress test is tracked separately from the completed R1
+gate. The selected systems are stock Odoo Maintenance and a bounded Aurora
+Tasks slice. The offline Maintenance import, registry, workflow and permission
+probe passed. Its first attempt exposed the HTML editor's undeclared IAP
+import. The active item is the Aurora native workflow and stock WebClient
+integration. The two-deployment upgrade and recovery remain pending.
+[Plan and checkpoint](../planning/shared_foundation_stress_test.md)
+
 ## Last backend continuation — Windows regression fixtures corrected
 
 - The supplemental Windows sweep ran 538 tests with one failure, two errors and one skip. Two metadata upgrade tests selected the current Stats version instead of a successor. A retained-scope enablement test still expected the old no-checkpoint path. The corrected tests keep downgrade refusal and explicit permission acknowledgment coverage, require the current checkpoint/restart, and verify that the executable release stays pinned. Runtime source is unchanged. The two affected test modules pass all 27 tests. [Regression triage](evidence/G7/20261105-section28-audit-01/regression-triage.json)
