@@ -11,6 +11,10 @@ ties the selected kit and both live references to their release receipts, checks
 the failed-upgrade recovery evidence and matches the acceptance ledger to the
 specification. The [local handoff](r1-handoff.md) links the G7 gate decision and in-app browser observations.
 
+The independent fork's stock WebClient release has a separate [checklist](../planning/stock_webclient_release.md).
+Its candidate and compiler reproduction are recorded under the
+[stock replacement evidence](evidence/G7/20261105-stock-rtl-repro-01/).
+
 Latest G6 lifecycle evidence:
 
 - [Actual corrective core15 upgrade](evidence/G6/20261102-core15-upgrade-01/README.md) and [installed manager HTTP suspension/handoff](evidence/G6/20261102-manager-feature-02/README.md): config15/control70, exact data/jobs/schema/files/worker preservation, scoped denial/native views, completed mirror and explicit CLI context qualified;15terminalhelpers retired. Browser/remaining lifecycle/remote/recovery still required.

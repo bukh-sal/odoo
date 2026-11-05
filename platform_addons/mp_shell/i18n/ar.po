@@ -5,36 +5,43 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
+#. module: mp_shell
 #. odoo-javascript
 #: code:addons/mp_shell/static/src/stock_workspace_menu.js:0
 msgid "Choose workspace"
 msgstr "اختر مساحة عمل"
 
+#. module: mp_shell
 #. odoo-javascript
 #: code:addons/mp_shell/static/src/stock_workspace_menu.js:0
 msgid "No workspaces available"
 msgstr "لا توجد مساحات عمل متاحة"
 
+#. module: mp_shell
 #. odoo-javascript
 #: code:addons/mp_shell/static/src/stock_workspace_menu.js:0
 msgid "Could not load workspaces"
 msgstr "تعذر تحميل مساحات العمل"
 
+#. module: mp_shell
 #. odoo-javascript
 #: code:addons/mp_shell/static/src/stock_workspace_menu.js:0
 msgid "Notes"
 msgstr "الملاحظات"
 
+#. module: mp_shell
 #. odoo-javascript
 #: code:addons/mp_shell/static/src/stock_workspace_menu.js:0
 msgid "Canvas"
 msgstr "لوحة الأفكار"
 
+#. module: mp_shell
 #. odoo-javascript
 #: code:addons/mp_shell/static/src/stock_workspace_menu.js:0
 msgid "Platform settings"
 msgstr "إعدادات المنصة"
 
+#. module: mp_shell
 #. odoo-javascript
 #: code:addons/mp_shell/static/src/stock_workspace_menu.js:0
 msgid "Notes tools"

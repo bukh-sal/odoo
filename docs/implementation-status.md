@@ -37,14 +37,16 @@ site's Docker assets were retired. The next item is to define the supported
 stock release profile and bind its qualification to an exact kit. Background
 execution is deferred. [Evidence](evidence/post-r1/shared-foundation/stock-webclient-follow-up.json)
 
-The stock release implementation goal is active at **SW-01, live draft
-recovery**. SW-02 passed for the exact kit built from `6ca7d552` and
-independently rebuilt without cache or build network. The selected kit
-installed into a fresh environment and passed the five backend reference
-checks. In-app verification confirmed the stock redirect, keyboard workspace
-selection, native Notes list and form, the editor's Labels action and the
-minimal Canvas board. The separate worker integration and the first-to-selected
-release recovery rehearsal are in progress. [Stock release gates](../planning/stock_webclient_release.md)
+The stock release implementation goal is active at **SW-04, exact replacement
+qualification**. Draft `b9e0048b` passed fresh install, native browser and
+worker workflows, dirty-form recovery, HTTP boundaries, and a checkpointed
+upgrade with a pre-traffic fault and separate resume. Its Arabic UI still
+laid out left to right. Source `6e2b877e` adds the locked RTL compiler and
+reproduced application and compiler bytes across independent builds. The
+replacement kit is assembling and its transition rehearsal has been
+approved. A draft load test missed the native list target during the build.
+Measure the exact replacement after heavy concurrent work finishes.
+[Stock release gates](../planning/stock_webclient_release.md)
 
 ## Last backend continuation — Windows regression fixtures corrected
 
@@ -459,6 +461,8 @@ No current environment blocker: isolated protected headless Edge now provides ac
 
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
+| STOCK-RTL-01 | Replacement built. Live retest pending. | Draft translated native controls but served LTR rules under the RTL stylesheet name. Compiler is now packaged. Verify RTL, labels and focus on the selected installed image. |
+| STOCK-PERF-01 | Draft list p95 missed. Exact replacement test pending. | 200 native list reads p95 908.527 ms during build. Detail p95 212.453 ms. Match the historical query shape and analyzed fixture, then run after build and restore finish. |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |
 | G7-FRESH-BROWSER-01 | Resolved | User selected the in-app browser. Generation5 native Notes, Labels and Canvas walkthrough passed. |
 | G7-ID08-CURRENT-01 | resolved; current ID08 passed |20261104-ui-qualification-01/identity-qualification.json actual sameAlice Aadmin/Bviewer native lists/forms/lateHTTP200 response cancellation, no crosstab cache/data/role contamination.17tables/fourruntimes exact; no foreign requests/exceptions; ownedprofile process exited0. UI09/fullrelease still open. |
@@ -535,13 +539,14 @@ Current external integration gate is complete. G6 evidence was qualified on nati
 
 ## Resume capsule
 
-- Stock qualification uses `.local/releases/stock-0.1.28-02` (manifest
-  `d7554222`) and the fresh site on port 18107. Continue the active SW-01
-  item after its connector operation reopens ingress. Check native dirty
-  reload/close and expired-session recovery before signing off the browser.
-  The separate baseline site on port 18106 is running the staged recovery
-  rehearsal. Preserve both site journals and finish the boundary measurements
-  before retiring either project. [Candidate evidence](evidence/G7/20261105-stock-kit-repro-02/)
+- Stock qualification uses replacement image `92374f55` from `6e2b877e`.
+  The pipeline assembles `.local/releases/stock-0.1.28-rtl` then provisions
+  its clean site on port 18108. The port 18106 rehearsal is applying the
+  replacement through a separate failure, fresh restore and resume. Check
+  private state and live command outcomes before resuming either. Requalify
+  the exact replacement's browser recovery, RTL, HTTP/worker and outbound
+  boundaries, then measure the load test and retire disposable targets.
+  [Replacement reproduction](evidence/G7/20261105-stock-rtl-repro-01/qualification.json)
 - Post-R1 shared foundation stress test complete. The two Docker deployments were retired after the successor browser checks. Start any new proof with fresh disposable targets. The private site journals and checkpoint receipts remain in `.local/foundation-stress/sites-02`, with build records in `.local/foundation-stress/builds`. Scoped baseline `a0b2f85f` and successor `20f71fb9` are retired. See the [stress checklist](../planning/shared_foundation_stress_test.md) and [lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json).
 - Local R1 is qualified. Read [the handoff](r1-handoff.md), [closure map](r1-release-checklist.md) and [gate decision](evidence/G7/20261105-section28-audit-01/gate-G7.json). The developer reference tab remains open at Canvas.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
