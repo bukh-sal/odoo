@@ -1,0 +1,37 @@
+{
+  "samples": [
+    {
+      "name": "english-settings",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "en-US",
+      "direction": "ltr"
+    },
+    {
+      "name": "native-note",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "en-US",
+      "direction": "ltr"
+    },
+    {
+      "name": "arabic-settings",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "ar",
+      "direction": "rtl"
+    }
+  ],
+  "overflow": [],
+  "foreign": [],
+  "exceptions": []
+}

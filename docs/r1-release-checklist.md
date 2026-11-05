@@ -17,9 +17,10 @@ observation exists; it does not mean the entire final release passed.
   checkpoint files and worker preservation. [Upgrade evidence](evidence/G7/20261105-core25-maintenance-01/preservation.json)
 - [x] Verify the installed dialog name, close glyph, keyboard focus, 200% zoom,
   RTL and 320 CSS pixel reflow. [Browser evidence](evidence/G7/20261105-core25-maintenance-01/installed-observations.json)
-- [ ] Finish UI09 localization and assistive technology qualification.
-- [x] Independently reproduce the selected core25 runtime inventory and
-  dependency environment (BOOT-02). [Build evidence](evidence/G7/20261105-core25-repro-01/qualification.json)
+- [x] Qualify core26 localization, Windows accessibility announcements and
+  keyboard workflows. [Installed evidence](evidence/G7/20261105-core26-maintenance-01/installed-observations.json)
+- [x] Independently reproduce the selected core26 runtime inventory and
+  dependency environment (BOOT-02). [Build evidence](evidence/G7/20261105-core26-repro-01/qualification.json)
 - [ ] Refresh the draft kit once against the qualified image/source. Current kit
   still packages image14de; its source differs from current code in eight paths.
   Include `tools/operation_progress.py`, updated `tools/modular.py`, runbooks and

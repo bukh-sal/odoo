@@ -1,0 +1,34 @@
+[
+  {
+    "theme": "light",
+    "screenshot_sha256": "beb1047156c329d085317a9df9f3b7d581b75197286ebd4d4ee962c9b42bbdc3",
+    "sampled_crop": [
+      914,
+      328,
+      927,
+      341
+    ],
+    "background_point": [
+      910,
+      335
+    ],
+    "pixels_at_least_3_to_1": 28,
+    "peak_ratio": 4.06
+  },
+  {
+    "theme": "dark",
+    "screenshot_sha256": "dc5b72425b7fed6552b5c9cdd813f5d9c239aaa8a280ce2190e692cd8f682b93",
+    "sampled_crop": [
+      914,
+      328,
+      927,
+      341
+    ],
+    "background_point": [
+      910,
+      335
+    ],
+    "pixels_at_least_3_to_1": 76,
+    "peak_ratio": 4.807
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "containers_retired": [
+    {
+      "id": "c41ca9d21f7b153ddecae34780e6a94c1305716599665de64924cbb5090758a2",
+      "name": "/mp-r0-r1release0afebf4f833b-op-966c6bbf-37bd-412f-b1fe-c5d55ed7d207-dispatch-enable",
+      "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415"
+    },
+    {
+      "id": "4454eb2d28a34dec959ebce47e138ac9f72b8e8e0dfa3310baf4d85cfba70fa7",
+      "name": "/mp-r0-r1release0afebf4f833b-op-966c6bbf-37bd-412f-b1fe-c5d55ed7d207-dispatch-reconcile",
+      "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415"
+    },
+    {
+      "id": "41ead9625375f5d4ae59e14eb365cbfc7bf4fe0b5e5affc3af12cbd39f9b2472",
+      "name": "/mp-r0-r1release0afebf4f833b-op-966c6bbf-37bd-412f-b1fe-c5d55ed7d207-assets",
+      "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415"
+    },
+    {
+      "id": "0e800b7502976a1ae630d8e7a11df541915eeec50f8b17d43b836d556f86c8da",
+      "name": "/mp-r0-r1release0afebf4f833b-op-966c6bbf-37bd-412f-b1fe-c5d55ed7d207-metadata",
+      "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415"
+    },
+    {
+      "id": "b0aed30562541b4c1505264d029502e4810fc083fe70bd7e2060e746655ed3b6",
+      "name": "/mp-r0-r1release0afebf4f833b-op-966c6bbf-37bd-412f-b1fe-c5d55ed7d207-native",
+      "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415"
+    },
+    {
+      "id": "1c3eae8e40d2b0c7577406dc04cfa180f3e76a87382662a696735861b4048e42",
+      "name": "/mp-r0-r1release0afebf4f833b-op-966c6bbf-37bd-412f-b1fe-c5d55ed7d207-checkpoint",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    },
+    {
+      "id": "70ccbab84c4b344e112d82195c78311fcdd84fd91cd3e7e8c1aeb06ae0cb71ff",
+      "name": "/mp-r0-r1release0afebf4f833b-op-966c6bbf-37bd-412f-b1fe-c5d55ed7d207-dispatch-fence",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    },
+    {
+      "id": "47b447ef1f626ec9386ba7252b7fba91855152748a0d78f1363352496527f442",
+      "name": "/mp-r0-r1release0afebf4f833b-app-release-943509b3e2b14dce95cd5771cd5e6642",
+      "image": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8"
+    }
+  ],
+  "checkpoint_and_diagnostics_retained": true
+}

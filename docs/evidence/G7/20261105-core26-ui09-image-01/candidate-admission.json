@@ -1,0 +1,56 @@
+{
+  "result": "passed_static_core26_shell13_admission",
+  "image_id": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+  "inventory_digest": "sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb",
+  "base_image_id": "sha256:8658390b780b937bf59c0dbe5932210e13358545c1a4df6872ccbf5b96eda5b8",
+  "source_changes": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "1dfa07aa8b1d710f94ed5517da2e7631c871f32cb078ccbedb97e7a21d93c447",
+      "target_sha256": "2cffd94665377b8247100ca51aa8e351794af18a20ee8bbab8f8cb72639c227a"
+    },
+    {
+      "path": "addons/mp_shell/__manifest__.py",
+      "previous_sha256": "c4a8c7c53f5ac30bd3379d6eaf926b214bdb4fed3e1cc260bb8df03768607529",
+      "target_sha256": "36934b869f98cbbcceb586107e2f70ea14d3987319a9eac99bac681f0f78aee6"
+    },
+    {
+      "path": "addons/mp_shell/static/src/host.js",
+      "previous_sha256": "854095d462a92cdc2ad2a3e70f539992d4b68117194c40138bbede7bdaef8f4f",
+      "target_sha256": "f0829d3f63d244064091fd3018ea083cdfeee6f4af2ec463247764cf940ca1e6"
+    },
+    {
+      "path": "addons/mp_shell/static/src/operations.js",
+      "previous_sha256": "0c82cee17fcab30d60b2fccf37b3d5f0d689a9b7abb8ff73a983eb8b814616db",
+      "target_sha256": "367f4ea25fdbf8d7a0857ed462257c0bf2d14d1c2406ccc300e933823df5df96"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "3b7c63bbc37d73a8f582c285417e960582486e787ac2be47e2ffa4bbb6a76458",
+      "target_sha256": "799f89a61cb968995db19a1fb69d7c99dad6c110d78fba0d78e4049371aac7ff"
+    }
+  ],
+  "native_changes": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.25",
+      "target_version": "19.0.0.1.26",
+      "migrations": []
+    },
+    {
+      "addon": "mp_shell",
+      "previous_version": "19.0.0.1.12",
+      "target_version": "19.0.0.1.13",
+      "migrations": []
+    }
+  ],
+  "python_distributions": 77,
+  "dependency_environment_exact": true,
+  "packaged_artifacts_and_policy_exact": true,
+  "all_build_source_hashes_exact": true,
+  "dependency_alias_removed": true,
+  "privacy": {
+    "known_values": 133,
+    "findings": 0
+  }
+}

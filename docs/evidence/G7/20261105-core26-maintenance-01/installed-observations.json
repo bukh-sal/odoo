@@ -1,0 +1,271 @@
+{
+  "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+  "generation": 7,
+  "operation": "966c6bbf-37bd-412f-b1fe-c5d55ed7d207",
+  "ui09": "passed_current_reference_scope",
+  "dialog_name_both_themes_and_zoom_levels": "Delete note",
+  "glyph_contrast": [
+    {
+      "theme": "light",
+      "screenshot_sha256": "beb1047156c329d085317a9df9f3b7d581b75197286ebd4d4ee962c9b42bbdc3",
+      "sampled_crop": [
+        914,
+        328,
+        927,
+        341
+      ],
+      "background_point": [
+        910,
+        335
+      ],
+      "pixels_at_least_3_to_1": 28,
+      "peak_ratio": 4.06
+    },
+    {
+      "theme": "dark",
+      "screenshot_sha256": "dc5b72425b7fed6552b5c9cdd813f5d9c239aaa8a280ce2190e692cd8f682b93",
+      "sampled_crop": [
+        914,
+        328,
+        927,
+        341
+      ],
+      "background_point": [
+        910,
+        335
+      ],
+      "pixels_at_least_3_to_1": 76,
+      "peak_ratio": 4.807
+    }
+  ],
+  "zoom_metrics": {
+    "baseline": {
+      "actual_window_zoom_metrics": {
+        "inner_width": 1256,
+        "inner_height": 808,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 1,
+        "visual_scale": 1,
+        "root_width": 1256,
+        "scroll_width": 1256,
+        "lang": "en-US",
+        "dir": "ltr"
+      },
+      "Arabic-window-metrics": {
+        "inner_width": 1256,
+        "inner_height": 808,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 1,
+        "visual_scale": 1,
+        "root_width": 1256,
+        "scroll_width": 1256,
+        "lang": "ar",
+        "dir": "rtl"
+      }
+    },
+    "zoom200": {
+      "actual_window_zoom_metrics": {
+        "inner_width": 628,
+        "inner_height": 404,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 2,
+        "visual_scale": 1,
+        "root_width": 628,
+        "scroll_width": 628,
+        "lang": "en-US",
+        "dir": "ltr"
+      },
+      "Arabic-window-metrics": {
+        "inner_width": 628,
+        "inner_height": 404,
+        "outer_width": 1280,
+        "outer_height": 900,
+        "dpr": 2,
+        "visual_scale": 1,
+        "root_width": 628,
+        "scroll_width": 628,
+        "lang": "ar",
+        "dir": "rtl"
+      }
+    }
+  },
+  "narrow": [
+    {
+      "name": "english-settings",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "en-US",
+      "direction": "ltr"
+    },
+    {
+      "name": "native-note",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "en-US",
+      "direction": "ltr"
+    },
+    {
+      "name": "arabic-settings",
+      "viewport": 320,
+      "document": 320,
+      "root": 320,
+      "header": 320,
+      "headerClient": 320,
+      "lang": "ar",
+      "direction": "rtl"
+    }
+  ],
+  "tables_exact_after_read_only_ui": 17,
+  "worker_preserved": true,
+  "browser_runs_closed": 8,
+  "zoom_preferences_restored": true,
+  "privacy": {
+    "known_values": 133,
+    "streams": 25,
+    "evidence_files": 51,
+    "findings": 0
+  },
+  "locale_and_announcements": {
+    "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+    "generation": 7,
+    "english": {
+      "language": "en-US",
+      "direction": "ltr",
+      "count": 3,
+      "text": "3 members"
+    },
+    "arabic": {
+      "language": "ar",
+      "direction": "rtl",
+      "count": 3,
+      "text": "3 \u0623\u0639\u0636\u0627\u0621"
+    },
+    "readyStatus": {
+      "id": 316,
+      "role": "status",
+      "ignored": false,
+      "live": {
+        "live": "polite",
+        "atomic": true,
+        "relevant": "additions text"
+      },
+      "hasText": false
+    },
+    "loading": {
+      "id": 316,
+      "role": "status",
+      "ignored": false,
+      "live": {
+        "live": "polite",
+        "atomic": true,
+        "relevant": "additions text"
+      },
+      "hasText": true
+    },
+    "readyAlert": {
+      "id": 315,
+      "role": "alert",
+      "ignored": false,
+      "live": {
+        "live": "assertive",
+        "atomic": true,
+        "relevant": "additions text"
+      },
+      "hasText": false
+    },
+    "error": {
+      "id": 315,
+      "role": "alert",
+      "ignored": false,
+      "live": {
+        "live": "assertive",
+        "atomic": true,
+        "relevant": "additions text"
+      },
+      "hasText": true
+    },
+    "timestamps": {
+      "utc": "2026-11-05T18:03:07Z",
+      "english": "Nov 5, 2026, 6:03:07 PM UTC",
+      "arabic": "5 \u0646\u0648\u0641\u0645\u0628\u0631 2026\u060c 6:03:07 \u0645 UTC"
+    },
+    "foreignRequests": [],
+    "runtimeExceptions": [],
+    "windowsLiveEvents": {
+      "loading": [
+        {
+          "type": "live_region_changed",
+          "event": 32793,
+          "epoch_ms": 1793902452843,
+          "object_id": -4,
+          "child_id": -1016
+        }
+      ],
+      "error": [
+        {
+          "type": "live_region_changed",
+          "event": 32793,
+          "epoch_ms": 1793902454026,
+          "object_id": -4,
+          "child_id": -1016
+        },
+        {
+          "type": "live_region_changed",
+          "event": 32793,
+          "epoch_ms": 1793902454150,
+          "object_id": -4,
+          "child_id": -1014
+        }
+      ]
+    }
+  },
+  "field_and_canvas": {
+    "requiredField": {
+      "label": [
+        {
+          "role": "textbox",
+          "name": "Workspace name",
+          "ignored": false
+        }
+      ],
+      "valueMissing": true,
+      "focused": true,
+      "hasMessage": true,
+      "submitted": false
+    },
+    "05-Canvas-keyboard-discard": {
+      "initial": "inbox",
+      "moved": "doing",
+      "afterMove": {
+        "name": "MModular PlatformWorkspaceWorkspaceReference AReference BCommandsDarkReference AliceCanvas",
+        "tag": "BODY"
+      },
+      "longInput": {
+        "length": 84,
+        "width": 163,
+        "root_width": 957
+      },
+      "discard_confirmed_twice": true,
+      "server_save_clicked": false,
+      "original_name_restored": true
+    },
+    "keyboardExitToSettings": true,
+    "foreignRequests": [],
+    "runtimeExceptions": []
+  },
+  "verification_scope": [
+    "Live region changes reached the Windows accessibility event API. Spoken output from a specific screen reader was not measured.",
+    "The actual loaded Operations formatter was exercised with a UTC journal timestamp. Settings counts and plural forms were observed on screen.",
+    "Reference custom pages use the shell layout. Keyboard navigation back to Settings was verified.",
+    "Manual glyph review and scoped browser checks do not assert WCAG conformance of arbitrary plugins."
+  ]
+}
