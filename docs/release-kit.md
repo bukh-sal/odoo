@@ -1,9 +1,11 @@
 # Local R1 release kit rehearsal
 
-G7 is in progress. The kit remains a draft until its operator setup and clean
-application installation are actually qualified. [Status](implementation-status.md)
-is authoritative; [ADR0053](architecture-decisions/0053-local-release-kit.md)
-defines the artifact and trust boundaries.
+G7 is in progress. The selected local draft is `.local/releases/r1-0.1.26`.
+Its clean offline operator, fresh application and separate worker passed backend
+qualification. The fresh browser walkthrough and final audit are pending.
+[Status](implementation-status.md) tracks closure.
+[ADR0053](architecture-decisions/0053-local-release-kit.md) defines the artifact
+and trust boundaries.
 
 The producer uses the selected Python3.12.16 operator, a committed source tree,
 the exact qualified local images and an independently selected catalog/trust
@@ -24,8 +26,8 @@ The producer now requires explicit matching build/reproduction evidence and
 current build-source hashes ([ADR0058](architecture-decisions/0058-explicit-release-application-inputs.md)).
 Replace every angle-bracket placeholder with independently selected actual paths;
 the command above describes the final producer, not an executed final assembly.
-The existing `r1-0.1.23` draft and the consumer examples below retain their dated
-qualification scope. Source-only `refresh_draft.py` likewise requires both receipt
+The earlier `r1-0.1.23` draft retains its dated qualification scope.
+Source-only `refresh_draft.py` likewise requires both receipt
 options and refuses an image/base/inventory mismatch. It cannot update an old
 kit's application image by refreshing source alone. Do not rerun assembly against
 the existing draft or reuse its old receipts to conceal changed application inputs.
@@ -33,8 +35,10 @@ the existing draft or reuse its old receipts to conceal changed application inpu
 Once assembled, verify the kit before consuming its files:
 
 ```powershell
-python release/verify.py .local/releases/r1-0.1.23
-python .local/releases/r1-0.1.23/scripts/setup_operator.py .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+$kit = '.local/releases/r1-0.1.26'
+$work = '.local/release-kit-new-operator'
+python release/verify.py $kit
+python "$kit/scripts/setup_operator.py" $kit --workdir $work
 ```
 
 The initial `python` needs a trusted Python3.12-or-newer installation only for
@@ -52,13 +56,28 @@ code/permission review when importing reference archives into a new catalog.
 
 For a new operator workspace, the trusted reference initializer creates one new
 loopback-only disposable realm. Use the interpreter and source paths recorded
-in its `operator-setup.json`; these examples use the default rehearsal paths:
+in its `operator-setup.json`. The examples below use the new workdir above.
+
+After reviewing the reference packages and exact digests, import them into the
+new private catalog before initializing the application. These commands use the
+kit's operator interpreter and the ordinary catalog CLI.
 
 ```powershell
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_reference.py prepare --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal --reference-fixture --port 18100
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_reference.py initialize --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_reference.py install --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/check_reference.py --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+$operator = "$work/operator/Scripts/python.exe"
+$index = Get-Content "$kit/plugins/index.json" -Raw | ConvertFrom-Json
+foreach ($artifact in $index.packages) {
+    & $operator -I "$work/source/tools/modular.py" --config "$kit/plugins/curated-trust.json" catalog --store "$work/private/catalog" add "$kit/$($artifact.file)" --digest $artifact.digest
+    if ($LASTEXITCODE -ne 0) { throw 'Catalog import failed. Inspect the private catalog and diagnostic.' }
+}
+```
+
+```powershell
+$port = 18102  # Select an unused loopback port.
+$initializer = "$work/source/release/initialize_reference.py"
+& $operator -I $initializer prepare --kit $kit --workdir $work --reference-fixture --port $port
+& $operator -I $initializer initialize --kit $kit --workdir $work
+& $operator -I $initializer install --kit $kit --workdir $work
+& $operator -I "$work/source/release/check_reference.py" --kit $kit --workdir $work
 ```
 
 Run each phase once, sequentially. Preparation verifies/loads the five exact
@@ -79,19 +98,21 @@ Passwords remain in the protected `private/reference/account-passwords.json`;
 they are neither printed nor included in this public-input kit. Do not copy an
 existing operator journal/issuer into a new installation.
 
-The current rehearsal has actually reached `references_installed` from the kit
-operator and committed initializer: three native reference plugins, six workspace
-activations, distinct fresh credentials and a new independent control store.
-The HTTP walkthrough has now passed five checks with two Notes/one board;
-[backend qualification](evidence/G7/20261104-release-kit-01/application-bootstrap.json)
-records the actual source overlays and narrow pre-data DNS continuation. Worker
-integration passed subsequently below; twelve-case operational handoff is open.
-No full G7 claim follows from these commands.
+The fresh core26 rehearsal installed three native reference plugins across six
+workspace activations. Its five HTTP checks covered distinct sessions, native
+Notes list/form descriptors, denied cross-workspace access, the Labels extension
+and a minimal Canvas board. During the first fresh initialization the catalog
+import was missing from this guide. The corrected initializer checks the entire
+kit catalog before starting the database. The rehearsal imported the reviewed
+digests and resumed publication from the recorded empty-install state.
+[Backend qualification](evidence/G7/20261105-core26-release-kit-01/fresh-backend.json)
+and [catalog reconciliation](evidence/G7/20261105-core26-release-kit-01/catalog-and-publication-reconciliation.json)
+record the actual scope.
 
 The worker is a separate operator action, after that backend walkthrough:
 
 ```powershell
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/initialize_worker.py --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+& $operator -I "$work/source/release/initialize_worker.py" --kit $kit --workdir $work
 ```
 
 This once-only helper has passed its initial qualification. It starts the
@@ -101,9 +122,10 @@ the exact authority hash. It does not install metadata or select a connector;
 the following separate integration steps follow once, in order:
 
 ```powershell
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py register --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py connect --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
-.local/release-kit-rehearsal/operator/Scripts/python.exe -I .local/release-kit-rehearsal/source/release/connect_worker.py job --kit .local/releases/r1-0.1.23 --workdir .local/release-kit-rehearsal
+$connector = "$work/source/release/connect_worker.py"
+& $operator -I $connector register --kit $kit --workdir $work
+& $operator -I $connector connect --kit $kit --workdir $work
+& $operator -I $connector job --kit $kit --workdir $work
 ```
 
 These three integration steps have passed the backend rehearsal. Registration
@@ -114,7 +136,7 @@ remain identical. The helper records each phase before acting. Its state is in
 `private/reference/worker/integration.json`. Worker provisioning phase is in
 `private/reference/worker/state.json`; never replay an uncertain publication.
 
-The actual final realm has five site installations/eight workspace activations,
+The earlier core23 rehearsal had five site installations/eight workspace activations,
 two Notes, one board and one completed original-actor analysis job. Three lifecycle
 operations completed under independent approval; the worker's original runtime
 and publication stayed exact. [Integration evidence](evidence/G7/20261104-release-kit-01/worker-integration.json)
@@ -135,7 +157,6 @@ have passed. The latter covers expanded/nested archives and image layers, all
 54,196 source files against Git, and 133 known secret values. Eight exact upstream
 documentation examples/compiled equivalents were reviewed individually.
 
-The qualified kit source snapshot is `5456abf4`; later audit receipts are linked
-from the repository evidence index, not claimed to be inside that earlier ZIP.
-The kit remains a draft until browser/network, performance, accessibility and
-the final G7/section28 operator/developer handoff pass. No full R1 claim is made.
+That historical kit source snapshot is `5456abf4`. The core26 qualification has
+its own [closure map](r1-release-checklist.md). Later audit receipts live in the
+repository evidence index outside the source snapshot they verify.

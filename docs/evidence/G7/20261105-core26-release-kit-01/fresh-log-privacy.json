@@ -1,0 +1,7 @@
+{
+  "result": "passed",
+  "streams": 151,
+  "known_values": 142,
+  "findings": [],
+  "scope": "Command and retained Docker streams; credentials, state and checkpoints remain private."
+}

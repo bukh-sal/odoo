@@ -1,0 +1,13 @@
+{
+  "project": "mp-r0-r1release1c1f3b9c7a85",
+  "initial_phase": "publishing_core_bootstrap",
+  "catalog_imported": 19,
+  "counts_before_publication": [
+    2,
+    0,
+    0
+  ],
+  "provisioning_receipt_sha256": "f28440a351ac6af70c51389093f3d9a05b3820f1a5c65524e06160ce8a0f7fe2",
+  "core_helpers_exited_zero": true,
+  "bootstrap_target_previously_absent": true
+}

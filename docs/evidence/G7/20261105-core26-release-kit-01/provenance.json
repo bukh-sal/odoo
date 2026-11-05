@@ -1,0 +1,27 @@
+{
+  "result": "passed_current_core26_runtime_provenance_and_notices",
+  "utc": "2026-11-05T18:38:35.018143+00:00",
+  "image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+  "inventory": "sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb",
+  "recorded_build_inputs": 377,
+  "upstream_and_generated_source_hashes": 3939,
+  "python_distributions": 77,
+  "os_packages": 113,
+  "native_addons": 17,
+  "application_notice_entries": 274,
+  "support_images_exact_to_qualified_kit": [
+    "worker",
+    "postgres",
+    "proxy"
+  ],
+  "notice_archives_exact": [
+    "notices/application.zip",
+    "notices/host.zip",
+    "notices/postgres.zip",
+    "notices/proxy.zip",
+    "notices/source.zip",
+    "notices/worker.zip"
+  ],
+  "collector_sha256": "45720694d15483f52d8a602eb656628e137fd3624ab5663f42a0087d62950bca",
+  "collector_removed": true
+}

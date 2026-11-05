@@ -26,16 +26,25 @@ observation exists; it does not mean the entire final release passed.
   [Assembly evidence](evidence/G7/20261105-core26-release-kit-01/assembly.json)
 - [x] Set up the clean operator offline from the core26 kit and check its
   private boundary, CLI and contract freeze. [Operator setup](evidence/G7/20261105-core26-release-kit-01/operator-setup.json)
-- [ ] Qualify the core26 kit's clean application install and developer workflow.
+- [x] Qualify the core26 kit's clean application install, scoped HTTP path and
+  separate worker. [Backend evidence](evidence/G7/20261105-core26-release-kit-01/fresh-backend.json)
+- [x] Validate and reproduce versioned Labels and Canvas examples in the clean
+  operator. [Packaging evidence](evidence/G7/20261105-core26-release-kit-01/developer-packaging.json)
+- [ ] Exercise the fresh developer walkthrough in the browser when UI checks
+  resume. Backend HTTP verified the shipped extensions. The versioned packaging
+  examples were exercised in isolation.
 - [x] Remove the producer's hardcoded core23 selection and bind source refresh to
   explicit matching build/reproduction/image evidence:
   [ADR0058](architecture-decisions/0058-explicit-release-application-inputs.md),
   [actual refusal proof](evidence/G7/20261104-kit-input-binding-01/qualification.json).
   Nine tests and both real old-receipt refusals pass; all50 draft components
   remain unchanged. This is a producer guard, not final kit assembly.
-- [ ] Qualify new source/image/archive/history/log privacy deltas and current
-  provenance/network scope before OPS-03 is restored. Existing finite scans do
-  not establish an unrestricted absence-of-secrets claim.
+- [x] Qualify current image provenance and fresh internal network topology,
+  expanded privacy for the initial core26 kit and fresh log privacy.
+  [Provenance](evidence/G7/20261105-core26-release-kit-01/provenance.json),
+  [kit privacy](evidence/G7/20261105-core26-release-kit-01/privacy-delta.json) and
+  [log privacy](evidence/G7/20261105-core26-release-kit-01/fresh-log-privacy.json)
+- [ ] Verify expanded privacy and Git identity after the source-only refresh.
 - [ ] Reconcile final fresh-developer proof and complete the §28 audit/handoff.
   The old kit's actual fresh setup is retained evidence, not proof that the
   current final kit was installed or that a new developer extended a plugin.

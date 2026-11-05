@@ -1,0 +1,44 @@
+{
+  "result": "passed_documented_reference_packaging_only",
+  "utc": "2026-11-05T18:31:59.550469+00:00",
+  "examples": [
+    {
+      "example": "notes_labels",
+      "version": "0.2.5",
+      "digest": "sha256:fdf5d88b5b2704c40ec593b24a357ea0152f45aed0c5769d4063d4f571329773",
+      "bytes": 26583,
+      "curated_validator_passed": true,
+      "reproduced_byte_exact": true,
+      "mismatched_versions_no_output": true,
+      "overwrite_refused_bytes_preserved": true,
+      "modified_presentation_in_archive": true
+    },
+    {
+      "example": "canvas",
+      "version": "0.1.5",
+      "digest": "sha256:a5cb7ee0dbd6a9db0d21dd36554f540505c64dca4bc9f379b5682ae142b6eedb",
+      "bytes": 29747,
+      "curated_validator_passed": true,
+      "reproduced_byte_exact": true,
+      "mismatched_versions_no_output": true,
+      "overwrite_refused_bytes_preserved": true,
+      "modified_presentation_in_archive": true
+    }
+  ],
+  "cli_processes": 8,
+  "operator_environment": "fresh_core26_kit_Python_and_extracted_source",
+  "known_values": 133,
+  "privacy_findings": 0,
+  "document_links_verified": 9,
+  "source_sha256": {
+    ".local\\release-kit-core26-rehearsal\\source\\tools\\package_reference.py": "d1de5bd78981883d400fe660f46b0647a34f1c600c60a156d62228020c112feb",
+    ".local\\release-kit-core26-rehearsal\\source\\docs\\developer-guide.md": "1e574a2754234fecbe3543ef41c33dd8c572d34fcd53a6eeaad6592c8c24a17d",
+    "docs\\evidence\\G7\\20261105-core26-release-kit-01\\check_developer_packaging.py": "96ae3ad515b67a2e8d2b1525ecf0e43123a777da842f9b8337c9f77a42f367a0"
+  },
+  "limits": [
+    "Isolated copies only; no tracked native plugin/version changes, import of native addon code or live catalog/trust changes.",
+    "No Docker command, browser, database write, deployment, approval or worker restart was executed.",
+    "Two synthetic example artifacts were independently validated and byte-reproduced; this is not final application image reproduction/BOOT02.",
+    "Full final-kit fresh developer installation/extension/custom-page/permission/recovery and separate worker proof remains required."
+  ]
+}

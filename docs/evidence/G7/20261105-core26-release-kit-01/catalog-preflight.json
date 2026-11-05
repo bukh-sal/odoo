@@ -1,0 +1,6 @@
+{
+  "result": "missing_and_incomplete_catalog_refused_before_mutation",
+  "complete_catalog_reached_database_boundary": true,
+  "docker_commands": 0,
+  "initializer_sha256": "61039c544d4cc51c4fa8e53850bfd40c3b56abd56f1d10ebf0433bf1f4ba2175"
+}

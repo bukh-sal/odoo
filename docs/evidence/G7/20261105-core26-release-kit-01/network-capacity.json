@@ -1,0 +1,15 @@
+{
+  "result": "pre_data_refusal_retained_and_two_archived_subnets_released",
+  "utc": "2026-11-05T18:26:17.473412+00:00",
+  "failed_phase": "creating_owned_networks",
+  "failed_project": "mp-r0-r1release41549b7c538c",
+  "daemon_error": "Error response from daemon: all predefined address pools have been fully subnetted",
+  "failed_project_created_networks_volumes_containers": 0,
+  "retained_diagnostics": ".local/release-kit-core26-rehearsal/private/reference-before-network-capacity",
+  "retired_archived_networks": {
+    "9652329b374d9cdc8a4abfa27e2d5b0539379e8a318c87dfa62cc66631694de4": "mp-r0-20261027234238n_edge",
+    "e8b487dac8c3ab45634913f56553860498fed2c0250de329b90bddcea1e3bcb1": "mp-r0-20261027234238n_runtime"
+  },
+  "other_networks_preserved": true,
+  "containers_volumes_images_removed": 0
+}

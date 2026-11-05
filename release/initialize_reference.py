@@ -118,6 +118,11 @@ print('New owned configuration volumes seeded')
     def initialize(self):
         state=self.state()
         if state['phase']!='configured':raise ValueError('Initialization already attempted; inspect the exact phase')
+        trust=configuration(self.local/'operator/trust.json')
+        catalog=Catalog(self.private/'catalog',trust,readonly=True)
+        required={row['digest'] for row in load(self.kit/'plugins/index.json')['packages']}
+        if not required.issubset({row['digest'] for row in catalog.snapshot()}):
+            raise ValueError('Import all reviewed reference kit archives before initialization')
         self.phase(state,'starting_empty_database')
         self.compose(state,'up','-d','--wait','--no-deps','db')
         if self.sql(state,'assert-new-database',"SELECT count(*) FROM pg_database WHERE datname='"+state['database']+"';",database='postgres').strip()!=b'0':raise ValueError('Database exists; never overwrite')

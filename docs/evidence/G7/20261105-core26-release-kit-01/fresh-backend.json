@@ -1,0 +1,201 @@
+{
+  "result": "passed_clean_consumer_backend",
+  "original_kit_manifest_sha256": "b4ce8f9c2f14043d7f34872fd18f40638fed1b6ee4d899c83161022d0c7a6c3c",
+  "project": "mp-r0-r1release1c1f3b9c7a85",
+  "application_image": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+  "fresh_reference_checks": [
+    "fresh distinct-credential human sessions and current client release",
+    "one scoped Note in each workspace; native Odoo list/form descriptors and scoped record reads",
+    "Alice viewer write denied in B; Bob cannot read A record",
+    "native Notes Labels extension through its registered binding",
+    "minimal optional Canvas reference uses native creation and registered custom-page service"
+  ],
+  "worker_image": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+  "worker_publication": 1,
+  "original_actor_job": {
+    "attempts": 1,
+    "state": "completed",
+    "statistics": {
+      "lines": 1,
+      "words": 3,
+      "characters": 30
+    }
+  },
+  "notes": 2,
+  "boards": 1,
+  "internal_runtime_network": true,
+  "published_endpoint": "127.0.0.1:18101",
+  "removed_helpers": [
+    {
+      "id": "eac54535eda9e356f53a27b00f9b493acc418482543cfcddfa3235e24e57e1c7",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-446bd66c-c123-4d98-b527-1d21b46b5983-dispatch-enable",
+      "log_driver": "none"
+    },
+    {
+      "id": "64f5ef9eadd98e7d8a47ca5b3cb87ecf6d72bf6291434d4663059d570eec5628",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-576665ad-024f-4a4c-92b3-85bc79ed7c93-dispatch-observe",
+      "log_driver": "none"
+    },
+    {
+      "id": "319eb17a18ca13163305db121522ed9815ec682e54d81ecac0ec9ae1ba748f71",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-446bd66c-c123-4d98-b527-1d21b46b5983-dispatch-reconcile",
+      "log_driver": "none"
+    },
+    {
+      "id": "64ffdc9b99ac20c41bbedc4d7796a38eb58d2b7136850defe922b1b825a82bc9",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-446bd66c-c123-4d98-b527-1d21b46b5983-assets",
+      "log_driver": "none"
+    },
+    {
+      "id": "38e60762287542b1a9e917bc93058356337c8e077881fd2fd4a8e6d0ebe113a4",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-446bd66c-c123-4d98-b527-1d21b46b5983-metadata",
+      "log_driver": "none"
+    },
+    {
+      "id": "2ee71767f432b16357cd088d9023d8997ea47167932b1708c651d4f24510a745",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-446bd66c-c123-4d98-b527-1d21b46b5983-native",
+      "log_driver": "none"
+    },
+    {
+      "id": "d6ba160c9e562fd72d14788987ba76db7b83065b9689a08d760b36fd32d90aa0",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-766ddfe1-e078-455e-944a-72f7a56ae3f6-dispatch-observe",
+      "log_driver": "none"
+    },
+    {
+      "id": "040ad74388c0beee28a4c8a937df701928505675a904c74624c7a6e62dfb84d8",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-446bd66c-c123-4d98-b527-1d21b46b5983-checkpoint",
+      "log_driver": "none"
+    },
+    {
+      "id": "198e1db4a708be083346711dd3cd97f0298074deb7b862bf1557896dd98b417b",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-446bd66c-c123-4d98-b527-1d21b46b5983-dispatch-fence",
+      "log_driver": "none"
+    },
+    {
+      "id": "2a77751c8994808eaf38f9675cd868dfba94902b50be66c12f1496cf300f093e",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-a46d597c-4837-4a9c-b4d0-33eca497976e-dispatch-enable",
+      "log_driver": "none"
+    },
+    {
+      "id": "34f51a645d9dd72641e778f2eef68e1d4c618bd5e03a6b2982611f77fcad0f7a",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-3ea461bc-7780-4baa-829b-a108821a262a-dispatch-observe",
+      "log_driver": "none"
+    },
+    {
+      "id": "97f7b0eeec30e5c87451b9eea9bc8e0a802d96cd7b6625c741b0a3abde49a47c",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-a46d597c-4837-4a9c-b4d0-33eca497976e-dispatch-reconcile",
+      "log_driver": "none"
+    },
+    {
+      "id": "14e7cc3aabd827b3cfe281161c432d7e4526b67e23ddf8a3f1f9c18d3075dbc0",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-a46d597c-4837-4a9c-b4d0-33eca497976e-assets",
+      "log_driver": "none"
+    },
+    {
+      "id": "2f8537fa066143018a5d618e4b38bdd8d7bc50fcb821bb329bc82442de2cc408",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-app-release-a46d597c48374a9cb4d033eca497976e",
+      "log_driver": "local"
+    },
+    {
+      "id": "f1c2848b4a0a2449bf9708d5375d058da8dee67873ff176912743085977eeeb2",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-a46d597c-4837-4a9c-b4d0-33eca497976e-metadata",
+      "log_driver": "none"
+    },
+    {
+      "id": "3159e7a6c22257a2ee80b31303ff5eb6e8b3c5ed87ec622a3718015961d79ed2",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-82f679cf-aaed-4428-8a19-bec5c4b038d6-dispatch-observe",
+      "log_driver": "none"
+    },
+    {
+      "id": "ad72bdf179f95977b69b8561cbdb2a9de572bceb8b9ea679d219df550540118e",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-a46d597c-4837-4a9c-b4d0-33eca497976e-checkpoint",
+      "log_driver": "none"
+    },
+    {
+      "id": "13fa8259f716c5f0b1c8e915dff7b435017887b89785f2784d2ade1cd5b45065",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-a46d597c-4837-4a9c-b4d0-33eca497976e-dispatch-fence",
+      "log_driver": "none"
+    },
+    {
+      "id": "f1089ce7c98cb4943b4f8ed231f70476a369353ef22fb43a93d23d25a7891edf",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-1d7f55a5-2d13-49b8-951e-d7dd012c9b28-dispatch-enable",
+      "log_driver": "none"
+    },
+    {
+      "id": "5d2811d012e67f701e5ee8bc8ae406469d59a6c88599ea6da3521ac1f126f13d",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-b73e5dd6-5c46-42b5-b9b3-23650b4f52e7-dispatch-observe",
+      "log_driver": "none"
+    },
+    {
+      "id": "26ecf8bd1941d75ae556b2663f04a8cfdcb156dd4bc66ab4b6ef033975e013b2",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-1d7f55a5-2d13-49b8-951e-d7dd012c9b28-dispatch-reconcile",
+      "log_driver": "none"
+    },
+    {
+      "id": "bc47ce4393e4f6cf6b082fb15780b582155024fb7674665c587a6d98d77c45ac",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-1d7f55a5-2d13-49b8-951e-d7dd012c9b28-assets",
+      "log_driver": "none"
+    },
+    {
+      "id": "52504c1f3f8dfe75b7aaf1c38dec954623b63b47915e25ea2084ec79e2b0a1db",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-app-release-1d7f55a52d1349b8951ed7dd012c9b28",
+      "log_driver": "local"
+    },
+    {
+      "id": "2a8cfbf6e37b7ab19bbea3a2d555b1aaf3189de08491477d2502cc033cd1fd12",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-1d7f55a5-2d13-49b8-951e-d7dd012c9b28-metadata",
+      "log_driver": "none"
+    },
+    {
+      "id": "5fa31ab6ef297faa65f069fae3041f7196ae7b520a5ad0d3f26333b831e11f97",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-1d7f55a5-2d13-49b8-951e-d7dd012c9b28-native",
+      "log_driver": "none"
+    },
+    {
+      "id": "a3612feaabe209132f74c556987b55f50eb96215e848e66532f45b378bb35528",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-c7798cbb-d6af-42cd-ae2a-1bcacd7b9856-dispatch-observe",
+      "log_driver": "none"
+    },
+    {
+      "id": "afc31d0594b5ff7c48c5c944e48556b6314a028f9ff6e77376d50f039c96b24c",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-1d7f55a5-2d13-49b8-951e-d7dd012c9b28-checkpoint",
+      "log_driver": "none"
+    },
+    {
+      "id": "fb9ebaee7627877ec557a5707985dece6616b83bb1f789622bc0a008efaf1ed2",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-1d7f55a5-2d13-49b8-951e-d7dd012c9b28-dispatch-fence",
+      "log_driver": "none"
+    },
+    {
+      "id": "572e95788391ce5ab04a26c21bb94df5e72c95385501dff35c8273cda9d0a0ef",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-op-e665ba29-f309-4425-814f-d92590cc995f-assets",
+      "log_driver": "none"
+    },
+    {
+      "id": "f661c3cda584be9fc8a3c28f43817b46d44dcb12940c06f0a0f5af0b13f1cb32",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-app-release-e665ba29f3094425814fd92590cc995f",
+      "log_driver": "local"
+    },
+    {
+      "id": "82296621490c99dd7e09207f7c4b96b1ff0f53dac45a68570915da15ab72aa1f",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-core-provision",
+      "log_driver": "none"
+    },
+    {
+      "id": "18a56d40f74a11acb28b391dbd4c61d6842054344dec09ed134e9f732d7a2e7a",
+      "name": "/mp-r0-r1release1c1f3b9c7a85-core-init",
+      "log_driver": "none"
+    }
+  ],
+  "retained_runtime_ids": [
+    "5d56048c43997213fa015c285ab3d4262109a552b6c3e3229354011f74647590",
+    "d21123f1d0ee924ad4990100b0d484c8be0f4b062afe5965152fe1d8e69e7794",
+    "71823ac8ba40a544e1af4526220d2c8b82a03f920191839d6e82a9cb73a32837",
+    "fe2fb7a1a10d28d8ba4566064cc86b76ea5e968dd31a000f30de45a4c6f767f8"
+  ],
+  "private_result_sha256": {
+    "reference-checks.json": "24a833518a497ba8c5e06401cc835ca28202022e1bb942914afd05db0a418ec1",
+    "worker/job-qualified.json": "dccf3a3d219ca8e4e0a65ea8911b8a44b9acf88b9a7331aeaf855d8dd7b29a9f"
+  },
+  "scope": "Backend HTTP and native descriptors, original-actor job and Docker topology. Fresh browser walkthrough deferred."
+}
