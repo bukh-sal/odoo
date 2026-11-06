@@ -7,6 +7,7 @@ arbitrary handler. Business handlers require run_fenced in their transaction.
 """
 from contextlib import contextmanager
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 import hashlib
 import json
 import re
@@ -48,6 +49,46 @@ class Claim:
     job_id: str
     generation: int
     owner: str
+    budget_until: datetime | None = None
+
+
+@dataclass(frozen=True)
+class JobSchedule:
+    """Absolute timestamps for a scheduled occurrence, with a separate attempt budget."""
+    run_at: datetime
+    expires_at: datetime
+    attempt_seconds: int
+
+    def __post_init__(self):
+        for name in ('run_at', 'expires_at'):
+            value = getattr(self, name)
+            if not isinstance(value, datetime) or value.utcoffset() is None:
+                raise QueueError('Timezone-aware schedule required')
+            object.__setattr__(self, name, value.astimezone(timezone.utc))
+        _bounded(self.attempt_seconds, 1, 3600)
+        if not timedelta(seconds=self.attempt_seconds) <= self.expires_at-self.run_at <= timedelta(days=1):
+            raise QueueError('Invalid job validity window')
+
+    def wire(self):
+        return dict(run_at=self.run_at.isoformat(), expires_at=self.expires_at.isoformat(),
+                    attempt_seconds=self.attempt_seconds)
+
+    @classmethod
+    def from_wire(cls, value):
+        if not isinstance(value, dict) or set(value) != {'run_at', 'expires_at', 'attempt_seconds'}:
+            raise QueueError('Invalid job schedule')
+        try:
+            schedule = cls(datetime.fromisoformat(value['run_at']), datetime.fromisoformat(value['expires_at']),
+                           value['attempt_seconds'])
+        except (TypeError, ValueError, OverflowError):
+            raise QueueError('Invalid job schedule') from None
+        if value != schedule.wire():
+            raise QueueError('Noncanonical job schedule')
+        return schedule
+
+
+class RetryJob(Exception):
+    """A declared transient failure in a replay-safe job."""
 
 
 def _uuid(value):
@@ -109,17 +150,22 @@ def set_control(cr, site_id, release_digest, state):
     return cr.fetchone()[0]
 
 
-def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None, on_new=None):
+def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None, on_new=None, schedule=None):
     if not isinstance(scope, DispatchScope):
         raise QueueError('Validated private dispatch scope required')
     _name(handler); _bounded(version, 1, 1000); _bounded(max_attempts, 1, 16); _bounded(timeout_seconds, 1, 86400)
     if effect_mode not in {'idempotent', 'reconcile'} or not isinstance(key, str) or not re.fullmatch(r'[A-Za-z0-9_.:-]{1,128}', key):
         raise QueueError('Invalid job effect or deduplication policy')
+    if schedule is not None and (not isinstance(schedule, JobSchedule) or not isinstance(payload, dict)
+                                 or payload.get('schema_version') != 2 or payload.get('schedule') != schedule.wire()):
+        raise QueueError('Scheduled dispatch envelope required')
     if on_new is not None and not callable(on_new):
         raise QueueError('Trusted new-job preflight callback required')
     data, digest = _json(payload)
     if deduplication is not None:
         _, digest = _json(deduplication)
+    if schedule is not None:
+        _, digest = _json(dict(input_digest=digest, schedule=schedule.wire()))
     generation = control(cr, scope.site_id, scope.release_digest)
     identity = [scope.site_id, scope.workspace_id, scope.actor_id, scope.installation_id, handler, version, key]
     public_id = str(uuid4())
@@ -127,13 +173,22 @@ def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempoten
         release_digest,payload,input_digest,effect_mode,state,attempts,max_attempts,claim_generation,dispatch_generation,
         available_at,deadline_at,cancel_requested,effect_started,progress,created_at)
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s::jsonb,%s,%s,'pending',0,%s,0,%s,
-                timezone('UTC',clock_timestamp()),timezone('UTC',clock_timestamp())+(%s*interval '1 second'),false,false,0,timezone('UTC',clock_timestamp()))
+                COALESCE(%s,timezone('UTC',clock_timestamp())),
+                COALESCE(%s,timezone('UTC',clock_timestamp())+(%s*interval '1 second')),false,false,0,timezone('UTC',clock_timestamp()))
         ON CONFLICT(site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key) DO NOTHING RETURNING public_id""",
-        [public_id, *identity, scope.release_digest, data, digest, effect_mode, max_attempts, generation, timeout_seconds])
+        [public_id, *identity, scope.release_digest, data, digest, effect_mode, max_attempts, generation,
+         schedule.run_at.replace(tzinfo=None) if schedule else None,
+         schedule.expires_at.replace(tzinfo=None) if schedule else None, timeout_seconds])
     inserted = cr.fetchone()
     if inserted:
         # Only the unique insertion winner validates new-work preconditions.
         # Caller must roll back this reservation if that callback fails.
+        if schedule is not None:
+            cr.execute("""SELECT deadline_at>timezone('UTC',clock_timestamp())
+                AND available_at<=timezone('UTC',clock_timestamp())+interval '30 days'
+                FROM mp_job WHERE public_id=%s""", [public_id])
+            if not cr.fetchone()[0]:
+                raise QueueError('Schedule expired or beyond scheduling horizon')
         if on_new is not None:on_new()
         return inserted[0]
     cr.execute("""SELECT public_id,input_digest,release_digest,effect_mode FROM mp_job
@@ -164,16 +219,20 @@ def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30):
         AND state IN ('pending','retry') AND deadline_at<=timezone('UTC',clock_timestamp()) FOR UPDATE SKIP LOCKED)
         UPDATE mp_job j SET state='dead_letter',error_code='DEADLINE_EXCEEDED',finished_at=timezone('UTC',clock_timestamp())
         FROM expired WHERE j.id=expired.id""", [site_id, release_digest, list(handlers)])
-    cr.execute("""WITH next AS (SELECT id FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
+    cr.execute("""WITH stamp AS (SELECT timezone('UTC',clock_timestamp()) AS now),
+        next AS (SELECT id,CASE WHEN payload->>'schema_version'='2'
+            THEN LEAST(deadline_at,stamp.now+((payload->'schedule'->>'attempt_seconds')::integer*interval '1 second'))
+            END AS budget_until,stamp.now FROM mp_job CROSS JOIN stamp
+        WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
         AND state IN ('pending','retry') AND NOT cancel_requested AND attempts<max_attempts
         AND available_at<=timezone('UTC',clock_timestamp()) AND deadline_at>timezone('UTC',clock_timestamp())
-        ORDER BY available_at,id FOR UPDATE SKIP LOCKED LIMIT 1)
+        ORDER BY available_at,id FOR UPDATE OF mp_job SKIP LOCKED LIMIT 1)
         UPDATE mp_job j SET state='running',attempts=attempts+1,claim_generation=claim_generation+1,
-            dispatch_generation=%s,lease_owner=%s,lease_until=LEAST(deadline_at,timezone('UTC',clock_timestamp())+(%s*interval '1 second')),
+            dispatch_generation=%s,lease_owner=%s,lease_until=LEAST(j.deadline_at,next.budget_until,next.now+(%s*interval '1 second')),
             effect_started=false,error_code=NULL FROM next WHERE j.id=next.id
-        RETURNING j.public_id,j.claim_generation""", [site_id, release_digest, list(handlers), generation, owner, lease_seconds])
+        RETURNING j.public_id,j.claim_generation,next.budget_until""", [site_id, release_digest, list(handlers), generation, owner, lease_seconds])
     row = cr.fetchone()
-    return Claim(row[0], row[1], owner) if row else None
+    return Claim(row[0], row[1], owner, row[2]) if row else None
 
 
 def _lock(cr, value):
@@ -234,8 +293,12 @@ def run_fenced(cr, value, work, *, flush=None):
 
 
 def heartbeat(cr, value, *, lease_seconds=30, progress=0):
-    _bounded(lease_seconds, 1, 300); _bounded(progress, 0, 99); _lock(cr, value)
-    cr.execute("UPDATE mp_job SET lease_until=LEAST(deadline_at,timezone('UTC',clock_timestamp())+(%s*interval '1 second')),progress=%s WHERE public_id=%s", [lease_seconds, progress, value.job_id])
+    _bounded(lease_seconds, 1, 300); _bounded(progress, 0, 99); row = _lock(cr, value)
+    if isinstance(row['payload'],dict) and row['payload'].get('schema_version') == 2 and value.budget_until is None:
+        raise ClaimLost('Scheduled claim budget required')
+    cr.execute("""UPDATE mp_job SET lease_until=LEAST(deadline_at,%s::timestamp,
+        timezone('UTC',clock_timestamp())+(%s*interval '1 second')),progress=GREATEST(progress,%s)
+        WHERE public_id=%s""", [value.budget_until, lease_seconds, progress, value.job_id])
 
 
 def effect_started(cr, value):
@@ -262,6 +325,18 @@ def cancel(cr, job_id, *, actor_id, workspace_id):
     _uuid(job_id)
     cr.execute("""UPDATE mp_job SET cancel_requested=true,state=CASE WHEN state IN ('pending','retry','held') THEN 'cancelled' ELSE state END
         WHERE public_id=%s AND actor_id=%s AND workspace_id=%s AND state IN ('pending','retry','running','held') RETURNING public_id""", [job_id, actor_id, workspace_id])
+    return bool(cr.fetchone())
+
+
+def cancel_scheduled(cr, job_id, *, actor_id, workspace_id):
+    """Fence database apply immediately and preserve any possible remote effect."""
+    _uuid(job_id)
+    cr.execute("""UPDATE mp_job SET cancel_requested=true,
+        state=CASE WHEN effect_mode='reconcile' AND effect_started THEN 'outcome_unknown' ELSE 'cancelled' END,
+        error_code=CASE WHEN effect_mode='reconcile' AND effect_started THEN 'CANCELLED' ELSE NULL END,
+        lease_owner=NULL,lease_until=NULL,finished_at=timezone('UTC',clock_timestamp())
+        WHERE public_id=%s AND actor_id=%s AND workspace_id=%s AND payload->>'schema_version'='2'
+        AND state IN ('pending','retry','running','held') RETURNING public_id""", [job_id, actor_id, workspace_id])
     return bool(cr.fetchone())
 
 

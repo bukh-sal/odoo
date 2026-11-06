@@ -1,0 +1,25 @@
+{
+  "gate": "BG-02",
+  "state": "passed",
+  "acceptance": {"BG-02a": "passed", "BG-02b": "passed"},
+  "image": "sha256:9ae9b4dead3d59f4c943aacd3596d7d0e03d12b585592f05cc027dadd3976f45",
+  "inventory": "sha256:c8932db9bcb192b5695643bdcb4f5e91b0f65d2de256d4988b4bb69fceda8d2f",
+  "build_record": "../../G7/bg-02-reference-build-01/candidate-build.json",
+  "operation": "8708b2ed-5a8a-4dab-8562-1e0623fc4133",
+  "contract": "trusted native schedule API v1, private job envelope v2",
+  "legacy_freeze": {"files": 106, "rows": 8, "result": "passed"},
+  "observed": {
+    "rollback": true,
+    "concurrent_duplicate": true,
+    "no_early_claim": true,
+    "completion_obsolete": true,
+    "due_change_obsolete": true,
+    "reassignment_obsolete": true,
+    "cancellation": true,
+    "cross_workspace_denial": true,
+    "revoked_origin_denied": true,
+    "notifications": 2,
+    "outbox_events": 2
+  },
+  "limits": "No external delivery or supported supervised runner was exercised in this gate."
+}

@@ -1,0 +1,17 @@
+{
+  "gate": "BG-02",
+  "state": "in_progress",
+  "runtime": "stock-r1 Linux Python and PostgreSQL 16",
+  "probe": "tests/background_postgres.py",
+  "observed": [
+    "enqueue_rolled_back",
+    "stable_dedup",
+    "no_early_claim",
+    "heartbeat_budget",
+    "cancel_fences_claim",
+    "expiry_visible",
+    "reclaimed_generation_fenced",
+    "possible_external_effect_remains_unknown"
+  ],
+  "limits": "Temporary queue tables exercise production SQL. Native actor, plugin, workspace, concurrent enqueue and reminder effects require the separate site probe."
+}

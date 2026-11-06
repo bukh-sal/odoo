@@ -50,8 +50,8 @@ def assemble(source,manifest_path):
         schema={'$schema':'https://json-schema.org/draft/2020-12/schema','$defs':{name:json.loads((source/'packages/contracts/v1'/('worker-'+name+'.schema.json')).read_text()) for name in ['request','response']}}
         return _finish_archive(source,manifest,{'plugin.toml':manifest_path.read_bytes(),'schemas/stats-v1.json':(json.dumps(schema,indent=2)+'\n').encode()})
     addon=manifest['runtime']['addon_name']
-    if plugin not in ['org.example.notes','org.example.notes_labels','org.example.canvas','org.example.notes_stats'] or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',version):raise ValueError('Not an allowlisted reference package')
-    if addon not in ['mp_example_notes','mp_example_notes_labels','mp_example_canvas','mp_example_notes_stats']:raise ValueError('Unsupported reference addon')
+    if plugin not in ['org.example.notes','org.example.notes_labels','org.example.canvas','org.example.notes_stats','org.example.background'] or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',version):raise ValueError('Not an allowlisted reference package')
+    if addon not in ['mp_example_notes','mp_example_notes_labels','mp_example_canvas','mp_example_notes_stats','mp_example_background']:raise ValueError('Unsupported reference addon')
     addon_dir=source/'platform_addons'/addon
     native=ast.literal_eval((addon_dir/'__manifest__.py').read_text())
     if native['version']!='19.0.'+version:raise ValueError('Reference native/package version mismatch')
@@ -64,7 +64,8 @@ def assemble(source,manifest_path):
     needed.update(item['context_schema'] for item in manifest['ui'].get('slots',[]));needed.update(item['input_schema'] for item in manifest['ui'].get('commands',[]))
     if manifest['data'].get('export_schema'):needed.add(manifest['data']['export_schema'])
     for name in needed:
-        if plugin=='org.example.notes_stats' and name=='schemas/analysis-v1.json':
+        if (plugin,name) in {('org.example.notes_stats','schemas/analysis-v1.json'),
+                            ('org.example.background','schemas/authority-v1.json')}:
             path=manifest_path.parent/name
             if path.is_symlink():raise ValueError('No reference schema links')
             files[name]=path.read_bytes()

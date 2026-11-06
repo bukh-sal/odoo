@@ -65,7 +65,7 @@ def run_once(registry,owner):
             return dict(job_id=invocation.claim.job_id,state='claim_lost')
         with registry.cursor() as cr:
             metadata=api.Environment(cr,1,{})
-            try:state=retrying(lambda:durable.fail(cr,invocation.claim,code,retryable=False),metadata)
+            try:state=retrying(lambda:durable.fail(cr,invocation.claim,code,retryable=isinstance(error,durable.RetryJob)),metadata)
             except (durable.ClaimLost,durable.DispatchPaused):
                 cr.rollback();return dict(job_id=invocation.claim.job_id,state='claim_lost')
         return dict(job_id=invocation.claim.job_id,state=state,error_code=code)

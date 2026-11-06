@@ -43,6 +43,7 @@ class JobDefinition:
     effect_mode: str = 'idempotent'
     max_attempts: int = 5
     timeout_seconds: int = 120
+    pool: str = 'legacy'
 
 
 DEFINITIONS = {}
@@ -54,6 +55,8 @@ def register(definition):
     durable._name(definition.ident);durable._bounded(definition.version,1,1000)
     if definition.effect_mode not in {'idempotent','reconcile'}:
         raise ValueError('Explicit job effect policy required')
+    if definition.pool not in {'legacy','urgent','bulk'}:
+        raise ValueError('Registered job pool required')
     for schema in [definition.input_schema,definition.prepared_schema,definition.computed_schema,definition.output_schema]:
         Draft202012Validator.check_schema(schema)
     if not all(callable(fn) for fn in [definition.authorize_resource,definition.prepare,definition.compute,definition.apply]):
@@ -108,9 +111,22 @@ def _authorize(env,definition,alias):
 
 
 def enqueue_bound(env,alias,ident,values,key,*,version=1,request_id=None,trace_id=None):
+    return _enqueue(env,alias,ident,values,key,version,request_id,trace_id,None)
+
+
+def enqueue_scheduled(env,alias,ident,values,key,*,schedule,version=1):
+    """Trusted plugin contract v1. Scope and binding come from the current call."""
+    if not isinstance(schedule,durable.JobSchedule):
+        raise durable.QueueError('Scheduled job options required')
+    return _enqueue(env,alias,ident,values,key,version,None,None,schedule)
+
+
+def _enqueue(env,alias,ident,values,key,version,request_id,trace_id,schedule):
     durable._bounded(version,1,1000)
     definition=DEFINITIONS.get((ident,version))
     if not definition:raise PublicError('NOT_FOUND')
+    if (schedule is None)!=(definition.pool=='legacy'):
+        raise ContractError('Use the registered job submission contract')
     _validate(definition.input_schema,values)
     scope,release,bound=_authorize(env,definition,alias)
     # Saved outcomes still need current original-user resource authority, but
@@ -121,7 +137,9 @@ def enqueue_bound(env,alias,ident,values,key,*,version=1,request_id=None,trace_i
     context=dict(binding=bound.binding,alias=alias,request_id=request_id,trace_id=trace_id,
         credential_id=scope.credential_id,authenticated_installation_id=scope.authenticated_installation_id,
         allowed_actions=sorted(scope.allowed_actions) if scope.allowed_actions is not None else None)
-    payload=dict(schema_version=1,input=values,context=context)
+    payload=dict(schema_version=2 if schedule else 1,input=values,context=context)
+    if schedule is not None:
+        payload['schedule']=schedule.wire()
     env.cr.execute('SELECT id FROM mp_plugin_installation WHERE public_id=%s',[bound.binding['consumer_installation_id']])
     consumer=env.cr.fetchone()
     if not consumer:raise PublicError('DEPENDENCY_UNAVAILABLE')
@@ -133,13 +151,18 @@ def enqueue_bound(env,alias,ident,values,key,*,version=1,request_id=None,trace_i
         return durable.enqueue(env.cr,storage,ident,version,payload,key,effect_mode=definition.effect_mode,
             max_attempts=definition.max_attempts,timeout_seconds=definition.timeout_seconds,
             deduplication=dict(input=values,binding=bound.binding,handler=ident,version=version),
-            on_new=lambda:_validate(definition.prepared_schema,definition.prepare(env,values,bound)))
+            schedule=schedule,on_new=lambda:_validate(definition.prepared_schema,definition.prepare(env,values,bound)))
 
 
 def _envelope(row):
     value=row['payload']
-    if not isinstance(value,dict) or set(value)!={'schema_version','input','context'} or type(value['schema_version']) is not int or value['schema_version']!=1:
+    if not isinstance(value,dict) or type(value.get('schema_version')) is not int or value['schema_version'] not in {1,2}:
         raise ContractError('Unsupported native job envelope')
+    fields={'schema_version','input','context'}
+    if value['schema_version']==2:
+        fields.add('schedule')
+    if set(value)!=fields:raise ContractError('Invalid native job envelope')
+    if value['schema_version']==2:durable.JobSchedule.from_wire(value['schedule'])
     context=value['context']
     keys={'binding','alias','request_id','trace_id','credential_id','authenticated_installation_id','allowed_actions'}
     if not isinstance(context,dict) or set(context)!=keys:
@@ -194,6 +217,8 @@ def _authorized_job(metadata_env,row):
     if release['site_id']!=row['site_id'] or release['release_digest']!=row['release_digest'] or bound.binding!=payload['context']['binding']:
         raise PublicError('CONFLICT')
     if row['effect_mode']!=definition.effect_mode:raise ContractError('Job effect policy mismatch')
+    if (payload['schema_version']==1)!=(definition.pool=='legacy'):
+        raise ContractError('Job submission contract mismatch')
     definition.authorize_resource(env,payload['input'],bound)
     return env,definition,payload,bound
 
@@ -218,6 +243,7 @@ def _safe_code(error):
     from modular_platform.worker_dispatch import WorkerDispatchError
     if isinstance(error,WorkerDispatchError) and error.code in {'FORBIDDEN','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','NOT_FOUND','CONFLICT','DEADLINE_EXCEEDED','CANCELLED','VALIDATION_FAILED'}:return error.code
     if isinstance(error,PublicError) and error.code in {'NOT_FOUND','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','CONFLICT','DEADLINE_EXCEEDED'}:return error.code
+    if isinstance(error,durable.RetryJob):return 'DEPENDENCY_UNAVAILABLE'
     if isinstance(error,AccessError):return 'FORBIDDEN'
     if isinstance(error,MissingError):return 'NOT_FOUND'
     if isinstance(error,(ValidationError,ContractError,durable.QueueError,ValueError,TypeError)):return 'VALIDATION_FAILED'
@@ -242,7 +268,7 @@ def prepare_one(metadata_env,owner,*,lease_seconds=30):
     except (psycopg2.OperationalError,psycopg2.IntegrityError):
         raise
     except Exception as error:
-        code=_safe_code(error);state=durable.fail(metadata_env.cr,claim,code,retryable=False)
+        code=_safe_code(error);state=durable.fail(metadata_env.cr,claim,code,retryable=isinstance(error,durable.RetryJob))
         return dict(job_id=claim.job_id,state=state,error_code=code)
 
 
@@ -272,7 +298,7 @@ def finish_one(metadata_env,invocation,computed):
     except (psycopg2.OperationalError,psycopg2.IntegrityError):
         raise
     except Exception as error:
-        code=_safe_code(error);state=durable.fail(metadata_env.cr,invocation.claim,code,retryable=False)
+        code=_safe_code(error);state=durable.fail(metadata_env.cr,invocation.claim,code,retryable=isinstance(error,durable.RetryJob))
         return dict(job_id=invocation.claim.job_id,state=state,error_code=code)
 
 
@@ -288,6 +314,18 @@ def status(env,ident):
     allowed={'NOT_FOUND','DEPENDENCY_UNAVAILABLE','PLUGIN_SUSPENDED','CONFLICT','DEADLINE_EXCEEDED','CANCELLED','FORBIDDEN','VALIDATION_FAILED','INTERNAL_ERROR','LEASE_EXPIRED',None}
     code=record['error_code'] if record['error_code'] in allowed else 'INTERNAL_ERROR'
     return dict(id=ident,state=record['state'],progress=record['progress'],attempts=record['attempts'],error_code=code,result=result)
+
+
+def cancel_scheduled(env,ident):
+    """Cancel only the current actor's authorized job in the active workspace."""
+    durable._uuid(ident);scope=_locked_scope(env)
+    env.cr.execute("SELECT to_jsonb(j) FROM mp_job j WHERE public_id=%s AND actor_id=%s AND workspace_id=%s",
+                   [ident,scope.principal_id,scope.workspace_id])
+    row=env.cr.fetchone()
+    if not row:raise PublicError('NOT_FOUND')
+    _,_,payload,_=_authorized_job(env,row[0])
+    if payload['schema_version']!=2:raise PublicError('NOT_FOUND')
+    return durable.cancel_scheduled(env.cr,ident,actor_id=scope.principal_id,workspace_id=scope.workspace_id)
 
 
 def reconcile_release(metadata_env,*,previous_release,target_release):
@@ -335,7 +373,12 @@ def reconcile_release(metadata_env,*,previous_release,target_release):
                     if ({k:v for k,v in before_binding.items() if k!='generation'}!={k:v for k,v in after_binding.items() if k!='generation'}
                             or after_binding['generation']<before_binding['generation']):
                         raise PublicError('CONFLICT')
+                    schedule=durable.JobSchedule.from_wire(payload['schedule']) if payload['schema_version']==2 else None
+                    if (schedule is None)!=(getattr(definition,'pool','legacy')=='legacy'):
+                        raise ContractError('Job submission contract mismatch')
                     expected=dict(input=payload['input'],binding=before_binding,handler=row['handler'],version=row['handler_version'])
+                    if schedule is not None:
+                        expected=dict(input_digest=durable._json(expected)[1],schedule=schedule.wire())
                     if durable._json(expected)[1]!=row['input_digest']:raise ContractError('Invalid original job deduplication digest')
                     definition.authorize_resource(env,payload['input'],bound)
                     if row['result'] is not None:_validate(definition.output_schema,row['result'])
@@ -352,7 +395,10 @@ def reconcile_release(metadata_env,*,previous_release,target_release):
                                 _validate(definition.prepared_schema,definition.prepare(env,payload['input'],bound))
                                 next_state='pending';next_code=None
                     updated=copy.deepcopy(payload);updated['context']['binding']=copy.deepcopy(after_binding)
-                    digest=durable._json(dict(input=updated['input'],binding=after_binding,handler=row['handler'],version=row['handler_version']))[1]
+                    replacement=dict(input=updated['input'],binding=after_binding,handler=row['handler'],version=row['handler_version'])
+                    if schedule is not None:
+                        replacement=dict(input_digest=durable._json(replacement)[1],schedule=schedule.wire())
+                    digest=durable._json(replacement)[1]
                     # Preserve original actor, input, key, trace, outcome, attempts
                     # and deadline. The host proof retains the old binding hash.
                     cr.execute("""UPDATE mp_job SET release_digest=%s,payload=%s::jsonb,input_digest=%s,state=%s,error_code=%s,

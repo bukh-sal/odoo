@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "authority_input": {
+      "type": "object",
+      "required": ["note_id"],
+      "additionalProperties": false,
+      "properties": {"note_id": {"type": "string", "format": "uuid"}}
+    },
+    "authority_output": {"type": "object", "additionalProperties": false}
+  }
+}

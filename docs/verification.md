@@ -1,6 +1,9 @@
 # Verification evidence index
 
 Current release status is in [implementation-status.md](implementation-status.md).
+The post-R1 background execution observations are indexed in the
+[background execution plan](../planning/background_execution.md) and
+[evidence directory](evidence/post-r1/background-execution/).
 The dated entries below retain their original scope and limitations; their old
 progress figures are historical, not current gate status. G0–G6 passed for their
 qualified profiles and G7 passed for local R1. See the [release closure checklist](r1-release-checklist.md)

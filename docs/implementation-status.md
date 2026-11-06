@@ -14,25 +14,27 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 
 ## Post-R1 work
 
-**Background execution: BG-02 active.** BG-01a passed against the deterministic
-workload generator. Progress is **10% by gate weight** (BG-01/02/03/04 =
-10/30/35/25); **1/8 acceptance checks passed**. Original R1 remains 99/99.
+**Background execution: BG-03 active.** BG-01 and BG-02 passed.
+Progress is **40% by gate weight** (BG-01/02/03/04 = 10/30/35/25);
+**3/8 acceptance checks passed**. Original R1 remains 99/99.
 [Plan and exit checks](../planning/background_execution.md) ·
 [BG-01 evidence](evidence/post-r1/background-execution/bg-01.json)
 
 | Gate | Depends on | Status | Next evidence |
 | --- | --- | --- | --- |
 | BG-01 | Qualified stock-r1 | Passed | Revalidate if the reference workload changes. |
-| BG-02 | BG-01 | In progress | BG-02a/b: execute the scoped scheduling, deduplication and reminder contract on disposable PostgreSQL. |
-| BG-03 | BG-02 | Not started | BG-03a/b/c: worker and populated lifecycle failure drills. |
+| BG-02 | BG-01 | Passed | [ADR 0061](architecture-decisions/0061-scheduled-native-jobs-v1.md) · [native evidence](evidence/post-r1/background-execution/bg-02-native.json) · [primitives](evidence/post-r1/background-execution/bg-02-primitives.json) |
+| BG-03 | BG-02 | In progress | BG-03a: implement and verify the independent worker lanes with heartbeats, bounds and telemetry; BG-03b/c follow. |
 | BG-04 | BG-03 | Not started | BG-04a/b: paired web load, recovery and retirement. |
 
-Resume capsule: Docker Desktop now reports 16 CPUs and 8,290,803,712 bytes
-available; no test targets created yet. No open blockers or uncertain
-mutations. Active item BG-02: freeze and implement the versioned scheduled
-job API, then verify rollback, duplicate, delayed, scoped and stale-task
-outcomes before building supervised pools. The starter command is
-`& .local/toolchain/operator-python16/Scripts/python.exe tests/background_workload.py`.
+Resume capsule: Docker Desktop reports 16 CPUs and 8,290,803,712 bytes.
+Owned PostgreSQL target: `mp-bg-qual-pg` on `mp-bg-qual-net`.
+Native reference `mp-r0-r1release77fa75273162` is at `bg02_probed`;
+candidate `9ae9b4de`, approved install `8708b2ed-5a8a-4dab-8562-1e0623fc4133`.
+No open blockers or uncertain mutations. BG-03a is the active item.
+Extend the pinned native runner for independent urgent/bulk workers, then
+run a supervised worker against the disposable target and show progress,
+lease renewal and bounded shutdown before the populated-release drills.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora
