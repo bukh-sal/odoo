@@ -105,14 +105,15 @@ class BackgroundService:
 
 
 registry.register(SERVICE, '1.0', PLUGIN, BackgroundService.methods)
-for handler, pool, inputs, prepared, computed, output, authorize, prepare, compute, apply in [
-    ('remind', 'urgent', REMINDER, REMINDER, REMINDER, RESULT, reminder_resource,
+for handler, version, pool, inputs, prepared, computed, output, authorize, prepare, compute, apply in [
+    ('remind', 1, 'urgent', REMINDER, REMINDER, REMINDER, RESULT, reminder_resource,
      lambda env, data, bound: data, lambda data, context: data, reminder_apply),
-    ('report', 'bulk', REPORT, DATA, SUMMARY, SUMMARY, report_resource,
+    # Retire report v1 in this fixture to exercise incompatible carry-forward.
+    ('report', 2, 'bulk', REPORT, DATA, SUMMARY, SUMMARY, report_resource,
      report_prepare, report_compute, lambda env, data, prepared, result, bound: result),
 ]:
     job_dispatch.register(job_dispatch.JobDefinition(
-        PLUGIN+':'+handler, 1, PLUGIN, SERVICE, '1.0', 'authority',
+        PLUGIN+':'+handler, version, PLUGIN, SERVICE, '1.0', 'authority',
         inputs, prepared, computed, output, authorize, prepare, compute, apply, pool=pool))
 
 job_dispatch.register(job_dispatch.JobDefinition(

@@ -1,6 +1,5 @@
 """Opt-in durable schedule integration against the isolated BG PostgreSQL service."""
 from datetime import datetime, timedelta, timezone
-from concurrent.futures import ThreadPoolExecutor
 import json
 import time
 from uuid import uuid4

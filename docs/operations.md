@@ -151,3 +151,39 @@ SEC-07/08 are qualified in [approval-security-01](evidence/G5/20261029-approval-
 Application containers run as UID10001 with no effective capabilities, no-new-privileges and a read-only root. Mount only the selected application configuration read-only and its own data volume. Do not mount privileged operator/catalog/approval/checkpoint directories, Docker authority or the edge TLS key. The application DB credential/configuration is necessary runtime data and is separate from those host domains. Protect independent Windows stores with owner/SYSTEM/Administrators DACLs and Linux stores with owner-only directories/records; reject broad permissions rather than silently resetting an existing store. Public digest catalogs may be readable but must not permit untrusted mutation, including through writable parents.
 
 The authorized requester's HTTP status remains a redacted, possibly stale application mirror. It carries no approval records, allowlist, native diagnostics or host control credentials. Native code can forge application metadata, so the independent CLI always re-observes authoritative inputs and its own private store. Copying an operation ID or setting an app-side approved flag never grants host execution. This is a host privilege boundary, not a sandbox for trusted native plugins' application data access.
+## Scheduled native job lanes
+
+Use the local operator's reviewed target and store. The commands below are
+available on images that carry the scheduled runner and queue controls:
+
+```text
+modular --config <trust> jobs --store <control> --deployment-config <target> start
+modular --config <trust> jobs --store <control> --deployment-config <target> metrics
+modular --config <trust> jobs --store <control> --deployment-config <target> drain
+```
+
+The reference profile starts one urgent lane and two bulk lanes. The lanes
+allow one concurrent attempt per workspace in each pool. A guarded process
+renews a short lease while work runs. A separate watchdog stops a stuck
+process at the attempt budget, and the container restart policy replaces
+it. Shutdown stops new claims, waits up to 45 seconds for existing work,
+then relies on lease expiry and fencing for an interrupted attempt.
+
+Worker logs report safe job IDs, claim generation, start delay, progress
+and duration. Queue metrics report pending/ready depth, oldest ready
+age, running, expired leases, retries, failures and unknown outcomes.
+Use `jobs review <job-id> retry` and then
+`jobs apply <job-id> retry --approval <review-digest>` to retry an
+authorized idempotent failure within its original expiry. For an unknown
+external result, inspect the provider first. Review and apply
+`confirm-delivered` or `confirm-absent` with the same
+`--evidence sha256:<digest>` and the returned review digest. Settlement
+records the outcome and never sends again. Keep the evidence in the
+independent operator's records. An intent without a result requires
+checking the current state before further action.
+
+Drain lanes before release changes. Follow the existing approved lifecycle
+operation and separate restore/resume decisions if recovery is needed.
+Start lanes again from the new target pin only after dispatch and traffic
+have reopened. The application and the queue use the same release fence;
+an older lane cannot publish a result into a different generation.

@@ -8,7 +8,7 @@ The current execution order is:
 2. [x] Qualify Notes revision checks through the stock form. Notes 0.2.9 uses the revision the editor loaded. A current save advanced revision 1 to 2, a second tab's stale save preserved revision 2, and the viewer's write was denied. The stale edit still shows Odoo's generic error.
 3. [x] Qualify the supported stock release profile. The exact kit passed draft recovery, installation, security, accessibility, performance, upgrade and recovery checks. [Stock release gates](stock_webclient_release.md)
 
-Plugin-free upgrades, shared migrations and platform major upgrades depend on a selected deployment shape or a concrete release change. Background execution has a proposed plan for a future implementation. R2 and R3 retain their separate scope.
+Plugin-free upgrades, shared migrations and platform major upgrades depend on a selected deployment shape or a concrete release change. Background execution is tracked separately in BG-01 through BG-04. R2 and R3 retain their separate scope.
 
 | Check | When it applies | Acceptance and source |
 | --- | --- | --- |
@@ -18,7 +18,7 @@ Plugin-free upgrades, shared migrations and platform major upgrades depend on a 
 | Notes conflict message | If the stock release requires a specific recovery message for revision conflicts | The stock form now enforces revision checks, and retains the editor's input when the server refuses a stale save. A stale edit currently shows a generic Odoo error. [Browser and dataset evidence](../docs/evidence/post-r1/shared-foundation/stock-webclient-follow-up.json). |
 | Core upgrade on a site without a registered plugin | If this becomes a supported deployment shape | Qualify planning, exact site approval, checkpoint and recovery with no plugin scopes. Both stress sites used the existing Notes fixture as a real operation target. Spec §10 and [ADR 0059](../docs/architecture-decisions/0059-stock-webclient-foundation-stress.md). |
 | Additional Aurora behavior or real-data import | Only if a later Aurora slice includes it | Define and test permissions and data mapping for standalone tasks, reminders, notifications, attachments, accounting references or historical data, as selected. The current proof covers synthetic, list-bound tasks. [Stress plan](shared_foundation_stress_test.md). |
-| Application background execution | Before qualifying a workload that depends heavily on background jobs | Follow the [background execution plan](background_execution.md). G6 already qualified the reference jobs, worker failure and recovery for its recorded profiles. |
+| Application background execution | Before qualifying a workload that depends heavily on background jobs | Follow the [background execution plan](background_execution.md) and [live checklist](../docs/implementation-status.md#post-r1-work). G6 qualified the earlier reference profiles. |
 
 The original specification also has five formal R2 checks excluded from R1. R2 first needs an agreed threat model, confinement design and publisher trust policy. [Spec §§14.4, 18, 23.2 and 25.5](modular_platform_spec.md)
 

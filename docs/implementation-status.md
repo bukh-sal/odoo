@@ -15,8 +15,9 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 ## Post-R1 work
 
 **Background execution: BG-03 active.** BG-01 and BG-02 passed.
-Progress is **40% by gate weight** (BG-01/02/03/04 = 10/30/35/25);
-**3/8 acceptance checks passed**. Original R1 remains 99/99.
+Progress is **about 63% by verified gate work** (BG-01/02/03/04 =
+10/30/35/25; two of three BG-03 checks passed).
+**5/8 acceptance checks passed**. Original R1 remains 99/99.
 [Plan and exit checks](../planning/background_execution.md) ·
 [BG-01 evidence](evidence/post-r1/background-execution/bg-01.json)
 
@@ -24,22 +25,21 @@ Progress is **40% by gate weight** (BG-01/02/03/04 = 10/30/35/25);
 | --- | --- | --- | --- |
 | BG-01 | Qualified stock-r1 | Passed | Revalidate if the reference workload changes. |
 | BG-02 | BG-01 | Passed | [ADR 0061](architecture-decisions/0061-scheduled-native-jobs-v1.md) · [native evidence](evidence/post-r1/background-execution/bg-02-native.json) · [primitives](evidence/post-r1/background-execution/bg-02-primitives.json) |
-| BG-03 | BG-02 | In progress | BG-03a: implement and verify the independent worker lanes with heartbeats, bounds and telemetry; BG-03b/c follow. |
+| BG-03 | BG-02 | In progress | [BG-03a/b passed](evidence/post-r1/background-execution/bg-03-workers.json); BG-03c populated lifecycle recovery is active. |
 | BG-04 | BG-03 | Not started | BG-04a/b: paired web load, recovery and retirement. |
 
 Resume capsule: Docker Desktop reports 16 CPUs and 8,290,803,712 bytes.
-Owned PostgreSQL target: `mp-bg-qual-pg` on `mp-bg-qual-net`.
-Native reference `mp-r0-r1release77fa75273162` is at `bg02_probed`;
-candidate `9ae9b4de`, approved install `8708b2ed-5a8a-4dab-8562-1e0623fc4133`.
-No open blockers. BG-03a is the active item. Owned project
-`mp-r0-r1releasef15b43b144d0` installed candidate `ad18237c`. Its
-first managed worker probe found addon import before registry setup; all
-three failing lanes were drained before any test job was seeded. The
-reviewed core update to candidate `65c76de8` is running in session 81127.
-Confirm `.local/background-qualification/bg-03-01/bg03-managed-core-switch.json`
-reports `passed`, then run
-`& .local/toolchain/operator-python16/Scripts/python.exe tests/background_workers.py bg-03-01`.
-Require the receipt's actual worker observations before BG-03a/b pass.
+The BG-02 site and primitive PostgreSQL target are retired. No open blockers.
+BG-03c is active on owned project `mp-r0-r1releasef15b43b144d0`. The
+reviewed core update `e1d670d6-94a5-4fc9-8ef9-6c8ad71554ff` installed
+`65c76de8`. Workers passed the live fault probes and drained. The
+populated release fault `9007f5b8-0eff-4ff6-a3c8-a84de2ba51af` restored
+to a fresh database and separately resumed; delayed work retained timing
+and scope and the old claim was refused. Normal successor operation
+`cd599589-6db5-4146-826c-bc658e2b4243` to candidate `1de471e4` is active
+in session 71946. Inspect `.local/background-qualification/bg-03-01/bg03-release-queue.json`
+and its journal before further mutation. When phase is `passed`, record
+BG-03c and run `& .local/toolchain/operator-python16/Scripts/python.exe tests/background_load.py`.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora

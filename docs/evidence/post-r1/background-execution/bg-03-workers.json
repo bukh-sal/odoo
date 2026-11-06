@@ -1,0 +1,20 @@
+{
+  "gate": "BG-03",
+  "acceptance": {"BG-03a": "passed", "BG-03b": "passed", "BG-03c": "in_progress"},
+  "image": "sha256:65c76de812a4f93c738051cbe68b894a4e5b41fa4e7f1f95bc3e7b92024b8a9e",
+  "core_upgrade_operation": "e1d670d6-94a5-4fc9-8ef9-6c8ad71554ff",
+  "probe": "tests/background_workers.py bg-03-01",
+  "observed": {
+    "workspace_limit_with_independent_bulk_lanes": true,
+    "progress_and_renewed_lease": true,
+    "explicit_retry_attempts": 2,
+    "watchdog_timeout_attempts": 2,
+    "killed_claim_recovered_with_explicit_docker_start": true,
+    "stale_claim_denied": true,
+    "independently_reviewed_retry": true,
+    "effect_count_at_fake_sink": 1,
+    "unknown_before_reviewed_settlement": true,
+    "graceful_drain_completed_in_flight_job_in_one_attempt": true
+  },
+  "limits": "The deliberate Docker kill required operator start because the engine treated it as an explicit stop. Watchdog process exit did restart automatically. External delivery was exercised only on the private deterministic sink."
+}

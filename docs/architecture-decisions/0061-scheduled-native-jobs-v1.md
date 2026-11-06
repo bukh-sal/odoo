@@ -21,6 +21,9 @@ server adapters; there is no direct RPC or authority in serialized input.
   Only an explicit `RetryJob` requests a transient retry; attempts and
   exponential backoff are bounded. Effect-started reconcile-mode work
   remains unknown after failure or cancellation, and is never auto-replayed.
+  For a remote write, call `mark_external_effect(context)` immediately
+  before the authorized call. It checks the original scope and commits the
+  marker separately. A timeout after this marker is an uncertain outcome.
 - The existing technical-origin binding is available when required. It
   uses a scoped, revocable credential and a non-administrator mapped user.
   The reference reminder uses its originating human actor; no role is
