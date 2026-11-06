@@ -157,10 +157,29 @@ def main(argv=None):
     publish_worker=worker_actions.add_parser('publish');publish_worker.add_argument('operation_id')
     publish_worker.add_argument('--plan-hash',required=True);publish_worker.add_argument('--noninteractive',action='store_true')
     worker_actions.add_parser('run-job-once')
+    jobs=groups.add_parser('jobs',help='Local native job lanes and reviewed queue controls')
+    jobs.add_argument('--store',required=True,type=Path)
+    jobs.add_argument('--deployment-config',required=True,type=Path)
+    job_actions=jobs.add_subparsers(dest='action',required=True)
+    for action in ('start','drain','metrics'):
+        job_actions.add_parser(action)
+    for action in ('review','apply'):
+        control=job_actions.add_parser(action)
+        control.add_argument('job')
+        control.add_argument('decision',choices=['retry','confirm-delivered','confirm-absent'])
+        control.add_argument('--evidence')
+        if action=='apply':control.add_argument('--approval',required=True)
     args = parser.parse_args(argv)
     try:
         validator = configuration(args.config)
-        if args.group=='worker':
+        if args.group=='jobs':
+            from modular_platform.job_operator import JobOperator
+            from modular_platform.operator_store import OperatorStore
+            options={}
+            if args.action in {'review','apply'}:
+                options=dict(job=args.job,action=args.decision,evidence=args.evidence,approval=getattr(args,'approval',None))
+            result=JobOperator(OperatorStore(args.store),args.deployment_config).run(args.action,**options)
+        elif args.group=='worker':
             import subprocess
             from modular_platform.operator_store import OperatorStore
             from modular_platform.operator_os import OperatorError

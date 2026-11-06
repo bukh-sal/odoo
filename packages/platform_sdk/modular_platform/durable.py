@@ -50,6 +50,7 @@ class Claim:
     generation: int
     owner: str
     budget_until: datetime | None = None
+    ready_ms: int | None = None
 
 
 @dataclass(frozen=True)
@@ -199,40 +200,63 @@ def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempoten
     return old[0]
 
 
-def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30):
+def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, workspace_id=None, routes=None):
     _uuid(site_id); _uuid(owner); _bounded(lease_seconds, 1, 300)
     if not isinstance(handlers, (list, tuple)) or not 1 <= len(handlers) <= 100:
         raise QueueError('Explicit handler allowlist required')
     for name in handlers:
         _name(name)
+    if workspace_id is not None:_bounded(workspace_id,1,2**31-1)
+    if routes is not None:
+        if not isinstance(routes,(list,tuple)) or not 1<=len(routes)<=100:
+            raise QueueError('Explicit versioned handler routes required')
+        routes=[f'{_name(name)}:{_bounded(version,1,1000)}' for name,version in routes]
+    filters=[site_id,release_digest,list(handlers),routes,routes,workspace_id]
     generation = control(cr, site_id, release_digest)
     # Lease loss is observable state. Reconcile uncertain non-idempotent work;
     # never reinterpret an expired external attempt as proof of rollback.
     cr.execute("""WITH expired AS (SELECT id FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
+        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND workspace_id=COALESCE(%s,workspace_id)
         AND state='running' AND lease_until<=timezone('UTC',clock_timestamp()) FOR UPDATE SKIP LOCKED)
         UPDATE mp_job j SET state=CASE WHEN effect_mode='reconcile' AND effect_started THEN 'outcome_unknown'
             WHEN cancel_requested THEN 'cancelled' WHEN attempts>=max_attempts OR deadline_at<=timezone('UTC',clock_timestamp())
             THEN 'dead_letter' ELSE 'retry' END,
             error_code='LEASE_EXPIRED',lease_owner=NULL,lease_until=NULL,available_at=timezone('UTC',clock_timestamp())
-        FROM expired WHERE j.id=expired.id""", [site_id, release_digest, list(handlers)])
+        FROM expired WHERE j.id=expired.id""", filters)
     cr.execute("""WITH expired AS (SELECT id FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
+        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND workspace_id=COALESCE(%s,workspace_id)
         AND state IN ('pending','retry') AND deadline_at<=timezone('UTC',clock_timestamp()) FOR UPDATE SKIP LOCKED)
         UPDATE mp_job j SET state='dead_letter',error_code='DEADLINE_EXCEEDED',finished_at=timezone('UTC',clock_timestamp())
-        FROM expired WHERE j.id=expired.id""", [site_id, release_digest, list(handlers)])
+        FROM expired WHERE j.id=expired.id""", filters)
     cr.execute("""WITH stamp AS (SELECT timezone('UTC',clock_timestamp()) AS now),
         next AS (SELECT id,CASE WHEN payload->>'schema_version'='2'
             THEN LEAST(deadline_at,stamp.now+((payload->'schedule'->>'attempt_seconds')::integer*interval '1 second'))
-            END AS budget_until,stamp.now FROM mp_job CROSS JOIN stamp
+            END AS budget_until,stamp.now,available_at FROM mp_job CROSS JOIN stamp
         WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
+        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND workspace_id=COALESCE(%s,workspace_id)
         AND state IN ('pending','retry') AND NOT cancel_requested AND attempts<max_attempts
         AND available_at<=timezone('UTC',clock_timestamp()) AND deadline_at>timezone('UTC',clock_timestamp())
         ORDER BY available_at,id FOR UPDATE OF mp_job SKIP LOCKED LIMIT 1)
         UPDATE mp_job j SET state='running',attempts=attempts+1,claim_generation=claim_generation+1,
             dispatch_generation=%s,lease_owner=%s,lease_until=LEAST(j.deadline_at,next.budget_until,next.now+(%s*interval '1 second')),
             effect_started=false,error_code=NULL FROM next WHERE j.id=next.id
-        RETURNING j.public_id,j.claim_generation,next.budget_until""", [site_id, release_digest, list(handlers), generation, owner, lease_seconds])
+        RETURNING j.public_id,j.claim_generation,next.budget_until,
+            (extract(epoch FROM (next.now-next.available_at))*1000)::bigint""",
+        [*filters,generation,owner,lease_seconds])
     row = cr.fetchone()
-    return Claim(row[0], row[1], owner, row[2]) if row else None
+    return Claim(row[0], row[1], owner, row[2], max(0,row[3])) if row else None
+
+
+def ready_workspaces(cr,site,release,routes):
+    """Bounded lane candidates; the lane holds a session slot before claiming."""
+    control(cr,site,release)
+    keys=[f'{_name(name)}:{_bounded(version,1,1000)}' for name,version in routes]
+    cr.execute("""SELECT workspace_id FROM mp_job WHERE site_id=%s AND release_digest=%s
+        AND handler||':'||handler_version=ANY(%s)
+        AND ((state IN ('pending','retry') AND LEAST(available_at,deadline_at)<=timezone('UTC',clock_timestamp()))
+            OR (state='running' AND lease_until<=timezone('UTC',clock_timestamp())))
+        GROUP BY workspace_id ORDER BY min(available_at),workspace_id LIMIT 64""", [site,release,keys])
+    return [row[0] for row in cr.fetchall()]
 
 
 def _lock(cr, value):

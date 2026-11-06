@@ -31,10 +31,15 @@ Resume capsule: Docker Desktop reports 16 CPUs and 8,290,803,712 bytes.
 Owned PostgreSQL target: `mp-bg-qual-pg` on `mp-bg-qual-net`.
 Native reference `mp-r0-r1release77fa75273162` is at `bg02_probed`;
 candidate `9ae9b4de`, approved install `8708b2ed-5a8a-4dab-8562-1e0623fc4133`.
-No open blockers or uncertain mutations. BG-03a is the active item.
-Extend the pinned native runner for independent urgent/bulk workers, then
-run a supervised worker against the disposable target and show progress,
-lease renewal and bounded shutdown before the populated-release drills.
+No open blockers. BG-03a is the active item. Owned project
+`mp-r0-r1releasef15b43b144d0` installed candidate `ad18237c`. Its
+first managed worker probe found addon import before registry setup; all
+three failing lanes were drained before any test job was seeded. The
+reviewed core update to candidate `65c76de8` is running in session 81127.
+Confirm `.local/background-qualification/bg-03-01/bg03-managed-core-switch.json`
+reports `passed`, then run
+`& .local/toolchain/operator-python16/Scripts/python.exe tests/background_workers.py bg-03-01`.
+Require the receipt's actual worker observations before BG-03a/b pass.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora

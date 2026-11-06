@@ -1,5 +1,10 @@
 import hashlib
 import json
+import time
+import urllib.request
+
+from modular_platform.durable import RetryJob
+from modular_platform.job_supervisor import report_progress
 
 from odoo.addons.mp_core import events, job_dispatch, registry
 from odoo.addons.mp_identity.scopes import current_scope
@@ -24,6 +29,7 @@ SUMMARY = shape(count=dict(type='integer', minimum=0, maximum=500),
 MODEL = 'mp.background.task'
 PERMISSION = PLUGIN + ':jobs.read'
 TOPIC = PLUGIN + '.notification'
+FAULT = shape(mode=dict(enum=['claim','heartbeat','timeout','retry','send']))
 
 
 def reminder_resource(env, values, bound):
@@ -70,6 +76,27 @@ def report_compute(values, _):
     return dict(count=len(points), points=sum(points), digest=digest)
 
 
+def fault_compute(values, context):
+    """Only the disposable reference profile includes fault injection."""
+    mode=values['mode']
+    if mode=='send':
+        job_dispatch.mark_external_effect(context)
+        # A private deterministic qualification sink, with no provider or
+        # caller-controlled URL. It deliberately delays its acknowledgment.
+        request=urllib.request.Request('http://bg-effect-sink:8077/effect',
+            data=context['job_id'].encode(),method='POST')
+        with urllib.request.build_opener(urllib.request.ProxyHandler({})).open(request,timeout=12) as response:
+            assert response.status==204
+    elif mode=='retry':
+        if context['_native_job']['claim']['generation']==1:
+            raise RetryJob()
+    else:
+        for value in (25,50,75):
+            report_progress(value)
+            time.sleep(3)
+    return values
+
+
 class BackgroundService:
     methods = {
         'authority': registry.Method(MODEL, '_mp_service_job_authority', 'get_input',
@@ -87,6 +114,12 @@ for handler, pool, inputs, prepared, computed, output, authorize, prepare, compu
     job_dispatch.register(job_dispatch.JobDefinition(
         PLUGIN+':'+handler, 1, PLUGIN, SERVICE, '1.0', 'authority',
         inputs, prepared, computed, output, authorize, prepare, compute, apply, pool=pool))
+
+job_dispatch.register(job_dispatch.JobDefinition(
+    PLUGIN+':fault', 1, PLUGIN, SERVICE, '1.0', 'authority', FAULT, FAULT, FAULT, FAULT,
+    lambda env, data, bound: bound.model._mp_guard('read'), lambda env, data, bound: data,
+    fault_compute, lambda env, data, prepared, result, bound: result,
+    effect_mode='reconcile', pool='bulk', max_attempts=2))
 
 
 def authorize_event(env, event, bound):

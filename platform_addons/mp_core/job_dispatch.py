@@ -250,12 +250,17 @@ def _safe_code(error):
     return 'INTERNAL_ERROR'
 
 
-def prepare_one(metadata_env,owner,*,lease_seconds=30):
+def routes_for(pool):
+    return sorted(key for key, definition in DEFINITIONS.items() if definition.pool==pool)
+
+
+def prepare_one(metadata_env,owner,*,lease_seconds=30,pool='legacy',workspace_id=None):
     """Claim and authorize in a short caller-owned transaction; never compute."""
     release=current_release(metadata_env)
-    handlers=sorted({ident for ident,version in DEFINITIONS})
-    if not handlers:return None
-    claim=durable.claim(metadata_env.cr,release['site_id'],release['release_digest'],owner,handlers,lease_seconds=lease_seconds)
+    routes=routes_for(pool)
+    if not routes:return None
+    claim=durable.claim(metadata_env.cr,release['site_id'],release['release_digest'],owner,
+        sorted({ident for ident,_ in routes}),lease_seconds=lease_seconds,workspace_id=workspace_id,routes=routes)
     if claim is None:return None
     row=durable._lock(metadata_env.cr,claim)
     try:
@@ -279,6 +284,22 @@ def compute(invocation):
     context['_native_job']=dict(database=invocation.database,handler=invocation.handler,version=invocation.version,
         fingerprint=invocation.fingerprint,claim=dict(job_id=invocation.claim.job_id,generation=invocation.claim.generation,owner=invocation.claim.owner))
     return _validate(definition.computed_schema,definition.compute(copy.deepcopy(invocation.prepared),context))
+
+
+def mark_external_effect(context):
+    """Recheck the current authorized scheduled attempt and commit its effect marker."""
+    from odoo.modules.registry import Registry
+    provenance=context['_native_job']
+    claim=durable.Claim(**provenance['claim'])
+    with Registry(provenance['database']).cursor() as cr:
+        row=durable._lock(cr,claim)
+        if _fingerprint(row)!=provenance['fingerprint'] or row['effect_mode']!='reconcile':
+            raise AccessError('Current reconcile-mode job required')
+        _,definition,payload,_=_authorized_job(api.Environment(cr,1,{}),row)
+        if definition.pool=='legacy' or payload['schema_version']!=2 or row['effect_started']:
+            raise AccessError('Unused managed effect marker required')
+        durable.effect_started(cr,claim)
+        cr.commit()
 
 
 def finish_one(metadata_env,invocation,computed):

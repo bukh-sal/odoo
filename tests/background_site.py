@@ -42,7 +42,9 @@ class BackgroundSite(Reference):
         self.prepare_resources(dict(images={**images, 'application': {'image_id': record['image_id']}},
                                     application_inventory_digest=record['inventory_digest']),
                                record['git_base'], json.dumps(trust).encode(),
-                               subnets={'runtime': '10.203.154.16/28', 'edge': '10.203.154.32/28'})
+                               subnets=({'runtime': '10.203.154.16/28', 'edge': '10.203.154.32/28'}
+                                        if self.args.run=='bg-02-01' else
+                                        {'runtime': '10.203.154.48/28', 'edge': '10.203.154.64/28'}))
         self.admit(record)
 
     def admit(self, record):
@@ -74,6 +76,24 @@ class BackgroundSite(Reference):
         trust['approved_digests'] = [record['artifacts'][plugin]['digest'] for plugin in CATALOG_PLUGINS]
         write(trust_path, trust)
         self.admit(record)
+        self.publish(state, prepare_assets=False)
+
+    def resume_version(self):
+        state = self.state()
+        assert state['phase'] == 'publishing_core_bootstrap'
+        assert not (self.local / 'logs/bootstrap-release-pins.stdout').exists()
+        assert not (self.private / 'target.json').exists()
+        record = load(self.args.candidate)
+        before = inspect_image(state['image_id'])
+        after = inspect_image(record['image_id'])
+        old, new = before['inventory'], after['inventory']
+        assert old['policy'] == new['policy'] and old['artifacts'] == new['artifacts']
+        assert before['native_manifests'] == after['native_manifests']
+        changed = {name for name in old['files'].keys() | new['files'].keys()
+                   if old['files'].get(name) != new['files'].get(name)}
+        assert changed == {'packages/platform_sdk/modular_platform/projection.py'}, changed
+        assert after['native_manifests']['mp_core']['version'] == '19.0.'+after['platform_version']
+        state.update(image_id=record['image_id'],inventory_digest=record['inventory_digest'])
         self.publish(state, prepare_assets=False)
 
     def initialize(self):
@@ -131,7 +151,7 @@ class BackgroundSite(Reference):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('actions', nargs='+', choices=['prepare', 'initialize', 'resume_catalog', 'install', 'probe', 'status'])
+    parser.add_argument('actions', nargs='+', choices=['prepare', 'initialize', 'resume_catalog', 'resume_version', 'install', 'probe', 'status'])
     parser.add_argument('--candidate', type=Path)
     parser.add_argument('--run', choices=['bg-02-01', 'bg-03-01'], required=True)
     parser.add_argument('--port', type=int, default=18112)

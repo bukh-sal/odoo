@@ -16,14 +16,18 @@ import time
 from uuid import uuid4
 
 
-def validate_startup():
+def validate_startup(*,managed=False,admin=False):
     import psycopg2
     root=Path('/opt/modular');raw=(root/'distribution-inventory.json').read_bytes()
     database=os.environ.get('MP_EXPECTED_DATABASE','');pin=os.environ.get('MP_EXPECTED_INVENTORY_DIGEST','')
     if not database or not re.fullmatch(r'sha256:[0-9a-f]{64}',pin) or 'sha256:'+hashlib.sha256(raw).hexdigest()!=pin:
         raise ValueError('Independent job database and inventory pins required')
     inventory=json.loads(raw)
-    for name in ['packages/platform_sdk/modular_platform/job_runner.py','packages/platform_sdk/modular_platform/worker_start.py']:
+    files=['job_runner.py','worker_start.py']
+    if managed:files.append('job_supervisor.py')
+    if admin:files.append('job_admin.py')
+    for filename in files:
+        name='packages/platform_sdk/modular_platform/'+filename
         path=root/name
         if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest()!=inventory['files'][name]:
             raise ValueError('Job bootstrap source differs from inventory')
@@ -40,7 +44,7 @@ def emit(**fields):
     print(json.dumps(fields,sort_keys=True),flush=True)
 
 
-def run_once(registry,owner):
+def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,attempt=None):
     from odoo import api
     from odoo.service.model import retrying
     from odoo.addons.mp_core import job_dispatch as jobs
@@ -49,11 +53,23 @@ def run_once(registry,owner):
     # jobs reconstructs the actual mapped user before any business operation.
     with registry.cursor() as cr:
         metadata=api.Environment(cr,1,{})
-        try:invocation=retrying(lambda:jobs.prepare_one(metadata,owner),metadata)
+        try:invocation=retrying(lambda:jobs.prepare_one(metadata,owner,pool=pool,
+            workspace_id=workspace_id,lease_seconds=lease_seconds),metadata)
         except durable.DispatchPaused:
             cr.rollback();return dict(state='paused')
     if invocation is None:return dict(state='idle')
     if isinstance(invocation,dict):return invocation
+    if attempt:
+        with attempt(invocation):
+            return _execute(registry,invocation)
+    return _execute(registry,invocation)
+
+
+def _execute(registry,invocation):
+    from odoo import api
+    from odoo.service.model import retrying
+    from odoo.addons.mp_core import job_dispatch as jobs
+    from modular_platform import durable
     try:
         computed=jobs.compute(invocation)
     except Exception as error:
@@ -78,17 +94,27 @@ def run_once(registry,owner):
     return dict(job_id=invocation.claim.job_id,state='completed')
 
 
-def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--once',action='store_true');parser.add_argument('--poll-seconds',type=float,default=1.0);args=parser.parse_args()
-    if not 0.1<=args.poll_seconds<=30:raise ValueError('Bounded job poll interval required')
-    database=validate_startup()
+def load_registry(database):
     # Native/plugin imports occur only after immutable code/config/DB guards.
-    # Odoo19 uses a namespace package. Registry imports its official core
-    # initialization; bare ``import odoo`` supplies neither tools nor modules.
     from odoo.modules.registry import Registry
     from odoo.tools import config
     config.parse_config(['-c','/run/secrets/odoo_config','--no-http','--workers=0','--max-cron-threads=0'])
-    registry=Registry(database);owner=str(uuid4())
+    return Registry(database)
+
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--once',action='store_true');parser.add_argument('--poll-seconds',type=float,default=1.0)
+    parser.add_argument('--pool',choices=['urgent','bulk'])
+    parser.add_argument('--_watchdog-fd',type=int,help=argparse.SUPPRESS)
+    args=parser.parse_args()
+    if not 0.1<=args.poll_seconds<=30:raise ValueError('Bounded job poll interval required')
+    if args.pool:
+        if args.once:parser.error('Managed pools run continuously')
+        from modular_platform.job_supervisor import child,supervise
+        return (child(args) if args._watchdog_fd is not None else supervise(args))
+    if args._watchdog_fd is not None:parser.error('Watchdog requires a managed pool')
+    database=validate_startup()
+    registry=load_registry(database);owner=str(uuid4())
     while True:
         try:result=run_once(registry,owner)
         except Exception:

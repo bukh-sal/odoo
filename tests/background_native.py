@@ -90,7 +90,7 @@ def duplicate(_):
 
 with ThreadPoolExecutor(max_workers=2) as pool:
     assert list(pool.map(duplicate, range(2))) == [current_job, current_job]
-assert run_once(registry, str(uuid4()))['state'] == 'idle'
+assert run_once(registry, str(uuid4()), pool='urgent')['state'] == 'idle'
 
 # A different origin loses workspace access between submission and dispatch.
 with registry.cursor() as cr:
@@ -104,7 +104,7 @@ with registry.cursor() as cr:
 
 limit = time.monotonic()+15
 while time.monotonic() < limit:
-    run_once(registry, str(uuid4()))
+    run_once(registry, str(uuid4()), pool='urgent')
     if state(revoked_job)[0] != 'pending':
         break
     time.sleep(.1)
