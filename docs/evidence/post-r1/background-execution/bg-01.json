@@ -1,0 +1,10 @@
+{
+  "gate": "BG-01",
+  "source_base": "5572f81f07fc8a11525924455c6669921ec8134c",
+  "aurora_source": "e48e04ed4cf155a83e66e08dfb33a669ebb5c228",
+  "command": ".local/toolchain/operator-python16/Scripts/python.exe tests/background_workload.py",
+  "input_digest": "e718ec8829a524ab9d430c6aa80974852d5f1455a16171957c2fd8d70c81329c",
+  "observed": {"tasks": 1000, "reminders": 150, "bulk": 40},
+  "acceptance": {"BG-01a": "passed"},
+  "limits": "Input and assertions verified locally. This is not a throughput measurement."
+}

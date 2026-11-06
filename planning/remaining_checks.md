@@ -8,7 +8,7 @@ The current execution order is:
 2. [x] Qualify Notes revision checks through the stock form. Notes 0.2.9 uses the revision the editor loaded. A current save advanced revision 1 to 2, a second tab's stale save preserved revision 2, and the viewer's write was denied. The stale edit still shows Odoo's generic error.
 3. [x] Qualify the supported stock release profile. The exact kit passed draft recovery, installation, security, accessibility, performance, upgrade and recovery checks. [Stock release gates](stock_webclient_release.md)
 
-Plugin-free upgrades, shared migrations and platform major upgrades depend on a selected deployment shape or a concrete release change. Background execution is deferred at the user's direction. R2 and R3 retain their separate scope.
+Plugin-free upgrades, shared migrations and platform major upgrades depend on a selected deployment shape or a concrete release change. Background execution has a proposed plan for a future implementation. R2 and R3 retain their separate scope.
 
 | Check | When it applies | Acceptance and source |
 | --- | --- | --- |
@@ -18,16 +18,7 @@ Plugin-free upgrades, shared migrations and platform major upgrades depend on a 
 | Notes conflict message | If the stock release requires a specific recovery message for revision conflicts | The stock form now enforces revision checks, and retains the editor's input when the server refuses a stale save. A stale edit currently shows a generic Odoo error. [Browser and dataset evidence](../docs/evidence/post-r1/shared-foundation/stock-webclient-follow-up.json). |
 | Core upgrade on a site without a registered plugin | If this becomes a supported deployment shape | Qualify planning, exact site approval, checkpoint and recovery with no plugin scopes. Both stress sites used the existing Notes fixture as a real operation target. Spec §10 and [ADR 0059](../docs/architecture-decisions/0059-stock-webclient-foundation-stress.md). |
 | Additional Aurora behavior or real-data import | Only if a later Aurora slice includes it | Define and test permissions and data mapping for standalone tasks, reminders, notifications, attachments, accounting references or historical data, as selected. The current proof covers synthetic, list-bound tasks. [Stress plan](shared_foundation_stress_test.md). |
-| Application background execution | Before qualifying a workload that depends heavily on background jobs | Follow the sequence below. G6 already qualified the reference jobs, worker failure and recovery for its recorded profiles. |
-
-## Background execution prerequisites
-
-1. Choose one application workflow and define its workload and effect policy. Aurora's task reminder is a concrete candidate because it needs a future run time, current task and recipient checks, and a decision about what to do if a notification may already have been sent. Record the expected workload before setting latency and throughput targets.
-2. Give trusted plugins a documented way to enqueue a registered job for immediate or future execution, track status, and cancel eligible work. Define retryable errors and the policy for jobs that can outlive a lease. Verify normal dispatch rechecks the original actor and workspace authority, including after a delay. A scheduled system job needs an explicit scoped service identity.
-3. Qualify continuous operation under supervision with restart, graceful drain, queue depth and age, failure visibility and controlled retry or reconciliation. Use the existing PostgreSQL queue and guarded runner as the starting point. Prove that urgent jobs stay responsive during bulk work and use dedicated pools or limits if the workload requires them.
-4. Exercise the chosen workflow end to end with concurrent workers, worker death, cancellation or revocation, and deployment recovery. Verify that a stale worker cannot write results, and that an uncertain external effect is surfaced for reconciliation. Measure queue latency and impact on web requests against the targets from step 1.
-
-The runner can poll continuously and the queue already tracks leases, retry state and progress. The reference release exercise used a guarded one-job command. The existing registered-job interface is internal, and the general runner currently records detached computation errors as nonretryable. Per-job scheduling and named worker pools need a supported application-facing design if the chosen workload uses them. [Spec §14.2](modular_platform_spec.md) · [G6 qualification](../docs/evidence/G6/20261102-headless-ui-01/gate-G6.json)
+| Application background execution | Before qualifying a workload that depends heavily on background jobs | Follow the [background execution plan](background_execution.md). G6 already qualified the reference jobs, worker failure and recovery for its recorded profiles. |
 
 The original specification also has five formal R2 checks excluded from R1. R2 first needs an agreed threat model, confinement design and publisher trust policy. [Spec §§14.4, 18, 23.2 and 25.5](modular_platform_spec.md)
 
