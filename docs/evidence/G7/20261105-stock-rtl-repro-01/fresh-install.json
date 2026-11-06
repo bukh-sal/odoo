@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "image": "sha256:92374f556f67c9610b055ff40cd41526743bd984b69a2b6e78cad14881af9ac5",
+  "generation": 4,
+  "backend_checks": [
+    "fresh distinct-credential human sessions and current client release",
+    "one scoped Note in each workspace; native Odoo list/form descriptors and scoped record reads",
+    "Alice viewer write denied in B; Bob cannot read A record",
+    "native Notes Labels extension through its registered binding",
+    "minimal optional Canvas reference uses native creation and registered custom-page service"
+  ],
+  "notes": 2,
+  "canvas_boards": 1,
+  "worker_one_attempt": true,
+  "worker_publication_generation": 1,
+  "result_statistics": {
+    "lines": 1,
+    "words": 3,
+    "characters": 30
+  }
+}

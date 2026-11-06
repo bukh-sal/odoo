@@ -1,0 +1,8 @@
+{
+  "windows_python": {"total": 539, "passed": 538, "skipped": 1},
+  "linux_exact_image": {"startup_total": 7, "passed": 7, "skipped": 0, "covers_windows_symlink_skip": true},
+  "node": {"total": 46, "passed": 46},
+  "contract_freeze": {"major": 1, "files": 106, "rows": 8, "result": "passed"},
+  "stock_rtl_npm_audit": {"production_packages": 7, "reported_vulnerabilities": 0, "same_reproduced_lock": true},
+  "image": "sha256:4309ed25209f69c550be5ba94badb4149e7faf31173ac1bc4d7616a270d2d5d0"
+}

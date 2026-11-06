@@ -1,0 +1,77 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.core-maintenance
+#1 transferring dockerfile: 887B done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#2 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/modular-platform:dependency-base-20261105-stock-final-repro
+#4 DONE 1.6s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 941B done
+#5 DONE 0.0s
+
+#6 [builder 1/3] FROM docker.io/library/modular-platform:dependency-base-20261105-stock-final-repro@sha256:ece2b18be5868bb851d39c7bf4668644c6c29a0c865054a9216d0c75b6ba46d2
+#6 resolve docker.io/library/modular-platform:dependency-base-20261105-stock-final-repro@sha256:ece2b18be5868bb851d39c7bf4668644c6c29a0c865054a9216d0c75b6ba46d2 0.0s done
+#6 CACHED
+
+#7 [internal] load build context
+#7 ...
+
+#8 [runtime 2/9] RUN rm -rf /opt/modular
+#8 DONE 0.3s
+
+#7 [internal] load build context
+#7 transferring context: 3.65MB 2.6s done
+#7 DONE 2.7s
+
+#9 [builder 2/3] COPY . /source
+#9 DONE 8.1s
+
+#10 [builder 3/3] RUN /venv/bin/python /source/tools/build_distribution.py /source /release --policy "deploy/distribution-r1-stock-webclient.json"
+#10 1.601 {"addons": ["auth_passkey", "auth_password_policy", "auth_totp", "base", "base_import", "base_setup", "bus", "mp_compat", "mp_core", "mp_example_canvas", "mp_example_notes", "mp_example_notes_labels", "mp_example_notes_stats", "mp_identity", "mp_shell", "web", "web_tour"], "file_count": 4166}
+#10 DONE 1.7s
+
+#11 [runtime 3/9] COPY --from=builder /release /opt/modular
+#11 DONE 0.8s
+
+#12 [runtime 4/9] COPY tools /opt/modular/tools
+#12 DONE 0.1s
+
+#13 [runtime 5/9] COPY deploy/requirements-r1.lock /opt/modular/requirements.lock
+#13 DONE 0.0s
+
+#14 [runtime 6/9] COPY tests/fixtures/addons /opt/modular/fixtures
+#14 DONE 0.0s
+
+#15 [runtime 7/9] RUN printf 'r1\n' > /opt/modular/startup-profile
+#15 DONE 0.1s
+
+#16 [runtime 8/9] WORKDIR /opt/modular
+#16 DONE 0.0s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 3.8s done
+#17 exporting manifest sha256:78d71a762deb0d1391e403271f1d01048d6cb351c40933f64779fca6670bb03b 0.0s done
+#17 exporting config sha256:111bf4b52988741b46578141d5cf8006a556765ef8890a7580236cde24f41e0d 0.0s done
+#17 exporting attestation manifest sha256:d3ade6a4f4b6899d968b3a045ae8a110d7b3eb698eb5023583f625b4f069351e 0.0s done
+#17 exporting manifest list sha256:dc57d437897d2fdbc63b96575890c2c70e0cdd83821a79815bd91eea1450a505 0.0s done
+#17 naming to docker.io/library/modular-platform:stage-20261105t231549846578z done
+#17 unpacking to docker.io/library/modular-platform:stage-20261105t231549846578z
+#17 unpacking to docker.io/library/modular-platform:stage-20261105t231549846578z 0.9s done
+#17 DONE 4.8s
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+ - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 10)
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/zrl96knd7mf93empn340yllnz

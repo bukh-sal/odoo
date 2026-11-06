@@ -1,0 +1,30 @@
+{
+  "result": "passed",
+  "image": "sha256:4309ed25209f69c550be5ba94badb4149e7faf31173ac1bc4d7616a270d2d5d0",
+  "formUrl": "/odoo/action-88/1?workspace=2e851fd5-3165-4aa3-b7dd-b36cfc2d29b4",
+  "layout": {
+    "regular": {
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "fieldWidth": 1131.15625
+    },
+    "zoom200": {
+      "viewport": 640,
+      "documentWidth": 640,
+      "fieldWidth": 533.890625
+    },
+    "narrow": {
+      "viewport": 320,
+      "documentWidth": 320,
+      "fieldWidth": 288
+    }
+  },
+  "warm_authenticated_webclient_ready_ms": 338,
+  "workspace_keyboard_enter_escape": true,
+  "cancelled_reload_and_close_preserved_input": true,
+  "separate_viewer_workspace_and_read_only_form": true,
+  "expired_session_notice_preserved_input": true,
+  "foreign_requests": [],
+  "foreign_control_blocked": true,
+  "browser_runtime_exceptions": []
+}

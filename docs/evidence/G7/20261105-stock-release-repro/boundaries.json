@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "generation": 4,
+  "stock_default": true,
+  "foreign_origin_and_host_denied": true,
+  "database_manager_denied": true,
+  "missing_and_stale_release_and_foreign_workspace_denied": true,
+  "jsonrpc_errors_redacted": true,
+  "workspace_administrator_native_install_denied": true,
+  "application_and_worker_on_internal_network_only": true,
+  "worker_public_config_only": true,
+  "application_egress": {
+    "database_tcp": true,
+    "default_ipv4_route": false,
+    "external_tcp": false
+  }
+}

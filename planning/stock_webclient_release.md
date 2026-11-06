@@ -1,14 +1,20 @@
 # Stock WebClient release qualification
 
+All five gates passed for the local `stock-r1` kit in `.local/releases/stock-r1`.
+The release is bound to source `ad5ae338`, application image `07cacdf4`, and
+the 54-component manifest `cf8c53b9`. The producer's kit stage is immutable.
+The separate [qualification decision](../docs/evidence/G7/20261105-stock-release-repro/qualification-decision.json)
+records acceptance for those exact bytes.
+
 The local stock profile starts in Odoo's WebClient at `/odoo`. Notes uses native list and form actions with explicit workspace selection. The picker offers shortcuts for the release's reference plugins. The existing plugin host resolves authorized Canvas and platform tool routes at explicit `/app/` links. The release carries Notes, Notes Labels, Canvas and the Notes Stats connector and retains the independently configured document statistics worker. Aurora Tasks and upstream Maintenance stay in the separate stress profiles. The stock release therefore does not add IAP to its application image. Classify inherited Odoo links and exercise the supported workflows with outbound access restricted.
 
 | Gate | Required evidence | State |
 | --- | --- | --- |
-| SW-01 | Declare entry point, plugin and worker scope. Prove workspace selection, safe reload and close behavior, and session-expiry recovery. §§16.3, 23.2, UI-03, UI-07, UI-10. | Prior draft passed. Final exact browser run pending. |
-| SW-02 | Build and independently reproduce the selected inventory, bind the exact kit to the source and validate its curated packages and notices. §§22, 28, BOOT-02, OPS-03. | Final application and compiler reproduction passed, including the corrected Arabic catalogs. |
-| SW-03 | Fresh install from the kit. Prove stock Notes, Labels, Canvas and the separate worker. Verify editor/viewer behavior and supported native UI paths. §§16, 27, UI-01, UI-02, SVC-01, SVC-05. | Earlier kits passed. The exact final clean install is in progress. |
-| SW-04 | Check the affected security, privacy, outbound, accessibility, RTL and performance boundaries on the selected release. §§17, 23.2, 24.1, SEC-02 through SEC-04, UI-09. | Active. Draft security and privacy passed. The final kit contains the RTL compiler and corrected catalogs. Final live browser and idle load checks pending. |
-| SW-05 | Verify an independently approved release transition, checkpoint restore and separate resume on populated disposable data. Record the exact qualification and retire disposable assets. §§13, 23, 28, OPS-02. | The previous exact transition passed. The final independently approved fault and recovery rehearsal is running. |
+| SW-01 | Declare entry point, plugin and worker scope. Prove workspace selection, safe reload and close behavior, and session-expiry recovery. §§16.3, 23.2, UI-03, UI-07, UI-10. | Passed. The selected build preserved the draft after canceling reload and close and displayed the session-expiry recovery action. |
+| SW-02 | Build and independently reproduce the selected inventory, bind the exact kit to the source and validate its curated packages and notices. §§22, 28, BOOT-02, OPS-03. | Passed for `07cacdf4` and kit manifest `cf8c53b9`. Reproduced the declared application, compiler files under the worker memory limit and both Arabic catalogs. |
+| SW-03 | Fresh install from the kit. Prove stock Notes, Labels, Canvas and the separate worker. Verify editor/viewer behavior and supported native UI paths. §§16, 27, UI-01, UI-02, SVC-01, SVC-05. | Passed on the exact fresh kit. Native editor and viewer forms, the Labels dialog, the one-card Canvas and the completed separate-worker result all passed. |
+| SW-04 | Check the affected security, privacy, outbound, accessibility, RTL and performance boundaries on the selected release. §§17, 23.2, 24.1, SEC-02 through SEC-04, UI-09. | Passed. Native list and detail p95 were 367.832 ms and 169.833 ms with 10,000 notes and 20 concurrent sessions. |
+| SW-05 | Verify an independently approved release transition, checkpoint restore and separate resume on populated disposable data. Record the exact qualification and retire disposable assets. §§13, 23, 28, OPS-02. | Passed. The approved transition preserved data and the completed worker job across the fault, fresh restore and separate resume. All five disposable sites were retired. |
 
 The stock profile keeps inherited user-initiated links to Odoo Help and My
 Odoo.com Account and the login attribution. The upstream administrator Apps

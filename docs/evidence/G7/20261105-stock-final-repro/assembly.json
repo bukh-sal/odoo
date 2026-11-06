@@ -1,0 +1,53 @@
+{
+  "result": "draft_verified_requires_operator_and_install_rehearsal",
+  "source_commit": "a90daeef30157bd4b8f43f33453b4077dfbec484",
+  "kit": ".local/releases/stock-0.1.28-final",
+  "files": 54,
+  "bytes": 956407103,
+  "manifest_sha256": "bf68ab50eb9721b43367e28d4d41e9159caac19f44e77c465bdc5b01453aa2a9",
+  "packages": 20,
+  "wheels": 13,
+  "images": {
+    "application": {
+      "image_id": "sha256:4309ed25209f69c550be5ba94badb4149e7faf31173ac1bc4d7616a270d2d5d0",
+      "source_reference": "sha256:4309ed25209f69c550be5ba94badb4149e7faf31173ac1bc4d7616a270d2d5d0",
+      "architecture": "amd64",
+      "OS": "linux"
+    },
+    "dependency_base": {
+      "image_id": "sha256:70aedb55c24a85b371113d075e529ee9655883fc97fa7e2edfc5e14d239caf01",
+      "source_reference": "sha256:70aedb55c24a85b371113d075e529ee9655883fc97fa7e2edfc5e14d239caf01",
+      "architecture": "amd64",
+      "OS": "linux"
+    },
+    "worker": {
+      "image_id": "sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "source_reference": "modular-document-stats@sha256:87ad9d2d1c950cde6f6e233232ae2ae719d8df64601f0c7293e0a4b0be96e38f",
+      "architecture": "amd64",
+      "OS": "linux",
+      "archive_reference": "modular-document-stats:release-87ad9d2d1c95"
+    },
+    "postgres": {
+      "image_id": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "source_reference": "postgres:16-bookworm@sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "architecture": "amd64",
+      "OS": "linux"
+    },
+    "proxy": {
+      "image_id": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "source_reference": "modular-platform-proxy@sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "architecture": "amd64",
+      "OS": "linux"
+    }
+  },
+  "application_inputs": {
+    "reproduction_sha256": "d6ad699d4534571012ac14c1636355de18f2479ef968606cadfcd393b92c8310",
+    "build_sha256": "441c6cbc159ed8a8c1a82b26130e61ae7e52752ec4411fbb70e5fc167a123bad",
+    "source_files_verified": 395
+  },
+  "no_existing_control_or_application_data_copied": true,
+  "new_Docker_assets": 0,
+  "limits": [
+    "Draft artifact assembly only, not clean-install/OPS03/G7 qualification. Host interpreter archive/wheels are verified data inputs; no global Python installation occurred."
+  ]
+}

@@ -1,0 +1,112 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.core-maintenance
+#1 transferring dockerfile: 887B 0.0s done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#2 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/modular-platform:dependency-base-20261105-stock-rtl-build-01
+#4 DONE 1.7s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 941B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 ...
+
+#7 [builder 1/3] FROM docker.io/library/modular-platform:dependency-base-20261105-stock-rtl-build-01@sha256:70aedb55c24a85b371113d075e529ee9655883fc97fa7e2edfc5e14d239caf01
+#7 resolve docker.io/library/modular-platform:dependency-base-20261105-stock-rtl-build-01@sha256:70aedb55c24a85b371113d075e529ee9655883fc97fa7e2edfc5e14d239caf01 0.0s done
+#7 DONE 0.2s
+
+#6 [internal] load build context
+#6 ...
+
+#8 [runtime 2/9] RUN rm -rf /opt/modular
+#8 DONE 0.5s
+
+#6 [internal] load build context
+#6 transferring context: 58.41MB 5.0s
+#6 transferring context: 87.84MB 10.0s
+#6 transferring context: 108.16MB 15.1s
+#6 transferring context: 138.48MB 20.1s
+#6 transferring context: 185.63MB 25.3s
+#6 transferring context: 230.93MB 30.4s
+#6 transferring context: 259.76MB 35.5s
+#6 transferring context: 280.73MB 40.5s
+#6 transferring context: 301.69MB 45.6s
+#6 transferring context: 319.79MB 50.7s
+#6 transferring context: 351.34MB 55.7s
+#6 transferring context: 385.18MB 60.7s
+#6 transferring context: 420.56MB 65.8s
+#6 transferring context: 460.33MB 70.9s
+#6 transferring context: 476.60MB 75.9s
+#6 transferring context: 511.72MB 81.0s
+#6 transferring context: 533.13MB 86.1s
+#6 transferring context: 567.30MB 91.2s
+#6 transferring context: 592.07MB 96.3s
+#6 transferring context: 630.37MB 101.4s
+#6 transferring context: 670.52MB 106.5s
+#6 transferring context: 712.98MB 111.5s
+#6 transferring context: 751.87MB 116.6s
+#6 transferring context: 810.07MB 121.7s
+#6 transferring context: 826.00MB 126.7s
+#6 transferring context: 873.52MB 131.8s
+#6 transferring context: 896.30MB 136.8s
+#6 transferring context: 935.46MB 142.0s
+#6 transferring context: 967.59MB 147.1s
+#6 transferring context: 1.02GB 152.1s
+#6 transferring context: 1.08GB 157.2s
+#6 transferring context: 1.14GB 162.3s
+#6 transferring context: 1.15GB 163.2s done
+#6 DONE 163.3s
+
+#9 [builder 2/3] COPY . /source
+#9 DONE 7.6s
+
+#10 [builder 3/3] RUN /venv/bin/python /source/tools/build_distribution.py /source /release --policy "deploy/distribution-r1-stock-webclient.json"
+#10 1.693 {"addons": ["auth_passkey", "auth_password_policy", "auth_totp", "base", "base_import", "base_setup", "bus", "mp_compat", "mp_core", "mp_example_canvas", "mp_example_notes", "mp_example_notes_labels", "mp_example_notes_stats", "mp_identity", "mp_shell", "web", "web_tour"], "file_count": 4166}
+#10 DONE 1.8s
+
+#11 [runtime 3/9] COPY --from=builder /release /opt/modular
+#11 DONE 0.9s
+
+#12 [runtime 4/9] COPY tools /opt/modular/tools
+#12 DONE 0.1s
+
+#13 [runtime 5/9] COPY deploy/requirements-r1.lock /opt/modular/requirements.lock
+#13 DONE 0.0s
+
+#14 [runtime 6/9] COPY tests/fixtures/addons /opt/modular/fixtures
+#14 DONE 0.0s
+
+#15 [runtime 7/9] RUN printf 'r1\n' > /opt/modular/startup-profile
+#15 DONE 0.1s
+
+#16 [runtime 8/9] WORKDIR /opt/modular
+#16 DONE 0.0s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 3.9s done
+#17 exporting manifest sha256:3ec960b3abcddd81a5efdf765333c5d0ddef60f951689563a1b2744d2e430033 0.0s done
+#17 exporting config sha256:51942fbeb4a82b3606aa6faea8515dd9519c007303d48bf64dc29641e394a988 done
+#17 exporting attestation manifest sha256:f125f336305af4017c52d7d8b8cc64a6f563ff6d4ed5f407cefff39041594950 0.0s done
+#17 exporting manifest list sha256:92374f556f67c9610b055ff40cd41526743bd984b69a2b6e78cad14881af9ac5 0.0s done
+#17 naming to docker.io/library/modular-platform:stage-20261105t225409913927z done
+#17 unpacking to docker.io/library/modular-platform:stage-20261105t225409913927z
+#17 unpacking to docker.io/library/modular-platform:stage-20261105t225409913927z 0.9s done
+#17 DONE 4.9s
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+ - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 10)
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/vk8x1pg0r6n5x3vkc8s422her

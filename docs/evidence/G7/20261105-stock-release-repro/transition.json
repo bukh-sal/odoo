@@ -1,0 +1,59 @@
+{
+  "result": "passed",
+  "image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "previous_image": "sha256:4309ed25209f69c550be5ba94badb4149e7faf31173ac1bc4d7616a270d2d5d0",
+  "initial_generation": 4,
+  "selected_generation": 7,
+  "fault_operation": "54d12be4-695a-4be7-bcac-c41500d50159",
+  "fault_traffic_open": false,
+  "failure_checkpoint": "54d12be4-695a-4be7-bcac-c41500d50159",
+  "fault_review": {
+    "plan_hash": "sha256:1d1d7aac4065cf6732d97cf1a2c2d98c3c89a48c0558380cb34a6a86aa052253",
+    "review_digest": "sha256:643590424287810c006cccbbb9a082f48461fb081384f355bbc0d7d097c95813",
+    "approval_digest": "sha256:59e9cf7dc7fad187452bfee12d62b714a79278bf654caa5bbdc7ea9c14a0fa42",
+    "changes": [
+      {
+        "addon": "mp_shell",
+        "previous_version": "19.0.0.1.17",
+        "target_version": "19.0.0.1.18",
+        "migrations": []
+      }
+    ]
+  },
+  "normal_review": {
+    "plan_hash": "sha256:54df8a21a3a16a0c8b3c0f787bebe2892a57164d7efbaf04aeecfcb1659e6f3d",
+    "review_digest": "sha256:09395e16df0390b42675557ae7c999278e9b9f1c0f1c03c7d794b4c78814435d",
+    "approval_digest": "sha256:6dab1aaf7c2df5f12e48c53bf4eaa240804374cc3578ca7d2672f61acb3f6347",
+    "changes": [
+      {
+        "addon": "mp_shell",
+        "previous_version": "19.0.0.1.17",
+        "target_version": "19.0.0.1.18",
+        "migrations": []
+      }
+    ]
+  },
+  "normal_operation": "5ae43081-9960-4c8e-ba89-bd42e8bc92dd",
+  "restore_decision_hash": "sha256:e935f19b48e05e383173a57750a66e2c74f0bb9405896bd943d62b9336effd05",
+  "resume_decision_hash": "sha256:7595e6b206350178bf325ea39f02a9a52d0aa767a9f19878a39f589d5c421b68",
+  "fresh_restore": true,
+  "restored_and_successor_scope": true,
+  "business_rows_and_memberships_preserved": true,
+  "checkpoint_files": 58,
+  "original_filestore_preserved": true,
+  "original_worker_and_completed_job_preserved": true,
+  "preflight_rtl_assets": [
+    {
+      "url": "/web/assets/1c7d35e62831c1b48ab31a7439665ba6116e3cd3a3d720fa3c90543060fbfafc/web.assets_web.rtl.min.css",
+      "mimetype": "text/css",
+      "bytes": 744671,
+      "sha256": "cca6bbefc73dcd144a95e250c26a4efef51291617d499f07976561d3c2e21bca"
+    },
+    {
+      "url": "/web/assets/b50fd20b9227ff1f74ef29ed7cc549be0fa503e850915b7f3ddd9c1ee4e13f17/web.assets_web_print.rtl.min.css",
+      "mimetype": "text/css",
+      "bytes": 749401,
+      "sha256": "78b27ff9f9c8b3893cc202b16502c226fd659012252a842f9869513675b61063"
+    }
+  ]
+}

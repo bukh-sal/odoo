@@ -1,0 +1,35 @@
+{
+  "result": "passed",
+  "image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "generation": 4,
+  "backend_checks": [
+    "fresh distinct-credential human sessions and current client release",
+    "one scoped Note in each workspace; native Odoo list/form descriptors and scoped record reads",
+    "Alice viewer write denied in B; Bob cannot read A record",
+    "native Notes Labels extension through its registered binding",
+    "minimal optional Canvas reference uses native creation and registered custom-page service"
+  ],
+  "notes": 2,
+  "canvas_boards": 1,
+  "worker_one_attempt": true,
+  "worker_publication_generation": 1,
+  "result_statistics": {
+    "lines": 1,
+    "words": 3,
+    "characters": 30
+  },
+  "preflight_rtl_assets": [
+    {
+      "url": "/web/assets/1c7d35e62831c1b48ab31a7439665ba6116e3cd3a3d720fa3c90543060fbfafc/web.assets_web.rtl.min.css",
+      "mimetype": "text/css",
+      "bytes": 744671,
+      "sha256": "cca6bbefc73dcd144a95e250c26a4efef51291617d499f07976561d3c2e21bca"
+    },
+    {
+      "url": "/web/assets/b50fd20b9227ff1f74ef29ed7cc549be0fa503e850915b7f3ddd9c1ee4e13f17/web.assets_web_print.rtl.min.css",
+      "mimetype": "text/css",
+      "bytes": 749401,
+      "sha256": "78b27ff9f9c8b3893cc202b16502c226fd659012252a842f9869513675b61063"
+    }
+  ]
+}

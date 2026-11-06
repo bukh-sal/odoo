@@ -1,0 +1,18 @@
+{
+  "phase": "passed",
+  "initial_generation": 4,
+  "generation": 7,
+  "base_image": "sha256:07b16747d12c1ecbea2dd3eabf52d83fb256109e03b747622f15b4d817357e44",
+  "successor_image": "sha256:b9e0048bb366314fc0249fa398e7bc79d644c4d916cfa49be5b858c9e6c4b6d1",
+  "checkpoint_files": 44,
+  "fault_operation": "752f9e06-23d4-44c7-8caa-04fc97d74e6d",
+  "fault_phase": "release_published",
+  "fault_traffic_open": false,
+  "normal_operation": "21c4c5a8-e1cf-4739-a4d1-617fa6d003d9",
+  "backup": "752f9e06-23d4-44c7-8caa-04fc97d74e6d",
+  "restore_decision_hash": "sha256:a60ee7e5fd16a645fc986a11ec963cb338d530c91b9205cc558700fa98bbdc05",
+  "resume_decision_hash": "sha256:38fa834af1321bfbdef7512506a3d1472c9507265e6eac0fdf595abca0862b92",
+  "original_worker_preserved": true,
+  "original_filestore_preserved": true,
+  "records_preserved": true
+}

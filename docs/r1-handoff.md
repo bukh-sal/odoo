@@ -8,6 +8,10 @@ draft metadata; the separate gate receipt records its qualification.
 [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 [Implementation status](implementation-status.md) and [release checklist](r1-release-checklist.md)
 
+The independent fork's supported stock WebClient kit is
+`.local/releases/stock-r1`. Follow the [stock handoff](../planning/stock_webclient_release.md#operator-handoff)
+for that profile.
+
 ## Start and verify a disposable installation
 
 From the repository root, verify the selected kit with the pinned local Python.

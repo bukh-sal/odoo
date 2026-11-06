@@ -1,0 +1,8 @@
+{
+  "result": "passed",
+  "reference_project": "mp-r0-r1releaseda690111ce97",
+  "generated_values": 9,
+  "private_diagnostic_streams": 139,
+  "docker_log_streams": 10,
+  "findings": []
+}

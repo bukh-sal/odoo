@@ -1,0 +1,57 @@
+{
+  "result": "passed",
+  "image": "sha256:92374f556f67c9610b055ff40cd41526743bd984b69a2b6e78cad14881af9ac5",
+  "previous_image": "sha256:b9e0048bb366314fc0249fa398e7bc79d644c4d916cfa49be5b858c9e6c4b6d1",
+  "initial_generation": 7,
+  "selected_generation": 10,
+  "fault_operation": "a4a620d2-ac49-419b-97c7-f4b790a6433c",
+  "fault_traffic_open": false,
+  "failure_checkpoint": "a4a620d2-ac49-419b-97c7-f4b790a6433c",
+  "fault_review": {
+    "plan_hash": "sha256:6e1e49a3db7bb2271052748557a239d73b3a0650c4c04bf3dd3a7870cc1bb75b",
+    "review_digest": "sha256:44ecb46a760badde7473ccb8cb442bf4f6fe9147408a866ba6b4b119ef6ee17d",
+    "approval_digest": "sha256:8ed5982baf8d4dc8ef29f759c26db7761494bd4d25e8f13126cddff056acb5f1",
+    "changes": [
+      {
+        "addon": "mp_identity",
+        "previous_version": "19.0.0.1.8",
+        "target_version": "19.0.0.1.9",
+        "migrations": []
+      },
+      {
+        "addon": "mp_shell",
+        "previous_version": "19.0.0.1.15",
+        "target_version": "19.0.0.1.16",
+        "migrations": []
+      }
+    ]
+  },
+  "normal_review": {
+    "plan_hash": "sha256:0d8d878e3245b81975c1ea3b29cba485771e77d88c991f2d2686584c3fa9c3b8",
+    "review_digest": "sha256:9b3b360924bde37a4f2162b99cc00e6d7be41ef2778b02e754a0dee7a91df0d4",
+    "approval_digest": "sha256:9e0a0699c816f4eaedc51795e76ad39fc46dceaf706c0a27578b651ce7b4ef5d",
+    "changes": [
+      {
+        "addon": "mp_identity",
+        "previous_version": "19.0.0.1.8",
+        "target_version": "19.0.0.1.9",
+        "migrations": []
+      },
+      {
+        "addon": "mp_shell",
+        "previous_version": "19.0.0.1.15",
+        "target_version": "19.0.0.1.16",
+        "migrations": []
+      }
+    ]
+  },
+  "normal_operation": "296aaad5-67e3-4d1a-9cd3-4757f1858310",
+  "restore_decision_hash": "sha256:9e8a3551f164a42e49756d9b362b42a17c830e0e1a90315933e4b438f3aad3e5",
+  "resume_decision_hash": "sha256:bac67ac5d2cb65eaf9139914138a8ef0b5ede230754b2befbf6df13b83b175c9",
+  "fresh_restore": true,
+  "restored_and_successor_scope": true,
+  "business_rows_and_memberships_preserved": true,
+  "checkpoint_files": 48,
+  "original_filestore_preserved": true,
+  "original_worker_and_completed_job_preserved": true
+}

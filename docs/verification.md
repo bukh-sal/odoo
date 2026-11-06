@@ -12,8 +12,8 @@ the failed-upgrade recovery evidence and matches the acceptance ledger to the
 specification. The [local handoff](r1-handoff.md) links the G7 gate decision and in-app browser observations.
 
 The independent fork's stock WebClient release has a separate [checklist](../planning/stock_webclient_release.md).
-Its candidate and compiler reproduction are recorded under the
-[stock replacement evidence](evidence/G7/20261105-stock-rtl-repro-01/).
+Its five gates passed. The [stock qualification decision](evidence/G7/20261105-stock-release-repro/qualification-decision.json)
+binds the exact kit to the build, compiler, browser, performance and recovery evidence.
 
 Latest G6 lifecycle evidence:
 

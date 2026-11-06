@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "surface": "ChatGPT in-app browser",
+  "image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "observations": [
+    "The ordinary sign-in redirected to the native Odoo WebClient.",
+    "The workspace trigger opened with Enter. Selecting the authorized workspace opened a separate tab.",
+    "The workspace Notes action opened the native list and form.",
+    "The Arabic workspace menu showed translated Notes, Canvas, platform settings and Notes tools.",
+    "An existing session switched to Arabic in the fixture required one refresh for the RTL stylesheet.",
+    "The native Arabic form then used RTL body and text input directions with no stylesheet fallback."
+  ],
+  "rtl_style_paths": [
+    "/web/assets/b50fd20b9227ff1f74ef29ed7cc549be0fa503e850915b7f3ddd9c1ee4e13f17/web.assets_web_print.rtl.min.css",
+    "/web/assets/1c7d35e62831c1b48ab31a7439665ba6116e3cd3a3d720fa3c90543060fbfafc/web.assets_web.rtl.min.css"
+  ]
+}

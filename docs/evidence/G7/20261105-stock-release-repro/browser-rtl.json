@@ -1,0 +1,16 @@
+{
+  "result": "passed",
+  "image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "rtl": {
+    "direction": "rtl",
+    "titleDirection": "rtl",
+    "foreground": "rgba(255, 255, 255, 0.9)",
+    "background": "rgb(113, 99, 158)",
+    "trigger_focus_restored": true,
+    "focus_outline": "2px",
+    "workspace_trigger_contrast": 4.634674635139427
+  },
+  "notes_labels_canvas_settings_and_completed_worker_result": true,
+  "foreign_requests": [],
+  "foreign_control_blocked": true
+}

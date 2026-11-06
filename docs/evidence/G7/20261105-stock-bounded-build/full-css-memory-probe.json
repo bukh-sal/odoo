@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "address_space_bytes": 671088640,
+  "native_input_bytes": 744347,
+  "native_input_sha256": "285550ba94eda9b2be8ab8be47f9ac4dcbff3ff903c104ab3cb6fa8d9b5df14a",
+  "outputs": [
+    {
+      "image": "sha256:32cc96ae4c86c4037cd1340ec8910819a4fb054f7c7d02ead9d889c5aea0f52c",
+      "css_bytes": 744576,
+      "sha256": "b4249a280b16484dfdfc37e928c781667f04737d446f852d4233a6f22eac1158"
+    },
+    {
+      "image": "sha256:fa1b6729decf11c79566c5b86b592f9a3682065c7583c34493475f231d7f00e3",
+      "css_bytes": 744576,
+      "sha256": "b4249a280b16484dfdfc37e928c781667f04737d446f852d4233a6f22eac1158"
+    }
+  ]
+}

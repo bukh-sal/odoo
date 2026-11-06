@@ -1,0 +1,42 @@
+{
+  "result": "passed_second_no_cache_build_declared_inventory_reproduction",
+  "acceptance": [
+    "BOOT-02"
+  ],
+  "reference_image": "sha256:b9e0048bb366314fc0249fa398e7bc79d644c4d916cfa49be5b858c9e6c4b6d1",
+  "candidate_image": "sha256:9b35ecfd11bbdccb294a8f5c27e071c0667a7d1b041d27e35fea44be59ca038d",
+  "dependency_base": "sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415",
+  "inventory_digest": "sha256:cab585e170ddf7777850b0154f6ced26f0a8ecec61053d74f797e641e322cf3d",
+  "comparisons": {
+    "inventory_digest": true,
+    "inventory": true,
+    "python": true,
+    "architecture": true,
+    "markers": true,
+    "python_lock_digest": true,
+    "python_metadata": true,
+    "modified_files": true,
+    "unexpected_addon_files": true,
+    "missing_addon_files": true
+  },
+  "source_commit": "6ca7d55265166ba2d640b43243b7e2e237045d57",
+  "command": [
+    "docker",
+    "build",
+    "--no-cache",
+    "--network=none",
+    "--build-arg",
+    "DEPENDENCY_BASE_IMAGE=modular-platform:dependency-base-20261105-stock-kit-repro-02",
+    "-f",
+    "deploy/Dockerfile.core-maintenance",
+    "--build-arg",
+    "DISTRIBUTION_POLICY=deploy/distribution-r1-stock-webclient.json",
+    "--build-arg",
+    "RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock",
+    "--build-arg",
+    "SDK_PYTHONPATH=/opt/modular/packages/platform_sdk",
+    "-t",
+    "modular-platform:stage-20261105t222927070164z",
+    "."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "result": "passed_local_stock_webclient_release",
+  "utc": "2026-11-06T00:03:31.840850+00:00",
+  "image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "source_commit": "ad5ae338941aaaaaa1a377db70b8af0a9c4a6322",
+  "kit_manifest_sha256": "cf8c53b92ace3faa78be3e06f8d48e5da9ff6fe2d141cb4717d4583f83a166f7",
+  "kit_components": 54,
+  "gates": {
+    "SW-01": "passed",
+    "SW-02": "passed",
+    "SW-03": "passed",
+    "SW-04": "passed",
+    "SW-05": "passed"
+  },
+  "performance_p95_ms": {
+    "native_list80": 367.832,
+    "native_detail": 169.833
+  },
+  "retired": {
+    "containers": 316,
+    "volumes": 40,
+    "networks": 10,
+    "image_tags": 38
+  },
+  "evidence_sha256": {
+    "20261105-stock-release-repro/fresh-install.json": "4d0ffd029ab3b950630c7aaa6b386e6afd1f0493dbd2b48b1776359ab7feba7b",
+    "20261105-stock-release-repro/boundaries.json": "31845ca74fbdcaae4db07c6c23af168396803f43593ba05cd976b469f0a8b69d",
+    "20261105-stock-release-repro/browser-draft.json": "fe3d39c11294fb0a409eb53a7659b11e8276b656e1f473900830198c2061151c",
+    "20261105-stock-release-repro/browser-rtl.json": "80f504ddb036cac4cf18b7faf56d1a58f74514d9203562c20222bcc098897ab6",
+    "20261105-stock-release-repro/in-app-browser.json": "b68939e0eb61fd750708348c19bf576f6a2acf6284e9980f42d8981e0d27d741",
+    "20261105-stock-release-repro/rtl-preflight-http.json": "8ec396026f7ec14ab02cac82764161863b3c21238ba15e445f230a4573d155ef",
+    "20261105-stock-release-repro/performance.json": "f99bf286bc7bba201dd9d448a00b4b0042ff738df0599df938793d8dce49d629",
+    "20261105-stock-release-repro/transition.json": "a85acc7e3e8b2673ddee466e9fda792d2cef0fc80ea24dfe75688cc1e6c1b19b",
+    "20261105-stock-release-repro/transition-diagnostics.json": "92f1713c9ddf5670a6b6e8f06b56d3f5030566ddebd0d8dc1b7ee1d66c3cae31",
+    "20261105-stock-release-repro/fresh-diagnostics.json": "b513f99b37257ae600208e2485bca24f35a2ef94996043cdc221d72f557c2fe5",
+    "20261105-stock-kit-repro-02/draft-retirement.json": "cb2f7bc79c04118e867f3be231726464223cf3821fa60650768378f38d056b6f",
+    "20261105-stock-rtl-repro-01/transition-retirement.json": "9d6327e21d2427a01831bd8355baa06109acb6e3f23a8789cbab1da61b532e5f",
+    "20261105-stock-final-repro/transition-retirement.json": "b2f75c2dc51980e258427708157ba13be362e831bbfa7c7257d1a6167195b954",
+    "20261105-stock-release-repro/transition-retirement.json": "982f2c93a1aeae6fabdcff6df41b1c30756493d15ebfc0a49cb304381db285ed",
+    "20261105-stock-release-repro/fresh-retirement.json": "6d69e52e7ef0c52f84fc117a482b5761a6c4528aa634147857bc72c2096463b0",
+    "20261105-stock-release-repro/image-retirement.json": "1cd202c314d3b26a44c537c1a8c2d66588232fa47ece47593a784455632c66c3",
+    "20261105-stock-release-repro/privacy.json": "ffbb6c67a8fa9580bc7d0657d2a030e7231ac43982e3b0cb6a0f02638fafe92d",
+    "20261105-stock-release-repro/qualification.json": "93135687b532fdf33866c68b9734d18a9a858a42a071cfb9dd1b2e420d1a3a52",
+    "20261105-stock-release-repro/assembly.json": "ad51bffbcbff42a325832a1581bcbb3e83c663f94197575437b65f875cb028e6",
+    "20261105-stock-release-repro/regression.json": "1cfd33a171a204b14f9b1c9ff6b6e715b1c201b558e7effc45b1e432ac7a4337",
+    "20261105-stock-release-repro/stock-native-notes.png": "aca134436e6baab6bda70a1beb9d22bb49b1050772a3e204de07388fc3e170f2",
+    "20261105-stock-release-repro/stock-rtl.png": "8ee94d62ab5375c53d3925cfea93e48a1b815d9af152862e6877855848493eb5",
+    "20261105-stock-bounded-build/full-css-memory-probe.json": "48f8c0d0eceae79a9bf5cd1f1ce9ad8f81804df76dc083c13820b08ecea16f94"
+  },
+  "scope": [
+    "Local Windows operator and Linux amd64 application kit.",
+    "Browser layout used the effective 200 percent viewport and a 320 CSS pixel narrow viewport.",
+    "An existing session changed to Arabic out of band needed one refresh for mirrored CSS.",
+    "Session-expiry recovery leaves the old tab available to copy the draft into a signed-in tab."
+  ]
+}
