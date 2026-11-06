@@ -161,7 +161,10 @@ def main(argv=None):
     jobs.add_argument('--store',required=True,type=Path)
     jobs.add_argument('--deployment-config',required=True,type=Path)
     job_actions=jobs.add_subparsers(dest='action',required=True)
-    for action in ('start','drain','metrics'):
+    start_jobs=job_actions.add_parser('start')
+    start_jobs.add_argument('--urgent-lanes',type=int,default=1)
+    start_jobs.add_argument('--bulk-lanes',type=int,default=2)
+    for action in ('drain','metrics'):
         job_actions.add_parser(action)
     for action in ('review','apply'):
         control=job_actions.add_parser(action)
@@ -176,7 +179,9 @@ def main(argv=None):
             from modular_platform.job_operator import JobOperator
             from modular_platform.operator_store import OperatorStore
             options={}
-            if args.action in {'review','apply'}:
+            if args.action=='start':
+                options=dict(urgent_lanes=args.urgent_lanes,bulk_lanes=args.bulk_lanes)
+            elif args.action in {'review','apply'}:
                 options=dict(job=args.job,action=args.decision,evidence=args.evidence,approval=getattr(args,'approval',None))
             result=JobOperator(OperatorStore(args.store),args.deployment_config).run(args.action,**options)
         elif args.group=='worker':

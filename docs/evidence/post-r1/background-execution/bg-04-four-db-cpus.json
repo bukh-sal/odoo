@@ -1,0 +1,14 @@
+{
+  "gate": "BG-04",
+  "state": "relative_list_target_missed",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "reference_limits": {"postgres_cpus": 4, "web_workers": 3, "web_cpus": 3, "urgent_slots": 2, "bulk_slots": 2},
+  "idle_p95_ms": {"list": 194.381, "detail": 85.213},
+  "mixed_p95_ms": {"list": 246.606, "detail": 101.939, "reminder_start": 1424},
+  "oldest_urgent_ms": 1664,
+  "bulk_drain_seconds": 42.123,
+  "listen_counters_delta": {"ListenOverflows": 0, "ListenDrops": 0},
+  "postgres_throttled_periods_delta": {"idle": 0, "mixed": 0},
+  "observation": "List p95 exceeded the relative cap by about 3.63 ms. Detail, urgent start, oldest age and bulk drain met their thresholds.",
+  "next_experiment": "Use one urgent lane with the corrected preload. The earlier one-urgent result's workload had committed late, so it cannot rule out this configuration."
+}

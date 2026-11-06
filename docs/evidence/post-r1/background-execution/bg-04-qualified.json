@@ -1,0 +1,428 @@
+{
+  "phase": "passed",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "workload": {
+    "tasks": 1000,
+    "reminders": 150,
+    "bulk": 40,
+    "sha256": "e718ec8829a524ab9d430c6aa80974852d5f1455a16171957c2fd8d70c81329c"
+  },
+  "idle": {
+    "list": {
+      "count": 200,
+      "median_ms": 128.286,
+      "p95_ms": 270.4,
+      "max_ms": 403.742
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 47.584,
+      "p95_ms": 84.386,
+      "max_ms": 97.216
+    }
+  },
+  "idle_rounds": [
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 147.818,
+      "p95_ms": 246.251,
+      "max_ms": 247.488
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 57.35,
+      "p95_ms": 96.358,
+      "max_ms": 97.216
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 146.405,
+      "p95_ms": 269.138,
+      "max_ms": 270.4
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 53.917,
+      "p95_ms": 90.154,
+      "max_ms": 90.697
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 232.862,
+      "p95_ms": 397.387,
+      "max_ms": 403.742
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 47.584,
+      "p95_ms": 80.85,
+      "max_ms": 81.665
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 118.478,
+      "p95_ms": 203.62,
+      "max_ms": 205.092
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 48.595,
+      "p95_ms": 85.218,
+      "max_ms": 86.524
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 173.462,
+      "p95_ms": 278.989,
+      "max_ms": 279.054
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 46.742,
+      "p95_ms": 77.943,
+      "max_ms": 80.008
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 121.085,
+      "p95_ms": 207.571,
+      "max_ms": 207.976
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 46.138,
+      "p95_ms": 77.436,
+      "max_ms": 79.298
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 125.469,
+      "p95_ms": 214.011,
+      "max_ms": 214.297
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 52.125,
+      "p95_ms": 87.231,
+      "max_ms": 88.538
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 125.403,
+      "p95_ms": 213.636,
+      "max_ms": 215.327
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 48.353,
+      "p95_ms": 78.229,
+      "max_ms": 78.624
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 128.058,
+      "p95_ms": 217.616,
+      "max_ms": 219.674
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 44.998,
+      "p95_ms": 73.527,
+      "max_ms": 74.042
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 123.654,
+      "p95_ms": 214.882,
+      "max_ms": 218.792
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 51.088,
+      "p95_ms": 82.871,
+      "max_ms": 84.386
+    }
+  ],
+  "resources": {
+    "application": {
+      "nano_cpus": 3000000000,
+      "memory_bytes": 1610612736
+    },
+    "postgres": {
+      "nano_cpus": 4000000000,
+      "memory_bytes": 536870912
+    },
+    "edge": {
+      "nano_cpus": 500000000,
+      "memory_bytes": 134217728
+    },
+    "mp-r0-r1releasef15b43b144d0-job-urgent-1": {
+      "nano_cpus": 1000000000,
+      "memory_bytes": 805306368
+    },
+    "mp-r0-r1releasef15b43b144d0-job-bulk-1": {
+      "nano_cpus": 1000000000,
+      "memory_bytes": 805306368
+    },
+    "mp-r0-r1releasef15b43b144d0-job-bulk-2": {
+      "nano_cpus": 1000000000,
+      "memory_bytes": 805306368
+    },
+    "docker": {
+      "cpus": 16,
+      "memory_bytes": 8290803712,
+      "storage_driver": "overlayfs"
+    }
+  },
+  "postgres_idle_cpu_delta": {
+    "usage_usec": 6151648,
+    "user_usec": 4616715,
+    "system_usec": 1534934,
+    "nice_usec": 0,
+    "nr_periods": 317,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "warm_http_connections_reused_idle": 20,
+  "preload_margin_seconds": 49.308,
+  "warm_http_connections_reused": 20,
+  "mixed": {
+    "list": {
+      "count": 200,
+      "median_ms": 128.488,
+      "p95_ms": 225.345,
+      "max_ms": 240.856
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 54.391,
+      "p95_ms": 98.777,
+      "max_ms": 173.674
+    }
+  },
+  "mixed_rounds": [
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 138.072,
+      "p95_ms": 236.211,
+      "max_ms": 236.369
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 72.629,
+      "p95_ms": 146.476,
+      "max_ms": 173.674
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 124.505,
+      "p95_ms": 215.229,
+      "max_ms": 215.579
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 53.82,
+      "p95_ms": 91.028,
+      "max_ms": 91.37
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 123.003,
+      "p95_ms": 213.255,
+      "max_ms": 214.156
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 52.411,
+      "p95_ms": 90.889,
+      "max_ms": 91.669
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 139.156,
+      "p95_ms": 238.408,
+      "max_ms": 240.159
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 56.634,
+      "p95_ms": 94.372,
+      "max_ms": 96.968
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 121.871,
+      "p95_ms": 215.66,
+      "max_ms": 221.909
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 52.582,
+      "p95_ms": 99.571,
+      "max_ms": 100.166
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 130.003,
+      "p95_ms": 225.345,
+      "max_ms": 225.4
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 55.778,
+      "p95_ms": 93.382,
+      "max_ms": 93.583
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 135.33,
+      "p95_ms": 238.468,
+      "max_ms": 240.856
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 51.413,
+      "p95_ms": 88.141,
+      "max_ms": 89.743
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 130.269,
+      "p95_ms": 225.246,
+      "max_ms": 226.325
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 55.389,
+      "p95_ms": 92.445,
+      "max_ms": 98.777
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 134.592,
+      "p95_ms": 230.432,
+      "max_ms": 232.43
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 61.3,
+      "p95_ms": 105.816,
+      "max_ms": 110.948
+    },
+    {
+      "case": "list",
+      "count": 20,
+      "median_ms": 128.488,
+      "p95_ms": 220.282,
+      "max_ms": 221.378
+    },
+    {
+      "case": "detail",
+      "count": 20,
+      "median_ms": 50.064,
+      "p95_ms": 88.24,
+      "max_ms": 88.28
+    }
+  ],
+  "worker_timings": {
+    "urgent": {
+      "start": {
+        "count": 150,
+        "median_ms": 226.5,
+        "p95_ms": 2805,
+        "max_ms": 3523
+      },
+      "duration": {
+        "count": 150,
+        "median_ms": 79.0,
+        "p95_ms": 105,
+        "max_ms": 227
+      }
+    },
+    "bulk": {
+      "start": {
+        "count": 40,
+        "median_ms": 19655.0,
+        "p95_ms": 37656,
+        "max_ms": 39588
+      },
+      "duration": {
+        "count": 40,
+        "median_ms": 1242.0,
+        "p95_ms": 1412,
+        "max_ms": 1428
+      }
+    }
+  },
+  "oldest_urgent_ms": 3223,
+  "bulk_drain_seconds": 41.608916997909546,
+  "bulk_throughput_per_second": 0.9613323990626725,
+  "pg_connections_peak": 12,
+  "pg_active_peak": 3,
+  "queue_peak": 189,
+  "sample_count": 118,
+  "listen_counters_delta": {
+    "ListenOverflows": 0,
+    "ListenDrops": 0
+  },
+  "http_client": "Windows loopback through the real reverse proxy",
+  "postgres_mixed_cpu_delta": {
+    "usage_usec": 34029616,
+    "user_usec": 25353225,
+    "system_usec": 8676391,
+    "nice_usec": 0,
+    "nr_periods": 1081,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "mixed_web_targets_passed": true,
+  "mixed_queue_targets_passed": true,
+  "recovered_after_seconds": 19.594,
+  "restart": "operator_start",
+  "native_notes_unchanged": true,
+  "notifications": 150,
+  "scoped_reports": 40,
+  "restart_reports": 40
+}

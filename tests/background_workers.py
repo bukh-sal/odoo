@@ -52,10 +52,10 @@ def wait(check, timeout=30):
 
 
 class Probe:
-    def __init__(self, run):
+    def __init__(self, run, *, extra_phase=None):
         self.site=BackgroundSite(SimpleNamespace(run=run))
         self.state=self.site.state()
-        assert self.state['phase'] in {'background_installed','bg02_probed'}
+        assert self.state['phase'] in {'background_installed','bg02_probed',extra_phase}
         self.project=self.state['project']
         self.target=load(self.site.private/'target.json')
         self.state['database']=self.target['sites'][0]['database']

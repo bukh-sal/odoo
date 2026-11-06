@@ -1,0 +1,16 @@
+{
+  "gate": "BG-04",
+  "state": "target_missed",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "workload_digest": "e718ec8829a524ab9d430c6aa80974852d5f1455a16171957c2fd8d70c81329c",
+  "reference_limits": {"postgres_cpus": 1, "web_cpus": 2, "urgent_slots": 1, "bulk_slots": 2},
+  "idle_p95_ms": {"list": 363.384, "detail": 123.293},
+  "mixed_p95_ms": {"list": 1342.739, "detail": 689.719, "reminder_start": 6846},
+  "oldest_urgent_ms": 8035,
+  "bulk_drain_seconds": 55.141,
+  "postgres_connections_peak": 10,
+  "postgres_active_peak": 4,
+  "queue_peak": 187,
+  "observation": "The PostgreSQL container had 279 lifetime throttled periods and 44.131 lifetime throttled seconds; neither web process group nor urgent worker showed similar throttling. These are cumulative observations, not attribution to the measured interval.",
+  "next_experiment": "Keep the workload and thresholds. Raise the owned PostgreSQL cap to two CPU cores and use the same persistent sampler in idle and mixed phases."
+}

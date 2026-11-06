@@ -1,0 +1,22 @@
+{
+  "gate": "BG-04",
+  "state": "invalid_preload_for_capacity_decision",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "reference_limits": {"postgres_cpus": 2, "web_cpus": 2, "urgent_slots": 2, "bulk_slots": 2},
+  "idle_p95_ms": {"list": 598.49, "detail": 208.312},
+  "mixed_p95_ms": {"list": 636.571, "detail": 245.586, "reminder_start": 22841},
+  "bulk_drain_seconds": 70.96,
+  "observed": {
+    "seconds_last_enqueue_was_after_declared_anchor": 24.729,
+    "first_reminder_completion_seconds_after_anchor": 25.356,
+    "idle_connection_establishment_spikes": "Per-round maxima often clustered near 1.05 to 1.09 seconds even at idle."
+  },
+  "next_experiment": "Require all work committed at least ten seconds before the declared anchor. Use authenticated native HTTP through loopback and require warmed connections to stay open within each measured phase.",
+  "aligned_preload_without_valid_http_sample": {
+    "preload_margin_seconds": 38.15,
+    "jobs_completed": 190,
+    "reminder_start_p95_ms": 1673,
+    "reminder_start_max_ms": 2183,
+    "limit": "The HTTP socket expired between phases. These worker measurements do not establish the mixed-load web gate."
+  }
+}

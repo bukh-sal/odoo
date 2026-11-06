@@ -1,6 +1,6 @@
 {
   "gate": "BG-03",
-  "acceptance": {"BG-03a": "passed", "BG-03b": "passed", "BG-03c": "in_progress"},
+  "acceptance": {"BG-03a": "passed", "BG-03b": "passed"},
   "image": "sha256:65c76de812a4f93c738051cbe68b894a4e5b41fa4e7f1f95bc3e7b92024b8a9e",
   "core_upgrade_operation": "e1d670d6-94a5-4fc9-8ef9-6c8ad71554ff",
   "probe": "tests/background_workers.py bg-03-01",

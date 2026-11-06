@@ -1,0 +1,17 @@
+{
+  "gate": "BG-04",
+  "state": "listener_capacity_diagnostic",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "client": "Linux client on the real edge proxy network",
+  "idle_p95_ms": {"list": 297.441, "detail": 119.374},
+  "mixed_p95_ms": {"list": 481.114, "detail": 182.956, "reminder_start": 1367},
+  "observed": {
+    "two_web_workers": true,
+    "listen_backlog_at_two_workers": 16,
+    "requests_per_concurrent_web_burst": 20,
+    "worker_network_namespace_listen_overflows": 232,
+    "worker_network_namespace_listen_drops": 232,
+    "reproduced_one_second_web_outliers_from_linux": true
+  },
+  "next_experiment": "Use three stock Odoo web workers and three web CPUs, keeping two PostgreSQL CPUs and the same worker lanes, jobs, HTTP pacing and pass thresholds. Recheck the published Windows loopback path and listen counters."
+}

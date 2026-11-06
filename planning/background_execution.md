@@ -41,3 +41,15 @@ Use two workspaces on a disposable stock WebClient deployment with 500 synthetic
 | BG-04b — recovery and cleanup | All 40 reports complete within 120 s of the start, and a separately injected restart drains ready backlog within 120 s of service recovery. Observe one effect per current occurrence, verify the scope invariants and retire qualification assets. |
 
 Scope: PostgreSQL queue, stock Odoo CRUD, no real push, no recurrence or replacement broker. Retain only bounded, redacted operator evidence. For the current checkpoint and next action, see [implementation status](../docs/implementation-status.md).
+
+For BG-04, verify that all jobs have committed at least ten seconds before the
+load clock starts. Use the same 20 authenticated Odoo sessions and the same
+request pacing in both web phases, with separately warmed HTTP connections
+to avoid the proxy's idle timeout between phases. Record the database CPU
+allocation and worker lane counts with each observation. The capacity
+thresholds above stay fixed while resources are tuned.
+
+BG-01 through BG-04 passed for the measured reference: three stock Odoo
+web workers, four PostgreSQL CPUs, one urgent lane and two bulk lanes.
+See the [acceptance decision](../docs/evidence/post-r1/background-execution/qualification-decision.json)
+and [operator commands](../docs/operations.md#scheduled-native-job-lanes).

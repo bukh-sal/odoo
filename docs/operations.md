@@ -162,8 +162,10 @@ modular --config <trust> jobs --store <control> --deployment-config <target> met
 modular --config <trust> jobs --store <control> --deployment-config <target> drain
 ```
 
-The reference profile starts one urgent lane and two bulk lanes. The lanes
-allow one concurrent attempt per workspace in each pool. A guarded process
+The default starts one urgent lane and two bulk lanes. Set
+`start --urgent-lanes <count> --bulk-lanes <count>` to size them independently
+from one to eight; drain before reducing a pool. The lanes allow one
+concurrent attempt per workspace in each pool. A guarded process
 renews a short lease while work runs. A separate watchdog stops a stuck
 process at the attempt budget, and the container restart policy replaces
 it. Shutdown stops new claims, waits up to 45 seconds for existing work,
@@ -187,3 +189,10 @@ operation and separate restore/resume decisions if recovery is needed.
 Start lanes again from the new target pin only after dispatch and traffic
 have reopened. The application and the queue use the same release fence;
 an older lane cannot publish a result into a different generation.
+
+The qualified mixed workload used three stock Odoo web workers with three
+web CPUs, four PostgreSQL CPUs, one urgent lane and two bulk lanes. Treat
+these as measured reference settings. The two-worker listen queue was
+too small for the tested 20 concurrent requests. See the
+[qualification decision](evidence/post-r1/background-execution/qualification-decision.json)
+before changing capacity assumptions.

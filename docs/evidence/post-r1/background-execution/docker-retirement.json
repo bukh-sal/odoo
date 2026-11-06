@@ -1,0 +1,30 @@
+{
+  "bg02_site": {
+    "containers": 16,
+    "volumes": 6,
+    "networks": 2
+  },
+  "primitive_tmpfs_target": {
+    "containers": 1,
+    "volumes": 0,
+    "networks": 1
+  },
+  "bg03_site": {
+    "containers": 81,
+    "volumes": 6,
+    "networks": 2
+  },
+  "images": [
+    "modular-platform:retained-8708b2ed-5a8a-4dab-8562-1e0623fc4133",
+    "modular-platform:stage-20261106t224142483035z",
+    "modular-platform:stage-20261106t225311613789z",
+    "modular-platform:retained-3471bd93-9a13-45b2-bd32-929d9fcf6fcb",
+    "modular-platform:retained-e1d670d6-94a5-4fc9-8ef9-6c8ad71554ff",
+    "modular-platform:stage-20261106t225603451383z",
+    "modular-platform:retained-9007f5b8-0eff-4ff6-a3c8-a84de2ba51af",
+    "modular-platform:retained-cd599589-6db5-4146-826c-bc658e2b4243",
+    "modular-platform:stage-20261106t230023986841z",
+    "modular-platform:stage-20261106t225731058154z",
+    "modular-platform:stage-20261106t230344322294z"
+  ]
+}

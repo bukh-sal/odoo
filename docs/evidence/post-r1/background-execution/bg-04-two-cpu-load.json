@@ -1,0 +1,13 @@
+{
+  "gate": "BG-04",
+  "state": "reminder_start_target_missed",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "workload_digest": "e718ec8829a524ab9d430c6aa80974852d5f1455a16171957c2fd8d70c81329c",
+  "reference_limits": {"postgres_cpus": 2, "web_cpus": 2, "urgent_slots": 1, "bulk_slots": 2},
+  "idle_p95_ms": {"list": 350.78, "detail": 96.258},
+  "mixed_p95_ms": {"list": 360.188, "detail": 97.506, "reminder_start": 3819},
+  "oldest_urgent_ms": 5349,
+  "bulk_drain_seconds": 39.755,
+  "observation": "Both web limits passed under the original workload and thresholds. Urgent p95 exceeded the fixed 3000 ms target.",
+  "next_experiment": "Keep PostgreSQL at two CPUs and allow one additional urgent lane. Keep one concurrent attempt per workspace and two bulk lanes."
+}

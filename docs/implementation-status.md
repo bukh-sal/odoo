@@ -14,32 +14,27 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 
 ## Post-R1 work
 
-**Background execution: BG-03 active.** BG-01 and BG-02 passed.
-Progress is **about 63% by verified gate work** (BG-01/02/03/04 =
-10/30/35/25; two of three BG-03 checks passed).
-**5/8 acceptance checks passed**. Original R1 remains 99/99.
+**Background execution: complete.** BG-01 through BG-04 passed,
+**8/8 acceptance checks and 100 weighted points**. Original R1 remains 99/99.
 [Plan and exit checks](../planning/background_execution.md) ·
-[BG-01 evidence](evidence/post-r1/background-execution/bg-01.json)
+[Qualification decision](evidence/post-r1/background-execution/qualification-decision.json)
 
-| Gate | Depends on | Status | Next evidence |
+| Gate | Depends on | Status | Evidence |
 | --- | --- | --- | --- |
-| BG-01 | Qualified stock-r1 | Passed | Revalidate if the reference workload changes. |
-| BG-02 | BG-01 | Passed | [ADR 0061](architecture-decisions/0061-scheduled-native-jobs-v1.md) · [native evidence](evidence/post-r1/background-execution/bg-02-native.json) · [primitives](evidence/post-r1/background-execution/bg-02-primitives.json) |
-| BG-03 | BG-02 | In progress | [BG-03a/b passed](evidence/post-r1/background-execution/bg-03-workers.json); BG-03c populated lifecycle recovery is active. |
-| BG-04 | BG-03 | Not started | BG-04a/b: paired web load, recovery and retirement. |
+| BG-01 | Qualified stock-r1 | Passed | [Verified workload](evidence/post-r1/background-execution/bg-01.json). |
+| BG-02 | BG-01 | Passed | [ADR 0061](architecture-decisions/0061-scheduled-native-jobs-v1.md) · [native evidence](evidence/post-r1/background-execution/bg-02-native.json) · [primitives](evidence/post-r1/background-execution/bg-02-primitives.json). |
+| BG-03 | BG-02 | Passed | [Worker and effect drills](evidence/post-r1/background-execution/bg-03-workers.json) · [populated upgrade/restore](evidence/post-r1/background-execution/bg-03-release.json). |
+| BG-04 | BG-03 | Passed | [Paired load and restart](evidence/post-r1/background-execution/bg-04-qualified.json) · [Docker retirement](evidence/post-r1/background-execution/docker-retirement.json). |
 
-Resume capsule: Docker Desktop reports 16 CPUs and 8,290,803,712 bytes.
-The BG-02 site and primitive PostgreSQL target are retired. No open blockers.
-BG-03c is active on owned project `mp-r0-r1releasef15b43b144d0`. The
-reviewed core update `e1d670d6-94a5-4fc9-8ef9-6c8ad71554ff` installed
-`65c76de8`. Workers passed the live fault probes and drained. The
-populated release fault `9007f5b8-0eff-4ff6-a3c8-a84de2ba51af` restored
-to a fresh database and separately resumed; delayed work retained timing
-and scope and the old claim was refused. Normal successor operation
-`cd599589-6db5-4146-826c-bc658e2b4243` to candidate `1de471e4` is active
-in session 71946. Inspect `.local/background-qualification/bg-03-01/bg03-release-queue.json`
-and its journal before further mutation. When phase is `passed`, record
-BG-03c and run `& .local/toolchain/operator-python16/Scripts/python.exe tests/background_load.py`.
+Resume capsule: no active item, blocker, pending mutation, or live BG site.
+The qualified reference used three stock Odoo web workers, four PostgreSQL
+CPUs, one urgent lane and two bulk lanes. Reminder start p95 was 2.805 s;
+mixed native list/detail p95 was 225.345/98.777 ms. Forty reports completed
+in 41.609 s, and a restarted backlog drained in 19.594 s. All 150 expected
+notifications were observed, and the Notes dataset was unchanged. The owned
+Docker assets were retired; the stock-r1 image remains. Revalidate BG-04
+when changing the workload, sizing, or queue/web behavior. The
+[work log](work-log.md) retains the earlier attempts.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora

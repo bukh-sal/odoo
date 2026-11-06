@@ -73,11 +73,18 @@ class JobOperator:
             result[name]=row
         return result
 
-    def start(self):
+    def start(self,*,urgent_lanes=1,bulk_lanes=2):
+        counts={'urgent':urgent_lanes,'bulk':bulk_lanes}
+        if any(type(value) is not int or not 1<=value<=8 for value in counts.values()):
+            raise OperatorError('Each managed pool requires one to eight lanes')
         runtime=self.runtime()
         found=self._lanes()
+        requested={f'{self.project}-job-{pool}-{index}' for pool,count in counts.items()
+                   for index in range(1,count+1)}
+        if found.keys()-requested:
+            raise OperatorError('Drain existing lanes before reducing a pool')
         result=[]
-        for pool,count in POOLS.items():
+        for pool,count in counts.items():
             for index in range(1,count+1):
                 name=f'{self.project}-job-{pool}-{index}'
                 row=found.get(name)
@@ -127,6 +134,6 @@ class JobOperator:
     def run(self,command,**options):
         with OperationLocks(self.store.root/'locks',self.deployment,[self.site['site_id']]):
             self._authorize()
-            if command=='start':return self.start()
+            if command=='start':return self.start(**options)
             if command=='drain':return self.drain()
             return self.admin(command,**options)

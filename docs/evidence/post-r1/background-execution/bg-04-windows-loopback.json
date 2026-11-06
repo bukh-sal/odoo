@@ -1,0 +1,15 @@
+{
+  "gate": "BG-04",
+  "state": "relative_web_target_missed",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "workload_digest": "e718ec8829a524ab9d430c6aa80974852d5f1455a16171957c2fd8d70c81329c",
+  "reference_limits": {"postgres_cpus": 2, "web_cpus": 2, "urgent_slots": 2, "bulk_slots": 2},
+  "preload_margin_seconds": 47.79,
+  "persistent_connections_reused_per_phase": 20,
+  "idle_p95_ms": {"list": 310.417, "detail": 137.435},
+  "mixed_p95_ms": {"list": 415.016, "detail": 180.933, "reminder_start": 1400},
+  "oldest_urgent_ms": 1238,
+  "bulk_drain_seconds": 40.673,
+  "observation": "Both absolute web targets and urgent/bulk targets passed; the relative web threshold missed for both paths. About one one-second outlier per 20-request round remained with persistent Windows connections.",
+  "next_experiment": "Use a disposable Linux client on the real reverse proxy's edge network with the same native endpoints, credentials, workload, pacing and limits; retain Windows loopback results separately."
+}

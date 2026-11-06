@@ -1,0 +1,18 @@
+{
+  "gate": "BG-03",
+  "acceptance": {"BG-03c": "passed"},
+  "base_image": "sha256:65c76de812a4f93c738051cbe68b894a4e5b41fa4e7f1f95bc3e7b92024b8a9e",
+  "successor_image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "fault_operation": "9007f5b8-0eff-4ff6-a3c8-a84de2ba51af",
+  "restore_digest": "sha256:5f3cfb97f71024966159e0cccc574178db775f56e5c8d3802839bb4297ab5442",
+  "resume_digest": "sha256:957f7fee0eba29f644a862f90aad121e2de08a9dd26ef99ac424048c05e941b4",
+  "successor_operation": "cd599589-6db5-4146-826c-bc658e2b4243",
+  "observed": {
+    "restored_into_fresh_database_with_traffic_closed": true,
+    "separate_resume_reopened_dispatch": true,
+    "queued_timing_expiry_and_original_scope_preserved": true,
+    "compatible_reminder_remained_pending": true,
+    "retired_reports_held": 2,
+    "old_claim_refused_after_restore_and_after_upgrade": true
+  }
+}

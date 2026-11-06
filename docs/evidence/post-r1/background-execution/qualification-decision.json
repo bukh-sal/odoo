@@ -1,0 +1,14 @@
+{
+  "goal": "BG-01 through BG-04",
+  "state": "passed",
+  "acceptance": {"BG-01a": "passed", "BG-02a": "passed", "BG-02b": "passed", "BG-03a": "passed",
+                 "BG-03b": "passed", "BG-03c": "passed", "BG-04a": "passed", "BG-04b": "passed"},
+  "weighted_progress_percent": 100,
+  "reference_image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "runtime_build_record": "../../G7/bg-03-successor-build-02/candidate-build.json",
+  "reference_sizing": {"web_workers": 3, "web_cpus": 3, "postgres_cpus": 4, "urgent_lanes": 1, "bulk_lanes": 2},
+  "reference_docker": {"cpus": 16, "memory_bytes": 8290803712, "storage_driver": "overlayfs"},
+  "receipts": ["bg-01.json", "bg-02-native.json", "bg-02-primitives.json", "bg-03-workers.json",
+               "bg-03-release.json", "bg-04-qualified.json", "docker-retirement.json"],
+  "limits": "Qualification covers the measured local profile and frozen workload. Stock Odoo views are unchanged. The external failure drill used a private fake sink. The original stock-r1 qualification and image remain unchanged."
+}

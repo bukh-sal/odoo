@@ -1,0 +1,13 @@
+{
+  "gate": "BG-04",
+  "state": "relative_web_target_missed_without_listen_overflows",
+  "image": "sha256:1de471e43ca1383c9c18d5a39bb3564bc3d48cf07ad94c64eabc37079b341a9d",
+  "reference_limits": {"postgres_cpus": 2, "web_workers": 3, "web_cpus": 3, "urgent_slots": 2, "bulk_slots": 2},
+  "idle_p95_ms": {"list": 275.363, "detail": 80.819},
+  "mixed_p95_ms": {"list": 387.781, "detail": 134.913, "reminder_start": 1488},
+  "mixed_max_ms": {"list": 479.248, "detail": 158.768},
+  "listen_counters_delta": {"ListenOverflows": 0, "ListenDrops": 0},
+  "postgres_connections_peak": 13,
+  "postgres_active_peak": 7,
+  "next_experiment": "Hold the corrected 24-slot web listener and the workload fixed. Increase the owned PostgreSQL quota from two to four CPUs, and observe CPU throttling separately for idle and mixed phases."
+}
