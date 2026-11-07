@@ -141,7 +141,7 @@ def run_archive(cr, site, release, args):
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('command',choices=('metrics','history','review','apply','dispatch','recurrence-authority',*ARCHIVE_COMMANDS))
+    parser.add_argument('command',choices=('metrics','capacity','history','review','apply','dispatch','recurrence-authority',*ARCHIVE_COMMANDS))
     parser.add_argument('--job')
     parser.add_argument('--action',choices=ACTIONS)
     parser.add_argument('--evidence')
@@ -166,6 +166,14 @@ def main():
             cr.execute('SET TRANSACTION ISOLATION LEVEL READ COMMITTED')
         release=current_release(api.Environment(cr,1,{}))
         site,digest=release['site_id'],release['release_digest']
+        if args.command=='capacity':
+            from modular_platform.job_capacity import observe
+            report=observe(cr,site,digest,{pool:job_dispatch.routes_for(pool) for pool in ('urgent','bulk')})
+            cr.execute('SELECT state FROM mp_dispatch_control WHERE site_id=%s AND release_digest=%s',[site,digest])
+            state=cr.fetchone()
+            cr.rollback()
+            emit(event='job_capacity',dispatch=state[0] if state else 'unavailable',**report)
+            return
         if args.command=='recurrence-authority':
             from modular_platform.recurrence_authority import review
             policy=review(cr,site)

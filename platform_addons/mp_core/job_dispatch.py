@@ -238,6 +238,7 @@ class Invocation:
     prepared: dict
     context: dict
     database: str = ''
+    preparation_ms: int = 0
 
 
 def _safe_code(error):

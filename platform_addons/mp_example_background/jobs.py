@@ -30,6 +30,9 @@ MODEL = 'mp.background.task'
 PERMISSION = PLUGIN + ':jobs.read'
 TOPIC = PLUGIN + '.notification'
 FAULT = shape(mode=dict(enum=['claim','heartbeat','timeout','retry','send']))
+LOAD = shape(iterations=dict(type='integer',enum=[250000,1000000,5000000]))
+LOAD_RESULT = shape(iterations=dict(type='integer',enum=[250000,1000000,5000000]),
+    digest=dict(type='string',pattern=r'^[a-f0-9]{64}$'))
 
 
 def reminder_resource(env, values, bound):
@@ -76,6 +79,12 @@ def report_compute(values, _):
     return dict(count=len(points), points=sum(points), digest=digest)
 
 
+def load_compute(values,_):
+    """Bounded variable CPU cost for the disposable capacity qualification."""
+    return dict(iterations=values['iterations'],digest=hashlib.pbkdf2_hmac('sha256',b'capacity',
+        b'modular-bg-capacity-v1',values['iterations']).hex())
+
+
 def fault_compute(values, context):
     """Only the disposable reference profile includes fault injection."""
     mode=values['mode']
@@ -115,6 +124,11 @@ for handler, version, pool, inputs, prepared, computed, output, authorize, prepa
     job_dispatch.register(job_dispatch.JobDefinition(
         PLUGIN+':'+handler, version, PLUGIN, SERVICE, '1.0', 'authority',
         inputs, prepared, computed, output, authorize, prepare, compute, apply, pool=pool))
+
+job_dispatch.register(job_dispatch.JobDefinition(
+    PLUGIN+':load',1,PLUGIN,SERVICE,'1.0','authority',LOAD,LOAD,LOAD_RESULT,LOAD_RESULT,
+    lambda env,data,bound:bound.model._mp_guard('read'),lambda env,data,bound:data,
+    load_compute,lambda env,data,prepared,result,bound:result,pool='bulk'))
 
 job_dispatch.register(job_dispatch.JobDefinition(
     PLUGIN+':fault', 1, PLUGIN, SERVICE, '1.0', 'authority', FAULT, FAULT, FAULT, FAULT,

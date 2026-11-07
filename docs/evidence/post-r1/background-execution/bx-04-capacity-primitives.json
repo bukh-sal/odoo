@@ -1,0 +1,21 @@
+{
+  "state": "passed",
+  "checks": {
+    "state_classification": true,
+    "foreign_site_excluded": true,
+    "original_and_retry_eligibility_separate": true,
+    "obsolete_and_old_release_unroutable": true,
+    "database_headroom_observed": true,
+    "live_limit_refuses_sizing": true,
+    "group_output_bounded_and_incomplete": true
+  },
+  "source_sha256": "8174032c294c959b6aa64a5932cfd7ea32c80d1a4b4a0feba3954eaabd8279bf",
+  "postgres": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+  "client": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "retired": {
+    "containers": 1,
+    "volumes": 0,
+    "networks": 0
+  },
+  "scope": "SQL observation and limits only; no native runner or load/scaling claim"
+}

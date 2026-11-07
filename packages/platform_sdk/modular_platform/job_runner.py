@@ -59,12 +59,15 @@ def emit(**fields):
 
 
 def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,attempt=None):
+    from dataclasses import replace
+    import time
     from odoo import api
     from odoo.service.model import retrying
     from odoo.addons.mp_core import job_dispatch as jobs
     from modular_platform import durable
     # Superuser environment is restricted to scheduler/config metadata here.
     # jobs reconstructs the actual mapped user before any business operation.
+    preparing=time.monotonic()
     with registry.cursor() as cr:
         metadata=api.Environment(cr,1,{})
         try:invocation=retrying(lambda:jobs.prepare_one(metadata,owner,pool=pool,
@@ -73,6 +76,9 @@ def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,a
             cr.rollback();return dict(state='paused')
     if invocation is None:return dict(state='idle')
     if isinstance(invocation,dict):return invocation
+    # Includes claim selection, authorization, preparation and commit. This is
+    # a conservative upper bound, avoiding omitted preparation in sizing data.
+    invocation=replace(invocation,preparation_ms=round((time.monotonic()-preparing)*1000))
     if attempt:
         with attempt(invocation):
             return _execute(registry,invocation)

@@ -142,7 +142,10 @@ def child(args):
         started = time.monotonic()
         health('running')
         emit(event='claimed',pool=args.pool,job_id=invocation.claim.job_id,
-             generation=invocation.claim.generation,start_delay_ms=invocation.claim.ready_ms)
+             generation=invocation.claim.generation,start_delay_ms=invocation.claim.ready_ms,
+             handler=invocation.handler,version=invocation.version,
+             workspace=invocation.context['workspace_id'],at=datetime.now(timezone.utc).isoformat(),
+             preparation_upper_bound_ms=invocation.preparation_ms)
 
         def report(value):
             nonlocal progress
@@ -178,8 +181,11 @@ def child(args):
             done.set()
             thread.join(timeout=1)
             watchdog(60)
+            elapsed=round((time.monotonic()-started)*1000)
             emit(event='attempt_end',pool=args.pool,job_id=invocation.claim.job_id,
-                 duration_ms=round((time.monotonic()-started)*1000))
+                 generation=invocation.claim.generation,handler=invocation.handler,version=invocation.version,
+                 at=datetime.now(timezone.utc).isoformat(),duration_ms=elapsed,
+                 worker_duration_ms=elapsed+invocation.preparation_ms)
 
     while not stop.is_set():
         watchdog(60)

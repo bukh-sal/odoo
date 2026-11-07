@@ -164,8 +164,11 @@ def main(argv=None):
     start_jobs=job_actions.add_parser('start')
     start_jobs.add_argument('--urgent-lanes',type=int,default=1)
     start_jobs.add_argument('--bulk-lanes',type=int,default=2)
-    for action in ('drain','metrics','history','status','reconcile'):
+    for action in ('drain','metrics','capacity','history','status','reconcile'):
         job_actions.add_parser(action)
+    advice=job_actions.add_parser('advise',help='Read-only advice; never approves or resizes a fleet')
+    advice.add_argument('--observation',required=True,type=Path)
+    advice.add_argument('--policy',required=True,type=Path)
     profile_review=job_actions.add_parser('profile-review')
     profile_review.add_argument('--urgent-lanes',type=int,default=1)
     profile_review.add_argument('--bulk-lanes',type=int,default=2)
@@ -197,6 +200,7 @@ def main(argv=None):
             from modular_platform.job_operator import JobOperator
             from modular_platform.operator_store import OperatorStore
             options={}
+            if args.action=='advise':options=dict(observation=args.observation,policy=args.policy)
             if args.action=='start':
                 options=dict(urgent_lanes=args.urgent_lanes,bulk_lanes=args.bulk_lanes)
             elif args.action=='profile-review':

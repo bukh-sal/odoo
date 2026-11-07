@@ -45,7 +45,7 @@ class JobOperator:
     def runtime(self):
         runtime=self.reader.read()['runtime']
         files=runtime['inventory']['files']
-        for name in ('job_admin.py','job_runner.py','job_supervisor.py','job_health.py','worker_start.py','durable.py','event_retention.py'):
+        for name in ('job_admin.py','job_capacity.py','job_runner.py','job_supervisor.py','job_health.py','worker_start.py','durable.py','event_retention.py'):
             local=Path(__file__).with_name(name)
             if files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(local.read_bytes()).hexdigest():
                 raise OperatorError('Managed jobs require the current reviewed runner and queue bytes')
@@ -131,6 +131,41 @@ class JobOperator:
         if command=='apply':_write_new(self.records/(approval[7:]+'.result.json'),result)
         return result
 
+    def capacity_pins(self,runtime,fleet):
+        desired=fleet.desired()
+        if not desired or desired['pins']!=fleet._pins(runtime):
+            raise OperatorError('Current reviewed fleet required for capacity observation')
+        return dict(**desired['pins'],resource_profile={key:desired['spec'][key] for key in ('cpu_millis','memory_mib')})
+
+    def capacity(self,fleet):
+        runtime=self.runtime();pins=self.capacity_pins(runtime,fleet)
+        report=self._run_admin(runtime,str(uuid4()),['capacity'])
+        if (report.get('event')!='job_capacity' or report.get('site_id')!=self.site['site_id']
+                or report.get('release_digest')!=pins['release_digest']):
+            raise OperatorError('Exact pinned capacity observation required')
+        status=fleet.status()
+        samples=[]
+        lanes=self._lanes()
+        if len(lanes)>8:raise OperatorError('Bounded reviewed fleet required')
+        for row in lanes.values():
+            if not fleet._matches(row,fleet.desired()):raise OperatorError('Capacity lane pins changed')
+            for line in self.docker('logs','--tail','2000',row['Id']).splitlines():
+                if not line.startswith(b'{') or len(line)>8192:continue
+                try:value=load_json(line)
+                except ValueError:continue
+                if value.get('event')!='attempt_end' or 'worker_duration_ms' not in value:continue
+                samples.append(dict(handler_version=value['handler']+':'+str(value['version']),
+                    at=value['at'],worker_seconds=value['worker_duration_ms']/1000))
+        return dict(**report,pins=pins,fleet_state=status['state'],
+            ready_lanes={pool:status['pools'][pool]['ready'] for pool in ('urgent','bulk')},
+            producer_lanes=status['pools']['producer']['desired'],samples=samples)
+
+    def advise(self,fleet,*,observation,policy):
+        from .capacity_advisor import advise
+        runtime=self.runtime()
+        return advise(load_json(Path(observation).read_bytes()),load_json(Path(policy).read_bytes()),
+            expected_pins=self.capacity_pins(runtime,fleet))
+
     def _run_admin(self,runtime,attempt,argv,*,labels=()):
         raw=self.docker('run','--rm','--log-driver','none',*labels,
             *self._base(runtime,self.project+'-job-control-'+attempt.replace('-','')),
@@ -206,6 +241,8 @@ class JobOperator:
             self._authorize()
             from .job_fleet import JobFleet
             fleet=JobFleet(self)
+            if command=='capacity':return self.capacity(fleet)
+            if command=='advise':return self.advise(fleet,**options)
             if command=='profile-review':return fleet.review(**options)
             if command=='profile-apply':return fleet.apply(**options)
             if command=='reconcile':return fleet.reconcile()

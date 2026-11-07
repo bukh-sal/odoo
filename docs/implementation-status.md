@@ -142,14 +142,35 @@ images were retired, in addition to the earlier obsolete images and helpers.
 [Retirement](evidence/post-r1/background-execution/bx-03-retirement.json).
 
 Resume capsule: no test, mutation or live goal fixture remains. BX-04 is the
-one active item. First fix the sustained workload, latency/headroom targets and
-scaling comparison in ADR0065, then implement bounded observations and a
-read-only capacity advisor. Reuse reviewed fleet resizing; automatic sizing
+one active item. [ADR0065](architecture-decisions/0065-background-capacity-advice.md)
+fixes the sustained workload, latency/headroom targets and scaling comparison.
+Bounded SQL observations passed seven actual PostgreSQL checks, including the
+100,001-row and 1,025-group refusal boundaries; the tmpfs fixture was retired.
+[Primitive evidence](evidence/post-r1/background-execution/bx-04-capacity-primitives.json).
+The read-only advisor passed twelve boundary tests. Thirteen fleet tests and
+the 106-file freeze passed. Source adds conservative preparation/commit timing,
+per-handler worker duration, pinned `jobs capacity` and `jobs advise` commands,
+and a bounded variable-CPU reference handler. These changes need native proof.
+Next build core41 and initialize `bx-04-capacity-01` on port18126; qualify native
+observations/timing, then repeat BG-04 before the sustained comparisons.
+No candidate or site has been created for BX-04 yet. Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is
 `.local/background-qualification/bx-03-recurrence-01/bx03-recovery.json`, passed.
 Do not replay its retired realm. BX-05 remains queued. No user blocker.
 Gate progress is 3/5 (roughly 60%), separate from acceptance counts.
+
+BX-04 checklist:
+
+- [x] Fix admitted workload, failure cases and quantitative latency/headroom targets.
+- [x] Verify bounded SQL classification and pure advisor boundary behavior.
+- [ ] Qualify native telemetry, timing, pins and read-only CLI advice.
+- [ ] Repeat the original BG-04 paired native web/reminder/bulk workload.
+- [ ] Measure sustained hot-workspace, 70-workspace and variable-duration load.
+- [ ] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost.
+- [ ] Qualify process loss, fairness, recurring bursts, saturation and stale metrics.
+- [ ] Decide automatic-sizing/broker/pool changes from evidence; qualify any selected controller.
+- [ ] Record final evidence and retire owned qualification assets.
 
 BX-03 checklist:
 
