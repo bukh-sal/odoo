@@ -1,0 +1,15 @@
+{
+  "gate": "CF-02",
+  "result": "passed",
+  "checks": [
+    "CF-C",
+    "CF-D"
+  ],
+  "weight": 20,
+  "kit_manifest_sha256": "30555476a7721cd7f151ab39ee5552c70260e21c60acc6a397ba74dc06421042",
+  "source_commit": "cbf5c91d2c4f8c5220266d3489ed6d10ffd7a13b",
+  "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+  "reproduction": "../../G7/cf02-foundation-repro-01/qualification.json",
+  "assembly": "cf-02-assembly.json",
+  "limits": "Draft kit verified; clean operator/install rehearsal and final closure remain CF-05."
+}

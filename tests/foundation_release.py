@@ -17,7 +17,7 @@ from stress_sites import ADDONS, POSTGRES, PROXY, SEED_APP
 from modular_platform.catalog import Catalog
 from modular_platform.deployment import DockerObserver
 from modular_platform.lifecycle_planning import prepare_current_install_targets, installation_id
-from modular_platform.native_executor import StagedNativeExecutor
+from modular_platform.native_executor import NativeExecutor
 from modular_platform.operator_store import OperatorStore
 from stress_http import StressClient
 
@@ -27,6 +27,10 @@ class FoundationSite(BackgroundSite):
         self.args = args
         self.local = ROOT / '.local/foundation-release' / args.run / args.site
         self.private = self.local / 'operator'
+
+    def provision(self):
+        for action in ('prepare', 'initialize', 'observe', 'install_notes', 'install_background', 'workflow'):
+            getattr(self, action)()
 
     def prepare(self):
         record = load(self.args.candidate)
@@ -89,7 +93,7 @@ class FoundationSite(BackgroundSite):
         validator = configuration(self.private / 'trust.json')
         catalog_path = self.private / 'catalog'
         catalog = Catalog(catalog_path, validator, readonly=True)
-        executor = StagedNativeExecutor(OperatorStore(self.private / 'control'), target_path, catalog_path, validator)
+        executor = NativeExecutor(OperatorStore(self.private / 'control'), target_path, catalog_path, validator)
         observed = executor.observer.read()
         fixture = load(self.local / 'fixtures.json')
         targets = [dict(installation_id=installation_id(observed['sites'][0], plugin),
@@ -105,12 +109,32 @@ class FoundationSite(BackgroundSite):
         store.register(bundle, executor._validate())
         store.review(result['operation_id'], executor._validate())
         store.approve(result['operation_id'], exact_hash=bundle['plan_hash'], noninteractive=True,
-                      revalidate=executor._validate(), acknowledgments={'trust_expansion': True, 'permission_expansion': True})
+                      revalidate=executor._validate(), acknowledgments={'destructive': False, 'trust_expansion': True, 'permission_expansion': True})
         result['phase'] = 'applying'
         write(path, result)
         applied = executor.apply(result['operation_id'])
         assert applied['state'] == 'completed'
         result.update(phase='verified', image=load(target_path)['image_id'])
+        write(path, result)
+        print(json.dumps(result))
+
+    def resume_notes_install(self):
+        # Only the observed pre-mutation acknowledgement refusal is resumable.
+        path = self.local / 'notes-install.json'
+        result = load(path)
+        assert result['phase'] == 'registering'
+        executor = NativeExecutor(OperatorStore(self.private / 'control'), self.private / 'target.json',
+                                  self.private / 'catalog', configuration(self.private / 'trust.json'))
+        status = executor.store.status(result['operation_id'])
+        assert status['state'] == 'awaiting_operator_approval' and not status['mutation_started']
+        executor.store.approve(result['operation_id'], exact_hash=result['plan_hash'], noninteractive=True,
+            revalidate=executor._validate(),
+            acknowledgments={'destructive': False, 'trust_expansion': True, 'permission_expansion': True})
+        result['phase'] = 'applying'
+        write(path, result)
+        applied = executor.apply(result['operation_id'])
+        assert applied['state'] == 'completed'
+        result.update(phase='verified', image=load(self.private / 'target.json')['image_id'])
         write(path, result)
         print(json.dumps(result))
 
@@ -157,7 +181,7 @@ class FoundationSite(BackgroundSite):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=['prepare', 'initialize', 'observe', 'status', 'install_notes', 'install_background', 'workflow'])
+    parser.add_argument('phase', choices=['provision', 'prepare', 'initialize', 'observe', 'status', 'install_notes', 'resume_notes_install', 'install_background', 'workflow'])
     parser.add_argument('site', choices=ADDONS)
     parser.add_argument('--run', default='cf-01')
     parser.add_argument('--candidate', type=Path)

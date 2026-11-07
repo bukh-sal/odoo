@@ -2,39 +2,44 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T19:03:01Z
+- Updated UTC: 2026-11-07T19:24:24.885991+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **CF-02 release inputs in progress.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
-- Active item: **CF-02: build/reproduce current common image and assemble declared release inputs.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
+- Current phase/gate: **CF-04 shared migration and independent recovery in progress.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
+- Active item: **CF-04: upgrade Maintenance, then fault/restore/separately resume Aurora while its peer works.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
 - Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Consolidated foundation release (current goal)
 
-User authorized the full goal on7 November2026. One active item: **CF-02**.
-Progress **10/100 weighted points;3/12 CF checks verified**. Original R1 remains99/99.
+User authorized the full goal on7 November2026. One active item: **CF-04**.
+Progress **50/100 weighted points;6/12 CF checks verified**. Original R1 remains99/99.
 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
 | CF-01 |10| passed | [x] CF-A policy/freeze; [x] CF-B baseline feasibility | [Freeze](evidence/post-r1/foundation-release/cf-01-freeze.json). [Baseline decision](evidence/post-r1/foundation-release/cf-01-decision.json); core30 boot/current observation passed. |
-| CF-02 |20| in_progress | [x] CF-C reproducible image; [ ] CF-D kit inputs | Imagec029eecb and independent no-cache/network-disabled ff699881 reproduce exact inventoryda706465; kit assembly next. |
-| CF-03 |20| not_started | [ ] CF-E distinct installed apps; [ ] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
-| CF-04 |35| not_started | [ ] CF-G migration; [ ] CF-H closed fault; [ ] CF-I fresh restore/resume/forward; [ ] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
+| CF-02 |20| passed | [x] CF-C reproducible image; [x] CF-D kit inputs | Imagec029eecb and independent no-cache/network-disabled ff699881 reproduce exact inventoryda706465; kit assembly next. |
+| CF-03 |20| passed | [x] CF-E distinct installed apps; [x] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
+| CF-04 |35| in_progress | [ ] CF-G migration; [ ] CF-H closed fault; [ ] CF-I fresh restore/resume/forward; [ ] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
 | CF-05 |15| not_started | [ ] CF-K worker/regression/UI; [ ] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |
 
 Current blockers: none. Docker Desktop Linux engine was stopped; local start
 succeeded (engine29.9.2). No pre-existing container/data has been changed.
 
-Resume capsule (CF takes precedence over historical capsules below): CF-01
-[passed](evidence/post-r1/foundation-release/cf-01-decision.json). Owned Aurora
-project`mp-r0-r1release2fc90990a56f` is core-only ready on18130, image18f2c5a,
-configuration1, populated Aurora app; no uncertain operation. Maintenance is
-not provisioned. Next CF-02: build core45/current packages under the exact same
-policy, independently reproduce inventory, assemble/rehearse the local kit.
-Do not alter build inputs while a builder is active. Raw logs remain private.
+Resume capsule (CF takes precedence over historical capsules below): CF-01/02/03
+passed; CF-04 active. Two core30/config3/image18f2c5a targets: Aurora
+project2fc90990a56f on18130 and Maintenance494ba8611541 on18131. Both Notes and
+background installs completed; native workflows/permissions passed. Each has
+three real scheduled jobs (one old claimed report), two background task rows and
+one synthetic retained attachment. Initial Aurora seed requested retired report1
+and rolled back completely (0tasks/0jobs/0attachments observed); explicit version2
+seed passed on a fresh diagnostic label, then passed on Maintenance. No other
+mutation is uncertain. Current reproduced imagec029eecb/kit30555476 awaits the
+common core30-to45 transition. Next command: `tests/foundation_lifecycle.py
+upgrade maintenance --candidate docs/evidence/G7/cf02-foundation-current-01/candidate-build.json`.
+Then verify queue timing/claim fence and peer roles before faulting Aurora.
 
 ## Post-R1 work
 

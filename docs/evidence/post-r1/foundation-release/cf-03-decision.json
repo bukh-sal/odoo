@@ -1,0 +1,204 @@
+{
+  "gate": "CF-03",
+  "result": "passed",
+  "checks": [
+    "CF-E",
+    "CF-F"
+  ],
+  "weight": 20,
+  "utc": "2026-11-07T19:24:24.885991+00:00",
+  "sites": {
+    "aurora": {
+      "observation": {
+        "result": "passed",
+        "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+        "generation": 1,
+        "native_modules": {
+          "auth_passkey": "19.0.1.1",
+          "auth_password_policy": "19.0.1.0",
+          "auth_totp": "19.0.1.0",
+          "base": "19.0.1.3",
+          "base_import": "19.0.2.0",
+          "base_setup": "19.0.1.0",
+          "bus": "19.0.1.0",
+          "html_editor": "19.0.1.0",
+          "iap": "19.0.1.1",
+          "mp_aurora_tasks": "19.0.0.1.0",
+          "mp_compat": "19.0.0.1.1",
+          "mp_core": "19.0.0.1.30",
+          "mp_identity": "19.0.0.1.10",
+          "mp_shell": "19.0.0.1.19",
+          "web": "19.0.1.0",
+          "web_tour": "19.0.1.0"
+        },
+        "observed_installations": 0,
+        "common_policy": true,
+        "distinct_app_set": true
+      },
+      "workflow": {
+        "result": "passed",
+        "label": "baseline",
+        "site": "aurora",
+        "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+        "stock_list_form": true,
+        "workflow_preserved": true,
+        "app_denial": true,
+        "scoped_notes": {
+          "A": 1,
+          "B": 2
+        },
+        "cross_scope_and_viewer_denied": true
+      },
+      "installations": {
+        "notes": {
+          "phase": "verified",
+          "operation_id": "9f7edd97-c783-41af-9a20-11202b54c648",
+          "plan_hash": "sha256:b077c6a04ee79c74f0f0d22f33d6aaceb3bd8419919d45e7309027621be74577",
+          "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751"
+        },
+        "background": {
+          "phase": "verified",
+          "operation_id": "59d0d477-b229-4af4-ad7b-4623a8e70d73",
+          "plan_hash": "sha256:b0f1bafa93915ffb696a11f8a9fa80458672f77f165efacc9d53121d6a13a1e0",
+          "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751"
+        }
+      },
+      "queue": {
+        "0a451180-01f5-4d4b-a96d-c136c5fcc2fc": {
+          "at": "2026-11-07T23:23:39",
+          "key": "cf-pending",
+          "actor": 2,
+          "error": null,
+          "state": "pending",
+          "handler": "org.example.background:report",
+          "attempts": 0,
+          "deadline": "2026-11-08T03:23:39",
+          "workspace": 1,
+          "generation": 0
+        },
+        "60a00ac0-90ae-4beb-831e-e0915b28bf1c": {
+          "at": "2026-11-07T23:23:39",
+          "key": "da195c58-6657-4138-9ebd-36cde44be5e8:1",
+          "actor": 2,
+          "error": null,
+          "state": "pending",
+          "handler": "org.example.background:remind",
+          "attempts": 0,
+          "deadline": "2026-11-07T23:24:39",
+          "workspace": 1,
+          "generation": 0
+        },
+        "c5d0e649-d53a-47ed-b500-7e3e1627c1c8": {
+          "at": "2026-11-07T19:23:39",
+          "key": "cf-running",
+          "actor": 2,
+          "error": null,
+          "state": "running",
+          "handler": "org.example.background:report",
+          "attempts": 1,
+          "deadline": "2026-11-07T23:23:39",
+          "workspace": 1,
+          "generation": 1
+        }
+      },
+      "attachment_checksum": "58f40ebba9fbeb95a81ab926f8e93d804fb650ad"
+    },
+    "maintenance": {
+      "observation": {
+        "result": "passed",
+        "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+        "generation": 1,
+        "native_modules": {
+          "auth_passkey": "19.0.1.1",
+          "auth_password_policy": "19.0.1.0",
+          "auth_totp": "19.0.1.0",
+          "base": "19.0.1.3",
+          "base_import": "19.0.2.0",
+          "base_setup": "19.0.1.0",
+          "bus": "19.0.1.0",
+          "html_editor": "19.0.1.0",
+          "iap": "19.0.1.1",
+          "mail": "19.0.1.19",
+          "maintenance": "19.0.1.0",
+          "mp_compat": "19.0.0.1.1",
+          "mp_core": "19.0.0.1.30",
+          "mp_identity": "19.0.0.1.10",
+          "mp_shell": "19.0.0.1.19",
+          "web": "19.0.1.0",
+          "web_tour": "19.0.1.0"
+        },
+        "observed_installations": 0,
+        "common_policy": true,
+        "distinct_app_set": true
+      },
+      "workflow": {
+        "result": "passed",
+        "label": "baseline",
+        "site": "maintenance",
+        "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+        "stock_list_form": true,
+        "workflow_preserved": true,
+        "app_denial": true,
+        "scoped_notes": {
+          "A": 1,
+          "B": 2
+        },
+        "cross_scope_and_viewer_denied": true
+      },
+      "installations": {
+        "notes": {
+          "phase": "verified",
+          "operation_id": "62c7468f-3e2a-438d-8ca6-aff1b09ac609",
+          "plan_hash": "sha256:d7d9d605d171e41ed4350eba736fe92f2012b795345ac43d19c6d20703574e3e",
+          "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751"
+        },
+        "background": {
+          "phase": "verified",
+          "operation_id": "23ef771a-353b-441b-9ed8-afe020c68297",
+          "plan_hash": "sha256:15524fc6e8115bba1ce3717e4b77c2717b970605ecc048c6d365815e9ab4a45c",
+          "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751"
+        }
+      },
+      "queue": {
+        "d1651559-7b05-4300-8d52-e0f26c7149c1": {
+          "at": "2026-11-07T19:23:47",
+          "key": "cf-running",
+          "actor": 2,
+          "error": null,
+          "state": "running",
+          "handler": "org.example.background:report",
+          "attempts": 1,
+          "deadline": "2026-11-07T23:23:47",
+          "workspace": 1,
+          "generation": 1
+        },
+        "f1e2e512-611c-4a90-978f-b0fed353c64b": {
+          "at": "2026-11-07T23:23:47",
+          "key": "cf-pending",
+          "actor": 2,
+          "error": null,
+          "state": "pending",
+          "handler": "org.example.background:report",
+          "attempts": 0,
+          "deadline": "2026-11-08T03:23:47",
+          "workspace": 1,
+          "generation": 0
+        },
+        "f587a9c6-49cd-494b-8780-5969b7db96be": {
+          "at": "2026-11-07T23:23:47",
+          "key": "50db6973-f82a-49be-9fe9-2ed726c96992:1",
+          "actor": 2,
+          "error": null,
+          "state": "pending",
+          "handler": "org.example.background:remind",
+          "attempts": 0,
+          "deadline": "2026-11-07T23:24:47",
+          "workspace": 1,
+          "generation": 0
+        }
+      },
+      "attachment_checksum": "a437301db6ee2e5357bc16f33aa47a14d933e13d"
+    }
+  },
+  "limits": "Synthetic apps/data, common recomposed core30 baseline; current upgrade/recovery remains CF04."
+}
