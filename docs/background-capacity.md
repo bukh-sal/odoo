@@ -46,6 +46,9 @@ by the report. An arrival forecast with no observed workspace holds advice.
 Pool maxima plus producer count may not exceed eight. Urgent capacity receives
 the shared spare connection budget first. Running work is conservatively charged
 a full handler estimate, not discounted using unverified progress percentages.
+Warm lanes contribute immediately; only newly requested lanes lose startup time.
+The warm capacity required for the start target is a separate diagnostic from
+the drain-window estimate. Cold capacity cannot repair an already late burst.
 
 The queue snapshot does not know HTTP latency or PostgreSQL CPU headroom.
 Attach a `health` object from a trusted deployment monitor or the qualification

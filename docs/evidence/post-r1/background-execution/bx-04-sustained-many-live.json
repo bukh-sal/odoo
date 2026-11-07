@@ -1,0 +1,117 @@
+{
+  "phase": "passed",
+  "case": "many",
+  "attempt": 1,
+  "image": "sha256:4a9a06242dfd290f8724d110789782aaaa2036cced6a56054f5ab89965325db6",
+  "seconds": 180,
+  "bulk_rate": 0.4,
+  "harness_sha256": "90a31a787245eda982abe9ad2c19d308bc280130e9e5db45f49e476af0a5518e",
+  "checks": {
+    "web": true,
+    "urgent": true,
+    "oldest_urgent": true,
+    "bulk": true,
+    "connections": true,
+    "locks": true,
+    "cpu": true,
+    "listener": true
+  },
+  "idle": {
+    "list": {
+      "count": 200,
+      "median_ms": 110.0,
+      "p95_ms": 188.0,
+      "max_ms": 219.0
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 47.0,
+      "p95_ms": 78.0,
+      "max_ms": 94.0
+    }
+  },
+  "mixed": {
+    "list": {
+      "count": 1360,
+      "median_ms": 109.0,
+      "p95_ms": 187.0,
+      "max_ms": 297.0
+    },
+    "detail": {
+      "count": 1340,
+      "median_ms": 47.0,
+      "p95_ms": 78.0,
+      "max_ms": 141.0
+    }
+  },
+  "timings": {
+    "urgent": {
+      "start": {
+        "count": 150,
+        "median_ms": 206.0,
+        "p95_ms": 2035,
+        "max_ms": 2520
+      },
+      "worker": {
+        "count": 150,
+        "median_ms": 76.0,
+        "p95_ms": 97,
+        "max_ms": 147
+      }
+    },
+    "bulk": {
+      "start": {
+        "count": 72,
+        "median_ms": 154.5,
+        "p95_ms": 291,
+        "max_ms": 348
+      },
+      "worker": {
+        "count": 72,
+        "median_ms": 1087.5,
+        "p95_ms": 1230,
+        "max_ms": 1337
+      }
+    }
+  },
+  "scoped_outputs": {
+    "loads": 18,
+    "reports": 54,
+    "repeated_attempts": 0
+  },
+  "notifications": 150,
+  "notes_unchanged": true,
+  "listen_delta": {
+    "ListenOverflows": 0,
+    "ListenDrops": 0
+  },
+  "final_reading": {
+    "at": 1794032826.825151,
+    "ready": 0,
+    "failed": 0,
+    "running": 0,
+    "completed": 222,
+    "connections": 16,
+    "max_connections": 64,
+    "lock_wait_seconds": 0
+  },
+  "gate": "BX-04",
+  "arrival_mode": "fresh scoped transaction per bulk arrival",
+  "workspaces_observed": 70,
+  "submissions": 72,
+  "commit_delay_ms": {
+    "p95": 90.597,
+    "maximum": 121.474
+  },
+  "record_sha256": "fd6b6ddabd309dae01424baa4c520f192d5222da56cf23f4592f0d15abbcfa20",
+  "connection_fraction_peak": 0.28125,
+  "lock_wait_seconds_peak": 0,
+  "postgres_cpu_fraction_peak": 0.11770667054189703,
+  "per_attempt_trace": {
+    "claims": 222,
+    "ends": 222,
+    "generations_matched": true
+  },
+  "drained": true,
+  "limits": "Admitted180s distributed trace and live enqueue pressure only; simultaneous70-ready-workspace fairness, scaling and fault tests remain separate."
+}

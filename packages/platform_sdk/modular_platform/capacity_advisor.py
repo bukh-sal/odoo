@@ -19,6 +19,17 @@ def instant(value):
     return parsed.astimezone(timezone.utc)
 
 
+def _needed(work,budget,current,startup,minimum):
+    """Warm lanes contribute immediately; only additional lanes lose startup."""
+    if work<=current*budget:
+        return max(minimum,math.ceil(work/budget))
+    usable=budget-startup
+    if usable<=0:
+        # This is the prewarmed requirement; a late cold start cannot meet it.
+        return max(minimum,current+1,math.ceil(work/budget))
+    return max(minimum,current+math.ceil((work-current*budget)/usable))
+
+
 def advise(observation,policy,*,now=None,expected_pins=None):
     """Hold on unknown headroom; never turn this report into an approval."""
     now=now or datetime.now(timezone.utc)
@@ -95,7 +106,7 @@ def advise(observation,policy,*,now=None,expected_pins=None):
     spare_connections=max(0,(connection_limit-int(used))//3)
     for pool in ('urgent','bulk'):
         spec=policy['pools'][pool]
-        work={};ready=0;oldest=0;validity=None;forecasts={};unresolved=[]
+        work={};ready=0;ready_seconds=0;running_seconds=0;oldest=0;validity=None;forecasts={};unresolved=[]
         for group in groups:
             if group['pool']!=pool or not group['current']:continue
             queued=number(group['ready'],0,100000);running=number(group['running'],0,8)
@@ -106,6 +117,7 @@ def advise(observation,policy,*,now=None,expected_pins=None):
                 if queued or running:unresolved.append(key)
                 continue
             ready+=queued;oldest=max(oldest,number(group['original_wait_ms'],0,1e15)/1000)
+            ready_seconds+=queued*estimate['seconds'];running_seconds+=running*estimate['seconds']
             workspace=str(group['workspace'])
             if queued or running:work[workspace]=work.get(workspace,0)+(queued+running)*estimate['seconds']
             forecasts.setdefault(key,set()).add(workspace)
@@ -120,28 +132,40 @@ def advise(observation,policy,*,now=None,expected_pins=None):
             for workspace in workspaces:
                 if arrival:work[workspace]=work.get(workspace,0)+arrival/len(workspaces)
         total=sum(work.values());usable=window-startup
-        needed=max(spec['minimum'],math.ceil(total/usable)) if usable>0 else spec['maximum']+1
+        current=int(number(observation.get('ready_lanes',{}).get(pool,0),0,8))
+        needed=_needed(total,window,current,startup,spec['minimum'])
         slot_limit=max(spec['minimum'],len(work))
         other_min=sum(value for name,value in minimums.items() if name!=pool)
         role_limit=8-producer-other_min
-        current=number(observation.get('ready_lanes',{}).get(pool,0),0,8)
         # Dedicated slot + work + heartbeat sessions budget three per new lane.
         connection_cap=int(current)+spare_connections
         cap=min(spec['maximum'],role_limit,slot_limit,connection_cap)
         constraints=[]
         if needed>cap:constraints.append('lane_or_connection_limit')
-        if work and max(work.values())>max(0,usable):constraints.append('workspace_serial_limit')
-        if usable<=0:constraints.append('startup_exceeds_drain_window')
-        if ready and startup>=max(0,spec['start_target_seconds']-oldest):constraints.append('reactive_start_too_late')
-        if validity is not None and startup>=validity:constraints.append('reactive_start_after_expiry')
+        if work and max(work.values())>max(0,window if current else usable):constraints.append('workspace_serial_limit')
+        if needed>current and usable<=0:constraints.append('startup_exceeds_drain_window')
+        remaining=max(0,spec['start_target_seconds']-oldest)
+        warm_start_work=running_seconds+.95*ready_seconds
+        warm_needed=math.ceil(warm_start_work/remaining) if remaining>0 else (current+1 if ready else 0)
+        if ready and warm_needed>current:
+            constraints.append('start_target_at_risk')
+            if startup>=remaining:constraints.append('reactive_start_too_late')
+        if needed>current and validity is not None and startup>=validity:constraints.append('reactive_start_after_expiry')
         proposed=min(needed,cap)
         spare_connections-=max(0,proposed-int(current))
-        if cap<spec['minimum']:constraints.append('insufficient_warm_capacity')
-        predicted=max(total/max(1,proposed),max(work.values(),default=0))+startup
+        if cap<spec['minimum']:
+            constraints.append('insufficient_warm_capacity')
+            reasons.append('insufficient_warm_capacity:'+pool)
+        warm=min(current,proposed)
+        if total==0:predicted=0
+        elif warm and total<=warm*startup:predicted=total/warm
+        else:predicted=(total+max(0,proposed-warm)*startup)/max(1,proposed)
+        predicted=max(predicted,max(work.values(),default=0)+(startup if not warm and total else 0))
         pools[pool]=dict(ready=ready,worker_seconds=round(total,3),workspace_slots=len(work),
-            needed_lanes=needed,advised_lanes=proposed,predicted_drain_seconds=round(predicted,3),
+            needed_lanes=needed,advised_lanes=proposed,
+            predicted_drain_seconds=round(predicted,3) if proposed or not total else None,
             oldest_original_wait_seconds=oldest,constraints=constraints,
-            current_ready_lanes=current,startup_seconds=startup)
+            current_ready_lanes=current,startup_seconds=startup,needed_warm_lanes_for_start_target=warm_needed)
     if reasons:
         for value in pools.values():
             value['estimated_lanes']=value['advised_lanes'];value['advised_lanes']=None

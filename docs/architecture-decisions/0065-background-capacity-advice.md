@@ -29,7 +29,10 @@ For a handler, estimate work using the greater of its explicitly configured
 default and recent p95 worker duration. Report sample count and fallback use.
 Estimate ready and running worker-seconds plus explicitly forecast arrivals over
 the drain window. Running work uses a full estimate conservatively. A target
-includes measured startup reserve and is capped by approved pool bounds, the
+credits already warm lanes for the whole window; only additional lanes lose
+the measured startup reserve. Predict zero work time for an empty queue, and
+report fast bursts needing more warm capacity separately from the drain target.
+The target is capped by approved pool bounds, the
 eight-role site limit, available workspace slots and database connection budget.
 Report an unattainable target instead of suggesting idle lanes. Count-based
 advice remains a comparison policy. Keep urgent lanes warm. Never recommend

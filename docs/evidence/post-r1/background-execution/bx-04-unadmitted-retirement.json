@@ -1,0 +1,8 @@
+{
+  "image": "sha256:084edce05a423d20a7f1a6188bd6a407e9a6e6e3877c85e1d5400da379c05061",
+  "tag": "modular-platform:stage-20261107t063519045925z",
+  "reason": "Unadmitted warm-capacity candidate replaced before any staging or deployment; added the exhausted-connection/minimum-capacity hold boundary.",
+  "containers": 0,
+  "volumes": 0,
+  "networks": 0
+}

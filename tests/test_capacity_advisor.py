@@ -36,7 +36,7 @@ class AdviceTests(unittest.TestCase):
         self.assertEqual(result['state'],'advised')
         bulk=result['pools']['bulk']
         self.assertEqual((bulk['worker_seconds'],bulk['needed_lanes'],bulk['advised_lanes']),(240,5,5))
-        self.assertEqual(bulk['predicted_drain_seconds'],58)
+        self.assertEqual(bulk['predicted_drain_seconds'],54)
         self.assertTrue(result['estimates']['report:2']['fallback'])
         self.assertFalse(result['mutation_authorized'])
 
@@ -45,7 +45,7 @@ class AdviceTests(unittest.TestCase):
         result=self.run_advice(o,p)['pools']['bulk']
         self.assertEqual(result['advised_lanes'],1)
         self.assertIn('workspace_serial_limit',result['constraints'])
-        self.assertEqual(result['predicted_drain_seconds'],250)
+        self.assertEqual(result['predicted_drain_seconds'],240)
 
     def test_nonrunnable_and_foreign_release_work_never_becomes_demand(self):
         o,p=fixtures()
@@ -117,6 +117,39 @@ class AdviceTests(unittest.TestCase):
     def test_inputs_remain_unchanged(self):
         o,p=fixtures();original=copy.deepcopy((o,p));self.run_advice(o,p)
         self.assertEqual((o,p),original)
+
+    def test_warm_capacity_does_not_pay_startup_again(self):
+        o,p=fixtures()
+        for row in o['groups']:row['ready']=10
+        p['startup_seconds']=100
+        result=self.run_advice(o,p)['pools']['bulk']
+        self.assertEqual(result['worker_seconds'],120)
+        self.assertEqual(result['advised_lanes'],2)
+        self.assertEqual(result['predicted_drain_seconds'],60)
+        self.assertNotIn('startup_exceeds_drain_window',result['constraints'])
+
+    def test_empty_queue_has_zero_predicted_work_time(self):
+        o,p=fixtures()
+        for row in o['groups']:row['ready']=0
+        self.assertEqual(self.run_advice(o,p)['pools']['bulk']['predicted_drain_seconds'],0)
+
+    def test_fast_burst_requires_warm_capacity_even_when_drain_window_fits(self):
+        o,p=fixtures()
+        p['handlers']['urgent:1']=dict(pool='urgent',default_seconds=.1,arrival_per_second=0)
+        o['groups']=[dict(o['groups'][0],pool='urgent',handler='urgent',version=1,ready=150)]
+        result=self.run_advice(o,p)['pools']['urgent']
+        self.assertEqual(result['advised_lanes'],1)
+        self.assertEqual(result['needed_warm_lanes_for_start_target'],5)
+        self.assertIn('start_target_at_risk',result['constraints'])
+        self.assertIn('reactive_start_too_late',result['constraints'])
+
+    def test_exhausted_connections_cannot_recommend_scale_to_zero(self):
+        o,p=fixtures();o['database']['connections']=70;o['ready_lanes']['bulk']=0
+        result=self.run_advice(o,p)
+        self.assertEqual(result['state'],'hold')
+        self.assertIn('insufficient_warm_capacity:bulk',result['reasons'])
+        self.assertIsNone(result['pools']['bulk']['advised_lanes'])
+        self.assertIsNone(result['pools']['bulk']['predicted_drain_seconds'])
 
 
 if __name__=='__main__':unittest.main()

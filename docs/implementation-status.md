@@ -181,16 +181,29 @@ p95 187ms. Both web p95 bounds, connection/CPU/lock headroom and listener checks
 passed. The profile drained. [Hot evidence](evidence/post-r1/background-execution/bx-04-sustained-hot.json).
 Its source is checkpoint0c110ef8fba, private result `bx04-sustained-hot-02.json`;
 this trace preloaded future eligibility, and makes no fresh-enqueue claim.
-The many-workspace live case is now running in session15630. It enqueues72
-bulk jobs at0.4/s in fresh scoped transactions across70 workspaces, alongside
-150 preloaded reminders and paired stock Odoo HTTP for180s. Native producer
-container will be `mp-r0-r1releaseb152ddffba06-bx04-live-producer-many-live`;
-its source is committed at0fc6136c527. Private result:
-`.local/background-qualification/bx-04-capacity-01/bx04-sustained-many-live.json`.
-Do not replay this seed/producer. Inspect result and source logs before any
-recovery. On success, producer exits, jobs settle, and the reviewed fleet drains.
-Next qualify fairness/burst/advice comparisons, saturation/staleness, process
-loss and recurrence. No unresolved external effect or user blocker.
+The70-workspace live case passed all eight fixed targets:222 single-attempt
+jobs including72 fresh bulk commits,150 scoped notifications, exact report/CPU
+outputs and unchanged Notes. Urgent start p95 2.035s/max2.520s; bulk start p95
+291ms/max348ms. Commit delay p95 90.597ms/max121.474ms, connection fraction peak
+28.125%, PostgreSQL CPU peak11.771%, no lock waits or listen drops. Mixed web
+p95 list/detail187/78ms passed both relative and absolute bounds. The native
+producer exited and all roles drained. [Live evidence](evidence/post-r1/background-execution/bx-04-sustained-many-live.json).
+Read-only capture preserved222 paired generation1 claims/ends before container
+removal; private trace is `many-live-worker-trace/` under this qualification realm.
+
+Next active check is burst/fairness and policy comparison. Before that comparison,
+corrected the advisor to credit warm lanes immediately, charge startup only to
+additional lanes, and hold when the connection budget cannot sustain the warm
+minimum. Fast bursts report warm-capacity risk separately. Sixteen advisor
+boundaries and the106-file freeze pass. Core42 build02 is being prepared after
+retiring unadmitted candidate084edce0; no deployed state used that candidate.
+Current deployed image remains4a9a06242dfd/core41/reference0.2.1, generation4;
+all jobs are terminal, fleet paused, and no producer/test/mutation is active.
+When build02 finishes, run `tests/background_capacity_upgrade.py` with its
+candidate JSON once. The helper records the operation before apply and checks
+all task/notification/Notes data through the populated core-only upgrade.
+Do not replay any prior sustained seed/helper. Complete the burst/advice,
+saturation/stale telemetry, process-loss and recurring burst drills next.
 Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is
@@ -204,7 +217,7 @@ BX-04 checklist:
 - [x] Verify bounded SQL classification and pure advisor boundary behavior.
 - [x] Qualify native telemetry, timing, pins and read-only CLI advice.
 - [x] Repeat the original BG-04 paired native web/reminder/bulk workload.
-- [ ] Measure sustained hot-workspace, 70-workspace and variable-duration load.
+- [x] Measure sustained hot-workspace, 70-workspace and variable-duration load.
 - [ ] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost.
 - [ ] Qualify process loss, fairness, recurring bursts, saturation and stale metrics.
 - [ ] Decide automatic-sizing/broker/pool changes from evidence; qualify any selected controller.

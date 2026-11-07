@@ -236,6 +236,7 @@ def run(case,attempt=1,live=False):
         cpu=all(row['fraction']<=.85 for row in cpus if row['at']>=anchor+10),listener=not any(delta.values()))
     drained=probe.operator.run('drain');assert drained['state']=='paused' and not probe.operator._lanes()
     record.update(phase='passed' if all(passed.values()) else 'targets_missed',checks=passed,timings=timings,
+        per_job_claims=claims,per_job_ends=ends,
         scoped_outputs=row_checks,notifications=notifications,notes_unchanged=True,listen_delta=delta,drain=drained)
     write(path,record)
     print(json.dumps(dict(phase=record['phase'],checks=passed,timings=timings)),flush=True)
