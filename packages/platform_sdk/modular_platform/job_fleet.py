@@ -1,8 +1,10 @@
 """Independent reviewed worker profiles and resumable Docker reconciliation."""
 
 from datetime import datetime, timedelta, timezone
+import hashlib
 import json
 import os
+from pathlib import Path
 import re
 import time
 from uuid import uuid4
@@ -13,7 +15,7 @@ from .plans import data_digest
 from .worker_operator import private_json
 
 
-POOLS = ('urgent', 'bulk')
+POOLS = ('urgent', 'bulk', 'producer')
 HEALTH_COMMAND = '/venv/bin/python -m modular_platform.job_health'
 
 
@@ -39,10 +41,10 @@ class JobFleet:
                     target_digest=data_digest(op.target))
 
     @staticmethod
-    def _spec(urgent_lanes, bulk_lanes, cpu_millis, memory_mib, shutdown_seconds):
-        counts = dict(urgent=urgent_lanes, bulk=bulk_lanes)
+    def _spec(urgent_lanes, bulk_lanes, cpu_millis, memory_mib, shutdown_seconds, producer_lanes=0):
+        counts = dict(urgent=urgent_lanes, bulk=bulk_lanes, producer=producer_lanes)
         if (any(type(value) is not int or not 0 <= value <= 8 for value in counts.values())
-                or not 1 <= sum(counts.values()) <= 8
+                or producer_lanes not in (0,1) or not 1 <= sum(counts.values()) <= 8
                 or type(cpu_millis) is not int or not 250 <= cpu_millis <= 2000
                 or type(memory_mib) is not int or not 256 <= memory_mib <= 2048
                 or type(shutdown_seconds) is not int or not 5 <= shutdown_seconds <= 3605):
@@ -55,9 +57,9 @@ class JobFleet:
                           host=data_digest(row['HostConfig']),running=row['State']['Running'])
                 for name,row in lanes.items()}
 
-    def review(self, *, urgent_lanes=1, bulk_lanes=2, cpu_millis=1000, memory_mib=768, shutdown_seconds=45):
+    def review(self, *, urgent_lanes=1, bulk_lanes=2, producer_lanes=0, cpu_millis=1000, memory_mib=768, shutdown_seconds=45):
         op = self.operator
-        spec = self._spec(urgent_lanes, bulk_lanes, cpu_millis, memory_mib, shutdown_seconds)
+        spec = self._spec(urgent_lanes, bulk_lanes, cpu_millis, memory_mib, shutdown_seconds, producer_lanes)
         runtime = op.runtime()
         lanes = op._lanes()
         if any(not row['Config']['Labels'].get('com.modular.job_template') for row in lanes.values()):
@@ -68,7 +70,19 @@ class JobFleet:
             raise OperatorError('Requested worker limits exceed the Docker host capacity')
         pins = self._pins(runtime)
         previous = self.desired()
+        recurrence=None
+        if producer_lanes or (previous or {}).get('recurrence_policy') is not None:
+            files=runtime['inventory']['files']
+            for filename in ('recurrence_runner.py','recurrence_authority.py'):
+                path=Path(__file__).with_name(filename)
+                if files.get('packages/platform_sdk/modular_platform/'+filename)!=hashlib.sha256(path.read_bytes()).hexdigest():
+                    raise OperatorError('Recurring producer requires its exact reviewed runtime')
+            observed=op._run_admin(runtime,str(uuid4()),['recurrence-authority'])
+            if observed.get('event')!='recurrence_authority' or observed.get('policy',{}).get('site_id')!=op.site['site_id']:
+                raise OperatorError('Exact native recurrence authority review required')
+            recurrence=observed['policy']
         value = dict(protocol=1, review_id=str(uuid4()), pins=pins, spec=spec,
+                     recurrence_policy=recurrence,
                      previous_digest=data_digest(previous), observed=self._observation(lanes),
                      reviewed_at=datetime.now(timezone.utc).isoformat())
         approval = data_digest(value)
@@ -99,6 +113,7 @@ class JobFleet:
         template=data_digest(dict(pins=value['pins'],resources={key:item for key,item in value['spec'].items() if key!='counts'}))
         accepted = sorted(set((desired or {}).get('accepted_templates',[])+([desired['template']] if desired else [])))
         target=dict(protocol=1,approval=approval,pins=value['pins'],spec=value['spec'],template=template,
+                    recurrence_policy=value.get('recurrence_policy'),
                     accepted_templates=accepted,state='active',drained_lanes=[],
                     generation=(desired['generation']+1 if desired else 1))
         _write_new(intent,dict(approval=approval,target=target))
@@ -125,7 +140,8 @@ class JobFleet:
         return (row['Image']==pins['image_id'] and expected_env<=env and config['User']=='10001:10001'
                 and config['Entrypoint']==['/venv/bin/python']
                 and config['Labels'].get('com.modular.job_template')==desired['template']
-                and config['Cmd']==['-m','modular_platform.job_runner','--pool',pool,'--poll-seconds','.25']
+                and config['Cmd']==(['-m','modular_platform.recurrence_runner','--poll-seconds','.25'] if pool=='producer'
+                    else ['-m','modular_platform.job_runner','--pool',pool,'--poll-seconds','.25'])
                 and host['ReadonlyRootfs'] and host['NanoCpus']==spec['cpu_millis']*1000000
                 and host['Memory']==spec['memory_mib']*1024**2 and host['PidsLimit']==128
                 and host['CapDrop']==['ALL'] and 'no-new-privileges' in host['SecurityOpt']
@@ -156,7 +172,7 @@ class JobFleet:
         records=[dict(name=name,pool=row['Config']['Labels']['com.modular.job_pool'],container=row['Id'],
                       running=row['State']['Running'],ready=self._healthy(row,desired),
                       matches_profile=self._matches(row,desired)) for name,row in sorted(lanes.items())]
-        pools={pool:dict(desired=desired['spec']['counts'][pool],
+        pools={pool:dict(desired=desired['spec']['counts'].get(pool,0),
                         running=sum(row['running'] for row in records if row['pool']==pool),
                         ready=sum(row['ready'] for row in records if row['pool']==pool),
                         drained=sum(f'-job-{pool}-' in name for name in desired['drained_lanes'])) for pool in POOLS}
@@ -212,7 +228,8 @@ class JobFleet:
                 '--health-timeout','3s','--health-retries','2','--health-start-period','10s',
                 '--label','com.modular.job_pool='+pool,'--label','com.modular.job_template='+desired['template'],
                 '--env','MP_EXPECTED_SITE_ID='+pins['site_id'],'--env','MP_EXPECTED_RELEASE_DIGEST='+pins['release_digest'],
-                *base,'-m','modular_platform.job_runner','--pool',pool,'--poll-seconds','.25')
+                *base,*(['-m','modular_platform.recurrence_runner','--poll-seconds','.25'] if pool=='producer'
+                    else ['-m','modular_platform.job_runner','--pool',pool,'--poll-seconds','.25']))
         deadline=time.monotonic()+30
         while True:
             result=self.status()
@@ -227,7 +244,7 @@ class JobFleet:
         if pool is None and lane is None:
             desired.update(state='paused')
         else:
-            if pool not in POOLS or type(lane) is not int or not 1<=lane<=desired['spec']['counts'][pool]:
+            if pool not in POOLS or type(lane) is not int or not 1<=lane<=desired['spec']['counts'].get(pool,0):
                 raise OperatorError('Exact configured pool and lane required')
             name=f'{self.operator.project}-job-{pool}-{lane}'
             desired['drained_lanes']=sorted(set(desired['drained_lanes'])|{name})

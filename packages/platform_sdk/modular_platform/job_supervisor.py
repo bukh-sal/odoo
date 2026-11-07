@@ -28,7 +28,7 @@ def report_progress(percent):
         reporter(percent)
 
 
-def supervise(args):
+def supervise(args, *, module='modular_platform.job_runner'):
     """Separate process enforces the hard deadline even if Python is stuck in C."""
     from modular_platform.job_runner import emit
     reading, writing = os.pipe()
@@ -44,8 +44,8 @@ def supervise(args):
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
     try:
-        process = subprocess.Popen([sys.executable,'-m','modular_platform.job_runner',
-            '--pool',args.pool,'--poll-seconds',str(args.poll_seconds),
+        process = subprocess.Popen([sys.executable,'-m',module,
+            *(['--pool',args.pool] if module=='modular_platform.job_runner' else []),'--poll-seconds',str(args.poll_seconds),
             '--_watchdog-fd',str(writing)], pass_fds=(writing,))
     finally:
         os.close(writing)

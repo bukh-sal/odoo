@@ -15,7 +15,7 @@ from .plans import data_digest
 from .worker_operator import private_json
 
 
-POOLS = {'urgent':1,'bulk':2}
+POOLS = {'urgent':1,'bulk':2,'producer':0}
 
 
 class JobOperator:
@@ -71,7 +71,7 @@ class JobOperator:
         for row in load_json(self.docker('inspect',*ids)):
             name=row['Name'].lstrip('/')
             pool=row['Config']['Labels']['com.modular.job_pool']
-            if pool not in POOLS or not re.fullmatch(re.escape(self.project+'-job-'+pool+'-')+r'[1-8]',name):
+            if pool not in POOLS or not re.fullmatch(re.escape(self.project+'-job-'+pool+'-')+(r'1' if pool=='producer' else r'[1-8]'),name):
                 raise OperatorError('Managed lane identity mismatch')
             result[name]=row
         return result

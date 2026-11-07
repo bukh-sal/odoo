@@ -133,9 +133,14 @@ recurrence without a dispatch mutation. The host helper also loaded in the
 retained stock image without the new recurrence module. [Native schema proof](evidence/post-r1/background-execution/bx-03-native-schema.json).
 The producer and native credential lifecycle profile remain unavailable.
 The current generic lifecycle fence refuses active technical credentials; do
-not weaken it. Next wire the native authorization adapter and optional producer
-role, then select the narrow reviewed native
-credential profile through the managed role. Qualify
+not weaken it. The native service adapter, supervised producer, producer role
+review and CLI flags are drafted but have only syntax/boundary verification.
+No producer has been started. Nine fleet boundaries and ten rule tests pass.
+Next connect the reviewed credential policy to native maintenance and recovery,
+including apply-time authority staleness checks, release reconciliation of
+schedules and conservative receipt/cursor overlay on fresh restore. Then bump
+core/platform to 0.1.38, build the complete candidate and qualify the adapter
+and producer through a reviewed upgrade of this schema-only fixture. Qualify
 duplicate ticks, downtime, edits, pause/revocation, overlap, maintenance and
 restore before closing BX-03. BX-04 and BX-05 remain queued. No blocker requires
 user action. Gate progress is 2/5 (about 40%), independently of check counts.

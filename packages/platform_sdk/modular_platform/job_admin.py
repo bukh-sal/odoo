@@ -141,7 +141,7 @@ def run_archive(cr, site, release, args):
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('command',choices=('metrics','history','review','apply','dispatch',*ARCHIVE_COMMANDS))
+    parser.add_argument('command',choices=('metrics','history','review','apply','dispatch','recurrence-authority',*ARCHIVE_COMMANDS))
     parser.add_argument('--job')
     parser.add_argument('--action',choices=ACTIONS)
     parser.add_argument('--evidence')
@@ -166,6 +166,12 @@ def main():
             cr.execute('SET TRANSACTION ISOLATION LEVEL READ COMMITTED')
         release=current_release(api.Environment(cr,1,{}))
         site,digest=release['site_id'],release['release_digest']
+        if args.command=='recurrence-authority':
+            from modular_platform.recurrence_authority import review
+            policy=review(cr,site)
+            cr.rollback()
+            emit(event='recurrence_authority',policy=policy)
+            return
         if args.command=='dispatch':
             durable.control(cr,site,digest)
             cr.rollback()
@@ -183,8 +189,10 @@ def main():
             cr.rollback()
             return
         if args.command=='metrics':
+            cr.execute('SELECT state,count(*) FROM mp_job_schedule WHERE site_id=%s GROUP BY state',[site])
+            schedules=dict(cr.fetchall())
             emit(event='job_metrics',pools={pool:queue_metrics(cr,site,digest,job_dispatch.routes_for(pool))
-                                           for pool in ('urgent','bulk')})
+                                           for pool in ('urgent','bulk')},schedules=schedules)
             cr.rollback()
             return
         row,review,approval=decision(cr,site,digest,args.job,args.action,args.evidence)

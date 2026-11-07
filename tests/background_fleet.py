@@ -41,7 +41,7 @@ class FleetProbe(Probe):
         assert 'initial' not in self.result['checks']
         assert self.operator.run('status')['state']=='unconfigured'
         state=self.profile(urgent_lanes=1,bulk_lanes=1)
-        assert all(value['desired']==value['ready']==1 for value in state['pools'].values())
+        assert all(state['pools'][pool]['desired']==state['pools'][pool]['ready']==1 for pool in ('urgent','bulk'))
         self.record('initial',status=state)
 
     def pins(self):

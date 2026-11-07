@@ -97,5 +97,19 @@ class FleetTests(unittest.TestCase):
             with self.assertRaisesRegex(OperatorError,'stopped'):native._require_jobs_drained()
         with patch('modular_platform.native_executor._run',return_value=b''):native._require_jobs_drained()
 
+    def test_producer_is_optional_and_only_one_role_can_be_reviewed(self):
+        approval=self.review()
+        self.assertIsNone(json.loads((self.fleet.directory/(approval[7:]+'.review.json')).read_text())['recurrence_policy'])
+        with self.assertRaisesRegex(OperatorError,'ranges'):
+            self.review(producer_lanes=2)
+
+    def test_producer_requires_exact_runner_before_recording_desired_state(self):
+        self.op.runtime.return_value['inventory']={'files':{}}
+        self.op._run_admin=Mock()
+        with self.assertRaisesRegex(OperatorError,'exact reviewed runtime'):
+            self.review(producer_lanes=1)
+        self.op._run_admin.assert_not_called()
+        self.assertIsNone(self.fleet.desired())
+
 
 if __name__=='__main__':unittest.main()

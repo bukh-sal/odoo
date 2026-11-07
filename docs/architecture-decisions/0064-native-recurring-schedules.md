@@ -98,3 +98,18 @@ host and native generic guards refused a populated schedule with dispatch
 unchanged. Recovery and the reviewed credential profile remain pending. The
 host-injected schema helper stays self-contained so retained images do not
 need the new recurrence module just to inspect or restore their old schema.
+
+The service adapter and optional producer role are drafted and not yet native
+qualified. Review can request zero or one producer, sharing the eight-role
+single-host bound. The supervised producer uses database UTC time, current
+dispatch and release pins, bounded candidate batches and fresh transactions.
+It reconstructs saved service authority before calling the existing scheduled
+enqueue path. An expired or revoked credential holds future production; editing
+under a new current credential affects future jobs only. The generic lifecycle
+guard remains strict until the reviewed maintenance/recovery path is wired.
+
+The role's reviewed credential footprint coordinates maintenance; it is not a
+sandbox or a replacement for per-job scope and resource authorization. Native
+plugins remain trusted. A new or broader credential must be reflected in a
+fresh independent role review before maintenance can rely on it. Preserve
+current revocations and stable occurrence high-water marks during recovery.
