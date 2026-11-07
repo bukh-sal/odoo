@@ -184,6 +184,33 @@ records the outcome and never sends again. Keep the evidence in the
 independent operator's records. An intent without a result requires
 checking the current state before further action.
 
+`jobs history` reports bounded live dispatch counts. At the 80% advisory,
+review the backlog before lifecycle operations hit their per-table limit.
+On an archive-capable image, use the same operator target and store for the
+following job cleanup commands.
+
+```text
+jobs archive-review --cutoff <UTC-ISO-timestamp> --limit <1-100>
+jobs archive-apply <review-digest>
+jobs archive-status <review-digest>
+```
+
+Choose a cutoff at least seven days in the past. The selected terminal
+idempotent jobs must have both their original deadline and terminal timestamp
+at or before that cutoff. Review lists the exact IDs and deployment pins.
+Apply refuses a changed or expired review. A committed batch removes the full
+payload and result and preserves the original ID and compact terminal metadata.
+An equivalent same-release submission still receives that ID. A later
+review can select the next eligible batch.
+
+If apply is interrupted, wait for its child to exit and check the original
+review with `archive-status`. It reports whether the intent and result were
+recorded, and each ID as live, archived, missing or conflicting. Live rows
+can be included in a fresh review if they still qualify. Missing or conflicting
+rows require investigation on the reviewed target. Keep archived identities
+and external-effect evidence with the retention and restore policy described
+in [ADR 0062](architecture-decisions/0062-background-history-retention.md).
+
 Drain lanes before release changes. Follow the existing approved lifecycle
 operation and separate restore/resume decisions if recovery is needed.
 Start lanes again from the new target pin only after dispatch and traffic

@@ -218,35 +218,49 @@ def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempoten
     return old[0]
 
 
-def archive_terminal_jobs(cr, site_id, release_digest, *, cutoff, limit):
-    """Private bounded batch. The independently authorized caller commits."""
-    _uuid(site_id)
-    _bounded(limit, 1, 1000)
+_ARCHIVE_FIELDS = """id,site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key,
+    public_id,input_digest,release_digest,effect_mode,state,COALESCE(finished_at,deadline_at)"""
+_ARCHIVE_ELIGIBLE = """state IN ('completed','dead_letter','cancelled')
+    AND effect_mode='idempotent' AND NOT effect_started
+    AND deadline_at<=%s AND COALESCE(finished_at,deadline_at)<=%s"""
+
+
+def _archive_cutoff(cutoff):
     if not isinstance(cutoff, datetime) or cutoff.utcoffset() is None:
         raise QueueError('Timezone-aware archive cutoff required')
-    cutoff = cutoff.astimezone(timezone.utc).replace(tzinfo=None)
+    return cutoff.astimezone(timezone.utc).replace(tzinfo=None)
+
+
+def terminal_archive_candidates(cr, site_id, *, cutoff, limit):
+    """Read the bounded batch under the caller's dispatch control lock."""
+    _uuid(site_id)
+    _bounded(limit, 1, 1000)
+    cutoff = _archive_cutoff(cutoff)
+    cr.execute(f"""SELECT {_ARCHIVE_FIELDS} FROM mp_job
+        WHERE site_id=%s AND {_ARCHIVE_ELIGIBLE}
+        AND %s<=timezone('UTC',statement_timestamp())
+        ORDER BY id LIMIT %s""", [site_id, cutoff, cutoff, cutoff, limit])
+    return cr.fetchall()
+
+
+def archive_terminal_jobs(cr, site_id, release_digest, *, cutoff, limit, expected=None):
+    """Private bounded batch. The independently authorized caller commits."""
     control(cr, site_id, release_digest)
-    eligible = """state IN ('completed','dead_letter','cancelled')
-        AND effect_mode='idempotent' AND NOT effect_started
-        AND deadline_at<=timezone('UTC',statement_timestamp())
-        AND COALESCE(finished_at,deadline_at)<=%s
-        AND COALESCE(finished_at,deadline_at)<=timezone('UTC',statement_timestamp())"""
-    cr.execute("""SELECT id,site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key
-        FROM mp_job WHERE site_id=%s AND """ + eligible + """
-        ORDER BY id LIMIT %s""", [site_id, cutoff, limit])
+    candidates = terminal_archive_candidates(cr, site_id, cutoff=cutoff, limit=limit)
+    if expected is not None and candidates != expected:
+        raise QueueError('Reviewed archive batch changed')
+    cutoff = _archive_cutoff(cutoff)
     archived = []
-    for job_id, *identity in cr.fetchall():
+    for candidate in candidates:
+        job_id, *identity = candidate[:8]
         receipt_id, previous_job, *_ = _reserve_identity(cr, identity)
-        if previous_job is not None:
-            continue
         # The identity row always comes before the live row. Retry or
         # settlement could have changed eligibility since nomination.
-        cr.execute("""SELECT public_id,input_digest,release_digest,effect_mode,state,COALESCE(finished_at,deadline_at)
-            FROM mp_job WHERE id=%s AND site_id=%s AND """ + eligible + " FOR UPDATE",
-            [job_id, site_id, cutoff])
-        job = cr.fetchone()
-        if job is None:
-            continue
+        cr.execute(f"""SELECT {_ARCHIVE_FIELDS} FROM mp_job
+            WHERE id=%s AND site_id=%s AND {_ARCHIVE_ELIGIBLE} FOR UPDATE""", [job_id, site_id, cutoff, cutoff])
+        if previous_job is not None or cr.fetchone() != candidate:
+            raise QueueError('Archive candidate changed or has an existing terminal record')
+        job = candidate[8:]
         cr.execute("""UPDATE mp_job_identity
             SET job_public_id=%s,input_digest=%s,release_digest=%s,effect_mode=%s,
                 terminal_state=%s,finished_at=%s,archived_at=timezone('UTC',clock_timestamp())

@@ -1,5 +1,7 @@
 """Guarded host-side job observation and explicit effect reconciliation."""
 import argparse
+from datetime import datetime, timezone
+import json
 import re
 
 from modular_platform import durable
@@ -9,6 +11,10 @@ from modular_platform.plans import data_digest
 
 
 ACTIONS = ('retry','confirm-delivered','confirm-absent')
+ARCHIVE_COMMANDS = ('archive-review', 'archive-apply', 'archive-status')
+ARCHIVE_POLICY = 'native-terminal-v1'
+ARCHIVE_MINIMUM_DAYS = 7
+ARCHIVE_MAX_BATCH = 100
 
 
 def queue_metrics(cr,site,release,routes):
@@ -55,13 +61,80 @@ def decision(cr,site,release,job,action,evidence):
     return row,review,data_digest(review)
 
 
+def archive_decision(cr, site, release, cutoff, limit, review_id):
+    durable._uuid(review_id)
+    durable._bounded(limit, 1, ARCHIVE_MAX_BATCH)
+    try:
+        cutoff = datetime.fromisoformat(cutoff)
+    except (ValueError, TypeError):
+        raise durable.QueueError('Explicit timezone-aware archive cutoff required') from None
+    utc = durable._archive_cutoff(cutoff)
+    generation = durable.control(cr, site, release)
+    cr.execute("""SELECT %s<=timezone('UTC',statement_timestamp())-(%s*interval '1 day')""",
+               [utc, ARCHIVE_MINIMUM_DAYS])
+    if not cr.fetchone()[0]:
+        raise durable.QueueError('Archive cutoff must preserve the minimum retention window')
+    rows = durable.terminal_archive_candidates(cr, site, cutoff=cutoff, limit=limit)
+    review = dict(policy=ARCHIVE_POLICY, minimum_days=ARCHIVE_MINIMUM_DAYS, review_id=review_id,
+                  site_id=site, release=release, dispatch_generation=generation,
+                  cutoff=utc.replace(tzinfo=timezone.utc).isoformat(), limit=limit,
+                  jobs=[row[8] for row in rows],
+                  selection_digest=data_digest([list(row[:-1])+[row[-1].isoformat()] for row in rows]))
+    return cutoff, rows, review
+
+
+def archive_status(cr, site, jobs):
+    if not isinstance(jobs, list) or not 1 <= len(jobs) <= ARCHIVE_MAX_BATCH:
+        raise durable.QueueError('Explicit bounded archive status IDs required')
+    for job in jobs:
+        durable._uuid(job)
+    if len(set(jobs)) != len(jobs):
+        raise durable.QueueError('Archive status IDs must be distinct')
+    cr.execute("""SELECT wanted.id, CASE
+            WHEN j.id IS NOT NULL AND a.id IS NOT NULL THEN 'conflict'
+            WHEN j.id IS NOT NULL THEN 'live'
+            WHEN a.id IS NOT NULL THEN 'archived'
+            ELSE 'missing' END
+        FROM unnest(%s::text[]) WITH ORDINALITY AS wanted(id,position)
+        LEFT JOIN mp_job j ON j.site_id=%s AND j.public_id=wanted.id
+        LEFT JOIN mp_job_identity a ON a.site_id=%s AND a.job_public_id=wanted.id
+        ORDER BY wanted.position""", [jobs, site, site])
+    return dict(cr.fetchall())
+
+
+def run_archive(cr, site, release, args):
+    cr.execute("SET LOCAL statement_timeout='5s'; SET LOCAL lock_timeout='500ms'")
+    if args.command == 'archive-status':
+        result = archive_status(cr, site, json.loads(args.jobs))
+        cr.rollback()
+        emit(event='job_archive_status', jobs=result)
+        return
+    cutoff, rows, review = archive_decision(cr, site, release, args.cutoff, args.limit, args.review_id)
+    approval = data_digest(review)
+    applied = args.command == 'archive-apply'
+    if applied:
+        if not rows or args.approval != approval:
+            raise durable.QueueError('Reviewed archive batch is empty or stale')
+        archived = durable.archive_terminal_jobs(cr, site, release, cutoff=cutoff, limit=args.limit, expected=rows)
+        if archived != review['jobs']:
+            raise durable.QueueError('Archive result differs from the reviewed batch')
+        cr.commit()
+    else:
+        cr.rollback()
+    emit(event='job_archive', review=review, approval=approval, applied=applied)
+
+
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('command',choices=['metrics','history','review','apply'])
+    parser.add_argument('command',choices=('metrics','history','review','apply',*ARCHIVE_COMMANDS))
     parser.add_argument('--job')
     parser.add_argument('--action',choices=ACTIONS)
     parser.add_argument('--evidence')
     parser.add_argument('--approval')
+    parser.add_argument('--cutoff')
+    parser.add_argument('--limit', type=int)
+    parser.add_argument('--review-id')
+    parser.add_argument('--jobs')
     args=parser.parse_args()
     if args.command in {'review','apply'} and (not args.job or not args.action):
         parser.error('Explicit job and action required')
@@ -75,6 +148,9 @@ def main():
     with registry.cursor() as cr:
         release=current_release(api.Environment(cr,1,{}))
         site,digest=release['site_id'],release['release_digest']
+        if args.command in ARCHIVE_COMMANDS:
+            run_archive(cr, site, digest, args)
+            return
         if args.command=='history':
             report=history_pressure(cr,LifecycleScope(site,digest))
             emit(event='job_history',**report)

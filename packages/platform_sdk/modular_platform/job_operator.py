@@ -1,5 +1,7 @@
 """Local OS-authorized operator for pinned native job lanes."""
+from datetime import datetime, timedelta, timezone
 import hashlib
+import json
 from pathlib import Path
 import re
 import subprocess
@@ -9,6 +11,7 @@ from .contracts import load_json
 from .deployment import DockerObserver
 from .operator_os import OperationLocks,OperatorError,protect_directory
 from .operator_store import _write_new
+from .plans import data_digest
 from .worker_operator import private_json
 
 
@@ -122,18 +125,78 @@ class JobOperator:
                 raise OperatorError('Review already attempted; reconcile the recorded intent before another action')
             _write_new(record,dict(attempt=attempt,site=self.site['site_id'],job=job,
                                    action=action,evidence=evidence,approval=approval))
-        raw=self.docker('run','--rm','--log-driver','none',
+        result=self._run_admin(runtime,attempt,argv)
+        if command=='apply':_write_new(self.records/(approval[7:]+'.result.json'),result)
+        return result
+
+    def _run_admin(self,runtime,attempt,argv,*,labels=()):
+        raw=self.docker('run','--rm','--log-driver','none',*labels,
             *self._base(runtime,self.project+'-job-control-'+attempt.replace('-','')),
             '-m','modular_platform.job_admin',*argv)
         rows=[load_json(line) for line in raw.splitlines() if line.startswith(b'{')]
-        if len(rows)!=1:
+        if len(rows)!=1 or not isinstance(rows[0],dict):
             raise OperatorError('Exact managed job operator result required')
-        if command=='apply':_write_new(self.records/(approval[7:]+'.result.json'),rows[0])
         return rows[0]
+
+    def archive(self,command,*,cutoff=None,limit=None,approval=None):
+        label='com.modular.job_archive_apply'
+        if self.docker('ps','-q','--filter','label='+label+'='+self.deployment,
+                       '--filter','label=com.modular.job_site='+self.site['site_id']).strip():
+            raise OperatorError('An archive apply child is still running; observe it before continuing')
+        runtime=self.runtime()
+        pin=dict(**self.site,deployment_id=self.deployment,image_id=self.target['image_id'],
+                 inventory_digest=runtime['inventory_digest'],target_digest=data_digest(self.target))
+        directory=protect_directory(self.records/'archive')
+        attempt=str(uuid4())
+        if command=='archive-review':
+            result=self._run_admin(runtime,attempt,[command,'--cutoff',cutoff,'--limit',str(limit),'--review-id',attempt])
+            review=result.get('review',{})
+            if (result.get('event')!='job_archive' or result.get('applied') is not False
+                    or result.get('approval')!=data_digest(review) or review.get('site_id')!=self.site['site_id']
+                    or review.get('review_id')!=attempt):
+                raise OperatorError('Exact guarded archive review required')
+            record=dict(target=pin,review=review,reviewed_at=datetime.now(timezone.utc).isoformat())
+            approval=data_digest(record)
+            _write_new(directory/(approval[7:]+'.review.json'),record)
+            return dict(event='job_archive_review',approval=approval,**record)
+
+        if not approval or not re.fullmatch(r'sha256:[0-9a-f]{64}',approval):
+            raise OperatorError('Exact archive review digest required')
+        record=private_json(directory/(approval[7:]+'.review.json'))
+        if data_digest(record)!=approval or record['target']!=pin:
+            raise OperatorError('Archive review does not match the current deployment pins')
+        review=record['review']
+        intent=directory/(approval[7:]+'.intent.json')
+        result_path=directory/(approval[7:]+'.result.json')
+        if command=='archive-status':
+            result=(self._run_admin(runtime,attempt,[command,'--jobs',json.dumps(review['jobs'])])
+                    if review['jobs'] else dict(event='job_archive_status',jobs={}))
+            if result.get('event')!='job_archive_status' or set(result.get('jobs',{}))!=set(review['jobs']):
+                raise OperatorError('Exact archive status result required')
+            return dict(approval=approval,attempted=intent.exists(),result_recorded=result_path.exists(),**result)
+
+        if command!='archive-apply':
+            raise OperatorError('Unknown archive action')
+        if intent.exists():
+            raise OperatorError('Archive already attempted; run archive-status before reviewing another batch')
+        expires=datetime.fromisoformat(record['reviewed_at'])+timedelta(seconds=self.store.policy['maximum_start_lifetime'])
+        if not review['jobs'] or datetime.now(timezone.utc)>=expires:
+            raise OperatorError('Archive review is empty or expired')
+        _write_new(intent,dict(approval=approval,attempt=attempt,target=pin))
+        argv=[command,'--cutoff',review['cutoff'],'--limit',str(review['limit']),
+              '--review-id',review['review_id'],'--approval',data_digest(review)]
+        result=self._run_admin(runtime,attempt,argv,labels=('--label',label+'='+self.deployment))
+        if (result.get('event')!='job_archive' or result.get('applied') is not True
+                or result.get('review')!=review or result.get('approval')!=data_digest(review)):
+            raise OperatorError('Exact archive result missing; reconcile the recorded intent')
+        receipt=dict(event='job_archive_apply',applied=True,approval=approval,jobs=review['jobs'])
+        _write_new(result_path,receipt)
+        return receipt
 
     def run(self,command,**options):
         with OperationLocks(self.store.root/'locks',self.deployment,[self.site['site_id']]):
             self._authorize()
             if command=='start':return self.start(**options)
             if command=='drain':return self.drain()
+            if command.startswith('archive-'):return self.archive(command,**options)
             return self.admin(command,**options)

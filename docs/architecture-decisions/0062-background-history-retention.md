@@ -2,10 +2,11 @@
 
 Status partially qualified for BX-01. Native enqueue and private terminal
 archival passed on a fresh Odoo site. The populated core upgrade and fresh
-restore also passed. Authorized cleanup, scoped history and event retention
-remain open. The lifecycle still refuses an active dispatch table above its
-row limit. The guarded history diagnostic reports that pressure without
-producing an oversized receipt.
+restore passed. The reviewed job archive and interrupted-result reconciliation
+also passed above the live-table limit. Scoped history, event retention and
+latency qualification remain open. The lifecycle still refuses an active
+dispatch table above its row limit. The guarded history diagnostic reports
+that pressure without producing an oversized receipt.
 
 Use one private database identity registry for both enqueue and archive. Its
 unique key is the current enqueue identity: site, workspace, actor, installation,
@@ -37,6 +38,30 @@ full result is gone. Retained keys keep rejecting changed payloads, timing or
 releases. Expiry of the deduplication record is a separate policy decision with
 an explicit replay horizon and recorded behavior after it expires.
 
+The first job policy retains the full payload and result for at least seven
+days after both the terminal timestamp and original deadline. The independent
+operator chooses an explicit UTC cutoff no newer than that floor and a batch
+of at most 100 rows. Review shows the exact job IDs and binds the selection,
+cutoff, dispatch generation and current deployment pins. Apply rechecks the
+batch and commits it together. The private intent precedes the mutation.
+If the result receipt is lost, a read-only status command checks those exact
+IDs against the live table and compact registry. A subsequent batch requires
+its own review.
+
+At 10,000 retained jobs per day, seven days accounts for 70,000 terminal rows
+when deadlines have elapsed. This leaves 10,000 rows to the 80% advisory and
+30,000 to the hard limit for scheduled, active, held and other excluded work.
+For each site, budget the effective full-record age and the excluded backlog
+against the advisory threshold. Include extra days from late deadlines and
+archival interruptions, and verify that maintenance can clear eligible work
+faster than it accumulates. The advisory measures physical table pressure.
+Compact safe status and scoped deduplication records currently share one
+indefinite retention window. Checkpoint expiry controls historical full
+payloads still present in retained dumps. Jobs with remote effects stay in the
+live table under this policy. Keep their independent settlement evidence for
+at least the longest still-restorable checkpoint and until provider uncertainty
+has been resolved.
+
 The compact registry must have an independently validated lifecycle footprint
 with bounded receipts. The active dispatch row limit must not simply move to a
 new table containing one row per historical job. The lifecycle computes its
@@ -61,11 +86,12 @@ Qualify event and outbox retention separately within BX-01. Deliveries and
 consumer receipts can refer to an outbox event. Establish the replay and
 subscription rules before moving an event, and retain consumed-effect evidence
 needed for a restored checkpoint. Keep cleanup disabled until the operator can
-review the exact policy, cutoff, bounded batch and current site pins.
+review the exact event policy, cutoff, bounded batch and current site pins.
 
 Sources: [active enqueue](../../packages/platform_sdk/modular_platform/durable.py:154),
 [lifecycle control and snapshot](../../packages/platform_sdk/modular_platform/dispatch_lifecycle.py:181),
 [Odoo cursor isolation](../../odoo/sql_db.py:329), and the
 [follow-up gate](../../planning/background_execution.md#implementation-gates-and-acceptance).
-[Native archival evidence](../evidence/post-r1/background-execution/bx-01-native-archive.json) and
+[Native archival evidence](../evidence/post-r1/background-execution/bx-01-native-archive.json),
+[operator archive evidence](../evidence/post-r1/background-execution/bx-01-archive-operator.json) and
 [Populated lifecycle evidence](../evidence/post-r1/background-execution/bx-01-retention-lifecycle.json)

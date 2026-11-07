@@ -1,0 +1,58 @@
+{
+  "gate": "BX-01",
+  "state": "in_progress",
+  "slice": "reviewed native terminal cleanup",
+  "project": "mp-r0-r1release5b4663be5626",
+  "build_record": "../../G7/bx01-archive-operator-build-01/candidate-build.json",
+  "inventory": "sha256:c4fe591f208ddfaa40c57f32eb3dc6512c90cf3a08adfbdd1d650508c5562ecc",
+  "install_operation": "51a84c49-2c6f-4026-bf94-961168720e91",
+  "probe": "tests/background_archive_operator.py",
+  "observed": {
+    "image": "sha256:fc9daa3a14ed5803041e37b0bc0b96453062c2870e589f9f60df401d199e8c85",
+    "over_cap_before_and_after": true,
+    "cutoff_refused": true,
+    "excessive_limit_refused": true,
+    "review_read_only": true,
+    "stale_batch_rolled_back": true,
+    "commit_without_result_reconciled": true,
+    "repeated_approval_refused": true,
+    "resumed_next_batch": true,
+    "review_sizes": [
+      2,
+      2,
+      1,
+      0
+    ],
+    "archived_jobs": 3,
+    "excluded_jobs_preserved": 3
+  },
+  "policy": {
+    "name": "native-terminal-v1",
+    "full_record_minimum_days": 7,
+    "operator_batch_limit": 100,
+    "safe_status_and_deduplication": "retained indefinitely",
+    "remote_effect_jobs_archived": false
+  },
+  "regressions": {
+    "dispatch": 23,
+    "contract_freeze_passed": true,
+    "native_postgres_probe": "tests/background_retention_native_postgres.py",
+    "both_stale_transaction_orders_refused": true,
+    "rollback_preserved_job": true,
+    "identity_snapshot_rows": 100007,
+    "scheduled_workload_passed": true
+  },
+  "retired": {
+    "containers": 16,
+    "volumes": 6,
+    "networks": 2,
+    "candidate_images": 1,
+    "candidate_tags": 2,
+    "postgres_fixture_containers": 1
+  },
+  "pending": [
+    "Scoped native history and aggregate alerts",
+    "Event and outbox replay and retention",
+    "Measure lock duration and web latency during cleanup"
+  ]
+}
