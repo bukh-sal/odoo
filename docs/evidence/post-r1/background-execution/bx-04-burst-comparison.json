@@ -1,0 +1,217 @@
+{
+  "gate": "BX-04",
+  "state": "controlled_comparison_passed_fairness_open",
+  "trace_sha256": "7e964773127da68ea91cfad83e165e90f79571c297fd0e797d1e7543821e9240",
+  "reference_workload": {
+    "bulk": 72,
+    "workspaces": 70,
+    "reports": 18,
+    "cpu_samples": 54,
+    "reminders": 150
+  },
+  "runs": [
+    {
+      "image": "sha256:ae91b0d33609f7993c356f202a0ad1d2149389e66e61cecedd39b1240c07a3d3",
+      "bulk_lanes": 2,
+      "checks": {
+        "web": true,
+        "urgent": true,
+        "oldest_urgent": true,
+        "bulk": true,
+        "connections": true,
+        "locks": true,
+        "cpu": true,
+        "listener": true,
+        "simultaneous_64_plus_workspaces": true,
+        "bulk_drain": true
+      },
+      "idle": {
+        "list": {
+          "count": 200,
+          "median_ms": 109.0,
+          "p95_ms": 188.0,
+          "max_ms": 281.0
+        },
+        "detail": {
+          "count": 200,
+          "median_ms": 47.0,
+          "p95_ms": 79.0,
+          "max_ms": 94.0
+        }
+      },
+      "mixed": {
+        "list": {
+          "count": 460,
+          "median_ms": 109.0,
+          "p95_ms": 187.0,
+          "max_ms": 250.0
+        },
+        "detail": {
+          "count": 440,
+          "median_ms": 47.0,
+          "p95_ms": 78.0,
+          "max_ms": 94.0
+        }
+      },
+      "timings": {
+        "urgent": {
+          "start": {
+            "count": 150,
+            "median_ms": 209.5,
+            "p95_ms": 1984,
+            "max_ms": 2463
+          },
+          "worker": {
+            "count": 150,
+            "median_ms": 76.0,
+            "p95_ms": 93,
+            "max_ms": 130
+          }
+        },
+        "bulk": {
+          "start": {
+            "count": 72,
+            "median_ms": 11481.0,
+            "p95_ms": 22517,
+            "max_ms": 22854
+          },
+          "worker": {
+            "count": 72,
+            "median_ms": 689.0,
+            "p95_ms": 1255,
+            "max_ms": 1297
+          }
+        }
+      },
+      "bulk_drain_seconds": 24.026925086975098,
+      "bulk_lane_seconds_to_drain": 48.053850173950195,
+      "bulk_lane_hours_to_drain": 0.013348291714986166,
+      "bulk_lane_seconds_window": 120.31018781661987,
+      "scoped_outputs": {
+        "loads": 54,
+        "reports": 18,
+        "repeated_attempts": 0
+      },
+      "notifications": 150,
+      "notes_unchanged": true
+    },
+    {
+      "image": "sha256:ae91b0d33609f7993c356f202a0ad1d2149389e66e61cecedd39b1240c07a3d3",
+      "bulk_lanes": 3,
+      "checks": {
+        "web": true,
+        "urgent": true,
+        "oldest_urgent": true,
+        "bulk": true,
+        "connections": true,
+        "locks": true,
+        "cpu": true,
+        "listener": true,
+        "simultaneous_64_plus_workspaces": true,
+        "bulk_drain": true
+      },
+      "idle": {
+        "list": {
+          "count": 200,
+          "median_ms": 94.0,
+          "p95_ms": 172.0,
+          "max_ms": 203.0
+        },
+        "detail": {
+          "count": 200,
+          "median_ms": 47.0,
+          "p95_ms": 79.0,
+          "max_ms": 110.0
+        }
+      },
+      "mixed": {
+        "list": {
+          "count": 460,
+          "median_ms": 109.0,
+          "p95_ms": 188.0,
+          "max_ms": 266.0
+        },
+        "detail": {
+          "count": 440,
+          "median_ms": 47.0,
+          "p95_ms": 79.0,
+          "max_ms": 157.0
+        }
+      },
+      "timings": {
+        "urgent": {
+          "start": {
+            "count": 150,
+            "median_ms": 200.5,
+            "p95_ms": 1849,
+            "max_ms": 2320
+          },
+          "worker": {
+            "count": 150,
+            "median_ms": 76.0,
+            "p95_ms": 94,
+            "max_ms": 117
+          }
+        },
+        "bulk": {
+          "start": {
+            "count": 72,
+            "median_ms": 7588.5,
+            "p95_ms": 15428,
+            "max_ms": 15669
+          },
+          "worker": {
+            "count": 72,
+            "median_ms": 716.5,
+            "p95_ms": 1281,
+            "max_ms": 1293
+          }
+        }
+      },
+      "bulk_drain_seconds": 16.90604305267334,
+      "bulk_lane_seconds_to_drain": 50.71812915802002,
+      "bulk_lane_hours_to_drain": 0.014088369210561117,
+      "bulk_lane_seconds_window": 180.90215134620667,
+      "scoped_outputs": {
+        "loads": 54,
+        "reports": 18,
+        "repeated_attempts": 0
+      },
+      "notifications": 150,
+      "notes_unchanged": true
+    }
+  ],
+  "advice": {
+    "weighted": {
+      "ready": 72,
+      "worker_seconds": 102.582,
+      "workspace_slots": 70,
+      "needed_lanes": 2,
+      "advised_lanes": 2,
+      "predicted_drain_seconds": 51.291,
+      "oldest_original_wait_seconds": 0,
+      "constraints": [],
+      "current_ready_lanes": 2,
+      "startup_seconds": 15,
+      "needed_warm_lanes_for_start_target": 2
+    },
+    "count": {
+      "ready": 72,
+      "worker_seconds": 144,
+      "workspace_slots": 70,
+      "needed_lanes": 3,
+      "advised_lanes": 3,
+      "predicted_drain_seconds": 53.0,
+      "oldest_original_wait_seconds": 0,
+      "constraints": [
+        "start_target_at_risk"
+      ],
+      "current_ready_lanes": 2,
+      "startup_seconds": 15,
+      "needed_warm_lanes_for_start_target": 3
+    }
+  },
+  "method": "One actual run per distinct selected count; weighted advice selected2, same as fixed baseline. Count advice selected3. All runs prewarmed, advice used an explicitly labeled eligibility projection.",
+  "interpretation": "Three lanes drained faster but both met every fixed service target without expired work. Two used fewer worker-lane seconds in the tested burst and measurement window; no automatic-sizing benefit is established by this comparison.",
+  "limits": "Core42 finite mixed burst, not adversarial fairness, process loss, saturation, recurrence or controller qualification."
+}

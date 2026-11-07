@@ -45,7 +45,7 @@ class JobOperator:
     def runtime(self):
         runtime=self.reader.read()['runtime']
         files=runtime['inventory']['files']
-        for name in ('job_admin.py','job_capacity.py','job_runner.py','job_supervisor.py','job_health.py','worker_start.py','durable.py','event_retention.py'):
+        for name in ('job_admin.py','job_capacity.py','job_fairness.py','job_runner.py','job_supervisor.py','job_health.py','worker_start.py','durable.py','event_retention.py'):
             local=Path(__file__).with_name(name)
             if files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(local.read_bytes()).hexdigest():
                 raise OperatorError('Managed jobs require the current reviewed runner and queue bytes')

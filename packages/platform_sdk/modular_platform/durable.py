@@ -317,15 +317,17 @@ def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, wor
     return Claim(row[0], row[1], owner, row[2], max(0,row[3])) if row else None
 
 
-def ready_workspaces(cr,site,release,routes):
+def ready_workspaces(cr,site,release,routes,*,after=None):
     """Bounded lane candidates; the lane holds a session slot before claiming."""
     control(cr,site,release)
     keys=[f'{_name(name)}:{_bounded(version,1,1000)}' for name,version in routes]
+    if after is not None:_bounded(after,0,2**31-1)
+    order='min(available_at),workspace_id' if after is None else '(workspace_id<=%s),workspace_id'
     cr.execute("""SELECT workspace_id FROM mp_job WHERE site_id=%s AND release_digest=%s
         AND handler||':'||handler_version=ANY(%s)
         AND ((state IN ('pending','retry') AND LEAST(available_at,deadline_at)<=timezone('UTC',clock_timestamp()))
             OR (state='running' AND lease_until<=timezone('UTC',clock_timestamp())))
-        GROUP BY workspace_id ORDER BY min(available_at),workspace_id LIMIT 64""", [site,release,keys])
+        GROUP BY workspace_id ORDER BY """+order+' LIMIT 64', [site,release,keys]+([] if after is None else [after]))
     return [row[0] for row in cr.fetchall()]
 
 

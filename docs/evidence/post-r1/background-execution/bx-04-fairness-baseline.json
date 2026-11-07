@@ -1,0 +1,16 @@
+{
+  "phase": "fairness_gap",
+  "image": "sha256:ae91b0d33609f7993c356f202a0ad1d2149389e66e61cecedd39b1240c07a3d3",
+  "peers_served": 68,
+  "hot_claims_before_first_peer": 60,
+  "hot_claims_when_all_peers_started": {
+    "A": 30,
+    "B": 30
+  },
+  "criterion": "First peer within4 hot claims; all68 peers start before either30-job hot backlog consumes more than4 claims.",
+  "all_jobs_completed_once": true,
+  "gate": "BX-04",
+  "state": "required_service_order_not_met",
+  "private_record_sha256": "7a8dad72d9bf386c85d70b2f33ee527ff1ac96c4f9b0d52fe13effb81e12f660",
+  "drained": true
+}

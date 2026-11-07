@@ -1,0 +1,24 @@
+{
+  "state": "passed",
+  "checks": {
+    "first_insert_and_stale_selector": true,
+    "failed_commit_rolls_back_hint": true,
+    "pool_keys_independent": true,
+    "paused_and_changed_release_refused": true,
+    "bounded_corruption_replaced_atomically": true,
+    "scope_and_integer_validation": true,
+    "concurrent_missing_hint_has_one_winner": true,
+    "legacy_order_and_bounded_ring_wrap": true,
+    "all70_selected_before_second_turn": true,
+    "selection_hint_does_not_claim_or_enqueue": true
+  },
+  "source_sha256": "911ff90bc74f0da7bd292005e749a426c481885081dc61aa8066308a8ca0fade",
+  "postgres": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+  "client": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "retired": {
+    "containers": 1,
+    "volumes": 0,
+    "networks": 0
+  },
+  "scope": "Private SQL hint and candidate order only; native fairness/restart and load remain pending."
+}

@@ -64,6 +64,13 @@ eligibility to bulk drain, plus lane time across the full measurement window.
 Do not treat faster drain alone as useful-job benefit when all fixed service
 targets already hold; compare deadline misses and resource use too.
 
+Fairness also needs an adversarial service-order check:two workspaces each
+queue30 equal-eligibility CPU samples while68 peers queue one each. With two
+bulk lanes, require the first peer within four hot claims, and all68 peers to
+start before either hot backlog consumes more than four claims. Per-workspace
+concurrency alone is insufficient evidence for this condition. Preserve the
+unmodified scheduler's result before changing its selection policy.
+
 Automatic bulk sizing is conditional. Enable it only if controlled profile
 changes improve useful-job latency or worker use over the fixed baseline while
 all web/headroom targets hold. Then qualify sustained signals, capped growth,

@@ -13,6 +13,7 @@ import time
 from uuid import uuid4
 
 from modular_platform import durable
+from modular_platform import job_fairness
 from modular_platform import job_health
 
 
@@ -197,7 +198,9 @@ def child(args):
                 if release != initial_release:
                     raise durable.DispatchPaused('Managed worker release changed')
                 durable.control(cr,release['site_id'],release['release_digest'])
-                workspaces = durable.ready_workspaces(cr,release['site_id'],release['release_digest'],routes) if routes else []
+                ticket=job_fairness.read(cr,release['site_id'],release['release_digest'],args.pool)
+                workspaces = durable.ready_workspaces(cr,release['site_id'],release['release_digest'],routes,
+                    after=ticket.after) if routes else []
                 cr.rollback()
             health('idle')
             if routes:
@@ -205,6 +208,10 @@ def child(args):
                     if stop.is_set():break
                     with workspace_slot(registry,release['site_id'],args.pool,workspace) as locked:
                         if not locked or stop.is_set():continue
+                        if not job_fairness.reserve(registry,ticket,workspace):
+                            # Another lane advanced the ring. Discard this
+                            # candidate list and observe a fresh ticket.
+                            break
                         result = run_once(registry,owner,pool=args.pool,workspace_id=workspace,
                                           lease_seconds=LEASE_SECONDS,attempt=attempt)
                     if result['state'] not in {'idle','paused'}:

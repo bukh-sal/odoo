@@ -191,19 +191,37 @@ producer exited and all roles drained. [Live evidence](evidence/post-r1/backgrou
 Read-only capture preserved222 paired generation1 claims/ends before container
 removal; private trace is `many-live-worker-trace/` under this qualification realm.
 
-Next active check is burst/fairness and policy comparison. Before that comparison,
-corrected the advisor to credit warm lanes immediately, charge startup only to
-additional lanes, and hold when the connection budget cannot sustain the warm
-minimum. Fast bursts report warm-capacity risk separately. Sixteen advisor
-boundaries and the106-file freeze pass. Core42 build02 is being prepared after
-retiring unadmitted candidate084edce0; no deployed state used that candidate.
-Current deployed image remains4a9a06242dfd/core41/reference0.2.1, generation4;
-all jobs are terminal, fleet paused, and no producer/test/mutation is active.
-When build02 finishes, run `tests/background_capacity_upgrade.py` with its
-candidate JSON once. The helper records the operation before apply and checks
-all task/notification/Notes data through the populated core-only upgrade.
-Do not replay any prior sustained seed/helper. Complete the burst/advice,
-saturation/stale telemetry, process-loss and recurring burst drills next.
+Core42 upgrade `4a2aa8e7-f6b9-4788-b06e-5ad12167fec4` preserved all task,
+notification and Notes rows, reference0.2.1 unchanged. Forty same-release runtime
+samples supported a controlled identical72-job/70-workspace burst comparison.
+Two lanes (fixed and work-based advice) drained in24.027s using48.054 lane-seconds;
+three (count advice) drained in16.906s using50.718 lane-seconds. Both passed all
+service/headroom targets, including≥64 simultaneous ready workspaces. No expiry
+or extra useful-job benefit from the third lane was observed; no autoscaler is
+authorized by these estimates. [Comparison](evidence/post-r1/background-execution/bx-04-burst-comparison.json).
+
+**Active defect: adversarial fairness.** Two30-job hot workspaces consumed all60
+claims before any of68 equal-eligibility peers started. All128 jobs completed,
+roles drained, and the failed criterion is preserved. [Baseline](evidence/post-r1/background-execution/bx-04-fairness-baseline.json).
+[ADR0066](architecture-decisions/0066-managed-workspace-rotation.md) selects a
+small per-site/pool rotating selection hint with an atomic ticket. It changes
+candidate order only, preserving job FIFO, lease/authorization fences and the
+64-candidate cap. Ten real PostgreSQL ticket/race/rollback/fence/ring cases,
+four queue and thirteen fleet regressions and106-file freeze pass. SQL fixture
+retired. Native rotation is not yet qualified.
+
+Resume capsule: core43 candidate6cf403e88ee0, one owned site on18126, core-only
+upgrade running in session58785. Private operation record
+`.local/background-qualification/bx-04-capacity-01/bx04-core43-upgrade.json`.
+Do not replay that upgrade. Current pre-upgrade imageAE91/core42/gen5, all
+job roles paused; no live workload or unknown effect. After settled upgrade,
+run `tests/background_fairness.py rotation-01`, then qualify restart and slot
+connection-loss behavior and recheck affected load before closing BX-04.
+Remaining required checks also include native pressure/stale-metric holds and
+recurring bursts. BX-05 remains queued, no user blocker. Original comparator
+results are scoped to core42 and must not be mislabeled as core43 performance.
+53 exited owned containers and obsoleteFD7f/4a9a intermediate images were retired;
+only currentAE91 and the staged43 candidate are needed until this operation settles.
 Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is
@@ -218,7 +236,7 @@ BX-04 checklist:
 - [x] Qualify native telemetry, timing, pins and read-only CLI advice.
 - [x] Repeat the original BG-04 paired native web/reminder/bulk workload.
 - [x] Measure sustained hot-workspace, 70-workspace and variable-duration load.
-- [ ] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost.
+- [x] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost (core42; recheck affected source after rotation).
 - [ ] Qualify process loss, fairness, recurring bursts, saturation and stale metrics.
 - [ ] Decide automatic-sizing/broker/pool changes from evidence; qualify any selected controller.
 - [ ] Record final evidence and retire owned qualification assets.
