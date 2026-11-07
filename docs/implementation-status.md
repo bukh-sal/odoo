@@ -15,12 +15,12 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 ## Consolidated foundation release (current goal)
 
 User authorized the full goal on7 November2026. One active item: **CF-02**.
-Progress **10/100 weighted points;2/12 CF checks verified**. Original R1 remains99/99.
+Progress **10/100 weighted points;3/12 CF checks verified**. Original R1 remains99/99.
 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
-| CF-01 |10| passed | [x] CF-A policy/freeze; [x] CF-B baseline feasibility | [Freeze](evidence/post-r1/foundation-release/cf-01-freeze.json). Baseline image18f2c5a built; fresh Aurora project2fc90990a56f configured on18130; boot/current observation next. |
-| CF-02 |20| in_progress | [ ] CF-C reproducible image; [ ] CF-D kit inputs | Current core45/common policy after feasibility. |
+| CF-01 |10| passed | [x] CF-A policy/freeze; [x] CF-B baseline feasibility | [Freeze](evidence/post-r1/foundation-release/cf-01-freeze.json). [Baseline decision](evidence/post-r1/foundation-release/cf-01-decision.json); core30 boot/current observation passed. |
+| CF-02 |20| in_progress | [x] CF-C reproducible image; [ ] CF-D kit inputs | Imagec029eecb and independent no-cache/network-disabled ff699881 reproduce exact inventoryda706465; kit assembly next. |
 | CF-03 |20| not_started | [ ] CF-E distinct installed apps; [ ] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
 | CF-04 |35| not_started | [ ] CF-G migration; [ ] CF-H closed fault; [ ] CF-I fresh restore/resume/forward; [ ] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
 | CF-05 |15| not_started | [ ] CF-K worker/regression/UI; [ ] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |
