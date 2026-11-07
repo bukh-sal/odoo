@@ -37,8 +37,8 @@ when changing the workload, sizing, or queue/web behavior. The
 [work log](work-log.md) retains the earlier attempts.
 
 The [background execution follow-up plan](../planning/background_execution.md#follow-up-plan-for-sustained-background-workloads)
-tracks BX-01 through BX-05. **BX-01 is active.** No follow-up gate has
-passed. The guarded CLI reported an empty job table and then the lower bound
+tracks BX-01 through BX-05. **BX-01 passed and BX-02 is active.** One of
+five follow-up gates has passed, or 20% by gate count. The guarded CLI reported an empty job table and then the lower bound
 above the lifecycle limit on a rebuilt site with 100,002 synthetic rows.
 The PostgreSQL race probe reproduced a duplicate with a split lookup and
 verified that writing the shared identity row forces a stale transaction to
@@ -84,12 +84,27 @@ restored the old schema and receipt, and the subsequent reviewed upgrade
 preserved them. Both sites and the older image were retired.
 [Event retention evidence](evidence/post-r1/background-execution/bx-01-event-retention.json)
 
-BX-01 resume capsule: no live fixture or pending mutation. Next measure lock
-duration and stock Odoo web latency during job and event cleanup with a
-populated fixture and concurrent users. Reuse the exact 0.1.33 successor
-image recorded in the event retention evidence. Its one staging tag is held
-for that benchmark. Measure actual selection plans and row/dispatch lock
-impact, including the hot history list. BX-02 through BX-05 remain queued.
+The first cleanup benchmark missed its baseline target before cleanup.
+Repeated direct-ID guards scanned the hot history union. The mixed phase
+committed all five batches, with measured control-lock upper bounds of
+16–121 ms, but expired idle read connections interrupted latency measurement.
+That fixture and image were retired. [Diagnostic evidence](evidence/post-r1/background-execution/bx-01-cleanup-initial.json)
+
+The primary-key guard passed mixed live/archived reads and foreign-ID denial.
+Two paired cleanup samples met every fixed latency target. Worst mixed p95
+was 34.839 ms for Notes list, 17.516 ms for detail and 59.201 ms for the hot
+history list. Control-lock upper bounds stayed within 129 ms. A supplemental
+40 request/s detail pair verified actual job-lock overlap below the proxy's
+installed traffic limit. The read dataset was unchanged and all 184 producer
+updates had matching events. Both benchmark sites and candidates were retired.
+[Cleanup qualification](evidence/post-r1/background-execution/bx-01-cleanup-qualified.json)
+and [BX-01 decision](evidence/post-r1/background-execution/bx-01-decision.json)
+
+BX-02 resume capsule: no live fixture, retained candidate or pending mutation.
+Next implement the reviewed single-host worker role profile and reconcile
+desired versus ready lane counts under the existing deployment/site locks.
+Add per-lane drain and manual resizing before testing partial starts,
+connection loss and resize/upgrade races. BX-03 through BX-05 remain queued.
 No blocker requires user action.
 
 BX-01 checklist, tracked independently of the five gate exits.
@@ -100,7 +115,7 @@ BX-01 checklist, tracked independently of the five gate exits.
 - [x] Review and qualify the operator cutoff, retention sizing and resumable batch.
 - [x] Verify paginated scoped status and aggregate alerts.
 - [x] Qualify event and outbox replay and consumed-effect retention.
-- [ ] Measure lock duration and web latency during bounded cleanup.
+- [x] Measure lock duration and web latency during bounded cleanup.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora

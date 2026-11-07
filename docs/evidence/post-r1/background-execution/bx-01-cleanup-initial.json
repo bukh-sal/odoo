@@ -1,0 +1,330 @@
+{
+  "phase": "failed_mixed_transport",
+  "image": "sha256:8c9daf9abb1a55a7ce0434ae85c700bbdc40303074cf04e14b8dd80a5f8c5c9e",
+  "limits": {
+    "readers": 20,
+    "phase_seconds": 55,
+    "web_p95_ms": 500,
+    "relative_p95": 1.25,
+    "lock_ms": 500
+  },
+  "batches": {
+    "job": 100,
+    "delivery": 25,
+    "consumption": 25,
+    "event": 25,
+    "subscription": 25
+  },
+  "plans": {
+    "job": {
+      "execution_ms": 15.77,
+      "plan": [
+        {
+          "node": "Limit",
+          "relation": null,
+          "index": null,
+          "rows": 100,
+          "filtered": 0
+        },
+        {
+          "node": "Gather Merge",
+          "relation": null,
+          "index": null,
+          "rows": 100,
+          "filtered": 0
+        },
+        {
+          "node": "Sort",
+          "relation": null,
+          "index": null,
+          "rows": 80,
+          "filtered": 0
+        },
+        {
+          "node": "Result",
+          "relation": null,
+          "index": null,
+          "rows": 133,
+          "filtered": 0
+        },
+        {
+          "node": "Seq Scan",
+          "relation": "mp_job",
+          "index": null,
+          "rows": 133,
+          "filtered": 26669
+        }
+      ]
+    },
+    "event": {
+      "execution_ms": 13.229,
+      "plan": [
+        {
+          "node": "Limit",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Merge Join",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Merge Join",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Index Scan",
+          "relation": "mp_outbox",
+          "index": "mp_outbox_pkey",
+          "rows": 25,
+          "filtered": 80002
+        },
+        {
+          "node": "Index Only Scan",
+          "relation": "mp_event_delivery",
+          "index": "mp_event_delivery__event_id_index",
+          "rows": 1,
+          "filtered": 0
+        },
+        {
+          "node": "Index Only Scan",
+          "relation": "mp_event_consumption",
+          "index": "mp_event_consumption__event_id_index",
+          "rows": 1,
+          "filtered": 0
+        }
+      ]
+    },
+    "delivery": {
+      "execution_ms": 0.232,
+      "plan": [
+        {
+          "node": "Limit",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Sort",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        },
+        {
+          "node": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        },
+        {
+          "node": "Seq Scan",
+          "relation": "mp_event_delivery",
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        },
+        {
+          "node": "Index Scan",
+          "relation": "mp_outbox",
+          "index": "mp_outbox_pkey",
+          "rows": 1,
+          "filtered": 0
+        },
+        {
+          "node": "Index Scan",
+          "relation": "mp_event_subscription",
+          "index": "mp_event_subscription_pkey",
+          "rows": 1,
+          "filtered": 0
+        }
+      ]
+    },
+    "consumption": {
+      "execution_ms": 0.186,
+      "plan": [
+        {
+          "node": "Limit",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Sort",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        },
+        {
+          "node": "Seq Scan",
+          "relation": "mp_event_consumption",
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        },
+        {
+          "node": "Index Scan",
+          "relation": "mp_outbox",
+          "index": "mp_outbox_pkey",
+          "rows": 1,
+          "filtered": 0
+        }
+      ]
+    },
+    "subscription": {
+      "execution_ms": 0.199,
+      "plan": [
+        {
+          "node": "Limit",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Sort",
+          "relation": null,
+          "index": null,
+          "rows": 25,
+          "filtered": 0
+        },
+        {
+          "node": "Hash Join",
+          "relation": null,
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        },
+        {
+          "node": "Seq Scan",
+          "relation": "mp_event_subscription",
+          "index": null,
+          "rows": 100,
+          "filtered": 0
+        },
+        {
+          "node": "Hash",
+          "relation": null,
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        },
+        {
+          "node": "Seq Scan",
+          "relation": "mp_event_delivery",
+          "index": null,
+          "rows": 50,
+          "filtered": 0
+        }
+      ]
+    }
+  },
+  "baseline": {
+    "reads": {
+      "list": {
+        "count": 307,
+        "median_ms": 1082.939,
+        "p95_ms": 1736.522,
+        "max_ms": 2062.063
+      },
+      "detail": {
+        "count": 307,
+        "median_ms": 1024.609,
+        "p95_ms": 1720.38,
+        "max_ms": 2062.922
+      },
+      "history": {
+        "count": 306,
+        "median_ms": 1544.212,
+        "p95_ms": 2189.153,
+        "max_ms": 2503.29
+      }
+    },
+    "writes": 46,
+    "cleanup": []
+  },
+  "failure": "Warm read connections expired while operator reviews were prepared",
+  "lock_traces": [
+    {
+      "kind": "job",
+      "started": 1794021316.013821,
+      "committed": 1794021316.134,
+      "control_acquisition_ms": 0.179,
+      "control_hold_upper_ms": 121.179,
+      "first_job_row_hold_upper_ms": 96.508
+    },
+    {
+      "kind": "delivery",
+      "started": 1794021322.4807699,
+      "committed": 1794021322.499,
+      "control_acquisition_ms": 0.23,
+      "control_hold_upper_ms": 19.23,
+      "first_job_row_hold_upper_ms": null
+    },
+    {
+      "kind": "consumption",
+      "started": 1794021328.652753,
+      "committed": 1794021328.669,
+      "control_acquisition_ms": 0.247,
+      "control_hold_upper_ms": 17.247,
+      "first_job_row_hold_upper_ms": null
+    },
+    {
+      "kind": "event",
+      "started": 1794021334.968749,
+      "committed": 1794021335.066,
+      "control_acquisition_ms": 0.251,
+      "control_hold_upper_ms": 98.251,
+      "first_job_row_hold_upper_ms": null
+    },
+    {
+      "kind": "subscription",
+      "started": 1794021341.2297661,
+      "committed": 1794021341.245,
+      "control_acquisition_ms": 0.234,
+      "control_hold_upper_ms": 16.234,
+      "first_job_row_hold_upper_ms": null
+    }
+  ],
+  "gate": "BX-01",
+  "state": "diagnostic_only",
+  "probe": "tests/background_cleanup_load.py",
+  "retired": {
+    "containers": 17,
+    "volumes": 6,
+    "networks": 2,
+    "candidate_images": 1,
+    "candidate_tags": 2
+  },
+  "findings": [
+    "Repeated membership checks on the history union scanned both large tables",
+    "The load harness used expired read connections after operator review preparation",
+    "Cleanup committed all five reviewed batches, but mixed latency qualification failed"
+  ]
+}

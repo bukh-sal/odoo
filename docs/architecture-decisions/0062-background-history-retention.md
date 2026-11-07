@@ -1,12 +1,11 @@
 # ADR 0062. Background history retention and replay identity
 
-Status partially qualified for BX-01. Native enqueue and private terminal
+Status qualified for the BX-01 reference workload. Native enqueue and private terminal
 archival passed on a fresh Odoo site. The populated core upgrade and fresh
 restore passed. The reviewed job archive and interrupted-result reconciliation
 also passed above the live-table limit. Native scoped history and aggregate
 alerts passed over HTTP and in the in-app browser. Reviewed event retention,
-the populated upgrade and the fresh restore passed. Latency qualification
-remains open. The lifecycle still refuses an active dispatch table above its
+the populated upgrade, fresh restore and cleanup latency checks passed. The lifecycle still refuses an active dispatch table above its
 row limit. The guarded history diagnostic reports that pressure without
 producing an oversized receipt.
 
@@ -48,6 +47,15 @@ Payload and result access still use their separate job authorization path.
 The stock list uses pages of 50 and a capped total of 10,000. The local
 operator's history command reports site-wide table alerts at the existing
 advisory and hard bounds.
+
+Direct-ID ownership checks translate the view's even/odd projected IDs into
+scoped source primary keys. The initial union-based check repeatedly scanned
+the hot history and caused the web baseline to miss. With primary-key checks,
+the two paired cleanup samples kept worst list/detail/history p95 at
+34.839/17.516/59.201 ms. The fixture included 20 paced readers, an active native
+producer, about 80,000 live jobs and events per table, and over 100,000 compact
+job receipts. Captured plans and dispatch-lock bounds are in the
+[cleanup qualification](../evidence/post-r1/background-execution/bx-01-cleanup-qualified.json).
 
 The first job policy retains the full payload and result for at least seven
 days after both the terminal timestamp and original deadline. The independent
@@ -124,7 +132,8 @@ updates the dispatch control row without advancing its generation and then
 reselects the approved records under that exclusive lock using read committed.
 Concurrent producers and subscribers take the existing shared lock. An older
 repeatable-read transaction must retry after the control-row version changes.
-The lock duration and impact on concurrent work still need measurement. At
+The measured exclusive and shared control-lock upper bounds stayed below
+129 ms in the qualified workload. At
 10,000 events per day, eight days already reaches the 80,000-row advisory for
 the outbox. Size deliveries and consumptions from their own fan-out rates and
 subscriptions from their own expiry rate. Include retained held work and time

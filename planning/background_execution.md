@@ -195,7 +195,7 @@ targets. [Qualified mixed load](../docs/evidence/post-r1/background-execution/bg
 
 ### Implementation gates and acceptance
 
-- [ ] **BX-01. Retention and visibility.** Size history from peak arrival
+- [x] **BX-01. Retention and visibility.** Size history from peak arrival
   rate, recovery horizon and deduplication requirements. The lifecycle
   snapshot has a 100,000-row bound per dispatch table, and job reconciliation
   separately counts all jobs. At 10,000 retained jobs per day, the job table

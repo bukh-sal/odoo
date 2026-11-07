@@ -19,12 +19,7 @@ def listen(probe):
     return json.loads(docker('exec',probe.target['worker_id'],'/venv/bin/python','-c',COUNTERS))
 
 
-def main():
-    probe=Probe('bg-03-01')
-    path=probe.site.local/'bg04-web-capacity.json'
-    assert not path.exists()
-    before=listen(probe)
-    assert before['ListenOverflows']>0 and before['ListenDrops']>0
+def resize_stock_web(probe):
     worker=probe.target['worker_id']
     edge=probe.project+'-edge-1'
     for name in (worker,edge):
@@ -35,8 +30,6 @@ def main():
     volume=probe.project+'_appconfig'
     row,=json.loads(docker('volume','inspect',volume))
     assert row['Labels']['com.modular.disposable']==probe.project
-    result={'phase':'stopping_owned_web','before':before,'web_workers':3,'web_cpus':3,'listen_backlog':24}
-    write(path,result)
     docker('stop',edge,worker)
     code="""
 from pathlib import Path
@@ -59,6 +52,17 @@ os.replace(draft,path)
     docker('start',worker)
     wait_ready(worker)
     docker('start',edge)
+
+
+def main():
+    probe=Probe('bg-03-01')
+    path=probe.site.local/'bg04-web-capacity.json'
+    assert not path.exists()
+    before=listen(probe)
+    assert before['ListenOverflows']>0 and before['ListenDrops']>0
+    result={'phase':'stopping_owned_web','before':before,'web_workers':3,'web_cpus':3,'listen_backlog':24}
+    write(path,result)
+    resize_stock_web(probe)
     result.update(phase='ready',after_restart=listen(probe))
     write(path,result)
     print(json.dumps(result))

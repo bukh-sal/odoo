@@ -57,8 +57,15 @@ class JobHistory(models.Model):
         scope = self._history_scope()
         ids = {ident for ident in self._origin.ids if isinstance(ident, int)}
         if ids:
-            self.env.cr.execute(SQL('SELECT id FROM (%s) AS history WHERE id=ANY(%s)',
-                                   self._history_query(scope), list(ids)))
+            binding = (current_release(self.env)['site_id'], scope.workspace_id, scope.principal_id)
+            # Projected IDs encode the source table and its primary key.
+            # Check those keys directly before the native read window starts.
+            self.env.cr.execute("""SELECT 2::bigint*id FROM mp_job
+                WHERE id=ANY(%s) AND site_id=%s AND workspace_id=%s AND actor_id=%s
+                UNION ALL SELECT 2::bigint*id+1 FROM mp_job_identity
+                WHERE id=ANY(%s) AND site_id=%s AND workspace_id=%s AND actor_id=%s AND job_public_id IS NOT NULL""",
+                [[ident//2 for ident in ids if ident%2==0], *binding,
+                 [(ident-1)//2 for ident in ids if ident%2], *binding])
             if {row[0] for row in self.env.cr.fetchall()} != ids:
                 raise AccessError('Job receipt unavailable in current workspace')
         return scope

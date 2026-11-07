@@ -1,0 +1,38 @@
+{
+  "gate": "BX-01",
+  "state": "passed",
+  "acceptance_checks_passed": 7,
+  "acceptance_checks_required": 7,
+  "checks": [
+    {
+      "requirement": "Bounded live-table pressure and retention sizing",
+      "evidence": ["bx-01-history-pressure.json", "bx-01-history-cli-and-race.json", "../../../architecture-decisions/0062-background-history-retention.md"]
+    },
+    {
+      "requirement": "Native archive, stable scoped replay identity, transaction races and rollback",
+      "evidence": ["bx-01-native-archive.json", "bx-01-history-cli-and-race.json"]
+    },
+    {
+      "requirement": "Populated core upgrade and fresh restore above the old history cap",
+      "evidence": ["bx-01-retention-lifecycle.json", "bx-01-event-retention.json"]
+    },
+    {
+      "requirement": "Independently reviewed cutoff, bounded batch, lost-result reconciliation and resumability",
+      "evidence": ["bx-01-archive-operator.json", "bx-01-event-retention.json"]
+    },
+    {
+      "requirement": "Paginated native status, current actor/workspace/site isolation and aggregate alerts",
+      "evidence": ["bx-01-scoped-history.json", "bx-01-cleanup-qualified.json"]
+    },
+    {
+      "requirement": "Event replay boundary and compact consumed-effect and subscription identity",
+      "evidence": ["bx-01-event-retention.json"]
+    },
+    {
+      "requirement": "Measured selection plans, lock duration and paired native web latency during cleanup",
+      "evidence": ["bx-01-cleanup-initial.json", "bx-01-cleanup-qualified.json"]
+    }
+  ],
+  "qualification_boundary": "Disposable single-host reference workloads with reviewed cleanup. Native transaction effects and their receipts are coordinated with the database. External-effect cleanup is refused by this policy. Deployment resizing and sustained application-specific arrivals remain BX-02 and BX-04 work.",
+  "next_gate": "BX-02"
+}

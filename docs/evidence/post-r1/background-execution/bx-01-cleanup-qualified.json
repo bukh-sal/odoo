@@ -1,0 +1,870 @@
+{
+  "gate": "BX-01",
+  "state": "passed",
+  "slice": "bounded cleanup under paired native web load",
+  "build_record": "../../G7/bx01-history-guard-build-01/candidate-build.json",
+  "probe": "tests/background_cleanup_load.py",
+  "image": "sha256:903752a56c76c610d25a3d9e2a2baa025d4e9208bf7c4d42b395c132544e9665",
+  "project": "mp-r0-r1release51d841353dd4",
+  "limits": {
+    "readers": 20,
+    "phase_seconds": 55,
+    "web_p95_ms": 500,
+    "relative_p95": 1.25,
+    "lock_ms": 500
+  },
+  "batches": {
+    "job": 100,
+    "delivery": 25,
+    "consumption": 25,
+    "event": 25,
+    "subscription": 25
+  },
+  "pairs": [
+    {
+      "phase": "measured_outside_target",
+      "image": "sha256:903752a56c76c610d25a3d9e2a2baa025d4e9208bf7c4d42b395c132544e9665",
+      "limits": {
+        "readers": 20,
+        "phase_seconds": 55,
+        "web_p95_ms": 500,
+        "relative_p95": 1.25,
+        "lock_ms": 500
+      },
+      "batches": {
+        "job": 100,
+        "delivery": 25,
+        "consumption": 25,
+        "event": 25,
+        "subscription": 25
+      },
+      "plans": {
+        "job": {
+          "execution_ms": 15.794,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 100,
+              "filtered": 0
+            },
+            {
+              "node": "Gather Merge",
+              "relation": null,
+              "index": null,
+              "rows": 100,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 81,
+              "filtered": 0
+            },
+            {
+              "node": "Result",
+              "relation": null,
+              "index": null,
+              "rows": 133,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_job",
+              "index": null,
+              "rows": 133,
+              "filtered": 26669
+            }
+          ]
+        },
+        "event": {
+          "execution_ms": 13.17,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Merge Join",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Merge Join",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_outbox",
+              "index": "mp_outbox_pkey",
+              "rows": 25,
+              "filtered": 80002
+            },
+            {
+              "node": "Index Only Scan",
+              "relation": "mp_event_delivery",
+              "index": "mp_event_delivery__event_id_index",
+              "rows": 1,
+              "filtered": 0
+            },
+            {
+              "node": "Index Only Scan",
+              "relation": "mp_event_consumption",
+              "index": "mp_event_consumption__event_id_index",
+              "rows": 1,
+              "filtered": 0
+            }
+          ]
+        },
+        "delivery": {
+          "execution_ms": 0.229,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Nested Loop",
+              "relation": null,
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Nested Loop",
+              "relation": null,
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_delivery",
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_outbox",
+              "index": "mp_outbox_pkey",
+              "rows": 1,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_event_subscription",
+              "index": "mp_event_subscription_pkey",
+              "rows": 1,
+              "filtered": 0
+            }
+          ]
+        },
+        "consumption": {
+          "execution_ms": 0.142,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Nested Loop",
+              "relation": null,
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_consumption",
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_outbox",
+              "index": "mp_outbox_pkey",
+              "rows": 1,
+              "filtered": 0
+            }
+          ]
+        },
+        "subscription": {
+          "execution_ms": 0.164,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Hash Join",
+              "relation": null,
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_subscription",
+              "index": null,
+              "rows": 100,
+              "filtered": 0
+            },
+            {
+              "node": "Hash",
+              "relation": null,
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_delivery",
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            }
+          ]
+        }
+      },
+      "history_guard": {
+        "mixed_live_archived_read": true,
+        "mixed_foreign_batch_denied": true,
+        "foreign_archived_denied": true,
+        "absent_scope_denied": true
+      },
+      "baseline": {
+        "reads": {
+          "list": {
+            "count": 307,
+            "median_ms": 22.374,
+            "p95_ms": 28.964,
+            "max_ms": 45.699
+          },
+          "detail": {
+            "count": 307,
+            "median_ms": 9.125,
+            "p95_ms": 14.022,
+            "max_ms": 26.603
+          },
+          "history": {
+            "count": 306,
+            "median_ms": 45.908,
+            "p95_ms": 55.08,
+            "max_ms": 77.815
+          }
+        },
+        "writes": 46,
+        "cleanup": []
+      },
+      "mixed": {
+        "reads": {
+          "list": {
+            "count": 307,
+            "median_ms": 22.678,
+            "p95_ms": 32.105,
+            "max_ms": 49.343
+          },
+          "detail": {
+            "count": 307,
+            "median_ms": 9.345,
+            "p95_ms": 14.756,
+            "max_ms": 33.859
+          },
+          "history": {
+            "count": 306,
+            "median_ms": 43.768,
+            "p95_ms": 56.652,
+            "max_ms": 87.098
+          }
+        },
+        "writes": 46,
+        "cleanup": [
+          {
+            "kind": "job",
+            "count": 100
+          },
+          {
+            "kind": "delivery",
+            "count": 25
+          },
+          {
+            "kind": "consumption",
+            "count": 25
+          },
+          {
+            "kind": "event",
+            "count": 25
+          },
+          {
+            "kind": "subscription",
+            "count": 25
+          }
+        ]
+      },
+      "lock_traces": [
+        {
+          "kind": "job",
+          "started": 1794021747.07778,
+          "committed": 1794021747.205,
+          "control_acquisition_ms": 0.22,
+          "control_hold_upper_ms": 128.22,
+          "first_job_row_hold_upper_ms": 107.42,
+          "overlapping_requests": 0
+        },
+        {
+          "kind": "delivery",
+          "started": 1794021753.348789,
+          "committed": 1794021753.362,
+          "control_acquisition_ms": 0.211,
+          "control_hold_upper_ms": 14.211,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 1
+        },
+        {
+          "kind": "consumption",
+          "started": 1794021759.535743,
+          "committed": 1794021759.549,
+          "control_acquisition_ms": 0.257,
+          "control_hold_upper_ms": 14.257,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 1
+        },
+        {
+          "kind": "event",
+          "started": 1794021765.7557871,
+          "committed": 1794021765.784,
+          "control_acquisition_ms": 0.213,
+          "control_hold_upper_ms": 29.213,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 1
+        },
+        {
+          "kind": "subscription",
+          "started": 1794021771.856738,
+          "committed": 1794021771.873,
+          "control_acquisition_ms": 0.262,
+          "control_hold_upper_ms": 17.262,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 1
+        }
+      ],
+      "listen_deltas": {
+        "ListenOverflows": 0,
+        "ListenDrops": 0
+      },
+      "notes_preserved": true,
+      "producer_revision_preserved": true
+    },
+    {
+      "phase": "measured_outside_target",
+      "image": "sha256:903752a56c76c610d25a3d9e2a2baa025d4e9208bf7c4d42b395c132544e9665",
+      "limits": {
+        "readers": 20,
+        "phase_seconds": 55,
+        "web_p95_ms": 500,
+        "relative_p95": 1.25,
+        "lock_ms": 500
+      },
+      "batches": {
+        "job": 100,
+        "delivery": 25,
+        "consumption": 25,
+        "event": 25,
+        "subscription": 25
+      },
+      "plans": {
+        "job": {
+          "execution_ms": 7.752,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 100,
+              "filtered": 0
+            },
+            {
+              "node": "Gather Merge",
+              "relation": null,
+              "index": null,
+              "rows": 100,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 81,
+              "filtered": 0
+            },
+            {
+              "node": "Result",
+              "relation": null,
+              "index": null,
+              "rows": 100,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_job",
+              "index": null,
+              "rows": 100,
+              "filtered": 26669
+            }
+          ]
+        },
+        "event": {
+          "execution_ms": 12.134,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Merge Join",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Merge Join",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_outbox",
+              "index": "mp_outbox_pkey",
+              "rows": 25,
+              "filtered": 80002
+            },
+            {
+              "node": "Index Only Scan",
+              "relation": "mp_event_delivery",
+              "index": "mp_event_delivery__event_id_index",
+              "rows": 1,
+              "filtered": 0
+            },
+            {
+              "node": "Index Only Scan",
+              "relation": "mp_event_consumption",
+              "index": "mp_event_consumption__event_id_index",
+              "rows": 1,
+              "filtered": 0
+            }
+          ]
+        },
+        "delivery": {
+          "execution_ms": 0.172,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Nested Loop",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Nested Loop",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_delivery",
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_outbox",
+              "index": "mp_outbox_pkey",
+              "rows": 1,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_event_subscription",
+              "index": "mp_event_subscription_pkey",
+              "rows": 1,
+              "filtered": 0
+            }
+          ]
+        },
+        "consumption": {
+          "execution_ms": 0.079,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Nested Loop",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_consumption",
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Index Scan",
+              "relation": "mp_outbox",
+              "index": "mp_outbox_pkey",
+              "rows": 1,
+              "filtered": 0
+            }
+          ]
+        },
+        "subscription": {
+          "execution_ms": 0.15,
+          "plan": [
+            {
+              "node": "Limit",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Sort",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Hash Join",
+              "relation": null,
+              "index": null,
+              "rows": 50,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_subscription",
+              "index": null,
+              "rows": 75,
+              "filtered": 0
+            },
+            {
+              "node": "Hash",
+              "relation": null,
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            },
+            {
+              "node": "Seq Scan",
+              "relation": "mp_event_delivery",
+              "index": null,
+              "rows": 25,
+              "filtered": 0
+            }
+          ]
+        }
+      },
+      "first_pair": "cleanup-load.json",
+      "history_guard": {
+        "mixed_live_archived_read": true,
+        "mixed_foreign_batch_denied": true,
+        "foreign_archived_denied": true,
+        "absent_scope_denied": true
+      },
+      "baseline": {
+        "reads": {
+          "list": {
+            "count": 307,
+            "median_ms": 22.051,
+            "p95_ms": 29.691,
+            "max_ms": 73.002
+          },
+          "detail": {
+            "count": 307,
+            "median_ms": 9.17,
+            "p95_ms": 14.808,
+            "max_ms": 23.748
+          },
+          "history": {
+            "count": 306,
+            "median_ms": 45.488,
+            "p95_ms": 54.754,
+            "max_ms": 87.66
+          }
+        },
+        "writes": 46,
+        "cleanup": []
+      },
+      "mixed": {
+        "reads": {
+          "list": {
+            "count": 307,
+            "median_ms": 22.758,
+            "p95_ms": 34.839,
+            "max_ms": 82.786
+          },
+          "detail": {
+            "count": 307,
+            "median_ms": 9.338,
+            "p95_ms": 17.516,
+            "max_ms": 24.077
+          },
+          "history": {
+            "count": 306,
+            "median_ms": 44.269,
+            "p95_ms": 59.201,
+            "max_ms": 86.912
+          }
+        },
+        "writes": 46,
+        "cleanup": [
+          {
+            "kind": "job",
+            "count": 100
+          },
+          {
+            "kind": "delivery",
+            "count": 25
+          },
+          {
+            "kind": "consumption",
+            "count": 25
+          },
+          {
+            "kind": "event",
+            "count": 25
+          },
+          {
+            "kind": "subscription",
+            "count": 25
+          }
+        ]
+      },
+      "lock_traces": [
+        {
+          "kind": "job",
+          "started": 1794021937.1918259,
+          "committed": 1794021937.297,
+          "control_acquisition_ms": 0.174,
+          "control_hold_upper_ms": 106.174,
+          "first_job_row_hold_upper_ms": 89.164,
+          "overlapping_requests": 0
+        },
+        {
+          "kind": "delivery",
+          "started": 1794021943.331696,
+          "committed": 1794021943.351,
+          "control_acquisition_ms": 0.304,
+          "control_hold_upper_ms": 20.304,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 1
+        },
+        {
+          "kind": "consumption",
+          "started": 1794021949.286783,
+          "committed": 1794021949.3,
+          "control_acquisition_ms": 0.217,
+          "control_hold_upper_ms": 14.217,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 0
+        },
+        {
+          "kind": "event",
+          "started": 1794021955.3048081,
+          "committed": 1794021955.331,
+          "control_acquisition_ms": 0.192,
+          "control_hold_upper_ms": 27.192,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 0
+        },
+        {
+          "kind": "subscription",
+          "started": 1794021961.2718,
+          "committed": 1794021961.286,
+          "control_acquisition_ms": 0.2,
+          "control_hold_upper_ms": 15.2,
+          "first_job_row_hold_upper_ms": null,
+          "overlapping_requests": 0
+        }
+      ],
+      "listen_deltas": {
+        "ListenOverflows": 0,
+        "ListenDrops": 0
+      },
+      "notes_preserved": true,
+      "producer_revision_preserved": true,
+      "overlap_coverage": {
+        "job": 0,
+        "delivery": 2,
+        "consumption": 1,
+        "event": 1,
+        "subscription": 1
+      }
+    }
+  ],
+  "job_overlap": {
+    "phase": "passed",
+    "image": "sha256:903752a56c76c610d25a3d9e2a2baa025d4e9208bf7c4d42b395c132544e9665",
+    "readers": 20,
+    "sample_seconds": 15,
+    "target_requests_per_second": 40,
+    "baseline": {
+      "count": 600,
+      "median_ms": 9.776,
+      "p95_ms": 16.243,
+      "max_ms": 28.301
+    },
+    "mixed": {
+      "count": 600,
+      "median_ms": 9.819,
+      "p95_ms": 15.638,
+      "max_ms": 25.559
+    },
+    "lock_trace": {
+      "kind": "job",
+      "started": 1794022158.845845,
+      "committed": 1794022158.961,
+      "control_acquisition_ms": 0.155,
+      "control_hold_upper_ms": 116.155,
+      "first_job_row_hold_upper_ms": 98.177,
+      "overlapping_requests": 5
+    }
+  },
+  "observation": {
+    "resources": {
+      "web": {
+        "nano_cpus": 3000000000,
+        "memory_bytes": 1610612736
+      },
+      "postgres": {
+        "nano_cpus": 4000000000,
+        "memory_bytes": 536870912
+      },
+      "docker": {
+        "NCPU": 16,
+        "MemTotal": 8290807808,
+        "Driver": "overlayfs"
+      }
+    },
+    "clock_offset_ms": -2.874,
+    "minimum_clock_rtt_ms": 1.045,
+    "producer": {
+      "events": 185,
+      "revision": 185
+    },
+    "final_counts": {
+      "outbox": 80337,
+      "live_jobs": 80108,
+      "compact_jobs": 100310
+    }
+  },
+  "overlap_clock_check": {
+    "clock_adjusted_max_overlap_ms": {
+      "job": 0,
+      "delivery": 19.304,
+      "consumption": 13.257,
+      "event": 7.109,
+      "subscription": 15.071
+    }
+  },
+  "original_diagnostic": "bx-01-cleanup-initial.json",
+  "unpaced_probe": {
+    "phase": "rate_limited_before_cleanup",
+    "reason": "Unpaced readers exceeded the installed 50 request/s public proxy budget",
+    "cleanup_started": false,
+    "correction": "20 readers evenly staggered at 40 requests/s"
+  },
+  "regressions": {
+    "dispatch": 23,
+    "event_contracts": 9,
+    "contract_freeze_passed": true
+  },
+  "retired": {
+    "containers": 18,
+    "volumes": 6,
+    "networks": 2,
+    "candidate_images": 1,
+    "candidate_tags": 2
+  },
+  "limits_of_evidence": "Paced native read and producer workload plus a supplemental 40 request/s detail pair on one Docker host. Site sizing and longer sustained arrivals are qualified separately in BX-02 and BX-04."
+}
