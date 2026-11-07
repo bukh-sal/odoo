@@ -187,6 +187,40 @@ def _table(cr,table):
     return dict(rows=count,sha256=cr.fetchone()[0])
 
 
+def history_pressure(cr, scope):
+    """Return bounded table counts even when the lifecycle snapshot refuses."""
+    _scope(cr, scope)
+    tables = _schema(cr)
+    if tables is None:
+        raise DispatchLifecycleError('Native dispatch schema unavailable')
+    _control(cr, scope)
+    warning_rows = MAX_ROWS * 4 // 5
+    report = {}
+    for table in tables:
+        # _schema admits only known names. A large table costs at most one
+        # more visible row than the lifecycle can accept.
+        cr.execute(
+            'SELECT count(*) FROM (SELECT 1 FROM public.' + table + ' LIMIT %s) AS bounded',
+            [MAX_ROWS + 1],
+        )
+        rows, = cr.fetchone()
+        if rows > MAX_ROWS:
+            status = 'over_limit'
+        elif rows == MAX_ROWS:
+            status = 'at_limit'
+        elif rows >= warning_rows:
+            status = 'approaching_limit'
+        else:
+            status = 'below_warning'
+        report[table] = dict(
+            rows_observed=rows,
+            count_is_lower_bound=rows > MAX_ROWS,
+            rows_until_limit=max(0, MAX_ROWS - rows),
+            status=status,
+        )
+    return dict(row_limit=MAX_ROWS, warning_rows=warning_rows, tables=report)
+
+
 def observe(cr,scope,*,lock=False):
     """Consistent caller-owned transaction required; returns no raw payloads."""
     _scope(cr,scope);tables=_schema(cr)

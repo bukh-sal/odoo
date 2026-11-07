@@ -3,6 +3,7 @@ import argparse
 import re
 
 from modular_platform import durable
+from modular_platform.dispatch_lifecycle import LifecycleScope, history_pressure
 from modular_platform.job_runner import emit,load_registry,validate_startup
 from modular_platform.plans import data_digest
 
@@ -56,13 +57,13 @@ def decision(cr,site,release,job,action,evidence):
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('command',choices=['metrics','review','apply'])
+    parser.add_argument('command',choices=['metrics','history','review','apply'])
     parser.add_argument('--job')
     parser.add_argument('--action',choices=ACTIONS)
     parser.add_argument('--evidence')
     parser.add_argument('--approval')
     args=parser.parse_args()
-    if args.command!='metrics' and (not args.job or not args.action):
+    if args.command in {'review','apply'} and (not args.job or not args.action):
         parser.error('Explicit job and action required')
     if args.command=='apply' and not args.approval:
         parser.error('Exact reviewed decision digest required')
@@ -74,6 +75,11 @@ def main():
     with registry.cursor() as cr:
         release=current_release(api.Environment(cr,1,{}))
         site,digest=release['site_id'],release['release_digest']
+        if args.command=='history':
+            report=history_pressure(cr,LifecycleScope(site,digest))
+            emit(event='job_history',**report)
+            cr.rollback()
+            return
         if args.command=='metrics':
             emit(event='job_metrics',pools={pool:queue_metrics(cr,site,digest,job_dispatch.routes_for(pool))
                                            for pool in ('urgent','bulk')})

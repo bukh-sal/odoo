@@ -53,3 +53,211 @@ BG-01 through BG-04 passed for the measured reference: three stock Odoo
 web workers, four PostgreSQL CPUs, one urgent lane and two bulk lanes.
 See the [acceptance decision](../docs/evidence/post-r1/background-execution/qualification-decision.json)
 and [operator commands](../docs/operations.md#scheduled-native-job-lanes).
+
+## Follow-up plan for sustained background workloads
+
+Planning review, 7 November 2026. BG-01 through BG-04 are the qualified
+baseline. Track active work and evidence in the
+[implementation checklist](../docs/implementation-status.md#post-r1-work). This plan
+assumes the current single-site Docker deployment and trusted native plugins.
+Start with retention and visibility, then make worker deployment and resizing
+safe. Recurrence is the first new job feature. Automatic sizing follows
+measured demand.
+
+### Scope decisions
+
+| Gap or limit | Recommended scope |
+| --- | --- |
+| Recurring schedules | Include fixed UTC intervals, pause and resume, and bounded missed occurrences. Add local calendars, daylight-saving rules and cron expressions when a named app needs them. |
+| Real push and other remote writes | Include one provider adapter with the first app that needs it. Use the outbox, stable effect IDs and explicit reconciliation. Qualify the actual provider's retry and status semantics before enabling it. |
+| Extra pools and workspace concurrency | Keep urgent and bulk initially. Add a pool when a workload needs its own resource budget, provider quota or network access. Keep one attempt per workspace per pool as the default. Qualify higher concurrency only for handlers with explicit independent partitions. |
+| Redis or another broker | Keep PostgreSQL as the queue and source of truth. Revisit if sustained tests still miss web or job targets after retention, query tuning and sizing, or if dispatch needs independent multi-host or cross-site operation. |
+| Untrusted code | Keep in R2 with a separate threat model and runtime. Native worker credentials, registry and filestore access fit the trusted native execution model. |
+| Job history and operator UI | Include bounded retention and a paginated, scoped Operations view using native Odoo patterns. Display safe metadata and outcomes. Keep retry, external settlement and infrastructure actions with independent operator authority. |
+| Public job API | Defer generic submission. Let apps expose their own authorized actions and scoped status. A future common API needs its own contract, idempotency and admission rules. |
+| Job chains, fan-out, joins and checkpoints | Start with app-owned durable progress and bounded chunks. An import can persist a cursor and enqueue its next chunk in the same fenced transaction. Add bounded fan-out and joins when an app needs them. Evaluate a workflow engine if several apps need durable branching, signals or long-running orchestration. |
+| Single-site operation, longer jobs and larger inputs | Keep the single-site target, 30-day schedule horizon, 24-hour validity window, 1-hour attempt ceiling, 16-attempt ceiling and 64 KiB serialized JSON bound. Store large inputs and outputs in scoped application storage and enqueue references. Chunk long work. Expand limits with a workload and a recovery test that exercises them. |
+
+The current API and limits are in [ADR 0061](../docs/architecture-decisions/0061-scheduled-native-jobs-v1.md)
+and the [queue implementation](../packages/platform_sdk/modular_platform/durable.py).
+Temporal illustrates the additional machinery a workflow engine brings,
+including durable event history and checkpoint data across activity attempts.
+[Temporal workflows](https://docs.temporal.io/workflows) · [Activity execution](https://docs.temporal.io/tasks).
+
+### Deployment and release ownership
+
+Today Compose brings up edge, Odoo and PostgreSQL. The local operator
+launches separate worker containers on the private runtime network. They
+use the approved application image, exact database and inventory pins, and
+the registry, credentials and filestore needed by trusted native handlers.
+The production override defines no worker service. The operator can add
+lanes, while a reduction currently calls for draining the worker fleet.
+The current launcher allows one to eight lanes per pool, each capped at one
+CPU and 768 MiB. Start and drain already share the operator locking path.
+[Compose baseline](../deploy/compose.yaml) · [Production override](../deploy/compose-production.yaml) ·
+[Job operator](../packages/platform_sdk/modular_platform/job_operator.py).
+
+Aurora's Dokploy deployment offers a precedent for separate web and worker
+roles, including dedicated general and log workers. Keep that separation
+while binding this platform's workers to the reviewed site and release.
+See Aurora's `compose.dokploy.yml` at the pinned revision above.
+
+Keep the first deployment on one Docker host. Make worker roles and desired
+counts explicit in the reviewed site profile, with one operator-owned
+reconciler. Bind roles to site, database, release, inventory, image and
+allowed resource ranges. Keep web and native workers on the same image,
+with independent sizing. Workers use private networking, scoped mounts
+and readiness checks for pins and dispatch state. Run recurrence as a
+separate producer on the same pinned release. Docker documents single-host
+Compose and production overrides.
+[Docker production guidance](https://docs.docker.com/compose/how-tos/production/).
+
+Before maintenance, pause the scaler and recurring producer, stop new
+claims, drain workers and verify the stopped generation. Keep checkpoint,
+upgrade, restore and separate resume under existing operator authority.
+Recreate roles from new pins after dispatch reopens. Test restore with a
+previously emitted occurrence and a previously sent external effect. During
+ordinary scale-down, drain selected idle lanes first and give active
+attempts a bounded finish policy. The current 45-second shutdown grace is
+shorter than some allowed attempts, so qualify the stop path before
+automatic downscaling.
+[Operator runbook](../docs/operations.md#scheduled-native-job-lanes) ·
+[Populated release proof](../docs/evidence/post-r1/background-execution/bg-03-release.json).
+
+If a deployment later needs multiple hosts, keep the same role and metrics
+contract. Qualify shared filestore, credentials, connection capacity, worker
+identity, shutdown grace and release fencing across hosts. Kubernetes
+Deployments with HPA or KEDA are an option where Kubernetes is already used.
+Prefer an exported aggregate over raw job table access. KEDA can consume a
+numeric PostgreSQL query, and HPA can stabilize downscaling. The platform's
+operator still owns release coordination and must verify drain behavior
+on the chosen orchestrator.
+[KEDA PostgreSQL scaler](https://keda.sh/docs/2.22/scalers/postgresql/) ·
+[HPA controls](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/) ·
+[Pod termination](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/).
+
+### Capacity and automatic scaling
+
+Automatic restart exists. Automatic sizing is a new feature. Start with
+fixed counts and an advisor that reports recommended counts and reasons.
+Measure ready depth, oldest eligible age, claim-to-finish time including
+preparation and apply, arrival and completion rates, active workspace slots,
+retry and lease loss, worker startup and drain time, and web and database
+headroom. Keep future, expired, held, paused and uncertain work separate
+from runnable demand. Export bounded aggregates. The current CLI provides
+snapshots and worker logs. Include held and obsolete handler counts
+separately because pool metrics currently filter on registered routes.
+Keep original eligibility and retry wait separate so a retry does not reset
+the apparent end-to-end wait. Measure from the committed claim, including
+preparation before the current attempt log. Budget for each lane's native
+registry and database connections, including its slot and heartbeat activity.
+[Queue metrics](../packages/platform_sdk/modular_platform/job_admin.py) ·
+[Worker instrumentation](../packages/platform_sdk/modular_platform/job_supervisor.py).
+
+Use runnable jobs per ready lane for similar-duration work. When costs
+vary, estimate **worker-seconds** using observed durations per handler and
+version, with reviewed defaults for new or sparsely observed handlers.
+Compare ready work plus expected arrivals during the drain window with
+seconds available per lane after startup. Account for work already running.
+Use oldest eligible age against the pool's start target, and cap growth
+using connection usage, PostgreSQL CPU and waits, storage latency and Odoo
+web latency. AWS describes sizing backlog per worker from service time and
+acceptable queue delay. [AWS queue-based sizing](https://docs.aws.amazon.com/autoscaling/ec2/userguide/scale-sqs-queue-cli.html).
+
+For example, 120 ready reports averaging two seconds represent 240
+worker-seconds. A 60-second drain target with a 10-second startup reserve
+suggests five lanes before arrivals and active work are considered. If
+the reports span two workspaces, the current cap permits two concurrent
+attempts. The advisor should report why the target is unreachable. Adding
+lanes helps when other workspaces have available slots. For one hot
+workspace, measure the handler and qualify independent partitions before
+raising concurrency. Test fairness with more than the current 64 workspace
+candidates and qualify the session-held slot lock under connection loss.
+[Workspace lock](../packages/platform_sdk/modular_platform/job_supervisor.py:83) ·
+[Candidate scan](../packages/platform_sdk/modular_platform/durable.py:250).
+
+Keep urgent workers warm. The reference reminder p95 was 2.805 seconds
+against a three-second target. Start bulk with a warm minimum and reviewed
+maximum. Consider scale-to-zero only after measuring the wake-up delay.
+For predictable spikes, compare prewarming capacity with reactive growth.
+If polling becomes a measurable cost, compare adaptive backoff and a
+PostgreSQL notification as a wake-up hint. Keep a timed recheck for jobs
+becoming eligible and for workers reconnecting after missed notifications.
+Offer opt-in bulk autoscaling after manual resizing and the advisor pass.
+Use sustained signals, rate-limited growth and slower downscaling. Hold and
+alert on stale metrics or database saturation. Serialize resizing with
+release operations and keep the controller unable to reopen dispatch.
+Compare fixed, count-based and estimated-work policies against identical
+load. Prefer the simplest policy that meets the agreed service and resource
+targets. [Qualified mixed load](../docs/evidence/post-r1/background-execution/bg-04-qualified.json) ·
+[PostgreSQL notifications](https://www.postgresql.org/docs/16/sql-notify.html) ·
+[Scaling stabilization](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/#stabilization-window).
+
+### Implementation gates and acceptance
+
+- [ ] **BX-01. Retention and visibility.** Size history from peak arrival
+  rate, recovery horizon and deduplication requirements. The lifecycle
+  snapshot has a 100,000-row bound per dispatch table, and job reconciliation
+  separately counts all jobs. At 10,000 retained jobs per day, the job table
+  alone reaches that bound in ten days. Include event and outbox history. Specify
+  separate retention for full payloads, safe status, scoped deduplication
+  keys and external-effect receipts. Preserve semantic digests within the
+  approved replay window. Move eligible terminal history out of the live
+  lifecycle scan with its deduplication record written atomically. Keep held
+  and uncertain work visible and retain external evidence across restore.
+  Define the result a duplicate receives after full job data has expired.
+  Start with bounded resumable batches
+  and measured indexes. Time partitioning complicates global deduplication
+  because partitioned unique keys must include the partition key. Prove
+  duplicate submission after pruning, enqueue and cleanup races, crash,
+  upgrade and restore with realistic historical totals above the old cap.
+  Measure lock duration and web latency. Add paginated scoped status and
+  aggregate alerts before action buttons.
+  [Lifecycle bound](../packages/platform_sdk/modular_platform/dispatch_lifecycle.py:182) ·
+  [PostgreSQL partitioning limits](https://www.postgresql.org/docs/16/ddl-partitioning.html#DDL-PARTITIONING-DECLARATIVE-LIMITATIONS) ·
+  [Vacuum and space reuse](https://www.postgresql.org/docs/16/routine-vacuuming.html).
+- [ ] **BX-02. Managed deployment and manual resizing.** Reproduce roles from
+  a reviewed site profile. Add per-lane drain and visible desired versus
+  ready counts under existing locks. Test wrong pins, partial starts,
+  connection loss, resizing with active jobs, stale claim refusal and
+  a resize racing an upgrade. Measure connection and resource usage.
+- [ ] **BX-03. Recurrence.** Store a versioned schedule and cursor under a
+  scoped service identity. Advance the cursor and enqueue in one transaction
+  with a stable key for the schedule and nominal occurrence. Keep occurrence
+  identity stable across credential rotation and schedule edits. Start with
+  skip or coalesce-latest after downtime, and one outstanding occurrence per
+  schedule. Require a replay window and batch cap before supporting full
+  catch-up. Emit one-off jobs only inside their scheduling horizon. Guarded
+  web startup requires zero Odoo cron threads, so use a separate producer
+  under the dispatch fence. Test duplicate ticks, downtime, revocation,
+  edits, overlap, maintenance and restore of a previously emitted occurrence.
+  [Guarded startup](../packages/platform_sdk/modular_platform/worker_start.py:52) ·
+  [Odoo scheduled actions](https://www.odoo.com/documentation/19.0/developer/reference/backend/actions.html#scheduled-actions-ir-cron) ·
+  [CronJob catch-up and overlap](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
+- [ ] **BX-04. Load and scaling.** After BX-01 and BX-02, repeat BG-04 and
+  test sustained arrivals for the first heavy app. Fix the workload, queue
+  wait, web p95 and DB headroom targets before running. Include one hot
+  workspace, many workspaces, variable runtimes, process loss, database
+  saturation and stale metrics. Compare advisor recommendations with actual
+  drain time, expired work, and worker-hours. Exercise fast bursts where a
+  new lane would arrive after the useful start window. Enable automatic bulk sizing only if
+  it improves the result and passes scale-down, rollback and release drills.
+  Include recurring bursts after BX-03. Reassess pools and brokers against
+  measured gaps. A broker would still need an outbox publisher,
+  acknowledgments, deduplication and recovery around the handoff.
+  [RabbitMQ delivery reliability](https://www.rabbitmq.com/docs/reliability).
+- [ ] **BX-05. App-driven extensions.** Select the first app that needs remote
+  delivery or resumable chunks. For push, use an outbox consumer with scoped
+  provider access, rate limits and distinct accepted, delivered, rejected and
+  unknown outcomes. Qualify response loss, duplicate receipts, revocation,
+  provider key lifetime and restore. For chunks, prove cursor and successor
+  enqueue atomicity, cancellation and version compatibility. Qualify bounded
+  fan-out when needed and propose common orchestration or public API only
+  once a shared requirement is clear.
+  [FCM acceptance and delivery](https://firebase.google.com/docs/cloud-messaging/understand-delivery) ·
+  [Provider idempotency example](https://docs.stripe.com/api/idempotent_requests).
+
+The open sizing inputs are the first app's arrival rate, burst and wait
+target, the desired retention and restore window, and the deployment
+topology. Retention and visibility can be developed on disposable sites
+while those inputs are collected.

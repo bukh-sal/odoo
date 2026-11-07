@@ -36,6 +36,16 @@ Docker assets were retired; the stock-r1 image remains. Revalidate BG-04
 when changing the workload, sizing, or queue/web behavior. The
 [work log](work-log.md) retains the earlier attempts.
 
+The [background execution follow-up plan](../planning/background_execution.md#follow-up-plan-for-sustained-background-workloads)
+tracks BX-01 through BX-05. **BX-01 is active.** No follow-up gate has
+passed. The [first PostgreSQL probe](evidence/post-r1/background-execution/bx-01-history-pressure.json)
+verified a bounded history report at and above the lifecycle limit. The
+operator CLI has a history entry point. Verify it end to end on a rebuilt
+candidate. BX-02 through BX-05 are queued. Next, design the archive and
+deduplication transaction with restore semantics before changing enqueue or
+deleting history. No disposable BX database is left running and no blocker
+requires user action.
+
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora
 Tasks slice. Both passed offline registry and access checks, and both changed

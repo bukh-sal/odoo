@@ -1,0 +1,24 @@
+{
+  "gate": "BX-01",
+  "slice": "read-only history pressure",
+  "state": "probe_passed",
+  "acceptance": "BX-01 remains in progress",
+  "probe": "tests/background_history_postgres.py",
+  "environment": {
+    "postgres_image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "python_runtime_image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+    "database": "mp_bx_history_probe",
+    "disposable_container_retired": true
+  },
+  "observed": {
+    "80000_rows_warns": true,
+    "100000_rows_at_limit": true,
+    "100002_rows_refuses_lifecycle_snapshot": true,
+    "over_limit_history_reports_lower_bound": 100001,
+    "empty_outbox_remains_below_warning": true,
+    "foreign_site_refused": true,
+    "dispatch_regressions_passed": 22,
+    "original_contract_freeze_passed": true
+  },
+  "limits": "The probe called the production SQL helper against the supported base schema. It did not start a rebuilt Odoo site or exercise the guarded Docker operator end to end. Archive, deduplication and restore changes are pending."
+}

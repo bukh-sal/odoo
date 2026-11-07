@@ -164,7 +164,7 @@ def main(argv=None):
     start_jobs=job_actions.add_parser('start')
     start_jobs.add_argument('--urgent-lanes',type=int,default=1)
     start_jobs.add_argument('--bulk-lanes',type=int,default=2)
-    for action in ('drain','metrics'):
+    for action in ('drain','metrics','history'):
         job_actions.add_parser(action)
     for action in ('review','apply'):
         control=job_actions.add_parser(action)
