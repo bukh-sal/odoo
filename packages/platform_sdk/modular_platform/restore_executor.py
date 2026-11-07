@@ -19,7 +19,7 @@ import secrets
 from .catalog import Catalog
 from .contracts import load_json
 from .deployment import DockerObserver, _run
-from .dispatch_lifecycle import JOB_IDENTITY, PHYSICAL_SCHEMA
+from .dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA
 from .operator_os import OperatorError, OperationLocks, current_identity, protect_directory
 from .operator_store import _write_new
 from .plans import data_digest
@@ -185,23 +185,27 @@ class RestoreExecutor:
         helper=self._dispatch_helper(manifest=manifest,purpose='source_inspection')
         observed=helper.require_profile(helper.inspect_current(configuration=config),closed=True)
         if (profile is not None and observed['schema_digest']!=profile['schema_digest']
-                and not self._empty_job_identity_transition(profile,observed,bundle)):
+                and not self._empty_retention_table_transition(profile,observed,bundle)):
             raise OperatorError('Failed dispatch schema requires independent reconciliation')
         return observed
 
     @staticmethod
-    def _empty_job_identity_transition(previous,current,bundle):
+    def _empty_retention_table_transition(previous,current,bundle):
         # A failed first upgrade can create the table while ingress and dispatch
         # are fenced. Refuse any identity rows or any other schema difference.
         changes=bundle['operation_lock'].get('native_core_changes',[])
         if (bundle['plan']['operation_type']!='core_upgrade'
-                or previous['profile']!='r1-native-dispatch-v1' or current['profile']!=previous['profile']
-                or not any((change['addon'],change['previous_version'],change['target_version'])
-                    ==('mp_core','19.0.0.1.30','19.0.0.1.31') for change in changes)):
+                or previous['profile']!='r1-native-dispatch-v1' or current['profile']!=previous['profile']):
             return False
         before=previous['tables'].keys();after=current['tables'].keys()
-        return (JOB_IDENTITY not in before and after==before|{JOB_IDENTITY}
-                and current['tables'][JOB_IDENTITY]['rows']==0
+        transition = {
+            ('19.0.0.1.30', '19.0.0.1.31'): JOB_IDENTITY,
+            ('19.0.0.1.32', '19.0.0.1.33'): EVENT_HISTORY,
+        }
+        added = next((transition.get((change['previous_version'], change['target_version']))
+                      for change in changes if change['addon'] == 'mp_core'), None)
+        return (added is not None and added not in before and after==before|{added}
+                and current['tables'][added]['rows']==0
                 and all(snapshot['schema_digest']==data_digest({table:PHYSICAL_SCHEMA[table] for table in snapshot['tables']})
                         for snapshot in (previous,current)))
 

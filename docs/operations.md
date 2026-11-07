@@ -217,6 +217,15 @@ rows require investigation on the reviewed target. Keep archived identities
 and external-effect evidence with the retention and restore policy described
 in [ADR 0062](architecture-decisions/0062-background-history-retention.md).
 
+For outbox cleanup, use `jobs archive-review --kind <kind> --cutoff
+<UTC-ISO-timestamp> --limit <1-25>` and the same apply and status commands.
+The cutoff must be at least eight days in the past. Process `delivery` and
+`consumption` before `event`, then process `subscription`. An event with
+live references and a subscription with live deliveries stay ineligible.
+Repeat the review for each batch. The event review uses the same independent
+pins and refuses profiles with external installations, active service
+credentials, or API keys. [Event retention policy](architecture-decisions/0062-background-history-retention.md)
+
 Drain lanes before release changes. Follow the existing approved lifecycle
 operation and separate restore/resume decisions if recovery is needed.
 Start lanes again from the new target pin only after dispatch and traffic

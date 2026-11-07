@@ -1,0 +1,106 @@
+{
+  "gate": "BX-01",
+  "state": "in_progress",
+  "slice": "reviewed event, delivery, consumption and subscription retention",
+  "builds": {
+    "base": "../../G7/bx01-event-upgrade-base-01/candidate-build.json",
+    "successor": "../../G7/bx01-event-retention-build-01/candidate-build.json"
+  },
+  "probes": [
+    "tests/background_event_retention.py",
+    "tests/background_event_lifecycle.py"
+  ],
+  "native": {
+    "native_consumption_deduplicated": true,
+    "old_replay_refused": true,
+    "grace_period_preserved": true,
+    "held_preserved": true,
+    "new_consumer_effect_applied": true,
+    "expired_subscription_key_refused": true,
+    "stale_snapshot_refused": true,
+    "compact_rows_observed": 100007,
+    "image": "sha256:8c9daf9abb1a55a7ce0434ae85c700bbdc40303074cf04e14b8dd80a5f8c5c9e",
+    "reviewed_kinds": [
+      "delivery",
+      "consumption",
+      "event",
+      "subscription"
+    ],
+    "event_and_subscription_blocked_by_live_references": true
+  },
+  "core_upgrade": {
+    "phase": "passed",
+    "fault_operation": "136b60aa-515f-4af2-9afd-f18f0df36cde",
+    "original": "sha256:454ca96d7689c8a50a62b8baa3170b2601b0b7f3114f24189af5f649a274548a",
+    "target": "sha256:8c9daf9abb1a55a7ce0434ae85c700bbdc40303074cf04e14b8dd80a5f8c5c9e",
+    "restore": "sha256:4b8f799140d5270a81d0df8db94eedf8efc7e8f351a5b52a2ed2f9fcdad05daf",
+    "resume": "sha256:d8b6ba143ed89f6d43012d1e1a90a20e1e1eac75294ae8e05159508de96efb99",
+    "source": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "upgrade_operation": "83c086ad-483d-4cc8-a564-db046d16b4bc",
+    "native_projection_preserved": true,
+    "live_consumed_receipt_preserved": true,
+    "early_cutoff_refused": true,
+    "oversized_batch_refused": true,
+    "external_profile_refused": true
+  },
+  "populated_restore": {
+    "phase": "passed",
+    "operation": "771cde63-4c79-4051-891a-e069e2da8b8c",
+    "image": "sha256:8c9daf9abb1a55a7ce0434ae85c700bbdc40303074cf04e14b8dd80a5f8c5c9e",
+    "before": {
+      "rows": 100007,
+      "sha256": "ce1ccf9e1d82f7d54f6cfc1565ce1ad4a08329465a80eb101f4214740fbefef7"
+    },
+    "restore": "sha256:236895df88b8f2d51b75df9456941e0c562b49c8d68b9ce638229263b102b950",
+    "resume": "sha256:16770ac39ad9f4103c69053aef86c8eff7c6f67808469727ef7d2e4ce1cd3cd8",
+    "source": {
+      "rows": 100007,
+      "sha256": "ce1ccf9e1d82f7d54f6cfc1565ce1ad4a08329465a80eb101f4214740fbefef7"
+    },
+    "restored": {
+      "rows": 100007,
+      "sha256": "ce1ccf9e1d82f7d54f6cfc1565ce1ad4a08329465a80eb101f4214740fbefef7"
+    },
+    "native_projection_preserved": true,
+    "consumed_receipt_preserved": true
+  },
+  "policy": {
+    "live_replay_days": 7,
+    "minimum_archive_age_days": 8,
+    "maximum_batch": 25,
+    "external_effects_archived": false
+  },
+  "fixture_correction": "The initial setup aged the event and subscription but left the acknowledged delivery lease current. The review refused it. Only that fixture delivery was aged before resuming.",
+  "regressions": {
+    "dispatch": 23,
+    "event_contracts": 9,
+    "restore": 18,
+    "release": 29,
+    "contract_freeze_passed": true,
+    "scheduled_workload_passed_on_both_sites": true
+  },
+  "retired": {
+    "fresh_site": {
+      "containers": 44,
+      "volumes": 6,
+      "networks": 2,
+      "candidate_tags": 2,
+      "exact_successor_image_retained": true
+    },
+    "upgrade_site": {
+      "containers": 52,
+      "volumes": 6,
+      "networks": 2,
+      "candidate_images": 1,
+      "candidate_tags": 4,
+      "base_worktree_retired": true
+    }
+  },
+  "next_fixture_image": "sha256:8c9daf9abb1a55a7ce0434ae85c700bbdc40303074cf04e14b8dd80a5f8c5c9e",
+  "pending": [
+    "Measure lock duration and web latency during job and event cleanup"
+  ]
+}

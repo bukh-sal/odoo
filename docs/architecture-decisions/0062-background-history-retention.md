@@ -4,10 +4,11 @@ Status partially qualified for BX-01. Native enqueue and private terminal
 archival passed on a fresh Odoo site. The populated core upgrade and fresh
 restore passed. The reviewed job archive and interrupted-result reconciliation
 also passed above the live-table limit. Native scoped history and aggregate
-alerts passed over HTTP and in the in-app browser. Event retention and latency
-qualification remain open. The lifecycle still refuses an active dispatch
-table above its row limit. The guarded history diagnostic reports that
-pressure without producing an oversized receipt.
+alerts passed over HTTP and in the in-app browser. Reviewed event retention,
+the populated upgrade and the fresh restore passed. Latency qualification
+remains open. The lifecycle still refuses an active dispatch table above its
+row limit. The guarded history diagnostic reports that pressure without
+producing an oversized receipt.
 
 Use one private database identity registry for both enqueue and archive. Its
 unique key is the current enqueue identity: site, workspace, actor, installation,
@@ -92,11 +93,42 @@ restore still has to match the original checkpoint schema and complete its
 separate resume review. A nonempty table during that transition requires
 independent reconciliation.
 
-Qualify event and outbox retention separately within BX-01. Deliveries and
-consumer receipts can refer to an outbox event. Establish the replay and
-subscription rules before moving an event, and retain consumed-effect evidence
-needed for a restored checkpoint. Keep cleanup disabled until the operator can
-review the exact event policy, cutoff, bounded batch and current site pins.
+The 0.1.32 to 0.1.33 transition applies the same exact empty-table rule for
+the compact event history. The populated checkpoint drill restored 100,007
+compact event and receipt rows with the original digest, the native projection
+and its consumption receipt. [Event retention evidence](../evidence/post-r1/background-execution/bx-01-event-retention.json)
+
+The event policy keeps the existing seven-day occurrence-time replay window
+and one-hour subscription lifetime. Event cleanup requires a cutoff at least
+eight days in the past. Start by archiving deliveries for expired subscriptions
+and native consumption receipts for events at or before that cutoff. A delivery
+can move only when both its subscription and any lease have expired within the
+fixed review window. After those references move, archive eligible outbox rows
+and expired subscriptions that have no remaining live deliveries. Held events
+and their references remain live. The extra day gives the latest in-window
+subscription time to expire before a payload or receipt can move.
+
+The compact history records original public IDs, routing scope, safe delivery
+outcomes, event payload digests and native consumption identities. Payloads,
+binding descriptors, lease tokens and subscription keys are absent from the
+compact records. The original scoped subscription key is preserved as a digest
+and still refuses recreation. A live consumer deduplicates by the original
+public event ID as well as the live receipt. Archived subscription status
+returns `NOT_FOUND`. Native effects and their receipts share the checkpoint
+transaction. This policy requires a native-only profile without live technical
+credentials or API keys. A remote provider needs independent effect evidence
+before its transport can use event cleanup.
+
+The operator reviews a single kind and at most 25 records per batch. Apply
+updates the dispatch control row without advancing its generation and then
+reselects the approved records under that exclusive lock using read committed.
+Concurrent producers and subscribers take the existing shared lock. An older
+repeatable-read transaction must retry after the control-row version changes.
+The lock duration and impact on concurrent work still need measurement. At
+10,000 events per day, eight days already reaches the 80,000-row advisory for
+the outbox. Size deliveries and consumptions from their own fan-out rates and
+subscriptions from their own expiry rate. Include retained held work and time
+to apply reviewed batches when evaluating headroom.
 
 Sources: [active enqueue](../../packages/platform_sdk/modular_platform/durable.py:154),
 [lifecycle control and snapshot](../../packages/platform_sdk/modular_platform/dispatch_lifecycle.py:181),

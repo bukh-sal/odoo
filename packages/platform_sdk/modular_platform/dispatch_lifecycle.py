@@ -44,12 +44,16 @@ EVENTS=frozenset(SCHEMA)-BASE
 # The public uninstall impact DTO continues to report its frozen table set.
 # The independent lifecycle additionally recognizes this private registry.
 JOB_IDENTITY = 'mp_job_identity'
+EVENT_HISTORY = 'mp_event_history'
+COMPACT = frozenset({JOB_IDENTITY, EVENT_HISTORY})
 PHYSICAL_SCHEMA = SCHEMA | {
     JOB_IDENTITY: _columns(
         ('varchar', 'site_id handler idempotency_key job_public_id input_digest release_digest effect_mode terminal_state'),
         ('int4', 'workspace_id actor_id installation_id handler_version'),
         ('timestamp', 'finished_at archived_at'),
     ),
+    EVENT_HISTORY: _columns(('varchar', 'site_id kind public_id scope_key'),
+                            ('int4', 'workspace_id'), ('jsonb', 'metadata'), ('timestamp', 'archived_at')),
 }
 UNIQUE={
  'mp_dispatch_control':{('site_id',)},
@@ -60,6 +64,7 @@ UNIQUE={
  'mp_event_consumption':{('public_id',),('installation_id','workspace_id','handler','event_id')},
  'mp_event_consumer_state':{('installation_id','workspace_id','handler')},
  JOB_IDENTITY:{('id',),('job_public_id',),('site_id','workspace_id','actor_id','installation_id','handler','handler_version','idempotency_key')},
+ EVENT_HISTORY:{('id',),('kind','public_id'),('site_id','kind','scope_key')},
 }
 JOB_STATES=frozenset({'pending','running','retry','completed','dead_letter','cancelled','outcome_unknown','held'})
 UNFINISHED=('pending','running','retry','held','outcome_unknown')
@@ -167,7 +172,9 @@ def _schema(cr):
     for table,column,kind in cr.fetchall():actual.setdefault(table,{})[column]=kind
     if not actual:return None
     tables=set(actual)
-    if tables-{JOB_IDENTITY} not in (BASE,frozenset(SCHEMA)) or any(actual[t]!=PHYSICAL_SCHEMA[t] for t in tables):
+    live = tables-COMPACT
+    if (live not in (BASE,frozenset(SCHEMA)) or any(actual[t]!=PHYSICAL_SCHEMA[t] for t in tables)
+            or EVENT_HISTORY in tables and (JOB_IDENTITY not in tables or not EVENTS<=live)):
         raise DispatchLifecycleError('Unknown or partial native dispatch schema')
     cr.execute("""SELECT c.relname,ARRAY(SELECT a.attname FROM unnest(k.conkey) WITH ORDINALITY AS q(attnum,ord)
         JOIN pg_attribute a ON a.attrelid=c.oid AND a.attnum=q.attnum ORDER BY q.ord)
@@ -209,7 +216,7 @@ def history_pressure(cr, scope):
     warning_rows = MAX_ROWS * 4 // 5
     report = {}
     for table in tables:
-        if table == JOB_IDENTITY:
+        if table in COMPACT:
             continue  # The compact registry is not subject to the live cap.
         # _schema admits only known names. A large table costs at most one
         # more visible row than the lifecycle can accept.
@@ -235,20 +242,21 @@ def history_pressure(cr, scope):
     return dict(row_limit=MAX_ROWS, warning_rows=warning_rows, tables=report)
 
 
-def _identity_snapshot(cr, site_id):
+def _identity_snapshot(cr, site_id, table=JOB_IDENTITY):
     """Hash in primary-key pages without applying the live queue row cap."""
+    assert table in COMPACT
     digest = hashlib.sha256()
     position = -(2**31) - 1
     rows = 0
     while True:
-        cr.execute("""SELECT count(*),max(id),
+        cr.execute(f"""SELECT count(*),max(id),
             count(*) FILTER (WHERE id<=0 OR site_id IS DISTINCT FROM %s),
             string_agg(encode(sha256(convert_to(to_jsonb(page)::text,'UTF8')),'hex'),'' ORDER BY id)
-            FROM (SELECT * FROM public.mp_job_identity WHERE id>%s ORDER BY id LIMIT 4096) page""",
+            FROM (SELECT * FROM public.{table} WHERE id>%s ORDER BY id LIMIT 4096) page""",
             [site_id, position])
         count, last, foreign, hashes = cr.fetchone()
         if foreign:
-            raise DispatchLifecycleError('Invalid job identity row or scope')
+            raise DispatchLifecycleError('Invalid compact history row or scope')
         if not count:
             break
         digest.update(hashes.encode('ascii'))
@@ -273,7 +281,7 @@ def observe(cr,scope,*,lock=False):
         # committed while we waited; a pre-wait repeatable-read snapshot can
         # miss its newly committed queue rows without a serialization error.
         cr.execute('LOCK TABLE '+','.join(tables)+' IN SHARE ROW EXCLUSIVE MODE')
-    snapshots={table:(_identity_snapshot(cr,scope.site_id) if table==JOB_IDENTITY else _table(cr,table)) for table in tables}
+    snapshots={table:(_identity_snapshot(cr,scope.site_id,table) if table in COMPACT else _table(cr,table)) for table in tables}
     if control is None and any(value['rows'] for value in snapshots.values()):
         raise DispatchLifecycleError('Missing dispatch control for populated queues')
     cr.execute("SELECT state,count(*) FROM mp_job GROUP BY state");states=dict(cr.fetchall())
@@ -336,7 +344,7 @@ def fence(cr,scope,operation_id,*,state='paused'):
             generation=generation+1,receipt=NULL,lease_until=NULL,error_code='ACK_EXPIRED',
             available_at=timezone('UTC',clock_timestamp()) WHERE state='leased'""")
     after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest,reference=scope.reference))
-    for table in ['mp_outbox','mp_event_consumption','mp_event_consumer_state',JOB_IDENTITY]:
+    for table in ['mp_outbox','mp_event_consumption','mp_event_consumer_state',*sorted(COMPACT)]:
         if table in before['tables'] and before['tables'][table]!=after['tables'][table]:
             raise DispatchLifecycleError('Fencing changed producer or consumer history')
     return dict(operation_id=operation_id,before=before,after=after,requires_reviewed_resume=True)

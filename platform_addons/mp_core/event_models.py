@@ -53,7 +53,7 @@ class EventConsumption(models.Model):
     workspace_id=fields.Many2one('mp.workspace',required=True,ondelete='restrict')
     actor_id=fields.Many2one('mp.principal',required=True,ondelete='restrict')
     installation_id=fields.Many2one('mp.plugin.installation',required=True,ondelete='restrict')
-    event_id=fields.Many2one('mp.outbox',required=True,ondelete='restrict')
+    event_id=fields.Many2one('mp.outbox',required=True,ondelete='restrict',index=True)
     handler=fields.Char(required=True)
     created_at=fields.Datetime(required=True)
     _public_unique=models.Constraint('UNIQUE(public_id)','Consumption ID must be unique')
@@ -69,3 +69,23 @@ class EventConsumerState(models.Model):
     handler=fields.Char(required=True)
     generation=fields.Integer(required=True,default=1)
     _handler_unique=models.Constraint('UNIQUE(installation_id,workspace_id,handler)','One native consumer lock per scope')
+
+
+class EventHistory(models.Model):
+    _name = 'mp.event.history'
+    _description = 'Private compact event and receipt history'
+    _log_access = False
+
+    site_id = fields.Char(required=True)
+    workspace_id = fields.Integer(required=True)
+    kind = fields.Selection([(kind, kind.title()) for kind in ('event', 'delivery', 'consumption', 'subscription')], required=True)
+    public_id = fields.Char(required=True)
+    scope_key = fields.Char()
+    metadata = fields.Json(required=True)
+    archived_at = fields.Datetime(required=True)
+    _public_unique = models.Constraint('UNIQUE(kind,public_id)', 'One archive record per original event or receipt')
+    _scope_unique = models.Constraint('UNIQUE(site_id,kind,scope_key)', 'One archive record per replay identity')
+    _scope_shape = models.Constraint("""CHECK (
+        (kind IN ('consumption','subscription') AND scope_key IS NOT NULL)
+        OR (kind IN ('event','delivery') AND scope_key IS NULL)
+    )""", 'Only subscriptions and consumer effects carry scoped replay keys')

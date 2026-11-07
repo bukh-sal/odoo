@@ -6,7 +6,7 @@ The native event adapter must authorize the current actor/binding/topic first.
 import hashlib
 from uuid import uuid4
 import rfc8785
-from . import durable
+from . import durable, event_retention
 
 RETENTION_SECONDS=604800
 ACK_SECONDS=15
@@ -19,6 +19,9 @@ def open_subscription(cr,scope,topic,binding,key,origin=None):
     durable._uuid(key);durable._name(topic)
     if origin is not None:durable._uuid(origin)
     durable.control(cr,scope.site_id,scope.release_digest)
+    key_digest = event_retention.subscription_key(scope.workspace_id, scope.actor_id, scope.installation_id, key)
+    if event_retention.retained(cr, scope.site_id, 'subscription', key_digest):
+        raise durable.QueueError('Subscription inactive or expired')
     digest=hashlib.sha256(rfc8785.dumps(dict(topic=topic,binding=binding,origin=origin))).hexdigest()
     cr.execute("""INSERT INTO mp_event_subscription(public_id,site_id,workspace_id,actor_id,installation_id,topic,binding,
         release_digest,origin_installation_id,idempotency_key,input_digest,state,created_at,expires_at)
@@ -141,6 +144,10 @@ def replay(cr,subscription,events):
 
 def consume_once(cr,subscription,event,handler):
     durable._name(handler)
+    require_dispatch(cr,subscription)
+    key = event_retention.consumption_key(subscription['workspace_id'], subscription['installation_id'], handler, event['public_id'])
+    if event_retention.retained(cr, subscription['site_id'], 'consumption', key):
+        return False
     cr.execute("""INSERT INTO mp_event_consumption(public_id,workspace_id,actor_id,installation_id,event_id,handler,created_at)
         VALUES(%s,%s,%s,%s,%s,%s,timezone('UTC',clock_timestamp()))
         ON CONFLICT(installation_id,workspace_id,handler,event_id) DO NOTHING RETURNING public_id""",

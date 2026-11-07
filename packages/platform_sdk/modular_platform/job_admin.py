@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 import json
 import re
 
-from modular_platform import durable
+from modular_platform import durable, event_retention
 from modular_platform.dispatch_lifecycle import LifecycleScope, history_pressure
 from modular_platform.job_runner import emit,load_registry,validate_startup
 from modular_platform.plans import data_digest
@@ -61,14 +61,21 @@ def decision(cr,site,release,job,action,evidence):
     return row,review,data_digest(review)
 
 
-def archive_decision(cr, site, release, cutoff, limit, review_id):
+def archive_decision(cr, site, release, cutoff, limit, review_id, *, kind='job', apply=False):
     durable._uuid(review_id)
-    durable._bounded(limit, 1, ARCHIVE_MAX_BATCH)
     try:
         cutoff = datetime.fromisoformat(cutoff)
     except (ValueError, TypeError):
         raise durable.QueueError('Explicit timezone-aware archive cutoff required') from None
     utc = durable._archive_cutoff(cutoff)
+    if kind != 'job':
+        generation, rows = event_retention.candidates(cr, site, release, kind, cutoff, limit, apply=apply)
+        review = dict(policy=event_retention.POLICY, minimum_days=event_retention.MINIMUM_DAYS, review_id=review_id,
+                      site_id=site, release=release, dispatch_generation=generation,
+                      cutoff=utc.replace(tzinfo=timezone.utc).isoformat(), limit=limit, kind=kind,
+                      records=[row[1] for row in rows], selection_digest=data_digest([list(row) for row in rows]))
+        return cutoff, rows, review
+    durable._bounded(limit, 1, ARCHIVE_MAX_BATCH)
     generation = durable.control(cr, site, release)
     cr.execute("""SELECT %s<=timezone('UTC',statement_timestamp())-(%s*interval '1 day')""",
                [utc, ARCHIVE_MINIMUM_DAYS])
@@ -104,24 +111,32 @@ def archive_status(cr, site, jobs):
 
 def run_archive(cr, site, release, args):
     cr.execute("SET LOCAL statement_timeout='5s'; SET LOCAL lock_timeout='500ms'")
+    job = args.kind == 'job'
+    event = 'job_archive' if job else 'event_archive'
     if args.command == 'archive-status':
-        result = archive_status(cr, site, json.loads(args.jobs))
+        ids = json.loads(args.jobs)
+        result = (dict(jobs=archive_status(cr, site, ids)) if job else
+                  dict(kind=args.kind, records=event_retention.status(cr, site, args.kind, ids)))
         cr.rollback()
-        emit(event='job_archive_status', jobs=result)
+        emit(event=event+'_status', **result)
         return
-    cutoff, rows, review = archive_decision(cr, site, release, args.cutoff, args.limit, args.review_id)
-    approval = data_digest(review)
     applied = args.command == 'archive-apply'
+    cutoff, rows, review = archive_decision(cr, site, release, args.cutoff, args.limit, args.review_id,
+                                            kind=args.kind, apply=applied)
+    approval = data_digest(review)
     if applied:
         if not rows or args.approval != approval:
             raise durable.QueueError('Reviewed archive batch is empty or stale')
-        archived = durable.archive_terminal_jobs(cr, site, release, cutoff=cutoff, limit=args.limit, expected=rows)
-        if archived != review['jobs']:
-            raise durable.QueueError('Archive result differs from the reviewed batch')
+        if job:
+            archived = durable.archive_terminal_jobs(cr, site, release, cutoff=cutoff, limit=args.limit, expected=rows)
+            if archived != review['jobs']:
+                raise durable.QueueError('Archive result differs from the reviewed batch')
+        else:
+            event_retention.archive(cr, site, args.kind, rows)
         cr.commit()
     else:
         cr.rollback()
-    emit(event='job_archive', review=review, approval=approval, applied=applied)
+    emit(event=event, review=review, approval=approval, applied=applied)
 
 
 def main():
@@ -135,6 +150,7 @@ def main():
     parser.add_argument('--limit', type=int)
     parser.add_argument('--review-id')
     parser.add_argument('--jobs')
+    parser.add_argument('--kind', choices=('job', *event_retention.TABLES), default='job')
     args=parser.parse_args()
     if args.command in {'review','apply'} and (not args.job or not args.action):
         parser.error('Explicit job and action required')
@@ -146,6 +162,8 @@ def main():
     from odoo.addons.mp_core import job_dispatch
     from odoo.addons.mp_identity.release import current_release
     with registry.cursor() as cr:
+        if args.command == 'archive-apply' and args.kind != 'job':
+            cr.execute('SET TRANSACTION ISOLATION LEVEL READ COMMITTED')
         release=current_release(api.Environment(cr,1,{}))
         site,digest=release['site_id'],release['release_digest']
         if args.command in ARCHIVE_COMMANDS:

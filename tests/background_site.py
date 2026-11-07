@@ -50,6 +50,8 @@ class BackgroundSite(Reference):
                                    'bx-01-retention-upgrade-01': {'runtime': '10.203.154.144/28', 'edge': '10.203.154.160/28'},
                                    'bx-01-archive-operator-01': {'runtime': '10.203.154.176/28', 'edge': '10.203.154.192/28'},
                                    'bx-01-scoped-history-01': {'runtime': '10.203.154.208/28', 'edge': '10.203.154.224/28'},
+                                   'bx-01-event-retention-01': {'runtime': '10.203.154.240/28', 'edge': '10.203.155.16/28'},
+                                   'bx-01-event-upgrade-01': {'runtime': '10.203.155.32/28', 'edge': '10.203.155.48/28'},
                                }[self.args.run])
         self.admit(record)
 
@@ -118,10 +120,13 @@ class BackgroundSite(Reference):
         reader = DockerObserver(load(target))
         observed = reader.read()
         fixtures = load(self.local / 'fixtures.json')
+        plugins = list(PLUGINS)
+        if self.args.run in {'bx-01-event-retention-01', 'bx-01-event-upgrade-01'}:
+            plugins.append('org.example.notes_labels')
         targets = [dict(installation_id=installation_id(observed['sites'][0], plugin),
                         site_id=state['site_id'], workspace_id=workspace['public_id'],
                         plugin_id=plugin, action='install')
-                   for workspace in fixtures['workspaces'].values() for plugin in PLUGINS]
+                   for workspace in fixtures['workspaces'].values() for plugin in plugins]
         bundle = prepare_current_install_targets(reader.state(observed, catalog), observed['sites'], catalog,
             activation_targets=targets, operation_id=str(uuid4()),
             created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
@@ -161,7 +166,7 @@ if __name__ == '__main__':
     parser.add_argument('--candidate', type=Path)
     parser.add_argument('--run', choices=['bg-02-01', 'bg-03-01', 'bx-01-history-01',
                        'bx-01-retention-01', 'bx-01-retention-upgrade-01', 'bx-01-archive-operator-01',
-                       'bx-01-scoped-history-01'], required=True)
+                       'bx-01-scoped-history-01', 'bx-01-event-retention-01', 'bx-01-event-upgrade-01'], required=True)
     parser.add_argument('--port', type=int, default=18112)
     args = parser.parse_args()
     for action in args.actions:

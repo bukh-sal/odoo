@@ -11,7 +11,7 @@ from unittest.mock import Mock,patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
 from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
-from modular_platform.dispatch_lifecycle import JOB_IDENTITY, PHYSICAL_SCHEMA, SCHEMA
+from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, SCHEMA
 from modular_platform.native_auth_recovery import read_query,public_binding
 from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT
 
@@ -71,25 +71,29 @@ class RestoreDispatchTests(unittest.TestCase):
             self.effects=value
             with self.subTest(value=value),self.assertRaises(OperatorError):self.recovery._supported_effects('fresh')
 
-    def test_failed_identity_introduction_requires_exact_version_and_empty_table(self):
+    def test_failed_retention_introduction_requires_exact_version_and_empty_table(self):
         def snapshot(schema):
             return dict(profile='r1-native-dispatch-v1',schema_digest=data_digest(schema),
                         tables={table:{'rows':0} for table in schema})
 
-        checkpoint=snapshot(SCHEMA)
-        observed=snapshot(PHYSICAL_SCHEMA)
-        change=dict(addon='mp_core',previous_version='19.0.0.1.30',target_version='19.0.0.1.31')
-        bundle=dict(plan=dict(operation_type='core_upgrade'),operation_lock=dict(native_core_changes=[change]))
-        with patch.object(self.recovery,'_dispatch_helper') as factory:
-            factory.return_value.require_profile.return_value=observed
-            self.assertEqual(self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle),observed)
-            observed['tables'][JOB_IDENTITY]['rows']=1
-            with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
-                self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)
-            observed['tables'][JOB_IDENTITY]['rows']=0
-            change['previous_version']='19.0.0.1.29'
-            with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
-                self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)
+        schema_with_jobs={table:columns for table,columns in PHYSICAL_SCHEMA.items() if table!=EVENT_HISTORY}
+        for table,before,after,prior,target in (
+            (JOB_IDENTITY,SCHEMA,schema_with_jobs,'19.0.0.1.30','19.0.0.1.31'),
+            (EVENT_HISTORY,schema_with_jobs,PHYSICAL_SCHEMA,'19.0.0.1.32','19.0.0.1.33'),
+        ):
+            checkpoint,observed=snapshot(before),snapshot(after)
+            change=dict(addon='mp_core',previous_version=prior,target_version=target)
+            bundle=dict(plan=dict(operation_type='core_upgrade'),operation_lock=dict(native_core_changes=[change]))
+            with self.subTest(table=table),patch.object(self.recovery,'_dispatch_helper') as factory:
+                factory.return_value.require_profile.return_value=observed
+                self.assertEqual(self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle),observed)
+                observed['tables'][table]['rows']=1
+                with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
+                    self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)
+                observed['tables'][table]['rows']=0
+                change['previous_version']='19.0.0.1.29'
+                with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
+                    self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)
 
     def test_queue_arriving_after_readiness_stays_before_traffic_fence(self):
         decision=self.decision();self.readiness_change=lambda:self.effects.update(outbox_table=True)

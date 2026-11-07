@@ -75,12 +75,22 @@ parallel scans and a sort. Cleanup under concurrent web load is still open.
 The owned site and candidate were retired.
 [Scoped history evidence](evidence/post-r1/background-execution/bx-01-scoped-history.json)
 
-BX-01 resume capsule: no live fixture or pending mutation. Next implement and
-qualify outbox retention and the event replay boundary. First trace
-subscription polling, delivery acknowledgment and consumed-effect receipt
-references, then bind the cutoff and dependent records to reviewed cleanup.
-Measure lock duration and web latency after the event path. BX-02 through
-BX-05 remain queued. No blocker requires user action.
+All four reviewed event archive kinds passed. An expired effect could not
+replay, a recent native effect still applied, and the held and grace-period
+events stayed live. A stale transaction was forced to retry. The fresh restore
+matched the checkpoint digest for 100,007 compact records and preserved the
+native projection and consumption receipt. The core 0.1.32 to 0.1.33 fault
+restored the old schema and receipt, and the subsequent reviewed upgrade
+preserved them. Both sites and the older image were retired.
+[Event retention evidence](evidence/post-r1/background-execution/bx-01-event-retention.json)
+
+BX-01 resume capsule: no live fixture or pending mutation. Next measure lock
+duration and stock Odoo web latency during job and event cleanup with a
+populated fixture and concurrent users. Reuse the exact 0.1.33 successor
+image recorded in the event retention evidence. Its one staging tag is held
+for that benchmark. Measure actual selection plans and row/dispatch lock
+impact, including the hot history list. BX-02 through BX-05 remain queued.
+No blocker requires user action.
 
 BX-01 checklist, tracked independently of the five gate exits.
 
@@ -89,7 +99,7 @@ BX-01 checklist, tracked independently of the five gate exits.
 - [x] Verify upgrades and fresh restores with historical totals above the cap.
 - [x] Review and qualify the operator cutoff, retention sizing and resumable batch.
 - [x] Verify paginated scoped status and aggregate alerts.
-- [ ] Qualify event and outbox replay and consumed-effect retention.
+- [x] Qualify event and outbox replay and consumed-effect retention.
 - [ ] Measure lock duration and web latency during bounded cleanup.
 
 The shared foundation stress test is tracked separately from the completed R1

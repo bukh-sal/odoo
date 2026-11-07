@@ -169,6 +169,7 @@ def main(argv=None):
     archive_review=job_actions.add_parser('archive-review')
     archive_review.add_argument('--cutoff',required=True)
     archive_review.add_argument('--limit',required=True,type=int)
+    archive_review.add_argument('--kind',choices=['job','delivery','consumption','event','subscription'],default='job')
     for action in ('archive-apply','archive-status'):
         job_actions.add_parser(action).add_argument('approval')
     for action in ('review','apply'):
@@ -189,7 +190,7 @@ def main(argv=None):
             elif args.action in {'review','apply'}:
                 options=dict(job=args.job,action=args.decision,evidence=args.evidence,approval=getattr(args,'approval',None))
             elif args.action=='archive-review':
-                options=dict(cutoff=args.cutoff,limit=args.limit)
+                options=dict(cutoff=args.cutoff,limit=args.limit,kind=args.kind)
             elif args.action in {'archive-apply','archive-status'}:
                 options=dict(approval=args.approval)
             result=JobOperator(OperatorStore(args.store),args.deployment_config).run(args.action,**options)
