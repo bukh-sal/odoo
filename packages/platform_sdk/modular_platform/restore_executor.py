@@ -19,7 +19,7 @@ import secrets
 from .catalog import Catalog
 from .contracts import load_json
 from .deployment import DockerObserver, _run
-from .dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA
+from .dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE
 from .operator_os import OperatorError, OperationLocks, current_identity, protect_directory
 from .operator_store import _write_new
 from .plans import data_digest
@@ -199,13 +199,14 @@ class RestoreExecutor:
             return False
         before=previous['tables'].keys();after=current['tables'].keys()
         transition = {
-            ('19.0.0.1.30', '19.0.0.1.31'): JOB_IDENTITY,
-            ('19.0.0.1.32', '19.0.0.1.33'): EVENT_HISTORY,
+            ('19.0.0.1.30', '19.0.0.1.31'): frozenset({JOB_IDENTITY}),
+            ('19.0.0.1.32', '19.0.0.1.33'): frozenset({EVENT_HISTORY}),
+            ('19.0.0.1.36', '19.0.0.1.37'): RECURRENCE,
         }
         added = next((transition.get((change['previous_version'], change['target_version']))
                       for change in changes if change['addon'] == 'mp_core'), None)
-        return (added is not None and added not in before and after==before|{added}
-                and current['tables'][added]['rows']==0
+        return (added is not None and not added.intersection(before) and after==before|added
+                and all(current['tables'][table]['rows']==0 for table in added)
                 and all(snapshot['schema_digest']==data_digest({table:PHYSICAL_SCHEMA[table] for table in snapshot['tables']})
                         for snapshot in (previous,current)))
 

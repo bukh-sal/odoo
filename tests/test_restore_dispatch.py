@@ -11,7 +11,7 @@ from unittest.mock import Mock,patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
 from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
-from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, SCHEMA
+from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE, SCHEMA
 from modular_platform.native_auth_recovery import read_query,public_binding
 from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT
 
@@ -76,21 +76,24 @@ class RestoreDispatchTests(unittest.TestCase):
             return dict(profile='r1-native-dispatch-v1',schema_digest=data_digest(schema),
                         tables={table:{'rows':0} for table in schema})
 
-        schema_with_jobs={table:columns for table,columns in PHYSICAL_SCHEMA.items() if table!=EVENT_HISTORY}
-        for table,before,after,prior,target in (
-            (JOB_IDENTITY,SCHEMA,schema_with_jobs,'19.0.0.1.30','19.0.0.1.31'),
-            (EVENT_HISTORY,schema_with_jobs,PHYSICAL_SCHEMA,'19.0.0.1.32','19.0.0.1.33'),
+        schema_with_jobs=SCHEMA|{JOB_IDENTITY:PHYSICAL_SCHEMA[JOB_IDENTITY]}
+        schema_with_events=schema_with_jobs|{EVENT_HISTORY:PHYSICAL_SCHEMA[EVENT_HISTORY]}
+        for added,before,after,prior,target in (
+            ({JOB_IDENTITY},SCHEMA,schema_with_jobs,'19.0.0.1.30','19.0.0.1.31'),
+            ({EVENT_HISTORY},schema_with_jobs,schema_with_events,'19.0.0.1.32','19.0.0.1.33'),
+            (RECURRENCE,schema_with_events,PHYSICAL_SCHEMA,'19.0.0.1.36','19.0.0.1.37'),
         ):
             checkpoint,observed=snapshot(before),snapshot(after)
             change=dict(addon='mp_core',previous_version=prior,target_version=target)
             bundle=dict(plan=dict(operation_type='core_upgrade'),operation_lock=dict(native_core_changes=[change]))
-            with self.subTest(table=table),patch.object(self.recovery,'_dispatch_helper') as factory:
+            with self.subTest(tables=added),patch.object(self.recovery,'_dispatch_helper') as factory:
                 factory.return_value.require_profile.return_value=observed
                 self.assertEqual(self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle),observed)
-                observed['tables'][table]['rows']=1
-                with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
-                    self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)
-                observed['tables'][table]['rows']=0
+                for table in added:
+                    observed['tables'][table]['rows']=1
+                    with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
+                        self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)
+                    observed['tables'][table]['rows']=0
                 change['previous_version']='19.0.0.1.29'
                 with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
                     self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)

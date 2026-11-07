@@ -117,17 +117,24 @@ each; the connection snapshot is a bounded observation, not a capacity target.
 The full host sweep passed 549 tests with one existing Windows-specific skip;
 the 106-file contract freeze passed. [BX-02 decision](evidence/post-r1/background-execution/bx-02-decision.json).
 
-BX-03 resume capsule: no live fixture, retained candidate, running test or pending
-mutation. The [selected private recurrence contract](architecture-decisions/0064-native-recurring-schedules.md)
+BX-03 resume capsule: the owned schema-only core 0.1.37 fixture is live on port
+18124, project `mp-r0-r1release9bde429f5258`, phase `bg02_probed`, candidate
+`1003c69ed225`. No test or uncertain mutation is running. The synthetic schema
+probe row was removed. Retain this one fixture for the next reviewed upgrade;
+retire it and its exact candidate after qualification. The
+[selected private recurrence contract](architecture-decisions/0064-native-recurring-schedules.md)
 has ten passing UTC selection/identity tests, fifteen PostgreSQL authority
 guard checks and fifteen private storage transaction checks. A caught enqueue
 failure rolls back job/receipt/cursor together, stale ticks retry with 40001,
 and compact history resolves outstanding status. [Storage evidence](evidence/post-r1/background-execution/bx-03-storage.json).
-The producer and native lifecycle extension remain unavailable.
+Native creation recognized all eleven physical dispatch tables, private ORM
+access was denied, and the generic native/host fence refused populated
+recurrence without a dispatch mutation. The host helper also loaded in the
+retained stock image without the new recurrence module. [Native schema proof](evidence/post-r1/background-execution/bx-03-native-schema.json).
+The producer and native credential lifecycle profile remain unavailable.
 The current generic lifecycle fence refuses active technical credentials; do
-not weaken it. Next add the versioned native schedule/occurrence models and
-physical lifecycle recognition, then wire the native authorization adapter and
-select the narrow reviewed native
+not weaken it. Next wire the native authorization adapter and optional producer
+role, then select the narrow reviewed native
 credential profile through the managed role. Qualify
 duplicate ticks, downtime, edits, pause/revocation, overlap, maintenance and
 restore before closing BX-03. BX-04 and BX-05 remain queued. No blocker requires
@@ -137,7 +144,7 @@ BX-03 checklist:
 
 - [x] Define and test fixed UTC selection, expiry, missed policies and stable nominal identity.
 - [x] Qualify private schedule/cursor/receipt storage and concurrent atomic enqueue.
-- [ ] Install versioned native tables and recognize their lifecycle footprint.
+- [x] Install versioned native tables and recognize their lifecycle footprint.
 - [ ] Wire scoped service authorization, edits, pause/resume, rotation and overlap.
 - [ ] Add the optional pinned producer role with readiness, maintenance exclusion and drain.
 - [ ] Qualify the narrow native-credential lifecycle profile and retained schema compatibility.

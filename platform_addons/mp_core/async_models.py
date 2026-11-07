@@ -100,6 +100,58 @@ class JobIdentity(models.Model):
     )
 
 
+class JobSchedule(models.Model):
+    _name = 'mp.job.schedule'
+    _description = 'Private versioned recurring job schedule'
+    _log_access = False
+
+    public_id = fields.Char(required=True, index=True)
+    site_id = fields.Char(required=True, index=True)
+    workspace_id = fields.Many2one('mp.workspace', required=True, ondelete='restrict')
+    actor_id = fields.Many2one('mp.principal', required=True, ondelete='restrict')
+    installation_id = fields.Many2one('mp.plugin.installation', required=True, ondelete='restrict')
+    idempotency_key = fields.Char(required=True)
+    release_digest = fields.Char(required=True)
+    handler = fields.Char(required=True)
+    handler_version = fields.Integer(required=True)
+    config_version = fields.Integer(required=True, default=1)
+    rule = fields.Json(required=True)
+    payload = fields.Json(required=True)
+    input_digest = fields.Char(required=True)
+    creation_digest = fields.Char(required=True)
+    state = fields.Selection([(state,state.title()) for state in ('active','paused','held')], required=True)
+    next_at = fields.Datetime(required=True)
+    considered_at = fields.Datetime()
+    # Public job IDs survive archival; an FK to the live queue would not.
+    outstanding_job_id = fields.Char()
+    last_tick_at = fields.Datetime()
+    last_tick = fields.Json()
+    created_at = fields.Datetime(required=True)
+    error_code = fields.Char()
+    _public_unique = models.Constraint('UNIQUE(public_id)', 'Schedule identity must be unique')
+    _scope_key = models.Constraint('UNIQUE(site_id,workspace_id,actor_id,installation_id,idempotency_key)', 'Schedule creation identity must be unique')
+    _versions = models.Constraint('CHECK(handler_version > 0 AND config_version > 0)', 'Positive schedule versions required')
+    _due = models.Index("(site_id,release_digest,next_at,last_tick_at,public_id) WHERE state='active'")
+
+
+class JobOccurrence(models.Model):
+    _name = 'mp.job.occurrence'
+    _description = 'Private immutable recurring occurrence receipt'
+    _log_access = False
+
+    site_id = fields.Char(required=True)
+    schedule_id = fields.Char(required=True)
+    nominal_at = fields.Datetime(required=True)
+    job_public_id = fields.Char(required=True)
+    config_version = fields.Integer(required=True)
+    input_digest = fields.Char(required=True)
+    release_digest = fields.Char(required=True)
+    created_at = fields.Datetime(required=True)
+    _nominal_unique = models.Constraint('UNIQUE(site_id,schedule_id,nominal_at)', 'Occurrence identity must survive edits and rotation')
+    _job_unique = models.Constraint('UNIQUE(job_public_id)', 'One receipt per recurring job')
+    _version = models.Constraint('CHECK(config_version > 0)', 'Positive occurrence version required')
+
+
 class Outbox(models.Model):
     _name = 'mp.outbox'
     _description = 'Private transactional domain outbox'

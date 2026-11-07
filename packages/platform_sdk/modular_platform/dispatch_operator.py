@@ -32,6 +32,7 @@ class DispatchMaintenance:
     def require_native(snapshot,*,closed=False):
         if (not isinstance(snapshot,dict) or snapshot.get('profile')!='r1-native-dispatch-v1'
                 or any(snapshot.get(k)!=0 for k in ['external_installations','active_credentials','api_keys','uncertain_jobs'])
+                or snapshot.get('recurring_schedules',0)!=0
                 or closed and (snapshot.get('control') is None and any(t['rows'] for t in snapshot.get('tables',{}).values())
                     or snapshot.get('control') is not None and snapshot['control']['state'] not in {'paused','restoring'})):
             raise OperatorError('Known reconciled native dispatch profile required; external or uncertain effects keep traffic fenced')

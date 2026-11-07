@@ -1,0 +1,110 @@
+{
+  "schedule": "c3fecabc-b503-4662-bdc9-88d604179383",
+  "tables": [
+    "mp_dispatch_control",
+    "mp_event_consumer_state",
+    "mp_event_consumption",
+    "mp_event_delivery",
+    "mp_event_history",
+    "mp_event_subscription",
+    "mp_job",
+    "mp_job_identity",
+    "mp_job_occurrence",
+    "mp_job_schedule",
+    "mp_outbox"
+  ],
+  "private_model_access_denied": true,
+  "host_generic_profile_refused_populated_recurrence": true,
+  "native_generic_fence_refused_without_mutation": true,
+  "snapshot": {
+    "profile": "r1-native-dispatch-v1",
+    "site_id": "6c576799-3579-4c57-a23f-65ff6414165d",
+    "release_digest": "sha256:119ec0dd285e3eb1f82c1cef19b594f6397eff6bdf2b0c07166f356096accf2a",
+    "schema_digest": "sha256:c0dba39181af64c44e3f7d94e6ac0fa4320a4b4d58ca090d83d2da6e99822960",
+    "control": {
+      "site_id": "6c576799-3579-4c57-a23f-65ff6414165d",
+      "release_digest": "sha256:119ec0dd285e3eb1f82c1cef19b594f6397eff6bdf2b0c07166f356096accf2a",
+      "state": "enabled",
+      "generation": 3
+    },
+    "tables": {
+      "mp_dispatch_control": {
+        "rows": 1,
+        "sha256": "881b5a6f30eb3ba07dab1e90a035475884d097bb567f041c625915e98415653e"
+      },
+      "mp_event_consumer_state": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_consumption": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_delivery": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_history": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_event_subscription": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_job": {
+        "rows": 8,
+        "sha256": "c555dcc43aeb6532d8ea63cc8555c93a1f718f4c9e96e0dd5f0b99e5dabfb67b"
+      },
+      "mp_job_identity": {
+        "rows": 8,
+        "sha256": "169c4b6b1332da9aa2371b98422f49728ec90153b6c37bcb47372b9f7420b4c5"
+      },
+      "mp_job_occurrence": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mp_job_schedule": {
+        "rows": 1,
+        "sha256": "a67d957a4392dfc7b6d467374592a5dce837b7ff0e84ca071fd7e7781f4d5378"
+      },
+      "mp_outbox": {
+        "rows": 2,
+        "sha256": "3830e89e4b5d1c62146abc28331564b81c5d06a6182bf89267c8d2e11ba3c74a"
+      }
+    },
+    "job_states": {
+      "dead_letter": 1,
+      "completed": 5,
+      "cancelled": 1,
+      "pending": 1
+    },
+    "event_receipts": true,
+    "external_installations": 0,
+    "active_credentials": 0,
+    "api_keys": 0,
+    "uncertain_jobs": 0,
+    "recurring_schedules": 1,
+    "state_digest": "sha256:586910d059f7e4ac046fb14a830013775b97d4eb4c98442ca09d288d6da80e9f"
+  },
+  "refused_fence_operation": "bb5cc731-e904-499b-8031-60ce46877dbb",
+  "synthetic_schedule_removed": true,
+  "gate": "BX-03",
+  "state": "native_schema_prerequisite_passed_gate_open",
+  "probe": "tests/background_recurrence_schema.py",
+  "build_record": "../../G7/bx03-recurrence-schema-build-01/candidate-build.json",
+  "host_lifecycle_sha256": "a495c0daf92bc9e4ac3aa7ebb921d9eab27030a35df583fe84a74173eafb8311",
+  "retained_helper": {
+    "loaded": true,
+    "image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+    "new_recurrence_module_absent": true,
+    "tables": 11,
+    "temporary_container_auto_removed": true
+  },
+  "regressions": {
+    "dispatch_tests_passed": 24,
+    "restore_tests_passed": 19,
+    "contract_freeze_files": 106
+  },
+  "qualification_boundary": "Schema-only core 0.1.37 fixture and current host-supplied helper. Native service adapter, producer, reviewed credential profile, populated upgrade and fresh restore are pending. The existing generic profile deliberately refuses populated recurrence."
+}

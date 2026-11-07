@@ -45,7 +45,10 @@ EVENTS=frozenset(SCHEMA)-BASE
 # The independent lifecycle additionally recognizes this private registry.
 JOB_IDENTITY = 'mp_job_identity'
 EVENT_HISTORY = 'mp_event_history'
-COMPACT = frozenset({JOB_IDENTITY, EVENT_HISTORY})
+SCHEDULE_TABLE = 'mp_job_schedule'
+OCCURRENCE_TABLE = 'mp_job_occurrence'
+RECURRENCE = frozenset({SCHEDULE_TABLE, OCCURRENCE_TABLE})
+COMPACT = frozenset({JOB_IDENTITY, EVENT_HISTORY, OCCURRENCE_TABLE})
 PHYSICAL_SCHEMA = SCHEMA | {
     JOB_IDENTITY: _columns(
         ('varchar', 'site_id handler idempotency_key job_public_id input_digest release_digest effect_mode terminal_state'),
@@ -54,6 +57,16 @@ PHYSICAL_SCHEMA = SCHEMA | {
     ),
     EVENT_HISTORY: _columns(('varchar', 'site_id kind public_id scope_key'),
                             ('int4', 'workspace_id'), ('jsonb', 'metadata'), ('timestamp', 'archived_at')),
+    # Keep the host-injected lifecycle helper usable in retained older images
+    # which do not contain the new recurrence module yet.
+    SCHEDULE_TABLE: _columns(
+        ('varchar','public_id site_id idempotency_key release_digest handler input_digest creation_digest state outstanding_job_id error_code'),
+        ('int4','workspace_id actor_id installation_id handler_version config_version'),
+        ('jsonb','rule payload last_tick'),
+        ('timestamp','next_at considered_at last_tick_at created_at')),
+    OCCURRENCE_TABLE: _columns(
+        ('varchar','site_id schedule_id job_public_id input_digest release_digest'),
+        ('int4','config_version'),('timestamp','nominal_at created_at')),
 }
 UNIQUE={
  'mp_dispatch_control':{('site_id',)},
@@ -65,6 +78,8 @@ UNIQUE={
  'mp_event_consumer_state':{('installation_id','workspace_id','handler')},
  JOB_IDENTITY:{('id',),('job_public_id',),('site_id','workspace_id','actor_id','installation_id','handler','handler_version','idempotency_key')},
  EVENT_HISTORY:{('id',),('kind','public_id'),('site_id','kind','scope_key')},
+ SCHEDULE_TABLE:{('id',),('public_id',),('site_id','workspace_id','actor_id','installation_id','idempotency_key')},
+ OCCURRENCE_TABLE:{('id',),('job_public_id',),('site_id','schedule_id','nominal_at')},
 }
 JOB_STATES=frozenset({'pending','running','retry','completed','dead_letter','cancelled','outcome_unknown','held'})
 UNFINISHED=('pending','running','retry','held','outcome_unknown')
@@ -172,9 +187,10 @@ def _schema(cr):
     for table,column,kind in cr.fetchall():actual.setdefault(table,{})[column]=kind
     if not actual:return None
     tables=set(actual)
-    live = tables-COMPACT
+    live = tables-COMPACT-{SCHEDULE_TABLE}
     if (live not in (BASE,frozenset(SCHEMA)) or any(actual[t]!=PHYSICAL_SCHEMA[t] for t in tables)
-            or EVENT_HISTORY in tables and (JOB_IDENTITY not in tables or not EVENTS<=live)):
+            or EVENT_HISTORY in tables and (JOB_IDENTITY not in tables or not EVENTS<=live)
+            or RECURRENCE.intersection(tables) and not (RECURRENCE|{JOB_IDENTITY,EVENT_HISTORY}<=tables and EVENTS<=live)):
         raise DispatchLifecycleError('Unknown or partial native dispatch schema')
     cr.execute("""SELECT c.relname,ARRAY(SELECT a.attname FROM unnest(k.conkey) WITH ORDINALITY AS q(attnum,ord)
         JOIN pg_attribute a ON a.attrelid=c.oid AND a.attnum=q.attnum ORDER BY q.ord)
@@ -199,7 +215,7 @@ def _control(cr,scope,*,lock=False):
 
 def _table(cr,table):
     # table is selected only from the static schema, never an artifact/input.
-    assert table in SCHEMA
+    assert table in PHYSICAL_SCHEMA and table not in COMPACT
     cr.execute('SELECT count(*) FROM public.'+table);count=cr.fetchone()[0]
     if count>MAX_ROWS:raise DispatchLifecycleError('Dispatch profile row bound exceeded; independent reconciliation required')
     cr.execute("SELECT encode(sha256(convert_to(COALESCE(string_agg(encode(sha256(convert_to(to_jsonb(t)::text,'UTF8')),'hex'),'' ORDER BY id),''),'UTF8')),'hex') FROM public."+table+' t')
@@ -286,7 +302,7 @@ def observe(cr,scope,*,lock=False):
         raise DispatchLifecycleError('Missing dispatch control for populated queues')
     cr.execute("SELECT state,count(*) FROM mp_job GROUP BY state");states=dict(cr.fetchall())
     if not set(states)<=JOB_STATES:raise DispatchLifecycleError('Unknown native job outcome')
-    for table in ['mp_job','mp_outbox']+(['mp_event_subscription'] if EVENTS<=set(tables) else []):
+    for table in ['mp_job','mp_outbox']+(['mp_event_subscription'] if EVENTS<=set(tables) else [])+([SCHEDULE_TABLE] if SCHEDULE_TABLE in tables else []):
         cr.execute('SELECT count(*) FROM '+table+' WHERE site_id<>%s OR site_id IS NULL',[scope.site_id])
         if cr.fetchone()[0]:raise DispatchLifecycleError('Foreign native dispatch scope')
     cr.execute("SELECT count(*) FROM mp_outbox WHERE state NOT IN ('pending','published','held')")
@@ -305,6 +321,10 @@ def observe(cr,scope,*,lock=False):
     body=dict(profile='r1-native-dispatch-v1',site_id=scope.site_id,release_digest=scope.release_digest,
         schema_digest=data_digest({table:PHYSICAL_SCHEMA[table] for table in tables}),control=control,tables=snapshots,
         job_states=states,event_receipts=EVENTS<=set(tables),external_installations=external,active_credentials=credentials,api_keys=keys,uncertain_jobs=uncertain)
+    if SCHEDULE_TABLE in tables:
+        cr.execute("SELECT count(*) FROM mp_job_schedule WHERE state NOT IN ('active','paused','held')")
+        if cr.fetchone()[0]:raise DispatchLifecycleError('Unknown recurring schedule state')
+        body['recurring_schedules']=snapshots[SCHEDULE_TABLE]['rows']
     if scope.reference is not None:
         body.update(profile='r1-reference-stateless-dispatch-v1',reference_policy_digest=_reference(cr,scope))
     return body|dict(state_digest=data_digest(body))
@@ -322,6 +342,8 @@ def fence(cr,scope,operation_id,*,state='paused'):
     if state not in {'paused','restoring'}:raise DispatchLifecycleError('Closed dispatch state required')
     before=observe(cr,scope,lock=True)
     if before is None:return None
+    if before.get('recurring_schedules',0):
+        raise DispatchLifecycleError('Recurring schedules require the independently reviewed recurrence maintenance profile')
     if before['external_installations'] and scope.reference is None or before['active_credentials'] or before['api_keys']:
         raise DispatchLifecycleError('External effects or live technical credentials require the external reconciliation profile')
     if before['control'] and before['control']['generation']>=2**31-1:
@@ -357,6 +379,8 @@ def enable(cr,scope,expected_digest):
     BEFORE committing this transaction, including when ingress is still closed.
     """
     before=observe(cr,scope,lock=True)
+    if before and before.get('recurring_schedules',0):
+        raise DispatchLifecycleError('Recurring schedules require the independently reviewed recurrence resume profile')
     if (before is None or before['state_digest']!=expected_digest or not before['control']
             or before['control']['state']!='paused' or before['control']['release_digest']!=scope.release_digest
             or before['control']['generation']>=2**31-1):

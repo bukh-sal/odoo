@@ -92,4 +92,9 @@ The private SQL store passed fifteen PostgreSQL checks, including a caught
 post-enqueue failure, caller rollback, stale duplicate tick, handler edit with a
 rewound cursor, compact terminal history and missing/foreign job pointers.
 This proof uses disposable SQL tables. Native model installation, lifecycle
-recognition and recovery remain separate BX-03 requirements.
+recognition and recovery are separate BX-03 requirements. Native model
+installation and schema recognition subsequently passed on core 0.1.37. Both
+host and native generic guards refused a populated schedule with dispatch
+unchanged. Recovery and the reviewed credential profile remain pending. The
+host-injected schema helper stays self-contained so retained images do not
+need the new recurrence module just to inspect or restore their old schema.
