@@ -117,11 +117,17 @@ def main():
                     raise AssertionError('Fault was not reached')
             status = native.store.status(record['operation'])
             assert status['state'] == 'recovery_required' and status['mutation_started'] and not status['traffic_resumed']
+            failed_target = load(native.target_path)
+            # Demonstrate recovery with the failed application actually down.
+            # PostgreSQL and independently scoped operator state remain available.
+            subprocess.run(['docker', 'stop', failed_target['worker_id']], check=True,
+                           stdout=subprocess.DEVNULL, timeout=45)
             # Independent host CLI reads the journal without connecting to Odoo.
             raw = subprocess.check_output([sys.executable, '-I', str(ROOT / 'tools/modular.py'),
                 'operations', '--store', str(native.store.root), 'show', record['operation']], timeout=30)
             assert json.loads(raw)['state'] == 'recovery_required'
-            record.update(phase='recovery_required', independent_cli=True, peer_closed=peer(site, 'peer-while-closed'))
+            record.update(phase='recovery_required', independent_cli=True, failed_app_stopped=True,
+                          peer_closed=peer(site, 'peer-while-closed'))
         else:
             applied = native.apply(record['operation'])
             assert applied['state'] == 'completed' and applied['traffic_resumed']

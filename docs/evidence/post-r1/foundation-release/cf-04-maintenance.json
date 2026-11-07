@@ -1,0 +1,128 @@
+{
+  "result": "passed_maintenance_half_only",
+  "operation": "3f039c64-876b-4396-b084-808fa221d3da",
+  "plan_hash": "sha256:65c891916e104d1341967b69adfa5c3c6ed63cfe45dbf7d2bf1389eb7749c1d5",
+  "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+  "review_digest": "sha256:8dec5474ca800a3b6104b2a7a7bb97f1560480670fb7ba2aa94924e147b7c6c8",
+  "approval_digest": "sha256:78d698c082590aaa510124ae77e5769acd2c6be3916f6d2aeeccdd58786234bc",
+  "business_digest": "sha256:a20cc2a95e946b1f7e8f663fb14e9d22429b2b87a0cc7ab27072a677d84590c8",
+  "retained_files": 52,
+  "shared_schema": true,
+  "jobs": {
+    "result": "passed",
+    "label": "upgrade",
+    "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+    "timing_actor_workspace_preserved": true,
+    "stale_claim_denied": true,
+    "queue": {
+      "d1651559-7b05-4300-8d52-e0f26c7149c1": {
+        "at": "2026-11-07T19:26:02.136326",
+        "key": "cf-running",
+        "actor": 2,
+        "error": null,
+        "state": "pending",
+        "handler": "org.example.background:report",
+        "attempts": 1,
+        "deadline": "2026-11-07T23:23:47",
+        "workspace": 1,
+        "generation": 3
+      },
+      "f1e2e512-611c-4a90-978f-b0fed353c64b": {
+        "at": "2026-11-07T23:23:47",
+        "key": "cf-pending",
+        "actor": 2,
+        "error": null,
+        "state": "pending",
+        "handler": "org.example.background:report",
+        "attempts": 0,
+        "deadline": "2026-11-08T03:23:47",
+        "workspace": 1,
+        "generation": 2
+      },
+      "f587a9c6-49cd-494b-8780-5969b7db96be": {
+        "at": "2026-11-07T23:23:47",
+        "key": "50db6973-f82a-49be-9fe9-2ed726c96992:1",
+        "actor": 2,
+        "error": null,
+        "state": "pending",
+        "handler": "org.example.background:remind",
+        "attempts": 0,
+        "deadline": "2026-11-07T23:24:47",
+        "workspace": 1,
+        "generation": 2
+      }
+    }
+  },
+  "workflow": {
+    "result": "passed",
+    "label": "upgraded",
+    "site": "maintenance",
+    "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+    "stock_list_form": true,
+    "workflow_preserved": true,
+    "app_denial": true,
+    "scoped_notes": {
+      "A": 1,
+      "B": 2
+    },
+    "cross_scope_and_viewer_denied": true
+  },
+  "profile": {
+    "phase": "ready",
+    "approval": "sha256:2a3302f78292cf76fa8ce94483989ceb3431319280dba6b355e68fbfa518dec5",
+    "target_digest": "sha256:e438aba6728d409cf9f6e334ca427993ff9b9f97ad050ab2577b0d7c1e804588",
+    "profile": {
+      "event": "job_fleet",
+      "state": "ready",
+      "generation": 1,
+      "approval": "sha256:2a3302f78292cf76fa8ce94483989ceb3431319280dba6b355e68fbfa518dec5",
+      "pins": {
+        "database": "mp_disposable_r0_r1_release_494ba8611541",
+        "deployment_id": "678a3219-1fea-4790-9619-efed6e00ee26",
+        "image_id": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+        "inventory_digest": "sha256:da706465a759480118d1604dcaaf0f3952ad074a69c1d9dfc3554a3f5b01cffe",
+        "release_digest": "sha256:687492f4710ac554143454006931384c3e0ac265e9e8dd44c31c3e5897a14adb",
+        "site_id": "2d044624-8ad7-4961-9813-4131a1171da7",
+        "target_digest": "sha256:e438aba6728d409cf9f6e334ca427993ff9b9f97ad050ab2577b0d7c1e804588"
+      },
+      "pools": {
+        "urgent": {
+          "desired": 1,
+          "running": 1,
+          "ready": 1,
+          "drained": 0
+        },
+        "bulk": {
+          "desired": 1,
+          "running": 1,
+          "ready": 1,
+          "drained": 0
+        },
+        "producer": {
+          "desired": 0,
+          "running": 0,
+          "ready": 0,
+          "drained": 0
+        }
+      },
+      "lanes": [
+        {
+          "name": "mp-r0-r1release494ba8611541-job-bulk-1",
+          "pool": "bulk",
+          "container": "3f929cf9c4161c4746cf9e62677a0d738127acd819942ddb17cc08aaabb69874",
+          "running": true,
+          "ready": true,
+          "matches_profile": true
+        },
+        {
+          "name": "mp-r0-r1release494ba8611541-job-urgent-1",
+          "pool": "urgent",
+          "container": "b51e99dfa28c0d5e136b5b057acf42f71634697bf2715fc2e03e7f22a9d2c2ca",
+          "running": true,
+          "ready": true,
+          "matches_profile": true
+        }
+      ]
+    }
+  }
+}
