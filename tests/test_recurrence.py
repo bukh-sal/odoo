@@ -79,7 +79,7 @@ class RecurrenceTests(unittest.TestCase):
 
     def test_resource_and_policy_bounds(self):
         for bad in (dict(interval_seconds=0),dict(interval_seconds=True),dict(validity_seconds=86401),
-                    dict(attempt_seconds=3601),dict(grace_seconds=-1),dict(missed='catch_up'),dict(missed=[])):
+                    dict(attempt_seconds=3601),dict(validity_seconds=4),dict(grace_seconds=-1),dict(missed='catch_up'),dict(missed=[])):
             with self.assertRaises(QueueError):replace(self.rule,**bad)
 
 

@@ -119,11 +119,15 @@ the 106-file contract freeze passed. [BX-02 decision](evidence/post-r1/backgroun
 
 BX-03 resume capsule: no live fixture, retained candidate, running test or pending
 mutation. The [selected private recurrence contract](architecture-decisions/0064-native-recurring-schedules.md)
-has ten passing UTC selection/identity tests and fifteen PostgreSQL authority
-guard checks. The producer and native lifecycle extension remain unavailable.
+has ten passing UTC selection/identity tests, fifteen PostgreSQL authority
+guard checks and fifteen private storage transaction checks. A caught enqueue
+failure rolls back job/receipt/cursor together, stale ticks retry with 40001,
+and compact history resolves outstanding status. [Storage evidence](evidence/post-r1/background-execution/bx-03-storage.json).
+The producer and native lifecycle extension remain unavailable.
 The current generic lifecycle fence refuses active technical credentials; do
-not weaken it. Next implement durable schedule/occurrence storage and atomic
-cursor advancement with one-off enqueue, then select the narrow reviewed native
+not weaken it. Next add the versioned native schedule/occurrence models and
+physical lifecycle recognition, then wire the native authorization adapter and
+select the narrow reviewed native
 credential profile through the managed role. Qualify
 duplicate ticks, downtime, edits, pause/revocation, overlap, maintenance and
 restore before closing BX-03. BX-04 and BX-05 remain queued. No blocker requires
@@ -132,7 +136,8 @@ user action. Gate progress is 2/5 (about 40%), independently of check counts.
 BX-03 checklist:
 
 - [x] Define and test fixed UTC selection, expiry, missed policies and stable nominal identity.
-- [ ] Implement durable schedule/cursor/receipt storage and concurrent atomic enqueue.
+- [x] Qualify private schedule/cursor/receipt storage and concurrent atomic enqueue.
+- [ ] Install versioned native tables and recognize their lifecycle footprint.
 - [ ] Wire scoped service authorization, edits, pause/resume, rotation and overlap.
 - [ ] Add the optional pinned producer role with readiness, maintenance exclusion and drain.
 - [ ] Qualify the narrow native-credential lifecycle profile and retained schema compatibility.

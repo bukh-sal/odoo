@@ -18,6 +18,11 @@ Persist a versioned private schedule, a cursor and compact occurrence receipts.
 The producer takes the shared dispatch fence before the schedule row lock. The
 occurrence reservation, authorized one-off enqueue, outstanding-job pointer and
 cursor advance commit together. No cursor may advance after a failed enqueue.
+Serialize all occurrence writers on that schedule row. Enqueue and final receipt
+insertion run inside one savepoint, so a caller catching an exception cannot
+commit an orphan job. A stale repeatable-read tick must retry the entire
+transaction. Keep the immutable creation digest separately from the current
+configuration digest so a create retry still resolves after an authorized edit.
 Use bounded batches and fresh transactions. A schedule has at most one
 outstanding job; pending, running, retry, held and unknown outcomes block another
 occurrence. A completed, cancelled or terminal failed job permits future work.
@@ -33,7 +38,7 @@ and does not elevate or rewrite work already submitted.
 
 Use second-aligned UTC anchors and integer intervals from one second to 366
 days. Each emitted job has a validity window of at most 24 hours and an attempt
-budget of at most one hour, clamped by that validity through the existing lease
+budget of at most one hour, no greater than that validity through the existing lease
 contract. Emit due occurrences only, so a distant schedule is stored without
 creating one-off jobs outside the 30-day horizon. No local-calendar, cron or
 daylight-saving interpretation is introduced.
@@ -82,3 +87,9 @@ and drain; populated maintenance and fresh restore of a previously emitted
 occurrence. Native recurrence is unavailable until the physical schema,
 lifecycle recognition and authority checks have passed together. Record exact
 semantics, fixtures and compatibility effects before exposing an app adapter.
+
+The private SQL store passed fifteen PostgreSQL checks, including a caught
+post-enqueue failure, caller rollback, stale duplicate tick, handler edit with a
+rewound cursor, compact terminal history and missing/foreign job pointers.
+This proof uses disposable SQL tables. Native model installation, lifecycle
+recognition and recovery remain separate BX-03 requirements.

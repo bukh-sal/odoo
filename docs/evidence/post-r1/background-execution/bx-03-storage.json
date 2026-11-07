@@ -1,0 +1,46 @@
+{
+  "gate": "BX-03",
+  "state": "storage_prerequisite_passed_gate_open",
+  "utc": "2026-11-07T04:16:12Z",
+  "postgresql": {
+    "probe": "tests/background_recurrence_store.py",
+    "checks": [
+      "one outstanding occurrence",
+      "atomic cursor job and receipt",
+      "held and unknown block overlap",
+      "caught enqueue failure rolls back orphan writes",
+      "caller rollback removes enqueue receipt and cursor",
+      "stale tick retries with 40001 and observes original",
+      "edits preserve creation identity and monotonic cursor",
+      "receipt suppresses rewound edited cursor",
+      "optimistic pause and resume",
+      "foreign scope refused",
+      "failed authority preserves cursor",
+      "compact terminal history unblocks future work",
+      "missing receipt never implies completion",
+      "foreign job pointer refused",
+      "held resume requires current authority"
+    ],
+    "checks_passed": 15,
+    "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "python_image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+    "isolation": "repeatable-read stale tick refused with 40001; fresh tick observed original",
+    "tables": "Disposable SQL schema, not a qualified native ORM install"
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/recurrence_store.py": "d381f03d1fa12f9c0901f218b2573118f4145e9725f86d8c31698043cb267e6f",
+    "packages/platform_sdk/modular_platform/recurrence.py": "5c2e62f846d7260b70a378a8cfd19338a493167fd6499f7e998c0066cde54648"
+  },
+  "deterministic_tests": {
+    "passed": 10,
+    "includes_attempt_budget_within_validity": true
+  },
+  "retirement": {
+    "database_container_removed": true,
+    "client_containers_auto_removed": 2,
+    "created_images": 0,
+    "created_volumes": 0,
+    "remaining_fixture_containers": 0
+  },
+  "qualification_boundary": "No managed producer, native authorization adapter, physical lifecycle recognition, core upgrade or restore integration is enabled or claimed."
+}

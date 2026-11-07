@@ -28,6 +28,8 @@ class RecurrenceRule:
         _bounded(self.interval_seconds,1,366*86400)
         _bounded(self.validity_seconds,1,86400)
         _bounded(self.attempt_seconds,1,3600)
+        if self.attempt_seconds>self.validity_seconds:
+            raise QueueError('An occurrence validity window must contain its attempt budget')
         _bounded(self.grace_seconds,0,86400)
         if not isinstance(self.missed,str) or self.missed not in {'skip','coalesce_latest'}:
             raise QueueError('Explicit bounded missed-occurrence policy required')
