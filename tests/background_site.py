@@ -46,6 +46,7 @@ class BackgroundSite(Reference):
                                    'bg-02-01': {'runtime': '10.203.154.16/28', 'edge': '10.203.154.32/28'},
                                    'bg-03-01': {'runtime': '10.203.154.48/28', 'edge': '10.203.154.64/28'},
                                    'bx-01-history-01': {'runtime': '10.203.154.80/28', 'edge': '10.203.154.96/28'},
+                                   'bx-01-retention-01': {'runtime': '10.203.154.112/28', 'edge': '10.203.154.128/28'},
                                }[self.args.run])
         self.admit(record)
 
@@ -155,7 +156,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('actions', nargs='+', choices=['prepare', 'initialize', 'resume_catalog', 'resume_version', 'install', 'probe', 'status'])
     parser.add_argument('--candidate', type=Path)
-    parser.add_argument('--run', choices=['bg-02-01', 'bg-03-01', 'bx-01-history-01'], required=True)
+    parser.add_argument('--run', choices=['bg-02-01', 'bg-03-01', 'bx-01-history-01', 'bx-01-retention-01'], required=True)
     parser.add_argument('--port', type=int, default=18112)
     args = parser.parse_args()
     for action in args.actions:

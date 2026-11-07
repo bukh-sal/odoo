@@ -151,7 +151,8 @@ def _enqueue(env,alias,ident,values,key,version,request_id,trace_id,schedule):
         return durable.enqueue(env.cr,storage,ident,version,payload,key,effect_mode=definition.effect_mode,
             max_attempts=definition.max_attempts,timeout_seconds=definition.timeout_seconds,
             deduplication=dict(input=values,binding=bound.binding,handler=ident,version=version),
-            schedule=schedule,on_new=lambda:_validate(definition.prepared_schema,definition.prepare(env,values,bound)))
+            schedule=schedule,retain_identity=True,
+            on_new=lambda:_validate(definition.prepared_schema,definition.prepare(env,values,bound)))
 
 
 def _envelope(row):

@@ -58,6 +58,46 @@ class Job(models.Model):
     _bounds = models.Constraint('CHECK(attempts >= 0 AND max_attempts BETWEEN 1 AND 16 AND claim_generation >= 0 AND handler_version > 0 AND dispatch_generation > 0 AND progress BETWEEN 0 AND 100)', 'Invalid scheduler bounds')
 
 
+class JobIdentity(models.Model):
+    _name = 'mp.job.identity'
+    _description = 'Private job identity and compact terminal history'
+    _log_access = False
+
+    site_id = fields.Char(required=True)
+    workspace_id = fields.Integer(required=True)
+    actor_id = fields.Integer(required=True)
+    installation_id = fields.Integer(required=True)
+    handler = fields.Char(required=True)
+    handler_version = fields.Integer(required=True)
+    idempotency_key = fields.Char(required=True)
+    # Live reservations carry no copy of the job. Terminal metadata is
+    # populated only by the transaction that removes the live row.
+    job_public_id = fields.Char()
+    input_digest = fields.Char()
+    release_digest = fields.Char()
+    effect_mode = fields.Char()
+    terminal_state = fields.Char()
+    finished_at = fields.Datetime()
+    archived_at = fields.Datetime()
+    _scope_key = models.Constraint(
+        'UNIQUE(site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)',
+        'Job identity must be unique within its scope',
+    )
+    _original_job = models.Constraint('UNIQUE(job_public_id)', 'Archived job ID must be unique')
+    _terminal_record = models.Constraint(
+        """CHECK (
+            (job_public_id IS NULL AND input_digest IS NULL AND release_digest IS NULL
+             AND effect_mode IS NULL AND terminal_state IS NULL AND finished_at IS NULL AND archived_at IS NULL)
+            OR
+            (job_public_id IS NOT NULL AND input_digest IS NOT NULL AND release_digest IS NOT NULL
+             AND effect_mode IS NOT NULL AND effect_mode = 'idempotent'
+             AND terminal_state IS NOT NULL AND terminal_state IN ('completed','dead_letter','cancelled')
+             AND finished_at IS NOT NULL AND archived_at IS NOT NULL)
+        )""",
+        'Job history must be empty or a complete terminal record',
+    )
+
+
 class Outbox(models.Model):
     _name = 'mp.outbox'
     _description = 'Private transactional domain outbox'

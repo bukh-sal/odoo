@@ -1,0 +1,51 @@
+{
+  "gate": "BX-01",
+  "state": "in_progress",
+  "slice": "native enqueue identity and private terminal archive",
+  "postgres_probe": {
+    "probe": "tests/background_retention_native_postgres.py",
+    "postgres_image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "python_image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+    "archive_rollback_preserved_job": true,
+    "both_stale_transaction_orders_refused": true,
+    "changed_input_refused": true,
+    "duplicate_returned_original_without_preflight": true,
+    "held_remote_and_waiting_jobs_preserved": true,
+    "identity_digest_detected_change": true,
+    "identity_snapshot_rows": 100007,
+    "legacy_row_archived": true
+  },
+  "native_odoo": {
+    "probe": "tests/background_retention_site.py",
+    "project": "mp-r0-r1release2eadfcd16982",
+    "candidate": "sha256:6a869aac6d60ef5e3711788931d2a9e0504909fc138020c689f5a82be1fe287f",
+    "inventory": "sha256:617901e94af33bed4d392586a0ba7f4e3f7931a331f780435cd0a4a23774fa09",
+    "build_record": "../../G7/bx01-retention-build-01/candidate-build.json",
+    "install_operation": "9046b4ce-950e-4ca3-bd3d-0086c77302a3",
+    "native_handler_completed": true,
+    "archived_job_returned_original_id": true,
+    "changed_input_refused": true,
+    "separate_workspace_received_distinct_job": true,
+    "identity_in_lifecycle_snapshot": true,
+    "scheduled_workload_regression_passed": true
+  },
+  "regressions": {
+    "dispatch_tests_passed": 22,
+    "durable_validation_tests_passed": 4,
+    "contract_freeze_passed": true
+  },
+  "retired": {
+    "site_containers": 17,
+    "site_volumes": 6,
+    "site_networks": 2,
+    "candidate_tags": 2,
+    "candidate_images": 1,
+    "postgres_fixture_containers": 2
+  },
+  "pending": [
+    "Upgrade and fresh restore with historical totals above the old cap",
+    "Authorized cleanup, scoped status and aggregate alerts",
+    "Event and outbox retention and replay policy",
+    "Lock duration and web latency under cleanup"
+  ]
+}

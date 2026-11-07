@@ -1,9 +1,10 @@
 # ADR 0062. Background history retention and replay identity
 
-Status proposed for BX-01. The live scheduler and lifecycle receipts currently
-depend on the complete job rows. The lifecycle refuses a dispatch table above
-its row limit before taking a snapshot. The guarded history diagnostic can
-show that pressure without producing an oversized receipt.
+Status partially qualified for BX-01. Native enqueue and private terminal
+archival passed on a fresh Odoo site. Upgrade, restore, authorized cleanup,
+scoped history and event retention remain open. The lifecycle still refuses
+an active dispatch table above its row limit. The guarded history diagnostic
+reports that pressure without producing an oversized receipt.
 
 Use one private database identity registry for both enqueue and archive. Its
 unique key is the current enqueue identity: site, workspace, actor, installation,
@@ -37,7 +38,10 @@ an explicit replay horizon and recorded behavior after it expires.
 
 The compact registry must have an independently validated lifecycle footprint
 with bounded receipts. The active dispatch row limit must not simply move to a
-new table containing one row per historical job. Qualify the registry and
+new table containing one row per historical job. The lifecycle computes its
+count and digest in ordered pages of up to 4,096 rows. PostgreSQL evidence
+covers 100,007 entries and detects a change to retained identity metadata.
+The initial implementation retains keys indefinitely. Qualify the registry and
 archived status with an upgrade and restore above the old aggregate job count.
 Keep remote-effect settlement evidence independent of the restored database.
 The evidence window must cover any backup from which a previously sent effect
@@ -53,3 +57,4 @@ Sources: [active enqueue](../../packages/platform_sdk/modular_platform/durable.p
 [lifecycle control and snapshot](../../packages/platform_sdk/modular_platform/dispatch_lifecycle.py:181),
 [Odoo cursor isolation](../../odoo/sql_db.py:329), and the
 [follow-up gate](../../planning/background_execution.md#implementation-gates-and-acceptance).
+[Qualification evidence](../evidence/post-r1/background-execution/bx-01-native-archive.json)

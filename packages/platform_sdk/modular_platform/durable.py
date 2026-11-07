@@ -151,7 +151,19 @@ def set_control(cr, site_id, release_digest, state):
     return cr.fetchone()[0]
 
 
-def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None, on_new=None, schedule=None):
+def _reserve_identity(cr, identity):
+    # An UPDATE on conflict is intentional. Under repeatable read a stale
+    # transaction must fail if an archiver changed the row after its snapshot.
+    cr.execute("""INSERT INTO mp_job_identity AS receipt
+        (site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)
+        VALUES (%s,%s,%s,%s,%s,%s,%s)
+        ON CONFLICT (site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)
+        DO UPDATE SET idempotency_key=receipt.idempotency_key
+        RETURNING id,job_public_id,input_digest,release_digest,effect_mode""", identity)
+    return cr.fetchone()
+
+
+def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None, on_new=None, schedule=None, retain_identity=False):
     if not isinstance(scope, DispatchScope):
         raise QueueError('Validated private dispatch scope required')
     _name(handler); _bounded(version, 1, 1000); _bounded(max_attempts, 1, 16); _bounded(timeout_seconds, 1, 86400)
@@ -169,6 +181,12 @@ def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempoten
         _, digest = _json(dict(input_digest=digest, schedule=schedule.wire()))
     generation = control(cr, scope.site_id, scope.release_digest)
     identity = [scope.site_id, scope.workspace_id, scope.actor_id, scope.installation_id, handler, version, key]
+    if retain_identity:
+        _, archived_id, archived_digest, archived_release, archived_effect = _reserve_identity(cr, identity)
+        if archived_id is not None:
+            if (archived_digest, archived_release, archived_effect) != (digest, scope.release_digest, effect_mode):
+                raise QueueError('Job deduplication input or release conflict')
+            return archived_id
     public_id = str(uuid4())
     cr.execute("""INSERT INTO mp_job(public_id,site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key,
         release_digest,payload,input_digest,effect_mode,state,attempts,max_attempts,claim_generation,dispatch_generation,
@@ -198,6 +216,44 @@ def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempoten
     if not old or tuple(old[1:]) != (digest, scope.release_digest, effect_mode):
         raise QueueError('Job deduplication input or release conflict')
     return old[0]
+
+
+def archive_terminal_jobs(cr, site_id, release_digest, *, cutoff, limit):
+    """Private bounded batch. The independently authorized caller commits."""
+    _uuid(site_id)
+    _bounded(limit, 1, 1000)
+    if not isinstance(cutoff, datetime) or cutoff.utcoffset() is None:
+        raise QueueError('Timezone-aware archive cutoff required')
+    cutoff = cutoff.astimezone(timezone.utc).replace(tzinfo=None)
+    control(cr, site_id, release_digest)
+    eligible = """state IN ('completed','dead_letter','cancelled')
+        AND effect_mode='idempotent' AND NOT effect_started
+        AND deadline_at<=timezone('UTC',statement_timestamp())
+        AND COALESCE(finished_at,deadline_at)<=%s
+        AND COALESCE(finished_at,deadline_at)<=timezone('UTC',statement_timestamp())"""
+    cr.execute("""SELECT id,site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key
+        FROM mp_job WHERE site_id=%s AND """ + eligible + """
+        ORDER BY id LIMIT %s""", [site_id, cutoff, limit])
+    archived = []
+    for job_id, *identity in cr.fetchall():
+        receipt_id, previous_job, *_ = _reserve_identity(cr, identity)
+        if previous_job is not None:
+            continue
+        # The identity row always comes before the live row. Retry or
+        # settlement could have changed eligibility since nomination.
+        cr.execute("""SELECT public_id,input_digest,release_digest,effect_mode,state,COALESCE(finished_at,deadline_at)
+            FROM mp_job WHERE id=%s AND site_id=%s AND """ + eligible + " FOR UPDATE",
+            [job_id, site_id, cutoff])
+        job = cr.fetchone()
+        if job is None:
+            continue
+        cr.execute("""UPDATE mp_job_identity
+            SET job_public_id=%s,input_digest=%s,release_digest=%s,effect_mode=%s,
+                terminal_state=%s,finished_at=%s,archived_at=timezone('UTC',clock_timestamp())
+            WHERE id=%s""", [*job, receipt_id])
+        cr.execute('DELETE FROM mp_job WHERE id=%s', [job_id])
+        archived.append(job[0])
+    return archived
 
 
 def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, workspace_id=None, routes=None):

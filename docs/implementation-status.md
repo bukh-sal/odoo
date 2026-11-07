@@ -43,12 +43,19 @@ above the lifecycle limit on a rebuilt site with 100,002 synthetic rows.
 The PostgreSQL race probe reproduced a duplicate with a split lookup and
 verified that writing the shared identity row forces a stale transaction to
 retry. [CLI and concurrency evidence](evidence/post-r1/background-execution/bx-01-history-cli-and-race.json)
-· [Proposed retention protocol](architecture-decisions/0062-background-history-retention.md).
-BX-02 through BX-05 are queued. The next action is to wire the identity
-registry into native enqueue and the bounded archive transaction, with
-explicit lifecycle recognition and pre-upgrade compatibility. Exercise the
-real paths under both transaction orders before enabling cleanup. The owned
-fixtures and candidate image are retired. No blocker requires user action.
+· [Retention protocol](architecture-decisions/0062-background-history-retention.md).
+Native enqueue and private archival passed on a rebuilt Odoo site. An
+identical retry after archival returned the original ID, changed input was
+refused, and another workspace received its own job ID. A PostgreSQL probe
+covered both stale transaction orders, rollback, excluded jobs and a digest
+of 100,007 identity rows. The owned site and candidate were retired.
+[Native archival evidence](evidence/post-r1/background-execution/bx-01-native-archive.json)
+
+BX-01 resume capsule: no live fixture or pending mutation. Next qualify the
+core 0.1.30 to 0.1.31 upgrade and fresh restore with populated history above
+the old limit. Then qualify a reviewed operator batch, scoped status, event
+and outbox retention, and latency under cleanup. BX-02 through BX-05 remain
+queued. No blocker requires user action.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora
