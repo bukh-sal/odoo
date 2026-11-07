@@ -1,0 +1,106 @@
+{
+  "phase": "passed",
+  "case": "hot",
+  "attempt": 2,
+  "image": "sha256:4a9a06242dfd290f8724d110789782aaaa2036cced6a56054f5ab89965325db6",
+  "seconds": 180,
+  "bulk_rate": 0.4,
+  "harness_sha256": "08af1e11eb7cae050ac5af329a349ebd9a35ff45e5b0e33ee081742de8a92860",
+  "checks": {
+    "web": true,
+    "urgent": true,
+    "oldest_urgent": true,
+    "bulk": true,
+    "connections": true,
+    "locks": true,
+    "cpu": true,
+    "listener": true
+  },
+  "idle": {
+    "list": {
+      "count": 200,
+      "median_ms": 109.0,
+      "p95_ms": 187.0,
+      "max_ms": 235.0
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 47.0,
+      "p95_ms": 93.0,
+      "max_ms": 94.0
+    }
+  },
+  "mixed": {
+    "list": {
+      "count": 1360,
+      "median_ms": 109.0,
+      "p95_ms": 188.0,
+      "max_ms": 296.0
+    },
+    "detail": {
+      "count": 1340,
+      "median_ms": 47.0,
+      "p95_ms": 78.0,
+      "max_ms": 110.0
+    }
+  },
+  "timings": {
+    "urgent": {
+      "start": {
+        "count": 150,
+        "median_ms": 217.0,
+        "p95_ms": 2096,
+        "max_ms": 2594
+      },
+      "worker": {
+        "count": 150,
+        "median_ms": 77.5,
+        "p95_ms": 115,
+        "max_ms": 208
+      }
+    },
+    "bulk": {
+      "start": {
+        "count": 72,
+        "median_ms": 62.5,
+        "p95_ms": 187,
+        "max_ms": 201
+      },
+      "worker": {
+        "count": 72,
+        "median_ms": 1097.5,
+        "p95_ms": 1282,
+        "max_ms": 1396
+      }
+    }
+  },
+  "scoped_outputs": {
+    "loads": 18,
+    "reports": 54,
+    "repeated_attempts": 0
+  },
+  "notifications": 150,
+  "notes_unchanged": true,
+  "listen_delta": {
+    "ListenOverflows": 0,
+    "ListenDrops": 0
+  },
+  "final_reading": {
+    "at": 1794032458.10502,
+    "ready": 0,
+    "failed": 0,
+    "running": 0,
+    "completed": 222,
+    "connections": 16,
+    "max_connections": 64,
+    "lock_wait_seconds": 0
+  },
+  "gate": "BX-04",
+  "arrival_mode": "preloaded future eligibility",
+  "record_sha256": "68934f3c5e4f50d839bb2f029758d2c65bad8ae04da5e6d67d95de6f4b759983",
+  "connection_fraction_peak": 0.265625,
+  "lock_wait_seconds_peak": 0,
+  "postgres_cpu_fraction_peak": 0.1097340931281697,
+  "limits": "Admitted180s hot workspace trace; no concurrent fresh enqueue producer or scaling claim.",
+  "drained": true
+}

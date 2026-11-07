@@ -24,7 +24,7 @@ from modular_platform.durable import JobSchedule
 from odoo.addons.mp_core.job_dispatch import enqueue_scheduled
 import json
 anchor=datetime.now(timezone.utc).replace(microsecond=0)+timedelta(seconds=100)
-actors={};jobs={}
+actors={};jobs={};plans=[]
 for label,row in DATA.items():
     actors[label]=scoped_environment(api.Environment(env.cr,FIXTURE['users'][row['user']]['id'],{}),row['public_id'])
 for workspace,label in [(0,'A'),(1,'B')]:
@@ -46,38 +46,79 @@ for index in range(72):
     short=index%4==3
     handler='org.example.background:load' if short else 'org.example.background:report'
     inputs=dict(iterations=cost) if short else dict(first=row['first'],last=row['last'])
-    job=enqueue_scheduled(actor['mp.background.task']._job_env(),'jobs',handler,inputs,KEYTAG+'-bulk-'+str(index),
-        schedule=JobSchedule(when,when+timedelta(seconds=180),20),version=1 if short else 2)
-    jobs[job]=dict(pool='bulk',workspace=label,handler=handler,input=inputs)
+    plan=dict(workspace=label,handler=handler,input=inputs,version=1 if short else 2,
+        run_at=when.isoformat(),expires_at=(when+timedelta(seconds=180)).isoformat(),key=KEYTAG+'-bulk-'+str(index))
+    plans.append(plan)
+    if not LIVE:
+        job=enqueue_scheduled(actor['mp.background.task']._job_env(),'jobs',handler,inputs,plan['key'],
+            schedule=JobSchedule(when,when+timedelta(seconds=180),20),version=plan['version'])
+        jobs[job]=dict(pool='bulk',workspace=label,handler=handler,input=inputs)
 env.cr.commit()
-print('BX04_RESULT='+json.dumps(dict(anchor=anchor.isoformat(),committed=datetime.now(timezone.utc).isoformat(),jobs=jobs)))
+print('BX04_RESULT='+json.dumps(dict(anchor=anchor.isoformat(),committed=datetime.now(timezone.utc).isoformat(),jobs=jobs,plans=plans)))
+"""
+
+LIVE_PRODUCER="""
+from datetime import datetime,timezone
+from odoo import api
+from odoo.service.model import retrying
+from odoo.addons.mp_identity.scopes import scoped_environment
+from odoo.addons.mp_core.job_dispatch import enqueue_scheduled
+from modular_platform.durable import JobSchedule
+import json,time
+env.cr.commit()
+jobs={};commits=[]
+for plan in PLANS:
+    when=datetime.fromisoformat(plan['run_at'])
+    while datetime.now(timezone.utc)<when:
+        time.sleep(max(0,min(.25,(when-datetime.now(timezone.utc)).total_seconds())))
+    row=DATA[plan['workspace']]
+    with env.registry.cursor() as cr:
+        metadata=api.Environment(cr,1,{})
+        def enqueue():
+            actor=scoped_environment(api.Environment(cr,FIXTURE['users'][row['user']]['id'],{}),row['public_id'])
+            return enqueue_scheduled(actor['mp.background.task']._job_env(),'jobs',plan['handler'],plan['input'],plan['key'],
+                schedule=JobSchedule(when,datetime.fromisoformat(plan['expires_at']),20),version=plan['version'])
+        job=retrying(enqueue,metadata)
+        cr.execute('SELECT created_at FROM mp_job WHERE public_id=%s',[job]);created,=cr.fetchone()
+    jobs[job]=dict(pool='bulk',workspace=plan['workspace'],handler=plan['handler'],input=plan['input'])
+    commits.append(dict(job=job,nominal=when.isoformat(),created_at=created.replace(tzinfo=timezone.utc).isoformat(),
+        committed_at=datetime.now(timezone.utc).isoformat()))
+print('BX04_RESULT='+json.dumps(dict(jobs=jobs,commits=commits)))
 """
 
 
-def run(case,attempt=1):
+def run(case,attempt=1,live=False):
     probe=Probe('bx-04-capacity-01')
     setup=load(probe.site.local/'bx04-sustained-setup.json')
     assert setup['phase']=='reference_upgraded'
     assert type(attempt) is int and 1<=attempt<=10
     suffix='' if attempt==1 else '-'+str(attempt).zfill(2)
-    tag=case+suffix
+    tag=case+('-live' if live else '')+suffix
     path=probe.site.local/('bx04-sustained-'+tag+'.json');assert not path.exists()
     assert not probe.operator._lanes()
-    record=dict(phase='starting',case=case,attempt=attempt,image=probe.target['image_id'],seconds=180,bulk_rate=.4,
+    record=dict(phase='starting',case=case,attempt=attempt,live_enqueue=live,image=probe.target['image_id'],seconds=180,bulk_rate=.4,
         harness_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     write(path,record)
     review=probe.operator.run('profile-review',urgent_lanes=1,bulk_lanes=2)
     status=probe.operator.run('profile-apply',approval=review['approval']);assert status['state']=='ready'
     record.update(phase='seeding',approval=review['approval']);write(path,record)
-    seed=native(probe,'bx04-sustained-seed-'+tag,SEED,DATA=setup['data'],CASE=case,KEYTAG=tag,WORKLOAD=workload())
+    seed=native(probe,'bx04-sustained-seed-'+tag,SEED,DATA=setup['data'],CASE=case,KEYTAG=tag,LIVE=live,WORKLOAD=workload())
     anchor=datetime.fromisoformat(seed['anchor']).timestamp()
     assert anchor-datetime.fromisoformat(seed['committed']).timestamp()>65
     record.update(phase='preloaded',seed=seed);write(path,record)
+    producer_result=[];producer_error=[];producer_thread=None
+    producer_name=probe.project+'-bx04-live-producer-'+tag
+    if live:
+        def produce():
+            try:producer_result.append(native(probe,'bx04-live-producer-'+tag,LIVE_PRODUCER,DATA=setup['data'],PLANS=seed['plans']))
+            except BaseException as error:producer_error.append(str(error))
+        producer_thread=Thread(target=produce,daemon=True);producer_thread.start()
     notes=probe.sql("SELECT md5(string_agg(md5(to_jsonb(n)::text),'' ORDER BY id)) FROM mp_example_note n")
     note=int(probe.sql("SELECT id FROM mp_example_note WHERE title='BG benchmark 00100' ORDER BY id LIMIT 1"))
     probe.site.state=lambda:dict(probe.state)
     clients=[BrowserConnection(probe.site,'alice') for _ in range(20)]
     ids=','.join("'"+job+"'" for job in seed['jobs'])
+    selector='(public_id IN ('+ids+") OR idempotency_key LIKE '"+tag+"-bulk-%')" if live else 'public_id IN ('+ids+')'
     query="""SELECT jsonb_build_object('at',extract(epoch FROM clock_timestamp()),
         'completed',count(*) FILTER (WHERE state='completed'),
         'failed',count(*) FILTER (WHERE state IN ('dead_letter','held','cancelled','outcome_unknown')),
@@ -86,7 +127,7 @@ def run(case,attempt=1):
         'connections',(SELECT count(*) FROM pg_stat_activity),
         'max_connections',current_setting('max_connections')::int,
         'lock_wait_seconds',COALESCE((SELECT max(extract(epoch FROM clock_timestamp()-query_start))
-            FROM pg_stat_activity WHERE wait_event_type='Lock'),0)) FROM mp_job WHERE public_id IN ("""+ids+")"
+            FROM pg_stat_activity WHERE wait_event_type='Lock'),0)) FROM mp_job WHERE """+selector
     readings=[];cpus=[];stop=Event();errors=[]
     def cpu():
         raw=docker('exec',probe.project+'-db-1','cat','/sys/fs/cgroup/cpu.stat').decode().splitlines()
@@ -141,6 +182,7 @@ def run(case,attempt=1):
             mixed={'list':[],'detail':[]};rounds=[];index=0
             while time.time()<anchor+180 or not readings or readings[-1]['completed']<222:
                 assert not errors,errors
+                assert not producer_error,producer_error
                 assert time.time()<anchor+300,'Backlog did not drain within120seconds'
                 kind=('list','detail')[index%2];measured=batch(pool,kind);mixed[kind].extend(measured)
                 rounds.append(dict(at=time.time(),kind=kind,**summary(measured)));index+=1;time.sleep(1.2)
@@ -150,6 +192,20 @@ def run(case,attempt=1):
     finally:
         stop.set();thread.join(timeout=6)
         for client in clients:client.connection.close()
+        if producer_thread is not None and producer_thread.is_alive():
+            # This is an explicitly owned, bounded test producer. Never leave
+            # future enqueueing detached after a failed HTTP measurement.
+            row,=json.loads(docker('inspect',producer_name))
+            assert row['Config']['Labels']['com.modular.disposable']==probe.project
+            docker('stop','--time','5',producer_name)
+            producer_thread.join(timeout=10)
+    if live:
+        assert producer_thread is not None and not producer_thread.is_alive() and not producer_error,producer_error
+        result,=producer_result
+        assert len(result['jobs'])==72
+        seed['jobs'].update(result['jobs'])
+        record.update(live_producer=result)
+        ids=','.join("'"+job+"'" for job in seed['jobs'])
     assert not thread.is_alive() and not errors,errors
     assert readings[-1]['failed']==0 and readings[-1]['completed']==222
     telemetry=[]
@@ -189,4 +245,5 @@ def run(case,attempt=1):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('case',choices=['hot','many'])
     parser.add_argument('--attempt',type=int,default=1)
-    args=parser.parse_args();run(args.case,args.attempt)
+    parser.add_argument('--live',action='store_true')
+    args=parser.parse_args();run(args.case,args.attempt,args.live)
