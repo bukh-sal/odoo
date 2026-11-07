@@ -18,6 +18,22 @@ def rows(*args):
     return json.loads(docker(*args))
 
 
+def retire_exited(probe):
+    """Intermediate cleanup; retain all running roles and named data volumes."""
+    names=docker('ps','-a','--filter','status=exited','--format','{{.Names}}').decode().splitlines()
+    selected=[name for name in names if name.startswith(probe.project+'-')]
+    if not selected:return []
+    inspected=rows('inspect',*selected)
+    for row in inspected:
+        labels=row['Config']['Labels']
+        assert row['State']['Status']=='exited'
+        assert (labels.get('com.docker.compose.project')==probe.project
+            or labels.get('com.modular.disposable')==probe.project
+            or labels.get('com.modular.deployment')==probe.state['deployment_id'])
+    docker('rm','-v',*[row['Id'] for row in inspected])
+    return [dict(name=row['Name'].lstrip('/'),id=row['Id']) for row in inspected]
+
+
 def retire_site(run):
     directory=LOCAL/run
     site=load(directory/'state.json')

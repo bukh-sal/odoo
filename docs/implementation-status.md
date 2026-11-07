@@ -235,14 +235,28 @@ missing health also held. Twenty queued reports completed once, Notes unchanged,
 fleet container IDs unchanged and the pressure helper closed all connections.
 [Pressure and stale evidence](evidence/post-r1/background-execution/bx-04-pressure-stale.json).
 
-Resume capsule: active recurring-burst case session1822, one owned project
+Recurring producer bursts passed on core44:ten schedules emitted70 reports
+over180s, all single-attempt completions, no duplicate nominal occurrences or
+sampled per-schedule overlap. Start p95 5.417s; stock paired list188/188ms,
+detail79/78ms, all headroom/listener targets passed.
+[Recurring burst evidence](evidence/post-r1/background-execution/bx-04-recurring-bursts.json).
+
+Resume capsule: active current-release three-lane burst comparison session33870,
+one owned project
 `mp-r0-r1releaseb152ddffba06`, port18126, DB
 `mp_disposable_r0_r1_release_b152ddffba06`. Current image454dd975b063/core44,
 full image ID in build `bx04-claim-guard-build-01/candidate-build.json`.
-One urgent/two bulk/one producer roles are reviewed, three stock web workers/four PG CPUs.
-The command is `tests/background_recurring_burst.py`; private result is
-`bx04-recurring-burst.json`, with ten scoped service credentials/schedules.
-Six30-second report bursts are measured over180s through the managed producer.
+One urgent/three bulk roles are reviewed, three stock web workers/four PG CPUs.
+The command is `tests/background_sustained_load.py many --burst --bulk-lanes 3
+--attempt 2 --calibration-suffix core44`; private result is
+`bx04-sustained-many-burst-3-02.json`. Two-lane repeat passed all ten targets;
+bulk start p95 22.149s, urgent2.185s. Forty fresh same-release calibration
+samples passed first; previous calibration/comparison records remain intact.
+All ten recurring schedules are paused; credentials remain active within the
+reviewed recurrence footprint. Forty-two terminal owned helpers were removed;
+running services and named volumes retained. Obsolete core42/core43 candidates
+and their four tags were retired only after verifying their release operations
+completed with resumed traffic and no remaining container dependencies.
 Earlier pressure harness diagnostics were preserved; both failed before job seed,
 and partial pressure connections were closed. Successful attempt3 is drained.
 Do not replay completed load/upgrade/fault seeds. No uncertain mutation or external
@@ -270,7 +284,8 @@ BX-04 checklist:
 - [x] Repeat the original BG-04 paired native web/reminder/bulk workload.
 - [x] Measure sustained hot-workspace, 70-workspace and variable-duration load.
 - [x] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost (core42; recheck affected source after rotation).
-- [ ] Qualify process loss, fairness, recurring bursts, saturation and stale metrics.
+- [x] Qualify process loss, fairness, recurring bursts, connection saturation and stale metrics.
+- [ ] Qualify populated release/fresh recovery of guarded jobs and rotation metadata.
 - [ ] Decide automatic-sizing/broker/pool changes from evidence; qualify any selected controller.
 - [ ] Record final evidence and retire owned qualification assets.
 

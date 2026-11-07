@@ -1,0 +1,60 @@
+{
+  "phase": "passed",
+  "image": "sha256:454dd975b0633e1cad4b2b7a2302f5122f95e5ad722e9bfaf061ee087001d132",
+  "checks": {
+    "start_p95": true,
+    "web": true,
+    "connections": true,
+    "locks": true,
+    "cpu": true,
+    "listener": true
+  },
+  "starts": {
+    "count": 70,
+    "median_ms": 2867.5,
+    "p95_ms": 5417,
+    "max_ms": 5664
+  },
+  "idle": {
+    "list": {
+      "count": 200,
+      "median_ms": 109.0,
+      "p95_ms": 188.0,
+      "max_ms": 203.0
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 47.0,
+      "p95_ms": 79.0,
+      "max_ms": 94.0
+    }
+  },
+  "mixed": {
+    "list": {
+      "count": 200,
+      "median_ms": 109.0,
+      "p95_ms": 188.0,
+      "max_ms": 203.0
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 47.0,
+      "p95_ms": 78.0,
+      "max_ms": 93.0
+    }
+  },
+  "notes_unchanged": true,
+  "listen_delta": {
+    "ListenOverflows": 0,
+    "ListenDrops": 0
+  },
+  "gate": "BX-04",
+  "schedules": 10,
+  "jobs": 70,
+  "completed_once": true,
+  "no_duplicate_nominal_or_sampled_overlap": true,
+  "connection_fraction_peak": 0.25,
+  "db_cpu_fraction_peak": 0.047016480172550806,
+  "private_record_sha256": "c33eed35a9df38507736973ed0bacca74e45361462acc159b1df940231954cc7",
+  "producer": "reviewed current-release native producer, ten service scopes, 30-second intervals over 180 seconds"
+}
