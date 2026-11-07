@@ -6,6 +6,7 @@ from http.client import HTTPConnection
 from http.cookiejar import CookieJar
 import json
 import math
+import re
 from statistics import median
 import subprocess
 import sys
@@ -193,16 +194,18 @@ class EdgePeer:
 
 
 def run(resume_seed=False,tuned=False,scaled=False,aligned=False,linux_peer=False,web_three=False,db_four=False,
-        one_urgent=False,run_name='bg-03-01'):
+        one_urgent=False,run_name='bg-03-01',case_suffix=''):
     db_four=db_four or one_urgent
     web_three=web_three or db_four
     aligned=aligned or linux_peer or web_three
     assert run_name in {'bg-03-01','bx-04-capacity-01'}
+    assert not case_suffix or re.fullmatch(r'[A-Za-z0-9-]{1,24}',case_suffix)
     probe=Probe(run_name,extra_phase='bg04-mixed-seed' if resume_seed else None)
     lifecycle=json.loads((probe.site.local/('bg03-release-queue.json' if run_name=='bg-03-01' else 'bx04-native.json')).read_text())
     assert lifecycle['phase']=='passed'
     path=probe.site.local/('bg04-load-one-urgent.json' if one_urgent else 'bg04-load-db-four.json' if db_four else 'bg04-load-web-three.json' if web_three else 'bg04-load-linux-peer.json' if linux_peer else 'bg04-load-aligned-02.json' if aligned else 'bg04-load-scaled.json' if scaled else
                            'bg04-load-tuned.json' if tuned else 'bg04-load.json')
+    if case_suffix:path=path.with_name(path.stem+'-'+case_suffix+'.json')
     if resume_seed:
         result=json.loads(path.read_bytes())
         assert result['phase']=='idle_measured' and result['image']==probe.state['image_id']
@@ -341,6 +344,7 @@ def run(resume_seed=False,tuned=False,scaled=False,aligned=False,linux_peer=Fals
     write(path,result)
     label=('bg04-mixed-one-urgent' if one_urgent else 'bg04-mixed-db-four' if db_four else 'bg04-mixed-web-three' if web_three else 'bg04-mixed-linux-peer' if linux_peer else 'bg04-mixed-aligned-02' if aligned else 'bg04-mixed-scaled' if scaled else 'bg04-mixed-tuned' if tuned
            else 'bg04-mixed-seed-02' if resume_seed else 'bg04-mixed-seed')
+    if case_suffix:label+='-'+case_suffix
     loaded=seed_jobs(probe,label,{},anchor_lead=75 if aligned else 12)
     jobs=loaded['jobs']
     assert list(jobs.values()).count('urgent')==150 and list(jobs.values()).count('bulk')==40
@@ -427,7 +431,7 @@ def run(resume_seed=False,tuned=False,scaled=False,aligned=False,linux_peer=Fals
         AND result->>'count'='500' AND result->>'points'='{expected}';""")=='40'
     assert before==snapshot()
 
-    restart=seed_jobs(probe,'bg04-restart-seed',{int(key):value for key,value in loaded['ranges'].items()})
+    restart=seed_jobs(probe,'bg04-restart-seed'+('-'+case_suffix if case_suffix else ''),{int(key):value for key,value in loaded['ranges'].items()})
     running=wait(lambda:next((job for job in restart['jobs'] if probe.lane(job)),None))
     assert observe(probe,restart['jobs'])['ready']>0
     mechanism=probe.kill(probe.lane(running))
@@ -447,7 +451,8 @@ def run(resume_seed=False,tuned=False,scaled=False,aligned=False,linux_peer=Fals
 
 if __name__=='__main__':
     run_name=sys.argv[sys.argv.index('--run')+1] if '--run' in sys.argv else 'bg-03-01'
+    case_suffix=sys.argv[sys.argv.index('--case-suffix')+1] if '--case-suffix' in sys.argv else ''
     run(resume_seed='--resume-seed' in sys.argv[1:],tuned='--tuned' in sys.argv[1:],
         scaled='--scaled' in sys.argv[1:],aligned='--aligned' in sys.argv[1:],
         linux_peer='--linux-peer' in sys.argv[1:],web_three='--web-three' in sys.argv[1:],
-        db_four='--db-four' in sys.argv[1:],one_urgent='--one-urgent' in sys.argv[1:],run_name=run_name)
+        db_four='--db-four' in sys.argv[1:],one_urgent='--one-urgent' in sys.argv[1:],run_name=run_name,case_suffix=case_suffix)

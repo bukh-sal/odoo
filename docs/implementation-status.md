@@ -7,8 +7,8 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **G7 passed for local R1.** Core26/Shell13 remains the qualified release.
-- Active item: **G-01e complete.** The in-app browser walkthrough and §28 handoff passed.
+- Current phase/gate: **G7 passed for local R1. Active follow-up: BX-04 background execution qualification.** Core26/Shell13 remains the original qualified R1 release.
+- Active item: **BX-04 core44 paired load requalification.** The original G-01e browser walkthrough and §28 handoff are complete; see the current follow-up resume capsule below.
 - Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -209,30 +209,40 @@ denied while the new claim was running. [Native rotation](evidence/post-r1/backg
 Core43 upgrade `ec8b996a-e687-44fc-916c-18efc985e314` preserved business data.
 Ten PostgreSQL hint/rollback/CAS/ring tests and the106-file freeze passed.
 
-**Active defect: isolated slot-session loss.** Killing only the owned advisory
-backend admitted two simultaneously valid claims in one workspace/pool. Both
-nine-second local fixture jobs completed; no external effect was started.
-[Baseline](evidence/post-r1/background-execution/bx-04-slot-loss-baseline.json).
-[ADR0067](architecture-decisions/0067-pooled-claim-guard.md) adds a distinct
-preparation-connection guard, fresh snapshot after acquisition, and a running
-row check after expired-attempt cleanup. It preserves preparation atomicity,
-normal Odoo readers and existing job/lease/authorization protocols. Ten actual
-PostgreSQL tests passed, including invisible claims, caller rollback, stale
-snapshots, locked expiry/renewal, separate pools and unknown-effect preservation.
-The SQL fixture was retired. Native correction and affected load remain open.
+The isolated slot-session defect was corrected on core44. The original probe
+admitted two valid claims after losing only the advisory backend. The corrected
+native probe peaked at one, and both jobs completed with no external effect.
+[ADR0067](architecture-decisions/0067-pooled-claim-guard.md) preserves preparation
+atomicity using a separate preparation-connection guard and a fresh snapshot,
+plus running-row exclusion after reaping. Ten PostgreSQL race/visibility cases
+passed and the SQL fixture was retired. Fairness and child restart were
+requalified under this guard:all68 peers served, old apply denied while the
+replacement claim ran, no source authority/effect changes.
+[Core44 guard proof](evidence/post-r1/background-execution/bx-04-core44-guards.json).
 
-Resume capsule: one owned site/project on18126, DB unchanged. Current deployed
-core43 image6cf403e88ee0; all job roles paused, no live workload or unknown
-effect. Core44 candidate454dd975b063 is being applied once in session44056.
-Private record: `.local/background-qualification/bx-04-capacity-01/bx04-core44-upgrade.json`.
-Do not replay. After settled upgrade, run `tests/background_slot_loss.py fenced-01`
-then recheck fairness and affected admitted web/job load. Current source is
-core44; the candidate build log is private under `.local/operator/builds/`.
-The first slot probe stopped at a CIDR-format address guard before termination;
-it was recorded/retired and the actual baseline used distinct keys.
-Remaining required checks include pressure/stale metrics, recurring bursts,
-release/recovery compatibility and final retirement; BX-05 remains queued.
-No user blocker. Gate progress3/5 (about60%), independent of the passed case counts.
+Core44 populated upgrade `877c98e4-5da2-4de8-b4fd-150be1fdc550` preserved all
+business rows; reference0.2.1 unchanged. The full host sweep passed584 tests
+with one existing Windows skip (585 total,422.209s), and106-file freeze passed.
+
+Resume capsule: active BG04 requalification session9070, one owned project
+`mp-r0-r1releaseb152ddffba06`, port18126, DB
+`mp_disposable_r0_r1_release_b152ddffba06`. Current image454dd975b063/core44,
+full image ID in build `bx04-claim-guard-build-01/candidate-build.json`.
+One urgent/two bulk roles are ready, three stock web workers/four PG CPUs.
+The command is `tests/background_load.py --run bx-04-capacity-01 --one-urgent
+--case-suffix core44`; private result is `bg04-load-one-urgent-core44.json`.
+Do not replay its seed or the settled upgrades/fault cases. This running case
+is the only active goal check; no unknown mutation or external effect exists.
+It will drain roles after completion. Source changes since the last commit are
+only test support for distinct fairness and benchmark attempts.
+
+Next inspect that result, then qualify native pressure/stale-metric holds,
+recurring bursts, and release/recovery with populated guarded jobs. Choose
+whether automatic sizing is justified from the measured comparisons; current
+fixed2/work advice meets SLOs with less lane use than count3. Retire obsolete
+containers/images after their dependencies settle. BX-05 app-driven chunks
+remains required and queued. No user input is needed. Three of five gates have
+passed (roughly60% by completed-gate weight), separately from case/test counts.
 Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is

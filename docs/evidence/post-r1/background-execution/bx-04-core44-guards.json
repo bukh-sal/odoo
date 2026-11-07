@@ -1,0 +1,61 @@
+{
+  "gate": "BX-04",
+  "state": "native_guard_and_rotation_passed_load_pending",
+  "image": "sha256:454dd975b0633e1cad4b2b7a2302f5122f95e5ad722e9bfaf061ee087001d132",
+  "upgrade_operation": "877c98e4-5da2-4de8-b4fd-150be1fdc550",
+  "business_preserved": true,
+  "slot_loss": {
+    "peak_valid_running": 1,
+    "all_completed": true,
+    "no_external_effect": true,
+    "drained": true
+  },
+  "fairness": {
+    "peers_served": 68,
+    "hot_claims_before_first_peer": 1,
+    "hot_claims_when_all_peers_started": {
+      "A": 0,
+      "B": 1
+    }
+  },
+  "restart": {
+    "peers_served": 68,
+    "hot_claims_before_first_peer": 2,
+    "hot_claims_when_all_peers_started": {
+      "A": 1,
+      "B": 1
+    },
+    "restart": {
+      "count_before": 0,
+      "count_after": 1,
+      "stale": {
+        "stale_apply_denied": true,
+        "observed_state": "running",
+        "generation": 2
+      }
+    }
+  },
+  "source_boundaries": [
+    "Fresh preparation snapshot",
+    "Pooled running-row exclusion",
+    "Existing actor, lease, generation and effect fences",
+    "No business schema change"
+  ],
+  "host_regression": {
+    "command": ".local/toolchain/operator-python16/Scripts/python.exe -m unittest discover -s tests",
+    "exit_code": 0,
+    "tests": 585,
+    "passed": 584,
+    "skipped": 1,
+    "seconds": 422.209,
+    "private_log_sha256": "97ef1d52a94df74b4afa869f8f51d6c23a451ace965532093b19bfbf7210ee70",
+    "skip": "Existing Windows source/data symlink case; unchanged startup retains earlier Linux qualification"
+  },
+  "contract_freeze": {
+    "result": "passed",
+    "files": 106,
+    "rows": 8,
+    "contract_major": 1
+  },
+  "limits": "Affected native web/job load, pressure/staleness, recurrence and recovery still required; this is not a BX-04 gate exit."
+}

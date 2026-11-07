@@ -40,7 +40,7 @@ def main(tag):
     review=probe.operator.run('profile-review',urgent_lanes=1,bulk_lanes=2)
     write(path,dict(phase='starting',approval=review['approval']))
     status=probe.operator.run('profile-apply',approval=review['approval']);assert status['state']=='ready'
-    restart=tag=='rotation-restart-01'
+    restart=tag.startswith('rotation-restart-')
     seed=native(probe,'bx04-fairness-'+tag,SOURCE,DATA=setup['data'],TAG=tag,RESTART=restart)
     assert len(seed['jobs'])==128
     record=dict(phase='seeded',seed=seed,approval=review['approval'],image=probe.target['image_id']);write(path,record)
@@ -118,5 +118,5 @@ print('BX04_RESULT='+json.dumps(result))
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('tag',choices=['baseline','rotation-01','rotation-restart-01'])
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('tag',choices=['baseline','rotation-01','rotation-restart-01','rotation-02','rotation-restart-02'])
     main(parser.parse_args().tag)

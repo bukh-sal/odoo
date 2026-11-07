@@ -1,6 +1,7 @@
 # ADR0067. Enforce the managed workspace limit after session loss
 
-Status:selected after BX-04's isolated slot-backend termination. The worker's
+Status:implemented and natively verified on core44; affected load/recovery remains pending.
+Selected after BX-04's isolated slot-backend termination. The worker's
 compute and heartbeat stayed alive; another lane acquired the lost advisory
 slot and admitted a second valid claim in the same workspace/pool. Both jobs
 finished with no external effect, but the configured concurrency bound failed.
@@ -36,3 +37,9 @@ Qualification: invisible uncommitted claim, rollback, renewed/locked expired
 attempt, expiry reclaim and another pool in PostgreSQL; repeat the exact
 isolated backend termination natively; recheck fairness/restart and admitted
 web/job load. Keep failed baselines and zero-effect observations separate.
+
+The exact native rerun peaked at one valid claim after termination, versus two
+before the correction. Fairness, child restart and stale running-claim refusal
+passed again. The full host sweep passed584 tests with one existing Windows
+skip, and the106-file contract freeze passed. See
+[core44 evidence](../evidence/post-r1/background-execution/bx-04-core44-guards.json).
