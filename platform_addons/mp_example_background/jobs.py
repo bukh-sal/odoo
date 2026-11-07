@@ -33,6 +33,10 @@ FAULT = shape(mode=dict(enum=['claim','heartbeat','timeout','retry','send']))
 LOAD = shape(iterations=dict(type='integer',enum=[250000,1000000,5000000]))
 LOAD_RESULT = shape(iterations=dict(type='integer',enum=[250000,1000000,5000000]),
     digest=dict(type='string',pattern=r'^[a-f0-9]{64}$'))
+REPORT_CHUNK=shape(run=UUID,cursor=dict(type='integer',minimum=0,maximum=5000))
+REPORT_CHUNK_DATA=shape(points=dict(type='array',items=POINTS,minItems=1,maxItems=100),
+    cursor=dict(type='integer',minimum=0,maximum=4999),next_cursor=dict(type='integer',minimum=1,maximum=5000),
+    snapshot_digest=dict(type='string',pattern=r'^[a-f0-9]{64}$'))
 
 
 def reminder_resource(env, values, bound):
@@ -129,6 +133,12 @@ job_dispatch.register(job_dispatch.JobDefinition(
     PLUGIN+':load',1,PLUGIN,SERVICE,'1.0','authority',LOAD,LOAD,LOAD_RESULT,LOAD_RESULT,
     lambda env,data,bound:bound.model._mp_guard('read'),lambda env,data,bound:data,
     load_compute,lambda env,data,prepared,result,bound:result,pool='bulk'))
+
+job_dispatch.register(job_dispatch.JobDefinition(
+    PLUGIN+':report_chunk',1,PLUGIN,SERVICE,'1.0','authority',REPORT_CHUNK,REPORT_CHUNK_DATA,SUMMARY,SUMMARY,
+    lambda env,data,bound:bound.model._report_row(data['run']),
+    lambda env,data,bound:bound.model._report_stage(data)[1],report_compute,
+    lambda env,data,prepared,result,bound:bound.model._apply_report_chunk(data,prepared,result),pool='bulk'))
 
 job_dispatch.register(job_dispatch.JobDefinition(
     PLUGIN+':fault', 1, PLUGIN, SERVICE, '1.0', 'authority', FAULT, FAULT, FAULT, FAULT,

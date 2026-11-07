@@ -280,14 +280,20 @@ stock dependency base and unrelated existing assets were preserved.
 [Retirement](evidence/post-r1/background-execution/bx-04-retirement.json).
 [BX-04 decision and acceptance mapping](evidence/post-r1/background-execution/bx-04-decision.json).
 
-Resume capsule: BX-05 is the sole active work item. No running check, site,
-producer, worker or uncertain mutation. Do not replay retired BX-04 helpers.
+Resume capsule: BX-05 is the sole active work item. Clean baseline site is
+installed at`bx-05-chunks-01`, project`mp-r0-r1release868dbb340ae2`, port18128,
+DB`mp_disposable_r0_r1_release_868dbb340ae2`, core45/reference0.2.1. No worker,
+producer, running check or uncertain mutation. Do not replay retired BX-04 helpers.
 Private final record:`.local/background-qualification/bx-04-capacity-01/bx04-finalized.json`.
 Core45 baseline build:`docs/evidence/G7/bx04-recovery-build-01/candidate-build.json`.
-Next select the native reference app's >500-row bulk report as the smallest
-app-owned continuation proof; define cursor, successor enqueue atomicity,
-cancellation and version compatibility before editing the handler. Preserve
-native Odoo views. Qualify real rollback/process loss, authority, populated
+Selected [ADR0068](architecture-decisions/0068-app-owned-report-continuations.md)
+before implementation:up to5,000 snapshot rows/100 per job, original expiry,
+current source access and owner guards, atomic cursor/successor, job-before-run
+cancellation locking. Reference0.3.0 source now implements private run storage,
+start/status/cancel adapters and a separate report_chunk:1 handler, retaining
+report:2. It is not natively qualified yet. Standard native screens are unchanged.
+Next build a candidate and independently upgrade the admitted0.2.1 baseline.
+Qualify1,201 rows/13 chunks, real rollback/process loss, authority, populated
 upgrade and fresh recovery. Remote delivery, fan-out or a common workflow engine
 remain conditional on an actual app requirement; no provider is required here.
 BX-01–04 passed, roughly80% by five equal gate weights; no extra credit for
@@ -309,7 +315,7 @@ BX-04 checklist:
 
 BX-05 checklist:
 
-- [ ] Freeze the selected app's bounded cursor, consistency and continuation contract.
+- [x] Freeze the selected app's bounded cursor, consistency and continuation contract (ADR0068).
 - [ ] Implement app-owned progress and atomic cursor/successor updates with scoped authority.
 - [ ] Prove rollback, retry/process loss, duplicates and cancellation after partial progress.
 - [ ] Qualify compatible upgrade and fresh restore of partially completed work.

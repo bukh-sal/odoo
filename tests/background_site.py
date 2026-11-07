@@ -57,6 +57,7 @@ class BackgroundSite(Reference):
                                    'bx-02-worker-profile-01': {'runtime': '10.203.155.128/28', 'edge': '10.203.155.144/28'},
                                    'bx-03-recurrence-01': {'runtime': '10.203.155.160/28', 'edge': '10.203.155.176/28'},
                                    'bx-04-capacity-01': {'runtime': '10.203.155.192/28', 'edge': '10.203.155.208/28'},
+                                   'bx-05-chunks-01': {'runtime': '10.203.155.224/28', 'edge': '10.203.155.240/28'},
                                }[self.args.run])
         self.admit(record)
 
@@ -173,7 +174,7 @@ if __name__ == '__main__':
                        'bx-01-retention-01', 'bx-01-retention-upgrade-01', 'bx-01-archive-operator-01',
                        'bx-01-scoped-history-01', 'bx-01-event-retention-01', 'bx-01-event-upgrade-01',
                        'bx-01-cleanup-load-01', 'bx-01-cleanup-load-02', 'bx-02-worker-profile-01',
-                       'bx-03-recurrence-01','bx-04-capacity-01'], required=True)
+                       'bx-03-recurrence-01','bx-04-capacity-01','bx-05-chunks-01'], required=True)
     parser.add_argument('--port', type=int, default=18112)
     args = parser.parse_args()
     for action in args.actions:

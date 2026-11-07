@@ -1,10 +1,10 @@
 "schema_version" = 1
-"plugin" = {"id" = "org.example.background", "version" = "0.2.1", "name" = "Background Jobs Reference", "description" = "Qualification workload for scoped reminders and bulk reports", "publisher" = "example", "license" = "LGPL-3.0-only"}
+"plugin" = {"id" = "org.example.background", "version" = "0.3.0", "name" = "Background Jobs Reference", "description" = "Qualification workload for scoped reminders and bulk reports", "publisher" = "example", "license" = "LGPL-3.0-only"}
 "compatibility" = {"platform" = ">=0.1.28,<0.2", "host_api_major" = 1, "ui_api_major" = 1}
 "runtime" = {"kind" = "native", "addon_name" = "mp_example_background", "native_compatibility" = "odoo-19", "python" = ">=3.12,<3.13", "python_dependencies" = []}
 "activation" = {"scopes" = ["site", "workspace"], "supports_feature_suspension" = true}
 "permissions" = {"defines" = {"jobs.read" = "Read authorized reference job data"}, "requests" = []}
-"data" = {"models" = ["mp.background.task", "mp.background.notification"], "extension_targets" = [], "contributions" = [{"kind" = "model", "id" = "mp.background.task", "target" = "workspace", "delete_policy" = "owned"}, {"kind" = "model", "id" = "mp.background.notification", "target" = "workspace", "delete_policy" = "owned"}]}
+"data" = {"models" = ["mp.background.task", "mp.background.notification", "mp.background.report"], "extension_targets" = [], "contributions" = [{"kind" = "model", "id" = "mp.background.task", "target" = "workspace", "delete_policy" = "owned"}, {"kind" = "model", "id" = "mp.background.notification", "target" = "workspace", "delete_policy" = "owned"}, {"kind" = "model", "id" = "mp.background.report", "target" = "workspace", "delete_policy" = "owned"}]}
 "ui" = {"mode" = "trusted", "design" = "standard", "pages" = [], "navigation" = []}
 "services" = {"provides" = [{"id" = "org.example.background.jobs", "api_version" = "1.0", "schema" = "schemas/authority-v1.json", "handler" = "mp_example_background.jobs:BackgroundService", "methods" = ["authority"]}], "requires" = [{"alias" = "jobs", "id" = "org.example.background.jobs", "contract_major" = 1, "version" = ">=1.0,<2.0"}]}
 "upgrade" = {"strategy" = "native_migrations", "requires_maintenance" = true, "destructive" = false, "transitions" = []}
