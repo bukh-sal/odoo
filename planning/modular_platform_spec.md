@@ -1,14 +1,14 @@
 # Modular Platform Implementation Specification
 
-Specification version 1.1. Updated 28 October 2026.
+Specification version 1.1. Updated 28 October 2026; owned-fork direction clarified 7 November 2026 (ADR0071).
 
 Recipient: an implementation agent working on the user's machine. Deliverable: a working, tested, locally runnable modular application platform, not another architecture proposal.
 
-The product is provisionally called **Modular Platform**. This is a working name, not a final brand. Build on Odoo Community 19 as an initial implementation substrate, retain its useful ORM and native module composition, and expose a more general plugin, service, identity, and UI developer experience. The application must run independently of Odoo-hosted services and require neither an Odoo Enterprise subscription nor proprietary Enterprise code.
+The product is provisionally called **Modular Platform**. This is a working name, not a final brand. Build on Odoo Community 19 as the origin of an independently owned hard fork, retain useful ORM/module/UI infrastructure, and expose our own plugin, service, identity and UI developer experience. Compatibility with Odoo releases, addon APIs, marketplace or hosted services is not a requirement. Modify/extract inherited core code and reorganize folders for this platform where that produces simpler boundaries. Retained applications become fork-owned code. The application must run independently of Odoo-hosted services and require neither an Odoo Enterprise subscription nor proprietary Enterprise code. Preserve attribution and our own supported contract/data/security/recovery guarantees. See [ADR0071](../docs/architecture-decisions/0071-owned-fork-and-addon-boundaries.md).
 
 This specification is normative for the proposed platform, not a description of features already implemented. Source findings are pinned in section 2. A successful minimal boot, upgrade, restore, custom UI integration, and plugin composition are release gates, not assumptions.
 
-**Current delivery state: specification only; implementation has not started.** Editing or reviewing this document does not authorize starting implementation. When the user later authorizes implementation or sets an implementation goal, initialize the durable progress records described in section 25.2. Do not report any gate or acceptance test as passed from the existence of this specification.
+**Delivery state is maintained in `docs/implementation-status.md`.** Initial gate states in this specification are historical planning states, not instructions to restart completed work. Editing or reviewing a new proposal alone does not authorize its implementation. Do not report a gate passed from the existence of this specification.
 
 ## How to navigate and resume this specification
 
@@ -87,7 +87,7 @@ Do not attempt the following as prerequisites:
 - Full offline-first synchronization, CRDT editing, native mobile apps, or desktop distribution.
 - Public reviews, payments, licensing commerce, or app-store moderation.
 - Recreating ERP applications merely to demonstrate the framework.
-- Full compatibility with every existing Odoo app.
+- External Odoo compatibility, including Odoo releases/addon APIs and its marketplace/hosted services. Retained applications are adopted and maintained for our fork.
 
 Compatibility with unmodified third-party Odoo addons is best effort and explicitly opt-in. The supported contract is the platform SDK and the documented native extension model.
 
@@ -122,7 +122,7 @@ The original static audit did not boot a stripped distribution or measure runtim
 | Empty native dependencies are normalized to `base`, except for `base` itself | `odoo/modules/module.py::_load_manifest` | A native plugin is not independent of the base model system |
 | Native modules are imported process-wide and can have server-wide post-load hooks | `odoo/modules/module.py::load_openerp_module` | No general native hot unload or per-database Python package isolation |
 | Registries are associated with database names, while imported Python modules are shared | `odoo/orm/registry.py::Registry.new/load` | Database isolation and code-version isolation are different |
-| User identity delegates through a partner record; a company also requires a partner | `base/models/res_users.py`, `res_company.py` | Preserve compatibility models initially; hide ERP concepts behind new public contracts |
+| User identity delegates through a partner record; a company also requires a partner | `base/models/res_users.py`, `res_company.py` | Current internal model dependencies: retain until deliberately extracted/migrated; no external Odoo compatibility promise |
 | Web session information includes partners, companies, currencies, settings, and views | `addons/web/models/ir_http.py::session_info` | A generic session adapter is needed |
 | Native dependencies are names, not a complete plugin version-range solver | `odoo/modules/module_graph.py::ModuleGraph._update_depends` | Add planning and reproducible version solving outside the loader |
 | Python external requirements already support version/marker checks | `odoo/modules/module.py::check_python_external_dependency` | Preserve the checks; do not confuse checking with installing or solving |
@@ -187,33 +187,43 @@ Do not hide SQLAlchemy beneath a compatibility layer and call it the same ORM. R
 
 The generic SDK may depend on its own schemas and interfaces. It must not require a consumer to import Odoo merely to parse a plugin manifest, inspect a package, generate types, plan dependencies, or read a deployment journal.
 
-Native adapters may depend on Odoo. Native plugins may use documented Odoo model APIs in their backend. Remote services may not.
+Native adapters may depend on the fork-owned runtime. Native plugins may use our documented native model APIs in their backend; inherited Odoo APIs are not an external compatibility promise. Remote services may not import that runtime.
 
-The shell may call the host API and compatibility adapters. A custom page must not require access to the entire Odoo frontend environment.
+The shell may call the host API and native integration adapters. A custom page must not require access to the entire native frontend environment.
 
 Core functionality must use the same supported extension contracts where practical, but bootstrap, identity verification, deployment policy, and permission enforcement are not optional plugins that an ordinary plugin may replace.
 
-## 3.4 Upstream change policy
+## 3.4 Owned-fork change policy
 
-Prefer, in order:
+Choose the simplest coherent boundary for this platform: an optional addon for
+an optional capability, independent tooling for privileged operations, and direct
+engine changes/extraction when a wrapper or override would add unnecessary
+complexity. Keeping inherited core source pristine or preserving external Odoo
+compatibility is not an objective. Do not retain vendor cloud/marketplace or
+business functionality solely because the original core imports it; untangle
+that dependency and qualify the result.
 
-1. New platform addons and external tooling.
-2. Supported upstream extension points.
-3. A concentrated compatibility adapter.
-4. Small documented upstream patches with regression tests.
-5. Larger extraction only after a measured need and an explicit decision.
-
-Every upstream patch needs a ledger entry: file, reason, alternative rejected, regression test, merge risk, and removal condition. Avoid mass renaming of the `odoo` package or all model identifiers. Neutral user-facing branding does not require renaming internal imports.
+Record changes to inherited code in the provenance/patch ledger with their
+reason, alternatives and regression evidence. Keep attribution. Preserve our
+own supported contracts and migrate affected data/imports/assets deliberately.
+Package/model/ABI names and folder boundaries may change for our architecture;
+a mass cosmetic rename is not required to establish fork ownership. Larger
+extraction needs a concrete plan and affected release qualification, not a
+compatibility justification. See ADR0071 and the addon retention review.
 
 # 4 Repository and development environment
 
 ## 4.1 Repository layout
 
-Use a local repository with the official Odoo history retained as an upstream remote if practical. Keep product additions visibly separate. The following paths describe the intended ownership boundaries; adapt minor names to existing files without creating shadow copies.
+Use a local repository retaining source history/provenance where practical. All
+retained code is owned by this fork. The paths below describe the initial layout;
+they are not permanent upstream-versus-platform boundaries. Evolve toward
+engine, framework services, optional applications, examples and test roots as
+described in ADR0071, without creating shadow copies.
 
 | Path | Purpose |
 | --- | --- |
-| Existing `odoo/`, `addons/`, `odoo-bin` | Pinned upstream substrate |
+| Existing `odoo/`, `addons/`, `odoo-bin` | Initial inherited source layout; retained engine/modules are fork-owned and may be reorganized |
 | `platform_addons/mp_core/` | Installation metadata and central registries |
 | `platform_addons/mp_identity/` | Workspaces, memberships, generic session adapter |
 | `platform_addons/mp_shell/` | Neutral shell and standard UI integration |

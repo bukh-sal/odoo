@@ -2,15 +2,28 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T20:38:20.569254+00:00
-- Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
+- Updated UTC: 2026-11-07T20:49:56.070341+00:00
+- Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **CF-01–05 complete; core46 local foundation release sealed and verified.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
+- Current phase/gate: **CF-01–05 complete; core46 local foundation release sealed and verified.** G7 and BX-01–BX-05 retain their recorded scope; the consolidated core46 release is qualified.
 - Active item: **None. Consolidated foundation goal complete.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
+
+## Latest direction: owned fork and addon retention
+
+The user clarified that external Odoo compatibility is **not** a goal, including
+when choosing core changes and folder structure. [ADR0071](architecture-decisions/0071-owned-fork-and-addon-boundaries.md)
+and [retention assessment](addon-retention-review.md) are now recorded in the spec
+and AGENTS.md. Actual inventory:665inherited addon directories in source;
+13inherited+10owned shipped.629unused top-level addons are pruning candidates;
+23internal test addons should be assessed as regression fixtures. Editor/IAP/
+mail coupling requires extraction before deleting IAP. No runtime code, addon
+removal or folder move was performed. Core46 remains sealed/unchanged with
+12/12CFchecks/100points; future extraction is a new, unstarted implementation
+work item, not an invalidation of its historical evidence.
 
 ## Consolidated foundation release (current goal)
 
@@ -20,7 +33,7 @@ Progress **100/100 weighted points;12/12 CF checks passed; sealed kit and final 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
 | CF-01 |10| passed | [x] CF-A policy/freeze; [x] CF-B baseline feasibility | [Freeze](evidence/post-r1/foundation-release/cf-01-freeze.json). [Baseline decision](evidence/post-r1/foundation-release/cf-01-decision.json); core30 boot/current observation passed. |
-| CF-02 |20| passed | [x] CF-C final46 image; [x] CF-D final46 kit | Final46 image72d51d32/e4e1f97d reproduce inventory14cc5a2c. Exact three-file45-to46 delta independently validated; fresh46 kit assembly next. |
+| CF-02 |20| passed | [x] CF-C final46 image; [x] CF-D final46 kit | Final46 image72d51d32/e4e1f97d reproduce inventory14cc5a2c. Exact three-file45-to46 delta verified; sealed56-component kit and final privacy/checksums passed. |
 | CF-03 |20| passed | [x] CF-E distinct installed apps; [x] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
 | CF-04 |35| passed | [x] CF-G migration; [x] CF-H final46 closed fault; [x] CF-I fresh restore/resume/forward; [x] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
 | CF-05 |15| passed | [x] CF-K worker/regression/UI; [x] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |

@@ -1,5 +1,21 @@
 # Modular Platform implementation
 
+## Product direction (user clarification, 7 November 2026)
+
+This is an independently owned hard fork, not an Odoo-compatible distribution.
+Do not preserve compatibility with Odoo releases, third-party Odoo addons,
+hosted services, marketplace or historical folder boundaries as a design goal.
+Retain useful framework behavior and modify/extract the core directly when that
+produces a simpler platform than another adapter. Organize by platform engine,
+framework services, optional applications, examples and tests, rather than a
+permanent upstream-versus-platform split. Preserve attribution/provenance and
+our own supported contracts, data migrations, security and recovery guarantees.
+Source removal/moves still require dependency/import/asset/data checks and
+affected qualification; do not delete useful regression tests for module count.
+See `docs/architecture-decisions/0071-owned-fork-and-addon-boundaries.md` and
+`docs/addon-retention-review.md`. The user requested this assessment; bulk source
+pruning and runtime restructuring have not yet been executed.
+
 The user authorized implementing `planning/modular_platform_spec.md` v1.1 through R1, with local Git commits and disposable container tests. No publication, paid services, production deployment or destruction of existing user data is authorized.
 
 Before work, read `docs/implementation-status.md` and the active gate's linked evidence/ADRs. Read the specification in full on first implementation, and relevant sections on resumption. Follow its section 25 sequencing and loop rules. The required path is G0 baseline, G1 feasibility, G2 contract freeze, then G3-G7 R1 vertical slices and qualification. R2/R3 are excluded. Do not restart completed work or mark a gate passed without real evidence.

@@ -1,0 +1,7542 @@
+{
+  "result": "source_retention_assessment_only",
+  "checkpoint": "7c27441e25f",
+  "upstream_addons": 665,
+  "upstream_shipped": 13,
+  "owned_shipped": 10,
+  "unused_top_level": [
+    {
+      "id": "account",
+      "files": 481,
+      "bytes": 61376560,
+      "depends": [
+        "base_setup",
+        "onboarding",
+        "product",
+        "analytic",
+        "portal",
+        "digest"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_add_gln",
+      "files": 55,
+      "bytes": 88456,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_check_printing",
+      "files": 90,
+      "bytes": 1504305,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_debit_note",
+      "files": 65,
+      "bytes": 611830,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_edi",
+      "files": 71,
+      "bytes": 1010446,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_edi_proxy_client",
+      "files": 62,
+      "bytes": 523663,
+      "depends": [
+        "account",
+        "certificate"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_edi_ubl_cii",
+      "files": 302,
+      "bytes": 6158277,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_fleet",
+      "files": 65,
+      "bytes": 325467,
+      "depends": [
+        "fleet",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_payment",
+      "files": 107,
+      "bytes": 1986880,
+      "depends": [
+        "account",
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_payment_interco",
+      "files": 10,
+      "bytes": 26221,
+      "depends": [
+        "account_payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_peppol",
+      "files": 118,
+      "bytes": 5390886,
+      "depends": [
+        "account_edi_proxy_client",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_peppol_advanced_fields",
+      "files": 55,
+      "bytes": 344270,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_peppol_response",
+      "files": 72,
+      "bytes": 940633,
+      "depends": [
+        "account_peppol"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_qr_code_emv",
+      "files": 56,
+      "bytes": 248486,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_qr_code_sepa",
+      "files": 56,
+      "bytes": 130317,
+      "depends": [
+        "account",
+        "base_iban"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_tax_python",
+      "files": 77,
+      "bytes": 498828,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_test",
+      "files": 73,
+      "bytes": 580870,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "account_update_tax_tags",
+      "files": 59,
+      "bytes": 300489,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "analytic",
+      "files": 113,
+      "bytes": 2727370,
+      "depends": [
+        "base",
+        "mail",
+        "uom"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "api_doc",
+      "files": 37,
+      "bytes": 123239,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "attachment_indexation",
+      "files": 58,
+      "bytes": 84905,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_ldap",
+      "files": 80,
+      "bytes": 601234,
+      "depends": [
+        "base",
+        "base_setup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_oauth",
+      "files": 82,
+      "bytes": 607232,
+      "depends": [
+        "base",
+        "web",
+        "base_setup",
+        "auth_signup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_passkey_portal",
+      "files": 59,
+      "bytes": 154906,
+      "depends": [
+        "auth_passkey",
+        "portal"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_password_policy_portal",
+      "files": 56,
+      "bytes": 64212,
+      "depends": [
+        "auth_password_policy",
+        "portal"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_password_policy_signup",
+      "files": 58,
+      "bytes": 65791,
+      "depends": [
+        "auth_password_policy",
+        "auth_signup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_signup",
+      "files": 87,
+      "bytes": 3615340,
+      "depends": [
+        "base_setup",
+        "mail",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_timeout",
+      "files": 70,
+      "bytes": 693407,
+      "depends": [
+        "auth_totp",
+        "auth_totp_mail",
+        "auth_passkey",
+        "bus"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_totp_mail",
+      "files": 69,
+      "bytes": 781628,
+      "depends": [
+        "auth_totp",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "auth_totp_portal",
+      "files": 65,
+      "bytes": 215714,
+      "depends": [
+        "portal",
+        "auth_totp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "barcodes",
+      "files": 99,
+      "bytes": 1043532,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "barcodes_gs1_nomenclature",
+      "files": 63,
+      "bytes": 635862,
+      "depends": [
+        "barcodes",
+        "uom"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_address_extended",
+      "files": 76,
+      "bytes": 521403,
+      "depends": [
+        "base",
+        "contacts"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_automation",
+      "files": 94,
+      "bytes": 2594742,
+      "depends": [
+        "base",
+        "digest",
+        "resource",
+        "mail",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_geolocalize",
+      "files": 78,
+      "bytes": 539222,
+      "depends": [
+        "base_setup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_iban",
+      "files": 80,
+      "bytes": 193973,
+      "depends": [
+        "account",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_import_module",
+      "files": 87,
+      "bytes": 844431,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_install_request",
+      "files": 61,
+      "bytes": 543348,
+      "depends": [
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_sparse_field",
+      "files": 74,
+      "bytes": 367787,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "base_vat",
+      "files": 85,
+      "bytes": 706726,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "board",
+      "files": 95,
+      "bytes": 359655,
+      "depends": [
+        "spreadsheet_dashboard"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "calendar",
+      "files": 196,
+      "bytes": 10140989,
+      "depends": [
+        "base",
+        "mail"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "calendar_sms",
+      "files": 74,
+      "bytes": 255695,
+      "depends": [
+        "calendar",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "certificate",
+      "files": 68,
+      "bytes": 1008880,
+      "depends": [
+        "base_setup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "cloud_storage",
+      "files": 68,
+      "bytes": 315335,
+      "depends": [
+        "base_setup",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "cloud_storage_azure",
+      "files": 63,
+      "bytes": 280847,
+      "depends": [
+        "cloud_storage"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "cloud_storage_google",
+      "files": 64,
+      "bytes": 237625,
+      "depends": [
+        "cloud_storage"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "cloud_storage_migration",
+      "files": 63,
+      "bytes": 620092,
+      "depends": [
+        "cloud_storage"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "contacts",
+      "files": 77,
+      "bytes": 231343,
+      "depends": [
+        "base",
+        "mail"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "crm",
+      "files": 207,
+      "bytes": 11724084,
+      "depends": [
+        "base_setup",
+        "sales_team",
+        "mail",
+        "calendar",
+        "resource",
+        "utm",
+        "web_tour",
+        "contacts",
+        "digest",
+        "phone_validation"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "crm_iap_enrich",
+      "files": 64,
+      "bytes": 270521,
+      "depends": [
+        "iap_crm",
+        "iap_mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "crm_iap_mine",
+      "files": 76,
+      "bytes": 1631496,
+      "depends": [
+        "iap_crm",
+        "iap_mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "crm_livechat",
+      "files": 97,
+      "bytes": 525302,
+      "depends": [
+        "crm",
+        "im_livechat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "crm_mail_plugin",
+      "files": 63,
+      "bytes": 253768,
+      "depends": [
+        "crm",
+        "mail_plugin"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "crm_sms",
+      "files": 58,
+      "bytes": 61725,
+      "depends": [
+        "crm",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "data_recycle",
+      "files": 69,
+      "bytes": 702810,
+      "depends": [
+        "mail"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "delivery",
+      "files": 126,
+      "bytes": 2731423,
+      "depends": [
+        "sale",
+        "payment_custom"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "delivery_mondialrelay",
+      "files": 67,
+      "bytes": 321075,
+      "depends": [
+        "stock_delivery"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "delivery_stock_picking_batch",
+      "files": 58,
+      "bytes": 183069,
+      "depends": [
+        "stock_delivery",
+        "stock_picking_batch"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "digest",
+      "files": 82,
+      "bytes": 1328624,
+      "depends": [
+        "mail",
+        "portal",
+        "resource"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event",
+      "files": 167,
+      "bytes": 19314385,
+      "depends": [
+        "barcodes",
+        "base_setup",
+        "mail",
+        "phone_validation",
+        "portal",
+        "utm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event_booth",
+      "files": 77,
+      "bytes": 1459184,
+      "depends": [
+        "event"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event_booth_sale",
+      "files": 79,
+      "bytes": 922178,
+      "depends": [
+        "event_booth",
+        "event_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event_crm",
+      "files": 76,
+      "bytes": 1063768,
+      "depends": [
+        "event",
+        "crm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event_crm_sale",
+      "files": 57,
+      "bytes": 67012,
+      "depends": [
+        "event_crm",
+        "event_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event_product",
+      "files": 67,
+      "bytes": 381865,
+      "depends": [
+        "event",
+        "product",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event_sale",
+      "files": 105,
+      "bytes": 1933905,
+      "depends": [
+        "event_product",
+        "sale_management"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "event_sms",
+      "files": 65,
+      "bytes": 266929,
+      "depends": [
+        "event",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "fleet",
+      "files": 179,
+      "bytes": 7754890,
+      "depends": [
+        "base",
+        "mail"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "gamification",
+      "files": 127,
+      "bytes": 9141356,
+      "depends": [
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "gamification_sale_crm",
+      "files": 69,
+      "bytes": 285236,
+      "depends": [
+        "gamification",
+        "sale_crm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "google_account",
+      "files": 74,
+      "bytes": 119009,
+      "depends": [
+        "base_setup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "google_address_autocomplete",
+      "files": 73,
+      "bytes": 308792,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "google_calendar",
+      "files": 116,
+      "bytes": 1764401,
+      "depends": [
+        "google_account",
+        "calendar"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "google_gmail",
+      "files": 70,
+      "bytes": 681503,
+      "depends": [
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "google_recaptcha",
+      "files": 61,
+      "bytes": 270249,
+      "depends": [
+        "base_setup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr",
+      "files": 265,
+      "bytes": 13970414,
+      "depends": [
+        "base_setup",
+        "digest",
+        "phone_validation",
+        "resource_mail",
+        "web"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_attendance",
+      "files": 153,
+      "bytes": 5728949,
+      "depends": [
+        "hr",
+        "barcodes",
+        "base_geolocalize"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_calendar",
+      "files": 64,
+      "bytes": 147007,
+      "depends": [
+        "hr",
+        "calendar"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_expense",
+      "files": 163,
+      "bytes": 6762282,
+      "depends": [
+        "account",
+        "web_tour",
+        "hr"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_fleet",
+      "files": 78,
+      "bytes": 531523,
+      "depends": [
+        "hr",
+        "fleet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_gamification",
+      "files": 87,
+      "bytes": 741157,
+      "depends": [
+        "gamification",
+        "hr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_holidays",
+      "files": 273,
+      "bytes": 15324578,
+      "depends": [
+        "hr",
+        "calendar",
+        "resource"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_holidays_attendance",
+      "files": 84,
+      "bytes": 926050,
+      "depends": [
+        "hr_attendance",
+        "hr_holidays"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_holidays_homeworking",
+      "files": 56,
+      "bytes": 84680,
+      "depends": [
+        "hr_holidays",
+        "hr_homeworking"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_homeworking",
+      "files": 69,
+      "bytes": 696111,
+      "depends": [
+        "hr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_homeworking_calendar",
+      "files": 72,
+      "bytes": 351516,
+      "depends": [
+        "hr_homeworking",
+        "calendar"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_hourly_cost",
+      "files": 56,
+      "bytes": 69438,
+      "depends": [
+        "hr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_livechat",
+      "files": 55,
+      "bytes": 57855,
+      "depends": [
+        "hr",
+        "im_livechat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_maintenance",
+      "files": 76,
+      "bytes": 403872,
+      "depends": [
+        "hr",
+        "maintenance"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_org_chart",
+      "files": 92,
+      "bytes": 479874,
+      "depends": [
+        "hr",
+        "web_hierarchy"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_presence",
+      "files": 73,
+      "bytes": 605920,
+      "depends": [
+        "hr",
+        "hr_holidays",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_recruitment",
+      "files": 185,
+      "bytes": 11618645,
+      "depends": [
+        "hr",
+        "calendar",
+        "utm",
+        "attachment_indexation",
+        "web_tour",
+        "digest"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_recruitment_skills",
+      "files": 70,
+      "bytes": 590805,
+      "depends": [
+        "hr_skills",
+        "hr_recruitment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_recruitment_sms",
+      "files": 55,
+      "bytes": 73330,
+      "depends": [
+        "hr_recruitment",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_recruitment_survey",
+      "files": 88,
+      "bytes": 1012801,
+      "depends": [
+        "survey",
+        "hr_recruitment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_skills",
+      "files": 142,
+      "bytes": 4668182,
+      "depends": [
+        "hr"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_skills_event",
+      "files": 61,
+      "bytes": 130987,
+      "depends": [
+        "hr_skills",
+        "event"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_skills_slides",
+      "files": 68,
+      "bytes": 422683,
+      "depends": [
+        "hr_skills",
+        "website_slides"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_skills_survey",
+      "files": 63,
+      "bytes": 229275,
+      "depends": [
+        "hr_skills",
+        "survey"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_timesheet",
+      "files": 161,
+      "bytes": 4750445,
+      "depends": [
+        "hr",
+        "hr_hourly_cost",
+        "analytic",
+        "project",
+        "uom"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_timesheet_attendance",
+      "files": 76,
+      "bytes": 386494,
+      "depends": [
+        "hr_timesheet",
+        "hr_attendance"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_work_entry",
+      "files": 112,
+      "bytes": 2866539,
+      "depends": [
+        "hr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "hr_work_entry_holidays",
+      "files": 67,
+      "bytes": 248930,
+      "depends": [
+        "hr_holidays",
+        "hr_work_entry"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "html_builder",
+      "files": 791,
+      "bytes": 8432762,
+      "depends": [
+        "base",
+        "html_editor",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "http_routing",
+      "files": 68,
+      "bytes": 329391,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "iap_crm",
+      "files": 54,
+      "bytes": 67451,
+      "depends": [
+        "crm",
+        "iap_mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "iap_mail",
+      "files": 59,
+      "bytes": 465268,
+      "depends": [
+        "iap",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "im_livechat",
+      "files": 409,
+      "bytes": 8851756,
+      "depends": [
+        "mail",
+        "rating",
+        "digest",
+        "utm"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "iot_base",
+      "files": 7,
+      "bytes": 13673,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "iot_box_image",
+      "files": 45,
+      "bytes": 186806,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "iot_drivers",
+      "files": 69,
+      "bytes": 314506,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_account_edi_ubl_cii_tests",
+      "files": 54,
+      "bytes": 488313,
+      "depends": [
+        "account_edi_ubl_cii",
+        "l10n_fr_account",
+        "l10n_be",
+        "l10n_de",
+        "l10n_nl",
+        "l10n_au"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_account_withholding_tax",
+      "files": 27,
+      "bytes": 287812,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_account_withholding_tax_pos",
+      "files": 4,
+      "bytes": 1212,
+      "depends": [
+        "l10n_account_withholding_tax",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ae",
+      "files": 17,
+      "bytes": 89094,
+      "depends": [
+        "account",
+        "l10n_gcc_invoice"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ae_pos",
+      "files": 4,
+      "bytes": 1258,
+      "depends": [
+        "l10n_gcc_pos",
+        "l10n_ae"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_anz_ubl_pint",
+      "files": 9,
+      "bytes": 18766,
+      "depends": [
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ar",
+      "files": 83,
+      "bytes": 540475,
+      "depends": [
+        "l10n_latam_invoice_document",
+        "l10n_latam_base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ar_pos",
+      "files": 20,
+      "bytes": 18772,
+      "depends": [
+        "l10n_ar",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ar_stock",
+      "files": 13,
+      "bytes": 47769,
+      "depends": [
+        "l10n_ar",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ar_website_sale",
+      "files": 14,
+      "bytes": 20602,
+      "depends": [
+        "website_sale",
+        "l10n_ar"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ar_withholding",
+      "files": 37,
+      "bytes": 199119,
+      "depends": [
+        "l10n_ar",
+        "l10n_latam_check"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_at",
+      "files": 16,
+      "bytes": 306396,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii",
+        "base_iban",
+        "base_vat",
+        "l10n_din5008"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_au",
+      "files": 34,
+      "bytes": 613959,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bd",
+      "files": 15,
+      "bytes": 53688,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_be",
+      "files": 30,
+      "bytes": 403750,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii",
+        "base_iban",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_be_pos_restaurant",
+      "files": 10,
+      "bytes": 11908,
+      "depends": [
+        "pos_restaurant",
+        "l10n_be"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_be_pos_sale",
+      "files": 12,
+      "bytes": 17255,
+      "depends": [
+        "pos_sale",
+        "l10n_be"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bf",
+      "files": 15,
+      "bytes": 51394,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bg",
+      "files": 13,
+      "bytes": 114531,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bg_ledger",
+      "files": 9,
+      "bytes": 16875,
+      "depends": [
+        "l10n_bg"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bh",
+      "files": 19,
+      "bytes": 97626,
+      "depends": [
+        "account",
+        "l10n_gcc_invoice"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bh_pos",
+      "files": 6,
+      "bytes": 1670,
+      "depends": [
+        "l10n_gcc_pos",
+        "l10n_bh"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bj",
+      "files": 15,
+      "bytes": 33316,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_bo",
+      "files": 13,
+      "bytes": 157518,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_br",
+      "files": 46,
+      "bytes": 1243812,
+      "depends": [
+        "account",
+        "account_qr_code_emv",
+        "base_address_extended",
+        "l10n_latam_base",
+        "l10n_latam_invoice_document"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_br_sales",
+      "files": 9,
+      "bytes": 5507,
+      "depends": [
+        "l10n_br",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_br_website_sale",
+      "files": 7,
+      "bytes": 4486,
+      "depends": [
+        "l10n_br",
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ca",
+      "files": 20,
+      "bytes": 169668,
+      "depends": [
+        "account",
+        "base_iban"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cd",
+      "files": 15,
+      "bytes": 66149,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cf",
+      "files": 15,
+      "bytes": 29125,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cg",
+      "files": 15,
+      "bytes": 28736,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ch",
+      "files": 55,
+      "bytes": 786375,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii",
+        "base_iban",
+        "l10n_din5008"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ch_pos",
+      "files": 11,
+      "bytes": 8643,
+      "depends": [
+        "l10n_ch",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ci",
+      "files": 15,
+      "bytes": 48960,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cl",
+      "files": 50,
+      "bytes": 252272,
+      "depends": [
+        "contacts",
+        "base_vat",
+        "l10n_latam_base",
+        "l10n_latam_invoice_document",
+        "uom",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cm",
+      "files": 15,
+      "bytes": 41237,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cn",
+      "files": 20,
+      "bytes": 78237,
+      "depends": [
+        "base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cn_city",
+      "files": 4,
+      "bytes": 856515,
+      "depends": [
+        "l10n_cn",
+        "base_address_extended"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_co",
+      "files": 15,
+      "bytes": 111705,
+      "depends": [
+        "account_debit_note",
+        "l10n_latam_base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_co_pos",
+      "files": 9,
+      "bytes": 4141,
+      "depends": [
+        "l10n_co",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cr",
+      "files": 10,
+      "bytes": 19587,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cy",
+      "files": 14,
+      "bytes": 77243,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_cz",
+      "files": 26,
+      "bytes": 277143,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii",
+        "base_iban",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_de",
+      "files": 34,
+      "bytes": 678235,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "l10n_din5008",
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_din5008",
+      "files": 17,
+      "bytes": 83208,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_din5008_expense",
+      "files": 7,
+      "bytes": 3223,
+      "depends": [
+        "l10n_din5008",
+        "hr_expense"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_din5008_purchase",
+      "files": 7,
+      "bytes": 18201,
+      "depends": [
+        "l10n_din5008",
+        "purchase"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_din5008_repair",
+      "files": 10,
+      "bytes": 11626,
+      "depends": [
+        "l10n_din5008",
+        "repair"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_din5008_sale",
+      "files": 8,
+      "bytes": 24966,
+      "depends": [
+        "l10n_din5008",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_din5008_stock",
+      "files": 8,
+      "bytes": 10247,
+      "depends": [
+        "l10n_din5008",
+        "stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_dk",
+      "files": 24,
+      "bytes": 203394,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_dk_fik",
+      "files": 8,
+      "bytes": 9969,
+      "depends": [
+        "l10n_dk"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_dk_nemhandel",
+      "files": 48,
+      "bytes": 328262,
+      "depends": [
+        "account_edi_proxy_client",
+        "account_edi_ubl_cii",
+        "l10n_dk"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_dk_nemhandel_response",
+      "files": 16,
+      "bytes": 48936,
+      "depends": [
+        "l10n_dk_nemhandel"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_dk_oioubl",
+      "files": 19,
+      "bytes": 131917,
+      "depends": [
+        "account_edi_ubl_cii",
+        "l10n_dk"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_do",
+      "files": 13,
+      "bytes": 96018,
+      "depends": [
+        "account",
+        "base_iban"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_dz",
+      "files": 14,
+      "bytes": 150946,
+      "depends": [
+        "base_vat",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ec",
+      "files": 39,
+      "bytes": 611922,
+      "depends": [
+        "base",
+        "base_iban",
+        "account_debit_note",
+        "l10n_latam_invoice_document",
+        "l10n_latam_base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ec_sale",
+      "files": 14,
+      "bytes": 12305,
+      "depends": [
+        "l10n_ec",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ec_stock",
+      "files": 6,
+      "bytes": 4828,
+      "depends": [
+        "l10n_ec",
+        "stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ee",
+      "files": 19,
+      "bytes": 112813,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_eg",
+      "files": 17,
+      "bytes": 182366,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_eg_edi_eta",
+      "files": 35,
+      "bytes": 377594,
+      "depends": [
+        "account_edi",
+        "l10n_eg"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es",
+      "files": 68,
+      "bytes": 1262739,
+      "depends": [
+        "account",
+        "base_iban",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es_edi_facturae",
+      "files": 50,
+      "bytes": 400401,
+      "depends": [
+        "certificate",
+        "l10n_es"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es_edi_sii",
+      "files": 26,
+      "bytes": 156278,
+      "depends": [
+        "certificate",
+        "l10n_es",
+        "account_edi"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es_edi_tbai",
+      "files": 61,
+      "bytes": 285290,
+      "depends": [
+        "l10n_es",
+        "certificate"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es_edi_tbai_pos",
+      "files": 19,
+      "bytes": 46910,
+      "depends": [
+        "l10n_es_edi_tbai",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es_edi_verifactu",
+      "files": 55,
+      "bytes": 331728,
+      "depends": [
+        "l10n_es",
+        "certificate"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es_edi_verifactu_pos",
+      "files": 23,
+      "bytes": 70083,
+      "depends": [
+        "l10n_es_edi_verifactu",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_es_pos",
+      "files": 21,
+      "bytes": 34857,
+      "depends": [
+        "point_of_sale",
+        "l10n_es"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_et",
+      "files": 11,
+      "bytes": 47176,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_eu_oss",
+      "files": 34,
+      "bytes": 159099,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fi",
+      "files": 22,
+      "bytes": 256177,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fi_sale",
+      "files": 6,
+      "bytes": 4569,
+      "depends": [
+        "l10n_fi",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr",
+      "files": 13,
+      "bytes": 15505,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr_account",
+      "files": 38,
+      "bytes": 673821,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "account",
+        "account_edi_ubl_cii",
+        "l10n_fr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr_facturx_chorus_pro",
+      "files": 16,
+      "bytes": 36457,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii",
+        "l10n_fr_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr_hr_holidays",
+      "files": 12,
+      "bytes": 67491,
+      "depends": [
+        "hr_holidays"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr_hr_work_entry_holidays",
+      "files": 9,
+      "bytes": 12273,
+      "depends": [
+        "l10n_fr_hr_holidays",
+        "hr_work_entry_holidays"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr_pdp",
+      "files": 96,
+      "bytes": 1070362,
+      "depends": [
+        "l10n_fr_account",
+        "account_peppol_response",
+        "auth_totp_mail",
+        "iap"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr_pdp_pos",
+      "files": 9,
+      "bytes": 20022,
+      "depends": [
+        "l10n_fr_pdp",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_fr_pos_cert",
+      "files": 35,
+      "bytes": 106659,
+      "depends": [
+        "l10n_fr_account",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ga",
+      "files": 15,
+      "bytes": 114003,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gcc_invoice",
+      "files": 10,
+      "bytes": 32092,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gcc_invoice_stock_account",
+      "files": 3,
+      "bytes": 1633,
+      "depends": [
+        "l10n_gcc_invoice",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gcc_pos",
+      "files": 11,
+      "bytes": 9991,
+      "depends": [
+        "point_of_sale",
+        "l10n_gcc_invoice"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ge",
+      "files": 13,
+      "bytes": 143994,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gf",
+      "files": 2,
+      "bytes": 423,
+      "depends": [
+        "l10n_fr_account",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gn",
+      "files": 15,
+      "bytes": 28116,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gp",
+      "files": 2,
+      "bytes": 431,
+      "depends": [
+        "l10n_fr_account",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gq",
+      "files": 17,
+      "bytes": 33580,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gr",
+      "files": 13,
+      "bytes": 235183,
+      "depends": [
+        "account",
+        "base_iban",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gr_edi",
+      "files": 36,
+      "bytes": 372202,
+      "depends": [
+        "l10n_gr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gr_edi_e_invoo",
+      "files": 14,
+      "bytes": 44638,
+      "depends": [
+        "account_edi_proxy_client",
+        "l10n_gr_edi"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gr_edi_e_invoo_bridge",
+      "files": 14,
+      "bytes": 28751,
+      "depends": [
+        "l10n_gr_edi",
+        "l10n_gr_edi_e_invoo"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gt",
+      "files": 11,
+      "bytes": 26212,
+      "depends": [
+        "base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_gw",
+      "files": 15,
+      "bytes": 33103,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hk",
+      "files": 13,
+      "bytes": 28781,
+      "depends": [
+        "account_qr_code_emv",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hn",
+      "files": 10,
+      "bytes": 10815,
+      "depends": [
+        "base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hr",
+      "files": 14,
+      "bytes": 177864,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hr_edi",
+      "files": 50,
+      "bytes": 1244384,
+      "depends": [
+        "l10n_hr",
+        "account_edi_ubl_cii",
+        "account_peppol"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hr_kuna",
+      "files": 12,
+      "bytes": 284410,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hu",
+      "files": 16,
+      "bytes": 121289,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hu_edi",
+      "files": 76,
+      "bytes": 577486,
+      "depends": [
+        "account_debit_note",
+        "base_iban",
+        "l10n_hu"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_hu_edi_receive",
+      "files": 37,
+      "bytes": 226778,
+      "depends": [
+        "l10n_hu_edi"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_id",
+      "files": 25,
+      "bytes": 79539,
+      "depends": [
+        "account",
+        "base_iban",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_id_efaktur_coretax",
+      "files": 33,
+      "bytes": 498424,
+      "depends": [
+        "l10n_id"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_id_pos",
+      "files": 13,
+      "bytes": 24150,
+      "depends": [
+        "l10n_id",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ie",
+      "files": 14,
+      "bytes": 64759,
+      "depends": [
+        "account",
+        "base_iban",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_il",
+      "files": 15,
+      "bytes": 40389,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in",
+      "files": 91,
+      "bytes": 995208,
+      "depends": [
+        "account_tax_python",
+        "base_vat",
+        "account_debit_note",
+        "account",
+        "iap"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_edi",
+      "files": 23,
+      "bytes": 147389,
+      "depends": [
+        "account_edi",
+        "l10n_in"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_ewaybill",
+      "files": 32,
+      "bytes": 330399,
+      "depends": [
+        "l10n_in"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_ewaybill_irn",
+      "files": 10,
+      "bytes": 18110,
+      "depends": [
+        "l10n_in_ewaybill",
+        "l10n_in_edi"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_ewaybill_stock",
+      "files": 15,
+      "bytes": 52339,
+      "depends": [
+        "l10n_in_stock",
+        "l10n_in_ewaybill"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_hr_holidays",
+      "files": 19,
+      "bytes": 74196,
+      "depends": [
+        "hr_holidays"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_pos",
+      "files": 44,
+      "bytes": 64923,
+      "depends": [
+        "l10n_in",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_purchase_stock",
+      "files": 10,
+      "bytes": 8716,
+      "depends": [
+        "l10n_in_stock",
+        "purchase_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_sale",
+      "files": 12,
+      "bytes": 14587,
+      "depends": [
+        "l10n_in",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_sale_stock",
+      "files": 8,
+      "bytes": 6838,
+      "depends": [
+        "l10n_in_sale",
+        "l10n_in_stock",
+        "sale_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_in_stock",
+      "files": 10,
+      "bytes": 6560,
+      "depends": [
+        "l10n_in",
+        "stock",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_iq",
+      "files": 11,
+      "bytes": 36923,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_it",
+      "files": 32,
+      "bytes": 321329,
+      "depends": [
+        "account",
+        "base_iban",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_it_edi",
+      "files": 112,
+      "bytes": 896752,
+      "depends": [
+        "l10n_it",
+        "account_edi_proxy_client",
+        "account_debit_note"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_it_edi_doi",
+      "files": 26,
+      "bytes": 148469,
+      "depends": [
+        "l10n_it_edi",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_it_edi_sale",
+      "files": 9,
+      "bytes": 14805,
+      "depends": [
+        "l10n_it_edi",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_it_stock_ddt",
+      "files": 15,
+      "bytes": 68386,
+      "depends": [
+        "l10n_it_edi",
+        "stock_delivery",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_jo",
+      "files": 14,
+      "bytes": 85669,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_jo_edi",
+      "files": 30,
+      "bytes": 165736,
+      "depends": [
+        "account_edi_ubl_cii",
+        "l10n_jo"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_jo_edi_pos",
+      "files": 27,
+      "bytes": 96148,
+      "depends": [
+        "l10n_jo_edi",
+        "pos_edi_ubl"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_jp",
+      "files": 13,
+      "bytes": 43454,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_jp_ubl_pint",
+      "files": 11,
+      "bytes": 19553,
+      "depends": [
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ke",
+      "files": 22,
+      "bytes": 136786,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ke_edi_tremol",
+      "files": 24,
+      "bytes": 77127,
+      "depends": [
+        "l10n_ke"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_kh",
+      "files": 16,
+      "bytes": 191653,
+      "depends": [
+        "account_qr_code_emv",
+        "l10n_account_withholding_tax"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_km",
+      "files": 16,
+      "bytes": 29845,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_kr",
+      "files": 14,
+      "bytes": 343536,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_kw",
+      "files": 9,
+      "bytes": 34570,
+      "depends": [
+        "account",
+        "l10n_gcc_invoice"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_kz",
+      "files": 12,
+      "bytes": 128198,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_latam_base",
+      "files": 19,
+      "bytes": 40355,
+      "depends": [
+        "contacts",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_latam_check",
+      "files": 29,
+      "bytes": 189882,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_latam_invoice_document",
+      "files": 26,
+      "bytes": 101823,
+      "depends": [
+        "account",
+        "account_debit_note"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_lb_account",
+      "files": 14,
+      "bytes": 101470,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_lk",
+      "files": 57,
+      "bytes": 794346,
+      "depends": [
+        "account",
+        "l10n_account_withholding_tax"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_lk_invoice",
+      "files": 12,
+      "bytes": 54812,
+      "depends": [
+        "l10n_lk"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_lt",
+      "files": 17,
+      "bytes": 162790,
+      "depends": [
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_lu",
+      "files": 22,
+      "bytes": 663045,
+      "depends": [
+        "account",
+        "base_iban",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_lv",
+      "files": 15,
+      "bytes": 116808,
+      "depends": [
+        "account",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ma",
+      "files": 19,
+      "bytes": 307768,
+      "depends": [
+        "base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mc",
+      "files": 2,
+      "bytes": 499,
+      "depends": [
+        "l10n_fr_account",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ml",
+      "files": 15,
+      "bytes": 41458,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mn",
+      "files": 13,
+      "bytes": 172915,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mq",
+      "files": 2,
+      "bytes": 431,
+      "depends": [
+        "l10n_fr_account",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mr",
+      "files": 14,
+      "bytes": 135367,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mt",
+      "files": 12,
+      "bytes": 88483,
+      "depends": [
+        "account",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mt_pos",
+      "files": 7,
+      "bytes": 7420,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mu_account",
+      "files": 15,
+      "bytes": 74943,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mx",
+      "files": 34,
+      "bytes": 294626,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_my",
+      "files": 16,
+      "bytes": 86014,
+      "depends": [
+        "account",
+        "account_tax_python"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_my_edi",
+      "files": 54,
+      "bytes": 554128,
+      "depends": [
+        "l10n_my",
+        "l10n_my_ubl_pint",
+        "account_edi_proxy_client"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_my_edi_pos",
+      "files": 21,
+      "bytes": 144063,
+      "depends": [
+        "l10n_my_edi",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_my_ubl_pint",
+      "files": 16,
+      "bytes": 42644,
+      "depends": [
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_mz",
+      "files": 13,
+      "bytes": 78596,
+      "depends": [
+        "base",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ne",
+      "files": 15,
+      "bytes": 39052,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ng",
+      "files": 10,
+      "bytes": 32401,
+      "depends": [
+        "base_vat",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_nl",
+      "files": 23,
+      "bytes": 154919,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_no",
+      "files": 20,
+      "bytes": 168928,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_nz",
+      "files": 19,
+      "bytes": 31170,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_om",
+      "files": 14,
+      "bytes": 60005,
+      "depends": [
+        "account",
+        "l10n_gcc_invoice"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pa",
+      "files": 10,
+      "bytes": 18763,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pe",
+      "files": 38,
+      "bytes": 506958,
+      "depends": [
+        "base_vat",
+        "base_address_extended",
+        "l10n_latam_base",
+        "l10n_latam_invoice_document",
+        "account_debit_note",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pe_pos",
+      "files": 19,
+      "bytes": 20504,
+      "depends": [
+        "l10n_pe",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ph",
+      "files": 34,
+      "bytes": 170635,
+      "depends": [
+        "account",
+        "base_vat",
+        "l10n_account_withholding_tax"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pk",
+      "files": 16,
+      "bytes": 144385,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pl",
+      "files": 30,
+      "bytes": 180879,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "account",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pl_bank_verification",
+      "files": 16,
+      "bytes": 78962,
+      "depends": [
+        "l10n_pl"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pl_edi",
+      "files": 40,
+      "bytes": 419570,
+      "depends": [
+        "l10n_pl",
+        "certificate"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pl_edi_jst",
+      "files": 11,
+      "bytes": 10097,
+      "depends": [
+        "l10n_pl",
+        "l10n_pl_edi"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_pt",
+      "files": 18,
+      "bytes": 203274,
+      "depends": [
+        "base",
+        "account",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_qa",
+      "files": 9,
+      "bytes": 34971,
+      "depends": [
+        "account",
+        "l10n_gcc_invoice"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_re",
+      "files": 2,
+      "bytes": 426,
+      "depends": [
+        "l10n_fr_account",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ro",
+      "files": 17,
+      "bytes": 259208,
+      "depends": [
+        "account",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ro_cpv_code",
+      "files": 14,
+      "bytes": 519447,
+      "depends": [
+        "l10n_ro_edi"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ro_edi",
+      "files": 37,
+      "bytes": 233919,
+      "depends": [
+        "account_edi_ubl_cii",
+        "l10n_ro"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ro_edi_stock",
+      "files": 25,
+      "bytes": 234055,
+      "depends": [
+        "stock_delivery",
+        "l10n_ro_edi",
+        "stock_picking_batch"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ro_edi_stock_batch",
+      "files": 12,
+      "bytes": 172924,
+      "depends": [
+        "l10n_ro_edi_stock",
+        "stock_picking_batch"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_rs",
+      "files": 17,
+      "bytes": 100059,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_rs_edi",
+      "files": 21,
+      "bytes": 63525,
+      "depends": [
+        "account_edi_ubl_cii",
+        "l10n_rs"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_rw",
+      "files": 14,
+      "bytes": 58191,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sa",
+      "files": 31,
+      "bytes": 168955,
+      "depends": [
+        "l10n_gcc_invoice",
+        "account",
+        "account_debit_note"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sa_edi",
+      "files": 57,
+      "bytes": 447452,
+      "depends": [
+        "account_edi",
+        "account_edi_ubl_cii",
+        "l10n_sa",
+        "base_vat",
+        "certificate"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sa_edi_pos",
+      "files": 20,
+      "bytes": 40867,
+      "depends": [
+        "l10n_sa_pos",
+        "l10n_sa_edi"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sa_pos",
+      "files": 18,
+      "bytes": 32043,
+      "depends": [
+        "l10n_gcc_pos",
+        "l10n_sa"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sa_withholding_tax",
+      "files": 2,
+      "bytes": 630,
+      "depends": [
+        "l10n_account_withholding_tax",
+        "l10n_sa"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_se",
+      "files": 28,
+      "bytes": 324910,
+      "depends": [
+        "account",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sg",
+      "files": 26,
+      "bytes": 72338,
+      "depends": [
+        "account_qr_code_emv",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sg_ubl_pint",
+      "files": 10,
+      "bytes": 18185,
+      "depends": [
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_si",
+      "files": 22,
+      "bytes": 236904,
+      "depends": [
+        "account",
+        "base_vat",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sk",
+      "files": 20,
+      "bytes": 178050,
+      "depends": [
+        "base_iban",
+        "base_vat",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_sn",
+      "files": 15,
+      "bytes": 38111,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_syscohada",
+      "files": 12,
+      "bytes": 222392,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_td",
+      "files": 16,
+      "bytes": 28418,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_test_pos_qr_payment",
+      "files": 9,
+      "bytes": 17942,
+      "depends": [
+        "point_of_sale",
+        "account_qr_code_sepa",
+        "l10n_be",
+        "l10n_ch",
+        "l10n_hk",
+        "l10n_br"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tg",
+      "files": 15,
+      "bytes": 39315,
+      "depends": [
+        "l10n_syscohada",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_th",
+      "files": 19,
+      "bytes": 120374,
+      "depends": [
+        "account_qr_code_emv",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tn",
+      "files": 14,
+      "bytes": 139337,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tr",
+      "files": 22,
+      "bytes": 104572,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tr_gib_invoice_scenarios",
+      "files": 18,
+      "bytes": 86765,
+      "depends": [
+        "l10n_tr_nilvera_einvoice_extended"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tr_nilvera",
+      "files": 18,
+      "bytes": 75146,
+      "depends": [
+        "l10n_tr",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tr_nilvera_base_vat",
+      "files": 6,
+      "bytes": 2972,
+      "depends": [
+        "l10n_tr_nilvera",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tr_nilvera_edispatch",
+      "files": 19,
+      "bytes": 112085,
+      "depends": [
+        "l10n_tr_nilvera",
+        "stock",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tr_nilvera_einvoice",
+      "files": 24,
+      "bytes": 170107,
+      "depends": [
+        "l10n_tr_nilvera",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tr_nilvera_einvoice_extended",
+      "files": 48,
+      "bytes": 370700,
+      "depends": [
+        "l10n_tr_nilvera_einvoice",
+        "contacts"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tw",
+      "files": 17,
+      "bytes": 335238,
+      "depends": [
+        "account",
+        "base_address_extended"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tw_edi_ecpay",
+      "files": 29,
+      "bytes": 189202,
+      "depends": [
+        "l10n_tw",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tw_edi_ecpay_pos",
+      "files": 32,
+      "bytes": 98187,
+      "depends": [
+        "point_of_sale",
+        "l10n_tw_edi_ecpay"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tw_edi_ecpay_website_sale",
+      "files": 19,
+      "bytes": 74717,
+      "depends": [
+        "website_sale",
+        "l10n_tw_edi_ecpay"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_tz_account",
+      "files": 13,
+      "bytes": 63373,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ua",
+      "files": 12,
+      "bytes": 70654,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ug",
+      "files": 12,
+      "bytes": 76866,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_uk",
+      "files": 16,
+      "bytes": 39474,
+      "depends": [
+        "account",
+        "base_iban",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_us",
+      "files": 9,
+      "bytes": 18619,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_us_account",
+      "files": 17,
+      "bytes": 52613,
+      "depends": [
+        "l10n_us",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_uy",
+      "files": 32,
+      "bytes": 131737,
+      "depends": [
+        "account",
+        "l10n_latam_invoice_document",
+        "l10n_latam_base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_uy_pos",
+      "files": 3,
+      "bytes": 980,
+      "depends": [
+        "l10n_uy",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_uz",
+      "files": 18,
+      "bytes": 115004,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_ve",
+      "files": 10,
+      "bytes": 41566,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_vn",
+      "files": 22,
+      "bytes": 107002,
+      "depends": [
+        "account_qr_code_emv",
+        "base_iban",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_vn_edi_viettel",
+      "files": 24,
+      "bytes": 163778,
+      "depends": [
+        "l10n_vn"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_vn_edi_viettel_pos",
+      "files": 27,
+      "bytes": 48226,
+      "depends": [
+        "l10n_vn_edi_viettel",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_yt",
+      "files": 2,
+      "bytes": 425,
+      "depends": [
+        "l10n_fr_account",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_za",
+      "files": 10,
+      "bytes": 39763,
+      "depends": [
+        "account",
+        "base_vat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "l10n_zm_account",
+      "files": 13,
+      "bytes": 59287,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "link_tracker",
+      "files": 85,
+      "bytes": 947547,
+      "depends": [
+        "utm",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "loyalty",
+      "files": 111,
+      "bytes": 4443366,
+      "depends": [
+        "product",
+        "portal",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "lunch",
+      "files": 154,
+      "bytes": 6111044,
+      "depends": [
+        "mail"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mail_bot",
+      "files": 68,
+      "bytes": 718766,
+      "depends": [
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mail_bot_hr",
+      "files": 3,
+      "bytes": 1588,
+      "depends": [
+        "mail_bot",
+        "hr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mail_group",
+      "files": 90,
+      "bytes": 3157575,
+      "depends": [
+        "mail",
+        "portal"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mail_plugin",
+      "files": 68,
+      "bytes": 1243359,
+      "depends": [
+        "web",
+        "contacts",
+        "iap"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "marketing_card",
+      "files": 96,
+      "bytes": 2621969,
+      "depends": [
+        "link_tracker",
+        "mass_mailing",
+        "website"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing",
+      "files": 417,
+      "bytes": 18074003,
+      "depends": [
+        "contacts",
+        "mail",
+        "html_builder",
+        "utm",
+        "link_tracker",
+        "social_media",
+        "web_tour",
+        "digest"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_crm",
+      "files": 62,
+      "bytes": 256280,
+      "depends": [
+        "crm",
+        "mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_crm_sms",
+      "files": 54,
+      "bytes": 80522,
+      "depends": [
+        "mass_mailing_crm",
+        "mass_mailing_sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_event",
+      "files": 70,
+      "bytes": 121651,
+      "depends": [
+        "event",
+        "mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_event_sms",
+      "files": 56,
+      "bytes": 64393,
+      "depends": [
+        "event",
+        "mass_mailing",
+        "mass_mailing_event",
+        "mass_mailing_sms",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_event_track",
+      "files": 70,
+      "bytes": 117339,
+      "depends": [
+        "website_event_track",
+        "mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_event_track_sms",
+      "files": 54,
+      "bytes": 64769,
+      "depends": [
+        "mass_mailing",
+        "mass_mailing_sms",
+        "sms",
+        "website_event_track"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_sale",
+      "files": 62,
+      "bytes": 273024,
+      "depends": [
+        "sale",
+        "mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_sale_sms",
+      "files": 54,
+      "bytes": 95134,
+      "depends": [
+        "mass_mailing_sale",
+        "mass_mailing_sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_slides",
+      "files": 56,
+      "bytes": 86938,
+      "depends": [
+        "website_slides",
+        "mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_sms",
+      "files": 96,
+      "bytes": 2363134,
+      "depends": [
+        "portal",
+        "mass_mailing",
+        "sms"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mass_mailing_themes",
+      "files": 138,
+      "bytes": 5497064,
+      "depends": [
+        "mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "microsoft_account",
+      "files": 58,
+      "bytes": 147023,
+      "depends": [
+        "base_setup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "microsoft_calendar",
+      "files": 94,
+      "bytes": 1346639,
+      "depends": [
+        "microsoft_account",
+        "calendar"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "microsoft_outlook",
+      "files": 69,
+      "bytes": 763870,
+      "depends": [
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp",
+      "files": 261,
+      "bytes": 19772166,
+      "depends": [
+        "product",
+        "stock",
+        "resource"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_account",
+      "files": 100,
+      "bytes": 1440111,
+      "depends": [
+        "mrp",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_landed_costs",
+      "files": 57,
+      "bytes": 100338,
+      "depends": [
+        "stock_landed_costs",
+        "mrp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_product_expiry",
+      "files": 59,
+      "bytes": 160601,
+      "depends": [
+        "mrp",
+        "product_expiry"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_repair",
+      "files": 61,
+      "bytes": 157521,
+      "depends": [
+        "repair",
+        "mrp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_subcontracting",
+      "files": 109,
+      "bytes": 1538376,
+      "depends": [
+        "mrp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_subcontracting_account",
+      "files": 60,
+      "bytes": 121292,
+      "depends": [
+        "mrp_subcontracting",
+        "mrp_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_subcontracting_dropshipping",
+      "files": 67,
+      "bytes": 369412,
+      "depends": [
+        "mrp_subcontracting",
+        "stock_dropshipping"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_subcontracting_landed_costs",
+      "files": 57,
+      "bytes": 74087,
+      "depends": [
+        "stock_landed_costs",
+        "mrp_subcontracting"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_subcontracting_purchase",
+      "files": 66,
+      "bytes": 403282,
+      "depends": [
+        "mrp_subcontracting",
+        "purchase_mrp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "mrp_subcontracting_repair",
+      "files": 2,
+      "bytes": 456,
+      "depends": [
+        "mrp_subcontracting",
+        "repair"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "onboarding",
+      "files": 71,
+      "bytes": 1009192,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "partner_autocomplete",
+      "files": 91,
+      "bytes": 505247,
+      "depends": [
+        "iap_mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "partnership",
+      "files": 72,
+      "bytes": 532146,
+      "depends": [
+        "crm",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment",
+      "files": 331,
+      "bytes": 9150019,
+      "depends": [
+        "onboarding",
+        "portal"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_adyen",
+      "files": 90,
+      "bytes": 658309,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_aps",
+      "files": 71,
+      "bytes": 249970,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_asiapay",
+      "files": 71,
+      "bytes": 383619,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_authorize",
+      "files": 89,
+      "bytes": 630204,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_buckaroo",
+      "files": 83,
+      "bytes": 270391,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_custom",
+      "files": 84,
+      "bytes": 314289,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_demo",
+      "files": 78,
+      "bytes": 569547,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_dpo",
+      "files": 69,
+      "bytes": 253343,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_ecpay",
+      "files": 68,
+      "bytes": 218878,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_flutterwave",
+      "files": 73,
+      "bytes": 307246,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_iyzico",
+      "files": 70,
+      "bytes": 200171,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_mercado_pago",
+      "files": 75,
+      "bytes": 756119,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_mollie",
+      "files": 69,
+      "bytes": 191758,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_nuvei",
+      "files": 70,
+      "bytes": 277820,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_paymob",
+      "files": 70,
+      "bytes": 356991,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_paypal",
+      "files": 86,
+      "bytes": 460358,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_payu",
+      "files": 70,
+      "bytes": 250680,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_razorpay",
+      "files": 74,
+      "bytes": 618645,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_redsys",
+      "files": 69,
+      "bytes": 292751,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_stripe",
+      "files": 83,
+      "bytes": 631578,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_toss_payments",
+      "files": 69,
+      "bytes": 254219,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_worldline",
+      "files": 69,
+      "bytes": 293909,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "payment_xendit",
+      "files": 72,
+      "bytes": 407348,
+      "depends": [
+        "payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "phone_validation",
+      "files": 86,
+      "bytes": 1142537,
+      "depends": [
+        "base",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "point_of_sale",
+      "files": 796,
+      "bytes": 33169992,
+      "depends": [
+        "resource",
+        "stock_account",
+        "barcodes",
+        "html_editor",
+        "digest",
+        "phone_validation",
+        "partner_autocomplete",
+        "iot_base",
+        "google_address_autocomplete"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "portal",
+      "files": 138,
+      "bytes": 3146470,
+      "depends": [
+        "web",
+        "html_editor",
+        "http_routing",
+        "mail",
+        "auth_signup"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "portal_rating",
+      "files": 82,
+      "bytes": 448380,
+      "depends": [
+        "portal",
+        "rating"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_account_tax_python",
+      "files": 58,
+      "bytes": 63999,
+      "depends": [
+        "account_tax_python",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_adyen",
+      "files": 70,
+      "bytes": 394475,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_cashdro",
+      "files": 65,
+      "bytes": 249160,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_cashmatic",
+      "files": 63,
+      "bytes": 188718,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_discount",
+      "files": 87,
+      "bytes": 373788,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_dpopay",
+      "files": 61,
+      "bytes": 474431,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_edi_ubl",
+      "files": 54,
+      "bytes": 64124,
+      "depends": [
+        "point_of_sale",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_event",
+      "files": 113,
+      "bytes": 791013,
+      "depends": [
+        "point_of_sale",
+        "event_product"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_event_sale",
+      "files": 56,
+      "bytes": 62535,
+      "depends": [
+        "pos_event",
+        "pos_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_glory_cash",
+      "files": 76,
+      "bytes": 731267,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_hr",
+      "files": 115,
+      "bytes": 851997,
+      "depends": [
+        "point_of_sale",
+        "hr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_hr_restaurant",
+      "files": 7,
+      "bytes": 5390,
+      "depends": [
+        "pos_hr",
+        "pos_restaurant"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_imin",
+      "files": 59,
+      "bytes": 141836,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_loyalty",
+      "files": 135,
+      "bytes": 2141482,
+      "depends": [
+        "loyalty",
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_mercado_pago",
+      "files": 62,
+      "bytes": 354707,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_mollie",
+      "files": 65,
+      "bytes": 169904,
+      "depends": [
+        "point_of_sale",
+        "payment_mollie"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_mrp",
+      "files": 62,
+      "bytes": 124030,
+      "depends": [
+        "point_of_sale",
+        "mrp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_online_payment",
+      "files": 84,
+      "bytes": 1179014,
+      "depends": [
+        "point_of_sale",
+        "account_payment"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_online_payment_self_order",
+      "files": 80,
+      "bytes": 381829,
+      "depends": [
+        "pos_online_payment",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_pine_labs",
+      "files": 61,
+      "bytes": 388733,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_qfpay",
+      "files": 65,
+      "bytes": 306024,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_razorpay",
+      "files": 65,
+      "bytes": 501102,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_repair",
+      "files": 59,
+      "bytes": 82166,
+      "depends": [
+        "point_of_sale",
+        "repair"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_restaurant",
+      "files": 226,
+      "bytes": 6357179,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_restaurant_adyen",
+      "files": 61,
+      "bytes": 122573,
+      "depends": [
+        "pos_adyen",
+        "pos_restaurant",
+        "payment_adyen"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_restaurant_loyalty",
+      "files": 7,
+      "bytes": 6505,
+      "depends": [
+        "pos_restaurant",
+        "pos_loyalty"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_restaurant_stripe",
+      "files": 5,
+      "bytes": 8744,
+      "depends": [
+        "pos_stripe",
+        "pos_restaurant",
+        "payment_stripe"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_safaricom",
+      "files": 67,
+      "bytes": 582982,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_sale",
+      "files": 109,
+      "bytes": 1211850,
+      "depends": [
+        "point_of_sale",
+        "sale_management"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_sale_loyalty",
+      "files": 60,
+      "bytes": 69673,
+      "depends": [
+        "pos_sale",
+        "pos_loyalty"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_sale_margin",
+      "files": 56,
+      "bytes": 61726,
+      "depends": [
+        "pos_sale",
+        "sale_margin"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order",
+      "files": 270,
+      "bytes": 4713139,
+      "depends": [
+        "pos_restaurant",
+        "http_routing",
+        "link_tracker"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order_adyen",
+      "files": 56,
+      "bytes": 69691,
+      "depends": [
+        "pos_adyen",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order_pine_labs",
+      "files": 61,
+      "bytes": 95240,
+      "depends": [
+        "pos_pine_labs",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order_qfpay",
+      "files": 60,
+      "bytes": 90341,
+      "depends": [
+        "pos_qfpay",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order_razorpay",
+      "files": 61,
+      "bytes": 82528,
+      "depends": [
+        "pos_razorpay",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order_sale",
+      "files": 56,
+      "bytes": 71643,
+      "depends": [
+        "pos_sale",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order_stripe",
+      "files": 63,
+      "bytes": 81442,
+      "depends": [
+        "pos_stripe",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_self_order_viva_com",
+      "files": 58,
+      "bytes": 66400,
+      "depends": [
+        "pos_viva_com",
+        "pos_self_order"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_sms",
+      "files": 65,
+      "bytes": 168110,
+      "depends": [
+        "point_of_sale",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_stripe",
+      "files": 62,
+      "bytes": 264356,
+      "depends": [
+        "point_of_sale",
+        "payment_stripe"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "pos_viva_com",
+      "files": 70,
+      "bytes": 474774,
+      "depends": [
+        "point_of_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "privacy_lookup",
+      "files": 63,
+      "bytes": 619091,
+      "depends": [
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "product",
+      "files": 242,
+      "bytes": 13575006,
+      "depends": [
+        "base",
+        "mail",
+        "uom"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "product_email_template",
+      "files": 76,
+      "bytes": 228547,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "product_expiry",
+      "files": 97,
+      "bytes": 1595944,
+      "depends": [
+        "stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "product_margin",
+      "files": 76,
+      "bytes": 812404,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "product_matrix",
+      "files": 66,
+      "bytes": 331038,
+      "depends": [
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project",
+      "files": 403,
+      "bytes": 16104524,
+      "depends": [
+        "analytic",
+        "base_setup",
+        "mail",
+        "portal",
+        "rating",
+        "resource",
+        "web",
+        "web_tour",
+        "digest"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_account",
+      "files": 60,
+      "bytes": 115095,
+      "depends": [
+        "account",
+        "project"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_hr_expense",
+      "files": 61,
+      "bytes": 113484,
+      "depends": [
+        "project_account",
+        "hr_expense"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_hr_skills",
+      "files": 58,
+      "bytes": 168365,
+      "depends": [
+        "project",
+        "hr_skills"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_mail_plugin",
+      "files": 60,
+      "bytes": 353669,
+      "depends": [
+        "project",
+        "mail_plugin"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_mrp",
+      "files": 63,
+      "bytes": 209812,
+      "depends": [
+        "mrp",
+        "project"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_mrp_account",
+      "files": 63,
+      "bytes": 231073,
+      "depends": [
+        "mrp_account",
+        "project_mrp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_mrp_sale",
+      "files": 4,
+      "bytes": 1302,
+      "depends": [
+        "project_mrp",
+        "sale_mrp",
+        "sale_project"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_mrp_stock_landed_costs",
+      "files": 54,
+      "bytes": 67095,
+      "depends": [
+        "project_mrp_account",
+        "mrp_landed_costs"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_purchase",
+      "files": 65,
+      "bytes": 245078,
+      "depends": [
+        "purchase",
+        "project_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_purchase_stock",
+      "files": 57,
+      "bytes": 80586,
+      "depends": [
+        "project_purchase",
+        "project_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_sale_expense",
+      "files": 60,
+      "bytes": 126003,
+      "depends": [
+        "sale_project",
+        "sale_expense",
+        "project_hr_expense"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_sms",
+      "files": 66,
+      "bytes": 224359,
+      "depends": [
+        "project",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_stock",
+      "files": 57,
+      "bytes": 127917,
+      "depends": [
+        "stock",
+        "project"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_stock_account",
+      "files": 61,
+      "bytes": 241659,
+      "depends": [
+        "stock_account",
+        "project_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_stock_landed_costs",
+      "files": 54,
+      "bytes": 67535,
+      "depends": [
+        "project_stock_account",
+        "stock_landed_costs"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_timesheet_holidays",
+      "files": 73,
+      "bytes": 648350,
+      "depends": [
+        "hr_timesheet",
+        "hr_holidays"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "project_todo",
+      "files": 109,
+      "bytes": 1555444,
+      "depends": [
+        "project"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase",
+      "files": 159,
+      "bytes": 9554103,
+      "depends": [
+        "account"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_edi_ubl_bis3",
+      "files": 62,
+      "bytes": 177907,
+      "depends": [
+        "purchase",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_mrp",
+      "files": 75,
+      "bytes": 477202,
+      "depends": [
+        "mrp",
+        "purchase_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_product_matrix",
+      "files": 63,
+      "bytes": 276876,
+      "depends": [
+        "purchase",
+        "product_matrix"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_repair",
+      "files": 59,
+      "bytes": 131866,
+      "depends": [
+        "repair",
+        "purchase_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_requisition",
+      "files": 94,
+      "bytes": 3204772,
+      "depends": [
+        "purchase"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_requisition_sale",
+      "files": 56,
+      "bytes": 74565,
+      "depends": [
+        "purchase_requisition",
+        "sale_purchase"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_requisition_stock",
+      "files": 65,
+      "bytes": 270897,
+      "depends": [
+        "purchase_requisition",
+        "purchase_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "purchase_stock",
+      "files": 145,
+      "bytes": 3516159,
+      "depends": [
+        "stock_account",
+        "purchase"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "rating",
+      "files": 109,
+      "bytes": 1566406,
+      "depends": [
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "repair",
+      "files": 108,
+      "bytes": 3951038,
+      "depends": [
+        "sale_stock",
+        "sale_management"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "resource",
+      "files": 104,
+      "bytes": 2494321,
+      "depends": [
+        "base",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "resource_mail",
+      "files": 68,
+      "bytes": 240750,
+      "depends": [
+        "resource",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "rpc",
+      "files": 8,
+      "bytes": 24283,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale",
+      "files": 258,
+      "bytes": 16172217,
+      "depends": [
+        "sales_team",
+        "account_payment",
+        "utm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_crm",
+      "files": 80,
+      "bytes": 467322,
+      "depends": [
+        "sale",
+        "crm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_edi_ubl",
+      "files": 59,
+      "bytes": 142008,
+      "depends": [
+        "sale",
+        "account_edi_ubl_cii"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_expense",
+      "files": 72,
+      "bytes": 382159,
+      "depends": [
+        "sale_management",
+        "hr_expense"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_expense_margin",
+      "files": 57,
+      "bytes": 90231,
+      "depends": [
+        "sale_expense",
+        "sale_margin"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_gelato",
+      "files": 83,
+      "bytes": 995575,
+      "depends": [
+        "sale",
+        "delivery"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_gelato_stock",
+      "files": 54,
+      "bytes": 60898,
+      "depends": [
+        "sale_gelato",
+        "sale_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_loyalty",
+      "files": 90,
+      "bytes": 1439966,
+      "depends": [
+        "sale",
+        "loyalty"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_loyalty_delivery",
+      "files": 63,
+      "bytes": 206662,
+      "depends": [
+        "sale_loyalty",
+        "delivery"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_management",
+      "files": 101,
+      "bytes": 1685055,
+      "depends": [
+        "sale",
+        "digest"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_margin",
+      "files": 76,
+      "bytes": 163657,
+      "depends": [
+        "sale_management"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_mrp",
+      "files": 89,
+      "bytes": 692276,
+      "depends": [
+        "mrp",
+        "sale_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_mrp_margin",
+      "files": 4,
+      "bytes": 15030,
+      "depends": [
+        "sale_mrp",
+        "sale_stock_margin"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_pdf_quote_builder",
+      "files": 99,
+      "bytes": 6256098,
+      "depends": [
+        "sale_management"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_product_matrix",
+      "files": 62,
+      "bytes": 260990,
+      "depends": [
+        "sale",
+        "product_matrix"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_project",
+      "files": 118,
+      "bytes": 2420434,
+      "depends": [
+        "sale_management",
+        "sale_service",
+        "project_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_project_stock",
+      "files": 61,
+      "bytes": 230767,
+      "depends": [
+        "sale_project",
+        "sale_stock",
+        "project_stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_project_stock_account",
+      "files": 56,
+      "bytes": 64738,
+      "depends": [
+        "sale_project",
+        "project_stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_purchase",
+      "files": 69,
+      "bytes": 582898,
+      "depends": [
+        "sale",
+        "purchase"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_purchase_project",
+      "files": 56,
+      "bytes": 66254,
+      "depends": [
+        "sale_purchase",
+        "project_purchase",
+        "sale_project"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_purchase_stock",
+      "files": 63,
+      "bytes": 176818,
+      "depends": [
+        "sale_stock",
+        "purchase_stock",
+        "sale_purchase"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_service",
+      "files": 54,
+      "bytes": 61500,
+      "depends": [
+        "sale_management"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_sms",
+      "files": 4,
+      "bytes": 1332,
+      "depends": [
+        "sale",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_stock",
+      "files": 127,
+      "bytes": 2540637,
+      "depends": [
+        "sale",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_stock_margin",
+      "files": 56,
+      "bytes": 98892,
+      "depends": [
+        "sale_stock",
+        "sale_margin"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_stock_product_expiry",
+      "files": 59,
+      "bytes": 131204,
+      "depends": [
+        "sale_stock",
+        "product_expiry"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_timesheet",
+      "files": 141,
+      "bytes": 5616903,
+      "depends": [
+        "sale_project",
+        "hr_timesheet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sale_timesheet_margin",
+      "files": 56,
+      "bytes": 74092,
+      "depends": [
+        "sale_margin",
+        "sale_timesheet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sales_team",
+      "files": 91,
+      "bytes": 1882364,
+      "depends": [
+        "base",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sms",
+      "files": 125,
+      "bytes": 3548920,
+      "depends": [
+        "base",
+        "iap_mail",
+        "mail",
+        "phone_validation"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "sms_twilio",
+      "files": 77,
+      "bytes": 799549,
+      "depends": [
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "snailmail",
+      "files": 89,
+      "bytes": 1311228,
+      "depends": [
+        "iap_mail",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "snailmail_account",
+      "files": 68,
+      "bytes": 247440,
+      "depends": [
+        "account",
+        "snailmail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "social_media",
+      "files": 60,
+      "bytes": 145746,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet",
+      "files": 275,
+      "bytes": 27363693,
+      "depends": [
+        "bus",
+        "web",
+        "portal"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_account",
+      "files": 77,
+      "bytes": 725880,
+      "depends": [
+        "spreadsheet",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard",
+      "files": 113,
+      "bytes": 996160,
+      "depends": [
+        "spreadsheet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_account",
+      "files": 55,
+      "bytes": 565689,
+      "depends": [
+        "spreadsheet_dashboard",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_event_sale",
+      "files": 55,
+      "bytes": 376733,
+      "depends": [
+        "spreadsheet_dashboard",
+        "event_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_hr_expense",
+      "files": 55,
+      "bytes": 382567,
+      "depends": [
+        "spreadsheet_dashboard",
+        "sale_expense"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_hr_timesheet",
+      "files": 54,
+      "bytes": 323309,
+      "depends": [
+        "spreadsheet_dashboard",
+        "hr_timesheet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_im_livechat",
+      "files": 58,
+      "bytes": 1168055,
+      "depends": [
+        "spreadsheet_dashboard",
+        "im_livechat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_pos_hr",
+      "files": 55,
+      "bytes": 362256,
+      "depends": [
+        "spreadsheet_dashboard",
+        "pos_hr"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_pos_restaurant",
+      "files": 55,
+      "bytes": 704803,
+      "depends": [
+        "spreadsheet_dashboard",
+        "pos_hr",
+        "pos_restaurant"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_sale",
+      "files": 58,
+      "bytes": 960952,
+      "depends": [
+        "spreadsheet_dashboard",
+        "sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_sale_timesheet",
+      "files": 55,
+      "bytes": 473106,
+      "depends": [
+        "spreadsheet_dashboard",
+        "sale_timesheet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_stock_account",
+      "files": 55,
+      "bytes": 674079,
+      "depends": [
+        "spreadsheet_dashboard",
+        "stock_account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_website_sale",
+      "files": 55,
+      "bytes": 336854,
+      "depends": [
+        "spreadsheet_dashboard",
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "spreadsheet_dashboard_website_sale_slides",
+      "files": 55,
+      "bytes": 389722,
+      "depends": [
+        "spreadsheet_dashboard",
+        "website_sale_slides"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock",
+      "files": 317,
+      "bytes": 30532862,
+      "depends": [
+        "product",
+        "barcodes_gs1_nomenclature",
+        "digest"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_account",
+      "files": 135,
+      "bytes": 3814718,
+      "depends": [
+        "stock",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_delivery",
+      "files": 85,
+      "bytes": 1352198,
+      "depends": [
+        "sale_stock",
+        "delivery"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_dropshipping",
+      "files": 76,
+      "bytes": 416012,
+      "depends": [
+        "sale_purchase_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_fleet",
+      "files": 64,
+      "bytes": 589163,
+      "depends": [
+        "stock_picking_batch",
+        "fleet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_landed_costs",
+      "files": 93,
+      "bytes": 2274359,
+      "depends": [
+        "stock_account",
+        "purchase_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_maintenance",
+      "files": 57,
+      "bytes": 142861,
+      "depends": [
+        "stock",
+        "maintenance"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_picking_batch",
+      "files": 99,
+      "bytes": 3464686,
+      "depends": [
+        "stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "stock_sms",
+      "files": 64,
+      "bytes": 312035,
+      "depends": [
+        "stock",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "survey",
+      "files": 216,
+      "bytes": 12839965,
+      "depends": [
+        "auth_signup",
+        "http_routing",
+        "mail",
+        "web_tour",
+        "gamification"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "survey_crm",
+      "files": 69,
+      "bytes": 737454,
+      "depends": [
+        "survey",
+        "crm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_base_automation",
+      "files": 10,
+      "bytes": 139744,
+      "depends": [
+        "base_automation"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_crm_full",
+      "files": 5,
+      "bytes": 8096,
+      "depends": [
+        "crm",
+        "crm_iap_enrich",
+        "crm_iap_mine",
+        "crm_sms",
+        "event_crm",
+        "sale_crm",
+        "website_crm",
+        "website_crm_iap_reveal",
+        "website_crm_partner_assign",
+        "website_crm_livechat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_discuss_full",
+      "files": 13,
+      "bytes": 110104,
+      "depends": [
+        "calendar",
+        "crm",
+        "crm_livechat",
+        "hr_attendance",
+        "hr_fleet",
+        "hr_holidays",
+        "hr_homeworking",
+        "im_livechat",
+        "mail",
+        "mail_bot",
+        "project_todo",
+        "website_livechat",
+        "website_sale",
+        "website_slides"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_event_full",
+      "files": 16,
+      "bytes": 107033,
+      "depends": [
+        "event",
+        "event_booth",
+        "event_crm",
+        "event_crm_sale",
+        "event_sale",
+        "event_sms",
+        "payment_demo",
+        "website_event_booth_sale_exhibitor",
+        "website_event_exhibitor",
+        "website_event_sale",
+        "website_event_track",
+        "website_event_track_live",
+        "website_event_track_quiz"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_html_field_history",
+      "files": 7,
+      "bytes": 6765,
+      "depends": [
+        "html_editor"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_import_export",
+      "files": 19,
+      "bytes": 289385,
+      "depends": [
+        "web",
+        "base_import",
+        "website"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_mail",
+      "files": 67,
+      "bytes": 1469677,
+      "depends": [
+        "mail",
+        "test_orm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_mail_full",
+      "files": 35,
+      "bytes": 153774,
+      "depends": [
+        "mail",
+        "mail_bot",
+        "portal",
+        "rating",
+        "mass_mailing",
+        "mass_mailing_sms",
+        "phone_validation",
+        "sms",
+        "test_mail",
+        "test_mail_sms",
+        "test_mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_mail_sms",
+      "files": 19,
+      "bytes": 117820,
+      "depends": [
+        "mail",
+        "sms",
+        "sms_twilio",
+        "test_orm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_mass_mailing",
+      "files": 27,
+      "bytes": 137241,
+      "depends": [
+        "mass_mailing",
+        "mass_mailing_sms",
+        "sms_twilio",
+        "test_mail",
+        "test_mail_sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_resource",
+      "files": 13,
+      "bytes": 76435,
+      "depends": [
+        "resource"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_sale_product_configurators",
+      "files": 18,
+      "bytes": 56651,
+      "depends": [
+        "event_sale",
+        "sale_management",
+        "sale_product_matrix"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_sale_purchase_edi_ubl",
+      "files": 4,
+      "bytes": 18445,
+      "depends": [
+        "purchase_edi_ubl_bis3",
+        "sale_edi_ubl"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_spreadsheet",
+      "files": 8,
+      "bytes": 3431,
+      "depends": [
+        "spreadsheet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_website",
+      "files": 62,
+      "bytes": 230075,
+      "depends": [
+        "web_unsplash",
+        "website",
+        "theme_default"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_website_modules",
+      "files": 8,
+      "bytes": 27817,
+      "depends": [
+        "theme_default",
+        "website",
+        "website_blog",
+        "website_event_sale",
+        "website_slides",
+        "website_livechat",
+        "website_crm_iap_reveal",
+        "website_sale_comparison",
+        "website_sale_wishlist"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_website_slides_full",
+      "files": 7,
+      "bytes": 16220,
+      "depends": [
+        "website_sale_slides",
+        "website_slides_forum",
+        "website_slides_survey"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "theme_default",
+      "files": 6,
+      "bytes": 113440,
+      "depends": [
+        "website"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "transifex",
+      "files": 65,
+      "bytes": 242534,
+      "depends": [
+        "base",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "uom",
+      "files": 70,
+      "bytes": 720526,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "utm",
+      "files": 99,
+      "bytes": 1442954,
+      "depends": [
+        "base",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "web_hierarchy",
+      "files": 73,
+      "bytes": 354360,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "web_unsplash",
+      "files": 82,
+      "bytes": 791302,
+      "depends": [
+        "base_setup",
+        "html_editor"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website",
+      "files": 1591,
+      "bytes": 53283759,
+      "depends": [
+        "digest",
+        "web",
+        "html_editor",
+        "http_routing",
+        "portal",
+        "social_media",
+        "auth_signup",
+        "mail",
+        "google_recaptcha",
+        "utm",
+        "html_builder"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_blog",
+      "files": 157,
+      "bytes": 9039621,
+      "depends": [
+        "website_mail",
+        "website_partner",
+        "html_builder"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_cf_turnstile",
+      "files": 65,
+      "bytes": 250158,
+      "depends": [
+        "website"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_crm",
+      "files": 88,
+      "bytes": 412852,
+      "depends": [
+        "website",
+        "crm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_crm_iap_reveal",
+      "files": 71,
+      "bytes": 1089582,
+      "depends": [
+        "iap_crm",
+        "iap_mail",
+        "crm_iap_mine",
+        "website_crm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_crm_livechat",
+      "files": 57,
+      "bytes": 131979,
+      "depends": [
+        "website_crm",
+        "website_livechat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_crm_partner_assign",
+      "files": 114,
+      "bytes": 4972729,
+      "depends": [
+        "base_geolocalize",
+        "crm",
+        "account",
+        "partnership",
+        "website_partner",
+        "website_google_map",
+        "portal"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_crm_sms",
+      "files": 56,
+      "bytes": 60819,
+      "depends": [
+        "website_sms",
+        "crm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_customer",
+      "files": 87,
+      "bytes": 872173,
+      "depends": [
+        "website_crm_partner_assign",
+        "website_partner",
+        "website_google_map"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event",
+      "files": 166,
+      "bytes": 6592525,
+      "depends": [
+        "event",
+        "website",
+        "website_partner",
+        "website_mail",
+        "html_builder"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_booth",
+      "files": 71,
+      "bytes": 631155,
+      "depends": [
+        "website_event",
+        "event_booth"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_booth_exhibitor",
+      "files": 68,
+      "bytes": 371568,
+      "depends": [
+        "website_event_exhibitor",
+        "website_event_booth"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_booth_sale",
+      "files": 67,
+      "bytes": 163773,
+      "depends": [
+        "event_booth_sale",
+        "website_event_booth",
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_booth_sale_exhibitor",
+      "files": 55,
+      "bytes": 135293,
+      "depends": [
+        "website_event_exhibitor",
+        "website_event_booth_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_crm",
+      "files": 59,
+      "bytes": 86155,
+      "depends": [
+        "event_crm",
+        "website_event"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_exhibitor",
+      "files": 87,
+      "bytes": 2119855,
+      "depends": [
+        "website_event"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_sale",
+      "files": 97,
+      "bytes": 583940,
+      "depends": [
+        "website_event",
+        "event_sale",
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_track",
+      "files": 150,
+      "bytes": 8923662,
+      "depends": [
+        "website_event"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_track_live",
+      "files": 66,
+      "bytes": 226945,
+      "depends": [
+        "website_event_track"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_track_live_quiz",
+      "files": 59,
+      "bytes": 61548,
+      "depends": [
+        "website_event_track_live",
+        "website_event_track_quiz"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_event_track_quiz",
+      "files": 76,
+      "bytes": 1268010,
+      "depends": [
+        "website_profile",
+        "website_event_track"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_forum",
+      "files": 153,
+      "bytes": 9394345,
+      "depends": [
+        "auth_signup",
+        "website_mail",
+        "website_profile"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_google_map",
+      "files": 27,
+      "bytes": 104924,
+      "depends": [
+        "base_geolocalize",
+        "website_partner"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_hr_recruitment",
+      "files": 117,
+      "bytes": 5272879,
+      "depends": [
+        "hr_recruitment",
+        "website_mail"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_hr_recruitment_livechat",
+      "files": 53,
+      "bytes": 489462,
+      "depends": [
+        "website_hr_recruitment",
+        "im_livechat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_links",
+      "files": 83,
+      "bytes": 807859,
+      "depends": [
+        "website",
+        "link_tracker"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_livechat",
+      "files": 134,
+      "bytes": 859607,
+      "depends": [
+        "website",
+        "im_livechat"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_mail",
+      "files": 81,
+      "bytes": 490672,
+      "depends": [
+        "website",
+        "mail"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_mail_group",
+      "files": 66,
+      "bytes": 171644,
+      "depends": [
+        "mail_group",
+        "website"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_mass_mailing",
+      "files": 101,
+      "bytes": 923081,
+      "depends": [
+        "website",
+        "mass_mailing",
+        "google_recaptcha"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_mass_mailing_sms",
+      "files": 60,
+      "bytes": 174762,
+      "depends": [
+        "website_mass_mailing",
+        "mass_mailing_sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_partner",
+      "files": 76,
+      "bytes": 277073,
+      "depends": [
+        "website"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_payment",
+      "files": 103,
+      "bytes": 1358922,
+      "depends": [
+        "website",
+        "account_payment",
+        "portal"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_profile",
+      "files": 82,
+      "bytes": 1656956,
+      "depends": [
+        "html_editor",
+        "website_partner",
+        "gamification"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_project",
+      "files": 66,
+      "bytes": 274178,
+      "depends": [
+        "website",
+        "project"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale",
+      "files": 508,
+      "bytes": 23689883,
+      "depends": [
+        "website",
+        "sale",
+        "website_payment",
+        "website_mail",
+        "portal_rating",
+        "digest",
+        "delivery",
+        "html_builder"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_autocomplete",
+      "files": 67,
+      "bytes": 175077,
+      "depends": [
+        "website_sale",
+        "google_address_autocomplete"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_collect",
+      "files": 104,
+      "bytes": 722659,
+      "depends": [
+        "base_geolocalize",
+        "payment_custom",
+        "website_sale_stock"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_collect_wishlist",
+      "files": 53,
+      "bytes": 75903,
+      "depends": [
+        "website_sale_wishlist",
+        "website_sale_collect"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_comparison",
+      "files": 85,
+      "bytes": 813415,
+      "depends": [
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_comparison_wishlist",
+      "files": 54,
+      "bytes": 48666,
+      "depends": [
+        "website_sale_comparison",
+        "website_sale_wishlist"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_gelato",
+      "files": 59,
+      "bytes": 141065,
+      "depends": [
+        "sale_gelato",
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_loyalty",
+      "files": 101,
+      "bytes": 836926,
+      "depends": [
+        "website_sale",
+        "website_links",
+        "sale_loyalty"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_mass_mailing",
+      "files": 61,
+      "bytes": 145384,
+      "depends": [
+        "website_sale",
+        "website_mass_mailing"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_mondialrelay",
+      "files": 61,
+      "bytes": 218454,
+      "depends": [
+        "website_sale",
+        "delivery_mondialrelay"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_mrp",
+      "files": 60,
+      "bytes": 70943,
+      "depends": [
+        "website_sale_stock",
+        "sale_mrp"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_slides",
+      "files": 90,
+      "bytes": 1000513,
+      "depends": [
+        "website_slides",
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_stock",
+      "files": 118,
+      "bytes": 957241,
+      "depends": [
+        "website_sale",
+        "sale_stock",
+        "stock_delivery"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_stock_wishlist",
+      "files": 63,
+      "bytes": 158078,
+      "depends": [
+        "website_sale_stock",
+        "website_sale_wishlist"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sale_wishlist",
+      "files": 86,
+      "bytes": 1050062,
+      "depends": [
+        "website_sale"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_slides",
+      "files": 288,
+      "bytes": 20832226,
+      "depends": [
+        "portal_rating",
+        "website",
+        "website_mail",
+        "website_profile"
+      ],
+      "application": true,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_slides_forum",
+      "files": 70,
+      "bytes": 1294280,
+      "depends": [
+        "website_slides",
+        "website_forum"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_slides_survey",
+      "files": 96,
+      "bytes": 1603875,
+      "depends": [
+        "website_slides",
+        "survey"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_sms",
+      "files": 55,
+      "bytes": 95562,
+      "depends": [
+        "website",
+        "sms"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "website_timesheet",
+      "files": 54,
+      "bytes": 61127,
+      "depends": [
+        "website",
+        "hr_timesheet"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    }
+  ],
+  "test_addons": [
+    {
+      "id": "test_access_rights",
+      "files": 11,
+      "bytes": 41763,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_action_bindings",
+      "files": 7,
+      "bytes": 6049,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_assetsbundle",
+      "files": 33,
+      "bytes": 117907,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_auth_custom",
+      "files": 4,
+      "bytes": 3026,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_convert",
+      "files": 10,
+      "bytes": 18973,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_converter",
+      "files": 9,
+      "bytes": 220832,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_data_module",
+      "files": 1,
+      "bytes": 271,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_data_module_install",
+      "files": 4,
+      "bytes": 838,
+      "depends": [
+        "test_data_module"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_http",
+      "files": 29,
+      "bytes": 214163,
+      "depends": [
+        "web",
+        "web_tour",
+        "mail",
+        "rpc"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_inherit",
+      "files": 13,
+      "bytes": 16843,
+      "depends": [
+        "base",
+        "test_orm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_inherit_depends",
+      "files": 5,
+      "bytes": 2392,
+      "depends": [
+        "test_inherit",
+        "test_orm"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_inherits",
+      "files": 7,
+      "bytes": 15454,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_inherits_depends",
+      "files": 5,
+      "bytes": 2042,
+      "depends": [
+        "test_inherits"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_lint",
+      "files": 27,
+      "bytes": 109861,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_main_flows",
+      "files": 9,
+      "bytes": 53232,
+      "depends": [
+        "web_tour",
+        "crm",
+        "sale_timesheet",
+        "purchase_stock",
+        "mrp",
+        "account"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_mimetypes",
+      "files": 14,
+      "bytes": 268093,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_orm",
+      "files": 38,
+      "bytes": 967236,
+      "depends": [
+        "base",
+        "web",
+        "web_tour"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_read_group",
+      "files": 13,
+      "bytes": 324293,
+      "depends": [
+        "base",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_rpc",
+      "files": 7,
+      "bytes": 9163,
+      "depends": [
+        "web",
+        "rpc"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_search_panel",
+      "files": 8,
+      "bytes": 51983,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_testing_utilities",
+      "files": 15,
+      "bytes": 89318,
+      "depends": [
+        "base",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_translation_import",
+      "files": 22,
+      "bytes": 137591,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    },
+    {
+      "id": "test_uninstall",
+      "files": 4,
+      "bytes": 2024,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3"
+    }
+  ],
+  "shipped": [
+    {
+      "id": "auth_passkey",
+      "files": 129,
+      "bytes": 679940,
+      "depends": [
+        "base_setup",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "auth_password_policy",
+      "files": 68,
+      "bytes": 235224,
+      "depends": [
+        "base_setup",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "auth_totp",
+      "files": 73,
+      "bytes": 801649,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "base_import",
+      "files": 106,
+      "bytes": 2245628,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "base_setup",
+      "files": 89,
+      "bytes": 1566633,
+      "depends": [
+        "base",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "bus",
+      "files": 142,
+      "bytes": 673872,
+      "depends": [
+        "base",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "html_editor",
+      "files": 547,
+      "bytes": 9442994,
+      "depends": [
+        "base",
+        "bus",
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "iap",
+      "files": 87,
+      "bytes": 611321,
+      "depends": [
+        "web",
+        "base_setup"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "mail",
+      "files": 1239,
+      "bytes": 45596149,
+      "depends": [
+        "base",
+        "base_setup",
+        "bus",
+        "web_tour",
+        "html_editor"
+      ],
+      "application": true,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "maintenance",
+      "files": 96,
+      "bytes": 4501697,
+      "depends": [
+        "mail"
+      ],
+      "application": true,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "web",
+      "files": 2326,
+      "bytes": 79446718,
+      "depends": [
+        "base"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "web_tour",
+      "files": 91,
+      "bytes": 791628,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "addons"
+    },
+    {
+      "id": "base",
+      "files": 698,
+      "bytes": 111853689,
+      "depends": [],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "odoo/addons"
+    },
+    {
+      "id": "mp_aurora_tasks",
+      "files": 6,
+      "bytes": 11293,
+      "depends": [
+        "web"
+      ],
+      "application": true,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_compat",
+      "files": 3,
+      "bytes": 1643,
+      "depends": [
+        "web"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_core",
+      "files": 18,
+      "bytes": 153868,
+      "depends": [
+        "mp_identity",
+        "bus"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_example_background",
+      "files": 7,
+      "bytes": 23364,
+      "depends": [
+        "mp_core"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_example_canvas",
+      "files": 9,
+      "bytes": 16234,
+      "depends": [
+        "mp_example_notes",
+        "mp_shell"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_example_notes",
+      "files": 12,
+      "bytes": 19214,
+      "depends": [
+        "mp_core"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_example_notes_labels",
+      "files": 8,
+      "bytes": 14345,
+      "depends": [
+        "mp_example_notes",
+        "mp_shell"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_example_notes_stats",
+      "files": 7,
+      "bytes": 12808,
+      "depends": [
+        "mp_example_notes",
+        "mp_shell"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_identity",
+      "files": 14,
+      "bytes": 34089,
+      "depends": [
+        "mp_compat"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    },
+    {
+      "id": "mp_shell",
+      "files": 17,
+      "bytes": 124492,
+      "depends": [
+        "mp_core"
+      ],
+      "application": false,
+      "license": "LGPL-3",
+      "source_root": "platform_addons"
+    }
+  ],
+  "source_size_bytes": 1104788236,
+  "not_shipped_size_bytes": 846341094,
+  "runtime_changed": false,
+  "bulk_pruning_started": false
+}
