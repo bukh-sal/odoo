@@ -3,10 +3,11 @@
 Status partially qualified for BX-01. Native enqueue and private terminal
 archival passed on a fresh Odoo site. The populated core upgrade and fresh
 restore passed. The reviewed job archive and interrupted-result reconciliation
-also passed above the live-table limit. Scoped history, event retention and
-latency qualification remain open. The lifecycle still refuses an active
-dispatch table above its row limit. The guarded history diagnostic reports
-that pressure without producing an oversized receipt.
+also passed above the live-table limit. Native scoped history and aggregate
+alerts passed over HTTP and in the in-app browser. Event retention and latency
+qualification remain open. The lifecycle still refuses an active dispatch
+table above its row limit. The guarded history diagnostic reports that
+pressure without producing an oversized receipt.
 
 Use one private database identity registry for both enqueue and archive. Its
 unique key is the current enqueue identity: site, workspace, actor, installation,
@@ -37,6 +38,15 @@ history view with minimized metadata. Existing result APIs may report that the
 full result is gone. Retained keys keep rejecting changed payloads, timing or
 releases. Expiry of the deduplication record is a separate policy decision with
 an explicit replay horizon and recorded behavior after it expires.
+
+The stock Workspace menu opens a native list scoped to the current human
+actor, workspace and site. The receipt projects the public job ID, state,
+submission or completion time, and archive marker. Held and unknown outcomes
+remain visible to their original actor with an active workspace membership.
+Payload and result access still use their separate job authorization path.
+The stock list uses pages of 50 and a capped total of 10,000. The local
+operator's history command reports site-wide table alerts at the existing
+advisory and hard bounds.
 
 The first job policy retains the full payload and result for at least seven
 days after both the terminal timestamp and original deadline. The independent
@@ -93,5 +103,6 @@ Sources: [active enqueue](../../packages/platform_sdk/modular_platform/durable.p
 [Odoo cursor isolation](../../odoo/sql_db.py:329), and the
 [follow-up gate](../../planning/background_execution.md#implementation-gates-and-acceptance).
 [Native archival evidence](../evidence/post-r1/background-execution/bx-01-native-archive.json),
-[operator archive evidence](../evidence/post-r1/background-execution/bx-01-archive-operator.json) and
+[operator archive evidence](../evidence/post-r1/background-execution/bx-01-archive-operator.json),
+[scoped history evidence](../evidence/post-r1/background-execution/bx-01-scoped-history.json) and
 [Populated lifecycle evidence](../evidence/post-r1/background-execution/bx-01-retention-lifecycle.json)

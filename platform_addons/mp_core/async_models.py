@@ -56,6 +56,7 @@ class Job(models.Model):
     _public_unique = models.Constraint('UNIQUE(public_id)', 'Job ID must be unique')
     _dedup_unique = models.Constraint('UNIQUE(site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)', 'Job deduplication scope must be unique')
     _bounds = models.Constraint('CHECK(attempts >= 0 AND max_attempts BETWEEN 1 AND 16 AND claim_generation >= 0 AND handler_version > 0 AND dispatch_generation > 0 AND progress BETWEEN 0 AND 100)', 'Invalid scheduler bounds')
+    _history_order = models.Index('(site_id, workspace_id, actor_id, (COALESCE(finished_at, created_at)) DESC, public_id)')
 
 
 class JobIdentity(models.Model):
@@ -84,6 +85,7 @@ class JobIdentity(models.Model):
         'Job identity must be unique within its scope',
     )
     _original_job = models.Constraint('UNIQUE(job_public_id)', 'Archived job ID must be unique')
+    _history_order = models.Index('(site_id, workspace_id, actor_id, finished_at DESC, job_public_id) WHERE job_public_id IS NOT NULL')
     _terminal_record = models.Constraint(
         """CHECK (
             (job_public_id IS NULL AND input_digest IS NULL AND release_digest IS NULL

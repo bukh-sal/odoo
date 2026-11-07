@@ -184,8 +184,14 @@ records the outcome and never sends again. Keep the evidence in the
 independent operator's records. An intent without a result requires
 checking the current state before further action.
 
-`jobs history` reports bounded live dispatch counts. At the 80% advisory,
-review the backlog before lifecycle operations hit their per-table limit.
+In stock Odoo, select a workspace and open **My background jobs** from its
+Workspace menu. Use **Needs attention** for held, failed and unknown outcomes
+or **Archived** for compact receipts. The list shows the current actor's own
+job IDs and safe status in that workspace.
+
+`jobs history` reports bounded live dispatch counts and the tables that have
+reached the 80% advisory or hard limit. Review the backlog before lifecycle
+operations hit their per-table limit.
 On an archive-capable image, use the same operator target and store for the
 following job cleanup commands.
 

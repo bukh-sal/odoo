@@ -153,7 +153,10 @@ def main():
             return
         if args.command=='history':
             report=history_pressure(cr,LifecycleScope(site,digest))
-            emit(event='job_history',**report)
+            alerts = [dict(table=table, status=value['status'], rows_observed=value['rows_observed'],
+                           count_is_lower_bound=value['count_is_lower_bound'])
+                      for table, value in report['tables'].items() if value['status'] != 'below_warning']
+            emit(event='job_history',alerts=alerts,**report)
             cr.rollback()
             return
         if args.command=='metrics':

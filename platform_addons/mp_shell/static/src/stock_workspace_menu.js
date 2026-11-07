@@ -23,6 +23,7 @@ class StockWorkspaceMenu extends Component {
                     <DropdownItem onSelected="() => this.open('/app/org.example.canvas/', selected.id)"><t t-esc="messages.canvas"/></DropdownItem>
                     <DropdownItem onSelected="() => this.open('/app/settings', selected.id)"><t t-esc="messages.settings"/></DropdownItem>
                     <DropdownItem onSelected="() => this.open('/app/org.example.notes/', selected.id)"><t t-esc="messages.tools"/></DropdownItem>
+                    <DropdownItem onSelected="() => this.open('/odoo/action-mp_core.action_job_history', selected.id)"><t t-esc="messages.jobs"/></DropdownItem>
                 </t>
                 <span t-if="!workspaces.length" class="dropdown-item-text" t-esc="emptyMessage"/>
             </t>
@@ -30,7 +31,7 @@ class StockWorkspaceMenu extends Component {
 
     setup() {
         this.messages = { notes: _t("Notes"), canvas: _t("Canvas"),
-            settings: _t("Platform settings"), tools: _t("Notes tools") };
+            settings: _t("Platform settings"), tools: _t("Notes tools"), jobs: _t("My background jobs") };
         this.workspaces = [];
         this.emptyMessage = _t("No workspaces available");
         onWillStart(async () => {

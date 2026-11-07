@@ -7,3 +7,4 @@ outcome_operator,outcome.operator,model_mp_service_outcome,base.group_system,1,0
 application_operator_no_rpc,application.operator.no.rpc,model_mp_application_operator,base.group_user,0,0,0,0
 operation_profile_no_rpc,operation.profile.no.rpc,model_mp_operation_profile,base.group_user,0,0,0,0
 operation_request_no_rpc,operation.request.no.rpc,model_mp_operation_request,base.group_user,0,0,0,0
+job_history_read,job.history.read,model_mp_job_history,base.group_user,1,0,0,0

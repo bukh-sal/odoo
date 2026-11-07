@@ -66,11 +66,21 @@ processed the next batch. The seven-day minimum and 100-row batch bound are
 recorded in ADR 0062. The owned site, candidate and PostgreSQL fixture were
 retired. [Operator archive evidence](evidence/post-r1/background-execution/bx-01-archive-operator.json)
 
-BX-01 resume capsule: no live fixture or pending mutation. Next implement
-paginated, read-only scoped job status using stock Odoo. Verify actor and
-workspace boundaries for live and archived jobs and expose safe aggregate
-pressure alerts. Event and outbox retention and latency under cleanup still
-follow. BX-02 through BX-05 remain queued. No blocker requires user action.
+The stock Odoo history action passed native HTTP and in-app browser checks.
+Live and archived receipts were isolated by actor, workspace and site. The
+native pager advanced above the 10,000-count display cap, the Archived filter
+showed the original job ID, and the operator saw the live-table pressure
+alert. The hot workspace page took 21.135 ms in one database plan, using
+parallel scans and a sort. Cleanup under concurrent web load is still open.
+The owned site and candidate were retired.
+[Scoped history evidence](evidence/post-r1/background-execution/bx-01-scoped-history.json)
+
+BX-01 resume capsule: no live fixture or pending mutation. Next implement and
+qualify outbox retention and the event replay boundary. First trace
+subscription polling, delivery acknowledgment and consumed-effect receipt
+references, then bind the cutoff and dependent records to reviewed cleanup.
+Measure lock duration and web latency after the event path. BX-02 through
+BX-05 remain queued. No blocker requires user action.
 
 BX-01 checklist, tracked independently of the five gate exits.
 
@@ -78,7 +88,7 @@ BX-01 checklist, tracked independently of the five gate exits.
 - [x] Verify native archival, duplicate identity, transaction races and rollback.
 - [x] Verify upgrades and fresh restores with historical totals above the cap.
 - [x] Review and qualify the operator cutoff, retention sizing and resumable batch.
-- [ ] Verify paginated scoped status and aggregate alerts.
+- [x] Verify paginated scoped status and aggregate alerts.
 - [ ] Qualify event and outbox replay and consumed-effect retention.
 - [ ] Measure lock duration and web latency during bounded cleanup.
 

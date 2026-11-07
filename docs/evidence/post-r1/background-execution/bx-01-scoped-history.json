@@ -1,0 +1,76 @@
+{
+  "gate": "BX-01",
+  "state": "in_progress",
+  "slice": "scoped native status and aggregate pressure alerts",
+  "project": "mp-r0-r1release71ab21931759",
+  "build_record": "../../G7/bx01-scoped-history-build-01/candidate-build.json",
+  "inventory": "sha256:5df41e23f7caf6fb9eec3ff5b684e786878fe30c143b2b0a2f945d294f1645be",
+  "install_operation": "4c276c56-29ed-4aed-a5de-796e9c462d5c",
+  "probe": "tests/background_scoped_history.py",
+  "observed": {
+    "image": "sha256:0afe736649d4ebdfba93f1c71089f26b2f21954f053425eb6cb55319506278a5",
+    "stock_action_and_view": true,
+    "page_sizes": [
+      50,
+      5
+    ],
+    "archived_original_id": true,
+    "held_and_unknown_visible": true,
+    "actor_workspace_and_site_isolated": true,
+    "direct_foreign_ids_denied": true,
+    "absent_scope_denied": true,
+    "private_models_denied": true,
+    "revoked_workspace_denied": true,
+    "mutations_denied": true,
+    "safe_projection": true,
+    "indexes_present": 2,
+    "operator_alerts": [
+      {
+        "count_is_lower_bound": true,
+        "rows_observed": 100001,
+        "status": "over_limit",
+        "table": "mp_job"
+      }
+    ],
+    "page_plan": {
+      "rows": 50,
+      "offset": 50,
+      "selected_indexes": [],
+      "execution_ms": 21.135
+    }
+  },
+  "browser": {
+    "surface": "Codex in-app browser",
+    "actor": "Alice",
+    "workspace": "Reference A",
+    "opened_from_stock_workspace_menu": true,
+    "page_before": "1-50 / 10000+",
+    "page_after_next": "51-100 / 10000+",
+    "native_archived_filter": true,
+    "archived_filter_count": 1
+  },
+  "planner": {
+    "combined_hot_scope": "parallel scans and top-N sort",
+    "live_only_diagnostic_index": "mp_job_history_order",
+    "live_only_diagnostic_ms": 0.32,
+    "synthetic_live_rows_added": 100002,
+    "not_a_web_latency_test": true
+  },
+  "regressions": {
+    "dispatch": 23,
+    "contract_freeze_passed": true,
+    "native_list_and_search_schemas_passed": true,
+    "scheduled_workload_passed": true
+  },
+  "retired": {
+    "containers": 17,
+    "volumes": 6,
+    "networks": 2,
+    "candidate_images": 1,
+    "candidate_tags": 2
+  },
+  "pending": [
+    "Event and outbox replay and retention",
+    "Measure lock duration and web latency during cleanup"
+  ]
+}
