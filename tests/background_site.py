@@ -42,9 +42,11 @@ class BackgroundSite(Reference):
         self.prepare_resources(dict(images={**images, 'application': {'image_id': record['image_id']}},
                                     application_inventory_digest=record['inventory_digest']),
                                record['git_base'], json.dumps(trust).encode(),
-                               subnets=({'runtime': '10.203.154.16/28', 'edge': '10.203.154.32/28'}
-                                        if self.args.run=='bg-02-01' else
-                                        {'runtime': '10.203.154.48/28', 'edge': '10.203.154.64/28'}))
+                               subnets={
+                                   'bg-02-01': {'runtime': '10.203.154.16/28', 'edge': '10.203.154.32/28'},
+                                   'bg-03-01': {'runtime': '10.203.154.48/28', 'edge': '10.203.154.64/28'},
+                                   'bx-01-history-01': {'runtime': '10.203.154.80/28', 'edge': '10.203.154.96/28'},
+                               }[self.args.run])
         self.admit(record)
 
     def admit(self, record):
@@ -153,7 +155,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('actions', nargs='+', choices=['prepare', 'initialize', 'resume_catalog', 'resume_version', 'install', 'probe', 'status'])
     parser.add_argument('--candidate', type=Path)
-    parser.add_argument('--run', choices=['bg-02-01', 'bg-03-01'], required=True)
+    parser.add_argument('--run', choices=['bg-02-01', 'bg-03-01', 'bx-01-history-01'], required=True)
     parser.add_argument('--port', type=int, default=18112)
     args = parser.parse_args()
     for action in args.actions:

@@ -1,0 +1,34 @@
+{
+  "gate": "BX-01",
+  "state": "in_progress",
+  "guarded_cli": {
+    "probe": "tests/background_history_site.py",
+    "candidate": "sha256:06e72a60b49709395a00371c01270ded8cc3ad661ca35fa1f4bd57d84e810bce",
+    "inventory": "sha256:e5597d421ff4a2b0cad2a29d33203ab04734560af8b1b44f064fd0bd625cb5ff",
+    "build_record": "../../G7/bx01-history-build-01/candidate-build.json",
+    "install_operation": "084d76c3-ab80-4d52-9212-18303545d730",
+    "empty_jobs": 0,
+    "seeded_terminal_jobs": 100002,
+    "reported_lower_bound": 100001,
+    "reported_state": "over_limit",
+    "completed_rows_after": 100002,
+    "dispatch_tables_observed": 7
+  },
+  "repeatable_read_probe": {
+    "probe": "tests/background_retention_race.py",
+    "postgres_image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "split_lookup_created_duplicate": true,
+    "shared_row_refused_stale_snapshot": "40001",
+    "fresh_retry_observed_original": true,
+    "rolled_back_move_preserved_live_row": true
+  },
+  "retired": {
+    "site_containers": 15,
+    "site_volumes": 6,
+    "site_networks": 2,
+    "candidate_tags": 2,
+    "candidate_images": 1,
+    "race_database_container": true
+  },
+  "limits": "The guarded site exercised the shipped diagnostic only. The race fixture establishes the PostgreSQL locking behavior for the proposed protocol. Native archival, retained identity handling, event retention, scoped history, and populated upgrade and restore remain unverified."
+}

@@ -38,13 +38,17 @@ when changing the workload, sizing, or queue/web behavior. The
 
 The [background execution follow-up plan](../planning/background_execution.md#follow-up-plan-for-sustained-background-workloads)
 tracks BX-01 through BX-05. **BX-01 is active.** No follow-up gate has
-passed. The [first PostgreSQL probe](evidence/post-r1/background-execution/bx-01-history-pressure.json)
-verified a bounded history report at and above the lifecycle limit. The
-operator CLI has a history entry point. Verify it end to end on a rebuilt
-candidate. BX-02 through BX-05 are queued. Next, design the archive and
-deduplication transaction with restore semantics before changing enqueue or
-deleting history. No disposable BX database is left running and no blocker
-requires user action.
+passed. The guarded CLI reported an empty job table and then the lower bound
+above the lifecycle limit on a rebuilt site with 100,002 synthetic rows.
+The PostgreSQL race probe reproduced a duplicate with a split lookup and
+verified that writing the shared identity row forces a stale transaction to
+retry. [CLI and concurrency evidence](evidence/post-r1/background-execution/bx-01-history-cli-and-race.json)
+· [Proposed retention protocol](architecture-decisions/0062-background-history-retention.md).
+BX-02 through BX-05 are queued. The next action is to wire the identity
+registry into native enqueue and the bounded archive transaction, with
+explicit lifecycle recognition and pre-upgrade compatibility. Exercise the
+real paths under both transaction orders before enabling cleanup. The owned
+fixtures and candidate image are retired. No blocker requires user action.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora
