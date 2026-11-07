@@ -1,0 +1,16 @@
+{
+  "gate": "CF-02",
+  "result": "passed_final_core46_inputs",
+  "checks": [
+    "CF-C",
+    "CF-D"
+  ],
+  "weight": 20,
+  "kit_manifest_sha256": "55aa4958e319006a73e3c97d2e6b175a4254ce67b3f538ea215909f1e6467d0f",
+  "source_commit": "2b2b3df5949b6bf42cc459978db13646d1909741",
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "reproduction": "../../G7/cf02-foundation46-repro-01/qualification.json",
+  "assembly": "cf-02-assembly-core46.json",
+  "delta": "cf-02-core46-delta.json",
+  "limits": "Clean operator/install, final fault/restore and closure still required."
+}
