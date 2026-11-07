@@ -118,11 +118,26 @@ The full host sweep passed 549 tests with one existing Windows-specific skip;
 the 106-file contract freeze passed. [BX-02 decision](evidence/post-r1/background-execution/bx-02-decision.json).
 
 BX-03 resume capsule: no live fixture, retained candidate, running test or pending
-mutation. Next define the versioned schedule/cursor contract and scoped service
-identity, then implement atomic cursor advancement and one-off enqueue. Qualify
+mutation. The [selected private recurrence contract](architecture-decisions/0064-native-recurring-schedules.md)
+has ten passing UTC selection/identity tests and fifteen PostgreSQL authority
+guard checks. The producer and native lifecycle extension remain unavailable.
+The current generic lifecycle fence refuses active technical credentials; do
+not weaken it. Next implement durable schedule/occurrence storage and atomic
+cursor advancement with one-off enqueue, then select the narrow reviewed native
+credential profile through the managed role. Qualify
 duplicate ticks, downtime, edits, pause/revocation, overlap, maintenance and
 restore before closing BX-03. BX-04 and BX-05 remain queued. No blocker requires
 user action. Gate progress is 2/5 (about 40%), independently of check counts.
+
+BX-03 checklist:
+
+- [x] Define and test fixed UTC selection, expiry, missed policies and stable nominal identity.
+- [ ] Implement durable schedule/cursor/receipt storage and concurrent atomic enqueue.
+- [ ] Wire scoped service authorization, edits, pause/resume, rotation and overlap.
+- [ ] Add the optional pinned producer role with readiness, maintenance exclusion and drain.
+- [ ] Qualify the narrow native-credential lifecycle profile and retained schema compatibility.
+- [ ] Qualify populated upgrade and fresh restore with a previously emitted occurrence.
+- [ ] Record native evidence and retire all owned qualification assets.
 
 BX-02 checklist, independently of gate exits:
 
@@ -589,6 +604,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
 | BX-02 | Resolved | Reviewed roles, partial recovery, connection loss, graceful/forced drain and actual release races passed; all owned Docker assets retired. See BX-02 decision. |
+| BX-03-LIFECYCLE | Active prerequisite, no user action needed | Generic lifecycle rejects active credentials. A narrow native schedule credential guard passed 15 PostgreSQL cases, but remains unwired pending durable schedule schema and independently reviewed producer profile. ADR 0064. |
 | STOCK-RTL-01 | Resolved | The bounded launcher mirrors the full stylesheet under the HTTP worker limit. Preflight and both browsers passed on the selected image. |
 | STOCK-PERF-01 | Resolved | The selected image passed the analyzed 10,000-note workload with p95 367.832 ms for list and 169.833 ms for detail. |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |

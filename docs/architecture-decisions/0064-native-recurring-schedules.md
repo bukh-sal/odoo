@@ -1,0 +1,84 @@
+# ADR 0064. Native recurring schedules
+
+Status: selected private contract; BX-03 implementation in progress. No recurring
+producer is enabled yet. The deterministic time-selection primitive is the
+first implementation boundary. Existing one-off job contracts remain unchanged.
+Ten deterministic cases and fifteen PostgreSQL credential-footprint checks
+passed. The credential guard is not yet selected by the lifecycle executor;
+its database fixture was retired. This is prerequisite evidence, not a BX-03 exit.
+
+BX-03 needs a separate pinned producer because guarded Odoo startup deliberately
+uses zero cron threads. Reuse the reviewed worker fleet for one optional producer
+role, on the same image and private network, with the same release, readiness,
+pause, drain and independent operator controls. It creates existing one-off
+jobs; it never executes handlers or opens dispatch. Start with at most one
+producer per site. The database protocol must still tolerate duplicate ticks.
+
+Persist a versioned private schedule, a cursor and compact occurrence receipts.
+The producer takes the shared dispatch fence before the schedule row lock. The
+occurrence reservation, authorized one-off enqueue, outstanding-job pointer and
+cursor advance commit together. No cursor may advance after a failed enqueue.
+Use bounded batches and fresh transactions. A schedule has at most one
+outstanding job; pending, running, retry, held and unknown outcomes block another
+occurrence. A completed, cancelled or terminal failed job permits future work.
+Use compact job history after archival to resolve terminal status.
+
+The occurrence identity is `(site, schedule public ID, nominal UTC instant)`.
+It excludes credential ID, schedule revision, handler version and release.
+The receipt is authoritative if a cursor is replayed: edits or credential
+rotation cannot create a second job for that occurrence. One-off enqueue keeps
+its existing scoped deduplication too. An outstanding job and its saved
+authority are immutable; rotating a schedule credential affects future jobs
+and does not elevate or rewrite work already submitted.
+
+Use second-aligned UTC anchors and integer intervals from one second to 366
+days. Each emitted job has a validity window of at most 24 hours and an attempt
+budget of at most one hour, clamped by that validity through the existing lease
+contract. Emit due occurrences only, so a distant schedule is stored without
+creating one-off jobs outside the 30-day horizon. No local-calendar, cron or
+daylight-saving interpretation is introduced.
+
+For `skip`, emit the cursor's nominal occurrence only if no later occurrence
+is already due, the lateness is within the explicit grace and validity remains.
+Otherwise advance to the first future occurrence without emitting. For
+`coalesce_latest`, emit only the latest nominal occurrence at or before the
+tick, provided its original validity remains. Both policies consider any
+number of missed intervals in constant time and record skipped counts. Neither
+extends an occurrence's expiry. Full catch-up remains excluded until its replay
+window and batch policy are separately specified and qualified.
+
+Pause retains the cursor; resume applies the selected missed-occurrence policy.
+An authorized edit increments the configuration revision, leaves any outstanding
+job intact and selects future nominal instants strictly after the durable
+considered high-water mark on the new interval grid. It cannot rewind the
+occurrence identity. Changing the service principal or installation requires a
+new schedule; credential rotation within that same scope can preserve the ID.
+
+Create and edit through trusted native adapters with a non-administrator
+service principal, active workspace membership and an explicit, unexpired
+credential for the selected native installation. Reuse bound-service and
+resource authorization at creation and every tick. No caller-provided actor,
+site or backing user is accepted. Store the credential reference and bounded
+scope, never its secret. Revocation, missing handler, suspended installation or
+lost binding holds the schedule with a safe reason. An application must
+explicitly repair and resume it under current authority.
+
+The existing lifecycle profile refuses all active technical credentials. Its
+replacement for this requirement must recognize only independently reviewed
+native schedule credentials, validate exact actor/workspace/installation and
+action scope, and retain all existing external-effect and unknown-result
+refusals. Do not relax the generic credential-count guard. Maintenance requires
+producer and lanes paused/stopped, and its snapshot includes schedule, cursor
+and occurrence receipts. Restores preserve occurrence identity and current
+revocations, keep traffic and dispatch closed, and require separate resume.
+Post-checkpoint occurrence receipts must be reconciled conservatively before a
+restored cursor can run; uncertain remote effects remain an independent hold.
+Credential replacement must not silently reactivate restored schedules.
+
+Qualification order: deterministic time/identity cases; PostgreSQL duplicate
+ticks and rollback; native service authorization and credential rotation;
+one-outstanding overlap and edit/pause/revocation; managed producer readiness
+and drain; populated maintenance and fresh restore of a previously emitted
+occurrence. Native recurrence is unavailable until the physical schema,
+lifecycle recognition and authority checks have passed together. Record exact
+semantics, fixtures and compatibility effects before exposing an app adapter.

@@ -1,0 +1,47 @@
+{
+  "gate": "BX-03",
+  "state": "prerequisites_passed_gate_open",
+  "utc": "2026-11-07T04:07:47Z",
+  "deterministic_tests": {
+    "tests": 10,
+    "passed": 10,
+    "probe": "tests/test_recurrence.py"
+  },
+  "postgresql": {
+    "tests": 15,
+    "passed": 15,
+    "probe": "tests/background_recurrence_authority.py",
+    "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+    "python_image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+    "network": "none; client shares only the disposable database network namespace",
+    "credential_cases": [
+      "native scope accepted without secret",
+      "global administrator group refused",
+      "administrator user mapping refused",
+      "external installation refused",
+      "wider actions refused",
+      "longer credential lifetime refused",
+      "unreferenced credential refused",
+      "foreign workspace refused",
+      "revoked membership refused",
+      "foreign site refused",
+      "duplicate policy identity refused",
+      "same-scope secret rotation accepted without export",
+      "revocation preserved",
+      "replacement identity requires review",
+      "new review accepts replacement scope"
+    ]
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/recurrence.py": "9bc417c3c3d73fc829c9b34122f5f0f49eb52a6ee0f8b6a9e2ad0ef589de6366",
+    "packages/platform_sdk/modular_platform/recurrence_authority.py": "5e88a3d76b5d4584969e5c120ff7f6468ddc634cfc6f6018c473771a8f4e7f97"
+  },
+  "retirement": {
+    "database_container_removed": true,
+    "client_auto_removed": true,
+    "temporary_database_storage": "tmpfs",
+    "created_images": 0,
+    "remaining_fixture_containers": 0
+  },
+  "qualification_boundary": "No durable recurrence storage, managed producer, native lifecycle profile or recovery integration is enabled or claimed."
+}
