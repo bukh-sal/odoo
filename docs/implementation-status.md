@@ -51,11 +51,30 @@ covered both stale transaction orders, rollback, excluded jobs and a digest
 of 100,007 identity rows. The owned site and candidate were retired.
 [Native archival evidence](evidence/post-r1/background-execution/bx-01-native-archive.json)
 
-BX-01 resume capsule: no live fixture or pending mutation. Next qualify the
-core 0.1.30 to 0.1.31 upgrade and fresh restore with populated history above
-the old limit. Then qualify a reviewed operator batch, scoped status, event
-and outbox retention, and latency under cleanup. BX-02 through BX-05 remain
+The core 0.1.30 to 0.1.31 upgrade passed with pending and previously claimed
+jobs. A fault after publication first restored the old schema into a fresh
+database. A second fault after a later deployment restored 100,002 retained
+identities with the exact checkpoint digest and original archived job ID.
+Both restores kept traffic closed until a separate resume review. The owned
+site, three candidates and isolated base worktree were retired.
+[Populated lifecycle evidence](evidence/post-r1/background-execution/bx-01-retention-lifecycle.json)
+
+BX-01 resume capsule: no live fixture or pending mutation. Next implement and
+qualify the independently reviewed operator cutoff and bounded, resumable
+archive batch. Record the policy assumptions for payload, safe status,
+deduplication and external-effect retention. Scoped status, event and outbox
+retention, and latency under cleanup still follow. BX-02 through BX-05 remain
 queued. No blocker requires user action.
+
+BX-01 checklist, tracked independently of the five gate exits.
+
+- [x] Measure the live-table threshold on a guarded site.
+- [x] Verify native archival, duplicate identity, transaction races and rollback.
+- [x] Verify upgrades and fresh restores with historical totals above the cap.
+- [ ] Review and qualify the operator cutoff, retention sizing and resumable batch.
+- [ ] Verify paginated scoped status and aggregate alerts.
+- [ ] Qualify event and outbox replay and consumed-effect retention.
+- [ ] Measure lock duration and web latency during bounded cleanup.
 
 The shared foundation stress test is tracked separately from the completed R1
 gate. The selected systems are stock Odoo Maintenance and a bounded Aurora

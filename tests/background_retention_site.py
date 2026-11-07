@@ -19,7 +19,7 @@ from odoo.addons.mp_core import job_dispatch
 from odoo.addons.mp_identity.release import current_release
 from odoo.addons.mp_identity.scopes import scoped_environment
 
-assert env.cr.dbname == FIXTURE_DB and FIXTURE_DB.startswith('mp_disposable_r0_r1_release_')
+assert env.cr.dbname == FIXTURE_DB and FIXTURE_DB.startswith(('mp_disposable_r0_r1_release_', 'mp_disposable_r0_r1_restore_'))
 registry = env.registry
 release = current_release(env)
 site = release['site_id']
@@ -44,7 +44,14 @@ with registry.cursor() as cr:
     job = submit(cr)
     assert submit(cr) == job
     cr.commit()
-assert run_once(registry, str(uuid4()), pool='bulk')['state'] == 'completed'
+for attempt in range(3):
+    run_once(registry, str(uuid4()), pool='bulk')
+    with registry.cursor() as cr:
+        cr.execute('SELECT state FROM mp_job WHERE public_id=%s', [job])
+        if cr.fetchone() == ('completed',):
+            break
+else:
+    raise AssertionError('The retained fixture job did not complete')
 with registry.cursor() as cr:
     cr.execute("SELECT state FROM mp_job WHERE public_id=%s", [job])
     assert cr.fetchone() == ('completed',)

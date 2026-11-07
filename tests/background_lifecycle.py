@@ -39,7 +39,7 @@ reminder=task._queue_current()
 now=datetime.now(timezone.utc)
 def report(when):
     return enqueue_scheduled(task._job_env(),'jobs','org.example.background:report',dict(first=1,last=500),
-        str(uuid4()),schedule=durable.JobSchedule(when,when+timedelta(seconds=180),20))
+        str(uuid4()),version=REPORT_VERSION,schedule=durable.JobSchedule(when,when+timedelta(seconds=180),20))
 retired=report(future)
 running=report(now)
 release=current_release(env)
@@ -66,8 +66,8 @@ def shell(probe,label,code):
     return result.decode()
 
 
-def seed_jobs(probe):
-    raw=shell(probe,'bg03-lifecycle-seed','import json\nFIXTURE='+repr(probe.fixture)+'\n'+SEED)
+def seed_jobs(probe, *, report_version=1):
+    raw=shell(probe,'bg03-lifecycle-seed',f'import json\nFIXTURE={probe.fixture!r}\nREPORT_VERSION={report_version!r}\n'+SEED)
     value,=[json.loads(row.split('=',1)[1]) for row in raw.splitlines() if row.startswith('BG_LIFECYCLE=')]
     return value
 

@@ -1,0 +1,87 @@
+{
+  "gate": "BX-01",
+  "state": "in_progress",
+  "slice": "populated core upgrade and fresh restore",
+  "probe": "tests/background_retention_lifecycle.py",
+  "project": "mp-r0-r1release7688b9263811",
+  "base": {
+    "core": "0.1.30",
+    "image": "sha256:fdc34858a4e14bc3b3c64530ca4feacec9d06f4f578d00b602757b606f5e1198",
+    "build_record": "../../G7/bx01-history-upgrade-base-02/candidate-build.json"
+  },
+  "successor": {
+    "core": "0.1.31",
+    "image": "sha256:66d1334cea5d677c1201ef2de2c0ee9dc05fe1a1ca1447ad8a14678276084b80",
+    "build_record": "../../G7/bx01-history-upgrade-successor-01/candidate-build.json"
+  },
+  "fault_target": {
+    "image": "sha256:c5c44aacb5c92b58bb1436d22ff3f1042cce2a5c3d841ae300a41e465174e01a",
+    "build_record": "../../G7/bx01-history-restore-target-01/candidate-build.json"
+  },
+  "legacy_fault": {
+    "operation": "b0491fef-b7d6-4b29-bc0a-ab1e3dbc1140",
+    "candidate": "sha256:66d1334cea5d677c1201ef2de2c0ee9dc05fe1a1ca1447ad8a14678276084b80",
+    "restore": "sha256:402ca67e07c6567395fb9bfbccbeb8bccc312dfdccc8dfef6fa42ee0986698c3",
+    "resume": "sha256:793cf6c15f0c99831a3b2d7915d61e26772db0365c59c8c29df28ae560406d7a",
+    "source_identity": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "timing_and_scope_preserved": true,
+    "stale_claim_denied": true,
+    "restored_to_fresh_database": true,
+    "resumed_separately": true,
+    "original_schema_restored": true
+  },
+  "upgrade": {
+    "operation": "5d80b625-0014-4925-bb61-a4fc77e98386",
+    "candidate": "sha256:66d1334cea5d677c1201ef2de2c0ee9dc05fe1a1ca1447ad8a14678276084b80",
+    "timing_and_scope_preserved": true,
+    "stale_claim_denied": true,
+    "target_schema_present": true,
+    "traffic_resumed": true
+  },
+  "populated_restore": {
+    "operation": "205baafa-7b8e-488c-8b40-4329afc43b90",
+    "candidate": "sha256:c5c44aacb5c92b58bb1436d22ff3f1042cce2a5c3d841ae300a41e465174e01a",
+    "restore": "sha256:fced9982644a7e8a260dd21bcc4353d12d7ee764c610f3ad148334b6661fffaa",
+    "resume": "sha256:7c8446d70622024c5a676e165b01ef2c9430097aab3cb722c021a092b3ecfd46",
+    "source_identity": {
+      "rows": 100002,
+      "sha256": "8a3479d455a21959815113cd2577e40b96a143d840932fa245031d4a6ae752a9"
+    },
+    "restored_identity": {
+      "rows": 100002,
+      "sha256": "8a3479d455a21959815113cd2577e40b96a143d840932fa245031d4a6ae752a9"
+    },
+    "stale_claim_denied": true,
+    "checkpoint_identity": {
+      "rows": 100002,
+      "sha256": "8a3479d455a21959815113cd2577e40b96a143d840932fa245031d4a6ae752a9"
+    },
+    "restored_to_fresh_database": true,
+    "resumed_separately": true,
+    "native_archived_job_preserved": true,
+    "synthetic_archived_identity_rows": 100001
+  },
+  "regressions": {
+    "restore": 18,
+    "dispatch": 23,
+    "release": 29,
+    "contract_freeze_passed": true
+  },
+  "retired": {
+    "containers": 79,
+    "volumes": 6,
+    "networks": 2,
+    "candidate_images": 3,
+    "candidate_tags": 7,
+    "base_worktree_retired": true
+  },
+  "pending": [
+    "Reviewed operator batch and retention sizing",
+    "Paginated scoped status and aggregate alerts",
+    "Event and outbox replay and consumed-effect retention",
+    "Lock duration and web latency during cleanup"
+  ]
+}

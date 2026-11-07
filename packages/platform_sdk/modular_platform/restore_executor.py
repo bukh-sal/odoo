@@ -19,6 +19,7 @@ import secrets
 from .catalog import Catalog
 from .contracts import load_json
 from .deployment import DockerObserver, _run
+from .dispatch_lifecycle import JOB_IDENTITY, PHYSICAL_SCHEMA
 from .operator_os import OperatorError, OperationLocks, current_identity, protect_directory
 from .operator_store import _write_new
 from .plans import data_digest
@@ -183,9 +184,26 @@ class RestoreExecutor:
             config={**config,'image_id':staged['target_image_id']}
         helper=self._dispatch_helper(manifest=manifest,purpose='source_inspection')
         observed=helper.require_profile(helper.inspect_current(configuration=config),closed=True)
-        if profile is not None and observed['schema_digest']!=profile['schema_digest']:
+        if (profile is not None and observed['schema_digest']!=profile['schema_digest']
+                and not self._empty_job_identity_transition(profile,observed,bundle)):
             raise OperatorError('Failed dispatch schema requires independent reconciliation')
         return observed
+
+    @staticmethod
+    def _empty_job_identity_transition(previous,current,bundle):
+        # A failed first upgrade can create the table while ingress and dispatch
+        # are fenced. Refuse any identity rows or any other schema difference.
+        changes=bundle['operation_lock'].get('native_core_changes',[])
+        if (bundle['plan']['operation_type']!='core_upgrade'
+                or previous['profile']!='r1-native-dispatch-v1' or current['profile']!=previous['profile']
+                or not any((change['addon'],change['previous_version'],change['target_version'])
+                    ==('mp_core','19.0.0.1.30','19.0.0.1.31') for change in changes)):
+            return False
+        before=previous['tables'].keys();after=current['tables'].keys()
+        return (JOB_IDENTITY not in before and after==before|{JOB_IDENTITY}
+                and current['tables'][JOB_IDENTITY]['rows']==0
+                and all(snapshot['schema_digest']==data_digest({table:PHYSICAL_SCHEMA[table] for table in snapshot['tables']})
+                        for snapshot in (previous,current)))
 
     def _restore_state(self, operation):
         self._operation=operation
