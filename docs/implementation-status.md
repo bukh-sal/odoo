@@ -141,7 +141,7 @@ Thirty-four containers, six volumes, two networks and both current candidate
 images were retired, in addition to the earlier obsolete images and helpers.
 [Retirement](evidence/post-r1/background-execution/bx-03-retirement.json).
 
-Resume capsule: no test, mutation or live goal fixture remains. BX-04 is the
+Resume capsule: BX-04 owns the one live fixture and sustained test below. BX-04 is the
 one active item. [ADR0065](architecture-decisions/0065-background-capacity-advice.md)
 fixes the sustained workload, latency/headroom targets and scaling comparison.
 Bounded SQL observations passed seven actual PostgreSQL checks, including the
@@ -150,10 +150,34 @@ Bounded SQL observations passed seven actual PostgreSQL checks, including the
 The read-only advisor passed twelve boundary tests. Thirteen fleet tests and
 the 106-file freeze passed. Source adds conservative preparation/commit timing,
 per-handler worker duration, pinned `jobs capacity` and `jobs advise` commands,
-and a bounded variable-CPU reference handler. These changes need native proof.
-Next build core41 and initialize `bx-04-capacity-01` on port18126; qualify native
-observations/timing, then repeat BG-04 before the sustained comparisons.
-No candidate or site has been created for BX-04 yet. Reuse reviewed fleet resizing; automatic sizing
+and a bounded variable-CPU reference handler. Native proof is recorded below.
+Initial core41 candidate `fd7f44c6a21e` qualified on disposable project
+`mp-r0-r1releaseb152ddffba06`, port18126, database
+`mp_disposable_r0_r1_release_b152ddffba06`. Native telemetry passed six jobs,
+claim/end generation matching, full preparation plus attempt timing, pinned
+snapshot and read-only CLI missing-health hold. Fleet startup was 14.500635 s.
+[Native evidence](evidence/post-r1/background-execution/bx-04-native-telemetry.json).
+The BG-04 paired rerun passed: reminder start p95 2.104 s, oldest ready
+2.185 s, bulk drain 34.522 s; mixed list/detail p95 173.592/72.035 ms met both
+absolute and relative targets. All 150 notifications and 40 report outputs were
+scoped; Notes stayed exact. Manual bulk restart drained in15.406 s.
+[Repeat evidence](evidence/post-r1/background-execution/bx-04-bg04-repeat.json).
+Seventy workspaces were independently activated in operation
+`4cba5909-2c14-4c1f-95b3-0cd1a3c684d9`, with ten report rows each.
+Adding the CPU fixture handler required an artifact version bump. Corrected
+reference0.2.1/core41 candidate `4a9a06242dfd` passed a separate approved package
+upgrade `b794ebf1-b905-41ad-af35-43a9b8366888`, preserving all70 scopes/data.
+Current target generation4 uses that image; old fd7f candidate remains only as
+its recovery dependency. [Setup evidence](evidence/post-r1/background-execution/bx-04-workspace-setup.json).
+The 180-second hot case is running in session34847, anchor
+`2026-11-07T06:14:04Z`, with150 reminders and72 variable bulk jobs at0.4/s.
+Do not replay seed `bx04-sustained-seed-hot`. Its record is
+`.local/background-qualification/bx-04-capacity-01/bx04-sustained-hot.json`.
+Next inspect the complete hot result, then run the equivalent `many` case.
+The workers will drain on successful qualification. No uncertain mutation or
+external effect is pending. `tests/background_sustained_load.py` owns the case;
+`tests/background_sustained.py` records the settled setup and package upgrade.
+Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is
 `.local/background-qualification/bx-03-recurrence-01/bx03-recovery.json`, passed.
@@ -164,8 +188,8 @@ BX-04 checklist:
 
 - [x] Fix admitted workload, failure cases and quantitative latency/headroom targets.
 - [x] Verify bounded SQL classification and pure advisor boundary behavior.
-- [ ] Qualify native telemetry, timing, pins and read-only CLI advice.
-- [ ] Repeat the original BG-04 paired native web/reminder/bulk workload.
+- [x] Qualify native telemetry, timing, pins and read-only CLI advice.
+- [x] Repeat the original BG-04 paired native web/reminder/bulk workload.
 - [ ] Measure sustained hot-workspace, 70-workspace and variable-duration load.
 - [ ] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost.
 - [ ] Qualify process loss, fairness, recurring bursts, saturation and stale metrics.

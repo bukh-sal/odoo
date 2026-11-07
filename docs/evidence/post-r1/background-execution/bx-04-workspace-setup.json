@@ -1,0 +1,14 @@
+{
+  "gate": "BX-04",
+  "state": "setup_passed_load_pending",
+  "workspaces": 70,
+  "activation_operation": "4cba5909-2c14-4c1f-95b3-0cd1a3c684d9",
+  "reference_upgrade_operation": "b794ebf1-b905-41ad-af35-43a9b8366888",
+  "reference_version": "0.2.1",
+  "image": "sha256:4a9a06242dfd290f8724d110789782aaaa2036cced6a56054f5ab89965325db6",
+  "datasets": 70,
+  "rows_per_dataset": 10,
+  "expected_report_points": 45,
+  "independent_approvals": true,
+  "scope": "Approved native feature activation and reference-package upgrade; no sustained capacity claim."
+}

@@ -193,12 +193,13 @@ class EdgePeer:
 
 
 def run(resume_seed=False,tuned=False,scaled=False,aligned=False,linux_peer=False,web_three=False,db_four=False,
-        one_urgent=False):
+        one_urgent=False,run_name='bg-03-01'):
     db_four=db_four or one_urgent
     web_three=web_three or db_four
     aligned=aligned or linux_peer or web_three
-    probe=Probe('bg-03-01',extra_phase='bg04-mixed-seed' if resume_seed else None)
-    lifecycle=json.loads((probe.site.local/'bg03-release-queue.json').read_text())
+    assert run_name in {'bg-03-01','bx-04-capacity-01'}
+    probe=Probe(run_name,extra_phase='bg04-mixed-seed' if resume_seed else None)
+    lifecycle=json.loads((probe.site.local/('bg03-release-queue.json' if run_name=='bg-03-01' else 'bx04-native.json')).read_text())
     assert lifecycle['phase']=='passed'
     path=probe.site.local/('bg04-load-one-urgent.json' if one_urgent else 'bg04-load-db-four.json' if db_four else 'bg04-load-web-three.json' if web_three else 'bg04-load-linux-peer.json' if linux_peer else 'bg04-load-aligned-02.json' if aligned else 'bg04-load-scaled.json' if scaled else
                            'bg04-load-tuned.json' if tuned else 'bg04-load.json')
@@ -240,7 +241,12 @@ def run(resume_seed=False,tuned=False,scaled=False,aligned=False,linux_peer=Fals
     peer=EdgePeer(probe,ident) if linux_peer else None
     names={'application':probe.target['worker_id'],'postgres':probe.project+'-db-1','edge':probe.project+'-edge-1'}
     urgent_count=2 if (scaled or aligned) and not one_urgent else 1
-    for row in probe.operator.run('start',urgent_lanes=urgent_count)['lanes']:
+    from modular_platform.job_fleet import JobFleet
+    if JobFleet(probe.operator).desired():
+        fleet=probe.operator.run('status')
+        assert fleet['state']=='ready' and fleet['pools']['urgent']['desired']==urgent_count and fleet['pools']['bulk']['desired']==2
+    else:fleet=probe.operator.run('start',urgent_lanes=urgent_count)
+    for row in fleet['lanes']:
         names[row['name']]=row['container']
     resources={}
     for role,name in names.items():
@@ -440,7 +446,8 @@ def run(resume_seed=False,tuned=False,scaled=False,aligned=False,linux_peer=Fals
 
 
 if __name__=='__main__':
+    run_name=sys.argv[sys.argv.index('--run')+1] if '--run' in sys.argv else 'bg-03-01'
     run(resume_seed='--resume-seed' in sys.argv[1:],tuned='--tuned' in sys.argv[1:],
         scaled='--scaled' in sys.argv[1:],aligned='--aligned' in sys.argv[1:],
         linux_peer='--linux-peer' in sys.argv[1:],web_three='--web-three' in sys.argv[1:],
-        db_four='--db-four' in sys.argv[1:],one_urgent='--one-urgent' in sys.argv[1:])
+        db_four='--db-four' in sys.argv[1:],one_urgent='--one-urgent' in sys.argv[1:],run_name=run_name)

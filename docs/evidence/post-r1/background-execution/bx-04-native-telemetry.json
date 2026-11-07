@@ -1,0 +1,191 @@
+{
+  "gate": "BX-04",
+  "state": "native_telemetry_passed_load_pending",
+  "image": "sha256:fd7f44c6a21e14ea41e5f807adf977bfba9c1463633a6ecd894aad0ed311f40c",
+  "profile_startup_seconds": 14.500635,
+  "samples": [
+    {
+      "handler_version": "org.example.background:load:1",
+      "at": "2026-11-07T05:59:11.767141+00:00",
+      "worker_seconds": 0.252
+    },
+    {
+      "handler_version": "org.example.background:report:2",
+      "at": "2026-11-07T05:59:12.994718+00:00",
+      "worker_seconds": 1.225
+    },
+    {
+      "handler_version": "org.example.background:report:2",
+      "at": "2026-11-07T05:59:14.084289+00:00",
+      "worker_seconds": 1.087
+    },
+    {
+      "handler_version": "org.example.background:load:1",
+      "at": "2026-11-07T05:59:11.599252+00:00",
+      "worker_seconds": 0.085
+    },
+    {
+      "handler_version": "org.example.background:load:1",
+      "at": "2026-11-07T05:59:12.801041+00:00",
+      "worker_seconds": 1.199
+    },
+    {
+      "handler_version": "org.example.background:report:2",
+      "at": "2026-11-07T05:59:13.917249+00:00",
+      "worker_seconds": 1.114
+    }
+  ],
+  "jobs": 6,
+  "queue_groups": [
+    {
+      "arrivals_60s": 2,
+      "completions_60s": 2,
+      "current": true,
+      "expired": 0,
+      "future": 0,
+      "handler": "org.example.background:load",
+      "held": 0,
+      "min_validity_ms": null,
+      "original_wait_ms": 0,
+      "pool": "bulk",
+      "ready": 0,
+      "retry": 0,
+      "retry_wait_ms": 0,
+      "running": 0,
+      "unknown": 0,
+      "version": 1,
+      "workspace": 1
+    },
+    {
+      "arrivals_60s": 1,
+      "completions_60s": 1,
+      "current": true,
+      "expired": 0,
+      "future": 0,
+      "handler": "org.example.background:load",
+      "held": 0,
+      "min_validity_ms": null,
+      "original_wait_ms": 0,
+      "pool": "bulk",
+      "ready": 0,
+      "retry": 0,
+      "retry_wait_ms": 0,
+      "running": 0,
+      "unknown": 0,
+      "version": 1,
+      "workspace": 2
+    },
+    {
+      "arrivals_60s": 1,
+      "completions_60s": 1,
+      "current": true,
+      "expired": 0,
+      "future": 0,
+      "handler": "org.example.background:report",
+      "held": 0,
+      "min_validity_ms": null,
+      "original_wait_ms": 0,
+      "pool": "bulk",
+      "ready": 0,
+      "retry": 0,
+      "retry_wait_ms": 0,
+      "running": 0,
+      "unknown": 0,
+      "version": 2,
+      "workspace": 1
+    },
+    {
+      "arrivals_60s": 2,
+      "completions_60s": 2,
+      "current": true,
+      "expired": 0,
+      "future": 0,
+      "handler": "org.example.background:report",
+      "held": 0,
+      "min_validity_ms": null,
+      "original_wait_ms": 0,
+      "pool": "bulk",
+      "ready": 0,
+      "retry": 0,
+      "retry_wait_ms": 0,
+      "running": 0,
+      "unknown": 0,
+      "version": 2,
+      "workspace": 2
+    }
+  ],
+  "pins": {
+    "database": "mp_disposable_r0_r1_release_b152ddffba06",
+    "deployment_id": "f25d11f6-e9f3-4d1e-8e1d-e6ac1327f99b",
+    "image_id": "sha256:fd7f44c6a21e14ea41e5f807adf977bfba9c1463633a6ecd894aad0ed311f40c",
+    "inventory_digest": "sha256:06c89a18bf4e63c6147734309a7a91428d187b197198537dc9f55c0f5d1bc6aa",
+    "release_digest": "sha256:bad09637ca6d17279fb8e452cbe0f20f6b830f87fb049d980d2f7e151ea84a66",
+    "site_id": "198336b2-6143-4e59-bb14-eb8f2e5d39df",
+    "target_digest": "sha256:05d78f411edd193f3b8d97bf960f7c6174b370f08a3b380f5eedeec350caf645",
+    "resource_profile": {
+      "cpu_millis": 1000,
+      "memory_mib": 768
+    }
+  },
+  "missing_headroom_hold": {
+    "protocol": 1,
+    "action": "advice_only",
+    "state": "hold",
+    "reasons": [
+      "missing_headroom"
+    ],
+    "pools": {
+      "urgent": {
+        "ready": 0,
+        "worker_seconds": 0,
+        "workspace_slots": 0,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 14.501,
+        "oldest_original_wait_seconds": 0,
+        "constraints": [],
+        "current_ready_lanes": 1,
+        "startup_seconds": 14.500635,
+        "estimated_lanes": 1
+      },
+      "bulk": {
+        "ready": 0,
+        "worker_seconds": 0,
+        "workspace_slots": 0,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 14.501,
+        "oldest_original_wait_seconds": 0,
+        "constraints": [],
+        "current_ready_lanes": 2,
+        "startup_seconds": 14.500635,
+        "estimated_lanes": 1
+      }
+    },
+    "estimates": {
+      "org.example.background:report:2": {
+        "pool": "bulk",
+        "seconds": 2,
+        "samples": 3,
+        "fallback": true,
+        "arrival_per_second": 0
+      },
+      "org.example.background:load:1": {
+        "pool": "bulk",
+        "seconds": 2,
+        "samples": 3,
+        "fallback": true,
+        "arrival_per_second": 0
+      }
+    },
+    "observation_age_seconds": 6.037307,
+    "mutation_authorized": false
+  },
+  "preparation_accounting_verified": true,
+  "claim_and_end_generations_matched": true,
+  "fleet_ready_counts": {
+    "urgent": 1,
+    "bulk": 2
+  },
+  "limits": "Six native timing jobs and pinned read-only CLI only; sustained load/scaling not qualified."
+}

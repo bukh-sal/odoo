@@ -1,0 +1,144 @@
+{
+  "phase": "passed",
+  "image": "sha256:fd7f44c6a21e14ea41e5f807adf977bfba9c1463633a6ecd894aad0ed311f40c",
+  "workload": {
+    "tasks": 1000,
+    "reminders": 150,
+    "bulk": 40,
+    "sha256": "e718ec8829a524ab9d430c6aa80974852d5f1455a16171957c2fd8d70c81329c"
+  },
+  "idle": {
+    "list": {
+      "count": 200,
+      "median_ms": 95.304,
+      "p95_ms": 159.218,
+      "max_ms": 171.853
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 50.381,
+      "p95_ms": 80.555,
+      "max_ms": 93.932
+    }
+  },
+  "mixed": {
+    "list": {
+      "count": 200,
+      "median_ms": 99.406,
+      "p95_ms": 173.592,
+      "max_ms": 196.918
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 39.277,
+      "p95_ms": 72.035,
+      "max_ms": 106.371
+    }
+  },
+  "resources": {
+    "application": {
+      "nano_cpus": 3000000000,
+      "memory_bytes": 1610612736
+    },
+    "postgres": {
+      "nano_cpus": 4000000000,
+      "memory_bytes": 536870912
+    },
+    "edge": {
+      "nano_cpus": 500000000,
+      "memory_bytes": 134217728
+    },
+    "mp-r0-r1releaseb152ddffba06-job-bulk-1": {
+      "nano_cpus": 1000000000,
+      "memory_bytes": 805306368
+    },
+    "mp-r0-r1releaseb152ddffba06-job-bulk-2": {
+      "nano_cpus": 1000000000,
+      "memory_bytes": 805306368
+    },
+    "mp-r0-r1releaseb152ddffba06-job-urgent-1": {
+      "nano_cpus": 1000000000,
+      "memory_bytes": 805306368
+    },
+    "docker": {
+      "cpus": 16,
+      "memory_bytes": 8290816000,
+      "storage_driver": "overlayfs"
+    }
+  },
+  "worker_timings": {
+    "urgent": {
+      "start": {
+        "count": 150,
+        "median_ms": 209.5,
+        "p95_ms": 2104,
+        "max_ms": 2575
+      },
+      "duration": {
+        "count": 150,
+        "median_ms": 54.0,
+        "p95_ms": 70,
+        "max_ms": 104
+      }
+    },
+    "bulk": {
+      "start": {
+        "count": 40,
+        "median_ms": 16241.5,
+        "p95_ms": 30813,
+        "max_ms": 32545
+      },
+      "duration": {
+        "count": 40,
+        "median_ms": 1120.0,
+        "p95_ms": 1245,
+        "max_ms": 1248
+      }
+    }
+  },
+  "oldest_urgent_ms": 2185,
+  "bulk_drain_seconds": 34.52195501327515,
+  "bulk_throughput_per_second": 1.1586829304602915,
+  "pg_connections_peak": 11,
+  "pg_active_peak": 5,
+  "sample_count": 118,
+  "listen_counters_delta": {
+    "ListenOverflows": 0,
+    "ListenDrops": 0
+  },
+  "postgres_idle_cpu_delta": {
+    "usage_usec": 5152593,
+    "user_usec": 3844725,
+    "system_usec": 1307868,
+    "nice_usec": 0,
+    "nr_periods": 296,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "postgres_mixed_cpu_delta": {
+    "usage_usec": 28596282,
+    "user_usec": 21381925,
+    "system_usec": 7214357,
+    "nice_usec": 0,
+    "nr_periods": 1069,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "mixed_web_targets_passed": true,
+  "mixed_queue_targets_passed": true,
+  "recovered_after_seconds": 15.406,
+  "restart": "operator_start",
+  "native_notes_unchanged": true,
+  "notifications": 150,
+  "scoped_reports": 40,
+  "restart_reports": 40,
+  "preload_margin_seconds": 56.845,
+  "gate": "BX-04",
+  "check": "BX04-01",
+  "private_full_record_sha256": "a28dda965ba5a8bfe7761464d26eedfe628f2a59327a4e8157411803e75077e3",
+  "limits": "Paired original workload and manually restarted bulk backlog only; sustained arrival/scaling checks remain open."
+}
