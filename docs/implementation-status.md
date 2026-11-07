@@ -169,14 +169,21 @@ reference0.2.1/core41 candidate `4a9a06242dfd` passed a separate approved packag
 upgrade `b794ebf1-b905-41ad-af35-43a9b8366888`, preserving all70 scopes/data.
 Current target generation4 uses that image; old fd7f candidate remains only as
 its recovery dependency. [Setup evidence](evidence/post-r1/background-execution/bx-04-workspace-setup.json).
-The 180-second hot case is running in session34847, anchor
-`2026-11-07T06:14:04Z`, with150 reminders and72 variable bulk jobs at0.4/s.
-Do not replay seed `bx04-sustained-seed-hot`. Its record is
-`.local/background-qualification/bx-04-capacity-01/bx04-sustained-hot.json`.
-Next inspect the complete hot result, then run the equivalent `many` case.
-The workers will drain on successful qualification. No uncertain mutation or
-external effect is pending. `tests/background_sustained_load.py` owns the case;
-`tests/background_sustained.py` records the settled setup and package upgrade.
+The first sustained measurement lost an expired keepalive connection at the
+scheduled start. It is incomplete, preserved, and retired:185 jobs completed,
+37 remaining jobs cancelled after full drain. Added the proven BG04 reconnect/
+warm-up before eligibility, with distinct attempt keys; no target was relaxed.
+[Diagnostic](evidence/post-r1/background-execution/bx-04-initial-sustained-diagnostic.json).
+The fresh180-second hot case is running in session28074, anchor
+`2026-11-07T06:17:58Z`, with150 reminders and72 variable bulk jobs at0.4/s.
+Its record is `.local/background-qualification/bx-04-capacity-01/bx04-sustained-hot-02.json`.
+Do not replay seed `bx04-sustained-seed-hot-02`. Next inspect the complete hot
+result, then cover the equivalent many-workspace case and fresh enqueue pressure.
+This case preloads future eligibility; it does not measure a concurrent live
+producer's enqueue commits. Keep that distinction in the next experiment.
+The workers drain on successful qualification. No uncertain mutation or remote
+effect is pending. `tests/background_sustained_load.py` owns the active case;
+`tests/background_sustained.py` records settled setup/upgrade and prior cleanup.
 Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is

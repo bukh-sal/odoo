@@ -1,0 +1,29 @@
+{
+  "gate": "BX-04",
+  "state": "incomplete_measurement",
+  "diagnostic": "RemoteDisconnected at first mixed request after idle scheduled wait; warm connections expired. No sustained-load pass claimed.",
+  "cleanup": {
+    "states": {
+      "completed": 185,
+      "cancelled": 37
+    },
+    "owned_jobs": 222
+  },
+  "idle": {
+    "list": {
+      "count": 200,
+      "median_ms": 109.0,
+      "p95_ms": 187.0,
+      "max_ms": 203.0
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 47.0,
+      "p95_ms": 78.0,
+      "max_ms": 94.0
+    }
+  },
+  "mixed_measured": false,
+  "fix": "Close and reconnect/warm all20 HTTP connections five seconds before eligibility, as in the qualified BG04 harness.",
+  "qualification_claim": false
+}

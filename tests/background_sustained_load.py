@@ -3,6 +3,8 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime,timezone
 import json
+import hashlib
+from pathlib import Path
 from threading import Barrier,Event,Thread
 import time
 
@@ -29,7 +31,7 @@ for workspace,label in [(0,'A'),(1,'B')]:
     actor=actors[label];model=actor['mp.background.task']
     env.cr.execute('SELECT id FROM mp_principal WHERE public_id=%s',[FIXTURE['users'][DATA[label]['user']]['principal_id']])
     assignee,=env.cr.fetchone()
-    values=[dict(name=CASE+' reminder '+str(n),points=n%13,assignee_id=assignee,
+    values=[dict(name=KEYTAG+' reminder '+str(n),points=n%13,assignee_id=assignee,
         due_at=(anchor+timedelta(seconds=row['offset_seconds'])).replace(tzinfo=None))
         for n,row in enumerate(WORKLOAD['reminders']) if row['workspace']==workspace]
     tasks=model.create(values)
@@ -44,7 +46,7 @@ for index in range(72):
     short=index%4==3
     handler='org.example.background:load' if short else 'org.example.background:report'
     inputs=dict(iterations=cost) if short else dict(first=row['first'],last=row['last'])
-    job=enqueue_scheduled(actor['mp.background.task']._job_env(),'jobs',handler,inputs,CASE+'-bulk-'+str(index),
+    job=enqueue_scheduled(actor['mp.background.task']._job_env(),'jobs',handler,inputs,KEYTAG+'-bulk-'+str(index),
         schedule=JobSchedule(when,when+timedelta(seconds=180),20),version=1 if short else 2)
     jobs[job]=dict(pool='bulk',workspace=label,handler=handler,input=inputs)
 env.cr.commit()
@@ -52,18 +54,22 @@ print('BX04_RESULT='+json.dumps(dict(anchor=anchor.isoformat(),committed=datetim
 """
 
 
-def run(case):
+def run(case,attempt=1):
     probe=Probe('bx-04-capacity-01')
     setup=load(probe.site.local/'bx04-sustained-setup.json')
     assert setup['phase']=='reference_upgraded'
-    path=probe.site.local/('bx04-sustained-'+case+'.json');assert not path.exists()
+    assert type(attempt) is int and 1<=attempt<=10
+    suffix='' if attempt==1 else '-'+str(attempt).zfill(2)
+    tag=case+suffix
+    path=probe.site.local/('bx04-sustained-'+tag+'.json');assert not path.exists()
     assert not probe.operator._lanes()
-    record=dict(phase='starting',case=case,image=probe.target['image_id'],seconds=180,bulk_rate=.4)
+    record=dict(phase='starting',case=case,attempt=attempt,image=probe.target['image_id'],seconds=180,bulk_rate=.4,
+        harness_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     write(path,record)
     review=probe.operator.run('profile-review',urgent_lanes=1,bulk_lanes=2)
     status=probe.operator.run('profile-apply',approval=review['approval']);assert status['state']=='ready'
     record.update(phase='seeding',approval=review['approval']);write(path,record)
-    seed=native(probe,'bx04-sustained-seed-'+case,SEED,DATA=setup['data'],CASE=case,WORKLOAD=workload())
+    seed=native(probe,'bx04-sustained-seed-'+tag,SEED,DATA=setup['data'],CASE=case,KEYTAG=tag,WORKLOAD=workload())
     anchor=datetime.fromisoformat(seed['anchor']).timestamp()
     assert anchor-datetime.fromisoformat(seed['committed']).timestamp()>65
     record.update(phase='preloaded',seed=seed);write(path,record)
@@ -123,6 +129,14 @@ def run(case):
                 for kind in idle:idle[kind].extend(batch(pool,kind));time.sleep(1.2)
             assert time.time()<anchor-5,'Preload/warmup consumed the scheduled start window'
             record.update(phase='idle_measured',idle={key:summary(values) for key,values in idle.items()});write(path,record)
+            while time.time()<anchor-5:time.sleep(min(.5,anchor-5-time.time()))
+            # The scheduled wait can exceed the proxy keepalive lifetime.
+            # Reconnect and warm both cases before their eligibility instant.
+            for client in clients:client.connection.close()
+            for kind in ('list','detail'):batch(pool,kind);time.sleep(1.2)
+            assert time.time()<anchor,'Reconnection ran into the scheduled workload'
+            record['warm_connections_at_start']=sum(client.connection.sock is not None for client in clients)
+            assert record['warm_connections_at_start']==20
             while time.time()<anchor:time.sleep(min(.5,anchor-time.time()))
             mixed={'list':[],'detail':[]};rounds=[];index=0
             while time.time()<anchor+180 or not readings or readings[-1]['completed']<222:
@@ -174,4 +188,5 @@ def run(case):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('case',choices=['hot','many'])
-    run(parser.parse_args().case)
+    parser.add_argument('--attempt',type=int,default=1)
+    args=parser.parse_args();run(args.case,args.attempt)

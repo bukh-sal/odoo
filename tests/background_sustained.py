@@ -123,12 +123,33 @@ def run(phase,candidate=None):
         result=executor.apply(operation)
         assert result['state']=='completed' and result['traffic_resumed']
         record.update(phase='reference_upgraded',reference_result=result)
+    elif phase=='retire-failed-hot':
+        failed_path=probe.site.local/'bx04-sustained-hot.json';failed=load(failed_path)
+        assert failed['phase']=='idle_measured' and 'cleanup' not in failed
+        drained=probe.operator.run('drain');assert drained['state']=='paused' and not probe.operator._lanes()
+        result=native(probe,'bx04-retire-failed-hot',"""
+import json
+from modular_platform import durable
+assert env.cr.dbname==EXPECTED_DB
+env.cr.execute('SELECT public_id,actor_id,workspace_id,effect_mode,state FROM mp_job WHERE public_id=ANY(%s)',[JOBS])
+rows=env.cr.fetchall();assert len(rows)==222
+for ident,actor,workspace,effect,state in rows:
+    assert effect=='idempotent' and state not in ('running','outcome_unknown')
+    durable.cancel_scheduled(env.cr,ident,actor_id=actor,workspace_id=workspace)
+env.cr.commit()
+env.cr.execute('SELECT state,count(*) FROM mp_job WHERE public_id=ANY(%s) GROUP BY state',[JOBS])
+states=dict(env.cr.fetchall());assert set(states)<={'cancelled','completed','dead_letter'}
+print('BX04_RESULT='+json.dumps(dict(states=states,owned_jobs=222)))
+""",JOBS=list(failed['seed']['jobs']))
+        failed.update(phase='harness_disconnected_retired',cleanup=result,
+            diagnostic='RemoteDisconnected at first mixed request after idle scheduled wait; warm connections expired. No sustained-load pass claimed.')
+        write(failed_path,failed)
     else:raise ValueError(phase)
     write(path,record)
     print(json.dumps(dict(phase=record['phase'],workspaces=len(record['workspaces']),operation=record.get('operation'))),flush=True)
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('phase',choices=['workspaces','activate','data','upgrade-reference'])
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('phase',choices=['workspaces','activate','data','upgrade-reference','retire-failed-hot'])
     parser.add_argument('--candidate',type=Path)
     args=parser.parse_args();run(args.phase,args.candidate)
