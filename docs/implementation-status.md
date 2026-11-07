@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T19:40:17.373689+00:00
+- Updated UTC: 2026-11-07T19:43:55.324222+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -15,12 +15,12 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 ## Consolidated foundation release (current goal)
 
 User authorized the full goal on7 November2026. One active item: **CF-02**.
-Progress **30/100 current weighted points;4/12 current CF checks verified (CF-02 reopens for core46)**. Original R1 remains99/99.
+Progress **30/100 current weighted points;5/12 current CF checks verified (CF-02 reopens for core46)**. Original R1 remains99/99.
 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
 | CF-01 |10| passed | [x] CF-A policy/freeze; [x] CF-B baseline feasibility | [Freeze](evidence/post-r1/foundation-release/cf-01-freeze.json). [Baseline decision](evidence/post-r1/foundation-release/cf-01-decision.json); core30 boot/current observation passed. |
-| CF-02 |20| in_progress | [ ] CF-C final46 image; [ ] CF-D final46 kit | Imagec029eecb and independent no-cache/network-disabled ff699881 reproduce exact inventoryda706465; kit assembly next. |
+| CF-02 |20| in_progress | [x] CF-C final46 image; [ ] CF-D final46 kit | Final46 image72d51d32/e4e1f97d reproduce inventory14cc5a2c. Exact three-file45-to46 delta independently validated; fresh46 kit assembly next. |
 | CF-03 |20| passed | [x] CF-E distinct installed apps; [x] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
 | CF-04 |35| in_progress | [ ] CF-G migration; [ ] CF-H final46 closed fault; [ ] CF-I fresh restore/resume/forward; [ ] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
 | CF-05 |15| not_started | [ ] CF-K worker/regression/UI; [ ] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |

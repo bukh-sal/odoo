@@ -1,0 +1,41 @@
+{
+  "result": "passed_second_no_cache_build_declared_inventory_reproduction",
+  "acceptance": [
+    "BOOT-02"
+  ],
+  "reference_image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "candidate_image": "sha256:e4e1f97d6e43a2983182db145b2e97faef94a45d8717414498ae99fbb4a8b72c",
+  "dependency_base": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "inventory_digest": "sha256:14cc5a2c5ef57ad27c8548e3f4150e402ba13dfb8920618b5e3137f060e54fe1",
+  "comparisons": {
+    "inventory_digest": true,
+    "inventory": true,
+    "python": true,
+    "architecture": true,
+    "markers": true,
+    "python_lock_digest": true,
+    "python_metadata": true,
+    "modified_files": true,
+    "unexpected_addon_files": true,
+    "missing_addon_files": true
+  },
+  "command": [
+    "docker",
+    "build",
+    "--no-cache",
+    "--network=none",
+    "--build-arg",
+    "DEPENDENCY_BASE_IMAGE=modular-platform:dependency-base-cf02-foundation46-repro-01",
+    "-f",
+    "deploy/Dockerfile.core-maintenance",
+    "--build-arg",
+    "DISTRIBUTION_POLICY=deploy/distribution-r1-foundation.json",
+    "--build-arg",
+    "RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock",
+    "--build-arg",
+    "SDK_PYTHONPATH=/opt/modular/packages/platform_sdk",
+    "-t",
+    "modular-platform:stage-20261107t194118386832z",
+    "."
+  ]
+}

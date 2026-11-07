@@ -1,0 +1,32 @@
+{
+  "result": "passed_exact_three_file_delta",
+  "base_image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+  "final_image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "changes": [
+    {
+      "path": "addons/mp_core/__manifest__.py",
+      "previous_sha256": "c33a1d347311aaf6a34fe2e3296029126f7385a36927cab8f62a6c4e92922245",
+      "target_sha256": "a9855ed992e4299a6d1defcabae1ba39b78c756540b14ae2e198d4994d524d00"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/projection.py",
+      "previous_sha256": "40e21e49e34b040b75c29dc79c6a24bb3d8d011bd9416e053864f869f444e25c",
+      "target_sha256": "f751fa78f4771eece380fb0fe46fc7cab853f39e19913b5210b2e13e166070a5"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/restore_executor.py",
+      "previous_sha256": "736790093b61b77e1314c456aa91f5ba03ca9ecc1ae6d515ee8034206139677b",
+      "target_sha256": "22055625dae1bf2d5a2681ca305bf86a4a26eeaaf4b10c6261876f72752b0629"
+    }
+  ],
+  "core_upgrades": [
+    {
+      "addon": "mp_core",
+      "previous_version": "19.0.0.1.45",
+      "target_version": "19.0.0.1.46",
+      "migrations": []
+    }
+  ],
+  "policy_and_packages_unchanged": true,
+  "dependencies_unchanged": true
+}
