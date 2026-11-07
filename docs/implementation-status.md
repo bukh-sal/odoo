@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T09:03:00Z
+- Updated UTC: 2026-11-07T09:46:47Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -284,7 +284,8 @@ Resume capsule: BX-05 is the sole active work item. Site`bx-05-chunks-01`,
 project`mp-r0-r1release868dbb340ae2`, port18128, database
 `mp_disposable_r0_r1_release_868dbb340ae2`, core45/reference0.3.2. Current image
 fe1213fa5658 (full ID in`docs/evidence/G7/bx05-chunks-build-04/candidate-build.json`).
-No managed worker/producer or running check. No uncertain mutation or external effect.
+No managed worker/producer. Populated recovery fault and the full host sweep
+are running. No uncertain mutation or external effect.
 
 [ADR0068](architecture-decisions/0068-app-owned-report-continuations.md) fixes
 5,000 snapshot rows/100 per job, original expiry, current source/owner guards,
@@ -310,12 +311,26 @@ Cleanup retired48 terminal helpers and three superseded images/seven tags,
 including the initial install's retained tag after checking its completed journal.
 Current app/edge/database and their named volumes remain for BX-05.
 
-Next:active continuation`88e18afc-36fe-4d81-84e6-06a0d5b33355` has5,000 snapshot
-rows/expected2,497,500 points, cursor0 and one retry job. Private evidence/source:
-`bx05-atomicity.json`/`tests/background_chunks_atomicity.py`. Start a reviewed
-fleet, stop/kill its owned worker during compute, verify reclaim/stale apply
-and exact completion. Then partial cancellation and populated fresh restore,
-appropriate regressions and final retirement. Do not rerun the settled seeds.
+Managed process loss passed:automatic child restart, old apply denied while
+generation2 was running, exact50 chunks/5,000 rows/2,497,500 points/digest,
+then drained. Partial cancellation passed at100 committed rows:obsolete compute
+did not advance, no successor, earlier work retained. Deleted source denied
+before progress. [Process](evidence/post-r1/background-execution/bx-05-process.json) ·
+[Cancellation](evidence/post-r1/background-execution/bx-05-cancellation.json).
+
+Current command:`tests/background_chunks_recovery.py resume` after the expected
+publication fault and verified fresh restore. Candidate25f071befa83
+changes only reference/native version metadata to0.3.3; full code remains0.3.2.
+Prepared a separate partially completed5k run, drained roles, committed a
+guarded current-stage claim and saved exact task/report/note digests. Fault
+operation`20561ee8-dc36-4d70-93a9-473d32682c77` reached recovery_required.
+Fresh restore passed with all three digests exact and traffic/dispatch closed,
+current job pending under a new generation/no old lease. Private phase
+record:`bx05-recovery.json`. Next separate resume, old claim/profile denial,
+remaining chunks and a new
+forward upgrade operation. Full host suite session67303 logs privately to
+`bx05-host.log`; do not rerun while active. Freeze106files/8rows passed.
+Do not replay settled seeds. Retire the owned realm and obsolete candidates last.
 Remote delivery/fan-out/common orchestration remain conditional and unselected.
 Four of five gates passed, roughly80% by equal gate weights; partial BX-05
 checks are separate from that credit. Original R1 stays99/99 and100 points.
@@ -339,7 +354,7 @@ BX-05 checklist:
 
 - [x] Freeze the selected app's bounded cursor, consistency and continuation contract (ADR0068).
 - [x] Implement app-owned progress and atomic cursor/successor updates with scoped authority; actual native rollback/duplicates verified.
-- [ ] Prove rollback, retry/process loss, duplicates and cancellation after partial progress.
+- [x] Prove rollback, retry/process loss, duplicates and cancellation after partial progress.
 - [ ] Qualify compatible upgrade and fresh restore of partially completed work.
 - [ ] Record app results, conditional-extension decisions and retire owned test assets.
 

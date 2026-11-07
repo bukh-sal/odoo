@@ -215,18 +215,21 @@ print('BX04_RESULT='+json.dumps(dict(run=ident,count=1201,points=519600,chunks=1
 """
 
 
-def upgrade(probe,candidate):
-    build=load(candidate);artifact=build['artifacts']['org.example.background'];assert artifact['version'] in ('0.3.0','0.3.1','0.3.2')
-    path=probe.site.local/('bx05-upgrade-'+artifact['version'].replace('.','')+'.json')
+def upgrade(probe,candidate,*,attempt=1,fault=False):
+    build=load(candidate);artifact=build['artifacts']['org.example.background'];assert artifact['version'] in ('0.3.0','0.3.1','0.3.2','0.3.3')
+    assert type(attempt) is int and 1<=attempt<=3
+    path=probe.site.local/('bx05-upgrade-'+artifact['version'].replace('.','')+('-'+str(attempt).zfill(2) if attempt>1 else '')+'.json')
     assert not path.exists() and not probe.operator._lanes()
     _,payload,_=assemble(ROOT,'plugins/background/plugin.toml')
     assert artifact['digest']=='sha256:'+hashlib.sha256(payload).hexdigest()
     trust_path=probe.site.private/'trust.json';trust=load(trust_path)
-    assert artifact['digest'] not in trust['approved_digests']
-    trust['approved_digests'].append(artifact['digest']);trust['generation']+=1;write(trust_path,trust)
-    archive=probe.site.private/artifact['file'];assert not archive.exists();archive.write_bytes(payload)
+    if artifact['digest'] not in trust['approved_digests']:
+        trust['approved_digests'].append(artifact['digest']);trust['generation']+=1;write(trust_path,trust)
+    archive=probe.site.private/artifact['file']
+    if archive.exists():assert archive.read_bytes()==payload
+    else:archive.write_bytes(payload)
     validator=configuration(trust_path);catalog=Catalog(probe.site.private/'catalog',validator)
-    catalog.add(archive,expected_digest=artifact['digest'])
+    if artifact['digest'] not in {row['digest'] for row in catalog.snapshot()}:catalog.add(archive,expected_digest=artifact['digest'])
     executor=StagedNativeExecutor(probe.operator.store,probe.site.private/'target.json',probe.site.private/'catalog',validator)
     reader=executor.observer;observed=reader.read();rows=catalog.snapshot();before=reader.state(observed,rows)
     stages=StageStore(executor.store,executor.config,catalog)
@@ -242,10 +245,17 @@ def upgrade(probe,candidate):
     executor.store.approve(operation,exact_hash=bundle['plan_hash'],noninteractive=True,revalidate=validate,
         acknowledgments=dict(destructive=False,trust_expansion=True,permission_expansion=False))
     write(path,dict(phase='applying',operation=operation,image=build['image_id']))
+    if fault:
+        from background_retention_lifecycle import fail_after_publish
+        fail_after_publish(operation,executor)
+        record=dict(phase='recovery_required',operation=operation,image=build['image_id'],status=executor.store.status(operation))
+        write(path,record)
+        return record
     result=executor.apply(operation)
     assert result['state']=='completed' and result['traffic_resumed']
     write(path,dict(phase='passed',operation=operation,image=build['image_id'],result=result))
     print(dict(phase='upgraded',operation=operation),flush=True)
+    return dict(phase='passed',operation=operation,result=result)
 
 
 def main(action,candidate):

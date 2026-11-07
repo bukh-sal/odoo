@@ -1,0 +1,30 @@
+{
+  "phase": "passed",
+  "image": "sha256:fe1213fa565810e6f93cf87b8ad7943757978a72176d1b96c1e1f4d92b4eed4d",
+  "run": "d6139877-229a-4d30-8a0b-5228236a7300",
+  "cancel": {
+    "cursor": 100,
+    "points": 4950,
+    "snapshot_cleared": true
+  },
+  "after": {
+    "job": "59515e23-e9f3-4c7c-b97c-abba32bb4171",
+    "state": "cancelled",
+    "cursor": 100,
+    "points": 4950,
+    "job_state": "cancelled",
+    "generation": 1
+  },
+  "rows": {
+    "successors": 0,
+    "completed_rows": 100
+  },
+  "deletion": {
+    "deleted_source_denied": true,
+    "cursor_unchanged": true,
+    "explicit_cleanup": true
+  },
+  "gate": "BX-05",
+  "compute_stopped_during_cancel": true,
+  "drained": true
+}
