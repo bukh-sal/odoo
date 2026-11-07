@@ -1,0 +1,12 @@
+{
+  "gate": "BX-04",
+  "state": "required_limit_not_met",
+  "image": "sha256:6cf403e88ee04e51eacc4abcee8e16a45b3ddc208e5c65922563b61ebb571f9b",
+  "peak_valid_running": 2,
+  "jobs": 2,
+  "all_completed": true,
+  "no_external_effect": true,
+  "termination": "Only the owned workspace advisory-lock backend; work and heartbeat connections remained alive.",
+  "private_record_sha256": "cc29d498d2aa6de2a22c78781e6508589580b78d87883f5a6bf41cd585d2098e",
+  "drained": true
+}

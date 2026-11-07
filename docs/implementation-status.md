@@ -200,28 +200,39 @@ service/headroom targets, including≥64 simultaneous ready workspaces. No expir
 or extra useful-job benefit from the third lane was observed; no autoscaler is
 authorized by these estimates. [Comparison](evidence/post-r1/background-execution/bx-04-burst-comparison.json).
 
-**Active defect: adversarial fairness.** Two30-job hot workspaces consumed all60
-claims before any of68 equal-eligibility peers started. All128 jobs completed,
-roles drained, and the failed criterion is preserved. [Baseline](evidence/post-r1/background-execution/bx-04-fairness-baseline.json).
-[ADR0066](architecture-decisions/0066-managed-workspace-rotation.md) selects a
-small per-site/pool rotating selection hint with an atomic ticket. It changes
-candidate order only, preserving job FIFO, lease/authorization fences and the
-64-candidate cap. Ten real PostgreSQL ticket/race/rollback/fence/ring cases,
-four queue and thirteen fleet regressions and106-file freeze pass. SQL fixture
-retired. Native rotation is not yet qualified.
+Adversarial fairness was fixed and natively qualified on core43. Before the
+change, the two hot workspaces consumed60 claims before a peer started. After
+rotation, the first peer started after two hot claims, and all68 peers started
+while each hot workspace had claimed only once. Child death/restart also
+passed; the interrupted job reclaimed at a new generation and old apply was
+denied while the new claim was running. [Native rotation](evidence/post-r1/background-execution/bx-04-fairness-native.json).
+Core43 upgrade `ec8b996a-e687-44fc-916c-18efc985e314` preserved business data.
+Ten PostgreSQL hint/rollback/CAS/ring tests and the106-file freeze passed.
 
-Resume capsule: core43 candidate6cf403e88ee0, one owned site on18126, core-only
-upgrade running in session58785. Private operation record
-`.local/background-qualification/bx-04-capacity-01/bx04-core43-upgrade.json`.
-Do not replay that upgrade. Current pre-upgrade imageAE91/core42/gen5, all
-job roles paused; no live workload or unknown effect. After settled upgrade,
-run `tests/background_fairness.py rotation-01`, then qualify restart and slot
-connection-loss behavior and recheck affected load before closing BX-04.
-Remaining required checks also include native pressure/stale-metric holds and
-recurring bursts. BX-05 remains queued, no user blocker. Original comparator
-results are scoped to core42 and must not be mislabeled as core43 performance.
-53 exited owned containers and obsoleteFD7f/4a9a intermediate images were retired;
-only currentAE91 and the staged43 candidate are needed until this operation settles.
+**Active defect: isolated slot-session loss.** Killing only the owned advisory
+backend admitted two simultaneously valid claims in one workspace/pool. Both
+nine-second local fixture jobs completed; no external effect was started.
+[Baseline](evidence/post-r1/background-execution/bx-04-slot-loss-baseline.json).
+[ADR0067](architecture-decisions/0067-pooled-claim-guard.md) adds a distinct
+preparation-connection guard, fresh snapshot after acquisition, and a running
+row check after expired-attempt cleanup. It preserves preparation atomicity,
+normal Odoo readers and existing job/lease/authorization protocols. Ten actual
+PostgreSQL tests passed, including invisible claims, caller rollback, stale
+snapshots, locked expiry/renewal, separate pools and unknown-effect preservation.
+The SQL fixture was retired. Native correction and affected load remain open.
+
+Resume capsule: one owned site/project on18126, DB unchanged. Current deployed
+core43 image6cf403e88ee0; all job roles paused, no live workload or unknown
+effect. Core44 candidate454dd975b063 is being applied once in session44056.
+Private record: `.local/background-qualification/bx-04-capacity-01/bx04-core44-upgrade.json`.
+Do not replay. After settled upgrade, run `tests/background_slot_loss.py fenced-01`
+then recheck fairness and affected admitted web/job load. Current source is
+core44; the candidate build log is private under `.local/operator/builds/`.
+The first slot probe stopped at a CIDR-format address guard before termination;
+it was recorded/retired and the actual baseline used distinct keys.
+Remaining required checks include pressure/stale metrics, recurring bursts,
+release/recovery compatibility and final retirement; BX-05 remains queued.
+No user blocker. Gate progress3/5 (about60%), independent of the passed case counts.
 Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is

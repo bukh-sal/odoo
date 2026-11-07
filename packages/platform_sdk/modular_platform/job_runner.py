@@ -5,6 +5,7 @@ separate from the reference external stats worker, which never receives it.
 """
 import argparse
 import configparser
+from contextlib import contextmanager
 import hashlib
 import json
 import os
@@ -58,6 +59,31 @@ def emit(**fields):
     print(json.dumps(fields,sort_keys=True),flush=True)
 
 
+@contextmanager
+def _claim_guard(cr,pool,workspace):
+    """Own a fresh preparation cursor; compute uses a different session slot.
+
+    Roll back the lock-acquisition snapshot before observing jobs. Otherwise a
+    repeatable-read snapshot taken just before the previous claimant commits
+    can miss its running row. Keep this guard until preparation has committed.
+    """
+    if pool=='legacy' or workspace is None:
+        yield True;return
+    from modular_platform import durable
+    cr.execute("SELECT value FROM ir_config_parameter WHERE key='mp.site_id'")
+    found=cr.fetchone()
+    if not found:raise durable.QueueError('Native site required before pooled claim')
+    key=durable.claim_guard_key(found[0],pool,workspace)
+    cr.rollback()
+    cr.execute('SELECT pg_try_advisory_lock(%s)',[key]);locked,=cr.fetchone()
+    cr.rollback()
+    try:yield locked
+    finally:
+        if locked:
+            try:cr.execute('SELECT pg_advisory_unlock(%s)',[key])
+            finally:cr.rollback()
+
+
 def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,attempt=None):
     from dataclasses import replace
     import time
@@ -69,11 +95,13 @@ def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,a
     # jobs reconstructs the actual mapped user before any business operation.
     preparing=time.monotonic()
     with registry.cursor() as cr:
-        metadata=api.Environment(cr,1,{})
-        try:invocation=retrying(lambda:jobs.prepare_one(metadata,owner,pool=pool,
-            workspace_id=workspace_id,lease_seconds=lease_seconds),metadata)
-        except durable.DispatchPaused:
-            cr.rollback();return dict(state='paused')
+        with _claim_guard(cr,pool,workspace_id) as allowed:
+            if not allowed:return dict(state='idle')
+            metadata=api.Environment(cr,1,{})
+            try:invocation=retrying(lambda:jobs.prepare_one(metadata,owner,pool=pool,
+                workspace_id=workspace_id,lease_seconds=lease_seconds),metadata)
+            except durable.DispatchPaused:
+                cr.rollback();return dict(state='paused')
     if invocation is None:return dict(state='idle')
     if isinstance(invocation,dict):return invocation
     # Includes claim selection, authorization, preparation and commit. This is

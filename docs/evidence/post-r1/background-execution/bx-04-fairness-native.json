@@ -1,0 +1,46 @@
+{
+  "gate": "BX-04",
+  "state": "native_rotation_and_restart_passed_other_checks_open",
+  "image": "sha256:6cf403e88ee04e51eacc4abcee8e16a45b3ddc208e5c65922563b61ebb571f9b",
+  "runs": [
+    {
+      "phase": "passed",
+      "peers_served": 68,
+      "hot_claims_before_first_peer": 2,
+      "hot_claims_when_all_peers_started": {
+        "A": 1,
+        "B": 1
+      },
+      "criterion": "First peer within4 hot claims; all68 peers start before either30-job hot backlog consumes more than4 claims.",
+      "all_jobs_completed_once": true,
+      "case": "normal",
+      "claimed_attempts": 128,
+      "unique_jobs": 128,
+      "drained": true
+    },
+    {
+      "phase": "passed",
+      "peers_served": 68,
+      "hot_claims_before_first_peer": 2,
+      "hot_claims_when_all_peers_started": {
+        "A": 1,
+        "B": 1
+      },
+      "criterion": "First peer within4 hot claims; all68 peers start before either30-job hot backlog consumes more than4 claims.",
+      "all_jobs_completed_once": true,
+      "case": "child_restart",
+      "claimed_attempts": 129,
+      "unique_jobs": 128,
+      "drained": true,
+      "restart": {
+        "count_before": 0,
+        "count_after": 1,
+        "stale": {
+          "stale_apply_denied": true,
+          "observed_state": "running",
+          "generation": 2
+        }
+      }
+    }
+  ]
+}

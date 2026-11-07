@@ -33,5 +33,5 @@ def main(candidate,version=42):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('candidate',type=Path)
-    parser.add_argument('--version',type=int,choices=[42,43],default=42)
+    parser.add_argument('--version',type=int,choices=[42,43,44],default=42)
     args=parser.parse_args();main(args.candidate,args.version)

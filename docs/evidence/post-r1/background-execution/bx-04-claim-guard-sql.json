@@ -1,0 +1,25 @@
+{
+  "state": "passed",
+  "checks": {
+    "unguarded_pool_refused": true,
+    "invisible_preparation_still_excluded_after_slot_loss": true,
+    "committed_running_row_blocks_different_claim": true,
+    "other_pool_and_workspace_continue": true,
+    "caller_rollback_and_guard_release": true,
+    "acquisition_discards_stale_repeatable_read_snapshot": true,
+    "locked_expired_attempt_and_pending_renewal_block_other_claim": true,
+    "renewed_live_attempt_still_excludes": true,
+    "unlocked_expiry_reaps_and_old_apply_refused": true,
+    "unknown_remote_effect_not_retried": true
+  },
+  "queue_source_sha256": "93d97e50683a99f99eea8279add3f142ec1ce78a2056272b5389b73789160744",
+  "guard_source_sha256": "c6aeb7fccbea5bd1eaf749ed39e43c44e13ae8748ab3f602d781e006c7fb649e",
+  "postgres": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+  "client": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "retired": {
+    "containers": 1,
+    "volumes": 0,
+    "networks": 0
+  },
+  "scope": "Private pooled claim/guard transactions; native integration and load remain pending."
+}

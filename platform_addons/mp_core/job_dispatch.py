@@ -262,7 +262,8 @@ def prepare_one(metadata_env,owner,*,lease_seconds=30,pool='legacy',workspace_id
     routes=routes_for(pool)
     if not routes:return None
     claim=durable.claim(metadata_env.cr,release['site_id'],release['release_digest'],owner,
-        sorted({ident for ident,_ in routes}),lease_seconds=lease_seconds,workspace_id=workspace_id,routes=routes)
+        sorted({ident for ident,_ in routes}),lease_seconds=lease_seconds,workspace_id=workspace_id,routes=routes,
+        pool=pool if pool!='legacy' and workspace_id is not None else None)
     if claim is None:return None
     row=durable._lock(metadata_env.cr,claim)
     try:

@@ -270,7 +270,14 @@ def archive_terminal_jobs(cr, site_id, release_digest, *, cutoff, limit, expecte
     return archived
 
 
-def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, workspace_id=None, routes=None):
+def claim_guard_key(site,pool,workspace):
+    """Separate key from the long-lived compute slot; no authority is granted."""
+    _uuid(site);_bounded(workspace,1,2**31-1)
+    if pool not in ('urgent','bulk'):raise QueueError('Explicit native pool required')
+    return int.from_bytes(hashlib.sha256(f'mp-job-claim:{site}:{pool}:{workspace}'.encode()).digest()[:8],'big',signed=True)
+
+
+def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, workspace_id=None, routes=None,pool=None):
     _uuid(site_id); _uuid(owner); _bounded(lease_seconds, 1, 300)
     if not isinstance(handlers, (list, tuple)) or not 1 <= len(handlers) <= 100:
         raise QueueError('Explicit handler allowlist required')
@@ -282,6 +289,12 @@ def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, wor
             raise QueueError('Explicit versioned handler routes required')
         routes=[f'{_name(name)}:{_bounded(version,1,1000)}' for name,version in routes]
     filters=[site_id,release_digest,list(handlers),routes,routes,workspace_id]
+    if pool is not None:
+        if workspace_id is None or routes is None:raise QueueError('Pooled claims require workspace and registered routes')
+        key=claim_guard_key(site_id,pool,workspace_id)&(2**64-1)
+        cr.execute("""SELECT EXISTS(SELECT 1 FROM pg_locks WHERE locktype='advisory' AND pid=pg_backend_pid()
+            AND classid::bigint=%s AND objid::bigint=%s AND objsubid=1 AND granted AND mode='ExclusiveLock')""",[key>>32,key&0xffffffff])
+        if not cr.fetchone()[0]:raise QueueError('Fresh-cursor pooled claim guard required')
     generation = control(cr, site_id, release_digest)
     # Lease loss is observable state. Reconcile uncertain non-idempotent work;
     # never reinterpret an expired external attempt as proof of rollback.
@@ -293,6 +306,15 @@ def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, wor
             THEN 'dead_letter' ELSE 'retry' END,
             error_code='LEASE_EXPIRED',lease_owner=NULL,lease_until=NULL,available_at=timezone('UTC',clock_timestamp())
         FROM expired WHERE j.id=expired.id""", filters)
+    if pool is not None:
+        # Include expired but row-locked attempts: a concurrent heartbeat or
+        # finalization may still be settling them. The reaper above handles
+        # expired unlocked rows. Never admit a different valid claim while
+        # any previous running row remains in this workspace/pool.
+        cr.execute("""SELECT 1 FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
+            AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[]))
+            AND workspace_id=%s AND state='running' LIMIT 1""",filters)
+        if cr.fetchone():return None
     cr.execute("""WITH expired AS (SELECT id FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
         AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND workspace_id=COALESCE(%s,workspace_id)
         AND state IN ('pending','retry') AND deadline_at<=timezone('UTC',clock_timestamp()) FOR UPDATE SKIP LOCKED)
