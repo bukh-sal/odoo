@@ -2,20 +2,20 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T20:31:35.561158+00:00
+- Updated UTC: 2026-11-07T20:38:20.569254+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **CF-01–05 qualification passed; final kit metadata verification.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
-- Active item: **CF-05 delivery: refresh committed handoff source and seal/verify qualified kit metadata.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
+- Current phase/gate: **CF-01–05 complete; core46 local foundation release sealed and verified.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
+- Active item: **None. Consolidated foundation goal complete.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Consolidated foundation release (current goal)
 
-User authorized the full goal on7 November2026. One active item: **CF-05**.
-Progress **100/100 verified gate points;12/12 CF checks passed; final packaging metadata verification in progress**. Original R1 remains99/99.
+User authorized the full goal on7 November2026. No active item; all CF work and final delivery checks complete.
+Progress **100/100 weighted points;12/12 CF checks passed; sealed kit and final privacy/checksum verification passed**. Original R1 remains99/99.
 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
@@ -28,23 +28,27 @@ Progress **100/100 verified gate points;12/12 CF checks passed; final packaging 
 Resolved CF-RECOVERY-SKIP-01: bounded fix passed original45 and final46 native failed-upgrade/fresh-restore/separate-resume cases. No current external/user blocker. Docker Desktop Linux engine was stopped; local start
 succeeded (engine29.9.2). No pre-existing container/data has been changed.
 
-Resume capsule (CF takes precedence over historical capsules below): all five
-CF gates and12checks passed,100weighted points; sole remaining delivery action
-is committed documentation source refresh and qualified kit seal/checksum
-verification. [Qualification](evidence/post-r1/foundation-release/qualification-decision.json)
-and [handoff](foundation-release.md) give exact scope. Both real app sets adopted
-core46/image72d51d32; failed-app-down independent recovery/fresh restore/separate
-resume and peer16reports passed. Host585pass/1existing skip, native HTTP/queues,
-stock in-app Odoo, clean isolated Maintenance kit/walkthrough,106contractfreeze,
-425source/archive alignment and finite24credential audit all passed. Retired
-160owned containers total,18volumes,6networks,4superseded images/14tags; only useful
-72d51d32 foundation image plus pre-existing dependencies/unrelated assets remain.
-Owned baseline worktree and obsolete45draft retired; private evidence/checkpoints
-retained. No live CF site, worker, process, uncertain mutation or user blocker.
-Next commit final handoff/evidence, run `release/refresh_draft.py` with final46
-build/reproduction receipts, then `release/seal_local.py` with qualification
-decision, verify source-only privacy/checksums and close the goal. SDK/build
-inputs stay unchanged; do not rerun lifecycle tests or create more fixtures.
+Resume capsule (CF takes precedence over historical capsules below): **goal
+complete; no active item, running test/site/worker, uncertain mutation or user
+blocker.** CF-01..05 passed12/12checks/100weightedpoints. Use the sealed kit
+`.local/releases/foundation-r1-core46`:56components, sourcea340a901c9f32dbf2f6e829ef0aa903233e4edd9,
+manifest485dc9b5ce785cae8a78cd586256ec3df1bbf031f7db26228c9fef094a5422b7,
+image72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82,
+inventory14cc5a2c5ef57ad27c8548e3f4150e402ba13dfb8920618b5e3137f060e54fe1.
+[Qualification](evidence/post-r1/foundation-release/qualification-decision.json),
+[seal](evidence/post-r1/foundation-release/sealed-kit.json),
+[final privacy](evidence/post-r1/foundation-release/cf-05-final-privacy.json) and
+[handoff](foundation-release.md) give exact scopes. Both native app sets,
+actual failed-app-down recovery/separate resume and useful peer jobs passed;
+585hostpasses/1existing skip,106contractfreeze,425source alignment. Final refresh
+reused54unchanged components; sealed metadata and refreshed sources passed a
+second finite24credential scan with0findings. Retired160owned containers,
+18volumes,6networks,4superseded images/14tags and owned temporary worktree/draft.
+Useful release image/dependencies/unrelated assets and private proof remain.
+Future work starts from a new explicitly selected task and fresh disposable
+target; do not restart completed CF/R1/BG/BX gates. Policy expansion/full Aurora,
+new schema/major releases and different workloads retain the conditional checks
+in`planning/remaining_checks.md`.
 
 ## Post-R1 work
 
@@ -867,7 +871,7 @@ These are later R1 gates; they are not remaining G5 exit criteria.
 
 ## Blockers and limitations
 
-No current blocker. CF-05 final delivery is active; R1/G7 and the background follow-up are complete; dated entries below retain their historical scope. The five previously protected closed browser profiles remain under `.local/g6-events/headless-ui-01..05/profile`, excluded from release, after automatic approval review rejected their deletion. No alternate deletion was attempted. Current background Docker retirement is recorded above.
+No current blocker or active CF item; consolidated core46 foundation is complete; R1/G7 and the background follow-up are complete; dated entries below retain their historical scope. The five previously protected closed browser profiles remain under `.local/g6-events/headless-ui-01..05/profile`, excluded from release, after automatic approval review rejected their deletion. No alternate deletion was attempted. Current background Docker retirement is recorded above.
 
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |

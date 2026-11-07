@@ -1,0 +1,23 @@
+{
+  "result": "passed_finite_known_values",
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "kit_source": "a340a901c9f32dbf2f6e829ef0aa903233e4edd9",
+  "kit_manifest_sha256": "485dc9b5ce785cae8a78cd586256ec3df1bbf031f7db26228c9fef094a5422b7",
+  "images_tar_sha256": "c056a57eab8e7f2a3953ed9864d5a31157d71f3260ad054c5df1a4b354b88ed3",
+  "known_values": 24,
+  "encodings": 72,
+  "totals": {
+    "files": 59014,
+    "unique_contents": 56329,
+    "bytes": 1386594747,
+    "archives": 65
+  },
+  "findings": [],
+  "new_application_layers": [],
+  "prior_full_receipt": "docs\\evidence\\post-r1\\foundation-release\\cf-05-privacy.json",
+  "limits": [
+    "Known current CF credentials only; no unknown-secret detector or publisher authentication claim.",
+    "Unchanged dependency/support image bytes retain the recorded stock release audit scope.",
+    "Source ZIP, curated archives and new application layers decoded; nested ZIP depth <=5, files <=128MiB."
+  ]
+}

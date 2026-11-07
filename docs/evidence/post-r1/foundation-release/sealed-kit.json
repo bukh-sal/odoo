@@ -1,0 +1,10 @@
+{
+  "result": "sealed_verified_local_foundation",
+  "source_commit": "a340a901c9f32dbf2f6e829ef0aa903233e4edd9",
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "manifest_before": "3f8a4598d908e1c145865b9995b65a7f148788f1e38591dcdd103d6d642bd513",
+  "manifest_sha256": "485dc9b5ce785cae8a78cd586256ec3df1bbf031f7db26228c9fef094a5422b7",
+  "decision_sha256": "97f288200a06434e928c8d7348c4cb592fa0a89f58dc971d1042c4f2dd2d12b5",
+  "components": 56,
+  "limits": "Local CF qualification only; checksums do not authenticate publishers or authorize deployment."
+}
