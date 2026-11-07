@@ -216,6 +216,7 @@ class RestoreExecutor:
             raise OperatorError('Fresh-target recovery is permitted only before traffic resumes')
         bundle = self.store.bundle(operation)
         self.store._authorize_plan(bundle['plan'])
+        self.native._require_jobs_drained()
         if len(self.config['sites']) != 1:
             raise OperatorError('Restore profile requires exactly one disposable site')
         checkpoint = self.store.root/'checkpoints'/operation
@@ -406,6 +407,7 @@ class RestoreExecutor:
 
     def _resume_state(self, operation):
         self._operation=operation
+        self.native._require_jobs_drained()
         status = self.store.status(operation)
         path = self.store.root/'recoveries'/operation/'result.json'
         result = load_json(path.read_bytes())

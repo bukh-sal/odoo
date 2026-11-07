@@ -1,0 +1,629 @@
+{
+  "checks": {
+    "initial": {
+      "status": {
+        "event": "job_fleet",
+        "state": "ready",
+        "generation": 1,
+        "approval": "sha256:4d4af2aee3528cc6e290b4cad00968d6311b71215a4bcb629640bc510a6d8393",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      }
+    },
+    "wrong_pins": {
+      "results": {
+        "SITE_ID": {
+          "exit_code": 1,
+          "refused": true
+        },
+        "RELEASE_DIGEST": {
+          "exit_code": 1,
+          "refused": true
+        },
+        "INVENTORY_DIGEST": {
+          "exit_code": 1,
+          "refused": true
+        },
+        "DATABASE": {
+          "exit_code": 1,
+          "refused": true
+        }
+      }
+    },
+    "resize_and_selected_drain": {
+      "retained_containers": {
+        "mp-r0-r1releasebede67ca3624-job-bulk-1": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+        "mp-r0-r1releasebede67ca3624-job-urgent-1": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73"
+      },
+      "status": {
+        "event": "job_fleet",
+        "state": "ready",
+        "generation": 3,
+        "approval": "sha256:13bd47cd9c5016c2a9c94190bd235faa46299003074bcbcb0112f40eb48fab25",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 2,
+            "running": 2,
+            "ready": 2,
+            "drained": 0
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-2",
+            "pool": "bulk",
+            "container": "aaae2b54ee6da0522eedffb9eef2f24cc3fb0a3cb1ba89a54c1d1b986ce67bfd",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      }
+    },
+    "partial_start": {
+      "partial": {
+        "event": "job_fleet",
+        "state": "partial",
+        "generation": 4,
+        "approval": "sha256:4590722d820862bc1b06e7afe2a461ecc5f74d0a4ecd842e1c327f82f91cdf0b",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 3,
+            "running": 2,
+            "ready": 2,
+            "drained": 0
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-2",
+            "pool": "bulk",
+            "container": "aaae2b54ee6da0522eedffb9eef2f24cc3fb0a3cb1ba89a54c1d1b986ce67bfd",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      },
+      "recovered": {
+        "event": "job_fleet",
+        "state": "ready",
+        "generation": 4,
+        "approval": "sha256:4590722d820862bc1b06e7afe2a461ecc5f74d0a4ecd842e1c327f82f91cdf0b",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 3,
+            "running": 3,
+            "ready": 3,
+            "drained": 0
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-2",
+            "pool": "bulk",
+            "container": "aaae2b54ee6da0522eedffb9eef2f24cc3fb0a3cb1ba89a54c1d1b986ce67bfd",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-3",
+            "pool": "bulk",
+            "container": "62240e602f151dc2e2078d6ad2f1c7860cfdd41a8381207851b98f22affdf28d",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      }
+    },
+    "connection_loss": {
+      "unavailable": {
+        "event": "job_fleet",
+        "state": "partial",
+        "generation": 4,
+        "approval": "sha256:4590722d820862bc1b06e7afe2a461ecc5f74d0a4ecd842e1c327f82f91cdf0b",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 3,
+            "running": 3,
+            "ready": 2,
+            "drained": 0
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-2",
+            "pool": "bulk",
+            "container": "aaae2b54ee6da0522eedffb9eef2f24cc3fb0a3cb1ba89a54c1d1b986ce67bfd",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-3",
+            "pool": "bulk",
+            "container": "62240e602f151dc2e2078d6ad2f1c7860cfdd41a8381207851b98f22affdf28d",
+            "running": true,
+            "ready": false,
+            "matches_profile": false
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      },
+      "docker_health": "unhealthy",
+      "docker_detection_seconds": 13.15700000000652,
+      "recovered": {
+        "event": "job_fleet",
+        "state": "ready",
+        "generation": 4,
+        "approval": "sha256:4590722d820862bc1b06e7afe2a461ecc5f74d0a4ecd842e1c327f82f91cdf0b",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 3,
+            "running": 3,
+            "ready": 3,
+            "drained": 0
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-2",
+            "pool": "bulk",
+            "container": "aaae2b54ee6da0522eedffb9eef2f24cc3fb0a3cb1ba89a54c1d1b986ce67bfd",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-3",
+            "pool": "bulk",
+            "container": "62240e602f151dc2e2078d6ad2f1c7860cfdd41a8381207851b98f22affdf28d",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      }
+    },
+    "active_graceful_drain": {
+      "job": "05dfefe9-fada-4ffa-9958-e077a4e6b57e",
+      "before": {
+        "error": null,
+        "lease": "2026-11-07T03:46:15.490874",
+        "owner": "5b1ad158-f6dc-42e2-924f-d7025ee50162",
+        "state": "running",
+        "attempts": 1,
+        "progress": 0,
+        "generation": 1
+      },
+      "after": {
+        "error": null,
+        "lease": null,
+        "owner": null,
+        "state": "completed",
+        "attempts": 1,
+        "progress": 100,
+        "generation": 1
+      },
+      "seconds": 11.937000000034459,
+      "status": {
+        "event": "job_fleet",
+        "state": "ready",
+        "generation": 4,
+        "approval": "sha256:4590722d820862bc1b06e7afe2a461ecc5f74d0a4ecd842e1c327f82f91cdf0b",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 3,
+            "running": 2,
+            "ready": 2,
+            "drained": 1
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "01750f1e17ab4eeb87eaeb618318ae52db788a77845f91c301291efd63a02c3b",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-3",
+            "pool": "bulk",
+            "container": "62240e602f151dc2e2078d6ad2f1c7860cfdd41a8381207851b98f22affdf28d",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "79875dc41525bc5bd898edda3cc59864a3a50a5d2b69e9b2a4ac487832781a73",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      }
+    },
+    "resource_snapshot": {
+      "limits": {
+        "mp-r0-r1releasebede67ca3624-job-bulk-3": {
+          "memory": 805306368,
+          "nano_cpus": 1000000000,
+          "pids": 128
+        },
+        "mp-r0-r1releasebede67ca3624-job-urgent-1": {
+          "memory": 805306368,
+          "nano_cpus": 1000000000,
+          "pids": 128
+        },
+        "mp-r0-r1releasebede67ca3624-job-bulk-1": {
+          "memory": 805306368,
+          "nano_cpus": 1000000000,
+          "pids": 128
+        }
+      },
+      "stats": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "0.55%",
+          "Container": "mp-r0-r1releasebede67ca3624-job-bulk-3",
+          "ID": "62240e602f15",
+          "MemPerc": "13.87%",
+          "MemUsage": "106.5MiB / 768MiB",
+          "Name": "mp-r0-r1releasebede67ca3624-job-bulk-3",
+          "NetIO": "83.9kB / 140kB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "0.53%",
+          "Container": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+          "ID": "79875dc41525",
+          "MemPerc": "13.62%",
+          "MemUsage": "104.6MiB / 768MiB",
+          "Name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+          "NetIO": "899kB / 1.37MB",
+          "PIDs": "2"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "0.58%",
+          "Container": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+          "ID": "01750f1e17ab",
+          "MemPerc": "13.62%",
+          "MemUsage": "104.6MiB / 768MiB",
+          "Name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+          "NetIO": "806kB / 1.28MB",
+          "PIDs": "2"
+        }
+      ],
+      "database_connections": [
+        {
+          "state": "idle",
+          "connections": 1,
+          "wait_event_type": "Client",
+          "application_name": "odoo-1"
+        },
+        {
+          "state": "idle",
+          "connections": 1,
+          "wait_event_type": "Client",
+          "application_name": "odoo-17"
+        },
+        {
+          "state": "idle",
+          "connections": 4,
+          "wait_event_type": "Client",
+          "application_name": "odoo-7"
+        },
+        {
+          "state": "active",
+          "connections": 1,
+          "wait_event_type": null,
+          "application_name": "psql"
+        }
+      ]
+    },
+    "forced_drain": {
+      "job": "ddd39c50-02c7-4eec-b6fc-c72f14569bc2",
+      "old_claim": {
+        "error": null,
+        "lease": "2026-11-07T03:49:04.953722",
+        "owner": "6fcbd9f2-837b-4081-a10f-ec9f89eccd1e",
+        "state": "running",
+        "attempts": 1,
+        "progress": 0,
+        "generation": 1
+      },
+      "after": {
+        "error": null,
+        "lease": null,
+        "owner": null,
+        "state": "completed",
+        "attempts": 2,
+        "progress": 100,
+        "generation": 2
+      },
+      "seconds": 13.14000000001397,
+      "frozen_compute_child": true,
+      "stale_claim_denied": true,
+      "status": {
+        "event": "job_fleet",
+        "state": "ready",
+        "generation": 7,
+        "approval": "sha256:8422489a0cfa4d72c07c22a5910a5835d0525fe2b328def1fef199e8c98fb537",
+        "pins": {
+          "database": "mp_disposable_r0_r1_release_bede67ca3624",
+          "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+          "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+          "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+          "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+          "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+          "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+        },
+        "pools": {
+          "urgent": {
+            "desired": 1,
+            "running": 1,
+            "ready": 1,
+            "drained": 0
+          },
+          "bulk": {
+            "desired": 2,
+            "running": 1,
+            "ready": 1,
+            "drained": 1
+          }
+        },
+        "lanes": [
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+            "pool": "bulk",
+            "container": "78aa9f7f0bd40207aedd2e0de0c4e0d480d964b33ca05110b18091f6db29120c",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          },
+          {
+            "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+            "pool": "urgent",
+            "container": "d8ea2b3488f9bd126dc8bf5fbfc9a49cb2e25c6b989aef871245e291d443ec9d",
+            "running": true,
+            "ready": true,
+            "matches_profile": true
+          }
+        ]
+      }
+    }
+  },
+  "utc": "2026-11-07T03:49:20.896647+00:00",
+  "gate": "BX-02",
+  "state": "passed",
+  "scope": "Native reviewed-profile and failure drills; release race is recorded separately",
+  "probes": [
+    "tests/background_fleet.py",
+    "tests/test_job_fleet.py"
+  ],
+  "build_records": [
+    "../../G7/bx02-worker-profile-build-01/candidate-build.json",
+    "../../G7/bx02-worker-profile-build-02/candidate-build.json"
+  ],
+  "diagnostic_attempts": [
+    "The first fixed 12-second Docker-health observation ended after only one failed check. The role was already unready in operator status. The bounded transition observation then saw unhealthy at 13.157 seconds and verified reconnection.",
+    "The first forced-stop fixture completed its nine-second handler during operator preflight. A frozen active compute child then exercised grace expiry, reclaim under generation 2 and stale generation refusal.",
+    "A retry reused an immutable private seed label and was refused before execution. The reconciled fixture used a unique attempt label; prior logs were retained."
+  ]
+}

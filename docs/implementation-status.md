@@ -37,8 +37,8 @@ when changing the workload, sizing, or queue/web behavior. The
 [work log](work-log.md) retains the earlier attempts.
 
 The [background execution follow-up plan](../planning/background_execution.md#follow-up-plan-for-sustained-background-workloads)
-tracks BX-01 through BX-05. **BX-01 passed and BX-02 is active.** One of
-five follow-up gates has passed, or 20% by gate count. The guarded CLI reported an empty job table and then the lower bound
+tracks BX-01 through BX-05. **BX-01 and BX-02 passed; BX-03 is active.** Two of
+five follow-up gates have passed, or roughly 40% by gate count. The guarded CLI reported an empty job table and then the lower bound
 above the lifecycle limit on a rebuilt site with 100,002 synthetic rows.
 The PostgreSQL race probe reproduced a duplicate with a split lookup and
 verified that writing the shared identity row forces a stale transaction to
@@ -100,12 +100,39 @@ updates had matching events. Both benchmark sites and candidates were retired.
 [Cleanup qualification](evidence/post-r1/background-execution/bx-01-cleanup-qualified.json)
 and [BX-01 decision](evidence/post-r1/background-execution/bx-01-decision.json)
 
-BX-02 resume capsule: no live fixture, retained candidate or pending mutation.
-Next implement the reviewed single-host worker role profile and reconcile
-desired versus ready lane counts under the existing deployment/site locks.
-Add per-lane drain and manual resizing before testing partial starts,
-connection loss and resize/upgrade races. BX-03 through BX-05 remain queued.
-No blocker requires user action.
+BX-02 passed. The protected reviewed
+profile, resumable intent, selected-lane drain and desired/running/ready counts
+use the existing deployment/site locks. Native maintenance and restore require
+the fleet paused and stopped. Seven profile boundary regressions, 23 dispatch
+regressions and 21 executor regressions passed; the 106-file contract freeze
+passed. [Worker fleet decision](architecture-decisions/0063-reviewed-native-worker-fleets.md).
+
+All seven BX-02 implementation checks passed native qualification, including
+five-second forced drain, stale claim denial, both resize/upgrade lock races
+and core 0.1.35 to 0.1.36 profile adoption. Idle lanes used about 105–107 MiB
+each; the connection snapshot is a bounded observation, not a capacity target.
+[Worker drills](evidence/post-r1/background-execution/bx-02-worker-profiles.json)
+· [Release and retirement](evidence/post-r1/background-execution/bx-02-release-and-retirement.json).
+
+The full host sweep passed 549 tests with one existing Windows-specific skip;
+the 106-file contract freeze passed. [BX-02 decision](evidence/post-r1/background-execution/bx-02-decision.json).
+
+BX-03 resume capsule: no live fixture, retained candidate, running test or pending
+mutation. Next define the versioned schedule/cursor contract and scoped service
+identity, then implement atomic cursor advancement and one-off enqueue. Qualify
+duplicate ticks, downtime, edits, pause/revocation, overlap, maintenance and
+restore before closing BX-03. BX-04 and BX-05 remain queued. No blocker requires
+user action. Gate progress is 2/5 (about 40%), independently of check counts.
+
+BX-02 checklist, independently of gate exits:
+
+- [x] Implement reviewed profiles and resumable desired state; verify boundary regressions.
+- [x] Start pinned native roles and refuse incorrect database/site/release/inventory pins.
+- [x] Verify count resizing, selected drain and recovery after partial start.
+- [x] Verify connection-loss readiness and recovery.
+- [x] Verify graceful and forced active-attempt drain with stale claim denial.
+- [x] Verify resize/upgrade exclusion and new-release profile adoption.
+- [x] Measure connection/resource usage and retire qualification assets.
 
 BX-01 checklist, tracked independently of the five gate exits.
 
@@ -561,6 +588,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
+| BX-02 | Resolved | Reviewed roles, partial recovery, connection loss, graceful/forced drain and actual release races passed; all owned Docker assets retired. See BX-02 decision. |
 | STOCK-RTL-01 | Resolved | The bounded launcher mirrors the full stylesheet under the HTTP worker limit. Preflight and both browsers passed on the selected image. |
 | STOCK-PERF-01 | Resolved | The selected image passed the analyzed 10,000-note workload with p95 367.832 ms for list and 169.833 ms for detail. |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |

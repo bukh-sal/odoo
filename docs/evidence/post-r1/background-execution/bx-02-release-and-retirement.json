@@ -1,0 +1,199 @@
+{
+  "phase": "passed",
+  "checks": {
+    "active_fleet_refused_before_reserve": true,
+    "upgrade_refused_while_resize_locked": true,
+    "resize_refused_while_upgrade_locked": true,
+    "old_profile_and_review_refused": true,
+    "new_release_ready": true
+  },
+  "operation": "6b1160bc-e512-470a-ac7c-92ae774be2cb",
+  "old_pins": {
+    "database": "mp_disposable_r0_r1_release_bede67ca3624",
+    "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+    "image_id": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+    "inventory_digest": "sha256:afb3ff0467ad50ba04833bcb735f8a120f8129cf198d54fe55f72d0e86d5bba2",
+    "release_digest": "sha256:e2172e172e4e4f70541917db79c5b28db478c95c013cbff6378f4ab47892828e",
+    "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+    "target_digest": "sha256:542d5ad3adacf3560b231a200bcf4654f113a681ca15828aef3c85957b1a9ede"
+  },
+  "status": {
+    "event": "job_fleet",
+    "state": "ready",
+    "generation": 9,
+    "approval": "sha256:fced7ef7212fa7607870005c15e0625fb16b1ca0d93ea8056fe0a7d8515806bd",
+    "pins": {
+      "database": "mp_disposable_r0_r1_release_bede67ca3624",
+      "deployment_id": "8e8e184f-890b-4bc1-91fe-e2db8de20dc1",
+      "image_id": "sha256:69370f500e7c35dafe217900e28f4b99dedad247c022ad894082591a81555477",
+      "inventory_digest": "sha256:a04d1a787105e67361bd62d5b5070b4cc65c9374124b9783d8bae48cb734583e",
+      "release_digest": "sha256:3cddbe4fb6aeb05e15836faa194eadcd48bf97159a31f51821abca2b8d658bb5",
+      "site_id": "f9b8a4ba-67bf-487f-8315-bbfb7ea774e9",
+      "target_digest": "sha256:7afc0fdafc12b87d872e6938ab372f9823a1a6402c15b1fbcf53adea6d90f995"
+    },
+    "pools": {
+      "urgent": {
+        "desired": 1,
+        "running": 1,
+        "ready": 1,
+        "drained": 0
+      },
+      "bulk": {
+        "desired": 1,
+        "running": 1,
+        "ready": 1,
+        "drained": 0
+      }
+    },
+    "lanes": [
+      {
+        "name": "mp-r0-r1releasebede67ca3624-job-bulk-1",
+        "pool": "bulk",
+        "container": "abdb29273fefd02c198bb5cd448367b1351f596af1a616fb0e99e2ee47cf8d2d",
+        "running": true,
+        "ready": true,
+        "matches_profile": true
+      },
+      {
+        "name": "mp-r0-r1releasebede67ca3624-job-urgent-1",
+        "pool": "urgent",
+        "container": "e909251b105d5f0fc30bd4579356b360b8b70ad7e4546262e6117703ecb1b738",
+        "running": true,
+        "ready": true,
+        "matches_profile": true
+      }
+    ]
+  },
+  "operation_status": {
+    "operation_id": "6b1160bc-e512-470a-ac7c-92ae774be2cb",
+    "plan_hash": "sha256:1eaf23ca94b2261340fa17f84d0404cb9d439e895f685c6b6adc928a79e10b56",
+    "state": "completed",
+    "phase": "completed",
+    "mutation_started": true,
+    "traffic_resumed": true,
+    "backup_id": "6b1160bc-e512-470a-ac7c-92ae774be2cb",
+    "approval_expires_at": "2026-11-07T04:05:06Z",
+    "history": [
+      {
+        "sequence": 15,
+        "utc": "2026-11-07T03:50:01Z",
+        "code": "prepared",
+        "details": {
+          "plan_hash": "sha256:1eaf23ca94b2261340fa17f84d0404cb9d439e895f685c6b6adc928a79e10b56"
+        }
+      },
+      {
+        "sequence": 16,
+        "utc": "2026-11-07T03:50:06Z",
+        "code": "approved",
+        "details": {
+          "plan_hash": "sha256:1eaf23ca94b2261340fa17f84d0404cb9d439e895f685c6b6adc928a79e10b56"
+        }
+      },
+      {
+        "sequence": 17,
+        "utc": "2026-11-07T03:51:04Z",
+        "code": "reserved",
+        "details": {
+          "executor_pid": 18664,
+          "lock_owner_digest": "sha256:cfce1bac9522cae631d5aa9893679af15dea76abc5eff7464b383b45c4ab4e44"
+        }
+      },
+      {
+        "sequence": 18,
+        "utc": "2026-11-07T03:51:14Z",
+        "code": "staged",
+        "details": {}
+      },
+      {
+        "sequence": 19,
+        "utc": "2026-11-07T03:51:16Z",
+        "code": "maintenance",
+        "details": {}
+      },
+      {
+        "sequence": 20,
+        "utc": "2026-11-07T03:51:19Z",
+        "code": "drained",
+        "details": {}
+      },
+      {
+        "sequence": 21,
+        "utc": "2026-11-07T03:51:26Z",
+        "code": "checkpointed",
+        "details": {
+          "backup_id": "6b1160bc-e512-470a-ac7c-92ae774be2cb"
+        }
+      },
+      {
+        "sequence": 22,
+        "utc": "2026-11-07T03:51:32Z",
+        "code": "mutation_started",
+        "details": {}
+      },
+      {
+        "sequence": 23,
+        "utc": "2026-11-07T03:51:36Z",
+        "code": "migrated",
+        "details": {}
+      },
+      {
+        "sequence": 24,
+        "utc": "2026-11-07T03:51:37Z",
+        "code": "workers_replaced",
+        "details": {}
+      },
+      {
+        "sequence": 25,
+        "utc": "2026-11-07T03:51:57Z",
+        "code": "ready",
+        "details": {}
+      },
+      {
+        "sequence": 26,
+        "utc": "2026-11-07T03:51:57Z",
+        "code": "release_published",
+        "details": {}
+      },
+      {
+        "sequence": 27,
+        "utc": "2026-11-07T03:51:58Z",
+        "code": "traffic_resumed",
+        "details": {}
+      },
+      {
+        "sequence": 28,
+        "utc": "2026-11-07T03:52:01Z",
+        "code": "completed",
+        "details": {}
+      }
+    ]
+  },
+  "gate": "BX-02",
+  "probe": "tests/background_fleet_release.py",
+  "build_record": "../../G7/bx02-worker-profile-build-02/candidate-build.json",
+  "retirement": {
+    "site": {
+      "containers": 30,
+      "volumes": 6,
+      "networks": 2
+    },
+    "images": [
+      {
+        "image": "sha256:f630771328685c0983aefabe83c243efde6aa290cc6cb9046094701f592ff42f",
+        "tags": [
+          "modular-platform:retained-5da9e82c-ee55-42bb-aa12-0bee2593f9b7",
+          "modular-platform:retained-6b1160bc-e512-470a-ac7c-92ae774be2cb",
+          "modular-platform:stage-20261107t034016074461z"
+        ]
+      },
+      {
+        "image": "sha256:69370f500e7c35dafe217900e28f4b99dedad247c022ad894082591a81555477",
+        "tags": [
+          "modular-platform:stage-20261107t034619080706z"
+        ]
+      }
+    ],
+    "retained_stock_dependency_image": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1"
+  }
+}

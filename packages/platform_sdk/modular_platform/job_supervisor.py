@@ -13,6 +13,7 @@ import time
 from uuid import uuid4
 
 from modular_platform import durable
+from modular_platform import job_health
 
 
 LEASE_SECONDS = 6
@@ -114,6 +115,18 @@ def child(args):
     signal.signal(signal.SIGTERM,lambda *_:stop.set())
     signal.signal(signal.SIGINT,lambda *_:stop.set())
     owner = str(uuid4())
+    health_lock = Lock()
+    with registry.cursor() as cr:
+        initial_release = current_release(api.Environment(cr,1,{}))
+
+    def health(state):
+        with health_lock:
+            job_health.publish(database=database, site_id=initial_release['site_id'],
+                release_digest=initial_release['release_digest'],
+                inventory_digest=os.environ['MP_EXPECTED_INVENTORY_DIGEST'], pool=args.pool,
+                state='draining' if stop.is_set() else state)
+
+    health('starting')
     emit(event='worker_ready',pool=args.pool,state='running')
 
     def watchdog(seconds):
@@ -127,6 +140,7 @@ def child(args):
         progress_lock = Lock()
         progress = 0
         started = time.monotonic()
+        health('running')
         emit(event='claimed',pool=args.pool,job_id=invocation.claim.job_id,
              generation=invocation.claim.generation,start_delay_ms=invocation.claim.ready_ms)
 
@@ -145,9 +159,12 @@ def child(args):
                         retrying(lambda:durable.heartbeat(cr,invocation.claim,
                             lease_seconds=LEASE_SECONDS,progress=value),metadata)
                     emit(event='heartbeat',pool=args.pool,job_id=invocation.claim.job_id,progress=value)
+                    health('running')
                 except (durable.ClaimLost,durable.DispatchPaused):
+                    health('paused')
                     return
                 except Exception:
+                    health('error')
                     emit(event='heartbeat_error',pool=args.pool,error_code='INTERNAL_ERROR')
                     return
 
@@ -169,11 +186,15 @@ def child(args):
         claimed = False
         try:
             routes = jobs.routes_for(args.pool)
+            with registry.cursor() as cr:
+                release = current_release(api.Environment(cr,1,{}))
+                if release != initial_release:
+                    raise durable.DispatchPaused('Managed worker release changed')
+                durable.control(cr,release['site_id'],release['release_digest'])
+                workspaces = durable.ready_workspaces(cr,release['site_id'],release['release_digest'],routes) if routes else []
+                cr.rollback()
+            health('idle')
             if routes:
-                with registry.cursor() as cr:
-                    release = current_release(api.Environment(cr,1,{}))
-                    workspaces = durable.ready_workspaces(cr,release['site_id'],release['release_digest'],routes)
-                    cr.rollback()
                 for workspace in workspaces:
                     if stop.is_set():break
                     with workspace_slot(registry,release['site_id'],args.pool,workspace) as locked:
@@ -185,10 +206,12 @@ def child(args):
                         claimed = True
                         break
         except durable.DispatchPaused:
-            pass
+            health('paused')
         except Exception:
+            health('error')
             emit(event='worker_error',pool=args.pool,state='error',error_code='INTERNAL_ERROR')
         if not claimed:
             stop.wait(args.poll_seconds)
+    health('stopped')
     emit(event='drained',pool=args.pool,state='stopped')
     return 0

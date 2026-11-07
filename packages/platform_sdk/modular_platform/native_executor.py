@@ -304,6 +304,20 @@ class NativeExecutor:
             if bundle['plan']['operation_type']=='uninstall':require_native_uninstall_runtime(runtime)
             if bundle['plan']['operation_type']=='install' and 'feature_states' in bundle['operation_lock']:require_native_reinstall_runtime(runtime)
 
+    def _require_jobs_drained(self):
+        for site in self.config['sites']:
+            path=self.store.root/'job-controls'/'fleets'/self.config['deployment_id']/site['site_id']/'desired.json'
+            if path.exists():
+                from .worker_operator import private_json
+                if private_json(path)['state']!='paused':
+                    raise OperatorError('Pause and drain the reviewed native job fleet before release maintenance')
+            ids=_run(['docker','ps','-aq','--filter','label=com.modular.deployment='+self.config['deployment_id'],
+                '--filter','label=com.modular.job_site='+site['site_id'],'--filter','label=com.modular.job_pool']).decode().split()
+            if ids:
+                rows=load_json(_run(['docker','inspect',*ids]))
+                if any(row['State']['Running'] or row['State'].get('Restarting') for row in rows):
+                    raise OperatorError('Native job lanes must be stopped before release maintenance')
+
     def apply(self, operation):
         bundle = self.store.bundle(operation)
         self._check_operation(bundle)
@@ -326,6 +340,7 @@ class NativeExecutor:
                 _,record=stages.load(bundle['operation_lock']['staged_image'])
                 require_native_removal_runtime(record['runtime'])
             self._runtime_preflight(bundle)
+            self._require_jobs_drained()
             self.store.reserve(operation, locks, self._validate())
             self.mirror_progress(operation)
             stages = protect_directory(self.store.root/'stages')

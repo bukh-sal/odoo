@@ -37,6 +37,20 @@ def validate_startup(*,managed=False,admin=False):
     connection.set_session(readonly=True,autocommit=True)
     try:bootstrap['validate'](str(root),options,connection,database,pin)
     finally:connection.close()
+    site=os.environ.get('MP_EXPECTED_SITE_ID')
+    release=os.environ.get('MP_EXPECTED_RELEASE_DIGEST')
+    if site is not None or release is not None:
+        from modular_platform import durable
+        durable._uuid(site)
+        if not isinstance(release,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',release):
+            raise ValueError('Exact managed worker site and release required')
+        connection=psycopg2.connect(host=options['db_host'],port=options.getint('db_port'),user=options['db_user'],password=options['db_password'],dbname=database,connect_timeout=5)
+        try:
+            with connection.cursor() as cr:
+                cr.execute("SELECT key,value FROM ir_config_parameter WHERE key IN ('mp.site_id','mp.release_digest')")
+                if dict(cr.fetchall())!={'mp.site_id':site,'mp.release_digest':release}:
+                    raise ValueError('Managed worker site or release pin changed')
+        finally:connection.close()
     return database
 
 

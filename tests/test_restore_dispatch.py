@@ -141,5 +141,13 @@ class RestoreDispatchTests(unittest.TestCase):
         self.assertEqual(result['state'],'restored_traffic_resumed');self.assertEqual(self.timeline,['journal','start-edge'])
         self.reviews.verify.assert_called_once();self.reviews.check_reserved.assert_called_once()
 
+    def test_reactivated_fleet_cannot_resume_restored_dispatch(self):
+        decision=self.decision()
+        self.native._require_jobs_drained.side_effect=OperatorError('Pause and drain native fleet')
+        with self.assertRaisesRegex(OperatorError,'Pause and drain'):
+            self.recovery.resume(decision,exact_hash=data_digest(decision),noninteractive=True)
+        self.store.record_restore_resume.assert_not_called()
+        self.assertEqual(self.timeline,[])
+
 
 if __name__=='__main__':unittest.main()

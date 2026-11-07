@@ -226,9 +226,32 @@ Repeat the review for each batch. The event review uses the same independent
 pins and refuses profiles with external installations, active service
 credentials, or API keys. [Event retention policy](architecture-decisions/0062-background-history-retention.md)
 
-Drain lanes before release changes. Follow the existing approved lifecycle
+Reviewed fleet commands on a profile-capable image:
+
+```text
+jobs profile-review --urgent-lanes 1 --bulk-lanes 2 --cpu-millis 1000 --memory-mib 768 --shutdown-seconds 45
+jobs profile-apply <review-digest>
+jobs status
+jobs reconcile
+jobs drain-lane bulk 2
+jobs drain
+```
+
+Use the same trust, store and deployment target options shown above. Drain any
+legacy lanes before the first profile review. Review binds the current target
+and observed lanes. Apply records desired state before starting containers.
+If apply is interrupted, inspect `status`, then retry the same `profile-apply`
+or use `reconcile`. Partial readiness is visible. Count-only changes retain
+matching lanes. A selected drain persists across reconciliation; a new reviewed
+profile clears those exclusions. Full drain pauses the profile, so reconcile
+does not recreate its lanes. Profile adoption disables the legacy `start` path.
+Choose a grace appropriate for the attempts: the 45-second default can interrupt
+longer work. Reserve database and web capacity when choosing lane limits.
+[Profile and shutdown contract](architecture-decisions/0063-reviewed-native-worker-fleets.md)
+
+Pause and drain the reviewed fleet before release changes. Follow the existing approved lifecycle
 operation and separate restore/resume decisions if recovery is needed.
-Start lanes again from the new target pin only after dispatch and traffic
+Review and apply a new profile from the new target only after dispatch and traffic
 have reopened. The application and the queue use the same release fence;
 an older lane cannot publish a result into a different generation.
 

@@ -216,7 +216,7 @@ targets. [Qualified mixed load](../docs/evidence/post-r1/background-execution/bg
   [Lifecycle bound](../packages/platform_sdk/modular_platform/dispatch_lifecycle.py:182) ·
   [PostgreSQL partitioning limits](https://www.postgresql.org/docs/16/ddl-partitioning.html#DDL-PARTITIONING-DECLARATIVE-LIMITATIONS) ·
   [Vacuum and space reuse](https://www.postgresql.org/docs/16/routine-vacuuming.html).
-- [ ] **BX-02. Managed deployment and manual resizing.** Reproduce roles from
+- [x] **BX-02. Managed deployment and manual resizing.** Reproduce roles from
   a reviewed site profile. Add per-lane drain and visible desired versus
   ready counts under existing locks. Test wrong pins, partial starts,
   connection loss, resizing with active jobs, stale claim refusal and

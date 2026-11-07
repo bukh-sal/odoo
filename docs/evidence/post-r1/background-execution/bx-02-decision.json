@@ -1,0 +1,27 @@
+{
+  "gate": "BX-02",
+  "state": "passed",
+  "acceptance_checks_passed": 7,
+  "acceptance_checks_required": 7,
+  "checks": [
+    {"requirement": "Reviewed profiles, protected durable intent and recovery before desired publication", "evidence": ["bx-02-worker-profiles.json", "../../../../tests/test_job_fleet.py"]},
+    {"requirement": "Reproducible pinned roles and wrong database, site, inventory and release refusal", "evidence": ["bx-02-worker-profiles.json"]},
+    {"requirement": "Count-only resizing, persistent selected drain and partial-start reconciliation", "evidence": ["bx-02-worker-profiles.json"]},
+    {"requirement": "Unavailable readiness on connection loss and recovery after reconnection", "evidence": ["bx-02-worker-profiles.json"]},
+    {"requirement": "Graceful active drain, bounded forced interruption, generation reclaim and stale claim refusal", "evidence": ["bx-02-worker-profiles.json"]},
+    {"requirement": "Maintenance refusal before reserve, resize/upgrade exclusion in both directions and new release profile adoption", "evidence": ["bx-02-release-and-retirement.json"]},
+    {"requirement": "Connection and resource observation, host regressions and owned Docker retirement", "evidence": ["bx-02-worker-profiles.json", "bx-02-release-and-retirement.json"]}
+  ],
+  "host_regression": {
+    "exit_code": 0,
+    "tests": 550,
+    "passed": 549,
+    "skipped": 1,
+    "seconds": 409.363,
+    "skip": "Existing Windows source/data symlink case; unchanged startup code retains prior Linux qualification",
+    "private_log_sha256": "93206047ff96348c3f81558bdbe10e6fa9dba6e41b6bc0cd81a6d353b49a1e98"
+  },
+  "contract_freeze": {"result": "passed", "files": 106, "contract_major": 1, "rows": 8},
+  "qualification_boundary": "Disposable single-site Docker roles on the same reviewed application image. The idle memory and connection samples are observations, not sustained capacity limits. No autoscaler, multi-host execution, higher workspace concurrency or remote provider is qualified here. Those remain separate follow-up decisions and drills.",
+  "next_gate": "BX-03"
+}

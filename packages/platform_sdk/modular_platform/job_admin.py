@@ -141,7 +141,7 @@ def run_archive(cr, site, release, args):
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('command',choices=('metrics','history','review','apply',*ARCHIVE_COMMANDS))
+    parser.add_argument('command',choices=('metrics','history','review','apply','dispatch',*ARCHIVE_COMMANDS))
     parser.add_argument('--job')
     parser.add_argument('--action',choices=ACTIONS)
     parser.add_argument('--evidence')
@@ -166,6 +166,11 @@ def main():
             cr.execute('SET TRANSACTION ISOLATION LEVEL READ COMMITTED')
         release=current_release(api.Environment(cr,1,{}))
         site,digest=release['site_id'],release['release_digest']
+        if args.command=='dispatch':
+            durable.control(cr,site,digest)
+            cr.rollback()
+            emit(event='job_dispatch',site_id=site,release_digest=digest,enabled=True)
+            return
         if args.command in ARCHIVE_COMMANDS:
             run_archive(cr, site, digest, args)
             return

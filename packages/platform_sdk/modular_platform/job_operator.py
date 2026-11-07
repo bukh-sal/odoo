@@ -45,7 +45,7 @@ class JobOperator:
     def runtime(self):
         runtime=self.reader.read()['runtime']
         files=runtime['inventory']['files']
-        for name in ('job_admin.py','job_runner.py','job_supervisor.py','worker_start.py','durable.py','event_retention.py'):
+        for name in ('job_admin.py','job_runner.py','job_supervisor.py','job_health.py','worker_start.py','durable.py','event_retention.py'):
             local=Path(__file__).with_name(name)
             if files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(local.read_bytes()).hexdigest():
                 raise OperatorError('Managed jobs require the current reviewed runner and queue bytes')
@@ -107,7 +107,9 @@ class JobOperator:
     def drain(self):
         found=self._lanes()
         running=[row['Id'] for row in found.values() if row['State']['Running']]
-        if running:self.docker('stop','--time','45',*running)
+        if running:
+            self.docker('update','--restart','no',*running)
+            self.docker('stop','--time','45',*running)
         if found:self.docker('rm',*[row['Id'] for row in found.values()])
         return dict(state='drained',lanes=len(found))
 
@@ -202,6 +204,16 @@ class JobOperator:
     def run(self,command,**options):
         with OperationLocks(self.store.root/'locks',self.deployment,[self.site['site_id']]):
             self._authorize()
+            from .job_fleet import JobFleet
+            fleet=JobFleet(self)
+            if command=='profile-review':return fleet.review(**options)
+            if command=='profile-apply':return fleet.apply(**options)
+            if command=='reconcile':return fleet.reconcile()
+            if command=='status':return fleet.status()
+            if command=='drain-lane':return fleet.drain(**options)
+            if command=='start' and fleet.desired():
+                raise OperatorError('Use a reviewed profile to resize the managed fleet')
+            if command=='drain' and fleet.desired():return fleet.drain()
             if command=='start':return self.start(**options)
             if command=='drain':return self.drain()
             if command.startswith('archive-'):return self.archive(command,**options)
