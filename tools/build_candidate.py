@@ -19,7 +19,7 @@ from build_inputs import source_input_paths
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--gate',choices=['G5','G6','G7'],default='G5',help='Owning implementation gate for recorded build evidence')
-    parser.add_argument('--policy',type=Path,default=Path('deploy/distribution-r1.json'),help='Operator-owned R1 distribution policy under deploy/; never an application-selected path')
+    parser.add_argument('--policy',type=Path,default=Path('deploy/distribution-r1-foundation.json'),help='Operator-owned R1 distribution policy under deploy/; never an application-selected path')
     parser.add_argument('--dependency-base-image',help='Exact sha256 image for code-only maintenance; preserves its Python/OS environment, independently rechecked after build')
     parser.add_argument('--reproduction', action='store_true', help='Rebuild from the exact dependency image without build cache or RUN network access')
     args=parser.parse_args()

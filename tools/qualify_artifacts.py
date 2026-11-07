@@ -32,8 +32,8 @@ def main():
     selected = {ROOT / name for name in ['LICENSE', 'COPYRIGHT', 'tools/reference_package.py',
         'tools/modular.py', 'tools/qualify_artifacts.py', 'tests/test_artifacts.py']}
     for folder in ['packages/platform_sdk', 'packages/contracts', 'plugins',
-                   'platform_addons/mp_example_notes', 'platform_addons/mp_example_notes_labels',
-                   'platform_addons/mp_example_canvas']:
+                   'examples/mp_example_notes', 'examples/mp_example_notes_labels',
+                   'examples/mp_example_canvas']:
         selected.update(path for path in (ROOT / folder).rglob('*') if path.is_file() and '__pycache__' not in path.parts)
     source = {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(selected)}
     host = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_artifacts.py', '-v'])

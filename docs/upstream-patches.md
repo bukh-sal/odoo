@@ -67,3 +67,17 @@ and explicit communication17 profiles passed onb51ce4ac. Six retained native
 editor/polling tests passed0failures/errors;15affected host tests passed. Public
 ownership map36gateway/14Discuss IDs is a migration input, not a grant or ID guess.
 Populated46 transition/recovery remains unqualified until AR-04.
+
+AR-03 owned source checkpoint: engine/bootstrap/config discovery now resolves
+framework/app/example roots without a duplicate vendor tree; production source
+paths and installed flat paths are distinct. Regular addon package replaces
+namespace assumptions; removed obsolete namespace invalidation mutation after
+CLI reproduction. Builder/reference packaging/source-input/operator byte guards
+and Docker allowlist use owned roots. Native numeric-width fix is in engine,
+original exact preimage kept solely as a regression fixture; fresh builds do not
+pretend to generate it.22inherited native fixture dirs retained, legacy merchant/
+Enterprise fixture replaced by owned permission/identity/native-view flow; legacy
+RPC transport test-only and not auto-installed or shipped.628unused production
+addons and IAP source removed, obsolete vendor installer recipes retired. Root
+notices/Git provenance retained. Current image4fc56557 is a qualified layout
+prototype, not a new sealed release or a populated migration pass.

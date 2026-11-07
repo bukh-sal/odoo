@@ -17,9 +17,9 @@ class ReleaseApplicationInputs(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name)/'source';self.root.mkdir()
-        for name in ['.dockerignore','LICENSE','COPYRIGHT','requirements.txt','odoo-bin','tools/sample.py','odoo/init.py']:
+        for name in ['.dockerignore','LICENSE','COPYRIGHT','requirements.txt','engine/odoo-bin','tools/sample.py','engine/odoo/init.py']:
             path=self.root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text('source')
-        path=self.root/'odoo/addons/base/__manifest__.py';path.parent.mkdir(parents=True);path.write_text("{'name':'Base','depends':[]}")
+        path=self.root/'framework_addons/base/__manifest__.py';path.parent.mkdir(parents=True);path.write_text("{'name':'Base','depends':[]}")
         path=self.root/'deploy/distribution-r1-test.json';path.parent.mkdir(parents=True);path.write_text(json.dumps({'addons':['base']}))
         self.repro=dict(result='passed_second_no_cache_build_declared_inventory_reproduction',acceptance=['BOOT-02'],
             reference_image='sha256:'+'a'*64,candidate_image='sha256:'+'b'*64,dependency_base='sha256:'+'c'*64,
@@ -71,7 +71,7 @@ class ReleaseApplicationInputs(unittest.TestCase):
         extra=self.root/'addons/unused/__manifest__.py';extra.parent.mkdir(parents=True)
         extra.write_text("{'name':'Not in this distribution'}")
         self.assertEqual(self.load()['source_files_verified'],9)
-        (self.root/'odoo/addons/base/__manifest__.py').write_text("{'name':'Changed base'}")
+        (self.root/'framework_addons/base/__manifest__.py').write_text("{'name':'Changed base'}")
         with self.assertRaisesRegex(ValueError,'differs from selected build'):self.load()
 
     def test_new_runtime_fixture_is_a_build_input(self):

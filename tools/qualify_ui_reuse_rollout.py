@@ -71,7 +71,7 @@ def main():
     local_state['evidence_history']=list(dict.fromkeys(local_state.get('evidence_history',[])+[local_state['evidence']]))
     local_state['evidence']=str(output.relative_to(ROOT));(local/'state.json').write_text(json.dumps(local_state,indent=2)+'\n')
     marker.write_text(json.dumps({'operation_id':operation,'state':'completed','plan_hash':bundle['plan_hash'],'evidence':str(output.relative_to(ROOT))},indent=2)+'\n')
-    paths=[path for path in (ROOT/'platform_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
+    paths=[path for path in (ROOT/'framework_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
     paths+=[Path(__file__),ROOT/'packages/platform_sdk/modular_platform/worker_start.py',ROOT/'tools/start_worker.py',ROOT/'deploy/Dockerfile']
     write(output/'ui-rollout.json',{'result':'passed_rollout_browser_pending','utc':datetime.now(timezone.utc).isoformat(),
         'operation_id':operation,'plan_hash':bundle['plan_hash'],'generation':current['generation'],'image_id':current['image_id'],

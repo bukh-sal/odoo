@@ -1,6 +1,13 @@
 """Enumerate exact source inputs consumed by a curated distribution build."""
 import json
 from pathlib import Path
+import sys
+
+if __package__:
+    from .source_layout import ENGINE, LAUNCHER, addon_source
+else:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from source_layout import ENGINE, LAUNCHER, addon_source
 
 
 def source_input_paths(root, policy_path):
@@ -22,20 +29,13 @@ def source_input_paths(root, policy_path):
                     raise ValueError('Build input escapes source checkout')
                 paths.add(candidate.relative_to(root).as_posix())
 
-    # The builder excludes the native fixture collection from the engine copy.
-    for path in (root / 'odoo').iterdir():
-        if path.name != 'addons':
-            add(path)
+    add(root / ENGINE)
     for name in policy['addons']:
         if not isinstance(name, str) or '/' in name or '\\' in name or name in ('.', '..'):
             raise ValueError('Invalid distribution addon name')
-        choices = [root / folder / name for folder in ('odoo/addons', 'addons', 'platform_addons', 'applications')]
-        matches = [p for p in choices if (p / '__manifest__.py').is_file()]
-        if len(matches) != 1:
-            raise ValueError('Missing or ambiguous build source addon: ' + name)
-        add(matches[0])
+        add(addon_source(root, name))
     for directory in ('plugins', 'packages/contracts', 'packages/platform_sdk', 'deploy', 'tools', 'tests/fixtures'):
         add(root / directory)
-    for name in ('.dockerignore', 'LICENSE', 'COPYRIGHT', 'requirements.txt', 'odoo-bin'):
+    for name in ('.dockerignore', 'LICENSE', 'COPYRIGHT', 'requirements.txt', LAUNCHER):
         add(root / name)
     return sorted(paths)

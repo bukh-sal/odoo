@@ -1,0 +1,64 @@
+{
+  "result": "passed",
+  "gate": "AR-03",
+  "checks": [
+    "AR-G",
+    "AR-H",
+    "AR-I"
+  ],
+  "utc": "2026-11-07T23:04:00.638357+00:00",
+  "image": "sha256:4fc56557d1970f78f8abd6612c27eff0f4c956de4d099a13598f5dda3a3d2399",
+  "inventory": "sha256:8b443c2ed5cb2362b74a8ceb3dcc934ceb5896b2c87bc240d4601b0f7d7fbee3",
+  "source_inputs": 6270,
+  "root_counts": {
+    "engine": {
+      "files": 216,
+      "bytes": 2700159
+    },
+    "framework_addons": {
+      "files": 5529,
+      "bytes": 253133921
+    },
+    "applications": {
+      "files": 134,
+      "bytes": 4578275
+    },
+    "examples": {
+      "files": 43,
+      "bytes": 85965
+    },
+    "tests/addons": {
+      "files": 310,
+      "bytes": 2670115
+    }
+  },
+  "total_owned_source_mib": 251.0,
+  "source_audit": "ar03-final-source-audit.json",
+  "source_cli": "ar03-source-cli.json",
+  "host": "ar03-host.json",
+  "native": {
+    "clean_core": 13,
+    "owned_flow_tests": 2,
+    "failed": 0,
+    "errors": 0,
+    "explicit_contact_role": true,
+    "basic_creation_denied": true,
+    "system_configuration_denied": true
+  },
+  "retirement": {
+    "unused_inherited_production_deleted": 628,
+    "iap_source_removed": 1,
+    "rpc_moved_to_test_only": true,
+    "inherited_native_fixtures_retained": 22,
+    "merchant_flow_fixture_replaced": true,
+    "test_addon_total": 25,
+    "obsolete_vendor_packaging_retired": true
+  },
+  "version_parser": "Reviewed correction owned directly in engine; historical counterexample fixture preserved",
+  "limits": [
+    "Prototype image; core46 data retirement/ownership migration not applied",
+    "No new sealed release until AR-04/05"
+  ],
+  "next": "AR-04 reviewed populated foundation transition and independent recovery",
+  "weighted_points": 55
+}

@@ -47,7 +47,7 @@ def main():
     state['evidence']=str(output.relative_to(ROOT));(local/'state.json').write_text(json.dumps(state,indent=2)+'\n')
     marker.write_text(json.dumps(previous|{'state':'completed'},indent=2)+'\n')
     paths=list((ROOT/'packages/platform_sdk/modular_platform').glob('*.py'))
-    paths+=[path for path in (ROOT/'platform_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
+    paths+=[path for path in (ROOT/'framework_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
     paths+=[Path(__file__),ROOT/'tools/qualify_ui_reuse_rollout.py',ROOT/'tools/modular.py']
     report={'result':'passed_rollout_browser_pending','utc':datetime.now(timezone.utc).isoformat(),
         'operation_id':operation,'plan_hash':previous['plan_hash'],'generation':target['generation'],'image_id':target['image_id'],

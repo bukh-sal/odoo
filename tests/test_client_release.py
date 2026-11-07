@@ -62,7 +62,7 @@ class ClientReleaseTests(unittest.TestCase):
         exceptions=ModuleType('odoo.exceptions');exceptions.AccessError=type('AccessError',(Exception,),{})
         http=ModuleType('odoo.http');http.request=SimpleNamespace(db='disposable',httprequest=SimpleNamespace(path=path,headers={}))
         if token is not None:http.request.httprequest.headers['X-MP-Client-Release']=token
-        spec=importlib.util.spec_from_file_location('isolated_release',ROOT/'platform_addons/mp_identity/release.py')
+        spec=importlib.util.spec_from_file_location('isolated_release',ROOT/'framework_addons/mp_identity/release.py')
         module=importlib.util.module_from_spec(spec)
         with patch.dict(sys.modules,{'odoo':ModuleType('odoo'),'odoo.exceptions':exceptions,'odoo.http':http}):spec.loader.exec_module(module)
         module.image_inventory_digest=lambda:self.inventory

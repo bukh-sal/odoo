@@ -1,0 +1,9 @@
+{
+  "result": "passed",
+  "tests": 591,
+  "passed": 590,
+  "skipped": 1,
+  "seconds": 512.321,
+  "skip": "Existing Windows symlink/platform case",
+  "scope": "Complete current host suite after source restructuring; later lifecycle changes need their own checks"
+}

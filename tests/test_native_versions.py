@@ -22,7 +22,8 @@ def parser(raw,*,selftest=False):
 class NativeVersions(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.raw=(ROOT/PARSER_PATH).read_bytes();cls.corrected=corrected_parser(cls.raw)
+        cls.raw=(ROOT/'tests/fixtures/native-version-parser-original.py').read_bytes()
+        cls.corrected=(ROOT/'engine'/PARSER_PATH).read_bytes()
         cls.original=staticmethod(parser(cls.raw));cls.native=staticmethod(parser(cls.corrected))
 
     def test_original_counterexample_is_fixed_without_restricting_package_spelling(self):
@@ -59,7 +60,7 @@ class NativeVersions(unittest.TestCase):
         self.assertEqual(hashlib.sha256(self.corrected).hexdigest(),TARGET_SHA256)
         self.assertEqual(self.corrected.splitlines()[0],self.raw.splitlines()[0])
         with self.assertRaises(ValueError):corrected_parser(self.raw+b'\n')
-        self.assertEqual((ROOT/PARSER_PATH).read_bytes(),self.raw)
+        self.assertEqual((ROOT/'engine'/PARSER_PATH).read_bytes(),self.corrected)
 
     def test_invalid_author_spellings_remain_rejected(self):
         for value in ['v1.0.0','1.0','01.0.0','1.0.0rc1','1.0.0.post1','1!1.0.0','1.0.0+build','1.0.0\n']:

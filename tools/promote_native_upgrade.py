@@ -67,7 +67,7 @@ def main():
     state['evidence_history']=list(dict.fromkeys(state.get('evidence_history',[])+[state['evidence']]))
     state['evidence']=str(output.relative_to(ROOT));(local/'state.json').write_text(json.dumps(state,indent=2)+'\n')
     marker.write_text(json.dumps({'operation_id':operation,'state':'completed','evidence':str(output.relative_to(ROOT))},indent=2)+'\n')
-    paths=list((ROOT/'packages/platform_sdk/modular_platform').glob('*.py'))+list((ROOT/'platform_addons/mp_example_notes').rglob('*.py'))+[Path(__file__),ROOT/'plugins/notes/plugin.toml']
+    paths=list((ROOT/'packages/platform_sdk/modular_platform').glob('*.py'))+list((ROOT/'examples/mp_example_notes').rglob('*.py'))+[Path(__file__),ROOT/'plugins/notes/plugin.toml']
     paths=[path for path in paths if '__pycache__' not in path.parts]
     write(output/'native-upgrade.json',{'result':'passed_subset','utc':datetime.now(timezone.utc).isoformat(),
         'operation_id':operation,'plan_hash':bundle['plan_hash'],'from_version':'0.2.2','to_version':'0.2.3',

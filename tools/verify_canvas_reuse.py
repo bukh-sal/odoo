@@ -44,7 +44,8 @@ def main():
     image_files=observed['runtime']['inventory']['files'];paths=[]
     for folder,names in [('mp_shell',['host.js','native_interactions.js','host.css']),('mp_example_canvas',['page.js','adapter.js'])]:
         for name in names:
-            path=ROOT/'platform_addons'/folder/'static/src'/name;paths.append(path)
+            from source_layout import addon_source
+            path=addon_source(ROOT,folder)/'static/src'/name;paths.append(path)
             assert hashlib.sha256(path.read_bytes()).hexdigest()==image_files['addons/'+folder+'/static/src/'+name]
     fixture=json.loads((local/'fixtures.json').read_text());local_state=json.loads((local/'state.json').read_text());alice=r1_probe.Client(local_state,fixture,'alice')
     status,context=alice.request('/api/v1/context?plugin_id=org.example.canvas',workspace='A');assert status==200

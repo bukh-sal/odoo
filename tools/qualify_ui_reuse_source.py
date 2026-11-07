@@ -25,12 +25,12 @@ def main():
         record={'command':command,'exit_code':result.returncode,'stdout':result.stdout.decode(errors='replace'),'stderr':result.stderr.decode(errors='replace')}
         (output/('check-'+str(index)+'.json')).write_text(json.dumps(record,indent=2)+'\n');checks.append(record)
     for name in ['host.js','native_interactions.js','client_release.js']:
-        raw=(ROOT/'platform_addons/mp_shell/static/src'/name).read_bytes()
+        raw=(ROOT/'framework_addons/mp_shell/static/src'/name).read_bytes()
         result=subprocess.run(['node','--check','--input-type=module'],input=raw,capture_output=True,timeout=20)
         checks.append({'source':name,'exit_code':result.returncode,'stderr':result.stderr.decode(errors='replace')})
     bundle=io.BytesIO()
     with tarfile.open(fileobj=bundle,mode='w') as archive:
-        for directory in ['packages/platform_sdk','packages/contracts','platform_addons/mp_identity']:
+        for directory in ['packages/platform_sdk','packages/contracts','framework_addons/mp_identity']:
             for path in (ROOT/directory).rglob('*'):
                 if path.is_file() and '__pycache__' not in path.parts:archive.add(path,arcname=path.relative_to(ROOT).as_posix(),recursive=False)
         archive.add(ROOT/'tests/test_client_release.py',arcname='tests/test_client_release.py')
@@ -45,10 +45,10 @@ raise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessf
     result=subprocess.run(command,input=bundle.getvalue(),capture_output=True,timeout=90)
     linux={'command':command,'exit_code':result.returncode,'stdout':result.stdout.decode(errors='replace'),'stderr':result.stderr.decode(errors='replace')}
     (output/'client-release-linux.json').write_text(json.dumps(linux,indent=2)+'\n');checks.append(linux)
-    paths=[path for path in (ROOT/'platform_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
+    paths=[path for path in (ROOT/'framework_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
     paths+=[Path(__file__),ROOT/'tests/test_native_interactions.mjs',ROOT/'tests/test_canvas_lifecycle.mjs',ROOT/'tests/test_client_release.mjs',ROOT/'tests/test_client_release.py',ROOT/'tools/r1_probe.py',
-        ROOT/'packages/platform_sdk/modular_platform/client_release.py',ROOT/'packages/platform_sdk/modular_platform/contracts.py',ROOT/'packages/platform_sdk/modular_platform/plans.py',ROOT/'packages/contracts/v1/client-release.schema.json',ROOT/'packages/contracts/examples/v1/client-release.json',ROOT/'docs/contracts/freeze-v1.json',ROOT/'platform_addons/mp_identity/release.py',ROOT/'platform_addons/mp_identity/models/ir_http.py',ROOT/'platform_addons/mp_identity/scopes.py',ROOT/'platform_addons/mp_identity/__manifest__.py',ROOT/'platform_addons/mp_core/controllers.py',ROOT/'platform_addons/mp_core/__manifest__.py',
-        ROOT/'platform_addons/mp_example_canvas/static/src/page.js',ROOT/'platform_addons/mp_example_canvas/static/src/adapter.js']
+        ROOT/'packages/platform_sdk/modular_platform/client_release.py',ROOT/'packages/platform_sdk/modular_platform/contracts.py',ROOT/'packages/platform_sdk/modular_platform/plans.py',ROOT/'packages/contracts/v1/client-release.schema.json',ROOT/'packages/contracts/examples/v1/client-release.json',ROOT/'docs/contracts/freeze-v1.json',ROOT/'framework_addons/mp_identity/release.py',ROOT/'framework_addons/mp_identity/models/ir_http.py',ROOT/'framework_addons/mp_identity/scopes.py',ROOT/'framework_addons/mp_identity/__manifest__.py',ROOT/'framework_addons/mp_core/controllers.py',ROOT/'framework_addons/mp_core/__manifest__.py',
+        ROOT/'examples/mp_example_canvas/static/src/page.js',ROOT/'examples/mp_example_canvas/static/src/adapter.js']
     report={'result':'passed' if all(row['exit_code']==0 for row in checks) else 'failed','utc':datetime.now(timezone.utc).isoformat(),
         'git_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),
         'linux_image_id':subprocess.check_output(['docker','image','inspect',args.image,'--format','{{.Id}}']).decode().strip(),

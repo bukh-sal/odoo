@@ -24,7 +24,7 @@ def main():
     candidate=load(ROOT/'docs/evidence/G7/bx04-recovery-build-01/candidate-build.json')
     a,b=before['source_sha256'],candidate['source_sha256']
     changed=sorted(key for key in a.keys()|b.keys() if a.get(key)!=b.get(key))
-    assert changed==['packages/platform_sdk/modular_platform/projection.py','platform_addons/mp_core/__manifest__.py']
+    assert changed==['packages/platform_sdk/modular_platform/projection.py','framework_addons/mp_core/__manifest__.py']
     proof=dict(gate='BX-04',state='qualified',fault_operation=recovery['operation'],
         successful_operation=recovery['successful_operation'],restored_to_fresh_database=True,
         history_cursors_and_rotation_preserved=recovery['before']==recovery['restored'],

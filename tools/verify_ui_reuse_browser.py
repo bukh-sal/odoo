@@ -50,7 +50,7 @@ def main():
         'selected':contrast(colors['selectedText'],colors['selectedBackground']),
         'category':contrast(colors['categoryText'],colors['background'])}
     assert min(ratios.values())>=4.5
-    paths=[path for path in (ROOT/'platform_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
+    paths=[path for path in (ROOT/'framework_addons/mp_shell').rglob('*') if path.is_file() and '__pycache__' not in path.parts]
     paths+=[Path(__file__),ROOT/'tests/test_native_interactions.mjs']
     report={'result':'passed_service_adapter_subset','utc':datetime.now(timezone.utc).isoformat(),'generation':config['generation'],
         'image_id':config['image_id'],'worker_id':config['worker_id'],'database':config['sites'][0]['database'],

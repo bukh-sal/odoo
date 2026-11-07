@@ -2,28 +2,28 @@
 
 Current goal: owned addon cleanup through AR-05. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T22:11:00+00:00
+- Updated UTC: 2026-11-07T23:03:00+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AR-03 source restructuring/pruning in progress.** Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
-- Active item: **AR-03: authoritative engine/framework/apps/examples/test roots and curated build/discovery tooling.** [Plan](../planning/addon_cleanup.md) · [ADR0072](architecture-decisions/0072-addon-extraction-and-owned-release-transition.md).
+- Current phase/gate: **AR-04 populated release lifecycle in progress.** Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
+- Active item: **AR-04: independently reviewed46→47 foundation transition, retained data and fresh recovery.** [Plan](../planning/addon_cleanup.md) · [ADR0072](architecture-decisions/0072-addon-extraction-and-owned-release-transition.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Addon cleanup and restructuring (current goal)
 
-User authorized full implementation7 November2026. **AR-03** is the sole active
-item. **35/100 weighted points;6/16 AR checks passed.** Documentation earns no
+User authorized full implementation7 November2026. **AR-04** is the sole active
+item. **55/100 weighted points;9/16 AR checks passed.** Documentation earns no
 implementation points. Existing CF remains12/12 and original R1 remains99/99.
 
 | Gate | Weight | State | Checklist |
 | --- | --- | --- | --- |
 | AR-01 |10| passed | [x] AR-A dependency/ownership audit; [x] AR-B transition/contract freeze |
 | AR-02 |25| passed | [x] AR-C editor extraction; [x] AR-D settings/catalog; [x] AR-E communication/app separation; [x] AR-F native regressions/minimal boot |
-| AR-03 |20| in_progress | [ ] AR-G owned roots; [ ] AR-H source prune/useful tests; [ ] AR-I build/discovery/package/tool paths |
-| AR-04 |25| not_started | [ ] AR-J reviewed populated upgrade; [ ] AR-K app/role/job workflows; [ ] AR-L independent recovery/useful peer |
+| AR-03 |20| passed | [x] AR-G owned roots; [x] AR-H source prune/useful tests; [x] AR-I build/discovery/package/tool paths |
+| AR-04 |25| in_progress | [ ] AR-J reviewed populated upgrade; [ ] AR-K app/role/job workflows; [ ] AR-L independent recovery/useful peer |
 | AR-05 |20| not_started | [ ] AR-M clean profiles; [ ] AR-N reproduction/consumer/provenance; [ ] AR-O affected source/native/browser/privacy; [ ] AR-P handoff/retirement |
 
 Blockers: none requiring user input. AR-01 [audit/freeze decision](evidence/post-r1/addon-cleanup/ar-01-decision.json)
@@ -35,30 +35,51 @@ local uploads/images/link previews, native Maintenance list/form/chatter and
 optional action/cron identities verified. Old failures/fixes retain exact receipts.
 No populated upgrade, top-level prune or new release seal yet.
 
-Resume capsule (AR supersedes historical capsules): start513cf91d, current
-checkpoint38f980b3acb plus AR-02 implementation/evidence awaiting local commit.
-AR-01/02 passed; **AR-03 active**. Keep immutable sealed46 kit/image72d51d32.
-Only live AR site is old46 retention baseline project
-`mp-r0-r1released447cc4d2707`, private `.local/addon-cleanup/baseline46`, port18140;
-committed fictional IAP/mailbox/conversation/message/repair witnesses,28gateway
-metadata IDs/8table digests. Never reset or rerun initialization/seed. No uncertain
-mutation, running build or native test. All AR-02 profile projects retired;
-private receipts/logs preserved. Two superseded images99454721/0095c65c retired.
-Extraction prototype03 imageb51ce4ac/inventory and source6272 inputs are in
-`docs/evidence/G7/20261108-ar02-extraction-03/candidate-build.json`; retain it until
-replacement source-layout proof. Public ownership map moves36gateway/14Discuss
-IDs; AR-04 must resolve/bind actual IDs, preserve data, and qualify retirement/
-recovery. Ordinary core-upgrade guard remains strict; no public contract change.
+Resume capsule (AR supersedes historical capsules): **AR-04 active**. HEAD36ea9c1ceea
+plus AR-03 staged moves/prune/bootstrap/path changes awaiting local checkpoint.
+AR-01/02/03 passed; [AR-03 decision](evidence/post-r1/addon-cleanup/ar03-decision.json)
+records49addon dirs (15framework,4apps,5examples,25explicit fixtures),251.0MiB
+owned engine/addon/test source,628unused production trees deleted plus IAP,
+RPC test-only extraction,22inherited fixture retention and replaced merchant flow.
+590hostpasses/1existing Windows skip in512.321s;29affected host tests; actual
+readonly/no-network source CLI/discovery; new materialized image clean13-module
+core/assets;2native owned-flow tests0failures/errors. Fixture correction grants
+explicit Contact/Creation and checks basic-user denial; production ACL unchanged.
+Original parser bug fixture retained; reviewed width correction owned in engine.
+No old active source roots or unused vendor pip/OS installer recipes.
 
-Next: commit coherent AR-02 result, inspect source bootstrap/config/CLI/test
-fixture dependencies; move retained code once into engine/framework/apps/examples/
-test roots, prune unused inherited addons with verified workspace paths, update
-builder/discovery/package/source-path tests, prove source CLI and clean image.
-Use `.local/toolchain/operator-python16/Scripts/python.exe`; keep23useful native
-fixtures assessed separately from629unused production addons. Retire unsupported
-legacy test/business dependencies explicitly, do not adopt business apps just for
-a fixture. No frontend/product expansion. AR-04/05 remain required after AR-03;
-no claimed populated migration/recovery or final release qualification yet.
+Layout prototype image4fc56557/inventory8b443c2e is retained (build record
+`docs/evidence/G7/20261108-ar03-layout-01/candidate-build.json`). All AR-02/03
+profile projects retired; no running build/test or uncertain mutation. Redundant
+materializations and three extraction prototypes99454721/0095c65c/b51ce4ac retired;
+private receipts/logs preserved. Current source default policy is foundation;
+public contracts still106files/8rows/major1. Do not restart completed AR gates.
+
+Keep sealed46 kit/image72d51d32 immutable. Only live AR deployment is old46 retention
+baseline projectd447cc4d2707, `.local/addon-cleanup/baseline46`, port18140; fictional
+IAP account/mailbox/conversation/message/repair witnesses committed,28gateway
+metadata IDs/8table digests retained. Never reset/reseed. Old consumer interpreter
+and source under `.local/foundation-release/clean-core46` remain required by its
+baseline helper; do not delete yet. Private baseline state last diagnostic phase
+ar-ownership-observe, actual guarded app ready. No plugin installation has yet
+been added to this baseline; do not fake a Notes target for a core-only operation.
+
+Next: commit coherent AR-03, read actual release_staging/StageStore/planning/
+native executor/checkpoint/restore contracts. Freeze a first-class independently
+reviewed foundation transition binding exact source/target inventory/policy,
+changed/retired/adopted modules and migration/data effects. Preserve ordinary
+core-upgrade restrictions; support real site/core scope without fabricated plugin
+installations. Resolve/bind actual50mail XML IDs (36gateway/14Discuss) preserving
+record IDs; archive populated IAP data and retire with old code through supported
+module APIs. Inspect the obsolete XML-RPC local-mailpipe entry before freezing
+supported gateway modes; production RPC is absent, POP/IMAP is qualified, stored
+configuration must be retained/refused explicitly rather than discarded. New
+schema/descriptor fields need versioned validation/freeze before use. Core47
+version for real changed source, private scoped targets only. Then AR-04 populated
+upgrade/fault/fresh independent recovery/separate resume/useful peer; AR-05 final
+release reproduction/isolated consumer/native UI/jobs/privacy/retirement. No
+populated transition or new sealed release pass yet. Use explicit
+`.local/toolchain/operator-python16/Scripts/python.exe`. No user input needed.
 
 ## Latest direction: owned fork and addon retention
 

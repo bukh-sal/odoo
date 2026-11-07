@@ -18,7 +18,7 @@ from reference_package import assemble
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source',type=Path,default=Path(__file__).resolve().parents[1],
-                        help='Reviewed source checkout containing plugins/ and platform_addons/')
+                        help='Reviewed owned checkout containing plugins/ and example addon sources')
     parser.add_argument('--example',required=True,choices=['notes','notes_labels','canvas','notes_stats','document_stats'])
     parser.add_argument('--output',required=True,type=Path,help='New .mplug file in an existing output directory')
     args=parser.parse_args()

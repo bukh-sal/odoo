@@ -125,7 +125,7 @@ class ManagerExternal(unittest.TestCase):
         with self.assertRaises(PlanningError):self.prepare()
 
     def test_actual_controller_routes_external_before_native_staging(self):
-        tree=ast.parse((ROOT/'platform_addons/mp_core/operations.py').read_text(encoding='utf8'))
+        tree=ast.parse((ROOT/'framework_addons/mp_core/operations.py').read_text(encoding='utf8'))
         cls=next(n for n in tree.body if isinstance(n,ast.ClassDef) and n.name=='Operations')
         method=next(n for n in cls.body if isinstance(n,ast.FunctionDef) and n.name=='prepare');method.decorator_list=[]
         cursor=Mock();cursor.fetchone.return_value=(0,)

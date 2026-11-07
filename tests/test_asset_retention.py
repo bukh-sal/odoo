@@ -38,7 +38,7 @@ class FactoryTests(unittest.TestCase):
         release=ModuleType('odoo.addons.mp_identity.release');release.image_inventory_digest=lambda:'sha256:'+'a'*64
         release.stock_webclient_default=lambda:True
         with patch.dict(sys.modules,{'odoo':odoo,'odoo.addons.base.models.assetsbundle':native,'odoo.addons.mp_identity.release':release}):
-            self.adapter=runpy.run_path(str(ROOT/'platform_addons/mp_shell/models/assets.py'))
+            self.adapter=runpy.run_path(str(ROOT/'framework_addons/mp_shell/models/assets.py'))
         self.qweb=self.adapter['IrQWeb']()
 
     def test_release_host_keeps_old_attachments_and_preserves_factory_parameters(self):

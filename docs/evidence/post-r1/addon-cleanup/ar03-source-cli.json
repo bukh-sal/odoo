@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "image": "sha256:b51ce4ac0065df5071be663369b7445465de84d72a4724a581d03d5b1e7dcb2a",
+  "source_cli_help": true,
+  "help_sha256": "2ee01a833bd36beab81d8efba16929658cea6add08f402b614f5c89215342c17",
+  "roots": {
+    "base": "framework_addons/base",
+    "web": "framework_addons/web",
+    "mp_aurora_tasks": "applications/mp_aurora_tasks",
+    "maintenance": "applications/maintenance",
+    "mp_example_canvas": "examples/mp_example_canvas"
+  },
+  "test_and_retired_addons_not_discovered": true,
+  "owned_engine_parser": true,
+  "source_root": "/workspace",
+  "network": "none",
+  "database_created": false,
+  "source_mounts_readonly": true
+}

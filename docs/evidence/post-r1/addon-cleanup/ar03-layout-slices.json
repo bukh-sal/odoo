@@ -1,0 +1,45 @@
+{
+  "result": "owned_roots_passed_fixture_recheck_pending",
+  "check": "AR-G",
+  "source_counts": {
+    "framework": 15,
+    "application": 4,
+    "example": 5,
+    "test": 25
+  },
+  "image": "sha256:4fc56557d1970f78f8abd6612c27eff0f4c956de4d099a13598f5dda3a3d2399",
+  "inventory": "sha256:8b443c2ed5cb2362b74a8ceb3dcc934ceb5896b2c87bc240d4601b0f7d7fbee3",
+  "minimal_core": {
+    "result": "passed",
+    "profile": "core",
+    "installed": {
+      "auth_passkey": "19.0.1.1",
+      "auth_password_policy": "19.0.1.0",
+      "auth_totp": "19.0.1.0",
+      "base": "19.0.1.4",
+      "base_import": "19.0.2.0",
+      "base_setup": "19.0.1.1",
+      "bus": "19.0.1.0",
+      "html_editor": "19.0.1.1",
+      "mp_compat": "19.0.0.1.1",
+      "mp_core": "19.0.0.1.46",
+      "mp_identity": "19.0.0.1.10",
+      "mp_shell": "19.0.0.1.19",
+      "web": "19.0.1.1"
+    },
+    "no_iap": true,
+    "no_vendor_catalog": true,
+    "optional_app_boundary": true
+  },
+  "source_cli": "ar03-source-cli.json",
+  "host": "ar03-host.json",
+  "fixtures": {
+    "retained_inherited": 22,
+    "extracted_test_transport": 1,
+    "owned_feasibility": 1,
+    "replacement_owned_flow": 1,
+    "failed_attempt": "First owned-flow fixture lacked Contact/Creation group; production ACL correctly refused. Add explicit contact role and negative unprivileged check; no production ACL change"
+  },
+  "remaining": "Native owned-flow fresh recheck, final source/tool documentation and ledger; AR-H/I not passed yet",
+  "weighted_points": 41.6667
+}

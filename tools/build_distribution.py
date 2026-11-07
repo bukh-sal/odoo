@@ -9,9 +9,13 @@ import shutil
 import tempfile
 import sys
 from pathlib import Path
+if __package__:
+    from .source_layout import ENGINE, LAUNCHER, addon_source
+else:
+    from source_layout import ENGINE, LAUNCHER, addon_source
 
 
-def build(source: Path, target: Path, policy_path="deploy/distribution.json") -> dict:
+def build(source: Path, target: Path, policy_path="deploy/distribution-r1-foundation.json") -> dict:
     policy_file = (source / policy_path).resolve()
     if not policy_file.is_relative_to(source):
         raise ValueError("distribution policy must be within the source tree")
@@ -32,21 +36,18 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     manifests = {}
     locations = {}
     for name in sorted(selected):
-        choices = [references[name]] if name in references else [source / "odoo/addons" / name, source / "addons" / name, source / "platform_addons" / name, source / "applications" / name]
-        matches = [p for p in choices if (p / "__manifest__.py").is_file()]
-        if len(matches) != 1:
-            raise ValueError(f"missing or ambiguous addon: {name}")
-        locations[name] = matches[0]
-        manifest = ast.literal_eval((matches[0] / "__manifest__.py").read_text())
+        location = references[name] if name in references else addon_source(source, name)
+        locations[name] = location
+        manifest = ast.literal_eval((location / "__manifest__.py").read_text(encoding='utf8'))
         depends = manifest.get("depends") or ([] if name == "base" else ["base"])
         if not set(depends) <= selected:
             raise ValueError(f"unpackaged dependencies for {name}: {set(depends) - selected}")
         manifests[name] = {"depends": depends, "auto_install": manifest.get("auto_install", False), "license": manifest.get("license", "unspecified")}
     target.mkdir(parents=True)
     ignore = shutil.ignore_patterns("__pycache__", "*.pyc")
-    # The source namespace remains intact; only addon discovery roots are curated.
-    shutil.copytree(source / "odoo", target / "odoo", ignore=lambda p, names: set(ignore(p, names)) | ({"addons"} if Path(p) == source / "odoo" else set()))
-    (target / "odoo/addons").mkdir()
+    # Owned roots materialize one installed namespace, without a duplicate tree.
+    shutil.copytree(source / ENGINE, target / "odoo", ignore=ignore)
+    (target / "odoo/addons").mkdir(exist_ok=True)
     (target / "addons").mkdir()
     if artifacts:
         (target/'artifacts').mkdir()
@@ -54,7 +55,8 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     for name, location in locations.items():
         destination = target / ("odoo/addons" if name == "base" else "addons") / name
         shutil.copytree(location, destination, ignore=ignore)
-    for name in ["odoo-bin", "LICENSE", "COPYRIGHT", "requirements.txt"]:
+    shutil.copy2(source / LAUNCHER, target / 'odoo-bin')
+    for name in ["LICENSE", "COPYRIGHT", "requirements.txt"]:
         shutil.copy2(source / name, target / name)
     if policy.get("platform_sdk"):
         for name in ["platform_sdk", "contracts"]:
@@ -62,10 +64,10 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     generated_patches=[]
     if policy.get('platform_sdk'):
         sys.path.insert(0,str(source/'packages/platform_sdk'))
-        from modular_platform.native_versions import PARSER_PATH,corrected_parser,patch_record
+        from modular_platform.native_versions import PARSER_PATH,TARGET_SHA256
         parser_file=target/PARSER_PATH
-        parser_file.write_bytes(corrected_parser(parser_file.read_bytes()))
-        generated_patches.append(patch_record())
+        if hashlib.sha256(parser_file.read_bytes()).hexdigest()!=TARGET_SHA256:
+            raise ValueError('Owned engine must contain the reviewed native version parser')
     inventory = {"policy": policy, "native_addons": manifests, "generated_patches": generated_patches, "files": {}}
     if artifacts:inventory['artifacts']={key:{name:value for name,value in item.items() if name!='bytes'} for key,item in artifacts.items()}
     if artifacts:inventory['reference_composition']=reference_registry
@@ -80,7 +82,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
     parser.add_argument("target", type=Path)
-    parser.add_argument("--policy", default="deploy/distribution.json")
+    parser.add_argument("--policy", default="deploy/distribution-r1-foundation.json")
     args = parser.parse_args()
     result = build(args.source.resolve(), args.target.resolve(), args.policy)
     print(json.dumps({"addons": sorted(result["native_addons"]), "file_count": len(result["files"])}))

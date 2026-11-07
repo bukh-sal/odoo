@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 ARG PYTHON_IMAGE=python:3.12-slim-bookworm@sha256:6dd8b6dab6b3adc7812bab69eca5dbdc1a5cc690ad28306d234ffb4ef8ac9753
 FROM ${PYTHON_IMAGE} AS builder
-ARG DISTRIBUTION_POLICY=deploy/distribution.json
-ARG RUNTIME_REQUIREMENTS=deploy/requirements-py312.lock
+ARG DISTRIBUTION_POLICY=deploy/distribution-r1-foundation.json
+ARG RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock
 ARG DEBIAN_SNAPSHOT=20261027T000000Z
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 PIP_NO_CACHE_DIR=1 PYTHONDONTWRITEBYTECODE=1
 RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/%s/ bookworm main\ndeb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/%s/ bookworm-security main\n' "$DEBIAN_SNAPSHOT" "$DEBIAN_SNAPSHOT" > /etc/apt/sources.list \
@@ -22,8 +22,8 @@ RUN /venv/bin/python /source/tools/build_distribution.py /source /release --poli
 
 FROM ${PYTHON_IMAGE} AS runtime
 ARG DEBIAN_SNAPSHOT=20261027T000000Z
-ARG SDK_PYTHONPATH=""
-ARG RUNTIME_REQUIREMENTS=deploy/requirements-py312.lock
+ARG SDK_PYTHONPATH=/opt/modular/packages/platform_sdk
+ARG RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock
 ENV PATH=/venv/bin:$PATH PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 LANG=C.UTF-8 PYTHONPATH=$SDK_PYTHONPATH
 RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/%s/ bookworm main\ndeb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/%s/ bookworm-security main\n' "$DEBIAN_SNAPSHOT" "$DEBIAN_SNAPSHOT" > /etc/apt/sources.list \
     && rm /etc/apt/sources.list.d/debian.sources \

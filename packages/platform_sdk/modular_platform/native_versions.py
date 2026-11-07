@@ -1,4 +1,4 @@
-"""One reviewed distribution-only correction; never a package-defined patch."""
+"""Exact historical parser correction/provenance for our supported archives."""
 import hashlib
 
 PARSER_PATH='odoo/tools/parse_version.py'
@@ -10,7 +10,11 @@ def patch_record():
     return {'path':PARSER_PATH,'patch_id':PATCH_ID,'source_sha256':SOURCE_SHA256,'result_sha256':TARGET_SHA256}
 
 def corrected_parser(raw):
-    """Keep checked-out upstream bytes untouched; transform only a fresh copy."""
+    """Reconstruct the reviewed legacy correction for archive/regression checks.
+
+    The owned engine now carries the corrected implementation directly. This
+    helper accepts only its historical preimage, never package-defined patches.
+    """
     if hashlib.sha256(raw).hexdigest()!=SOURCE_SHA256:
         raise ValueError('Native version parser source differs from the reviewed upstream preimage')
     helper=b"""def _numeric_component(part):

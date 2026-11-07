@@ -16,7 +16,7 @@ class Denied(Exception):pass
 
 class ManagerRoutes(unittest.TestCase):
     def setUp(self):
-        tree=ast.parse((ROOT/'platform_addons/mp_core/operations.py').read_text(encoding='utf-8'))
+        tree=ast.parse((ROOT/'framework_addons/mp_core/operations.py').read_text(encoding='utf-8'))
         cls=next(n for n in tree.body if isinstance(n,ast.ClassDef) and n.name=='Operations')
         methods=[n for n in cls.body if isinstance(n,ast.FunctionDef) and n.name in ['upload','installed','details']]
         for method in methods:method.decorator_list=[]

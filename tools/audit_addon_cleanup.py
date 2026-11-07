@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+from source_layout import ENGINE, ADDON_ROOTS, TEST_ADDONS
 
 
 def main():
@@ -17,32 +18,24 @@ def main():
     assert not args.output.exists()
     policy = json.loads((ROOT / 'deploy/distribution-r1-foundation.json').read_bytes())
     selected = set(policy['addons'])
+    baseline = json.loads((ROOT / 'docs/evidence/post-r1/addon-cleanup/ar-01-source-audit.json').read_bytes())['modules']
     modules = {}
-    for folder in ('addons', 'odoo/addons', 'platform_addons'):
+    for folder in (*ADDON_ROOTS, TEST_ADDONS):
         for path in sorted((ROOT / folder).glob('*/__manifest__.py')):
             manifest = ast.literal_eval(path.read_text(encoding='utf8'))
             name = path.parent.name
             assert name not in modules
-            if folder == 'odoo/addons' and name != 'base' or name == 'mp_feas':
-                disposition, target = 'test', 'tests/addons/' + name
-            elif name not in selected:
-                disposition, target = 'remove', None
-            elif name in ('maintenance', 'mp_aurora_tasks'):
-                disposition, target = 'application', 'applications/' + name
-            elif name.startswith('mp_example_'):
-                disposition, target = 'example', 'examples/' + name
-            else:
-                disposition, target = 'framework', 'framework_addons/' + name
-            if name == 'iap':
-                disposition, target = 'extract_then_remove', None
+            disposition = {'framework_addons': 'framework', 'applications': 'application',
+                           'examples': 'example', TEST_ADDONS: 'test'}[folder]
+            target = path.parent.relative_to(ROOT).as_posix()
             modules[name] = dict(source=path.parent.relative_to(ROOT).as_posix(), target=target,
                 disposition=disposition, shipped=name in selected,
                 manifest_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                 depends=manifest.get('depends', []), auto_install=manifest.get('auto_install', False),
                 license=manifest.get('license', 'unspecified'))
     references = []
-    scan_roots = [ROOT / 'odoo'] + [ROOT / row['source'] for name, row in modules.items()
-                  if row['shipped'] and not row['source'].startswith('odoo/')]
+    scan_roots = [ROOT / ENGINE] + [ROOT / row['source'] for row in modules.values()]
+    known = {**baseline, **modules}
     visited = set()
     for folder in scan_roots:
         for path in folder.rglob('*'):
@@ -60,15 +53,16 @@ def main():
             ):
                 for match in re.finditer(pattern, data):
                     name = match.group(1)
-                    if name in modules and name not in selected:
+                    if name in known and name not in selected:
                         references.append(dict(path=relative, line=data.count('\n', 0, match.start()) + 1,
-                            kind=kind, target=name, test='/tests/' in relative or '/test_' in relative,
-                            disposition=modules[name]['disposition']))
-    result = dict(result='audited_not_yet_pruned', utc=datetime.now(timezone.utc).isoformat(),
+                            kind=kind, target=name, test=relative.startswith('tests/') or '/tests/' in relative or '/test_' in relative,
+                            disposition=known[name]['disposition'], source_present=name in modules))
+    result = dict(result='owned_layout_source_audit_runtime_qualification_separate', utc=datetime.now(timezone.utc).isoformat(),
         source_roots=dict(engine='engine/odoo', launcher='engine/odoo-bin'),
         modules=modules, references_to_unshipped=references,
+        source_retired_modules=sorted(set(baseline)-set(modules)),
         counts={kind: sum(row['disposition'] == kind for row in modules.values())
-                for kind in ('framework', 'application', 'example', 'test', 'remove', 'extract_then_remove')},
+                for kind in ('framework', 'application', 'example', 'test')},
         limitations=['Static references require classification; optional model hooks and dynamic lookups need native tests.',
                     'Framework mail conversation models/widgets are services; full app entry points/gateway polling must be optional.'])
     args.output.parent.mkdir(parents=True, exist_ok=True)

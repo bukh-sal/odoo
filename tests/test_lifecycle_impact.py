@@ -21,10 +21,11 @@ class LifecycleImpactTests(unittest.TestCase):
                 'native_manifest': {'depends': list(depends)}}
 
     def test_actual_declared_reference_mapping_and_extension(self):
-        root = Path(__file__).resolve().parents[1] / 'platform_addons'
+        root = Path(__file__).resolve().parents[1]
         paths = ['mp_example_notes/models.py', 'mp_example_notes_labels/models.py',
                  'mp_example_canvas/models.py', 'mp_identity/models/scoped.py']
-        relations = static_relations({p: (root / p).read_bytes() for p in paths})
+        from tools.source_layout import addon_source
+        relations = static_relations({p: (addon_source(root,p.split('/')[0]) / p.split('/',1)[1]).read_bytes() for p in paths})
         self.assertEqual(relations['mp.example.note'], 'mp_example_note')
         self.assertEqual(relations['mp.example.canvas.board'], 'mp_example_canvas_board')
         self.assertIsNone(relations['mp.workspace.scoped'])

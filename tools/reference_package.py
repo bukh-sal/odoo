@@ -52,7 +52,8 @@ def assemble(source,manifest_path):
     addon=manifest['runtime']['addon_name']
     if plugin not in ['org.example.notes','org.example.notes_labels','org.example.canvas','org.example.notes_stats','org.example.background'] or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',version):raise ValueError('Not an allowlisted reference package')
     if addon not in ['mp_example_notes','mp_example_notes_labels','mp_example_canvas','mp_example_notes_stats','mp_example_background']:raise ValueError('Unsupported reference addon')
-    addon_dir=source/'platform_addons'/addon
+    from source_layout import addon_source
+    addon_dir=addon_source(source,addon)
     native=ast.literal_eval((addon_dir/'__manifest__.py').read_text())
     if native['version']!='19.0.'+version:raise ValueError('Reference native/package version mismatch')
     files={'plugin.toml':manifest_path.read_bytes()}

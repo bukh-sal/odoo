@@ -8,7 +8,8 @@ from foundation_release import (FoundationSite, ROOT, inspect_image, load, write
 
 PROFILES = {'core': ('', 18141, 32), 'maintenance': ('maintenance', 18142, 64),
             'communication': ('mp_discuss,mp_mail_gateway', 18143, 96),
-            'aurora': ('mp_aurora_tasks', 18161, 128), 'regression': ('mp_mail_gateway', 18160, 160)}
+            'aurora': ('mp_aurora_tasks', 18161, 128), 'regression': ('mp_mail_gateway', 18160, 160),
+            'layout-regression': ('test_foundation_flow', 18162, 192)}
 
 
 class CleanupProfile(FoundationSite):
@@ -37,7 +38,7 @@ class CleanupProfile(FoundationSite):
         state = self.state()
         assert state['phase'] == 'configured'
         extra = PROFILES[self.args.profile][0]
-        if self.args.profile == 'regression':
+        if self.args.profile in ('regression', 'layout-regression'):
             # A separate clean native regression DB uses its default test users;
             # it is never published as an application or mixed with operator data.
             self.phase(state, 'starting_regression_database')
@@ -47,15 +48,37 @@ class CleanupProfile(FoundationSite):
                 database='postgres').strip() == b'0'
             self.command('create-regression-database', ['docker', 'exec', state['project'] + '-db-1',
                 'createdb', '-U', 'postgres', '-O', 'modular', '-T', 'template0', state['database']])
-            self.native(state, 'ar-native-regressions', ['-i', 'html_editor,mp_mail_gateway',
-                '--stop-after-init', '--without-demo', '--test-enable', '--test-tags',
-                '/mp_mail_gateway,/html_editor:TestController'])
+            if self.args.profile == 'layout-regression':
+                self.layout_regressions(state)
+            else:
+                self.native(state, 'ar-native-regressions', ['-i', 'html_editor,mp_mail_gateway',
+                    '--stop-after-init', '--without-demo', '--test-enable', '--test-tags',
+                    '/mp_mail_gateway,/html_editor:TestController'])
             # Native runner's zero exit is required. Inspect the summary/log for
             # actual executed count and failures before issuing any gate decision.
             self.phase(state, 'native_regression_process_completed')
             return
         self.initialize_core(state, 'mp_shell,auth_password_policy' + (',' + extra if extra else ''))
         self.publish(state)
+
+    def layout_regressions(self, state):
+        source=(ROOT/'tests/addons').resolve()
+        assert source.is_relative_to(ROOT/'tests') and (source/'test_foundation_flow/__manifest__.py').is_file()
+        label='ar-owned-foundation-tests'
+        self.phase(state,label)
+        self.command(label,['docker','run','--name',state['project']+'-'+label,
+            '--label','com.modular.disposable='+state['project'],'--log-driver','none',
+            '--network',state['project']+'_runtime','--read-only','--user','10001:10001',
+            '--cap-drop','ALL','--security-opt','no-new-privileges','--tmpfs','/tmp',
+            '--memory','1536m','--pids-limit','128','--mount',
+            'type=volume,source='+state['project']+'_appconfig,target=/run/secrets,readonly',
+            '--mount','type=volume,source='+state['project']+'_filestore,target=/var/lib/modular',
+            '--mount','type=bind,source='+str(source)+',target=/run/ar-tests,readonly',
+            '--entrypoint','/venv/bin/python',state['image_id'],'odoo-bin',
+            '-c','/run/secrets/odoo_config','-d',state['database'],'--no-http',
+            '--workers=0','--max-cron-threads=0','--stop-after-init','--without-demo',
+            '--addons-path=/opt/modular/addons,/run/ar-tests','-i','test_foundation_flow',
+            '--test-enable','--test-tags','/test_foundation_flow'],timeout=300)
 
     def verify(self):
         code = '''

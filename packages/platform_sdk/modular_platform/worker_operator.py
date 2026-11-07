@@ -107,7 +107,7 @@ class WorkerOperator(WorkerPlanningReader):
             if files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest():
                 raise OperatorError('Job dispatch requires a reviewed immutable image with current runner/authority source')
         source=Path(__file__).resolve().parents[3]
-        addons=source/'platform_addons' if (source/'platform_addons').is_dir() else source/'addons'
+        addons=source/'framework_addons' if (source/'framework_addons').is_dir() else source/'addons'
         for name in ['job_dispatch.py','external_job.py','external_authority.py']:
             if files.get('addons/mp_core/'+name)!=hashlib.sha256((addons/'mp_core'/name).read_bytes()).hexdigest():
                 raise OperatorError('Job dispatch requires the current inventoried native authority/bridge')

@@ -29,7 +29,7 @@ def main():
     b=load(ROOT/'docs/evidence/G7/bx05-chunks-build-05/candidate-build.json')
     changed=sorted(key for key in a['source_sha256'].keys()|b['source_sha256'].keys()
         if a['source_sha256'].get(key)!=b['source_sha256'].get(key))
-    assert changed==['platform_addons/mp_example_background/__manifest__.py','plugins/background/plugin.toml']
+    assert changed==['examples/mp_example_background/__manifest__.py','plugins/background/plugin.toml']
     assert probe.state['image_id']==b['image_id']
     proof=dict(gate='BX-05',state='qualified',fault_operation=recovery['operation'],
         successful_operation=recovery['successful_upgrade']['operation'],saved_cursor=recovery['seed']['row']['cursor'],

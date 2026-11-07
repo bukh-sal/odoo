@@ -148,7 +148,7 @@ def main():
     write(output/'state-after.json',after)
     seeded['restored_database']=state['active_db'];(local/'lifecycle-data.json').write_text(json.dumps(seeded,indent=2)+'\n')
     marker.write_text(json.dumps({'operation_id':operation,'state':'restored_verified_and_resumed','database':state['active_db'],'evidence':str(output.relative_to(ROOT))},indent=2)+'\n')
-    paths=list((ROOT/'packages/platform_sdk/modular_platform').glob('*.py'))+list((ROOT/'platform_addons/mp_example_notes').rglob('*.py'))+[Path(__file__),ROOT/'plugins/notes/plugin.toml']
+    paths=list((ROOT/'packages/platform_sdk/modular_platform').glob('*.py'))+list((ROOT/'examples/mp_example_notes').rglob('*.py'))+[Path(__file__),ROOT/'plugins/notes/plugin.toml']
     paths=[path for path in paths if '__pycache__' not in path.parts]
     write(output/'native-upgrade-recovery.json',{'result':'passed_subset','utc':datetime.now(timezone.utc).isoformat(),
         'operation_id':operation,'plan_hash':bundle['plan_hash'],'from_version':'0.2.2','native_target_version':'0.2.3',

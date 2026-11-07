@@ -136,7 +136,7 @@ class DispatchMaintenance:
         if dest.exists():raise OperatorError('Job reconciliation already attempted; inspect exact private result before continuation')
         # Read only the host implementation, never a path/source supplied by an
         # artifact or application. Supports retained pre-adapter image restore.
-        path=Path(__file__).resolve().parents[3]/'platform_addons/mp_core/job_dispatch.py'
+        path=Path(__file__).resolve().parents[3]/'framework_addons/mp_core/job_dispatch.py'
         text=path.read_text(encoding='utf8');tree=ast.parse(text)
         functions=[node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name=='reconcile_release']
         if len(functions)!=1:raise OperatorError('Fixed host job reconciliation source missing')

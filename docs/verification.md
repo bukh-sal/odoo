@@ -7,6 +7,10 @@ populated core46 baseline. The [AR-02 extraction decision](evidence/post-r1/addo
 records three passed native profiles and six retained native regression tests.
 Source restructuring, populated migration/recovery and final release qualification
 remain required. This extraction prototype is not a sealed release.
+The [AR-03 source-layout decision](evidence/post-r1/addon-cleanup/ar03-decision.json)
+qualifies the owned roots/prune/source CLI/materialization with590host passes,
+one existing skip and2native replacement-flow tests. Populated transition/recovery
+and final release checks remain AR-04/05.
 The post-R1 background execution observations are indexed in the
 [background execution plan](../planning/background_execution.md) and
 [evidence directory](evidence/post-r1/background-execution/).

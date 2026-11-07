@@ -19,9 +19,9 @@ def main():
         assert state['phase']=='references_installed'
         assert json.loads(sql(state,'assert-primitive-start-empty',"SELECT jsonb_build_array((SELECT count(*) FROM mp_job),(SELECT count(*) FROM mp_outbox),(SELECT count(*) FROM mp_dispatch_control));"))==[0,0,0]
     marker=LOCAL/('primitive-'+args.label+'.json');assert not marker.exists()
-    runtime=inspect_image(state['image_id']);paths=['packages/platform_sdk/modular_platform/durable.py','platform_addons/mp_core/async_models.py','platform_addons/mp_core/__manifest__.py']
+    runtime=inspect_image(state['image_id']);paths=['packages/platform_sdk/modular_platform/durable.py','framework_addons/mp_core/async_models.py','framework_addons/mp_core/__manifest__.py']
     for path in paths:
-        name=path.replace('platform_addons/','addons/');assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==runtime['inventory']['files'][name]
+        name=path.replace('framework_addons/','addons/');assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==runtime['inventory']['files'][name]
     source=(OUTPUT/'native_tests.py').read_text();validation=(ROOT/'tests/test_durable_validation.py').read_text()
     code="""import json,sys,types,unittest
 env.cr.rollback()

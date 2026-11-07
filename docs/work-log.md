@@ -1668,3 +1668,30 @@ IDs and no-container-use checks.35/100weighted/6of16checks; AR-03 sole active.
 Next owned source roots/prune/useful fixture paths/build+source CLI proof, then
 AR-04 actual populated retirement/upgrade/fault/fresh restore/separate resume and
 AR-05 final release reproduction/consumer/UI/jobs/privacy. No user input needed.
+
+AR-03 progress: audited tracked-only Git moves/prune complete (private source-moves
+receipt);628unused production addons deleted, RPC retained only as test transport,
+IAP removed;22inherited fixtures+owned replacement flow/mp_feas/test transport=25
+fixtures,49total native dirs. Obsolete vendor pip/OS installers retired after
+reference check. RootREADME documents actual owned layout/default foundation
+policy/materialized runtime. Source namespace required a regular-package path fix:
+CLI initial failure exposed obsolete _path_finder mutation; explicit source paths
+plus removal passed readonly/no-network source CLI help/discovery, tests excluded.
+Parser width correction moved into owned engine; original regression fixture kept.
+29affected host tests passed and full591tests590passes/1existing Windows skip in
+512.321s. Layout image4fc56557/inventory8b443c2e built; clean core/asset/13module proof
+passed then site retired. Owned-flow fixture first error was missing explicit
+Contact/Creation permission; production ACL stayed strict. Fixture grants contact
+role and asserts basic-user denial; fresh ar03-02 native test pending. AR-G passed,
+41.67weighted/7of16; AR-H/I still open until fixture/checkpoint. Old46 baseline
+remains untouched/live. No unknown data deletion/global Docker prune.
+
+AR-03 passed55/100weighted9/16checks:49modules/251.0MiB owned engine+addon+test
+source, sourceCLI/discovery, curated image4fc56557/inventory8b443c2e, clean core13,
+full591host590passes/1existing skip and native owned-flow2/2. First fixture lacked
+contact creation rights; diagnosedACL preserved, explicit role plus negative basic
+user case passedfresh target. All source/test profiles retired; only old46 data
+baseline remains live. Redundant materializations/extraction prototypes retired.
+AR-04 sole active: scoped reviewed46→47 foundation/data retirement/ownership/
+independent recovery, with no fake plugin target or broad coreguard relaxation.
+Contract freeze106/8unchanged; final release/consumer/UI/jobs/privacy stillAR05.

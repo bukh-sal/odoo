@@ -1,37 +1,39 @@
-# Odoo
+# Modular Platform foundation
 
-[![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
-[![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
-[![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
-[![Nightly Builds](https://img.shields.io/badge/master-nightly-875A7B.svg?style=flat&colorA=8F8F8F)](https://nightly.odoo.com/)
+An independently owned fork of the Odoo Community engine and native UI. We retain
+useful infrastructure and maintain our own releases; external Odoo addon/release
+compatibility is not a product goal. Original attribution remains in LICENSE,
+COPYRIGHT, source notices and upstream.lock.
 
-Odoo is a suite of web based open source business apps.
+Read [implementation status](docs/implementation-status.md) first: it identifies
+the active gate, verified checks, evidence, blockers and the next executable step.
+The current addon cleanup follows [AR-01 through AR-05](planning/addon_cleanup.md).
+The sealed core46 release is historical and remains immutable; source cleanup
+alone does not qualify a replacement release.
 
-The main Odoo Apps include an [Open Source CRM](https://www.odoo.com/page/crm),
-[Website Builder](https://www.odoo.com/app/website),
-[eCommerce](https://www.odoo.com/app/ecommerce),
-[Warehouse Management](https://www.odoo.com/app/inventory),
-[Project Management](https://www.odoo.com/app/project),
-[Billing &amp; Accounting](https://www.odoo.com/app/accounting),
-[Point of Sale](https://www.odoo.com/app/point-of-sale-shop),
-[Human Resources](https://www.odoo.com/app/employees),
-[Marketing](https://www.odoo.com/app/social-marketing),
-[Manufacturing](https://www.odoo.com/app/manufacturing),
-[...](https://www.odoo.com/)
+| Directory | Responsibility |
+| --- | --- |
+| engine/ | Owned registry, ORM, HTTP/security runtime and CLI |
+| framework_addons/ | Native UI/auth/settings/import/realtime/editor and optional communication services |
+| applications/ | Aurora Tasks, Maintenance, optional Discuss and incoming mail gateway |
+| examples/ and plugins/ | Minimal reference addon code and package manifests, including Canvas |
+| tests/addons/ | Explicit native regression fixtures, outside production discovery |
+| packages/ | Public SDK/contracts and independent operator implementation |
+| deploy/, tools/, release/ | Pinned builds, scoped operations and portable release kits |
 
-Odoo Apps can be used as stand-alone applications, but they also integrate seamlessly so you get
-a full-featured [Open Source ERP](https://www.odoo.com) when you install several Apps.
+The source CLI is `engine/odoo-bin`. Source discovery uses the owned framework,
+application and example roots; test roots are explicit. The builder materializes
+one installed namespace (`odoo/`, `addons/`) inside the image. Its inherited Python
+spelling identifies an internal ABI retained for our archives, not compatibility
+with external Odoo packages.
 
-## Getting started with Odoo
+Use the pinned isolated Python/operator environment and project-owned Docker
+resources described in [PLATFORM.md](PLATFORM.md). The active candidate policy is
+`deploy/distribution-r1-foundation.json`; older policy files/evidence retain their
+historical scope and require the corresponding historical source. Runtime and
+operator deployment use the Docker/release-kit tooling. Obsolete vendor pip and
+OS installer recipes have been retired; the SDK retains its own package metadata.
 
-For a standard installation please follow the [Setup instructions](https://www.odoo.com/documentation/master/administration/install/install.html)
-from the documentation.
-
-To learn the software, we recommend the [Odoo eLearning](https://www.odoo.com/slides),
-or [Scale-up, the business game](https://www.odoo.com/page/scale-up-business-game).
-Developers can start with [the developer tutorials](https://www.odoo.com/documentation/master/developer/howtos.html).
-
-## Security
-
-If you believe you have found a security issue, check our [Responsible Disclosure page](https://www.odoo.com/security-report)
-for details and get in touch with us via email.
+Standard record screens use the native WebClient and list/form views. Optional
+custom plugin pages remain available. Canvas stays a small reference/test plugin.
+No publication or production deployment is implied by local qualification.

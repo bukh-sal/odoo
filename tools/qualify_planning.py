@@ -65,8 +65,8 @@ def main():
         selected.update(ROOT/name for name in ['odoo/tools/parse_version.py','tests/test_artifacts.py'])
     if args.uninstall_only:selected.add(ROOT/'tests/test_artifacts.py')
     for folder in ['packages/platform_sdk', 'packages/contracts', 'plugins',
-                   'platform_addons/mp_example_notes', 'platform_addons/mp_example_notes_labels', 'platform_addons/mp_example_canvas',
-                   'platform_addons/mp_shell', 'platform_addons/mp_identity', 'platform_addons/mp_core']:
+                   'examples/mp_example_notes', 'examples/mp_example_notes_labels', 'examples/mp_example_canvas',
+                   'framework_addons/mp_shell', 'framework_addons/mp_identity', 'framework_addons/mp_core']:
         selected.update(path for path in (ROOT / folder).rglob('*') if path.is_file() and '__pycache__' not in path.parts)
     source = {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(selected)}
     dependency = importlib.metadata.distribution('resolvelib')
