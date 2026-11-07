@@ -1,6 +1,6 @@
 # ADR0068. App-owned bounded report continuations
 
-Status: BX-05 contract selected before implementation. No public SDK change.
+Status: BX-05 qualified on reference0.3.3/core45. No public SDK change.
 
 Use the existing native background reference app. Its one-off report accepts
 at most500 task IDs; retain that handler/version unchanged. Add a separate
@@ -79,3 +79,16 @@ after partial progress, compatible package upgrade and populated fresh restore.
 Verify cursor/successor pairs in actual native transactions, not only mocks.
 Retire owned fixtures and obsolete candidates. Provider delivery and bounded
 fan-out remain unselected because this app needs neither.
+
+Native qualification completed13 chunks/1,201 snapshot rows and50 chunks/5,000
+rows with exact sums/digests. It covered four concurrent starts, initial and
+post-successor rollback, current authority/source deletion, automatic worker
+restart and old apply refusal, cancellation after100 committed rows, compatible
+partial upgrade and fresh recovery from cursor800 followed by separate resume
+and forward upgrade. The full host sweep passed584 tests with one existing
+Windows skip;106-file freeze passed. Owned realms, volumes and images retired.
+[Basics](../evidence/post-r1/background-execution/bx-05-native-basics.json) ·
+[Process loss](../evidence/post-r1/background-execution/bx-05-process.json) ·
+[Cancellation](../evidence/post-r1/background-execution/bx-05-cancellation.json) ·
+[Recovery](../evidence/post-r1/background-execution/bx-05-recovery.json) ·
+[Retirement](../evidence/post-r1/background-execution/bx-05-retirement.json).

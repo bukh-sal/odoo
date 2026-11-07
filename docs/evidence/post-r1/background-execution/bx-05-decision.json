@@ -1,0 +1,80 @@
+{
+  "gate": "BX-05",
+  "state": "passed",
+  "required_checks": 5,
+  "required_checks_passed": 5,
+  "selected_application": "Native reference bulk report:bounded immutable snapshot and100-row sequential continuations.",
+  "checks": [
+    {
+      "id": "BX05-01",
+      "state": "passed",
+      "requirement": "Freeze app-owned bounded snapshot/cursor/consistency contract.",
+      "evidence": [
+        "../../../architecture-decisions/0068-app-owned-report-continuations.md"
+      ],
+      "result": "5,000-row app limit;100 rows/job; current actor/workspace/source access; unchanged public SDK and native UI."
+    },
+    {
+      "id": "BX05-02",
+      "state": "passed",
+      "requirement": "Implement and qualify scoped progress/cursor/successor atomicity.",
+      "evidence": [
+        "bx-05-native-basics.json"
+      ],
+      "result": "1,201 rows/13 chunks; exact immutable sum/digest; terminal cleanup, physical phase constraint, changed-request conflict,5,001 refusal."
+    },
+    {
+      "id": "BX05-03",
+      "state": "passed",
+      "requirement": "Prove rollback, duplicates, current authority, process loss and partial cancellation.",
+      "evidence": [
+        "bx-05-native-basics.json",
+        "bx-05-process.json",
+        "bx-05-cancellation.json"
+      ],
+      "result": "Four concurrent starts yield one run/job; post-successor failure rolls back cursor/job/identity; current authority/deleted source deny; automatic restart/stale apply refusal;50 exact chunks; cancellation retains100 committed rows."
+    },
+    {
+      "id": "BX05-04",
+      "state": "passed",
+      "requirement": "Compatible partial upgrade and populated fresh restore.",
+      "evidence": [
+        "bx-05-native-basics.json",
+        "bx-05-recovery.json"
+      ],
+      "result": "Preserved1,200-row prefix through compatible patch. Fresh restore from cursor800 kept all app/business data exact, separate resume and old claim/profile refusal, then exact5k completion and independently approved forward0.3.3 upgrade."
+    },
+    {
+      "id": "BX05-05",
+      "state": "passed",
+      "requirement": "Regressions, conditional extensions, documentation and cleanup.",
+      "evidence": [
+        "bx-05-recovery.json",
+        "bx-05-retirement.json"
+      ],
+      "result": "584 host tests passed/one existing Windows skip;106-file freeze passed. Reference guide added, owned realm/volumes/networks/images retired."
+    }
+  ],
+  "corrected_defects": [
+    "Successor enqueue validates preparation immediately; advance/flush cursor inside the same uncommitted apply before enqueue.",
+    "Terminal JSON clearing becomes SQL NULL; nullable snapshot with phase constraint preserves active-array integrity."
+  ],
+  "optional_branches": [
+    {
+      "feature": "Provider delivery",
+      "decision": "not_selected",
+      "reason": "Selected app has no remote effect; no provider integration or delivery guarantee is claimed."
+    },
+    {
+      "feature": "Bounded fan-out/common orchestration/public workflow API",
+      "decision": "not_selected",
+      "reason": "Selected app needs one sequential successor. Add only after a shared app requirement."
+    }
+  ],
+  "scope": "Local disposable qualification of core0.1.45/reference0.3.3. No production deployment, new public RPC, UI rewrite or untrusted native sandbox claim.",
+  "progress": {
+    "passed_gates": 5,
+    "total_gates": 5,
+    "rough_percent_by_equal_gate_weight": 100
+  }
+}

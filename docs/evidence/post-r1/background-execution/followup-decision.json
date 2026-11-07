@@ -1,0 +1,74 @@
+{
+  "objective": "Implement and qualify planning/background_execution.md BX-01 through BX-05.",
+  "state": "complete",
+  "gates": [
+    {
+      "id": "BX-01",
+      "state": "passed",
+      "weight": 20,
+      "evidence": "bx-01-decision.json"
+    },
+    {
+      "id": "BX-02",
+      "state": "passed",
+      "weight": 20,
+      "evidence": "bx-02-decision.json"
+    },
+    {
+      "id": "BX-03",
+      "state": "passed",
+      "weight": 20,
+      "evidence": "bx-03-decision.json"
+    },
+    {
+      "id": "BX-04",
+      "state": "passed",
+      "weight": 20,
+      "evidence": "bx-04-decision.json"
+    },
+    {
+      "id": "BX-05",
+      "state": "passed",
+      "weight": 20,
+      "evidence": "bx-05-decision.json"
+    }
+  ],
+  "weighted_progress": 100,
+  "original_r1_acceptance_unchanged": {
+    "passed": 99,
+    "required": 99,
+    "weighted_points": 100
+  },
+  "delivered": [
+    "Durable retention, compact scoped identities and native scoped visibility",
+    "Reviewed pinned worker profiles, resize/drain and recovery",
+    "Scoped fixed-UTC recurrence with stable occurrence identity",
+    "Bounded read-only capacity advice, measured load/fairness/claim corrections and deployment sizing decision",
+    "App-owned bounded report continuation, atomic progress/successor, cancellation and populated lifecycle"
+  ],
+  "decisions": {
+    "autoscaling": "Evidence-gated, not selected for admitted workload; manual profiles/advice implemented.",
+    "broker_and_extra_pools": "No measured gap for selected workload.",
+    "remote_delivery_and_fanout": "No requirement from selected app; explicitly unselected."
+  },
+  "qualification": {
+    "host_tests": 585,
+    "passed": 584,
+    "skipped": 1,
+    "contract_files": 106,
+    "contract_rows": 8,
+    "contract_major": 1,
+    "native_reference": "0.3.3",
+    "platform": "0.1.45"
+  },
+  "retirement": "All follow-up disposable realms retired; no running worker/producer, pending check or uncertain mutation. Test candidate images removed; unrelated assets and existing dependency base preserved.",
+  "latest_evidence": [
+    "bx-05-native-basics.json",
+    "bx-05-process.json",
+    "bx-05-cancellation.json",
+    "bx-05-recovery.json",
+    "bx-05-retirement.json"
+  ],
+  "next_action": null,
+  "user_input_needed": false
+}

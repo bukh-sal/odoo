@@ -1,0 +1,247 @@
+{
+  "gate": "BX-05",
+  "state": "retired",
+  "project": "mp-r0-r1release868dbb340ae2",
+  "containers": 46,
+  "volumes": 6,
+  "networks": 2,
+  "images": [
+    {
+      "image": "sha256:fe1213fa565810e6f93cf87b8ad7943757978a72176d1b96c1e1f4d92b4eed4d",
+      "tags": [
+        "modular-platform:retained-20561ee8-dc36-4d70-93a9-473d32682c77",
+        "modular-platform:retained-ac35d2f6-905c-4c64-945d-7eb184a8b6c3",
+        "modular-platform:stage-20261107t090701830220z"
+      ]
+    },
+    {
+      "image": "sha256:25f071befa83f730ca3a6ff4f6cf79448e26f9484b172d90dc449771b9751a0e",
+      "tags": [
+        "modular-platform:stage-20261107t094135578588z"
+      ]
+    }
+  ],
+  "intermediate": {
+    "phase": "passed",
+    "containers": [
+      {
+        "id": "6b825ce1c341fcf28c0d646d9bac552a6c342fc8ab9317b21fb7e9d4e51cf6a0",
+        "name": "mp-r0-r1release868dbb340ae2-bx05-atomicity"
+      },
+      {
+        "id": "d7663154768948f58b51b9bf60dbf6443a6320d23585cfdc76c1de0d14d3bc45",
+        "name": "mp-r0-r1release868dbb340ae2-bx05-basic-final"
+      },
+      {
+        "id": "28d211ff61b84e821e3b0fa710146a863f918945ca11afcd00d3afbf06010a68",
+        "name": "mp-r0-r1release868dbb340ae2-op-11da3d89-07e5-4e57-8cea-38e9befb443e-dispatch-observe"
+      },
+      {
+        "id": "be6aae17e0b117ac20f60c8cec7bf99c0811c2f0ead311f1d760e55025e2c8fb",
+        "name": "mp-r0-r1release868dbb340ae2-op-32e9152d-e14a-4c6f-874d-937bc905d26b-dispatch-observe"
+      },
+      {
+        "id": "3a2011a988f9613546062a793e414f7e40e2bcf878369722d8b3e5ba6fb6a36f",
+        "name": "mp-r0-r1release868dbb340ae2-op-b66e704a-69ae-4970-a57c-4af9d7c95cba-dispatch-observe"
+      },
+      {
+        "id": "36fe78a53597147ce5d335749e2a8b0be72812d774a9d97df237a425f8a098d6",
+        "name": "mp-r0-r1release868dbb340ae2-op-df9977ec-4262-4ac5-9cbd-b9d313e095ec-native"
+      },
+      {
+        "id": "c132e4518268c6e5bb0640b79b4dc664eb5e27d731a941e501a4dd19a0274eae",
+        "name": "mp-r0-r1release868dbb340ae2-op-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf-dispatch-enable"
+      },
+      {
+        "id": "9f01873c97f8b1a9726c24df497d2ab9cfb8d6bc6028986f0c7d3b48b38b7399",
+        "name": "mp-r0-r1release868dbb340ae2-app-release-2fbc9a4cc7954f60aafe00905b404627"
+      },
+      {
+        "id": "6ea2055778d36b8c504f53c169258c5f8f082aacb75d571b1b4d52bd24a0b446",
+        "name": "mp-r0-r1release868dbb340ae2-op-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf-checkpoint"
+      },
+      {
+        "id": "1276bc74d16c8a1802abbb8397cc907c6154d269f67057b0e336504573c46436",
+        "name": "mp-r0-r1release868dbb340ae2-op-825c81ec-e577-4ec3-99f3-1e9d03ab5064-dispatch-fence"
+      },
+      {
+        "id": "3c1a166090784f2a0ec7ce25400f7a08b4f85779a8903da106934178971fbc69",
+        "name": "mp-r0-r1release868dbb340ae2-op-66b29611-0c3d-46fd-9ea9-9c675d231e32-dispatch-observe"
+      },
+      {
+        "id": "d7850503ed6596aa69df255181d9cbe62f503819f801b5aeb07eac01b177832e",
+        "name": "mp-r0-r1release868dbb340ae2-op-825c81ec-e577-4ec3-99f3-1e9d03ab5064-dispatch-enable"
+      },
+      {
+        "id": "afd6e888453f50df9cf51689a10f8f392f4801a0373384539160f31bb39e167e",
+        "name": "mp-r0-r1release868dbb340ae2-op-825c81ec-e577-4ec3-99f3-1e9d03ab5064-checkpoint"
+      },
+      {
+        "id": "93d1a0fc2ae284689d23137d3d2331549be308917e8e671560bb870fafec3787",
+        "name": "mp-r0-r1release868dbb340ae2-op-825c81ec-e577-4ec3-99f3-1e9d03ab5064-dispatch-reconcile"
+      },
+      {
+        "id": "11ef7692e42ece0883a5d14af78c7220847c7cafe226fc91fd4dd6b09100eb18",
+        "name": "mp-r0-r1release868dbb340ae2-op-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf-native"
+      },
+      {
+        "id": "2c8f09c49c45ed4a08292aa72986ca14543088972eaf5684f8927625a7c32954",
+        "name": "mp-r0-r1release868dbb340ae2-op-825c81ec-e577-4ec3-99f3-1e9d03ab5064-native"
+      },
+      {
+        "id": "142d24c4b4b16346dce9c76efa478938d69629215eb46892aff99a14b2571b1e",
+        "name": "mp-r0-r1release868dbb340ae2-op-df9977ec-4262-4ac5-9cbd-b9d313e095ec-dispatch-enable"
+      },
+      {
+        "id": "1b8cb62969caf9704e302c29ba696cf911431bced3b9f655ccb2cf199aedd906",
+        "name": "mp-r0-r1release868dbb340ae2-bx05-basic"
+      },
+      {
+        "id": "f8baf222492662eab9471c0e6c36fec067926fa7b3c6cb874ab47714c3c0005c",
+        "name": "mp-r0-r1release868dbb340ae2-op-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf-metadata"
+      },
+      {
+        "id": "015beed5d1296a69f8d589c51871c7bb9e12ebf4b140654c2fb0d3f8ef22bd66",
+        "name": "mp-r0-r1release868dbb340ae2-op-df9977ec-4262-4ac5-9cbd-b9d313e095ec-dispatch-fence"
+      },
+      {
+        "id": "636520810d0c55a024ca26ec107d197a5ec790d9e6d8e4648c832c468d2f0356",
+        "name": "mp-r0-r1release868dbb340ae2-op-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf-dispatch-fence"
+      },
+      {
+        "id": "1dabefb59ba9f4a56095ef23b815f38fcee8a6e2dae80aa5a2b5b20c47d5ab3f",
+        "name": "mp-r0-r1release868dbb340ae2-op-df9977ec-4262-4ac5-9cbd-b9d313e095ec-checkpoint"
+      },
+      {
+        "id": "7b6b9a292dc66f4231b7e6a92192e39db7e7b96519b26432d187c6e410326e41",
+        "name": "mp-r0-r1release868dbb340ae2-bx05-basic-resume"
+      },
+      {
+        "id": "54c39e0d07c3d33c48d8f7457ee9f5ca23ade26e95ed556e57799d3afa43bde7",
+        "name": "mp-r0-r1release868dbb340ae2-op-4109a842-8059-4d81-a281-3ec1f84e3e00-dispatch-observe"
+      },
+      {
+        "id": "2cbf9f29861467c29e36754e14eed87f6400fcbaf9f0d2b1ce3f026d6f01187b",
+        "name": "mp-r0-r1release868dbb340ae2-bx05-diagnose-01"
+      },
+      {
+        "id": "72f4815f3c74ea9d21d964a62a750d22a88b88c38614f598fd8a18a6e4e6d23a",
+        "name": "mp-r0-r1release868dbb340ae2-op-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf-dispatch-reconcile"
+      },
+      {
+        "id": "38869ea331dded4480143586ccb89e25f0a360e448483d9c4e92fcdfbbd361a8",
+        "name": "mp-r0-r1release868dbb340ae2-op-825c81ec-e577-4ec3-99f3-1e9d03ab5064-assets"
+      },
+      {
+        "id": "9427e59cdc1a610d0569f9853465e103cb50aeb60b8776a7cc8c611155db927d",
+        "name": "mp-r0-r1release868dbb340ae2-op-df9977ec-4262-4ac5-9cbd-b9d313e095ec-metadata"
+      },
+      {
+        "id": "332728fe44170a930e9b2432f40d56681cb53b1fa90c1216a8279f730013930a",
+        "name": "mp-r0-r1release868dbb340ae2-op-df9977ec-4262-4ac5-9cbd-b9d313e095ec-assets"
+      },
+      {
+        "id": "6389a788072907731895d70afaac66cfa3b6953b271371e3218c46bf47298f31",
+        "name": "mp-r0-r1release868dbb340ae2-op-825c81ec-e577-4ec3-99f3-1e9d03ab5064-metadata"
+      },
+      {
+        "id": "ac77304438b12e3a854f9489040e0f4f24bc28df0ad8aa96fad01bad4bfa7dfc",
+        "name": "mp-r0-r1release868dbb340ae2-op-df9977ec-4262-4ac5-9cbd-b9d313e095ec-dispatch-reconcile"
+      },
+      {
+        "id": "13d55d0b1a2970c07a9cb2adc90f7ac41b201d215ca8531caccb4e0963446b22",
+        "name": "mp-r0-r1release868dbb340ae2-app-release-df9977ec42624ac59cbdb9d313e095ec"
+      },
+      {
+        "id": "deae880357a24854ff9db3a165df4905f3f10ce9205682f03c9bfd9337a18c7c",
+        "name": "mp-r0-r1release868dbb340ae2-op-993ae443-3131-492e-b46c-32c5237e9991-native"
+      },
+      {
+        "id": "332f6ae612ee387bb6e043cf3c58793bede048f86cc85d882bd772dc2da806cf",
+        "name": "mp-r0-r1release868dbb340ae2-op-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf-assets"
+      },
+      {
+        "id": "acd3f255d19b7865e43e26d75da7b59785dcca1c790272f3388e2368fe964cfd",
+        "name": "mp-r0-r1release868dbb340ae2-bx05-finalization-capture"
+      },
+      {
+        "id": "b8ff16e04eb046f77603ceefe75618b71c53ffc0f510312932d6987dab7051d5",
+        "name": "mp-r0-r1release868dbb340ae2-app-release-993ae4433131492eb46c32c5237e9991"
+      },
+      {
+        "id": "2ff311c25798334c8bc983fac057006807676bd25b12242de2122d1ee025c8a8",
+        "name": "mp-r0-r1release868dbb340ae2-core-provision"
+      },
+      {
+        "id": "7e97714695544c903b9c44883ed23455c2346beee5ebdeed039299fccf5db35b",
+        "name": "mp-r0-r1release868dbb340ae2-op-988a0595-3609-4f8a-9e96-c35dff7ac9c8-dispatch-observe"
+      },
+      {
+        "id": "03735b094318b6b0f76f5813ffe823801e2249c96db4ae15ace44b4fb1f7e67d",
+        "name": "mp-r0-r1release868dbb340ae2-app-release-0c1bd81109d14d5f8d00ca2a61fcc2cf"
+      },
+      {
+        "id": "0a4b7907e5371708cce131ac8eea2b16d7bab85c4331634e0e8865044c2f52c0",
+        "name": "mp-r0-r1release868dbb340ae2-op-993ae443-3131-492e-b46c-32c5237e9991-checkpoint"
+      },
+      {
+        "id": "a69828739493008e54cfef48ed47befeb4d12b8e49c26088520edbda36b80ec1",
+        "name": "mp-r0-r1release868dbb340ae2-op-7d307a9e-9c9a-455b-82b4-cb21f1a250de-dispatch-observe"
+      },
+      {
+        "id": "49940e1e2e68aa069bc56f78fd21b133f070d8474f037bf552e9ec5cdab12023",
+        "name": "mp-r0-r1release868dbb340ae2-op-993ae443-3131-492e-b46c-32c5237e9991-dispatch-fence"
+      },
+      {
+        "id": "8cb41e9a08bd32c4df809333ee380dc92015159a8f36e3544dcaac494e03f865",
+        "name": "mp-r0-r1release868dbb340ae2-op-947ec2dc-e5c0-42ee-b511-1ec045842ac2-dispatch-observe"
+      },
+      {
+        "id": "bd2d54c6886c381aab67eb4b59613cb589c3401d03d609d29ebf901905b95c80",
+        "name": "mp-r0-r1release868dbb340ae2-op-993ae443-3131-492e-b46c-32c5237e9991-metadata"
+      },
+      {
+        "id": "cc32585703c902919590e6e3822696da0de0ea245848cf585c26b0de0fc428b0",
+        "name": "mp-r0-r1release868dbb340ae2-core-init"
+      },
+      {
+        "id": "2842bd791d8490e989581fd4a5eb2533d2be408e899c7b9242d01452d8c786f7",
+        "name": "mp-r0-r1release868dbb340ae2-op-993ae443-3131-492e-b46c-32c5237e9991-dispatch-enable"
+      },
+      {
+        "id": "f169ca6d7ebb311cecbb471e8a9d55dbcf06a22517030c484e6dc75e5b319991",
+        "name": "mp-r0-r1release868dbb340ae2-op-993ae443-3131-492e-b46c-32c5237e9991-assets"
+      },
+      {
+        "id": "fe531fb8cbb8e36b1899255ba800230c345dd0ee4a3bfe7ef2c4e201adaa20fd",
+        "name": "mp-r0-r1release868dbb340ae2-op-993ae443-3131-492e-b46c-32c5237e9991-dispatch-reconcile"
+      }
+    ],
+    "container_inventory_recovered_from_destroy_events": true,
+    "images": [
+      {
+        "image": "sha256:e03dc57213c50e712d818bdaffd2e8b9379bdf7eeae3dadddeef9c0fc9696380",
+        "tags": [
+          "modular-platform:retained-0c1bd811-09d1-4d5f-8d00-ca2a61fcc2cf",
+          "modular-platform:retained-993ae443-3131-492e-b46c-32c5237e9991",
+          "modular-platform:stage-20261107t082014021666z"
+        ]
+      },
+      {
+        "image": "sha256:9c2b3d7f83a41b0975b3fe8c199c060da11406dd7d4afcc9a33961603e4bb3c1",
+        "tags": [
+          "modular-platform:retained-df9977ec-4262-4ac5-9cbd-b9d313e095ec",
+          "modular-platform:stage-20261107t085106620287z"
+        ]
+      },
+      {
+        "image": "sha256:c47466a0c42e943f5a40806ba0134654d7a2be118e46f1e2331d9babe6f0ea8d",
+        "tags": [
+          "modular-platform:retained-825c81ec-e577-4ec3-99f3-1e9d03ab5064",
+          "modular-platform:stage-20261107t085831575204z"
+        ]
+      }
+    ]
+  },
+  "preserved": "Unrelated Docker assets and the existing stock dependency base; private source packages/checkpoints/evidence retained."
+}

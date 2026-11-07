@@ -1,0 +1,42 @@
+{
+  "gate": "BX-05",
+  "state": "qualified",
+  "fault_operation": "20561ee8-dc36-4d70-93a9-473d32682c77",
+  "successful_operation": "ac35d2f6-905c-4c64-945d-7eb184a8b6c3",
+  "saved_cursor": 800,
+  "application_tables_preserved": true,
+  "fresh_database": true,
+  "traffic_closed_until_separate_resume": true,
+  "old_claim_denied": true,
+  "old_profile_denied": true,
+  "verified": {
+    "count": 5000,
+    "points": 2497500,
+    "chunks": 50,
+    "digest": "943bb4515700891b22f2140fcc5e85df9d4ffc44f66f18b354d983d29393fd08",
+    "attempts": 51,
+    "terminal_snapshot_cleared": true
+  },
+  "native_version": "19.0.0.3.3",
+  "reference_version": "0.3.3",
+  "platform": "0.1.45",
+  "forward_image": "sha256:25f071befa83f730ca3a6ff4f6cf79448e26f9484b172d90dc449771b9751a0e",
+  "forward_source_diff": [
+    "platform_addons/mp_example_background/__manifest__.py",
+    "plugins/background/plugin.toml"
+  ],
+  "private_recovery_sha256": "1a74f972e1ffd082f728107bcfbaa8e18a53d9aa427fffe9652eeabd702c16e4",
+  "host_regression": {
+    "tests": 585,
+    "passed": 584,
+    "skipped": 1,
+    "seconds": 425.409,
+    "private_log_sha256": "559c9bf2c86b5aeb647c057cd5874f665214e250a4788a262170bb0ffcbd3f86"
+  },
+  "contract_freeze": {
+    "files": 106,
+    "rows": 8,
+    "major": 1,
+    "result": "passed"
+  }
+}

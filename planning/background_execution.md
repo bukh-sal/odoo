@@ -247,7 +247,7 @@ targets. [Qualified mixed load](../docs/evidence/post-r1/background-execution/bg
   measured gaps. A broker would still need an outbox publisher,
   acknowledgments, deduplication and recovery around the handoff.
   [RabbitMQ delivery reliability](https://www.rabbitmq.com/docs/reliability).
-- [ ] **BX-05. App-driven extensions.** Select the first app that needs remote
+- [x] **BX-05. App-driven extensions.** Select the first app that needs remote
   delivery or resumable chunks. For push, use an outbox consumer with scoped
   provider access, rate limits and distinct accepted, delivered, rejected and
   unknown outcomes. Qualify response loss, duplicate receipts, revocation,

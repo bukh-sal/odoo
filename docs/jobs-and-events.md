@@ -1,5 +1,11 @@
 # Jobs and events: G6 implementation boundary
 
+Current post-R1 background work is tracked in [implementation status](implementation-status.md),
+the [sustained workload plan](../planning/background_execution.md),
+[capacity/deployment advice](background-capacity.md) and
+[app-owned continuations](background-continuations.md). The dated G6 records
+below retain their original qualification scope.
+
 F-01a is qualified by [real native/PostgreSQL evidence](evidence/G6/20261029-durable-01/qualification.json). The remaining integration work is tracked in [ADR0029](architecture-decisions/0029-durable-jobs-and-outbox.md) and [implementation status](implementation-status.md). This is a private scheduler foundation; no public arbitrary-handler or job-creation API is exposed.
 
 Native Odoo core19.0.0.1.7 owns `mp.job`, `mp.outbox` and `mp.dispatch.control`. They are site-owned internal control metadata with workspace/actor/installation tags. Human native ORM CRUD is denied; supported status projections must authorize their current actor and workspace separately. The [private SQL adapter](../packages/platform_sdk/modular_platform/durable.py) opens no database connection and commits no transaction. Its caller must validate the registered handler/payload and derive current authority; a serialized scope or a queued permission snapshot cannot authorize execution.
