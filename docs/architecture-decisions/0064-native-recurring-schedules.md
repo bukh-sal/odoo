@@ -1,11 +1,11 @@
 # ADR 0064. Native recurring schedules
 
-Status: selected private contract; BX-03 implementation in progress. No recurring
-producer is enabled yet. The deterministic time-selection primitive is the
-first implementation boundary. Existing one-off job contracts remain unchanged.
-Ten deterministic cases and fifteen PostgreSQL credential-footprint checks
-passed. The credential guard is not yet selected by the lifecycle executor;
-its database fixture was retired. This is prerequisite evidence, not a BX-03 exit.
+Status: implemented private contract; native producer, scoped authority,
+reviewed maintenance and fresh recovery qualified. BX-03 passed, including 568
+host tests with one existing Windows skip and the 106-file contract freeze.
+Existing public one-off job contracts remain unchanged.
+The chronology below distinguishes the prerequisite proofs from the later
+native qualification. All owned BX-03 Docker fixtures have been retired.
 
 BX-03 needs a separate pinned producer because guarded Odoo startup deliberately
 uses zero cron threads. Reuse the reviewed worker fleet for one optional producer
@@ -124,3 +124,20 @@ sandbox or a replacement for per-job scope and resource authorization. Native
 plugins remain trusted. A new or broader credential must be reflected in a
 fresh independent role review before maintenance can rely on it. Preserve
 current revocations and stable occurrence high-water marks during recovery.
+
+Fresh recovery passed after the core 0.1.39 to 0.1.40 publication fault. A
+synthetic added receipt caused restore review to refuse before fresh-target
+creation. After exact removal, the coordinated checkpoint restored into a new
+database using retained core39. All original receipt IDs, nominal instants,
+cursor, considered high-water mark, revision and outstanding-job pointer were
+preserved. Technical credentials were revoked and schedule/job state held,
+with dispatch and ingress closed until a separate resume review.
+
+Recovery reconciliation uses the schedule's checkpoint release as its source
+epoch and the newly restored release as its destination. Credential replacement
+requires explicit edit and resume; editing cannot rewrite the held outstanding
+job. Current owned schedule authority can cancel that old held job without
+reviving its credential. The subsequent occurrence completed once, preserving
+all 204 earlier receipts. Old worker-profile pins were refused, and a fresh
+paused profile was separately reviewed and applied. See
+[recovery evidence](../evidence/post-r1/background-execution/bx-03-recovery.json).

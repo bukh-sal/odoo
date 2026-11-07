@@ -1,0 +1,22 @@
+{
+  "site": {
+    "containers": 34,
+    "volumes": 6,
+    "networks": 2
+  },
+  "images": [
+    {
+      "image": "sha256:5cefb18ff968344642b7c5d1d0970b900837dee2115d641fcbd49d293f08ebac",
+      "tags": [
+        "modular-platform:retained-858a5491-0997-494a-bd23-8a86788d325d",
+        "modular-platform:stage-20261107t050127942417z"
+      ]
+    },
+    {
+      "image": "sha256:e20d4c21c9083f61af5af5de4c26e6f52813aaee62acfebff9c84170e536e1aa",
+      "tags": [
+        "modular-platform:stage-20261107t053518911830z"
+      ]
+    }
+  ]
+}

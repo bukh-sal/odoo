@@ -221,7 +221,7 @@ targets. [Qualified mixed load](../docs/evidence/post-r1/background-execution/bg
   ready counts under existing locks. Test wrong pins, partial starts,
   connection loss, resizing with active jobs, stale claim refusal and
   a resize racing an upgrade. Measure connection and resource usage.
-- [ ] **BX-03. Recurrence.** Store a versioned schedule and cursor under a
+- [x] **BX-03. Recurrence.** Store a versioned schedule and cursor under a
   scoped service identity. Advance the cursor and enqueue in one transaction
   with a stable key for the schedule and nominal occurrence. Keep occurrence
   identity stable across credential rotation and schedule edits. Start with
@@ -231,6 +231,7 @@ targets. [Qualified mixed load](../docs/evidence/post-r1/background-execution/bg
   web startup requires zero Odoo cron threads, so use a separate producer
   under the dispatch fence. Test duplicate ticks, downtime, revocation,
   edits, overlap, maintenance and restore of a previously emitted occurrence.
+  Qualified by [the BX-03 decision](../docs/evidence/post-r1/background-execution/bx-03-decision.json).
   [Guarded startup](../packages/platform_sdk/modular_platform/worker_start.py:52) ·
   [Odoo scheduled actions](https://www.odoo.com/documentation/19.0/developer/reference/backend/actions.html#scheduled-actions-ir-cron) ·
   [CronJob catch-up and overlap](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).

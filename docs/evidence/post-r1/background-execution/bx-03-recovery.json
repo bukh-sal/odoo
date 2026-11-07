@@ -1,0 +1,129 @@
+{
+  "gate": "BX-03",
+  "state": "native_recovery_passed",
+  "operation": "858a5491-0997-494a-bd23-8a86788d325d",
+  "procedure": "tests/background_recurrence_recovery.py: prepare, fault, guard, restore, resume, repair, adopt",
+  "original_image": "sha256:5cefb18ff968344642b7c5d1d0970b900837dee2115d641fcbd49d293f08ebac",
+  "failed_image": "sha256:e20d4c21c9083f61af5af5de4c26e6f52813aaee62acfebff9c84170e536e1aa",
+  "original_database": "mp_disposable_r0_r1_release_9bde429f5258",
+  "restored_database": "mp_disposable_r0_r1_restore_858a54910997494abd238a86788d325d",
+  "checkpoint_tables": {
+    "mp_dispatch_control": {
+      "rows": 1,
+      "sha256": "2ffbeccd52f92cbca6d9fc78b969ba1729e8d3ff7e9c2b0a9f9824dbaef2e088"
+    },
+    "mp_event_consumer_state": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_event_consumption": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_event_delivery": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_event_history": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_event_subscription": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_job": {
+      "rows": 214,
+      "sha256": "ad40100751b51817eda22ce5160c720db733006b064ab59cafacc6a0fae237ed"
+    },
+    "mp_job_identity": {
+      "rows": 214,
+      "sha256": "661f6ee3558452de870d176eae9497891734649706017fbf565c8d4465854399"
+    },
+    "mp_job_occurrence": {
+      "rows": 206,
+      "sha256": "8a0f3de5c66ebecaac8533d92b5189a5083d5e9ed169c4b81d741749f39b0e9c"
+    },
+    "mp_job_schedule": {
+      "rows": 5,
+      "sha256": "e69221ce0431ee30c853808d8568d3bb189498acb43ed9d66faa6d32e0e84633"
+    },
+    "mp_outbox": {
+      "rows": 2,
+      "sha256": "3830e89e4b5d1c62146abc28331564b81c5d06a6182bf89267c8d2e11ba3c74a"
+    }
+  },
+  "history_guard": "Recurring occurrence history changed after the coordinated checkpoint; independent reconciliation required",
+  "no_target_after_refusal": true,
+  "receipts_before": 204,
+  "receipts_after": 205,
+  "original_receipts_digest": "sha256:ddea9013f10a76f1f130538e70095185d5586c1013a89a4338a16a5568c2a775",
+  "restored_receipts_digest": "sha256:ddea9013f10a76f1f130538e70095185d5586c1013a89a4338a16a5568c2a775",
+  "preserved": [
+    "nominal receipt identity",
+    "cursor",
+    "considered high-water mark",
+    "configuration revision",
+    "outstanding job ID"
+  ],
+  "restored_dispatch_closed": true,
+  "technical_credentials_revoked": true,
+  "held_outstanding_job": true,
+  "separate_resume": true,
+  "repair": {
+    "new_credential": 4,
+    "old_job_cancelled": true,
+    "new_job": "288848d6-cd4e-4736-a9d3-a149434190e5",
+    "receipts": 205,
+    "distinct": 205,
+    "revision": 14,
+    "old_authority_denied": true,
+    "explicit_edit_resume_required": true
+  },
+  "profile_adoption": {
+    "stale_profile_denied": "Worker profile review differs from current deployment pins",
+    "new_approval": "sha256:aaf6e4eff2b4f732eb73da40f8243ec121af6f30aef234596f1b85590319b2b4",
+    "result": {
+      "event": "job_fleet",
+      "state": "paused",
+      "generation": 3,
+      "approval": "sha256:aaf6e4eff2b4f732eb73da40f8243ec121af6f30aef234596f1b85590319b2b4",
+      "pins": {
+        "database": "mp_disposable_r0_r1_restore_858a54910997494abd238a86788d325d",
+        "deployment_id": "b56b18cf-11db-4ea0-8843-536ad0440bbb",
+        "image_id": "sha256:5cefb18ff968344642b7c5d1d0970b900837dee2115d641fcbd49d293f08ebac",
+        "inventory_digest": "sha256:4291d1384ae22c31b3f0b6f320735c341cd43be1be3d9faf154ac8a9fdad4f8b",
+        "release_digest": "sha256:0e2db08a6ab730442bffa2fa6b2816183d4325516b6564ba91f78d6841d573bd",
+        "site_id": "6c576799-3579-4c57-a23f-65ff6414165d",
+        "target_digest": "sha256:baf4a9c1b9b38e4824f32e587d55263895c8005d96016298a0860821bb91c0bb"
+      },
+      "pools": {
+        "urgent": {
+          "desired": 1,
+          "running": 0,
+          "ready": 0,
+          "drained": 0
+        },
+        "bulk": {
+          "desired": 1,
+          "running": 0,
+          "ready": 0,
+          "drained": 0
+        },
+        "producer": {
+          "desired": 1,
+          "running": 0,
+          "ready": 0,
+          "drained": 0
+        }
+      },
+      "lanes": []
+    }
+  },
+  "restore_decision_digest": "sha256:552743f3590d433e42419192b4039ba8ea5428fb285433fdefd328bf42eb6f00",
+  "resume_decision_digest": "sha256:43c68569e39047a9697c5b66a627186d56c599f61422da18c3997934818f0470",
+  "limits": [
+    "Coordinated checkpoint only; changed post-checkpoint history requires independent reconciliation.",
+    "No remote-effect recovery or calendar recurrence claim; fixed UTC native profile only."
+  ]
+}

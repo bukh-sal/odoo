@@ -37,8 +37,8 @@ when changing the workload, sizing, or queue/web behavior. The
 [work log](work-log.md) retains the earlier attempts.
 
 The [background execution follow-up plan](../planning/background_execution.md#follow-up-plan-for-sustained-background-workloads)
-tracks BX-01 through BX-05. **BX-01 and BX-02 passed; BX-03 is active.** Two of
-five follow-up gates have passed, or roughly 40% by gate count. The guarded CLI reported an empty job table and then the lower bound
+tracks BX-01 through BX-05. **BX-01 through BX-03 passed; BX-04 is active.** Three of
+five follow-up gates have passed, or roughly 60% by gate count. The guarded CLI reported an empty job table and then the lower bound
 above the lifecycle limit on a rebuilt site with 100,002 synthetic rows.
 The PostgreSQL race probe reproduced a duplicate with a split lookup and
 verified that writing the shared identity row forces a stale transaction to
@@ -117,46 +117,39 @@ each; the connection snapshot is a bounded observation, not a capacity target.
 The full host sweep passed 549 tests with one existing Windows-specific skip;
 the 106-file contract freeze passed. [BX-02 decision](evidence/post-r1/background-execution/bx-02-decision.json).
 
-BX-03 resume capsule: the owned core 0.1.39 fixture is live on port
-18124, project `mp-r0-r1release9bde429f5258`, phase `bg02_probed`, candidate
-`5cefb18ff968`. No test or uncertain mutation is running. The producer and both
-worker lanes are fully drained; the current role profile is paused. The synthetic schema
-probe row was removed. Retain this one fixture for the next reviewed upgrade;
-retire it and its exact candidate after qualification. The
-[selected private recurrence contract](architecture-decisions/0064-native-recurring-schedules.md)
-has ten passing UTC selection/identity tests, fifteen PostgreSQL authority
-guard checks and fifteen private storage transaction checks. A caught enqueue
-failure rolls back job/receipt/cursor together, stale ticks retry with 40001,
-and compact history resolves outstanding status. [Storage evidence](evidence/post-r1/background-execution/bx-03-storage.json).
-Native creation recognized all eleven physical dispatch tables, private ORM
-access was denied, and the generic native/host fence refused populated
-recurrence without a dispatch mutation. The host helper also loaded in the
-retained stock image without the new recurrence module. [Native schema proof](evidence/post-r1/background-execution/bx-03-native-schema.json).
-The native adapter, reviewed producer and current-schema maintenance passed.
-Actual ORM testing found and fixed a savepoint/cache interaction that could
-undo a pending revocation. The corrected worker refused the saved credential.
-Nine native API checks passed, as did 203 unique occurrence receipts, sampled
-one-outstanding behavior, automatic child-process restart, pause and full drain.
-Thirteen fleet boundary tests and the bounded helper stdin transport passed.
-The first Windows argv failure was reconciled through separate unchanged-base
-recovery, without database restore or worker replacement. [Native role evidence](evidence/post-r1/background-execution/bx-03-native-roles.json).
-The generic lifecycle guard still refuses active credentials; only the exact
-paused OS-reviewed native recurrence profile selects the additional path.
-Next qualify a populated fresh restore from a later failed core release.
-The coordinated checkpoint follows producer drain and the dispatch fence;
-supported writers cannot emit afterward. The restore guard therefore refuses
-unexpected source occurrence-history changes instead of merging possibly
-migrated jobs/credentials/configuration into retained code. Its unit boundary
-passes; actual refusal and restore/cursor identity tests remain open. Retained
-schedule reconciliation now receives its original checkpoint release as well
-as the fresh restored epoch. Test explicit credential repair/resume and owned
-cancellation of the held outstanding job. No restore has been attempted yet.
-One core39 site/candidate remains. Thirty exited helpers and both obsolete
-core37/core38 candidates (five tags) were retired. There are no running goal
-tests or queued producers. The worktree contains the qualified native/profile
-implementation plus the unqualified final restore guard.
-BX-04 and BX-05 remain queued. No blocker requires
-user action. Gate progress is 2/5 (about 40%), independently of check counts.
+BX-03 passed all eight implementation checks. The full host sweep passed 568
+tests with one existing Windows skip (569 total), and the 106-file contract
+freeze passed. [Gate decision](evidence/post-r1/background-execution/bx-03-decision.json).
+The owned core39/core40 fixture has been retired.
+No live producer, worker, database, mutation or recovery remains.
+The [private contract](architecture-decisions/0064-native-recurring-schedules.md)
+has ten deterministic time/identity tests, fifteen PostgreSQL authority checks,
+fifteen SQL storage checks, native schema proof and nine native API checks.
+The managed producer emitted 203 distinct receipts with one outstanding job,
+automatic process restart, pause and drain. Reviewed populated upgrades passed.
+[Native role evidence](evidence/post-r1/background-execution/bx-03-native-roles.json).
+
+The actual core39→40 post-publication fault reached recovery_required with
+ingress closed. Unexpected source receipt history refused restore before a new
+database was created. The coordinated checkpoint restored into a fresh database
+on retained core39, preserving 204 original receipts, cursor/high-water marks,
+revision and the outstanding job. Credentials were revoked and work held until
+separate resume and explicit repair. Old-authority refusal, owned cancellation
+of the old held job, new occurrence completion and stale/new profile adoption
+passed. [Recovery evidence](evidence/post-r1/background-execution/bx-03-recovery.json).
+Thirty-four containers, six volumes, two networks and both current candidate
+images were retired, in addition to the earlier obsolete images and helpers.
+[Retirement](evidence/post-r1/background-execution/bx-03-retirement.json).
+
+Resume capsule: no test, mutation or live goal fixture remains. BX-04 is the
+one active item. First fix the sustained workload, latency/headroom targets and
+scaling comparison in ADR0065, then implement bounded observations and a
+read-only capacity advisor. Reuse reviewed fleet resizing; automatic sizing
+requires measured benefit and its own release/downscale drills. Native recovery operation was
+`858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is
+`.local/background-qualification/bx-03-recurrence-01/bx03-recovery.json`, passed.
+Do not replay its retired realm. BX-05 remains queued. No user blocker.
+Gate progress is 3/5 (roughly 60%), separate from acceptance counts.
 
 BX-03 checklist:
 
@@ -165,9 +158,9 @@ BX-03 checklist:
 - [x] Install versioned native tables and recognize their lifecycle footprint.
 - [x] Wire scoped service authorization, edits, pause/resume, rotation and overlap.
 - [x] Add the optional pinned producer role with readiness, maintenance exclusion and drain.
-- [ ] Qualify the narrow native-credential lifecycle profile and retained schema compatibility.
-- [ ] Qualify populated upgrade and fresh restore with a previously emitted occurrence.
-- [ ] Record native evidence and retire all owned qualification assets.
+- [x] Qualify the narrow native-credential lifecycle profile and retained schema compatibility.
+- [x] Qualify populated upgrade and fresh restore with a previously emitted occurrence.
+- [x] Record native evidence and retire all owned qualification assets.
 
 BX-02 checklist, independently of gate exits:
 
@@ -634,7 +627,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
 | BX-02 | Resolved | Reviewed roles, partial recovery, connection loss, graceful/forced drain and actual release races passed; all owned Docker assets retired. See BX-02 decision. |
-| BX-03-LIFECYCLE | Current-schema profile qualified; restore proof pending | Generic lifecycle remains strict. Exact paused role selection, active scoped credential review, current-schema upgrade and producer drain passed. Immutable history guard and original-epoch reconciliation are implemented; next actual failed-release/fresh-restore proof. ADR 0064. |
+| BX-03-LIFECYCLE | Closed by native proof | Exact paused role selection, scoped credential review, populated upgrade, history-delta refusal, fresh restore, separate resume and explicit credential repair passed. Generic profile remains strict; changed post-checkpoint history still requires independent reconciliation. ADR 0064 and bx-03-recovery.json. |
 | STOCK-RTL-01 | Resolved | The bounded launcher mirrors the full stylesheet under the HTTP worker limit. Preflight and both browsers passed on the selected image. |
 | STOCK-PERF-01 | Resolved | The selected image passed the analyzed 10,000-note workload with p95 367.832 ms for list and 169.833 ms for detail. |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |

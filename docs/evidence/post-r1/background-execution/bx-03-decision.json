@@ -1,0 +1,28 @@
+{
+  "gate": "BX-03",
+  "state": "passed",
+  "acceptance_checks_passed": 8,
+  "acceptance_checks_required": 8,
+  "checks": [
+    {"requirement": "Versioned fixed-UTC selection, skip/coalesce, expiry and stable occurrence identity", "evidence": ["bx-03-prerequisites.json"]},
+    {"requirement": "Duplicate ticks, transaction retries, atomic rollback and compact outstanding history", "evidence": ["bx-03-storage.json"]},
+    {"requirement": "Private native schema and conservative generic lifecycle recognition", "evidence": ["bx-03-native-schema.json"]},
+    {"requirement": "Scoped service authorization, edit, pause/resume, credential rotation, revocation and overlap", "evidence": ["bx-03-native-roles.json"]},
+    {"requirement": "Optional pinned supervised producer, readiness, process restart and full drain", "evidence": ["bx-03-native-roles.json"]},
+    {"requirement": "Exact paused independently reviewed native authority profile and retained schema recovery", "evidence": ["bx-03-native-roles.json", "bx-03-recovery.json"]},
+    {"requirement": "Populated upgrade, history-delta refusal, fresh restore, separate resume and explicit repair without duplicate occurrence", "evidence": ["bx-03-recovery.json"]},
+    {"requirement": "Host regressions, unchanged public contracts and owned Docker retirement", "evidence": ["bx-03-retirement.json", "bx-03-native-roles.json"]}
+  ],
+  "host_regression": {
+    "command": ".local/toolchain/operator-python16/Scripts/python.exe -m unittest discover -s tests",
+    "exit_code": 0,
+    "tests": 569,
+    "passed": 568,
+    "skipped": 1,
+    "seconds": 405.300,
+    "skip": "Existing Windows source/data symlink case; unchanged startup retains prior Linux qualification"
+  },
+  "contract_freeze": {"result": "passed", "files": 106, "rows": 8, "contract_major": 1},
+  "qualification_boundary": "Single-site trusted native fixed-UTC recurrence, at most one optional producer and one outstanding occurrence per schedule. Coordinated history and explicit credential repair only. No catch-up backlog, calendar rules, remote effect merge, multi-host autoscaler or provider claim.",
+  "next_gate": "BX-04"
+}
