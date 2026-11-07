@@ -28,14 +28,14 @@ class ReportRun(models.Model):
     _description='Private reference report continuation'
 
     public_id=fields.Char(required=True,index=True)
-    workspace_id=fields.Many2one('mp.workspace',required=True,ondelete='restrict',index=True)
+    scope_workspace_id=fields.Many2one('mp.workspace',required=True,ondelete='restrict',index=True)
     actor_id=fields.Many2one('mp.principal',required=True,ondelete='restrict',index=True)
     request_key=fields.Char(required=True,size=120)
     request_first=fields.Integer(required=True)
     request_last=fields.Integer(required=True)
     contract_version=fields.Integer(required=True,default=CONTRACT)
     state=fields.Selection([('running','Running'),('completed','Completed'),('cancelled','Cancelled')],required=True)
-    snapshot=fields.Json(required=True)
+    snapshot=fields.Json()
     snapshot_digest=fields.Char(required=True)
     cursor=fields.Integer(required=True,default=0)
     total=fields.Integer(required=True)
@@ -44,9 +44,11 @@ class ReportRun(models.Model):
     expires_at=fields.Datetime(required=True)
     job_public_id=fields.Char(index=True)
     _identity=models.Constraint('UNIQUE(public_id)','Unique report identity required')
-    _request=models.Constraint('UNIQUE(workspace_id,actor_id,request_key)','Unique scoped report request required')
+    _request=models.Constraint('UNIQUE(scope_workspace_id,actor_id,request_key)','Unique scoped report request required')
     _bounds=models.Constraint('CHECK(cursor>=0 AND cursor<=total AND total BETWEEN 1 AND 5000 AND points BETWEEN 0 AND 5000000)',
         'Bounded report progress required')
+    _snapshot_phase=models.Constraint("CHECK((state='running' AND snapshot IS NOT NULL AND jsonb_typeof(snapshot)='array') OR (state IN ('completed','cancelled') AND snapshot IS NULL))",
+        'Active snapshots are arrays; terminal snapshots are discarded')
 
 
 class TaskReports(models.Model):
@@ -58,7 +60,7 @@ class TaskReports(models.Model):
         except (ValueError,TypeError,AttributeError):raise ValidationError('Canonical report identity required') from None
         scope=self._mp_guard('read')
         job_dispatch._locked_scope(self._job_env())
-        self.env.cr.execute('SELECT to_jsonb(r) FROM mp_background_report r WHERE public_id=%s AND workspace_id=%s AND actor_id=%s'
+        self.env.cr.execute('SELECT to_jsonb(r) FROM mp_background_report r WHERE public_id=%s AND scope_workspace_id=%s AND actor_id=%s'
             +(' FOR UPDATE' if lock else ''),[ident,scope.workspace_id,scope.principal_id])
         found=self.env.cr.fetchone()
         if not found:raise MissingError('Report unavailable.')
@@ -81,7 +83,7 @@ class TaskReports(models.Model):
         # Native savepoint flush/cache handling also protects callers that
         # catch a failed enqueue and commit unrelated work.
         with self.env.cr.savepoint():
-            self.env.cr.execute('SELECT public_id,request_first,request_last FROM mp_background_report WHERE workspace_id=%s AND actor_id=%s AND request_key=%s',
+            self.env.cr.execute('SELECT public_id,request_first,request_last FROM mp_background_report WHERE scope_workspace_id=%s AND actor_id=%s AND request_key=%s',
                 [scope.workspace_id,scope.principal_id,key])
             found=self.env.cr.fetchone()
             if found:
@@ -92,10 +94,10 @@ class TaskReports(models.Model):
             items=[[row['id'],row['points']] for row in records.read(['points'])]
             ident=str(uuid4());now=fields.Datetime.now();expiry=now+timedelta(hours=1)
             self.env.cr.execute("""INSERT INTO mp_background_report
-                (public_id,workspace_id,actor_id,request_key,request_first,request_last,contract_version,state,
+                (public_id,scope_workspace_id,actor_id,request_key,request_first,request_last,contract_version,state,
                 snapshot,snapshot_digest,cursor,total,points,result_digest,expires_at,create_uid,write_uid,create_date,write_date)
                 VALUES(%s,%s,%s,%s,%s,%s,1,'running',%s::jsonb,%s,0,%s,0,%s,%s,%s,%s,%s,%s)
-                ON CONFLICT(workspace_id,actor_id,request_key) DO UPDATE SET request_key=EXCLUDED.request_key
+                ON CONFLICT(scope_workspace_id,actor_id,request_key) DO UPDATE SET request_key=EXCLUDED.request_key
                 RETURNING public_id,request_first,request_last""",
                 [ident,scope.workspace_id,scope.principal_id,key,first,last,json.dumps(items),digest(items),len(items),
                  EMPTY_DIGEST,expiry,self.env.uid,self.env.uid,now,now])
@@ -129,9 +131,13 @@ class TaskReports(models.Model):
         cursor=current['next_cursor'];complete=cursor==row['total']
         updates=dict(cursor=cursor,points=row['points']+computed['points'],
             result_digest=digest([row['result_digest'],computed['digest']]))
-        if complete:updates.update(state='completed',snapshot=[])
-        else:updates['job_public_id']=self._queue_report_chunk(row,cursor)
-        self.env['mp.background.report'].sudo().browse(row['id']).write(updates)
+        if complete:updates.update(state='completed',snapshot=False)
+        record=self.env['mp.background.report'].sudo().browse(row['id'])
+        record.write(updates)
+        self.env.flush_all()
+        # Enqueue validates/prepares new work immediately. It must observe
+        # the advanced cursor inside this same uncommitted transaction.
+        if not complete:record.write(dict(job_public_id=self._queue_report_chunk(row,cursor)))
         # The enclosing native run_fenced transaction owns this flush and the
         # successor enqueue. Neither can survive a failed apply on its own.
         self.env.flush_all()
@@ -141,7 +147,7 @@ class TaskReports(models.Model):
     def _report_status(self,ident):
         row=self._report_row(ident)
         self.env.cr.execute('SELECT state,error_code FROM mp_job WHERE public_id=%s AND workspace_id=%s AND actor_id=%s',
-            [row['job_public_id'],row['workspace_id'],row['actor_id']])
+            [row['job_public_id'],row['scope_workspace_id'],row['actor_id']])
         found=self.env.cr.fetchone()
         state=row['state']
         if state=='running' and found and found[0] in ('dead_letter','held','outcome_unknown','cancelled'):state='blocked'
@@ -161,6 +167,6 @@ class TaskReports(models.Model):
             row=self._report_row(ident,lock=True)
             if row['state']!='running':return False
             if row['job_public_id']!=before['job_public_id']:raise PublicError('CONFLICT')
-            self.env['mp.background.report'].sudo().browse(row['id']).write(dict(state='cancelled',snapshot=[]))
+            self.env['mp.background.report'].sudo().browse(row['id']).write(dict(state='cancelled',snapshot=False))
             self.env.flush_all()
             return True

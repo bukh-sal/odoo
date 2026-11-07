@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T08:33:39Z
+- Updated UTC: 2026-11-07T09:03:00Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -280,24 +280,46 @@ stock dependency base and unrelated existing assets were preserved.
 [Retirement](evidence/post-r1/background-execution/bx-04-retirement.json).
 [BX-04 decision and acceptance mapping](evidence/post-r1/background-execution/bx-04-decision.json).
 
-Resume capsule: BX-05 is the sole active work item. Clean baseline site is
-installed at`bx-05-chunks-01`, project`mp-r0-r1release868dbb340ae2`, port18128,
-DB`mp_disposable_r0_r1_release_868dbb340ae2`, core45/reference0.2.1. No worker,
-producer, running check or uncertain mutation. Do not replay retired BX-04 helpers.
-Private final record:`.local/background-qualification/bx-04-capacity-01/bx04-finalized.json`.
-Core45 baseline build:`docs/evidence/G7/bx04-recovery-build-01/candidate-build.json`.
-Selected [ADR0068](architecture-decisions/0068-app-owned-report-continuations.md)
-before implementation:up to5,000 snapshot rows/100 per job, original expiry,
-current source access and owner guards, atomic cursor/successor, job-before-run
-cancellation locking. Reference0.3.0 source now implements private run storage,
-start/status/cancel adapters and a separate report_chunk:1 handler, retaining
-report:2. It is not natively qualified yet. Standard native screens are unchanged.
-Next build a candidate and independently upgrade the admitted0.2.1 baseline.
-Qualify1,201 rows/13 chunks, real rollback/process loss, authority, populated
-upgrade and fresh recovery. Remote delivery, fan-out or a common workflow engine
-remain conditional on an actual app requirement; no provider is required here.
-BX-01–04 passed, roughly80% by five equal gate weights; no extra credit for
-documentation. Original R1 remains99/99 and100 weighted points. No user input needed.
+Resume capsule: BX-05 is the sole active work item. Site`bx-05-chunks-01`,
+project`mp-r0-r1release868dbb340ae2`, port18128, database
+`mp_disposable_r0_r1_release_868dbb340ae2`, core45/reference0.3.2. Current image
+fe1213fa5658 (full ID in`docs/evidence/G7/bx05-chunks-build-04/candidate-build.json`).
+No managed worker/producer or running check. No uncertain mutation or external effect.
+
+[ADR0068](architecture-decisions/0068-app-owned-report-continuations.md) fixes
+5,000 snapshot rows/100 per job, original expiry, current source/owner guards,
+atomic cursor/successor and job-before-run cancellation locking. Private run
+storage and report_chunk:1 reuse existing native job fencing; report:2 and native
+Odoo screens remain unchanged. Native proof completed13 chunks/1,201 rows/
+519,600 points and exact digest despite later source edits. Compatible partial
+upgrade preserved the1,200-row prefix before the final chunk. Terminal cleanup,
+active-array constraint, scope-filtered range and5,001 refusal passed.
+
+Atomicity proof passed initial/caught-enqueue rollback with unrelated commit,
+same-workspace other-actor denial, unknown contract and revoked origin denial,
+four concurrent submissions yielding one run/job, and failure after successful
+successor insertion rolling back cursor, job and successor identity together.
+[Native evidence](evidence/post-r1/background-execution/bx-05-native-basics.json).
+
+Two actual app defects were fixed:flush the advanced cursor before successor
+preflight; permit SQL NULL only for terminal snapshot cleanup. Their original
+failure records remain private; the original run was retried/reclaimed without
+seed replay or progress reset. Upgrade operations:0c1bd811 (0.3.0),df9977ec
+(0.3.1),825c81ec (0.3.2). Logs and immutable old packages are retained privately.
+Cleanup retired48 terminal helpers and three superseded images/seven tags,
+including the initial install's retained tag after checking its completed journal.
+Current app/edge/database and their named volumes remain for BX-05.
+
+Next:active continuation`88e18afc-36fe-4d81-84e6-06a0d5b33355` has5,000 snapshot
+rows/expected2,497,500 points, cursor0 and one retry job. Private evidence/source:
+`bx05-atomicity.json`/`tests/background_chunks_atomicity.py`. Start a reviewed
+fleet, stop/kill its owned worker during compute, verify reclaim/stale apply
+and exact completion. Then partial cancellation and populated fresh restore,
+appropriate regressions and final retirement. Do not rerun the settled seeds.
+Remote delivery/fan-out/common orchestration remain conditional and unselected.
+Four of five gates passed, roughly80% by equal gate weights; partial BX-05
+checks are separate from that credit. Original R1 stays99/99 and100 points.
+No user input needed.
 
 BX-04 checklist:
 
@@ -316,7 +338,7 @@ BX-04 checklist:
 BX-05 checklist:
 
 - [x] Freeze the selected app's bounded cursor, consistency and continuation contract (ADR0068).
-- [ ] Implement app-owned progress and atomic cursor/successor updates with scoped authority.
+- [x] Implement app-owned progress and atomic cursor/successor updates with scoped authority; actual native rollback/duplicates verified.
 - [ ] Prove rollback, retry/process loss, duplicates and cancellation after partial progress.
 - [ ] Qualify compatible upgrade and fresh restore of partially completed work.
 - [ ] Record app results, conditional-extension decisions and retire owned test assets.

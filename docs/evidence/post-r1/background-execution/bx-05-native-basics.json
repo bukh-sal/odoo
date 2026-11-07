@@ -1,0 +1,56 @@
+{
+  "gate": "BX-05",
+  "state": "native_basics_and_atomicity_passed_gate_open",
+  "image": "sha256:fe1213fa565810e6f93cf87b8ad7943757978a72176d1b96c1e1f4d92b4eed4d",
+  "basic": {
+    "run": "f17922e9-9148-46cb-a0f8-1a61f4a530e6",
+    "count": 1201,
+    "points": 519600,
+    "chunks": 13,
+    "digest": "0e5c632794c950738fb2a191437b89a1c2c70d276848ab45b31be598cffdc248",
+    "partial_upgrade_preserved": true,
+    "snapshot_preserved_after_source_edit": true,
+    "terminal_snapshot_cleared": true,
+    "running_snapshot_constraint": true,
+    "range_excluded_foreign_rows": true,
+    "oversize_refused": true,
+    "big_first": 1222,
+    "big_last": 6221
+  },
+  "atomicity": {
+    "run": "88e18afc-36fe-4d81-84e6-06a0d5b33355",
+    "big_first": 1222,
+    "big_last": 6221,
+    "total": 5000,
+    "points": 2497500,
+    "current_job": "1e6867c6-afe4-4681-9809-fc2a74d431be",
+    "initial_rollback": true,
+    "caught_enqueue_rollback": true,
+    "unrelated_commit": true,
+    "same_workspace_actor_denied": true,
+    "unknown_contract_denied": true,
+    "revoked_origin_denied": true,
+    "concurrent_requests": 4,
+    "unique_runs": 1,
+    "unique_initial_jobs": 1,
+    "apply_fault": [
+      {
+        "cursor": 100,
+        "successor_visible_inside_transaction": true
+      }
+    ],
+    "cursor_and_successor_rolled_back": true,
+    "retry_state": "retry"
+  },
+  "partial_upgrade_operation": "825c81ec-e577-4ec3-99f3-1e9d03ab5064",
+  "private_sha256": {
+    "bx05-basic-final.json": "7557203277bb3794e05cf46c139b70adf69c0eb4b15dd8734ff01a5865f85e7c",
+    "bx05-atomicity.json": "dc9cb573940999852dbf714c617dfb01ad38e3b9fd605ffb82cda03cee6beaf7"
+  },
+  "remaining": [
+    "Managed process loss and stale apply",
+    "Cancellation after partial progress",
+    "Fresh restore of populated continuation",
+    "Regressions and final retirement"
+  ]
+}

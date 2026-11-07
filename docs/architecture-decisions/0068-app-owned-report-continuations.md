@@ -37,9 +37,16 @@ behind the existing job fence. Lock the app run, require contract1, current
 cursor and active state, advance count/sum/digest and enqueue at most one
 successor in the same transaction. The successor key includes run UUID/cursor;
 its eligibility is when that chunk becomes ready, while the run's original
-absolute expiry never extends. The final chunk marks complete and clears the
+absolute expiry never extends. The enqueue adapter immediately validates
+preparation. Flush the advanced cursor
+inside the still-uncommitted apply before enqueue, then store the successor ID.
+All three changes remain behind the same job savepoint and commit boundary.
+The final chunk marks complete and clears the
 snapshot. Initial request uses an Odoo savepoint so a caught enqueue failure
 cannot commit an orphan run. Native apply already provides rollback/fencing.
+Snapshot storage is nullable for terminal runs. A database phase check requires
+an array while running and SQL NULL after completion/cancellation; an empty
+Odoo JSON value must not violate an unconditional NOT NULL constraint.
 
 Cancellation applies only to the current originating actor. Lock/cancel the
 current job before locking its app run, matching worker job-then-run order.
