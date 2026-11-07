@@ -1,0 +1,359 @@
+{
+  "gate": "BX-04",
+  "state": "core44_controlled_comparison_passed",
+  "trace_sha256": "0392cb61fda0335610567ef14d59b48f16ae6459ff270701799ac6b1738ec0b6",
+  "runs": [
+    {
+      "image": "sha256:454dd975b0633e1cad4b2b7a2302f5122f95e5ad722e9bfaf061ee087001d132",
+      "bulk_lanes": 2,
+      "checks": {
+        "web": true,
+        "urgent": true,
+        "oldest_urgent": true,
+        "bulk": true,
+        "connections": true,
+        "locks": true,
+        "cpu": true,
+        "listener": true,
+        "simultaneous_64_plus_workspaces": true,
+        "bulk_drain": true
+      },
+      "idle": {
+        "list": {
+          "count": 200,
+          "median_ms": 109.0,
+          "p95_ms": 187.0,
+          "max_ms": 203.0
+        },
+        "detail": {
+          "count": 200,
+          "median_ms": 47.0,
+          "p95_ms": 93.0,
+          "max_ms": 125.0
+        }
+      },
+      "mixed": {
+        "list": {
+          "count": 460,
+          "median_ms": 109.0,
+          "p95_ms": 188.0,
+          "max_ms": 297.0
+        },
+        "detail": {
+          "count": 440,
+          "median_ms": 47.0,
+          "p95_ms": 79.0,
+          "max_ms": 125.0
+        }
+      },
+      "timings": {
+        "urgent": {
+          "start": {
+            "count": 150,
+            "median_ms": 216.5,
+            "p95_ms": 2185,
+            "max_ms": 2748
+          },
+          "worker": {
+            "count": 150,
+            "median_ms": 79.0,
+            "p95_ms": 97,
+            "max_ms": 147
+          }
+        },
+        "bulk": {
+          "start": {
+            "count": 72,
+            "median_ms": 11803.0,
+            "p95_ms": 22149,
+            "max_ms": 23400
+          },
+          "worker": {
+            "count": 72,
+            "median_ms": 705.5,
+            "p95_ms": 1254,
+            "max_ms": 1320
+          }
+        }
+      },
+      "bulk_drain_seconds": 24.63100290298462,
+      "bulk_lane_seconds_to_drain": 49.26200580596924,
+      "bulk_lane_seconds_window": 120.42892980575562,
+      "scoped_outputs": {
+        "loads": 54,
+        "reports": 18,
+        "repeated_attempts": 0
+      },
+      "notifications": 150,
+      "notes_unchanged": true
+    },
+    {
+      "image": "sha256:454dd975b0633e1cad4b2b7a2302f5122f95e5ad722e9bfaf061ee087001d132",
+      "bulk_lanes": 3,
+      "checks": {
+        "web": true,
+        "urgent": true,
+        "oldest_urgent": true,
+        "bulk": true,
+        "connections": true,
+        "locks": true,
+        "cpu": true,
+        "listener": true,
+        "simultaneous_64_plus_workspaces": true,
+        "bulk_drain": true
+      },
+      "idle": {
+        "list": {
+          "count": 200,
+          "median_ms": 109.0,
+          "p95_ms": 187.0,
+          "max_ms": 235.0
+        },
+        "detail": {
+          "count": 200,
+          "median_ms": 47.0,
+          "p95_ms": 94.0,
+          "max_ms": 125.0
+        }
+      },
+      "mixed": {
+        "list": {
+          "count": 460,
+          "median_ms": 109.5,
+          "p95_ms": 188.0,
+          "max_ms": 266.0
+        },
+        "detail": {
+          "count": 440,
+          "median_ms": 47.0,
+          "p95_ms": 79.0,
+          "max_ms": 109.0
+        }
+      },
+      "timings": {
+        "urgent": {
+          "start": {
+            "count": 150,
+            "median_ms": 211.5,
+            "p95_ms": 1924,
+            "max_ms": 2490
+          },
+          "worker": {
+            "count": 150,
+            "median_ms": 80.0,
+            "p95_ms": 101,
+            "max_ms": 147
+          }
+        },
+        "bulk": {
+          "start": {
+            "count": 72,
+            "median_ms": 8147.5,
+            "p95_ms": 15273,
+            "max_ms": 16560
+          },
+          "worker": {
+            "count": 72,
+            "median_ms": 687.0,
+            "p95_ms": 1327,
+            "max_ms": 1466
+          }
+        }
+      },
+      "bulk_drain_seconds": 17.62434196472168,
+      "bulk_lane_seconds_to_drain": 52.87302589416504,
+      "bulk_lane_seconds_window": 180.3845157623291,
+      "scoped_outputs": {
+        "loads": 54,
+        "reports": 18,
+        "repeated_attempts": 0
+      },
+      "notifications": 150,
+      "notes_unchanged": true
+    }
+  ],
+  "advice": {
+    "kind": "planned eligibility projection, not a live queue observation",
+    "policy": {
+      "protocol": 1,
+      "maximum_age_seconds": 60,
+      "startup_seconds": 15,
+      "drain_seconds": 60,
+      "pools": {
+        "urgent": {
+          "minimum": 1,
+          "maximum": 1,
+          "start_target_seconds": 3
+        },
+        "bulk": {
+          "minimum": 1,
+          "maximum": 6,
+          "start_target_seconds": 60
+        }
+      },
+      "handlers": {
+        "org.example.background:report:2": {
+          "pool": "bulk",
+          "default_seconds": 2,
+          "arrival_per_second": 0
+        },
+        "org.example.background:load:1": {
+          "pool": "bulk",
+          "default_seconds": 0.5,
+          "arrival_per_second": 0
+        }
+      },
+      "headroom": {
+        "web_p95_ms": 500,
+        "db_cpu_fraction": 0.85,
+        "connection_fraction": 0.7,
+        "lock_wait_seconds": 2
+      }
+    },
+    "count_policy": {
+      "protocol": 1,
+      "maximum_age_seconds": 60,
+      "startup_seconds": 15,
+      "drain_seconds": 60,
+      "pools": {
+        "urgent": {
+          "minimum": 1,
+          "maximum": 1,
+          "start_target_seconds": 3
+        },
+        "bulk": {
+          "minimum": 1,
+          "maximum": 6,
+          "start_target_seconds": 60
+        }
+      },
+      "handlers": {
+        "org.example.background:report:2": {
+          "pool": "bulk",
+          "default_seconds": 2,
+          "arrival_per_second": 0
+        },
+        "org.example.background:load:1": {
+          "pool": "bulk",
+          "default_seconds": 2,
+          "arrival_per_second": 0
+        }
+      },
+      "headroom": {
+        "web_p95_ms": 500,
+        "db_cpu_fraction": 0.85,
+        "connection_fraction": 0.7,
+        "lock_wait_seconds": 2
+      }
+    },
+    "weighted": {
+      "protocol": 1,
+      "action": "advice_only",
+      "state": "advised",
+      "reasons": [],
+      "pools": {
+        "urgent": {
+          "ready": 0,
+          "worker_seconds": 0,
+          "workspace_slots": 0,
+          "needed_lanes": 1,
+          "advised_lanes": 1,
+          "predicted_drain_seconds": 0,
+          "oldest_original_wait_seconds": 0,
+          "constraints": [],
+          "current_ready_lanes": 1,
+          "startup_seconds": 15,
+          "needed_warm_lanes_for_start_target": 0
+        },
+        "bulk": {
+          "ready": 72,
+          "worker_seconds": 101.718,
+          "workspace_slots": 70,
+          "needed_lanes": 2,
+          "advised_lanes": 2,
+          "predicted_drain_seconds": 50.859,
+          "oldest_original_wait_seconds": 0,
+          "constraints": [],
+          "current_ready_lanes": 2,
+          "startup_seconds": 15,
+          "needed_warm_lanes_for_start_target": 2
+        }
+      },
+      "estimates": {
+        "org.example.background:report:2": {
+          "pool": "bulk",
+          "seconds": 2,
+          "samples": 20,
+          "fallback": false,
+          "arrival_per_second": 0
+        },
+        "org.example.background:load:1": {
+          "pool": "bulk",
+          "seconds": 1.217,
+          "samples": 20,
+          "fallback": false,
+          "arrival_per_second": 0
+        }
+      },
+      "observation_age_seconds": 0.0,
+      "mutation_authorized": false
+    },
+    "count": {
+      "protocol": 1,
+      "action": "advice_only",
+      "state": "advised",
+      "reasons": [],
+      "pools": {
+        "urgent": {
+          "ready": 0,
+          "worker_seconds": 0,
+          "workspace_slots": 0,
+          "needed_lanes": 1,
+          "advised_lanes": 1,
+          "predicted_drain_seconds": 0,
+          "oldest_original_wait_seconds": 0,
+          "constraints": [],
+          "current_ready_lanes": 1,
+          "startup_seconds": 15,
+          "needed_warm_lanes_for_start_target": 0
+        },
+        "bulk": {
+          "ready": 72,
+          "worker_seconds": 144,
+          "workspace_slots": 70,
+          "needed_lanes": 3,
+          "advised_lanes": 3,
+          "predicted_drain_seconds": 53.0,
+          "oldest_original_wait_seconds": 0,
+          "constraints": [
+            "start_target_at_risk"
+          ],
+          "current_ready_lanes": 2,
+          "startup_seconds": 15,
+          "needed_warm_lanes_for_start_target": 3
+        }
+      },
+      "estimates": {
+        "org.example.background:report:2": {
+          "pool": "bulk",
+          "seconds": 2,
+          "samples": 0,
+          "fallback": true,
+          "arrival_per_second": 0
+        },
+        "org.example.background:load:1": {
+          "pool": "bulk",
+          "seconds": 2,
+          "samples": 0,
+          "fallback": true,
+          "arrival_per_second": 0
+        }
+      },
+      "observation_age_seconds": 0.0,
+      "mutation_authorized": false
+    },
+    "fixed_bulk_lanes": 2
+  },
+  "method": "One actual run per distinct selected count. Fixed and work advice select2; count advice3. All runs prewarmed; advice uses an explicitly labelled eligibility projection. Same-release40 calibration samples.",
+  "interpretation": "Both met all service and headroom targets with all222 useful completions. Compare faster drain with measured lane use; no dynamic controller or one-lane counterfactual was tested."
+}

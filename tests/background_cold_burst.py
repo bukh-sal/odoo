@@ -51,7 +51,9 @@ def main():
     seed=native(probe,'bx04-cold-burst-seed',SEED,DATA=load(probe.site.local/'bx04-sustained-setup.json')['data'])
     record.update(phase='seeded',seed=seed);write(path,record)
     while time.time()<datetime.fromisoformat(seed['anchor']).timestamp():time.sleep(.1)
-    observation=probe.operator.run('capacity');observation['health']=measured_health
+    observation=probe.operator.run('capacity')
+    measured_health['lock_wait_seconds']=observation['database']['longest_lock_wait_seconds']
+    observation['health']=measured_health
     assert sum(row['ready'] for row in observation['groups'] if row['pool']=='bulk')==20
     policy=dict(protocol=1,maximum_age_seconds=60,startup_seconds=15,drain_seconds=60,
         pools=dict(urgent=dict(minimum=1,maximum=1,start_target_seconds=3),bulk=dict(minimum=1,maximum=6,start_target_seconds=3)),

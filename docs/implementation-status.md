@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T05:29:17Z
+- Updated UTC: 2026-11-07T08:25:00Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -241,19 +241,34 @@ sampled per-schedule overlap. Start p95 5.417s; stock paired list188/188ms,
 detail79/78ms, all headroom/listener targets passed.
 [Recurring burst evidence](evidence/post-r1/background-execution/bx-04-recurring-bursts.json).
 
-Resume capsule: active current-release three-lane burst comparison session33870,
+Core44 identical burst comparison passed at both counts. Two lanes drained in
+24.631s using49.262 lane-seconds; three in17.624s using52.873 lane-seconds.
+Full-window lane use was120.429 versus180.385 lane-seconds. Both completed
+all222 useful jobs with no expiry and passed all ten service/headroom targets.
+Work advice selected2, count advice3. This establishes no automatic-sizing
+benefit for the tested workload; it does not test a dynamic one-lane baseline.
+[Current comparison](evidence/post-r1/background-execution/bx-04-core44-burst-comparison.json).
+
+Cold-only burst passed:actual growth26.407s exceeded the ten-second validity
+window. All20 jobs expired before any claim; read-only native advice warned
+about late start and expiry. This deliberate overload is separate from admitted
+workload results. [Cold-start evidence](evidence/post-r1/background-execution/bx-04-cold-start.json).
+
+Resume capsule: active fresh restore session17746 after the expected core45 fault,
 one owned project
 `mp-r0-r1releaseb152ddffba06`, port18126, DB
 `mp_disposable_r0_r1_release_b152ddffba06`. Current image454dd975b063/core44,
 full image ID in build `bx04-claim-guard-build-01/candidate-build.json`.
-One urgent/three bulk roles are reviewed, three stock web workers/four PG CPUs.
-The command is `tests/background_sustained_load.py many --burst --bulk-lanes 3
---attempt 2 --calibration-suffix core44`; private result is
-`bx04-sustained-many-burst-3-02.json`. Two-lane repeat passed all ten targets;
-bulk start p95 22.149s, urgent2.185s. Forty fresh same-release calibration
-samples passed first; previous calibration/comparison records remain intact.
-All ten recurring schedules are paused; credentials remain active within the
-reviewed recurrence footprint. Forty-two terminal owned helpers were removed;
+All worker/producer roles are stopped under a newly reviewed paused recurrence profile.
+The command is `tests/background_guard_recovery.py restore`; private record is
+`bx04-guard-recovery.json`, operation`e296bac7-2627-4f9e-bb15-afe0ae0a79f3`.
+Candidatee03dc57213c5/core45 changes only platform/native version metadata;
+worker/queue/authorization source remains core44. Build log is private.
+Seed contains one committed guarded claim, one future human job, one pending
+service occurrence and exact cursor/history/rotation snapshots. Initial output
+formatting failed after commit; read-only capture preserved the claim, no replay.
+An attempted fixture anchor change was refused before mutation; resuming the
+original coalesce grid produced the pending occurrence. Forty-two terminal owned helpers were removed;
 running services and named volumes retained. Obsolete core42/core43 candidates
 and their four tags were retired only after verifying their release operations
 completed with resumed traffic and no remaining container dependencies.
@@ -262,8 +277,11 @@ and partial pressure connections were closed. Successful attempt3 is drained.
 Do not replay completed load/upgrade/fault seeds. No uncertain mutation or external
 effect exists.
 
-Next inspect recurring bursts, recheck calibrated two/three-lane burst comparison
-on core44, and qualify release/recovery with populated guarded jobs. Choose
+The fault reached `recovery_required`, mutation started, traffic never resumed.
+Next inspect the fresh restore with traffic closed, separately
+resume and prove old claim/rotation/profile refusal plus current human recovery.
+Revoked service work must remain held. Then qualify a fresh successful core45
+upgrade and choose
 whether automatic sizing is justified from the measured comparisons; current
 fixed2/work advice meets SLOs with less lane use than count3. Retire obsolete
 containers/images after their dependencies settle. BX-05 app-driven chunks
@@ -283,7 +301,8 @@ BX-04 checklist:
 - [x] Qualify native telemetry, timing, pins and read-only CLI advice.
 - [x] Repeat the original BG-04 paired native web/reminder/bulk workload.
 - [x] Measure sustained hot-workspace, 70-workspace and variable-duration load.
-- [x] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost (core42; recheck affected source after rotation).
+- [x] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost (core42 and corrected core44).
+- [x] Verify physical cold growth misses a shorter useful window and advice warns.
 - [x] Qualify process loss, fairness, recurring bursts, connection saturation and stale metrics.
 - [ ] Qualify populated release/fresh recovery of guarded jobs and rotation metadata.
 - [ ] Decide automatic-sizing/broker/pool changes from evidence; qualify any selected controller.
@@ -764,6 +783,8 @@ No current environment blocker: isolated protected headless Edge now provides ac
 
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
+| BX-04-FAIRNESS | Corrected and natively requalified | Two hot workspaces previously consumed60 claims before68 peers. Core44 rotating selection serves peers within the fixed fairness bounds and survives child restart. ADR0066/core44 guard evidence. |
+| BX-04-CLAIM-GUARD | Native failure corrected; final recovery qualification pending | Isolated compute-slot connection loss previously admitted two valid workspace/pool claims. Preparation guard plus running-row exclusion passed ten PG races, exact native loss, fairness/restart, and paired load. ADR0067. |
 | BX-02 | Resolved | Reviewed roles, partial recovery, connection loss, graceful/forced drain and actual release races passed; all owned Docker assets retired. See BX-02 decision. |
 | BX-03-LIFECYCLE | Closed by native proof | Exact paused role selection, scoped credential review, populated upgrade, history-delta refusal, fresh restore, separate resume and explicit credential repair passed. Generic profile remains strict; changed post-checkpoint history still requires independent reconciliation. ADR 0064 and bx-03-recovery.json. |
 | STOCK-RTL-01 | Resolved | The bounded launcher mirrors the full stylesheet under the HTTP worker limit. Preflight and both browsers passed on the selected image. |

@@ -1,0 +1,64 @@
+{
+  "phase": "passed",
+  "image": "sha256:454dd975b0633e1cad4b2b7a2302f5122f95e5ad722e9bfaf061ee087001d132",
+  "advice": {
+    "protocol": 1,
+    "action": "advice_only",
+    "state": "advised",
+    "reasons": [],
+    "pools": {
+      "urgent": {
+        "ready": 0,
+        "worker_seconds": 0,
+        "workspace_slots": 0,
+        "needed_lanes": 1,
+        "advised_lanes": 1,
+        "predicted_drain_seconds": 0,
+        "oldest_original_wait_seconds": 0,
+        "constraints": [],
+        "current_ready_lanes": 1,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 0
+      },
+      "bulk": {
+        "ready": 20,
+        "worker_seconds": 10.0,
+        "workspace_slots": 20,
+        "needed_lanes": 1,
+        "advised_lanes": 1,
+        "predicted_drain_seconds": 25.0,
+        "oldest_original_wait_seconds": 5.452,
+        "constraints": [
+          "start_target_at_risk",
+          "reactive_start_too_late",
+          "reactive_start_after_expiry"
+        ],
+        "current_ready_lanes": 0,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 1
+      }
+    },
+    "estimates": {
+      "org.example.background:load:1": {
+        "pool": "bulk",
+        "seconds": 0.5,
+        "samples": 0,
+        "fallback": true,
+        "arrival_per_second": 0
+      }
+    },
+    "observation_age_seconds": 5.157531,
+    "mutation_authorized": false
+  },
+  "growth_began": "2026-11-07T08:19:03.608286+00:00",
+  "ready_at": "2026-11-07T08:19:30.015198+00:00",
+  "cold_growth_seconds": 26.406912,
+  "expired_before_any_claim": 20,
+  "gate": "BX-04",
+  "jobs": 20,
+  "validity_seconds": 10,
+  "manual_review_separate": true,
+  "no_attempts": true,
+  "scope": "Deliberately unadmitted cold-only burst; not an admitted workload failure",
+  "private_record_sha256": "5c21dda70c3b9bb58444bb70ff944f2c98beba6353c48f2acf3eb003afd3bb66"
+}

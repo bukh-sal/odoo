@@ -46,7 +46,9 @@ with env.registry.cursor() as cr:
         assert invocation.claim.job_id==running
 with env.registry.cursor() as cr:
     ticket=fairness.read(cr,release['site_id'],release['release_digest'],'bulk')
-print('BX04_RESULT='+json.dumps(dict(pending=pending,running=running,claim=asdict(invocation.claim),ticket=asdict(ticket))))
+claim=invocation.claim
+print('BX04_RESULT='+json.dumps(dict(pending=pending,running=running,
+    claim=dict(job_id=claim.job_id,generation=claim.generation,owner=claim.owner),ticket=asdict(ticket))))
 """
 
 
@@ -63,21 +65,48 @@ def state(probe):
 
 
 def main(phase,candidate):
-    probe=Probe('bx-04-capacity-01');assert not probe.operator._lanes()
+    extra={'capture-seed':'bx04-guard-recovery-seed','finish-prepare':'bx04-guard-recovery-occurrence'}.get(phase)
+    probe=Probe('bx-04-capacity-01',extra_phase=extra)
+    assert not probe.operator._lanes()
     path=probe.site.local/'bx04-guard-recovery.json';record=load(path) if path.exists() else {}
-    if phase=='prepare':
-        assert not record
+    if phase in ('prepare','capture-seed','finish-prepare'):
         burst=load(probe.site.local/'bx04-recurring-burst.json');assert burst['phase']=='passed'
-        record=dict(phase='preparing',original_target=probe.target,business=business(probe),services=burst['services'])
-        write(path,record)
-        seed=native(probe,'bx04-guard-recovery-seed',SEED,DATA=load(probe.site.local/'bx04-sustained-setup.json')['data'])
+        if phase=='prepare':
+            assert not record
+            record=dict(phase='preparing',original_target=probe.target,business=business(probe),services=burst['services'])
+            write(path,record)
+            seed=native(probe,'bx04-guard-recovery-seed',SEED,DATA=load(probe.site.local/'bx04-sustained-setup.json')['data'])
+        elif phase=='capture-seed':
+            assert record['phase']=='preparing'
+            probe.state['phase']='background_installed'
+            seed=native(probe,'bx04-guard-recovery-capture',"""
+from dataclasses import asdict
+import json
+from odoo.addons.mp_identity.release import current_release
+from modular_platform import job_fairness as fairness
+rows={}
+for label in ('pending','running'):
+    env.cr.execute('SELECT public_id,state,claim_generation,lease_owner FROM mp_job WHERE idempotency_key=%s',['bx04-recovery-'+label])
+    found=env.cr.fetchall();assert len(found)==1
+    rows[label]=found[0]
+assert rows['pending'][1:]==('pending',0,None)
+assert rows['running'][1]=='running' and rows['running'][2]==1 and rows['running'][3]
+release=current_release(env)
+ticket=fairness.read(env.cr,release['site_id'],release['release_digest'],'bulk')
+assert ticket.after==FIXTURE['workspaces']['A']['id']
+print('BX04_RESULT='+json.dumps(dict(pending=rows['pending'][0],running=rows['running'][0],
+    claim=dict(job_id=rows['running'][0],generation=rows['running'][2],owner=rows['running'][3]),ticket=asdict(ticket))))
+""")
+            record['harness_diagnostic']='Original seed committed and prepared; output failed on optional datetime field. Captured exact rows/claim/ticket read-only; no seed replay.'
+        else:
+            assert record['phase']=='guard_seeded'
+            seed=record['seed'];probe.state['phase']='background_installed'
+            record['occurrence_harness_diagnostic']='Anchor edit was refused before mutation; retained original recurrence grid and resumed its current coalesce-latest occurrence.'
+        record.update(phase='guard_seeded',seed=seed);write(path,record)
         actors='SERVICES='+repr(burst['services'])+'\n'+API_PROBE.split('def row(',1)[0]
-        recurring=native(probe,'bx04-guard-recovery-occurrence',actors+"""
+        recurring=native(probe,'bx04-guard-recovery-occurrence'+('-02' if phase=='finish-prepare' else ''),actors+"""
 current=actor('A');aid=SERVICES['A']['schedule']
 env.cr.execute('SELECT config_version FROM mp_job_schedule WHERE public_id=%s',[aid]);revision,=env.cr.fetchone()
-row=DATA['A'];rule=RecurrenceRule(datetime.now(timezone.utc).replace(microsecond=0),60,3600,20)
-revision=recurring.edit_schedule(current,aid,revision,handler='org.example.background:report',
-    values=dict(first=row['first'],last=row['last']),rule=rule,version=2)
 revision=recurring.resume_schedule(current,aid,revision);env.cr.commit()
 emitted=recurring.tick(env,aid);assert emitted['outcome']=='emitted',emitted
 revision=recurring.pause_schedule(current,aid,revision);env.cr.commit()
@@ -105,7 +134,11 @@ print('BX04_RESULT='+json.dumps(dict(schedule=aid,job=emitted['job_id'],revision
         assert after.sql("SELECT count(*) FROM mp_service_credential WHERE state='active'")=='0'
         assert after.sql('SELECT state FROM mp_dispatch_control')=='paused'
         assert after.row(record['recurring']['job'])['state']=='held'
-        assert after.row(record['seed']['running'])['state']=='held'
+        # A still-authorized idempotent human job is carried forward, while
+        # the old lease/generation is invalidated. Revoked service work holds.
+        restored_claim=after.row(record['seed']['running'])
+        assert restored_claim['state']=='pending' and restored_claim['owner'] is None
+        assert restored_claim['generation']>record['seed']['claim']['generation']
         assert after.row(record['seed']['pending'])['state']=='pending'
         restored=state(after)
         assert restored['occurrences']==record['before']['occurrences']
@@ -157,10 +190,13 @@ print('BX04_RESULT='+json.dumps(dict(old_claim_denied=True,old_rotation_denied=T
         assert probe.operator.run('profile-apply',approval=review['approval'])['state']=='ready'
         wait(lambda:all(probe.row(job)['state']=='completed' for job in proof['jobs']),90)
         assert all(probe.row(job)['attempts']==1 for job in proof['jobs'])
+        recovered=probe.row(record['seed']['running'])
+        assert recovered['state']=='completed' and recovered['attempts']==2
+        assert recovered['generation']>record['seed']['claim']['generation']
         assert business(probe)==record['business']
         assert probe.sql("SELECT count(*) FROM mp_service_credential WHERE state='active'")=='0'
         drained=probe.operator.run('drain');assert drained['state']=='paused'
-        record.update(phase='passed',proof=proof,stale_profile_denied=stale,new_approval=review['approval'],drain=drained)
+        record.update(phase='passed',proof=proof,recovered_claim=recovered,stale_profile_denied=stale,new_approval=review['approval'],drain=drained)
     elif phase=='advance':
         assert record['phase']=='passed'
         operation,executor=approved(probe,record['candidate'],'core_upgrade')
@@ -177,5 +213,5 @@ print('BX04_RESULT='+json.dumps(dict(old_claim_denied=True,old_rotation_denied=T
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('phase',choices=['prepare','fault','restore','resume','prove','advance'])
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('phase',choices=['prepare','capture-seed','finish-prepare','fault','restore','resume','prove','advance'])
     parser.add_argument('--candidate',type=Path);args=parser.parse_args();main(args.phase,args.candidate)
