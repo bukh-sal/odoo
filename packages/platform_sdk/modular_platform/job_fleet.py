@@ -57,8 +57,9 @@ class JobFleet:
                           host=data_digest(row['HostConfig']),running=row['State']['Running'])
                 for name,row in lanes.items()}
 
-    def review(self, *, urgent_lanes=1, bulk_lanes=2, producer_lanes=0, cpu_millis=1000, memory_mib=768, shutdown_seconds=45):
+    def review(self, *, urgent_lanes=1, bulk_lanes=2, producer_lanes=0, cpu_millis=1000, memory_mib=768, shutdown_seconds=45, paused=False):
         op = self.operator
+        if type(paused) is not bool:raise OperatorError('Explicit reviewed fleet pause state required')
         spec = self._spec(urgent_lanes, bulk_lanes, cpu_millis, memory_mib, shutdown_seconds, producer_lanes)
         runtime = op.runtime()
         lanes = op._lanes()
@@ -82,6 +83,7 @@ class JobFleet:
                 raise OperatorError('Exact native recurrence authority review required')
             recurrence=observed['policy']
         value = dict(protocol=1, review_id=str(uuid4()), pins=pins, spec=spec,
+                     state='paused' if paused else 'active',
                      recurrence_policy=recurrence,
                      previous_digest=data_digest(previous), observed=self._observation(lanes),
                      reviewed_at=datetime.now(timezone.utc).isoformat())
@@ -97,6 +99,7 @@ class JobFleet:
         runtime = op.runtime()
         if data_digest(value)!=approval or value['pins']!=self._pins(runtime):
             raise OperatorError('Worker profile review differs from current deployment pins')
+        self._check_authority(runtime,value.get('recurrence_policy'))
         desired = self.desired()
         intent = self.directory/(approval[7:]+'.intent.json')
         if intent.exists():
@@ -114,7 +117,7 @@ class JobFleet:
         accepted = sorted(set((desired or {}).get('accepted_templates',[])+([desired['template']] if desired else [])))
         target=dict(protocol=1,approval=approval,pins=value['pins'],spec=value['spec'],template=template,
                     recurrence_policy=value.get('recurrence_policy'),
-                    accepted_templates=accepted,state='active',drained_lanes=[],
+                    accepted_templates=accepted,state=value.get('state','active'),drained_lanes=[],
                     generation=(desired['generation']+1 if desired else 1))
         _write_new(intent,dict(approval=approval,target=target))
         self._save(target)
@@ -128,6 +131,17 @@ class JobFleet:
             return set()
         return {f'{op.project}-job-{pool}-{number}' for pool,count in desired['spec']['counts'].items()
                 for number in range(1,count+1)}-set(desired['drained_lanes'])
+
+    def _check_authority(self,runtime,policy):
+        if policy is None:return
+        current=self.operator._run_admin(runtime,str(uuid4()),['recurrence-authority'])
+        if current.get('event')!='recurrence_authority':raise OperatorError('Current recurrence authority observation required')
+        observed=current.get('policy',{})
+        if any(observed.get(key)!=policy.get(key) for key in ('protocol','kind','site_id')):
+            raise OperatorError('Recurring role authority differs from its review')
+        expected={binding['credential_id']:binding for binding in policy['credentials']}
+        if any(expected.get(binding['credential_id'])!=binding for binding in observed['credentials']):
+            raise OperatorError('Recurring role authority changed; review the current credential scope')
 
     def _matches(self, row, desired):
         op=self.operator
@@ -205,6 +219,7 @@ class JobFleet:
         if any(row['Config']['Labels'].get('com.modular.job_template') not in accepted for row in lanes.values()):
             raise OperatorError('Unrecognized worker template requires independent reconciliation')
         expected=self._expected(desired)
+        if expected:self._check_authority(runtime,desired.get('recurrence_policy'))
         for name,row in lanes.items():
             if name not in expected or not self._matches(row,desired):
                 self._stop(row,desired)

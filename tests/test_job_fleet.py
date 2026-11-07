@@ -1,5 +1,6 @@
 """Reviewed fleet crash recovery, stale decisions and maintenance boundaries."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -110,6 +111,53 @@ class FleetTests(unittest.TestCase):
             self.review(producer_lanes=1)
         self.op._run_admin.assert_not_called()
         self.assertIsNone(self.fleet.desired())
+
+    def producer_review(self,**options):
+        directory=ROOT/'packages/platform_sdk/modular_platform'
+        self.op.runtime.return_value['inventory']={'files':{
+            'packages/platform_sdk/modular_platform/'+name:hashlib.sha256((directory/name).read_bytes()).hexdigest()
+            for name in ('recurrence_runner.py','recurrence_authority.py')}}
+        self.policy=dict(protocol=1,kind='native-recurring-credentials-v1',site_id=self.op.site['site_id'],
+            credentials=[dict(credential_id=7,principal_id=2,workspace_id=3,installation_id='00000000-0000-4000-8000-000000000004',
+                              actions=['read'],expires_at='2099-01-01T00:00:00Z')])
+        self.op._run_admin=Mock(return_value=dict(event='recurrence_authority',policy=copy.deepcopy(self.policy)))
+        return self.review(producer_lanes=1,**options)
+
+    def test_review_can_adopt_paused_authority_without_starting_producer(self):
+        approval=self.producer_review(paused=True)
+        with patch.object(self.fleet,'reconcile',return_value={'state':'paused'}):
+            result=self.fleet.apply(approval)
+        self.assertEqual(result['state'],'paused')
+        self.assertEqual(self.fleet.desired()['state'],'paused')
+        self.assertEqual(self.fleet._expected(self.fleet.desired()),set())
+
+    def test_authority_widening_after_review_cannot_publish_desired(self):
+        approval=self.producer_review()
+        self.op._run_admin.return_value['policy']['credentials'][0]['actions']=['read','write']
+        with self.assertRaisesRegex(OperatorError,'authority changed'):
+            self.fleet.apply(approval)
+        self.assertIsNone(self.fleet.desired())
+
+    def test_revocation_after_review_does_not_restore_credential(self):
+        approval=self.producer_review()
+        self.op._run_admin.return_value['policy']['credentials']=[]
+        with patch.object(self.fleet,'reconcile',return_value={'state':'ready'}):self.fleet.apply(approval)
+        self.assertEqual(self.op._run_admin.return_value['policy']['credentials'],[])
+        self.assertEqual(self.fleet.desired()['recurrence_policy'],self.policy)
+
+    def test_lifecycle_requires_exact_paused_independent_role_review(self):
+        from modular_platform.recurrence_maintenance import selected
+        self.op.target.update(project=self.op.project,deployment_id=self.op.deployment,sites=[self.op.site])
+        approval=self.producer_review()
+        with patch.object(self.fleet,'reconcile',return_value={'state':'ready'}):self.fleet.apply(approval)
+        native=SimpleNamespace(store=self.op.store,config=self.op.target)
+        with self.assertRaisesRegex(OperatorError,'Pause'):selected(native)
+        desired=self.fleet.desired();desired['state']='paused';self.fleet._save(desired)
+        helper=selected(native)
+        self.assertEqual(helper.policy,self.policy)
+        desired['recurrence_policy']['credentials'][0]['actions']=['unlink']
+        self.fleet._save(desired)
+        with self.assertRaisesRegex(OperatorError,'Pause'):selected(native)
 
 
 if __name__=='__main__':unittest.main()

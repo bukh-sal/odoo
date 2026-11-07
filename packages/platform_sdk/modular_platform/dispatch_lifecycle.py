@@ -21,6 +21,7 @@ class LifecycleScope:
     release_digest: str
     control_release: str | None = None
     reference: dict | None = None
+    recurrence: dict | None = None
 
 
 def _columns(*groups):
@@ -167,6 +168,8 @@ def _reference(cr,scope):
 
 def _scope(cr,scope):
     if not isinstance(scope,LifecycleScope):raise DispatchLifecycleError('Typed independent lifecycle scope required')
+    if scope.reference is not None and scope.recurrence is not None:
+        raise DispatchLifecycleError('Combined reference and recurrence maintenance is not qualified')
     try:durable._uuid(scope.site_id)
     except durable.QueueError:raise DispatchLifecycleError('Canonical lifecycle site required') from None
     if not isinstance(scope.release_digest,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',scope.release_digest):
@@ -327,6 +330,14 @@ def observe(cr,scope,*,lock=False):
         body['recurring_schedules']=snapshots[SCHEDULE_TABLE]['rows']
     if scope.reference is not None:
         body.update(profile='r1-reference-stateless-dispatch-v1',reference_policy_digest=_reference(cr,scope))
+    if scope.recurrence is not None:
+        if not RECURRENCE<=set(tables) or external or keys:
+            raise DispatchLifecycleError('Known native recurrence schema without external registrations or API keys required')
+        from .recurrence_authority import validate
+        approved=validate(cr,scope.site_id,scope.recurrence)
+        if approved['active_credentials']!=credentials:
+            raise DispatchLifecycleError('Recurrence credentials changed during inspection')
+        body.update(profile='r1-native-recurring-dispatch-v1',recurrence_policy_digest=data_digest(scope.recurrence))
     return body|dict(state_digest=data_digest(body))
 
 
@@ -342,9 +353,9 @@ def fence(cr,scope,operation_id,*,state='paused'):
     if state not in {'paused','restoring'}:raise DispatchLifecycleError('Closed dispatch state required')
     before=observe(cr,scope,lock=True)
     if before is None:return None
-    if before.get('recurring_schedules',0):
+    if before.get('recurring_schedules',0) and scope.recurrence is None:
         raise DispatchLifecycleError('Recurring schedules require the independently reviewed recurrence maintenance profile')
-    if before['external_installations'] and scope.reference is None or before['active_credentials'] or before['api_keys']:
+    if before['external_installations'] and scope.reference is None or before['active_credentials'] and scope.recurrence is None or before['api_keys']:
         raise DispatchLifecycleError('External effects or live technical credentials require the external reconciliation profile')
     if before['control'] and before['control']['generation']>=2**31-1:
         raise DispatchLifecycleError('Dispatch generation exhausted')
@@ -365,7 +376,7 @@ def fence(cr,scope,operation_id,*,state='paused'):
         cr.execute("""UPDATE mp_event_delivery SET state=CASE WHEN attempts>=5 THEN 'dead_letter' ELSE 'pending' END,
             generation=generation+1,receipt=NULL,lease_until=NULL,error_code='ACK_EXPIRED',
             available_at=timezone('UTC',clock_timestamp()) WHERE state='leased'""")
-    after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest,reference=scope.reference))
+    after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest,reference=scope.reference,recurrence=scope.recurrence))
     for table in ['mp_outbox','mp_event_consumption','mp_event_consumer_state',*sorted(COMPACT)]:
         if table in before['tables'] and before['tables'][table]!=after['tables'][table]:
             raise DispatchLifecycleError('Fencing changed producer or consumer history')
@@ -379,13 +390,13 @@ def enable(cr,scope,expected_digest):
     BEFORE committing this transaction, including when ingress is still closed.
     """
     before=observe(cr,scope,lock=True)
-    if before and before.get('recurring_schedules',0):
+    if before and before.get('recurring_schedules',0) and scope.recurrence is None:
         raise DispatchLifecycleError('Recurring schedules require the independently reviewed recurrence resume profile')
     if (before is None or before['state_digest']!=expected_digest or not before['control']
             or before['control']['state']!='paused' or before['control']['release_digest']!=scope.release_digest
             or before['control']['generation']>=2**31-1):
         raise DispatchLifecycleError('Exact paused dispatch snapshot required before resume')
-    if (before['external_installations'] and scope.reference is None or before['active_credentials'] or before['api_keys']
+    if (before['external_installations'] and scope.reference is None or before['active_credentials'] and scope.recurrence is None or before['api_keys']
             or before['job_states'].get('running') or before['job_states'].get('outcome_unknown')):
         raise DispatchLifecycleError('Unreconciled effects or credentials prevent native dispatch resume')
     cr.execute("SELECT count(*) FROM mp_job WHERE (state IN ('pending','retry') AND (release_digest<>%s OR effect_mode<>'idempotent')) OR (effect_mode='reconcile' AND effect_started AND state NOT IN ('completed','cancelled','dead_letter'))",[scope.release_digest])
@@ -396,4 +407,4 @@ def enable(cr,scope,expected_digest):
         cr.execute("SELECT count(*) FROM mp_event_delivery WHERE state='leased'")
         if cr.fetchone()[0]:raise DispatchLifecycleError('Obsolete event receipts remain leased')
     durable.set_control(cr,scope.site_id,scope.release_digest,'enabled')
-    return dict(before=before,after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest,reference=scope.reference)),dispatch_enabled=True)
+    return dict(before=before,after=observe(cr,LifecycleScope(scope.site_id,scope.release_digest,reference=scope.reference,recurrence=scope.recurrence)),dispatch_enabled=True)

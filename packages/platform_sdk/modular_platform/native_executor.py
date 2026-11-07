@@ -145,6 +145,12 @@ class NativeExecutor:
         return DockerObserver(configuration)
 
     def _dispatch(self):
+        from .recurrence_maintenance import selected
+        recurring=selected(self)
+        if recurring is not None:
+            if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
+                raise OperatorError('Combined external and recurrence maintenance requires separate qualification')
+            return recurring
         if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
             from .reference_dispatch import ReferenceDispatchMaintenance
             return ReferenceDispatchMaintenance(self)
@@ -280,6 +286,9 @@ class NativeExecutor:
             previous['dispatch_profile']=actual
             if actual['profile']=='r1-reference-stateless-dispatch-v1':
                 previous['reference_policy']=helper.policy_for(actual)
+            if actual['profile']=='r1-native-recurring-dispatch-v1':
+                previous['recurrence_policy']=helper.policy_for(actual)
+                previous['recurrence_role_approval']=helper.role_approval
             previous['external_dispatch']=('Outbound stateless reference profile fenced; independent current publication is not rolled back.'
                 if actual['profile']=='r1-reference-stateless-dispatch-v1' else 'Native queue/receipt profile fenced; remote effects are excluded by this profile.')
         _write_new(checkpoint/'manifest.json', previous)

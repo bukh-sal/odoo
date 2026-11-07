@@ -19,7 +19,7 @@ import secrets
 from .catalog import Catalog
 from .contracts import load_json
 from .deployment import DockerObserver, _run
-from .dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE
+from .dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE, OCCURRENCE_TABLE
 from .operator_os import OperatorError, OperationLocks, current_identity, protect_directory
 from .operator_store import _write_new
 from .plans import data_digest
@@ -131,6 +131,13 @@ class RestoreExecutor:
         if manifest is None:manifest=load_json((self.store.root/'checkpoints'/operation/'manifest.json').read_bytes())
         if reference_needed(self.native,bundle,manifest):
             return ReferenceRecoveryDispatch(self.native,bundle,manifest,purpose=purpose)
+        if (manifest.get('dispatch_profile') or {}).get('profile')=='r1-native-recurring-dispatch-v1':
+            from .recurrence_maintenance import NativeRecurrenceMaintenance
+            policy=manifest.get('recurrence_policy')
+            if not policy or data_digest(policy)!=manifest['dispatch_profile'].get('recurrence_policy_digest'):
+                raise OperatorError('Restored recurrence requires its exact independent checkpoint policy')
+            return NativeRecurrenceMaintenance(self.native,policy,role_approval=manifest.get('recurrence_role_approval'),
+                schedule_origin=manifest['dispatch_profile']['release_digest'])
         return DispatchMaintenance(self.native)
 
     def _recovery_observer(self,configuration,*,manifest=None,purpose='restored'):
@@ -159,9 +166,9 @@ class RestoreExecutor:
             if any(value.values()):raise OperatorError('Restored dispatch/API/technical identities require reconciliation; traffic must remain closed')
         else:
             kind=dispatch_profile.get('profile') if isinstance(dispatch_profile,dict) else None
-            if (kind not in {'r1-native-dispatch-v1','r1-reference-stateless-dispatch-v1'}
+            if (kind not in {'r1-native-dispatch-v1','r1-reference-stateless-dispatch-v1','r1-native-recurring-dispatch-v1'}
                     or not all(value[k] for k in flags) or value['api_key_count'] or value['active_technical_credentials']
-                    or kind=='r1-native-dispatch-v1' and value['external_installations']):
+                    or kind in {'r1-native-dispatch-v1','r1-native-recurring-dispatch-v1'} and value['external_installations']):
                 raise OperatorError('Exact known native dispatch profile required; external effects require reconciliation')
             helper=dispatch_helper or self._dispatch_helper()
             observed=helper.require_profile(helper.inspect_current(configuration=configuration),closed=True)
@@ -187,6 +194,14 @@ class RestoreExecutor:
         if (profile is not None and observed['schema_digest']!=profile['schema_digest']
                 and not self._empty_retention_table_transition(profile,observed,bundle)):
             raise OperatorError('Failed dispatch schema requires independent reconciliation')
+        if profile is not None and profile.get('profile')=='r1-native-recurring-dispatch-v1':
+            # All supported writers are drained and fenced before checkpoint.
+            # Never silently rewind unexpected emitted effects or import
+            # possibly migrated job/configuration rows into retained code.
+            before=profile.get('tables',{}).get(OCCURRENCE_TABLE)
+            after=observed.get('tables',{}).get(OCCURRENCE_TABLE)
+            if before is None or after!=before:
+                raise OperatorError('Recurring occurrence history changed after the coordinated checkpoint; independent reconciliation required')
         return observed
 
     @staticmethod
@@ -402,6 +417,7 @@ class RestoreExecutor:
         if dispatch_ready is not None:
             result['dispatch']=dispatch_ready
             if dispatch_ready['profile']=='r1-reference-stateless-dispatch-v1':result['reference_policy']=helper.policy_for(dispatch_ready)
+            if dispatch_ready['profile']=='r1-native-recurring-dispatch-v1':result['recurrence_policy']=helper.policy_for(dispatch_ready)
         _write_new(directory/'result.json',result)
         return {'state':'restored_verified','fresh_database':fresh,'failed_database_retained':True,'keep_traffic_closed':True,
             'operation_status':self.store.status(operation)}

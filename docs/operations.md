@@ -249,6 +249,43 @@ Choose a grace appropriate for the attempts: the 45-second default can interrupt
 longer work. Reserve database and web capacity when choosing lane limits.
 [Profile and shutdown contract](architecture-decisions/0063-reviewed-native-worker-fleets.md)
 
+On a recurrence-capable image, add `--producer-lanes 1` to review the optional
+producer role. `profile-review --producer-lanes 1 --paused` adopts its reviewed
+credential footprint without starting containers. Apply the returned digest.
+Use this paused profile before maintenance, then review the new target after
+the release or separately approved restore/resume. A changed or broader active
+credential requires a fresh review. Revoked credentials stay revoked. The
+producer and workers share the eight-role host bound, image and release fence.
+
+Trusted native apps can create fixed UTC schedules under an authenticated,
+scoped non-administrator service environment and its server-selected binding.
+For the reference plugin's `jobs` binding:
+
+```python
+from datetime import datetime, timezone
+from modular_platform.recurrence import RecurrenceRule
+from odoo.addons.mp_core import recurrence_dispatch
+
+rule = RecurrenceRule(
+    datetime.now(timezone.utc).replace(microsecond=0),
+    interval_seconds=3600, validity_seconds=300, attempt_seconds=30,
+    missed="coalesce_latest",
+)
+schedule_id = recurrence_dispatch.create_schedule(
+    service_env, "jobs", "org.example.background:report",
+    {"first": 1, "last": 500}, "hourly-report", rule=rule, version=2,
+)
+```
+
+The caller owns the source transaction and its concurrency retries. The
+producer enqueues existing one-off jobs and the worker rechecks scope before
+apply. Keep the original schedule ID and returned revisions when editing or
+pausing. Rotation affects future work through explicit edit/resume; it does
+not rewrite outstanding jobs. `cancel_outstanding` can stop old owned work
+under current schedule authority, while retaining an unknown external outcome.
+Fresh-restore qualification is still pending under
+[ADR 0064](architecture-decisions/0064-native-recurring-schedules.md).
+
 Pause and drain the reviewed fleet before release changes. Follow the existing approved lifecycle
 operation and separate restore/resume decisions if recovery is needed.
 Review and apply a new profile from the new target only after dispatch and traffic

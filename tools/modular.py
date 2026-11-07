@@ -170,6 +170,7 @@ def main(argv=None):
     profile_review.add_argument('--urgent-lanes',type=int,default=1)
     profile_review.add_argument('--bulk-lanes',type=int,default=2)
     profile_review.add_argument('--producer-lanes',type=int,default=0)
+    profile_review.add_argument('--paused',action='store_true')
     profile_review.add_argument('--cpu-millis',type=int,default=1000)
     profile_review.add_argument('--memory-mib',type=int,default=768)
     profile_review.add_argument('--shutdown-seconds',type=int,default=45)
@@ -199,7 +200,7 @@ def main(argv=None):
             if args.action=='start':
                 options=dict(urgent_lanes=args.urgent_lanes,bulk_lanes=args.bulk_lanes)
             elif args.action=='profile-review':
-                options={name:getattr(args,name) for name in ('urgent_lanes','bulk_lanes','producer_lanes','cpu_millis','memory_mib','shutdown_seconds')}
+                options={name:getattr(args,name) for name in ('urgent_lanes','bulk_lanes','producer_lanes','cpu_millis','memory_mib','shutdown_seconds','paused')}
             elif args.action=='profile-apply':options=dict(approval=args.approval)
             elif args.action=='drain-lane':options=dict(pool=args.pool,lane=args.lane)
             elif args.action in {'review','apply'}:

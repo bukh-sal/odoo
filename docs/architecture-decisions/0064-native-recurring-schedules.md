@@ -76,8 +76,14 @@ refusals. Do not relax the generic credential-count guard. Maintenance requires
 producer and lanes paused/stopped, and its snapshot includes schedule, cursor
 and occurrence receipts. Restores preserve occurrence identity and current
 revocations, keep traffic and dispatch closed, and require separate resume.
-Post-checkpoint occurrence receipts must be reconciled conservatively before a
-restored cursor can run; uncertain remote effects remain an independent hold.
+The coordinated checkpoint follows producer drain and the dispatch fence. No
+supported occurrence writer can commit after it. Verify the immutable receipt
+digest against the failed source during both restore review and execution.
+Unexpected post-checkpoint receipts or rewritten history refuse automatic
+restore and require independent reconciliation; do not merge migrated source
+jobs, credentials or configuration into retained code. A restored cursor and
+its receipts come from the same committed checkpoint. Uncertain remote effects
+remain an independent hold.
 Credential replacement must not silently reactivate restored schedules.
 
 Qualification order: deterministic time/identity cases; PostgreSQL duplicate
@@ -99,14 +105,19 @@ unchanged. Recovery and the reviewed credential profile remain pending. The
 host-injected schema helper stays self-contained so retained images do not
 need the new recurrence module just to inspect or restore their old schema.
 
-The service adapter and optional producer role are drafted and not yet native
-qualified. Review can request zero or one producer, sharing the eight-role
+The service adapter and optional producer role passed current native checks.
+Nine adapter checks and the managed 203-occurrence run covered service scope,
+rotation, holds, edit, automatic child restart, pause and full drain. Native
+tests exposed a pending ORM revocation rollback: use Odoo's flush-aware
+savepoint with cache clearing, retaining a raw SQL fallback for psycopg callers.
+Review can request zero or one producer, sharing the eight-role
 single-host bound. The supervised producer uses database UTC time, current
 dispatch and release pins, bounded candidate batches and fresh transactions.
 It reconstructs saved service authority before calling the existing scheduled
 enqueue path. An expired or revoked credential holds future production; editing
 under a new current credential affects future jobs only. The generic lifecycle
-guard remains strict until the reviewed maintenance/recovery path is wired.
+guard remains strict. Reviewed current-schema maintenance passed; full
+fresh-restore qualification remains pending.
 
 The role's reviewed credential footprint coordinates maintenance; it is not a
 sandbox or a replacement for per-job scope and resource authorization. Native

@@ -15,6 +15,21 @@ from .plans import data_digest
 from .deployment import _run
 
 
+# Windows limits command lines to 32 KiB. Keep all independently selected
+# helper source and its request on stdin, with a fixed small bootstrap in argv.
+BOOTSTRAP = """import io,json,sys
+raw=sys.stdin.buffer.read(2097153)
+if len(raw)>2097152: raise ValueError('Bounded private dispatch envelope required')
+body=json.loads(raw)
+if not isinstance(body,dict) or set(body)!={'lifecycle','authority','script','request'}: raise ValueError('Exact private dispatch envelope required')
+if any(not isinstance(body[key],str) for key in ('lifecycle','authority','script')) or not isinstance(body['request'],dict): raise ValueError('Fixed host dispatch source required')
+LIFECYCLE_SOURCE=body['lifecycle']
+RECURRENCE_AUTHORITY_SOURCE=body['authority']
+sys.stdin=io.StringIO(json.dumps(body['request']))
+exec(compile(body['script'],'host_dispatch_maintenance','exec'),globals())
+"""
+
+
 class DispatchMaintenance:
     def __init__(self,native):
         self.native=native
@@ -47,7 +62,7 @@ class DispatchMaintenance:
         if not required<=set(runtime.get('inventory',{}).get('files',{})):
             raise OperatorError('Runtime lacks the scoped native job adapter; explicit queue reconciliation is required before lifecycle mutation')
 
-    def run(self,action,operation,directory,*,database=None,release_digest,control_release=None,expected_digest=None,configuration=None,review_id=None,reference=None):
+    def run(self,action,operation,directory,*,database=None,release_digest,control_release=None,expected_digest=None,configuration=None,review_id=None,reference=None,recurrence=None):
         if action not in {'observe','fence','enable'} or str(UUID(operation))!=operation:
             raise OperatorError('Exact dispatch maintenance action/operation required')
         config=configuration or self.native.config;self._configuration(config);site=config['sites'][0]
@@ -56,14 +71,16 @@ class DispatchMaintenance:
         directory=protect_directory(Path(directory));record=directory/(action+'.json')
         if record.exists():raise OperatorError('Dispatch child already attempted; inspect retained result and actual state before continuation')
         helper=Path(__file__).with_name('dispatch_lifecycle.py').read_text(encoding='utf8')
+        authority=Path(__file__).with_name('recurrence_authority.py').read_text(encoding='utf8')
         script=Path(__file__).with_name('dispatch_maintenance.py').read_text(encoding='utf8')
-        source='LIFECYCLE_SOURCE='+repr(helper)+'\n'+script
         binding=dict(action=action,database=site['database'],site_id=site['site_id'],release_digest=release_digest,control_release=control_release,operation_id=operation,expected_digest=expected_digest)
         if reference is not None:binding['reference']=reference
-        _write_new(directory/(action+'-request.json'),dict(**binding,helper_sha256=hashlib.sha256(helper.encode()).hexdigest(),script_sha256=hashlib.sha256(script.encode()).hexdigest(),image_id=config['image_id']))
+        if recurrence is not None:binding['recurrence']=recurrence
+        _write_new(directory/(action+'-request.json'),dict(**binding,helper_sha256=hashlib.sha256(helper.encode()).hexdigest(),authority_sha256=hashlib.sha256(authority.encode()).hexdigest(),script_sha256=hashlib.sha256(script.encode()).hexdigest(),image_id=config['image_id']))
         args,child=self.native._child(operation,self._suffix(action,review_id),image_id=config['image_id'])
         args.insert(2,'-i')
-        self.native._private_command(args+['-c',source],directory/(action+'.stdout'),input=json.dumps(binding).encode(),timeout=45)
+        envelope=dict(lifecycle=helper,authority=authority,script=script,request=binding)
+        self.native._private_command(args+['-c',BOOTSTRAP],directory/(action+'.stdout'),input=json.dumps(envelope).encode(),timeout=45)
         value=load_json((directory/(action+'.stdout')).read_bytes())
         if not isinstance(value,dict) or set(value)!={'action','result'} or value['action']!=action:
             raise OperatorError('Exact dispatch child result missing; inspect private diagnostics')

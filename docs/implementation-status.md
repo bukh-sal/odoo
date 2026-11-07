@@ -2,7 +2,7 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-06T00:03:31Z
+- Updated UTC: 2026-11-07T05:29:17Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -117,9 +117,10 @@ each; the connection snapshot is a bounded observation, not a capacity target.
 The full host sweep passed 549 tests with one existing Windows-specific skip;
 the 106-file contract freeze passed. [BX-02 decision](evidence/post-r1/background-execution/bx-02-decision.json).
 
-BX-03 resume capsule: the owned schema-only core 0.1.37 fixture is live on port
+BX-03 resume capsule: the owned core 0.1.39 fixture is live on port
 18124, project `mp-r0-r1release9bde429f5258`, phase `bg02_probed`, candidate
-`1003c69ed225`. No test or uncertain mutation is running. The synthetic schema
+`5cefb18ff968`. No test or uncertain mutation is running. The producer and both
+worker lanes are fully drained; the current role profile is paused. The synthetic schema
 probe row was removed. Retain this one fixture for the next reviewed upgrade;
 retire it and its exact candidate after qualification. The
 [selected private recurrence contract](architecture-decisions/0064-native-recurring-schedules.md)
@@ -131,18 +132,30 @@ Native creation recognized all eleven physical dispatch tables, private ORM
 access was denied, and the generic native/host fence refused populated
 recurrence without a dispatch mutation. The host helper also loaded in the
 retained stock image without the new recurrence module. [Native schema proof](evidence/post-r1/background-execution/bx-03-native-schema.json).
-The producer and native credential lifecycle profile remain unavailable.
-The current generic lifecycle fence refuses active technical credentials; do
-not weaken it. The native service adapter, supervised producer, producer role
-review and CLI flags are drafted but have only syntax/boundary verification.
-No producer has been started. Nine fleet boundaries and ten rule tests pass.
-Next connect the reviewed credential policy to native maintenance and recovery,
-including apply-time authority staleness checks, release reconciliation of
-schedules and conservative receipt/cursor overlay on fresh restore. Then bump
-core/platform to 0.1.38, build the complete candidate and qualify the adapter
-and producer through a reviewed upgrade of this schema-only fixture. Qualify
-duplicate ticks, downtime, edits, pause/revocation, overlap, maintenance and
-restore before closing BX-03. BX-04 and BX-05 remain queued. No blocker requires
+The native adapter, reviewed producer and current-schema maintenance passed.
+Actual ORM testing found and fixed a savepoint/cache interaction that could
+undo a pending revocation. The corrected worker refused the saved credential.
+Nine native API checks passed, as did 203 unique occurrence receipts, sampled
+one-outstanding behavior, automatic child-process restart, pause and full drain.
+Thirteen fleet boundary tests and the bounded helper stdin transport passed.
+The first Windows argv failure was reconciled through separate unchanged-base
+recovery, without database restore or worker replacement. [Native role evidence](evidence/post-r1/background-execution/bx-03-native-roles.json).
+The generic lifecycle guard still refuses active credentials; only the exact
+paused OS-reviewed native recurrence profile selects the additional path.
+Next qualify a populated fresh restore from a later failed core release.
+The coordinated checkpoint follows producer drain and the dispatch fence;
+supported writers cannot emit afterward. The restore guard therefore refuses
+unexpected source occurrence-history changes instead of merging possibly
+migrated jobs/credentials/configuration into retained code. Its unit boundary
+passes; actual refusal and restore/cursor identity tests remain open. Retained
+schedule reconciliation now receives its original checkpoint release as well
+as the fresh restored epoch. Test explicit credential repair/resume and owned
+cancellation of the held outstanding job. No restore has been attempted yet.
+One core39 site/candidate remains. Thirty exited helpers and both obsolete
+core37/core38 candidates (five tags) were retired. There are no running goal
+tests or queued producers. The worktree contains the qualified native/profile
+implementation plus the unqualified final restore guard.
+BX-04 and BX-05 remain queued. No blocker requires
 user action. Gate progress is 2/5 (about 40%), independently of check counts.
 
 BX-03 checklist:
@@ -150,8 +163,8 @@ BX-03 checklist:
 - [x] Define and test fixed UTC selection, expiry, missed policies and stable nominal identity.
 - [x] Qualify private schedule/cursor/receipt storage and concurrent atomic enqueue.
 - [x] Install versioned native tables and recognize their lifecycle footprint.
-- [ ] Wire scoped service authorization, edits, pause/resume, rotation and overlap.
-- [ ] Add the optional pinned producer role with readiness, maintenance exclusion and drain.
+- [x] Wire scoped service authorization, edits, pause/resume, rotation and overlap.
+- [x] Add the optional pinned producer role with readiness, maintenance exclusion and drain.
 - [ ] Qualify the narrow native-credential lifecycle profile and retained schema compatibility.
 - [ ] Qualify populated upgrade and fresh restore with a previously emitted occurrence.
 - [ ] Record native evidence and retire all owned qualification assets.
@@ -621,7 +634,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
 | BX-02 | Resolved | Reviewed roles, partial recovery, connection loss, graceful/forced drain and actual release races passed; all owned Docker assets retired. See BX-02 decision. |
-| BX-03-LIFECYCLE | Active prerequisite, no user action needed | Generic lifecycle rejects active credentials. A narrow native schedule credential guard passed 15 PostgreSQL cases, but remains unwired pending durable schedule schema and independently reviewed producer profile. ADR 0064. |
+| BX-03-LIFECYCLE | Current-schema profile qualified; restore proof pending | Generic lifecycle remains strict. Exact paused role selection, active scoped credential review, current-schema upgrade and producer drain passed. Immutable history guard and original-epoch reconciliation are implemented; next actual failed-release/fresh-restore proof. ADR 0064. |
 | STOCK-RTL-01 | Resolved | The bounded launcher mirrors the full stylesheet under the HTTP worker limit. Preflight and both browsers passed on the selected image. |
 | STOCK-PERF-01 | Resolved | The selected image passed the analyzed 10,000-note workload with p95 367.832 ms for list and 169.833 ms for detail. |
 | G7-UI09-01 | Resolved | Installed core26 browser, Windows accessibility event, locale and keyboard qualification passed. See 20261105-core26-maintenance-01/installed-observations.json. |

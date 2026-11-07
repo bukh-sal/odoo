@@ -47,6 +47,9 @@ class UnchangedReleaseRecovery:
         # Only the existing typed reference profile opts into metadata-only
         # registrations. The normal native helper still refuses all externals.
         from .dispatch_operator import DispatchMaintenance
+        from .recurrence_maintenance import selected
+        recurring=selected(self.native)
+        if recurring is not None:return recurring
         if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
             from .reference_dispatch import ReferenceDispatchMaintenance
             return ReferenceDispatchMaintenance(self.native)
@@ -90,6 +93,8 @@ class UnchangedReleaseRecovery:
                 # continue, so do not bind a moving per-job hash to this review.
                 dispatch=dict(mode='enabled_unchanged',profile=snapshot['profile'],control=snapshot['control'])
                 if reference:dispatch['reference_policy']=helper.policy_for(snapshot)
+                if snapshot['profile']=='r1-native-recurring-dispatch-v1':
+                    dispatch.update(recurrence_policy_digest=snapshot['recurrence_policy_digest'],role_approval=helper.role_approval)
             else:
                 helper.require_profile(snapshot,closed=True)
                 dispatch=dict(mode='reconcile_paused',snapshot=snapshot)

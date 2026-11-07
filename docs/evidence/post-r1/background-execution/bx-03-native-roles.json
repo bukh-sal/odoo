@@ -1,0 +1,341 @@
+{
+  "gate": "BX-03",
+  "state": "native_adapter_and_roles_passed_gate_open",
+  "api": {
+    "checks": {
+      "human_origin_denied": true,
+      "administrator_scope_substitution_denied": true,
+      "foreign_workspace_denied": true,
+      "one_outstanding_native_occurrence": true,
+      "edit_preserves_outstanding_input_and_rejects_stale_or_missing_versions": true,
+      "revocation_holds_producer_and_refuses_saved_job_authority": true,
+      "credential_rotation_requires_edit_resume_and_preserves_schedule_occurrences": true,
+      "membership_repair_does_not_automatically_resume_schedule": true,
+      "expired_credential_holds_without_auto_resume": true
+    },
+    "A": {
+      "user_id": 9,
+      "principal_id": 5,
+      "principal_public_id": "53147ecd-9e46-45e8-9b22-cfcacfd7d32d",
+      "credential_id": 3,
+      "workspace_id": 1,
+      "workspace_public_id": "95d61f5f-7fee-474c-abd6-68cf627c45d4",
+      "installation_id": 1,
+      "installation_public_id": "75d3f090-e321-5b61-ba9e-b2432f24808e",
+      "schedule": "8c8dd8ad-68b7-4072-a035-ba59c3964cb0",
+      "revision": 7,
+      "rule": {
+        "protocol": 1,
+        "anchor_at": "2026-11-07T05:06:12Z",
+        "interval_seconds": 60,
+        "validity_seconds": 3600,
+        "attempt_seconds": 5,
+        "missed": "coalesce_latest",
+        "grace_seconds": 5
+      }
+    },
+    "B": {
+      "user_id": 10,
+      "principal_id": 6,
+      "principal_public_id": "94adde65-18c8-4a06-a045-288460e358c5",
+      "credential_id": 2,
+      "workspace_id": 2,
+      "workspace_public_id": "098c2d24-296a-46c1-b56d-fdfdb2bd70c4",
+      "installation_id": 1,
+      "installation_public_id": "75d3f090-e321-5b61-ba9e-b2432f24808e",
+      "schedule": "1e9f6897-1d8b-46b6-bc58-8d237740633a",
+      "revision": 3,
+      "rule": {
+        "protocol": 1,
+        "anchor_at": "2026-11-07T05:06:12Z",
+        "interval_seconds": 60,
+        "validity_seconds": 3600,
+        "attempt_seconds": 5,
+        "missed": "coalesce_latest",
+        "grace_seconds": 5
+      }
+    },
+    "first_job": "03508e11-cada-441d-8798-040b45f6b84a",
+    "second_job": "6dae24b7-980a-4818-83b0-6ddd2fdf1690",
+    "expiry_schedule": "322a4a52-df11-4349-8d5e-650712c40eef"
+  },
+  "roles": {
+    "phase": "passed",
+    "approval": "sha256:1c0c52937f7b241a5f262f1d8e56bb2ae65c906a1e6cd8545d7cddff06cb66ce",
+    "status": {
+      "event": "job_fleet",
+      "state": "ready",
+      "generation": 2,
+      "approval": "sha256:1c0c52937f7b241a5f262f1d8e56bb2ae65c906a1e6cd8545d7cddff06cb66ce",
+      "pins": {
+        "database": "mp_disposable_r0_r1_release_9bde429f5258",
+        "deployment_id": "b56b18cf-11db-4ea0-8843-536ad0440bbb",
+        "image_id": "sha256:5cefb18ff968344642b7c5d1d0970b900837dee2115d641fcbd49d293f08ebac",
+        "inventory_digest": "sha256:4291d1384ae22c31b3f0b6f320735c341cd43be1be3d9faf154ac8a9fdad4f8b",
+        "release_digest": "sha256:fc0ab40dbb83d70df003c8e5f7095a52f1eb79588f31f9e8fad290e6443a64cf",
+        "site_id": "6c576799-3579-4c57-a23f-65ff6414165d",
+        "target_digest": "sha256:7448face3e54ef91b0346e495e66f4c8eced9eadff4ab5b943362143fcdd59c3"
+      },
+      "pools": {
+        "urgent": {
+          "desired": 1,
+          "running": 1,
+          "ready": 1,
+          "drained": 0
+        },
+        "bulk": {
+          "desired": 1,
+          "running": 1,
+          "ready": 1,
+          "drained": 0
+        },
+        "producer": {
+          "desired": 1,
+          "running": 1,
+          "ready": 1,
+          "drained": 0
+        }
+      },
+      "lanes": [
+        {
+          "name": "mp-r0-r1release9bde429f5258-job-bulk-1",
+          "pool": "bulk",
+          "container": "b1082642f8b6ee571e04c991d7500cb0d8c62d22554da6f4fc475ee637f7120c",
+          "running": true,
+          "ready": true,
+          "matches_profile": true
+        },
+        {
+          "name": "mp-r0-r1release9bde429f5258-job-producer-1",
+          "pool": "producer",
+          "container": "4ff0d1505f4ba0b2ee4d87dd3d2783a996bc6fd347af2577a3770f3641fea9f5",
+          "running": true,
+          "ready": true,
+          "matches_profile": true
+        },
+        {
+          "name": "mp-r0-r1release9bde429f5258-job-urgent-1",
+          "pool": "urgent",
+          "container": "1cc01a4846af8757da80933a433c49a38382e1289665b5f607c79fc62bbdb0c9",
+          "running": true,
+          "ready": true,
+          "matches_profile": true
+        }
+      ]
+    },
+    "manual_kill_recovered": {
+      "started_at": "2026-11-07T05:11:28.017613763Z",
+      "finished_at": "2026-11-07T05:11:15.407529845Z",
+      "restart_count": 0,
+      "healthy": true
+    },
+    "receipts_before_child_crash": 111,
+    "automatic_child_restart": {
+      "restart_count": 1,
+      "started_at": "2026-11-07T05:14:03.234897703Z"
+    },
+    "final": {
+      "distinct": 203,
+      "receipts": 203,
+      "unfinished": 1
+    },
+    "pause": {
+      "revision": 9
+    },
+    "drain": {
+      "event": "job_fleet",
+      "state": "paused",
+      "generation": 2,
+      "approval": "sha256:1c0c52937f7b241a5f262f1d8e56bb2ae65c906a1e6cd8545d7cddff06cb66ce",
+      "pins": {
+        "database": "mp_disposable_r0_r1_release_9bde429f5258",
+        "deployment_id": "b56b18cf-11db-4ea0-8843-536ad0440bbb",
+        "image_id": "sha256:5cefb18ff968344642b7c5d1d0970b900837dee2115d641fcbd49d293f08ebac",
+        "inventory_digest": "sha256:4291d1384ae22c31b3f0b6f320735c341cd43be1be3d9faf154ac8a9fdad4f8b",
+        "release_digest": "sha256:fc0ab40dbb83d70df003c8e5f7095a52f1eb79588f31f9e8fad290e6443a64cf",
+        "site_id": "6c576799-3579-4c57-a23f-65ff6414165d",
+        "target_digest": "sha256:7448face3e54ef91b0346e495e66f4c8eced9eadff4ab5b943362143fcdd59c3"
+      },
+      "pools": {
+        "urgent": {
+          "desired": 1,
+          "running": 0,
+          "ready": 0,
+          "drained": 0
+        },
+        "bulk": {
+          "desired": 1,
+          "running": 0,
+          "ready": 0,
+          "drained": 0
+        },
+        "producer": {
+          "desired": 1,
+          "running": 0,
+          "ready": 0,
+          "drained": 0
+        }
+      },
+      "lanes": []
+    },
+    "diagnostics": [
+      "Manual Docker kill recovered by explicit start; RestartCount assumption was invalid.",
+      "Pause fixture evaluated actor initialization before fetching its SQL result; fetching first fixed the harness."
+    ]
+  },
+  "upgrade": {
+    "operation": "7a2d8c38-94c6-41e2-976c-8cb97666b0b0",
+    "phase": "passed",
+    "image": "sha256:5cefb18ff968344642b7c5d1d0970b900837dee2115d641fcbd49d293f08ebac",
+    "result": {
+      "operation_id": "7a2d8c38-94c6-41e2-976c-8cb97666b0b0",
+      "plan_hash": "sha256:de350f5623f0b62fdf8e8d328f76b3489cf46527b79c276795143a94d09e9d52",
+      "state": "completed",
+      "phase": "completed",
+      "mutation_started": true,
+      "traffic_resumed": true,
+      "backup_id": "7a2d8c38-94c6-41e2-976c-8cb97666b0b0",
+      "approval_expires_at": "2026-11-07T05:19:52Z",
+      "history": [
+        {
+          "sequence": 38,
+          "utc": "2026-11-07T05:04:47Z",
+          "code": "prepared",
+          "details": {
+            "plan_hash": "sha256:de350f5623f0b62fdf8e8d328f76b3489cf46527b79c276795143a94d09e9d52"
+          }
+        },
+        {
+          "sequence": 39,
+          "utc": "2026-11-07T05:04:52Z",
+          "code": "approved",
+          "details": {
+            "plan_hash": "sha256:de350f5623f0b62fdf8e8d328f76b3489cf46527b79c276795143a94d09e9d52"
+          }
+        },
+        {
+          "sequence": 40,
+          "utc": "2026-11-07T05:05:00Z",
+          "code": "reserved",
+          "details": {
+            "executor_pid": 29456,
+            "lock_owner_digest": "sha256:042ad10933164d646fee12005a728f0ad4920d1ce9b993bd0dbba969d59d9e53"
+          }
+        },
+        {
+          "sequence": 41,
+          "utc": "2026-11-07T05:05:11Z",
+          "code": "staged",
+          "details": {}
+        },
+        {
+          "sequence": 42,
+          "utc": "2026-11-07T05:05:12Z",
+          "code": "maintenance",
+          "details": {}
+        },
+        {
+          "sequence": 43,
+          "utc": "2026-11-07T05:05:15Z",
+          "code": "drained",
+          "details": {}
+        },
+        {
+          "sequence": 44,
+          "utc": "2026-11-07T05:05:23Z",
+          "code": "checkpointed",
+          "details": {
+            "backup_id": "7a2d8c38-94c6-41e2-976c-8cb97666b0b0"
+          }
+        },
+        {
+          "sequence": 45,
+          "utc": "2026-11-07T05:05:28Z",
+          "code": "mutation_started",
+          "details": {}
+        },
+        {
+          "sequence": 46,
+          "utc": "2026-11-07T05:05:32Z",
+          "code": "migrated",
+          "details": {}
+        },
+        {
+          "sequence": 47,
+          "utc": "2026-11-07T05:05:34Z",
+          "code": "workers_replaced",
+          "details": {}
+        },
+        {
+          "sequence": 48,
+          "utc": "2026-11-07T05:05:54Z",
+          "code": "ready",
+          "details": {}
+        },
+        {
+          "sequence": 49,
+          "utc": "2026-11-07T05:05:55Z",
+          "code": "release_published",
+          "details": {}
+        },
+        {
+          "sequence": 50,
+          "utc": "2026-11-07T05:05:55Z",
+          "code": "traffic_resumed",
+          "details": {}
+        },
+        {
+          "sequence": 51,
+          "utc": "2026-11-07T05:05:57Z",
+          "code": "completed",
+          "details": {}
+        }
+      ]
+    }
+  },
+  "transport_recovery": {
+    "state": "unchanged_release_resumed",
+    "operation_id": "af6e6dba-aede-4ccb-bc2d-c5d45df8ce7e",
+    "original_plan_state": "failed_before_mutation",
+    "generation": 2,
+    "database_restore": false,
+    "worker_replaced": false,
+    "traffic_resumed": true
+  },
+  "build_record": "../../G7/bx03-recurrence-orm-fix-build-01/candidate-build.json",
+  "diagnostics": [
+    "First upgrade exceeded Windows argv before mutation; separate unchanged-release recovery passed. Fixed host source transport uses bounded stdin.",
+    "Native first API drill exposed ORM-flush rollback of pending revocation; Odoo-aware savepoint fixed it and actual worker denial passed on core39.",
+    "Manual Docker kill recovered by explicit start, so RestartCount assertion was invalid. Actual producer child death subsequently restarted automatically.",
+    "Pause harness fetched its SQL result after actor initialization overwrote the shared cursor. Fetch-first and caller transaction retry corrected the fixture."
+  ],
+  "qualification_boundary": "Native API, current-schema reviewed upgrade and managed producer checks only. Populated fresh restore, receipt overlay, scope conflict handling and final gate qualification remain open.",
+  "intermediate_retirement": {
+    "exited_helpers_removed": 30,
+    "images": [
+      {
+        "image": "sha256:1003c69ed22530466b2cbbc77ed0f6eb512595cf5e24f5ffa821421c0dd2d193",
+        "tags": [
+          "modular-platform:retained-53438367-81b0-41e5-a71d-e367d78ac218",
+          "modular-platform:retained-ad4b8704-9bf1-4e6d-8051-0c942bd1f2f2",
+          "modular-platform:stage-20261107t041938876520z"
+        ]
+      },
+      {
+        "image": "sha256:e6d06fbfd9c612f9b4a860e3681f5360a9421a23c4c1dbe1ef82593c5d365665",
+        "tags": [
+          "modular-platform:retained-7a2d8c38-94c6-41e2-976c-8cb97666b0b0",
+          "modular-platform:stage-20261107t044408297271z"
+        ]
+      }
+    ]
+  },
+  "targeted_regressions": {
+    "fleet": 13,
+    "restore": 20,
+    "dispatch_including_transport": 26,
+    "reference_recovery": 15,
+    "unchanged_recovery": 10,
+    "freeze_files": 106
+  }
+}

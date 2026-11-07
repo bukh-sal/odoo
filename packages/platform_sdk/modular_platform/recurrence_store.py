@@ -39,6 +39,12 @@ def _scope(scope):
 
 @contextmanager
 def _atomic(cr):
+    if callable(getattr(cr,'savepoint',None)):
+        # Odoo must flush pre-existing ORM work before the savepoint and clear
+        # its cache on rollback. Raw SQL rollback alone can undo a flush while
+        # leaving the ORM convinced a pending revocation was persisted.
+        with cr.savepoint():yield
+        return
     name='recurrence_'+uuid4().hex
     cr.execute('SAVEPOINT '+name)
     try:yield

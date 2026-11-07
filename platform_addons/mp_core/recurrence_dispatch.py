@@ -114,6 +114,22 @@ def resume_schedule(env,ident,revision):
     return store.set_state(env.cr,scope,ident,revision,'active',authorize=authorized)
 
 
+def cancel_outstanding(env,ident,revision):
+    """Current owned schedule authority may stop old work without reviving it."""
+    row=_owned(env,ident)
+    scope=durable.DispatchScope(row['site_id'],row['workspace_id'],row['actor_id'],row['installation_id'],row['release_digest'])
+    row=store._locked(env.cr,scope,ident,revision=revision)
+    _live(env,row)
+    if not row['outstanding_job_id']:return False
+    env.cr.execute("""SELECT public_id FROM mp_job WHERE public_id=%s AND site_id=%s AND workspace_id=%s
+        AND actor_id=%s AND installation_id=%s FOR UPDATE""",[row['outstanding_job_id'],scope.site_id,
+            scope.workspace_id,scope.actor_id,scope.installation_id])
+    if not env.cr.fetchone():raise PublicError('NOT_FOUND')
+    # Cancellation never sends or settles an effect. The queue retains an
+    # uncertain outcome if an external effect was already started.
+    return durable.cancel_scheduled(env.cr,row['outstanding_job_id'],actor_id=scope.actor_id,workspace_id=scope.workspace_id)
+
+
 def due(metadata_env,*,limit=100):
     release=current_release(metadata_env)
     metadata_env.cr.execute("SELECT timezone('UTC',clock_timestamp())")
@@ -144,3 +160,45 @@ def tick(metadata_env,ident):
             code='DEPENDENCY_UNAVAILABLE' if isinstance(error,MissingError) else 'CONFLICT'
         store.hold(metadata_env.cr,scope,ident,row['config_version'],code)
         return dict(outcome='held',schedule_id=ident,error_code=code)
+
+
+def reconcile_release(metadata_env,*,previous_release,target_release):
+    """Private lifecycle path; preserves intent and never reopens dispatch."""
+    release=current_release(metadata_env)
+    if release['release_digest']!=target_release:raise ContractError('Current recurring release required')
+    cr=metadata_env.cr
+    cr.execute('SELECT state FROM mp_dispatch_control WHERE site_id=%s AND release_digest=%s FOR UPDATE',
+        [release['site_id'],target_release])
+    if cr.fetchone()!=('paused',):raise durable.DispatchPaused('Recurring reconciliation requires closed dispatch')
+    cr.execute('SELECT count(*) FROM mp_job_schedule')
+    if cr.fetchone()[0]>100000:raise durable.QueueError('Recurring schedule reconciliation bound exceeded')
+    cr.execute('SELECT to_jsonb(s) FROM mp_job_schedule s WHERE site_id=%s ORDER BY id FOR UPDATE',[release['site_id']])
+    rows=cr.fetchall()
+    states={}
+    for (row,) in rows:
+        if row['release_digest'] not in {previous_release,target_release}:raise ContractError('Unknown recurring release origin')
+        state=row['state'];code=row['error_code']
+        payload=row['payload'];input_digest=row['input_digest']
+        try:
+            candidate=dict(row,release_digest=target_release)
+            rule=RecurrenceRule.from_wire(row['rule'])
+            timing=durable.JobSchedule(rule.anchor_at,rule.anchor_at+timedelta(seconds=rule.validity_seconds),rule.attempt_seconds)
+            envelope=dict(schema_version=2,input=payload['input'],context=payload['context'],schedule=timing.wire())
+            actor,_=jobs._environment(metadata_env,dict(candidate,payload=envelope))
+            definition=_definition(row['handler'],row['handler_version'])
+            _,_,bound=jobs._authorize(actor,definition,payload['context']['alias'])
+            before=payload['context']['binding'];after=bound.binding
+            if ({key:value for key,value in before.items() if key!='generation'}!={key:value for key,value in after.items() if key!='generation'}
+                    or after['generation']<before['generation']):raise PublicError('CONFLICT')
+            proposed=copy.deepcopy(payload);proposed['context']['binding']=after
+            _saved(metadata_env,dict(candidate,payload=proposed))
+            payload=proposed
+            _,_,input_digest=store._configuration(row['handler'],row['handler_version'],payload,rule)
+        except (AccessError,MissingError,ValidationError,PublicError,ContractError,durable.QueueError) as error:
+            state='held';code=jobs._safe_code(error)
+        # A prior explicit hold or pause remains in force even when current
+        # authority is sufficient. Only a native app edit/resume can clear it.
+        cr.execute('UPDATE mp_job_schedule SET release_digest=%s,state=%s,error_code=%s,payload=%s::jsonb,input_digest=%s WHERE id=%s',
+            [target_release,state,code,durable._json(payload)[0],input_digest,row['id']])
+        states[state]=states.get(state,0)+1
+    return states

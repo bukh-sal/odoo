@@ -11,7 +11,7 @@ from unittest.mock import Mock,patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
 from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
-from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE, SCHEMA
+from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE, SCHEMA, OCCURRENCE_TABLE
 from modular_platform.native_auth_recovery import read_query,public_binding
 from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT
 
@@ -102,6 +102,19 @@ class RestoreDispatchTests(unittest.TestCase):
         decision=self.decision();self.readiness_change=lambda:self.effects.update(outbox_table=True)
         with self.assertRaisesRegex(OperatorError,'require reconciliation'):self.recovery.resume(decision,exact_hash=data_digest(decision),noninteractive=True)
         self.store.record_restore_resume.assert_not_called();self.assertEqual(self.timeline,[])
+
+    def test_recurring_history_must_match_coordinated_checkpoint_before_fresh_restore(self):
+        before=dict(profile='r1-native-recurring-dispatch-v1',schema_digest='known-schema',
+            tables={OCCURRENCE_TABLE:dict(rows=203,sha256='checkpoint-history')})
+        observed=copy.deepcopy(before)
+        bundle=dict(plan=dict(operation_type='core_upgrade'),operation_lock={})
+        with patch.object(self.recovery,'_dispatch_helper') as factory:
+            factory.return_value.require_profile.return_value=observed
+            self.assertEqual(self.recovery._source_dispatch({'dispatch_profile':before},bundle),observed)
+            for changed in (dict(rows=204,sha256='later-occurrence'),dict(rows=203,sha256='rewritten-occurrence')):
+                observed['tables'][OCCURRENCE_TABLE]=changed
+                with self.assertRaisesRegex(OperatorError,'occurrence history changed'):
+                    self.recovery._source_dispatch({'dispatch_profile':before},bundle)
 
     def test_technical_identity_reappearing_after_readiness_stays_fenced(self):
         decision=self.decision();self.readiness_change=lambda:self.effects.update(active_technical_credentials=1)
