@@ -1,0 +1,73 @@
+{
+  "phase": "passed",
+  "image": "sha256:454dd975b0633e1cad4b2b7a2302f5122f95e5ad722e9bfaf061ee087001d132",
+  "idle": {
+    "list": {
+      "count": 200,
+      "median_ms": 99.139,
+      "p95_ms": 172.261,
+      "max_ms": 190.473
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 51.478,
+      "p95_ms": 86.974,
+      "max_ms": 113.515
+    }
+  },
+  "mixed": {
+    "list": {
+      "count": 200,
+      "median_ms": 106.727,
+      "p95_ms": 190.763,
+      "max_ms": 232.829
+    },
+    "detail": {
+      "count": 200,
+      "median_ms": 44.724,
+      "p95_ms": 79.063,
+      "max_ms": 106.159
+    }
+  },
+  "worker_timings": {
+    "urgent": {
+      "start": {
+        "count": 150,
+        "median_ms": 215.0,
+        "p95_ms": 2171,
+        "max_ms": 2732
+      },
+      "duration": {
+        "count": 150,
+        "median_ms": 64.0,
+        "p95_ms": 83,
+        "max_ms": 109
+      }
+    },
+    "bulk": {
+      "start": {
+        "count": 40,
+        "median_ms": 17100.5,
+        "p95_ms": 32772,
+        "max_ms": 35123
+      },
+      "duration": {
+        "count": 40,
+        "median_ms": 1099.0,
+        "p95_ms": 1209,
+        "max_ms": 1236
+      }
+    }
+  },
+  "oldest_urgent_ms": 2695,
+  "bulk_drain_seconds": 37.0740749835968,
+  "recovered_after_seconds": 31.109,
+  "restart": "operator_start",
+  "native_notes_unchanged": true,
+  "notifications": 150,
+  "scoped_reports": 40,
+  "restart_reports": 40,
+  "gate": "BX-04",
+  "case": "BX04-01 affected core44 requalification",
+  "private_record_sha256": "741b997fa97ac5044c48cb1cf836c06ae0d1c194517b59a77fd79d24680057cf"
+}

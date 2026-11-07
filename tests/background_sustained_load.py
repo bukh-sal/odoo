@@ -89,7 +89,7 @@ print('BX04_RESULT='+json.dumps(dict(jobs=jobs,commits=commits)))
 """
 
 
-def run(case,attempt=1,live=False,burst=False,bulk_lanes=2):
+def run(case,attempt=1,live=False,burst=False,bulk_lanes=2,calibration_suffix=''):
     probe=Probe('bx-04-capacity-01')
     setup=load(probe.site.local/'bx04-sustained-setup.json')
     assert setup['phase']=='reference_upgraded'
@@ -178,7 +178,8 @@ def run(case,attempt=1,live=False,burst=False,bulk_lanes=2):
             assert time.time()<anchor-5,'Preload/warmup consumed the scheduled start window'
             record.update(phase='idle_measured',idle={key:summary(values) for key,values in idle.items()});write(path,record)
             if burst:
-                calibration=load(probe.site.local/'bx04-calibration.json')
+                assert calibration_suffix in ('','core44')
+                calibration=load(probe.site.local/('bx04-calibration'+('-'+calibration_suffix if calibration_suffix else '')+'.json'))
                 assert calibration['phase']=='passed'
                 snapshot=probe.operator.run('capacity')
                 assert snapshot['pins']==calibration['snapshot']['pins']
@@ -299,4 +300,5 @@ if __name__=='__main__':
     parser.add_argument('--live',action='store_true')
     parser.add_argument('--burst',action='store_true')
     parser.add_argument('--bulk-lanes',type=int,default=2)
-    args=parser.parse_args();run(args.case,args.attempt,args.live,args.burst,args.bulk_lanes)
+    parser.add_argument('--calibration-suffix',default='',choices=['','core44'])
+    args=parser.parse_args();run(args.case,args.attempt,args.live,args.burst,args.bulk_lanes,args.calibration_suffix)

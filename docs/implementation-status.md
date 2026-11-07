@@ -8,7 +8,7 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **G7 passed for local R1. Active follow-up: BX-04 background execution qualification.** Core26/Shell13 remains the original qualified R1 release.
-- Active item: **BX-04 core44 paired load requalification.** The original G-01e browser walkthrough and §28 handoff are complete; see the current follow-up resume capsule below.
+- Active item: **BX-04 pressure, recurrence and recovery qualification.** Core44 paired load passed; see the current follow-up resume capsule below.
 - Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -224,20 +224,32 @@ Core44 populated upgrade `877c98e4-5da2-4de8-b4fd-150be1fdc550` preserved all
 business rows; reference0.2.1 unchanged. The full host sweep passed584 tests
 with one existing Windows skip (585 total,422.209s), and106-file freeze passed.
 
-Resume capsule: active BG04 requalification session9070, one owned project
+Core44 paired load passed:urgent start p95 2.171s, oldest2.695s, bulk37.074s;
+stock Odoo idle/mixed list172.261/190.763ms and detail86.974/79.063ms.
+All150 notifications/40 reports and restarted40 reports matched, Notes unchanged;
+restart backlog31.109s. [Affected load](evidence/post-r1/background-execution/bx-04-core44-load.json).
+
+Native pressure/stale CLI checks passed:50/64 connections (fault interval),
+all advice held growth with null lane recommendations; genuinely aged and
+missing health also held. Twenty queued reports completed once, Notes unchanged,
+fleet container IDs unchanged and the pressure helper closed all connections.
+[Pressure and stale evidence](evidence/post-r1/background-execution/bx-04-pressure-stale.json).
+
+Resume capsule: active recurring-burst case session1822, one owned project
 `mp-r0-r1releaseb152ddffba06`, port18126, DB
 `mp_disposable_r0_r1_release_b152ddffba06`. Current image454dd975b063/core44,
 full image ID in build `bx04-claim-guard-build-01/candidate-build.json`.
-One urgent/two bulk roles are ready, three stock web workers/four PG CPUs.
-The command is `tests/background_load.py --run bx-04-capacity-01 --one-urgent
---case-suffix core44`; private result is `bg04-load-one-urgent-core44.json`.
-Do not replay its seed or the settled upgrades/fault cases. This running case
-is the only active goal check; no unknown mutation or external effect exists.
-It will drain roles after completion. Source changes since the last commit are
-only test support for distinct fairness and benchmark attempts.
+One urgent/two bulk/one producer roles are reviewed, three stock web workers/four PG CPUs.
+The command is `tests/background_recurring_burst.py`; private result is
+`bx04-recurring-burst.json`, with ten scoped service credentials/schedules.
+Six30-second report bursts are measured over180s through the managed producer.
+Earlier pressure harness diagnostics were preserved; both failed before job seed,
+and partial pressure connections were closed. Successful attempt3 is drained.
+Do not replay completed load/upgrade/fault seeds. No uncertain mutation or external
+effect exists.
 
-Next inspect that result, then qualify native pressure/stale-metric holds,
-recurring bursts, and release/recovery with populated guarded jobs. Choose
+Next inspect recurring bursts, recheck calibrated two/three-lane burst comparison
+on core44, and qualify release/recovery with populated guarded jobs. Choose
 whether automatic sizing is justified from the measured comparisons; current
 fixed2/work advice meets SLOs with less lane use than count3. Retire obsolete
 containers/images after their dependencies settle. BX-05 app-driven chunks

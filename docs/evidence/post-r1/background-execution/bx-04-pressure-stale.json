@@ -1,0 +1,187 @@
+{
+  "phase": "passed",
+  "image": "sha256:454dd975b0633e1cad4b2b7a2302f5122f95e5ad722e9bfaf061ee087001d132",
+  "web": {
+    "count": 10,
+    "median_ms": 31.0,
+    "p95_ms": 32.0,
+    "max_ms": 32.0
+  },
+  "pressure": {
+    "protocol": 1,
+    "action": "advice_only",
+    "state": "hold",
+    "reasons": [
+      "headroom_connections"
+    ],
+    "pools": {
+      "urgent": {
+        "ready": 0,
+        "worker_seconds": 0,
+        "workspace_slots": 0,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 0,
+        "oldest_original_wait_seconds": 0,
+        "constraints": [],
+        "current_ready_lanes": 1,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 0,
+        "estimated_lanes": 1
+      },
+      "bulk": {
+        "ready": 6,
+        "worker_seconds": 14,
+        "workspace_slots": 1,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 14.0,
+        "oldest_original_wait_seconds": 16.576,
+        "constraints": [],
+        "current_ready_lanes": 2,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 1,
+        "estimated_lanes": 1
+      }
+    },
+    "estimates": {
+      "org.example.background:report:2": {
+        "pool": "bulk",
+        "seconds": 2,
+        "samples": 15,
+        "fallback": true,
+        "arrival_per_second": 0
+      }
+    },
+    "observation_age_seconds": 5.999297,
+    "mutation_authorized": false
+  },
+  "missing": {
+    "protocol": 1,
+    "action": "advice_only",
+    "state": "hold",
+    "reasons": [
+      "headroom_connections",
+      "missing_headroom"
+    ],
+    "pools": {
+      "urgent": {
+        "ready": 0,
+        "worker_seconds": 0,
+        "workspace_slots": 0,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 0,
+        "oldest_original_wait_seconds": 0,
+        "constraints": [],
+        "current_ready_lanes": 1,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 0,
+        "estimated_lanes": 1
+      },
+      "bulk": {
+        "ready": 6,
+        "worker_seconds": 14,
+        "workspace_slots": 1,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 14.0,
+        "oldest_original_wait_seconds": 16.576,
+        "constraints": [],
+        "current_ready_lanes": 2,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 1,
+        "estimated_lanes": 1
+      }
+    },
+    "estimates": {
+      "org.example.background:report:2": {
+        "pool": "bulk",
+        "seconds": 2,
+        "samples": 15,
+        "fallback": true,
+        "arrival_per_second": 0
+      }
+    },
+    "observation_age_seconds": 9.562274,
+    "mutation_authorized": false
+  },
+  "stale": {
+    "protocol": 1,
+    "action": "advice_only",
+    "state": "hold",
+    "reasons": [
+      "headroom_connections",
+      "stale_or_future_headroom",
+      "stale_or_future_observation"
+    ],
+    "pools": {
+      "urgent": {
+        "ready": 0,
+        "worker_seconds": 0,
+        "workspace_slots": 0,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 0,
+        "oldest_original_wait_seconds": 0,
+        "constraints": [],
+        "current_ready_lanes": 1,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 0,
+        "estimated_lanes": 1
+      },
+      "bulk": {
+        "ready": 6,
+        "worker_seconds": 14,
+        "workspace_slots": 1,
+        "needed_lanes": 1,
+        "advised_lanes": null,
+        "predicted_drain_seconds": 14.0,
+        "oldest_original_wait_seconds": 16.576,
+        "constraints": [],
+        "current_ready_lanes": 2,
+        "startup_seconds": 15,
+        "needed_warm_lanes_for_start_target": 1,
+        "estimated_lanes": 1
+      }
+    },
+    "estimates": {
+      "org.example.background:report:2": {
+        "pool": "bulk",
+        "seconds": 2,
+        "samples": 15,
+        "fallback": true,
+        "arrival_per_second": 0
+      }
+    },
+    "observation_age_seconds": 15.061222,
+    "mutation_authorized": false
+  },
+  "pressure_helper": {
+    "connections": 35,
+    "closed": true
+  },
+  "no_resize": true,
+  "jobs_completed_once": 20,
+  "notes_unchanged": true,
+  "connections_closed": true,
+  "gate": "BX-04",
+  "fault_interval": "75 percent target of actual PostgreSQL max connections, separate from admitted headroom intervals",
+  "observed_database": {
+    "connections": 50,
+    "lock_waiters": 0,
+    "longest_lock_wait_seconds": 0.0,
+    "max_connections": 64
+  },
+  "health": {
+    "observed_at": "2026-11-07T08:02:56.518566+00:00",
+    "web_p95_ms": 32.0,
+    "db_cpu_fraction": 0.01849778804578986,
+    "lock_wait_seconds": 0.0
+  },
+  "private_record_sha256": "ba1d38495d60740e07940755f0e6254c9a93449500d9ffd44319b457d4345151",
+  "earlier_attempts": [
+    "Masked DSN password; zero pressure and jobs",
+    "Fixed extra75 exhausted reserved slots; partial connections closed, zero jobs"
+  ]
+}
