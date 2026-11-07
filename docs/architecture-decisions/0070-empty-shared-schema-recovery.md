@@ -1,6 +1,7 @@
 # ADR0070. Recover the exact skipped empty-schema introduction
 
-Accepted for CF-04 remediation; native qualification required before closure.
+Qualified by CF-04: both original45 and final46 fault/fresh-restore/separate-resume
+cases passed; peer native workflows and16 reports stayed useful in each outage.
 
 CF-04 upgraded populated Maintenance from the recomposed common-policy core30
 baseline to core45. The same upgrade on Aurora reached publication, then the

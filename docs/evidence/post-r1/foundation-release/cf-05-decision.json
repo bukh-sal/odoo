@@ -1,0 +1,23 @@
+{
+  "gate": "CF-05",
+  "result": "passed",
+  "checks": [
+    "CF-K",
+    "CF-L"
+  ],
+  "weight": 15,
+  "utc": "2026-11-07T20:31:35.561158+00:00",
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "runtime": "cf-05-runtime.json",
+  "consumer": "cf-05-consumer.json",
+  "privacy": "cf-05-privacy.json",
+  "provenance": "cf-05-provenance.json",
+  "seal_refusal": "cf-05-seal-refusal.json",
+  "retirement": "final-docker-retirement.json",
+  "temporary_inputs": "temporary-input-retirement.json",
+  "handoff": "../../../foundation-release.md",
+  "limits": [
+    "Local representative-app qualification; inherited detailed R1/BG/BX evidence retains its recorded scope.",
+    "Final documentation source refresh and packaging seal follow without runtime/source input changes."
+  ]
+}

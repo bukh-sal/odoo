@@ -2,20 +2,20 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T20:16:58.599823+00:00
+- Updated UTC: 2026-11-07T20:31:35.561158+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **CF-05 final qualification and retirement in progress.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
-- Active item: **CF-05: current worker/stale-client/UI checks, clean kit, privacy/handoff and owned retirement.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
+- Current phase/gate: **CF-01–05 qualification passed; final kit metadata verification.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
+- Active item: **CF-05 delivery: refresh committed handoff source and seal/verify qualified kit metadata.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Consolidated foundation release (current goal)
 
 User authorized the full goal on7 November2026. One active item: **CF-05**.
-Progress **85/100 current weighted points;11/12 current CF checks verified**. Original R1 remains99/99.
+Progress **100/100 verified gate points;12/12 CF checks passed; final packaging metadata verification in progress**. Original R1 remains99/99.
 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
@@ -23,27 +23,28 @@ Progress **85/100 current weighted points;11/12 current CF checks verified**. Or
 | CF-02 |20| passed | [x] CF-C final46 image; [x] CF-D final46 kit | Final46 image72d51d32/e4e1f97d reproduce inventory14cc5a2c. Exact three-file45-to46 delta independently validated; fresh46 kit assembly next. |
 | CF-03 |20| passed | [x] CF-E distinct installed apps; [x] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
 | CF-04 |35| passed | [x] CF-G migration; [x] CF-H final46 closed fault; [x] CF-I fresh restore/resume/forward; [x] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
-| CF-05 |15| in_progress | [x] CF-K worker/regression/UI; [ ] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |
+| CF-05 |15| passed | [x] CF-K worker/regression/UI; [x] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |
 
 Resolved CF-RECOVERY-SKIP-01: bounded fix passed original45 and final46 native failed-upgrade/fresh-restore/separate-resume cases. No current external/user blocker. Docker Desktop Linux engine was stopped; local start
 succeeded (engine29.9.2). No pre-existing container/data has been changed.
 
-Resume capsule (CF takes precedence over historical capsules below): CF-05 sole
-active item; CF-K passed,85gatepoints/11of12checks. Both image72d51d32/core46 sites
-have reviewed urgent/bulk lanes; one real urgent notification each, old claims
-and actual old-client writes denied. Native stock Aurora task list/form and
-Maintenance dashboard/kanban/list/form passed in the in-app browser; screenshots
-and AX evidence saved, CUA completion recorded. No domain data was edited via UI.
-Fullhost585pass/1skip and106contractfreeze passed. Clean kit rehearsal uses its
-own offline interpreter/source: project`mp-r0-r1release368849d67da0` on18132,
-private`.local/foundation-release/clean-core46/private/reference`, sequential
-provision session22774 (catalog/prepare done, initialize/install/walkthrough
-pending; inspect clean-provision.json and journals before retry). Privacy audit
-session13074 scans new known credentials through source/plugin archives and new
-application layers; result pending. Remaining CF-L: clean install, provenance/
-finite privacy, handoff and final owned Docker/image/volume/worktree retirement,
-source refresh and qualified kit metadata/checksums. No SDK/build changes since
-final46 reproduction, no uncertain CF lifecycle operation or user blocker.
+Resume capsule (CF takes precedence over historical capsules below): all five
+CF gates and12checks passed,100weighted points; sole remaining delivery action
+is committed documentation source refresh and qualified kit seal/checksum
+verification. [Qualification](evidence/post-r1/foundation-release/qualification-decision.json)
+and [handoff](foundation-release.md) give exact scope. Both real app sets adopted
+core46/image72d51d32; failed-app-down independent recovery/fresh restore/separate
+resume and peer16reports passed. Host585pass/1existing skip, native HTTP/queues,
+stock in-app Odoo, clean isolated Maintenance kit/walkthrough,106contractfreeze,
+425source/archive alignment and finite24credential audit all passed. Retired
+160owned containers total,18volumes,6networks,4superseded images/14tags; only useful
+72d51d32 foundation image plus pre-existing dependencies/unrelated assets remain.
+Owned baseline worktree and obsolete45draft retired; private evidence/checkpoints
+retained. No live CF site, worker, process, uncertain mutation or user blocker.
+Next commit final handoff/evidence, run `release/refresh_draft.py` with final46
+build/reproduction receipts, then `release/seal_local.py` with qualification
+decision, verify source-only privacy/checksums and close the goal. SDK/build
+inputs stay unchanged; do not rerun lifecycle tests or create more fixtures.
 
 ## Post-R1 work
 
@@ -866,10 +867,11 @@ These are later R1 gates; they are not remaining G5 exit criteria.
 
 ## Blockers and limitations
 
-No current blocker. CF-01 is active; R1/G7 and the background follow-up are complete; dated entries below retain their historical scope. The five previously protected closed browser profiles remain under `.local/g6-events/headless-ui-01..05/profile`, excluded from release, after automatic approval review rejected their deletion. No alternate deletion was attempted. Current background Docker retirement is recorded above.
+No current blocker. CF-05 final delivery is active; R1/G7 and the background follow-up are complete; dated entries below retain their historical scope. The five previously protected closed browser profiles remain under `.local/g6-events/headless-ui-01..05/profile`, excluded from release, after automatic approval review rejected their deletion. No alternate deletion was attempted. Current background Docker retirement is recorded above.
 
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
+| CF-RECOVERY-SKIP-01 | Resolved by exact bounded core46 guard and real native recovery | Original45 refusal retained. Exact30-to45/46 four-empty-known-table paths passed failed-app-down fresh restore and separate resume while peer remained useful; arbitrary schema/history changes still refused. ADR0070 and cf-04-decision.json. |
 | BX-05-CONTINUATION | Closed by native app/lifecycle proof | Successor preflight ordering and terminal JSON cleanup corrected. Native rollback/concurrent submissions/current authority/process death/partial cancellation/compatible upgrade/fresh restore/forward release passed. ADR0068, bx-05-decision.json. |
 | BX-04-FAIRNESS | Corrected and natively requalified | Two hot workspaces previously consumed60 claims before68 peers. Core44 rotating selection serves peers within the fixed fairness bounds and survives child restart. ADR0066/core44 guard evidence. |
 | BX-04-CLAIM-GUARD | Closed by native load and populated recovery proof | Isolated compute-slot connection loss previously admitted two valid workspace/pool claims. Preparation guard plus running-row exclusion passed ten PG races, exact native loss, fairness/restart, paired load and fresh recovery/forward release. ADR0067 and bx-04-decision.json. |

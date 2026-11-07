@@ -1,0 +1,62 @@
+{
+  "result": "passed_consolidated_foundation_qualification",
+  "utc": "2026-11-07T20:31:35.561158+00:00",
+  "platform": "0.1.46",
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "inventory_digest": "sha256:14cc5a2c5ef57ad27c8548e3f4150e402ba13dfb8920618b5e3137f060e54fe1",
+  "gates": {
+    "CF-01": "passed",
+    "CF-02": "passed",
+    "CF-03": "passed",
+    "CF-04": "passed",
+    "CF-05": "passed"
+  },
+  "checks": {
+    "CF-A": "passed",
+    "CF-B": "passed",
+    "CF-C": "passed",
+    "CF-D": "passed",
+    "CF-E": "passed",
+    "CF-F": "passed",
+    "CF-G": "passed",
+    "CF-H": "passed",
+    "CF-I": "passed",
+    "CF-J": "passed",
+    "CF-K": "passed",
+    "CF-L": "passed"
+  },
+  "weighted_progress": 100,
+  "required_checks": 12,
+  "evidence": {
+    "docs/evidence/post-r1/foundation-release/cf-01-decision.json": "217bd353ba065966ec32072e21c6ebbffb3f25838f23c635dac298b061a91569",
+    "docs/evidence/post-r1/foundation-release/cf-02-decision-core46.json": "372b99e8fa90a385bdca1be61201999fba30d8c5b585634c2d040e1f4eba2d5f",
+    "docs/evidence/post-r1/foundation-release/cf-03-decision.json": "19b243e67d0e3d82332f7387340a9e19d0d05ac55a3940f6a218928c15065bab",
+    "docs/evidence/post-r1/foundation-release/cf-04-decision.json": "5df07d540b3d6d76a3a7eed9171148248211eddacc0861bffc340a0268940de7",
+    "docs/evidence/post-r1/foundation-release/cf-04-core46-recovery.json": "61f8ae01afae61f0dd435d3201806f9bbba50795f5532e085b004f272a0eb523",
+    "docs/evidence/post-r1/foundation-release/cf-04-recovery-gap.json": "e395ee0af734326b213df53bbc12b99aa8c062776cd6c5870f5678b7b7eda6d5",
+    "docs/evidence/post-r1/foundation-release/cf-05-decision.json": "0811f49ec51a62a303a285b369416d79dbbac55b85f964c6607d38ff963f3814",
+    "docs/evidence/post-r1/foundation-release/cf-05-runtime.json": "aacd2b947a5bd905c2b201fe35eafec6f7e53cd4ce94614afb48c5f5d03b1e01",
+    "docs/evidence/post-r1/foundation-release/cf-05-consumer.json": "dcb871cf6d1f3418362ee85ed6a8ecc66c8723c051ffcfd8383ed5f32139145f",
+    "docs/evidence/post-r1/foundation-release/cf-05-host-regression.json": "41c2680a534becce6112bce109dfa4ef0dd7c0701e287d52c81076f105b0bd76",
+    "docs/evidence/post-r1/foundation-release/cf-05-privacy.json": "1fb4c6db6d69aefeae8b3ae2f0262800be141a6b4ec570520d61483526cbc78b",
+    "docs/evidence/post-r1/foundation-release/cf-05-provenance.json": "1c554dac46808fe647bc93823bdc006fc7e091164d84e518d67cba809b5ea06a",
+    "docs/evidence/post-r1/foundation-release/cf-05-seal-refusal.json": "46f2b28fcfa45fa8201c5f9e8289f751884a0c329b24b1f95983341ac6f64846",
+    "docs/evidence/post-r1/foundation-release/browser-core46.json": "8b62916244d8f3268d85aeb1a29e1ff9ff646c52bf1ae5633d0885bb967de615",
+    "docs/evidence/post-r1/foundation-release/final-docker-retirement.json": "94aec66811cc2272302b20a9258e1674e75e796ceb5b3089f86d28878a22d980",
+    "docs/evidence/post-r1/foundation-release/helpers-retirement-01.json": "84197e1e54f337ddf1f4d8bb80110daa0cad1c72c179e9b5400a15fae1edb8e4",
+    "docs/evidence/post-r1/foundation-release/temporary-input-retirement.json": "9ba6f7a956b6c34bdfa80238ad39aafe4a75aaa72ca91ce46469e4f30ccd242d"
+  },
+  "removed": {
+    "containers": 160,
+    "volumes": 18,
+    "networks": 6,
+    "images": 4,
+    "image_tags": 14
+  },
+  "limitations": [
+    "Synthetic list-bound Aurora slice, native Maintenance representative workflows, explicit current app/background profiles.",
+    "Exact-policy upgrades only; core30 baseline recomposed transparently.",
+    "Empty schema introduction recovery exception limited to qualified native30-to45/46 pairs.",
+    "No production/publication/R2/R3 claim; checksums are not publisher authentication or executor approval."
+  ]
+}

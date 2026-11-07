@@ -1,0 +1,8 @@
+{
+  "result": "retired_owned_temporary_inputs",
+  "utc": "2026-11-07T20:29:05.018748+00:00",
+  "baseline_worktree_head": "8f8ca58b429f7da51fe2b7f8e121154375e998eb",
+  "obsolete_draft_manifest": "30555476a7721cd7f151ab39ee5552c70260e21c60acc6a397ba74dc06421042",
+  "qualified_core46_kit_preserved": true,
+  "private_diagnostics_checkpoints_and_unrelated_files_preserved": true
+}

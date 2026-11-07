@@ -1,0 +1,531 @@
+{
+  "phase": "retired_and_verified",
+  "containers": [
+    {
+      "id": "9979bdb6b5f4ecc00968ab012663abe6ea2da285d71fc7f44ba3c83892749841",
+      "name": "mp-r0-r1release2fc90990a56f-cf-current-urgent",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "29c63beafc8ea430e1337fc5d8307fd7439fe35f4d8841e9c0290ce4a90cbc35",
+      "name": "mp-r0-r1release2fc90990a56f-cf-stale-claim-final46",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "e258e561b67117269b74712310372efe2e9eb200d85065f5e9c45f3e9f89f003",
+      "name": "mp-r0-r1release2fc90990a56f-op-6814381e-fb89-44d7-bd9f-d40c0a5f6056-dispatch-enable",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "063a2efe7c4134563985c68e77026c784d5493a71233a102239c1095b599a28e",
+      "name": "mp-r0-r1release2fc90990a56f-op-9aea014c-c772-42cc-b21c-55d300dfd07b-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "2d73ea38ff3f5537666aed73a9e88ed7264dd8623560b87ea9b0f9bcc18fe017",
+      "name": "mp-r0-r1release2fc90990a56f-op-6814381e-fb89-44d7-bd9f-d40c0a5f6056-dispatch-reconcile",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "3538e44a7fe02bbdf1d8c0d1a62ed47b359107b888942f525beaafce2f2d5c33",
+      "name": "mp-r0-r1release2fc90990a56f-op-6814381e-fb89-44d7-bd9f-d40c0a5f6056-assets",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "3e04d5f954d81af11bc0949604244fc2cf891bc6d5a42f8ed2efe8cc09dabd21",
+      "name": "mp-r0-r1release2fc90990a56f-app-release-6814381efb8944d7bd9fd40c0a5f6056",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": true
+    },
+    {
+      "id": "0e87ef53b804bea3c13252c0e9d4ef2c179150320a80792a612d0fbea71550d7",
+      "name": "mp-r0-r1release2fc90990a56f-op-6814381e-fb89-44d7-bd9f-d40c0a5f6056-metadata",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "51ae8dabffd353deeee8d5129836ee161452a02301af0256e77263afcccfb47b",
+      "name": "mp-r0-r1release2fc90990a56f-op-6814381e-fb89-44d7-bd9f-d40c0a5f6056-native",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "7fe00ce5a322e8a7357bc5860c25730e7718588c7f14ac8282e7a06ca0a83860",
+      "name": "mp-r0-r1release2fc90990a56f-op-1887b05e-a604-4cb1-966b-89b2e37a2d37-dispatch-observe",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "b6e1b73f4d20e44f4b54292647f76c19901b12963bba8d885e3d25fd165f7be1",
+      "name": "mp-r0-r1release2fc90990a56f-op-6814381e-fb89-44d7-bd9f-d40c0a5f6056-checkpoint",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "e9a0256f8352d97fa4763dc183c56b1d12a937a124b9fa58bfd396f372f55126",
+      "name": "mp-r0-r1release2fc90990a56f-op-6814381e-fb89-44d7-bd9f-d40c0a5f6056-dispatch-fence",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "c3681118a16a15efbcd719f080f22480aa2d311ecbc46ba7f03cd1a762a241f7",
+      "name": "mp-r0-r1release2fc90990a56f-cf-stale-claim-restored46",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "7525220f7707d247df56d0e74797854ced0c3cc23a8a3d82a205361983a029f2",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-dispatch-enable-e3b88719bbf446cca967c2b8e97625e6",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "06cfb75a13eb0f458d453946dcfb0e0f4cabd95733fb5cc681396e6fa2bb2847",
+      "name": "mp-r0-r1release2fc90990a56f-op-6558f553-d5b1-4ac8-b5e9-06ee03aac1c7-dispatch-observe",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "faf7da743bf352eae82d3e0c3fd69fe1160b909255867ac3da399b136bf36558",
+      "name": "mp-r0-r1release2fc90990a56f-op-be13d320-c07f-4f97-895f-febd8d7bc94a-dispatch-observe",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "2b5ccb9783487667f450c8529c39e5640265563fcaf433287447991f5470f813",
+      "name": "mp-r0-r1release2fc90990a56f-op-20088670-1c77-4797-8039-1c3ca997a295-dispatch-observe",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "d02f01951df4eca0de3687ec205e6ee34f49e6a35287357cabca8192a34c9165",
+      "name": "mp-r0-r1release2fc90990a56f-op-f7c609b8-7396-4c8a-93f2-4f903eff8460-dispatch-observe",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "7cfdfa4d0da5f9a3f704338dac4bbdbb2f186069e4af5ec9dd40d40c61e83029",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-dispatch-reconcile-0d377d5c3057496a9009b3c6e0d35da7",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "1908c4feae3f9406678c0b387ff0e88c144d7b19f1d49586c97b3e0338864e9b",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-restored-assets",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "06278e1418bb5b7c30212cc4b871c4fb931bf249f50000345e9c8d7775e0395b",
+      "name": "mp-r0-r1release2fc90990a56f-app-restore-a8196446247f445d9a736483d6f03034",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "b4f49d88a0cda121a4f792554dc24caa981a17c85452fad67e15c17879ced949",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-read-config",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "26b359c0faf93729705d417942121a9dc9a73be1e7f865476294f466d3d8ee9f",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-dispatch-fence-0d377d5c3057496a9009b3c6e0d35da7",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "6bd1a1a7daaa4db5dd526bfa52c35e646d7b9216b02f688695631405ffe3b67f",
+      "name": "mp-r0-r1release2fc90990a56f-op-5a5fd897-e0cb-4e57-acb0-14713d691acd-dispatch-observe",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "33d99720b72b442958ea332d88dcb9fade3f200aff49f000b336c1ed73900e01",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-restore-filestore",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "2f21b5bd8fd384d8fa4d06dbfc49b849c8d9880122cc1355d2921fbc2eab12b5",
+      "name": "mp-r0-r1release2fc90990a56f-op-39c44fef-9333-4c79-aedd-d00490140f34-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "683411583acafbd1b34a85166a4b474308b064586f0236e6fdda1a5513034b59",
+      "name": "mp-r0-r1release2fc90990a56f-op-47b97593-b4a0-4e40-914f-f41a3ed32323-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "c5135679cd6768cbd3c66d3ff9506940433d6af2905a9768bbb436aaa7e804e3",
+      "name": "mp-r0-r1release2fc90990a56f-op-8a61204b-216e-4e23-91fb-e79ab3e37cc9-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "44d2c8dce9955c6bc034391c319258dcb2eeed6983fc2ec0e712b37c8335c506",
+      "name": "mp-r0-r1release2fc90990a56f-op-d5067874-4872-4efc-a231-63a7781b8bfe-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "56093f393b808ee3e686e001603b62e7980935cfc01f75d96514327faa5a1c74",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-dispatch-reconcile",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "7b103eb9156082bd19af49b84313889c8b9990516c5e0281a1ae9047c7c9b357",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-assets",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "28a09c3821c9bb340888c38033a103e815c17be4cb070d32b12a8d0eed164a32",
+      "name": "mp-r0-r1release2fc90990a56f-app-release-a8196446247f445d9a736483d6f03034",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "3fff4b1a6dad96aff14c1694f8b9b6d555082468e51f8edcee2e8a2d2d23ab39",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-metadata",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "ec3400480e43524a1be1b8fa6af48d081a32d423733f455a379d997852d831c6",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-native",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "fb248e5b6ab0ae9abdb19de7206165d9002b2c146aef825844fac20749283d63",
+      "name": "mp-r0-r1release2fc90990a56f-op-c711ec9f-006c-4fcd-b0ad-ccc8e9b5c445-dispatch-observe",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "a4811aa1bed3ccd54d6f0dd800c9cd06b978239ebd8e4e0872c9962537b8ba69",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-checkpoint",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "0d0bfded5b767cf0206cea618e003ad5c4b02d86ffb97357e1535cc17d38c7cc",
+      "name": "mp-r0-r1release2fc90990a56f-op-a8196446-247f-445d-9a73-6483d6f03034-dispatch-fence",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "3866db6c98cefd9e6648b09f77522e5e3e87faeeab798d5e97f959e9fb5e5d1c",
+      "name": "mp-r0-r1release2fc90990a56f-app-restore-57346151f1574c50be6ee48790f37826",
+      "image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "running": false
+    },
+    {
+      "id": "4f9b67333ca30eb4e3795ff120fdfd1502dd5a7f225d417215b2f2352c862371",
+      "name": "mp-r0-r1release2fc90990a56f-edge-1",
+      "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "running": true
+    },
+    {
+      "id": "1c1f1c638c35862db5656cb21f14f3e11536c0bc72d1d773e4f2041065158d42",
+      "name": "mp-r0-r1release2fc90990a56f-db-1",
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "running": true
+    },
+    {
+      "id": "7e0a77ef3e6bf288ac8b44bc4f52e2e8c52730e3e07d2e7d3e8032c93cc5e5cb",
+      "name": "mp-r0-r1release494ba8611541-cf-current-urgent",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "29c81434263ae0df9ecde6a386c3bb99b1f269c2007dc12c29bcf667798138da",
+      "name": "mp-r0-r1release494ba8611541-cf-peer-recovery-work-core46",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "6925e8fb10ecfb53a0e552a4d8b127be742ea486578d49814dd425a7a1907eee",
+      "name": "mp-r0-r1release494ba8611541-cf-stale-claim-final46",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "10afe62e0480cb9ca910db6912e5b7f45ecd8751be73ef0870cf02445fd33dfc",
+      "name": "mp-r0-r1release494ba8611541-op-819dadaf-43b1-41fa-bef9-be0364008927-dispatch-enable",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "aceb20cd3e19b95293486be3767478739cee9aee4b88cb7412f1b26e3f624fd3",
+      "name": "mp-r0-r1release494ba8611541-op-72068e2c-af2c-4073-90ac-42468e302f28-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "5c40fc346d687c5926ea66886c73c38fe1873af89020938971064ec5819a356c",
+      "name": "mp-r0-r1release494ba8611541-op-819dadaf-43b1-41fa-bef9-be0364008927-dispatch-reconcile",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "9a47825d719bbd43362c2ff370f5c199366849e104a8a85b83c22f4834506fbe",
+      "name": "mp-r0-r1release494ba8611541-op-819dadaf-43b1-41fa-bef9-be0364008927-assets",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "e76d864bb6c1c44e17115c0681d58eb05020f2b9f02d428b341384105dcae934",
+      "name": "mp-r0-r1release494ba8611541-app-release-819dadaf43b141fabef9be0364008927",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": true
+    },
+    {
+      "id": "17d106f091d01e56ba1a53a0cf62f7350e34b3fd80118227e52913d27c9bcb93",
+      "name": "mp-r0-r1release494ba8611541-op-819dadaf-43b1-41fa-bef9-be0364008927-metadata",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "8840007116b0806d7347ce4f8d89ec9a6b30165bea866fd12cdb6722fa0963f5",
+      "name": "mp-r0-r1release494ba8611541-op-819dadaf-43b1-41fa-bef9-be0364008927-native",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "7587a9bb73b1316245d507fa77b0a0c00988516aaad491a2b5c1e29f4a480a3c",
+      "name": "mp-r0-r1release494ba8611541-op-7f51f6c8-c4a5-489c-a689-1251f1df03c7-dispatch-observe",
+      "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+      "running": false
+    },
+    {
+      "id": "e3b9ee88a9ef31288cdbd9c2626a4c843a21ab76b1bac16158c08bfd92f563d1",
+      "name": "mp-r0-r1release494ba8611541-op-819dadaf-43b1-41fa-bef9-be0364008927-checkpoint",
+      "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+      "running": false
+    },
+    {
+      "id": "33170a6c96fde216b32ed0d920588448ffe4c1f39affa9294b07742d0b082d7f",
+      "name": "mp-r0-r1release494ba8611541-op-819dadaf-43b1-41fa-bef9-be0364008927-dispatch-fence",
+      "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+      "running": false
+    },
+    {
+      "id": "72b1b185fba7ca09df8d1a1f72bdd43c711cef91c2662f572044d65266fc1be2",
+      "name": "mp-r0-r1release494ba8611541-app-release-3f039c64876b4396b084808fa221d3da",
+      "image": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+      "running": false
+    },
+    {
+      "id": "7be6afa6ca8fe52b56c108353dd64872fb90fbe1975465d4e61f23cade225d05",
+      "name": "mp-r0-r1release494ba8611541-edge-1",
+      "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "running": true
+    },
+    {
+      "id": "04e01f1e00ef2a0636a9eec056ba48534f7bc22fc01f82816faf0bfe385d9fbf",
+      "name": "mp-r0-r1release494ba8611541-db-1",
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "running": true
+    },
+    {
+      "id": "0650f91a624a77799e83cb64c8caec2342c8d1cb7c8e1323e37af5b1a29e97c1",
+      "name": "mp-r0-r1release368849d67da0-op-81ce8f22-2e49-4a99-a221-75f9e2c9a872-dispatch-enable",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "7fb139cb38a0f491493291dbefed0ca9b42c2cf2d2350ef6cc3063af7a74a1c3",
+      "name": "mp-r0-r1release368849d67da0-op-7365f6f0-2a47-4a62-92d6-c9055097cf13-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "9cafcedf0a572c8383b6fdbbfa2b9cf1b48ee068aae0be07176d53449d0c57e1",
+      "name": "mp-r0-r1release368849d67da0-op-81ce8f22-2e49-4a99-a221-75f9e2c9a872-dispatch-reconcile",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "798bb8b3882cdf566f80193054c40ffaaf0d81fc2560bc5a09d297de7a535dc8",
+      "name": "mp-r0-r1release368849d67da0-op-81ce8f22-2e49-4a99-a221-75f9e2c9a872-assets",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "dfcc101dc4aca762531306d7a952a70ee1b0f8068266763d83107d3e515b11b8",
+      "name": "mp-r0-r1release368849d67da0-app-release-81ce8f222e494a99a22175f9e2c9a872",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": true
+    },
+    {
+      "id": "ed273830f12599065af9c381a712e135a2e52b65c4bccd72a6de1f50aad2a639",
+      "name": "mp-r0-r1release368849d67da0-op-81ce8f22-2e49-4a99-a221-75f9e2c9a872-metadata",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "79836f1c98a480c62ee99d2d0435537006086d179f3376cc2807719e62f06b69",
+      "name": "mp-r0-r1release368849d67da0-op-81ce8f22-2e49-4a99-a221-75f9e2c9a872-native",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "f7900fb5298c230a8d923d993fea67b562914b26073948956826e085c8fb24c5",
+      "name": "mp-r0-r1release368849d67da0-op-df3ee28f-d1bb-44fe-847d-bd9b07ce2703-dispatch-observe",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "8704ce112dda6116d0e87bbdd1e73a8f3b34bbcd0d18f9f6bd3d8b37d9a8c65c",
+      "name": "mp-r0-r1release368849d67da0-op-81ce8f22-2e49-4a99-a221-75f9e2c9a872-checkpoint",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "6c7f045bd241598dfedcfab4cedfc3bfd70de1a0ab38dba471dcb91a6fb63f34",
+      "name": "mp-r0-r1release368849d67da0-op-81ce8f22-2e49-4a99-a221-75f9e2c9a872-dispatch-fence",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "1773b7b9e7a95c651279911063eed849520ee459dcb5f0c5f2ba976b6b792d28",
+      "name": "mp-r0-r1release368849d67da0-edge-1",
+      "image": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f",
+      "running": true
+    },
+    {
+      "id": "7ae2efac547d3247d135d28cac4830476da13195fa0608bb6f73a3fdd7a972c0",
+      "name": "mp-r0-r1release368849d67da0-op-0bb905ea-fbfb-4adf-b55c-d231ed0cc87e-assets",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "912e82e693b5ff034a08288d2f88298c03811d58a1c1ed6dec82679a9fdd4457",
+      "name": "mp-r0-r1release368849d67da0-app-release-0bb905eafbfb4adfb55cd231ed0cc87e",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "3a4711447156f9e7204cde6e8e1ef5318613b30e2032aa10093f68ac3a3bb6a0",
+      "name": "mp-r0-r1release368849d67da0-core-provision",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "0189fa37ff599be2934bd2607cb742bf30b1669a08e635ea0f95f1947e73b2d8",
+      "name": "mp-r0-r1release368849d67da0-core-init",
+      "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "running": false
+    },
+    {
+      "id": "4ec5d460d02bb3aa0abb9f3d2b527a1b57b980ed81e6cb7caf8f04f901201c89",
+      "name": "mp-r0-r1release368849d67da0-db-1",
+      "image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+      "running": true
+    }
+  ],
+  "networks": [
+    "mp-r0-r1release2fc90990a56f_edge",
+    "mp-r0-r1release2fc90990a56f_runtime",
+    "mp-r0-r1release494ba8611541_edge",
+    "mp-r0-r1release494ba8611541_runtime",
+    "mp-r0-r1release368849d67da0_edge",
+    "mp-r0-r1release368849d67da0_runtime"
+  ],
+  "volumes": [
+    "mp-r0-r1release2fc90990a56f_appconfig",
+    "mp-r0-r1release2fc90990a56f_bootstrap",
+    "mp-r0-r1release2fc90990a56f_dbconfig",
+    "mp-r0-r1release2fc90990a56f_filestore",
+    "mp-r0-r1release2fc90990a56f_pgdata",
+    "mp-r0-r1release2fc90990a56f_proxyconfig",
+    "mp-r0-r1release494ba8611541_appconfig",
+    "mp-r0-r1release494ba8611541_bootstrap",
+    "mp-r0-r1release494ba8611541_dbconfig",
+    "mp-r0-r1release494ba8611541_filestore",
+    "mp-r0-r1release494ba8611541_pgdata",
+    "mp-r0-r1release494ba8611541_proxyconfig",
+    "mp-r0-r1release368849d67da0_appconfig",
+    "mp-r0-r1release368849d67da0_bootstrap",
+    "mp-r0-r1release368849d67da0_dbconfig",
+    "mp-r0-r1release368849d67da0_filestore",
+    "mp-r0-r1release368849d67da0_pgdata",
+    "mp-r0-r1release368849d67da0_proxyconfig"
+  ],
+  "images": [
+    {
+      "id": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+      "remove_tags": [
+        "modular-platform:retained-23ef771a-353b-441b-9ed8-afe020c68297",
+        "modular-platform:retained-3f039c64-876b-4396-b084-808fa221d3da",
+        "modular-platform:retained-57346151-f157-4c50-be6e-e48790f37826",
+        "modular-platform:retained-59d0d477-b229-4af4-ad7b-4623a8e70d73",
+        "modular-platform:retained-62c7468f-3e2a-438d-8ca6-aff1b09ac609",
+        "modular-platform:retained-6814381e-fb89-44d7-bd9f-d40c0a5f6056",
+        "modular-platform:retained-9f7edd97-c783-41af-9a20-11202b54c648",
+        "modular-platform:retained-a8196446-247f-445d-9a73-6483d6f03034",
+        "modular-platform:stage-20261107t190553312094z"
+      ],
+      "keep": false
+    },
+    {
+      "id": "sha256:c029eecb1bc4a57f7479135295a51051f88917b37c85e26588bf1ebb1e07b112",
+      "remove_tags": [
+        "modular-platform:retained-819dadaf-43b1-41fa-bef9-be0364008927",
+        "modular-platform:stage-20261107t191047583469z"
+      ],
+      "keep": false
+    },
+    {
+      "id": "sha256:ff699881accc05abcdc5b7457b0de24dd997a0256c03db0a7fcafe01c14a46ec",
+      "remove_tags": [
+        "modular-platform:stage-20261107t191127170897z"
+      ],
+      "keep": false
+    },
+    {
+      "id": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "remove_tags": [
+        "modular-platform:retained-81ce8f22-2e49-4a99-a221-75f9e2c9a872"
+      ],
+      "keep": true
+    },
+    {
+      "id": "sha256:e4e1f97d6e43a2983182db145b2e97faef94a45d8717414498ae99fbb4a8b72c",
+      "remove_tags": [
+        "modular-platform:stage-20261107t194118386832z"
+      ],
+      "keep": false
+    }
+  ],
+  "operations": [
+    "23ef771a-353b-441b-9ed8-afe020c68297",
+    "3f039c64-876b-4396-b084-808fa221d3da",
+    "57346151-f157-4c50-be6e-e48790f37826",
+    "59d0d477-b229-4af4-ad7b-4623a8e70d73",
+    "62c7468f-3e2a-438d-8ca6-aff1b09ac609",
+    "6814381e-fb89-44d7-bd9f-d40c0a5f6056",
+    "819dadaf-43b1-41fa-bef9-be0364008927",
+    "81ce8f22-2e49-4a99-a221-75f9e2c9a872",
+    "9f7edd97-c783-41af-9a20-11202b54c648",
+    "a8196446-247f-445d-9a73-6483d6f03034"
+  ],
+  "utc": "2026-11-07T20:25:39.306266+00:00",
+  "removed_containers": 72,
+  "removed_volumes": 18,
+  "removed_networks": 6,
+  "removed_images": 4,
+  "removed_image_tags": 14,
+  "retained_foundation_image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "unrelated_assets_and_private_evidence_preserved": true
+}

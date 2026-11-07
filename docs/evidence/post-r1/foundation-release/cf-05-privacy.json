@@ -1,0 +1,31 @@
+{
+  "result": "passed_finite_known_values",
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "kit_source": "2b2b3df5949b6bf42cc459978db13646d1909741",
+  "kit_manifest_sha256": "55aa4958e319006a73e3c97d2e6b175a4254ce67b3f538ea215909f1e6467d0f",
+  "images_tar_sha256": "c056a57eab8e7f2a3953ed9864d5a31157d71f3260ad054c5df1a4b354b88ed3",
+  "known_values": 24,
+  "encodings": 72,
+  "totals": {
+    "files": 65300,
+    "unique_contents": 56312,
+    "bytes": 1387155514,
+    "archives": 65
+  },
+  "findings": [],
+  "new_application_layers": [
+    "blobs/sha256/1183d09370556c9082eaf45742a097a8efcfa61ed5b7b4fa14034e70effbd6c8",
+    "blobs/sha256/14bfca4244baee0326d020be91e5a70db1b4d1e5d4d88dafcc0c88ef9331a915",
+    "blobs/sha256/edc9f8c998c7b60e2eaa62bc46bf7a791003cc0b42c910008c3ea2d63abdbbb2",
+    "blobs/sha256/285a74ec68e65e50465b927e6e1cd678cbec6454ba12097fe6f4a0a4c242a8c5",
+    "blobs/sha256/020f6908091d0bde4070700b9ddd4608e64916954d1ffa34e434d05b4d1a90e5",
+    "blobs/sha256/1e7a67cf156d00d611fd3a9d72d4c37f03bf7847dfca5769aedb91194a623ac3",
+    "blobs/sha256/4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1"
+  ],
+  "prior_full_receipt": null,
+  "limits": [
+    "Known current CF credentials only; no unknown-secret detector or publisher authentication claim.",
+    "Unchanged dependency/support image bytes retain the recorded stock release audit scope.",
+    "Source ZIP, curated archives and new application layers decoded; nested ZIP depth <=5, files <=128MiB."
+  ]
+}

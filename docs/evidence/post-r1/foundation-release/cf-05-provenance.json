@@ -1,0 +1,7 @@
+{
+  "result": "passed_source_and_build_byte_alignment",
+  "build_sources": 425,
+  "archive_byte_mismatches": [],
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "frozen_contract_files": 106
+}
