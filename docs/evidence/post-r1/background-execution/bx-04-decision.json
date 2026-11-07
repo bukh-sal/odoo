@@ -1,0 +1,97 @@
+{
+  "gate": "BX-04",
+  "state": "passed",
+  "required_checks_passed": 5,
+  "required_checks": 5,
+  "decision": "Retain PostgreSQL, urgent/bulk pools, reviewed manual profiles and bounded read-only advice.",
+  "checks": [
+    {
+      "id": "BX04-01",
+      "state": "passed",
+      "evidence": [
+        "bx-04-core44-load.json"
+      ],
+      "result": "150 reminders/40 reports; urgent p95 2.171s; bulk37.074s; paired native reads within fixed targets; restarted40 reports31.109s."
+    },
+    {
+      "id": "BX04-02",
+      "state": "passed",
+      "evidence": [
+        "bx-04-sustained-hot.json",
+        "bx-04-sustained-many-live.json",
+        "bx-04-core44-burst-comparison.json",
+        "bx-04-recurring-bursts.json"
+      ],
+      "result": "180s hot and70-workspace workloads at0.4 bulk/s, including fresh commits and variable cost. Corrected core44 requalified distributed bursts and live recurring reports."
+    },
+    {
+      "id": "BX04-03",
+      "state": "passed",
+      "evidence": [
+        "bx-04-core44-burst-comparison.json",
+        "bx-04-cold-start.json"
+      ],
+      "result": "Same trace:fixed/work2 versus count3. All222 useful completions and targets passed; two lanes used less lane time. Actual26.407s cold growth missed10s validity;20 jobs expired unclaimed and advice warned."
+    },
+    {
+      "id": "BX04-04",
+      "state": "passed",
+      "evidence": [
+        "bx-04-core44-guards.json",
+        "bx-04-pressure-stale.json",
+        "bx-04-guard-recovery.json"
+      ],
+      "result": "Fairness, child restart, isolated slot backend loss, generation refusal, actual connection pressure and genuinely aged/missing health. Populated fresh restore and separate forward release passed."
+    },
+    {
+      "id": "BX04-05",
+      "state": "passed",
+      "evidence": [
+        "bx-04-sustained-hot.json",
+        "bx-04-sustained-many-live.json",
+        "bx-04-core44-load.json",
+        "bx-04-core44-burst-comparison.json",
+        "bx-04-recurring-bursts.json",
+        "bx-04-retirement.json"
+      ],
+      "result": "Fixed web/connection/lock/DB CPU/listener targets held under admitted workloads; saturation interval labelled separately. Realm retired; one core45 baseline image retained for BX05."
+    }
+  ],
+  "required_corrections": [
+    {
+      "issue": "Hot workspace candidate starvation",
+      "decision": "Atomic rotating hint, qualified under native competition and restart.",
+      "adr": "0066-managed-workspace-rotation.md"
+    },
+    {
+      "issue": "Isolated slot-session loss admitted overlapping valid claims",
+      "decision": "Fresh preparation-session guard plus pooled running-row exclusion; SQL races, native fault, load and recovery qualified.",
+      "adr": "0067-pooled-claim-guard.md"
+    }
+  ],
+  "conditional_extensions": [
+    {
+      "feature": "Automatic resizing controller",
+      "state": "not_selected",
+      "reason": "No useful-completion/SLO benefit or lower lane use over fixed2 was established. Dynamic one-lane counterfactual untested; reopen with an app trace and controller failure/release drills."
+    },
+    {
+      "feature": "Broker, more pools, higher workspace concurrency, multi-host execution",
+      "state": "not_selected",
+      "reason": "No measured gap under admitted envelope; preserve simpler queue and authority contracts."
+    }
+  ],
+  "limits": [
+    "Finite local development workload, not production capacity certification.",
+    "Advisor is not a global host resource allocator or monitoring agent.",
+    "Earlier sustained runs are core41; affected core44 web/distributed/recurring/guard cases are separately recorded, not an asserted full matrix rerun.",
+    "BX05 remains required; this does not complete the overall goal."
+  ],
+  "next_gate": "BX-05",
+  "progress": {
+    "passed_gates": 4,
+    "total_gates": 5,
+    "rough_percent_by_equal_gate_weight": 80
+  },
+  "original_r1_acceptance_unchanged": 99
+}

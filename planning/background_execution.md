@@ -235,7 +235,7 @@ targets. [Qualified mixed load](../docs/evidence/post-r1/background-execution/bg
   [Guarded startup](../packages/platform_sdk/modular_platform/worker_start.py:52) ·
   [Odoo scheduled actions](https://www.odoo.com/documentation/19.0/developer/reference/backend/actions.html#scheduled-actions-ir-cron) ·
   [CronJob catch-up and overlap](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
-- [ ] **BX-04. Load and scaling.** After BX-01 and BX-02, repeat BG-04 and
+- [x] **BX-04. Load and scaling.** After BX-01 and BX-02, repeat BG-04 and
   test sustained arrivals for the first heavy app. Fix the workload, queue
   wait, web p95 and DB headroom targets before running. Include one hot
   workspace, many workspaces, variable runtimes, process loss, database

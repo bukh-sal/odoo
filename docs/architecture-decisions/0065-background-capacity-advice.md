@@ -1,6 +1,6 @@
 # ADR 0065. Measure capacity before automatic sizing
 
-Status: BX-04 selected qualification envelope; implementation in progress.
+Status: BX-04 qualified; manual sizing and read-only advice retained.
 
 Keep the reviewed single-host fleet and PostgreSQL queue. Add read-only,
 release-pinned observations and capacity advice first. Advice cannot resize,
@@ -79,3 +79,51 @@ exclusion and rollback. If no useful benefit is observed, keep manual profiles
 plus advice and record that decision with measurements. Multi-host orchestration,
 a broker, extra pools and higher per-workspace concurrency likewise require a
 measured gap; do not add them merely to complete a feature checklist.
+
+## Measured decision
+
+Retain PostgreSQL, the urgent/bulk pools and independently reviewed manual
+profiles with read-only advice. No automatic resizing controller is selected.
+This decision concerns the admitted development workload, not all future apps.
+
+Core44's identical72-job/70-workspace burst plus150 reminders passed every
+fixed service/headroom target with two and three prewarmed bulk lanes. Fixed
+and estimated-work advice selected two; count advice selected three. Two lanes
+drained in24.631s and used49.262 lane-seconds, versus17.624s and52.873 with three.
+Full-window use was120.429 versus180.385 lane-seconds. Both completed all222
+useful jobs without expiry. The faster three-lane drain did not prevent a miss
+or add useful completions under the fixed targets. It used more lane time.
+[Corrected comparison](../evidence/post-r1/background-execution/bx-04-core44-burst-comparison.json).
+
+The separate cold-only burst had ten seconds of validity. Reviewed growth took
+26.407s; all20 jobs expired with zero attempts. Native advice warned that a
+reactive start would miss the useful window. Keep urgent capacity warm and
+provision predictable short bursts ahead of time; do not extend job deadlines
+to make a sizing test pass.
+[Cold growth](../evidence/post-r1/background-execution/bx-04-cold-start.json).
+
+Recurring bursts, original paired load, sustained hot/distributed workloads,
+child loss and isolated advisory-backend loss have distinct recorded evidence.
+Connection pressure at50/64 connections held advice with null recommendations;
+genuinely aged and missing health also held. Advice did not mutate the fleet.
+[Pressure](../evidence/post-r1/background-execution/bx-04-pressure-stale.json) ·
+[Recurrence](../evidence/post-r1/background-execution/bx-04-recurring-bursts.json).
+
+No measured gap justifies a broker, more pools, higher workspace concurrency or
+multi-host execution for this envelope. Fairness and isolated slot loss did
+expose real defects; core44 fixes those while retaining the queue and authority
+contracts. Those fixes were required, independent of the sizing decision.
+
+Reopen automatic sizing when an app provides a different admitted arrival/burst
+trace, service target or idle-cost requirement and a controlled policy change
+improves useful results or resource use over its fixed baseline. Then the
+controller's stale-signal, active downscale, release exclusion and rollback
+drills become required. A dynamic one-lane baseline has not been tested here;
+these measurements do not rule out savings for a different workload.
+
+Capacity estimates are not global host reservations. Per-lane CPU/memory pins,
+the site role cap and database connection budget constrain advice, but it does
+not reserve memory/CPU against web, database or other deployments. Operators
+must choose profile bounds within their deployment budget. Any future automatic
+controller also needs authoritative host-wide resource accounting and a trusted
+fresh headroom feed; the current CLI is not that controller or monitoring agent.

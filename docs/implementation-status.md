@@ -2,13 +2,13 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T08:25:00Z
+- Updated UTC: 2026-11-07T08:33:39Z
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **G7 passed for local R1. Active follow-up: BX-04 background execution qualification.** Core26/Shell13 remains the original qualified R1 release.
-- Active item: **BX-04 pressure, recurrence and recovery qualification.** Core44 paired load passed; see the current follow-up resume capsule below.
+- Current phase/gate: **G7 passed for local R1. Active follow-up: BX-05 app-driven resumable chunks.** Core26/Shell13 remains the original qualified R1 release.
+- Active item: **BX-05 select and implement the app-owned chunk contract.** BX-04 load, recovery and retirement passed; see the current follow-up resume capsule below.
 - Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -37,8 +37,8 @@ when changing the workload, sizing, or queue/web behavior. The
 [work log](work-log.md) retains the earlier attempts.
 
 The [background execution follow-up plan](../planning/background_execution.md#follow-up-plan-for-sustained-background-workloads)
-tracks BX-01 through BX-05. **BX-01 through BX-03 passed; BX-04 is active.** Three of
-five follow-up gates have passed, or roughly 60% by gate count. The guarded CLI reported an empty job table and then the lower bound
+tracks BX-01 through BX-05. **BX-01 through BX-04 passed; BX-05 is active.** Four of
+five follow-up gates have passed, or roughly 80% by gate count. The guarded CLI reported an empty job table and then the lower bound
 above the lifecycle limit on a rebuilt site with 100,002 synthetic rows.
 The PostgreSQL race probe reproduced a duplicate with a split lookup and
 verified that writing the shared identity row forces a stale transaction to
@@ -254,45 +254,44 @@ window. All20 jobs expired before any claim; read-only native advice warned
 about late start and expiry. This deliberate overload is separate from admitted
 workload results. [Cold-start evidence](evidence/post-r1/background-execution/bx-04-cold-start.json).
 
-Resume capsule: active fresh restore session17746 after the expected core45 fault,
-one owned project
-`mp-r0-r1releaseb152ddffba06`, port18126, DB
-`mp_disposable_r0_r1_release_b152ddffba06`. Current image454dd975b063/core44,
-full image ID in build `bx04-claim-guard-build-01/candidate-build.json`.
-All worker/producer roles are stopped under a newly reviewed paused recurrence profile.
-The command is `tests/background_guard_recovery.py restore`; private record is
-`bx04-guard-recovery.json`, operation`e296bac7-2627-4f9e-bb15-afe0ae0a79f3`.
-Candidatee03dc57213c5/core45 changes only platform/native version metadata;
-worker/queue/authorization source remains core44. Build log is private.
-Seed contains one committed guarded claim, one future human job, one pending
-service occurrence and exact cursor/history/rotation snapshots. Initial output
-formatting failed after commit; read-only capture preserved the claim, no replay.
-An attempted fixture anchor change was refused before mutation; resuming the
-original coalesce grid produced the pending occurrence. Forty-two terminal owned helpers were removed;
-running services and named volumes retained. Obsolete core42/core43 candidates
-and their four tags were retired only after verifying their release operations
-completed with resumed traffic and no remaining container dependencies.
-Earlier pressure harness diagnostics were preserved; both failed before job seed,
-and partial pressure connections were closed. Successful attempt3 is drained.
-Do not replay completed load/upgrade/fault seeds. No uncertain mutation or external
-effect exists.
+Fresh restore and separate resume passed for operatione296bac7. It restored
+core44 into a fresh DB, preserved business/history/cursor/rotation digests,
+revoked every service credential and held service work. Human idempotent work
+was carried forward with a new generation and no old lease. Traffic stayed
+closed until the independent resume review; no worker/producer was started.
 
-The fault reached `recovery_required`, mutation started, traffic never resumed.
-Next inspect the fresh restore with traffic closed, separately
-resume and prove old claim/rotation/profile refusal plus current human recovery.
-Revoked service work must remain held. Then qualify a fresh successful core45
-upgrade and choose
-whether automatic sizing is justified from the measured comparisons; current
-fixed2/work advice meets SLOs with less lane use than count3. Retire obsolete
-containers/images after their dependencies settle. BX-05 app-driven chunks
-remains required and queued. No user input is needed. Three of five gates have
-passed (roughly60% by completed-gate weight), separately from case/test counts.
-Reuse reviewed fleet resizing; automatic sizing
-requires measured benefit and its own release/downscale drills. Native recovery operation was
-`858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is
-`.local/background-qualification/bx-03-recurrence-01/bx03-recovery.json`, passed.
-Do not replay its retired realm. BX-05 remains queued. No user blocker.
-Gate progress is 3/5 (roughly 60%), separate from acceptance counts.
+Post-restore proof passed:old claim and old rotation epoch denied, new rotation
+reset and reservation succeeded, old profile pins refused. The authorized human
+job completed after reclaim (two attempts total); two new jobs completed once.
+Service credentials remained revoked, business data unchanged, fleet drained.
+
+Fresh forward upgrade`47abfa02-fb35-4c1e-b56b-6c7af68439fa` passed on core45.
+The candidate differs from core44 only in platform/native version metadata;
+worker/queue/authorization bytes are identical. Three recovered/new reports
+matched ten rows/45 points, business rows remained exact. Eight core-upgrade
+regressions and the106-file freeze passed.
+[Recovery/forward proof](evidence/post-r1/background-execution/bx-04-guard-recovery.json).
+
+BX-04's final cleanup removed48 containers, six volumes and two networks plus
+core44/three tags. Intermediate cleanup removed42 terminal helpers and
+core42/core43/four tags. No running service or volume remains for that realm.
+Retained only core45 imagee03dc57213c5 as the useful BX-05 clean baseline;
+stock dependency base and unrelated existing assets were preserved.
+[Retirement](evidence/post-r1/background-execution/bx-04-retirement.json).
+[BX-04 decision and acceptance mapping](evidence/post-r1/background-execution/bx-04-decision.json).
+
+Resume capsule: BX-05 is the sole active work item. No running check, site,
+producer, worker or uncertain mutation. Do not replay retired BX-04 helpers.
+Private final record:`.local/background-qualification/bx-04-capacity-01/bx04-finalized.json`.
+Core45 baseline build:`docs/evidence/G7/bx04-recovery-build-01/candidate-build.json`.
+Next select the native reference app's >500-row bulk report as the smallest
+app-owned continuation proof; define cursor, successor enqueue atomicity,
+cancellation and version compatibility before editing the handler. Preserve
+native Odoo views. Qualify real rollback/process loss, authority, populated
+upgrade and fresh recovery. Remote delivery, fan-out or a common workflow engine
+remain conditional on an actual app requirement; no provider is required here.
+BX-01–04 passed, roughly80% by five equal gate weights; no extra credit for
+documentation. Original R1 remains99/99 and100 weighted points. No user input needed.
 
 BX-04 checklist:
 
@@ -304,9 +303,17 @@ BX-04 checklist:
 - [x] Compare fixed, count-based and estimated-work advice against actual drain/useful work/cost (core42 and corrected core44).
 - [x] Verify physical cold growth misses a shorter useful window and advice warns.
 - [x] Qualify process loss, fairness, recurring bursts, connection saturation and stale metrics.
-- [ ] Qualify populated release/fresh recovery of guarded jobs and rotation metadata.
-- [ ] Decide automatic-sizing/broker/pool changes from evidence; qualify any selected controller.
-- [ ] Record final evidence and retire owned qualification assets.
+- [x] Finalize populated release/fresh recovery proof and successful forward-upgrade evidence.
+- [x] Decide automatic-sizing/broker/pool changes from evidence:retain manual profiles/advice; no controller selected.
+- [x] Record final evidence and retire owned qualification assets; retain one useful BX-05 baseline image.
+
+BX-05 checklist:
+
+- [ ] Freeze the selected app's bounded cursor, consistency and continuation contract.
+- [ ] Implement app-owned progress and atomic cursor/successor updates with scoped authority.
+- [ ] Prove rollback, retry/process loss, duplicates and cancellation after partial progress.
+- [ ] Qualify compatible upgrade and fresh restore of partially completed work.
+- [ ] Record app results, conditional-extension decisions and retire owned test assets.
 
 BX-03 checklist:
 
@@ -784,7 +791,7 @@ No current environment blocker: isolated protected headless Edge now provides ac
 | ID | Scope / state | Evidence / resolution |
 | --- | --- | --- |
 | BX-04-FAIRNESS | Corrected and natively requalified | Two hot workspaces previously consumed60 claims before68 peers. Core44 rotating selection serves peers within the fixed fairness bounds and survives child restart. ADR0066/core44 guard evidence. |
-| BX-04-CLAIM-GUARD | Native failure corrected; final recovery qualification pending | Isolated compute-slot connection loss previously admitted two valid workspace/pool claims. Preparation guard plus running-row exclusion passed ten PG races, exact native loss, fairness/restart, and paired load. ADR0067. |
+| BX-04-CLAIM-GUARD | Closed by native load and populated recovery proof | Isolated compute-slot connection loss previously admitted two valid workspace/pool claims. Preparation guard plus running-row exclusion passed ten PG races, exact native loss, fairness/restart, paired load and fresh recovery/forward release. ADR0067 and bx-04-decision.json. |
 | BX-02 | Resolved | Reviewed roles, partial recovery, connection loss, graceful/forced drain and actual release races passed; all owned Docker assets retired. See BX-02 decision. |
 | BX-03-LIFECYCLE | Closed by native proof | Exact paused role selection, scoped credential review, populated upgrade, history-delta refusal, fresh restore, separate resume and explicit credential repair passed. Generic profile remains strict; changed post-checkpoint history still requires independent reconciliation. ADR 0064 and bx-03-recovery.json. |
 | STOCK-RTL-01 | Resolved | The bounded launcher mirrors the full stylesheet under the HTTP worker limit. Preflight and both browsers passed on the selected image. |

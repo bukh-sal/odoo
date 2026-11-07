@@ -1,6 +1,6 @@
 # ADR0067. Enforce the managed workspace limit after session loss
 
-Status:implemented and natively verified on core44; affected load passed, recovery remains pending.
+Status:implemented and qualified on core44, with populated recovery and forward release verified.
 Selected after BX-04's isolated slot-backend termination. The worker's
 compute and heartbeat stayed alive; another lane acquired the lost advisory
 slot and admitted a second valid claim in the same workspace/pool. Both jobs
@@ -46,3 +46,8 @@ skip, and the106-file contract freeze passed. See
 The affected paired web/reminder/report workload also passed on core44, with
 urgent start p95 2.171s and bulk drain37.074s; stock reads remained within
 their paired targets. [Load recheck](../evidence/post-r1/background-execution/bx-04-core44-load.json).
+Fresh recovery preserved history/cursors/rotation, invalidated the old claim,
+rotation epoch and profile, and carried forward authorized human work while
+revoked service work stayed held. A separate core45 forward upgrade passed;
+only version metadata differs from core44's worker source.
+[Recovery proof](../evidence/post-r1/background-execution/bx-04-guard-recovery.json).

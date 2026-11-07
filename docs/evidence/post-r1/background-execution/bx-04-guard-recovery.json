@@ -1,0 +1,33 @@
+{
+  "gate": "BX-04",
+  "state": "qualified",
+  "fault_operation": "e296bac7-2627-4f9e-bb15-afe0ae0a79f3",
+  "successful_operation": "47abfa02-fb35-4c1e-b56b-6c7af68439fa",
+  "restored_to_fresh_database": true,
+  "history_cursors_and_rotation_preserved": true,
+  "service_credentials_revoked": true,
+  "service_work_held": true,
+  "separate_resume": true,
+  "old_claim_denied": true,
+  "old_rotation_denied": true,
+  "new_rotation_reset": true,
+  "stale_profile_denied": true,
+  "recovered_human_attempts": 2,
+  "recovered_and_new_reports_exact": 3,
+  "business_unchanged": true,
+  "source_changes": [
+    "packages/platform_sdk/modular_platform/projection.py",
+    "platform_addons/mp_core/__manifest__.py"
+  ],
+  "forward_image": "sha256:e03dc57213c50e712d818bdaffd2e8b9379bdf7eeae3dadddeef9c0fc9696380",
+  "reference_version": "0.2.1",
+  "private_record_sha256": "662ea433b3c6a8f60b5a031f9244b2b9c5aa703c5267836d0c4ea17c76945019",
+  "current_contract_freeze": {
+    "files": 106,
+    "rows": 8,
+    "major": 1,
+    "result": "passed"
+  },
+  "core_upgrade_regressions": 8,
+  "unchanged_worker_regression": "Core44 full host sweep584 passed/1 existing Windows skip; core45 changes only version metadata."
+}

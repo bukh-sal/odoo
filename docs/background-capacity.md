@@ -1,7 +1,8 @@
 # Read-only background capacity advice
 
-BX-04 is in progress; this interface is not yet load-qualified. The fixed
-qualification targets and automatic-sizing decision are in
+Read-only advice and its load/pressure/recurrence behavior have native evidence.
+BX-04's recovery and retirement checks passed. The fixed
+qualification targets and scoped manual-sizing decision are in
 [ADR 0065](architecture-decisions/0065-background-capacity-advice.md).
 
 Use the independent local operator with a current reviewed fleet. `jobs
@@ -77,3 +78,15 @@ or admission changes. The report warns about late reactive starts and expiry.
 Policy defaults, forecasts and p95 estimates are capacity estimates, not execution
 or deadline guarantees. No native job authority, credential or effect semantics
 are changed by advice.
+
+The measured envelope retains reviewed manual profiles:two warm bulk lanes met
+all fixed targets with less lane use than the count-based three-lane choice.
+No automatic controller, broker or additional pool is enabled. Short-validity
+bursts need warm capacity; measured cold growth exceeded a ten-second window.
+Reopen the decision with an actual app trace and a useful benefit over its fixed
+baseline, then qualify the controller's downscale/release/rollback behavior.
+
+This report does not reserve host memory/CPU against other deployments or the
+web/database roles. Set approved pool maxima within that budget. Host-wide
+resource accounting and a trusted telemetry feed are prerequisites for a future
+automatic controller. Current advice is bounded operational estimation.

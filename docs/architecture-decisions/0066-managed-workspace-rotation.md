@@ -1,6 +1,6 @@
 # ADR0066. Rotate managed workspace candidates
 
-Status:selected after BX-04's adversarial baseline. Two30-job hot workspaces
+Status:qualified, including core44 load and fresh recovery. Two30-job hot workspaces
 consumed all60 claims before any of68 equal-eligibility peers started.
 Per-workspace concurrency alone did not provide fair service.
 
