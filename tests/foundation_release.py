@@ -19,6 +19,7 @@ from modular_platform.deployment import DockerObserver
 from modular_platform.lifecycle_planning import prepare_current_install_targets, installation_id
 from modular_platform.native_executor import NativeExecutor
 from modular_platform.operator_store import OperatorStore
+from modular_platform.plans import data_digest
 from stress_http import StressClient
 
 
@@ -178,10 +179,32 @@ class FoundationSite(BackgroundSite):
         write(path, result)
         print(json.dumps(result))
 
+    def stale_client(self):
+        path = self.local / 'stale-client-core46.json'
+        assert not path.exists()
+        base = load(self.local / 'upgrade-core46.json')['base']
+        token = data_digest(dict(protocol=1, site_id=base['sites'][0]['site_id'],
+            generation=base['generation'], release_digest=data_digest(base['published_release']),
+            inventory_digest=base['published_release']['core_inventory_digest']))
+        client = StressClient(self, 'alice')
+        assert token != client.release_token
+        rows = client.native('search_read', [[]], dict(fields=['title', 'body', 'revision'], limit=1), workspace='A')
+        before, = rows
+        status, response = client.request('/web/dataset/call_kw/mp.example.note.write',
+            dict(jsonrpc='2.0', method='call', id=1, params=dict(model='mp.example.note', method='write',
+                args=[[before['id']], dict(title='Stale release must not write')],
+                kwargs=dict(context=dict(expected_revision=before['revision'])))),
+            'A', {'X-MP-Client-Release': token})
+        assert status == 200 and response['error']['data']['name'].endswith('.ClientReleaseMismatch')
+        assert client.native('read', [[before['id']], ['title', 'body', 'revision']], workspace='A') == rows
+        write(path, dict(result='passed', actual_previous_release_token_denied=True, no_note_mutation=True,
+                         generation=load(self.private / 'target.json')['generation']))
+        print(json.dumps(dict(result='passed', stale_client_write_denied=True)))
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=['provision', 'prepare', 'initialize', 'observe', 'status', 'install_notes', 'resume_notes_install', 'install_background', 'workflow'])
+    parser.add_argument('phase', choices=['provision', 'prepare', 'initialize', 'observe', 'status', 'install_notes', 'resume_notes_install', 'install_background', 'workflow', 'stale_client'])
     parser.add_argument('site', choices=ADDONS)
     parser.add_argument('--run', default='cf-01')
     parser.add_argument('--candidate', type=Path)

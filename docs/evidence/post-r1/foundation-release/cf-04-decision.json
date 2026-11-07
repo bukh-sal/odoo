@@ -1,0 +1,158 @@
+{
+  "gate": "CF-04",
+  "result": "passed",
+  "checks": [
+    "CF-G",
+    "CF-H",
+    "CF-I",
+    "CF-J"
+  ],
+  "weight": 35,
+  "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "sites": {
+    "aurora": {
+      "operation": "6814381e-fb89-44d7-bd9f-d40c0a5f6056",
+      "plan_hash": "sha256:80c22f9f1d2246aaaac3b0745302081f6c9a32d31af8d35cf1f3cbd1481de5e3",
+      "candidate": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "business": "sha256:fcd3ad45c081e5eaaad32bcddd70f132cceb0f3f6b3249d7fb11fedf45c2377f",
+      "preserved_business": true,
+      "shared_schema": true,
+      "review_digest": "sha256:b18f4d0c68addcaf67339e2de89b7df2a42c03380fdee12c9593c7acae8c600e",
+      "approval_digest": "sha256:06080851b283bcb44788bf87273926c960e09916c1a26c3aa641dfe2a2e578b5",
+      "retained_files": 42,
+      "jobs": {
+        "result": "passed",
+        "label": "final46",
+        "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+        "timing_actor_workspace_preserved": true,
+        "stale_claim_denied": true,
+        "queue": {
+          "0a451180-01f5-4d4b-a96d-c136c5fcc2fc": {
+            "at": "2026-11-07T23:23:39",
+            "key": "cf-pending",
+            "actor": 2,
+            "error": null,
+            "state": "pending",
+            "handler": "org.example.background:report",
+            "attempts": 0,
+            "deadline": "2026-11-08T03:23:39",
+            "workspace": 1,
+            "generation": 8
+          },
+          "60a00ac0-90ae-4beb-831e-e0915b28bf1c": {
+            "at": "2026-11-07T23:23:39",
+            "key": "da195c58-6657-4138-9ebd-36cde44be5e8:1",
+            "actor": 2,
+            "error": null,
+            "state": "pending",
+            "handler": "org.example.background:remind",
+            "attempts": 0,
+            "deadline": "2026-11-07T23:24:39",
+            "workspace": 1,
+            "generation": 8
+          },
+          "c5d0e649-d53a-47ed-b500-7e3e1627c1c8": {
+            "at": "2026-11-07T19:58:47.023317",
+            "key": "cf-running",
+            "actor": 2,
+            "error": null,
+            "state": "pending",
+            "handler": "org.example.background:report",
+            "attempts": 1,
+            "deadline": "2026-11-07T23:23:39",
+            "workspace": 1,
+            "generation": 9
+          }
+        }
+      },
+      "workflow": {
+        "result": "passed",
+        "label": "final46",
+        "site": "aurora",
+        "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+        "stock_list_form": true,
+        "workflow_preserved": true,
+        "app_denial": true,
+        "scoped_notes": {
+          "A": 1,
+          "B": 2
+        },
+        "cross_scope_and_viewer_denied": true
+      }
+    },
+    "maintenance": {
+      "operation": "819dadaf-43b1-41fa-bef9-be0364008927",
+      "plan_hash": "sha256:fed0aec22d3991a1e144d18614a0abb8e9bd01d9124bee8df0109047d2084cd6",
+      "candidate": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+      "business": "sha256:a20cc2a95e946b1f7e8f663fb14e9d22429b2b87a0cc7ab27072a677d84590c8",
+      "preserved_business": true,
+      "shared_schema": true,
+      "review_digest": "sha256:b5b1d2ec76de8845ad2b844604499af0b706b571e40aba7fb3cdd2d4a00461b2",
+      "approval_digest": "sha256:06c59ebfd09906abace00ca23ee3dfa96f3bc232302c68d227d59d97790359ab",
+      "retained_files": 52,
+      "jobs": {
+        "result": "passed",
+        "label": "final46",
+        "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+        "timing_actor_workspace_preserved": true,
+        "stale_claim_denied": true,
+        "queue": {
+          "d1651559-7b05-4300-8d52-e0f26c7149c1": {
+            "at": "2026-11-07T19:26:02.136326",
+            "key": "cf-running",
+            "actor": 2,
+            "error": null,
+            "state": "completed",
+            "handler": "org.example.background:report",
+            "attempts": 2,
+            "deadline": "2026-11-07T23:23:47",
+            "workspace": 1,
+            "generation": 5
+          },
+          "f1e2e512-611c-4a90-978f-b0fed353c64b": {
+            "at": "2026-11-07T23:23:47",
+            "key": "cf-pending",
+            "actor": 2,
+            "error": null,
+            "state": "pending",
+            "handler": "org.example.background:report",
+            "attempts": 0,
+            "deadline": "2026-11-08T03:23:47",
+            "workspace": 1,
+            "generation": 4
+          },
+          "f587a9c6-49cd-494b-8780-5969b7db96be": {
+            "at": "2026-11-07T23:23:47",
+            "key": "50db6973-f82a-49be-9fe9-2ed726c96992:1",
+            "actor": 2,
+            "error": null,
+            "state": "pending",
+            "handler": "org.example.background:remind",
+            "attempts": 0,
+            "deadline": "2026-11-07T23:24:47",
+            "workspace": 1,
+            "generation": 4
+          }
+        }
+      },
+      "workflow": {
+        "result": "passed",
+        "label": "final46",
+        "site": "maintenance",
+        "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+        "stock_list_form": true,
+        "workflow_preserved": true,
+        "app_denial": true,
+        "scoped_notes": {
+          "A": 1,
+          "B": 2
+        },
+        "cross_scope_and_viewer_denied": true
+      }
+    }
+  },
+  "recovery": "cf-04-core46-recovery.json",
+  "original_gap": "cf-04-recovery-gap.json",
+  "original_fault_recovery": "cf-04-core45-recovery.json",
+  "final_guard_adr": "../../architecture-decisions/0070-empty-shared-schema-recovery.md"
+}
