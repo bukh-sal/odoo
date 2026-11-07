@@ -174,16 +174,23 @@ scheduled start. It is incomplete, preserved, and retired:185 jobs completed,
 37 remaining jobs cancelled after full drain. Added the proven BG04 reconnect/
 warm-up before eligibility, with distinct attempt keys; no target was relaxed.
 [Diagnostic](evidence/post-r1/background-execution/bx-04-initial-sustained-diagnostic.json).
-The fresh180-second hot case is running in session28074, anchor
-`2026-11-07T06:17:58Z`, with150 reminders and72 variable bulk jobs at0.4/s.
-Its record is `.local/background-qualification/bx-04-capacity-01/bx04-sustained-hot-02.json`.
-Do not replay seed `bx04-sustained-seed-hot-02`. Next inspect the complete hot
-result, then cover the equivalent many-workspace case and fresh enqueue pressure.
-This case preloads future eligibility; it does not measure a concurrent live
-producer's enqueue commits. Keep that distinction in the next experiment.
-The workers drain on successful qualification. No uncertain mutation or remote
-effect is pending. `tests/background_sustained_load.py` owns the active case;
-`tests/background_sustained.py` records settled setup/upgrade and prior cleanup.
+The fresh180-second hot case passed all eight fixed targets. All222 jobs
+completed once:150 scoped notifications,54 exact native reports and18 variable
+CPU results, Notes unchanged. Reminder start p95 2.096s (max2.594s), bulk start
+p95 187ms. Both web p95 bounds, connection/CPU/lock headroom and listener checks
+passed. The profile drained. [Hot evidence](evidence/post-r1/background-execution/bx-04-sustained-hot.json).
+Its source is checkpoint0c110ef8fba, private result `bx04-sustained-hot-02.json`;
+this trace preloaded future eligibility, and makes no fresh-enqueue claim.
+The many-workspace live case is now running in session15630. It enqueues72
+bulk jobs at0.4/s in fresh scoped transactions across70 workspaces, alongside
+150 preloaded reminders and paired stock Odoo HTTP for180s. Native producer
+container will be `mp-r0-r1releaseb152ddffba06-bx04-live-producer-many-live`;
+its source is committed at0fc6136c527. Private result:
+`.local/background-qualification/bx-04-capacity-01/bx04-sustained-many-live.json`.
+Do not replay this seed/producer. Inspect result and source logs before any
+recovery. On success, producer exits, jobs settle, and the reviewed fleet drains.
+Next qualify fairness/burst/advice comparisons, saturation/staleness, process
+loss and recurrence. No unresolved external effect or user blocker.
 Reuse reviewed fleet resizing; automatic sizing
 requires measured benefit and its own release/downscale drills. Native recovery operation was
 `858a5491-0997-494a-bd23-8a86788d325d`; its private phase record is
