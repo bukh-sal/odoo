@@ -4,6 +4,8 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+from datetime import datetime, timezone
+from uuid import uuid4
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / 'release'), str(ROOT / 'tools'),
@@ -14,6 +16,10 @@ from background_site import BackgroundSite, CATALOG_PLUGINS
 from stress_sites import ADDONS, POSTGRES, PROXY, SEED_APP
 from modular_platform.catalog import Catalog
 from modular_platform.deployment import DockerObserver
+from modular_platform.lifecycle_planning import prepare_current_install_targets, installation_id
+from modular_platform.native_executor import StagedNativeExecutor
+from modular_platform.operator_store import OperatorStore
+from stress_http import StressClient
 
 
 class FoundationSite(BackgroundSite):
@@ -69,13 +75,93 @@ class FoundationSite(BackgroundSite):
         write(path, result)
         print(json.dumps(result))
 
+    def install_notes(self):
+        self.install_selected(['org.example.notes'], 'notes-install')
+
+    def install_background(self):
+        self.install_selected(['org.example.background'], 'background-install')
+
+    def install_selected(self, plugins, label):
+        path = self.local / (label + '.json')
+        assert not path.exists(), 'Inspect the recorded attempt before mutation'
+        target_path = self.private / 'target.json'
+        target = load(target_path)
+        validator = configuration(self.private / 'trust.json')
+        catalog_path = self.private / 'catalog'
+        catalog = Catalog(catalog_path, validator, readonly=True)
+        executor = StagedNativeExecutor(OperatorStore(self.private / 'control'), target_path, catalog_path, validator)
+        observed = executor.observer.read()
+        fixture = load(self.local / 'fixtures.json')
+        targets = [dict(installation_id=installation_id(observed['sites'][0], plugin),
+                        site_id=observed['sites'][0]['site_id'], workspace_id=w['public_id'],
+                        plugin_id=plugin, action='install')
+                   for w in fixture['workspaces'].values() for plugin in plugins]
+        bundle = prepare_current_install_targets(executor.observer.state(observed, catalog.snapshot()),
+            observed['sites'], catalog.snapshot(), activation_targets=targets, operation_id=str(uuid4()),
+            created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+        result = dict(phase='registering', operation_id=bundle['plan']['operation_id'], plan_hash=bundle['plan_hash'])
+        write(path, result)
+        store = executor.store
+        store.register(bundle, executor._validate())
+        store.review(result['operation_id'], executor._validate())
+        store.approve(result['operation_id'], exact_hash=bundle['plan_hash'], noninteractive=True,
+                      revalidate=executor._validate(), acknowledgments={'trust_expansion': True, 'permission_expansion': True})
+        result['phase'] = 'applying'
+        write(path, result)
+        applied = executor.apply(result['operation_id'])
+        assert applied['state'] == 'completed'
+        result.update(phase='verified', image=load(target_path)['image_id'])
+        write(path, result)
+        print(json.dumps(result))
+
+    def workflow(self):
+        label = self.args.label
+        assert label.replace('-', '').isalnum()
+        path = self.local / ('workflow-' + label + '.json')
+        assert not path.exists(), 'Use a distinct evidence label'
+        alice, bob, operator = [StressClient(self, who) for who in ('alice', 'bob', 'operator')]
+        notes = {}
+        for space, writer in [('A', alice), ('B', bob)]:
+            title = 'Consolidated scoped fixture ' + space
+            if label == 'baseline':
+                assert writer.native('search_count', [[('title', '=', title)]], workspace=space) == 0
+                writer.native('create', [{'title': title, 'body': 'Synthetic migration witness'}], workspace=space)
+            rows = alice.native('search_read', [[]], {'fields': ['title', 'revision']}, workspace=space)
+            assert len(rows) == 1 and rows[0]['title'] == title
+            notes[space] = rows[0]['id']
+        alice.native('create', [{'title': 'Denied viewer write'}], workspace='B', deny=True)
+        bob.native('read', [[notes['A']], ['title']], workspace='B', deny=True)
+        alice.native('read', [[notes['B']], ['title']], workspace='A', deny=True)
+        app = load(self.local / 'app-fixtures.json')
+        if self.args.site == 'aurora':
+            model, ident, reader, denied = 'mp.aurora.task', app['task'], bob, operator
+            field, expected = 'stage_id', app['done']
+        else:
+            model, ident, reader, denied = 'maintenance.request', app['request'], alice, bob
+            field, expected = 'stage_id', app['done']
+        if label == 'baseline':
+            assert reader.native('write', [[ident], {field: expected}], workspace=None, model=model)
+        row = reader.native('read', [[ident], ['name', field]], workspace=None, model=model)[0]
+        assert row[field][0] == expected
+        denied.native('read', [[ident], ['name']], workspace=None, model=model, deny=True)
+        views = reader.native('get_views', [], {'views': [[False, 'list'], [False, 'form']]},
+                              workspace=None, model=model)
+        assert 'list' in views['views'] and 'form' in views['views']
+        result = dict(result='passed', label=label, site=self.args.site,
+                      image=load(self.private / 'target.json')['image_id'],
+                      stock_list_form=True, workflow_preserved=True, app_denial=True,
+                      scoped_notes=notes, cross_scope_and_viewer_denied=True)
+        write(path, result)
+        print(json.dumps(result))
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=['prepare', 'initialize', 'observe', 'status'])
+    parser.add_argument('phase', choices=['prepare', 'initialize', 'observe', 'status', 'install_notes', 'install_background', 'workflow'])
     parser.add_argument('site', choices=ADDONS)
     parser.add_argument('--run', default='cf-01')
     parser.add_argument('--candidate', type=Path)
+    parser.add_argument('--label', default='baseline')
     args = parser.parse_args()
     if args.run != 'cf-01':
         parser.error('Only the explicitly owned cf-01 fixture is supported')

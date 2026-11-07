@@ -133,7 +133,14 @@ print('New owned configuration volumes seeded')
         required={row['digest'] for row in load(self.kit/'plugins/index.json')['packages']}
         if not required.issubset({row['digest'] for row in catalog.snapshot()}):
             raise ValueError('Import all reviewed reference kit archives before initialization')
-        self.initialize_core(state,'mp_shell,auth_password_policy')
+        addon=getattr(self.args,'native_app',None)
+        if addon and addon not in inspect_image(state['image_id'])['inventory']['native_addons']:
+            raise ValueError('Selected native application is absent from this release image')
+        # Bootstrap selection is explicit operator input, never plugin metadata.
+        if addon:
+            state['native_app']=addon
+            write(self.local/'state.json',state)
+        self.initialize_core(state,'mp_shell,auth_password_policy'+(','+addon if addon else ''))
         self.publish(state)
     def initialize_core(self,state,addons):
         self.phase(state,'starting_empty_database')
@@ -195,4 +202,6 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=['prepare','initialize','install','status']);parser.add_argument('--kit',type=Path,required=True);parser.add_argument('--workdir',type=Path,required=True)
     parser.add_argument('--reference-fixture',action='store_true');parser.add_argument('--port',type=int,default=18100)
     parser.add_argument('--subnets', nargs=2, metavar=('RUNTIME', 'EDGE'))
+    parser.add_argument('--native-app', choices=['mp_aurora_tasks','maintenance'],
+                        help='Explicit fresh-fixture app selection; requires its addon in the selected kit image')
     args=parser.parse_args();getattr(Reference(args),args.action)()

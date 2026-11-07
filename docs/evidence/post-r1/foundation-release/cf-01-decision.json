@@ -1,0 +1,18 @@
+{
+  "gate": "CF-01",
+  "result": "passed",
+  "utc": "2026-11-07T19:10:44.516298+00:00",
+  "checks": [
+    "CF-A",
+    "CF-B"
+  ],
+  "weight": 10,
+  "baseline_image": "sha256:18f2c5a29cfe45550ed01dca6e8fb3cdf81dec3c24055d97cc57c4cb9c8c8751",
+  "source": "cf-01-freeze.json",
+  "observation": "cf-01-baseline-observed.json",
+  "contract_major": 1,
+  "limits": [
+    "Core30 compatibility baseline recomposed, not historical stock release",
+    "Common core30-to45 upgrade and Maintenance boot not yet qualified"
+  ]
+}

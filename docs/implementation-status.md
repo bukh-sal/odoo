@@ -7,20 +7,20 @@ Goal: implement specification v1.1 through R1/G7. User authorized implementation
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **CF-01 feasibility/freeze in progress.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
-- Active item: **CF-01: common release policy and core30 compatibility baseline feasibility.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
+- Current phase/gate: **CF-02 release inputs in progress.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
+- Active item: **CF-02: build/reproduce current common image and assemble declared release inputs.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
 - Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Consolidated foundation release (current goal)
 
-User authorized the full goal on7 November2026. One active item: **CF-01**.
-Progress **0/100 weighted points;0/12 CF checks verified**. Original R1 remains99/99.
+User authorized the full goal on7 November2026. One active item: **CF-02**.
+Progress **10/100 weighted points;2/12 CF checks verified**. Original R1 remains99/99.
 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
-| CF-01 |10| in_progress | [ ] CF-A policy/freeze; [ ] CF-B baseline feasibility | Inspect/build authentic core30 platform sources under the common policy, boot and observe without weakening guards. |
-| CF-02 |20| not_started | [ ] CF-C reproducible image; [ ] CF-D kit inputs | Current core45/common policy after feasibility. |
+| CF-01 |10| passed | [x] CF-A policy/freeze; [x] CF-B baseline feasibility | [Freeze](evidence/post-r1/foundation-release/cf-01-freeze.json). Baseline image18f2c5a built; fresh Aurora project2fc90990a56f configured on18130; boot/current observation next. |
+| CF-02 |20| in_progress | [ ] CF-C reproducible image; [ ] CF-D kit inputs | Current core45/common policy after feasibility. |
 | CF-03 |20| not_started | [ ] CF-E distinct installed apps; [ ] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
 | CF-04 |35| not_started | [ ] CF-G migration; [ ] CF-H closed fault; [ ] CF-I fresh restore/resume/forward; [ ] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
 | CF-05 |15| not_started | [ ] CF-K worker/regression/UI; [ ] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |
@@ -28,12 +28,13 @@ Progress **0/100 weighted points;0/12 CF checks verified**. Original R1 remains9
 Current blockers: none. Docker Desktop Linux engine was stopped; local start
 succeeded (engine29.9.2). No pre-existing container/data has been changed.
 
-Resume capsule (CF takes precedence over historical capsules below): HEAD at
-start`e2599fc2ad9`, branch`platform/r1`; no live CF site or uncertain operation.
-Retained stock image`07cacdf471a5` and RTL dependency`32cc96ae4c86` are available.
-Next: freeze the union policy, create a private baseline checkout, record exact
-core30 source composition and test boot/current-operator observation. Preserve
-old profiles and source notices. Only advance after CF-A/B evidence passes.
+Resume capsule (CF takes precedence over historical capsules below): CF-01
+[passed](evidence/post-r1/foundation-release/cf-01-decision.json). Owned Aurora
+project`mp-r0-r1release2fc90990a56f` is core-only ready on18130, image18f2c5a,
+configuration1, populated Aurora app; no uncertain operation. Maintenance is
+not provisioned. Next CF-02: build core45/current packages under the exact same
+policy, independently reproduce inventory, assemble/rehearse the local kit.
+Do not alter build inputs while a builder is active. Raw logs remain private.
 
 ## Post-R1 work
 

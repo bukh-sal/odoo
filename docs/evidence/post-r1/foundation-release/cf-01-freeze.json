@@ -1,0 +1,75 @@
+{
+  "check": "CF-A",
+  "result": "passed",
+  "utc": "2026-11-07T19:09:23.498073+00:00",
+  "policy_sha256": "80822adbceb620deef634a8717450434de5fe80d44341396779b7269a8faf830",
+  "policy": {
+    "schema_version": 1,
+    "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+    "server_wide_modules": [
+      "base",
+      "web"
+    ],
+    "addons": [
+      "base",
+      "web",
+      "base_setup",
+      "auth_totp",
+      "auth_passkey",
+      "auth_password_policy",
+      "base_import",
+      "bus",
+      "web_tour",
+      "html_editor",
+      "iap",
+      "mail",
+      "maintenance",
+      "mp_aurora_tasks",
+      "mp_compat",
+      "mp_identity",
+      "mp_core",
+      "mp_shell",
+      "mp_example_notes",
+      "mp_example_notes_labels",
+      "mp_example_canvas",
+      "mp_example_notes_stats",
+      "mp_example_background"
+    ],
+    "explicit_install": [
+      "web",
+      "auth_password_policy",
+      "mp_shell"
+    ],
+    "platform_sdk": true,
+    "stock_webclient": true,
+    "profile": "Consolidated stock foundation: independently selected apps and reviewed background roles",
+    "reference_packages": [
+      "plugins/notes/plugin.toml",
+      "plugins/notes_labels/plugin.toml",
+      "plugins/canvas/plugin.toml",
+      "plugins/notes_stats/plugin.toml",
+      "plugins/background/plugin.toml"
+    ]
+  },
+  "contract_freeze": {
+    "result": "passed",
+    "major": 1,
+    "files": 106,
+    "rows": 8,
+    "inventory_sha256": "f26df49f71daa75c0692f9da18beb663cb9f2ec4041b673b1b46ffdaffd41773"
+  },
+  "baseline_composition": {
+    "base_commit": "8f8ca58b429f7da51fe2b7f8e121154375e998eb",
+    "platform_source_commit": "334fc9b6a3d27735c20ebaae45ad2a666aea0b44",
+    "replaced_paths": [
+      "platform_addons/mp_core",
+      "packages/platform_sdk",
+      "packages/contracts"
+    ],
+    "common_policy": "deploy/distribution-r1-foundation.json",
+    "not_historical_release": true
+  },
+  "upgrade_guard_sha256": "58e9a92d59e828647ad13cec8a25a25c5efe07660606c5ca6f71232b6338213d",
+  "baseline_build": "../../G7/cf01-baseline-02/candidate-build.json",
+  "limits": "Baseline build passed, boot/current-operator observation pending; no upgrade path claim yet."
+}

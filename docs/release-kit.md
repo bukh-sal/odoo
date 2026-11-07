@@ -1,5 +1,16 @@
 # Local R1 release kit rehearsal
 
+The consolidated foundation is being qualified separately under the
+[CF checklist](../planning/foundation_release_consolidation.md); older kit
+results below retain their original scope. Its common image makes Aurora Tasks,
+Maintenance and the background reference available without installing them all.
+For a **fresh disposable** kit fixture, `release/initialize_reference.py initialize`
+accepts `--native-app mp_aurora_tasks` or `--native-app maintenance`, alongside
+the ordinary kit/workdir arguments. An absent addon is refused before database
+creation. Omit the option for the standard reference recipe. This is explicit
+operator bootstrap input; it grants no runtime approval or automatic activation
+of unrelated plugins. Existing sites use reviewed lifecycle operations.
+
 G7 passed for the selected local kit at `.local/releases/r1-0.1.26`. The clean
 offline operator, fresh install, independent worker and developer walkthrough
 passed. [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json) and [local handoff](r1-handoff.md)
