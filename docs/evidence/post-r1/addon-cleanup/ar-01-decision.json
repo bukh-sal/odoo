@@ -1,0 +1,70 @@
+{
+  "result": "passed",
+  "checks": [
+    "AR-A",
+    "AR-B"
+  ],
+  "utc": "2026-11-07T21:08:23.272758+00:00",
+  "audit": "ar-01-source-audit.json",
+  "counts": {
+    "framework": 15,
+    "application": 2,
+    "example": 5,
+    "test": 24,
+    "remove": 629,
+    "extract_then_remove": 1
+  },
+  "reference_classification": {
+    "runtime_hr_examples": "Four documentation/doctest strings, replace with retained web example",
+    "retained_fixture_refs": "23 native fixture modules remain test-only",
+    "rpc": "Legacy endpoint tests need test-only fixture or relevant auth replacement; no production adoption",
+    "http_routing": "Extract MockRequest test helper",
+    "account": "Replace accounting-dependent main flow with owned foundation flow"
+  },
+  "baseline": {
+    "image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+    "observed": {
+      "modules": {
+        "maintenance": "19.0.1.0",
+        "mail": "19.0.1.19",
+        "auth_passkey": "19.0.1.1",
+        "auth_password_policy": "19.0.1.0",
+        "auth_totp": "19.0.1.0",
+        "base": "19.0.1.3",
+        "base_import": "19.0.2.0",
+        "base_setup": "19.0.1.0",
+        "bus": "19.0.1.0",
+        "html_editor": "19.0.1.0",
+        "iap": "19.0.1.1",
+        "mp_compat": "19.0.0.1.1",
+        "mp_core": "19.0.0.1.46",
+        "mp_identity": "19.0.0.1.10",
+        "mp_shell": "19.0.0.1.19",
+        "web": "19.0.1.0",
+        "web_tour": "19.0.1.0"
+      },
+      "tables": {
+        "iap_account": 0,
+        "fetchmail_server": 0,
+        "discuss_channel": 2,
+        "mail_message": 24,
+        "maintenance_request": 0
+      },
+      "mail_xmlids": 1843,
+      "iap_xmlids": 52
+    },
+    "synthetic_retention_seed": {
+      "service": 3,
+      "account": 1,
+      "mailbox": 1,
+      "channel": 3,
+      "message": 25,
+      "request": 1,
+      "external_requests": 0
+    },
+    "kit_immutable": true
+  },
+  "adr": "0072",
+  "contract_freeze": "Existing major1 106 files/8 rows; no public change yet",
+  "future_guard": "Explicit reviewed transition required; ordinary guard remains strict"
+}

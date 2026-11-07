@@ -13,8 +13,8 @@ our own supported contracts, data migrations, security and recovery guarantees.
 Source removal/moves still require dependency/import/asset/data checks and
 affected qualification; do not delete useful regression tests for module count.
 See `docs/architecture-decisions/0071-owned-fork-and-addon-boundaries.md` and
-`docs/addon-retention-review.md`. The user requested this assessment; bulk source
-pruning and runtime restructuring have not yet been executed.
+`docs/addon-retention-review.md`. The user authorized implementing the cleanup/extraction/restructuring and
+release requalification under `planning/addon_cleanup.md` on7 November2026.
 
 The user authorized implementing `planning/modular_platform_spec.md` v1.1 through R1, with local Git commits and disposable container tests. No publication, paid services, production deployment or destruction of existing user data is authorized.
 
