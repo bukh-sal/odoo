@@ -82,6 +82,8 @@ class RestoreDispatchTests(unittest.TestCase):
             ({JOB_IDENTITY},SCHEMA,schema_with_jobs,'19.0.0.1.30','19.0.0.1.31'),
             ({EVENT_HISTORY},schema_with_jobs,schema_with_events,'19.0.0.1.32','19.0.0.1.33'),
             (RECURRENCE,schema_with_events,PHYSICAL_SCHEMA,'19.0.0.1.36','19.0.0.1.37'),
+            ({JOB_IDENTITY,EVENT_HISTORY}|RECURRENCE,SCHEMA,PHYSICAL_SCHEMA,'19.0.0.1.30','19.0.0.1.45'),
+            ({JOB_IDENTITY,EVENT_HISTORY}|RECURRENCE,SCHEMA,PHYSICAL_SCHEMA,'19.0.0.1.30','19.0.0.1.46'),
         ):
             checkpoint,observed=snapshot(before),snapshot(after)
             change=dict(addon='mp_core',previous_version=prior,target_version=target)
@@ -97,6 +99,32 @@ class RestoreDispatchTests(unittest.TestCase):
                 change['previous_version']='19.0.0.1.29'
                 with self.assertRaisesRegex(OperatorError,'schema requires independent reconciliation'):
                     self.recovery._source_dispatch({'dispatch_profile':checkpoint},bundle)
+
+    def test_combined_introduction_never_allows_other_paths_or_schema_changes(self):
+        def snapshot(schema):
+            return dict(profile='r1-native-dispatch-v1',schema_digest=data_digest(schema),
+                        tables={table:dict(rows=0) for table in schema})
+        previous,current=snapshot(SCHEMA),snapshot(PHYSICAL_SCHEMA)
+        bundle=dict(plan=dict(operation_type='core_upgrade'),operation_lock=dict(native_core_changes=[
+            dict(addon='mp_core',previous_version='19.0.0.1.30',target_version='19.0.0.1.46')]))
+        allowed=RestoreExecutor._empty_retention_table_transition
+        self.assertTrue(allowed(previous,current,bundle))
+        for version in ('19.0.0.1.44','19.0.0.1.47'):
+            changed=copy.deepcopy(bundle)
+            changed['operation_lock']['native_core_changes'][0]['target_version']=version
+            self.assertFalse(allowed(previous,current,changed))
+        changed=copy.deepcopy(bundle);changed['plan']['operation_type']='deploy'
+        self.assertFalse(allowed(previous,current,changed))
+        changed=copy.deepcopy(bundle);changed['operation_lock']['native_core_changes'][0]['addon']='mp_shell'
+        self.assertFalse(allowed(previous,current,changed))
+        for table in PHYSICAL_SCHEMA:
+            changed=copy.deepcopy(current);del changed['tables'][table]
+            self.assertFalse(allowed(previous,changed,bundle),table)
+        for field in ('schema_digest','profile'):
+            changed=copy.deepcopy(current);changed[field]='unrecognized'
+            self.assertFalse(allowed(previous,changed,bundle))
+        changed=copy.deepcopy(current);changed['tables']['unknown_effects']=dict(rows=0)
+        self.assertFalse(allowed(previous,changed,bundle))
 
     def test_queue_arriving_after_readiness_stays_before_traffic_fence(self):
         decision=self.decision();self.readiness_change=lambda:self.effects.update(outbox_table=True)

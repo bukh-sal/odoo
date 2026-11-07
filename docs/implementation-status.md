@@ -2,44 +2,47 @@
 
 Goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T19:28:02.441787+00:00
+- Updated UTC: 2026-11-07T19:40:17.373689+00:00
 - Specification SHA-256: `c9c355996b52c622c6432f22d1cf00bea03ec3be202cafa466371fcc2adeb201`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **CF-04 shared migration and independent recovery in progress.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
-- Active item: **CF-04: upgrade Maintenance, then fault/restore/separately resume Aurora while its peer works.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
+- Current phase/gate: **CF-02 reopened for corrected core46 release inputs.** G7 and BX-01–BX-05 remain passed for their recorded profiles. Consolidated release is not yet qualified.
+- Active item: **CF-02: build/reproduce/package corrected core46; then CF-04 final-candidate repetition.** [Plan](../planning/foundation_release_consolidation.md) · [ADR0069](architecture-decisions/0069-consolidated-foundation-release.md).
 - Current result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Consolidated foundation release (current goal)
 
-User authorized the full goal on7 November2026. One active item: **CF-04**.
-Progress **50/100 weighted points;6/12 CF checks verified**. Original R1 remains99/99.
+User authorized the full goal on7 November2026. One active item: **CF-02**.
+Progress **30/100 current weighted points;4/12 current CF checks verified (CF-02 reopens for core46)**. Original R1 remains99/99.
 
 | Gate | Weight | State | Required checks | Evidence/next action |
 | --- | --- | --- | --- | --- |
 | CF-01 |10| passed | [x] CF-A policy/freeze; [x] CF-B baseline feasibility | [Freeze](evidence/post-r1/foundation-release/cf-01-freeze.json). [Baseline decision](evidence/post-r1/foundation-release/cf-01-decision.json); core30 boot/current observation passed. |
-| CF-02 |20| passed | [x] CF-C reproducible image; [x] CF-D kit inputs | Imagec029eecb and independent no-cache/network-disabled ff699881 reproduce exact inventoryda706465; kit assembly next. |
+| CF-02 |20| in_progress | [ ] CF-C final46 image; [ ] CF-D final46 kit | Imagec029eecb and independent no-cache/network-disabled ff699881 reproduce exact inventoryda706465; kit assembly next. |
 | CF-03 |20| passed | [x] CF-E distinct installed apps; [x] CF-F populated workflows/permissions | Fresh owned Aurora/Maintenance targets. |
-| CF-04 |35| in_progress | [ ] CF-G migration; [ ] CF-H closed fault; [ ] CF-I fresh restore/resume/forward; [ ] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
+| CF-04 |35| in_progress | [ ] CF-G migration; [ ] CF-H final46 closed fault; [ ] CF-I fresh restore/resume/forward; [ ] CF-J useful peer | Independently approved common upgrade, real schema witnesses. |
 | CF-05 |15| not_started | [ ] CF-K worker/regression/UI; [ ] CF-L kit/handoff/retirement | Exact release qualification and owned cleanup. |
 
-Current blockers: none. Docker Desktop Linux engine was stopped; local start
+Blocker CF-RECOVERY-SKIP-01: bounded fix passed native recovery of the original45 attempt; final46 release qualification is pending. No external/user blocker. Docker Desktop Linux engine was stopped; local start
 succeeded (engine29.9.2). No pre-existing container/data has been changed.
 
-Resume capsule (CF takes precedence over historical capsules below): CF-04 active,
-50weighted/6of12checks. Maintenance project494ba8611541 is currentcore45/config4,
-imagec029eecb, upgrade3f039c64 completed and verified (four new shared tables,
-app/authority/file preservation, queue timing/scope, stale claim refusal and
-native workflows). Independently reviewed fleet generation1 ready with one
-urgent/one bulk lane; profile approval2a3302f7. Peer runs while Aurora remains
-core30/config3 on18130/project2fc90990a56f, with its original three queued/claimed
-jobs and retained file. Next `foundation_lifecycle.py fault aurora --candidate
-.../cf02-foundation-current-01/candidate-build.json`: inject after publication,
-stop failed app, independent journal read and peer check. Then enqueue peer
-bulk work while Aurora is closed, perform fresh restore, verify while closed,
-separate resume, check old claim and retry forward. No uncertain operation now.
+Resume capsule (CF takes precedence over historical capsules below): sole active
+item CF-02 finalcore46 inputs. Original failed45 operation57346151 is recovered,
+verified and separately resumed; Aurora project2fc90990a56f is stable core30,
+fresh database/config5/image18f2c5a. Exact checkpoint business/files and queue
+scope/timing passed, old claim denied. Maintenance project494ba8611541/core45/
+config4/fleet1 remained operational;16 reports completed once/count2/points10
+while peer app was down/recovering. Gap CF-RECOVERY-SKIP-01 fix passed native45
+recovery and41targeted tests/106filefreeze; final46 repeat pending. SDK/core46
+changes exactly recovery guard plus two version fields. Next commit and build
+`cf02-foundation46-current-01`, reproduce without cache/RUN network and assemble
+a fresh46 kit. Keep the older draft's dated evidence; it cannot adopt a new
+image through source refresh. Then drain peer fleet, upgrade Maintenance45-to46,
+review new profile, fault Aurora30-to46 on attemptcore46, fresh restore/separate
+resume and forward retry. Both original failed and restore journals are settled;
+no uncertain mutation/process.30currentweighted/4of12currentchecks.
 
 ## Post-R1 work
 

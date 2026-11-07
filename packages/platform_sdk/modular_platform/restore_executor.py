@@ -206,8 +206,10 @@ class RestoreExecutor:
 
     @staticmethod
     def _empty_retention_table_transition(previous,current,bundle):
-        # A failed first upgrade can create the table while ingress and dispatch
-        # are fenced. Refuse any identity rows or any other schema difference.
+        # A failed first introduction can create known empty tables while
+        # ingress/dispatch are fenced. Version pairs are qualified explicitly;
+        # do not infer arbitrary skipped paths from numeric version ordering.
+        # Refuse populated additions or any other schema difference.
         changes=bundle['operation_lock'].get('native_core_changes',[])
         if (bundle['plan']['operation_type']!='core_upgrade'
                 or previous['profile']!='r1-native-dispatch-v1' or current['profile']!=previous['profile']):
@@ -217,6 +219,8 @@ class RestoreExecutor:
             ('19.0.0.1.30', '19.0.0.1.31'): frozenset({JOB_IDENTITY}),
             ('19.0.0.1.32', '19.0.0.1.33'): frozenset({EVENT_HISTORY}),
             ('19.0.0.1.36', '19.0.0.1.37'): RECURRENCE,
+            ('19.0.0.1.30', '19.0.0.1.45'): frozenset({JOB_IDENTITY, EVENT_HISTORY}) | RECURRENCE,
+            ('19.0.0.1.30', '19.0.0.1.46'): frozenset({JOB_IDENTITY, EVENT_HISTORY}) | RECURRENCE,
         }
         added = next((transition.get((change['previous_version'], change['target_version']))
                       for change in changes if change['addon'] == 'mp_core'), None)

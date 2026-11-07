@@ -76,9 +76,11 @@ def prepare(site, candidate, label):
 
 def peer(site, label):
     assert site.args.site == 'aurora'
+    suffix = '-' + site.args.attempt if site.args.attempt else ''
+    label += suffix
     other = FoundationSite(argparse.Namespace(site='maintenance', run=site.args.run, label=label))
     target = load(other.private / 'target.json')
-    original = load(other.local / 'upgrade.json')
+    original = load(other.local / ('upgrade' + suffix + '.json'))
     assert original['phase'] == 'verified' and target['image_id'] == original['candidate']
     assert snapshot(target, 'maintenance') == original['business']
     other.workflow()
@@ -87,16 +89,18 @@ def peer(site, label):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=['upgrade', 'fault', 'restore', 'resume'])
+    parser.add_argument('phase', choices=['upgrade', 'fault', 'capture_fault', 'restore', 'resume'])
     parser.add_argument('site', choices=['aurora', 'maintenance'])
     parser.add_argument('--candidate', type=Path)
+    parser.add_argument('--attempt', choices=['', 'core46'], default='')
     args = parser.parse_args()
     args.run = 'cf-01'
     site = FoundationSite(args)
+    suffix = '-' + args.attempt if args.attempt else ''
     if args.phase != 'upgrade':
         assert args.site == 'aurora'
     if args.phase in ('upgrade', 'fault'):
-        path, record, native = prepare(site, load(args.candidate), args.phase)
+        path, record, native = prepare(site, load(args.candidate), args.phase + suffix)
         record['phase'] = 'applying'
         write(path, record)
         if args.phase == 'fault':
@@ -123,7 +127,7 @@ def main():
             subprocess.run(['docker', 'stop', failed_target['worker_id']], check=True,
                            stdout=subprocess.DEVNULL, timeout=45)
             # Independent host CLI reads the journal without connecting to Odoo.
-            raw = subprocess.check_output([sys.executable, '-I', str(ROOT / 'tools/modular.py'),
+            raw = subprocess.check_output([sys.executable, '-I', str(ROOT / 'tools/modular.py'), '--config', str(site.private / 'trust.json'),
                 'operations', '--store', str(native.store.root), 'show', record['operation']], timeout=30)
             assert json.loads(raw)['state'] == 'recovery_required'
             record.update(phase='recovery_required', independent_cli=True, failed_app_stopped=True,
@@ -140,13 +144,30 @@ def main():
             record.update(phase='verified', shared_schema=True, preserved_business=True)
         write(path, record)
     else:
-        path = site.local / 'fault.json'
+        path = site.local / ('fault' + suffix + '.json')
         record = load(path)
         native = executor(site)
         recovery = RestoreExecutor(native)
-        if args.phase == 'restore':
+        if args.phase == 'capture_fault':
+            # The first CLI check omitted its required trust-config argument.
+            # Capture the existing post-publication fault; never apply it again.
+            assert record['phase'] == 'applying'
+            status = native.store.status(record['operation'])
+            assert status['state'] == 'recovery_required' and status['phase'] == 'release_published'
+            assert status['mutation_started'] and not status['traffic_resumed']
+            failed = load(native.target_path)
+            state = json.loads(subprocess.check_output(['docker', 'inspect', failed['worker_id']]))[0]['State']
+            assert not state['Running'] and state['ExitCode'] == 0
+            raw = subprocess.check_output([sys.executable, '-I', str(ROOT / 'tools/modular.py'), '--config', str(site.private / 'trust.json'),
+                'operations', '--store', str(native.store.root), 'show', record['operation']], timeout=30)
+            assert json.loads(raw)['state'] == 'recovery_required'
+            record.update(phase='recovery_required', independent_cli=True, failed_app_stopped=True,
+                          peer_closed=peer(site, 'peer-while-closed'))
+        elif args.phase == 'restore':
             assert record['phase'] == 'recovery_required'
             decision = recovery.prepare(record['operation'])
+            record.update(phase='restoring', restore_digest=data_digest(decision))
+            write(path, record)
             recovery.execute(decision, exact_hash=data_digest(decision), noninteractive=True)
             target = load(native.target_path)
             assert target['image_id'] == record['base']['image_id']

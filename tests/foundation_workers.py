@@ -35,12 +35,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('phase', choices=['start', 'peer_work', 'verify', 'urgent', 'drain'])
     parser.add_argument('site', choices=['aurora', 'maintenance'])
+    parser.add_argument('--attempt', choices=['', 'core46'], default='')
     args = parser.parse_args()
     args.run = 'cf-01'
     site = FoundationSite(args)
     target = load(site.private / 'target.json')
     op = JobOperator(OperatorStore(site.private / 'control'), site.private / 'target.json')
-    path = site.local / 'workers.json'
+    suffix = '-' + args.attempt if args.attempt else ''
+    path = site.local / ('workers' + suffix + '.json')
     if args.phase == 'start':
         assert not path.exists()
         review = op.run('profile-review', urgent_lanes=1, bulk_lanes=1, shutdown_seconds=5)
@@ -54,20 +56,20 @@ def main():
     elif args.phase == 'peer_work':
         assert args.site == 'maintenance'
         other = site.local.parent / 'aurora'
-        fault = load(other / 'fault.json')
+        fault = load(other / ('fault' + suffix + '.json'))
         assert fault['phase'] == 'recovery_required' and fault['failed_app_stopped']
         assert OperatorStore(other / 'operator/control').status(fault['operation'])['state'] == 'recovery_required'
-        output = site.local / 'peer-work.json'
+        output = site.local / ('peer-work' + suffix + '.json')
         assert not output.exists()
-        code = f"FIXTURE={load(site.local / 'fixtures.json')!r}\nCOUNT=16\nPREFIX='cf-peer-recovery-'\n" + ENQUEUE
+        code = f"FIXTURE={load(site.local / 'fixtures.json')!r}\nCOUNT=16\nPREFIX={'cf-peer-recovery'+suffix+'-'!r}\n" + ENQUEUE
         started = datetime.now(timezone.utc).isoformat()
-        raw = shell(site, 'cf-peer-recovery-work', code)
+        raw = shell(site, 'cf-peer-recovery-work' + suffix, code)
         jobs, = [json.loads(line.split('=', 1)[1]) for line in raw.splitlines() if line.startswith('CF_PEER_JOBS=')]
         write(output, dict(phase='queued', jobs=jobs, started_utc=started, aurora_fault=fault['operation'],
                            target_digest=data_digest(target)))
         print(json.dumps(dict(result='queued', jobs=len(jobs), peer_app_down=True)))
     elif args.phase == 'verify':
-        output = site.local / 'peer-work.json'
+        output = site.local / ('peer-work' + suffix + '.json')
         record = load(output)
         assert record['phase'] == 'queued' and data_digest(target) == record['target_digest']
         ids = ','.join("'" + ident + "'" for ident in record['jobs'])

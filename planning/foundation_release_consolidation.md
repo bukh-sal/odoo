@@ -4,6 +4,13 @@ Authorized 7 November 2026. This follows the completed R1, stock WebClient,
 shared-foundation rehearsal and BG/BX work; it does not reopen those goals.
 Current state and evidence live in `docs/implementation-status.md`.
 
+CF-04 found a combined empty-schema recovery gap on the initial core45 candidate.
+[ADR0070](../docs/architecture-decisions/0070-empty-shared-schema-recovery.md)
+selects core46 with a bounded independent recovery fix. The core45 kit is a dated
+draft, not the final release. Reopen CF-02 for46, then repeat the controlled
+30-to46 fault/fresh restore with Maintenance on46 before the final forward
+upgrade. Retain and reconcile the original45 operation rather than replay it.
+
 Deliver one local, reproducible foundation release with the stock Odoo UI,
 current SDK/core and background execution. Qualify two independent populated
 deployments with different installed applications: Aurora Tasks and Maintenance.

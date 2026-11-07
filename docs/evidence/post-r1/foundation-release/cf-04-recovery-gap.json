@@ -1,0 +1,35 @@
+{
+  "result": "actual_gap_then_bounded_host_fix_pending_restore",
+  "operation": "57346151-f157-4c50-be6e-e48790f37826",
+  "original_error": "Failed dispatch schema requires independent reconciliation",
+  "failed_app_stopped": true,
+  "traffic_resumed": false,
+  "previous_schema": "sha256:10fba9a2c4bea88ea0a885a201017061e1751f7003bf143e90bfcf4404d41f0a",
+  "current_schema": "sha256:c0dba39181af64c44e3f7d94e6ac0fa4320a4b4d58ca090d83d2da6e99822960",
+  "new_tables": {
+    "mp_event_history": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_job_identity": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_job_occurrence": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mp_job_schedule": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "tests": {
+    "restore_dispatch": 15,
+    "contract_files": 106,
+    "contract_rows": 8,
+    "contract_major": 1
+  },
+  "adr": "../../architecture-decisions/0070-empty-shared-schema-recovery.md",
+  "corrected_host_source": "22055625dae1bf2d5a2681ca305bf86a4a26eeaaf4b10c6261876f72752b0629"
+}
