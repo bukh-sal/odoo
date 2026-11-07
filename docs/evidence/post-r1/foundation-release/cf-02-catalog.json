@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "old_kit_manifest": "cf8c53b92ace3faa78be3e06f8d48e5da9ff6fe2d141cb4717d4583f83a166f7",
+  "catalog_reconstructed_from_verified_archives": true,
+  "packages": 21,
+  "current_packages": [
+    "sha256:ed96df33c9021cf476a501b747aa81d9940dfb4175219fbd96b4a63af01d9a4a",
+    "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+    "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+    "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+    "sha256:a097495983516a655fc5c60b791623547669d35121a2f656d096101a49fd3966"
+  ],
+  "no_operator_or_application_state_copied": true
+}
