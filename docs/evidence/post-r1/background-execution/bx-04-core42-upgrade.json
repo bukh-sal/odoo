@@ -1,0 +1,19 @@
+{
+  "gate": "BX-04",
+  "state": "passed",
+  "operation": "4a2aa8e7-f6b9-4788-b06e-5ad12167fec4",
+  "previous_image": "sha256:4a9a06242dfd290f8724d110789782aaaa2036cced6a56054f5ab89965325db6",
+  "image": "sha256:ae91b0d33609f7993c356f202a0ad1d2149389e66e61cecedd39b1240c07a3d3",
+  "business_before": {
+    "mp_background_task": "a3b993113d7fa865de32258f32c1cd97",
+    "mp_background_notification": "88a4b1c63d228f937748bda79f16f00d",
+    "mp_example_note": "177c95d31175399335df49cfda671b9d"
+  },
+  "business_after": {
+    "mp_background_task": "a3b993113d7fa865de32258f32c1cd97",
+    "mp_background_notification": "88a4b1c63d228f937748bda79f16f00d",
+    "mp_example_note": "177c95d31175399335df49cfda671b9d"
+  },
+  "reference_version_unchanged": "0.2.1",
+  "traffic_resumed": true
+}

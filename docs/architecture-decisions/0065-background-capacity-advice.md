@@ -52,6 +52,18 @@ These are chosen development qualification inputs based on the already verified
 Aurora-style workload. They are not inferred production arrival rates. Change
 them only as a new recorded experiment; preserve failed attempts and reasons.
 
+The controlled burst comparison fixes72 bulk jobs across70 workspaces, all
+eligible together:18 native ten-row reports and54 CPU samples cycling250k,
+1m and5m iterations. Keep the same150 reminders and paired stock Odoo reads.
+Measure at least60s, retain bulk start p95≤60s and drain≤120s, and verify at
+least64 simultaneously ready bulk workspaces. Compare two warm bulk lanes
+with the count recommendation (one job estimated at2s) and per-handler work
+advice (report default2s, CPU default0.5s plus observed p95). Reuse an actual
+run if two policies select the same count. Record worker-lane seconds from
+eligibility to bulk drain, plus lane time across the full measurement window.
+Do not treat faster drain alone as useful-job benefit when all fixed service
+targets already hold; compare deadline misses and resource use too.
+
 Automatic bulk sizing is conditional. Enable it only if controlled profile
 changes improve useful-job latency or worker use over the fixed baseline while
 all web/headroom targets hold. Then qualify sustained signals, capped growth,
