@@ -7,7 +7,7 @@ import io
 import requests
 
 from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools import link_preview
+from odoo.addons.html_editor.tools import link_preview
 from odoo.tests.common import tagged
 
 

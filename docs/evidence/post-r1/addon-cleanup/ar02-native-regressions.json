@@ -1,0 +1,16 @@
+{
+  "result": "passed",
+  "image": "sha256:b51ce4ac0065df5071be663369b7445465de84d72a4724a581d03d5b1e7dcb2a",
+  "native_tests": 6,
+  "failed": 0,
+  "errors": 0,
+  "selected": "/mp_mail_gateway,/html_editor:TestController",
+  "cases": [
+    "TestFetchmail.test_fetchmail ... ",
+    "TestFetchmail.test_fetchmail_deactivation ... ",
+    "TestController.test_01_upload_document ... ",
+    "TestController.test_03_get_image_info ... ",
+    "TestController.test_04_admin_attachment ... ",
+    "TestController.test_05_internal_link_preview ... "
+  ]
+}

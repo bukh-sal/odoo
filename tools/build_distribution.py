@@ -8,34 +8,7 @@ import json
 import shutil
 import tempfile
 import sys
-import xml.etree.ElementTree as ET
 from pathlib import Path
-
-
-def seed_category_metadata(category_file: Path, catalog_file: Path) -> list[str]:
-    """Retain catalog references whose categories excluded addon scans created."""
-    text = category_file.read_text()
-    tree = ET.fromstring(text)
-    known = {record.attrib["id"].removeprefix("base.") for record in tree.iter("record") if record.attrib.get("model") == "ir.module.category"}
-    referenced = {field.attrib["ref"].removeprefix("base.") for field in ET.parse(catalog_file).iter("field") if field.attrib.get("name") == "category_id" and field.attrib.get("ref", "").startswith("base.module_category_")}
-    missing = sorted(referenced - known)
-    records = []
-    for ident in missing:
-        parents = [p for p in known if ident.startswith(p + "_")]
-        parent = max(parents, key=len) if parents else None
-        suffix = ident[len(parent) + 1:] if parent else ident.removeprefix("module_category_")
-        record = ET.Element("record", {"model": "ir.module.category", "id": ident})
-        ET.SubElement(record, "field", {"name": "name"}).text = suffix.replace("_", " ").title()
-        if parent:
-            ET.SubElement(record, "field", {"name": "parent_id", "ref": parent})
-        records.append(ET.tostring(record, encoding="unicode"))
-        known.add(ident)
-    if records:
-        addition = "\n        <!-- Modular Platform: metadata retained for excluded addon categories. -->\n        " + "\n        ".join(records) + "\n    "
-        if text.count("</data>") != 1:
-            raise ValueError("Unexpected upstream category data layout")
-        category_file.write_text(text.replace("</data>", addition + "</data>"), newline="\n")
-    return missing
 
 
 def build(source: Path, target: Path, policy_path="deploy/distribution.json") -> dict:
@@ -59,7 +32,7 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     manifests = {}
     locations = {}
     for name in sorted(selected):
-        choices = [references[name]] if name in references else [source / "odoo/addons" / name, source / "addons" / name, source / "platform_addons" / name]
+        choices = [references[name]] if name in references else [source / "odoo/addons" / name, source / "addons" / name, source / "platform_addons" / name, source / "applications" / name]
         matches = [p for p in choices if (p / "__manifest__.py").is_file()]
         if len(matches) != 1:
             raise ValueError(f"missing or ambiguous addon: {name}")
@@ -86,10 +59,7 @@ def build(source: Path, target: Path, policy_path="deploy/distribution.json") ->
     if policy.get("platform_sdk"):
         for name in ["platform_sdk", "contracts"]:
             shutil.copytree(source / "packages" / name, target / "packages" / name, ignore=ignore)
-    category_file = target / "odoo/addons/base/data/ir_module_category_data.xml"
-    category_hash = hashlib.sha256(category_file.read_bytes()).hexdigest()
-    seeded = seed_category_metadata(category_file, target / "odoo/addons/base/data/ir_module_module.xml")
-    generated_patches=[{"path": "odoo/addons/base/data/ir_module_category_data.xml", "source_sha256": category_hash, "seeded_categories": seeded}]
+    generated_patches=[]
     if policy.get('platform_sdk'):
         sys.path.insert(0,str(source/'packages/platform_sdk'))
         from modular_platform.native_versions import PARSER_PATH,corrected_parser,patch_record

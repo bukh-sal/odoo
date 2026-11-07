@@ -29,7 +29,7 @@ const sequence = (tab) => tab.sequence ?? DEFAULT_SEQUENCE;
 export class MediaDialog extends Component {
     static template = "html_editor.MediaDialog";
     static defaultProps = {
-        useMediaLibrary: true,
+
         extraTabs: [],
     };
     static components = {
@@ -142,7 +142,7 @@ export class MediaDialog extends Component {
 
         if (!this.props.noImages) {
             this.addTab(TABS.IMAGES, {
-                useMediaLibrary: this.props.useMediaLibrary,
+
                 multiSelect: this.props.multiImages,
                 addFieldImage: this.props.addFieldImage,
             });

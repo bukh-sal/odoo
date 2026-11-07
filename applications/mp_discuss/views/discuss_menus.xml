@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <menuitem id="discuss_technical" name="Technical" parent="mp_discuss.menu_root_discuss" groups="base.group_no_one" sequence="10" />
+    <menuitem action="mail.discuss_call_history_action" id="discuss_call_history_menu" name="Call History" parent="discuss_technical" sequence="15" />
+    </data>
+</odoo>

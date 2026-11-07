@@ -611,7 +611,8 @@ class DiscussChannelMember(models.Model):
                             "data": {
                                 "type": PUSH_NOTIFICATION_TYPE.CALL,
                                 "model": "discuss.channel",
-                                "action": "mail.action_discuss",
+                                **({"action": "mp_discuss.action_discuss"} if env_lang.ref(
+                                    "mp_discuss.action_discuss", raise_if_not_found=False) else {}),
                                 "res_id": self.channel_id.id,
                             },
                             "actions": [

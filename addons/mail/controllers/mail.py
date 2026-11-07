@@ -36,7 +36,8 @@ class MailController(http.Controller):
 
     @classmethod
     def _redirect_to_messaging(cls):
-        url = '/odoo/action-mail.action_discuss'
+        url = '/odoo/action-mp_discuss.action_discuss' if request.env.ref(
+            'mp_discuss.action_discuss', raise_if_not_found=False) else '/odoo'
         return request.redirect(url)
 
     @classmethod

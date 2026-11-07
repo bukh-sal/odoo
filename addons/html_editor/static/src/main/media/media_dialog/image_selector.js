@@ -1,8 +1,5 @@
 import { useRef, useState } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
-import { rpc } from "@web/core/network/rpc";
-import { KeepLast } from "@web/core/utils/concurrency";
-import { DEFAULT_PALETTE } from "@html_editor/utils/color";
 import { getCSSVariableValue, getHtmlStyle } from "@html_editor/utils/formatting";
 import { Attachment, FileSelector, IMAGE_EXTENSIONS, IMAGE_MIMETYPES } from "./file_selector";
 import { isSrcCorsProtected } from "@html_editor/utils/image";
@@ -64,17 +61,11 @@ export class ImageSelector extends FileSelector {
     setup() {
         super.setup();
 
-        this.keepLastLibraryMedia = new KeepLast();
 
-        this.state.libraryMedia = [];
-        this.state.libraryResults = null;
-        this.state.isFetchingLibrary = false;
-        this.state.searchService = "all";
         this.state.showOptimized = false;
-        this.NUMBER_OF_MEDIA_TO_DISPLAY = 10;
 
         this.uploadText = _t("Upload an image");
-        this.urlPlaceholder = "https://www.odoo.com/logo.png";
+        this.urlPlaceholder = "https://example.com/image.png";
         this.addText = _t("Add URL");
         this.searchPlaceholder = _t("Search an image");
         this.urlWarningTitle = _t(
@@ -90,53 +81,14 @@ export class ImageSelector extends FileSelector {
         this.isProcessingClick = false;
     }
 
-    get canLoadMore() {
-        // The user can load more library media only when the filter is set.
-        if (this.state.searchService === "media-library") {
-            return (
-                this.state.libraryResults &&
-                this.state.libraryMedia.length < this.state.libraryResults
-            );
-        }
-        return super.canLoadMore;
-    }
 
-    get hasContent() {
-        if (this.state.searchService === "all") {
-            return super.hasContent || !!this.state.libraryMedia.length;
-        } else if (this.state.searchService === "media-library") {
-            return !!this.state.libraryMedia.length;
-        }
-        return super.hasContent;
-    }
 
-    get isFetching() {
-        return super.isFetching || this.state.isFetchingLibrary;
-    }
 
-    get selectedMediaIds() {
-        return this.props.selectedMedia[this.props.id]
-            .filter((media) => media.mediaType === "libraryMedia")
-            .map(({ id }) => id);
-    }
 
-    get allAttachments() {
-        return [...super.allAttachments, ...this.state.libraryMedia];
-    }
 
     get attachmentsDomain() {
         const domain = super.attachmentsDomain;
         domain.push(["mimetype", "in", IMAGE_MIMETYPES]);
-        if (!this.props.useMediaLibrary) {
-            domain.push(
-                "|",
-                ["url", "=", false],
-                "!",
-                "|",
-                ["url", "=ilike", "/html_editor/shape/%"],
-                ["url", "=ilike", "/web_editor/shape/%"]
-            );
-        }
         domain.push("!", ["name", "=like", "%.crop"]);
         domain.push("|", ["type", "=", "binary"], "!", ["url", "=like", "/%/static/%"]);
 
@@ -279,70 +231,8 @@ export class ImageSelector extends FileSelector {
         });
     }
 
-    async fetchLibraryMedia(offset) {
-        if (!this.state.needle) {
-            return { media: [], results: null };
-        }
 
-        this.state.isFetchingLibrary = true;
-        try {
-            const response = await rpc(
-                "/html_editor/media_library_search",
-                {
-                    query: this.state.needle,
-                    offset: offset,
-                },
-                {
-                    silent: true,
-                }
-            );
-            this.state.isFetchingLibrary = false;
-            const media = (response.media || []).slice(0, this.NUMBER_OF_MEDIA_TO_DISPLAY);
-            media.forEach((record) => (record.mediaType = "libraryMedia"));
-            return { media, results: response.results };
-        } catch {
-            // Either API endpoint doesn't exist or is misconfigured.
-            console.error(`Couldn't reach API endpoint.`);
-            this.state.isFetchingLibrary = false;
-            return { media: [], results: null };
-        }
-    }
 
-    async loadMore(...args) {
-        await super.loadMore(...args);
-        if (
-            !this.props.useMediaLibrary ||
-            // The user can load more library media only when the filter is set.
-            this.state.searchService !== "media-library"
-        ) {
-            return;
-        }
-        return this.keepLastLibraryMedia
-            .add(this.fetchLibraryMedia(this.state.libraryMedia.length))
-            .then(({ media }) => {
-                // This is never reached if another search or loadMore occurred.
-                this.state.libraryMedia.push(...media);
-            });
-    }
-
-    async search(...args) {
-        await super.search(...args);
-        if (!this.props.useMediaLibrary) {
-            return;
-        }
-        if (!this.state.needle) {
-            this.state.searchService = "all";
-        }
-        this.state.libraryMedia = [];
-        this.state.libraryResults = 0;
-        return this.keepLastLibraryMedia
-            .add(this.fetchLibraryMedia(0))
-            .then(({ media, results }) => {
-                // This is never reached if a new search occurred.
-                this.state.libraryMedia = media;
-                this.state.libraryResults = results;
-            });
-    }
 
     async onClickAttachment(attachment) {
         if (this.isProcessingClick) {
@@ -372,37 +262,13 @@ export class ImageSelector extends FileSelector {
         });
     }
 
-    async onClickMedia(media) {
-        this.props.selectMedia({ ...media, mediaType: "libraryMedia" });
-        if (!this.props.multiSelect) {
-            await this.props.save();
-        }
-    }
 
     /**
      * Utility method used by the MediaDialog component.
      */
     static async createElements(selectedMedia, { orm }) {
-        // Create all media-library attachments.
-        const toSave = Object.fromEntries(
-            selectedMedia
-                .filter((media) => media.mediaType === "libraryMedia")
-                .map((media) => [
-                    media.id,
-                    {
-                        query: media.query || "",
-                        is_dynamic_svg: !!media.isDynamicSVG,
-                        dynamic_colors: media.dynamicColors,
-                    },
-                ])
-        );
-        let savedMedia = [];
-        if (Object.keys(toSave).length !== 0) {
-            savedMedia = await rpc("/html_editor/save_library_media", { media: toSave });
-        }
         const selected = selectedMedia
             .filter((media) => media.mediaType === "attachment")
-            .concat(savedMedia)
             .map((attachment) => {
                 // Color-customize dynamic SVGs with the theme colors
                 if (
@@ -451,14 +317,6 @@ export class ImageSelector extends FileSelector {
 
     async onImageLoaded(imgEl, attachment) {
         this.debouncedScrollUpdate();
-        if (attachment.mediaType === "libraryMedia" && !imgEl.src.startsWith("blob")) {
-            // This call applies the theme's color palette to the
-            // loaded illustration. Upon replacement of the image,
-            // `onImageLoad` is called again, but the replacement image
-            // has an URL that starts with 'blob'. The condition above
-            // uses this to avoid an infinite loop.
-            await this.onLibraryImageLoaded(imgEl, attachment);
-        }
     }
 
     /**
@@ -469,40 +327,4 @@ export class ImageSelector extends FileSelector {
      * @param {Object} media
      * @returns
      */
-    async onLibraryImageLoaded(imgEl, media) {
-        const mediaUrl = imgEl.src;
-        try {
-            const response = await fetch(mediaUrl);
-            if (response.headers.get("content-type").startsWith("image/svg+xml")) {
-                let svg = await response.text();
-                const dynamicColors = {};
-                const combinedColorsRegex = new RegExp(
-                    Object.values(DEFAULT_PALETTE).join("|"),
-                    "gi"
-                );
-                const htmlStyle = getHtmlStyle(document);
-                svg = svg.replace(combinedColorsRegex, (match) => {
-                    const colorId = Object.keys(DEFAULT_PALETTE).find(
-                        (key) => DEFAULT_PALETTE[key] === match.toUpperCase()
-                    );
-                    const colorKey = "c" + colorId;
-                    dynamicColors[colorKey] = getCSSVariableValue("o-color-" + colorId, htmlStyle);
-                    return dynamicColors[colorKey];
-                });
-                const fileName = mediaUrl.split("/").pop();
-                const file = new File([svg], fileName, {
-                    type: "image/svg+xml",
-                });
-                imgEl.src = URL.createObjectURL(file);
-                if (Object.keys(dynamicColors).length) {
-                    media.isDynamicSVG = true;
-                    media.dynamicColors = dynamicColors;
-                }
-            }
-        } catch {
-            console.error(
-                "CORS is misconfigured on the API server, image will be treated as non-dynamic."
-            );
-        }
-    }
 }

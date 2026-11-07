@@ -1,0 +1,26 @@
+{
+  "result": "source_checks_passed_native_pending",
+  "python_xml_parsed": 519,
+  "changed_javascript_syntax": "passed",
+  "host_checks": {
+    "tests.test_distribution_metadata": 2
+  },
+  "paths": {
+    "addons/html_editor/controllers/main.py": "d1ba0b4734af0a01165e4374505ca517663ffa6eb25cd86aed5505e3b7a1e023",
+    "addons/html_editor/tools/__init__.py": "f27386f0c80a43da75735ad0f908e81fc37e37247c3c2d82aef3a23e642ba673",
+    "addons/html_editor/tools/link_preview.py": "68530bf8ce050bbad030ae87b2d8d41855a3f3bd164f891eeab142e65a6b2cb3",
+    "addons/base_setup/models/res_config_settings.py": "388118ebb213630a031134b77a957ea41fda76b643e328b1b947ed1627f9f75a",
+    "odoo/addons/base/data/ir_module_module.xml": "f24a74c9bca8a7083ef79e5b721c0a77f157c68af6c77792b0c0321bbe8f0cd4",
+    "applications/mp_discuss/__manifest__.py": "b3b16d2e9ec380f446ff621c4885a489fb3a3b4b5434ab693d5fabbf32c8c16b",
+    "applications/mp_mail_gateway/__manifest__.py": "4cbe799f41663ab44b561ff5d9b2a80d78dc1c3ab3c2b2d4bef179b78cc30cb7",
+    "addons/mail/__manifest__.py": "8b563f6103912b57fa017af81b407bb41ade6a8ba6f19243ad7c0946db7bd04f"
+  },
+  "public_contract_freeze": {
+    "major": 1,
+    "files": 106,
+    "rows": 8,
+    "result": "passed"
+  },
+  "native_result": "not_run",
+  "gate_pass": false
+}

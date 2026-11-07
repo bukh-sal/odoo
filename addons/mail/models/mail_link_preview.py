@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 
 from odoo import api, models, fields, tools
 from odoo.tools.misc import OrderedSet
-from odoo.addons.mail.tools.link_preview import get_link_preview_from_url
+from odoo.addons.html_editor.tools.link_preview import get_link_preview_from_url
 from odoo.addons.mail.tools.discuss import Store
 
 

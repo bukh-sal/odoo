@@ -13,6 +13,7 @@ sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
 from modular_platform.deployment import inspect_image
 from modular_platform.operator_os import protect_directory,ProcessLock
 from modular_platform.operator_store import _write_new
+from build_inputs import source_input_paths
 
 
 def main():
@@ -51,12 +52,8 @@ def main():
     if record_path.exists():raise RuntimeError('Build already attempted; inspect recorded state and builder before retrying')
     tag='modular-platform:stage-'+datetime.now(timezone.utc).strftime('%Y%m%dt%H%M%S%fz')
     dependency_tag='modular-platform:dependency-base-'+output.name if dependency_base else None
-    source={}
-    for directory in ['platform_addons','plugins','packages/contracts','packages/platform_sdk','deploy','tools']:
-        for path in sorted((ROOT/directory).rglob('*')):
-            if path.is_file() and '__pycache__' not in path.parts and path.suffix!='.pyc':
-                source[path.relative_to(ROOT).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
-    source.update({name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['.dockerignore','LICENSE','COPYRIGHT']})
+    source={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
+            for name in source_input_paths(ROOT, policy_name)}
     output.mkdir(parents=True)
     dockerfile='deploy/Dockerfile.core-maintenance' if dependency_base else 'deploy/Dockerfile'
     command=['docker','build','-f',dockerfile,'--build-arg','DISTRIBUTION_POLICY='+policy_name,

@@ -38,7 +38,7 @@ class TestDiscussAction(HttpCase, MailCommon):
         self._reset_bus()
         channel_member._rtc_join_call()
         self.start_tour(
-            f"/odoo/{channel.id}/action-mail.action_discuss?call=accept",
+            f"/odoo/{channel.id}/action-mp_discuss.action_discuss?call=accept",
             "discuss_channel_call_action.js",
             login=invited_user.login,
         )

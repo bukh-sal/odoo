@@ -19,7 +19,6 @@ from . import mail_tracking_duration_mixin
 from . import template_reset_mixin
 
 # mail models
-from . import fetchmail
 from . import mail_notification  # keep before as decorated m2m
 from . import mail_activity_type
 from . import mail_activity

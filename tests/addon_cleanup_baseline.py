@@ -14,7 +14,7 @@ SETUP = ROOT / '.local/foundation-release/clean-core46/operator-setup.json'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=['prepare', 'initialize', 'install', 'observe', 'seed', 'seed-complete'])
+    parser.add_argument('phase', choices=['prepare', 'initialize', 'install', 'observe', 'seed', 'seed-complete', 'ownership'])
     args = parser.parse_args()
     setup = json.loads(SETUP.read_bytes())
     source = Path(setup['source'])
@@ -47,11 +47,35 @@ def main():
         site.kit, site.work, site.operator = KIT, WORK, json.loads((WORK / 'operator-setup.json').read_bytes())
         site.private, site.args = WORK / 'private', options
         site.local = site.private / 'reference'
-    if args.phase not in ('observe', 'seed', 'seed-complete'):
+    if args.phase not in ('observe', 'seed', 'seed-complete', 'ownership'):
         getattr(site, args.phase)()
         if args.phase == 'prepare':
             write(WORK / 'kit-verified.json', dict(manifest_sha256=manifest_digest,
                 image=site.state()['image_id'], full_kit_checksums_verified=True))
+        return
+    if args.phase == 'ownership':
+        code = '''
+import json, hashlib
+from psycopg2 import sql
+env.cr.execute("SELECT tablename FROM pg_tables WHERE schemaname='public' AND tablename LIKE 'iap_%' ORDER BY tablename")
+tables = [r[0] for r in env.cr.fetchall()]
+witnesses = {}
+for table in tables + ['fetchmail_server', 'discuss_channel', 'mail_message', 'maintenance_request']:
+    env.cr.execute(sql.SQL('SELECT to_jsonb(t) FROM {} t ORDER BY to_jsonb(t)::text').format(sql.Identifier(table)))
+    rows = [r[0] for r in env.cr.fetchall()]
+    witnesses[table] = dict(count=len(rows), sha256=hashlib.sha256(json.dumps(rows,sort_keys=True).encode()).hexdigest())
+ids = env['ir.model.data'].search([('module','=','mail'), '|', ('model','=','ir.model.fields'), ('model','=','ir.model')])
+owned = [dict(name=r.name,model=r.model,res_id=r.res_id) for r in ids
+    if r.name == 'model_fetchmail_server' or r.name.startswith('field_fetchmail_server__') or r.name=='field_mail_mail__fetchmail_server_id']
+print('MP_AR_OWNERSHIP=' + json.dumps(dict(table_witnesses=witnesses, gateway_metadata=owned)))
+'''
+        raw = site.native(site.state(), 'ar-ownership-observe', [], code)
+        rows = [json.loads(line.split('=', 1)[1]) for line in raw.decode().splitlines()
+                if line.startswith('MP_AR_OWNERSHIP=')]
+        assert len(rows) == 1
+        write(WORK / 'ownership.json', rows[0])
+        print(json.dumps(dict(result='observed', tables=len(rows[0]['table_witnesses']),
+                              gateway_metadata=len(rows[0]['gateway_metadata']))))
         return
     if args.phase in ('seed', 'seed-complete'):
         code = '''

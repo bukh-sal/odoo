@@ -28,7 +28,7 @@ patch(Store.prototype, {
 patch(storeService, {
     start(env, services) {
         const store = super.start(...arguments);
-        const discussActionIds = ["mail.action_discuss", "discuss"];
+        const discussActionIds = ["mp_discuss.action_discuss", "mail.action_discuss", "discuss"];
         if (store.action_discuss_id) {
             discussActionIds.push(store.action_discuss_id);
         }

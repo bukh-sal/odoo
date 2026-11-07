@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import re
+import importlib.util
 
 COMPARISONS=('inventory_digest','inventory','python','architecture','markers',
              'python_lock_digest','python_metadata','modified_files',
@@ -40,11 +41,9 @@ def load_application_inputs(root, reproduction_path, build_path):
         raise ValueError('Build/reproduction identities disagree')
     source=build.get('source_sha256')
     if not isinstance(source,dict) or not source:raise ValueError('Recorded build source inputs required')
-    expected={path.relative_to(root).as_posix()
-              for directory in ['platform_addons','plugins','packages/contracts','packages/platform_sdk','deploy','tools']
-              for path in (root/directory).rglob('*')
-              if path.is_file() and '__pycache__' not in path.parts and path.suffix!='.pyc'}
-    expected.update(['.dockerignore','LICENSE','COPYRIGHT'])
+    spec=importlib.util.spec_from_file_location('owned_build_inputs',Path(__file__).resolve().parents[1]/'tools/build_inputs.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    expected=set(module.source_input_paths(root,build['distribution_policy']))
     if set(source)!=expected:raise ValueError('Checkout/build source input set differs')
     for name,value in source.items():
         if not isinstance(name,str):raise ValueError('Invalid build source path')

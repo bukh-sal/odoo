@@ -6,7 +6,7 @@ registry.category("web_tour.tours").add("discuss_configuration_tour", {
     steps: () => [
         stepUtils.showAppsMenuItem(),
         {
-            trigger: '.o_app[data-menu-xmlid="mail.menu_root_discuss"]',
+            trigger: '.o_app[data-menu-xmlid="mp_discuss.menu_root_discuss"]',
             run: "click",
         },
         {

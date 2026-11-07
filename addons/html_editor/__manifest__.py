@@ -11,7 +11,7 @@ This addon provides an extensible, maintainable editor.
 
     'author': "odoo",
     'website': "https://www.odoo.com",
-    'version': '1.0',
+    'version': '1.1',
     'category': 'Hidden',
     'depends': ['base', 'bus', 'web'],
     'data': [

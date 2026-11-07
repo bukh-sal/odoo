@@ -16,7 +16,6 @@
     "bus",
     "web_tour",
     "html_editor",
-    "iap",
     "mail",
     "maintenance",
     "mp_aurora_tasks",
@@ -28,7 +27,9 @@
     "mp_example_notes_labels",
     "mp_example_canvas",
     "mp_example_notes_stats",
-    "mp_example_background"
+    "mp_example_background",
+    "mp_discuss",
+    "mp_mail_gateway"
   ],
   "explicit_install": [
     "web",
@@ -37,7 +38,7 @@
   ],
   "platform_sdk": true,
   "stock_webclient": true,
-  "profile": "Consolidated stock foundation: independently selected apps and reviewed background roles",
+  "profile": "Owned foundation: optional communication services, Discuss and incoming gateway",
   "reference_packages": [
     "plugins/notes/plugin.toml",
     "plugins/notes_labels/plugin.toml",

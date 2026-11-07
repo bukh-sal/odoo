@@ -42,3 +42,28 @@ The stock RTL launcher disables JIT and bounds the Node heap within Odoo's
 native RTL bundles with the release inventory and lets Odoo clean their old
 attachments. The operator verifies the mirrored screen CSS before opening
 traffic. Earlier profile versions keep their original asset preparation.
+
+AR-02 owned-fork extraction (8 November2026, qualification pending): directly
+changed inherited base/base_setup/html_editor/mail rather than introducing
+another override layer. Removed vendor sales catalog/store links and unavailable
+settings; removed hosted AI/media search/download routes and their editor controls.
+Moved the generic link metadata helper from mail/tools to html_editor/tools;
+editor collaboration handles absent optional mail ICE service. Mail now names an
+optional communication service. Full Discuss action/public entry points and
+POP/IMAP polling/model/field/ACL/cron/settings moved into applications/mp_discuss
+and applications/mp_mail_gateway, preserving original licensing. Shared chatter,
+activities, notifications and conversation widgets/models remain services. Added
+native window-action fallback when Discuss is absent. Moved useful fetchmail tests
+to their owning app. Base1.4, settings/editor1.1 and mail1.20 mark changed sources.
+This is our fork, not an external-addon compatibility layer. Sealed core46 stays
+unchanged; source validation alone does not qualify populated migration/recovery.
+
+AR-02 follow-through: tours1.1 now explicitly optional; extracted generic
+MockRequest into engine tests so web/mail regressions do not require the excluded
+HTTP-routing application. Web1.1 removes vendor Enterprise upgrade boolean/dialog
+and only its sales-specific tests; highlight/native layout retained. Mail menu
+ownership corrected for full-workspace Call History. Native core13, Maintenance15
+and explicit communication17 profiles passed onb51ce4ac. Six retained native
+editor/polling tests passed0failures/errors;15affected host tests passed. Public
+ownership map36gateway/14Discuss IDs is a migration input, not a grant or ID guess.
+Populated46 transition/recovery remains unqualified until AR-04.

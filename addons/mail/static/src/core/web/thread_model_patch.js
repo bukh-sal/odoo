@@ -59,6 +59,16 @@ const threadPatch = {
         }
         const actionService = this.store.env.services.action;
         if (this.model === "mail.box") {
+            if (!this.store.action_discuss_id) {
+                actionService.doAction({
+                    type: "ir.actions.act_window",
+                    name: this.displayName,
+                    res_model: "mail.message",
+                    views: [[false, "list"], [false, "form"]],
+                    domain: this.id === "inbox" ? [["needaction", "=", true]] : [],
+                });
+                return true;
+            }
             if (this.store.discuss.isActive) {
                 this.setAsDiscussThread();
             } else {
@@ -72,11 +82,7 @@ const threadPatch = {
             actionService.doAction(this.openRecordActionRequest).catch((error) => {
                 if (options?.fromMessagingMenu) {
                     this.store.inbox.highlightMessage = this.needactionMessages.at(-1);
-                    actionService.doAction({
-                        context: { active_id: "mail.box_inbox" },
-                        tag: "mail.action_discuss",
-                        type: "ir.actions.client",
-                    });
+                    this.store.inbox.open();
                 } else {
                     throw error;
                 }

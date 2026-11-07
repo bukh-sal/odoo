@@ -4,6 +4,7 @@ import { _t } from "@web/core/l10n/translation";
 
 registerThreadAction("expand-discuss", {
     condition: ({ owner, store, thread }) =>
+        store.action_discuss_id &&
         thread &&
         owner.props.chatWindow?.isOpen &&
         thread.model === "discuss.channel" &&

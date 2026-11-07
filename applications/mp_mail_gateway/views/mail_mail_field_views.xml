@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Field extracted from Odoo mail; see LICENSE and COPYRIGHT. -->
+    <record id="mail_mail_form_gateway" model="ir.ui.view">
+        <field name="name">mail.mail.form.gateway</field>
+        <field name="model">mail.mail</field>
+        <field name="inherit_id" ref="mail.view_mail_form"/>
+        <field name="arch" type="xml">
+            <field name="email_from" position="after"><field name="fetchmail_server_id"/></field>
+        </field>
+    </record>
+</odoo>

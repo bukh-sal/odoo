@@ -1,0 +1,109 @@
+{
+  "result": "passed",
+  "gate": "AR-02",
+  "checks": [
+    "AR-C",
+    "AR-D",
+    "AR-E",
+    "AR-F"
+  ],
+  "utc": "2026-11-07T22:09:58.784845+00:00",
+  "image": "sha256:b51ce4ac0065df5071be663369b7445465de84d72a4724a581d03d5b1e7dcb2a",
+  "inventory": "sha256:07c4ecfbff6393d2ac4deccbb49cb28d42a095db161262b732be61b834cd71f5",
+  "build": "G7/20261108-ar02-extraction-03/candidate-build.json",
+  "profiles": {
+    "core": {
+      "result": "passed",
+      "profile": "core",
+      "installed": {
+        "auth_passkey": "19.0.1.1",
+        "auth_password_policy": "19.0.1.0",
+        "auth_totp": "19.0.1.0",
+        "base": "19.0.1.4",
+        "base_import": "19.0.2.0",
+        "base_setup": "19.0.1.1",
+        "bus": "19.0.1.0",
+        "html_editor": "19.0.1.1",
+        "mp_compat": "19.0.0.1.1",
+        "mp_core": "19.0.0.1.46",
+        "mp_identity": "19.0.0.1.10",
+        "mp_shell": "19.0.0.1.19",
+        "web": "19.0.1.1"
+      },
+      "no_iap": true,
+      "no_vendor_catalog": true,
+      "optional_app_boundary": true
+    },
+    "maintenance": {
+      "result": "passed",
+      "profile": "maintenance",
+      "installed": {
+        "maintenance": "19.0.1.0",
+        "auth_passkey": "19.0.1.1",
+        "auth_password_policy": "19.0.1.0",
+        "auth_totp": "19.0.1.0",
+        "base": "19.0.1.4",
+        "base_import": "19.0.2.0",
+        "base_setup": "19.0.1.1",
+        "bus": "19.0.1.0",
+        "html_editor": "19.0.1.1",
+        "mp_compat": "19.0.0.1.1",
+        "mp_core": "19.0.0.1.46",
+        "mp_identity": "19.0.0.1.10",
+        "mp_shell": "19.0.0.1.19",
+        "web": "19.0.1.1",
+        "mail": "19.0.1.20"
+      },
+      "no_iap": true,
+      "no_vendor_catalog": true,
+      "optional_app_boundary": true
+    },
+    "communication": {
+      "result": "passed",
+      "profile": "communication",
+      "installed": {
+        "mp_discuss": "19.0.1.0",
+        "mp_mail_gateway": "19.0.1.0",
+        "auth_passkey": "19.0.1.1",
+        "auth_password_policy": "19.0.1.0",
+        "auth_totp": "19.0.1.0",
+        "base": "19.0.1.4",
+        "base_import": "19.0.2.0",
+        "base_setup": "19.0.1.1",
+        "bus": "19.0.1.0",
+        "html_editor": "19.0.1.1",
+        "mp_compat": "19.0.0.1.1",
+        "mp_core": "19.0.0.1.46",
+        "mp_identity": "19.0.0.1.10",
+        "mp_shell": "19.0.0.1.19",
+        "web": "19.0.1.1",
+        "web_tour": "19.0.1.1",
+        "mail": "19.0.1.20"
+      },
+      "no_iap": true,
+      "no_vendor_catalog": true,
+      "optional_app_boundary": true
+    }
+  },
+  "native_tests": {
+    "passed": 6,
+    "failed": 0,
+    "errors": 0,
+    "evidence": "ar02-native-regressions.json"
+  },
+  "host_checks": 15,
+  "source_python_xml_parsed": 854,
+  "contract_freeze": {
+    "major": 1,
+    "files": 106,
+    "rows": 8
+  },
+  "ownership": "ar02-extracted-ownership.json",
+  "limits": [
+    "Extraction prototype only; not a sealed release",
+    "No populated46 upgrade/recovery/source-root qualification yet",
+    "Final native browser/workload qualification remains AR-05"
+  ],
+  "next": "AR-03 authoritative roots/prune/build tooling",
+  "weighted_points": 35
+}

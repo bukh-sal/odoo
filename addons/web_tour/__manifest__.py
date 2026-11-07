@@ -9,7 +9,7 @@ Odoo Web tours.
 ========================
 
 """,
-    'version': '1.0',
+    'version': '1.1',
     'depends': ['web'],
     'data': [
         'security/ir.model.access.csv',
@@ -67,7 +67,7 @@ Odoo Web tours.
             'web_tour/static/src/widgets/**/*',
         ],
     },
-    'auto_install': True,
+    'auto_install': False,
     'author': 'Odoo S.A.',
     'license': 'LGPL-3',
 }

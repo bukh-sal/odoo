@@ -1621,3 +1621,50 @@ NEXTsoleactiveG-01c4: current-source R0/heartbeat/revocationmapping andownedhead
 2026-11-07T20:55:53.951296+00:00 — ARgoalcreated:userauthorizedfulladdoncleanup/extraction/restructure/requalification. Readcurrentstatus/review/ADR0069/70/71 andactualbuilder/nativeguards. AR01soleactive0/16checks0weighted: freezeactualimport/JS/XML/assets/model/testrefs andownedroots beforedeletion; scopedpolicy/module-retirementtransition required, notgenericcoreguardrelaxation. Oldsealed46 preserved, noARsite/mutation yet, no userinput.
 
 AR-01 passed: static inventory676 total (15 framework,2 apps,5 examples,24 test,629 remove,1 extract/remove), legacy test references classified; ADR0072 freezes extraction/owned transition constraints. Full sealed46 kit verified before fresh disposable project mp-r0-r1released447cc4d2707. Native Maintenance baseline observed18 modules, populated fictional account/mailbox/conversation/message/request with zero external requests. First seed failed before commit on required service description; confirmed absence in guarded second attempt then committed seed; no operation replay. AR-02 active,10/100 weighted,2/16 checks. Private state .local/addon-cleanup/baseline46, port18140. Preserve sealed46.
+
+AR-02 implementation in progress: editor hosted-feature removal/helper extraction,
+base catalog/settings cleanup, optional Discuss and inbound gateway source split.
+519 Python/XML parses and2 affected catalog/boundary host tests pass; JS syntax
+checked for image selector. No native extraction pass yet. Once-only baseline
+ownership observation found28gateway metadata records and8table witnesses; private
+retention records remain under.local/addon-cleanup/baseline46. Candidate preflight
+running in exec session12864 for G7/20261108-ar02-extraction-01; source inputs frozen
+until build finishes. No upgrade, source prune or old-root move performed yet.
+AR-02 remains sole active item,10/100weighted/2of16checks. No user input needed.
+
+AR-02 native attempt01: image99454721/inventory4ebcb6e0 built/source-rechecked.
+Core empty DB and asset preparation succeeded; profile assertion found web_tour
+still auto-installed. Separate regression loader stopped on web test_reports
+importing excluded HTTP-routing MockRequest before tests executed. Distinct source
+fixes: tours1.1 auto_installFalse; move generic MockRequest into engine test utils
+and update retained imports.14source/build-input host tests and106/8contractfreeze
+pass. Whole-unshipped-tree snapshot also generated an oversized5.8MBreceipt;
+curated consumed-input inventory now includes actual engine/selected modules/tools/
+fixtures (6272paths), with tampered selected inputs refused and unshipped source
+excluded. Fresh build02 running session16822; no initializer retry. Retired exact
+failed core/regression9containers12volumes4networks; private diagnostics retained,
+old46 baseline remains live. Occupied18145/18144 preserved, free18160/18161 selected.
+AR-02 sole active,10/100weighted,2/16ARchecks; no user input required.
+
+AR-02 direction checkpoint (45 minutes of this item): stay on dependency extraction
+and actual cold/native regression qualification. Minimal core13-module profile
+passed on0095; second loader issue was a concrete app-menu ownership gap, not the
+same failed signature. Generic XML reference guard now passes alongside14other
+host checks. Web1.1 removes unused vendor upsell dialog/widget and only its
+sales-specific tests; native highlight/layout retained. Candidate03 b51ce4ac built
+and source-rechecked; fresh core/regression ar02-04 being prepared. Old ar02-03
+core/regression sites retired9containers12volumes4networks; original46 baseline
+still live. No API/policy bypass or source-root pruning yet. Next proof is clean
+core+mail/gateway bootstrap and retained six native controller/polling tests,
+then optional Discuss entry points. Do not expand frontend/product scope.
+
+AR-02 passed: b51ce4ac source-rechecked candidate, three clean profiles13/15/17
+modules prove minimal core, generic communication with Maintenance/native views/
+chatter and separate Discuss/gateway selection.6native tests0fail/errors;15host,
+854Python/XML parses and unchanged106/8major1contracts. Native failures fixed with
+actual new evidence, not retries. All AR-02 profiles retired; only old46 retention
+baseline remains live. Superseded99454721/0095c65c images removed after exact tags/
+IDs and no-container-use checks.35/100weighted/6of16checks; AR-03 sole active.
+Next owned source roots/prune/useful fixture paths/build+source CLI proof, then
+AR-04 actual populated retirement/upgrade/fault/fresh restore/separate resume and
+AR-05 final release reproduction/consumer/UI/jobs/privacy. No user input needed.

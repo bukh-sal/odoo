@@ -966,7 +966,8 @@ class DiscussChannel(models.Model):
             message, msg_vals=msg_vals, force_record_name=force_record_name,
         )
         msg_vals = msg_vals or {}
-        payload['options']['data']['action'] = 'mail.action_discuss'
+        if self.env.ref('mp_discuss.action_discuss', raise_if_not_found=False):
+            payload['options']['data']['action'] = 'mp_discuss.action_discuss'
         record_name = force_record_name or message.record_name
         author_ids = [msg_vals["author_id"]] if msg_vals.get("author_id") else message.author_id.ids
         author = self.env["res.partner"].browse(author_ids) or self.env["mail.guest"].browse(
@@ -1102,6 +1103,8 @@ class DiscussChannel(models.Model):
     def _get_access_action(self, access_uid=None, force_website=False):
         """ Redirect to Discuss instead of form view. """
         self.ensure_one()
+        if not self.env.ref('mp_discuss.action_discuss', raise_if_not_found=False):
+            return super()._get_access_action(access_uid=access_uid, force_website=force_website)
         if not self.env.user._is_internal() or force_website:
             return {
                 "type": "ir.actions.act_url",
@@ -1111,7 +1114,7 @@ class DiscussChannel(models.Model):
             }
         return {
             "type": "ir.actions.act_url",
-            "url": f"/odoo/action-mail.action_discuss?active_id={self.id}",
+            "url": f"/odoo/action-mp_discuss.action_discuss?active_id={self.id}",
             "target": "self",
         }
 

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo><!-- Extracted from Odoo mail; see LICENSE and COPYRIGHT. --><menuitem name="Discuss" id="menu_root_discuss" action="action_discuss" web_icon="mail,static/description/icon.png" groups="base.group_user" sequence="5" />
+    <menuitem id="main_menu_discuss" name="Discuss" parent="mp_discuss.menu_root_discuss" action="action_discuss" sequence="1" />
+    <menuitem id="menu_channel" name="Channels" parent="mp_discuss.menu_root_discuss" action="mail.discuss_channel_action" sequence="2" />
+    <menuitem id="menu_configuration" name="Configuration" parent="mp_discuss.menu_root_discuss" sequence="3" />
+    <menuitem name="Notifications" id="menu_notification_settings" parent="mp_discuss.menu_configuration" action="mail.discuss_notification_settings_action" sequence="1" />
+    <menuitem id="menu_call_settings" name="Voice &amp; Video" parent="mp_discuss.menu_configuration" action="mail.discuss_call_settings_action" sequence="5" />
+    <menuitem name="Canned Responses" id="menu_canned_responses" parent="mp_discuss.menu_configuration" action="mail.mail_canned_response_action" sequence="15" />
+    <menuitem name="Roles" id="menu_roles" parent="mp_discuss.menu_configuration" action="mail.res_role_action" sequence="25" />
+
+    <record id="discuss_channel_integrations_menu" model="ir.ui.menu">
+        <field name="name">Integrations</field>
+        <field name="parent_id" ref="mp_discuss.menu_root_discuss" />
+        <field name="active" eval="False" />
+    </record>
+
+</odoo>

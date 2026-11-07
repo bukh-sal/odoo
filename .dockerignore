@@ -21,8 +21,6 @@
 !addons/web_tour/**
 !addons/html_editor/
 !addons/html_editor/**
-!addons/iap/
-!addons/iap/**
 !addons/mail/
 !addons/mail/**
 !addons/maintenance/
@@ -31,6 +29,8 @@
 !tools/**
 !platform_addons/
 !platform_addons/**
+!applications/
+!applications/**
 !plugins/
 !plugins/**
 !packages/

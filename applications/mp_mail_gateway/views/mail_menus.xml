@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo><!-- Extracted from Odoo mail; see LICENSE and COPYRIGHT. --><menuitem name="Incoming Mail Servers" id="menu_action_fetchmail_server_tree" parent="base.menu_email" action="action_email_server_tree" sequence="6" groups="base.group_no_one" />
+    </odoo>

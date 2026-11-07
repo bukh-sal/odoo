@@ -1,7 +1,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from . import test_discuss_tools
-from . import test_fetchmail
 from . import test_font_to_img
 from . import test_ir_mail_server
 from . import test_ir_ui_menu

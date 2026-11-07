@@ -1,6 +1,12 @@
 # Verification evidence index
 
 Current release status is in [implementation-status.md](implementation-status.md).
+The addon cleanup [AR-01 decision](evidence/post-r1/addon-cleanup/ar-01-decision.json)
+records the dependency audit, frozen extraction/transition boundaries and actual
+populated core46 baseline. The [AR-02 extraction decision](evidence/post-r1/addon-cleanup/ar02-decision.json)
+records three passed native profiles and six retained native regression tests.
+Source restructuring, populated migration/recovery and final release qualification
+remain required. This extraction prototype is not a sealed release.
 The post-R1 background execution observations are indexed in the
 [background execution plan](../planning/background_execution.md) and
 [evidence directory](evidence/post-r1/background-execution/).

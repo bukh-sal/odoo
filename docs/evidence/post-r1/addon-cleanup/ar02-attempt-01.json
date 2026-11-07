@@ -1,0 +1,89 @@
+{
+  "result": "native_checks_found_gaps_not_passed",
+  "utc": "2026-11-07T21:45:15.816240+00:00",
+  "image": "sha256:994547217d4eb8e14bb7350987fb0b8f692d5df48c527aec71077d43ec3f0134",
+  "inventory": "sha256:4ebcb6e0d2204fb35b7cf7f31693a09ee48355293ed878b3046e1fc1fa78a2bf",
+  "cold_boot": "completed and assets prepared",
+  "failures": [
+    {
+      "check": "core optional profile",
+      "signature": "web_tour auto_install=True installed unwanted onboarding",
+      "hypothesis": "Remove auto-install and retain explicit Discuss/test dependency",
+      "source_fix": "web_tour1.1 auto_install=False",
+      "status": "fixed_in_source_native_recheck_pending"
+    },
+    {
+      "check": "native regression loader",
+      "signature": "web test_reports imports excluded http_routing test helper",
+      "hypothesis": "Move generic MockRequest into engine tests; update retained consumers",
+      "source_fix": "odoo/tests/mock_request.py",
+      "status": "fixed_in_source_native_recheck_pending"
+    }
+  ],
+  "port_preflight": {
+    "first_regression_port": "occupied; no Docker resource creation",
+    "replacement": 18160,
+    "aurora_replacement": 18161,
+    "existing_processes_preserved": true
+  },
+  "retired": [
+    {
+      "phase": "retired",
+      "project": "mp-r0-r1release844dec002346",
+      "containers": [
+        "67408a3bdfc205be002470098bbd81bb366529ea12e3cf05f46b2ea861678394",
+        "5f45bccc1e1263a7546e67d58faeb33faa1412e497982d36acce7a3b7d801057",
+        "3ce161ad6ca3d16812b2c999d1131b9ae4f411483418eb67aa9c9be162940ba0",
+        "f2653b106d680207c5904757bccc740254eff87a73d50291255d463b684fdbec",
+        "03590eaf5c9285df35e479c7bc2f9461ba7a6e5c10bcab754e796ff25d42ee8f",
+        "9cfe349114e8424a05a6172ada213eaa4580255d44bfdd4989429cd7850b4ed2",
+        "063b40590a84fd3e69f2984bd81d49cf99b5540cefad5a3fdd9f33c204ec544b"
+      ],
+      "volumes": [
+        "mp-r0-r1release844dec002346_appconfig",
+        "mp-r0-r1release844dec002346_dbconfig",
+        "mp-r0-r1release844dec002346_bootstrap",
+        "mp-r0-r1release844dec002346_proxyconfig",
+        "mp-r0-r1release844dec002346_filestore",
+        "mp-r0-r1release844dec002346_pgdata"
+      ],
+      "networks": [
+        "mp-r0-r1release844dec002346_runtime",
+        "mp-r0-r1release844dec002346_edge"
+      ],
+      "utc": "2026-11-07T21:42:32.933641+00:00",
+      "source_phase": "ar-profile-verify",
+      "private_diagnostics_preserved": true
+    },
+    {
+      "phase": "retired",
+      "project": "mp-r0-r1released36745c42670",
+      "containers": [
+        "875fe75ba70ef61c63f8378e36514f9317384986ad7fd81e6224a5054bf82fdf",
+        "e1c331ad68766697494a339754ac55cea07617257a9b2eb43b167a28a3c69b95"
+      ],
+      "volumes": [
+        "mp-r0-r1released36745c42670_appconfig",
+        "mp-r0-r1released36745c42670_dbconfig",
+        "mp-r0-r1released36745c42670_bootstrap",
+        "mp-r0-r1released36745c42670_proxyconfig",
+        "mp-r0-r1released36745c42670_filestore",
+        "mp-r0-r1released36745c42670_pgdata"
+      ],
+      "networks": [
+        "mp-r0-r1released36745c42670_runtime",
+        "mp-r0-r1released36745c42670_edge"
+      ],
+      "utc": "2026-11-07T21:43:20.676773+00:00",
+      "source_phase": "ar-native-regressions",
+      "private_diagnostics_preserved": true
+    }
+  ],
+  "build_guard": {
+    "issue": "Whole unshipped source scan produced oversized receipt and irrelevant inputs",
+    "fix": "6272 consumed source inputs bound by selected policy, including actual native code/runtime fixtures",
+    "host_tests": 14,
+    "contract_freeze": "major1/106files/8rows passed"
+  },
+  "remaining": "Fresh candidate02; no initializer replay, no populated upgrade yet"
+}

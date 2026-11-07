@@ -1,0 +1,43 @@
+{
+  "result": "three_required_slices_passed_gate_still_open",
+  "checks": [
+    "AR-C",
+    "AR-D",
+    "AR-F"
+  ],
+  "utc": "2026-11-07T22:04:10.463743+00:00",
+  "image": "sha256:b51ce4ac0065df5071be663369b7445465de84d72a4724a581d03d5b1e7dcb2a",
+  "inventory": "sha256:07c4ecfbff6393d2ac4deccbb49cb28d42a095db161262b732be61b834cd71f5",
+  "source_inputs_verified": 6268,
+  "minimal_core": {
+    "result": "passed",
+    "profile": "core",
+    "installed": {
+      "auth_passkey": "19.0.1.1",
+      "auth_password_policy": "19.0.1.0",
+      "auth_totp": "19.0.1.0",
+      "base": "19.0.1.4",
+      "base_import": "19.0.2.0",
+      "base_setup": "19.0.1.1",
+      "bus": "19.0.1.0",
+      "html_editor": "19.0.1.1",
+      "mp_compat": "19.0.0.1.1",
+      "mp_core": "19.0.0.1.46",
+      "mp_identity": "19.0.0.1.10",
+      "mp_shell": "19.0.0.1.19",
+      "web": "19.0.1.1"
+    },
+    "no_iap": true,
+    "no_vendor_catalog": true,
+    "optional_app_boundary": true
+  },
+  "native_regressions": "ar02-native-regressions.json",
+  "source_checks": {
+    "python_xml_parsed": 854,
+    "affected_host_tests": 15,
+    "changed_javascript_syntax": "passed",
+    "no_upsell_component_or_catalog": true
+  },
+  "remaining": "AR-E: Maintenance generic service without apps; explicit Discuss/gateway profile; final release UI/upgrade/recovery/reproduction remain AR-04/05",
+  "weighted_points": 28.75
+}

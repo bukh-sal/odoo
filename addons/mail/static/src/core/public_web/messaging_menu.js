@@ -54,11 +54,7 @@ export class MessagingMenu extends Component {
     onClickInboxMsg(isMarkAsRead, msg) {
         if (!isMarkAsRead) {
             this.store.inbox.highlightMessage = msg;
-            this.env.services.action.doAction({
-                tag: "mail.action_discuss",
-                type: "ir.actions.client",
-                context: { active_id: "mail.box_inbox" },
-            });
+            this.store.inbox.open();
             return;
         }
         msg.setDone();
