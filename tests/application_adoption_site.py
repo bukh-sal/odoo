@@ -25,7 +25,7 @@ from verify import verify,digest
 
 class AdoptionSite(TasksSite):
     def __init__(self,args):
-        if not re.fullmatch(r'ap0[23]-[a-z0-9-]{1,45}',args.run):raise ValueError('Explicit disposable adoption identity required')
+        if not re.fullmatch(r'ap0[234]-[a-z0-9-]{1,45}',args.run):raise ValueError('Explicit disposable adoption identity required')
         self.args=args;self.local=ROOT/'.local/application-adoption'/args.run;self.private=self.local/'operator'
 
     def command(self,label,args,**kwargs):
@@ -37,7 +37,7 @@ class AdoptionSite(TasksSite):
         if self.args.run.startswith('ap02-'):return super().candidate()
         record=load(self.args.candidate)
         assert record['state']=='verified' and record['result']=='verified_application_set_on_pinned_foundation'
-        kit=ROOT/'.local/releases/foundation-r1-core49-tasks';manifest=verify(kit)
+        kit=Path(getattr(self.args,'foundation_kit',ROOT/'.local/releases/foundation-r1-core49-tasks'));manifest=verify(kit)
         assert record['foundation']['kit_manifest']=='sha256:396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404'
         assert 'sha256:'+digest(kit/'kit-inventory.json')==record['foundation']['kit_manifest']
         images=load(kit/'images.json')
@@ -90,6 +90,35 @@ class AdoptionSite(TasksSite):
         result=native.apply(bundle['plan']['operation_id']);assert result['state']=='completed' and result['traffic_resumed']
         write(self.local/'install-result.json',result);self.verify_install()
 
+    def install_cli(self):
+        """Qualification-only exact-hash approval under the explicit disposable OS policy.
+
+        Daily commands stay separate: this is not an automatic deployment wrapper.
+        """
+        assert self.args.run.startswith('ap04-')
+        state=self.state();assert state['phase']=='core_only_ready'
+        catalog=Catalog(self.private/'catalog',configuration(self.private/'trust.json'),readonly=True)
+        root=self.args.package
+        app=next(row for row in catalog.snapshot() if row['manifest']['plugin']['id']==root)
+        common=[sys.executable,'-I',str(ROOT/'tools/modular.py'),'--config',str(self.private/'trust.json')]
+        def cli(label,args):return json.loads(self.command(label,common+args))
+        bundle=cli('cli-plan-current-install',['plugin','plan-current-install','--deployment-config',str(self.private/'target.json'),
+            '--store',str(self.private/'catalog'),'--operator-store',str(self.private/'control'),
+            '--site',state['site_id'],'--site-native','--plugin',root,'--version',app['manifest']['plugin']['version'],'--digest',app['digest']])
+        assert not bundle['plan']['permission_changes'];write(self.local/'install-bundle.json',bundle)
+        operation=bundle['plan']['operation_id'];arguments=['--deployment-config',str(self.private/'target.json'),'--catalog',str(self.private/'catalog')]
+        control=['operations','--store',str(self.private/'control')]
+        self.phase(state,'registering_native_install')
+        registered=cli('cli-register',control+['register','--bundle',str(self.local/'install-bundle.json'),*arguments])
+        assert registered['state']=='awaiting_operator_approval' and not registered['mutation_started']
+        approved=cli('cli-approve',control+['approve',operation,'--plan-hash',bundle['plan_hash'],*arguments,'--noninteractive','--ack-destructive','--ack-trust','--ack-permissions'])
+        assert approved['state']=='approved' and approved['plan_hash']==bundle['plan_hash']
+        write(self.local/'install-review.json',approved['review'])
+        self.phase(state,'applying_native_install')
+        result=cli('cli-routed-apply',['plugin','apply',operation,'--store',str(self.private/'control'),*arguments])
+        assert result['state']=='completed' and result['traffic_resumed'];write(self.local/'install-result.json',result)
+        self.verify_install()
+
     def verify_install(self):
         if self.args.run.startswith('ap02-'):return super().verify_install()
         state=self.state();assert state['phase']=='applying_native_install';assert load(self.local/'install-result.json')['state']=='completed'
@@ -139,9 +168,10 @@ class AdoptionSite(TasksSite):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('actions',nargs='+',choices=['prepare','initialize','install','continue_install','verify_install','status','retire','verify_retirement'])
+    p.add_argument('actions',nargs='+',choices=['prepare','initialize','install','install_cli','continue_install','verify_install','status','retire','verify_retirement'])
     p.add_argument('--run',required=True);p.add_argument('--port',type=int,required=True)
     p.add_argument('--candidate',type=Path,default=Path('.local/operator/builds/20261108-at04-core49-02.json'))
     p.add_argument('--package',choices=['dev.aurora.projects','dev.aurora.projects_tasks'],default='dev.aurora.projects')
+    p.add_argument('--foundation-kit',type=Path,default=ROOT/'.local/releases/foundation-r1-core49-tasks')
     a=p.parse_args();site=AdoptionSite(a)
     for phase in a.actions:getattr(site,phase)()
