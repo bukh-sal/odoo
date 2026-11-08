@@ -1,0 +1,10 @@
+{
+  "result": "isolated_seal_launcher_fixed_before_mutation",
+  "utc": "2026-11-08T18:46:22.446377+00:00",
+  "failure": "ModuleNotFoundError: application_inputs with Python -I",
+  "kit_still_verified_draft": true,
+  "qualification_file_not_created": true,
+  "fix": "Explicit release script directory import path; no runtime/image inputs changed",
+  "isolated_help_exit_code": 0,
+  "affected_release_qualification_tests_passed": 3
+}

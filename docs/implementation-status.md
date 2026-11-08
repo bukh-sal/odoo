@@ -61,9 +61,10 @@ launcher correction;10comparison/6296input reproduction passed. Draft kit56compo
 All3qualified targets retired120containers/18volumes/6networks; prior probes/obsolete
 images gone, sealed47/46/support retained. No running test or application mutation.
 Committed qualification decision binds actual evidence, not future production use.
-Next commit records; refresh unsealed kit source with exact application build/repro
-records; seal via`release/seal_local.py` exact AT profile; run final source-only
-privacy audit carrying unchanged image audit; verify final kit/checksums/stable alias,
+First source refresh passed (55components reused). Seal-I import stopped before mutation;
+kit remains draft, qualification file absent. Release-only explicit directory import
+fix passes isolated help/3qualification cases. Commit and refresh02source, then seal
+exact AT profile, final source-only privacy audit and final kit/checksums/stable alias,
 then update delivered status and complete goal. Do not edit sealed kit or rebuild
 runtime for documentation-only records. Preserve dated source-archived status.
 [Qualification](evidence/post-r1/aurora-tasks/qualification-decision.json).

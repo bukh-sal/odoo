@@ -4,8 +4,10 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import subprocess
+import sys
 import zipfile
 
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 from application_inputs import load_application_inputs
 from verify import verify, digest
 
