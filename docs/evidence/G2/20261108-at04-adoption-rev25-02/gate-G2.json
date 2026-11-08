@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-08T16:31:03.517310+00:00",
+  "contract_major": 1,
+  "revision": 25,
+  "frozen_files": 119,
+  "inventory_sha256": "45da6175a6008c769de4dc9e5f1af0bdc534942fb74bde3d8deda26a4a027fa6",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0077 strict closed47-to49 recipe; additional golden under existing schema namespace; old46-to47 branch unchanged",
+  "runtime_qualification": "Boundary/source qualification only; new recipe staged planner/native execution/recovery consumers pending",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "99ea25e2e4fe9e4ae29fbccc9e16d6b7ed8b0676"
+}

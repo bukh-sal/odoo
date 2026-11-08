@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "recipe": "owned-native-tasks-adoption-47-49-v1",
+  "source": {
+    "image_id": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+    "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+    "policy_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "core_version": "0.1.47"
+  },
+  "target": {
+    "image_id": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "inventory_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "policy_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "core_version": "0.1.49",
+    "recipe_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "child_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "application_digest": "sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c",
+    "application_version": "0.2.2"
+  },
+  "source_changes": [
+    {
+      "path": "packages/platform_sdk/modular_platform/tasks_adoption.py",
+      "previous_sha256": null,
+      "target_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    }
+  ],
+  "site_effects": [
+    {
+      "site_id": "00000000-0000-4000-8000-000000000001",
+      "native_modules": [
+        {
+          "addon": "mp_core",
+          "state": "installed",
+          "version": "19.0.0.1.47"
+        },
+        {
+          "addon": "mp_aurora_tasks",
+          "state": "installed",
+          "version": "19.0.0.1.0"
+        }
+      ],
+      "tasks_installed": true,
+      "retained_tables": [
+        {
+          "table": "mp_aurora_task",
+          "rows": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "table": "mp_aurora_task_list",
+          "rows": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "table": "mp_aurora_task_list_res_users_rel",
+          "rows": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "table": "mp_aurora_task_stage",
+          "rows": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "stage_additions": []
+    }
+  ]
+}

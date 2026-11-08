@@ -1992,3 +1992,26 @@ Progress remains43/100 and6/14. New image must pass before AT-04.
   archive71c97db1113c/29,211bytes structurally validated. Expanded diagnostic
   evidence remains explicitly overlay-only. Candidate02 precise6volume/2network/
   container retirement passed with empty label/name inventories. No user blocker.
+
+- Source99ea25e2e4f built candidate03 image5d9996937a65, app0.2.2 archive
+  71c97db1113c. Fresh zero-workspace site41c269324745 initialized/admitted;
+  actual installation/probes process3558 live. Candidate02 obsolete image/tags
+  removed after verified no users, sealed/unrelated images untouched.
+
+## AT-03 passed; AT-04a closed adoption contract freeze
+
+Actual candidate03/native0.2.2 passes10native/8edges/3classifier/20managed
+reminders with one effect each; fleet drained.60weightedpoints/8of14. In-app
+preliminary native external-assignee complete/reopen, saved private inbox read
+state/reload and Open task passed with screenshot, no custom UI work. Both old
+candidate images/tags and sites removed;03 retained briefly, sealed kits intact.
+
+Read47 native source and current planners/executor. Generic core correctly refuses
+new archive and generic install refuses installed unregistered addon. ADR0077
+selects one closed47→49 declaration, same finalimage for Tasks/Maintenance, explicit
+canonical metadata adoption only if native0.1.0 installed; fixed projected old
+data/stage-gap witnesses and independent recovery. Revision25 strict schema union
+retains old46→47 branch;4new boundary cases. First G2run caught root example naming
+inference; moved new fixture under existing schema namespace, test unchanged.
+Second full affected source gate passes119files/10rows. Implementation consumers
+remain next; no runtime acceptance credit for this source/document work.

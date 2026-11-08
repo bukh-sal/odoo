@@ -13,8 +13,9 @@ needed correction. Candidate0.2.1 corrected that but exposed pending native list
 stage values being read through SQL before flush. Preserve both admitted archives;
 neither is the release artifact. This local identity is not
 a claim of publisher authentication or DNS ownership. Core47 remains sealed;
-native job support requires a separately qualified owned successor, provisionally
-core48. Keep native list/form screens and native WebClient services. Optional
+native job support was qualified on candidate48; the closed populated47 adoption
+adds operator/recipe support in the selected final core49 (ADR0077). Neither
+candidate replaces the sealed47 kit. Keep native list/form screens and native WebClient services. Optional
 custom pages remain supported but no new custom Tasks page or Canvas expansion.
 
 Lists own stages and list-bound tasks. No standalone tasks or workspace conversion.

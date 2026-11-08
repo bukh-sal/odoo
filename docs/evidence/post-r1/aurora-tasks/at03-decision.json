@@ -1,0 +1,79 @@
+{
+  "result": "passed_AT03_candidate_application",
+  "utc": "2026-11-08T16:19:21.655481+00:00",
+  "image": "sha256:5d9996937a655fda279132e3a2065c5b6d7e2cabc81ea35910c13c5d92ec6ce2",
+  "inventory": "sha256:3f7d2616aff5316ef6c6fb6457cb4fdb983d0ac76bce05f9f8c3a1c3b6431613",
+  "source": "99ea25e2e4fe9e4ae29fbccc9e16d6b7ed8b0676",
+  "application": {
+    "addon": "mp_aurora_tasks",
+    "digest": "sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c",
+    "file": "dev.aurora.tasks-0.2.2.mplug",
+    "plugin_id": "dev.aurora.tasks",
+    "version": "0.2.2"
+  },
+  "native_checks": [
+    "default stages and native owner/member/outsider list permissions",
+    "external assignee completion/reopen without list/stage browsing; foreign operations refused",
+    "protected reminder state and explicit missing/long-future/expired scheduling validation",
+    "transactional original-human queue and unchanged/name-only edits preserve occurrence identity",
+    "completion and due changes cancel old occurrence atomically",
+    "real registered native reminder through claim/prepare/compute/fenced apply, then idle",
+    "one current title snapshot, recipient-only inbox/read state and denied arbitrary CRUD",
+    "historical recipient snapshot retained; task opening rechecks current access after reassignment",
+    "current origin resource revocation blocks actual delivery; outsider cancellation denied",
+    "all native application jobs ran with zero workspaces/memberships/features"
+  ],
+  "edge_checks": [
+    "native archive/owner/creator/internal-user rules reject forged mutations",
+    "former member retains creator task rights but cannot create in inaccessible list",
+    "same-request stage configuration is flushed before completion/reminder SQL reads",
+    "reassignment/lost authority, unassignment, opt-out and list archive invalidate occurrences",
+    "task/list deletion cancels queued delivery before business cascade",
+    "business transaction rollback leaves no job or notification",
+    "actual committed claim/lease expiry/reclaim completes once; obsolete invocation cannot apply",
+    "completion cancels a committed running claim; its late result cannot notify"
+  ],
+  "classifier": {
+    "checks": [
+      "old-release authority classification denied while dispatch enabled",
+      "native occurrence resumable with exact actor/input/identity/timing and no fabricated binding",
+      "classification preserves closed dispatch and requires independent resume"
+    ],
+    "decision": {
+      "after_digest": "sha256:9d96909300601df6157bf6c8b15e81408ad4506f8cd1b48c94d7970111c75d57",
+      "before_digest": "sha256:27080b51245729bd5478a22ae7a56df58dfc27179c55868c4e8e0f580d2ccfc4",
+      "decision": "resumable",
+      "error_code": null,
+      "job_id": "ea1be003-1b83-491d-951e-d5b7996c417a",
+      "state": "pending"
+    },
+    "result": "passed",
+    "scope": "native classifier only; final independent lifecycle remains pending",
+    "transaction_rolled_back": true
+  },
+  "managed": {
+    "actual_reviewed_profile": true,
+    "urgent": 1,
+    "bulk": 1,
+    "completed_once": 20,
+    "notifications": 20,
+    "drained": true
+  },
+  "witnesses": {
+    "native-probe.json": "94fedfaca3a40a463d7e43a301c8b41ea8594b8ea5e556f5fc4ce1c8c5b515a5",
+    "native-edges.json": "073eeb0c393ccd6d7729209ca385ccb7aa4127d6f1b83390cffda41b0637d5e7",
+    "native-reconcile.json": "470e550a9fd5311b5268811c19b514e9729ae212a642ddc46e7683f81370c33f",
+    "managed-workload.json": "2f72062ef6db3e007e5f211bcd986515a48d8531fb74f247af8a0e6efb5f8acd",
+    "managed-drain.json": "05c34066ec5430caa53e5e76905826720cfdca672714c9f7ee972a0233f31f1d",
+    "installed-state.json": "386c19a5a0279722803e7f65541c28a099967db15794f0b707617dd5f9b5da47"
+  },
+  "acceptance": {
+    "AT_F": "passed",
+    "AT_G": "passed",
+    "AT_H": "passed"
+  },
+  "limitations": [
+    "Candidate application qualification; final release/browser/clean target/adoption/recovery/reproduction remain AT04/05",
+    "Carry-forward classifier rollback proof does not claim an approved cross-release transition"
+  ]
+}

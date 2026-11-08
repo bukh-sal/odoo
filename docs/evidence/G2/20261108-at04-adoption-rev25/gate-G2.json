@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "failed",
+  "utc": "2026-11-08T16:29:54.794612+00:00",
+  "contract_major": 1,
+  "revision": 25,
+  "frozen_files": 119,
+  "inventory_sha256": "bc33fc3cda7a5e024c7c0f8de5a57d5e68b72d0c76310781172c30d7a9a5eac8",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0077 closed owned47-to49 native Tasks adoption, exact0.2.2 archive and compatible strict declaration union; old46-to47 branch unchanged",
+  "runtime_qualification": "Contract and boundary tests only; independently reconstructed stage/execution/recovery consumers require AT04 implementation and actual final-image proof",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "99ea25e2e4fe9e4ae29fbccc9e16d6b7ed8b0676"
+}

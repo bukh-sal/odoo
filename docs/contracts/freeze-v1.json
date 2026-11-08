@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 24,
+  "revision": 25,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -63,7 +63,9 @@
         "SEC-03",
         "SEC-06",
         "SEC-07",
-        "SEC-08"
+        "SEC-08",
+        "AT-J",
+        "AT-K"
       ],
       "paths": [
         "packages/contracts/v1/plan.schema.json",
@@ -101,7 +103,10 @@
         "tests/test_native_uninstall.py",
         "packages/contracts/v1/foundation-transition.schema.json",
         "packages/contracts/examples/v1/foundation-transition.json",
-        "packages/contracts/examples/v1/revision19/plan-python-maintenance.json"
+        "packages/contracts/examples/v1/revision19/plan-python-maintenance.json",
+        "docs/architecture-decisions/0077-native-tasks-adoption-47-49.md",
+        "packages/contracts/examples/v1/foundation-transition/tasks-adoption.json",
+        "tests/test_tasks_adoption_contracts.py"
       ],
       "g1": []
     },
@@ -371,16 +376,19 @@
     "docs/architecture-decisions/0051-native-uninstall-dispatch-integration.md": "4809c5242190ebb80a6660b5ffe399422a7df10d576bc59561692349209c3ff8",
     "tests/test_lifecycle_contracts.py": "af953ead03868692fdd5a9f7b480aa225345c7ae69fff8c35b6f609570092223",
     "tests/test_native_uninstall.py": "8a4c4ea9931d456ee76095ad8161038fa46d5636a559674b829c5e403010cdf4",
-    "packages/contracts/v1/foundation-transition.schema.json": "c6331f312682784681c2775d99c33cdbc8b65abe61d7110513ea4477808babfa",
+    "packages/contracts/v1/foundation-transition.schema.json": "9ade2429b0a05f48c9875a5d7d2eee595c9694de86bdc29d826388a209bb9d14",
     "packages/contracts/examples/v1/foundation-transition.json": "c5e0f8c1558fbc1114934fee5333d11b5804823a8f57c61222eecceaa2b861fa",
     "docs/architecture-decisions/0073-owned-foundation-transition-46-47.md": "b494602fca79d4e14be0db9a609e5bdb06391502918f2265884aec8ff4f8eafb",
     "tests/test_foundation_transition_contracts.py": "ea5fcb6a6b8796b336e4be706cbc7fd0976103db25d8b50d614d508721301d4d",
     "packages/contracts/examples/v1/revision19/plan-python-maintenance.json": "98713893791b9b89433a1327735eb5df41324b3160488138b947314b3b282d8a",
-    "docs/aurora-tasks-contract.md": "002a3e6aa25d09a071313e5b96e4af57245a8641b7018bd23f9fef627d82171d",
+    "docs/aurora-tasks-contract.md": "3bd49f92ad024376396a94ca4e3fb08691d69c1825c0a0be4e1f03bf5f0eab60",
     "docs/architecture-decisions/0074-native-application-job-authority.md": "7d955039c65e3ad2a54159a033a13e04aeade0091742020d21cacd0f3c7958ae",
     "docs/contracts/native-site-lifecycle-v1.md": "112ce6dc9eb1907dbc550997197e3df01d7c0b0fda26aace3eee824c943d9c42",
     "docs/architecture-decisions/0075-site-native-application-lifecycle.md": "778afa59bb1afae6224c1b082cb78f840551667a0f7145f9888bf5894733b917",
-    "docs/architecture-decisions/0076-tasks-candidate-validation-correction.md": "aaa6ed807e139dde7bf3c0f570cc9c6175ca259e3bf5fe892e125704c69bcea1"
+    "docs/architecture-decisions/0076-tasks-candidate-validation-correction.md": "aaa6ed807e139dde7bf3c0f570cc9c6175ca259e3bf5fe892e125704c69bcea1",
+    "tests/test_tasks_adoption_contracts.py": "942c812147d8b03852b1144f730b6c0f7b27c0fe292abc800ed6def56173e7f3",
+    "docs/architecture-decisions/0077-native-tasks-adoption-47-49.md": "6faac2db3c7fbe97977f7421126beacb48643aded48c1c2ea3415a69ccfd9e7d",
+    "packages/contracts/examples/v1/foundation-transition/tasks-adoption.json": "fa2f9c25458ef3a5adbe72cc78558b36b5c6de4b1898ee2eb19008b2dafff9cc"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

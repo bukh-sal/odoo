@@ -1,0 +1,21 @@
+{
+  "result": "removed_obsolete_owned_candidates",
+  "images": [
+    {
+      "image": "sha256:e66f76100d55f45ebae306e8e4b235346b62d12ddf4d207bebfb564fa224aa55",
+      "tags": [
+        "modular-platform:retained-02bbb596-8054-48dd-8691-632e017fdc39",
+        "modular-platform:stage-20261108t153606361794z"
+      ]
+    },
+    {
+      "image": "sha256:c7fca6e3e9559b96659521da75dae1f73535c79635a09342ceba7ac84b21f50e",
+      "tags": [
+        "modular-platform:retained-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe",
+        "modular-platform:stage-20261108t160057903331z"
+      ]
+    }
+  ],
+  "dependent_containers": 0,
+  "sealed_and_unrelated_images_preserved": true
+}
