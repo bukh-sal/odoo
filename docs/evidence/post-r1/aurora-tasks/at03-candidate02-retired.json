@@ -1,0 +1,44 @@
+{
+  "result": "retired",
+  "project": "mp-r0-r1release8728acbfd843",
+  "containers": [
+    "mp-r0-r1release8728acbfd843-debug-model-edges-expanded",
+    "mp-r0-r1release8728acbfd843-native-reconcile-classifier",
+    "mp-r0-r1release8728acbfd843-debug-model-edges-02",
+    "mp-r0-r1release8728acbfd843-resume-debug-pending",
+    "mp-r0-r1release8728acbfd843-debug-model-edges",
+    "mp-r0-r1release8728acbfd843-archive-facts-diagnostic",
+    "mp-r0-r1release8728acbfd843-archive-flush-diagnostic",
+    "mp-r0-r1release8728acbfd843-native-edges",
+    "mp-r0-r1release8728acbfd843-native-probe",
+    "mp-r0-r1release8728acbfd843-op-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe-dispatch-enable",
+    "mp-r0-r1release8728acbfd843-op-a5bdece3-fda2-451c-a998-73ea91a97137-dispatch-observe",
+    "mp-r0-r1release8728acbfd843-op-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe-dispatch-reconcile",
+    "mp-r0-r1release8728acbfd843-op-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe-assets",
+    "mp-r0-r1release8728acbfd843-app-release-7bacaf3f78cd4ca18e1e6035ca47f4fe",
+    "mp-r0-r1release8728acbfd843-op-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe-metadata",
+    "mp-r0-r1release8728acbfd843-op-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe-native",
+    "mp-r0-r1release8728acbfd843-op-c9abe59f-2be6-4795-8e42-20f8493a461d-dispatch-observe",
+    "mp-r0-r1release8728acbfd843-op-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe-checkpoint",
+    "mp-r0-r1release8728acbfd843-op-7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe-dispatch-fence",
+    "mp-r0-r1release8728acbfd843-edge-1",
+    "mp-r0-r1release8728acbfd843-app-release-720ef38a23f34f95b5cfadc7b366ab77",
+    "mp-r0-r1release8728acbfd843-core-provision",
+    "mp-r0-r1release8728acbfd843-core-init",
+    "mp-r0-r1release8728acbfd843-db-1"
+  ],
+  "volumes": [
+    "mp-r0-r1release8728acbfd843_appconfig",
+    "mp-r0-r1release8728acbfd843_dbconfig",
+    "mp-r0-r1release8728acbfd843_bootstrap",
+    "mp-r0-r1release8728acbfd843_proxyconfig",
+    "mp-r0-r1release8728acbfd843_filestore",
+    "mp-r0-r1release8728acbfd843_pgdata"
+  ],
+  "networks": [
+    "mp-r0-r1release8728acbfd843_runtime",
+    "mp-r0-r1release8728acbfd843_edge"
+  ],
+  "image_retained_for_comparison": "sha256:c7fca6e3e9559b96659521da75dae1f73535c79635a09342ceba7ac84b21f50e",
+  "unrelated_resources_untouched": true
+}

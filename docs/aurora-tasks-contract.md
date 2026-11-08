@@ -6,10 +6,12 @@ not a full Aurora port. [Plan](../planning/aurora_tasks_release.md) and
 
 ## Identity, data and roles
 
-The owned package is `dev.aurora.tasks`, selected useful release0.2.1, native addon
-`mp_aurora_tasks`, numeric native version`19.0.0.2.1`. Candidate0.2.0's admitted
+The owned package is `dev.aurora.tasks`, selected useful release0.2.2, native addon
+`mp_aurora_tasks`, numeric native version`19.0.0.2.2`. Candidate0.2.0's admitted
 archive remains immutable: runtime qualification found inactive-member validation
-needed correction. It is not the release artifact. This local identity is not
+needed correction. Candidate0.2.1 corrected that but exposed pending native list/
+stage values being read through SQL before flush. Preserve both admitted archives;
+neither is the release artifact. This local identity is not
 a claim of publisher authentication or DNS ownership. Core47 remains sealed;
 native job support requires a separately qualified owned successor, provisionally
 core48. Keep native list/form screens and native WebClient services. Optional
@@ -139,11 +141,12 @@ must consume the reviewed archive bytes and bind application artifacts/dependenc
 ## Release and recovery
 
 Support clean install and the concrete populated native0.1.0 app on sealed core47
-to the selected0.2.1 app/foundation successor. Initial adoption of package metadata
+to the selected0.2.2 app/foundation successor. Initial adoption of package metadata
 for the previously native-only app must be explicitly reviewed and preserve rows;
 do not pretend it is an ordinary already-registered plugin upgrade. The known
-registered candidate0.2.0 also has an explicit non-destructive transition to0.2.1;
-never replace its archive bytes in an existing catalog. First release
+registered candidates0.2.0/0.2.1 also have explicit non-destructive migration
+declarations to0.2.2; never replace their archive bytes in an existing catalog.
+These declarations do not claim their foundation updates were qualified. First release
 qualification must specify this closed adoption/upgrade path, exact source/target
 images, application artifact/dependencies, installed states and data witnesses.
 Reject unselected sources or changed native/artifact inputs before mutation.

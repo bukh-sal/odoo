@@ -193,10 +193,22 @@ class TasksSite(Reference):
             image_retained_for_comparison=state['image_id'],unrelated_resources_untouched=True))
         self.phase(state,'retired')
 
+    def reconcile_probe(self):
+        state=self.state()
+        assert state['phase']=='native_edges_passed'
+        target=load(self.private/'target.json')
+        state.update(database=target['sites'][0]['database'],image_id=target['image_id'])
+        source='FIXTURE='+repr(load(self.local/'fixtures.json'))+'\nEXPECT_FIXED=True\n'+(ROOT/'tests/aurora_tasks_reconcile.py').read_text(encoding='utf8')
+        raw=self.native(state,'native-reconcile',[],source)
+        rows=[json.loads(r.split('=',1)[1]) for r in raw.decode().splitlines() if r.startswith('MP_AT_RECONCILE=')]
+        assert len(rows)==1 and rows[0]['result']=='passed'
+        write(self.local/'native-reconcile.json',rows[0])
+        self.phase(state,'native_reconciled')
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('actions', nargs='+', choices=['prepare', 'admit', 'initialize', 'install', 'verify_install', 'probe', 'edges', 'retire', 'verify_retirement', 'status'])
+    parser.add_argument('actions', nargs='+', choices=['prepare', 'admit', 'initialize', 'install', 'verify_install', 'probe', 'edges', 'reconcile_probe', 'retire', 'verify_retirement', 'status'])
     parser.add_argument('--candidate', type=Path, required=True)
     parser.add_argument('--run', required=True)
     parser.add_argument('--port', type=int, default=18148)

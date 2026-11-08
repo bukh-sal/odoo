@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-08T16:11:56.482676+00:00",
+  "contract_major": 1,
+  "revision": 24,
+  "frozen_files": 116,
+  "inventory_sha256": "1499e3372856aee17b1117d3e0276696dfe0c5a2f32b050b1f159448769dfce4",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0076 revision24 selected app0.2.2 fixes SQL reads before pending related ORM values are flushed",
+  "runtime_qualification": "Overlay diagnosis only; exact0.2.2 image and independent lifecycle remain pending",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "1fddfdfdea4c84a90c7599a3b124aaee928d7aef"
+}

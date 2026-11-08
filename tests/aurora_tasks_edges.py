@@ -7,7 +7,7 @@ from odoo import api,fields
 from odoo.exceptions import AccessError,ValidationError
 from odoo.addons.mp_core import job_dispatch,native_jobs
 from modular_platform import durable
-from modular_platform.job_runner import run_once
+from modular_platform.job_runner import run_once,_claim_guard
 
 registry=env.registry
 checks=[]
@@ -47,6 +47,12 @@ with registry.cursor() as cr:
     checks.append('former member retains creator task rights but cannot create in inaccessible list')
     listing.write(dict(member_ids=[(6,0,[member.uid])]))
     due=fields.Datetime.now()+timedelta(hours=1)
+    configured=owner['mp.aurora.task.stage'].create(dict(name='Configured now',list_id=listing.id,done=False))
+    configured.write(dict(done=True))
+    completed=owner['mp.aurora.task'].create(dict(name='Newly configured completion',list_id=listing.id,
+        stage_id=configured.id,assignee_id=owner.uid,due_date=due,reminder='0'))
+    assert completed.completed and occurrence(cr,completed) is None
+    checks.append('same-request stage configuration is flushed before completion/reminder SQL reads')
     task=owner['mp.aurora.task'].create(dict(name='Edge reminder',list_id=listing.id,assignee_id=assigned.uid,due_date=due,reminder='0'))
     old=occurrence(cr,task)
     assigned['mp.aurora.task'].browse(task.id).write(dict(assignee_id=owner.uid))
@@ -88,9 +94,11 @@ with registry.cursor() as cr:
     cr.execute('SELECT installation_id FROM mp_job WHERE public_id=%s',[ident]);installation=cr.fetchone()[0]
     cr.commit()
 with registry.cursor() as cr:
-    old=job_dispatch.prepare_one(api.Environment(cr,1,{}),str(uuid4()),pool='urgent',native_installation_id=installation,lease_seconds=1)
-    assert old.claim.job_id==ident
-    cr.commit()
+    with _claim_guard(cr,'urgent',None,installation) as allowed:
+        assert allowed
+        old=job_dispatch.prepare_one(api.Environment(cr,1,{}),str(uuid4()),pool='urgent',native_installation_id=installation,lease_seconds=1)
+        assert old.claim.job_id==ident
+        cr.commit()
 time.sleep(1.2)
 result=run_once(registry,str(uuid4()),pool='urgent',native_installation_id=installation)
 assert result.get('job_id')==ident and result['state']=='completed',result
@@ -99,4 +107,27 @@ with registry.cursor() as cr:
     cr.execute('SELECT attempts,state FROM mp_job WHERE public_id=%s',[ident]);assert cr.fetchone()==(2,'completed')
     cr.execute('SELECT count(*) FROM mp_aurora_notification WHERE task_id=%s',[task_id]);assert cr.fetchone()==(1,)
 checks.append('actual committed claim/lease expiry/reclaim completes once; obsolete invocation cannot apply')
-print('MP_AT_EDGES='+json.dumps(dict(result='passed',checks=checks,interrupted_job=ident),sort_keys=True))
+reclaimed_ident=ident
+
+with registry.cursor() as cr:
+    owner=user(cr,'alice')
+    task=owner['mp.aurora.task'].create(dict(name='Cancel committed running claim',list_id=listing.id,
+        assignee_id=owner.uid,due_date=fields.Datetime.now()-timedelta(seconds=1),reminder='0'))
+    ident=occurrence(cr,task);task_id=task.id
+    cr.commit()
+with registry.cursor() as cr:
+    with _claim_guard(cr,'urgent',None,installation) as allowed:
+        assert allowed
+        running=job_dispatch.prepare_one(api.Environment(cr,1,{}),str(uuid4()),pool='urgent',native_installation_id=installation)
+        assert running.claim.job_id==ident
+        cr.commit()
+with registry.cursor() as cr:
+    user(cr,'alice')['mp.aurora.task'].browse(task_id).action_complete()
+    assert state(cr,ident)=='cancelled'
+    cr.commit()
+with registry.cursor() as cr:
+    denied(cr,lambda:job_dispatch.finish_one(api.Environment(cr,1,{}),running,{}),durable.ClaimLost)
+    cr.execute('SELECT count(*) FROM mp_aurora_notification WHERE task_id=%s',[task_id]);assert cr.fetchone()==(0,)
+checks.append('completion cancels a committed running claim; its late result cannot notify')
+print('MP_AT_EDGES='+json.dumps(dict(result='passed',checks=checks,interrupted_job=reclaimed_ident,
+    cancelled_running_job=ident),sort_keys=True))

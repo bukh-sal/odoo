@@ -1,0 +1,96 @@
+{
+  "result": "candidate_runtime_partial_archive_counterexample",
+  "image": "sha256:c7fca6e3e9559b96659521da75dae1f73535c79635a09342ceba7ac84b21f50e",
+  "inventory": "sha256:4d002665fce9b0c263d2afe6d2392ac44dc0122698060c09951a560258b6669d",
+  "source": "1fddfdfdea4c84a90c7599a3b124aaee928d7aef",
+  "application": {
+    "addon": "mp_aurora_tasks",
+    "digest": "sha256:086c5f3e4570a71a440bf6b6c22940df83fe1bc479d9c3d7835118fb9841842a",
+    "file": "dev.aurora.tasks-0.2.1.mplug",
+    "plugin_id": "dev.aurora.tasks",
+    "version": "0.2.1"
+  },
+  "native": {
+    "checks": [
+      "default stages and native owner/member/outsider list permissions",
+      "external assignee completion/reopen without list/stage browsing; foreign operations refused",
+      "protected reminder state and explicit missing/long-future/expired scheduling validation",
+      "transactional original-human queue and unchanged/name-only edits preserve occurrence identity",
+      "completion and due changes cancel old occurrence atomically",
+      "real registered native reminder through claim/prepare/compute/fenced apply, then idle",
+      "one current title snapshot, recipient-only inbox/read state and denied arbitrary CRUD",
+      "historical recipient snapshot retained; task opening rechecks current access after reassignment",
+      "current origin resource revocation blocks actual delivery; outsider cancellation denied",
+      "all native application jobs ran with zero workspaces/memberships/features"
+    ],
+    "ids": {
+      "cancelled": 3,
+      "changed": 4,
+      "list": 1,
+      "task": 2
+    },
+    "jobs": {
+      "cancelled": "349d3655-1ea3-406d-ab26-fded34f4f206",
+      "current": "82510382-7702-43b2-8d9c-2d16741761e6",
+      "revoked": "9402460d-6660-4d83-bcfb-6ea044a6cb94",
+      "stale": "737b7452-500b-4a6c-b1c0-2476d5b4a933"
+    },
+    "native_installation": 1,
+    "result": "passed"
+  },
+  "classifier": {
+    "checks": [
+      "old-release authority classification denied while dispatch enabled",
+      "native occurrence resumable with exact actor/input/identity/timing and no fabricated binding",
+      "classification preserves closed dispatch and requires independent resume"
+    ],
+    "decision": {
+      "after_digest": "sha256:335e21ed246215474a625ae19086d807340cfa321e98c47bfefc4c3795dbca1c",
+      "before_digest": "sha256:0a5e6bc95fde8296ecf99551fc520eac96d106c123410e039f230262133bb291",
+      "decision": "resumable",
+      "error_code": null,
+      "job_id": "f680f9ff-c239-48ca-a9e3-48246162d97c",
+      "state": "pending"
+    },
+    "result": "passed",
+    "scope": "native classifier only; final independent lifecycle remains pending",
+    "transaction_rolled_back": true
+  },
+  "archive_counterexample": {
+    "orm_archived": true,
+    "stored_archived": true,
+    "replacement_job_incorrectly_queued": true,
+    "later_enqueue_savepoint_flushes_after_facts_decision": true,
+    "transaction_rolled_back": true
+  },
+  "diagnostic_overlay": {
+    "cancelled_running_job": "909df1aa-64a8-4a5e-b15d-fe0b022fbbba",
+    "checks": [
+      "native archive/owner/creator/internal-user rules reject forged mutations",
+      "former member retains creator task rights but cannot create in inaccessible list",
+      "same-request stage configuration is flushed before completion/reminder SQL reads",
+      "reassignment/lost authority, unassignment, opt-out and list archive invalidate occurrences",
+      "task/list deletion cancels queued delivery before business cascade",
+      "business transaction rollback leaves no job or notification",
+      "actual committed claim/lease expiry/reclaim completes once; obsolete invocation cannot apply",
+      "completion cancels a committed running claim; its late result cannot notify"
+    ],
+    "interrupted_job": "ebcb125e-6552-4c95-a55a-def26d20cf2e",
+    "result": "passed",
+    "scope": "read-only model overlay diagnostic; NOT final image or release qualification",
+    "overlay_sha256": "69f3f405b14974f5c949585313984be82033720220e47cbb544ba3dc0e6cd08c"
+  },
+  "witnesses": {
+    "logs/native-edges.stderr": "2f44c314785280a07a95e9b0a3a67ec3d5a3210897abacbe602649604669cf32",
+    "logs/debug-model-edges.stderr": "1bd67f10f2adbd1c9baf337e208ca7c052a8df1acefabbe31aa7e5b847f7d75c",
+    "logs/apply-native-install.stdout": "8443836a37db4a03d9336681c3231fd804644d2bc95eebdd21f471056b2f4ba1",
+    "resumed-debug-pending.json": "aeca57409c98092c64cd797ae11990562b56f2cf32819ea8e0c71cd0220967b1"
+  },
+  "final_image_fix_qualified": false,
+  "notes": [
+    "Inactive-user constraints passed before archive assertion failed; entire failed edge transaction rolled back.",
+    "First archive diagnostic incorrectly expected old SQL value to remain unflushed after return; source/savepoint review and second minimal probe identified ordering.",
+    "First overlay edge setup omitted mandatory pooled claim guard after committing a new test job; no claim occurred. Existing job subsequently completed normally once; no resubmission.",
+    "Expanded guarded overlay edge suite passed8groups; diagnosis only, no actual fixed-image release claim."
+  ]
+}

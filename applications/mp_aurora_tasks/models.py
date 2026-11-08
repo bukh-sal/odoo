@@ -192,6 +192,11 @@ class AuroraTask(models.Model):
 
     def _facts(self):
         self.ensure_one();self.flush_recordset()
+        # These SQL joins must see pending changes in this same native request,
+        # including list archive and an unused stage configured before assignment.
+        self.env['mp.aurora.task.list'].flush_model(['active'])
+        self.env['mp.aurora.task.stage'].flush_model(['done'])
+        self.env['res.users'].flush_model(['active','share'])
         self.env.cr.execute("""SELECT t.reminder_revision,t.reminder,t.due_date,t.assignee_id,t.active,l.active,
             COALESCE(s.done,false),u.active,COALESCE(u.share,true)
             FROM mp_aurora_task t JOIN mp_aurora_task_list l ON l.id=t.list_id
@@ -250,6 +255,7 @@ class AuroraTask(models.Model):
 
     @api.depends('stage_id')
     def _compute_completed(self):
+        self.env['mp.aurora.task.stage'].flush_model(['done'])
         for row in self:
             origin=row._origin
             if type(origin.id) is not int:row.completed=False;continue
@@ -281,6 +287,7 @@ class AuroraTask(models.Model):
 
     def _set_completion(self,done):
         self.check_access('write')
+        self.env['mp.aurora.task.stage'].flush_model(['done'])
         for row in self:
             self.env.cr.execute('SELECT id FROM mp_aurora_task_stage WHERE list_id=%s AND done=%s ORDER BY sequence,id LIMIT 1',[row.list_id.id,done])
             stage=self.env.cr.fetchone()

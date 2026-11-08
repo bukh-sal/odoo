@@ -31,3 +31,24 @@ semantics remain unchanged. Requalify G2 and the affected runtime checks; previo
 receipts keep their precise candidate scope. Final browser, populated update,
 independent recovery and reproduction remain required. This decision grants no
 implementation credit merely for changing source or documentation.
+
+## Revision24 amendment after candidate0.2.1
+
+The real corrected image passed the original10 checks and the inactive-member
+negative case, then exposed list archive queuing a replacement occurrence. The
+facts SQL read list.active before its pending ORM write was flushed; the later
+enqueue savepoint flushed the list after the scheduling decision. A rollback-only
+minimal reproduction confirms an archived stored list with a new pending job.
+Flush the joined list/stage/user values before reminder SQL; flush stage.done
+before completion reads/actions. This also covers stage configuration followed
+by task assignment in the same request.
+
+Preserve admitted0.2.1 bytes and issue0.2.2/native19.0.0.2.2. Move the unchanged
+bounded stage migration and declare0.1.0/0.2.0/0.2.1 targets. Revision24 updates
+the selected version without changing public wire or authority semantics. A
+read-only model-overlay diagnostic passed8 expanded edge groups, including actual
+lease expiry/reclaim, stale invocation refusal and cancellation of a committed
+running claim. It is diagnosis, not final-image qualification. A separate actual
+image0.2.1 native classifier passed3 checks and stayed paused/rolled back; real
+approved forward/recovery remains required. New0.2.2 image checks must precede
+the populated update/recovery gate.

@@ -7,8 +7,8 @@ Current goal: useful Aurora Tasks application release through AT-05 — active. 
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AT-01/02 passed; AT-03 candidate01 workflow passed with two counterexamples; selected0.2.1 fixes need a new image.** AR-05 passed; core47 is the sealed baseline. Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
-- Active item: **AT-03c: build corrected core48/App0.2.1 and qualify remaining permission/reminder/carry-forward edges.** [Active plan](../planning/aurora_tasks_release.md).
+- Current phase/gate: **AT-01/02 passed; AT-03 candidate01 workflow passed with two counterexamples; selected0.2.2 flush correction needs a new image.** AR-05 passed; core47 is the sealed baseline. Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
+- Active item: **AT-03c: build corrected core48/App0.2.2 and qualify remaining permission/reminder/carry-forward edges.** [Active plan](../planning/aurora_tasks_release.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -23,7 +23,7 @@ application release; AR16/16, CF12/12 and R1 99/99 remain historical completed c
 | --- | --- | --- | --- |
 | AT-01 |15| passed | [Feasibility/freeze decision](evidence/post-r1/aurora-tasks/at01-decision.json); native probe12 checks; revision21 |
 | AT-02 |20| passed | AT-D authoring and AT-E actual approved site-native install passed |
-| AT-03 |25| in_progress | Native workflow10/managed20 passed; two source corrections need actual0.2.1 image |
+| AT-03 |25| in_progress | Native workflow10/managed20 passed; SQL/permission source corrections need actual0.2.2 image |
 | AT-04 |30| not_started | Clean/populated upgrade, fault/recovery, useful peer and browser |
 | AT-05 |10| not_started | Reproduction/affected checks, handoff and retirement |
 
@@ -35,7 +35,7 @@ application release; AR16/16, CF12/12 and R1 99/99 remain historical completed c
 | AT-D | passed | [General authoring/composition](evidence/post-r1/aurora-tasks/at02-authoring.json): CLI, two apps, exact archive bytes, dependency refusals, curated catalog and solver;50tests/49pass/1Windows skip |
 | AT-E | passed | [Actual image archive admission and approved site-native install](evidence/post-r1/aurora-tasks/at03-candidate01.json), zero workspace authority |
 | AT-F | passed | [Actual native shared task workflow](evidence/post-r1/aurora-tasks/at03-candidate01.json); final browser AT-L pending |
-| AT-G | failed edge; fix unverified | Initial roles passed; inactive-member counterexample reproduced/rolled back;0.2.1 correction needs runtime |
+| AT-G | failed edge; fix unverified | Initial roles passed; inactive-member counterexample reproduced/rolled back;inactive-member correction passed on0.2.1; complete selected0.2.2 suite pending |
 | AT-H | partial | Real delivery/inbox/cancel and20managed effects passed; remaining edges/native carry-forward fix need new image |
 | AT-I | not_run | Clean installation of final release |
 | AT-J | not_run | Populated supported app upgrade preserving records and rules |
@@ -51,39 +51,41 @@ publication/actual independently approved native apply passed AT-E; final-image
 requalification remains AT-I. AT-E1 default Docker pool exhaustion resolved
 for the retired probe; new disposable networks need inspected explicit subnets.
 
-Resume capsule: **AT-03b active; candidate01 checks terminal, no uncertain
-installation mutation.** Source5aa7a9b0b8f/imagee66f76100d55/inventory29180448b279
-installed Tasks0.2.0/archive97251f15ccd4 through approved site-native operation
-02bbb596-8054-48dd-8691-632e017fdc39/generation2. All six actual image archives
-admitted. Native10cases and reviewed1urgent/1bulk profile20reminders passed,
-one attempt/effect each. Profile drained. [Receipt](evidence/post-r1/aurora-tasks/at03-candidate01.json).
+Resume capsule: **AT-03c active; candidate02 checks/diagnostics terminal, no live
+mutation.** Candidate02 source1fddfdfdea4/imagec7fca6e3e955/inventory4d002665fce9,
+app0.2.1/archive086c5f3e4570 installed through approved site-native operation
+7bacaf3f-78cd-4ca1-8e1e-6035ca47f4fe. Original10native checks passed; inactive-user
+constraint now refuses the negative case. Further edge caught list archive queuing
+a replacement because related SQL facts were read before ORM flush; whole failed
+transaction rolled back. Minimal probe identified later enqueue-savepoint flush,
+not a permanently stale DB value. [Receipt](evidence/post-r1/aurora-tasks/at03-candidate02.json).
 
-Further rollback-only edge caught inactive-member acceptance because the default
-relation hides inactive users. Minimal actual reproduction confirms complete
-inactive context detects it. No failed edge transaction committed. Separate
-rollback classification also proves valid native carry-forward incorrectly held
-because workspace binding is expected. Both source fixes remain unverified.
-Selected app0.2.1/native19.0.0.2.1 preserves admitted0.2.0 bytes; explicit
-0.1.0/0.2.0 stage migrations target0.2.1. ADR0076/revision23,116files/10rows
-passed full affected G2checks in20261108-at03-candidate-correction-rev23-final (exact LF inventory).
-First G2run correctly refused revision22 drift before freeze recording completed.
-Native reconciliation now checks target artifact/original actor/resource, paused
-source control and unchanged identity/timing, advances fences and stays closed.
-No final release, browser, recovery or new-image fix pass is claimed.
+Source now flushes list/stage/user facts, and stage completion reads/actions.
+A read-only model-overlay diagnosis passed8expanded edge groups (including actual
+lease expiry/reclaim and late-result refusal after running cancellation). This is
+NOT fixed-image qualification. One fixture omitted pooled claim guard after enqueue;
+the one already committed pending job was completed normally, never resubmitted.
+Native classifier on the unmodified actual0.2.1 image passed3cases, preserves
+identity/timing and paused state; final independently approved lifecycle pending.
 
-Owned site `.local/aurora-tasks/at03-native-01`, projectmp-r0-r1release51fa1ac3e963,
-port18148 is retired: all project containers, six volumes and two networks removed;
-empty label/name inventories verified. Image retained briefly until successor build.
-Retirement corrected a read-only volume-list flag after successful deletion; it
-resumed verification only, never repeated deletion. Worker profile drained. `native-edges` failed before its first commit; diagnostic
-and classifier probes explicitly rolled back. Do not replay logs or installation.
-Sealed47/46 immutable; own47 adoption still required, closed AR46 recipe excluded.
+Selected new app0.2.2/native19.0.0.2.2 keeps both admitted candidate archives
+immutable; stage migration script moved unchanged, explicit0.1.0/0.2.0/0.2.1
+migration declarations. ADR0076 revision24 full affected G2checks passed
+at`evidence/G2/20261108-at03-flush-correction-rev24`;116files/10rows. Progress
+43points/6of14; no new gate credit for overlay/source/doc work. Sealed47/46 intact.
 
-Next: commit corrected source/fixtures; build next candidate on stable source,
-then fresh catalog/native/edge/managed
-checks and native carry-forward classifier. Final approved populated47 adoption,
-independent recovery beside Maintenance, native browser, reproduction/privacy and
-handoff remain required. Progress43points/6of14checks, no source/doc inflation.
+Owned current site `.local/aurora-tasks/at03-native-02`,
+projectmp-r0-r1release8728acbfd843/port18148 is now retired: all project
+containers/6volumes/2networks, exact empty label/name checks. No managed profile
+was started. Commit and build candidate03 on stable source.
+Candidate01 all containers/6volumes/2networks and its obsolete image/two tags are
+already removed; unrelated/sealed assets preserved. Never retry old installation
+or repeat uncertain mutations. Public/private receipts retain all failure scopes.
+
+Next: commit/build candidate03; revision24 passed, package71c97db1113c validated;
+fresh native/expanded edges/classifier/managed proofs must pass before AT-04 exact
+47 native-app adoption and independent recovery beside Maintenance. Native browser,
+final reproduction/privacy/handoff remain. No user input needed.
 
 ## Addon cleanup and restructuring (completed goal)
 

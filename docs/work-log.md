@@ -1969,3 +1969,26 @@ Finish new source checks/image then requalify; sealed47/46 preserved.
   existing Windows skip. Selected native/authority/fixture Python sources parse.
   LF normalization avoids unrelated whole-file churn; final revision23 G2receipt
   binds exact normalized inventory. No fix runtime credit before next image.
+
+## AT-03c — candidate02 findings and bounded flush diagnosis
+
+Core48/App0.2.1 imagec7fca6e3e955/archive086c5f3e4570 built/approved installed
+on fresh zero-workspace site. Original10cases passed; inactive-member correction
+passed. Later edge found archive schedules replacement. First minimal assertion
+expected SQL to remain old after return; inspected savepoint flush ordering and
+second rollback probe confirms decision preceded flush, then archived DB/newjob.
+Source flushes related list/stage/user facts and completion stage state.
+
+Read-only model overlay passed8expanded edge groups incl real lease reclaim/stale
+claim and running cancellation; explicitly diagnostic, no image qualification.
+First overlay's claim fixture omitted pooled guard; committedpendingjob was
+subsequently processed once through normal runner, never resubmitted. Fixed fixture
+uses actual fresh-cursor guard. Unmodified0.2.1 native classifier passed3rollback
+cases, not independent forward/recovery. Select0.2.2 with unchanged bounded stage
+migration and explicit previous-version transitions; revision24 source gate runs.
+Progress remains43/100 and6/14. New image must pass before AT-04.
+
+- Revision24 full affected source gate passes116files/10rows; selected0.2.2
+  archive71c97db1113c/29,211bytes structurally validated. Expanded diagnostic
+  evidence remains explicitly overlay-only. Candidate02 precise6volume/2network/
+  container retirement passed with empty label/name inventories. No user blocker.

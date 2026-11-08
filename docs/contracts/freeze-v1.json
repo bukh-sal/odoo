@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 23,
+  "revision": 24,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -376,11 +376,11 @@
     "docs/architecture-decisions/0073-owned-foundation-transition-46-47.md": "b494602fca79d4e14be0db9a609e5bdb06391502918f2265884aec8ff4f8eafb",
     "tests/test_foundation_transition_contracts.py": "ea5fcb6a6b8796b336e4be706cbc7fd0976103db25d8b50d614d508721301d4d",
     "packages/contracts/examples/v1/revision19/plan-python-maintenance.json": "98713893791b9b89433a1327735eb5df41324b3160488138b947314b3b282d8a",
-    "docs/aurora-tasks-contract.md": "6105833e67ad79a50c79639938a76f77ba7c8a919f88a65ff1b50730f6a79141",
+    "docs/aurora-tasks-contract.md": "002a3e6aa25d09a071313e5b96e4af57245a8641b7018bd23f9fef627d82171d",
     "docs/architecture-decisions/0074-native-application-job-authority.md": "7d955039c65e3ad2a54159a033a13e04aeade0091742020d21cacd0f3c7958ae",
     "docs/contracts/native-site-lifecycle-v1.md": "112ce6dc9eb1907dbc550997197e3df01d7c0b0fda26aace3eee824c943d9c42",
     "docs/architecture-decisions/0075-site-native-application-lifecycle.md": "778afa59bb1afae6224c1b082cb78f840551667a0f7145f9888bf5894733b917",
-    "docs/architecture-decisions/0076-tasks-candidate-validation-correction.md": "db302c2d39685ea45b7c8e8fa16c294eda6713a1121a7b5d6b2042edd6cc12fe"
+    "docs/architecture-decisions/0076-tasks-candidate-validation-correction.md": "aaa6ed807e139dde7bf3c0f570cc9c6175ca259e3bf5fe892e125704c69bcea1"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }
