@@ -11,7 +11,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-03 bounded second application — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-K optional Projects–Tasks native extension with both-resource current access and metadata-safe search/count.** [Plan](../planning/application_adoption.md).
+- Active item: **AP-L populated Projects0.1.0→0.1.1 full-set evolution/fault/recovery and dependency refusals.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -19,7 +19,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**65/100 verified points;10/16 acceptance checks passed.** Plan creation/source
+**72.5/100 verified points;11/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -42,7 +42,7 @@ across its four checks. No sub-agents are authorized.
 | AP-H | passed | [Real app-down/fresh original restore/current auth/separate resume](evidence/post-r1/application-adoption/ap02-release-decision.json),valid2effects/revoked0/useful pilot |
 | AP-I | passed | [Source/contract/new-slot actual image+ordinary staged planning](evidence/post-r1/application-adoption/ap03-feasibility-decision.json),no app installed/probe retired/public freeze passed |
 | AP-J | passed | [Independent Projects0.1.0/approved install/9actual backend groups/native create+member readonly UI](evidence/post-r1/application-adoption/ap03-projects-decision.json),Tasks/extension/workspaces absent |
-| AP-K | not_run | Optional compatible extension, both-resource authority, integration-absent independence |
+| AP-K | passed | [Separate optional extension/7actual server groups/native linking+Open](evidence/post-r1/application-adoption/ap03-integration-decision.json);both-resource current rights/metadata-safe searches/counts |
 | AP-L | not_run | Actual clean/populated app sets, dependency refusals/browser/recovery |
 | AP-M | not_run | Short explicit-pin author/package/compose/test path |
 | AP-N | not_run | Independent inspectable operator lifecycle and pilot start/stop path |
@@ -54,7 +54,7 @@ by immutable0.2.3/actual new forms/authoritative ownership. AP-H-001 native rest
 release mismatch resolved by ADR0079 host-only operator correction and fresh
 actual recovery/forward/effects;first counterexample retained.
 
-Resume capsule: **AP-01/AP-02/AP-I/J passed;AP-K active,65/100points10/16.**
+Resume capsule: **AP-01/AP-02/AP-I/J/K passed;AP-L active,72.5/100points11/16.**
 Pilot261d5d0954ee/18172 remains useful unchanged foundation0.1.49/Tasks0.2.3,
 imagebf39b8d8/inventoryd84289ff,1urgent+1bulk. In-app tab16 Operator/task3,
 no unsaved draft;CUA part summarized. No running process/test/uncertain mutation.
@@ -1355,3 +1355,5 @@ Current G6 backend evidence for JOB-01..03, EVT-01..03 and SVC-01..05 is bound t
 | ISO-03 | H/R2 | excluded_R2 | Frontend origin/source/nonce/replay/stale-frame tests pass | not_run; procedure to be bound in owning phase |
 | ISO-04 | H/R2 | excluded_R2 | Host cookies and DOM are unavailable to sandboxed frontend | not_run; procedure to be bound in owning phase |
 | ISO-05 | H/R2 | excluded_R2 | Revocation and teardown invalidate runtime/bridge authority | not_run; procedure to be bound in owning phase |
+
+AP-K completed:extension separateGit 854c090a0fd2d332b49f03eb594e22b328584eb3,artifact65fca164/21800bytes,image8d61e6cc/inventory47aaa4c7. Full-set18176/projectc8dd58853f67 installed all3 via independent approval;7actual servergroups and native newProject3/link6/Task1Open passed. CUA summarized,tab18Alice Task1/no draft. AP-L active:make Projects0.1.1target_date successor;actual populatedfault/old-appfreshrestore/separateresume/newforward. Keep Projects-only18174 and Tasks18172 as independent peers;no runningmutation.

@@ -470,3 +470,7 @@ AP-E..H passed with actual registered-app-only upgrade/fault/fresh original rest
 separate resume/valid and revoked-actor effects. ADR0079 corrects independent host
 operator behavior;sealed runtime/native guards remain unchanged. Current native
 auth revocations are overlaid;custom business ACL rows restore to checkpoint.
+
+## AP-03 independent Projects and optional integration
+
+[Standalone Projects](evidence/post-r1/application-adoption/ap03-projects-decision.json) and [optional integration](evidence/post-r1/application-adoption/ap03-integration-decision.json) passed AP-J/K. Actual native installs,9 standalone and7 integration server groups plus in-app creation/link/Open are recorded. Projects-only profile has no Tasks table/package or workspaces. Full set retains current both-resource authority;AP-L evolution/recovery remains unpassed.
