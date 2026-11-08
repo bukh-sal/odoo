@@ -136,7 +136,7 @@ def release_lock(solution, provenance, *, generation, created_at):
 def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpoints=(),
                  permission_changes=(), trust_changes=(), operation_type='install',
                  operation_id=None, created_at=None, backup_policy='development_checkpoint',
-                 catalog_snapshot_digest=None, resolution_reasons=None, feature_states=()):
+                 catalog_snapshot_digest=None, resolution_reasons=None, feature_states=(),foundation_transition=None):
     """Build a reviewable immutable bundle; no approval or execution is implied.
 
     `state` is the independently observed complete deployment snapshot. Targets
@@ -172,6 +172,10 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
     _check_installation_mapping(targets)
     _check_installation_mapping(list({scoped_installation_key(item): item for item in state['installations'] + list(targets)}.values()))
     installed = {scoped_installation_key(item): item for item in state['installations']}
+    adoption=None
+    if foundation_transition is not None:
+        from .tasks_adoption import plan_exception
+        adoption=plan_exception(state,target_release,solution,targets,foundation_transition,operation_type)
     clean_targets, seen, artifacts, migrations = [], set(), {}, {}
     valid_actions = {'install', 'upgrade', 'suspend', 'enable', 'uninstall', 'unregister', 'remove','deploy'}
     for source in targets:
@@ -196,7 +200,8 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         allowed_actions = {'install': {'install', 'upgrade'}, 'upgrade': {'install', 'upgrade'},
             'suspend': {'suspend'}, 'enable': {'enable'}, 'uninstall': {'uninstall', 'unregister'},
             'unregister': {'uninstall', 'unregister'}, 'remove': {'remove'},'deploy':{'deploy'},'core_upgrade':{'deploy'}}
-        if target['action'] not in allowed_actions.get(operation_type, set()):
+        adopted=adoption is not None and adoption['target'] is not None and target==adoption['target']
+        if target['action'] not in allowed_actions.get(operation_type, set()) and not adopted:
             raise PlanningError('Target action disagrees with the operation type')
         identity = scoped_installation_key(target)
         if identity in seen:
@@ -246,15 +251,20 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         # retained exactly, including inert unregister tombstones; they do not
         # become fake native deploy targets or gain runtime-control authority.
         native_scopes={key:row for key,row in installed.items() if old.get(row['plugin_id'],{}).get('runtime')=='native'}
+        expected_scopes=set(native_scopes)
+        allowed_new={adoption['available_plugin']} if adoption is not None else set()
+        if adoption is not None and adoption['target'] is not None:
+            expected_scopes.add(scoped_installation_key(adoption['target']))
         external=[p for p in old.values() if p['runtime']=='external_service']
-        if (changed or set(new)!=set(old) or seen!=set(native_scopes) or permission_changes or trust_changes
+        if (changed-allowed_new or set(new)!=set(old)|allowed_new or seen!=expected_scopes or permission_changes or trust_changes
                 or any(row.get('state')!='installed' or row.get('metadata_state','installed')!='installed' for row in native_scopes.values())
                 or any(old.get(row['plugin_id'],{}).get('runtime') not in {'native','external_service'} for row in installed.values())
                 or any(locked_new.get(p['plugin_id'])!=p for p in external)
                 or any(item['runtime']!='native' for item in artifacts.values())):
             raise PlanningError('Platform deploy requires every installed native scope and unchanged artifacts/grants')
     covered = {target['plugin_id'] for target in clean_targets if target['action'] in ('install', 'upgrade')}
-    if changed - covered:
+    available_only={adoption['available_plugin']} if adoption is not None and adoption['target'] is None else set()
+    if changed - covered - available_only:
         raise PlanningError('Every transitive artifact change needs explicit targets: ' + ', '.join(sorted(changed - covered)))
     for key in changed:
         for installation in state['installations']:

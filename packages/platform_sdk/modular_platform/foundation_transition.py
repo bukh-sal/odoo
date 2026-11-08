@@ -1,4 +1,4 @@
-"""Closed owned46→47 recipe: exact source/data authority, never package SQL."""
+"""Dispatch explicit closed owned transitions; never accept package-supplied SQL."""
 from pathlib import Path
 import hashlib
 import json
@@ -21,6 +21,17 @@ NATIVE_VERSIONS = {
     'mp_core': ('19.0.0.1.46', '19.0.0.1.47'),
 }
 NEW_MODULES = {'mp_discuss': '19.0.1.0', 'mp_mail_gateway': '19.0.1.1'}
+
+
+def _tasks_recipe(declaration):
+    return isinstance(declaration,dict) and declaration.get('recipe')=='owned-native-tasks-adoption-47-49-v1'
+
+
+def observe_transition_effects(configuration,declaration):
+    if _tasks_recipe(declaration):
+        from .tasks_adoption import observe_effects as observe_tasks
+        return observe_tasks(configuration)
+    return observe_effects(configuration)
 
 
 def _native_version(raw):
@@ -117,6 +128,9 @@ def _check_effects(effects, site_ids):
 def validate_transition(before, after, descriptor, declaration, *, site_ids, effects=None):
     """Validate independently observed images plus OS-selected declaration."""
     validate('foundation-transition', declaration)
+    if _tasks_recipe(declaration):
+        from .tasks_adoption import validate_transition as validate_tasks
+        return validate_tasks(before,after,descriptor,declaration,site_ids=site_ids,effects=effects)
     source, target = declaration['source'], declaration['target']
     if (descriptor['base_image_id'] != SOURCE_IMAGE or source['image_id'] != SOURCE_IMAGE
             or before['inventory_digest'] != SOURCE_INVENTORY
@@ -225,6 +239,9 @@ def observe_effects(configuration):
 
 
 def native_changes(sites,declaration):
+    if _tasks_recipe(declaration):
+        from .tasks_adoption import native_changes as tasks_changes
+        return tasks_changes(sites,declaration)
     if len(sites)!=1 or len(declaration['site_effects'])!=1:
         raise OperatorError('Foundation recipe requires one site')
     effect=declaration['site_effects'][0]
@@ -237,6 +254,9 @@ def native_changes(sites,declaration):
 
 def maintenance_flags(bundle):
     lock=bundle['operation_lock'];declaration=lock['foundation_transition']
+    if _tasks_recipe(declaration):
+        from .tasks_adoption import maintenance_flags as tasks_flags
+        return tasks_flags(bundle)
     validate('foundation-transition',declaration)
     _check_effects(declaration['site_effects'],bundle['plan']['site_ids'])
     effect=declaration['site_effects'][0]
@@ -250,7 +270,11 @@ def maintenance_flags(bundle):
     return (['-i',','.join(installs)] if installs else [])+['-u',','.join(m['addon'] for m in expected)]
 
 
-def declare_transition(configuration, target_image, before, after):
+def declare_transition(configuration, target_image, before, after, *, recipe=RECIPE):
+    if recipe=='owned-native-tasks-adoption-47-49-v1':
+        from .tasks_adoption import declare_transition as declare_tasks
+        return declare_tasks(configuration,target_image,before,after)
+    if recipe!=RECIPE:raise OperatorError('Unknown owned foundation recipe')
     declaration = dict(schema_version=1, recipe=RECIPE,
         source=dict(image_id=configuration['image_id'], inventory_digest=before['inventory_digest'],
                     policy_digest=data_digest(before['inventory']['policy']), core_version='0.1.46'),
@@ -269,6 +293,9 @@ def retire(executor,bundle,directory):
     """After checkpoint+mutation journal, export privately then use old API."""
     from .operator_store import _write_new
     declaration=bundle['operation_lock']['foundation_transition']
+    if _tasks_recipe(declaration):
+        from .tasks_adoption import retire as capture_tasks
+        return capture_tasks(executor,bundle,directory)
     effects=observe_effects(executor.config)
     if effects!=declaration['site_effects']:
         raise OperatorError('Drained foundation data differs from the approved retirement')
@@ -289,6 +316,9 @@ def _run_child(executor,bundle,directory,phase,image,payloads=None):
 
 
 def archive_and_verify(executor,bundle,directory,image):
+    if _tasks_recipe(bundle['operation_lock']['foundation_transition']):
+        from .tasks_adoption import archive_and_verify as verify_tasks
+        return verify_tasks(executor,bundle,directory,image)
     from .contracts import load_json
     payloads=load_json((directory/'retirement-payloads.json').read_bytes())
     _run_child(executor,bundle,directory,'archive',image,payloads)

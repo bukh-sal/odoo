@@ -90,6 +90,11 @@ def native_maintenance_flags(bundle,plugins):
             raise OperatorError('Source removal requires exact staged subtraction and checkpoint without native maintenance')
         return None
     if operation in ('deploy','core_upgrade'):
+        if operation=='core_upgrade' and 'foundation_transition' in lock:
+            if not lock.get('platform_source_diff'):
+                raise OperatorError('Foundation transition requires exact inventoried source changes')
+            from .foundation_transition import maintenance_flags
+            return maintenance_flags(bundle)
         if installs or upgrades or not lock.get('platform_source_diff') or any(item['action']!='deploy' for item in lock['targets']):
             raise OperatorError('Platform maintenance cannot combine plugin migrations')
         if operation=='deploy':
@@ -98,9 +103,6 @@ def native_maintenance_flags(bundle,plugins):
         from .release_staging import CORE_ADDONS
         changes=lock.get('native_core_changes',[])
         upgrades=[item['addon'] for item in changes]
-        if 'foundation_transition' in lock:
-            from .foundation_transition import maintenance_flags
-            return maintenance_flags(bundle)
         if (not upgrades or len(upgrades)!=len(set(upgrades)) or not set(upgrades)<=CORE_ADDONS
                 or not bundle['plan']['destructive'] or not bundle['plan']['backup']['required']):
             raise OperatorError('Exact versioned core maintenance/checkpoint acknowledgement required')

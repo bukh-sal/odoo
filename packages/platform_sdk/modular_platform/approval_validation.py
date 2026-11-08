@@ -29,6 +29,8 @@ class IndependentValidator:
         state = document['state']
         check_bundle(bundle, state)
         plan = bundle['plan']
+        if 'foundation_transition' in bundle['operation_lock'] and 'staged_image' not in bundle['operation_lock']:
+            raise OperatorError('Foundation declaration requires an independently owned staged image')
         if plan['trust_changes'] or plan['backup']['policy_id'] != 'development_checkpoint':
             raise OperatorError('This profile does not accept unrelated grant/trust/backup policy changes')
         if 'staged_image' in bundle['operation_lock']:

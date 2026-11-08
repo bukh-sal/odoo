@@ -184,6 +184,8 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     if operation_type in ('install','upgrade'):validate_plugin_core_stability(base_runtime,runtime)
     platform_diff=validate_platform_deploy(base_runtime,runtime,descriptor) if operation_type=='deploy' else None
     core_changes=None
+    adoption_declaration=None
+    adoption_target=None
     if foundation_transition is not None and operation_type!='core_upgrade':
         raise OperatorError('Foundation transition requires explicit core maintenance')
     if operation_type=='core_upgrade':
@@ -194,6 +196,10 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
             platform_diff=validate_transition(base_runtime,runtime,descriptor,foundation_transition,
                 site_ids=[s['site_id'] for s in sites])
             core_changes=native_changes(sites,foundation_transition)
+            if foundation_transition.get('recipe')=='owned-native-tasks-adoption-47-49-v1':
+                from .tasks_adoption import adoption_target as nominate_adoption
+                adoption_declaration=foundation_transition
+                adoption_target=nominate_adoption(foundation_transition)
         for site in sites:
             native={item['addon']:item for item in site['native_modules']}
             if any(change['addon'] not in native or native[change['addon']]['state']!='installed'
@@ -226,16 +232,17 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     for target in targets:
         site=by_site.get(target['site_id'])
         site_native=target['workspace_id'] is None
+        adopted=adoption_target is not None and target==adoption_target
         if site_native:
             if target['plugin_id'] not in by_plugin:raise OperatorError('Site-native target lacks its verified package')
             require_site_manifest(by_plugin[target['plugin_id']]['manifest'])
             if site is None or not isinstance(site.get('native_modules'),list):
                 raise OperatorError('Site-native staging requires observed native registry state')
             if target['action']=='install' and not any(i['plugin_id']==target['plugin_id'] for i in site['installations']) and any(
-                    m['addon']==by_plugin[target['plugin_id']]['manifest']['runtime']['addon_name'] for m in site['native_modules']):
+                    m['addon']==by_plugin[target['plugin_id']]['manifest']['runtime']['addon_name'] for m in site['native_modules']) and not adopted:
                 raise OperatorError('Installed unregistered native addon requires an explicit adoption transition')
         if (site is None or not site_native and not any(item['workspace_id']==target['workspace_id'] and (item['state']=='active' or feature_map.get((target['installation_id'],target['workspace_id']))=='suspended') for item in site['workspaces'])
-                or target['plugin_id'] not in by_plugin or target['action'] not in (('deploy',) if operation_type in ('deploy','core_upgrade') else ('install','upgrade'))
+                or target['plugin_id'] not in by_plugin or target['action'] not in (('install',) if adopted else ('deploy',) if operation_type in ('deploy','core_upgrade') else ('install','upgrade'))
                 or by_plugin[target['plugin_id']]['manifest']['runtime']['kind']!='native'
                 or target['installation_id']!=installation_id(site,target['plugin_id'])):
             raise OperatorError('Staged target differs from current site/workspace/installation identity')
@@ -265,7 +272,7 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
         target_document['request']['permission_changes']=reinstall_spec['permission_changes']
         target_document['request']['feature_states']=list(feature_states)
     retained=[name for name,item in by_plugin.items() if name in old and old[name]['digest']==item['digest']]
-    bundle=prepare_document(target_document,catalog,retained_trust_for=retained)
+    bundle=prepare_document(target_document,catalog,retained_trust_for=retained,foundation_transition=adoption_declaration)
     if operation_type in ('deploy','core_upgrade'):
         if (bundle['operation_lock']['bindings']!=document['state'].get('bindings',[])
                 or bundle['operation_lock']['endpoints']!=document['state'].get('endpoints',[]) or bundle['plan']['permission_changes']):
@@ -321,10 +328,10 @@ class StageStore:
             record={'schema_version':1,'base_configuration':config,'image_id':image_id,'runtime':runtime,
                 'staged_at':datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
             if foundation_transition is not None:
-                from .foundation_transition import validate_transition, observe_effects
+                from .foundation_transition import validate_transition, observe_transition_effects
                 validate_transition(inspect_image(config['image_id']),runtime,
                     dict(base_image_id=config['image_id'],target_image_id=image_id),foundation_transition,
-                    site_ids=[s['site_id'] for s in config['sites']],effects=observe_effects(config))
+                    site_ids=[s['site_id'] for s in config['sites']],effects=observe_transition_effects(config,foundation_transition))
                 record['foundation_transition']=copy.deepcopy(foundation_transition)
             descriptor={'stage_digest':data_digest(record),'base_image_id':config['image_id'],'target_image_id':image_id,
                 'inventory_digest':runtime['inventory_digest'],'runtime_digest':data_digest(runtime)}
@@ -358,8 +365,8 @@ class StageStore:
             raise OperatorError('Staged image runtime metadata changed since independent observation')
         runtime_inputs(record['runtime'],self.catalog.snapshot())
         if 'foundation_transition' in record:
-            from .foundation_transition import validate_transition, observe_effects
+            from .foundation_transition import validate_transition, observe_transition_effects
             validate_transition(inspect_image(self.configuration['image_id']),record['runtime'],descriptor,
                 record['foundation_transition'],site_ids=[s['site_id'] for s in self.configuration['sites']],
-                effects=observe_effects(self.configuration))
+                effects=observe_transition_effects(self.configuration,record['foundation_transition']))
         return copy.deepcopy(descriptor),copy.deepcopy(record)

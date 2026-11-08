@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "-I",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_tasks_adoption*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_absent_native_tasks_stays_absent_with_same_available_archive (test_tasks_adoption.TasksAdoption.test_absent_native_tasks_stays_absent_with_same_available_archive) ... ok\r\ntest_closed_source_target_and_ordinary_core_guard (test_tasks_adoption.TasksAdoption.test_closed_source_target_and_ordinary_core_guard) ... ok\r\ntest_incomplete_duplicate_or_stale_application_witnesses_denied (test_tasks_adoption.TasksAdoption.test_incomplete_duplicate_or_stale_application_witnesses_denied) ... ok\r\ntest_source_dependency_archive_policy_or_source_drift_denied (test_tasks_adoption.TasksAdoption.test_source_dependency_archive_policy_or_source_drift_denied) ... ok\r\ntest_explicit_closed_recipe_and_retained_old_golden (test_tasks_adoption_contracts.TasksAdoptionContract.test_explicit_closed_recipe_and_retained_old_golden) ... ok\r\ntest_no_commands_sql_workspaces_or_permission_snapshots (test_tasks_adoption_contracts.TasksAdoptionContract.test_no_commands_sql_workspaces_or_permission_snapshots) ... ok\r\ntest_other_source_target_or_app_cannot_select_this_recipe (test_tasks_adoption_contracts.TasksAdoptionContract.test_other_source_target_or_app_cannot_select_this_recipe) ... ok\r\ntest_unknown_table_native_state_and_boolean_shapes_are_denied (test_tasks_adoption_contracts.TasksAdoptionContract.test_unknown_table_native_state_and_boolean_shapes_are_denied) ... ok\r\ntest_missing_recipe_scope_and_rehashed_native_change_are_denied (test_tasks_adoption_planning.TasksAdoptionPlanning.test_missing_recipe_scope_and_rehashed_native_change_are_denied) ... ok\r\ntest_real_app_bytes_closed_native_adoption_and_independent_reconstruction (test_tasks_adoption_planning.TasksAdoptionPlanning.test_real_app_bytes_closed_native_adoption_and_independent_reconstruction) ... ok\r\ntest_same_available_app_does_not_install_it_when_native_source_absent (test_tasks_adoption_planning.TasksAdoptionPlanning.test_same_available_app_does_not_install_it_when_native_source_absent) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 11 tests in 1.152s\r\n\r\nOK\r\n"
+}

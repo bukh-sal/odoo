@@ -2015,3 +2015,21 @@ retains old46→47 branch;4new boundary cases. First G2run caught root example n
 inference; moved new fixture under existing schema namespace, test unchanged.
 Second full affected source gate passes119files/10rows. Implementation consumers
 remain next; no runtime acceptance credit for this source/document work.
+
+## AT-04a consumers and actual47 baselines
+
+Implemented separate Tasks recipe/strict image/artifact/policy/dependency/native
+guards, fixed read-only repeatable-read witnesses, exact native flags and trusted
+staged planner parameter. No application request flag; normal core/install guards
+remain. Independent reconstruction with actual0.2.2 archive passes, including
+omitted scope/recipe and rehashed native-version refusals; absent app stays absent.
+Full revision25 consumer G2passed,57affected host cases pass. Core version49 source,
+app archive unchanged. This does not qualify any new runtime update/recovery.
+
+Candidate03 retired/preview closed. Fresh sealed47 Tasks5146406286af and
+Maintenanced38c9b162810 provisioned with useful original data and independent
+Notes/BG installs. Real read-only child validated exact legacy Tasks4tables/6stage
+gaps and Maintenance3tables/noTasks. No native49 mutation yet. Source helper
+preflights reject pending modules, unexpected reminder schema, native-scope jobs
+and previous metadata. Both provisioning handles terminal. Next source commit and
+49build, then actual forward/fault/recovery/useful peer. Progress60/100,8/14.

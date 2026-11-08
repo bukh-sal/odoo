@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-08T17:08:59.334704+00:00",
+  "contract_major": 1,
+  "revision": 25,
+  "frozen_files": 119,
+  "inventory_sha256": "45da6175a6008c769de4dc9e5f1af0bdc534942fb74bde3d8deda26a4a027fa6",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0077 revision25 consumers: explicit staged Tasks adoption, fixed read-only witnesses, independent reconstruction; generic and46-to47 paths retained",
+  "runtime_qualification": "Consumer source only; core49 actual image/native update/recovery remains pending",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "130420e8cab6ca23a9d5c48dc9e91ad5a57378b8"
+}

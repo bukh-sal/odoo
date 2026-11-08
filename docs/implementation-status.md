@@ -2,13 +2,13 @@
 
 Current goal: useful Aurora Tasks application release through AT-05 — active. Previous owned addon cleanup AR-01..05 is complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-08T16:19:21.682543+00:00
+- Updated UTC: 2026-11-08T17:35:23.940073+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AT-01..03 passed; AT-04 lifecycle qualification active.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AT-04a: preliminary native browser, then freeze the exact populated47 native-app adoption/update and independent recovery path.** [Active plan](../planning/aurora_tasks_release.md).
+- Active item: **AT-04a: build the exact core49 candidate after qualified closed-transition source/witness checks; then actual staged update/recovery.** [Plan](../planning/aurora_tasks_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -50,50 +50,40 @@ installation passed AT-02. The required remaining implementation is AT-R4: expli
 old47 native-only app adoption/update and independent recovery; generic install/core
 correctly refuse that unimplemented transition. No existing guard is bypassed.
 
-Resume capsule: **AT-04a active; AT-01..03 passed,60/100points,8/14checks.**
-Candidate03 source99ea25e2e4f/image5d9996937a65/inventory from its exact record
-`.local/operator/builds/20261108-at03-tasks-03.json` contains app0.2.2/71c97db1113c.
-Fresh no-workspace native install,10native workflow groups,8expanded edge groups,
-3rollback carry-forward classifier checks and reviewed20managed urgent effects
-passed. Fleet drained. [Decision](evidence/post-r1/aurora-tasks/at03-decision.json).
-All handles3558/83602 are terminal. No uncertain mutation or active browser task.
+Resume capsule: **AT-04a active, source consumers/real old-source witnesses passed;
+no pending mutation/test process.**60/100points,8/14checks. AT-03 decision and
+preliminary native browser remain in`evidence/post-r1/aurora-tasks/at03-*`.
+Candidate03 site/containers/6volumes/2networks retired and temporary preview closed.
+Its image5d9996937a65 is retained only until49 build; sealed47/46 unchanged.
 
-In-app browser preliminary proof passed native external-assignee completion/reopen,
-recipient inbox, saved read state across reload and native Open task action.
-[Receipt/screenshot](evidence/post-r1/aurora-tasks/at03-browser.json). This is
-candidate48, not final49 AT-L qualification. App source/archive0.2.2 stays immutable.
-Current owned site`at03-native-03`/projectmp-r0-r1release41c269324745/port18148 is
-retained briefly as a candidate witness; profile paused/no running lanes. Both
-obsolete01/02 sites and images/tags removed; sealed47/46 and unrelated assets intact.
+Revision25/119files/10rows full source gate passed again after consumers:
+`evidence/G2/20261108-at04-adoption-source-rev25`. New guarded recipe, read-only
+repeatable-read/30s witness child, explicit trusted planner parameter, independently
+reconstructed adoption scope and native flags are source-implemented. Generic
+request fields do not accept the declaration. First metadata uses normal validated
+site-native child; native flags update already installed0.1.0. Absent Tasks stays
+absent with the same available archive. Old46→47 and ordinary core/install guards
+still pass. Affected57host cases (new11, old6, native8, staged9, plans13, core10)
+passed in`evidence/post-r1/aurora-tasks/at04-source/`.
 
-ADR0077 and [qualification sequence](../planning/aurora_tasks_adoption.md) select
-one closed47→49 recipe. Native-only0.1.0 source must become actual0.2.2 package
-without inventing prior metadata. Same target image keeps Tasks absent on the
-Maintenance peer. Exact source/target/artifact/policy/native/data witnesses,
-private staged approval/checkpoint/readiness and recovery remain mandatory.
-The first-published Tasks archive is the only new available artifact; ordinary
-core/install guards and old46→47 recipe stay strict. No broad arbitrary-adoption
-or package-supplied SQL/commands. Preserve original task columns/IDs and stages;
-add only previously missing completion choices and disabled reminder defaults.
+Actual sealed47 baselines are ready in`.local/aurora-tasks/at04-release-01/`:
+Tasks projectmp-r0-r1release5146406286af/18149 and Maintenance project
+mp-r0-r1released38c9b162810/18150. Each has its independently approved Notes/BG
+reference install, real workspace scopes and source data. Read-only witness child
+ran against actual47 schema: Tasks4tables/6missing stage choices, Maintenance3tables/
+0Tasks, no legacy reminder schema/native jobs or pending module transitions.
+[Precise source receipt](evidence/post-r1/aurora-tasks/at04-source.json).
+Handles70037/24715 terminal; no new foundation update applied.
 
-Contract revision25:119files/10rows, strict union with unchanged old recipe branch,
-new closed source47/target49/app0.2.2 declaration, data-only fixture and4boundary
-cases. Full affected G2passed in`evidence/G2/20261108-at04-adoption-rev25-02`.
-First run correctly caught root-example name/schema inference; moved additional
-example under its existing schema namespace, leaving general example tests intact.
-No consumer execution/upgrade/recovery pass is claimed for this extension.
-
-Next: implement the bounded recipe and independently reconstructed planner support,
-using a trusted explicit declaration parameter rather than an application request
-flag. For installed legacy Tasks only, core maintenance updates native addon while
-normal metadata child installs its first canonical NULL-workspace package metadata.
-Absent Tasks stays absent, archive merely available. Bind this reviewed exception
-in private lock/display, and preserve every old native scope/unchanged artifact.
-Add fixed table/projection/stage-gap before/after witnesses and exact source guards;
-pure tests must prove ordinary negative cases and old46→47 goldens before new image.
-Then build distinct49, actual populated47 update, real publication carry-forward,
-fault/fresh restore/separate resume/useful Maintenance, final browser/clean install,
-reproduction/privacy/handoff/retirement. No production/publication or UI redesign.
+Core native manifest/projection now49; app0.2.2 archive71c97db1113c unchanged.
+Next: commit this source checkpoint and build49 once on stable inputs. Do not edit
+consumed source during build/apply. Implement test-only lifecycle driver outside
+build inputs to declare/stage/plan/review exact47→49; Maintenance forward first,
+then Tasks fault after a real commit/publication while closed. Independent fresh47
+restore/separate resume/useful Maintenance, fresh approved final forward, real
+native job publication carry-forward and final clean/browser checks remain. Confirm
+actual journal/phase before retries. Source/private declarations are not runtime
+AT-I/J/K/L passes. Final reproduction/privacy/handoff/retirement remain AT-05.
 
 ## Addon cleanup and restructuring (completed goal)
 
