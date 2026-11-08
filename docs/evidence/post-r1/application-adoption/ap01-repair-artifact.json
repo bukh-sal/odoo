@@ -1,0 +1,17 @@
+{
+  "result": "assembled_repair_not_yet_runtime_qualified",
+  "application_version": "0.2.3",
+  "artifact_digest": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+  "bytes": 28400,
+  "application_commit": "db32b467fb46156254e481900c0461430888b703",
+  "application_source": ".local\\application-adoption\\apps\\aurora-tasks",
+  "changed_native_semantics": [
+    "Current-user field defaults for required readonly list owner and task creator"
+  ],
+  "schema_change": false,
+  "authoritative_server_assignment_unchanged": true,
+  "baseline_transition": "0.2.2 -> 0.2.3",
+  "foundation_source_changed": false,
+  "line_endings": "Repository-local explicit LF attributes; no global Git settings changed",
+  "first_structural_preflight": "Refused orphan0.2.2 migration payload after narrowing transitions; removed only that exact hashed file in new version, retained baseline/history/admitted0.2.2 unchanged"
+}

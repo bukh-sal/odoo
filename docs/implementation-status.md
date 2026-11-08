@@ -62,12 +62,19 @@ No pending runtime mutation/process. Pilot261d5d0954ee/18172 remains healthy49/
 Tasks0.2.2 with1urgent+1bulk, zero lists/tasks. In-app tab16 is task-list view,
 no unsaved draft; screenshot/counterexample captured, CUA part summarized.
 Separate app archive builder exists, but distribution recipes assume the foundation
-source tree. Next freeze the minimal app-default fix and pinned-image composition
-input/ownership boundary, create an independent application checkout, reproduce
-baseline0.2.2 bytes, issue0.2.3 and compose on immutable49 without altering core
-code/version. Prefer a reviewed archive layer over copying/forking engine sources
-into application repositories. Validate dependency/inventory/provenance/unchanged
-foundation before any staged upgrade. Record limits and meaningful guard tests.
+source tree. ADR0078 freezes the minimal app-default repair and image composition boundary.
+Independent checkout`.local/application-adoption/apps/aurora-tasks` baseline
+commit aa2415c2359186e8387de3f04340c6243e90794e reproduces old29211byte archive.
+New app commitdb32b467fb46156254e481900c0461430888b703, version0.2.3 artifact
+e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83
+(28400bytes), current-user defaults only/no schema change. First structural
+preflight refused orphan old migration; new version supports only0.2.2→0.2.3,
+so exact old payload removed in new repo, retained in baseline/history/old archive.
+Explicit repo-local LF attributes avoid host Git line-ending drift; global config
+unchanged. New build-only archive-layer helper/CLI outside runtime SDK/engine;
+8guard cases passed, no public contract change. Next compose exact49+new archive
+using fresh output/receipt, inspect actual runtime/core/source/dep equality before
+curation/stage/upgrade. Do not claim a source-only repair as a working pilot.
 Use independent review/checkpoint/app-only lifecycle; no manual installation
 metadata or sealed artifact edits. Return to real UI creation immediately after
 required repair; full AP-02 failure/recovery and AP-03/04 stay gated. Historical

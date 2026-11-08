@@ -1,0 +1,12 @@
+{
+  "result": "reproduced_admitted_baseline_from_independent_application_checkout",
+  "application_version": "0.2.2",
+  "digest": "sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c",
+  "bytes": 29211,
+  "application_source": ".local\\application-adoption\\apps\\aurora-tasks",
+  "application_commit": "aa2415c2359186e8387de3f04340c6243e90794e",
+  "foundation_source_copied_into_application_repository": false,
+  "foundation_image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "foundation_platform_version": "0.1.49",
+  "no_source_or_schema_change_yet": true
+}

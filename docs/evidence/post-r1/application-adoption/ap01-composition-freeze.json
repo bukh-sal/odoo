@@ -1,0 +1,23 @@
+{
+  "result": "build_contract_and_guard_tests_passed_before_image_mutation",
+  "utc": "2026-11-08T20:30:03.086468+00:00",
+  "local_build_contract": "pinned-core49-existing-native-application-layer-v1",
+  "schema_keys": [
+    "schema_version",
+    "foundation_image_id",
+    "foundation_inventory_digest",
+    "application_digest",
+    "application_file"
+  ],
+  "unknown_fields_refused": true,
+  "public_runtime_or_approval_contract_changed": false,
+  "guard_tests": 8,
+  "guard_failures": 0,
+  "source_sha256": {
+    "docs/architecture-decisions/0078-pinned-foundation-application-images.md": "36b950892a1928ea78deb2956955aab8534469e0861a11c8510106dfef961a0a",
+    "release/application_layer.py": "4a6edab4ff84efbb61af662175aea2a8f109674e5a15475c00f9bd89a5e83c86",
+    "release/compose_application.py": "c0c515b731afb983f4301b297408bf6f504220358a878d7230352dca0788df99",
+    "tests/test_application_layer.py": "238819cfab7f55d1dcd38b87ae816d6b3f63bdc3f0349b8b04f9276314168883"
+  },
+  "runtime_qualification": false
+}
