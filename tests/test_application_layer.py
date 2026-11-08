@@ -38,7 +38,7 @@ class ApplicationLayerTests(unittest.TestCase):
     def make_input(self):
         _,raw,_=self.fixture.build();(self.inputs/'application.mplug').write_bytes(raw)
         self.request=dict(schema_version=1,foundation_image_id='sha256:'+'a'*64,
-            foundation_inventory_digest=data_digest(self.inventory),application_digest='sha256:'+hashlib.sha256(raw).hexdigest(),application_file='application.mplug')
+            foundation_inventory_digest='sha256:'+hashlib.sha256((self.root/'distribution-inventory.json').read_bytes()).hexdigest(),application_digest='sha256:'+hashlib.sha256(raw).hexdigest(),application_file='application.mplug')
 
     def snapshot(self):
         return {p.relative_to(self.root).as_posix():p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
@@ -63,6 +63,11 @@ class ApplicationLayerTests(unittest.TestCase):
 
     def test_wrong_base_inventory_refused_before_writes(self):
         self.refused_unchanged(dict(self.request,foundation_inventory_digest='sha256:'+'b'*64))
+
+    def test_inventory_identity_is_exact_file_bytes_not_json_equivalence(self):
+        path=self.root/'distribution-inventory.json'
+        path.write_text(json.dumps(self.inventory,indent=2)+'\n',encoding='utf-8')
+        self.refused_unchanged()
 
     def test_core_source_drift_refused_before_writes(self):
         (self.root/'addons/mp_core/__manifest__.py').write_text("{'version':'19.0.0.1.50'}",encoding='utf-8')

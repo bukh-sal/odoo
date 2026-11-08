@@ -1,0 +1,13 @@
+{
+  "result": "corrected_build_consumer_guard_tests_passed_before_retry",
+  "utc": "2026-11-08T20:31:19.873930+00:00",
+  "inventory_digest_semantics": "sha256 of exact distribution inventory file bytes",
+  "guard_tests": 9,
+  "source_sha256": {
+    "docs/architecture-decisions/0078-pinned-foundation-application-images.md": "36b950892a1928ea78deb2956955aab8534469e0861a11c8510106dfef961a0a",
+    "release/application_layer.py": "100a4d2369d69d532936cfb822eec907ada0399d211b427816a6ddac51023207",
+    "release/compose_application.py": "c0c515b731afb983f4301b297408bf6f504220358a878d7230352dca0788df99",
+    "tests/test_application_layer.py": "78b93a1f2f83bad3e7275e2f4ad36b7e718a08339ebd4d989b97d3a7dbb77a5d"
+  },
+  "public_contract_changed": false
+}

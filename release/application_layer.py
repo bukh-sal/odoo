@@ -16,7 +16,6 @@ import sys
 
 def apply_layer(root, inputs, request):
     from modular_platform.artifacts import ArtifactValidator,TrustPolicy
-    from modular_platform.plans import data_digest
     from packaging.specifiers import SpecifierSet
     from packaging.version import Version
     from package_materialization import materialize_archive
@@ -29,8 +28,9 @@ def apply_layer(root, inputs, request):
                    for k in ('foundation_image_id','foundation_inventory_digest','application_digest'))):
         raise ValueError('Exact pinned application layer input v1 required')
     root=Path(root).resolve();inputs=Path(inputs).resolve()
-    original=json.loads((root/'distribution-inventory.json').read_bytes())
-    if data_digest(original)!=request['foundation_inventory_digest']:
+    original_raw=(root/'distribution-inventory.json').read_bytes()
+    original=json.loads(original_raw)
+    if 'sha256:'+hashlib.sha256(original_raw).hexdigest()!=request['foundation_inventory_digest']:
         raise ValueError('Foundation inventory differs from operator-selected pin')
 
     def verify_file(name,expected):
@@ -100,7 +100,7 @@ def apply_layer(root, inputs, request):
         (root/'distribution-inventory.json').write_text(json.dumps(updated,sort_keys=True,indent=2)+'\n',encoding='utf-8',newline='\n')
     return dict(result='composed_verified_application_layer',plugin_id=plugin,version=manifest['plugin']['version'],
         previous_version=old['version'],artifact_digest=checked.digest,foundation_image_id=request['foundation_image_id'],
-        base_inventory_digest=request['foundation_inventory_digest'],inventory_digest=data_digest(updated),
+        base_inventory_digest=request['foundation_inventory_digest'],inventory_digest='sha256:'+hashlib.sha256((root/'distribution-inventory.json').read_bytes()).hexdigest(),
         retained_foundation_files=len(retained),policy_unchanged=updated['policy']==original['policy'],
         platform_version='0.1.49',application_code_executed=False)
 

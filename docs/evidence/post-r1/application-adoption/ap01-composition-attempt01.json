@@ -1,0 +1,11 @@
+{
+  "result": "first_image_build_refused_before_application_writes",
+  "utc": "2026-11-08T20:31:19.872930+00:00",
+  "failure": "Compared canonical JSON digest against deployed exact inventory-file digest",
+  "diagnosis": "deployment.inspect_image hashes distribution-inventory.json file bytes; use identical semantics",
+  "source_repair": "Hash exact bytes before and after; added reformat-equivalent JSON refusal regression",
+  "guard_tests": 9,
+  "application_or_database_mutated": false,
+  "completed_image_created": false,
+  "temporary_base_alias_retired": true
+}
