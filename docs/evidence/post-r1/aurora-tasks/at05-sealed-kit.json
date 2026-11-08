@@ -1,0 +1,11 @@
+{
+  "result": "sealed_verified_local_foundation",
+  "source_commit": "bcac9e3151609a5364a88b9fb0c32b89eb061a4d",
+  "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "manifest_before": "76fe3069c0abf77a126163e7b22a8d3cce0060ff58ff5d12020034116301b1c3",
+  "manifest_sha256": "396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404",
+  "decision_sha256": "1dfa3e8d4876863ebe3a925cbf70b4a693dc9bec7f3099e5efcb390957f8b808",
+  "components": 57,
+  "qualification_profile": "qualified_local_foundation_tasks_1",
+  "limits": "Local declared foundation qualification only; checksums do not authenticate publishers or authorize deployment."
+}

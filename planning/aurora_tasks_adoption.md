@@ -1,9 +1,11 @@
 # Tasks release qualification after AT-03
 
 Prerequisite: [AT-03 actual-image decision](../docs/evidence/post-r1/aurora-tasks/at03-decision.json),
-core48/App0.2.2. Progress60/100 and8/14 checks; the application is qualified as a
-candidate, not a consolidated release. [ADR0077](../docs/architecture-decisions/0077-native-tasks-adoption-47-49.md)
-defines the next closed transition. One active item: AT-04b actual upgrade/recovery.
+core48/App0.2.2. All adoption/qualification work below is complete on final core49;
+the [authoritative checklist](../docs/implementation-status.md) records14/14checks
+and100verifiedpoints. [Final delivery](../docs/evidence/post-r1/aurora-tasks/final-delivery.json).
+[ADR0077](../docs/architecture-decisions/0077-native-tasks-adoption-47-49.md)
+defines the qualified closed transition. No active work item.
 
 - [x] AT-04a: schema/fixtures/negative tests for the specific47→49 recipe; preserve
   ordinary core/install guards and46→47. Freeze and independently reconstruct before

@@ -2,7 +2,9 @@
 
 Current release status is in [implementation-status.md](implementation-status.md).
 
-Aurora Tasks AT-01..04 passed on final core49; AT-05 remains in progress.
+Aurora Tasks AT-01..05 passed on final core49;14/14checks and final57component seal verified.
+[Qualification](evidence/post-r1/aurora-tasks/qualification-decision.json) and
+[final delivery](evidence/post-r1/aurora-tasks/final-delivery.json) identify the artifact.
 See [native application qualification](evidence/post-r1/aurora-tasks/at03-decision.json),
 [populated adoption](evidence/post-r1/aurora-tasks/at04-upgrade.json),
 [independent recovery/useful peer](evidence/post-r1/aurora-tasks/at04-recovery.json),

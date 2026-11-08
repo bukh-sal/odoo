@@ -17,7 +17,10 @@ inside its source archive are dated development records.
 - Inventory`sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6`.
 - `dev.aurora.tasks` version`0.2.2`, addon`mp_aurora_tasks` version`19.0.0.2.2`.
 - Archive`sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c`.
-- Intended kit`.local/releases/foundation-r1-core49-tasks`.
+- Sealed local kit`.local/releases/foundation-r1-core49-tasks` (57components).
+- Manifest`396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404`.
+- [Qualification](evidence/post-r1/aurora-tasks/qualification-decision.json) and
+  [final verification](evidence/post-r1/aurora-tasks/final-delivery.json).
 
 Sealed core47/core46 artifacts stay unchanged. Convenience tags confer no
 authority; operator actions bind immutable image/inventory/artifact identities.

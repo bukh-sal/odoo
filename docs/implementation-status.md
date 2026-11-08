@@ -1,24 +1,23 @@
 # Implementation status
 
-Current goal: useful Aurora Tasks application release through AT-05 — active. Previous owned addon cleanup AR-01..05 is complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
+Current goal: useful Aurora Tasks application release through AT-05 — complete. Previous owned addon cleanup AR-01..05 is complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-08T18:35:22.856768+00:00
+- Updated UTC: 2026-11-08T18:52:00.086366+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AT-01..04 passed; AT-05 final release qualification active.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AT-05 final delivery: committed-source refresh, seal, refreshed-source privacy and final checksum verification.** [Plan](../planning/aurora_tasks_adoption.md).
+- Current phase/gate: **AT-01..05 passed; exact local release sealed and delivered.** Historical AR/CF/BG/R1 scopes remain complete.
+- Active item: **None. Goal complete; new implementation needs a new user-selected objective.** [Plan](../planning/aurora_tasks_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
-## Aurora Tasks release (active goal)
+## Aurora Tasks release (completed goal)
 
-[Plan](../planning/aurora_tasks_release.md). Authorized8 November2026. **100/100
-verified weighted points;14/14 acceptance checks passed; final packaging/delivery verification pending.**
-The goal remains active until the committed-source seal and final artifact audit complete.
-AT-01..05 qualification evidence is passed; final delivery is being verified. This counts only the new
-application release; AR16/16, CF12/12 and R1 99/99 remain historical completed checks.
+[Plan](../planning/aurora_tasks_release.md). Authorized8 November2026.
+**100/100 verified weighted points;14/14 acceptance checks passed; final seal,
+refreshed-source privacy and delivery checks passed.** This counts the useful
+application release only; AR16/16, CF12/12 and R1 99/99 retain their completed scope.
 
 | Gate | Weight | State | Active/next work |
 | --- | --- | --- | --- |
@@ -26,7 +25,7 @@ application release; AR16/16, CF12/12 and R1 99/99 remain historical completed c
 | AT-02 |20| passed | AT-D authoring and AT-E actual approved site-native install passed |
 | AT-03 |25| passed | [Actual0.2.2 native10/edges8/classifier3/managed20](evidence/post-r1/aurora-tasks/at03-decision.json), no source overlay |
 | AT-04 |30| passed | Exact49 clean/populated adoption, independent recovery, real native publication/jobs and final in-app native UI |
-| AT-05 |10| passed |643host cases accounted for, reproduction/privacy, offline kit operator/authoring and owned retirement; final seal verification pending |
+| AT-05 |10| passed |643host cases accounted for, reproduction/privacy, offline operator/authoring,57component sealed kit and exact owned retirement |
 
 | Acceptance | Latest result | Evidence/procedure |
 | --- | --- | --- |
@@ -43,66 +42,54 @@ application release; AR16/16, CF12/12 and R1 99/99 remain historical completed c
 | AT-K | passed | [Real publication fault, fresh47 restore/current revocation/separate resume and useful peer16jobs](evidence/post-r1/aurora-tasks/at04-recovery.json) |
 | AT-L | passed | [Final49 in-app native complete/reopen, persisted private inbox/Open task and actual workload](evidence/post-r1/aurora-tasks/at04-browser-workload.json) |
 | AT-M | passed | [643case coverage](evidence/post-r1/aurora-tasks/at05-regression.json), [10comparison reproduction](evidence/post-r1/aurora-tasks/at05-reproduction.json), [finite49value audit](evidence/post-r1/aurora-tasks/at05-privacy-full.json) |
-| AT-N | passed | [56component draft checksum/exported offline operator+authoring](evidence/post-r1/aurora-tasks/at05-consumer.json), [handoff](aurora-tasks-release.md), [exact owned retirement](evidence/post-r1/aurora-tasks/at05-retirement.json); final seal verification follows |
+| AT-N | passed | [Sealed57component delivery/checksums](evidence/post-r1/aurora-tasks/final-delivery.json), [offline operator+authoring](evidence/post-r1/aurora-tasks/at05-consumer.json), [handoff](aurora-tasks-release.md), [owned retirement](evidence/post-r1/aurora-tasks/at05-retirement.json) |
 
-Blocker register: no user input needed. Native authority/partitions/cancel and
-actual archive/image pinning passed AT-03. General authoring and true site-native
-installation passed AT-02. The closed AT-R4 adoption/update and independent recovery now passed actual runtime
-qualification. Generic install/core guards remain strict. Final native publication,
-clean/browser/workload and release handoff checks remain; no user input is needed.
+Blocker register: none. No active work item, running test/build/worker,
+uncertain application mutation, recovery or user-input request remains.
 
-Resume capsule: **All14AT qualification checks passed; goal active for final delivery.**
-100verified gate points; do not mark goal complete before actual seal/final audit.
-Exact49 imagecac49d72605f/app71c97db1113c unchanged; native lifecycle/browser and
-recovery passed. Host coverage641pass/2Windows skips across exact643cases after
-launcher correction;10comparison/6296input reproduction passed. Draft kit56components/
-22archives assembled, exported offline operator/catalog/general authoring reproduced
-29211byte app exactly. Finite49persisted-value audit24249file observations/0findings.
-All3qualified targets retired120containers/18volumes/6networks; prior probes/obsolete
-images gone, sealed47/46/support retained. No running test or application mutation.
-Committed qualification decision binds actual evidence, not future production use.
-First source refresh passed (55components reused). Seal-I import stopped before mutation;
-kit remains draft, qualification file absent. Release-only explicit directory import
-fix passes isolated help/3qualification cases. Commit and refresh02source, then seal
-exact AT profile, final source-only privacy audit and final kit/checksums/stable alias,
-then update delivered status and complete goal. Do not edit sealed kit or rebuild
-runtime for documentation-only records. Preserve dated source-archived status.
-[Qualification](evidence/post-r1/aurora-tasks/qualification-decision.json).
+Resume capsule: **Goal complete; do not restart completed AT/R1/AR/CF/BG gates.**
+100/100points,14/14checks. Local kit`.local/releases/foundation-r1-core49-tasks`:
+57components, sourcebcac9e3151609a5364a88b9fb0c32b89eb061a4d, manifest
+396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404.
+Imagecac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f,
+inventoryd490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6;
+stable alias`modular-platform:foundation-r1-core49-tasks`. App0.2.2 archive
+71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c.
+Sealed47/46 manifests and useful support images are unchanged. Source-archived
+checklists are dated pre-seal records; exact qualification/checksums and final
+delivery identify the sealed artifact. Later repository records do not mutate it.
 
-Revision25/119files/10rows full source gate passed again after consumers:
-`evidence/G2/20261108-at04-adoption-source-rev25`. New guarded recipe, read-only
-repeatable-read/30s witness child, explicit trusted planner parameter, independently
-reconstructed adoption scope and native flags are source-implemented. Generic
-request fields do not accept the declaration. First metadata uses normal validated
-site-native child; native flags update already installed0.1.0. Absent Tasks stays
-absent with the same available archive. Old46→47 and ordinary core/install guards
-still pass. Affected57host cases (new11, old6, native8, staged9, plans13, core10)
-passed in`evidence/post-r1/aurora-tasks/at04-source/`.
+Last material outcomes:
+- Exact49 clean install/native10+edges8, populated47adoption, actual pending/
+  claimed native job publication, final native in-app browser and independent
+  fresh47 recovery/separate resume passed. Current post-checkpoint workspace
+  revocation and native ownership both retained; Maintenance remained useful
+  with native/scoped writes and16new jobs. [AT-04](evidence/post-r1/aurora-tasks/at04-decision.json).
+- Exact643host-case coverage:641pass/2Windows skips. Initial launcher import
+  errors and corrected27cases are separately recorded; no clean single full-run
+  claim. Reusable isolated launcher added. No-cache/network-none replica matched
+  all10declared runtime comparisons/6296inputs. Exported offline operator/catalog
+  admitted22archives and rebuilt exact29211byte app. Revision25 freeze119files/
+  10rows remains passed. [Regression](evidence/post-r1/aurora-tasks/at05-regression.json),
+  [reproduction](evidence/post-r1/aurora-tasks/at05-reproduction.json).
+- Final57component seal/checksum verification passed. Finite49persisted fixture
+  values/147encodings found0matches across initial24249file observations/new
+  layers and final18012source/artifact observations; unchanged image audit carried
+  forward by exact archive hash. All3qualified targets retired120containers,
+  18volumes/6networks; earlier feasibility/partition resources absent. Obsolete
+  candidate/replica images and8terminal fixture aliases retired, stable images
+  retained. Private checkpoints/logs/catalogs preserved under`.local/aurora-tasks`.
+  [Final privacy](evidence/post-r1/aurora-tasks/at05-privacy-final.json),
+  [delivery](evidence/post-r1/aurora-tasks/final-delivery.json),
+  [alias retirement](evidence/post-r1/aurora-tasks/at05-image-alias-retirement.json).
 
-Actual sealed47 baselines are ready in`.local/aurora-tasks/at04-release-01/`:
-Tasks projectmp-r0-r1release5146406286af/18149 and Maintenance project
-mp-r0-r1released38c9b162810/18150. Each has its independently approved Notes/BG
-reference install, real workspace scopes and source data. Read-only witness child
-ran against actual47 schema: Tasks4tables/6missing stage choices, Maintenance3tables/
-0Tasks, no legacy reminder schema/native jobs or pending module transitions.
-[Precise source receipt](evidence/post-r1/aurora-tasks/at04-source.json).
-Handles70037/24715 terminal; no new foundation update applied.
-
-Core native manifest/projection now49; app0.2.2 archive71c97db1113c unchanged.
-First49 imageab958d4dbd7d built from777cb77921c. Real Maintenance staging
-preflight found implicit source versions on auth_password_policy/auth_totp and
-stopped before declaration/stage/operation/approval. Both actual source sites remain
-47; no migration/recovery needed. Source normalization now uses known engine1.0
-default (19.0.1.0 stored), with regression rejecting different values;12Tasks cases
-pass. [Receipt](evidence/post-r1/aurora-tasks/at04-preflight01.json).
-Next: commit this correction and build49 candidate02 on stable inputs. Do not edit
-consumed source during build/apply. Implement test-only lifecycle driver outside
-build inputs to declare/stage/plan/review exact47→49; Maintenance forward first,
-then Tasks fault after a real commit/publication while closed. Independent fresh47
-restore/separate resume/useful Maintenance, fresh approved final forward, real
-native job publication carry-forward and final clean/browser checks remain. Confirm
-actual journal/phase before retries. Source/private declarations are not runtime
-AT-I/J/K/L passes. Final reproduction/privacy/handoff/retirement remain AT-05.
+The delivered app is list-bound shared Tasks with opt-in native database reminders,
+not a full Aurora import/port. Native UI remains the default; Canvas is unchanged.
+No production deployment/publication, hostile-plugin sandbox or automatic scaling
+is claimed. Native technical-origin/recurring/provider features remain conditional.
+For future application work start from the [authoring guide](application-authoring.md)
+and [handoff](aurora-tasks-release.md), using fresh targets rather than retired
+qualification fixtures. Detailed failed attempts remain in the append-only work log.
 
 ## Addon cleanup and restructuring (completed goal)
 

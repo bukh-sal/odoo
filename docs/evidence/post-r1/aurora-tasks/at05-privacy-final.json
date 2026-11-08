@@ -1,0 +1,38 @@
+{
+  "result": "passed_finite_persisted_AT_values",
+  "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "kit_source": "bcac9e3151609a5364a88b9fb0c32b89eb061a4d",
+  "kit_manifest_sha256": "396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404",
+  "images_tar_sha256": "df67fee92f4a4333adca5e4e45fd509e90a46e0b4e56cd454489b6d2931bacc9",
+  "known_values": 49,
+  "encodings": 147,
+  "credential_sources": [
+    ".local/aurora-tasks/at03-native-01/account-passwords.json",
+    ".local/aurora-tasks/at03-native-02/account-passwords.json",
+    ".local/aurora-tasks/at03-native-03/account-passwords.json",
+    ".local/aurora-tasks/at04-clean49-01/account-passwords.json",
+    ".local/aurora-tasks/at04-release-01/maintenance/account-passwords.json",
+    ".local/aurora-tasks/at04-release-01/tasks/account-passwords.json",
+    ".local/aurora-tasks/at03-native-01/odoo.conf",
+    ".local/aurora-tasks/at03-native-02/odoo.conf",
+    ".local/aurora-tasks/at03-native-03/odoo.conf",
+    ".local/aurora-tasks/at04-clean49-01/odoo.conf",
+    ".local/aurora-tasks/at04-release-01/maintenance/odoo.conf",
+    ".local/aurora-tasks/at04-release-01/tasks/odoo.conf",
+    ".local/aurora-tasks/at01-native-02/db.env"
+  ],
+  "totals": {
+    "files": 18012,
+    "unique_contents": 16077,
+    "bytes": 558430972,
+    "archives": 51
+  },
+  "findings": [],
+  "new_application_layers": [],
+  "prior_full_receipt": "docs\\evidence\\post-r1\\aurora-tasks\\at05-privacy-full.json",
+  "limits": [
+    "Finite persisted AT fixture login/master/database values in literal/UTF16LE/Base64 forms, not an unknown-secret detector.",
+    "Transient probe credentials that were never retained on the host cannot be enumerated; generated config/data paths are excluded from build inputs.",
+    "Unchanged pinned dependency/toolchain/notice artifacts retain previous qualification; this is no publisher authentication or production security claim."
+  ]
+}
