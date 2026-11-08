@@ -1,0 +1,60 @@
+{
+  "result": "source_review_and_contract_frozen_feasibility_pending",
+  "utc": "2026-11-08T21:43:20.879679+00:00",
+  "commit": "e48e04ed4cf155a83e66e08dfb33a669ebb5c228",
+  "source_checkout_read_only": true,
+  "files": [
+    {
+      "path": "Projects/models.py",
+      "bytes": 2042,
+      "sha256": "ef4a0ab4c1c9c9510815096a667a44b7748a60c3c5586b9938ff4e563e65838c"
+    },
+    {
+      "path": "Projects/api/views.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Projects/api/serializers.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Projects/tests.py",
+      "bytes": 60,
+      "sha256": "9ab6c6191360e63c1b4c9b5659aef348a743c9e078be68190917369e4e9563e8"
+    },
+    {
+      "path": "Projects/apps.py",
+      "bytes": 148,
+      "sha256": "3445663dd0975fd764310a7761f136996a73484a95dc0d4a057273ba84e17b22"
+    },
+    {
+      "path": "Bedrock/media.py",
+      "bytes": 2971,
+      "sha256": "cb70ee7915c63551a24eb571437f296106f2474115631a89adc97accd4b55afa"
+    },
+    {
+      "path": "Partners/models.py",
+      "bytes": 30116,
+      "sha256": "20777a3a0b68d3d9b1d13c3816e267fa5b4bdc7daf1b8a2094b8168c4d4b9c82"
+    },
+    {
+      "path": "Partners/api/views.py",
+      "bytes": 53478,
+      "sha256": "2ac1e34c33874a17c730b16e5e1b526f71ca73039fd1fa4279a9b25e9e95cc2f"
+    }
+  ],
+  "selected": "Bounded native Projects lifecycle/roles;0.1.1 optional planning target date",
+  "deferred": [
+    "full Partners/CRM/accounting/cloud",
+    "customer/logo",
+    "new notifications/jobs",
+    "custom UI"
+  ],
+  "contracts": [
+    "docs/aurora-projects-contract.md",
+    "docs/architecture-decisions/0080-independent-application-set-composition.md"
+  ],
+  "remaining_feasibility": "data-only new-slot composition,negative cases,actual image/native planning;no AP-I pass yet"
+}

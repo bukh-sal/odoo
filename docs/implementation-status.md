@@ -75,14 +75,18 @@ source_release pin lives only in3host operator SDK files;runtime native guards
 and sealed49/47/46 images unchanged.70unique affected host cases accounted for,
 5actual rollback cases/publicfreeze119files10rows pass;new source receipt pinned.
 
-Next: read committed Aurora Projects API/permission/tests from readonly
-bedrock-2.2 e48e04ed4cf. Select bounded native Projects model/workflow/roles,
-explicit omitted customer/logo/full Partners import,optional separately declared
-Tasks integration with both resources'current rights. Freeze contracts and new
-application-slot composition policy/feasibility before substantial app code.
-Do not expand Tasks/Canvas or redesign native UI. AP-03/04 remain unpassed.
-Current limitations include last-save-wins same-field Tasks edits(AP014),app-owned
-business ACL checkpoint semantics(AP015),held reminder summary Queued(AP018).
+Next/current AP-I:source review complete from readonly Aurora e48e04ed4cf.
+Projects API files are0bytes/tests placeholder;media logo predicate is not CRUD
+security. Partners has larger permissions/cloud/reporting/CRM coupling;Maintenance
+already qualified aspeer. Frozen Projects contract and ADR0080 select native
+owner/manager/member roles,lifecycle,optional separately declared Tasks links,
+and useful0.1.1target date evolution;omit customer/logo/imports/accounting.
+Implement data-only v2new-slot app-set composition,keepv1 behavior/guards,prove
+negative cases and actual sealed-image/ordinary native planning feasibility before
+substantial app implementation. AP-I remains unpassed/50points8of16.
+No active runtime mutation/process. Current limits include last-save-wins generic
+text edits(AP014),app-owned business ACL checkpoint semantics(AP015),held reminder
+summary Queued(AP018). Require updated ADR0079 host operator for native-job restore.
 
 ## Aurora Tasks release (completed goal)
 
