@@ -1,0 +1,32 @@
+{
+  "check": "AP-K",
+  "result": "passed",
+  "utc": "2026-11-08T22:52:33.062876+00:00",
+  "source_commit": "854c090a0fd2d332b49f03eb594e22b328584eb3",
+  "version": "0.1.0",
+  "image_id": "sha256:8d61e6cc5f1a0c8cc5d1ee262cfa6f9abf9c225732e6d50e59909b76cd51451c",
+  "inventory_digest": "sha256:47aaa4c74e98cacd9b6032bf49e49747334d38ab04c40cbc91a699e3e1f94c63",
+  "operation": "272d8563-c2e7-4376-8509-aedad4689967",
+  "server_groups": [
+    "useful native association;member read/Open;task-outsider project manager sees zero filtered links/count",
+    "asymmetric search/count/group/read/display/web-read/Open/create denials;readonly project member cannot mutate;pair/projection immutable",
+    "task-list revocation hides prior links/counts in same session;restored rights permit manager with both-write to edit",
+    "project membership/manager revocation hides links despite continuing task access;rights restored explicitly",
+    "unique pair;historical archived read;new archived Project or Task association refused",
+    "both-write explicit unlink;Task/Project deletion cascades associations only and preserves opposite business record",
+    "Project lifecycle does not mutate Task;native inherited/list/form descriptors;no workspace authority"
+  ],
+  "native_browser": [
+    "Created Project3 Emergency readiness in native form",
+    "Native Link task dialog selected current accessible Task1 and saved link6 with note",
+    "Project count1/list persisted;Open task used native window action/breadcrumbs and correct Task1 form"
+  ],
+  "screenshot": "ap03-native-linked-work.jpg",
+  "independent_profile": "ap03-projects-decision.json",
+  "bounds": [
+    "No core/SDK/runtime changes",
+    "Optional deployment package;no hot unload",
+    "No Project-to-Task lifecycle automation",
+    "Counts/search/group/read/Open all enforce both original resources current rights"
+  ]
+}
