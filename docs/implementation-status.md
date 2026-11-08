@@ -2,13 +2,13 @@
 
 Current goal: useful Aurora Tasks application release through AT-05 — active. Previous owned addon cleanup AR-01..05 is complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-08T17:35:23.940073+00:00
+- Updated UTC: 2026-11-08T18:00:26.013037+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AT-01..03 passed; AT-04 lifecycle qualification active.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AT-04a: build the exact core49 candidate after qualified closed-transition source/witness checks; then actual staged update/recovery.** [Plan](../planning/aurora_tasks_adoption.md).
+- Active item: **AT-04c: captured real Tasks publication fault; independently restore fresh47, verify current authority and separately resume.** [Plan](../planning/aurora_tasks_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -50,11 +50,23 @@ installation passed AT-02. The required remaining implementation is AT-R4: expli
 old47 native-only app adoption/update and independent recovery; generic install/core
 correctly refuse that unimplemented transition. No existing guard is bypassed.
 
-Resume capsule: **AT-04a active, source consumers/real old-source witnesses passed;
-no pending mutation/test process; first real staging preflight refused safely.**60/100points,8/14checks. AT-03 decision and
-preliminary native browser remain in`evidence/post-r1/aurora-tasks/at03-*`.
-Candidate03 site/containers/6volumes/2networks retired and temporary preview closed.
-Its image5d9996937a65 is retained only until49 build; sealed47/46 unchanged.
+Resume capsule: **AT-04c active. Actual Tasks failure captured; independent fresh47
+restore process46605 running.**60/100points,8/14checks. Exact49 imagecac49d72605f
+fromb65734dbb29. Maintenance forwarde451a841 verified; Tasks absent, original
+business witnesses/files preserved. Managed1urgent/1bulk profile ready, all3old
+jobs completed with exact actors/results (old claim attempt2), stale claim denied.
+Tasks operation1b42ac52 failed at realrelease_published, ingress closed, failed app
+stopped and independent CLI journal verified. Revoked Bob's B workspace membership
+after checkpoint; restore must preserve it while native list owner rights remain.
+Useful Maintenance request/chatter/scoped Notes edit committed during outage;
+16new peer jobs queued. First2driver workflow attempts rolled back (read-only
+diagnosis proved it); HTML and Notes expected_revision assertions corrected.
+Next inspect restore result, verify authority/old data/files, separate resume,
+fresh approved49 forward, then native job publication/clean/browser qualification.
+No replay of failed operation or resubmission of queued jobs. Runtime receipts:
+[forward](evidence/post-r1/aurora-tasks/at04-staging02.json),
+[failure/recovery](evidence/post-r1/aurora-tasks/at04-recovery.json).
+Two obsolete candidate images/3tags retired; sealed47/46/support retained.
 
 Revision25/119files/10rows full source gate passed again after consumers:
 `evidence/G2/20261108-at04-adoption-source-rev25`. New guarded recipe, read-only

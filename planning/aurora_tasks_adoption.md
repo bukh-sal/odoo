@@ -3,9 +3,9 @@
 Prerequisite: [AT-03 actual-image decision](../docs/evidence/post-r1/aurora-tasks/at03-decision.json),
 core48/App0.2.2. Progress60/100 and8/14 checks; the application is qualified as a
 candidate, not a consolidated release. [ADR0077](../docs/architecture-decisions/0077-native-tasks-adoption-47-49.md)
-defines the next closed transition. One active item: AT-04a contract/planner freeze.
+defines the next closed transition. One active item: AT-04b actual upgrade/recovery.
 
-- [ ] AT-04a: schema/fixtures/negative tests for the specific47→49 recipe; preserve
+- [x] AT-04a: schema/fixtures/negative tests for the specific47→49 recipe; preserve
   ordinary core/install guards and46→47. Freeze and independently reconstruct before
   any mutation. No acceptance credit for source-only work.
 - [ ] AT-04b / AT-J: build exact49; fresh populated47 Tasks and Maintenance sites;

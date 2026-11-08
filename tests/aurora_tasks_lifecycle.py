@@ -32,7 +32,7 @@ def make_executor(site):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('phase',choices=['prepare','apply','fault','capture','restore','resume'])
+    p.add_argument('phase',choices=['prepare','approve','apply','fault','capture','restore','resume'])
     p.add_argument('--run',required=True)
     p.add_argument('--site',choices=['tasks','maintenance'],required=True)
     p.add_argument('--port',type=int,required=True)
@@ -70,11 +70,22 @@ def main():
         validate=native._validate();native.store.register(bundle,validate)
         review=native.store.review(result['operation'],validate)
         approval=native.store.approve(result['operation'],exact_hash=bundle['plan_hash'],noninteractive=True,
-            revalidate=validate,acknowledgments=dict(destructive=True,trust_expansion=True,permission_expansion=False))
+            revalidate=validate,acknowledgments=dict(destructive=True,trust_expansion=True,permission_expansion=True))
         result.update(phase='approved',review_digest=data_digest(review),approval_digest=data_digest(approval))
     else:
         result=load(path);operation=result['operation']
-        if args.phase in {'apply','fault'}:
+        if args.phase=='approve':
+            assert result['phase']=='registering'
+            status=native.store.status(operation)
+            assert status['state']=='awaiting_operator_approval' and not status['mutation_started']
+            bundle=native.store.bundle(operation)
+            assert bundle['plan_hash']==result['plan_hash']
+            validate=native._validate()
+            review=native.store.review(operation,validate)
+            approval=native.store.approve(operation,exact_hash=result['plan_hash'],noninteractive=True,
+                revalidate=validate,acknowledgments=dict(destructive=True,trust_expansion=True,permission_expansion=True))
+            result.update(phase='approved',review_digest=data_digest(review),approval_digest=data_digest(approval))
+        elif args.phase in {'apply','fault'}:
             assert result['phase']=='approved'
             result['phase']='applying';write(path,result)
             if args.phase=='fault':

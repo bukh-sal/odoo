@@ -1,0 +1,77 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.core-maintenance
+#1 transferring dockerfile: 887B done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#2 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/modular-platform:dependency-base-20261108-at04-core49-02
+#4 DONE 1.8s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 513B done
+#5 DONE 0.0s
+
+#6 [builder 1/3] FROM docker.io/library/modular-platform:dependency-base-20261108-at04-core49-02@sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1
+#6 resolve docker.io/library/modular-platform:dependency-base-20261108-at04-core49-02@sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 697.93kB 0.5s done
+#7 DONE 0.5s
+
+#6 [builder 1/3] FROM docker.io/library/modular-platform:dependency-base-20261108-at04-core49-02@sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1
+#6 CACHED
+
+#8 [builder 2/3] COPY . /source
+#8 DONE 0.8s
+
+#9 [builder 3/3] RUN /venv/bin/python /source/tools/build_distribution.py /source /release --policy "deploy/distribution-r1-foundation.json"
+#9 1.744 {"addons": ["auth_passkey", "auth_password_policy", "auth_totp", "base", "base_import", "base_setup", "bus", "html_editor", "mail", "maintenance", "mp_aurora_tasks", "mp_compat", "mp_core", "mp_discuss", "mp_example_background", "mp_example_canvas", "mp_example_notes", "mp_example_notes_labels", "mp_example_notes_stats", "mp_identity", "mp_mail_gateway", "mp_shell", "web", "web_tour"], "file_count": 6099}
+#9 DONE 1.9s
+
+#10 [runtime 2/9] RUN rm -rf /opt/modular
+#10 CACHED
+
+#11 [runtime 3/9] COPY --from=builder /release /opt/modular
+#11 DONE 0.5s
+
+#12 [runtime 4/9] COPY tools /opt/modular/tools
+#12 DONE 0.1s
+
+#13 [runtime 5/9] COPY deploy/requirements-r1.lock /opt/modular/requirements.lock
+#13 DONE 0.0s
+
+#14 [runtime 6/9] COPY tests/fixtures/addons /opt/modular/fixtures
+#14 DONE 0.0s
+
+#15 [runtime 7/9] RUN printf 'r1\n' > /opt/modular/startup-profile
+#15 DONE 0.1s
+
+#16 [runtime 8/9] WORKDIR /opt/modular
+#16 DONE 0.0s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 5.3s done
+#17 exporting manifest sha256:af55789b82f5a9488694c793e5d137de109195dd572803ef91ce62eaa37286de 0.0s done
+#17 exporting config sha256:094e9f814a830b458c3aa1d79ecc708d34114fd2cab1a63e0f63d488c3b25b4a 0.0s done
+#17 exporting attestation manifest sha256:50aee95d3acee20403ddc3f3bfd954e5d460a0e38b3c7fd682e10c260495ff14 0.0s done
+#17 exporting manifest list sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f 0.0s done
+#17 naming to docker.io/library/modular-platform:stage-20261108t174840268641z done
+#17 unpacking to docker.io/library/modular-platform:stage-20261108t174840268641z
+#17 unpacking to docker.io/library/modular-platform:stage-20261108t174840268641z 1.5s done
+#17 DONE 7.0s
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 4)
+ - InvalidDefaultArgInFrom: Default value for ARG ${DEPENDENCY_BASE_IMAGE} results in empty or invalid base image name (line 10)
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/8cmy7sxayo2i0bce8v25ve9ov

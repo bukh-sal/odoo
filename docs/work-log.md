@@ -2043,3 +2043,13 @@ and previous metadata. Both provisioning handles terminal. Next source commit an
 - Seeded two scoped Notes, four non-scheduled reference tasks and one owned file
   witness per source site using real user/scoped model authority. No native app
   reminders or fake grants. New stage declaration will observe current witnesses.
+
+## AT-04b exact candidate and pending work
+
+2026-11-08T18:00:26.013037+00:00 core49 candidate02 built from b65734dbb29: imagecac49d72605f, inventoryd490c3d7701a, unchanged app71c97db1113c. Both old47 sites have3real pending workspace jobs/one actual committed claim each. Maintenance declaration/staging/registration and independent reconstruction passed. Approval rejected missing site-scope declaration acknowledgment, with no mutation; reviewed exact declaration/no workspace grants. Test driver corrected and existing immutable operation approval continued; no replay or replacement. Progress remains60/100,8/14.
+
+- Actual Maintenance operatione451a841 completed on core49 candidate02. Fixed native business witnesses verified before publication, original files preserved and Tasks absent. Managed worker profile qualification started; Tasks exact-image fault preparation started on separate old47 target. AT-J/K still pending, no acceptance credit for partial peer result.
+
+## AT-04c real closed failure and useful peer
+
+2026-11-08T18:08:37.557341+00:00 Tasks operation1b42ac52 reached real release_published then controlled fault: recovery_required, mutation committed, ingress closed, failed app stopped, independent CLI journal readable. Post-checkpoint Bob/B revocation recorded. Maintenance1urgent/1bulk profile passed;3old jobs completed with precise actors/results and original claim denied. Useful Maintenance request/chatter/scoped Note edit committed;2test harness attempts rolled back/diagnosed/corrected, not runtime defects.16new bulk peer jobs queued while Tasks down. Fresh47 independent restore running, separate resume/final forward not yet qualified. Exact obsolete candidate48/first49 images and3tags removed after no dependents; sealed/support retained.60/100points8/14.
