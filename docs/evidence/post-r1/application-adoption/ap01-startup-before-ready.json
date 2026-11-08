@@ -1,0 +1,15 @@
+{
+  "result": "pilot_baseline_and_environment_verified_startup_running",
+  "utc": "2026-11-08T20:10:36.560520+00:00",
+  "kit_manifest_sha256": "396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404",
+  "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "inventory_digest": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6",
+  "project": "mp-r0-r1release261d5d0954ee",
+  "url": "http://release-261d5d0954ee.localhost:18172",
+  "purpose": "persistent_local_development_pilot",
+  "docker_memory_bytes": 8290807808,
+  "python": "3.12.16 isolated operator environment",
+  "mutation_phase": "applying_native_install",
+  "helper_containers_removed_after_exit": true,
+  "acceptance_credit": false
+}

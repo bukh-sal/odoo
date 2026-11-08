@@ -11,7 +11,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-01 local Tasks pilot — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-01a / AP-A: verify sealed49/environment, create a fresh owned persistent local pilot and independently install Tasks/start managed lanes.** [Plan](../planning/application_adoption.md).
+- Active item: **AP-01b / AP-B: daily native-UI pilot workflow with real fictional users; record developer and usage limitations.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -19,7 +19,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**0/100 verified points;0/16 acceptance checks passed.** Plan creation/source
+**5/100 verified points;1/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -32,7 +32,7 @@ across its four checks. No sub-agents are authorized.
 
 | Check | State | Output / next verification |
 | --- | --- | --- |
-| AP-A | not_run | Fresh49 pilot, independent Tasks install, bounded reviewed worker lanes and operation instructions |
+| AP-A | passed | [Fresh49 pilot/startup](evidence/post-r1/application-adoption/ap01-startup.json), independent Tasks install/1urgent+1bulk ready, [runbook](application-pilot.md) |
 | AP-B | not_run | Agent native browser daily shared Tasks/reminder workflow |
 | AP-C | not_run | Real role denials/concurrent edits/cancel/reassignment/worker stop-start |
 | AP-D | not_run | Evidence-based limitations/required fixes, selected app delta and pilot runbook |
@@ -53,20 +53,20 @@ Blocker register: no required user input. AP-LIM-001/004 identify unproven separ
 composition/app-only release paths, not environmental blockers. Pilot feedback is
 agent evidence; optional human review is not a prerequisite or an inferred pass.
 
-Resume capsule: **AP-01a active; no current process or pending mutation.** Clean
-baseline HEADdd2e16d7c44 before new plan/records. New umbrella goal created.
-Sealed49 manifest396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404,
-imagecac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f,
-Tasks0.2.2 archive71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c.
-Aurora committed source e48e04ed4cf155a83e66e08dfb33a669ebb5c228 read-only;
-Projects is a bounded candidate (name/description/manager/status, optional customer/
-logo), pending AP-I API/access review. Phase4 builds on commands actually exercised.
-Next inspect Docker/toolchain/pins and existing native pilot bootstrap, then start
-one fresh local pilot with explicit ownership and durable operation records under
-`.local/application-adoption`. Do not replay retired AT fixture commands. Keep one
-active item; record every actual effect/operation before retrying. New code needing
-contract changes must freeze/requalify before mutation. Historical capsules below
-are completed scopes, not current instructions to stop or restart their tests.
+Resume capsule: **AP-A passed; AP-01b native pilot walkthrough active.**
+5/100verifiedpoints,1/16checks. Projectmp-r0-r1release261d5d0954ee on18172,
+private`.local/application-adoption/ap01-pilot-01`, explicit retained development
+intent. Exact sealed49/Tasks0.2.2 independently installed;1urgent+1bulk lanes
+ready, producer disabled. Startup process39100 completed; no uncertain mutation.
+[AP-A receipt](evidence/post-r1/application-adoption/ap01-startup.json),
+[start/stop/access runbook](application-pilot.md). New one-shot helpers auto-remove;
+pre-existing older/unrelated Docker assets recorded AP-LIM-009, not touched.
+Next use in-app browser as Alice to create a useful shared list/task from native
+screens, then member/assignee reminder and inbox workflows. Record actual IDs/
+changes before retries. AP-C adds direct role denials, concurrent-edit behavior
+and worker outage/restart. Human feedback is optional and not inferred. Select
+one real app delta for AP-02 after observations. No global cleanup or retired AT
+replay. Historical completed capsules below retain their own dated scope.
 
 ## Aurora Tasks release (completed goal)
 

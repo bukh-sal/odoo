@@ -1,0 +1,42 @@
+{
+  "result": "passed_fresh_persistent_pilot_startup",
+  "utc": "2026-11-08T20:11:07.955522+00:00",
+  "project": "mp-r0-r1release261d5d0954ee",
+  "url": "http://release-261d5d0954ee.localhost:18172",
+  "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "inventory_digest": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6",
+  "installed_application": "dev.aurora.tasks",
+  "application_version": "0.2.2",
+  "lanes": {
+    "urgent": 1,
+    "bulk": 1
+  },
+  "independent_install_operation": "aa45afe1-cfd1-4a78-a121-7f3f32d66b38",
+  "persistent_development_purpose": true,
+  "acceptance": [
+    "AP-A"
+  ],
+  "worker_profile_ready": true,
+  "pools": {
+    "urgent": {
+      "desired": 1,
+      "running": 1,
+      "ready": 1,
+      "drained": 0
+    },
+    "bulk": {
+      "desired": 1,
+      "running": 1,
+      "ready": 1,
+      "drained": 0
+    },
+    "producer": {
+      "desired": 0,
+      "running": 0,
+      "ready": 0,
+      "drained": 0
+    }
+  },
+  "runbook": "docs/application-pilot.md",
+  "synthetic_users_and_data": true
+}
