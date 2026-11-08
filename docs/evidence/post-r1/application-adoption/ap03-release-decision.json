@@ -1,0 +1,137 @@
+{
+  "checks": [
+    "AP-K",
+    "AP-L"
+  ],
+  "result": "passed",
+  "utc": "2026-11-08T23:07:15.495420+00:00",
+  "fault_operation": "70cba523-bc1f-4c44-8fba-ccb301f53402",
+  "forward_operation": "aa2522a3-67c7-4d21-84c1-c693766da933",
+  "fault": {
+    "fresh_original_database": true,
+    "old_schema_restored": true,
+    "original_project_task_link_role_rows_and_files": true,
+    "current_native_auth_revocation": true,
+    "separate_resume": true,
+    "useful_project_and_link_edit_open": true,
+    "valid_reminder_effects": 2,
+    "revoked_origin_zero_effects": true
+  },
+  "forward": {
+    "original_rows_files": true,
+    "job_identity_actor_payload_schedule_deadline": true,
+    "stale_claim_refused": true,
+    "new_date_and_existing_native_integration": true,
+    "reminder_effects": 2
+  },
+  "error_confidentiality": {
+    "result": "passed",
+    "hidden_record_name_in_error": false,
+    "ordinary_read_denied": true,
+    "temporary_group_change_rolled_back": true,
+    "debug_request_flag_simulated": true
+  },
+  "final_image": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d",
+  "final_inventory": "sha256:fc709b8441498cec3135f2802dd31b6c60d128e1db33600981362a8a0a6fa7ea",
+  "archives": "ap03-final-archive-boundaries.json",
+  "packaging_boundary": {
+    "total": 35,
+    "passed": 34,
+    "skipped": 1,
+    "reason": "Windows symlink privilege unavailable",
+    "single_clean_run": true
+  },
+  "public_freeze": {
+    "result": "passed",
+    "files": 119,
+    "rows": 10
+  },
+  "native_browser": [
+    "Final new target_date column preserves old unknown row",
+    "Native Late projects filter returns only populated overdue Project1;no view/shell rewrite",
+    "Native linked Task action/navigation persisted after restore/upgrade/relogin"
+  ],
+  "screenshot": "ap03-native-late-project-filter.jpg",
+  "owned_retirement": {
+    "result": "retired",
+    "project": "mp-r0-r1releasec8dd58853f67",
+    "containers": [
+      "mp-r0-r1releasec8dd58853f67-link-error-fixed",
+      "mp-r0-r1releasec8dd58853f67-forward-stale",
+      "mp-r0-r1releasec8dd58853f67-op-aa2522a3-67c7-4d21-84c1-c693766da933-dispatch-enable",
+      "mp-r0-r1releasec8dd58853f67-op-1ca43343-3f9f-4844-8670-6efef39c7267-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-aa2522a3-67c7-4d21-84c1-c693766da933-dispatch-reconcile",
+      "mp-r0-r1releasec8dd58853f67-op-aa2522a3-67c7-4d21-84c1-c693766da933-assets",
+      "mp-r0-r1releasec8dd58853f67-app-release-aa2522a367c74d2184c1c693766da933",
+      "mp-r0-r1releasec8dd58853f67-op-aa2522a3-67c7-4d21-84c1-c693766da933-metadata",
+      "mp-r0-r1releasec8dd58853f67-op-aa2522a3-67c7-4d21-84c1-c693766da933-native",
+      "mp-r0-r1releasec8dd58853f67-op-01981727-ad8a-4e0b-bf14-35159bc42f65-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-aa2522a3-67c7-4d21-84c1-c693766da933-checkpoint",
+      "mp-r0-r1releasec8dd58853f67-op-aa2522a3-67c7-4d21-84c1-c693766da933-dispatch-fence",
+      "mp-r0-r1releasec8dd58853f67-forward-pending-seed",
+      "mp-r0-r1releasec8dd58853f67-link-error-baseline-debug",
+      "mp-r0-r1releasec8dd58853f67-link-error-baseline",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-dispatch-enable-c6143aa0ba8a4bd19c5e8605862f3ad4",
+      "mp-r0-r1releasec8dd58853f67-op-63e3ab65-b42c-44b5-9406-05e776a9fdb0-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-cb2da411-49e2-4f8b-8337-b8eb2a7103a7-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-63acf699-5114-49a5-bafc-3389a28a7b55-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-restored-stale",
+      "mp-r0-r1releasec8dd58853f67-op-49838add-b105-4b96-bced-a633a4f1a204-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-dispatch-reconcile-00f53e94852344d49fd8bd57d335f0bc",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-restored-assets",
+      "mp-r0-r1releasec8dd58853f67-app-restore-70cba523bc1f4c448fbaccb301f53402",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-read-config",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-dispatch-fence-00f53e94852344d49fd8bd57d335f0bc",
+      "mp-r0-r1releasec8dd58853f67-op-54b936eb-36af-4e9e-b594-ecbc6c1faebf-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-restore-filestore",
+      "mp-r0-r1releasec8dd58853f67-op-1ee3c58c-0f9d-47ae-9a49-9d743e0205fe-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-dd061ee9-a6eb-47ac-91ef-9422b3084895-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-2455c56f-b245-416d-bd76-33582a95bb9d-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-76b8e79c-6422-4637-890e-33cb2d53dc53-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-dispatch-reconcile",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-assets",
+      "mp-r0-r1releasec8dd58853f67-app-release-70cba523bc1f4c448fbaccb301f53402",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-metadata",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-native",
+      "mp-r0-r1releasec8dd58853f67-op-4c039710-be0e-44d8-b6c7-0ba336f5992c-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-checkpoint",
+      "mp-r0-r1releasec8dd58853f67-op-70cba523-bc1f-4c44-8fba-ccb301f53402-dispatch-fence",
+      "mp-r0-r1releasec8dd58853f67-fault-pending-seed",
+      "mp-r0-r1releasec8dd58853f67-op-272d8563-c2e7-4376-8509-aedad4689967-dispatch-enable",
+      "mp-r0-r1releasec8dd58853f67-op-3670bd53-2cee-4844-bc91-c2502050be5e-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-272d8563-c2e7-4376-8509-aedad4689967-dispatch-reconcile",
+      "mp-r0-r1releasec8dd58853f67-op-272d8563-c2e7-4376-8509-aedad4689967-assets",
+      "mp-r0-r1releasec8dd58853f67-app-release-272d8563c2e743768509aedad4689967",
+      "mp-r0-r1releasec8dd58853f67-op-272d8563-c2e7-4376-8509-aedad4689967-metadata",
+      "mp-r0-r1releasec8dd58853f67-op-272d8563-c2e7-4376-8509-aedad4689967-native",
+      "mp-r0-r1releasec8dd58853f67-op-73af5d54-9dca-4d32-aef0-3c099760f2bd-dispatch-observe",
+      "mp-r0-r1releasec8dd58853f67-op-272d8563-c2e7-4376-8509-aedad4689967-checkpoint",
+      "mp-r0-r1releasec8dd58853f67-op-272d8563-c2e7-4376-8509-aedad4689967-dispatch-fence",
+      "mp-r0-r1releasec8dd58853f67-edge-1",
+      "mp-r0-r1releasec8dd58853f67-app-release-e93687b90d2848a88fd0c93d99fb1f1e",
+      "mp-r0-r1releasec8dd58853f67-core-provision",
+      "mp-r0-r1releasec8dd58853f67-core-init",
+      "mp-r0-r1releasec8dd58853f67-db-1"
+    ],
+    "volumes": [
+      "mp-r0-r1releasec8dd58853f67_appconfig",
+      "mp-r0-r1releasec8dd58853f67_dbconfig",
+      "mp-r0-r1releasec8dd58853f67_bootstrap",
+      "mp-r0-r1releasec8dd58853f67_proxyconfig",
+      "mp-r0-r1releasec8dd58853f67_filestore",
+      "mp-r0-r1releasec8dd58853f67_pgdata"
+    ],
+    "networks": [
+      "mp-r0-r1releasec8dd58853f67_runtime",
+      "mp-r0-r1releasec8dd58853f67_edge"
+    ],
+    "image_retained_for_comparison": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d",
+    "unrelated_resources_untouched": true
+  },
+  "bounds": [
+    "Native HTTP debug presentation flag simulated only in rollback probe;actual actor/group/ACL/rules retained",
+    "Original recovery fault changed Projects0.1.1 with integration0.1.0;final forward also upgrades integration0.1.1 error-only correction with unchanged data shape",
+    "Current app-owned roles restore to checkpoint;no generic current-app-ACL overlay",
+    "No human usability signoff"
+  ]
+}

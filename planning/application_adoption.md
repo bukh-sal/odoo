@@ -97,12 +97,12 @@ Do not invent a core/schema change to manufacture an upgrade exercise.
   with native list/form/search/actions, real roles and server-enforced denials.
   Demonstrate an everyday workflow beyond Tasks. No theme/shell rewrite, full
   Aurora port, accounting or unrelated product expansion.
-- [ ] **AP-K:** Implement a separately declared optional extension connecting
+- [x] **AP-K:** Implement a separately declared optional extension connecting
   the new app to Tasks or Maintenance. Require exact compatible package/native
   dependencies and both records' current access rights. Demonstrate useful linked
   work, outsider denial/no metadata leak and independent operation without the
   extension. Do not hide a mandatory dependency inside application code.
-- [ ] **AP-L:** Qualify clean installation, populated app evolution and compatible
+- [x] **AP-L:** Qualify clean installation, populated app evolution and compatible
   app sets on the common foundation. Include an integration-absent profile,
   dependency/version refusal, native browser workflow and independent recovery
   for actual new persistent effects. Reuse earlier evidence only where code,

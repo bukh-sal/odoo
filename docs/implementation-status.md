@@ -10,8 +10,8 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AP-03 bounded second application — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-L populated Projects0.1.0→0.1.1 full-set evolution/fault/recovery and dependency refusals.** [Plan](../planning/application_adoption.md).
+- Current phase/gate: **AP-04 reusable workflow and clean delivery — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
+- Active item: **AP-M consolidate exercised developer/release commands and portable downstream source/artifact delivery.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -19,7 +19,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**65/100 verified points;10/16 acceptance checks passed.** Plan creation/source
+**80/100 verified points;12/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -27,8 +27,8 @@ across its four checks. No sub-agents are authorized.
 | --- | --- | --- | --- |
 | AP-01 |20| passed | AP-A..D real daily workflows/repair, roles/concurrency/outage and limitations |
 | AP-02 |30| passed | Independent app source/composition,actual app-only forward/fault/recovery/effects |
-| AP-03 |30| in_progress | AP-I select/freeze bounded business app; initial candidate Aurora Projects |
-| AP-04 |20| not_started | AP-M consolidate exercised commands; clean downstream verification/handoff |
+| AP-03 |30| passed | Independent Projects and optional Tasks links;actual app-set evolution/recovery/confidential errors |
+| AP-04 |20| in_progress | AP-M consolidate exercised commands; clean downstream verification/handoff |
 
 | Check | State | Output / next verification |
 | --- | --- | --- |
@@ -42,8 +42,8 @@ across its four checks. No sub-agents are authorized.
 | AP-H | passed | [Real app-down/fresh original restore/current auth/separate resume](evidence/post-r1/application-adoption/ap02-release-decision.json),valid2effects/revoked0/useful pilot |
 | AP-I | passed | [Source/contract/new-slot actual image+ordinary staged planning](evidence/post-r1/application-adoption/ap03-feasibility-decision.json),no app installed/probe retired/public freeze passed |
 | AP-J | passed | [Independent Projects0.1.0/approved install/9actual backend groups/native create+member readonly UI](evidence/post-r1/application-adoption/ap03-projects-decision.json),Tasks/extension/workspaces absent |
-| AP-K | reopened | Ordinary seven groups/native UI passed;AP-L debug denial probe exposed hidden Task title. Immutable extension0.1.1 correction requires actual fixed probe before credit restored. |
-| AP-L | not_run | Actual clean/populated app sets, dependency refusals/browser/recovery |
+| AP-K | passed | [Final error confidentiality correction/actual forward](evidence/post-r1/application-adoption/ap03-release-decision.json);ordinary7groups/native linking retained |
+| AP-L | passed | [Actual fault70cba523/fresh original restore/current auth/separate resume/effects/new forwardaa2522a3/native date-filter](evidence/post-r1/application-adoption/ap03-release-decision.json) |
 | AP-M | not_run | Short explicit-pin author/package/compose/test path |
 | AP-N | not_run | Independent inspectable operator lifecycle and pilot start/stop path |
 | AP-O | not_run | Clean downstream isolated execution, meaningful automated checks/repro/hygiene |
@@ -54,7 +54,7 @@ by immutable0.2.3/actual new forms/authoritative ownership. AP-H-001 native rest
 release mismatch resolved by ADR0079 host-only operator correction and fresh
 actual recovery/forward/effects;first counterexample retained.
 
-Resume capsule: **AP-01/AP-02/AP-I/J/K passed;AP-L active,65/100points10/16.**
+Resume capsule: **AP-01/AP-02/AP-I/J/K passed;AP-L active,80/100points12/16.**
 Pilot261d5d0954ee/18172 remains useful unchanged foundation0.1.49/Tasks0.2.3,
 imagebf39b8d8/inventoryd84289ff,1urgent+1bulk. In-app tab16 Operator/task3,
 no unsaved draft;CUA part summarized. No running process/test/uncertain mutation.
@@ -1359,3 +1359,5 @@ Current G6 backend evidence for JOB-01..03, EVT-01..03 and SVC-01..05 is bound t
 AP-K completed:extension separateGit 854c090a0fd2d332b49f03eb594e22b328584eb3,artifact65fca164/21800bytes,image8d61e6cc/inventory47aaa4c7. Full-set18176/projectc8dd58853f67 installed all3 via independent approval;7actual servergroups and native newProject3/link6/Task1Open passed. CUA summarized,tab18Alice Task1/no draft. AP-L active:make Projects0.1.1target_date successor;actual populatedfault/old-appfreshrestore/separateresume/newforward. Keep Projects-only18174 and Tasks18172 as independent peers;no runningmutation.
 
 Active AP-L-P1/AP-K reopened:actual rollback-only baseline-debug probe confirmedhiddenTasktitleinAccessErrorwithrealdeveloper-groupandonlyHTTPdebugflag simulated. Firstprobe hadnoHTTPflag/setupassert,bothrolledback. ExcludeAP-K7.5pointsuntilfixed. Projects0.1.1+extension0.1.1 finalcandidateb0920ae4/fc709b84;extensiona79ed60/14d69ee2genericerrors. Actualfault70cba523freshoriginalrestore/separateresume/usefulProject+linkedit/Open/2once effects/currentrevokedBob0effects passed. Freshforwardaa2522a3 independentlyapproved,session11980runningapply/effects/fixedprobe;do not replay. No user-inputblocker.
+
+Current resume/AP-04:80points12/16;AP-Kreclosedafteractualfixeddebugdenial. AP-03allpassedseeap03-release-decision.json. Full-setdisposablec8dd58853f67/18176retiredafterCUAtab18closedandallfleetsdrained;logs/checkpointsretainedprivately. Tasks18172+Projects-only18174remainuseful. FinalsourceProjects1d801d6/.1.1+integrationa79ed60/.1.1+Tasksdb32b467/.2.3;finalimageb0920ae4/fc709b84. No runningprocess/uncertainmutation. NextAP-M:smallportableauthor/package/compose/testpathandapplication-adoptionkitwith3separateGitbundles,exactrecipes+archives,updatedindependenthostoperator;AP-NexplicitCLIreview/approval/lifecycle+pilotcommands;AP-Ocleanisolatedcheckout/run;AP-Pchecksums/retainedpilot/ownedcleanup. Preserveallsealedkits;nonewplatformruntimeversion.
