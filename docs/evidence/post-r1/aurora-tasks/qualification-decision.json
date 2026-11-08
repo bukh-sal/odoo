@@ -1,0 +1,77 @@
+{
+  "result": "passed_aurora_tasks_release_qualification",
+  "utc": "2026-11-08T18:44:38.782989+00:00",
+  "core_version": "0.1.49",
+  "contract_revision": 25,
+  "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "inventory_digest": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6",
+  "application": {
+    "plugin_id": "dev.aurora.tasks",
+    "version": "0.2.2",
+    "digest": "sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c"
+  },
+  "gates": {
+    "AT-01": "passed",
+    "AT-02": "passed",
+    "AT-03": "passed",
+    "AT-04": "passed",
+    "AT-05": "passed"
+  },
+  "checks": {
+    "AT-A": "passed",
+    "AT-B": "passed",
+    "AT-C": "passed",
+    "AT-D": "passed",
+    "AT-E": "passed",
+    "AT-F": "passed",
+    "AT-G": "passed",
+    "AT-H": "passed",
+    "AT-I": "passed",
+    "AT-J": "passed",
+    "AT-K": "passed",
+    "AT-L": "passed",
+    "AT-M": "passed",
+    "AT-N": "passed"
+  },
+  "evidence": {
+    "docs/evidence/post-r1/aurora-tasks/at01-decision.json": "121748ef475c862e77cb8c0456ae047239ef45f06ec4b4c8535358fa2bf2c237",
+    "docs/evidence/post-r1/aurora-tasks/at02-authoring.json": "098f69b453d25f79e4275c433cc01ead564308550d435973290ee33ca28e16ec",
+    "docs/evidence/post-r1/aurora-tasks/at03-decision.json": "7a7f9c69e0eb18b5e017dc348dfb9d2ce4e502a443c59ecdc7472274526e3a85",
+    "docs/evidence/post-r1/aurora-tasks/at04-decision.json": "3dc43ad8f8426338d82036de4ac6c7aa0b2d8311a5ca5e41b25fbf3efd4b914c",
+    "docs/evidence/post-r1/aurora-tasks/at04-clean.json": "66bccb7851c973406117937d63756463599c4b7eb16c70cf989242c455ce9df9",
+    "docs/evidence/post-r1/aurora-tasks/at04-upgrade.json": "873aac66561f507eb80345ff3167099ea24f8dd9a4ed1f9a31d893782e6f1edf",
+    "docs/evidence/post-r1/aurora-tasks/at04-recovery.json": "87431f1f220aff7e007918bdf1b4e0c1064e90e2274d3b3881ac0235fe62d82f",
+    "docs/evidence/post-r1/aurora-tasks/at04-browser-workload.json": "fae6e77968b3c3ff6c5b7d233049a690215ec33b572609aa3822f8e2a5560344",
+    "docs/evidence/post-r1/aurora-tasks/at05-regression.json": "d51dd5d51582574d51015688de40383e6f553f1993b4a40ce17be06be1cbb557",
+    "docs/evidence/post-r1/aurora-tasks/at05-reproduction.json": "de6b2384d65121c69f934024016a12c09320fb75bb573651706b21c60e4efce0",
+    "docs/evidence/post-r1/aurora-tasks/at05-catalog.json": "cabbba29cd751e46ce3f6cbb5be38e84d3227a657b7f8fdd40cf8e4bb95db546",
+    "docs/evidence/post-r1/aurora-tasks/at05-assembly.json": "a01bc11bde45e6fb207c9d9197291f1c26667351a7ad11bbf3ba32fe311f369d",
+    "docs/evidence/post-r1/aurora-tasks/at05-consumer.json": "f52bd1387d78126fe85817beaa5395bca61f581db8022390c922ee2f49473f09",
+    "docs/evidence/post-r1/aurora-tasks/at05-privacy-full.json": "afb843371d64a80f1ef03d57c3638947f4fe619801392d8f160b7553b2907298",
+    "docs/evidence/post-r1/aurora-tasks/at05-retirement.json": "d8643ef7023f476cbcc853dba20b997f305179908a68aa4b32d8c48c8be0d03e"
+  },
+  "handoff": "docs/aurora-tasks-release.md",
+  "kit": ".local/releases/foundation-r1-core49-tasks",
+  "source_image_inputs": "b65734dbb2950d8e81411341a48f43fff851827a",
+  "host_checks": {
+    "passed": 641,
+    "skipped": 2,
+    "intended": 643
+  },
+  "recovery": {
+    "actual_publication_fault": true,
+    "fresh_source47_database": true,
+    "current_revocation_preserved": true,
+    "separate_resume": true,
+    "useful_peer_jobs": 16
+  },
+  "frontend": "Native WebClient/list/form/actions and recipient inbox; Canvas unchanged",
+  "limitations": [
+    "Bounded list-bound Aurora Tasks app, not full Aurora import/port or standalone tasks.",
+    "Native human-origin jobs only; app reminders up to30days/24hour window, database inbox only.",
+    "No external Odoo compatibility, hostile-plugin sandbox, broker/autoscaling, publication or production deployment.",
+    "First host attempt had import-launcher failures; corrected27cases complete exact aggregate coverage, not a claimed single clean full-run result.",
+    "Persisted-fixture credential audit is finite; unchanged dependency/provenance qualification is carried forward.",
+    "Packaging seal/final delivery checksum and refreshed-source audit follow this committed evidence decision; they grant no executor/publisher authority."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "result": "passed_AT04_final_artifact_qualification",
+  "utc": "2026-11-08T18:41:01.974323+00:00",
+  "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "checks": {
+    "AT-I": "passed",
+    "AT-J": "passed",
+    "AT-K": "passed",
+    "AT-L": "passed"
+  },
+  "evidence": {
+    "docs/evidence/post-r1/aurora-tasks/at04-clean.json": "66bccb7851c973406117937d63756463599c4b7eb16c70cf989242c455ce9df9",
+    "docs/evidence/post-r1/aurora-tasks/at04-upgrade.json": "873aac66561f507eb80345ff3167099ea24f8dd9a4ed1f9a31d893782e6f1edf",
+    "docs/evidence/post-r1/aurora-tasks/at04-recovery.json": "87431f1f220aff7e007918bdf1b4e0c1064e90e2274d3b3881ac0235fe62d82f",
+    "docs/evidence/post-r1/aurora-tasks/at04-browser-workload.json": "fae6e77968b3c3ff6c5b7d233049a690215ec33b572609aa3822f8e2a5560344"
+  }
+}

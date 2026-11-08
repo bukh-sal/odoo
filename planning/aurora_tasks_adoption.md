@@ -16,8 +16,8 @@ defines the next closed transition. One active item: AT-04b actual upgrade/recov
   publication, workload and native in-app browser on final artifact. Preliminary
   core48 browser already proves assignee completion/reopen and saved reminder read
   state; it does not close these final-artifact checks.
-- [ ] AT-05 / AT-M: affected host/native regressions, exact reproduction and privacy.
-- [ ] AT-05 / AT-N: checksummed developer/operator release instructions, final audit,
+- [x] AT-05 / AT-M: affected host/native regressions, exact reproduction and privacy.
+- [x] AT-05 / AT-N: checksummed developer/operator release instructions, final audit,
   selected obsolete containers/volumes/networks/images retired. Preserve sealed kits.
 
 Data witnesses use original columns for task tables because the update adds reminder

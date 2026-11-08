@@ -1,0 +1,46 @@
+{
+  "result": "passed_finite_persisted_AT_values",
+  "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "kit_source": "dda8401b8f038936f5a067d34637c815b25fe21c",
+  "kit_manifest_sha256": "60074353ca857aa634595285734ff4f1a33929f3b5d357b449acde4b085c1952",
+  "images_tar_sha256": "df67fee92f4a4333adca5e4e45fd509e90a46e0b4e56cd454489b6d2931bacc9",
+  "known_values": 49,
+  "encodings": 147,
+  "credential_sources": [
+    ".local/aurora-tasks/at03-native-01/account-passwords.json",
+    ".local/aurora-tasks/at03-native-02/account-passwords.json",
+    ".local/aurora-tasks/at03-native-03/account-passwords.json",
+    ".local/aurora-tasks/at04-clean49-01/account-passwords.json",
+    ".local/aurora-tasks/at04-release-01/maintenance/account-passwords.json",
+    ".local/aurora-tasks/at04-release-01/tasks/account-passwords.json",
+    ".local/aurora-tasks/at03-native-01/odoo.conf",
+    ".local/aurora-tasks/at03-native-02/odoo.conf",
+    ".local/aurora-tasks/at03-native-03/odoo.conf",
+    ".local/aurora-tasks/at04-clean49-01/odoo.conf",
+    ".local/aurora-tasks/at04-release-01/maintenance/odoo.conf",
+    ".local/aurora-tasks/at04-release-01/tasks/odoo.conf",
+    ".local/aurora-tasks/at01-native-02/db.env"
+  ],
+  "totals": {
+    "files": 24249,
+    "unique_contents": 16070,
+    "bytes": 559194098,
+    "archives": 51
+  },
+  "findings": [],
+  "new_application_layers": [
+    "blobs/sha256/1183d09370556c9082eaf45742a097a8efcfa61ed5b7b4fa14034e70effbd6c8",
+    "blobs/sha256/8c6520e3e239cdbbc4562388a6fa61d461e8d3c2804b1fd7007c5e1ba8ff5b42",
+    "blobs/sha256/7c5a74450b41ebe27219f119ca8ca897566cdef7e97bb8b93915bee2d8dd9eb9",
+    "blobs/sha256/fafa028a2fe5b3379196e3e18196854f4d4def868f446acfa59901f22f60a555",
+    "blobs/sha256/82847daa41dd9923e9d0a52e7550706588f1d9f425625fa7e70ae7787b605ed4",
+    "blobs/sha256/9407d6fa69068d5ccdc2c964b18a3a24cdea54ff1dc53f00388355d4dbe736c2",
+    "blobs/sha256/4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1"
+  ],
+  "prior_full_receipt": null,
+  "limits": [
+    "Finite persisted AT fixture login/master/database values in literal/UTF16LE/Base64 forms, not an unknown-secret detector.",
+    "Transient probe credentials that were never retained on the host cannot be enumerated; generated config/data paths are excluded from build inputs.",
+    "Unchanged pinned dependency/toolchain/notice artifacts retain previous qualification; this is no publisher authentication or production security claim."
+  ]
+}

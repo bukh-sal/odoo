@@ -8,15 +8,16 @@ Current goal: useful Aurora Tasks application release through AT-05 — active. 
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AT-01..04 passed; AT-05 final release qualification active.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AT-05a: affected host/native regression and no-cache/offline reproduction; then privacy/handoff/owned retirement.** [Plan](../planning/aurora_tasks_adoption.md).
+- Active item: **AT-05 final delivery: committed-source refresh, seal, refreshed-source privacy and final checksum verification.** [Plan](../planning/aurora_tasks_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Aurora Tasks release (active goal)
 
-[Plan](../planning/aurora_tasks_release.md). Authorized8 November2026. **90/100
-verified weighted points;12/14 acceptance checks passed. AT-01..03 complete;
-final release lifecycle/browser/reproduction/handoff remain AT-04..05.** This counts only the new
+[Plan](../planning/aurora_tasks_release.md). Authorized8 November2026. **100/100
+verified weighted points;14/14 acceptance checks passed; final packaging/delivery verification pending.**
+The goal remains active until the committed-source seal and final artifact audit complete.
+AT-01..05 qualification evidence is passed; final delivery is being verified. This counts only the new
 application release; AR16/16, CF12/12 and R1 99/99 remain historical completed checks.
 
 | Gate | Weight | State | Active/next work |
@@ -25,7 +26,7 @@ application release; AR16/16, CF12/12 and R1 99/99 remain historical completed c
 | AT-02 |20| passed | AT-D authoring and AT-E actual approved site-native install passed |
 | AT-03 |25| passed | [Actual0.2.2 native10/edges8/classifier3/managed20](evidence/post-r1/aurora-tasks/at03-decision.json), no source overlay |
 | AT-04 |30| passed | Exact49 clean/populated adoption, independent recovery, real native publication/jobs and final in-app native UI |
-| AT-05 |10| in_progress | Full affected checks/reproduction/privacy, checksummed handoff and exact owned retirement |
+| AT-05 |10| passed |643host cases accounted for, reproduction/privacy, offline kit operator/authoring and owned retirement; final seal verification pending |
 
 | Acceptance | Latest result | Evidence/procedure |
 | --- | --- | --- |
@@ -41,8 +42,8 @@ application release; AR16/16, CF12/12 and R1 99/99 remain historical completed c
 | AT-J | passed | [Fresh approved47→49 native adoption, retained original rows/files and6declared stages](evidence/post-r1/aurora-tasks/at04-upgrade.json) |
 | AT-K | passed | [Real publication fault, fresh47 restore/current revocation/separate resume and useful peer16jobs](evidence/post-r1/aurora-tasks/at04-recovery.json) |
 | AT-L | passed | [Final49 in-app native complete/reopen, persisted private inbox/Open task and actual workload](evidence/post-r1/aurora-tasks/at04-browser-workload.json) |
-| AT-M | not_run | Affected regression, reproduction and privacy checks |
-| AT-N | not_run | Checksummed handoff, author/operator instructions and owned retirement |
+| AT-M | passed | [643case coverage](evidence/post-r1/aurora-tasks/at05-regression.json), [10comparison reproduction](evidence/post-r1/aurora-tasks/at05-reproduction.json), [finite49value audit](evidence/post-r1/aurora-tasks/at05-privacy-full.json) |
+| AT-N | passed | [56component draft checksum/exported offline operator+authoring](evidence/post-r1/aurora-tasks/at05-consumer.json), [handoff](aurora-tasks-release.md), [exact owned retirement](evidence/post-r1/aurora-tasks/at05-retirement.json); final seal verification follows |
 
 Blocker register: no user input needed. Native authority/partitions/cancel and
 actual archive/image pinning passed AT-03. General authoring and true site-native
@@ -50,22 +51,22 @@ installation passed AT-02. The closed AT-R4 adoption/update and independent reco
 qualification. Generic install/core guards remain strict. Final native publication,
 clean/browser/workload and release handoff checks remain; no user input is needed.
 
-Resume capsule: **AT-04 passed; AT-05a host coverage/reproduction passed,
-privacy/handoff pending.**90/100points,12/14checks. No running test/mutation.
-Actual643intended host cases:641pass/2Windows skips after correcting launcher
-imports. Initial621case run had5import errors (4module placeholders/1tools case);
-616other results retained,27corrected cases passed. Second targeted collection
-omitted SDK path/stopped before tests; import traces discriminated it. No runtime
-source fix. Explicit reusable isolated runner`tests/run_host_regression.py` added.
-Exact49 no-cache replica matches10comparisons/6296inputs and is retired. All
-qualified sites120containers/18volumes/6networks retired, earlier probe assets absent.
-Private catalog22archives in`.local/aurora-tasks/at05-kit-01/operator` ready.
-Next commit current release/test/docs files, assemble fresh49 local kit with exact
-build/reproduction records, audit persisted fixture values/source/new layers,
-verify isolated offline operator/catalog, final decision/handoff/checksums/seal.
-Runtime source b65734dbb29 and imagecac49d72605f remain unchanged; no lifecycle
-replay or rebuild required for release/test/docs-only changes.
-[Regression](evidence/post-r1/aurora-tasks/at05-regression.json).
+Resume capsule: **All14AT qualification checks passed; goal active for final delivery.**
+100verified gate points; do not mark goal complete before actual seal/final audit.
+Exact49 imagecac49d72605f/app71c97db1113c unchanged; native lifecycle/browser and
+recovery passed. Host coverage641pass/2Windows skips across exact643cases after
+launcher correction;10comparison/6296input reproduction passed. Draft kit56components/
+22archives assembled, exported offline operator/catalog/general authoring reproduced
+29211byte app exactly. Finite49persisted-value audit24249file observations/0findings.
+All3qualified targets retired120containers/18volumes/6networks; prior probes/obsolete
+images gone, sealed47/46/support retained. No running test or application mutation.
+Committed qualification decision binds actual evidence, not future production use.
+Next commit records; refresh unsealed kit source with exact application build/repro
+records; seal via`release/seal_local.py` exact AT profile; run final source-only
+privacy audit carrying unchanged image audit; verify final kit/checksums/stable alias,
+then update delivered status and complete goal. Do not edit sealed kit or rebuild
+runtime for documentation-only records. Preserve dated source-archived status.
+[Qualification](evidence/post-r1/aurora-tasks/qualification-decision.json).
 
 Revision25/119files/10rows full source gate passed again after consumers:
 `evidence/G2/20261108-at04-adoption-source-rev25`. New guarded recipe, read-only
