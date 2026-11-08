@@ -447,3 +447,13 @@ AT-D passed: [general authoring/composition](evidence/post-r1/aurora-tasks/at02-
 AT-02 native site source: [final checks](evidence/post-r1/aurora-tasks/at02-source-final/summary.json), [revision22](evidence/G2/20261108-at02-site-native-rev22/gate-G2.json). Actual metadata child apply/image admission remain AT-E. [Early native feasibility scope](evidence/post-r1/aurora-tasks/at01-native-scope-note.json) explicitly excludes source admission/startup attestation.
 
 AT-03 partition primitives: [real PostgreSQL9checks](evidence/post-r1/aurora-tasks/at03-partitions.json), host3+16checks; exact resources retired. [Tasks source](evidence/post-r1/aurora-tasks/at03-app-source.json) implemented/packaged but not runtime verified; no AT-F/G/H pass yet.
+
+
+## Application adoption AP-01 daily pilot
+
+[Daily native browser](evidence/post-r1/application-adoption/ap01-daily-workflow.json),
+[roles/concurrency/outage](evidence/post-r1/application-adoption/ap01-role-concurrency-outage.json),
+[app-only repair](evidence/post-r1/application-adoption/ap01-repair-verified.json),
+[composition reproduction](evidence/post-r1/application-adoption/ap01-composition-reproduction.json).
+AP-A..D passed;AP-02 recovery remains required. Real stale same-field edits are
+last-save-wins, not a conflict-prevention claim. Agent evidence is not human sign-off.

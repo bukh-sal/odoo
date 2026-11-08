@@ -2091,3 +2091,17 @@ and previous metadata. Both provisioning handles terminal. Next source commit an
 - Actual second composition succeeded: imagebf39b8d8/d84289ff inventory, Tasks0.2.3 on unchanged platform0.1.49/policy/Python and6087retained foundation files. Pilot source seeded through real Alice native API for populated upgrade:1shared list/2tasks/1file/1future native reminder. Thin RPC multi-create result shape initially malformed list_id; read-only diagnosis proved1list/0tasks, normalized and continued without resubmitting list. AP-LIM-011..013 record LF policy, canonical migration payload and raw RPC ergonomics. Ordinary staged registered-app upgrade preparation18607running after curated digest generation2; no manual metadata/no core recipe. Await exact approval then apply, verify, return to native UI.5points1/16checks.
 
 - Ordinary site-native app upgrade50f3bf2f approved on unchanged foundation49. First apply refused active job fleet before reserve; journal proved approved/prepared/mutationfalse. Explicit independent jobs drain completed; same immutable approval continued, now applying62462. Source1list/2tasks/1file/1future reminder. This precondition is recorded for AP-N command guidance; no unknown state retry. Next verify actual result/data/defaults, review/restart lanes with new image pins, return to AP-B UI.
+
+- 2026-11-08T20:53:48.831668+00:00 AP-01 passed20/100points4/16. Real app-only upgrade50f3bf2f completed,
+original rows/file/future job preserved, new-pin1urgent/1bulk ready. Independent
+composition matched declared inventory; replica tag retired. Native Alice new
+list/task now save, edit/search/complete/reopen(cancel/requeue) passed; Operator
+received actual inbox notice, saved read/reloaded/Open task. Direct9role denials,
+forged current-user overwrite, recipient privacy/revoked task Open denial passed.
+Non-system raw task_id inbox read correctly denied (groups restriction diagnosed);
+no retry with broader authority. Two-session same-field stale save accepted/last
+wins; disjoint fields retained (AP-LIM-014). Exact urgent lane stopped without
+maintenance drain;valid work stayed queued/no notice, same lane restart delivered
+once. No uncertain mutation/test running. AP-D triage selects already-proven two
+default repair; app ACL checkpoint recovery boundary recorded015. Proceed AP-02
+source evidence and fresh populated app-only fault/recovery sibling; keep pilot.

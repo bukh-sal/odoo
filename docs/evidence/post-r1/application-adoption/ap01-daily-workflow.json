@@ -1,0 +1,25 @@
+{
+  "acceptance": "AP-B",
+  "application_version": "0.2.3",
+  "checks": [
+    "Alice creates shared list with Bob membership",
+    "Alice creates task with current creator,external internal assignee,due time and reminder",
+    "Native description edit/save/name search/navigation",
+    "Complete cancels reminder;reopen queues new occurrence",
+    "External assignee sees assigned tasks/no list search results and edits due time",
+    "Managed worker delivers private inbox notice",
+    "Read flag save/reload persists;Open task rechecks access and shows Sent"
+  ],
+  "foundation_version": "0.1.49",
+  "human_usability_signoff": false,
+  "method": "actual in-app browser tab16 native WebClient",
+  "result": "passed",
+  "screenshots": [
+    "ap01-created-shared-list.jpg",
+    "ap01-created-assigned-task.jpg",
+    "ap01-native-search.jpg",
+    "ap01-reminder-read-persisted.jpg",
+    "ap01-reminder-open-task.jpg"
+  ],
+  "utc": "2026-11-08T20:53:48.831668+00:00"
+}

@@ -1,6 +1,6 @@
 # Local application pilot
 
-AP-01 pilot `ap01-pilot-01` uses sealed foundation49 and Tasks0.2.2 with fictional
+AP-01 pilot `ap01-pilot-01` uses unchanged foundation49 and independently upgraded Tasks0.2.3 with fictional
 users/data. It is an intentionally retained development site, distinct from the
 retired AT qualification fixtures. [Current checklist](implementation-status.md)
 and [limitations](application-adoption-limitations.md) track what has been tested.
@@ -80,3 +80,24 @@ worker interruption rather than assuming the framework protects every workflow.
 The limitations register distinguishes defects, supported boundaries, future
 features and unmeasured human experience. Required corrections feed AP-02's
 separately versioned application release; there is no UI/theme redesign here.
+
+## Verified current pilot
+
+The immutable app-only operation `50f3bf2f-0629-4d26-8c48-22e68b60711e`
+updated0.2.2→0.2.3. Current imagebf39b8d8/inventoryd84289ff differs from sealed49
+because the application changed;6087foundation files, policy, environment and
+platform0.1.49 stayed unchanged. Read exact pins from current target.json.
+Original records/file/future reminder survived. The new version repairs missing
+readonly ownership defaults that blocked native new-record forms in0.2.2.
+
+AP-B/C agent walkthrough passed: Alice created Workshop readiness/member Bob and
+Confirm workshop access/assignee Operator; edited/searched/completed/reopened.
+Operator saw assigned tasks, no lists, changed due time and received a private
+notice; read flag persisted and Open task showed Sent. Direct owner/creator,
+outsider/list/inbox denials and member reassignment passed. An unexpected urgent
+lane stop accepted a queued reminder; restarting the exact lane delivered once.
+
+Two independent sessions can overwrite the same text field without a conflict
+warning; the later save wins. Disjoint dirty-field edits are retained. Avoid
+simultaneous edits to the same task description when preserving both drafts is
+important. This measured boundary is AP-LIM-014, not an optimistic-lock claim.

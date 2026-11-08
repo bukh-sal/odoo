@@ -1,0 +1,16 @@
+{
+  "result": "passed_required_app_only_repair_before_native_UI_recheck",
+  "utc": "2026-11-08T20:44:29.566183+00:00",
+  "operation": "50f3bf2f-0629-4d26-8c48-22e68b60711e",
+  "plan_hash": "sha256:6dcd8ae078612350e3db2b5bd5f41602ac15b4e18b4dcea2c93d0d72a79ac3fe",
+  "image": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f",
+  "foundation_platform_version": "0.1.49",
+  "application_version": "0.2.3",
+  "artifact": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+  "original_rows_and_files_preserved": true,
+  "pending_native_job_identity_preserved": true,
+  "actual_default_get_current_user": true,
+  "reviewed_worker_lanes_ready": true,
+  "browser_new_record_flow": "pending_recheck",
+  "manual_metadata_or_hot_patch": false
+}

@@ -10,8 +10,8 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AP-01 local Tasks pilot — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-01-P1 prerequisite to AP-B: separate-source Tasks0.2.3/defaults fix and pinned49 app composition; then return to native creation.** [Plan](../planning/application_adoption.md).
+- Current phase/gate: **AP-02 independent application release — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
+- Active item: **AP-G/H populated app-only publication, stale-claim checks and independent original-app recovery on a fresh disposable sibling.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -19,23 +19,23 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**5/100 verified points;1/16 acceptance checks passed.** Plan creation/source
+**20/100 verified points;4/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
 | Phase | Weight | State | Next / evidence |
 | --- | --- | --- | --- |
-| AP-01 |20| in_progress | AP-A exact49 pilot startup/ownership; then real native workflows and limitations |
-| AP-02 |30| not_started | AP-E separate checkout/composition feasibility/freeze; app-only update/recovery |
+| AP-01 |20| passed | AP-A..D real daily workflows/repair, roles/concurrency/outage and limitations |
+| AP-02 |30| in_progress | Early AP-E/F evidence retained; AP-G/H full publication/recovery remains |
 | AP-03 |30| not_started | AP-I select/freeze bounded business app; initial candidate Aurora Projects |
 | AP-04 |20| not_started | AP-M consolidate exercised commands; clean downstream verification/handoff |
 
 | Check | State | Output / next verification |
 | --- | --- | --- |
 | AP-A | passed | [Fresh49 pilot/startup](evidence/post-r1/application-adoption/ap01-startup.json), independent Tasks install/1urgent+1bulk ready, [runbook](application-pilot.md) |
-| AP-B | failed | [Native new-list creation blocked by required readonly owner without default](evidence/post-r1/application-adoption/ap01-create-counterexample.json); AP-01-P1 repair active |
-| AP-C | not_run | Real role denials/concurrent edits/cancel/reassignment/worker stop-start |
-| AP-D | not_run | Evidence-based limitations/required fixes, selected app delta and pilot runbook |
+| AP-B | passed | [Actual native creation/edit/search/complete/reopen/reminder/read/Open](evidence/post-r1/application-adoption/ap01-daily-workflow.json), immutable app0.2.3 repair |
+| AP-C | passed | [Direct denials/ownership,reassignment/two-session edits/actual lane outage](evidence/post-r1/application-adoption/ap01-role-concurrency-outage.json) |
+| AP-D | passed | Limitations010 repaired/014 stale-edit boundary measured; app0.2.3 selected/qualified daily path; updated pilot walkthrough |
 | AP-E | not_run | Independent application source/checkout, foundation pin and actual composition |
 | AP-F | not_run | Useful new immutable application version; same foundation code/version, new composed image |
 | AP-G | not_run | Populated approved app-only upgrade, old jobs/roles/files, stale refusal and effects |
@@ -49,51 +49,37 @@ across its four checks. No sub-agents are authorized.
 | AP-O | not_run | Clean downstream isolated execution, meaningful automated checks/repro/hygiene |
 | AP-P | not_run | Checksummed delivery, retained usable pilot, complete records and owned cleanup |
 
-Blocker register: AP-B-001 is a local required implementation prerequisite,
-not a user-input blocker. Missing required/read-only owner default prevents native
-new-list creation; task creator defaults likewise absent. Actual browser refusal
-and Alice default_get recorded; no business rows were created and draft discarded.
-AP-LIM-010 required fix: new immutable Tasks0.2.3, current-user defaults with
-server-side ownership unchanged. Pull forward only separate-source/composition
-prerequisites from AP-02, then return to AP-B; no hot patch or fake UI pass.
+Blocker register: AP-B-001 resolved by immutable Tasks0.2.3/current-user defaults,
+actual native list/task creation and server ownership checks. No user-input blocker.
 
-Resume capsule: **AP-01-P1 active; AP-B failed, AP-A passed.**5/100points,1/16.
-No pending runtime mutation/process. Pilot261d5d0954ee/18172 remains healthy49/
-Tasks0.2.2 with1urgent+1bulk, zero lists/tasks. In-app tab16 is task-list view,
-no unsaved draft; screenshot/counterexample captured, CUA part summarized.
-Separate app archive builder exists, but distribution recipes assume the foundation
-source tree. ADR0078 freezes the minimal app-default repair and image composition boundary.
-Independent checkout`.local/application-adoption/apps/aurora-tasks` baseline
-commit aa2415c2359186e8387de3f04340c6243e90794e reproduces old29211byte archive.
-New app commitdb32b467fb46156254e481900c0461430888b703, version0.2.3 artifact
-e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83
-(28400bytes), current-user defaults only/no schema change. First structural
-preflight refused orphan old migration; new version supports only0.2.2→0.2.3,
-so exact old payload removed in new repo, retained in baseline/history/old archive.
-Explicit repo-local LF attributes avoid host Git line-ending drift; global config
-unchanged. New build-only archive-layer helper/CLI outside runtime SDK/engine;
-8guard cases passed, no public contract change. First composition attempt refused the wrong canonical-JSON inventory digest;
-actual runtime pins file bytes. Corrected helper and a reformat-refusal regression
-pass9guards; fresh02image verified bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f,
-inventoryd84289ff76e923fb78a59c73aa01aa6563723007f18d235786d345cfd71e3ffe.
-Platform0.1.49/policy/Python unchanged;6087foundation files retained. Public
-receipt`ap01-defaults-image02.json`. No other runtime source changed.
-Pilot baseline populated via real Alice API with1list/2tasks/1attachment and1
-future native reminder for upgrade preservation. Seed initially supplied a
-multi-create ID list as scalar list_id; read-only diagnosis confirmed1committed
-list/0tasks, normalized/continued existing record (no create replay). Private
-`repair-seed.json` nowseeded. New artifact curated at policygeneration2 and
-ordinary registered-app plan50f3bf2f-0629-4d26-8c48-22e68b60711e approved.
-First apply preflight refused active lanes before reserve/mutation (actual journal
-approved/prepared/mutationfalse). Explicit jobs drain completed, same approved
-operation now applying via process62462. Inspect journal/actual result before
-any continuation; do not replay apply. Then verify old rows/file/pending identity/
-default_get, restart reviewed profile on new pins and return to native UI creation.
-Use independent review/checkpoint/app-only lifecycle; no manual installation
-metadata or sealed artifact edits. Return to real UI creation immediately after
-required repair; full AP-02 failure/recovery and AP-03/04 stay gated. Historical
-qualification passes retain their narrower recorded scope; no human sign-off.
-[Counterexample](evidence/post-r1/application-adoption/ap01-create-counterexample.json).
+Resume capsule: **AP-01 passed; AP-G/H active,20/100points4/16.** Pilot261d5d0954ee/
+18172 remains usable with1urgent/1bulk, imagebf39b8d8/inventoryd84289ff,
+platform0.1.49/Tasks0.2.3. No pending process/uncertain mutation. In-app tab16
+Operator/task3, no unsaved draft, CUA daily part summarized. Role/concurrency/outage
+checks all terminal passed; exact urgent lane restarted/delivered one notice.
+Current user defaults and immutable ownership proven; same-field stale writes are
+last-save-wins (AP-LIM-014), disjoint fields survive. Native notification task_id
+read was intentionally denied to a non-system user; diagnosed groups restriction,
+not missing delivery. Do not replay once-only seed/check/upgrade commands.
+
+Early prerequisite evidence (not yet scored as AP-02): separate Git checkout
+baselineaa2415c2 reproduced0.2.2/29211bytes; repairdb32b467/e407fb631893/
+28400bytes adds two defaults only. ADR0078/build-only composer retains6087
+foundation files/policy/Python/version;9guard cases.02compositionbf39b8d8 and
+independent replica have equal declared inventoryd84289ff; replica alias retired.
+Ordinary app-only upgrade50f3bf2f completed on populated pilot; original IDs/rows/
+file/future native job identity verified, reviewed new-pin worker profile ready.
+First inventory-hash attempt and drain preflight refusals retained in work log.
+
+Next: verify/credit AP-E/F from immutable evidence, create one owned disposable
+sealed49/Tasks0.2.2 sibling (different port/volumes), populate original data/files
+and real pending+claimed native jobs. Qualify ordinary registered0.2.2→0.2.3
+publication/stale refusal/effects, controlled post-publication failure, app stopped,
+post-checkpoint native authentication revocation, independent fresh original-app
+restore, separate resume/useful original records and fresh forward operation.
+Keep pilot useful and sealed49/47/46 untouched. Native app business data such as
+list membership restores to checkpoint; do not claim generic current-app-ACL
+overlay. Source/contract inspection must make this boundary explicit.
 
 ## Aurora Tasks release (completed goal)
 

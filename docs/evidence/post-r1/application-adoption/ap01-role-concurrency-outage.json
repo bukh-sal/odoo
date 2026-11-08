@@ -1,0 +1,40 @@
+{
+  "acceptance": "AP-C",
+  "application_version": "0.2.3",
+  "bounds": [
+    "Two independently authenticated sessions perform stale same-field and disjoint-field writes;no simultaneous transaction stress claim",
+    "One exact urgent lane stopped without maintenance drain;valid work queues and delivers once after same-image restart",
+    "Native create owner/creator defaults do not grant authority"
+  ],
+  "checks": {
+    "concurrency": {
+      "checks": [
+        "two independent sessions observe same version;stale later same-field write accepted",
+        "native dirty-field writes retain disjoint changes;no general conflict protection claimed"
+      ],
+      "private_receipt_sha256": "c48c4fabff09c840cbb64b09e8e66d086d5e7cc1daeac8631e12115f1f5d7668",
+      "result": "passed"
+    },
+    "outage": {
+      "checks": [
+        "unexpected lane stop retains dispatch and accepts valid work;no false delivery",
+        "same pinned lane restart produces one persisted recipient effect;business data retained"
+      ],
+      "private_receipt_sha256": "9ea5ed63bff74c9ad4814653afbed0f60b4bda47ee9fde94a635e81322572b96",
+      "result": "passed"
+    },
+    "roles": {
+      "checks": [
+        "owner/member/assignee positive reads;9 direct ownership/list/outsider denials",
+        "forged create owner/creator overwritten by current user;defaults are not authority",
+        "private delivered/read inbox;nonrecipients denied;hidden linkage and title immutable",
+        "member assignment edit;former assignee loses task/open authority;history retained",
+        "owner restores useful assignment;new reminder occurrence is independently authorized"
+      ],
+      "private_receipt_sha256": "5768f7cb2042cb79fcb5df3770c05a4bb364e777baba2bbc2d5e605001f4d0ad",
+      "result": "passed"
+    }
+  },
+  "result": "passed",
+  "utc": "2026-11-08T20:53:48.831668+00:00"
+}

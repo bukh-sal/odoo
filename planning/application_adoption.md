@@ -29,20 +29,20 @@ check, concrete output and return condition. Finish each phase before advancing.
 
 ## AP-01 — Pilot the delivered release
 
-- [ ] **AP-A:** Create a fresh, clearly owned local development site from exact49,
+- [x] **AP-A:** Create a fresh, clearly owned local development site from exact49,
   install Tasks0.2.2 through independent approval, and start a reviewed managed
   worker profile. Record source/image/artifact pins, ownership, resource bounds,
   start/stop/resume commands and credentials location privately. Preserve this
   useful pilot across checks; distinguish it from disposable fault fixtures.
-- [ ] **AP-B:** Exercise daily workflows in the in-app browser: create/configure
+- [x] **AP-B:** Exercise daily workflows in the in-app browser: create/configure
   a shared list, create/assign/edit tasks, due dates, completion/reopen and private
   reminders/read-state/Open task. Use several fictional users and useful records,
   including native views and search/filter/navigation behavior.
-- [ ] **AP-C:** Check owner/member/external-assignee/outsider behavior through
+- [x] **AP-C:** Check owner/member/external-assignee/outsider behavior through
   actual authorized and denied operations, two-session/stale edits where relevant,
   cancellation/reassignment and a bounded worker stop/start. Verify retained
   data and eventual notice behavior; never equate a queued job with delivery.
-- [ ] **AP-D:** Record observed developer/user limitations with evidence and
+- [x] **AP-D:** Record observed developer/user limitations with evidence and
   triage. Fix only pilot-blocking correctness/access/data-loss problems here;
   select one useful application change for AP-02. Document a reproducible pilot
   walkthrough and its boundaries. Agent walkthrough is not human usability
