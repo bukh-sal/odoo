@@ -5,13 +5,13 @@ phases to run sequentially unattended on8November2026. Preserve completed
 AT14/14, AR16/16, CF12/12, BG/BX and R1 99/99 scopes and sealed49/47/46 artifacts.
 No hosted/production deployment, publication, paid services or real-data import.
 
-- Updated UTC: 2026-11-08T20:07:03.318010+00:00
+- Updated UTC: 2026-11-08T23:24:20.960971+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-04 reusable workflow and clean delivery — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-M consolidate exercised developer/release commands and portable downstream source/artifact delivery.** [Plan](../planning/application_adoption.md).
+- Active item: **AP-P final native pilot, checksummed handoff and exact owned Docker cleanup.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -19,7 +19,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**80/100 verified points;12/16 acceptance checks passed.** Plan creation/source
+**95/100 verified points;15/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -44,58 +44,50 @@ across its four checks. No sub-agents are authorized.
 | AP-J | passed | [Independent Projects0.1.0/approved install/9actual backend groups/native create+member readonly UI](evidence/post-r1/application-adoption/ap03-projects-decision.json),Tasks/extension/workspaces absent |
 | AP-K | passed | [Final error confidentiality correction/actual forward](evidence/post-r1/application-adoption/ap03-release-decision.json);ordinary7groups/native linking retained |
 | AP-L | passed | [Actual fault70cba523/fresh original restore/current auth/separate resume/effects/new forwardaa2522a3/native date-filter](evidence/post-r1/application-adoption/ap03-release-decision.json) |
-| AP-M | not_run | Short explicit-pin author/package/compose/test path |
-| AP-N | not_run | Independent inspectable operator lifecycle and pilot start/stop path |
-| AP-O | not_run | Clean downstream isolated execution, meaningful automated checks/repro/hygiene |
+| AP-M | passed | [Fresh offline operator/three separate Git clones/six exact baseline+final archives/identical composed inventory](evidence/post-r1/application-adoption/ap04-clean-developer.json);developer/operator guides |
+| AP-N | passed | [Fresh isolated routed CLI plan/register/exact approval/apply,roles,error confidentiality,reviewed fleet and planned stop/restart](evidence/post-r1/application-adoption/ap04-clean-operations.json) |
+| AP-O | passed | [89clean host cases/88pass1skip](evidence/post-r1/application-adoption/ap04-clean-host-tests.json),[actual archive bounds](evidence/post-r1/application-adoption/ap04-clean-archive-boundaries.json),[finite credential/source audit](evidence/post-r1/application-adoption/ap04-delivery-hygiene.json);six exact app archives and identical runtime inventory |
 | AP-P | not_run | Checksummed delivery, retained usable pilot, complete records and owned cleanup |
 
-Blocker register: no user-input blocker. AP-B-001 missing native defaults resolved
-by immutable0.2.3/actual new forms/authoritative ownership. AP-H-001 native restore
-release mismatch resolved by ADR0079 host-only operator correction and fresh
-actual recovery/forward/effects;first counterexample retained.
 
-Resume capsule: **AP-01/AP-02/AP-I/J/K passed;AP-L active,80/100points12/16.**
-Pilot261d5d0954ee/18172 remains useful unchanged foundation0.1.49/Tasks0.2.3,
-imagebf39b8d8/inventoryd84289ff,1urgent+1bulk. In-app tab16 Operator/task3,
-no unsaved draft;CUA part summarized. No running process/test/uncertain mutation.
-Fresh02faultb995e3d6/restored original0.2.2 in newDB/current Bob auth revocation/
-separate resume/useful edit passed.2valid reminders once/attempts2+1,Bob-origin
-held/FORBIDDEN/0effects. New forward08215fca to0.2.3 preserved data/files/jobs,
-stale claim denied,2new reminders once/attempts2+1. Both fleets drained; disposable
-01and02sites retired exact ownership labels/images/mounts:private evidence kept,
-shared images/pilot/unrelated assets untouched. Do not replay their operations.
-[AP-02 decision](evidence/post-r1/application-adoption/ap02-release-decision.json).
+Blocker register: no user-input blocker. Missing ownership defaults (AP-B-001)
+resolved in immutable Tasks0.2.3. Native restore release mismatch (AP-H-001)
+resolved by ADR0079's host-only correction and real recovered effects. Debug-mode
+link-name disclosure (AP-LIM-022) resolved in immutable extension0.1.1; ordinary
+and developer-mode denial probes passed. Original counterexamples remain linked.
 
-ADR0078 independent app source baselineaa2415c2/repairdb32b467 in
-`.local/application-adoption/apps/aurora-tasks` reproduces old71c97db1 archive
-and newe407fb63/28400bytes. New app image retains6087foundation files,Python,
-policy/platformversion;two compositions match declared inventory. App source
-bundle/clean downstream delivery remains AP-04. ADR0079 optional checkpoint
-source_release pin lives only in3host operator SDK files;runtime native guards
-and sealed49/47/46 images unchanged.70unique affected host cases accounted for,
-5actual rollback cases/publicfreeze119files10rows pass;new source receipt pinned.
+Resume capsule: **AP-A..O passed;AP-P active;95points15/16.** No uncertain apply,
+recovery, test or build remains running. Intentional pilot workers are separate:
+primary all-app pilot8a22293a20e7/18178 and independent Tasks261d5d0954ee/18172,
+each1urgent+1bulk/producer0. Projects-onlya74444fa2a92/18174 and combined fault
+siblingc8dd58853f67/18176 were retired by exact ownership;browser tabs17/18closed.
+Do not replay their completed/revoked operations or remove private checkpoints.
 
-Next/current AP-K:Projects0.1.0 separate Git sourcea1764ae1516f,
-artifact0ae7ad4f/22293bytes,imageeabe515b/inventory1dfbd5b4 on unchanged49.
-Source-only siteap03-projects-only-01/projecta74444fa2a92/18174 remains useful,
-Projectsnative package only;Tasks/extension metadata andTask tables absent,
-0workspace/membership/feature rows. InitialfixturewrongStagedExecutor refused
-before reserve/mutation:actual journal approved/prepared/false. Corrected initial
-current-image path toNativeExecutor and explicitly continued sameapproved
-operationa259f507;installation/full native view validation passed.9backend
-role/lifecycle/invalid-role/current-revocation/archive/mixed-bulk/delete groups
-pass. Actual IAB Alice createdProject4 Workshop planning/managerOperator/Bob
-member,activated/held;Bob sees readonly form/no lifecycle buttons. Screenshot
-saved;CUA part summarized. Tab17 Bob/project4/no draft,tab16 originalTasks pilot.
-No running process/uncertain mutation. [AP-J](evidence/post-r1/application-adoption/ap03-projects-decision.json).
+Primary pilot: foundation0.1.49/Tasks0.2.3/Projects0.1.1/integration0.1.1.
+Imageb0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d,
+inventoryfc709b8441498cec3135f2802dd31b6c60d128e1db33600981362a8a0a6fa7ea.
+Private current target/credentials are under
+`.local/application-adoption/clean-operator-01/source/.local/application-adoption/ap04-clean-01`.
+Routed CLI install5f4bad4f completed;actual seven integration groups,debug-error
+confidentiality,planned same-release stop/restart/retained data+roles+links and
+fresh reviewed fleet passed. Final in-app pilot walkthrough and helper/image
+cleanup are the only remaining acceptance work.
 
-Implement frozen optionaldev.aurora.projects_tasks0.1.0 in separate repo. Native
-links/current both-resource ACLs;reuse actual base ORM search queries for counts,
-existing Task resource fence and Project role lock for mutations. No custom
-frontend. Hard deps Tasks==0.2.3,Projects>=0.1.0,<0.2.0;qualify0.1.0/0.1.1.
-Then useful0.1.1target-date evolution/full-set independent recovery/AP-L before
-AP-04clean developer/operator workflow/delivery. Keep Projects-only andTasks
-pilots useful;do not replay old operations or expand customer/logo/CRM/jobs/UI.
+Immutable adoption kit`.local/releases/foundation49-application-adoption` has
+57files,source0927861b195300651d1ddcb75f22b002ef35633b and manifest
+07bf94533a487fc56aa48b5fefc26d79718a50b02a9801825a7cf1a94f598eb6.
+Three independent Git bundles reproduce six exact baseline/final app archives;
+clean recompositiond42cea84 has identicalfc709b84 file/native/package inventory,
+not identical OCI construction identity. Updated host source includes ADR0079;
+sealed49/47/46/images/runtime native guards remain unchanged. Fresh offline
+operator/89host cases(88pass1Windows symlinkskip)/eight actual archive groups
+and finite audit14138source files/103archive members/43app files/56history blobs/
+60generated credential values passed. No human usability signoff is claimed.
+
+Next: complete AP-P native pilot display;retire only obsolete owned helper
+containers/unused application image aliases;retain both useful pilots and sealed
+kits;write current delivery/progress/limitations/evidence records and close the
+umbrella goal only after all16checks pass. No new product/UI/platform work.
 
 ## Aurora Tasks release (completed goal)
 
@@ -1355,9 +1347,3 @@ Current G6 backend evidence for JOB-01..03, EVT-01..03 and SVC-01..05 is bound t
 | ISO-03 | H/R2 | excluded_R2 | Frontend origin/source/nonce/replay/stale-frame tests pass | not_run; procedure to be bound in owning phase |
 | ISO-04 | H/R2 | excluded_R2 | Host cookies and DOM are unavailable to sandboxed frontend | not_run; procedure to be bound in owning phase |
 | ISO-05 | H/R2 | excluded_R2 | Revocation and teardown invalidate runtime/bridge authority | not_run; procedure to be bound in owning phase |
-
-AP-K completed:extension separateGit 854c090a0fd2d332b49f03eb594e22b328584eb3,artifact65fca164/21800bytes,image8d61e6cc/inventory47aaa4c7. Full-set18176/projectc8dd58853f67 installed all3 via independent approval;7actual servergroups and native newProject3/link6/Task1Open passed. CUA summarized,tab18Alice Task1/no draft. AP-L active:make Projects0.1.1target_date successor;actual populatedfault/old-appfreshrestore/separateresume/newforward. Keep Projects-only18174 and Tasks18172 as independent peers;no runningmutation.
-
-Active AP-L-P1/AP-K reopened:actual rollback-only baseline-debug probe confirmedhiddenTasktitleinAccessErrorwithrealdeveloper-groupandonlyHTTPdebugflag simulated. Firstprobe hadnoHTTPflag/setupassert,bothrolledback. ExcludeAP-K7.5pointsuntilfixed. Projects0.1.1+extension0.1.1 finalcandidateb0920ae4/fc709b84;extensiona79ed60/14d69ee2genericerrors. Actualfault70cba523freshoriginalrestore/separateresume/usefulProject+linkedit/Open/2once effects/currentrevokedBob0effects passed. Freshforwardaa2522a3 independentlyapproved,session11980runningapply/effects/fixedprobe;do not replay. No user-inputblocker.
-
-Current resume/AP-04:80points12/16;AP-Kreclosedafteractualfixeddebugdenial. AP-03allpassedseeap03-release-decision.json. Full-setdisposablec8dd58853f67/18176retiredafterCUAtab18closedandallfleetsdrained;logs/checkpointsretainedprivately. Tasks18172+Projects-only18174remainuseful. FinalsourceProjects1d801d6/.1.1+integrationa79ed60/.1.1+Tasksdb32b467/.2.3;finalimageb0920ae4/fc709b84. No runningprocess/uncertainmutation. NextAP-M:smallportableauthor/package/compose/testpathandapplication-adoptionkitwith3separateGitbundles,exactrecipes+archives,updatedindependenthostoperator;AP-NexplicitCLIreview/approval/lifecycle+pilotcommands;AP-Ocleanisolatedcheckout/run;AP-Pchecksums/retainedpilot/ownedcleanup. Preserveallsealedkits;nonewplatformruntimeversion.

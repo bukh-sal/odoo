@@ -1,0 +1,48 @@
+{
+  "result": "passed",
+  "check": "AP-N",
+  "source_commit": "0927861b195300651d1ddcb75f22b002ef35633b",
+  "kit_manifest": "sha256:07bf94533a487fc56aa48b5fefc26d79718a50b02a9801825a7cf1a94f598eb6",
+  "operator_install": {
+    "operation": "5f4bad4f-03b2-40bf-8627-07b0d93b0a0d",
+    "plan_hash": "sha256:1c93926f9a659d2d2271407c0b7059caabb360bd510125896bc744c969848b09",
+    "routed_cli": true,
+    "independent_register_approve_apply": true,
+    "scope": "explicit disposable local OS-owned policy;not an automatic daily approval wrapper"
+  },
+  "pilot": {
+    "phase": "passed",
+    "checks": [
+      "Existing CLI independently reviews/applies bounded 1urgent+1bulk fleet on exact final pins",
+      "Reviewed fleet drained;owned edge/current web/database stop retaining all volumes and immutable target",
+      "Database\u2192current web readiness\u2192edge restart;original rows/roles/links and target bytes retained;native linked Task still opens",
+      "Fresh independently reviewed fleet approval after planned restart;1urgent+1bulk ready,producer0"
+    ],
+    "project": "mp-r0-r1release8a22293a20e7",
+    "url": "http://release-8a22293a20e7.localhost:18178/odoo",
+    "image_id": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d",
+    "inventory_digest": "sha256:fc709b8441498cec3135f2802dd31b6c60d128e1db33600981362a8a0a6fa7ea",
+    "installation_operation": "5f4bad4f-03b2-40bf-8627-07b0d93b0a0d",
+    "lanes": {
+      "urgent": 1,
+      "bulk": 1,
+      "producer": 0
+    }
+  },
+  "final_application_groups": [
+    "useful native association;member read/Open;task-outsider project manager sees zero filtered links/count",
+    "asymmetric search/count/group/read/display/web-read/Open/create denials;readonly project member cannot mutate;pair/projection immutable",
+    "task-list revocation hides prior links/counts in same session;restored rights permit manager with both-write to edit",
+    "project membership/manager revocation hides links despite continuing task access;rights restored explicitly",
+    "unique pair;historical archived read;new archived Project or Task association refused",
+    "both-write explicit unlink;Task/Project deletion cascades associations only and preserves opposite business record",
+    "Project lifecycle does not mutate Task;native inherited/list/form descriptors;no workspace authority"
+  ],
+  "error_confidentiality": {
+    "result": "passed",
+    "hidden_record_name_in_error": false,
+    "ordinary_read_denied": true,
+    "temporary_group_change_rolled_back": true,
+    "debug_request_flag_simulated": true
+  }
+}

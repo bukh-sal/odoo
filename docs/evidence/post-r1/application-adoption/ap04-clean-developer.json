@@ -1,0 +1,60 @@
+{
+  "phase": "passed",
+  "source_commit": "0927861b195300651d1ddcb75f22b002ef35633b",
+  "checks": [
+    "3 separately cloned final app repos package exact qualified bytes using new offline isolated operator and delivered source;paths contain spaces",
+    "3 historical baselines reproduce exact qualified bytes from bundled Git history without copying foundation into apps",
+    "Clean downstream selected app set reproduces exact file/native/package inventory and retains foundation/environment on sealed49"
+  ],
+  "packages": [
+    {
+      "source": "aurora-projects",
+      "commit": "1d801d6084b0004b4c7573f92b9447bd68406ef1",
+      "digest": "sha256:545fa0221612c9a89f663e08c77c921a0fc7553aa5877195dfcb5f373ca0dbf8",
+      "version": "0.1.1",
+      "exact_qualified_bytes": true
+    },
+    {
+      "source": "aurora-projects-tasks",
+      "commit": "a79ed6049b21151bdafdb42966059d1da2852298",
+      "digest": "sha256:14d69ee24f8e54636be72b9e65c02767dfb196c555bce0c99cf89357abc73ccf",
+      "version": "0.1.1",
+      "exact_qualified_bytes": true
+    },
+    {
+      "source": "aurora-tasks",
+      "commit": "db32b467fb46156254e481900c0461430888b703",
+      "digest": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+      "version": "0.2.3",
+      "exact_qualified_bytes": true
+    },
+    {
+      "source": "aurora-tasks",
+      "commit": "aa2415c2359186e8387de3f04340c6243e90794e",
+      "digest": "sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c",
+      "version": "0.2.2",
+      "exact_qualified_bytes": true
+    },
+    {
+      "source": "aurora-projects",
+      "commit": "a1764ae1516fe7f6958ab45519f4b19135d814b0",
+      "digest": "sha256:0ae7ad4f748e8369e7420b54dac91cfd15a57af88f6fc7a31cc6fee42c3cde64",
+      "version": "0.1.0",
+      "exact_qualified_bytes": true
+    },
+    {
+      "source": "aurora-projects-tasks",
+      "commit": "854c090a0fd2d332b49f03eb594e22b328584eb3",
+      "digest": "sha256:65fca16423e18419bfe8d303632af468531ee15425820935b4fb86298e8f16de",
+      "version": "0.1.0",
+      "exact_qualified_bytes": true
+    }
+  ],
+  "composition": {
+    "result": "verified_application_set_on_pinned_foundation",
+    "image_id": "sha256:d42cea8446aa012aa522c5f2a294397f42931c03f4fd3a5c1353b4f7b9f54c67",
+    "inventory_digest": "sha256:fc709b8441498cec3135f2802dd31b6c60d128e1db33600981362a8a0a6fa7ea",
+    "applications": 3
+  },
+  "kit_manifest": "sha256:07bf94533a487fc56aa48b5fefc26d79718a50b02a9801825a7cf1a94f598eb6"
+}

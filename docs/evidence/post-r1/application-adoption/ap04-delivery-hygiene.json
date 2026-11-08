@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "kit_manifest": "sha256:07bf94533a487fc56aa48b5fefc26d79718a50b02a9801825a7cf1a94f598eb6",
+  "source_commit": "0927861b195300651d1ddcb75f22b002ef35633b",
+  "source_files": 14138,
+  "archive_members": 103,
+  "current_app_files": 43,
+  "app_history_blobs": 56,
+  "generated_credential_values": 60,
+  "account_files": 6,
+  "findings": [],
+  "bounds": [
+    "Known generated adoption credentials plus encoded variants checked against delivered source/selected archives/app history",
+    "Generic structural credential patterns additionally checked against current app files and all bundled app Git blobs",
+    "Not a claim to detect every unknown secret or audit the whole original substrate Git history",
+    "Final image retains sealed foundation bytes;selected app source/archives and derived inventory/policy are the qualified delta;no live database/config/filestore is exported"
+  ]
+}

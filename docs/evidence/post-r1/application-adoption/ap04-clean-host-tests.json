@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "modules": [
+    "test_application_set_layer",
+    "test_application_set_recipe",
+    "test_application_layer",
+    "test_application_package",
+    "test_application_distribution",
+    "test_operator_store",
+    "test_restore_dispatch",
+    "test_restore_continuation",
+    "test_dispatch_transport",
+    "test_reference_recovery"
+  ],
+  "source_commit": "0927861b195300651d1ddcb75f22b002ef35633b",
+  "isolated_operator": true,
+  "log": "clean-host-regression.log",
+  "total": 89,
+  "passed": 88,
+  "skipped": 1,
+  "skip_reason": "Windows symlink privilege unavailable"
+}

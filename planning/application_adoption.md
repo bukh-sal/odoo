@@ -110,17 +110,17 @@ Do not invent a core/schema change to manufacture an upgrade exercise.
 
 ## AP-04 — Reusable local workflow and delivery
 
-- [ ] **AP-M:** Consolidate the commands actually exercised in AP-01..03 into a
+- [x] **AP-M:** Consolidate the commands actually exercised in AP-01..03 into a
   small documented developer path: author, validate, package, compose, test and
   inspect artifacts. Explicit foundation pin, arbitrary supported application
   source and per-system release recipe. Avoid a parallel generic framework or
   a new orchestration service.
-- [ ] **AP-N:** Provide a short operator path for plan/review/approve/install/
+- [x] **AP-N:** Provide a short operator path for plan/review/approve/install/
   upgrade/status/restore/separate resume and local pilot start/stop. Keep executor
   authority independent; no automatic grant, hidden Docker control in app APIs,
   or wrapper that silently approves a new hash. Record state before mutation
   and make uncertain operations inspectable rather than blindly retryable.
-- [ ] **AP-O:** Run the documented path from a clean downstream checkout and
+- [x] **AP-O:** Run the documented path from a clean downstream checkout and
   isolated operator with no author-machine path assumptions. Automate meaningful
   artifact/dependency/role/upgrade/recovery checks and verify source/dependency
   drift refusals. Record affected tests, reproducibility and finite credential/
