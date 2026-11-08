@@ -1,0 +1,48 @@
+{
+  "state": "verified",
+  "utc": "2026-11-08T20:31:23.153990+00:00",
+  "tag": "modular-platform:ap01-defaults-02",
+  "foundation_kit_manifest": "396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404",
+  "request": {
+    "schema_version": 1,
+    "foundation_image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+    "foundation_inventory_digest": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6",
+    "application_digest": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+    "application_file": "application.mplug"
+  },
+  "helper_sha256": "100a4d2369d69d532936cfb822eec907ada0399d211b427816a6ddac51023207",
+  "builder_sha256": "c0c515b731afb983f4301b297408bf6f504220358a878d7230352dca0788df99",
+  "context_sha256": {
+    "application.mplug": "e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+    "application_layer.py": "100a4d2369d69d532936cfb822eec907ada0399d211b427816a6ddac51023207",
+    "Dockerfile": "cd6996830436e0a1f1a748c6e3788cfc22b838f9cbd6e6ccc6dbd7b2e7370bb0",
+    "request.json": "64441769b1c898c84ca269087343f73371d1f8e127484c8e931c88b4e1860d59"
+  },
+  "base_alias": "modular-platform:compose-base-9c42bacf91abd280",
+  "image_id": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f",
+  "result": "verified_application_only_image_on_pinned_foundation",
+  "inventory_digest": "sha256:d84289ff76e923fb78a59c73aa01aa6563723007f18d235786d345cfd71e3ffe",
+  "platform_version": "0.1.49",
+  "plugin_id": "dev.aurora.tasks",
+  "previous_application_version": "0.2.2",
+  "application_version": "0.2.3",
+  "artifact_digest": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+  "retained_foundation_files": 6087,
+  "allowed_changed_files": [
+    "addons/mp_aurora_tasks/__manifest__.py",
+    "addons/mp_aurora_tasks/migrations/19.0.0.2.2/post-stages.py",
+    "addons/mp_aurora_tasks/models.py",
+    "artifacts/dev.aurora.tasks-0.2.2.mplug",
+    "artifacts/dev.aurora.tasks-0.2.3.mplug"
+  ],
+  "environment_comparisons": {
+    "python": true,
+    "architecture": true,
+    "markers": true,
+    "python_lock_digest": true,
+    "python_metadata": true
+  },
+  "policy_unchanged": true,
+  "no_native_application_code_executed_during_assembly": true,
+  "trust_or_installation_granted": false
+}

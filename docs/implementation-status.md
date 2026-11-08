@@ -72,9 +72,23 @@ preflight refused orphan old migration; new version supports only0.2.2→0.2.3,
 so exact old payload removed in new repo, retained in baseline/history/old archive.
 Explicit repo-local LF attributes avoid host Git line-ending drift; global config
 unchanged. New build-only archive-layer helper/CLI outside runtime SDK/engine;
-8guard cases passed, no public contract change. Next compose exact49+new archive
-using fresh output/receipt, inspect actual runtime/core/source/dep equality before
-curation/stage/upgrade. Do not claim a source-only repair as a working pilot.
+8guard cases passed, no public contract change. First composition attempt refused the wrong canonical-JSON inventory digest;
+actual runtime pins file bytes. Corrected helper and a reformat-refusal regression
+pass9guards; fresh02image verified bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f,
+inventoryd84289ff76e923fb78a59c73aa01aa6563723007f18d235786d345cfd71e3ffe.
+Platform0.1.49/policy/Python unchanged;6087foundation files retained. Public
+receipt`ap01-defaults-image02.json`. No other runtime source changed.
+Pilot baseline populated via real Alice API with1list/2tasks/1attachment and1
+future native reminder for upgrade preservation. Seed initially supplied a
+multi-create ID list as scalar list_id; read-only diagnosis confirmed1committed
+list/0tasks, normalized/continued existing record (no create replay). Private
+`repair-seed.json` nowseeded. New artifact curated at policygeneration2 and
+ordinary registered-app plan50f3bf2f-0629-4d26-8c48-22e68b60711e approved.
+First apply preflight refused active lanes before reserve/mutation (actual journal
+approved/prepared/mutationfalse). Explicit jobs drain completed, same approved
+operation now applying via process62462. Inspect journal/actual result before
+any continuation; do not replay apply. Then verify old rows/file/pending identity/
+default_get, restart reviewed profile on new pins and return to native UI creation.
 Use independent review/checkpoint/app-only lifecycle; no manual installation
 metadata or sealed artifact edits. Return to real UI creation immediately after
 required repair; full AP-02 failure/recovery and AP-03/04 stay gated. Historical

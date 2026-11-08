@@ -1,0 +1,19 @@
+{
+  "result": "ordinary_registered_app_upgrade_approved_and_started",
+  "utc": "2026-11-08T20:41:12.146265+00:00",
+  "operation": "50f3bf2f-0629-4d26-8c48-22e68b60711e",
+  "plan_hash": "sha256:6dcd8ae078612350e3db2b5bd5f41602ac15b4e18b4dcea2c93d0d72a79ac3fe",
+  "candidate_image": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f",
+  "foundation_platform_version": "0.1.49",
+  "application_target": "0.2.3",
+  "first_apply_preflight": "Refused active managed lanes before reserve/mutation; independently checked approved/prepared/mutationfalse",
+  "explicit_drain_recorded": true,
+  "existing_approval_continued_without_replay": true,
+  "populated_source": {
+    "lists": 1,
+    "tasks": 2,
+    "files": 1,
+    "pending_native_reminders": 1
+  },
+  "runtime_result": "in_progress"
+}
