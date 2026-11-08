@@ -8,11 +8,11 @@ defines the next closed transition. One active item: AT-04b actual upgrade/recov
 - [x] AT-04a: schema/fixtures/negative tests for the specific47→49 recipe; preserve
   ordinary core/install guards and46→47. Freeze and independently reconstruct before
   any mutation. No acceptance credit for source-only work.
-- [ ] AT-04b / AT-J: build exact49; fresh populated47 Tasks and Maintenance sites;
+- [x] AT-04b / AT-J: build exact49; fresh populated47 Tasks and Maintenance sites;
   independent approvals, preserved old rows/roles/files, reminders initially off.
-- [ ] AT-04c / AT-K: closed failure, fresh47 checkpoint restore, independent reviewed
+- [x] AT-04c / AT-K: closed failure, fresh47 checkpoint restore, independent reviewed
   resume; useful Maintenance work during outage and recovered Tasks workflow.
-- [ ] AT-04d / AT-I,AT-L: clean final install, real native job carry-forward across
+- [x] AT-04d / AT-I,AT-L: clean final install, real native job carry-forward across
   publication, workload and native in-app browser on final artifact. Preliminary
   core48 browser already proves assignee completion/reopen and saved reminder read
   state; it does not close these final-artifact checks.

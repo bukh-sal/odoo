@@ -1,0 +1,33 @@
+{
+  "result": "passed_final_image_clean_install_and_native_checks",
+  "utc": "2026-11-08T18:23:09.548113+00:00",
+  "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "inventory": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6",
+  "project": "mp-r0-r1releaseccdbde61a859",
+  "native_checks": [
+    "default stages and native owner/member/outsider list permissions",
+    "external assignee completion/reopen without list/stage browsing; foreign operations refused",
+    "protected reminder state and explicit missing/long-future/expired scheduling validation",
+    "transactional original-human queue and unchanged/name-only edits preserve occurrence identity",
+    "completion and due changes cancel old occurrence atomically",
+    "real registered native reminder through claim/prepare/compute/fenced apply, then idle",
+    "one current title snapshot, recipient-only inbox/read state and denied arbitrary CRUD",
+    "historical recipient snapshot retained; task opening rechecks current access after reassignment",
+    "current origin resource revocation blocks actual delivery; outsider cancellation denied",
+    "all native application jobs ran with zero workspaces/memberships/features"
+  ],
+  "edge_checks": [
+    "native archive/owner/creator/internal-user rules reject forged mutations",
+    "former member retains creator task rights but cannot create in inaccessible list",
+    "same-request stage configuration is flushed before completion/reminder SQL reads",
+    "reassignment/lost authority, unassignment, opt-out and list archive invalidate occurrences",
+    "task/list deletion cancels queued delivery before business cascade",
+    "business transaction rollback leaves no job or notification",
+    "actual committed claim/lease expiry/reclaim completes once; obsolete invocation cannot apply",
+    "completion cancels a committed running claim; its late result cannot notify"
+  ],
+  "workspace_memberships_features": 0,
+  "actual_independent_install": true,
+  "managed_reminders_completed_once": 20,
+  "managed_notifications": 20
+}

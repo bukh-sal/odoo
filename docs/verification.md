@@ -1,6 +1,15 @@
 # Verification evidence index
 
 Current release status is in [implementation-status.md](implementation-status.md).
+
+Aurora Tasks AT-01..04 passed on final core49; AT-05 remains in progress.
+See [native application qualification](evidence/post-r1/aurora-tasks/at03-decision.json),
+[populated adoption](evidence/post-r1/aurora-tasks/at04-upgrade.json),
+[independent recovery/useful peer](evidence/post-r1/aurora-tasks/at04-recovery.json),
+[final clean/native checks](evidence/post-r1/aurora-tasks/at04-clean.json),
+[in-app browser/workload](evidence/post-r1/aurora-tasks/at04-browser-workload.json),
+[reproduction](evidence/post-r1/aurora-tasks/at05-reproduction.json) and
+[owned retirement](evidence/post-r1/aurora-tasks/at05-retirement.json).
 The addon cleanup [AR-01 decision](evidence/post-r1/addon-cleanup/ar-01-decision.json)
 records the dependency audit, frozen extraction/transition boundaries and actual
 populated core46 baseline. The [AR-02 extraction decision](evidence/post-r1/addon-cleanup/ar02-decision.json)

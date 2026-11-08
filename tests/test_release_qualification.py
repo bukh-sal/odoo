@@ -33,5 +33,21 @@ class ReleaseQualification(unittest.TestCase):
             d=copy.deepcopy(self.ar);d[field]=value
             with self.subTest(field=field),self.assertRaises(ValueError):qualification_stage(d)
 
+    def test_tasks_release_cannot_borrow_old_or_partial_qualification(self):
+        tasks=dict(result='passed_aurora_tasks_release_qualification',
+            gates={f'AT-0{i}':'passed' for i in range(1,6)},
+            checks={f'AT-{letter}':'passed' for letter in 'ABCDEFGHIJKLMN'},
+            contract_revision=25,core_version='0.1.49',application=dict(plugin_id='dev.aurora.tasks',version='0.2.2',
+                digest='sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c'))
+        self.assertEqual(qualification_stage(tasks),'qualified_local_foundation_tasks_1')
+        for field in ('gates','checks'):
+            for key in tasks[field]:
+                changed=copy.deepcopy(tasks);changed[field][key]='not_run'
+                with self.subTest(field=field,key=key),self.assertRaises(ValueError):qualification_stage(changed)
+        for field,value in [('gates',self.ar['gates']),('checks',self.ar['checks']),('contract_revision',24),
+                            ('core_version','0.1.48'),('application',dict(tasks['application'],version='0.2.1'))]:
+            changed=copy.deepcopy(tasks);changed[field]=value
+            with self.subTest(field=field),self.assertRaises(ValueError):qualification_stage(changed)
+
 
 if __name__=='__main__':unittest.main()

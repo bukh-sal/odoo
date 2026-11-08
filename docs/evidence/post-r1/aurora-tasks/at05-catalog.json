@@ -1,0 +1,8 @@
+{
+  "result": "verified_curated_release_catalog",
+  "packages": 22,
+  "sealed47_manifest_sha256": "45fb20724d994a396121fcadd3ff6b6c088d243ccd56619f5732c851d53fd0e3",
+  "retained_own_R1_archives": 21,
+  "new_application_digest": "sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c",
+  "executor_authority_copied": false
+}

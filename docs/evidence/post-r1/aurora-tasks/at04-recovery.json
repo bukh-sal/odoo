@@ -1,6 +1,6 @@
 {
-  "utc": "2026-11-08T18:08:37.557341+00:00",
-  "result": "controlled_fault_captured_restore_running",
+  "utc": "2026-11-08T18:12:00.613469+00:00",
+  "result": "passed_independent_recovery_and_useful_peer",
   "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
   "operation": "1b42ac52-614e-491f-bc4c-60d847b2b4ca",
   "failure_phase": "release_published",
@@ -15,6 +15,16 @@
   "stale_source_claim_denied": true,
   "driver_diagnosis": "Two peer workflow transactions rolled back: HTML normalization expectation and missing Notes optimistic revision. Read-only diagnosis verified no committed writes; corrected third run passed.",
   "limits": [
-    "Fresh restore, authority verification, separate resume and final forward not yet verified."
-  ]
+    "Real native reminder carry-forward across a later publication, final forward/clean/browser and release reproduction remain separate required checks."
+  ],
+  "source_image_restored": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "fresh_database": true,
+  "original_application_and_files_preserved": true,
+  "current_post_checkpoint_revocation_preserved": true,
+  "native_owner_rights_preserved": true,
+  "stale_old_claim_denied_while_closed": true,
+  "separate_resume": true,
+  "old_operation_revoked": true,
+  "recovered_native_and_scoped_workflow": true,
+  "peer_jobs_completed_once": 16
 }

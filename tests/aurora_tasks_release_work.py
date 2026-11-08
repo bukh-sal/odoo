@@ -83,17 +83,21 @@ def main():
         while True:
             raw=site.sql(state,'observe-'+a.action+'-'+str(time.monotonic_ns()),"SELECT jsonb_agg(jsonb_build_object('id',public_id,'state',state,'attempts',attempts,'result',result,'error',error_code)) FROM mp_job WHERE public_id IN ("+ids+");")
             rows=json.loads(raw)
-            if len(rows)==len(jobs) and all(r['state'] in {'completed','failed','cancelled','dead_letter'} for r in rows):break
+            if len(rows)==len(jobs) and all(r['state'] in {'completed','failed','cancelled','dead_letter','held'} for r in rows):break
             assert time.monotonic()<deadline,rows
             time.sleep(.5)
-        assert all(r['state']=='completed' and r['result']['count']==2 for r in rows),rows
         for row in rows:
             if a.action=='verify_source':
                 label=next(k for k,v in saved['jobs'].items() if v==row['id'])
+                if a.site=='tasks' and label=='other_actor':
+                    assert load(site.local/'authority-verify.json')['workspace_denied']
+                    assert row['state']=='held' and row['attempts']==0 and row['result'] is None and row['error']=='FORBIDDEN',row
+                    continue
+                assert row['state']=='completed' and row['result']['count']==2,row
                 assert row['attempts']==(2 if label=='claimed' else 1),row
                 assert row['result']['points']==(34 if label=='other_actor' else 13),row
-            else:assert row['attempts']==1 and row['result']['points']==13,row
-        result.update(phase='verified',rows=rows,effects=len(rows),profile=op.run('status'))
+            else:assert row['state']=='completed' and row['attempts']==1 and row['result']['count']==2 and row['result']['points']==13,row
+        result.update(phase='verified',rows=rows,effects=sum(r['state']=='completed' for r in rows),held=sum(r['state']=='held' for r in rows),profile=op.run('status'))
     else:
         profile=op.run('drain');assert profile['state']=='paused'
         result.update(phase='verified',profile=profile)

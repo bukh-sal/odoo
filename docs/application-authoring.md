@@ -93,10 +93,10 @@ permission/service/host-UI registrations. The new source CLI accepts
 ordinary site/plugin/version/digest and independent operator/catalog arguments.
 See [private native site scope](contracts/native-site-lifecycle-v1.md). An old
 runtime bridge is refused before apply; sealed core47 is not relabeled to gain it.
-The source planner/projection tests pass, while actual image/native child
-consumption remains required AT-E. Do not create a dummy workspace or manually
-insert metadata to bypass this boundary. AT-04 must prove real clean install and
-the populated native-only Aurora adoption/upgrade path.
+Actual image/native child consumption passed AT-E; final49 clean installation,
+populated native-only adoption and independent recovery passed AT-04. See the
+[release instructions](aurora-tasks-release.md) and current checklist. Do not create
+a dummy workspace or manually insert metadata to bypass this boundary.
 
 ## Application jobs and data
 
@@ -104,6 +104,7 @@ Use workspace-scoped APIs for workspace-owned applications and the explicit
 native job adapter for native-authorized applications. Neither converts grant
 metadata into a sandbox. The selected [Aurora contract](aurora-tasks-contract.md)
 defines role, completion, reminder, inbox and recovery behavior; the native
-adapter remains subject to managed-worker and final-image qualification.
+adapter is qualified with actual managed workers and final-image publication/
+recovery for this selected release; broader native job features remain conditional.
 Own migration scripts and data changes need declared transitions, exact digest
 review, populated data/permission tests and independently recoverable checkpoints.

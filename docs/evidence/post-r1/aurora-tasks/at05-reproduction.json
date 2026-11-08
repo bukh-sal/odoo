@@ -1,0 +1,28 @@
+{
+  "result": "passed_second_no_cache_build_declared_inventory_reproduction",
+  "acceptance": [
+    "BOOT-02"
+  ],
+  "utc": "2026-11-08T18:30:01.931045+00:00",
+  "reference_image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "candidate_image": "sha256:09e25e18f3f0298fca8fa307845dc9134f7ac8ebfec2d69b486d2c5154c61d84",
+  "dependency_base": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "inventory_digest": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6",
+  "comparisons": {
+    "inventory_digest": true,
+    "inventory": true,
+    "python": true,
+    "architecture": true,
+    "markers": true,
+    "python_lock_digest": true,
+    "python_metadata": true,
+    "modified_files": true,
+    "unexpected_addon_files": true,
+    "missing_addon_files": true
+  },
+  "source_files": 6296,
+  "network_disabled": true,
+  "build_cache_disabled": true,
+  "source_build": "docs/evidence/G7/20261108-at04-core49-02/candidate-build.json",
+  "reproduction_build": "docs/evidence/G7/20261108-at05-core49-reproduce-01/candidate-build.json"
+}

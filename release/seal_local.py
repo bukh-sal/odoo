@@ -23,6 +23,10 @@ def qualification_stage(decision):
             {f'AR-0{i}':'passed' for i in range(1,6)},
             {f'AR-{letter}':'passed' for letter in 'ABCDEFGHIJKLMNOP'},
             'qualified_local_foundation_ar_1'),
+        'passed_aurora_tasks_release_qualification':(
+            {f'AT-0{i}':'passed' for i in range(1,6)},
+            {f'AT-{letter}':'passed' for letter in 'ABCDEFGHIJKLMN'},
+            'qualified_local_foundation_tasks_1'),
     }
     profile=profiles.get(decision.get('result'))
     if (profile is None or decision.get('gates')!=profile[0] or decision.get('checks')!=profile[1]):
@@ -30,6 +34,11 @@ def qualification_stage(decision):
     if profile[2]=='qualified_local_foundation_ar_1' and (
             decision.get('contract_revision')!=20 or decision.get('core_version')!='0.1.47'):
         raise ValueError('Addon extraction seal requires the qualified revision20/core47 release')
+    if profile[2]=='qualified_local_foundation_tasks_1' and (
+            decision.get('contract_revision')!=25 or decision.get('core_version')!='0.1.49'
+            or decision.get('application')!=dict(plugin_id='dev.aurora.tasks',version='0.2.2',
+                digest='sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c')):
+        raise ValueError('Tasks seal requires the qualified revision25/core49/application0.2.2 release')
     return profile[2]
 
 

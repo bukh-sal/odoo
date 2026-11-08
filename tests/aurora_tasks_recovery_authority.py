@@ -19,14 +19,16 @@ def main():
     status=OperatorStore(site.private/'control').status(fault['operation'])
     state=site.state();state.update(database=target['sites'][0]['database'],image_id=target['image_id'])
     fixture=load(site.local/'fixtures.json');bob=fixture['users']['bob']['principal_id'];space=fixture['workspaces']['B']['public_id']
-    assert status['state']=='recovery_required' and not status['traffic_resumed']
+    assert not status['traffic_resumed']
     path=site.local/('authority-'+a.action+'.json');assert not path.exists()
     if a.action=='revoke':
+        assert status['state']=='recovery_required'
         assert fault['phase']=='recovery_required' and fault['failed_app_stopped']
         query="BEGIN; UPDATE mp_membership m SET state='revoked' FROM mp_principal p,mp_workspace w WHERE m.principal_id=p.id AND m.workspace_id=w.id AND p.public_id='"+bob+"' AND w.public_id='"+space+"' AND m.state='active' RETURNING m.state; UPDATE mp_workspace SET policy_generation=policy_generation+1 WHERE public_id='"+space+"'; COMMIT;"
         assert site.sql(state,'post-checkpoint-authority-revoke',query).strip()==b'revoked'
         result=dict(result='revoked_after_checkpoint',operation=fault['operation'],old_checkpoint_had_active_membership=True)
     else:
+        assert status['state']=='revoked' and status['phase']=='restore_verified'
         assert fault['phase']=='restored_closed' and fault['fresh_database']==state['database']
         raw=site.sql(state,'restored-membership-check',"SELECT m.state FROM mp_membership m JOIN mp_principal p ON p.id=m.principal_id JOIN mp_workspace w ON w.id=m.workspace_id WHERE p.public_id='"+bob+"' AND w.public_id='"+space+"';")
         assert raw.strip()==b'revoked'
