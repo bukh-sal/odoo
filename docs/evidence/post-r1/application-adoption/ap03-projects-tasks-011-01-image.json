@@ -1,0 +1,156 @@
+{
+  "state": "verified",
+  "utc": "2026-11-08T22:53:53.888678+00:00",
+  "tag": "modular-platform:ap03-projects-tasks-011-01",
+  "foundation": {
+    "kit_manifest": "sha256:396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404",
+    "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+    "inventory_digest": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6"
+  },
+  "recipe_digest": "sha256:aea18221f626986c40d315c2e7011cea6710dad3d65aa5713568c34add81539f",
+  "applications": [
+    {
+      "plugin_id": "dev.aurora.projects",
+      "addon": "mp_aurora_projects",
+      "version": "0.1.1",
+      "digest": "sha256:545fa0221612c9a89f663e08c77c921a0fc7553aa5877195dfcb5f373ca0dbf8",
+      "artifact": "artifacts/dev.aurora.projects-0.1.1.mplug"
+    },
+    {
+      "plugin_id": "dev.aurora.projects_tasks",
+      "addon": "mp_aurora_projects_tasks",
+      "version": "0.1.0",
+      "digest": "sha256:65fca16423e18419bfe8d303632af468531ee15425820935b4fb86298e8f16de",
+      "artifact": "artifacts/dev.aurora.projects_tasks-0.1.0.mplug"
+    },
+    {
+      "plugin_id": "dev.aurora.tasks",
+      "addon": "mp_aurora_tasks",
+      "version": "0.2.3",
+      "digest": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+      "artifact": "artifacts/dev.aurora.tasks-0.2.3.mplug"
+    }
+  ],
+  "request": {
+    "schema_version": 2,
+    "foundation_image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+    "foundation_inventory_digest": "sha256:d490c3d7701a4b0aa48edb6508a322bc3a7faf005ca976cf9dae6ce6b543a3a6",
+    "applications": [
+      {
+        "file": "application-01.mplug",
+        "digest": "sha256:545fa0221612c9a89f663e08c77c921a0fc7553aa5877195dfcb5f373ca0dbf8"
+      },
+      {
+        "file": "application-02.mplug",
+        "digest": "sha256:65fca16423e18419bfe8d303632af468531ee15425820935b4fb86298e8f16de"
+      },
+      {
+        "file": "application-03.mplug",
+        "digest": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83"
+      }
+    ]
+  },
+  "helper_sha256": "fe9c5fad08a7a8e2fe0148d32f92295a8c2f7a2004441f04a4ac06f4e8130d40",
+  "builder_sha256": "3fd6b0f4b7fddb7159e217945af18f2f0c56cb63eb11a5e7958a832b80ce685f",
+  "base_alias": "modular-platform:compose-base-c79b4cb9f7db9260",
+  "context_sha256": {
+    "application-01.mplug": "545fa0221612c9a89f663e08c77c921a0fc7553aa5877195dfcb5f373ca0dbf8",
+    "application-02.mplug": "65fca16423e18419bfe8d303632af468531ee15425820935b4fb86298e8f16de",
+    "application-03.mplug": "e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83",
+    "application_layer.py": "fe9c5fad08a7a8e2fe0148d32f92295a8c2f7a2004441f04a4ac06f4e8130d40",
+    "Dockerfile": "cd6996830436e0a1f1a748c6e3788cfc22b838f9cbd6e6ccc6dbd7b2e7370bb0",
+    "request.json": "c09b363182f4075dcc72d6470316ee5cdcd5d9ab85c63d8a7f0fc9c2872ace17"
+  },
+  "image_id": "sha256:8e9e86391a0e9408d9a303a8982aaca3bd9338d6ef602de12d593f8d09fb15cc",
+  "result": "verified_application_set_on_pinned_foundation",
+  "inventory_digest": "sha256:703be881fb579a9bad4de2ebddb2db635fab43b3789b5ad1dca571c7f0282835",
+  "platform_version": "0.1.49",
+  "allowed_changed_files": [
+    "addons/mp_aurora_projects/__init__.py",
+    "addons/mp_aurora_projects/__manifest__.py",
+    "addons/mp_aurora_projects/access.py",
+    "addons/mp_aurora_projects/models.py",
+    "addons/mp_aurora_projects/security/ir.model.access.csv",
+    "addons/mp_aurora_projects/security/rules.xml",
+    "addons/mp_aurora_projects/views/projects.xml",
+    "addons/mp_aurora_projects_tasks/__init__.py",
+    "addons/mp_aurora_projects_tasks/__manifest__.py",
+    "addons/mp_aurora_projects_tasks/models.py",
+    "addons/mp_aurora_projects_tasks/security/ir.model.access.csv",
+    "addons/mp_aurora_projects_tasks/security/rules.xml",
+    "addons/mp_aurora_projects_tasks/views/links.xml",
+    "addons/mp_aurora_tasks/__manifest__.py",
+    "addons/mp_aurora_tasks/migrations/19.0.0.2.2/post-stages.py",
+    "addons/mp_aurora_tasks/models.py",
+    "artifacts/dev.aurora.projects-0.1.1.mplug",
+    "artifacts/dev.aurora.projects_tasks-0.1.0.mplug",
+    "artifacts/dev.aurora.tasks-0.2.2.mplug",
+    "artifacts/dev.aurora.tasks-0.2.3.mplug"
+  ],
+  "derived_policy": {
+    "addons": [
+      "base",
+      "web",
+      "base_setup",
+      "auth_totp",
+      "auth_passkey",
+      "auth_password_policy",
+      "base_import",
+      "bus",
+      "web_tour",
+      "html_editor",
+      "mail",
+      "maintenance",
+      "mp_aurora_tasks",
+      "mp_compat",
+      "mp_identity",
+      "mp_core",
+      "mp_shell",
+      "mp_example_notes",
+      "mp_example_notes_labels",
+      "mp_example_canvas",
+      "mp_example_notes_stats",
+      "mp_example_background",
+      "mp_discuss",
+      "mp_mail_gateway",
+      "mp_aurora_projects",
+      "mp_aurora_projects_tasks"
+    ],
+    "application_packages": [
+      "plugins/aurora_tasks/application.toml",
+      "applications/dev.aurora.projects/application.toml",
+      "applications/dev.aurora.projects_tasks/application.toml"
+    ],
+    "explicit_install": [
+      "web",
+      "auth_password_policy",
+      "mp_shell"
+    ],
+    "platform_sdk": true,
+    "profile": "Owned foundation: optional communication services, Discuss and incoming gateway",
+    "reference_packages": [
+      "plugins/notes/plugin.toml",
+      "plugins/notes_labels/plugin.toml",
+      "plugins/canvas/plugin.toml",
+      "plugins/notes_stats/plugin.toml",
+      "plugins/background/plugin.toml"
+    ],
+    "schema_version": 1,
+    "server_wide_modules": [
+      "base",
+      "web"
+    ],
+    "stock_webclient": true,
+    "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+  },
+  "environment_comparisons": {
+    "python": true,
+    "architecture": true,
+    "markers": true,
+    "python_lock_digest": true,
+    "python_metadata": true
+  },
+  "retained_foundation_files": 6087,
+  "no_native_application_code_executed_during_assembly": true,
+  "trust_or_installation_granted": false
+}

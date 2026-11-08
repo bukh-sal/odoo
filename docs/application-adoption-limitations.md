@@ -38,3 +38,5 @@ not a claim that the new pilot or downstream release has already run.
 For subsequent findings include an exact source/operation/browser/test reference,
 the user's or developer's consequence, required/deferred decision and return
 condition. Do not place credentials, private record bodies or raw snapshots here.
+
+| AP-LIM-022 | Both / required integration metadata disclosure | Actual rollback-only probe with real developer-group membership and simulated HTTP debug presentation flag shows native ir.rule denial includes hidden Task title for link0.1.0. Read itself was denied;ordinary search/count/direct roles passed. First probe omitted request debug flag and stopped at setup assertion,transaction rolled back. | Required AP-L:generic integration AccessError boundary in new immutable0.1.1,retain native ACL/rules and0.1.0artifact;qualify populated forward and same debug denial. No core behavior change. | fix authored;actual successor qualification pending |

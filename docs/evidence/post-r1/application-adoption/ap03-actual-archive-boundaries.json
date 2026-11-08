@@ -1,0 +1,27 @@
+{
+  "result": "passed",
+  "checks": 8,
+  "image_id": "sha256:8e9e86391a0e9408d9a303a8982aaca3bd9338d6ef602de12d593f8d09fb15cc",
+  "inventory_digest": "sha256:703be881fb579a9bad4de2ebddb2db635fab43b3789b5ad1dca571c7f0282835",
+  "artifacts": {
+    "dev.aurora.projects": "sha256:545fa0221612c9a89f663e08c77c921a0fc7553aa5877195dfcb5f373ca0dbf8",
+    "dev.aurora.projects_tasks": "sha256:65fca16423e18419bfe8d303632af468531ee15425820935b4fb86298e8f16de",
+    "dev.aurora.tasks": "sha256:e407fb631893410bc4ddc72b2548ad0cdb7336614da6f5abc17ff7f812fd1a83"
+  },
+  "actual_old_tasks": "sha256:71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c",
+  "accepted": [
+    "Full three-app dependency closure",
+    "Independent Projects-only closure",
+    "Actual native/package ownership and dependency declarations"
+  ],
+  "refused": [
+    "missing Projects",
+    "missing Tasks",
+    "incompatible actual Tasks0.2.2",
+    "unsupported Projects0.2.0 root",
+    "unqualified platform0.1.50"
+  ],
+  "site_mutation": false,
+  "native_code_imported": false,
+  "bounds": "Pure planning with actual verified archive bytes and actual image marker environment; actual installation/recovery has separate evidence."
+}

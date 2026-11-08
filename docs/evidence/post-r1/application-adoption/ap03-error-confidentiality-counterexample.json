@@ -1,0 +1,12 @@
+{
+  "result": "failed",
+  "hidden_record_name_in_error": true,
+  "ordinary_read_denied": true,
+  "temporary_group_change_rolled_back": true,
+  "debug_request_flag_simulated": true,
+  "artifact": "sha256:65fca16423e18419bfe8d303632af468531ee15425820935b4fb86298e8f16de",
+  "version": "0.1.0",
+  "scope": "Native actual user/group/ACL/rules;only request debug presentation flag simulated in otherwise requestless native shell",
+  "fix": "New immutable integration0.1.1;generic denied errors;actual successor probe pending",
+  "check": "AP-K reopened during AP-L"
+}

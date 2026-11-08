@@ -132,3 +132,14 @@ Application-owned role relationships restore to checkpoint;there is no generic
 post-checkpoint application-ACL overlay. Current platform/native authentication
 authority retains its qualified reconciliation. Unknown external effects remain
 refused. Preserve the working Tasks pilot and all sealed foundation artifacts.
+
+### AP-L error confidentiality correction
+
+The0.1.0integration satisfies ordinary role/search/count tests but native debug
+rule diagnostics can disclose a hidden Task title. New immutable integration
+0.1.1keeps the same data/dependency/native action contract and adds generic
+AccessError text at resource/link/fetch boundaries. Declare only registered
+0.1.0→0.1.1;retain checkpoint/restore/separate resume. Developer-group membership
+does not itself grant either business resource. A rollback-only probe preserves
+actual actor/groups/ACLs/rules and simulates only HTTP debug presentation in the
+otherwise requestless native shell;it must pass on the successor.

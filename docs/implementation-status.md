@@ -19,7 +19,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**72.5/100 verified points;11/16 acceptance checks passed.** Plan creation/source
+**65/100 verified points;10/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -42,7 +42,7 @@ across its four checks. No sub-agents are authorized.
 | AP-H | passed | [Real app-down/fresh original restore/current auth/separate resume](evidence/post-r1/application-adoption/ap02-release-decision.json),valid2effects/revoked0/useful pilot |
 | AP-I | passed | [Source/contract/new-slot actual image+ordinary staged planning](evidence/post-r1/application-adoption/ap03-feasibility-decision.json),no app installed/probe retired/public freeze passed |
 | AP-J | passed | [Independent Projects0.1.0/approved install/9actual backend groups/native create+member readonly UI](evidence/post-r1/application-adoption/ap03-projects-decision.json),Tasks/extension/workspaces absent |
-| AP-K | passed | [Separate optional extension/7actual server groups/native linking+Open](evidence/post-r1/application-adoption/ap03-integration-decision.json);both-resource current rights/metadata-safe searches/counts |
+| AP-K | reopened | Ordinary seven groups/native UI passed;AP-L debug denial probe exposed hidden Task title. Immutable extension0.1.1 correction requires actual fixed probe before credit restored. |
 | AP-L | not_run | Actual clean/populated app sets, dependency refusals/browser/recovery |
 | AP-M | not_run | Short explicit-pin author/package/compose/test path |
 | AP-N | not_run | Independent inspectable operator lifecycle and pilot start/stop path |
@@ -54,7 +54,7 @@ by immutable0.2.3/actual new forms/authoritative ownership. AP-H-001 native rest
 release mismatch resolved by ADR0079 host-only operator correction and fresh
 actual recovery/forward/effects;first counterexample retained.
 
-Resume capsule: **AP-01/AP-02/AP-I/J/K passed;AP-L active,72.5/100points11/16.**
+Resume capsule: **AP-01/AP-02/AP-I/J/K passed;AP-L active,65/100points10/16.**
 Pilot261d5d0954ee/18172 remains useful unchanged foundation0.1.49/Tasks0.2.3,
 imagebf39b8d8/inventoryd84289ff,1urgent+1bulk. In-app tab16 Operator/task3,
 no unsaved draft;CUA part summarized. No running process/test/uncertain mutation.
@@ -1357,3 +1357,5 @@ Current G6 backend evidence for JOB-01..03, EVT-01..03 and SVC-01..05 is bound t
 | ISO-05 | H/R2 | excluded_R2 | Revocation and teardown invalidate runtime/bridge authority | not_run; procedure to be bound in owning phase |
 
 AP-K completed:extension separateGit 854c090a0fd2d332b49f03eb594e22b328584eb3,artifact65fca164/21800bytes,image8d61e6cc/inventory47aaa4c7. Full-set18176/projectc8dd58853f67 installed all3 via independent approval;7actual servergroups and native newProject3/link6/Task1Open passed. CUA summarized,tab18Alice Task1/no draft. AP-L active:make Projects0.1.1target_date successor;actual populatedfault/old-appfreshrestore/separateresume/newforward. Keep Projects-only18174 and Tasks18172 as independent peers;no runningmutation.
+
+Active AP-L-P1/AP-K reopened:actual rollback-only baseline-debug probe confirmedhiddenTasktitleinAccessErrorwithrealdeveloper-groupandonlyHTTPdebugflag simulated. Firstprobe hadnoHTTPflag/setupassert,bothrolledback. ExcludeAP-K7.5pointsuntilfixed. Projects0.1.1+extension0.1.1 finalcandidateb0920ae4/fc709b84;extensiona79ed60/14d69ee2genericerrors. Actualfault70cba523freshoriginalrestore/separateresume/usefulProject+linkedit/Open/2once effects/currentrevokedBob0effects passed. Freshforwardaa2522a3 independentlyapproved,session11980runningapply/effects/fixedprobe;do not replay. No user-inputblocker.
