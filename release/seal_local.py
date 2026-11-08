@@ -12,6 +12,27 @@ from verify import verify, digest
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def qualification_stage(decision):
+    """Exact owned qualification profiles; historical CF is not an AR waiver."""
+    profiles={
+        'passed_consolidated_foundation_qualification':(
+            {f'CF-0{i}':'passed' for i in range(1,6)},
+            {f'CF-{letter}':'passed' for letter in 'ABCDEFGHIJKL'},
+            'qualified_local_foundation_cf_1'),
+        'passed_owned_addon_cleanup_qualification':(
+            {f'AR-0{i}':'passed' for i in range(1,6)},
+            {f'AR-{letter}':'passed' for letter in 'ABCDEFGHIJKLMNOP'},
+            'qualified_local_foundation_ar_1'),
+    }
+    profile=profiles.get(decision.get('result'))
+    if (profile is None or decision.get('gates')!=profile[0] or decision.get('checks')!=profile[1]):
+        raise ValueError('Complete exact owned release qualification profile required')
+    if profile[2]=='qualified_local_foundation_ar_1' and (
+            decision.get('contract_revision')!=20 or decision.get('core_version')!='0.1.47'):
+        raise ValueError('Addon extraction seal requires the qualified revision20/core47 release')
+    return profile[2]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('kit', type=Path)
@@ -28,11 +49,9 @@ def main():
         raise ValueError('Only an unsealed draft may be sealed')
     selected = load_application_inputs(ROOT, args.application_reproduction, args.application_build)
     decision = json.loads(args.decision.read_bytes())
+    stage=qualification_stage(decision)
     images = json.loads((kit / 'images.json').read_bytes())
-    if (decision.get('result') != 'passed_consolidated_foundation_qualification'
-            or decision.get('gates') != {f'CF-0{i}': 'passed' for i in range(1, 6)}
-            or decision.get('checks') != {f'CF-{letter}': 'passed' for letter in 'ABCDEFGHIJKL'}
-            or decision.get('image') != images['images']['application']['image_id']
+    if (decision.get('image') != images['images']['application']['image_id']
             or decision['image'] != selected['build']['image_id']
             or decision.get('inventory_digest') != images['application_inventory_digest']):
         raise ValueError('Complete exact current release qualification required')
@@ -60,7 +79,7 @@ def main():
         stream.write(args.decision.read_bytes())
     updated = json.loads(json.dumps(old))
     updated['files'][name] = dict(bytes=target.stat().st_size, sha256=digest(target))
-    updated.update(stage='qualified_local_foundation_cf_1', qualification=name)
+    updated.update(stage=stage, qualification=name)
     (kit / 'kit-inventory.json').write_text(json.dumps(updated, sort_keys=True, indent=2) + '\n', encoding='utf8')
     sums = {name: row['sha256'] for name, row in updated['files'].items()}
     sums['kit-inventory.json'] = digest(kit / 'kit-inventory.json')
@@ -69,7 +88,8 @@ def main():
     report = dict(result='sealed_verified_local_foundation', source_commit=head, image=decision['image'],
                   manifest_before=before, manifest_sha256=digest(kit / 'kit-inventory.json'),
                   decision_sha256=digest(target), components=len(updated['files']),
-                  limits='Local CF qualification only; checksums do not authenticate publishers or authorize deployment.')
+                  qualification_profile=stage,
+                  limits='Local declared foundation qualification only; checksums do not authenticate publishers or authorize deployment.')
     with args.receipt.open('x', encoding='utf8') as stream:
         json.dump(report, stream, indent=2)
         stream.write('\n')

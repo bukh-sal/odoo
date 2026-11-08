@@ -19,7 +19,10 @@ def main():
         'seed_jobs','start_jobs','enqueue_peer','verify_jobs','drain'])
     p.add_argument('--candidate',type=Path)
     p.add_argument('--label',default='baseline')
+    p.add_argument('--fault-source',choices=['baseline46','fault46'],default='baseline46')
+    p.add_argument('--fault-label',default='ar04-first')
     a=p.parse_args();a.run='ar04-peer-01';a.profile='aurora';a.site='aurora';a.port=18161
+    assert a.label.replace('-','').isalnum() and a.fault_label.replace('-','').isalnum()
     site=CleanupProfile(a)
     if a.phase=='seed_jobs':
         path=site.local/'job-fixtures.json';assert not path.exists()
@@ -46,16 +49,21 @@ print('AR_PEER_TASKS='+json.dumps(tasks.ids))
             result=op.run('drain');assert result['state']=='paused'
         write(path,dict(phase='verified',result=result));print(json.dumps(dict(result='passed',phase=a.phase)))
     elif a.phase=='enqueue_peer':
-        fault=load(Path(__file__).resolve().parents[1]/'.local/addon-cleanup/baseline46/private/reference/operator/ar04-first.json')
-        assert fault['phase']=='recovery_required' and fault['failed_app_stopped']
-        path=site.local/'peer-jobs.json';assert not path.exists()
-        code=f"FIXTURE={load(site.local/'fixtures.json')!r}\nCOUNT=16\nPREFIX='ar-peer-recovery-'\n"+ENQUEUE
-        raw=shell(site,'ar-peer-recovery-jobs',code)
+        fault_root=Path(__file__).resolve().parents[1]/'.local/addon-cleanup'/a.fault_source/'private/reference/operator'
+        fault=load(fault_root/(a.fault_label+'.json'))
+        status=OperatorStore(fault_root/'control').status(fault['operation'])
+        assert fault['phase'] in ('recovery_required','restoring','restored_closed') and fault['failed_app_stopped']
+        assert status['state']=='recovery_required' and not status['traffic_resumed']
+        path=site.local/('peer-jobs.json' if a.label=='baseline' else 'peer-jobs-'+a.label+'.json');assert not path.exists()
+        prefix='ar-peer-recovery-' if a.label=='baseline' else 'ar-peer-'+a.label+'-'
+        code=f"FIXTURE={load(site.local/'fixtures.json')!r}\nCOUNT=16\nPREFIX={prefix!r}\n"+ENQUEUE
+        native_label='ar-peer-recovery-jobs' if a.label=='baseline' else 'ar-peer-'+a.label+'-jobs'
+        raw=shell(site,native_label,code)
         jobs,=[json.loads(r.split('=',1)[1]) for r in raw.splitlines() if r.startswith('CF_PEER_JOBS=')]
         write(path,dict(phase='queued',jobs=jobs,failed_operation=fault['operation'],utc=datetime.now(timezone.utc).isoformat()))
         print(json.dumps(dict(result='queued',jobs=len(jobs),peer_app_down=True)))
     elif a.phase=='verify_jobs':
-        path=site.local/'peer-jobs.json';record=load(path);assert record['phase']=='queued'
+        path=site.local/('peer-jobs.json' if a.label=='baseline' else 'peer-jobs-'+a.label+'.json');record=load(path);assert record['phase']=='queued'
         target=load(site.private/'target.json');ids=','.join("'"+j+"'" for j in record['jobs'])
         until=time.monotonic()+120
         while True:

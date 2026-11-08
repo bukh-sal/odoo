@@ -30,10 +30,10 @@ def main():
     p.add_argument('phase',choices=['prepare','apply','fault','capture','restore','resume'])
     p.add_argument('--candidate',type=Path)
     p.add_argument('--label',required=True)
-    p.add_argument('--site',choices=['maintenance','aurora'],default='maintenance')
+    p.add_argument('--site',choices=['maintenance','aurora','fault'],default='maintenance')
     p.add_argument('--populated',action='store_true',help='Require actual existing native plugin installations')
     a=p.parse_args();assert a.label.replace('-','').isalnum()
-    work=WORK if a.site=='maintenance' else ROOT/'.local/addon-cleanup/aurora46'
+    work=WORK if a.site=='maintenance' else ROOT/'.local/addon-cleanup'/('aurora46' if a.site=='aurora' else 'fault46')
     private=work/'private';operator=private/'reference/operator'
     native=StagedNativeExecutor(OperatorStore(operator/'control'),operator/'target.json',private/'catalog',configuration(operator/'trust.json'))
     path=operator/(a.label+'.json')
@@ -83,7 +83,8 @@ def main():
             else:
                 result=native.apply(operation);assert result['state']=='completed' and result['traffic_resumed']
                 target=load(native.target_path);assert target['image_id']==record['candidate']
-                assert all(files(DockerObserver(target)).get(k)==v for k,v in record['files'].items())
+                current_files=files(DockerObserver(target))
+                assert all(current_files.get(k)==v for k,v in record['files'].items())
                 record['phase']='verified'
         elif a.phase=='restore':
             assert record['phase']=='recovery_required'

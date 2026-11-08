@@ -395,3 +395,9 @@ Addon cleanup AR-04: [populated prototype migration/fault](evidence/post-r1/addo
 and [revision20 freeze](evidence/G2/20261108-ar04-foundation-transition-rev20/gate-G2.json).
 These are exact scoped proofs; both final populated forward operations and final
 release/consumer/browser/privacy qualification remain open in the checklist.
+
+AR-04 final imagea572: [both populated forward operations and job/workflow retention](evidence/post-r1/addon-cleanup/ar04-final-forward.json),
+[exact final-image stopped-app/fresh restore/separate resume/useful peer](evidence/post-r1/addon-cleanup/ar04-final-recovery.json),
+and [AR-04 passed decision](evidence/post-r1/addon-cleanup/ar04-decision.json).
+AR-J/K/L passed; total12/16ARchecks/80points. AR-05 release qualification remains
+open; prototype receipts remain historical evidence at their exact scopes.

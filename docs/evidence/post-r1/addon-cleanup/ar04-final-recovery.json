@@ -1,0 +1,94 @@
+{
+  "result": "passed_exact_final_image_recovery",
+  "utc": "2026-11-08T00:38:14.434165+00:00",
+  "source_image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "failed_target_image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "operation": "96ece65b-ccf9-45e0-a9a1-4c66a1145642",
+  "plan_hash": "sha256:9441d2fdc758f1a35876c81a4598c74472b73d133c83d192f468704d11830ff5",
+  "failure_phase": "release_published",
+  "failed_app_stopped": true,
+  "traffic_kept_closed_until_separate_resume": true,
+  "reviewed_fresh_restore": true,
+  "original_iap_data_and_aurora_membership_restored": true,
+  "all_original_filestore_restored": true,
+  "separate_resume_digest": "sha256:b1a97fcc5ae53689102ca64ca4b57f6133a71d4c027d08094e5865956b9b7c4d",
+  "fresh_database": true,
+  "migration_effects": {
+    "adopted_ids": 0,
+    "iap_tables": [
+      {
+        "rows": 1,
+        "sha256": "11d24ed1d28b2fb7779c53b1bd61c76915264f94ef0a9cfa2ab3164bd5dc345c",
+        "table": "iap_account"
+      },
+      {
+        "rows": 1,
+        "sha256": "ecaedf4a960fe2e025f28ad046eb9523fff7f6f528802ccd746b959aff5298f0",
+        "table": "iap_account_res_company_rel"
+      },
+      {
+        "rows": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "table": "iap_account_res_users_rel"
+      },
+      {
+        "rows": 2,
+        "sha256": "92a4e63924ced588f3e2908b9ba0fd153010275357ba51773990f19277f17c3b",
+        "table": "iap_service"
+      }
+    ],
+    "lossless_archive_verified": true,
+    "native_modules": {
+      "auth_passkey": "19.0.1.1",
+      "auth_password_policy": "19.0.1.0",
+      "auth_totp": "19.0.1.0",
+      "base": "19.0.1.4",
+      "base_import": "19.0.2.0",
+      "base_setup": "19.0.1.1",
+      "bus": "19.0.1.0",
+      "html_editor": "19.0.1.1",
+      "mp_aurora_tasks": "19.0.0.1.0",
+      "mp_compat": "19.0.0.1.1",
+      "mp_core": "19.0.0.1.47",
+      "mp_identity": "19.0.0.1.10",
+      "mp_shell": "19.0.0.1.19",
+      "web": "19.0.1.1",
+      "web_tour": "19.0.1.1"
+    },
+    "operation_id": "96ece65b-ccf9-45e0-a9a1-4c66a1145642",
+    "recipe": "owned-addon-extraction-46-47-v1",
+    "retained_tables": [
+      {
+        "rows": 1,
+        "sha256": "fcbb260c38b6ab5901f2f01d2c4f3d81520a2f737978a5b373ec0440565544ad",
+        "table": "mp_aurora_task"
+      },
+      {
+        "rows": 1,
+        "sha256": "ae18a24987db0f7b0187fabe4a1ea201e9f306baefa1411df370c7bc46b1cc43",
+        "table": "mp_aurora_task_list"
+      },
+      {
+        "rows": 1,
+        "sha256": "243f4bc7459171901587ab7caf5c9a2bf253edba087c79d93d4bbe8a05458b07",
+        "table": "mp_aurora_task_list_res_users_rel"
+      },
+      {
+        "rows": 2,
+        "sha256": "281ccceef790dfb9d1625bdf051320d23cf42049cf075a80dd85cc370398d683",
+        "table": "mp_aurora_task_stage"
+      }
+    ]
+  },
+  "restored_workflow": {
+    "result": "passed",
+    "native_views": true,
+    "workflow": true,
+    "unrelated_actor_denied": true
+  },
+  "peer_new_jobs_completed_once": 16,
+  "peer_report_count": 2,
+  "peer_report_points": 10,
+  "peer_role_workflow_passed": true,
+  "private_operation_sha256": "f8cb523e51f04b8d85e6c018bbb61559ce9ec523e441bbd6811a786528f29fcf"
+}

@@ -1,0 +1,24 @@
+{
+  "gate": "AR-04",
+  "result": "passed",
+  "utc": "2026-11-08T00:38:14.435671+00:00",
+  "checks": {
+    "AR-J": "passed",
+    "AR-K": "passed",
+    "AR-L": "passed"
+  },
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "evidence": {
+    "docs/evidence/post-r1/addon-cleanup/ar04-final-recovery.json": "8e0312bc5f1d88260bf33fe2ad187aba5497f4660f40d7213922c000db510da1",
+    "docs/evidence/post-r1/addon-cleanup/ar04-final-forward.json": "c6e4ae6c3fc40cd309d38de149bb50313c67c3021bb24bc7c8b55864bde5ce03",
+    "docs/evidence/post-r1/addon-cleanup/ar04-native-regression.json": "1c8b79550e15d3d527569958c13f52162f84795680d72f9d0704d09f919e71be",
+    "docs/evidence/G2/20261108-ar04-foundation-transition-rev20/gate-G2.json": "97f71a5d7fd04f98bb119cd7bf5690d08da4dec767cd6764a000ff58d6abb8e6"
+  },
+  "weighted_total": 80,
+  "acceptance_passed": 12,
+  "acceptance_total": 16,
+  "remaining": "AR-05 clean profiles, reproduction, isolated consumer, current host/native/browser/jobs/privacy, seal/handoff and exact retirement.",
+  "no_user_blocker": true,
+  "no_uncertain_mutation": true
+}

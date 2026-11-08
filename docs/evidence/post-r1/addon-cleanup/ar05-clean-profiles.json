@@ -1,0 +1,79 @@
+{
+  "result": "passed",
+  "check": "AR-M",
+  "utc": "2026-11-08T00:45:56.205992+00:00",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "profiles": {
+    "core": {
+      "modules": {
+        "auth_passkey": "19.0.1.1",
+        "auth_password_policy": "19.0.1.0",
+        "auth_totp": "19.0.1.0",
+        "base": "19.0.1.4",
+        "base_import": "19.0.2.0",
+        "base_setup": "19.0.1.1",
+        "bus": "19.0.1.0",
+        "html_editor": "19.0.1.1",
+        "mp_compat": "19.0.0.1.1",
+        "mp_core": "19.0.0.1.47",
+        "mp_identity": "19.0.0.1.10",
+        "mp_shell": "19.0.0.1.19",
+        "web": "19.0.1.1"
+      },
+      "no_iap": true,
+      "no_vendor_catalog": true,
+      "optional_app_boundary": true,
+      "private_receipt_sha256": "f77f5fb1404e3108915cd8d2ac00141caaa9c7e36faccadbe5bc3e0f9192174b"
+    },
+    "aurora": {
+      "modules": {
+        "mp_aurora_tasks": "19.0.0.1.0",
+        "auth_passkey": "19.0.1.1",
+        "auth_password_policy": "19.0.1.0",
+        "auth_totp": "19.0.1.0",
+        "base": "19.0.1.4",
+        "base_import": "19.0.2.0",
+        "base_setup": "19.0.1.1",
+        "bus": "19.0.1.0",
+        "html_editor": "19.0.1.1",
+        "mp_compat": "19.0.0.1.1",
+        "mp_core": "19.0.0.1.47",
+        "mp_identity": "19.0.0.1.10",
+        "mp_shell": "19.0.0.1.19",
+        "web": "19.0.1.1"
+      },
+      "no_iap": true,
+      "no_vendor_catalog": true,
+      "optional_app_boundary": true,
+      "private_receipt_sha256": "50b08fc84bac52776f579abbe745b19109597627d01c2e717a30f10c19d034b4"
+    },
+    "maintenance": {
+      "modules": {
+        "maintenance": "19.0.1.0",
+        "auth_passkey": "19.0.1.1",
+        "auth_password_policy": "19.0.1.0",
+        "auth_totp": "19.0.1.0",
+        "base": "19.0.1.4",
+        "base_import": "19.0.2.0",
+        "base_setup": "19.0.1.1",
+        "bus": "19.0.1.0",
+        "html_editor": "19.0.1.1",
+        "mp_compat": "19.0.0.1.1",
+        "mp_core": "19.0.0.1.47",
+        "mp_identity": "19.0.0.1.10",
+        "mp_shell": "19.0.0.1.19",
+        "web": "19.0.1.1",
+        "mail": "19.0.1.20"
+      },
+      "no_iap": true,
+      "no_vendor_catalog": true,
+      "optional_app_boundary": true,
+      "private_receipt_sha256": "8ccab3d8e4ae7360a58b75bbb8a83e382d10aa143ef26a7284ed1eb76418e6e4"
+    }
+  },
+  "weighted_progress": 85,
+  "acceptance_passed": 13,
+  "acceptance_total": 16,
+  "remaining": "AR-N/O/P open; no kit/reproduction/current browser/private data retirement pass yet"
+}

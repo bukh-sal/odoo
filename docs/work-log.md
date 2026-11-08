@@ -1738,3 +1738,24 @@ compatibly binds those witnesses and stricter unique/mail scope validation;
 proof stays scoped; current recipe bytes require a fresh final47image. Retired
 successful regression target2containers/7volumes/2networks. No uncertain mutation
 or user blocker; next source checkpoint/finalbuild then both forward transitions.
+
+AR-04 forward00:23UTC: checkpoint937b3f6d39a, exact final47a572f738 built. Both
+independent Maintenance/Aurora operations completed with traffic resumed, exact
+module/archive/ownership/application/filestore retention. Native workflows/roles
+and3Maintenance jobs' timing/actor/workspace/stale-claim denial passed. AR-J/K
+passed11/16checks/~72weightedpoints. AR-L remains active for exact final-image
+closed failure/fresh restore/separate resume after revision20 extends Aurora
+witnesses. Fresh sealed46fault target8d1f8c99e6de/18164 initialized in progress;
+peer16-job batch will use a distinct idempotency namespace. Test-only fixture
+extensions do not alter the final image's source inputs. AR-05 remains unstarted.
+
+AR-04 complete00:38UTC: exact finala57247 fault96ece65b after publication stayed
+closed with failed app stopped. Fresh independent46database restored all Aurora/
+IAP account+service/ownership/filestore witnesses; separate resume and native role/
+workflow passed. Peer new16jobs completed once with count2/points10 during this
+failure/recovery. A reused private log label refused before execution; corrected
+test-only batch label and keys, no uncertain job replay. Final/earlier prototype
+proofs retain separate scopes. AR-L passed; AR-04 decision80points12/16checks.
+AR-05/AR-M sole active next: clean final-image profiles, then actual reproduction,
+portable consumer, final host/native/browser/jobs/privacy and AR seal/handoff/
+exact cleanup. No running test/build or user blocker; all4owned targets ready.

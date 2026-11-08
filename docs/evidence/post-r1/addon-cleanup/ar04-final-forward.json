@@ -1,0 +1,194 @@
+{
+  "result": "passed_forward_scopes",
+  "utc": "2026-11-08T00:23:34.206806+00:00",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "contract_revision": 20,
+  "systems": {
+    "baseline46": {
+      "operation": "1d9a40ab-fa2f-413b-9338-51ec1839e59b",
+      "plan_hash": "sha256:0814283b6cda18538120c1767e9ccee53e326892a5405fd3943048337dec3300",
+      "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+      "completed": true,
+      "traffic_resumed": true,
+      "effects": {
+        "adopted_ids": 50,
+        "iap_tables": [
+          {
+            "rows": 1,
+            "sha256": "cd40f96c0a61401787240357142713e9ec339d60fbaded9187cb7b78c8194bfc",
+            "table": "iap_account"
+          },
+          {
+            "rows": 1,
+            "sha256": "ecaedf4a960fe2e025f28ad046eb9523fff7f6f528802ccd746b959aff5298f0",
+            "table": "iap_account_res_company_rel"
+          },
+          {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "table": "iap_account_res_users_rel"
+          },
+          {
+            "rows": 2,
+            "sha256": "fc4601ac97173f6a544e96a5b9b33cf3edd1a421ccf214c85fc761c82406866c",
+            "table": "iap_service"
+          }
+        ],
+        "lossless_archive_verified": true,
+        "native_modules": {
+          "auth_passkey": "19.0.1.1",
+          "auth_password_policy": "19.0.1.0",
+          "auth_totp": "19.0.1.0",
+          "base": "19.0.1.4",
+          "base_import": "19.0.2.0",
+          "base_setup": "19.0.1.1",
+          "bus": "19.0.1.0",
+          "html_editor": "19.0.1.1",
+          "mail": "19.0.1.20",
+          "maintenance": "19.0.1.0",
+          "mp_compat": "19.0.0.1.1",
+          "mp_core": "19.0.0.1.47",
+          "mp_discuss": "19.0.1.0",
+          "mp_example_background": "19.0.0.3.3",
+          "mp_example_notes": "19.0.0.2.9",
+          "mp_identity": "19.0.0.1.10",
+          "mp_mail_gateway": "19.0.1.1",
+          "mp_shell": "19.0.0.1.19",
+          "web": "19.0.1.1",
+          "web_tour": "19.0.1.1"
+        },
+        "operation_id": "1d9a40ab-fa2f-413b-9338-51ec1839e59b",
+        "recipe": "owned-addon-extraction-46-47-v1",
+        "retained_tables": [
+          {
+            "rows": 3,
+            "sha256": "9cfd9497e4f44d2f395f9d666fc29767f7d97b9b5e08e7852eef5ac8bb5f5d86",
+            "table": "discuss_channel"
+          },
+          {
+            "rows": 1,
+            "sha256": "67f561b826c4361883867e2529e6a090bd318fede637a3aea064671e591f7274",
+            "table": "fetchmail_server"
+          },
+          {
+            "rows": 29,
+            "sha256": "07a00e8c0b3e6c819b16cb2c35cc3bbad80a471dd9952d9e935ff1040dedb8b5",
+            "table": "mail_message"
+          },
+          {
+            "rows": 2,
+            "sha256": "620a5488a3cb28a3fafa8548f8c7837d4af0b39e053c34e2f109ebe882ec22ad",
+            "table": "maintenance_request"
+          }
+        ]
+      },
+      "workflow": {
+        "result": "passed",
+        "label": "forward",
+        "site": "maintenance",
+        "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+        "stock_list_form": true,
+        "workflow_preserved": true,
+        "app_denial": true,
+        "scoped_notes": {
+          "A": 1,
+          "B": 2
+        },
+        "cross_scope_and_viewer_denied": true
+      },
+      "private_record_sha256": "603917c660d8172d271676fa2fb7e93c68de2667b7f94f1a1b254b1c7d9591f6"
+    },
+    "aurora46": {
+      "operation": "e2075889-a646-4371-8801-c1c2b5ec5d46",
+      "plan_hash": "sha256:b186ebcbc162b1d33cca7c0ad22bb32245c10a86cf9e0c73c3c72f5cbb6eab03",
+      "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+      "completed": true,
+      "traffic_resumed": true,
+      "effects": {
+        "adopted_ids": 0,
+        "iap_tables": [
+          {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "table": "iap_account"
+          },
+          {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "table": "iap_account_res_company_rel"
+          },
+          {
+            "rows": 0,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "table": "iap_account_res_users_rel"
+          },
+          {
+            "rows": 1,
+            "sha256": "9bfe25241a8a5024c4839a11fa4c5b7324f18e1160e86d97e1bc0f6d63dbc394",
+            "table": "iap_service"
+          }
+        ],
+        "lossless_archive_verified": true,
+        "native_modules": {
+          "auth_passkey": "19.0.1.1",
+          "auth_password_policy": "19.0.1.0",
+          "auth_totp": "19.0.1.0",
+          "base": "19.0.1.4",
+          "base_import": "19.0.2.0",
+          "base_setup": "19.0.1.1",
+          "bus": "19.0.1.0",
+          "html_editor": "19.0.1.1",
+          "mp_aurora_tasks": "19.0.0.1.0",
+          "mp_compat": "19.0.0.1.1",
+          "mp_core": "19.0.0.1.47",
+          "mp_identity": "19.0.0.1.10",
+          "mp_shell": "19.0.0.1.19",
+          "web": "19.0.1.1",
+          "web_tour": "19.0.1.1"
+        },
+        "operation_id": "e2075889-a646-4371-8801-c1c2b5ec5d46",
+        "recipe": "owned-addon-extraction-46-47-v1",
+        "retained_tables": [
+          {
+            "rows": 1,
+            "sha256": "ad96e780e617e843df72f65c112dd7bab2f1ce67ed67e1536828c3321af5a321",
+            "table": "mp_aurora_task"
+          },
+          {
+            "rows": 1,
+            "sha256": "2e08d7e94119d7ce9ca9d85689a3f187fe07185dfd2d12fa316adb25d55a38c4",
+            "table": "mp_aurora_task_list"
+          },
+          {
+            "rows": 1,
+            "sha256": "243f4bc7459171901587ab7caf5c9a2bf253edba087c79d93d4bbe8a05458b07",
+            "table": "mp_aurora_task_list_res_users_rel"
+          },
+          {
+            "rows": 2,
+            "sha256": "e9df2c042795e6ab2057c40cf0990511c535f66089cfe55556596bd437758855",
+            "table": "mp_aurora_task_stage"
+          }
+        ]
+      },
+      "workflow": {
+        "result": "passed",
+        "native_views": true,
+        "workflow": true,
+        "unrelated_actor_denied": true
+      },
+      "private_record_sha256": "e16ea395ba2ca6e0f5ae3fd8120d390de71d29d1460fc16aed750211cb109ce1"
+    }
+  },
+  "jobs": {
+    "count": 3,
+    "timing_actor_workspace_preserved": true,
+    "stale_claim_denied": true
+  },
+  "checks": {
+    "AR_J": "passed",
+    "AR_K": "passed"
+  },
+  "remaining": "AR-L exact final-image closed failure/fresh restore/separate resume on a fresh populated Aurora46/IAP witness, then AR-05 release requalification. Earlier prototype recovery remains valid at its declared scope."
+}

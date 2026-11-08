@@ -1,0 +1,28 @@
+{
+  "result": "passed_second_no_cache_build_declared_inventory_reproduction",
+  "utc": "2026-11-08T00:48:09.081289+00:00",
+  "acceptance": [
+    "BOOT-02"
+  ],
+  "reference_image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "candidate_image": "sha256:0a09e631002a10b798864071a0b34ebcd5eb503f530bf8da7b4f696238c92a9f",
+  "dependency_base": "sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "comparisons": {
+    "inventory_digest": true,
+    "inventory": true,
+    "python": true,
+    "architecture": true,
+    "markers": true,
+    "python_lock_digest": true,
+    "python_metadata": true,
+    "modified_files": true,
+    "unexpected_addon_files": true,
+    "missing_addon_files": true
+  },
+  "source_files": 6276,
+  "network_disabled": true,
+  "build_cache_disabled": true,
+  "source_build": "docs/evidence/G7/20261108-ar04-core47-03/candidate-build.json",
+  "reproduction_build": "docs/evidence/G7/20261108-ar05-reproduce-01/candidate-build.json"
+}
