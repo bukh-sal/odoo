@@ -1,0 +1,210 @@
+{
+  "phase": "passed",
+  "plan_sha256": "5c17180af8d1d2f27ac73455ea92f04aa4851644b2122823268051872893c371",
+  "removed_containers": [
+    "mp-r0-r1release261d5d0954ee-op-50f3bf2f-0629-4d26-8c48-22e68b60711e-dispatch-enable",
+    "mp-r0-r1release261d5d0954ee-op-b5604f13-b900-4b91-a936-1a6ed609610a-dispatch-observe",
+    "mp-r0-r1release261d5d0954ee-op-50f3bf2f-0629-4d26-8c48-22e68b60711e-dispatch-reconcile",
+    "mp-r0-r1release261d5d0954ee-op-50f3bf2f-0629-4d26-8c48-22e68b60711e-assets",
+    "mp-r0-r1release261d5d0954ee-op-50f3bf2f-0629-4d26-8c48-22e68b60711e-metadata",
+    "mp-r0-r1release261d5d0954ee-op-50f3bf2f-0629-4d26-8c48-22e68b60711e-native",
+    "mp-r0-r1release261d5d0954ee-op-5acbf373-09cb-4c52-98be-e47a69363222-dispatch-observe",
+    "mp-r0-r1release261d5d0954ee-op-50f3bf2f-0629-4d26-8c48-22e68b60711e-checkpoint",
+    "mp-r0-r1release261d5d0954ee-op-50f3bf2f-0629-4d26-8c48-22e68b60711e-dispatch-fence",
+    "mp-r0-r1release261d5d0954ee-op-aa45afe1-cfd1-4a78-a121-7f3f32d66b38-dispatch-enable",
+    "mp-r0-r1release261d5d0954ee-op-f23e68aa-3315-4ddd-aa02-dc48dc30d2c3-dispatch-observe",
+    "mp-r0-r1release261d5d0954ee-op-aa45afe1-cfd1-4a78-a121-7f3f32d66b38-dispatch-reconcile",
+    "mp-r0-r1release261d5d0954ee-op-aa45afe1-cfd1-4a78-a121-7f3f32d66b38-assets",
+    "mp-r0-r1release261d5d0954ee-app-release-aa45afe1cfd14a78a1217f3f32d66b38",
+    "mp-r0-r1release261d5d0954ee-op-aa45afe1-cfd1-4a78-a121-7f3f32d66b38-metadata",
+    "mp-r0-r1release261d5d0954ee-op-aa45afe1-cfd1-4a78-a121-7f3f32d66b38-native",
+    "mp-r0-r1release261d5d0954ee-op-48fb33be-2a05-4898-9a4e-628529775bd7-dispatch-observe",
+    "mp-r0-r1release261d5d0954ee-op-aa45afe1-cfd1-4a78-a121-7f3f32d66b38-checkpoint",
+    "mp-r0-r1release261d5d0954ee-op-aa45afe1-cfd1-4a78-a121-7f3f32d66b38-dispatch-fence",
+    "mp-r0-r1release261d5d0954ee-app-release-a73cc5d6d6cb4f8281c5b3e10b5dee2d",
+    "mp-r0-r1release261d5d0954ee-core-provision",
+    "mp-r0-r1release261d5d0954ee-core-init",
+    "mp-r0-r1release8a22293a20e7-link-error-fixed",
+    "mp-r0-r1release8a22293a20e7-op-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d-dispatch-enable",
+    "mp-r0-r1release8a22293a20e7-op-3ea12c03-7474-4108-8f91-377a50521b5e-dispatch-observe",
+    "mp-r0-r1release8a22293a20e7-op-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d-dispatch-reconcile",
+    "mp-r0-r1release8a22293a20e7-op-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d-assets",
+    "mp-r0-r1release8a22293a20e7-op-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d-metadata",
+    "mp-r0-r1release8a22293a20e7-op-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d-native",
+    "mp-r0-r1release8a22293a20e7-op-c27e976d-3af7-48ac-aab6-b3ca367c0845-dispatch-observe",
+    "mp-r0-r1release8a22293a20e7-op-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d-checkpoint",
+    "mp-r0-r1release8a22293a20e7-op-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d-dispatch-fence",
+    "mp-r0-r1release8a22293a20e7-app-release-80784927f33e4975920ac2f63e9479fe",
+    "mp-r0-r1release8a22293a20e7-core-provision",
+    "mp-r0-r1release8a22293a20e7-core-init"
+  ],
+  "removed_images": [
+    {
+      "image_id": "sha256:eabe515bd10b9d4d0eb4d4a44b29abda7c8c81ecbde131dcf9c5b2ad064b8f6a",
+      "tags": [
+        "modular-platform:ap03-projects-010-01",
+        "modular-platform:retained-a259f507-fdf0-472e-a4c8-595d2ecd6e95"
+      ],
+      "retained_alias_proof": [
+        {
+          "tag": "modular-platform:retained-a259f507-fdf0-472e-a4c8-595d2ecd6e95",
+          "operation": "a259f507-fdf0-472e-a4c8-595d2ecd6e95",
+          "state": "completed",
+          "store": ".local/application-adoption/ap03-projects-only-01/operator/control"
+        }
+      ],
+      "source_record": ".local/application-adoption/compositions/ap03-projects-010-01/composition.json"
+    },
+    {
+      "image_id": "sha256:8d61e6cc5f1a0c8cc5d1ee262cfa6f9abf9c225732e6d50e59909b76cd51451c",
+      "tags": [
+        "modular-platform:ap03-projects-tasks-010-01",
+        "modular-platform:retained-272d8563-c2e7-4376-8509-aedad4689967",
+        "modular-platform:retained-70cba523-bc1f-4c44-8fba-ccb301f53402",
+        "modular-platform:retained-aa2522a3-67c7-4d21-84c1-c693766da933"
+      ],
+      "retained_alias_proof": [
+        {
+          "tag": "modular-platform:retained-272d8563-c2e7-4376-8509-aedad4689967",
+          "operation": "272d8563-c2e7-4376-8509-aedad4689967",
+          "state": "completed",
+          "store": ".local/application-adoption/ap03-projects-tasks-01/operator/control"
+        },
+        {
+          "tag": "modular-platform:retained-70cba523-bc1f-4c44-8fba-ccb301f53402",
+          "operation": "70cba523-bc1f-4c44-8fba-ccb301f53402",
+          "state": "revoked",
+          "store": ".local/application-adoption/ap03-projects-tasks-01/operator/control"
+        },
+        {
+          "tag": "modular-platform:retained-aa2522a3-67c7-4d21-84c1-c693766da933",
+          "operation": "aa2522a3-67c7-4d21-84c1-c693766da933",
+          "state": "completed",
+          "store": ".local/application-adoption/ap03-projects-tasks-01/operator/control"
+        }
+      ],
+      "source_record": ".local/application-adoption/compositions/ap03-projects-tasks-010-01/composition.json"
+    },
+    {
+      "image_id": "sha256:8e9e86391a0e9408d9a303a8982aaca3bd9338d6ef602de12d593f8d09fb15cc",
+      "tags": [
+        "modular-platform:ap03-projects-tasks-011-01"
+      ],
+      "retained_alias_proof": [],
+      "source_record": ".local/application-adoption/compositions/ap03-projects-tasks-011-01/composition.json"
+    },
+    {
+      "image_id": "sha256:d42cea8446aa012aa522c5f2a294397f42931c03f4fd3a5c1353b4f7b9f54c67",
+      "tags": [
+        "modular-platform:ap04-clean-reproduction-01"
+      ],
+      "retained_alias_proof": [],
+      "source_record": ".local/application-adoption/clean-operator-01/developer output/composition.json"
+    }
+  ],
+  "removed_aliases": [
+    {
+      "image_id": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d",
+      "tag": "modular-platform:retained-5f4bad4f-03b2-40bf-8627-07b0d93b0a0d",
+      "operation": "5f4bad4f-03b2-40bf-8627-07b0d93b0a0d",
+      "state": "completed",
+      "store": ".local/application-adoption/clean-operator-01/source/.local/application-adoption/ap04-clean-01/operator/control"
+    },
+    {
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+      "tag": "modular-platform:retained-08215fca-679a-4bd9-a735-d28047cac5d2",
+      "operation": "08215fca-679a-4bd9-a735-d28047cac5d2",
+      "state": "completed",
+      "store": ".local/application-adoption/ap02-release-02/operator/control"
+    },
+    {
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+      "tag": "modular-platform:retained-1419424a-0bbc-4e5b-9cf9-f1cd11b70cb1",
+      "operation": "1419424a-0bbc-4e5b-9cf9-f1cd11b70cb1",
+      "state": "completed",
+      "store": ".local/application-adoption/ap02-release-02/operator/control"
+    },
+    {
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+      "tag": "modular-platform:retained-50f3bf2f-0629-4d26-8c48-22e68b60711e",
+      "operation": "50f3bf2f-0629-4d26-8c48-22e68b60711e",
+      "state": "completed",
+      "store": ".local/application-adoption/ap01-pilot-01/operator/control"
+    },
+    {
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+      "tag": "modular-platform:retained-aa45afe1-cfd1-4a78-a121-7f3f32d66b38",
+      "operation": "aa45afe1-cfd1-4a78-a121-7f3f32d66b38",
+      "state": "completed",
+      "store": ".local/application-adoption/ap01-pilot-01/operator/control"
+    },
+    {
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+      "tag": "modular-platform:retained-b995e3d6-4cab-42cd-a903-17688e13e4de",
+      "operation": "b995e3d6-4cab-42cd-a903-17688e13e4de",
+      "state": "revoked",
+      "store": ".local/application-adoption/ap02-release-02/operator/control"
+    },
+    {
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+      "tag": "modular-platform:retained-c6fe3fce-d9d4-44d6-865e-72dbc6c4d639",
+      "operation": "c6fe3fce-d9d4-44d6-865e-72dbc6c4d639",
+      "state": "revoked",
+      "store": ".local/application-adoption/ap02-release-01/operator/control"
+    },
+    {
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+      "tag": "modular-platform:retained-e795d775-d017-459b-9148-d5f7c3c9f58d",
+      "operation": "e795d775-d017-459b-9148-d5f7c3c9f58d",
+      "state": "completed",
+      "store": ".local/application-adoption/ap02-release-01/operator/control"
+    }
+  ],
+  "utc": "2026-11-08T23:30:20.505948+00:00",
+  "retained_running": [
+    {
+      "name": "mp-r0-r1release261d5d0954ee-job-urgent-1",
+      "image_id": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f"
+    },
+    {
+      "name": "mp-r0-r1release261d5d0954ee-job-bulk-1",
+      "image_id": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f"
+    },
+    {
+      "name": "mp-r0-r1release261d5d0954ee-app-release-50f3bf2f06294d268c4822e68b60711e",
+      "image_id": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f"
+    },
+    {
+      "name": "mp-r0-r1release261d5d0954ee-edge-1",
+      "image_id": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f"
+    },
+    {
+      "name": "mp-r0-r1release261d5d0954ee-db-1",
+      "image_id": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0"
+    },
+    {
+      "name": "mp-r0-r1release8a22293a20e7-job-urgent-1",
+      "image_id": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d"
+    },
+    {
+      "name": "mp-r0-r1release8a22293a20e7-job-bulk-1",
+      "image_id": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d"
+    },
+    {
+      "name": "mp-r0-r1release8a22293a20e7-app-release-5f4bad4f03b240bf862707b0d93b0a0d",
+      "image_id": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d"
+    },
+    {
+      "name": "mp-r0-r1release8a22293a20e7-edge-1",
+      "image_id": "sha256:dece6f0a0402ab7187d5d0594056ad12fdbe1265c30f0e6134966e55c432828f"
+    },
+    {
+      "name": "mp-r0-r1release8a22293a20e7-db-1",
+      "image_id": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0"
+    }
+  ],
+  "retained_pilot_volumes": 12,
+  "retained_pilot_networks": 4,
+  "unrelated_resources_untouched": true,
+  "blanket_prune_used": false
+}

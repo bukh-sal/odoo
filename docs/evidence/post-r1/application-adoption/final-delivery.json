@@ -1,0 +1,163 @@
+{
+  "result": "complete_verified_application_adoption",
+  "utc": "2026-11-08T23:36:29.080319+00:00",
+  "phases": {
+    "AP-01": {
+      "state": "passed",
+      "weight": 20,
+      "verified_points": 20,
+      "acceptance_count": 4
+    },
+    "AP-02": {
+      "state": "passed",
+      "weight": 30,
+      "verified_points": 30,
+      "acceptance_count": 4
+    },
+    "AP-03": {
+      "state": "passed",
+      "weight": 30,
+      "verified_points": 30,
+      "acceptance_count": 4
+    },
+    "AP-04": {
+      "state": "passed",
+      "weight": 20,
+      "verified_points": 20,
+      "acceptance_count": 4
+    }
+  },
+  "checks": {
+    "AP-A": "passed",
+    "AP-B": "passed",
+    "AP-C": "passed",
+    "AP-D": "passed",
+    "AP-E": "passed",
+    "AP-F": "passed",
+    "AP-G": "passed",
+    "AP-H": "passed",
+    "AP-I": "passed",
+    "AP-J": "passed",
+    "AP-K": "passed",
+    "AP-L": "passed",
+    "AP-M": "passed",
+    "AP-N": "passed",
+    "AP-O": "passed",
+    "AP-P": "passed"
+  },
+  "weighted_progress": 100,
+  "acceptance": {
+    "passed": 16,
+    "total": 16
+  },
+  "kit": ".local/releases/foundation49-application-adoption",
+  "kit_manifest": "sha256:07bf94533a487fc56aa48b5fefc26d79718a50b02a9801825a7cf1a94f598eb6",
+  "source_commit": "0927861b195300651d1ddcb75f22b002ef35633b",
+  "components": 57,
+  "image_id": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d",
+  "inventory_digest": "sha256:fc709b8441498cec3135f2802dd31b6c60d128e1db33600981362a8a0a6fa7ea",
+  "sources": {
+    "aurora-projects": {
+      "bundle": "applications/aurora-projects/source.bundle",
+      "commit": "1d801d6084b0004b4c7573f92b9447bd68406ef1",
+      "plugin_id": "dev.aurora.projects",
+      "version": "0.1.1"
+    },
+    "aurora-projects-tasks": {
+      "bundle": "applications/aurora-projects-tasks/source.bundle",
+      "commit": "a79ed6049b21151bdafdb42966059d1da2852298",
+      "plugin_id": "dev.aurora.projects_tasks",
+      "version": "0.1.1"
+    },
+    "aurora-tasks": {
+      "bundle": "applications/aurora-tasks/source.bundle",
+      "commit": "db32b467fb46156254e481900c0461430888b703",
+      "plugin_id": "dev.aurora.tasks",
+      "version": "0.2.3"
+    }
+  },
+  "retained_pilots": [
+    {
+      "project": "mp-r0-r1release261d5d0954ee",
+      "url": "http://release-261d5d0954ee.localhost:18172/odoo",
+      "containers": 5,
+      "volumes": 6,
+      "networks": 2,
+      "lanes": {
+        "urgent": 1,
+        "bulk": 1,
+        "producer": 0
+      },
+      "retention": "Review before next foundation/application release;retain only while used;explicit owned retirement when superseded"
+    },
+    {
+      "project": "mp-r0-r1release8a22293a20e7",
+      "url": "http://release-8a22293a20e7.localhost:18178/odoo",
+      "containers": 5,
+      "volumes": 6,
+      "networks": 2,
+      "lanes": {
+        "urgent": 1,
+        "bulk": 1,
+        "producer": 0
+      },
+      "retention": "Review before next foundation/application release;retain only while used;explicit owned retirement when superseded"
+    }
+  ],
+  "cleanup": {
+    "stopped_helpers_removed": 35,
+    "unused_app_images_removed": 4,
+    "redundant_retention_aliases_removed": 8,
+    "disposable_siblings_retired": true,
+    "unrelated_assets_untouched": true,
+    "blanket_prune": false
+  },
+  "qualification": {
+    "clean_host_cases": 89,
+    "passed": 88,
+    "windows_symlink_skip": 1,
+    "six_source_archives_exact": true,
+    "composed_inventory_exact": true,
+    "oci_identity_bit_reproduction_claimed": false,
+    "native_and_browser_workflows": true,
+    "independent_recovery_and_actual_effects": true,
+    "current_auth_revocation": true,
+    "business_acl_checkpoint_boundary": true,
+    "finite_known_values_audit": "60values/14138sourcefiles/103archivemembers/43appfiles/56Gitblobs;zero findings",
+    "agent_walkthrough_is_human_signoff": false
+  },
+  "required_work_remaining": [],
+  "active_work_item": null,
+  "uncertain_mutation": false,
+  "publication_or_production": false,
+  "sealed_49_47_46_preserved": true,
+  "evidence_sha256": {
+    "ap01-daily-workflow.json": "93bce6c945c1ff58f9158ba9115924edd6b1a48efa3265648dab018d5f955f55",
+    "ap01-role-concurrency-outage.json": "afbb300eeaf4a59f2f5319e0793fa8a9e1e835c6ae52e280e3df4e90c133c4fc",
+    "ap02-release-decision.json": "beb59b5126d2fec8f5417f50c9607389a86c9efdc5e51b661ae39f3ce3bc80c0",
+    "ap03-feasibility-decision.json": "a94dd5e0116e57abb9c33ca5f6bc6ac308fe23e30c1d657c7f4c4a02a076b916",
+    "ap03-projects-decision.json": "eaf5119eb348fe7c83ee1cdebe7c98694a36328a6c87516e79f76070b9272354",
+    "ap03-release-decision.json": "a658c654680e604a6e28aa10f8bf895a823df07c1159f1989ee84de57b07c6f3",
+    "ap03-error-confidentiality-counterexample.json": "5fd105df058cd463522cb48f87199cf15dc79ce2d000495d07273bac950fa2dc",
+    "ap04-clean-developer.json": "30c4be69f9f63111b9849590938b03d2890d7a1084549b7a33aa69b0ba2e048e",
+    "ap04-clean-operations.json": "0e9c51dc19f15b3c64ee6343a6276a187e9d1200a9ca273912c87cb21f5b60fb",
+    "ap04-clean-host-tests.json": "c15708cd4daa5b6f35cd5d5b6ec97f16fabfacd78d5f9f5e2c5f4ec535736bb6",
+    "ap04-clean-archive-boundaries.json": "352abf13b194b6e088c3bb91fe567927ad82a6d00588dccfe214bbb69d7b5116",
+    "ap04-delivery-hygiene.json": "40ab5eae80f725d635b2e86dc693ccfe00aa27d8218708db6b3409b0017dd8a3",
+    "ap04-owned-cleanup.json": "5e531a14b9d06780d27fdc567f61c8e3a00a4806ac216cec059e3cc5191f75b7",
+    "ap04-final-verification.json": "93905c3bcce746ac5b9d73c17a458883feeb179e77ca8b8a4a69f43d1df6e8f7",
+    "ap04-native-retained-pilot.jpg": "d38e2cb9ddf5602481f02b2f7c76c591ed5c192c56a270229f83dee1eafb01d1"
+  },
+  "remaining_limits": [
+    "AP-LIM-002",
+    "AP-LIM-003",
+    "AP-LIM-007",
+    "AP-LIM-014",
+    "AP-LIM-015",
+    "AP-LIM-018",
+    "AP-LIM-019",
+    "AP-LIM-021",
+    "AP-LIM-023",
+    "AP-LIM-024"
+  ]
+}

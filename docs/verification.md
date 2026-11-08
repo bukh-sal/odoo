@@ -455,7 +455,7 @@ AT-03 partition primitives: [real PostgreSQL9checks](evidence/post-r1/aurora-tas
 [roles/concurrency/outage](evidence/post-r1/application-adoption/ap01-role-concurrency-outage.json),
 [app-only repair](evidence/post-r1/application-adoption/ap01-repair-verified.json),
 [composition reproduction](evidence/post-r1/application-adoption/ap01-composition-reproduction.json).
-AP-A..D passed;AP-02 recovery remains required. Real stale same-field edits are
+AP-A..D passed;AP-02 recovery subsequently passed as recorded below. Real stale same-field edits are
 last-save-wins, not a conflict-prevention claim. Agent evidence is not human sign-off.
 
 
@@ -473,6 +473,25 @@ auth revocations are overlaid;custom business ACL rows restore to checkpoint.
 
 ## AP-03 independent Projects and optional integration
 
-[Standalone Projects](evidence/post-r1/application-adoption/ap03-projects-decision.json) and [optional integration](evidence/post-r1/application-adoption/ap03-integration-decision.json) passed AP-J/K. Actual native installs,9 standalone and7 integration server groups plus in-app creation/link/Open are recorded. Projects-only profile has no Tasks table/package or workspaces. Full set retains current both-resource authority;AP-L evolution/recovery remains unpassed.
+[Standalone Projects](evidence/post-r1/application-adoption/ap03-projects-decision.json) and [optional integration](evidence/post-r1/application-adoption/ap03-integration-decision.json) passed AP-J/K. Actual native installs,9 standalone and7 integration server groups plus in-app creation/link/Open are recorded. Projects-only profile has no Tasks table/package or workspaces. This records the initial ordinary role/UI scope;the later debug-error counterexample and final correction/evolution/recovery are closed by the next decision.
 
 [Final AP-03 release decision](evidence/post-r1/application-adoption/ap03-release-decision.json) closes AP-K/L,including immutable integration0.1.1 debug-error correction,real populated Projects0.1.1 forward/fault/fresh old-schema restore/current authentication revocation/separate resume/useful cross-app work and actual reminder effects. Actual archive dependencies/version bounds refuse before registry mutation;35packaging cases34passed1Windows skip;public freeze119files10rows unchanged. Final native date/filter and linked native actions passed;disposable site retired.
+
+## AP-04 clean downstream workflow and delivery
+
+[Clean developer reproduction](evidence/post-r1/application-adoption/ap04-clean-developer.json),
+[routed CLI install and stop/restart](evidence/post-r1/application-adoption/ap04-clean-operations.json),
+[89isolated host cases](evidence/post-r1/application-adoption/ap04-clean-host-tests.json),
+[actual archive bounds](evidence/post-r1/application-adoption/ap04-clean-archive-boundaries.json),
+[finite credential audit](evidence/post-r1/application-adoption/ap04-delivery-hygiene.json),
+[owned cleanup](evidence/post-r1/application-adoption/ap04-owned-cleanup.json) and
+[final verification](evidence/post-r1/application-adoption/ap04-final-verification.json)
+qualify the57component kit/source0927861b. Three independent final sources and
+three historical baselines reproduce exact archives;runtime inventory matches,
+while OCI construction identity is separately pinned. Actual final native pilot
+retains current roles,date/lifecycle and optional linked native Task navigation.
+Both named useful pilots remain;obsolete owned siblings/helpers/images retired.
+[Final decision](evidence/post-r1/application-adoption/final-delivery.json) closes
+all16APchecks;[handoff](application-adoption-delivery.md) records current access,
+commands,scope and remaining limitations. Historical R1/BG/BX/CF/AR/AT evidence
+retains its narrower recorded release/profile scope.

@@ -1,25 +1,25 @@
 # Implementation status
 
-Current goal: application adoption AP-01..04 — active. User authorized all four
+Current goal: application adoption AP-01..04 — complete. User authorized all four
 phases to run sequentially unattended on8November2026. Preserve completed
 AT14/14, AR16/16, CF12/12, BG/BX and R1 99/99 scopes and sealed49/47/46 artifacts.
 No hosted/production deployment, publication, paid services or real-data import.
 
-- Updated UTC: 2026-11-08T23:24:20.960971+00:00
+- Updated UTC: 2026-11-08T23:36:29.080319+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AP-04 reusable workflow and clean delivery — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-P final native pilot, checksummed handoff and exact owned Docker cleanup.** [Plan](../planning/application_adoption.md).
+- Current phase/gate: **AP-04 reusable workflow and clean delivery — passed.** Historical AR/CF/BG/R1 scopes remain complete.
+- Active item: **None. All four authorized phases are complete;retain the named pilots and await a new selected requirement.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
-## Application adoption (active goal)
+## Application adoption (completed goal)
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**95/100 verified points;15/16 acceptance checks passed.** Plan creation/source
+**100/100 verified points;16/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -28,7 +28,7 @@ across its four checks. No sub-agents are authorized.
 | AP-01 |20| passed | AP-A..D real daily workflows/repair, roles/concurrency/outage and limitations |
 | AP-02 |30| passed | Independent app source/composition,actual app-only forward/fault/recovery/effects |
 | AP-03 |30| passed | Independent Projects and optional Tasks links;actual app-set evolution/recovery/confidential errors |
-| AP-04 |20| in_progress | AP-M consolidate exercised commands; clean downstream verification/handoff |
+| AP-04 |20| passed | Portable app/host delivery,clean downstream qualification,retained native pilot and exact owned cleanup |
 
 | Check | State | Output / next verification |
 | --- | --- | --- |
@@ -47,7 +47,7 @@ across its four checks. No sub-agents are authorized.
 | AP-M | passed | [Fresh offline operator/three separate Git clones/six exact baseline+final archives/identical composed inventory](evidence/post-r1/application-adoption/ap04-clean-developer.json);developer/operator guides |
 | AP-N | passed | [Fresh isolated routed CLI plan/register/exact approval/apply,roles,error confidentiality,reviewed fleet and planned stop/restart](evidence/post-r1/application-adoption/ap04-clean-operations.json) |
 | AP-O | passed | [89clean host cases/88pass1skip](evidence/post-r1/application-adoption/ap04-clean-host-tests.json),[actual archive bounds](evidence/post-r1/application-adoption/ap04-clean-archive-boundaries.json),[finite credential/source audit](evidence/post-r1/application-adoption/ap04-delivery-hygiene.json);six exact app archives and identical runtime inventory |
-| AP-P | not_run | Checksummed delivery, retained usable pilot, complete records and owned cleanup |
+| AP-P | passed | [Final57component delivery/retained pilots/checksums/35helper4image8alias cleanup](evidence/post-r1/application-adoption/final-delivery.json);[handoff](application-adoption-delivery.md) |
 
 
 Blocker register: no user-input blocker. Missing ownership defaults (AP-B-001)
@@ -56,38 +56,46 @@ resolved by ADR0079's host-only correction and real recovered effects. Debug-mod
 link-name disclosure (AP-LIM-022) resolved in immutable extension0.1.1; ordinary
 and developer-mode denial probes passed. Original counterexamples remain linked.
 
-Resume capsule: **AP-A..O passed;AP-P active;95points15/16.** No uncertain apply,
-recovery, test or build remains running. Intentional pilot workers are separate:
-primary all-app pilot8a22293a20e7/18178 and independent Tasks261d5d0954ee/18172,
-each1urgent+1bulk/producer0. Projects-onlya74444fa2a92/18174 and combined fault
-siblingc8dd58853f67/18176 were retired by exact ownership;browser tabs17/18closed.
-Do not replay their completed/revoked operations or remove private checkpoints.
+Resume capsule: **Goal complete;100points16/16checks.** No active item,pending
+question,in-flight test/build/qualification or uncertain apply/recovery remains.
+Do not restart completed AP/R1/BG/BX/CF/AR/AT gates or create another work item
+without a selected requirement. [Final handoff](application-adoption-delivery.md)
+and [final decision](evidence/post-r1/application-adoption/final-delivery.json)
+bind the current scope and artifacts. Native UI remains the default.
 
-Primary pilot: foundation0.1.49/Tasks0.2.3/Projects0.1.1/integration0.1.1.
-Imageb0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d,
-inventoryfc709b8441498cec3135f2802dd31b6c60d128e1db33600981362a8a0a6fa7ea.
-Private current target/credentials are under
+Primary pilot8a22293a20e7/18178:foundation0.1.49,Tasks0.2.3,Projects0.1.1,
+optional integration0.1.1;imageb0920ae4/inventoryfc709b84. Private current target,
+credentials,intent and logs:
 `.local/application-adoption/clean-operator-01/source/.local/application-adoption/ap04-clean-01`.
-Routed CLI install5f4bad4f completed;actual seven integration groups,debug-error
-confidentiality,planned same-release stop/restart/retained data+roles+links and
-fresh reviewed fleet passed. Final in-app pilot walkthrough and helper/image
-cleanup are the only remaining acceptance work.
+In-app tab19Alice/Project1:active,target_date2026-11-15,one readable linked Task;
+no unsaved draft;marked deliverable/CUA summarized. Independent Tasks pilot
+261d5d0954ee/18172 remains useful,private`ap01-pilot-01`. Each pilot retains
+5running containers,6volumes,2networks,1urgent+1bulk lane/producer0. Review
+retention before the next app/foundation release;explicit owned retirement when
+superseded. The workers are intentional pilot services,not unfinished goal work.
 
-Immutable adoption kit`.local/releases/foundation49-application-adoption` has
-57files,source0927861b195300651d1ddcb75f22b002ef35633b and manifest
+Immutable kit`.local/releases/foundation49-application-adoption`:57components,
+source0927861b195300651d1ddcb75f22b002ef35633b,manifest
 07bf94533a487fc56aa48b5fefc26d79718a50b02a9801825a7cf1a94f598eb6.
-Three independent Git bundles reproduce six exact baseline/final app archives;
-clean recompositiond42cea84 has identicalfc709b84 file/native/package inventory,
-not identical OCI construction identity. Updated host source includes ADR0079;
-sealed49/47/46/images/runtime native guards remain unchanged. Fresh offline
-operator/89host cases(88pass1Windows symlinkskip)/eight actual archive groups
-and finite audit14138source files/103archive members/43app files/56history blobs/
-60generated credential values passed. No human usability signoff is claimed.
+Three independent Git bundles reproduce six exact baseline/final app archives.
+Recomposition retains exact file/native/package inventory;OCI construction ID
+is not claimed bit-identical. Updated host source contains ADR0079;sealed49/47/46
+manifests/images and runtime authorization guards remain unchanged.
 
-Next: complete AP-P native pilot display;retire only obsolete owned helper
-containers/unused application image aliases;retain both useful pilots and sealed
-kits;write current delivery/progress/limitations/evidence records and close the
-umbrella goal only after all16checks pass. No new product/UI/platform work.
+Actual app-only/app-set forward,fault,fresh original restore,current native auth
+revocation,separate resume,useful work and once-only reminder effects passed.
+Extension0.1.1fixes native developer-mode error disclosure while retaining both
+resource rights;counterexample preserved. Clean offline isolated operator,
+routed CLI install/planned stop-restart,89host cases(88pass1Windows skip),
+eight actual archive groups and finite60value source/archive/app-history audit
+passed. Agent walkthroughs are not human usability signoff.
+
+All obsolete owned siblings retired. Finalcleanup removed35stopped helpers,
+4unused app images and8redundant retention aliases;two pilots remain10running
+containers/12volumes/4networks. Private checkpoints/logs,Git histories,qualified
+kit images archive and unrelated assets remain. No blanket prune or publication.
+Current development/usage limitations and deferred triggers are in the register;
+there is no required unresolved defect for these four phases.
 
 ## Aurora Tasks release (completed goal)
 

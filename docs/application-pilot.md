@@ -1,5 +1,44 @@
 # Local application pilot
 
+## Current retained pilots after AP-04
+
+The primary all-app pilot is
+`http://release-8a22293a20e7.localhost:18178/odoo`,Docker project
+`mp-r0-r1release8a22293a20e7`. It uses unchanged foundation0.1.49 with
+Tasks0.2.3,Projects0.1.1 and optional Projects–Tasks integration0.1.1.
+Private root:
+`.local/application-adoption/clean-operator-01/source/.local/application-adoption/ap04-clean-01`.
+Read its `operator/target.json` for exact current image/database/worker and
+`account-passwords.json` for fictional credentials (`fixtures.json` identifies
+logins/roles). The retained in-app tab is signed in as Alice with active
+Workshop inspection,target date15November2026 and one accessible linked Task.
+
+The independent Tasks-only pilot below remains useful as a separate system.
+Each pilot retains exactly five running containers(web,database,edge,urgent and
+bulk),six named volumes and two networks. Each lane is bounded to one CPU/768MiB;
+producer is disabled. Review both pilots before the next foundation/application
+release and explicitly retire their exact owned resources when superseded.
+There is no automatic data deletion or blanket Docker cleanup.
+
+The primary pilot passed actual CLI plan/register/exact approval/routed apply,
+seven native integration groups,current access/error confidentiality and planned
+stop/restart with retained rows/roles/links and fresh fleet approval. Its
+`clean-operations.json`,`pilot-intent.json` and current target are authoritative.
+Completed helper containers and obsolete image aliases were removed. Private
+checkpoints/logs and immutable release kits remain. Both qualification siblings
+(Projects-only18174 and combined recovery18176) have been retired.
+
+Use the isolated interpreter
+`.local/application-adoption/clean-operator-01/operator/Scripts/python.exe`
+and delivered source at the sibling `source` directory for primary operations.
+The store/config arguments are the primary private root's `operator/control`,
+`operator/trust.json` and `operator/target.json`. The separate manual start/stop
+sequence below was exercised on that exact target;do not reuse the old
+Tasks-only project's IDs for it. [Explicit commands](application-operations.md),
+[developer path](application-development.md),[final delivery](application-adoption-delivery.md).
+
+## Independent Tasks-only pilot
+
 AP-01 pilot `ap01-pilot-01` uses unchanged foundation49 and independently upgraded Tasks0.2.3 with fictional
 users/data. It is an intentionally retained development site, distinct from the
 retired AT qualification fixtures. [Current checklist](implementation-status.md)

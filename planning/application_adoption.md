@@ -6,6 +6,11 @@ acceptance results, blockers and resume instructions belong only in
 [implementation status](../docs/implementation-status.md). This plan defines
 scope and exit checks; creating it earns no implementation progress.
 
+Completed AP-01..04:100verified weighted points,16/16checks.
+[Final handoff](../docs/application-adoption-delivery.md) and
+[decision](../docs/evidence/post-r1/application-adoption/final-delivery.json)
+record exact artifacts,pilots,qualification and remaining limitations.
+
 Start from sealed core49/Tasks0.2.2, [final delivery](../docs/evidence/post-r1/aurora-tasks/final-delivery.json).
 Preserve that kit/image and sealed47/46. Native WebClient infrastructure and
 list/form screens stay the default. This is our owned fork, with no external
@@ -125,7 +130,7 @@ Do not invent a core/schema change to manufacture an upgrade exercise.
   artifact/dependency/role/upgrade/recovery checks and verify source/dependency
   drift refusals. Record affected tests, reproducibility and finite credential/
   source hygiene. Cleanup must be ownership-bound and preserve unrelated assets.
-- [ ] **AP-P:** Deliver checksummed application/release artifacts, developer and
+- [x] **AP-P:** Deliver checksummed application/release artifacts, developer and
   operator instructions, useful retained pilot access instructions and final
   phase/acceptance decision. Reconcile roadmap/status/evidence/limitations.
   Retire all obsolete disposable containers/volumes/networks/images/aliases;

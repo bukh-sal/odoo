@@ -1,0 +1,94 @@
+{
+  "result": "passed",
+  "utc": "2026-11-08T23:32:52.096031+00:00",
+  "kit_manifest": "sha256:07bf94533a487fc56aa48b5fefc26d79718a50b02a9801825a7cf1a94f598eb6",
+  "components": 57,
+  "source_commit": "0927861b195300651d1ddcb75f22b002ef35633b",
+  "final_native_browser": [
+    "In-app login/native Project1 target_date2026-11-15 saved/reload persisted",
+    "Activate changed current native lifecycle to active",
+    "Native Open task reached existing Task1 then breadcrumb returned to Project1",
+    "No unsaved draft;tab19 retained as deliverable"
+  ],
+  "screenshot": "ap04-native-retained-pilot.jpg",
+  "primary_current_record": {
+    "id": 1,
+    "name": "Workshop inspection",
+    "target_date": "2026-11-15",
+    "status": "active",
+    "task_link_count": 1
+  },
+  "independent_tasks_peer_useful": true,
+  "resources": [
+    {
+      "project": "mp-r0-r1release261d5d0954ee",
+      "url": "http://release-261d5d0954ee.localhost:18172/odoo",
+      "image_id": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f",
+      "containers": [
+        "mp-r0-r1release261d5d0954ee-job-urgent-1",
+        "mp-r0-r1release261d5d0954ee-job-bulk-1",
+        "mp-r0-r1release261d5d0954ee-app-release-50f3bf2f06294d268c4822e68b60711e",
+        "mp-r0-r1release261d5d0954ee-edge-1",
+        "mp-r0-r1release261d5d0954ee-db-1"
+      ],
+      "owned_resources": {
+        "networks": [
+          "mp-r0-r1release261d5d0954ee_runtime",
+          "mp-r0-r1release261d5d0954ee_edge"
+        ],
+        "volumes": [
+          "mp-r0-r1release261d5d0954ee_appconfig",
+          "mp-r0-r1release261d5d0954ee_dbconfig",
+          "mp-r0-r1release261d5d0954ee_bootstrap",
+          "mp-r0-r1release261d5d0954ee_proxyconfig",
+          "mp-r0-r1release261d5d0954ee_filestore",
+          "mp-r0-r1release261d5d0954ee_pgdata"
+        ]
+      },
+      "retention": "Review before next foundation/application release;retain only while used;explicit owned retirement when superseded"
+    },
+    {
+      "project": "mp-r0-r1release8a22293a20e7",
+      "url": "http://release-8a22293a20e7.localhost:18178/odoo",
+      "image_id": "sha256:b0920ae4d434bb96ddc874dc602676477836b8e61435ab7e9e4cc78fde1f907d",
+      "containers": [
+        "mp-r0-r1release8a22293a20e7-job-urgent-1",
+        "mp-r0-r1release8a22293a20e7-job-bulk-1",
+        "mp-r0-r1release8a22293a20e7-app-release-5f4bad4f03b240bf862707b0d93b0a0d",
+        "mp-r0-r1release8a22293a20e7-edge-1",
+        "mp-r0-r1release8a22293a20e7-db-1"
+      ],
+      "owned_resources": {
+        "networks": [
+          "mp-r0-r1release8a22293a20e7_runtime",
+          "mp-r0-r1release8a22293a20e7_edge"
+        ],
+        "volumes": [
+          "mp-r0-r1release8a22293a20e7_appconfig",
+          "mp-r0-r1release8a22293a20e7_dbconfig",
+          "mp-r0-r1release8a22293a20e7_bootstrap",
+          "mp-r0-r1release8a22293a20e7_proxyconfig",
+          "mp-r0-r1release8a22293a20e7_filestore",
+          "mp-r0-r1release8a22293a20e7_pgdata"
+        ]
+      },
+      "retention": "Review before next foundation/application release;retain only while used;explicit owned retirement when superseded"
+    }
+  ],
+  "sealed_manifests_and_images_preserved": {
+    "foundation-r1-core46": {
+      "manifest_sha256": "485dc9b5ce785cae8a78cd586256ec3df1bbf031f7db26228c9fef094a5422b7",
+      "image_id": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82"
+    },
+    "foundation-r1-core47": {
+      "manifest_sha256": "45fb20724d994a396121fcadd3ff6b6c088d243ccd56619f5732c851d53fd0e3",
+      "image_id": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a"
+    },
+    "foundation-r1-core49-tasks": {
+      "manifest_sha256": "396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404",
+      "image_id": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f"
+    }
+  },
+  "updated_host_recovery_files_equal_delivered_source": true,
+  "publication_or_production": false
+}
