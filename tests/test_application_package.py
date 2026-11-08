@@ -32,8 +32,10 @@ class ApplicationPackage(unittest.TestCase):
                                        publisher='aurora', description='Shared list-bound tasks')
         self.manifest['runtime']['addon_name'] = 'mp_aurora_tasks'
         self.manifest['activation']['scopes'] = ['site']
+        self.manifest['activation']['supports_feature_suspension'] = False
         self.manifest['permissions'] = dict(defines={}, requests=[])
         self.manifest['services'] = dict(provides=[], requires=[])
+        self.manifest['ui'] = dict(mode='none',design='standard',pages=[],navigation=[])
         models = ['mp.aurora.task', 'mp.aurora.task.list', 'mp.aurora.task.stage']
         self.manifest['data'] = dict(models=models, extension_targets=[], contributions=[
             dict(kind='model', id=model, target='site', delete_policy='owned') for model in models])

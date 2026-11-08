@@ -1,0 +1,24 @@
+{
+  "result": "passed",
+  "acceptance": "AP-I",
+  "utc": "2026-11-08T22:06:12.194789+00:00",
+  "source": "ap03-source-contract.json",
+  "contracts": [
+    "docs/aurora-projects-contract.md",
+    "docs/architecture-decisions/0080-independent-application-set-composition.md"
+  ],
+  "boundary_tests": "ap03-composition-boundary.json",
+  "actual_image": "ap03-slot-probe-01-image.json",
+  "actual_staged_planning": "ap03-slot-probe-01-plan.json",
+  "probe_retirement": "ap03-slot-probe-01-retired.json",
+  "public_freeze": {
+    "result": "passed",
+    "files": 119,
+    "rows": 10
+  },
+  "actual_useful_application_implemented": false,
+  "source_sha256": {
+    "release/application_layer.py": "fe9c5fad08a7a8e2fe0148d32f92295a8c2f7a2004441f04a4ac06f4e8130d40",
+    "release/compose_application_set.py": "3fd6b0f4b7fddb7159e217945af18f2f0c56cb63eb11a5e7958a832b80ce685f"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "result": "retired_owned_probe_image",
+  "image_id": "sha256:4750b9e238f8d7fbee5faa0337a0c076de3e34ce285b16082a77cfada177e125",
+  "tag": "modular-platform:ap03-slot-probe-01",
+  "no_deployment_containers_or_volumes_created": true,
+  "no_application_installed": true,
+  "pilot_and_shared_images_untouched": true
+}

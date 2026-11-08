@@ -87,7 +87,7 @@ Do not invent a core/schema change to manufacture an upgrade exercise.
 
 ## AP-03 — Another useful business application
 
-- [ ] **AP-I:** Compare bounded source candidates and select/freeze one workflow,
+- [x] **AP-I:** Compare bounded source candidates and select/freeze one workflow,
   native model/data/role contract, dependencies and integration boundary before
   substantial implementation. Initial candidate: Aurora Projects (name,
   description, manager, lifecycle states); inspect actual API/permissions/tests.

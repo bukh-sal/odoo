@@ -1,0 +1,26 @@
+{
+  "result": "passed_boundary_only",
+  "utc": "2026-11-08T22:00:02.120704+00:00",
+  "unique_cases": 35,
+  "passed": 34,
+  "skipped": 1,
+  "skips": [
+    "Windows source symlink privilege unavailable"
+  ],
+  "modules": {
+    "test_application_set_layer": 15,
+    "test_application_layer": 9,
+    "test_application_package": 6,
+    "test_application_set_recipe": 5
+  },
+  "coverage": "30case run had2message-expectation failures;both corrected target cases passed. Recipe5passed separately;not a single clean35case run.",
+  "initial_attempt": "5fixture errors from inherited workspace UI/invalid namespace identifiers;no image/database mutation",
+  "source_sha256": {
+    "release/application_layer.py": "fe9c5fad08a7a8e2fe0148d32f92295a8c2f7a2004441f04a4ac06f4e8130d40",
+    "release/compose_application_set.py": "3fd6b0f4b7fddb7159e217945af18f2f0c56cb63eb11a5e7958a832b80ce685f",
+    "tests/test_application_set_layer.py": "012ff4847910d7709718e36843ddbde029b3feb71257e2fdedbab1d8368c260a",
+    "tests/test_application_package.py": "996f31f5aa3c615f0e90917fcf7be3eb96f152f997665d165a72782572d9f4d6",
+    "tests/test_application_set_recipe.py": "51bc1562aeef7579dd88d436d6825165d2b0c868e6bd2500afe0c1d8fc7e9ab6"
+  },
+  "runtime_and_installation_qualification": "pending actual staged proof and later useful apps"
+}

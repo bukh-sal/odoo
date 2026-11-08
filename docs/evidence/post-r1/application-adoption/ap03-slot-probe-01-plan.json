@@ -1,0 +1,20 @@
+{
+  "result": "passed_read_only_staged_site_native_install",
+  "operation": "1bf21b0f-47ce-4dc8-aff8-7e19f94ea135",
+  "plan_hash": "sha256:38b90e03794b3f6f7ed48970230e567a857695ada73a2254d02fadb8e0affef2",
+  "target": {
+    "plugin_id": "dev.aurora.projects_probe",
+    "site_id": "01d6037a-dcd9-4194-853a-c045044decb7",
+    "workspace_id": null,
+    "installation_id": "6996a79f-0a51-5b55-b3e4-a5bf14f29ad7",
+    "action": "install"
+  },
+  "review_digest": "sha256:49e9fa3a473f6f6f9dc1f076104a3fbb287aa9c8e37cf8012e683dced0f92ec4",
+  "source_installations_unchanged": true,
+  "actual_registered_new_app": false,
+  "application_code_executed": false,
+  "independent_store_no_approval_and_revoked": true,
+  "source_image": "sha256:bf39b8d8cdca462756825ad4bde0825d647872ea25f568ee8e356fca8127ed1f",
+  "candidate_image": "sha256:4750b9e238f8d7fbee5faa0337a0c076de3e34ce285b16082a77cfada177e125",
+  "core_or_public_contract_change": false
+}

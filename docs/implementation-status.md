@@ -11,7 +11,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-03 bounded second application — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-I source-backed Projects workflow/role/integration contract and new-slot composition feasibility/freeze.** [Plan](../planning/application_adoption.md).
+- Active item: **AP-J independent Projects0.1.0 source/native roles/lifecycle/views and actual approved install/workflow.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -19,7 +19,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**50/100 verified points;8/16 acceptance checks passed.** Plan creation/source
+**57.5/100 verified points;9/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -40,7 +40,7 @@ across its four checks. No sub-agents are authorized.
 | AP-F | passed | Immutable0.2.3 defaults repair;baseline bytes and successor inventory reproduced;real native creation/ownership |
 | AP-G | passed | [New ordinary app-only forward](evidence/post-r1/application-adoption/ap02-release-decision.json),data/file/job identity/stale refusal/actual2once effects |
 | AP-H | passed | [Real app-down/fresh original restore/current auth/separate resume](evidence/post-r1/application-adoption/ap02-release-decision.json),valid2effects/revoked0/useful pilot |
-| AP-I | not_run | Source-backed bounded second-app/role/integration contract and freeze |
+| AP-I | passed | [Source/contract/new-slot actual image+ordinary staged planning](evidence/post-r1/application-adoption/ap03-feasibility-decision.json),no app installed/probe retired/public freeze passed |
 | AP-J | not_run | Useful native second-app workflow and direct unauthorized-operation checks |
 | AP-K | not_run | Optional compatible extension, both-resource authority, integration-absent independence |
 | AP-L | not_run | Actual clean/populated app sets, dependency refusals/browser/recovery |
@@ -54,7 +54,7 @@ by immutable0.2.3/actual new forms/authoritative ownership. AP-H-001 native rest
 release mismatch resolved by ADR0079 host-only operator correction and fresh
 actual recovery/forward/effects;first counterexample retained.
 
-Resume capsule: **AP-01/AP-02 passed;AP-I active,50/100points8/16.**
+Resume capsule: **AP-01/AP-02/AP-I passed;AP-J active,57.5/100points9/16.**
 Pilot261d5d0954ee/18172 remains useful unchanged foundation0.1.49/Tasks0.2.3,
 imagebf39b8d8/inventoryd84289ff,1urgent+1bulk. In-app tab16 Operator/task3,
 no unsaved draft;CUA part summarized. No running process/test/uncertain mutation.
@@ -75,18 +75,22 @@ source_release pin lives only in3host operator SDK files;runtime native guards
 and sealed49/47/46 images unchanged.70unique affected host cases accounted for,
 5actual rollback cases/publicfreeze119files10rows pass;new source receipt pinned.
 
-Next/current AP-I:source review complete from readonly Aurora e48e04ed4cf.
-Projects API files are0bytes/tests placeholder;media logo predicate is not CRUD
-security. Partners has larger permissions/cloud/reporting/CRM coupling;Maintenance
-already qualified aspeer. Frozen Projects contract and ADR0080 select native
-owner/manager/member roles,lifecycle,optional separately declared Tasks links,
-and useful0.1.1target date evolution;omit customer/logo/imports/accounting.
-Implement data-only v2new-slot app-set composition,keepv1 behavior/guards,prove
-negative cases and actual sealed-image/ordinary native planning feasibility before
-substantial app implementation. AP-I remains unpassed/50points8of16.
-No active runtime mutation/process. Current limits include last-save-wins generic
-text edits(AP014),app-owned business ACL checkpoint semantics(AP015),held reminder
-summary Queued(AP018). Require updated ADR0079 host operator for native-job restore.
+Next/current AP-J:readonly source review/frozen Projects contract/ADR0080 and
+new-slot feasibility passed. v2build guards/recipe35cases accounted34pass1skip;
+real sealed49probe4750b9e2/c204bf21 added slot without core/environment changes.
+Ordinary staged site-native install planned/independently reviewed in separate
+host store against actual read-only pilot;no approval/apply,source sites and
+configuration unchanged,plan revoked. Import trap never executed/probeimage
+retired,temporary alias absent. Public freeze119files/10rows unchanged/pass.
+[AP-I decision](evidence/post-r1/application-adoption/ap03-feasibility-decision.json).
+
+Implement frozen useful Projects0.1.0 in separate Git repo (native forms/defaults,
+owner/manager writers/member readers,locked lifecycle),then qualify actual ordinary
+installation/direct role denials/native browser. Later optional separate Tasks
+extension requires both resources;0.1.1target date provides useful populated
+app evolution/recovery baseline. No customer/logo/Partners/accounting import,
+newjobs,customshell/branding or Canvas expansion. No running process/uncertain
+mutation;pilot useful. Keep updated ADR0079 host operator for native-job restore.
 
 ## Aurora Tasks release (completed goal)
 
