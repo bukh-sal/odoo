@@ -1,0 +1,9 @@
+{
+  "result": "observed",
+  "application_version": "0.2.2",
+  "actual_job_state": "held",
+  "actual_error_code": "FORBIDDEN",
+  "native_task_reminder_status": "queued",
+  "effects": 0,
+  "scope": "Task summary collapses held and pending;private operator state distinguishes them"
+}

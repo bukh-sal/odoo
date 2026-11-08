@@ -10,8 +10,8 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AP-02 independent application release — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-02-P2 required host recovery release-identity fix (ADR0079);then fresh AP-G/H qualification.** [Plan](../planning/application_adoption.md).
+- Current phase/gate: **AP-03 bounded second application — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
+- Active item: **AP-I source-backed Projects workflow/role/integration contract and new-slot composition feasibility/freeze.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -19,15 +19,15 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**35/100 verified points;6/16 acceptance checks passed.** Plan creation/source
+**50/100 verified points;8/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
 | Phase | Weight | State | Next / evidence |
 | --- | --- | --- | --- |
 | AP-01 |20| passed | AP-A..D real daily workflows/repair, roles/concurrency/outage and limitations |
-| AP-02 |30| in_progress | Early AP-E/F evidence retained; AP-G/H full publication/recovery remains |
-| AP-03 |30| not_started | AP-I select/freeze bounded business app; initial candidate Aurora Projects |
+| AP-02 |30| passed | Independent app source/composition,actual app-only forward/fault/recovery/effects |
+| AP-03 |30| in_progress | AP-I select/freeze bounded business app; initial candidate Aurora Projects |
 | AP-04 |20| not_started | AP-M consolidate exercised commands; clean downstream verification/handoff |
 
 | Check | State | Output / next verification |
@@ -38,8 +38,8 @@ across its four checks. No sub-agents are authorized.
 | AP-D | passed | Limitations010 repaired/014 stale-edit boundary measured; app0.2.3 selected/qualified daily path; updated pilot walkthrough |
 | AP-E | passed | [Independent source decision](evidence/post-r1/application-adoption/ap02-independent-source-decision.json), separate app Git and exact pinned49 composition |
 | AP-F | passed | Immutable0.2.3 defaults repair;baseline bytes and successor inventory reproduced;real native creation/ownership |
-| AP-G | failed | Populated approved app-only upgrade, old jobs/roles/files, stale refusal and effects |
-| AP-H | failed | Failed-app-down independent original-app restore, current authority, separate resume/useful pilot |
+| AP-G | passed | [New ordinary app-only forward](evidence/post-r1/application-adoption/ap02-release-decision.json),data/file/job identity/stale refusal/actual2once effects |
+| AP-H | passed | [Real app-down/fresh original restore/current auth/separate resume](evidence/post-r1/application-adoption/ap02-release-decision.json),valid2effects/revoked0/useful pilot |
 | AP-I | not_run | Source-backed bounded second-app/role/integration contract and freeze |
 | AP-J | not_run | Useful native second-app workflow and direct unauthorized-operation checks |
 | AP-K | not_run | Optional compatible extension, both-resource authority, integration-absent independence |
@@ -49,46 +49,40 @@ across its four checks. No sub-agents are authorized.
 | AP-O | not_run | Clean downstream isolated execution, meaningful automated checks/repro/hygiene |
 | AP-P | not_run | Checksummed delivery, retained usable pilot, complete records and owned cleanup |
 
-Blocker register: AP-H-001 required implementation defect:restored native jobs are held/FORBIDDEN because checkpoint job release differs from fresh restored publication/control. Actual0effects;actor/resource valid in rollback diagnosis. ADR0079 freezes host-only private protocol2 correction. No user-input blocker. AP-B-001 resolved by immutable Tasks0.2.3/current-user defaults,
-actual native list/task creation and server ownership checks. No user-input blocker.
+Blocker register: no user-input blocker. AP-B-001 missing native defaults resolved
+by immutable0.2.3/actual new forms/authoritative ownership. AP-H-001 native restore
+release mismatch resolved by ADR0079 host-only operator correction and fresh
+actual recovery/forward/effects;first counterexample retained.
 
-Resume capsule: **AP-02-P2 active;35/100points6/16.** Pilot261d5d0954ee/
-18172 remains useful0.1.49/Tasks0.2.3/1urgent+1bulk. Failed disposable01site
-6f9279c3f609 retired by exact labels/images/volume provenance:private evidence
-retained,shared images/pilot/unrelated assets untouched. ADR0079 host-only fix
-implemented in3SDK operator files;runtime native guard/image/core unchanged.
-Optional private source_release from reviewed checkpoint binds original job epoch
-inside one closed transaction;postcondition enforces paused actual target.
-57affected host cases +12transport/recurrence cases pass;actual sealed-image
-rollback probe5cases pass(valid actor,resuspended actor,wrong source,enabled
-control,deliberate exception rollback),0business effects committed by probe.
-Public freeze119files/10rows unchanged/pass. No AP-G/H credit yet.
-Fresh sibling ap02-release-02/project856e90d680a2/18173 bootstrap22434complete;
-real pending/claimed work seed3534running. Inspect seed marker/result before prepare.
-Host reply source pin strengthened;9guard cases pass (70unique affected cases
-accounted for including prior suites),receipt ap02-host-source-binding.json. Add actual Bob-origin reminder before checkpoint
-and revoke after fault:valid Alice2effects must deliver,revoked Bob stays held/
-0effects. Then fresh forward operation,not replay. Prior01fault/resume/effects
-must not rerun. In-app tab16 Operator/task3,no unsaved draft;CUA part summarized.
+Resume capsule: **AP-01/AP-02 passed;AP-I active,50/100points8/16.**
+Pilot261d5d0954ee/18172 remains useful unchanged foundation0.1.49/Tasks0.2.3,
+imagebf39b8d8/inventoryd84289ff,1urgent+1bulk. In-app tab16 Operator/task3,
+no unsaved draft;CUA part summarized. No running process/test/uncertain mutation.
+Fresh02faultb995e3d6/restored original0.2.2 in newDB/current Bob auth revocation/
+separate resume/useful edit passed.2valid reminders once/attempts2+1,Bob-origin
+held/FORBIDDEN/0effects. New forward08215fca to0.2.3 preserved data/files/jobs,
+stale claim denied,2new reminders once/attempts2+1. Both fleets drained; disposable
+01and02sites retired exact ownership labels/images/mounts:private evidence kept,
+shared images/pilot/unrelated assets untouched. Do not replay their operations.
+[AP-02 decision](evidence/post-r1/application-adoption/ap02-release-decision.json).
 
-AP-E/F qualified from retained prerequisite evidence (counted once for this phase): separate Git checkout
-baselineaa2415c2 reproduced0.2.2/29211bytes; repairdb32b467/e407fb631893/
-28400bytes adds two defaults only. ADR0078/build-only composer retains6087
-foundation files/policy/Python/version;9guard cases.02compositionbf39b8d8 and
-independent replica have equal declared inventoryd84289ff; replica alias retired.
-Ordinary app-only upgrade50f3bf2f completed on populated pilot; original IDs/rows/
-file/future native job identity verified, reviewed new-pin worker profile ready.
-First inventory-hash attempt and drain preflight refusals retained in work log.
+ADR0078 independent app source baselineaa2415c2/repairdb32b467 in
+`.local/application-adoption/apps/aurora-tasks` reproduces old71c97db1 archive
+and newe407fb63/28400bytes. New app image retains6087foundation files,Python,
+policy/platformversion;two compositions match declared inventory. App source
+bundle/clean downstream delivery remains AP-04. ADR0079 optional checkpoint
+source_release pin lives only in3host operator SDK files;runtime native guards
+and sealed49/47/46 images unchanged.70unique affected host cases accounted for,
+5actual rollback cases/publicfreeze119files10rows pass;new source receipt pinned.
 
-Next: AP-E/F verified. Creating one owned disposable
-sealed49/Tasks0.2.2 sibling (different port/volumes), populate original data/files
-and real pending+claimed native jobs. Qualify ordinary registered0.2.2→0.2.3
-publication/stale refusal/effects, controlled post-publication failure, app stopped,
-post-checkpoint native authentication revocation, independent fresh original-app
-restore, separate resume/useful original records and fresh forward operation.
-Keep pilot useful and sealed49/47/46 untouched. Native app business data such as
-list membership restores to checkpoint; do not claim generic current-app-ACL
-overlay. Source/contract inspection must make this boundary explicit.
+Next: read committed Aurora Projects API/permission/tests from readonly
+bedrock-2.2 e48e04ed4cf. Select bounded native Projects model/workflow/roles,
+explicit omitted customer/logo/full Partners import,optional separately declared
+Tasks integration with both resources'current rights. Freeze contracts and new
+application-slot composition policy/feasibility before substantial app code.
+Do not expand Tasks/Canvas or redesign native UI. AP-03/04 remain unpassed.
+Current limitations include last-save-wins same-field Tasks edits(AP014),app-owned
+business ACL checkpoint semantics(AP015),held reminder summary Queued(AP018).
 
 ## Aurora Tasks release (completed goal)
 

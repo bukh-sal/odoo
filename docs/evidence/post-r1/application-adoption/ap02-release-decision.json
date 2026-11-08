@@ -1,0 +1,58 @@
+{
+  "result": "passed",
+  "acceptance": [
+    "AP-G",
+    "AP-H"
+  ],
+  "utc": "2026-11-08T21:29:56.370633+00:00",
+  "fixture": "ap02-release-02",
+  "foundation_version": "0.1.49",
+  "application_transition": "0.2.2 to 0.2.3",
+  "fault_operation": "b995e3d6-4cab-42cd-a903-17688e13e4de",
+  "forward_operation": "08215fca-679a-4bd9-a735-d28047cac5d2",
+  "checks": {
+    "actual_post_publication_failure_and_failed_app_down": true,
+    "independent_journal": true,
+    "fresh_original_application_rows_files": true,
+    "current_native_auth_revocation": true,
+    "separate_resume": true,
+    "useful_recovered_original_record": true,
+    "revoked_user_login_denied": true,
+    "revoked_original_actor_held_zero_effect": true,
+    "recovered_valid_notices": 2,
+    "recovered_attempts": [
+      2,
+      1
+    ],
+    "new_forward_original_rows_files": true,
+    "forward_job_actor_payload_logical_schedule_deadline": true,
+    "forward_stale_claim_denied": true,
+    "forward_valid_notices": 2,
+    "forward_attempts": [
+      2,
+      1
+    ],
+    "independent_pilot_useful": true
+  },
+  "private_receipt_sha256": {
+    "fault-operation.json": "e2c784e78179bdce77a92ab5b6e149efe627b435b6a559e0c35e053670836d1a",
+    "fault-seed.json": "043c161a2412c8e727623a8f69689efee0237aa3c3484fce6f51bca5620ed046",
+    "forward-operation.json": "10ebcec272373cb36d7bced41fbf161e48e5d4d4e3969b658d5ffdcebae48f1c",
+    "forward-seed.json": "65ff013670debd6082f5d53aaa473b15e5e9de18271b71610124492274028b1b"
+  },
+  "host_correction": "ADR0079 private host-child protocol2;sealed images/native authorization unchanged",
+  "bounds": [
+    "Current platform/native authentication authority overlays;application business ACL relationships restore to checkpoint",
+    "Task summary may report Queued for held authorization job;operator state distinguishes held/FORBIDDEN",
+    "Actual local fictional workflows only;no human usability or production qualification"
+  ],
+  "retirement": {
+    "project": "mp-r0-r1release856e90d680a2",
+    "containers": 53,
+    "volumes": 6,
+    "networks": 2,
+    "private_evidence_retained": true,
+    "shared_images_and_pilot_retained": true,
+    "unrelated_resources_untouched": true
+  }
+}

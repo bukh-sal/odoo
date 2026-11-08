@@ -70,11 +70,11 @@ still follows AP-01; any valid early evidence is linked, not counted twice.
   upgrade declaration and native views. Produce reproducible baseline/successor
   deployment artifacts. A native app change needs a new composed image even
   when foundation code/version stays fixed; do not claim the image is unchanged.
-- [ ] **AP-G:** Independently approve/apply a real app-only upgrade on populated
+- [x] **AP-G:** Independently approve/apply a real app-only upgrade on populated
   data. Preserve IDs, roles, assignments, files, original job actors, logical
   schedule/deadline and deduplication; demonstrate stale-claim refusal and actual
   effects. Reject unsupported versions/dependencies/drift before mutation.
-- [ ] **AP-H:** Cause a bounded post-commit/publication failure on a disposable
+- [x] **AP-H:** Cause a bounded post-commit/publication failure on a disposable
   sibling deployment, stop its app, independently restore the original app release
   into a fresh database and separately resume. Preserve current revocation and
   keep the pilot useful. Qualify a fresh forward operation and record the actual

@@ -457,3 +457,16 @@ AT-03 partition primitives: [real PostgreSQL9checks](evidence/post-r1/aurora-tas
 [composition reproduction](evidence/post-r1/application-adoption/ap01-composition-reproduction.json).
 AP-A..D passed;AP-02 recovery remains required. Real stale same-field edits are
 last-save-wins, not a conflict-prevention claim. Agent evidence is not human sign-off.
+
+
+## AP-02 independent app release and recovery
+
+[Source/composition](evidence/post-r1/application-adoption/ap02-independent-source-decision.json),
+[actual complete release decision](evidence/post-r1/application-adoption/ap02-release-decision.json),
+[first native-job recovery counterexample](evidence/post-r1/application-adoption/ap02-native-restore-counterexample.json),
+[host correction boundary](evidence/post-r1/application-adoption/ap02-host-recovery-boundary.json),
+[exact source receipt guard](evidence/post-r1/application-adoption/ap02-host-source-binding.json).
+AP-E..H passed with actual registered-app-only upgrade/fault/fresh original restore/
+separate resume/valid and revoked-actor effects. ADR0079 corrects independent host
+operator behavior;sealed runtime/native guards remain unchanged. Current native
+auth revocations are overlaid;custom business ACL rows restore to checkpoint.
