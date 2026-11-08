@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "utc": "2026-11-08T21:20:01.226175+00:00",
+  "cases": 9,
+  "unique_new_case": "Host requires reply previous_release to match selected checkpoint source or ordinary forward source",
+  "host_unique_cases_accounted_for": 70,
+  "public_contract_change": false,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "f681d0f40e0a408dde022e7c94f3195cc078795832f85c1f8c861bfc0d6bbd3d",
+    "tests/test_restored_native_release.py": "b5e87870f81e291f0ba92f27d6b9ee804d9890798b58ed340bf0a2a5b6f88895"
+  },
+  "prior": "ap02-host-recovery-boundary.json",
+  "actual_fresh_qualification": "pending"
+}

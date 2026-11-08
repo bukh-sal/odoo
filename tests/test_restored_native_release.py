@@ -1,10 +1,15 @@
 """Guard the distinct checkpoint-job and restored-publication identities."""
 from pathlib import Path
+import json
 import sys
+import tempfile
 import unittest
+from unittest.mock import Mock
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
 from modular_platform.dispatch_jobs_maintenance import reconcile_transaction
+from modular_platform.dispatch_operator import DispatchMaintenance
+from modular_platform.operator_os import OperatorError
 
 SOURCE='sha256:'+'a'*64
 TARGET='sha256:'+'b'*64
@@ -68,5 +73,20 @@ class RestoredReleaseTests(unittest.TestCase):
         def failed(*args):raise RuntimeError('classification failed')
         with self.assertRaisesRegex(RuntimeError,'classification failed'):reconcile_transaction(cr,self.data(),failed)
         # Actual PostgreSQL rollback of this temporary tag is tested separately.
+
+    def test_host_receipt_must_bind_exact_selected_source_for_forward_and_restore(self):
+        with tempfile.TemporaryDirectory() as directory:
+            for index,(source,reported,valid) in enumerate([(SOURCE,SOURCE,True),(SOURCE,TARGET,False),(None,TARGET,True),(None,SOURCE,False)]):
+                native=Mock();native.config=dict(project='owned',deployment_id=SITE,image_id='sha256:'+'c'*64,sites=[dict(site_id=SITE,database='owned')])
+                native._child.return_value=(['docker','run'],'owned-child')
+                value=dict(action='reconcile',mutation_committed=True,result=dict(previous_release=reported,target_release=TARGET,requires_independent_resume=True,dispatch_enabled=False))
+                def output(args,dest,**kwargs):Path(dest).write_text(json.dumps(value),encoding='utf-8')
+                native._private_command.side_effect=output
+                helper=DispatchMaintenance(native);dest=Path(directory)/str(index)
+                with self.subTest(source=source,reported=reported):
+                    if valid:
+                        helper.reconcile_jobs(SITE,dest,previous_release=TARGET,release_digest=TARGET,inventory_digest=TARGET,source_release=source)
+                    else:
+                        with self.assertRaises(OperatorError):helper.reconcile_jobs(SITE,dest,previous_release=TARGET,release_digest=TARGET,inventory_digest=TARGET,source_release=source)
 
 if __name__=='__main__':unittest.main()

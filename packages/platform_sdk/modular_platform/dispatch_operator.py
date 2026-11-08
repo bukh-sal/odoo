@@ -154,6 +154,7 @@ class DispatchMaintenance:
         value=load_json((directory/(action+'.stdout')).read_bytes())
         if (not isinstance(value,dict) or set(value)!={'action','mutation_committed','result'} or value['action']!=action
                 or value['mutation_committed'] is not (not preview) or value['result'].get('target_release')!=release_digest
+                or value['result'].get('previous_release')!=(source_release if source_release is not None else previous_release)
                 or not value['result'].get('requires_independent_resume') or value['result'].get('dispatch_enabled') is not False):
             raise OperatorError('Exact paused reconciliation proof missing; traffic must remain closed')
         _write_new(dest,dict(child=child,**value));return value['result']

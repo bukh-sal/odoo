@@ -63,8 +63,10 @@ inside one closed transaction;postcondition enforces paused actual target.
 rollback probe5cases pass(valid actor,resuspended actor,wrong source,enabled
 control,deliberate exception rollback),0business effects committed by probe.
 Public freeze119files/10rows unchanged/pass. No AP-G/H credit yet.
-Fresh sibling ap02-release-02/project856e90d680a2/18173 bootstrap22434running;
-inspect completion before seed. Add actual Bob-origin reminder before checkpoint
+Fresh sibling ap02-release-02/project856e90d680a2/18173 bootstrap22434complete;
+real pending/claimed work seed3534running. Inspect seed marker/result before prepare.
+Host reply source pin strengthened;9guard cases pass (70unique affected cases
+accounted for including prior suites),receipt ap02-host-source-binding.json. Add actual Bob-origin reminder before checkpoint
 and revoke after fault:valid Alice2effects must deliver,revoked Bob stays held/
 0effects. Then fresh forward operation,not replay. Prior01fault/resume/effects
 must not rerun. In-app tab16 Operator/task3,no unsaved draft;CUA part summarized.
