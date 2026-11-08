@@ -51,7 +51,7 @@ old47 native-only app adoption/update and independent recovery; generic install/
 correctly refuse that unimplemented transition. No existing guard is bypassed.
 
 Resume capsule: **AT-04a active, source consumers/real old-source witnesses passed;
-no pending mutation/test process.**60/100points,8/14checks. AT-03 decision and
+no pending mutation/test process; first real staging preflight refused safely.**60/100points,8/14checks. AT-03 decision and
 preliminary native browser remain in`evidence/post-r1/aurora-tasks/at03-*`.
 Candidate03 site/containers/6volumes/2networks retired and temporary preview closed.
 Its image5d9996937a65 is retained only until49 build; sealed47/46 unchanged.
@@ -76,7 +76,13 @@ ran against actual47 schema: Tasks4tables/6missing stage choices, Maintenance3ta
 Handles70037/24715 terminal; no new foundation update applied.
 
 Core native manifest/projection now49; app0.2.2 archive71c97db1113c unchanged.
-Next: commit this source checkpoint and build49 once on stable inputs. Do not edit
+First49 imageab958d4dbd7d built from777cb77921c. Real Maintenance staging
+preflight found implicit source versions on auth_password_policy/auth_totp and
+stopped before declaration/stage/operation/approval. Both actual source sites remain
+47; no migration/recovery needed. Source normalization now uses known engine1.0
+default (19.0.1.0 stored), with regression rejecting different values;12Tasks cases
+pass. [Receipt](evidence/post-r1/aurora-tasks/at04-preflight01.json).
+Next: commit this correction and build49 candidate02 on stable inputs. Do not edit
 consumed source during build/apply. Implement test-only lifecycle driver outside
 build inputs to declare/stage/plan/review exact47→49; Maintenance forward first,
 then Tasks fault after a real commit/publication while closed. Independent fresh47

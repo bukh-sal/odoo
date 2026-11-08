@@ -116,10 +116,37 @@ class ReleaseSite(TasksSite):
         self.phase(state,'source_qualified')
         print(json.dumps(dict(result='populated_source_ready',site=self.args.site,tables=len(effect[0]['retained_tables']),missing_stages=len(effect[0]['stage_additions']))))
 
+    def seed_work(self):
+        state=self.state();assert state['phase']=='source_qualified'
+        assert load(self.private/'target.json')['image_id']==ta.SOURCE_IMAGE
+        assert not (self.local/'source-work.json').exists()
+        source='FIXTURE='+repr(load(self.local/'fixtures.json'))+'\nAPP='+repr(load(self.local/'app-fixtures.json'))+'\nSITE='+repr(self.args.site)+'\n'+'''
+import base64,json
+from odoo import api
+from odoo.addons.mp_identity.scopes import scoped_environment
+result={}
+for space,who,points in [('A','alice',[5,8]),('B','bob',[13,21])]:
+ actor=scoped_environment(api.Environment(env.cr,FIXTURE['users'][who]['id'],{},su=False),FIXTURE['workspaces'][space]['public_id'])
+ note=actor['mp.example.note'].create(dict(title='Original47 scoped note '+space,body='Retain original scope and revision'))
+ rows=actor['mp.background.task'].create([dict(name='Original47 workload '+space+' '+str(i),points=p) for i,p in enumerate(points)])
+ result[space]=dict(note=note.id,tasks=rows.ids,count=len(rows),points=sum(points))
+actor=api.Environment(env.cr,FIXTURE['users']['alice']['id'],{},su=False)
+attachment=actor['ir.attachment'].create(dict(name='original47-business-witness.txt',mimetype='text/plain',
+ res_model='mp.aurora.task' if SITE=='tasks' else 'maintenance.request',res_id=APP['task'] if SITE=='tasks' else APP['request'],
+ datas=base64.b64encode(('Owned47 file witness '+SITE).encode()).decode()))
+env.cr.commit()
+print('MP_AT_SOURCE_WORK='+json.dumps(dict(workspaces=result,attachment=attachment.id)))
+'''
+        raw=self.native(state,'source-work-seed',[],source)
+        rows=[json.loads(r.split('=',1)[1]) for r in raw.decode().splitlines() if r.startswith('MP_AT_SOURCE_WORK=')]
+        assert len(rows)==1
+        write(self.local/'source-work.json',rows[0])
+        self.phase(state,'source_work_ready')
+
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('actions',nargs='+',choices=['prepare','initialize','install_references','observe','status'])
+    parser.add_argument('actions',nargs='+',choices=['prepare','initialize','install_references','observe','seed_work','status'])
     parser.add_argument('--run',required=True)
     parser.add_argument('--site',required=True,choices=['tasks','maintenance'])
     parser.add_argument('--port',required=True,type=int)

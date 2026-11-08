@@ -94,5 +94,15 @@ class TasksAdoption(unittest.TestCase):
         self.assertIsNone(ta.adoption_target(self.declaration))
         self.assertEqual(len(ta.native_changes([dict(site_id=self.site,native_modules=effect['native_modules'])],self.declaration)),1)
 
+    def test_retained_manifest_without_version_uses_the_reviewed_engine_default(self):
+        self.before['native_manifests']['web'].pop('version')
+        self.after['native_manifests']['web'].pop('version')
+        effect=self.declaration['site_effects'][0]
+        effect['native_modules'].append(dict(addon='web',state='installed',version='19.0.1.0'))
+        effect['native_modules'].sort(key=lambda r:r['addon'])
+        self.assertTrue(self.check())
+        effect['native_modules'][-1]['version']='19.0.999.0'
+        with self.assertRaises(OperatorError):self.check()
+
 
 if __name__=='__main__':unittest.main()

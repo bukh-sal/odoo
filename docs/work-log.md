@@ -2033,3 +2033,13 @@ gaps and Maintenance3tables/noTasks. No native49 mutation yet. Source helper
 preflights reject pending modules, unexpected reminder schema, native-scope jobs
 and previous metadata. Both provisioning handles terminal. Next source commit and
 49build, then actual forward/fault/recovery/useful peer. Progress60/100,8/14.
+
+- First49 imageab958d4dbd7d built/never deployed. Maintenance declaration preflight
+  caught retained auth_password_policy/auth_totp manifests without version; direct
+  key lookup failed. Confirmed no declaration/operation or native update. Corrected
+  source comparison to existing engine default1.0, preserving strict changed-value
+  rejection;12Tasks contract/guard/planner cases pass. Both source sites stay47.
+  Rebuild a distinct49 candidate after commit; no artifact bytes/version replaced.
+- Seeded two scoped Notes, four non-scheduled reference tasks and one owned file
+  witness per source site using real user/scoped model authority. No native app
+  reminders or fake grants. New stage declaration will observe current witnesses.

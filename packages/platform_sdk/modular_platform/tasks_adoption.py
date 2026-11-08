@@ -106,7 +106,7 @@ def validate_transition(before,after,descriptor,declaration,*,site_ids,effects=N
         raise OperatorError('Tasks adoption has unlisted or unrelated executable changes')
     check_effects(declaration['site_effects'],site_ids)
     for row in declaration['site_effects'][0]['native_modules']:
-        if row['addon'] not in original or _version(original[row['addon']]['version'])!=row['version']:
+        if row['addon'] not in original or _version(original[row['addon']].get('version','1.0'))!=row['version']:
             raise OperatorError('Installed source native module differs from sealed47')
     if effects is not None and effects!=declaration['site_effects']:
         raise OperatorError('Application data/modules changed after independent review')
