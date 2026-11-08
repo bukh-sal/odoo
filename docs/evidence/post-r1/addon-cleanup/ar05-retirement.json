@@ -1,0 +1,195 @@
+{
+  "result": "passed_exact_owned_retirement",
+  "utc": "2026-11-08T01:36:47.475798+00:00",
+  "containers_removed": 259,
+  "volume_removal_events": 150,
+  "unique_volume_names": 146,
+  "networks_removed": 48,
+  "owned_projects": 24,
+  "prototype_images_removed": 4,
+  "owned_image_tags_removed": 14,
+  "final_alias": "modular-platform:foundation-r1-core47",
+  "no_owned_container_volume_network_remaining": true,
+  "private_logs_checkpoints_exports_preserved": true,
+  "unrelated_existing_Docker_assets_preserved": true,
+  "global_prune": false,
+  "late_created_timeout_artifacts_verified_empty_and_removed": true,
+  "receipts": [
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-01/core/retirement.json",
+      "sha256": "2cc073e2fd68d0d94ed36733e1f116f9298025bf4006212af45a5a9990d64881",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-02/regression/retirement.json",
+      "sha256": "c584fc7f279517f46b8bbcacad9497072d24ba4392e1ab75239afef09a1ce0e4",
+      "containers": 2,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-03/core/retirement.json",
+      "sha256": "9519857ed2e4ba400d46f3b3d04cb3c86b13f9a309f7080430987bf3c42236b2",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-03/regression/retirement.json",
+      "sha256": "9ec7c8c052ce7d1a6bd6547ed8a6749a6d985d69a01c610942886c971ca1651d",
+      "containers": 2,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-04/communication/retirement.json",
+      "sha256": "9cdb34b3250e67c727b1ebd153bf2549c69295aefee4e160a0d1fcd4810d0a2e",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-04/core/retirement.json",
+      "sha256": "60b603fd338fcfa132bf937d16470323e69ce20df8bc8cd7795b439c52d79e50",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-04/maintenance/retirement.json",
+      "sha256": "5112ec3f1f45bcd7346a2d99439599660aec38c68c601452ba232481aff8312c",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar02-04/regression/retirement.json",
+      "sha256": "78dfa482c5aba010df7725d30842548ee4f3d1510dbf2fbaaf6dc2759d84a413",
+      "containers": 2,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar03-01/core/retirement.json",
+      "sha256": "c2024d9ce329cb58befa0413cbdd16e1c8bdeb21d43e600511f0a8610cdb3558",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar03-01/layout-regression/retirement.json",
+      "sha256": "889a2c2eccb76aaaa4967028a28aab13165d8bf2a0cb213a108bc8cf2480adcd",
+      "containers": 2,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar03-02/layout-regression/retirement.json",
+      "sha256": "b8aaa8b6e4049c81af05104ac5f5e5fa0a3d2c228e4420c05586eea695f43383",
+      "containers": 2,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar04-01/layout-regression/retirement.json",
+      "sha256": "f69e50308042f2b8c925b6527b6d47b6dbb5db22193e02f88a23dc9ef1d363a3",
+      "containers": 1,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar04-02/layout-regression/retirement.json",
+      "sha256": "cd67c3641d9ebb7c3aa90ea2e0e54085940b756102665accbcb6b647897e66d8",
+      "containers": 1,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar04-03/layout-regression/retirement.json",
+      "sha256": "1f51e8c12de67093fe50b977ed85d51f885f7e120f48966db10c6b17c84201fe",
+      "containers": 2,
+      "volume_removal_events": 7,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar04-peer-01/aurora/retirement.json",
+      "sha256": "8525dc491b5096a2123809a671e2835c3d9d9b2d9b7d0e8cbc140aec4a2969eb",
+      "containers": 29,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar05-clean-01/aurora/retirement.json",
+      "sha256": "0ee7798d498db02aef1b65bc8c3a38da33dc248aa96e265a5c267549d9d270d3",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar05-clean-01/core/retirement.json",
+      "sha256": "0560e02b983c73c54e52e371964cf41643b951b2e400b0391caf3e9d8a36f18f",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar05-clean-01/maintenance/retirement.json",
+      "sha256": "1e6acc8cd38246dc515acd8bfecdd2553b9517d99cdcc21520d35d5ac5e30cfb",
+      "containers": 7,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar05-native-01/layout-regression/retirement.json",
+      "sha256": "6ca0dc90e56e1bd68e6199ddccbccb2dc33827976f1b4ac860353306b4d263ab",
+      "containers": 2,
+      "volume_removal_events": 7,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/profiles/ar05-native-01/regression/retirement.json",
+      "sha256": "e6db30d2416133d5fbca909a8ede8aaeeb5d046d408f8bbcad44961996b6b16c",
+      "containers": 2,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/aurora46/private/reference/ar-retirement.json",
+      "sha256": "d1b0a94443ee80e598604da2d3569502d01b912d4e33c7530c45f81f35d5cd57",
+      "containers": 21,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/baseline46/private/reference/ar-retirement.json",
+      "sha256": "bd1da670e0933a10d75cb25b1c1492c9a3c6b4f9ed0f93f6bf9a7422d89f0898",
+      "containers": 74,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/consumer47/private/reference/ar-retirement.json",
+      "sha256": "2e10c53c38a37b3c6c3991f9a0d96b74a5c248f74d4ca8c9bb467ba4da39e863",
+      "containers": 16,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/fault46/private/reference/ar-retirement.json",
+      "sha256": "fa2ab0cb0cf22a754e512ef29a8b2dc6d1303b06d3d253dfc1c6bce0efe6d32f",
+      "containers": 36,
+      "volume_removal_events": 6,
+      "networks": 2
+    },
+    {
+      "receipt": ".local/addon-cleanup/late-bind-retirement.json",
+      "sha256": "8410e7c0094e958f6f3ca55c9c97f4f66eaa33f5419c2bf8904027eb376a9ea8",
+      "containers": 2,
+      "volume_removal_events": 4,
+      "networks": 0
+    }
+  ],
+  "limits": "Counts cover recorded AR test retirement receipts; four recreated empty volumes are separate removal events under already-used names. Earlier image removals retain their AR-03 evidence scope."
+}

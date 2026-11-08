@@ -1,0 +1,52 @@
+{
+  "result": "passed_isolated_consumer",
+  "utc": "2026-11-08T01:17:06.125439+00:00",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "kit_source_commit": "66ca44dde7a631f070d2bcdce4cadfd7bdde0d2e",
+  "source_isolated": true,
+  "python_project_local": true,
+  "offline_hash_locked_setup": true,
+  "catalog_archives": 21,
+  "workspace_activations": 6,
+  "native_plugins": 3,
+  "backend_checks": {
+    "phase": "passed",
+    "run_id": "a0e27831-fe5d-4e08-a016-e848bd9364a5",
+    "checks": [
+      "fresh distinct-credential human sessions and current client release",
+      "one scoped Note in each workspace; native Odoo list/form descriptors and scoped record reads",
+      "Alice viewer write denied in B; Bob cannot read A record",
+      "native Notes Labels extension through its registered binding",
+      "minimal optional Canvas reference uses native creation and registered custom-page service"
+    ],
+    "notes": {
+      "A": {
+        "id": "8eaaa9a5-37ee-4943-a043-8453313ad71b",
+        "title": "Release reference A",
+        "body": "Minimal backend qualification.",
+        "revision": 2,
+        "labels": [
+          "reference"
+        ],
+        "updated_at": "2026-11-08T01:05:25.533975Z"
+      },
+      "B": {
+        "id": "49aa9d8c-6cd6-4818-bd9b-1adbd4026785",
+        "title": "Release reference B",
+        "body": "Minimal backend qualification.",
+        "revision": 1,
+        "labels": [],
+        "updated_at": "2026-11-08T01:05:25.457652Z"
+      }
+    },
+    "board_native_id": 1,
+    "limits": [
+      "Backend HTTP/native descriptors only; no browser rendering, accessibility, worker, performance or full G7 claim."
+    ]
+  },
+  "minimal_notes": 2,
+  "minimal_canvas_boards": 1,
+  "no_existing_control_or_application_data_copied": true,
+  "private_receipt_sha256": "7bbb86d5c588334347d32e3765b0c80eea3f27a342cb4f1240215e4f5de10397"
+}

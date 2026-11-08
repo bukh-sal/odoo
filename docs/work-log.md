@@ -1759,3 +1759,25 @@ proofs retain separate scopes. AR-L passed; AR-04 decision80points12/16checks.
 AR-05/AR-M sole active next: clean final-image profiles, then actual reproduction,
 portable consumer, final host/native/browser/jobs/privacy and AR seal/handoff/
 exact cleanup. No running test/build or user blocker; all4owned targets ready.
+
+AR-05 runtime qualification complete01:38UTC; final artifact closeout remains.
+Cold final47profiles13/14/15 passed, no forced IAP/mail/app UI. No-cache/network-
+disabled replica0a09 reproduced c69inventory/all10comparisons/6,276inputs. Draft
+55component/820MBkit source66ca assembled; isolated offline operator/21archive
+import/3nativeplugins6scopes/backend5checks passed. Final601host run600passes/
+1existing skip in471.288s; exact-image native9cases passed. In-app native owner/
+viewer forms and single-card Canvas passed; selector intentionally opens new tabs,
+initial launcher inspection corrected without UI code changes. Screenshots saved.
+Actual final-image8bulk jobs completed once and1urgent notification once, lanes
+drained. Finite audit80known generated AR credentials across23,974files/50archives
+found0matches; source/layer/bounds/unchanged-dependency limitations recorded.
+
+Exact AR retirement:259containers,150volume-removal events/146unique names,
+48networks. Two old Windows bind requests materialized late as never-started
+containers and4empty auto-created volumes; identified by exact project/labels/
+timestamps/references, emptiness verified before removal. Image cleanup refused
+their ancestor reference before deletion; after reconciliation4obsolete images/
+14owned tags retired. Final stable47alias and sealed46/support images retained;
+unrelated assets preserved. No owned container/volume/network remains. AR-M/N/O
+passed95points15/16; AR-P final source refresh/privacy/seal/handoff active, no user
+blocker or uncertain mutation. Private logs/checkpoints/exports retained.

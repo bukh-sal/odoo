@@ -1,0 +1,29 @@
+{
+  "result": "passed",
+  "utc": "2026-11-08T01:02:57.328226+00:00",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "tests": 9,
+  "records": [
+    {
+      "profile": "regression",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "log_sha256": "418949a69e15f5f218c0fd3c2c30358d6094b22467b27c496136653793b5b805"
+    },
+    {
+      "profile": "layout-regression",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "log_sha256": "afd5da7b6bf1e75abfae80ad733a2bd6043c42ffb95f1b173c2a9c8d799841cc"
+    }
+  ],
+  "scope": [
+    "local editor upload/image/link-preview",
+    "inbound mailbox polling/deactivation",
+    "identity/native views/record permissions",
+    "retirement archive privacy/immutability/raw numeric precision"
+  ]
+}

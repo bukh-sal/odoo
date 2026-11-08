@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "utc": "2026-11-08T01:29:19.003698+00:00",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "completed_once": 8,
+  "exact_report_count": 2,
+  "exact_points": 10,
+  "urgent_notification_once": true,
+  "reviewed_urgent_and_bulk_lanes": true,
+  "drained": true,
+  "private_receipts": {
+    "ar05-jobs-bulk.json": "77317c0a39618590d60b78d36158dd841337098f12815b0c6f9a79fd5658cd80",
+    "ar05-jobs-drain.json": "ca3e71005e6a360235fc5e3ccdf7a874092e7d813a1dea1b86df07c97e6cb270",
+    "ar05-jobs-start.json": "91d8aae5b65512e9b86faaaaa67fae59f1b25c649da7ba5f7759a41103cd72ce",
+    "ar05-jobs-urgent.json": "59ee4d175838a802f5dec9047d2594ae4528924d94274e701a94c90305515400",
+    "ar05-jobs-verify.json": "00faf8d1e613d4e73321bc8d0a65ab7cfdf4663fdc546caa3f4511b26330314e"
+  }
+}

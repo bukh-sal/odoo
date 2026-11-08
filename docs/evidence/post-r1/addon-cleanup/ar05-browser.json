@@ -1,0 +1,35 @@
+{
+  "result": "passed",
+  "utc": "2026-11-08T01:17:06.127439+00:00",
+  "browser": "in-app browser",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "scope": [
+    "fictional Alice login",
+    "workspace A native Odoo list/form shows only A note",
+    "workspace B native viewer form has no editable fields/New control and shows only B note",
+    "optional custom Canvas page has the pre-existing single minimal reference card"
+  ],
+  "native_record_screens": true,
+  "viewer_readonly": true,
+  "one_card_reference_only": true,
+  "no_ui_source_changes": true,
+  "workspace_links_open_new_tabs": true,
+  "initial_launcher_tab_was_not_the_selected_workspace": true,
+  "test_created_tabs_closed": true,
+  "screenshots": {
+    "ar05-native-notes.jpg": {
+      "bytes": 23769,
+      "sha256": "3b63fc318dcb4dfe6348b426580d7f32e8020e42bf1b0128e30372edf317a1cb"
+    },
+    "ar05-native-viewer.jpg": {
+      "bytes": 22405,
+      "sha256": "ac86c18223970dcec467b81157211728d19b0375ffeef956b3c9a6056ff9be14"
+    },
+    "ar05-minimal-canvas.jpg": {
+      "bytes": 49577,
+      "sha256": "d664082a0f1604827c204372e2cdb07ce4a6f79ca2802b787ee1eb548f7f00fc"
+    }
+  },
+  "limits": "Smoke verification at these declared flows; no new theme, accessibility matrix or complete application product qualification."
+}

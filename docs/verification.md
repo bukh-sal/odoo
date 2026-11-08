@@ -401,3 +401,14 @@ AR-04 final imagea572: [both populated forward operations and job/workflow reten
 and [AR-04 passed decision](evidence/post-r1/addon-cleanup/ar04-decision.json).
 AR-J/K/L passed; total12/16ARchecks/80points. AR-05 release qualification remains
 open; prototype receipts remain historical evidence at their exact scopes.
+
+AR-05: [clean13/14/15module profiles](evidence/post-r1/addon-cleanup/ar05-clean-profiles.json),
+[independent no-cache inventory reproduction](evidence/post-r1/addon-cleanup/ar05-reproduction.json),
+[isolated consumer](evidence/post-r1/addon-cleanup/ar05-consumer.json),
+[600host passes/one existing skip](evidence/post-r1/addon-cleanup/ar05-host.json),
+[9native cases](evidence/post-r1/addon-cleanup/ar05-native.json),
+[native in-app browser/readonly viewer/minimal Canvas](evidence/post-r1/addon-cleanup/ar05-browser.json),
+[exact47urgent/bulk jobs](evidence/post-r1/addon-cleanup/ar05-jobs.json),
+[finite80-value draft audit](evidence/post-r1/addon-cleanup/ar05-privacy-draft.json),
+and [exact owned retirement](evidence/post-r1/addon-cleanup/ar05-retirement.json).
+Final source refresh/privacy/seal checks remain the artifact closeout step.

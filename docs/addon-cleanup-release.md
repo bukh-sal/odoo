@@ -1,10 +1,19 @@
 # Owned addon extraction release
 
-Current qualification is in [the checklist](implementation-status.md) and
-[AR plan](../planning/addon_cleanup.md). Core46 stays sealed. Core47 prototypes
-are evidence at their exact source/image scopes; this document is not a final
-release approval. Standard record screens remain native. No external Odoo
-package or major-upgrade compatibility is a goal.
+Qualification is recorded in [the checklist](implementation-status.md),
+[AR plan](../planning/addon_cleanup.md) and the kit's
+`qualification/foundation-release.json`. The final local kit is
+`.local/releases/foundation-r1-core47`. Its inventory/checksums and qualification
+receipt identify the sealed snapshot; source-archived progress files are dated
+development records. Core46 stays sealed and unchanged. Standard record screens
+remain native. No external Odoo package or major-upgrade compatibility is a goal.
+
+Final image is
+`sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a`, inventory
+`sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad`;
+local alias`modular-platform:foundation-r1-core47`. A separate no-cache,
+network-disabled image reproduced all10runtime inventory comparisons from6,276
+recorded inputs. The alias is convenience; operator actions bind immutable IDs.
 
 The source roots are `engine/`, `framework_addons/`, `applications/`, `examples/`
 and explicit `tests/addons/`. Runtime images materialize one installed layout.
@@ -66,5 +75,42 @@ publication failure, stopped-app fresh recovery, separate resume, and16useful
 Aurora peer jobs. The final forward qualification uses revision20 with Aurora
 task/list/stage/membership witnesses and real Maintenance pending/stale job and
 filestore witnesses. AR-05 still requires final reproduction, portable consumer,
-native browser, privacy and exact owned resource retirement before a release
-can be called qualified.
+native browser, privacy and exact owned resource retirement. The final evidence
+records both final-image forward operations and exact final-image stopped-app
+fresh recovery/separate resume. Prototype receipts retain their earlier scopes.
+
+## Verified release scope and starting again
+
+Cold installations pass with13core modules,14Aurora-only and15Maintenance.
+Maintenance uses generic mail, with no forced Discuss/gateway/tours. The upgraded
+old mail deployment retains those previously bundled capabilities explicitly.
+The available policy has24production/example addons; source also keeps25explicit
+regression/feasibility fixtures outside production discovery.22inherited regression
+fixtures remain; RPC is test-only.628unused production addon trees plus IAP source
+were removed. Engine/framework/app/example roots are authoritative.
+
+The isolated kit operator was created offline with hash-locked binary wheels,
+imported21reviewed own archives, initialized a fresh realm and independently
+installed3reference plugins in6workspace activations. Five backend walkthrough
+checks passed. In-app browser verification covered native owner/list/form and
+read-only viewer behavior plus the existing one-card Canvas custom page. No UI
+source/theme/product expansion was needed. Current host suite:600passes/1existing
+Windows skip;9native cases passed. Exact final-image urgent/bulk lanes completed
+8bulk jobs once and1reminder once, then drained. Both populated source systems'
+workflows, roles, data, attachments and pending/stale jobs survived the common update.
+
+Use [the kit instructions](release-kit.md) to verify checksums, set up a **fresh**
+project-local operator, import the selected catalog and initialize a new
+loopback-only reference realm. Use the kit's recorded interpreter/source paths;
+do not reuse retired test databases or replay their operations. The archived
+source includes native lifecycle, recovery and useful regression instructions.
+Source refreshes may update evidence/bootstrap documentation only when the exact
+selected application input hashes still match; they cannot replace an image.
+
+All recorded AR test containers/volumes/networks are retired. Private logs,
+checkpoints, exports and receipts remain under`.local/addon-cleanup` for diagnosis;
+they are not in the kit. Retired prototype images and owned transient tags are
+listed in the retirement evidence. The selected47image, sealed46image and useful
+locked support/dependency images remain; unrelated Docker assets were preserved.
+No production deployment or publication occurred. Checksums are corruption
+checks, not publisher authentication or executor approval.

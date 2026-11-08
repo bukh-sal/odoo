@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "utc": "2026-11-08T00:58:31.034088+00:00",
+  "command": "explicit Python16 -m unittest discover -s tests -p test_*.py -q",
+  "run": 601,
+  "passed": 600,
+  "skipped": 1,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 471.288,
+  "private_log_sha256": "c12d90d8a8f97a5941102bad92e40b97c3aa292cd08184bc942700968889a4b8",
+  "scope": "Full current host suite including source layout, owned transition, release seal profiles, archive contracts, native authorization/planning/recovery/jobs and golden regressions. Native/browser/runtime cases remain separately required."
+}
