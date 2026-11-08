@@ -64,6 +64,15 @@ def main():
         seed['phase']='pending_and_claimed';write(seedpath,seed)
         c=Client(site,'alice')
         attachment,=c.native('ir.attachment','create',[[dict(name='Original application brief '+a.label+'.txt',res_model='mp.aurora.task',res_id=seed['tasks'][0],datas=base64.b64encode(b'Original fictional app-only release file witness.').decode(),mimetype='text/plain')]],workspace=None)
+        if a.label=='fault':
+            fixture=load(site.local/'fixtures.json')
+            listing=c.native('mp.aurora.task','read',[[seed['tasks'][0]],['list_id']],workspace=None)[0]['list_id'][0]
+            c.native('mp.aurora.task.list','write',[[listing],dict(member_ids=[(6,0,[fixture['users']['bob']['id']])])],workspace=None)
+            bob=Client(site,'bob')
+            task,=bob.native('mp.aurora.task','create',[[dict(name='Original actor revoked after checkpoint',list_id=listing,
+                assignee_id=fixture['users']['operator']['id'],due_date=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S'),reminder='0')]],workspace=None)
+            seed['revoked_actor_task']=task
+            seed['revoked_actor_job']=site.sql(state,'original-bob-job','SELECT job_id FROM mp_aurora_reminder WHERE task_id='+str(task)+';').decode().strip()
         seed.update(phase='seeded',attachment=attachment,before=snapshot(site,state,seed['jobs']),business=business(site),files=files(native.observer));write(seedpath,seed)
     elif a.phase=='prepare':
         assert not path.exists();assert load(seedpath)['phase']=='seeded'
@@ -155,14 +164,19 @@ def main():
             record.update(phase='starting_effects',profile_approval=review['approval']);write(path,record)
             assert op.run('profile-apply',approval=review['approval'])['state']=='ready'
             ids=','.join("'"+j+"'" for j in seed['jobs'])
+            effect_state=sync(site)
             for _ in range(60):
-                rows=json.loads(site.sql(sync(site),'effects-'+str(time.monotonic_ns()),"SELECT jsonb_agg(jsonb_build_object('id',public_id,'state',state,'attempts',attempts,'result',result)) FROM mp_job WHERE public_id IN ("+ids+");"))
-                if all(row['state']=='completed' for row in rows):break
+                rows=json.loads(site.sql(effect_state,'effects-'+str(time.monotonic_ns()),"SELECT jsonb_agg(jsonb_build_object('id',public_id,'state',state,'attempts',attempts,'result',result)) FROM mp_job WHERE public_id IN ("+ids+");"))
+                if all(row['state'] in {'completed','held','failed','dead_letter','cancelled'} for row in rows):break
                 time.sleep(1)
             assert len(rows)==2 and all(row['state']=='completed' and row['result']==dict(outcome='notified') for row in rows),rows
             for row in rows:assert row['attempts']==(2 if row['id']==seed['jobs'][0] else 1),rows
             taskids=','.join(map(str,seed['tasks']))
             assert site.sql(sync(site),'effect-count-'+a.label,'SELECT count(*),count(DISTINCT task_id) FROM mp_aurora_notification WHERE task_id IN ('+taskids+');').strip()==b'2|2'
+            if 'revoked_actor_job' in seed:
+                assert site.sql(effect_state,'revoked-actor-effect',"SELECT state,attempts,error_code FROM mp_job WHERE public_id='"+seed['revoked_actor_job']+"';").strip()==b'held|0|FORBIDDEN'
+                assert site.sql(effect_state,'revoked-actor-no-notice','SELECT count(*) FROM mp_aurora_notification WHERE task_id='+str(seed['revoked_actor_task'])+';').strip()==b'0'
+                record['revoked_original_actor_stays_held_without_effect']=True
             drained=op.run('drain');assert drained['state']=='paused'
             record.update(phase='verified',effects=2,exact_attempts=True,final_drain=drained)
         write(path,record)

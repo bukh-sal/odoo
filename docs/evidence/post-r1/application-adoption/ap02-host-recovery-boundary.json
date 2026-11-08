@@ -1,0 +1,39 @@
+{
+  "result": "passed_boundary_only",
+  "utc": "2026-11-08T21:17:59.857734+00:00",
+  "adr": "ADR0079",
+  "host_cases": 57,
+  "host_modules": [
+    "test_restored_native_release",
+    "test_restore_dispatch",
+    "test_reference_recovery",
+    "test_native_auth_recovery",
+    "test_native_dispatch_resume",
+    "test_unchanged_recovery"
+  ],
+  "additional": {
+    "result": "passed",
+    "cases": 12,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log_sha256": "92865877683f45d447dfe2864381492be29b96ecc3fdadd0c4c1677536eec161",
+    "modules": [
+      "test_dispatch_transport",
+      "test_recurrence"
+    ]
+  },
+  "actual_rollback_probe": "ap02-host-restore-probe.json",
+  "public_freeze": {
+    "result": "passed",
+    "files": 119,
+    "rows": 10
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/dispatch_jobs_maintenance.py": "969704f4b8d1e8776c44b0ca6fa449b0b4260d1a1c17a6b759c6163ff5f88728",
+    "packages/platform_sdk/modular_platform/dispatch_operator.py": "5b416465d825ab9b1e0c2f483cd25774169495163fa667b240cd8608efe03c83",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "95ab6fca2be8ade42796c7feabb739e3ab1674cf3b782519d5a56409215f13f9"
+  },
+  "fresh_independent_restore_qualification": "pending",
+  "runtime_image_or_native_authorization_changed": false
+}

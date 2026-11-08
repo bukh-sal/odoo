@@ -11,7 +11,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-02 independent application release — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-G/H populated app-only publication, stale-claim checks and independent original-app recovery on a fresh disposable sibling.** [Plan](../planning/application_adoption.md).
+- Active item: **AP-02-P2 required host recovery release-identity fix (ADR0079);then fresh AP-G/H qualification.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -38,8 +38,8 @@ across its four checks. No sub-agents are authorized.
 | AP-D | passed | Limitations010 repaired/014 stale-edit boundary measured; app0.2.3 selected/qualified daily path; updated pilot walkthrough |
 | AP-E | passed | [Independent source decision](evidence/post-r1/application-adoption/ap02-independent-source-decision.json), separate app Git and exact pinned49 composition |
 | AP-F | passed | Immutable0.2.3 defaults repair;baseline bytes and successor inventory reproduced;real native creation/ownership |
-| AP-G | not_run | Populated approved app-only upgrade, old jobs/roles/files, stale refusal and effects |
-| AP-H | not_run | Failed-app-down independent original-app restore, current authority, separate resume/useful pilot |
+| AP-G | failed | Populated approved app-only upgrade, old jobs/roles/files, stale refusal and effects |
+| AP-H | failed | Failed-app-down independent original-app restore, current authority, separate resume/useful pilot |
 | AP-I | not_run | Source-backed bounded second-app/role/integration contract and freeze |
 | AP-J | not_run | Useful native second-app workflow and direct unauthorized-operation checks |
 | AP-K | not_run | Optional compatible extension, both-resource authority, integration-absent independence |
@@ -49,18 +49,25 @@ across its four checks. No sub-agents are authorized.
 | AP-O | not_run | Clean downstream isolated execution, meaningful automated checks/repro/hygiene |
 | AP-P | not_run | Checksummed delivery, retained usable pilot, complete records and owned cleanup |
 
-Blocker register: AP-B-001 resolved by immutable Tasks0.2.3/current-user defaults,
+Blocker register: AP-H-001 required implementation defect:restored native jobs are held/FORBIDDEN because checkpoint job release differs from fresh restored publication/control. Actual0effects;actor/resource valid in rollback diagnosis. ADR0079 freezes host-only private protocol2 correction. No user-input blocker. AP-B-001 resolved by immutable Tasks0.2.3/current-user defaults,
 actual native list/task creation and server ownership checks. No user-input blocker.
 
-Resume capsule: **AP-01/AP-E/F passed; AP-G/H active,35/100points6/16.** Pilot261d5d0954ee/
-18172 remains usable with1urgent/1bulk, imagebf39b8d8/inventoryd84289ff,
-platform0.1.49/Tasks0.2.3. AP-02 source bootstrap49273 and seed88792 are complete on ap02-release-01/18173/project6f9279c3f609. Original2tasks/file/2jobs(one committed claim) recorded privately. Preparation94510running after two diagnosed fixture wire-key errors before registration/native mutation;inspect result before continuation. No uncertain pilot mutation. In-app tab16
-Operator/task3, no unsaved draft, CUA daily part summarized. Role/concurrency/outage
-checks all terminal passed; exact urgent lane restarted/delivered one notice.
-Current user defaults and immutable ownership proven; same-field stale writes are
-last-save-wins (AP-LIM-014), disjoint fields survive. Native notification task_id
-read was intentionally denied to a non-system user; diagnosed groups restriction,
-not missing delivery. Do not replay once-only seed/check/upgrade commands.
+Resume capsule: **AP-02-P2 active;35/100points6/16.** Pilot261d5d0954ee/
+18172 remains useful0.1.49/Tasks0.2.3/1urgent+1bulk. Failed disposable01site
+6f9279c3f609 retired by exact labels/images/volume provenance:private evidence
+retained,shared images/pilot/unrelated assets untouched. ADR0079 host-only fix
+implemented in3SDK operator files;runtime native guard/image/core unchanged.
+Optional private source_release from reviewed checkpoint binds original job epoch
+inside one closed transaction;postcondition enforces paused actual target.
+57affected host cases +12transport/recurrence cases pass;actual sealed-image
+rollback probe5cases pass(valid actor,resuspended actor,wrong source,enabled
+control,deliberate exception rollback),0business effects committed by probe.
+Public freeze119files/10rows unchanged/pass. No AP-G/H credit yet.
+Fresh sibling ap02-release-02/project856e90d680a2/18173 bootstrap22434running;
+inspect completion before seed. Add actual Bob-origin reminder before checkpoint
+and revoke after fault:valid Alice2effects must deliver,revoked Bob stays held/
+0effects. Then fresh forward operation,not replay. Prior01fault/resume/effects
+must not rerun. In-app tab16 Operator/task3,no unsaved draft;CUA part summarized.
 
 AP-E/F qualified from retained prerequisite evidence (counted once for this phase): separate Git checkout
 baselineaa2415c2 reproduced0.2.2/29211bytes; repairdb32b467/e407fb631893/

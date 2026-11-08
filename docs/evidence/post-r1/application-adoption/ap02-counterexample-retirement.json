@@ -1,0 +1,11 @@
+{
+  "result": "retired",
+  "project": "mp-r0-r1release6f9279c3f609",
+  "containers": 43,
+  "volumes": 6,
+  "networks": 2,
+  "private_evidence_retained": true,
+  "pilot_retained": true,
+  "shared_images_retained": true,
+  "unrelated_resources_untouched": true
+}

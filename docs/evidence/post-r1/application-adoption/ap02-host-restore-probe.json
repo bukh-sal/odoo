@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "cases": [
+    "valid",
+    "revoked_actor",
+    "wrong_source",
+    "enabled_control",
+    "exception_rollback"
+  ],
+  "actual_postgresql_rollback": true,
+  "sealed_runtime_unchanged": true,
+  "business_effects_applied": 0,
+  "original_job_actor_payload_schedule_preserved": true
+}

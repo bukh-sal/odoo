@@ -411,7 +411,8 @@ class RestoreExecutor:
         if dispatch_profile is not None:
             helper=self._dispatch_helper(manifest=manifest);digest=data_digest(decision['restored_release_lock'])
             jobs=helper.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
-                previous_release=digest,release_digest=digest,inventory_digest=restored['release_lock']['core_inventory_digest'],review_id=decision['review']['review_id'])
+                previous_release=digest,release_digest=digest,inventory_digest=restored['release_lock']['core_inventory_digest'],review_id=decision['review']['review_id'],
+                source_release=dispatch_profile['control']['release_digest'])
             if not jobs['resume_allowed']:raise OperatorError('Restored uncertain effects require independent reconciliation')
             dispatch_ready=helper.require_profile(helper.inspect(configuration=target),closed=True)
             _write_new(directory/'dispatch-ready.json',dispatch_ready)

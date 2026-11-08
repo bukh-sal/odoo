@@ -7,6 +7,7 @@ import ast
 import hashlib
 import json
 from pathlib import Path
+import re
 from uuid import UUID,uuid4
 from .contracts import load_json
 from .operator_os import OperatorError,protect_directory
@@ -122,7 +123,7 @@ class DispatchMaintenance:
         tags=load_json(raw)
         return self.inspect(configuration=config,release_digest=tags['published'],control_release=tags['control'])
 
-    def reconcile_jobs(self,operation,directory,*,previous_release,release_digest,inventory_digest,preview=False,configuration=None,review_id=None):
+    def reconcile_jobs(self,operation,directory,*,previous_release,release_digest,inventory_digest,preview=False,configuration=None,review_id=None,source_release=None):
         """Host caller supplies an independently validated target configuration.
 
         Preview rolls back its private native transaction. Mutating use belongs
@@ -143,7 +144,11 @@ class DispatchMaintenance:
         function=ast.get_source_segment(text,functions[0]);script=Path(__file__).with_name('dispatch_jobs_maintenance.py').read_text(encoding='utf8')
         body=dict(action=action,database=config['sites'][0]['database'],site_id=config['sites'][0]['site_id'],deployment_id=config['deployment_id'],
             previous_release=previous_release,release_digest=release_digest,inventory_digest=inventory_digest,operation_id=operation)
-        _write_new(directory/(action+'-request.json'),dict(**body,function_sha256=hashlib.sha256(function.encode()).hexdigest(),script_sha256=hashlib.sha256(script.encode()).hexdigest(),image_id=config['image_id']))
+        if source_release is not None:
+            if not isinstance(source_release,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',source_release):
+                raise OperatorError('Exact checkpoint source release required')
+            body['source_release']=source_release
+        _write_new(directory/(action+'-request.json'),dict(**body,private_protocol_revision=2,function_sha256=hashlib.sha256(function.encode()).hexdigest(),script_sha256=hashlib.sha256(script.encode()).hexdigest(),image_id=config['image_id']))
         args,child=self.native._child(operation,self._suffix(action,review_id),image_id=config['image_id']);args.insert(2,'-i')
         self.native._private_command(args+['-c','RECONCILE_SOURCE='+repr(function)+'\n'+script],directory/(action+'.stdout'),input=json.dumps(body).encode(),timeout=120)
         value=load_json((directory/(action+'.stdout')).read_bytes())

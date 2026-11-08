@@ -1,0 +1,24 @@
+{
+  "result": "failed_required_effects",
+  "acceptance": [
+    "AP-G",
+    "AP-H"
+  ],
+  "source": "ap02-release-01",
+  "diagnostic": {
+    "result": "counterexample_confirmed",
+    "reason": "Native job release/installation changed",
+    "actor_and_current_resource_authorized": true,
+    "job_release": "sha256:224acf0c00a3f6120866d485ec15a92936025c4191797e89e8d2b78691e599f6",
+    "restored_release": "sha256:5df01ff57ff4fd08306214f1101f497d503622d07bf23e88db9588cb7a145355",
+    "control_release": "sha256:5df01ff57ff4fd08306214f1101f497d503622d07bf23e88db9588cb7a145355",
+    "rolled_back": true
+  },
+  "original_claim_attempts": 1,
+  "pending_attempts": 0,
+  "actual_effects": 0,
+  "healthy_workers_then_drained": true,
+  "original_data_files_preserved": true,
+  "current_native_auth_revocation_preserved": true,
+  "scope": "Native job recovery mismatch;historical workspace-job qualification remains narrower"
+}
