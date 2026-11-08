@@ -1,0 +1,28 @@
+{
+  "result": "passed",
+  "acceptance": [
+    "AP-E",
+    "AP-F"
+  ],
+  "utc": "2026-11-08T20:56:03.435712+00:00",
+  "source_repository": ".local/application-adoption/apps/aurora-tasks",
+  "baseline_commit": "aa2415c2359186e8387de3f04340c6243e90794e",
+  "successor_commit": "db32b467fb46156254e481900c0461430888b703",
+  "foundation_version": "0.1.49",
+  "baseline_version": "0.2.2",
+  "successor_version": "0.2.3",
+  "evidence": [
+    "ap01-independent-baseline.json",
+    "ap01-repair-artifact.json",
+    "ap01-defaults-image02.json",
+    "ap01-composition-reproduction.json",
+    "ap01-daily-workflow.json",
+    "ap01-role-concurrency-outage.json"
+  ],
+  "bounds": [
+    "One existing native app slot replaced;new app slots unqualified until AP-03",
+    "New immutable image with unchanged foundation files/policy/Python/SDK/platform version",
+    "No runtime approval bypass;ordinary registered app upgrade separate from build",
+    "Full app-only recovery AP-H remains pending"
+  ]
+}

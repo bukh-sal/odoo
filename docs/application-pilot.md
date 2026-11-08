@@ -43,9 +43,11 @@ plan or running service is not itself evidence of completed business effects.
 ## Stop and start the same release
 
 For a planned stop, use `jobs ... drain` with the same store/config arguments.
-Wait for the stopped/paused result and all lanes to stop. Drain pauses dispatch;
-it is a maintenance action, not an ordinary empty queue. Business changes that
-need to enqueue work may be refused while dispatch is paused.
+Wait for the stopped/paused fleet result and all lanes to stop. Fleet pause
+stops managed lanes; it does not itself change the database dispatch control.
+The release executor separately closes dispatch during maintenance. Valid work
+can queue while only lanes are stopped; work that needs enqueue may be refused
+when database dispatch is paused by lifecycle maintenance.
 
 Read `operator/target.json` and verify its project/deployment against
 `pilot-intent.json`. Stop that project's edge, the exact current `worker_id`,
@@ -60,8 +62,10 @@ approval, then `jobs ... profile-apply <approval-id>`. New pins or a different
 resource request require a fresh independent review. Do not reuse consumed
 approvals or silently substitute a deployment image.
 
-An unexpected worker outage differs from maintenance drain: dispatch can remain
-enabled and valid work may queue until the pinned lane returns. AP-C separately
+An unexpected worker outage preserves the active desired fleet profile; an
+explicit fleet drain pauses that profile and removes lanes. Either can leave
+database dispatch enabled until lifecycle maintenance closes it; valid work may
+queue until the pinned lane returns. AP-C separately
 exercises that path and records actual delivery; no latency guarantee is implied
 while workers are stopped.
 

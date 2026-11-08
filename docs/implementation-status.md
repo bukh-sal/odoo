@@ -19,7 +19,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 [Phased plan](../planning/application_adoption.md) ·
 [developer/usage limitations](application-adoption-limitations.md).
-**20/100 verified points;4/16 acceptance checks passed.** Plan creation/source
+**35/100 verified points;6/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
 across its four checks. No sub-agents are authorized.
 
@@ -36,8 +36,8 @@ across its four checks. No sub-agents are authorized.
 | AP-B | passed | [Actual native creation/edit/search/complete/reopen/reminder/read/Open](evidence/post-r1/application-adoption/ap01-daily-workflow.json), immutable app0.2.3 repair |
 | AP-C | passed | [Direct denials/ownership,reassignment/two-session edits/actual lane outage](evidence/post-r1/application-adoption/ap01-role-concurrency-outage.json) |
 | AP-D | passed | Limitations010 repaired/014 stale-edit boundary measured; app0.2.3 selected/qualified daily path; updated pilot walkthrough |
-| AP-E | not_run | Independent application source/checkout, foundation pin and actual composition |
-| AP-F | not_run | Useful new immutable application version; same foundation code/version, new composed image |
+| AP-E | passed | [Independent source decision](evidence/post-r1/application-adoption/ap02-independent-source-decision.json), separate app Git and exact pinned49 composition |
+| AP-F | passed | Immutable0.2.3 defaults repair;baseline bytes and successor inventory reproduced;real native creation/ownership |
 | AP-G | not_run | Populated approved app-only upgrade, old jobs/roles/files, stale refusal and effects |
 | AP-H | not_run | Failed-app-down independent original-app restore, current authority, separate resume/useful pilot |
 | AP-I | not_run | Source-backed bounded second-app/role/integration contract and freeze |
@@ -52,9 +52,9 @@ across its four checks. No sub-agents are authorized.
 Blocker register: AP-B-001 resolved by immutable Tasks0.2.3/current-user defaults,
 actual native list/task creation and server ownership checks. No user-input blocker.
 
-Resume capsule: **AP-01 passed; AP-G/H active,20/100points4/16.** Pilot261d5d0954ee/
+Resume capsule: **AP-01/AP-E/F passed; AP-G/H active,35/100points6/16.** Pilot261d5d0954ee/
 18172 remains usable with1urgent/1bulk, imagebf39b8d8/inventoryd84289ff,
-platform0.1.49/Tasks0.2.3. No pending process/uncertain mutation. In-app tab16
+platform0.1.49/Tasks0.2.3. AP-02 source bootstrap49273 and seed88792 are complete on ap02-release-01/18173/project6f9279c3f609. Original2tasks/file/2jobs(one committed claim) recorded privately. Preparation94510running after two diagnosed fixture wire-key errors before registration/native mutation;inspect result before continuation. No uncertain pilot mutation. In-app tab16
 Operator/task3, no unsaved draft, CUA daily part summarized. Role/concurrency/outage
 checks all terminal passed; exact urgent lane restarted/delivered one notice.
 Current user defaults and immutable ownership proven; same-field stale writes are
@@ -62,7 +62,7 @@ last-save-wins (AP-LIM-014), disjoint fields survive. Native notification task_i
 read was intentionally denied to a non-system user; diagnosed groups restriction,
 not missing delivery. Do not replay once-only seed/check/upgrade commands.
 
-Early prerequisite evidence (not yet scored as AP-02): separate Git checkout
+AP-E/F qualified from retained prerequisite evidence (counted once for this phase): separate Git checkout
 baselineaa2415c2 reproduced0.2.2/29211bytes; repairdb32b467/e407fb631893/
 28400bytes adds two defaults only. ADR0078/build-only composer retains6087
 foundation files/policy/Python/version;9guard cases.02compositionbf39b8d8 and
@@ -71,7 +71,7 @@ Ordinary app-only upgrade50f3bf2f completed on populated pilot; original IDs/row
 file/future native job identity verified, reviewed new-pin worker profile ready.
 First inventory-hash attempt and drain preflight refusals retained in work log.
 
-Next: verify/credit AP-E/F from immutable evidence, create one owned disposable
+Next: AP-E/F verified. Creating one owned disposable
 sealed49/Tasks0.2.2 sibling (different port/volumes), populate original data/files
 and real pending+claimed native jobs. Qualify ordinary registered0.2.2→0.2.3
 publication/stale refusal/effects, controlled post-publication failure, app stopped,

@@ -2105,3 +2105,9 @@ maintenance drain;valid work stayed queued/no notice, same lane restart delivere
 once. No uncertain mutation/test running. AP-D triage selects already-proven two
 default repair; app ACL checkpoint recovery boundary recorded015. Proceed AP-02
 source evidence and fresh populated app-only fault/recovery sibling; keep pilot.
+
+- AP-E/F passed from retained independent source/actual composition/reproduction/real UI evidence;counted once,35/100points6/16. Full AP-G/H not yet passed. Fresh disposable ap02-release-01/18173/project6f9279c3f609 baseline49 bootstrap49273running. First summary generator expected generic passed instead of receipt-specific passed_two_independent_application_compositions;asserted before any writes,corrected exact observed state. Recovery will qualify current native user deactivation,preserve checkpoint app business ACL semantics explicitly;no generic custom-ACL overlay claim. Pilot remains useful.
+
+- 2026-11-08T20:59:49.995981+00:00 AP-02 sibling bootstrap49273complete/native0.2.2 installed. Real2original reminder tasks/file seeded,one committed claim. First prepare refused fixture lookup of nonexistent installation.version before registration/apply;source schema confirms versions belong to release_lock.plugins. No operation file exists;curationgeneration2/stage cache exists and is retained. Corrected fixture reads actual frozen manifest,then continues preparation without recreating data or applying anything twice.
+
+- Second AP-02 fixture preparation stopped before registration: release plugin identity key is plugin_id,not author-manifest id. After two schema-access errors inspected complete saved release row (plugin_id/version/native_version/digest);corrected exact key. No operation registered/no native mutation/no data replay;curation/stage state retained. Next distinct preparation uses the observed wire shape.

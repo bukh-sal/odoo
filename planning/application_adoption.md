@@ -59,13 +59,13 @@ the necessary approved app update, then return to AP-B. Freeze its exact default
 ownership/data contract first. Full AP-02 populated failure/recovery qualification
 still follows AP-01; any valid early evidence is linked, not counted twice.
 
-- [ ] **AP-E:** Create a separate owned application checkout/repository outside
+- [x] **AP-E:** Create a separate owned application checkout/repository outside
   the foundation source roots. Pin foundation49 and package from that application
   source using an explicit recipe. Prove that downstream developers do not need
   to copy/patch foundation code. Compare exact foundation source, dependencies,
   contract and platform version. Repair a demonstrated composition/tooling gap
   with the smallest reviewed change; never smuggle source into ignored build paths.
-- [ ] **AP-F:** Implement the useful Tasks change selected in AP-01 as a new
+- [x] **AP-F:** Implement the useful Tasks change selected in AP-01 as a new
   immutable application version, with explicit source/provenance/dependencies,
   upgrade declaration and native views. Produce reproducible baseline/successor
   deployment artifacts. A native app change needs a new composed image even
