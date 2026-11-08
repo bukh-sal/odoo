@@ -388,3 +388,10 @@ Background follow-up: [BX-01 decision](evidence/post-r1/background-execution/bx-
 Consolidated foundation: [CF-01 feasibility/freeze](evidence/post-r1/foundation-release/cf-01-decision.json), [CF-02 reproduced release inputs](evidence/post-r1/foundation-release/cf-02-decision.json), [CF-03 distinct populated app sets](evidence/post-r1/foundation-release/cf-03-decision.json). [CF-04 Maintenance half](evidence/post-r1/foundation-release/cf-04-maintenance.json) is not full recovery qualification. Current state remains in the [status checklist](implementation-status.md#consolidated-foundation-release-current-goal).
 
 Consolidated core46 foundation: [all five CF gates/12 checks](evidence/post-r1/foundation-release/qualification-decision.json), [actual final46 failed-app recovery](evidence/post-r1/foundation-release/cf-04-core46-recovery.json), [clean isolated consumer](evidence/post-r1/foundation-release/cf-05-consumer.json), [585 host passes/one existing skip](evidence/post-r1/foundation-release/cf-05-host-regression.json), [native Odoo browser](evidence/post-r1/foundation-release/browser-core46.json), [finite privacy/provenance](evidence/post-r1/foundation-release/cf-05-privacy.json), [owned Docker retirement](evidence/post-r1/foundation-release/final-docker-retirement.json). [Handoff](foundation-release.md) distinguishes the concrete paths and conditional policy expansion. Original R1 evidence remains separately scoped.
+
+Addon cleanup AR-04: [populated prototype migration/fault](evidence/post-r1/addon-cleanup/ar04-first-fault.json),
+[stopped-app fresh independent restore/separate resume/useful peer jobs](evidence/post-r1/addon-cleanup/ar04-first-recovery.json),
+[three native archive/identity/view regressions](evidence/post-r1/addon-cleanup/ar04-native-regression.json),
+and [revision20 freeze](evidence/G2/20261108-ar04-foundation-transition-rev20/gate-G2.json).
+These are exact scoped proofs; both final populated forward operations and final
+release/consumer/browser/privacy qualification remain open in the checklist.

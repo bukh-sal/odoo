@@ -2,6 +2,26 @@
 
 This document plus the strict schemas, TypeScript types and examples in the freeze inventory is normative for R1. The specification remains the implementation requirement. G2 fixtures establish contract compatibility, not later runtime acceptance.
 
+Revision19 adds the strict `foundation-transition` declaration for the single
+owned core46→47 addon extraction (ADR0073). This is selected privately by the
+OS operator, bound into immutable staging and the reviewed operation lock, and
+reconstructed against actual source/target images and current data. Applications
+cannot nominate migration code or confer this authority. The descriptor's five
+existing fields remain unchanged: its stage digest covers the declaration too.
+Normal core upgrades retain their existing policy/source restrictions. Core
+maintenance binds all actual site IDs even when no plugin is installed; empty
+plugin targets still require checkpoint, restart and destructive/trust review.
+The display includes the exact declaration and native changes. Historical v1
+artifact/plan fixtures remain valid in their original qualified scopes. Runtime
+acceptance of this revision requires AR-04 migration/failure/independent recovery
+and AR-05 release qualification; a schema freeze alone does not pass either.
+
+Revision20 extends the bounded preservation table enum to native Aurora's four
+task/list/stage/membership tables. Witnesses must be unique/ordered and installed
+mail scope must agree with ownership effects. Revision19 prototype receipts and
+historical goldens retain their original scope; final forward operations use
+revision20 independently validated against both actual populated application sets.
+
 ## Encoding, IDs and normalization
 
 JSON Schema draft 2020-12, UTF-8, duplicate object keys rejected, explicit standard-library calendar validation for the UTC-Z date-time profile (including fractional seconds where the schema permits; no optional-format dependency). Server requests are bounded to 64 KiB before JSON decoding; method input/output schemas add tighter limits. No schema retrieval from the network at validation time. Unknown fields are rejected in every authority/manifest/plan/envelope object. Service `input` and response `data` must additionally validate against the selected registered method's schema. Manifest `extensions` accepts only reverse-DNS keys and cannot change authority or dependency behavior.

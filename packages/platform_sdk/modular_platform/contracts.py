@@ -288,7 +288,8 @@ def plan_hash(plan):
 
 def host_restart_required(plan):
     """Host maintenance only; an external process is independently operated."""
-    return ((plan['operation_type'] in ('enable','suspend') and plan['backup']['required'])
+    return (plan['operation_type'] in ('deploy','core_upgrade')
+        or (plan['operation_type'] in ('enable','suspend') and plan['backup']['required'])
         or any(item['runtime']=='external_service' or (item['runtime']=='native'
             and item['action'] in ('install','upgrade','uninstall','remove','deploy')) for item in plan['artifacts']))
 

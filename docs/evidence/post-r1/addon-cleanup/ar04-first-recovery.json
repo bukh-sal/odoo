@@ -1,0 +1,17 @@
+{
+  "result": "passed_at_prototype_scope",
+  "operation": "b26556d2-998b-4c53-a650-503ecbc169b5",
+  "source_image": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+  "failed_target_image": "sha256:bba33da4406c3c319cf876252e62d861ad3a41632674086f4c64f6ca9f8afd41",
+  "failure_phase": "release_published",
+  "failed_app_stopped": true,
+  "independent_fresh_database_restore": true,
+  "original_iap_and_application_data_restored": true,
+  "all_original_ownership_and_filestore_restored": true,
+  "separate_resume": true,
+  "restored_database_changed": true,
+  "peer_jobs_completed_once": 16,
+  "peer_report_points": 10,
+  "peer_native_workflow_and_cross_scope_denials": true,
+  "remaining": "Final forward upgrade with real Notes/background installations and pending/stale-claimed jobs, final image and release qualification remain open."
+}

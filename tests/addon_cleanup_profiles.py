@@ -1,7 +1,10 @@
 """Once-only clean extraction profiles; private owned state and no resets."""
 import argparse
+import hashlib
+import io
 import json
 from pathlib import Path
+import tarfile
 
 from foundation_release import (FoundationSite, ROOT, inspect_image, load, write,
                                 POSTGRES, PROXY, CATALOG_PLUGINS)
@@ -62,8 +65,34 @@ class CleanupProfile(FoundationSite):
         self.publish(state)
 
     def layout_regressions(self, state):
-        source=(ROOT/'tests/addons').resolve()
-        assert source.is_relative_to(ROOT/'tests') and (source/'test_foundation_flow/__manifest__.py').is_file()
+        source=(ROOT/'tests/addons/test_foundation_flow').resolve()
+        assert source.is_relative_to(ROOT/'tests') and (source/'__manifest__.py').is_file()
+        # Docker Desktop blocked both a broad Windows bind and a minimal one
+        # before container creation. Stream only the reviewed fixture into one
+        # tracked owned volume, then mount it read-only for the native runner.
+        volume=state['project']+'_testaddons'
+        assert volume not in state['owned_resources']['volumes']
+        state['owned_resources']['volumes'].append(volume)
+        self.phase(state,'staging_native_regression_source')
+        self.command('create-testaddons-volume',['docker','volume','create','--label',
+            'com.modular.disposable='+state['project'],'--label',
+            'com.docker.compose.project='+state['project'],volume])
+        stream=io.BytesIO();hashes={}
+        with tarfile.open(fileobj=stream,mode='w') as archive:
+            for relative in ('__init__.py','__manifest__.py','tests/__init__.py','tests/test_flow.py'):
+                path=source/relative;assert path.is_file() and not path.is_symlink()
+                raw=path.read_bytes();hashes[relative]=hashlib.sha256(raw).hexdigest()
+                info=tarfile.TarInfo('test_foundation_flow/'+relative)
+                info.size=len(raw);info.mode=0o444
+                archive.addfile(info,io.BytesIO(raw))
+        write(self.local/'native-fixture-source.json',dict(image_id=state['image_id'],sha256=hashes,
+            tar_sha256=hashlib.sha256(stream.getvalue()).hexdigest(),readonly_runner=True))
+        self.command('stream-native-regression-source',['docker','run','--rm','-i','--log-driver','none',
+            '--name',state['project']+'-fixture-stage','--label','com.modular.disposable='+state['project'],
+            '--network','none','--read-only','--user','0:0','--cap-drop','ALL',
+            '--mount','type=volume,source='+volume+',target=/fixture',
+            '--entrypoint','/venv/bin/python',state['image_id'],'-c',
+            "import sys,tarfile;tarfile.open(fileobj=sys.stdin.buffer,mode='r|*').extractall('/fixture',filter='data')"],data=stream.getvalue(),timeout=90)
         label='ar-owned-foundation-tests'
         self.phase(state,label)
         self.command(label,['docker','run','--name',state['project']+'-'+label,
@@ -73,7 +102,7 @@ class CleanupProfile(FoundationSite):
             '--memory','1536m','--pids-limit','128','--mount',
             'type=volume,source='+state['project']+'_appconfig,target=/run/secrets,readonly',
             '--mount','type=volume,source='+state['project']+'_filestore,target=/var/lib/modular',
-            '--mount','type=bind,source='+str(source)+',target=/run/ar-tests,readonly',
+            '--mount','type=volume,source='+volume+',target=/run/ar-tests,readonly',
             '--entrypoint','/venv/bin/python',state['image_id'],'odoo-bin',
             '-c','/run/secrets/odoo_config','-d',state['database'],'--no-http',
             '--workers=0','--max-cron-threads=0','--stop-after-init','--without-demo',

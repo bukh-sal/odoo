@@ -2,7 +2,7 @@
 
 Current goal: owned addon cleanup through AR-05. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-07T23:03:00+00:00
+- Updated UTC: 2026-11-08T00:14:00+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -33,10 +33,76 @@ installed13modules; Maintenance15(with generic mail, no Discuss/gateway/tours);
 explicit communication17(with both extracted apps/tours). Editor imports/ICE,
 local uploads/images/link previews, native Maintenance list/form/chatter and
 optional action/cron identities verified. Old failures/fixes retain exact receipts.
-No populated upgrade, top-level prune or new release seal yet.
+AR-03 source prune is committed. No populated upgrade or new release seal yet.
 
-Resume capsule (AR supersedes historical capsules): **AR-04 active**. HEAD36ea9c1ceea
-plus AR-03 staged moves/prune/bootstrap/path changes awaiting local checkpoint.
+Resume capsule (AR supersedes historical capsules): **AR-04 active**. HEAD72a8cdbae1f
+commits the AR-03 source/bootstrap/path checkpoint. Current uncommitted AR-04
+source implements ADR0073's private exact46→47 declaration/staging/reconstruction,
+real site-level maintenance even with no plugin, fixed old-code IAP uninstall,
+50XML-ID adoptions/own R1 aliases, immutable system-only raw JSON retirement
+archive, and target validation. Gateway1.1 retires the unsupported local XML-RPC
+mailpipe/script UI; historical settings retained readonly and preflight refuses
+local-mode records. Actual baseline:17installed modules,50ownership identities,
+4IAP table counts/digests and4application table witnesses observed. No mutation
+on the baseline yet; noNotes/plugin target fabricated.
+
+Contract revision19 now passed111files/8rows in
+`docs/evidence/G2/20261108-ar04-foundation-transition-final`, including the added
+core-maintenance/staging reconstruction suite. First47 prototype79609a9e was
+refused before mutation for a missing inherited manifest version default; fixed
+and regression-tested in prototypebba33da4/inventoryaf42d5fa. Actual plugin-free
+baseline transition onbba passed supported IAP uninstall, all50adoptions/own R1
+aliases, lossless4-table archive and exact4-table application retention. Planned
+publication failure left traffic closed; failed app stopped; fresh independent
+core46 database restore preserved all original IAP/ownership/data/filestore;
+separate resume passed. [Fault](evidence/post-r1/addon-cleanup/ar04-first-fault.json)
+and [recovery](evidence/post-r1/addon-cleanup/ar04-first-recovery.json).
+
+Fresh Aurora peer projectc242a70ba267/port18161 onbba has native app/Notes/BG;
+native workflow/roles/cross-scope denials passed and16actual jobs completed once,
+count2/points10 while failed baseline app was down. Urgent/bulk lanes remain
+owned/live. Streamed native fixture passed3tests0failures/errors, including
+retirement ACL/immutability/raw decimal precision. Both broad and minimal Windows
+binds timed out before test container creation; DBs had0public tables and exact
+owned targets were retired. Four source files now stream into a tracked volume
+mounted readonly; [native evidence](evidence/post-r1/addon-cleanup/ar04-native-regression.json).
+The successful regression profilear04-03 still needs exact retirement.
+
+Full host run598:596passes/1failure/1existing skip in780.250s. Only failure was
+the historical Python-maintenance golden's lock digest after real site binding;
+old fixture preserved, revision19 current golden added,23affected tests and the
+expanded freeze qualifier passed. A final host qualification remains AR-05.
+Restored baseline is now installing real Notes/BG for populated pending/stale
+claim/filestore qualification and final forward transition; no fabricated scope.
+AR-J/K/L remain unchecked pending that final forward run. Next: finish baseline
+workloads, checkpoint coherent source, build final47 including the new golden,
+review/apply exact transition, verify workflows/jobs and finalize AR-04. Then
+AR-05 clean profiles/reproduction/consumer/UI/privacy/retirement. No user input.
+
+Latest resume update00:14UTC: real Notes and BG installations on restored
+Maintenance verified; native workflow/roles/scoped Notes passed,3pending/stale
+jobs plus filestore witness seeded. Initial app seed guard refused the restored
+database prefix before any write; fixture now binds the exact configured restored
+database and succeeded under a distinct label. Streamed regression profilear04-03
+retired exactly (2containers/7volumes/2networks). Full host failure is fixed at
+targeted scope; do not relabel the failed598run as a pass.
+
+Fresh sealed46 Aurora source `.local/addon-cleanup/aurora46`, project8f4495e1423c,
+port18163, prepared/initialized/seeded; native workflow/role denial passed.
+Actual four task/list/stage/membership table names confirmed. Revision20 freeze
+111files/8rows passed in`docs/evidence/G2/20261108-ar04-foundation-transition-rev20`
+with exact freeze snapshot;24affected tests passed. ADR0073 amendment records the
+compatible Aurora witness extension and stronger scope consistency. Current host
+recipe bytes now differ from the revision19bba prototype: **do not stage/apply
+that prototype with the current operator**. Build the final47 candidate from the
+coherent checkpoint, then independently declare/review/apply it on BOTH actual
+old46 source deployments. Maintenance uses real4plugin scopes; Aurora is genuinely
+plugin-free but populated with its native app. Peer remainsbba with reviewed
+urgent/bulk lanes; core job runner bytes unchanged. AR-J/K/L still open.
+See[operator procedure](addon-cleanup-release.md). No running build or test,
+uncertain mutation or user blocker; all live apps are ready. Next: local source
+checkpoint/final47build, then both forward operations/workflows/job verification.
+
 AR-01/02/03 passed; [AR-03 decision](evidence/post-r1/addon-cleanup/ar03-decision.json)
 records49addon dirs (15framework,4apps,5examples,25explicit fixtures),251.0MiB
 owned engine/addon/test source,628unused production trees deleted plus IAP,
@@ -50,36 +116,22 @@ No old active source roots or unused vendor pip/OS installer recipes.
 
 Layout prototype image4fc56557/inventory8b443c2e is retained (build record
 `docs/evidence/G7/20261108-ar03-layout-01/candidate-build.json`). All AR-02/03
-profile projects retired; no running build/test or uncertain mutation. Redundant
+profile projects retired; no uncertain mutation. Redundant
 materializations and three extraction prototypes99454721/0095c65c/b51ce4ac retired;
 private receipts/logs preserved. Current source default policy is foundation;
-public contracts still106files/8rows/major1. Do not restart completed AR gates.
+public contracts now111files/8rows/major1. Do not restart completed AR gates.
 
-Keep sealed46 kit/image72d51d32 immutable. Only live AR deployment is old46 retention
+Keep sealed46 kit/image72d51d32 immutable. Retained old46 source deployment is
 baseline projectd447cc4d2707, `.local/addon-cleanup/baseline46`, port18140; fictional
 IAP account/mailbox/conversation/message/repair witnesses committed,28gateway
 metadata IDs/8table digests retained. Never reset/reseed. Old consumer interpreter
-and source under `.local/foundation-release/clean-core46` remain required by its
-baseline helper; do not delete yet. Private baseline state last diagnostic phase
-ar-ownership-observe, actual guarded app ready. No plugin installation has yet
-been added to this baseline; do not fake a Notes target for a core-only operation.
-
-Next: commit coherent AR-03, read actual release_staging/StageStore/planning/
-native executor/checkpoint/restore contracts. Freeze a first-class independently
-reviewed foundation transition binding exact source/target inventory/policy,
-changed/retired/adopted modules and migration/data effects. Preserve ordinary
-core-upgrade restrictions; support real site/core scope without fabricated plugin
-installations. Resolve/bind actual50mail XML IDs (36gateway/14Discuss) preserving
-record IDs; archive populated IAP data and retire with old code through supported
-module APIs. Inspect the obsolete XML-RPC local-mailpipe entry before freezing
-supported gateway modes; production RPC is absent, POP/IMAP is qualified, stored
-configuration must be retained/refused explicitly rather than discarded. New
-schema/descriptor fields need versioned validation/freeze before use. Core47
-version for real changed source, private scoped targets only. Then AR-04 populated
-upgrade/fault/fresh independent recovery/separate resume/useful peer; AR-05 final
-release reproduction/isolated consumer/native UI/jobs/privacy/retirement. No
-populated transition or new sealed release pass yet. Use explicit
-`.local/toolchain/operator-python16/Scripts/python.exe`. No user input needed.
+and source under `.local/foundation-release/clean-core46` support the historical
+baseline helper; preserve until final retirement. Current wrappers use the
+Python16 environment and actual operator target after restore; do not replay old
+initialize/seed commands. Real Notes install verified; BG install is in progress.
+Aurora peer and regression profile locations/states are recorded above. Use
+`.local/toolchain/operator-python16/Scripts/python.exe`; inspect every existing
+operation before mutations. No new sealed release pass yet; no user input needed.
 
 ## Latest direction: owned fork and addon retention
 

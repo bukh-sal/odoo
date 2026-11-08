@@ -49,6 +49,24 @@ class CoreUpgrade(unittest.TestCase):
                 OperatorStore._check_acks(bundle,{'destructive':destructive,'trust_expansion':trust,'permission_expansion':False})
         OperatorStore._check_acks(bundle,{'destructive':True,'trust_expansion':True,'permission_expansion':False})
 
+    def test_plugin_free_core_has_real_site_scope_checkpoint_and_restart(self):
+        self.document['state']['installations']=[]
+        self.site['installations']=[]
+        bundle=self.prepare(targets=[])
+        self.assertEqual(bundle['operation_lock']['targets'],[])
+        self.assertEqual(bundle['plan']['artifacts'],[])
+        self.assertEqual(bundle['plan']['site_ids'],[self.site['site_id']])
+        self.assertEqual(bundle['display']['maintenance_site_ids'],bundle['plan']['site_ids'])
+        self.assertTrue(bundle['display']['native_code_requires_trust'])
+        self.assertTrue(bundle['display']['restart_required'])
+        self.assertTrue(bundle['plan']['backup']['required'])
+        self.assertTrue(bundle['plan']['destructive'])
+        check_bundle(bundle,self.document['state'])
+        self.assertEqual(native_maintenance_flags(bundle,{}),['-u','mp_shell'])
+
+    def test_empty_plugin_targets_cannot_omit_existing_native_scopes(self):
+        with self.assertRaises(ValueError):self.prepare(targets=[])
+
     def test_independent_reconstruction_rejects_rehashed_core_version_forgery(self):
         bundle=self.prepare();validator=staged.StagedPlans.validator(self)
         validator.observer.read=lambda:{'sites':[copy.deepcopy(self.site)],'runtime':copy.deepcopy(self.base)}

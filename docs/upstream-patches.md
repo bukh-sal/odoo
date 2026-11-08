@@ -81,3 +81,12 @@ RPC transport test-only and not auto-installed or shipped.628unused production
 addons and IAP source removed, obsolete vendor installer recipes retired. Root
 notices/Git provenance retained. Current image4fc56557 is a qualified layout
 prototype, not a new sealed release or a populated migration pass.
+
+AR-04 gateway1.1 removes the unsupported local XML-RPC pipe selection, script
+default and executable entry; stored script settings remain readonly and local
+records prevent transition before mutation. POP/IMAP retained. The owned46→47
+recipe uses old code's module API for IAP retirement, preserves actual mail
+record IDs under the extracted owners and retains aliases for our own R1 data.
+Raw private retirement archive and site-scoped lifecycle authority are owned
+platform additions. Prototypebba actual migration/closed fault/fresh46restore/
+separate resume passed; final populated job/release qualification remains open.

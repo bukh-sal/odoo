@@ -3,7 +3,7 @@
     'name': 'Owned foundation flow tests',
     'version': '1.0',
     'category': 'Hidden/Tests',
-    'depends': ['web'],
+    'depends': ['web', 'mp_core'],
     'auto_install': False,
     'application': False,
     'installable': True,

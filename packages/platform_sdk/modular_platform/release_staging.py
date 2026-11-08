@@ -170,7 +170,7 @@ def validate_plugin_core_stability(base,runtime):
         raise OperatorError('Plugin operation cannot carry native core/upstream changes; use explicit core maintenance')
 
 
-def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at,base_runtime=None,feature_states=()):
+def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,operation_type,operation_id,created_at,base_runtime=None,feature_states=(),foundation_transition=None):
     if runtime.get('published_release_protocol')!=1:
         raise OperatorError('Staged native operations require an image with the published-release profile reader')
     if operation_type=='remove':
@@ -183,8 +183,16 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     if operation_type in ('install','upgrade'):validate_plugin_core_stability(base_runtime,runtime)
     platform_diff=validate_platform_deploy(base_runtime,runtime,descriptor) if operation_type=='deploy' else None
     core_changes=None
+    if foundation_transition is not None and operation_type!='core_upgrade':
+        raise OperatorError('Foundation transition requires explicit core maintenance')
     if operation_type=='core_upgrade':
-        platform_diff,core_changes=validate_core_upgrade(base_runtime,runtime,descriptor)
+        if foundation_transition is None:
+            platform_diff,core_changes=validate_core_upgrade(base_runtime,runtime,descriptor)
+        else:
+            from .foundation_transition import validate_transition, native_changes
+            platform_diff=validate_transition(base_runtime,runtime,descriptor,foundation_transition,
+                site_ids=[s['site_id'] for s in sites])
+            core_changes=native_changes(sites,foundation_transition)
         for site in sites:
             native={item['addon']:item for item in site['native_modules']}
             if any(change['addon'] not in native or native[change['addon']]['state']!='installed'
@@ -252,6 +260,7 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
             raise OperatorError('Platform deploy must preserve bindings/endpoints/grants')
         bundle['operation_lock']['platform_source_diff']=platform_diff
         if core_changes is not None:bundle['operation_lock']['native_core_changes']=core_changes
+        if foundation_transition is not None:bundle['operation_lock']['foundation_transition']=copy.deepcopy(foundation_transition)
         if operation_type=='core_upgrade':
             python_changes=core_python_changes(base_runtime,runtime)
             if python_changes is not None:bundle['operation_lock']['python_dependency_changes']=python_changes
@@ -289,7 +298,7 @@ class StageStore:
         self.store,self.configuration,self.catalog=store,configuration,catalog
         self.root=store.root/'releases'/configuration['deployment_id']
 
-    def stage(self,image_id):
+    def stage(self,image_id,*,foundation_transition=None):
         config=self.configuration
         with OperationLocks(self.store.root/'locks',config['deployment_id'],[site['site_id'] for site in config['sites']]):
             self.store._authorize_plan({'deployment_id':config['deployment_id'],'site_ids':[site['site_id'] for site in config['sites']],
@@ -299,6 +308,12 @@ class StageStore:
             runtime_inputs(runtime,snapshot) # All packaged artifact identities/trust must exist.
             record={'schema_version':1,'base_configuration':config,'image_id':image_id,'runtime':runtime,
                 'staged_at':datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
+            if foundation_transition is not None:
+                from .foundation_transition import validate_transition, observe_effects
+                validate_transition(inspect_image(config['image_id']),runtime,
+                    dict(base_image_id=config['image_id'],target_image_id=image_id),foundation_transition,
+                    site_ids=[s['site_id'] for s in config['sites']],effects=observe_effects(config))
+                record['foundation_transition']=copy.deepcopy(foundation_transition)
             descriptor={'stage_digest':data_digest(record),'base_image_id':config['image_id'],'target_image_id':image_id,
                 'inventory_digest':runtime['inventory_digest'],'runtime_digest':data_digest(runtime)}
             protect_directory(self.root)
@@ -330,4 +345,9 @@ class StageStore:
         if recheck and inspect_image(record['image_id'])!=record['runtime']:
             raise OperatorError('Staged image runtime metadata changed since independent observation')
         runtime_inputs(record['runtime'],self.catalog.snapshot())
+        if 'foundation_transition' in record:
+            from .foundation_transition import validate_transition, observe_effects
+            validate_transition(inspect_image(self.configuration['image_id']),record['runtime'],descriptor,
+                record['foundation_transition'],site_ids=[s['site_id'] for s in self.configuration['sites']],
+                effects=observe_effects(self.configuration))
         return copy.deepcopy(descriptor),copy.deepcopy(record)

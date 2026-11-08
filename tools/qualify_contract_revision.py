@@ -23,7 +23,7 @@ def main():
     if not output.is_relative_to(ROOT/'docs/evidence/G2') or output.exists():raise ValueError('Fresh G2 evidence directory required')
     output.mkdir(parents=True)
     records={}
-    for name,pattern in [('contracts','test_*contracts.py'),('archives','test_artifacts.py'),('resolution','test_resolution.py'),('plans','test_plans.py'),('planning-cli','test_planning_cli.py'),('client-release','test_client_release.py')]:
+    for name,pattern in [('contracts','test_*contracts.py'),('archives','test_artifacts.py'),('resolution','test_resolution.py'),('plans','test_plans.py'),('core-maintenance','test_core_*.py'),('release-staging','test_release_staging.py'),('planning-cli','test_planning_cli.py'),('client-release','test_client_release.py')]:
         records[name]=run([sys.executable,'-m','unittest','discover','-s','tests','-p',pattern,'-v'])
     node=shutil.which('node');npm=shutil.which('npm')
     if not node or not npm:raise RuntimeError('Qualified local Node/npm toolchain required')

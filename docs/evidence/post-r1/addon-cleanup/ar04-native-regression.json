@@ -1,0 +1,44 @@
+{
+  "result": "passed",
+  "utc": "2026-11-08T00:03:13.227837+00:00",
+  "image_id": "sha256:bba33da4406c3c319cf876252e62d861ad3a41632674086f4c64f6ca9f8afd41",
+  "tests": 3,
+  "failures": 0,
+  "errors": 0,
+  "scope": [
+    "identity/record permissions",
+    "native list/form and configuration authority",
+    "retirement archive actor denial, immutable writes/deletes/creates and raw decimal precision"
+  ],
+  "private_log_sha256": "e071cc559297994fa82eb300a72259d427ca832b56198721d556181ea80228ae",
+  "fixture": {
+    "image_id": "sha256:bba33da4406c3c319cf876252e62d861ad3a41632674086f4c64f6ca9f8afd41",
+    "sha256": {
+      "__init__.py": "2f7f84daea0688d534cfc29772a337c360376e8b093e36ccbd3cf94883d1be14",
+      "__manifest__.py": "2df3e0076e30805ddd5d88967f80ea393ea7941c7d848869208bbc540a53fc09",
+      "tests/__init__.py": "5b7fe58f50a40851cfe81c35bb989f6dc8f103b575cdd369c96d465c3185dc0e",
+      "tests/test_flow.py": "3ecb8d5653d1e7266e8abeb0ca4a66e04f4e399873e1b6f2530899bab7f458e9"
+    },
+    "tar_sha256": "52132d2b457c9d8722d875b65779e5dc9acae2f3af8efec8c546f0b299ce8359",
+    "readonly_runner": true
+  },
+  "failed_approaches": [
+    {
+      "run": "ar04-01",
+      "approach": "broad Windows bind",
+      "timeout_seconds": 300,
+      "created_test_containers": 0,
+      "public_database_tables": 0,
+      "retired_exact_owned_target": true
+    },
+    {
+      "run": "ar04-02",
+      "approach": "minimal Windows bind",
+      "timeout_seconds": 300,
+      "created_test_containers": 0,
+      "public_database_tables": 0,
+      "retired_exact_owned_target": true
+    }
+  ],
+  "resolution": "Streamed the four reviewed fixture files into one tracked owned volume; runner mounts it readonly. No Windows bind or production dependency added."
+}

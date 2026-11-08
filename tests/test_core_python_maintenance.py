@@ -42,8 +42,12 @@ class CorePythonMaintenance(unittest.TestCase):
 
     def test_complete_solution_dependency_review_hash_and_independent_reconstruction(self):
         bundle=self.prepare();check_bundle(bundle,self.document['state'])
-        golden=json.loads((ROOT/'packages/contracts/examples/v1/plan-python-maintenance.json').read_text())
+        golden=json.loads((ROOT/'packages/contracts/examples/v1/revision19/plan-python-maintenance.json').read_text())
         self.assertEqual(bundle['plan'],golden)
+        historical=json.loads((ROOT/'packages/contracts/examples/v1/plan-python-maintenance.json').read_text())
+        self.assertNotEqual(golden['dependency_lock_digest'],historical['dependency_lock_digest'])
+        self.assertEqual({k:v for k,v in golden.items() if k!='dependency_lock_digest'},
+                         {k:v for k,v in historical.items() if k!='dependency_lock_digest'})
         review=bundle['display']['python_dependency_changes']
         self.assertEqual(review,bundle['operation_lock']['python_dependency_changes'])
         self.assertEqual(review['previous_lock_digest'],self.base['python_lock_digest'])

@@ -146,13 +146,20 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
     state, target_release = copy.deepcopy(state), copy.deepcopy(target_release)
     operation_id = _uuid(operation_id or str(uuid4()))
     created_at = created_at or datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    if not targets:
+    maintenance = operation_type in ('deploy', 'core_upgrade')
+    if not targets and not maintenance:
         raise PlanningError('At least one exact installation target is required')
     required = {'deployment_id', 'release_digest', 'release_lock', 'generation', 'installations',
                 'site_ids', 'policy_version', 'operator_authorization_generation'}
     if not required <= state.keys():
         raise PlanningError('Complete independently observed base state required')
     _uuid(state['deployment_id'])
+    if maintenance:
+        if (not isinstance(state['site_ids'], list) or not state['site_ids']
+                or len(set(state['site_ids'])) != len(state['site_ids'])):
+            raise PlanningError('Core maintenance requires exact independently observed sites')
+        for site_id in state['site_ids']:
+            _uuid(site_id)
     if data_digest(state['release_lock']) != _digest(state['release_digest']):
         raise PlanningError('Observed release identity mismatch')
     old = {item['plugin_id']: item for item in state['release_lock']['plugins']}
@@ -373,6 +380,8 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
     if feature_states:
         operation_lock['feature_states'] = sorted(feature_states, key=lambda r: (r['site_id'], r['workspace_id'], r['installation_id']))
         operation_lock['known_unknowns'].append('Native schema is restored site-wide. Review the exact post-install feature states: suspended scopes receive no renewed grants and remain unavailable.')
+    if maintenance:
+        operation_lock['maintenance_site_ids'] = sorted(state['site_ids'])
     if 'catalog_validation_digest' in state:
         if state['catalog_validation_digest']!=operation_lock['catalog_snapshot_digest']:
             raise PlanningError('Catalog snapshot differs from independently observed current validation')
@@ -381,7 +390,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         new[key]['manifest']['upgrade']['destructive'] for key in changed)
     plan = {'schema_version': 1, 'operation_id': operation_id, 'operation_type': operation_type,
         'created_at': created_at, 'deployment_id': state['deployment_id'],
-        'site_ids': sorted({item['site_id'] for item in ordered_targets}),
+        'site_ids': sorted(state['site_ids']) if maintenance else sorted({item['site_id'] for item in ordered_targets}),
         'base_state_digest': data_digest(state), 'base_release_digest': state['release_digest'],
         'target_release_digest': data_digest(target_release),
         'artifacts': [artifacts[key] for key in sorted(artifacts)],
@@ -391,7 +400,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         'permission_changes': sorted(copy.deepcopy(list(permission_changes)), key=lambda item: (item['plugin_id'], item['workspace_id'], item['capability'], item['action'])),
         'trust_changes': sorted(copy.deepcopy(list(trust_changes)), key=lambda item: (item['artifact_digest'], item['decision'])),
         'destructive': destructive,
-        'backup': {'required': any(item['runtime']=='external_service' or item['runtime'] == 'native'
+        'backup': {'required': maintenance or any(item['runtime']=='external_service' or item['runtime'] == 'native'
                     and item['action'] in ('install', 'upgrade', 'uninstall','remove','deploy') for item in artifacts.values()),
                    'policy_id': backup_policy, 'retain_previous_release': True},
         'policy_version': state['policy_version'], 'operator_authorization_generation': state['operator_authorization_generation']}
@@ -403,7 +412,7 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
 def _display(plan, operation_lock):
     display={'targets': operation_lock['targets'], 'artifacts': plan['artifacts'],
                 'required_local_step': 'Independent local operator approval of the exact plan hash, then CLI apply.',
-                'native_code_requires_trust': any(item['runtime'] == 'native' for item in plan['artifacts']),
+                'native_code_requires_trust': plan['operation_type'] in ('deploy','core_upgrade') or any(item['runtime'] == 'native' for item in plan['artifacts']),
                 'restart_required': host_restart_required(plan),
                 'feature_suspension_unloads_code': False,
                 'permission_changes': plan['permission_changes'], 'trust_changes': plan['trust_changes'],
@@ -420,6 +429,10 @@ def _display(plan, operation_lock):
         display['platform_source_diff']=copy.deepcopy(operation_lock['platform_source_diff'])
     if 'native_core_changes' in operation_lock:
         display['native_core_changes']=copy.deepcopy(operation_lock['native_core_changes'])
+    if 'foundation_transition' in operation_lock:
+        display['foundation_transition']=copy.deepcopy(operation_lock['foundation_transition'])
+    if 'maintenance_site_ids' in operation_lock:
+        display['maintenance_site_ids']=copy.deepcopy(operation_lock['maintenance_site_ids'])
     if 'python_dependency_changes' in operation_lock:
         display['python_dependency_changes']=copy.deepcopy(operation_lock['python_dependency_changes'])
     if 'native_uninstall_impact' in operation_lock:
@@ -441,6 +454,11 @@ def check_bundle(bundle, current_state):
         raise PlanningError('Stale plan: deployment state or generation changed')
     if data_digest(lock['release']) != plan['target_release_digest'] or lock['operation_id'] != plan['operation_id']:
         raise PlanningError('Target release or operation identity mismatch')
+    if plan['operation_type'] in ('deploy','core_upgrade'):
+        if lock.get('maintenance_site_ids') != sorted(current_state['site_ids']) or plan['site_ids'] != lock['maintenance_site_ids']:
+            raise PlanningError('Core maintenance site scope differs from independent state')
+    elif 'maintenance_site_ids' in lock:
+        raise PlanningError('Site-level maintenance authority requires a core operation')
     expected_bindings = [{'binding_id': item['binding_id'], 'generation': item['generation'], 'digest': data_digest(item)} for item in lock['bindings']]
     expected_endpoints = [{'endpoint_config': item['endpoint_config'], 'generation': item['generation'], 'digest': data_digest(item), 'expected_image_digest': item['expected_image_digest']} for item in lock['endpoints']]
     if expected_bindings != plan['bindings'] or expected_endpoints != plan['endpoints']:

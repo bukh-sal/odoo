@@ -22,7 +22,7 @@
             <field name="model">fetchmail.server</field>
             <field name="arch" type="xml">
                 <form string="Incoming Mail Server">
-                    <header invisible="server_type == 'local'">
+                    <header>
                         <button string="Test &amp; Confirm" type="object" name="button_confirm_login" invisible="state != 'draft'"/>
                         <button string="Fetch Now" type="object" name="fetch_mail" invisible="state != 'done'"/>
                         <button string="Reset Confirmation" type="object" name="set_draft" invisible="state != 'done'"/>
@@ -48,16 +48,16 @@
                      <notebook>
                         <page string="Server &amp; Login" name="server_login_details">
                             <group>
-                                <group invisible="server_type == 'local'" string="Server Information">
-                                    <field name="server" readonly="state != 'draft'" required="server_type != 'local'" />
+                                <group string="Server Information">
+                                    <field name="server" readonly="state != 'draft'" required="1" />
                                     <field name="port"
                                         required="1"
                                         readonly="state != 'draft'"
                                         options="{'enable_formatting': false}" />
                                     <field name="is_ssl"/>
                                 </group>
-                                <group invisible="server_type == 'local'" string="Login Information">
-                                    <field name="user" readonly="state != 'draft'" required="server_type != 'local'"/>
+                                <group string="Login Information">
+                                    <field name="user" readonly="state != 'draft'" required="1"/>
                                     <field name="password" password="True"
                                         invisible="server_type not in ('imap', 'pop')"
                                         readonly="state != 'draft'"
@@ -66,9 +66,9 @@
                                 <group string="Actions to Perform on Incoming Mails">
                                     <field name="object_id"/>
                                 </group>
-                                <group invisible="server_type != 'local'" string="Configuration">
+                                <group invisible="not script" string="Historical configuration">
                                     <field name="configuration"/>
-                                    <field name="script" widget="url"/>
+                                    <field name="script" readonly="1"/>
                                 </group>
                             </group>
                         </page>

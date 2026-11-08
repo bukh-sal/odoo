@@ -1,0 +1,60 @@
+{
+  "result": "preflight_passed_not_applied",
+  "utc": "2026-11-07T23:50:22.721738+00:00",
+  "candidate_image": "sha256:bba33da4406c3c319cf876252e62d861ad3a41632674086f4c64f6ca9f8afd41",
+  "inventory_digest": "sha256:af42d5faa9d6997a23d5d7373bd29cfc1396b2f797344ec74cfb27049e1bc1e0",
+  "declaration_sha256": "7a9b422794d5705d6272d5d9e1312205014ceebaf170ce06cee1e59a7b1bc5df",
+  "source_changes": 223,
+  "configured_sites": 1,
+  "installed_modules": 17,
+  "adopted_xmlids": 50,
+  "iap_tables": [
+    {
+      "rows": 1,
+      "sha256": "cd40f96c0a61401787240357142713e9ec339d60fbaded9187cb7b78c8194bfc",
+      "table": "iap_account"
+    },
+    {
+      "rows": 1,
+      "sha256": "ecaedf4a960fe2e025f28ad046eb9523fff7f6f528802ccd746b959aff5298f0",
+      "table": "iap_account_res_company_rel"
+    },
+    {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "table": "iap_account_res_users_rel"
+    },
+    {
+      "rows": 2,
+      "sha256": "fc4601ac97173f6a544e96a5b9b33cf3edd1a421ccf214c85fc761c82406866c",
+      "table": "iap_service"
+    }
+  ],
+  "retained_tables": [
+    {
+      "rows": 3,
+      "sha256": "9cfd9497e4f44d2f395f9d666fc29767f7d97b9b5e08e7852eef5ac8bb5f5d86",
+      "table": "discuss_channel"
+    },
+    {
+      "rows": 1,
+      "sha256": "67f561b826c4361883867e2529e6a090bd318fede637a3aea064671e591f7274",
+      "table": "fetchmail_server"
+    },
+    {
+      "rows": 26,
+      "sha256": "fd88ada132b6e14386eaf77781207c256777a1f2bb90ed1e2951e903d99c6e97",
+      "table": "mail_message"
+    },
+    {
+      "rows": 1,
+      "sha256": "b192ded8dc2361aac67873f14680314cf108841dc6f5af8de09c254f6e9faa5a",
+      "table": "maintenance_request"
+    }
+  ],
+  "legacy_local_pipe_count": 0,
+  "real_plugin_free_scope": true,
+  "contract_revision": 19,
+  "known_fixed_failure": "First candidate rejected before mutation because omitted manifest version defaults were not normalized; regression now covers it.",
+  "qualification": "AR-J/K/L still pending actual transition and independent recovery."
+}

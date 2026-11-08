@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularplatform.invalid/contracts/v1/foundation-transition.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "recipe": {
+      "const": "owned-addon-extraction-46-47-v1"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "image_id": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "inventory_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "policy_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "core_version": {
+          "const": "0.1.46"
+        }
+      },
+      "required": [
+        "image_id",
+        "inventory_digest",
+        "policy_digest",
+        "core_version"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "image_id": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "inventory_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "policy_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "core_version": {
+          "const": "0.1.47"
+        },
+        "recipe_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "child_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "image_id",
+        "inventory_digest",
+        "policy_digest",
+        "core_version",
+        "recipe_sha256",
+        "child_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "source_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "previous_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "target_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "path",
+          "previous_sha256",
+          "target_sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "site_effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          },
+          "mail_installed": {
+            "type": "boolean"
+          },
+          "legacy_local_pipe_count": {
+            "const": 0
+          },
+          "iap_tables": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "table": {
+                  "enum": [
+                    "iap_account",
+                    "iap_service",
+                    "iap_account_res_company_rel",
+                    "iap_account_res_users_rel"
+                  ]
+                },
+                "rows": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              },
+              "required": [
+                "table",
+                "rows",
+                "sha256"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "mail_ownership": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_]*$"
+                },
+                "owner": {
+                  "enum": [
+                    "mp_discuss",
+                    "mp_mail_gateway"
+                  ]
+                },
+                "model": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.]*$"
+                },
+                "res_id": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "name",
+                "owner",
+                "model",
+                "res_id"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 50
+          },
+          "native_modules": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 49,
+            "items": {
+              "type": "object",
+              "properties": {
+                "addon": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_]*$"
+                },
+                "state": {
+                  "const": "installed"
+                },
+                "version": {
+                  "type": "string",
+                  "pattern": "^[0-9]+(\\.[0-9]+)+$"
+                }
+              },
+              "required": [
+                "addon",
+                "state",
+                "version"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "retained_tables": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "properties": {
+                "table": {
+                  "enum": [
+                    "discuss_channel",
+                    "fetchmail_server",
+                    "mail_message",
+                    "maintenance_request",
+                    "mp_aurora_task",
+                    "mp_aurora_task_list",
+                    "mp_aurora_task_list_res_users_rel",
+                    "mp_aurora_task_stage"
+                  ]
+                },
+                "rows": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              },
+              "required": [
+                "table",
+                "rows",
+                "sha256"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "site_id",
+          "mail_installed",
+          "legacy_local_pipe_count",
+          "iap_tables",
+          "mail_ownership",
+          "native_modules",
+          "retained_tables"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "recipe",
+    "source",
+    "target",
+    "source_changes",
+    "site_effects"
+  ],
+  "additionalProperties": false
+}

@@ -98,6 +98,9 @@ def native_maintenance_flags(bundle,plugins):
         from .release_staging import CORE_ADDONS
         changes=lock.get('native_core_changes',[])
         upgrades=[item['addon'] for item in changes]
+        if 'foundation_transition' in lock:
+            from .foundation_transition import maintenance_flags
+            return maintenance_flags(bundle)
         if (not upgrades or len(upgrades)!=len(set(upgrades)) or not set(upgrades)<=CORE_ADDONS
                 or not bundle['plan']['destructive'] or not bundle['plan']['backup']['required']):
             raise OperatorError('Exact versioned core maintenance/checkpoint acknowledgement required')
@@ -397,6 +400,9 @@ class NativeExecutor:
                            for entry in bundle['operation_lock']['release']['plugins'])}
                 image=self._execution_image(bundle)
                 flags=self._native_flags(bundle,plugins)
+                if 'foundation_transition' in bundle['operation_lock']:
+                    from .foundation_transition import retire
+                    retire(self,bundle,directory)
                 if plan['operation_type']=='uninstall':
                     arguments, child = self._child(operation, 'native', writable=True, image_id=image)
                     arguments.insert(2,'-i')
@@ -426,6 +432,9 @@ class NativeExecutor:
                     arguments, child = self._child(operation, 'native', writable=True,image_id=image)
                     self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
                         *flags, '--stop-after-init', '--no-http', '--workers=0', '--max-cron-threads=0', '--without-demo'], directory/'native.log')
+                if 'foundation_transition' in bundle['operation_lock']:
+                    from .foundation_transition import archive_and_verify
+                    _write_new(directory/'foundation-effects.json',archive_and_verify(self,bundle,directory,image))
                 locks.check()
                 payload = {'site_id': self.config['sites'][0]['site_id'], 'deployment_id': self.config['deployment_id'],
                     'operation_id': operation, 'generation': bundle['operation_lock']['release']['generation'],

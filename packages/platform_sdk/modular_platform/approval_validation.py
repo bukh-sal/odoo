@@ -41,7 +41,8 @@ class IndependentValidator:
             recomputed=prepare_staged_plan(document,observation['sites'],snapshot,record['runtime'],descriptor,
                 targets=bundle['operation_lock']['targets'],operation_type=plan['operation_type'],
                 operation_id=plan['operation_id'],created_at=plan['created_at'],base_runtime=observation.get('runtime'),
-                feature_states=bundle['operation_lock'].get('feature_states',[]))
+                feature_states=bundle['operation_lock'].get('feature_states',[]),
+                foundation_transition=record.get('foundation_transition'))
             if data_digest(recomputed)!=data_digest(bundle):
                 raise OperatorError('Independently staged reconstruction differs from proposed exact plan')
             return state

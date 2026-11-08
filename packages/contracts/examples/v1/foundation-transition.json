@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "recipe": "owned-addon-extraction-46-47-v1",
+  "source": {
+    "image_id": "sha256:72d51d3282c93df591e01cf63c2d0fe66c06633f5d4b569d557da5f3c47d0e82",
+    "inventory_digest": "sha256:14cc5a2c5ef57ad27c8548e3f4150e402ba13dfb8920618b5e3137f060e54fe1",
+    "policy_digest": "sha256:8151d00c4cb8642e7d56a1147709117207a8d2765e5fdb9c9adb77923749ed87",
+    "core_version": "0.1.46"
+  },
+  "target": {
+    "image_id": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "inventory_digest": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "policy_digest": "sha256:2f44f5ceadef7349c05780b2cc632678d92453165aae1a75a82fcef67f779f1b",
+    "core_version": "0.1.47",
+    "recipe_sha256": "9a9f7fbc9a89670f3e8b03e21c9e11e4b9b9ae985c8ad287e3d992bf4fbc212f",
+    "child_sha256": "63ec9686e8308d341b1d9b31b0f9de5a123c01a3cf6e916d8db5b0041d92d959"
+  },
+  "source_changes": [
+    {
+      "path": "packages/platform_sdk/modular_platform/foundation_native.py",
+      "previous_sha256": null,
+      "target_sha256": "63ec9686e8308d341b1d9b31b0f9de5a123c01a3cf6e916d8db5b0041d92d959"
+    },
+    {
+      "path": "packages/platform_sdk/modular_platform/foundation_transition.py",
+      "previous_sha256": null,
+      "target_sha256": "9a9f7fbc9a89670f3e8b03e21c9e11e4b9b9ae985c8ad287e3d992bf4fbc212f"
+    }
+  ],
+  "site_effects": [
+    {
+      "site_id": "00000000-0000-4000-8000-000000000001",
+      "mail_installed": true,
+      "legacy_local_pipe_count": 0,
+      "iap_tables": [
+        {
+          "table": "iap_account",
+          "rows": 0,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        {
+          "table": "iap_account_res_company_rel",
+          "rows": 0,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        {
+          "table": "iap_account_res_users_rel",
+          "rows": 0,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        {
+          "table": "iap_service",
+          "rows": 0,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ],
+      "retained_tables": [],
+      "native_modules": [
+        {
+          "addon": "base",
+          "state": "installed",
+          "version": "19.0.1.3"
+        },
+        {
+          "addon": "base_setup",
+          "state": "installed",
+          "version": "19.0.1.0"
+        },
+        {
+          "addon": "html_editor",
+          "state": "installed",
+          "version": "19.0.1.0"
+        },
+        {
+          "addon": "iap",
+          "state": "installed",
+          "version": "19.0.1.0"
+        },
+        {
+          "addon": "mail",
+          "state": "installed",
+          "version": "19.0.1.19"
+        },
+        {
+          "addon": "mp_core",
+          "state": "installed",
+          "version": "19.0.0.1.46"
+        },
+        {
+          "addon": "mp_identity",
+          "state": "installed",
+          "version": "19.0.1.0"
+        },
+        {
+          "addon": "web",
+          "state": "installed",
+          "version": "19.0.1.0"
+        },
+        {
+          "addon": "web_tour",
+          "state": "installed",
+          "version": "19.0.1.0"
+        }
+      ],
+      "mail_ownership": [
+        {
+          "name": "access_fetchmail_server",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 1
+        },
+        {
+          "name": "act_server_history",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 2
+        },
+        {
+          "name": "action_discuss",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 1
+        },
+        {
+          "name": "action_email_server_tree",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 3
+        },
+        {
+          "name": "discuss_call_history_menu",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 2
+        },
+        {
+          "name": "discuss_channel_integrations_menu",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 3
+        },
+        {
+          "name": "discuss_channel_tour",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 4
+        },
+        {
+          "name": "discuss_public_channel_template",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 5
+        },
+        {
+          "name": "discuss_technical",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 6
+        },
+        {
+          "name": "field_fetchmail_server__active",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 4
+        },
+        {
+          "name": "field_fetchmail_server__attach",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 5
+        },
+        {
+          "name": "field_fetchmail_server__configuration",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 6
+        },
+        {
+          "name": "field_fetchmail_server__create_date",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 7
+        },
+        {
+          "name": "field_fetchmail_server__create_uid",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 8
+        },
+        {
+          "name": "field_fetchmail_server__date",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 9
+        },
+        {
+          "name": "field_fetchmail_server__display_name",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 10
+        },
+        {
+          "name": "field_fetchmail_server__error_date",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 11
+        },
+        {
+          "name": "field_fetchmail_server__error_message",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 12
+        },
+        {
+          "name": "field_fetchmail_server__id",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 13
+        },
+        {
+          "name": "field_fetchmail_server__is_ssl",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 14
+        },
+        {
+          "name": "field_fetchmail_server__message_ids",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 15
+        },
+        {
+          "name": "field_fetchmail_server__name",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 16
+        },
+        {
+          "name": "field_fetchmail_server__object_id",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 17
+        },
+        {
+          "name": "field_fetchmail_server__original",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 18
+        },
+        {
+          "name": "field_fetchmail_server__password",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 19
+        },
+        {
+          "name": "field_fetchmail_server__port",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 20
+        },
+        {
+          "name": "field_fetchmail_server__priority",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 21
+        },
+        {
+          "name": "field_fetchmail_server__script",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 22
+        },
+        {
+          "name": "field_fetchmail_server__server",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 23
+        },
+        {
+          "name": "field_fetchmail_server__server_type",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 24
+        },
+        {
+          "name": "field_fetchmail_server__server_type_info",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 25
+        },
+        {
+          "name": "field_fetchmail_server__state",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 26
+        },
+        {
+          "name": "field_fetchmail_server__user",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 27
+        },
+        {
+          "name": "field_fetchmail_server__write_date",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 28
+        },
+        {
+          "name": "field_fetchmail_server__write_uid",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 29
+        },
+        {
+          "name": "field_mail_mail__fetchmail_server_id",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 30
+        },
+        {
+          "name": "ir_cron_mail_gateway_action",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 31
+        },
+        {
+          "name": "main_menu_discuss",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 7
+        },
+        {
+          "name": "menu_action_fetchmail_server_tree",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 32
+        },
+        {
+          "name": "menu_call_settings",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 8
+        },
+        {
+          "name": "menu_canned_responses",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 9
+        },
+        {
+          "name": "menu_channel",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 10
+        },
+        {
+          "name": "menu_configuration",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 11
+        },
+        {
+          "name": "menu_notification_settings",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 12
+        },
+        {
+          "name": "menu_roles",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 13
+        },
+        {
+          "name": "menu_root_discuss",
+          "owner": "mp_discuss",
+          "model": "ir.ui.view",
+          "res_id": 14
+        },
+        {
+          "name": "model_fetchmail_server",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 33
+        },
+        {
+          "name": "view_email_server_form",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 34
+        },
+        {
+          "name": "view_email_server_search",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 35
+        },
+        {
+          "name": "view_email_server_tree",
+          "owner": "mp_mail_gateway",
+          "model": "ir.ui.view",
+          "res_id": 36
+        }
+      ]
+    }
+  ]
+}

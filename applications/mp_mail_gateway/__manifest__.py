@@ -1,6 +1,6 @@
 # Derived from Odoo mail. See LICENSE and COPYRIGHT.
 {'name': 'Incoming Mail Gateway',
- 'version': '1.0',
+ 'version': '1.1',
  'depends': ['mail'],
  'application': True,
  'data': ['security/ir.model.access.csv',

@@ -26,3 +26,15 @@ class TestFoundationFlow(TransactionCase):
         self.assertTrue({'list', 'form'} <= views['views'].keys())
         with self.assertRaises(AccessError):
             self.env['ir.config_parameter'].with_user(self.actor).set_param('foundation.unapproved', 'denied')
+
+    def test_retirement_archive_privacy_immutability_and_raw_precision(self):
+        raw='[{"amount": 9007199254740993.000000000000000001}]'
+        self.env.cr.execute("INSERT INTO mp_retirement_archive (operation_id,recipe,source_image,source_inventory,table_name,row_count,sha256,payload) VALUES ('fixture','fixture','fixture','fixture','fixture',1,'fixture',%s) RETURNING id",[raw])
+        ident=self.env.cr.fetchone()[0]
+        archive=self.env['mp.retirement.archive'].browse(ident)
+        self.assertEqual(archive.payload,raw)
+        for user in (self.actor,self.reader):
+            with self.assertRaises(AccessError):archive.with_user(user).read(['payload'])
+        with self.assertRaises(AccessError):archive.sudo().write({'payload':'changed'})
+        with self.assertRaises(AccessError):archive.sudo().unlink()
+        with self.assertRaises(AccessError):archive.sudo().create({'payload':'unapproved'})

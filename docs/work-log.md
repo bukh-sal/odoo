@@ -1695,3 +1695,46 @@ baseline remains live. Redundant materializations/extraction prototypes retired.
 AR-04 sole active: scoped reviewed46→47 foundation/data retirement/ownership/
 independent recovery, with no fake plugin target or broad coreguard relaxation.
 Contract freeze106/8unchanged; final release/consumer/UI/jobs/privacy stillAR05.
+
+AR-04 implementation/preflight8November: ADR0073 records a closed owned46→47
+recipe, private staging/reconstruction/data effects and real plugin-free site
+scope, without relaxing ordinary core-upgrade policy. Revision19 freeze passed
+110files/8rows and affected consumers;38affected lifecycle tests and5new strict
+recipe/refusal tests passed. Baseline SQL preflight observed17installed modules,
+50exact ownership records,4IAP digests/counts and4retained application witnesses;
+no mutation. New core47 immutable private retirement model preserves raw numeric
+JSON, fixed old-module API retirement/adoption and target verification added.
+Unsupported local XML-RPC mailpipe retired from gateway1.1; historical script
+configuration retained, local data refused before mutation (baseline count0).
+Native archive privacy/immutability/precision regression added. Candidate build
+20261108-ar04-core47-01 started; actual migration/recovery/release still unpassed.
+
+AR-04 actual lifecycle8November00:03UTC: bba33da4/inventoryaf42d5fa migrated
+the plugin-free populated46baseline using the independently approved declaration.
+Supported IAP uninstall,50record adoptions/aliases,4lossless archives and4exact
+application table digests passed. Controlled publication fault kept traffic closed;
+failed app stopped; independent fresh46DB restore returned all IAP/ownership/data/
+filestore witnesses; separate reviewed resume passed. Aurora peer native app/Notes/
+BG workflows/roles passed and16jobs completed exactly once with expected count2/
+points10 while failed app was down. No original data reset or broad guard bypass.
+
+Native archive/identity/native-view regression3/3passed0failures/errors. Two
+Windows bind approaches timed out before container creation (0public tables);
+recorded/retired exact targets and switched to four-file tar stream into tracked
+owned volume, readonly runner. Successful profilear04-03 remains to retire.
+Host598run had596passes/1existing skip/1golden failure: new maintenance site
+scope correctly changes the lock digest. Kept historical golden, added current
+revision19 fixture;23affected tests passed. Expanded G2 qualifier to include core
+maintenance/staging:111files/8rows passed. Installing real Notes/BG on restored
+baseline for pending/stale job witness and final forward qualification. AR-04
+still sole active;55gatepoints9/16checked; final release not sealed or passed.
+
+AR-04 resume00:14UTC: Maintenance realNotes/BG installs, native workflow and3job/
+filestore seed verified on independently restored46. Fresh Aurora46source
+project8f4495e1423c/port18163 from sealed consumer prepared/initialized/seeded;
+native workflow/role denial passed. Actual4Aurora table names confirmed. Revision20
+compatibly binds those witnesses and stricter unique/mail scope validation;
+111files/8rows/current freeze snapshot and24affected tests passed. Prior19bba
+proof stays scoped; current recipe bytes require a fresh final47image. Retired
+successful regression target2containers/7volumes/2networks. No uncertain mutation
+or user blocker; next source checkpoint/finalbuild then both forward transitions.

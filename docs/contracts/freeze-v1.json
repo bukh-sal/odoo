@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 18,
+  "revision": 20,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -98,7 +98,10 @@
         "packages/contracts/examples/v1/lifecycle-impact/dispatch-events.json",
         "docs/architecture-decisions/0051-native-uninstall-dispatch-integration.md",
         "tests/test_lifecycle_contracts.py",
-        "tests/test_native_uninstall.py"
+        "tests/test_native_uninstall.py",
+        "packages/contracts/v1/foundation-transition.schema.json",
+        "packages/contracts/examples/v1/foundation-transition.json",
+        "packages/contracts/examples/v1/revision19/plan-python-maintenance.json"
       ],
       "g1": []
     },
@@ -242,7 +245,7 @@
     "docs/architecture-decisions/0036-metadata-preview-restart-consistency.md": "e7e5db0f17206ac5a67aea94e38ef24da96b1d16fa19171e7d28652f83d39577",
     "docs/architecture-decisions/0046-reviewed-python-security-maintenance.md": "6d86aa17ea376d6eb1a0e3454aae5208b663907837e801fafbff9b7b86b77fe6",
     "docs/contracts/events-v1.md": "ca0914b5da964ab09a53b07d2eec7015b0205f8a7f8b242c5336e5425103e7f9",
-    "docs/contracts/protocol-v1.md": "d82252780c1039615323db3f2b940b748f2748e550755ad2d8cc64cab9ab9071",
+    "docs/contracts/protocol-v1.md": "2d744e7010106dacabff51bae6aebdfed796a8f38917045461ffb6fe29cbb0ce",
     "packages/contracts/examples/v1/approval.json": "97d213252538733562333274996f1f4a83895b043ffd63802f8c27744c697109",
     "packages/contracts/examples/v1/binding.json": "e9b17ea07d67eb8bf8df623ad7dade4f86fcd33a00fe5e8a4c1e55a5e8509de0",
     "packages/contracts/examples/v1/board.json": "fc3dae5a6c3e4483c1aa86365410ff38d9f0cb560e75a689cfa287e40c896b64",
@@ -322,10 +325,10 @@
     "packages/host_sdk/tests/plain_page.ts": "2205df447eec8f6731f944e22a3e437e050a9ca08db392bc531c982783575966",
     "packages/host_sdk/tsconfig.json": "bcedc5e08a7fba258b29e5703e2167c271c9097c647033a572aefb198f701772",
     "packages/platform_sdk/modular_platform/__init__.py": "275d88b882c19804fb9e44a5f45a3e3bdc6a2cf3198c019214a33a19429f9336",
-    "packages/platform_sdk/modular_platform/contracts.py": "2a0679c75f2871890e3b8c174e846713d1425bd4d4aeca5a7d48b3b01c339b50",
+    "packages/platform_sdk/modular_platform/contracts.py": "ef53983284b546fce592c8c8b42da79bb76fa9b724c63913be774a7bd561d430",
     "packages/platform_sdk/modular_platform/tokens.py": "5817d18624a9c7d5d566d396223c199c2e69a91e7f0373fb7aa33eb50af42900",
     "tests/test_contracts.py": "a81845ef69196f08836389541cd66ffcaf7f9a41ef5cae160d81bdb69460d8f6",
-    "tests/test_core_python_maintenance.py": "384704dcb214522906e9ccb24fafec3958f5e2985f83142b9fbe45157a99ca25",
+    "tests/test_core_python_maintenance.py": "3996faa13e6d1adf60a8993c36d84d22787406f95c7c24c8ddcd6ba6105b280f",
     "tests/test_event_contracts.py": "8318a2e843c6b3387e92d464f07b4109f08c9e4bf8da665773d2c0c4a25155e7",
     "tests/test_manager_contracts.py": "e0e2a12c9f88506a1f51619e6c6f78dac22d560a5d7607255b54d17380214667",
     "tests/test_operation_contracts.py": "5e806a26d8ec89d444eabad5bab7bc65c9bfcd8ed0ebcca0f34c8d545bbf899e",
@@ -335,7 +338,12 @@
     "packages/contracts/examples/v1/lifecycle-impact/dispatch-events.json": "03aefc73bb742619185069b912d58f621871404dc04ad905cbc34d1e64a45ea2",
     "docs/architecture-decisions/0051-native-uninstall-dispatch-integration.md": "4809c5242190ebb80a6660b5ffe399422a7df10d576bc59561692349209c3ff8",
     "tests/test_lifecycle_contracts.py": "af953ead03868692fdd5a9f7b480aa225345c7ae69fff8c35b6f609570092223",
-    "tests/test_native_uninstall.py": "8a4c4ea9931d456ee76095ad8161038fa46d5636a559674b829c5e403010cdf4"
+    "tests/test_native_uninstall.py": "8a4c4ea9931d456ee76095ad8161038fa46d5636a559674b829c5e403010cdf4",
+    "packages/contracts/v1/foundation-transition.schema.json": "c6331f312682784681c2775d99c33cdbc8b65abe61d7110513ea4477808babfa",
+    "packages/contracts/examples/v1/foundation-transition.json": "c5e0f8c1558fbc1114934fee5333d11b5804823a8f57c61222eecceaa2b861fa",
+    "docs/architecture-decisions/0073-owned-foundation-transition-46-47.md": "b494602fca79d4e14be0db9a609e5bdb06391502918f2265884aec8ff4f8eafb",
+    "tests/test_foundation_transition_contracts.py": "ea5fcb6a6b8796b336e4be706cbc7fd0976103db25d8b50d614d508721301d4d",
+    "packages/contracts/examples/v1/revision19/plan-python-maintenance.json": "98713893791b9b89433a1327735eb5df41324b3160488138b947314b3b282d8a"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-08T00:02:09.378462+00:00",
+  "contract_major": 1,
+  "revision": 19,
+  "frozen_files": 111,
+  "inventory_sha256": "8368ab64e78c81a14f8c944b3446689942d6cb0369dd55bd8a80a7b7b951ed22",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "Revision19: private owned46-to47 transition, real maintenance site scope, preserved historical golden and revision19 current golden. Expanded qualifier includes core-maintenance reconstruction.",
+  "runtime_qualification": "Populated core47 migration, planned closed failure, fresh core46 restore and separate resume passed on exact prototype bba33da4. AR-04 populated jobs/final forward and AR-05 release qualification remain pending.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "72a8cdbae1fa64f865e53b006814888f2e558222"
+}

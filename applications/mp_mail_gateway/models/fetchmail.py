@@ -104,7 +104,6 @@ class FetchmailServer(models.Model):
     server_type = fields.Selection([
         ('imap', 'IMAP Server'),
         ('pop', 'POP Server'),
-        ('local', 'Local Server'),
     ], string='Server Type', index=True, required=True, default='imap')
     server_type_info = fields.Text('Server Type Info', compute='_compute_server_type_info')
     is_ssl = fields.Boolean('SSL/TLS', help="Connections are encrypted with SSL/TLS through a dedicated port (default: IMAPS=993, POP3S=995)")
@@ -125,13 +124,14 @@ class FetchmailServer(models.Model):
     priority = fields.Integer(string='Server Priority', readonly=False, help="Defines the order of processing, lower values mean higher priority", default=5)
     message_ids = fields.One2many('mail.mail', 'fetchmail_server_id', string='Messages', readonly=True)
     configuration = fields.Text('Configuration', readonly=True)
-    script = fields.Char(readonly=True, default='/mp_mail_gateway/static/scripts/odoo-mailgate.py')
+    # Historical configuration is retained; unsupported XML-RPC pipe is retired.
+    script = fields.Char(readonly=True)
 
     @api.depends('server_type')
     def _compute_server_type_info(self):
         for server in self:
             if server.server_type == 'local':
-                server.server_type_info = _('Use a local script to fetch your emails and create new records.')
+                server.server_type_info = _('This historical local mail-pipe configuration is unsupported.')
             else:
                 server.server_type_info = False
 
