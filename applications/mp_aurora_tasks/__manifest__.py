@@ -1,6 +1,6 @@
 {
     "name": "Aurora Tasks",
-    "version": "19.0.0.2.0",
+    "version": "19.0.0.2.1",
     "depends": ["web","mp_core"],
     "data": [
         "security/ir.model.access.csv",

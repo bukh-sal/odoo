@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-08T15:55:13.468097+00:00",
+  "contract_major": 1,
+  "revision": 23,
+  "frozen_files": 116,
+  "inventory_sha256": "afc117418e31cdd26c163956bcd648a07950c4ddd2120e58e7edb13821704e99",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0076 compatible selected app identity0.2.1; preserved native authority and site lifecycle contracts",
+  "runtime_qualification": "Actual new image/application/reconciliation still pending; candidate01 receipts retained",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "5aa7a9b0b8fb2942574a1760cf37d8e41d7eb70d"
+}

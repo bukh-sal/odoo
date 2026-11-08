@@ -56,7 +56,7 @@ class AuroraTaskList(models.Model):
 
     @api.constrains("member_ids")
     def _check_internal_members(self):
-        if any(member.share or not member.active for member in self.member_ids):
+        if any(member.share or not member.active for member in self.with_context(active_test=False).member_ids):
             raise ValidationError(_("List members must be active internal users."))
 
 
@@ -304,5 +304,5 @@ class AuroraTask(models.Model):
 
     @api.constrains("assignee_id")
     def _check_internal_assignee(self):
-        if any(assignee.share or not assignee.active for assignee in self.assignee_id):
+        if any(assignee.share or not assignee.active for assignee in self.with_context(active_test=False).assignee_id):
             raise ValidationError(_("The assignee must be an active internal user."))

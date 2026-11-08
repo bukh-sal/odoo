@@ -1930,3 +1930,42 @@ binding their version1 synthetic artifact to the evolving real app.8composition
 cases pass. Core version48/source policy prepare the required distinct successor.
 App role/job/inbox tests are not run yet and remain unqualified. Next build proper
 candidate, admit real archived bytes and execute actual native installation/jobs.
+
+## AT-03b — actual candidate and empty native site
+
+First isolated builder invocation stopped before main because isolated Python
+omitted owned helper paths. Fixed explicit path setup, then source5aa7a9b0b8f
+built imagee66f76100d55/inventory29180448b279. This is built_not_deployed,
+not an application qualification pass. All actual archived bytes, including
+Tasks97251f15ccd4, were independently admitted to a fresh curated catalog.
+New once-only Tasks fixture inspects free subnets and reuses owned Reference
+resource/bootstrap/approval controls, with a new zero-workspace seed.
+
+Fixture-only nullable IPAM, dotted log name collision and validator-wrapper shape
+errors were inspected/corrected before empty DB creation; admission resumed against
+the same verified immutable archives, without resetting any target. Core now ready
+on projectmp-r0-r1release51fa1ac3e963/port18148. Actual site-native install is running;
+native workflow/reminder/inbox probe source is ready. Progress stays25/100 and4/14.
+
+## AT-03b — real install/workload and useful counterexamples
+
+Independent install02bbb596 completed/generation2, one native installation and
+zero workspace/member/feature rows.10native workflow/reminder/inbox checks passed;
+approved1urgent/1bulk profile delivered20reminders once and drained. AT-E/F passed;
+43weightedpoints/6of14checks. Extra edges caught inactive-user filtering before
+first commit; rollback minimal reproduction confirms complete context detects it.
+Rollback classifier confirms valid native jobs held by workspace-only assumption.
+Both source-corrected but unverified. Issue0.2.1, retain admitted0.2.0 bytes; move
+bounded stage migration and declare0.1.0/0.2.0 transitions. ADR0076/revision23
+116files/10rows passed affected G2. First run correctly refused pre-freeze drift
+after ignored bytecode cache interrupted old-directory cleanup; receipt retained.
+Finish new source checks/image then requalify; sealed47/46 preserved.
+
+- Candidate01 owned project retired: all prefixed containers,6volumes/2networks;
+  exact labels/names empty. Deletion succeeded; corrected volume-list verification
+  flag then completed verification only. First drain receipt uses paused fleet with
+  zero running lanes, correctly distinguished from legacy drained status. Package
+  0.2.1 normalized final untrusted build086c5f3e4570;14affected host tests13pass/1
+  existing Windows skip. Selected native/authority/fixture Python sources parse.
+  LF normalization avoids unrelated whole-file churn; final revision23 G2receipt
+  binds exact normalized inventory. No fix runtime credit before next image.

@@ -406,19 +406,31 @@ def reconcile_release(metadata_env,*,previous_release,target_release):
                 with cr.savepoint():
                     definition=DEFINITIONS.get((row['handler'],row['handler_version']))
                     if not definition:raise PublicError('DEPENDENCY_UNAVAILABLE')
-                    env,payload=_environment(metadata_env,row)
-                    _validate(definition.input_schema,payload['input'])
-                    _,current,bound=_authorize(env,definition,payload['context']['alias'])
+                    native=row['workspace_id'] is None
+                    if native:
+                        if definition.authority!='native':raise ContractError('Native job definition required')
+                        from . import native_jobs
+                        env,_,payload,bound=native_jobs.authorized(metadata_env,row,definition,previous_release=previous_release)
+                        current=current_release(env)
+                        original_identity=dict(input=payload['input'],installation=bound.public_id,handler=row['handler'],version=row['handler_version'])
+                        replacement_identity=original_identity
+                    else:
+                        if definition.authority!='workspace':raise ContractError('Workspace job definition required')
+                        env,payload=_environment(metadata_env,row)
+                        _validate(definition.input_schema,payload['input'])
+                        _,current,bound=_authorize(env,definition,payload['context']['alias'])
+                        before_binding=payload['context']['binding'];after_binding=bound.binding
+                        if ({k:v for k,v in before_binding.items() if k!='generation'}!={k:v for k,v in after_binding.items() if k!='generation'}
+                                or after_binding['generation']<before_binding['generation']):
+                            raise PublicError('CONFLICT')
+                        original_identity=dict(input=payload['input'],binding=before_binding,handler=row['handler'],version=row['handler_version'])
+                        replacement_identity=dict(input=payload['input'],binding=after_binding,handler=row['handler'],version=row['handler_version'])
                     if current['site_id']!=site or current['release_digest']!=target_release or definition.effect_mode!=row['effect_mode']:
-                        raise PublicError('CONFLICT')
-                    before_binding=payload['context']['binding'];after_binding=bound.binding
-                    if ({k:v for k,v in before_binding.items() if k!='generation'}!={k:v for k,v in after_binding.items() if k!='generation'}
-                            or after_binding['generation']<before_binding['generation']):
                         raise PublicError('CONFLICT')
                     schedule=durable.JobSchedule.from_wire(payload['schedule']) if payload['schema_version']==2 else None
                     if (schedule is None)!=(getattr(definition,'pool','legacy')=='legacy'):
                         raise ContractError('Job submission contract mismatch')
-                    expected=dict(input=payload['input'],binding=before_binding,handler=row['handler'],version=row['handler_version'])
+                    expected=original_identity
                     if schedule is not None:
                         expected=dict(input_digest=durable._json(expected)[1],schedule=schedule.wire())
                     if durable._json(expected)[1]!=row['input_digest']:raise ContractError('Invalid original job deduplication digest')
@@ -436,8 +448,9 @@ def reconcile_release(metadata_env,*,previous_release,target_release):
                             else:
                                 _validate(definition.prepared_schema,definition.prepare(env,payload['input'],bound))
                                 next_state='pending';next_code=None
-                    updated=copy.deepcopy(payload);updated['context']['binding']=copy.deepcopy(after_binding)
-                    replacement=dict(input=updated['input'],binding=after_binding,handler=row['handler'],version=row['handler_version'])
+                    updated=copy.deepcopy(payload)
+                    if not native:updated['context']['binding']=copy.deepcopy(after_binding)
+                    replacement=replacement_identity
                     if schedule is not None:
                         replacement=dict(input_digest=durable._json(replacement)[1],schedule=schedule.wire())
                     digest=durable._json(replacement)[1]

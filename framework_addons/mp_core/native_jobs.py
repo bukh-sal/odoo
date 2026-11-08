@@ -148,7 +148,7 @@ def _payload(row):
     return payload
 
 
-def authorized(metadata_env,row,definition):
+def authorized(metadata_env,row,definition,*,previous_release=None):
     payload=_payload(row);context=payload['context']
     metadata_env.cr.execute('SELECT user_id FROM mp_principal WHERE id=%s',[row['actor_id']])
     actor=metadata_env.cr.fetchone()
@@ -157,8 +157,15 @@ def authorized(metadata_env,row,definition):
     if _actor(env)!=row['actor_id']:raise AccessError('Native job actor changed')
     bound=_installation(env,definition,expected=row['installation_id'])
     release=current_release(env)
+    if previous_release is not None:
+        # Only the closed host reconciliation transaction may inspect an old
+        # claim under the target release. This never permits dispatch/apply:
+        # their ordinary calls still require the current release on the row.
+        env.cr.execute('SELECT release_digest,state FROM mp_dispatch_control WHERE site_id=%s FOR UPDATE',[release['site_id']])
+        if env.cr.fetchone() not in ((previous_release,'paused'),(previous_release,'restoring')):
+            raise AccessError('Native carry-forward requires the fenced source release')
     if (bound.public_id!=context['installation'] or release['site_id']!=row['site_id']
-            or release['release_digest']!=row['release_digest'] or row['effect_mode']!=definition.effect_mode):
+            or (previous_release or release['release_digest'])!=row['release_digest'] or row['effect_mode']!=definition.effect_mode):
         raise AccessError('Native job release/installation changed')
     jobs._validate(definition.input_schema,payload['input'])
     definition.authorize_resource(env,payload['input'],bound)

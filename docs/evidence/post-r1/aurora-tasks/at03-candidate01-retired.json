@@ -1,0 +1,40 @@
+{
+  "result": "retired",
+  "project": "mp-r0-r1release51fa1ac3e963",
+  "containers": [
+    "mp-r0-r1release51fa1ac3e963-native-carry-counterexample",
+    "mp-r0-r1release51fa1ac3e963-inactive-member-diagnostic",
+    "mp-r0-r1release51fa1ac3e963-native-edges",
+    "mp-r0-r1release51fa1ac3e963-managed-seed",
+    "mp-r0-r1release51fa1ac3e963-native-probe",
+    "mp-r0-r1release51fa1ac3e963-op-02bbb596-8054-48dd-8691-632e017fdc39-dispatch-enable",
+    "mp-r0-r1release51fa1ac3e963-op-6ff5f60f-d31f-4842-870c-71a3ddd687d0-dispatch-observe",
+    "mp-r0-r1release51fa1ac3e963-op-02bbb596-8054-48dd-8691-632e017fdc39-dispatch-reconcile",
+    "mp-r0-r1release51fa1ac3e963-op-02bbb596-8054-48dd-8691-632e017fdc39-assets",
+    "mp-r0-r1release51fa1ac3e963-app-release-02bbb596805448dd8691632e017fdc39",
+    "mp-r0-r1release51fa1ac3e963-op-02bbb596-8054-48dd-8691-632e017fdc39-metadata",
+    "mp-r0-r1release51fa1ac3e963-op-02bbb596-8054-48dd-8691-632e017fdc39-native",
+    "mp-r0-r1release51fa1ac3e963-op-7e2004aa-2dac-422d-9474-1d99409678cd-dispatch-observe",
+    "mp-r0-r1release51fa1ac3e963-op-02bbb596-8054-48dd-8691-632e017fdc39-checkpoint",
+    "mp-r0-r1release51fa1ac3e963-op-02bbb596-8054-48dd-8691-632e017fdc39-dispatch-fence",
+    "mp-r0-r1release51fa1ac3e963-edge-1",
+    "mp-r0-r1release51fa1ac3e963-app-release-28620151d461427aa1e4ae67ef45f99a",
+    "mp-r0-r1release51fa1ac3e963-core-provision",
+    "mp-r0-r1release51fa1ac3e963-core-init",
+    "mp-r0-r1release51fa1ac3e963-db-1"
+  ],
+  "volumes": [
+    "mp-r0-r1release51fa1ac3e963_appconfig",
+    "mp-r0-r1release51fa1ac3e963_dbconfig",
+    "mp-r0-r1release51fa1ac3e963_bootstrap",
+    "mp-r0-r1release51fa1ac3e963_proxyconfig",
+    "mp-r0-r1release51fa1ac3e963_filestore",
+    "mp-r0-r1release51fa1ac3e963_pgdata"
+  ],
+  "networks": [
+    "mp-r0-r1release51fa1ac3e963_runtime",
+    "mp-r0-r1release51fa1ac3e963_edge"
+  ],
+  "image_retained_for_comparison": "sha256:e66f76100d55f45ebae306e8e4b235346b62d12ddf4d207bebfb564fa224aa55",
+  "unrelated_resources_untouched": true
+}

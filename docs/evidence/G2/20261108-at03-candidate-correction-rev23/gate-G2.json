@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "failed",
+  "utc": "2026-11-08T15:54:36.857703+00:00",
+  "contract_major": 1,
+  "revision": 22,
+  "frozen_files": 115,
+  "inventory_sha256": "6667d8814f336a399ddbd3e430165421270d286a706c21f81f3dfa8350c699a0",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0076 application0.2.1 identity after actual inactive-member counterexample; native carry-forward keeps existing authority contract",
+  "runtime_qualification": "Candidate01 probes remain precise; selected0.2.1 and native carry-forward require new image/runtime qualification",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "5aa7a9b0b8fb2942574a1760cf37d8e41d7eb70d"
+}

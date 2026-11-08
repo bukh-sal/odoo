@@ -1,0 +1,9 @@
+{
+  "command": [
+    "C:\\Users\\mesh\\Documents\\modular_platform\\.local\\toolchain\\operator-python16\\Scripts\\python.exe",
+    "tools/check_contract_freeze.py"
+  ],
+  "exit_code": 1,
+  "stdout": "{\"result\": \"failed\", \"changed_contract_files\": [\"docs/aurora-tasks-contract.md\"], \"action\": \"ADR/version/fixtures/inventory and affected gate requalification required\"}\r\n",
+  "stderr": ""
+}
