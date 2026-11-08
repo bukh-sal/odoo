@@ -28,12 +28,16 @@ class TasksSite(Reference):
         self.local = ROOT/'.local/aurora-tasks'/args.run
         self.private = self.local/'operator'
 
-    def prepare(self):
+    def candidate(self):
         record = load(self.args.candidate)
         assert record['state'] == 'built' and record['result'] == 'built_not_deployed'
         runtime = inspect_image(record['image_id'])
         assert runtime['inventory_digest'] == record['inventory_digest']
         assert runtime['inventory']['policy'] == load(ROOT/'deploy/distribution-r1-foundation.json')
+        return dict(record=record,runtime=runtime,artifacts=record['artifacts'],source_commit=record['git_base'])
+
+    def prepare(self):
+        selected=self.candidate();record=selected['record'];runtime=selected['runtime']
         # Inspect all existing addresses before selecting fresh project-owned networks.
         ids = subprocess.run(['docker', 'network', 'ls', '-q'], check=True, capture_output=True).stdout.decode().split()
         existing = json.loads(subprocess.run(['docker', 'network', 'inspect', *ids], check=True, capture_output=True).stdout)
@@ -46,21 +50,21 @@ class TasksSite(Reference):
         if chosen is None:
             raise ValueError('No inspected free test subnet pair')
         trust = dict(schema_version=1, mode='curated', generation=1, allow_unsigned_development=False,
-                     approved_digests=sorted(row['digest'] for row in record['artifacts'].values()))
+                     approved_digests=sorted(row['digest'] for row in selected['artifacts'].values()))
         self.prepare_resources(dict(images={k: dict(image_id=v) for k, v in {
             'application': record['image_id'], 'postgres': POSTGRES, 'proxy': PROXY}.items()},
-            application_inventory_digest=record['inventory_digest']), record['git_base'],
+            application_inventory_digest=record['inventory_digest']), selected['source_commit'],
             json.dumps(trust).encode(), subnets=chosen)
         self.admit()
 
     def admit(self):
         state = self.state()
         assert state['phase'] == 'configured'
-        record = load(self.args.candidate)
+        selected=self.candidate();record=selected['record']
         assert (state['image_id'], state['inventory_digest']) == (record['image_id'], record['inventory_digest'])
         trust = configuration(self.private/'trust.json')
         catalog = Catalog(self.private/'catalog', trust)
-        for plugin, row in sorted(record['artifacts'].items()):
+        for plugin, row in sorted(selected['artifacts'].items()):
             assert re.fullmatch(r'[a-z0-9._-]+\.mplug', row['file'])
             archive = self.private/row['file']
             if archive.exists():

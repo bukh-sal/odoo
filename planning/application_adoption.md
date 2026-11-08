@@ -93,7 +93,7 @@ Do not invent a core/schema change to manufacture an upgrade exercise.
   description, manager, lifecycle states); inspect actual API/permissions/tests.
   Optional customer/logo/full Partners import are not assumed requirements.
   Reuse retained framework features wherever they satisfy the selected need.
-- [ ] **AP-J:** Implement that bounded application in its own downstream source
+- [x] **AP-J:** Implement that bounded application in its own downstream source
   with native list/form/search/actions, real roles and server-enforced denials.
   Demonstrate an everyday workflow beyond Tasks. No theme/shell rewrite, full
   Aurora port, accounting or unrelated product expansion.

@@ -1,0 +1,13 @@
+{
+  "result": "assembled_not_installed",
+  "plugin_id": "dev.aurora.projects",
+  "version": "0.1.0",
+  "digest": "sha256:0ae7ad4f748e8369e7420b54dac91cfd15a57af88f6fc7a31cc6fee42c3cde64",
+  "bytes": 22293,
+  "source_repository": ".local/application-adoption/apps/aurora-projects",
+  "source_commit": "a1764ae1516fe7f6958ab45519f4b19135d814b0",
+  "python_syntax": "passed without import",
+  "native_list_search_rng": "passed in exact sealed49 image",
+  "native_form_validation": "pending actual registry install",
+  "static_probe_limit": "Initial form RNG lookup failed because core has no form RNG;corrected to actual list/search schema and retained native registry form validation"
+}

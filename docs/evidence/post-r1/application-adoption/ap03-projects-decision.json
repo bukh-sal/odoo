@@ -1,0 +1,40 @@
+{
+  "result": "passed",
+  "acceptance": "AP-J",
+  "utc": "2026-11-08T22:43:16.428728+00:00",
+  "application": "dev.aurora.projects",
+  "version": "0.1.0",
+  "source": "ap03-projects-0.1.0-source.json",
+  "image": "ap03-projects-010-image01.json",
+  "install_operation": "a259f507-fdf0-472e-a4c8-595d2ecd6e95",
+  "backend_checks": [
+    "actual new-form defaults/current owner+manager and native list/form/search descriptors",
+    "owner/manager/member distinct permissions;forged owner clobbered;10 direct outsider/member/immutable-role denials",
+    "real locked lifecycle/harmless repetition/direct invalid transition refusal;ends planned",
+    "current membership/manager revocation affects existing authenticated sessions;owner restores useful roles",
+    "portal membership/manager and empty/oversize names refused without changing useful record",
+    "manager archives/default list hides;authorized member historical read;owner unarchives",
+    "independent own-project create;other owner remains private;unauthorized mixed bulk is atomic",
+    "manager cannot delete;owner deletes own disposable business record through native authority",
+    "useful Projects installation without Tasks/extension metadata,Task tables or workspace authority"
+  ],
+  "private_receipt_sha256": "16921075c21d37e239d484fe2427fe4686a966939d849ddcc27a79d0bf1eb643",
+  "browser": {
+    "surface": "in-app browser tab17 native WebClient",
+    "checks": [
+      "Alice native New form defaults owner+manager/current user",
+      "Native project create with Operator manager/Bob member/description persisted",
+      "Native Activate then Put on hold persisted",
+      "Bob sees shared projects/foreign owner project absent",
+      "Bob form has readonly text/links,non-editable members and no lifecycle action buttons"
+    ],
+    "screenshot": "ap03-native-project-created.jpg",
+    "native_form_runtime_validation_passed": true,
+    "human_signoff": false
+  },
+  "tasks_installed": false,
+  "extension_installed": false,
+  "task_tables_present": false,
+  "workspace_authority_created": false,
+  "preserved_working_tasks_pilot": true
+}
