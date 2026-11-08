@@ -1,18 +1,73 @@
 # Implementation status
 
-Current goal: owned addon cleanup through AR-05 — complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
+Current goal: useful Aurora Tasks application release through AT-05 — active. Previous owned addon cleanup AR-01..05 is complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-08T01:47:02.669392+00:00
+- Updated UTC: 2026-11-08T13:26:41.577849+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AR-05 passed; addon cleanup goal complete.** Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
-- Active item: **None. Addon cleanup AR-01..05 complete.** [Plan](../planning/addon_cleanup.md) · [ADR0072](architecture-decisions/0072-addon-extraction-and-owned-release-transition.md).
+- Current phase/gate: **AT-01 feasibility and application contract freeze in progress.** AR-05 passed; core47 is the sealed baseline. Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
+- Active item: **AT-01b: prove the native job authority bridge; AT-01a non-example archive feasibility passed.** [Active plan](../planning/aurora_tasks_release.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
-## Addon cleanup and restructuring (current goal)
+## Aurora Tasks release (active goal)
+
+[Plan](../planning/aurora_tasks_release.md). Authorized8 November2026. **5/100
+verified weighted points;1/14 acceptance checks passed.** This counts only the new
+application release; AR16/16, CF12/12 and R1 99/99 remain historical completed checks.
+
+| Gate | Weight | State | Active/next work |
+| --- | --- | --- | --- |
+| AT-01 |15| in_progress | AT-01a passed; native-job feasibility active; freeze only after real probes |
+| AT-02 |20| not_started | General packaging/build/catalog authoring workflow |
+| AT-03 |25| not_started | Shared Tasks and durable reminders in native UI |
+| AT-04 |30| not_started | Clean/populated upgrade, fault/recovery, useful peer and browser |
+| AT-05 |10| not_started | Reproduction/affected checks, handoff and retirement |
+
+| Acceptance | Latest result | Evidence/procedure |
+| --- | --- | --- |
+| AT-A | passed | [Non-example archive feasibility](evidence/post-r1/aurora-tasks/at01-packaging.json): deterministic bytes, current validator, separate curated approval, six reference digests unchanged |
+| AT-B | not_run | Actual native authority/reminder feasibility, no synthetic workspace grant |
+| AT-C | not_run | Freeze roles, data, scheduling and recovery after probes |
+| AT-D | not_run | General authoring inputs, dependencies, notices and deterministic archive |
+| AT-E | not_run | Approved catalog/build/inventory/lifecycle consumption |
+| AT-F | not_run | Native shared list/stage/task/assignment/due/completion workflow |
+| AT-G | not_run | Owner/member/external-assignee/outsider positive and negative operations |
+| AT-H | not_run | Real reminder, change/cancel/stale/retry/idempotency and recipient inbox |
+| AT-I | not_run | Clean installation of final release |
+| AT-J | not_run | Populated supported app upgrade preserving records and rules |
+| AT-K | not_run | Closed fault, fresh independent recovery/separate resume, useful Maintenance |
+| AT-L | not_run | Native browser workflow and representative final-image workload |
+| AT-M | not_run | Affected regression, reproduction and privacy checks |
+| AT-N | not_run | Checksummed handoff, author/operator instructions and owned retirement |
+
+Blocker register: no user input needed. Design prerequisite AT-R1: existing job
+adapter requires workspace actor/installation/service bindings; Aurora native
+records use list-based authority. This is an unproven integration boundary, not a
+passed reminder implementation. Active AT-01 must establish the smallest safe
+bridge before dependent feature work. AT-R2: reference assembler has hardcoded
+example identities; prototype explicit non-example source packaging without
+relaxing existing trust, schema or ownership validation.
+
+Resume capsule: **AT-01b active; no running tests/builds/containers, uncertain
+mutation or user blocker.** AT-01a passed: six new host tests (five pass/one
+Windows symlink privilege skip),18 existing archive tests passed; dev.aurora.tasks
+archive14f9af4b is reproducible and all six reference bytes unchanged. New shared
+ZIP encoder preserves existing archive ABI; draft native authoring assembler
+never imports application code and existing validator still denies unapproved
+curated digest. No runtime installation/job authority claim yet. Read
+[packaging receipt](evidence/post-r1/aurora-tasks/at01-packaging.json) and active
+plan. Next: establish a bounded native job adapter feasibility proof without
+synthetic workspace membership or changing list authorization. Existing queue
+schema/routing requires workspace/actor/installation; compare a typed native
+partition/authority extension with app workspace conversion before choosing,
+and test real actor revocation/permission denial in a disposable DB. Do not freeze
+unproven semantics. Preserve sealed core47/core46 and retired AR targets.
+Current release is usable core47; this application/reminder release is unqualified.
+
+## Addon cleanup and restructuring (completed goal)
 
 User authorized full implementation7 November2026. **No active item; goal complete.**
 **100/100 weighted points;16/16 AR checks passed.** Documentation earns no
@@ -33,9 +88,9 @@ installed13modules; Maintenance15(with generic mail, no Discuss/gateway/tours);
 explicit communication17(with both extracted apps/tours). Editor imports/ICE,
 local uploads/images/link previews, native Maintenance list/form/chatter and
 optional action/cron identities verified. Old failures/fixes retain exact receipts.
-AR-03 source prune is committed. No populated upgrade or new release seal yet.
+AR-03 source prune is committed. Later AR-04/05 populated upgrades and sealed core47 are recorded below.
 
-Resume capsule (AR supersedes historical capsules): **Goal complete; no active
+Historical AR completion capsule (superseded by active AT capsule above): **Goal complete; no active
 item, pending mutation, running test/build or user blocker.** AR-01..05 passed
 16/16checks/100weightedpoints. [Final decision](evidence/post-r1/addon-cleanup/qualification-decision.json),
 [delivery verification](evidence/post-r1/addon-cleanup/final-delivery.json),
@@ -113,7 +168,7 @@ changed no runtime code; AR execution is now recorded above. Core46 remains seal
 12/12CFchecks/100points; extraction is now authorized under AR-01..05 above; its new qualification does
 not invalidate the historical core46 evidence.
 
-## Consolidated foundation release (current goal)
+## Consolidated foundation release (completed goal)
 
 User authorized the full goal on7 November2026. No active item; all CF work and final delivery checks complete.
 Progress **100/100 weighted points;12/12 CF checks passed; sealed kit and final privacy/checksum verification passed**. Original R1 remains99/99.

@@ -25,17 +25,11 @@ def toml_value(value):
 
 
 def _finish_archive(source,manifest,files):
-    plugin=manifest['plugin']['id']
+    from package_archive import finish_archive
+    files=dict(files)
     for name in ['LICENSE','COPYRIGHT']:files['notices/'+name]=(source/name).read_bytes()
-    provenance={'schema_version':1,'builder':'repository-reference-assembler-v1','trusted_inputs_only':True,'source_files':{name:hashlib.sha256(value).hexdigest() for name,value in sorted(files.items())},'upstream_commit':'5c7defb49e020fec8b6bb82403a2f54eb79e92e1'}
-    files['provenance.json']=(json.dumps(provenance,sort_keys=True,indent=2)+'\n').encode()
-    inventory={'schema_version':1,'files':{name:hashlib.sha256(value).hexdigest() for name,value in sorted(files.items())},'excluded':['inventory.json']}
-    files['inventory.json']=(json.dumps(inventory,sort_keys=True,indent=2)+'\n').encode()
-    output=io.BytesIO()
-    with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
-        for name,value in sorted(files.items()):
-            info=zipfile.ZipInfo(plugin+'/'+name,(2000,1,1,0,0,0));info.create_system=3;info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=(stat.S_IFREG|0o444)<<16;archive.writestr(info,value)
-    return manifest,output.getvalue(),files
+    return finish_archive(manifest,files,builder='repository-reference-assembler-v1',
+                          provenance_extra={'upstream_commit':'5c7defb49e020fec8b6bb82403a2f54eb79e92e1'})
 
 
 def assemble(source,manifest_path):

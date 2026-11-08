@@ -419,3 +419,7 @@ Addon cleanup release complete: [16/16qualification](evidence/post-r1/addon-clea
 and [delivery verification](evidence/post-r1/addon-cleanup/final-delivery.json).
 100weightedpoints; native UI, exact-image independent recovery, both populated
 upgrades and owned cleanup passed. [Handoff](addon-cleanup-release.md).
+
+## Useful Aurora Tasks application release
+
+AT-01a non-example data-only packaging feasibility passed: [receipt](evidence/post-r1/aurora-tasks/at01-packaging.json). Six new tests (five pass/one Windows symlink skip),18existing archive tests passed; six reference artifacts byte-identical. Runtime installation/native job authority remain unqualified. [Active plan](../planning/aurora_tasks_release.md).

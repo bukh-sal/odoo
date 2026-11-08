@@ -1791,3 +1791,28 @@ Independent kit checksum verification and final sealed-source audit passed:
 485dc9b5 verified unchanged; final stable47alias verified. Delivery/decision/
 seal/privacy/cleanup/handoff recorded.16/16ARchecks/100weightedpoints; no active
 work, test/build, uncertain mutation or user blocker. No publication/production.
+
+## AT-01 start —8 November2026
+
+User selected useful Aurora Tasks release on qualified core47. Created active goal
+and five weighted gates/14 checks; prior AR/R1/CF/BG results stay complete. Source
+inspection shows Aurora native list rules differ from workspace-only durable job
+authority, and archive assembly is example-allowlisted. First discriminating work
+is a non-example archive probe using existing validation; native authority probe
+and contract freeze precede substantial reminder work. No Docker mutation yet;
+no user blocker. Baseline235b9d3aa37.
+
+## AT-01a — non-example packaging feasibility passed
+
+A draft explicit native source recipe produced dev.aurora.tasks0.1.0 without
+importing code (fixture __init__ raises if imported). Repeated bytes identical,
+20,054bytes/digest14f9af4bf48e0b8c38c3a3b31a2fb73b2d3f878e343bd9d96c78d759f93968d3.
+Existing ArtifactValidator accepts structural development validation, denies
+unapproved curated admission, and accepts separately approved exact digest.
+Static model ownership composition also passes. Shared archive encoder preserves
+all six existing example digests. Six new tests: five passed/Windows symlink
+privilege skip; all18 existing archive tests passed. Receipt at
+`docs/evidence/post-r1/aurora-tasks/at01-packaging.json`. No Docker resources,
+installation, job authority or contract-freeze claim. Native authority bridge is
+next AT-01b; existing list rules must not gain implicit workspace tenancy. Progress
+5weightedpoints/1of14checks; authoring recipe remains draft.
