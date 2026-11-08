@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 21,
+  "revision": 22,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -246,6 +246,21 @@
         "docs/architecture-decisions/0074-native-application-job-authority.md"
       ],
       "g1": []
+    },
+    {
+      "name": "private site-native lifecycle scope v1",
+      "owner": "AT-02 / AT-04",
+      "acceptance": [
+        "AT-E",
+        "AT-I",
+        "AT-J",
+        "AT-K"
+      ],
+      "paths": [
+        "docs/contracts/native-site-lifecycle-v1.md",
+        "docs/architecture-decisions/0075-site-native-application-lifecycle.md"
+      ],
+      "g1": []
     }
   ],
   "files": {
@@ -361,7 +376,9 @@
     "tests/test_foundation_transition_contracts.py": "ea5fcb6a6b8796b336e4be706cbc7fd0976103db25d8b50d614d508721301d4d",
     "packages/contracts/examples/v1/revision19/plan-python-maintenance.json": "98713893791b9b89433a1327735eb5df41324b3160488138b947314b3b282d8a",
     "docs/aurora-tasks-contract.md": "644ccda61529c692a66fee5b5eff3c8a2ca0ac946be8d451caff04caa163f1b5",
-    "docs/architecture-decisions/0074-native-application-job-authority.md": "7d955039c65e3ad2a54159a033a13e04aeade0091742020d21cacd0f3c7958ae"
+    "docs/architecture-decisions/0074-native-application-job-authority.md": "7d955039c65e3ad2a54159a033a13e04aeade0091742020d21cacd0f3c7958ae",
+    "docs/contracts/native-site-lifecycle-v1.md": "112ce6dc9eb1907dbc550997197e3df01d7c0b0fda26aace3eee824c943d9c42",
+    "docs/architecture-decisions/0075-site-native-application-lifecycle.md": "778afa59bb1afae6224c1b082cb78f840551667a0f7145f9888bf5894733b917"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

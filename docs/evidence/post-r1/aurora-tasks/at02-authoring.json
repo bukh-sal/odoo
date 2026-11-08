@@ -1,0 +1,53 @@
+{
+  "result": "passed_general_native_application_authoring_and_composition",
+  "acceptance": [
+    "AT-D"
+  ],
+  "utc": "2026-11-08T14:01:22.219305+00:00",
+  "source_base": "cb314f99059",
+  "source_sha256": {
+    "tools/package_application.py": "0441fab42f3b55c1597ea8c4d9596845fec6e5b6af9beb967ef737f16d6ef581",
+    "tools/application_package.py": "c11c0be3b7a33219ee968770f09589d67ee564ff311ccd21699c08a98e436e97",
+    "tools/package_materialization.py": "6c95a52db83a5a8aa3bd3af2ee4b7b889acc9c34880289ae28c0994b98c7d584",
+    "tools/package_composition.py": "e1b6825d50a777923743f90efa010f93033a2f2dd302508bfb669fb88c3da6ed",
+    "tools/reference_package.py": "7f1994a92ef865728b71a130ef8c40e15b301488462329044373d94eadc4683f",
+    "tools/build_distribution.py": "7864a939128b71fba2c035bf3b9a334e987382c921d335c47e6eccf0ae93df5e",
+    "tools/build_inputs.py": "26623b56cd9d04faf8c67562b8ebf8cf09693ae4a2d9c3f052f0fafa8055e8c6",
+    "tests/test_application_distribution.py": "8a1cc2ac3c8a075b355a771eaac5e5021c235e5e3ff4a19da336b56fdb0911ea"
+  },
+  "checks": {
+    "authoring": {
+      "exit_code": 0,
+      "tests": 6
+    },
+    "composition": {
+      "exit_code": 0,
+      "tests": 7
+    },
+    "archives": {
+      "exit_code": 0,
+      "tests": 18
+    },
+    "resolution": {
+      "exit_code": 0,
+      "tests": 16
+    },
+    "metadata": {
+      "exit_code": 0,
+      "tests": 3
+    }
+  },
+  "reference_digests_unchanged": {
+    "notes": "sha256:ed96df33c9021cf476a501b747aa81d9940dfb4175219fbd96b4a63af01d9a4a",
+    "notes_labels": "sha256:252ef24b174f608f9830f04db8579d4539a7b94c10f4b404e0026158129ab14a",
+    "canvas": "sha256:05060ab17ed3bb212c9508f4c6518fc52d144165007edafa31b6d4cc43978201",
+    "notes_stats": "sha256:f2d09aba87de0b527cdd95210c4ff3ea14a3558476f30c6ebd39339bd8d1532b",
+    "background": "sha256:a097495983516a655fc5c60b791623547669d35121a2f656d096101a49fd3966",
+    "document_stats": "sha256:586a51a13e814078cf2b1111b268600498be4b0e9029264236e4c04a291948b6"
+  },
+  "limitations": [
+    "No native site installation or deployed image qualification is established by these source/catalog/solver checks.",
+    "Existing installer requires workspace activation; explicit site-native lifecycle support remains AT-E.",
+    "Windows symlink source test skipped because host lacks symlink privilege."
+  ]
+}

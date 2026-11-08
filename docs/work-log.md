@@ -1843,3 +1843,61 @@ adoption path to app0.2.0 on a separately qualified successor. No major external
 Odoo upgrade or workspace conversion. Froze additive contract revision21:
 113files/9rows; all affected G2 checks passed, exact snapshot retained.15weighted
 points/3of14acceptances; next active AT-02a generic CLI/composition/build inputs.
+
+## AT-02a — general application authoring/composition passed AT-D
+
+Added explicit recipe CLI, shared data-only package composition, verified archive
+materialization, native/package dependency checks and source input enumeration
+for recipes/resources outside historical roots. Two ordinary IDs (Tasks and a
+native field extension) compose exact archived code; incompatible/missing native
+edges fail before output. Existing validator/catalog approved exact bytes and the
+actual whole-release solver selected dependencies in native order.50affected host
+checks:49pass/1Windows symlink privilege skip; all six reference digests unchanged.
+First run had two assertion assumptions (solver result key and earlier generic UI
+dependency error) corrected against actual source/outputs. Explicit staging cleanup
+also fixes inherited implicit TemporaryDirectory ResourceWarnings.
+
+Reconciled developer source roots, isolated interpreter/catalog commands and stale
+R1/AR remaining-check claims; added ordinary application authoring guide.25weighted
+points/4of14checks. Source/catalog/solver evidence is not runtime installation.
+
+## AT-02b — concrete native lifecycle gap
+
+Existing current-image planner rejects zero workspace IDs: 'Explicit unique
+workspace targets required'; projection expands installations through features.
+Recorded pure gap receipt and draft ADR0075 for real site-native scope. Next
+implement strict native/site-only NULL private targets, genuine site projection,
+independent reconstruction and mutation child support; freeze before actual apply.
+No fabricated workspace or manual metadata bypass. No new Docker assets.
+
+## AT-02b — native site lifecycle source and revision22 freeze
+
+Implemented explicit operator `--site-native` intent, strict site-only native
+profile, NULL private scope with protocol1 and explicit local display. Projection
+now observes the real site installation without feature rows and rejects native
+version/artifact/workspace-effect mismatches. Staged update keeps true site scope;
+fresh install refuses unregistered already-installed native addons. Metadata child
+source skips workspace writes only for this validated scope; exact runtime bridge
+preflight refuses old images before mutation. Child compiled, not executed yet.
+
+Eight native scope tests pass (closure/independent reconstruction, mixed scope/
+provider denial, legacy adoption refusal, rehashed marker tampering, projection,
+staged update and old bridge refusal). CLI4 and staging9 pass. Existing workspace
+install6/projection3/plans13 pass. Reinstall initially failed because staged helper
+entries omitted activation metadata newly required by the scope check. Preserved
+failure, carried actual activation/provided APIs instead of weakening the guard;
+all9reinstall tests then passed. One staged test fixture method-name typo was fixed
+without changing production behavior. Final8composition tests include UTF8 policy.
+
+ADR0075/private native site v1 frozen at revision22; all affected G2 commands passed,
+115files/10rows, snapshot saved. No new images, DBs or Docker assets. AT-E actual
+admitted image/native child apply remains unqualified. Do not build a redundant
+throwaway release solely for that check; AT-03 is allowed after AT-01 and packaged
+source readiness, and the useful candidate will supply AT-E then AT-04 evidence.
+Progress remains25points/4of14. Next active AT-03a managed native partitions,
+artifact-pinned authority and cancellation, then real Tasks/reminder/inbox.
+
+Reviewed early native proof's synthetic metadata scope explicitly: it tested real
+native ORM actor/fencing behavior but did not install its packaging-fixture archive.
+Added scope note; final artifact-source/startup binding is mandatory, not inferred
+from that probe. Preserve sealed47/46 and every historical receipt.

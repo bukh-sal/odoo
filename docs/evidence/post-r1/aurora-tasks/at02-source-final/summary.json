@@ -1,0 +1,48 @@
+{
+  "result": "passed_final_source_authoring_and_native_site_scope_checks",
+  "utc": "2026-11-08T14:26:11.800548+00:00",
+  "source_base": "cb314f99059",
+  "source_sha256": {
+    "tools/package_application.py": "0441fab42f3b55c1597ea8c4d9596845fec6e5b6af9beb967ef737f16d6ef581",
+    "tools/application_package.py": "c11c0be3b7a33219ee968770f09589d67ee564ff311ccd21699c08a98e436e97",
+    "tools/package_composition.py": "e1b6825d50a777923743f90efa010f93033a2f2dd302508bfb669fb88c3da6ed",
+    "tools/package_materialization.py": "6c95a52db83a5a8aa3bd3af2ee4b7b889acc9c34880289ae28c0994b98c7d584",
+    "tools/reference_package.py": "7f1994a92ef865728b71a130ef8c40e15b301488462329044373d94eadc4683f",
+    "tools/build_inputs.py": "26623b56cd9d04faf8c67562b8ebf8cf09693ae4a2d9c3f052f0fafa8055e8c6",
+    "tools/build_distribution.py": "75907502a03e7a04c8cfc5fb1a5d5b95e4bff70a84de3fb143352bdebaf9e640",
+    "tools/modular.py": "693392107e8f85d22e6e100c5eae41aaf1b4ff83b8703ea358f71ee72de19f17",
+    "packages/platform_sdk/modular_platform/native_scope.py": "eaf28e24d14f369c1f76c5d5c03da72ebf5761f7c666a7d5b1ea0dd1b2c7bdf5",
+    "packages/platform_sdk/modular_platform/lifecycle_planning.py": "c7e184383a1eb5f47f931a361d510202279ef941c12c4475e2c5f8e88b44797a",
+    "packages/platform_sdk/modular_platform/plans.py": "b95176d1dd6faa7ce0f7efdd23445a9ace55ac8b8b1a3111b2215a0a31e3ccf6",
+    "packages/platform_sdk/modular_platform/projection.py": "5915cd759289056373d45c89d644de0575556e3eba4963595c032024b0f365ea",
+    "packages/platform_sdk/modular_platform/release_staging.py": "d571fea71959925c52c5bff21ada548a56a5db531ed1bae0b65b70a59dbf0045",
+    "packages/platform_sdk/modular_platform/install_metadata.py": "d50a1bb5d0ecca454c3d39340e739e47f7dea32bd5e167521ae94c2eb3e37fcd",
+    "packages/platform_sdk/modular_platform/native_executor.py": "c1b2dffa1171af44870b9b2fe3ed0e11a96a92cf3ad00202c4f449e5c1652ce2",
+    "tests/test_application_distribution.py": "83cc6de872bd4d4e666b9610bd520631de6e8382d47f808ee9a4d106cfd2237c",
+    "tests/test_native_site_lifecycle.py": "828ee0bd4f1434aafce1aebc60db95e5548600540b6e85c96fc9d62065749b11",
+    "tests/test_current_install_cli.py": "86e3d515eb5cadea3e0e54631ec0ed59f5d903b3ad7f55b8d91062da6d5b669f"
+  },
+  "checks": {
+    "composition": {
+      "exit_code": 0,
+      "tests": 8
+    },
+    "native-scope": {
+      "exit_code": 0,
+      "tests": 8
+    },
+    "install-cli": {
+      "exit_code": 0,
+      "tests": 4
+    },
+    "staging": {
+      "exit_code": 0,
+      "tests": 9
+    }
+  },
+  "metadata_child_compiled_not_executed": true,
+  "limitations": [
+    "AT-E actual admitted image/native metadata child apply remains unqualified.",
+    "No new application feature, browser, worker supervisor or release recovery pass."
+  ]
+}

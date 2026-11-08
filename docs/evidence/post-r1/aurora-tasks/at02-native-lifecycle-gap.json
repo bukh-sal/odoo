@@ -1,0 +1,10 @@
+{
+  "result": "confirmed_missing_site_native_installation_path",
+  "utc": "2026-11-08T14:05:27.016439+00:00",
+  "acceptance_pending": "AT-E",
+  "observation": "Explicit unique workspace targets required",
+  "source": "packages/platform_sdk/modular_platform/lifecycle_planning.py",
+  "source_sha256": "282422d4f738fb8c497a9bd04c3e75359baef79541588beeba5c0a407d396cc5",
+  "scope": "Pure existing-planner call with an empty workspace list; no runtime/image/database or operator mutation.",
+  "next_action": "Implement and freeze explicit native site scope under ADR0075; preserve workspace guards."
+}

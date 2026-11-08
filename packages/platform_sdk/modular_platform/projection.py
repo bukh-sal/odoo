@@ -6,7 +6,8 @@ The app receives only a metadata proposal; OS approval re-observes its source.
 import copy
 import re
 
-from .contracts import normalize_manifest, validate,checked_path,PACKAGE_VERSION
+from .contracts import normalize_manifest, validate,checked_path,PACKAGE_VERSION,native_version
+from .native_scope import require_site_manifest
 from .plans import data_digest, release_lock
 from .resolution import PlanningError, resolve_release
 
@@ -161,6 +162,22 @@ def project_deployment(configuration, observation, catalog):
     expanded, bindings, security = [], [], []
     for site in observation['sites']:
         installations = {item['installation_id']: item for item in site['installations']}
+        for installation in site['installations']:
+            manifest=normalize_manifest(installation['manifest'])
+            if manifest['runtime']['kind']!='native' or manifest['activation']['scopes']!=['site']:continue
+            require_site_manifest(manifest)
+            descriptor=by_plugin.get(installation['plugin_id'])
+            native={row['addon']:row for row in site['native_modules']}.get(manifest['runtime']['addon_name'])
+            if (installation['metadata_state']!='installed' or descriptor is None
+                    or installation['digest']!=descriptor['digest'] or installation['version']!=manifest['plugin']['version'] or manifest!=descriptor['manifest']
+                    or installation['runtime']!='native'
+                    or any(row['installation_id']==installation['installation_id'] for row in site['features'])
+                    or any(row['installation_id']==installation['installation_id'] for row in site['grants'])
+                    or not native or native['state']!='installed' or native['version']!=native_version(manifest['plugin']['version'])):
+                raise PlanningError('Site-native installation differs from verified artifact/native state or has workspace effects')
+            expanded.append(dict(installation_id=installation['installation_id'],site_id=site['site_id'],
+                workspace_id=None,plugin_id=installation['plugin_id'],state='installed',
+                feature_state='enabled',metadata_state='installed'))
         for feature in site['features']:
             installation = installations[feature['installation_id']]
             if installation['runtime'] not in ('native','external_service') or installation['runtime']=='external_service' and external is None:
@@ -185,6 +202,8 @@ def project_deployment(configuration, observation, catalog):
             descriptor = by_plugin.get(installation['plugin_id'])
             if descriptor is None:
                 raise PlanningError('Active installation requires its verified package in this image')
+            if descriptor['manifest']['runtime']['kind']=='native' and 'workspace' not in descriptor['manifest']['activation']['scopes']:
+                raise PlanningError('Site-only native application cannot carry workspace feature rows')
             if installation['digest'] != descriptor['digest'] or normalize_manifest(installation['manifest']) != descriptor['manifest'] or installation['runtime']!=descriptor['manifest']['runtime']['kind']:
                 raise PlanningError('Database installation metadata differs from verified artifact')
             native_state = {item['addon']: item['state'] for item in site['native_modules']}.get(descriptor['manifest']['runtime'].get('addon_name'))

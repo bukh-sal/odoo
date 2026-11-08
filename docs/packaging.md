@@ -1,6 +1,6 @@
 # R1 artifact and catalog workflow
 
-Catalog, planning and lifecycle work passed G5 for the recorded profiles; final G7 release qualification remains open. [Current status](implementation-status.md) is authoritative. The [developer guide](developer-guide.md) supplies current isolated setup and reference packaging commands. Native Python and same-origin frontend code run with host trust after approval. Archive inspection never imports them or runs build tools.
+Catalog, planning and lifecycle work passed R1/G7 for their recorded profiles, and owned core47 is sealed. [Current status](implementation-status.md) is authoritative. The [developer guide](developer-guide.md) supplies isolated setup and reference packaging commands. The [application authoring guide](application-authoring.md) covers ordinary native application IDs and explicit source recipes; its new lifecycle qualification is tracked under AT-01..05. Native Python and same-origin frontend code run with host trust after approval. Archive inspection never imports them or runs build tools.
 
 R1 curated trust means an operator approves the **exact outer SHA-256 digest** in an independently owned JSON configuration. No signature verification is implemented or advertised. Package provenance describes claimed inputs; neither it nor a publisher key inside a package grants trust. Development accepts unsigned artifacts only with `mode: "development"` and `allow_unsigned_development: true`; every successful CLI result displays a warning. Open-marketplace policy is rejected.
 
@@ -18,13 +18,13 @@ Example curated operator configuration (save outside application-writable mounts
 
 Add reviewed `sha256:<64 lowercase hex>` identities to `approved_digests`. The operator controls this file; an upload cannot change it. Independent executor-store OS restrictions are qualified in E-01c rather than inferred from this CLI.
 
-Run using the repository's locked environment:
+Run using the isolated interpreter recorded by the selected kit (`$mpDevPython`); in this checkout it is `.local/toolchain/operator-python16/Scripts/python.exe`:
 
 ```powershell
-.venv/Scripts/python.exe tools/modular.py --config <operator.json> plugin validate <package.mplug> --digest sha256:<hex>
-.venv/Scripts/python.exe tools/modular.py --config <operator.json> catalog --store <operator-catalog> add <package.mplug> --digest sha256:<hex>
-.venv/Scripts/python.exe tools/modular.py --config <operator.json> catalog --store <operator-catalog> list
-.venv/Scripts/python.exe tools/modular.py --config <operator.json> catalog --store <operator-catalog> quarantine sha256:<hex>
+& $mpDevPython tools/modular.py --config <operator.json> plugin validate <package.mplug> --digest sha256:<hex>
+& $mpDevPython tools/modular.py --config <operator.json> catalog --store <operator-catalog> add <package.mplug> --digest sha256:<hex>
+& $mpDevPython tools/modular.py --config <operator.json> catalog --store <operator-catalog> list
+& $mpDevPython tools/modular.py --config <operator.json> catalog --store <operator-catalog> quarantine sha256:<hex>
 ```
 
 Catalog blobs are content addressed, published exclusively from a fully validated private copy, and never overwritten. The SQLite index uniquely binds `(plugin_id, version)` to one artifact. Re-adding identical bytes is idempotent; different bytes for an existing version fail. A crash between publishing a blob and committing its index can leave an unselected orphan; re-adding the same bytes reconciles it. Catalog reads recheck actual bytes and current trust. Quarantine excludes selection and re-addition. Removing trust invalidates selection immediately. Recover damaged storage from an independently verified copy through a future explicit repair procedure; `add` preserves corrupt existing bytes and reports failure.

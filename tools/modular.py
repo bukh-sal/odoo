@@ -79,7 +79,9 @@ def main(argv=None):
     current.add_argument('--store', required=True, type=Path)
     current.add_argument('--operator-store', type=Path, help='Independent OS-owned control store for published external endpoint observation; --store remains the catalog')
     current.add_argument('--site', required=True)
-    current.add_argument('--workspace', required=True, action='append')
+    current_scope=current.add_mutually_exclusive_group(required=True)
+    current_scope.add_argument('--workspace', action='append')
+    current_scope.add_argument('--site-native', action='store_true', help='Install a site-only native app without workspace features or grants')
     current.add_argument('--plugin', required=True)
     current.add_argument('--version', required=True)
     current.add_argument('--digest', required=True)
@@ -425,7 +427,7 @@ def main(argv=None):
             snapshot = Catalog(args.store, validator, readonly=True).snapshot()
             observation = observer.read()
             result = prepare_current_image_install(observer.state(observation, snapshot), observation['sites'], snapshot,
-                site_id=args.site, workspace_ids=args.workspace, plugin_id=args.plugin, version=args.version,
+                site_id=args.site, workspace_ids=args.workspace or [], site_native=args.site_native, plugin_id=args.plugin, version=args.version,
                 artifact_digest=args.digest, operation_id=str(uuid4()),
                 created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
         elif args.group == 'plugin' and args.action == 'plan':

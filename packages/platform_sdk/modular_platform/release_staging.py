@@ -14,6 +14,7 @@ from .operator_os import OperatorError,OperationLocks,protect_directory,verify_p
 from .operator_store import _write_new
 from .planning_cli import prepare_document
 from .plans import check_bundle,data_digest,_display
+from .native_scope import require_site_manifest
 from .projection import runtime_inputs
 from .resolution import binding_matches_scope, resolve_release
 from .native_versions import PARSER_PATH,reviewed_transition
@@ -214,6 +215,8 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
             {p['plugin_id']:'=='+p['version'] for p in selected},scoped_provider_choices=choices,
             core_python=[p['name']+'=='+p['version'] for p in runtime['python_metadata']])
         entries={p['plugin_id']:dict(runtime=p['manifest']['runtime']['kind'],native_addon=p['manifest']['runtime'].get('addon_name'),
+                 plugin_id=p['plugin_id'],activation=p['manifest']['activation'],
+                 provided_apis=[dict(service_id=s['id'],api_version=s['api_version']) for s in p['manifest']['services']['provides']],
                  hard_dependencies=p['manifest']['dependencies']['plugins'],permissions=p['manifest']['permissions']) for p in selected}
         reinstall_spec=install_scope_spec(document,sites,activation_targets=activation,entries=entries,service_selection=solution['bindings'])
         targets=reinstall_spec['targets'];feature_states=reinstall_spec['feature_states']
@@ -222,7 +225,16 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
     feature_map={(r['installation_id'],r['workspace_id']):r['availability'] for r in feature_states}
     for target in targets:
         site=by_site.get(target['site_id'])
-        if (site is None or not any(item['workspace_id']==target['workspace_id'] and (item['state']=='active' or feature_map.get((target['installation_id'],target['workspace_id']))=='suspended') for item in site['workspaces'])
+        site_native=target['workspace_id'] is None
+        if site_native:
+            if target['plugin_id'] not in by_plugin:raise OperatorError('Site-native target lacks its verified package')
+            require_site_manifest(by_plugin[target['plugin_id']]['manifest'])
+            if site is None or not isinstance(site.get('native_modules'),list):
+                raise OperatorError('Site-native staging requires observed native registry state')
+            if target['action']=='install' and not any(i['plugin_id']==target['plugin_id'] for i in site['installations']) and any(
+                    m['addon']==by_plugin[target['plugin_id']]['manifest']['runtime']['addon_name'] for m in site['native_modules']):
+                raise OperatorError('Installed unregistered native addon requires an explicit adoption transition')
+        if (site is None or not site_native and not any(item['workspace_id']==target['workspace_id'] and (item['state']=='active' or feature_map.get((target['installation_id'],target['workspace_id']))=='suspended') for item in site['workspaces'])
                 or target['plugin_id'] not in by_plugin or target['action'] not in (('deploy',) if operation_type in ('deploy','core_upgrade') else ('install','upgrade'))
                 or by_plugin[target['plugin_id']]['manifest']['runtime']['kind']!='native'
                 or target['installation_id']!=installation_id(site,target['plugin_id'])):

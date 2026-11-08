@@ -16,13 +16,19 @@ from psycopg2.extras import Json
 def main():
     data = json.load(sys.stdin)
     required = {'site_id', 'deployment_id', 'operation_id', 'generation', 'release_digest', 'targets', 'plugins', 'bindings','permission_changes','previous_plugins','database','policy_version'}
-    assert required <= data.keys() <= required | {'feature_states'}
+    assert required <= data.keys() <= required | {'feature_states','native_site_scope_protocol'}
+    native_site=any(t['workspace_id'] is None for t in data['targets'])
+    if native_site:
+        assert type(data.get('native_site_scope_protocol')) is int and data['native_site_scope_protocol']==1
+    else:
+        assert 'native_site_scope_protocol' not in data
     states = {(r['installation_id'],r['workspace_id']):r['availability'] for r in data.get('feature_states',[])}
     if 'feature_states' in data:
-        assert len(states)==len(data['targets'])==len(data['feature_states']) and all(t['action']=='install' for t in data['targets'])
+        scoped=[t for t in data['targets'] if t['workspace_id'] is not None]
+        assert len(states)==len(scoped)==len(data['feature_states']) and all(t['action']=='install' for t in data['targets'])
         assert all(set(r)=={'installation_id','site_id','workspace_id','availability'} and r['site_id']==data['site_id']
                    and r['availability'] in ('enabled','suspended') for r in data['feature_states'])
-        assert set(states)=={(t['installation_id'],t['workspace_id']) for t in data['targets']}
+        assert set(states)=={(t['installation_id'],t['workspace_id']) for t in scoped}
     config = configparser.ConfigParser()
     config.read('/run/secrets/odoo_config')
     options = config['options']
@@ -41,12 +47,20 @@ def main():
                 manifest = plugin['manifest']
                 cursor.execute('SELECT state,latest_version FROM ir_module_module WHERE name=%s', [manifest['runtime']['addon_name']])
                 assert cursor.fetchone() == ('installed', '19.0.' + manifest['plugin']['version']), 'Native installed version differs'
-                cursor.execute('SELECT id,state FROM mp_workspace WHERE public_id=%s FOR UPDATE', [target['workspace_id']])
-                row = cursor.fetchone()
+                native_site=target['workspace_id'] is None
+                if native_site:
+                    from modular_platform.native_scope import require_site_manifest
+                    assert type(data.get('native_site_scope_protocol')) is int and data['native_site_scope_protocol']==1
+                    require_site_manifest(manifest)
+                    workspace=None
+                else:
+                    cursor.execute('SELECT id,state FROM mp_workspace WHERE public_id=%s FOR UPDATE', [target['workspace_id']])
+                    row = cursor.fetchone()
+                    availability=states.get((target['installation_id'],target['workspace_id']),'enabled')
+                    assert row and (row[1] == 'active' or availability=='suspended'), 'Workspace is unavailable'
+                    workspace = row[0]
+                    workspaces[target['workspace_id']] = workspace
                 availability=states.get((target['installation_id'],target['workspace_id']),'enabled')
-                assert row and (row[1] == 'active' or availability=='suspended'), 'Workspace is unavailable'
-                workspace = row[0]
-                workspaces[target['workspace_id']] = workspace
                 cursor.execute('SELECT id,public_id,version,artifact_digest,state FROM mp_plugin_installation WHERE plugin_id=%s FOR UPDATE', [target['plugin_id']])
                 row = cursor.fetchone()
                 if row:
@@ -74,7 +88,12 @@ def main():
                         [target['installation_id'], target['plugin_id'], manifest['plugin']['version'], plugin['digest'], Json(manifest)])
                     installation = cursor.fetchone()[0]
                 installations[target['installation_id']] = installation
-                if target['action']=='install':
+                if native_site:
+                    cursor.execute('SELECT count(*) FROM mp_workspace_plugin WHERE installation_id=%s',[installation])
+                    assert cursor.fetchone()==(0,),'Site-native installation has workspace feature rows'
+                    cursor.execute('SELECT count(*) FROM mp_plugin_grant WHERE installation_id=%s',[installation])
+                    assert cursor.fetchone()==(0,),'Site-native installation has workspace grants'
+                elif target['action']=='install':
                     cursor.execute('SELECT id,installation_id,availability FROM mp_workspace_plugin WHERE workspace_id=%s AND plugin_id=%s FOR UPDATE',[workspace,target['plugin_id']])
                     feature=cursor.fetchone()
                     if feature:

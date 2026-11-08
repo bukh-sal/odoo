@@ -1,7 +1,9 @@
 # R1 developer entry point
 
-R1 qualification is still in progress. Read [current status](implementation-status.md)
-and the [release checklist](r1-release-checklist.md) before choosing a kit.
+Local R1 and the owned core47 foundation release are qualified for their recorded
+profiles. Read [current status](implementation-status.md), the
+[core47 handoff](addon-cleanup-release.md) and the
+[release checklist](r1-release-checklist.md) before choosing a kit.
 Keep the upstream README and license notices intact.
 
 ## Start a new disposable installation
@@ -43,18 +45,19 @@ Work in a separate disposable source checkout/copy, not the installed source or
 an immutable catalog blob. For the first exercise retain the repository example
 IDs; a third-party plugin needs its own reverse-DNS ID, addon mapping, schemas,
 field/contribution ownership and permission inventory. The reference assembler
-deliberately accepts only the five repository examples.
+accepts only repository examples. For an ordinary application identity, use the
+[general application authoring workflow](application-authoring.md).
 
 Follow these paths from that source root:
 
 | Path | Responsibility |
 | --- | --- |
 | `plugins/notes/plugin.toml` | Package metadata, public services, permissions and native page declarations |
-| `platform_addons/mp_example_notes/models.py` | Workspace ownership, role checks, public UUID DTOs and revision CAS |
-| `platform_addons/mp_example_notes/views/notes.xml` | Native list/form definitions; retain these for ordinary CRUD |
+| `examples/mp_example_notes/models.py` | Workspace ownership, role checks, public UUID DTOs and revision CAS |
+| `examples/mp_example_notes/views/notes.xml` | Native list/form definitions; retain these for ordinary CRUD |
 | `plugins/notes_labels/plugin.toml` | Declared dependency/binding, extension field ownership and UI contribution |
-| `platform_addons/mp_example_notes_labels/models.py` | Native `_inherit` extension, availability guard and cooperative base write |
-| `platform_addons/mp_example_notes_labels/static/src/labels.js` | Contribution handler using the host API |
+| `examples/mp_example_notes_labels/models.py` | Native `_inherit` extension, availability guard and cooperative base write |
+| `examples/mp_example_notes_labels/static/src/labels.js` | Contribution handler using the host API |
 
 For a bounded packaging exercise, change the Labels contribution's visible label
 in `plugins/notes_labels/plugin.toml`. Increase its package version from `0.2.4`
@@ -91,7 +94,7 @@ the label exercise only qualifies packaging and version discipline.
 `packages/host_sdk/src/index.ts` defines `PluginPageModule`; the plain TypeScript
 example in `packages/host_sdk/tests/plain_page.ts` has no Owl dependency. The
 installed reference implementation is
-`platform_addons/mp_example_canvas/static/src/page.js`, with its native adapter
+`examples/mp_example_canvas/static/src/page.js`, with its native adapter
 and manifest asset declarations. `plugins/canvas/plugin.toml` declares the page,
 navigation and required `documents` binding.
 
@@ -165,7 +168,7 @@ that work advanced or permission to retry. Unknown external effects must not be
 automatically replayed. [Recovery evidence](recovery-rehearsal.md) records the
 qualified profiles and their limits.
 
-Current source-only packaging proof is linked from the status ledger. Final
-§28 completion still requires the qualified final kit and actual fresh-developer
-install/extension/custom-UI/permission/recovery/worker walkthrough; these written
-commands and package validation alone cannot satisfy it.
+Sealed core47's final developer/reference and recovery walkthroughs are linked
+from the status ledger and its handoff. New application authoring/native jobs are
+tracked by AT-01..05; source packaging checks alone do not qualify the new app's
+installation, inbox, worker behavior, populated upgrade or independent recovery.

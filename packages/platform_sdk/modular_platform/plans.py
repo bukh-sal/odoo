@@ -16,6 +16,7 @@ import rfc8785
 
 from .contracts import canonical_plan, native_version, package_version, plan_hash, validate, validate_binding, host_restart_required
 from .resolution import PlanningError, binding_matches_scope
+from .native_scope import require_site_manifest
 
 
 def data_digest(value):
@@ -177,8 +178,19 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         if set(source) != {'installation_id', 'site_id', 'workspace_id', 'plugin_id', 'action'}:
             raise PlanningError('Exact target has unknown/missing fields')
         target = copy.deepcopy(source)
-        for key in ('installation_id', 'site_id', 'workspace_id'):
+        for key in ('installation_id', 'site_id'):
             _uuid(target[key])
+        if target['workspace_id'] is None:
+            descriptor=new.get(target['plugin_id'])
+            if descriptor is None:raise PlanningError('Site-native target requires its verified manifest')
+            require_site_manifest(descriptor['manifest'])
+            if target['action'] not in ('install','upgrade','deploy'):
+                raise PlanningError('Site-native action is outside the qualified v1 lifecycle')
+        else:
+            _uuid(target['workspace_id'])
+            descriptor=new.get(target['plugin_id'])
+            if descriptor and descriptor['manifest']['runtime']['kind']=='native' and 'workspace' not in descriptor['manifest']['activation']['scopes']:
+                raise PlanningError('Workspace target requires a workspace-capable manifest')
         if target['site_id'] not in state['site_ids'] or target['action'] not in valid_actions:
             raise PlanningError('Target site/action is outside this deployment')
         allowed_actions = {'install': {'install', 'upgrade'}, 'upgrade': {'install', 'upgrade'},
@@ -301,10 +313,10 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
                 or any(set(row) != {'plugin_id', 'workspace_id', 'capability', 'action'} or row['action'] != 'revoke'
                        or (row['plugin_id'], row['workspace_id']) not in scopes for row in permission_changes)):
             raise PlanningError('Native uninstall requires a new epoch, unchanged executable identities and surviving service selections')
-    ordered_targets = sorted(clean_targets, key=lambda item: (item['site_id'], item['workspace_id'], item['plugin_id'], item['installation_id']))
+    ordered_targets = sorted(clean_targets, key=lambda item: (item['site_id'], item['workspace_id'] or '', item['plugin_id'], item['installation_id']))
     feature_states = copy.deepcopy(list(feature_states))
     if feature_states:
-        expected_scopes = {(r['installation_id'], r['site_id'], r['workspace_id']) for r in clean_targets}
+        expected_scopes = {(r['installation_id'], r['site_id'], r['workspace_id']) for r in clean_targets if r['workspace_id'] is not None}
         if (operation_type != 'install' or any(t['action'] != 'install' for t in clean_targets)
                 or len(feature_states) != len(expected_scopes)
                 or any(not isinstance(r, dict) or set(r) != {'installation_id', 'site_id', 'workspace_id', 'availability'}
@@ -382,6 +394,8 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         operation_lock['known_unknowns'].append('Native schema is restored site-wide. Review the exact post-install feature states: suspended scopes receive no renewed grants and remain unavailable.')
     if maintenance:
         operation_lock['maintenance_site_ids'] = sorted(state['site_ids'])
+    if any(row['workspace_id'] is None for row in ordered_targets):
+        operation_lock['native_site_scope_protocol']=1
     if 'catalog_validation_digest' in state:
         if state['catalog_validation_digest']!=operation_lock['catalog_snapshot_digest']:
             raise PlanningError('Catalog snapshot differs from independently observed current validation')
@@ -439,6 +453,10 @@ def _display(plan, operation_lock):
         display['native_uninstall_impact_digest'] = data_digest(operation_lock['native_uninstall_impact'])
     if 'feature_states' in operation_lock:
         display['feature_states'] = copy.deepcopy(operation_lock['feature_states'])
+    if operation_lock.get('native_site_scope_protocol')==1:
+        display['native_site_targets']=[dict(site_id=r['site_id'],installation_id=r['installation_id'],
+            plugin_id=r['plugin_id'],scope='site-native',action=r['action'])
+            for r in operation_lock['targets'] if r['workspace_id'] is None]
     return display
 
 
@@ -448,6 +466,9 @@ def check_bundle(bundle, current_state):
         raise PlanningError('Unknown or missing immutable operation bundle fields')
     plan, lock = bundle['plan'], bundle['operation_lock']
     canonical_plan(plan)
+    native=any(row['workspace_id'] is None for row in lock['targets'])
+    if native and (type(lock.get('native_site_scope_protocol')) is not int or lock['native_site_scope_protocol']!=1) or not native and 'native_site_scope_protocol' in lock:
+        raise PlanningError('Explicit native site scope protocol required')
     if plan_hash(plan) != bundle['plan_hash'] or data_digest(lock) != plan['dependency_lock_digest']:
         raise PlanningError('Plan or operation lock digest mismatch')
     if data_digest(current_state) != plan['base_state_digest'] or current_state['release_digest'] != plan['base_release_digest']:

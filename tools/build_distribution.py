@@ -8,6 +8,7 @@ import json
 import shutil
 import tempfile
 import sys
+import tomllib
 from pathlib import Path
 if __package__:
     from .source_layout import ENGINE, LAUNCHER, addon_source
@@ -16,23 +17,44 @@ else:
 
 
 def build(source: Path, target: Path, policy_path="deploy/distribution-r1-foundation.json") -> dict:
+    with tempfile.TemporaryDirectory(prefix='mp-packages-') as temporary:
+        staging=Path(temporary).resolve()
+        assert staging.is_relative_to(Path(tempfile.gettempdir()).resolve())
+        return _build(source,target,policy_path,staging)
+
+
+def _build(source: Path, target: Path, policy_path, staging: Path) -> dict:
     policy_file = (source / policy_path).resolve()
     if not policy_file.is_relative_to(source):
         raise ValueError("distribution policy must be within the source tree")
-    policy = json.loads(policy_file.read_text())
+    policy = json.loads(policy_file.read_text(encoding='utf8'))
     if target.exists():
         raise ValueError("distribution target must not exist")
     selected = set(policy["addons"])
-    reference_stage=tempfile.TemporaryDirectory(prefix='mp-reference-') if policy.get('reference_packages') else None
+    has_packages=bool(policy.get('reference_packages') or policy.get('application_packages'))
     references={};artifacts={}
-    if reference_stage:
-        assert Path(reference_stage.name).resolve().is_relative_to(Path(tempfile.gettempdir()).resolve())
+    if has_packages:
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'packages/platform_sdk'))
         from reference_package import materialize_reference,validate_reference_composition
-        for manifest_path in policy['reference_packages']:
-            descriptor,raw,location=materialize_reference(source,manifest_path,Path(reference_stage.name))
+        from application_package import assemble_application
+        from package_materialization import materialize_archive
+        for manifest_path in policy.get('reference_packages',[]):
+            descriptor,raw,location=materialize_reference(source,manifest_path,staging)
             if descriptor['addon'] in references:raise ValueError('Duplicate reference package addon')
             references[descriptor['addon']]=location;artifacts[descriptor['plugin_id']]={**descriptor,'bytes':raw}
         reference_registry=validate_reference_composition([item['bytes'] for item in artifacts.values()])
+        application_manifests=[]
+        for recipe_path in policy.get('application_packages',[]):
+            manifest,raw,_=assemble_application(source,recipe_path)
+            if manifest['runtime']['addon_name'] in references or manifest['plugin']['id'] in artifacts:
+                raise ValueError('Duplicate application package/addon identity')
+            descriptor,raw,location=materialize_archive(raw,staging)
+            references[descriptor['addon']]=location;artifacts[descriptor['plugin_id']]={**descriptor,'bytes':raw}
+            application_manifests.append(manifest)
+        if not set(references)<=selected:raise ValueError('Packaged addons must be selected in the distribution')
+        if application_manifests:
+            from package_composition import validate_composition
+            package_registry=validate_composition([item['bytes'] for item in artifacts.values()])
     manifests = {}
     locations = {}
     for name in sorted(selected):
@@ -43,6 +65,15 @@ def build(source: Path, target: Path, policy_path="deploy/distribution-r1-founda
         if not set(depends) <= selected:
             raise ValueError(f"unpackaged dependencies for {name}: {set(depends) - selected}")
         manifests[name] = {"depends": depends, "auto_install": manifest.get("auto_install", False), "license": manifest.get("license", "unspecified")}
+    if policy.get('application_packages'):
+        import io,zipfile
+        from package_composition import validate_dependencies
+        package_manifests=[]
+        for item in artifacts.values():
+            with zipfile.ZipFile(io.BytesIO(item['bytes'])) as archive:
+                package_manifests.append(tomllib.loads(archive.read(item['plugin_id']+'/plugin.toml').decode('utf8')))
+        framework={name for name in selected if (source/'framework_addons'/name/'__manifest__.py').is_file()}
+        validate_dependencies(package_manifests,manifests,framework)
     target.mkdir(parents=True)
     ignore = shutil.ignore_patterns("__pycache__", "*.pyc")
     # Owned roots materialize one installed namespace, without a duplicate tree.
@@ -70,11 +101,12 @@ def build(source: Path, target: Path, policy_path="deploy/distribution-r1-founda
             raise ValueError('Owned engine must contain the reviewed native version parser')
     inventory = {"policy": policy, "native_addons": manifests, "generated_patches": generated_patches, "files": {}}
     if artifacts:inventory['artifacts']={key:{name:value for name,value in item.items() if name!='bytes'} for key,item in artifacts.items()}
-    if artifacts:inventory['reference_composition']=reference_registry
+    if policy.get('reference_packages'):inventory['reference_composition']=reference_registry
+    if policy.get('application_packages'):inventory['package_composition']=package_registry
     for path in sorted(target.rglob("*")):
         if path.is_file():
             inventory["files"][path.relative_to(target).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
-    (target / "distribution-inventory.json").write_text(json.dumps(inventory, sort_keys=True, indent=2) + "\n", newline="\n")
+    (target / "distribution-inventory.json").write_text(json.dumps(inventory, sort_keys=True, indent=2) + "\n", encoding="utf8", newline="\n")
     return inventory
 
 

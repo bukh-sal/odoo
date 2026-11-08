@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-08T14:22:15.232953+00:00",
+  "contract_major": 1,
+  "revision": 22,
+  "frozen_files": 115,
+  "inventory_sha256": "6667d8814f336a399ddbd3e430165421270d286a706c21f81f3dfa8350c699a0",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0075: private explicit site-native scope protocol1 with NULL workspace, strict native/site-only profile, no feature/grant effects, matching projection and runtime bridge guard. Existing public workspace schemas unchanged.",
+  "runtime_qualification": "Eight pure native scope cases passed including independent reconstruction, projection, staged upgrade and old bridge refusal. Actual operator-native metadata apply, final app/image/workers, legacy adoption and independent recovery remain AT-E and AT-04.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "cb314f99059b6ddfcab202a411df719305615fb5"
+}

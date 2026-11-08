@@ -8,6 +8,7 @@ from uuid import UUID, uuid5
 
 from .planning_cli import prepare_document
 from .resolution import PlanningError, binding_matches_scope
+from .native_scope import require_site_entry
 
 
 def installation_id(site, plugin):
@@ -25,14 +26,25 @@ def validate_install_targets(document, sites, targets, feature_states=(), *, ent
     for target in targets:
         site = by_site.get(target['site_id'])
         activating = states.get((target['installation_id'], target['workspace_id']), 'enabled') == 'enabled'
-        if site is None or not any(item['workspace_id'] == target['workspace_id'] and (item['state'] == 'active' or not activating)
-                                   for item in site['workspaces']):
+        if target['workspace_id'] is None:
+            if site is None or not isinstance(site.get('native_modules'),list):
+                raise PlanningError('Site-native installation requires independently observed native state')
+            require_site_entry(release.get(target['plugin_id'],{}),selections)
+            if not any(row['plugin_id']==target['plugin_id'] for row in site['installations']) and any(
+                    row['addon']==release[target['plugin_id']]['native_addon'] for row in site['native_modules']):
+                raise PlanningError('Installed unregistered native addon requires an explicit adoption transition')
+        elif site is None or not any(item['workspace_id'] == target['workspace_id'] and (item['state'] == 'active' or not activating)
+                                     for item in site['workspaces']):
             raise PlanningError('Install target requires an independently observed active workspace')
+        elif 'workspace' not in release.get(target['plugin_id'],{}).get('activation',{}).get('scopes',[]):
+            raise PlanningError('Workspace activation requires a workspace-capable manifest')
         if target['action'] != 'install' or target['plugin_id'] not in release or release[target['plugin_id']]['runtime'] != 'native':
             raise PlanningError('Current-image installation accepts native install targets only')
         if target['installation_id'] != installation_id(site, target['plugin_id']):
             raise PlanningError('Install target differs from the independently derived site installation identity')
         previous = next((item for item in site['installations'] if item['plugin_id'] == target['plugin_id']), None)
+        if target['workspace_id'] is None and previous and previous['metadata_state']!='installed':
+            raise PlanningError('Site-native tombstone reinstall requires an explicit qualified transition')
         if previous and previous['metadata_state'] != 'installed':
             addon = release[target['plugin_id']]['native_addon']
             native = next((r for r in site.get('native_modules', []) if r['addon'] == addon), None)
@@ -113,15 +125,16 @@ def install_scope_spec(document, sites, *, activation_targets, entries=None, ser
                     continue
                 add(site_id, workspace, provider, key in enabled)
         if before == (len(targets), len(enabled)): break
-    order = lambda r: (r['site_id'], r['workspace_id'], r['plugin_id'], r['installation_id'])
+    order = lambda r: (r['site_id'], r['workspace_id'] or '', r['plugin_id'], r['installation_id'])
     ordered = sorted(targets.values(), key=order)
     feature_states = [dict(installation_id=r['installation_id'], site_id=r['site_id'], workspace_id=r['workspace_id'],
-                          availability='enabled' if (r['site_id'], r['workspace_id'], r['plugin_id']) in enabled else 'suspended') for r in ordered]
+                          availability='enabled' if (r['site_id'], r['workspace_id'], r['plugin_id']) in enabled else 'suspended') for r in ordered if r['workspace_id'] is not None]
     validate_install_targets(document, sites, ordered, feature_states, entries=entries, service_selection=selections)
     grants = {(s['site_id'], g['workspace_id'], g['installation_id'], g['capability']): g
               for s in sites for g in s.get('grants', [])}
     changes = []
     for row in ordered:
+        if row['workspace_id'] is None:continue
         if (row['site_id'], row['workspace_id'], row['plugin_id']) not in enabled: continue
         for request in entries[row['plugin_id']]['permissions']['requests']:
             grant = grants.get((row['site_id'], row['workspace_id'], row['installation_id'], request['capability']))
@@ -192,18 +205,21 @@ def prepare_current_feature(document, sites, catalog, *, targets, operation_type
 
 
 def prepare_current_image_install(document, sites, catalog, *, site_id, workspace_ids,
-                                  plugin_id, version, artifact_digest, operation_id, created_at):
+                                  plugin_id, version, artifact_digest, operation_id, created_at,site_native=False):
     release = document['state']['release_lock']
     entries = {item['plugin_id']: item for item in release['plugins']}
     chosen = entries.get(plugin_id)
     if chosen is None or (chosen['version'], chosen['digest']) != (version, artifact_digest):
         raise PlanningError('Requested artifact requires a separately staged and verified release image')
-    if not workspace_ids or len(workspace_ids) != len(set(workspace_ids)):
+    if site_native:
+        if site_native is not True or workspace_ids:raise PlanningError('Site-native and workspace targets are distinct')
+        require_site_entry(chosen,release['service_selection'])
+    elif not workspace_ids or len(workspace_ids) != len(set(workspace_ids)):
         raise PlanningError('Explicit unique workspace targets required')
     site = next((item for item in sites if item['site_id'] == site_id), None)
     if site is None:
         raise PlanningError('Install site is outside the observed deployment')
     targets = [dict(installation_id=installation_id(site, plugin_id), site_id=site_id, workspace_id=workspace,
-                    plugin_id=plugin_id, action='install') for workspace in sorted(workspace_ids)]
+                    plugin_id=plugin_id, action='install') for workspace in ([None] if site_native else sorted(workspace_ids))]
     return prepare_current_install_targets(document, sites, catalog, activation_targets=targets,
                                            operation_id=operation_id, created_at=created_at)

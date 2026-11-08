@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "tests": 3,
+  "output": "test_active_authority_or_native_state_cannot_hide_behind_removed_metadata (test_projection_tombstones.TombstoneProjection.test_active_authority_or_native_state_cannot_hide_behind_removed_metadata) ... ok\r\ntest_old_uninstalled_manifest_is_history_when_a_newer_source_is_present (test_projection_tombstones.TombstoneProjection.test_old_uninstalled_manifest_is_history_when_a_newer_source_is_present) ... ok\r\ntest_package_absence_does_not_drop_or_promote_its_tombstone (test_projection_tombstones.TombstoneProjection.test_package_absence_does_not_drop_or_promote_its_tombstone) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 3 tests in 0.070s\r\n\r\nOK\r\n"
+}

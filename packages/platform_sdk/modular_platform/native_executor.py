@@ -109,6 +109,14 @@ def native_maintenance_flags(bundle,plugins):
     return (['-i',','.join(installs)] if installs else [])+(['-u',','.join(upgrades)] if upgrades else [])
 
 
+def require_native_site_runtime(runtime):
+    """Reject an old native metadata child before any site-native mutation."""
+    for name in ('native_scope.py','install_metadata.py','projection.py','plans.py','lifecycle_planning.py'):
+        path='packages/platform_sdk/modular_platform/'+name
+        if runtime['inventory']['files'].get(path)!=hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest():
+            raise OperatorError('Site-native lifecycle requires the exact reviewed runtime bridge')
+
+
 def require_native_uninstall_runtime(runtime):
     """Reject old/different maintenance readers before reserving or draining."""
     files = runtime['inventory']['files']
@@ -315,6 +323,12 @@ class NativeExecutor:
                 raise OperatorError('Native installation requires an image with the published-release profile reader; stage a compatible candidate')
             if bundle['plan']['operation_type']=='uninstall':require_native_uninstall_runtime(runtime)
             if bundle['plan']['operation_type']=='install' and 'feature_states' in bundle['operation_lock']:require_native_reinstall_runtime(runtime)
+            if 'native_site_scope_protocol' in bundle['operation_lock']:require_native_site_runtime(runtime)
+        elif 'native_site_scope_protocol' in bundle['operation_lock']:
+            from .release_staging import StageStore
+            _,record=StageStore(self.store,self.config,Catalog(self.catalog_root,self.validator,readonly=True)).load(
+                bundle['operation_lock']['staged_image'])
+            require_native_site_runtime(record['runtime'])
 
     def _require_jobs_drained(self):
         for site in self.config['sites']:
@@ -444,6 +458,7 @@ class NativeExecutor:
                     'policy_version':plan['policy_version'],
                     'previous_plugins':{item['plugin_id']:item for item in load_json((self.store.root/'checkpoints'/checkpoint/'manifest.json').read_bytes())['previous_release']['release_lock']['plugins']}}
                 if 'feature_states' in bundle['operation_lock']:payload['feature_states']=bundle['operation_lock']['feature_states']
+                if 'native_site_scope_protocol' in bundle['operation_lock']:payload['native_site_scope_protocol']=bundle['operation_lock']['native_site_scope_protocol']
                 self._publish_metadata(bundle,payload,directory,image)
                 self.store.advance(operation, locks, 'migrated')
                 failure = 'READINESS_FAILED'
