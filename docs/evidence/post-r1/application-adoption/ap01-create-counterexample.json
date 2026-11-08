@@ -1,0 +1,23 @@
+{
+  "result": "failed_AP_B_native_new_list_create",
+  "list_defaults": {},
+  "task_defaults": {
+    "reminder": "none"
+  },
+  "counts": {
+    "mp.aurora.task.list": 0,
+    "mp.aurora.task": 0
+  },
+  "source": "applications/mp_aurora_tasks/models.py",
+  "browser_observation": "New shared list save rejected locally with Missing required fields; owner is required/read-only/empty",
+  "task_ui_observation": "Not reached yet; actual default_get also omits required read-only creator",
+  "proposed_fix": "New app version default_get via field defaults to current user; preserve authoritative server-side assignment and immutable ownership",
+  "utc": "2026-11-08T20:21:14.852339+00:00",
+  "application": "dev.aurora.tasks",
+  "version": "0.2.2",
+  "image": "sha256:cac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f",
+  "screenshot": "docs/evidence/post-r1/application-adoption/ap01-new-list-blocked.jpg",
+  "screenshot_sha256": "7c4167e7674ad979871c292f1b236ac2637d3b77f49eb455f0720620334376ca",
+  "draft_discarded": true,
+  "new_list_and_task_counts_zero": true
+}

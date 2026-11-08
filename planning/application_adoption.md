@@ -50,6 +50,15 @@ check, concrete output and return condition. Finish each phase before advancing.
 
 ## AP-02 — Independent application authoring and release
 
+AP-01-P1 exception after the first pilot: native new-list creation is blocked by
+a required/read-only owner with no client default; the task creator has the same
+missing default in actual `default_get`. Record AP-B failed and keep AP-01 active.
+The smallest required repair is a new Tasks artifact, not a UI bypass or edit to
+sealed49. Pull forward only AP-E/F's separate-source/composition prerequisite and
+the necessary approved app update, then return to AP-B. Freeze its exact default/
+ownership/data contract first. Full AP-02 populated failure/recovery qualification
+still follows AP-01; any valid early evidence is linked, not counted twice.
+
 - [ ] **AP-E:** Create a separate owned application checkout/repository outside
   the foundation source roots. Pin foundation49 and package from that application
   source using an explicit recipe. Prove that downstream developers do not need

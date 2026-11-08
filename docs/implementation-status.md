@@ -11,7 +11,7 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-01 local Tasks pilot — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **AP-01b / AP-B: daily native-UI pilot workflow with real fictional users; record developer and usage limitations.** [Plan](../planning/application_adoption.md).
+- Active item: **AP-01-P1 prerequisite to AP-B: separate-source Tasks0.2.3/defaults fix and pinned49 app composition; then return to native creation.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -33,7 +33,7 @@ across its four checks. No sub-agents are authorized.
 | Check | State | Output / next verification |
 | --- | --- | --- |
 | AP-A | passed | [Fresh49 pilot/startup](evidence/post-r1/application-adoption/ap01-startup.json), independent Tasks install/1urgent+1bulk ready, [runbook](application-pilot.md) |
-| AP-B | not_run | Agent native browser daily shared Tasks/reminder workflow |
+| AP-B | failed | [Native new-list creation blocked by required readonly owner without default](evidence/post-r1/application-adoption/ap01-create-counterexample.json); AP-01-P1 repair active |
 | AP-C | not_run | Real role denials/concurrent edits/cancel/reassignment/worker stop-start |
 | AP-D | not_run | Evidence-based limitations/required fixes, selected app delta and pilot runbook |
 | AP-E | not_run | Independent application source/checkout, foundation pin and actual composition |
@@ -49,24 +49,30 @@ across its four checks. No sub-agents are authorized.
 | AP-O | not_run | Clean downstream isolated execution, meaningful automated checks/repro/hygiene |
 | AP-P | not_run | Checksummed delivery, retained usable pilot, complete records and owned cleanup |
 
-Blocker register: no required user input. AP-LIM-001/004 identify unproven separate
-composition/app-only release paths, not environmental blockers. Pilot feedback is
-agent evidence; optional human review is not a prerequisite or an inferred pass.
+Blocker register: AP-B-001 is a local required implementation prerequisite,
+not a user-input blocker. Missing required/read-only owner default prevents native
+new-list creation; task creator defaults likewise absent. Actual browser refusal
+and Alice default_get recorded; no business rows were created and draft discarded.
+AP-LIM-010 required fix: new immutable Tasks0.2.3, current-user defaults with
+server-side ownership unchanged. Pull forward only separate-source/composition
+prerequisites from AP-02, then return to AP-B; no hot patch or fake UI pass.
 
-Resume capsule: **AP-A passed; AP-01b native pilot walkthrough active.**
-5/100verifiedpoints,1/16checks. Projectmp-r0-r1release261d5d0954ee on18172,
-private`.local/application-adoption/ap01-pilot-01`, explicit retained development
-intent. Exact sealed49/Tasks0.2.2 independently installed;1urgent+1bulk lanes
-ready, producer disabled. Startup process39100 completed; no uncertain mutation.
-[AP-A receipt](evidence/post-r1/application-adoption/ap01-startup.json),
-[start/stop/access runbook](application-pilot.md). New one-shot helpers auto-remove;
-pre-existing older/unrelated Docker assets recorded AP-LIM-009, not touched.
-Next use in-app browser as Alice to create a useful shared list/task from native
-screens, then member/assignee reminder and inbox workflows. Record actual IDs/
-changes before retries. AP-C adds direct role denials, concurrent-edit behavior
-and worker outage/restart. Human feedback is optional and not inferred. Select
-one real app delta for AP-02 after observations. No global cleanup or retired AT
-replay. Historical completed capsules below retain their own dated scope.
+Resume capsule: **AP-01-P1 active; AP-B failed, AP-A passed.**5/100points,1/16.
+No pending runtime mutation/process. Pilot261d5d0954ee/18172 remains healthy49/
+Tasks0.2.2 with1urgent+1bulk, zero lists/tasks. In-app tab16 is task-list view,
+no unsaved draft; screenshot/counterexample captured, CUA part summarized.
+Separate app archive builder exists, but distribution recipes assume the foundation
+source tree. Next freeze the minimal app-default fix and pinned-image composition
+input/ownership boundary, create an independent application checkout, reproduce
+baseline0.2.2 bytes, issue0.2.3 and compose on immutable49 without altering core
+code/version. Prefer a reviewed archive layer over copying/forking engine sources
+into application repositories. Validate dependency/inventory/provenance/unchanged
+foundation before any staged upgrade. Record limits and meaningful guard tests.
+Use independent review/checkpoint/app-only lifecycle; no manual installation
+metadata or sealed artifact edits. Return to real UI creation immediately after
+required repair; full AP-02 failure/recovery and AP-03/04 stay gated. Historical
+qualification passes retain their narrower recorded scope; no human sign-off.
+[Counterexample](evidence/post-r1/application-adoption/ap01-create-counterexample.json).
 
 ## Aurora Tasks release (completed goal)
 
