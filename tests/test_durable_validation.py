@@ -8,7 +8,8 @@ from unittest.mock import Mock
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
-from modular_platform.durable import DispatchScope,QueueError,enqueue,append_event,claim
+from modular_platform.durable import (DispatchScope,NativeDispatchScope,QueueError,enqueue,append_event,
+                                      claim,claim_guard_key,native_claim_guard_key)
 
 
 class DurableValidationTests(unittest.TestCase):
@@ -39,6 +40,27 @@ class DurableValidationTests(unittest.TestCase):
         for sequence in [True,0,-1]:
             with self.assertRaises(QueueError):append_event(self.cr,self.scope,plugin_id='org.example.notes',topic='org.example.notes.changed',version=1,aggregate_id=str(uuid4()),payload={},correlation_id=str(uuid4()),sequence=sequence)
         self.cr.execute.assert_not_called()
+
+
+    def test_native_scope_does_not_relax_workspace_or_event_authority(self):
+        with self.assertRaises(QueueError):DispatchScope(self.scope.site_id,None,2,3,self.scope.release_digest)
+        native=NativeDispatchScope(self.scope.site_id,2,3,self.scope.release_digest)
+        self.assertIsNone(native.workspace_id)
+        with self.assertRaises(QueueError):append_event(self.cr,native,plugin_id='dev.aurora.tasks',
+            topic='dev.aurora.tasks.changed',version=1,aggregate_id=str(uuid4()),payload={},correlation_id=str(uuid4()))
+        self.cr.execute.assert_not_called()
+
+    def test_native_scope_rejects_invalid_identity_and_mixed_partition(self):
+        for actor,installation in [(True,3),(2,False),(None,3),(2,0)]:
+            with self.assertRaises(QueueError):NativeDispatchScope(self.scope.site_id,actor,installation,self.scope.release_digest)
+        with self.assertRaises(QueueError):claim(self.cr,self.scope.site_id,self.scope.release_digest,
+            str(uuid4()),['dev.aurora.tasks:reminder'],workspace_id=1,native_installation_id=1)
+        self.cr.execute.assert_not_called()
+
+    def test_native_claim_keys_never_alias_corresponding_workspace_keys(self):
+        for pool in ('urgent','bulk'):
+            self.assertNotEqual(claim_guard_key(self.scope.site_id,pool,3),
+                                native_claim_guard_key(self.scope.site_id,pool,3))
 
 
 if __name__=='__main__':unittest.main()

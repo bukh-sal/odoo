@@ -1,0 +1,26 @@
+{
+  "gate": "G2",
+  "result": "passed",
+  "utc": "2026-11-08T13:46:29.671751+00:00",
+  "contract_major": 1,
+  "revision": 21,
+  "frozen_files": 113,
+  "inventory_sha256": "f717bd25bee04af5d889ce6572fb6b46166c5d91c9a1fb0085fb03745cb65ce9",
+  "records": [
+    "contracts.json",
+    "archives.json",
+    "resolution.json",
+    "plans.json",
+    "core-maintenance.json",
+    "release-staging.json",
+    "planning-cli.json",
+    "client-release.json",
+    "typescript.json",
+    "freeze.json"
+  ],
+  "tests": "See per-command records for actual counts; contracts, affected archive/resolver/plan/CLI consumers, TypeScript and current freeze.",
+  "change": "ADR0074: additive native human-origin application job authority and authoring recipe v1; application reminder/roles/data/upgrade contract frozen after actual native feasibility. Existing workspace/public HTTP schemas unchanged.",
+  "runtime_qualification": "AT-01 native authority source-overlay proof passed12 checks; managed partition supervisor, final app/inbox, populated native adoption, successor release and recovery remain mandatory under AT-02..05. Sealed core47/core46 unchanged.",
+  "prerequisite": "docs/evidence/G1/20261028t003753z/gate-G1.json",
+  "git_base": "19fafb52c8cf8884d715b8c7cdae4df2a5fcd6d5"
+}

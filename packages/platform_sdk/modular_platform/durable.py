@@ -45,6 +45,26 @@ class DispatchScope:
 
 
 @dataclass(frozen=True)
+class NativeDispatchScope:
+    """Private native application routing; never a workspace authorization grant."""
+    site_id: str
+    actor_id: int
+    installation_id: int
+    release_digest: str
+
+    def __post_init__(self):
+        _uuid(self.site_id)
+        for value in (self.actor_id, self.installation_id):
+            _bounded(value, 1, 2**31-1)
+        if not isinstance(self.release_digest, str) or not re.fullmatch(r'sha256:[0-9a-f]{64}', self.release_digest):
+            raise QueueError('Invalid dispatch release')
+
+    @property
+    def workspace_id(self):
+        return None
+
+
+@dataclass(frozen=True)
 class Claim:
     job_id: str
     generation: int
@@ -164,7 +184,7 @@ def _reserve_identity(cr, identity):
 
 
 def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempotent', max_attempts=5, timeout_seconds=120, deduplication=None, on_new=None, schedule=None, retain_identity=False):
-    if not isinstance(scope, DispatchScope):
+    if not isinstance(scope, (DispatchScope, NativeDispatchScope)):
         raise QueueError('Validated private dispatch scope required')
     _name(handler); _bounded(version, 1, 1000); _bounded(max_attempts, 1, 16); _bounded(timeout_seconds, 1, 86400)
     if effect_mode not in {'idempotent', 'reconcile'} or not isinstance(key, str) or not re.fullmatch(r'[A-Za-z0-9_.:-]{1,128}', key):
@@ -211,7 +231,7 @@ def enqueue(cr, scope, handler, version, payload, key, *, effect_mode='idempoten
         if on_new is not None:on_new()
         return inserted[0]
     cr.execute("""SELECT public_id,input_digest,release_digest,effect_mode FROM mp_job
-        WHERE site_id=%s AND workspace_id=%s AND actor_id=%s AND installation_id=%s AND handler=%s AND handler_version=%s AND idempotency_key=%s""", identity)
+        WHERE site_id=%s AND workspace_id IS NOT DISTINCT FROM %s AND actor_id=%s AND installation_id=%s AND handler=%s AND handler_version=%s AND idempotency_key=%s""", identity)
     old = cr.fetchone()
     if not old or tuple(old[1:]) != (digest, scope.release_digest, effect_mode):
         raise QueueError('Job deduplication input or release conflict')
@@ -277,21 +297,35 @@ def claim_guard_key(site,pool,workspace):
     return int.from_bytes(hashlib.sha256(f'mp-job-claim:{site}:{pool}:{workspace}'.encode()).digest()[:8],'big',signed=True)
 
 
-def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, workspace_id=None, routes=None,pool=None):
+def native_claim_guard_key(site,pool,installation):
+    _uuid(site);_bounded(installation,1,2**31-1)
+    if pool not in ('urgent','bulk'):raise QueueError('Explicit native pool required')
+    return int.from_bytes(hashlib.sha256(f'mp-native-job-claim:{site}:{pool}:{installation}'.encode()).digest()[:8],'big',signed=True)
+
+
+def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, workspace_id=None, routes=None,pool=None, native_installation_id=None):
     _uuid(site_id); _uuid(owner); _bounded(lease_seconds, 1, 300)
     if not isinstance(handlers, (list, tuple)) or not 1 <= len(handlers) <= 100:
         raise QueueError('Explicit handler allowlist required')
     for name in handlers:
         _name(name)
     if workspace_id is not None:_bounded(workspace_id,1,2**31-1)
+    if native_installation_id is not None:
+        _bounded(native_installation_id,1,2**31-1)
+        if workspace_id is not None:raise QueueError('Choose one execution partition')
     if routes is not None:
         if not isinstance(routes,(list,tuple)) or not 1<=len(routes)<=100:
             raise QueueError('Explicit versioned handler routes required')
         routes=[f'{_name(name)}:{_bounded(version,1,1000)}' for name,version in routes]
-    filters=[site_id,release_digest,list(handlers),routes,routes,workspace_id]
+    partition = ('workspace_id IS NULL AND installation_id=%s' if native_installation_id is not None
+                 else 'workspace_id=COALESCE(%s,workspace_id)')
+    filters=[site_id,release_digest,list(handlers),routes,routes,
+             native_installation_id if native_installation_id is not None else workspace_id]
     if pool is not None:
-        if workspace_id is None or routes is None:raise QueueError('Pooled claims require workspace and registered routes')
-        key=claim_guard_key(site_id,pool,workspace_id)&(2**64-1)
+        if (workspace_id is None and native_installation_id is None) or routes is None:
+            raise QueueError('Pooled claims require an execution partition and registered routes')
+        key=(native_claim_guard_key(site_id,pool,native_installation_id) if native_installation_id is not None
+             else claim_guard_key(site_id,pool,workspace_id))&(2**64-1)
         cr.execute("""SELECT EXISTS(SELECT 1 FROM pg_locks WHERE locktype='advisory' AND pid=pg_backend_pid()
             AND classid::bigint=%s AND objid::bigint=%s AND objsubid=1 AND granted AND mode='ExclusiveLock')""",[key>>32,key&0xffffffff])
         if not cr.fetchone()[0]:raise QueueError('Fresh-cursor pooled claim guard required')
@@ -299,13 +333,13 @@ def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, wor
     # Lease loss is observable state. Reconcile uncertain non-idempotent work;
     # never reinterpret an expired external attempt as proof of rollback.
     cr.execute("""WITH expired AS (SELECT id FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
-        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND workspace_id=COALESCE(%s,workspace_id)
+        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND {partition}
         AND state='running' AND lease_until<=timezone('UTC',clock_timestamp()) FOR UPDATE SKIP LOCKED)
         UPDATE mp_job j SET state=CASE WHEN effect_mode='reconcile' AND effect_started THEN 'outcome_unknown'
             WHEN cancel_requested THEN 'cancelled' WHEN attempts>=max_attempts OR deadline_at<=timezone('UTC',clock_timestamp())
             THEN 'dead_letter' ELSE 'retry' END,
             error_code='LEASE_EXPIRED',lease_owner=NULL,lease_until=NULL,available_at=timezone('UTC',clock_timestamp())
-        FROM expired WHERE j.id=expired.id""", filters)
+        FROM expired WHERE j.id=expired.id""".format(partition=partition), filters)
     if pool is not None:
         # Include expired but row-locked attempts: a concurrent heartbeat or
         # finalization may still be settling them. The reaper above handles
@@ -313,19 +347,19 @@ def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, wor
         # any previous running row remains in this workspace/pool.
         cr.execute("""SELECT 1 FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
             AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[]))
-            AND workspace_id=%s AND state='running' LIMIT 1""",filters)
+            AND {partition} AND state='running' LIMIT 1""".format(partition=partition),filters)
         if cr.fetchone():return None
     cr.execute("""WITH expired AS (SELECT id FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
-        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND workspace_id=COALESCE(%s,workspace_id)
+        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND {partition}
         AND state IN ('pending','retry') AND deadline_at<=timezone('UTC',clock_timestamp()) FOR UPDATE SKIP LOCKED)
         UPDATE mp_job j SET state='dead_letter',error_code='DEADLINE_EXCEEDED',finished_at=timezone('UTC',clock_timestamp())
-        FROM expired WHERE j.id=expired.id""", filters)
+        FROM expired WHERE j.id=expired.id""".format(partition=partition), filters)
     cr.execute("""WITH stamp AS (SELECT timezone('UTC',clock_timestamp()) AS now),
         next AS (SELECT id,CASE WHEN payload->>'schema_version'='2'
             THEN LEAST(deadline_at,stamp.now+((payload->'schedule'->>'attempt_seconds')::integer*interval '1 second'))
             END AS budget_until,stamp.now,available_at FROM mp_job CROSS JOIN stamp
         WHERE site_id=%s AND release_digest=%s AND handler=ANY(%s)
-        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND workspace_id=COALESCE(%s,workspace_id)
+        AND (%s::text[] IS NULL OR handler||':'||handler_version=ANY(%s::text[])) AND {partition}
         AND state IN ('pending','retry') AND NOT cancel_requested AND attempts<max_attempts
         AND available_at<=timezone('UTC',clock_timestamp()) AND deadline_at>timezone('UTC',clock_timestamp())
         ORDER BY available_at,id FOR UPDATE OF mp_job SKIP LOCKED LIMIT 1)
@@ -333,7 +367,7 @@ def claim(cr, site_id, release_digest, owner, handlers, *, lease_seconds=30, wor
             dispatch_generation=%s,lease_owner=%s,lease_until=LEAST(j.deadline_at,next.budget_until,next.now+(%s*interval '1 second')),
             effect_started=false,error_code=NULL FROM next WHERE j.id=next.id
         RETURNING j.public_id,j.claim_generation,next.budget_until,
-            (extract(epoch FROM (next.now-next.available_at))*1000)::bigint""",
+            (extract(epoch FROM (next.now-next.available_at))*1000)::bigint""".format(partition=partition),
         [*filters,generation,owner,lease_seconds])
     row = cr.fetchone()
     return Claim(row[0], row[1], owner, row[2], max(0,row[3])) if row else None
@@ -346,7 +380,7 @@ def ready_workspaces(cr,site,release,routes,*,after=None):
     if after is not None:_bounded(after,0,2**31-1)
     order='min(available_at),workspace_id' if after is None else '(workspace_id<=%s),workspace_id'
     cr.execute("""SELECT workspace_id FROM mp_job WHERE site_id=%s AND release_digest=%s
-        AND handler||':'||handler_version=ANY(%s)
+        AND handler||':'||handler_version=ANY(%s) AND workspace_id IS NOT NULL
         AND ((state IN ('pending','retry') AND LEAST(available_at,deadline_at)<=timezone('UTC',clock_timestamp()))
             OR (state='running' AND lease_until<=timezone('UTC',clock_timestamp())))
         GROUP BY workspace_id ORDER BY """+order+' LIMIT 64', [site,release,keys]+([] if after is None else [after]))
@@ -442,7 +476,7 @@ def cancel(cr, job_id, *, actor_id, workspace_id):
     """After fresh scope authorization; cannot claim external rollback."""
     _uuid(job_id)
     cr.execute("""UPDATE mp_job SET cancel_requested=true,state=CASE WHEN state IN ('pending','retry','held') THEN 'cancelled' ELSE state END
-        WHERE public_id=%s AND actor_id=%s AND workspace_id=%s AND state IN ('pending','retry','running','held') RETURNING public_id""", [job_id, actor_id, workspace_id])
+        WHERE public_id=%s AND actor_id=%s AND workspace_id IS NOT DISTINCT FROM %s AND state IN ('pending','retry','running','held') RETURNING public_id""", [job_id, actor_id, workspace_id])
     return bool(cr.fetchone())
 
 
@@ -453,7 +487,7 @@ def cancel_scheduled(cr, job_id, *, actor_id, workspace_id):
         state=CASE WHEN effect_mode='reconcile' AND effect_started THEN 'outcome_unknown' ELSE 'cancelled' END,
         error_code=CASE WHEN effect_mode='reconcile' AND effect_started THEN 'CANCELLED' ELSE NULL END,
         lease_owner=NULL,lease_until=NULL,finished_at=timezone('UTC',clock_timestamp())
-        WHERE public_id=%s AND actor_id=%s AND workspace_id=%s AND payload->>'schema_version'='2'
+        WHERE public_id=%s AND actor_id=%s AND workspace_id IS NOT DISTINCT FROM %s AND payload->>'schema_version'='2'
         AND state IN ('pending','retry','running','held') RETURNING public_id""", [job_id, actor_id, workspace_id])
     return bool(cr.fetchone())
 

@@ -423,3 +423,5 @@ upgrades and owned cleanup passed. [Handoff](addon-cleanup-release.md).
 ## Useful Aurora Tasks application release
 
 AT-01a non-example data-only packaging feasibility passed: [receipt](evidence/post-r1/aurora-tasks/at01-packaging.json). Six new tests (five pass/one Windows symlink skip),18existing archive tests passed; six reference artifacts byte-identical. Runtime installation/native job authority remain unqualified. [Active plan](../planning/aurora_tasks_release.md).
+
+AT-01b/c passed: [native feasibility](evidence/post-r1/aurora-tasks/at01-native.json), [contract decision](evidence/post-r1/aurora-tasks/at01-decision.json), [revision21 freeze](evidence/G2/20261108-at01-native-application-rev21/gate-G2.json).12actual native checks/7host checks; exact probe resources retired. Final-image app/managed-worker/lifecycle checks remain required.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 20,
+  "revision": 21,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -230,6 +230,22 @@
         "FEAS-01",
         "FEAS-04"
       ]
+    },
+    {
+      "name": "owned native application authoring and jobs v1",
+      "owner": "AT-01 / AT-02 / AT-03",
+      "acceptance": [
+        "AT-A",
+        "AT-B",
+        "AT-C",
+        "AT-D",
+        "AT-H"
+      ],
+      "paths": [
+        "docs/aurora-tasks-contract.md",
+        "docs/architecture-decisions/0074-native-application-job-authority.md"
+      ],
+      "g1": []
     }
   ],
   "files": {
@@ -343,7 +359,9 @@
     "packages/contracts/examples/v1/foundation-transition.json": "c5e0f8c1558fbc1114934fee5333d11b5804823a8f57c61222eecceaa2b861fa",
     "docs/architecture-decisions/0073-owned-foundation-transition-46-47.md": "b494602fca79d4e14be0db9a609e5bdb06391502918f2265884aec8ff4f8eafb",
     "tests/test_foundation_transition_contracts.py": "ea5fcb6a6b8796b336e4be706cbc7fd0976103db25d8b50d614d508721301d4d",
-    "packages/contracts/examples/v1/revision19/plan-python-maintenance.json": "98713893791b9b89433a1327735eb5df41324b3160488138b947314b3b282d8a"
+    "packages/contracts/examples/v1/revision19/plan-python-maintenance.json": "98713893791b9b89433a1327735eb5df41324b3160488138b947314b3b282d8a",
+    "docs/aurora-tasks-contract.md": "644ccda61529c692a66fee5b5eff3c8a2ca0ac946be8d451caff04caa163f1b5",
+    "docs/architecture-decisions/0074-native-application-job-authority.md": "7d955039c65e3ad2a54159a033a13e04aeade0091742020d21cacd0f3c7958ae"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

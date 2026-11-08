@@ -1816,3 +1816,30 @@ privilege skip; all18 existing archive tests passed. Receipt at
 installation, job authority or contract-freeze claim. Native authority bridge is
 next AT-01b; existing list rules must not gain implicit workspace tenancy. Progress
 5weightedpoints/1of14checks; authoring recipe remains draft.
+
+## AT-01b first environment attempt
+
+Docker refused default network allocation: all predefined pools fully subnetted.
+Read actual network IPAM inventory; no at01-native-01 network/container/volume
+exists. No DB mutation occurred. Select explicit verified nonoverlapping private
+/28 in harness for a distinct at01-native-02 attempt; preserve unrelated networks.
+
+## AT-01b/c — native authority feasibility and contract freeze passed
+
+Core47 plus four explicit draft source overlays installed a fresh native registry.
+One actual native reminder database effect passed original-user ACL/rules and
+fenced queue completion. All12 observations passed: outsider denial/identity
+rollback, actor/member revocation after prepare, stale occurrence, cancellation,
+paused apply, NULL dedup before/after completion, workspace-claim exclusion,
+separate keys and no workspace/membership/binding creation.7durable host tests
+pass. Source-overlay evidence is not a release-image or supervisor/lifecycle pass.
+The exact owned DB,3volumes and network were retired; no images created.
+
+Accepted ADR0074 and application contract v1: site-native/list-bound authority;
+completion stages; opt-in relative reminders within existing30day horizon,
+24hour validity and30second attempt budget; current actor/recipient checks;
+private inbox/idempotency/cancel/expired behavior; explicit native-only0.1.0
+adoption path to app0.2.0 on a separately qualified successor. No major external
+Odoo upgrade or workspace conversion. Froze additive contract revision21:
+113files/9rows; all affected G2 checks passed, exact snapshot retained.15weighted
+points/3of14acceptances; next active AT-02a generic CLI/composition/build inputs.

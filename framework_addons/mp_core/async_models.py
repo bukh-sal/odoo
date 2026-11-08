@@ -27,7 +27,7 @@ class Job(models.Model):
 
     public_id = fields.Char(required=True, index=True)
     site_id = fields.Char(required=True, index=True)
-    workspace_id = fields.Many2one('mp.workspace', required=True, ondelete='restrict', index=True)
+    workspace_id = fields.Many2one('mp.workspace', required=False, ondelete='restrict', index=True)
     actor_id = fields.Many2one('mp.principal', required=True, ondelete='restrict', index=True)
     installation_id = fields.Many2one('mp.plugin.installation', required=True, ondelete='restrict', index=True)
     handler = fields.Char(required=True, index=True)
@@ -54,7 +54,7 @@ class Job(models.Model):
     created_at = fields.Datetime(required=True)
     finished_at = fields.Datetime()
     _public_unique = models.Constraint('UNIQUE(public_id)', 'Job ID must be unique')
-    _dedup_unique = models.Constraint('UNIQUE(site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)', 'Job deduplication scope must be unique')
+    _dedup_unique = models.Constraint('UNIQUE NULLS NOT DISTINCT(site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)', 'Job deduplication scope must be unique')
     _bounds = models.Constraint('CHECK(attempts >= 0 AND max_attempts BETWEEN 1 AND 16 AND claim_generation >= 0 AND handler_version > 0 AND dispatch_generation > 0 AND progress BETWEEN 0 AND 100)', 'Invalid scheduler bounds')
     _history_order = models.Index('(site_id, workspace_id, actor_id, (COALESCE(finished_at, created_at)) DESC, public_id)')
 
@@ -65,7 +65,7 @@ class JobIdentity(models.Model):
     _log_access = False
 
     site_id = fields.Char(required=True)
-    workspace_id = fields.Integer(required=True)
+    workspace_id = fields.Integer(required=False)
     actor_id = fields.Integer(required=True)
     installation_id = fields.Integer(required=True)
     handler = fields.Char(required=True)
@@ -81,7 +81,7 @@ class JobIdentity(models.Model):
     finished_at = fields.Datetime()
     archived_at = fields.Datetime()
     _scope_key = models.Constraint(
-        'UNIQUE(site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)',
+        'UNIQUE NULLS NOT DISTINCT(site_id,workspace_id,actor_id,installation_id,handler,handler_version,idempotency_key)',
         'Job identity must be unique within its scope',
     )
     _original_job = models.Constraint('UNIQUE(job_public_id)', 'Archived job ID must be unique')

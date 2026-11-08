@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "result": "passed_native_job_authority_feasibility",
+  "utc": "2026-11-08T13:45:57.766191+00:00",
+  "acceptance": [
+    "AT-B"
+  ],
+  "substrate_image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "postgres_image": "sha256:d81f7b51697014367236d07ec58b54153fc28f828b72bf247fe5c7487520bcb0",
+  "source_sha256": {
+    "framework_addons/mp_core/async_models.py": "e658dea5a1d4ce2c202bb284c47f406664cf9e0f0a106faedb44634facbadd9e",
+    "framework_addons/mp_core/job_dispatch.py": "53572e581ba72ac8ac15a01f457bba6401f757651117fc416a8c7c1f3c4f63ba",
+    "framework_addons/mp_core/native_jobs.py": "f3d0f5e208a1b5dd49dceaa6671d91329602e134cef8a18c66a4affde2991036",
+    "packages/platform_sdk/modular_platform/durable.py": "67b1fe4cbf4584dd2ecc177f6fd64c8614d6b7ede67325676acb9946a58bbab9",
+    "tests/aurora_native_job_probe_body.py": "540bd209973a16c620956215e5c6c25f0cdebd404764a2b6ebe8359a7c0d8029"
+  },
+  "harness_sha256": "ce383e6af903d22796eb3f4cac6d64b77cb13ccf2ee54ff738e91896e1a4353b",
+  "source_overlays": true,
+  "not_release_image": true,
+  "checks": {
+    "native_delivery_original_actor_no_workspace": true,
+    "null_scope_dedup_before_and_after_completion": true,
+    "legacy_workspace_claim_excludes_native": true,
+    "outsider_submission_denied_and_identity_rolled_back": true,
+    "resource_revocation_between_prepare_and_apply": true,
+    "actor_revocation_between_prepare_and_apply": true,
+    "stale_business_occurrence_suppressed": true,
+    "scheduled_cancellation_fences_apply": true,
+    "dispatch_pause_fences_native_apply": true,
+    "no_workspace_membership_or_service_binding_created": true,
+    "distinct_workspace_native_claim_lock_keys": true,
+    "one_database_notification_effect_total": true
+  },
+  "limitations": [
+    "Draft source overlay on core47, not an attested release image.",
+    "Managed supervisor/native partition fairness, application inbox/UI and lifecycle upgrade/recovery remain unqualified."
+  ],
+  "private_logs": {
+    "initialize.log": "f66e6258e6e8efd1942c19f72697aaaf6d3c9226dc4a7322b1230f1de9a071a2",
+    "probe.log": "3f77d11d7bcf64427ce9981c57c986023428160c3d7ae2ce26a90ad2f8dd7362"
+  },
+  "native_installation": "mp_core and mp_aurora_tasks in a fresh isolated database; successful registry initialization and actual app ACL/rule operations",
+  "retirement": {
+    "result": "retired_exact_owned_probe_resources",
+    "containers": 1,
+    "volumes": 3,
+    "networks": 1,
+    "images_created": 0,
+    "remaining_owned": {
+      "containers": [],
+      "volumes": [],
+      "networks": []
+    }
+  },
+  "attempts": [
+    {
+      "run": "at01-native-01",
+      "result": "default_docker_address_pool_exhausted_before_allocation",
+      "resources_created": 0
+    },
+    {
+      "run": "at01-native-02",
+      "result": "passed_with_explicit_nonoverlapping_private_subnet"
+    }
+  ],
+  "host_checks": {
+    "durable_validation": 7,
+    "passed": 7
+  }
+}

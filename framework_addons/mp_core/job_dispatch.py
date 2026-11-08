@@ -44,6 +44,8 @@ class JobDefinition:
     max_attempts: int = 5
     timeout_seconds: int = 120
     pool: str = 'legacy'
+    authority: str = 'workspace'
+    addon: str = ''
 
 
 DEFINITIONS = {}
@@ -57,6 +59,14 @@ def register(definition):
         raise ValueError('Explicit job effect policy required')
     if definition.pool not in {'legacy','urgent','bulk'}:
         raise ValueError('Registered job pool required')
+    if definition.authority not in {'workspace','native'}:
+        raise ValueError('Explicit registered job authority required')
+    if definition.authority=='native':
+        if (definition.pool=='legacy' or not re.fullmatch(r'[a-z][a-z0-9_]*',definition.addon)
+                or any((definition.service,definition.api_version,definition.method))):
+            raise ValueError('Native application jobs require an addon and no workspace service binding')
+    elif definition.addon:
+        raise ValueError('Workspace jobs use their registered service authority')
     for schema in [definition.input_schema,definition.prepared_schema,definition.computed_schema,definition.output_schema]:
         Draft202012Validator.check_schema(schema)
     if not all(callable(fn) for fn in [definition.authorize_resource,definition.prepare,definition.compute,definition.apply]):
@@ -125,6 +135,7 @@ def _enqueue(env,alias,ident,values,key,version,request_id,trace_id,schedule):
     durable._bounded(version,1,1000)
     definition=DEFINITIONS.get((ident,version))
     if not definition:raise PublicError('NOT_FOUND')
+    if definition.authority!='workspace':raise AccessError('Workspace job definition required')
     if (schedule is None)!=(definition.pool=='legacy'):
         raise ContractError('Use the registered job submission contract')
     _validate(definition.input_schema,values)
@@ -212,6 +223,9 @@ def _environment(metadata_env,row):
 def _authorized_job(metadata_env,row):
     definition=DEFINITIONS.get((row['handler'],row['handler_version']))
     if not definition:raise PublicError('DEPENDENCY_UNAVAILABLE')
+    if definition.authority=='native':
+        from . import native_jobs
+        return native_jobs.authorized(metadata_env,row,definition)
     env,payload=_environment(metadata_env,row)
     _validate(definition.input_schema,payload['input'])
     scope,release,bound=_authorize(env,definition,payload['context']['alias'])
@@ -256,14 +270,15 @@ def routes_for(pool):
     return sorted(key for key, definition in DEFINITIONS.items() if definition.pool==pool)
 
 
-def prepare_one(metadata_env,owner,*,lease_seconds=30,pool='legacy',workspace_id=None):
+def prepare_one(metadata_env,owner,*,lease_seconds=30,pool='legacy',workspace_id=None,native_installation_id=None):
     """Claim and authorize in a short caller-owned transaction; never compute."""
     release=current_release(metadata_env)
     routes=routes_for(pool)
     if not routes:return None
     claim=durable.claim(metadata_env.cr,release['site_id'],release['release_digest'],owner,
         sorted({ident for ident,_ in routes}),lease_seconds=lease_seconds,workspace_id=workspace_id,routes=routes,
-        pool=pool if pool!='legacy' and workspace_id is not None else None)
+        pool=pool if pool!='legacy' and (workspace_id is not None or native_installation_id is not None) else None,
+        native_installation_id=native_installation_id)
     if claim is None:return None
     row=durable._lock(metadata_env.cr,claim)
     try:
