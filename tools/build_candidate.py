@@ -9,7 +9,7 @@ import subprocess
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
+sys.path[:0]=[str(ROOT/'tools'),str(ROOT/'packages/platform_sdk')]
 from modular_platform.deployment import inspect_image
 from modular_platform.operator_os import protect_directory,ProcessLock
 from modular_platform.operator_store import _write_new
