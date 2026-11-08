@@ -65,6 +65,39 @@ class NativeDispatchScope:
 
 
 @dataclass(frozen=True)
+class ExecutionPartition:
+    """A real workspace or native installation, never a synthetic workspace."""
+    kind: str
+    ident: int
+
+    def __post_init__(self):
+        if self.kind not in ('workspace','native'):raise QueueError('Known execution partition required')
+        _bounded(self.ident,1,2**31-1)
+
+    @property
+    def key(self):
+        return ('w:' if self.kind=='workspace' else 'n:')+f'{self.ident:010d}'
+
+    @classmethod
+    def from_key(cls,value):
+        if not isinstance(value,str) or not re.fullmatch(r'[wn]:[0-9]{10}',value):
+            raise QueueError('Canonical execution partition key required')
+        result=cls('workspace' if value[0]=='w' else 'native',int(value[2:]))
+        if result.key!=value:raise QueueError('Canonical execution partition key required')
+        return result
+
+    @property
+    def claim_options(self):
+        return {'workspace_id' if self.kind=='workspace' else 'native_installation_id':self.ident}
+
+    def slot_key(self,site,pool):
+        _uuid(site)
+        if pool not in ('urgent','bulk'):raise QueueError('Managed pool required')
+        prefix='mp-job' if self.kind=='workspace' else 'mp-native-job'
+        return int.from_bytes(hashlib.sha256(f'{prefix}:{site}:{pool}:{self.ident}'.encode()).digest()[:8],'big',signed=True)
+
+
+@dataclass(frozen=True)
 class Claim:
     job_id: str
     generation: int
@@ -385,6 +418,22 @@ def ready_workspaces(cr,site,release,routes,*,after=None):
             OR (state='running' AND lease_until<=timezone('UTC',clock_timestamp())))
         GROUP BY workspace_id ORDER BY """+order+' LIMIT 64', [site,release,keys]+([] if after is None else [after]))
     return [row[0] for row in cr.fetchall()]
+
+
+def ready_partitions(cr,site,release,routes,*,after=''):
+    """Bounded cyclic selection across both kinds; a hint conveys no authority."""
+    control(cr,site,release)
+    if after:ExecutionPartition.from_key(after)
+    keys=[f'{_name(name)}:{_bounded(version,1,1000)}' for name,version in routes]
+    cr.execute("""SELECT partition FROM (
+        SELECT CASE WHEN workspace_id IS NULL THEN 'n:'||lpad(installation_id::text,10,'0')
+            ELSE 'w:'||lpad(workspace_id::text,10,'0') END AS partition
+        FROM mp_job WHERE site_id=%s AND release_digest=%s AND handler||':'||handler_version=ANY(%s)
+        AND ((state IN ('pending','retry') AND LEAST(available_at,deadline_at)<=timezone('UTC',clock_timestamp()))
+             OR (state='running' AND lease_until<=timezone('UTC',clock_timestamp())))
+        GROUP BY partition
+        ) ready ORDER BY (partition<=%s),partition LIMIT 64""",[site,release,keys,after])
+    return [ExecutionPartition.from_key(row[0]) for row in cr.fetchall()]
 
 
 def _lock(cr, value):

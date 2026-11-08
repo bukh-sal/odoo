@@ -48,6 +48,10 @@ def reserve(registry,ticket,workspace):
     durable._bounded(workspace,1,2**31-1)
     if ticket.after!=_after(ticket.raw,ticket.release):raise durable.QueueError('Selection ticket changed')
     value=json.dumps(dict(release=ticket.release,workspace=workspace,token=str(uuid4())),sort_keys=True,separators=(',',':'))
+    return _reserve(registry,ticket,key,value)
+
+
+def _reserve(registry,ticket,key,value):
     with registry.cursor() as cr:
         # No ORM is used. A stale compare returns no row rather than holding
         # a repeatable-read metadata snapshot through business preparation.
@@ -67,3 +71,39 @@ def reserve(registry,ticket,workspace):
         changed=cr.fetchone() is not None
         cr.commit()
     return changed
+
+
+@dataclass(frozen=True)
+class PartitionTicket:
+    site: str
+    release: str
+    pool: str
+    raw: str | None
+    after: str
+
+
+def _partition_after(raw,release):
+    if raw is None:return ''
+    if not isinstance(raw,str) or len(raw)>512:raise durable.QueueError('Bounded private rotation hint required')
+    try:
+        value=json.loads(raw)
+        if set(value)!={'release','partition','token'} or value['release']!=release:return ''
+        durable.ExecutionPartition.from_key(value['partition']);durable._uuid(value['token'])
+        return value['partition']
+    except (ValueError,TypeError,KeyError):return ''
+
+
+def read_partitions(cr,site,release,pool):
+    key=_key(site,release,pool).replace('mp.jobs.rotation.','mp.jobs.partition-rotation.')
+    cr.execute('SELECT value FROM ir_config_parameter WHERE key=%s',[key]);row=cr.fetchone()
+    raw=row[0] if row else None
+    return PartitionTicket(site,release,pool,raw,_partition_after(raw,release))
+
+
+def reserve_partition(registry,ticket,partition):
+    if not isinstance(ticket,PartitionTicket) or not isinstance(partition,durable.ExecutionPartition):
+        raise durable.QueueError('Private partition ticket and selection required')
+    if ticket.after!=_partition_after(ticket.raw,ticket.release):raise durable.QueueError('Selection ticket changed')
+    key=_key(ticket.site,ticket.release,ticket.pool).replace('mp.jobs.rotation.','mp.jobs.partition-rotation.')
+    value=json.dumps(dict(release=ticket.release,partition=partition.key,token=str(uuid4())),sort_keys=True,separators=(',',':'))
+    return _reserve(registry,ticket,key,value)

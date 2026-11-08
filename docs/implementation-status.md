@@ -2,13 +2,13 @@
 
 Current goal: useful Aurora Tasks application release through AT-05 — active. Previous owned addon cleanup AR-01..05 is complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-08T14:28:53.419906+00:00
+- Updated UTC: 2026-11-08T15:34:54.392970+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AT-01 passed; AT-02 source workflow ready, runtime AT-E pending; AT-03 native worker/app implementation in progress.** AR-05 passed; core47 is the sealed baseline. Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
-- Active item: **AT-03a: complete managed native execution partitions, current inventoried artifact authority and resource-authorized cancellation before Tasks hooks.** [Active plan](../planning/aurora_tasks_release.md).
+- Active item: **AT-03b: build the first core48/App0.2.0 candidate and run real native application/worker checks; source is implemented_unverified.** [Active plan](../planning/aurora_tasks_release.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -22,7 +22,7 @@ application release; AR16/16, CF12/12 and R1 99/99 remain historical completed c
 | --- | --- | --- | --- |
 | AT-01 |15| passed | [Feasibility/freeze decision](evidence/post-r1/aurora-tasks/at01-decision.json); native probe12 checks; revision21 |
 | AT-02 |20| in_progress | AT-D authoring passed; AT-E explicit site-native lifecycle consumption remains |
-| AT-03 |25| in_progress | AT-03a managed native partitions/artifact authority/cancellation, then Tasks/inbox |
+| AT-03 |25| in_progress | Partition SQL9 passed; Tasks0.2.0 source implemented_unverified; first real image next |
 | AT-04 |30| not_started | Clean/populated upgrade, fault/recovery, useful peer and browser |
 | AT-05 |10| not_started | Reproduction/affected checks, handoff and retirement |
 
@@ -50,36 +50,45 @@ publication source is implemented and pure tests passed; real image/metadata app
 remains AT-E before qualification. AT-E1 default Docker pool exhaustion resolved
 for the retired probe; new disposable networks need inspected explicit subnets.
 
-Resume capsule: **AT-03a active; no live test/build/container, uncertain mutation
-or user blocker.** AT-02 source authoring and native site lifecycle form this
-checkpoint; read current Git HEAD on resumption. General authoring first50tests49pass/1Windows skip, six reference bytes
-unchanged. Final composition8 (includes UTF8 policy), native scope8, CLI4 and
-staging9 passed. Existing workspace install6/projection3/plans13 passed; staged
-reinstall9 passed after fixing its omitted activation/provided-API metadata.
-The initial failed reinstall receipt is retained. G2revision22 passed115files/
-10rows, exact snapshot retained. Sealed47/46 unchanged; no Docker assets this item.
+Resume capsule: **AT-03b active; no live process/container or uncertain mutation
+at this source checkpoint.** Core0.1.48/App0.2.0 are source candidates, not qualified
+releases; sealed47/46 remain immutable. Native/workspace partition SQL9 cases
+passed against actual PostgreSQL; separate slots/claim guards/ring/CAS/fenced
+completion and per-native capacity groups verified. Host partition3/capacity16
+passed. Owned probe one DB/two volumes/one network retired; no new image yet.
+[Receipt](evidence/post-r1/aurora-tasks/at03-partitions.json).
 
-New source supports explicit `--site-native` current-install intent, strict native
-site-only manifests, NULL private scope protocol1, no feature/grant effects, genuine
-site installation projection, staged app upgrade, local display and exact runtime
-bridge preflight. Actual metadata child is compiled but not executed; no runtime
-AT-E or final release pass. [ADR0075](architecture-decisions/0075-site-native-application-lifecycle.md)
-and [scope v1](contracts/native-site-lifecycle-v1.md) frozen. App v1 is still the
-existing native slice; new reminders/inbox are not built. Overall25points/4of14.
+Managed supervisor/runner now select typed workspace/native-installation partitions;
+native job admission compares current metadata with the inventoried archived manifest,
+bytes and installed native version. Cancellation reauthorizes the saved task through
+the fixed native definition under the current editor. These app/managed paths still
+need real runtime tests. Normal app reads use nonlocking availability checks to
+remain compatible with native readonly RPCs. Current source implements shared
+lists/default stages, protected revisions, transactional queue/cancel, completion,
+recipient snapshot inbox and native forms/actions. No new Canvas/custom UI.
+[Source checkpoint](evidence/post-r1/aurora-tasks/at03-app-source.json).
 
-Next executable action: complete `native_jobs` current inventoried artifact binding,
-resource-authorized cancellation and managed native-installation partitions in
-`durable`, `job_runner`, `job_supervisor` and fairness selection. Preserve workspace
-claims/history/telemetry and current actor reauthorization. The early AT-01
-[source-overlay probe scope note](evidence/post-r1/aurora-tasks/at01-native-scope-note.json)
-clarifies its synthetic metadata fixture; it is not artifact admission evidence.
-Then implement the frozen Tasks/reminder/inbox behavior in native models/views,
-proper package inputs and a separately versioned owned successor. AT-03 may proceed
-under AT-01 + packaged-source readiness per the plan; AT-E runtime checks wait for
-the useful candidate rather than an extra throwaway release image. AT-04 still
-needs real47native-only0.1.0 adoption to0.2.0, failed independent recovery/separate
-resume and useful Maintenance. No fake workspace, manual admission shortcut or AR
-46→47 recipe replay. Update resume capsule after each meaningful result.
+Tasks archive validated/static ownership passed after declaring the exact post-stage
+migration digest; initial undeclared migration rejection was correct and preserved
+in the work log. Model behavior remains **implemented_unverified** (AT-F/G/H not
+passed). Data-only authoring tests now use a fixed version1 fixture rather than
+copying the evolving real app; eight composition cases still pass. Core manifest
+and SDK projection version48, policy includes the real application recipe. SDK
+namespace __version__ stays its existing v1 API value. Own47→48 adoption/upgrade is
+not implemented yet; do not reuse closed AR46→47 or relax source guards.
+
+Next: commit this checkpoint then `tools/build_candidate.py --gate G7 --output
+docs/evidence/G7/20261108-at03-tasks-01 --dependency-base-image
+sha256:07cacdf471a5b7f1b6b502de15f9644998f0ceeae11a531ae62a8256dc6bf5e1`.
+Inspect its durable build record/process before any retry. During a build, do not
+edit consumed source inputs. Prepare a fresh named native app qualification fixture
+that admits all actual image archives, initializes core without fake workspace
+membership, then uses the actual independent site-native installer and managed
+worker. Existing Reference/Background fixture admission and seed are hardcoded
+examples/workspaces; adapt a new app fixture, never replay retired roots. Real
+AT-E image/native metadata apply and AT-F/G/H checks precede final AT-04 lifecycle/
+browser/recovery. Progress remains25weightedpoints/4of14checks; code existence and
+source-only validations do not qualify the application.
 
 ## Addon cleanup and restructuring (completed goal)
 

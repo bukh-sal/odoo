@@ -1,9 +1,17 @@
 """Private human-origin native application jobs; no workspace impersonation.
 
-Draft AT-01 adapter. Real installation and actor are selected from server-owned
+Real installation and actor are selected from server-owned
 metadata. Business handlers always receive the original non-sudo Environment.
 """
 from dataclasses import dataclass
+from functools import lru_cache
+import hashlib
+import io
+import json
+from pathlib import Path
+from types import SimpleNamespace
+import tomllib
+import zipfile
 from uuid import uuid4
 
 from odoo import api
@@ -11,6 +19,7 @@ from odoo.exceptions import AccessError
 from odoo.addons.mp_identity.release import current_release
 from modular_platform import durable
 from modular_platform.contracts import ContractError, normalize_manifest, native_version
+from modular_platform.native_scope import require_site_manifest
 
 from . import job_dispatch as jobs
 
@@ -26,6 +35,28 @@ class NativeBound:
     def binding(self):
         # Private Invocation routing fields, not a public service binding.
         return dict(workspace_id=None, provider_installation_id=self.public_id)
+
+
+@lru_cache(maxsize=64)
+def _image_package(plugin):
+    root=Path('/opt/modular')
+    inventory=json.loads((root/'distribution-inventory.json').read_bytes())
+    pin=inventory.get('artifacts',{}).get(plugin)
+    if (not isinstance(pin,dict) or pin.get('plugin_id')!=plugin
+            or not isinstance(pin.get('file'),str) or Path(pin['file']).name!=pin['file']
+            or '/' in pin['file'] or '\\' in pin['file']):
+        raise AccessError('Native application artifact unavailable in this image')
+    raw=(root/'artifacts'/pin['file']).read_bytes()
+    if ('sha256:'+hashlib.sha256(raw).hexdigest()!=pin['digest']
+            or inventory['files'].get('artifacts/'+pin['file'])!=pin['digest'][7:]):
+        raise AccessError('Native application artifact differs from its image pin')
+    with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+        manifest=normalize_manifest(tomllib.loads(archive.read(plugin+'/plugin.toml').decode('utf8')))
+    require_site_manifest(manifest)
+    if (pin.get('addon')!=manifest['runtime']['addon_name'] or pin.get('version')!=manifest['plugin']['version']
+            or pin['addon'] not in inventory['native_addons']):
+        raise AccessError('Native application image mapping changed')
+    return pin['digest'],manifest
 
 
 def _actor(env, *, provision=False):
@@ -49,24 +80,32 @@ def _actor(env, *, provision=False):
     return row[0]
 
 
-def _installation(env,definition,expected=None):
+def _installation(env,definition,expected=None,*,lock=True):
     env['mp.plugin.installation'].flush_model()
     env['ir.module.module'].flush_model(['name','state','latest_version'])
-    env.cr.execute("""SELECT id,public_id,manifest,version FROM mp_plugin_installation
-        WHERE plugin_id=%s AND state='installed' AND runtime='native' FOR SHARE""",[definition.plugin])
+    env.cr.execute("""SELECT id,public_id,manifest,version,artifact_digest FROM mp_plugin_installation
+        WHERE plugin_id=%s AND state='installed' AND runtime='native'"""+(' FOR SHARE' if lock else ''),[definition.plugin])
     row=env.cr.fetchone()
     if not row or (expected is not None and row[0]!=expected):
         raise AccessError('Native application installation unavailable')
     manifest=normalize_manifest(row[2])
+    digest,image_manifest=_image_package(definition.plugin)
     if (manifest['plugin']['id']!=definition.plugin or manifest['plugin']['version']!=row[3]
             or manifest['runtime']['kind']!='native' or manifest['runtime']['addon_name']!=definition.addon
-            or 'site' not in manifest['activation']['scopes']):
+            or row[4]!=digest or manifest!=image_manifest):
         raise AccessError('Native application identity changed')
     env.cr.execute("""SELECT id FROM ir_module_module WHERE name=%s
-        AND state='installed' AND latest_version=%s FOR SHARE""",
+        AND state='installed' AND latest_version=%s"""+(' FOR SHARE' if lock else ''),
         [definition.addon,native_version(manifest['plugin']['version'])])
     if not env.cr.fetchone():raise AccessError('Native application code/version unavailable')
     return NativeBound(row[0],row[1],definition.plugin,definition.addon)
+
+
+def require_application(env,plugin,addon,*,lock=False):
+    """Current native installation availability; ordinary reads remain read-only."""
+    env.cr.execute('SELECT id FROM res_users WHERE id=%s AND active AND NOT share'+(' FOR SHARE' if lock else ''),[env.uid])
+    if not env.cr.fetchone():raise AccessError('Active internal native application user required')
+    return _installation(env,SimpleNamespace(plugin=plugin,addon=addon),lock=lock)
 
 
 def enqueue_scheduled(env,ident,values,key,*,schedule,version=1):
@@ -94,7 +133,7 @@ def enqueue_scheduled(env,ident,values,key,*,schedule,version=1):
             on_new=lambda:jobs._validate(definition.prepared_schema,definition.prepare(env,values,bound)))
 
 
-def authorized(metadata_env,row,definition):
+def _payload(row):
     payload=row['payload']
     if (row['workspace_id'] is not None or not isinstance(payload,dict)
             or set(payload)!={'schema_version','input','context','schedule'}
@@ -106,6 +145,11 @@ def authorized(metadata_env,row,definition):
             or type(context['native_application']) is not int or context['native_application']!=1):
         raise ContractError('Native application job context required')
     for name in ('installation','request_id','trace_id'):durable._uuid(context[name])
+    return payload
+
+
+def authorized(metadata_env,row,definition):
+    payload=_payload(row);context=payload['context']
     metadata_env.cr.execute('SELECT user_id FROM mp_principal WHERE id=%s',[row['actor_id']])
     actor=metadata_env.cr.fetchone()
     if not actor:raise AccessError('Original native actor unavailable')
@@ -119,3 +163,28 @@ def authorized(metadata_env,row,definition):
     jobs._validate(definition.input_schema,payload['input'])
     definition.authorize_resource(env,payload['input'],bound)
     return env,definition,payload,bound
+
+
+def cancel(env,ident):
+    """Invalidate a native occurrence under the current resource editor's authority.
+
+    The editor may differ from the originating actor, who may now be revoked.
+    The fixed registered definition authorizes the saved resource; callers cannot
+    supply a scope, backing user, cancellation callback or permission snapshot.
+    """
+    durable._uuid(ident)
+    with env.cr.savepoint():
+        env.cr.execute('SELECT to_jsonb(j) FROM mp_job j WHERE public_id=%s FOR UPDATE',[ident])
+        result=env.cr.fetchone()
+        if not result:return False
+        row=result[0];payload=_payload(row)
+        definition=jobs.DEFINITIONS.get((row['handler'],row['handler_version']))
+        if not definition or definition.authority!='native':raise AccessError('Native occurrence unavailable')
+        _actor(env,provision=True)
+        bound=_installation(env,definition,expected=row['installation_id'])
+        release=current_release(env)
+        if release['site_id']!=row['site_id'] or payload['context']['installation']!=bound.public_id:
+            raise AccessError('Native occurrence site/installation changed')
+        jobs._validate(definition.input_schema,payload['input'])
+        definition.authorize_resource(env,payload['input'],bound)
+        return durable.cancel_scheduled(env.cr,ident,actor_id=row['actor_id'],workspace_id=None)

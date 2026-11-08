@@ -60,20 +60,21 @@ def emit(**fields):
 
 
 @contextmanager
-def _claim_guard(cr,pool,workspace):
+def _claim_guard(cr,pool,workspace,native_installation=None):
     """Own a fresh preparation cursor; compute uses a different session slot.
 
     Roll back the lock-acquisition snapshot before observing jobs. Otherwise a
     repeatable-read snapshot taken just before the previous claimant commits
     can miss its running row. Keep this guard until preparation has committed.
     """
-    if pool=='legacy' or workspace is None:
+    if pool=='legacy' or workspace is None and native_installation is None:
         yield True;return
     from modular_platform import durable
     cr.execute("SELECT value FROM ir_config_parameter WHERE key='mp.site_id'")
     found=cr.fetchone()
     if not found:raise durable.QueueError('Native site required before pooled claim')
-    key=durable.claim_guard_key(found[0],pool,workspace)
+    key=(durable.native_claim_guard_key(found[0],pool,native_installation) if native_installation is not None
+         else durable.claim_guard_key(found[0],pool,workspace))
     cr.rollback()
     cr.execute('SELECT pg_try_advisory_lock(%s)',[key]);locked,=cr.fetchone()
     cr.rollback()
@@ -84,7 +85,7 @@ def _claim_guard(cr,pool,workspace):
             finally:cr.rollback()
 
 
-def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,attempt=None):
+def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,attempt=None,native_installation_id=None):
     from dataclasses import replace
     import time
     from odoo import api
@@ -95,11 +96,11 @@ def run_once(registry,owner,*,pool='legacy',workspace_id=None,lease_seconds=30,a
     # jobs reconstructs the actual mapped user before any business operation.
     preparing=time.monotonic()
     with registry.cursor() as cr:
-        with _claim_guard(cr,pool,workspace_id) as allowed:
+        with _claim_guard(cr,pool,workspace_id,native_installation_id) as allowed:
             if not allowed:return dict(state='idle')
             metadata=api.Environment(cr,1,{})
             try:invocation=retrying(lambda:jobs.prepare_one(metadata,owner,pool=pool,
-                workspace_id=workspace_id,lease_seconds=lease_seconds),metadata)
+                workspace_id=workspace_id,lease_seconds=lease_seconds,native_installation_id=native_installation_id),metadata)
             except durable.DispatchPaused:
                 cr.rollback();return dict(state='paused')
     if invocation is None:return dict(state='idle')

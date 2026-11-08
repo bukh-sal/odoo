@@ -22,7 +22,9 @@ def observe(cr,site,release,routes):
     maximum,connections,waiting,wait_seconds=cr.fetchone()
     result['database']=dict(max_connections=maximum,connections=connections,lock_waiters=waiting,
         longest_lock_wait_seconds=float(wait_seconds))
-    cr.execute("""SELECT handler,handler_version,workspace_id,release_digest=%s AS current,
+    cr.execute("""SELECT handler,handler_version,workspace_id,
+        CASE WHEN workspace_id IS NULL THEN 'n:'||lpad(installation_id::text,10,'0')
+             ELSE 'w:'||lpad(workspace_id::text,10,'0') END AS partition,release_digest=%s AS current,
         count(*) FILTER (WHERE runnable),count(*) FILTER (WHERE state='running'),
         count(*) FILTER (WHERE state IN ('pending','retry') AND available_at>stamp AND deadline_at>stamp),
         count(*) FILTER (WHERE state IN ('pending','retry') AND deadline_at<=stamp),
@@ -40,17 +42,17 @@ def observe(cr,site,release,routes):
                 AND available_at<=timezone('UTC',statement_timestamp())
                 AND deadline_at>timezone('UTC',statement_timestamp()) AS runnable
             FROM mp_job j WHERE site_id=%s) jobs
-        GROUP BY handler,handler_version,workspace_id,current
-        ORDER BY handler,handler_version,workspace_id,current LIMIT %s""",[release,site,MAX_GROUPS+1])
+        GROUP BY handler,handler_version,workspace_id,partition,current
+        ORDER BY handler,handler_version,partition,current LIMIT %s""",[release,site,MAX_GROUPS+1])
     rows=cr.fetchall()
     result['complete']=len(rows)<=MAX_GROUPS
     if not result['complete']:result['reason']='group_limit'
     route_map={route:pool for pool,values in routes.items() for route in values}
     keys=('ready','running','future','expired','held','unknown','retry','retry_wait_ms','original_wait_ms',
           'min_validity_ms','arrivals_60s','completions_60s')
-    for handler,version,workspace,current,*counts in rows[:MAX_GROUPS]:
+    for handler,version,workspace,partition,current,*counts in rows[:MAX_GROUPS]:
         pool=route_map.get((handler,version)) if current else None
-        group=dict(pool=pool,handler=handler,version=version,workspace=workspace,current=current)
+        group=dict(pool=pool,handler=handler,version=version,workspace=workspace,partition=partition,current=current)
         group.update({key:int(value) if value is not None else None for key,value in zip(keys,counts,strict=True)})
         result['groups'].append(group)
     return result

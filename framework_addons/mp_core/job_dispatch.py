@@ -287,6 +287,9 @@ def prepare_one(metadata_env,owner,*,lease_seconds=30,pool='legacy',workspace_id
             prepared=_validate(definition.prepared_schema,definition.prepare(env,payload['input'],bound))
             context=dict(job_id=claim.job_id,site_id=row['site_id'],workspace_id=bound.binding['workspace_id'],
                 provider_installation_id=bound.binding['provider_installation_id'],request_id=payload['context']['request_id'],trace_id=payload['context']['trace_id'])
+            context['execution_partition']=durable.ExecutionPartition(
+                'native' if row['workspace_id'] is None else 'workspace',
+                row['installation_id'] if row['workspace_id'] is None else row['workspace_id']).key
             return Invocation(claim,definition.ident,definition.version,_fingerprint(row),copy.deepcopy(prepared),context,metadata_env.cr.dbname)
     except (psycopg2.OperationalError,psycopg2.IntegrityError):
         raise

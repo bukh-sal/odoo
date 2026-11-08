@@ -84,8 +84,14 @@ def supervise(args, *, module='modular_platform.job_runner'):
 @contextmanager
 def workspace_slot(registry, site, pool, workspace):
     """Hold a dedicated DB session advisory lock through the entire attempt."""
-    key = int.from_bytes(hashlib.sha256(f'mp-job:{site}:{pool}:{workspace}'.encode()).digest()[:8],
-                         'big',signed=True)
+    with partition_slot(registry,site,pool,durable.ExecutionPartition('workspace',workspace)) as locked:
+        yield locked
+
+
+@contextmanager
+def partition_slot(registry,site,pool,partition):
+    if not isinstance(partition,durable.ExecutionPartition):raise durable.QueueError('Typed partition required')
+    key=partition.slot_key(site,pool)
     with registry.cursor() as cr:
         cr.execute('SELECT pg_try_advisory_lock(%s)',[key])
         locked, = cr.fetchone()
@@ -145,6 +151,7 @@ def child(args):
         emit(event='claimed',pool=args.pool,job_id=invocation.claim.job_id,
              generation=invocation.claim.generation,start_delay_ms=invocation.claim.ready_ms,
              handler=invocation.handler,version=invocation.version,
+             partition=invocation.context['execution_partition'],
              workspace=invocation.context['workspace_id'],at=datetime.now(timezone.utc).isoformat(),
              preparation_upper_bound_ms=invocation.preparation_ms)
 
@@ -198,21 +205,21 @@ def child(args):
                 if release != initial_release:
                     raise durable.DispatchPaused('Managed worker release changed')
                 durable.control(cr,release['site_id'],release['release_digest'])
-                ticket=job_fairness.read(cr,release['site_id'],release['release_digest'],args.pool)
-                workspaces = durable.ready_workspaces(cr,release['site_id'],release['release_digest'],routes,
+                ticket=job_fairness.read_partitions(cr,release['site_id'],release['release_digest'],args.pool)
+                partitions = durable.ready_partitions(cr,release['site_id'],release['release_digest'],routes,
                     after=ticket.after) if routes else []
                 cr.rollback()
             health('idle')
             if routes:
-                for workspace in workspaces:
+                for partition in partitions:
                     if stop.is_set():break
-                    with workspace_slot(registry,release['site_id'],args.pool,workspace) as locked:
+                    with partition_slot(registry,release['site_id'],args.pool,partition) as locked:
                         if not locked or stop.is_set():continue
-                        if not job_fairness.reserve(registry,ticket,workspace):
+                        if not job_fairness.reserve_partition(registry,ticket,partition):
                             # Another lane advanced the ring. Discard this
                             # candidate list and observe a fresh ticket.
                             break
-                        result = run_once(registry,owner,pool=args.pool,workspace_id=workspace,
+                        result = run_once(registry,owner,pool=args.pool,**partition.claim_options,
                                           lease_seconds=LEASE_SECONDS,attempt=attempt)
                     if result['state'] not in {'idle','paused'}:
                         emit(event='outcome',pool=args.pool,**result)

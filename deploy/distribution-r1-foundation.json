@@ -45,5 +45,8 @@
     "plugins/canvas/plugin.toml",
     "plugins/notes_stats/plugin.toml",
     "plugins/background/plugin.toml"
+  ],
+  "application_packages": [
+    "plugins/aurora_tasks/application.toml"
   ]
 }

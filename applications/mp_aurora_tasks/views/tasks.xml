@@ -65,6 +65,8 @@
                 <field name="stage_id"/>
                 <field name="assignee_id"/>
                 <field name="due_date"/>
+                <field name="completed"/>
+                <field name="reminder_status"/>
             </list>
         </field>
     </record>
@@ -73,6 +75,11 @@
         <field name="model">mp.aurora.task</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_complete" type="object" string="Complete" invisible="completed"/>
+                    <button name="action_reopen" type="object" string="Reopen" invisible="not completed"/>
+                    <field name="completed" invisible="1"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -81,6 +88,9 @@
                         <field name="creator_id"/>
                         <field name="assignee_id" options="{'no_create': True}"/>
                         <field name="due_date"/>
+                        <field name="reminder"/>
+                        <field name="reminder_at" invisible="reminder == 'none'"/>
+                        <field name="reminder_status"/>
                         <field name="description"/>
                         <field name="active" invisible="1"/>
                     </group>

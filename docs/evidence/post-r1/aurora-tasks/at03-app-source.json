@@ -1,0 +1,27 @@
+{
+  "result": "implemented_and_structurally_packaged_not_runtime_verified",
+  "utc": "2026-11-08T15:34:54.389968+00:00",
+  "source_sha256": {
+    "applications/mp_aurora_tasks/access.py": "cc7d44d7e7902c07b3ee351f135ab5b61b31eed6069b6d40bc852667604462b5",
+    "applications/mp_aurora_tasks/models.py": "52afe18c4df659a00c2afa6e8cbc0eba07c27075e6bba7cb6ae36b3e46f5190c",
+    "applications/mp_aurora_tasks/reminders.py": "bec7932a4eaa3be26ef59eded92b867cbec3b1fa370eb1bae90fb2741d1832d5",
+    "applications/mp_aurora_tasks/jobs.py": "3eefc12886a51571dfe62d64bce648ff238d85c6f77f3a2c68894e9c35c65e67",
+    "applications/mp_aurora_tasks/__manifest__.py": "7b54b36ec8b7e8e23080fa0809d499ff600afbcdb6b36b363b1240ce391df39e",
+    "applications/mp_aurora_tasks/views/tasks.xml": "0301fcffbdd6bb952f95a019c4510722913f8875001c29427d84121602d2a987",
+    "applications/mp_aurora_tasks/views/reminders.xml": "0f37ac11f9ecbe27b5be5210fb4ad82a6cb5dad36d0a2775eb9f6de738ba06b4",
+    "plugins/aurora_tasks/plugin.toml": "43996ea255c4bf4faca27e999a94ce55c275cb6acca8d4c067c5e20668d56043",
+    "plugins/aurora_tasks/application.toml": "810a2cb42563d4df0dc0fcd321479e4115c33a29c6a395f4b8359a3e2e796d59",
+    "framework_addons/mp_core/native_jobs.py": "be882fcccacb594e259df3285c4141bfb5c9e54cdddde4c2173ccc878958eec8"
+  },
+  "application_version": "0.2.0",
+  "candidate_core_version": "0.1.48",
+  "validation": [
+    "Python compiled",
+    "Native XML parsed",
+    "Archive validator and static ownership passed"
+  ],
+  "limitations": [
+    "AT-F/G/H remain not run on real application image.",
+    "Actual image artifact binding, native publication child and managed worker must be exercised."
+  ]
+}

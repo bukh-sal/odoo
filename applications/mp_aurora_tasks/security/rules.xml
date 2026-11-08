@@ -32,4 +32,9 @@
         <field name="perm_write" eval="False"/>
         <field name="perm_unlink" eval="False"/>
     </record>
+    <record id="notification_recipient" model="ir.rule">
+        <field name="name">Private reminder inbox</field>
+        <field name="model_id" ref="model_mp_aurora_notification"/>
+        <field name="domain_force">[('recipient_id', '=', user.id)]</field>
+    </record>
 </odoo>

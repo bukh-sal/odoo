@@ -1901,3 +1901,32 @@ Reviewed early native proof's synthetic metadata scope explicitly: it tested rea
 native ORM actor/fencing behavior but did not install its packaging-fixture archive.
 Added scope note; final artifact-source/startup binding is mandatory, not inferred
 from that probe. Preserve sealed47/46 and every historical receipt.
+
+## AT-03a — native partition primitives verified
+
+Typed native-installation/workspace partitions now feed bounded mixed ring/CAS
+selection, distinct compute/claim locks and the managed runner. Capacity keeps each
+native installation distinct rather than merging NULL workspaces. Actual PG9checks
+passed, host partition3/capacity16 pass; one owned DB/two volumes/network retired,
+no new image. Queue source fixture claims no application/startup authority pass.
+Native job source now binds actual image archive digest/manifest/version and adds
+resource-authorized cancellation. These actor/app paths await a proper image.
+
+## AT-03b — first useful app source checkpoint
+
+Implemented native list default stages, task completion/reopen, active internal
+member/assignee validation, monotonic protected reminder revisions, relative due
+choices, cancellation/change handling and recipient-only native inbox. Actor/list
+witness locks fence selected native permission changes. Reassignment that removes
+the editor's authority never queues through another identity. Existing native
+permissions and ordinary views remain; no custom frontend/product expansion.
+Normal native reads avoid FOR SHARE so readonly RPCs remain usable.
+
+App0.2.0 source compiles/XML parses. Initial package check correctly refused an
+undeclared migration; added exact post-stage script digest/pre/postconditions and
+archive/static ownership then passed. New existing records default reminders off;
+post migration only adds missing stage choices. Fixed authoring fixtures to avoid
+binding their version1 synthetic artifact to the evolving real app.8composition
+cases pass. Core version48/source policy prepare the required distinct successor.
+App role/job/inbox tests are not run yet and remain unqualified. Next build proper
+candidate, admit real archived bytes and execute actual native installation/jobs.

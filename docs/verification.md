@@ -429,3 +429,5 @@ AT-01b/c passed: [native feasibility](evidence/post-r1/aurora-tasks/at01-native.
 AT-D passed: [general authoring/composition](evidence/post-r1/aurora-tasks/at02-authoring.json),50affected checks/49pass/1Windows skip, six reference artifacts byte-identical. Native site installation remains [AT-E gap](evidence/post-r1/aurora-tasks/at02-native-lifecycle-gap.json); no runtime install claim.
 
 AT-02 native site source: [final checks](evidence/post-r1/aurora-tasks/at02-source-final/summary.json), [revision22](evidence/G2/20261108-at02-site-native-rev22/gate-G2.json). Actual metadata child apply/image admission remain AT-E. [Early native feasibility scope](evidence/post-r1/aurora-tasks/at01-native-scope-note.json) explicitly excludes source admission/startup attestation.
+
+AT-03 partition primitives: [real PostgreSQL9checks](evidence/post-r1/aurora-tasks/at03-partitions.json), host3+16checks; exact resources retired. [Tasks source](evidence/post-r1/aurora-tasks/at03-app-source.json) implemented/packaged but not runtime verified; no AT-F/G/H pass yet.

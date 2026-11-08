@@ -1,6 +1,7 @@
 """Pure read-only capacity advice; untrusted observations never grant actions."""
 from datetime import datetime,timezone
 import math
+from .durable import ExecutionPartition,QueueError
 
 
 class CapacityError(ValueError):pass
@@ -118,7 +119,16 @@ def advise(observation,policy,*,now=None,expected_pins=None):
                 continue
             ready+=queued;oldest=max(oldest,number(group['original_wait_ms'],0,1e15)/1000)
             ready_seconds+=queued*estimate['seconds'];running_seconds+=running*estimate['seconds']
-            workspace=str(group['workspace'])
+            if 'partition' in group:
+                try:partition=ExecutionPartition.from_key(group['partition'])
+                except QueueError as error:raise CapacityError('Known execution partition required') from error
+                if (partition.kind=='workspace' and partition.ident!=group['workspace']
+                        or partition.kind=='native' and group['workspace'] is not None):
+                    raise CapacityError('Capacity partition scope mismatch')
+                workspace=partition.key
+            elif group['workspace'] is None:
+                raise CapacityError('Native capacity group needs its execution partition')
+            else:workspace=str(group['workspace'])
             if queued or running:work[workspace]=work.get(workspace,0)+(queued+running)*estimate['seconds']
             forecasts.setdefault(key,set()).add(workspace)
             if group['min_validity_ms'] is not None:
@@ -161,7 +171,7 @@ def advise(observation,policy,*,now=None,expected_pins=None):
         elif warm and total<=warm*startup:predicted=total/warm
         else:predicted=(total+max(0,proposed-warm)*startup)/max(1,proposed)
         predicted=max(predicted,max(work.values(),default=0)+(startup if not warm and total else 0))
-        pools[pool]=dict(ready=ready,worker_seconds=round(total,3),workspace_slots=len(work),
+        pools[pool]=dict(ready=ready,worker_seconds=round(total,3),workspace_slots=len(work),partition_slots=len(work),
             needed_lanes=needed,advised_lanes=proposed,
             predicted_drain_seconds=round(predicted,3) if proposed or not total else None,
             oldest_original_wait_seconds=oldest,constraints=constraints,

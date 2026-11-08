@@ -21,7 +21,7 @@ class ApplicationPackage(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         self.addon = self.root/'applications/mp_aurora_tasks'
-        shutil.copytree(ROOT/'applications/mp_aurora_tasks', self.addon,
+        shutil.copytree(ROOT/'tests/fixtures/application_authoring/mp_aurora_tasks', self.addon,
                         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
         # If the builder imported native source, this raises immediately.
         (self.addon/'__init__.py').write_text('raise RuntimeError("native import forbidden in packaging")\n',

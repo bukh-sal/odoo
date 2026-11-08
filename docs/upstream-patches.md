@@ -90,3 +90,10 @@ record IDs under the extracted owners and retains aliases for our own R1 data.
 Raw private retirement archive and site-scoped lifecycle authority are owned
 platform additions. Prototypebba actual migration/closed fault/fresh46restore/
 separate resume passed; final populated job/release qualification remains open.
+
+## AT native application background support (candidate core48)
+
+Owned mp_core/SDK changes add explicit native authority, site-native metadata and
+managed native partitions; owned Aurora addon adds reminder/inbox behavior and its
+declared data migration. No inherited engine patch in this item. Existing source
+notices retained. Qualification is pending AT-03/04; sealed47/46 remain unchanged.
