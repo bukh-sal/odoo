@@ -2,6 +2,11 @@
 
 Current release status is in [implementation-status.md](implementation-status.md).
 
+New active program: [application adoption phases/checks](../planning/application_adoption.md),
+with [developer and usage limitations](application-adoption-limitations.md).
+Historical qualification below remains complete for its recorded artifacts.
+
+
 Aurora Tasks AT-01..05 passed on final core49;14/14checks and final57component seal verified.
 [Qualification](evidence/post-r1/aurora-tasks/qualification-decision.json) and
 [final delivery](evidence/post-r1/aurora-tasks/final-delivery.json) identify the artifact.

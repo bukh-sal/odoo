@@ -1,16 +1,72 @@
 # Implementation status
 
-Current goal: useful Aurora Tasks application release through AT-05 — complete. Previous owned addon cleanup AR-01..05 is complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
+Current goal: application adoption AP-01..04 — active. User authorized all four
+phases to run sequentially unattended on8November2026. Preserve completed
+AT14/14, AR16/16, CF12/12, BG/BX and R1 99/99 scopes and sealed49/47/46 artifacts.
+No hosted/production deployment, publication, paid services or real-data import.
 
-- Updated UTC: 2026-11-08T18:52:00.086366+00:00
+- Updated UTC: 2026-11-08T20:07:03.318010+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AT-01..05 passed; exact local release sealed and delivered.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **None. Goal complete; new implementation needs a new user-selected objective.** [Plan](../planning/aurora_tasks_adoption.md).
+- Current phase/gate: **AP-01 local Tasks pilot — in_progress.** Historical AR/CF/BG/R1 scopes remain complete.
+- Active item: **AP-01a / AP-A: verify sealed49/environment, create a fresh owned persistent local pilot and independently install Tasks/start managed lanes.** [Plan](../planning/application_adoption.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
+
+## Application adoption (active goal)
+
+[Phased plan](../planning/application_adoption.md) ·
+[developer/usage limitations](application-adoption-limitations.md).
+**0/100 verified points;0/16 acceptance checks passed.** Plan creation/source
+review earns no implementation credit. Each phase splits its weight equally
+across its four checks. No sub-agents are authorized.
+
+| Phase | Weight | State | Next / evidence |
+| --- | --- | --- | --- |
+| AP-01 |20| in_progress | AP-A exact49 pilot startup/ownership; then real native workflows and limitations |
+| AP-02 |30| not_started | AP-E separate checkout/composition feasibility/freeze; app-only update/recovery |
+| AP-03 |30| not_started | AP-I select/freeze bounded business app; initial candidate Aurora Projects |
+| AP-04 |20| not_started | AP-M consolidate exercised commands; clean downstream verification/handoff |
+
+| Check | State | Output / next verification |
+| --- | --- | --- |
+| AP-A | not_run | Fresh49 pilot, independent Tasks install, bounded reviewed worker lanes and operation instructions |
+| AP-B | not_run | Agent native browser daily shared Tasks/reminder workflow |
+| AP-C | not_run | Real role denials/concurrent edits/cancel/reassignment/worker stop-start |
+| AP-D | not_run | Evidence-based limitations/required fixes, selected app delta and pilot runbook |
+| AP-E | not_run | Independent application source/checkout, foundation pin and actual composition |
+| AP-F | not_run | Useful new immutable application version; same foundation code/version, new composed image |
+| AP-G | not_run | Populated approved app-only upgrade, old jobs/roles/files, stale refusal and effects |
+| AP-H | not_run | Failed-app-down independent original-app restore, current authority, separate resume/useful pilot |
+| AP-I | not_run | Source-backed bounded second-app/role/integration contract and freeze |
+| AP-J | not_run | Useful native second-app workflow and direct unauthorized-operation checks |
+| AP-K | not_run | Optional compatible extension, both-resource authority, integration-absent independence |
+| AP-L | not_run | Actual clean/populated app sets, dependency refusals/browser/recovery |
+| AP-M | not_run | Short explicit-pin author/package/compose/test path |
+| AP-N | not_run | Independent inspectable operator lifecycle and pilot start/stop path |
+| AP-O | not_run | Clean downstream isolated execution, meaningful automated checks/repro/hygiene |
+| AP-P | not_run | Checksummed delivery, retained usable pilot, complete records and owned cleanup |
+
+Blocker register: no required user input. AP-LIM-001/004 identify unproven separate
+composition/app-only release paths, not environmental blockers. Pilot feedback is
+agent evidence; optional human review is not a prerequisite or an inferred pass.
+
+Resume capsule: **AP-01a active; no current process or pending mutation.** Clean
+baseline HEADdd2e16d7c44 before new plan/records. New umbrella goal created.
+Sealed49 manifest396054faa70542a167ac5cd5e309579270e030cfbe4bb22c155b08c7bd215404,
+imagecac49d72605fe62a13b262c4775a0c55da6052f1743fb2b6d6b667a8a877de7f,
+Tasks0.2.2 archive71c97db1113cba7ba664171962208e429ecff66feb2ef8433e966a1ef20aa52c.
+Aurora committed source e48e04ed4cf155a83e66e08dfb33a669ebb5c228 read-only;
+Projects is a bounded candidate (name/description/manager/status, optional customer/
+logo), pending AP-I API/access review. Phase4 builds on commands actually exercised.
+Next inspect Docker/toolchain/pins and existing native pilot bootstrap, then start
+one fresh local pilot with explicit ownership and durable operation records under
+`.local/application-adoption`. Do not replay retired AT fixture commands. Keep one
+active item; record every actual effect/operation before retrying. New code needing
+contract changes must freeze/requalify before mutation. Historical capsules below
+are completed scopes, not current instructions to stop or restart their tests.
 
 ## Aurora Tasks release (completed goal)
 
@@ -34,9 +90,9 @@ application release only; AR16/16, CF12/12 and R1 99/99 retain their completed s
 | AT-C | passed | [Application contract](aurora-tasks-contract.md), ADR0074/0075/0076, [current revision25](evidence/G2/20261108-at04-adoption-rev25-02/gate-G2.json) |
 | AT-D | passed | [General authoring/composition](evidence/post-r1/aurora-tasks/at02-authoring.json): CLI, two apps, exact archive bytes, dependency refusals, curated catalog and solver;50tests/49pass/1Windows skip |
 | AT-E | passed | [Actual image archive admission and approved site-native install](evidence/post-r1/aurora-tasks/at03-candidate01.json), zero workspace authority |
-| AT-F | passed | [Actual native shared task workflow](evidence/post-r1/aurora-tasks/at03-candidate01.json); final browser AT-L pending |
+| AT-F | passed | [Actual native shared task workflow](evidence/post-r1/aurora-tasks/at03-candidate01.json); final browser passed AT-L |
 | AT-G | passed | [Actual0.2.2 role/archive/internal-user/creator/outsider edges](evidence/post-r1/aurora-tasks/at03-decision.json) |
-| AT-H | passed | [Real reminder/inbox/cancel/change/lease reclaim/stale result and20managed effects](evidence/post-r1/aurora-tasks/at03-decision.json); cross-release recovery remains AT-K |
+| AT-H | passed | [Real reminder/inbox/cancel/change/lease reclaim/stale result and20managed effects](evidence/post-r1/aurora-tasks/at03-decision.json); cross-release recovery passed AT-K |
 | AT-I | passed | [Exact49 clean site-native install,10native/8edge groups, zero workspace authority](evidence/post-r1/aurora-tasks/at04-clean.json) |
 | AT-J | passed | [Fresh approved47→49 native adoption, retained original rows/files and6declared stages](evidence/post-r1/aurora-tasks/at04-upgrade.json) |
 | AT-K | passed | [Real publication fault, fresh47 restore/current revocation/separate resume and useful peer16jobs](evidence/post-r1/aurora-tasks/at04-recovery.json) |

@@ -1,0 +1,22 @@
+# Application adoption limitations
+
+Live observations for [AP-01..04](../planning/application_adoption.md). Current
+execution/acceptance state is in [implementation status](implementation-status.md).
+Record new facts here as they are found; do not turn every limitation into a
+feature commitment. All initial rows below are source/document observations,
+not a claim that the new pilot or downstream release has already run.
+
+| ID | Perspective / type | Evidence and impact | Disposition / owner / verification | State |
+| --- | --- | --- | --- | --- |
+| AP-LIM-001 | Developer / observed composition constraint | `tools/build_distribution.py` resolves application recipes against the foundation checkout; the general archive CLI accepts a separate source checkout. Independently authored archives alone do not yet prove an independent downstream distribution build. | Required investigation/fix in AP-E; prove a separate checkout and compare foundation code/version. Preserve inventory and policy guards. | open |
+| AP-LIM-002 | Usage / explicit supported boundary | [Tasks contract](aurora-tasks-contract.md): list-bound tasks, active internal assignees, fixed referenced-stage meaning, one opt-in occurrence; no standalone tasks. Real pilot may expose workflow mismatches. | AP-B/D records actual impact. Change only selected necessary behavior under a new app contract/version; full Aurora port remains excluded. | known boundary; pilot impact unmeasured |
+| AP-LIM-003 | Usage / explicit reminder boundary | Reminders admit up to30days ahead, a24hour validity window and30second attempt budget. Delivery is a database inbox; web startup alone does not run managed lanes. | AP-A/B/C exercise reminders and worker stop/start; document the supported behavior. Rolling long-future scheduling/external providers are deferred unless an authorized app requirement selects them. | known boundary; pilot impact unmeasured |
+| AP-LIM-004 | Both / unqualified new path | AT proved actual clean install and closed legacy47→49 native adoption. That does not establish the planned independently authored registered-app-only update/recovery on a fixed foundation. | Required AP-E..H evidence: actual composed successor, populated pending jobs and independent original-app restore/separate resume. | open qualification |
+| AP-LIM-005 | Developer / observed launcher friction | Prior full host launcher omitted explicit repository/SDK imports under Python-I. `tests/run_host_regression.py` now supplies them; prior643case coverage is recorded honestly across initial/corrected runs. | AP-M/O includes explicit isolated entry points and a clean downstream exercise, not reliance on imports performed by earlier tests. | corrected baseline; workflow verification pending |
+| AP-LIM-006 | Both / ownership and operation | Historical qualification targets were intentionally retired. There is no retained current Tasks pilot to use as an everyday development site. | AP-A creates one named persistent local pilot with resource inventory/start/stop, independent credentials and worker profile. Disposable recovery siblings must be retired. | open |
+| AP-LIM-007 | Usage / evidence limit | Automated/agent native-UI checks do not establish human satisfaction, accessibility with every assistive setup, or long-term daily use. | AP-D reports agent findings and a human walkthrough script; optional human feedback may arrive later and is not fabricated or a blocker to this unattended scope. | explicit evidence boundary |
+| AP-LIM-008 | Developer / roadmap drift | `planning/remaining_checks.md` still calls AT reminders/native lifecycle active despite sealed49 completion. Some AT acceptance descriptions retain historical "pending" wording. | Reconcile current navigation during AP-01 planning; preserve dated evidence and historical scope. Verify links/IDs against final delivery, not by rerunning completed gates. | corrected current navigation; historical receipts retained |
+
+For subsequent findings include an exact source/operation/browser/test reference,
+the user's or developer's consequence, required/deferred decision and return
+condition. Do not place credentials, private record bodies or raw snapshots here.
