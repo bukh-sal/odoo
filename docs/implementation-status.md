@@ -1,21 +1,21 @@
 # Implementation status
 
-Current goal: owned addon cleanup through AR-05. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
+Current goal: owned addon cleanup through AR-05 — complete. Historical foundation goal: implement specification v1.1 through R1/G7. User authorized implementation and local Git on 28 October 2026 (Asia/Riyadh). R2/R3 are excluded.
 
-- Updated UTC: 2026-11-08T01:38:00+00:00
+- Updated UTC: 2026-11-08T01:47:02.669392+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **AR-05 release requalification in progress.** Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
-- Active item: **AR-05/AR-P: final source/privacy/seal and handoff.** [Plan](../planning/addon_cleanup.md) · [ADR0072](architecture-decisions/0072-addon-extraction-and-owned-release-transition.md).
+- Current phase/gate: **AR-05 passed; addon cleanup goal complete.** Core46/CF, BG/BX and original R1 retain their qualified historical scopes.
+- Active item: **None. Addon cleanup AR-01..05 complete.** [Plan](../planning/addon_cleanup.md) · [ADR0072](architecture-decisions/0072-addon-extraction-and-owned-release-transition.md).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Addon cleanup and restructuring (current goal)
 
-User authorized full implementation7 November2026. **AR-05** is the sole active
-item. **95/100 weighted points;15/16 AR checks passed.** Documentation earns no
+User authorized full implementation7 November2026. **No active item; goal complete.**
+**100/100 weighted points;16/16 AR checks passed.** Documentation earns no
 implementation points. Existing CF remains12/12 and original R1 remains99/99.
 
 | Gate | Weight | State | Checklist |
@@ -24,7 +24,7 @@ implementation points. Existing CF remains12/12 and original R1 remains99/99.
 | AR-02 |25| passed | [x] AR-C editor extraction; [x] AR-D settings/catalog; [x] AR-E communication/app separation; [x] AR-F native regressions/minimal boot |
 | AR-03 |20| passed | [x] AR-G owned roots; [x] AR-H source prune/useful tests; [x] AR-I build/discovery/package/tool paths |
 | AR-04 |25| passed | [x] AR-J reviewed populated upgrade; [x] AR-K app/role/job workflows; [x] AR-L independent recovery/useful peer |
-| AR-05 |20| in_progress | [x] AR-M clean profiles; [x] AR-N reproduction/consumer/provenance; [x] AR-O affected source/native/browser/privacy; [ ] AR-P handoff/retirement |
+| AR-05 |20| passed | [x] AR-M clean profiles; [x] AR-N reproduction/consumer/provenance; [x] AR-O affected source/native/browser/privacy; [x] AR-P handoff/retirement |
 
 Blockers: none requiring user input. AR-01 [audit/freeze decision](evidence/post-r1/addon-cleanup/ar-01-decision.json)
 and AR-02 [extraction decision](evidence/post-r1/addon-cleanup/ar02-decision.json)
@@ -35,96 +35,70 @@ local uploads/images/link previews, native Maintenance list/form/chatter and
 optional action/cron identities verified. Old failures/fixes retain exact receipts.
 AR-03 source prune is committed. No populated upgrade or new release seal yet.
 
-Resume capsule (AR supersedes historical capsules): **AR-05/AR-P is the sole
-active item.** AR-A..O passed15/16checks/95weightedpoints. Source checkpoint
-937b3f6d39a; current test-only fixture/progress/evidence changes are uncommitted.
-Production build inputs remain the checkpoint's exact bytes. No uncertain
-mutation or user blocker. Full host qualification is running; reproduction build finished. Sealed46 remains immutable.
+Resume capsule (AR supersedes historical capsules): **Goal complete; no active
+item, pending mutation, running test/build or user blocker.** AR-01..05 passed
+16/16checks/100weightedpoints. [Final decision](evidence/post-r1/addon-cleanup/qualification-decision.json),
+[delivery verification](evidence/post-r1/addon-cleanup/final-delivery.json),
+[handoff](addon-cleanup-release.md). Do not restart completed AR/R1/CF/BG gates.
 
-Final core47 image
-`sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a`, inventory
-`sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad`, build
-`docs/evidence/G7/20261108-ar04-core47-03/candidate-build.json`. Revision20 freeze
-111files/8rows and24affected tests passed; exact freeze snapshot in
-`docs/evidence/G2/20261108-ar04-foundation-transition-rev20`. Normal core guard
-remains strict. Do not apply revision19 prototypes with this operator recipe.
-[Operator procedure](addon-cleanup-release.md), ADR0073/amendment.
+Sealed local kit`.local/releases/foundation-r1-core47`:56components, source
+9045faa8972458afcc433d80748aeb2f3f52e783, manifest
+45fb20724d994a396121fcadd3ff6b6c088d243ccd56619f5732c851d53fd0e3.
+Imagea572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a,
+inventoryc69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad;
+stable alias`modular-platform:foundation-r1-core47`. Source-archived status files
+are dated development records; kit qualification/checksums identify the sealed
+snapshot. Post-seal repository commits add delivery/proof records, not new image
+inputs. Preserve sealed46kit/image; original46manifest485dc9b5 remains unchanged.
 
-[AR-04 decision](evidence/post-r1/addon-cleanup/ar04-decision.json): BOTH populated
-old46systems completed independently approved final47updates/traffic resumed on
-the same image. Exact module sets,4IAP archives,50mail adoptions/own R1 aliases
-where installed, application/filestore witnesses passed. Native list/form/roles,
-scoped Notes/viewer/cross-scope checks passed. Three Maintenance jobs preserve
-actor/workspace/timing and reject the old claim.
-[Forward proof](evidence/post-r1/addon-cleanup/ar04-final-forward.json).
-Exact final-image failure96ece65b at publication kept traffic closed; app stopped,
-fresh independent46DB restored all Aurora/IAP/ownership/filestore data and separate
-resume/workflow passed. Peer completed a new16jobs once, count2/points10 during
-this failure/recovery. [Final recovery](evidence/post-r1/addon-cleanup/ar04-final-recovery.json).
-Earlier revision19 prototype recovery remains separately scoped, not substituted.
+Owned roots authoritative:49addon dirs (15framework,4applications,5examples,
+25explicit regression/feasibility fixtures),24available production/example addons;
+628unused production trees plus IAP source removed, RPC test-only,22inherited
+fixtures retained, original numeric parser regression preserved. No external
+Odoo compatibility goal. Native default list/forms and existing1-card Canvas
+custom-page capability retained; no theme/product expansion.
 
-All recorded AR test projects are now retired: no owned container/volume/network
-remains. Private checkpoints/exports/logs and source/consumer workspaces remain
-under`.local/addon-cleanup`; never rerun initialization or old operations.
-[Retirement](evidence/post-r1/addon-cleanup/ar05-retirement.json):259containers,
-150volume-removal events/146unique names,48networks. Two timed-out Windows bind
-requests materialized late as never-started containers and4empty volumes; exact
-provenance/emptiness verified and removed. No global prune or unrelated deletion.
-Four obsolete prototype/reproduction images and14owned transient tags retired;
-selecteda572alias`modular-platform:foundation-r1-core47`, sealed46/support images
-retained. Do not require removed prototype Docker IDs for new work; evidence and
-reproducible sources retain their historical scopes.
+Exact final-image proofs: both populated Maintenance/Aurora46→47forward
+operations completed with module/data/ownership/filestore preservation;50mail
+record adoptions/own R1 aliases where installed,4lossless private IAP archives.
+Native workflows/roles/scoped Notes passed. Three pending/stale jobs preserved
+actor/workspace/timing and denied old claim. Exact47publication fault96ece65b,
+failed app stopped, fresh independent46DB restore of Aurora/IAP/ownership/files,
+separate reviewed resume and useful peer16new jobs passed. Earlier prototype
+proofs keep separate scopes; current operator cannot stage those old recipes.
+Revision20freeze111files/8rows passed, including real plugin-free site scope.
 
-**Current AR-P:** draft kit`.local/releases/foundation-r1-core47` assembled and
-checksum-verified (55components/820,144,161bytes/source66ca44dde7a). Isolated
-consumer47setup/import21archives/native3plugins6scopes/backend5checks passed;
-[in-app browser](evidence/post-r1/addon-cleanup/ar05-browser.json) verified native
-owner/list/form, readonly viewer and existing1-card Canvas;3screenshots saved,
-test tabs closed. No UI source fix: selector opens separate tabs. Host601run
-passed600/1existing skip in471.288s;9current native cases passed. Exacta572job
-lanes completed8bulk jobs once and1urgent notification once, then drained.
-[Jobs](evidence/post-r1/addon-cleanup/ar05-jobs.json).
+Cold final profiles13core/14Aurora/15Maintenance passed. No-cache/network-none
+replica reproduced all10inventory comparisons and6,276inputs. Isolated offline
+kit operator/21archive catalog/3nativeplugins6scopes/backend5checks passed.
+Current full host601tests:600passes/1existing Windows skip (471.288s);9native
+cases passed. In-app native owner/list/form, readonly viewer and minimal Canvas
+passed with saved screenshots. Workspace links intentionally open new tabs;
+launcher inspection corrected without UI changes. Exact47urgent/bulk lanes
+completed8bulk jobs once and1notification once, then drained.
 
-[Reproduction](evidence/post-r1/addon-cleanup/ar05-reproduction.json) matches
-c69inventory/all10comparisons/6,276inputs with cache/network disabled;0a09replica
-retired after proof, original selecteda572identity unchanged. Cold final profiles
-passed13core/14Aurora/15Maintenance; those targets are retired. Initial finite
-privacy scanned80known generated AR login/master/database values,23,974files,
-552,909,636bytes/50archives with0findings; image/source/support scope limits in
-[receipt](evidence/post-r1/addon-cleanup/ar05-privacy-draft.json). Current source
-has new evidence/test-only cleanup/privacy/job helpers; production input bytes
-remain unchanged. AR seal helper supports genuine16ARchecks/5gates/revision20/
-core47 separately from historical CF;14release/profile tests passed.
+Finite known-value audit80generated AR login/master/database values found0matches
+in decoded source/archives/new application layers. Final sealed-source repeat:
+17,754files/15,859unique contents/552,259,176bytes/50archives,0findings. Declared
+bounds/dependency carry-forward/no unknown-secret-detector or publisher-auth claim
+are retained in[final privacy](evidence/post-r1/addon-cleanup/ar05-privacy-final.json).
+Only source.zip changed in final refresh;54components reused. Real AR16check
+qualification branch sealed the kit; no fabricated CF passes.
 
-**Next:** write final qualification decision/evidence map and updated handoff,
-commit coherent source, refresh the UNSEALED kit with exact original build/
-reproduction inputs; verify unchanged application bytes. Run source-only final
-privacy using the passed full draft receipt, then seal via`release/seal_local.py`
-with real AR decision and verify kit/checksums/final privacy. No publication or
-production deployment. Do not mark goal complete before these final steps pass.
-Current progress95/15of16; no active build/test, uncertain mutation or user blocker.
-See[handoff](addon-cleanup-release.md). Old sealed46consumer source/interpreter
-is no longer needed by any running process; keep historical evidence/kit intact.
+[Owned retirement](evidence/post-r1/addon-cleanup/ar05-retirement.json):259containers,
+150volume-removal events (146unique names),48networks; no recorded AR container,
+volume or network remains. Two failed Windows binds materialized late; exact
+never-started provenance and4empty recreated volumes verified/removed. Four
+obsolete prototype/reproduction images and14owned transient tags retired; earlier
+AR-03 image retirements retain their scope. Stable47/sealed46/useful support and
+unrelated assets retained. No global prune. Private checkpoints/exports/logs remain
+under`.local/addon-cleanup`, excluded from kit. Test-created browser tabs closed.
 
-Historical source proof: AR-03 passed49addon dirs/251.0MiB source (15framework,
-4apps,5examples,25explicit fixtures);628unused production trees plus IAP removed,
-RPC test-only,22inherited fixtures/owned flow retained. AR-03host590passes/1skip,
-source CLI/discovery/clean core13/native flow2 passed. Retained editor/polling
-6native cases passed AR-02. New archive native3tests0failures/errors onbba proved
-actor denial/immutability/raw decimal precision. Two Windows binds timed out
-before container creation (0tables); targets retired. Four reviewed files now
-stream into a tracked volume mounted readonly. Successful regression retired
-2containers/7volumes/2networks. Scope evidence retained; final regression remains.
-
-Full host598run had596passes/1existing skip/1historical-golden mismatch in780.250s.
-Old golden preserved, revision19 current golden added,24affected tests/expanded
-revision20qualifier passed. Do not relabel that full run a pass; run final host
-qualification at AR-O. Earlier prototypes4fc/796/bba retained as recorded;796
-failed only preflight and can retire after verifying exact ownership/references.
-All runtime tests finished; final packaging/seal is active. Use explicit
-`.local/toolchain/operator-python16/Scripts/python.exe`; old source fixture uses
-`.local/foundation-release/clean-core46/operator/Scripts/python.exe`. Keep one
-active check and evidence/status/blocker/work-log/resume records current.
+Next work requires a new user-selected objective. For a new deployment, follow
+kit verification/setup/native lifecycle in the handoff with a fresh private
+operator and disposable target; never reset/replay retired fixtures. No production
+deployment or publication occurred. Current project Python remains explicit
+`.local/toolchain/operator-python16/Scripts/python.exe`; global Python unchanged.
 
 ## Latest direction: owned fork and addon retention
 
@@ -998,7 +972,7 @@ These are later R1 gates; they are not remaining G5 exit criteria.
 
 ## Blockers and limitations
 
-Current AR goal has no user blocker; AR-05 release requalification is active.
+Current AR goal is complete; no active item, user blocker or uncertain mutation.
 Two Windows bind approaches were retired after pre-container timeouts; tracked
 volume streaming passed native regressions. The inherited golden mismatch is
 fixed with preserved historical/current revision fixtures and qualified gates.

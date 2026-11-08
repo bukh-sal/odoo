@@ -1,0 +1,76 @@
+{
+  "result": "passed_owned_addon_cleanup_qualification",
+  "utc": "2026-11-08T01:42:56.498102+00:00",
+  "gates": {
+    "AR-01": "passed",
+    "AR-02": "passed",
+    "AR-03": "passed",
+    "AR-04": "passed",
+    "AR-05": "passed"
+  },
+  "checks": {
+    "AR-A": "passed",
+    "AR-B": "passed",
+    "AR-C": "passed",
+    "AR-D": "passed",
+    "AR-E": "passed",
+    "AR-F": "passed",
+    "AR-G": "passed",
+    "AR-H": "passed",
+    "AR-I": "passed",
+    "AR-J": "passed",
+    "AR-K": "passed",
+    "AR-L": "passed",
+    "AR-M": "passed",
+    "AR-N": "passed",
+    "AR-O": "passed",
+    "AR-P": "passed"
+  },
+  "contract_revision": 20,
+  "core_version": "0.1.47",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "source_commit": "9045faa8972458afcc433d80748aeb2f3f52e783",
+  "evidence": {
+    "docs/evidence/post-r1/addon-cleanup/ar-01-decision.json": "e5fa2e4f23cf4f30737992ed15c89c7a041e990ca0a912f6eefc4bad985c5cc6",
+    "docs/evidence/post-r1/addon-cleanup/ar02-decision.json": "cab5f65e1ea21ab7221d0a47162f594a5f03bf0ca730a5d6607730df748e58d0",
+    "docs/evidence/post-r1/addon-cleanup/ar03-decision.json": "e61d3b647f01e34ca90c8069c4a6246ad9c05467f7ea3d04c5d6caa7c3daea19",
+    "docs/evidence/post-r1/addon-cleanup/ar04-decision.json": "547dac9c1aa4992fa1364be8bc959ded9829e73b09272cd011fa73e72fc23079",
+    "docs/evidence/post-r1/addon-cleanup/ar04-final-forward.json": "c6e4ae6c3fc40cd309d38de149bb50313c67c3021bb24bc7c8b55864bde5ce03",
+    "docs/evidence/post-r1/addon-cleanup/ar04-final-recovery.json": "8e0312bc5f1d88260bf33fe2ad187aba5497f4660f40d7213922c000db510da1",
+    "docs/evidence/post-r1/addon-cleanup/ar05-clean-profiles.json": "4aab97307249dafd219629cca6773b2dbb05649a17c9ef8f53c28c8a3ada80c2",
+    "docs/evidence/post-r1/addon-cleanup/ar05-reproduction.json": "c5f4ffe2b1b8395c704b3b975d574dc29469aed617ef519fe637a4f225ab9e4a",
+    "docs/evidence/post-r1/addon-cleanup/ar05-consumer.json": "2a537d321d3985c049302896be8cf34751531bce9fc630ed08ee4b90451baf29",
+    "docs/evidence/post-r1/addon-cleanup/ar05-host.json": "0850e5e965d977fba405838d61c2eb1eea80757a65ea31497151e595bea6d6d0",
+    "docs/evidence/post-r1/addon-cleanup/ar05-native.json": "13f4cfcb26ac50c47fed363857a3df2ecf89635a21f0ab3f4e454529934d45f1",
+    "docs/evidence/post-r1/addon-cleanup/ar05-browser.json": "6d0988e49a3f2cd129683e0196a69e74e8e7e7f4ee5e1b66f891859d3e79b970",
+    "docs/evidence/post-r1/addon-cleanup/ar05-jobs.json": "5a3c8019e979a7c35de2fc691f0f6ebe73f2c30c4d03307ed4101b296fcec10b",
+    "docs/evidence/post-r1/addon-cleanup/ar05-privacy-draft.json": "f1fbf1700df1b1268e1f3830aa6b40534767240fbc61cc154972d042cedf8285",
+    "docs/evidence/post-r1/addon-cleanup/ar05-retirement.json": "370ba42abe931d2774a24b93dbad874cd1c972a2d9ee3450d2c8f2dcfc3f9f4d",
+    "docs/evidence/G2/20261108-ar04-foundation-transition-rev20/gate-G2.json": "97f71a5d7fd04f98bb119cd7bf5690d08da4dec767cd6764a000ff58d6abb8e6"
+  },
+  "post_snapshot_evidence": {
+    "ar05-source-refresh.json": "f477093b2555bd11a2e3857ad93510c29b79de01256605d6bf035722038e57d9",
+    "ar05-privacy-refreshed.json": "74ad49bf93f71b47700557f71252a4854558564e57d6fd67538dc15128b4baa0"
+  },
+  "weighted_progress": 100,
+  "acceptance_passed": 16,
+  "acceptance_total": 16,
+  "host": {
+    "passed": 600,
+    "skipped": 1
+  },
+  "native_tests": 9,
+  "final_image_bulk_completed_once": 8,
+  "final_image_urgent_notification_once": true,
+  "browser": "in-app native owner/viewer forms and existing one-card Canvas",
+  "owned_retirement": true,
+  "no_uncertain_mutation": true,
+  "no_user_blocker": true,
+  "limits": [
+    "Local R1 owned-fork qualification, not production deployment or publisher authentication.",
+    "R2/R3, full Aurora import, UI redesign and arbitrary Odoo compatibility excluded.",
+    "Known-value privacy scope/bounds and existing Windows skip retained.",
+    "Seal/checksum/final privacy receipts are post-qualification artifacts, separate from source-archived dated progress."
+  ]
+}

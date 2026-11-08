@@ -412,3 +412,10 @@ AR-05: [clean13/14/15module profiles](evidence/post-r1/addon-cleanup/ar05-clean-
 [finite80-value draft audit](evidence/post-r1/addon-cleanup/ar05-privacy-draft.json),
 and [exact owned retirement](evidence/post-r1/addon-cleanup/ar05-retirement.json).
 Final source refresh/privacy/seal checks remain the artifact closeout step.
+
+Addon cleanup release complete: [16/16qualification](evidence/post-r1/addon-cleanup/qualification-decision.json),
+[actual56component AR seal](evidence/post-r1/addon-cleanup/ar05-sealed-kit.json),
+[final sealed privacy](evidence/post-r1/addon-cleanup/ar05-privacy-final.json),
+and [delivery verification](evidence/post-r1/addon-cleanup/final-delivery.json).
+100weightedpoints; native UI, exact-image independent recovery, both populated
+upgrades and owned cleanup passed. [Handoff](addon-cleanup-release.md).

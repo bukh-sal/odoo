@@ -1,0 +1,46 @@
+{
+  "result": "passed_finite_known_values",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "kit_source": "9045faa8972458afcc433d80748aeb2f3f52e783",
+  "kit_manifest_sha256": "45fb20724d994a396121fcadd3ff6b6c088d243ccd56619f5732c851d53fd0e3",
+  "images_tar_sha256": "9d6f3c18e459d93a1ad49e6722857682bc77b414c1d25b3b6134461d135d64f3",
+  "known_values": 80,
+  "encodings": 240,
+  "credential_sources": [
+    ".local/addon-cleanup/baseline46/private/reference/account-passwords.json",
+    ".local/addon-cleanup/baseline46/private/reference/odoo.conf",
+    ".local/addon-cleanup/aurora46/private/reference/account-passwords.json",
+    ".local/addon-cleanup/aurora46/private/reference/odoo.conf",
+    ".local/addon-cleanup/fault46/private/reference/account-passwords.json",
+    ".local/addon-cleanup/fault46/private/reference/odoo.conf",
+    ".local/addon-cleanup/consumer47/private/reference/account-passwords.json",
+    ".local/addon-cleanup/consumer47/private/reference/odoo.conf",
+    ".local/addon-cleanup/profiles/ar04-peer-01/aurora/account-passwords.json",
+    ".local/addon-cleanup/profiles/ar04-peer-01/aurora/odoo.conf",
+    ".local/addon-cleanup/profiles/ar05-clean-01/core/account-passwords.json",
+    ".local/addon-cleanup/profiles/ar05-clean-01/core/odoo.conf",
+    ".local/addon-cleanup/profiles/ar05-clean-01/aurora/account-passwords.json",
+    ".local/addon-cleanup/profiles/ar05-clean-01/aurora/odoo.conf",
+    ".local/addon-cleanup/profiles/ar05-clean-01/maintenance/account-passwords.json",
+    ".local/addon-cleanup/profiles/ar05-clean-01/maintenance/odoo.conf",
+    ".local/addon-cleanup/profiles/ar05-native-01/regression/account-passwords.json",
+    ".local/addon-cleanup/profiles/ar05-native-01/regression/odoo.conf",
+    ".local/addon-cleanup/profiles/ar05-native-01/layout-regression/account-passwords.json",
+    ".local/addon-cleanup/profiles/ar05-native-01/layout-regression/odoo.conf"
+  ],
+  "totals": {
+    "files": 17754,
+    "unique_contents": 15859,
+    "bytes": 552259176,
+    "archives": 50
+  },
+  "findings": [],
+  "new_application_layers": [],
+  "prior_full_receipt": "docs\\evidence\\post-r1\\addon-cleanup\\ar05-privacy-draft.json",
+  "limits": [
+    "Only known generated AR fixture login/master/database credential values; not an unknown-secret detector or publisher authentication.",
+    "Static fictional test literals are intentional source fixtures, not private generated credentials.",
+    "Source, curated archives, support files and new application layers decoded; unchanged dependency/support images retain their prior audit scope.",
+    "Nested ZIP depth<=5; individual files<=128MiB. No private payloads or credential values appear in this report."
+  ]
+}

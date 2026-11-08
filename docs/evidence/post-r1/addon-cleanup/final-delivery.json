@@ -1,0 +1,24 @@
+{
+  "result": "complete_verified_sealed_owned_foundation",
+  "utc": "2026-11-08T01:47:02.662385+00:00",
+  "checks": "16/16",
+  "weighted_progress": 100,
+  "kit": ".local/releases/foundation-r1-core47",
+  "source_commit": "9045faa8972458afcc433d80748aeb2f3f52e783",
+  "image": "sha256:a572f7383c73b5331cc013841db24f371f6d6286e1f353f2c994a554f9162e2a",
+  "inventory_digest": "sha256:c69c1015d61b93e6ac79114915a3da82d12f6ca1813032b570c24115684135ad",
+  "kit_manifest_sha256": "45fb20724d994a396121fcadd3ff6b6c088d243ccd56619f5732c851d53fd0e3",
+  "components": 56,
+  "final_privacy_known_values": 80,
+  "final_privacy_findings": 0,
+  "old_sealed46_unchanged": true,
+  "owned_test_assets_retired": true,
+  "no_active_item_or_uncertain_mutation": true,
+  "scope": "Local release only; no publication or production deployment.",
+  "receipts": {
+    "qualification-decision.json": "ca3845a50fe322d0a22cd3755dff8b2493b48a646af93a502fff30f33fc98c37",
+    "ar05-sealed-kit.json": "fb6015b0ef069608dd93d2379f214226b933a765f4ef2258735b80f79fa7f2e8",
+    "ar05-privacy-final.json": "f983d10e455ad9c258f88bc8e89e848d4da5f7f9fe44690c196bb8e8297162fc",
+    "ar05-retirement.json": "370ba42abe931d2774a24b93dbad874cd1c972a2d9ee3450d2c8f2dcfc3f9f4d"
+  }
+}
