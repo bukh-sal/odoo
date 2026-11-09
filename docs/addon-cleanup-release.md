@@ -1,7 +1,7 @@
 # Owned addon extraction release
 
 Qualification is recorded in [the checklist](implementation-status.md),
-[AR plan](../planning/addon_cleanup.md) and the kit's
+The local-only AR plan (removed from the public tree) and the kit's
 `qualification/foundation-release.json`. The final local kit is
 `.local/releases/foundation-r1-core47`. Its inventory/checksums and qualification
 receipt identify the sealed snapshot; source-archived progress files are dated

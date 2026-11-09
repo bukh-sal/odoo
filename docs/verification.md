@@ -40,7 +40,7 @@ ties the selected kit and both live references to their release receipts, checks
 the failed-upgrade recovery evidence and matches the acceptance ledger to the
 specification. The [local handoff](r1-handoff.md) links the G7 gate decision and in-app browser observations.
 
-The independent fork's stock WebClient release has a separate [checklist](../planning/stock_webclient_release.md).
+The independent fork's stock WebClient release has a separate local-only checklist (removed from the public tree).
 Its five gates passed. The [stock qualification decision](evidence/G7/20261105-stock-release-repro/qualification-decision.json)
 binds the exact kit to the build, compiler, browser, performance and recovery evidence.
 

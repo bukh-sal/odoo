@@ -202,6 +202,6 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=['prepare','initialize','install','status']);parser.add_argument('--kit',type=Path,required=True);parser.add_argument('--workdir',type=Path,required=True)
     parser.add_argument('--reference-fixture',action='store_true');parser.add_argument('--port',type=int,default=18100)
     parser.add_argument('--subnets', nargs=2, metavar=('RUNTIME', 'EDGE'))
-    parser.add_argument('--native-app', choices=['mp_aurora_tasks','maintenance'],
+    parser.add_argument('--native-app', choices=['maintenance'],
                         help='Explicit fresh-fixture app selection; requires its addon in the selected kit image')
     args=parser.parse_args();getattr(Reference(args),args.action)()

@@ -14,11 +14,14 @@ Source removal/moves still require dependency/import/asset/data checks and
 affected qualification; do not delete useful regression tests for module count.
 See `docs/architecture-decisions/0071-owned-fork-and-addon-boundaries.md` and
 `docs/addon-retention-review.md`. The user authorized implementing the cleanup/extraction/restructuring and
-release requalification under `planning/addon_cleanup.md` on7 November2026.
+release requalification under the local-only planning records (currently
+`.local/removed-from-public/planning/addon_cleanup.md`) on7 November2026.
 
-The user authorized implementing `planning/modular_platform_spec.md` v1.1 through R1, with local Git commits and disposable container tests. No publication, paid services, production deployment or destruction of existing user data is authorized.
+The user authorized implementing the local-only planning specification (currently
+`.local/removed-from-public/planning/modular_platform_spec.md`) v1.1 through R1,
+with local Git commits and disposable container tests. No publication, paid services, production deployment or destruction of existing user data is authorized.
 
-Before work, read `docs/implementation-status.md` and the active gate's linked evidence/ADRs. Read the specification in full on first implementation, and relevant sections on resumption. Follow its section 25 sequencing and loop rules. The required path is G0 baseline, G1 feasibility, G2 contract freeze, then G3-G7 R1 vertical slices and qualification. R2/R3 are excluded. Do not restart completed work or mark a gate passed without real evidence.
+Before work, read `docs/implementation-status.md` and the active gate's linked evidence/ADRs. Read the local-only specification in full on first implementation, and relevant sections on resumption. Follow its section 25 sequencing and loop rules. The required path is G0 baseline, G1 feasibility, G2 contract freeze, then G3-G7 R1 vertical slices and qualification. R2/R3 are excluded. Do not restart completed work or mark a gate passed without real evidence.
 
 Keep one active work item. Update the status/checklist, acceptance results, blocker register, work log and next-action resume capsule after meaningful results and before stopping. Give rough progress using the gate weights and actual verified work, separately from acceptance counts. Do not inflate progress for documentation or generated files.
 

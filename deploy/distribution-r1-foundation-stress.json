@@ -6,7 +6,7 @@
     "base", "web", "base_setup", "auth_totp", "auth_passkey",
     "auth_password_policy", "base_import", "bus", "web_tour",
     "html_editor", "iap", "mail", "maintenance",
-    "mp_compat", "mp_identity", "mp_core", "mp_aurora_tasks"
+    "mp_compat", "mp_identity", "mp_core"
   ],
   "explicit_install": ["web", "auth_password_policy", "mp_core"],
   "platform_sdk": true,

@@ -7,15 +7,15 @@ COPYRIGHT, source notices and upstream.lock.
 
 Read [implementation status](docs/implementation-status.md) first: it identifies
 the active gate, verified checks, evidence, blockers and the next executable step.
-The current addon cleanup follows [AR-01 through AR-05](planning/addon_cleanup.md).
-The sealed core46 release is historical and remains immutable; source cleanup
-alone does not qualify a replacement release.
+Historical cleanup and specification records are local-only and are not part of
+this public tree. The sealed core46 release is historical and remains immutable;
+source cleanup alone does not qualify a replacement release.
 
 | Directory | Responsibility |
 | --- | --- |
 | engine/ | Owned registry, ORM, HTTP/security runtime and CLI |
 | framework_addons/ | Native UI/auth/settings/import/realtime/editor and optional communication services |
-| applications/ | Aurora Tasks, Maintenance, optional Discuss and incoming mail gateway |
+| applications/ | Optional native applications (Maintenance, optional Discuss and incoming mail gateway); product-specific apps are local-only |
 | examples/ and plugins/ | Minimal reference addon code and package manifests, including Canvas |
 | tests/addons/ | Explicit native regression fixtures, outside production discovery |
 | packages/ | Public SDK/contracts and independent operator implementation |

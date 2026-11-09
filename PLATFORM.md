@@ -17,4 +17,5 @@ same-origin plugins are fully trusted code; see the [security](docs/http-securit
 and [network](docs/network-independence.md) boundaries.
 
 Pinned Odoo source, upstream README/license notices and the [patch ledger](docs/upstream-patches.md)
-are retained. The specification is [planning/modular_platform_spec.md](planning/modular_platform_spec.md).
+are retained. The specification and planning records are local-only (removed
+from the public tree on 9 November 2026; ask the user for the local copy).

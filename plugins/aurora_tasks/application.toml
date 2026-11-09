@@ -1,7 +1,0 @@
-schema_version = 1
-manifest = "plugins/aurora_tasks/plugin.toml"
-addon = "applications/mp_aurora_tasks"
-
-[resources]
-"notices/LICENSE" = "LICENSE"
-"notices/COPYRIGHT" = "COPYRIGHT"

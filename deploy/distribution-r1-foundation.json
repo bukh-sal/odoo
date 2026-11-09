@@ -18,7 +18,6 @@
     "html_editor",
     "mail",
     "maintenance",
-    "mp_aurora_tasks",
     "mp_compat",
     "mp_identity",
     "mp_core",
@@ -45,8 +44,5 @@
     "plugins/canvas/plugin.toml",
     "plugins/notes_stats/plugin.toml",
     "plugins/background/plugin.toml"
-  ],
-  "application_packages": [
-    "plugins/aurora_tasks/application.toml"
   ]
 }

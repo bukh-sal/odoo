@@ -1,5 +1,0 @@
-{
-  "exit_code": 0,
-  "tests": 4,
-  "output": "test_explicit_control_store_uses_fresh_independent_reader_and_separate_catalog (test_current_install_cli.CurrentInstallCLI.test_explicit_control_store_uses_fresh_independent_reader_and_separate_catalog) ... ok\r\ntest_explicit_site_native_scope_keeps_independent_control_and_empty_workspace_list (test_current_install_cli.CurrentInstallCLI.test_explicit_site_native_scope_keeps_independent_control_and_empty_workspace_list) ... ok\r\ntest_independent_refusal_cannot_fall_back_to_legacy_reader (test_current_install_cli.CurrentInstallCLI.test_independent_refusal_cannot_fall_back_to_legacy_reader) ... ok\r\ntest_legacy_native_option_does_not_infer_or_open_control_store (test_current_install_cli.CurrentInstallCLI.test_legacy_native_option_does_not_infer_or_open_control_store) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 4 tests in 0.103s\r\n\r\nOK\r\n"
-}

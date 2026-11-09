@@ -1,5 +1,10 @@
 # Implementation status
 
+> Public-tree note (9 November 2026): private product sources, planning records
+> and their evidence were removed from the latest public tree and are local-only.
+> Historical references below may be stale. See the local archive note under
+> `.local/removed-from-public/`.
+
 Current goal: application adoption AP-01..04 — complete. User authorized all four
 phases to run sequentially unattended on8November2026. Preserve completed
 AT14/14, AR16/16, CF12/12, BG/BX and R1 99/99 scopes and sealed49/47/46 artifacts.
@@ -11,13 +16,13 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-04 reusable workflow and clean delivery — passed.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **None. All four authorized phases are complete;retain the named pilots and await a new selected requirement.** [Plan](../planning/application_adoption.md).
+- Active item: **None. All four authorized phases are complete;retain the named pilots and await a new selected requirement.** Plan (local-only, removed from the public tree).
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Application adoption (completed goal)
 
-[Phased plan](../planning/application_adoption.md) ·
+Phased plan (local-only, removed from the public tree) ·
 [developer/usage limitations](application-adoption-limitations.md).
 **100/100 verified points;16/16 acceptance checks passed.** Plan creation/source
 review earns no implementation credit. Each phase splits its weight equally
@@ -99,7 +104,7 @@ there is no required unresolved defect for these four phases.
 
 ## Aurora Tasks release (completed goal)
 
-[Plan](../planning/aurora_tasks_release.md). Authorized8 November2026.
+Plan (local-only, removed from the public tree). Authorized8 November2026.
 **100/100 verified weighted points;14/14 acceptance checks passed; final seal,
 refreshed-source privacy and delivery checks passed.** This counts the useful
 application release only; AR16/16, CF12/12 and R1 99/99 retain their completed scope.
@@ -313,13 +318,13 @@ Useful release image/dependencies/unrelated assets and private proof remain.
 Future work starts from a new explicitly selected task and fresh disposable
 target; do not restart completed CF/R1/BG/BX gates. Policy expansion/full Aurora,
 new schema/major releases and different workloads retain the conditional checks
-in`planning/remaining_checks.md`.
+in the local-only remaining-check inventory (removed from the public tree).
 
 ## Post-R1 work
 
 **Background execution: complete.** BG-01 through BG-04 passed,
 **8/8 acceptance checks and 100 weighted points**. Original R1 remains 99/99.
-[Plan and exit checks](../planning/background_execution.md) ·
+Plan and exit checks (local-only, removed from the public tree) ·
 [Qualification decision](evidence/post-r1/background-execution/qualification-decision.json)
 
 | Gate | Depends on | Status | Evidence |
@@ -339,7 +344,7 @@ Docker assets were retired; the stock-r1 image remains. Revalidate BG-04
 when changing the workload, sizing, or queue/web behavior. The
 [work log](work-log.md) retains the earlier attempts.
 
-The [background execution follow-up plan](../planning/background_execution.md#follow-up-plan-for-sustained-background-workloads)
+The background execution follow-up plan (local-only, removed from the public tree)
 tracks BX-01 through BX-05. **All five follow-up gates passed:100% by equal gate weights.**
 [Final decision](evidence/post-r1/background-execution/followup-decision.json).
 The guarded CLI reported an empty job table and then the lower bound
@@ -706,11 +711,11 @@ restored to a fresh database and separately resumed while Maintenance remained
 live on core27. Both saved a new change through stock Odoo after the update.
 All four stress checkpoints passed, and the disposable Docker assets were
 retired. [Lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json)
-[Plan and checkpoint](../planning/shared_foundation_stress_test.md)
+Plan and checkpoint (local-only, removed from the public tree)
 
 The platform now has an independent fork release policy. Future major upgrade
 checks target the platform's own releases. See [ADR 0060](architecture-decisions/0060-independent-fork-release-policy.md)
-and the [remaining-check inventory](../planning/remaining_checks.md).
+and the local-only remaining-check inventory (removed from the public tree).
 
 The stock WebClient follow-up verified the new release notice across a staged
 release change, including the original unsaved form and a persisted edit in the
@@ -724,7 +729,7 @@ stock release goal). The selected `stock-r1` kit uses image `07cacdf4`
 and manifest `cf8c53b9`. The exact 10,000-note run with 20 concurrent
 sessions measured list p95 367.832 ms and detail p95 169.833 ms. The
 disposable work retired 316 containers, 40 volumes, 10 networks and
-38 temporary image tags. [Stock release gates](../planning/stock_webclient_release.md)
+38 temporary image tags. Stock release gates (local-only documentation, removed from the public tree).
 and [qualification decision](evidence/G7/20261105-stock-release-repro/qualification-decision.json)
 
 ## Last backend continuation — Windows regression fixtures corrected
@@ -1235,9 +1240,9 @@ Current external integration gate is complete. G6 evidence was qualified on nati
   `.local/releases/stock-r1`, source `ad5ae338`, image `07cacdf4`.
   The five stock test projects and temporary tags are retired. Start new
   work with a fresh isolated target and the recorded kit procedure. The
-  [stock handoff](../planning/stock_webclient_release.md#operator-handoff)
+  stock handoff (local-only, removed from the public tree)
   links the exact acceptance evidence.
-- Post-R1 shared foundation stress test complete. The two Docker deployments were retired after the successor browser checks. Start any new proof with fresh disposable targets. The private site journals and checkpoint receipts remain in `.local/foundation-stress/sites-02`, with build records in `.local/foundation-stress/builds`. Scoped baseline `a0b2f85f` and successor `20f71fb9` are retired. See the [stress checklist](../planning/shared_foundation_stress_test.md) and [lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json).
+- Post-R1 shared foundation stress test complete. The two Docker deployments were retired after the successor browser checks. Start any new proof with fresh disposable targets. The private site journals and checkpoint receipts remain in `.local/foundation-stress/sites-02`, with build records in `.local/foundation-stress/builds`. Scoped baseline `a0b2f85f` and successor `20f71fb9` are retired. See the stress checklist (local-only, removed from the public tree) and [lifecycle evidence](evidence/post-r1/shared-foundation/lifecycle.json).
 - Local R1 is qualified. Read [the handoff](r1-handoff.md), [closure map](r1-release-checklist.md) and [gate decision](evidence/G7/20261105-section28-audit-01/gate-G7.json). The developer reference tab remains open at Canvas.
 - Target is `.local/release-kit-rehearsal/private/reference/operator/target.json`, configuration7, core26/Shell13, image `sha256:fb022dc0ba37e5105d7143a60b79edefcb62f7eb7da112c5964fe05530cd2415`, inventory `sha256:274766b60952a67d87646a9b0c4ff30d03aca4df10a93d26f6f73b93aaf768cb`. Project `mp-r0-r1release0afebf4f833b` uses port18100 and catalog `.local/release-kit-rehearsal/private/catalog`. Worker4daa retained image87 and publication1.
 - Operation `966c6bbf-37bd-412f-b1fe-c5d55ed7d207` completed. Its preservation and eight container retirements are recorded in `evidence/G7/20261105-core26-maintenance-01/`. All apply, browser and reproduction handles are terminal. Follow the recorded state for new work.
