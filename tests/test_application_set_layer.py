@@ -18,7 +18,7 @@ class ApplicationSetTests(unittest.TestCase):
     def setUp(self):
         self.base=old.ApplicationLayerTests();self.base.setUp();self.addCleanup(self.base.doCleanups)
         self.root=self.base.root;self.inputs=self.base.inputs
-        self.app=self.application('dev.aurora.projects','mp_aurora_projects','mp.aurora.project')
+        self.app=self.application('dev.example.projects','mp_example_projects','mp.example.project')
         self.rows=[];self.add_input((self.inputs/'application.mplug').read_bytes());self.add_input(self.app.build()[1])
 
     def application(self,plugin,addon,model):
@@ -30,7 +30,7 @@ class ApplicationSetTests(unittest.TestCase):
         f.manifest['plugin'].update(id=plugin,version='0.1.0');f.manifest['runtime']['addon_name']=addon
         f.manifest['data']=dict(models=[model],extension_targets=[],contributions=[dict(kind='model',id=model,target='site',delete_policy='owned')])
         f.write_manifest()
-        p=f.root/'application.toml';p.write_text(p.read_text(encoding='utf-8').replace('applications/mp_aurora_tasks','applications/'+addon),encoding='utf-8')
+        p=f.root/'application.toml';p.write_text(p.read_text(encoding='utf-8').replace('applications/mp_example_tasks','applications/'+addon),encoding='utf-8')
         return f
 
     def add_input(self,raw):
@@ -54,19 +54,19 @@ class ApplicationSetTests(unittest.TestCase):
         before=self.base.snapshot();result=apply_set_layer(self.root,self.inputs,self.request())
         self.assertEqual([a['action'] for a in result['applications']],['added','replaced'])
         after=json.loads((self.root/'distribution-inventory.json').read_bytes())
-        self.assertEqual(after['policy']['addons'],self.base.inventory['policy']['addons']+['mp_aurora_projects'])
-        self.assertEqual(after['policy']['application_packages'],['applications/dev.aurora.projects/application.toml'])
+        self.assertEqual(after['policy']['addons'],self.base.inventory['policy']['addons']+['mp_example_projects'])
+        self.assertEqual(after['policy']['application_packages'],['applications/dev.example.projects/application.toml'])
         self.assertEqual((self.root/'addons/mp_core/__manifest__.py').read_bytes(),before['addons/mp_core/__manifest__.py'])
-        self.assertEqual(set(after['artifacts']),{'dev.aurora.tasks','dev.aurora.projects'})
+        self.assertEqual(set(after['artifacts']),{'dev.example.tasks','dev.example.projects'})
         self.assertFalse(result['application_code_executed'])
 
     def test_exact_unchanged_existing_package_can_accompany_new_app(self):
-        old_file=self.root/'artifacts'/self.base.inventory['artifacts']['dev.aurora.tasks']['file']
+        old_file=self.root/'artifacts'/self.base.inventory['artifacts']['dev.example.tasks']['file']
         self.replace_input(0,old_file.read_bytes());before=self.base.snapshot()
         result=apply_set_layer(self.root,self.inputs,self.request())
-        self.assertEqual(next(a for a in result['applications'] if a['plugin_id']=='dev.aurora.tasks')['action'],'unchanged')
+        self.assertEqual(next(a for a in result['applications'] if a['plugin_id']=='dev.example.tasks')['action'],'unchanged')
         for name,raw in before.items():
-            if name.startswith('addons/mp_aurora_tasks/'):self.assertEqual((self.root/name).read_bytes(),raw)
+            if name.startswith('addons/mp_example_tasks/'):self.assertEqual((self.root/name).read_bytes(),raw)
 
     def test_unknown_fields_schema_type_empty_set_and_duplicate_paths_refuse(self):
         for change in [dict(sql='x'),dict(schema_version=True),dict(applications=[]),dict(applications=[self.rows[0]]*17),
@@ -79,24 +79,24 @@ class ApplicationSetTests(unittest.TestCase):
             with self.subTest(change=change):self.refused(request)
 
     def test_new_addon_cannot_shadow_core(self):
-        app=self.application('dev.aurora.shadow','web','mp.shadow');self.replace_input(1,app.build()[1]);self.refused(pattern='cannot shadow')
+        app=self.application('dev.example.shadow','web','mp.shadow');self.replace_input(1,app.build()[1]);self.refused(pattern='cannot shadow')
 
     def test_duplicate_plugin_and_addon_refuse_before_writes(self):
         self.add_input(self.app.build()[1]);self.refused()
-        app=self.application('dev.aurora.other','mp_aurora_projects','mp.other');self.replace_input(2,app.build()[1]);self.refused()
+        app=self.application('dev.example.other','mp_example_projects','mp.other');self.replace_input(2,app.build()[1]);self.refused()
 
     def test_missing_and_incompatible_package_dependencies_refuse(self):
-        for dependency in [{'dev.example.missing':'==1.0.0'},{'dev.aurora.tasks':'==9.0.0'}]:
+        for dependency in [{'dev.example.missing':'==1.0.0'},{'dev.example.tasks':'==9.0.0'}]:
             self.app.manifest['dependencies']['plugins']=dependency;self.app.write_manifest();self.replace_input(1,self.app.build()[1]);self.refused(pattern='Missing or incompatible .*dependency')
 
     def test_native_missing_dependency_and_undeclared_package_edge_refuse(self):
         p=self.app.addon/'__manifest__.py';native=ast.literal_eval(p.read_text(encoding='utf-8'))
-        for dependency in ['missing_native','mp_aurora_tasks']:
+        for dependency in ['missing_native','mp_example_tasks']:
             p.write_text(repr(dict(native,depends=native['depends']+[dependency])),encoding='utf-8');self.replace_input(1,self.app.build()[1]);self.refused()
 
     def test_declared_native_package_edge_is_resolved_from_actual_selected_versions(self):
-        p=self.app.addon/'__manifest__.py';native=ast.literal_eval(p.read_text(encoding='utf-8'));native['depends'].append('mp_aurora_tasks')
-        p.write_text(repr(native),encoding='utf-8');self.app.manifest['dependencies']['plugins']={'dev.aurora.tasks':'==0.1.1'}
+        p=self.app.addon/'__manifest__.py';native=ast.literal_eval(p.read_text(encoding='utf-8'));native['depends'].append('mp_example_tasks')
+        p.write_text(repr(native),encoding='utf-8');self.app.manifest['dependencies']['plugins']={'dev.example.tasks':'==0.1.1'}
         self.app.write_manifest();self.replace_input(1,self.app.build()[1]);apply_set_layer(self.root,self.inputs,self.request())
 
     def test_same_version_changed_bytes_and_downgrade_refuse(self):
@@ -114,16 +114,16 @@ class ApplicationSetTests(unittest.TestCase):
         path.write_bytes(original);(self.root/'addons/mp_core/__manifest__.py').write_text("{'version':'19.0.0.1.50'}",encoding='utf-8');self.refused()
 
     def test_native_cycle_including_framework_refuses(self):
-        self.base.inventory['native_addons']['mp_core']['depends']=['mp_aurora_projects']
+        self.base.inventory['native_addons']['mp_core']['depends']=['mp_example_projects']
         path=self.root/'distribution-inventory.json';path.write_text(json.dumps(self.base.inventory),encoding='utf-8')
         self.base.request['foundation_inventory_digest']='sha256:'+hashlib.sha256(path.read_bytes()).hexdigest();self.refused(pattern='Cyclic native')
 
     def test_new_package_cannot_claim_another_app_model(self):
-        app=self.application('dev.aurora.conflict','mp_conflict','mp.aurora.task');self.replace_input(1,app.build()[1]);self.refused(pattern='Conflicting (owned data contribution|native model)')
+        app=self.application('dev.example.conflict','mp_conflict','mp.example.task');self.replace_input(1,app.build()[1]);self.refused(pattern='Conflicting (owned data contribution|native model)')
 
     def test_declared_package_cycle_refuses(self):
-        other=self.application('dev.aurora.other','mp_other','mp.other')
-        for app,plugin,addon in [(self.app,'dev.aurora.other','mp_other'),(other,'dev.aurora.projects','mp_aurora_projects')]:
+        other=self.application('dev.example.other','mp_other','mp.other')
+        for app,plugin,addon in [(self.app,'dev.example.other','mp_other'),(other,'dev.example.projects','mp_example_projects')]:
             app.manifest['dependencies']['plugins']={plugin:'==0.1.0'};app.write_manifest()
             p=app.addon/'__manifest__.py';native=ast.literal_eval(p.read_text(encoding='utf-8'));native['depends'].append(addon);p.write_text(repr(native),encoding='utf-8')
         self.replace_input(1,self.app.build()[1]);self.add_input(other.build()[1]);self.refused(pattern='[Cc]ycl')

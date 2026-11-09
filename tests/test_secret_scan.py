@@ -1,10 +1,12 @@
 """Known secrets are found across encodings/chunks without exposing a value."""
 import importlib.util
 import json
+import os
 from pathlib import Path
 import secrets
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[1];spec=importlib.util.spec_from_file_location('mp_secret_scan',ROOT/'tools/secret_scan.py');m=importlib.util.module_from_spec(spec)
 import sys
@@ -26,6 +28,29 @@ class SecretScanTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);patterns=root/'patterns';self.scanner.write_patterns(patterns);payload=root/'payload.bin';payload.write_bytes(b'\0before'+self.value.decode().encode('utf-16le')+b'\0after')
             self.assertEqual([str(payload)],self.scanner.candidates([payload],patterns))
+
+    def test_explicit_ripgrep_executable_is_selected_as_one_argv_element(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);patterns=root/'patterns';self.scanner.write_patterns(patterns);payload=root/'payload.bin';payload.write_bytes(b'payload');executable=root/'local rg.exe';executable.write_bytes(b'')
+            with patch.dict(os.environ,{'MP_SECRET_SCAN_RG':str(executable)}),patch.object(m.subprocess,'run') as run:
+                run.return_value=m.subprocess.CompletedProcess([str(executable)],0,stdout=b'',stderr=b'')
+                self.assertEqual(self.scanner.candidates([payload],patterns),[])
+                command=run.call_args.args[0]
+                self.assertIsInstance(command,list)
+                self.assertEqual(command[0],str(executable))
+                self.assertEqual(run.call_args.kwargs.get('shell',False),False)
+
+    def test_configured_ripgrep_must_name_an_existing_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            missing=Path(directory)/'missing-rg.exe'
+            with patch.dict(os.environ,{'MP_SECRET_SCAN_RG':str(missing)}):
+                with self.assertRaisesRegex(RuntimeError,'MP_SECRET_SCAN_RG'):
+                    m.rg_executable()
+
+    def test_missing_default_ripgrep_fails_closed(self):
+        with patch.dict(os.environ,{'PATH':''},clear=True):
+            with self.assertRaisesRegex(RuntimeError,'ripgrep'):
+                m.rg_executable()
 
     def test_cross_chunk_match_and_dedup_are_preserved(self):
         with tempfile.TemporaryDirectory() as directory:

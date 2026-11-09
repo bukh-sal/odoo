@@ -3,7 +3,7 @@
 The current adoption set is Tasks0.2.3, Projects0.1.1 and the optional
 Projects–Tasks extension0.1.1, on foundation0.1.49. The three application sources
 are independent Git repositories. The foundation stays a separate owned fork.
-[Status](implementation-status.md), [contracts](aurora-projects-contract.md),
+[Status](implementation-status.md),
 [limitations](application-adoption-limitations.md) and
 [operator commands](application-operations.md) define the qualified boundaries.
 
@@ -113,15 +113,43 @@ current revocation, search/count/group/display errors, native browser workflows,
 and populated checkpoint/upgrade/restore/separate resume for persistent changes.
 Assert real effects, not only queued jobs or running workers.
 
-The delivered source retains meaningful regression fixtures. For the exact
-adoption set, `tests/application_adoption_site.py` creates named synthetic local
-sites; it is a qualification fixture, not a production provisioning product.
-Its `install_cli` action explicitly automates exact-hash approval only under a
-disposable OS-owned test policy. Daily operator approval commands stay separate.
-`tests/application_projects_tasks_checks.py` tests the seven integration groups;
-`tests/application_release_checks.py --profile projects` tests populated release
-failure/recovery. These are once-only scenarios with private intent markers and
-logs. Inspect prior effects before continuation; never delete a marker to retry.
+The delivered source retains generic authoring/packaging fixtures under
+`tests/fixtures/application_authoring/`. The historical app-set adoption and
+release qualification helpers that remain tracked under `tests/` depend on
+private application material that is not included in the public tree; they are
+not self-contained and are not a supported public developer entry point.
+Preservation or relocation of those helpers is still pending. Any retained
+once-only scenarios inspect prior effects before continuation; never delete a
+marker to retry.
+
+### Run the host checks
+
+The reproducible host check entry point is `tests/run_host_regression.py`, run
+with the project-owned isolated interpreter. Use a project-owned temp directory
+so test temporaries do not land in the checkout (some agent shells cannot write
+the OS temp directory):
+
+```powershell
+$py = '.local/toolchain/operator-python16/Scripts/python.exe'
+$tmp = Join-Path (Get-Location) '.local/tmp'
+New-Item -ItemType Directory -Force $tmp | Out-Null
+$env:TMPDIR = $tmp; $env:TEMP = $tmp; $env:TMP = $tmp
+& $py -I tests/run_host_regression.py
+```
+
+Ripgrep is required for the real byte-scan assertion in
+`tests/test_secret_scan.py`. Install `rg` on `PATH`, or set
+`MP_SECRET_SCAN_RG` to a local executable; it is resolved as one argv element
+(no shell). A missing or invalid executable fails the scan closed rather than
+skipping it or substituting a text scan:
+
+```powershell
+$env:MP_SECRET_SCAN_RG = 'C:\path\to\rg.exe'
+& $py -I tests/run_host_regression.py
+```
+
+These are bounded checks, not a release or qualification claim; remaining
+failures stay explicit rather than being presented as a green baseline.
 
 Human usability, long-term production load and real-data migration remain
 separate work. Text edits use native last-save-wins. Application role rows restore

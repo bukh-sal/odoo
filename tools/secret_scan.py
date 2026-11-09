@@ -9,8 +9,10 @@ from dataclasses import dataclass
 import hashlib
 import hmac
 import json
+import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 
 
@@ -30,6 +32,18 @@ def is_credential_file(name,data):
     eligible=(not Path(name).suffix and (name.endswith('-password') or name=='password' or name.startswith('password-') or name in ('service-token','bearer-token'))) or name in ('password.txt','bootstrap-password.txt')
     value=data.strip()
     return eligible and 16<=len(value)<=256 and b'\n' not in value and b'\r' not in value
+
+
+def rg_executable():
+    """Resolve ripgrep; explicit MP_SECRET_SCAN_RG wins over the default rg, fail closed."""
+    configured=os.environ.get('MP_SECRET_SCAN_RG','').strip()
+    if configured:
+        candidate=Path(configured)
+        if not candidate.is_file():raise RuntimeError('MP_SECRET_SCAN_RG must name an existing executable file')
+        return str(candidate)
+    found=shutil.which('rg')
+    if found is None:raise RuntimeError('ripgrep executable not found on PATH; install rg or set MP_SECRET_SCAN_RG')
+    return found
 
 
 @dataclass
@@ -92,10 +106,11 @@ class Scanner:
 
     def candidates(self,paths,pattern_file):
         """Bound Windows command length; ripgrep returns names, never values."""
+        executable=rg_executable()
         result=[];batch=[];length=0
         def run(names):
             if not names:return
-            args=['rg','--text','--no-unicode','--encoding','none','--files-with-matches','--null','--no-messages','--regex-size-limit','100M','-f',str(pattern_file),'--',*names]
+            args=[executable,'--text','--no-unicode','--encoding','none','--files-with-matches','--null','--no-messages','--regex-size-limit','100M','-f',str(pattern_file),'--',*names]
             completed=subprocess.run(args,capture_output=True,timeout=120)
             if completed.returncode not in (0,1):raise RuntimeError('Byte scan failed; inspect private diagnostics without echoing patterns')
             result.extend(n.decode('utf8') for n in completed.stdout.split(b'\0') if n)

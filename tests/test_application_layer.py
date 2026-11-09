@@ -25,10 +25,10 @@ class ApplicationLayerTests(unittest.TestCase):
         (self.root/'artifacts').mkdir();(self.root/'artifacts'/descriptor['file']).write_bytes(raw)
         core=self.root/'addons/mp_core/__manifest__.py';core.parent.mkdir();core.write_text("{'version':'19.0.0.1.49'}",encoding='utf-8')
         source=ast.literal_eval((native/'__manifest__.py').read_text(encoding='utf-8'))
-        self.inventory=dict(policy=dict(addons=['base','web','mp_core','mp_aurora_tasks']),
+        self.inventory=dict(policy=dict(addons=['base','web','mp_core','mp_example_tasks']),
             native_addons=dict(base=dict(depends=[]),web=dict(depends=['base']),mp_core=dict(depends=['web']),
-                mp_aurora_tasks=dict(depends=source['depends'],auto_install=False,license=source['license'])),
-            generated_patches=[],artifacts={'dev.aurora.tasks':descriptor},
+                mp_example_tasks=dict(depends=source['depends'],auto_install=False,license=source['license'])),
+            generated_patches=[],artifacts={'dev.example.tasks':descriptor},
             files={p.relative_to(self.root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in self.root.rglob('*') if p.is_file()})
         (self.root/'distribution-inventory.json').write_text(json.dumps(self.inventory),encoding='utf-8')
         self.fixture.manifest['plugin']['version']='0.1.1'
@@ -53,8 +53,8 @@ class ApplicationLayerTests(unittest.TestCase):
         self.assertEqual(result['version'],'0.1.1');self.assertTrue(result['policy_unchanged'])
         self.assertFalse(result['application_code_executed'])
         self.assertEqual((self.root/'addons/mp_core/__manifest__.py').read_bytes(),before['addons/mp_core/__manifest__.py'])
-        self.assertFalse((self.root/'artifacts/dev.aurora.tasks-0.1.0.mplug').exists())
-        self.assertTrue((self.root/'artifacts/dev.aurora.tasks-0.1.1.mplug').exists())
+        self.assertFalse((self.root/'artifacts/dev.example.tasks-0.1.0.mplug').exists())
+        self.assertTrue((self.root/'artifacts/dev.example.tasks-0.1.1.mplug').exists())
         # Fixture __init__ raises immediately if assembly imports it.
 
     def test_unknown_fields_boolean_schema_or_traversal_refused_before_writes(self):
@@ -74,7 +74,7 @@ class ApplicationLayerTests(unittest.TestCase):
         self.refused_unchanged()
 
     def test_undeclared_application_identity_refused_before_writes(self):
-        self.fixture.manifest['plugin']['id']='dev.aurora.other';self.fixture.write_manifest();self.make_input();self.refused_unchanged()
+        self.fixture.manifest['plugin']['id']='dev.example.other';self.fixture.write_manifest();self.make_input();self.refused_unchanged()
 
     def test_missing_native_dependency_refused_before_writes(self):
         p=self.fixture.addon/'__manifest__.py';native=ast.literal_eval(p.read_text(encoding='utf-8'));native['depends'].append('missing_native')

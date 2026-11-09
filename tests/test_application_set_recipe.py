@@ -26,7 +26,7 @@ class RecipeTests(unittest.TestCase):
 
     def test_portable_digest_pinned_recipe_reads_without_importing_native_code(self):
         value,rows,digest=read_recipe(self.recipe());self.assertEqual(value,self.value);self.assertEqual(len(rows),1)
-        self.assertEqual(rows[0]['plugin_id'],'dev.aurora.tasks');self.assertTrue(digest.startswith('sha256:'))
+        self.assertEqual(rows[0]['plugin_id'],'dev.example.tasks');self.assertTrue(digest.startswith('sha256:'))
 
     def test_unknown_top_level_or_foundation_keys_are_not_override_channels(self):
         self.value['command']='anything'

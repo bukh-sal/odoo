@@ -32,7 +32,7 @@ class ApplicationDistribution(unittest.TestCase):
         self.app=authoring_test.ApplicationPackage('test_non_example_repeatable_validated_and_ownership_checked')
         self.app.setUp();self.addCleanup(self.app.doCleanups)
         self.root=self.app.root
-        self.policy={'addons':['base','web','mp_aurora_tasks'],'application_packages':['application.toml']}
+        self.policy={'addons':['base','web','mp_example_tasks'],'application_packages':['application.toml']}
         (self.root/'engine/odoo').mkdir(parents=True)
         (self.root/'engine/odoo/__init__.py').write_text('raise RuntimeError("engine import forbidden in source build")',encoding='utf8')
         (self.root/'engine/odoo-bin').write_text('raise RuntimeError("launcher execution forbidden in source build")',encoding='utf8')
@@ -52,22 +52,22 @@ class ApplicationDistribution(unittest.TestCase):
         return build(self.root,self.root/'distribution','deploy/apps.json')
 
     def extension(self):
-        addon='aurora_tasks_labels'
+        addon='example_tasks_labels'
         directory=self.root/'authoring/apps'/addon;directory.mkdir(parents=True)
-        (directory/'__manifest__.py').write_text(repr(dict(name='Labels',version='19.0.0.1.0',depends=['mp_aurora_tasks'],license='LGPL-3')),encoding='utf8')
+        (directory/'__manifest__.py').write_text(repr(dict(name='Labels',version='19.0.0.1.0',depends=['mp_example_tasks'],license='LGPL-3')),encoding='utf8')
         (directory/'__init__.py').write_text('raise RuntimeError("extension import forbidden")',encoding='utf8')
-        (directory/'models.py').write_text('from odoo import models, fields\nclass Label(models.Model):\n    _inherit="mp.aurora.task"\n    custom_label=fields.Char()\n',encoding='utf8')
+        (directory/'models.py').write_text('from odoo import models, fields\nclass Label(models.Model):\n    _inherit="mp.example.task"\n    custom_label=fields.Char()\n',encoding='utf8')
         manifest=copy.deepcopy(self.app.manifest)
-        manifest['plugin'].update(id='dev.aurora.labels',name='Task labels')
+        manifest['plugin'].update(id='dev.example.labels',name='Task labels')
         manifest['runtime']['addon_name']=addon
-        manifest['dependencies']['plugins']={'dev.aurora.tasks':'>=0.1,<0.2'}
-        manifest['data']=dict(models=[],extension_targets=['mp.aurora.task'],contributions=[
-            dict(kind='field',id='mp.aurora.task.custom_label',target='mp.aurora.task',delete_policy='owned')])
+        manifest['dependencies']['plugins']={'dev.example.tasks':'>=0.1,<0.2'}
+        manifest['data']=dict(models=[],extension_targets=['mp.example.task'],contributions=[
+            dict(kind='field',id='mp.example.task.custom_label',target='mp.example.task',delete_policy='owned')])
         (self.root/'authoring/labels-plugin.toml').write_text(toml(manifest),encoding='utf8')
         (self.root/'authoring/LICENSE').write_bytes((self.root/'LICENSE').read_bytes())
         (self.root/'authoring/labels.toml').write_text('''schema_version=1
 manifest="authoring/labels-plugin.toml"
-addon="authoring/apps/aurora_tasks_labels"
+addon="authoring/apps/example_tasks_labels"
 [resources]
 "notices/LICENSE"="authoring/LICENSE"
 ''',encoding='utf8')
@@ -99,7 +99,7 @@ addon="authoring/apps/aurora_tasks_labels"
             for name,data in files.items():
                 if name.startswith(prefix):
                     self.assertEqual((self.root/'distribution/addons'/descriptor['addon']/name[len(prefix):]).read_bytes(),data)
-        self.assertEqual(inventory['package_composition']['fields']['mp.aurora.task.custom_label'],'dev.aurora.labels')
+        self.assertEqual(inventory['package_composition']['fields']['mp.example.task.custom_label'],'dev.example.labels')
 
     def test_utf8_operator_policy_preserves_its_profile(self):
         self.policy['profile']='تطبيق مهام مستقل'
@@ -107,7 +107,7 @@ addon="authoring/apps/aurora_tasks_labels"
 
     def test_missing_and_incompatible_package_dependencies_refused_before_output(self):
         manifest=self.extension()
-        manifest['dependencies']['plugins']={'dev.aurora.tasks':'>=9'}
+        manifest['dependencies']['plugins']={'dev.example.tasks':'>=9'}
         (self.root/'authoring/labels-plugin.toml').write_text(toml(manifest),encoding='utf8')
         with self.assertRaisesRegex(ContractError,'incompatible'):
             self.compose()
@@ -131,9 +131,9 @@ addon="authoring/apps/aurora_tasks_labels"
         self.extension();self.write_policy()
         inputs=source_input_paths(self.root,'deploy/apps.json')
         for name in ['application.toml','authoring/labels.toml','authoring/labels-plugin.toml',
-                     'authoring/LICENSE','authoring/apps/aurora_tasks_labels/models.py']:
+                     'authoring/LICENSE','authoring/apps/example_tasks_labels/models.py']:
             self.assertIn(name,inputs)
-        self.assertNotIn('authoring/apps/aurora_tasks_labels/__pycache__/anything.pyc',inputs)
+        self.assertNotIn('authoring/apps/example_tasks_labels/__pycache__/anything.pyc',inputs)
 
     def test_reviewed_catalog_and_whole_release_solver_consume_real_artifacts(self):
         self.extension()
@@ -145,8 +145,8 @@ addon="authoring/apps/aurora_tasks_labels"
             catalog.add(incoming,expected_digest='sha256:'+hashlib.sha256(raw).hexdigest())
         environment=copy.deepcopy(ENVIRONMENT)
         environment.update(platform_version='0.1.47',core_addons=['base','web'])
-        result=resolve_release(catalog.snapshot(),[],environment,{'dev.aurora.labels':'==0.1.0'})
-        self.assertEqual(result['native_order'],['mp_aurora_tasks','aurora_tasks_labels'])
+        result=resolve_release(catalog.snapshot(),[],environment,{'dev.example.labels':'==0.1.0'})
+        self.assertEqual(result['native_order'],['mp_example_tasks','example_tasks_labels'])
         self.assertEqual({item['digest'] for item in result['plugins']},digests)
 
 
