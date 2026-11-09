@@ -84,10 +84,17 @@ def protect_directory(path):
     path.mkdir(mode=0o777 if os.name == 'nt' else 0o700, parents=True)
     if os.name == 'nt':
         sid = current_identity().removeprefix('windows-sid:')
-        args = [str(_system_directory() / 'icacls.exe'), str(path), '/inheritance:r', '/grant:r']
+        program = str(_system_directory() / 'icacls.exe')
+        args = [program, str(path), '/inheritance:r', '/grant:r']
         args.extend('*' + allowed + ':(OI)(CI)F' for allowed in (sid, 'S-1-5-18', 'S-1-5-32-544'))
         completed = subprocess.run(args, capture_output=True, timeout=15)
         if completed.returncode:
+            raise OperatorError('Operator ACL protection failed')
+        # A Python-private parent contributes the Windows OWNER RIGHTS grant even
+        # after inheritance is removed. This new, empty directory is the only
+        # target; the verifier still refuses unexpected grants on existing paths.
+        normalized = subprocess.run([program, str(path), '/remove:g', '*S-1-3-4'], capture_output=True, timeout=15)
+        if normalized.returncode:
             raise OperatorError('Operator ACL protection failed')
     else:
         os.chmod(path, 0o700)

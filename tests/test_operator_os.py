@@ -11,7 +11,8 @@ from uuid import UUID
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
 from modular_platform.operator_os import (current_identity, protect_directory, verify_private_directory,
-    OperatorError, ProcessLock, OperationLocks, LockBusy, LockFenced, _system_directory)
+    OperatorError, ProcessLock, OperationLocks, LockBusy, LockFenced, _system_directory, _windows_acl)
+import modular_platform.operator_os as operator_os
 
 
 class OperatorOS(unittest.TestCase):
@@ -31,12 +32,63 @@ class OperatorOS(unittest.TestCase):
         if os.name == 'nt':
             program = str(_system_directory() / 'icacls.exe')
             subprocess.run([program, str(self.private), '/grant', '*S-1-1-0:(OI)(CI)R'], check=True, capture_output=True)
+            before = _windows_acl(self.private)
         else:
             os.chmod(self.private, 0o755)
+            before = os.stat(self.private).st_mode
         with self.assertRaises(OperatorError):
             verify_private_directory(self.private)
         with self.assertRaises(OperatorError):
             protect_directory(self.private)
+        self.assertEqual(_windows_acl(self.private) if os.name == 'nt' else os.stat(self.private).st_mode, before)
+
+    def test_fresh_directory_beneath_python_private_parent_is_normalized(self):
+        if os.name != 'nt':
+            self.skipTest('Windows ACL normalization is Windows-only')
+        parent = Path(self.temporary.name)
+        self.assertIn('S-1-3-4', {rule['sid'] for rule in _windows_acl(parent)['rules']})
+        fresh = protect_directory(parent / 'fresh-control')
+        acl = _windows_acl(fresh)
+        sid = current_identity().removeprefix('windows-sid:')
+        self.assertEqual(acl['owner'], sid)
+        self.assertIs(acl['protected'], True)
+        self.assertEqual({rule['sid'] for rule in acl['rules']},
+                         {sid, 'S-1-5-18', 'S-1-5-32-544'})
+        self.assertTrue(all(rule['type'] == 'Allow' for rule in acl['rules']))
+        self.assertTrue(any(rule['sid'] == sid and rule['rights'] & 0x1F01FF == 0x1F01FF
+                            for rule in acl['rules']))
+        self.assertEqual(list(fresh.iterdir()), [])
+
+    def test_existing_owner_rights_directory_is_refused_without_mutation(self):
+        if os.name != 'nt':
+            self.skipTest('Windows ACL normalization is Windows-only')
+        existing = Path(self.temporary.name) / 'existing-owner-rights'
+        existing.mkdir(mode=0o700)
+        before = _windows_acl(existing)
+        self.assertIn('S-1-3-4', {rule['sid'] for rule in before['rules']})
+        with self.assertRaises(OperatorError):
+            protect_directory(existing)
+        self.assertEqual(_windows_acl(existing), before)
+
+    def test_failed_acl_command_fails_closed_before_control_data(self):
+        if os.name != 'nt':
+            self.skipTest('Windows ACL command behavior is Windows-only')
+        real_run = operator_os.subprocess.run
+        for marker, label in (('/grant:r', 'grant'), ('/remove:g', 'remove')):
+            with self.subTest(marker=marker):
+                path = Path(self.temporary.name) / ('failed-' + label)
+                seen = []
+                def fail(args, *rest, **kwargs):
+                    if isinstance(args, (list, tuple)) and 'icacls' in str(args[0]).lower():
+                        seen.append(list(args))
+                        if marker in args:
+                            return subprocess.CompletedProcess(args, 1)
+                    return real_run(args, *rest, **kwargs)
+                with patch.object(operator_os.subprocess, 'run', side_effect=fail):
+                    with self.assertRaises(OperatorError):
+                        protect_directory(path)
+                self.assertEqual(list(path.iterdir()), [])
+                self.assertTrue(any(marker in command for command in seen))
 
     def test_second_handle_cannot_steal_and_persistent_file_survives_release(self):
         first = ProcessLock(self.private, 'deployment-fixture')
