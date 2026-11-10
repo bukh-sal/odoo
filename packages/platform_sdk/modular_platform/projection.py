@@ -227,15 +227,15 @@ def project_deployment(configuration, observation, catalog):
             row=scopes.get((endpoint['installation_id'],endpoint['workspace_id']))
             if row is None:continue  # Unregistered approval is not installation.
             manifest=by_plugin[row['plugin_id']]['manifest'];expected=manifest['external_service']
-            # Inspect the real independently approved image while an operator
-            # prepares an upgrade. This grants no availability: every scope of
-            # this reference installation must already be suspended. Planning
-            # still matches the target artifact and maintenance requires its
-            # private stored-operation proof before admitting a mismatch.
-            inert_reference=(row['plugin_id']=='org.example.document_stats'
-                and all(r['feature_state']=='suspended' for r in scopes.values() if r['installation_id']==row['installation_id']))
+            # An independently approved endpoint image transition may be exposed
+            # as data only while every installed scope of this external
+            # installation is suspended. This grants no availability, signing or
+            # transition authority; manager health, external planning and
+            # reference transitions retain their exact-image checks.
+            scope_rows=[r for r in scopes.values() if r['installation_id']==row['installation_id']]
+            all_suspended=bool(scope_rows) and all(r['feature_state']=='suspended' for r in scope_rows)
             if (endpoint['site_id']!=row['site_id'] or endpoint['endpoint_config']!=expected['endpoint_config']
-                    or endpoint['expected_image_digest']!=expected['expected_image'].split('@',1)[1] and not inert_reference):
+                    or endpoint['expected_image_digest']!=expected['expected_image'].split('@',1)[1] and not all_suspended):
                 raise PlanningError('Observed external endpoint differs from pinned package/scope')
             endpoints.append(copy.deepcopy(endpoint));key=endpoint['installation_id']+':'+endpoint['workspace_id']
             value=external['service_health'].get(key)

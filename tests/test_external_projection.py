@@ -41,6 +41,72 @@ class ExternalProjection(unittest.TestCase):
     def project(self):
         return project_deployment(self.config,dict(runtime=self.runtime,image_id='sha256:'+'a'*64,sites=[self.site],external_state=self.external_state),self.catalog)
 
+    def use_nonreference_provider(self):
+        old='org.example.document_stats';new='org.example.other_stats';installation=ident(102)
+        other=copy.deepcopy(self.external);other['manifest']['plugin']['id']=new;other['digest']='sha256:'+'7'*64
+        self.catalog=[self.native,other]
+        row=next(r for r in self.site['installations'] if r['plugin_id']==old)
+        row.update(plugin_id=new,installation_id=installation,digest=other['digest'],manifest=other['manifest'])
+        for feature in self.site['features']:
+            if feature['plugin_id']==old:
+                feature.update(plugin_id=new,installation_id=installation)
+        expected=other['manifest']['external_service']['expected_image'].split('@',1)[1]
+        self.endpoint.update(installation_id=installation,expected_image_digest=expected)
+        self.external_state['endpoints']=[self.endpoint]
+        self.external_state['service_health']={installation+':'+ident(30):dict(state='healthy',expected_image_digest=expected)}
+        pin=dict(plugin_id=new,version=other['manifest']['plugin']['version'],digest=other['digest'],runtime='external_service')
+        selected,environment,provenance=runtime_inputs(self.runtime,self.catalog,external_plugins=[pin])
+        solution=resolve_release(selected,[],environment,{item['manifest']['plugin']['id']:'=='+item['manifest']['plugin']['version'] for item in selected})
+        lock=release_lock(solution,provenance,generation=2,created_at=STAMP);self.config['published_release']=lock
+        self.site['release_digest']=data_digest(lock)
+
+    def suspend_and_change_image(self):
+        self.site['features'][1]['feature_state']='suspended'
+        self.endpoint['expected_image_digest']='sha256:'+'9'*64
+        next(iter(self.external_state['service_health'].values()))['expected_image_digest']=self.endpoint['expected_image_digest']
+
+    def test_suspended_scope_image_mismatch_is_data_only(self):
+        self.suspend_and_change_image();before=copy.deepcopy(self.config['published_release'])
+        result=self.project();state=result['state'];row=next(r for r in state['installations'] if r['plugin_id']=='org.example.document_stats')
+        self.assertTrue(all(r['feature_state']=='suspended' for r in state['installations'] if r['installation_id']==row['installation_id']))
+        self.assertEqual(state['endpoints'],[self.endpoint]);self.assertEqual(state['release_lock'],before)
+
+    def test_enabled_or_mixed_scope_image_mismatch_is_refused(self):
+        self.site['features'][1]['feature_state']='enabled';self.endpoint['expected_image_digest']='sha256:'+'9'*64
+        next(iter(self.external_state['service_health'].values()))['expected_image_digest']=self.endpoint['expected_image_digest']
+        with self.assertRaises(PlanningError):self.project()
+        self.site['features'][1]['feature_state']='suspended';self.site['features'].append(dict(self.site['features'][1],workspace_id=ident(31),feature_state='enabled'))
+        with self.assertRaises(PlanningError):self.project()
+
+    def test_unknown_or_wrong_scope_does_not_emit_live_endpoint(self):
+        self.site['features'][1]['feature_state']='suspended';self.endpoint['workspace_id']=ident(31)
+        self.external_state['service_health']={ident(101)+':'+ident(31):dict(state='healthy',expected_image_digest=self.endpoint['expected_image_digest'])}
+        state=self.project()['state'];self.assertEqual(state['endpoints'],[])
+        self.site['features'][1]['feature_state']='suspended';self.site['features'][1]['workspace_id']=ident(30)
+        self.endpoint['workspace_id']=ident(30);self.external_state['service_health']={ident(101)+':'+ident(30):dict(state='healthy',expected_image_digest=self.endpoint['expected_image_digest'])}
+
+    def test_matched_wrong_site_or_config_is_refused(self):
+        self.site['features'][1]['feature_state']='suspended';self.endpoint['site_id']=ident(21)
+        with self.assertRaises(PlanningError):self.project()
+        self.endpoint['site_id']=ident(20);self.endpoint['endpoint_config']='other_config'
+        with self.assertRaises(PlanningError):self.project()
+
+    def test_suspended_health_image_mismatch_is_refused(self):
+        self.suspend_and_change_image();next(iter(self.external_state['service_health'].values()))['expected_image_digest']='sha256:'+'a'*64
+        with self.assertRaises(PlanningError):self.project()
+
+    def test_nonreference_suspended_image_mismatch_is_data_only(self):
+        self.use_nonreference_provider();self.suspend_and_change_image();before=copy.deepcopy(self.config['published_release'])
+        state=self.project()['state'];row=next(r for r in state['installations'] if r['plugin_id']=='org.example.other_stats')
+        self.assertEqual(state['endpoints'],[self.endpoint])
+        self.assertTrue(all(r['feature_state']=='suspended' for r in state['installations'] if r['installation_id']==row['installation_id']))
+        self.assertEqual(state['release_lock'],before)
+
+    def test_nonreference_enabled_image_mismatch_is_refused(self):
+        self.use_nonreference_provider();self.site['features'][1]['feature_state']='enabled'
+        self.endpoint['expected_image_digest']='sha256:'+'9'*64
+        next(iter(self.external_state['service_health'].values()))['expected_image_digest']=self.endpoint['expected_image_digest']
+        with self.assertRaises(PlanningError):self.project()
     def test_external_package_has_no_native_image_root_or_module(self):
         state=self.project()['state'];row=next(r for r in state['installations'] if r['plugin_id']=='org.example.document_stats')
         self.assertEqual(row['state'],'installed');self.assertEqual(self.site['native_modules'],[dict(addon='test_a',state='installed',version='19.0.1.0.0')])

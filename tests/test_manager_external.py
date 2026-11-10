@@ -172,6 +172,13 @@ class ManagerExternal(unittest.TestCase):
         self.assertEqual(row['features'][0]['availability'],'suspended')
         self.assertEqual(self.external_row(False)['health']['state'],'unknown')
 
+    def test_suspended_changed_image_is_degraded_not_available(self):
+        self.f.f.site['features'][1]['feature_state']='suspended'
+        changed='sha256:'+'9'*64
+        self.f.f.endpoint['expected_image_digest']=changed
+        next(iter(self.f.f.external_state['service_health'].values()))['expected_image_digest']=changed
+        row=self.external_row();self.assertEqual(row['health']['state'],'degraded')
+        self.assertEqual(row['features'][0]['availability'],'suspended')
     def test_outage_revocation_scope_and_image_mismatch_degrade(self):
         initial=copy.deepcopy(self.f.f.external_state)
         for kind in ['outage','revocation','scope','image']:
