@@ -152,21 +152,17 @@ class NativeExecutor:
         self.observer = self._observer_for(self.config)
 
     def _observer_for(self,configuration):
-        if any(p['runtime']=='external_service' for p in configuration.get('published_release',{}).get('plugins',[])):
-            from .reference_dispatch import reference_observer
-            return reference_observer(self,configuration)
         return DockerObserver(configuration)
 
     def _dispatch(self):
         from .recurrence_maintenance import selected
         recurring=selected(self)
+        external=any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[]))
         if recurring is not None:
-            if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
-                raise OperatorError('Combined external and recurrence maintenance requires separate qualification')
+            if external:raise OperatorError('Combined external and recurrence maintenance requires separate qualification')
             return recurring
-        if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
-            from .reference_dispatch import ReferenceDispatchMaintenance
-            return ReferenceDispatchMaintenance(self)
+        if external:
+            raise OperatorError('External reference lifecycle requires the optional host operator executor')
         from .dispatch_operator import DispatchMaintenance
         return DispatchMaintenance(self)
 
@@ -187,8 +183,14 @@ class NativeExecutor:
         arguments,child=self._child(bundle['plan']['operation_id'],'metadata',image_id=image)
         arguments.insert(2,'-i')
         script={'uninstall':'uninstall_metadata.py','remove':'remove_metadata.py'}.get(bundle['plan']['operation_type'],'install_metadata.py')
-        self._private_command(arguments+['-c',Path(__file__).with_name(script).read_text(encoding='utf8')],
+        source=Path(__file__).with_name(script).read_text(encoding='utf8')
+        self._private_command(arguments+['-c',self._metadata_script(script,source)],
             directory/'metadata.log',input=json.dumps(payload).encode())
+
+    def _metadata_script(self,script,source):
+        """Private child source; optional host subclasses may compose a reviewed
+        external validator for native metadata maintenance without artifact input."""
+        return source
 
     def _validate(self, *, quiesced=False):
         from .release_staging import StageStore
@@ -209,12 +211,24 @@ class NativeExecutor:
         snapshot=manifest.get('dispatch_profile')
         if snapshot is None:
             if manifest.get('reference_policy') is not None:
-                raise OperatorError('Checkpoint reference policy lacks its dispatch profile')
+                raise OperatorError('Checkpoint reference policy requires the optional host operator')
             return None,None
         if not isinstance(snapshot,dict) or not isinstance(snapshot.get('release_digest'),str):
             raise OperatorError('Checkpoint dispatch profile is malformed')
-        return snapshot,{'site_id':self.config['sites'][0]['site_id'],
-            'release_digest':snapshot['release_digest'],'reference':manifest.get('reference_policy')}
+        scope=self._checkpoint_scope_fields(manifest,snapshot)
+        return snapshot,scope
+
+    def _checkpoint_scope_fields(self,manifest,snapshot):
+        """Private checkpoint scope fields; optional host subclasses extend."""
+        return {'site_id':self.config['sites'][0]['site_id'],'release_digest':snapshot['release_digest'],
+            'reference':manifest.get('reference_policy')}
+
+    def _checkpoint_profile_fields(self,previous,actual,helper):
+        """Private checkpoint profile fields; optional host subclasses extend."""
+        if actual['profile']=='r1-native-recurring-dispatch-v1':
+            previous['recurrence_policy']=helper.policy_for(actual)
+            previous['recurrence_role_approval']=helper.role_approval
+        previous['external_dispatch']='Native queue/receipt profile fenced; remote effects are excluded by this profile.'
 
     def _replace_workers(self,app,bundle,directory):
         target=dict(self.config,image_id=self._execution_image(bundle),
@@ -317,13 +331,7 @@ class NativeExecutor:
             if actual!=load_json(dispatch.read_bytes())['result']['after']:
                 raise OperatorError('Dispatch changed after drain; checkpoint cannot be declared coordinated')
             previous['dispatch_profile']=actual
-            if actual['profile']=='r1-reference-stateless-dispatch-v1':
-                previous['reference_policy']=helper.policy_for(actual)
-            if actual['profile']=='r1-native-recurring-dispatch-v1':
-                previous['recurrence_policy']=helper.policy_for(actual)
-                previous['recurrence_role_approval']=helper.role_approval
-            previous['external_dispatch']=('Outbound stateless reference profile fenced; independent current publication is not rolled back.'
-                if actual['profile']=='r1-reference-stateless-dispatch-v1' else 'Native queue/receipt profile fenced; remote effects are excluded by this profile.')
+            self._checkpoint_profile_fields(previous,actual,helper)
         _write_new(checkpoint/'manifest.json', previous)
         # Keep a stable local tag as well as its immutable image identity.
         _run(['docker', 'tag', self.config['image_id'], 'modular-platform:retained-'+operation])
@@ -452,7 +460,7 @@ class NativeExecutor:
                         impact=bundle['operation_lock']['native_uninstall_impact'],plugins=plugins,
                         inventory_digest=bundle['operation_lock']['release']['core_inventory_digest'],
                         dispatch_snapshot=dispatch_snapshot,dispatch_scope=dispatch_scope)
-                    self._private_command(arguments+['-c',Path(__file__).with_name('native_uninstall.py').read_text(encoding='utf8')],
+                    self._private_command(arguments+['-c',self._metadata_script('native_uninstall.py',Path(__file__).with_name('native_uninstall.py').read_text(encoding='utf8'))],
                                           directory/'native.log',input=json.dumps(native_payload).encode())
                     effects=[]
                     for line in (directory/'native.log').read_text(encoding='utf8').splitlines():

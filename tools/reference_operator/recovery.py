@@ -5,11 +5,12 @@ recognize only the exact independently recorded checkpoint/approved target; a
 fresh restored DB must use the reviewed checkpoint-derived epoch.
 """
 import copy
-from .deployment import DockerObserver
-from .operator_os import OperatorError
-from .plans import data_digest
-from .reference_dispatch import ReferenceDispatchMaintenance
-from .worker_operator import WorkerPlanningReader
+from modular_platform.deployment import DockerObserver
+from modular_platform.operator_os import OperatorError
+from modular_platform.plans import data_digest
+from modular_platform.restore_continuation import RestoreContinuation as _RestoreContinuation
+from reference_operator.dispatch import ReferenceDispatchMaintenance
+from reference_operator.worker import planning_reader
 
 
 def reference_needed(native,bundle,manifest=None):
@@ -65,7 +66,7 @@ class ReferenceRecoveryDispatch(ReferenceDispatchMaintenance):
 
     def observer(self,configuration):
         def fresh():
-            reader=WorkerPlanningReader(self.native.store,self.native.target_path,self.native.target_path.with_name('worker-target.json'))
+            reader=planning_reader(self.native.store,self.native.target_path,self.native.target_path.with_name('worker-target.json'))
             if not self._matches_target(reader.target,configuration):raise OperatorError('Reference recovery observer changed deployment/site/database scope')
             return reader.planning_state()
         return DockerObserver(configuration,external_reader=fresh)
@@ -89,3 +90,21 @@ class ReferenceRecoveryDispatch(ReferenceDispatchMaintenance):
         if checkpoint:ignored.add('release_digest')
         return ({k:v for k,v in current.items() if k not in ignored}=={k:v for k,v in previous.items() if k not in ignored}
             and {k:v for k,v in policy.items() if k!='publication_digest'}=={k:v for k,v in previous_policy.items() if k!='publication_digest'})
+
+
+class ReferenceRestoreContinuation(_RestoreContinuation):
+    def _dispatch_same(self,helper,observed,profile,manifest,request):
+        ignored={'release_digest','state_digest'}
+        same=helper.same_restored_dispatch(observed,profile,manifest.get('reference_policy'),checkpoint=True)
+        if not same or not isinstance(request.get('reference'),dict):
+            raise OperatorError('Exact private checkpoint reference fence request required')
+        if {k:v for k,v in request['reference'].items() if k!='publication_digest'}!={k:v for k,v in manifest['reference_policy'].items() if k!='publication_digest'}:
+            raise OperatorError('Reference fence request changed checkpoint scope')
+        return True
+
+    def _source_hashes(self,profile):
+        values=super()._source_hashes(profile)
+        for name in ('dispatch.py','recovery.py','transition.py','executor.py','worker.py','lifecycle_reference.py'):
+            path=Path(__file__).with_name(name)
+            values['reference_operator/'+name]=__import__('hashlib').sha256(path.read_bytes()).hexdigest()
+        return values

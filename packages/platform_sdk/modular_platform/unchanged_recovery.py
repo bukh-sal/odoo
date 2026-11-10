@@ -44,15 +44,12 @@ class UnchangedReleaseRecovery:
         self.native=native;self.store=native.store;self.config=native.config;self.observer=native.observer
 
     def _dispatch(self):
-        # Only the existing typed reference profile opts into metadata-only
-        # registrations. The normal native helper still refuses all externals.
         from .dispatch_operator import DispatchMaintenance
         from .recurrence_maintenance import selected
         recurring=selected(self.native)
         if recurring is not None:return recurring
         if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
-            from .reference_dispatch import ReferenceDispatchMaintenance
-            return ReferenceDispatchMaintenance(self.native)
+            raise OperatorError('Reference unchanged recovery requires the optional host operator')
         return DispatchMaintenance(self.native)
 
     def _state(self,operation):

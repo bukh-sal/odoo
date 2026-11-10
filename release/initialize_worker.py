@@ -30,7 +30,8 @@ def main():
         assert subprocess.run(['docker','volume','inspect',name],capture_output=True).returncode!=0,'Existing volume; never reuse unknown storage'
         reference.command('worker-volume-'+('public' if name==public_volume else 'authority'),['docker','volume','create','--label','com.modular.disposable='+state['project'],
             *(['--label','com.modular.worker-authority='+state['deployment_id']] if name==authority_volume else []),name])
-    runtime=dict(project=runtime_project,service='document-stats',network=state['project']+'_runtime',public_config_volume=public_volume,image=lock['reference'],destination='http://document-stats:8080')
+    runtime=dict(project=runtime_project,service='document-stats',network=state['project']+'_runtime',public_config_volume=public_volume,image=lock['reference'],destination='http://document-stats:8080',
+        entrypoint=['/venv/bin/python','-m','services.document_stats.server'],command=['--config','/run/worker/config.json','--host','0.0.0.0','--port','8080'],network_alias='document-stats')
     worker_path=reference.local/'operator/worker-target.json'
     write(worker_path,dict(schema_version=1,deployment_id=state['deployment_id'],site_id=state['site_id'],runtime=runtime,authority_volume=authority_volume,helper_image=state['image_id']))
     key=rsa.generate_private_key(public_exponent=65537,key_size=2048)

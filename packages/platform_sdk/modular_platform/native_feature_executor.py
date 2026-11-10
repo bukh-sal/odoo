@@ -5,7 +5,7 @@ from .native_executor import NativeExecutor
 from .contracts import load_json
 from .operator_os import OperatorError
 from .plans import data_digest
-from .reference_dispatch import read_metadata
+from .metadata_sql import read_metadata
 
 
 class NativeFeatureExecutor(NativeExecutor):

@@ -1,7 +1,7 @@
 """Private stored-operation proof for an inert reference image upgrade."""
 from packaging.version import Version
-from .operator_os import OperatorError
-from .plans import data_digest
+from modular_platform.operator_os import OperatorError
+from modular_platform.plans import data_digest
 
 def reviewed_worker_transition(native,operation,base,configuration,row,metadata,catalog,reader,observed,*,recovery=False):
     """Caller is an OS adapter; serialized proposals never select this path."""

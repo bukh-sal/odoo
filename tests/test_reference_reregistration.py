@@ -3,9 +3,9 @@ import copy,sys,unittest
 from pathlib import Path
 from unittest.mock import Mock,patch
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tests')]
+sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tools'),str(ROOT/'tests')]
 import test_external_projection as fixtures
-from modular_platform.reference_dispatch import ReferenceDispatchMaintenance
+from reference_operator.dispatch import ReferenceDispatchMaintenance
 from modular_platform.operator_os import OperatorError
 
 
@@ -25,10 +25,10 @@ class ReferenceReregistrationTests(unittest.TestCase):
         self.reader.planning_state.side_effect=lambda:copy.deepcopy(self.f.external_state)
 
     def policy(self):
-        with patch('modular_platform.reference_dispatch.WorkerPlanningReader',return_value=self.reader),\
-                patch('modular_platform.reference_dispatch.read_metadata',return_value=self.f.site),\
-                patch('modular_platform.reference_dispatch.Catalog') as catalog,\
-                patch('modular_platform.reference_dispatch.private_json',side_effect=lambda p:self.worker if p.name=='worker-target.json' else self.f.config):
+        with patch('reference_operator.dispatch.planning_reader',return_value=self.reader),\
+                patch('reference_operator.dispatch.read_metadata',return_value=self.f.site),\
+                patch('reference_operator.dispatch.Catalog') as catalog,\
+                patch('reference_operator.dispatch.private_json',side_effect=lambda p:self.worker if p.name=='worker-target.json' else self.f.config):
             catalog.return_value.snapshot.return_value=self.f.catalog
             return ReferenceDispatchMaintenance(self.native).reference_policy(self.f.config)
 

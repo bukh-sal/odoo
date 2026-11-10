@@ -3,14 +3,15 @@ import copy,sys,unittest
 from pathlib import Path
 from unittest.mock import Mock,patch
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tests')]
+sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tools'),str(ROOT/'tests')]
 import test_external_projection as fixtures
 from test_plans import ident
 from modular_platform.plans import data_digest
 from modular_platform.operator_os import OperatorError
-from modular_platform.worker_transition import reviewed_worker_transition
-from modular_platform.reference_dispatch import ReferenceDispatchMaintenance
-from modular_platform.dispatch_lifecycle import _reference,LifecycleScope,DispatchLifecycleError
+from reference_operator.transition import reviewed_worker_transition
+from reference_operator.dispatch import ReferenceDispatchMaintenance
+from modular_platform.dispatch_lifecycle import LifecycleScope,DispatchLifecycleError
+from reference_operator.lifecycle_reference import _reference_impl as _reference
 
 
 class WorkerTransitionTests(unittest.TestCase):
@@ -54,10 +55,10 @@ class WorkerTransitionTests(unittest.TestCase):
             self.f.catalog,self.reader,self.f.external_state,recovery=recovery)
 
     def policy(self,operation=True):
-        with patch('modular_platform.reference_dispatch.WorkerPlanningReader',return_value=self.reader),\
-                patch('modular_platform.reference_dispatch.read_metadata',return_value=self.f.site),\
-                patch('modular_platform.reference_dispatch.Catalog') as catalog,\
-                patch('modular_platform.reference_dispatch.private_json',side_effect=lambda p:self.reader.config if p.name=='worker-target.json' else self.f.config):
+        with patch('reference_operator.dispatch.planning_reader',return_value=self.reader),\
+                patch('reference_operator.dispatch.read_metadata',return_value=self.f.site),\
+                patch('reference_operator.dispatch.Catalog') as catalog,\
+                patch('reference_operator.dispatch.private_json',side_effect=lambda p:self.reader.config if p.name=='worker-target.json' else self.f.config):
             catalog.return_value.snapshot.return_value=self.f.catalog
             return ReferenceDispatchMaintenance(self.native,operation=self.op if operation else None).reference_policy(self.f.config)
 

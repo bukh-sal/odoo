@@ -2,14 +2,16 @@
 import copy,json,sys,tempfile,unittest
 from pathlib import Path
 from uuid import uuid4
+from unittest.mock import patch
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'));sys.path.insert(0,str(ROOT/'tools'))
 from modular_platform.operator_store import OperatorStore
 from modular_platform.operator_os import OperatorError
 from modular_platform.worker_publication import WorkerAuthorityPublisher,DockerWorkerObservation
 from modular_platform.worker_authority import PublishedWorkerAuthority,AuthorityUnavailable
-from modular_platform.worker_operator import WorkerOperator,operator_observer
+from modular_platform.worker_operator import WorkerOperator,WorkerPlanningReader,operator_observer
+from reference_operator.worker import normalize_reference_runtime
 
 
 class WorkerPublicationTests(unittest.TestCase):
@@ -76,6 +78,61 @@ class WorkerPublicationTests(unittest.TestCase):
         with self.assertRaises(OperatorError):DockerWorkerObservation(policy)
         self.observed['addresses']=['169.254.169.254']
         with self.assertRaises(OperatorError):self.review()
+
+    def test_protected_runtime_cannot_be_replaced_but_exact_legacy_normalizes(self):
+        path,worker,config=self.configured_reader();runtime=json.loads(worker.read_text())['runtime']
+        for field,value in [('image','modular-document-stats@sha256:'+'b'*64),('destination','http://127.0.0.1:8080'),('entrypoint',['/bin/sh'])]:
+            changed=copy.deepcopy(runtime);changed[field]=value
+            with self.subTest(field=field),self.assertRaises(OperatorError):
+                WorkerPlanningReader(self.store,path,worker,runtime_policy=changed)
+        legacy={k:runtime[k] for k in ('project','service','network','public_config_volume','image','destination')}
+        worker.write_text(json.dumps({**json.loads(worker.read_text()),'runtime':legacy}))
+        WorkerPlanningReader(self.store,path,worker,runtime_policy=normalize_reference_runtime(legacy))
+        with self.assertRaises(OperatorError):
+            WorkerPlanningReader(self.store,path,worker,runtime_policy={**normalize_reference_runtime(legacy),'image':'other@sha256:'+'a'*64})
+
+    def test_exact_legacy_six_field_policy_normalizes_in_memory_only(self):
+        legacy=dict(project='owned-worker',service='document-stats',network='internal',public_config_volume='public-config',
+            image='modular-document-stats@sha256:'+'a'*64,destination='http://document-stats:8080')
+        original=copy.deepcopy(legacy);normalized=normalize_reference_runtime(legacy)
+        self.assertEqual(legacy,original)
+        self.assertEqual(normalized['entrypoint'],['/venv/bin/python','-m','services.document_stats.server'])
+        self.assertEqual(normalized['command'],['--config','/run/worker/config.json','--host','0.0.0.0','--port','8080'])
+        self.assertEqual(normalized['network_alias'],'document-stats')
+        DockerWorkerObservation(normalized)
+        for mutation in ['service','destination','image','arbitrary']:
+            bad=copy.deepcopy(legacy)
+            if mutation=='service':bad['service']='other'
+            elif mutation=='destination':bad['destination']='http://169.254.169.254:8080'
+            elif mutation=='image':bad['image']='modular-document-stats@sha256:'+'a'*64 if False else 'other@sha256:'+'a'*64
+            else:bad.pop('destination')
+            with self.subTest(mutation=mutation),self.assertRaises(OperatorError):normalize_reference_runtime(bad)
+
+    def test_real_observer_uses_exact_nine_field_policy_with_fake_docker(self):
+        digest=self.endpoint['expected_image_digest'];network='mp-r0-r1readerunit_runtime'
+        policy=dict(project='mp-disposable-document-stats-reader',service='document-stats',network=network,
+            public_config_volume='mp-disposable-reader-public',image='modular-document-stats@'+digest,
+            destination=self.endpoint['destination'],entrypoint=['/venv/bin/python','-m','services.document_stats.server'],
+            command=['--config','/run/worker/config.json','--host','0.0.0.0','--port','8080'],network_alias='document-stats')
+        row=dict(Id='c'*64,Image=digest,Config=dict(Image=policy['image'],User='10002:10002',Entrypoint=policy['entrypoint'],Cmd=policy['command']),
+            HostConfig=dict(ReadonlyRootfs=True,Privileged=False,CapDrop=['ALL'],PortBindings={},NetworkMode='bridge'),
+            State=dict(Running=True,Health=dict(Status='healthy'),StartedAt='2026-11-10T00:00:00Z'),RestartCount=0,
+            NetworkSettings=dict(Networks={network:dict(NetworkID='n'*64,IPAddress='172.28.0.19',Aliases=[policy['network_alias']])}),
+            Mounts=[dict(Type='volume',Name=policy['public_config_volume'],Destination='/run/worker',RW=False)])
+        public='a'*64;key_id='worker01'
+        expected={k:self.endpoint[k] for k in ['site_id','workspace_id','installation_id']}
+        expected.update(public_key_file='/run/worker/public.pem',key_id=key_id,endpoint_generation=self.endpoint['generation'])
+        def command(args):
+            if args[0]=='ps':return ('c'*64+'\n').encode()
+            if args[0]=='inspect':return json.dumps([row]).encode()
+            if args[0]=='image':return json.dumps([{'Id':digest,'RepoDigests':[policy['image']]}]).encode()
+            if args[0]=='network':return json.dumps([{'Internal':True,'Id':'n'*64}]).encode()
+            if args[0]=='exec':return json.dumps({'config':expected,'public_digest':public}).encode()
+            raise AssertionError(args)
+        with patch.object(DockerWorkerObservation,'_command',staticmethod(command)):
+            observed=DockerWorkerObservation(policy)(self.endpoint,public,key_id)
+        self.assertEqual(observed['image_digest'],digest);self.assertEqual(observed['container_id'],'c'*64)
+        self.assertEqual(observed['addresses'],['172.28.0.19'])
 
     def test_bootstrap_preserves_current_revocation_and_never_resets_generation(self):
         self.publish();self.endpoint.update(generation=2,state='revoked');self.publish()
@@ -163,7 +220,8 @@ class WorkerPublicationTests(unittest.TestCase):
             sites=[dict(site_id=self.site,database='mp_disposable_r0_r1_reader')],image_id='sha256:'+'a'*64,
             generation=1,policy_version=1,operator_authorization_generation=1,release_created_at='2026-11-01T00:00:00Z')
         runtime=dict(project='mp-disposable-document-stats-reader',service='document-stats',network='mp-r0-r1readerunit_runtime',
-            public_config_volume='mp-disposable-reader-public',image='modular-document-stats@'+self.endpoint['expected_image_digest'],destination=self.endpoint['destination'])
+            public_config_volume='mp-disposable-reader-public',image='modular-document-stats@'+self.endpoint['expected_image_digest'],destination=self.endpoint['destination'],
+            entrypoint=['/venv/bin/python','-m','services.document_stats.server'],command=['--config','/run/worker/config.json','--host','0.0.0.0','--port','8080'],network_alias='document-stats')
         config=dict(schema_version=1,deployment_id=self.deployment,site_id=self.site,runtime=runtime,
             authority_volume='mp-r0-r1readerunit_authority',helper_image='sha256:'+'b'*64)
         path=self.store.root/'deployment.json';path.write_text(json.dumps(target))

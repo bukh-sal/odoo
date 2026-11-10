@@ -6,19 +6,19 @@ is neither an app approval channel nor general external-effect reconciliation.
 """
 import copy
 from pathlib import Path
-from .catalog import Catalog
-from .contracts import load_json
-from .deployment import _run,DockerObserver
-from .dispatch_operator import DispatchMaintenance
-from .metadata_sql import METADATA_SELECT
-from .operator_os import OperatorError
-from .plans import data_digest
-from .worker_operator import WorkerPlanningReader,private_json
+from modular_platform.catalog import Catalog
+from modular_platform.deployment import DockerObserver
+from modular_platform.dispatch_operator import DispatchMaintenance
+from modular_platform.metadata_sql import read_metadata
+from modular_platform.operator_os import OperatorError
+from modular_platform.plans import data_digest
+from modular_platform.worker_operator import private_json
+from reference_operator.worker import planning_reader
 
 
 def reference_observer(native,configuration):
     def fresh():
-        reader=WorkerPlanningReader(native.store,native.target_path,native.target_path.with_name('worker-target.json'))
+        reader=planning_reader(native.store,native.target_path,native.target_path.with_name('worker-target.json'))
         if reader.target not in (native.config,configuration):
             raise OperatorError('Independent deployment configuration changed during reference lifecycle')
         if any(reader.target[k]!=configuration[k] for k in ['deployment_id','project','sites']):
@@ -27,17 +27,14 @@ def reference_observer(native,configuration):
     return DockerObserver(configuration,external_reader=fresh)
 
 
-def read_metadata(native,configuration):
-    query="BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY; SET LOCAL statement_timeout='5s'; "+METADATA_SELECT+' ROLLBACK;'
-    value=load_json(_run(['docker','exec','-i',native.observer._container('db'),'psql','-X','-qAt','-U','postgres',
-        '-d',configuration['sites'][0]['database'],'-v','ON_ERROR_STOP=1'],input=query.encode()))
-    if value['site_id']!=configuration['sites'][0]['site_id']:raise OperatorError('Reference metadata site changed')
-    return value
-
-
 class ReferenceDispatchMaintenance(DispatchMaintenance):
     def __init__(self,native,*,operation=None):
         super().__init__(native);self.policies={};self.operation=operation
+
+    def _lifecycle_source(self):
+        base=super()._lifecycle_source()
+        extension=(Path(__file__).with_name('lifecycle_reference.py')).read_text(encoding='utf8')
+        return base+'\n'+extension
 
     def _transition_source(self,configuration):
         return (self.operation,configuration['published_release'],False) if self.operation else None
@@ -51,7 +48,7 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
     def reference_policy(self,configuration):
         self._configuration(configuration)
         worker_path=Path(self.native.target_path).absolute().with_name('worker-target.json')
-        reader=WorkerPlanningReader(self.native.store,self.native.target_path,worker_path)
+        reader=planning_reader(self.native.store,self.native.target_path,worker_path)
         if not self._matches_target(reader.target,configuration):
             raise OperatorError('Reference worker must belong to the exact independently selected deployment/site')
         publication=reader.publisher._document();observed=reader.planning_state()
@@ -92,7 +89,7 @@ class ReferenceDispatchMaintenance(DispatchMaintenance):
                     source=self._transition_source(configuration)
                     if source is None:
                         raise OperatorError('Installed reference scope lacks its exact independently published endpoint/image')
-                    from .worker_transition import reviewed_worker_transition
+                    from reference_operator.transition import reviewed_worker_transition
                     current=reviewed_worker_transition(self.native,source[0],source[1],configuration,row,metadata,catalog,reader,observed,recovery=source[2])
                     if transition is not None and transition!=current:raise OperatorError('Only one exact reference image transition may be observed')
                     transition=current

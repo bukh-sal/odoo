@@ -22,7 +22,7 @@ def private_json(path):
 
 
 class WorkerPlanningReader:
-    def __init__(self,store,target_path,worker_path):
+    def __init__(self,store,target_path,worker_path,runtime_policy=None):
         self.store=store;self.target=private_json(target_path);DockerObserver(self.target)
         self.config=private_json(worker_path)
         required={'schema_version','deployment_id','site_id','runtime','authority_volume','helper_image'}
@@ -31,7 +31,17 @@ class WorkerPlanningReader:
             raise OperatorError('Exact current independent worker/deployment configuration required')
         if len(self.target['sites'])!=1 or c['site_id']!=self.target['sites'][0]['site_id']:raise OperatorError('Exact single-site worker configuration required')
         self.publisher=WorkerAuthorityPublisher(store,c['deployment_id'],c['site_id'])
-        self.observer=DockerWorkerObservation(c['runtime'])
+        if runtime_policy is not None:
+            original=c['runtime'];provided=runtime_policy
+            if not isinstance(original,dict) or not isinstance(provided,dict):
+                raise OperatorError('Exact protected worker runtime policy required')
+            if set(original)=={'project','service','network','public_config_volume','image','destination'}:
+                if (set(provided)!={'project','service','network','public_config_volume','image','destination','entrypoint','command','network_alias'}
+                        or any(provided[k]!=original[k] for k in original)):
+                    raise OperatorError('Legacy worker policy may gain only explicit argv/alias fields')
+            elif provided!=original:
+                raise OperatorError('Protected worker runtime policy cannot be overridden')
+        self.observer=DockerWorkerObservation(runtime_policy if runtime_policy is not None else c['runtime'])
 
     def planning_state(self):
         """Fresh OS-owned descriptors plus observed availability, never approval.
@@ -70,8 +80,8 @@ class WorkerPlanningReader:
 
 
 class WorkerOperator(WorkerPlanningReader):
-    def __init__(self,store,target_path,worker_path):
-        super().__init__(store,target_path,worker_path)
+    def __init__(self,store,target_path,worker_path,runtime_policy=None):
+        super().__init__(store,target_path,worker_path,runtime_policy=runtime_policy)
         c=self.config
         if c['helper_image']!=self.target['image_id']:
             raise OperatorError('Worker mutation requires the exact current helper image')
@@ -144,7 +154,7 @@ class WorkerOperator(WorkerPlanningReader):
         return dict(operation_id=operation,results=[{k:v for k,v in row.items() if k in allowed} for row in rows])
 
 
-def operator_observer(store,target_path):
+def operator_observer(store,target_path,runtime_policy=None):
     """Compose only from protected local files, never package/cache paths.
 
     The fixed sibling file is optional for legacy native deployments. Once
@@ -155,7 +165,7 @@ def operator_observer(store,target_path):
     _not_link(worker_path)
     if not worker_path.exists():return DockerObserver(target)
     def fresh():
-        reader=WorkerPlanningReader(store,target_path,worker_path)
+        reader=WorkerPlanningReader(store,target_path,worker_path,runtime_policy=runtime_policy)
         if reader.target!=target:raise OperatorError('Independent deployment configuration changed during worker observation')
         return reader.planning_state()
     return DockerObserver(target,external_reader=fresh)

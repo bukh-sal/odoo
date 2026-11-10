@@ -119,18 +119,26 @@ class RestoreExecutor:
         self.store, self.config = native.store, native.config
         self.observer = native.observer
 
+    def _reference_recovery_supported(self):
+        return False
+
+    def _supported_profiles(self):
+        return {'r1-native-dispatch-v1','r1-native-recurring-dispatch-v1'}
+
     def _dispatch_helper(self,*,manifest=None,purpose='restored'):
         from .dispatch_operator import DispatchMaintenance
-        from .reference_recovery import reference_needed,ReferenceRecoveryDispatch
         operation=getattr(self,'_operation',None)
         if operation is None:
             if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
-                raise OperatorError('Reference recovery requires an exact independent operation')
+                raise OperatorError('Reference recovery requires the optional host operator')
             return DispatchMaintenance(self.native)
         bundle=self.store.bundle(operation)
         if manifest is None:manifest=load_json((self.store.root/'checkpoints'/operation/'manifest.json').read_bytes())
-        if reference_needed(self.native,bundle,manifest):
-            return ReferenceRecoveryDispatch(self.native,bundle,manifest,purpose=purpose)
+        if (not self._reference_recovery_supported() and (
+                (manifest.get('reference_policy') is not None)
+                or any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[]))
+                or any(a.get('runtime')=='external_service' for a in bundle['plan'].get('artifacts',[])))):
+            raise OperatorError('Reference recovery requires the optional host operator')
         if (manifest.get('dispatch_profile') or {}).get('profile')=='r1-native-recurring-dispatch-v1':
             from .recurrence_maintenance import NativeRecurrenceMaintenance
             policy=manifest.get('recurrence_policy')
@@ -141,9 +149,11 @@ class RestoreExecutor:
         return DispatchMaintenance(self.native)
 
     def _recovery_observer(self,configuration,*,manifest=None,purpose='restored'):
-        helper=self._dispatch_helper(manifest=manifest,purpose=purpose)
-        from .reference_recovery import ReferenceRecoveryDispatch
-        return helper.observer(configuration) if isinstance(helper,ReferenceRecoveryDispatch) else DockerObserver(configuration)
+        return DockerObserver(configuration)
+
+    def _continuation_class(self):
+        from .restore_continuation import RestoreContinuation
+        return RestoreContinuation
 
     def _authority(self, database):
         container=self.observer._container('db')
@@ -166,7 +176,7 @@ class RestoreExecutor:
             if any(value.values()):raise OperatorError('Restored dispatch/API/technical identities require reconciliation; traffic must remain closed')
         else:
             kind=dispatch_profile.get('profile') if isinstance(dispatch_profile,dict) else None
-            if (kind not in {'r1-native-dispatch-v1','r1-reference-stateless-dispatch-v1','r1-native-recurring-dispatch-v1'}
+            if (kind not in self._supported_profiles()
                     or not all(value[k] for k in flags) or value['api_key_count'] or value['active_technical_credentials']
                     or kind in {'r1-native-dispatch-v1','r1-native-recurring-dispatch-v1'} and value['external_installations']):
                 raise OperatorError('Exact known native dispatch profile required; external effects require reconciliation')
@@ -277,8 +287,8 @@ class RestoreExecutor:
         runtime_inputs(observation['runtime'],catalog,external_plugins=pins)
         if observation['runtime']['inventory_digest']!=restored_lock['core_inventory_digest']:
             raise OperatorError('Retained code inventory differs from checkpoint release')
-        from .reference_recovery import reference_needed
-        if not reference_needed(self.native,bundle,manifest) and any(item['runtime']!='native' for site in observation['sites'] for item in site['installations']):
+        if (not self._reference_recovery_supported()
+                and any(item['runtime']!='native' for site in observation['sites'] for item in site['installations'])):
             raise OperatorError('External runtime reconciliation is required before restore')
         fresh = 'mp_disposable_r0_r1_restore_'+operation.replace('-','')
         if not re.fullmatch('mp_disposable_r0_r1_[a-z0-9_]{1,100}',fresh) or len(fresh)>63:
@@ -295,14 +305,12 @@ class RestoreExecutor:
     def prepare(self,operation):
         directory=self.store.root/'recoveries'/operation
         if directory.exists():
-            from .restore_continuation import RestoreContinuation
-            return RecoveryReviews(self.store).issue(RestoreContinuation(self).state(operation))
+            return RecoveryReviews(self.store).issue(self._continuation_class()(self).state(operation))
         return RecoveryReviews(self.store).issue(self._restore_state(operation))
 
     def execute(self, decision, *, exact_hash, noninteractive=False):
         if 'continuation' in decision:
-            from .restore_continuation import RestoreContinuation
-            return RestoreContinuation(self).execute(decision,exact_hash=exact_hash,noninteractive=noninteractive)
+            return self._continuation_class()(self).execute(decision,exact_hash=exact_hash,noninteractive=noninteractive)
         operation = decision['operation_id']
         bundle = self.store.bundle(operation)
         with OperationLocks(self.store.root/'locks',bundle['plan']['deployment_id'],bundle['plan']['site_ids']) as locks:
@@ -421,11 +429,20 @@ class RestoreExecutor:
         result={'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth)}
         if dispatch_ready is not None:
             result['dispatch']=dispatch_ready
-            if dispatch_ready['profile']=='r1-reference-stateless-dispatch-v1':result['reference_policy']=helper.policy_for(dispatch_ready)
-            if dispatch_ready['profile']=='r1-native-recurring-dispatch-v1':result['recurrence_policy']=helper.policy_for(dispatch_ready)
+            self._restore_result_dispatch_fields(result,helper,dispatch_ready)
         _write_new(directory/'result.json',result)
         return {'state':'restored_verified','fresh_database':fresh,'failed_database_retained':True,'keep_traffic_closed':True,
             'operation_status':self.store.status(operation)}
+
+    def _restore_result_dispatch_fields(self,result,helper,dispatch_ready):
+        if dispatch_ready['profile']=='r1-native-recurring-dispatch-v1':
+            result['recurrence_policy']=helper.policy_for(dispatch_ready)
+
+    def _resume_dispatch_same(self,helper,current,previous,result):
+        return current==previous
+
+    def _resume_observation(self,result):
+        return self.observer.read()
 
     def _resume_state(self, operation):
         self._operation=operation
@@ -444,15 +461,13 @@ class RestoreExecutor:
         effects=self._supported_effects(source,dispatch_profile=result.get('dispatch'),dispatch_helper=helper)
         if result.get('dispatch') is not None:
             current=effects.get('dispatch');previous=result['dispatch']
-            if previous['profile']=='r1-reference-stateless-dispatch-v1':
-                same=helper.same_restored_dispatch(current,previous,result.get('reference_policy'))
-            else:same=current==previous
+            same=self._resume_dispatch_same(helper,current,previous,result)
             if not same:raise OperatorError('Restored queues changed after reconciliation; keep traffic fenced')
         database=self.observer._container('db')
         if result.get('native_auth_policy')!=NATIVE_AUTH_POLICY or not isinstance(result.get('native_auth_digest'),str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',result['native_auth_digest']):
             raise OperatorError('Restore lacks current native credential reconciliation; keep traffic closed')
         authority,_=self._authority(source)
-        observation = self._recovery_observer(self.config).read() if result.get('dispatch',{}).get('profile')=='r1-reference-stateless-dispatch-v1' else self.observer.read()
+        observation = self._resume_observation(result)
         return {'schema_version':1,'action':'resume_verified_restore','operation_id':operation,
             'configuration':self.config,'restored_observation_digest':data_digest(observation),'restore_result_digest':data_digest(result),
             'recovery_profile':result['dispatch']['profile'] if result.get('dispatch') is not None else 'r1-no-dispatch-v1','effects':effects,'authority_digest':data_digest(authority)}

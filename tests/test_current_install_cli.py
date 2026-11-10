@@ -17,7 +17,7 @@ class CurrentInstallCLI(unittest.TestCase):
             observer=Mock();observer.read.return_value={'sites':['native-site']};observer.state.return_value={'state':'observed'}
             with patch.object(modular,'configuration',return_value='validator'),patch.object(modular,'Catalog') as cat,\
                     patch('modular_platform.deployment.DockerObserver',return_value=observer) as legacy,\
-                    patch('modular_platform.worker_operator.operator_observer',return_value=observer) as independent,\
+                    patch('reference_operator.worker.operator_observer',return_value=observer) as independent,\
                     patch('modular_platform.operator_store.OperatorStore',return_value='protected-control') as store,\
                     patch('modular_platform.lifecycle_planning.prepare_current_image_install',return_value={'result':'fixture'}) as planner,\
                     contextlib.redirect_stdout(io.StringIO()),contextlib.redirect_stderr(io.StringIO()):

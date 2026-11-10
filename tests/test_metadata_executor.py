@@ -4,9 +4,9 @@ import importlib.util,io
 from pathlib import Path
 from unittest.mock import Mock,patch
 from contextlib import nullcontext,redirect_stdout,redirect_stderr
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tests')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tools'),str(ROOT/'tests')]
 import test_external_planning as fixtures
-from modular_platform.metadata_executor import ReferenceMetadataExecutor
+from reference_operator.executor import ReferenceMetadataExecutor
 from modular_platform.native_executor import verify_native_state
 from modular_platform.operator_os import OperatorError
 
@@ -20,7 +20,7 @@ class MetadataExecutorTests(unittest.TestCase):
         self.native=ReferenceMetadataExecutor.__new__(ReferenceMetadataExecutor)
         self.native.config={**self.f.f.config,'project':'mp-r0-r1metadataunit'}
         self.native.store=Mock();self.native.store.root=Path('unused-control');self.native.store.bundle.return_value=self.bundle
-        self.native.observer=Mock();self.native.mirror_progress=Mock()
+        self.native.observer=Mock();self.native.mirror_progress=Mock();self.native.catalog_root=ROOT/'catalog';self.native.validator=Mock()
 
     def test_only_checkpointed_metadata_without_staged_image_is_accepted(self):
         self.native._check_operation(self.bundle);self.assertIsNone(self.native._native_flags(self.bundle,{}))
@@ -35,15 +35,16 @@ class MetadataExecutorTests(unittest.TestCase):
 
     def test_unready_runtime_is_refused_before_reservation_or_mutation(self):
         self.native.store.status.return_value=dict(state='approved',mutation_started=False)
-        self.native.observer.read.return_value={'runtime':self.f.f.runtime}
+        runtime=copy.deepcopy(self.f.f.runtime)
+        self.native.observer.read.return_value={'runtime':runtime}
         with patch('modular_platform.native_executor.OperationLocks',return_value=nullcontext('locks')):
-            with self.assertRaisesRegex(OperatorError,'immutable image'):self.native.apply(self.bundle['plan']['operation_id'])
+            with self.assertRaisesRegex(OperatorError,'current generic image readers|immutable image'):self.native.apply(self.bundle['plan']['operation_id'])
         self.native.store.reserve.assert_not_called()
 
     def test_current_exact_component_hashes_are_required(self):
         runtime=copy.deepcopy(self.f.f.runtime)
-        names=['metadata_executor','external_metadata','external_planning','native_executor','dispatch_lifecycle','dispatch_operator',
-            'dispatch_maintenance','reference_dispatch','worker_transition','operator_store','projection','planning_cli','plans']
+        names=['external_metadata','external_planning','native_executor','dispatch_lifecycle','dispatch_operator',
+            'dispatch_maintenance','operator_store','projection','planning_cli','plans']
         for name in names:runtime['inventory']['files']['packages/platform_sdk/modular_platform/'+name+'.py']=hashlib.sha256((ROOT/'packages/platform_sdk/modular_platform'/f'{name}.py').read_bytes()).hexdigest()
         self.native.observer.read.return_value=dict(runtime=runtime);self.native._runtime_preflight(self.bundle)
         runtime['inventory']['files']['packages/platform_sdk/modular_platform/external_metadata.py']='0'*64
@@ -66,7 +67,7 @@ class MetadataExecutorTests(unittest.TestCase):
             self.native._child=Mock(return_value=(['docker','run','image'],'test-child'));self.native._private_command=Mock()
             self.native._private_command.side_effect=lambda args,log,**kwargs:log.write_text(json.dumps(dict(metadata_published=True,operation_id=self.bundle['plan']['operation_id'],native_maintenance=False,runtime_control=False)))
             metadata=copy.deepcopy(self.f.f.site)
-            with patch('modular_platform.metadata_executor.read_metadata',return_value=metadata):
+            with patch('reference_operator.executor.read_metadata',return_value=metadata):
                 self.native._publish_metadata(self.bundle,dict(plugins={}),Path(folder),self.native.config['image_id'])
             args,kwargs=self.native._private_command.call_args
             self.assertEqual(args[0][-2:],['-m','modular_platform.external_metadata'])
@@ -98,7 +99,7 @@ class MetadataExecutorTests(unittest.TestCase):
             trust=Path(folder)/'trust.json';trust.write_text(json.dumps(dict(schema_version=1,mode='development',approved_digests=[],allow_unsigned_development=True,generation=1)))
             args=['--config',str(trust),'plugin','apply',bundle['plan']['operation_id'],'--store',str(Path(folder)/'control'),
                 '--deployment-config',str(Path(folder)/'target.json'),'--catalog',str(Path(folder)/'catalog')]
-            with patch('modular_platform.operator_store.OperatorStore',return_value=store),patch('modular_platform.metadata_executor.ReferenceMetadataExecutor',return_value=executor),\
+            with patch('modular_platform.operator_store.OperatorStore',return_value=store),patch('reference_operator.executor.ReferenceMetadataExecutor',return_value=executor),\
                     patch('operation_progress.observe_execution',return_value=nullcontext()),\
                     patch('modular_platform.feature_executor.FeatureExecutor',side_effect=AssertionError('Metadata must not use legacy short feature execution')),redirect_stdout(io.StringIO()),redirect_stderr(io.StringIO()):
                 self.assertEqual(cli.main(args),0)

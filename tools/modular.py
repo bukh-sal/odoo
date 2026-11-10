@@ -222,8 +222,9 @@ def main(argv=None):
             import subprocess
             from modular_platform.operator_store import OperatorStore
             from modular_platform.operator_os import OperatorError
-            from modular_platform.worker_operator import WorkerOperator,private_json
-            operator=WorkerOperator(OperatorStore(args.store),args.deployment_config,args.worker_config)
+            from modular_platform.worker_operator import private_json
+            from reference_operator.worker import worker_operator
+            operator=worker_operator(OperatorStore(args.store),args.deployment_config,args.worker_config)
             try:
                 if args.action=='provision-keys':
                     result=operator.provision(args.private_reference,args.public_reference,args.private_key,args.public_key)
@@ -246,7 +247,7 @@ def main(argv=None):
             from modular_platform.deployment import DockerObserver
             from modular_platform.approval_validation import IndependentValidator
             from modular_platform.operator_os import OperatorError
-            from modular_platform.worker_operator import operator_observer
+            from reference_operator.worker import operator_observer
             if args.action == 'init-store':
                 target = load_json(args.deployment_config.read_bytes())
                 DockerObserver(target)
@@ -298,8 +299,8 @@ def main(argv=None):
                     result = store.status(args.operation_id)
                     result['review'] = review
                     if store.application_request(args.operation_id):
-                        from modular_platform.native_executor import NativeExecutor
-                        NativeExecutor(store,args.deployment_config,args.catalog,validator).mirror_progress(args.operation_id)
+                        from reference_operator.executor import executor_for_target
+                        executor_for_target(store,args.deployment_config,args.catalog,validator).mirror_progress(args.operation_id)
                 elif args.action == 'revoke-approval':
                     store.revoke(args.operation_id)
                     result = store.status(args.operation_id)
@@ -311,7 +312,7 @@ def main(argv=None):
             from datetime import datetime,timezone
             from uuid import uuid4
             from modular_platform.operator_store import OperatorStore
-            from modular_platform.worker_operator import operator_observer
+            from reference_operator.worker import operator_observer
             from modular_platform.external_planning import prepare_external_metadata
             raw=args.input.read_bytes()
             if len(raw)>1024*1024:raise ArtifactError('Metadata nomination size limit')
@@ -348,7 +349,7 @@ def main(argv=None):
                 if len(raw)>2*1024*1024:raise ArtifactError('Staged nomination size limit')
                 nomination=load_json(raw)
                 if set(nomination)!={'operation_type','targets'}:raise ArtifactError('Exact native operation/targets nomination required')
-                from modular_platform.worker_operator import operator_observer
+                from reference_operator.worker import operator_observer
                 descriptor,record=stages.load();observer=operator_observer(store,args.deployment_config);observation=observer.read();snapshot=catalog.snapshot()
                 result=prepare_staged_plan(observer.state(observation,snapshot),observation['sites'],snapshot,record['runtime'],descriptor,
                     targets=nomination['targets'],operation_type=nomination['operation_type'],operation_id=str(uuid4()),
@@ -356,19 +357,14 @@ def main(argv=None):
                     foundation_transition=record.get('foundation_transition'))
         elif args.group == 'plugin' and args.action == 'recover':
             from modular_platform.operator_store import OperatorStore
-            from modular_platform.native_executor import NativeExecutor
-            from modular_platform.restore_executor import RestoreExecutor
             from modular_platform.operator_os import OperatorError
             from modular_platform.plans import data_digest
+            from reference_operator.executor import executor_for,restore_executor_for,unchanged_recovery_for
             store=OperatorStore(args.store);bundle=store.bundle(args.operation_id)
-            executor=NativeExecutor
-            if bundle['plan']['artifacts'] and all(a['runtime']=='external_service' for a in bundle['plan']['artifacts']):
-                from modular_platform.metadata_executor import ReferenceMetadataExecutor
-                executor=ReferenceMetadataExecutor
-            recovery = RestoreExecutor(executor(store,args.deployment_config,args.catalog,validator))
+            native=executor_for(store,args.deployment_config,args.catalog,validator,bundle)
+            recovery = restore_executor_for(native)
             if args.recovery_action in ('prepare-unchanged-resume','resume-unchanged'):
-                from modular_platform.unchanged_recovery import UnchangedReleaseRecovery
-                recovery=UnchangedReleaseRecovery(recovery.native)
+                recovery=unchanged_recovery_for(recovery.native)
             if args.recovery_action.startswith('prepare-'):
                 decision = recovery.prepare_resume(args.operation_id) if args.recovery_action=='prepare-resume' else recovery.prepare(args.operation_id)
                 result = {'decision':decision,'decision_hash':data_digest(decision)}
@@ -392,24 +388,13 @@ def main(argv=None):
                         result = method(decision,exact_hash=args.decision_hash,noninteractive=args.noninteractive)
         elif args.group == 'plugin' and args.action == 'apply':
             from modular_platform.operator_store import OperatorStore
-            from modular_platform.native_executor import NativeExecutor
+            from reference_operator.executor import executor_for,wrap_feature_executor
             store=OperatorStore(args.store)
             bundle=store.bundle(args.operation_id)
-            metadata=bool(bundle['plan']['artifacts']) and all(a['runtime']=='external_service' for a in bundle['plan']['artifacts'])
-            if metadata:
-                from modular_platform.metadata_executor import ReferenceMetadataExecutor
-                executor=ReferenceMetadataExecutor(store,args.deployment_config,args.catalog,validator)
-            else:executor=NativeExecutor(store,args.deployment_config,args.catalog,validator)
-            if not metadata and 'staged_image' in bundle['operation_lock']:
-                from modular_platform.native_executor import StagedNativeExecutor
-                executor=StagedNativeExecutor(store,args.deployment_config,args.catalog,validator)
-            if not metadata and bundle['plan']['operation_type'] in ('suspend','enable'):
-                if bundle['plan']['backup']['required']:
-                    from modular_platform.native_feature_executor import NativeFeatureExecutor
-                    executor=NativeFeatureExecutor(store,args.deployment_config,args.catalog,validator)
-                else:
-                    from modular_platform.feature_executor import FeatureExecutor
-                    executor=FeatureExecutor(executor)
+            executor=executor_for(store,args.deployment_config,args.catalog,validator,bundle)
+            if (not (bundle['plan']['artifacts'] and all(a['runtime']=='external_service' for a in bundle['plan']['artifacts']))
+                    and bundle['plan']['operation_type'] in ('suspend','enable') and not bundle['plan']['backup']['required']):
+                executor=wrap_feature_executor(executor)
             from operation_progress import observe_execution
             with observe_execution(store,args.operation_id,'apply'):
                 result=executor.apply(args.operation_id)
@@ -420,7 +405,7 @@ def main(argv=None):
             from modular_platform.lifecycle_planning import prepare_current_image_install
             if args.operator_store is not None:
                 from modular_platform.operator_store import OperatorStore
-                from modular_platform.worker_operator import operator_observer
+                from reference_operator.worker import operator_observer
                 observer=operator_observer(OperatorStore(args.operator_store),args.deployment_config)
             else:
                 observer = DockerObserver(load_json(args.deployment_config.read_bytes()))

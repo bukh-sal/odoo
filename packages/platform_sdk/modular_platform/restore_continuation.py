@@ -78,15 +78,7 @@ class RestoreContinuation:
         if clients.strip()!=b'0':raise OperatorError('Database clients prevent closed restored-target continuation')
         target=copy.deepcopy(proposal['restore_configuration']);target['sites'][0]['database']=fresh
         helper=r._dispatch_helper(manifest=manifest);observed=helper.require_profile(helper.inspect_current(configuration=target),closed=True)
-        ignored={'release_digest','state_digest'}
-        if profile['profile']=='r1-reference-stateless-dispatch-v1':
-            same=helper.same_restored_dispatch(observed,profile,manifest.get('reference_policy'),checkpoint=True)
-            if not same or not isinstance(request.get('reference'),dict):raise OperatorError('Exact private checkpoint reference fence request required')
-            # A failed pre-fence attempt must have selected the checkpoint
-            # registrations. Current OS publication is independently reread.
-            if {k:v for k,v in request['reference'].items() if k!='publication_digest'}!={k:v for k,v in manifest['reference_policy'].items() if k!='publication_digest'}:
-                raise OperatorError('Reference fence request changed checkpoint scope')
-        else:same={k:v for k,v in observed.items() if k not in ignored}=={k:v for k,v in profile.items() if k not in ignored}
+        same=self._dispatch_same(helper,observed,profile,manifest,request)
         if not same:
             raise OperatorError('Restored queues differ from the untouched coordinated checkpoint')
         authority,private=r._authority(fresh);current,current_private=r._authority(r.config['sites'][0]['database'])
@@ -108,14 +100,20 @@ class RestoreContinuation:
         if files!=expected or load_json((directory/'filestore.log').read_bytes()).get('filestore_restored') is not True:
             raise OperatorError('Restored filestore differs from coordinated checkpoint')
         raw=_run(['docker','exec',database,'pg_dump','-U','postgres','--no-owner','--no-privileges',fresh])
-        sources=['restore_executor.py','restore_continuation.py','dispatch_operator.py','dispatch_lifecycle.py','dispatch_jobs_maintenance.py']
-        if profile['profile']=='r1-reference-stateless-dispatch-v1':sources+=['reference_recovery.py','reference_dispatch.py','worker_operator.py','worker_publication.py']
         proposal['continuation']=dict(phase='restored_before_first_dispatch_fence',original_decision_digest=data_digest(original),
             diagnostics=records,restored_database_digest=canonical_dump_digest(raw),restored_state_digest=data_digest(state),
             dispatch=observed,filestore_digest=data_digest(files),filestore_files=len(files),
-            source_sha256={name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in sources},
+            source_sha256=self._source_hashes(profile),
             replay_database_dump=False,reextract_filestore=False,reapply_native_auth=False)
         return proposal
+
+    def _dispatch_same(self,helper,observed,profile,manifest,request):
+        ignored={'release_digest','state_digest'}
+        return {k:v for k,v in observed.items() if k not in ignored}=={k:v for k,v in profile.items() if k not in ignored}
+
+    def _source_hashes(self,profile):
+        sources=['restore_executor.py','restore_continuation.py','dispatch_operator.py','dispatch_lifecycle.py','dispatch_jobs_maintenance.py']
+        return {name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in sources}
 
     def execute(self,decision,*,exact_hash,noninteractive=False):
         operation=decision['operation_id'];bundle=self.store.bundle(operation);r=self.recovery

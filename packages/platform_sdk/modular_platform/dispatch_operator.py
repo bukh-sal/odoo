@@ -63,6 +63,12 @@ class DispatchMaintenance:
         if not required<=set(runtime.get('inventory',{}).get('files',{})):
             raise OperatorError('Runtime lacks the scoped native job adapter; explicit queue reconciliation is required before lifecycle mutation')
 
+    def _lifecycle_source(self):
+        """Private generic lifecycle source; optional host subclasses may append
+        a reviewed reference validator. Never selected by an artifact or caller."""
+        path=Path(__file__).with_name('dispatch_lifecycle.py')
+        return path.read_text(encoding='utf8')
+
     def run(self,action,operation,directory,*,database=None,release_digest,control_release=None,expected_digest=None,configuration=None,review_id=None,reference=None,recurrence=None):
         if action not in {'observe','fence','enable'} or str(UUID(operation))!=operation:
             raise OperatorError('Exact dispatch maintenance action/operation required')
@@ -71,7 +77,7 @@ class DispatchMaintenance:
             raise OperatorError('Dispatch child must use the exact current configuration; use a verified replacement adapter for restore')
         directory=protect_directory(Path(directory));record=directory/(action+'.json')
         if record.exists():raise OperatorError('Dispatch child already attempted; inspect retained result and actual state before continuation')
-        helper=Path(__file__).with_name('dispatch_lifecycle.py').read_text(encoding='utf8')
+        helper=self._lifecycle_source()
         authority=Path(__file__).with_name('recurrence_authority.py').read_text(encoding='utf8')
         script=Path(__file__).with_name('dispatch_maintenance.py').read_text(encoding='utf8')
         binding=dict(action=action,database=site['database'],site_id=site['site_id'],release_digest=release_digest,control_release=control_release,operation_id=operation,expected_digest=expected_digest)

@@ -54,7 +54,9 @@ def require_dispatch_snapshot(connection, expected, scope):
     with connection.cursor() as cursor:
         actual = observe(cursor, LifecycleScope(**scope))
     reference = scope['reference']
-    profile = 'r1-reference-stateless-dispatch-v1' if reference is not None else 'r1-native-dispatch-v1'
+    if isinstance(expected,dict) and isinstance(expected.get('profile'),str):profile=expected['profile']
+    elif reference is None:profile='r1-native-dispatch-v1'
+    else:raise ValueError('Validated checkpoint profile required')
     if (actual != expected or actual is None or actual['profile'] != profile
             or actual['state_digest'] != data_digest({k: v for k, v in actual.items() if k != 'state_digest'})
             or not actual['control'] or actual['control']['state'] not in {'paused', 'restoring'}

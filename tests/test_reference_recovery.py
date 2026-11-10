@@ -11,9 +11,10 @@ import unittest
 from unittest.mock import Mock,patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'packages/platform_sdk'))
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
-from modular_platform.reference_recovery import ReferenceRecoveryDispatch,reference_needed
+from reference_operator.recovery import ReferenceRecoveryDispatch,reference_needed
 from modular_platform.restore_executor import recovery_configuration
 import test_restore_dispatch as legacy
 

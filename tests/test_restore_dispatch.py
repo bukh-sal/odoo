@@ -14,6 +14,7 @@ from modular_platform.plans import data_digest
 from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE, SCHEMA, OCCURRENCE_TABLE
 from modular_platform.native_auth_recovery import read_query,public_binding
 from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT
+from reference_operator.executor import ReferenceRestoreExecutor
 
 CLEAR=dict(job_table=False,outbox_table=False,api_key_count=0,active_technical_credentials=0,external_installations=0)
 
@@ -36,7 +37,7 @@ class RestoreDispatchTests(unittest.TestCase):
         self.native_auth=dict(users=[dict(id=1,login='fixture',active=True,password=None,totp_secret=None,totp_last_counter=0,groups=[])],passkeys=[])
         (directory/'result.json').write_text(json.dumps(dict(configuration=self.config)|public_binding(self.native_auth)),encoding='utf8')
         self.readiness_change=lambda:None;self.readiness_error=False;self.timeline=[]
-        self.recovery=RestoreExecutor(self.native)
+        self.recovery=ReferenceRestoreExecutor(self.native)
         self.reviews=Mock();self.reviews.verify.side_effect=self.verify
         self.store.record_restore_resume.side_effect=lambda *args,**kwargs:self.timeline.append('journal')
         patches=[patch('modular_platform.restore_executor._run',side_effect=self.execute_command),patch('modular_platform.restore_executor.OperationLocks',return_value=nullcontext(Mock())),patch('modular_platform.restore_executor.RecoveryReviews',return_value=self.reviews)]

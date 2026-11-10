@@ -57,16 +57,22 @@ def _keypair(private,public):
 
 class DockerWorkerObservation:
     """Read only the exact operator-configured local Compose reference runtime."""
+    KEYS={'project','service','network','public_config_volume','image','destination','entrypoint','command','network_alias'}
     def __init__(self, policy):
-        if set(policy)!={'project','service','network','public_config_volume','image','destination'}:
+        if not isinstance(policy,dict) or set(policy)!=self.KEYS:
             raise OperatorError('Exact operator worker runtime policy required')
-        for key in ['project','service','network','public_config_volume']:
+        for key in ['project','service','network','public_config_volume','network_alias']:
             if not isinstance(policy[key],str) or not re.fullmatch('[a-zA-Z0-9][a-zA-Z0-9_.-]{0,120}',policy[key]):
                 raise OperatorError('Structured worker runtime name required')
-        if policy['destination']!='http://document-stats:8080' or policy['service']!='document-stats':
-            raise OperatorError('Only the explicit local reference destination is supported')
+        if not isinstance(policy['destination'],str) or not re.fullmatch(r'http://[a-z][a-z0-9_-]*:[0-9]{2,5}',policy['destination']):
+            raise OperatorError('Exact local worker destination required')
         if not re.fullmatch(r'[a-z0-9][a-z0-9/_.-]*@sha256:[0-9a-f]{64}',policy['image']):
             raise OperatorError('Immutable operator image reference required')
+        for field,limit in [('entrypoint',16),('command',32)]:
+            values=policy[field]
+            if (not isinstance(values,list) or not values or len(values)>limit
+                    or any(not isinstance(value,str) or not 1<=len(value)<=256 or '\x00' in value for value in values)):
+                raise OperatorError('Bounded operator worker argv required')
         self.policy=copy.deepcopy(policy)
 
     @staticmethod
@@ -92,8 +98,7 @@ class DockerWorkerObservation:
         row=inspect();config=row['Config'];host=row['HostConfig'];state=row['State']
         if (row['Id']!=ident or not state['Running'] or state.get('Health',{}).get('Status')!='healthy'
                 or row['Image']!=digest or config['Image']!=p['image'] or config['User']!='10002:10002'
-                or config['Entrypoint']!=['/venv/bin/python','-m','services.document_stats.server']
-                or config['Cmd']!=['--config','/run/worker/config.json','--host','0.0.0.0','--port','8080']
+                or config['Entrypoint']!=p['entrypoint'] or config['Cmd']!=p['command']
                 or not host['ReadonlyRootfs'] or host['Privileged'] or 'ALL' not in host['CapDrop']
                 or host.get('PortBindings') or host.get('NetworkMode') in {'host','none'}):
             raise OperatorError('Worker differs from approved hardened runtime')
@@ -107,7 +112,7 @@ class DockerWorkerObservation:
         if not network['Internal'] or set(networks)!={p['network']} or networks[p['network']]['NetworkID']!=network['Id']:
             raise OperatorError('Exact internal worker network required')
         address=_private_ip(networks[p['network']]['IPAddress'])
-        if 'document-stats' not in (networks[p['network']].get('Aliases') or []):raise OperatorError('Fixed worker alias required')
+        if p['network_alias'] not in (networks[p['network']].get('Aliases') or []):raise OperatorError('Exact worker network alias required')
         script="import json,hashlib,pathlib;c=json.loads(pathlib.Path('/run/worker/config.json').read_text());print(json.dumps(dict(config=c,public_digest=hashlib.sha256(pathlib.Path('/run/worker/public.pem').read_bytes()).hexdigest())))"
         actual=load_json(self._command(['exec',ident,'/venv/bin/python','-c',script]))
         expected={k:endpoint[k] for k in ['site_id','workspace_id','installation_id']}

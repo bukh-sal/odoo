@@ -17,7 +17,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
 sys.path.insert(0, str(ROOT / 'tests'))
-from modular_platform.metadata_executor import ReferenceMetadataExecutor
+sys.path.insert(0, str(ROOT / 'tools'))
+from reference_operator.executor import ReferenceMetadataExecutor
 from modular_platform.native_executor import (NativeExecutor, native_maintenance_flags, require_native_uninstall_runtime,
                                               verify_native_state)
 from modular_platform.native_feature_executor import NativeFeatureExecutor
@@ -72,6 +73,23 @@ class NativeUninstallGuards(unittest.TestCase):
             target_release_digest='sha256:'+'a'*64, permission_changes=[dict(plugin_id=self.prior['plugin_id'],
                 workspace_id=ident(30), capability='org.example.notes:notes.read', action='revoke')], policy_version=1),
             operation_lock=dict(targets=[self.target], native_uninstall_impact={'known': 'only'}, bindings=[]))
+
+    def test_checkpoint_scope_producer_and_consumer_share_exact_three_key_shape(self):
+        from unittest.mock import patch
+        from modular_platform.native_uninstall import require_dispatch_snapshot
+        native=NativeExecutor.__new__(NativeExecutor);native.config={'sites':[{'site_id':'00000000-0000-4000-8000-000000000001'}]}
+        scope=native._checkpoint_scope_fields({},dict(release_digest='sha256:'+'a'*64))
+        self.assertEqual(set(scope),{'site_id','release_digest','reference'});self.assertIsNone(scope['reference'])
+        actual={'profile':'r1-native-dispatch-v1','control':{'state':'paused'},'active_credentials':0,'api_keys':0,
+            'uncertain_jobs':0,'external_installations':0}
+        actual['state_digest']=data_digest(actual)
+        class Cursor:
+            def __enter__(self):return self
+            def __exit__(self,*args):pass
+        class Connection:
+            def cursor(self):return Cursor()
+        with patch('modular_platform.dispatch_lifecycle.observe',return_value=actual):
+            self.assertEqual(require_dispatch_snapshot(Connection(),actual,scope),actual)
 
     def test_checkpoint_dispatch_scope_is_exact_and_rejects_malformed_private_evidence(self):
         with tempfile.TemporaryDirectory() as folder:

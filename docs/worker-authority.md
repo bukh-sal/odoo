@@ -190,3 +190,27 @@ request, and a non-200 worker response maps to `DEPENDENCY_UNAVAILABLE`. This is
 documented bounded-rejection limitation for unsupported direct input; it does not
 implement the staged-close guidance recommended by RFC 9112 and it is not a claim
 that a runtime transport defect was fixed.
+
+## Host operator composition
+
+Closed reference lifecycle adapters live in `tools/reference_operator/`. The
+generic SDK keeps native and recurrence dispatch and refuses an external
+reference profile unless the host operator supplies its fixed, reviewed source.
+The CLI selects the host adapter from protected deployment configuration and the
+exact operation; applications cannot select an executable source path or bypass
+independent approval. Native operations sharing a reference-enabled deployment
+use the same optional observation and recovery composition.
+
+The generic worker observation policy explicitly binds nine fields: `project`,
+`service`, `network`, `public_config_volume`, `image`, `destination`,
+`entrypoint`, `command`, and `network_alias`. Actual image, arguments, topology,
+public-key scope and health must match those operator-owned values. An override
+cannot replace fields already present in the protected policy. The optional
+reference adapter recognizes the exact historical six-field reference policy and
+fills its original fixed arguments and alias in memory; it does not rewrite the
+configuration or infer values for an unknown legacy worker.
+
+This is source ownership and host qualification, not a new deployed runtime.
+The current Dockerfiles copy `tools/` into the image, so moving adapters there
+does not establish an app-free image. Runtime copying and inherited image layers
+remain separate packaging checks. The existing token audience is unchanged.
