@@ -2,8 +2,10 @@
 import hashlib
 import io
 import json
+import ast
 import sys
 import tempfile
+import tomllib
 import unittest
 import zipfile
 from pathlib import Path
@@ -107,12 +109,14 @@ class ReferenceBridgeOwnership(unittest.TestCase):
             self.assertEqual(reviewed_connector_source(root),root/'addons/mp_example_notes_stats')
 
     def test_new_reference_archive_is_validated_and_contains_moved_bridge(self):
+        plugin= tomllib.loads((ROOT/'plugins/notes_stats/plugin.toml').read_text(encoding='utf8'))['plugin']
+        native=ast.literal_eval((ROOT/APP/'__manifest__.py').read_text(encoding='utf8'))
         _,raw,_=assemble(ROOT,'plugins/notes_stats/plugin.toml')
         with tempfile.TemporaryDirectory(prefix='mp-notes-stats-archive-') as temporary:
-            path=Path(temporary)/'org.example.notes_stats-0.1.2.mplug'
+            path=Path(temporary)/('org.example.notes_stats-'+plugin['version']+'.mplug')
             path.write_bytes(raw)
             verified=ArtifactValidator(TrustPolicy('development',allow_unsigned_development=True)).verify(path)
-        self.assertEqual(verified.manifest['plugin']['version'],'0.1.2')
+        self.assertEqual(verified.manifest['plugin']['version'],plugin['version'])
         self.assertEqual(verified.manifest['runtime']['addon_name'],'mp_example_notes_stats')
         self.assertRegex(verified.digest,r'^sha256:[0-9a-f]{64}$')
         prefix='org.example.notes_stats/backend/odoo_addons/mp_example_notes_stats/'
@@ -125,7 +129,7 @@ class ReferenceBridgeOwnership(unittest.TestCase):
             self.assertIn(b'from .external_authority import authorize_analysis',job)
             self.assertIn(b'from odoo.addons.mp_core import job_dispatch as jobs',job)
             self.assertIn(b'from odoo.addons.mp_core.dispatch import CallFrame',authority)
-            self.assertIn(b"version':'19.0.0.1.2'",archive.read(prefix+'__manifest__.py'))
+            self.assertIn(("version':'"+native['version']+"'").encode(),archive.read(prefix+'__manifest__.py'))
 
 
 if __name__=='__main__':
