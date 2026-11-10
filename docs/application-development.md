@@ -7,6 +7,11 @@ are independent Git repositories. The foundation stays a separate owned fork.
 [limitations](application-adoption-limitations.md) and
 [operator commands](application-operations.md) define the qualified boundaries.
 
+Create the isolated, hash-locked operator environment with the public
+[selected local operator toolchain](operator-toolchain.md) recipe; do not modify
+global Python or PATH. For release operations, use the exact interpreter and
+source recorded by the selected kit's `operator-setup.json`.
+
 ## Prepare an isolated downstream workspace
 
 The application-adoption kit contains `source.zip` for the updated independent
@@ -122,9 +127,12 @@ inspects prior effects before continuation; never delete a marker to retry.
 ### Run the host checks
 
 The reproducible host check entry point is `tests/run_host_regression.py`, run
-with the project-owned isolated interpreter. Use a project-owned temp directory
-so test temporaries do not land in the checkout (some agent shells cannot write
-the OS temp directory):
+with the isolated interpreter created by the public
+[selected local operator toolchain](operator-toolchain.md) recipe (this
+development checkout uses `.local/toolchain/operator-python16/Scripts/python.exe`).
+Do not modify global Python or PATH. Use a project-owned temp directory so test
+temporaries do not land in the checkout (some agent shells cannot write the OS temp
+directory):
 
 ```powershell
 $py = '.local/toolchain/operator-python16/Scripts/python.exe'

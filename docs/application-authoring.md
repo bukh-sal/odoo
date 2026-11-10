@@ -1,15 +1,19 @@
 # Author an owned native application
 
-Use a reviewed source checkout and the isolated interpreter recorded by the
-selected kit's `operator-setup.json`. In this development checkout the interpreter
-is `.local/toolchain/operator-python16/Scripts/python.exe`. Preserve sealed kits
-and installed catalog blobs; create a new version and image for changed bytes.
-[Current qualification](implementation-status.md) distinguishes source-supported
-authoring from a fully qualified application release.
+Use a reviewed source checkout. Create/select the isolated, hash-locked toolchain
+with the public [selected local operator toolchain](operator-toolchain.md) recipe;
+do not modify global Python or PATH. For release operations, use the exact
+interpreter recorded by the selected kit's `operator-setup.json` (this development
+checkout uses `.local/toolchain/operator-python16/Scripts/python.exe`). Preserve
+sealed kits and installed catalog blobs; create a new version and image for
+changed bytes. [Current qualification](implementation-status.md) distinguishes
+source-supported authoring from a fully qualified application release.
 
 Ordinary record screens use native models, ACLs/rules, XML views, actions and
-menus. Read `applications/mp_aurora_tasks` for list/task permissions and
-`examples/mp_example_notes` for explicitly workspace-scoped data. Choose the
+menus. Read `examples/mp_example_notes` for a native, explicitly workspace-scoped
+example. `tests/fixtures/application_authoring/mp_example_tasks` is a neutral
+**data-only packaging input**, not a usable application and not a site-native
+permission implementation; do not use it as an authorization model. Choose the
 application's real authorization boundary; workspace membership is not implied
 by being a native app user. A custom page remains available for a plugin that
 needs it; Canvas is the minimal example. Native and same-origin code is trusted.
@@ -43,7 +47,11 @@ notices, and creates fixed-order/time/mode ZIP bytes with inventory/provenance.
 It runs no application imports, arbitrary build hooks, dependency installer or
 network fetch. Prepare any frontend asset build separately as a reviewed input.
 
-Use an existing output directory and a new `.mplug` path:
+Use an existing output directory and a new `.mplug` path. For the illustrative
+command below, set `$mpDevPython` to the selected interpreter from the toolchain
+recipe, `$mpDevCheckout` to the reviewed source checkout and `$mpDevOutput` to an
+existing output directory; `applications/my_tasks/...` is an illustrative
+user-created app path:
 
 ```powershell
 & $mpDevPython -I tools/package_application.py --source $mpDevCheckout --recipe applications/my_tasks/application.toml --output (Join-Path $mpDevOutput 'my-tasks-1.0.0.mplug')
@@ -88,23 +96,28 @@ They need a supported, explicitly reviewed transition and checkpoint/recovery.
 
 For a site-only native application, use activation scopes`["site"]` and
 `supports_feature_suspension=false`, with native XML menus/views and no workspace
-permission/service/host-UI registrations. The new source CLI accepts
+permission/service/host-UI registrations. The source CLI accepts
 `plugin plan-current-install --site-native` in place of`--workspace`, with all
 ordinary site/plugin/version/digest and independent operator/catalog arguments.
-See [private native site scope](contracts/native-site-lifecycle-v1.md). An old
-runtime bridge is refused before apply; sealed core47 is not relabeled to gain it.
-Actual image/native child consumption passed AT-E; final49 clean installation,
-populated native-only adoption and independent recovery passed AT-04. See the
-[release instructions](aurora-tasks-release.md) and current checklist. Do not create
-a dummy workspace or manually insert metadata to bypass this boundary.
+See the [native site lifecycle contract](contracts/native-site-lifecycle-v1.md)
+and [operator commands](application-operations.md). An old runtime bridge is
+refused before apply; sealed core47 is not relabeled to gain it. Historical
+application-release evidence for the former sample app is retained in project
+history and is not a current public qualification claim. Do not create a dummy
+workspace or manually insert metadata to bypass this boundary.
 
 ## Application jobs and data
 
 Use workspace-scoped APIs for workspace-owned applications and the explicit
 native job adapter for native-authorized applications. Neither converts grant
-metadata into a sandbox. The selected [Aurora contract](aurora-tasks-contract.md)
-defines role, completion, reminder, inbox and recovery behavior; the native
-adapter is qualified with actual managed workers and final-image publication/
-recovery for this selected release; broader native job features remain conditional.
-Own migration scripts and data changes need declared transitions, exact digest
-review, populated data/permission tests and independently recoverable checkpoints.
+metadata into a sandbox. The [jobs and events](jobs-and-events.md) document
+records the scheduler/native metadata foundation; no generic HTTP endpoint
+accepts arbitrary job creation or handlers. Registered server-side scheduling
+and app-owned continuation patterns are demonstrated in the
+[background continuation guide](background-continuations.md). The [native site
+lifecycle contract](contracts/native-site-lifecycle-v1.md) covers site-native
+scope. Historical app-specific task/job semantics are retained in project history
+and are not a current public qualification; broader native job features remain
+conditional. Own migration scripts and data changes need declared transitions,
+exact digest review, populated data/permission tests and independently recoverable
+checkpoints.
