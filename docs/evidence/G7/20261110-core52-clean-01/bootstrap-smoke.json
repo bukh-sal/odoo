@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-10T20:38:20.081987+00:00",
+  "scope": "Clean core52 TEST bootstrap and stock native UI smoke only",
+  "result": "passed_for_stated_scope",
+  "build_source": "8e2d3b16fb516a9d0f6039be28e358605804e965",
+  "qualification_host_head": "52354f6e8f882e11bd9036ba4298069c06947698",
+  "image_id": "sha256:5f24878d776cf8f11edb5cab038684e20525dd5f74e4f3b010add010fa05ebd2",
+  "inventory_digest": "sha256:6be8d01615b8784c9b1de0a98c3c36bc71eac7997f12dd62accddc27daac45af",
+  "phase_completion_sha256": {
+    "prepare": "e14127db8de37aa83c411c21dde57d34c3aab77d28b150385bc6b4d667777199",
+    "initialize": "6601f67e1d4d6775ae5465968235f0ee01137850be0c612f266221c52cec2851",
+    "publish": "6b3a2a3cb1f0becf3a5e0e71e3c48754c16422b585d59b031a5d26a16b2b2838"
+  },
+  "source_inputs_matching_build_record": 3937,
+  "installed_native_modules": [
+    {
+      "name": "auth_password_policy",
+      "version": "19.0.1.0"
+    },
+    {
+      "name": "base",
+      "version": "19.0.1.4"
+    },
+    {
+      "name": "base_setup",
+      "version": "19.0.1.1"
+    },
+    {
+      "name": "bus",
+      "version": "19.0.1.0"
+    },
+    {
+      "name": "mp_compat",
+      "version": "19.0.0.1.1"
+    },
+    {
+      "name": "mp_core",
+      "version": "19.0.0.1.52"
+    },
+    {
+      "name": "mp_identity",
+      "version": "19.0.0.1.10"
+    },
+    {
+      "name": "web",
+      "version": "19.0.1.1"
+    }
+  ],
+  "app_installations": 0,
+  "workspace_features": 0,
+  "plugin_grants": 0,
+  "service_bindings": 0,
+  "jobs": 0,
+  "outbox": 0,
+  "stock_ui_observed": [
+    "stock WebClient Apps screen has no application modules",
+    "normal preferences native form opened and discarded",
+    "base.action_res_users native kanban and List view rendered five seeded users",
+    "existing Reference Alice native form opened at /odoo/users/6; no edits or saves"
+  ],
+  "worker_mounts": [
+    {
+      "destination": "/run/secrets",
+      "rw": false
+    },
+    {
+      "destination": "/var/lib/modular",
+      "rw": true
+    }
+  ],
+  "source_observation_sha256": "bac71ac493cce411a627b8dc267dce56485459d78cef333f9add666c6b0f4ee3",
+  "ui_receipt_sha256": "754370276cf10eeffb0a3d230bb297f2029eb3aaa09e6a29e5ae86058166414d",
+  "limits": [
+    "No application or provider installed",
+    "No native form save or business write in this smoke",
+    "No app lifecycle/source-removal/recovery acceptance",
+    "No public release, support, ABI or licensing decision",
+    "Test resources retained for subsequent qualification; cleanup not yet run"
+  ]
+}
