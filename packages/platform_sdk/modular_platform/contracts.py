@@ -75,10 +75,6 @@ def _event_transport_limits(value):
             event=delivery.get('event') if isinstance(delivery,dict) else None
             if isinstance(event,dict):
                 if len(rfc8785.dumps(event))>16384:raise ContractError('Event exceeds byte limit')
-                if event.get('topic')=='org.example.notes.changed' and isinstance(event.get('payload'),dict):
-                    payload=event['payload']
-                    if event.get('aggregate_id')!=payload.get('note_id') or event.get('aggregate_sequence')!=payload.get('revision'):
-                        raise ContractError('Inconsistent Notes event identity/revision')
         for field in ['id','event']:
             ids=[d.get('id') if field=='id' else d.get('event',{}).get('id') for d in deliveries if isinstance(d,dict) and (field=='id' or isinstance(d.get('event'),dict))]
             if len(ids)!=len(set(str(ident) for ident in ids)):raise ContractError('Duplicate event delivery')

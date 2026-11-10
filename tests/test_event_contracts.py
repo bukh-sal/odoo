@@ -22,20 +22,34 @@ class EventContracts(unittest.TestCase):
                 with self.subTest(message=name,field=field),self.assertRaises(ContractError):validate('event-transport',value)
 
     def test_protocol_version_topic_and_identifiers_are_strict(self):
-        for field,wrong in [('protocol',True),('protocol',2),('request_id','1'),('request_id',CASES['subscribe_request']['request_id']+'\n'),('topic','org.example.notes.changed\n'),('idempotency_key',1),('kind','unknown')]:
+        for field,wrong in [('protocol',True),('protocol',2),('request_id','1'),('request_id',CASES['subscribe_request']['request_id']+'\n'),('topic','org.example.arbitrary.changed\n'),('idempotency_key',1),('kind','unknown')]:
             value=self.valid('subscribe_request');value[field]=wrong
             with self.subTest(field=field,value_type=type(wrong).__name__),self.assertRaises(ContractError):validate('event-transport',value)
         # A valid routing/topic shape confers no current registry permission.
         value=self.valid('subscribe_request');value['topic']='org.example.unknown.changed';validate('event-transport',value)
 
-    def test_notes_payload_is_minimized_and_coherent(self):
-        for field in ['title','body','labels','role']:
-            value=self.valid('poll_result');value['deliveries'][0]['event']['payload'][field]='private synthetic content'
-            with self.subTest(field=field),self.assertRaises(ContractError) as error:validate('event-transport',value)
-            self.assertNotIn('private synthetic content',str(error.exception))
-        for field,wrong in [('schema_version',2),('owner_plugin_id','org.example.other'),('aggregate_id',CASES['poll_result']['subscription_id']),('aggregate_sequence',3),('aggregate_sequence',None)]:
+    def test_arbitrary_domain_payload_has_no_generic_domain_rule(self):
+        value=self.valid('poll_result');event=value['deliveries'][0]['event']
+        event.update(topic='org.example.arbitrary.changed',owner_plugin_id='org.example.arbitrary',
+            aggregate_id=CASES['poll_result']['subscription_id'],aggregate_sequence=7,
+            payload={'entity_id':CASES['poll_result']['subscription_id'],'revision':2,'change':'updated',
+                     'title':'arbitrary application content','labels':['synthetic']})
+        self.assertIs(validate('event-transport',value),value)
+
+    def test_syntactically_valid_notes_topic_has_no_shared_domain_promise(self):
+        value=self.valid('poll_result');event=value['deliveries'][0]['event']
+        event.update(topic='org.example.notes.changed',owner_plugin_id='org.example.other',
+            schema_version=2,aggregate_id=CASES['poll_result']['subscription_id'],aggregate_sequence=7,
+            payload={'body':'synthetic arbitrary domain data','note_id':'not-a-domain-uuid','revision':True})
+        self.assertIs(validate('event-transport',value),value)
+
+    def test_generic_envelope_syntax_still_refused(self):
+        for field,wrong in [('schema_version',0),('schema_version',1001),('schema_version',True),
+                ('owner_plugin_id','org.example.bad\n'),('owner_plugin_id','org.example'),
+                ('aggregate_id','1'),('aggregate_sequence',0),('aggregate_sequence',True)]:
             value=self.valid('poll_result');value['deliveries'][0]['event'][field]=wrong
-            with self.subTest(field=field),self.assertRaises(ContractError):validate('event-transport',value)
+            with self.subTest(field=field,value_type=type(wrong).__name__),self.assertRaises(ContractError):
+                validate('event-transport',value)
 
     def test_UTC_calendar_and_lease_bounds(self):
         for date in ['2026-02-30T15:00:00Z','2026-13-01T15:00:00Z','2026-10-29T15:00:00+00:00','2026-10-29T15:00:00Z\n','2026-10-29T25:00:00Z']:
