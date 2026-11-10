@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "result": "clean-test-artifact-scope-passed",
+  "source_commit": "8e2d3b16fb516a9d0f6039be28e358605804e965",
+  "image_id": "sha256:5f24878d776cf8f11edb5cab038684e20525dd5f74e4f3b010add010fa05ebd2",
+  "image_config_digest": "sha256:0455a178ceae810c2181194290b29cf25bd1d4745ab14aa78c24b88536ce4526",
+  "tag": "modular-platform:stage-20261110t192305710531z",
+  "inventory_digest": "sha256:6be8d01615b8784c9b1de0a98c3c36bc71eac7997f12dd62accddc27daac45af",
+  "layers": 14,
+  "forbidden_project_layer_paths": 0,
+  "project_files": 3682,
+  "project_inventory_files_matching_source": 3679,
+  "project_symbolic_or_hard_links": 0,
+  "source_inputs_matching_build_record": 3937,
+  "native_addons": [
+    "auth_password_policy",
+    "base",
+    "base_setup",
+    "bus",
+    "mp_compat",
+    "mp_core",
+    "mp_identity",
+    "web"
+  ],
+  "platform_version": "0.1.52",
+  "native_core_version": "19.0.0.1.52",
+  "python_locked_distributions": 77,
+  "python_include_system_site_packages": false,
+  "rtl_locked_packages": 7,
+  "benign_whiteouts": [
+    "/etc/apt/sources.list.d/.wh.debian.sources"
+  ],
+  "oci_descriptor_config_and_layer_chain_verified": true,
+  "buildkit_resolved_python_node_pins_verified": true,
+  "separate_registry_base_prefix_comparison": false,
+  "image_tar_sha256": "29bce924ec0a6a0a8d9888d9905ffe0ebea37731a1f9dd36644fcc81559cb92f",
+  "rootfs_tar_sha256": "5b8691a409eaa20e0599ad31e4a24debf7ff5f69bdc01781196f218d420d7768",
+  "audit_container_removed_and_absent": true,
+  "candidate_retained": true,
+  "qualification_scope": "Image files, all final layers, source and lock identity only; built_not_deployed",
+  "not_qualified": [
+    "installed bootstrap/native UI",
+    "normal optional-application install/uninstall/source removal on this image",
+    "installed recovery on this image",
+    "production or public release"
+  ],
+  "verified_at": "2026-11-10T19:50:05.899260+00:00"
+}
