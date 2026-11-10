@@ -72,6 +72,8 @@ class BootstrapTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'search-path content'):self.run_validation()
         extra.unlink();(self.root/'addons/test_guard/__init__.py').write_text('changed')
         with self.assertRaisesRegex(ValueError,'source differs'):self.run_validation()
+        (self.root/'addons/test_guard/__init__.py').unlink()
+        with self.assertRaisesRegex(ValueError,'source differs'):self.run_validation()
 
     def test_wrong_database_pending_states_and_version_mismatch_never_start_migrations(self):
         self.cursor.pin=None

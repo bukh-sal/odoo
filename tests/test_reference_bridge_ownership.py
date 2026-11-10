@@ -1,8 +1,12 @@
-"""Reference bridge ownership, worker selection guard and reference archive identity."""
+"""Reference archive ownership and generic worker operator source guards.
+
+No app source is read by the generic worker operator; native installation/archive
+integrity is enforced by the image inventory, worker_start and catalog layers.
+"""
+import ast
 import hashlib
 import io
 import json
-import ast
 import sys
 import tempfile
 import tomllib
@@ -15,7 +19,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tools'),str(ROOT/'tests')]
 from modular_platform.artifacts import ArtifactValidator,TrustPolicy
 from modular_platform.operator_os import OperatorError
-from modular_platform.worker_operator import WorkerOperator,reviewed_connector_source
+from modular_platform.worker_operator import WorkerOperator
 from reference_package import assemble
 
 CORE='framework_addons/mp_core'
@@ -28,7 +32,7 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def current_runtime(*,connector_metadata=False,app_files=True,artifact_only=False):
+def current_runtime(*,connector_metadata=False,app_files=True,artifact_only=False,bridge_hashes=None):
     files={}
     for name in GENERIC:
         files['packages/platform_sdk/modular_platform/'+name]=digest(ROOT/'packages/platform_sdk/modular_platform'/name)
@@ -40,8 +44,9 @@ def current_runtime(*,connector_metadata=False,app_files=True,artifact_only=Fals
     if artifact_only:
         artifacts['org.example.document_stats']={'runtime':'external_service'}
     if app_files:
-        for name in BRIDGE:
-            files['addons/mp_example_notes_stats/'+name]=digest(ROOT/APP/name)
+        for index,name in enumerate(BRIDGE):
+            value=(bridge_hashes or {}).get(name,'0'*64)
+            files['addons/mp_example_notes_stats/'+name]=value
     return {'inventory_digest':'sha256:'+'a'*64,
             'inventory':{'files':files,'native_addons':native_addons,'artifacts':artifacts}}
 
@@ -55,37 +60,27 @@ def operator():
 
 
 class ReferenceBridgeOwnership(unittest.TestCase):
-    def test_worker_guard_generic_job_does_not_read_optional_app(self):
-        with patch('modular_platform.worker_operator.reviewed_connector_source',side_effect=AssertionError('generic job read connector source')):
-            arguments=operator()._job_arguments(current_runtime(connector_metadata=False,app_files=False),'fixture-operation')
-        self.assertIn('modular_platform.job_runner',arguments)
+    def test_generic_and_external_only_jobs_do_not_admit_app_source(self):
+        baseline=operator()._job_arguments(current_runtime(connector_metadata=False,app_files=False),'fixture-operation')
+        self.assertIn('modular_platform.job_runner',baseline)
+        external=operator()._job_arguments(current_runtime(connector_metadata=False,app_files=False,artifact_only=True),'fixture-operation')
+        self.assertEqual(external,baseline)
 
-    def test_external_service_without_connector_does_not_require_app(self):
-        with patch('modular_platform.worker_operator.reviewed_connector_source',side_effect=AssertionError('external-only job read connector source')):
-            operator()._job_arguments(current_runtime(connector_metadata=False,app_files=False,artifact_only=True),'fixture-operation')
-
-    def test_connector_coherent_passes(self):
-        arguments=operator()._job_arguments(current_runtime(connector_metadata=True,app_files=True),'fixture-operation')
-        self.assertIn('modular_platform.job_runner',arguments)
-
-    def test_missing_or_changed_each_bridge_refuses(self):
-        for name in BRIDGE:
-            runtime=current_runtime(connector_metadata=True,app_files=True)
-            runtime['inventory']['files'].pop('addons/mp_example_notes_stats/'+name)
-            with self.subTest(case='missing',name=name),self.assertRaises(OperatorError):
-                operator()._job_arguments(runtime,'fixture-operation')
-            runtime=current_runtime(connector_metadata=True,app_files=True)
-            runtime['inventory']['files']['addons/mp_example_notes_stats/'+name]='0'*64
-            with self.subTest(case='changed',name=name),self.assertRaises(OperatorError):
-                operator()._job_arguments(runtime,'fixture-operation')
-
-    def test_inconsistent_connector_metadata_cannot_skip_guard(self):
-        runtime=current_runtime(connector_metadata=False,app_files=True)
-        with self.assertRaisesRegex(OperatorError,'Connector inventory'):
-            operator()._job_arguments(runtime,'fixture-operation')
-        runtime=current_runtime(connector_metadata=True,app_files=False)
-        with self.assertRaises(OperatorError):
-            operator()._job_arguments(runtime,'fixture-operation')
+    def test_inventoried_reference_app_not_checkout_bound(self):
+        # Inventory bytes deliberately differ from the checkout. The generic
+        # operator must not read examples/addons app source or add a guard.
+        runtime=current_runtime(connector_metadata=True,app_files=True,
+                                bridge_hashes={name:'f'*64 for name in BRIDGE})
+        baseline=operator()._job_arguments(current_runtime(connector_metadata=False,app_files=False),'fixture-operation')
+        original=Path.read_bytes; read=[]
+        def spy(path):
+            read.append(path.as_posix())
+            return original(path)
+        with patch.object(Path,'read_bytes',spy):
+            actual=operator()._job_arguments(runtime,'fixture-operation')
+        self.assertEqual(actual,baseline)
+        self.assertFalse(any('mp_example_notes_stats' in path for path in read),read)
+        self.assertFalse(any(path.endswith(name) for path in read for name in BRIDGE),read)
 
     def test_generic_runner_and_job_dispatch_mismatches_refuse(self):
         for relative in [*(f'packages/platform_sdk/modular_platform/{name}' for name in GENERIC),
@@ -95,21 +90,21 @@ class ReferenceBridgeOwnership(unittest.TestCase):
             with self.subTest(relative=relative),self.assertRaises(OperatorError):
                 operator()._job_arguments(runtime,'fixture-operation')
 
-    def test_connector_source_resolution_supports_both_owned_layouts(self):
-        with tempfile.TemporaryDirectory(prefix='mp-connector-layout-') as temporary:
-            root=Path(temporary)
-            for relative in ('examples/mp_example_notes_stats','addons/mp_example_notes_stats'):
-                target=root/relative
-                target.mkdir(parents=True)
-                for name in BRIDGE:
-                    (target/name).write_text(name,encoding='utf8')
-            self.assertEqual(reviewed_connector_source(root),root/'examples/mp_example_notes_stats')
-            import shutil
-            shutil.rmtree(root/'examples/mp_example_notes_stats')
-            self.assertEqual(reviewed_connector_source(root),root/'addons/mp_example_notes_stats')
+    def test_worker_operator_has_no_fixed_connector_source_coupling(self):
+        source=(ROOT/'packages/platform_sdk/modular_platform/worker_operator.py').read_text(encoding='utf8')
+        tree=ast.parse(source)
+        names={node.id for node in ast.walk(tree) if isinstance(node,ast.Name)}
+        strings={node.value for node in ast.walk(tree) if isinstance(node,ast.Constant) and isinstance(node.value,str)}
+        forbidden=('CONNECTOR_ADDON','CONNECTOR_PLUGIN','CONNECTOR_BRIDGE','reviewed_connector_source')
+        self.assertFalse(names & set(forbidden))
+        for value in ('mp_example_notes_stats','org.example.notes_stats','external_job.py','external_authority.py'):
+            self.assertNotIn(value,strings)
+            self.assertNotIn(value,source)
+        self.assertNotIn('examples/',source)
+        self.assertNotIn('addons/mp_example_notes_stats',source)
 
     def test_new_reference_archive_is_validated_and_contains_moved_bridge(self):
-        plugin= tomllib.loads((ROOT/'plugins/notes_stats/plugin.toml').read_text(encoding='utf8'))['plugin']
+        plugin=tomllib.loads((ROOT/'plugins/notes_stats/plugin.toml').read_text(encoding='utf8'))['plugin']
         native=ast.literal_eval((ROOT/APP/'__manifest__.py').read_text(encoding='utf8'))
         _,raw,_=assemble(ROOT,'plugins/notes_stats/plugin.toml')
         with tempfile.TemporaryDirectory(prefix='mp-notes-stats-archive-') as temporary:

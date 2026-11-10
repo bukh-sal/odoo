@@ -14,19 +14,6 @@ from .plans import data_digest
 from .worker_publication import WorkerAuthorityPublisher,DockerWorkerObservation
 from .worker_projection import DockerWorkerProjection
 
-CONNECTOR_ADDON='mp_example_notes_stats'
-CONNECTOR_PLUGIN='org.example.notes_stats'
-CONNECTOR_BRIDGE=('external_job.py','external_authority.py')
-
-
-def reviewed_connector_source(source):
-    """Find the reviewed connector bridge only at the fixed owned source roots."""
-    for relative in ('examples/mp_example_notes_stats','addons/mp_example_notes_stats'):
-        candidate=source/relative
-        if all((candidate/name).is_file() for name in CONNECTOR_BRIDGE):
-            return candidate
-    return None
-
 
 def private_json(path):
     path=Path(path).absolute();verify_private_directory(path.parent);_not_link(path)
@@ -124,24 +111,6 @@ class WorkerOperator(WorkerPlanningReader):
         for name in ['job_dispatch.py']:
             if files.get('addons/mp_core/'+name)!=hashlib.sha256((addons/'mp_core'/name).read_bytes()).hexdigest():
                 raise OperatorError('Job dispatch requires the current inventoried native authority/bridge')
-        # B2 debt: this is a temporary reference-connector-specific operator
-        # condition, not a generic extension mechanism. Only a selected/carried
-        # connector requires its app-owned bridge; external_service document_stats
-        # alone does not select the connector.
-        app_prefix='addons/'+CONNECTOR_ADDON+'/'
-        app_files={name for name in files if name.startswith(app_prefix)}
-        app_metadata=(CONNECTOR_ADDON in runtime['inventory'].get('native_addons',{})
-                      or CONNECTOR_PLUGIN in runtime['inventory'].get('artifacts',{}))
-        if app_files and not app_metadata:
-            raise OperatorError('Connector inventory is present without selected connector metadata')
-        if app_metadata or app_files:
-            connector=reviewed_connector_source(source)
-            if connector is None:
-                raise OperatorError('Connector bridge source is missing from the reviewed tree')
-            for name in CONNECTOR_BRIDGE:
-                expected=hashlib.sha256((connector/name).read_bytes()).hexdigest()
-                if files.get(app_prefix+name)!=expected:
-                    raise OperatorError('Job dispatch requires the current inventoried connector bridge')
         project=self.target['project'];database=self.target['sites'][0]['database']
         return ['docker','run','--rm','--name',project+'-job-'+operation.replace('-',''),'--log-driver','none',
             '--label','com.modular.deployment='+self.target['deployment_id'],'--label','com.modular.job_operation='+operation,
