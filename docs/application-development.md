@@ -113,14 +113,11 @@ current revocation, search/count/group/display errors, native browser workflows,
 and populated checkpoint/upgrade/restore/separate resume for persistent changes.
 Assert real effects, not only queued jobs or running workers.
 
-The delivered source retains generic authoring/packaging fixtures under
-`tests/fixtures/application_authoring/`. The historical app-set adoption and
-release qualification helpers that remain tracked under `tests/` depend on
-private application material that is not included in the public tree; they are
-not self-contained and are not a supported public developer entry point.
-Preservation or relocation of those helpers is still pending. Any retained
-once-only scenarios inspect prior effects before continuation; never delete a
-marker to retry.
+The delivered source retains generic authoring/packaging fixtures and regression
+tests under `tests/`. Product-bound adoption and release qualification helpers
+that require private application material are not included in the public tree and
+are not supported public developer entry points. Any retained once-only scenario
+inspects prior effects before continuation; never delete a marker to retry.
 
 ### Run the host checks
 
