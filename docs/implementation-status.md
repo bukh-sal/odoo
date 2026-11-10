@@ -20,6 +20,12 @@ No hosted/production deployment, publication, paid services or real-data import.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
+## Clean-core qualification (11November2026)
+
+The newer owned-core reset has a clean eight-addon TEST artifact, real bootstrap/login/native Users list/form, and an immutable optional Notes composition. Normal install/use, deliberately faulted native uninstall, fresh recovery and separate resume/use, completed native uninstall, and exact source removal have passed their bounded checks. The recovery exercise found and fixed an optional-authentication schema assumption (CR-0014). The source-removal fixture retained populated event history and denied the removed binding.
+
+The canonical host regression passed777cases (775passed,2existing skips) with4773curated/test inputs unchanged. [Scoped evidence and limitations](evidence/G7/20261111-core52-lifecycle-01/qualification.json) distinguish host fixes, immutable image provenance and the separate single-database removal fixture. Exact cleanup acceptance is recorded there after final verification. These results do not replace historical R1 acceptance or settle varied-app, cross-minor compatibility, event-delivery, browser Notes UI or final support/licensing policy.
+
 ## Application adoption (completed goal)
 
 Phased plan (local-only, removed from the public tree) ·

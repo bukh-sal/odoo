@@ -1,0 +1,191 @@
+{
+  "cleanup": {
+    "all_host_evidence_retained": true,
+    "candidate_images_absent": 3,
+    "cli_exit_code": 0,
+    "completed_actions": 192,
+    "exact_tags_absent": 9,
+    "foreign_container_ids_exactly_preserved": 118,
+    "foreign_immutable_metadata_and_protected_tags_preserved": true,
+    "fresh_enumeration_sha256": "1028a43621b50eea6fd223636ce815ce2fcbcdd33c89dc0f30bb19a177c1af66",
+    "host_evidence_files_unchanged": 4251,
+    "networks_absent": 4,
+    "no_replay": true,
+    "owned_containers_absent": 82,
+    "plan_hash": "sha256:0a7890bfb3e943e8c7b85278d11e54b68d1d127c0be0e22de6665b18cffab051",
+    "protected_images_present": 35,
+    "receipt_sha256": "5970042c702c5b75a239ff3f45e36841afe2c0eff295b5cb7deed8334f829c68",
+    "result": "fresh-enumeration-and-host-evidence-preservation-passed",
+    "volumes_absent": 12
+  },
+  "host_regression": {
+    "cases": 777,
+    "changed_inputs": [],
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "passed": 775,
+    "seconds": 581.391,
+    "skipped": 2,
+    "source_inputs": 4773
+  },
+  "host_source_commit": "506416c5c1b38d64f059bfed836a0d2f9c667cd7",
+  "images": {
+    "clean": "sha256:5f24878d776cf8f11edb5cab038684e20525dd5f74e4f3b010add010fa05ebd2",
+    "notes": "sha256:175c115c76e99a3723e1c6449a67801a89c3157a9cd5a51de0a271327d6e8b79",
+    "subtraction": "sha256:682c4152bebdfed180baaa8ee1cd8ecb309a88090fa761f9c10d1e9b430e31d0"
+  },
+  "implementation_owner": "Codex",
+  "limitations": [
+    "Private immutable TEST subtraction build, not a public release or new general build framework.",
+    "All-layer source audit is not installed event delivery; events remain producer/history evidence.",
+    "Notes backend/native-view workflow checked; no new browser Notes UI qualification.",
+    "Host auth fix is distinct from immutable image payload provenance.",
+    "Source removal requires an exact compatible dependency closure and complete supported database inventory.",
+    "Varied applications, meaningful cross-minor unchanged-artifact compatibility and final licence/support/ABI policy remain open."
+  ],
+  "native_core_version": "19.0.0.1.52",
+  "normal_lifecycle": {
+    "bindings": 0,
+    "event_business_fields_unchanged": true,
+    "history_rows_preserved": 1,
+    "native_core_read_succeeded": true,
+    "native_modules": 8,
+    "old_binding_denial": "DEPENDENCY_UNAVAILABLE",
+    "operations": {
+      "install": "7c0ed0f8-e875-412c-8445-0afade16bb94",
+      "remove": "b6824c22-05bf-45c9-a909-ca872426487d",
+      "uninstall": "8522ba54-5398-4613-b8f2-e93ef9ab4721"
+    },
+    "released_plugins": 0,
+    "source_files_removed": 14
+  },
+  "notes": {
+    "artifact_digest": "sha256:737c35022494b0a449bc7116b6aae4bb2403413f4420201764e862c9642db45b",
+    "native_version": "19.0.0.2.10",
+    "version": "0.2.10"
+  },
+  "payload_source_commit": "25751eaffebe2610d2179db39861364d9cdc355e",
+  "platform_version": "0.1.52",
+  "preserved_refusals": [
+    "Original prepare-restore rejected absent optional-auth schema; source-backed host correction required before new review.",
+    "Original clean image rejected for source subtraction because native Python distribution fingerprints differed despite matching versions.",
+    "Retained failed database on recovery fixture rejected artifact removal before registration; separate single-database fixture used without hiding evidence."
+  ],
+  "private_receipt_sha256": {
+    "host_regression": "03114e213a8b81ea7baff9538007ebe941b2f79cad1e3a720a890c5bfc970b88",
+    "recovery": "5d6bd7e8016eb39979286dd55a2fd474c505ba3f5dce7f8ce9751e5c6be4b2f7",
+    "single_database_lifecycle": "e2f314f82d21a32485a101f4b89547110f2ee976b3a53bc7dca86cdcd5f7d314",
+    "subtraction_audit": "4b164d500ec11fd020edd9343a5db9ea04cb7c24d8ff2862954076fcaa0071ba"
+  },
+  "recovery": {
+    "event_business_fields_exactly_preserved": true,
+    "event_count": 2,
+    "failed_database_retained": "mp_disposable_r0_r1_release_cf92dd2165fc",
+    "fresh_database": true,
+    "host_fix": "CR-0014 optional authentication schema recovery",
+    "image_not_relabelled": true,
+    "notes_exactly_preserved": true,
+    "operation_id": "acf4109b-3ac8-4e21-b620-d07d827dd098",
+    "separate_resume_and_use_passed": true,
+    "session_secret_rotated": true
+  },
+  "round_acceptance": {
+    "checks": [
+      "clean-core artifact/bootstrap/native UI",
+      "optional Notes install and bounded native workflow",
+      "controlled native fault/fresh restore/separate resume and useful work",
+      "completed normal native plus metadata uninstall",
+      "exact immutable source removal with retained event history",
+      "exact owned cleanup and foreign/evidence preservation"
+    ],
+    "overall_core_reset_or_R1_completion": false,
+    "passed": 6,
+    "total": 6
+  },
+  "schema_version": 1,
+  "scope": "Local TEST clean-core52 optional Notes lifecycle; bounded qualification, not overall R1 acceptance",
+  "subtraction_audit": {
+    "core_files": 3679,
+    "host_auth_fix_not_injected": true,
+    "image_tar_sha256": "0701048fe91b22be3b744d4c491dfe0f91879f82a89a3b6301e7a88271d63195",
+    "inventory_digest": "sha256:f62761d7f27250d8894647cf8ac0b727ed0f624cb852a05b02da99708924b8ba",
+    "layers": [
+      {
+        "compressed_digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+        "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+        "index": 0
+      },
+      {
+        "compressed_digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+        "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+        "index": 1
+      },
+      {
+        "compressed_digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+        "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+        "index": 2
+      },
+      {
+        "compressed_digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+        "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+        "index": 3
+      },
+      {
+        "compressed_digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+        "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+        "index": 4
+      },
+      {
+        "compressed_digest": "sha256:9f29cc9dec5f21521be4576bd21460bbc0cf1a656bbb753b0410e9320496f479",
+        "diff_id": "sha256:6688b2b7509fd83b05ff3a8db7d97878aa1e8bc7c4e2a6195ef08d87fb611316",
+        "index": 5
+      },
+      {
+        "compressed_digest": "sha256:858c284f4c79e6b9216c625b9bf53aed1bf9e291bb2445cff9f17f54f579d469",
+        "diff_id": "sha256:b4b1a8b1c1bccb9aafe7f9660620e253f290936c9bcb1383f3a7526503e9b139",
+        "index": 6
+      },
+      {
+        "compressed_digest": "sha256:7ed6291f882c6b119b705844491c3d42054edc0158234f307acbc78d2810b4b5",
+        "diff_id": "sha256:38bbf0eba71ea486da2aa9b71c2b38c4c72e1b8925e4769019059da8822f9826",
+        "index": 7
+      },
+      {
+        "compressed_digest": "sha256:6b74eba54db21a10cc27a239352d0ced803f5af9c577ef50fdf26e669cbb98b2",
+        "diff_id": "sha256:2c4b4f60eef5fcd0bebc9faa952b8564a0d1ad57a9b451524dadbf6cba6643b7",
+        "index": 8
+      },
+      {
+        "compressed_digest": "sha256:7dfa7a1ee13f02ee489d6da533ae6b9ba859dcd03d3ea656a7d754cf038feb9e",
+        "diff_id": "sha256:8d16d418fed4e279b605d37292ee5347ba3b0e69b2d7bf87c35abec7bfcc35ef",
+        "index": 9
+      },
+      {
+        "compressed_digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "index": 10
+      },
+      {
+        "compressed_digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "index": 11
+      }
+    ],
+    "native_addons": [
+      "auth_password_policy",
+      "base",
+      "base_setup",
+      "bus",
+      "mp_compat",
+      "mp_core",
+      "mp_identity",
+      "web"
+    ],
+    "project_files": 3682,
+    "python_runtime_metadata_exactly_preserved": true,
+    "removed_files": 14,
+    "result": "actual-exact-subtraction-and-clean-final-layers-passed",
+    "source_image_not_final_ancestor": true
+  }
+}
