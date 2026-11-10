@@ -23,14 +23,14 @@ class IndependentValidator:
         self.stage_store=stage_store
 
     def __call__(self, bundle):
+        if isinstance(bundle,dict) and 'foundation_transition' in bundle.get('operation_lock',{}):
+            raise OperatorError('Historical foundation transitions are retired; use the exact sealed 46/47/49 kit source/tooling')
         snapshot = self.catalog.snapshot()
         observation = self.observer.read(quiesced=True) if getattr(self, 'quiesced', False) else self.observer.read()
         document = self.observer.state(observation, snapshot)
         state = document['state']
         check_bundle(bundle, state)
         plan = bundle['plan']
-        if 'foundation_transition' in bundle['operation_lock'] and 'staged_image' not in bundle['operation_lock']:
-            raise OperatorError('Foundation declaration requires an independently owned staged image')
         if plan['trust_changes'] or plan['backup']['policy_id'] != 'development_checkpoint':
             raise OperatorError('This profile does not accept unrelated grant/trust/backup policy changes')
         if 'staged_image' in bundle['operation_lock']:
@@ -43,8 +43,7 @@ class IndependentValidator:
             recomputed=prepare_staged_plan(document,observation['sites'],snapshot,record['runtime'],descriptor,
                 targets=bundle['operation_lock']['targets'],operation_type=plan['operation_type'],
                 operation_id=plan['operation_id'],created_at=plan['created_at'],base_runtime=observation.get('runtime'),
-                feature_states=bundle['operation_lock'].get('feature_states',[]),
-                foundation_transition=record.get('foundation_transition'))
+                feature_states=bundle['operation_lock'].get('feature_states',[]))
             if data_digest(recomputed)!=data_digest(bundle):
                 raise OperatorError('Independently staged reconstruction differs from proposed exact plan')
             return state

@@ -71,7 +71,10 @@ def verify_native_state(bundle,state,previous,observation):
 
 def native_maintenance_flags(bundle,plugins):
     """Commands derive only from the independently reconstructed operation lock."""
-    operation=bundle['plan']['operation_type'];lock=bundle['operation_lock']
+    lock=bundle['operation_lock']
+    if 'foundation_transition' in lock:
+        raise OperatorError('Historical foundation transitions are retired; use the exact sealed 46/47/49 kit source/tooling')
+    operation=bundle['plan']['operation_type']
     installs=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in lock['targets'] if item['action']=='install'})
     upgrades=sorted({plugins[item['plugin_id']]['manifest']['runtime']['addon_name'] for item in lock['targets'] if item['action']=='upgrade'})
     if operation=='uninstall':
@@ -90,11 +93,6 @@ def native_maintenance_flags(bundle,plugins):
             raise OperatorError('Source removal requires exact staged subtraction and checkpoint without native maintenance')
         return None
     if operation in ('deploy','core_upgrade'):
-        if operation=='core_upgrade' and 'foundation_transition' in lock:
-            if not lock.get('platform_source_diff'):
-                raise OperatorError('Foundation transition requires exact inventoried source changes')
-            from .foundation_transition import maintenance_flags
-            return maintenance_flags(bundle)
         if installs or upgrades or not lock.get('platform_source_diff') or any(item['action']!='deploy' for item in lock['targets']):
             raise OperatorError('Platform maintenance cannot combine plugin migrations')
         if operation=='deploy':
@@ -339,6 +337,8 @@ class NativeExecutor:
         return operation
 
     def _check_operation(self,bundle):
+        if 'foundation_transition' in bundle.get('operation_lock',{}):
+            raise OperatorError('Historical foundation transitions are retired; use the exact sealed 46/47/49 kit source/tooling')
         if any(r['runtime']!='native' for r in bundle['plan']['artifacts']):
             raise OperatorError('External metadata requires the managed-worker lifecycle executor; native mutation denied before drain')
         if 'staged_image' in bundle['operation_lock'] and not self.staged_execution:
@@ -444,9 +444,6 @@ class NativeExecutor:
                            for entry in bundle['operation_lock']['release']['plugins'])}
                 image=self._execution_image(bundle)
                 flags=self._native_flags(bundle,plugins)
-                if 'foundation_transition' in bundle['operation_lock']:
-                    from .foundation_transition import retire
-                    retire(self,bundle,directory)
                 if plan['operation_type']=='uninstall':
                     arguments, child = self._child(operation, 'native', writable=True, image_id=image)
                     arguments.insert(2,'-i')
@@ -476,9 +473,6 @@ class NativeExecutor:
                     arguments, child = self._child(operation, 'native', writable=True,image_id=image)
                     self._private_command(arguments+['odoo-bin', '-c', '/run/secrets/odoo_config', '-d', self.config['sites'][0]['database'],
                         *flags, '--stop-after-init', '--no-http', '--workers=0', '--max-cron-threads=0', '--without-demo'], directory/'native.log')
-                if 'foundation_transition' in bundle['operation_lock']:
-                    from .foundation_transition import archive_and_verify
-                    _write_new(directory/'foundation-effects.json',archive_and_verify(self,bundle,directory,image))
                 locks.check()
                 payload = {'site_id': self.config['sites'][0]['site_id'], 'deployment_id': self.config['deployment_id'],
                     'operation_id': operation, 'generation': bundle['operation_lock']['release']['generation'],

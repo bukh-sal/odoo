@@ -43,7 +43,7 @@ def scoped_bindings(solution, installations, previous):
     return bindings
 
 
-def prepare_document(document, catalog, *, retained_trust_for=(),foundation_transition=None):
+def prepare_document(document, catalog, *, retained_trust_for=()):
     required = {'state', 'environment', 'provenance', 'python_metadata', 'request'}
     if not isinstance(document, dict) or set(document) != required:
         raise PlanningError('Plan input requires exact state/environment/provenance/Python/request sections')
@@ -191,6 +191,6 @@ def prepare_document(document, catalog, *, retained_trust_for=(),foundation_tran
         operation_type=request['operation_type'], operation_id=request.get('operation_id'),
         created_at=request.get('created_at'), backup_policy=request.get('backup_policy', 'development_checkpoint'),
         catalog_snapshot_digest=catalog_validation_digest(catalog),
-        resolution_reasons=resolved['reasons'], feature_states=request.get('feature_states', []),foundation_transition=foundation_transition)
+        resolution_reasons=resolved['reasons'], feature_states=request.get('feature_states', []))
     check_bundle(bundle, state)
     return bundle

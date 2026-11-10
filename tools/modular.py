@@ -199,6 +199,8 @@ def main(argv=None):
         if action=='apply':control.add_argument('--approval',required=True)
     args = parser.parse_args(argv)
     try:
+        if args.group=='plugin' and args.action=='stage-image' and args.foundation_transition is not None:
+            raise ArtifactError('Historical foundation transitions are retired; use the exact sealed 46/47/49 kit source/tooling')
         validator = configuration(args.config)
         if args.group=='jobs':
             from modular_platform.job_operator import JobOperator
@@ -335,15 +337,7 @@ def main(argv=None):
             store=OperatorStore(args.store);deployment=load_json(args.deployment_config.read_bytes())
             catalog=Catalog(args.catalog,validator,readonly=True);stages=StageStore(store,deployment,catalog)
             if args.action=='stage-image':
-                declaration=None
-                if args.foundation_transition is not None:
-                    from modular_platform.operator_os import verify_private_directory
-                    verify_private_directory(args.foundation_transition.resolve().parent)
-                    store._regular(args.foundation_transition)
-                    raw=args.foundation_transition.read_bytes()
-                    if len(raw)>2*1024*1024:raise ArtifactError('Foundation declaration size limit')
-                    declaration=load_json(raw)
-                result=stages.stage(args.image_id,foundation_transition=declaration)
+                result=stages.stage(args.image_id)
             else:
                 raw=args.input.read_bytes()
                 if len(raw)>2*1024*1024:raise ArtifactError('Staged nomination size limit')
@@ -353,8 +347,7 @@ def main(argv=None):
                 descriptor,record=stages.load();observer=operator_observer(store,args.deployment_config);observation=observer.read();snapshot=catalog.snapshot()
                 result=prepare_staged_plan(observer.state(observation,snapshot),observation['sites'],snapshot,record['runtime'],descriptor,
                     targets=nomination['targets'],operation_type=nomination['operation_type'],operation_id=str(uuid4()),
-                    created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),base_runtime=observation['runtime'],
-                    foundation_transition=record.get('foundation_transition'))
+                    created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),base_runtime=observation['runtime'])
         elif args.group == 'plugin' and args.action == 'recover':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.operator_os import OperatorError
