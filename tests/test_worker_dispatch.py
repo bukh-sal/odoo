@@ -48,6 +48,18 @@ class WorkerDispatchTests(unittest.TestCase):
         client=self.client();client.issuer=issuer
         with self.assertRaises(WorkerDispatchError) as error:self.call(client)
         self.assertEqual(error.exception.code,'FORBIDDEN');self.assertFalse(error.exception.sent);self.assertEqual(self.connections,[])
+
+    def test_over_endpoint_limit_rejected_before_issuer_or_connection(self):
+        self.endpoint['payload_limit_bytes']=1
+        issued=[]
+        def issuer(ref):issued.append(ref);return 'ephemeral-test',fixtures.WorkerEngineTests.private
+        client=self.client();client.issuer=issuer
+        with self.assertRaises(WorkerDispatchError) as error:self.call(client)
+        self.assertEqual(error.exception.code,'VALIDATION_FAILED')
+        self.assertFalse(error.exception.sent)
+        self.assertEqual(self.connections,[])
+        self.assertEqual(issued,[])
+
     def test_revocation_after_response_refuses_return_and_marks_sent(self):
         def connect(*args,**kwargs):
             conn=self.connect(*args,**kwargs);get=conn.getresponse

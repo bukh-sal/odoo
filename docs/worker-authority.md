@@ -173,3 +173,20 @@ security/provenance/license/network/secret qualification or hostile-code isolati
 These bounded execution records do not establish those cases or a general
 external-service orchestrator. No runtime start/stop or remote data deletion is
 part of metadata planning or execution. See ADR0034 and the authoritative status.
+
+## Reference-worker transport boundary
+
+The supported host request path prebounds each serialized `/analyze` request to
+the endpoint's `payload_limit_bytes`, which the endpoint contract caps at 65536
+bytes; `WorkerClient` rejects a larger body as `VALIDATION_FAILED` before signing
+a credential or opening a connection. The reference worker applies a separate
+defensive `Content-Length` limit of 131072 bytes for direct/unsupported oversized
+input. Such direct oversized requests are denied with HTTP 400. Because the worker
+rejects them before consuming the request body and then closes the connection,
+delivery of the JSON denial body may terminate with a connection close/reset;
+clients must not depend on reading that error body. Supported host handling does
+not depend on worker error bodies: the host precheck prevents the oversized
+request, and a non-200 worker response maps to `DEPENDENCY_UNAVAILABLE`. This is a
+documented bounded-rejection limitation for unsupported direct input; it does not
+implement the staged-close guidance recommended by RFC 9112 and it is not a claim
+that a runtime transport defect was fixed.
