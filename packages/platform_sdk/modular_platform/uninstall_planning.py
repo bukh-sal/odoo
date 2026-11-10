@@ -66,7 +66,8 @@ def prepare_current_image_uninstall(document, sites, catalog, *, impact, targets
         revocations.append(dict(plugin_id=plugin['plugin_id'], workspace_id=grant['workspace_id'],
                                 capability=grant['capability'], action='revoke'))
     bundle = prepare_document({**document, 'request': dict(operation_type='uninstall', requested={},
-        targets=copy.deepcopy(targets), permission_changes=revocations, operation_id=operation_id, created_at=created_at)}, catalog)
+        targets=copy.deepcopy(targets), permission_changes=revocations, operation_id=operation_id, created_at=created_at)}, catalog,
+        retained_trust_for=tuple(row['plugin_id'] for row in document['state']['release_lock']['plugins']))
     lock = bundle['operation_lock']
     lock['native_uninstall_impact'] = copy.deepcopy(impact)
     lock['known_unknowns'].extend(impact['warnings'])

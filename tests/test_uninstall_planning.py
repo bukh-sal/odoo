@@ -2,18 +2,21 @@
 import copy
 import json
 from pathlib import Path
+import shutil
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
 sys.path.insert(0, str(ROOT / 'tests'))
 from modular_platform.approval_validation import IndependentValidator
-from modular_platform.artifacts import ArtifactValidator, TrustPolicy
+from modular_platform.artifacts import ArtifactError, ArtifactValidator, TrustPolicy
 from modular_platform.catalog import Catalog
 from modular_platform.contracts import plan_hash
 from modular_platform.planning_cli import prepare_document
 from modular_platform.plans import _display, check_bundle, data_digest, release_lock
+from modular_platform.projection import catalog_validation_digest
 from modular_platform.resolution import PlanningError, resolve_release
 from modular_platform.uninstall_planning import prepare_current_image_uninstall
 import test_planning_cli
@@ -71,14 +74,17 @@ class UninstallPlanning(unittest.TestCase):
         args.update(kwargs)
         return prepare_current_image_uninstall(self.document, [self.site], self.catalog, **args)
 
-    def validator(self):
+    def validator(self, catalog=None, document=None, site=None):
         validator = object.__new__(IndependentValidator)
+        snapshot_catalog = self.catalog if catalog is None else catalog
+        snapshot_document = self.document if document is None else document
+        snapshot_site = self.site if site is None else site
         owner = self
         class Snapshot:
-            def snapshot(self): return copy.deepcopy(owner.catalog)
+            def snapshot(self): return copy.deepcopy(snapshot_catalog)
         class Observer:
-            def read(self): return {'sites': [copy.deepcopy(owner.site)]}
-            def state(self, observation, catalog): return copy.deepcopy(owner.document)
+            def read(self): return {'sites': [copy.deepcopy(snapshot_site)]}
+            def state(self, observation, catalog): return copy.deepcopy(snapshot_document)
             def native_impact(self, observation, catalog, **kwargs): return copy.deepcopy(owner.impact)
         validator.catalog, validator.observer = Snapshot(), Observer()
         return validator
@@ -191,6 +197,96 @@ class UninstallPlanning(unittest.TestCase):
                        {'bindings': []}):
             with self.subTest(change=change), self.assertRaises(PlanningError):
                 prepare_document({**self.document, 'request': base | change}, self.catalog)
+
+    def catalog_generation2(self):
+        validator = ArtifactValidator(TrustPolicy(
+            approved_digests=frozenset(self.fixture.configuration['approved_digests']), generation=2))
+        return Catalog(self.fixture.store, validator, readonly=True).snapshot()
+
+    def prepare_with_catalog(self, catalog, document=None, impact=None, targets=None):
+        document = copy.deepcopy(self.document if document is None else document)
+        impact = self.impact if impact is None else impact
+        targets = self.targets(impact) if targets is None else targets
+        return prepare_current_image_uninstall(document, [self.site], catalog, impact=impact,
+            targets=targets, operation_id=ident(610), created_at=STAMP)
+
+    def fresh_document(self, catalog):
+        document = copy.deepcopy(self.document)
+        document['state']['catalog_validation_digest'] = catalog_validation_digest(catalog)
+        return document
+
+    def test_trust_generation_advance_retains_all_exact_published_trust_including_target(self):
+        catalog2 = self.catalog_generation2()
+        self.assertNotEqual({r['digest']: r['trust']['policy_generation'] for r in catalog2},
+                            {r['digest']: r['trust']['policy_generation'] for r in self.catalog})
+        document = self.fresh_document(catalog2)
+        before = copy.deepcopy(document)
+        bundle = self.prepare_with_catalog(catalog2, document)
+        old = {r['plugin_id']: r for r in document['state']['release_lock']['plugins']}
+        new = {r['plugin_id']: r for r in bundle['operation_lock']['release']['plugins']}
+        self.assertEqual(set(new), set(old))
+        self.assertEqual(new, old)
+        target = self.impact['plugins'][0]
+        self.assertIn(target['plugin_id'], new)
+        self.assertEqual(new[target['plugin_id']]['trust'], old[target['plugin_id']]['trust'])
+        removed = target['installation_id']
+        expected = [b for b in document['state']['bindings'] if removed not in (b['consumer_installation_id'], b['provider_installation_id'])]
+        self.assertEqual(bundle['operation_lock']['bindings'], expected)
+        expected_revocations = [dict(plugin_id=target['plugin_id'], workspace_id=g['workspace_id'],
+                                     capability=g['capability'], action='revoke')
+                                for g in self.site['grants'] if g['installation_id'] == removed]
+        self.assertEqual(bundle['plan']['permission_changes'], sorted(expected_revocations, key=lambda r: (
+            r['plugin_id'], r['workspace_id'], r['capability'], r['action'])))
+        self.assertEqual(document, before)
+        self.assertEqual(self.validator(catalog2, document)(bundle), document['state'])
+
+    def test_stale_catalog_validation_and_missing_unapproved_or_quarantined_archive_still_refuse(self):
+        catalog2 = self.catalog_generation2()
+        stale = self.fresh_document(catalog2)
+        stale['state']['catalog_validation_digest'] = catalog_validation_digest(self.catalog)
+        with self.assertRaisesRegex(PlanningError, 'catalog validation'):
+            self.prepare_with_catalog(catalog2, stale)
+        target_digest = self.impact['plugins'][0]['artifact_digest']
+        restricted = [row for row in catalog2 if row['digest'] != target_digest]
+        with self.assertRaises(PlanningError):
+            self.prepare_with_catalog(restricted, self.fresh_document(restricted))
+        unapproved_validator = ArtifactValidator(TrustPolicy(
+            approved_digests=frozenset(d for d in self.fixture.configuration['approved_digests'] if d != target_digest),
+            generation=2))
+        unapproved = Catalog(self.fixture.store, unapproved_validator, readonly=True)
+        with self.assertRaises(ArtifactError):
+            unapproved.snapshot()
+        with tempfile.TemporaryDirectory(prefix='mp-uninstall-catalog-') as temporary:
+            copied = Path(temporary) / 'catalog'
+            shutil.copytree(self.fixture.store, copied)
+            quarantine_validator = ArtifactValidator(TrustPolicy(
+                approved_digests=frozenset(self.fixture.configuration['approved_digests']), generation=2))
+            writable = Catalog(copied, quarantine_validator)
+            writable.quarantine(target_digest)
+            with self.assertRaises(PlanningError):
+                self.prepare_with_catalog(writable.snapshot(), self.document)
+
+    def test_rehashed_forged_old_trust_for_any_exact_archive_is_rejected(self):
+        catalog2 = self.catalog_generation2()
+        document = self.fresh_document(catalog2)
+        bundle = self.prepare_with_catalog(catalog2, document)
+        target_pid = self.impact['plugins'][0]['plugin_id']
+        survivor_pid = next(r['plugin_id'] for r in bundle['operation_lock']['release']['plugins']
+                            if r['plugin_id'] != target_pid)
+        for plugin_id in (target_pid, survivor_pid):
+            forged = copy.deepcopy(bundle)
+            entry = next(r for r in forged['operation_lock']['release']['plugins'] if r['plugin_id'] == plugin_id)
+            entry['trust']['policy_generation'] = 2
+            self.rehash(forged)
+            with self.subTest(plugin_id=plugin_id), self.assertRaises(ValueError):
+                self.validator(catalog2, document)(forged)
+
+    def test_changed_published_manifest_identity_cannot_retain_old_trust(self):
+        catalog2 = self.catalog_generation2()
+        document = self.fresh_document(catalog2)
+        document['state']['release_lock']['plugins'][0]['manifest_digest'] = 'sha256:' + 'f' * 64
+        with self.assertRaisesRegex(PlanningError, 'Historical trust'):
+            self.prepare_with_catalog(catalog2, document)
 
 
 if __name__ == '__main__': unittest.main()
