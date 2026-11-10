@@ -15,6 +15,52 @@ from modular_platform.operator_os import protect_directory,ProcessLock
 from modular_platform.operator_store import _write_new
 from build_inputs import source_input_paths
 
+CLEAN_NODE_IMAGE='node:24.22.2-bookworm-slim@sha256:c0a93797ee78814ae6d32fcca2561fdbbe423149c3f5389aad32d86e9fd85bd4'
+CLEAN_NODE_VERSION='v24.22.2'
+CLEAN_RTLCSS_VERSION='rtlcss version: 4.3.0'
+CLEAN_DOCKER_TARGET='clean-runtime'
+
+
+def _clean_inputs(root):
+    runtime_lock=json.loads((root/'deploy/runtime.lock.json').read_bytes())
+    python_image=runtime_lock['python_image'];snapshot=runtime_lock['debian_snapshot']
+    if not isinstance(python_image,str) or not re.fullmatch(r'python:[^@\s]+@sha256:[0-9a-f]{64}',python_image):
+        raise ValueError('Exact pinned clean Python image required')
+    dockerfile=(root/'deploy/Dockerfile').read_text(encoding='utf8')
+    required=(f'ARG PYTHON_IMAGE={python_image}',f'ARG RTL_NODE_IMAGE={CLEAN_NODE_IMAGE}',
+        'FROM ${RTL_NODE_IMAGE} AS rtl-compiler','FROM ${PYTHON_IMAGE} AS clean-runtime',
+        'COPY --from=builder /release /opt/modular','COPY --from=rtl-compiler /opt/stock-rtl /opt/stock-rtl',
+        'COPY deploy/stock-rtl/package.json deploy/stock-rtl/package-lock.json')
+    if any(value not in dockerfile for value in required):
+        raise ValueError('Clean Dockerfile is missing its pinned RTL/clean-runtime closure')
+    lock=root/'deploy/stock-rtl/package-lock.json';package=root/'deploy/stock-rtl/package.json';wrapper=root/'deploy/stock-rtl/rtlcss'
+    if not lock.is_file() or not package.is_file() or not wrapper.is_file():
+        raise ValueError('Pinned RTL package inputs are missing')
+    return {
+        'build_mode':'clean','docker_target':CLEAN_DOCKER_TARGET,'rtl_node_image':CLEAN_NODE_IMAGE,
+        'python_image':python_image,'python_version':runtime_lock['python'],'debian_snapshot':snapshot,
+        'dockerfile_sha256':'sha256:'+hashlib.sha256((root/'deploy/Dockerfile').read_bytes()).hexdigest(),
+        'runtime_requirements_sha256':'sha256:'+hashlib.sha256((root/'deploy/requirements-r1.lock').read_bytes()).hexdigest(),
+        'rtl_node_version':CLEAN_NODE_VERSION,'rtlcss_version':CLEAN_RTLCSS_VERSION,
+        'rtl_package_lock_sha256':'sha256:'+hashlib.sha256(lock.read_bytes()).hexdigest(),
+        'rtl_package_sha256':'sha256:'+hashlib.sha256(package.read_bytes()).hexdigest(),
+        'rtl_wrapper_sha256':'sha256:'+hashlib.sha256(wrapper.read_bytes()).hexdigest()}
+
+
+def _verify_clean_rtl(image_id,root):
+    node=subprocess.check_output(['docker','run','--rm','--network','none','--read-only','--entrypoint','/usr/local/bin/node',
+        image_id,'--version'],timeout=30).strip()
+    rtl=subprocess.check_output(['docker','run','--rm','--network','none','--read-only','--entrypoint','/usr/local/bin/rtlcss',
+        image_id,'--version'],timeout=30).strip()
+    if node!=CLEAN_NODE_VERSION.encode() or rtl!=CLEAN_RTLCSS_VERSION.encode():
+        raise RuntimeError('Clean candidate RTL compiler versions differ from the pinned closure')
+    lock=json.loads((root/'deploy/stock-rtl/package-lock.json').read_bytes())
+    expected=set(lock['packages'])-{''}
+    found=subprocess.check_output(['docker','run','--rm','--network','none','--read-only','--entrypoint','find',
+        image_id,'/opt/stock-rtl/node_modules','-type','f','-iname','license*'],timeout=30).decode().splitlines()
+    actual={Path(name).relative_to('/opt/stock-rtl').as_posix().rsplit('/',1)[0] for name in found}
+    if actual!=expected:raise RuntimeError('Clean candidate stock RTL notice closure differs from its package lock')
+    return {'node_version':node.decode(),'rtlcss_version':rtl.decode(),'notice_packages':len(actual)}
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
@@ -23,6 +69,18 @@ def main():
     parser.add_argument('--dependency-base-image',help='Exact sha256 image for code-only maintenance; preserves its Python/OS environment, independently rechecked after build')
     parser.add_argument('--reproduction', action='store_true', help='Rebuild from the exact dependency image without build cache or RUN network access')
     args=parser.parse_args()
+    policy=(ROOT/args.policy).resolve()
+    if (not policy.is_relative_to(ROOT/'deploy') or not policy.is_file()
+            or not re.fullmatch(r'distribution-r1(?:-[A-Za-z0-9_-]+)?\.json',policy.name)):
+        raise ValueError('Existing operator-owned deploy/distribution-r1*.json policy required')
+    policy_name=policy.relative_to(ROOT).as_posix()
+    policy_data=json.loads(policy.read_bytes());surface=policy_data.get('runtime_surface')
+    if surface not in (None,'clean'):raise ValueError('Unsupported distribution runtime surface')
+    clean=surface=='clean'
+    if clean and policy_data.get('platform_sdk') is not True:
+        raise ValueError('Clean runtime requires the guarded platform SDK')
+    if clean and (args.dependency_base_image or args.reproduction):
+        raise ValueError('Clean runtime rejects dependency-base and reproduction modes before any build/output')
     if args.reproduction and not args.dependency_base_image:
         parser.error('--reproduction requires --dependency-base-image')
     dependency_base=None
@@ -33,12 +91,8 @@ def main():
         if (dependency_base['python_lock_digest']!='sha256:'+hashlib.sha256((ROOT/'deploy/requirements-r1.lock').read_bytes()).hexdigest()
                 or any(dependency_base[name] for name in ['modified_files','missing_addon_files','unexpected_addon_files'])):
             raise ValueError('Code-only maintenance requires exact unchanged dependency lock and inventoried base')
-    policy=(ROOT/args.policy).resolve()
-    if (not policy.is_relative_to(ROOT/'deploy') or not policy.is_file()
-            or not re.fullmatch(r'distribution-r1(?:-[A-Za-z0-9_-]+)?\.json',policy.name)):
-        raise ValueError('Existing operator-owned deploy/distribution-r1*.json policy required')
-    policy_name=policy.relative_to(ROOT).as_posix()
-    if json.loads(policy.read_bytes()).get('stock_webclient'):
+    clean_inputs=_clean_inputs(ROOT) if clean else None
+    if json.loads(policy.read_bytes()).get('stock_webclient') and not clean:
         if not dependency_base:
             raise ValueError('Stock WebClient requires the pinned RTL dependency image from Dockerfile.stock-rtl')
         version = subprocess.check_output(['docker', 'run', '--rm', '--network', 'none', '--read-only',
@@ -56,8 +110,11 @@ def main():
             for name in source_input_paths(ROOT, policy_name)}
     output.mkdir(parents=True)
     dockerfile='deploy/Dockerfile.core-maintenance' if dependency_base else 'deploy/Dockerfile'
-    command=['docker','build','-f',dockerfile,'--build-arg','DISTRIBUTION_POLICY='+policy_name,
-        '--build-arg','RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock','--build-arg','SDK_PYTHONPATH=/opt/modular/packages/platform_sdk','-t',tag,'.']
+    command=['docker','build','-f',dockerfile]
+    if clean:command+=['--target',CLEAN_DOCKER_TARGET,'--build-arg','RTL_NODE_IMAGE='+CLEAN_NODE_IMAGE,
+        '--build-arg','PYTHON_IMAGE='+clean_inputs['python_image'],'--build-arg','DEBIAN_SNAPSHOT='+clean_inputs['debian_snapshot']]
+    command+=['--build-arg','DISTRIBUTION_POLICY='+policy_name,'--build-arg','RUNTIME_REQUIREMENTS=deploy/requirements-r1.lock',
+        '--build-arg','SDK_PYTHONPATH=/opt/modular/packages/platform_sdk','-t',tag,'.']
     if dependency_base:
         # Dockerfile FROM treats a bare sha256 image ID as a repository name.
         # Bind one owned temporary alias, verify it, and remove only that alias.
@@ -67,6 +124,7 @@ def main():
     record={'state':'building','tag':tag,'output':str(output.relative_to(ROOT)),'command':command,'distribution_policy':policy_name,
         'git_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),'source_sha256':source,
         'dependency_base_image':args.dependency_base_image}
+    if clean:record.update(clean_inputs)
     _write_new(record_path,record)
     with ProcessLock(ROOT/'.local/operator/control/locks','candidate-build'):
         if dependency_tag:
@@ -89,11 +147,24 @@ def main():
         if dependency_base and any(runtime[key]!=dependency_base[key] for key in
                 ['python','architecture','markers','python_lock_digest','python_metadata']):
             raise RuntimeError('Code-only maintenance changed the selected dependency environment; candidate is not admissible')
+        clean_verification=None
+        if clean:
+            try:
+                if any(runtime.get(name) for name in ['modified_files','missing_addon_files','unexpected_addon_files']):
+                    raise RuntimeError('Clean candidate differs from its runtime inventory')
+                clean_verification=_verify_clean_rtl(image_id,ROOT)
+            except Exception as error:
+                failure=record|{'state':'verification_failed','phase':'clean_postbuild_verification',
+                    'image_id':image_id,'deployment_changed':False,'error_type':type(error).__name__}
+                record_path.write_text(json.dumps(failure,indent=2)+'\n',encoding='utf8')
+                (output/'candidate-verification-failed.json').write_text(json.dumps(failure,indent=2)+'\n',encoding='utf8')
+                raise
     for name,digest in source.items():
         if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise RuntimeError('Build inputs changed; inspect candidate without deploying it')
     report=record|{'state':'built','image_id':image_id,'utc':datetime.now(timezone.utc).isoformat(),
         'inventory_digest':runtime['inventory_digest'],'artifacts':runtime['inventory'].get('artifacts',{}),
         'deployment_changed':False,'result':'built_not_deployed'}
+    if clean:report['clean_verification']=clean_verification
     (output/'candidate-build.json').write_text(json.dumps(report,indent=2)+'\n')
     record_path.write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({'result':'built_not_deployed','tag':tag,'image_id':image_id,'evidence':str(output.relative_to(ROOT))}))

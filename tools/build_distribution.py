@@ -28,6 +28,11 @@ def _build(source: Path, target: Path, policy_path, staging: Path) -> dict:
     if not policy_file.is_relative_to(source):
         raise ValueError("distribution policy must be within the source tree")
     policy = json.loads(policy_file.read_text(encoding='utf8'))
+    runtime_surface = policy.get('runtime_surface')
+    if runtime_surface not in (None, 'clean'):
+        raise ValueError('Unsupported distribution runtime surface')
+    if runtime_surface == 'clean' and policy.get('platform_sdk') is not True:
+        raise ValueError('Clean runtime requires the guarded platform SDK')
     if target.exists():
         raise ValueError("distribution target must not exist")
     selected = set(policy["addons"])
@@ -90,8 +95,18 @@ def _build(source: Path, target: Path, policy_path, staging: Path) -> dict:
     for name in ["LICENSE", "COPYRIGHT", "requirements.txt"]:
         shutil.copy2(source / name, target / name)
     if policy.get("platform_sdk"):
-        for name in ["platform_sdk", "contracts"]:
-            shutil.copytree(source / "packages" / name, target / "packages" / name, ignore=ignore)
+        shutil.copytree(source / "packages" / "platform_sdk", target / "packages" / "platform_sdk", ignore=ignore)
+        if runtime_surface == 'clean':
+            # Runtime wire schemas only; examples/fixtures remain build/test inputs.
+            shutil.copytree(source / "packages" / "contracts" / "v1", target / "packages" / "contracts" / "v1", ignore=ignore)
+        else:
+            shutil.copytree(source / "packages" / "contracts", target / "packages" / "contracts", ignore=ignore)
+    if runtime_surface == 'clean':
+        entrypoint = source / 'tools' / 'start_worker.py'
+        if not entrypoint.is_file() or entrypoint.is_symlink():
+            raise ValueError('Fixed clean runtime entrypoint is missing or linked')
+        (target / 'tools').mkdir(parents=True, exist_ok=True)
+        shutil.copy2(entrypoint, target / 'tools' / 'start_worker.py')
     generated_patches=[]
     if policy.get('platform_sdk'):
         sys.path.insert(0,str(source/'packages/platform_sdk'))
