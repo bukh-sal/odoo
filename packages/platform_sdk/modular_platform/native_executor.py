@@ -135,7 +135,8 @@ def require_native_reinstall_runtime(runtime):
 
 
 def require_native_removal_runtime(runtime):
-    names=('artifact_removal.py','remove_metadata.py','projection.py','planning_cli.py','plans.py')
+    names=('artifact_removal.py','remove_metadata.py','projection.py','planning_cli.py','plans.py',
+           'native_uninstall.py','dispatch_lifecycle.py','durable.py')
     files=runtime['inventory']['files']
     if any(files.get('packages/platform_sdk/modular_platform/'+name)!=hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in names):
         raise OperatorError('Source removal requires an independently staged compatible publication image before any drain or mutation')
@@ -175,7 +176,7 @@ class NativeExecutor:
         return verify_native_state(bundle,state,previous,observation)
 
     def _publish_metadata(self,bundle,payload,directory,image):
-        if bundle['plan']['operation_type']=='uninstall':
+        if bundle['plan']['operation_type'] in ('uninstall','remove'):
             snapshot,scope=self._checkpoint_dispatch_scope(bundle['plan']['operation_id'])
             payload=dict(payload,dispatch_snapshot=snapshot,dispatch_scope=scope)
         arguments,child=self._child(bundle['plan']['operation_id'],'metadata',image_id=image)

@@ -14,9 +14,16 @@ from uuid import UUID, uuid5
 
 def main():
     import psycopg2
+    from modular_platform.native_uninstall import require_dispatch_snapshot
     data=json.load(sys.stdin)
     assert set(data)=={'site_id','deployment_id','operation_id','generation','release_digest','targets','plugins','bindings',
-                       'permission_changes','previous_plugins','database','policy_version'}
+                       'permission_changes','previous_plugins','database','policy_version',
+                       'dispatch_snapshot','dispatch_scope'}
+    snapshot,scope=data['dispatch_snapshot'],data['dispatch_scope']
+    assert snapshot is None or isinstance(snapshot,dict)
+    assert scope is None or (isinstance(scope,dict) and set(scope)=={'site_id','release_digest','reference'})
+    assert (snapshot is None)==(scope is None),'Exact checkpoint dispatch evidence required'
+    if scope is not None:assert scope['site_id']==data['site_id'],'Checkpoint dispatch scope site mismatch'
     assert data['targets'] and not data['permission_changes']
     assert all(t['action']=='remove' and t['site_id']==data['site_id'] for t in data['targets'])
     removed={t['plugin_id'] for t in data['targets']}
@@ -32,7 +39,10 @@ def main():
         with connection.cursor() as cursor:
             for key,value in [('mp.site_id',data['site_id']),('mp.deployment_id',data['deployment_id']),('mp.release_generation',str(data['generation']-1))]:
                 cursor.execute('SELECT value FROM ir_config_parameter WHERE key=%s',[key]);assert cursor.fetchone()==(value,),'Removal base identity changed'
-            cursor.execute("SELECT to_regclass('mp_job'),to_regclass('mp_outbox')");assert cursor.fetchone()==(None,None),'Unsupported dispatch needs G6 reconciliation'
+            if snapshot is None:
+                cursor.execute("SELECT to_regclass('mp_job'),to_regclass('mp_outbox')");assert cursor.fetchone()==(None,None),'Unsupported dispatch needs G6 reconciliation'
+            else:
+                require_dispatch_snapshot(connection,snapshot,scope)
             for plugin in sorted(removed):
                 targets=[t for t in data['targets'] if t['plugin_id']==plugin]
                 assert len({t['workspace_id'] for t in targets})==len(targets)
@@ -60,6 +70,12 @@ def main():
                             and binding['provider_plugin_id']!=plugin),'Removal retained live binding'
             cursor.execute('SELECT descriptor FROM mp_service_binding ORDER BY public_id')
             assert [r[0] for r in cursor.fetchall()]==data['bindings'],'Surviving bindings changed before publication'
+            # Revalidate the exact OLD checkpoint/current control immediately before
+            # the fixed release-parameter writes and commit; never after publishing.
+            if snapshot is None:
+                cursor.execute("SELECT to_regclass('mp_job'),to_regclass('mp_outbox')");assert cursor.fetchone()==(None,None),'Unsupported dispatch needs G6 reconciliation'
+            else:
+                require_dispatch_snapshot(connection,snapshot,scope)
             for key,value in [('mp.release_generation',str(data['generation'])),('mp.release_digest',data['release_digest']),
                               ('mp.last_operation_id',data['operation_id']),('mp.active_inventory_digest','sha256:'+hashlib.sha256(raw).hexdigest())]:
                 cursor.execute('''INSERT INTO ir_config_parameter(key,value,create_uid,write_uid,create_date,write_date)

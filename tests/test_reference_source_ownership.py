@@ -76,6 +76,65 @@ class ReferenceSourceOwnershipTests(unittest.TestCase):
         with patch('modular_platform.dispatch_lifecycle.observe',return_value=expected):
             self.assertEqual(require_dispatch_snapshot(Connection(),expected,scope),expected)
 
+    def test_remove_child_is_composed_and_launched_only_through_private_source(self):
+        source=(ROOT/'packages/platform_sdk/modular_platform/native_executor.py').read_text(encoding='utf8')
+        self.assertIn("'uninstall':'uninstall_metadata.py','remove':'remove_metadata.py'",source)
+        launches=[node for node in ast.walk(ast.parse(source))
+            if isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute)
+            and node.func.attr=='_private_command'
+            and any(isinstance(value,ast.Call) and isinstance(value.func,ast.Attribute)
+                    and value.func.attr=='_metadata_script' for value in ast.walk(node))]
+        self.assertEqual(len(launches),2)
+        generic=NativeExecutor.__new__(NativeExecutor)
+        self.assertEqual(generic._metadata_script('remove_metadata.py','print(1)'),'print(1)')
+        helper=ReferenceMetadataExecutor.__new__(ReferenceMetadataExecutor)
+        helper.config={'published_release':{'plugins':[{'runtime':'external_service'}]}}
+        for script in ('install_metadata.py','uninstall_metadata.py','native_uninstall.py','remove_metadata.py'):
+            composed=helper._metadata_script(script,'print(1)')
+            self.assertIn('reference_operator.lifecycle_reference',composed,script)
+            self.assertIn('print(1)',composed,script)
+            compile(composed,script,'exec')
+        helper.config={'published_release':{'plugins':[]}}
+        self.assertEqual(helper._metadata_script('remove_metadata.py','print(1)'),'print(1)')
+
+    def test_remove_publish_emits_checkpoint_evidence_and_composed_child_source(self):
+        import json
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from types import SimpleNamespace
+        captured={}
+        with TemporaryDirectory() as temporary:
+            executor=NativeExecutor.__new__(NativeExecutor)
+            executor.config={'sites':[{'site_id':'site','database':'db'}]}
+            executor.store=SimpleNamespace(root=Path(temporary))
+            snapshot={'profile':'r1-native-dispatch-v1','release_digest':'sha256:'+'a'*64}
+            scope={'site_id':'site','release_digest':'sha256:'+'a'*64,'reference':None}
+            checkpoint=executor.store.root/'checkpoints'/'op'
+            checkpoint.mkdir(parents=True)
+            (checkpoint/'manifest.json').write_text(json.dumps({'dispatch_profile':snapshot,'reference_policy':None}))
+            from unittest.mock import Mock
+            executor._child=Mock(return_value=(['python'],'child'))
+            def command(args,log,*,input):
+                captured['args']=args;captured['input']=json.loads(input)
+            executor._private_command=command
+            bundle={'plan':{'operation_type':'remove','operation_id':'op'}}
+            executor._publish_metadata(bundle,{'plugins':{}},Path(temporary),'image')
+            executor._child.reset_mock()
+            with self.assertRaisesRegex(Exception,'Checkpoint dispatch evidence unavailable'):
+                executor._publish_metadata({'plan':{'operation_type':'remove','operation_id':'missing'}},{'plugins':{}},Path(temporary),'image')
+            executor._child.assert_not_called()
+        self.assertEqual(captured['input']['dispatch_snapshot'],snapshot)
+        self.assertEqual(captured['input']['dispatch_scope'],scope)
+        self.assertIn('Fixed source-removal publisher',str(captured['args']))
+
+    def test_remove_publish_attaches_actual_checkpoint_dispatch_evidence(self):
+        source=(ROOT/'packages/platform_sdk/modular_platform/native_executor.py').read_text(encoding='utf8')
+        self.assertIn("if bundle['plan']['operation_type'] in ('uninstall','remove'):",source)
+        self.assertIn('_checkpoint_dispatch_scope(bundle[\'plan\'][\'operation_id\'])',source)
+        child=(ROOT/'packages/platform_sdk/modular_platform/remove_metadata.py').read_text(encoding='utf8')
+        self.assertIn("'dispatch_snapshot','dispatch_scope'",child)
+        self.assertIn('require_dispatch_snapshot(connection,snapshot,scope)',child)
+
     def test_optional_metadata_child_source_is_composed_only_for_reference(self):
         from reference_operator.executor import ReferenceMetadataExecutor
         helper=ReferenceMetadataExecutor.__new__(ReferenceMetadataExecutor)

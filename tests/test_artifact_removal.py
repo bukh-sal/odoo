@@ -290,12 +290,19 @@ class ArtifactRemoval(unittest.TestCase):
     def test_current_image_cannot_run_new_source_removal_publisher(self):
         runtime=dict(inventory=dict(files={}))
         with self.assertRaisesRegex(OperatorError,'compatible publication image'):require_native_removal_runtime(runtime)
-        names=('artifact_removal.py','remove_metadata.py','projection.py','planning_cli.py','plans.py')
+        names=('artifact_removal.py','remove_metadata.py','projection.py','planning_cli.py','plans.py',
+               'native_uninstall.py','dispatch_lifecycle.py','durable.py')
         import hashlib
         runtime['inventory']['files']={'packages/platform_sdk/modular_platform/'+name:hashlib.sha256((ROOT/'packages/platform_sdk/modular_platform'/name).read_bytes()).hexdigest() for name in names}
         require_native_removal_runtime(runtime)
-        runtime['inventory']['files']['packages/platform_sdk/modular_platform/remove_metadata.py']='0'*64
-        with self.assertRaisesRegex(OperatorError,'compatible publication image'):require_native_removal_runtime(runtime)
+        for reader in ('native_uninstall.py','dispatch_lifecycle.py','durable.py'):
+            # Both changed bytes and an omitted old reader must fail before drain.
+            forged=copy.deepcopy(runtime);forged['inventory']['files']['packages/platform_sdk/modular_platform/'+reader]='0'*64
+            with self.subTest(reader=reader,case='changed'),self.assertRaisesRegex(OperatorError,'compatible publication image'):
+                require_native_removal_runtime(forged)
+            omitted=copy.deepcopy(runtime);omitted['inventory']['files'].pop('packages/platform_sdk/modular_platform/'+reader)
+            with self.subTest(reader=reader,case='omitted'),self.assertRaisesRegex(OperatorError,'compatible publication image'):
+                require_native_removal_runtime(omitted)
 
     def test_journal_distinguishes_removed_runtime_from_catalog_archive_retention(self):
         bundle=self.prepare();state=copy.deepcopy(self.document['state'])
