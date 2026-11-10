@@ -1,6 +1,7 @@
 """Minimal registered Notes domain events; content stays in the host database."""
 import json
-from modular_platform.contracts import CONTRACTS,ContractError
+from pathlib import Path
+from modular_platform.contracts import ContractError
 from odoo.exceptions import AccessError
 from odoo.addons.mp_core.events import Topic,register_topic
 
@@ -20,4 +21,4 @@ def identity(aggregate_id,sequence,payload):
 
 register_topic(Topic(ident='org.example.notes.changed',plugin='org.example.notes',model='mp.example.note',
     service='org.example.notes.documents',majors=(1,2),permission='org.example.notes:notes.read',
-    payload_schema=json.loads((CONTRACTS/'event-transport.schema.json').read_text())['$defs']['notes_changed_payload'],authorize_event=authorize,validate_identity=identity))
+    payload_schema=json.loads((Path(__file__).parent/'schemas'/'notes-changed-v1.json').read_text()),authorize_event=authorize,validate_identity=identity))

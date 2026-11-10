@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "note_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![\\s\\S])"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "change": {
+      "enum": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  },
+  "required": [
+    "note_id",
+    "revision",
+    "change"
+  ],
+  "additionalProperties": false
+}
