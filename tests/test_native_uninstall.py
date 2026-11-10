@@ -5,15 +5,22 @@ recovery remain mandatory disposable-fixture integration checks.
 """
 import copy
 import hashlib
+import inspect
+import json
+from contextlib import nullcontext
 from pathlib import Path
+from types import SimpleNamespace
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'packages/platform_sdk'))
 sys.path.insert(0, str(ROOT / 'tests'))
-from modular_platform.native_executor import (native_maintenance_flags, require_native_uninstall_runtime,
+from modular_platform.metadata_executor import ReferenceMetadataExecutor
+from modular_platform.native_executor import (NativeExecutor, native_maintenance_flags, require_native_uninstall_runtime,
                                               verify_native_state)
+from modular_platform.native_feature_executor import NativeFeatureExecutor
 from modular_platform.native_uninstall import require_exact_native_closure
 from modular_platform.native_uninstall import require_dispatch_snapshot
 from modular_platform.plans import data_digest
@@ -65,6 +72,96 @@ class NativeUninstallGuards(unittest.TestCase):
             target_release_digest='sha256:'+'a'*64, permission_changes=[dict(plugin_id=self.prior['plugin_id'],
                 workspace_id=ident(30), capability='org.example.notes:notes.read', action='revoke')], policy_version=1),
             operation_lock=dict(targets=[self.target], native_uninstall_impact={'known': 'only'}, bindings=[]))
+
+    def test_checkpoint_dispatch_scope_is_exact_and_rejects_malformed_private_evidence(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / 'control'
+            checkpoint = root / 'checkpoints' / 'op'
+            checkpoint.mkdir(parents=True)
+            snapshot = {'profile': 'r1-reference-stateless-dispatch-v1', 'release_digest': 'sha256:' + 'a' * 64,
+                        'state_digest': 'sha256:' + 'b' * 64}
+            reference = {'registrations': []}
+            (checkpoint / 'manifest.json').write_text(json.dumps(dict(
+                previous_release={}, dispatch_profile=snapshot, reference_policy=reference)))
+            executor = object.__new__(NativeExecutor)
+            executor.store = SimpleNamespace(root=root)
+            executor.config = {'sites': [{'site_id': ident(20)}]}
+            actual_snapshot, actual_scope = executor._checkpoint_dispatch_scope('op')
+            self.assertEqual(actual_snapshot, snapshot)
+            self.assertEqual(actual_scope, {'site_id': ident(20),
+                                            'release_digest': snapshot['release_digest'],
+                                            'reference': reference})
+            (checkpoint / 'manifest.json').write_text(json.dumps(dict(
+                previous_release={}, reference_policy=reference)))
+            with self.assertRaisesRegex(OperatorError, 'reference policy'):
+                executor._checkpoint_dispatch_scope('op')
+            (checkpoint / 'manifest.json').write_text(json.dumps(dict(
+                previous_release={}, dispatch_profile={'profile': 'malformed'})))
+            with self.assertRaisesRegex(OperatorError, 'malformed'):
+                executor._checkpoint_dispatch_scope('op')
+
+    def test_old_or_different_metadata_reader_refuses_before_reserve_or_drain(self):
+        executor = object.__new__(NativeExecutor)
+        executor.staged_execution = False
+        bundle = copy.deepcopy(self.bundle)
+        bundle['plan']['artifacts'] = [{'runtime': 'native', 'action': 'uninstall'}]
+        bundle['plan']['deployment_id'] = ident(10)
+        bundle['plan']['site_ids'] = [ident(20)]
+        executor.store = MagicMock()
+        executor.store.bundle.return_value = bundle
+        executor.store.status.return_value = {'state': 'awaiting_operator_approval', 'mutation_started': False}
+        executor.observer = MagicMock()
+        executor.observer.read.return_value = {'runtime': {'published_release_protocol': 1,
+                                                           'inventory': {'files': {}}}}
+        executor._require_jobs_drained = MagicMock()
+        with patch('modular_platform.native_executor.OperationLocks', return_value=nullcontext('locks')):
+            with self.assertRaisesRegex(OperatorError, 'compatible maintenance image'):
+                executor.apply('op')
+        executor.store.reserve.assert_not_called()
+        executor._require_jobs_drained.assert_not_called()
+
+    def test_metadata_publisher_enriches_only_uninstall_from_actual_checkpoint(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / 'control'
+            checkpoint = root / 'checkpoints' / 'op'
+            checkpoint.mkdir(parents=True)
+            snapshot = {'profile': 'r1-reference-stateless-dispatch-v1',
+                        'release_digest': 'sha256:' + 'a' * 64,
+                        'state_digest': 'sha256:' + 'b' * 64}
+            reference = {'registrations': []}
+            (checkpoint / 'manifest.json').write_text(json.dumps(dict(
+                previous_release={}, dispatch_profile=snapshot, reference_policy=reference)))
+            executor = object.__new__(NativeExecutor)
+            executor.store = SimpleNamespace(root=root)
+            executor.config = {'sites': [{'site_id': ident(20)}]}
+            executor._child = MagicMock(return_value=(['python', '-B', 'child'], 'cid'))
+            executor._private_command = MagicMock()
+            directory = Path(folder) / 'stage'
+            directory.mkdir()
+            payload = {'site_id': ident(20), 'operation_id': 'op'}
+            uninstall = {'plan': {'operation_type': 'uninstall', 'operation_id': 'op'}}
+            executor._publish_metadata(uninstall, payload, directory, 'image')
+            sent = json.loads(executor._private_command.call_args.kwargs['input'])
+            self.assertEqual(sent['dispatch_snapshot'], snapshot)
+            self.assertEqual(sent['dispatch_scope'], {'site_id': ident(20),
+                                                       'release_digest': snapshot['release_digest'],
+                                                       'reference': reference})
+            executor._private_command.reset_mock()
+            install = {'plan': {'operation_type': 'install', 'operation_id': 'missing-op'}}
+            executor._publish_metadata(install, payload, directory, 'image')
+            self.assertEqual(json.loads(executor._private_command.call_args.kwargs['input']), payload)
+            executor._private_command.reset_mock()
+            missing = {'plan': {'operation_type': 'uninstall', 'operation_id': 'missing-op'}}
+            with self.assertRaises(OperatorError):
+                executor._publish_metadata(missing, payload, directory, 'image')
+            executor._private_command.assert_not_called()
+
+    def test_metadata_publisher_hook_keeps_four_argument_virtual_protocol(self):
+        for cls in (NativeExecutor, ReferenceMetadataExecutor, NativeFeatureExecutor):
+            with self.subTest(cls=cls.__name__):
+                signature = inspect.signature(cls._publish_metadata)
+                signature.bind(object(), {}, {}, Path('.'), 'image')
+                self.assertNotIn('checkpoint', signature.parameters)
 
     def test_actual_upstream_closure_must_equal_the_approved_native_set(self):
         require_exact_native_closure(['notes', 'labels'], {'labels', 'notes'})

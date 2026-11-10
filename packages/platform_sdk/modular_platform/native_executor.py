@@ -181,6 +181,9 @@ class NativeExecutor:
         return verify_native_state(bundle,state,previous,observation)
 
     def _publish_metadata(self,bundle,payload,directory,image):
+        if bundle['plan']['operation_type']=='uninstall':
+            snapshot,scope=self._checkpoint_dispatch_scope(bundle['plan']['operation_id'])
+            payload=dict(payload,dispatch_snapshot=snapshot,dispatch_scope=scope)
         arguments,child=self._child(bundle['plan']['operation_id'],'metadata',image_id=image)
         arguments.insert(2,'-i')
         script={'uninstall':'uninstall_metadata.py','remove':'remove_metadata.py'}.get(bundle['plan']['operation_type'],'install_metadata.py')
@@ -195,6 +198,23 @@ class NativeExecutor:
 
     def _execution_image(self,bundle):
         return bundle['operation_lock'].get('staged_image',{}).get('target_image_id',self.config['image_id'])
+
+    def _checkpoint_dispatch_scope(self,checkpoint):
+        """Private uninstall dispatch evidence; same source as the native child."""
+        path=self.store.root/'checkpoints'/checkpoint/'manifest.json'
+        try:
+            manifest=load_json(path.read_bytes())
+        except (OSError,ValueError,KeyError) as error:
+            raise OperatorError('Checkpoint dispatch evidence unavailable') from error
+        snapshot=manifest.get('dispatch_profile')
+        if snapshot is None:
+            if manifest.get('reference_policy') is not None:
+                raise OperatorError('Checkpoint reference policy lacks its dispatch profile')
+            return None,None
+        if not isinstance(snapshot,dict) or not isinstance(snapshot.get('release_digest'),str):
+            raise OperatorError('Checkpoint dispatch profile is malformed')
+        return snapshot,{'site_id':self.config['sites'][0]['site_id'],
+            'release_digest':snapshot['release_digest'],'reference':manifest.get('reference_policy')}
 
     def _replace_workers(self,app,bundle,directory):
         target=dict(self.config,image_id=self._execution_image(bundle),

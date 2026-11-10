@@ -5,23 +5,36 @@ import json
 from pathlib import Path
 import sys
 
+from modular_platform.native_uninstall import require_dispatch_snapshot
+
+
+def require_dispatch(connection, data):
+    """Closed checkpoint evidence before and after metadata DML."""
+    if data['dispatch_snapshot'] is None:
+        assert data['dispatch_scope'] is None, 'Dispatch scope lacks its checkpoint snapshot'
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT to_regclass('mp_job'),to_regclass('mp_outbox')")
+            assert cursor.fetchone() == (None, None), 'Unsupported durable dispatch requires G6 reconciliation'
+        return None
+    return require_dispatch_snapshot(connection, data['dispatch_snapshot'], data['dispatch_scope'])
+
 
 def main():
     import psycopg2
     data = json.load(sys.stdin)
     assert set(data) == {'site_id', 'deployment_id', 'operation_id', 'generation', 'release_digest', 'targets',
-                         'plugins', 'bindings', 'permission_changes', 'previous_plugins', 'database', 'policy_version'}
+                         'plugins', 'bindings', 'permission_changes', 'previous_plugins', 'database', 'policy_version',
+                         'dispatch_snapshot', 'dispatch_scope'}
     config = configparser.ConfigParser(); config.read('/run/secrets/odoo_config'); options = config['options']
     assert options['db_name'] == data['database']
     connection = psycopg2.connect(host=options['db_host'], port=options.getint('db_port'), user=options['db_user'],
         password=options['db_password'], dbname=data['database'], connect_timeout=10)
     with connection:
         with connection.cursor() as cursor:
+            require_dispatch(connection, data)
             for key, value in [('mp.site_id', data['site_id']), ('mp.deployment_id', data['deployment_id'])]:
                 cursor.execute('SELECT value FROM ir_config_parameter WHERE key=%s', [key])
                 assert cursor.fetchone() == (value,), 'Post-uninstall target identity mismatch'
-            cursor.execute("SELECT to_regclass('mp_job'),to_regclass('mp_outbox')")
-            assert cursor.fetchone() == (None, None), 'Unsupported durable dispatch requires G6 reconciliation'
             assert data['targets'] and all(t['action'] == 'uninstall' and t['site_id'] == data['site_id'] for t in data['targets'])
             installation_ids, public_ids, workspaces, actual_revocations = [], [], set(), []
             for plugin_id in sorted({t['plugin_id'] for t in data['targets']}):
@@ -63,6 +76,7 @@ def main():
             cursor.execute("UPDATE mp_plugin_installation SET state='removed',write_date=timezone('UTC',now()) WHERE id=ANY(%s)", [installation_ids])
             cursor.execute('UPDATE mp_workspace SET policy_generation=policy_generation+1 WHERE id=ANY(%s)', [sorted(workspaces)])
             inventory = 'sha256:' + hashlib.sha256(Path('/opt/modular/distribution-inventory.json').read_bytes()).hexdigest()
+            require_dispatch(connection, data)
             for key, value in [('mp.release_generation', str(data['generation'])), ('mp.release_digest', data['release_digest']),
                                ('mp.last_operation_id', data['operation_id']), ('mp.active_inventory_digest', inventory)]:
                 cursor.execute('''INSERT INTO ir_config_parameter(key,value,create_uid,write_uid,create_date,write_date)
