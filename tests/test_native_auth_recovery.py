@@ -2,7 +2,7 @@
 import copy,json,secrets,sys,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packages/platform_sdk'))
-from modular_platform.native_auth_recovery import canonical_native_auth,public_binding,overlay_sql,POLICY
+from modular_platform.native_auth_recovery import canonical_native_auth,public_binding,overlay_sql,read_query,POLICY,SCHEMA_FIELDS
 from modular_platform.operator_os import OperatorError
 
 class NativeAuthRecoveryTests(unittest.TestCase):
@@ -32,5 +32,38 @@ class NativeAuthRecoveryTests(unittest.TestCase):
    self.assertNotIn(self.secret,str(raised.exception))
  def test_private_SQL_handles_quotes_and_invalidates_remembered_device_material(self):
   sql=overlay_sql(self.value);self.assertIn("o''brien",sql);self.assertIn('DELETE FROM auth_totp_device',sql);self.assertIn('Native identity or group footprint requires explicit reconciliation',sql);self.assertIn('totp_last_counter',sql)
+ def minimal(self):
+  value=copy.deepcopy(self.value);value['passkeys']=[];value['users'][0].update(totp_secret=None,totp_last_counter=None);value['schema']={k:False for k in SCHEMA_FIELDS};return value
+ def test_full_schema_retains_legacy_canonical_value_and_digest(self):
+  explicit=dict(copy.deepcopy(self.value),schema={k:True for k in SCHEMA_FIELDS})
+  self.assertEqual(canonical_native_auth(explicit),canonical_native_auth(self.value));self.assertEqual(public_binding(explicit),public_binding(self.value))
+ def test_absent_features_are_distinct_from_present_but_empty(self):
+  minimal=self.minimal();present=copy.deepcopy(minimal);present.pop('schema')
+  self.assertNotEqual(public_binding(minimal),public_binding(present));self.assertEqual(canonical_native_auth(minimal)['schema'],{k:False for k in SCHEMA_FIELDS})
+  changed=copy.deepcopy(minimal);changed['users'][0]['password']=None;self.assertNotEqual(public_binding(minimal),public_binding(changed))
+ def test_partial_unknown_or_nonboolean_schema_refuses(self):
+  for change in ({'totp_secret':True},{'totp_device':True},{'passkeys':1},{'foreign':False}):
+   value=self.minimal();value['schema'].update(change)
+   with self.subTest(change=change),self.assertRaises(OperatorError):canonical_native_auth(value)
+ def test_absent_features_cannot_hide_credential_material(self):
+  for field,value in [('totp_secret',self.totp),('totp_last_counter',1)]:
+   changed=self.minimal();changed['users'][0][field]=value
+   with self.assertRaises(OperatorError):canonical_native_auth(changed)
+  changed=self.minimal();changed['passkeys']=copy.deepcopy(self.value['passkeys'])
+  with self.assertRaises(OperatorError):canonical_native_auth(changed)
+ def test_overlay_binds_schema_before_writes_and_skips_only_absent_features(self):
+  sql=overlay_sql(self.minimal())
+  self.assertLess(sql.index('Native authentication schema changed'),sql.index('UPDATE res_users'))
+  self.assertNotIn('totp_secret=a.totp_secret',sql);self.assertNotIn('DELETE FROM auth_passkey_key',sql);self.assertNotIn('DELETE FROM auth_totp_device',sql)
+  self.assertIn('password=a.password',sql);self.assertIn('DELETE FROM res_groups_users_rel',sql)
+  totp=self.minimal();totp['schema'].update(totp_secret=True,totp_last_counter=True,totp_device=True)
+  self.assertIn('DELETE FROM auth_totp_device',overlay_sql(totp));self.assertNotIn('DELETE FROM auth_passkey_key',overlay_sql(totp))
+  passkeys=self.minimal();passkeys['schema']['passkeys']=True;passkeys['passkeys']=copy.deepcopy(self.value['passkeys'])
+  self.assertIn('DELETE FROM auth_passkey_key',overlay_sql(passkeys));self.assertNotIn('DELETE FROM auth_totp_device',overlay_sql(passkeys))
+ def test_read_query_selects_fixed_optional_relation_inside_one_readonly_snapshot(self):
+  sql=read_query('SELECT 1;')
+  self.assertTrue(sql.startswith('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY;'));self.assertTrue(sql.endswith('ROLLBACK;'))
+  self.assertIn('\\if :mp_restore_has_passkeys',sql);self.assertNotIn('u.totp_secret',sql)
+  self.assertNotIn('FROM auth_passkey_key',sql.split('\\else\n',1)[1])
 
 if __name__=='__main__':unittest.main()
