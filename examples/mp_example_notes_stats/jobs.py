@@ -1,7 +1,7 @@
 """Read-only, revision-bound external analysis through existing durable jobs."""
 from odoo.addons.mp_core.controllers import PublicError
 from odoo.addons.mp_core.dispatch import call_bound
-from odoo.addons.mp_core.external_job import analyze,authorization_snapshot
+from .external_job import analyze,authorization_snapshot
 from odoo.addons.mp_core.job_dispatch import JobDefinition,register
 from .contracts import INPUT,PREPARED,COMPUTED,RESULT
 from .models import guard,IDENT

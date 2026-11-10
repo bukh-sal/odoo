@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const registrations=[];
 globalThis.__analysisRegistry={category:name=>({add:(id,handler)=>registrations.push({name,id,handler})})};
-const source=(await readFile(new URL('../platform_addons/mp_example_notes_stats/static/src/analysis.js',import.meta.url),'utf8'))
+const source=(await readFile(new URL('../examples/mp_example_notes_stats/static/src/analysis.js',import.meta.url),'utf8'))
     .replace("import { registry } from '@web/core/registry';","const registry=globalThis.__analysisRegistry;");
 const {createAnalysisAction}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 

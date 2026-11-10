@@ -12,10 +12,10 @@ from modular_platform import durable
 from modular_platform.plans import data_digest
 from modular_platform.worker_authority import PublishedWorkerAuthority, AuthorityUnavailable
 from modular_platform.worker_dispatch import WorkerClient, WorkerDispatchError
-from . import job_dispatch as jobs
-from .controllers import PublicError
+from odoo.addons.mp_core import job_dispatch as jobs
+from odoo.addons.mp_core.controllers import PublicError
 from .external_authority import authorize_analysis
-from .dispatch import CallFrame
+from odoo.addons.mp_core.dispatch import CallFrame
 
 AUTHORITY_ROOT='/run/worker-authority'
 

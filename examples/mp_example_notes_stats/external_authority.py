@@ -10,8 +10,8 @@ from dataclasses import dataclass
 from odoo.exceptions import AccessError
 from odoo.addons.mp_identity.release import current_release
 from modular_platform.contracts import validate, validate_binding
-from .controllers import PublicError
-from .dispatch import CallFrame, authorize_origin
+from odoo.addons.mp_core.controllers import PublicError
+from odoo.addons.mp_core.dispatch import CallFrame, authorize_origin
 
 
 @dataclass(frozen=True)
@@ -29,7 +29,7 @@ class ExternalAuthorization:
 
 
 def authorize_analysis(env, alias, approved_endpoint):
-    from .job_dispatch import _locked_scope
+    from odoo.addons.mp_core.job_dispatch import _locked_scope
     endpoint=copy.deepcopy(approved_endpoint);validate('endpoint',endpoint)
     scope=_locked_scope(env);frame=env.context.get('_mp_call_frame');release=current_release(env)
     if not isinstance(frame,CallFrame) or (frame.principal_id,frame.workspace_id,frame.site_id)!=(scope.principal_public_id,scope.workspace_public_id,release['site_id']):
