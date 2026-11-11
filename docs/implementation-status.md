@@ -17,6 +17,28 @@ Current goal: consolidate the locally qualified app-free core and independently 
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
+## Current useful-application slice (11November2026)
+
+- [x] Independent app source/package and explicit optional clean composition; default eight-addon core unchanged.
+- [x] Normal independent approval/install and populated app-only successor upgrade.
+- [x] Useful installed work/list/stage/assignment/discussion/archive and authority/revision checks.
+- [x] Actual desktop browser review, observed drag defect repaired and verified after reload.
+- [x] Demonstrated capabilities, intentional choices and repairable/unproven gaps recorded separately.
+
+Blocker register for this slice: no uncertain mutation or running command remains.
+Viewer empty-state copy is an app UX gap; actual narrow-screen qualification is
+unavailable with the current browser override. Reminders, personal/list privacy,
+optional integration, complex migrations and broader accessibility remain open,
+with reasons/return conditions in the capability register. This slice does not
+increase the historical R1 gate score or claim overall application maturity.
+
+Resume: do not replay the completed install/upgrade. The dedicated synthetic
+app and isolated reference fixtures remain local for review, with exact resource
+ownership retained privately; no cleanup of these new fixtures is claimed.
+The earlier core/Partners cleanup stays complete. Next application work should
+address the recorded UI gaps and then a coherent contextual integration/reminder
+workflow, using app seams and recording any genuinely general core requirement.
+
 ## Clean-core qualification (11November2026)
 
 The newer owned-core reset has a clean eight-addon TEST artifact, real bootstrap/login/native Users list/form, and an immutable optional Notes composition. Normal install/use, deliberately faulted native uninstall, fresh recovery and separate resume/use, completed native uninstall, and exact source removal have passed their bounded checks. The recovery exercise found and fixed an optional-authentication schema assumption (CR-0014). The source-removal fixture retained populated event history and denied the removed binding.
