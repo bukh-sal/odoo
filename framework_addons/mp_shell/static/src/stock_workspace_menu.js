@@ -11,27 +11,21 @@ class StockWorkspaceMenu extends Component {
     static props = {};
     static template = xml`
         <Dropdown>
-            <button type="button" class="mp_stock_workspace" aria-haspopup="menu" t-esc="label"/>
+            <button type="button" aria-haspopup="menu" t-esc="messages.reference"/>
             <t t-set-slot="content">
-                <DropdownItem t-foreach="workspaces" t-as="space" t-key="space.id"
-                    onSelected="() => this.open('/odoo', space.id)">
-                    <span t-esc="space.name"/>
-                </DropdownItem>
                 <t t-if="selected">
-                    <div class="dropdown-divider" role="separator"/>
                     <DropdownItem onSelected="() => this.open('/odoo/action-mp_example_notes.action_notes', selected.id)"><t t-esc="messages.notes"/></DropdownItem>
                     <DropdownItem onSelected="() => this.open('/app/org.example.canvas/', selected.id)"><t t-esc="messages.canvas"/></DropdownItem>
                     <DropdownItem onSelected="() => this.open('/app/settings', selected.id)"><t t-esc="messages.settings"/></DropdownItem>
                     <DropdownItem onSelected="() => this.open('/app/org.example.notes/', selected.id)"><t t-esc="messages.tools"/></DropdownItem>
-                    <DropdownItem onSelected="() => this.open('/odoo/action-mp_core.action_job_history', selected.id)"><t t-esc="messages.jobs"/></DropdownItem>
                 </t>
                 <span t-if="!workspaces.length" class="dropdown-item-text" t-esc="emptyMessage"/>
             </t>
         </Dropdown>`;
 
     setup() {
-        this.messages = { notes: _t("Notes"), canvas: _t("Canvas"),
-            settings: _t("Platform settings"), tools: _t("Notes tools"), jobs: _t("My background jobs") };
+        this.messages = { reference: _t("Reference tools"), notes: _t("Notes"), canvas: _t("Canvas"),
+            settings: _t("Platform settings"), tools: _t("Notes tools") };
         this.workspaces = [];
         this.emptyMessage = _t("No workspaces available");
         onWillStart(async () => {
@@ -63,5 +57,5 @@ class StockWorkspaceMenu extends Component {
 }
 
 if (session.mp_stock_profile && !odoo.__mp_client_release__) {
-    registry.category("systray").add("mp_stock_workspace", { Component: StockWorkspaceMenu }, { sequence: 5 });
+    registry.category("systray").add("mp_reference_tools", { Component: StockWorkspaceMenu }, { sequence: 4 });
 }

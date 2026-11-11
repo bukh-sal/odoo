@@ -1,0 +1,31 @@
+# Translation of the Modular Platform Core workspace navigation.
+msgid ""
+msgstr ""
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: mp_core
+#. odoo-javascript
+msgid "Choose workspace"
+msgstr "اختر مساحة عمل"
+
+#. module: mp_core
+#. odoo-javascript
+msgid "No workspaces available"
+msgstr "لا توجد مساحات عمل متاحة"
+
+#. module: mp_core
+#. odoo-javascript
+msgid "Could not load workspaces"
+msgstr "تعذر تحميل مساحات العمل"
+
+#. module: mp_core
+#. odoo-javascript
+msgid "Open a workspace in a new tab"
+msgstr "افتح مساحة عمل في علامة تبويب جديدة"
+
+#. module: mp_core
+#. odoo-javascript
+msgid "My background jobs"
+msgstr "مهامي في الخلفية"

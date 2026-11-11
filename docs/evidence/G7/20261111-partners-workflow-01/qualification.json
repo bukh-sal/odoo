@@ -1,0 +1,63 @@
+{
+  "scope": "Independent ordinary application recipe, native install/backend workflows and actual scoped event delivery",
+  "source_commit": "224d5818055975c75f158fb811cfd6cad02f874d",
+  "application_source_commit": "2998aacae546ab6545fa10231bc43d4cc67c5781",
+  "application_source": "Separate local Git repository, no app implementation committed to core",
+  "application_version": "0.1.0",
+  "application_digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+  "archive_bytes": 29246,
+  "recipe_parity": "Own-root and path-prefixed operator recipe assemble byte-identically",
+  "image_id": "sha256:af213d84088c9eee3a7ae14dc1b00fe1e43bdd57ed9474b3e80b7eec70a877d3",
+  "source_inputs_matched": 3959,
+  "platform_version": "0.1.53",
+  "native_core_version": "19.0.0.1.53",
+  "install": {
+    "operation_id": "121ba8dd-8ff4-4a07-9510-3a6f38468a4b",
+    "plan_hash": "sha256:917e5673ca02c3363c118e639285e868805d7ab5559726c71be84d0d3ca9614a",
+    "path": "Normal catalog/plan/independent reconstruction/register/exact-hash approval/apply",
+    "state": "completed",
+    "global_installations": 1,
+    "enabled_workspace_features": 2,
+    "bindings": 2,
+    "non_application_table_columns_exact": true
+  },
+  "backend": {
+    "partner_rows": 3,
+    "stale_update": "CONFLICT",
+    "viewer_write": "FORBIDDEN",
+    "foreign_read": "NOT_FOUND",
+    "foreign_relation": "NOT_FOUND",
+    "native_counts": [
+      2,
+      1
+    ],
+    "workflows": [
+      "person/organization creation and same-workspace relation",
+      "revision CAS",
+      "archive/unarchive",
+      "native list/form descriptors"
+    ],
+    "events_produced": 6,
+    "jobs": 0
+  },
+  "event_delivery": {
+    "total": 6,
+    "workspace_counts": {
+      "A": 5,
+      "B": 1
+    },
+    "viewer_subscription": true,
+    "duplicate_ack_idempotent": true,
+    "wrong_actor_denied": true,
+    "wrong_workspace_denied": true,
+    "all_subscriptions_closed": true,
+    "initial_failure": "Wrong fixture membership assumption denied before any subscription; original trace retained, corrected without authority changes",
+    "payload": "Minimized app-owned identity/revision/kind, no contact contents"
+  },
+  "limits": [
+    "Backend/native descriptors are not browser rendering proof",
+    "Human HTTP pull/ack is actual delivery, not a browser callback claim",
+    "Ordinary-recipe uninstall/source removal, identical-archive successor and populated recovery remain pending",
+    "Local TEST candidate, no stable version/support/licensing or release claim"
+  ]
+}

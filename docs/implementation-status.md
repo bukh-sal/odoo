@@ -13,7 +13,7 @@ Current goal: finish the owned app-free core and independently packaged applicat
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-04 reusable workflow and clean delivery — passed.** Historical AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **P28 ordinary application-recipe removal - source checks passed; installed qualification pending.** Codex implements and reviews directly; next gaps include independent application-recipe removal, browser Notes UI and varied-app/cross-minor qualification. Private planning remains local-only.
+- Latest work item: **P29 independent Partners app installed and backend/event-qualified; P30 generic stock workspace navigation source-verified.** Codex implements and reviews directly; browser, ordinary-recipe removal and useful-successor/recovery qualification remain pending. Private planning remains local-only.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -24,6 +24,26 @@ The newer owned-core reset has a clean eight-addon TEST artifact, real bootstrap
 The canonical host regression passed777cases (775passed,2existing skips) with4773curated/test inputs unchanged. [Scoped evidence and limitations](evidence/G7/20261111-core52-lifecycle-01/qualification.json) distinguish host fixes, immutable image provenance and the separate single-database removal fixture. Exact cleanup acceptance is recorded there. These results do not replace historical R1 acceptance or settle varied-app, cross-minor compatibility, event-delivery, browser Notes UI or final support/licensing policy.
 
 The ordinary [clean-removal build command](clean-candidate-build.md#build-an-exact-source-removal-image) now replaces the one-off subtraction build. Actual image verification removed only14 Notes source/archive files, preserved3679core files and all77Python dependency fingerprints, and audited11final layers. [P27 evidence](evidence/G7/20261111-recorded-clean-removal-01/qualification.json) records3/3 bounded checks plus56focused source checks. No deployment/database mutation or full-suite repeat was needed for this host-tool change. The reference-package image path is qualified. CR-0016 subsequently extended source removal to ordinary/mixed application recipes:73affected checks (one existing skip), real authored archives/materialization and independent reconstruction pass; [source evidence](evidence/G7/20261111-application-removal-source-01/qualification.json). Its installed image/application qualification remains pending.
+
+## Independent app and native navigation (11November2026)
+
+An independent Partners candidate lives in its own local source repository and
+uses an ordinary application recipe. Direct and operator-wrapper assembly are
+byte-identical. Its normal approved native installation, useful scoped
+person/organization workflows, revision and role/relation denials, and actual
+six-event subscribe/poll/ack delivery passed on core0.1.53. No app-specific core
+branch or non-app schema change was required; CR-0017 added a general app-owned
+input-schema capability. [Scoped evidence](evidence/G7/20261111-partners-workflow-01/qualification.json)
+retains the limits: browser rendering, ordinary-recipe removal and unchanged-app
+successor/recovery qualification remain open.
+
+Source review found the workspace picker was packaged only with the optional
+reference shell. CR-0018 moves generic navigation into core, retaining optional
+reference shortcuts separately. Candidate0.2.0/native19.0.0.2.0 identifies that
+useful feature, with the exact Partners archive unchanged. Five mocked-boundary
+component logic checks and39affected host checks pass; the frozen119files are
+unchanged. This source evidence is not installed/browser proof or a stable
+version/support/licensing decision.
 
 ## Application adoption (completed goal)
 
