@@ -5,18 +5,15 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal: application adoption AP-01..04 — complete. User authorized all four
-phases to run sequentially unattended on8November2026. Preserve completed
-AT14/14, AR16/16, CF12/12, BG/BX and R1 99/99 scopes and sealed49/47/46 artifacts.
-No hosted/production deployment, publication, paid services or real-data import.
+Current goal: finish the owned app-free core and independently packaged application path. The clean candidate and bounded Notes lifecycle are verified; broader application/compatibility and policy work remain open. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-08T23:36:29.080319+00:00
+- Updated UTC: 2026-11-11T09:03:01.955560+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-04 reusable workflow and clean delivery — passed.** Historical AR/CF/BG/R1 scopes remain complete.
-- Active item: **None. All four authorized phases are complete;retain the named pilots and await a new selected requirement.** Plan (local-only, removed from the public tree).
+- Latest work item: **P27 recorded clean source-subtraction build - passed within its existing qualified composition profile.** Codex implements and reviews directly; next gaps include independent application-recipe removal, browser Notes UI and varied-app/cross-minor qualification. Private planning remains local-only.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -24,7 +21,9 @@ No hosted/production deployment, publication, paid services or real-data import.
 
 The newer owned-core reset has a clean eight-addon TEST artifact, real bootstrap/login/native Users list/form, and an immutable optional Notes composition. Normal install/use, deliberately faulted native uninstall, fresh recovery and separate resume/use, completed native uninstall, and exact source removal have passed their bounded checks. The recovery exercise found and fixed an optional-authentication schema assumption (CR-0014). The source-removal fixture retained populated event history and denied the removed binding.
 
-The canonical host regression passed777cases (775passed,2existing skips) with4773curated/test inputs unchanged. [Scoped evidence and limitations](evidence/G7/20261111-core52-lifecycle-01/qualification.json) distinguish host fixes, immutable image provenance and the separate single-database removal fixture. Exact cleanup acceptance is recorded there after final verification. These results do not replace historical R1 acceptance or settle varied-app, cross-minor compatibility, event-delivery, browser Notes UI or final support/licensing policy.
+The canonical host regression passed777cases (775passed,2existing skips) with4773curated/test inputs unchanged. [Scoped evidence and limitations](evidence/G7/20261111-core52-lifecycle-01/qualification.json) distinguish host fixes, immutable image provenance and the separate single-database removal fixture. Exact cleanup acceptance is recorded there. These results do not replace historical R1 acceptance or settle varied-app, cross-minor compatibility, event-delivery, browser Notes UI or final support/licensing policy.
+
+The ordinary [clean-removal build command](clean-candidate-build.md#build-an-exact-source-removal-image) now replaces the one-off subtraction build. Actual image verification removed only14 Notes source/archive files, preserved3679core files and all77Python dependency fingerprints, and audited11final layers. [P27 evidence](evidence/G7/20261111-recorded-clean-removal-01/qualification.json) records3/3 bounded checks plus56focused source checks. No deployment/database mutation or full-suite repeat was needed for this host-tool change. The current path supports the qualified reference-package composition; generic application-recipe removal remains explicitly unqualified.
 
 ## Application adoption (completed goal)
 

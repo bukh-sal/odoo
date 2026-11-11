@@ -1,0 +1,67 @@
+{
+  "image_id": "sha256:82a3e4212d5c2b13452ea2bda0c7801ea32f18837c95dfb8aedad9be549b2c2b",
+  "image_tar_sha256": "cecfa82e90703be012abe2889c789390294e0670b4373c91bf1c7940eb683ac8",
+  "layers": [
+    {
+      "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+      "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+      "index": 0
+    },
+    {
+      "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+      "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+      "index": 1
+    },
+    {
+      "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+      "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+      "index": 2
+    },
+    {
+      "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+      "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+      "index": 3
+    },
+    {
+      "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+      "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+      "index": 4
+    },
+    {
+      "diff_id": "sha256:6688b2b7509fd83b05ff3a8db7d97878aa1e8bc7c4e2a6195ef08d87fb611316",
+      "digest": "sha256:9f29cc9dec5f21521be4576bd21460bbc0cf1a656bbb753b0410e9320496f479",
+      "index": 5
+    },
+    {
+      "diff_id": "sha256:4a06874ee0c1a8590437d9cbac139f3ab1cc5bb728186f86032db70d96ac7eca",
+      "digest": "sha256:b8e9d2d96f3bce5d64a4cc8fa8a8affcc8e06870bb76e6887b3d1ba324cb219c",
+      "index": 6
+    },
+    {
+      "diff_id": "sha256:42b942d177a92dd8b1b151167fbc45449ffd1f5efac9eac9c12602e36de8acdc",
+      "digest": "sha256:672d1cfd4e6f8f39b2b7a1acabb677aa76c0de45ea06f9bc40e13908c6bfe008",
+      "index": 7
+    },
+    {
+      "diff_id": "sha256:13b789266c7f509e0afd6c2c5b23f64803bc64a6364a389864ddf7b705ff9246",
+      "digest": "sha256:d5d10b8186a29ae2be29dd08b22b40e70ed5de483e9ee6b388bd0044617c6593",
+      "index": 8
+    },
+    {
+      "diff_id": "sha256:cfb2257b02f68664c79f430d083484ff75e99bda5a481eebb1b13168037aaa09",
+      "digest": "sha256:8cffcc0759f3ab5ea82e1c9268c4a34f34a2c9c7c819d751883197a4c57331f9",
+      "index": 9
+    },
+    {
+      "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+      "index": 10
+    }
+  ],
+  "non_project_whiteouts": [
+    "/etc/apt/sources.list.d/.wh.debian.sources"
+  ],
+  "project_files": 3682,
+  "result": "exact-clean-final-layers-passed",
+  "source_image_not_final_ancestor": true
+}

@@ -80,3 +80,5 @@ mandatory. A retained failed database can still block that operation. This build
 command does not touch databases, delete history or perform lifecycle mutation.
 Do not rerun a failed build using the same name; inspect its recorded phase,
 image and any exact retained input-container identity first.
+
+Actual [recorded clean-removal qualification](evidence/G7/20261111-recorded-clean-removal-01/qualification.json) passed the strict observed-image delta and every final-layer check. This replaces the prior private subtraction build for the existing qualified composition profile; it does not add support for arbitrary source recipes or weaken installation/removal approval.

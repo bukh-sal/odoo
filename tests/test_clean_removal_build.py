@@ -2,6 +2,7 @@
 import contextlib
 import copy
 import hashlib
+import io
 import json
 from pathlib import Path
 import shutil
@@ -199,6 +200,23 @@ class CleanRemovalBuild(unittest.TestCase):
             self.assertFalse(env.output.exists())
             self.assertFalse((env.root / '.local').exists())
             self.assertEqual(env.docker.commands, [])
+
+    def test_cli_plan_exposes_exact_removed_paths_and_remaining_composition_for_review(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            env = Environment(Path(temporary))
+            plan = env.invoke(plan=True)
+            output = io.StringIO()
+            with patch.object(builder, 'build', return_value=plan), patch.object(sys, 'argv',
+                    ['build_clean_removal.py', '--image-id', SOURCE, '--source-build-record', str(env.record_path),
+                        '--remove-package', PLUGIN, '--output', str(env.output), '--plan']), \
+                    contextlib.redirect_stdout(output):
+                builder.main()
+            preview = json.loads(output.getvalue())
+            self.assertEqual(preview['remaining_addons'], ['base'])
+            self.assertEqual(preview['remaining_artifacts'], [])
+            self.assertEqual(len(preview['source_diff']), 2)
+            self.assertTrue(all(row['target_sha256'] is None for row in preview['source_diff']))
+            self.assertNotIn('payload_source_sha256', preview)
 
     def test_real_build_control_flow_binds_old_payload_and_new_host_then_releases_only_alias(self):
         with tempfile.TemporaryDirectory() as temporary:

@@ -220,7 +220,8 @@ def build(root, *, image, record_path, packages, output, gate, plan_only=False, 
         source_diff=diff, final_base=clean['python_image'], clean_inputs=clean,
         dependency_image_is_copy_input_only=True, source_payload_is_not_rebuilt_from_host=True)
     if plan_only:
-        return dict(result='planned_not_built', **provenance)
+        return dict(result='planned_not_built', remaining_addons=sorted(inventory['native_addons']),
+            remaining_artifacts=sorted(inventory.get('artifacts', {})), **provenance)
     private = protect_directory(root / '.local/operator/builds')
     private_record = private / (output.name + '.json')
     work = private / (output.name + '-work')
@@ -351,8 +352,10 @@ def main():
     args = parser.parse_args()
     report = build(ROOT, image=args.image_id, record_path=args.source_build_record,
         packages=args.remove_package, output=args.output, gate=args.gate, plan_only=args.plan)
-    print(json.dumps({k: report[k] for k in ('result', 'source_image', 'removed_packages')}
-        | {k: report[k] for k in ('tag', 'image_id', 'inventory_digest') if k in report}))
+    keys = ['result', 'source_image', 'removed_packages', 'tag', 'image_id', 'inventory_digest']
+    if args.plan:
+        keys += ['source_diff', 'final_base', 'remaining_addons', 'remaining_artifacts']
+    print(json.dumps({k: report[k] for k in keys if k in report}))
 
 
 if __name__ == '__main__':

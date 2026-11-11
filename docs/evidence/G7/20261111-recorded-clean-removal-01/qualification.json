@@ -1,0 +1,79 @@
+{
+  "acceptance": {
+    "checks": [
+      "recorded build and refusal paths",
+      "actual exact runtime/source subtraction through unchanged production guard",
+      "content-addressed final-layer proof and temporary resource release"
+    ],
+    "overall_core_reset_complete": false,
+    "passed": 3,
+    "total": 3
+  },
+  "addons": [
+    "auth_password_policy",
+    "base",
+    "base_setup",
+    "bus",
+    "mp_compat",
+    "mp_core",
+    "mp_identity",
+    "web"
+  ],
+  "all_layer_project_bytes_exact": true,
+  "artifacts": 0,
+  "audit_sha256": "cb25c6b5fb5a4628b6bfc29e935d79c76ff56a4e338aae0cb8ff66c48d9956ff",
+  "dependency_metadata_exact": true,
+  "exact_core_files_preserved": 3679,
+  "final_layers": 11,
+  "final_preview_review": {
+    "build_execution_ast_unchanged_after_live_run": true,
+    "final_preview_created_no_output": true,
+    "final_preview_matches_actual_build_diff": true,
+    "post_build_change": "Read-only CLI preview exposes exact deletion diff and remaining addon/artifact selection",
+    "source_sha256": "e42237ad8cb0a1b5ffbec000a9913c91fd8c2a1ec7f0d91da33e4c0f62c0c8cb"
+  },
+  "focused_checks": {
+    "distinct_cases": 56,
+    "errors": 0,
+    "failures": 0,
+    "final_builder_cases": 12,
+    "final_builder_seconds": 1.493,
+    "first_batch_cases": 53,
+    "first_batch_seconds": 49.306,
+    "scope": "Host builder/audit and existing clean materialization/removal guards; no full-host rerun",
+    "skips": 0
+  },
+  "foreign_container_ids_unchanged": 118,
+  "host_commit": "c35c4418addb12a2ddf87b486ff96391bbc35112",
+  "input_container_absent": true,
+  "limits": [
+    "Existing qualified clean reference-package composition only; general application_packages removal remains separate.",
+    "Image-build qualification; the unchanged executor/database lifecycle was qualified in the preceding round and was not rerun.",
+    "No browser Notes/event delivery, new release/support policy or overall core-reset completion claim."
+  ],
+  "networks_and_volumes_unchanged": true,
+  "no_application_final_ancestor": true,
+  "payload_source_commit": "c35c4418addb12a2ddf87b486ff96391bbc35112",
+  "project_files": 3682,
+  "protected_images_present": 35,
+  "python_distributions": 77,
+  "result": "normal-recorded-clean-source-subtraction-verified",
+  "retained_resources": {
+    "containers": 0,
+    "images": 2,
+    "networks": 0,
+    "purpose": "Named immutable candidates for subsequent stock WebClient/application composition qualification; no service running",
+    "source_tag": "modular-platform:stage-20261111t085600834048z",
+    "target_tag": "modular-platform:stage-20261111t085720775591z",
+    "volumes": 0
+  },
+  "runtime_drift": [],
+  "site_or_trust_or_catalog_mutations": false,
+  "source_alias_absent": true,
+  "source_artifact_digest": "sha256:737c35022494b0a449bc7116b6aae4bb2403413f4420201764e862c9642db45b",
+  "source_files_removed": 14,
+  "source_image": "sha256:c12e115acbf34cfd6a87c4b2bc8e5c24b6ebf9695e2b9ef1e6bdb9d04e1026f2",
+  "source_record_sha256": "9f16d891c00a74339a6ebac31458e05070b48d7b341892e24390e1e75da9c887",
+  "target_image": "sha256:82a3e4212d5c2b13452ea2bda0c7801ea32f18837c95dfb8aedad9be549b2c2b",
+  "target_record_sha256": "1aa2650b4311ff2f9571a66766be79e3c9e629287f440a369902214f15ebcf68"
+}
