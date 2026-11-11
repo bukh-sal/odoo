@@ -29,8 +29,9 @@ restore, separate resume and useful workflow also passed. The revoked workspace
 stayed forbidden; the failed database and original receipts remain retained.
 Canonical810cases:808passed,2existing skips,0failures/errors,588.943s with
 4810inputs unchanged. [Final scoped evidence](evidence/G7/20261111-core021-qualification/qualification.json)
-records source/runtime/host boundaries; cleanup and default-artifact integration
-are tracked separately until their exact checks pass.
+records source/runtime/host boundaries. Standalone default-artifact integration
+and exact cleanup subsequently passed; see the linked artifact/cleanup receipts.
+This completes the bounded local candidate, not a universal or production release.
 
 | ID | Date | Requesting work item | Requirement | Change | Class | General? | Contract | Tests | Decision |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

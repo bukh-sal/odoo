@@ -5,9 +5,9 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal: consolidate the locally qualified app-free core and independently packaged application path. Runtime lifecycle, native UI, unchanged-app successor and populated recovery checks have passed their bounded scopes. Default-artifact integration and exact cleanup remain open. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
+Current goal: consolidate the locally qualified app-free core and independently packaged application path. Runtime lifecycle, native UI, unchanged-app successor and populated recovery checks have passed their bounded scopes. Default-artifact integration and exact cleanup have passed. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-11T14:11:50.337700+00:00
+- Updated UTC: 2026-11-11T15:39:55.475596+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -75,8 +75,33 @@ separate resume; A useful update/create and B denial passed with the same app
 archive. Canonical810cases passed808with2existing skips,0failures/errors and
 4810inputs unchanged. [Final scoped evidence](evidence/G7/20261111-core021-qualification/qualification.json)
 retains exact operation/image identities and limitations. Default artifact
-integration and exact owned-resource cleanup remain pending; this is not a
+integration and exact owned-resource cleanup passed; this is not a
 stable release or production claim.
+
+## Final local candidate integration (11November2026)
+
+The agreed six-step app-free core roadmap is qualified within its bounded scope.
+The default build selects the owner-approved eight addons. Standalone 0.2.1 image
+`sha256:9c4c2cea5ef1b7d04dfebe670c9aeff335704b13cb81cfac70c11a67927dc075`
+passed an audit of all 14 final layers, exact 3,685 project-file closure and fresh core-only
+bootstrap/login/native list/form/read/stock-WebClient HTTP smoke. Its3682
+inventoried runtime files match the qualified subtraction image. Rebuilt Python
+dependency binaries are not claimed byte-identical. All 32 targeted default-policy
+checks and 119 frozen files across ten rows passed; the separate runtime-source
+canonical baseline remains 810 cases (808 passed, two existing skips).
+
+Exact cleanup completed 277 actions: 121 owned containers, four networks, 12 volumes,
+six obsolete images and 13 exact tags removed. All 119 foreign containers, 45 foreign networks,
+107 foreign volumes and 829 host evidence files were preserved. The final core and
+qualified independent-app images remain; no test site remains live.
+[Artifact identity and smoke](evidence/G7/20261111-core021-qualification/artifact.json),
+[cleanup acceptance](evidence/G7/20261111-core021-qualification/cleanup.json) and
+[scoped qualification](evidence/G7/20261111-core021-qualification/README.md) retain
+provenance, original failures and proof limits. Human policy choices are recorded
+in [ADR0083](architecture-decisions/0083-provisional-app-free-core-candidate.md).
+Version 0.2.1 is provisional for exact qualified combinations only. No publication,
+production deployment, arbitrary-app compatibility, stable ABI or LTS is claimed.
+Tasks, Storage and Documents remain outside this completed goal.
 
 ## Application adoption (completed goal)
 

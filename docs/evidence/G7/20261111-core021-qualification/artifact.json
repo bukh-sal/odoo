@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "result": "standalone-default-app-free-core-qualified",
+  "image_id": "sha256:9c4c2cea5ef1b7d04dfebe670c9aeff335704b13cb81cfac70c11a67927dc075",
+  "tag": "modular-platform:stage-20261111t152755399861z",
+  "source_commit": "9e0eba64f6347829d91ff88ad018377e5bab520c",
+  "source_inputs": 3946,
+  "source_inputs_still_match": true,
+  "policy": "deploy/distribution-r1-core.json",
+  "policy_sha256": "96559046a4142814a6c2ee318bc7409272a95b57253059d8e8e0a4b34c47a009",
+  "candidate_record_sha256": "9c414172cd85e4d3e20683bbdc56f68a6de0d83bbeb7a7521a21f344ddf9fcf0",
+  "build_log_sha256": "2578e35479ae06f4fd076008b8d4cd87e9c2061639844314cca2cf958b7829d3",
+  "platform_version": "0.2.1",
+  "native_core_version": "19.0.0.2.1",
+  "python_version": "3.12.16",
+  "requirements_lock_sha256": "sha256:8413f451d6e0d0f7d4e3ed8cc833c5d2c07a6fdf89dadf67280fff0b3a1af893",
+  "rtl": {
+    "node_version": "v24.22.2",
+    "rtlcss_version": "rtlcss version: 4.3.0",
+    "notice_packages": 7
+  },
+  "final_layers": 14,
+  "project_files": 3685,
+  "inventoried_runtime_files_unchanged": 3682,
+  "all_layer_result": "exact-clean-final-layers-passed",
+  "audit_sha256": "f1ec8143cb5e9e46ac74c824f9dce663794f9003f1542de7039ea844a7e1af99",
+  "non_project_whiteouts": [
+    "/etc/apt/sources.list.d/.wh.debian.sources"
+  ],
+  "source_app_image_not_final_ancestor": true,
+  "artifacts": 0,
+  "addons": [
+    "auth_password_policy",
+    "base",
+    "base_setup",
+    "bus",
+    "mp_compat",
+    "mp_core",
+    "mp_identity",
+    "web"
+  ],
+  "fresh_core_smoke": "standalone-default-eight-addon-core-bootstrap-human-login-native-list-form-read-and-stock-webclient-http-passed",
+  "smoke_receipt_sha256": "dc90d79c8d285094132b360ccd46e6f3fc7fc8b32f10a25456fec1a14a0b18fc",
+  "no_app_or_authority_mount": true,
+  "dependency_binary_identity_claim": false,
+  "dependency_qualification": "same pinned lock; rebuilt dependencies; fresh bootstrap/native HTTP smoke passed",
+  "browser_rendering_new_core_smoke_claim": false,
+  "publication_or_production": false
+}

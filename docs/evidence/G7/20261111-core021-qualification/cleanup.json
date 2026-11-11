@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "result": "exact-owned-cleanup-independently-verified",
+  "plan_hash": "sha256:a036ad8e4faf253411b2f5a46e7f7493f6b0725a0ec7c81886a3111570c41cd7",
+  "actions_completed": 277,
+  "owned_containers_removed": 121,
+  "networks_removed": 4,
+  "volumes_removed": 12,
+  "obsolete_images_removed": 6,
+  "exact_image_tags_removed": 13,
+  "foreign_containers_preserved": 119,
+  "foreign_networks_preserved": 45,
+  "foreign_volumes_preserved": 107,
+  "host_evidence_files_preserved": 829,
+  "retained_images": [
+    "sha256:9c4c2cea5ef1b7d04dfebe670c9aeff335704b13cb81cfac70c11a67927dc075",
+    "sha256:a2a41daeac8d97dcab80201ec38d6fbde758d7759df9bdeee8b375214db20ece"
+  ],
+  "manifest_sha256": "348390afaa1bd6e3f74f9f3f4bd43916d475c1c8247db50c513d103f6f67e648",
+  "execution_result_sha256": "97705993ad6c0af6dc707c83dd4d1963da90b4f3adc3bdea46888ca62f80b5d8",
+  "independent_absence_sha256": "c6860640552a9ccfd68452a9fef12996c26333d6e7b80848e9cd00ec3920e78e",
+  "no_prune_force_or_prefix_deletion": true,
+  "no_foreign_or_existing_user_data_removed": true
+}

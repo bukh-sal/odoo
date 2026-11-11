@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "result": "bounded-runtime-qualification-passed-final-integration-pending",
+  "result": "six-step-local-app-free-candidate-qualified",
   "core_version": "0.2.1",
   "native_core_version": "19.0.0.2.1",
   "runtime_source_commit": "0b5bfce966db45b596d6fad6358e7d89dd3c186c",
@@ -96,8 +96,27 @@
     "Private raw data/credentials/authority evidence retained locally, not copied here",
     "No arbitrary app, complex migration, stable ABI, production or LTS claim",
     "Event proof is actual subscribe/poll/ack delivery, not browser callback/consumer effect qualification",
-    "Default standalone core build and exact cleanup pending separate receipts",
     "Original core0.2.0 reinstall failure and private verifier failures retained; no operation replay"
   ],
-  "publication_or_production_authorized": false
+  "publication_or_production_authorized": false,
+  "roadmap_acceptance": {
+    "passed": 6,
+    "required": 6,
+    "scope": "agreed bounded roadmap only; not new universal G7/production acceptance"
+  },
+  "final_artifact": "artifact.json",
+  "cleanup": "cleanup.json",
+  "default_policy_targeted_checks": {
+    "cases": 32,
+    "passed": 32,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 71.926
+  },
+  "frozen_contracts": {
+    "files": 119,
+    "rows": 10,
+    "result": "unchanged/passed"
+  }
 }

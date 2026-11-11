@@ -35,3 +35,8 @@ deployment is authorized by candidate qualification.
 
 See [ADR0083](architecture-decisions/0083-provisional-app-free-core-candidate.md)
 for the owner's selection and policy disposition.
+
+The [final qualification report](evidence/G7/20261111-core021-qualification/README.md)
+binds the retained standalone image, same-archive app evidence, all-layer audit,
+fresh core smoke and exact cleanup. Both qualified images remain local; no test
+site is left running.
