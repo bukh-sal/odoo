@@ -7,7 +7,7 @@ from odoo.exceptions import AccessError
 from odoo.addons.mp_identity.scopes import current_scope
 from modular_platform.contracts import CONTRACTS, ContractError, FORMAT_CHECKER, validate_binding
 
-from .registry import SERVICES
+from .registry import SERVICES, input_schema_for
 
 
 @dataclass(frozen=True)
@@ -30,7 +30,7 @@ class BoundCall:
 
     def invoke(self, values):
         from .controllers import PublicError
-        schema=json.loads((CONTRACTS/self.spec.schema_file).read_text())['$defs'][self.spec.input_schema]
+        schema=input_schema_for(self.spec)
         if not Draft202012Validator(schema,format_checker=FORMAT_CHECKER).is_valid(values):
             raise ContractError('Invalid provider input')
         self.model._mp_guard(self.spec.action)

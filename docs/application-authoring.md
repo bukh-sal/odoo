@@ -106,6 +106,39 @@ application-release evidence for the former sample app is retained in project
 history and is not a current public qualification claim. Do not create a dummy
 workspace or manually insert metadata to bypass this boundary.
 
+## App-owned service input schemas
+
+Candidate0.1.53 adds app-owned input schemas to the existing trusted native
+service registration seam. Load a packaged schema from the app's own source,
+keep its local `$defs`, and select each method's input definition:
+
+```python
+from odoo.addons.mp_core.registry import Method, register
+
+method = Method(
+    model="my_app.record", handler="_mp_service_create",
+    input_schema={**schema, "$ref": "#/$defs/create_input"}, schema_file=None,
+    permission="dev.local.my_app:record.write", mutation=True, action="create",
+    output_schema={**schema, "$ref": "#/$defs/record"},
+)
+register("dev.local.my_app.records", "1.0", "dev.local.my_app", {"create": method})
+```
+
+`schema` is app-owned JSON Schema data loaded from an inventoried app file,
+not a client-selected filename, callable or HTTP value. Declare the same public
+schema as an explicit package resource and service contract. Local references
+are required under the same policy as archive validation; remote references are
+refused. A literal schema cannot also select a core `schema_file`. Existing
+registered core-definition names remain supported without domain-file edits.
+
+Both the normal gateway and supported bound-provider dispatch use this input
+selection and their existing output validation. Actor/model access, technical
+scope, current feature/grant/binding/release checks, mutation idempotency and
+transaction/recovery behavior remain in their existing paths. Schemas validate
+DTOs; they do not grant permission or confine trusted native code. Native app
+registration is a reviewed code capability, not an untrusted registration API.
+Candidate registration/source checks are distinct from installed gateway proof.
+
 ## Application jobs and data
 
 Use workspace-scoped APIs for workspace-owned applications and the explicit

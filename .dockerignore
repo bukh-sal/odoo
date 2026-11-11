@@ -27,3 +27,6 @@
 !requirements.txt
 **/__pycache__
 **/*.pyc
+
+# Independent app repositories supply code, not their Git metadata.
+**/.git

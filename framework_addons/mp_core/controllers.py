@@ -19,7 +19,7 @@ from modular_platform.client_release import protected_gateway
 from modular_platform.contracts import ContractError, validate, load_json, ERROR_STATUS, validate_binding, FORMAT_CHECKER
 from modular_platform.contracts import CONTRACTS
 
-from .registry import SERVICES
+from .registry import SERVICES, input_schema_for
 
 _logger=logging.getLogger(__name__)
 
@@ -205,8 +205,7 @@ class CoreGateway(http.Controller):
             model=request.env[spec.model]
             model._mp_guard(spec.action)
             from jsonschema import Draft202012Validator
-            from modular_platform.contracts import CONTRACTS
-            schema=json.loads((CONTRACTS/spec.schema_file).read_text())['$defs'][spec.input_schema]
+            schema=input_schema_for(spec)
             if not Draft202012Validator(schema,format_checker=FORMAT_CHECKER).is_valid(body['input']):raise ContractError('Invalid method input')
             # Integration capabilities narrow supported paths. A forged browser
             # consumer cannot widen the actor action check above.
