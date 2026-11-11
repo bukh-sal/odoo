@@ -4,6 +4,15 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+11November2026 independent work-application round: no new core change request
+was needed. Own models, schemas, services, client action/assets, team directory
+and workflow stages live in the private app repository. Actual visual review
+found an app HTML drag defect, repaired as app0.1.1 through a normal approved
+upgrade with populated data preserved. All3682 standalone-core inventory files
+remain byte-identical. [Bounded evidence](evidence/G7/20261111-work-application-01/qualification.json)
+distinguishes useful installed/desktop behavior from open UX, mobile, reminder,
+privacy and integration work; no new universal plugin-support claim is made.
+
 CR-0014 (11 November2026), accepted for the bounded clean-core recovery path: minimal-core recovery no longer requires optional TOTP/passkey addons. The private snapshot binds their exact schema footprint, rejects partial or changed schemas before writes, and retains full-auth v1 digests and password/group/current-authority checks. After the original prepare-restore failure, normal separately reviewed restore into a fresh database and separate resume/use passed; current credentials and two prior domain-event histories were preserved, the session secret rotated, and the failed database remained retained.57 affected checks and actual rollback-only SQL passed. Canonical777cases:775passed,2existing skips,0failures/errors; all4773curated/test inputs stayed unchanged during581.391s. Frozen119files/10rows unchanged. Host-only fix in506416c5c1b; immutable image payload provenance is unchanged. See [clean lifecycle evidence](evidence/G7/20261111-core52-lifecycle-01/qualification.json); event delivery, browser Notes UI, varied-app and cross-minor compatibility qualification remain open.
 
 CR-0019 (11November2026), source repair from an actual independent-app

@@ -26,7 +26,16 @@ The supported development subset and limits are documented in
 [native application surface](native-application-surface.md). Complex migrations,
 browser event callbacks, arbitrary external worker implementations, and varied
 independent applications have not been newly qualified by this candidate.
-Tasks, Storage and Documents remain later work.
+An independent private Workboard0.1.1 archive is now qualified for a narrower
+team-task/list desktop workflow on core0.2.1:
+`sha256:ad895ece5df57520435e9ac49d21ccc07b485fd686e19cba4b48168cb2863f1e`.
+Normal installation and app-only upgrade preserved populated app tables;
+actual browser creation, discussion, configurable stages, drag/reload,
+archive/restore and read-only workspace behavior were observed. No core
+customization was required. This does not add Workboard-specific uninstall,
+source-removal/recovery, event-delivery, complex-migration, mobile or reminder
+qualification. See the [work-application evidence](evidence/G7/20261111-work-application-01/qualification.json).
+Storage and Documents remain later work.
 
 Core/vendor licenses and notices are retained unchanged. The Partners test
 package retains its LGPL-3.0-only label and remains private, as do other
@@ -38,5 +47,7 @@ for the owner's selection and policy disposition.
 
 The [final qualification report](evidence/G7/20261111-core021-qualification/README.md)
 binds the retained standalone image, same-archive app evidence, all-layer audit,
-fresh core smoke and exact cleanup. Both qualified images remain local; no test
-site is left running.
+fresh core smoke and exact cleanup. Those final core/Partners test sites remain
+cleaned. A subsequent independent application-review fixture and isolated
+reference fixture are retained locally for visual review; they are separate
+from that completed cleanup and are not production deployments.

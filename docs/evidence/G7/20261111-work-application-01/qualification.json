@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "utc": "2026-11-11T18:53:02.333737+00:00",
+  "scope": "Independent team-work application first useful desktop slice; not full product parity or universal plugin support",
+  "core_version": "0.2.1",
+  "core_runtime_source_changed": false,
+  "core_inventory_files_preserved": 3682,
+  "app_inventory_additions": 16,
+  "application": {
+    "version": "0.1.1",
+    "native_version": "19.0.0.1.1",
+    "archive_digest": "sha256:ad895ece5df57520435e9ac49d21ccc07b485fd686e19cba4b48168cb2863f1e",
+    "image_id": "sha256:5c0bda88bf37e4e274527c450386017b6f3d54ff01e0db5549a8263f3f3f14c9",
+    "private_source": true
+  },
+  "source_checks": {
+    "domain_schema_and_model_boundary": 8,
+    "api_and_controller": 13,
+    "failures": 0,
+    "full_host_rerun": false,
+    "unchanged_core_baseline": "810 cases:808 passed,2 existing skips; not a new app-specific full-host run"
+  },
+  "installed": [
+    "normal independently approved install in two workspaces",
+    "normal approved app-only successor upgrade with all four populated app tables exact",
+    "configurable stage names/order and explicit referenced-completion semantic refusal",
+    "assignment, comments, due dates, search, complete/reopen and archive/restore",
+    "revision conflict, viewer mutation denial, foreign read/relation/assignment refusal",
+    "repeated create identity deduplicates"
+  ],
+  "visual": [
+    "real native app action and own assets in stock WebClient, no reference shell",
+    "create task with local-time due input and read-back",
+    "post contextual comment",
+    "retain or explicitly discard unsaved edit",
+    "configure a new stage",
+    "stage select alternative and real pointer drag persisted after reload",
+    "title search and archive/restore",
+    "viewer reads shared work without mutation controls"
+  ],
+  "defect": {
+    "owner": "application",
+    "description": "Owl boolean binding emitted empty HTML draggable enumerated attribute",
+    "disposition": "Fixed app0.1.1 explicit true/false and verified through normal upgrade + actual drag/reload; original image and failure retained"
+  },
+  "intentional_boundaries": [
+    "workspace-visible team tasks; My work is assignment filtering, not personal privacy",
+    "append-only comments retain activity history; corrections use new comments",
+    "referenced stage completion meaning remains stable; explicit move/new stage changes semantics",
+    "UTC-Z protocol; local-time browser conversion is app responsibility",
+    "trusted native/same-origin code and immutable image transitions retained"
+  ],
+  "open_app_gaps": [
+    "viewer empty-state copy can suggest unavailable actions",
+    "mobile unqualified: requested390px override remained1422px",
+    "delivered reminders and reschedule/cancellation authority unimplemented",
+    "customer/project context requires a separate optional integration",
+    "personal/list privacy, high-volume, complex populated migration and broader accessibility unqualified",
+    "Workboard-specific event delivery/uninstall/removal/recovery not established by this round"
+  ],
+  "private_proof_sha256": {
+    "final-independent.json": "63052916a7eccc8244f921db3a55b1e25f122cdb5bb5f2121b56ae7b0e4f780c",
+    "workboard-browser-result.json": "5983430e1255929d0db79ea451bc82d4318449fb00f2b17482ff09d9074666ef",
+    "retained-resources.json": "9afd75f7d15d0871780c66cd493f28d42fcb6200d4b88868bd3f21b6d034374f",
+    "domain-tests-final.txt": "2f251b627e0f034f219174530497b39ad7e40bda410834880b3d38cd046518a3",
+    "dragfix-tests.txt": "3884e64d4149c2737aef811524ac9970e8109da849e2f872b9791e36f479e173"
+  },
+  "retained_review_fixture": true,
+  "publication": false,
+  "cleanup_run": false,
+  "foreign_baseline_resources_preserved": {
+    "containers": 119,
+    "images": 46,
+    "networks": 45,
+    "volumes": 107
+  }
+}
