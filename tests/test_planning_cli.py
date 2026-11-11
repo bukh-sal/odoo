@@ -17,10 +17,9 @@ from modular_platform.artifacts import ArtifactValidator, TrustPolicy
 from modular_platform.catalog import Catalog
 from modular_platform.plans import check_bundle,release_lock,data_digest
 from modular_platform.resolution import resolve_release
-from modular_platform.projection import PLATFORM_VERSION
 from reference_package import assemble
 from test_plans import base_state, ident, PROVENANCE, STAMP
-from test_resolution import ENVIRONMENT
+from test_resolution import ENVIRONMENT, REFERENCE_PLATFORM_VERSION
 
 
 class PlanningCLI(unittest.TestCase):
@@ -47,9 +46,10 @@ class PlanningCLI(unittest.TestCase):
         for path, digest in artifacts:
             catalog.add(path, expected_digest=digest)
         # Current archives require the registered-job API introduced in0.1.8.
-        # Model an already compatible empty core, not an implicit core upgrade.
-        environment={**copy.deepcopy(ENVIRONMENT),'platform_version':PLATFORM_VERSION}
-        provenance={**copy.deepcopy(PROVENANCE),'platform_version':PLATFORM_VERSION}
+        # These immutable reference apps declare <0.2. Model their compatible
+        # historical core, never silently widen/relabel them for the current SDK.
+        environment={**copy.deepcopy(ENVIRONMENT),'platform_version':REFERENCE_PLATFORM_VERSION}
+        provenance={**copy.deepcopy(PROVENANCE),'platform_version':REFERENCE_PLATFORM_VERSION}
         state=base_state();state['release_lock']=release_lock(resolve_release([],[],environment,{}),provenance,generation=1,created_at=STAMP)
         state['release_digest']=data_digest(state['release_lock'])
         self.document = {'state': state, 'environment': environment, 'provenance': provenance, 'python_metadata': [],

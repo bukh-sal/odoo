@@ -12,8 +12,10 @@ from .resolution import PlanningError, resolve_release, binding_matches_scope
 from .projection import catalog_validation_digest
 
 
-def scoped_bindings(solution, installations, previous):
+def scoped_bindings(solution, installations, previous, *, new_generation=1):
     """Materialize explicit scoped aliases with stable IDs/generations."""
+    if type(new_generation) is not int or not 1 <= new_generation <= 9007199254740991:
+        raise PlanningError('A bounded published release epoch is required for new bindings')
     by_scope = {(item['site_id'], item['workspace_id'], item['plugin_id']): item for item in installations}
     old = {(item['consumer_installation_id'], item['workspace_id'], item['alias']): item for item in previous}
     bindings = []
@@ -36,7 +38,7 @@ def scoped_bindings(solution, installations, previous):
                 'service_id': selected['service_id'], 'contract_major': selected['contract_major'],
                 'api_version': selected['api_version'], 'provider_plugin_id': selected['provider'],
                 'provider_installation_id': provider['installation_id'],
-                'generation': prior['generation'] if prior else 1, 'optional': selected['optional']}
+                'generation': prior['generation'] if prior else new_generation, 'optional': selected['optional']}
             if prior and binding != prior:
                 binding['generation'] += 1
             bindings.append(binding)
@@ -179,12 +181,16 @@ def prepare_document(document, catalog, *, retained_trust_for=()):
             installations[scoped_installation_key(item)] = item
     bindings = request.get('bindings')
     if uninstall:
-        expected = scoped_bindings(resolved, list(installations.values()), state.get('bindings', []))
+        expected = scoped_bindings(resolved, list(installations.values()), state.get('bindings', []), new_generation=lock['generation'])
         if bindings is not None and sorted(bindings, key=lambda row: row['binding_id']) != sorted(expected, key=lambda row: row['binding_id']):
             raise PlanningError('Uninstall bindings must be reconstructed from surviving scopes')
         bindings = expected
     if bindings is None:
-        bindings = scoped_bindings(resolved, list(installations.values()), state.get('bindings', []))
+        # A removed alias can return with the same deterministic ID. Its new
+        # incarnation must not match retained old receipts/claims/subscriptions.
+        # The release epoch comes from current observed state, never a request.
+        # Existing unchanged aliases retain their generations across releases.
+        bindings = scoped_bindings(resolved, list(installations.values()), state.get('bindings', []), new_generation=lock['generation'])
     bundle = prepare_plan(state, lock, resolved, request['targets'], bindings=bindings,
         endpoints=request.get('endpoints', state.get('endpoints', [])),
         permission_changes=request.get('permission_changes', []), trust_changes=request.get('trust_changes', []),

@@ -7,7 +7,7 @@
 
 Current goal: finish the owned app-free core and independently packaged application path. The clean candidate and bounded Notes lifecycle are verified; broader application/compatibility and policy work remain open. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-11T09:03:01.955560+00:00
+- Updated UTC: 2026-11-11T14:11:50.337700+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
@@ -44,6 +44,32 @@ useful feature, with the exact Partners archive unchanged. Five mocked-boundary
 component logic checks and39affected host checks pass; the frozen119files are
 unchanged. This source evidence is not installed/browser proof or a stable
 version/support/licensing decision.
+
+## Core0.2 compatibility and lifecycle result (11November2026)
+
+The useful workspace-navigation successor ran the identical independent app
+archive, preserving all3populated records,6event business rows and current
+memberships/grants. Actual stock WebClient list/form/save/reload, separate-tab
+workspace selection with an A draft preserved, and B viewer isolation passed.
+Normal native uninstall and exact ordinary-recipe source removal then left an
+eight-addon core with7historical events, no app source/archive/bindings and a
+retained catalog archive. The subtraction image passed11final-layer checks
+over3685project files. [Bound evidence and limits](evidence/G7/20261111-core020-independent-app-01/qualification.json)
+include the unchanged archive and operation/image identities.
+
+The corrected canonical808cases passed806with2existing skips,4810monitored
+inputs unchanged. The first4failures/44errors were stale historical-reference
+compatibility fixtures and a fixed52assertion; their traces remain. Old exact
+reference archives still declare<0.2 and are explicitly refused on0.2.
+
+A subsequent normal reinstall exposed CR-0019: recreated generation1bindings
+matched retained generation1idempotency receipts and returned a deleted-record
+DTO. The new table was empty; the operation was not replayed. Source repair
+allocates new incarnations from the independently observed release epoch while
+preserving unchanged aliases.97affected and16identity checks pass; frozen119files
+remain unchanged. Compatible candidate0.2.1/native19.0.0.2.1, a new normal
+lifecycle and populated/current-authority recovery are pending. This is an open
+installed qualification item, not a waived test or stable release claim.
 
 ## Application adoption (completed goal)
 

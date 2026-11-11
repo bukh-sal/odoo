@@ -15,6 +15,10 @@ from modular_platform.resolution import PlanningError, dependent_closure, resolv
 from modular_platform.planning_cli import scoped_bindings
 from reference_package import assemble
 
+# These exact reference archives declare <0.2. Their lifecycle fixtures model a
+# qualified historical core, not whichever SDK happens to run the host tests.
+REFERENCE_PLATFORM_VERSION = '0.1.53'
+
 ENVIRONMENT = {'platform_version': '0.1.0', 'native_runtime': 'odoo-19',
     'accepted_wheel_tags': ['py3-none-any'], 'core_addons': ['mp_core', 'mp_shell'],
     'markers': {'implementation_name': 'cpython', 'implementation_version': '3.12.16',
@@ -172,6 +176,23 @@ class Resolution(unittest.TestCase):
         self.assertNotIn(third, [item['workspace_id'] for item in bindings])
         self.assertEqual(len({item['binding_id'] for item in bindings}), 2)
 
+    def test_new_binding_incarnations_use_the_release_epoch_without_changing_live_aliases(self):
+        from uuid import UUID
+        uid=lambda value:str(UUID(int=value))
+        owner=plugin('owner',provides=[provide('owner')],requires=[require()])
+        solution=self.solve([owner],{'owner':''})
+        installations=[dict(installation_id=uid(100),site_id=uid(1),workspace_id=uid(2),plugin_id='org.test.owner')]
+        original=scoped_bindings(solution,installations,[],new_generation=6)
+        self.assertEqual(len(original),1);self.assertEqual(original[0]['generation'],6)
+        unchanged=scoped_bindings(solution,installations,original,new_generation=12)
+        self.assertEqual(unchanged,original)
+        reintroduced=scoped_bindings(solution,installations,[],new_generation=12)
+        self.assertEqual(reintroduced[0]['binding_id'],original[0]['binding_id'])
+        self.assertEqual(reintroduced[0]['generation'],12)
+        for bad in (True,0,-1,1.5,9007199254740992):
+            with self.subTest(epoch=bad),self.assertRaises(PlanningError):
+                scoped_bindings(solution,installations,[],new_generation=bad)
+
     def test_optional_absent_incompatible_or_undeclared_native_coupling(self):
         consumer = plugin('consumer', optional={'one': '>=2'}, requires=[require(optional=True)])
         provider = plugin('one', provides=[provide('one')])
@@ -222,12 +243,14 @@ class Resolution(unittest.TestCase):
             # catalog fixtures above retain their original0.1.0 environment.
             with self.assertRaises(PlanningError):
                 resolve_release(catalog, [], ENVIRONMENT, {'org.example.canvas': '', 'org.example.notes_labels': ''})
-            from modular_platform.projection import PLATFORM_VERSION
-            environment=copy.deepcopy(ENVIRONMENT);environment['platform_version']=PLATFORM_VERSION
+            environment=copy.deepcopy(ENVIRONMENT);environment['platform_version']=REFERENCE_PLATFORM_VERSION
             solution = resolve_release(catalog, [], environment, {'org.example.canvas': '', 'org.example.notes_labels': ''})
             self.assertEqual(solution['native_order'], ['mp_example_notes', 'mp_example_canvas', 'mp_example_notes_labels'])
             self.assertEqual({item['contract_major'] for item in solution['bindings']}, {1, 2})
             self.assertEqual(len(solution['plugins']), 3)
+            unsupported={**environment,'platform_version':'0.2.0'}
+            with self.assertRaises(PlanningError):
+                resolve_release(catalog, [], unsupported, {'org.example.canvas': '', 'org.example.notes_labels': ''})
 
 
 if __name__ == '__main__':

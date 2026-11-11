@@ -9,6 +9,10 @@ sealed kits and installed catalog blobs; create a new version and image for
 changed bytes. [Current qualification](implementation-status.md) distinguishes
 source-supported authoring from a fully qualified application release.
 
+The [candidate native surface](native-application-surface.md) lists concrete
+model/view/service/job/event/lifecycle entrypoints and the boundary between
+demonstrated behavior and still-conditional engine capabilities.
+
 Ordinary record screens use native models, ACLs/rules, XML views, actions and
 menus. Read `examples/mp_example_notes` for a native, explicitly workspace-scoped
 example. `tests/fixtures/application_authoring/mp_example_tasks` is a neutral

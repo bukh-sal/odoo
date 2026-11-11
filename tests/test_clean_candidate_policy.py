@@ -44,12 +44,17 @@ class CleanCandidateMaterialization(unittest.TestCase):
         self.assertGreater(policy['stock_webclient'],False)
         self.assertNotIn('reference_packages',policy);self.assertNotIn('application_packages',policy)
 
-    def test_identity_52_requires_matching_native_core_and_historical_51_stays_readable(self):
+    def test_current_identity_matches_emitted_core_and_historical_candidates_stay_readable(self):
         from modular_platform.projection import PLATFORM_VERSION,runtime_inputs
         from modular_platform.resolution import PlanningError
         from test_release_staging import staged_runtime
-        self.assertEqual(PLATFORM_VERSION,'0.1.52')
-        for platform,native,ok in (('0.1.52','19.0.0.1.52',True),('0.1.52','19.0.0.1.51',False),('0.1.51','19.0.0.1.51',True)):
+        manifest=ast.literal_eval((self.target/'addons/mp_core/__manifest__.py').read_text())
+        self.assertEqual(manifest['version'],'19.0.'+PLATFORM_VERSION)
+        cases=[(PLATFORM_VERSION,'19.0.'+PLATFORM_VERSION,True),
+               (PLATFORM_VERSION,'19.0.0.1.49',False),
+               ('0.1.53','19.0.0.1.53',True),('0.1.52','19.0.0.1.52',True),
+               ('0.1.52','19.0.0.1.51',False),('0.1.51','19.0.0.1.51',True)]
+        for platform,native,ok in cases:
             runtime=staged_runtime([]);runtime.update(platform_version=platform,native_manifests={'mp_core':{'version':native}})
             if ok:
                 _,environment,provenance=runtime_inputs(runtime,[])

@@ -13,7 +13,7 @@ from modular_platform.contracts import plan_hash
 from modular_platform.lifecycle_planning import prepare_current_image_install, prepare_current_feature
 from modular_platform.manager_planning import prepare_manager_native
 from modular_platform.native_executor import native_maintenance_flags, verify_native_state
-from modular_platform.plans import _display, data_digest, release_lock
+from modular_platform.plans import _display, check_bundle, data_digest, release_lock
 from modular_platform.resolution import resolve_release
 from modular_platform.operator_store import OperatorStore
 import test_uninstall_planning
@@ -30,6 +30,7 @@ class ReinstallPlanning(unittest.TestCase):
         self.document = copy.deepcopy(self.fixture.document)
         self.site = copy.deepcopy(self.fixture.site)
         self.site['workspaces'] = [dict(workspace_id=ident(30), state='active'), dict(workspace_id=ident(31), state='active')]
+        self.original_bindings=copy.deepcopy(self.document['state']['bindings'])
         self.remove({'org.example.notes_labels'})
 
     def remove(self, plugins):
@@ -72,6 +73,26 @@ class ReinstallPlanning(unittest.TestCase):
         bundle['plan']['dependency_lock_digest'] = data_digest(bundle['operation_lock'])
         bundle['plan_hash'] = plan_hash(bundle['plan'])
         bundle['display'] = _display(bundle['plan'], bundle['operation_lock'])
+
+    def test_reinstall_binding_epoch_cannot_resurrect_retained_receipts_even_when_plan_is_rehashed(self):
+        bundle=self.prepare()
+        old={r['binding_id']:r for r in self.original_bindings}
+        survivors={r['binding_id']:r for r in self.document['state']['bindings']}
+        restored=[r for r in bundle['operation_lock']['bindings'] if r['binding_id'] not in survivors]
+        self.assertTrue(restored)
+        for row in restored:
+            self.assertEqual(row['generation'],bundle['operation_lock']['release']['generation'])
+            self.assertGreater(row['generation'],old[row['binding_id']]['generation'])
+        self.assertTrue(all(r==survivors[r['binding_id']] for r in bundle['operation_lock']['bindings'] if r['binding_id'] in survivors))
+        self.assertEqual(self.validator()(bundle),self.document['state'])
+        forged=copy.deepcopy(bundle)
+        for row in forged['operation_lock']['bindings']:
+            if row['binding_id'] not in survivors:row['generation']=old[row['binding_id']]['generation']
+        forged['plan']['bindings']=[dict(binding_id=r['binding_id'],generation=r['generation'],digest=data_digest(r)) for r in forged['operation_lock']['bindings']]
+        self.rehash(forged)
+        self.assertTrue(check_bundle(forged,self.document['state']))
+        with self.assertRaisesRegex(ValueError,'Independent native install'):
+            self.validator()(forged)
 
     def test_partial_reinstall_restores_all_retained_ids_but_only_requested_availability_and_grants(self):
         previous = copy.deepcopy(self.document)

@@ -1,0 +1,91 @@
+{
+  "scope": "Useful core0.2 native navigation, unchanged independent archive populated upgrade, actual stock UI and ordinary-recipe uninstall/source removal",
+  "source_commit": "d013a037d43",
+  "app_source_commit": "2998aacae546ab6545fa10231bc43d4cc67c5781",
+  "app_digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+  "baseline_platform": "0.1.53",
+  "successor_platform": "0.2.0",
+  "successor_image": "sha256:fde0c9bf9038b90164afbaf89de4726557fe9574fd9eea5a1d7a83e5fd4b46db",
+  "successor_operation": "e1a0a13c-5c89-4c34-8ed9-de8b1bf7cc50",
+  "successor_plan_hash": "sha256:07a2614c0db94ba2653696f9a8b01f79a5f89b69668889d8d4ce38416105fd42",
+  "exact_source_inputs": 3962,
+  "source_delta": [
+    "core manifest/version",
+    "SDK version",
+    "core workspace JS/SCSS/Arabic messages"
+  ],
+  "unchanged_app_archive": true,
+  "populated_upgrade": {
+    "partner_rows_exact": 3,
+    "event_business_rows_exact": 6,
+    "current_memberships_and_grants_exact": true,
+    "stale_release": "CONFLICT/not_started",
+    "viewer_write": "FORBIDDEN",
+    "foreign_read": "NOT_FOUND"
+  },
+  "actual_browser": {
+    "native_list_and_form": true,
+    "save_revision_4_to_5": true,
+    "fresh_reload": true,
+    "workspace_b_opened_separate_tab": true,
+    "a_dirty_form_preserved": true,
+    "b_viewer_readonly": true,
+    "b_has_no_a_rows": true,
+    "independent_effect_check": "Only notes/revision/write_date on the one intended synthetic record changed;3records/7events/no jobs"
+  },
+  "ordinary_removal": {
+    "operation_id": "091e149f-08a0-4fff-afe1-238a057b0ae6",
+    "plan_hash": "sha256:be37d04d5a90a975d6b52aa831f73907c493fd38ed5e997742ce1921fa60001f",
+    "image_id": "sha256:b49bc0ddf4834af1bbaa7a16c0c637698702b0b859c05ac87c8a7d9ed52e0232",
+    "configuration_generation": 5,
+    "source_files_deleted": 14,
+    "native_addons": 8,
+    "artifacts": 0,
+    "published_plugins": 0,
+    "bindings": 0,
+    "history_events_retained": 7,
+    "business_history_exact": true,
+    "app_table_absent": true,
+    "old_binding": "DEPENDENCY_UNAVAILABLE",
+    "native_core_read": true,
+    "catalog_archive_retained": true,
+    "all_layers": 11,
+    "project_files": 3685
+  },
+  "source_image_not_final_ancestor": true,
+  "pre_epoch_fix_canonical": {
+    "cases": 808,
+    "passed": 806,
+    "skipped": 2,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 641.032,
+    "stable_inputs": 4810
+  },
+  "retained_first_full_run": {
+    "failures": 4,
+    "errors": 44,
+    "skips": 2,
+    "causes": "Qualified old reference archives declare<0.2 but fixtures used current SDK version; one clean-policy test pinned constant52. Corrected test-only inputs; real archives/constraints/guards unchanged.70affected pass."
+  },
+  "subsequent_reinstall": {
+    "operation_id": "c517a1cf-d5d8-456f-abd2-cc7536b701fa",
+    "operation_completed": true,
+    "workflow_accepted": false,
+    "stop": "Old create idempotency key returned HTTP200/cache for deleted record; new table independently empty, old and recreated binding generations both1; no replay or manual metadata repair"
+  },
+  "cr0019_source": {
+    "checks": 97,
+    "identity_checks": 16,
+    "frozen_files": 119,
+    "behavior": "New aliases get target release epoch; unchanged aliases keep generations; independently reconstructed reset-generation forgery refuses",
+    "candidate_platform": "0.2.1",
+    "installed_repair_accepted": false
+  },
+  "limits": [
+    "Core0.2 actual populated/browser/removal scopes passed; no overall stable release claim",
+    "Core0.2.1 compatible image/new lifecycle and same-archive populated recovery still pending",
+    "Final addon/version/support/licensing decisions and exact disposable cleanup remain pending",
+    "No publication/push/production/paid services/foreign resource changes"
+  ]
+}
