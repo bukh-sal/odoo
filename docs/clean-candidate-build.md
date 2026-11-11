@@ -26,3 +26,57 @@ build additionally verifies those versions and the locked stock-RTL notice
 closure. Materialization and record tests do not prove all-layer image purity,
 installed removal, native/UI qualification or deployment; those require a later
 actual artifact/layer audit and separate qualification.
+
+## Build an exact source-removal image
+
+After normal database uninstall, build the source-removal candidate from the
+exact currently selected clean image and its successful build record:
+
+```powershell
+& '.\.local\toolchain\operator-python16\Scripts\python.exe' -I tools/build_clean_removal.py `
+  --image-id 'sha256:<current-image-id>' `
+  --source-build-record docs/evidence/G7/<source-build>/candidate-build.json `
+  --remove-package org.example.notes `
+  --output docs/evidence/G7/<fresh-removal-build> --gate G7 --plan
+```
+
+Review the derived subtraction, then run the same command without `--plan` to
+build. Planning inspects the image through the ordinary disposable read-only
+inspector; it creates no build output, persistent resources or site changes.
+Repeat `--remove-package` to select several packages in one build.
+
+The builder preserves the original dependency bytes instead of recompiling
+native Python wheels. It copies only the inventoried project payload, subtracts
+the selected native addon directories and exact archives, and derives the
+remaining policy and ownership metadata. It preserves descriptive profile text
+as original provenance; the effective addon/artifact sets describe the result.
+It checks the derived and actual images with the existing strict removal
+validator, including every surviving file, manifest and Python fingerprint.
+
+The final stage starts from the pinned Python base and the existing clean OS
+recipe. The source image is a build input for `/venv` and the fixed Node/RTL
+closure; its application layers are not final ancestors. The command saves and
+audits every final layer, binds compressed/uncompressed digests and image
+configuration, rejects hidden project source/whiteouts, and requires all project
+bytes to match the expected inventory. `image-audit.json`, `candidate-build.json`
+and the build log are recorded in the fresh evidence directory. Private build
+intent, extracted context and image export remain under `.local/operator/builds`.
+
+The source must have a successful normal `clean-runtime` build record matching
+the current pinned dependency/OS/compiler inputs. This command supports the
+existing qualified `reference_packages` composition profile; it refuses
+`application_packages` rather than bypassing its separate removal-policy gap.
+Partial subtraction also requires the original manifest files to match their
+recorded hashes, so it can identify surviving source entries without guessing.
+It never rebuilds source from a changed checkout or silently applies a new host
+SDK fix to the image. Host-tool and historical payload provenance are recorded
+separately. A built image is neither an admitted package nor an authorized
+deployment.
+
+Use normal `stage-image`/`plan-staged` with operation type `remove`, independent
+exact-hash approval, and apply afterward. Complete sharing-database observation,
+prior uninstall, current authority, checkpoint and source-removal guards remain
+mandatory. A retained failed database can still block that operation. This build
+command does not touch databases, delete history or perform lifecycle mutation.
+Do not rerun a failed build using the same name; inspect its recorded phase,
+image and any exact retained input-container identity first.
