@@ -16,7 +16,7 @@ import sys
 sys.path[:0]=[str(ROOT/'tools'),str(ROOT/'packages/platform_sdk')]
 import build_candidate
 
-POLICY='deploy/distribution-r1-clean-probe.json'
+POLICY='deploy/distribution-r1-core.json'
 
 
 class FakeSubprocess:
@@ -60,7 +60,7 @@ class FakeEnvironment:
         (root/'deploy/requirements-r1.lock').write_bytes((ROOT/'deploy/requirements-r1.lock').read_bytes())
         for name in ('package.json','package-lock.json','rtlcss'):
             (root/'deploy/stock-rtl'/name).write_bytes((ROOT/'deploy/stock-rtl'/name).read_bytes())
-        (root/'deploy/distribution-r1-clean-probe.json').write_bytes((ROOT/POLICY).read_bytes())
+        (root/POLICY).write_bytes((ROOT/POLICY).read_bytes())
         (root/'deploy/distribution-r1-appfree-probe.json').write_bytes((ROOT/'deploy/distribution-r1-appfree-probe.json').read_bytes())
         (root/'docs/evidence/G5').mkdir(parents=True)
         return self
@@ -68,8 +68,7 @@ class FakeEnvironment:
 
 
 def invoke(environment,extra=()):
-    argv=['build_candidate.py','--output',str(environment.root/'docs/evidence/G5/clean-01'),'--gate','G5',
-          '--policy',POLICY,*extra]
+    argv=['build_candidate.py','--output',str(environment.root/'docs/evidence/G5/clean-01'),'--gate','G5',*extra]
     output=io.StringIO()
     with patch.object(build_candidate,'ROOT',environment.root),\
          patch.object(build_candidate,'subprocess',environment.fake),\

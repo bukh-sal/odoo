@@ -21,8 +21,16 @@ independent refusal of a rehashed reset-generation proposal. Unchanged aliases
 retain their IDs/generations; new incarnations use the target release epoch.
 No public field/schema or historical receipt is deleted. Candidate0.2.1/native
 core19.0.0.2.1 identifies the changed shipped planner. The old0.2.0 image stays
-immutable; compatible-image rollout and a new normal lifecycle are required
-before accepting the installed repair.
+immutable. The compatible0.2.1 rollout and normal uninstall/source-removal/
+reinstall passed: recreated bindings use epoch10, the retained obsolete key
+returns409, and a new key deduplicates against an actual record. A populated
+checkpoint/native fault, post-checkpoint workspace revocation, fresh-database
+restore, separate resume and useful workflow also passed. The revoked workspace
+stayed forbidden; the failed database and original receipts remain retained.
+Canonical810cases:808passed,2existing skips,0failures/errors,588.943s with
+4810inputs unchanged. [Final scoped evidence](evidence/G7/20261111-core021-qualification/qualification.json)
+records source/runtime/host boundaries; cleanup and default-artifact integration
+are tracked separately until their exact checks pass.
 
 | ID | Date | Requesting work item | Requirement | Change | Class | General? | Contract | Tests | Decision |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

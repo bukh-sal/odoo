@@ -5,7 +5,7 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal: finish the owned app-free core and independently packaged application path. The clean candidate and bounded Notes lifecycle are verified; broader application/compatibility and policy work remain open. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
+Current goal: consolidate the locally qualified app-free core and independently packaged application path. Runtime lifecycle, native UI, unchanged-app successor and populated recovery checks have passed their bounded scopes. Default-artifact integration and exact cleanup remain open. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
 
 - Updated UTC: 2026-11-11T14:11:50.337700+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
@@ -13,7 +13,7 @@ Current goal: finish the owned app-free core and independently packaged applicat
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-04 reusable workflow and clean delivery — passed.** Historical AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **P29 independent Partners app installed and backend/event-qualified; P30 generic stock workspace navigation source-verified.** Codex implements and reviews directly; browser, ordinary-recipe removal and useful-successor/recovery qualification remain pending. Private planning remains local-only.
+- Latest work item: **Provisional0.2.1 final candidate integration.** Codex implements and reviews directly. The owner selected the eight-addon default, exact-qualified-combination support and unchanged labels/notices with private apps; see [candidate support](candidate-support.md). Private planning remains local-only.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -67,9 +67,16 @@ matched retained generation1idempotency receipts and returned a deleted-record
 DTO. The new table was empty; the operation was not replayed. Source repair
 allocates new incarnations from the independently observed release epoch while
 preserving unchanged aliases.97affected and16identity checks pass; frozen119files
-remain unchanged. Compatible candidate0.2.1/native19.0.0.2.1, a new normal
-lifecycle and populated/current-authority recovery are pending. This is an open
-installed qualification item, not a waived test or stable release claim.
+remain unchanged. Compatible candidate0.2.1/native19.0.0.2.1 completed a new
+normal lifecycle and populated/current-authority recovery. Recreated binding
+epoch10 refuses the obsolete retained receipt while legitimate current receipts
+deduplicate. A post-checkpoint B revocation survived fresh-database restore and
+separate resume; A useful update/create and B denial passed with the same app
+archive. Canonical810cases passed808with2existing skips,0failures/errors and
+4810inputs unchanged. [Final scoped evidence](evidence/G7/20261111-core021-qualification/qualification.json)
+retains exact operation/image identities and limitations. Default artifact
+integration and exact owned-resource cleanup remain pending; this is not a
+stable release or production claim.
 
 ## Application adoption (completed goal)
 

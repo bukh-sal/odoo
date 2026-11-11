@@ -16,7 +16,7 @@ else:
     from source_layout import ENGINE, LAUNCHER, addon_source
 
 
-def build(source: Path, target: Path, policy_path="deploy/distribution-r1-foundation.json") -> dict:
+def build(source: Path, target: Path, policy_path="deploy/distribution-r1-core.json") -> dict:
     with tempfile.TemporaryDirectory(prefix='mp-packages-') as temporary:
         staging=Path(temporary).resolve()
         assert staging.is_relative_to(Path(tempfile.gettempdir()).resolve())
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
     parser.add_argument("target", type=Path)
-    parser.add_argument("--policy", default="deploy/distribution-r1-foundation.json")
+    parser.add_argument("--policy", default="deploy/distribution-r1-core.json")
     args = parser.parse_args()
     result = build(args.source.resolve(), args.target.resolve(), args.policy)
     print(json.dumps({"addons": sorted(result["native_addons"]), "file_count": len(result["files"])}))

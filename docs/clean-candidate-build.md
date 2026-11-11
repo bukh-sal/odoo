@@ -1,8 +1,21 @@
-# Clean-core TEST candidate build
+# Clean-core candidate build
 
-`deploy/distribution-r1-clean-probe.json` is a TEST-only selection: eight
+The default `deploy/distribution-r1-core.json` selects the owner-approved eight
 framework addons, SDK and stock WebClient, with no reference or application
-packages. It is not final framework selection or a code-pure release claim.
+packages. Version 0.2.1 remains a provisional local candidate with support only
+for exact qualified combinations; see [candidate support](candidate-support.md).
+The earlier `distribution-r1-clean-probe.json` remains an explicit TEST policy.
+
+Build into a fresh owned evidence directory:
+
+```powershell
+& '.\.local\toolchain\operator-python16\Scripts\python.exe' -I tools/build_candidate.py `
+  --output docs/evidence/G7/<fresh-core-build> --gate G7
+```
+
+Omitting `--policy` selects the clean core. Optional application compositions
+require an explicit reviewed policy and normal catalog/staging/approval before
+deployment; a successful build alone changes no site.
 
 The clean materialization path (`tools/build_distribution.py` with
 `"runtime_surface": "clean"`) copies only `packages/contracts/v1`, the selected

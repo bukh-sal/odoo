@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "result": "bounded-runtime-qualification-passed-final-integration-pending",
+  "core_version": "0.2.1",
+  "native_core_version": "19.0.0.2.1",
+  "runtime_source_commit": "0b5bfce966db45b596d6fad6358e7d89dd3c186c",
+  "application": {
+    "independent_repository": true,
+    "version": "0.1.0",
+    "bytes": 29246,
+    "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+    "unchanged_qualified_core_versions": [
+      "0.1.53",
+      "0.2.0",
+      "0.2.1"
+    ]
+  },
+  "core021_application_image": "sha256:a2a41daeac8d97dcab80201ec38d6fbde758d7759df9bdeee8b375214db20ece",
+  "core021_removal_image": "sha256:836c98bb757b07026d854a8552e6861c9c00946c16fa67c329abf44051c79182",
+  "lifecycle": {
+    "uninstall": "b50ada00-93fb-458b-811c-33ad19871ded",
+    "source_removal": "c9069a33-90f5-41bf-b517-a9418985e479",
+    "reinstall": "d1c7d334-5051-419f-bceb-0ea2207e40bc",
+    "recreated_binding_generation": 10,
+    "retained_obsolete_receipt": "409/no-resurrection",
+    "current_receipt": "200/deduplicated-against-existing-record",
+    "three_populated_records": true,
+    "historical_events_retained": true
+  },
+  "recovery": {
+    "operation": "1cb260f0-ecdd-4b78-b100-c52e63ce64e0",
+    "fault": "controlled host exception after successful original native uninstall child",
+    "checkpoint_verified": true,
+    "post_checkpoint_workspace_revocation_preserved": true,
+    "fresh_database_restore": true,
+    "separately_reviewed_resume": true,
+    "failed_database_retained": true,
+    "session_secret_rotated": true,
+    "original_three_records_and_eleven_event_business_rows_preserved": true,
+    "useful_update_and_create_after_resume": true,
+    "final_record_count": 4,
+    "final_event_count": 13,
+    "revoked_workspace": "403/not-advertised",
+    "unaffected_workspace_editor": "normal-read"
+  },
+  "host_regression": {
+    "cases": 810,
+    "passed": 808,
+    "existing_skips": 2,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 588.943,
+    "monitored_inputs_unchanged": 4810
+  },
+  "core_policy": {
+    "default_addons": [
+      "base",
+      "web",
+      "base_setup",
+      "auth_password_policy",
+      "bus",
+      "mp_compat",
+      "mp_identity",
+      "mp_core"
+    ],
+    "version_support": "provisional0.2.1/exact-qualified-combinations-only",
+    "licensing": "retain-current-labels-and-notices/independent-apps-private"
+  },
+  "evidence_receipts": {
+    "installed_epoch_lifecycle": {
+      "sha256": "1615d1fa083ef90c32c87f5436c8a825057009869b0496a22f4f22c625344f5f",
+      "bytes": 1718
+    },
+    "populated_recovery_use": {
+      "sha256": "c0dc9e4bbfd5fc1b1ed5f29cbd8b659532bf6656186ec9413cac6410418be0fe",
+      "bytes": 1429
+    },
+    "checkpoint": {
+      "sha256": "c5e528dc995a240c605a20fa9c5f5ab01f0efd1643eba9044efbc1a4912474d3",
+      "bytes": 493
+    },
+    "restored_closed": {
+      "sha256": "768764315e5eb98535b76b8a02706965374416fcce7c70feca601a76aae900de",
+      "bytes": 693
+    },
+    "canonical_host": {
+      "sha256": "132b01172cf014e1425569d79c03286949971b96a94753baa17fee104fc07a9f",
+      "bytes": 143120
+    },
+    "canonical_stability": {
+      "sha256": "a4374e9c5f7a2793d2f5547299b562d5e4cd94621beedabbb7a9f8ba4a59f480",
+      "bytes": 91
+    }
+  },
+  "limits": [
+    "Private raw data/credentials/authority evidence retained locally, not copied here",
+    "No arbitrary app, complex migration, stable ABI, production or LTS claim",
+    "Event proof is actual subscribe/poll/ack delivery, not browser callback/consumer effect qualification",
+    "Default standalone core build and exact cleanup pending separate receipts",
+    "Original core0.2.0 reinstall failure and private verifier failures retained; no operation replay"
+  ],
+  "publication_or_production_authorized": false
+}

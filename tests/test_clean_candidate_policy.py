@@ -14,7 +14,7 @@ sys.path[:0]=[str(ROOT/'packages/platform_sdk'),str(ROOT/'tools'),str(ROOT/'test
 from build_distribution import build
 from modular_platform import worker_start
 
-POLICY='deploy/distribution-r1-clean-probe.json'
+POLICY='deploy/distribution-r1-core.json'
 EXPECTED={'base','web','base_setup','auth_password_policy','bus','mp_compat','mp_identity','mp_core'}
 BANNED=('tests/','tests\\','fixtures/','fixtures\\','applications/','examples/','plugins/',
         'services/','release/','artifacts/','tools/reference_operator/','packages/contracts/examples/',
@@ -27,7 +27,7 @@ class CleanCandidateMaterialization(unittest.TestCase):
         cls.temporary=tempfile.TemporaryDirectory(prefix='mp-clean-candidate-')
         cls.addClassCleanup(cls.temporary.cleanup)
         cls.target=Path(cls.temporary.name)/'release'
-        cls.inventory=build(ROOT,cls.target,POLICY)
+        cls.inventory=build(ROOT,cls.target)
 
     def files(self):return {path.relative_to(self.target).as_posix() for path in self.target.rglob('*') if path.is_file()}
     def addons(self):
