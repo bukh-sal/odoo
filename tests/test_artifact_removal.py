@@ -244,6 +244,16 @@ class ArtifactRemoval(unittest.TestCase):
         self.assertEqual(self.document,before)
 
     def test_independent_reconstruction_checks_complete_inventory_and_rehashed_diff(self):
+        self._independent_reconstruction_witness()
+
+    def test_application_recipe_independent_reconstruction_preserves_all_existing_fences(self):
+        for runtime in (self.base, self.after):
+            inventory = runtime['inventory']
+            inventory['policy']['application_packages'] = inventory['policy'].pop('reference_packages')
+            inventory['package_composition'] = inventory.pop('reference_composition')
+        self._independent_reconstruction_witness()
+
+    def _independent_reconstruction_witness(self):
         owner=self;seen=[]
         class Catalog:
             def snapshot(self):return copy.deepcopy(owner.catalog)

@@ -64,10 +64,12 @@ intent, extracted context and image export remain under `.local/operator/builds`
 
 The source must have a successful normal `clean-runtime` build record matching
 the current pinned dependency/OS/compiler inputs. This command supports the
-existing qualified `reference_packages` composition profile; it refuses
-`application_packages` rather than bypassing its separate removal-policy gap.
-Partial subtraction also requires the original manifest files to match their
-recorded hashes, so it can identify surviving source entries without guessing.
+`reference_packages`, ordinary `application_packages`, and mixed compositions.
+Source entries can only be subtracted within their original kind; order,
+surviving archives, model/field ownership and every unrelated policy field are
+preserved. Partial subtraction requires the original manifest files and, for an
+application, the recipe itself to match their recorded hashes. It identifies
+surviving source entries without importing application code or guessing paths.
 It never rebuilds source from a changed checkout or silently applies a new host
 SDK fix to the image. Host-tool and historical payload provenance are recorded
 separately. A built image is neither an admitted package nor an authorized
@@ -81,4 +83,4 @@ command does not touch databases, delete history or perform lifecycle mutation.
 Do not rerun a failed build using the same name; inspect its recorded phase,
 image and any exact retained input-container identity first.
 
-Actual [recorded clean-removal qualification](evidence/G7/20261111-recorded-clean-removal-01/qualification.json) passed the strict observed-image delta and every final-layer check. This replaces the prior private subtraction build for the existing qualified composition profile; it does not add support for arbitrary source recipes or weaken installation/removal approval.
+Actual [recorded clean-removal qualification](evidence/G7/20261111-recorded-clean-removal-01/qualification.json) passed the strict observed-image delta and every final-layer check. This replaces the prior private subtraction build for the existing qualified reference-package composition. Ordinary and mixed recipe handling subsequently passed actual-archive/materialization and independent-reconstruction source tests; its new installed image/application qualification remains pending. Neither changes installation/removal approval.

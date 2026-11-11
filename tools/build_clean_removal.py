@@ -20,6 +20,7 @@ from uuid import uuid4
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / 'tools'), str(ROOT / 'packages/platform_sdk')]
 from build_candidate import _clean_inputs, _verify_clean_rtl
+from application_package import source_path
 from modular_platform.artifact_removal import validate_removal_image
 from modular_platform.contracts import checked_path
 from modular_platform.deployment import inspect_image
@@ -56,8 +57,8 @@ def source_record(path, image, runtime, clean):
         raise ValueError('Exact inventoried source image required')
     policy = inventory['policy']
     if (policy.get('runtime_surface') != 'clean' or policy.get('platform_sdk') is not True
-            or policy.get('stock_webclient') is not True or policy.get('application_packages')):
-        raise ValueError('Qualified clean reference-package composition required')
+            or policy.get('stock_webclient') is not True):
+        raise ValueError('Qualified clean native-package composition required')
     if not isinstance(record.get('source_sha256'), dict) or not record['source_sha256']:
         raise ValueError('Source payload build provenance is missing')
     return record
@@ -74,7 +75,8 @@ def subtract_inventory(base, packages, package_sources=None):
     if (len(addons) != len(packages)
             or any(not re.fullmatch(r'[a-z][a-z0-9_]*', a) for a in addons)):
         raise ValueError('Distinct native package addons required')
-    paths = inventory['policy'].get('reference_packages', [])
+    source_keys = ('reference_packages', 'application_packages')
+    paths = [p for key in source_keys for p in inventory['policy'].get(key, [])]
     if len(paths) != len(artifacts) or len(set(paths)) != len(paths):
         raise ValueError('Unambiguous package source provenance required')
     if set(packages) == artifacts.keys():
@@ -100,16 +102,20 @@ def subtract_inventory(base, packages, package_sources=None):
     policy = inventory['policy']
     for key in ('addons', 'explicit_install'):
         policy[key] = [a for a in policy[key] if a not in addons]
-    policy['reference_packages'] = retained_paths
+    for key in source_keys:
+        if key in policy:
+            policy[key] = [p for p in policy[key] if p in retained_paths]
     if not artifacts:
         inventory.pop('artifacts', None)
-        inventory.pop('reference_composition', None)
-    elif 'reference_composition' in inventory:
-        composition = inventory['reference_composition']
-        for key in ('models', 'fields'):
-            composition[key] = {p: owner for p, owner in composition[key].items() if owner not in packages}
-        composition['ui_contributions'] = [p for p in composition['ui_contributions']
-            if not any(p.startswith(plugin + ':') for plugin in packages)]
+    for key in ('reference_composition', 'package_composition'):
+        if not artifacts:
+            inventory.pop(key, None)
+        elif key in inventory:
+            composition = inventory[key]
+            for name in ('models', 'fields'):
+                composition[name] = {p: owner for p, owner in composition[name].items() if owner not in packages}
+            composition['ui_contributions'] = [p for p in composition['ui_contributions']
+                if not any(p.startswith(plugin + ':') for plugin in packages)]
     candidate = copy.deepcopy(base)
     candidate['inventory'] = inventory
     candidate['native_manifests'] = {a: m for a, m in base['native_manifests'].items() if a not in addons}
@@ -205,13 +211,19 @@ def build(root, *, image, record_path, packages, output, gate, plan_only=False, 
     mapping = None
     if set(packages) != base['inventory'].get('artifacts', {}).keys():
         mapping = {}
-        for name in base['inventory']['policy'].get('reference_packages', []):
+        def recorded_toml(name):
             checked_path(name)
-            source = (root / name).resolve()
-            if (not source.is_relative_to(root) or source.is_symlink() or not source.is_file()
+            source = source_path(root, name)
+            if (not source.is_file()
                     or sha(source) != record['source_sha256'].get(name)):
-                raise ValueError('Historical partial-removal source manifest is unavailable or changed')
-            mapping[name] = tomllib.loads(source.read_text(encoding='utf8'))['plugin']['id']
+                raise ValueError('Historical partial-removal source manifest/recipe is unavailable or changed')
+            return tomllib.loads(source.read_text(encoding='utf8'))
+        for key in ('reference_packages', 'application_packages'):
+            for name in base['inventory']['policy'].get(key, []):
+                document = recorded_toml(name)
+                if key == 'application_packages':
+                    document = recorded_toml(document['manifest'])
+                mapping[name] = document['plugin']['id']
     inventory, diff = subtract_inventory(base, packages, mapping)
     dockerfile = render_dockerfile(root, clean)
     provenance = dict(source_image=image, source_inventory_digest=base['inventory_digest'],
@@ -239,6 +251,7 @@ def build(root, *, image, record_path, packages, output, gate, plan_only=False, 
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dt%H%M%S%fz')
     tag = 'modular-platform:stage-' + stamp
     inputs = ['tools/build_clean_removal.py', 'tools/build_candidate.py', 'tools/clean_image_audit.py',
+        'tools/application_package.py',
         'deploy/Dockerfile', 'deploy/runtime.lock.json', 'deploy/requirements-r1.lock',
         *['packages/platform_sdk/modular_platform/' + name + '.py' for name in
             ('artifact_removal', 'deployment', 'contracts', 'operator_os', 'operator_store', 'plans')]]

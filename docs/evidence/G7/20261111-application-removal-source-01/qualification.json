@@ -1,0 +1,42 @@
+{
+  "cases": 73,
+  "errors": 0,
+  "failures": 0,
+  "frozen_contract_files": 119,
+  "frozen_contract_rows": 10,
+  "legacy_actual_image_preview": {
+    "output_created": false,
+    "remaining_addons": 8,
+    "remaining_artifacts": 0,
+    "removed_files": 14,
+    "source_image": "sha256:c12e115acbf34cfd6a87c4b2bc8e5c24b6ebf9695e2b9ef1e6bdb9d04e1026f2"
+  },
+  "limits": [
+    "SDK host/source patch only; existing image provenance retained.",
+    "Ordinary recipe image and installed lifecycle qualification remain pending.",
+    "No full host rerun, image build, deployment, DB mutation or final contract/support claim."
+  ],
+  "native_application_imported": false,
+  "new_cases": [
+    "real independent application/extension archives and materialization",
+    "partial/full subtraction and exact surviving ownership",
+    "mixed reference/application source lists",
+    "recipe/manifest hash binding and historical drift refusal",
+    "no source-kind transfer, duplicates, reordering or unrelated policy drift",
+    "forged ownership/added composition/rehashed source diff refusal"
+  ],
+  "old_failure": "Removal build policy may only subtract the selected package sources",
+  "production_guard_unchanged_constraints": [
+    "exact native/Python/surviving-source identities",
+    "no active native state or retained authority at every sharing site",
+    "complete database inventory",
+    "independent exact-hash bundle reconstruction and approval"
+  ],
+  "scope": "CR-0016 ordinary/mixed recipe removal source qualification; not installed/runtime acceptance",
+  "seconds": 43.718,
+  "skips": 1,
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/artifact_removal.py": "77c054997a05ff511b4762f891bf236638de347fe7fc3b99153a8a5ee182db4b",
+    "tools/build_clean_removal.py": "059be3263d2440c687632942e3e0d9d00999a2394f97f49058139af8bc846bad"
+  }
+}

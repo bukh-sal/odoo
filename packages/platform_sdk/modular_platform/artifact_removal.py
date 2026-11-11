@@ -51,37 +51,51 @@ def validate_removal_image(base, runtime, descriptor, plugins):
         raise OperatorError('Server-wide native modules cannot be removed by a package operation')
     for key in ('addons', 'explicit_install'):
         expected_policy[key] = [name for name in expected_policy[key] if name not in addons]
-    # Reference source paths are build provenance, not executable authority.
-    # Allow subtraction only; the exact resulting archive/native byte set above
-    # and below proves which packages actually disappeared. No path is executed.
-    old_paths = expected_policy.get('reference_packages', [])
-    new_paths = after['policy'].get('reference_packages', [])
-    if (len(set(old_paths)) != len(old_paths) or len(set(new_paths)) != len(new_paths)
-            or len(old_paths) - len(new_paths) != len(removed)
-            or [name for name in old_paths if name in new_paths] != new_paths):
+    # Source paths are build provenance, not executable authority. Each recipe
+    # owns one package; preserve order within each source kind and allow only
+    # the selected package count to disappear. Never transfer between kinds.
+    old_sources = []
+    removed_sources = 0
+    for key in ('reference_packages', 'application_packages'):
+        old_paths = expected_policy.get(key, [])
+        new_paths = after['policy'].get(key, [])
+        if not isinstance(old_paths, list) or not isinstance(new_paths, list):
+            raise OperatorError('Removal package sources must be ordered lists')
+        for path in old_paths + new_paths:
+            checked_path(path)
+        if (len(set(old_paths)) != len(old_paths) or len(set(new_paths)) != len(new_paths)
+                or [name for name in old_paths if name in new_paths] != new_paths):
+            raise OperatorError('Removal build policy may only subtract the selected package sources')
+        old_sources.extend(old_paths)
+        removed_sources += len(old_paths) - len(new_paths)
+        if key in expected_policy:
+            expected_policy[key] = list(new_paths)
+    if len(set(old_sources)) != len(old_sources) or removed_sources != len(removed):
         raise OperatorError('Removal build policy may only subtract the selected package sources')
-    expected_policy['reference_packages'] = list(new_paths)
     if after['policy'] != expected_policy:
         raise OperatorError('Removal cannot change unrelated distribution policy')
-    composition = before.get('reference_composition')
-    if composition is not None:
-        if set(composition) != {'models', 'fields', 'ui_contributions'}:
-            raise OperatorError('Unknown reference composition requires explicit reconciliation')
-        expected_composition = {key: {name: owner for name, owner in composition[key].items() if owner not in removed}
-                                for key in ('models', 'fields')}
-        expected_composition['ui_contributions'] = [name for name in composition['ui_contributions']
-            if not any(name.startswith(plugin + ':') for plugin in removed)]
-        if after.get('reference_composition') != (expected_composition if expected_artifacts else None):
-            raise OperatorError('Removal reference composition differs from exact package subtraction')
-    elif after.get('reference_composition') is not None:
-        raise OperatorError('Removal cannot add reference composition metadata')
     expected_inventory = copy.deepcopy(before)
     expected_inventory.update(artifacts=expected_artifacts, native_addons=expected_native, policy=expected_policy)
     if not expected_artifacts:
         expected_inventory.pop('artifacts', None)
-        expected_inventory.pop('reference_composition', None)
-    elif composition is not None:
-        expected_inventory['reference_composition'] = expected_composition
+    for key in ('reference_composition', 'package_composition'):
+        composition = before.get(key)
+        if composition is not None:
+            if set(composition) != {'models', 'fields', 'ui_contributions'}:
+                raise OperatorError('Unknown package composition requires explicit reconciliation')
+            expected_composition = {name: {ident: owner for ident, owner in composition[name].items() if owner not in removed}
+                                    for name in ('models', 'fields')}
+            expected_composition['ui_contributions'] = [name for name in composition['ui_contributions']
+                if not any(name.startswith(plugin + ':') for plugin in removed)]
+            if after.get(key) != (expected_composition if expected_artifacts else None):
+                label = 'reference composition' if key == 'reference_composition' else 'package composition'
+                raise OperatorError('Removal ' + label + ' differs from exact package subtraction')
+            if expected_artifacts:
+                expected_inventory[key] = expected_composition
+            else:
+                expected_inventory.pop(key, None)
+        elif after.get(key) is not None:
+            raise OperatorError('Removal cannot add package composition metadata')
     prefixes = tuple('addons/' + addon + '/' for addon in addons)
     archives = {'artifacts/' + old_artifacts[key]['file'] for key in removed}
     for name in before['files'].keys() | after['files'].keys():

@@ -109,6 +109,7 @@ class Environment:
         for name in ('deploy/Dockerfile', 'deploy/runtime.lock.json', 'deploy/requirements-r1.lock',
                 'deploy/stock-rtl/package-lock.json', 'deploy/stock-rtl/package.json', 'deploy/stock-rtl/rtlcss',
                 'tools/build_clean_removal.py', 'tools/clean_image_audit.py', 'tools/build_candidate.py',
+                'tools/application_package.py',
                 *['packages/platform_sdk/modular_platform/' + name + '.py' for name in
                     ('artifact_removal', 'deployment', 'contracts', 'operator_os', 'operator_store', 'plans')]):
             path = root / name
@@ -199,6 +200,49 @@ class CleanRemovalBuild(unittest.TestCase):
             self.assertEqual(result['result'], 'planned_not_built')
             self.assertFalse(env.output.exists())
             self.assertFalse((env.root / '.local').exists())
+            self.assertEqual(env.docker.commands, [])
+
+    def test_application_recipe_build_uses_identical_real_control_flow(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            env = Environment(Path(temporary))
+            for runtime in (env.base, env.after):
+                inv = runtime['inventory']
+                inv['policy']['application_packages'] = inv['policy'].pop('reference_packages')
+                if 'reference_composition' in inv:
+                    inv['package_composition'] = inv.pop('reference_composition')
+                runtime['inventory_digest'] = 'sha256:' + hashlib.sha256(builder.inventory_bytes(inv)).hexdigest()
+            env.record.update(inventory_digest=env.base['inventory_digest'])
+            env.save_record()
+            report = env.invoke()
+            self.assertEqual(report['state'], 'built')
+            self.assertEqual(env.builds, 1)
+            self.assertEqual(report['artifacts'], {})
+
+    def test_partial_recipe_plan_binds_both_recipe_and_manifest_hashes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            env = Environment(Path(temporary))
+            env.base, env.contents = fixture(True)
+            inv = env.base['inventory']
+            inv['policy']['application_packages'] = inv['policy'].pop('reference_packages')
+            inv['package_composition'] = inv.pop('reference_composition')
+            env.base['inventory_digest'] = 'sha256:' + hashlib.sha256(builder.inventory_bytes(inv)).hexdigest()
+            hashes = {}
+            for path, ident in zip(inv['policy']['application_packages'], (PLUGIN, 'org.example.beta')):
+                recipe = env.root / path
+                recipe.parent.mkdir(parents=True, exist_ok=True)
+                manifest_path = path.replace('plugin.toml', 'manifest.toml')
+                manifest = env.root / manifest_path
+                recipe.write_text('manifest=' + json.dumps(manifest_path), encoding='utf8')
+                manifest.write_text('[plugin]\nid=' + json.dumps(ident), encoding='utf8')
+                hashes.update({path: builder.sha(recipe), manifest_path: builder.sha(manifest)})
+            env.record.update(inventory_digest=env.base['inventory_digest'], artifacts=inv['artifacts'], source_sha256=hashes)
+            env.save_record()
+            plan = env.invoke(plan=True)
+            self.assertEqual(plan['remaining_artifacts'], ['org.example.beta'])
+            manifest.write_text('[plugin]\nid="forged"', encoding='utf8')
+            with self.assertRaisesRegex(ValueError, 'unavailable or changed'):
+                env.invoke(plan=True)
+            self.assertFalse(env.output.exists())
             self.assertEqual(env.docker.commands, [])
 
     def test_cli_plan_exposes_exact_removed_paths_and_remaining_composition_for_review(self):
