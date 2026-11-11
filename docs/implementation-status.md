@@ -7,13 +7,13 @@
 
 Current goal: consolidate the locally qualified app-free core and independently packaged application path. Runtime lifecycle, native UI, unchanged-app successor and populated recovery checks have passed their bounded scopes. Default-artifact integration and exact cleanup have passed. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-11T15:39:55.475596+00:00
+- Updated UTC: 2026-11-11T20:44:53.683690+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-04 reusable workflow and clean delivery — passed.** Historical AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **Customer-work pressure round, in progress.** Human requested Codex choose the workflow and push limits. A Workboard successor and separate optional customer integration are implemented in private app repositories; normal mixed image/install, actual reminder delivery/current-authority negatives and real UI remain unqualified. Core/default eight-addon composition stays unchanged. The previous Workboard0.1.1 useful desktop slice remains [bounded historical evidence](evidence/G7/20261111-work-application-01/qualification.json). No progress is awarded for source files alone. Codex implements and reviews directly; see the [capability register](application-capability-register.md).
+- Latest work item: **Customer-work pressure round complete within its bounded scope.** Independent Workboard0.2.2, unchanged Partners0.1.0 and separate Customer Work0.1.3 passed normal mixed install/populated app upgrades, useful live customer context, actual managed-lane personal reminders, current-authority denial and real browser review. Core/default eight-addon composition is unchanged; all3682standalone-core inventory entries remain exact. Three observed app defects were repaired through legitimate successors: false Scheduled status, dropped deep-link context and lost comment draft. [Pressure evidence](evidence/G7/20261111-customer-work-01/qualification.json) separates real installed/UI proof from unproven lifecycle/product scope. Codex implemented and reviewed directly; no delegation or production/publication.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -25,19 +25,32 @@ Current goal: consolidate the locally qualified app-free core and independently 
 - [x] Actual desktop browser review, observed drag defect repaired and verified after reload.
 - [x] Demonstrated capabilities, intentional choices and repairable/unproven gaps recorded separately.
 
-Blocker register for this slice: no uncertain mutation or running command remains.
-Viewer empty-state copy is an app UX gap; actual narrow-screen qualification is
-unavailable with the current browser override. Reminders, personal/list privacy,
-optional integration, complex migrations and broader accessibility remain open,
-with reasons/return conditions in the capability register. This slice does not
-increase the historical R1 gate score or claim overall application maturity.
+Current pressure-round checklist:
 
-Resume: do not replay the completed install/upgrade. The dedicated synthetic
-app and isolated reference fixtures remain local for review, with exact resource
-ownership retained privately; no cleanup of these new fixtures is claimed.
-The earlier core/Partners cleanup stays complete. Next application work should
-address the recorded UI gaps and then a coherent contextual integration/reminder
-workflow, using app seams and recording any genuinely general core requirement.
+- [x] Separate optional integration uses current original-actor bound calls; stale/foreign/viewer negatives and live rename pass.
+- [x] Real private inbox delivery, idempotency, reschedule/cancel and task revision/completion/archive negatives.
+- [x] Actual prepare/compute then scoped role revocation denies fresh effect; membership and optional grant full rows restored exactly.
+- [x] Healthy final control delivers once; owner sees one notice and another member sees none.
+- [x] Real customer/task links and reload, draft preservation, optional-panel degradation, truthful failure copy and UI schedule/cancel/ack persistence.
+- [x] Actual363px customer/task/reminder/inbox interactions checked; temporary viewport reset. Full mobile/accessibility remains unqualified.
+- [x] Fresh final image/core/app/data/authority observation; all jobs terminal; two owned idle test lanes normally drained.
+
+Blocker register: no uncertain mutation, pending access fixture, running operation
+or test lane remains. Private task/list policy, recurrence, external email/push,
+feature-suspension races, complex migrations, high volume and this new combination's
+full destructive lifecycle/event delivery remain unproven or deliberately scoped.
+The same-version native wheel fingerprint rebuild observed in an earlier clean
+build remains a packaging reproducibility improvement; it was reviewed as a real
+staged change. See the capability register for reasons and return conditions.
+No new historical R1 gate points or universal application-maturity claim.
+
+Resume: never replay the completed pressure operations or fixture continuations.
+The synthetic customer-work site on18556 and isolated Aurora reference on18555
+are intentionally retained for visual review; exact owned resources and protected
+baseline IDs remain private. No cleanup of these fixtures is claimed. The earlier
+core/Partners cleanup stays complete. Next work should choose another useful app
+journey or deliberately qualify the remaining product/lifecycle requirements;
+no per-application core customization was required by this round.
 
 ## Clean-core qualification (11November2026)
 

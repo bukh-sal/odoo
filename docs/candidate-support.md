@@ -51,3 +51,16 @@ fresh core smoke and exact cleanup. Those final core/Partners test sites remain
 cleaned. A subsequent independent application-review fixture and isolated
 reference fixture are retained locally for visual review; they are separate
 from that completed cleanup and are not production deployments.
+
+
+The later customer-work pressure combination is independently qualified for a
+bounded useful journey on the same core0.2.1: private Workboard0.2.2
+(`sha256:32f77c07ce15ffacbb40353217307c1ae2ed61707d013e05b58055a443724876`),
+unchanged Partners0.1.0 above, and optional Customer Work0.1.3
+(`sha256:c6544856f9461bc83c132f0e09a67803b7daf62b22ff67a3d91aff2a5790c763`).
+It adds live customer links, personal managed-job reminders, current-authority
+negatives and real contextual UI/draft checks. All3682standalone-core files stay
+exact; no app-specific core change. [Exact scope and limits](evidence/G7/20261111-customer-work-01/qualification.json)
+exclude universal compatibility, recurrence/external delivery and this new
+combination's complete destructive lifecycle/recovery. It supersedes the earlier
+Workboard reminder/integration gaps only for these exact archives and checks.

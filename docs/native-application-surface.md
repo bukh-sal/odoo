@@ -142,3 +142,27 @@ release acceptance. Provisional candidate numbers are not stable-release claims.
 The [capability register](application-capability-register.md) distinguishes
 demonstrated behavior, intentional boundaries, repairable gaps and unproven
 application paths; none of these categories substitutes for visual qualification.
+
+
+## Contextual client actions
+
+App links should use the existing native action protocol, rather than read ad hoc
+query parameters after asynchronous startup. Declare the action's `path` in its
+native metadata and the component's static path. Capture owned action parameters
+from `props.action.params` (or the current router state) synchronously, validate
+identifiers, and resolve the referenced object through current authorized services.
+Use `props.updateActionState` to retain the selected app context in reloadable
+navigation. Workspace is still controlled by the core workspace context; apps do
+not redefine its locking or authorization.
+
+A contextual panel can belong to a separately optional integration application.
+The provider app may expose a trusted component slot; the integration owns its
+links, dependencies, declared grants and original-actor bound calls. Clear stale
+panel data when permission disappears and preserve the independent task workflow.
+This uses existing trusted same-origin/native extension behavior, not a sandbox.
+
+Navigation is also a data-loss boundary. Preserve or explicitly confirm discarding
+unsent edits and comments. A separate contextual tab can retain the original draft;
+a before-unload guard protects full-page navigation. These patterns still need
+actual browser checks: a URL in source alone does not prove route selection,
+reload behavior, draft retention or usability.

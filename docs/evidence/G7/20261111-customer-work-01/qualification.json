@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "utc": "2026-11-11T20:44:02.423039+00:00",
+  "scope": "Useful customer-delivery work and personal reminders; bounded independent-app pressure qualification",
+  "core_version": "0.2.1",
+  "core_runtime_source_changed": false,
+  "default_eight_addons_unchanged": true,
+  "standalone_core_inventory_files_exact": 3682,
+  "private_applications": {
+    "dev.local.delivery": {
+      "version": "0.1.3",
+      "archive_digest": "sha256:c6544856f9461bc83c132f0e09a67803b7daf62b22ff67a3d91aff2a5790c763",
+      "private_source": true
+    },
+    "dev.local.partners": {
+      "version": "0.1.0",
+      "archive_digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+      "private_source": true
+    },
+    "dev.local.workboard": {
+      "version": "0.2.2",
+      "archive_digest": "sha256:32f77c07ce15ffacbb40353217307c1ae2ed61707d013e05b58055a443724876",
+      "private_source": true
+    }
+  },
+  "image_id": "sha256:fec4982802ca737d90898bb89a0af12ae7fcd4715d67282bb261b51042288c75",
+  "configuration_generation": 6,
+  "source_checks": {
+    "python": 18,
+    "node": 21,
+    "failures": 0,
+    "full_host_rerun": false
+  },
+  "normal_operations": {
+    "mixed_install_upgrade": true,
+    "truthful_status_app_upgrade": true,
+    "navigation_app_upgrade": true,
+    "all_eight_app_tables_exact_across_final_upgrade": true,
+    "independent_exact_hash_approval": true
+  },
+  "installed": [
+    "optional customer link with current original-actor provider calls; live rename without copied names",
+    "stale link, foreign task/customer and viewer mutation refusal",
+    "repeated schedule deduplicates; reschedule cancels old job; cancel before execution",
+    "normal managed lanes deliver one personal notice per completed job",
+    "changed/completed/archived task denies effect; explicitly rescheduled healthy control delivers",
+    "role loss denies effect and restores exact membership row",
+    "actual prepare/compute then role revocation: fresh finish dead-letter FORBIDDEN attempt1 nullresult no notice",
+    "customer-read grant revocation clears context; independent task comment works; exact grant restoration",
+    "final healthy job completes attempt1; owner inbox1 and another workspace member inbox0",
+    "UI future schedule/cancel reaches cancelled attempt0; notice acknowledgement persists"
+  ],
+  "visual": {
+    "customer_deep_link_and_reload": true,
+    "task_deep_link_and_reload": true,
+    "customer_new_tab_preserves_comment_draft": true,
+    "full_reload_refused_with_comment_draft": true,
+    "explicit_close_keep_draft": true,
+    "synthetic_drafts_cleared": true,
+    "failed_occurrence_forbidden_visible": true,
+    "healthy_occurrence_delivered_visible": true,
+    "ui_future_schedule_and_cancel": true,
+    "inbox_mark_read_persists_reload": true,
+    "inbox_link_opens_task": true,
+    "viewer_private_empty_readonly_copy": true,
+    "narrow_viewport": {
+      "width": 363,
+      "height": 853,
+      "customer_task_navigation": true,
+      "drawer_scroll_and_keep_draft": true,
+      "reminder_schedule_cancel": true,
+      "inbox_acknowledge": true,
+      "full_mobile_qualification": false
+    },
+    "viewport_reset": true
+  },
+  "defects": [
+    {
+      "owner": "application",
+      "problem": "terminal forbidden job displayed as scheduled from stale app metadata",
+      "fix": "current-authorized job status drives honest failed/unavailable feedback"
+    },
+    {
+      "owner": "application",
+      "problem": "native action navigation discarded ad hoc task/customer query context",
+      "fix": "declared action paths/parameters and existing action-state persistence; real reload proof"
+    },
+    {
+      "owner": "application",
+      "problem": "customer navigation lost an unsent comment",
+      "fix": "separate customer tab, comment navigation guard and explicit keep/discard; actual draft retained"
+    }
+  ],
+  "packaging_observation": "One earlier clean build rebuilt psycopg2/python-ldap fingerprints with the same locked versions; reviewed normally. Final navigation image Python metadata equals prior image. Native dependency byte-reproducibility remains open.",
+  "intentional_boundaries": [
+    "workspace-visible team tasks; personal inbox is distinct private owner scope",
+    "reminder to scheduling human; editor/admin required to schedule/acknowledge",
+    "any task revision invalidates the occurrence; explicit reschedule",
+    "trusted native/same-origin apps; immutable image and independent approval"
+  ],
+  "unproven": [
+    "external email/push and team recipients",
+    "recurrence/time-zone travel/offline drafts",
+    "feature-suspension races/high volume/complex populated migrations",
+    "full mobile/device/accessibility qualification; bounded363px interactions only",
+    "new combination event delivery/full uninstall/source-removal/recovery"
+  ],
+  "final_counts": {
+    "tasks": 9,
+    "comments": 3,
+    "personal_notices": 3,
+    "all_jobs_terminal": true
+  },
+  "access_fixture_full_rows_restored": true,
+  "two_test_lanes_normally_drained": true,
+  "review_fixtures_retained": true,
+  "foreign_baseline_resources_present": {
+    "containers": 119,
+    "images": 46,
+    "networks": 45,
+    "volumes": 107
+  },
+  "cleanup_run": false,
+  "publication": false,
+  "private_proof_sha256": {
+    "core-reset/p33-delivery/final-independent.json": "d78d132e1bf8c55069184ab9b0b7ee5aedcdac2baaa38d43e2b13bd0e919cc14",
+    "core-reset/p33-delivery/browser-result.json": "45f7816309ec8eb44b85757694fafec8ba14e3439643175e0affb53028617e1d",
+    "core-reset/p33-delivery/final-ui-effect-and-restoration.json": "b16e3aba26ca3c192801a3e98612c56cd136942d792171780cb05de674d06066",
+    "core-reset/p33-delivery/retained-resources.json": "99bbfda510dfaae7affad2dac028c145c6219aab06b203c8807ed7ebe87d6bcd",
+    "core-reset/p33-delivery/navigation-node-final.txt": "2e9e27e0fecc21e7728214076bf7d587567aeda60410f21b097f7edc1a804674",
+    "core-reset/p33-delivery/workboard-python-final.txt": "a4efb521f98d4f04cfe54abb0c325c171ecd3eadd7756aaf686979285de16a60",
+    "core-reset/p33-delivery/drain-final-result.json": "9330769a35f98b1750a0f282ae694ff8c07d7f4afd5b1bac8eb0ada76fb4a768",
+    "qualification/workboard-native-01/pressure-navigation/result.json": "779e4bcb9cdfeb2b3f2e3cd2446b954a1c44807b3c9a2636c3a6253425d89a28",
+    "qualification/workboard-native-01/pressure-healthy-control/result.json": "05959c1ce0c9fce5c572e78f9648fbeacde06cd1256f0531eb8a580ccdc2d112",
+    "qualification/workboard-native-01/pressure-interleaving/result.json": "44b02b283b1f344b27610237586f0339118d2800da4ebd73e3c6b9f905c57520",
+    "qualification/workboard-native-01/pressure-matrix/truthful-delivery-state-check.json": "3b41814b74649c62e42c970f6cc37c724d1326be3fedf272caf674b331b49567",
+    "core-reset/p33-delivery/context-navigation-failure.json": "232d8c0a779a30c84e3abf8410d7b29387ee67f1d85a4db5b578960816e4385f",
+    "core-reset/p33-delivery/delivery-python.txt": "2dd5e6a25074790d3baef5af8f46e1ed3750c33532a5b8a232b6768c98113fa3",
+    "core-reset/p33-delivery/navigation-python.txt": "c9f2501cf6be5d2da9283176ea716c791c556d689d80585662854817f71dc126",
+    "core-reset/p33-delivery/source-check-navigation.json": "e31b669c3c3db5eab0c4d00194cab19615f87991c68804e266d3d0d4a1eb9176"
+  }
+}
