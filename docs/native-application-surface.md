@@ -4,7 +4,8 @@ This is the concrete authoring subset demonstrated by the owned clean core and
 independent application work, not a promise to support every inherited engine
 API or arbitrary third-party addons. It complements [application authoring](application-authoring.md),
 [packaging](packaging.md) and the [owned-fork decision](architecture-decisions/0071-owned-fork-and-addon-boundaries.md).
-Final release scope, support duration and licensing dispositions remain open.
+The [provisional candidate support boundary](candidate-support.md) records the
+owner's addon, support and licensing choices. Broader support remains deferred.
 Native and same-origin application code is trusted; none of these APIs is a
 sandbox for hostile code.
 
@@ -138,3 +139,6 @@ long-term support policy or compatibility with external Odoo releases.
 [Current evidence and remaining work](implementation-status.md) distinguish
 source checks, real installed behavior, browser proof, recovery and final
 release acceptance. Provisional candidate numbers are not stable-release claims.
+The [capability register](application-capability-register.md) distinguishes
+demonstrated behavior, intentional boundaries, repairable gaps and unproven
+application paths; none of these categories substitutes for visual qualification.
