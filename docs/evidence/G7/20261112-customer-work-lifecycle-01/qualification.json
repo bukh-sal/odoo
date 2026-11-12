@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "work_item": "CW-L01",
+  "utc": "2026-11-12T18:31:37.656992+00:00",
+  "scope": "Populated recovery and leaf optional Customer Work integration uninstall/source-removal/same-archive return; not every application lifecycle",
+  "bounded_groups_passed": 6,
+  "bounded_groups_required": 6,
+  "historical_R1_score_changed": false,
+  "core_version": "0.2.1",
+  "core_runtime_changed": false,
+  "default_eight_addon_policy_changed": false,
+  "standalone_core_inventory_files_exact": 3682,
+  "applications": {
+    "dev.local.delivery": {
+      "version": "0.1.3",
+      "archive_digest": "sha256:c6544856f9461bc83c132f0e09a67803b7daf62b22ff67a3d91aff2a5790c763",
+      "private_source": true,
+      "source_changed_this_round": false
+    },
+    "dev.local.partners": {
+      "version": "0.1.0",
+      "archive_digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+      "private_source": true,
+      "source_changed_this_round": false
+    },
+    "dev.local.workboard": {
+      "version": "0.2.2",
+      "archive_digest": "sha256:32f77c07ce15ffacbb40353217307c1ae2ed61707d013e05b58055a443724876",
+      "private_source": true,
+      "source_changed_this_round": false
+    }
+  },
+  "final_image_id": "sha256:fec4982802ca737d90898bb89a0af12ae7fcd4715d67282bb261b51042288c75",
+  "final_configuration_generation": 11,
+  "groups": [
+    {
+      "name": "Controlled native-commit failure",
+      "status": "passed",
+      "proof": "Normal independent register/destructive approval/checkpoint/native child; controlled host exception before metadata; original plan recovery-required and closed. Pending occurrence safely held, attempts0; survivor tables/history exact."
+    },
+    {
+      "name": "Current-authority coordinated fresh restore",
+      "status": "passed",
+      "proof": "New database/filestore target; all8app tables exact, pending occurrence0attempt, post-checkpoint Alice/B revocation retained; source kept through restore/use and later archived/retired explicitly."
+    },
+    {
+      "name": "Separate resume and useful work",
+      "status": "passed",
+      "proof": "New exact resume review, current revoked workspace403; task/customer context works, preserved occurrence explicitly rescheduled, one new private notice attempt1, no source effect; fresh browser comment/ack/reload. Fixture restored exactly."
+    },
+    {
+      "name": "Normal integration-only uninstall",
+      "status": "passed",
+      "proof": "Native and metadata removal completed with destructive approval; owned link table deleted, all7survivor app tables exact; removed service503/no job, actual task comment and reminder panel continue without integration."
+    },
+    {
+      "name": "Exact partial source removal",
+      "status": "passed",
+      "proof": "Production completeness guard first refused extra failed DB. Exact owned failed source archived (pg_restore catalog verified) and retired without FORCE; no config/guard change. Normal removal deployed exact11file subtraction,10addons/2archives; survivor/dependency bytes and history preserved; UI useful with source absent."
+    },
+    {
+      "name": "Same-archive return and receipt fencing",
+      "status": "passed",
+      "proof": "Normal install of unchanged0.1.3 archive with4explicit grant renewals. Empty owned table, survivor records exact. Unexpired old key409 across binding generation4->11, zero rows; explicit fresh-key business intent creates1NEWlink, current repeat deduplicates. Reinstalled customer action/inbox/task UI works."
+    }
+  ],
+  "source_subtraction": {
+    "image_id": "sha256:1e7443c3d5d0f780062af89bfa18e3b21c950b9510abe8fb5ed3f8ddefefca73",
+    "removed_files": 11,
+    "native_addons": 10,
+    "artifacts": 2,
+    "final_layers": 11,
+    "all_final_layers_passed": true,
+    "source_image_not_final_ancestor": true,
+    "audit_sha256": "86ce9132e40100db45c5be629f51147cffe3d7463a9356b780f4a357cd48fa54",
+    "record_sha256": "f4678bc2640c4c21f973b4ac490647c25073bb351d4d07eddc8dbeff7c549f6f",
+    "surviving_python_fingerprints_preserved": true
+  },
+  "final_data": {
+    "tasks": 9,
+    "comments": 5,
+    "personal_notices": 4,
+    "customers": 2,
+    "current_links": 1,
+    "original_tasks_lists_stages_customers_comments_notices_job_outcomes_and_outbox_retained": true,
+    "new_link_identity_distinct_from_deleted_link": true,
+    "all_jobs_terminal": true
+  },
+  "exact_owned_cleanup": {
+    "two_managed_test_lanes_normally_drained": true,
+    "failed_source_database_archived_then_retired": true,
+    "no_FORCE": true,
+    "full_failed_source_dump_sha256": "95c39198075006b692a8e829863709e3f2245eec0699b2e32beb51023a5b6d60",
+    "archive_catalog_verified": true,
+    "final_failed_state_dump_not_new_restore_qualification": true,
+    "coordinated_checkpoint_actual_restore_passed": true,
+    "all_four_checkpoint_archives_hash_verified": true,
+    "source_filestore_stages_images_and_archives_retained": true,
+    "full_review_fixture_cleanup_run": false
+  },
+  "foreign_baseline_resources_present": {
+    "containers": 119,
+    "images": 46,
+    "networks": 45,
+    "volumes": 107
+  },
+  "foreign_mutations_issued": false,
+  "review_site_retained": true,
+  "source_checks": {
+    "private_fault_boundary_safety_tests": 5,
+    "failures": 0,
+    "product_source_changes": false,
+    "application_source_changes": false,
+    "new_full_host_run": false,
+    "prior_source_baseline": "Exact unchanged apps retain prior18Python+21Node source evidence; not rerun or recounted as new checks"
+  },
+  "validation_limits": {
+    "private_harness_expectations_corrected": [
+      "isolated import path and actual container labels/port producer shapes before mutation",
+      "normal lifecycle fence uses held, not pending, after fault",
+      "public notice DTO uses notice identity; job ID is not exposed there",
+      "explicit JSON needed for psql boolean scalar observation",
+      "old request key409 is the existing CR-0019 contract, not a product failure"
+    ],
+    "original_receipts_retained": true,
+    "apply_restore_or_resume_replayed": false,
+    "manual_business_queue_or_receipt_repair": false,
+    "core_guards_weakened": false
+  },
+  "intentional_boundaries": [
+    "Native uninstall deliberately deletes selected app-owned business tables; reinstall does not silently restore link data. Data-preserving suspension is a different operation.",
+    "Current reviewed fresh restore supports unresolved failed operations. Arbitrary rollback of a completed uninstall/checkpoint is not established; it needs an explicit independently approved current-authority workflow.",
+    "Source removal requires complete protected database inventory; unknown/retained DBs cannot be silently omitted. Cleanup was exact archived owned-test retirement, not a guard bypass.",
+    "Old or ambiguous request keys are not automatically recycled. A fresh key is used only for an explicitly reconciled new business intent; retries of that intent retain the key.",
+    "Trusted native/same-origin code and qualified immutable combinations only; no hostile-plugin sandbox or general ABI promise."
+  ],
+  "not_qualified": [
+    "Workboard uninstall or full dependency-cascade removal",
+    "new app event consumer delivery",
+    "mid-compute/uncertain external effect recovery for this combination",
+    "arbitrary completed-operation checkpoint rollback",
+    "recurrence/email/push/team-recipient reminders",
+    "complex populated migrations/high volume/broad mobile and accessibility"
+  ],
+  "publication": false,
+  "private_proof_sha256": {
+    "qualification/workboard-native-01/lifecycle-01/preflight.json": "7dff7fdbdd2d51537d20749ee4f6a8d018c7707556c9445166183c9f5043f09b",
+    "qualification/workboard-native-01/lifecycle-01/fault-result.json": "330ec5afac899499daf5bfc3abd750ddad32ceeb2f5c2cf0205c6d2dc82f9602",
+    "qualification/workboard-native-01/lifecycle-01/fault-checkpoint-verified.json": "e53c206b9776a65d0195d3b09da8c9c8193d25a1436525b96c1e705b676ae931",
+    "qualification/workboard-native-01/lifecycle-01/restore-review.json": "8e47c872325d0054128035edc470299a2cab1a4e1e86a0d7be9e81ea90005fd3",
+    "qualification/workboard-native-01/lifecycle-01/restored-result.json": "d5c20f7eabcf2293c41afb7e9117e177be4aa211b318a9f59d200d62ed170b16",
+    "qualification/workboard-native-01/lifecycle-01/resume-review.json": "e8bb5215ae42799d17a3005b92dfaeb134bad65d0c780e196f25a6bbc0f6d003",
+    "qualification/workboard-native-01/lifecycle-01/resumed-result.json": "42906ae3ec87240cf73b98611ea0e95e0e274b5c3d03dd925d26cc22fd6a4831",
+    "qualification/workboard-native-01/lifecycle-01/restored-use-result.json": "c2faf0735c33b13f40cdbd39ded719d4b588ccb989a42868c0f688d3a5a155c9",
+    "qualification/workboard-native-01/lifecycle-01/membership-restored-source.json": "c065ab1590abf8196e61466f2e812035e9e19971cde73d648c7edef5a7c0ec07",
+    "qualification/workboard-native-01/lifecycle-01/membership-restored-restored.json": "0b72f1dbba20d13639a0771bd92636aa61d315ec309298f5bbab238cd3e57ad5",
+    "qualification/workboard-native-01/lifecycle-01/uninstall-result.json": "fa1c8c21bffc5548e66bd325566051a103ddc2b821c788f895c720f8eb7b5955",
+    "qualification/workboard-native-01/lifecycle-01/after-uninstall-use-result.json": "68a019d7efd218f082c610a6b2151e1956e7ba422e931d11bc495e22f2109ad5",
+    "qualification/workboard-native-01/lifecycle-01/source-removal-sharing-refusal.json": "92b07af9b92c4ae3cdef5fe2decd269ddd5206918214dfa30fc2abeb6a3b4a8a",
+    "qualification/workboard-native-01/lifecycle-01/failed-source-retirement-review.json": "58a317b3eadee794ce6c14cb69d3758d056e73cfe136e9d02fa7987f4e66aba2",
+    "qualification/workboard-native-01/lifecycle-01/failed-source-retirement-result.json": "b8ffe91b0ac0c553faae7ccdadb9ac63c1579ddd8139eb247f057d8954729fac",
+    "qualification/workboard-native-01/lifecycle-01/source-removal-build-result.json": "61d1d5f5a28c61e0637e8b11a10b86965e73a96fc82724416f65575a484d251a",
+    "qualification/workboard-native-01/lifecycle-01/source-remove-result.json": "7b54d858ba4dd4d4b7ff4e2eb03faac9bf3529705e1e9bf0647372abf2b9ee84",
+    "qualification/workboard-native-01/lifecycle-01/reinstall-result.json": "5240af0db46f80a609969bf633cf6151139c51ea5a04169807a5c7964441161a",
+    "qualification/workboard-native-01/lifecycle-01/old-receipt-incarnation-review.json": "c015b2cddf43c17201e2209e546828d740d8ba8b63b144f255d995e0944a371c",
+    "qualification/workboard-native-01/lifecycle-01/relink-result.json": "a5ca972f4b5fc35dad720b7fac62083254990a6658cb83385cf5e95c83b69a3a",
+    "qualification/workboard-native-01/lifecycle-01/final-result.json": "98560603d497d4bc3c49f9cd340b4e3f72c53e37e43a19e4186ecfd2fa86d138",
+    "core-reset/p34-lifecycle/fault-boundary-tests.txt": "d66c1d2fccc00466e7943aa7ef075f60801c42190266f2e2e963b6a16cad6eef",
+    "core-reset/p34-lifecycle/recovered-browser.json": "90f5d92663b73e5d8467e298bb2d5496cf5cfb5b94c9faca514e785ce5da5ec5",
+    "core-reset/p34-lifecycle/uninstalled-browser.json": "c8919aee0699c3eb3047d7e425c2a078cdc845f5b97a08a05c67b9c27049018d",
+    "core-reset/p34-lifecycle/source-absent-browser.json": "fb0434b26e2993ca1bf3cb1c71f637bb805f476c165b2c3de1d2c39bb479f76f",
+    "core-reset/p34-lifecycle/final-browser.json": "da5f048206aace131325db4981e2e5e5fa4f6b0e4e15a35dedbf2476811c6d7c",
+    "core-reset/p34-lifecycle/retained-resources-final.json": "b977a279a9be35426c7d2350f8861bef70386fc7403670076b87f37f7ad86cdb"
+  }
+}

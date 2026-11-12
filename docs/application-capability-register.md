@@ -19,6 +19,11 @@ that a screen is useful or usable.
 | Durable personal reminders | Installed delivery, idempotent scheduling, reschedule/cancel and current-authority denial demonstrated | Existing managed job lanes deliver one private inbox notice. Changed/completed/archived tasks refuse effects. Actual prepare/compute followed by actor role loss denies fresh finish with no notice; role restoration is verified. This does not qualify event-consumer effects, external email/push or team-recipient reminders. |
 | Honest background status | Repairable app defect found and fixed | Core correctly dead-lettered a forbidden job, but the app initially displayed Scheduled from its own stale row. The successor derives status through the existing current-authorized job API and renders failure/unavailability rather than inventing delivery. A normal immutable-image upgrade preserves populated business tables. |
 | Reminder ownership and invalidation | Intentional bounded application policy | A reminder belongs to the scheduling human, not the assignee or workspace. Scheduling and acknowledgement require editor/admin under the existing workspace mutation contract; a viewer may read current own notices. Any task revision invalidates the occurrence. Finer relevance checks, recurrence and team recipients need explicit app policy and evidence. |
+| Optional leaf app uninstall, source removal and same-archive return | Demonstrated for Customer Work0.1.3 with Workboard0.2.2 and Partners0.1.0 | Normal destructive native/metadata uninstall deletes only the owned link table; task/reminder/customer data remain. Exact11file subtraction leaves10addons/2archives,11audited final layers. Normal same-archive reinstall renews grants explicitly and starts an empty owned table. This does not qualify full Workboard/cascade removal. |
+| Populated recovery with pending personal work | Demonstrated in a real fresh database and browser | A held unattempted reminder survives the coordinated fault/checkpoint/restore; newer membership revocation remains effective. Separate resume plus explicit reschedule delivers once. Mid-compute uncertain/external effects are not newly qualified. |
+| Reusing request keys across app removal/reinstall | Intentionally refused when the binding incarnation changed | An unexpired old key returns409 rather than resurrect a deleted-record receipt. After confirming the new table is empty and current authority permits it, an explicit new intent uses a fresh key and deduplicates normally. Never automatically rotate keys after an ambiguous mutation. |
+| Source removal with additional databases | Intentional completeness gate | Every non-template DB must match the protected observed site configuration plus empty maintenance DB. A retained failed test DB blocked removal; it was archived and deliberately retired, not hidden or bypassed. Unknown/foreign databases must remain untouched. Return with a fully supported complete sharing profile or explicit exact owned-test retirement. |
+| Undo a completed native uninstall from its checkpoint | Not a supported current operator workflow | The qualified fresh-restore path requires an unresolved failed operation and independent current-authority review. Reinstall does not restore deleted app rows. Data-preserving suspension is different. A general completed-checkpoint restore needs explicit target/effect/authority review before it can be promised. |
 | Arbitrary model changes and populated migrations | Explicit migrations supported; not universally qualified | A real application migration must preserve useful data and recover under current authority. Existence of a migration declaration earns no acceptance. |
 | Trusted native Python and same-origin frontend extensions | Intentional R1 trust boundary | Native code shares the process and can execute privileged logic. Permissions and manifests do not sandbox hostile code. Isolation is a separate R2 requirement. |
 | Hot-unloading native code or independent native versions in one shared process | Intentionally unsupported | Python imports/process hooks and native registry/schema lifecycles require an immutable image and controlled transition. Feature suspension, database uninstall and source removal are distinct operations. |
@@ -65,8 +70,33 @@ Project core bytes remained exact; byte-reproducible native dependencies remain
 a packaging improvement. No general dependency reproducibility claim follows.
 
 Still unproven for this combination: complex populated migrations, event delivery,
-complete uninstall/source-removal/recovery, high volume, mobile and broad
+full Workboard/cascade uninstall, high volume, mobile and broad
 accessibility. Existing historical core/Partners lifecycle evidence is not copied
 into these new app scopes. Feature-suspension races, recurrence, external side
 effects and offline drafts need their own qualification. They are not labelled
 platform impossibilities.
+
+
+## Leaf integration lifecycle findings (12November2026)
+
+[CW-L01](evidence/G7/20261112-customer-work-lifecycle-01/qualification.json) closes six bounded lifecycle/recovery groups
+for the exact unchanged three-app combination. No core or app-source customization
+was needed. The actual UI continued working without integration source, then the
+same archive returned its customer panel and action. Four personal notices and
+all original task/customer records survived; a newly linked relationship has a
+new identity after destructive uninstall. Old relationship data remains in the
+retained checkpoint, not silently restored into the new table.
+
+The source-removal guard first refused the retained failed database. After useful
+recovery and an explicit verified full failed-state archive, only that exact owned
+synthetic database was retired without FORCE. The current database and checkpoints,
+filestore, stages and images remained. The original guard then passed unchanged.
+This records a deliberate safe cleanup decision, not a database omission or a
+policy exception that applications may request themselves.
+
+The old request-key409 was the existing CR-0019 contract, not a new product defect.
+The private test's initial expectation was corrected; no receipt, binding generation
+or business row was manually repaired. Exact operation outcomes and failed helper
+receipts remain available. Further product copy polish (including technical helper
+text), full mobile/accessibility and the remaining application policies stay future
+work; source qualification alone is not product maturity.

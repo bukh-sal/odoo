@@ -166,3 +166,29 @@ unsent edits and comments. A separate contextual tab can retain the original dra
 a before-unload guard protects full-page navigation. These patterns still need
 actual browser checks: a URL in source alone does not prove route selection,
 reload behavior, draft retention or usability.
+
+
+## Leaf lifecycle and retained request identities
+
+[Installed leaf-integration qualification](evidence/G7/20261112-customer-work-lifecycle-01/qualification.json) demonstrates
+normal native uninstall, exact clean source subtraction and same-archive return
+while independent tasks, reminders and customer records remain. Native uninstall
+is explicitly destructive to the selected app's owned tables. Reinstall creates
+new owned data; it is not a hidden import from a checkpoint. Data-preserving
+feature suspension is a separate operation and needs the app's affected-path
+qualification. Current operator recovery supports unresolved failed operations,
+not an arbitrary rollback of a completed uninstall.
+
+Idempotency receipts are retained history, not records that an app may reset during
+reinstallation. New bindings use a new release incarnation. An old, still-unexpired
+key can therefore return409 even with identical input. Reconcile the actual business
+state and current authority first; an explicitly new intent may then mint a new key.
+Retries of that new intent keep its key. Never treat an uncertain response as an
+instruction to generate another key automatically.
+
+Source-removal safety includes complete database observation. A retained failed
+source DB can block the operation even after a successful fresh restore. Preserve
+its checkpoint/evidence; do not hide it in configuration or delete unknown data.
+CW-L01 deliberately archived and retired only its exact owned synthetic failed DB
+after verified recovery/use. This keeps the existing safety rule intact and does
+not establish a generic sharing-server exception.

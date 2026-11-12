@@ -7,15 +7,51 @@
 
 Current goal: consolidate the locally qualified app-free core and independently packaged application path. Runtime lifecycle, native UI, unchanged-app successor and populated recovery checks have passed their bounded scopes. Default-artifact integration and exact cleanup have passed. Preserve historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication, hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-11T20:44:53.683690+00:00
+- Updated UTC: 2026-11-12T18:33:15.639904+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **AP-04 reusable workflow and clean delivery — passed.** Historical AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **Customer-work pressure round complete within its bounded scope.** Independent Workboard0.2.2, unchanged Partners0.1.0 and separate Customer Work0.1.3 passed normal mixed install/populated app upgrades, useful live customer context, actual managed-lane personal reminders, current-authority denial and real browser review. Core/default eight-addon composition is unchanged; all3682standalone-core inventory entries remain exact. Three observed app defects were repaired through legitimate successors: false Scheduled status, dropped deep-link context and lost comment draft. [Pressure evidence](evidence/G7/20261111-customer-work-01/qualification.json) separates real installed/UI proof from unproven lifecycle/product scope. Codex implemented and reviewed directly; no delegation or production/publication.
+- Latest work item: **CW-L01 optional customer-integration lifecycle complete,6/6 bounded groups.** Populated native-commit fault/current-authority fresh restore/separate resume/use, normal leaf integration uninstall, exact source removal and same-archive return passed. Workboard0.2.2/Partners0.1.0/Customer Work0.1.3 and core0.2.1 source are unchanged. All3682standalone-core files remain exact. [Lifecycle evidence](evidence/G7/20261112-customer-work-lifecycle-01/qualification.json) extends the prior useful pressure journey; it does not qualify Workboard cascade removal, arbitrary completed-operation rollback or universal plugin support.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
+
+## CW-L01 leaf application lifecycle (12November2026)
+
+- [x] Reconciled exact retained resources, current data/access and completed journals.
+- [x] Normal approved integration-only native-commit fault with coordinated checkpoint, closed traffic and safely held unattempted reminder.
+- [x] Fresh database/filestore restore: all8app tables exact, newer membership revocation retained, pending reminder0attempts; separate reviewed resume.
+- [x] Useful task/customer work, current revoked-scope403, one new personal notice, no failed-source duplicate; real browser comment/ack/reload. Fixture restored exactly.
+- [x] Normal leaf native/metadata uninstall:7survivor app tables/history exact; link table removed; old service503 and independent task UI still usable.
+- [x] Actual sharing guard refusal, explicit archived owned failed-DB retirement, unchanged guard passes; normal exact11file source subtraction/deployment,10addons/2archives,11final layers audited; UI useful with integration source absent.
+- [x] Same unchanged archive reinstalls with4explicit grant renewals;7survivor tables exact. Unexpired obsolete request key409 under new binding generation; reconciled fresh-key intent creates1new link and repeat deduplicates. Returned customer/inbox/task UI passes.
+
+[Accepted scoped evidence](evidence/G7/20261112-customer-work-lifecycle-01/qualification.json) binds the exact operations,
+source-removal image/audit and immutable private receipts. All four coordinated
+checkpoint archives verify. The final failed-state dump is retained forensic
+evidence with a readable archive catalog, not a new runnable-restore claim.
+The failed synthetic source DB was deliberately retired without FORCE after
+verified recovery/use and full archival; no configuration hid it and no guard
+was weakened. Current data, original filestore, stages, images and archives remain.
+
+Blocker register: no open operation, access fixture, uncertain business effect or
+managed test lane remains. Original tasks/lists/stages/customer records and old
+comments/notices/job outcomes/outbox remain; final9tasks/5comments/4notices/2customers/
+1newly created link. Five private fault-boundary checks pass; unchanged production
+and app source does not justify a new full-host run. Private harness assumptions
+were corrected from actual source/producer evidence and reconciled read-only;
+no apply/restore/resume replay or manual business/queue/receipt repair occurred.
+Round progress100% for these6bounded groups; historical gate/R1 score unchanged.
+
+Resume: preserve named review site18556/currentconfig11 and exact resource/evidence
+inventory. Never replay completed CW-L01 operations. The integration has returned
+on its original exact archive/image after an explicitly destructive data lifecycle.
+Reinstall is not an automatic data restore; ordinary completed-operation checkpoint
+rollback, Workboard cascade removal, new event consumers, uncertain external effects,
+complex migrations, high volume and broader mobile/accessibility remain unqualified.
+Next select a useful product requirement from the capability register; no new core
+customization was required and no production/publication is authorized.
 
 ## Current useful-application slice (11November2026)
 
@@ -37,8 +73,9 @@ Current pressure-round checklist:
 
 Blocker register: no uncertain mutation, pending access fixture, running operation
 or test lane remains. Private task/list policy, recurrence, external email/push,
-feature-suspension races, complex migrations, high volume and this new combination's
-full destructive lifecycle/event delivery remain unproven or deliberately scoped.
+feature-suspension races, complex migrations, high volume, Workboard cascade removal
+and new event delivery remain unproven or deliberately scoped; CW-L01 extends
+the leaf integration lifecycle/recovery scope.
 The same-version native wheel fingerprint rebuild observed in an earlier clean
 build remains a packaging reproducibility improvement; it was reviewed as a real
 staged change. See the capability register for reasons and return conditions.

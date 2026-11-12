@@ -64,3 +64,19 @@ exact; no app-specific core change. [Exact scope and limits](evidence/G7/2026111
 exclude universal compatibility, recurrence/external delivery and this new
 combination's complete destructive lifecycle/recovery. It supersedes the earlier
 Workboard reminder/integration gaps only for these exact archives and checks.
+
+
+[CW-L01 leaf lifecycle evidence](evidence/G7/20261112-customer-work-lifecycle-01/qualification.json) subsequently extends
+that exact combination: populated failure/current-authority fresh restore/separate
+resume and useful reminder work, completed Customer Work-only uninstall, exact
+source removal, and unchanged0.1.3 archive reinstallation. The source-free image
+has10addons/2app archives and11audited final layers. Surviving core/app/dependency
+bytes and populated task/customer/reminder history remain intact. Original keys
+from the prior binding incarnation return409; a reconciled fresh intent creates
+one new relationship and deduplicates. No core or app source/version change.
+
+This is not full Workboard/cascade uninstall, arbitrary completed-checkpoint rollback,
+mid-compute external-effects recovery, event-consumer, mobile or universal compatibility
+qualification. Link data intentionally disappears during native uninstall; same-archive
+return starts that owned table empty. Current review site is intentionally retained;
+exact managed lanes and the archived failed synthetic DB were retired separately.

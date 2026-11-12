@@ -2162,3 +2162,31 @@ source evidence and fresh populated app-only fault/recovery sibling; keep pilot.
 
 
 - 2026-11-11 customer-work pressure round closed: user asked Codex to choose and push limits. Added durable private reminders to independent Workboard and a separate optional customer integration with unchanged Partners; core runtime/default eight addons remain unchanged. Normal mixed install and two app-only successor upgrades preserve populated business records; final all8tables exact. Actual managed delivery/idempotency/reschedule/cancel and changed/completed/archived-task refusals pass; actual prepare/compute then role revocation produces dead_letter/FORBIDDEN/attempt1/nullresult/0notice, exact role restored. Optional customer-read grant loss clears context while a normal task comment remains usable, exact grant restored. Actual UI found false Scheduled feedback, dropped route context and lost comment draft; legitimate app successors0.2.2/0.1.3 repair these through existing job-status/action APIs, no core branch or live injection. Final customer/task reload, draft retention, failed/delivered status, UI future schedule/cancel attempt0, acknowledgement/reload, inbox return-to-task and viewer-private read-only copy pass; actual363px bounded interactions observed, full mobile/accessibility not claimed.18Python+21Node source checks pass; no new fullhost. Fresh final immutable imagefec49828/config6 preserves all3682core files;9tasks/3comments/3private notices, alljobs terminal, full membership/grant rows exact. Two owned managed test lanes normally drained; named Workboard18556/Aurora18555 review fixtures retained, all119foreign containers/46images/45networks/107volumes present. Earlier same-version native wheel rebuild retained as packaging concern. No push/publication/foreign cleanup/new R1 score/lifecycle blanket claim. See evidence/G7/20261111-customer-work-01/qualification.json.
+
+- 2026-11-12T17:53:14.229824+00:00: CW-L01 resumed owned retained fixture; exact DB/loopback edge were stopped, started once after durable ID/image/mount checks, no reset. Fresh9tasks/3comments/3notices/2customers/1link and restoredaccess matched. One normal future reminder then independently reviewed/approved integration-only uninstall fault reached originalnativecommit/checkpoint/recovery_required/closed; survivor tables exact and occurrence safelyheld0attempt. Postcheck pending expectation corrected by read-only reconciliation of documented lifecycle fence, no operation replay. One postcheckpointAlice/B viewer revocation and policy epoch fixture bound current authority. Exact normal freshDB restore passed closed with all8app tables exact, pending0attempt, currentrevocation retained; separate resume in progress. Original source/checkpoint retained, no core/appsource/version/trust change. Rough60% bounded lifecycle round; no new historical gate credit.
+
+
+- 12November2026 CW-L01 complete,6/6bounded groups; no new historical R1/gate points.
+  Actual optional-integration native-commit fault/checkpoint/current-membership
+  fresh restore passed with all8app tables exact and unattempted occurrence safely
+  held/reconciled. Separate resume, fresh human/UI comment/ack and one new personal
+  notice passed; source produced no duplicate, fixture restored in both DBs.
+  Normal Delivery-only native/metadata uninstall preserved7survivor tables/history,
+  removed owned links, denied old binding503, and left real task UI writable.
+  Actual completeness guard refused retained failed DB. Verified full final dump
+  and coordinated checkpoints, then deliberately retired only that exact synthetic
+  failed DB without FORCE; current data/filestore/stages/images preserved, guard
+  unchanged. Exact partial source build/deploy1e7443c3 removes11files,10addons/
+  2archives/11final layers, no inherited old app source or dependency rebuild.
+  Unchanged archivec654 reinstalled with4explicit grant renewals; empty owned table,
+  obsolete unexpired key409 under binding4->11, reconciled fresh key creates1new
+  link and repeat deduplicates. Actual returned customer/inbox/task UI passed.
+  Final9tasks/5comments/4notices/2customers/1newlink, alljobs terminal, all4checkpoint
+  archives hash verified, no managed lanes/access fixture/open operation. All3682
+  core files, three private Git sources and archive pins unchanged.5private fault
+  boundary tests pass; no fullhost. Private helper expectations were corrected from
+  source/producer evidence and reconciled read-only; no mutation replay/business
+  or queue/receipt repair. Current review site retained, all119foreign containers/
+  46images/45networks/107volumes present. Completed-uninstall rollback, Workboard
+  cascade/event/complex-migration/external/mobile scopes remain unqualified. See
+  evidence/G7/20261112-customer-work-lifecycle-01/qualification.json.

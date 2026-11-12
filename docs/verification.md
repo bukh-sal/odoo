@@ -495,3 +495,20 @@ Both named useful pilots remain;obsolete owned siblings/helpers/images retired.
 all16APchecks;[handoff](application-adoption-delivery.md) records current access,
 commands,scope and remaining limitations. Historical R1/BG/BX/CF/AR/AT evidence
 retains its narrower recorded release/profile scope.
+
+
+## CW-L01 optional customer-work lifecycle (12November2026)
+
+[Scoped qualification](evidence/G7/20261112-customer-work-lifecycle-01/qualification.json) records6/6bounded groups on
+unchanged core0.2.1 and private Workboard0.2.2/Partners0.1.0/Customer Work0.1.3.
+Actual normal approval/checkpoint/native fault, current-authority fresh restore,
+separate resume/use, one pending-reminder recovery/control effect, native uninstall,
+exact source subtraction and same-archive return passed. UI confirms independent
+work with the integration absent and restored customer context afterwards.
+Source subtraction removes11files with10addons/2archives and11final layers audited;
+all3682core files remain exact. Obsolete unexpired key409 and fresh-key deduplication
+are verified without receipt deletion. Five private fault-boundary safety tests
+passed; no new full-host run or historical gate score. Exact failed test DB was
+archived/retired after recovery; protected foreign resources and coordinated
+checkpoints remain. See the capability register for intentional data/key/sharing
+boundaries and unqualified full-app cascade/rollback/external/mobile cases.
