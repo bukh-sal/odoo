@@ -1,5 +1,28 @@
 # Work log
 
+## 13 November 2026 / PP-01 source implementation and package proof
+
+Created/reviewed the active phase's local-only implementation plan before app
+edits, after fresh source/metadata and real desktop/narrow UI inspection. Current
+task/customer/inbox is usable but customer editing crowds discussion and pages
+lack obvious return navigation. Existing modal focus return and separate-tab
+customer continuity work. Implemented app-only shared navigation via the existing
+trusted task-panel seam, read-first customer association with explicit editing,
+human reminder status and tighter responsive task detail. No generic core,
+domain/schema/permissions/key/CAS behavior change. New Workboard0.2.3/private
+commit25c11a0 and Customer Work0.1.4/5a3667c; unchanged Partners0.1.0.
+
+Actual affected checks26JS+18Python pass. All shipped JS template XML parses;
+deterministic own-repo/root-recipe package assembly agrees and ArtifactValidator
+accepts exact archives under a process-local proof policy, not real admission.
+Digests Workboardf47abb24 and Customer Work82fe9e07; Partners98ab9021 unchanged.
+Package preparation stopped on inconsistent Git modified/index reports twice;
+raw bytes matched HEAD for every tracked app file. Exact known-file index refresh
+resolved reports without source changes, then preparation completed; no native
+operation was attempted/replayed. Source-only proof is not installed usability.
+Next: fresh bounded image/build and normal plan/approval/upgrade, then browser
+acceptance; no new phase accepted or historical gate credit.
+
 ## 13 November 2026 / product-platform roadmap setup
 
 User authorized research, a consolidated roadmap and an implementation goal,

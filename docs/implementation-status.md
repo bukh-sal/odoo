@@ -7,7 +7,8 @@
 
 Current goal: implement the [product/platform roadmap](product-platform-roadmap.md),
 building useful independent applications on the qualified app-free core. Research
-and roadmap setup are complete; implementation has not started. Create each
+and roadmap setup are complete; PP-01 is active after fresh source/browser inspection
+and its just-in-time implementation plan. Create each
 phase/large-section implementation plan only when it activates, using the latest
 source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
@@ -18,8 +19,8 @@ hosted/production deployment, paid services or existing user-data destruction is
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **New roadmap PP-01 next; its implementation plan is not yet created.** AP-04, CW-L01 and historical AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **Roadmap research/setup complete (13November2026), documentation only.** Five outcome phases, dependencies, acceptance and just-in-time planning rules established. No phase implementation, product test, browser or Docker operation this turn. New-roadmap progress0/100 weighted points,0/5 accepted; historical scores unchanged.
+- Current phase/gate: **PP-01 product experience active; fresh implementation plan reviewed before app changes.** AP-04, CW-L01 and historical AR/CF/BG/R1 scopes remain complete.
+- Latest work item: **PP-01 app successor source/package checks passed (13November2026); installed acceptance pending.** Actual inspection found crowded task/customer editing, missing return navigation and technical product copy. Workboard0.2.3 and Customer Work0.1.4 now implement shared workspace navigation, compact read-first customer linking, clearer reminders and responsive task layout.26JS+18Python checks pass; deterministic archives validate locally, unchanged Partners archive preserved. No core/runtime/schema change or live upgrade yet. New-roadmap progress0/100 accepted weighted points,0/5 phases accepted; historical scores unchanged.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -28,10 +29,19 @@ hosted/production deployment, paid services or existing user-data destruction is
 The [canonical roadmap](product-platform-roadmap.md) and
 [research record](roadmap-research.md) define PP-01 product experience, PP-02
 document-library breadth, PP-03 reusable platform evolution, PP-04 developer/operator
-workflow and PP-05 candidate readiness. Each phase is not started; the next
-implementation turn starts with a fresh PP-01 plan, not prewritten future plans.
+workflow and PP-05 candidate readiness. PP-01's local-only implementation plan
+now binds fresh source/runtime/UI findings; later phases remain unplanned.
 Codex implements/reviews without delegation. Preserve the current review fixture;
 its runtime facts below were observed12November, not freshly checked for planning.
+
+PP-01 fresh inspection confirmed the current application/edge/DB containers and
+actual desktop task/customer/reminder screens. Existing Escape/focus return and
+separate customer-tab behavior work and are retained. A measured393x852 customer
+view has no page overflow. This is baseline evidence, not updated-app acceptance.
+App source commits25c11a0(Workboard) and5a3667c(Customer Work) are private/local;
+archivesf47abb24/82fe9e07 remain unadmitted. The next active step is a reviewed
+immutable build and normal exact approved upgrade, then actual visual/workflow
+acceptance. Do not serve source into the running image.
 
 Blocker register: no recorded in-flight mutation or unresolved CW-L01 operation.
 Source research found a deliberate current workspace-attachment denial; secure

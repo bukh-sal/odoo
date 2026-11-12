@@ -38,7 +38,7 @@ PP-03, or build a speculative framework in anticipation of later apps.
 
 | Phase | Weight | Deliverable | Dependency | Current acceptance |
 | --- | ---: | --- | --- | --- |
-| PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | Not started |
+| PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | Active; plan reviewed, acceptance pending |
 | PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | Not started |
 | PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | Not started |
 | PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Not started |
