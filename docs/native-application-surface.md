@@ -9,6 +9,11 @@ owner's addon, support and licensing choices. Broader support remains deferred.
 Native and same-origin application code is trusted; none of these APIs is a
 sandbox for hostile code.
 
+Next development follows the [product/platform roadmap](product-platform-roadmap.md).
+Workspace binary attachments are currently denied by core, not part of this
+demonstrated authoring subset. The document-library phase includes a deliberate
+generic capability prerequisite; see the [research](roadmap-research.md).
+
 ## Models, records and permissions
 
 | Surface | Application responsibility | Evidence and boundary |

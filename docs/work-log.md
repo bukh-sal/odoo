@@ -1,5 +1,32 @@
 # Work log
 
+## 13 November 2026 / product-platform roadmap setup
+
+User authorized research, a consolidated roadmap and an implementation goal,
+with phase/large-section plans created only at activation, before implementation.
+Read current status, sequencing/ownership decisions, qualified pressure/lifecycle
+evidence, capability/support/authoring records, attachment/recovery source and
+Aurora's local product structure. Consulted primary W3C interaction/accessibility,
+OWASP file-upload, Nextcloud product-workflow and Reproducible Builds references.
+Source finding: workspace attachments are deliberately denied on access/stream
+and mutation paths, so PP-02 needs generic secure binary support before its app.
+App-owned ACL checkpoint semantics and completed-checkpoint restore remain limits.
+
+Created docs/product-platform-roadmap.md and docs/roadmap-research.md: five phases
+for visible product experience, document-library breadth, reusable platform
+evolution, developer/operator workflow and exact candidate readiness. Fresh
+implementation plans are expressly deferred to each active phase; none created.
+Updated status/capability/authoring navigation and private resume capsule. Planning
+earns0 new implementation points/0 of5 phases; completed R1/AP/CW-L01 unchanged.
+Validation is documentation/link/weight/diff consistency only, not new product
+tests, visual review, live resource observation or lifecycle qualification. No
+Docker/browser/build/app/source/runtime/contract/version/trust changes or peer
+assignment. Raw historical build evidence remains untracked and retained.
+
+Next: fresh PP-01 implementation plan after current source/screens inspection,
+then deliver concrete customer-work interaction improvements. Keep one active
+item; no replay of completed lifecycle operations, no production/publication.
+
 ## 2026-10-27T23:32:26.886278+00:00 / A-01 / environment and source initialization
 
 Hypothesis: the available Docker Linux engine and managed Python are sufficient for isolated R0.
