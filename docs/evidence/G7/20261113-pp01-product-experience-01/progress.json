@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "work_item": "PP-01",
+  "local_date": "2026-11-13",
+  "status": "installed_partial_visual_review_followup_pending",
+  "phase_accepted": false,
+  "goal_complete": false,
+  "core_version": "0.2.1",
+  "core_runtime_changed": false,
+  "core_inventory_files_exact": 3682,
+  "curated_build_inputs_exact_at_image_review": 4004,
+  "python_metadata_unchanged": true,
+  "image_id": "sha256:843e230ce62b734531ee7682f2e59297d2bdf0f793775fef989005bfc6309a26",
+  "candidate_record_sha256": "668fbc17e6b7b7a117c99a4d947d5effb8f8a1f53acf9ba913016a7e6478b139",
+  "operation_id": "ad5a7a27-2fcf-4d8c-80f9-6f61a884e3c7",
+  "plan_hash": "sha256:37414e40ba98732671afd71fb35471e44922fe6d70651f70856067e7acaa740a",
+  "operation_state": "completed",
+  "configuration_generation": 12,
+  "independent_reconstruction": true,
+  "acknowledgments": {"trust": true, "permissions": false, "destructive": false},
+  "apps_installed": {
+    "dev.local.workboard": {"version": "0.2.3", "private_source_commit": "25c11a0d504d1dea0c347133ef045afd183f1500", "digest": "sha256:f47abb242adb0c594aaac0723f66860e49545e39346d2dd749a16d4249c4fd11"},
+    "dev.local.delivery": {"version": "0.1.4", "private_source_commit": "5a3667c7c6a44d6f0cfeb91440aa655b18c6f41a", "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd"},
+    "dev.local.partners": {"version": "0.1.0", "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd", "unchanged": true}
+  },
+  "source_checks": {"javascript_passed": 26, "python_passed": 18, "failed": 0, "all_shipped_js_template_xml_parsed": true, "installed_proof": false},
+  "preservation": {"application_tables_exact": 8, "memberships_and_grants_exact": true, "business_writes_during_review": false, "access_fixture_mutations": false},
+  "actual_agent_visual_review": {
+    "desktop_viewport": {"width": 1437, "height": 877},
+    "narrow_viewport": {"width": 393, "height": 852, "requested_width": 390, "requested_height": 844},
+    "narrow_document_scroll_width": 393,
+    "discussion_top_desktop_css_px": 500.662841796875,
+    "task_customer_reminder_navigation": "passed bounded read-only route and task-return checks",
+    "compact_customer_edit_open_cancel": "passed",
+    "dialog_forward_reverse_focus_wrap": "passed",
+    "escape_focus_return_to_invoker": "passed",
+    "relevant_narrow_action_targets_min_height_css_px": 27.5,
+    "human_review": false,
+    "full_accessibility_or_mobile_conformance": false
+  },
+  "new_finding": {
+    "description": "Reminder action has no owning native menu; cross-app navigation retains previous application header even after reload",
+    "owner": "Workboard app XML",
+    "core_customization_required": false,
+    "source_correction_version": "0.2.4",
+    "source_correction_commit": "6429c36",
+    "regression_failed_before_fix": true,
+    "corrected_domain_module_passed": 9,
+    "correction_installed": false
+  },
+  "remaining": [
+    "Assemble/build/review/normal-upgrade new Workboard0.2.4 without relabelling0.2.3",
+    "Verify native app header across all shared routes",
+    "Complete fresh useful create/edit/discussion/reminder/inbox/reload workflow",
+    "Complete current viewer and optional-unavailable visual checks with exact restored fixtures",
+    "Reconcile complete bounded PP-01 visual acceptance and limitations"
+  ],
+  "limits": ["No new full-host regression", "No new all-layer image audit", "No new event or migration qualification", "No production or publication", "No phase or goal completion claim"],
+  "private_evidence_root": ".local/product-roadmap/PP-01",
+  "completed_operation_must_not_replay": true
+}

@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-12T22:40:33.4095565Z
+- Updated UTC: 2026-11-12T23:14:54.6608647Z
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **PP-01 product experience active; fresh implementation plan reviewed before app changes.** AP-04, CW-L01 and historical AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **PP-01 app successor source/package checks passed (13November2026); installed acceptance pending.** Actual inspection found crowded task/customer editing, missing return navigation and technical product copy. Workboard0.2.3 and Customer Work0.1.4 now implement shared workspace navigation, compact read-first customer linking, clearer reminders and responsive task layout.26JS+18Python checks pass; deterministic archives validate locally, unchanged Partners archive preserved. No core/runtime/schema change or live upgrade yet. New-roadmap progress0/100 accepted weighted points,0/5 phases accepted; historical scores unchanged.
+- Latest work item: **PP-01 useful app improvements installed and partially visually verified (13November2026).** Workboard0.2.3/Customer Work0.1.4 normal exact-approved upgrade completed, all8app tables/current memberships/grants exact. Shared navigation, compact customer context and visible desktop discussion work; bounded keyboard/narrow checks pass. Real review found missing reminder menu ownership; app-only0.2.4 correction committed but not yet built/deployed. [Progress evidence](evidence/G7/20261113-pp01-product-experience-01/progress.json). Rough delivered progress about12/100 weighted points (PP-01 approximately halfway), separate from0/5 accepted phases and0accepted phase points. Historical scores unchanged.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -38,10 +38,24 @@ PP-01 fresh inspection confirmed the current application/edge/DB containers and
 actual desktop task/customer/reminder screens. Existing Escape/focus return and
 separate customer-tab behavior work and are retained. A measured393x852 customer
 view has no page overflow. This is baseline evidence, not updated-app acceptance.
-App source commits25c11a0(Workboard) and5a3667c(Customer Work) are private/local;
-archivesf47abb24/82fe9e07 remain unadmitted. The next active step is a reviewed
-immutable build and normal exact approved upgrade, then actual visual/workflow
-acceptance. Do not serve source into the running image.
+App source commits25c11a0(Workboard) and5a3667c(Customer Work) were built/admitted
+as exact archivesf47abb24/82fe9e07; Partners98ab unchanged.26JS+18Python source
+checks passed. Image843e230c binds4004source inputs; all3682core files and Python
+metadata unchanged. Normal operationad5a7a27 completed onconfig12/new worker5b65ecfd;
+checkpoint retained, all8app tables/current membership/grants exact. No business
+or access fixture changed during the initial updated visual review. Actual
+desktop1437x877 shows discussion near y501; actual narrow393x852 has no page
+overflow and relevant action targets at least27.5px. Dialog focus wraps both
+directions, Escape returns to the invoking task button, compact editor opens/cancels.
+
+Open product finding: the reminder action lacks an owning native menu, so native
+header retains Customer Work after cross-app navigation/reload. Existing native
+menu routing supports the fix; no core customization needed. Private Workboard
+commit6429c36/version0.2.4 adds its normal child menu; actual regression failed
+before and corrected domain9tests pass.0.2.3 stays immutable/deployed until a
+new package/build/normal upgrade. Next active action is that correction, followed
+by complete fresh workflow/viewer/optional-denial visual acceptance. Never replay
+ad5a7a27. No broad mobile/accessibility or phase acceptance yet.
 
 Blocker register: no recorded in-flight mutation or unresolved CW-L01 operation.
 Source research found a deliberate current workspace-attachment denial; secure
@@ -51,11 +65,12 @@ limits documented in the roadmap/capability register. They do not block PP-01.
 File policy, meaningful migration/event use, restore target policy and final
 performance/support decisions are resolved in their future phase plans.
 
-Planning verification: source/status/contract and primary-source research only;
-documentation links, phase weights/status and diff checks are checked before
-commit. No new runtime or acceptance evidence is claimed. Resume with PP-01
-current-screen/source inspection and its implementation plan, then coherent
-useful product changes. Never replay completed lifecycle operations.
+Setup verification covered source/research and documentation links/weights/diff
+checks; subsequent source/build/installed partial proof is recorded above.
+Resume PP-01's current menu correction with new immutable package/build/upgrade,
+then finish actual workflow and access-state visual checks under its updated
+plan. Never replay completed lifecycle operations or declare the phase accepted
+from source checks alone.
 
 ## CW-L01 leaf application lifecycle (12November2026)
 

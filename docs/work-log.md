@@ -1,5 +1,37 @@
 # Work log
 
+## 13 November 2026 / PP-01 immutable upgrade and actual visual findings
+
+One clean TEST build completed69.062s, record668fbc17/image843e230c. Exact4004
+curated source inputs, all3682standalone-core files and current Python metadata
+match. Fresh preflight9terminal historical operations,0runnable jobs. Normal two
+archive admission/stage/plan with independent reconstruction; only4app upgrades
+and trust acknowledgment, no permission expansion/destructive action. Private
+plan assertion assumed input target order; actual canonical producer ordering
+confirmed and original output verified without repeating admission/stage/plan.
+Normal register/approve/apply ad5a7a27 completed; config12/image843e/new worker5b65,
+checkpoint retained, all8app business tables and memberships/grants byte-structurally
+equal before/after. No app/source injection, old operation replay or core change.
+
+Actual desktop1437x877 compact task detail brings discussion to about y501;
+customer editing opens/cancels, shared navigation returns between all3surfaces.
+Dialog Tab/ShiftTab wraps and Escape returns to invoker. Actual393x852 narrow
+task has no page overflow, relevant targets27.5–40px. Screenshots remain private;
+this is agent review, not human satisfaction, full mobile or WCAG certification.
+No UI business write or role/grant fixture performed in this initial review;
+final read-only observation confirms original8table data still exact/running.
+
+Visual review found an app defect: reminders lack an owned menu and the native
+client retains the prior app header even after reload. Source confirms supported
+menu routing is sufficient; no platform customization needed. Addendum reviewed
+before correction. Actual regression fails for reminders before fix, then9domain
+tests pass; private Workboard6429c36/0.2.4 adds child menu under existing root and
+same native group. No relabel of admitted0.2.3. New correction package/image/normal
+upgrade and full workflow/viewer/optional-denial visual checks remain. Phase0/5
+accepted; rough new-roadmap delivered progress~12/100 based on installed outcomes.
+See evidence/G7/20261113-pp01-product-experience-01/progress.json. All future phases
+remain unplanned; next action is the active correction, not a new phase.
+
 ## 13 November 2026 / PP-01 source implementation and package proof
 
 Created/reviewed the active phase's local-only implementation plan before app

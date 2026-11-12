@@ -38,15 +38,19 @@ PP-03, or build a speculative framework in anticipation of later apps.
 
 | Phase | Weight | Deliverable | Dependency | Current acceptance |
 | --- | ---: | --- | --- | --- |
-| PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | Active; plan reviewed, acceptance pending |
+| PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | Active; installed partial visual proof, follow-up pending |
 | PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | Not started |
 | PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | Not started |
 | PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Not started |
 | PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Not started |
 
 Weights estimate outcome importance, not elapsed time or test counts. Current
-new-roadmap implementation progress is **0/100 weighted points; 0/5 phases
-accepted**. Research, documents and goal creation earn no implementation credit.
+new-roadmap accepted progress is **0/100 phase points; 0/5 phases accepted**.
+Current rough delivery is **about12/100 weighted points**, from the installed
+PP-01 navigation/layout slice and actual partial visual checks (approximately
+half its25% scope), not from documents or test counts. Its header correction and
+complete workflow/access-state qualification remain open. Research, documents
+and goal creation earn no implementation credit.
 Report partial progress only against real delivered outcomes; keep original R1
 99/99 and its score separate. Re-estimate effort when the fresh phase plan exists.
 
@@ -241,6 +245,7 @@ and sealed evidence remain private/immutable. R2/R3 remain outside this goal.
 The implementation goal is complete when all five phases meet their recorded
 outcomes and acceptance, final support/limitations and evidence are reconciled,
 and the handoff/owned-resource disposition is recorded. Roadmap creation does not
-complete it. **Next implementation action: create the fresh PP-01 plan, then
-deliver the product-experience slice. No phase implementation starts in this
-roadmap-setup turn.**
+complete it. The setup turn created no implementation plans. PP-01 subsequently
+activated with its fresh local plan; follow [current status](implementation-status.md)
+for its correction/acceptance work. Create PP-02's plan only when that phase is
+ready to activate, not during PP-01.
