@@ -1,0 +1,178 @@
+{
+  "alternate_routes": {
+    "all_rows_exact": true,
+    "cases": 8,
+    "covered": [
+      "native-metadata-control",
+      "foreign-native-read",
+      "native-version-write",
+      "native-create-forged-marker",
+      "native-file-write-forged-marker",
+      "legacy-content",
+      "legacy-image",
+      "anonymous-legacy-content"
+    ],
+    "denials": 7,
+    "native_metadata_positive": 1,
+    "receipt_sha256": "870139bb5de9c8cd77fdc2be091227fe7b7285d55674feb6c3cfb85b614b44e5"
+  },
+  "authority_narrative_correction": "Fresh real baseline Alice/B is active viewer, not revoked. All authority rows equal prior accepted snapshots; no role/member change this round.",
+  "final": {
+    "business_eight_tables_authority_jobs14_outbox53_exact": true,
+    "cleanup": false,
+    "configuration": 18,
+    "documents_files": 2,
+    "image_id": "sha256:3e40c53c7a2659b47c8d0506e23a7e88530376b648e1e4b2af3f962e7efe10a4",
+    "open_access_fixture": false,
+    "operations_terminal": 16,
+    "owned_site_and_images_retained": true,
+    "raw_bytes": 1150,
+    "upload_receipts": 4,
+    "versions": 4,
+    "worker_id": "b971c79981ac3f759c42f17a4fe0126576e6be13e1c23c217f9bf531b6ab4af0"
+  },
+  "initial_boundary_cases": {
+    "all_rows_exact": true,
+    "covered": [
+      "anonymous",
+      "foreign workspace",
+      "unknown/invalid/uppercase UUID",
+      "Range/query override",
+      "unknown resource",
+      "stale release",
+      "missing CSRF",
+      "wrong MIME",
+      "content encoding",
+      "unsafe filename",
+      "invalid UTF8",
+      "bad PNG",
+      "forbidden SVG extension"
+    ],
+    "healthy_download": 1,
+    "negative_cases": 16,
+    "negative_receipt_sha256": "dd0842e87f3dff81006438f31a1167a0e316096eb1615ed21d4fe7c7eef9cc5a"
+  },
+  "next": "Fresh exact current-authority fixture plan, then actual viewer/membership/feature and parallel-quota sections; preserve original brief and current roles, no completed operation replay",
+  "opaque_upgrade": {
+    "backup_id": "1c139a10-6cd8-4637-a4e3-03a0f70a5b6b",
+    "business_eight_tables_and_authority_exact": true,
+    "checkpoint_manifest_sha256": "fa80dc757050adce82cda58699e99367837dd5567e8643e5177df9255d6b636a",
+    "documents_four_tables_and_bytes_exact": true,
+    "generation": 18,
+    "image_id": "sha256:3e40c53c7a2659b47c8d0506e23a7e88530376b648e1e4b2af3f962e7efe10a4",
+    "native_documents_version": "19.0.0.1.2",
+    "only_control_fields_changed": {
+      "jobs.claim_generation": 14,
+      "jobs.dispatch_generation": 14,
+      "jobs.release_digest": 14
+    },
+    "operation_id": "1c139a10-6cd8-4637-a4e3-03a0f70a5b6b",
+    "plan_hash": "sha256:04e9fd0d073462c2016743fd8516f1888a8371d2ab1d67a5029e01ae40e4d2de",
+    "result": "normal_documents012_upgrade_completed",
+    "worker_id": "b971c79981ac3f759c42f17a4fe0126576e6be13e1c23c217f9bf531b6ab4af0"
+  },
+  "phase": "PP-02",
+  "phase_accepted": false,
+  "remaining": [
+    "Actual viewer/current membership and feature loss with exact fixture restoration",
+    "Installed size/body/native policy breadth and real parallel Repeatable Read quota",
+    "Optional document integration and degradation",
+    "Populated coordinated failed-operation fresh restore of binary/metadata/versions/references",
+    "Final UI/access/performance/lifecycle scope; no formal mobile/accessibility or malware safety claim"
+  ],
+  "roadmap_accepted_phases": 1,
+  "roadmap_accepted_points": 25,
+  "rough_implementation_points": 40,
+  "schema_version": 1,
+  "source": {
+    "archive_bytes": 45101,
+    "archive_digest": "sha256:db0b7016e53fbdc7cf027f65c615119043be470228ba2208d428877a037502ac",
+    "core": "0.2.2",
+    "default_core_addons": 8,
+    "documents": "0.1.2",
+    "native_core": "19.0.0.2.2",
+    "native_documents": "19.0.0.1.2",
+    "private_documents_commit": "1a4a00d143233ace1deb812a6f18e66a16a5b913",
+    "root_commit": "0b0e82f1127"
+  },
+  "source_checks": {
+    "before_ui_regression_log_sha256": "0cf9498283784813fb7a524e5e0bd92f5fa120a26cf3c44407792a7dbf1aef1c",
+    "installed_source_fixes_verified": true,
+    "javascript_log_sha256": "54230976139abd21a2c7c17ae08e293a449a830f0a99cafdd49b93e8ca4a8749",
+    "javascript_passed": 23,
+    "python_log_sha256": "4d736d86eb6385373b6c80084bc1f865f0d523f6222d5a61a9106443203436aa",
+    "python_passed": 23
+  },
+  "state": "useful_installed_workflow_and_initial_boundaries_verified",
+  "storage_finding": {
+    "active_svg_support": false,
+    "cause": "Inherited Binary.convert_to_column SVG-admin policy applies to private opaque text bytes",
+    "decision": "App-owned Binary specialization skips only inherited SVG content sniff on this field; ordinary native policy, core, type/size/scope/immutability/mutation guards unchanged",
+    "literal_same_key_continuation": {
+      "bytes": 89,
+      "file_id": "2ca1022b-2b12-4fa0-896e-da234156e8b5",
+      "original_same_key_continuation": true,
+      "previous_documents_and_business_exact": true,
+      "result": "literal_text_stored_and_downloaded",
+      "revision": 1,
+      "sha256": "f301c2f31ae31978ba09cfcacdfb5d331b6273b7753fdbc388ea1ed5443ce7e1",
+      "ui_preview_pending": true,
+      "version_id": "e7eca39d-346c-42a6-b2d3-34a7d345411d"
+    },
+    "observed_literal_text_upload_500": true,
+    "source_reproduction_before_fix_sha256": "7cb1db0d0a2a6f81b4fa8b4cf193c27a834cada95c3d8d8aa9c9fad16f522fef"
+  },
+  "timestamp_upgrade": {
+    "backup_id": "ce33a078-1397-42d8-9c22-740e918a2cd5",
+    "business_eight_tables_and_authority_exact": true,
+    "checkpoint_manifest_sha256": "991cd9d403911213b42fc65aaa403d9fada850d9e9534a326505a6647c532ee3",
+    "documents_four_tables_and_bytes_exact": true,
+    "generation": 17,
+    "image_id": "sha256:8259c8f4ea19ba879b770aed1a51b163f157549a081fb45a79aaeb6dd7240767",
+    "native_documents_version": "19.0.0.1.1",
+    "only_control_fields_changed": {
+      "jobs.claim_generation": 14,
+      "jobs.dispatch_generation": 14,
+      "jobs.release_digest": 14
+    },
+    "operation_id": "ce33a078-1397-42d8-9c22-740e918a2cd5",
+    "plan_hash": "sha256:841e3d7264d6c018e444d137d4fcee73552d017749fe9bc0fcc70667ecde4dee",
+    "result": "normal_documents011_upgrade_completed",
+    "worker_id": "cef5b01d3ac0cd8ada548f04472458e615bb11c5e509ec2ca396192e32c39b7a"
+  },
+  "ui_corrections": {
+    "actualNativeBrowser": true,
+    "configuration": 18,
+    "focusMovedAfterAsyncDetailPatch": true,
+    "literalFileDisplayName": "Literal SVG documentation.txt",
+    "literalFileRevision": 2,
+    "literalSvgTextEscaped": true,
+    "narrowObservedInnerWidth": 393,
+    "narrowRequestedWidth": 390,
+    "narrowScrollWidth": 393,
+    "saveNotice": "Saved.",
+    "scriptNodesInPreview": 0,
+    "selectionFocus": "H2 literal-xml-text.txt",
+    "svgNodesInPreview": 0,
+    "version": "0.1.2",
+    "viewportOverrideReset": true
+  },
+  "useful_workflow": {
+    "actual_browser": true,
+    "brief_versions": 3,
+    "escaped_script_text_no_script_nodes": true,
+    "filename_search": true,
+    "observations_sha256": "6f90c6a60111fd819d3b000e84a03a46f50bd0a5be07845cf410ec33db99ad9c",
+    "original_brief_revision": 6,
+    "rename_escape_keeps_draft": true,
+    "restore_as_new_preserves_originals": true,
+    "trash_restore_no_purge": true,
+    "version1_and2_downloads_exact": true,
+    "versions_bytes": [
+      402,
+      257,
+      402
+    ]
+  },
+  "utc": "2026-11-13T03:24:11.109256+00:00"
+}

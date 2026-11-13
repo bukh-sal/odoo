@@ -14,7 +14,7 @@ installed evidence. No future capability below is accepted merely by planning it
 | --- | --- | --- |
 | Coherent task/customer/reminder experience and safe drafts | PP-01 accepted for exact Workboard0.2.5/Customer Work0.1.4/Partners0.1.0 on core0.2.1 | Actual create/link/discuss/conflict/reconcile/schedule-cancel/reload/keyboard-complete-reopen and viewer/optional-denial checks pass. Compact context and visible navigation improve the screens. Real review caught menu ownership and unsafe/missing keep-draft choices; both were corrected through ordinary app code and normal upgrades. Core unchanged; bounded agent desktop/narrow checks, not broad accessibility/mobile certification. |
 | Upcoming reminder agenda | Application choice; not implemented by the delivered-notice inbox | Current task details show its scheduled/cancelled occurrence; My reminders lists delivered private notices. Owner=Workboard. If a useful upcoming/day agenda is needed, add a bounded current-actor app read service and UI; this is not a fundamental core prohibition or a reason to claim scheduled work was delivered. |
-| Workspace-scoped binary upload/download and previews | Generic transport/app UI source and candidate images built; installed support pending PP-02 | CR-0020/ADR0084 retain legacy attachment/token refusal and add bounded session/workspace/release/CSRF/model-guarded raw transport. App owns transactional bytea/history/trash/quota and file policy. Source checks pass; no old core0.2.1 image is relabelled or claimed to support it. The UI source passes21JS checks; rendered workflow, native routes/concurrency/recovery remain mandatory. |
+| Workspace-scoped binary upload/download and previews | Demonstrated bounded PP-02 installed workflow; remaining pressure/lifecycle unproven | Core0.2.2/Docs0.1.2 actual upload/find/preview/hash download/history/trash/rename-draft,16 transport refusals and7 native/legacy denials pass. App owns transactional bytea/history/quota/type policy; old token/attachment paths stay closed. Current role/feature loss, real quota concurrency, optional links and byte restore remain mandatory before phase acceptance. |
 | File format, size, preview and storage bounds | Intentional initial Documents app policy, not universal platform restrictions | App allows content-checked UTF8 TXT/Markdown/PDF/PNG/JPEG,5MiB revisions/100MiB raw per workspace/200files including trash/20versions. Only escaped text<=256KiB previews; others download-only/unscanned. No parser/antivirus safety claim, HTML/SVG/Office/archive execution, public links or sync. Core transport ceiling8MiB. Owner=Documents for allowlist/quotas/retention; revisit against useful demand and measured memory/storage/parser/recovery proof. |
 | Clean builds with an unchanged Python source lock | Exact image support; bitwise dependency reproducibility unproven | PP-02 M preserves its current app environment; a new policy path invalidated builder dependency RUN cache and D rebuilt same-version psycopg2/python-ldap with different .so/distribution digests. Core maintenance guard remains strict; any D install must bind/review those changes through normal plugin planning. Owner=build/operator workflow (PP-04). No fabricated lock edit, digest relabel or unchanged-environment claim. |
 | App-owned fine-grained sharing after checkpoint restore | Explicit checkpoint boundary, not a universal current-ACL overlay | AP-LIM-015: current native authentication/platform revocations reconcile, but app business ACL rows restore from checkpoint. Initial document app is workspace-shared; Codex must design and qualify newer app-ACL revocation handling before promising per-folder/person privacy across recovery. |
@@ -110,3 +110,36 @@ or business row was manually repaired. Exact operation outcomes and failed helpe
 receipts remain available. Further product copy polish (including technical helper
 text), full mobile/accessibility and the remaining application policies stay future
 work; source qualification alone is not product maturity.
+
+## PP-02 actual file workflow and storage findings (13November2026)
+
+[Installed evidence](evidence/G7/20261113-pp02-file-workflow-01/qualification.json)
+distinguishes useful browser behavior, source regressions and remaining pressure.
+The independent library works with native scoped binary transport; versions and
+recoverable trash are app-owned. Existing business/authority and uploaded bytes
+survived normal immutable app successors. This is no meaningful schema-migration
+or operator-checkpoint byte-restore proof; those remain explicit required work.
+
+- **Intentional protocol boundary:** app service `date-time` uses the platform's
+  canonical UTC Z checker. Documents emitted +00:00 and its overly broad test
+  missed that runtime contract. App serialization/test were repaired; actual
+  runtime checker/schema stayed unchanged. Authors must exercise the real checker.
+- **App storage customization, now demonstrated:** inherited native Binary sniffs
+  SVG and restricts it to system users. This unexpectedly rejected literal XML/SVG
+  examples in an otherwise supported escaped .txt file. Documents specializes only
+  its opaque bytea field to retain byte adaptation without this image-oriented
+  check. Its scoped private mutation marker, immutable versions, type/size/hash
+  checks, forced download and escaped preview stay in force; native forged writes
+  and legacy content/token routes refuse. Core has no Documents/SVG exception.
+  Ordinary native Binary retains its SVG policy; .svg/active rendering is still
+  unavailable by intentional app file policy. This uses trusted native field
+  customization and makes no sandbox or malware-scanning claim.
+- **Actual interaction repair:** explicit selection now focuses the detail after
+  Owl patches its async ref; a zero-timeout missed it in the actual narrow view.
+  Completed status says Saved rather than indefinitely refreshing. Existing draft
+  protection and safe dialog focus pass. Requested390px measured393px, no overflow;
+  this bounded agent check does not establish broad accessibility/mobile maturity.
+
+Fresh authority snapshots correct an earlier stale narrative: Alice/B is an
+active viewer in this qualification baseline, not revoked. Rows stayed exact;
+current-loss tests must use and restore those actual observed states.

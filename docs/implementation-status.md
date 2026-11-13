@@ -14,46 +14,53 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T02:45:21.047321+00:00
+- Updated UTC: 2026-11-13T03:24:11.109256+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: Documents installed, first-use read defect fixed in source; successor rollout next.** Historical scopes remain complete.
-- Latest work item: **PP-02 normal core0.2.2 maintenance and Documents0.1.0 install completed/verified.** Current config16/D0ff78912, both scopes installed; all existing business/authority preserved. First actual browser upload committed402B once, but subsequent list/detail returned500. Actual platform checker reproduced noncanonical app timestamp; private successor0.1.1 fixes UTC Z and strengthens source test,22pass. Successor assembled, not admitted/built/installed. [Evidence](evidence/G7/20261113-pp02-native-initial-01/qualification.json). Accepted25/100,1/5phases; goal ACTIVE.
+- Current phase/gate: **PP-01 accepted; PP-02 active: useful Documents workflow and initial installed boundaries verified; authority/quota/integration/recovery pending.** Historical scopes complete.
+- Latest work item: **Documents0.1.2 installed through normal reviewed successor upgrades; two real first-use/storage defects and two UI observations corrected and verified.** Current config18/image3e40c53c/workerb971c799, core0.2.2. Original brief revision6/3versions; literal markup text revision2/1version; total2files/4versions/4receipts/1150B. Old8tables/authority/14job business/53outbox exact. Actual preview/download/history/trash/rename-draft and observed393px focus pass;16 transport negatives and7 native/legacy denials preserve data. [Evidence](evidence/G7/20261113-pp02-file-workflow-01/qualification.json). Accepted25/1001/5; rough implementation40/100; goal ACTIVE.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## PP-02 active: useful independent document library
 
-Fresh phase and section plans preceded generic binary/app source, builds and
-native rollout. Core0.2.2 maintenance1cefb0f8 and Documents install456a9cf5 each
-completed once through normal exact-hash independent approval/checkpoint/apply.
-Fresh config16 uses image0ff78912, worker01a60933, current restored DB from
-operator/target.json. Existing eight business tables, memberships/grants,14job
-business rows and53outbox rows preserved; only14job control epochs changed.
-Four Documents tables were empty after install. Both checkpoints verified.
-The install explicitly bound same-version psycopg2/python-ldap rebuilt digests;
-versions/source lock unchanged, no core-upgrade guard waiver/reproducibility claim.
+Normal core0.2.2 maintenance and Documents install completed, then timestamp
+successor0.1.1 and opaque/UI successor0.1.2 each independently reviewed/approved/
+applied once. All checkpoints and fresh targets verified. Currentconfig18/image
+3e40c53c, workerb971c799, target's restored DB. Core bytes, other3app pins and
+Python environment remain exact across both successors. No old image/operation
+or failed upload was blindly replayed; no source injection or schema/core waiver.
 
-Actual desktop/390px library and upload guidance rendered; cancel returned focus.
-One synthetic402B Markdown brief uploaded once, one version/receipt committed.
-Normal list/detail then500 because app timestamp +00:00 violates platform's
-canonical UTC Z profile. Actual checker reproduced the previously missed source
-defect; private app32445d3/0.1.1 fixes serialization and uses that checker,22tests
-pass. Archiveff2ef5e0/44718B deterministically assembled/validated but UNADMITTED,
-UNBUILT,UNINSTALLED. No core/schema change, old archive/image/receipt preserved.
-Private M post-apply verifier shape error was reconciled read-only; neither
-successful apply nor upload was replayed. Current native UI failure is retained.
+Real browser: upload/list/detail/escaped preview and downloaded hashes; new
+version2, restore1 as new3 preserving originals, trash/restore and rename revision6;
+Escape Keep draft retains text/focus. Original402B + approved257B + recovered402B
+remain. First failed read was app +00:00 vs canonicalZ; actual checker regression
+now covers it. One literal SVG/XML .txt pressure case then500 at inherited Binary
+SVG-admin sniff; narrowly owned opaque app field fixes storage without changing
+core/native image policy or permitting .svg. Same-key reconciled continuation
+stored/downloaded89B, actual preview has zeroSVG/script nodes. Completed Saved
+copy and post-Owl-patch selection focus verified; requested390px measured393px,
+no page overflow. No formal mobile/accessibility or parser/malware claim.
 
-Checklist: source/backend/UI and three candidates complete; normal installed
-prerequisites verified; initial UI observed; useful workflow/security/concurrency,
-versions/recovery, optional integration and populated successor/fresh restore
-remain incomplete. PP-02 earns no acceptance yet. Rough implementation35/100,
-accepted25/100. No human-input hold or running operation, no access fixture/lane.
-Next: fresh exact successor build/upgrade plan, immutable image/normal approval,
-preserve first upload and verify corrected reads before further mutations. No
-PP-03..05 plans, no cleanup/push. Never replay completed operations.
+Initial installed boundary evidence:1healthy download+16specific refusals, all
+rows exact; native metadata positive+7foreign/write/forged-marker/legacy-token
+denials after new field, all rows exact.23Python/23JS source cases pass; actual
+inherited conversion and actual component regressions failed before corrections.
+Current2files/4versions/4receipts/1150rawB; all original8tables/current authority/
+14job business/53outbox exact.16operations terminal/resumed, no access fixture.
+Fresh authoritative baseline Alice/B is ACTIVE VIEWER, correcting stale revoked
+wording; no authority changed. Site/images/checkpoints/private evidence retained.
+
+Checklist: source/candidates/normal installed prerequisites and useful bounded
+experience verified. Remaining actual viewer/current membership/feature loss,
+size/native breadth, real concurrent RR quota, optional document links/degradation,
+coordinated byte/metadata/versions/references fresh restore and final qualification.
+PP02 remains UNACCEPTED; rough40/100, accepted25/1001/5. Next fresh exact authority
+fixture plan from current roles/data, followed by quota pressure plan. No human
+hold/running operation, no PP03..05 plans, cleanup or push; never replay completed
+operations or already recorded pressure requests.
 
 ## Product/platform roadmap (13November2026)
 
