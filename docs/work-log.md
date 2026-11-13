@@ -2500,3 +2500,19 @@ Evidence20261113-pp04-bootstrap-source-01. Nextonefreshdefaultcorebuild/public
 bootstrap aftersourcecommit/preflight; concreteauthoringappplan thennormalworkflow.
 Completedcheckpointrecoverystillrequired (no fakefailedstate), reproducibility
 stillrequired; both freshsectionplans onactivation.70/1003/5ACTIVE/noPP04acceptance.
+
+
+13November2026 PP04 A1 public nativebootstrap verified: ONE default8core build
+7047faf5/sourceb5b1194a/3958inputs, publicfiles-onlyplan no workdir, explicitpublic
+prepare/initialize/publish ONCE. New project3e8ef4c91b17/DBrelease_3e8ef4c91b17/
+port18601/config1/worker49c5e689;2networks6volumes, lockedPG/proxy,0apps/catalog/
+features/grants/bindings,8modules. Actualfreshsignin/clientrelease and exact6
+asymmetricmemberships4principals1operator, worker no authority/hostport/edgeonly
+loopback. Explicitopt-in noninteractivequalificationpolicy; no appapproved.
+Independent readonly verifier firstlookedfor top-levelplatformversion instead
+ofrelease_lock field; actualshapechecked/corrected, no phase replay, original
+failure retained. Original5appconfig32/docs/reviews/jobs/auth exact. Publicguide
+now routes currentworkhere/sealedhistorypreserved. Evidence20261113-pp04-bootstrap-
+native-01. Newsite/image retained for freshconcretetutorialappplan/install/update/
+use next; completedcheckpoint/repro sections stillrequired.70/1003/5ACTIVE, no
+PP04acceptance/coreversion/freeze/appsourcechange/cleanup/publication.

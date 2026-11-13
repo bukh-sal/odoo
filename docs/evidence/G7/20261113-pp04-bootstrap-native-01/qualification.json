@@ -1,0 +1,82 @@
+{
+  "accepted_phases": 3,
+  "accepted_points": 70,
+  "actual_public_login200": true,
+  "application_archives": 0,
+  "build_record_sha256": "3ea970eda3323a3ef5f1cdac7e3b3193d30aa0b957a1758b190028ffd7a4f19d",
+  "catalog_artifacts": 0,
+  "core": "0.2.3",
+  "explicit_noninteractive_qualification_optin": true,
+  "fixture": {
+    "alice_A": "administrator",
+    "alice_B": "viewer",
+    "bob_B": "editor",
+    "client_release_validated": true,
+    "memberships": 6,
+    "no_app_or_business_write": true,
+    "operators": 1,
+    "principals": 4,
+    "result": "fresh_native_session_and_exact_asymmetric_development_fixture_verified",
+    "session200": true
+  },
+  "goal": "active",
+  "image_id": "sha256:7047faf544e745165034a87e35b8dfeb78e83bd870222bc09325c1c85e407c0b",
+  "installed": {
+    "bindings": 0,
+    "features": 0,
+    "grants": 0,
+    "installations": 0,
+    "modules": [
+      "auth_password_policy",
+      "base",
+      "base_setup",
+      "bus",
+      "mp_compat",
+      "mp_core",
+      "mp_identity",
+      "web"
+    ]
+  },
+  "interactive_default_source_tested": true,
+  "limits": [
+    "Empty-core native bootstrap and fresh authentication, not an app install/update/frontend authoring walkthrough",
+    "Source8 fake-boundary tests and this installed evidence have different scopes",
+    "No all-layer purity claim from bootstrap; final artifact/canonical/performance qualification belongs PP05",
+    "Completed-operation checkpoint restore and measured rebuild boundary still required by PP04",
+    "Default policy remains interactive; explicit opt-in for this named disposable test approves no app"
+  ],
+  "next": "Fresh concrete independent tutorial application section plan before creation; follow documented package/build/admit/stage/review/install/update/use, then other required PP04 sections",
+  "only_loopback_port": true,
+  "original_populated_five_app_cohort_exact": true,
+  "phase": "PP-04",
+  "phase_accepted": false,
+  "private_receipt_sha256": {
+    "completions": {
+      "initialize": "d2f70a6b7b7ef3934f7e4a56efbb6dfb0caa015c279a95235a704cf64c90ce7f",
+      "prepare": "bac734641f603487d8a52d0b71de7c54df5168ce2b7510c4a5f54d51b92889ef",
+      "publish": "5fca8d92206f36f497c59cd3d0335d754dfd228cd72825a601d1966a9482ab65"
+    },
+    "signin": "2e29044c036e03eb1a15f872ea8054e0b4d224a4900feb8b9e47755b810ac28c",
+    "stdout": {
+      "initialize": "61844ac195f43ff1f302eef33f0da411d223f9dee1b091bdf35af3f90ce6f93b",
+      "plan": "0bdcc0e3ca78706312f305a112170a2e8751772cebbd2a3e5fee04b3e3c556c7",
+      "prepare": "6eea054b8bf66461a50702118517f99d972383d0d3a002648d80c83435ecd5e3",
+      "publish": "cf33b5a53f6f41d61ca534f1227abb6d1ddc5636bb0410a2d7c884ca6063dec2",
+      "status": "6632341e283f0c22645245fbe062fc7585b08d5eb07a6679d0c50900a573da1b"
+    },
+    "verification": "074f60acfe3eb559cfad3ab6c4d664e623b7e9f33d50695338e9635ec3797c31"
+  },
+  "public_commands": {
+    "build": "tools/build_candidate.py default policy",
+    "plan": "tools/initialize_candidate.py default files-only plan",
+    "prepare_initialize_publish": "Separate public CLI actions, each once",
+    "status": "Public CLI current phase/IDs/completions, no private operational subclass"
+  },
+  "resource_disposition": "New exact development site/image retained for tutorial; original five-app site and all historical assets unchanged; no cleanup/publication",
+  "result": "public_current_development_bootstrap_verified",
+  "retained_finding": "Read-only verifier first requested a top-level platform_version instead of release_lock.platform_version. Actual producer shape inspected, verifier corrected; no bootstrap phase repeated. Original failure retained.",
+  "source_commit": "b5b1194a2fae6515201969192fdc1eb0fbc197df",
+  "source_inputs": 3958,
+  "utc": "2026-11-13T11:24:13.844998+00:00",
+  "worker_has_no_hostport_or_authority_mount": true
+}

@@ -3,8 +3,9 @@
 For new current-candidate development, start with
 [current candidate development](current-development.md), the ordinary
 [application authoring guide](application-authoring.md) and [current status](implementation-status.md).
-The source-tested current bootstrap selects the clean eight-addon core;
-its fresh installed PP04 authoring walkthrough is pending. It does not require
+The current bootstrap selects the clean eight-addon core and passed a fresh
+public-command build/bootstrap/sign-in run; the independent PP04 app authoring
+walkthrough is pending. It does not require
 the core47 kit or make new application support a historical qualification.
 
 ## Historical sealed-kit workflow

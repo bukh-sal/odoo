@@ -4,8 +4,9 @@ Use this source-checkout path for new local development. The sealed-kit
 [historical developer workflow](developer-guide.md#historical-sealed-kit-workflow)
 keeps its own exact source and support boundary; it does not gain current code.
 The [candidate support record](candidate-support.md) and [current status](implementation-status.md)
-identify actual qualification. PP04's bootstrap entrypoint is initially source-
-tested; its new installed developer walkthrough is still pending.
+identify actual qualification. The public default-core build/plan/prepare/initialize/
+publish path and fresh sign-in were [verified on an empty disposable site](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json).
+The new independent app author/install/update/use walkthrough is still pending.
 
 Native Python and same-origin frontend applications are trusted. This is an
 owned fork, not a third-party addon compatibility or hostile-code sandbox.
