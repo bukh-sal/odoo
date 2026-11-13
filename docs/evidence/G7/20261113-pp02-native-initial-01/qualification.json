@@ -1,0 +1,114 @@
+{
+  "core_maintenance": {
+    "apply_replayed": false,
+    "authority_exact": true,
+    "backup_id": "1cefb0f8-aa0f-498d-a235-dad8a3f0b2e3",
+    "business_eight_tables_exact": true,
+    "checkpoint_manifest_sha256": "c94af2f3ddf2cfc5175d8c4115d984a48d84643239c0bae3d611255908b732c4",
+    "core_version": "0.2.2",
+    "documents_installed": false,
+    "generation": 15,
+    "image_id": "sha256:0a3332ac509b52c7693ee0bb78c7f14522ab58e0c23cd48edf3664bc5d2cd01c",
+    "jobs14_business_fields_exact": true,
+    "native_core_version": "19.0.0.2.2",
+    "only_control_fields_changed": {
+      "jobs.claim_generation": 14,
+      "jobs.dispatch_generation": 14,
+      "jobs.release_digest": 14
+    },
+    "operation_id": "1cefb0f8-aa0f-498d-a235-dad8a3f0b2e3",
+    "outbox53_business_fields_exact": true,
+    "plan_hash": "sha256:5eb45d07cf52b3a8e705983b8623bd9c03124d421024183c8a35ffcf670c7d0d",
+    "result": "normal_core022_maintenance_completed_and_verified",
+    "verification_only_continuation": true,
+    "worker_id": "269cb5ebff354d291982ddbd3edbc4c77f3df84d19899c122b2dffe5b705d407"
+  },
+  "defect": {
+    "cause": "App version DTO emits UTC +00:00; actual platform date-time format checker requires canonical Z",
+    "corrected_source_tests": {
+      "failed": 0,
+      "log_sha256": "bf318b7535fd57499d676c6a49eec1ae01afed614ee0617125fe35e3b2990c75",
+      "passed": 22
+    },
+    "correction": "App emits canonical UTC Z; registration uses actual platform FORMAT_CHECKER; platform checker/schema unchanged",
+    "regression_before_fix": {
+      "cases": 1,
+      "errors": 1,
+      "log_sha256": "5f258597a03e46f9385cc7403e94a045eaa2a38fd3b8670cbe8c62c123435b2b"
+    },
+    "test_gap": "App registration test used broader generic jsonschema FormatChecker"
+  },
+  "disposition": {
+    "all_existing_business_and_authority_exact": true,
+    "cleanup": false,
+    "current_configuration": 16,
+    "no_apply_or_upload_replay": true,
+    "one_synthetic_file_preserved": true,
+    "site_retained": true
+  },
+  "documents_install": {
+    "authority_exact": true,
+    "backup_id": "456a9cf5-75ba-4129-b534-6201a7bfda9c",
+    "business_eight_tables_exact": true,
+    "checkpoint_manifest_sha256": "9be334291b973fb4fb0fd1c8f7d7916afdc793ce2c61c4bb273a23cfe9fd6ae4",
+    "documents_empty_tables": {
+      "documents_fence": 0,
+      "documents_file": 0,
+      "documents_upload": 0,
+      "documents_version": 0
+    },
+    "generation": 16,
+    "image_id": "sha256:0ff789127c2e783aa0eed0ca1054f72a4be3a3dd1e598c4831a10793cd6f3cc8",
+    "installed_not_functionally_qualified": true,
+    "native_core_version": "19.0.0.2.2",
+    "native_documents_version": "19.0.0.1.0",
+    "only_control_fields_changed": {
+      "jobs.claim_generation": 14,
+      "jobs.dispatch_generation": 14,
+      "jobs.release_digest": 14
+    },
+    "operation_id": "456a9cf5-75ba-4129-b534-6201a7bfda9c",
+    "plan_hash": "sha256:59836cd19940ffa082ad80a867e26e7111a9a362cb429fc4dd4223a37cc10d58",
+    "result": "normal_documents_install_completed",
+    "worker_id": "01a60933f5a6bc415f63d744512c1d5e7813e2866bf510b4b06ffaadd2b836b5"
+  },
+  "limitations": [
+    "Initial rendered empty UI and cancel only; no full functional/security/accessibility acceptance",
+    "Real parallel quota, versions/recoveries, optional links and fresh restore remain pending",
+    "Two same-version rebuilt Python distributions explicitly pinned/reconstructed in normal install; no bitwise reproducibility claim"
+  ],
+  "next": "Fresh source/image/upgrade section plan for exact successor; normal immutable candidate and independently approved upgrade preserving uploaded bytes, then continue installed qualification",
+  "observed_ui": {
+    "actual_native_browser": true,
+    "bytes": 402,
+    "desktop_empty_render": true,
+    "files": 1,
+    "list_and_detail_after_upload_http_status": 500,
+    "narrow_empty_render": true,
+    "narrow_width": 390,
+    "receipts": 1,
+    "sha256": "654192beabcdaac472fb98059ba7aa233d88509bbd499c2655aebb70735288bc",
+    "upload_guidance_and_cancel_focus_return": true,
+    "upload_once_committed": true,
+    "versions": 1,
+    "workflow_accepted": false
+  },
+  "phase": "PP-02",
+  "phase_accepted": false,
+  "roadmap_accepted_phases": 1,
+  "roadmap_accepted_points": 25,
+  "schema_version": 1,
+  "state": "installed_first_use_defect_corrected_source",
+  "successor": {
+    "admitted": false,
+    "archive_bytes": 44718,
+    "archive_digest": "sha256:ff2ef5e07fe586544c0097d3d60136ca7f2e0a5834a525e9b48ddae232f8370c",
+    "built": false,
+    "deterministic_reassembly_ArtifactValidator": true,
+    "installed": false,
+    "native_version": "19.0.0.1.1",
+    "source_commit": "32445d35fc9d197cbe3ae997cc1e34b60c176d6c",
+    "version": "0.1.1"
+  },
+  "utc": "2026-11-13T02:45:21.047321+00:00"
+}

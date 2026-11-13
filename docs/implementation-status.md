@@ -14,61 +14,46 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T02:02:44.524825+00:00
+- Updated UTC: 2026-11-13T02:45:21.047321+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: Documents/core0.2.2 images built and inspected; normal rollout plan next.** Historical AP/CW-L01/AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **PP-02 three candidates built/inspected, not deployed (13November2026).** Standalone coreC72525e35 (8addons/0archives) passed14final-layer audit; same-app maintenanceM0a3332ac (11/3) preserves current Python environment and passes actual core-upgrade guard; DocumentsD0ff78912 (12/4) passes app/core source-stability guard. D rebuilt same-version psycopg2/python-ldap native binaries; exact digest changes require explicit independent normal install review. [Evidence](evidence/G7/20261113-pp02-candidate-images-01/qualification.json). Current review remains core0.2.1/config14, no admission/stage/native apply or new business work. PP01accepted25/100,1/5phases.
+- Current phase/gate: **PP-01 accepted; PP-02 active: Documents installed, first-use read defect fixed in source; successor rollout next.** Historical scopes remain complete.
+- Latest work item: **PP-02 normal core0.2.2 maintenance and Documents0.1.0 install completed/verified.** Current config16/D0ff78912, both scopes installed; all existing business/authority preserved. First actual browser upload committed402B once, but subsequent list/detail returned500. Actual platform checker reproduced noncanonical app timestamp; private successor0.1.1 fixes UTC Z and strengthens source test,22pass. Successor assembled, not admitted/built/installed. [Evidence](evidence/G7/20261113-pp02-native-initial-01/qualification.json). Accepted25/100,1/5phases; goal ACTIVE.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## PP-02 active: useful independent document library
 
-Fresh source/research and `.local/product-roadmap/PP-02/implementation-plan.md`
-preceded implementation. [ADR0084](architecture-decisions/0084-current-authority-binary-transport.md)
-adds the bounded registered binary surface; old attachment paths stay closed and
-raw scoped-model token/stream paths now refuse before elevation. App-owned
-transactional Binary(attachment=False) storage is the chosen initial path;
-metadata/version/quota/content policy belongs to the private app. No new storage
-engine/dependency or app-specific core branch. Freeze28 adds3files while all119
-previous frozen bytes remain exact. Actual gateway/result and scope/model guard
-source functions are exercised at fake native/SQL boundaries. UI/client checks
-execute source with mocked browser/native boundaries and parse its four templates;
-this is not rendered UI, installed file-security or real concurrent-quota proof. Current review site remains generation14/old core0.2.1.
+Fresh phase and section plans preceded generic binary/app source, builds and
+native rollout. Core0.2.2 maintenance1cefb0f8 and Documents install456a9cf5 each
+completed once through normal exact-hash independent approval/checkpoint/apply.
+Fresh config16 uses image0ff78912, worker01a60933, current restored DB from
+operator/target.json. Existing eight business tables, memberships/grants,14job
+business rows and53outbox rows preserved; only14job control epochs changed.
+Four Documents tables were empty after install. Both checkpoints verified.
+The install explicitly bound same-version psycopg2/python-ldap rebuilt digests;
+versions/source lock unchanged, no core-upgrade guard waiver/reproducibility claim.
 
-Prebuild review caught two defects in unqualified source. A native body-limit
-exception reproduced500 and now maps to validation; predispatch413 remains a
-native/proxy refusal. App quota locking alone would not refresh repeatable-read
-snapshots; a declared owned documents.fence row now gets an exact scoped UPSERT,
-forcing the normal transaction retry on a stale writer. No platform policy row
-is mutated. Real concurrent quota/native HTTP proof remains mandatory. Private
-Documents repo2aa048f contains policy/models/services and the library interface.
-Exact Documents0.1.0 archive81baf9ea/44699B assembled/validated and image-packed,
-unadmitted/uninstalled. No rendered UI or installed file-security claim yet.
+Actual desktop/390px library and upload guidance rendered; cancel returned focus.
+One synthetic402B Markdown brief uploaded once, one version/receipt committed.
+Normal list/detail then500 because app timestamp +00:00 violates platform's
+canonical UTC Z profile. Actual checker reproduced the previously missed source
+defect; private app32445d3/0.1.1 fixes serialization and uses that checker,22tests
+pass. Archiveff2ef5e0/44718B deterministically assembled/validated but UNADMITTED,
+UNBUILT,UNINSTALLED. No core/schema change, old archive/image/receipt preserved.
+Private M post-apply verifier shape error was reconciled read-only; neither
+successful apply nor upload was replayed. Current native UI failure is retained.
 
-C/M/D builds completed once from source26d2d864a4f; all source maps bind current
-inputs and exact app3 archives/Docs81baf9ea. Core runtime has3683files and exactly
-6changes vs qualified standalone2.1. C matches its prior standalone dependency
-cohort; M matches the actual review-app cohort. Initial uniform comparison to
-app Python was a review assumption error, retained and corrected per cohort.
-D has two real newly compiled .so digests under unchanged source lock. Existing
-plugin staging explicitly carries changed Python metadata; actual independent
-normal install reconstruction remains pending, no guard/lock/hash weakened.
-Early DISTRIBUTION_POLICY ARG cache invalidation/rebuild behavior is measured
-reproducibility evidence for PP-04, not an unchanged-byte or broad support claim.
-Target/trust/control/policy bytes unchanged; all3candidate tags/images retained.
-
-Acceptance: PP-02 incomplete; no product/native/lifecycle outcome accepted.
-Blockers: no human input or running/uncertain mutation. Required next work is
-a fresh exact native-operation section plan from current target/data/authority.
-Then normal M core-upgrade review for all observed native scopes and a separate
-Docs admission/D install plan. Its two Python digest changes must be visibly
-bound and independently reviewed; any normal guard refusal stops. Source/image
-review is not an approval or a reason to retry/replay prior operations. No PP-03..05 plan. Preserve all current review data and
-never replay completed operations. Core/private backend/UI source are implemented; rendered/native/lifecycle outcomes
-remain unqualified. Rough implementation is about35/100; accepted points remain25/100.
+Checklist: source/backend/UI and three candidates complete; normal installed
+prerequisites verified; initial UI observed; useful workflow/security/concurrency,
+versions/recovery, optional integration and populated successor/fresh restore
+remain incomplete. PP-02 earns no acceptance yet. Rough implementation35/100,
+accepted25/100. No human-input hold or running operation, no access fixture/lane.
+Next: fresh exact successor build/upgrade plan, immutable image/normal approval,
+preserve first upload and verify corrected reads before further mutations. No
+PP-03..05 plans, no cleanup/push. Never replay completed operations.
 
 ## Product/platform roadmap (13November2026)
 

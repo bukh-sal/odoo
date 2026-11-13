@@ -2381,3 +2381,5 @@ source evidence and fresh populated app-only fault/recovery sibling; keep pilot.
   46images/45networks/107volumes present. Completed-uninstall rollback, Workboard
   cascade/event/complex-migration/external/mobile scopes remain unqualified. See
   evidence/G7/20261112-customer-work-lifecycle-01/qualification.json.
+
+13November2026 PP-02 native initial: normal core0.2.2 and Documents0.1.0 installs completed/verified, existing data/authority exact. Actual desktop/narrow empty UI and safe cancel observed. First upload once committed402B; list/detail500 exposed app +00:00 vs canonicalZ output contract. Regression with actual checker failed before fix; source successor0.1.1/32445d3 now22pass, archiveff2ef5e0 assembled only. No acceptance/operation replay/cleanup. Next fresh immutable successor build/upgrade plan; goal ACTIVE25/1001/5. See native-initial qualification evidence.

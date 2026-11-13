@@ -39,7 +39,7 @@ PP-03, or build a speculative framework in anticipation of later apps.
 | Phase | Weight | Deliverable | Dependency | Current acceptance |
 | --- | ---: | --- | --- | --- |
 | PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | [Accepted, 4/4 bounded outcomes](evidence/G7/20261113-pp01-product-experience-01/qualification.json) |
-| PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Source and candidates built](evidence/G7/20261113-pp02-candidate-images-01/qualification.json); rollout/UI/lifecycle pending |
+| PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Installed; first-use defect fixed in source](evidence/G7/20261113-pp02-native-initial-01/qualification.json); successor/UI/lifecycle pending |
 | PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | Not started |
 | PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Not started |
 | PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Not started |
@@ -48,7 +48,7 @@ Weights estimate outcome importance, not elapsed time or test counts. Current
 new-roadmap accepted progress is **25/100 phase points; 1/5 phases accepted**.
 PP-01 delivered the installed product slice, actual useful workflow, access-state
 and bounded visual/keyboard checks; its two observed UI defects were corrected
-and verified. PP-02 transport/backend/UI source is now implemented but not installed/accepted;
+and verified. PP-02 transport/backend/UI is installed; the first-use read defect is fixed in source, awaiting successor rollout/qualification;
 PP-03..05 remain unstarted. Rough implementation is about35/100, with25/100
 accepted; source/fake-native checks do not earn installed outcome acceptance. Research, documents and goal creation earn no implementation credit.
 Report partial progress only against real delivered outcomes; keep original R1
@@ -247,6 +247,5 @@ outcomes and acceptance, final support/limitations and evidence are reconciled,
 and the handoff/owned-resource disposition is recorded. Roadmap creation does not
 complete it. The setup turn created no implementation plans. PP-01 subsequently
 activated with its fresh local plan and is accepted in its recorded bounded
-scope. Next create PP-02's fresh plan from current source and findings before
-any document-library/core-binary implementation. Follow [current status](implementation-status.md);
+scope. PP-02 activated with fresh phase/section plans and remains active through installed findings and qualification. Follow [current status](implementation-status.md);
 no PP-02..05 implementation plans were created in advance.
