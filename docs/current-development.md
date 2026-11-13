@@ -83,6 +83,11 @@ acknowledgements. Existing sealed reference-kit behavior is unchanged.
 
 ## Author, admit and operate an application
 
+The [independent application workflow](independent-app-workflow.md) walks through
+current public packaging, local composition, nomination, separate approval and
+real UI/diagnosis checks. Detailed installed acceptance remains recorded in the
+phase evidence; the guide does not make unqualified combinations supported.
+
 Follow [application authoring](application-authoring.md) for independent source,
 ordinary recipes, native model/view/service/schema ownership and deterministic
 archives; [native application surface](native-application-surface.md) distinguishes

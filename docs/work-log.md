@@ -1,5 +1,23 @@
 # Work log
 
+13November2026 PP04 A developer/operator outcome verified: private independent
+Handoffs creation used public packager and normal image/catalog/stage/exact
+approval/apply. ActualUI0.1.0 client validation blocked first save (zero rows);
+real native validator differential justified app-only0.1.1 view repair. Actual
+viewer action correctly denied but wrongly visible; populated0.1.2 adds current-
+role presentation and optional Date, preserving both old rows/receipts/null dates.
+Three separate exact operations completed with checkpoints. Final3handoffs/
+3receipts/1date;14installed native/date/current-feature denials; exact scoped
+fixture restored, current sessions healthy, original five-app data/auth exact.
+Actual desktop/390x844/nohorizontal overflow/visible keyboard focus/Enter/reload
+and read-only viewer guidance pass. Default-core source/SDK unchanged. Initial
+fresh native .so rebuild differences recorded/bound, not called bit-reproducible;
+successor dependency bytes equal. Public guide records actual private-recipe,
+nomination/ack/stale-release/draft/reconciliation behavior. No app code published,
+full suite, cleanup or native apply replay. GoalACTIVE70accepted/3phases,rough77;
+PP04 Bcompleted-checkpointrestore and Cmeasuredrepro still required before phase
+acceptance; next fresh Bplan before implementation. PP05 unplanned.
+
 13November2026 PP04 A2 independent authoring source: fresh Handoffs section plan
 preceded private app creation. Native workspace immutable notes and explicit
 current-human receipt, five actual-method fake-native source checks, normal public

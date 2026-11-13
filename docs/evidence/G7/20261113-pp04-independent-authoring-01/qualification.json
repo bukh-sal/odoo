@@ -1,0 +1,139 @@
+{
+  "phase": "PP-04",
+  "section": "A current developer/operator workflow",
+  "section_result": "verified_in_recorded_scope",
+  "phase_accepted": false,
+  "accepted_phases": 3,
+  "accepted_points": 70,
+  "rough_implementation_points": 77,
+  "goal": "active",
+  "core": "0.2.3",
+  "native_core": "19.0.0.2.3",
+  "independent_private_app": "dev.local.handoffs",
+  "private_application_code_not_published": true,
+  "versions": [
+    {
+      "version": "0.1.0",
+      "native_version": "19.0.0.1.0",
+      "archive_sha256": "sha256:5f64a1bca06c0d7378c029f57d5c56803bfc609c91d7249e1b06d09a3a38f51c",
+      "archive_bytes": 23003,
+      "image_id": "sha256:f31975a563724eabf12f0ae0f2cda91e1457019a350058cd61c747eab1d84afb",
+      "build_record_sha256": "5150277eb3219afa7a9a466c60fddee7dfbaae5b879d3e1cacc7725221d46bc7",
+      "git_base": "ee0c32bf20f6b5c7f5419d1f111f520538fdf507",
+      "curated_inputs": 3972
+    },
+    {
+      "version": "0.1.1",
+      "native_version": "19.0.0.1.1",
+      "archive_sha256": "sha256:f4d169a53ce9ba71d1f167dca39c465075eeb07ed5dcaf231451bf3cc4e2a3ee",
+      "archive_bytes": 23011,
+      "image_id": "sha256:46c9a359c0e3f39d9c9f3c6aa60d58c3d191515c3693c218b0baa7fafc61f81a",
+      "build_record_sha256": "d8c4201173668f4d7192bde7239eb9a69df1b2802f3635fbb87d605b90010be7",
+      "git_base": "ee0c32bf20f6b5c7f5419d1f111f520538fdf507",
+      "curated_inputs": 3972
+    },
+    {
+      "version": "0.1.2",
+      "native_version": "19.0.0.1.2",
+      "archive_sha256": "sha256:f8739ab5fd54dc6a8d798e940e20ca57c20f8bd5121d7eb68179b57140032ae3",
+      "archive_bytes": 23464,
+      "image_id": "sha256:239c463c81050d441d49748761e07ec2b179ff84e7d3048165d2e2f015a3f16d",
+      "build_record_sha256": "d02eb3a25dd1c16271fdac89d826f33297fbb9ed2d804c41ab41d4a2ddec99d1",
+      "git_base": "ee0c32bf20f6b5c7f5419d1f111f520538fdf507",
+      "curated_inputs": 3972
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "88b9d0bf-bec0-4762-a28a-9e12cfba964f",
+      "state": "completed",
+      "phase": "completed",
+      "traffic_resumed": true,
+      "receipt_sha256": "51b9c2747c8cea453edb1e71b01ad1eac1252a540e599abdfdcdf034b2b57aa1"
+    },
+    {
+      "operation_id": "4e9fc453-3229-4b4a-877e-106441b0d9e7",
+      "state": "completed",
+      "phase": "completed",
+      "traffic_resumed": true,
+      "receipt_sha256": "7c5d5854c5c5498f7266bd0e9cf92c9fafe32d6468982e231d4f10e9c3cbdd2f"
+    },
+    {
+      "operation_id": "7d16afc2-940f-4d65-bd3e-bc0e12e565e1",
+      "state": "completed",
+      "phase": "completed",
+      "traffic_resumed": true,
+      "receipt_sha256": "7edf06e70edf186079daaee26895d9fba4c0d42fe7e13359eb763eeef6e96d20"
+    }
+  ],
+  "public_commands": [
+    "package_application",
+    "build_candidate",
+    "plugin validate",
+    "catalog add",
+    "plugin stage-image",
+    "plugin plan-staged",
+    "operations register",
+    "operations approve",
+    "plugin apply"
+  ],
+  "proof": {
+    "source_cases": 8,
+    "initial_native_refusals": 10,
+    "additional_date_and_hint_refusals": 2,
+    "current_feature_refusals": 2,
+    "feature_fixture_exactly_restored": true,
+    "populated_rows_preserved": 2,
+    "new_native_nullable_date_column": true,
+    "old_dates_null": true,
+    "final_records": 3,
+    "final_receipts": 3,
+    "dated_records": 1,
+    "desktop": true,
+    "narrow": {
+      "width": 390,
+      "height": 844,
+      "document_width": 390,
+      "keyboard_focus_visible": true
+    },
+    "keyboard_confirmation": true,
+    "reload": true,
+    "viewer_create_and_confirm_hidden": true,
+    "viewer_readonly_guidance": true,
+    "original_five_app_data_and_authority_exact": true
+  },
+  "actual_findings": [
+    "Initial archive installed, but actual native initial-save failed before any business create due to required server-assigned author field; successor fixed only client view required validation, model identity enforcement retained",
+    "Actual native validator differential failed with old view and passed with correction; empty repair is not populated-upgrade proof",
+    "Actual viewer confirmation button was visible but denied; populated successor hides it using current scoped presentation while action guard remains authoritative",
+    "Workspace selection intentionally opens a new tab; stale release preserves original draft and offers current-release tab",
+    "Initial fresh build rebuilt two native extensions to different bytes at the same locked versions; exact new dependency digests independently bound, precise compiler cause not established; successor dependency bytes equal"
+  ],
+  "receipt_sha256": {
+    "source-tests.stderr": "0597681328e41e4d4cbf929102b7f7d4dc2b496f2daa3647f345cbfcd52dcf2e",
+    "tests012.stderr": "33a710925aa7a2e4e590ffda4a078bd5347e700b7fb91a27aa777b39a6b1306e",
+    "package-proof.json": "27486c08b6846a4a00e1ba87e00e03c23de07c09703ee3740c2a65a9a9863fab",
+    "preflight.json": "55150a05c84c56c1582fbab91bbfd450d7ed5989979ad1f88ce15049d4203e8b",
+    "wheel-byte-difference.json": "4f00eb24f07f0c2bc29e152d4a34171f67ad1cdb25263ae8dfe6f97de5dbcae9",
+    "form-probe-old.json": "ffebee79d55b6d9d4a1f1d9336c8bc2dddb1a781a5ad38f17ebdd9e03066a70f",
+    "form-probe-corrected.json": "c30f0034d586510731b93def94e548307c7979da14edc08916cf528fcb6754a6",
+    "empty-after-form-failure.json": "a8044c96a6cb1570d7b57709905bc8b80fbd1fb909bfe635c31336d089318e85",
+    "native-workflow-result.json": "23e2936f54f9763bd06c1abfb7e86bd279972cc8c46be9a4b040c5989f24ace1",
+    "populated012-result.json": "addbb9b304b0cc9fc64defc673076d3719a21c04f9eeb22b48df4559065791dc",
+    "feature-fixture-result.json": "b50205593505092abb5c67519bcbd66cacdca953b254fd3c10014a318a1aa8d1",
+    "final-result.json": "96c4163a984c73f64eb89507d7018c6e0f8872adb9b6629ec757d13b6fbcb458",
+    "ui011-result.json": "6cf85753bbf035b97afe8b1ce3e6077605bc92ef95674932b314c8bf5eb7e3a7",
+    "ui012-result.json": "3c3aa99c285e8392af36ce6d77d67551ea0ed3ce3c1f18466fdd9c0650f79808",
+    "ui012-received-desktop.png": "86df5bfdeed6afb11213d5c94c808118f4cbc6b777cbf7f14ad1974a78e4f0c6",
+    "ui012-received-narrow.png": "24b98f78b0c358cd94381a1bf15f9c4eaa8008291700534dd67b547125f9cf70",
+    "ui012-viewer.png": "47b080aed771eb168aafdba696b89f31dca4cca838c5beb9bcf497cfedd1096c"
+  },
+  "limits": [
+    "Agent walkthrough, not external user satisfaction or formal accessibility/mobile certification",
+    "Trusted native app, no hostile-code sandbox; no service/job/event/custom shell required for this workflow",
+    "Export schema descriptive only; no custom export route or undeclared integration qualified",
+    "Archive deterministic assembly is separate from native dependency/OCI reproducibility; PP04 measured boundary still required",
+    "Completed-operation checkpoint restore still required under fresh section plan; PP05 unplanned",
+    "All owned images, current and historical sites/checkpoints/source retained; no cleanup/publication/production/paid service"
+  ]
+}
