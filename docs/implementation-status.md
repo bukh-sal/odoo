@@ -7,70 +7,69 @@
 
 Current goal: implement the [product/platform roadmap](product-platform-roadmap.md),
 building useful independent applications on the qualified app-free core. Research
-and roadmap setup are complete; PP-01 is active after fresh source/browser inspection
-and its just-in-time implementation plan. Create each
+and roadmap setup are complete; PP-01 is accepted in its recorded bounded scope.
+PP-02 is next and needs its fresh implementation plan. Create each
 phase/large-section implementation plan only when it activates, using the latest
 source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-12T23:14:54.6608647Z
+- Updated UTC: 2026-11-13T00:09:27.090821+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 product experience active; fresh implementation plan reviewed before app changes.** AP-04, CW-L01 and historical AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **PP-01 useful app improvements installed and partially visually verified (13November2026).** Workboard0.2.3/Customer Work0.1.4 normal exact-approved upgrade completed, all8app tables/current memberships/grants exact. Shared navigation, compact customer context and visible desktop discussion work; bounded keyboard/narrow checks pass. Real review found missing reminder menu ownership; app-only0.2.4 correction committed but not yet built/deployed. [Progress evidence](evidence/G7/20261113-pp01-product-experience-01/progress.json). Rough delivered progress about12/100 weighted points (PP-01 approximately halfway), separate from0/5 accepted phases and0accepted phase points. Historical scores unchanged.
+- Current phase/gate: **PP-01 accepted; PP-02 next, fresh plan required before implementation.** Historical AP/CW-L01/AR/CF/BG/R1 scopes remain complete.
+- Latest work item: **PP-01 useful product experience accepted,4/4 bounded outcomes (13November2026).** Actual workflow, safe drafts/conflicts, keyboard/narrow checks, viewer and optional-customer-denial views pass. Workboard0.2.5/Customer Work0.1.4/Partners0.1.0 on unchanged core0.2.1. Original data/jobs/access exact; only intended new task/history added. [Acceptance evidence](evidence/G7/20261113-pp01-product-experience-01/qualification.json). New-roadmap progress25/100 weighted points,1/5 phases accepted; historical scores unchanged.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
 ## Product/platform roadmap (13November2026)
 
-The [canonical roadmap](product-platform-roadmap.md) and
-[research record](roadmap-research.md) define PP-01 product experience, PP-02
-document-library breadth, PP-03 reusable platform evolution, PP-04 developer/operator
-workflow and PP-05 candidate readiness. PP-01's local-only implementation plan
-now binds fresh source/runtime/UI findings; later phases remain unplanned.
-Codex implements/reviews without delegation. Preserve the current review fixture;
-its runtime facts below were observed12November, not freshly checked for planning.
+PP-01 accepted from [actual scoped evidence](evidence/G7/20261113-pp01-product-experience-01/qualification.json),
+4/4 outcomes; the [roadmap](product-platform-roadmap.md) remains active at25/100,
+1/5 phases. No future phase implementation plan exists. Codex implements/reviews
+without delegation. Current review site and snapshots below are preserved.
 
-PP-01 fresh inspection confirmed the current application/edge/DB containers and
-actual desktop task/customer/reminder screens. Existing Escape/focus return and
-separate customer-tab behavior work and are retained. A measured393x852 customer
-view has no page overflow. This is baseline evidence, not updated-app acceptance.
-App source commits25c11a0(Workboard) and5a3667c(Customer Work) were built/admitted
-as exact archivesf47abb24/82fe9e07; Partners98ab unchanged.26JS+18Python source
-checks passed. Image843e230c binds4004source inputs; all3682core files and Python
-metadata unchanged. Normal operationad5a7a27 completed onconfig12/new worker5b65ecfd;
-checkpoint retained, all8app tables/current membership/grants exact. No business
-or access fixture changed during the initial updated visual review. Actual
-desktop1437x877 shows discussion near y501; actual narrow393x852 has no page
-overflow and relevant action targets at least27.5px. Dialog focus wraps both
-directions, Escape returns to the invoking task button, compact editor opens/cancels.
+- [x] Fresh actual screen/source inspection, prior Aurora interaction comparison,
+  coherent app-only navigation, compact read-first customer context and useful discussion.
+- [x] Real new task create/customer link/discussion, concurrent original-actor update,
+  stale save refusal with retained draft, explicit latest reconciliation, schedule/cancel
+  and reload, customer return and keyboard completion/reopen.
+- [x] Current viewer controls truthful; optional customer grant denial clears name
+  while discussion remains writable. Exact membership/grant snapshots restored.
+- [x] Actual desktop1437x877/narrow393x852, no page overflow, usable targets,
+  forward/reverse dialog focus, Escape return, safe primary Keep writing/editing,
+  explicit discard and before/after agent-review packet. No formal WCAG claim.
 
-Open product finding: the reminder action lacks an owning native menu, so native
-header retains Customer Work after cross-app navigation/reload. Existing native
-menu routing supports the fix; no core customization needed. Private Workboard
-commit6429c36/version0.2.4 adds its normal child menu; actual regression failed
-before and corrected domain9tests pass.0.2.3 stays immutable/deployed until a
-new package/build/normal upgrade. Next active action is that correction, followed
-by complete fresh workflow/viewer/optional-denial visual acceptance. Never replay
-ad5a7a27. No broad mobile/accessibility or phase acceptance yet.
+Observed app defects were fixed normally: missing reminder menu ownership in0.2.4,
+then missing/unsafe keep-draft choice in0.2.5. All three immutable successors and
+original failure observations remain; no relabel, source injection or old-operation
+replay.29fresh JS checks and9fresh domain/XML checks pass;10unchanged Python backend
+checks and unchanged access/style/menu evidence are reused with source comparison.
+No new full-host, migration, event-consumer or all-layer app-image acceptance.
 
-Blocker register: no recorded in-flight mutation or unresolved CW-L01 operation.
-Source research found a deliberate current workspace-attachment denial; secure
-generic binary support is a required PP-02 prerequisite, not an app workaround.
-Completed-operation checkpoint restore and app-owned ACL overlay are existing
-limits documented in the roadmap/capability register. They do not block PP-01.
-File policy, meaningful migration/event use, restore target policy and final
-performance/support decisions are resolved in their future phase plans.
+Final exact imagef07aa71e/currentconfig14/worker9d88b754; final operation292ca6b0
+completed with checkpoint, independent exact-hash approval and trust ack only.
+All3682core files/4004build inputs/Python metadata remain exact. Normal upgrades
+preserved all8app tables; final audit proves every original row/job business field
+unchanged. Intended new data:1task(revision5,Client review),2comments,1customer link,
+1cancelled reminder/job(attempts0,no result/effect),0new notices. Final counts10tasks/
+7comments/6reminders/4notices/2customers/2links. All12operations terminal; no access
+fixture, managed lane or runnable job. Site/images/checkpoints/stages retained.
 
-Setup verification covered source/research and documentation links/weights/diff
-checks; subsequent source/build/installed partial proof is recorded above.
-Resume PP-01's current menu correction with new immutable package/build/upgrade,
-then finish actual workflow and access-state visual checks under its updated
-plan. Never replay completed lifecycle operations or declare the phase accepted
-from source checks alone.
+Blocker register: no PP-01 blocker. Workspace attachments remain intentionally
+blocked; PP-02 must design/qualify generic current-authority binary support before
+its independent document app. App-owned ACL checkpoint semantics and completed-
+checkpoint restore remain explicit later requirements. This is implementation
+work, not a human-input hold or permission to bypass the restrictions.
+
+Resume: re-read source/target/evidence and create/review PP-02's fresh plan before
+core or app edits. Do not create PP-03..05 plans now. Never replay ad5a7a27,
+ab2df5db,292ca6b0 or completed CW-L01 operations. Existing private wrappers bind
+historical inputs and exclusive intents; they are not commands to rerun. Current
+target is operator/target.json, not bootstrap state.json. Preserve original and
+new work, private app source, current notices/licenses and sealed releases.
 
 ## CW-L01 leaf application lifecycle (12November2026)
 

@@ -1,5 +1,47 @@
 # Work log
 
+## 13 November 2026 / PP-01 accepted, next phase remains unplanned
+
+Completed the active phase's actual useful workflow and accepted4/4 bounded
+outcomes. Normal immutable Workboard0.2.4 upgradeab2df5db fixed the observed native
+header/menu ownership issue. Real new task50e9b988 was created, assigned/dated,
+linked to a customer and discussed; a normal current-actor concurrent service
+update made the browser stale. Save refused, kept the draft, and explicit latest
+reconciliation saved. Schedule then cancel persisted after reload; no new delivery
+claim. Current-role viewer hid writes; scoped optional customer denial cleared
+the name but a new discussion post succeeded; both exact fixtures restored.
+
+Actual workflow exposed another app issue: cancelLabel alone did not render a
+safe keep button in native ConfirmationDialog, and discard/load received focus.
+Reviewed the active plan addendum first; app-owned DraftDecision reuses Dialog,
+puts Keep writing/editing first/primary, serializes callback, retains draft on
+failed read, and describes uncertain comments honestly.29JS+9domain/XML checks
+pass, with10unchanged backend checks retained. Workboarda080c55/0.2.5 archive452441ef
+built as exact clean imagef07aa71e;4004inputs/all3682core files/Python metadata
+unchanged. Normal2target trust-only approved upgrade292ca6b0 completed onconfig14,
+checkpoint retained and populated business/access rows exact. No core change.
+
+Actual0.2.5 desktop/narrow review proves initial focus Keep writing/editing,
+Tab/ShiftTab and Escape retain draft, explicit secondary discard works and leaves
+server data untouched. Native keyboard stage selection completed/reopened the new
+task; initial helper expected it to leave My work, but actual My work includes
+assigned completed tasks. Dedicated Completed-view read proved saved state before
+one keyboard reopen; no duplicate mutation. Final taskrevision5/Client review.
+Source-proven unchanged role/domain/reminder/style/menu boundaries justify reusing
+the0.2.4 access-state evidence. No OwlError in the final inspected browser logs;
+screenshots remain private and agent-reviewed, not human usability certification.
+
+Read-only final audit: every original8-table row and original job business field
+exact, memberships/grants exact,10tasks/7comments/6reminders/4notices/2customers/
+2links. Intended additions only1task/2comments/1link/1cancelled unattempted job+reminder;
+all12operations terminal,0managed lanes/runnable jobs/open fixtures. Artifacts,
+checkpoints/stages/review site retained, no foreign mutation/cleanup. Acceptance
+docs/evidence/G7/20261113-pp01-product-experience-01/qualification.json binds actual
+receipts and limits. New-roadmap25/100weighted points,1/5accepted, full goal ACTIVE.
+Historical R1/AP/CW-L01 unchanged. Next create a fresh PP-02 plan from actual current
+source for the document library and generic scoped-binary prerequisite; no later
+phase plans created, no implementation/scope waived or production claim.
+
 ## 13 November 2026 / PP-01 immutable upgrade and actual visual findings
 
 One clean TEST build completed69.062s, record668fbc17/image843e230c. Exact4004

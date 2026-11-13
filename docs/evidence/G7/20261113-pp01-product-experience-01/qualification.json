@@ -1,0 +1,215 @@
+{
+  "apps": {
+    "dev.local.delivery": {
+      "app_commit": "5a3667c7c6a44d6f0cfeb91440aa655b18c6f41a",
+      "bytes": 28470,
+      "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+      "version": "0.1.4"
+    },
+    "dev.local.partners": {
+      "app_commit": "2998aacae546ab6545fa10231bc43d4cc67c5781",
+      "bytes": 29246,
+      "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+      "version": "0.1.0"
+    },
+    "dev.local.workboard": {
+      "app_commit": "a080c5513e5366803a32a63db0795e93790a81a1",
+      "bytes": 58472,
+      "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+      "version": "0.2.5"
+    }
+  },
+  "candidate_record_sha256": "c330d6fcd88955b43d8037382e3a4cf20bd0415a3f5c94a50b7a02e5219d15fc",
+  "configuration_generation": 14,
+  "core_files_exact": 3682,
+  "core_runtime_changed": false,
+  "core_version": "0.2.1",
+  "curated_source_inputs_exact": 4004,
+  "data": {
+    "counts": {
+      "delivery_link": 2,
+      "partners_partner": 2,
+      "workboard_comment": 7,
+      "workboard_list": 2,
+      "workboard_notice": 4,
+      "workboard_reminder": 6,
+      "workboard_stage": 8,
+      "workboard_task": 10
+    },
+    "current_memberships_grants_exact": true,
+    "new_job": "cancelled, attempts0, no result/effect",
+    "new_notices": 0,
+    "new_rows": {
+      "comments": 2,
+      "customer_links": 1,
+      "reminders": 1,
+      "tasks": 1
+    },
+    "new_task_revision": 5,
+    "original_eight_table_rows_exact": true,
+    "original_job_business_fields_exact": true
+  },
+  "final_operation": {
+    "acks": {
+      "destructive": false,
+      "permissions": false,
+      "trust": true
+    },
+    "backup_id": "292ca6b0-991b-4033-8578-d41b74a57b46",
+    "operation_id": "292ca6b0-991b-4033-8578-d41b74a57b46",
+    "plan_hash": "sha256:d895d886de9f1cc910b85b651eb54670d101bde28ed4a25e09af78f6f393ed0d",
+    "state": "completed"
+  },
+  "goal_complete": false,
+  "image_id": "sha256:f07aa71eafab32090eda9ca83e38ff42649bbf19451c20ca75b77ec6e0d5c448",
+  "limitations": [
+    "Exact private app/core combination only; no universal ABI or production claim",
+    "Inbox lists delivered personal notices; upcoming reminders remain on their task, not a general agenda",
+    "Workspace-shared team tasks, no per-list secrecy or generic app-ACL recovery overlay",
+    "No new event-consumer, meaningful data-migration, arbitrary completed-checkpoint restore or all-layer app-image qualification",
+    "Broader assistive-technology/mobile/RTL and performance scope remain for later planned work"
+  ],
+  "next_phase": "PP-02: create its fresh implementation plan and generic scoped-binary prerequisite before document-library implementation",
+  "outcomes": [
+    {
+      "id": "PP01-1",
+      "reference": "Prior actual Aurora task/list/modal/customer-context review reused as interaction benchmark; no new Aurora runtime or parity/code-copy claim",
+      "result": "passed",
+      "scope": "Visible navigation, customer context, discussion hierarchy and truthful reminder language improved through actual before/after inspection"
+    },
+    {
+      "boundary": "New reminder delivery was not claimed; prior delivered-inbox evidence retained. Uncertain transport/body handling covered by actual controller/fake transport tests, not a new installed network-fault claim.",
+      "id": "PP01-2",
+      "result": "passed",
+      "scope": "Actual fresh task create/link/discuss, protected draft, concurrent original-actor update then stale-save refusal/explicit reconciliation, reminder schedule/cancel/reload, customer-task return, viewer and optional denial views"
+    },
+    {
+      "boundary": "Bounded agent checks, not full mobile/RTL/screen-reader or WCAG conformance",
+      "id": "PP01-3",
+      "result": "passed",
+      "scope": "Actual desktop and393x852 narrow viewport, no page overflow, usable action targets, keyboard stage completion/reopen, dialog focus containment/return and safe primary keep choices"
+    },
+    {
+      "id": "PP01-4",
+      "result": "passed",
+      "scope": "Before/after private visual packet, classified findings, exact package/image/operation/data evidence and remaining scope recorded; no open critical finding in this bounded journey"
+    }
+  ],
+  "phase": "PP-01",
+  "phase_outcomes_passed": 4,
+  "phase_outcomes_required": 4,
+  "private_evidence": {
+    "after_visual": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/final-useful-task.jpg",
+      "sha256": "357dc27f982b94ee21b3b7909daed807a3ea9982a7a0cf6fe486aadfe14296ea"
+    },
+    "before_visual": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/before-task.jpg",
+      "sha256": "2129c01a1b7871a929d4dadbbec7a104282574504ac3570493524da979d94bec"
+    },
+    "candidate_review": {
+      "private_relative_path": ".local/product-roadmap/PP-01/draft-ui/build-result.json",
+      "sha256": "8aeeba445723f6ced809b50e75737ff2a05aff109d60b7339d0b552097cc1555"
+    },
+    "editor_draft": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/editor-draft-checks.json",
+      "sha256": "bdafde4d93debc31efe8003abccc5682ade32f91810f957ab8b08e4075893899"
+    },
+    "final_authority_snapshot": {
+      "private_relative_path": ".local/product-roadmap/PP-01/audit/authority.json",
+      "sha256": "f3a2f7692d062470edfd22aefa98ac9618597d07c736a051d40a12695979bb8b"
+    },
+    "final_business_snapshot": {
+      "private_relative_path": ".local/product-roadmap/PP-01/audit/business.json",
+      "sha256": "2e78cdd98cb3b27ddecc2a95ac2cd4a0106ca3f240dd25dd4c8335575f8038b7"
+    },
+    "final_job_snapshot": {
+      "private_relative_path": ".local/product-roadmap/PP-01/audit/jobs.json",
+      "sha256": "3a923acab2c8b46bf09c05ac14e449a860dca692757f696ce22ebbe85b816da0"
+    },
+    "final_readonly_audit": {
+      "private_relative_path": ".local/product-roadmap/PP-01/audit/result.json",
+      "sha256": "f9b907647e06b55e206e3afe4e7a319a8c2460dff265f15982d454068875edbc"
+    },
+    "final_upgrade": {
+      "private_relative_path": ".local/product-roadmap/PP-01/draft-ui/result.json",
+      "sha256": "c2d1ee15e0963bec6a2bb73c21ffafff4a9cbcea98c71e751d9fcee328b5d8a2"
+    },
+    "keyboard_completion": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/keyboard-stage-result.json",
+      "sha256": "f4e41841c4a767703278d2edd1d87fb2fb27be2b7cd0ae1ba1bf0ff078a08dc3"
+    },
+    "narrow_visual": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/safe-draft-narrow.jpg",
+      "sha256": "01df0c18139dde74b8d034314a33363743e0474d8eaeb8ddf0955b64e2b0d972"
+    },
+    "optional_denial": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/customer-denied-checks.json",
+      "sha256": "7c15ca1881970164ace284b4f98496faa07a78f427c3f80f243ca06a5b9d43ce"
+    },
+    "restored_customer": {
+      "private_relative_path": ".local/product-roadmap/PP-01/access-fixtures/restore-customer-result.json",
+      "sha256": "fb0dd5bf1509fb27f56d438314c9675c4f45cc96fc75974c086733862ed24f5e"
+    },
+    "restored_viewer": {
+      "private_relative_path": ".local/product-roadmap/PP-01/access-fixtures/restore-viewer-result.json",
+      "sha256": "db2d4e8fb38bbe4fd07fbb61ad0a16148a1d4f095e9cc52d6500d17018e5eb60"
+    },
+    "safe_draft": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/safe-draft-checks.json",
+      "sha256": "a0309e500a653acb91eb7658bb4253310ddc5344b5d1c32e8ca585b22a19b52a"
+    },
+    "safe_draft_visual": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/safe-draft-desktop.jpg",
+      "sha256": "2081c0ac76cca8f1fefeb10cad4cd6e8f2dbe3686eb038173294fb59a632d271"
+    },
+    "viewer_controls": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/viewer-controls.json",
+      "sha256": "969cbc08254399c26326e46fece35bd2ad9f62d1a3c0d129ed7d259feea18411"
+    },
+    "workflow_observations": {
+      "private_relative_path": ".local/product-roadmap/PP-01/evidence/workflow-observed.json",
+      "sha256": "00e648caff2e137ee51245d75a575df776df3a097ea9ec9304ee1867bde39c7c"
+    }
+  },
+  "proof_reuse": "0.2.4 viewer/denial evidence retained: access/domain/reminder/style/menu and Workboard controller boundaries unchanged in0.2.5",
+  "python_metadata_unchanged": true,
+  "real_defects_fixed": [
+    {
+      "core_customization": false,
+      "issue": "Reminder action missing menu ownership retained previous app header",
+      "owner": "Workboard app XML",
+      "successor": "0.2.4"
+    },
+    {
+      "core_customization": false,
+      "issue": "Draft/latest confirmation lacked visible safe keep choice and focused destructive action",
+      "owner": "Workboard app interaction using existing native Dialog",
+      "successor": "0.2.5"
+    }
+  ],
+  "resource_disposition": {
+    "checkpoints_images_stages_retained": true,
+    "cleanup_performed": false,
+    "managed_lanes": 0,
+    "open_access_fixtures": 0,
+    "operations_terminal": 12,
+    "review_site_retained": true,
+    "runnable_jobs": 0,
+    "unknown_or_foreign_resources_mutated": false
+  },
+  "roadmap_phases_accepted": 1,
+  "roadmap_phases_total": 5,
+  "roadmap_weighted_accepted_points": 25,
+  "schema_version": 1,
+  "source_checks": {
+    "failures": 0,
+    "javascript_fresh": 29,
+    "new_full_host": false,
+    "python_backend_unchanged_reused": 10,
+    "python_domain_xml_fresh": 9
+  },
+  "status": "accepted_bounded_product_experience",
+  "utc": "2026-11-13T00:00:01.658629+00:00",
+  "worker_id": "9d88b7544c21d573769f9bdc28384f8ad676b68016305b06cc5f53657982e5a7"
+}

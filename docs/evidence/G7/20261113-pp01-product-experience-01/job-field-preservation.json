@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "utc": "2026-11-13T00:15:34.569645+00:00",
+  "original_jobs": 13,
+  "all_non_control_fields_exact": true,
+  "changed_control_fields_only": {
+    "claim_generation": 13,
+    "dispatch_generation": 13,
+    "release_digest": 13
+  },
+  "old_snapshot_sha256": "9a3c12c964aabebe1aa1902f2904ba81b56d4e34443b545a15acce9d80d463a2",
+  "new_snapshot_sha256": "3a923acab2c8b46bf09c05ac14e449a860dca692757f696ce22ebbe85b816da0"
+}

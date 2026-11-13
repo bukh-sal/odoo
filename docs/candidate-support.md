@@ -80,3 +80,27 @@ mid-compute external-effects recovery, event-consumer, mobile or universal compa
 qualification. Link data intentionally disappears during native uninstall; same-archive
 return starts that owned table empty. Current review site is intentionally retained;
 exact managed lanes and the archived failed synthetic DB were retired separately.
+
+## PP-01 product-experience successor (13 November 2026)
+
+The same unchanged core0.2.1 now has a bounded useful-product qualification with
+private Workboard0.2.5
+(`sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33`),
+Customer Work0.1.4
+(`sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd`)
+and unchanged Partners0.1.0 above. Exact image
+`sha256:f07aa71eafab32090eda9ca83e38ff42649bbf19451c20ca75b77ec6e0d5c448`;
+normal app-only upgrades preserved original data and current authority.
+
+[PP-01 evidence](evidence/G7/20261113-pp01-product-experience-01/qualification.json)
+covers clearer navigation/context, actual fresh useful work and conflict handling,
+safe draft choices, personal reminder schedule/cancel, role/optional-context views,
+keyboard completion/reopen and bounded desktop/narrow inspection. The new reminder
+was cancelled unattempted; this round does not claim new delivery. Prior relevant
+evidence is reused only where the source boundary is unchanged and documented.
+
+This extends exact-combination product/upgrade evidence, not universal range
+compatibility, full cascade removal, completed-checkpoint restore, complex migration,
+new event-consumer effects, new all-layer app-image audit or broad mobile/accessibility
+qualification. The supported baseline and licenses/notices remain provisional;
+the [next roadmap phases](product-platform-roadmap.md) remain required.
