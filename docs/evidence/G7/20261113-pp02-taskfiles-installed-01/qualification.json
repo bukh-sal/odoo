@@ -1,0 +1,77 @@
+{
+  "accepted_phases": 1,
+  "accepted_points": 25,
+  "actual_browser": {
+    "after_refresh_wrong_current_bytes_downloaded": false,
+    "attach_one_reference": true,
+    "defect": "Initial document/version action state was not persisted before native URL normalization; refresh loses selection",
+    "escape_keep_selection_focus_restored": true,
+    "exact_old_version_selection": true,
+    "linked_download_exact_bytes": 402,
+    "linked_download_sha256": "654192beabcdaac472fb98059ba7aa233d88509bbd499c2655aebb70735288bc",
+    "new_tab_opens_v1": true,
+    "panel_with_task_customer_discussion": true,
+    "still_requires_later_upload_remove_relink_degradation_and_narrow_review": true
+  },
+  "build": {
+    "core_old3apps_exact": true,
+    "image_id": "sha256:b682e43581dd3148dab65540cd12603fd62261b806827d4fdbd9b5e6685e8ddc",
+    "normal_plan_binds_actual_python_solution": true,
+    "python_same_versions_two_rebuilt_digests": true,
+    "reproducibility_claim": false,
+    "source_inputs": 4041
+  },
+  "correction": {
+    "actual_native_action_current_state_regression_failed_before": true,
+    "admitted": false,
+    "archive_digest": "sha256:ba5c03f9e29024a7349baae629570a03a44ed145ee8ba38a65766fa82be4bf65",
+    "built": false,
+    "documents_python": 23,
+    "installed": false,
+    "node_affected": 37,
+    "owner": "Documents app only",
+    "private_commit": "4bce23c",
+    "source_only": true,
+    "version": "0.1.4"
+  },
+  "goal": "active",
+  "next": "Fresh Docs0.1.4 successor build/normal-upgrade plan using config19+onepin; installed reload/later-version proof, remaining degradation/UI/recovery",
+  "no_future_phase_plans": true,
+  "normal_operation": {
+    "all_6files_8versions_28receipts_4090bytes_exact": true,
+    "checkpoint_verified": true,
+    "completed": true,
+    "configuration": 19,
+    "documents": "0.1.3",
+    "new_bindings": 6,
+    "new_scoped_read_grants": 4,
+    "no_ack_bypass": true,
+    "old_business_memberships_grants_exact": true,
+    "only_approved_grants_and_control_epochs_changed": true,
+    "operation_id": "7894343f-8a74-435e-af70-a5fa8f38cae1",
+    "plan_hash": "sha256:345551b4fc7f34d1fede4d29e26360e14cfe4c271d1a5cb6794304c25aa39bb4",
+    "platform": "0.2.2",
+    "targets": 4,
+    "taskfiles": "0.1.0"
+  },
+  "phase": "PP-02",
+  "phase_accepted": false,
+  "receipt_hashes": {
+    "build": "fd926423bea2d53ac17c22f0a868857d852c49bdedee8d50acf5251bbad81a0e",
+    "operation": "3636d77b1e9911c424b47e1ac53cc1b04588591348849409c5de073487b6cb0c",
+    "review": "698531b6cbe09e33cc386cabdb65c7003c6d6ecab8ee3ffcdfc8fad563c5e949",
+    "source_correction": "38ff945ed9974b506c0bd3486267ce5418dec69121c3f7ca07e43cdad66f4897",
+    "ui": "68efab030a61d517eac475ccf7749a58171f3fd6738a7134210fbc725ad578e2"
+  },
+  "result": "optional_taskfiles_installed_initial_workflow_passed_refresh_defect_source_corrected",
+  "retained": {
+    "all_old_data_exact": true,
+    "current_link_rows": 1,
+    "current_target_and_images_checkpoints_evidence_retained": true,
+    "no_new_document_version_yet": true,
+    "no_open_authority_fixture": true,
+    "no_running_operation": true
+  },
+  "rough_implementation_points": 45,
+  "utc": "2026-11-13T04:46:55.140682+00:00"
+}

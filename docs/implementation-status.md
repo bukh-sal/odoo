@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T04:28:28.133954+00:00
+- Updated UTC: 2026-11-13T04:46:55.140682+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: format/foreign checks pass; optional task-file integration source ready, installed integration/recovery pending.** Historical scopes complete.
-- Latest work item: **Actual PDF/PNG/JPEG and B-workspace controls passed11HTTP cases.** Current6files/8versions/28receipts/4090B; previous bytes/business/authority exact. Private Documents0.1.3 adds exact-version action links and unavailable-copy repair; new optional Task files0.1.0 owns only pinned UUID references through existing app seams.68source/schema/component checks pass; deterministic archives validated but UNADMITTED/uninstalled. Core/other3apps unchanged. [Evidence](evidence/G7/20261113-pp02-formats-integration-source-01/qualification.json). Accepted25/1001/5,rough45/100; goalACTIVE. Next fresh build/native plan before rollout.
+- Current phase/gate: **PP-01 accepted; PP-02 active: optional Task files installed and initial real workflow passes; pin refresh defect source-corrected, rollout/recovery pending.** Historical scopes complete.
+- Latest work item: **One normal mixed Docs0.1.3 upgrade/Taskfiles0.1.0 install completed with exact data/checkpoint preservation.** Currentconfig19/imageb682e435/worker3c395ef6;6files/8versions/28receipts/4090B intact, one UI-created old-v1 reference. Actual panel/selector/EscapeKeep+focus/newtab/download402Bhash pass. Refresh loses pin because initial native action state was not seeded; source-only Docs0.1.4/4bce23c fixes it, actual native producer regression red-before/green-after plus23Python/37affectedJS pass. New archiveba5c03f9 unadmitted/unbuilt. [Evidence](evidence/G7/20261113-pp02-taskfiles-installed-01/qualification.json). Accepted25/1001/5,rough45; goalACTIVE. Next fresh successor rollout plan, not original operation replay.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -103,6 +103,32 @@ product/native mutation replay. Private commits dca128a/1b9e56f, no push.
 No source rollout/build/operation/cleanup this section. Fresh immutable-image/
 native plan, installed links/degradation/UI and coordinated byte/reference restore
 still required. No PP03..05 implementation plans yet; accepted25/1001/5, rough45.
+
+### PP02 optional task-file installed checkpoint
+
+Normal mixed7894343f operation completed once: Docs0.1.3 upgrade and Taskfiles0.1.0
+install acrossA/B,4explicit approved provider-read grants/6newbindings. Current
+config19/imageb682e435 with default8core unchanged. Exact old3app/corebytes, old
+business/memberships/grants and6files/8versions/28receipts/4090B preserved. New
+policy build again rebuilt same-version psycopg2/python-ldap; actual digests bound
+by normal independent planner/approval, no unchanged-Python/reproduction claim.
+Checkpoint manifest and members verify; app no hostport or authority mount.
+
+Actual browser renders panel with customer/task/discussion, chooses originalv1,
+Escape Keep selection returns focus and retains choice, attachesone UUID reference,
+opensv1 in newtab and downloads exact402B SHA654192be. Real refresh then exposed
+missing initial native action currentState persistence: returns Choose a file,
+does not substitute/download current bytes. Original UI failure screenshots kept.
+Fresh app-only correction plan/Docs0.1.4 source4bce23c seeds existing action state
+before async bootstrap. Regression uses actual native action producer+shallowEqual,
+fails on0.1.3 and passes after;23Python/37affectedNode green, no fullhost/corechange.
+New deterministic archiveba5c03f9 is UNADMITTED/unbuilt/uninstalled. Taskfiles and
+all otherapp sources unchanged. One old-v1 association deliberately retained.
+
+Next fresh current-state successor image/normalupgrade plan then exact pin refresh,
+laterupload unchanged pin, remove/relink/degradation/narrowUI and byte/reference
+fresh restore. No PP02 acceptance; no active command/fixture/recovery, no cleanup
+or operation replay, no PP03..05 plans. CurrentDocs remains0.1.3, not source0.1.4.
 
 ## Product/platform roadmap (13November2026)
 
