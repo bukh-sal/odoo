@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "phase": "PP-04 C",
+  "recorded_at": "2026-11-13T15:09:43.515803+00:00",
+  "state": "source_checked_actual_build_measurements_pending",
+  "source_base": "c265b307f2843984f790fb6d79c10220a645f30c",
+  "source_sha256": {
+    "deploy/Dockerfile": "58bafcfeea0739432b04dcffe20f19e58b3fcfd354086da231fba4c29dae1ddc",
+    "deploy/reproducible_cc.py": "cfeba7eed2bdc25766522b89fbd0a8208a74d8f21039791ec33dcf1b438aeef8",
+    "tools/build_candidate.py": "162852aadf6364b5b479a062b46ffc31f40e6ace686d93902d4ba035956a85b8",
+    "packages/platform_sdk/modular_platform/projection.py": "d1b6c255302f5a66c2cc11998d02c64baa12d71a4fb1673a5ba5ac979257c50a",
+    "framework_addons/mp_core/__manifest__.py": "a000be06c2d012d060c27463be996f063997b82609209444bbe8fe78e2484b6f",
+    "tests/test_clean_candidate_build.py": "4863c11ffdd87f50fa6888616f1b32ac8ae7bb9f08741211865f86541b599028",
+    "tests/test_reproducible_cc.py": "0bb8d0810aea69f27f08a1b3cf15bfdac6b468bfd69515a3c9b7857e789fd4cf"
+  },
+  "receipts": [
+    {
+      "name": "source-tests.out.txt",
+      "sha256": "422d69d8e4f7ef63a45a8b975df970ba8582674cd6af124285867669cad36b79"
+    },
+    {
+      "name": "source-input-extra.out.txt",
+      "sha256": "329c490e525e68f03379fad46477bde63bff81ed993799131a513b7434047773"
+    },
+    {
+      "name": "freeze-source.out.txt",
+      "sha256": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+    },
+    {
+      "name": "assembly-repeatability.json",
+      "sha256": "81bf234a07746520a3687fca322062436a97d028bf27f43fcd20559c53f1303e"
+    },
+    {
+      "name": "historical-elf-analysis.json",
+      "sha256": "f9c8c4f0d79e093dba346142cde1a89af6fdfa0d26cd54e89c3a7e2864375c70"
+    },
+    {
+      "name": "candidate-identity-probe.json",
+      "sha256": "3897c48c12ede8f747d3a65e6fc33d41a2058cdb850f3c1a330a53a44f395b93"
+    }
+  ],
+  "proof_limits": [
+    "Compiler and CLI external-exec boundaries simulated; actual frozen paired cached/recompiled builds not yet run.",
+    "Historical ELF diagnostic is section-data comparison, not semantic compatibility or complete image equality.",
+    "No site, catalog, authority or retained image changes."
+  ],
+  "acceptance": {
+    "phase_points": 70,
+    "phases": 3,
+    "PP04": "A and B verified; C pending",
+    "goal": "active"
+  }
+}

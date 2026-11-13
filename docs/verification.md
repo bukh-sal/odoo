@@ -1,3 +1,17 @@
+PP04 C source checkpoint (13November2026): fresh measurement plan precedes
+implementation. Two actual private Handoffs assemblies equal the admitted archive.
+Historical native ELF section data differs only in temporary-path debug strings
+and build IDs; executable sections are equal, not a whole-image equivalence claim.
+A build-only fixed GCC front-end now normalizes the measured pinned-pip source
+roots while retaining debug information and existing flags. Clean build CLI adds
+only fixed --recompile-dependencies/--no-cache-filter builder and records cache
+mode; no shared cache pruning. New paired provisional source identity0.2.4/core
+19.0.0.2.4 does not relabel or deploy old0.2.3 images.32 affected source cases plus
+one curated-input binding case pass; freeze122files/11rows passes. Actual four
+cached/recompiled candidate measurements remain REQUIRED. A+Bverified, phase
+unaccepted; goal70acceptedpoints3/5,rough85; PP05unplanned. All sites/data/authority
+and retained images unchanged. No actual Cbuild yet, no open fixture/live process.
+
 # Verification evidence index
 
 Current release status is in [implementation-status.md](implementation-status.md).

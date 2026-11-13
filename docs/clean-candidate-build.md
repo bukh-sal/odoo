@@ -2,8 +2,9 @@
 
 The default `deploy/distribution-r1-core.json` selects the owner-approved eight
 framework addons, SDK and stock WebClient, with no reference or application
-packages. Version 0.2.1 remains a provisional local candidate with support only
-for exact qualified combinations; see [candidate support](candidate-support.md).
+packages. Support remains provisional and covers only exact qualified combinations;
+see [candidate support](candidate-support.md). Source candidate0.2.4 is undergoing
+PP04 rebuild measurements; it is not a deployed or newly qualified cohort.
 The earlier `distribution-r1-clean-probe.json` remains an explicit TEST policy.
 
 Build into a fresh owned evidence directory:
@@ -39,6 +40,34 @@ build additionally verifies those versions and the locked stock-RTL notice
 closure. Materialization and record tests do not prove all-layer image purity,
 installed removal, native/UI qualification or deployment; those require a later
 actual artifact/layer audit and separate qualification.
+
+## Deliberately recompile native dependencies
+
+Normal builds can reuse Docker's dependency layer. To exercise the actual pinned
+builder again without pruning shared cache, use a fresh output and the explicit
+clean-only flag:
+
+```powershell
+& '.\.local\toolchain\operator-python16\Scripts\python.exe' -I tools/build_candidate.py `
+  --output docs/evidence/G7/<fresh-native-recompile> --gate G7 --recompile-dependencies
+```
+
+It passes only the fixed `--no-cache-filter builder` and records
+`build_cache_policy=recompile_builder_stage`. Builder apt/pip/materialization
+steps reexecute; unrelated clean-runtime/RTL cache may remain. Locked dependency
+network access remains enabled; this is distinct from code-only maintenance
+`--reproduction`. Non-clean or incompatible modes refuse before creating output.
+Verify the actual build log, not just the flag, before claiming recompilation.
+[Docker's cache rules](https://docs.docker.com/build/cache/invalidation/).
+
+The builder-only compiler front-end normalizes recognized pinned-pip temporary
+source roots to stable per-distribution debug paths, retaining debug information
+and existing compiler flags. It invokes the fixed Debian GCC by argv; it is not
+a native-code sandbox. Unknown build-root shapes require explicit packaging
+review. This affects new builds using the shared builder, not retained images or
+the separate maintenance Dockerfile. No wrapper or `CC` environment is added to
+the clean final stage. Equal new native/OCI artifacts still require actual paired
+measurements; source tests do not establish bitwise reproducibility.
 
 ## Build an exact source-removal image
 

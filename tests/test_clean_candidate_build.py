@@ -93,10 +93,16 @@ class CleanCandidateBuild(unittest.TestCase):
         self.assertNotIn('COPY tools /opt/modular/tools',clean)
         self.assertNotIn('COPY tests/fixtures',clean)
         self.assertNotIn('AS builder',clean)
+        self.assertNotIn('ENV CC=',clean)
+        self.assertNotIn('modular-native-cc',clean)
         runtime=source[source.index('FROM ${PYTHON_IMAGE} AS runtime'):]
         self.assertIn('COPY tools /opt/modular/tools',runtime)
         self.assertIn('COPY tests/fixtures/addons /opt/modular/fixtures',runtime)
         self.assertGreater(source.index('FROM ${PYTHON_IMAGE} AS runtime'),source.index('FROM ${PYTHON_IMAGE} AS clean-runtime'))
+
+    def test_compiler_frontend_is_bound_by_actual_curated_source_inputs(self):
+        from build_inputs import source_input_paths
+        self.assertIn('deploy/reproducible_cc.py',source_input_paths(ROOT,POLICY))
 
     def test_clean_cli_targets_clean_runtime_and_records_pins(self):
         with tempfile.TemporaryDirectory(prefix='mp-clean-build-') as temporary, FakeEnvironment(Path(temporary)) as environment:
@@ -118,6 +124,29 @@ class CleanCandidateBuild(unittest.TestCase):
             self.assertEqual(report['debian_snapshot'],lock['debian_snapshot'])
             self.assertEqual(report['clean_verification']['node_version'],'v24.22.2')
             self.assertTrue(report['source_sha256'])
+            self.assertEqual(report['build_cache_policy'],'normal_cache')
+            self.assertNotIn('--no-cache-filter',build)
+
+    def test_clean_native_recompile_uses_only_fixed_builder_filter_and_records_mode(self):
+        with tempfile.TemporaryDirectory(prefix='mp-recompile-build-') as temporary,FakeEnvironment(Path(temporary)) as environment:
+            _,fake=invoke(environment,('--recompile-dependencies',))
+            build=[command for kind,command in fake.commands if kind=='run'][0]
+            self.assertEqual(build[:4],['docker','build','--no-cache-filter','builder'])
+            self.assertEqual(build.count('--no-cache-filter'),1)
+            self.assertNotIn('--no-cache',build);self.assertNotIn('--network=none',build)
+            self.assertFalse(any('prune' in command for _,command in fake.commands))
+            report=json.loads((environment.root/'docs/evidence/G5/clean-01/candidate-build.json').read_bytes())
+            self.assertEqual(report['build_cache_policy'],'recompile_builder_stage')
+            self.assertEqual(report['command'],build)
+
+    def test_native_recompile_incompatible_modes_refuse_before_output_or_docker(self):
+        for extra in (('--recompile-dependencies','--policy','deploy/distribution-r1-appfree-probe.json'),
+                ('--recompile-dependencies','--reproduction'),
+                ('--recompile-dependencies','--dependency-base-image','sha256:'+'a'*64)):
+            with tempfile.TemporaryDirectory(prefix='mp-recompile-refuse-') as temporary,FakeEnvironment(Path(temporary)) as environment:
+                with self.assertRaises(ValueError):invoke(environment,extra)
+                self.assertEqual(environment.fake.commands,[])
+                self.assertFalse((environment.root/'docs/evidence/G5/clean-01').exists())
 
     def test_clean_rejects_dependency_base_and_reproduction_before_output(self):
         for extra in (('--reproduction',),('--dependency-base-image','sha256:'+'a'*64),('--reproduction','--dependency-base-image','sha256:'+'a'*64)):
@@ -211,6 +240,15 @@ class CleanCandidateBuild(unittest.TestCase):
             self.assertTrue(record.exists())
             self.assertEqual(json.loads(record.read_text())['state'],'building')
             self.assertFalse((output/'candidate-build.json').exists())
+
+    def test_forced_native_build_failure_retains_explicit_cache_policy(self):
+        with tempfile.TemporaryDirectory(prefix='mp-recompile-fail-') as temporary,FakeEnvironment(Path(temporary)) as environment:
+            environment.fake.returncode=1
+            with self.assertRaisesRegex(RuntimeError,'Candidate build failed'):invoke(environment,('--recompile-dependencies',))
+            record=json.loads((environment.root/'.local/operator/builds/clean-01.json').read_bytes())
+            self.assertEqual(record['state'],'building');self.assertEqual(record['build_cache_policy'],'recompile_builder_stage')
+            self.assertEqual(record['command'][2:4],['--no-cache-filter','builder'])
+            self.assertFalse((environment.root/'docs/evidence/G5/clean-01/candidate-build.json').exists())
 
 
 if __name__=='__main__':

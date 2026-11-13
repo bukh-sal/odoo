@@ -13,6 +13,8 @@ RUN printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debia
     && rm -rf /var/lib/apt/lists/*
 COPY deploy/build-requirements.lock /locks/build-requirements.lock
 COPY ${RUNTIME_REQUIREMENTS} /locks/requirements.lock
+COPY --chmod=0755 deploy/reproducible_cc.py /usr/local/bin/modular-native-cc
+ENV CC=/usr/local/bin/modular-native-cc
 RUN python -m pip install --require-hashes -r /locks/build-requirements.lock \
     && python -m venv /venv \
     && /venv/bin/python -m pip install --require-hashes -r /locks/build-requirements.lock \

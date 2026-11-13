@@ -68,6 +68,7 @@ def main():
     parser.add_argument('--policy',type=Path,default=Path('deploy/distribution-r1-core.json'),help='Operator-owned R1 distribution policy under deploy/; never an application-selected path')
     parser.add_argument('--dependency-base-image',help='Exact sha256 image for code-only maintenance; preserves its Python/OS environment, independently rechecked after build')
     parser.add_argument('--reproduction', action='store_true', help='Rebuild from the exact dependency image without build cache or RUN network access')
+    parser.add_argument('--recompile-dependencies', action='store_true', help='Clean candidate only: reexecute the fixed builder stage without pruning shared cache; locked dependency network access remains enabled')
     args=parser.parse_args()
     policy=(ROOT/args.policy).resolve()
     if (not policy.is_relative_to(ROOT/'deploy') or not policy.is_file()
@@ -81,6 +82,8 @@ def main():
         raise ValueError('Clean runtime requires the guarded platform SDK')
     if clean and (args.dependency_base_image or args.reproduction):
         raise ValueError('Clean runtime rejects dependency-base and reproduction modes before any build/output')
+    if args.recompile_dependencies and (not clean or args.dependency_base_image or args.reproduction):
+        raise ValueError('Dependency recompilation requires only the normal clean candidate route')
     if args.reproduction and not args.dependency_base_image:
         parser.error('--reproduction requires --dependency-base-image')
     dependency_base=None
@@ -121,9 +124,12 @@ def main():
         command[2:2]=['--build-arg','DEPENDENCY_BASE_IMAGE='+dependency_tag]
     if args.reproduction:
         command[2:2]=['--no-cache', '--network=none']
+    if args.recompile_dependencies:
+        command[2:2]=['--no-cache-filter','builder']
     record={'state':'building','tag':tag,'output':str(output.relative_to(ROOT)),'command':command,'distribution_policy':policy_name,
         'git_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),'source_sha256':source,
         'dependency_base_image':args.dependency_base_image}
+    record['build_cache_policy']='recompile_builder_stage' if args.recompile_dependencies else ('maintenance_no_cache_no_network' if args.reproduction else 'normal_cache')
     if clean:record.update(clean_inputs)
     _write_new(record_path,record)
     with ProcessLock(ROOT/'.local/operator/control/locks','candidate-build'):

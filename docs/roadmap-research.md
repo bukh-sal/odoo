@@ -1,5 +1,24 @@
 # Roadmap research and decisions
 
+PP04 C activation update,13November2026, sourcec265b307: actual retained A native
+extensions have equal executable `.text` and every section except debug paths
+and GNU build IDs. `.debug_line_str` contains different random pip build roots;
+the inference is an avoidable build-path contribution, not that all image bytes
+or program semantics have been proved equal. Private ELF packets/section hashes
+are retained. Two independent current Handoffs CLI assemblies also equal the
+original admitted0.1.2 archive exactly. No app source or operating site changed.
+
+The fresh C implementation plan precedes compiler/build-CLI/paired0.2.4 identity
+changes. Docker29.9.2/buildx0.38.1 help exposes stage-specific cache bypass; cached
+RUN output does not prove execution. [Docker cache documentation](https://docs.docker.com/build/cache/invalidation/).
+Compiler path normalization is informed by [Reproducible Builds build-path guidance](https://reproducible-builds.org/docs/build-path/);
+[source timestamp policy](https://reproducible-builds.org/specs/source-date-epoch/)
+is another possible control, not a measured cause here or an automatic fix.
+The Linux [ELF64 layout](https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/elf.h)
+informs the bounded private reader. Fresh cached/recompiled image, environment
+and OCI comparisons remain required before C acceptance. Historical initial
+research below describes its own baseline, not unresolved PP02/PP04B work.
+
 13 November 2026 (Asia/Riyadh). Read-only research for the
 [product/platform roadmap](product-platform-roadmap.md), source baseline
 `69a053bd64b11a30835c2f7ff7b4ed3260373847`. No new runtime, browser, build,
