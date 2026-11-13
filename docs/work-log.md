@@ -1,5 +1,13 @@
 # Work log
 
+13November2026 PP03 core023 first candidate618734c6 built with exact5runtime
+changes/all5apps+Python exact. Stage metadata enrolled; normal plan-staged refused
+before bundle/register/apply because author changed descriptive profile text and
+guard compares entire inventory.policy. Original candidate/refusal retained;
+correct source by restoring exact old policy bytes, guard unchanged. Fresh
+section-plan addendum BEFORE correction/build; one distinct corrected candidate
+02 next. Currentconfig23/b322/site/data unchanged, no native operation/fixture.
+
 13November2026 PP03 activated AFTER PP02 acceptance447164b9815; fresh phase and
 core-maintenance plans reviewed before edits. Package qualified hostCR0021 via
 paired core0.2.3/native19.0.0.2.3, version-neutral existing private test-policy

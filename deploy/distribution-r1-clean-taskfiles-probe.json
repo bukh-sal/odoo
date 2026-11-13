@@ -7,6 +7,6 @@
   "platform_sdk": true,
   "stock_webclient": true,
   "runtime_surface": "clean",
-  "profile": "Private product-workflow TEST composition on the eight-addon core; paired SDK/native manifests select the candidate version. Independently owned optional applications; not default core, public release or production support.",
+  "profile": "Private PP-02 optional pinned Task files TEST composition on the eight-addon core0.2.2. Independently owned optional applications; not default core, public release or production support.",
   "application_packages": ["deploy/application-inputs/partners.toml", "deploy/application-inputs/workboard.toml", "deploy/application-inputs/delivery.toml", "deploy/application-inputs/documents.toml", "deploy/application-inputs/taskfiles.toml"]
 }
