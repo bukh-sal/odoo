@@ -1,5 +1,15 @@
 # Work log
 
+13November2026 PP03 activated AFTER PP02 acceptance447164b9815; fresh phase and
+core-maintenance plans reviewed before edits. Package qualified hostCR0021 via
+paired core0.2.3/native19.0.0.2.3, version-neutral existing private test-policy
+profile; all5apps unchanged.27 affected checks pass, exact3/3 accepts,3/2 refuses,
+historical2/2 readable, freeze122/11 unchanged. No build/site change yet. Next
+ONE clean candidate/build review/normal all10scope core_upgrade; no migration
+credit for identity. Documents dedup and useful Taskfiles event-effect direction
+researched, detailed source plans only when each activates after earlier findings.
+GoalACTIVE50/1002/5rough50, PP04/05 unplanned; no open fixture/native operation.
+
 
 13November2026 — PP02 images: committed provisional core0.2.2 pair/source26d2d864a4f,
 then three normal once-only clean builds. C72525e35/default8 has0archives and

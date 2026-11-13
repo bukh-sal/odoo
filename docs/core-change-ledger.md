@@ -4,6 +4,14 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+PP03 activation13November2026, CR0021 packaging follow-up BEFORE edits: the
+qualified host correction is not present in retained imageb322. Package it with
+paired provisional core0.2.3/native19.0.0.2.3 and unchanged five app archives,
+using normal clean build/stage/core-upgrade all observed scopes/independent
+approval. Identity changes alone earn no meaningful migration acceptance.
+Current PP02 remains accepted in exact host/image scope. No new generic feature,
+application branch, contract, permission, support or license change is proposed.
+
 CR-0021 (13November2026), source-verified host recovery-authority prerequisite for PP-02:
 current integration grants must not revive from a checkpoint after a newer
 revocation. Actual generic SQL on rollback-only PostgreSQL temporary tables
