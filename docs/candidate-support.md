@@ -5,8 +5,11 @@ and Taskfiles0.1.4, plus unchanged Partners0.1.0/Workboard0.2.5/Customer Work0.1
 The useful file-publication/shared-review effect, actual browser review/reload,
 current-source cached/fresh authority and real duplicate handling pass in this
 exact cohort. [Partial evidence](evidence/G7/20261113-pp03-file-review-partial-01/qualification.json).
-Event-state recovery remains open; this does not accept PP03 or expand the final
-core0.2.1 release's historical support matrix. App sources remain private.
+PP03 is now accepted in its exact bounded cohort: populated migration and
+event-state/tombstone/pending-producer recovery, separate resume and actual
+keyboard/reload/download use also pass. [PP03 acceptance](evidence/G7/20261113-pp03-platform-reuse-01/qualification.json).
+This does not expand the final core0.2.1 release's historical support matrix,
+establish arbitrary migrations or completed-operation restore. App sources remain private.
 
 The default core contains `base`, `web`, `base_setup`, `auth_password_policy`,
 `bus`, `mp_compat`, `mp_identity`, and `mp_core`, with the SDK and stock WebClient.

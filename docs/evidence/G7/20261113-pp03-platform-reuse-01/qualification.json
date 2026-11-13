@@ -1,0 +1,213 @@
+{
+  "acceptance": {
+    "outcomes": [
+      {
+        "evidence": "capability ownership audit:95 current core/SDK Python/JS files, no current app identifiers; manual seam ownership review and five installed apps; independent Customers/Taskfiles share existing bound/native/UI capabilities. Only one binary provider is qualified, not invented second-provider support.",
+        "id": "PP03-01",
+        "outcome": "Generic ownership and multiple relevant application uses",
+        "passed": true
+      },
+      {
+        "evidence": "Three normal original-human publications, real registered shared review/consumption/ACK; saved-key and fresh-subscription duplicates; grant/viewer/native forgery/CAS denial; populated real native fault/checkpoint/fresh restore/separate resume; actual recovered UI check3 with2duplicates and pending1, keyboard review/reload/download.",
+        "id": "PP03-02",
+        "outcome": "Useful real event effect, duplicates, current authority and recovery",
+        "passed": true
+      },
+      {
+        "evidence": "Previously accepted Documents1.5 inline-version-to-private-Blob pre/post/init/constraint migration, original bytes/metadata and surviving apps; post-native fault, fresh old-schema restore, new forward success and useful reuse/B isolation.",
+        "id": "PP03-03",
+        "outcome": "Genuine populated schema/data migration and failure/recovery",
+        "passed": true
+      },
+      {
+        "evidence": "Application capability register and audit give reason, owner, impact and revisit conditions; no test-count or documentation-only acceptance. Completed-checkpoint and measured rebuild boundaries remain explicit PP04 work.",
+        "id": "PP03-04",
+        "outcome": "Supported, intentional and unproven capability dispositions",
+        "passed": true
+      },
+      {
+        "evidence": "Initial app remains explicitly workspace-shared. Current platform grant/member authority uses reviewed CR0021; app business ACL rows retain checkpoint semantics. No finer secrecy or universal overlay promise added.",
+        "id": "PP03-05",
+        "outcome": "Finer application ACL recovery boundary preserved",
+        "passed": true
+      }
+    ],
+    "passed": 5,
+    "total": 5
+  },
+  "accepted_phases": 3,
+  "accepted_points": 70,
+  "current": {
+    "all_inputs_match_build": true,
+    "configuration": 32,
+    "core": "0.2.3",
+    "curated_inputs": 4048,
+    "documents": "0.1.6",
+    "image_id": "sha256:eafc653c6ef1d17dce9eb3f04ccd84378bfce435c0d76e26780ea138d87913e5",
+    "other3apps_and_python_unchanged": true,
+    "taskfiles": "0.1.4"
+  },
+  "dataset": {
+    "files": 7,
+    "logical_bytes": 5455,
+    "outbox": 56,
+    "payload_rows": 12,
+    "raw_unique_bytes": 4651,
+    "reference_history_rows": 2,
+    "terminal_jobs": 14,
+    "upload_receipts": 34,
+    "versions": 14
+  },
+  "events": {
+    "acknowledged_deliveries": 7,
+    "authority_fixtures_exactly_restored": true,
+    "consumptions": 3,
+    "native_effect_and_metadata_fault_boundary_verified": true,
+    "observed_version": 8,
+    "original_actor_uid": 6,
+    "pending_after_checkpoint_applied_once": true,
+    "pin_version": 1,
+    "reviewed_revision": 11,
+    "shared_review_rows": 1
+  },
+  "goal": "active",
+  "intentional_and_unproven": {
+    "completed_checkpoint_restore": "Genuine operator capability gap owned by PP04, not waived by failed-operation recovery",
+    "per_person_sharing": "Intentional workspace-shared initial app; app ACL overlay needed before finer privacy promise",
+    "reason_owner_revisit_record": "docs/application-capability-register.md",
+    "reproducibility": "Same-version native wheel bytes differed in earlier rebuild; measured build boundary owned by PP04",
+    "ui": "Bounded agent review; busy ACK copy says Checking file updates, minor correction deferred to product polish; no formal accessibility/mobile certification"
+  },
+  "limits": [
+    "Bounded trusted native own-table migration, not arbitrary migrations or hostile-code containment.",
+    "One independently qualified binary provider; range/public links/parser execution/object store/sync unsupported.",
+    "Explicit workspace-shared check/review with seven-day replay/one-hour subscription, not permanent event history or retrospective rebuild.",
+    "Bounded agent desktop1422/narrow433 interaction, not formal accessibility or complete mobile certification.",
+    "Same-project fresh DB/filestore failure recovery, not independent infrastructure or completed-operation restore.",
+    "No full-host suite repeated for unchanged core; final canonical regression and performance remain PP05.",
+    "UI ACK busy copy still says Checking file updates; minor product copy refinement deferred, completion/focus/reload work."
+  ],
+  "migration": {
+    "actual_populated_migration_and_fresh_recovery_accepted": true,
+    "evidence": "../20261113-pp03-document-storage-native-01/qualification.json",
+    "sha256": "f7df63bfe5631a8ace5f9987447c7a9d9ca01c17d8be18e3be472b27a3a10603"
+  },
+  "next": "Activate PP04 with fresh actual-source/research implementation plan BEFORE any PP04 code. PP05 remains unplanned.",
+  "ownership_findings": [
+    {
+      "capability": "app-owned Method schemas and model/action guard",
+      "installed_witness": "PP01/02 accepted cohorts plus PP03 current-source saved-response denials",
+      "limit": "Trusted registration; model guard must protect cached outputs. Handler-only source checks do not do so.",
+      "ownership": "generic existing core seam",
+      "uses": [
+        "Partners native services",
+        "Documents independent schemas",
+        "Customer Work and Taskfiles integrations"
+      ]
+    },
+    {
+      "capability": "current-actor bounded binary transport and legacy route denial",
+      "installed_witness": "PP02 original-authority/quota/parallelism and PP03 migration/recovery/UI119Bdownload",
+      "limit": "One independent binary provider qualified; not arbitrary providers, huge files, public links or safe execution. No second-provider qualification invented.",
+      "ownership": "CR0020 generic core; Documents owns policy/storage",
+      "uses": [
+        "Documents upload/preview/version/download",
+        "Taskfiles immutable revision navigation/download consumes Documents"
+      ]
+    },
+    {
+      "capability": "current integration grant reconciliation",
+      "installed_witness": "PP02 actual newer revocation preservation and PP03 populated fresh restore/protected proof",
+      "limit": "Existing checkpoint footprint only; source-only approvals not added; app business ACL still checkpoint semantics.",
+      "ownership": "CR0021 generic host SDK recovery",
+      "uses": [
+        "Customer Work Partners/Workboard grants",
+        "Taskfiles Documents/Workboard grants"
+      ]
+    },
+    {
+      "capability": "registered events, atomic ConsumerFrame effect/tombstone/ACK",
+      "installed_witness": "PP03 real original-human effect/duplicates/grant denial/fault/restore/UI",
+      "limit": "Explicit bounded seven-day replay/one-hour cursor; no daemon, permanent journal or retrospective app rebuild.",
+      "ownership": "existing generic core; app-owned topic/review/cursor",
+      "uses": [
+        "Documents version-publication producer",
+        "Taskfiles useful shared review consumer",
+        "historically qualified Partners producer/delivery"
+      ]
+    },
+    {
+      "capability": "same-origin actions/panels",
+      "installed_witness": "PP01 useful flow and PP02/03 actual desktop/narrow recovered interactions",
+      "limit": "Trusted same-origin native app code; no sandbox or arbitrary external frontend compatibility. No speculative core panel framework added.",
+      "ownership": "existing WebClient registry; Workboard owns its panel API",
+      "uses": [
+        "Customer Work panel",
+        "Taskfiles panel",
+        "Workboard personal reminder panel"
+      ]
+    },
+    {
+      "capability": "app migration and independent lifecycle",
+      "installed_witness": "PP03 actual pre/post/constraint cleanup, controlled fault and new forward plus event recovery",
+      "limit": "Bounded own-table migration; arbitrary migrations and completed-checkpoint restoration remain unqualified.",
+      "ownership": "existing generic staged/native/recovery seams; Documents owns Blob transformation",
+      "uses": [
+        "Documents populated inline-to-Blob migration",
+        "surviving independent Workboard/Partners/Customer Work and Taskfiles data"
+      ]
+    }
+  ],
+  "phase": "PP-03",
+  "private_receipt_sha256": {
+    "browser": "942ee4d9a8a5f560b4fe9a38c8a81407de5832f7983bc3acb623173b8d1ec061",
+    "event_final": "8f1271e8eddabdbdf041b4093f26ff0df894b93dc6d8c0f0f1a9458309f35c02",
+    "fault": "987a3be4893e610c11d04bf681d6c7375a1a4687eb2cc1738836f19dbf90361f",
+    "native_effect": "cfc2771a1213d5839add12c2580f1bdd217dfcf481a7caa72380158fb0e3e1de",
+    "native_proof": "9a48ab69dba3707f09904904a84256c399fd1c3c29a4856075d465600fbcc6d9",
+    "ownership_audit": "d0e5d69245bc6d374c874a694da28b4f0b7c931007e4b62bf4d916833a3ef2d3",
+    "pending_publication": "7ede06b8e15149f44d405f578f56ba29489c072bfba524db131a17f73a5a9c49",
+    "recovered_UI": "409908e12d68a8f2c0e7a290b9c518d50eb552ee89b40b3ec8c8e77403e1832d",
+    "restore_decision": "9edd3a94da84e2ed096c4fd5ad809421c37322f9064623006760a10086a6bb8b",
+    "restore_result": "9feb7d3fcc6ca8580ca31b16432c9377710473b4d90f1b965c5d864a3c9d72f2",
+    "resume_decision": "95ea110f6f6d9e52ba060d945ac3da05f5db4289aeb9fb33f6d1bedb8a22ad99",
+    "resume_result": "83d2e4c7c6f34c707740f157f9927fd1036728177bb1454c440fa626881e5cb0",
+    "second_round": "ff9eeb20147189a82664b5824d6901f650251e778f18f59619d8eb08a5fd1b96",
+    "uninstall_review": "c02114d45302b232684a0f5a281f431e4731c29b070dce18b3b350e43c18aaa1"
+  },
+  "recovery": {
+    "current_authority_proof_verified": true,
+    "final_check_idle": true,
+    "normal_independently_reviewed_fresh_restore": true,
+    "old_duplicate_events": 2,
+    "old_subscription_rejected": true,
+    "operation_id": "93746daa-f4e6-41de-93f1-8989eb6f5aec",
+    "separate_resume": true,
+    "source_retained": true
+  },
+  "resource_disposition": "Exact owned live recovered cohort, old source DBs, images, checkpoints and helpers retained; no cleanup/push/publication",
+  "result": "accepted_in_recorded_bounded_scope",
+  "retained_findings": [
+    "App1.2 omitted frozen event request_id; zero effect reconciled, app1.3 repaired, original failures retained.",
+    "App1.3 handler-only source check did not protect saved response; app1.4 protected registered model fixed both provider grant paths, independent removal remains available.",
+    "Strict post-upgrade checker expected subscriptions unchanged; normal maintenance closure proved by source and verification-only continuation, apply not replayed.",
+    "One browser text-readiness wait timed out; fresh UI observation showed successful ACK, no repeated action, explicit reload confirmed persistence."
+  ],
+  "rough_implementation_points": 70,
+  "utc": "2026-11-13T10:46:21.905301+00:00",
+  "visual": {
+    "actual_browser": true,
+    "desktop_width": 1422,
+    "download": {
+      "bytes": 119,
+      "matchesExpected": true,
+      "sha256": "5e4ce6557fdc3deb384b79e9c5a55fc2db2c211fbd23db3dfc3f8d4a0859943e"
+    },
+    "keyboard_acknowledgement_and_new_tab": true,
+    "keyboard_focus_visible_unobscured": true,
+    "narrow_width": 433,
+    "page_widths_equal_viewports": true,
+    "pin1_observed8_distinct": true,
+    "reviewed_after_reload": true
+  }
+}
