@@ -2,6 +2,13 @@
 
 Current release status is in [implementation-status.md](implementation-status.md).
 
+PP04 B [actual completed-checkpoint native acceptance](evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json)
+now verifies normal completed destructive uninstall, real safe stop/fresh
+continuation, before-registry effects/current-authority/bytes restoration,
+separate resume, actual UI/use and exact human fixture restoration. Whole PP04
+still requires measured reproducibility and reconciliation. Source-only paragraph
+below records its earlier proof boundary, not a remaining installed blocker.
+
 PP04 B [completed-checkpoint host source](evidence/G7/20261113-pp04-completed-checkpoint-source-01/qualification.json)
 has simulated-boundary ordering/CLI/shared recovery tests, real protected Windows
 forward-fence/store/lock regressions and unchanged contract freeze evidence.

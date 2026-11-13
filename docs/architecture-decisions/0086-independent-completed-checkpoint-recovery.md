@@ -1,7 +1,10 @@
 # ADR 0086: Independent completed-checkpoint recovery
 
-Status: implementation under qualification, 13 November 2026. Host source and
-simulated-boundary ordering tests do not establish installed recovery support.
+Status: accepted for the bounded native PP04 B cohort, 13 November 2026. Actual
+completed destructive uninstall, safe interrupted quiesce, fresh continuation,
+current-authority/byte restoration, separate resume and useful UI are verified.
+[Native evidence](../evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json)
+is separate from source/host-boundary tests; it is not arbitrary checkpoint support.
 
 The PP04 operator workflow must recover useful application data after a normal
 completed destructive uninstall. Reinstalling code cannot recreate deleted
@@ -53,3 +56,14 @@ requires a legitimate new candidate identity and immutable build. Actual complet
 uninstall, meaningful bytes/data/current revocation, controlled precreation stop,
 fresh continuation, closed restore, separate resume and usable recovered UI must
 pass before this capability is accepted for the declared cohort.
+
+The actual five-app cohort passes with7files/14versions/5455logical bytes and
+4651bytes in12workspace-scoped blobs. All version hashes, surviving business,
+saved references/reviews and core-effect rows remain coherent. New human
+membership revocation and uninstall's four current grant revocations survive;
+fresh sessions and UI deny those routes. The temporary human fixture was then
+restored exactly on fresh and retained-source DBs; current grant revocations
+remain. Original completion history is immutable, all checkpoints/images/data
+are retained, and the separate Handoffs authoring cohort is unchanged. This
+qualifies the reviewed host source with its retained runtime, not a relabelled
+image or an independent-host disaster-recovery guarantee.

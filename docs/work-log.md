@@ -1,5 +1,25 @@
 # Work log
 
+13November2026 PP04 B installed qualification passes under the fresh live plan.
+Normal completed Documents+Taskfiles uninstall4be783a4 produced a real coordinated
+checkpoint; new recoveryf03f9cb9 retained original completed history. Real safe
+precreation stop, fresh public continuation, effect equality before registry,
+current-authority overlay, closed fresh DB/filestore and distinct public resume
+pass on retained imageeafc/core0.2.3/host513a9a6653b.7files14versions34receipts/
+12workspace blobs/5455logicalB4651dedupB and core effects/references/reviews are
+preserved.14actual fresh-session download hashes and UI402Bhistorical download,
+keyboard preview/Escape-focus return/reload/355px measured narrow view pass;
+viewport reset. Current member/grant revocations deny; only the exact temporary
+human fixture was restored in fresh+source DBs; four actual grants remain revoked.
+Separate Handoffs3records/receipts/date and target remain exact. Private proposal/
+audit mistakes (field shapes, scoped storage count, mount destination, JSON boolean)
+were reconciled without source guard change, apply/restore replay or cleanup;
+all logs retained. Native commands observed apply131.125s,continue217.959s,
+resume86.050s; no performance budget acceptance inferred.386label-scoped owned
+containers and all DBs/images/checkpoints retained. B bounded outcome accepted,
+wholephase still requires C/reconciliation; goal70accepted3/5,rough85. Evidence
+G7/20261113-pp04-completed-checkpoint-native-01. Next fresh C measurement plan.
+
 13November2026 PP04 B source integration delivers the completed-checkpoint
 executor and public CLI under the fresh section plan. Shared hooks retain old
 failed/reference defaults; new route preserves original completion history and

@@ -1,7 +1,10 @@
 # Completed native checkpoint recovery
 
-**Under qualification.** The host commands below are implemented and have
-source/host-boundary tests. They are not yet an installed support claim. See
+**Qualified for the bounded native PP04 B cohort.** The actual completed
+uninstall/fresh restore/current-authority/bytes/continuation/separate resume/UI
+[evidence](evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json)
+supports the reviewed host source and exact retained runtime. It is not arbitrary
+checkpoint or external-effect support. See
 [ADR 0086](architecture-decisions/0086-independent-completed-checkpoint-recovery.md)
 and [current status](implementation-status.md). Existing `plugin recover` remains
 the separate failed-operation workflow.
@@ -12,6 +15,9 @@ database/filestore, restores a fresh namespace and preserves the original
 operation's completed history. Current platform/native-login/grant authority is
 reconciled; app business data and app-owned ACLs have checkpoint semantics.
 Unknown effects, later deployments or an incompatible retained image refuse.
+Grants revoked by a normal uninstall remain revoked after restoration; restoring
+the old app data does not independently approve that integration again. A later
+grant decision requires the normal independently reviewed operator workflow.
 
 Use the explicitly installed project interpreter and your protected operator
 paths. `$sourceOperation` names the completed uninstall; `$recoveryId` is the new

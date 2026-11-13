@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-13T14:32:19.466647+00:00",
+  "result": "accepted_bounded_native_checkpoint_recovery",
+  "scope": "PP04 B only; whole PP04 still requires C and reconciliation",
+  "host_source_commit": "513a9a6653b",
+  "runtime_image": "sha256:eafc653c6ef1d17dce9eb3f04ccd84378bfce435c0d76e26780ea138d87913e5",
+  "platform_version": "0.2.3",
+  "new_runtime_build": false,
+  "native_outcomes": {
+    "real_completed_destructive_documents_and_taskfiles_uninstall": true,
+    "all_four_affected_workspace_scopes": true,
+    "current_exact_replacement_required": true,
+    "original_completed_history_preserved": true,
+    "separate_new_recovery_identity": true,
+    "actual_controlled_stop_before_creation": true,
+    "fresh_public_continuation_no_replay": true,
+    "fresh_database_and_filestore": true,
+    "source_retained": true,
+    "effect_comparison_before_registry": true,
+    "current_human_and_grant_revocations_preserved": true,
+    "closed_verification_then_distinct_reviewed_resume": true,
+    "files": 7,
+    "versions": 14,
+    "upload_receipts": 34,
+    "workspace_scoped_blobs": 12,
+    "logical_bytes": 5455,
+    "workspace_deduplicated_bytes": 4651,
+    "reference_history": 2,
+    "terminal_jobs": 14,
+    "outbox_rows": 56,
+    "acknowledged_deliveries": 7,
+    "consumer_effects": 3,
+    "all14_fresh_http_downloads_equal": true,
+    "actual_desktop_keyboard_preview_historical_download_reload": true,
+    "narrow_interaction_actual_css": {
+      "width": 355,
+      "height": 767,
+      "document_width": 355,
+      "focus_visible": true
+    },
+    "viewport_initial_css": {
+      "width": 390,
+      "height": 844
+    },
+    "viewport_reset": true,
+    "current_unavailable_integration_explicit": true,
+    "exact_human_fixture_closed_in_both_databases": true,
+    "normal_uninstall_grant_revocations_retained": 4,
+    "other_authoring_cohort_records_receipts_due_dates_exact": true
+  },
+  "operator_rules": [
+    "One completed current native destructive uninstall; never fake its failure or replay apply",
+    "Fresh reviews bind current source/authority/checkpoint/effects",
+    "Only proven precreation continuation; other pending commands need explicit reconciliation",
+    "App business data/ACLs have checkpoint semantics; platform/native-login/grant authority is current"
+  ],
+  "private_receipt_sha256": {
+    "forward-result.json": "eb508af9b0866df8617a9fca6b635dff5ea20c3bcf57c7790e8b924ec4359a88",
+    "completed-source-status.json": "b74c60047aeebd8fa732c01886402f30a935350b0f4fa157a5f62ab3b1f5f168",
+    "checkpoint-restore-review.json": "26f366d940477b37cc69d710ed8a1d6bead9bea7a63d1f950223b36104d2e845",
+    "quiesce-result.json": "3522327ed9f60539e015329166c84c09a316dd1246f86acde38749e5fdca9a95",
+    "controlled-precreation-boundary.json": "d9c8e47a019a1e288c94d5a8fe5034e21a68a732d5a9a30bd5a2fc2a8e29d1cc",
+    "checkpoint-continue-review.json": "d98edad4223d715570d0ceb18ac344f6a550b3b69e046ea2d607d13666470e2b",
+    "continue-result.json": "2882b98568e4ac5beb262cacedb6baa813627d6bb3bbbb02dbc1d56015819fab",
+    "closed-proof.json": "98986feaf28ff8ec61433176cc75d06f86ad7e7738f285619c47c64fddded24a",
+    "checkpoint-resume-review.json": "25294ee0a6fa3b234f25cae7459842d2c433a03060f2ee568191f72f0b2727ce",
+    "resume-result.json": "be4ec1a77d85384c4c9d315f26a5928a75870391dc03fbac22165f00d7005735",
+    "fresh-http/result.json": "f2fad45c8345408309a1008d198b024aed42cb660e29629a4e9e8bd8ba23a346",
+    "browser-historical-download.json": "ba2fa781c0628c7f6d1350f61883ec32952b98909e6d1c960d5fc793509e0560",
+    "ui-result.json": "3a7e5d2f0e6f055cce8308b75aa7bc3a0635a18cdc082958884bde47ee4ec97b",
+    "fixture-cleanup-result.json": "471e86479476c18b6376663e2f67e841eabe8f8ed7bf226ecbc351f08746215f",
+    "authoring-cohort-preserved.json": "1b6308f091c82c23993364a5dc45156775bd69e6114b0a1c44e3fd6f37b78786",
+    "retained-container-inventory.json": "4d0edd7c9759c5ea0b5391e92626050042c9c09579b4e95749f39a9386368819",
+    "final-result.json": "0d6551ab6b47741d0d8421048ae34c5e5a52f2477ab8463dd82d7cee4d01a441",
+    "retired-lineage-prepare-intent.json": "67f542e40690cfe7067b4de6c96887dd0a91a9aa9ba8a23e051069bdc67f22f4",
+    "retired-lineage-prepare-result.json": "faf5b7fc34d8a674da5dd0ff15fb949f2e2620cbb782b16a14af7bbee5e96690",
+    "retired-lineage-prepare.stderr": "3e21211d82660d93b68ae05ac9ce70c1d342c7b10a93a9b1582fe2719b5bebf1"
+  },
+  "qualification_script_sha256": {
+    "live_prepare_first.py": "64649fad7bd065f2f8e7ca0b611081fd514b31b5578401fd9e710da123368642",
+    "live_prepare_continue.py": "04f68ac347c20f9eb298d741077f840b580999206e73cbd53138b9d979e6b0ea",
+    "live_forward.py": "4342543adb10466fbfb2def7b1423d3c5a89cb0be66eca40d22fbe98c4402a6f",
+    "live_fixture_prepare.py": "911402cc5d1777552242b1de2093e7a0a7b7c1fbd5daef4b3a7005783f5974a1",
+    "live_quiesce_stop.py": "135a91ebc4200cc4ad60d189e91e86b19bd39e8900cd954e2fa65feeeaa631fc",
+    "live_continue.py": "ca6d39e336398c6b370bbcbb99864c06f95adef3652cb9c0e443ebba17301d0c",
+    "live_read.py": "0f1cd87e9af0e914152597bb0eeab448f4d86a69ace9424b18ca860c2916c636",
+    "live_closed_proof.py": "28941eefe43ea6a00afb1f7b3f51bf45c20490931406420577a60570c0d67be4",
+    "live_closed_proof_current.py": "2fc6ac0673b17fe0e60a37b0827d05d337030e6c751a015f185aced0855373af",
+    "live_closed_proof_final.py": "b8648076aa4fcb33c0444c30ec8c41fccfc99cebf4e0d0d51ce5566aa8021670",
+    "live_closed_proof_final2.py": "63d324b7840a7be8a335cca19d7e386d9004ebb155ce3306fc9f6136905b4751",
+    "live_resume.py": "6b746f8db2f044c4aa232ec538c10bc6d46a369069a76594765eb3a63d543232",
+    "live_http_use.py": "0213831fc86259a29bea98f65fe27c69c72f3bd9f13f51363e726108caf305f4",
+    "live_close_fixture.py": "4506b7b8e9bb79c5e8a97b884957d652994c408db6629938c6c0f47f79052708",
+    "live_final_verify.py": "20d5d4715a57cc92eb103e7adf3bf7fc7035c96b692a7e4aabae37ca3f043110",
+    "live_final_verify_current.py": "eb0455c2297b0dccb7ae6ff55df9d32f98cfacb8303a62efa58235f0d26e49ba"
+  },
+  "screenshot_sha256": {
+    "ui-recovered-documents-desktop.png": "62ee7f2192d61a543fb9ee41ef5295894c5445e9d15dcf8d8ac509208a77dea8",
+    "ui-recovered-documents-narrow.png": "53022f98bbfdecb8b224c1b3521b54a2d3a816e0bfb6ca6090d4c5f43877a621",
+    "ui-recovered-taskfiles-denied.png": "de97b05926c806ddee8b9b84e12b4d71d53b9197d3523ae80dd106a450831004"
+  },
+  "observed_command_seconds": {
+    "apply_seconds": 131.125323,
+    "checkpoint-prepare-restore_seconds": 35.84351,
+    "checkpoint-prepare-continue_seconds": 29.007561,
+    "checkpoint-continue_seconds": 217.95898,
+    "checkpoint-prepare-resume_seconds": 19.13965,
+    "checkpoint-resume_seconds": 86.049876
+  },
+  "performance_acceptance_claim": false,
+  "expected_controlled_stop": "Dedicated OS-only subclass stops before creation after actual production quiesce; normal public continue/resume then execute with unmodified guards",
+  "private_verifier_failures": [
+    {
+      "kind": "wrong plan field nesting",
+      "phase": "read-only proposal before register",
+      "product_failure": false
+    },
+    {
+      "kind": "global versus workspace-scoped dedup accounting",
+      "phase": "read-only closed audit",
+      "product_failure": false
+    },
+    {
+      "kind": "configuration file versus volume mount expectation",
+      "phase": "read-only closed audit",
+      "product_failure": false
+    },
+    {
+      "kind": "raw psql boolean versus JSON",
+      "phase": "read-only closed audit",
+      "product_failure": false
+    },
+    {
+      "kind": "nested recorded viewport reset field",
+      "phase": "read-only final audit",
+      "product_failure": false
+    }
+  ],
+  "limits": [
+    "Exact native cohort only; external/uncertain/recurring effects not supported here",
+    "Same project/PG/network/volumes; not independent-host disaster recovery",
+    "Trusted native code; not proof of arbitrary outside-effect absence",
+    "No source removal or Docker cleanup qualification in this round",
+    "Changed host source not relabelled into retained runtime; packaged successor requires version identity",
+    "Initial unscoped landing can show Access Error; workspace selection opens authorized new tab. PP05 owns workspace-first landing clarity",
+    "Measured command times are observations, not undeclared acceptance budgets",
+    "No formal accessibility/device certification",
+    "PP04 reproducibility and PP05 release qualification remain required"
+  ],
+  "retention": {
+    "label_scoped_containers_retained": 386,
+    "label_inventory_not_cleanup_authority": true,
+    "databases_images_checkpoints_helpers_and_evidence_retained": true,
+    "new_download_exact_path_retained": true
+  },
+  "acceptance": {
+    "goal_active": true,
+    "accepted_phase_points": 70,
+    "accepted_phases": 3,
+    "total_phases": 5,
+    "pp04_a_verified": true,
+    "pp04_b_verified": true,
+    "pp04_c_required": true,
+    "rough_implementation": 85
+  },
+  "post_acceptance_guard": {
+    "recorded_at": "2026-11-13T14:38:19.041064+00:00",
+    "actual_older_completed_lineage_refused_before_new_journal": true,
+    "current_target_unchanged": true
+  }
+}

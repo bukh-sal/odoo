@@ -41,7 +41,7 @@ PP-03, or build a speculative framework in anticipation of later apps.
 | PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | [Accepted, 4/4 bounded outcomes](evidence/G7/20261113-pp01-product-experience-01/qualification.json) |
 | PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp02-application-breadth-01/qualification.json) |
 | PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp03-platform-reuse-01/qualification.json): populated migration, useful event effects/replay/authority/recovery/UI and generic ownership audit |
-| PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Active: [public bootstrap](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json) and [independent author/install/repair/populated upgrade/UI outcome A](evidence/G7/20261113-pp04-independent-authoring-01/qualification.json) verified; completed-checkpoint recovery and measured reproducibility remain |
+| PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Active: [public bootstrap](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json), [independent author/install/repair/populated upgrade/UI A](evidence/G7/20261113-pp04-independent-authoring-01/qualification.json) and [actual completed-checkpoint recovery B](evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json) verified; measured reproducibility and final reconciliation remain |
 | PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Not started |
 
 Weights estimate outcome importance, not elapsed time or test counts. Current
@@ -57,10 +57,12 @@ authority, populated projection/tombstone/pending-event recovery and keyboard/UI
 reload/download pass; the ownership audit keeps business policy in apps. Its
 bounded acceptance does not establish arbitrary migrations, permanent event
 history, completed-operation restore or formal accessibility. Rough implementation
-is about77/100, with70/100 accepted phase points. PP-04's developer/operator A
-outcome now has actual independent-app install, diagnosed repair, populated date
-evolution, authority and desktop/390px keyboard/reload evidence. Completed-checkpoint
-restore and measured reproducibility remain required; the phase is not accepted.
+is about85/100, with70/100 accepted phase points. PP-04's developer/operator A
+outcome has actual independent-app install, diagnosed repair, populated date
+evolution, authority and desktop/390px keyboard/reload evidence. B now verifies a
+real completed destructive uninstall, safe interrupted quiesce/fresh continuation,
+current-authority/document-byte fresh restoration, separate resume and usable UI.
+Measured reproducibility and final reconciliation remain; the phase is not accepted.
 PP-05 remains unplanned. Research,
 documents and source-only checks do not earn additional outcome acceptance.
 Report partial progress only against real delivered outcomes; keep original R1

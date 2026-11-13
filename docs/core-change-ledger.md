@@ -4,6 +4,20 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+PP04 B actual native acceptance (13November2026): source513a9a6653b and retained
+core0.2.3/imageeafc now pass completed Documents+Taskfiles destructive uninstall,
+new recovery identity, real safe precreation stop/fresh public continuation,
+before-registry effect comparison, current authority overlay, closed restoration
+and distinct reviewed resume.7files14versions/5455logicalB/4651workspace-scoped
+blobB, saved references/reviews and core effects survive; all14fresh HTTP bytes
+and actual UI historical402Bdownload/keyboard/reload/narrow view pass. Human
+fixture restored exactly; uninstall's four grant revocations remain intentionally
+current. Original completed history and separate Handoffs cohort are exact.
+[Native evidence](evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json)
+records private-verifier-only mistakes separately, no product guard changes or
+restore replay. All assets retained; no cleanup/new runtime build/publication.
+PP04 C and PP05 still required; source-only notes below are historical stages.
+
 PP04 B source integration (13November2026) now implements the separate completed
 checkpoint executor/CLI, shared private restore hooks with unchanged failed-path
 defaults, protected per-command activities, exact current-target/authority/effect/
