@@ -1,6 +1,15 @@
+Current PP05 local development checkpoint,13November2026: provisional core0.2.5,
+native19.0.0.2.5; Partners0.1.0/Workboard0.2.5/Customer Work0.1.4/Documents0.1.6/
+Taskfiles0.1.5. Normal install/populated migration, fixed performance, actual UI,
+final canonical904 and clean selected artifacts pass. [Exact installed checkpoint](evidence/G7/20261113-pp05-final-cohort-01/qualification.json).
+Final PP05 lifecycle/recovery/source-removal/retention handoff remains pending;
+this does not yet replace the recorded completed candidate support matrix below.
+The old same-lock changed-native dependency transition is refused, not newly
+qualified. Historical cohorts/evidence stay immutable; independent apps private.
+
 # Provisional app-free core support
 
-Current PP03 development cohort,13November2026: core0.2.3 with Documents0.1.6
+Recorded PP03 development cohort,13November2026: core0.2.3 with Documents0.1.6
 and Taskfiles0.1.4, plus unchanged Partners0.1.0/Workboard0.2.5/Customer Work0.1.4.
 The useful file-publication/shared-review effect, actual browser review/reload,
 current-source cached/fresh authority and real duplicate handling pass in this

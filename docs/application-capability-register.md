@@ -12,7 +12,7 @@ installed evidence. No future capability below is accepted merely by planning it
 
 | Requirement | Current state | Reason / next evidence |
 | --- | --- | --- |
-| Fresh stock sign-in without a workspace | PP05 neutral chooser source checked; installed qualification pending | Original Home auth/session/redirect and current scope checks precede escaped workspace choices. No default-member guess, app-specific menu or browser authority cache. Scoped new-tab navigation/drafts stay intact. Owner=core startup; empty-core and populated desktop/narrow/keyboard checks required. |
+| Fresh stock sign-in without a workspace | PP05 actual empty/populated0.2.5 desktop/narrow/keyboard verified | Original Home auth/session/redirect and current scope checks precede escaped workspace choices. Fresh submit-to-chooser.540s, choose-to-populated app.474s in the measured fixture; no app-specific first-workspace guess. Owner=core startup; not a universal auth/latency SLA. [Evidence](evidence/G7/20261113-pp05-final-cohort-01/qualification.json). |
 | Current source-checkout development bootstrap | PP04 empty-core public-command build/bootstrap/sign-in verified | Current guide uses public build and separate plan/prepare/initialize/publish/status with matching source/image pins, exact owned resources, protected contexts and no-replay. Eight core addons/zero apps, asymmetric development fixture and loopback-only worker pass. Interactive approval is default; explicit disposable qualification opt-in grants no app approval. Independent app workflow, completed-checkpoint recovery and measured rebuild boundary now verified in their separate recorded cohorts. [Evidence](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json). |
 | Independent native authoring and current operator path | PP04 A verified in its exact private-app cohort | Public packaging/validation/build/catalog/stage/nomination/register/exact approval/apply, real native UI, diagnosed view repair and populated nullable-date upgrade pass without private operational wrappers or new core code. Workspace roles/features and immutable content/receipt model remain server-owned; presentation hints grant no authority. Actual390px keyboard/reload and viewer guidance pass. Local recipes/private app source are operator-supplied, not bundled public products. Owner=developer/operator guide and app author; universal app support and formal accessibility are not inferred; recovery/reproducibility have separate bounded evidence. [Evidence](evidence/G7/20261113-pp04-independent-authoring-01/qualification.json). |
 | Useful cross-app event effects and shared file review | PP03 accepted for actual effect, browser review, current-source authority, replay and populated recovery | Documents owns minimized publication events; Taskfiles owns one workspace/document review and actor cursor. Actual registered effect+consumption+ACK and saved-key/duplicate delivery preserve the immutable pin and reviewed state. Both current source grants protect cached/fresh/native review access; independent apps stay useful. Real native fault/fresh restore/separate resume preserves reviewed state/tombstones/pending producer; recovered browser check duplicates two old events and applies one pending update once, then keyboard review/reload/download pass. No core change was needed. Explicit editor action<=10 events, one-hour subscription/seven-day replay and current active-pin eligibility are intentional app policy; no daemon, permanent history, per-person approval or retrospective rebuild promise. Owner=Taskfiles; revisit against useful demand and explicit authority/retention/recovery design. [Accepted evidence](evidence/G7/20261113-pp03-platform-reuse-01/qualification.json). |
@@ -180,3 +180,16 @@ purged data during that window (actual409). Receipt retention and irreversible
 purge are distinct from file trash/version recovery and operator-checkpoint restore.
 No product, core, dependency, trust policy, image or source adjustment was required
 for this pressure round; scoped temporary controls were restored exactly.
+
+## PP05 measured rebuilt-native transition limit
+
+The original0.2.3 application image and independently recompiled core use the same
+source dependency lock but changed psycopg2/python-ldap distribution byte identities.
+The actual current `core_python_changes` guard refuses this same-lock transition.
+PP05 uses a fresh0.2.5 cohort; it does not claim a supported upgrade of those old
+cohorts, rewrite the lock, disable native debug data or weaken approval. Owner:
+build/release staging. Return condition: independently reviewed rebuild-provenance/
+transition policy plus downgrade/removal/tamper/ABI and actual recovery negatives.
+The measured [rebuild boundary](build-reproducibility.md) is separate: repeated
+fixed-compiler installed files/runtime layers can match while honest OCI provenance
+differs; intermediate wheel ZIP identity is not established.

@@ -1,3 +1,22 @@
+PP05 installed checkpoint13November2026: fresh defaultcore0.2.5 and exact final
+five-app combination now run through normal public bootstrap/catalog/stage/OS
+review/approval/apply. Populated Documents1.4->1.6 preserves24files/47versions and
+all original bytes/receipts/customer/task/authority rows. Final optionalTaskfiles1.5
+installs four declared read grants. Final canonical904:902pass/2declared skips,
+0failures/errors;51rootNode+16appcomponents+18appPython/hosttsc/freeze122/11 pass.
+Fixed benchmark26files/50versions/20customers/100tasks passes:100ordinary calls
+p95.312s/max.468s;80reads4sessions2humans p95.969s/max1.078s;3actual5MiBuploads
+.547/.625/.625s;3downloads.500/.235/.219s;12concurrentdownloads max.609s.
+Actual fresh sign-in/chooser, keyboard, saved task/draft/reminder, viewer files,
+pinned historical download/reload and separate shared-review busy labels pass.
+One purposeful post-benchmark publication ->51versions, unchanged immutablepin1.
+Default and final each14OCI layers/0forbiddenprojectfiles/exact merged inventory.
+Old two demo cohorts/real grant revocations remain unchanged. Existing same-lock
+changed-native transition guard is NOT waived; this is a fresh qualified cohort.
+PP05 stays ACTIVE90/100accepted4/5 pending separate exact destructive lifecycle/
+current-authority recovery/source removal and final support/retention handoff.
+No cleanup/publication/new-source approval or full-goal completion.
+
 PP05 fresh builder correction13November2026: actual isolated source build stopped
 before Docker because private build control/locks did not exist. Public tool now
 protects/verifies control root+locks before the same ProcessLock; unsafe existing

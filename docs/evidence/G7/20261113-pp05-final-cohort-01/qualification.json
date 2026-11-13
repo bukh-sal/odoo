@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-13T17:48:24.049760+00:00",
+  "result": "installed_performance_ui_checkpoint_final_lifecycle_pending",
+  "source_head": "3dbec35e47557ea6cfb4c5fe00e836075f010628",
+  "core": {
+    "platform": "0.2.5",
+    "native": "19.0.0.2.5",
+    "default_addons": 8
+  },
+  "compositions": {
+    "core": {
+      "image": "sha256:90ad7b5e2fbdb403fd8323cc7bee05ad0a5e77a6e21088ff250c5515a7b8a922",
+      "record_sha256": "19d4446fcf6e0b2a3696c5c361fe189e2093613b9419651d06f17f85eecf04c6",
+      "addons": 8,
+      "artifacts": {}
+    },
+    "final": {
+      "image": "sha256:52cc1bdb576a38a3bb476ccf3c291c19ef6f4973820f5578db70f2009db753c0",
+      "record_sha256": "79f79e88519e3c1a64d365979c7ac374e5e342fd7ec20b5e2c5f01fd0b884c7b",
+      "addons": 13,
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.taskfiles": {
+          "addon": "mp_taskfiles",
+          "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+          "file": "dev.local.taskfiles-0.1.5.mplug",
+          "plugin_id": "dev.local.taskfiles",
+          "version": "0.1.5"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      }
+    },
+    "library014": {
+      "image": "sha256:86cd1b8712d546edc7cfaaf6f06c62fed08b4cc2f84213745f5f232d67b85701",
+      "record_sha256": "50f536ee270d89457a4bdd828071020fbc5b6f09573eafc25e8ba2e699ae2b4c",
+      "addons": 12,
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:ba5c03f9e29024a7349baae629570a03a44ed145ee8ba38a65766fa82be4bf65",
+          "file": "dev.local.documents-0.1.4.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.4"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      }
+    },
+    "library016": {
+      "image": "sha256:923bfbfaa9f981b837f8792b0e3e5560cbafaaed3d7945c6c3a21a99b454b2fc",
+      "record_sha256": "e087de0e59ebae68e99f13642f2dbe3d6c2654bf1680216f7823030159abae70",
+      "addons": 12,
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      }
+    }
+  },
+  "current_apps": {
+    "dev.local.delivery": "0.1.4",
+    "dev.local.documents": "0.1.6",
+    "dev.local.partners": "0.1.0",
+    "dev.local.taskfiles": "0.1.5",
+    "dev.local.workboard": "0.2.5"
+  },
+  "normal_operations": {
+    "initial_four_apps_seconds": 103.89100000006147,
+    "populated_documents_upgrade_seconds": 110.70299999997951,
+    "optional_taskfiles_install_seconds": 107.96900000004098,
+    "fixed_apply_budget_seconds": 300
+  },
+  "migration": {
+    "previous": "0.1.4",
+    "current": "0.1.6",
+    "native_scripts_version": "19.0.0.1.5",
+    "files": 24,
+    "versions": 47,
+    "exact_http_downloads_before_and_after": 47,
+    "all_document_rows_receipts_other_business_and_authority_preserved": true
+  },
+  "regression": {
+    "command": "locked Python -I tests/run_host_regression.py with explicit rg",
+    "tests": 904,
+    "passed": 902,
+    "skipped": 2,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 1238.3280000002123,
+    "skip_reasons": [
+      "Windows symlink privilege unavailable",
+      "Real Linux symlink probes qualify runtime policy"
+    ],
+    "root_node_tests": 51,
+    "taskfiles_component_tests": 16,
+    "taskfiles_python_tests": 18,
+    "host_typescript": "passed",
+    "contract_freeze": {
+      "files": 122,
+      "rows": 11,
+      "result": "passed"
+    }
+  },
+  "performance": {
+    "dataset": {
+      "customers": 20,
+      "documents": 26,
+      "tasks": 100,
+      "versions": 50
+    },
+    "warmups": 4,
+    "crud": {
+      "maximum": 0.46800000010989606,
+      "median": 0.1875,
+      "n": 100,
+      "p95": 0.3119999999180436
+    },
+    "concurrent_reads": {
+      "maximum": 1.077999999979511,
+      "median": 0.7189999999245629,
+      "n": 80,
+      "p95": 0.9690000000409782
+    },
+    "concurrent_read_throughput": 5.289256198347108,
+    "large_upload_samples": [
+      0.5470000000204891,
+      0.625,
+      0.625
+    ],
+    "large_download_samples": [
+      0.5,
+      0.23499999986961484,
+      0.2190000000409782
+    ],
+    "concurrent_binary": {
+      "maximum": 0.6089999999385327,
+      "median": 0.36699999996926636,
+      "n": 12,
+      "p95": 0.6089999999385327
+    }
+  },
+  "hardware": {
+    "cpu": [
+      {
+        "Name": "12th Gen Intel(R) Core(TM) i5-12600K",
+        "NumberOfCores": 10,
+        "NumberOfLogicalProcessors": 16
+      }
+    ],
+    "docker": {
+      "Architecture": "x86_64",
+      "MemTotal": 8290824192,
+      "NCPU": 16,
+      "OperatingSystem": "Docker Desktop",
+      "ServerVersion": "29.9.2"
+    },
+    "memory_bytes": 34102591488
+  },
+  "ui": {
+    "measurements_ms": {
+      "all_work_to_known_task": 747,
+      "fresh_signin_submit_to_chooser": [
+        495,
+        540
+      ],
+      "task_detail_cross_observation_upper_bound_including_model_and_tool_overhead": 6323,
+      "warm_documents_navigation_to_populated_file": 421,
+      "workspace_selection_to_populated_partners_ready": 474
+    },
+    "viewport": {
+      "documents": {
+        "actual": [
+          355,
+          767
+        ],
+        "document_scroll_width": 355,
+        "focus_outline": "solid",
+        "requested": [
+          390,
+          844
+        ]
+      },
+      "reset_requested": true,
+      "task": {
+        "actual": [
+          390,
+          844
+        ],
+        "dialog_width": 390,
+        "document_scroll_width": 390,
+        "focus_outline": "solid",
+        "requested": [
+          390,
+          844
+        ]
+      }
+    },
+    "proofs": [
+      "Fresh sign-in selects current workspace before a business app; keyboard initial choice.",
+      "Actual separate checking/reviewing busy labels;3ready events checked, observedv3 reviewed, immutable pinv1.",
+      "Actual keyboard linked revision opens separate tab;32768B downloaded SHA matches originalv1; escaped plain preview has0SVG/script nodes.",
+      "Pinnedv1 survives reload while currentv3 visible.",
+      "Actual Alice/B viewer has0Upload/NewVersion controls, download/history remain.",
+      "Escape preserves edited draft via Keep editing, then assignment/due/description save; My work contains assigned task.",
+      "Reminder scheduled then cancelled with actual feedback; no background delivery claim.",
+      "Task close returns focus to triggering task."
+    ],
+    "screenshot_sha256": {
+      "documents-pinned-desktop.png": "5a32715f446ba00a7281adae34b1db0fc5922e47019f58dd840ade5ad84454ff",
+      "documents-pinned-narrow.png": "08f3939e6b43e7da7f860a7696fc4bbdfde5a516288811f1f3c69e51caaa4ec2",
+      "file-update-needs-review.png": "6208111764ba1b38015f312118e8ce67f786a811516704c39d7f220c71dfdffa",
+      "fresh-workspace-populated-ready.png": "1c23d45082f340dfd836df17cd03e8cf96ffd74443c5af79900a23d54f960edd",
+      "my-work-assigned.png": "54963e1f433e74f9aeb2eff5e2b5780108425ea0f1b2aabf6542603b15392616",
+      "task-files-desktop.png": "e8b3ef01ef13c0aef81bc3c15d02af69ff514796b588640b5dbd82efb7cb5d1a",
+      "task-review-narrow.png": "58527cde3c29347878576860db1e6ca83a7187059f45654b10d99f25102e02e3"
+    },
+    "proof_limits": [
+      "Agent usability/keyboard review, not human satisfaction or formal accessibility conformance.",
+      "Timings are action-to-observed states and include automation overhead, not browser TTI.",
+      "Two exact-short link selectors omitted accessible (new tab) suffix; one helper expected a dialog for an actual inline preview.",
+      "Two task-transition intra-call waits expired; subsequent fresh liveDOM proves saved ready state. A separate6323ms two-observation upper bound includes model/tool overhead. No discarded slow sample or fabricated task TTI.",
+      "Frozen benchmark dataset50versions; purposeful later UI publication addsONEversion ->51.",
+      "Fixture-only duplicate stage labels polished through two original-human current-CAS updates after the benchmark; no product source issue.",
+      "Personal reminder cancelled after scheduling proof; original other cohorts/real grant revocations untouched."
+    ]
+  },
+  "artifact_audit": {
+    "core": {
+      "image_id": "sha256:90ad7b5e2fbdb403fd8323cc7bee05ad0a5e77a6e21088ff250c5515a7b8a922",
+      "project_files": 3692,
+      "addons": [
+        "auth_password_policy",
+        "base",
+        "base_setup",
+        "bus",
+        "mp_compat",
+        "mp_core",
+        "mp_identity",
+        "web"
+      ],
+      "native_identity": "19.0.0.2.5",
+      "sdk": "0.2.5",
+      "forbidden_project_files": 0,
+      "containers_created": 0
+    },
+    "final": {
+      "image_id": "sha256:52cc1bdb576a38a3bb476ccf3c291c19ef6f4973820f5578db70f2009db753c0",
+      "project_files": 3768,
+      "addons": [
+        "auth_password_policy",
+        "base",
+        "base_setup",
+        "bus",
+        "mp_compat",
+        "mp_core",
+        "mp_delivery",
+        "mp_documents",
+        "mp_identity",
+        "mp_partners",
+        "mp_taskfiles",
+        "mp_workboard",
+        "web"
+      ],
+      "native_identity": "19.0.0.2.5",
+      "sdk": "0.2.5",
+      "forbidden_project_files": 0,
+      "containers_created": 0
+    }
+  },
+  "receipts": [
+    {
+      "private_relative_path": "canonical-final-exit.json",
+      "sha256": "02c0ff969b52606f75e1fa7909cf3ef10db9786f3315e09089eab0f923c4927d"
+    },
+    {
+      "private_relative_path": "final-frontend-exit.json",
+      "sha256": "2c8e9d2b46896dafabc4b9b7a3f61979defbd338baa39171c759d0c389a28863"
+    },
+    {
+      "private_relative_path": "native/preflight.json",
+      "sha256": "8fe1ee08abf3a7df2afae41ef6211815dc38e2a03db7489a1ace94c9484aba6e"
+    },
+    {
+      "private_relative_path": "native/installed014-result.json",
+      "sha256": "55e7dde82e66037aa78bfcfb43ba775246b8535e6c23caaa4d5c8627e42fcd97"
+    },
+    {
+      "private_relative_path": "documents-upgrade/complete.json",
+      "sha256": "08790d18c8b4d8bc4de6f3c1d26d294c0cf2285ccc53665a8ec332b8bbc525f4"
+    },
+    {
+      "private_relative_path": "taskfiles-install/complete.json",
+      "sha256": "02fa7954b4d985e742580dae28d378c28aad36acf53d6b2b868557662fbcef3d"
+    },
+    {
+      "private_relative_path": "benchmark/complete.json",
+      "sha256": "bbdc0619baaf1bd693753dcedd32fa93da0757c3413ab597dd01575f3a0f03ce"
+    },
+    {
+      "private_relative_path": "ui-workflow/complete.json",
+      "sha256": "55c112cd5c44e102ceb44f3d7eba52699f6067b616e8a32b18e36bfd3de8dcec"
+    },
+    {
+      "private_relative_path": "ui-workflow/final-current-state.json",
+      "sha256": "482fa5667e34f2da35b7f7f7528100c85b3e7d1be3dfb33a80802c9b73c135bd"
+    },
+    {
+      "private_relative_path": "artifact-core/complete.json",
+      "sha256": "3938b1bbd4df71254b414c22db1c0af860736105285b31f0b25e3b907df4c4b5"
+    },
+    {
+      "private_relative_path": "artifact-final/complete.json",
+      "sha256": "90c8a6b69ebdc3c54e778e9a0ec112b4ca1559d2613c45408f9ac9e63e9131e4"
+    }
+  ],
+  "limits": [
+    "Local provisional qualified combinations only; no publication/production/LTS/ABI expansion.",
+    "Oldcore0.2.3 -> rebuilt same-lock dependency transition is explicitly NOT supported by this qualification. Existing source-backed guard refuses; no lock or guard relabel. Owner build/release staging; reviewed native rebuild provenance/transition policy plus negatives required before support.",
+    "904-case final source pass does not erase earlier902-case bootstrap fixture errors or before-Docker build failure; exact receipts retained.",
+    "Three large uploads are real submissions, not idempotency replay samples. Binary sample counts3 are reported individually, not stable p95.",
+    "Frozen benchmark50versions; later useful UI publication addsONEversion to51. No retroactive dataset or threshold change.",
+    "Task-specific context6323ms upper bound includes cross-tool/model overhead and is not a browser TTI measurement; warm app navigation421ms is a separate declared measurement.",
+    "Final destructive current-source uninstall/removal/current-authority recovery and exact retention handoff still required."
+  ],
+  "acceptance": {
+    "phase_points": 90,
+    "phases": 4,
+    "PP05": "active",
+    "goal": "active"
+  }
+}
