@@ -1,0 +1,108 @@
+{
+  "accepted_phases": 2,
+  "accepted_points": 50,
+  "build": {
+    "archive_digest": "sha256:72733568b31bf5a849ea359fb20205c8e810522b0b249b5515dc395f393e37a5",
+    "core": "0.2.3",
+    "image_id": "sha256:597a7cf230a2473bd89a238ecd6df3fe79689ee3959bd94609dc907210d07970",
+    "native_version": "19.0.0.1.5",
+    "other4apps_and_python_exact": true,
+    "source_inputs": 4045,
+    "source_inputs_still_exact": true,
+    "version": "0.1.5"
+  },
+  "forward": {
+    "all9HTTPdownloads_exact": true,
+    "configuration": 27,
+    "native_and_metadata_published": true,
+    "native_byte_marker_and_write_foreign_legacy_download_denials": 7,
+    "new_restage_and_operation": true,
+    "operation_id": "fc1461e4-0461-479b-8bda-6b4e61fe4a3c",
+    "state": "completed"
+  },
+  "goal": "active",
+  "harness_findings": [
+    "Initial empty prelaunch stopped before build intent because private star import omitted _write_new; empty directory and reconciliation retained.",
+    "Non-download legacy image returns200 exact stock placeholder; download=true404, no byte leak. Prior status expectation failure retained.",
+    "Scope/request intent filename collision stopped before HTTP restore request; exact rows proved unchanged, same saved key used once in separately named continuation."
+  ],
+  "limits": [
+    "Bounded trusted native own-table migration, not arbitrary migration support",
+    "Payload sharing preserves logical quota; not a measured filesystem disk-capacity guarantee",
+    "No useful event consumer effect yet; full PP03 not accepted",
+    "Actual narrow width433 only; no393px or formal accessibility claim",
+    "No full host regression repeated; final canonical boundary belongs PP05",
+    "Same-project fresh DB/filestore namespace, not independent infrastructure restoration",
+    "Owned images, source DBs, checkpoints and helpers retained; no cleanup or publication"
+  ],
+  "native_migration": {
+    "actual_registry_pre_post_and_constraint_cleanup": true,
+    "all_original_logical_rows_bytes_receipts_and_refs_exact": true,
+    "original_files": 6,
+    "original_logical_bytes": 4340,
+    "original_versions": 9,
+    "unique_raw_bytes": 3938,
+    "workspace_payloads": 8
+  },
+  "phase": "PP-03",
+  "phase_accepted": false,
+  "proof_sha256": {
+    "build-review.json": "211b10230a26692874323a5e26a36292abb8fa889f59252325e2ac29baeb138b",
+    "fault-result.json": "9c1e020e951d01e5499e198a32f147d919296ed4b6662a6ddb23764843df29c9",
+    "fault-review.json": "53323d00018e437d05d31ab4502de623091b4fc93d6e417052c3cd75780b63ef",
+    "forward-result.json": "fbadc811fab6a9d40db45d0e8bf01bea8d9eeea0df51f52ccb41c52b7344dd0c",
+    "forward-review.json": "5919a2b70cb0c13aa7c5056609978952d0927b9fa4033f8af7628f3248f09aa9",
+    "migrated-reads-v2/result.json": "a6effa719a5d955dc5340796e8d6a0d98a4cb508c656417fa606858f83b284c3",
+    "migrated-reads/placeholder-classification.json": "0459ddded0996f3b4534da24e895a1f536385db1c6bd77d8e0606d89a15712ea",
+    "native-migration-effect.json": "322a771a966e0427c0759765b09efb55e83628eaa1a46a2e9084f9833b1c79ff",
+    "restore-result.json": "d8f2a8c03429dcc1d98a73e18c53ec0feb4aab239d50a277b2dd8a40d0a42c71",
+    "restore-review.json": "7f01445cffb5d54bde005dbb109a8bfbf1726b3d6c6f5c89ddfc1fc7ec5d0f94",
+    "restored-reads/result.json": "181d6685ca711b683db082a88c10512e1c908e7854ebe778bb4c9b499c24ffde",
+    "resume-result.json": "2fa371f8435a1eb356ff989738015ec4076c3f62ea396541256c1ece0968a475",
+    "resume-review.json": "0e81d9f2b99e93be174b7ce1311aec5491cffdfc9fe213445626c0cde360acc5",
+    "ui/result.json": "757c9fc96b7583c186ac4a18f820f6c7b0281216f8c9cfe61dfd1a1b78fbe99d",
+    "useful-storage/pre-request-continuation.json": "fa2f4c80bdf1745081880e7d847cfa7f73088b6fac4f61b8451b8438fd21de38",
+    "useful-storage/restore-version-result.json": "025bb02b1040e0a6b65aee746dafc501a8d85fb3f03bf4730f9aeca9901f376b",
+    "useful-storage/workspace-isolation-result.json": "755407a34875b2b86eb33643a9842ed37ee1375fa48989631577e6b4714a1ba8"
+  },
+  "recovery": {
+    "failed_migrated_source_retained": true,
+    "failed_operation_id": "39bf2e86-e180-4789-b616-09724aec0f06",
+    "failure": "Controlled exception ONLY after original native command success and exact readonly effect proof; before platform metadata",
+    "fresh9HTTPdownloads_exact": true,
+    "no_apply_or_restore_replay": true,
+    "normal_checkpoint": true,
+    "normal_independently_reviewed_fresh_restore": true,
+    "old_inline_schema_and_all_original_bytes_restored": true,
+    "separate_reviewed_resume": true
+  },
+  "result": "Documents015_real_populated_migration_recovery_forward_and_use_accepted",
+  "rough_implementation_points": 60,
+  "useful_use": {
+    "all_original_blob_rows_exact_after_reuse": true,
+    "final_files": 7,
+    "final_logical_bytes": 5144,
+    "final_payloads": 9,
+    "final_unique_raw_bytes": 4340,
+    "final_upload_receipts": 31,
+    "final_versions": 11,
+    "identical_B_upload_has_separate_payload": true,
+    "old_pin1_unchanged": true,
+    "restore_old1_as_new5": true,
+    "restore_reuses_same_workspace_payload": true
+  },
+  "utc": "2026-11-13T08:10:15.080109+00:00",
+  "visual": {
+    "actual_browser": true,
+    "current5_vs_pin1": true,
+    "escaped_preview_scripts": 0,
+    "escaped_preview_svg": 0,
+    "historical_v4_download_bytes": 250,
+    "keyboard_new_tab_and_reload": true,
+    "narrow_observed_width": 433,
+    "narrow_requested_width": 390,
+    "old_v1_download_bytes": 402,
+    "page_width": 433,
+    "visible_unobscured_keyboard_focus": true
+  }
+}

@@ -132,3 +132,18 @@ not relabelled as those host bytes. Exact artifacts/images/operators and limits
 in the acceptance record apply. Older source/image records and historical support
 claims remain scoped. No universal file safety, completed-checkpoint restore or
 production/long-term support is added.
+
+## PP-03 populated storage-migration qualification
+
+The exact core0.2.3 cohort now includes Documents0.1.5, archive
+`sha256:72733568b31bf5a849ea359fb20205c8e810522b0b249b5515dc395f393e37a5`,
+with the other four app archives and Python environment unchanged. App-owned
+pre/post migration, real native loading/constraint cleanup, controlled post-native
+failure, independently reviewed fresh old-schema restore, separate resume and
+a NEW normal forward upgrade passed. The original version identities, metadata,
+bytes, references and current authority survive. Private payloads share only
+within a workspace; logical quota still counts retained versions. Actual
+browser/download/native privacy and same-workspace reuse/B isolation pass.
+[Evidence](evidence/G7/20261113-pp03-document-storage-native-01/qualification.json).
+This does not accept the full PP-03 phase, arbitrary migrations, filesystem
+capacity, completed-checkpoint restore or a stable compatibility promise.

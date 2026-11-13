@@ -8,19 +8,19 @@
 Current goal: implement the [product/platform roadmap](product-platform-roadmap.md),
 building useful independent applications on the qualified app-free core. Research
 and roadmap setup are complete; PP-01 is accepted in its recorded bounded scope.
-PP-02 is active under its freshly reviewed local implementation plan. Create each
+PP-02 is accepted in its bounded scope; PP-03 is active under fresh local plans. Create each
 phase/large-section implementation plan only when it activates, using the latest
 source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T07:32:41.872842+00:00
+- Updated UTC: 2026-11-13T08:10Z
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 and PP-02 accepted in bounded scope; PP-03 active under fresh phase/section plans: package reviewed host recovery correction into provisional core0.2.3 before app successors.** Historical scopes remain complete.
-- Latest work item: **Documents0.1.5 meaningful storage-migration source is implemented/privately committed, still unadmitted and undeployed.** Own immutable workspace payloads retain revision identities/logical quotas; direct raw byte fields are private. Exact pre/post scripts copy/prove bytes and metadata before retiring duplicate storage. 32Python/29Node source checks and14actual PostgreSQL source cases pass, with native initialization explicitly simulated and all schemas rolled back; live rows exact. [Source evidence](evidence/G7/20261113-pp03-document-storage-source-01/qualification.json). Installed state remains core0.2.3/config24/imagecfb377b9/Docs0.1.4/Taskfiles.1.1. NEXT fresh installed migration/failure-recovery/normal forward plan before build/native execution, then event section plan from findings. GoalACTIVE50/1002/5rough55; no PP03 acceptance, no open fixture/operation, PP04/05 unplanned.
+- Current phase/gate: **PP-01 and PP-02 accepted in bounded scope; PP-03 active. Meaningful populated migration/recovery/use section accepted; useful event-consumer effect and capability audit remain open.** Historical scopes remain complete.
+- Latest work item: **Documents0.1.5 installed and qualified through real native pre/post migration, controlled post-native failure, independently reviewed fresh restore, separate resume and a NEW successful upgrade.** Original9versions/4340logical bytes became8workspace payloads/3938raw bytes with all logical rows, references and authority preserved. Restore proved old inline schema/data; fresh9HTTP downloads passed before the new forward operation. Final native/private-marker/write/foreign/legacy download checks pass. Normal restore-old-as-new5 reuses the existing payload; identical B upload owns a distinct payload. Current7files11versions31receipts/5144logical bytes/9payloads4340raw bytes, core0.2.3/config27/Docs0.1.5/Taskfiles0.1.1; original task pin1 retained. Actual desktop/433px keyboard/new-tab/reload/escaped preview and402Bpin1/250Bv4 downloads pass. [Installed evidence](evidence/G7/20261113-pp03-document-storage-native-01/qualification.json). Source-only evidence remains historical. All failure/source/checkpoint/helper assets retained; no open fixture/native operation or cleanup. NEXT fresh event-consumer section plan from actual findings BEFORE implementation. GoalACTIVE50/1002/5rough60; fullPP03 unaccepted, PP04/05 unplanned.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

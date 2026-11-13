@@ -1,5 +1,24 @@
 # Work log
 
+13November2026 PP03 meaningful Documents0.1.5 migration section accepted:
+fresh source/installed plans preceded one exact candidate/admission/stage and
+normal approved upgrade39bf2e86. Actual native pre/post/schema cleanup preserved
+all9versions4340B while sharing8workspace payloads3938B; controlled exception
+only after real success/proof and before metadata. Independently reviewed fresh
+restore verified old inline schema/data/current authority, separate resume and
+all9downloads/pin; NEW restage/opfc1461e4 then completed native+metadata/config27.
+Normal restored-as-new5 reuses payload; same synthetic402B B upload owns separate
+payload. Final7files11versions31receipts5144logicalB/9payloads4340rawB; old data,
+two refs, other apps and current authority exact. Browser desktop/narrow433px,
+visible keyboard focus/Enter/newtab/reload/pin1-current5/escaped preview and old
+402B/250B download hashes pass. Non-download legacy image200 was exact stock
+placeholder; explicit download404. Private prelaunch import and pre-request
+intent-name collision stopped before respective Docker/HTTP mutations; evidence
+and reconciled continuations retained. No product guard/source injection/replay.
+All owned images/source DBs/checkpoints/helpers retained. GoalACTIVE50/1002/5,
+rough60; fullPP03 awaits fresh event section plan/effect and capability audit,
+PP04/05 remain unplanned. No full-suite repeat or publication.
+
 13November2026 PP03 core023 first candidate618734c6 built with exact5runtime
 changes/all5apps+Python exact. Stage metadata enrolled; normal plan-staged refused
 before bundle/register/apply because author changed descriptive profile text and

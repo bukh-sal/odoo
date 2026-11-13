@@ -4,6 +4,19 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+PP03 Documents0.1.5 migration section (13November2026): no new core branch or
+contract. The existing declared app-owned pre/post migration and independent
+staged lifecycle handled a real populated own-table transformation. Actual
+native success, controlled post-native failure, fresh old-schema restore,
+separate resume and NEW successful forward operation preserve all original
+bytes/metadata/current authority and surviving apps. App-private immutable Blob
+payloads share only within a workspace; logical quota still counts every version.
+Native byte-marker/foreign/write and legacy download denials pass. Actual UI
+keeps task pin1 distinct from current5 and supports keyboard/new-tab/reload.
+[Qualification](evidence/G7/20261113-pp03-document-storage-native-01/qualification.json).
+No general arbitrary migration, physical-capacity or fullPP03 acceptance claim;
+useful real event-consumer effect and capability audit remain before phase exit.
+
 PP03 activation13November2026, CR0021 packaging follow-up BEFORE edits: the
 qualified host correction is not present in retained imageb322. Package it with
 paired provisional core0.2.3/native19.0.0.2.3 and unchanged five app archives,
