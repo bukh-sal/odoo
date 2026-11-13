@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "phase": "PP-02",
+  "state": "candidates_built_inspected_not_deployed",
+  "utc": "2026-11-13T01:57:11.716883+00:00",
+  "phase_accepted": false,
+  "roadmap_accepted_points": 25,
+  "core_version": "0.2.2",
+  "native_core_version": "19.0.0.2.2",
+  "default_core_addons": 8,
+  "expected_addons": {
+    "core": 8,
+    "maintenance": 11,
+    "documents": 12
+  },
+  "expected_artifacts": {
+    "core": 0,
+    "maintenance": 3,
+    "documents": 4
+  },
+  "images": {
+    "core": {
+      "image_id": "sha256:72525e357657914fdf7c74e930744ce3190ba665147a6bcce10ed53b6729ae16",
+      "tag": "modular-platform:stage-20261113t013456423544z",
+      "record_sha256": "b31d656736bb734ef3607acc298649e00a94419807449e3f807a3b79b6a16191",
+      "source_commit": "26d2d864a4f0a7a1599edb58146e9baef00e4382",
+      "source_inputs": 3954,
+      "inventory_digest": "sha256:470a1d89a85db63dcbad035c93f6577ebdb7de82b870ff3d1e217dd0832a67a8",
+      "artifacts": {},
+      "build_result": "built_not_deployed",
+      "deployment_changed": false,
+      "runtime_target": "clean-runtime"
+    },
+    "maintenance": {
+      "image_id": "sha256:0a3332ac509b52c7693ee0bb78c7f14522ab58e0c23cd48edf3664bc5d2cd01c",
+      "tag": "modular-platform:stage-20261113t013553439614z",
+      "record_sha256": "7e8e0b4bdc9cb4dccdb13a14091d85897d02162a63fcb65dcad13b0bf25ec438",
+      "source_commit": "26d2d864a4f0a7a1599edb58146e9baef00e4382",
+      "source_inputs": 4007,
+      "inventory_digest": "sha256:0d0b3bfabecfc90e0c1e566ab929b2af23d0774b013f2ba1fa08c02961c16a28",
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      },
+      "build_result": "built_not_deployed",
+      "deployment_changed": false,
+      "runtime_target": "clean-runtime"
+    },
+    "documents": {
+      "image_id": "sha256:0ff789127c2e783aa0eed0ca1054f72a4be3a3dd1e598c4831a10793cd6f3cc8",
+      "tag": "modular-platform:stage-20261113t013633916569z",
+      "record_sha256": "05a2e0f9cbd226f920999937fad442ecbc90e23dfd4099010a2b5d90ccd55c9d",
+      "source_commit": "26d2d864a4f0a7a1599edb58146e9baef00e4382",
+      "source_inputs": 4025,
+      "inventory_digest": "sha256:9a95c76474a86d2f6687df60d48aac5220d881066da592cd8b807577152fb8b9",
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:81baf9ea8d08c5ca2d9d41f4d551faefa63cda2c2c3bea149ff689c52d9b479d",
+          "file": "dev.local.documents-0.1.0.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.0"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      },
+      "build_result": "built_not_deployed",
+      "deployment_changed": false,
+      "runtime_target": "clean-runtime"
+    }
+  },
+  "source_core_files": 3683,
+  "core_source_delta": [
+    "addons/mp_core/__init__.py",
+    "addons/mp_core/__manifest__.py",
+    "addons/mp_core/attachments.py",
+    "addons/mp_core/binary.py",
+    "addons/mp_core/controllers.py",
+    "packages/platform_sdk/modular_platform/projection.py"
+  ],
+  "core_final_layers": 14,
+  "core_all_layer_audit_sha256": "9f31a3901ccf3036d2cd1055369113a8951806b8e4342ac22691370144483a17",
+  "old_app_image_not_core_final_ancestor": true,
+  "normal_core_upgrade_source_guard_passed": true,
+  "normal_app_install_source_stability_guard_passed": true,
+  "core_python_matches_previous_standalone": true,
+  "maintenance_python_matches_current_review": true,
+  "documents_same_version_dependency_changes": [
+    {
+      "name": "psycopg2",
+      "previous": {
+        "digest": "sha256:623e01e2ca968466749730b7e64957dc1e23fde3dc8b85a20c256bc8504d7b21",
+        "kind": "runtime_distribution",
+        "name": "psycopg2",
+        "requires_dist": [],
+        "requires_python": ">=3.7",
+        "version": "2.9.9"
+      },
+      "target": {
+        "digest": "sha256:83c55dfe932fb172f90c244f24db2855233d044464265cecb20863b7b17ee8f2",
+        "kind": "runtime_distribution",
+        "name": "psycopg2",
+        "requires_dist": [],
+        "requires_python": ">=3.7",
+        "version": "2.9.9"
+      }
+    },
+    {
+      "name": "python-ldap",
+      "previous": {
+        "digest": "sha256:2c7bab644d26467226a37730ae0101fcbb1e925c897c93b94a345969b65dc5e2",
+        "kind": "runtime_distribution",
+        "name": "python-ldap",
+        "requires_dist": [
+          "pyasn1>=0.3.7",
+          "pyasn1_modules>=0.1.5"
+        ],
+        "requires_python": ">=3.6",
+        "version": "3.4.8"
+      },
+      "target": {
+        "digest": "sha256:8bd332f693c2a936faf619ea657e948c39d4537e7ec61351e71639bd93e1cc1e",
+        "kind": "runtime_distribution",
+        "name": "python-ldap",
+        "requires_dist": [
+          "pyasn1>=0.3.7",
+          "pyasn1_modules>=0.1.5"
+        ],
+        "requires_python": ">=3.6",
+        "version": "3.4.8"
+      }
+    }
+  ],
+  "changed_native_files": [
+    {
+      "distribution": "psycopg2",
+      "path": "lib/python3.12/site-packages/psycopg2/_psycopg.cpython-312-x86_64-linux-gnu.so",
+      "previous_sha256": "3e7cee4007e09c59127fe86389e906837828f83b75224ac3321c8bcfbcd9465a",
+      "target_sha256": "7561120c26ae5ad4dd4df4f1afff5cb4401dcb3afdfc9e5d6a9390b0dcb855f3"
+    },
+    {
+      "distribution": "python-ldap",
+      "path": "lib/python3.12/site-packages/_ldap.cpython-312-x86_64-linux-gnu.so",
+      "previous_sha256": "28c9a4bdaabdccfdc8e55a87f53efa45b5becd3220a9c24d3be4e75ba8bb95cc",
+      "target_sha256": "5a191ca7d947561cdc74ca87d844d206d516f5e330e391122eb7fb086cc02ff5"
+    }
+  ],
+  "explicit_documents_independent_plan_dependency_review_pending": true,
+  "target_trust_control_policy_unchanged": true,
+  "source_checks": {
+    "frontend_JS_passed": 21,
+    "app_python_unique_passed": 22,
+    "identity_distribution_staging_passed": 45,
+    "freeze_files": 122,
+    "freeze_rows": 11
+  },
+  "resolved_evidence_issue": "Initial review wrongly compared standalone C to current app Python cohort; failed script/intent preserved and per-cohort follow-up recorded. D dependency drift is real and explicitly pending normal plugin plan review, not declared unchanged.",
+  "known_build_boundary": "New DISTRIBUTION_POLICY ARG value invalidated dependency RUN cache; source-wheel rebuild changed two native binaries under identical source lock. Detailed reproducibility work remains PP-04. No guard, lock, archive or version was relabelled.",
+  "limits": [
+    "Source UI not yet rendered/installed; no native binary authorization/byte recovery/concurrency acceptance",
+    "C all-layer audit is static image proof, not native bootstrap or app workflow",
+    "D normal independent install plan must visibly bind the two Python digest changes; stop on normal admission refusal",
+    "No trust/catalog/stage/register/approval/apply/site/DB/business change in this section",
+    "All three images/tags/checkpoints/build/source evidence retained; no prune or cleanup"
+  ],
+  "next": "Fresh live core-maintenance and separate Documents install section plan from current target/data/authority; actual independently reconstructed normal plans before any apply"
+}

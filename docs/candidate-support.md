@@ -111,6 +111,11 @@ the [next roadmap phases](product-platform-roadmap.md) remain required.
 Core source0.2.2/native19.0.0.2.2 names the new authenticated binary capability.
 It is a provisional local successor, not a relabel of qualified0.2.1 images or a
 new support/ABI/licensing promise. Private Documents0.1.0 archive81baf9ea is
-assembled and source-tested but unadmitted/uninstalled. Current qualified review
+assembled/source-tested/image-packed but unadmitted/uninstalled. Three TEST images
+now exist in [PP-02 image evidence](evidence/G7/20261113-pp02-candidate-images-01/qualification.json):
+standalone C72525e35, same-app maintenance M0a3332ac, Documents D0ff78912. C passed
+its14final-layer audit; no new installed/browser/lifecycle acceptance is claimed.
+D has explicit same-version rebuilt Python binary digests for independent install
+review; its environment is not called byte-identical to M. Current qualified review
 site remains the PP-01 core0.2.1 cohort above. Exact image/native/UI/lifecycle
 evidence is required before extending the support matrix.

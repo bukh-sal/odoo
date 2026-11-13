@@ -1,6 +1,25 @@
 # Work log
 
 
+13November2026 — PP02 images: committed provisional core0.2.2 pair/source26d2d864a4f,
+then three normal once-only clean builds. C72525e35/default8 has0archives and
+passed14final-layer/content-address audit,3683corefiles/exact6reviewed changes.
+M0a3332ac preserves all3current archives and Python bytes; actual core-upgrade
+source guard passes. D0ff78912 adds only Documents81baf9ea/archive+addon to source
+composition, app/core source-stability guard passes. New policy ARG invalidated
+cached dependency RUN layers; same-version psycopg2/python-ldap .so bytes differ
+in D. Initial image review wrongly compared standalone C to the app cohort;
+its failure/script/intent retained, follow-up verifies C-to-oldC and M-to-oldM
+separately. Two exact readonly network-none probes confirm D native-file changes.
+No guard/lock/version/hash relaxation; actual normal independent D plan must
+bind/review its new Python distribution digests before any installation.
+[Image evidence](evidence/G7/20261113-pp02-candidate-images-01/qualification.json).
+Target/trust/control/policy bytes unchanged, no native stage/apply/business work;
+all3images/tags/archive/source evidence retained. PP02 not accepted, goalactive25points.
+Next fresh exact native operation plan, M core maintenance then separate D install
+review, actual useful browser/binary/parallelquota/upgrade/freshrestore checks.
+
+
 13November2026 — PP02-UI: fresh frontend section plan preceded independent
 library/trash/history/download/preview/client/dialog source. Escaped text only,
 SHA/size-verified bounded downloads, Unicode-safe raw-upload metadata, explicit
