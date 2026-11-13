@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T04:46:55.140682+00:00
+- Updated UTC: 2026-11-13T05:12:39.728131+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: optional Task files installed and initial real workflow passes; pin refresh defect source-corrected, rollout/recovery pending.** Historical scopes complete.
-- Latest work item: **One normal mixed Docs0.1.3 upgrade/Taskfiles0.1.0 install completed with exact data/checkpoint preservation.** Currentconfig19/imageb682e435/worker3c395ef6;6files/8versions/28receipts/4090B intact, one UI-created old-v1 reference. Actual panel/selector/EscapeKeep+focus/newtab/download402Bhash pass. Refresh loses pin because initial native action state was not seeded; source-only Docs0.1.4/4bce23c fixes it, actual native producer regression red-before/green-after plus23Python/37affectedJS pass. New archiveba5c03f9 unadmitted/unbuilt. [Evidence](evidence/G7/20261113-pp02-taskfiles-installed-01/qualification.json). Accepted25/1001/5,rough45; goalACTIVE. Next fresh successor rollout plan, not original operation replay.
+- Current phase/gate: **PP-01 accepted; PP-02 active: persistent pinned-version workflow and integration authority verified; final focus repair/byte-reference recovery pending.** Historical scopes complete.
+- Latest work item: **Normal Docs0.1.4 upgrade completed/config20; actual refresh now retains exact pin.** One250Bv4 upload leaves task pinned to original402Bv1; downloads distinct/exact, same reference soft-remove/relink revision3, all old versions/receipts preserved. Current6files/9versions/29receipts/4340B.31final HTTP/native controls and three exact-restored authority fixtures prove honest unavailable states and independent parent/library behavior.393px narrow picker/keyboard protection passes; CloseReview async-focus issue source-corrected in private Taskfiles0.1.1/3e4535a (9Python/39affectedJS), archive4a1a5398 UNADMITTED/unbuilt. [Evidence](evidence/G7/20261113-pp02-pinned-workflow-authority-01/qualification.json). GoalACTIVE25/1001/5rough45; next fresh focus successor rollout plan, then coordinated restore. No open fixture/operation.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -129,6 +129,39 @@ Next fresh current-state successor image/normalupgrade plan then exact pin refre
 laterupload unchanged pin, remove/relink/degradation/narrowUI and byte/reference
 fresh restore. No PP02 acceptance; no active command/fixture/recovery, no cleanup
 or operation replay, no PP03..05 plans. CurrentDocs remains0.1.3, not source0.1.4.
+
+### PP02 persistent pin and current integration authority
+
+One normal0e00570f Docs0.1.4 upgrade completed on image9fdfd2ed/config20; exact
+old4apps/core/Python bytes unchanged, independent review/trustack/checkpoint pass.
+Initial native currentState correction is installed: URL/refresh retain original
+document+v1. Actual250Bv4 upload keeps all oldversions, task pin stillv1; old402B/
+new250B downloads have exactdifferent hashes. One reference soft-remove/relink
+keepssameUUID/rev3 and provider intact.6files9versions29receipts4340rawB; old8
+business/auth/14jobs/53outbox exact. Stored base64 adaptation decoded/hashchecked.
+
+31final current-actor HTTP/native checks across matrix+3conditions pass. Grant11
+revocation hides cached label/link afterfreshread but preserves task/customer/
+discussion/directDocs; Docsfeature8 shows Filesunavailable/nofalseempty/noUpload;
+leaf10 suspension shows onlyoptionalpanelerror, parent and independentlibrary
+usable. Allrows includingwrite metadata restoredexact in finally. Original test
+expected403 for bound suspended provider; sourcecontract is PLUGIN_SUSPENDED409;
+firstfixture safelyrestored, exactfreshv2/actualresponsejournal passes. Oldfailed
+receipt retained; no productchange/guardwaiver/operationreplay. Initialprivate
+build intentfilenamecollision also stoppedbeforecommand; explicitcontinuation
+bound originalsource/target/data/nooutput. Actualbuild ranonce, no blindretry.
+
+Narrowrequested390/measured393 andnohorizontaloverflow; nativepicker/EscapeKeep/
+focusbacktoselect andkeyboardCloseReview checked. Found postCloseReview/success
+parentreload focusbody whenAttachbuttonreplaced. Source-only Taskfiles0.1.1/
+3e4535a usespostOwlpatch refs/effect, closed-onlyfocusflag, readablepanelfallback
+whenauthoritylost, nofocusstealfromopenchild.2regressionsredbefore,9Python and
+39affectedNode pass; exactarchive4a1a5398 assemblednotadmitted/built/installed.
+No core/Docs/model/schema/grant change. LiveTaskfiles remains0.1.0.
+
+NextfreshTaskfilesfocusimage/normalupgradeplan+actualfocus then currentcoordinated
+byte/version/reference freshrestoreplan. No PP02acceptance, noPP03..05plans,
+noactiveprocess/fixture/unresolvedmutation, no cleanup/push. Keepalloldassets/data.
 
 ## Product/platform roadmap (13November2026)
 
