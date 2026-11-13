@@ -4,6 +4,18 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+PP04 B completed-checkpoint requirement recorded in its fresh local plan BEFORE
+source (13November2026). Partial generic host source now provides a distinct
+protected recovery journal and read-only semantic core-effect footprint, preserving
+the completed SQLite operation/history and requiring separate reviewed resume.
+No app IDs/SQL hooks or changed failed-recovery status guards.21focused source/OS
+cases pass plus actual PostgreSQL synthetic-CTE hash differentials; a Windows
+fresh-directory ACL creation defect in new code was fixed through the existing
+protection helper, with original failure retained. No live recovery, new CLI,
+image qualification or support promise yet; shared integration and real completed
+destructive uninstall/current-authority/document-byte recovery remain required.
+See [partial evidence](evidence/G7/20261113-pp04-checkpoint-primitives-01/qualification.json).
+
 PP03 accepted5/5 (13November2026): actual populated event/review recovery and
 useful browser check/keyboard acknowledgement/reload/download close the partial
 record below. The generic ownership audit covers95 core/SDK Python/JS files and

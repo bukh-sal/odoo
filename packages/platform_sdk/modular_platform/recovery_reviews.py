@@ -30,7 +30,9 @@ class RecoveryReviews:
         self.root=store.root/'recovery-reviews'
 
     def issue(self,payload,*,now=None):
-        if 'review' in payload or payload.get('action') not in ('restore_to_fresh_database','resume_verified_restore','resume_unchanged_release'):
+        if 'review' in payload or payload.get('action') not in (
+                'restore_to_fresh_database','resume_verified_restore','resume_unchanged_release',
+                'restore_completed_checkpoint','continue_completed_checkpoint','resume_completed_checkpoint'):
             raise OperatorError('Exact restore/resume recovery proposal required')
         policy=self.store._policy()
         issued=_utc(now)

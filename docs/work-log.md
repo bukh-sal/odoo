@@ -1,5 +1,23 @@
 # Work log
 
+13November2026 PP04 B fresh design preceded source. Actual old RestoreExecutor
+requires unresolved failure and its journal retires that operation; no guard was
+broadened. New separate journal binds original completed status/bundle/review/
+authenticated operator and real deployment/site locks, exclusive ordered intent/
+completion chain and distinct resume review.8actual OS/private SQLite cases pass
+515.935s after fixing fresh Windows directory creation with the existing helper;
+first6ACLerrors/147.527s retained, not environmental waiver. Semantic-effect
+primitive source5cases pass; production SQL expression on actual PostgreSQL
+read-only synthetic CTEs preserves2epoch-only cases and distinguishes7semantic
+changes.8existing recovery-review/extraction cases pass35.055s. No full suite.
+Live source read-only preflight exact:14terminaljobs/7ACKdeliveries/11coretables,
+7files14versions12blobs,0external/API/technical credentials; original data/auth
+unchanged. One exact exited dispatch-observe helper retained with protected
+receipt. Executor/CLI/shared integration, partial continuation and real completed
+uninstall/fresh restore/separate resume/UI remain. No native operation/image/
+authority fixture/cleanup/publication. GoalACTIVE70accepted3phases,rough77; Bnot
+accepted from source primitives, C/PP05 still required.
+
 13November2026 PP04 A developer/operator outcome verified: private independent
 Handoffs creation used public packager and normal image/catalog/stage/exact
 approval/apply. ActualUI0.1.0 client validation blocked first save (zero rows);

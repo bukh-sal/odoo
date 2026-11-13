@@ -1,0 +1,79 @@
+{
+  "phase": "PP-04",
+  "section": "B completed-checkpoint recovery",
+  "result": "partial_source_primitives_verified_not_wired",
+  "phase_accepted": false,
+  "section_accepted": false,
+  "goal": "active",
+  "accepted_points": 70,
+  "accepted_phases": 3,
+  "rough_implementation_points": 77,
+  "plan_preceded_source": true,
+  "plan_sha256": "9a33e09465ae9787b183eb9c93288abef9d0a03d24eb675dc99770638dd6df80",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/checkpoint_recovery_journal.py": "f5157a7cd8bf790b1a14aa0d35e3c3daf9c6f93794f2dafc0a7d0373b1ed5b82",
+    "packages/platform_sdk/modular_platform/checkpoint_effects.py": "618c80eecebd7632b981ffe5a8ede9741cb182ec0c1150d8a28224114938dc1f",
+    "packages/platform_sdk/modular_platform/recovery_reviews.py": "85443de3fc31916c3110d513dd8024b1126fbe97254ff802ca1d7f6bfff06f31",
+    "tests/test_checkpoint_recovery_journal.py": "51145023d78f9066dd2412db523435051c1e0a5e82a7da53458839281ce8d2c9",
+    "tests/test_checkpoint_effects.py": "724779695e2f9276d3442171cfa9841986478c37cc927485c355cc24b7c8c3e9"
+  },
+  "proof": {
+    "real_OS_journal_cases": 8,
+    "journal_seconds": 515.935,
+    "footprint_source_cases": 5,
+    "legacy_recovery_review_cases": 8,
+    "legacy_seconds": 35.055,
+    "actual_PostgreSQL_expression": {
+      "epoch_equal_cases": 2,
+      "semantic_differences": 7,
+      "synthetic_CTE_only": true,
+      "read_only": true
+    },
+    "original_completed_SQLite_status_history_unchanged_by_journal": true,
+    "pending_intent_new_lock_refused": true,
+    "separate_resume_review_required": true,
+    "expired_revoked_forged_wrong_site_reviews_refused": true
+  },
+  "corrected_failure": {
+    "first_journal_cases": 8,
+    "errors": 6,
+    "cause": "New source hand-created a Windows mode0700 directory before the existing protection helper; strict ACL validation correctly refused",
+    "correction": "Use existing fresh-directory protection helper, no ACL guard relaxation",
+    "first_receipt_sha256": "9cb6b37a111d8be691b023272e7ec993cc7cac111f7abaca8fca4b406966683a"
+  },
+  "read_only_native_preflight": {
+    "configuration": 32,
+    "profile": "r1-native-dispatch-v1",
+    "core_tables": 11,
+    "terminal_jobs": 14,
+    "acknowledged_deliveries": 7,
+    "document_files": 7,
+    "versions": 14,
+    "blobs": 12,
+    "external_registrations": 0,
+    "active_technical_credentials": 0,
+    "api_keys": 0,
+    "existing_data_authority_exact": true,
+    "one_owned_dispatch_inspection_retained": true
+  },
+  "remaining": [
+    "Shared restore hooks and completed-operation executor are not yet implemented",
+    "New CLI and actual host ordering/partial continuation tests remain",
+    "Genuine completed destructive uninstall, fresh clone recovery/current authority/effects and separate resume with useful document bytes/UI remain required",
+    "Measured reproducibility and PP05 remain separate required work"
+  ],
+  "limits": [
+    "No live uninstall/restore/resume, authority fixture, image build or source injection in this step",
+    "Private synthetic CTE SQL witness is not installed restore qualification",
+    "Native code is trusted; the footprint does not prove absence of arbitrary outside effects",
+    "No full-suite rerun, cleanup, publication or acceptance of the new capability"
+  ],
+  "receipt_sha256": {
+    "journal-tests-corrected.stderr": "b9129301644c307b9fd73abacdd83f9dd9d1fc3572585aa482bab913f68869e2",
+    "effect-tests.stderr": "07821d99387eb7959c9efad4ff0450dec1e266c7f8e64263272ebaf3aa9cde5c",
+    "legacy-reviews.stderr": "10692713d442850ea9f48faf76733072d79dbc31705b58b7ea01a63e20167f05",
+    "effect-sql-witness.json": "9fd7830db6f23fc9adaf1fd80a2d423857d490a90f4d69664558155ee9c9438f",
+    "native-source-preflight.json": "61ca96a64e33216953adfbc20d990124edb2c020916fd6da4da4a9d55b316a60",
+    "native-profile-preflight.json": "fe2e315e70d6279435be54531891ca597fb4e4e2f476d920a43fd1dab691634b"
+  }
+}
