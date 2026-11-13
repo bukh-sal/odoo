@@ -4,6 +4,18 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+CR-0020 (13November2026), proposed/in implementation for PP-02: independent
+workspace file applications need bounded authenticated binary transport beyond
+the64KiB JSON gateway. Add trusted native registration of private binary
+handlers, current actor/workspace/model/installation/feature and release checks,
+CSRF-protected raw uploads, bounded metadata/content and noncacheable attachment
+downloads. Keep application storage/versions/quotas in its owned tables; no
+document/task/customer identifiers in generic core. Retain managed attachment
+denial and close inherited direct-model binary token/stream paths before
+elevation or byte access. ADR0084 records the new surface. Source/fake-boundary
+and installed qualification remain pending; existing core0.2.1 images are not
+relabelled and no secure-file support is claimed from this proposal.
+
 11November2026 independent work-application round: no new core change request
 was needed. Own models, schemas, services, client action/assets, team directory
 and workflow stages live in the private app repository. Actual visual review

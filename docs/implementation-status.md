@@ -8,7 +8,7 @@
 Current goal: implement the [product/platform roadmap](product-platform-roadmap.md),
 building useful independent applications on the qualified app-free core. Research
 and roadmap setup are complete; PP-01 is accepted in its recorded bounded scope.
-PP-02 is next and needs its fresh implementation plan. Create each
+PP-02 is active under its freshly reviewed local implementation plan. Create each
 phase/large-section implementation plan only when it activates, using the latest
 source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
@@ -19,16 +19,37 @@ hosted/production deployment, paid services or existing user-data destruction is
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 next, fresh plan required before implementation.** Historical AP/CW-L01/AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **PP-01 useful product experience accepted,4/4 bounded outcomes (13November2026).** Actual workflow, safe drafts/conflicts, keyboard/narrow checks, viewer and optional-customer-denial views pass. Workboard0.2.5/Customer Work0.1.4/Partners0.1.0 on unchanged core0.2.1. Original data/jobs/access exact; only intended new task/history added. [Acceptance evidence](evidence/G7/20261113-pp01-product-experience-01/qualification.json). New-roadmap progress25/100 weighted points,1/5 phases accepted; historical scores unchanged.
+- Current phase/gate: **PP-01 accepted; PP-02 active: secure binary source prerequisite.** Historical AP/CW-L01/AR/CF/BG/R1 scopes remain complete.
+- Latest work item: **PP02-BIN source prerequisite implemented, installed qualification pending (13November2026).** Generic registered current-authority raw binary gateway, attachment-only response and legacy scoped token/stream denial; app storage/policy remains app-owned. [Source evidence](evidence/G7/20261113-pp02-binary-source-01/qualification.json):58 cases,57 passed/1 existing Windows symlink skip,0 failures/errors; freeze122files/11rows. No new image/deployment/phase acceptance. PP-01 remains4/4 accepted,25/100 roadmap points,1/5 phases.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
+
+## PP-02 active: useful independent document library
+
+Fresh source/research and `.local/product-roadmap/PP-02/implementation-plan.md`
+preceded implementation. [ADR0084](architecture-decisions/0084-current-authority-binary-transport.md)
+adds the bounded registered binary surface; old attachment paths stay closed and
+raw scoped-model token/stream paths now refuse before elevation. App-owned
+transactional Binary(attachment=False) storage is the chosen initial path;
+metadata/version/quota/content policy belongs to the private app. No new storage
+engine/dependency or app-specific core branch. Freeze28 adds3files while all119
+previous frozen bytes remain exact. Actual gateway/result and scope/model guard
+source functions are exercised at fake native/SQL boundaries, not an installed
+file-security claim. Current review site remains generation14/old core0.2.1.
+
+Acceptance: PP-02 incomplete; no product/native/lifecycle outcome accepted.
+Blockers: no human input or running/uncertain mutation. Required next work is
+fresh document-model/service/UI section plan then private app implementation;
+core successor identity/build/approval/native byte+data recovery follows its own
+current section review. No PP-03..05 plan. Preserve all current review data and
+never replay completed operations. Phase progress is source-prerequisite only;
+accepted roadmap points remain25/100.
 
 ## Product/platform roadmap (13November2026)
 
 PP-01 accepted from [actual scoped evidence](evidence/G7/20261113-pp01-product-experience-01/qualification.json),
 4/4 outcomes; the [roadmap](product-platform-roadmap.md) remains active at25/100,
-1/5 phases. No future phase implementation plan exists. Codex implements/reviews
+1/5 phases. PP-02 now has its activation plan; no PP-03..05 implementation plan exists. Codex implements/reviews
 without delegation. Current review site and snapshots below are preserved.
 
 - [x] Fresh actual screen/source inspection, prior Aurora interaction comparison,
@@ -64,8 +85,8 @@ its independent document app. App-owned ACL checkpoint semantics and completed-
 checkpoint restore remain explicit later requirements. This is implementation
 work, not a human-input hold or permission to bypass the restrictions.
 
-Resume: re-read source/target/evidence and create/review PP-02's fresh plan before
-core or app edits. Do not create PP-03..05 plans now. Never replay ad5a7a27,
+Historical PP-01 resume instruction is superseded by the active PP-02 section
+above; its fresh plan now exists before core edits. Do not create PP-03..05 plans now. Never replay ad5a7a27,
 ab2df5db,292ca6b0 or completed CW-L01 operations. Existing private wrappers bind
 historical inputs and exclusive intents; they are not commands to rerun. Current
 target is operator/target.json, not bootstrap state.json. Preserve original and

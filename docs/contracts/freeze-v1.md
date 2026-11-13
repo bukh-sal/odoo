@@ -71,3 +71,14 @@ Revision26 also reconciles the previously removed private application document a
 Revision27 moves registered Notes domain payload/aggregate-identity validation out of generic event transport under [ADR0082](../architecture-decisions/0082-application-owned-event-payload-validation.md). The generic envelope/DTOs and transport bounds remain; the Notes addon now owns the exact former payload schema and existing identity rule. Neutral examples/fixtures/host type fixture replace the Notes-shaped sample; twelve golden transport cases and generic negatives remain. The shared-client Notes-domain validation promise is intentionally retired, not described as contract-neutral or backward compatible. Notes takes native19.0.0.2.10/plugin0.2.10. The new app-owned regression test and ADR are frozen in the event row. Archive proof is recorded after independent assembly; it is unadmitted and does not qualify an installed runtime. Old sealed artifacts/evidence and all other frozen bytes/rows remain unchanged.
 
 A populated rollout must first move Notes0.2.9 to the app-owned-schema successor before retiring the shared definition in a separate core release with unchanged app archives (ADR0082). The app-only source bridge is preserved; no installed transition is qualified here.
+
+
+Revision28 adds current-authority workspace binary transport under
+[ADR0084](../architecture-decisions/0084-current-authority-binary-transport.md)
+and [binary-v1.md](binary-v1.md). Trusted owner-model/private-handler registration,
+8MiB raw/4KiB metadata bounds, session/workspace/release/CSRF gates and whole
+attachment-only downloads form a new optional surface. Managed legacy attachment
+and scoped model token/stream access remain denied. Existing119frozen files,
+schemas/types/examples and JSON gateway DTOs are unchanged. The new contract row
+freezes the ADR, transport prose and actual source-boundary tests; installed app,
+storage/recovery and native-route acceptance remain pending PP-02 qualification.

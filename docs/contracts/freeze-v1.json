@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_major": 1,
-  "revision": 27,
+  "revision": 28,
   "g1_evidence": "docs/evidence/G1/20261028t003753z/gate-G1.json",
   "contracts": [
     {
@@ -268,6 +268,19 @@
         "docs/architecture-decisions/0075-site-native-application-lifecycle.md"
       ],
       "g1": []
+    },
+    {
+      "name": "workspace binary transport",
+      "owner": "PP-02 / CR-0020",
+      "acceptance": [
+        "PP02-BIN"
+      ],
+      "paths": [
+        "docs/architecture-decisions/0084-current-authority-binary-transport.md",
+        "docs/contracts/binary-v1.md",
+        "tests/test_workspace_binary.py"
+      ],
+      "g1": []
     }
   ],
   "files": {
@@ -389,7 +402,10 @@
     "docs/architecture-decisions/0076-tasks-candidate-validation-correction.md": "aaa6ed807e139dde7bf3c0f570cc9c6175ca259e3bf5fe892e125704c69bcea1",
     "tests/test_tasks_adoption_contracts.py": "942c812147d8b03852b1144f730b6c0f7b27c0fe292abc800ed6def56173e7f3",
     "docs/architecture-decisions/0077-native-tasks-adoption-47-49.md": "6faac2db3c7fbe97977f7421126beacb48643aded48c1c2ea3415a69ccfd9e7d",
-    "packages/contracts/examples/v1/foundation-transition/tasks-adoption.json": "fa2f9c25458ef3a5adbe72cc78558b36b5c6de4b1898ee2eb19008b2dafff9cc"
+    "packages/contracts/examples/v1/foundation-transition/tasks-adoption.json": "fa2f9c25458ef3a5adbe72cc78558b36b5c6de4b1898ee2eb19008b2dafff9cc",
+    "docs/architecture-decisions/0084-current-authority-binary-transport.md": "d6400ffd7d793ac39549fe88051786a60439a898944db9824f0b70998f4b93fd",
+    "docs/contracts/binary-v1.md": "1814c2b2cacdb6b5ba89b4b2b58721b26911f5edbae993e5a8718094adc25073",
+    "tests/test_workspace_binary.py": "8b9290d0e89cd51ff8ecdfeed4f504a47ab549000ab0a03be557f24792651375"
   },
   "change_rule": "ADR + explicit compatible revision or breaking major + consumer/fixture updates + affected acceptance invalidation/requalification; never edit hashes alone to bless drift"
 }

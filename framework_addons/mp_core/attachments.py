@@ -1,4 +1,4 @@
-"""R1 Notes/Canvas profile excludes attachments; legacy paths cannot add them."""
+"""Managed workspace bytes never use legacy public/token attachment paths."""
 from odoo import api, models
 from odoo.exceptions import AccessError
 
@@ -52,3 +52,30 @@ class Attachment(models.Model):
                 self.env[model].browse(ident)._mp_guard('read' if operation=='read' else 'write')
                 raise AccessError('Workspace attachments are unavailable in this R1 profile')
         return super()._check_access(operation)
+
+
+class WorkspaceBinary(models.AbstractModel):
+    _inherit = 'ir.binary'
+
+    def _mp_legacy_binary_guard(self, record):
+        # Even a valid limited-field token must not elevate a scoped record.
+        # This is deliberately before _can_return_content/token inspection and
+        # also at the lower-level stream hook. The registered binary gateway
+        # reads through the original actor's app model, never this legacy path.
+        if record is not None and getattr(record, '_mp_scoped', False):
+            raise AccessError('Use the authenticated workspace binary gateway')
+
+    def _find_record(self, xmlid=None, res_model='ir.attachment', res_id=None,
+                     access_token=None, field=None):
+        record = None
+        if xmlid:
+            record = self.env.ref(xmlid, False)
+        elif res_model in self.env:
+            # Do not call exists()/read before rejecting a managed model.
+            record = self.env[res_model]
+        self._mp_legacy_binary_guard(record)
+        return super()._find_record(xmlid, res_model, res_id, access_token, field)
+
+    def _record_to_stream(self, record, field_name):
+        self._mp_legacy_binary_guard(record)
+        return super()._record_to_stream(record, field_name)

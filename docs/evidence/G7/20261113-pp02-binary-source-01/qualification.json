@@ -1,0 +1,46 @@
+{
+  "phase": "PP-02",
+  "section": "PP02-BIN",
+  "status": "source_checks_passed_installed_pending",
+  "phase_accepted": false,
+  "roadmap_points_accepted": 25,
+  "source_base": "aa8a891f48c",
+  "checks": {
+    "cases": 58,
+    "passed": 57,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 6.953,
+    "modules": [
+      "tests.test_workspace_binary",
+      "tests.test_registered_input_schemas",
+      "tests.test_client_release",
+      "tests.test_contracts",
+      "tests.test_application_package",
+      "tests.test_native_versions"
+    ],
+    "log_sha256": "125e114bbc0fbc919ae98ca9ec645135e8fce9e028f4e9e856c2f9e6a0873117"
+  },
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "source_sha256": {
+    "framework_addons/mp_core/__init__.py": "493a0b5e43d4e927982110904ebe075febc6d4ea158b9f00a20f24cbb59e9448",
+    "framework_addons/mp_core/attachments.py": "26fd96e93e0bc33ecd7c298d102211e24f3485802c043a44529cf7567caf574c",
+    "framework_addons/mp_core/controllers.py": "dcdcc0d8ce39e235a1cdd549a5825dbee5f328fdb718ee9e6b2b6efc39b4c071",
+    "framework_addons/mp_core/binary.py": "b69912adb7f86d18e2673df0fa073e03819dcb6a70e8786b142b941879748725",
+    "tests/test_workspace_binary.py": "8b9290d0e89cd51ff8ecdfeed4f504a47ab549000ab0a03be557f24792651375",
+    "docs/architecture-decisions/0084-current-authority-binary-transport.md": "d6400ffd7d793ac39549fe88051786a60439a898944db9824f0b70998f4b93fd",
+    "docs/contracts/binary-v1.md": "1814c2b2cacdb6b5ba89b4b2b58721b26911f5edbae993e5a8718094adc25073",
+    "docs/contracts/freeze-v1.json": "95ffcfff9745a5cbdb091e5b4548336d7b762145a1143d9dd573917f085282b0"
+  },
+  "limits": [
+    "Actual core gateway/result/scope/model guards and inherited hooks executed against fake native/SQL boundaries; not installed HTTP/DB or hostile-file proof",
+    "No new image/version/app deployment; exact original core0.2.1 review environment unchanged",
+    "Document app, native byte recovery/UI/lifecycle and phase acceptance pending"
+  ]
+}

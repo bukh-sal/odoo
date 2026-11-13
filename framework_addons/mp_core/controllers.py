@@ -89,13 +89,17 @@ def principal():
     return row
 
 
-def result(handler, version='1.0'):
+def result(handler, version='1.0', *, response_factory=None):
     ident=str(uuid4())
     request._mp_server_request_id=ident
     try:
         if not request.session.uid:raise PublicError('UNAUTHENTICATED')
         if protected_gateway(request.httprequest.path):require_client_release(request.env)
         data=handler()
+        if response_factory is not None:
+            response=response_factory(data)
+            audit('allowed',ident)
+            return response
         envelope={'data':data,'api_version':version,'request_id':ident}
         validate('service-response',envelope)
         audit('allowed',ident)

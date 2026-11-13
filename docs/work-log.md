@@ -1,5 +1,19 @@
 # Work log
 
+
+13November2026 — PP02-BIN: fresh phase plan/research before code. Actual inherited
+binary token lookup can sudo before workspace checks, so retained attachment
+refusal and guarded both prelookup scoped model/XML-ID and low-level stream.
+Added owner-registered private raw upload/download handlers with current session,
+release/model scope, CSRF/bounds/local schemas and forced noncacheable attachment
+response. Existing JSON DTO remains unchanged. App tables will own bytes/versions;
+no app-specific storage bypass. Actual-source gateway/result/resolve_scope/two
+model guards/legacy hooks tested at fake native boundaries.58 cases:57 pass,
+1 existing Windows symlink skip; freeze28 adds3files/1row,119old hashes exact.
+[Evidence](evidence/G7/20261113-pp02-binary-source-01/qualification.json).
+No Docker/build/live change or installed acceptance; source implementation is
+progress, phase is not accepted. Next fresh app section plan/implementation.
+
 ## 13 November 2026 / PP-01 accepted, next phase remains unplanned
 
 Completed the active phase's actual useful workflow and accepted4/4 bounded

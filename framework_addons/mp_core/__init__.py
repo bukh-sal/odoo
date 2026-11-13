@@ -4,6 +4,7 @@ from . import job_history
 from . import event_models
 from . import controllers
 from . import attachments
+from . import binary
 from . import operations
 from . import events
 from . import retirement
