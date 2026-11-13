@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "phase": "PP-04",
+  "result": "accepted_bounded_phase",
+  "recorded_at": "2026-11-13T15:22:52.665033+00:00",
+  "outcomes": {
+    "current_public_bootstrap_and_independent_app_author_install_diagnose_populated_upgrade_UI": true,
+    "independent_completed_checkpoint_restore_current_authority_bytes_separate_resume_UI": true,
+    "deterministic_app_archive_and_measured_cached_forced_native_runtime_rebuild_boundary": true,
+    "current_handoff_and_limits_reconciled": true
+  },
+  "evidence": {
+    "A_bootstrap": {
+      "path": "docs/evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json",
+      "sha256": "64c3ef4143ef53e6423414abcfc21f8f822277797ac27c2a29094d9316d4ed7f"
+    },
+    "A_independent_authoring": {
+      "path": "docs/evidence/G7/20261113-pp04-independent-authoring-01/qualification.json",
+      "sha256": "844feb63787f473ae30f795396fe14eb76ec8bec9d7eee8fd75772facb7f7c02"
+    },
+    "B_completed_checkpoint": {
+      "path": "docs/evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json",
+      "sha256": "002f1b43328ec472045be9a30ba42bfeeccdc4674da1a64d97f72b2431193d1f"
+    },
+    "C_reproducibility": {
+      "path": "docs/evidence/G7/20261113-pp04-reproducibility-native-01/qualification.json",
+      "sha256": "7a1e42fe289f6c9f47cac60ae0eb475448cd4264560d345a59d0025244ff4e9b"
+    }
+  },
+  "acceptance": {
+    "phase_points": 90,
+    "accepted_phases": 4,
+    "total_phases": 5,
+    "PP05": "not_started_fresh_plan_required",
+    "goal": "active"
+  },
+  "limitations": [
+    "Native app exact cohorts only; no arbitrary ABI/third-party app compatibility or hostile-code sandbox.",
+    "Completed checkpoint recovery requires exact current replacement and known native effects, fresh target, independent reviews and distinct resume; same-project failure domain and app-ACL snapshot semantics remain.",
+    "Rebuild claim is declared installed-file/runtime-layer cohort; provenance indices and intermediate wheel ZIPs differ. No installed0.2.4 claim.",
+    "Workspace-first landing clarity and review-button busy wording remain PP05 UX work; no formal accessibility or performance budget acceptance."
+  ],
+  "resources": "Exact owned environments/images/checkpoints/private evidence retained; no cleanup or publication; no open fixture/pending mutation."
+}

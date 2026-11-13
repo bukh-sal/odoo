@@ -3,8 +3,9 @@
 The default `deploy/distribution-r1-core.json` selects the owner-approved eight
 framework addons, SDK and stock WebClient, with no reference or application
 packages. Support remains provisional and covers only exact qualified combinations;
-see [candidate support](candidate-support.md). Source candidate0.2.4 is undergoing
-PP04 rebuild measurements; it is not a deployed or newly qualified cohort.
+see [candidate support](candidate-support.md). Source candidate0.2.4 has passed
+[bounded rebuild measurements](build-reproducibility.md); it is not a deployed
+or newly installed-qualified cohort.
 The earlier `distribution-r1-clean-probe.json` remains an explicit TEST policy.
 
 Build into a fresh owned evidence directory:
@@ -66,8 +67,9 @@ and existing compiler flags. It invokes the fixed Debian GCC by argv; it is not
 a native-code sandbox. Unknown build-root shapes require explicit packaging
 review. This affects new builds using the shared builder, not retained images or
 the separate maintenance Dockerfile. No wrapper or `CC` environment is added to
-the clean final stage. Equal new native/OCI artifacts still require actual paired
-measurements; source tests do not establish bitwise reproducibility.
+the clean final stage. The recorded paired measurements establish the declared
+installed-file/runtime-layer boundary, with distinct provenance indices and no
+intermediate wheel-ZIP identity claim. Source tests alone establish none of this.
 
 ## Build an exact source-removal image
 

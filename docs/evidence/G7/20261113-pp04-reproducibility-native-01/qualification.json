@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "phase": "PP-04 C",
+  "state": "verified_bounded_installed_artifact_reproducibility",
+  "recorded_at": "2026-11-13T15:20:41.734187+00:00",
+  "source_commit": "9ceef0ae28b31c691de7f936e9f54e74df7c9655",
+  "source_inputs": 3964,
+  "source_map_sha256": "fbfd7f590ed77904e0a3b8cbaf919121f5b732ff6548ad6e8aff78cacd7ca09e",
+  "candidate": {
+    "platform": "0.2.4",
+    "native_core": "19.0.0.2.4",
+    "policy": "deploy/distribution-r1-core.json",
+    "installed_or_admitted": false
+  },
+  "app_archive_repeatability": {
+    "bytes": 23464,
+    "digest": "sha256:f8739ab5fd54dc6a8d798e940e20ca57c20f8bd5121d7eb68179b57140032ae3",
+    "no_admission_or_site_operation": true,
+    "original_admitted_archive_equal": true,
+    "private_app_source_unchanged": true,
+    "two_independent_cli_assemblies_equal": true
+  },
+  "builds": [
+    {
+      "name": "cache01",
+      "image_id": "sha256:55cb9632e238773627984525d2c48f721227407c85d71e293fa71e0e64c03986",
+      "tag": "modular-platform:stage-20261113t151118743174z",
+      "candidate_record": "docs/evidence/G7/20261113-pp04-repro024-cache01/candidate-build.json",
+      "candidate_record_sha256": "c84e567537d3b029c8fd94e45f321d44059859d26ce53fb6700c06e5820ea375",
+      "build_log_sha256": "9d0aeed7868190bb79be8e883d688ce69062edb01ef50143f9653feaa8412b51",
+      "elapsed_seconds": 87.54700000002049,
+      "build_cache_policy": "normal_cache",
+      "native_wheels_rebuilt": true,
+      "wheel_container_sha256": {
+        "docopt": "84acf45813b95479ecf6cfca5076b0f54cf1a3ee2b21e8e3445d98f9ef9d70e4",
+        "ofxparse": "f1609a091e34a0a425e16ae25ac9083f54fe3475234931a89ed741143be5f601",
+        "psycopg2": "beb379c8f50038a19ce4ce65e8ca252b706a86cc29946d82470a63c4d51616cd",
+        "python-ldap": "15f9b8e95f6c4392a35e0cc2ef4a08eb112105e3519bab9de299cebf827d917b",
+        "rjsmin": "38060f4e65825bed828fbfadbf28eef799f3895b7090dd8c54135a146d768389",
+        "vobject": "9ef9d0dc33a4cd7e66a90d20aec8722d44ac2d211a5c50235a81a6481bd1ff68"
+      },
+      "artifact_map_sha256": "9cb1caca384b2adeee08bf6d3f58231dc41d6c91ff4aace8b4036facee8a002a",
+      "oci_documents_sha256": "dd280efd0d26ad2d26d9492ce98d1ff7d2d04b95cc7ed0f72aa5e3f2711a6986"
+    },
+    {
+      "name": "cache02",
+      "image_id": "sha256:546c1fcbf910669cab968bd556c8192ae1cc1a9faa8d9f9d54dc4b0c452732d2",
+      "tag": "modular-platform:stage-20261113t151336820728z",
+      "candidate_record": "docs/evidence/G7/20261113-pp04-repro024-cache02/candidate-build.json",
+      "candidate_record_sha256": "343729e6a27ca46af2f02310d10f416671640a2141d6383f6ae0eb43cc1d39f2",
+      "build_log_sha256": "74b042371277bd86c8c573035a35babaa505eda38be0f78b693c29bb1e44b055",
+      "elapsed_seconds": 9.327999999979511,
+      "build_cache_policy": "normal_cache",
+      "native_wheels_rebuilt": false,
+      "wheel_container_sha256": {},
+      "artifact_map_sha256": "9cb1caca384b2adeee08bf6d3f58231dc41d6c91ff4aace8b4036facee8a002a",
+      "oci_documents_sha256": "6ee954418a3499f295fd829dd75856b5b6304744c9d4571c62a78ad65072060d"
+    },
+    {
+      "name": "fresh01",
+      "image_id": "sha256:9ff0d3fb7530aaf876435c6d6efd3a5612004bdedec37066c2c2895d5c2fe5f5",
+      "tag": "modular-platform:stage-20261113t151411348226z",
+      "candidate_record": "docs/evidence/G7/20261113-pp04-repro024-fresh01/candidate-build.json",
+      "candidate_record_sha256": "a1ba1fa1bea1849daa0893d988f8e4bf363b8a60b8e4f7ad4befa89ef65677e7",
+      "build_log_sha256": "0fa3ea2cda31597e4a1a3e654095db8ea41f9cf8b7398288aa689cced6eb3702",
+      "elapsed_seconds": 131.68800000008196,
+      "build_cache_policy": "recompile_builder_stage",
+      "native_wheels_rebuilt": true,
+      "wheel_container_sha256": {
+        "docopt": "3cca8b558181a911199a072f8a4d27300268cb3c3a29702cdec749b73817d934",
+        "ofxparse": "25cd6b1646fd10c0ba04963894cdb965e7fe14e2b45be45127c313a7e66a5768",
+        "psycopg2": "d3cd0533921ea893d18927ef82321f15623c38bc99a742bd0fa5595b0bd0601f",
+        "python-ldap": "8537a3639302c6718e17b46566ac8f2b4b3c10e445e918a72e19da5840b31729",
+        "rjsmin": "a15b8fe79c40c8bff209831351f6508d37392258c6d3ba3f78b469bfe9de47fa",
+        "vobject": "4913a6927794592223770171b34490c933fcc43b76ca0d81b2a15d57cfc8ea1a"
+      },
+      "artifact_map_sha256": "9cb1caca384b2adeee08bf6d3f58231dc41d6c91ff4aace8b4036facee8a002a",
+      "oci_documents_sha256": "b9efc761c16115f25adc173c211f2506b0b3394ee29feb263638e7e83bb36ba7"
+    },
+    {
+      "name": "fresh02",
+      "image_id": "sha256:ea4f3b33d72c57835d567822cebf4cefe048b60b0ca0fd267d6450bf823b5012",
+      "tag": "modular-platform:stage-20261113t151655066222z",
+      "candidate_record": "docs/evidence/G7/20261113-pp04-repro024-fresh02/candidate-build.json",
+      "candidate_record_sha256": "62db33b1806eb993eb82c21900a121b9f68c34a13ffc7ad067967c8c0164d767",
+      "build_log_sha256": "11171d7ed1c686ec4519c5374888079fa6e01d90569d3974d63f95faa4193bef",
+      "elapsed_seconds": 95.03100000019185,
+      "build_cache_policy": "recompile_builder_stage",
+      "native_wheels_rebuilt": true,
+      "wheel_container_sha256": {
+        "docopt": "97e904669442c02c5eb95da116b686bccfaf54ff367bcbf69989e402679052ce",
+        "ofxparse": "4ddd2cd602b238c463dfd8c2e3e883951c2e56ab8abd5f675b8ddc11e2ae77e5",
+        "psycopg2": "b2e388b9dcbd8fc18d59a77bd388aa640693e0404add02e0a5bcc3d4ac9653b2",
+        "python-ldap": "17553b9dbd81d80ca615d6382a6eec30841ab0c4effaa237697e1ba3ca259a85",
+        "rjsmin": "e5feb26b813b99d4204ef0bf4bb463680be01768e73ca69d7c4ebd224092a5a6",
+        "vobject": "3e6e470e60bb05c62f2d15fb10863949ee20ee7fb563f771c5c86fb2fb9d7748"
+      },
+      "artifact_map_sha256": "9cb1caca384b2adeee08bf6d3f58231dc41d6c91ff4aace8b4036facee8a002a",
+      "oci_documents_sha256": "33134b2b9236ebcb3842a71f2698cb1a8d32aad717bb85653f9aa6ab0f304d49"
+    }
+  ],
+  "comparison": {
+    "equal_file_counts": {
+      "executables": 3,
+      "os_libraries": 1013,
+      "project": 3690,
+      "rtl": 138,
+      "venv": 9215
+    },
+    "all_declared_file_bytes_modes_symlinks_and_mtimes_equal": true,
+    "python_bytecode_included": true,
+    "all_installed_native_extensions_included": true,
+    "two_measured_native_section_maps_equal": true,
+    "python_and_os_package_versions_equal": true,
+    "configuration_and_all_14_runtime_diff_ids_equal": true,
+    "oci_runtime_manifest": "sha256:467401251ffbdd9a22d7425475f0701b23c52cea3eb912dd9c76f9a7ddf5bff2",
+    "top_level_indices_equal": false,
+    "only_provenance_differences": [
+      "/predicate/buildDefinition/externalParameters/request/args/no-cache",
+      "/predicate/buildDefinition/externalParameters/request/root/request/args/no-cache",
+      "/predicate/runDetails/metadata/finishedOn",
+      "/predicate/runDetails/metadata/invocationId",
+      "/predicate/runDetails/metadata/startedOn",
+      "/subject"
+    ],
+    "intermediate_wheel_zip_hashes_equal": false
+  },
+  "toolchain": {
+    "python": "3.12.16 (main, Oct 26 2026, 22:52:58) [GCC 12.2.0]",
+    "machine": "x86_64",
+    "python_config": {
+      "CC": "gcc",
+      "CFLAGS": "-fno-strict-overflow -Wsign-compare -DNDEBUG -g -O3 -Wall",
+      "CONFIG_ARGS": "'--build=x86_64-linux-gnu' '--enable-loadable-sqlite-extensions' '--enable-optimizations' '--enable-option-checking=fatal' '--enable-shared' '--with-lto' '--with-ensurepip' 'build_alias=x86_64-linux-gnu'",
+      "HOST_GNU_TYPE": "x86_64-pc-linux-gnu",
+      "LDSHARED": "gcc -shared",
+      "SOABI": "cpython-312-x86_64-linux-gnu"
+    },
+    "native_elf_compiler_comments": {
+      "psycopg2": [
+        "GCC: (Debian 12.2.0-14+deb12u1) 12.2.0"
+      ],
+      "python-ldap": [
+        "GCC: (Debian 12.2.0-14+deb12u1) 12.2.0"
+      ]
+    },
+    "added_build_flag": "-ffile-prefix-map=<strict-actual-pip-root>=/usr/src/modular-native/<normalized-distribution>",
+    "builder_compiler_not_in_runtime": true,
+    "docker": {
+      "Architecture": "x86_64",
+      "DockerRootDir": "/var/lib/docker",
+      "Driver": "overlayfs",
+      "MemTotal": 8290824192,
+      "NCPU": 16,
+      "OSType": "linux",
+      "ServerVersion": "29.9.2"
+    },
+    "buildx": "github.com/docker/buildx v0.38.1 0dbe87f36ed472fe36b6796c3f70b4210a731fc5",
+    "hardware": {
+      "cpu": {
+        "Name": "12th Gen Intel(R) Core(TM) i5-12600K",
+        "NumberOfCores": 10,
+        "NumberOfLogicalProcessors": 16
+      },
+      "disk_free_bytes": 1368541302784,
+      "disk_used_bytes": 630668451840,
+      "free_ram_bytes": 4012093440,
+      "ram_bytes": 34102591488
+    }
+  },
+  "limits": [
+    "One Linux amd64 Docker Desktop/toolchain/locked-input cohort; RTL and final runtime stages may reuse verified content caches. Builder apt/pip and native wheels actually reexecuted in both forced builds; no clean-room whole-machine claim.",
+    "Intermediate wheel ZIP hashes differ. These transient containers were not retained/compared as ZIP members; no wheel-container bit identity or causal timestamp proof is claimed. Installed wheel files and RECORD bytes are included and equal. Owner packaging; capture/compare wheel archives before offering published binary wheels.",
+    "OCI provenance retains true invocation IDs, times, unique tags and fixed cache-filter settings, so top-level image IDs differ. Do not disable or forge provenance to force identity.",
+    "No new candidate admitted, staged, installed or native/UI qualified here; exact old application cohort and target bytes remain unchanged. Staging/approval/inventory controls remain mandatory.",
+    "No universal compiler/backend/architecture reproducibility, ABI, support or performance promise."
+  ],
+  "resources": {
+    "new_candidate_images_retained": 4,
+    "exact_generated_tags_retained": 4,
+    "measurement_children_absent": true,
+    "old_cohorts_unchanged": true,
+    "no_shared_cache_prune": true,
+    "no_site_or_catalog_operations": true
+  },
+  "proof_receipts": {
+    "baseline.json": "a3bb98f827b47c162e6896d1faab1800c0a56affef01c83e2f97a41ee6791fdf",
+    "assembly-repeatability.json": "81bf234a07746520a3687fca322062436a97d028bf27f43fcd20559c53f1303e",
+    "historical-elf-analysis.json": "f9c8c4f0d79e093dba346142cde1a89af6fdfa0d26cd54e89c3a7e2864375c70",
+    "source-tests.out.txt": "422d69d8e4f7ef63a45a8b975df970ba8582674cd6af124285867669cad36b79",
+    "source-input-extra.out.txt": "329c490e525e68f03379fad46477bde63bff81ed993799131a513b7434047773",
+    "freeze-source.out.txt": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+  }
+}

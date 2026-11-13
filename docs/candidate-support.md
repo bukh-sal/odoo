@@ -158,3 +158,18 @@ browser/download/native privacy and same-workspace reuse/B isolation pass.
 [Evidence](evidence/G7/20261113-pp03-document-storage-native-01/qualification.json).
 This does not accept the full PP-03 phase, arbitrary migrations, filesystem
 capacity, completed-checkpoint restore or a stable compatibility promise.
+
+
+## PP04 operator and rebuild boundaries
+
+[PP04 acceptance](evidence/G7/20261113-pp04-developer-operator-01/qualification.json)
+adds the current public independent authoring path and bounded completed-checkpoint
+recovery without changing historical app/image support identities. Recovery uses
+exact current native effects, a separate identity/fresh target and separate resume;
+current platform authority survives and original completed history remains immutable.
+See [operator guide](completed-checkpoint-recovery.md). New0.2.4/core19.0.0.2.4
+measurement candidates qualify only the [declared rebuild boundary](build-reproducibility.md);
+none is admitted/deployed or installed-qualified here. PP05 must reconcile the final
+exact candidate, budgets, regression, UI/lifecycle and retained resources. No LTS,
+stable ABI, arbitrary app/ACL rollback, clean-room whole-machine or intermediate
+wheel-ZIP reproducibility promise is added.

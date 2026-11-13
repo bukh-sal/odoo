@@ -1,3 +1,19 @@
+PP04 accepted (13November2026),90/100 phase points and4/5 phases. Current public
+bootstrap/independent authoring A, actual completed-checkpoint recovery B, and C
+paired rebuild measurements now meet the bounded phase outcomes. Two normal plus
+two forced builder recompilations at9ceef0ae28b preserve every declared project,
+venv/native/bytecode, OS-library, RTL and executable file and all14 runtime layers.
+Actual native wheels rebuild; BuildKit provenance accurately differs by invocation,
+times/tags/cache mode. Intermediate wheel ZIP hashes differ and their members were
+not retained: no ZIP bit-identity/cause claim. Source-only33cases/freeze122/11 pass.
+Four new0.2.4 candidate images/tags retained, none admitted/deployed; both actual
+application cohorts unchanged. Private final verifier first omitted two actual
+provenance no-cache=builder fields; retained counterexample corrected the evidence
+classifier only, no product/build retry. No extra repair builds, live mutations,
+fixture or cleanup. PP05 is NEXT, requires fresh phase plan before its work.
+Goal remains ACTIVE; final canonical/budgets/current-support/UI/retention audit
+still required. [Phase acceptance](evidence/G7/20261113-pp04-developer-operator-01/qualification.json).
+
 PP04 C source checkpoint (13November2026): fresh measurement plan precedes
 implementation. Two actual private Handoffs assemblies equal the admitted archive.
 Historical native ELF section data differs only in temporary-path debug strings

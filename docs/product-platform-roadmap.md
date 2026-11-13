@@ -41,11 +41,11 @@ PP-03, or build a speculative framework in anticipation of later apps.
 | PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | [Accepted, 4/4 bounded outcomes](evidence/G7/20261113-pp01-product-experience-01/qualification.json) |
 | PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp02-application-breadth-01/qualification.json) |
 | PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp03-platform-reuse-01/qualification.json): populated migration, useful event effects/replay/authority/recovery/UI and generic ownership audit |
-| PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Active: [public bootstrap](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json), [independent author/install/repair/populated upgrade/UI A](evidence/G7/20261113-pp04-independent-authoring-01/qualification.json) and [actual completed-checkpoint recovery B](evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json) verified; measured reproducibility and final reconciliation remain |
+| PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | [Accepted, all bounded A/B/C outcomes](evidence/G7/20261113-pp04-developer-operator-01/qualification.json). Historical section records: [public bootstrap](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json), [independent author/install/repair/populated upgrade/UI A](evidence/G7/20261113-pp04-independent-authoring-01/qualification.json) and [actual completed-checkpoint recovery B](evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json) verified; [measured rebuild boundary](build-reproducibility.md) and reconciliation pass |
 | PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Not started |
 
 Weights estimate outcome importance, not elapsed time or test counts. Current
-new-roadmap accepted progress is **70/100 phase points; 3/5 phases accepted**.
+new-roadmap accepted progress is **90/100 phase points; 4/5 phases accepted**.
 PP-01 delivered the coherent customer-work journey. PP-02 delivered useful
 independent Documents, actual binary/quota/current-authority pressure, optional
 immutable references, populated upgrades and coordinated fresh recovery with
@@ -57,13 +57,15 @@ authority, populated projection/tombstone/pending-event recovery and keyboard/UI
 reload/download pass; the ownership audit keeps business policy in apps. Its
 bounded acceptance does not establish arbitrary migrations, permanent event
 history, completed-operation restore or formal accessibility. Rough implementation
-is about85/100, with70/100 accepted phase points. PP-04's developer/operator A
+is about90/100, with90/100 accepted phase points. PP-04's developer/operator A
 outcome has actual independent-app install, diagnosed repair, populated date
 evolution, authority and desktop/390px keyboard/reload evidence. B now verifies a
 real completed destructive uninstall, safe interrupted quiesce/fresh continuation,
 current-authority/document-byte fresh restoration, separate resume and usable UI.
-Measured reproducibility and final reconciliation remain; the phase is not accepted.
-PP-05 remains unplanned. Research,
+C now verifies repeated app archives, normal/cache and actual forced recompilation
+with exact declared installed content/runtime layers, while preserving accurate
+provenance and intermediate-wheel limits. PP-04 is accepted in that bounded scope.
+PP-05 is next; its fresh plan is not written by this phase acceptance. Research,
 documents and source-only checks do not earn additional outcome acceptance.
 Report partial progress only against real delivered outcomes; keep original R1
 99/99 and its score separate. Re-estimate effort when the fresh phase plan exists.
