@@ -51,7 +51,7 @@ independent Documents, actual binary/quota/current-authority pressure, optional
 immutable references, populated upgrades and coordinated fresh recovery with
 newer authority preserved. Actual browser desktop/393px keyboard/download/reload
 evidence supports its bounded acceptance. PP-03 is active under fresh plans; PP-04/05 stay
-unplanned. Rough implementation is about50/100, with50/100 accepted. Research,
+unplanned. Rough implementation is about55/100, with50/100 accepted; the additional storage-migration source is not installed acceptance. Research,
 documents and source-only checks do not earn additional outcome acceptance.
 Report partial progress only against real delivered outcomes; keep original R1
 99/99 and its score separate. Re-estimate effort when the fresh phase plan exists.

@@ -1,0 +1,59 @@
+{
+  "accepted_phases": 2,
+  "accepted_points": 50,
+  "archive_admitted": false,
+  "archive_bytes": 51058,
+  "archive_digest": "sha256:72733568b31bf5a849ea359fb20205c8e810522b0b249b5515dc395f393e37a5",
+  "checks": {
+    "actual_PostgreSQL_migration_source_cases": 14,
+    "all_owned_SQL_schemas_rolled_back": true,
+    "deterministic_archive_and_exact_validator": true,
+    "failures": 0,
+    "live_rows_bytes_authority_target_exact": true,
+    "native_init_boundary_simulated": true,
+    "node_actual_components_with_fake_boundaries": 29,
+    "python_fake_native_and_policy": 32,
+    "skips": 0
+  },
+  "current_installed": {
+    "configuration": 24,
+    "documents": "0.1.4",
+    "platform": "0.2.3",
+    "taskfiles": "0.1.1",
+    "unchanged_by_source_work": true
+  },
+  "documentation_only_followup": {
+    "archive_byte_identical_after_document_edit": true,
+    "readme_corrected_counts_and_source_vs_installed_status": true
+  },
+  "goal": "active",
+  "harness_correction": "SQL proof launcher initial nested-quote SyntaxError occurred before module execution/intent/DB call; corrected then exactly one actual SQL batch; no product failure or native retry",
+  "image_built": false,
+  "implementation": {
+    "copy_and_full_logical_byte_proof_before_column_removal": true,
+    "genuine_declared_pre_post_migration": true,
+    "immutable_payload_and_last_reference_cleanup": true,
+    "native_JSON_byte_field_closed_in_source": true,
+    "no_core_or_other_app_edits": true,
+    "own_private_payload_table": true,
+    "sameworkspace_only_dedup": true,
+    "version_identity_metadata_and_logical_quota_preserved": true
+  },
+  "limits": "No native registry/schema-init, installed privacy, actual migration failure recovery or rendered015 evidence yet; source proof does not earn phase acceptance",
+  "native_version": "19.0.0.1.5",
+  "next": "Fresh exact installed build/normal migration controlled-failure/fresh recovery/new-operation forward/UI plan before live execution",
+  "phase": "PP-03",
+  "phase_accepted": false,
+  "private_source_commit": "b28b583855e4437478716975b3c2c86d721b457f",
+  "proof_sha256": {
+    "SQL_intent": "ef50be97e3e5f8ae9c5db31b07f791e359399a39baf2c267ab3311ea64f03dc9",
+    "SQL_result": "3c47bdd21636db66d81ba6ee3662cefbfb316576844586ef5ace56b443cae583",
+    "archive": "72733568b31bf5a849ea359fb20205c8e810522b0b249b5515dc395f393e37a5",
+    "source_plan": "cd416cadea1c77096648a6b98f1c55f5439bce2049fba262532d36a0825689da",
+    "source_result": "b90e878475ea6accca57bb420af43c18385a387ad3a96b9f87e61258495dd28e"
+  },
+  "result": "Documents015_source_and_package_verified_native_pending",
+  "rough_implementation_points": 55,
+  "utc": "2026-11-13T07:32:41.872842+00:00",
+  "version": "0.1.5"
+}
