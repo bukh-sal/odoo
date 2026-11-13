@@ -1,7 +1,9 @@
 # ADR 0087: Reviewed continuation after an unstarted restored fence
 
-Status: source implementation under qualification, 13 November 2026. Installed
-continuation and final lifecycle acceptance remain pending.
+Status: bounded installed recovery qualified, 13 November 2026. Late continuation,
+separate resume/current denial/use, then a new normal one-pass restore with same
+review/distinct successful fences, closed proof/separate resume/use all pass.
+Final phase source removal/retention acceptance remains pending.
 
 PP05 exposed a real host-operator defect after a completed native uninstall.
 Source and restored dispatch fences shared an operation, review and action, so

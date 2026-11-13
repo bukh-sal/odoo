@@ -1,3 +1,17 @@
+PP05 retained-source completeness prerequisite (13November2026): actual source
+removal observation rejects the two deliberately retained completed-recovery
+source databases. New host-only observation derives those sources from protected
+resumed native recovery journals and immutable completed uninstall/checkpoint/
+result history. It independently proves stopped source workers, no clients/live
+maintenance, exact same image/release and removed native/feature/grant/binding
+state; then rechecks history/site/database/worker drift. Unknown databases remain
+denied without being connected to. Independent approval supplies only its OS-owned
+StageStore; no package/browser/configured name list supplies an exception. The
+strict live-sharing validator and eight runtime maintenance guards stay unchanged.
+[ADR0088](architecture-decisions/0088-proved-inactive-recovery-sources-during-removal.md).
+Affected85 tests and freeze122/11 pass; actual read-only two-source proof37.641s
+passes. Native source removal and final new-source canonical remain pending.
+
 PP05 retained restored-fence repair (13November2026): source and target fences
 previously selected the same retained child name under one review. The restored
 fence now derives a purpose/database-specific correlation UUID, without changing
@@ -12,8 +26,14 @@ the new real-OS-lock/private-journal adoption case (137.122s). All122 frozen fil
 11rows pass unchanged. The actual retained partial passes read-only reconstruction in39.906s; its first
 proof reached the separate16MiB metadata-output ceiling on a real database dump.
 The dedicated128MiB/60s streaming digest closes that observation limit without
-changing metadata limits or retaining dump contents. Actual continuation/resume
-and final source-subtraction qualification remain pending. Existing image bytes
+changing metadata limits or retaining dump contents. Actual continuation155.765s,
+separate resume101.563s and six exact downloads/current denial pass; temporary
+membership fixture closed exactly on both DBs, all real grants remain revoked.
+A NEW normal uninstall/checkpoint followed by one-pass restore302.984s, distinct
+same-review fence children, closed data/authority proof, separate resume93.328s
+and six exact downloads/current denial also pass. Canonical at20d58be:913 tests,
+911pass/2declared skips,1339.477s. Original failed restore/history remain intact.
+Final source-subtraction qualification remains pending. Existing image bytes
 are unchanged; this repair is separately reviewed host source.
 
 PP05 fresh-checkout build prerequisite (13November2026, before implementation):

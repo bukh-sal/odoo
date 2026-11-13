@@ -38,7 +38,7 @@ class IndependentValidator:
                 raise OperatorError('Staged image requires independently owned release metadata')
             from .release_staging import prepare_staged_plan
             if plan['operation_type']=='remove':
-                self.observer.removal_site_inventory(observation)
+                self.observer.removal_site_inventory(observation,store=getattr(self.stage_store,'store',None))
             descriptor,record=self.stage_store.load(bundle['operation_lock']['staged_image'])
             recomputed=prepare_staged_plan(document,observation['sites'],snapshot,record['runtime'],descriptor,
                 targets=bundle['operation_lock']['targets'],operation_type=plan['operation_type'],

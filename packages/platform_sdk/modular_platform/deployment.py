@@ -172,7 +172,7 @@ class DockerObserver:
         from .lifecycle_observation import observe_native_impact
         return observe_native_impact(self, observation, catalog, site_id=site_id, requested=requested)
 
-    def removal_site_inventory(self, observation):
+    def removal_site_inventory(self, observation, *, store=None):
         """Independently reject omitted databases before source removal.
 
         The disposable single-server profile has one known empty maintenance
@@ -189,4 +189,10 @@ SELECT jsonb_build_object(
 ROLLBACK;"""
         raw = _run(['docker', 'exec', '-i', self._container('db'), 'psql', '-X', '-qAt', '-U', 'postgres',
                     '-v', 'ON_ERROR_STOP=1', '-d', 'postgres'], input=query.encode())
-        return validate_sharing_database_inventory(self.config, observation, load_json(raw))
+        inventory=load_json(raw)
+        if store is None:
+            return validate_sharing_database_inventory(self.config, observation, inventory)
+        from .retained_recovery_inventory import reconcile_retained_sources
+        live,proofs=reconcile_retained_sources(store,self,observation,inventory)
+        result=validate_sharing_database_inventory(self.config,observation,live)
+        return result | ({'retained_sources':proofs} if proofs else {})

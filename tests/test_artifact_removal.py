@@ -254,14 +254,17 @@ class ArtifactRemoval(unittest.TestCase):
         self._independent_reconstruction_witness()
 
     def _independent_reconstruction_witness(self):
-        owner=self;seen=[]
+        owner=self;seen=[];owned=object()
         class Catalog:
             def snapshot(self):return copy.deepcopy(owner.catalog)
         class Observer:
             def read(self):return dict(sites=[copy.deepcopy(owner.site)],runtime=copy.deepcopy(owner.base))
             def state(self,observation,catalog):return copy.deepcopy(owner.document)
-            def removal_site_inventory(self,observation):seen.append('complete');return dict(complete=True)
+            def removal_site_inventory(self,observation,*,store=None):
+                if store is not owned:raise OperatorError('Exact independently owned stage store required')
+                seen.append('complete');return dict(complete=True)
         class Stage:
+            store=owned
             def load(self,descriptor):
                 if descriptor!=owner.descriptor:raise OperatorError('Changed independent stage')
                 return copy.deepcopy(descriptor),dict(runtime=copy.deepcopy(owner.after))
