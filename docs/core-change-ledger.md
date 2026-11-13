@@ -1,3 +1,16 @@
+PP05 fixed operation-budget remediation (13November2026): the first source-only
+apply completed correctly in324.578s, exceeding its predeclared300s budget.
+The completed operation is retained, not replayed or called a timing pass.
+Verification-only reconciliation proves8core/0appsource/0archives and exact old
+checkpoint/three-DB metadata history. Profiling found four redundant same-image
+offline scans per completeness reconstruction. The host observer now shares its
+already freshly verified exact image witness within one check, while each source
+still receives both fixed SQL observations and all history/worker/client/drift
+checks. No global cache, TTL, ACL/lock bypass or runtime guard change. Actual SQL
+metadata hashes remain exact at0.234/0.235s versus3.984/3.719s per full scan.
+Affected87 tests/freeze122/11 pass; a NEW normally reviewed lifecycle measurement
+and final new-source canonical are required before timing/phase acceptance.
+
 PP05 retained-source completeness prerequisite (13November2026): actual source
 removal observation rejects the two deliberately retained completed-recovery
 source databases. New host-only observation derives those sources from protected

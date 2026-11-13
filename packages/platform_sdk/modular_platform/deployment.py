@@ -148,6 +148,19 @@ class DockerObserver:
             runtime = load_json(_run(['docker', 'exec', app, '/venv/bin/python', '-c', OBSERVE_RUNTIME]))
         if runtime['modified_files'] or runtime['unexpected_addon_files'] or runtime['missing_addon_files']:
             raise PlanningError('Running executable source differs from the curated release inventory')
+        sites = self._read_sites(database,uncertain_native=uncertain_native)
+        observation = {'image_id': identity, 'runtime': runtime, 'sites': sites}
+        if self.external_reader is not None:
+            from .projection import external_observation
+            observation['external_state'] = external_observation(self.external_reader())
+        return observation
+
+    def _read_sites(self, database, *, uncertain_native=False):
+        """Fixed read-only SQL for already pinned native operator contexts.
+
+        Normal read verifies runtime first. The retained-source checker may
+        reuse that same-image witness, but must still observe each source DB.
+        """
         sites = []
         for target in self.config['sites']:
             raw = _run(['docker', 'exec', '-i', database, 'psql', '-X', '-qAt', '-U', 'postgres',
@@ -158,11 +171,7 @@ class DockerObserver:
             if not uncertain_native and any(item['state'] != 'installed' for item in site['native_modules']):
                 raise PlanningError('Native registry has a pending/uncertain module operation')
             sites.append(site)
-        observation = {'image_id': identity, 'runtime': runtime, 'sites': sites}
-        if self.external_reader is not None:
-            from .projection import external_observation
-            observation['external_state'] = external_observation(self.external_reader())
-        return observation
+        return sites
 
     def state(self, observation, catalog):
         from .projection import project_deployment

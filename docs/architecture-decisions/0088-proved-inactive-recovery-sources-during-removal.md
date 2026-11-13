@@ -1,7 +1,8 @@
 # ADR 0088: Proved inactive recovery sources during source removal
 
-Status: source qualification in progress, 13 November 2026. No installed source
-removal acceptance is implied by source tests or a read-only inventory proof.
+Status: installed correctness passes, 13 November 2026; timing remediation open.
+The first actual removal preserved all source/history but324.578s exceeds300s.
+The successful command is not replayed or counted as a budget pass.
 
 Normal fresh checkpoint recovery deliberately retains its source database. The
 original source-removal observer required every non-template database to be a
@@ -29,6 +30,13 @@ offline observer and unchanged native/site removal validator for every package
 in the current base image. Sources must have uninstalled native addons, removed
 metadata, suspended features, revoked grants and no live bindings. Recheck history,
 source metadata, client/worker state and actual database inventory for drift.
+
+Reuse the freshly verified current runtime only within one observation when
+all sources are proved to have that exact immutable image and inventory digest.
+Each source still receives two fixed read-only SQL observations; the current
+observer still verifies runtime before reading sites. This removes redundant
+offline scans, not a source/authority check. Missing/tampered/wrong image or
+inventory witnesses refuse. No cross-call runtime, ACL or identity cache is used.
 
 Only after that proof, apply the unchanged strict live-sharing validator to the
 configured live databases plus maintenance. Return the retained-source proof

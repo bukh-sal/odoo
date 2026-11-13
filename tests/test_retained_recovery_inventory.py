@@ -18,6 +18,7 @@ from modular_platform import retained_recovery_inventory as module
 from modular_platform.deployment import DockerObserver
 from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
+from modular_platform.resolution import PlanningError
 
 
 class RetainedRecoveryInventory(unittest.TestCase):
@@ -33,7 +34,8 @@ class RetainedRecoveryInventory(unittest.TestCase):
             installations=[dict(installation_id='installation',plugin_id='dev.local.documents',metadata_state='removed',manifest=dict(runtime=dict(addon_name='mp_documents')))],
             features=[dict(installation_id='installation',workspace_id='A',feature_state='suspended')],
             grants=[dict(installation_id='installation',state='revoked')],bindings=[])
-        self.observation=dict(sites=[dict(site_id=fixture.SITE)],runtime=dict(inventory=dict(artifacts={'dev.local.documents':dict(addon='mp_documents')})))
+        self.observation=dict(image_id=fixture.IMAGE,sites=[dict(site_id=fixture.SITE)],runtime=dict(inventory_digest=fixture.INVENTORY,
+            modified_files=[],missing_addon_files=[],unexpected_addon_files=[],inventory=dict(artifacts={'dev.local.documents':dict(addon='mp_documents')})))
         self.observer=SimpleNamespace(config=self.config,_container=lambda service:'db')
         self.worker=dict(Id='c'*64,Image=fixture.IMAGE,State=dict(Running=False,ExitCode=0),Config=dict(Labels={
             'com.docker.compose.project':self.config['project'],'com.docker.compose.service':'app','com.modular.release_operation':fixture.SOURCE}))
@@ -47,13 +49,13 @@ class RetainedRecoveryInventory(unittest.TestCase):
                 if kw['input'].startswith(b'SELECT count(*)'):return b'1' if self.clients else b'0'
                 return json.dumps(self.last_inventory).encode()
             raise AssertionError('Unexpected Docker boundary '+str(argv))
-        def read(*a,**kw):
-            self.reads.append(kw)
+        def read(database):
+            self.reads.append(database)
             site=self.second_site if len(self.reads)>1 and self.second_site else self.site
-            return dict(image_id=fixture.IMAGE,sites=[copy.deepcopy(site)])
+            return [copy.deepcopy(site)]
         b.stack.enter_context(patch.object(module,'verify_private_directory',side_effect=lambda path:None))
         b.stack.enter_context(patch.object(module,'_run',side_effect=run))
-        b.stack.enter_context(patch.object(module,'DockerObserver',side_effect=lambda config:SimpleNamespace(read=read)))
+        b.stack.enter_context(patch.object(module,'DockerObserver',side_effect=lambda config:SimpleNamespace(_read_sites=read)))
         b.stack.enter_context(patch.object(module,'snapshots',side_effect=lambda config:[dict(container_id='foreign' if self.extra_worker else config['worker_id'],running=self.extra_worker)]))
 
     def prove(self):return module.reconcile_retained_sources(self.b.store,self.observer,self.observation,self.inventory)
@@ -64,7 +66,7 @@ class RetainedRecoveryInventory(unittest.TestCase):
         self.assertEqual(live,dict(databases=sorted([self.config['sites'][0]['database'],'postgres']),maintenance_relations=[]))
         self.assertEqual(len(proofs),1);self.assertEqual(proofs[0]['database'],self.source)
         self.assertEqual(proofs[0]['checkpoint_operation_id'],fixture.SOURCE)
-        self.assertEqual(self.reads,[dict(quiesced=True),dict(quiesced=True)])
+        self.assertEqual(self.reads,['db','db']);self.assertTrue(proofs[0]['same_image_runtime_reused'])
         self.assertEqual(before,(self.config,self.inventory,self.site,self.b.store.source,self.b.store.source_status))
         self.assertTrue(all(argv[:2] in (['docker','inspect'],['docker','ps'],['docker','exec']) for argv,kw in self.writes))
         self.assertTrue(all(kw['input'].startswith((b'SELECT ',b'BEGIN READ ONLY;')) for argv,kw in self.writes if 'psql' in argv))
@@ -135,6 +137,28 @@ class RetainedRecoveryInventory(unittest.TestCase):
             with self.assertRaisesRegex(OperatorError,'Unknown sharing database'):observer.removal_site_inventory(self.observation)
             complete=observer.removal_site_inventory(self.observation,store=self.b.store)
         self.assertTrue(complete['complete']);self.assertEqual(len(complete['retained_sources']),1)
+
+    def test_current_runtime_witness_refuses_image_inventory_and_file_tamper(self):
+        before=copy.deepcopy(self.observation)
+        for mutate in (lambda o:o.update(image_id='sha256:'+'0'*64),
+                lambda o:o['runtime'].update(inventory_digest='sha256:'+'0'*64),
+                lambda o:o['runtime'].update(modified_files=['changed']),
+                lambda o:o['runtime'].pop('missing_addon_files')):
+            self.observation=copy.deepcopy(before);mutate(self.observation)
+            with self.assertRaisesRegex(OperatorError,'Fresh exact current runtime'):self.prove()
+        self.assertEqual(self.reads,[])
+
+    def test_actual_fixed_SQL_site_observer_rejects_foreign_or_pending_state(self):
+        from modular_platform.deployment import OBSERVE_SQL
+        observer=object.__new__(DockerObserver);observer.config=self.config
+        site=dict(site_id=fixture.SITE,native_modules=[dict(addon='mp_core',state='installed')])
+        with patch('modular_platform.deployment._run',return_value=json.dumps(site).encode()) as run:
+            self.assertEqual(observer._read_sites('exact-db'),[site])
+            self.assertEqual(run.call_args.kwargs['input'],OBSERVE_SQL.encode())
+            self.assertEqual(run.call_args.args[0][:4],['docker','exec','-i','exact-db'])
+        for changed in (dict(site_id='foreign',native_modules=[]),dict(site_id=fixture.SITE,native_modules=[dict(state='to upgrade')])):
+            with patch('modular_platform.deployment._run',return_value=json.dumps(changed).encode()):
+                with self.assertRaises(PlanningError):observer._read_sites('exact-db')
 
 
 if __name__=='__main__':unittest.main()

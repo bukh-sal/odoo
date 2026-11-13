@@ -99,27 +99,37 @@ def reconcile_retained_sources(store,observer,observation,inventory):
     if not extras:return inventory,[]
     if len(configuration['sites'])!=1 or not observation['runtime']['inventory'].get('artifacts'):
         raise OperatorError('Retained sources require the known single-site native package profile')
+    runtime=observation['runtime']
+    if (observation.get('image_id')!=configuration['image_id']
+            or any(runtime.get(key)!=[] for key in ('modified_files','missing_addon_files','unexpected_addon_files'))
+            or runtime.get('inventory_digest')!=configuration['published_release']['core_inventory_digest']):
+        raise OperatorError('Fresh exact current runtime witness required for same-image retained sources')
     policy=store._policy()
     if configuration['sites'][0]['site_id'] not in policy['deployments'].get(configuration['deployment_id'],[]):
         raise OperatorError('Independent store does not authorize this retained-source deployment')
     candidates=_candidates(store,configuration,extras);_closed_sources(observer,candidates)
-    plugins=sorted(observation['runtime']['inventory']['artifacts']);proofs=[]
+    plugins=sorted(runtime['inventory']['artifacts']);proofs=[];database_container=observer._container('db')
     for database,(source,state,result) in sorted(candidates.items()):
-        retired=DockerObserver(source).read(quiesced=True)
-        site=retired['sites'][0]
-        if (retired['image_id']!=configuration['image_id'] or site['release_digest']!=data_digest(source['published_release'])
+        # _candidates and _closed_sources prove the exact same immutable image.
+        # Reuse its already verified runtime only within this invocation; every
+        # source still gets both fixed SQL observations and final drift checks.
+        sites=DockerObserver(source)._read_sites(database_container)
+        site=sites[0]
+        if (runtime['inventory_digest']!=source['published_release']['core_inventory_digest']
+                or site['release_digest']!=data_digest(source['published_release'])
                 or str(site['release_generation'])!=str(source['published_release']['generation'])
                 or site['active_inventory_digest']!=source['published_release']['core_inventory_digest']):
             raise OperatorError('Retained source published release differs from completed history')
-        validate_removal_sites({'state':{'site_ids':[source['sites'][0]['site_id']]}},retired['sites'],plugins,observation['runtime'])
+        validate_removal_sites({'state':{'site_ids':[source['sites'][0]['site_id']]}},sites,plugins,runtime)
         proofs.append(dict(database=database,recovery_id=state['recovery_id'],checkpoint_operation_id=state['checkpoint_operation_id'],
             journal_digest=state['chain_digest'],source_configuration_digest=data_digest(source),result_digest=data_digest(result),
-            observed_site_digest=data_digest(site),image_id=retired['image_id'],worker_id=source['worker_id']))
+            observed_site_digest=data_digest(site),image_id=source['image_id'],worker_id=source['worker_id'],
+            runtime_inventory_digest=runtime['inventory_digest'],current_runtime_digest=data_digest(runtime),same_image_runtime_reused=True))
     if data_digest(_candidates(store,configuration,extras))!=data_digest(candidates):
         raise OperatorError('Retained recovery history changed during observation')
     for proof in proofs:
-        current=DockerObserver(candidates[proof['database']][0]).read(quiesced=True)
-        if data_digest(current['sites'][0])!=proof['observed_site_digest']:
+        current=DockerObserver(candidates[proof['database']][0])._read_sites(database_container)
+        if data_digest(current[0])!=proof['observed_site_digest']:
             raise OperatorError('Retained source metadata changed during observation')
     query="""BEGIN READ ONLY; SET LOCAL statement_timeout='5s';
 SELECT jsonb_build_object('databases',(SELECT jsonb_agg(datname ORDER BY datname) FROM pg_database WHERE NOT datistemplate),
