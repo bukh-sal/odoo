@@ -1,0 +1,69 @@
+{
+  "utc": "2026-11-13T04:28:28.133954+00:00",
+  "phase": "PP-02",
+  "result": "formats_verified_optional_integration_source_only",
+  "accepted_roadmap_points": 25,
+  "accepted_phases": 1,
+  "rough_implementation_points": 45,
+  "phase_accepted": false,
+  "goal": "active",
+  "live": {
+    "configuration": 18,
+    "core": "0.2.2",
+    "documents": "0.1.2",
+    "files": 6,
+    "versions": 8,
+    "receipts": 28,
+    "raw_bytes": 4090,
+    "formats": [
+      "PDF",
+      "PNG",
+      "JPEG"
+    ],
+    "exact_http_cases": 11,
+    "forced_attachment": true,
+    "previewable": false,
+    "foreign_workspace_404": true,
+    "current_viewer_read_allowed_write_403": true,
+    "previous_documents_versions_receipts_preserved": true,
+    "old_eight_business_tables_authority_jobs_outbox_exact": true,
+    "source_to_live_rollout": false,
+    "no_new_image_or_operation": true,
+    "open_fixture": false
+  },
+  "source": {
+    "documents_successor": "0.1.3",
+    "optional_integration": "Task files0.1.0",
+    "existing_app_panel_and_bound_service_seams": true,
+    "exact_revision_reference": true,
+    "provider_bytes_or_labels_not_stored": true,
+    "provider_write_grants": false,
+    "core_changes": false,
+    "other_three_apps_unchanged": true,
+    "actual_schema_and_component_control_flow_tests": {
+      "documents_python": 23,
+      "taskfiles_python": 9,
+      "node": 36,
+      "failures": 0,
+      "skips": 0
+    },
+    "deterministic_archives": true,
+    "trusted_or_installed": false,
+    "explicit_limits": [
+      "Fake ORM/provider/SQL/component boundaries, not native PostgreSQL concurrency or rendered UI",
+      "No image build, live install, trust/catalog change, cross-app recovery or phase acceptance"
+    ]
+  },
+  "private_receipt_hashes": {
+    "formats_result": "3575e3940189dc1325e2c31160a5955c79de35295064a57a85543e38360d0aed",
+    "source_result": "271e8aeb590fc8e04a0eeae6abfad0c24d4be29bff28a69498cbed04aca2782f",
+    "section_plan": "9d6387a3ff519b474ad42c06ff3fc4d506ab3db5280ea20c118bd8add1af715b"
+  },
+  "remaining": [
+    "Fresh immutable image and exact native operation plan after source review",
+    "Installed task-file attach/open old pin/later upload/remove/relink and provider/grant/leaf degradation",
+    "Rendered desktop/narrow/keyboard review and unavailable-copy repair verification",
+    "Coordinated byte/metadata/version/reference fresh restore and final PP02 acceptance"
+  ],
+  "phase_planning": "PP03..05 implementation plans remain deferred until activation"
+}

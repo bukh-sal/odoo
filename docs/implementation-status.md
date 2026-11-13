@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T03:54:49.578051+00:00
+- Updated UTC: 2026-11-13T04:28:28.133954+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: current-authority and real RR quota verified; format breadth/integration/recovery and one unavailable-copy repair pending.** Historical scopes complete.
-- Latest work item: **20current-authority checks with all4fixtures restored; actual viewer and known-loss/recovery UI; real95->100MiB two-writer quota race verified.** Both native writers observed blocked, actual PostgreSQL concurrent-update failure and normal retry, one5MiB success/onequota400. Dedup/conflict/full-quota controls pass. Exactly20NEWsynthetic pressure files removed via normal app, original2files/4versions/1150B intact;20receipt tombstones retained, postpurge replay409. No product/source/image changes. All old8tables/auth/14jobs/53outbox exact, config18 unchanged. [Evidence](evidence/G7/20261113-pp02-authority-quota-01/qualification.json). Accepted25/1001/5,rough45/100; goalACTIVE.
+- Current phase/gate: **PP-01 accepted; PP-02 active: format/foreign checks pass; optional task-file integration source ready, installed integration/recovery pending.** Historical scopes complete.
+- Latest work item: **Actual PDF/PNG/JPEG and B-workspace controls passed11HTTP cases.** Current6files/8versions/28receipts/4090B; previous bytes/business/authority exact. Private Documents0.1.3 adds exact-version action links and unavailable-copy repair; new optional Task files0.1.0 owns only pinned UUID references through existing app seams.68source/schema/component checks pass; deterministic archives validated but UNADMITTED/uninstalled. Core/other3apps unchanged. [Evidence](evidence/G7/20261113-pp02-formats-integration-source-01/qualification.json). Accepted25/1001/5,rough45/100; goalACTIVE. Next fresh build/native plan before rollout.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -79,6 +79,30 @@ No PP02 acceptance yet; rough45/100, accepted25/1001/5. Next fresh current-sourc
 format/integration section plan, including unavailable-copy repair before edits.
 No human hold/runningoperation/openfixture, no PP03..05plans, push or imagecleanup.
 Never replay the matrix, pressure, cleanup or earlier completed native operations.
+
+### PP02 format and optional integration source checkpoint
+
+The later format section now adds3small licensed PDF/PNG/JPEG fixtures and one
+workspace-B control:11actualHTTP cases pass, all forced-download exact/no active
+preview. AliceB viewer readsBfile but cannot upload; cross-workspace version IDs
+404. Current6files/8versions/28receipts/4090B include the preserved original2files/
+4versions/1150B. Original8business tables/currentauthority/14jobs/53outbox exact.
+
+Fresh source-section plan preceded private Task files0.1.0 and Documents0.1.3.
+Task files owns only task/document/version UUIDs + CAS/soft-remove state, uses
+existing task-panel registry and original-actor bound provider READ calls, resolves
+current labels without caching and leaves both providers independent. Exact pins
+do not silently move after upload. Documents successor fixes unavailable-vs-empty
+copy and native action-state pinned revision links; no model/storage/core change.
+23DocumentsPython+9TaskfilesPython+36Node checks pass, actual registry/format
+checker and app/component methods with fake external boundaries. Deterministic
+archives validate, not admitted/installed/rendered. New table is not meaningful
+migration acceptance. Source harness import/signature omissions corrected; no
+product/native mutation replay. Private commits dca128a/1b9e56f, no push.
+
+No source rollout/build/operation/cleanup this section. Fresh immutable-image/
+native plan, installed links/degradation/UI and coordinated byte/reference restore
+still required. No PP03..05 implementation plans yet; accepted25/1001/5, rough45.
 
 ## Product/platform roadmap (13November2026)
 
