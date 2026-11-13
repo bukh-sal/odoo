@@ -1,0 +1,122 @@
+{
+  "accepted_outcomes": 5,
+  "accepted_phases": 2,
+  "accepted_points": 50,
+  "actual_visual": {
+    "current_grant_denial_visible": true,
+    "current_version": 4,
+    "escaped_preview_executable_nodes": 0,
+    "formal_accessibility_or_mobile_certification": false,
+    "fresh_login": true,
+    "keyboard_new_tab_pin": true,
+    "linked_version": 1,
+    "narrow_css_px": 393,
+    "no_cached_provider_label": true,
+    "no_horizontal_overflow": true,
+    "parent_customer_discussion_usable": true,
+    "pin_survives_reload": true
+  },
+  "evidence_sha256": {
+    "authority-fixture-result.json": "80198b83580b5169c4e1c435c1f83c7d168fb5695fc83b2a2e4f86026b1461ae",
+    "fault-result.json": "467eea94f9d8bfb8f71be3651aaa846426544d022c773a62b8210252ac243a91",
+    "fixtures-restored.json": "65535e95ddfff748e209fe82b74af84e400ab4599081a324b1332a9f3ebba2db",
+    "restore-review.json": "74bab217db1ad7a6b90ca408a453957f398271bdd8cf3d39092015fb3aa0111f",
+    "restored-result.json": "d87ab5add3aebe5e7d5763a2bb8dcd25c758c8a9e17abd1398b3f06a3db2dd15",
+    "resume-review.json": "2ed230a1cdca5eacb91ce281672f789d0989008585993a6da999210784b1c1b0",
+    "resumed-result.json": "ea2f5afa712bca67950aa18becf9ab1311ba272f9519c773a69c1cc5dd767af4",
+    "retained-assets.json": "b015de35344e33cf3b2a4f1f1420a7142297b19d35b6112ce54d557fec2e8a0b",
+    "revocation-use/result.json": "ef442914c8ed4efbfd5d5fde15eef923467aa928a054c643b13f9287a75a1420",
+    "ui/result.json": "2761f136cc263cba0ed215d36f85f3a198992559bebfe7c4ef60715170f10c6a",
+    "useful-restored/result.json": "0d31b1d9973989da679ebb4ad33457b7f44f20149424d50fe794d1d0b28f83e4"
+  },
+  "goal": "active",
+  "intentional_limits": [
+    "Workspace shared editor/viewer policy; no per-folder/person ACL or public sharing",
+    "Text preview only;PDFPNGJPEG download-only;unscanned files; no malware safety promise",
+    "Raw-byte quota excludes base64/database overhead; no sync/coediting/OCR/cloud storage",
+    "Same-project fresh DB/filestore namespace; not independent disaster recovery or arbitrary completed-checkpoint rollback",
+    "Exact private app/core/operator cohort only; no universal ABI/third-party addon support",
+    "No migration/event-consumer/performance/full-host release claim from PP02; PP03..05 remain"
+  ],
+  "next": "Activate PP03: fresh current-source/research/implementation plan before event-consumer and meaningful migration work; no PP04/05 implementation plans",
+  "outcomes": [
+    {
+      "accepted": true,
+      "evidence": "Prior upload/find/download/new version/restore/trash/rename/draft/browser evidence plus recovered pinned/current use",
+      "outcome": "Useful independent browser file/version/trash workflow"
+    },
+    {
+      "accepted": true,
+      "evidence": "UTF8TXT/Markdown/PDFPNGJPEG,5MiB/version,100MiB raw workspace,200files,20versions,1000unexpired24h receipts; actual two-writer quota race/full boundary and exact cleanup",
+      "outcome": "Intentional formats/bounds/preview/retention"
+    },
+    {
+      "accepted": true,
+      "evidence": "Actual role/member/actor/feature/foreign/native/token cases; grant/member postcheckpoint revocation preserved and fresh-session denials after restore",
+      "outcome": "Current workspace authority and alternate-route denial"
+    },
+    {
+      "accepted": true,
+      "evidence": "Normal immutable successor upgrades plus fresh failed-native checkpoint restore/separate independent resume;6files9versions29receipts4340B and2reference rows exact",
+      "outcome": "Coherent populated upgrade and coordinated fresh restore"
+    },
+    {
+      "accepted": true,
+      "evidence": "Private exact archives/images/catalog/independent approvals; actual desktop393px keyboard/pin/newtab/download/reload; revoked provider hides label while parent/customer/discussion remain usable",
+      "outcome": "Normal package/approval, real UI and optional degradation"
+    }
+  ],
+  "phase": "PP-02",
+  "phase_accepted": true,
+  "prior_evidence_sha256": {
+    "docs\\evidence\\G7\\20261113-pp02-authority-quota-01\\qualification.json": "fa0a5bfc6f3c013b79c3b7036386e6442c36a89d3ee540bdbbe73778a1553965",
+    "docs\\evidence\\G7\\20261113-pp02-binary-source-01\\qualification.json": "9557ecb86295664455cf7d1ae0dd0423efa23eb020b6a892cb8257dfd968a3c4",
+    "docs\\evidence\\G7\\20261113-pp02-binary-source-02\\qualification.json": "3c19918121534306b6266d369cc5ccca47b59e824503f841a4f978e76d55a4a8",
+    "docs\\evidence\\G7\\20261113-pp02-candidate-images-01\\qualification.json": "bc7eee55c05ec876e2f35340e83b2af48317ebc09a897c4ba4d08734fbc05db9",
+    "docs\\evidence\\G7\\20261113-pp02-documents-ui-source-01\\qualification.json": "b9495ebe94b012675aecb0e23a56a5503fe085eef705e4fd4cbd031827b46663",
+    "docs\\evidence\\G7\\20261113-pp02-file-workflow-01\\qualification.json": "b8265f39187d3f63cf7d0d154a22083eb0ca054d3e3380d4fd31694abf75e63b",
+    "docs\\evidence\\G7\\20261113-pp02-focus-recovery-gap-01\\qualification.json": "69a32f921ec1933656e682fe23508b2ee1f5b127f557f3295a53eee639bae5c5",
+    "docs\\evidence\\G7\\20261113-pp02-formats-integration-source-01\\qualification.json": "f3f43d16ee4058927481cc19545467f801595d0543ccfab386b1e9303a295480",
+    "docs\\evidence\\G7\\20261113-pp02-native-initial-01\\qualification.json": "580f1c26c7eb109ac4e1d611bc0f434d4de1ccde4fbf1f07730371996f44ba5b",
+    "docs\\evidence\\G7\\20261113-pp02-pinned-workflow-authority-01\\qualification.json": "06011cf27f70907aa850ae55fb6424769a9aa1401bb6f9aee4787732e1ed858b",
+    "docs\\evidence\\G7\\20261113-pp02-taskfiles-installed-01\\qualification.json": "e112651d82f7ec9bc3958403ad76a626a663d3c6b7821f751fe6ff656d31ec08"
+  },
+  "recovery": {
+    "all_nine_http_downloads_exact": true,
+    "browser_pin402B_current250B_hashes_exact": true,
+    "bytes_metadata_versions_receipts_and_reference_history_exact": true,
+    "checkpoint_before_successful_native_leaf_uninstall": true,
+    "checkpoint_manifest_sha256": "33993d10851e009b89c32d28bb880f0756b7f99315b687f61d712e05a6a641f9",
+    "completed_checkpoint_restore_claim": false,
+    "configuration": 23,
+    "controlled_fault_before_metadata": true,
+    "current_grant_and_membership_revocations_preserved": true,
+    "fresh_closed_restore_verified": true,
+    "generic_host_source_commit": "ed8a1d54344",
+    "host_correction_not_relabelled_as_retained_image_bytes": true,
+    "image_id": "sha256:b3221639c312dd9726292870b8b157ed509cdd4bbfa1d20b1275dcc1bc6f93ef",
+    "integration_grant_policy": "r1-current-integration-grants-v1",
+    "only_jobs_outbox_control_changes": {
+      "jobs.claim_generation": 14,
+      "jobs.dispatch_generation": 14,
+      "jobs.release_digest": 14
+    },
+    "operation_id": "ff8371f5-8a7b-475f-81e6-1f919a5ce990",
+    "plan_hash": "sha256:d58c5f9e9df701c2ff6a8a0905998f69e7eb458bdbbf107460a4acc6254139ad",
+    "platform": "0.2.2",
+    "separate_independent_resume": true,
+    "source_database_retained": true,
+    "temporary_fixtures_restored_both_databases": true
+  },
+  "resource_disposition": {
+    "current_owned_review_environment_retained": true,
+    "failed_source_and_checkpoints_retained": true,
+    "no_cleanup_or_foreign_resource_changes": true,
+    "no_live_operation": true,
+    "no_open_fixture": true
+  },
+  "result": "accepted_bounded_independent_document_application",
+  "rough_implementation_points": 50,
+  "total_outcomes": 5,
+  "utc": "2026-11-13T06:12:06.219688+00:00"
+}

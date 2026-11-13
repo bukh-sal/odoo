@@ -11,9 +11,9 @@ preserved the human revocation control but omitted the grant revocation; all liv
 rows remained exact. Observe/bind stable grant identities and reconcile existing
 checkpoint rows to current decisions, revoke missing scopes, never create new
 source-only approvals. Require protected proof through restore/continuation and
-fresh resume. ADR0085 records the implemented policy. Source checks and actual
-rollback-only PostgreSQL SQL prove the correction; populated installed recovery
-is pending. No application-specific branch or business ACL framework. Current
+fresh resume. ADR0085 records the implemented policy. Source checks, actual
+rollback-only PostgreSQL SQL and populated PP02 failed-native fresh recovery/
+separate resume prove current grant/member revocations and exact bytes/references. No application-specific branch or business ACL framework. Current
 image/core identity and native maintenance-reader guards remain unchanged.
 
 CR-0020 (13November2026), source implemented / installed pending for PP-02: independent

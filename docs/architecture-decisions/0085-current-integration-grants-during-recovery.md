@@ -1,7 +1,7 @@
 # ADR 0085: Current integration grants during native recovery
 
-Status: source implemented and bounded source/SQL proof verified, 13 November
-2026. Populated native recovery qualification remains pending.
+Status: accepted for the bounded PP02 native cohort, 13 November 2026. Source,
+actual SQL and populated failed-native fresh recovery/separate resume verified.
 
 PP-02 document/task integration exposed an omission in the host recovery
 authority overlay. The actual existing SQL producer, executed on isolated
@@ -53,3 +53,10 @@ drift before database creation, continuation footprint differences, missing proo
 and late target revocation before traffic. These are source/SQL proofs, not an
 installed recovery claim. The retained image is unchanged: this correction runs
 in the reviewed host operator; unchanged maintenance-reader hash guards remain.
+
+Actual PP02 operationff8371f5 subsequently verifies this policy in the installed
+five-app cohort: postcheckpoint grant/member revocations survived a normal fresh
+restore and independent resume, all9binary versions and2reference history rows
+remain exact, and fresh HTTP/browser behavior denies the revoked provider read.
+Temporary fixtures restored exactly after proof; retained image unchanged. See
+[PP02 acceptance](../evidence/G7/20261113-pp02-application-breadth-01/qualification.json).

@@ -119,3 +119,16 @@ D has explicit same-version rebuilt Python binary digests for independent instal
 review; its environment is not called byte-identical to M. Current qualified review
 site remains the PP-01 core0.2.1 cohort above. Exact image/native/UI/lifecycle
 evidence is required before extending the support matrix.
+
+## PP02 exact document-application cohort
+
+[PP02 acceptance](evidence/G7/20261113-pp02-application-breadth-01/qualification.json)
+adds bounded private Documents0.1.4/Taskfiles0.1.1 to the five-app core0.2.2
+cohort, imageb3221639 and reviewed recovery host committeded8a1d54344. Core default
+still has eight addons; optional apps stay independent. Actual useful binary/
+quota/current-authority/UI/upgrade/coordinated failed-native recovery exits pass.
+The newer host fixes integration-grant reconciliation; the retained image SDK is
+not relabelled as those host bytes. Exact artifacts/images/operators and limits
+in the acceptance record apply. Older source/image records and historical support
+claims remain scoped. No universal file safety, completed-checkpoint restore or
+production/long-term support is added.

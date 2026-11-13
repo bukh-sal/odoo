@@ -39,18 +39,20 @@ PP-03, or build a speculative framework in anticipation of later apps.
 | Phase | Weight | Deliverable | Dependency | Current acceptance |
 | --- | ---: | --- | --- | --- |
 | PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | [Accepted, 4/4 bounded outcomes](evidence/G7/20261113-pp01-product-experience-01/qualification.json) |
-| PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Installed workflow/focus verified; recovery grant omission proven](evidence/G7/20261113-pp02-focus-recovery-gap-01/qualification.json); generic recovery source/SQL correction verified; populated coordinated byte/reference restore pending |
+| PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp02-application-breadth-01/qualification.json) |
 | PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | Not started |
 | PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Not started |
 | PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Not started |
 
 Weights estimate outcome importance, not elapsed time or test counts. Current
-new-roadmap accepted progress is **25/100 phase points; 1/5 phases accepted**.
-PP-01 delivered the installed product slice, actual useful workflow, access-state
-and bounded visual/keyboard checks; its two observed UI defects were corrected
-and verified. PP-02 now demonstrates useful installed file/version/trash/draft interactions and initial binary boundaries; actual quota/format pressure now passes; installed integration/recovery exits remain;
-PP-03..05 remain unstarted. Rough implementation is about45/100, with25/100
-accepted; source/fake-native checks do not earn installed outcome acceptance. Research, documents and goal creation earn no implementation credit.
+new-roadmap accepted progress is **50/100 phase points; 2/5 phases accepted**.
+PP-01 delivered the coherent customer-work journey. PP-02 delivered useful
+independent Documents, actual binary/quota/current-authority pressure, optional
+immutable references, populated upgrades and coordinated fresh recovery with
+newer authority preserved. Actual browser desktop/393px keyboard/download/reload
+evidence supports its bounded acceptance. PP-03 fresh plan is next; PP-04/05 stay
+unplanned. Rough implementation is about50/100, with50/100 accepted. Research,
+documents and source-only checks do not earn additional outcome acceptance.
 Report partial progress only against real delivered outcomes; keep original R1
 99/99 and its score separate. Re-estimate effort when the fresh phase plan exists.
 

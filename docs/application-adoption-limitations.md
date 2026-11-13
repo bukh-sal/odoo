@@ -45,3 +45,11 @@ probe found that omission; [proposed ADR0085](architecture-decisions/0085-curren
 and CR-0021 require repair before claiming grant preservation in new recovery.
 Application-owned business ACL checkpoint semantics remain separate. No current
 live restore or generic grant repair is accepted from this source/probe finding.
+
+PP02 follow-up13November2026: CR0021/ADR0085 repair is now source/SQL and actual
+failed-native fresh restore/separate resume qualified for the exact current
+cohort. A newer integration grant revocation remains revoked and hides provider
+metadata after resume; human membership control also passes, all9versions/2refs
+exact. Temporary fixtures restored. This supersedes the preceding open-gap status
+only for the new reviewed host; application-owned business ACLs and arbitrary
+completed-checkpoint recovery remain separate limits.
