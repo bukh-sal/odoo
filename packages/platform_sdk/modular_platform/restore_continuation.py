@@ -17,6 +17,7 @@ from .operator_os import OperatorError,OperationLocks,protect_directory
 from .operator_store import _write_new
 from .plans import data_digest
 from .recovery_reviews import RecoveryReviews
+from .integration_grant_recovery import PROOF_NAME,reconciled_authority
 
 
 def canonical_dump_digest(raw):
@@ -46,20 +47,21 @@ class RestoreContinuation:
         directory=self.store.root/'recoveries'/operation
         # Deliberately support only the observed boundary. Existing records and
         # targets cannot be deleted, replaced or guessed from an elapsed lease.
-        if set(p.name for p in directory.iterdir())!={'decision.json','filestore.log','filestore.log.stderr.log','dispatch-fence'}:
+        if set(p.name for p in directory.iterdir())!={'decision.json','filestore.log','filestore.log.stderr.log','dispatch-fence',PROOF_NAME}:
             raise OperatorError('Partial restore is outside the verified pre-fence continuation boundary')
         old_path=directory/'decision.json';self.store._regular(old_path)
         original=load_json(old_path.read_bytes());old=copy.deepcopy(original['decision']);old.pop('review')
         RecoveryReviews(self.store).check_reserved(original['decision'],exact_hash=original['hash'])
         if old!=proposal or self.store.status(operation)['phase']!='restore_target_created':
             raise OperatorError('Original restore/source authority changed; continuation denied')
+        proof=r._grant_proof(directory,proposal)
         if any(w['running'] for w in proposal['managed_workers']):
             raise OperatorError('All managed workers must remain stopped before continuation')
         fence=directory/'dispatch-fence'
         if set(p.name for p in fence.iterdir())!={'fence-request.json','fence.stdout','fence.stdout.stderr.log'}:
             raise OperatorError('Restored fence may already have run; inspect instead of repeating')
         records={}
-        for path in [directory/'filestore.log',directory/'filestore.log.stderr.log',*fence.iterdir()]:
+        for path in [directory/PROOF_NAME,directory/'filestore.log',directory/'filestore.log.stderr.log',*fence.iterdir()]:
             self.store._regular(path);records[path.relative_to(directory).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
         request=load_json((fence/'fence-request.json').read_bytes())
         manifest=load_json((self.store.root/'checkpoints'/operation/'manifest.json').read_bytes())
@@ -82,7 +84,7 @@ class RestoreContinuation:
         if not same:
             raise OperatorError('Restored queues differ from the untouched coordinated checkpoint')
         authority,private=r._authority(fresh);current,current_private=r._authority(r.config['sites'][0]['database'])
-        if authority!=proposal['authority'] or current!=authority or private!=current_private:
+        if authority!=reconciled_authority(proposal,proof) or current!=proposal['authority'] or private!=current_private:
             raise OperatorError('Current native authority overlay differs; continuation denied')
         reader=r._recovery_observer(target,manifest=manifest);catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
         state=reader.state(reader.read(quiesced=True,missing_worker=True),catalog)['state'];previous=manifest['previous_release']
@@ -112,7 +114,7 @@ class RestoreContinuation:
         return {k:v for k,v in observed.items() if k not in ignored}=={k:v for k,v in profile.items() if k not in ignored}
 
     def _source_hashes(self,profile):
-        sources=['restore_executor.py','restore_continuation.py','dispatch_operator.py','dispatch_lifecycle.py','dispatch_jobs_maintenance.py']
+        sources=['restore_executor.py','restore_continuation.py','integration_grant_recovery.py','dispatch_operator.py','dispatch_lifecycle.py','dispatch_jobs_maintenance.py']
         return {name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in sources}
 
     def execute(self,decision,*,exact_hash,noninteractive=False):

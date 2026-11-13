@@ -4,15 +4,17 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
-CR-0021 (13November2026), proposed host recovery-authority prerequisite for PP-02:
+CR-0021 (13November2026), source-verified host recovery-authority prerequisite for PP-02:
 current integration grants must not revive from a checkpoint after a newer
 revocation. Actual generic SQL on rollback-only PostgreSQL temporary tables
 preserved the human revocation control but omitted the grant revocation; all live
 rows remained exact. Observe/bind stable grant identities and reconcile existing
 checkpoint rows to current decisions, revoke missing scopes, never create new
 source-only approvals. Require protected proof through restore/continuation and
-fresh resume. ADR0085 records the proposal. No application-specific branch or
-business ACL framework; source and installed recovery qualification pending.
+fresh resume. ADR0085 records the implemented policy. Source checks and actual
+rollback-only PostgreSQL SQL prove the correction; populated installed recovery
+is pending. No application-specific branch or business ACL framework. Current
+image/core identity and native maintenance-reader guards remain unchanged.
 
 CR-0020 (13November2026), source implemented / installed pending for PP-02: independent
 workspace file applications need bounded authenticated binary transport beyond

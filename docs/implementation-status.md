@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T05:36:50.649788+00:00
+- Updated UTC: 2026-11-13T05:50:16.901696+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: focus repair installed; generic integration-grant recovery prerequisite CR-0021 active before real byte/reference restore.** Historical scopes complete.
-- Latest work item: **Normal Taskfiles0.1.1 upgrade67a02b3d completed/config21/imageb322; actual393px keyboard CloseReview/save/remove now focus Attach.** Existing6files/9versions/29receipts/4340B unchanged; oldbriefpin active/rev3, one newPDFreference soft-removed/rev2, provider bytes intact. Actual generic SQL temp-table rollback probe preserves human revocation but leaves checkpoint grant approved despite newer source revocation; live data/authority untouched. Proposed ADR0085/CR0021 and fresh current-source fix plan precede implementation. [Evidence](evidence/G7/20261113-pp02-focus-recovery-gap-01/qualification.json). No actual recovery/fault begun; goalACTIVE25/1001/5rough45, no open fixture/operation.
+- Current phase/gate: **PP-01 accepted; PP-02 active: CR-0021 current integration-grant recovery source/SQL correction verified; populated byte/reference restore next.** Historical scopes complete.
+- Latest work item: **Generic restore now observes current grants, preserves checkpoint grant identities and proves reconciliation through continuation/resume.** Actual PostgreSQL pg_temp SQL/rollback passes approved/revoked/version/removed/foreign/current-only cases; human control and all live bytes/authority/store remain exact. 102 unique affected source cases pass, freeze122files/11rows unchanged. [Evidence](evidence/G7/20261113-cr0021-grant-recovery-source-01/qualification.json). Current config21/imageb322/Taskfiles.1/Docs.4/core.2.2 unchanged. No native fault/restore begun; fresh current-cohort plan next. GoalACTIVE25/1001/5rough45; no open fixture/operation.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

@@ -1,0 +1,66 @@
+{
+  "accepted_phases": 1,
+  "accepted_points": 25,
+  "adr": "0085",
+  "change_request": "CR-0021",
+  "evidence_sha256": {
+    "affected-final.txt": "4ddbac0cb3224e058b28cb071b312f736a91a22ef70670a5042568116f4c6e2f",
+    "freeze.stdout": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa",
+    "grants-final.txt": "a0e00c9b5740db21f0622e462e6adb4f0ae262089e71dbc6b85ee7ad398b326c",
+    "intent.json": "f5b41f8dc8501e259cdea31d4577f649e01f3a78a79de7efcc692c7a0f958cda",
+    "result.json": "31b9324465fbb5abc46ff6049b29f63c9f6ea35e861855889d83c7224c3822eb"
+  },
+  "goal": "active",
+  "implementation": {
+    "checkpoint_grant_keyset_preserved": true,
+    "checkpoint_only_revoked": true,
+    "continuation_fixed_receipt_no_replay": true,
+    "explicit_canonical_current_grants": true,
+    "matching_current_decisions_and_policy_versions": true,
+    "protected_proof_before_overlay": true,
+    "restore_prestartup_and_final_authority_checks": true,
+    "resume_requires_proof_and_fresh_authority": true,
+    "source_only_not_inserted": true
+  },
+  "next": "Fresh current-cohort coordinated recovery plan, normal reviewed failure/checkpoint, exact authority fixtures, closed restore and separately reviewed resume/use",
+  "phase": "PP-02",
+  "phase_accepted": false,
+  "result": "source_and_actual_PostgreSQL_temp_SQL_verified",
+  "rough_implementation_points": 45,
+  "runtime": {
+    "configuration": 21,
+    "host_operator_correction": true,
+    "image_id": "sha256:b3221639c312dd9726292870b8b157ed509cdd4bbfa1d20b1275dcc1bc6f93ef",
+    "maintenance_guards_unchanged": true,
+    "no_native_fault_restore_or_resume_run": true,
+    "platform": "0.2.2",
+    "retained_image_unchanged": true
+  },
+  "scope_limit": "Source/SQL proof only; populated native bytes/reference/current-authority recovery remains required",
+  "source_checks": {
+    "actual_PostgreSQL_temp_SQL_and_human_control_passed": true,
+    "additional_before_creation_drift_case_passed": true,
+    "affected_passed": true,
+    "affected_tests": 101,
+    "errors": 0,
+    "failures": 0,
+    "freeze": {
+      "files": 122,
+      "rows": 11,
+      "unchanged": true
+    },
+    "full_host_not_run": true,
+    "live_data_bytes_authority_target_store_exact": true,
+    "skips": 0,
+    "unique_tests": 102
+  },
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/integration_grant_recovery.py": "cc960d07eaece453d4352efa8393a9528ac8b2d32f4205cedd55fe4ecefc8839",
+    "packages/platform_sdk/modular_platform/restore_continuation.py": "77819b723ea9bf3560cd6145d28d46fb6f8a6d164754cfd8d486f5b87c329dd5",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "0ca56cca6bbf1a4f1a05a68b9de8cd0b728d0eb276162dc03911962c7e08ba8c",
+    "tests/test_integration_grant_recovery.py": "1898db223e3a265979048e82da18db2f859e87b04de83046c62af65ac93ebbc8",
+    "tests/test_restore_continuation.py": "73fbf2527a0a73665047475e3d38659cc775e862b9d6e43ab9cf475f68a864b7",
+    "tests/test_restore_dispatch.py": "aab8a8c5dfe3b43b1fdd32b24e8246e6cf7033263bbae7cb6e0fdbe3b6507be4"
+  },
+  "utc": "2026-11-13T05:50:16.901696+00:00"
+}

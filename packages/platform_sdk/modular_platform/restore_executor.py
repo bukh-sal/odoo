@@ -27,12 +27,15 @@ from .recovery_reviews import RecoveryReviews
 from .workers import snapshots,ensure,wait_ready
 from .projection import runtime_inputs
 from .native_auth_recovery import POLICY as NATIVE_AUTH_POLICY,read_query,canonical_native_auth,public_binding,overlay_sql
+from .integration_grant_recovery import (POLICY as GRANT_POLICY, PROOF_NAME, canonical_grants,
+    grant_proof, verify_proof, reconciled_authority, proof_binding)
 
 
 AUTHORITY_SELECT = """SELECT jsonb_build_object(
 'principals',COALESCE((SELECT jsonb_agg(jsonb_build_object('principal_id',p.public_id,'state',p.state,'active',u.active)) FROM mp_principal p JOIN res_users u ON u.id=p.user_id),'[]'::jsonb),
 'memberships',COALESCE((SELECT jsonb_agg(jsonb_build_object('principal_id',p.public_id,'workspace_id',w.public_id,'state',m.state,'role',m.role)) FROM mp_membership m JOIN mp_principal p ON p.id=m.principal_id JOIN mp_workspace w ON w.id=m.workspace_id),'[]'::jsonb),
 'operators',COALESCE((SELECT jsonb_agg(jsonb_build_object('principal_id',p.public_id,'state',o.state)) FROM mp_application_operator o JOIN mp_principal p ON p.id=o.principal_id),'[]'::jsonb),
+'integration_grants',COALESCE((SELECT jsonb_agg(jsonb_build_object('installation_id',i.public_id,'plugin_id',i.plugin_id,'workspace_id',w.public_id,'capability',g.capability,'state',g.state,'policy_version',g.policy_version)) FROM mp_plugin_grant g JOIN mp_plugin_installation i ON i.id=g.installation_id JOIN mp_workspace w ON w.id=g.workspace_id),'[]'::jsonb),
 'api_key_count',(SELECT count(*) FROM res_users_apikeys),
 'has_dispatch_tables',to_regclass('mp_job') IS NOT NULL OR to_regclass('mp_outbox') IS NOT NULL);
 """
@@ -49,6 +52,7 @@ EXTRACT_FILESTORE = Path(__file__).with_name('restore_filestore.py').read_text()
 
 
 def authority_sql(snapshot):
+    snapshot = canonical_authority(snapshot)
     payload = json.dumps(snapshot).replace("'", "''")
     secret = secrets.token_hex(32)
     return ("CREATE TEMP TABLE restore_authority(payload jsonb); INSERT INTO restore_authority VALUES ('"+payload+"'::jsonb);\n"+"""
@@ -65,6 +69,12 @@ UPDATE mp_membership m SET state=a.state,role=a.role FROM mp_principal p,mp_work
 UPDATE mp_application_operator SET state='revoked';
 UPDATE mp_application_operator o SET state=a.state FROM mp_principal p,restore_authority r,
  jsonb_to_recordset(r.payload->'operators') AS a(principal_id text,state text) WHERE o.principal_id=p.id AND p.public_id=a.principal_id;
+UPDATE mp_plugin_grant SET state='revoked';
+UPDATE mp_plugin_grant g SET state=a.state,policy_version=a.policy_version
+ FROM mp_plugin_installation i,mp_workspace w,restore_authority r,
+ jsonb_to_recordset(r.payload->'integration_grants') AS a(installation_id text,plugin_id text,workspace_id text,capability text,state text,policy_version integer)
+ WHERE g.installation_id=i.id AND g.workspace_id=w.id AND i.public_id=a.installation_id
+ AND i.plugin_id=a.plugin_id AND w.public_id=a.workspace_id AND g.capability=a.capability;
 UPDATE mp_service_credential SET state='revoked';
 UPDATE mp_workspace SET policy_generation=policy_generation+1;
 """+"UPDATE ir_config_parameter SET value='"+secret+"' WHERE key='database.secret';\n")
@@ -72,6 +82,12 @@ UPDATE mp_workspace SET policy_generation=policy_generation+1;
 
 def canonical_authority(value):
     value = copy.deepcopy(value)
+    if not isinstance(value,dict) or 'integration_grants' not in value:
+        raise OperatorError('Explicit integration grant observation required')
+    if value.get('integration_grants_policy',GRANT_POLICY)!=GRANT_POLICY:
+        raise OperatorError('Unsupported integration grant reconciliation policy')
+    value['integration_grants']=canonical_grants(value['integration_grants'])
+    value['integration_grants_policy']=GRANT_POLICY
     for key in ('principals','memberships','operators'):
         value[key].sort(key=lambda item: (item['principal_id'], item.get('workspace_id','')))
     return value
@@ -163,6 +179,25 @@ class RestoreExecutor:
             raise OperatorError('Exact private native authentication observation required')
         private=canonical_native_auth(value['native_auth'])
         return canonical_authority(value['authority'])|public_binding(private),private
+
+    def _grant_proof(self, directory, decision):
+        path=directory/PROOF_NAME
+        if not path.exists():
+            raise OperatorError('Restore lacks integration grant reconciliation proof; keep traffic closed')
+        self.store._regular(path)
+        return verify_proof(load_json(path.read_bytes()),decision)
+
+    def _resume_grant_proof(self, directory, operation, result):
+        path=directory/'decision.json';self.store._regular(path)
+        original=load_json(path.read_bytes())
+        decision=original['decision']
+        if (data_digest(decision)!=original['hash'] or decision['operation_id']!=operation
+                or decision['plan_hash']!=self.store.bundle(operation)['plan_hash']):
+            raise OperatorError('Original integration grant restore decision differs')
+        proof=self._grant_proof(directory,decision)
+        if any(result.get(key)!=value for key,value in proof_binding(proof).items()):
+            raise OperatorError('Restore lacks verified integration grant reconciliation; keep traffic closed')
+        return proof
 
     def _supported_effects(self, database, *, dispatch_profile=None, configuration=None, dispatch_helper=None):
         container=self.observer._container('db')
@@ -347,6 +382,8 @@ class RestoreExecutor:
             args.insert(2,'-i')
             self.native._private_command(args+['-c',EXTRACT_FILESTORE,self.config['sites'][0]['database'],fresh],
                 directory/'filestore.log',input=(checkpoint/'filestore.tar.gz').read_bytes())
+            checkpoint_authority,_=self._authority(fresh)
+            _write_new(directory/PROOF_NAME,grant_proof(decision,checkpoint_authority['integration_grants']))
             _run(['docker','exec','-i',database,'psql','-X','-q','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1','--single-transaction'],
                 input=(authority_sql(decision['authority'])+overlay_sql(private_native_auth)+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
             return self._complete_restore(decision,exact_hash=exact_hash,locks=locks,directory=directory,checkpoint=checkpoint,manifest=manifest,fresh=fresh,private_native_auth=private_native_auth)
@@ -354,6 +391,10 @@ class RestoreExecutor:
     def _complete_restore(self,decision,*,exact_hash,locks,directory,checkpoint,manifest,fresh,private_native_auth,dispatch_directory=None):
         operation=decision['operation_id']
         self._operation=operation
+        proof=self._grant_proof(directory,decision)
+        expected_authority=reconciled_authority(decision,proof)
+        if self._authority(fresh)[0]!=expected_authority:
+            raise OperatorError('Restored authority differs from current reconciled snapshot')
         # The restored checkpoint may resurrect effects absent in the failed
         # DB. Reject unsupported state before configuration/registry startup.
         target=copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database']=fresh
@@ -413,7 +454,7 @@ class RestoreExecutor:
             _write_new(directory/'profile-publication.json',{'state':'deferred_legacy_reader',
                 'reason':'Retained legacy image has no published-release reader; preserve its cache and use the independent CLI until a compatible release is approved.'})
         actual_authority,_ = self._authority(fresh)
-        if actual_authority != decision['authority']:
+        if actual_authority != expected_authority:
             raise OperatorError('Restored authority differs from current reconciled snapshot')
         dispatch_ready=None
         if dispatch_profile is not None:
@@ -426,7 +467,7 @@ class RestoreExecutor:
             _write_new(directory/'dispatch-ready.json',dispatch_ready)
         self.store.record_restore(operation,locks,code='restore_verified',details={'fresh_database':fresh,'decision_hash':exact_hash,
             'failed_database_retained':True,'traffic_resumed':False,'session_secret_rotated':True,'technical_credentials_revoked':True})
-        result={'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth)}
+        result={'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth),**proof_binding(proof)}
         if dispatch_ready is not None:
             result['dispatch']=dispatch_ready
             self._restore_result_dispatch_fields(result,helper,dispatch_ready)
@@ -466,6 +507,7 @@ class RestoreExecutor:
         database=self.observer._container('db')
         if result.get('native_auth_policy')!=NATIVE_AUTH_POLICY or not isinstance(result.get('native_auth_digest'),str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',result['native_auth_digest']):
             raise OperatorError('Restore lacks current native credential reconciliation; keep traffic closed')
+        self._resume_grant_proof(path.parent,operation,result)
         authority,_=self._authority(source)
         observation = self._resume_observation(result)
         return {'schema_version':1,'action':'resume_verified_restore','operation_id':operation,

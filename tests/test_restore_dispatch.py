@@ -13,7 +13,8 @@ from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
 from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHYSICAL_SCHEMA, RECURRENCE, SCHEMA, OCCURRENCE_TABLE
 from modular_platform.native_auth_recovery import read_query,public_binding
-from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT
+from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT,canonical_authority
+from modular_platform.integration_grant_recovery import grant_proof,proof_binding,PROOF_NAME
 from reference_operator.executor import ReferenceRestoreExecutor
 
 CLEAR=dict(job_table=False,outbox_table=False,api_key_count=0,active_technical_credentials=0,external_installations=0)
@@ -25,7 +26,7 @@ class RestoreDispatchTests(unittest.TestCase):
         self.root=Path(temporary.name);self.op='00000000-0000-4000-8000-000000000500'
         self.config=dict(sites=[dict(database='mp_disposable_r0_r1_restored')])
         self.store=Mock();self.store.root=self.root;self.store.policy={'allow_noninteractive':True};self.store.status.return_value=dict(state='revoked',phase='restore_verified',traffic_resumed=False)
-        self.store.bundle.return_value=dict(plan=dict(deployment_id='00000000-0000-4000-8000-000000000010',site_ids=['00000000-0000-4000-8000-000000000020']),operation_lock=dict(release=dict(plugins=[])))
+        self.store.bundle.return_value=dict(plan_hash='exact-plan',plan=dict(deployment_id='00000000-0000-4000-8000-000000000010',site_ids=['00000000-0000-4000-8000-000000000020']),operation_lock=dict(release=dict(plugins=[])))
         checkpoint=self.root/'checkpoints'/self.op;checkpoint.mkdir(parents=True)
         (checkpoint/'manifest.json').write_text(json.dumps(dict(configuration=self.config)),encoding='utf8')
         directory=self.root/'recoveries'/self.op;directory.mkdir(parents=True);(directory/'result.json').write_text(json.dumps(dict(configuration=self.config)),encoding='utf8')
@@ -33,9 +34,13 @@ class RestoreDispatchTests(unittest.TestCase):
         self.native.observer._container.side_effect=lambda service,**kwargs:service
         self.native.observer.read.return_value=dict(sites=[],runtime=dict(inventory_digest='sha256:'+'a'*64))
         self.edge_open=False;self.native._inspect.side_effect=lambda edge:dict(State=dict(Running=self.edge_open))
-        self.effects=copy.deepcopy(CLEAR);self.authority=dict(principals=[],memberships=[],operators=[],api_key_count=0,has_dispatch_tables=False)
+        self.effects=copy.deepcopy(CLEAR);self.authority=canonical_authority(dict(principals=[],memberships=[],operators=[],api_key_count=0,has_dispatch_tables=False,integration_grants=[]))
         self.native_auth=dict(users=[dict(id=1,login='fixture',active=True,password=None,totp_secret=None,totp_last_counter=0,groups=[])],passkeys=[])
-        (directory/'result.json').write_text(json.dumps(dict(configuration=self.config)|public_binding(self.native_auth)),encoding='utf8')
+        original=dict(operation_id=self.op,plan_hash='exact-plan',checkpoint_digest='checkpoint',authority=self.authority|public_binding(self.native_auth))
+        proof=grant_proof(original,[])
+        (directory/'decision.json').write_text(json.dumps(dict(decision=original,hash=data_digest(original))),encoding='utf8')
+        (directory/PROOF_NAME).write_text(json.dumps(proof),encoding='utf8')
+        (directory/'result.json').write_text(json.dumps(dict(configuration=self.config)|public_binding(self.native_auth)|proof_binding(proof)),encoding='utf8')
         self.readiness_change=lambda:None;self.readiness_error=False;self.timeline=[]
         self.recovery=ReferenceRestoreExecutor(self.native)
         self.reviews=Mock();self.reviews.verify.side_effect=self.verify
@@ -166,6 +171,45 @@ class RestoreDispatchTests(unittest.TestCase):
         path=self.root/'recoveries'/self.op/'result.json'
         path.write_text(json.dumps(dict(configuration=self.config)),encoding='utf8')
         with self.assertRaisesRegex(OperatorError,'lacks current native credential'):
+            self.recovery._resume_state(self.op)
+        self.assertEqual(self.timeline,[])
+
+    def test_current_integration_grant_change_after_readiness_invalidates_review(self):
+        from test_integration_grant_recovery import grant
+        self.authority['integration_grants']=[grant()]
+        decision=self.decision()
+        self.readiness_change=lambda:self.authority['integration_grants'][0].update(state='revoked')
+        with self.assertRaisesRegex(OperatorError,'changed before traffic'):
+            self.recovery.resume(decision,exact_hash=data_digest(decision),noninteractive=True)
+        self.assertEqual(self.timeline,[])
+
+    def test_fresh_review_binds_legitimate_post_restore_grant_revocation(self):
+        from test_integration_grant_recovery import grant
+        # The original proof is empty, but current target authority can acquire
+        # independently approved/revoked grants after closed restore verification.
+        self.authority['integration_grants']=[grant(state='revoked',policy_version=2)]
+        decision=self.decision()
+        self.assertEqual(decision['authority_digest'],data_digest(self.authority|public_binding(self.native_auth)))
+        self.recovery.resume(decision,exact_hash=data_digest(decision),noninteractive=True)
+        self.assertEqual(self.timeline,['journal','start-edge'])
+
+    def test_missing_or_forged_integration_proof_cannot_resume(self):
+        directory=self.root/'recoveries'/self.op
+        proof=json.loads((directory/PROOF_NAME).read_text())
+        (directory/PROOF_NAME).unlink()
+        with self.assertRaisesRegex(OperatorError,'lacks integration grant'):
+            self.recovery._resume_state(self.op)
+        proof['expected_digest']='sha256:'+'0'*64
+        (directory/PROOF_NAME).write_text(json.dumps(proof))
+        with self.assertRaisesRegex(OperatorError,'proof differs'):
+            self.recovery._resume_state(self.op)
+        self.assertEqual(self.timeline,[])
+
+    def test_legacy_result_without_grant_binding_remains_closed(self):
+        path=self.root/'recoveries'/self.op/'result.json'
+        value=json.loads(path.read_text());value.pop('integration_grants_policy')
+        path.write_text(json.dumps(value))
+        with self.assertRaisesRegex(OperatorError,'lacks verified integration grant'):
             self.recovery._resume_state(self.op)
         self.assertEqual(self.timeline,[])
 

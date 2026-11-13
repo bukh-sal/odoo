@@ -7,9 +7,52 @@ from modular_platform.operator_os import OperatorError
 from modular_platform.plans import data_digest
 from modular_platform.restore_continuation import RestoreContinuation,canonical_dump_digest
 from modular_platform.restore_executor import RestoreExecutor
+from modular_platform.integration_grant_recovery import grant_proof,reconciled_authority,PROOF_NAME
 
 
 class RestoreContinuationTests(unittest.TestCase):
+    def test_actual_continuation_authority_uses_checkpoint_footprint_not_source_list(self):
+        from test_integration_grant_recovery import grant
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);directory=root/'recoveries'/'operation';fence=directory/'dispatch-fence'
+            fence.mkdir(parents=True)
+            source=dict(integration_grants=[grant(state='revoked'),grant(capability='documents.files:new')],native_auth_digest='current')
+            proposal=dict(operation_id='operation',plan_hash='plan',checkpoint_digest='checkpoint',
+                authority=source,managed_workers=[],fresh_database='fresh',restore_configuration={'image_id':'image','sites':[dict(database='source')]},
+                restored_release_lock={'generation':2})
+            decision=proposal|dict(review={'review_id':'original'})
+            (directory/'decision.json').write_text(json.dumps(dict(decision=decision,hash=data_digest(decision))))
+            for name in ('filestore.log','filestore.log.stderr.log'):(directory/name).write_text('')
+            profile=dict(control=dict(release_digest='prior'))
+            request=dict(action='fence',operation_id='operation',database='fresh',site_id='site',
+                release_digest=data_digest(proposal['restored_release_lock']),control_release='prior',image_id='image')
+            (fence/'fence-request.json').write_text(json.dumps(request))
+            for name in ('fence.stdout','fence.stdout.stderr.log'):(fence/name).write_text('')
+            checkpoint=root/'checkpoints'/'operation';checkpoint.mkdir(parents=True)
+            (checkpoint/'manifest.json').write_text(json.dumps(dict(dispatch_profile=profile)))
+            recovery=Mock();recovery.store.root=root;recovery.config={'sites':[dict(site_id='site',database='source')]}
+            recovery._restore_state.return_value=proposal;recovery.store.status.return_value={'phase':'restore_target_created'}
+            recovery._grant_proof=lambda directory,decision:RestoreExecutor._grant_proof(recovery,directory,decision)
+            proof=grant_proof(proposal,[grant(),grant(capability='documents.files:older')])
+            (directory/PROOF_NAME).write_text(json.dumps(proof))
+            helper=recovery._dispatch_helper.return_value
+            helper.require_profile.return_value=profile
+            expected=reconciled_authority(proposal,proof)
+            recovery._authority.side_effect=[(expected,'private'),(source,'private')]
+            recovery._recovery_observer.side_effect=RuntimeError('Reached metadata verification after authority')
+            with patch('modular_platform.restore_continuation.RecoveryReviews'),patch('modular_platform.restore_continuation._run',return_value=b'0'):
+                with self.assertRaisesRegex(RuntimeError,'Reached metadata verification'):
+                    RestoreContinuation(recovery).state('operation')
+                recovery._recovery_observer.assert_called_once()
+                recovery._recovery_observer.reset_mock()
+                recovery._authority.side_effect=[(source,'private'),(source,'private')]
+                with self.assertRaisesRegex(OperatorError,'authority overlay differs'):
+                    RestoreContinuation(recovery).state('operation')
+                recovery._recovery_observer.assert_not_called()
+                (directory/PROOF_NAME).unlink()
+                with self.assertRaisesRegex(OperatorError,'pre-fence continuation boundary'):
+                    RestoreContinuation(recovery).state('operation')
+
     def test_dump_digest_ignores_only_generated_psql_guards_and_comments(self):
         a=b'-- generated date\n\\restrict abc\nCOPY x FROM stdin;\nvalue\n\\.\n\\unrestrict abc\n'
         b=a.replace(b'generated date',b'different date').replace(b'abc',b'xyz')
@@ -67,7 +110,8 @@ class RestoreContinuationTests(unittest.TestCase):
         recovery._dispatch_helper=Mock(return_value=helper)
         decision=dict(operation_id='same-operation',restore_configuration={'sites':[{'database':'source'}]},restored_release_lock={'generation':5},review=dict(review_id='fresh-review'))
         manifest=dict(dispatch_profile=dict(control=dict(release_digest='prior-tag')))
-        with patch('modular_platform.dispatch_operator.DispatchMaintenance',return_value=helper):
+        recovery._grant_proof=Mock(return_value={});recovery._authority=Mock(return_value=({},'private'))
+        with patch('modular_platform.dispatch_operator.DispatchMaintenance',return_value=helper),patch('modular_platform.restore_executor.reconciled_authority',return_value={}):
             with self.assertRaisesRegex(RuntimeError,'Stop after'):
                 recovery._complete_restore(decision,exact_hash='hash',locks=Mock(),directory=Path('restore'),checkpoint=Path('checkpoint'),manifest=manifest,fresh='fresh',private_native_auth='private')
         self.assertEqual(helper.run.call_args.kwargs['review_id'],'fresh-review')
