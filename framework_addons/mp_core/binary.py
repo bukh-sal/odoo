@@ -13,6 +13,7 @@ from urllib.parse import quote
 from uuid import UUID
 
 from jsonschema import Draft202012Validator
+from werkzeug.exceptions import RequestEntityTooLarge
 from odoo import http
 from odoo.exceptions import AccessError
 from odoo.http import request
@@ -130,7 +131,10 @@ class BinaryGateway(http.Controller):
                 raise ContractError('File exceeds binary endpoint bound')
             # Native route max_content_length also bounds unknown/chunked input
             # before get_data; endpoint-specific bound is checked on actual data.
-            data = request.httprequest.get_data()
+            try:
+                data = request.httprequest.get_data()
+            except RequestEntityTooLarge:
+                raise ContractError('File exceeds binary endpoint bound') from None
             if not data or len(data) > endpoint.max_bytes:
                 raise ContractError('File exceeds binary endpoint bound')
             value = getattr(model, endpoint.upload)(metadata, data)

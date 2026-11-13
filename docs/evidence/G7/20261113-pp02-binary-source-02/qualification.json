@@ -1,0 +1,61 @@
+{
+  "phase": "PP-02",
+  "status": "binary_and_document_backend_source_passed_installed_pending",
+  "phase_accepted": false,
+  "roadmap_weighted_accepted_points": 25,
+  "roadmap_phases_accepted": 1,
+  "source_base": "85b6a78bd90",
+  "changes": [
+    "Native get_data body-limit exception reproduced500 then normalized to validation; predispatch413 remains possible",
+    "Private independent document model/service/policy/immutable-version/trash/receipt source implemented",
+    "Quota review replaced lock-only assumption with app-owned repeatable-read write fence; real concurrency proof pending"
+  ],
+  "core_tests": {
+    "cases": 59,
+    "passed": 58,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "source_functions": "actual gateway/result/resolve_scope/model guards/legacy hooks with fake native boundaries",
+    "log_sha256": "91efc49cc9fe7d0ed8fdc7b097db0de50fba5144eac592af00fdd2dcdc33dcc3"
+  },
+  "app_tests": {
+    "cases": 20,
+    "passed": 20,
+    "failures": 0,
+    "errors": 0,
+    "source_functions": "actual private domain/models/services/schema registration over fake ORM/SQL storage",
+    "log_sha256": "3a9cac3724acb9abbaa0c81bcde2f1b31947481f1433c5bb90bf9bcf0476e1b6"
+  },
+  "freeze": {
+    "revision": 28,
+    "files": 122,
+    "rows": 11,
+    "all119previous_hashes_exact": true
+  },
+  "private_app": {
+    "plugin_id": "dev.local.documents",
+    "version": "0.1.0",
+    "source_commit": "732c261e61021e92d9ceee4d63da54dc6a26f22e",
+    "pre_ui_archive_development_validated": true,
+    "archive_admitted_or_frozen": false,
+    "native_implementation_models": 5
+  },
+  "source_sha256": {
+    "framework_addons/mp_core/binary.py": "01d7138b5fe100b8e9a6f1db312bcb4ff0ba300e8b539d27966815d97c1ea417",
+    "framework_addons/mp_core/attachments.py": "26fd96e93e0bc33ecd7c298d102211e24f3485802c043a44529cf7567caf574c",
+    "framework_addons/mp_core/controllers.py": "dcdcc0d8ce39e235a1cdd549a5825dbee5f328fdb718ee9e6b2b6efc39b4c071",
+    "tests/test_workspace_binary.py": "9b224a797fb45e27f7cf808347afa20a67e085795333f7af58abec103d938bd0",
+    "docs/architecture-decisions/0084-current-authority-binary-transport.md": "085353086216b7d5b059543580096e6a413538731722ef651ebfd9d83e632fcc",
+    "docs/contracts/binary-v1.md": "a7a726970b9b96dab93154240575981b5d03549e874fe995966933ecab7f89a8",
+    "docs/contracts/freeze-v1.json": "03fa73da7c59d766be9f98f5da370d7a13788049cfd4327d8b1c2af9b923620d"
+  },
+  "limitations": [
+    "No native image/build/install or HTTP/DB/browser qualification; retained PP-01 site unchanged by this work",
+    "No real concurrent-quota test yet; fake fixture does not simulate MVCC",
+    "Frontend/optional links/populated upgrade/fresh restore and phase acceptance pending",
+    "Werkzeug exception is a fake native boundary in source tests; native pinned dependency3.1.9 must be exercised installed",
+    "Existing core0.2.1 identity/images not relabelled; new successor version/build review required before deployment"
+  ],
+  "next_action": "Create fresh Documents frontend section plan, then implement useful UI; subsequent current-state version/build/native qualification plan"
+}

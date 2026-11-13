@@ -82,3 +82,9 @@ and scoped model token/stream access remain denied. Existing119frozen files,
 schemas/types/examples and JSON gateway DTOs are unchanged. The new contract row
 freezes the ADR, transport prose and actual source-boundary tests; installed app,
 storage/recovery and native-route acceptance remain pending PP-02 qualification.
+
+Revision28 source-qualification follow-up documents predispatch413 versus
+handler validation errors and JSON-escaped Unicode header metadata; adds the
+regression that first reproduced an incorrect500 at the native body-limit
+boundary. Only the three new binary-row witnesses change;119older frozen
+files remain exact. Native HTTP/DB and application qualification are pending.

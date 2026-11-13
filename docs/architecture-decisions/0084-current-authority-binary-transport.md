@@ -51,3 +51,10 @@ witness; existing frozen schemas/types/fixtures are unchanged. A new immutable
 core successor identity/image is required before installing changed bytes;
 existing core0.2.1 artifacts remain exact. Source tests do not establish installed
 authorization, app usefulness, recovery or lifecycle acceptance.
+
+Source review found a body-limit edge case before any image was built: an
+unknown-length body can raise the native HTTP library's413 exception during
+`get_data`. Normalize that handler-boundary refusal as validation rather than
+an internal500. Native/proxy predispatch413 remains possible and is documented.
+The regression first reproduced500, then passes with the specific exception
+mapping. No broad exception swallowing or whole-request retry change.

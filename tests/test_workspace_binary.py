@@ -6,6 +6,7 @@ import ast
 from contextlib import contextmanager
 import importlib.util
 import json
+import traceback
 from pathlib import Path
 import sys
 import types
@@ -25,6 +26,7 @@ class ReleaseMismatch(ContractError): pass
 class ReleaseUnavailable(ContractError): pass
 class SerializationFailure(Exception): pass
 class DeadlockDetected(Exception): pass
+class RequestEntityTooLarge(Exception): pass
 
 
 def load(name, path):
@@ -56,6 +58,8 @@ def gateway():
     http.route = lambda *a, **kw: lambda method: method
     native = types.ModuleType('odoo'); native.http = http
     exceptions = types.ModuleType('odoo.exceptions'); exceptions.AccessError = Denied
+    web = types.ModuleType('werkzeug'); web.__path__ = []
+    web_errors = types.ModuleType('werkzeug.exceptions'); web_errors.RequestEntityTooLarge = RequestEntityTooLarge
     # Load the ACTUAL result/PublicError definitions. Remaining unrelated
     # controller models/routes need no native registry for this boundary proof.
     tree = ast.parse((ROOT / 'framework_addons/mp_core/controllers.py').read_text())
@@ -69,10 +73,13 @@ def gateway():
         AccessError=Denied, MissingError=Missing, ValidationError=Invalid, ContractError=ContractError,
         ClientReleaseMismatch=ReleaseMismatch, ClientReleaseUnavailable=ReleaseUnavailable,
         ERROR_STATUS=ERROR_STATUS, psycopg2=types.SimpleNamespace(errors=types.SimpleNamespace(
-            SerializationFailure=SerializationFailure, DeadlockDetected=DeadlockDetected)))
+            SerializationFailure=SerializationFailure, DeadlockDetected=DeadlockDetected)),
+        traceback=traceback, Path=Path, json=json,
+        _logger=types.SimpleNamespace(error=lambda *args: calls.append('private_error')))
     exec(compile(selected, 'actual-core-result', 'exec'), controller.__dict__)
     modules = {'_binary_test': package, '_binary_test.controllers': controller,
-        'odoo': native, 'odoo.http': http, 'odoo.exceptions': exceptions}
+        'odoo': native, 'odoo.http': http, 'odoo.exceptions': exceptions,
+        'werkzeug': web, 'werkzeug.exceptions': web_errors}
     with patch.dict(sys.modules, modules):
         try:
             binary = load('_binary_test.binary', ROOT / 'framework_addons/mp_core/binary.py')
@@ -154,6 +161,14 @@ class WorkspaceBinaryTests(unittest.TestCase):
                 self.assertEqual(self.upload(binary)['status'], 400)
                 self.assertEqual('body' in calls, body_read)
                 self.assertFalse(any(isinstance(c, tuple) and c[0] == 'upload' for c in calls))
+
+    def test_native_body_limit_exception_is_validation_failure_not_internal_error(self):
+        with gateway() as (binary, _, req, _, calls):
+            req.httprequest.content_length = None
+            req.httprequest.get_data = lambda: (_ for _ in ()).throw(RequestEntityTooLarge())
+            response = self.upload(binary)
+            self.assertEqual(response['status'], 400)
+            self.assertNotIn(('audit', 'allowed'), calls)
 
     def test_download_rechecks_guard_and_never_returns_inline_or_cacheable_content(self):
         with gateway() as (binary, _, req, model, calls):

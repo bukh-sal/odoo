@@ -22,10 +22,14 @@ No installation/grant is conferred by registration.
 - `Content-Type: application/octet-stream`; no content encoding, query parameters
   or multipart form. Native route bounds chunked/unknown-length bodies at8MiB;
   endpoint bound is also checked against declared and actual size. Empty body
-  refuses. Unsupported transport/bound/schema inputs produce the usual JSON error.
+  refuses. Body-limit exceptions raised during the handler become validation
+  errors; native/proxy rejection before dispatch may instead return HTTP413.
+  Other unsupported transport/bound/schema inputs use the usual JSON error.
 - `X-MP-Binary-Metadata` is a JSON object at most4,096UTF8 bytes, duplicate keys
   refused, validated by the registered app schema. Its filename/key/revision and
   type semantics belong to the app; no string becomes a model/field/handler path.
+  Browser clients should JSON-escape non-ASCII metadata characters so native
+  HTTP header ByteString encoding does not corrupt a Unicode filename.
 - Private upload handler `(metadata, bytes)` returns an app DTO, validated against
   its result schema and limited to64KiB encoded JSON. Successful response uses
   the existing major1 service-response envelope and no-store. Bytes and outcomes

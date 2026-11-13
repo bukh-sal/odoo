@@ -1,6 +1,24 @@
 # Work log
 
 
+13November2026 — PP02-DATA and binary prebuild follow-up: private independent
+Documents backend732c261 implements immutable app-owned bytea versions, metadata
+CAS, actor/request receipts, quota/history limits, restore-as-new-version, trash,
+restore/purge and registration/security/package source.20 actual-source app
+checks pass over fake ORM/SQL; development archive validates, not admitted or
+frozen. No frontend or installed support claim. Review of native repeatable-read
+semantics exposed stale quota snapshots with a lock-only scheme; app-owned
+unique fence UPSERT now supplies the real update conflict needed for normal
+transaction retry. Real concurrent database proof is still pending. Separately,
+actual binary result source reproduced500 when get_data raises the native limit
+exception; specific mapping now returns validation while predispatch413 remains
+possible.59corecases58pass1existing skip; old119 frozen hashes exact,122files/11rows.
+[Source evidence](evidence/G7/20261113-pp02-binary-source-02/qualification.json).
+No image/site/operation/userdata mutation, no full-host repeat; current review
+cohort remains intact. Next fresh frontend plan before UI implementation, then
+current-state immutable successor/build/native byte/recovery qualification.
+
+
 13November2026 — PP02-BIN: fresh phase plan/research before code. Actual inherited
 binary token lookup can sudo before workspace checks, so retained attachment
 refusal and guarded both prelookup scoped model/XML-ID and low-level stream.
