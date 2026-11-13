@@ -1,0 +1,95 @@
+{
+  "phase": "PP-02",
+  "section": "PP02-UI",
+  "state": "source_implemented_installed_pending",
+  "phase_accepted": false,
+  "roadmap_accepted_points": 25,
+  "core_source_commit": "97d035ebcab",
+  "app_source_commit": "2aa048f8c3d8de74693a2dfbc1567ebe67673171",
+  "plugin_id": "dev.local.documents",
+  "version": "0.1.0",
+  "archive_digest": "sha256:81baf9ea8d08c5ca2d9d41f4d551faefa63cda2c2c3bea149ff689c52d9b479d",
+  "archive_bytes": 44699,
+  "archive_admitted": false,
+  "source_checks": {
+    "javascript": {
+      "passed": 21,
+      "failed": 0,
+      "log_sha256": "efbf01029f7e1238738efede16d750bc85c866340e38b347f8d52402e41aca4e"
+    },
+    "python": {
+      "unique_passed": 22,
+      "failed": 0,
+      "baseline_log_sha256": "1b709d0be6060fb9a47772b653d2dc0a0409a84b2a56bf6bb79508dbe9d25e0a",
+      "changed_UI_module_2cases_rerun_sha256": "5c929a12f7a2d2938f888f4d032111836e70ef62f3a6bd9a44162698c809d70b"
+    },
+    "all_4_Owl_XML_templates_parsed": true,
+    "owned_native_menu_and_page_checked": true,
+    "deterministic_assembler_ArtifactValidator": true
+  },
+  "resolved_source_defect": "Manifest folder-open icon refused before archive; corrected folder identifier and actual normalizer regression; no guard relaxation or build/retry",
+  "limits": [
+    "Mocked browser/native/SQL source proof only; not rendered or installed yet",
+    "No image/site/catalog/trust/operation change",
+    "Concurrent quota, role/token/native HTTP, byte recovery, optional links and real UI checks remain required"
+  ],
+  "next": "Fresh core0.2.2 identity/composition build plan before source identity edits/build, then independently approved normal native qualification",
+  "candidate_source_platform": "0.2.2",
+  "identity_checks": {
+    "identity_cases": [
+      {
+        "platform": "0.2.2",
+        "native": "19.0.0.2.2",
+        "accepted": true
+      },
+      {
+        "platform": "0.2.2",
+        "native": "19.0.0.2.1",
+        "accepted": false
+      },
+      {
+        "platform": "0.2.1",
+        "native": "19.0.0.2.1",
+        "accepted": true
+      }
+    ],
+    "archive_pins": {
+      "dev.local.partners": {
+        "version": "0.1.0",
+        "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+        "bytes": 29246
+      },
+      "dev.local.workboard": {
+        "version": "0.2.5",
+        "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+        "bytes": 58472
+      },
+      "dev.local.delivery": {
+        "version": "0.1.4",
+        "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+        "bytes": 28470
+      },
+      "dev.local.documents": {
+        "version": "0.1.0",
+        "digest": "sha256:81baf9ea8d08c5ca2d9d41f4d551faefa63cda2c2c3bea149ff689c52d9b479d",
+        "bytes": 44699
+      }
+    },
+    "focused_cases": 45,
+    "focused_passed": 45,
+    "focused_failed": 0,
+    "focused_skipped": 0,
+    "focused_seconds": 68.221,
+    "focused_modules": [
+      "native_versions",
+      "platform_compatibility",
+      "application_distribution",
+      "distribution_metadata",
+      "app_free_candidate_policy",
+      "clean_candidate_build",
+      "release_staging"
+    ],
+    "claim": "Source/materialization/fake build/staging proof only; no Docker build or deployment yet"
+  },
+  "claim": "Source-only UI/client/policy proof, no rendered/native/installed acceptance"
+}

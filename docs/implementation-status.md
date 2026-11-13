@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T01:00:48.497374+00:00
+- Updated UTC: 2026-11-13T01:31:51.774756+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: binary/document backend source complete; frontend next.** Historical AP/CW-L01/AR/CF/BG/R1 scopes remain complete.
-- Latest work item: **PP-02 binary/document backend source implemented, installed qualification pending (13November2026).** Generic binary transport/legacy-path protection and private app immutable versions/trash/CAS/receipts/quota policy. [Current source evidence](evidence/G7/20261113-pp02-binary-source-02/qualification.json):59 core cases,58 passed/1 existing Windows symlink skip;20 app cases passed;0 failures/errors. Freeze122files/11rows. No new image/deployment/phase acceptance. PP-01 remains4/4 accepted,25/100 roadmap points,1/5 phases.
+- Current phase/gate: **PP-01 accepted; PP-02 active: Documents interface/source complete; immutable0.2.2 builds next.** Historical AP/CW-L01/AR/CF/BG/R1 scopes remain complete.
+- Latest work item: **PP02-UI source implemented (13November2026).** Independent Documents library/trash/history/verified download/escaped text preview and protected upload/rename intents.21JS checks +22Python source cases pass;45identity/distribution/staging checks pass. App archive81baf9ea/0.1.0 deterministic/unadmitted; private commit2aa048f. [Source evidence](evidence/G7/20261113-pp02-documents-ui-source-01/qualification.json). New provisional source identity0.2.2/core19.0.0.2.2, frozen122files/11rows unchanged. No image/deployment/phase acceptance yet; PP01accepted25/100,1/5phases.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -34,8 +34,9 @@ transactional Binary(attachment=False) storage is the chosen initial path;
 metadata/version/quota/content policy belongs to the private app. No new storage
 engine/dependency or app-specific core branch. Freeze28 adds3files while all119
 previous frozen bytes remain exact. Actual gateway/result and scope/model guard
-source functions are exercised at fake native/SQL boundaries, not an installed
-file-security claim. Current review site remains generation14/old core0.2.1.
+source functions are exercised at fake native/SQL boundaries. UI/client checks
+execute source with mocked browser/native boundaries and parse its four templates;
+this is not rendered UI, installed file-security or real concurrent-quota proof. Current review site remains generation14/old core0.2.1.
 
 Prebuild review caught two defects in unqualified source. A native body-limit
 exception reproduced500 and now maps to validation; predispatch413 remains a
@@ -43,16 +44,17 @@ native/proxy refusal. App quota locking alone would not refresh repeatable-read
 snapshots; a declared owned documents.fence row now gets an exact scoped UPSERT,
 forcing the normal transaction retry on a stale writer. No platform policy row
 is mutated. Real concurrent quota/native HTTP proof remains mandatory. Private
-Documents repo732c261e6102 contains the policy/models/services; no frontend yet.
+Documents repo2aa048f contains policy/models/services and the library interface.
 Development assembly/ArtifactValidator passed, not admitted/frozen/deployed.
 
 Acceptance: PP-02 incomplete; no product/native/lifecycle outcome accepted.
 Blockers: no human input or running/uncertain mutation. Required next work is
-fresh frontend section plan and private app UI implementation;
-core successor identity/build/approval/native byte+data recovery follows its own
-current section review. No PP-03..05 plan. Preserve all current review data and
-never replay completed operations. Core and private backend source are implemented; UI and installed/lifecycle outcomes
-remain unqualified. Rough implementation is about30/100; accepted points remain25/100.
+three reviewed immutable clean builds (standalonecore, same-app maintenance,
+Documents composition), with fresh source/image verification before a separate
+normal native core-upgrade/install decision. The identity/build section plan now
+exists before its source edits; no native apply is authorized by a build receipt. No PP-03..05 plan. Preserve all current review data and
+never replay completed operations. Core/private backend/UI source are implemented; rendered/native/lifecycle outcomes
+remain unqualified. Rough implementation is about35/100; accepted points remain25/100.
 
 ## Product/platform roadmap (13November2026)
 

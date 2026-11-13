@@ -104,3 +104,13 @@ compatibility, full cascade removal, completed-checkpoint restore, complex migra
 new event-consumer effects, new all-layer app-image audit or broad mobile/accessibility
 qualification. The supported baseline and licenses/notices remain provisional;
 the [next roadmap phases](product-platform-roadmap.md) remain required.
+
+
+## PP-02 successor in preparation
+
+Core source0.2.2/native19.0.0.2.2 names the new authenticated binary capability.
+It is a provisional local successor, not a relabel of qualified0.2.1 images or a
+new support/ABI/licensing promise. Private Documents0.1.0 archive81baf9ea is
+assembled and source-tested but unadmitted/uninstalled. Current qualified review
+site remains the PP-01 core0.2.1 cohort above. Exact image/native/UI/lifecycle
+evidence is required before extending the support matrix.

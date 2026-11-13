@@ -1,6 +1,22 @@
 # Work log
 
 
+13November2026 — PP02-UI: fresh frontend section plan preceded independent
+library/trash/history/download/preview/client/dialog source. Escaped text only,
+SHA/size-verified bounded downloads, Unicode-safe raw-upload metadata, explicit
+same-key uncertain retries/status checks, safe draft keep/close and native action
+navigation guard; no new core UI framework.21JS/22Python source cases pass,
+including old-read preview suppression/authority-cache clearing/owned menu.
+ArtifactValidator refused the first app icon identifier before archive creation;
+fixed the app identifier and added actual manifest normalization; no schema
+relaxation. Exact first archive81baf9ea/44699B is unadmitted. Private2aa048f.
+Fresh identity/build review found core maintenance must retain exact app/policy
+selection, so use standalone C, same-app M, then separate Documents D images;
+no guard bypass. Source0.2.2/core19.0.0.2.2 and explicit optional recipe/policy;
+45affected identity/distribution/staging checks pass, old2.1image remains readable.
+No Docker build/live mutation/rendered acceptance yet. [Evidence](evidence/G7/20261113-pp02-documents-ui-source-01/qualification.json).
+
+
 13November2026 — PP02-DATA and binary prebuild follow-up: private independent
 Documents backend732c261 implements immutable app-owned bytea versions, metadata
 CAS, actor/request receipts, quota/history limits, restore-as-new-version, trash,
