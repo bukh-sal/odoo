@@ -1,3 +1,15 @@
+PP05 fresh research13November2026: actual stock Home loads first-app router
+action before workspace selection; the neutral server bootstrap response avoids
+that race while reusing existing authentication and current resolve_scope. Native
+feature enable already reconstructs exact declared revoked grants for separate OS
+permission acknowledgement; no SQL grant repair is needed. Canonical tests require
+current root/tests/SDK paths and bound rg, now available through the actual Codex
+local executable. Retained optional Node tests had historical path/fixture drift;
+those test-only corrections preserve domain and topic-authority negatives.
+PP04 C is accepted under the [measured boundary](build-reproducibility.md); its
+activation research below is historical. PP05 plan fixes dataset/budgets BEFORE
+measurement, with final installed/artifact/UI/lifecycle qualification still open.
+
 # Roadmap research and decisions
 
 PP04 C activation update,13November2026, sourcec265b307: actual retained A native

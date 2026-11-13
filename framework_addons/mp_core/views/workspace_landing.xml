@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="workspace_landing" name="Choose workspace">
+        <t t-call="web.layout">
+            <t t-set="title">Choose workspace</t>
+            <t t-set="body_classname" t-value="'mp-workspace-entry'"/>
+            <t t-set="head">
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <style>
+                    .mp-workspace-entry { margin: 0; color: #172b3a; background: #f4f7fa; font: 1rem/1.6 system-ui, sans-serif; }
+                    .mp-workspace-entry main { box-sizing: border-box; max-width: 38rem; margin: 8vh auto; padding: 1.5rem; }
+                    .mp-workspace-entry h1 { margin: 0 0 .5rem; font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1.2; }
+                    .mp-workspace-entry p { margin-block: .75rem 1.5rem; }
+                    .mp-workspace-entry ul { list-style: none; padding: 0; margin-block: 1.5rem; }
+                    .mp-workspace-entry li { margin-block: .75rem; }
+                    .mp-workspace-entry .mp-workspace-choice { display: block; padding: 1rem 1.25rem; color: #064f7a; background: white; border: 1px solid #b8cbd9; border-radius: .5rem; text-decoration: none; font-weight: 650; overflow-wrap: anywhere; }
+                    .mp-workspace-entry a { color: #064f7a; }
+                    .mp-workspace-entry a:hover { text-decoration: underline; }
+                    .mp-workspace-entry a:focus-visible { outline: 3px solid #064f7a; outline-offset: 4px; }
+                </style>
+            </t>
+            <main aria-labelledby="mp-workspace-heading">
+                <h1 id="mp-workspace-heading">Choose workspace</h1>
+                <p>Open a workspace to find your applications and work.</p>
+                <t t-if="workspaces_unavailable">
+                    <p role="status">The workspace list is unavailable. Reload this page or contact your administrator.</p>
+                    <p><a href="/odoo">Reload workspaces</a></p>
+                </t>
+                <ul t-elif="workspaces" aria-label="Available workspaces">
+                    <li t-foreach="workspaces" t-as="space">
+                        <a class="mp-workspace-choice" t-att-href="'/odoo?workspace=' + space['id']" t-esc="space['name']"/>
+                    </li>
+                </ul>
+                <p t-else="" role="status">No active workspaces are available. Contact your administrator.</p>
+                <p><a href="/web/session/logout?redirect=/web/login">Sign out</a></p>
+            </main>
+        </t>
+    </template>
+</odoo>

@@ -6,7 +6,8 @@ keeps its own exact source and support boundary; it does not gain current code.
 The [candidate support record](candidate-support.md) and [current status](implementation-status.md)
 identify actual qualification. The public default-core build/plan/prepare/initialize/
 publish path and fresh sign-in were [verified on an empty disposable site](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json).
-The new independent app author/install/update/use walkthrough is still pending.
+The independent app author/install/diagnose/populated-update/use walkthrough is
+[verified in its bounded cohort](evidence/G7/20261113-pp04-independent-authoring-01/qualification.json).
 
 Native Python and same-origin frontend applications are trusted. This is an
 owned fork, not a third-party addon compatibility or hostile-code sandbox.
@@ -113,5 +114,8 @@ volume, repeat a partial phase or guess that apply/restore did not happen.
 This command deliberately provides no reset/prune/prefix-deletion operation.
 Retain the exact site/images/checkpoints or prepare a separately reviewed exact
 ownership cleanup. Unresolved-failure recovery remains separately reviewed with
-fresh database and separate resume. Completed-checkpoint restore is still PP04
-implementation work, not an existing promise or a reason to bypass a guard.
+fresh database and separate resume. A separate
+[completed-checkpoint workflow](completed-checkpoint-recovery.md) is qualified
+only for its exact current native replacement/known-effect cohort; it retains
+original completed history and needs new reviews and distinct resume. It is not
+arbitrary in-place rollback or a reason to bypass a guard.

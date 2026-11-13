@@ -2634,3 +2634,19 @@ classifier only, no product/build retry. No extra repair builds, live mutations,
 fixture or cleanup. PP05 is NEXT, requires fresh phase plan before its work.
 Goal remains ACTIVE; final canonical/budgets/current-support/UI/retention audit
 still required. [Phase acceptance](evidence/G7/20261113-pp04-developer-operator-01/qualification.json).
+
+
+PP05 active source checkpoint (13November2026): fresh plan/budgets precede work.
+Generic stock entry now reuses actual Home auth/session/redirect checks, then
+renders a neutral escaped current-authority workspace chooser before any app on
+unscoped startup. Scoped pages and new-tab switching/drafts remain unchanged.
+Source0.2.5/core19.0.0.2.5 and private Taskfiles0.1.5 busy-label successor are not
+installed or newly admitted.70 affected core checks pass,18 app Python/16 app
+component checks pass;50 unchanged root Node checks plus15 coherent event-client
+vectors pass. Freeze122/11 unchanged. Retained test failures classified: missing
+fake Controller; seven historical Node source paths; A01 neutral fixture vs old
+Notes negatives and subscription harness. No production event/authority guard
+was changed; explicit Notes negatives and mismatched-topic denial retained.
+Actual new image/bootstrap/UI/normal operations/budgets/final canonical/lifecycle
+and exact retention remain REQUIRED. No C/B image reapply or live site changes.
+PP01..04 accepted90/1004/5; PP05 active, goalACTIVE, no extra outcome credit.

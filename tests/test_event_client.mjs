@@ -4,10 +4,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 const root=process.cwd();
-const contractPath=path.join(root,'platform_addons/mp_shell/static/src/event_contract.js');
+const contractPath=path.join(root,'framework_addons/mp_shell/static/src/event_contract.js');
 const contractURL='data:text/javascript;base64,'+Buffer.from(fs.readFileSync(contractPath,'utf8')).toString('base64');
 const {validEventResult}=await import(contractURL);
-const source=fs.readFileSync(path.join(root,'platform_addons/mp_shell/static/src/event_client.js'),'utf8');
+const source=fs.readFileSync(path.join(root,'framework_addons/mp_shell/static/src/event_client.js'),'utf8');
 assert(source.includes("from './event_contract'"));
 const {DomainEventClient}=await import('data:text/javascript;base64,'+Buffer.from(source.replace("from './event_contract'",'from '+JSON.stringify(contractURL))).toString('base64'));
 const cases=JSON.parse(fs.readFileSync(path.join(root,'packages/contracts/fixtures/v1/event-transport-cases.json'),'utf8')).valid;
@@ -27,7 +27,7 @@ function harness(overrides={}){
         throw Error('Unexpected test request');
     };
     const client=new DomainEventClient({context,generation:7,request,isCurrent:overrides.isCurrent||(()=>true),onError:e=>errors.push(e.code),clock:()=>Date.parse('2026-10-29T15:00:00Z'),setTimer:fn=>{const id=++next;timers.set(id,fn);return id;},clearTimer:id=>timers.delete(id),...overrides.options});
-    return {client,calls,errors,timers,subscribe:callback=>{client.subscribe('org.example.notes.changed',callback,{binding_id:context.site_id});return [...client.entries.values()][0];}};
+    return {client,calls,errors,timers,subscribe:callback=>{client.subscribe(cases.subscribe_request.topic,callback,{binding_id:context.site_id});return [...client.entries.values()][0];}};
 }
 await test('default timers keep the browser global receiver for scheduling and cleanup',()=>{
     const originalSet=globalThis.setTimeout,originalClear=globalThis.clearTimeout;let scheduled=0,cleared=0;
@@ -35,18 +35,28 @@ await test('default timers keep the browser global receiver for scheduling and c
     globalThis.clearTimeout=function(id){assert.equal(this,globalThis,'browser clearTimeout receiver');assert.equal(id,19);cleared++;};
     try{
         const client=new DomainEventClient({context:{},generation:1,request:()=>assert.fail('timer must not execute synchronously'),isCurrent:()=>true,onError:()=>assert.fail('unexpected error')});
-        const off=client.subscribe('org.example.notes.changed',()=>{},{binding_id:cases.subscribe_result.subscription_id});off();client.dispose();assert.equal(scheduled,1);assert.equal(cleared,1);
+        const off=client.subscribe(cases.subscribe_request.topic,()=>{},{binding_id:cases.subscribe_result.subscription_id});off();client.dispose();assert.equal(scheduled,1);assert.equal(cleared,1);
     }finally{globalThis.setTimeout=originalSet;globalThis.clearTimeout=originalClear;}
 });
 await test('six golden results accepted; requests and unknown shapes rejected',()=>{
     for(const [name,value]of Object.entries(cases))assert.equal(validEventResult(value),name.endsWith('_result'),name);
     for(const value of [{},{kind:'unknown'},{kind:'__proto__'},null,true])assert.equal(validEventResult(value),false);
 });
-await test('strict calendar, payload identity, duplicate receipts and Unicode',()=>{
+await test('strict calendar, generic envelope, duplicate receipts and Unicode',()=>{
     for(const date of ['2026-02-30T15:00:00Z','0000-01-01T00:00:00Z','2026-10-29T15:00:00Z\n']){const value=clone(cases.poll_result);value.deliveries[0].lease_expires_at=date;assert.equal(validEventResult(value),false);}
-    for(const mutation of [v=>v.deliveries.push(clone(v.deliveries[0])),v=>v.deliveries[0].event.payload.note_id=v.subscription_id,v=>v.deliveries[0].event.payload.body='private',v=>v.protocol=true,v=>v.extra='authority',v=>v.deliveries[0].event.payload.revision=true]){const value=clone(cases.poll_result);mutation(value);assert.equal(validEventResult(value),false);}
+    for(const mutation of [v=>v.deliveries.push(clone(v.deliveries[0])),v=>v.protocol=true,v=>v.extra='authority']){const value=clone(cases.poll_result);mutation(value);assert.equal(validEventResult(value),false);}
     const value=clone(cases.poll_result);value.deliveries[0].event.topic='org.example.other.changed';value.deliveries[0].event.owner_plugin_id='org.example.other';value.deliveries[0].event.payload={text:'😀'.repeat(2048)};assert.equal(validEventResult(value),true);
     value.deliveries[0].event.payload.text='\ud800';assert.equal(validEventResult(value),false);
+});
+await test('optional reference Notes validation stays domain-specific while generic payloads remain arbitrary',()=>{
+    const generic=clone(cases.poll_result);generic.deliveries[0].event.payload={note_id:generic.subscription_id,body:'arbitrary domain data',revision:true};
+    assert.notEqual(generic.deliveries[0].event.topic,'org.example.notes.changed');assert.equal(validEventResult(generic),true);
+    const notes=clone(cases.poll_result),event=notes.deliveries[0].event;
+    event.topic='org.example.notes.changed';event.owner_plugin_id='org.example.notes';event.schema_version=1;event.aggregate_sequence=3;
+    event.payload={note_id:event.aggregate_id,revision:3,change:'updated'};assert.equal(validEventResult(notes),true);
+    for(const mutation of [v=>v.deliveries[0].event.payload.note_id=v.subscription_id,v=>v.deliveries[0].event.payload.body='private',v=>v.deliveries[0].event.payload.revision=true]){
+        const value=clone(notes);mutation(value);assert.equal(validEventResult(value),false);
+    }
 });
 await test('byte and depth limits apply before callbacks',()=>{
     const value=clone(cases.poll_result);const event=value.deliveries[0].event;event.topic='org.example.other.changed';event.owner_plugin_id='org.example.other';event.payload=Object.fromEntries(Array.from({length:8},(_,i)=>[String(i),'x'.repeat(2048)]));assert.equal(validEventResult(value),false);
@@ -55,6 +65,18 @@ await test('byte and depth limits apply before callbacks',()=>{
 await test('redelivery has one callback and ACKs each current receipt',async()=>{
     const h=harness();let effects=0;const entry=h.subscribe(event=>{effects++;assert.equal(event.generation,7);assert(Object.isFrozen(event));assert(Object.isFrozen(event.data));});
     await h.client.step(entry);await h.client.step(entry);assert.equal(effects,1);assert.equal(h.calls.filter(c=>c.kind==='ack_request').length,2);h.client.dispose();await Promise.resolve();
+});
+await test('subscription or delivery topic mismatch cannot invoke callbacks or ACK',async()=>{
+    for(const stage of ['subscribe_request','poll_request']){
+        const h=harness({request:async message=>{
+            if(message.kind==='close_request')return clone(cases.close_result);
+            const value=clone(message.kind==='subscribe_request'?cases.subscribe_result:cases.poll_result);
+            if(message.kind===stage){if(stage==='subscribe_request')value.topic='org.example.foreign.changed';else value.deliveries[0].event.topic='org.example.foreign.changed';}
+            return value;
+        }});let effects=0;const entry=h.subscribe(()=>effects++);await h.client.step(entry);
+        assert.equal(effects,0);assert(!h.calls.some(c=>c.kind==='ack_request'));
+        assert(h.errors.includes(stage==='subscribe_request'?'INTERNAL_ERROR':'FORBIDDEN'));h.client.dispose();
+    }
 });
 await test('one failed callback does not repeat a successful sibling effect',async()=>{
     const h=harness();let first=0,second=0;const entry=h.subscribe(()=>first++);
@@ -88,6 +110,6 @@ await test('a slow callback cannot pass stale event authority to a later callbac
     await h.client.step(entry);assert.equal(first,1);assert.equal(second,1);assert.equal(h.calls.filter(c=>c.kind==='ack_request').length,1);h.client.dispose();
 });
 await test('unsubscribe and native wake subscription are disposed once',async()=>{
-    let unwake=0;const h=harness({options:{wake:()=>()=>unwake++}});const off=h.client.subscribe('org.example.notes.changed',()=>{}, {binding_id:cases.poll_result.subscription_id});off();off();h.client.dispose();h.client.dispose();assert.equal(unwake,1);assert.equal(h.client.entries.size,0);assert.equal(h.timers.size,0);
+    let unwake=0;const h=harness({options:{wake:()=>()=>unwake++}});const off=h.client.subscribe(cases.subscribe_request.topic,()=>{}, {binding_id:cases.poll_result.subscription_id});off();off();h.client.dispose();h.client.dispose();assert.equal(unwake,1);assert.equal(h.client.entries.size,0);assert.equal(h.timers.size,0);
 });
 process.stdout.write(JSON.stringify({result:'passed',checks:passed,limits:'Actual frontend validator/client semantics; native PostgreSQL/HTTP/browser integration remains required.'})+'\n');

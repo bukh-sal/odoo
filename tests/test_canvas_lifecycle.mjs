@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {getEventListeners} from 'node:events';
 import {readFile} from 'node:fs/promises';
 
-const source=await readFile(new URL('../platform_addons/mp_example_canvas/static/src/page.js',import.meta.url),'utf8');
+const source=await readFile(new URL('../examples/mp_example_canvas/static/src/page.js',import.meta.url),'utf8');
 const {CanvasPage}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 
 class Element extends EventTarget {

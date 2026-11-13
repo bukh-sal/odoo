@@ -1,4 +1,4 @@
-# Provisional app-free core 0.2.1
+# Provisional app-free core support
 
 Current PP03 development cohort,13November2026: core0.2.3 with Documents0.1.6
 and Taskfiles0.1.4, plus unchanged Partners0.1.0/Workboard0.2.5/Customer Work0.1.4.

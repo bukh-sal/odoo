@@ -42,7 +42,7 @@ PP-03, or build a speculative framework in anticipation of later apps.
 | PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp02-application-breadth-01/qualification.json) |
 | PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp03-platform-reuse-01/qualification.json): populated migration, useful event effects/replay/authority/recovery/UI and generic ownership audit |
 | PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | [Accepted, all bounded A/B/C outcomes](evidence/G7/20261113-pp04-developer-operator-01/qualification.json). Historical section records: [public bootstrap](evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json), [independent author/install/repair/populated upgrade/UI A](evidence/G7/20261113-pp04-independent-authoring-01/qualification.json) and [actual completed-checkpoint recovery B](evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json) verified; [measured rebuild boundary](build-reproducibility.md) and reconciliation pass |
-| PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Not started |
+| PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Active: fresh phase plan, predeclared budgets and bounded startup/review source polish; actual final qualification pending |
 
 Weights estimate outcome importance, not elapsed time or test counts. Current
 new-roadmap accepted progress is **90/100 phase points; 4/5 phases accepted**.
@@ -65,7 +65,8 @@ current-authority/document-byte fresh restoration, separate resume and usable UI
 C now verifies repeated app archives, normal/cache and actual forced recompilation
 with exact declared installed content/runtime layers, while preserving accurate
 provenance and intermediate-wheel limits. PP-04 is accepted in that bounded scope.
-PP-05 is next; its fresh plan is not written by this phase acceptance. Research,
+PP-05 is now active under its fresh plan and predeclared dataset/budgets, with
+startup/review source polish checked and installed/final qualification pending. Research,
 documents and source-only checks do not earn additional outcome acceptance.
 Report partial progress only against real delivered outcomes; keep original R1
 99/99 and its score separate. Re-estimate effort when the fresh phase plan exists.

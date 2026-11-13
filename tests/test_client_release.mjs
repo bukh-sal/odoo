@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-const source=await readFile(new URL('../platform_addons/mp_shell/static/src/client_release.js',import.meta.url),'utf8');
+const source=await readFile(new URL('../framework_addons/mp_shell/static/src/client_release.js',import.meta.url),'utf8');
 const {ClientReleaseFence,validRelease,isReleaseError}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const document=JSON.parse(await readFile(new URL('../packages/contracts/examples/v1/client-release.json',import.meta.url),'utf8'));
 

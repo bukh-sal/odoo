@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "phase": "PP-05 A",
+  "state": "source_checked_installed_qualification_required",
+  "recorded_at": "2026-11-13T15:47:31.077160+00:00",
+  "source_base": "6ccb97493edca165e687491895722c085506a2dd",
+  "source_sha256": {
+    "framework_addons/mp_core/workspace_landing.py": "fff6fac78222d6abe1cee8a732798b320ddc7d35f4c50057c0673313344bb8d2",
+    "framework_addons/mp_core/views/workspace_landing.xml": "54de42e9ee138e56d26111e9562580e021b9f1d1525ca654c7d8563bd76306a8",
+    "framework_addons/mp_core/__init__.py": "9826c32dd1da62efd37deb9a7945119656819b5252196433dcb08bbb1ddcc4dd",
+    "framework_addons/mp_core/__manifest__.py": "b47f8340f035b1e8c354bb158d688e0e05437d2e60375823a2ec8d83bcc8f35b",
+    "packages/platform_sdk/modular_platform/projection.py": "72a415225d38106c78ec9877eb576d0eb89259090d7f644413126fba02050a68",
+    "tests/test_workspace_landing.py": "1dfb23d8b588f139c20aea0dd58609e11cd5bb485c15b098ad84aa63c0ad66ee",
+    "tests/test_event_client.mjs": "7b60b3c09302ab397fefc87089dec3897c38a16ee481ff0e39244cdda5bcdece"
+  },
+  "private_app": {
+    "version": "0.1.5",
+    "native_version": "19.0.0.1.5",
+    "source_commit": "7bbbd847200b8a29f914622545b5e90ba71cc6d1",
+    "archive_digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+    "archive_bytes": 38405,
+    "deterministic_reassembly_equal": true,
+    "ArtifactValidator": "passed_in_memory_policy_only",
+    "actual_admission": false
+  },
+  "receipts": [
+    {
+      "name": "workspace-source-first.out.txt",
+      "sha256": "bee389e7edbc4625389870bca645110d847e79c9c3c1f26a8437831b138b7b87"
+    },
+    {
+      "name": "workspace-source-second.out.txt",
+      "sha256": "6a546e60e1cb90902b6b0d09aca43427ab68f09858ede3b3db2c5d311f660582"
+    },
+    {
+      "name": "core-source-affected.out.txt",
+      "sha256": "d0658f813512a25bc0bbed849a1cfee0b298499e9f2f7e154034e0ad9d64afe1"
+    },
+    {
+      "name": "taskfiles-python.out.txt",
+      "sha256": "1f33fa16320159c9c01c86b35462c78597df6c056311b8e114ea2afd6b036f7c"
+    },
+    {
+      "name": "taskfiles-components.out.txt",
+      "sha256": "2b7ed7004d7e398bc3f0b9fec50ae349f4059d38ba2ea5705ab97e30bf78e1df"
+    },
+    {
+      "name": "core-client-affected.out.txt",
+      "sha256": "2cdccbc76349d18515c2d8c467ee928612602dadda72294eab7faa94fdf9b70c"
+    },
+    {
+      "name": "core-node-path-corrected.out.txt",
+      "sha256": "cfab332db2872f95048b937b50ad2afa2a6d6c4cd81c2d9ea64ff2be177389a2"
+    },
+    {
+      "name": "event-node-current-fixtures.out.txt",
+      "sha256": "1b36078512ad35133ba8fd4d41928cb86b2b00db77874da8bbd77ce83545e443"
+    },
+    {
+      "name": "event-node-coherent.out.txt",
+      "sha256": "212b455f981e1ce3bf7d2b3b78102a4659c523d2fca21a327e6631c210357236"
+    },
+    {
+      "name": "source-freeze.out.txt",
+      "sha256": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+    }
+  ],
+  "proof_limits": [
+    "Original Home method compiled from current source; actual native request/session/ORM/QWeb boundaries simulated. Native/browser proof pending.",
+    "Node test source-path/fixture repairs change no production validator or frozen wire; existing and new topic-authority negatives retained.",
+    "No full canonical run yet, no new Docker/site/API business effects or image build."
+  ],
+  "acceptance": {
+    "phase_points": 90,
+    "phases": 4,
+    "goal": "active"
+  }
+}

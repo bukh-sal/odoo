@@ -3,6 +3,7 @@ from . import async_models
 from . import job_history
 from . import event_models
 from . import controllers
+from . import workspace_landing
 from . import attachments
 from . import binary
 from . import operations

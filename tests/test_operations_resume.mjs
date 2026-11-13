@@ -3,7 +3,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 
-const source=await readFile(new URL('../platform_addons/mp_shell/static/src/operations.js',import.meta.url),'utf8');
+const source=await readFile(new URL('../framework_addons/mp_shell/static/src/operations.js',import.meta.url),'utf8');
 const isolated=source.replace(/import \{[^}]+\} from '@odoo\/owl';/,
     'const Component=class {};const xml=(text)=>text.join("");const useState=x=>x;const onMounted=()=>{};const onWillDestroy=()=>{};');
 const {OperationsPanel}=await import('data:text/javascript;base64,'+Buffer.from(isolated).toString('base64'));

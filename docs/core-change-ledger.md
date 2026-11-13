@@ -1,3 +1,24 @@
+PP05 startup requirement (13November2026, before implementation): fresh authenticated
+stock pages without a workspace must offer current authorized workspace choice
+before loading any app. The current first-app fallback raises a generic AccessError
+and is not useful onboarding. Reuse Home authentication/session/redirect checks,
+then render an escaped neutral chooser only on the unscoped stock response. Keep
+scoped routes, per-request authority, immutable release pins and new-tab workspace
+switching/draft preservation unchanged. No business/app identifiers or stored
+workspace authority. Owner=core startup; fake-boundary source checks then actual
+empty-core and populated desktop/narrow/keyboard qualification are required.
+Fresh PP05 implementation plan and fixed budgets precede source work; proposed
+unassigned core0.2.5/native19.0.0.2.5 must not relabel any retained candidate.
+
+Source checkpoint: actual Home method/extension with simulated native boundaries
+passes the new10 cases;70 affected core tests pass. A private app-only0.1.5
+successor separates check/review busy feedback, with18 Python/16 component cases.
+Retained Node tests now target actual moved source paths and coherent generic
+event fixtures, keeping explicit optional Notes and topic-mismatch negatives.
+No production event/authority validator changed; freeze122files/11rows unchanged.
+[Source evidence](evidence/G7/20261113-pp05-workspace-startup-source-01/qualification.json).
+Actual empty/populated bootstrap, browser and normal lifecycle remain required.
+
 PP04 accepted (13November2026),90/100 phase points and4/5 phases. Current public
 bootstrap/independent authoring A, actual completed-checkpoint recovery B, and C
 paired rebuild measurements now meet the bounded phase outcomes. Two normal plus

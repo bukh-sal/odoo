@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 
-const source=await readFile(new URL('../platform_addons/mp_shell/static/src/operations.js',import.meta.url),'utf8');
+const source=await readFile(new URL('../framework_addons/mp_shell/static/src/operations.js',import.meta.url),'utf8');
 const isolated=source.replace(/import \{[^}]+\} from '@odoo\/owl';/,'const Component=class {};const xml=(text)=>text.join("");const useState=x=>x;const onMounted=()=>{};const onWillDestroy=()=>{};');
 const {OperationsPanel}=await import('data:text/javascript;base64,'+Buffer.from(isolated).toString('base64'));
 function panel(api){const p=new OperationsPanel();p.props={api,onSession:()=>{},onDenied:()=>{}};p.setup();return p;}
@@ -46,7 +46,7 @@ test('component cancellation aborts an in-flight validation through the shared c
     p.active=false;p.clearInspection();p.controller.abort();await assert.rejects(request,{name:'AbortError'});assert.equal(signal.aborted,true);
 });
 
-const host=await readFile(new URL('../platform_addons/mp_shell/static/src/host.js',import.meta.url),'utf8');
+const host=await readFile(new URL('../framework_addons/mp_shell/static/src/host.js',import.meta.url),'utf8');
 const method=host.slice(host.indexOf('    async json('),host.indexOf('    async blockRelease('));
 const makeRoot=new Function('releaseFence','workspace','error','isReleaseError','releaseError','return new (class {'+method+'})();');
 test('root binary transport preserves CSRF/session/release fences and old JSON serialization',async()=>{
