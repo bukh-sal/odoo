@@ -1,3 +1,51 @@
+# Current provisional local candidate: core0.2.5
+
+[Exact final qualification](evidence/G7/20261113-pp05-candidate-final-01/qualification.json) supersedes the historical matrices below for
+new local work. Host `c578aa2ab2d50b60baf687888bdba914668e0e03` is qualified separately from immutable runtime
+source3dbec35e475 (main cohort) and the recorded subtraction source. Changed host
+SDK files are not relabelled inside old images; future shipping needs a new paired
+platform/native identity and identified build. Default core remains the eight
+selected addons; apps and reference shell are optional.
+
+| Composition | Exact immutable image |
+| --- | --- |
+| Default8-addon core, no apps | `sha256:90ad7b5e2fbdb403fd8323cc7bee05ad0a5e77a6e21088ff250c5515a7b8a922` |
+| Four apps/Documents0.1.4 | `sha256:86cd1b8712d546edc7cfaaf6f06c62fed08b4cc2f84213745f5f232d67b85701` |
+| Four apps/Documents0.1.6 | `sha256:923bfbfaa9f981b837f8792b0e3e5560cbafaaed3d7945c6c3a21a99b454b2fc` |
+| Final five apps | `sha256:52cc1bdb576a38a3bb476ccf3c291c19ef6f4973820f5578db70f2009db753c0` |
+| Source-subtracted8-addon core | `sha256:937cd4df06c15aa07a60bc07f76a3887ce789bd13bb2ddb02ff51ce4fa9b0a12` |
+
+Exact private app archive pins (no range-wide compatibility claim):
+
+- dev.local.delivery 0.1.4: `sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd`.
+- dev.local.documents 0.1.6: `sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11`.
+- dev.local.partners 0.1.0: `sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd`.
+- dev.local.taskfiles 0.1.5: `sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759`.
+- dev.local.workboard 0.2.5: `sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33`.
+
+Normal fresh install, populated Documents1.4->1.6, useful cross-app review/pinned
+history, current-authority fresh native checkpoint recovery with separate resume,
+normal reinstall/uninstall and five-app source subtraction are qualified. The
+same-image inactive completed-recovery source profile is bounded to independently
+proved protected history/inert state; unknown/different-image/failed-only sources
+still refuse. Same-lock changed native-wheel transitions remain refused.
+
+Documents enforces5MiB/file and100MiB/workspace; safe bounded escaped text preview
+and forced downloads do not provide active rendering, malware scanning, public
+sharing or person/folder secrecy. App ACL rows retain checkpoint semantics; finer
+sharing needs a reviewed current-authority overlay. Event/receipt retention windows,
+trusted native code, same-project recovery failure domain, no hot unload and no
+arbitrary external-effect erasure remain explicit limits. No universal ABI/LTS,
+formal accessibility, arbitrary-addon or production promise. Bare core has no
+application dashboard; use workspace selection/own jobs or install optional apps.
+Core/vendor labels/notices remain unchanged; Partners retains LGPL-3.0-only and
+all independent app sources remain private. No publication is authorized.
+
+## Historical qualification checkpoints (unchanged)
+
+The following dated records describe earlier acceptance and pending work at those
+times. They do not override the current exact matrix and final qualification above.
+
 Current PP05 local development checkpoint,13November2026: provisional core0.2.5,
 native19.0.0.2.5; Partners0.1.0/Workboard0.2.5/Customer Work0.1.4/Documents0.1.6/
 Taskfiles0.1.5. Normal install/populated migration, fixed performance, actual UI,

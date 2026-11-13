@@ -1,0 +1,393 @@
+{
+  "schema_version": 1,
+  "phase": "PP-05",
+  "result": "accepted_bounded_phase",
+  "recorded_at": "2026-11-13T21:02:02.342885+00:00",
+  "source": {
+    "qualified_host": "c578aa2ab2d50b60baf687888bdba914668e0e03",
+    "runtime_main": "3dbec35e47557ea6cfb4c5fe00e836075f010628",
+    "runtime_subtracted": "71d4f33b9d4988775c532ccfe00451127d342665",
+    "host_changes_not_relabelled_in_images": true,
+    "final_handoff_changes": "documentation and sanitized evidence only"
+  },
+  "core": {
+    "platform": "0.2.5",
+    "native": "19.0.0.2.5",
+    "default_addons": 8
+  },
+  "compositions": {
+    "core": {
+      "image": "sha256:90ad7b5e2fbdb403fd8323cc7bee05ad0a5e77a6e21088ff250c5515a7b8a922",
+      "record_sha256": "19d4446fcf6e0b2a3696c5c361fe189e2093613b9419651d06f17f85eecf04c6",
+      "addons": 8,
+      "artifacts": {}
+    },
+    "final": {
+      "image": "sha256:52cc1bdb576a38a3bb476ccf3c291c19ef6f4973820f5578db70f2009db753c0",
+      "record_sha256": "79f79e88519e3c1a64d365979c7ac374e5e342fd7ec20b5e2c5f01fd0b884c7b",
+      "addons": 13,
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.taskfiles": {
+          "addon": "mp_taskfiles",
+          "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+          "file": "dev.local.taskfiles-0.1.5.mplug",
+          "plugin_id": "dev.local.taskfiles",
+          "version": "0.1.5"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      }
+    },
+    "library014": {
+      "image": "sha256:86cd1b8712d546edc7cfaaf6f06c62fed08b4cc2f84213745f5f232d67b85701",
+      "record_sha256": "50f536ee270d89457a4bdd828071020fbc5b6f09573eafc25e8ba2e699ae2b4c",
+      "addons": 12,
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:ba5c03f9e29024a7349baae629570a03a44ed145ee8ba38a65766fa82be4bf65",
+          "file": "dev.local.documents-0.1.4.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.4"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      }
+    },
+    "library016": {
+      "image": "sha256:923bfbfaa9f981b837f8792b0e3e5560cbafaaed3d7945c6c3a21a99b454b2fc",
+      "record_sha256": "e087de0e59ebae68e99f13642f2dbe3d6c2654bf1680216f7823030159abae70",
+      "addons": 12,
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:452441efce122100a62925c4fe70bdcbda4182c9ba428683faed1a666e8d1b33",
+          "file": "dev.local.workboard-0.2.5.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.5"
+        }
+      }
+    },
+    "subtracted": {
+      "image": "sha256:937cd4df06c15aa07a60bc07f76a3887ce789bd13bb2ddb02ff51ce4fa9b0a12",
+      "record_sha256": "16a4480cfa042903fedafcd485ef99ef41592a92dc7148a18e5d63af3bce3f4d",
+      "addons": 8,
+      "artifacts": {}
+    }
+  },
+  "outcomes": {
+    "exact_identity_support_notices_and_limits": true,
+    "predeclared_performance_budgets": true,
+    "canonical_changed_boundary_native_recovery_and_visual_walkthrough": true,
+    "clean_artifact_and_source_removal_with_exact_retention": true,
+    "no_unclassified_critical_issue": true
+  },
+  "regression": {
+    "total": 923,
+    "passed": 921,
+    "declared_skips": 2,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 1366.457,
+    "source": "c578aa2ab2d50b60baf687888bdba914668e0e03",
+    "log_sha256": "6d5ca4b509f8bf32ed3784ab9f2d6a7c0958a91794359fd0581496bc642c3c0d",
+    "unchanged_frontend": "51 root Node tests,16 Taskfiles components,18 app Python tests; host tsc and freeze122files/11rows pass"
+  },
+  "benchmark": {
+    "dataset": {
+      "customers": 20,
+      "documents": 26,
+      "tasks": 100,
+      "versions": 50
+    },
+    "limits": [
+      "Single host, two humans/four independent sessions; not a production SLA or capacity test.",
+      "CRUD includes20 real append-only comment creates and20 task CAS updates; no extra tasks/customers.",
+      "Measured call wall time includes client fixture reads, byte validation and for binary durable receipt overhead; no fake TTI."
+    ],
+    "hardware": {
+      "dataset_addendum_sha256": "2ffcc270314326751fbe0c3293b1cddcd21e7da70df9552ed0033c2ee274d797",
+      "hardware": {
+        "cpu": [
+          {
+            "Name": "12th Gen Intel(R) Core(TM) i5-12600K",
+            "NumberOfCores": 10,
+            "NumberOfLogicalProcessors": 16
+          }
+        ],
+        "docker": {
+          "Architecture": "x86_64",
+          "MemTotal": 8290824192,
+          "NCPU": 16,
+          "OperatingSystem": "Docker Desktop",
+          "ServerVersion": "29.9.2"
+        },
+        "memory_bytes": 34102591488
+      },
+      "no_build_or_canonical_running": true,
+      "no_retries": true,
+      "plan_sha256": "be2d4a0fdc056dfa68a6ebb5699b8813ba8f4d85553f0868b9e74497bfbd1585",
+      "source_regression": {
+        "elapsed_seconds": 1238.3280000002123,
+        "exit": 0,
+        "log_sha256": "33a4c5ada045ce9299c837de44e8d3207a36bbc317a9787dfee6b67d39298979",
+        "source": "3dbec35e47557ea6cfb4c5fe00e836075f010628"
+      },
+      "target_sha256": "e39295117e33735705ebb609722543bcf26c3406413a31ec55191a38bed99d88",
+      "thresholds": {
+        "binary_concurrent_max": 20,
+        "binary_single_max": 12,
+        "concurrent_max": 15,
+        "concurrent_p95": 5,
+        "crud_max": 8,
+        "crud_p95": 2.5
+      },
+      "utc": "2026-11-13T17:27:57.516767+00:00"
+    },
+    "ordinary_p95_seconds": 0.312,
+    "ordinary_max_seconds": 0.468,
+    "concurrent_read_p95_seconds": 0.969,
+    "concurrent_read_max_seconds": 1.078,
+    "concurrent_download_max_seconds": 0.609,
+    "large_bytes": 5242880,
+    "scope": "Bounded local cohort, not universal throughput or production SLA"
+  },
+  "lifecycle": {
+    "initial_install_seconds": 76.218,
+    "first_uninstall_seconds": 90.328,
+    "original_restore_failure_seconds": 262.203,
+    "original_failure": "Retained source/restored fence child-name collision; failed review/intent/loaded data preserved, no blind replay",
+    "reviewed_continuation_seconds": 155.765,
+    "separate_resume_seconds": 101.563,
+    "new_normal_restore_seconds": 302.984,
+    "new_normal_resume_seconds": 93.328,
+    "normal_restore_same_real_review_distinct_fence_children": true,
+    "downloads_per_recovery": 6,
+    "temporary_fixture_closed_both_databases": true,
+    "current_real_revocations_preserved": true,
+    "source_removal_first_seconds": 324.5779999999795,
+    "source_removal_first_timing_pass": false,
+    "source_removal_new_operation_seconds": 266.5,
+    "source_removal_new_timing_pass": true,
+    "apply_budget_seconds": 300,
+    "new_reinstall_seconds": 187.422,
+    "new_uninstall_seconds": 194.703,
+    "final_configuration": 11,
+    "final_core_addons": 8,
+    "final_runtime_archives": 0,
+    "final_published_plugins": 0,
+    "removed_source_files": 76,
+    "installation_history": "5 removed raw registrations/10 suspended not_installed scopes/8 revoked real grants retained; native records inert",
+    "retained_sources": "Exactly two same-image completed-recovery source DBs independently proved inert; unknown/different-image/failed-only sources refuse"
+  },
+  "visual": {
+    "main_desktop_and_390px_keyboard_reload_review_pin": true,
+    "core_workspace_chooser_and_own_jobs_list_reload": true,
+    "agent_review_not_human_acceptance": true,
+    "formal_accessibility_or_all_devices": false,
+    "bare_core_dashboard": "No application dashboard; workspace selection and own-job view available. Optional apps supply useful business interfaces."
+  },
+  "retention": {
+    "policy": "Retain exact owned resources and historical evidence; no cleanup, prune or space-reclaimed claim",
+    "cohorts": 2,
+    "containers": 228,
+    "networks": 4,
+    "volumes": 12,
+    "candidate_images": 6,
+    "auxiliary_synthetic_databases": 3,
+    "protected_older_targets_unchanged": true,
+    "main_useful_counts": {
+      "comments": 20,
+      "customers": 20,
+      "files": 26,
+      "references": 2,
+      "reviews": 1,
+      "tasks": 100,
+      "versions": 51
+    }
+  },
+  "limits": [
+    "Local provisional exact combinations only; no stable ABI/LTS/production/arbitrary third-party or hostile-native-code sandbox.",
+    "Same-lock changed native-wheel transition remains refused; fresh exact cohort qualified.",
+    "Completed recovery is coordinated fresh same-project native known-effects recovery with independent review and distinct resume; app-owned ACL rows retain checkpoint semantics.",
+    "Documents app policy:5MiB/file,100MiB/workspace; bounded escaped text preview/forced downloads, no active rendering, malware-scanning, public links or folder/person secrecy.",
+    "Event/idempotency retention windows, no hot native unload, no external-effect erasure and no universal bitwise OCI/provenance rebuild claim.",
+    "Core/vendor notices unchanged, Partners LGPL-3.0-only label retained, independent apps private; no push/publication/paid service."
+  ],
+  "evidence": {
+    "canonical-budget-exit.json": {
+      "path": ".local/product-roadmap/PP-05/canonical-budget-exit.json",
+      "sha256": "23e4436f22c71cf2edfbf9aed95deaea4dba00479273b54ebe96da54ff2b1d0d"
+    },
+    "canonical-budget.out.txt": {
+      "path": ".local/product-roadmap/PP-05/canonical-budget.out.txt",
+      "sha256": "6d5ca4b509f8bf32ed3784ab9f2d6a7c0958a91794359fd0581496bc642c3c0d"
+    },
+    "final-frontend-exit.json": {
+      "path": ".local/product-roadmap/PP-05/final-frontend-exit.json",
+      "sha256": "2c8e9d2b46896dafabc4b9b7a3f61979defbd338baa39171c759d0c389a28863"
+    },
+    "benchmark/complete.json": {
+      "path": ".local/product-roadmap/PP-05/benchmark/complete.json",
+      "sha256": "bbdc0619baaf1bd693753dcedd32fa93da0757c3413ab597dd01575f3a0f03ce"
+    },
+    "artifact-core/complete.json": {
+      "path": ".local/product-roadmap/PP-05/artifact-core/complete.json",
+      "sha256": "3938b1bbd4df71254b414c22db1c0af860736105285b31f0b25e3b907df4c4b5"
+    },
+    "artifact-final/complete.json": {
+      "path": ".local/product-roadmap/PP-05/artifact-final/complete.json",
+      "sha256": "90c8a6b69ebdc3c54e778e9a0ec112b4ca1559d2613c45408f9ac9e63e9131e4"
+    },
+    "artifact-subtracted/complete.json": {
+      "path": ".local/product-roadmap/PP-05/artifact-subtracted/complete.json",
+      "sha256": "329326b9a4bf6cca5cfefeb7778934e9353a87114518d5248e2e41bfbfe354de"
+    },
+    "lifecycle/onepass-closed-proof.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/onepass-closed-proof.json",
+      "sha256": "389d0c39c771ed94aa9f1060f19edcb1652c7140d15d26585eebcef45d81165a"
+    },
+    "lifecycle/onepass-use-proof.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/onepass-use-proof.json",
+      "sha256": "aea16328735ffc9d7ca52da8925660ff9cf25ccba4467da7ce765ca2dccdd2c5"
+    },
+    "lifecycle/recovered-use.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/recovered-use.json",
+      "sha256": "3759a6a82b6632418a941dce33acc8517fcd875cf4568d288cdae9195433af80"
+    },
+    "lifecycle/late-continue-complete.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/late-continue-complete.json",
+      "sha256": "5e69e33ec16ecde87a21c6487a09ed03dc6a9efecc60c6bab4b7164e6093dcbe"
+    },
+    "lifecycle/fixture-closed.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/fixture-closed.json",
+      "sha256": "ba67c42b7c00f40976508180e34b6e150ee8d67375c18b0a4df4a77dbc313186"
+    },
+    "lifecycle/source-removal-budget-failure.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/source-removal-budget-failure.json",
+      "sha256": "7afdead1614df4f46f99d35f1c7f8d7f54e92d71eb6fc605fa46d592dd724a0f"
+    },
+    "lifecycle/source-removal-physical-proof.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/source-removal-physical-proof.json",
+      "sha256": "63beb7a483c1cb2f1b9a9740e78117563a18c5fc7bd2767905a9dd38fc3cb3b9"
+    },
+    "lifecycle/budget-removal-physical-proof.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/budget-removal-physical-proof.json",
+      "sha256": "637219cf248fa332253bb11d0beec64ed3daaed7d80e46a292ebf51ddd2b8856"
+    },
+    "lifecycle/budget-removal-apply-exit.json": {
+      "path": ".local/product-roadmap/PP-05/lifecycle/budget-removal-apply-exit.json",
+      "sha256": "89711de779b5797bf57e0738490f6c1d4081e72d2609c978255b6d9e31c9b5e4"
+    },
+    "retention/exact-resource-manifest.json": {
+      "path": ".local/product-roadmap/PP-05/retention/exact-resource-manifest.json",
+      "sha256": "7f1405546097ff5486f2d0159859aead318af65169f62644b2aa9d0ecb408bd6"
+    },
+    "ui-final/browser-check.json": {
+      "path": ".local/product-roadmap/PP-05/ui-final/browser-check.json",
+      "sha256": "8b7b9e6985cd0b752e7dffc2b4f31bf7ab997d9d30f9a857376ea225de8e5d67"
+    },
+    "ui-final/main-task-desktop-final.png": {
+      "path": ".local/product-roadmap/PP-05/ui-final/main-task-desktop-final.png",
+      "sha256": "5309eb6c14eb784905ad201467979c01dc3b732c5f8f60476ab539f5bb08b761"
+    },
+    "ui-final/main-reviewed-reference-narrow.png": {
+      "path": ".local/product-roadmap/PP-05/ui-final/main-reviewed-reference-narrow.png",
+      "sha256": "825247d77b3620a84ef4ed99d7f34389e9f38fe3aa34987d2217b66bbb9eba7c"
+    },
+    "ui-final/core-job-history.png": {
+      "path": ".local/product-roadmap/PP-05/ui-final/core-job-history.png",
+      "sha256": "bbf34882b0a1561ac19cbb53795c08339fe64dc4b078168facc3d049486c4073"
+    }
+  },
+  "earlier_phase_acceptance": {
+    "PP-01": {
+      "path": "docs/evidence/G7/20261113-pp01-product-experience-01/qualification.json",
+      "sha256": "4e8298adea2fbb85132616f15b637f0d0b3e4baf3e395aa0098c5d1b2f5c9baa"
+    },
+    "PP-02": {
+      "path": "docs/evidence/G7/20261113-pp02-application-breadth-01/qualification.json",
+      "sha256": "73899f7eebcf6eb33de2d9b0a7d4c6d7dc38c6b12acd9c21cb1e30049c20ca15"
+    },
+    "PP-03": {
+      "path": "docs/evidence/G7/20261113-pp03-platform-reuse-01/qualification.json",
+      "sha256": "c6a7a54e190c97133b2908b864aa7c02e513040314be563e9832983b2c63524a"
+    },
+    "PP-04": {
+      "path": "docs/evidence/G7/20261113-pp04-developer-operator-01/qualification.json",
+      "sha256": "fd15aa3c914d99e7206bf08a3af7edb9d78745970fcbe12c9b1870fd7e68952e"
+    }
+  },
+  "acceptance": {
+    "phase_points": 100,
+    "accepted_phases": 5,
+    "total_phases": 5,
+    "scope": "This roadmap bounded local candidate, separate from historical R1 scores"
+  }
+}

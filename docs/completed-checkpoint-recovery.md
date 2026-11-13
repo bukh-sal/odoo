@@ -19,6 +19,21 @@ Grants revoked by a normal uninstall remain revoked after restoration; restoring
 the old app data does not independently approve that integration again. A later
 grant decision requires the normal independently reviewed operator workflow.
 
+The PP05 correction also proves a fresh normal one-pass restore using distinct
+source/restored fence children under the same real review. A retained partial
+before the first restored fence has a narrowly reviewed continuation only for
+the exact daemon name collision described in
+[ADR0087](architecture-decisions/0087-reviewed-unstarted-restored-fence-continuation.md).
+Unknown partials still refuse; never delete a child or repeat dump/extraction/
+authority overlay. A successful command that misses a declared timing budget is
+recorded as completed but is not a performance pass.
+
+Source removal can preserve inactive same-image native recovery sources only
+after the host independently proves their protected resumed history, inert
+metadata and stopped workers/no clients. Unknown databases still block removal.
+See [ADR0088](architecture-decisions/0088-proved-inactive-recovery-sources-during-removal.md).
+Retained DBs/images/checkpoints are not physical erasure or an all-host purity claim.
+
 Use the explicitly installed project interpreter and your protected operator
 paths. `$sourceOperation` names the completed uninstall; `$recoveryId` is the new
 identity returned by prepare. Keep decisions and diagnostics private.

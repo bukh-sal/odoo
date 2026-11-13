@@ -16,6 +16,16 @@ repositories. Nothing here authorizes production, publication or deleting data.
 
 ## Prepare the checkout and build
 
+Distinguish a qualified runtime's recorded source from the current host operator.
+The current host includes recovery/completeness fixes newer than retained runtime
+images; those images keep their original source hashes and versions. Rebuilding
+changed shipped SDK bytes is a **new candidate**, requiring a reviewed paired
+`PLATFORM_VERSION`/`mp_core` native version and affected qualification. Do not
+relabel an old build or bypass the bootstrap's curated-source check. To reproduce
+a recorded runtime, use its exact source checkout and application archive pins;
+use the separately qualified host operator only where its runtime guards agree.
+See [candidate support](candidate-support.md) for the exact host/runtime boundary.
+
 From the project root, use the isolated [operator toolchain](operator-toolchain.md).
 Do not replace a working environment or change global Python/PATH. Select the
 explicit interpreter, then build the default eight-addon clean core into a new

@@ -1,5 +1,10 @@
 # Develop applications on the pinned foundation
 
+This page preserves the historical foundation49 adoption-kit workflow. For new
+source-checkout work, start with [current candidate development](current-development.md)
+and [independent app authoring](independent-app-workflow.md). The historical
+versions and commands below apply only to their recorded kit.
+
 The current adoption set is Tasks0.2.3, Projects0.1.1 and the optional
 Projects–Tasks extension0.1.1, on foundation0.1.49. The three application sources
 are independent Git repositories. The foundation stays a separate owned fork.

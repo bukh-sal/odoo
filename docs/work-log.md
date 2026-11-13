@@ -1,3 +1,24 @@
+## PP05 final local candidate accepted
+
+All five roadmap phases are accepted in their bounded scopes: **100/100 phase
+points,5/5 phases**. [Final evidence](evidence/G7/20261113-pp05-candidate-final-01/qualification.json) binds host `c578aa2ab2d5` separately
+from immutable runtime source and exact core0.2.5/native19.0.0.2.5/app identities.
+Canonical923:921 passed,2 declared skips,0 failures/errors (1366.457s). Actual
+install, populated Documents upgrade, meaningful UI/performance, current-authority
+fresh recovery/separate resume, native uninstall and source-free8-addon core pass.
+The first source-removal command completed in324.578s and failed its fixed300s
+budget. Its result remains immutable. Profiling removed redundant same-image
+offline scans without dropping repeated metadata/ownership checks. A NEW normal
+install187.422s/uninstall194.703s/removal266.500s cycle passes the unchanged budget.
+Original collision/late continuation and a NEW normal302.984s restore/93.328s
+resume preserve exact bytes/current revocations; temporary fixtures are closed.
+Exact retention:228 owned containers,4 networks,12 volumes,6 candidate images,
+three auxiliary synthetic databases and all protected history. No cleanup/push.
+Useful demo retains20 customers/100 tasks/26 files/51 versions/two pins/one review.
+Default/subtracted core has8 addons/zero apps; bare core offers workspace/own jobs,
+without an application dashboard. This is an intentional minimal landing limit,
+not a claim of product parity, universal compatibility or production readiness.
+
 # Work log
 
 13November2026 PP04 B installed qualification passes under the fresh live plan.

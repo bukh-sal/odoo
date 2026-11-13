@@ -1,0 +1,52 @@
+{
+  "result": "requirements_evidence_reconciled",
+  "phase_evidence": {
+    "PP-01": {
+      "path": "docs/evidence/G7/20261113-pp01-product-experience-01/qualification.json",
+      "sha256": "4e8298adea2fbb85132616f15b637f0d0b3e4baf3e395aa0098c5d1b2f5c9baa"
+    },
+    "PP-02": {
+      "path": "docs/evidence/G7/20261113-pp02-application-breadth-01/qualification.json",
+      "sha256": "73899f7eebcf6eb33de2d9b0a7d4c6d7dc38c6b12acd9c21cb1e30049c20ca15"
+    },
+    "PP-03": {
+      "path": "docs/evidence/G7/20261113-pp03-platform-reuse-01/qualification.json",
+      "sha256": "c6a7a54e190c97133b2908b864aa7c02e513040314be563e9832983b2c63524a"
+    },
+    "PP-04": {
+      "path": "docs/evidence/G7/20261113-pp04-developer-operator-01/qualification.json",
+      "sha256": "fd15aa3c914d99e7206bf08a3af7edb9d78745970fcbe12c9b1870fd7e68952e"
+    }
+  },
+  "verified_embedded_doc_links": [
+    {
+      "path": "docs/evidence/G7/20261113-pp04-bootstrap-native-01/qualification.json",
+      "sha256": "64c3ef4143ef53e6423414abcfc21f8f822277797ac27c2a29094d9316d4ed7f"
+    },
+    {
+      "path": "docs/evidence/G7/20261113-pp04-independent-authoring-01/qualification.json",
+      "sha256": "844feb63787f473ae30f795396fe14eb76ec8bec9d7eee8fd75772facb7f7c02"
+    },
+    {
+      "path": "docs/evidence/G7/20261113-pp04-completed-checkpoint-native-01/qualification.json",
+      "sha256": "002f1b43328ec472045be9a30ba42bfeeccdc4674da1a64d97f72b2431193d1f"
+    },
+    {
+      "path": "docs/evidence/G7/20261113-pp04-reproducibility-native-01/qualification.json",
+      "sha256": "7a1e42fe289f6c9f47cac60ae0eb475448cd4264560d345a59d0025244ff4e9b"
+    }
+  ],
+  "PP05": {
+    "path": "docs/evidence/G7/20261113-pp05-candidate-final-01/qualification.json",
+    "sha256": "224c69cc5096bca1bd64e436d015838e026411270dff0b00549f37fad9497529"
+  },
+  "source_unchanged_since_canonical": "c578aa2ab2d50b60baf687888bdba914668e0e03",
+  "review": "Codex agent review, not claimed human acceptance",
+  "all_five_exit_groups": [
+    "identity/support/notices/limits",
+    "predeclared dataset/budgets with failed sample preserved and new passing cycle",
+    "actual native regression/recovery/visual walk",
+    "artifact/source-removal/retention",
+    "classified issues and intentional deferred limits"
+  ]
+}

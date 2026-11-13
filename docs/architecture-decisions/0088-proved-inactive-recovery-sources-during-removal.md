@@ -1,8 +1,10 @@
 # ADR 0088: Proved inactive recovery sources during source removal
 
-Status: installed correctness passes, 13 November 2026; timing remediation open.
-The first actual removal preserved all source/history but324.578s exceeds300s.
-The successful command is not replayed or counted as a budget pass.
+Status: accepted and native-qualified, 13 November 2026.
+The first actual removal preserved all source/history but324.578s exceeds300s;
+that failure remains immutable. The NEW normally approved install/uninstall/removal
+cycle passes with266.500s removal under the unchanged300s budget. Canonical923
+(921pass/two declared skips) passes at hostc578aa2ab2d5. [Evidence](../evidence/G7/20261113-pp05-candidate-final-01/qualification.json).
 
 Normal fresh checkpoint recovery deliberately retains its source database. The
 original source-removal observer required every non-template database to be a

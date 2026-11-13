@@ -1,0 +1,102 @@
+{
+  "result": "passed_final_handoff_audit",
+  "utc": "2026-11-13T21:03:42.142577+00:00",
+  "qualified_source": "c578aa2ab2d50b60baf687888bdba914668e0e03",
+  "source_changes_since_canonical": false,
+  "phase_points": 100,
+  "accepted_phases": 5,
+  "phase_exit_mapping": {
+    "PP01": "Actual coherent customer/task/discussion/reminder/draft/conflict/desktop+narrow journey and before-after packet in immutable accepted evidence.",
+    "PP02": "Independent native Documents/scoped bytes/declared formats and quotas/current-authority pressure/versions/trash/pins/populated recovery and browser use.",
+    "PP03": "Generic core ownership, actual cross-app shared review effects/duplicates/authority/pending-event recovery, real populated storage migration and classified capabilities.",
+    "PP04": "Current public bootstrap and independent author workflow, meaningful date evolution, reviewed coordinated completed-checkpoint recovery, measured build-content/provenance boundary.",
+    "PP05": "Exact identity/notices/support, predeclared budgets, final923-test source boundary and actual native/UI,14-layer clean default/final/subtraction, source-free final core with exact retention and no open fixture."
+  },
+  "final_qualification": {
+    "path": "docs/evidence/G7/20261113-pp05-candidate-final-01/qualification.json",
+    "sha256": "224c69cc5096bca1bd64e436d015838e026411270dff0b00549f37fad9497529"
+  },
+  "prior_acceptance": {
+    "PP-01": {
+      "path": "docs/evidence/G7/20261113-pp01-product-experience-01/qualification.json",
+      "sha256": "4e8298adea2fbb85132616f15b637f0d0b3e4baf3e395aa0098c5d1b2f5c9baa"
+    },
+    "PP-02": {
+      "path": "docs/evidence/G7/20261113-pp02-application-breadth-01/qualification.json",
+      "sha256": "73899f7eebcf6eb33de2d9b0a7d4c6d7dc38c6b12acd9c21cb1e30049c20ca15"
+    },
+    "PP-03": {
+      "path": "docs/evidence/G7/20261113-pp03-platform-reuse-01/qualification.json",
+      "sha256": "c6a7a54e190c97133b2908b864aa7c02e513040314be563e9832983b2c63524a"
+    },
+    "PP-04": {
+      "path": "docs/evidence/G7/20261113-pp04-developer-operator-01/qualification.json",
+      "sha256": "fd15aa3c914d99e7206bf08a3af7edb9d78745970fcbe12c9b1870fd7e68952e"
+    }
+  },
+  "jit_plans": [
+    {
+      "path": ".local/product-roadmap/PP-05/implementation-plan.md",
+      "sha256": "be2d4a0fdc056dfa68a6ebb5699b8813ba8f4d85553f0868b9e74497bfbd1585"
+    },
+    {
+      "path": ".local/product-roadmap/PP-05/native-qualification-plan.md",
+      "sha256": "f5941e7c4d4f43eeb3f5061171d1be81becba7fb760f20f362a301c77fea2533"
+    },
+    {
+      "path": ".local/product-roadmap/PP-05/lifecycle-implementation-plan.md",
+      "sha256": "57cb0ecae54bb82a77f224d4cf5c090107f8b109f3596bdfea44059cca461bcb"
+    },
+    {
+      "path": ".local/product-roadmap/PP-05/restored-fence-repair-plan.md",
+      "sha256": "d45b322fbe36f41063da91a8f56dfb9232fd9a1b88eab64f8560e9eef126a9d3"
+    },
+    {
+      "path": ".local/product-roadmap/PP-05/one-pass-restoration-plan.md",
+      "sha256": "ccd233904f09b6bca65fa55a4077ba2d8eac7f094a217b7a30860936e0d04463"
+    },
+    {
+      "path": ".local/product-roadmap/PP-05/retained-source-inventory-plan.md",
+      "sha256": "aff28c51eb223ae5acd33f697451222729fb6273127b97003141d4f81b2a92dc"
+    },
+    {
+      "path": ".local/product-roadmap/PP-05/retained-source-performance-plan.md",
+      "sha256": "2e6d6bc1ed0bf89eb5cf4a3fc3c5d8b61a070db42a83e88772234a6407f3e74b"
+    }
+  ],
+  "private_inputs_verified": 21,
+  "frontend_exit_and_log_hashes_verified": true,
+  "checkpoint_history_files_verified": 222,
+  "older_targets_unchanged": true,
+  "current_live_pins": [
+    {
+      "cohort": "source-free-lifecycle",
+      "current_configuration": 11,
+      "image": "sha256:937cd4df06c15aa07a60bc07f76a3887ce789bd13bb2ddb02ff51ce4fa9b0a12",
+      "pinned_worker_running": true,
+      "authority_mount": false,
+      "host_port": false
+    },
+    {
+      "cohort": "useful-main",
+      "current_configuration": 4,
+      "image": "sha256:52cc1bdb576a38a3bb476ccf3c291c19ef6f4973820f5578db70f2009db753c0",
+      "pinned_worker_running": true,
+      "authority_mount": false,
+      "host_port": false
+    }
+  ],
+  "owned_candidate_images_present": 6,
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "preserved_nonpasses": [
+    "262.203s original restored-fence collision; exact late continuation and new normal restore verified",
+    "324.578s first completed source-removal timing failure; new operation266.500s passes unchanged300s"
+  ],
+  "retention": "No cleanup;228 exact owned containers/4 networks/12 volumes/6 candidate images and source/checkpoint/history retained. No disk-savings claim.",
+  "review": "Codex source/evidence/visual review; no invented human satisfaction or production acceptance."
+}
