@@ -40,7 +40,7 @@ PP-03, or build a speculative framework in anticipation of later apps.
 | --- | ---: | --- | --- | --- |
 | PP-01 Product experience | 25% | A coherent, visibly improved daily customer-work journey | Existing qualified apps | [Accepted, 4/4 bounded outcomes](evidence/G7/20261113-pp01-product-experience-01/qualification.json) |
 | PP-02 Application breadth | 25% | Useful independent workspace document library, including secure generic binary support | PP-01 interaction findings; scoped-binary prerequisite | [Accepted,5/5 bounded outcomes](evidence/G7/20261113-pp02-application-breadth-01/qualification.json) |
-| PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | Active; [meaningful populated migration/recovery/use section accepted](evidence/G7/20261113-pp03-document-storage-native-01/qualification.json); event-consumer effect and capability audit remain open |
+| PP-03 Platform evolution and reuse | 20% | Reusable capabilities proven across the qualified apps, meaningful migration and event effects | Actual needs from PP-01/02 | Active; [migration/recovery/use section accepted](evidence/G7/20261113-pp03-document-storage-native-01/qualification.json); [useful event effect, shared review, current authority and replay verified](evidence/G7/20261113-pp03-file-review-partial-01/qualification.json); event recovery and capability audit remain open |
 | PP-04 Developer and operator workflow | 20% | Current app authoring/lifecycle path and bounded coordinated checkpoint restoration | The actual app/core contracts from PP-01..03 | Not started |
 | PP-05 Candidate release readiness | 10% | Exact supported cohort, measured budgets, final UI/lifecycle/regression and handoff | PP-01..04 accepted | Not started |
 
@@ -53,7 +53,11 @@ newer authority preserved. Actual browser desktop/393px keyboard/download/reload
 evidence supports its bounded acceptance. PP-03 is active under fresh plans; PP-04/05 stay
 unplanned. Rough implementation is about60/100, with50/100 accepted phase points;
 PP-03's real populated storage migration/recovery/use section is accepted, while
-the phase remains open for event-consumer effects and the capability audit. Research,
+the phase remains open for event recovery and the capability audit. The useful
+installed file-update review now passes actual browser acknowledgement/reload,
+current source-grant refusal (including saved responses) and real duplicate
+delivery without reopening reviewed work. These partial outcomes do not accept
+the phase. Research,
 documents and source-only checks do not earn additional outcome acceptance.
 Report partial progress only against real delivered outcomes; keep original R1
 99/99 and its score separate. Re-estimate effort when the fresh phase plan exists.

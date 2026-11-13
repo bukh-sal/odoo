@@ -4,6 +4,19 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+PP03 file-update review partial outcome (13November2026): the existing registered
+Topic/Consumer/ConsumerFrame and original-actor bound reads support useful shared
+review across independent Documents and Taskfiles, without new core code or a
+business-specific transport branch. Actual effect/tombstone/ACK, browser shared
+acknowledgement/reload and duplicate delivery pass. Two genuine app defects were
+corrected through successor packages: missing frozen request correlation, and a
+handler-only provider check that did not protect saved-response returns. Review
+methods now register on their existing protected app model; generic idempotency
+still skips repeated effects. Both source-grant denials protect saved/fresh/native
+review access, with independent apps useful and exact fixture restoration.
+[Partial installed evidence](evidence/G7/20261113-pp03-file-review-partial-01/qualification.json).
+Event-state recovery and the generic ownership audit remain before PP03 exit.
+
 PP03 Documents0.1.5 migration section (13November2026): no new core branch or
 contract. The existing declared app-owned pre/post migration and independent
 staged lifecycle handled a real populated own-table transformation. Actual

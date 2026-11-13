@@ -2440,3 +2440,24 @@ source evidence and fresh populated app-only fault/recovery sibling; keep pilot.
 13November2026 PP03 core0.2.3 prerequisite COMPLETE normald52db0a2/config24;fiveSDK/core runtime deltas,all5app pins/files/Python/bytes/reference/history/business/currentauthority exact;checkpointverified. Firstcandidate618policytextdrift retained/refusedbeforebundle,source938restoredexactpolicy,distinctcorrectedimage/stage/plan thennormalapprovaltrust+destructive/apply, no guardrelax/replay. No appmigrationcredit/PP03acceptance. Storage9versions4340B=8uniquews payloads3938B; authorizedown89BnativeJSONreadprobe confirmsaggregatebytefieldboundaryto tighten app-owned. FreshDocmigrationplanNEXTbeforeedits;eventplanlater,goal50/1002/5ACTIVE. Noopenfixture/nativeoperation/cleanup.
 
 13November2026 PP03 Documents.1.5 sourceprivatecommitb28b583855e4437478716975b3c2c86d721b457f: Blob/version FK genuinepre/postmigration, sameworkspacepayload sharing, versionUUIDs/logicalquota preserved, privatebinaryfield+last-refcleanup.32Python29Node fake/source and14actualPGSQLcounterpart cases green;nativeinit simulated,allownedschemasrolledback, livebytes/auth/targetexact. Deterministicarchivesha256:72733568b31bf5a849ea359fb20205c8e810522b0b249b5515dc395f393e37a5 validated in-memory only,notadmitted/built. PrivateSQLlaunchernestedquotingparsefailure beforeanybodyexecution wascorrected;onerealSQLbatch,notproductfailure. Currentcore3/config24/Docs.1.4 unaffected. Freshinstalledmigration/failure/recoveryplanNEXT beforebuild/actualnative;eventplanlater. Goal50/1002/5rough55ACTIVE,noPP03acceptance/fixtures/ops.
+
+
+13November2026 PP03 file-review partial installed outcome: Documents1.6 emits
+minimized events; Taskfiles1.4 owns shared review/current-actor cursor using
+existing core seams. One original-Alice version6/revision9 produced one real
+registered effect/consumption/ACK; actual GUI shared acknowledgement/reload and
+pin1 preserved at desktop1422/narrow433. Real saved-key producer/check and two
+fresh-subscription duplicate deliveries leave one consumption/review, reviewed9.
+Actual app defects retained: missing frozen request_id corrected in1.3; cached
+review exposed metadata under revoked integration grant because the registered
+Link guard did not require source access.1.4 registers review/check on existing
+protected review model; both exact grants11/12 now deny cached/fresh/native paths,
+independent providers useful, finally exact restoration. Core unchanged. Normal
+new archive/image/admission/stage/approval upgrades completed once; latest631735a3
+config30/imageeafc653c. Post-apply checker expected all event rows unchanged;
+source-backed read-only continuation proved only normal subscription closure,
+no reapply.7files12versions32receipts/10payloads,14terminaljobs54outbox retained.
+Evidence20261113-pp03-file-review-partial-01. No event-state recovery/fullPP03
+acceptance yet;50/1002/5rough60 goalACTIVE. Next second publication/denials,
+populated event recovery and ownership audit; PP04/05 plans only on activation.
+No open fixture/native operation/cleanup/publication; all historical assets retained.

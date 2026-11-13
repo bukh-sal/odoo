@@ -1,0 +1,104 @@
+{
+  "accepted_phases": 2,
+  "accepted_points": 50,
+  "actual_browser": {
+    "desktop_width": 1422,
+    "explicit_acknowledgement": true,
+    "focus_return": "Check file updates",
+    "horizontal_overflow": false,
+    "narrow_width": 433,
+    "reviewed_after_reload": true
+  },
+  "actual_effect": {
+    "acknowledged_deliveries": 3,
+    "consumption_rows": 1,
+    "document_revision": 9,
+    "normal_subscription_close_and_reopen": true,
+    "observed_version": 6,
+    "original_human_actor": true,
+    "pin_version": 1,
+    "reviewed_revision": 9,
+    "shared_review_rows": 1
+  },
+  "authority": {
+    "cached_denials": 2,
+    "exact_fixtures_restored": true,
+    "fresh_denials": 4,
+    "grants": [
+      11,
+      12
+    ],
+    "independent_apps_useful": true,
+    "native_denials": 2,
+    "no_business_event_or_projection_effect": true,
+    "result": "both_current_source_grants_protect_cached_and_fresh_review",
+    "same_original_session": true
+  },
+  "current": {
+    "configuration": 30,
+    "core": "0.2.3",
+    "core_other4apps_and_python_exact": true,
+    "documents": "0.1.6",
+    "image_id": "sha256:eafc653c6ef1d17dce9eb3f04ccd84378bfce435c0d76e26780ea138d87913e5",
+    "taskfiles": "0.1.4"
+  },
+  "dataset": {
+    "files": 7,
+    "outbox": 54,
+    "payload_rows": 10,
+    "reference_history_rows": 2,
+    "terminal_jobs": 14,
+    "upload_receipts": 32,
+    "versions": 12
+  },
+  "findings": [
+    "App native event calls initially omitted required frozen request_id; core correctly refused, no consumer effect. Taskfiles1.3 corrected the app; original evidence retained.",
+    "App1.3 registered review methods on a model whose independent-reference-removal guard did not require provider access. Saved responses bypassed handler-only checks. App1.4 uses its existing protected review model before cache return; core idempotency remains unchanged.",
+    "Post-upgrade checker incorrectly expected subscription state unchanged. Source-backed verification-only continuation proved normal maintenance closed it; apply completed once, never replayed."
+  ],
+  "goal": "active",
+  "intentional_limits": [
+    "Workspace-shared document review, not personal or per-task approval; original immutable pin never advances.",
+    "Explicit editor action, at most10 events; one-hour subscriptions and seven-day replay, not permanent history or background synchronization.",
+    "Eligibility uses current active older pins; events consumed without eligible pins are not retrospectively reconstructed.",
+    "Previously downloaded content or previously delivered responses cannot be revoked from user-held copies; this proves current requests.",
+    "App-native/source and browser checks are bounded; no hostile-code sandbox, formal accessibility, arbitrary load or complete migration promise."
+  ],
+  "phase": "PP-03",
+  "phase_accepted": false,
+  "private_receipt_sha256": {
+    "actual_browser": "c61d29eaf19a51051f193fdc003bd7f34144cab6b13f6619839269c882dc5ec1",
+    "browser_dimensions": "aad1705d4522a19731814f0e3483b79315f3ce86e99050406cbbbb4c880ee453",
+    "cached_authority_green": "5c11db8097ed219443249524b61cf280ec0b1e73463b899db850ed44b8d7a2c7",
+    "cached_authority_red": "13e751df1bbfa6e919e091903b65e2265adb4479f35a86aab58c6c7da8e4caee",
+    "cached_authority_rollout": "b324ad4b3c4d9808aa9dea25c47cc4111edf5e9b9c99a27489bc7b89352a1d2c",
+    "cached_authority_source": "86660fe17296143810865a7cdd5394846dcacadb495ec3f3dd53b1127cbffd97",
+    "contract_defect_reconciliation": "0e9e12379440f0c32ff3caad46f8d3e14eddd5523dda1e873c308e6066c444dd",
+    "first_consumption": "571521235cc5262aa99a210ddda627be827e645faa4d44a8365835590e03cc27",
+    "first_publication": "402bdfa6d6b45a4293a92c0aef91895e4dd7fbb94f42b8a4870062c2858be909",
+    "normal_subscription_invalidation_reconciliation": "29d89ec8d9ef159a2dc0a1cc1d3b681f0e3ffb4a07923b5ac5a4a355745a840f",
+    "replay": "b9cf8a25a3e90479d02b32ddb411f096078f478cb28249a7592f0bfe98273a01",
+    "source_original": "1368e809d8b48f4a6ec4835212ea773784eb1b9fca1653315929d67f4347122e"
+  },
+  "remaining": [
+    "second publication and viewer/forged native negative round",
+    "populated event projection/tombstone/pending-event failure/fresh restore/separate resume",
+    "fresh post-recovery useful UI",
+    "generic ownership/capability audit before fullPP03 acceptance",
+    "PP04/05 remain unplanned"
+  ],
+  "replay": {
+    "fence_write_date_only_allowed": true,
+    "new_delivery_acknowledged": true,
+    "original_consumption_count": 1,
+    "pin1_unchanged": true,
+    "producer_revision": 9,
+    "producer_rows_bytes_receipts_and_outbox_unchanged": true,
+    "producer_version": 6,
+    "result": "same_key_and_actual_core_duplicate_replay_verified",
+    "shared_review_not_reopened": true
+  },
+  "resource_disposition": "Owned live cohort, old source DBs, images, checkpoints and helpers retained; no cleanup or publication",
+  "result": "useful_installed_effect_shared_review_authority_and_replay_verified_phase_open",
+  "utc": "2026-11-13T10:24:06.430489+00:00"
+}
