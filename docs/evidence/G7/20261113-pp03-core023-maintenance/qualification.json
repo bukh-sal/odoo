@@ -1,0 +1,71 @@
+{
+  "accepted_phases": 2,
+  "accepted_points": 50,
+  "all5app_archives_files_and_python_exact": true,
+  "all_document_bytes_versions_receipts_references_business_authority_exact": true,
+  "checkpoint_members_verified": true,
+  "configuration": 24,
+  "earlier_policy_guard_proof_sha256": "e9db1421108c05afabf3c8dd452e3de9a5200ff5bd375754f4eb42f03c7bf51f",
+  "evidence_sha256": {
+    "build-review.json": "52b2c7506ceff78ceaafc04c1fb59c45bdc64b76efdbc00324ee45182777c25b",
+    "business-after.json": "6a4e717663fcfe6d976d7e0e27cef8d0908fb3ecb967b9c198c187c2c4b19d68",
+    "documents-after.json": "5cac09264ccb148d014c636ce87374b35fb5cd0c7e01997f77558d6d59a2446c",
+    "result.json": "282f515c89881be2c747609fcc393a7dc0196012f5a80af70585e46947fa8d39",
+    "review.json": "cd9f89a9a5cd3a16a30744590722d2e4784673839c685c19ef08237f267c9b39"
+  },
+  "exact_pair_and_mismatch_and_historical_probes": true,
+  "freeze": {
+    "files": 122,
+    "rows": 11,
+    "unchanged": true
+  },
+  "goal": "active",
+  "image_id": "sha256:cfb377b9163d8f9d9e027e3e889503db50771de541412ca5a27c230d7d7218b1",
+  "meaningful_migration_credit": false,
+  "native_core": "19.0.0.2.3",
+  "native_scoped_deploy_targets": 10,
+  "next": "Fresh Documents deduplicated-storage meaningful-migration source plan before app changes; event section plan later using findings",
+  "no_app_migrations_or_permission_changes": true,
+  "no_open_fixture_or_operation": true,
+  "only_control_epoch_changes": {
+    "jobs.claim_generation": 14,
+    "jobs.dispatch_generation": 14,
+    "jobs.release_digest": 14
+  },
+  "operation_id": "d52db0a2-c98d-421d-9a41-8a1d9d09260f",
+  "owned_assets_and_failed_sources_retained": true,
+  "paired_identity_checks": 27,
+  "phase": "PP-03",
+  "phase_accepted": false,
+  "plan_hash": "sha256:b791960a5aac359c0339f1a9341ef058c7f4605c0a4ebf6592ad531c1b57afff",
+  "platform": "0.2.3",
+  "research": {
+    "authorized_own_native_JSON_binary_read_possible": true,
+    "disposition": "Next fresh Documents storage-migration plan includes private bounded byte-field access; no core app branch",
+    "foreign_or_current_authority_bypass_claim": false,
+    "logical_bytes": 4340,
+    "source_and_readonly_storage_probe": true,
+    "unique_raw_bytes": 3938,
+    "unique_workspace_payloads": 8,
+    "versions": 9
+  },
+  "result": "core023_packaging_prerequisite_completed",
+  "retained_refusal": {
+    "cause": "Author changed descriptive profile text; core planner intentionally binds complete policy",
+    "corrected_source_policy_restored_exact": true,
+    "distinct_corrected_image_and_proposal": true,
+    "first_candidate_built_then_staged_only": true,
+    "first_plan_refused_before_bundle": true,
+    "guard_unchanged": true,
+    "no_relabel_or_retry_of_native_operation": true
+  },
+  "rough_implementation_points": 50,
+  "runtime_delta": [
+    "addons/mp_core/__manifest__.py",
+    "packages/platform_sdk/modular_platform/integration_grant_recovery.py",
+    "packages/platform_sdk/modular_platform/projection.py",
+    "packages/platform_sdk/modular_platform/restore_continuation.py",
+    "packages/platform_sdk/modular_platform/restore_executor.py"
+  ],
+  "utc": "2026-11-13T06:46:33.558555+00:00"
+}
