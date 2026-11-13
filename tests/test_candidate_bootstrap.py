@@ -14,6 +14,7 @@ from unittest.mock import Mock, patch
 ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'tools'),str(ROOT/'tests'),str(ROOT/'packages/platform_sdk')]
 import initialize_candidate as entry
+from modular_platform.contracts import native_version
 from test_release_staging import staged_runtime
 
 
@@ -29,7 +30,7 @@ class CandidateBootstrap(unittest.TestCase):
             inventory_digest='sha256:'+'d'*64,git_base='1'*40,distribution_policy='deploy/distribution-r1-core.json',source_sha256=self.inputs)
         self.record.write_text(json.dumps(self.data),encoding='utf-8')
         self.base=['--workdir',str(self.work),'--build-record',str(self.record),'--port','18990','--runtime-subnet','10.205.11.16/28','--edge-subnet','10.205.11.32/28']
-        self.runtime=staged_runtime([]);self.runtime['platform_version']='0.2.3';self.runtime['native_manifests']={'mp_core':dict(version='19.0.0.2.3')}
+        self.runtime=staged_runtime([]);self.runtime['platform_version']=entry.PLATFORM_VERSION;self.runtime['native_manifests']={'mp_core':dict(version=native_version(entry.PLATFORM_VERSION))}
         self.runtime['inventory']['native_addons']=dict.fromkeys(entry.ADDONS)
         self.events=[]
 
@@ -103,10 +104,12 @@ class CandidateBootstrap(unittest.TestCase):
                 self.work=self.root/('refused-'+kind);self.base[1]=str(self.work)
             with self.subTest(kind=kind),self.external_boundaries():
                 self.runtime['inventory']['native_addons']=dict.fromkeys(entry.ADDONS)
-                self.runtime['native_manifests']['mp_core']['version']='19.0.0.2.3'
-                self.runtime['platform_version']='0.2.3'
+                self.runtime['native_manifests']['mp_core']['version']=native_version(entry.PLATFORM_VERSION)
+                self.runtime['platform_version']=entry.PLATFORM_VERSION
                 if kind=='extra_addon':self.runtime['inventory']['native_addons']['mp_unexpected']=None
-                elif kind=='native_mismatch':self.runtime['native_manifests']['mp_core']['version']='19.0.0.2.4'
+                elif kind=='native_mismatch':
+                    major,minor,patch=map(int,entry.PLATFORM_VERSION.split('.'))
+                    self.runtime['native_manifests']['mp_core']['version']=native_version(f'{major}.{minor}.{patch+1}')
                 else:self.runtime['platform_version']='0.1.0'
                 with self.assertRaises((ValueError,RuntimeError)):self.run_cli(['prepare',*self.base,'--disposable-development-site'])
                 self.assertEqual(self.events,[])

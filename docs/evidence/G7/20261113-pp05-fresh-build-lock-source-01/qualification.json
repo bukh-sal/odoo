@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "phase": "PP05 build prerequisite",
+  "state": "source_checked_fresh_candidate_qualification_pending",
+  "recorded_at": "2026-11-13T16:36:25.421074+00:00",
+  "source_base": "d9ab3db7d998931ef58156ede8d5f90d206322f0",
+  "shipped_core_unchanged": "0.2.5/native19.0.0.2.5",
+  "source_sha256": {
+    "tools/build_candidate.py": "9f4815fcb19d7a38d34d17541770354b72ebf5208540ebb4d235ae90356e418c",
+    "tests/test_clean_candidate_build.py": "fadcf4d706570c5e98c144bb64730753c987c0d290cedb9fc8ac8113199651fc",
+    "tests/test_candidate_bootstrap.py": "6bcbd9a82400d161041c4e19d1e1c49563266aba6843a558a9f1c0530a9e4475"
+  },
+  "actual_before_Docker_failure": {
+    "receipt_sha256": "33a02e06584108659fa55cf5cdd14e5be1f9483db1da1f92b859526cfc3f1668",
+    "no_Docker_build_or_site_created": true
+  },
+  "source_tests": {
+    "cases": 23,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 63.617,
+    "real_OS_lock_and_unsafe_existing_ACL_boundary": true,
+    "Docker_boundary": "fake",
+    "receipt_sha256": "b570ae8ec087146b0973e85d539b5761ec0045956dc833cc04ae3f4094f6d856"
+  },
+  "canonical_pre_fix": {
+    "cases": 902,
+    "passes": 896,
+    "errors": 4,
+    "skips": 2,
+    "seconds": 1036.139,
+    "receipt_sha256": "8073e53df57cf24c000398b6721b02f8ac85bd12b0f9d2943400c88e59c3f69e",
+    "classification": "four positive current-bootstrap fixtures hardcoded old0.2.3; all corrected8 bootstrap cases pass in targeted rerun; full run not green"
+  },
+  "limits": [
+    "No runtime SDK/guard/approval/lock-format/ACL relaxation or policy creation.",
+    "New corrected default core and frozen archived-app build scope required; old records/images remain immutable.",
+    "Final full canonical and actual native/UI/budget/lifecycle remain pending."
+  ]
+}

@@ -3,6 +3,7 @@ import contextlib
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess as real_subprocess
@@ -67,21 +68,52 @@ class FakeEnvironment:
     def __exit__(self,*args):return False
 
 
-def invoke(environment,extra=()):
+def invoke(environment,extra=(),*,real_operator=False):
     argv=['build_candidate.py','--output',str(environment.root/'docs/evidence/G5/clean-01'),'--gate','G5',*extra]
     output=io.StringIO()
+    protect=build_candidate.protect_directory if real_operator else lambda path:(Path(path).mkdir(parents=True,exist_ok=True),Path(path))[1]
+    lock=build_candidate.ProcessLock if real_operator else lambda *args,**kwargs:contextlib.nullcontext()
     with patch.object(build_candidate,'ROOT',environment.root),\
          patch.object(build_candidate,'subprocess',environment.fake),\
          patch.object(build_candidate,'source_input_paths',lambda root,policy:['deploy/Dockerfile']),\
          patch.object(build_candidate,'inspect_image',lambda image_id:environment.runtime),\
-         patch.object(build_candidate,'protect_directory',lambda path:(Path(path).mkdir(parents=True,exist_ok=True),Path(path))[1]),\
-         patch.object(build_candidate,'ProcessLock',lambda *args,**kwargs:contextlib.nullcontext()),\
+         patch.object(build_candidate,'protect_directory',protect),\
+         patch.object(build_candidate,'ProcessLock',lock),\
          patch.object(sys,'argv',argv),contextlib.redirect_stdout(output):
         build_candidate.main()
     return output.getvalue(),environment.fake
 
 
 class CleanCandidateBuild(unittest.TestCase):
+    def test_fresh_checkout_creates_private_control_and_holds_real_os_lock_before_docker(self):
+        from modular_platform.operator_os import ProcessLock,OperatorError,verify_private_directory
+        with tempfile.TemporaryDirectory(prefix='mp-builder-real-lock-') as temporary,FakeEnvironment(Path(temporary)) as environment:
+            control=environment.root/'.local/operator/control';original=environment.fake.run
+            self.assertFalse(control.exists());seen=[]
+            def run(command,*args,**kwargs):
+                if command[:2]==['docker','build']:
+                    verify_private_directory(control);verify_private_directory(control/'locks')
+                    with self.assertRaises(OperatorError):
+                        with ProcessLock(control/'locks','candidate-build'):self.fail('Build lock was not held')
+                    seen.append('locked')
+                return original(command,*args,**kwargs)
+            with patch.object(environment.fake,'run',side_effect=run):invoke(environment,real_operator=True)
+            self.assertEqual(seen,['locked'])
+            with ProcessLock(control/'locks','candidate-build'):pass
+            self.assertFalse((control/'policy.json').exists());self.assertFalse((control/'operations.sqlite3').exists())
+
+    def test_existing_unsafe_control_refuses_before_docker_without_repair(self):
+        from modular_platform import operator_os
+        with tempfile.TemporaryDirectory(prefix='mp-builder-unsafe-lock-') as temporary,FakeEnvironment(Path(temporary)) as environment:
+            control=environment.root/'.local/operator/control';control.mkdir(parents=True)
+            (control/'marker').write_bytes(b'preserve existing control')
+            if os.name!='nt':control.chmod(0o755)
+            before=operator_os._windows_acl(control) if os.name=='nt' else control.stat().st_mode
+            with self.assertRaises(operator_os.OperatorError):invoke(environment,real_operator=True)
+            after=operator_os._windows_acl(control) if os.name=='nt' else control.stat().st_mode
+            self.assertEqual(before,after);self.assertEqual((control/'marker').read_bytes(),b'preserve existing control')
+            self.assertFalse(any(command[0]=='docker' for _,command in environment.fake.commands))
+
     def test_dockerfile_clean_target_ancestry_and_legacy_default_are_source_checked(self):
         source=(ROOT/'deploy/Dockerfile').read_text(encoding='utf8')
         self.assertIn('FROM ${RTL_NODE_IMAGE} AS rtl-compiler',source)

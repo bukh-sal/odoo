@@ -2650,3 +2650,18 @@ was changed; explicit Notes negatives and mismatched-topic denial retained.
 Actual new image/bootstrap/UI/normal operations/budgets/final canonical/lifecycle
 and exact retention remain REQUIRED. No C/B image reapply or live site changes.
 PP01..04 accepted90/1004/5; PP05 active, goalACTIVE, no extra outcome credit.
+
+
+PP05 fresh builder correction13November2026: actual isolated source build stopped
+before Docker because private build control/locks did not exist. Public tool now
+protects/verifies control root+locks before the same ProcessLock; unsafe existing
+ACLs refuse unchanged, no approval policy created. Real-OS positive/negative plus
+all affected CLI/bootstrap tests23pass63.617s. Prior canonical902 cases:896pass,
+2declared skips,4 old0.2.3 current-bootstrap fixture errors; corrected targeted
+cases pass, no full-canonical-green claim. Old before-Docker intent and core0.2.5
+d439 source d9ab retained; no site created. Fresh corrected build scope/newrecord
+required, unchanged shipped core0.2.5/Taskfiles7bbbd84/c36d archive unadmitted.
+Old demo sites/configs/data/authority unchanged; new final cohort chosen because
+actual old->rebuilt same-lock native transition guard refuses, no guard/lock edit.
+Final qualification fresh core + four-app Docs1.4 -> populated Docs1.6 -> optional
+Taskfiles1.5 via normal controls. No acceptance/cleanup/publication;90/1004/5ACTIVE.

@@ -132,7 +132,9 @@ def main():
     record['build_cache_policy']='recompile_builder_stage' if args.recompile_dependencies else ('maintenance_no_cache_no_network' if args.reproduction else 'normal_cache')
     if clean:record.update(clean_inputs)
     _write_new(record_path,record)
-    with ProcessLock(ROOT/'.local/operator/control/locks','candidate-build'):
+    control=protect_directory(ROOT/'.local/operator/control')
+    locks=protect_directory(control/'locks')
+    with ProcessLock(locks,'candidate-build'):
         if dependency_tag:
             prior=subprocess.run(['docker','image','inspect',dependency_tag],capture_output=True,timeout=30)
             if prior.returncode==0:raise RuntimeError('Dependency alias already exists; reconcile the original build record')

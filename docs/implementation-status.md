@@ -14,14 +14,14 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T15:47:31.077160+00:00
+- Updated UTC: 2026-11-13T16:36:25.421074+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **PP01..04 accepted,90/100 phase points and4/5 phases; PP05 active.** Fresh final-phase plan/budgets recorded before implementation; no PP05 acceptance from source tests. Full goal ACTIVE.
-- Latest work item: Neutral workspace-first stock startup implemented/tested at source; private Taskfiles0.1.5 separates check/review busy labels without effect/authority changes. Proposed core0.2.5/native19.0.0.2.5 not built/installed; old0.2.4 measured builds and original app cohorts unchanged.70 affected core,18 private app Python,16 component and coherent root Node checks pass; freeze122/11 unchanged. Historical Node path/neutral-fixture regressions corrected with negatives retained.
-- Current next action: Commit reviewed PP05 source/docs/test corrections and private package identity, then create fresh concrete image/bootstrap/upgrade/grant-renewal qualification plan from exact committed bytes BEFORE any build or native operation. Actual installed UI, fixed-budget measurements, final canonical, lifecycle/artifact and exact resource-retention outcomes remain required. No live mutation/open fixture/cleanup/publication. GoalACTIVE90/1004/5.
+- Latest work item: PP05 workspace/review source passed; actual fresh build snapshot exposed missing protected build-control directory. Host-only builder initialization fixed with real OS lock/unsafe-existing checks;23 affected cases pass. First canonical902:896pass/4 stale bootstrap-fixture errors/2skips; targeted corrected cases pass, final canonical still pending. Shipped0.2.5 unchanged; pre-fix default image d439 retained, old-library attempt never reached Docker. No new site/app operation.
+- Current next action: Commit fresh-builder host fix, new corrected source/build baseline and exact outputs, then public fresh default-core bootstrap and ordinary four-app install/populated Documents1.4->1.6 migration/optional Taskfiles1.5. Original two sites retained; same-lock rebuilt-native core transition is not claimed supported. Fixed budgets/final canonical/artifact/UI/lifecycle and exact retention remain required; goalACTIVE90/1004/5.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

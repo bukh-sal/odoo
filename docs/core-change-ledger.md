@@ -1,3 +1,20 @@
+PP05 fresh-checkout build prerequisite (13November2026, before implementation):
+actual isolated source snapshot exposed a missing build control/locks directory.
+The public builder must create/verify protected control root and locks through
+the existing OS helper before acquiring the same candidate-build lock. Existing
+unsafe directories must refuse, never have ACLs reset. No approval policy/site/
+key is created. Source plan and real before-Docker failure are retained; actual
+OS-lock positive/unsafe-existing negative and affected CLI tests are required.
+This host-only tool is not shipped, so core0.2.5 runtime identity remains unchanged.
+
+The actual fresh-root/real-OS-lock and unsafe-existing negative pass, along with
+all clean CLI/public-bootstrap cases:23 tests,63.617s. The earlier902-case
+canonical run retained896 passes,2 declared skips and4 stale current-bootstrap
+fixture errors (old0.2.3 fake runtime); the corrected source-specific rerun closes
+those errors. No full-canonical-green claim yet. Failed snapshot attempt is
+authoritatively before Docker/tag creation; its record and default pre-fix core
+image remain immutable. A fresh corrected source/build scope is required.
+
 PP05 startup requirement (13November2026, before implementation): fresh authenticated
 stock pages without a workspace must offer current authorized workspace choice
 before loading any app. The current first-app fallback raises a generic AccessError

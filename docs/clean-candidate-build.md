@@ -19,6 +19,11 @@ Omitting `--policy` selects the clean core. Optional application compositions
 require an explicit reviewed policy and normal catalog/staging/approval before
 deployment; a successful build alone changes no site.
 
+The builder creates or verifies its private checkout-level control and lock
+directories before acquiring the build lock. It does not require a previously
+initialized site/operator policy. Existing directories with unsafe ownership or
+permissions refuse; the tool never resets their ACLs to continue.
+
 The clean materialization path (`tools/build_distribution.py` with
 `"runtime_surface": "clean"`) copies only `packages/contracts/v1`, the selected
 engine/addons, SDK, licenses/notices/requirements and the fixed
