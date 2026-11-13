@@ -135,6 +135,50 @@ class RestoreExecutor:
         self.store, self.config = native.store, native.config
         self.observer = native.observer
 
+    def _bundle(self, operation):
+        return self.store.bundle(operation)
+
+    def _checkpoint_directory(self, operation):
+        return self.store.root/'checkpoints'/operation
+
+    def _recovery_directory(self, operation):
+        return self.store.root/'recoveries'/operation
+
+    def _operation_status(self, operation):
+        return self.store.status(operation)
+
+    def _authorize_recovery_plan(self, plan):
+        self.store._authorize_plan(plan)
+
+    def _record_restore(self, operation, locks, *, code, details):
+        return self.store.record_restore(operation, locks, code=code, details=details)
+
+    def _record_restore_resume(self, operation, locks, *, decision_hash):
+        return self.store.record_restore_resume(operation, locks, decision_hash=decision_hash)
+
+    def _ready_to_resume(self, status):
+        return status['state']=='revoked' and status['phase']=='restore_verified' and not status['traffic_resumed']
+
+    def _original_plan_state(self):
+        return 'revoked'
+
+    def _restore_activity(self, operation, label, details, action):
+        """Fixed host activities; an optional journal never selects executable input."""
+        return action()
+
+    def _before_registry_restore(self, decision, configuration):
+        pass
+
+    def _commit_verified_result(self, operation, locks, details, directory, result):
+        self._record_restore(operation, locks, code='restore_verified', details=details)
+        _write_new(directory/'result.json', result)
+
+    def _finish_resume(self, operation, decision, exact_hash, locks):
+        pass
+
+    def _resume_locks(self, decision, exact_hash, plan):
+        return OperationLocks(self.store.root/'locks',plan['deployment_id'],plan['site_ids'])
+
     def _reference_recovery_supported(self):
         return False
 
@@ -148,8 +192,8 @@ class RestoreExecutor:
             if any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[])):
                 raise OperatorError('Reference recovery requires the optional host operator')
             return DispatchMaintenance(self.native)
-        bundle=self.store.bundle(operation)
-        if manifest is None:manifest=load_json((self.store.root/'checkpoints'/operation/'manifest.json').read_bytes())
+        bundle=self._bundle(operation)
+        if manifest is None:manifest=load_json((self._checkpoint_directory(operation)/'manifest.json').read_bytes())
         if (not self._reference_recovery_supported() and (
                 (manifest.get('reference_policy') is not None)
                 or any(p['runtime']=='external_service' for p in self.config.get('published_release',{}).get('plugins',[]))
@@ -192,7 +236,7 @@ class RestoreExecutor:
         original=load_json(path.read_bytes())
         decision=original['decision']
         if (data_digest(decision)!=original['hash'] or decision['operation_id']!=operation
-                or decision['plan_hash']!=self.store.bundle(operation)['plan_hash']):
+                or decision['plan_hash']!=self._bundle(operation)['plan_hash']):
             raise OperatorError('Original integration grant restore decision differs')
         proof=self._grant_proof(directory,decision)
         if any(result.get(key)!=value for key,value in proof_binding(proof).items()):
@@ -276,15 +320,15 @@ class RestoreExecutor:
 
     def _restore_state(self, operation):
         self._operation=operation
-        status = self.store.status(operation)
+        status = self._operation_status(operation)
         if status['state'] != 'recovery_required' or status['traffic_resumed']:
             raise OperatorError('Fresh-target recovery is permitted only before traffic resumes')
-        bundle = self.store.bundle(operation)
-        self.store._authorize_plan(bundle['plan'])
+        bundle = self._bundle(operation)
+        self._authorize_recovery_plan(bundle['plan'])
         self.native._require_jobs_drained()
         if len(self.config['sites']) != 1:
             raise OperatorError('Restore profile requires exactly one disposable site')
-        checkpoint = self.store.root/'checkpoints'/operation
+        checkpoint = self._checkpoint_directory(operation)
         manifest = load_json((checkpoint/'manifest.json').read_bytes())
         if manifest['operation_id'] != operation or manifest['plan_hash'] != bundle['plan_hash']:
             raise OperatorError('Checkpoint does not match the exact failed operation')
@@ -338,7 +382,7 @@ class RestoreExecutor:
         return proposal
 
     def prepare(self,operation):
-        directory=self.store.root/'recoveries'/operation
+        directory=self._recovery_directory(operation)
         if directory.exists():
             return RecoveryReviews(self.store).issue(self._continuation_class()(self).state(operation))
         return RecoveryReviews(self.store).issue(self._restore_state(operation))
@@ -347,19 +391,20 @@ class RestoreExecutor:
         if 'continuation' in decision:
             return self._continuation_class()(self).execute(decision,exact_hash=exact_hash,noninteractive=noninteractive)
         operation = decision['operation_id']
-        bundle = self.store.bundle(operation)
+        bundle = self._bundle(operation)
         with OperationLocks(self.store.root/'locks',bundle['plan']['deployment_id'],bundle['plan']['site_ids']) as locks:
             RecoveryReviews(self.store).verify(decision,exact_hash=exact_hash,current_payload=self._restore_state(operation))
             if noninteractive and not self.store.policy['allow_noninteractive']:
                 raise OperatorError('Noninteractive recovery is not enabled by OS operator policy')
-            directory = protect_directory(self.store.root/'recoveries')/operation
+            protect_directory(self._recovery_directory(operation).parent)
+            directory = self._recovery_directory(operation)
             if directory.exists():
                 raise OperatorError('Restore already attempted; inspect without repeating or deleting targets')
             directory = protect_directory(directory)
             issued = datetime.now(timezone.utc)
             _write_new(directory/'decision.json',{'decision':decision,'hash':exact_hash,'operator_id':current_identity(),
                 'started_at':issued.isoformat(),'review_expires_at':decision['review']['expires_at']})
-            self.store.record_restore(operation,locks,code='restore_authorized',details={'decision_hash':exact_hash,'fresh_database':decision['fresh_database']})
+            self._record_restore(operation,locks,code='restore_authorized',details={'decision_hash':exact_hash,'fresh_database':decision['fresh_database']})
             database = self.observer._container('db')
             for worker in decision['managed_workers']:
                 if worker['running']:
@@ -369,14 +414,14 @@ class RestoreExecutor:
             current_authority,private_native_auth=self._authority(self.config['sites'][0]['database'])
             if current_authority!=decision['authority']:
                 raise OperatorError('Current authority changed while draining; inspect before restoring')
-            manifest=load_json((self.store.root/'checkpoints'/operation/'manifest.json').read_bytes())
+            manifest=load_json((self._checkpoint_directory(operation)/'manifest.json').read_bytes())
             if decision.get('source_dispatch') is not None and self._source_dispatch(manifest,bundle)!=decision['source_dispatch']:
                 raise OperatorError('Dispatch effects changed after recovery review; fresh target must not be created')
             fresh = decision['fresh_database']
-            checkpoint = self.store.root/'checkpoints'/operation
+            checkpoint = self._checkpoint_directory(operation)
             RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
             _run(['docker','exec',database,'createdb','-U','postgres','-O','modular',fresh])
-            self.store.record_restore(operation,locks,code='restore_target_created',details={'fresh_database':fresh})
+            self._record_restore(operation,locks,code='restore_target_created',details={'fresh_database':fresh})
             _run(['docker','exec','-i',database,'pg_restore','-U','postgres','--no-owner','--role=modular','--exit-on-error','-d',fresh],input=(checkpoint/'database.dump').read_bytes())
             args, name = self.native._child(operation,'restore-filestore',writable=True,network=False)
             args.insert(2,'-i')
@@ -400,15 +445,18 @@ class RestoreExecutor:
         target=copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database']=fresh
         dispatch_profile=manifest.get('dispatch_profile')
         self._supported_effects(fresh,dispatch_profile=dispatch_profile,configuration=target)
+        self._before_registry_restore(decision,target)
         if dispatch_profile is not None:
             helper=self._dispatch_helper(manifest=manifest)
-            fence=helper.run('fence',operation,(dispatch_directory or directory)/'dispatch-fence',configuration=target,review_id=decision['review']['review_id'],
-                release_digest=data_digest(decision['restored_release_lock']),control_release=dispatch_profile['control']['release_digest'])
+            fence=self._restore_activity(operation,'restored-dispatch-fence',{'configuration_digest':data_digest(target)},
+                lambda:helper.run('fence',operation,(dispatch_directory or directory)/'dispatch-fence',configuration=target,review_id=decision['review']['review_id'],
+                    release_digest=data_digest(decision['restored_release_lock']),control_release=dispatch_profile['control']['release_digest']))
             helper.require_profile(fence['after'],closed=True)
         # Copy the old exact config to the private recovery directory before
         # replacing only its DB target. No secrets enter public evidence.
         args,name = self.native._child(operation,'read-config',network=False)
-        old_config = _run(args+['-c',"from pathlib import Path;print(Path('/run/secrets/odoo_config').read_text(),end='')"])
+        old_config = self._restore_activity(operation,'read-current-config',{'image_id':self.config['image_id']},
+            lambda:_run(args+['-c',"from pathlib import Path;print(Path('/run/secrets/odoo_config').read_text(),end='')"]))
         with (directory/'previous-odoo.conf').open('xb') as stream:stream.write(old_config)
         parser = configparser.ConfigParser();parser.read_string(old_config.decode())
         if parser['options']['db_name'] != self.config['sites'][0]['database'] or parser['options'].getint('max_cron_threads') != 0:
@@ -416,13 +464,17 @@ class RestoreExecutor:
         parser['options']['db_name'] = fresh;parser['options']['dbfilter'] = '^'+fresh+'$'
         buffer = io.StringIO();parser.write(buffer)
         code = "import pathlib,sys; p=pathlib.Path('/config/odoo_config'); p.write_bytes(sys.stdin.buffer.read()); p.chmod(0o444)"
-        args = ['docker','run','--rm','-i','--user','0:0','--network','none','--read-only','--cap-drop','ALL',
+        config_child=self.config['project']+'-op-'+operation+'-restore-config'
+        args = ['docker','run','--rm','-i','--name',config_child,
+            '--label','com.modular.operation='+operation,'--label','com.modular.deployment='+self.config['deployment_id'],
+            '--user','0:0','--network','none','--read-only','--cap-drop','ALL',
             '--mount','type=volume,source='+self.config['project']+'_appconfig,target=/config','--entrypoint','/venv/bin/python',self.config['image_id'],'-c',code]
         # The file is read-only. A new file under the protected parent is
         # atomically replaced, preserving the previous bytes privately.
         args[-1] = "import os,pathlib,sys; p=pathlib.Path('/config/odoo_config'); t=p.with_name('restore-config.tmp'); f=t.open('xb'); f.write(sys.stdin.buffer.read()); f.flush(); os.fsync(f.fileno()); f.close(); t.chmod(0o444); os.replace(t,p)"
         RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
-        _run(args,input=buffer.getvalue().encode())
+        self._restore_activity(operation,'publish-restored-config',{'child':config_child,'input_sha256':hashlib.sha256(buffer.getvalue().encode()).hexdigest()},
+            lambda:_run(args,input=buffer.getvalue().encode()))
         target = copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database'] = fresh
         RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
         # Hash/project restored metadata with retained code offline before
@@ -434,22 +486,28 @@ class RestoreExecutor:
         if (restored['release_lock']!=decision['restored_release_lock'] or restored['installations']!=previous['installations']
                 or restored['bindings']!=previous['bindings']):
             raise OperatorError('Restored release/installation/bindings differ from reviewed checkpoint')
-        app=ensure(target,target['image_id'],operation,inventory_digest=restored['release_lock']['core_inventory_digest'],suffix='restore')
+        app=self._restore_activity(operation,'create-restored-worker',{'configuration_digest':data_digest(target)},
+            lambda:ensure(target,target['image_id'],operation,inventory_digest=restored['release_lock']['core_inventory_digest'],suffix='restore'))
         target['worker_id']=app
         _write_new(directory/'worker-replacement.json',{'configuration':target,'container_id':app})
         temporary = self.native.target_path.with_name(self.native.target_path.name+'.restore-'+operation+'.tmp')
-        _write_new(temporary,target);os.replace(temporary,self.native.target_path)
-        _run(['docker','start',app])
-        wait_ready(app)
+        def publish_target():
+            _write_new(temporary,target);os.replace(temporary,self.native.target_path)
+        self._restore_activity(operation,'publish-restored-target',{'configuration_digest':data_digest(target)},publish_target)
+        def start_worker():
+            _run(['docker','start',app])
+            wait_ready(app)
+        self._restore_activity(operation,'start-restored-worker',{'container_id':app},start_worker)
         observer = self._recovery_observer(target,manifest=manifest)
         running=observer.state(observer.read(),snapshot)['state']
         if running!=restored:raise OperatorError('Restored worker observation differs from verified offline state')
         from .profile_channel import publish_profile
         if observer.read()['runtime'].get('published_release_protocol')==1:
-            self.native._prepare_assets(operation, target, restored, observer.read(), directory,
-                                        suffix='restored-assets')
-            _write_new(directory/'profile-publication.json',publish_profile(observer,
-                Catalog(self.native.catalog_root,self.native.validator,readonly=True)))
+            self._restore_activity(operation,'prepare-restored-assets',{'configuration_digest':data_digest(target)},
+                lambda:self.native._prepare_assets(operation, target, restored, observer.read(), directory,suffix='restored-assets'))
+            profile=self._restore_activity(operation,'publish-restored-profile',{'configuration_digest':data_digest(target)},
+                lambda:publish_profile(observer,Catalog(self.native.catalog_root,self.native.validator,readonly=True)))
+            _write_new(directory/'profile-publication.json',profile)
         else:
             _write_new(directory/'profile-publication.json',{'state':'deferred_legacy_reader',
                 'reason':'Retained legacy image has no published-release reader; preserve its cache and use the independent CLI until a compatible release is approved.'})
@@ -459,21 +517,21 @@ class RestoreExecutor:
         dispatch_ready=None
         if dispatch_profile is not None:
             helper=self._dispatch_helper(manifest=manifest);digest=data_digest(decision['restored_release_lock'])
-            jobs=helper.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
-                previous_release=digest,release_digest=digest,inventory_digest=restored['release_lock']['core_inventory_digest'],review_id=decision['review']['review_id'],
-                source_release=dispatch_profile['control']['release_digest'])
+            jobs=self._restore_activity(operation,'reconcile-restored-jobs',{'configuration_digest':data_digest(target)},
+                lambda:helper.reconcile_jobs(operation,directory/'dispatch-reconcile',configuration=target,
+                    previous_release=digest,release_digest=digest,inventory_digest=restored['release_lock']['core_inventory_digest'],review_id=decision['review']['review_id'],
+                    source_release=dispatch_profile['control']['release_digest']))
             if not jobs['resume_allowed']:raise OperatorError('Restored uncertain effects require independent reconciliation')
             dispatch_ready=helper.require_profile(helper.inspect(configuration=target),closed=True)
             _write_new(directory/'dispatch-ready.json',dispatch_ready)
-        self.store.record_restore(operation,locks,code='restore_verified',details={'fresh_database':fresh,'decision_hash':exact_hash,
-            'failed_database_retained':True,'traffic_resumed':False,'session_secret_rotated':True,'technical_credentials_revoked':True})
         result={'state':'restored_verified','configuration':target,'state_digest':data_digest(restored),'keep_traffic_closed':True,**public_binding(private_native_auth),**proof_binding(proof)}
         if dispatch_ready is not None:
             result['dispatch']=dispatch_ready
             self._restore_result_dispatch_fields(result,helper,dispatch_ready)
-        _write_new(directory/'result.json',result)
+        self._commit_verified_result(operation,locks,{'fresh_database':fresh,'decision_hash':exact_hash,
+            'failed_database_retained':True,'traffic_resumed':False,'session_secret_rotated':True,'technical_credentials_revoked':True},directory,result)
         return {'state':'restored_verified','fresh_database':fresh,'failed_database_retained':True,'keep_traffic_closed':True,
-            'operation_status':self.store.status(operation)}
+            'operation_status':self._operation_status(operation)}
 
     def _restore_result_dispatch_fields(self,result,helper,dispatch_ready):
         if dispatch_ready['profile']=='r1-native-recurring-dispatch-v1':
@@ -488,11 +546,11 @@ class RestoreExecutor:
     def _resume_state(self, operation):
         self._operation=operation
         self.native._require_jobs_drained()
-        status = self.store.status(operation)
-        path = self.store.root/'recoveries'/operation/'result.json'
+        status = self._operation_status(operation)
+        path = self._recovery_directory(operation)/'result.json'
         result = load_json(path.read_bytes())
-        self.store._authorize_plan(self.store.bundle(operation)['plan'])
-        if status['state']!='revoked' or status['phase']!='restore_verified' or status['traffic_resumed'] or result['configuration']!=self.config:
+        self._authorize_recovery_plan(self._bundle(operation)['plan'])
+        if not self._ready_to_resume(status) or result['configuration']!=self.config:
             raise OperatorError('Only a verified, still-closed restore can resume traffic')
         edge=self.observer._container('edge',stopped=True)
         if self.native._inspect(edge)['State']['Running']:
@@ -518,20 +576,21 @@ class RestoreExecutor:
         return RecoveryReviews(self.store).issue(self._resume_state(operation))
 
     def revoke_review(self,decision,*,exact_hash):
-        self.store._authorize_plan(self.store.bundle(decision['operation_id'])['plan'],generation=False)
+        self.store._authorize_plan(self._bundle(decision['operation_id'])['plan'],generation=False)
         RecoveryReviews(self.store).revoke(decision,exact_hash=exact_hash)
         return {'state':'review_revoked','operation_id':decision['operation_id'],'review_id':decision['review']['review_id']}
 
     def resume(self, decision, *, exact_hash, noninteractive=False):
-        operation = decision['operation_id'];bundle = self.store.bundle(operation)
-        with OperationLocks(self.store.root/'locks',bundle['plan']['deployment_id'],bundle['plan']['site_ids']) as locks:
+        operation = decision['operation_id'];bundle = self._bundle(operation)
+        with self._resume_locks(decision,exact_hash,bundle['plan']) as locks:
             RecoveryReviews(self.store).verify(decision,exact_hash=exact_hash,current_payload=self._resume_state(operation))
             if noninteractive and not self.store.policy['allow_noninteractive']:
                 raise OperatorError('Noninteractive recovery is not enabled')
-            self.store._authorize_plan(bundle['plan'])
+            self._authorize_recovery_plan(bundle['plan'])
             app = self.observer._container('app')
             probe = "import urllib.request; r=urllib.request.urlopen('http://127.0.0.1:8069/web/login',timeout=5); assert r.status==200"
-            _run(['docker','exec',app,'/venv/bin/python','-c',probe])
+            self._restore_activity(operation,'resume-readiness',{'container_id':app},
+                lambda:_run(['docker','exec',app,'/venv/bin/python','-c',probe]))
             edge = self.observer._container('edge',stopped=True)
             locks.check()
             RecoveryReviews(self.store).check_reserved(decision,exact_hash=exact_hash)
@@ -540,11 +599,13 @@ class RestoreExecutor:
             payload=copy.deepcopy(decision);payload.pop('review')
             if payload!=self._resume_state(operation):
                 raise OperatorError('Recovery target, authority or effects changed before traffic resume')
-            self.store.record_restore_resume(operation,locks,decision_hash=exact_hash)
+            self._record_restore_resume(operation,locks,decision_hash=exact_hash)
             if decision.get('effects',{}).get('dispatch') is not None:
                 snapshot=decision['effects']['dispatch']
-                self._dispatch_helper().run('enable',operation,self.store.root/'recoveries'/operation/'dispatch-resumes'/decision['review']['review_id'],
-                    review_id=decision['review']['review_id'],release_digest=snapshot['release_digest'],expected_digest=snapshot['state_digest'])
-            _run(['docker','start',edge])
-            return {'state':'restored_traffic_resumed','operation_id':operation,'original_plan_state':'revoked',
+                self._restore_activity(operation,'enable-restored-dispatch',{'state_digest':snapshot['state_digest']},
+                    lambda:self._dispatch_helper().run('enable',operation,self._recovery_directory(operation)/'dispatch-resumes'/decision['review']['review_id'],
+                        review_id=decision['review']['review_id'],release_digest=snapshot['release_digest'],expected_digest=snapshot['state_digest']))
+            self._restore_activity(operation,'open-restored-traffic',{'container_id':edge},lambda:_run(['docker','start',edge]))
+            self._finish_resume(operation,decision,exact_hash,locks)
+            return {'state':'restored_traffic_resumed','operation_id':operation,'original_plan_state':self._original_plan_state(),
                 'fresh_database':self.config['sites'][0]['database']}

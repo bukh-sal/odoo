@@ -108,6 +108,15 @@ def main(argv=None):
     recover.add_argument('--decision', type=Path)
     recover.add_argument('--decision-hash')
     recover.add_argument('--noninteractive', action='store_true')
+    checkpoint = plugin.add_parser('checkpoint', help='Independently restore an exact completed native uninstall checkpoint; original operation stays completed')
+    checkpoint.add_argument('checkpoint_action', choices=['prepare-restore','restore','prepare-continue','continue','prepare-resume','resume','status','revoke-review'])
+    checkpoint.add_argument('operation_id', help='Completed source ID for prepare-restore; separate recovery ID for all other actions')
+    checkpoint.add_argument('--store', required=True, type=Path)
+    checkpoint.add_argument('--deployment-config', required=True, type=Path)
+    checkpoint.add_argument('--catalog', required=True, type=Path)
+    checkpoint.add_argument('--decision', type=Path)
+    checkpoint.add_argument('--decision-hash')
+    checkpoint.add_argument('--noninteractive', action='store_true')
     catalog = groups.add_parser('catalog')
     catalog.add_argument('--store', required=True, type=Path)
     catalog_actions = catalog.add_subparsers(dest='action', required=True)
@@ -348,6 +357,42 @@ def main(argv=None):
                 result=prepare_staged_plan(observer.state(observation,snapshot),observation['sites'],snapshot,record['runtime'],descriptor,
                     targets=nomination['targets'],operation_type=nomination['operation_type'],operation_id=str(uuid4()),
                     created_at=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),base_runtime=observation['runtime'])
+        elif args.group == 'plugin' and args.action == 'checkpoint':
+            from modular_platform.completed_checkpoint import CompletedCheckpointRecovery
+            from modular_platform.checkpoint_recovery_journal import canonical_id
+            from modular_platform.native_executor import NativeExecutor
+            from modular_platform.operator_store import OperatorStore
+            from modular_platform.operator_os import OperatorError
+            from modular_platform.plans import data_digest
+            canonical_id(args.operation_id)
+            store=OperatorStore(args.store)
+            recovery=CompletedCheckpointRecovery(NativeExecutor(store,args.deployment_config,args.catalog,validator))
+            if args.checkpoint_action=='status':
+                result=recovery.status(args.operation_id)
+            elif args.checkpoint_action.startswith('prepare-'):
+                method={'prepare-restore':recovery.prepare,'prepare-continue':recovery.prepare_continue,
+                    'prepare-resume':recovery.prepare_resume}[args.checkpoint_action]
+                decision=method(args.operation_id)
+                result={'decision':decision,'decision_hash':data_digest(decision)}
+            else:
+                if not args.decision or not args.decision_hash:
+                    raise OperatorError('A separately reviewed checkpoint decision and exact hash are required')
+                decision=load_json(args.decision.read_bytes())
+                if not isinstance(decision,dict) or decision.get('operation_id')!=args.operation_id:
+                    raise OperatorError('Checkpoint recovery identity mismatch')
+                if not args.noninteractive:
+                    if not sys.stdin.isatty():raise OperatorError('Interactive recovery requires a terminal')
+                    print(json.dumps(decision,indent=2))
+                    if input('Type the exact reviewed checkpoint recovery hash: ').strip()!=args.decision_hash:
+                        raise OperatorError('Recovery hash confirmation mismatch')
+                if args.checkpoint_action=='revoke-review':
+                    result=recovery.revoke_review(decision,exact_hash=args.decision_hash)
+                else:
+                    method={'restore':recovery.execute,'continue':recovery.continue_restore,
+                        'resume':recovery.resume}[args.checkpoint_action]
+                    # This recovery has its own OS journal, not a fabricated
+                    # original OperationStore row or ordinary apply progress.
+                    result=method(decision,exact_hash=args.decision_hash,noninteractive=args.noninteractive)
         elif args.group == 'plugin' and args.action == 'recover':
             from modular_platform.operator_store import OperatorStore
             from modular_platform.operator_os import OperatorError

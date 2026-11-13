@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-13T13:37:56.903571+00:00",
+  "state": "source_implemented_native_qualification_pending",
+  "phase": "PP-04 B",
+  "source_base": "081262f22d7",
+  "source_sha256": {
+    "packages/platform_sdk/modular_platform/completed_checkpoint.py": "b26399a5ffbbb80727c6b23f04b5047bbcbd94543aaf6e8d51b87832d1ffca5a",
+    "packages/platform_sdk/modular_platform/operator_store.py": "07211b5c11f4b82a23b2f3f80cfb4cc4aaba7eee565156ff27e61740b26988ee",
+    "packages/platform_sdk/modular_platform/restore_executor.py": "add2a76c5c1bdcb6e8d0efa46c4e40de46802e9109fb94ce42e02138c6889e8a",
+    "tools/modular.py": "a7bbc55934cdf8cf333658f85b8f79594adc8565e147635cd38cfbb4f02ab7f1",
+    "tests/test_completed_checkpoint_flow.py": "d9992858df5fada2e78456fa5c97e67693b2de4f236439d132ea7f79f57f9604",
+    "tests/test_checkpoint_cli.py": "89de9865ba9647ecc00c130b480286ecca38db0733ca99ebd430383abbfe4045",
+    "tests/test_checkpoint_store_fence.py": "ca708b836594851998b0724b0da4fc33b43789cbc7219fad4492de9434d728cb",
+    "docs/architecture-decisions/0086-independent-completed-checkpoint-recovery.md": "88ecaad9e53d575f60a53f45785d4450d5816d7fc4dea603da1f24004c91b667",
+    "docs/completed-checkpoint-recovery.md": "459be704faafa849bc5bb7a16ccdcdc0ca3b1416a5e00f9c4f34e3839dbdee23"
+  },
+  "receipts": [
+    {
+      "name": "integration-regression-first.out.txt",
+      "sha256": "67ae6883635539adbab68e6bbe4a3a1444b78ef3ad4e940872fe9b4a099d2d36",
+      "cases": 88,
+      "proof": "new flow/CLI and existing failed/reference/authority recovery, preceding final activity-history binding"
+    },
+    {
+      "name": "integration-source-current.out.txt",
+      "sha256": "21613a657668f7edd9f1f5be3ca7e1b06f4d6b25d57d277a34f65f698e44d61b",
+      "cases": 29,
+      "proof": "final19 actual host-flow plus5 CLI and5 effect source cases; Docker/SQL/ACL external boundaries simulated"
+    },
+    {
+      "name": "operator-regression.out.txt",
+      "sha256": "9638efad5e1bc8d6a32e802757f7c9c2584948bfc36969aaf96f56174f461963",
+      "cases": 21,
+      "proof": "real protected Windows store/process-lock/approval and native-feature affected regression"
+    },
+    {
+      "name": "store-fence-real-os-current.out.txt",
+      "sha256": "1b5d5c3514435aec1683569af1327f40badaf18f67ed6cb7a933e1ea48803c60",
+      "cases": 1,
+      "proof": "real Windows store forward registration/review/approval/reservation/mutation refusal on incomplete recovery binding"
+    },
+    {
+      "name": "integration-freeze.out.txt",
+      "sha256": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa",
+      "cases": null,
+      "proof": "actual freeze checker:122 files/11rows passed"
+    }
+  ],
+  "outcomes": [
+    "separate completed-source recovery identity and immutable original history",
+    "actual shared host completion and separate resume under held locks",
+    "source effect comparison before any restored registry/configuration startup",
+    "fresh safe precreation continuation without refencing/redraining/reloading",
+    "lost command or enable response remains pending and cannot replay",
+    "forward overlap fence until independent resumed completion",
+    "protected command history and result digests bind fresh reviews"
+  ],
+  "limits": [
+    "No installed completed-checkpoint restore or UI qualification yet",
+    "No live DB, application, authority, image or Docker mutation in this source section",
+    "OS/SQLite journal and actual semantic SQL expression witnesses remain separate prior evidence",
+    "No full-host suite rerun",
+    "Native-only is not a hostile-code sandbox or proof arbitrary application code has no outside effects",
+    "Changed SDK source is not relabelled into retained images; new packaged identity required before any new runtime build"
+  ],
+  "acceptance": {
+    "goal_active": true,
+    "accepted_phase_points": 70,
+    "accepted_phases": 3,
+    "total_phases": 5,
+    "rough_implementation": 77,
+    "pp04_b_accepted": false
+  }
+}

@@ -4,6 +4,23 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+PP04 B source integration (13November2026) now implements the separate completed
+checkpoint executor/CLI, shared private restore hooks with unchanged failed-path
+defaults, protected per-command activities, exact current-target/authority/effect/
+source binding, before-registry semantic comparison, bounded fresh precreation
+continuation and distinct locked resume. Forward registration/approval/reservation
+cannot substitute for recovery resume; incomplete journals refuse. Original
+completed SQLite history is never rewritten. Fixed config writer now has exact
+operation/deployment ownership and child name.29 final flow/CLI/effect source
+cases pass,88 earlier affected integration cases pass,21 real-OS approval/lock/
+native-feature regressions and one real Windows forward-fence case pass. These
+are different proof classes, not an installed recovery claim. Freeze122files/
+11rows passes. [Source evidence](evidence/G7/20261113-pp04-completed-checkpoint-source-01/qualification.json)
+and [ADR0086](architecture-decisions/0086-independent-completed-checkpoint-recovery.md).
+Actual completed-uninstall/current-revocation/bytes/closed restore/separate resume/
+usable UI remain required before support acceptance; no image relabel/build or
+live mutation occurred in this section.
+
 PP04 B completed-checkpoint requirement recorded in its fresh local plan BEFORE
 source (13November2026). Partial generic host source now provides a distinct
 protected recovery journal and read-only semantic core-effect footprint, preserving

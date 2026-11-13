@@ -1,5 +1,25 @@
 # Work log
 
+13November2026 PP04 B source integration delivers the completed-checkpoint
+executor and public CLI under the fresh section plan. Shared hooks retain old
+failed/reference defaults; new route preserves original completion history and
+records command intent before effects, result/history hashes and a separate
+locked resume. Review caught/fixed the new resume context not being activated
+inside common locks. Added overlapping forward-operation fence and exact config
+child ownership. Actual new host/shared flow with simulated external boundaries
+proves ordering, before-registry mismatch refusal, safe fresh continuation without
+repeated fence/drain/load, lost create/enable responses remaining uncertain, late
+authority drift, stale source/review/checkpoint/result/activity evidence refusal,
+and source-history preservation.29 final flow/CLI/effect cases pass10.076s; earlier
+88 affected integration cases pass13.706s.21 real protected OS store/process-lock/
+approval/native-feature regressions pass164.544s; one real Windows store forward
+fence case passes12.504s. Freeze122files/11rows passes. Source evidence is
+G7/20261113-pp04-completed-checkpoint-source-01; genuine installed completed
+uninstall/fresh restore/current revocations/bytes/separate resume/UI remain next.
+Both live cohorts/images/data/authority remain unchanged; no Docker mutation,
+fixture, full suite, new image, cleanup/publication or additional phase acceptance.
+GoalACTIVE70accepted3phases,rough77. PP04 C and PP05 await activation.
+
 13November2026 PP04 B fresh design preceded source. Actual old RestoreExecutor
 requires unresolved failure and its journal retires that operation; no guard was
 broadened. New separate journal binds original completed status/bundle/review/

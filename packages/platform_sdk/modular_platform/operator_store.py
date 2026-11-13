@@ -244,6 +244,33 @@ class OperatorStore:
             raise OperatorError('Operation targets are outside the OS operator deployment allowlist')
         if generation and (plan['policy_version'] != self.policy['policy_version'] or plan['operator_authorization_generation'] != self.policy['authorization_generation']):
             raise OperatorError('Policy or independent operator authority generation changed')
+        if generation:
+            self._require_no_checkpoint_recovery(plan)
+
+    def _require_no_checkpoint_recovery(self, plan):
+        """Forward work cannot replace an independently fenced recovery/resume.
+
+        Read-only historical bundle/status access deliberately does not enter
+        this check: journal verification must read its immutable source record.
+        Missing/uncertain private evidence is not permission to open traffic.
+        """
+        root = self.root/'checkpoint-restores'
+        if not root.exists() and not root.is_symlink():
+            return
+        verify_private_directory(root)
+        from .checkpoint_recovery_journal import CheckpointRecoveryJournal, canonical_id
+        for directory in root.iterdir():
+            recovery = canonical_id(directory.name)
+            try:
+                state = CheckpointRecoveryJournal(self, recovery).status()
+            except (OSError,KeyError,TypeError) as error:
+                raise OperatorError('Incomplete or unreadable checkpoint recovery evidence; inspect before forward work') from error
+            binding = state['binding']['decision']
+            source = self.bundle(binding['checkpoint_operation_id'])['plan']
+            overlaps = (source['deployment_id'] == plan['deployment_id']
+                        or bool(set(source['site_ids']) & set(plan['site_ids'])))
+            if overlaps and (state['phase'] != 'resumed' or state['pending'] is not None):
+                raise OperatorError('Completed-checkpoint recovery is active or uncertain; use its independently reviewed continuation/resume')
 
     @staticmethod
     def _event(database, operation_id, code, details=None, now=None):

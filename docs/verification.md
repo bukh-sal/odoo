@@ -2,6 +2,13 @@
 
 Current release status is in [implementation-status.md](implementation-status.md).
 
+PP04 B [completed-checkpoint host source](evidence/G7/20261113-pp04-completed-checkpoint-source-01/qualification.json)
+has simulated-boundary ordering/CLI/shared recovery tests, real protected Windows
+forward-fence/store/lock regressions and unchanged contract freeze evidence.
+Installed completed-uninstall restoration/current-authority/bytes/UI qualification
+is still required. It does not add phase acceptance or replace the earlier
+[journal/semantic SQL witnesses](evidence/G7/20261113-pp04-checkpoint-primitives-01/qualification.json).
+
 New active program: [application adoption phases/checks](../planning/application_adoption.md),
 with [developer and usage limitations](application-adoption-limitations.md).
 Historical qualification below remains complete for its recorded artifacts.
