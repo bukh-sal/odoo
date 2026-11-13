@@ -1,0 +1,69 @@
+{
+  "accepted_phases": 1,
+  "accepted_points": 25,
+  "actual_ui": {
+    "formal_accessibility_claim": false,
+    "horizontal_overflow": false,
+    "keyboard_close_review_focus_attach": true,
+    "new_inactive_pdf_reference_revision": 2,
+    "observed_width": 393,
+    "old_active_brief_pin_revision": 3,
+    "provider_bytes_not_changed": true,
+    "save_existing_pdf_reference_focus_attach": true,
+    "soft_remove_pdf_reference_focus_attach": true
+  },
+  "evidence_sha256": {
+    "active_fix_plan": "4d880e1cb35204bdcfb831e380b873bf6c091cbe62b56f08cb4ad9f320abd529",
+    "build": "f0a45aa8a8256e99075cb0501e888171d62f0ccc5060ccbbf969d038933e1924",
+    "grant_probe": "27a895390194d9c2078ba0427a3ee5612fb83abfc89518638d28ef2a13a31038",
+    "operation": "21eea2c73188f430280381a452c1f12dd3692527629c9646df7672ecdc11baaa",
+    "probe_intent": "cf8e4c91f4fafb1ce75b592d1e689f47c41aa4fd9e29ec75c1691aed28528963",
+    "ui": "801d118de21e264927cd6c8cef2e413525b6fd21b551f0b05635b301d9c89643"
+  },
+  "goal": "active",
+  "next": "Implement/review/test CR0021 under fresh source plan, then real independently reviewed coordinated file/version/reference restore",
+  "no_PP03_PP04_PP05_implementation_plans": true,
+  "no_active_process_or_open_fixture": true,
+  "normal_upgrade": {
+    "checkpoint_verified": true,
+    "completed": true,
+    "configuration": 21,
+    "core_other4apps_python_exact": true,
+    "documents": "0.1.4",
+    "exact_trust_ack_only": true,
+    "image_id": "sha256:b3221639c312dd9726292870b8b157ed509cdd4bbfa1d20b1275dcc1bc6f93ef",
+    "operation_id": "67a02b3d-b6da-4bae-b008-d9308f371ded",
+    "plan_hash": "sha256:1efa8891026c9d7c018f8e61622f6838f9788866093e8f7d6f4a02c9876882ff",
+    "platform": "0.2.2",
+    "taskfiles": "0.1.1",
+    "worker_id": "abfc41d54765c29ab5ee9f969820e9959de098d3e75c99ba730c670e01bd1588"
+  },
+  "phase": "PP-02",
+  "phase_accepted": false,
+  "recovery_prerequisite": {
+    "actual_generic_AUTHORITY_SELECT_and_authority_sql_executed_on_PostgreSQL_temp_tables": true,
+    "adr": "0085",
+    "change_request": "CR-0021",
+    "current_integration_grant_revocation_omitted": true,
+    "disposition": "Repair generic current grant observation/reconciliation/proof before real populated recovery; preserve independent approval, current auth and no-replay",
+    "full_native_restore_not_run": true,
+    "human_revocation_control_preserved": true,
+    "public_business_authority_target_store_unchanged": true,
+    "scope": "Platform integration grants, not app-owned ACL framework",
+    "status": "proposed_not_implemented",
+    "transaction_fully_rolled_back": true
+  },
+  "result": "focus_repair_installed_verified_generic_recovery_grant_gap_proven",
+  "retained_data": {
+    "active_reference_rows": 1,
+    "all_original_bytes_versions_receipts_and_old_brief_ref_exact": true,
+    "files": 6,
+    "old8business_and_current_authority_jobs_outbox_exact": true,
+    "raw_bytes": 4340,
+    "receipts": 29,
+    "reference_rows": 2,
+    "versions": 9
+  },
+  "rough_implementation_points": 45,
+  "utc": "2026-11-13T05:36:50.649788+00:00"
+}

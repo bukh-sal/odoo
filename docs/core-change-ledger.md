@@ -4,6 +4,16 @@ Record general requirements before implementation and retain the supported
 security, lifecycle and recovery contracts. A proposed fix is not qualified
 until its tests and review are recorded. App-specific core changes are refused.
 
+CR-0021 (13November2026), proposed host recovery-authority prerequisite for PP-02:
+current integration grants must not revive from a checkpoint after a newer
+revocation. Actual generic SQL on rollback-only PostgreSQL temporary tables
+preserved the human revocation control but omitted the grant revocation; all live
+rows remained exact. Observe/bind stable grant identities and reconcile existing
+checkpoint rows to current decisions, revoke missing scopes, never create new
+source-only approvals. Require protected proof through restore/continuation and
+fresh resume. ADR0085 records the proposal. No application-specific branch or
+business ACL framework; source and installed recovery qualification pending.
+
 CR-0020 (13November2026), source implemented / installed pending for PP-02: independent
 workspace file applications need bounded authenticated binary transport beyond
 the64KiB JSON gateway. Add trusted native registration of private binary
@@ -14,8 +24,10 @@ document/task/customer identifiers in generic core. Retain managed attachment
 denial and close inherited direct-model binary token/stream paths before
 elevation or byte access. ADR0084 records the new surface. Source/fake-boundary
 checks pass (59cases58pass/1existing skip; freeze122files/11rows). Body-limit
-500 regression was reproduced then fixed. Installed qualification remains pending; existing core0.2.1 images are not
-relabelled and no secure-file support is claimed from this proposal.
+500 regression was reproduced then fixed. Subsequent core0.2.2/Docs0.1.4 installed
+workflow, current-authority, actual parallel quota and pinned task-file use are
+recorded in PP-02 evidence; coordinated byte/reference recovery remains pending.
+Existing core0.2.1 images are not relabelled and no universal file-safety claim is made.
 
 11November2026 independent work-application round: no new core change request
 was needed. Own models, schemas, services, client action/assets, team directory

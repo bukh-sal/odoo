@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T05:12:39.728131+00:00
+- Updated UTC: 2026-11-13T05:36:50.649788+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: persistent pinned-version workflow and integration authority verified; final focus repair/byte-reference recovery pending.** Historical scopes complete.
-- Latest work item: **Normal Docs0.1.4 upgrade completed/config20; actual refresh now retains exact pin.** One250Bv4 upload leaves task pinned to original402Bv1; downloads distinct/exact, same reference soft-remove/relink revision3, all old versions/receipts preserved. Current6files/9versions/29receipts/4340B.31final HTTP/native controls and three exact-restored authority fixtures prove honest unavailable states and independent parent/library behavior.393px narrow picker/keyboard protection passes; CloseReview async-focus issue source-corrected in private Taskfiles0.1.1/3e4535a (9Python/39affectedJS), archive4a1a5398 UNADMITTED/unbuilt. [Evidence](evidence/G7/20261113-pp02-pinned-workflow-authority-01/qualification.json). GoalACTIVE25/1001/5rough45; next fresh focus successor rollout plan, then coordinated restore. No open fixture/operation.
+- Current phase/gate: **PP-01 accepted; PP-02 active: focus repair installed; generic integration-grant recovery prerequisite CR-0021 active before real byte/reference restore.** Historical scopes complete.
+- Latest work item: **Normal Taskfiles0.1.1 upgrade67a02b3d completed/config21/imageb322; actual393px keyboard CloseReview/save/remove now focus Attach.** Existing6files/9versions/29receipts/4340B unchanged; oldbriefpin active/rev3, one newPDFreference soft-removed/rev2, provider bytes intact. Actual generic SQL temp-table rollback probe preserves human revocation but leaves checkpoint grant approved despite newer source revocation; live data/authority untouched. Proposed ADR0085/CR0021 and fresh current-source fix plan precede implementation. [Evidence](evidence/G7/20261113-pp02-focus-recovery-gap-01/qualification.json). No actual recovery/fault begun; goalACTIVE25/1001/5rough45, no open fixture/operation.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -162,6 +162,32 @@ No core/Docs/model/schema/grant change. LiveTaskfiles remains0.1.0.
 NextfreshTaskfilesfocusimage/normalupgradeplan+actualfocus then currentcoordinated
 byte/version/reference freshrestoreplan. No PP02acceptance, noPP03..05plans,
 noactiveprocess/fixture/unresolvedmutation, no cleanup/push. Keepalloldassets/data.
+
+### PP02 focus closed; grant recovery prerequisite discovered
+
+Taskfiles0.1.1 normal67a02b3d upgrade completed with independent review/trustack,
+exact checkpoint and all priorbytes/reference/business/authority preservation.
+Currentconfig21/imageb322/core2.2/Docs.4, core+other4apps+Pythonbytes exact. Actual
+393px keyboardCloseReview, newexisting-PDFrefsave and softremove now focus the
+replacement Attach button afterasyncread/patch. No newDocbytes/versions:6files/
+9versions/29receipts/4340B. Oldbriefref active/rev3 exact; newPDFref inactive/rev2,
+bothhistoryrows retained. No formalaccessibilityclaim or productsourcechange.
+
+Recoveryresearch then found current grant metadata absent in generic authority
+observation/overlay. Actual AUTHORITY_SELECT/authority_sql on PostgreSQL pg_temp
+counterparts only reproduces humanmembershiprevocation control correctly while
+checkpoint-approved integrationgrant staysapproved despite currentrevocation.
+Fulltransactionrollback and all livebefore/afterrows/target/store exact; no native
+fault/restore executed. This is an unintentional platformauthority gap, not the
+app-business ACL limitation. CR0021/ADR0085 proposed; currentgrant snapshot and
+fixedrow reconciliation/proof/continuation/resume plan activated beforecode.
+No generic source fix or recovery success claimed yet. Existingsealed evidence
+remains scoped historical acceptance; originaloperationneverreplayed.
+
+Next implement/review CR0021 with actual SQL/host-boundary/affected checks, then
+fresh real coordinated document/version/reference/currentauthority restore plan.
+FullPP02 remains open,25/1001/5rough45goalACTIVE. No activeprocess/fixture, no
+cleanup or PP03..05implementationplans; images/dumps/oldSDKbytes immutable.
 
 ## Product/platform roadmap (13November2026)
 

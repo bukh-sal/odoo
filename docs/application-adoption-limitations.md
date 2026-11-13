@@ -37,3 +37,11 @@ Developer and usage impact are recorded separately where they differ.
 For subsequent findings include exact source/operation/browser/test evidence,
 the developer/user consequence,required or deferred disposition and return
 condition. Do not include credentials,private record bodies or raw snapshots.
+
+Current clarification (13November2026): AP-LIM-015 historical platform-scope
+proof covers human membership/operator and native authentication reconciliation.
+It did not prove later integration-grant revocations. PP-02 actual generic SQL
+probe found that omission; [proposed ADR0085](architecture-decisions/0085-current-integration-grants-during-recovery.md)
+and CR-0021 require repair before claiming grant preservation in new recovery.
+Application-owned business ACL checkpoint semantics remain separate. No current
+live restore or generic grant repair is accepted from this source/probe finding.
