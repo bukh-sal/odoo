@@ -14,13 +14,13 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T03:24:11.109256+00:00
+- Updated UTC: 2026-11-13T03:54:49.578051+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: **PP-01 accepted; PP-02 active: useful Documents workflow and initial installed boundaries verified; authority/quota/integration/recovery pending.** Historical scopes complete.
-- Latest work item: **Documents0.1.2 installed through normal reviewed successor upgrades; two real first-use/storage defects and two UI observations corrected and verified.** Current config18/image3e40c53c/workerb971c799, core0.2.2. Original brief revision6/3versions; literal markup text revision2/1version; total2files/4versions/4receipts/1150B. Old8tables/authority/14job business/53outbox exact. Actual preview/download/history/trash/rename-draft and observed393px focus pass;16 transport negatives and7 native/legacy denials preserve data. [Evidence](evidence/G7/20261113-pp02-file-workflow-01/qualification.json). Accepted25/1001/5; rough implementation40/100; goal ACTIVE.
+- Current phase/gate: **PP-01 accepted; PP-02 active: current-authority and real RR quota verified; format breadth/integration/recovery and one unavailable-copy repair pending.** Historical scopes complete.
+- Latest work item: **20current-authority checks with all4fixtures restored; actual viewer and known-loss/recovery UI; real95->100MiB two-writer quota race verified.** Both native writers observed blocked, actual PostgreSQL concurrent-update failure and normal retry, one5MiB success/onequota400. Dedup/conflict/full-quota controls pass. Exactly20NEWsynthetic pressure files removed via normal app, original2files/4versions/1150B intact;20receipt tombstones retained, postpurge replay409. No product/source/image changes. All old8tables/auth/14jobs/53outbox exact, config18 unchanged. [Evidence](evidence/G7/20261113-pp02-authority-quota-01/qualification.json). Accepted25/1001/5,rough45/100; goalACTIVE.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
@@ -53,14 +53,32 @@ Current2files/4versions/4receipts/1150rawB; all original8tables/current authorit
 Fresh authoritative baseline Alice/B is ACTIVE VIEWER, correcting stale revoked
 wording; no authority changed. Site/images/checkpoints/private evidence retained.
 
-Checklist: source/candidates/normal installed prerequisites and useful bounded
-experience verified. Remaining actual viewer/current membership/feature loss,
-size/native breadth, real concurrent RR quota, optional document links/degradation,
-coordinated byte/metadata/versions/references fresh restore and final qualification.
-PP02 remains UNACCEPTED; rough40/100, accepted25/1001/5. Next fresh exact authority
-fixture plan from current roles/data, followed by quota pressure plan. No human
-hold/running operation, no PP03..05 plans, cleanup or push; never replay completed
-operations or already recorded pressure requests.
+Current-authority section now passes20checks:6healthy controls/14denials, using
+the original session through viewer/member/feature/actor loss. All four fixtures
+restored exactly. Actual viewer controls are read-only; known feature loss clears
+cached preview/detail/cards/write controls after a fresh403, and healthy reload
+recovers after exact restoration. It does not revoke already-downloaded bytes.
+Remaining UI defect: unavailable state still shows ordinary upload/empty-library
+guidance; repair before PP02 acceptance in the next coherent source iteration.
+
+Actual100MiB quota: normal19file preload to95MiB, two separate native HTTP writers
+observed blocked at owned workspace row lock; one actual concurrent-update
+serialization error, normal whole-request retry, one5MiB200 and onequota400,
+exact100MiB stored/decoded. Max5MiB/hash/Unicode disposition and20+1pagination
+pass; empty/5MiB+1 bodies400. Known-key replay dedups, changed body409, freshbyte
+atlimit400. Exactly20newly-created pressure files trashed/purged normally after
+review; original2files/4versions/1150B exact,20receipt tombstones retained beside
+original4receipts; postpurge old-key409/no resurrection. Own lock helper absent.
+No SQL business deletion/foreign resource cleanup or product/source/image change.
+Private prepare import omission failed before manifest/HTTP, fixed/reconciled;
+no uncertain mutation replay. All16ops terminal/currenttarget18 unchanged.
+
+Remaining format/foreign-record breadth, optional document links/degradation,
+coordinated byte/metadata/versions/references restore and final scope checks.
+No PP02 acceptance yet; rough45/100, accepted25/1001/5. Next fresh current-source
+format/integration section plan, including unavailable-copy repair before edits.
+No human hold/runningoperation/openfixture, no PP03..05plans, push or imagecleanup.
+Never replay the matrix, pressure, cleanup or earlier completed native operations.
 
 ## Product/platform roadmap (13November2026)
 

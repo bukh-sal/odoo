@@ -1,0 +1,284 @@
+{
+  "current_authority": {
+    "cases": [
+      {
+        "bytes": 402,
+        "error": null,
+        "label": "viewer-read",
+        "sha256": "654192beabcdaac472fb98059ba7aa233d88509bbd499c2655aebb70735288bc",
+        "status": 200
+      },
+      {
+        "bytes": 145,
+        "error": "FORBIDDEN",
+        "label": "viewer-upload",
+        "sha256": "8137e51469283cd23923981e091b872343aea456dd57f5576a89eed5c9b80279",
+        "status": 403
+      },
+      {
+        "label": "viewer-list",
+        "status": 200
+      },
+      {
+        "label": "viewer-update",
+        "status": 403
+      },
+      {
+        "label": "viewer-native-write",
+        "native_error": true,
+        "status": 200
+      },
+      {
+        "bytes": 402,
+        "error": null,
+        "label": "viewer-restored-control",
+        "sha256": "654192beabcdaac472fb98059ba7aa233d88509bbd499c2655aebb70735288bc",
+        "status": 200
+      },
+      {
+        "bytes": 145,
+        "error": "FORBIDDEN",
+        "label": "membership-read",
+        "sha256": "2b28079e21e52fd5d8ecd9530fbaead7444ebc37848ffc85f0716efa5d374c02",
+        "status": 403
+      },
+      {
+        "bytes": 145,
+        "error": "FORBIDDEN",
+        "label": "membership-upload",
+        "sha256": "de03f4db2e953a49fe84211b25dc7ac6673cfb53e9f7d61183259494a076a9d6",
+        "status": 403
+      },
+      {
+        "label": "membership-list",
+        "status": 403
+      },
+      {
+        "label": "membership-native-read",
+        "native_error": true,
+        "status": 200
+      },
+      {
+        "bytes": 402,
+        "error": null,
+        "label": "membership-restored-control",
+        "sha256": "654192beabcdaac472fb98059ba7aa233d88509bbd499c2655aebb70735288bc",
+        "status": 200
+      },
+      {
+        "bytes": 145,
+        "error": "FORBIDDEN",
+        "label": "feature-read",
+        "sha256": "22d70bfb1ea29eee2ed503c2a9ecf53d0d4045bf080cd1e49a519bf2318dfc8e",
+        "status": 403
+      },
+      {
+        "bytes": 145,
+        "error": "FORBIDDEN",
+        "label": "feature-upload",
+        "sha256": "38c90352fb169a3f0d4f5ea56141fcd7f3e3ee9afb671addfc5b1a01a43efc74",
+        "status": 403
+      },
+      {
+        "label": "feature-list",
+        "status": 403
+      },
+      {
+        "label": "feature-native-read",
+        "native_error": true,
+        "status": 200
+      },
+      {
+        "bytes": 402,
+        "error": null,
+        "label": "feature-restored-control",
+        "sha256": "654192beabcdaac472fb98059ba7aa233d88509bbd499c2655aebb70735288bc",
+        "status": 200
+      },
+      {
+        "bytes": 145,
+        "error": "FORBIDDEN",
+        "label": "actor-read",
+        "sha256": "7f35de7b7d63542438df43355bae74f3ed40bf3d13610a4acfdc633ef4d35114",
+        "status": 403
+      },
+      {
+        "bytes": 145,
+        "error": "FORBIDDEN",
+        "label": "actor-upload",
+        "sha256": "858563a3f7bfd0026d1b181bfdb19d198e4f2d7712ed6417c47c774cd1ddab6b",
+        "status": 403
+      },
+      {
+        "label": "actor-native-read",
+        "native_error": true,
+        "status": 200
+      },
+      {
+        "bytes": 402,
+        "error": null,
+        "label": "actor-restored-control",
+        "sha256": "654192beabcdaac472fb98059ba7aa233d88509bbd499c2655aebb70735288bc",
+        "status": 200
+      }
+    ],
+    "checks": 20,
+    "denials": 14,
+    "expected_controls": 6,
+    "original_session_reused_before_loss": true,
+    "receipt_sha256": "0a8ab96a68d8ef6da42550be3b80d4f3635675563794bb51c521504e4abdfca9",
+    "role_member_feature_actor_fixtures_restored_exact": true,
+    "viewer_read_write_truthful": true,
+    "viewer_real_browser": true,
+    "viewer_screenshot_sha256": "901ed7980e703e8a3028af34f1eb48da72141041ae95abd3b01da613a03afcaf"
+  },
+  "final": {
+    "actor_active": true,
+    "all_original_eight_tables_authority_jobs14_outbox53_exact": true,
+    "configuration": 18,
+    "features_enabled": true,
+    "image_id": "sha256:3e40c53c7a2659b47c8d0506e23a7e88530376b648e1e4b2af3f962e7efe10a4",
+    "member_active_administrator": true,
+    "open_authority_fixture": false,
+    "operations_terminal": 16,
+    "phase_accepted": false,
+    "runnable_jobs": 0,
+    "worker_id": "b971c79981ac3f759c42f17a4fe0126576e6be13e1c23c217f9bf531b6ab4af0"
+  },
+  "helper_correction": {
+    "failed_before_manifest_or_HTTP": true,
+    "no_business_effect": true,
+    "private_prepare_missing_explicit_underscore_import": true,
+    "receipt_sha256": "dfa460af0ab918b330e24ba91a59ee66f5a2dc820db00e298fdfc6f1779aec0b"
+  },
+  "known_loss_browser": {
+    "afterDenial": {
+      "cachedLiteralVisible": 0,
+      "fileCards": 0,
+      "previewRegions": 0,
+      "uploadButtons": 0
+    },
+    "cachedPreviewBeforeLoss": true,
+    "exactFeatureRestored": true,
+    "freshRequestDenied": true,
+    "noAutomaticRevocationOfAlreadyDownloadedBytesClaim": true,
+    "normalReloadRestoredLibrary": true,
+    "previewReadableAgain": true,
+    "remainingCopyIssue": "Denied state still displays ordinary empty-library upload guidance; distinguish unavailable from truly empty before phase acceptance."
+  },
+  "next": "Fresh current-source format/optional-link implementation plan, include observed unavailable-copy repair, before app edits; preserve current cohort and all evidence",
+  "phase": "PP-02",
+  "phase_accepted": false,
+  "quota": {
+    "actual_waiters": {
+      "holder_pid": 101679,
+      "utc": "2026-11-13T03:43:04.663564+00:00",
+      "waiters": [
+        {
+          "backend_xmin": "16878",
+          "blocking": [
+            101679
+          ],
+          "pid": 99203,
+          "query": "SELECT id FROM mp_workspace WHERE id=1 FOR UPDATE",
+          "state": "active",
+          "wait_event": "transactionid",
+          "wait_type": "Lock",
+          "xact_start": "2026-11-13T03:43:04.486582+00:00"
+        },
+        {
+          "backend_xmin": "16878",
+          "blocking": [
+            99203
+          ],
+          "pid": 101611,
+          "query": "SELECT id FROM mp_workspace WHERE id=1 FOR UPDATE",
+          "state": "active",
+          "wait_event": "tuple",
+          "wait_type": "Lock",
+          "xact_start": "2026-11-13T03:43:04.501969+00:00"
+        }
+      ]
+    },
+    "before_bytes": 1150,
+    "candidates_bytes_each": 5242880,
+    "changed_body_same_key_conflict": 409,
+    "committed_bytes": 104857600,
+    "decoded_stored_bytes": 104857600,
+    "fresh_byte_at_limit_quota_refusal": 400,
+    "known_key_replay_deduplicates": true,
+    "matching_postgres_concurrent_update_errors": 1,
+    "native_rr_source_hashes": {
+      "applications/external/documents/native/mp_documents/models.py": "104d37d2a442f1d4274603ff97a8c9e3e1c3debdfbcda5cb8ffc05dffd22b13d",
+      "engine/odoo/service/model.py": "471ca95b195196a59c20f04d21cc44fe46d489ea07725f960e8c44e4bfc71724",
+      "engine/odoo/sql_db.py": "3dcd0f3b231619b511cc6e65119b1fa36d4043a289f966dee35b4bd2fb9e35fd"
+    },
+    "outcomes": [
+      {
+        "error": "VALIDATION_FAILED",
+        "field": "quota",
+        "seconds": 2.719,
+        "status": 400
+      },
+      {
+        "error": null,
+        "field": null,
+        "seconds": 0.594,
+        "status": 200
+      }
+    ],
+    "postgres_witness_log_sha256": "6cf0d0ac0827776ef38a88e8e09ceebb4f81cee1696388520761aaf716f6eec7",
+    "preload_files": 19,
+    "preloaded_bytes": 99614720,
+    "quota_failures": 1,
+    "receipt_sha256": "fe81207dcf6aa3571fbad4b4527ea2fa150ee296c94de098424719b4d1d3858f",
+    "simultaneous_candidates": 2,
+    "successes": 1
+  },
+  "remaining": [
+    "Distinguish access-unavailable from ordinary empty-library guidance in actual UI",
+    "Positive format breadth/foreign document cases and remaining deliberate policy limits",
+    "Optional document links and graceful unavailable-app/permission states",
+    "Coordinated failed-operation fresh restore preserving bytes/versions/references/current authority",
+    "Final exact bounded UI/performance/lifecycle acceptance; no multiuser throughput/DRM/malware-safety claim"
+  ],
+  "roadmap_accepted_phases": 1,
+  "roadmap_accepted_points": 25,
+  "rough_implementation_points": 45,
+  "schema_version": 1,
+  "size_boundaries": {
+    "empty_body_status": 400,
+    "list_pages_before_contention": [
+      20,
+      1
+    ],
+    "max_five_mib_download_exact": true,
+    "normal_large_file_detail_previewable": false,
+    "over_five_mib_status": 400,
+    "unicode_filename_header_disposition_verified": true
+  },
+  "source": {
+    "core": "0.2.2",
+    "documents": "0.1.2",
+    "new_image_or_upgrade": false,
+    "private_documents": "1a4a00d",
+    "product_source_changed": false,
+    "root": "207518883e0"
+  },
+  "state": "current_authority_and_real_rr_quota_verified",
+  "synthetic_data_disposition": {
+    "barrier_helper_absent": true,
+    "cleanup_receipt_sha256": "877f10ec8dcd6d68e9a49505a48f1cd3722c2775b68d9b13729eb645ba79ceed",
+    "exact_new_pressure_files_removed_via_normal_app": 20,
+    "no_image_volume_or_foreign_cleanup": true,
+    "original_file_uuids_protected": true,
+    "original_files": 2,
+    "original_raw_bytes": 1150,
+    "original_receipts_exact": 4,
+    "original_versions": 4,
+    "post_purge_known_key_409_no_resurrection": true,
+    "retained_pressure_receipt_tombstones": 20,
+    "sql_business_delete": false
+  },
+  "utc": "2026-11-13T03:54:49.578051+00:00"
+}

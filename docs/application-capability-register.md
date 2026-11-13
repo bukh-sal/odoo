@@ -14,7 +14,7 @@ installed evidence. No future capability below is accepted merely by planning it
 | --- | --- | --- |
 | Coherent task/customer/reminder experience and safe drafts | PP-01 accepted for exact Workboard0.2.5/Customer Work0.1.4/Partners0.1.0 on core0.2.1 | Actual create/link/discuss/conflict/reconcile/schedule-cancel/reload/keyboard-complete-reopen and viewer/optional-denial checks pass. Compact context and visible navigation improve the screens. Real review caught menu ownership and unsafe/missing keep-draft choices; both were corrected through ordinary app code and normal upgrades. Core unchanged; bounded agent desktop/narrow checks, not broad accessibility/mobile certification. |
 | Upcoming reminder agenda | Application choice; not implemented by the delivered-notice inbox | Current task details show its scheduled/cancelled occurrence; My reminders lists delivered private notices. Owner=Workboard. If a useful upcoming/day agenda is needed, add a bounded current-actor app read service and UI; this is not a fundamental core prohibition or a reason to claim scheduled work was delivered. |
-| Workspace-scoped binary upload/download and previews | Demonstrated bounded PP-02 installed workflow; remaining pressure/lifecycle unproven | Core0.2.2/Docs0.1.2 actual upload/find/preview/hash download/history/trash/rename-draft,16 transport refusals and7 native/legacy denials pass. App owns transactional bytea/history/quota/type policy; old token/attachment paths stay closed. Current role/feature loss, real quota concurrency, optional links and byte restore remain mandatory before phase acceptance. |
+| Workspace-scoped binary upload/download and previews | Demonstrated bounded PP-02 workflow, current authority and real quota; remaining integration/recovery unproven | Core0.2.2/Docs0.1.2 actual useful workflow, current viewer/member/feature/actor loss and known-loss cache clearing, full-size5MiB and two-writer100MiB quota pass. Old token/attachment paths stay closed. Format breadth, optional links, coordinated byte restore and unavailable-copy repair remain before phase acceptance. |
 | File format, size, preview and storage bounds | Intentional initial Documents app policy, not universal platform restrictions | App allows content-checked UTF8 TXT/Markdown/PDF/PNG/JPEG,5MiB revisions/100MiB raw per workspace/200files including trash/20versions. Only escaped text<=256KiB previews; others download-only/unscanned. No parser/antivirus safety claim, HTML/SVG/Office/archive execution, public links or sync. Core transport ceiling8MiB. Owner=Documents for allowlist/quotas/retention; revisit against useful demand and measured memory/storage/parser/recovery proof. |
 | Clean builds with an unchanged Python source lock | Exact image support; bitwise dependency reproducibility unproven | PP-02 M preserves its current app environment; a new policy path invalidated builder dependency RUN cache and D rebuilt same-version psycopg2/python-ldap with different .so/distribution digests. Core maintenance guard remains strict; any D install must bind/review those changes through normal plugin planning. Owner=build/operator workflow (PP-04). No fabricated lock edit, digest relabel or unchanged-environment claim. |
 | App-owned fine-grained sharing after checkpoint restore | Explicit checkpoint boundary, not a universal current-ACL overlay | AP-LIM-015: current native authentication/platform revocations reconcile, but app business ACL rows restore from checkpoint. Initial document app is workspace-shared; Codex must design and qualify newer app-ACL revocation handling before promising per-folder/person privacy across recovery. |
@@ -143,3 +143,29 @@ or operator-checkpoint byte-restore proof; those remain explicit required work.
 Fresh authority snapshots correct an earlier stale narrative: Alice/B is an
 active viewer in this qualification baseline, not revoked. Rows stayed exact;
 current-loss tests must use and restore those actual observed states.
+
+## PP-02 installed authority and quota findings (13November2026)
+
+[Pressure evidence](evidence/G7/20261113-pp02-authority-quota-01/qualification.json)
+now proves current viewer/membership/feature/actor refusal with existing sessions,
+exact fixture restoration, actual read-only controls and cache clearing on known
+denial. Previously downloaded content cannot be revoked; this is current-request
+authority, not DRM or push deletion of user-held copies. One UI copy defect remains:
+the denied library must not describe unavailable data as an ordinary empty library.
+
+The app-owned mutation fence is supported by real RR pressure: two native uploads
+waited at the owned workspace lock with established snapshots; PostgreSQL logged
+one concurrent-update serialization failure; the normal native retry re-evaluated
+quota, accepting one5MiB and refusing the other. Exact100MiB stored/decoded bytes,
+known-key dedup and changed-input conflict were observed. This is a bounded two-
+writer test for this cohort, not arbitrary load/performance or every quota policy.
+Initial5MiB/100MiB policy remains intentional and app-owned, not a universal core
+file limit. Empty/oversized rejection and Unicode forced-download headers pass.
+
+Only the20new synthetic pressure files were removed with normal app trash/purge;
+all original data remains. Their20receipt tombstones intentionally last until the
+24h receipt policy expires and consume receipt slots; an old key cannot resurrect
+purged data during that window (actual409). Receipt retention and irreversible
+purge are distinct from file trash/version recovery and operator-checkpoint restore.
+No product, core, dependency, trust policy, image or source adjustment was required
+for this pressure round; scoped temporary controls were restored exactly.
