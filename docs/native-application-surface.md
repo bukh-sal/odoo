@@ -10,9 +10,13 @@ Native and same-origin application code is trusted; none of these APIs is a
 sandbox for hostile code.
 
 Next development follows the [product/platform roadmap](product-platform-roadmap.md).
-Workspace binary attachments are currently denied by core, not part of this
-demonstrated authoring subset. The document-library phase includes a deliberate
-generic capability prerequisite; see the [research](roadmap-research.md).
+Managed legacy attachment/token paths remain denied. PP02/03 qualified the
+separate [current-authority binary transport](contracts/binary-v1.md) for the
+exact Documents/Taskfiles cohort, including current guards, payload migration
+and populated recovery. Apps own formats, storage, quotas and previews; only one
+binary provider is qualified. This is not a general attachment/public-link or
+unsafe-file execution capability. See [current development](current-development.md)
+and the [capability register](application-capability-register.md).
 
 ## Models, records and permissions
 

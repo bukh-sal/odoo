@@ -63,7 +63,8 @@ class Reference:
             subnets = {'runtime': str(runtime), 'edge': str(edge)}
         self.prepare_resources(load(self.kit/'images.json'), self.manifest['source_commit'],
                                (self.kit/'plugins/curated-trust.json').read_bytes(), self.kit/'images.tar', subnets=subnets)
-    def prepare_resources(self,images,source_commit,trust,image_archive=None,*,subnets=None):
+    def prepare_resources(self,images,source_commit,trust,image_archive=None,*,subnets=None,allow_noninteractive=True):
+        if type(allow_noninteractive) is not bool:raise ValueError('Explicit operator interaction policy required')
         if self.local.exists():raise ValueError('Reference already attempted; inspect its state, never reset it')
         protect_directory(self.local);protect_directory(self.local/'logs');protect_directory(self.local/'operator')
         nonce=secrets.token_hex(6);project='mp-r0-r1release'+nonce;database='mp_disposable_r0_r1_release_'+nonce
@@ -122,7 +123,7 @@ print('New owned configuration volumes seeded')
             volumes={name:dict(external=True,name=project+'_'+name) for name in groups},networks={name:dict(external=True,name=project+'_'+name) for name in ['runtime','edge']})
         write(self.local/'compose.json',compose)
         (self.local/'operator/trust.json').write_bytes(trust)
-        store=OperatorStore.initialize(self.local/'operator/control',{state['deployment_id']:[state['site_id']]},allow_noninteractive=True)
+        store=OperatorStore.initialize(self.local/'operator/control',{state['deployment_id']:[state['site_id']]},allow_noninteractive=allow_noninteractive)
         state.update(policy_version=store.policy['policy_version'],operator_authorization_generation=store.policy['authorization_generation'])
         self.phase(state,'configured')
     def initialize(self):

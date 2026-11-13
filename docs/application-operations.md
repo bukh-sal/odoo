@@ -1,7 +1,9 @@
 # Operate a local application release
 
-Use the isolated interpreter and source from the adoption kit described in
-[application development](application-development.md). The exact OS-owned target,
+For a new current checkout, use [current candidate development](current-development.md)
+and the isolated [operator toolchain](operator-toolchain.md). Historical adoption
+kits keep the [application development](application-development.md) path for their
+own recorded sources. The exact OS-owned target,
 catalog and journal govern operations. An app's proposal or a build receipt
 never grants execution authority. The commands below are separate reviewable
 steps, not an automatic approval wrapper. All examples are for named local

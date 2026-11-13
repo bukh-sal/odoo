@@ -2484,3 +2484,19 @@ completed-operation restore claim. MinorACKbusycopy retained for nextpolish.
 Evidence20261113-pp03-platform-reuse-01; allfailures/sourceDBs/images/checkpoints/
 helpers retained, noopenfixture/uncertainoperation/cleanup/publication. NEXTfresh
 PP04 research/implementationplan BEFOREcode; PP05unplanned. No goal completion.
+
+
+13November2026 PP04 activated from actualsource/currentdocs/recovery gaps; fresh
+implementation-plan BEFOREcode. A1 public tools/initialize_candidate.py reuses
+reviewed generic Reference helpers without sealed constructor bypass/monkeypatch.
+Defaultfiles-onlyplan, successful8addoncurrentrecord/source/runtime guard, explicit
+disposablephase execution, defaultinteractive approval policy (optional helper
+keywordlegacyTrue retained/publicexplicitFalse), exact resource/port/subnet gates,
+protectedcontext/commandphaseintents/receipts/status/noreplay, core-only SQLproof
+andfreshworkerreload. Currentdeveloper guide/nativesurface updated; historical
+kit preserved.8actualflow/fakeboundarycases pass54.554s; sourceproofonly/no Docker
+assets/site/native/app/core/version/freeze change. Current5appsiteconfig32 unchanged.
+Evidence20261113-pp04-bootstrap-source-01. Nextonefreshdefaultcorebuild/public
+bootstrap aftersourcecommit/preflight; concreteauthoringappplan thennormalworkflow.
+Completedcheckpointrecoverystillrequired (no fakefailedstate), reproducibility
+stillrequired; both freshsectionplans onactivation.70/1003/5ACTIVE/noPP04acceptance.

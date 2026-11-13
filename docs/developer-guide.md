@@ -1,4 +1,13 @@
-# R1 developer entry point
+# Developer entry point
+
+For new current-candidate development, start with
+[current candidate development](current-development.md), the ordinary
+[application authoring guide](application-authoring.md) and [current status](implementation-status.md).
+The source-tested current bootstrap selects the clean eight-addon core;
+its fresh installed PP04 authoring walkthrough is pending. It does not require
+the core47 kit or make new application support a historical qualification.
+
+## Historical sealed-kit workflow
 
 Local R1 and the owned core47 foundation release are qualified for their recorded
 profiles. Read [current status](implementation-status.md), the
