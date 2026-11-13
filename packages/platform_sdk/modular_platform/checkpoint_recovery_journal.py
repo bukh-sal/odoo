@@ -5,6 +5,7 @@ Executors must independently verify physical effects before completing a step.
 No intent alone authorizes repetition or proves a process is alive.
 """
 from datetime import datetime, timezone
+import re
 from uuid import UUID
 
 from .contracts import load_json
@@ -138,6 +139,13 @@ class CheckpointRecoveryJournal:
             if (set(completion) != {'step','intent_digest','details'} or completion['step'] != step
                     or completion['intent_digest'] != data_digest(intent) or not isinstance(completion['details'],dict)):
                 raise OperatorError('Checkpoint recovery completion differs from its exact intent')
+            adopted = {'pending_adoption_review','pending_adoption_digest'} & completion['details'].keys()
+            if adopted:
+                if adopted != {'pending_adoption_review','pending_adoption_digest'} or step != 'restore_verified':
+                    raise OperatorError('Unknown checkpoint command adoption')
+                adoption = self._adoption(intent, binding, completion['details']['pending_adoption_review'])
+                if data_digest(adoption) != completion['details']['pending_adoption_digest']:
+                    raise OperatorError('Checkpoint command adoption changed')
             completed.append(dict(step=step, intent=intent, completion=completion))
             previous = data_digest(completion)
         if files != expected_files:
@@ -168,9 +176,76 @@ class CheckpointRecoveryJournal:
         owner = self.store._lock_identity(bundle['plan'], locks)
         state = self.status(); pending = state['pending']
         if (pending is None or pending['step'] != step or not isinstance(details,dict)
-                or pending['intent']['lock_identity'] != owner
-                or pending['intent']['review_hash'] != exact_hash):
+                or {'pending_adoption_review','pending_adoption_digest'} & details.keys()):
             raise OperatorError('Only the same fenced executor may complete its exact pending command')
+        if pending['intent']['lock_identity'] != owner or pending['intent']['review_hash'] != exact_hash:
+            if step != 'restore_verified':
+                raise OperatorError('Only the same fenced executor may complete its exact pending command')
+            adoption = self._adoption(pending['intent'], state['binding'], decision['review']['review_id'], active=True)
+            if adoption['lock_identity'] != owner or adoption['review_hash'] != exact_hash:
+                raise OperatorError('Pending checkpoint command is not adopted by this reviewed executor')
+            details = dict(details, pending_adoption_review=decision['review']['review_id'],
+                           pending_adoption_digest=data_digest(adoption))
         index = len(state['completed'])
         _write_new(self.root/'journal'/f'{index:02d}-{step}.complete.json',
             dict(step=step, intent_digest=data_digest(pending['intent']), details=details))
+
+    def _adoption(self, intent, binding, review_id, *, active=False):
+        canonical_id(review_id)
+        value = self._read(self.root/'adoptions'/(review_id+'.json'))
+        decision = self._read(self.root/'continuations'/review_id/'decision.json')
+        exact_hash = data_digest(decision)
+        reviews = RecoveryReviews(self.store)
+        if active: reviews.check_reserved(decision, exact_hash=exact_hash)
+        else: reviews._record(decision, exact_hash)
+        continuation = decision.get('continuation', {})
+        if (intent['step'] != 'restore_verified' or intent['review_hash'] != binding['decision_hash']
+                or decision.get('action') != 'continue_completed_checkpoint'
+                or decision.get('operation_id') != self.recovery_id
+                or decision.get('checkpoint_operation_id') != binding['checkpoint_operation_id']
+                or continuation.get('phase') != 'restored_before_first_dispatch_fence'
+                or continuation.get('reason') != 'retained_source_fence_name_collision'
+                or continuation.get('pending_intent_digest') != data_digest(intent)
+                or continuation.get('original_decision_digest') != data_digest(self._read(self.root/'decision.json'))
+                or decision['review']['review_id'] != review_id):
+            raise OperatorError('Only the reviewed unstarted restored-fence verification may be adopted')
+        expected = dict(schema_version=1, kind='unstarted_restored_fence', step='restore_verified',
+            intent_digest=data_digest(intent), prior_review_hash=intent['review_hash'],
+            prior_lock_identity=intent['lock_identity'], review_hash=exact_hash,
+            review_id=review_id, lock_identity=value.get('lock_identity'),
+            continuation_digest=data_digest(continuation))
+        if (value != expected or not isinstance(value.get('lock_identity'),str)
+                or not re.fullmatch('sha256:[0-9a-f]{64}',value['lock_identity'])):
+            raise OperatorError('Exact pending-command adoption evidence required')
+        return value
+
+    def adopt_unstarted_restored_fence(self, *, decision, exact_hash, locks):
+        """New fenced authority for one proven unstarted verification, no replay.
+
+        Physical proof is independently reconstructed by the recovery executor
+        before this method. The original command intent/history is not edited.
+        """
+        bundle, _ = self._review(decision, exact_hash)
+        owner = self.store._lock_identity(bundle['plan'], locks)
+        state = self.status(); pending = state['pending']
+        continuation = decision.get('continuation', {})
+        if (state['phase'] != 'authority_applied' or pending is None
+                or pending['step'] != 'restore_verified' or len(state['completed']) != 7
+                or decision.get('action') != 'continue_completed_checkpoint'
+                or continuation.get('phase') != 'restored_before_first_dispatch_fence'
+                or continuation.get('reason') != 'retained_source_fence_name_collision'
+                or continuation.get('pending_intent_digest') != data_digest(pending['intent'])
+                or pending['intent']['review_hash'] != state['binding']['decision_hash']):
+            raise OperatorError('Unsupported pending checkpoint command adoption')
+        review_id = canonical_id(decision['review']['review_id'])
+        value = dict(schema_version=1, kind='unstarted_restored_fence', step='restore_verified',
+            intent_digest=data_digest(pending['intent']), prior_review_hash=pending['intent']['review_hash'],
+            prior_lock_identity=pending['intent']['lock_identity'], review_hash=exact_hash,
+            review_id=review_id, lock_identity=owner, continuation_digest=data_digest(continuation))
+        protect_directory(self.root/'adoptions')
+        path=self.root/'adoptions'/(review_id+'.json')
+        if path.exists() or path.is_symlink():
+            raise OperatorError('Pending checkpoint command adoption already attempted; inspect without replacement')
+        _write_new(path, value)
+        self._adoption(pending['intent'], state['binding'], review_id, active=True)
+        return value

@@ -1,3 +1,21 @@
+PP05 retained restored-fence repair (13November2026): source and target fences
+previously selected the same retained child name under one review. The restored
+fence now derives a purpose/database-specific correlation UUID, without changing
+review authority. [ADR0087](architecture-decisions/0087-reviewed-unstarted-restored-fence-continuation.md)
+defines one explicit late continuation window: exact unstarted daemon conflict,
+closed current physical/authority/effect/data proof, fresh source-bound review,
+typed activity resolution and pending verification adoption under new real locks.
+Original source history/intent/failure remain immutable. No dump/extraction/auth
+replay, child removal, grant repair or runtime guard relaxation is allowed.
+Source qualification passes100 affected host-flow/authority/recovery tests plus
+the new real-OS-lock/private-journal adoption case (137.122s). All122 frozen files/
+11rows pass unchanged. The actual retained partial passes read-only reconstruction in39.906s; its first
+proof reached the separate16MiB metadata-output ceiling on a real database dump.
+The dedicated128MiB/60s streaming digest closes that observation limit without
+changing metadata limits or retaining dump contents. Actual continuation/resume
+and final source-subtraction qualification remain pending. Existing image bytes
+are unchanged; this repair is separately reviewed host source.
+
 PP05 fresh-checkout build prerequisite (13November2026, before implementation):
 actual isolated source snapshot exposed a missing build control/locks directory.
 The public builder must create/verify protected control root and locks through

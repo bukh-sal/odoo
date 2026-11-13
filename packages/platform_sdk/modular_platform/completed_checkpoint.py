@@ -12,6 +12,9 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
+import tarfile
+from threading import Timer
 from uuid import uuid4
 
 from .catalog import Catalog
@@ -19,8 +22,8 @@ from .checkpoint_effects import require_same_effects, validate_footprint
 from .checkpoint_recovery_journal import CheckpointRecoveryJournal, canonical_id
 from .contracts import load_json
 from .deployment import inspect_image, _run
-from .dispatch_operator import DispatchMaintenance
-from .integration_grant_recovery import PROOF_NAME, grant_proof
+from .dispatch_operator import BOOTSTRAP, DispatchMaintenance
+from .integration_grant_recovery import PROOF_NAME, grant_proof, reconciled_authority
 from .native_auth_recovery import overlay_sql
 from .operator_os import OperatorError, OperationLocks, current_identity, protect_directory, verify_private_directory
 from .operator_store import _write_new
@@ -28,6 +31,7 @@ from .plans import data_digest
 from .projection import runtime_inputs
 from .recovery_reviews import RecoveryReviews
 from .restore_executor import RestoreExecutor, recovery_configuration, authority_sql, restored_release_sql, EXTRACT_FILESTORE
+from .restore_continuation import FILE_OBSERVATION
 from .workers import snapshots
 
 
@@ -286,7 +290,7 @@ class CompletedCheckpointRecovery(RestoreExecutor):
         _write_new(completion,dict(intent_sha256=hashlib.sha256(intent.read_bytes()).hexdigest(),result_digest=digest))
         return result
 
-    def _require_complete_activities(self):
+    def _require_complete_activities(self, *, unstarted_review=None):
         root=self._journal.root/'activities'
         if not root.exists():return {}
         verify_private_directory(root)
@@ -297,19 +301,67 @@ class CompletedCheckpointRecovery(RestoreExecutor):
             for path in directory.iterdir():self.store._regular(path)
             intents={name.removesuffix('.intent.json') for name in files if name.endswith('.intent.json')}
             completions={name.removesuffix('.complete.json') for name in files if name.endswith('.complete.json')}
-            if intents!=completions or len(files)!=2*len(intents):
+            resolutions={name.removesuffix('.resolution.json') for name in files if name.endswith('.resolution.json')}
+            pending = {'restored-dispatch-fence'} if directory.name == unstarted_review else set()
+            if (intents != completions | resolutions | pending or completions & resolutions
+                    or resolutions - {'restored-dispatch-fence'}
+                    or len(files) != 2*len(intents)-len(pending)):
                 raise OperatorError('A recovery activity is uncertain; inspect without repeating it')
             for name in intents:
-                original=directory/(name+'.intent.json');done=load_json((directory/(name+'.complete.json')).read_bytes())
+                original=directory/(name+'.intent.json')
                 intent=load_json(original.read_bytes())
                 if (set(intent)!={'label','details','review_hash','operator_source_digest'} or intent['label']!=name
-                        or not re.fullmatch('[a-z][a-z0-9-]{1,100}',name) or not isinstance(intent['details'],dict)
-                        or set(done)!={'intent_sha256','result_digest'}
-                        or done['intent_sha256']!=hashlib.sha256(original.read_bytes()).hexdigest()):
+                        or not re.fullmatch('[a-z][a-z0-9-]{1,100}',name) or not isinstance(intent['details'],dict)):
                     raise OperatorError('Recovery activity evidence changed')
+                if name in resolutions:
+                    self._activity_resolution(directory, original)
+                elif name not in pending:
+                    done=load_json((directory/(name+'.complete.json')).read_bytes())
+                    if (set(done)!={'intent_sha256','result_digest'}
+                            or done['intent_sha256']!=hashlib.sha256(original.read_bytes()).hexdigest()):
+                        raise OperatorError('Recovery activity evidence changed')
             for name in sorted(files):
                 hashes[directory.name+'/'+name]=hashlib.sha256((directory/name).read_bytes()).hexdigest()
         return hashes
+
+    def _activity_resolution(self, directory, intent_path):
+        """Historical refusal is resolved, never represented as child success."""
+        resolution=self._journal._read(directory/'restored-dispatch-fence.resolution.json')
+        review_id=canonical_id(resolution.get('review_id'))
+        decision=self._journal._read(self._journal.root/'continuations'/review_id/'decision.json')
+        RecoveryReviews(self.store)._record(decision,data_digest(decision))
+        continuation=decision.get('continuation',{});failed=continuation.get('failed_activity',{})
+        records=self._fence_diagnostics()
+        expected=dict(schema_version=1,kind='unstarted_restored_fence',
+            intent_sha256=hashlib.sha256(intent_path.read_bytes()).hexdigest(),
+            diagnostics_digest=data_digest(records),continuation_decision_digest=data_digest(decision),review_id=review_id)
+        if (resolution!=expected or decision.get('action')!='continue_completed_checkpoint'
+                or decision.get('operation_id')!=self._operation
+                or decision.get('checkpoint_operation_id')!=self._source_operation
+                or continuation.get('phase')!='restored_before_first_dispatch_fence'
+                or continuation.get('reason')!='retained_source_fence_name_collision'
+                or failed.get('review_id')!=directory.name
+                or failed.get('intent_sha256')!=expected['intent_sha256']
+                or failed.get('diagnostics')!=records):
+            raise OperatorError('Exact reviewed unstarted-fence activity resolution required')
+
+    def _fence_diagnostics(self):
+        root=self._journal.root
+        records={}
+        for folder,names in (
+                ('dispatch-fence',{'fence-request.json','fence.stdout','fence.stdout.stderr.log'}),
+                ('source-dispatch-fence',{'fence-request.json','fence.json','fence.stdout','fence.stdout.stderr.log'})):
+            directory=root/folder;verify_private_directory(directory)
+            if {p.name for p in directory.iterdir()}!=names:
+                raise OperatorError('Restored fence may have run; exact unstarted diagnostics required')
+            for name in sorted(names):
+                path=directory/name;self.store._regular(path)
+                records[folder+'/'+name]=hashlib.sha256(path.read_bytes()).hexdigest()
+        for name in (PROOF_NAME,'filestore.log','filestore.log.stderr.log','restored-effect-proof.json'):
+            path=root/name;self.store._regular(path);records[name]=hashlib.sha256(path.read_bytes()).hexdigest()
+        if (root/'dispatch-fence/fence.stdout').stat().st_size:
+            raise OperatorError('Restored child output is uncertain; continuation denied')
+        return records
 
     def _begin(self,step,details):
         self._check_active()
@@ -427,8 +479,14 @@ class CompletedCheckpointRecovery(RestoreExecutor):
         state=self._journal.status();quiesced=state['completed'][3]['completion']['details']
         checkpoint=self._effects(configuration)
         require_same_effects(checkpoint,quiesced['effects'])
-        _write_new(self._journal.root/'restored-effect-proof.json',dict(checkpoint=checkpoint,current=quiesced['effects'],
-            proof_before_registry_start=True))
+        proof=dict(checkpoint=checkpoint,current=quiesced['effects'],proof_before_registry_start=True)
+        if decision.get('continuation',{}).get('reason')=='retained_source_fence_name_collision':
+            if self._journal._read(self._journal.root/'restored-effect-proof.json')!=proof:
+                raise OperatorError('Preserved pre-registry effect proof changed')
+            attempt=self._journal.root/'continuations'/decision['review']['review_id']
+            _write_new(attempt/'restored-effect-reobservation.json',proof)
+        else:
+            _write_new(self._journal.root/'restored-effect-proof.json',proof)
 
     def _commit_verified_result(self,operation,locks,details,directory,result):
         self._check_active()
@@ -439,6 +497,8 @@ class CompletedCheckpointRecovery(RestoreExecutor):
     def _continuation_state(self,recovery):
         state=self._load(recovery)
         self._current_configuration()
+        if state['phase']=='authority_applied' and state['pending'] is not None:
+            return self._unstarted_restored_fence_state(state)
         if state['phase']!='source_verified' or state['pending'] is not None:
             raise OperatorError('Only the proven precreation boundary supports continuation; inspect other partial states')
         activities=self._require_complete_activities()
@@ -468,6 +528,177 @@ class CompletedCheckpointRecovery(RestoreExecutor):
             activity_digest=data_digest(activities))
         return decision
 
+    def _unstarted_fence_child(self, original, target, manifest, activity):
+        """Prove the exact daemon create refusal against a retained source child.
+
+        The child uses Docker's no-log driver. Its protected stdout/result and
+        activity digest, rather than unavailable daemon logs, bind success.
+        """
+        root=self._journal.root;decision=original['decision']
+        source=self._journal._read(root/'source-dispatch-fence/fence.json')
+        stdout=self._journal._read(root/'source-dispatch-fence/fence.stdout')
+        request=self._journal._read(root/'dispatch-fence/fence-request.json')
+        before=self._journal._read(root/'source-dispatch-fence/fence-request.json')
+        suffix=DispatchMaintenance._suffix('fence',decision['review']['review_id'])
+        _,name=self.native._child(self._operation,suffix,image_id=self.config['image_id'])
+        child=self.native._inspect(name)
+        cid=child.get('Id','');config=child.get('Config',{});host=child.get('HostConfig',{})
+        actual_mounts={(m.get('Type'),m.get('Name'),m.get('Destination'),m.get('RW')) for m in child.get('Mounts',[])}
+        expected_mounts={('volume',self.config['project']+'_appconfig','/run/secrets',False),
+                         ('volume',self.config['project']+'_filestore','/var/lib/modular',False)}
+        if (not re.fullmatch('[0-9a-f]{64}',cid) or child.get('Name')!='/'+name
+                or child.get('Image')!=self.config['image_id']
+                or child.get('State',{}).get('Running') is not False or child['State'].get('ExitCode')!=0
+                or config.get('Entrypoint')!=['/venv/bin/python'] or config.get('Cmd')!=['-c',BOOTSTRAP]
+                or config.get('User')!='10001:10001'
+                or config.get('Labels')!={'com.modular.operation':self._operation,'com.modular.deployment':self.config['deployment_id']}
+                or host.get('ReadonlyRootfs') is not True or host.get('Privileged') is not False
+                or host.get('CapDrop')!=['ALL'] or host.get('SecurityOpt')!=['no-new-privileges']
+                or host.get('NetworkMode')!=self.config['project']+'_runtime'
+                or set(child.get('NetworkSettings',{}).get('Networks',{}))!={self.config['project']+'_runtime'}
+                or actual_mounts!=expected_mounts or len(child.get('Mounts',[]))!=2
+                or source.get('child')!=name or stdout!={k:source[k] for k in ('action','result')}
+                or source.get('action')!='fence'
+                or source.get('result')!=activity['completed'][1]['completion']['details']):
+            raise OperatorError('Retained source fence child or protected result differs')
+        expected='docker: Error response from daemon: Conflict. The container name "/'+name+'" is already in use by container "'+cid+'". You have to remove (or rename) that container to be able to reuse that name.'
+        error=(root/'dispatch-fence/fence.stdout.stderr.log').read_text(encoding='utf8').strip().splitlines()
+        if error!=[expected,'',"Run 'docker run --help' for more information"]:
+            raise OperatorError('Only the exact retained-source container-name conflict supports continuation')
+        activity_root=root/'activities'/decision['review']['review_id']
+        done=self._journal._read(activity_root/'fence-current-dispatch.complete.json')
+        if done['result_digest']!=data_digest(source['result']):
+            raise OperatorError('Source fence result differs from its completed activity')
+        common=('action','site_id','operation_id','image_id','helper_sha256','authority_sha256','script_sha256','expected_digest')
+        if (any(request.get(k)!=before.get(k) for k in common)
+                or request['action']!='fence' or request['operation_id']!=self._operation
+                or request['site_id']!=self.config['sites'][0]['site_id'] or request['image_id']!=target['image_id']
+                or request['database']!=decision['fresh_database']
+                or request['release_digest']!=data_digest(decision['restored_release_lock'])
+                or request['control_release']!=manifest['dispatch_profile']['control']['release_digest']
+                or before['database']!=self.config['sites'][0]['database']
+                or before['release_digest']!=decision['source_dispatch']['release_digest']):
+            raise OperatorError('Exact source and unstarted restored-fence request required')
+        return dict(source_child_id=cid,source_child_name=name,source_child_digest=data_digest(child))
+
+    def _unstarted_restored_fence_state(self,state):
+        root=self._journal.root
+        if (len(state['completed'])!=7 or state['pending']['step']!='restore_verified'
+                or state['pending']['intent']['review_hash']!=state['binding']['decision_hash']):
+            raise OperatorError('Unsupported pending completed-checkpoint verification')
+        expected={'activities','binding.json','decision.json','dispatch-fence','filestore.log',
+                  'filestore.log.stderr.log',PROOF_NAME,'journal','restored-effect-proof.json','source-dispatch-fence'}
+        if {p.name for p in root.iterdir()}!=expected:
+            raise OperatorError('Partial recovery has later or unknown activity; inspect without replay')
+        original=self._journal._read(root/'decision.json');old=original['decision']
+        if original['hash']!=state['binding']['decision_hash'] or old!=state['binding']['decision']:
+            raise OperatorError('Original reserved restore decision changed')
+        RecoveryReviews(self.store).check_reserved(old,exact_hash=original['hash'])
+        review=canonical_id(old['review']['review_id'])
+        if {p.name for p in (root/'activities').iterdir()}!={review}:
+            raise OperatorError('Only the original unstarted restored-fence activity may continue')
+        activities=self._require_complete_activities(unstarted_review=review)
+        labels={name.split('/')[-1].removesuffix('.intent.json') for name in activities if name.endswith('.intent.json')}
+        if labels!={'stop-current-edge','fence-current-dispatch','stop-current-worker','create-fresh-database',
+                    'load-checkpoint-database','load-checkpoint-filestore','overlay-current-authority','restored-dispatch-fence'}:
+            raise OperatorError('Exact original restore activity sequence required')
+        decision=copy.deepcopy(old);decision.pop('review')
+        _,_,manifest=self._checkpoint()
+        if (decision['configuration']!=self.config or decision['fresh_database']!=self._fresh_database()
+                or decision['checkpoint_digest']!=data_digest(manifest)
+                or self._source_binding()!={key:decision[key] for key in self._source_binding()}):
+            raise OperatorError('Original source configuration, checkpoint or history changed')
+        target=copy.deepcopy(decision['restore_configuration']);target['sites'][0]['database']=decision['fresh_database']
+        intent_path=root/'activities'/review/'restored-dispatch-fence.intent.json'
+        intent=self._journal._read(intent_path)
+        if (intent['details']!={'configuration_digest':data_digest(target)}
+                or intent['review_hash']!=original['hash']
+                or intent['operator_source_digest']!=data_digest(decision['operator_source_sha256'])):
+            raise OperatorError('Exact original restored-fence activity intent required')
+        diagnostics=self._fence_diagnostics()
+        child=self._unstarted_fence_child(original,target,manifest,state)
+        self.native._require_jobs_drained();self._no_clients();self._no_live_children()
+        database=self.observer._container('db');fresh=decision['fresh_database']
+        clients=_run(['docker','exec','-i',database,'psql','-X','-qAt','-U','postgres','-d','postgres','-v','ON_ERROR_STOP=1'],
+            input=("SELECT count(*) FROM pg_stat_activity WHERE datname='"+fresh+"';").encode())
+        if clients.strip()!=b'0' or self.native._inspect(self.observer._container('edge',stopped=True))['State']['Running']:
+            raise OperatorError('Fresh clients or reopened traffic prevent continuation')
+        quiesced=state['completed'][3]['completion']['details'];workers=snapshots(self.config)
+        current,private=self._authority(self.config['sites'][0]['database'])
+        if (current!=decision['authority'] or current!=quiesced['authority'] or workers!=quiesced['workers']
+                or any(w['running'] for w in workers)):
+            raise OperatorError('Quiesced source authority or managed workers changed')
+        helper=DispatchMaintenance(self.native)
+        if helper.require_profile(helper.inspect_current(),closed=True)!=quiesced['dispatch']:
+            raise OperatorError('Quiesced source dispatch changed')
+        require_same_effects(self._effects(self.config),quiesced['effects'])
+        observed=helper.require_profile(helper.inspect_current(configuration=target),closed=True)
+        ignored={'release_digest','state_digest'}
+        if {k:v for k,v in observed.items() if k not in ignored}!={k:v for k,v in manifest['dispatch_profile'].items() if k not in ignored}:
+            raise OperatorError('Restored dispatch differs from untouched checkpoint')
+        proof=self._grant_proof(root,decision);authority,fresh_private=self._authority(fresh)
+        if authority!=reconciled_authority(decision,proof) or fresh_private!=private:
+            raise OperatorError('Fresh current-authority overlay or private credentials changed')
+        reader=self._recovery_observer(target,manifest=manifest)
+        catalog=Catalog(self.native.catalog_root,self.native.validator,readonly=True).snapshot()
+        restored=reader.state(reader.read(quiesced=True,missing_worker=True),catalog)['state']
+        if (restored['release_lock']!=decision['restored_release_lock']
+                or any(restored[k]!=manifest['previous_release'][k] for k in ('installations','bindings'))):
+            raise OperatorError('Restored release or metadata differs from reviewed checkpoint')
+        files=load_json(self._inspection('continuation-files',target,FILE_OBSERVATION,[fresh],network=False))
+        expected={};prefix='filestore/'+self.config['sites'][0]['database']+'/'
+        with tarfile.open(self._checkpoint_directory(self._operation)/'filestore.tar.gz','r:gz') as archive:
+            for member in archive:
+                if member.isfile() and member.name.startswith(prefix):
+                    name=member.name[len(prefix):]
+                    if name in expected:raise OperatorError('Duplicate checkpoint filestore member')
+                    expected[name]=hashlib.sha256(archive.extractfile(member).read()).hexdigest()
+        if files!=expected or self._journal._read(root/'filestore.log').get('filestore_restored') is not True:
+            raise OperatorError('Fresh filestore differs from coordinated checkpoint')
+        effects=self._effects(target);require_same_effects(effects,quiesced['effects'])
+        if self._journal._read(root/'restored-effect-proof.json')!=dict(checkpoint=effects,current=quiesced['effects'],proof_before_registry_start=True):
+            raise OperatorError('Original restored-effect proof differs from fresh observation')
+        database_digest=self._restored_database_digest(database,fresh)
+        decision.update(action='continue_completed_checkpoint',operator_source_sha256=self._source_hashes(),managed_workers=workers,
+            continuation=dict(phase='restored_before_first_dispatch_fence',reason='retained_source_fence_name_collision',
+                original_decision_digest=data_digest(original),pending_intent_digest=data_digest(state['pending']['intent']),
+                journal_digest=data_digest(state),activity_digest=data_digest(activities),
+                failed_activity=dict(review_id=review,intent_sha256=hashlib.sha256(intent_path.read_bytes()).hexdigest(),
+                    diagnostics=diagnostics,diagnostics_digest=data_digest(diagnostics),**child),
+                restored_database_digest=database_digest,restored_state_digest=data_digest(restored),
+                dispatch=observed,filestore_digest=data_digest(files),filestore_files=len(files),source_sha256=self._source_hashes(),
+                replay_database_dump=False,reextract_filestore=False,reapply_native_auth=False))
+        return decision
+
+    def _restored_database_digest(self, container, database):
+        """Hash a bounded plain dump without treating its contents as metadata.
+
+        Keep the existing canonical dump convention (comments/random psql guard
+        lines excluded). Neither dump bytes nor stderr enter files or replies.
+        The independent metadata runner's 16MiB ceiling remains unchanged.
+        """
+        if database!=self._fresh_database():raise OperatorError('Exact fresh database digest target required')
+        maximum=128*1024*1024
+        with subprocess.Popen(['docker','exec',container,'pg_dump','-U','postgres','--no-owner','--no-privileges',database],
+                stdout=subprocess.PIPE,stderr=subprocess.DEVNULL) as process:
+            timer=Timer(60,process.kill);timer.daemon=True;timer.start()
+            digest=hashlib.sha256();total=0;first=True
+            try:
+                while True:
+                    line=process.stdout.readline(maximum+1)
+                    if not line:break
+                    total+=len(line)
+                    if total>maximum:
+                        process.kill();raise OperatorError('Fresh database digest exceeds the 128MiB qualification bound')
+                    line=line.rstrip(b'\r\n')
+                    if line.startswith((b'--',b'\\restrict ',b'\\unrestrict ')):continue
+                    if not first:digest.update(b'\n')
+                    digest.update(line);first=False
+                if process.wait()!=0:raise OperatorError('Fresh database digest failed or exceeded its 60s deadline')
+            finally:
+                timer.cancel()
+        return 'sha256:'+digest.hexdigest()
+
     def prepare_continue(self,recovery):
         return RecoveryReviews(self.store).issue(self._continuation_state(recovery))
 
@@ -480,6 +711,22 @@ class CompletedCheckpointRecovery(RestoreExecutor):
             if noninteractive and not self.store.policy['allow_noninteractive']:
                 raise OperatorError('Noninteractive continuation is not enabled')
             self._activate(decision,exact_hash,locks)
+            if decision.get('continuation',{}).get('reason')=='retained_source_fence_name_collision':
+                root=self._journal.root
+                attempt=protect_directory(root/'continuations')/decision['review']['review_id']
+                if attempt.exists() or attempt.is_symlink():raise OperatorError('Continuation already attempted; inspect without replay')
+                attempt=protect_directory(attempt);_write_new(attempt/'decision.json',decision)
+                failed=decision['continuation']['failed_activity']
+                _write_new(root/'activities'/failed['review_id']/'restored-dispatch-fence.resolution.json',
+                    dict(schema_version=1,kind='unstarted_restored_fence',intent_sha256=failed['intent_sha256'],
+                        diagnostics_digest=failed['diagnostics_digest'],continuation_decision_digest=exact_hash,review_id=decision['review']['review_id']))
+                self._journal.adopt_unstarted_restored_fence(decision=decision,exact_hash=exact_hash,locks=locks)
+                current,private=self._authority(self.config['sites'][0]['database'])
+                if current!=decision['authority']:raise OperatorError('Source authority changed before continuation')
+                _,_,manifest=self._checkpoint()
+                return self._complete_restore(decision,exact_hash=exact_hash,locks=locks,directory=root,
+                    checkpoint=self._checkpoint_directory(self._operation),manifest=manifest,fresh=decision['fresh_database'],
+                    private_native_auth=private,dispatch_directory=attempt)
             return self._restore_from_quiesced(decision)
 
     def _resume_state(self,operation):

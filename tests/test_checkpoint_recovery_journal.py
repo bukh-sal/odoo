@@ -137,5 +137,37 @@ class CheckpointJournal(unittest.TestCase):
         self.assertEqual(self.journal.status()['phase'],'target_created')
         self.assertEqual(self.store.status(self.source),self.original)
 
+    def test_exact_late_adoption_uses_new_real_lock_and_preserves_original_intent(self):
+        from modular_platform.operator_os import protect_directory
+        from modular_platform.operator_store import _write_new
+        with self.locks() as locks:
+            self.create(locks)
+            _write_new(self.journal.root/'decision.json',dict(decision=self.decision,hash=self.exact))
+            for name in STEPS[:7]:self.step(name,locks)
+            self.journal.begin('restore_verified',{},decision=self.decision,exact_hash=self.exact,locks=locks)
+        old=(self.journal.root/'journal/07-restore_verified.intent.json').read_bytes()
+        payload={k:v for k,v in self.decision.items() if k!='review'}
+        pending=self.journal.status()['pending']['intent']
+        payload.update(action='continue_completed_checkpoint',continuation=dict(
+            phase='restored_before_first_dispatch_fence',reason='retained_source_fence_name_collision',
+            pending_intent_digest=data_digest(pending),original_decision_digest=data_digest(json.loads((self.journal.root/'decision.json').read_bytes()))))
+        decision=RecoveryReviews(self.store).issue(payload);exact=data_digest(decision)
+        with self.locks() as locks:
+            RecoveryReviews(self.store).verify(decision,exact_hash=exact,current_payload=payload)
+            directory=protect_directory(self.journal.root/'continuations'/decision['review']['review_id'])
+            _write_new(directory/'decision.json',decision)
+            with self.assertRaises((OperatorError,FileNotFoundError)):
+                self.journal.finish('restore_verified',{},decision=decision,exact_hash=exact,locks=locks)
+            self.journal.adopt_unstarted_restored_fence(decision=decision,exact_hash=exact,locks=locks)
+        with self.locks() as wrong:
+            with self.assertRaisesRegex(OperatorError,'not adopted'):
+                self.journal.finish('restore_verified',{},decision=decision,exact_hash=exact,locks=wrong)
+        # A second adoption cannot replace the recorded fenced owner.
+        with self.locks() as wrong:
+            with self.assertRaises(OperatorError):
+                self.journal.adopt_unstarted_restored_fence(decision=decision,exact_hash=exact,locks=wrong)
+        self.assertEqual((self.journal.root/'journal/07-restore_verified.intent.json').read_bytes(),old)
+        self.assertEqual(self.store.status(self.source),self.original)
+
 
 if __name__=='__main__':unittest.main()

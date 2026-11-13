@@ -15,6 +15,7 @@ import os
 from pathlib import Path
 import re
 import secrets
+from uuid import UUID, uuid5
 
 from .catalog import Catalog
 from .contracts import load_json
@@ -29,6 +30,21 @@ from .projection import runtime_inputs
 from .native_auth_recovery import POLICY as NATIVE_AUTH_POLICY,read_query,canonical_native_auth,public_binding,overlay_sql
 from .integration_grant_recovery import (POLICY as GRANT_POLICY, PROOF_NAME, canonical_grants,
     grant_proof, verify_proof, reconciled_authority, proof_binding)
+
+
+def restored_fence_correlation(review_id, database):
+    """Child-name correlation only; the original review still authorizes the act.
+
+    A completed restore fences source and target under one review. Retained
+    source children must never occupy the restored target child's name.
+    """
+    try:
+        valid = isinstance(review_id, str) and str(UUID(review_id)) == review_id
+    except (ValueError, AttributeError):
+        valid = False
+    if not valid or not isinstance(database, str) or not database:
+        raise OperatorError('Exact restored dispatch correlation required')
+    return str(uuid5(UUID(review_id), 'restored-dispatch-fence:' + database))
 
 
 AUTHORITY_SELECT = """SELECT jsonb_build_object(
@@ -449,7 +465,7 @@ class RestoreExecutor:
         if dispatch_profile is not None:
             helper=self._dispatch_helper(manifest=manifest)
             fence=self._restore_activity(operation,'restored-dispatch-fence',{'configuration_digest':data_digest(target)},
-                lambda:helper.run('fence',operation,(dispatch_directory or directory)/'dispatch-fence',configuration=target,review_id=decision['review']['review_id'],
+                lambda:helper.run('fence',operation,(dispatch_directory or directory)/'dispatch-fence',configuration=target,review_id=restored_fence_correlation(decision['review']['review_id'],fresh),
                     release_digest=data_digest(decision['restored_release_lock']),control_release=dispatch_profile['control']['release_digest']))
             helper.require_profile(fence['after'],closed=True)
         # Copy the old exact config to the private recovery directory before

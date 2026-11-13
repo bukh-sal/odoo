@@ -108,12 +108,14 @@ class RestoreContinuationTests(unittest.TestCase):
         recovery=object.__new__(RestoreExecutor);recovery.config={};recovery._supported_effects=Mock();recovery.native=Mock()
         helper=Mock();helper.run.side_effect=RuntimeError('Stop after inspected fence call')
         recovery._dispatch_helper=Mock(return_value=helper)
-        decision=dict(operation_id='same-operation',restore_configuration={'sites':[{'database':'source'}]},restored_release_lock={'generation':5},review=dict(review_id='fresh-review'))
+        decision=dict(operation_id='same-operation',restore_configuration={'sites':[{'database':'source'}]},restored_release_lock={'generation':5},review=dict(review_id='767902d7-6437-4444-8278-a6854744a373'))
         manifest=dict(dispatch_profile=dict(control=dict(release_digest='prior-tag')))
         recovery._grant_proof=Mock(return_value={});recovery._authority=Mock(return_value=({},'private'))
         with patch('modular_platform.dispatch_operator.DispatchMaintenance',return_value=helper),patch('modular_platform.restore_executor.reconciled_authority',return_value={}):
             with self.assertRaisesRegex(RuntimeError,'Stop after'):
                 recovery._complete_restore(decision,exact_hash='hash',locks=Mock(),directory=Path('restore'),checkpoint=Path('checkpoint'),manifest=manifest,fresh='fresh',private_native_auth='private')
-        self.assertEqual(helper.run.call_args.kwargs['review_id'],'fresh-review')
+        from modular_platform.restore_executor import restored_fence_correlation
+        self.assertEqual(helper.run.call_args.kwargs['review_id'],restored_fence_correlation(decision['review']['review_id'],'fresh'))
+        self.assertNotEqual(helper.run.call_args.kwargs['review_id'],decision['review']['review_id'])
         self.assertEqual(helper.run.call_args.kwargs['control_release'],'prior-tag')
         self.assertEqual(helper.run.call_args.kwargs['configuration']['sites'][0]['database'],'fresh')
