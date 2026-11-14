@@ -1,0 +1,43 @@
+{
+  "item": "UI-D04",
+  "result": "canonical_populated_web_maintenance_passed_phase_open",
+  "source": "9dc5be3e629",
+  "core": "0.2.10",
+  "native_web": "19.0.2.10.0",
+  "project": "mp-r0-r1released5f6fc023b17",
+  "configuration_generation": 3,
+  "image": "sha256:71ce3fc006f332e4898147a6d7760898107a9faa391e1a30681eaa7493136024",
+  "worker": "510ae536e53c27d91bf06eef822c725c7ba0884cd1e06aaa4282948d426d3861",
+  "operation": {
+    "bundle_sha256": "26e3b435cde47f5529ad360c3d47bb6dce4ac38ee1a551fb858f5b3490e63001",
+    "operation_id": "061caf69-69f3-413c-8e03-3bd571d2c030",
+    "plan_hash": "sha256:e504065ad1bf94fd5ecee9b10b1923053899f32c3983d18f57fc1cfbdd4f604f",
+    "scope": "Same app pins,mp_core/web source maintenance,exact18table comparison"
+  },
+  "tables_exact": 18,
+  "tasks": 27,
+  "document_versions": 2,
+  "all_app_archive_pins_preserved": true,
+  "permission_and_trust_changes": [],
+  "business_before_sha256": "363bc64df7a44047340e313355618e3345534dc29fc8cf651984a50ebcda5ede",
+  "business_after_sha256": "363bc64df7a44047340e313355618e3345534dc29fc8cf651984a50ebcda5ede",
+  "browser": {
+    "palette": "Documents found by unprefixed search and selected to open installed app",
+    "narrowLabel": "Search apps and commands",
+    "workboard": "new selection defaults to My work6; All work24 selected explicitly",
+    "errors": []
+  },
+  "protected_targets_exact": 7,
+  "source_tests": {
+    "core_upgrade": 14,
+    "release_staging": 9,
+    "app_palette_and_menu": 6,
+    "freeze_files": 122,
+    "freeze_rows": 11
+  },
+  "limits": [
+    "Legacy raw1.1 to canonical web maintenance has observed-inventory and independent-validator proof, but no installed legacy upgrade yet.",
+    "Fault/restore/separate resume, remaining D03 authority/draft/overflow tests and D05/D06 remain pending.",
+    "No new canonical full-host, formal accessibility or all-layer qualification in this run."
+  ]
+}
