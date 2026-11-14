@@ -103,3 +103,28 @@ until its normal core upgrade completes. Re-audit source/image, normal exact
 review/checkpointed apply, then actual native/custom dark assets and restoration.
 Do not weaken the guard, add an overriding adapter or reload the old image as a
 new version. The remaining app corrections and original matrix are unchanged.
+
+
+## Actual native dark surface correction, core0.2.15
+
+Core14 normal operation200f7e19 completed148.688s with checkpoint, full eighteen
+business/authority tables and job/outbox rows exact; ten other target hashes and
+five private app pins preserved. Actual dark selection now loads the existing
+web.assets_web_dark bundle. The wider installed audit exposes fixed light
+backgrounds/text in native tables, modal containers, native labels/title/input
+and shared headings. Dark preference was restored to light, no business writes.
+
+Before the app corrections, bridge the existing native Bootstrap table, dialog,
+input, secondary button and dropdown variables to the shared semantic tokens in
+the existing foundation stylesheet; inherit appropriate heading/label colors.
+Scope this to screen webclient presentation. Preserve print, renderer behavior,
+authority, fields and business data; no app-specific selector, palette or new
+theme engine. Reserve core0.2.15/native core19.0.0.2.15/web19.0.2.15.0. Keep all
+five private app bytes unchanged through one clean image and ordinary complete
+core-upgrade review/checkpointed apply. Validate increasing native identities
+and inspect exact CSS/manifests/SDK-version delta, layers and data. Then inspect
+actual list/header/hover, native form controls/labels, custom task dialogs and
+queries in both themes. Measure contrast from computed foreground/effective
+background and retain matched screenshots. Only actual rendered evidence can
+close these findings. After this correction use core15 (not historical13) for
+the separately reviewed two-app successor build. Full original matrix remains.

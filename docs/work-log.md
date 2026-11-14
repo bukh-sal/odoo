@@ -2868,3 +2868,6 @@ UI-D06 independent qualification entry. Re-read the full delivery sequence again
 
 
 Actual in-app controls resumed. Core13 normal operation3d12d9bd completed once150.672s with checkpoint/full18-table/history and protected cohort retention. Installed drawer keyboard and labelled modal/palette pass. Dark selection still loaded light assets: actual native color_scheme returned light unconditionally. ADR0089 and fresh correction plan bind exact full-file reader pair; core14 versions, actual-method and independent planner forged/unknown-source negatives added.66affected tests pass18.783s. Private apps unchanged; no core14 build/apply yet. Full rendered matrix0/4 remains open.
+
+
+Core14 normal maintenance200f7e19 completed148.688s,18tables/fullhistory/10other targets/fivepins exact. Actual in-app selection loads dark bundle; normal light restored. Rendered audit exposed fixed light table/modal/input/label/heading values; source core15 now bridges native presentation variables to shared tokens in existing screen-only CSS. Actual pinned Sass compiler and10identity tests pass. New immutable core15 rollout/browser proof pending; private apps unchanged; UI0/4 remains.

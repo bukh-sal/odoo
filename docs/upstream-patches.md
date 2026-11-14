@@ -118,3 +118,6 @@ Source implementation is not installed or browser qualification.
 
 
 ADR0089 corrects the owned web native appearance reader to select the existing dark bundle only for the exact dark preference value; missing/unknown values remain light. Existing asset templates, session/authorization and notices remain. Maintenance admits only the reviewed full-file before/after pair with strict versions and normal independent approval/checkpoint. Actual core13 failure retained; core14 installed theme proof pending.
+
+
+Actual dark-bundle audit exposed inherited fixed light native table/header/modal/input/label colors. Core0.2.15 bridges these existing presentation variables and screen-only heading/label styles to the shared semantic light/dark tokens. No native controller, field, print, authority or data behavior changes; notices retained. Installed theme requalification remains required.

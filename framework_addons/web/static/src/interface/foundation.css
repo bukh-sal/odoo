@@ -37,7 +37,52 @@
 }
 
 @media screen {
-    .o_web_client { font-family: var(--mp-ui-font); }
+    .o_web_client {
+        font-family: var(--mp-ui-font);
+        color: var(--mp-ui-ink); background-color: var(--mp-ui-canvas);
+        --body-color: var(--mp-ui-ink); --body-bg: var(--mp-ui-canvas);
+        --emphasis-color: var(--mp-ui-ink); --secondary-color: var(--mp-ui-muted);
+        --secondary-bg: var(--mp-ui-hover); --border-color: var(--mp-ui-line);
+        --link-color: var(--mp-ui-link);
+    }
+    .o_web_client :is(h1, h2, h3, h4, h5, h6) { color: inherit; }
+    .o_web_client .o_form_view :is(.oe_title, .o_form_label, .o_horizontal_separator) { color: var(--mp-ui-ink); }
+    .o_web_client .o_list_renderer .o_list_table {
+        --table-bg: var(--mp-ui-surface); --table-color: var(--mp-ui-ink);
+        --table-border-color: var(--mp-ui-line);
+        --table-striped-bg: var(--mp-ui-hover); --table-striped-color: var(--mp-ui-ink);
+        --table-hover-bg: var(--mp-ui-hover); --table-hover-color: var(--mp-ui-ink);
+        --table-active-bg: var(--mp-ui-hover); --table-active-color: var(--mp-ui-ink);
+    }
+    .o_web_client .o_list_renderer .o_list_table thead th { color: var(--mp-ui-ink); }
+    .o_web_client .o_control_panel .breadcrumb { background-color: transparent; }
+    .o_web_client .modal {
+        --modal-bg: var(--mp-ui-surface); --modal-color: var(--mp-ui-ink);
+        --modal-border-color: var(--mp-ui-line);
+        --modal-header-border-color: var(--mp-ui-line); --modal-footer-border-color: var(--mp-ui-line);
+    }
+    .o_web_client :is(.form-control, .form-select, .o_input) {
+        color: var(--mp-ui-ink); background-color: var(--mp-ui-surface);
+    }
+    .o_web_client :is(.form-control, .o_input)::placeholder { color: var(--mp-ui-muted); }
+    .o_web_client :is(.form-control, .form-select, .o_input):disabled {
+        color: var(--mp-ui-muted); background-color: var(--mp-ui-hover);
+    }
+    .o_web_client :is(.btn-secondary, .btn-outline-secondary) {
+        --btn-color: var(--mp-ui-ink); --btn-border-color: var(--mp-ui-control-line);
+        --btn-hover-bg: var(--mp-ui-hover); --btn-hover-color: var(--mp-ui-ink);
+        --btn-hover-border-color: var(--mp-ui-control-line);
+        --btn-active-bg: var(--mp-ui-hover); --btn-active-color: var(--mp-ui-ink);
+        --btn-active-border-color: var(--mp-ui-control-line);
+    }
+    .o_web_client .btn-secondary { --btn-bg: var(--mp-ui-surface); }
+    .o_web_client .btn-link { color: var(--mp-ui-link); }
+    .o_web_client .dropdown-menu {
+        --dropdown-bg: var(--mp-ui-surface); --dropdown-color: var(--mp-ui-ink);
+        --dropdown-border-color: var(--mp-ui-line); --dropdown-link-color: var(--mp-ui-ink);
+        --dropdown-link-hover-bg: var(--mp-ui-hover); --dropdown-link-hover-color: var(--mp-ui-ink);
+        --dropdown-link-active-bg: var(--mp-ui-action); --dropdown-link-active-color: var(--mp-ui-on-action);
+    }
     .o_web_client .o_main_navbar {
         --NavBar-entry-color: var(--mp-ui-ink);
         --NavBar-entry-color--hover: var(--mp-ui-ink);

@@ -1,0 +1,33 @@
+{
+  "source": "cb8dbf80da837c58cc47e764b8e4370bbe4085f9",
+  "platform": "0.2.14",
+  "image": "sha256:b6696df81acfbed3dd17ee3caf1116c442d97f7bbe80971d75d6e552e394d69f",
+  "operation": "200f7e19-9d1b-45ae-9b98-c7cb00af83f7",
+  "plan_hash": "sha256:c2234bd64a90e8308abc6fe1c2a6b270dc166935b0ab806d1029e440c19e94ea",
+  "apply_seconds": 148.688,
+  "checkpoint_manifest_sha256": "791607269b10d0eb4fe12eac50abaddde04d7341ac1cab9c9171bb0e11cbd096",
+  "business_tables_exact": 18,
+  "job_outbox_full_rows_exact": true,
+  "other_targets_exact": 10,
+  "private_app_pins_exact": 5,
+  "tests": {
+    "affected": 66,
+    "failures": 0,
+    "seconds": 18.783,
+    "freeze_files": 122,
+    "freeze_rows": 11
+  },
+  "layer_audit": {
+    "layers": 14,
+    "project_files": 3788
+  },
+  "rendered": {
+    "in_app_browser": true,
+    "dark_bundle_selected": true,
+    "light_restored": true,
+    "native_custom_contrast": "failed: fixed light table/modal/input/heading colors; successor shared correction required",
+    "saved_business_writes": false
+  },
+  "ui_phases_accepted": 0,
+  "limits": "Local provisional reviewed combination; no complete visual/accessibility/support claim"
+}

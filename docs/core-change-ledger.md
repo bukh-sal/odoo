@@ -383,3 +383,6 @@ The test images inherited older application-containing layers;their successful l
 
 
 UI rendered correction: core13 installed focus/dialog/palette behavior verified; actual dark control exposed hardcoded native light rendering. ADR0089 binds one exact appearance-reader pair and core14 successor, retaining arbitrary backend refusal.66affected source tests pass; native/core14/browser theme qualification pending. No app byte change or expanded support claim.
+
+
+UI dark native bridge source0.2.15: after real core14 reader proof, correct fixed light table/modal/input/label/heading styling through existing shared CSS tokens.10identity tests and actual pinned Sass parse pass; direct installed theme/contrast proof pending. No private app or policy/guard change.
