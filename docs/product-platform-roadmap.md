@@ -291,3 +291,7 @@ contrast/assets/lifecycle qualification. These are outcome milestones, not curre
 implementation plans. Write each detailed plan fresh when activated. Patterns must
 be usable by all independent apps without importing private Workboard or optional
 reference Notes shell. Default8-addon core and app-owned business semantics remain.
+
+## Next delivery sequence after the shared foundation
+
+UI-D02 supplies the installed native and app baseline. The [shared shell delivery plan](ui-shell-delivery-plan.md) sequences UI-D03 shell/navigation, UI-D04 populated web maintenance, UI-D05 shared application workflows and UI-D06 integrated qualification. D03 is ready to implement. Write each subsequent section plan at activation using results from its predecessor.
