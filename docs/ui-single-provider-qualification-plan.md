@@ -53,3 +53,31 @@ not a code change. Private app sources and existing licences stay unchanged.
 Retain the new exact resources and immutable input/effect evidence. No cleanup,
 production deployment, publication, stable ABI, broader compatibility or formal
 accessibility claim follows from this case.
+
+## Execution outcome
+
+[Direct evidence](evidence/G7/20261114-ui-single-provider-native-01/qualification.json)
+records the completed artifact/native/API steps1-6. Bootstrap used the exact
+source-free record before adding the one-app input; commit49950a718b5 then added
+only that policy. The14-layer image40a4584c has nine addons, one exact Partners
+archive,3725project files, unchanged core/Python bytes and no companion source.
+Normal installc345dff1 completed157.765s with a verified checkpoint and original
+independent trust/permission-declaration acknowledgments. No core or app code
+changed. An omitted private-wrapper acknowledgment was refused before any
+registration; original source/refusal and explicit correction are retained.
+
+One synthetic A customer was created/read; B is empty. Actual native navigation
+has one app and People/Organizations destinations. Both form architectures omit
+Delivery's related-work widget; absent-companion context404, viewer create403
+and foreign read404 preserve business/authority/job/outbox snapshots. All ten
+earlier targets, five private source repositories and eighteen main tables are
+exact. The new site http://release-82176661aa16.localhost:18613 remains available
+on configuration2. Sixteen containers, six volumes and two owned networks are
+retained. Docker's built-in null network on the checkpoint child was excluded
+from owned counts after a read-only verifier correction; no mutation replay.
+
+Step7 remains open. This result does not demonstrate a rendered widget, visual
+absence, accessible control, focus, actual navigation or screenshot. Full UI
+phase acceptance remains0/4. The only remaining work requires the original
+in-app interaction and visual matrix; do not manufacture replacement evidence
+by repeating native workflows or adding more mock-DOM tests.

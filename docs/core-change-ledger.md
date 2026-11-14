@@ -1,3 +1,17 @@
+## UI-D06 one-provider qualification -14November2026
+
+[Current evidence](evidence/G7/20261114-ui-single-provider-native-01/qualification.json)
+extends installed qualification without modifying tested executable code or
+private application bytes. Operator-input49950a718b5 selects core8+Partners0.1.1;
+clean image40a4584c has14layers/nine addons/one archive and no companion source.
+Normal checkpointed installc345dff1 completed157.765s. A customer read/create,
+empty B, one native app root and companion-free native form metadata pass;
+viewer403/foreign404 have no effects. Ten older targets/five private repos/
+eighteen main tables remain exact. Initial wrapper acknowledgment refusal and
+read-only resource-counter correction retained; no product/guard change.
+No new version, schema, contract or public API, no broader support or rendered
+UI claim. Full UI acceptance remains0/4; all in-app cards remain mandatory.
+
 ## UI-D06 native/regression qualification -14November2026
 
 [Current direct evidence](evidence/G7/20261114-ui-integrated-native-01/qualification.json)

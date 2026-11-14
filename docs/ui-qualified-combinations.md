@@ -15,7 +15,7 @@ actual in-app cards are open.
 | Eight-addon core | Clean default build,14final layers/3711project files, fresh empty bootstrap/login/native own-account/own-job and workspace reads | Actual empty landing, account/chooser and keyboard/RTL/theme screenshots remain open. |
 | Core with Workboard0.2.13, Documents0.1.9, Delivery0.1.6, Partners0.1.1, Taskfiles0.1.5 | Exact reviewed archives, normal upgrade/install, inherited native view, useful customer/task/pinned-v1/current-v2 API journey and real byte hashes, current viewer/foreign refusal | Actual widget/task/file clicks, native/custom save/cancel/history, return-tab and rendered accessibility matrix remain open. |
 | Exact app-source subtraction | Normal native uninstall and metadata publication; separate normal source removal;77app files/archives removed; final8addons/0archives/0published plugins/0bindings; checkpoints/catalogue/inert history retained | Browser stale-route/absence proof remains open. Source-free means current runtime code, not destruction of retained history or recovery material. |
-| One native provider without companion | [Fresh execution plan](ui-single-provider-qualification-plan.md) required next | Not yet qualified on this UI source; do not infer it from the many-app or empty case. |
+| One native provider without companion | [Direct installed proof](evidence/G7/20261114-ui-single-provider-native-01/qualification.json): Partners0.1.1 alone, nine addons/one archive, normal checkpointed install, one A customer/B empty, one native app root with People/Organizations, no Delivery widget in native form metadata, viewer403/foreign404 with no effects | Actual one-app rendering, absence/affordances, focus and narrow/theme/RTL screenshots remain open. Metadata is not rendered proof. |
 
 The one canonical run reports936tests:934passed,2existing skips,0failures/errors
 in4727.023s. Windows symlink privilege and the real-Linux symlink probe account
@@ -30,6 +30,19 @@ adds one explicit operator policy. It changes no tested platform code. Its
 inherited family description is provenance, not a0.2.6runtime-version claim;
 authoritative SDK/native identities remain0.2.12/19.0.0.2.12. Historical image
 records and their original source maps were not rewritten or relabelled.
+
+The subsequent one-app policy commit49950a718b5 adds only an operator input;
+all tested executable and private app bytes remain unchanged. Its14-layer image
+contains3725project files, nine addons and one archive, with exact core/Python
+files and no companion source. Normal installc345dff1 completed157.765s after
+source-required trust and permission-declaration acknowledgments. The private
+wrapper initially omitted the latter and was refused before registration;
+the original source/refusal is retained, with no product or guard change.
+Ten prior target hashes, five private app repositories and eighteen main tables
+remain exact. The new cohort on18613 is retained with16containers, six volumes
+and two owned networks; Docker's built-in null network is not an owned resource.
+The first read-only retention verifier counted it as owned, was corrected, and
+did not repeat the install or customer workflow. No cleanup was performed.
 
 ## Intentional limits and their reasons
 

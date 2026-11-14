@@ -1,0 +1,97 @@
+{
+  "acceptance": {
+    "browser_controls_available": false,
+    "full_goal_complete": false,
+    "open": [
+      "Actual in-app zero/one/many navigation, palette, history and drafts",
+      "Customer-task-pinned/current-document click/save/cancel/focus journey",
+      "Matched desktop/narrow light/dark screenshots, actual Arabic RTL and mixed identifiers",
+      "Keyboard, 200% browser zoom, reduced motion, rendered contrast and current authority/stale routes",
+      "Final installed walkthrough and screenshot-backed acceptance"
+    ],
+    "rendered_one_app_and_absence_unverified": true,
+    "ui_phases_accepted": 0,
+    "ui_phases_total": 4
+  },
+  "image": {
+    "addons": 9,
+    "artifact_audit_sha256": "24f253fffc11543e932f09eeaf54ef1cda5a764f437cf05cf26f15b8237290fa",
+    "artifacts": 1,
+    "build_seconds": 227.969,
+    "companion_source_absent": true,
+    "core_files_exact": true,
+    "digest": "sha256:3ea62482b314ad51d43083efd8e7181e72737d94ef8f565296e7d107b25c40b7",
+    "id": "sha256:40a4584ca63da919189a3e7f6107660038170bc2e1ceee7ac654d0213eb4eeea",
+    "layers": 14,
+    "project_files": 3725,
+    "provider": "dev.local.partners",
+    "python_exact": true,
+    "record": "docs/evidence/G7/20261114-uid06-single012-clean-01/candidate-build.json",
+    "record_sha256": "0c9a0fd4e4ec8ff367ef45aec6e4e0e7e7560b562ef22c180c540cb72b83094c",
+    "version": "0.1.1"
+  },
+  "native_and_api": {
+    "companion_context_http": 404,
+    "companion_widget_in_arch": 0,
+    "customers_A": 1,
+    "customers_B": 0,
+    "destinations": [
+      "People",
+      "Organizations"
+    ],
+    "foreign_read_http": 404,
+    "grants": 0,
+    "jobs": 0,
+    "native_list_form_recorded": true,
+    "refusals_no_effect": true,
+    "single_app_navigation_roots": 1,
+    "viewer_create_http": 403,
+    "workflow_receipt_sha256": "eb018f9b867fe95dc50e3b0b67acecfe668d632e06956cf3282d6e08dc9b4263"
+  },
+  "operation": {
+    "acknowledgments": {
+      "destructive": false,
+      "permission_expansion": true,
+      "trust_expansion": true
+    },
+    "checkpoint_files_verified": true,
+    "checkpoint_manifest_sha256": "c5bc5079413f1e18c7a403cb43b115153988247e0ac4af68cb4b3bddd4e92559",
+    "fixed_300s_budget_pass": true,
+    "id": "c345dff1-97d2-4fff-9ef7-f976e256d6c6",
+    "initial_wrapper_refusal": "Missing permission acknowledgment stopped before registration; private wrapper corrected without product or guard change",
+    "original_refusal_sha256": "17b1cc31ce535f0207d754017b217d0e5ee71e6ca4ad2e300e84f5e64cf95dbe",
+    "plan_hash": "sha256:0d6755dd23333f0bda4565168c3c4caa5358861f786cd7b1d7c16c799d4741df",
+    "scopes": 2,
+    "seconds": 157.765,
+    "state": "completed"
+  },
+  "preservation": {
+    "checkpoints_and_old_images_retained": true,
+    "cleanup_performed": false,
+    "main_business_authority_tables_exact": 18,
+    "networks": 2,
+    "owned_containers": 16,
+    "prior_target_hashes_exact": 10,
+    "private_app_repositories_exact": 5,
+    "resource_receipt_sha256": "ebde4fd43318a5bcd5e66bed759c730ab447492a7cd449621ee68555700117d0",
+    "volumes": 6
+  },
+  "review_site": {
+    "configuration_generation": 2,
+    "image_id": "sha256:40a4584ca63da919189a3e7f6107660038170bc2e1ceee7ac654d0213eb4eeea",
+    "target_sha256": "9126614116f42dbbe12df257c97264d6ef503d6b557a84eac19fc6f3087238e8",
+    "url": "http://release-82176661aa16.localhost:18613"
+  },
+  "schema_version": 1,
+  "scope": "UI-D06 one native provider without companion; installed native/API/artifact proof only",
+  "source": {
+    "executable_code_unchanged": true,
+    "operator_input_commit": "49950a718b56525db9dce0c87ac0015b45d01a5b",
+    "policy": "deploy/distribution-r1-uid06-single-provider-probe.json",
+    "policy_sha256": "c8d0955953362958cf4fd37ef647740c232953597abd5166b4afa10e03cc8e4c",
+    "private_app_heads_unchanged": true,
+    "private_sources_public": false,
+    "tested_code": "a58c4c544c095d448bb6b0984afce122def1c8fa"
+  },
+  "utc": "2026-11-14T20:29:26.557735+00:00"
+}

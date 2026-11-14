@@ -238,8 +238,11 @@ Do not reuse the default image as a subtraction target merely because core bytes
 are equal. The existing `tools/build_clean_removal.py` is the normal exact-byte
 subtraction builder; this execution also qualifies the exact source-policy route.
 
-The explicit one-app/absent-companion current-native case is still missing.
-Its [just-in-time execution plan](ui-single-provider-qualification-plan.md)
-precedes further implementation. Preserve the current empty and populated sites
-while providing that case. All actual in-app D03/D05 and D06 matrix cards remain
+The explicit one-app/absent-companion current-native case now passes under its
+[just-in-time execution plan](ui-single-provider-qualification-plan.md).
+[Direct evidence](evidence/G7/20261114-ui-single-provider-native-01/qualification.json)
+binds the unchanged code, nine-addon/one-archive image, normal two-scope install,
+one synthetic customer, native navigation/form metadata and no-effect denials.
+It does not prove actual rendering or focus. Preserve the one-app18613, empty18612
+and populated18610 sites. All actual in-app D03/D05 and D06 matrix cards remain
 open, with support/evidence boundaries in the [qualification record](ui-qualified-combinations.md).

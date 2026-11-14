@@ -62,6 +62,11 @@ Start tests near the edit: native `navbar.test.js`, `menu_service.test.js`, `com
 
 ## Operating the handoff
 
+Current execution update: native/regression and the explicit one-provider case
+are proved in the [support/evidence record](ui-qualified-combinations.md).
+All actual in-app cards in this plan remain mandatory and unaccepted. Further
+native test fixtures are not a substitute for that final interaction review.
+
 1. On model switch, read the top of `docs/implementation-status.md` and `.local/core-reset/08-current-status.md`, this plan and the D02 qualification. Check local Git status in the platform and private apps. The latest plan commit is documentation; the installed source identities are in the qualification record.
 2. Start D03 step 1, then implement through its acceptance card in this chat. Keep the accepted demo available for comparison. Use the project interpreter `.local/toolchain/operator-python16/Scripts/python.exe -I`; use exact owned test resources and preserve licensing and notices.
 3. Record phase, evidence, material blocker/owner and next command in the existing status/log/resume records. Reconcile any incomplete operation before continuing. Capture visual evidence with the actual browser. Gather unresolved design judgments into a small screenshot-backed review instead of requesting approval for routine code choices.

@@ -1,3 +1,31 @@
+## UI-D06 one-provider native case -14November2026
+
+Activated the committed just-in-time plan, protected ten previous targets and
+bootstrapped a separate core8 site on18613. Added only one operator policy in
+49950a718b5, preserving the canonical-tested executable code/private app bytes.
+One normal clean build227.969s produced image40a4584c:14layers,3725project files,
+nine addons/one Partners0.1.1 archive, exact core/Python and no companion source.
+The immutable layer/inventory audit passed without audit containers.
+
+Normal installc345dff1 completed157.765s, checkpoint verified, traffic resumed.
+Private wrapper initially missed acknowledgment of new permission definitions;
+standard guard refused before registration. Source-required trust+permission
+acknowledgments then used normally; no product/guard change or apply replay.
+Original refusal retained. One A customer/B empty, one native app root, actual
+People/Organizations destinations and native form without companion widget
+passed. Viewer403/foreign404 have no effects. All ten prior targets/five private
+repos/eighteen main tables exact. Sixteen containers/six volumes/two owned
+networks retained; read-only verifier corrected built-in null-network counting.
+No cleanup. [Direct record](evidence/G7/20261114-ui-single-provider-native-01/qualification.json).
+
+Native prerequisites are substantially delivered; this adds no UI acceptance
+points. Earlier roadmap weights/scores retain their own scopes; new UI phases
+remain0/4 and no completion percentage is inferred from evidence-file count.
+The remaining work is the original rendered in-app interaction/visual matrix.
+The owner's asynchronous Browser tag still exposed only open-preview, without
+controls/screenshots; cause unconfirmed. No external browser substitution,
+new mock tests, full-suite repeat or support/release completion claim.
+
 ## UI-D06 regression and exact native lifecycle -14November2026
 
 One frozen-source canonical run on a58c4c544c0 completed936tests:934passed,
