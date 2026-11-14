@@ -1,0 +1,128 @@
+{
+  "item": "UI-D04",
+  "result": "installed_legacy_maintenance_and_current_authority_recovery_passed_phase_open",
+  "source": "7fff9a81fec69c81901c97f82742a9bade557bde",
+  "predecessor_source": "8f42230bd26a18a3b2d82f09f20f31d2b663e3ed",
+  "historical_curated_inputs": 3974,
+  "historical_archives_exact_reassembly": 5,
+  "successor_image": "sha256:7a50134d8393422ab0b9e236fd0623156067d63cbcf1486278fa01ca0fced1b8",
+  "build_record_sha256": "34ec265a5c78569313be5276c08611cc001077ccf48716ed84021cb1d7516b09",
+  "image_guard": {
+    "changed_files": 15,
+    "core_changes": [
+      {
+        "addon": "mp_core",
+        "migrations": [],
+        "previous_version": "19.0.0.2.7",
+        "target_version": "19.0.0.2.11"
+      },
+      {
+        "addon": "web",
+        "migrations": [],
+        "previous_version": "1.1",
+        "target_version": "19.0.2.11.0"
+      }
+    ],
+    "archive_pins_exact": true,
+    "python_environment_exact": true
+  },
+  "site": {
+    "project": "mp-r0-r1release44127f3c1cd4",
+    "port": 18611,
+    "configuration_generation": 5,
+    "image": "sha256:7a50134d8393422ab0b9e236fd0623156067d63cbcf1486278fa01ca0fced1b8",
+    "worker": "0674fbd576ea9606e291abe573645b866b9fb9e0e40cbad3c78d00539e8b265b",
+    "running_worker_mounts": [
+      "readonly appconfig",
+      "owned filestore"
+    ],
+    "host_port_or_issuer_mount": false
+  },
+  "controlled_fault": {
+    "operation": "de057a6c-1c6a-4a00-805a-5f6adc32a036",
+    "plan_hash": "sha256:4c80b00dffad27f59b29f8818492475f7c2e2c96abf1fbbbf5fa8cb60c605792",
+    "result": "controlled_core_commit_fault_verified_closed",
+    "checkpoint_manifest_sha256": "11125c39573e17a4ef43202e6985f8effae6e376e73accf05551805ac1069881",
+    "original_native_child_succeeded": true,
+    "metadata_and_traffic_not_published": true,
+    "tables_exact": 18
+  },
+  "recovery": {
+    "normal_restore": true,
+    "separately_reviewed_resume": true,
+    "restored_configuration_generation": 4,
+    "retained_predecessor_image": "sha256:485967172a9675ca6aad9e3f56fb4b07c51c37bdf8989f6bcd76a63de70930ac",
+    "fresh_database": true,
+    "failed_source_retained": true,
+    "tables_exact": 18,
+    "job_business_rows": 0,
+    "outbox_business_rows": 49,
+    "dispatch_business_exact": true,
+    "current_authority": {
+      "post_checkpoint_viewer_revocation_retained": true,
+      "fresh_A_status": 200,
+      "fresh_B_status": 403,
+      "fixture_restored_current_and_source": true,
+      "normal_membership_API_restoration": true,
+      "policy_generations_monotonic": true
+    },
+    "fresh_filestore_namespace_in_same_owned_volume_verified": true,
+    "original_filestore_namespace_retained_verified": true,
+    "restore_verified_history_flags": {
+      "session_secret_rotated": true,
+      "technical_credentials_revoked": true,
+      "failed_database_retained": true,
+      "traffic_resumed": false
+    }
+  },
+  "ordinary_upgrade": {
+    "operation": "0d5c96ca-854c-4121-80f5-254b5b842cd9",
+    "plan_hash": "sha256:23a4a95f1ab144c19cf819d2562a76ad8c048245a30c96939df77c78dcc64084",
+    "result": "completed",
+    "core": "0.2.11",
+    "native_core": "19.0.0.2.11",
+    "native_web": "19.0.2.11.0",
+    "all_five_archive_pins_preserved": true,
+    "data_authority_tables_exact": 18,
+    "native_auth_and_authority_exact": true,
+    "dispatch_business_exact": true,
+    "task_rows": 27,
+    "document_versions": 2,
+    "fresh_human_context": {
+      "A": 200,
+      "B": 200
+    },
+    "current_navigation_apps": 4,
+    "checkpoint_manifest_sha256": "ba7e4d19d4675c20d7083f59aacd3de3cd5c5e4f218ddcfe06b8e14790f88f56",
+    "before_sha256": "ea35867d34370663a18357ca151f4388d1cb0f58d141afe1c49553203c08a51b",
+    "after_sha256": "ea35867d34370663a18357ca151f4388d1cb0f58d141afe1c49553203c08a51b"
+  },
+  "approval": {
+    "noninteractive_policy": false,
+    "interactive_exact_hash": true,
+    "policy_not_weakened": true,
+    "original_noninteractive_refusal_retained": true
+  },
+  "boundary_tests": {
+    "count": 5,
+    "failures": 0,
+    "proof": "Actual private fault wrapper with fake external boundaries; not substitute for installed witnesses"
+  },
+  "protected": {
+    "previous_targets_exact": 7,
+    "current_18610_target_exact": true,
+    "comparison_18608_preserved": true
+  },
+  "retained": {
+    "images": "Original and new TEST images retained",
+    "sites": "Comparison18608,current shell18610,qualified legacy18611; earlier demos preserved",
+    "checkpoints_and_failed_database": true,
+    "no_cleanup": true
+  },
+  "limits": [
+    "In-app browser control tools unavailable after pause/resume; installed visual/history/RTL checks remain open, no external browser substitute.",
+    "UI-D04 card remains open until the remaining UI-D03 interaction requirements close.",
+    "Historical app archives retained for maintenance qualification; no claim that their old presentation opts into the new shared contextual layout. Current coherent app combinations are qualified separately.",
+    "No new full canonical host run, dark/zoom/contrast, formal accessibility, all-layer or production qualification in this section."
+  ]
+}
