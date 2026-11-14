@@ -1,0 +1,54 @@
+{
+  "all18business_authority_tables_exact": true,
+  "archive_pins_unchanged": true,
+  "configuration_generation": 6,
+  "current_worker_no_ports_or_authority_mount": true,
+  "enable": {
+    "checkpointed": true,
+    "operation": "189f9f7c-c071-475e-a0f9-6457d046c9b9",
+    "plan_hash": "sha256:717fe48aeaf4f22f2b7bd155197806aeed30ade551abb5c94719b656d9c7713f",
+    "scope": "Restore exact Delivery/A availability",
+    "tables_exact": 18
+  },
+  "full_projected_feature_map_restored": true,
+  "image": "sha256:3b5188c628b1807bb2c63966639c28b95abd87ca7a0ccc1a44c6aafe6162660c",
+  "intentional_prior_task_edit_retained": true,
+  "item": "UI-D05-companion-availability",
+  "legacy_18611_unchanged": true,
+  "limits": [
+    "Installed original-human API/native-provider proof only; no rendered optional widget visibility/click or browser acceptance.",
+    "No product/source edit,image build,direct grant/business SQL or cleanup in this fixture.",
+    "UI-D03/D05 browser and UI-D06 integrated cards remain open."
+  ],
+  "native_feature_release_unchanged": true,
+  "original_human_controls": {
+    "native_Partners_A_customers": 2,
+    "restored_Delivery_A": 200,
+    "restored_Delivery_B": 200,
+    "restored_Partners_A": 200,
+    "suspended_Delivery_A": {
+      "code": "PLUGIN_SUSPENDED",
+      "status": 409
+    },
+    "suspended_Delivery_B": 200,
+    "suspended_Partners_A": 200
+  },
+  "original_probe_failure": {
+    "classification": "Private expectation403 incorrect; frozen PLUGIN_SUSPENDED409 correct",
+    "no_denial_or_suspend_replay": true,
+    "original_denial_sha256": "1a74aaa73654d304938118cc6ad9caa4380725d63c96980ccbed8fd1282046f9",
+    "verification_continuation": true
+  },
+  "protected_prior_targets": 7,
+  "resources_checkpoints_retained": true,
+  "result": "normal_scoped_companion_fixture_closed_api_proof_only",
+  "source": "839f0d2a367ae5c87262d42ecdb59197b442a0f8",
+  "suspend": {
+    "checkpointed": true,
+    "operation": "99543962-5d10-46cf-955f-a2974f7b10b8",
+    "plan_hash": "sha256:bd812fa9b8781098b519b11899617494c47dbaf1bbc01efd24b2248aa395c2b6",
+    "scope": "Delivery/A only",
+    "tables_exact": 18
+  },
+  "utc": "2026-11-14T17:42:03.162354+00:00"
+}

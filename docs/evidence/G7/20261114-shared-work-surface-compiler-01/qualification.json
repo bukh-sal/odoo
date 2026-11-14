@@ -1,0 +1,164 @@
+{
+  "compiled_templates": [
+    {
+      "name": "web.interface.AppLayout",
+      "path": "addons/web/static/src/interface/app_layout.xml"
+    },
+    {
+      "name": "web.interface.PageHeader",
+      "path": "addons/web/static/src/interface/page_header.xml"
+    },
+    {
+      "name": "web.interface.StatusMessage",
+      "path": "addons/web/static/src/interface/status_message.xml"
+    },
+    {
+      "name": "web.Shell",
+      "path": "addons/web/static/src/webclient/shell/shell.xml"
+    },
+    {
+      "name": "web.Shell.Section",
+      "path": "addons/web/static/src/webclient/shell/shell.xml"
+    },
+    {
+      "index": 0,
+      "path": "addons/web/static/src/webclient/shell/shell.js"
+    },
+    {
+      "index": 0,
+      "path": "addons/web/static/src/interface/query_disclosure.js"
+    },
+    {
+      "index": 0,
+      "path": "addons/mp_workboard/static/src/navigation.js"
+    },
+    {
+      "index": 0,
+      "path": "addons/mp_workboard/static/src/reminders.js"
+    },
+    {
+      "index": 1,
+      "path": "addons/mp_workboard/static/src/reminders.js"
+    },
+    {
+      "index": 0,
+      "path": "addons/mp_workboard/static/src/workboard.js"
+    },
+    {
+      "index": 1,
+      "path": "addons/mp_workboard/static/src/workboard.js"
+    },
+    {
+      "index": 2,
+      "path": "addons/mp_workboard/static/src/workboard.js"
+    },
+    {
+      "index": 3,
+      "path": "addons/mp_workboard/static/src/workboard.js"
+    },
+    {
+      "index": 0,
+      "path": "addons/mp_delivery/static/src/delivery.js"
+    },
+    {
+      "index": 1,
+      "path": "addons/mp_delivery/static/src/delivery.js"
+    },
+    {
+      "index": 2,
+      "path": "addons/mp_delivery/static/src/delivery.js"
+    },
+    {
+      "index": 0,
+      "path": "addons/mp_documents/static/src/documents.js"
+    },
+    {
+      "index": 1,
+      "path": "addons/mp_documents/static/src/documents.js"
+    },
+    {
+      "index": 2,
+      "path": "addons/mp_documents/static/src/documents.js"
+    },
+    {
+      "index": 3,
+      "path": "addons/mp_documents/static/src/documents.js"
+    },
+    {
+      "index": 0,
+      "path": "addons/mp_taskfiles/static/src/taskfiles.js"
+    },
+    {
+      "index": 1,
+      "path": "addons/mp_taskfiles/static/src/taskfiles.js"
+    },
+    {
+      "index": 2,
+      "path": "addons/mp_taskfiles/static/src/taskfiles.js"
+    },
+    {
+      "index": 3,
+      "path": "addons/mp_taskfiles/static/src/taskfiles.js"
+    }
+  ],
+  "compiler_exit": 0,
+  "execution": {
+    "container_absent": true,
+    "disposable_compiler_container": true,
+    "network": "none",
+    "nonroot": true,
+    "prior_targets_preserved": true,
+    "private_tool_bind_readonly": true,
+    "read_only": true,
+    "site_target_unchanged": true
+  },
+  "image": "sha256:3b5188c628b1807bb2c63966639c28b95abd87ca7a0ccc1a44c6aafe6162660c",
+  "inventoried_source_sha256": {
+    "addons/mp_delivery/static/src/delivery.js": "9dae156d490bdeb89d56e00dbb26ab326358cae29be550c9880d01517dd49366",
+    "addons/mp_documents/static/src/api.js": "fcdc717ee4001e776844ba7c30633226cb58b910d7f403f05d61801b82ac276f",
+    "addons/mp_documents/static/src/documents.js": "f7afdad9a6917338537ede49aea39dd2db93c2686d7a85d9297d6cd2f1d99d5c",
+    "addons/mp_documents/static/src/intents.js": "3628812899b519359f9178067a68f3b7beb98f0412410a1528f1787ee0bcac24",
+    "addons/mp_taskfiles/static/src/taskfiles.js": "eee3e49d0c242319da67c5e2b80f7403a585dd3db4dc39e7f27ff15056126768",
+    "addons/mp_workboard/static/src/api.js": "a554483cfa33bc536a7e4e684a7ac67694c79a4ee0ec399658b3b8ab98f397cc",
+    "addons/mp_workboard/static/src/navigation.js": "c15d0044fe711b497f6cb4717a84fc2253f84125efe6470113e930ce6014daca",
+    "addons/mp_workboard/static/src/reminders.js": "83efc24c38a31801e4b926f3ec4eb47dc9674b9d485680f7a4104972fb075360",
+    "addons/mp_workboard/static/src/workboard.js": "b2786ed0c2e4390c7c41eda6519ae4e90e4d4fa700be655f62c2432cfe55297c",
+    "addons/web/static/lib/owl/owl.js": "284adc93a9d044e338897b73e1e57250829f1dce4fb97842bb59b28b5c4d4b4e",
+    "addons/web/static/src/interface/app_layout.js": "c928be11c6daf32dd281155d3fe3b0d9a0db2e2d4f8d6b2647d70b02fa5c54f1",
+    "addons/web/static/src/interface/app_layout.xml": "00fc4e4d66f958937a0e0bf73e02da24d128da921a707a4935c8ea771f92cabe",
+    "addons/web/static/src/interface/page_header.js": "5e3cf8196e62862677ac3a6d226bb49eb7601c03afb3ef659a816ac31567c317",
+    "addons/web/static/src/interface/page_header.xml": "f6e88cb63771aa8da37ab7f4cedb832edc9520d03bac64abc9e927cba72797c0",
+    "addons/web/static/src/interface/query_disclosure.js": "87d65b59084809211edf6eb24b85e782558f61e4360802b51874d4241bf7c097",
+    "addons/web/static/src/interface/status_message.js": "89e731fbf726dfa11978510b90467f8ace2cece9b232f3b1dbb480c7e108cee4",
+    "addons/web/static/src/interface/status_message.xml": "d74e1411d4c2dba85ca2cf0fc436ff7b8d5e5b5b61b009af283b96a06a6f3334",
+    "addons/web/static/src/webclient/shell/shell.js": "f131c3002fa83183da241671064c564c97152312642f485fbedb9ad9f92e697f",
+    "addons/web/static/src/webclient/shell/shell.xml": "f50f6fa97b04c3dd2ab10352700ebc6189ddfd1d54af6e065ebe4c91b3010b7d"
+  },
+  "item": "UI-D05-source-compiler",
+  "limits": [
+    "Actual Owl parse,expression code generation and block construction with a test DOM; no app mount/render/layout/focus/screenshot/browser interaction proof.",
+    "No installed application or source edit,image build or native operation in this check.",
+    "In-app browser controls remain unavailable; D03/D05 rendered and D06 integrated acceptance unearned."
+  ],
+  "node": "v24.22.2",
+  "owl": {
+    "date": "2026-07-10T09:10:50.283Z",
+    "hash": "5093c0b",
+    "url": "https://github.com/odoo/owl",
+    "version": "2.8.4"
+  },
+  "result": "real_installed_owl_compiler_passed",
+  "script_sha256": "fac15660987bb1af140344295a4ada940476f3b215e8f43ca3c4533b43b437e3",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "1dbfc78a9d27a0d20a09e6e41e1a2faa81fca3dd6655eac3f8ef1c8156889396",
+  "test_dom": {
+    "dependency_scripts_disabled": true,
+    "lock_sha256": "98b7f8414d4d44a50cf18eafb713805357180ea7e4e93d7fae1ead435911526f",
+    "no_product_dependency": true,
+    "package": "jsdom",
+    "private_tool_only": true,
+    "registry_integrity": "sha512-Cvc9WUhxSMEo4McES3P7oK3QaXldCfNWp7pl2NNeiIFlCoLr3kfq9kb1fxftiwk1FLV7CvpvDfonxtzUDeSOPg==",
+    "version": "26.1.0"
+  },
+  "verification_continuation": "Original dev banner framing reconciled; compiler not rerun"
+}

@@ -244,4 +244,27 @@ UI-BROWSER-01 remains open: the owner can see the in-app preview, but after
 pause/resume the available tools still expose only open-preview. No external
 browser or guessed control transport was used. D03/D05 browser cards remain
 unaccepted; the full goal stays active0/4. Resume their exact installed checks
-when control tools attach, then activate the fresh D06 implementation plan.
+when control tools attach. The [fresh D06 plan](ui-integrated-qualification-plan.md)
+allows independent frozen-source regression/native qualification meanwhile;
+it does not close or replace these rendered requirements.
+
+## Additional installed compiler and companion evidence
+
+The real image's Owl2.8.4 parser, expression generator and block constructor
+compile25selected templates across19inventoried files with Node24.22.2.
+A private pinned test DOM supplies parsing only; no app mount, layout, focus or
+screenshot is claimed. Original exit0/JSON output was preceded by Owl's dev
+banner, which broke the wrapper's whole-file decoder; original bytes and failure
+were retained and reconciled verification-only, without recompilation. See the
+[compiler record](evidence/G7/20261114-shared-work-surface-compiler-01/qualification.json).
+
+Normal one-scope Delivery/A suspension99543962 and separately reviewed normal
+enable189f9f7c completed with checkpoints and exact eighteen tables, full app
+pins/global release and final feature-map restoration. Fresh Alice observed
+409/PLUGIN_SUSPENDED in A, healthy Partners/A and Delivery/B, then healthy A/B
+after restoration. The original private probe expected403; the existing frozen
+contract specifies409, so that correct denial was retained and only the missing
+healthy controls were continued. No runtime guard or status mapping changed.
+The [companion record](evidence/G7/20261114-shared-work-surface-companion-01/qualification.json)
+is installed API/native-provider proof, not rendered widget visibility. No
+temporary availability fixture remains open.
