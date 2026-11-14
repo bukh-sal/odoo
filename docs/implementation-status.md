@@ -5,14 +5,9 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal: implement the [product/platform roadmap](product-platform-roadmap.md),
-building useful independent applications on the qualified app-free core. Research
-and roadmap setup are complete; PP-01 is accepted in its recorded bounded scope.
-PP-02 through PP-05 are accepted in their bounded scopes; this five-phase goal is complete. Create each
-phase/large-section implementation plan only when it activates, using the latest
-source and findings, before implementing that scope. Preserve historical
-AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
-hosted/production deployment, paid services or existing user-data destruction is authorized.
+Current goal: implement the [shared shell and application UI delivery plan](ui-shell-delivery-plan.md) through UI-D03 to UI-D06. The goal is active, with UI-D03 shell and navigation first. Create each later detailed phase plan when that phase activates, using current findings. Acceptance requires installed UI, populated maintenance, useful cross-app workflows and the integrated qualification matrix.
+
+The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
 - Updated UTC: 2026-11-14T04:38:16.163423+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
