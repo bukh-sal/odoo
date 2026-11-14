@@ -189,3 +189,31 @@ omitted RTLcss's required stdin flag. Corrected source check passes in a fresh
 receipt directory. Freeze inventory remains122files/11rows and passes.
 Installed full bundles and the core-only populated upgrade are the next checks;
 visual/app integration and all phase exit requirements remain open.
+
+## App source checkpoint
+
+The core-only operationd8b48206 completed normally on18610/config5 before app
+edits; its [evidence](evidence/G7/20261114-shared-work-surface-core-01/qualification.json)
+binds all unchanged pins,18tables, native authentication/authority, job/outbox
+business data and selected assets. The app source now adopts the common layout,
+header and feedback in tasks, reminders, customer work and Documents. Workboard
+and Documents use the common semantic palette, preserving their content geometry.
+Native Partners retains its revision-aware form with a real title and sections;
+Delivery's optional native widget hands the public UUID through ordinary action
+context and rechecks current availability before showing/acting. Five new
+controller witnesses cover that handoff and stale/denied/invalid identities.
+
+Affected app checks pass68Node and62Python tests;23native/inline templates parse,
+both styles compile with the pinned Sass/RTL tools, and deterministic packages
+validate. The first aggregate wrapper stopped at an incorrect expected test-file
+count before running tests; its intent is retained. Two focused fixture mistakes
+were corrected: merged registry categories in a Documents action assertion and
+a missing binding in the new Workboard request fixture. Production guards were
+unchanged. The old local mobile-focus assertion is now owned by the shared
+AppLayout logic checks; its app consumer verifies real selected-scope/filter
+requests instead. No rendered focus or installed new-app claim follows.
+
+The [author catalogue](ui-author-patterns.md) describes the actual exports,
+native and optional seams, tokens, localization, draft/authority ownership and
+fallback. Final archive pins, combined immutable image, normal app upgrade and
+installed useful journey remain next; in-app browser controls are still absent.

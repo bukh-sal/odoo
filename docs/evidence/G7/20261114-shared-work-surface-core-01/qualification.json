@@ -1,0 +1,56 @@
+{
+  "assets": [
+    {
+      "bytes": 3021692,
+      "mimetype": "application/javascript",
+      "sha256": "d709dc919b9a49929c0a2617caf88572f077111944cca050b8d12014e40f118d",
+      "url": "/web/assets/eab1637/web.assets_web.min.js"
+    },
+    {
+      "bytes": 785512,
+      "mimetype": "text/css",
+      "sha256": "2d691f47a1e352861812345436b5cbda37b0ad3f3ed42bdc301c47fba1cd769c",
+      "url": "/web/assets/fd1f8bf/web.assets_web.min.css"
+    }
+  ],
+  "checks": {
+    "app_layout_logic": 6,
+    "core_upgrade": 18,
+    "declared_assets": 7,
+    "default_addons": 8,
+    "freeze_files": 122,
+    "freeze_rows": 11,
+    "native_versions": 7,
+    "parsed_templates": 4,
+    "pinned_sass_and_rtl": true,
+    "release_staging": 9,
+    "scoped_menu_workspace": 9
+  },
+  "configuration_generation": 5,
+  "data_authority_tables_exact": 18,
+  "document_versions": 2,
+  "image": "sha256:389a095d087498e4d99c9c85599c3af35be28ef82a8c38dccdbc262d5f32536c",
+  "item": "UI-D05-core",
+  "job_outbox_business_exact": true,
+  "limits": [
+    "Source component tests use mocked Owl hooks; rendered focus/drafts/visuals unverified.",
+    "In-app preview visible to owner but browser control tools absent after pause/resume; no external-browser substitute.",
+    "App adoption/customer-record bridge and UI-D03/D05/D06 browser requirements remain open.",
+    "No new canonical full-host regression, dark/RTL/accessibility or phase-complete claim."
+  ],
+  "native_auth_authority_exact": true,
+  "native_web": "19.0.2.12.0",
+  "operation": "d8b48206-108a-44fa-84bd-49413907b421",
+  "plan_hash": "sha256:528d62d2811d86116950a65a525dd42f35634f46ebe710e5aa7ad412875650de",
+  "result": "shared_core_installed_app_and_visual_work_pending",
+  "retained": {
+    "checkpoints_images_and_old_workers": true,
+    "legacy_18611_target_exact": true,
+    "prior_targets_exact": 7
+  },
+  "source": "a75d2d77afc56969fc24432d9ec6ee47f4cb8f19",
+  "source_delta_files": 15,
+  "tasks": 27,
+  "unchanged_private_app_archives": 5,
+  "version": "0.2.12"
+}
