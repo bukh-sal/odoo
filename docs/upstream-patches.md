@@ -105,3 +105,5 @@ and query disclosure. The native search-menu trigger has a sliders icon and an
 accessible name. The list, form, search and menu controllers retain their
 inherited behavior. Geist Latin variable is served locally under its accompanying
 SIL Open Font License in `web/static/lib/geist/LICENSE`.
+
+UI-D03 replaces the stock-profile navbar presentation with a shared Owl shell while retaining the menu/action services and main component/overlay container. Scoped menu data is supplied by mp_core. The original NavBar path remains for the optional reference profile and bare-web consumers. Web presentation maintenance is versioned and constrained to static assets plus the manifest; original source attribution remains.

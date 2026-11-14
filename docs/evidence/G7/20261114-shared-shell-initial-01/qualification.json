@@ -1,0 +1,85 @@
+{
+  "item": "UI-D03",
+  "result": "initial_installed_shell_acceptance_open",
+  "source": "58c33ab8d48",
+  "runtime_core": "0.2.9",
+  "project": "mp-r0-r1released5f6fc023b17",
+  "configuration_generation": 2,
+  "image": "sha256:c2a64bc7eede2ef9a328158ff828e42c21ea68023c0acb28c32fd8d566edebfd",
+  "worker": "e1c7c2f7481c7b98ee05912623dabd6195e5fc98bcca75f4e52be2af58e97d3c",
+  "private_apps": {
+    "workboard": "5d93503fc992c42a96821e6cf343a6a36c48b51d",
+    "delivery": "eef17afed72ba3862cf0ea57f11ac7de9aa939e1",
+    "documents": "82fe5aeaf18fce4e94c1f6a9befb8d06abda870c"
+  },
+  "browser": {
+    "measurements": {
+      "work": {
+        "nativeSidebar": false,
+        "rail": 55.99431610107422,
+        "reminderLinks": 1,
+        "sidebar": 263.991455078125,
+        "viewport": [
+          1346,
+          790
+        ]
+      },
+      "narrow": {
+        "rail": 43.99147415161133,
+        "scroll": 355,
+        "width": 355
+      },
+      "nativeMobile": {
+        "expanded": "false",
+        "focus": "Partners",
+        "scroll": 355,
+        "width": 355
+      }
+    },
+    "filter": "24_to5_to24",
+    "nativeSections": "People_empty_Organizations2_Northstar_form",
+    "documents": "version2_detail",
+    "reminders": "single_nav_link_and_empty_inbox",
+    "gaps": [
+      "Default palette needs app results without a prefix",
+      "Narrow command trigger needs explicit accessible label"
+    ],
+    "errors": []
+  },
+  "empty_core": {
+    "route": "http://release-d5f6fc023b17.localhost:18610/odoo?workspace=5a67c122-7f5b-48cc-9b26-adc3cdcc30ef",
+    "result": "empty8_core_shell_no_business_apps",
+    "menu": "No applications enabled in this workspace",
+    "jobs": "My background jobs reachable",
+    "browserErrors": []
+  },
+  "screenshots": {
+    "documents-shell.jpg": "5e02dee5b5493dcb0119195261bfa6db47b16e44f3decb5c8aa542be089d815b",
+    "empty-core.jpg": "8e70ecae3a27e25afeefb159d2bd728e23be0358d3016d4e63d5686ac182fed9",
+    "native-narrow-context.jpg": "3d8960ff03c393c2c1d939f823692cdb61e81062fef046680b989839822b3aa0",
+    "native-record-shell.jpg": "0ac6d3154f3b354e943635141f971ddf8e5d9cb6ad51880172cf89b18fe7224c",
+    "native-shell.jpg": "5a464213fea76a6d5a0118de2e774d5fbb99cf376f1de3a4c48821f1bb1b6a4e",
+    "reminders-shell.jpg": "707d24cd616a6dfc58a920348a53acd714025cecd15642b83539ecd0dd5c5694",
+    "workboard-narrow.jpg": "a9ff6a7799acedfaec1118f6850440cd5cbe2fbf04c25d31aee594347793a88b",
+    "workboard-shell.jpg": "9b2017c90ccf1fe1cfa30ad09dbf590f1af91bb106b36ea91f0b44b06b77b732"
+  },
+  "business_fixture": {
+    "A_tasks": 24,
+    "B_tasks": 3,
+    "documents": 1,
+    "versions": 2,
+    "original_actor_http_seed": true
+  },
+  "preserved_target_hashes": 7,
+  "failure": {
+    "core": "0.2.8",
+    "phase": "bootstrap_publish_assets",
+    "cause": "Pinned libsass mixed px/vw min function",
+    "disposition": "Retained closed empty fixture; versioned compiler-checked successor booted"
+  },
+  "remaining": [
+    "Default app palette provider and mobile search label corrected in source, not yet deployed.",
+    "One-app/overflow, current suspension/revocation, dirty transitions, RTL and end-to-end D03 acceptance remain.",
+    "UI-D04 populated maintenance source tests pass; no installed upgrade/recovery claim."
+  ]
+}

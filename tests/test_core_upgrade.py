@@ -138,5 +138,66 @@ class CoreUpgrade(unittest.TestCase):
         for row in view['targets']:row['action']='deploy'
         validate('operations-view',view)
 
+    def web_transition(self, legacy=False):
+        from modular_platform.release_staging import LEGACY_WEB_MANIFEST
+        for runtime in (self.base,self.runtime):
+            runtime['inventory']['native_addons']['web']={'depends':['base']}
+            runtime['native_manifests']['web']={'version':'1.1' if legacy else '19.0.2.9.0','depends':['base']}
+            runtime['inventory']['files']['addons/web/__manifest__.py']=LEGACY_WEB_MANIFEST if legacy else 'e'*64
+            runtime['inventory']['files']['addons/web/static/src/webclient/shell/shell.xml']='a'*64
+        self.runtime['native_manifests']['web']['version']='19.0.2.10.0'
+        self.runtime['inventory']['files']['addons/web/__manifest__.py']='f'*64
+        self.runtime['inventory']['files']['addons/web/static/src/webclient/shell/shell.xml']='b'*64
+        self.site['native_modules'].append({'addon':'web','state':'installed','version':'19.0.1.1' if legacy else '19.0.2.9.0'})
+
+    def test_web_presentation_upgrade_has_native_flags_and_independent_reconstruction(self):
+        for legacy in (False,True):
+            with self.subTest(legacy=legacy):
+                self.setUp();self.web_transition(legacy)
+                bundle=self.prepare()
+                web=next(row for row in bundle['operation_lock']['native_core_changes'] if row['addon']=='web')
+                self.assertEqual(web,{'addon':'web','previous_version':'1.1' if legacy else '19.0.2.9.0',
+                                     'target_version':'19.0.2.10.0','migrations':[]})
+                self.assertEqual(native_maintenance_flags(bundle,{}),['-u','mp_shell,web'])
+                validator=staged.StagedPlans.validator(self)
+                validator.observer.read=lambda:{'sites':[copy.deepcopy(self.site)],'runtime':copy.deepcopy(self.base)}
+                self.assertEqual(validator(bundle),self.document['state'])
+                forged=copy.deepcopy(bundle)
+                next(row for row in forged['operation_lock']['native_core_changes'] if row['addon']=='web')['target_version']='19.0.2.11.0'
+                forged['plan']['dependency_lock_digest']=data_digest(forged['operation_lock'])
+                forged['plan_hash']=plan_hash(forged['plan']);forged['display']=_display(forged['plan'],forged['operation_lock'])
+                with self.assertRaises(OperatorError):validator(forged)
+
+    def test_web_maintenance_rejects_backend_declaration_and_version_drift(self):
+        self.web_transition()
+        for case in ('backend','engine','declaration','same','downgrade','noncanonical'):
+            runtime=copy.deepcopy(self.runtime)
+            if case=='backend':runtime['inventory']['files']['addons/web/controllers/home.py']='d'*64
+            elif case=='engine':runtime['inventory']['files']['odoo/http.py']='d'*64
+            elif case=='declaration':runtime['native_manifests']['web']['depends']=['base','unknown']
+            else:runtime['native_manifests']['web']['version']={'same':'19.0.2.9.0','downgrade':'19.0.2.8.0','noncanonical':'19.0.02.10.0'}[case]
+            with self.subTest(case=case),self.assertRaises(OperatorError):
+                validate_core_upgrade(self.base,runtime,self.descriptor)
+
+    def test_unknown_legacy_web_and_unversioned_source_change_refuse(self):
+        self.web_transition(legacy=True)
+        for case in ('legacy_hash','legacy_version','missing_target_hash','legacy_downgrade'):
+            base=copy.deepcopy(self.base);runtime=copy.deepcopy(self.runtime)
+            if case=='legacy_hash':base['inventory']['files']['addons/web/__manifest__.py']='0'*64
+            elif case=='legacy_version':base['native_manifests']['web']['version']='1.2'
+            elif case=='missing_target_hash':
+                runtime['inventory']['files']['addons/web/__manifest__.py']=base['inventory']['files']['addons/web/__manifest__.py']
+            else:runtime['native_manifests']['web']['version']='19.0.0.99.0'
+            with self.subTest(case=case),self.assertRaises(OperatorError):
+                validate_core_upgrade(base,runtime,self.descriptor)
+
+    def test_legacy_database_version_still_must_match_the_native_loader(self):
+        self.web_transition(legacy=True)
+        for state,version in [('installed','1.1'),('installed','19.0.1.2'),('uninstalled','19.0.1.1')]:
+            native=next(row for row in self.site['native_modules'] if row['addon']=='web')
+            native.update(state=state,version=version)
+            with self.subTest(state=state,version=version),self.assertRaisesRegex(OperatorError,'base database versions'):
+                self.prepare()
+
 
 if __name__=='__main__':unittest.main()

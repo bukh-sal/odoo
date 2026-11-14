@@ -46,8 +46,10 @@ def validate_platform_deploy(base,runtime,descriptor):
     return [{'path':name,'previous_sha256':old.get(name),'target_sha256':new.get(name)} for name in changed]
 
 
-CORE_ADDONS=frozenset({'mp_compat','mp_identity','mp_core','mp_shell'})
+CORE_ADDONS=frozenset({'web','mp_compat','mp_identity','mp_core','mp_shell'})
 CORE_VERSION=r'19\.0\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)'
+# Observed D02 raw manifest. The native loader stores this as 19.0.1.1.
+LEGACY_WEB_MANIFEST='ece45d6a149396b0910db9d6076488d840f0eb8a83f1b27506e3f98a2b163fa1'
 
 
 def core_python_changes(base, runtime):
@@ -128,14 +130,17 @@ def validate_core_upgrade(base,runtime,descriptor):
     changed=sorted(name for name in old.keys()|new.keys() if old.get(name)!=new.get(name))
     packaged={item['addon'] for item in before.get('artifacts',{}).values()}
     allowed=(CORE_ADDONS & manifests.keys()) - packaged
-    prefixes=('packages/platform_sdk/','packages/contracts/',*(f'addons/{name}/' for name in allowed))
+    prefixes=('packages/platform_sdk/','packages/contracts/',
+              *(f'addons/{name}/' for name in allowed if name!='web'))
+    if 'web' in allowed:prefixes+=('addons/web/static/',)
+    web_manifest='addons/web/__manifest__.py' if 'web' in allowed else None
     parser_changed=PARSER_PATH in changed
     if parser_changed and (not reviewed_transition(before,after) or 'mp_compat' not in allowed
             or 'addons/mp_compat/__manifest__.py' not in changed):
         raise OperatorError('Native numeric correction requires exact reviewed bytes/provenance and versioned compatibility maintenance')
     if not parser_changed and before.get('generated_patches',[])!=after.get('generated_patches',[]):
         raise OperatorError('Core upgrade cannot alter generated patch attestations')
-    if any(not name.startswith(prefixes) and not (parser_changed and name==PARSER_PATH) for name in changed):
+    if any(not name.startswith(prefixes) and name!=web_manifest and not (parser_changed and name==PARSER_PATH) for name in changed):
         raise OperatorError('Core upgrade includes packaged/upstream/unsupported native changes')
     touched={name for name in allowed if any(path.startswith(f'addons/{name}/') for path in changed)}
     if not touched or any(manifests[name]!=new_manifests[name] for name in manifests.keys()-touched):
@@ -143,8 +148,13 @@ def validate_core_upgrade(base,runtime,descriptor):
     upgrades=[]
     for name in sorted(touched):
         prior,version=manifests[name].get('version'),new_manifests[name].get('version')
-        if (not isinstance(prior,str) or not isinstance(version,str) or not re.fullmatch(CORE_VERSION,prior)
-                or not re.fullmatch(CORE_VERSION,version) or Version(version)<=Version(prior)
+        legacy_web=(name=='web' and prior=='1.1' and old.get(web_manifest)==LEGACY_WEB_MANIFEST)
+        comparison_prior='19.0.1.1.0' if legacy_web else prior
+        if name=='web' and ({k:v for k,v in manifests[name].items() if k!='version'}
+                           !={k:v for k,v in new_manifests[name].items() if k!='version'}):
+            raise OperatorError('Web presentation maintenance must preserve manifest declarations')
+        if (not isinstance(comparison_prior,str) or not isinstance(version,str) or not re.fullmatch(CORE_VERSION,comparison_prior)
+                or not re.fullmatch(CORE_VERSION,version) or Version(version)<=Version(comparison_prior)
                 or f'addons/{name}/__manifest__.py' not in changed):
             raise OperatorError('Every changed core addon requires a strictly increasing canonical native version')
         migrations=[]
@@ -154,9 +164,9 @@ def validate_core_upgrade(base,runtime,descriptor):
             directory=path[len(prefix):].split('/')[0]
             if not re.fullmatch(CORE_VERSION,directory):
                 raise OperatorError('Core migration requires a canonical native version directory')
-            if Version(directory)<=Version(prior) and old.get(path)!=new.get(path):
+            if Version(directory)<=Version(comparison_prior) and old.get(path)!=new.get(path):
                 raise OperatorError('Core upgrade cannot rewrite previously applicable migrations')
-            if Version(prior)<Version(directory)<=Version(version) and path in new:
+            if Version(comparison_prior)<Version(directory)<=Version(version) and path in new:
                 migrations.append({'path':path,'sha256':new[path]})
         upgrades.append({'addon':name,'previous_version':prior,'target_version':version,'migrations':migrations})
     return ([{'path':name,'previous_sha256':old.get(name),'target_sha256':new.get(name)} for name in changed],upgrades)
@@ -189,7 +199,9 @@ def prepare_staged_plan(document,sites,catalog,runtime,descriptor,*,targets,oper
         for site in sites:
             native={item['addon']:item for item in site['native_modules']}
             if any(change['addon'] not in native or native[change['addon']]['state']!='installed'
-                    or native[change['addon']]['version']!=change['previous_version'] for change in core_changes):
+                    or native[change['addon']]['version']!=(
+                        '19.0.1.1' if change['addon']=='web' and change['previous_version']=='1.1'
+                        else change['previous_version']) for change in core_changes):
                 raise OperatorError('Core upgrade base database versions must match independently observed source')
     external=[p for p in document['state']['release_lock']['plugins'] if p['runtime']=='external_service']
     selected,environment,provenance=runtime_inputs(runtime,catalog,external_plugins=external)

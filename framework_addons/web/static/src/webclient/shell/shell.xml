@@ -28,7 +28,7 @@
         <button t-if="nativeContext" class="mp-context-toggle btn" t-ref="contextTrigger"
             aria-controls="mp-native-context" t-att-aria-expanded="state.contextOpen ? 'true' : 'false'"
             t-on-click="() => state.contextOpen = !state.contextOpen"><i class="fa fa-bars" aria-hidden="true"/> <t t-esc="current.name"/></button>
-        <button class="mp-command-trigger" t-on-click="openCommands"><i class="fa fa-search" aria-hidden="true"/> <span>Search apps and commands</span></button>
+        <button class="mp-command-trigger" aria-label="Search apps and commands" t-on-click="openCommands"><i class="fa fa-search" aria-hidden="true"/> <span>Search apps and commands</span></button>
         <div class="mp-shell-utilities" role="group" aria-label="Workspace and account">
           <t t-foreach="utilities" t-as="item" t-key="item.key">
             <ErrorHandler onError="error => this.handleItemError(error)"><t t-component="item.Component"/></ErrorHandler>
