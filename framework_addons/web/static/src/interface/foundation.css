@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "MP Geist";
+    src: url("/web/static/lib/geist/geist-latin.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --mp-ui-font: "MP Geist", "Segoe UI", system-ui, sans-serif;
+    --mp-ui-canvas: #f7f7f8;
+    --mp-ui-surface: #fff;
+    --mp-ui-ink: #202127;
+    --mp-ui-muted: #60636c;
+    --mp-ui-line: #dedfe4;
+    --mp-ui-hover: #f0f0f3;
+    --mp-ui-action: #25262c;
+    --mp-ui-on-action: #fff;
+    --mp-ui-focus: #7564bf;
+    --mp-ui-sidebar: 264px;
+    --mp-ui-row: 44px;
+    --mp-ui-control: 34px;
+    --mp-ui-search: 36px;
+    --mp-ui-radius: 7px;
+    --mp-ui-title: 600 26px/34px var(--mp-ui-font);
+}
+
+@media screen {
+    .o_web_client { font-family: var(--mp-ui-font); }
+    .o_web_client .o_main_navbar {
+        --NavBar-entry-color: var(--mp-ui-ink);
+        --NavBar-entry-color--hover: var(--mp-ui-ink);
+        --NavBar-entry-color--active: var(--mp-ui-ink);
+        --NavBar-brand-color: var(--mp-ui-ink);
+        background: var(--mp-ui-surface);
+        color: var(--mp-ui-ink);
+        border-bottom: 1px solid var(--mp-ui-line);
+    }
+    .o_web_client .o_control_panel,
+    .o_web_client .o_form_view .o_form_sheet_bg { background-color: var(--mp-ui-canvas); }
+    .o_web_client .o_control_panel .btn { min-height: var(--mp-ui-control); }
+    .o_web_client .o_searchview { min-height: var(--mp-ui-search); }
+    .o_web_client .o_control_panel .btn-primary,
+    .mp-page .btn-primary {
+        --btn-bg: var(--mp-ui-action);
+        --btn-border-color: var(--mp-ui-action);
+        --btn-color: var(--mp-ui-on-action);
+        --btn-hover-bg: var(--mp-ui-ink);
+        --btn-hover-color: var(--mp-ui-on-action);
+    }
+    .o_web_client .o_list_view .o_list_renderer {
+        --ListRenderer-thead-bg-color: var(--mp-ui-canvas);
+        --ListRenderer-thead-border-end-color: transparent;
+    }
+    .o_web_client .o_list_view .o_list_table > tbody > .o_data_row { height: var(--mp-ui-row); }
+    .o_web_client .o_list_view .o_list_table > tbody > .o_data_row > td {
+        vertical-align: middle;
+        font-size: 13.5px;
+    }
+    .o_web_client .o_form_sheet { border-radius: var(--mp-ui-radius); }
+    .o_web_client .o_form_view .oe_title h1,
+    .mp-page .mp-page-title { font: var(--mp-ui-title); letter-spacing: -.025em; }
+}
+
+.mp-query { position: relative; }
+.mp-query-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: var(--mp-ui-control);
+    padding: 4px 11px;
+    border: 1px solid var(--mp-ui-line);
+    border-radius: var(--mp-ui-radius);
+    background: var(--mp-ui-surface);
+    color: var(--mp-ui-ink);
+    font: 500 13px/20px var(--mp-ui-font);
+    cursor: pointer;
+    list-style: none;
+}
+.mp-query-trigger::-webkit-details-marker { display: none; }
+.mp-query[open] > summary, .mp-query-trigger:hover { background: var(--mp-ui-hover); }
+.mp-query-trigger:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; }
+.mp-query-count { border-radius: 4px; background: var(--mp-ui-action); color: var(--mp-ui-on-action); padding: 0 5px; }
+.mp-query-fields {
+    position: absolute;
+    inset-block-start: calc(100% + 5px);
+    inset-inline-start: 0;
+    z-index: 4;
+    width: 248px;
+    max-width: calc(100vw - 32px);
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+    background: var(--mp-ui-surface);
+    color: var(--mp-ui-ink);
+    border: 1px solid var(--mp-ui-line);
+    border-radius: var(--mp-ui-radius);
+    box-shadow: 0 6px 24px #20212716;
+}
+.mp-query-fields > label { display: grid; gap: 4px; margin: 0; font-size: 12px; font-weight: 550; }
+.mp-query-fields > label > select { width: 100%; min-height: var(--mp-ui-control); }
+@media (max-width: 700px) {
+    .mp-query[open] { flex-basis: 100%; }
+    .mp-query-fields { position: static; width: 100%; margin-block-start: 6px; box-shadow: none; }
+}

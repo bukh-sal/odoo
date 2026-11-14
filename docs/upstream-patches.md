@@ -97,3 +97,11 @@ Owned mp_core/SDK changes add explicit native authority, site-native metadata an
 managed native partitions; owned Aurora addon adds reminder/inbox behavior and its
 declared data migration. No inherited engine patch in this item. Existing source
 notices retained. Qualification is pending AT-03/04; sealed47/46 remain unchanged.
+
+## Shared interface foundation
+
+The backend web asset manifest includes the platform presentation stylesheet
+and query disclosure. The native search-menu trigger has a sliders icon and an
+accessible name. The list, form, search and menu controllers retain their
+inherited behavior. Geist Latin variable is served locally under its accompanying
+SIL Open Font License in `web/static/lib/geist/LICENSE`.

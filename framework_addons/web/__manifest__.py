@@ -126,6 +126,8 @@ This module provides the core of the Odoo Web Client.
 
             # Form style should be computed before
             'web/static/src/views/form/button_box/*.scss',
+            'web/static/src/interface/foundation.css',
+            'web/static/src/interface/query_disclosure.js',
 
             # Don't include dark mode files in light mode
             ('remove', 'web/static/src/**/*.dark.scss'),
