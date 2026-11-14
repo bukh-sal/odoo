@@ -1,0 +1,584 @@
+{
+  "schema_version": 1,
+  "item": "UI-C01",
+  "utc": "2026-11-14T03:01:27.540810+00:00",
+  "result": "accepted_bounded_local_app_ui_and_native_workflow",
+  "source": {
+    "platform": "b7f51c2658a499c3e140c6cbdd59bdeda8689a3a",
+    "private_workboard": "2ba25fd1d8b02819e1611f5f6671a1d068de82c4",
+    "reference_concept": "cecb81593036b5f332dd4302b99f10a884ccafcb",
+    "reference_read_only": true,
+    "private_workboard_documentation_head": "2eee228382545da03b5c0961645d36694b471d9f"
+  },
+  "identity": {
+    "platform": "0.2.6",
+    "native_core": "19.0.0.2.6",
+    "workboard": "0.2.10",
+    "native_workboard": "19.0.0.2.10",
+    "private_build_label": "030 is a local receipt label, not application0.2.30"
+  },
+  "current": {
+    "image_id": "sha256:5d2fe0aad583cef5fd6fbbdbf96e5e141ad126ad51df57b2850445e62d889197",
+    "configuration_generation": 6,
+    "target_sha256": "d13b611ca9246b2c4785c74bfe068682a9950410a3454267fc4bf540a9aea74c",
+    "url": "http://release-5d9508eed2f4.localhost:18607/odoo/workboard?workspace=38c79ef1-2afb-4aa6-9ed5-dcfe413b6360&workboard_view=all&workboard_listId=&workboard_layout=list&workboard_groupBy=list&workboard_query=&workboard_priority=&workboard_status=&workboard_assignee=&workboard_sort=due",
+    "artifacts": {
+      "dev.local.delivery": {
+        "addon": "mp_delivery",
+        "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+        "file": "dev.local.delivery-0.1.4.mplug",
+        "plugin_id": "dev.local.delivery",
+        "version": "0.1.4"
+      },
+      "dev.local.documents": {
+        "addon": "mp_documents",
+        "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+        "file": "dev.local.documents-0.1.6.mplug",
+        "plugin_id": "dev.local.documents",
+        "version": "0.1.6"
+      },
+      "dev.local.partners": {
+        "addon": "mp_partners",
+        "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+        "file": "dev.local.partners-0.1.0.mplug",
+        "plugin_id": "dev.local.partners",
+        "version": "0.1.0"
+      },
+      "dev.local.taskfiles": {
+        "addon": "mp_taskfiles",
+        "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+        "file": "dev.local.taskfiles-0.1.5.mplug",
+        "plugin_id": "dev.local.taskfiles",
+        "version": "0.1.5"
+      },
+      "dev.local.workboard": {
+        "addon": "mp_workboard",
+        "digest": "sha256:ff15992f7779751a46d9e08215f16dfab4ad477a57e93db97adf0456ac127e4d",
+        "file": "dev.local.workboard-0.2.10.mplug",
+        "plugin_id": "dev.local.workboard",
+        "version": "0.2.10"
+      }
+    }
+  },
+  "builds": {
+    "core026": {
+      "artifacts": {},
+      "image_id": "sha256:d38b72ef12d83d710686d8a5d9c7e4a55bb914e7a41fa541df2002c666b3092f",
+      "record_sha256": "807613a3e0d552442fb6f3eac2c8feab42610f1b455e178cf8b3ca56c0f1ecdd",
+      "tags": [
+        "modular-platform:retained-8296160d-4a8c-455a-82fb-aaec6f3a7e7a",
+        "modular-platform:retained-cc2f6c39-3619-4c0f-8908-697bed0c30f1",
+        "modular-platform:stage-20261114t015705391251z"
+      ]
+    },
+    "workboard026": {
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.taskfiles": {
+          "addon": "mp_taskfiles",
+          "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+          "file": "dev.local.taskfiles-0.1.5.mplug",
+          "plugin_id": "dev.local.taskfiles",
+          "version": "0.1.5"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:590db577ccf3b19724f008bc2343fa2a23b9de2cf9f04646dc64c304a3ea1af1",
+          "file": "dev.local.workboard-0.2.6.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.6"
+        }
+      },
+      "image_id": "sha256:cc03a06b23ee133093c323f1f495cce9ed9ec6955bd776e7957b82300f003229",
+      "record_sha256": "bf2d4ad47dee3492ac0ca8fa78f7b16bf15587d2d71c1a369c96531394583b0c",
+      "tags": [
+        "modular-platform:stage-20261114t015753221548z"
+      ]
+    },
+    "workboard027": {
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.taskfiles": {
+          "addon": "mp_taskfiles",
+          "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+          "file": "dev.local.taskfiles-0.1.5.mplug",
+          "plugin_id": "dev.local.taskfiles",
+          "version": "0.1.5"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:1cd2d286b988697fdf3629b3709de93654e602e0d8b4a92604defd9de5712040",
+          "file": "dev.local.workboard-0.2.7.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.7"
+        }
+      },
+      "image_id": "sha256:072a13640876e1068545dc815f3ab7c49414d12c5cef0381a527e6d66be010ff",
+      "record_sha256": "24dd9d346b732aad66dc798bb8e68f2c9d7e74b5c2429707a67f45cb970545fc",
+      "tags": [
+        "modular-platform:retained-7f7f7da0-4072-42cb-8b70-be0113f43ed8",
+        "modular-platform:stage-20261114t021241305916z"
+      ]
+    },
+    "workboard028": {
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.taskfiles": {
+          "addon": "mp_taskfiles",
+          "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+          "file": "dev.local.taskfiles-0.1.5.mplug",
+          "plugin_id": "dev.local.taskfiles",
+          "version": "0.1.5"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:6b3d1defb18f932c87b17d6ffb664602598340b15f1b9ad18e1ff9fcf8e0d69f",
+          "file": "dev.local.workboard-0.2.8.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.8"
+        }
+      },
+      "image_id": "sha256:cbb97adffaa8cb5d5e529b20f520bdf5bea35daa4d6610b095d9fe3500fdad6e",
+      "record_sha256": "a257200ca0eaf6912fa5eb272ab9a177356818fe8af95b278bd1897d5d0eda97",
+      "tags": [
+        "modular-platform:retained-a63636a5-a290-4792-beb0-7383e83e272f",
+        "modular-platform:stage-20261114t023625034551z"
+      ]
+    },
+    "workboard029": {
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.taskfiles": {
+          "addon": "mp_taskfiles",
+          "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+          "file": "dev.local.taskfiles-0.1.5.mplug",
+          "plugin_id": "dev.local.taskfiles",
+          "version": "0.1.5"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:c4ac45edb0bccc8e6ff55b15ca54430d2e6048c90b310dc592ef4ab66b30015e",
+          "file": "dev.local.workboard-0.2.9.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.9"
+        }
+      },
+      "image_id": "sha256:3caf2509d3b486cff144e6bd3d91511d8f07cb75bac5759659e5d9d4e6275e68",
+      "record_sha256": "b86043b9e57cd248505e1eccb8a288ce93ddf4fb2f468fc6b4f543d0a537342d",
+      "tags": [
+        "modular-platform:stage-20261114t025233980667z"
+      ]
+    },
+    "workboard030": {
+      "artifacts": {
+        "dev.local.delivery": {
+          "addon": "mp_delivery",
+          "digest": "sha256:82fe9e0745e35d08ddbbdaa923b450b44c34be8cc457e1b7d015c615d42a64bd",
+          "file": "dev.local.delivery-0.1.4.mplug",
+          "plugin_id": "dev.local.delivery",
+          "version": "0.1.4"
+        },
+        "dev.local.documents": {
+          "addon": "mp_documents",
+          "digest": "sha256:b8cac4d22562cec4901481221ea50001d7d914b65de619d3ced3faf3505e5b11",
+          "file": "dev.local.documents-0.1.6.mplug",
+          "plugin_id": "dev.local.documents",
+          "version": "0.1.6"
+        },
+        "dev.local.partners": {
+          "addon": "mp_partners",
+          "digest": "sha256:98ab90210e81b2bf28e23909eac549b1af637459c356b5680f37c2314002e2bd",
+          "file": "dev.local.partners-0.1.0.mplug",
+          "plugin_id": "dev.local.partners",
+          "version": "0.1.0"
+        },
+        "dev.local.taskfiles": {
+          "addon": "mp_taskfiles",
+          "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+          "file": "dev.local.taskfiles-0.1.5.mplug",
+          "plugin_id": "dev.local.taskfiles",
+          "version": "0.1.5"
+        },
+        "dev.local.workboard": {
+          "addon": "mp_workboard",
+          "digest": "sha256:ff15992f7779751a46d9e08215f16dfab4ad477a57e93db97adf0456ac127e4d",
+          "file": "dev.local.workboard-0.2.10.mplug",
+          "plugin_id": "dev.local.workboard",
+          "version": "0.2.10"
+        }
+      },
+      "image_id": "sha256:5d2fe0aad583cef5fd6fbbdbf96e5e141ad126ad51df57b2850445e62d889197",
+      "record_sha256": "bb3345f40a6d2fc932dae01beea1fd9ad821ef6f7b91291dc1ff13a5ea9f71a0",
+      "tags": [
+        "modular-platform:stage-20261114t025407589446z"
+      ]
+    }
+  },
+  "operations": {
+    "plan027": {
+      "operation": "cc2f6c39-3619-4c0f-8908-697bed0c30f1",
+      "plan_hash": "sha256:0d20c6e6b9300fdd41cf1bbcba6adbcda170d83e96ccf34184e06270b5f37dbb",
+      "bundle": {
+        "path": ".local/ui-concept-workboard-01/native/plan027.stdout",
+        "sha256": "5d5ff5594f271699ec296c18c51e543be9a2f3c71107c95209f37c78195335cf"
+      }
+    },
+    "plan028": {
+      "operation": "7f7f7da0-4072-42cb-8b70-be0113f43ed8",
+      "plan_hash": "sha256:3b31bb32379bf2d6356e61c128e9342a8c468e59ff601645a943a5e501982849",
+      "bundle": {
+        "path": ".local/ui-concept-workboard-01/native/plan028.stdout",
+        "sha256": "bd5ea11412b09cf1bc4c5547e9b57256373cd77846021fa22e17da38bf703e67"
+      }
+    },
+    "plan030": {
+      "operation": "a63636a5-a290-4792-beb0-7383e83e272f",
+      "plan_hash": "sha256:e18a0a77f1ba3b07841b7e28a882593135c511b32dc1f280d71c94b38608c15c",
+      "bundle": {
+        "path": ".local/ui-concept-workboard-01/native/plan030.stdout",
+        "sha256": "0d9e6deda23503a50ea50ab9e669284c5684e6b57b009dc8c870a8c1770375f0"
+      }
+    },
+    "initial_install": {
+      "operation": "8296160d-4a8c-455a-82fb-aaec6f3a7e7a",
+      "plan_hash": "sha256:26dbe34046d72b180b4e98c2a688a292dc66e4ef4232eadc2f0d25f7938f6d7e",
+      "bundle": {
+        "path": ".local/ui-concept-workboard-01/native/plan-apps.stdout",
+        "sha256": "aef40a9d331ef8ee1dffa7d4371106ce29489e5c0e0748a9944fec13ea15d19a"
+      }
+    }
+  },
+  "source_changes": {
+    "core_business_changes": false,
+    "paired_core_identity": "Ships previously qualified host SDK bytes honestly as a new candidate; no task-specific core branch",
+    "default_core_addons": 8,
+    "app_composition_addons": 13,
+    "app_owned": [
+      "filters/counts/sorting",
+      "grouped lists and actual workflow boards",
+      "safe contextual detail drawer",
+      "bounded route hints",
+      "responsive navigation and explicit ARIA strings"
+    ]
+  },
+  "tests": {
+    "app_python": 19,
+    "app_node": 29,
+    "platform_identity_distribution": 18,
+    "platform_bootstrap_clean_build": 23,
+    "freeze": {
+      "files": 122,
+      "rows": 11
+    },
+    "logs": {
+      "app-python030.out.txt": {
+        "path": ".local/ui-concept-workboard-01/app-python030.out.txt",
+        "sha256": "7fb49f28427846152a247e9459ab4257a7ab3f0a174a502ee453becd4cb758c4"
+      },
+      "app-node030.out.txt": {
+        "path": ".local/ui-concept-workboard-01/app-node030.out.txt",
+        "sha256": "d3d8e54178c027325a078736fbf78626f88eb4807ff34a45d18f12ae013613ee"
+      },
+      "platform-corrected-modules.out.txt": {
+        "path": ".local/ui-concept-workboard-01/platform-corrected-modules.out.txt",
+        "sha256": "c95aade2e9ef0b210dcd915946ec6b30ae00cc8ce7c922e2ac485fa2e7c73791"
+      },
+      "freeze-final.out.txt": {
+        "path": ".local/ui-concept-workboard-01/freeze-final.out.txt",
+        "sha256": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+      },
+      "platform-identity-final.out.txt": {
+        "path": ".local/ui-concept-workboard-01/platform-identity-final.out.txt",
+        "sha256": "79b503e61758be6081a2b73a7bf3262d1d95ebe08c1261d0464ca45a04e3f42a"
+      }
+    },
+    "full_host_rerun": false,
+    "retained_development_invocation_failures": [
+      "Two guessed platform module names failed discovery, then actual bootstrap/clean-build23 and final identity/distribution18 passed.",
+      "A Windows CRLF write broke the Node import-stripping fixture; preserved failure, explicit LF source write corrected; final29 pass."
+    ]
+  },
+  "native": {
+    "original_assets_failure": "0.2.6 native install completed its native/metadata stages then failed public-host asset compilation: Sass min(vw,px). Original diagnostics/checkpoint/source retained; never reapplied.",
+    "recovery": "Normal failed-operation fresh database restore then separately reviewed resume; new corrected0.2.7 install. Populated app-only0.2.8 then0.2.10 upgrades.",
+    "unused029": "0.2.9 built but never admitted/staged/applied after source review found Windows-locale punctuation corruption; final0.2.10 uses explicit UTF-8.",
+    "preservation": {
+      "business_tables": 16,
+      "authority_tables": [
+        "mp_membership",
+        "mp_plugin_grant"
+      ],
+      "all_rows_and_document_bytes_exact": true,
+      "tasks": 28,
+      "workspace_A": 25,
+      "workspace_B": 3,
+      "document_versions": 2,
+      "pin": 1,
+      "review": 2,
+      "reminder": "scheduled then cancelled through actual UI"
+    }
+  },
+  "browser": {
+    "version": "0.2.10",
+    "mobileOpenExpanded": "true",
+    "mobileCloseFocus": {
+      "expanded": "false",
+      "focus": "wb-mobile-nav-toggle"
+    },
+    "mobileKeyboard": {
+      "label": "Search tasks",
+      "outline": "rgb(124, 104, 190) solid 2.72727px",
+      "tag": "INPUT"
+    },
+    "mobileOpened": {
+      "client": 355,
+      "expanded": "true",
+      "height": 767,
+      "scroll": 355,
+      "width": 355
+    },
+    "desktop": {
+      "busy": "false",
+      "client": 1346,
+      "dpr": 1.100000023841858,
+      "height": 790,
+      "pressed": [
+        {
+          "label": "List",
+          "pressed": "true"
+        },
+        {
+          "label": "Board",
+          "pressed": "false"
+        }
+      ],
+      "scroll": 1346,
+      "width": 1346
+    },
+    "collapsed": "false",
+    "expanded": "true",
+    "persistedTaskContext": {
+      "description": true,
+      "priority": "low",
+      "pinnedVersion": 1,
+      "reviewedVersion": 2,
+      "discussion": true
+    },
+    "pinnedDownload": {
+      "bytes": 120,
+      "sha256": "455bbe049f4c5863e3329deea728e61c81d5c44a96e6bf20a8f4821d13ca061d",
+      "version": 1,
+      "currentVersion": 2
+    },
+    "drawerCloseFocus": "Confirm the launch goals",
+    "board": {
+      "group": "stage",
+      "groupDisabled": true,
+      "pressed": [
+        {
+          "label": "List",
+          "pressed": "false"
+        },
+        {
+          "label": "Board",
+          "pressed": "true"
+        }
+      ]
+    },
+    "boardReload": {
+      "group": "stage",
+      "layout": "Board"
+    },
+    "viewer": {
+      "guidance": true,
+      "newTaskAbsent": true,
+      "editAbsent": true,
+      "commentInputAbsent": true
+    },
+    "finalURL": "http://release-5d9508eed2f4.localhost:18607/odoo/workboard?workspace=38c79ef1-2afb-4aa6-9ed5-dcfe413b6360&workboard_view=all&workboard_listId=&workboard_layout=list&workboard_groupBy=list&workboard_query=&workboard_priority=&workboard_status=&workboard_assignee=&workboard_sort=due",
+    "finalViewport": {
+      "client": 1347,
+      "dpr": 1,
+      "height": 790,
+      "scroll": 1347,
+      "width": 1347
+    },
+    "mobileSettled": {
+      "busy": "false",
+      "client": 390,
+      "dpr": 1,
+      "height": 844,
+      "navigationExpanded": "false",
+      "scroll": 390,
+      "width": 390
+    },
+    "restoredViewport": {
+      "height": 790,
+      "width": 1347
+    },
+    "dialogOverlayBounds": {
+      "bottom": 790,
+      "top": 0,
+      "width": 1346.3636474609375
+    }
+  },
+  "receipts": {
+    "install-failure-review": {
+      "path": ".local/ui-concept-workboard-01/native/install-failure-review.json",
+      "sha256": "62d26cdf5a2660929cf8c5641587c328091fb988581a58ffb0b5e0e0646398da"
+    },
+    "upgrade028-complete": {
+      "path": ".local/ui-concept-workboard-01/native/upgrade028-complete.json",
+      "sha256": "9a39b264e61ba6b0e1f7c8f30d461a90763b8cc2fc7be3cf3965c16f2b932350"
+    },
+    "upgrade030-complete": {
+      "path": ".local/ui-concept-workboard-01/native/upgrade030-complete.json",
+      "sha256": "7b4903b35280127ba2f8c6c98773403ccfbf1c321d6cea3efae1925c4196b69a"
+    },
+    "upgrade030-before": {
+      "path": ".local/ui-concept-workboard-01/native/upgrade030-before.json",
+      "sha256": "cfe0e7c2415a0c219f9d68e43aa084e3ca7c21eaac21c2bcbe3cdf60ec8da131"
+    },
+    "upgrade030-after": {
+      "path": ".local/ui-concept-workboard-01/native/upgrade030-after.json",
+      "sha256": "cfe0e7c2415a0c219f9d68e43aa084e3ca7c21eaac21c2bcbe3cdf60ec8da131"
+    },
+    "final-readonly": {
+      "path": ".local/ui-concept-workboard-01/native/final-readonly.json",
+      "sha256": "45921d0c495df4594ccb41322149ff74c1e2306b1d6cff592979d88b8730e7b8"
+    },
+    "retained-containers": {
+      "path": ".local/ui-concept-workboard-01/native/retained-containers.json",
+      "sha256": "3322e6e28db1924fa11ae00767d32fd649115325ffe2606281167456ee706d1f"
+    },
+    "retained-networks": {
+      "path": ".local/ui-concept-workboard-01/native/retained-networks.json",
+      "sha256": "00ee846cdba00661db64fa7040c3c477d9d0881d1da2619429822a11b8cd762f"
+    },
+    "retained-volumes": {
+      "path": ".local/ui-concept-workboard-01/native/retained-volumes.json",
+      "sha256": "c9624995f73e1e1d73004f554fd70af4148b517259861ce9135f5951a3ecec64"
+    },
+    "browser": {
+      "path": ".local/ui-concept-workboard-01/ui/final-browser-qa.json",
+      "sha256": "d3a56af588f1519f10f20e1b8c1b5af338b4e0a65459147a984e5634deb53e54"
+    },
+    "workflow": {
+      "path": ".local/ui-concept-workboard-01/ui/before-ux-fix.json",
+      "sha256": "a28caf414b5ae5f08b1e554e60a4a4f443fe67c962ecb7038941fac8fc548c15"
+    },
+    "seed": {
+      "path": ".local/ui-concept-workboard-01/seed/complete.json",
+      "sha256": "d5407cc192a8784314434f2af80a853d43c067e86835002770852ee8cc9a5a84"
+    }
+  },
+  "retention": {
+    "containers": 58,
+    "networks": 2,
+    "volumes": 6,
+    "candidate_images": 6,
+    "failed_source_database_and_checkpoints_retained": true,
+    "protected_older_targets": 4,
+    "cleanup_performed": false,
+    "concept_http_helper": "stopped"
+  },
+  "limitations": [
+    "Trusted native/same-origin app; no hostile-code sandbox",
+    "App-owned light UI inside existing stock chrome, not a global shell rewrite",
+    "Concept cycles, roadmaps, global chat and saved views are not implemented or exposed as fake controls",
+    "Agent desktop/narrow/keyboard checks are bounded; no formal WCAG, universal mobile/RTL or human usability acceptance",
+    "No new canonical full-host or final all-layer tar audit; current locked clean builder and runtime inventory were verified",
+    "No new universal compatibility, LTS, production or release claim; prior PP05 exact0.2.5 matrix remains historical and unchanged",
+    "No publication/push or old-user-data mutation"
+  ],
+  "final_audit": {
+    "utc": "2026-11-14T03:04:46.537609+00:00",
+    "curated_source_hashes": 4060,
+    "changed_or_missing": [],
+    "current_archive_digest_exact": true,
+    "private_app_documentation_only_successor": true,
+    "business_authority_bytes_exact_after_browser": true,
+    "protected_targets_exact": 4,
+    "full_host_rerun": false
+  }
+}

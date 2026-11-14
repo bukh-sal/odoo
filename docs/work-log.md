@@ -1,3 +1,27 @@
+## UI-C01 concept-inspired Workboard delivered -14November2026
+
+Fresh implementation/native/repair/usability plans preceded each meaningful scope.
+Reviewed the supplied Meridian Tasks/list/drawer concept read-only; implemented real
+app-owned Owl/SCSS grouped views, filters/counts/sorting, context-safe routing and
+drawer. Preserved actual service authority, draft/conflict/idempotency behavior and
+optional customer/file/review/reminder panels; no fake concept controls/core task branch.
+Paired core0.2.6 honestly packages prior host SDK fixes. Final Workboard0.2.10 is
+installed in one new owned two-workspace environment through ordinary public operator
+commands. Original0.2.6 Sass failure, normal failed-op restore/separate resume and new
+install/0.2.8/0.2.10 upgrades remain fully recorded;0.2.9 was built but never admitted
+after an encoding defect was found. No native apply was replayed or guard bypassed.
+
+19 Python+29 Node app checks;18 affected identity/distribution and23 actual bootstrap/
+clean-build checks pass; freeze122files/11rows passes. No new canonical full-host run.
+Actual28-task workflow/browser checks cover combined empty filters/full counts,
+revision conflict/keep-draft/reconcile, comments, pinned1/current2 download, reviewed2,
+schedule/cancel and readonly/foreign/workspace denials. Final responsive/focus/ARIA
+checks pass; final upgrades preserve all16 business tables+bytes and memberships/grants.
+Retained58 scoped containers,2networks,6volumes,6 immutable candidates, failed source/
+checkpoints; four older targets unchanged. Prototype HTTP helper stopped. No cleanup,
+publication or push. [Exact outcome/limits](evidence/G7/20261114-workboard-concept-01/qualification.json).
+Prior roadmap100/100,5/5 and sealed/historical evidence remain unchanged.
+
 ## PP05 final local candidate accepted
 
 All five roadmap phases are accepted in their bounded scopes: **100/100 phase

@@ -1,3 +1,19 @@
+# UI-C01 additional provisional development cohort: core0.2.6
+
+14November2026: [exact UI/native evidence](evidence/G7/20261114-workboard-concept-01/qualification.json)
+records Workboard0.2.10 with unchanged Partners0.1.0/Customer Work0.1.4/
+Documents0.1.6/Taskfiles0.1.5. Core0.2.6/native19.0.0.2.6 identifies changed shipped
+SDK bytes honestly; no Workboard business logic was added to the core. Eight-addon
+default and optional app boundaries remain. Current local image is
+`sha256:5d2fe0aad583cef5fd6fbbdbf96e5e141ad126ad51df57b2850445e62d889197`;
+Workboard archive is `sha256:ff15992f7779751a46d9e08215f16dfab4ad477a57e93db97adf0456ac127e4d`.
+Normal fresh bootstrap, failed-install recovery/separate resume, corrected install,
+populated app-only upgrades, real workflow and bounded desktop/narrow/keyboard
+checks pass. All sixteen business tables/document bytes and authority rows survive
+the final upgrades. No new full-host/all-layer or entire lifecycle/source-removal
+qualification is inferred; the fully recorded PP05 matrix below retains its exact
+historical scope. This additional cohort is local-only, not a release/LTS/ABI promise.
+
 # Current provisional local candidate: core0.2.5
 
 [Exact final qualification](evidence/G7/20261113-pp05-candidate-final-01/qualification.json) supersedes the historical matrices below for

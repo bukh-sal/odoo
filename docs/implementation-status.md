@@ -14,14 +14,16 @@ source and findings, before implementing that scope. Preserve historical
 AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 evidence. No publication,
 hosted/production deployment, paid services or existing user-data destruction is authorized.
 
-- Updated UTC: 2026-11-13T21:03:00Z
+- Updated UTC: 2026-11-14T03:03:03.293724+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **PP01..05 accepted,100/100 phase points and5/5 phases.** JIT plans preceded each actual scope; final outcome evidence and limitations are reconciled.
-- Latest work item: PP05 final canonical923/921pass/2skips, measured budgets, real recovery/source removal and exact retention accepted. [Final evidence](evidence/G7/20261113-pp05-candidate-final-01/qualification.json).
-- Current next action: UI-C01 is active under a fresh just-in-time plan: implement a useful Workboard successor inspired by the supplied UI concept, then qualify its real native workflow and visuals in a fresh owned environment. Prior five-phase roadmap remains complete; retained demos/recovery histories are protected.
+- Latest work item: **UI-C01 accepted in its bounded local scope.** Real Workboard0.2.10 grouped/filterable task workspace and contextual drawer on paired core0.2.6; normal native install/recovery/upgrades,28 tasks, actual desktop/narrow/keyboard and current viewer checks. [Exact UI evidence](evidence/G7/20261114-workboard-concept-01/qualification.json). Prior PP05 canonical923/921pass/2skips remains its own unchanged qualification, not a new full-host run.
+- Current next action: user review of the retained UI-C01 Workboard demo, then select a useful next application workflow and create its fresh implementation plan. UI-C01 is complete; no active mutation, test process, temporary authority fixture or delegated work. Prior five-phase roadmap remains complete. Default core is still eight addons; all older demos/checkpoints are protected.
+- UI-C01 acceptance checklist: app-owned real views/filters/counts; normal native install/recovery/upgrades; populated conflict-safe workflow and companion services; actual desktop/narrow/keyboard/ARIA checks; current viewer/foreign denials; exact data/authority/protected-target retention all pass in the linked bounded evidence. Prior roadmap gate weights/100 points are unchanged; this is not a new full-host or whole-lifecycle qualification.
+- UI-C01 blocker register: none open for the delivered scope. Original Sass failure is closed by normal recovery/new versions; unused0.2.9 encoding defect is superseded, not admitted. Stock outer chrome, unimplemented concept features and formal accessibility/RTL/human usability review remain explicit boundaries, not unsupported claims about core capability.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

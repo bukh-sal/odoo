@@ -14,6 +14,16 @@ owned fork, not a third-party addon compatibility or hostile-code sandbox.
 Retain notices/licenses and keep independently owned applications in their own
 repositories. Nothing here authorizes production, publication or deleting data.
 
+## Retained concept-inspired Workboard demo
+
+UI-C01 is complete in its [recorded local scope](evidence/G7/20261114-workboard-concept-01/qualification.json).
+The retained loopback demo is http://release-5d9508eed2f4.localhost:18607/odoo/workboard
+with workspace38c79ef1-2afb-4aa6-9ed5-dcfe413b6360. Use its existing private fixture
+credentials/session; no passwords are published. Private state is under
+`.local/development/uic01-workboard-01/private/site`; current target configuration6
+uses core0.2.6 and Workboard0.2.10. Original failed source/checkpoints and all four
+older demo targets remain protected. No automatic cleanup/reinitialization/replay.
+
 ## Prepare the checkout and build
 
 Distinguish a qualified runtime's recorded source from the current host operator.
