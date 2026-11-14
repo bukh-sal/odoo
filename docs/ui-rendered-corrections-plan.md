@@ -82,3 +82,24 @@ recovery or native maintenance policy for these presentation corrections.
 Any newly exposed defect is recorded against its actual producer/consumer before
 scope changes. No blanket support, formal accessibility, publication or production
 claim follows from this corrective batch.
+
+## Installed core0.2.13 finding and exact appearance correction
+
+Normal operation3d12d9bd completed150.672s: configuration7/imageff5ace21,
+verified checkpoint, all eighteen business/authority tables and full job/outbox
+rows exact, five app pins unchanged. Actual installed context focus/Escape,
+dialog names/modal state and named palette/listbox now pass. Selecting dark
+changes the control to Use light appearance but still loads the light bundle.
+The choice was restored through the normal UI; no saved business change.
+
+The native `web/models/ir_http.py` reader returns light unconditionally. Follow
+[ADR0089](architecture-decisions/0089-reviewed-native-appearance-reader.md):
+correct that exact reader and attest only its full-file before/after source pair
+in the existing core-maintenance validator, while preserving rejection of other
+web backend changes. Add actual-method cookie/context tests and genuine planner/
+independent-reconstruction positive and forged/unknown-source negatives. Reserve
+new core0.2.14/native core19.0.0.2.14/web19.0.2.14.0; keep private apps unchanged
+until its normal core upgrade completes. Re-audit source/image, normal exact
+review/checkpointed apply, then actual native/custom dark assets and restoration.
+Do not weaken the guard, add an overriding adapter or reload the old image as a
+new version. The remaining app corrections and original matrix are unchanged.

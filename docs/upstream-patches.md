@@ -115,3 +115,6 @@ controllers and action/leave hooks retain their behavior. The maintenance guard
 admits append-only explicit references to inventoried local shared-interface
 assets, preserving all other manifest declarations and existing asset order.
 Source implementation is not installed or browser qualification.
+
+
+ADR0089 corrects the owned web native appearance reader to select the existing dark bundle only for the exact dark preference value; missing/unknown values remain light. Existing asset templates, session/authorization and notices remain. Maintenance admits only the reviewed full-file before/after pair with strict versions and normal independent approval/checkpoint. Actual core13 failure retained; core14 installed theme proof pending.

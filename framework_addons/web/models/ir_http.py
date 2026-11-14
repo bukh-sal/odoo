@@ -75,7 +75,8 @@ class IrHttp(models.AbstractModel):
         }
 
     def color_scheme(self):
-        return "light"
+        selected = request.httprequest.cookies.get("color_scheme")
+        return "dark" if selected == "dark" else "light"
 
     @api.model
     def lazy_session_info(self):

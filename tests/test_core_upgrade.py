@@ -255,4 +255,55 @@ class CoreUpgrade(unittest.TestCase):
                 self.prepare()
 
 
+    def appearance_reader_transition(self):
+        self.web_transition()
+        path='addons/web/models/ir_http.py'
+        self.base['inventory']['files'][path]='717be34c311b75b9f7b9ab5fa547fc0ec9eacc6d9cb47edb1eaa903f4312292e'
+        self.runtime['inventory']['files'][path]='7e01deba6fb7b6007b3ce34dd9984b156adbbe8d0940bc33ca6c5ff3479967ab'
+        return path
+
+    def test_exact_reviewed_appearance_reader_has_independent_reconstruction(self):
+        path=self.appearance_reader_transition()
+        bundle=self.prepare()
+        reader=next(row for row in bundle['operation_lock']['platform_source_diff'] if row['path']==path)
+        self.assertEqual(reader['previous_sha256'],self.base['inventory']['files'][path])
+        self.assertEqual(reader['target_sha256'],self.runtime['inventory']['files'][path])
+        validator=staged.StagedPlans.validator(self)
+        validator.observer.read=lambda:{'sites':[copy.deepcopy(self.site)],'runtime':copy.deepcopy(self.base)}
+        self.assertEqual(validator(bundle),self.document['state'])
+        forged=copy.deepcopy(bundle)
+        next(row for row in forged['operation_lock']['platform_source_diff'] if row['path']==path)['target_sha256']='8'*64
+        forged['plan']['dependency_lock_digest']=data_digest(forged['operation_lock'])
+        forged['plan_hash']=plan_hash(forged['plan']);forged['display']=_display(forged['plan'],forged['operation_lock'])
+        with self.assertRaisesRegex(OperatorError,'reconstruction'):validator(forged)
+
+    def test_appearance_reader_does_not_authorize_unknown_or_other_backend_changes(self):
+        path=self.appearance_reader_transition()
+        for case in ('unknown_before','unknown_after','missing_before','missing_after','other_backend'):
+            base=copy.deepcopy(self.base);runtime=copy.deepcopy(self.runtime)
+            if case=='unknown_before':base['inventory']['files'][path]='0'*64
+            elif case=='unknown_after':runtime['inventory']['files'][path]='0'*64
+            elif case=='missing_before':base['inventory']['files'].pop(path)
+            elif case=='missing_after':runtime['inventory']['files'].pop(path)
+            else:runtime['inventory']['files']['addons/web/controllers/home.py']='0'*64
+            with self.subTest(case=case),self.assertRaises(OperatorError):validate_core_upgrade(base,runtime,self.descriptor)
+
+    def test_appearance_reader_still_requires_versioned_core_maintenance(self):
+        self.appearance_reader_transition()
+        with self.assertRaises(OperatorError):validate_platform_deploy(self.base,self.runtime,self.descriptor)
+        with self.assertRaises(OperatorError):validate_plugin_core_stability(self.base,self.runtime)
+        self.runtime['native_manifests']['web']['version']=self.base['native_manifests']['web']['version']
+        with self.assertRaises(OperatorError):validate_core_upgrade(self.base,self.runtime,self.descriptor)
+
+    def test_reviewed_appearance_reader_hashes_bind_only_the_current_presentation_method(self):
+        import hashlib
+        from modular_platform.release_staging import WEB_APPEARANCE_READER_PATH,WEB_APPEARANCE_READER_BEFORE,WEB_APPEARANCE_READER_AFTER
+        source=(ROOT/'framework_addons/web/models/ir_http.py').read_bytes()
+        changed=b'        selected = request.httprequest.cookies.get("color_scheme")\n        return "dark" if selected == "dark" else "light"'
+        self.assertEqual(source.count(changed),1)
+        original=source.replace(changed,b'        return "light"',1)
+        self.assertEqual(WEB_APPEARANCE_READER_PATH,'addons/web/models/ir_http.py')
+        self.assertEqual(hashlib.sha256(source).hexdigest(),WEB_APPEARANCE_READER_AFTER)
+        self.assertEqual(hashlib.sha256(original).hexdigest(),WEB_APPEARANCE_READER_BEFORE)
+
 if __name__=='__main__':unittest.main()
