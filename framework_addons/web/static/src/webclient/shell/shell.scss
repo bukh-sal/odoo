@@ -50,7 +50,7 @@
 .mp-context-section { padding: 12px; font-size: 12px; font-weight: 600; }
 .mp-shell-canvas { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; position: relative; }
 .mp-shell-empty { padding: 40px; max-width: 620px; }
-.mp-app-chooser { min-width: 240px; max-width: min(380px, 95vw); max-height: 70vh; overflow-y: auto; .dropdown-item { display: flex; gap: 12px; white-space: normal; } }
+.mp-app-chooser { min-width: 240px; width: 380px; max-width: 95vw; max-height: 70vh; overflow-y: auto; .dropdown-item { display: flex; gap: 12px; white-space: normal; } }
 .mp-context-toggle { display: none; }
 @media (max-width: 767px) {
     .mp-shell-frame { --mp-shell-rail: 44px; }

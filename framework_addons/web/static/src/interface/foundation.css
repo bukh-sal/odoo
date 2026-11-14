@@ -99,13 +99,13 @@
 }
 .mp-query-fields > label { display: grid; gap: 4px; margin: 0; font-size: 12px; font-weight: 550; }
 .mp-query-fields > label > select { width: 100%; min-height: var(--mp-ui-control); }
-.mp-app-layout { display: grid; grid-template-columns: var(--mp-ui-sidebar) minmax(0, 1fr); }
+.mp-page.mp-app-layout { display: grid; grid-template-columns: var(--mp-ui-sidebar) minmax(0, 1fr); }
 .mp-app-sidebar { padding: 24px 12px; border-inline-end: 1px solid var(--mp-ui-line); background: var(--mp-ui-canvas); }
 .mp-app-content { min-width: 0; overflow-y: auto; }
 .mp-context-links { display: flex; flex-direction: column; gap: 4px; padding: 0; border: 0; background: transparent; }
 .mp-context-links .wb-work-link { min-height: 36px; padding: 8px 12px; white-space: normal; }
 @media (max-width: 700px) {
-    .mp-app-layout { display: flex; flex-direction: column; }
+    .mp-page.mp-app-layout { display: flex; flex-direction: column; }
     .mp-app-sidebar { border-inline-end: 0; border-bottom: 1px solid var(--mp-ui-line); padding: 8px; }
     .mp-query[open] { flex-basis: 100%; }
     .mp-query-fields { position: static; width: 100%; margin-block-start: 6px; box-shadow: none; }
