@@ -11,7 +11,7 @@
               <DropdownItem t-foreach="apps" t-as="app" t-key="app.id" attrs="{href: href(app)}" onSelected="() => menu.selectMenu(app)">
                 <i t-att-class="icon(app)" aria-hidden="true"/><span t-esc="app.name"/>
               </DropdownItem>
-              <span t-if="!apps.length" class="dropdown-item-text" t-esc="menu.unavailable ? 'Applications unavailable. Reload to try again.' : 'No applications enabled in this workspace.'"/>
+              <span t-if="!apps.length" class="dropdown-item-text" t-esc="emptyChooserLabel"/>
             </div>
           </t>
         </Dropdown>
@@ -50,9 +50,9 @@
             <p>The current view is hidden because its access or deployment could not be verified. Unsaved changes are kept in this tab.</p>
             <button class="btn btn-primary" t-on-click="reopenWorkspace">Reopen workspace in a new tab</button>
           </section>
-          <section t-elif="!current and !action.currentController" class="mp-shell-empty" role="status">
-            <h1 t-esc="menu.unavailable ? 'Applications unavailable' : 'Your workspace'"/>
-            <p t-esc="menu.unavailable ? 'Reload this page to try again.' : 'Choose an application from the rail. Background jobs and account options are available from the workspace menu.'"/>
+          <section t-elif="!current and !action.currentController" class="mp-shell-empty">
+            <PageHeader title="workspaceTitle"/>
+            <StatusMessage kind="'empty'" title="noAppsTitle" message="noAppsDescription"/>
           </section>
         </div>
       </div>

@@ -1,3 +1,4 @@
+/* Loaded by the existing native dark bundle, after the shared light defaults. */
 :root {
     --mp-ui-canvas: #151619;
     --mp-ui-surface: #1c1e23;
@@ -8,4 +9,16 @@
     --mp-ui-action: #eeeff3;
     --mp-ui-on-action: #202127;
     --mp-ui-focus: #b2a4f2;
+    --mp-ui-focus-ring: #b2a4f240;
+    --mp-ui-control-line: #747883;
+    --mp-ui-link: #b3baff;
+    --mp-ui-danger-ink: #ffb5c1;
+    --mp-ui-danger-surface: #3c242b;
+    --mp-ui-danger-line: #8d5660;
+    --mp-ui-warning-ink: #f4d28f;
+    --mp-ui-warning-surface: #382f20;
+    --mp-ui-warning-line: #8b754c;
+    --mp-ui-success-ink: #b3dfc3;
+    --mp-ui-success-surface: #203329;
+    --mp-ui-success-line: #547d63;
 }

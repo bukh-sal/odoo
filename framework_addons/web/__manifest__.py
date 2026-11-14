@@ -4,7 +4,7 @@
 {
     'name': 'Web',
     'category': 'Hidden',
-    'version': '19.0.2.11.0',
+    'version': '19.0.2.12.0',
     'description': """
 Odoo Web core module.
 ========================
@@ -131,6 +131,15 @@ This module provides the core of the Odoo Web Client.
 
             # Don't include dark mode files in light mode
             ('remove', 'web/static/src/**/*.dark.scss'),
+            # Shared UI additions are local, explicit and inventoried. Dark
+            # variants stay in the existing dark-only bundle below.
+            'web/static/src/interface/page_header.js',
+            'web/static/src/interface/page_header.xml',
+            'web/static/src/interface/status_message.js',
+            'web/static/src/interface/status_message.xml',
+            'web/static/src/interface/app_layout.js',
+            'web/static/src/interface/app_layout.xml',
+            'web/static/src/interface/surfaces.css',
         ],
         'web.assets_backend_lazy': [
             ('include', 'web._assets_helpers'),

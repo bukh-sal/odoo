@@ -52,6 +52,39 @@ CORE_VERSION=r'19\.0\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)'
 LEGACY_WEB_MANIFEST='ece45d6a149396b0910db9d6076488d840f0eb8a83f1b27506e3f98a2b163fa1'
 
 
+def require_web_presentation_manifest(previous,target,files):
+    """Keep native declarations, allowing only appended local shared UI assets.
+
+    The exact manifest/file hashes still enter the staged runtime and approval.
+    This permits publishing new reusable components, not arbitrary asset graph
+    edits or data/dependency changes disguised as presentation maintenance.
+    """
+    if ({k:v for k,v in previous.items() if k not in ('version','assets')}
+            !={k:v for k,v in target.items() if k not in ('version','assets')}
+            or ('assets' in previous)!=('assets' in target)):
+        raise OperatorError('Web presentation maintenance must preserve manifest declarations')
+    before,after=previous.get('assets'),target.get('assets')
+    if before==after:return
+    message='Web maintenance permits only appended inventoried shared-interface asset references'
+    if (not isinstance(before,dict) or not isinstance(after,dict) or before.keys()!=after.keys()
+            or any(before[key]!=after[key] for key in before if key!='web.assets_backend')):
+        raise OperatorError(message)
+    old,new=before.get('web.assets_backend'),after.get('web.assets_backend')
+    if not isinstance(old,list) or not isinstance(new,list) or len(new)<=len(old) or new[:len(old)]!=old:
+        raise OperatorError(message)
+    added=set()
+    for asset in new[len(old):]:
+        if (not isinstance(asset,str)
+                or not re.fullmatch(r'web/static/src/interface/[A-Za-z0-9_./-]+\.(?:js|xml|css|scss)',asset)
+                or any(part in ('','.','..') for part in asset.split('/'))
+                or asset in old or asset in added):
+            raise OperatorError(message)
+        digest=files.get('addons/'+asset)
+        if not isinstance(digest,str) or not re.fullmatch('[0-9a-f]{64}',digest):
+            raise OperatorError(message)
+        added.add(asset)
+
+
 def core_python_changes(base, runtime):
     """Reviewed dependency maintenance; never install or execute build metadata.
 
@@ -150,9 +183,7 @@ def validate_core_upgrade(base,runtime,descriptor):
         prior,version=manifests[name].get('version'),new_manifests[name].get('version')
         legacy_web=(name=='web' and prior=='1.1' and old.get(web_manifest)==LEGACY_WEB_MANIFEST)
         comparison_prior='19.0.1.1.0' if legacy_web else prior
-        if name=='web' and ({k:v for k,v in manifests[name].items() if k!='version'}
-                           !={k:v for k,v in new_manifests[name].items() if k!='version'}):
-            raise OperatorError('Web presentation maintenance must preserve manifest declarations')
+        if name=='web':require_web_presentation_manifest(manifests[name],new_manifests[name],new)
         if (not isinstance(comparison_prior,str) or not isinstance(version,str) or not re.fullmatch(CORE_VERSION,comparison_prior)
                 or not re.fullmatch(CORE_VERSION,version) or Version(version)<=Version(comparison_prior)
                 or f'addons/{name}/__manifest__.py' not in changed):

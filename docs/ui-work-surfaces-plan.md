@@ -30,7 +30,7 @@ Use the in-app browser when available; do not substitute another browser.
 | Taskfiles already opens an exact document/version in a new tab, with an accessible new-tab hint. The original task remains open. | Retain this supported return path. Verify the original list/filter/task context on returning to the original tab; do not add an arbitrary return-URL mechanism. |
 | Documents can show Upload, Download linked and Download current as competing primary actions. | Keep one primary per working context. Upload is primary in the empty collection; when a file is selected it is secondary. Linked-version download is primary for a pinned entry, current download otherwise; other actions stay secondary. Preserve explicit version identity and byte checks. |
 | Web maintenance currently permits only a manifest version change. New files under the logical shared interface directory cannot be declared in its asset bundle. | Add the narrow asset-declaration rule below, not a misleading file/module placement workaround. |
-| Shared tokens are currently fixed to light colours; Documents still has several independent colour literals. | Supply shared semantic surface/ink/line/status tokens for the native dark bundle, and replace private presentation literals where these semantics apply. Installed dark/contrast proof belongs to D06. |
+| An existing dark file supplies the base palette, but new feedback/control semantics need matching tokens and Documents still has several independent colour literals. | Preserve the existing light/dark base palettes, extend their semantic tokens, and replace private presentation literals where these semantics apply. Installed dark/contrast proof belongs to D06. |
 
 Keep the accepted56px rail,264px contextual pane,26/34px page title,34px controls,
 36px search and minimum44px row. Rows and long text can grow. Preserve the
@@ -169,3 +169,23 @@ written when that phase activates, using these actual findings; its existing
 brief still requires the complete integrated browser/build/lifecycle/regression
 matrix. No broad support, accessibility, all-layer or production claim follows
 from this implementation plan.
+
+## Core source checkpoint, 14 November 2026
+
+Implemented the three shared components, semantic light/dark tokens, native
+record/control alignment and a narrowly appended shared-interface asset rule.
+Core0.2.12/web19.0.2.12.0 identifies the changed shipped bytes; private app
+sources and archives remain unchanged at this checkpoint. Eighteen actual
+core-upgrade tests pass, including independent reconstruction and forged/foreign
+asset refusals. The existing nine release-staging and seven native-version
+checks pass. Six AppLayout logic/focus-request checks pass with mocked hooks;
+they do not establish DOM focus, retained drafts or rendered accessibility.
+
+Actual default materialization contains exactly eight addons and no app archive,
+including all seven new declared assets. Four templates parse; the existing
+image's pinned Sass0.22.0 and Node24.22.2/RTLcss4.3.0 compile all three shared
+styles. The original compiler-check failure is retained: its private caller
+omitted RTLcss's required stdin flag. Corrected source check passes in a fresh
+receipt directory. Freeze inventory remains122files/11rows and passes.
+Installed full bundles and the core-only populated upgrade are the next checks;
+visual/app integration and all phase exit requirements remain open.

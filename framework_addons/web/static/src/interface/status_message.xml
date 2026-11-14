@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.StatusMessage">
+    <section t-att-class="'mp-message mp-message--' + props.kind" t-att-role="role">
+      <h2 t-if="props.title" class="mp-message-title" t-esc="props.title"/>
+      <p t-if="props.message" t-esc="props.message"/>
+      <t t-slot="default"/>
+      <div t-if="props.slots.actions" class="mp-record-actions"><t t-slot="actions"/></div>
+    </section>
+  </t>
+</templates>

@@ -16,6 +16,18 @@
     --mp-ui-action: #25262c;
     --mp-ui-on-action: #fff;
     --mp-ui-focus: #7564bf;
+    --mp-ui-focus-ring: #7564bf38;
+    --mp-ui-control-line: #868a96;
+    --mp-ui-link: #4453a6;
+    --mp-ui-danger-ink: #923240;
+    --mp-ui-danger-surface: #fff1f3;
+    --mp-ui-danger-line: #efbdc5;
+    --mp-ui-warning-ink: #76500f;
+    --mp-ui-warning-surface: #fff7e5;
+    --mp-ui-warning-line: #e0c48f;
+    --mp-ui-success-ink: #285d42;
+    --mp-ui-success-surface: #eef8f2;
+    --mp-ui-success-line: #b5d5c2;
     --mp-ui-sidebar: 264px;
     --mp-ui-row: 44px;
     --mp-ui-control: 34px;

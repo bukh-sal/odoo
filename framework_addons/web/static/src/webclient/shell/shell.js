@@ -8,6 +8,9 @@ import { ErrorHandler } from "@web/core/utils/components";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
 import { user } from "@web/core/user";
 import { Dialog } from "@web/core/dialog/dialog";
+import { _t } from "@web/core/l10n/translation";
+import { PageHeader } from "@web/interface/page_header";
+import { StatusMessage } from "@web/interface/status_message";
 
 class AccessDialog extends Dialog {
     dismiss() {}
@@ -30,7 +33,7 @@ export class AccessChanged extends Component {
 /** Presentation over the existing menu/action services and their leave lifecycle. */
 export class Shell extends Component {
     static template = "web.Shell";
-    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu };
+    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu, PageHeader, StatusMessage };
     static props = { slots: Object };
 
     setup() {
@@ -55,6 +58,12 @@ export class Shell extends Component {
     }
 
     get apps() { return this.menu.getApps(); }
+    get workspaceTitle() { return _t("Your workspace"); }
+    get noAppsTitle() { return _t("No applications available in this workspace"); }
+    get noAppsDescription() { return _t("Background jobs and account options remain available from the workspace menu."); }
+    get emptyChooserLabel() {
+        return this.menu.unavailable ? _t("Applications unavailable. Reload to try again.") : _t("No applications available in this workspace.");
+    }
     get current() {
         const app = this.menu.getCurrentApp();
         return this.apps.find(item => item.id === app?.id);

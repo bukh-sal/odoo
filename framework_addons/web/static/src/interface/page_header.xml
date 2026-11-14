@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.PageHeader">
+    <header class="mp-page-header">
+      <div class="mp-page-heading">
+        <div t-if="props.slots.breadcrumbs" class="mp-page-breadcrumbs"><t t-slot="breadcrumbs"/></div>
+        <p t-if="props.eyebrow" class="mp-page-eyebrow" t-esc="props.eyebrow"/>
+        <h1 class="mp-page-title">
+          <t t-esc="props.title"/>
+          <span t-if="props.count !== undefined" class="mp-page-count" t-att-aria-label="props.countLabel" t-esc="props.count"/>
+        </h1>
+        <p t-if="props.subtitle" class="mp-page-description" t-esc="props.subtitle"/>
+      </div>
+      <div t-if="props.slots.actions" class="mp-page-actions"><t t-slot="actions"/></div>
+    </header>
+  </t>
+</templates>

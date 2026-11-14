@@ -199,5 +199,60 @@ class CoreUpgrade(unittest.TestCase):
             with self.subTest(state=state,version=version),self.assertRaisesRegex(OperatorError,'base database versions'):
                 self.prepare()
 
+    def shared_web_assets(self,asset='web/static/src/interface/page_header.js'):
+        self.web_transition()
+        existing=['web/static/src/interface/foundation.css','web/static/src/interface/query_disclosure.js']
+        for runtime in (self.base,self.runtime):
+            runtime['native_manifests']['web']['assets']={'web.assets_backend':list(existing),'web.other':['unchanged.js']}
+        self.runtime['native_manifests']['web']['assets']['web.assets_backend'].append(asset)
+        self.runtime['inventory']['files']['addons/'+asset]='9'*64
+        return existing,asset
+
+    def test_shared_interface_asset_addition_has_real_independent_reconstruction(self):
+        _,asset=self.shared_web_assets();bundle=self.prepare()
+        row=next(r for r in bundle['operation_lock']['platform_source_diff'] if r['path']=='addons/'+asset)
+        self.assertEqual(row,{'path':'addons/'+asset,'previous_sha256':None,'target_sha256':'9'*64})
+        validator=staged.StagedPlans.validator(self)
+        validator.observer.read=lambda:{'sites':[copy.deepcopy(self.site)],'runtime':copy.deepcopy(self.base)}
+        self.assertEqual(validator(bundle),self.document['state'])
+        forged=copy.deepcopy(bundle)
+        next(r for r in forged['operation_lock']['platform_source_diff'] if r['path']=='addons/'+asset)['target_sha256']='8'*64
+        forged['plan']['dependency_lock_digest']=data_digest(forged['operation_lock'])
+        forged['plan_hash']=plan_hash(forged['plan']);forged['display']=_display(forged['plan'],forged['operation_lock'])
+        with self.assertRaisesRegex(OperatorError,'reconstruction'):validator(forged)
+
+    def test_shared_asset_refs_cannot_change_other_manifest_or_bundle_declarations(self):
+        existing,asset=self.shared_web_assets()
+        for case in ('remove','reorder','duplicate','directive','other_bundle','new_bundle','data','depends','missing','bad_hash'):
+            runtime=copy.deepcopy(self.runtime);manifest=runtime['native_manifests']['web'];assets=manifest['assets']
+            if case=='remove':assets['web.assets_backend']=existing[1:]+[asset]
+            elif case=='reorder':assets['web.assets_backend']=list(reversed(existing))+[asset]
+            elif case=='duplicate':assets['web.assets_backend'].append(asset)
+            elif case=='directive':assets['web.assets_backend'].append(['include','foreign.bundle'])
+            elif case=='other_bundle':assets['web.other'].append(asset)
+            elif case=='new_bundle':assets['web.new']=[asset]
+            elif case=='data':manifest['data']=['views/new_authority.xml']
+            elif case=='depends':manifest['depends'].append('unknown')
+            elif case=='missing':runtime['inventory']['files'].pop('addons/'+asset)
+            else:runtime['inventory']['files']['addons/'+asset]='not-a-file-hash'
+            with self.subTest(case=case),self.assertRaises(OperatorError):validate_core_upgrade(self.base,runtime,self.descriptor)
+
+    def test_asset_refs_stay_literal_canonical_local_shared_ui_files(self):
+        existing,_=self.shared_web_assets()
+        for asset in ('https://example.test/code.js','web/static/src/interface/../core/code.js',
+                      'web/static/src/interface//code.js','web/static/src/interface/**/*',
+                      'web/static/src/core/code.js','other/static/src/code.js',
+                      'web/static/src/interface/run.py','web/static/src/interface/code.js?x=1'):
+            runtime=copy.deepcopy(self.runtime)
+            runtime['native_manifests']['web']['assets']['web.assets_backend']=existing+[asset]
+            runtime['inventory']['files']['addons/'+asset]='9'*64
+            with self.subTest(asset=asset),self.assertRaises(OperatorError):validate_core_upgrade(self.base,runtime,self.descriptor)
+
+    def test_local_shared_asset_formats_and_nested_versioned_names_are_supported(self):
+        for name in ('headers/page-header.v1.js','headers/page_header.xml','styles/controls.css','styles/controls.scss'):
+            with self.subTest(name=name):
+                self.setUp();self.shared_web_assets('web/static/src/interface/'+name)
+                self.prepare()
+
 
 if __name__=='__main__':unittest.main()

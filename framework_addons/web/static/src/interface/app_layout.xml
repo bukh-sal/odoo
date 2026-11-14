@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.AppLayout">
+    <div class="mp-page mp-app-layout mp-interface-layout" t-att-class="props.className + (props.showContext and state.contextOpen ? ' is-context-open' : '') + (!props.showContext ? ' is-context-free' : '')">
+      <button t-if="props.showContext" class="mp-app-context-toggle" t-ref="trigger" t-on-click="toggleContext"
+              t-att-aria-controls="contextId" t-att-aria-expanded="state.contextOpen ? 'true' : 'false'">
+        <i class="fa fa-bars" aria-hidden="true"/><t t-esc="props.contextTitle"/>
+        <i t-att-class="'fa ' + (state.contextOpen ? 'fa-angle-up' : 'fa-angle-down')" aria-hidden="true"/>
+      </button>
+      <aside t-if="props.showContext" t-att-id="contextId" class="mp-app-sidebar" t-ref="context" tabindex="-1"
+             t-att-aria-labelledby="contextId + '-heading'" t-on-keydown="onContextKeydown" t-on-click="onContextSelection">
+        <h2 class="mp-app-context-title" t-att-id="contextId + '-heading'" t-esc="props.contextTitle"/>
+        <t t-slot="context"/>
+      </aside>
+      <main class="mp-app-content" t-ref="content" tabindex="-1" t-att-aria-label="contentLabel"><t t-slot="default"/></main>
+    </div>
+  </t>
+</templates>

@@ -107,3 +107,10 @@ inherited behavior. Geist Latin variable is served locally under its accompanyin
 SIL Open Font License in `web/static/lib/geist/LICENSE`.
 
 UI-D03 replaces the stock-profile navbar presentation with a shared Owl shell while retaining the menu/action services and main component/overlay container. Scoped menu data is supplied by mp_core. The original NavBar path remains for the optional reference profile and bare-web consumers. Web presentation maintenance is versioned and constrained to static assets plus the manifest; original source attribution remains.
+
+UI-D05 adds shared page/context/feedback components and semantic light/dark
+presentation tokens under `web/static/src/interface`. Native fields, model
+controllers and action/leave hooks retain their behavior. The maintenance guard
+admits append-only explicit references to inventoried local shared-interface
+assets, preserving all other manifest declarations and existing asset order.
+Source implementation is not installed or browser qualification.
