@@ -89,6 +89,7 @@ export const menuService = {
 
         return {
             get unavailable() { return sourceError; },
+            get currentAppUnavailable() { return !!(source && currentAppId && !menusData[currentAppId]); },
             getAll() {
                 return Object.values(menusData);
             },

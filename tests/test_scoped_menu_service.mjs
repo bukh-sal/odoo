@@ -55,3 +55,14 @@ test("older successful menu read cannot overwrite a newer denial", async () => {
     assert.deepEqual(f.service.getApps(), []);
     assert.equal(f.service.unavailable, true);
 });
+test("losing the active app is distinct from an empty first-load workspace", async () => {
+    const f = await fixture();
+    assert.equal(f.service.currentAppUnavailable, false);
+    f.service.setCurrentMenu(1);
+    f.provider(async () => menus(2));
+    await f.service.reload();
+    assert.equal(f.service.unavailable, false);
+    assert.equal(f.service.currentAppUnavailable, true);
+    f.service.setCurrentMenu(2);
+    assert.equal(f.service.currentAppUnavailable, false);
+});

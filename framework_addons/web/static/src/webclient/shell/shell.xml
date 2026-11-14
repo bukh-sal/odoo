@@ -43,8 +43,14 @@
             <t t-foreach="sections" t-as="section" t-key="section.id"><t t-call="web.Shell.Section"/></t>
           </nav>
         </aside>
-        <div class="mp-shell-canvas"><t t-slot="default"/>
-          <section t-if="!current and !action.currentController" class="mp-shell-empty" role="status">
+        <div class="mp-shell-canvas">
+          <div class="mp-shell-action" t-att-hidden="blocked"><t t-slot="default"/></div>
+          <section t-if="blocked" class="mp-shell-empty" role="alert">
+            <h1>Workspace access changed</h1>
+            <p>The current view is hidden because its access or deployment could not be verified. Unsaved changes are kept in this tab.</p>
+            <button class="btn btn-primary" t-on-click="reopenWorkspace">Reopen workspace in a new tab</button>
+          </section>
+          <section t-elif="!current and !action.currentController" class="mp-shell-empty" role="status">
             <h1 t-esc="menu.unavailable ? 'Applications unavailable' : 'Your workspace'"/>
             <p t-esc="menu.unavailable ? 'Reload this page to try again.' : 'Choose an application from the rail. Background jobs and account options are available from the workspace menu.'"/>
           </section>

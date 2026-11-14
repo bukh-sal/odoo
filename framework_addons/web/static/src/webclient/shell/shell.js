@@ -1,4 +1,4 @@
-import { Component, useExternalListener, useRef, useState } from "@odoo/owl";
+import { Component, useEffect, useExternalListener, useRef, useState, xml } from "@odoo/owl";
 import { browser } from "@web/core/browser/browser";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -7,6 +7,25 @@ import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { ErrorHandler } from "@web/core/utils/components";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
 import { user } from "@web/core/user";
+import { Dialog } from "@web/core/dialog/dialog";
+
+class AccessDialog extends Dialog {
+    dismiss() {}
+    onEscape() {}
+}
+
+export class AccessChanged extends Component {
+    static components = { Dialog: AccessDialog };
+    static props = { close: Function, reopen: Function };
+    static template = xml`
+        <Dialog header="false" size="'md'">
+            <h2>Workspace access changed</h2>
+            <p>The current view is hidden because its access or deployment could not be verified. Unsaved changes are kept in this tab.</p>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="props.reopen">Reopen workspace in a new tab</button>
+            </t>
+        </Dialog>`;
+}
 
 /** Presentation over the existing menu/action services and their leave lifecycle. */
 export class Shell extends Component {
@@ -18,6 +37,7 @@ export class Shell extends Component {
         this.menu = useService("menu");
         this.action = useService("action");
         this.command = useService("command");
+        this.dialog = useService("dialog");
         this.state = useState({ revision: 0, contextOpen: false });
         this.contextTrigger = useRef("contextTrigger");
         useBus(this.env.bus, "MENUS:APP-CHANGED", () => this.state.revision++);
@@ -27,6 +47,11 @@ export class Shell extends Component {
         });
         useBus(registry.category("systray"), "UPDATE", () => this.state.revision++);
         useExternalListener(window, "focus", () => this.menu.reload());
+        useEffect(() => {
+            if (this.blocked) {
+                return this.dialog.add(AccessChanged, { reopen: () => this.reopenWorkspace() });
+            }
+        }, () => [this.blocked]);
     }
 
     get apps() { return this.menu.getApps(); }
@@ -35,8 +60,9 @@ export class Shell extends Component {
         return this.apps.find(item => item.id === app?.id);
     }
     get nativeContext() {
-        return this.current && !registry.category("shell_context").contains(this.action.currentController?.action?.tag);
+        return !this.blocked && this.current && !registry.category("shell_context").contains(this.action.currentController?.action?.tag);
     }
+    get blocked() { return this.menu.unavailable || this.menu.currentAppUnavailable; }
     get sections() { return this.current ? this.menu.getMenuAsTree(this.current.id).childrenTree : []; }
     get utilities() {
         return registry.category("systray").getEntries()
@@ -63,6 +89,10 @@ export class Shell extends Component {
         return menu.actionID === this.action.currentController?.action?.id ? "page" : undefined;
     }
     openCommands() { this.command.openMainPalette(); }
+    reopenWorkspace() {
+        const workspace = new URLSearchParams(browser.location.search).get("workspace");
+        browser.open("/odoo" + (workspace ? "?workspace=" + encodeURIComponent(workspace) : ""), "_blank", "noopener");
+    }
     closeContext(event) {
         if (event.key === "Escape") {
             event.stopPropagation();
