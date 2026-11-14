@@ -1,0 +1,31 @@
+{
+  "addons": [
+    "base",
+    "web",
+    "base_setup",
+    "auth_password_policy",
+    "bus",
+    "mp_compat",
+    "mp_identity",
+    "mp_core",
+    "mp_partners"
+  ],
+  "application_packages": [
+    "deploy/application-inputs/partners.toml"
+  ],
+  "explicit_install": [
+    "web",
+    "auth_password_policy",
+    "mp_core"
+  ],
+  "platform_sdk": true,
+  "profile": "UI-D06 one-provider/no-companion local TEST composition on provisional core0.2.12; not default core or production support.",
+  "runtime_surface": "clean",
+  "schema_version": 1,
+  "server_wide_modules": [
+    "base",
+    "web"
+  ],
+  "stock_webclient": true,
+  "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+}
