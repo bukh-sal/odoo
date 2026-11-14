@@ -217,3 +217,31 @@ The [author catalogue](ui-author-patterns.md) describes the actual exports,
 native and optional seams, tokens, localization, draft/authority ownership and
 fallback. Final archive pins, combined immutable image, normal app upgrade and
 installed useful journey remain next; in-app browser controls are still absent.
+
+## Installed native and API checkpoint
+
+The [app qualification](evidence/G7/20261114-shared-work-surface-apps-01/qualification.json)
+binds the committed successors and final archive hashes, including Documents'
+normalized final LF bytes. One clean image3b5188c6 built with unchanged core12
+and Taskfiles1.5. Four new digests were admitted while retaining old catalogue
+and trust entries. Normal eight-scope operationd1ef7959 completed with a checkpoint
+and the generated trust/destructive acknowledgments. No permission expansion or
+core source change. All eighteen compared business/authority tables, native
+authentication/current authority and job/outbox business fields were exact across
+the upgrade. Current review site is18610/config6; old workers, images, checkpoints,
+the legacy18611 fixture and seven prior protected targets are retained.
+
+Fresh original-human native/API checks verify the inherited form title, loaded
+public UUID and optional Delivery widget, customer-to-linked-task read,24-to5-to24
+filters, pinned120-byte/current186-byte downloads with their distinct expected
+hashes and foreign404. One intentional existing task description edit advanced
+revision1-to2; stale409 and viewer403 made no further business/event writes.
+The other26tasks and17tables remain exact. This establishes installed native
+metadata and backend journey behavior, not rendered widget activation, navigation
+history, draft cancellation, return-tab state, focus or visual quality.
+
+UI-BROWSER-01 remains open: the owner can see the in-app preview, but after
+pause/resume the available tools still expose only open-preview. No external
+browser or guessed control transport was used. D03/D05 browser cards remain
+unaccepted; the full goal stays active0/4. Resume their exact installed checks
+when control tools attach, then activate the fresh D06 implementation plan.

@@ -10,8 +10,11 @@ The current source integrations use the same components in tasks, personal
 reminders, customer work and Documents. Native Partners retains its normal form
 model, fields, validation, revision controller and save/leave lifecycle. Installed
 core delivery is recorded in the [core qualification](evidence/G7/20261114-shared-work-surface-core-01/qualification.json).
-New app source checks and archive validation are separate from rendered and
-installed app qualification, which remain in the [D05 plan](ui-work-surfaces-plan.md).
+The [installed app record](evidence/G7/20261114-shared-work-surface-apps-01/qualification.json)
+now proves normal upgrade preservation, native metadata and the scoped API
+journey. Rendered interaction and visual qualification remain open in the
+[D05 plan](ui-work-surfaces-plan.md); source checks and API success are distinct
+from that evidence.
 
 ## Header and actions
 

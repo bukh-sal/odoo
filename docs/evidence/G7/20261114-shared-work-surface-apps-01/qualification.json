@@ -1,0 +1,142 @@
+{
+  "archives": {
+    "dev.local.delivery": {
+      "bytes": 29815,
+      "digest": "sha256:8f5dc104883bab17f997958385d82ea289443a7a240444c48fd41c1e7c47bee4",
+      "version": "0.1.6"
+    },
+    "dev.local.documents": {
+      "bytes": 52815,
+      "digest": "sha256:f89fb7a4f34b6c4e1d0e044c5cef14e1a738bb458bfd6893d91c917668d839fe",
+      "version": "0.1.9"
+    },
+    "dev.local.partners": {
+      "bytes": 29309,
+      "digest": "sha256:3ea62482b314ad51d43083efd8e7181e72737d94ef8f565296e7d107b25c40b7",
+      "version": "0.1.1"
+    },
+    "dev.local.taskfiles": {
+      "bytes": 38405,
+      "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+      "version": "0.1.5"
+    },
+    "dev.local.workboard": {
+      "bytes": 64111,
+      "digest": "sha256:f84b1e4b87b66eced22358782569b71806f5019d4f7176c09f4158374ba71de9",
+      "version": "0.2.13"
+    }
+  },
+  "author_catalogue": "docs/ui-author-patterns.md",
+  "checks": {
+    "deterministic_validated_archives": 5,
+    "freeze_files": 122,
+    "freeze_rows": 11,
+    "node": 68,
+    "pinned_sass_and_rtl": true,
+    "python": 62,
+    "templates": 23
+  },
+  "configuration_generation": 6,
+  "core": "0.2.12",
+  "image": "sha256:3b5188c628b1807bb2c63966639c28b95abd87ca7a0ccc1a44c6aafe6162660c",
+  "installed_native_and_api": {
+    "foreign_task_status": 404,
+    "native_form_title": true,
+    "no_business_or_event_write_on_refusals": true,
+    "one_intentional_task_revision": [
+      1,
+      2
+    ],
+    "optional_delivery_widget_in_inherited_arch": true,
+    "other_tables_exact": 17,
+    "other_tasks_exact": 26,
+    "pinned_and_current_downloads": {
+      "current": {
+        "bytes": 186,
+        "id": "72f4a58c-c7e2-4a78-b0e8-861d43b3cab9",
+        "number": 2,
+        "sha256": "40d2741da6a439bb00068216834eab083a14f5947cc8eea3f4c89f8692f70f96"
+      },
+      "pinned": {
+        "bytes": 120,
+        "id": "6e55d9eb-8db0-461d-9f38-62b0b8435bf7",
+        "number": 1,
+        "sha256": "455bbe049f4c5863e3329deea728e61c81d5c44a96e6bf20a8f4821d13ca061d"
+      }
+    },
+    "public_uuid_customer_to_linked_task": true,
+    "stale_write_status": 409,
+    "task_filter_counts": [
+      24,
+      5,
+      24
+    ],
+    "viewer_write_status": 403
+  },
+  "item": "UI-D05",
+  "limits": [
+    "In-app preview is visible, but this session exposes open-preview only and no browser interaction/screenshot tools after pause/resume.",
+    "Installed native architecture and original-human API proof are not rendered widget clicks, draft cancellation, navigation history/return-tab, focus, visual or usability proof.",
+    "UI-D03 browser gaps and UI-D05 rendered journey remain open; UI-D06 dark/RTL/keyboard/zoom/contrast/lifecycle/integrated canonical qualification is not complete.",
+    "UI phase acceptance remains0/4; earlier completed PP roadmap acceptance is unchanged."
+  ],
+  "native_versions": {
+    "mp_core": {
+      "state": "installed",
+      "version": "19.0.0.2.12"
+    },
+    "mp_delivery": {
+      "state": "installed",
+      "version": "19.0.0.1.6"
+    },
+    "mp_documents": {
+      "state": "installed",
+      "version": "19.0.0.1.9"
+    },
+    "mp_partners": {
+      "state": "installed",
+      "version": "19.0.0.1.1"
+    },
+    "mp_taskfiles": {
+      "state": "installed",
+      "version": "19.0.0.1.5"
+    },
+    "mp_workboard": {
+      "state": "installed",
+      "version": "19.0.0.2.13"
+    },
+    "web": {
+      "state": "installed",
+      "version": "19.0.2.12.0"
+    }
+  },
+  "normal_checkpointed_upgrade": {
+    "capability_grant_changes": 0,
+    "core_source_exact": true,
+    "files": 1,
+    "job_outbox_business_exact": true,
+    "native_auth_authority_exact": true,
+    "tables_exact": 18,
+    "taskfiles_archive_exact": true,
+    "tasks": 27,
+    "versions": 2
+  },
+  "operation": "d1ef7959-9fa7-45f6-91e3-27aff05395b8",
+  "plan_hash": "sha256:de33af4af49a52f8acedb1da163881f79edb41c10e243c0ac83c68df1c7c9ed6",
+  "private_source_heads": {
+    "delivery": "ee96475c0bb1c9fb319fa0770f3b61cda5b88b36",
+    "documents": "6aef5feec70788a2c9fd41d72c4beaaeb421c61a",
+    "partners": "244cf7d4800b8d3e0e25a02cfdce54fecbc990c8",
+    "taskfiles": "7bbbd847200b8a29f914622545b5e90ba71cc6d1",
+    "workboard": "1f8b536c3308131f20d415d13308b7e85d349153"
+  },
+  "protected": {
+    "current_worker_no_hostport_or_authority_mount": true,
+    "legacy_18611_unchanged": true,
+    "no_cleanup": true,
+    "original_workers_images_checkpoints_retained": true,
+    "previous_targets": 7
+  },
+  "result": "installed_native_and_api_journey_passed_browser_card_open",
+  "source": "489bffb9d1b6cad4f8648e6a82a387829f3b4164"
+}
