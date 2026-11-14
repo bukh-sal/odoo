@@ -66,3 +66,68 @@ maintenance fault and normal restore/separate resume with source data retained.
 Record the versions that pass and every remaining compatibility limit. Before
 accepting D04, close D03's installed interaction gaps and finish the remainder of
 its acceptance card on the corrected shell.
+
+## Legacy and recovery execution section, 14 November 2026
+
+The canonical transitions are now installed: core0.2.9 to0.2.10 and0.2.10
+to0.2.11, with normal checkpoints and exact eighteen-table comparisons. The
+second successor fixes the observed stale canvas after membership loss. Its
+current populated cohort is configuration4 on port18610. Both B feature
+operations completed and the scoped membership/language fixtures are closed.
+These results do not establish the raw web1.1 predecessor transition.
+
+Preserve the existing core0.2.7 comparison at18608. It has five different
+historical app pins, including Workboard0.2.11, Documents0.1.7 and Delivery0.1.4.
+The current shell cohort has their successors. A core maintenance operation must
+retain the historical archives exactly; upgrading those apps alongside web
+would not qualify the intended boundary.
+
+1. Prepare two isolated local source checkouts, with exclusive private receipts:
+   the predecessor build source8f42230bd26a18a3b2d82f09f20f31d2b663e3ed and
+   the current reviewed core0.2.11 source. Use existing normal tools in each
+   checkout. Verify the predecessor curated source map against its original
+   core build record. Populate ignored authoring inputs only from matching
+   recorded files. Any missing or different input stops preparation; do not
+   weaken candidate validation or modify the comparison checkout.
+2. In the successor checkout, reconstruct each historical application input from
+   its exact admitted archive and existing recipe. Verify with the real
+   ArtifactValidator and deterministic assembler that every resulting digest
+   equals the predecessor published pin. Keep policy content and recipe paths
+   unchanged. Build one new clean composition with current core0.2.11 and these
+   five archives. Inspect the actual inventory and Python environment against
+   the predecessor before any site upgrade. No archive relabel, app change,
+   runtime source injection or new maintenance allowance belongs here.
+3. Bootstrap a fresh owned eight-addon predecessor using its exact verified
+   source/build record. Select a free loopback port and nonoverlapping private
+   subnets immediately before resource creation. Use generated durable resource
+   names and normal prepare/initialize/publish. Admit/install the same five
+   historical archives through normal catalog, plan, review, exact approval and
+   apply. Seed a small useful customer/task/pinned-document fixture through
+   original-human services. Keep document bytes, revisions, current authority,
+   app pins and scoped dispatch in the pre-maintenance baseline.
+4. Generate a normal staged core_upgrade targeting every installed native scope.
+   Independently rebuild its plan and check the exact known legacy manifest,
+   observed native DB version, owned web-static delta and unchanged app pins.
+   Use the ordinary trust/destructive acknowledgments. Preserve original logs
+   and intent before starting one operation.
+5. For the recovery exercise, a private wrapper may call the original native
+   child first and inject one deliberate exception only after its successful
+   versioned web/core mutation and before metadata/traffic publication. Bind
+   operation/hash/image/checkpoint and native effect; unexpected child failure
+   is not controlled success. Expect recovery_required with traffic closed.
+   Never replay the apply. Prepare/review normal restore into a fresh database
+   and filestore namespace; retain the failed source. Verify data/bytes and
+   current authority while closed, then separately prepare/review/resume.
+6. Complete one new ordinary core maintenance operation from the restored
+   predecessor to the same reviewed successor, without fault injection. Verify
+   published core/web versions, unchanged app archive pins, business identities,
+   bytes, current authority, scoped dispatch and fresh original-human requests.
+   The controlled failure qualifies recovery; only this completed operation
+   qualifies the legacy upgrade. Current-authority negative/restoration fixtures
+   must be separately journaled and closed, never hidden in a checkpoint hook.
+
+This section authorizes no publication or production work. Preserve all seven
+protected targets, historical images/checkpoints and the current18610 cohort.
+Do not clean up while recovery or browser evidence is incomplete. In-app browser
+inspection is required by the owner; if its controls are unavailable, continue
+independent preparation and retain the visual checks as unverified.

@@ -1,0 +1,51 @@
+{
+  "item": "UI-D03/UI-D04",
+  "result": "installed_scope_and_data_checks_passed_phases_open",
+  "source": "919bbc36d4c",
+  "core": "0.2.11",
+  "native_web": "19.0.2.11.0",
+  "project": "mp-r0-r1released5f6fc023b17",
+  "configuration_generation": 4,
+  "image": "sha256:8e09b3580100fa3ef1a1619b379b37d333f7a45a9076259668b31857ecea41d7",
+  "worker": "4ba88711736701d509b1fe323818476d8a4b1fcaad8c43ac1faba066f9180a63",
+  "maintenance_operation": "8d776874-737f-4564-9e9a-f4e7e46a7422",
+  "business_authority_tables_exact": 18,
+  "tasks": 27,
+  "document_versions": 2,
+  "app_archive_pins_preserved": true,
+  "scope_checks": {
+    "viewer_B": "3 tasks, no New task control",
+    "revocation_counterexample": "core0.2.10 kept stale task canvas after fresh403; retained original screenshot",
+    "corrected_revocation": {
+      "visibleTaskHeading": false,
+      "recovery": true
+    },
+    "restore": "normal scoped administrator API restored Alice active viewer in B",
+    "one_app": "normal checkpointed suspend B four optional packages left Partners only; no Workboard destination or New native control",
+    "suspended_context_status": 409,
+    "feature_suspend_operation": "efe20c73-2a19-4a19-8d04-54d66256d110",
+    "feature_enable_operation": "e8461908-1426-4209-8d31-b3a1e0d8fe9a",
+    "business_authority_exact_across_each_feature_operation": true
+  },
+  "draft_checks": {
+    "native": "Empty required name held action transition; missing required fields; explicit discard restored Northstar revision1",
+    "custom": "Keep editing retained title after Escape; explicit discard closed without save",
+    "browserNote": "Initial native check was repeated after waiting for the actual dirty controls before selection"
+  },
+  "locale": {
+    "normal_native_language_install": "Arabic ar_001 installed",
+    "synthetic_Alice_preference": "restored en_US",
+    "rendered_RTL": "not verified in this continuation; browser tooling unavailable"
+  },
+  "restart": {
+    "result": "exact current db/app/edge resumed after Docker shutdown; no operation replay",
+    "receipt_sha256": "1061aafad996888860b18f805bd4cec268ff146db081d121f8edb136a628c7cc"
+  },
+  "protected_targets_exact": 7,
+  "limits": [
+    "UI-D03 remains open for browser history/overflow/RTL and final comparison.",
+    "UI-D04 still needs installed legacy predecessor transition and fault/restore/separate resume.",
+    "No new canonical full-host, dark/zoom/contrast or whole-release acceptance claimed.",
+    "Browser switched to in-app only at owner request; preview opening queued; no control tools currently exposed."
+  ]
+}
