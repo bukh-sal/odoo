@@ -5,6 +5,7 @@ import { Component, onWillDestroy, useChildSubEnv, useExternalListener, useState
 import { throttleForAnimation } from "@web/core/utils/timing";
 import { makeDraggableHook } from "../utils/draggable_hook_builder_owl";
 import { hasTouch } from "@web/core/browser/feature_detection";
+import { _t } from "@web/core/l10n/translation";
 
 const useDialogDraggable = makeDraggableHook({
     name: "useDialogDraggable",
@@ -65,7 +66,7 @@ export class Dialog extends Component {
         header: true,
         size: "lg",
         technical: true,
-        title: "Odoo",
+        title: _t("Dialog"),
         withBodyPadding: true,
     };
 

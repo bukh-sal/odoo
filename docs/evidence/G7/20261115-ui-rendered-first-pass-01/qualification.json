@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "user_local_date": "2026-11-15",
+  "scope": "Actual in-app first-pass inspection and bounded corrective source checks; full visual acceptance remains open",
+  "browser": {
+    "controls": "mcp__cua_repl documented in-app browser",
+    "previous_capability_blocker_cleared": true,
+    "original_user_tab_untouched": true,
+    "new_review_tabs": ["2", "3", "4"],
+    "viewport_override_reset": true,
+    "inspection_source_host": "304616b60b8",
+    "installed_image": "sha256:3b5188c628b1807bb2c63966639c28b95abd87ca7a0ccc1a44c6aafe6162660c",
+    "installed_core": "0.2.12"
+  },
+  "proved_rendered": [
+    "Native Partners list and customer form render inside the shared shell",
+    "Native related-work control opens the selected customer and its linked task",
+    "Task pin opens Documents in a new tab; original task context remains",
+    "Documents distinguishes linked version1 from current version2 and renders their different escaped text previews",
+    "Narrow390px task filters and full-screen detail fit; Escape closes and restores focus",
+    "Ctrl+K opens the palette; Escape returns focus"
+  ],
+  "actual_ui_downloads": {
+    "pinned": {"bytes": 120, "sha256": "455bbe049f4c5863e3329deea728e61c81d5c44a96e6bf20a8f4821d13ca061d"},
+    "current": {"bytes": 186, "sha256": "40d2741da6a439bb00068216834eab083a14f5947cc8eea3f4c89f8692f70f96"},
+    "match_retained_business_digests": true
+  },
+  "findings": [
+    {"id": "UI-RENDER-01", "state": "open", "finding": "Back discarded an unsaved task editor without confirmation; no Save was called", "owner": "Workboard pending-dialog registration with existing action leave hook"},
+    {"id": "UI-RENDER-02", "state": "source corrected, installed check pending", "finding": "Native narrow context did not receive focus and Escape outside it did not close it", "owner": "Shared Shell"},
+    {"id": "UI-RENDER-03", "state": "source corrected, installed check pending", "finding": "Rendered dialog elements and command combobox lacked accessible names", "owner": "Shared Dialog and command palette"},
+    {"id": "UI-RENDER-04", "state": "open", "finding": "Native customer notes occupied an unnecessarily narrow desktop grid cell", "owner": "Partners native view declaration"},
+    {"id": "UI-RENDER-05", "state": "source corrected, installed check pending", "finding": "Current core exposes no appearance control despite existing cookie-based dark asset selection", "owner": "Shared user menu; reuse ordinary leave guard and assets"}
+  ],
+  "source_correction": {
+    "plan": "docs/ui-rendered-corrections-plan.md",
+    "provisional_core": "0.2.13",
+    "native_core": "19.0.0.2.13",
+    "native_web": "19.0.2.13.0",
+    "new_guard_focus_appearance_regressions": {"old_production_source": "0/6 passed", "corrected_production_plus_existing_commands": "9/9 passed"},
+    "affected_core_staging_identity_distribution_tests": {"passed": 60, "failed": 0},
+    "real_owl_source_compiler": {"version": "2.8.4", "templates": 6, "passed": true, "test_dom_only": true},
+    "private_fixture_failures_preserved": ["Initial Shell fixture omitted xml/window; corrected fixture was rerun against exact original source to establish genuine failures", "Compiler fixture omitted pretendToBeVisual; corrected without production or guard change"],
+    "new_image_or_installed_fix_claim": false,
+    "canonical_regression_for_changed_code": "pending final source freeze"
+  },
+  "retention": {"protected_target_hashes_exact": 11, "main_business_authority_tables_exact": 18, "saved_business_changes": 0, "preferences_discarded_without_saving": true, "cleanup": false},
+  "private_evidence": ".local/ui-rendered-20261115-01",
+  "representative_screenshots_private": ["partners-list-desktop-light.jpg", "partners-form-desktop-light.jpg", "customer-related-work-settled.jpg", "task-details-desktop-light.jpg", "documents-pinned-preview-desktop-light.jpg", "documents-current-preview-desktop-light.jpg", "task-dirty-history-back.jpg", "native-context-narrow390-open.jpg", "workboard-filters-narrow390-light.jpg", "task-details-narrow390-light.jpg"],
+  "capture_limits": ["Early asynchronous destination captures retained separately; settled state determines the finding", "Viewport override affects selected tab; actual DOM390px was measured for narrow task/filter/context evidence; earlier differently sized captures are not called matched390px", "No forced CSS theme or direction, hidden-state injection, external browser or guessed CDP"],
+  "acceptance": {"ui_phases_accepted": 0, "ui_phases_total": 4, "full_goal_complete": false, "remaining": "Installed corrective rollout and every outstanding original theme/locale/keyboard/zoom/contrast/current-authority/zero-one-many card"}
+}

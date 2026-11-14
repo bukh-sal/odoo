@@ -111,6 +111,7 @@ export class CommandPalette extends Component {
         this.race = new Race();
         this.keepLast = new KeepLast();
         this._sessionId = CommandPalette.lastSessionId++;
+        this.listboxId = `command_palette_${this._sessionId}_listbox`;
         this.DefaultCommandItem = DefaultCommandItem;
         this.activeElement = useService("ui").activeElement;
         this.inputRef = useAutofocus();

@@ -67,9 +67,12 @@ did not repeat the install or customer workflow. No cleanup was performed.
 
 ## Open evidence, not intentional product restrictions
 
-The in-app preview opens, but this chat has not exposed Browser interaction or
-screenshot controls, including after the owner's Browser-tag reply. External
-browser/headless substitution has not been used. The cause is unconfirmed.
+The previous browser-tool absence is cleared after the15November restart.
+The [first rendered pass](evidence/G7/20261115-ui-rendered-first-pass-01/qualification.json)
+now proves the customer/task/document journey and exposes concrete defects;
+follow the [correction plan](ui-rendered-corrections-plan.md). External browser/
+headless substitution has not been used. Initial tool attachment's cause remains
+unconfirmed, and source corrections are not yet installed qualification.
 Real desktop/narrow light/dark, Arabic locale/RTL/mixed identifiers, keyboard and
 draft behavior,200%browser zoom, reduced motion and computed rendered contrast
 remain required. Compilation, token arithmetic, source mocks and API success

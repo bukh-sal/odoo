@@ -1,3 +1,26 @@
+## Actual rendered first pass and correction source -15November2026
+
+Restart exposed working first-party in-app CUA controls. Preserved the owner's
+existing18556tab; opened fresh review tabs on18610. Actual native customer→related
+work→task→new-tab Documents path passed, retaining the task tab. Pinned/current
+previews and UI120/186byte downloads match retained business hashes. Native/custom
+screenshots and measured390px task/filter/context checks are retained privately.
+Task/filter/palette Escape and return focus pass; native context focus/Escape,
+unsaved task Back and unnamed dialog/palette controls fail. Desktop native Notes
+is too narrow and appearance selection is absent. No saved data/preferences
+changed; all11targets/eighteen main tables exact.
+
+Wrote ui-rendered-corrections-plan.md before implementation. Shared source now
+fixes context focus/Escape and accessible naming, exposes guarded appearance
+selection over existing dark assets, omits unsupported vendor account/support
+registrations, and reserves core0.2.13/web19.0.2.13.0. Nine focused JS checks pass;
+six new cases genuinely fail on exact original source. Initial fixture omissions
+were corrected and retained separately. Sixty affected source tests and six
+real Owl source-template compilations pass. Not an installed correction or new
+canonical claim. Private apps remain unchanged pending the core build/maintenance.
+[Evidence](evidence/G7/20261115-ui-rendered-first-pass-01/qualification.json).
+All original visual cards and UIphase acceptance0/4 remain open.
+
 ## UI browser impasse audit -14November2026
 
 After the one-provider progress commitb86ef7c87fa, a fresh read-only capability

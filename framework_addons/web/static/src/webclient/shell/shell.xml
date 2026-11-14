@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
   <t t-name="web.Shell">
-    <div class="mp-shell-frame" t-att-data-navigation-revision="state.revision">
+    <div class="mp-shell-frame" t-att-data-navigation-revision="state.revision" t-on-keydown="closeContext">
       <nav class="mp-app-rail" aria-label="Applications">
         <Dropdown>
           <button class="mp-rail-button mp-all-apps" aria-label="All apps" title="All apps"><i class="oi oi-apps" aria-hidden="true"/></button>
@@ -27,7 +27,7 @@
       <header class="mp-shell-topbar">
         <button t-if="nativeContext" class="mp-context-toggle btn" t-ref="contextTrigger"
             aria-controls="mp-native-context" t-att-aria-expanded="state.contextOpen ? 'true' : 'false'"
-            t-on-click="() => state.contextOpen = !state.contextOpen"><i class="fa fa-bars" aria-hidden="true"/> <t t-esc="current.name"/></button>
+            t-on-click="toggleContext"><i class="fa fa-bars" aria-hidden="true"/> <t t-esc="current.name"/></button>
         <button class="mp-command-trigger" aria-label="Search apps and commands" t-on-click="openCommands"><i class="fa fa-search" aria-hidden="true"/> <span>Search apps and commands</span></button>
         <div class="mp-shell-utilities" role="group" aria-label="Workspace and account">
           <t t-foreach="utilities" t-as="item" t-key="item.key">
@@ -36,8 +36,8 @@
         </div>
       </header>
       <div class="mp-shell-body">
-        <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-att-class="{'is-open': state.contextOpen}" t-on-keydown="closeContext">
-          <h2 t-esc="current.name"/>
+        <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-ref="context" tabindex="-1" aria-labelledby="mp-native-context-heading" t-att-class="{'is-open': state.contextOpen}">
+          <h2 id="mp-native-context-heading" t-esc="current.name"/>
           <nav t-att-aria-label="current.name">
             <a t-att-href="href(current)" t-att-aria-current="active(current)" t-on-click="event => this.select(event, current)">Overview</a>
             <t t-foreach="sections" t-as="section" t-key="section.id"><t t-call="web.Shell.Section"/></t>

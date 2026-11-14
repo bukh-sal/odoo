@@ -6,6 +6,8 @@ import { user } from "@web/core/user";
 import { session } from "@web/session";
 import { browser } from "../../core/browser/browser";
 import { registry } from "../../core/registry";
+import { cookie } from "@web/core/browser/cookie";
+import { clearUncommittedChanges } from "@web/webclient/actions/action_service";
 
 function supportItem(env) {
     const url = session.support_url;
@@ -46,6 +48,21 @@ function shortCutsItem(env) {
             env.services.command.openMainPalette({ FooterComponent: ShortcutsFooterComponent });
         },
         sequence: 30,
+    };
+}
+
+function appearanceItem(env) {
+    const target = cookie.get("color_scheme") === "dark" ? "light" : "dark";
+    return {
+        type: "item",
+        id: "appearance",
+        description: target === "dark" ? _t("Use dark appearance") : _t("Use light appearance"),
+        callback: async () => {
+            if (!(await clearUncommittedChanges(env))) return;
+            cookie.set("color_scheme", target);
+            browser.location.reload();
+        },
+        sequence: 45,
     };
 }
 
@@ -137,10 +154,9 @@ function logOutItem(env) {
 
 registry
     .category("user_menuitems")
-    .add("support", supportItem)
     .add("shortcuts", shortCutsItem)
     .add("separator", separator)
+    .add("appearance", appearanceItem)
     .add("preferences", preferencesItem)
-    .add("odoo_account", odooAccountItem)
     .add("install_pwa", installPWAItem)
     .add("log_out", logOutItem);

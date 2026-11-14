@@ -1,3 +1,20 @@
+## UI rendered correction source -15November2026
+
+Actual in-app inspection now works and supersedes the tool-availability blocker.
+[First-pass evidence](evidence/G7/20261115-ui-rendered-first-pass-01/qualification.json)
+proves native/customer/task/pinned-current-document navigation and UI byte hashes,
+and records real draft/history, native-context focus and accessible-name failures.
+Shared core0.2.13/web19.0.2.13.0 source fixes native context focus/Escape, named
+active dialogs and palette controls, and guarded appearance selection over the
+existing cookie/assets path; unsupported remote vendor account/support menu
+registrations are omitted, with attribution and legacy exports retained.
+Nine focused JS/60affected source checks and six real Owl compilations pass;
+the new six cases fail against the exact old production source. Freeze122files/
+11rows passes unchanged. No backend/schema/authority or maintenance guard change.
+Private Workboard/Partners changes, new image/native rollout and real corrective
+browser acceptance remain next; previous936host result does not prove changed
+code. Full scope/UIacceptance0/4 unchanged.
+
 ## UI-D06 one-provider qualification -14November2026
 
 [Current evidence](evidence/G7/20261114-ui-single-provider-native-01/qualification.json)

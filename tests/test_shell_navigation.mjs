@@ -1,0 +1,91 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import test from 'node:test';
+
+let serial = 0;
+async function load(relative, fixture) {
+    const source = (await readFile(new URL(relative, import.meta.url), 'utf8')).replace(/^import .*;\r?\n/gm, '');
+    globalThis.renderedShellFixture = fixture;
+    const names = Object.keys(fixture).join(',');
+    return import('data:text/javascript;base64,' + Buffer.from(`const {${names}}=globalThis.renderedShellFixture;\n` + source).toString('base64') + '#' + serial++);
+}
+
+async function shellFixture() {
+    const focused = [], effects = [], refs = {};
+    const blank = class {};
+    const module = await load('../framework_addons/web/static/src/webclient/shell/shell.js', {
+        Component: blank, Dialog: class {static props = {};}, Dropdown: blank, DropdownItem: blank,
+        xml: strings => strings.join(''), window: {},
+        ErrorHandler: blank, UserMenu: blank, PageHeader: blank, StatusMessage: blank,
+        useEffect: fn => effects.push(fn), useExternalListener: () => {}, useBus: () => {},
+        useState: value => value, useRef: name => refs[name] = {el: {focus: () => focused.push(name)}},
+        useService: name => ({menu:{unavailable:false},action:{},command:{},dialog:{add:()=>{}}})[name],
+        registry:{category:()=>({contains:()=>false})}, browser:{}, user:{}, _t:value=>value,
+    });
+    const shell = new module.Shell(); shell.env = {bus:{}}; shell.setup();
+    return {shell, focused, effects, refs};
+}
+
+test('native context opening moves focus into its mounted navigation', async () => {
+    const f = await shellFixture();
+    f.shell.toggleContext();
+    f.effects.forEach(effect => effect());
+    assert.equal(f.shell.state.contextOpen, true);
+    assert.deepEqual(f.focused, ['context']);
+});
+
+test('Escape closes an open native context and returns focus to the opener', async () => {
+    const f = await shellFixture(); f.shell.state.contextOpen = true;
+    const calls = [];
+    f.shell.closeContext({key:'Escape',defaultPrevented:false,preventDefault:()=>calls.push('prevent'),stopPropagation:()=>calls.push('stop')});
+    assert.equal(f.shell.state.contextOpen, false);
+    assert.deepEqual(calls, ['prevent','stop']);
+    assert.deepEqual(f.focused, ['contextTrigger']);
+});
+
+test('nested handled Escape and closed context do not steal focus or keys', async () => {
+    const f = await shellFixture(); const calls=[];
+    const event={key:'Escape',defaultPrevented:true,preventDefault:()=>calls.push('prevent'),stopPropagation:()=>calls.push('stop')};
+    f.shell.state.contextOpen=true; f.shell.closeContext(event);
+    assert.equal(f.shell.state.contextOpen,true);
+    f.shell.state.contextOpen=false; f.shell.closeContext({...event,defaultPrevented:false});
+    assert.deepEqual(f.focused,[]); assert.deepEqual(calls,[]);
+});
+
+async function appearanceFixture({dark=false,canLeave=true}={}) {
+    const entries = new Map(), calls=[];
+    await load('../framework_addons/web/static/src/webclient/user_menu/user_menu_items.js', {
+        Component:class{}, markup:strings=>strings.join(''), isMacOS:()=>false, _t:value=>value,
+        rpc:()=>{}, user:{}, session:{},
+        registry:{category:()=>({add(key,value){entries.set(key,value);return this;}})},
+        cookie:{get:()=>dark?'dark':undefined,set:(...args)=>calls.push(['cookie',...args])},
+        clearUncommittedChanges:async()=>{calls.push(['leave']);return canLeave;},
+        browser:{location:{reload:()=>calls.push(['reload'])}},
+    });
+    return {entries,calls};
+}
+
+test('appearance change respects the existing leave guard before cookie or reload',async()=>{
+    const f=await appearanceFixture({canLeave:false});
+    const item=f.entries.get('appearance')({});
+    await item.callback();
+    assert.deepEqual(f.calls,[['leave']]);
+});
+
+test('appearance selects normal light/dark assets through the existing cookie',async()=>{
+    for(const dark of [false,true]) {
+        const f=await appearanceFixture({dark});
+        const item=f.entries.get('appearance')({});
+        assert.equal(item.description,dark?'Use light appearance':'Use dark appearance');
+        await item.callback();
+        assert.deepEqual(f.calls,[['leave'],['cookie','color_scheme',dark?'light':'dark'],['reload']]);
+    }
+});
+
+test('owned account menu does not register unsupported vendor account/support actions',async()=>{
+    const f=await appearanceFixture();
+    assert.equal(f.entries.has('odoo_account'),false);
+    assert.equal(f.entries.has('support'),false);
+    assert.equal(f.entries.has('preferences'),true);
+    assert.equal(f.entries.has('log_out'),true);
+});

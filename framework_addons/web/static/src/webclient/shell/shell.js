@@ -21,13 +21,14 @@ export class AccessChanged extends Component {
     static components = { Dialog: AccessDialog };
     static props = { close: Function, reopen: Function };
     static template = xml`
-        <Dialog header="false" size="'md'">
+        <Dialog title="title" header="false" size="'md'">
             <h2>Workspace access changed</h2>
             <p>The current view is hidden because its access or deployment could not be verified. Unsaved changes are kept in this tab.</p>
             <t t-set-slot="footer">
                 <button class="btn btn-primary" t-on-click="props.reopen">Reopen workspace in a new tab</button>
             </t>
         </Dialog>`;
+    get title() { return _t("Workspace access changed"); }
 }
 
 /** Presentation over the existing menu/action services and their leave lifecycle. */
@@ -43,6 +44,10 @@ export class Shell extends Component {
         this.dialog = useService("dialog");
         this.state = useState({ revision: 0, contextOpen: false });
         this.contextTrigger = useRef("contextTrigger");
+        this.context = useRef("context");
+        useEffect(() => {
+            if (this.state.contextOpen) this.context.el?.focus();
+        }, () => [this.state.contextOpen]);
         useBus(this.env.bus, "MENUS:APP-CHANGED", () => this.state.revision++);
         useBus(this.env.bus, "ACTION_MANAGER:UI-UPDATED", () => {
             this.state.revision++;
@@ -102,8 +107,10 @@ export class Shell extends Component {
         const workspace = new URLSearchParams(browser.location.search).get("workspace");
         browser.open("/odoo" + (workspace ? "?workspace=" + encodeURIComponent(workspace) : ""), "_blank", "noopener");
     }
+    toggleContext() { this.state.contextOpen = !this.state.contextOpen; }
     closeContext(event) {
-        if (event.key === "Escape") {
+        if (event.key === "Escape" && !event.defaultPrevented && this.state.contextOpen) {
+            event.preventDefault();
             event.stopPropagation();
             this.state.contextOpen = false;
             this.contextTrigger.el?.focus();
