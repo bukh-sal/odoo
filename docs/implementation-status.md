@@ -21,7 +21,7 @@ hosted/production deployment, paid services or existing user-data destruction is
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
 - Current phase/gate: **PP01..05 accepted,100/100 phase points and5/5 phases.** JIT plans preceded each actual scope; final outcome evidence and limitations are reconciled.
 - Latest work item: PP05 final canonical923/921pass/2skips, measured budgets, real recovery/source removal and exact retention accepted. [Final evidence](evidence/G7/20261113-pp05-candidate-final-01/qualification.json).
-- Current next action: This bounded roadmap is complete. Retain the useful demo, source-free auxiliary core and exact historical resources; no pending mutation or fixture. Any subsequent product expansion starts with a fresh scoped plan, not replay of completed operations.
+- Current next action: UI-C01 is active under a fresh just-in-time plan: implement a useful Workboard successor inspired by the supplied UI concept, then qualify its real native workflow and visuals in a fresh owned environment. Prior five-phase roadmap remains complete; retained demos/recovery histories are protected.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

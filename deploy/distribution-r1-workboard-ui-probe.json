@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1",
+  "server_wide_modules": ["base", "web"],
+  "addons": ["base", "web", "base_setup", "auth_password_policy", "bus", "mp_compat", "mp_identity", "mp_core", "mp_partners", "mp_workboard", "mp_delivery", "mp_documents", "mp_taskfiles"],
+  "explicit_install": ["web", "auth_password_policy", "mp_core"],
+  "platform_sdk": true,
+  "stock_webclient": true,
+  "runtime_surface": "clean",
+  "profile": "UI-C01 private Workboard interaction qualification on provisional core0.2.6. Optional independent apps; not the default core, public release or production support.",
+  "application_packages": ["deploy/application-inputs/partners.toml", "deploy/application-inputs/workboard.toml", "deploy/application-inputs/delivery.toml", "deploy/application-inputs/documents.toml", "deploy/application-inputs/taskfiles.toml"]
+}
