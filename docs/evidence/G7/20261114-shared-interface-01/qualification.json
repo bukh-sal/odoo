@@ -1,0 +1,76 @@
+{
+  "result": "installed_first_shared_presentation_slice",
+  "item": "UI-D02",
+  "utc": "2026-11-14T04:31:22.311831+00:00",
+  "source": "8f42230bd26a18a3b2d82f09f20f31d2b663e3ed",
+  "private_workboard": "a5537bf68d23a6521082c4790c6419a0a73f343f",
+  "private_documents": "3260cbca42f0a600638696a2779045cb06e27724",
+  "core": "0.2.7",
+  "apps": {
+    "workboard": "0.2.11",
+    "documents": "0.1.7",
+    "partners": "0.1.0"
+  },
+  "builds": {
+    "apps": "sha256:485967172a9675ca6aad9e3f56fb4b07c51c37bdf8989f6bcd76a63de70930ac",
+    "core": "sha256:039567afa07a9196b7da67141d5f170e9a5b4d5c241d57ee6c30c10e1258777d"
+  },
+  "operation_id": "11614cb5-0657-435f-9609-8436e352cf6c",
+  "project": "mp-r0-r1released059ff5ee58a",
+  "observations": {
+    "native": {
+      "font": "\"MP Geist\", \"Segoe UI\", system-ui, sans-serif",
+      "height": 44
+    },
+    "work": {
+      "keycaps": 0,
+      "row": 49,
+      "search": 36,
+      "sidebar": 264,
+      "title": "26px",
+      "viewport": 1280
+    },
+    "escape": {
+      "focus": "Filters1",
+      "open": 0
+    },
+    "narrow": {
+      "document": 390,
+      "page": 390,
+      "visibleFilters": 324,
+      "width": 390
+    },
+    "documents": {
+      "sidebar": 264,
+      "title": "26px"
+    }
+  },
+  "checks": {
+    "app_node": 58,
+    "app_python": 54,
+    "native_version": 7,
+    "freeze_files": 122,
+    "freeze_rows": 11,
+    "installed_site": "generated native Partners list/form, Documents v2 detail and populated custom Workboard",
+    "filter": "24 tasks to 5 high priority to 24 after clear",
+    "display": "group by list, Client launch 12",
+    "scope": "foreign task denied and viewer create denied",
+    "protected_demo_target_hashes": 5,
+    "old_site_mutations": 0
+  },
+  "private_review_screens": {
+    "documents.jpg": "634d453e4d616d96556686cc8f8e238b8a939d527de0b2473abbd0d1483fec28",
+    "filters.jpg": "fc59ed2fe7f5bcaecaafdc54166d49ed2bb52559361178778b64158cbdd02e38",
+    "narrow-filters.jpg": "d887df5b565e6de9a01f742844a318662d04fa5ac5dd9cd652e03271a2d0d4b7",
+    "native-form.jpg": "c15ef5c639bbed3c55bf72f392a5cd28545f4d1b3e1cf2b8e2d1d7a554f0043b",
+    "native-list.jpg": "68adcf182f29ddcc2013b1666b8017bd8f7d20f6f2b80a0acf3847a77c4af928",
+    "workboard-grouped.jpg": "4aca89635396efcf2020bf6c39510e8219c5434b4f1b9821d697d93273bba5a0",
+    "workboard.jpg": "59899d79fe18712bcab477ac7f00b8b97b3caa201f80bc76f6af97118344a309"
+  },
+  "limits": [
+    "Horizontal shell still has duplicate app navigation and inherited section colours.",
+    "Dark/Arabic/RTL, wide app adoption and formal accessibility require separate interaction checks.",
+    "Fresh install only; changed web substrate on populated sites needs a versioned maintenance route."
+  ],
+  "generation": 2
+}

@@ -282,7 +282,7 @@ work earns no additional implementation/qualification points from documents or m
 and read-only screen inspection. [Visual direction](ui-design-direction.md) records
 the rejected first study and the user-instructed restart from actual Meridian style.
 The replacement retains its fonts/components/icons/shell and applies small measured
-refinements. User visual judgment remains pending; production UI is unchanged.
+refinements. The owner accepted its roomier sizing with a 264 px sidebar. See [the first shared implementation](ui-foundation-implementation.md).
 
 Subsequent outcome order: confirm visual baseline; generic tokens/catalogue/native
 presentation bridge; common shell/navigation/safe overlays; native Partners plus

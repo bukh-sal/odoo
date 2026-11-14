@@ -19,3 +19,33 @@ reminders for on-demand help or the command palette. Keep search visible.
 
 Scope is presentation. The full navigation rail, workspace transitions and
 remaining application-specific panels have their own later implementation plans.
+
+## Using the foundation in an application
+
+Core 0.2.7 loads the foundation through the backend web bundle. Use `.mp-page`
+on the custom page and `.mp-page-title` on its heading. Use `--mp-ui-sidebar`
+in a desktop grid and collapse navigation at the app's narrow breakpoint.
+Treat `--mp-ui-row` as a minimum so wrapped labels and enlarged text can grow.
+The locally packaged Geist face covers Latin. The font stack falls back to the
+system UI for other scripts. Font and icon files stay off the network.
+
+Import `QueryDisclosure` from `@web/interface/query_disclosure` in an Owl
+component and register it in `static components`. Supply the translated label,
+the number of active choices, and labelled controls through the default slot.
+The caller owns query state, scope, pagination and refresh.
+
+```xml
+<QueryDisclosure label="'Filters'" count="activeFilterCount">
+    <label>Priority
+        <select t-model="state.priority" t-on-change="refresh">
+            <option value="">All priorities</option>
+            <option value="high">High</option>
+        </select>
+    </label>
+</QueryDisclosure>
+```
+
+The summary opens with Enter or Space. Tab reaches the fields in order, Escape
+returns focus to the summary, and choosing another control outside closes the
+disclosure. Use the existing native search menu for a generated view. Keep
+shortcut keycaps in the command palette or help, away from routine navigation.

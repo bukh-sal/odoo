@@ -1,6 +1,8 @@
 # UI-D01: Meridian-based shared design direction
 
-14November2026. **Proposed visual direction; not installed platform UI.**
+**Decision, 14 November.** Use the roomier study and restore the contextual sidebar to 264 px. Put shortcut reminders in help or the command palette. Group filters and keep search visible. The measurements below record the study before this decision. [Shared implementation and app recipe](ui-foundation-implementation.md).
+
+Original visual study, 14 November 2026.
 The first independently styled proposal was rejected by the user. It is archived
 and is not being evolved. Start from Meridian's actual current style and change
 only what has a clear reason. Branding remains a placeholder, not an adoption of
@@ -113,11 +115,11 @@ universal form/query engine is not a prerequisite.
 - Default/empty core gets honest workspace/application-empty/own-job paths, not
   mandatory customers/tasks/chat. No business model becomes a shell requirement.
 
-## Next visual judgment and implementation order
+## Implementation order
 
-The immediate question is whether the slightly roomier Meridian refinement feels
-better than the original compact density. User rejection of the first proposal
-is recorded; no replacement is deemed approved from its successful rendering.
+The original review asked whether the slightly roomier Meridian refinement felt
+better than the original compact density. The decision above closes that question. Rejection of the first proposal
+is recorded for provenance.
 
 After that direction is settled, activate one fresh implementation plan at a
 time: foundation/token/native bridge; shell/navigation/overlays; native/custom

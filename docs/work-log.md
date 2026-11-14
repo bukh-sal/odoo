@@ -2737,3 +2737,5 @@ Old demo sites/configs/data/authority unchanged; new final cohort chosen because
 actual old->rebuilt same-lock native transition guard refuses, no guard/lock edit.
 Final qualification fresh core + four-app Docs1.4 -> populated Docs1.6 -> optional
 Taskfiles1.5 via normal controls. No acceptance/cleanup/publication;90/1004/5ACTIVE.
+
+UI-D02, 14 November 2026. Owner selected the roomier baseline with a 264 px context sidebar. Installed core 0.2.7, Workboard 0.2.11 and Documents 0.1.7 on a separate loopback site. Fixed a malformed template attribute caught by the app XML test before packaging. Verified native Partners list/form, filters 24 to 5 to 24, keyboard focus, Documents version detail and 390 px layout. Five previous target hashes match. Current shell still duplicates app navigation and retains inherited section colours. Next is shell composition. [Evidence](evidence/G7/20261114-shared-interface-01/qualification.json).
