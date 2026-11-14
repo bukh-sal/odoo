@@ -1,0 +1,191 @@
+{
+  "acceptance": {
+    "full_goal_complete": false,
+    "pending": [
+      "Actual in-app UI-D03 and UI-D05 navigation/draft/customer-task-document journeys and paired screenshots",
+      "Desktop/narrow light/dark Arabic RTL keyboard/200%-zoom/reduced-motion/rendered-contrast matrix",
+      "Single-provider/no-companion current-native form and one-app visual case",
+      "Rendered current-authority loss, optional-companion absence and stale-link behavior",
+      "Final installed walkthrough/support audit after the open cases"
+    ],
+    "ui_phases_accepted": 0,
+    "ui_phases_total": 4
+  },
+  "artifacts": {
+    "default_core": {
+      "archive_sha256": "e04f1d44effe5924d8d2c1f014b7fc914f4f8bad9496036405796e58578cc53d",
+      "archives": 0,
+      "audit_containers_created": 0,
+      "audit_sha256": "d5727ca02ffdfb9f165bd7f7880a04749615889f91b04dc71b7a0c1043281f85",
+      "final_layers": 14,
+      "image_id": "sha256:ea8ed0cc139319417720bc08b05bcb91cd7df3cb92cc175a58969519461f6490",
+      "native_addons": 8,
+      "platform_version": "0.2.12",
+      "project_files": 3711,
+      "record": "docs/evidence/G7/20261114-uid06-core012-clean-01/candidate-build.json",
+      "record_sha256": "f156566c13136311db1981cc1741ff4193113e8bbdcf4512096ebe255b47e57d"
+    },
+    "exact_subtraction": {
+      "archive_sha256": "fe544c1ce417522b0a1ce29bfad69e38f8630a99e3996e8c4737ed5058f6e2ee",
+      "archives": 0,
+      "audit_containers_created": 0,
+      "audit_sha256": "fad18be3b6a7123cc0f4ef557e14f7731543f9a9710c412deaa4bfc032d6d216",
+      "final_layers": 14,
+      "image_id": "sha256:7b5bf5e4c7f851d50241e9160cfdf3a706fbd9194eae16b1f9be468f7e2d36b7",
+      "native_addons": 8,
+      "platform_version": "0.2.12",
+      "project_files": 3711,
+      "record": "docs/evidence/G7/20261114-uid06-subtracted012-clean-01/candidate-build.json",
+      "record_sha256": "f2b0b23c20b49fb0309cd6e85dc78b599a10df2fb93c60ef573aa76b9bb4bc85"
+    },
+    "five_app": {
+      "archive_sha256": "8301f3c5b5d7f31f0d33e2f2de1431480dfb3839f826225d6ab2bd9d486f286b",
+      "archives": 5,
+      "audit_containers_created": 0,
+      "audit_sha256": "91331dc5ec4100a5ad1747132989a8d71120fab801fb6d65abb4b68339023a41",
+      "final_layers": 14,
+      "image_id": "sha256:3b5188c628b1807bb2c63966639c28b95abd87ca7a0ccc1a44c6aafe6162660c",
+      "native_addons": 13,
+      "platform_version": "0.2.12",
+      "project_files": 3788,
+      "record": "docs/evidence/G7/20261114-uid05-shared-apps-clean-01/candidate-build.json",
+      "record_sha256": "85f8b87abaf6ed99d5ca394661f7849921912c3c8691c3540690987efb393e86"
+    }
+  },
+  "canonical": {
+    "entrypoint": "tests/run_host_regression.py",
+    "errors": 0,
+    "exit": 0,
+    "failures": 0,
+    "isolated_python": "3.12.16",
+    "log_sha256": "1b985a165e5684b8b13a836222a9131497e52a8e3bc2fc07680646f09533cfb8",
+    "no_rerun": true,
+    "observer_continuation": {
+      "no_test_replay": true,
+      "observed_exit_sha256": "25a99f76d2acaa6e02ef8fb389bbb1213d887416f5d7c1feea0f4ce1fd0ff003",
+      "observer_intent_sha256": "d9b2018800e43502112cb503e1cecbef108eead5be9ea86740d902de6650b75d",
+      "original_timeout_sha256": "b5a2b4474b015676d463aa4db9fcf6ba92a127d07939065e5d2eb60842aea322"
+    },
+    "original_observation_timeout_seconds": 3600,
+    "passed": 934,
+    "seconds": 4727.023,
+    "skip_reasons": [
+      "Windows symlink privilege unavailable",
+      "Real Linux symlink probes qualify runtime policy"
+    ],
+    "skipped": 2,
+    "source": "a58c4c544c095d448bb6b0984afce122def1c8fa",
+    "total": 936
+  },
+  "host_code_source": "a58c4c544c095d448bb6b0984afce122def1c8fa",
+  "lifecycle": {
+    "core_only_bootstrap": true,
+    "current_version": 2,
+    "foreign_record_refused": 404,
+    "install": {
+      "acknowledgments": [
+        "trust",
+        "permissions",
+        "destructive"
+      ],
+      "apply_seconds": 131.344,
+      "checkpoint_verified": true,
+      "operation_id": "3e862cc7-4262-4629-a269-6b95a0dbe158",
+      "plan_hash": "sha256:371dc8db7639b85b2f240e8f6599f0ac9f0c4219cd03e32310d0488c95b6156d",
+      "scopes": 10
+    },
+    "original_human_download_bytes": [
+      71,
+      122
+    ],
+    "original_human_download_sha256": [
+      "b023022b2f3f4f0a12b1c41f1b653bb8697cd2b0d0a209d9278cf87599d15222",
+      "c75e61d8b04c7fe58d6e121bcffb4d49d36a40d2ca82abd828b7b85546ff623a"
+    ],
+    "pinned_version": 1,
+    "source_removal": {
+      "acknowledgments": [],
+      "apply_seconds": 162.875,
+      "checkpoint_verified": true,
+      "existing_checkpoint_files_exact": 10,
+      "final_artifacts": 0,
+      "final_bindings": 0,
+      "final_native_addons": 8,
+      "final_published_plugins": 0,
+      "fixed_300_second_budget_pass": true,
+      "host_catalog_archives_retained": 5,
+      "inert_installation_scopes": 10,
+      "jobs_exact": 0,
+      "metadata_and_authority_history_exact": true,
+      "operation_id": "28aa4790-7f69-439a-bd5d-222c32eff104",
+      "outbox_rows_all_fields_exact": 13,
+      "plan_hash": "sha256:73bf2c18923c2283ba13ea9219a31e6fe724a606eb03a20ae136931510d189f6",
+      "source_files_removed": 77
+    },
+    "synthetic_fixture": {
+      "customers": 1,
+      "files": 1,
+      "lists": 2,
+      "pins": 1,
+      "tasks": 2,
+      "versions": 2
+    },
+    "uninstall": {
+      "acknowledgments": [
+        "destructive"
+      ],
+      "apply_seconds": 186.703,
+      "checkpoint_verified": true,
+      "grant_revocations": 8,
+      "native_and_metadata_complete": true,
+      "operation_id": "7721f8dc-a116-4fc8-99f0-8a4c99516061",
+      "outbox_rows_all_fields_exact": 13,
+      "plan_hash": "sha256:b67a1b5387db5a6ad554a5e36cc86bc1b3f1d50b4e8b51b79720ee96cfcac7e5",
+      "plugin_context_http": 404,
+      "stale_binding_http": 503
+    },
+    "viewer_write_refused": 403
+  },
+  "limits": [
+    "Native/API and artifact ownership evidence only; no rendered UI or accessibility certification.",
+    "The new operator test policy changes no original curated input; its inherited family label is provenance, not a core-version claim.",
+    "Source-free describes the current runtime; checkpoints, old images, archives and inert history remain.",
+    "Exact provisional local core/app combinations only; no production, public release, stable ABI, LTS or Odoo compatibility claim."
+  ],
+  "preservation": {
+    "app_image_retained": true,
+    "default_core_image_retained": true,
+    "main_business_authority_tables_exact": 18,
+    "no_cleanup": true,
+    "private_app_sources_exact": 5,
+    "protected_target_hashes_exact": 9,
+    "subtraction_image_retained": true
+  },
+  "private_app_sources": {
+    "delivery": "ee96475c0bb1c9fb319fa0770f3b61cda5b88b36",
+    "documents": "6aef5feec70788a2c9fd41d72c4beaaeb421c61a",
+    "partners": "244cf7d4800b8d3e0e25a02cfdce54fecbc990c8",
+    "taskfiles": "7bbbd847200b8a29f914622545b5e90ba71cc6d1",
+    "workboard": "1f8b536c3308131f20d415d13308b7e85d349153"
+  },
+  "result": "native_and_regression_checks_passed_full_ui_qualification_open",
+  "retained_failures": {
+    "canonical_supervisor": "Original 3600s observer timeout; same verified Windows process handle observed to exit0, retention checked, no test rerun.",
+    "default_core_removal_plan": "Rejected unrelated policy/profile change; exact subtraction candidate succeeds with unchanged guard.",
+    "empty_probe": "Two private verifier assumptions about administrative settings access corrected against actual fixture roles; read-only continuation, no bootstrap or permission replay.",
+    "uninstall_wrapper": "Completed native child exit0; outer JSON parser expected one document instead of explicit structured lines. Verified completed state; no reapply."
+  },
+  "schema_version": 1,
+  "source_input_change": {
+    "added_inputs": {
+      "deploy/distribution-r1-uid06-subtracted-probe.json": "58f3a69edfe800ced7816ac4050ffd40ec1ad2b7ad9122d6a17d18ca88f2d1f1"
+    },
+    "frozen_code_head": "a58c4c544c095d448bb6b0984afce122def1c8fa",
+    "old_records_unchanged": true,
+    "original_changed": 0,
+    "original_input_count": 3987,
+    "original_missing": 0,
+    "utc": "2026-11-14T19:18:23.048017+00:00"
+  },
+  "utc": "2026-11-14T19:48:50.958679+00:00"
+}

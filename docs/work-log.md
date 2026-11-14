@@ -1,3 +1,38 @@
+## UI-D06 regression and exact native lifecycle -14November2026
+
+One frozen-source canonical run on a58c4c544c0 completed936tests:934passed,
+two existing Windows/Linux-availability skips, zero failures/errors,4727.023s.
+The first3600s supervisor observation timed out; a creation-time-bound read-only
+handle observed the SAME process to exit0. Original timeout/logs and separate
+terminal/retention receipts remain. No test rerun or security-check caching.
+
+Independent clean core8 build/audit/bootstrap and five-app lifecycle progressed
+on the same code while the host run was live. Exact default core and app artifacts
+have14layers/3711and3788project files respectively; all core/Python bytes match.
+Normal own-fixture install3e862cc7 completed131.344s; synthetic customer/task/
+pinned71Bv1/current122Bv2 journey and viewer403/foreign404 checks passed.
+Normal all-five uninstall7721f8dc completed186.703s: native and metadata removal,
+eight grant revocations, no bindings, all13outbox rows exact; fresh old-binding503,
+context404 and core own-job controls passed. The outer log parser failed after
+the successful child; completed state was independently verified, never reapplied.
+
+Default-core source-removal planning correctly refused unrelated policy changes.
+New exact subtraction input preserves the app policy/profile, removes only five
+package selections, and adds one explicitly hashed operator input with zero
+original curated-file changes. Separate clean image7b5bf5e4 passed the same
+14-layer/3711-file audit. Normal removal28aa4790 completed162.875s and removed
+exactly77app files/archives. Final source-free18612 has8addons/0archives/0published
+plugins/bindings, retained inert history/five host archives and unchanged prior
+checkpoint files. New checkpoints verify; all three operations meet300s budgets.
+
+Fresh post-cycle retention:9protected target hashes, five private repos and18main
+business/authority tables exact.33owned containers, six volumes, two networks,
+old images and checkpoints retained; no cleanup. Source/API evidence only;
+real UI acceptance remains0/4. [Evidence](evidence/G7/20261114-ui-integrated-native-01/qualification.json)
+and [support boundaries](ui-qualified-combinations.md). A fresh execution plan
+now selects the missing one-provider/no-companion current UI case. Browser controls
+remain absent after the owner's tag reply; every rendered card stays open.
+
 ## UI-D01 shared UI audit and Meridian restart -14November2026
 
 User authorized pattern audit/decision matrix/shared shell direction, with screenshots

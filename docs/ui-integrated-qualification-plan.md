@@ -217,3 +217,29 @@ locally committed; evidence-only generated directories remain explicitly listed.
 The full goal completes only after **all** original cards and deliverables have
 current evidence, including the in-app visual/interaction matrix. A passing host
 suite, native lifecycle or template compiler alone cannot close this plan.
+
+## Execution findings and remaining case
+
+The [native/regression record](evidence/G7/20261114-ui-integrated-native-01/qualification.json)
+now proves936canonical tests (934passed/two existing skips), clean core8 and
+five-app layer audits, fresh core bootstrap, normal install/use/native uninstall
+and separate exact77-file source subtraction. The same canonical process was
+observed through the initial supervisor timeout; no broad test rerun occurred.
+Source-frozen build/lifecycle work overlapped that independent host run without
+changing its tested code, prior targets or main business data.
+
+The default core image was a valid bootstrap candidate but not an exact removal
+target: its profile description and omitted empty package list differed from
+the app policy. The planner correctly rejected it before registration/apply.
+A separate clean candidate used the exact app policy minus the five apps; the
+same unchanged guard and normal approval/apply then succeeded. The added data-only
+policy binds a new full source map, with every original curated input unchanged.
+Do not reuse the default image as a subtraction target merely because core bytes
+are equal. The existing `tools/build_clean_removal.py` is the normal exact-byte
+subtraction builder; this execution also qualifies the exact source-policy route.
+
+The explicit one-app/absent-companion current-native case is still missing.
+Its [just-in-time execution plan](ui-single-provider-qualification-plan.md)
+precedes further implementation. Preserve the current empty and populated sites
+while providing that case. All actual in-app D03/D05 and D06 matrix cards remain
+open, with support/evidence boundaries in the [qualification record](ui-qualified-combinations.md).

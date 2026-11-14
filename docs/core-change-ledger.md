@@ -1,3 +1,24 @@
+## UI-D06 native/regression qualification -14November2026
+
+[Current direct evidence](evidence/G7/20261114-ui-integrated-native-01/qualification.json)
+binds unchanged UI core0.2.12 sourcea58c4c544c0 and the five exact private app
+revisions. Canonical936:934passed/two existing skips,0failures/errors,4727.023s.
+The same process completed after the initial observation timeout; no test rerun.
+Normal own-fixture install131.344s/native uninstall186.703s/source removal162.875s
+pass the fixed300s limits and verify checkpoints. The final runtime has8addons,
+0apparchives/published plugins/bindings after77exact source-file removals;13outbox
+rows, inert metadata, five host archives and prior checkpoint files are retained.
+Nine earlier targets/five private repositories/eighteen main tables remain exact.
+
+The default core image was correctly refused as an unrelated removal-policy
+change. An exact subtraction policy/build resolved the input mismatch without
+changing runtime code or weakening the guard. This is qualification/configuration
+evidence, not a new core feature or release. Both original verifier assumptions,
+the completed-child log-parser failure and supervisor timeout remain retained.
+The one-provider/no-companion case and all real in-app interaction/visual cards
+remain open: new UI phase acceptance0/4. Existing PP05 and R1 scores below retain
+their historical scopes; no publication, production or broader support claim.
+
 ## PP05 final local candidate accepted
 
 All five roadmap phases are accepted in their bounded scopes: **100/100 phase

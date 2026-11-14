@@ -1,0 +1,28 @@
+{
+  "addons": [
+    "base",
+    "web",
+    "base_setup",
+    "auth_password_policy",
+    "bus",
+    "mp_compat",
+    "mp_identity",
+    "mp_core"
+  ],
+  "application_packages": [],
+  "explicit_install": [
+    "web",
+    "auth_password_policy",
+    "mp_core"
+  ],
+  "platform_sdk": true,
+  "profile": "UI-C01 private Workboard interaction qualification on provisional core0.2.6. Optional independent apps; not the default core, public release or production support.",
+  "runtime_surface": "clean",
+  "schema_version": 1,
+  "server_wide_modules": [
+    "base",
+    "web"
+  ],
+  "stock_webclient": true,
+  "upstream_commit": "5c7defb49e020fec8b6bb82403a2f54eb79e92e1"
+}
