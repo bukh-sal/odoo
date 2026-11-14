@@ -1,3 +1,30 @@
+## UI-D01 shared UI audit and Meridian restart -14November2026
+
+User authorized pattern audit/decision matrix/shared shell direction, with screenshots
+for visual decisions. Fresh private audit plan preceded source/browser/prototype work.
+Read-only actual native Partners list/form, custom Workboard/Documents and Meridian
+tasks/directory/record/sheet compared with current web/mp_core/mp_shell/host SDK source.
+34 proposed pattern decisions cover shell, data/form workflows, overlays/feedback and
+generic token/native/adoption boundaries. Existing useful engine/primitives stay;
+shared visual foundation must serve native/custom apps without private/reference deps.
+
+User rejected first independently styled study; archived as rejected, never accepted
+or evolved into production. Restarted from actual Meridian static build with original
+fonts/icons/components/style. Small CSS study:264->240sidebar,24/30->26/34heading,
+40->44taskrow,13->13.5title,28->34primaryaction,32->36search and restrained surfaces.
+Same-tab/dataset1309x909/DPR~.99 measured before/after screenshot pair. Font licenses
+retained; reference Git/compiled assets unchanged. Private static study is not platform
+feature/auth/accessibility evidence. Native/current captures have separately recorded
+viewports; no misleading matched comparison. Original proposal is not a visual option.
+
+No production UI/source/build/site/authority/business mutation. Exact sixteen business
+tables/document bytes and memberships/grants unchanged, target and four protected
+contexts exact. No new test/full-host/image or UI implementation acceptance. Two exact
+loopback static helpers retained for user review. Pattern audit complete; visual
+direction pending user judgment before a fresh implementation plan. See
+[audit](ui-pattern-audit.md), [direction](ui-design-direction.md) and
+[sanitized observation](evidence/G7/20261114-ui-pattern-audit-01/audit.json).
+
 ## UI-C01 concept-inspired Workboard delivered -14November2026
 
 Fresh implementation/native/repair/usability plans preceded each meaningful scope.

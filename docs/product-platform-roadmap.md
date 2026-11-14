@@ -269,3 +269,25 @@ scope. PP-02 subsequently passed its bounded installed qualification. PP-03 is
 accepted after its fresh phase/section plans and actual installed qualification.
 Follow [current status](implementation-status.md);
 no PP-02..05 implementation plans were created in advance.
+
+
+## Post-roadmap UI-D01: shared redesign audit and visual review
+
+14November2026 user authorization: audit inherited patterns, classify keep/restyle/
+rework/replace, propose a Meridian-based shell/shared design with screenshot-backed
+visual judgments. The completed PP01..05 score stays100/100,5/5. This new design
+work earns no additional implementation/qualification points from documents or mocks.
+
+[Audit/matrix](ui-pattern-audit.md) covers34 patterns and real native/custom source
+and read-only screen inspection. [Visual direction](ui-design-direction.md) records
+the rejected first study and the user-instructed restart from actual Meridian style.
+The replacement retains its fonts/components/icons/shell and applies small measured
+refinements. User visual judgment remains pending; production UI is unchanged.
+
+Subsequent outcome order: confirm visual baseline; generic tokens/catalogue/native
+presentation bridge; common shell/navigation/safe overlays; native Partners plus
+custom Workboard/Documents adoption; actual end-to-end/authority/RTL/narrow/keyboard/
+contrast/assets/lifecycle qualification. These are outcome milestones, not current
+implementation plans. Write each detailed plan fresh when activated. Patterns must
+be usable by all independent apps without importing private Workboard or optional
+reference Notes shell. Default8-addon core and app-owned business semantics remain.

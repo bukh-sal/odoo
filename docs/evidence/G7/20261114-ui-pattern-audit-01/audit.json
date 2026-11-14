@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "item": "UI-D01",
+  "utc": "2026-11-14T03:56:59.318734+00:00",
+  "result": "audit_complete_visual_direction_pending_user_judgment",
+  "source_baseline": "043034d1ad75ac679beed275500f4d02ebe9673c",
+  "reference_source": "cecb81593036b5f332dd4302b99f10a884ccafcb",
+  "source_files": {
+    "framework_addons/web/static/src/webclient/navbar/navbar.xml": "16ea5e034bac0d65def9a58f332487cd80d6dc0014aa57b823cde52f13fb7193",
+    "framework_addons/web/static/src/search/control_panel/control_panel.xml": "423f96d97e9183343fb2fe1e081c8ef5e732a7fd56e4e28d984ee8e098bea277",
+    "framework_addons/web/static/src/views/list/list_renderer.js": "f8fcad244f9124c329ef64ba4014f6d94f056217ac1eb0fd2ad5f33afcbc4ef6",
+    "framework_addons/web/static/src/views/form/form_renderer.js": "c70d2aad88fec0abc13ea691c883db1832202a01d78ce535600037c3455afbbf",
+    "framework_addons/web/static/src/views/form/form_controller.js": "6dbe884b69caed3d2cc217081ae967dbb6a2295c99a7dc698bf273e44ba67097",
+    "framework_addons/web/static/src/core/dialog/dialog.js": "188a552f3fd558242c42fb84b03112ee945a858f0c989ad1f5beb43be8e42a4c",
+    "framework_addons/web/static/src/core/commands/command_service.js": "92ea17b24ac585ee66a5094d8c55d35565d75aa641078b2430c0d73ae57416ff",
+    "framework_addons/web/static/src/core/notifications/notification_service.js": "db8484a935cd137f937234effb05d456a307e7177bdc6f95cbee90957b8bfad4",
+    "framework_addons/web/static/src/scss/primary_variables.scss": "f7e6871d7f75170c2563b96b3afd7f23c4c3e0253797301b49bffba28fef6ccd",
+    "framework_addons/web/__manifest__.py": "df666c6ba5e3c7abe185d37379af67f7553cd31bb6677d127838a3d5b143c904",
+    "framework_addons/mp_core/static/src/workspace_menu.js": "8f95c83a2b0ef0299c19f76cfdc84d125126462a8fa0bd642e943af7887ed826",
+    "framework_addons/mp_shell/static/src/host.css": "c036400f4398ed27e962099ace0d94624b8f78b88e465506d70666292583040a",
+    "framework_addons/mp_shell/static/src/host.js": "f0829d3f63d244064091fd3018ea083cdfeee6f4af2ec463247764cf940ca1e6",
+    "packages/host_sdk/src/index.ts": "fcd029574cf03f19f43573304791ad67ed75aa527dd94681da465db7705706d9"
+  },
+  "matrix": {
+    "patterns": 34,
+    "A": 8,
+    "B": 10,
+    "C": 8,
+    "D": 8,
+    "dispositions": "proposed_keep_restyle_rework_replace_not_implemented"
+  },
+  "first_visual_study": {
+    "status": "rejected_by_user_discarded_as_direction",
+    "archive": ".local/ui-design-audit-01/rejected/proposal-v1.html",
+    "reused_for_replacement": false
+  },
+  "replacement": {
+    "basis": "Actual original Meridian static build/components/fonts/icons/style, copied privately; original unchanged",
+    "css_sha256": "7b69ddf60401de712e2a8f84b757f29e233897d01468776a706fd96cbbcbcf7f",
+    "provenance": {
+      "path": ".local/ui-design-audit-01/meridian-study-provenance.json",
+      "sha256": "622059028907254625ec7eb875faaf313e4afe786184198362e3af339c155279"
+    },
+    "fonts_notices": [
+      "geist-LICENSE.txt",
+      "jetbrains-mono-LICENSE.txt"
+    ],
+    "meridian_javascript_assets_unchanged": true,
+    "study_url": "http://127.0.0.1:18711/meridian-study/index.html#/tasks?theme=light",
+    "baseline_url": "http://127.0.0.1:18711/meridian-study/baseline.html#/tasks?theme=light"
+  },
+  "observations": {
+    "referenceViewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1111,
+      "width": 1600
+    },
+    "currentViewport": {
+      "dpr": 1.100000023841858,
+      "height": 790,
+      "width": 1346
+    },
+    "proposalViewport": {
+      "dpr": 0.9900000095367432,
+      "height": 909,
+      "width": 1309
+    },
+    "refinedMeasurements": {
+      "font": "\"Geist Variable\", Geist, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "heading": [
+        {
+          "font": "26px",
+          "line": "34px"
+        }
+      ],
+      "row": 43.98674011230469,
+      "sidebar": 239.99366760253903,
+      "viewport": {
+        "dpr": 0.9900000095367432,
+        "height": 909,
+        "width": 1309
+      }
+    },
+    "matchedBaseline": {
+      "font": "\"Geist Variable\", Geist, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "heading": [
+        {
+          "font": "24px",
+          "line": "30px"
+        }
+      ],
+      "row": 39.99368667602539,
+      "sidebar": 263.9993591308594,
+      "viewport": {
+        "dpr": 0.9900000095367432,
+        "height": 909,
+        "width": 1309
+      }
+    },
+    "restoredStudyViewport": {
+      "dpr": 0.9900000095367432,
+      "height": 877,
+      "width": 1495
+    }
+  },
+  "screenshots": {
+    "current-documents-detail.png": {
+      "path": ".local/ui-design-audit-01/screenshots/current-documents-detail.png",
+      "sha256": "a334cf417bdd9087ed9e06db0d82858757637e5de8b5326a3b1ef1444be615d5"
+    },
+    "current-documents.png": {
+      "path": ".local/ui-design-audit-01/screenshots/current-documents.png",
+      "sha256": "5357fc39c5cac488550666be30d2640867aca92b84b44370da61e5920971c18e"
+    },
+    "current-native-form.png": {
+      "path": ".local/ui-design-audit-01/screenshots/current-native-form.png",
+      "sha256": "725d5f58e0843b23c70584a2498f0eb1187fdbc93479e382d4ae81748fc47c63"
+    },
+    "current-native-list.png": {
+      "path": ".local/ui-design-audit-01/screenshots/current-native-list.png",
+      "sha256": "542ea2560c69f9244e79264b8fdf18549e678472bc53d0fe5c78643d1c926b15"
+    },
+    "current-workboard.png": {
+      "path": ".local/ui-design-audit-01/screenshots/current-workboard.png",
+      "sha256": "6224e110acb6d4cb3381447299b1513ea20fa28676242b6ab2d52658e91bb7e0"
+    },
+    "meridian-baseline-matched.jpg": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-baseline-matched.jpg",
+      "sha256": "24dcbdc1624ce8f482f40b05f42acc9f4dfd4213c8a4ad1c770ea8169e188ad9"
+    },
+    "meridian-directory.png": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-directory.png",
+      "sha256": "acc5aa904c4a163f7ed52fc808bf9645a6554f4eb0b0fc61f87f12c58239ad8f"
+    },
+    "meridian-record.png": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-record.png",
+      "sha256": "032f831e77b3f20a55a1e01fca16455f011658eaaabbaf30f8af86c0971ee205"
+    },
+    "meridian-refined-drawer.jpg": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-refined-drawer.jpg",
+      "sha256": "51c872ea34febc8fe4eebc03224e64d8e2a9139e677cca717d0a607ebdf0d00c"
+    },
+    "meridian-refined-matched.jpg": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-refined-matched.jpg",
+      "sha256": "1df8b0bf84b5202d7abfeff41500bb94999140206e5ed867d3abead2cad45330"
+    },
+    "meridian-refined-record.jpg": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-refined-record.jpg",
+      "sha256": "5525de376e029449465520e5b32f4adf1fca8e9a0e2fd143fef1c23b8f1fe12b"
+    },
+    "meridian-refined-tasks.jpg": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-refined-tasks.jpg",
+      "sha256": "1df8b0bf84b5202d7abfeff41500bb94999140206e5ed867d3abead2cad45330"
+    },
+    "meridian-shell-tasks.png": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-shell-tasks.png",
+      "sha256": "65e31ba785caeedb08ad96b1249c5c66ef7abdd2e41b03a8ea25a7ecedd8c554"
+    },
+    "meridian-task-panel.png": {
+      "path": ".local/ui-design-audit-01/screenshots/meridian-task-panel.png",
+      "sha256": "39a8e9d1a93f54c7fa7adb66fe5f6a3dff02436424486485b739e509def53358"
+    }
+  },
+  "preservation": {
+    "production_ui_modified": false,
+    "images_built": false,
+    "site_operations": false,
+    "business_writes": false,
+    "all_sixteen_business_tables_bytes_and_two_authority_tables_exact": true,
+    "current_target_exact": true,
+    "protected_older_targets_exact": 4,
+    "reference_checkout_clean": true
+  },
+  "shared_direction": {
+    "native_and_custom": true,
+    "framework_neutral_semantic_tokens": true,
+    "owl_and_native_adapter": true,
+    "default_addons_remain": 8,
+    "optional_reference_shell_or_business_app_dependency": false,
+    "business_semantics_stay_in_apps": true,
+    "react_tailwind_production_adoption": false
+  },
+  "retained_review_helpers": [
+    {
+      "session": 53021,
+      "port": 18710,
+      "bind": "127.0.0.1",
+      "purpose": "read-only original concept static reference"
+    },
+    {
+      "session": 83904,
+      "port": 18711,
+      "bind": "127.0.0.1",
+      "purpose": "read-only private baseline/refinement study"
+    }
+  ],
+  "limits": [
+    "User visual acceptance pending; no implementation gate passed",
+    "Static prototype data/features are not installed platform capabilities",
+    "No new tests/builds/runtime UI/accessibility/RTL/mobile qualification",
+    "No universal compatibility or inferred safe native behavior changes",
+    "Exact public API/freeze/package/font/identity decisions remain for fresh implementation plans",
+    "Original first independent visual proposal was rejected, not presented as accepted"
+  ]
+}
