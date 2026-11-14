@@ -125,6 +125,35 @@ def result(handler, version='1.0', *, response_factory=None):
 
 
 class CoreGateway(http.Controller):
+    @http.route('/api/v1/navigation',type='http',auth='public',methods=['GET'])
+    def navigation(self):
+        def run():
+            scope=current_scope(request.env)
+            request.env.cr.execute("""SELECT i.plugin_id,i.manifest FROM mp_plugin_installation i
+                JOIN mp_workspace_plugin f ON f.installation_id=i.id
+                WHERE f.workspace_id=%s AND f.availability='enabled' AND i.state='installed'
+                ORDER BY i.plugin_id""",[scope.workspace_id])
+            return [{'plugin_id':ident,'name':manifest['plugin']['name'],'pages':manifest['ui']['pages'],'navigation':manifest['ui']['navigation']} for ident,manifest in request.env.cr.fetchall() if manifest['ui']['pages']]
+        return result(run)
+
+    @http.route('/api/v1/native-navigation',type='http',auth='public',methods=['GET'])
+    def native_navigation(self):
+        def run():
+            from .navigation import native_menus
+            scope=current_scope(request.env)
+            request.env.cr.execute("""SELECT i.plugin_id,i.manifest FROM mp_plugin_installation i
+                JOIN mp_workspace_plugin f ON f.installation_id=i.id
+                WHERE f.workspace_id=%s AND f.availability='enabled' AND i.state='installed'
+                ORDER BY i.plugin_id""",[scope.workspace_id])
+            installations=request.env.cr.fetchall()
+            def resolve_action(xmlid):
+                action=request.env.ref(xmlid,raise_if_not_found=False)
+                return action.id if action and action._name.startswith('ir.actions.') else None
+            menus=request.env['ir.ui.menu'].load_web_menus(request.session.debug)
+            return native_menus(menus,installations,
+                lambda plugin,manifest:advertised_capabilities(plugin,manifest,scope),resolve_action)
+        return result(run)
+
     @http.route('/api/v1/client-release',type='http',auth='public',methods=['GET'])
     def client_release(self):
         return result(lambda:current_release(request.env))

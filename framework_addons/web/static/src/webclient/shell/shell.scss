@@ -1,0 +1,69 @@
+.mp-shell-frame {
+    --mp-shell-rail: 56px;
+    position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column;
+    padding-inline-start: var(--mp-shell-rail); color: var(--mp-ui-ink); background: var(--mp-ui-canvas);
+}
+.mp-app-rail {
+    position: absolute; inset-inline-start: 0; inset-block: 0; width: var(--mp-shell-rail);
+    display: flex; flex-direction: column; align-items: center; gap: 12px; padding-block: 10px;
+    background: var(--mp-ui-surface); border-inline-end: 1px solid var(--mp-ui-line); z-index: 10;
+}
+.mp-rail-button {
+    width: 36px; min-height: 36px; display: flex; align-items: center; justify-content: center;
+    border: 0; border-radius: var(--mp-ui-radius); background: transparent; color: var(--mp-ui-muted);
+    font-size: 17px; text-decoration: none;
+    &:hover, &[aria-current="page"] { background: var(--mp-ui-hover); color: var(--mp-ui-ink); }
+    &:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; }
+}
+.mp-rail-apps { display: flex; flex-direction: column; gap: 8px; overflow-y: auto; min-height: 0; }
+.mp-rail-account {
+    margin-block-start: auto;
+    .o_user_menu { display: block !important; }
+    .o_user_menu > button, .o_user_menu .dropdown-toggle { border: 0; padding: 0; background: transparent; }
+    .oe_topbar_name { display: none !important; }
+    .o_avatar { width: 28px; height: 28px; }
+}
+.mp-shell-topbar {
+    display: flex; align-items: center; justify-content: center; gap: 12px; flex: 0 0 56px;
+    padding-inline: 24px; background: var(--mp-ui-surface); border-bottom: 1px solid var(--mp-ui-line);
+}
+.mp-command-trigger {
+    display: flex; gap: 10px; align-items: center; text-align: start;
+    width: 380px; max-width: 45%; height: var(--mp-ui-search); padding: 0 12px;
+    color: var(--mp-ui-muted); background: var(--mp-ui-canvas); border: 1px solid var(--mp-ui-line);
+    border-radius: var(--mp-ui-radius); font-size: 13px;
+}
+.mp-shell-utilities {
+    margin-inline-start: auto; display: flex; align-items: center; gap: 10px; min-width: 0;
+    button { color: var(--mp-ui-ink); border: 0; background: transparent; min-height: 34px; }
+}
+.mp-shell-body { display: flex; flex: 1; min-height: 0; }
+.mp-native-context {
+    width: var(--mp-ui-sidebar); flex: 0 0 var(--mp-ui-sidebar); overflow-y: auto; padding: 26px 12px;
+    border-inline-end: 1px solid var(--mp-ui-line);
+    h2 { font-size: 14px; font-weight: 600; padding: 0 12px; margin: 0 0 20px; }
+    nav { display: flex; flex-direction: column; gap: 4px; }
+    a { min-height: 36px; padding: 8px 12px; color: var(--mp-ui-muted); border-radius: var(--mp-ui-radius); text-decoration: none; overflow-wrap: anywhere; }
+    a:hover, a[aria-current="page"] { color: var(--mp-ui-ink); background: var(--mp-ui-hover); }
+}
+.mp-context-children { display: flex; flex-direction: column; padding-inline-start: 12px; }
+.mp-context-section { padding: 12px; font-size: 12px; font-weight: 600; }
+.mp-shell-canvas { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; position: relative; }
+.mp-shell-empty { padding: 40px; max-width: 620px; }
+.mp-app-chooser { min-width: 240px; max-width: min(380px, 95vw); max-height: 70vh; overflow-y: auto; .dropdown-item { display: flex; gap: 12px; white-space: normal; } }
+.mp-context-toggle { display: none; }
+@media (max-width: 767px) {
+    .mp-shell-frame { --mp-shell-rail: 44px; }
+    .mp-app-rail { padding-block: 8px; }
+    .mp-rail-button { width: 32px; min-height: 36px; }
+    .mp-shell-topbar { padding-inline: 10px; gap: 8px; flex-wrap: wrap; min-height: 56px; flex-basis: auto; }
+    .mp-command-trigger { width: 34px; max-width: none; justify-content: center; padding: 0; span { display: none; } }
+    .mp-shell-utilities { gap: 4px; font-size: 12px; }
+    .mp-context-toggle { display: flex; gap: 8px; align-items: center; max-width: 160px; overflow-wrap: anywhere; }
+    .mp-native-context { display: none; &.is-open { display: block; width: 100%; flex-basis: auto; } }
+    .mp-shell-body:has(.mp-native-context.is-open) .mp-shell-canvas { display: none; }
+}
+@media print {
+    .mp-app-rail, .mp-shell-topbar, .mp-native-context { display: none; }
+    .mp-shell-frame { padding: 0; }
+}

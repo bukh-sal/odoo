@@ -2,10 +2,13 @@
 <templates xml:space="preserve">
 
     <t t-name="web.WebClient">
+        <Shell t-if="sharedShell and !state.fullscreen"><ActionContainer/></Shell>
+        <t t-else="">
         <t t-if="!state.fullscreen">
             <NavBar/>
         </t>
         <ActionContainer/>
+        </t>
         <MainComponentsContainer/>
     </t>
 

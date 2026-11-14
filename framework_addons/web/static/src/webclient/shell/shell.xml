@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.Shell">
+    <div class="mp-shell-frame" t-att-data-navigation-revision="state.revision">
+      <nav class="mp-app-rail" aria-label="Applications">
+        <Dropdown>
+          <button class="mp-rail-button mp-all-apps" aria-label="All apps" title="All apps"><i class="oi oi-apps" aria-hidden="true"/></button>
+          <t t-set-slot="content">
+            <div class="mp-app-chooser">
+              <span class="dropdown-header">Applications</span>
+              <DropdownItem t-foreach="apps" t-as="app" t-key="app.id" attrs="{href: href(app)}" onSelected="() => menu.selectMenu(app)">
+                <i t-att-class="icon(app)" aria-hidden="true"/><span t-esc="app.name"/>
+              </DropdownItem>
+              <span t-if="!apps.length" class="dropdown-item-text" t-esc="menu.unavailable ? 'Applications unavailable. Reload to try again.' : 'No applications enabled in this workspace.'"/>
+            </div>
+          </t>
+        </Dropdown>
+        <div class="mp-rail-apps">
+          <a t-foreach="apps" t-as="app" t-key="app.id" class="mp-rail-button" t-att-href="href(app)"
+             t-att-aria-label="app.name" t-att-title="app.name" t-att-aria-current="current?.id === app.id ? 'page' : undefined"
+             t-on-click="event => this.select(event, app)">
+            <i t-att-class="icon(app)" aria-hidden="true"/>
+          </a>
+        </div>
+        <div class="mp-rail-account"><UserMenu/></div>
+      </nav>
+      <header class="mp-shell-topbar">
+        <button t-if="nativeContext" class="mp-context-toggle btn" t-ref="contextTrigger"
+            aria-controls="mp-native-context" t-att-aria-expanded="state.contextOpen ? 'true' : 'false'"
+            t-on-click="() => state.contextOpen = !state.contextOpen"><i class="fa fa-bars" aria-hidden="true"/> <t t-esc="current.name"/></button>
+        <button class="mp-command-trigger" t-on-click="openCommands"><i class="fa fa-search" aria-hidden="true"/> <span>Search apps and commands</span></button>
+        <div class="mp-shell-utilities" role="group" aria-label="Workspace and account">
+          <t t-foreach="utilities" t-as="item" t-key="item.key">
+            <ErrorHandler onError="error => this.handleItemError(error)"><t t-component="item.Component"/></ErrorHandler>
+          </t>
+        </div>
+      </header>
+      <div class="mp-shell-body">
+        <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-att-class="{'is-open': state.contextOpen}" t-on-keydown="closeContext">
+          <h2 t-esc="current.name"/>
+          <nav t-att-aria-label="current.name">
+            <a t-att-href="href(current)" t-att-aria-current="active(current)" t-on-click="event => this.select(event, current)">Overview</a>
+            <t t-foreach="sections" t-as="section" t-key="section.id"><t t-call="web.Shell.Section"/></t>
+          </nav>
+        </aside>
+        <div class="mp-shell-canvas"><t t-slot="default"/>
+          <section t-if="!current and !action.currentController" class="mp-shell-empty" role="status">
+            <h1 t-esc="menu.unavailable ? 'Applications unavailable' : 'Your workspace'"/>
+            <p t-esc="menu.unavailable ? 'Reload this page to try again.' : 'Choose an application from the rail. Background jobs and account options are available from the workspace menu.'"/>
+          </section>
+        </div>
+      </div>
+    </div>
+  </t>
+  <t t-name="web.Shell.Section">
+    <a t-if="section.actionID" t-att-href="href(section)" t-att-aria-current="active(section)" t-on-click="event => this.select(event, section)" t-esc="section.name"/>
+    <span t-else="" class="mp-context-section" t-esc="section.name"/>
+    <div t-if="section.childrenTree.length" class="mp-context-children">
+      <t t-foreach="section.childrenTree" t-as="section" t-key="section.id"><t t-call="web.Shell.Section"/></t>
+    </div>
+  </t>
+</templates>

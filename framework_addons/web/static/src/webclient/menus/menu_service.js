@@ -20,10 +20,25 @@ export const menuService = {
             }
             return res.json();
         };
+        const source = registry.category("menu_sources").get("workspace", null);
+        let sourceError = false;
+        let sourceGeneration = 0;
+        const readScopedMenus = async () => {
+            try {
+                const menus = await source();
+                return { menus, error: false };
+            } catch {
+                return { menus: { root: { id: "root", children: [] } }, error: true };
+            }
+        };
         const storedMenus = browser.localStorage.getItem("webclient_menus");
         const storedMenusVersion = browser.localStorage.getItem("webclient_menus_version");
 
-        if (storedMenus && storedMenusVersion === session.registry_hash) {
+        if (source) {
+            const initial = await readScopedMenus();
+            menusData = initial.menus;
+            sourceError = initial.error;
+        } else if (storedMenus && storedMenusVersion === session.registry_hash) {
             fetchMenus().then((res) => {
                 if (res) {
                     const fetchedMenus = JSON.stringify(res);
@@ -54,6 +69,15 @@ export const menuService = {
         function _getMenu(menuId) {
             return menusData[menuId];
         }
+        async function refreshScopedMenus() {
+            const generation = ++sourceGeneration;
+            const next = await readScopedMenus();
+            if (generation !== sourceGeneration) return false;
+            menusData = next.menus;
+            sourceError = next.error;
+            env.bus.trigger("MENUS:APP-CHANGED");
+            return true;
+        }
         function setCurrentMenu(menu) {
             menu = typeof menu === "number" ? _getMenu(menu) : menu;
             if (menu && menu.appID !== currentAppId) {
@@ -64,6 +88,7 @@ export const menuService = {
         }
 
         return {
+            get unavailable() { return sourceError; },
             getAll() {
                 return Object.values(menusData);
             },
@@ -85,8 +110,12 @@ export const menuService = {
                 return menu;
             },
             async selectMenu(menu) {
-                menu = typeof menu === "number" ? this.getMenu(menu) : menu;
-                if (!menu.actionID) {
+                const id = typeof menu === "number" ? menu : menu?.id;
+                if (source) {
+                    if (!await refreshScopedMenus()) return;
+                }
+                menu = this.getMenu(id);
+                if (!menu?.actionID) {
                     return;
                 }
                 await env.services.action.doAction(menu.actionID, {
@@ -98,6 +127,7 @@ export const menuService = {
             },
             setCurrentMenu,
             async reload() {
+                if (source) return refreshScopedMenus();
                 if (fetchMenus) {
                     menusData = await fetchMenus(true);
                     env.bus.trigger("MENUS:APP-CHANGED");

@@ -7,6 +7,8 @@ import { registry } from "@web/core/registry";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { ActionContainer } from "./actions/action_container";
 import { NavBar } from "./navbar/navbar";
+import { Shell } from "./shell/shell";
+import { session } from "@web/session";
 
 import { Component, onMounted, onWillStart, useExternalListener, useState } from "@odoo/owl";
 import { router, routerBus } from "@web/core/browser/router";
@@ -19,10 +21,12 @@ export class WebClient extends Component {
     static components = {
         ActionContainer,
         NavBar,
+        Shell,
         MainComponentsContainer,
     };
 
     setup() {
+        this.sharedShell = !!session.mp_stock_profile;
         this.menuService = useService("menu");
         this.actionService = useService("action");
         this.title = useService("title");

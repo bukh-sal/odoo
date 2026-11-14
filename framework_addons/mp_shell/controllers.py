@@ -40,15 +40,3 @@ class Shell(http.Controller):
         response=request.render('mp_shell.bootstrap',context)
         response.headers['Cache-Control']='no-store';response.headers['X-Frame-Options']='DENY'
         return response
-
-    @http.route('/api/v1/navigation',type='http',auth='public',methods=['GET'])
-    def navigation(self):
-        def run():
-            scope=current_scope(request.env)
-            # Constrained current workspace feature metadata after live authority.
-            request.env.cr.execute("""SELECT i.plugin_id,i.manifest FROM mp_plugin_installation i
-                JOIN mp_workspace_plugin f ON f.installation_id=i.id
-                WHERE f.workspace_id=%s AND f.availability='enabled' AND i.state='installed'
-                ORDER BY i.plugin_id""",[scope.workspace_id])
-            return [{'plugin_id':ident,'name':manifest['plugin']['name'],'pages':manifest['ui']['pages'],'navigation':manifest['ui']['navigation']} for ident,manifest in request.env.cr.fetchall() if manifest['ui']['pages']]
-        return result(run)
