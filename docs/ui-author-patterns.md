@@ -176,3 +176,16 @@ modules and hope a runtime branch will hide the error. State the actual supporte
 core/app combinations. Desktop/narrow, dark/light, Arabic/RTL, long labels,
 keyboard,200%zoom, reduced motion and rendered contrast are still required
 qualification; token reuse or passing source mocks establishes none of them.
+
+
+Pending dialog drafts belong to the client action, not only a modal's close
+button. Register the action with useSetupAction from @web/search/action_hook;
+track pending editor/comment callbacks, include saving and uncertain states,
+and unregister on modal unmount. Refuse action leave while pending; the existing
+explicit Keep editing/Discard flow remains the choice boundary. Workboard0.2.14
+now follows this same existing pattern as Documents. beforeunload alone does
+not protect browser-history or app-action navigation.
+
+For a single native multiline field without a label, declare a single-column
+group (col="1") so the normal form grid allocates the full width. Partners0.1.2
+uses this for Notes. Do not add an app-named shared CSS exception.

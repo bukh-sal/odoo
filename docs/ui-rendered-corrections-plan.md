@@ -128,3 +128,30 @@ queries in both themes. Measure contrast from computed foreground/effective
 background and retain matched screenshots. Only actual rendered evidence can
 close these findings. After this correction use core15 (not historical13) for
 the separately reviewed two-app successor build. Full original matrix remains.
+
+
+## Two-app correction activation on installed core15
+
+Core15 operation3bb12743 completed158.375s/current configuration9/imagef1532becf.
+Actual native list/form labels/controls and custom headings/modal bodies now use
+the semantic palette; light restored. Full matrix remains open, including dark
+header close-icon contrast and native color-scheme/scrollbars to batch with the
+remaining contrast review, not another build per individual observation.
+
+Implement Workboard0.2.14/native19.0.0.2.14 only in its existing action/editor
+registration and regression tests: one page-owned pending set, action beforeLeave,
+editor/detail/nested tracker props, dirty/comment/saving/uncertain checks, cleanup
+on unmount; existing explicit Keep editing/Discard boundaries remain. Prove the
+new real-controller cases fail on the original source before applying the fix.
+Partners0.1.2/native19.0.0.1.2 uses ordinary single-column native Notes group.
+No storage/service/security/binding/dependency/compatibility or core API change.
+
+After focused app checks, deterministic archive validation and separate private
+commits, build ONE clean existing five-app policy with core15 byte-identical,
+only two new app pins and the other three unchanged. Admit only those two exact
+digests retaining the entire old catalogue/trust history; normal stage plus four
+existing A/B upgrade scopes; review actual acknowledgments and exact hash before
+register/approve/apply. Verify checkpoint, eighteen tables, full job/outbox rows,
+ten other targets and installed module/artifact identities. Then actual dirty
+Back/app-switch/keep/discard/nested-comment and native width checks on the new
+image, narrow and desktop. No saved workflow replay or previous native-op rerun.

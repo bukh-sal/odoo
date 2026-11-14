@@ -1,0 +1,40 @@
+{
+  "source": "0810b12930086e1216b2e7158c61bed463bfa593",
+  "platform": "0.2.15",
+  "image": "sha256:f1532becfd5ca9741611edeb78bf7b2e05d943a5244f2a26c9820f3e17e44111",
+  "operation": "3bb12743-1739-4d09-9f36-5fee370583e0",
+  "plan_hash": "sha256:b98a77a6d7500bfaa604b78853e693bd5037331250ed9074114bd986cfab0165",
+  "apply_seconds": 158.375,
+  "checkpoint_manifest_sha256": "dd8706ba75c10e895674f5b6ff5e6dae987c787b6b0c7617a190bda53a5ca55a",
+  "business_tables_exact": 18,
+  "job_outbox_full_rows_exact": true,
+  "other_targets_exact": 10,
+  "private_app_pins_exact": 5,
+  "tests": {
+    "identity_tests": 10,
+    "failures": 0,
+    "pinned_sass": "passed"
+  },
+  "layer_audit": {
+    "layers": 14,
+    "project_files": 3788
+  },
+  "rendered": {
+    "in_app": true,
+    "viewport": [
+      1363,
+      789
+    ],
+    "native_list_form_label_input": "corrected dark palette, actual computed values and screenshots",
+    "custom_heading_modal_control": "corrected dark palette, actual computed values and screenshots",
+    "light_restored": true,
+    "remaining": [
+      "dark header close SVG contrast",
+      "native color-scheme/scrollbars",
+      "original full responsive/RTL/keyboard/zoom/contrast/authority matrix"
+    ],
+    "business_writes": false
+  },
+  "ui_phases_accepted": 0,
+  "limits": "Local provisional reviewed combination; original visual matrix remains mandatory"
+}

@@ -2871,3 +2871,6 @@ Actual in-app controls resumed. Core13 normal operation3d12d9bd completed once15
 
 
 Core14 normal maintenance200f7e19 completed148.688s,18tables/fullhistory/10other targets/fivepins exact. Actual in-app selection loads dark bundle; normal light restored. Rendered audit exposed fixed light table/modal/input/label/heading values; source core15 now bridges native presentation variables to shared tokens in existing screen-only CSS. Actual pinned Sass compiler and10identity tests pass. New immutable core15 rollout/browser proof pending; private apps unchanged; UI0/4 remains.
+
+
+Core15 operation3bb12743 completed158.375s with verified checkpoint,18tables/fullhistory/10other targets/fivepins exact. Actual in-app dark native list/form headings/labels/inputs and custom modal/body/secondary controls corrected; light restored. Header close black SVG/native color-scheme remain in final contrast batch. Workboard717c788/0.2.14 pending-action tracking and Partners6a4da83/0.1.2 native Notes width source committed;3new real-controller red cases then32Node/24Python pass, two deterministic exact archives validate, three other archives exact. Normal two-app image/admission/upgrade/browser proof next. Owner supplied new native collection arrangement and five design references; next native-list plan records footer pagination/header/query responsibilities.

@@ -386,3 +386,6 @@ UI rendered correction: core13 installed focus/dialog/palette behavior verified;
 
 
 UI dark native bridge source0.2.15: after real core14 reader proof, correct fixed light table/modal/input/label/heading styling through existing shared CSS tokens.10identity tests and actual pinned Sass parse pass; direct installed theme/contrast proof pending. No private app or policy/guard change.
+
+
+UI rendered native theme bridge0.2.15 normally installed/verified: actual native list/form and custom dialog foreground/background now match semantic dark tokens; original matrix/close-icon contrast still open. Workboard0.2.14 and Partners0.1.2 private source corrections tested, archives assembled but not admitted/deployed; no change to backend/authority/storage.
