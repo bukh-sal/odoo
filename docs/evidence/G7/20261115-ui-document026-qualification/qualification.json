@@ -1,0 +1,86 @@
+{
+  "source": "2b47afc7f22ae7966d869ea94f1e69db63afc38d",
+  "image_id": "sha256:1ce61f299cc91f39636db62b41e8df4fa59ebc21cd601e6c64a12e29f6e2f0e2",
+  "operation_id": "9d0dabc6-9007-4890-95d1-c0735e9ea8da",
+  "plan_hash": "sha256:9686952f6de2e629e285a10325ec68c82fd6dd0cfc1a4f3a4984ed458db1d991",
+  "configuration": 25,
+  "apply_seconds": 152.828,
+  "source_checks": {
+    "source": "2b47afc7f22ae7966d869ea94f1e69db63afc38d",
+    "focused": 52,
+    "seconds": 103.894,
+    "freeze_files": 122,
+    "freeze_rows": 11,
+    "scope": "Actual bootstrap directive/native LangData shape plus exact full-file reversal; independent core plan/forged-source/backend refusal; source-only, installed HTML/RTL/zoom pending",
+    "files": {
+      "framework_addons/web/views/webclient_templates.xml": "e60f16121067bfeb3dfbafe24d8ab54605573f5d46de240dbad5f6b3a8cb1eae",
+      "packages/platform_sdk/modular_platform/release_staging.py": "8a932f32ee52e7b1e9a0938539115f2a2a66d36c1a72cc72f873ec0418796d93",
+      "tests/test_core_upgrade.py": "4abb7f20341c77295c1742f15fcfa126fefabbff9a898318d76977bb30cae4f4",
+      "tests/test_web_document_metadata.py": "6b9ce01f6d01668dc1cbcd2ab46195e96ebe76eda91101f8e4952604289a1a8f"
+    }
+  },
+  "english": {
+    "bodyWidth": 1363,
+    "dir": "ltr",
+    "direction": "ltr",
+    "lang": "en-US",
+    "localeText": "Sample \u00b7 A deliberately long person and customer relationship name for wrapping review 079",
+    "viewport": "width=device-width, initial-scale=1",
+    "width": 1363
+  },
+  "locale_roundtrip": {
+    "actualEnglishDocumentMetadataPassed": true,
+    "actualArabicLangAr001AndDirRtl": true,
+    "nativeArabicButtonsTranslated": true,
+    "actualRtlLayoutFailed": true,
+    "reason": "Arabic bootstrap still loads web.assets_web.min.css and body/frame remain ltr; not a rendered RTL pass",
+    "englishRestored": true,
+    "forcedDirectionOrCss": false,
+    "businessWritesExpected": 0,
+    "profileRestorationVerificationFollows": true
+  },
+  "arabic_style_finding": {
+    "bodyClass": "o_web_client o_rtl",
+    "bodyDir": "ltr",
+    "frameDirection": "ltr",
+    "htmlDir": "rtl",
+    "styles": [
+      "/web/assets/2261407/web.assets_web_print.min.css",
+      "/web/assets/caca82b/web.assets_web.min.css"
+    ]
+  },
+  "first_english_reload": {
+    "bodyDir": "rtl",
+    "dir": "ltr",
+    "lang": "en-US",
+    "styles": [
+      "/web/assets/ac9963c/web.assets_web_print.rtl.min.css",
+      "/web/assets/f5c7f16/web.assets_web.rtl.min.css"
+    ]
+  },
+  "second_english_reload": {
+    "bodyDir": "ltr",
+    "dir": "ltr",
+    "lang": "en-US",
+    "styles": [
+      "/web/assets/2261407/web.assets_web_print.min.css",
+      "/web/assets/caca82b/web.assets_web.min.css"
+    ]
+  },
+  "retention": {
+    "history_exact": true,
+    "language": "en_US",
+    "only_actor6_language_changed": false,
+    "other_targets_exact": 10,
+    "profiles_semantically_exact": true,
+    "tables_exact": 18,
+    "utc": "2026-11-15T06:09:04.491153+00:00"
+  },
+  "rtl_accepted": false,
+  "limits": [
+    "HTML metadata/scaling restriction correction passed, actual first-reload RTL layout failed",
+    "Source trace: session_info refreshes session.context but asset selection reads current request environment language; fresh source differential/fix required",
+    "Arabic already active; only Alice language changed then restored via normal preferences, no activation/admin/authority bypass",
+    "Original full phase cards/canonical remain required"
+  ]
+}
