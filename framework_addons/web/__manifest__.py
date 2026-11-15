@@ -4,7 +4,7 @@
 {
     'name': 'Web',
     'category': 'Hidden',
-    'version': '19.0.2.32.0',
+    'version': '19.0.2.33.0',
     'description': """
 Odoo Web core module.
 ========================
@@ -147,6 +147,9 @@ This module provides the core of the Odoo Web Client.
             'web/static/src/interface/table_pagination.xml',
             'web/static/src/interface/record_navigation.js',
             'web/static/src/interface/record_navigation.xml',
+            'web/static/src/interface/record_sections.js',
+            'web/static/src/interface/record_sections.xml',
+            'web/static/src/interface/record_sections.css',
         ],
         'web.assets_backend_lazy': [
             ('include', 'web._assets_helpers'),

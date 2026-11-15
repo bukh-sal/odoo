@@ -10,6 +10,7 @@ export class Breadcrumbs extends Component {
     static props = {
         breadcrumbs: Array,
         headingLevel: { type: Number, optional: true },
+        inline: { type: Boolean, optional: true },
         slots: { type: Object, optional: true },
     };
 

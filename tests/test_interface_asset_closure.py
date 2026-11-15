@@ -112,6 +112,17 @@ class SharedIconAssetClosure(unittest.TestCase):
             self.assertIn('web/static/src/' + dependency, backend)
         self.assertNotIn('web/static/src/webclient/actions/action_service.js', frontend)
 
+    def test_shared_record_composition_closure_is_available_to_native_apps_only(self):
+        backend = native_asset_paths('web.assets_backend')
+        frontend = native_asset_paths('web.assets_frontend_lazy')
+        minimal = native_asset_paths('web.assets_frontend_minimal')
+        for name in ['record_sections.js', 'record_sections.xml', 'record_sections.css']:
+            path = 'web/static/src/interface/' + name
+            self.assertEqual(backend.count(path), 1)
+            self.assertNotIn(path, frontend)
+            self.assertNotIn(path, minimal)
+        self.assertIn('web/static/src/interface/icon.js', backend)
+
 
 class SharedIconMaintenanceFence(unittest.TestCase):
     def setUp(self):
@@ -121,7 +132,7 @@ class SharedIconMaintenanceFence(unittest.TestCase):
         self.require = require_web_presentation_manifest
         self.error = OperatorError
         self.previous = json.loads((ROOT / 'tests/fixtures/ui-shell029-backend-only-manifest.json').read_bytes())['manifest']
-        self.target = json.loads(json.dumps(ast.literal_eval((ROOT / 'framework_addons/web/__manifest__.py').read_text(encoding='utf-8'))))
+        self.target = json.loads((ROOT / 'tests/fixtures/ui-shell030-shared-icon-manifest.json').read_bytes())['manifest']
         self.files = {'addons/' + path: hashlib.sha256((ROOT / 'framework_addons' / path).read_bytes()).hexdigest() for path in ICON_PATHS}
 
     def test_exact_relocation_accepts_without_mutating_manifest_or_inventory(self):
@@ -174,6 +185,14 @@ class SharedIconMaintenanceFence(unittest.TestCase):
         target['data'].append('unreviewed/native-data.xml')
         with self.assertRaises(self.error):
             self.require(self.previous, target, {'addons/' + path: 'a' * 64})
+
+    def test_current_shared_component_append_uses_existing_inventory_fence(self):
+        target = json.loads(json.dumps(ast.literal_eval((ROOT / 'framework_addons/web/__manifest__.py').read_text(encoding='utf-8'))))
+        paths = ['web/static/src/interface/record_sections.' + suffix for suffix in ['js', 'xml', 'css']]
+        files = {'addons/' + path: hashlib.sha256((ROOT / 'framework_addons' / path).read_bytes()).hexdigest() for path in paths}
+        self.require(self.target, target, files)
+        with self.assertRaises(self.error):
+            self.require(self.target, target, {})
 
 
 if __name__ == '__main__':

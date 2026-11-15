@@ -1,0 +1,127 @@
+{
+  "source_base": "c718a06fa5e94f0a720d6ad24cae4a3dc839e18b",
+  "candidate": "0.2.33_unpublished",
+  "source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "869aacbff1691130781df862fdba262637841c2be53dd50eac31057c7f1061f5",
+    "framework_addons/web/__manifest__.py": "debb7778651da1d3fe6a667ed50ebf7baa462979533e4666675117795bec8329",
+    "framework_addons/web/static/src/interface/record_sections.css": "2055a67b0e68bc697c20b351427c358c5371d0dca5e4ef9b2371a2137aa15f25",
+    "framework_addons/web/static/src/interface/record_sections.js": "ebc0d8d1176a38b74d0a9cd30072312f9258b6338dc8f3e8a9d9c82de0572c43",
+    "framework_addons/web/static/src/interface/record_sections.xml": "ede13f7ad43bf3d34017acbda50711537325b3cbe2c265b9603b36721ccfc4fa",
+    "framework_addons/web/static/src/search/breadcrumbs/breadcrumbs.js": "ab69fc6f83b38cf6c8d5ba9edea590a7fa47738f813160c7aad6c62c7cb12b24",
+    "framework_addons/web/static/src/search/breadcrumbs/breadcrumbs.xml": "bb4e7fa7ee9daf784fe907f276c4493e2eba63043ca9cfc4e48c02d5198d6105",
+    "framework_addons/web/static/src/search/control_panel/control_panel.xml": "c69f619cd1caa21204e45df83945f6c645e2e62b0ac48fb2babc0e997ad84535",
+    "packages/platform_sdk/modular_platform/projection.py": "43973b5b1f4525bf756b7d562607ac57979d10dfb23b4874a521c09c4a203eec",
+    "tests/fixtures/ui-shell030-shared-icon-manifest.json": "ac74fe8100c253076bcbac99487d5e0c82123424897a74fc533325b1fcb82f8b",
+    "tests/test_interface_asset_closure.py": "05e31e83afdd64ed20f879095ca82a07ebcd4bcf928cecef016e7a2dda1421fa",
+    "tests/test_record_sections.mjs": "1fbe6f81324f08035724ea9c63c831a3a4f26a3fd5f6210a1b97ab37294b011c"
+  },
+  "private_heads": {
+    "partners": "97c8b28d581dc1f710a60fec9230092104cec46e",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "source_cases": {
+    "core_node": 36,
+    "app_node": 62,
+    "partners_source": 8,
+    "workboard_source": 19,
+    "delivery_source": 3,
+    "asset_consumer": 10,
+    "templates": 29
+  },
+  "mounted_owner": {
+    "actualOwl": true,
+    "actualNativeUseService": true,
+    "actualOwnerReader": true,
+    "actualSharedTabsAndCards": true,
+    "actualAppExternalTemplate": true,
+    "controlledKeyboard": true,
+    "leaveVeto": true,
+    "hiddenPanelInputRetained": true,
+    "providerMountedOnce": true,
+    "noRepeatedContextReadsOnSelection": true,
+    "currentDenialClearsRenderedFields": true,
+    "externalNativeFieldORMHTTPBoundary": true,
+    "installed": false
+  },
+  "mounted_companion": {
+    "actualOwl": true,
+    "actualNativeUseService": true,
+    "actualOwnerReader": true,
+    "actualSharedTabsAndCards": true,
+    "actualAppExternalTemplate": true,
+    "noRepeatedContextReadsOnSelection": true,
+    "currentDenialClearsRenderedFields": true,
+    "actualDeliveryOwnerIntegration": true,
+    "companionDenialRemovesTabAndData": true,
+    "externalNativeFieldORMHTTPBoundary": true,
+    "installed": false
+  },
+  "mounted_native": {
+    "actualOwl": true,
+    "actualFormController": true,
+    "actualFormViewDialog": true,
+    "actualDialogAndConfirmation": true,
+    "actualNativeInputHookAndTextField": true,
+    "actualAskChangesAndDirty": true,
+    "actualNativeFocusHookWithTestVisibilityBoundary": true,
+    "nativeViewLookupAndORMExternal": true,
+    "dialogAndSheet": true,
+    "fullscreenSameInputAndModel": true,
+    "expansionWrites": 0,
+    "keepEditingRetainsDraft": true,
+    "headerEscapeAndNativeCancelGuarded": true,
+    "visibilityAndUnloadNoSave": true,
+    "synchronousUnloadWarning": true,
+    "validationRefusal": true,
+    "explicitSaves": 2,
+    "pristineCancelNoWrite": true,
+    "actualWorkEditorAndSharedHeader": true,
+    "taskThenReminderUnderFakeServiceBoundary": true,
+    "pendingSecondaryCopyNoRetryControls": true,
+    "actualWorkDetailErrorComponent": true,
+    "customFullscreenKeepsDraftWithoutEffect": true,
+    "sourceOnlyNotInstalled": true
+  },
+  "css": {
+    "pinned_sass_rtl": true,
+    "logical_css_equal": true,
+    "source_sha256": {
+      "framework_addons/web/static/src/interface/record_sections.css": "2055a67b0e68bc697c20b351427c358c5371d0dca5e4ef9b2371a2137aa15f25",
+      "applications/external/partners/native/mp_partners/static/src/relationship.css": "febfb5f1fafb32a8ed10f1f64cdf7550c44f15d11cc0a14a39ec5d99bd6e9da7"
+    },
+    "target_sha256": "e324a7a5935dc466a0a40df4d580ab534d25f2ecec41514e9a077cc04cdd837d",
+    "scope": "Read-only stdin compiler. No installed CSS/layout qualification."
+  },
+  "archives": {
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.partners": {
+      "version": "0.1.9",
+      "digest": "sha256:c4641533bfceed13d65c0ce0cd8e58f3e4d211caf4b3e02b86ce5203421700db"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    }
+  },
+  "freeze": "122files_11rows_passed",
+  "limits": [
+    "HTTP/ORM/native Field formatting are external fixture boundaries in owner mount",
+    "Dynamic runtime registry insertion was an artificial diagnostic; supported native descriptors load before owner mount",
+    "No33 image/admission/operation or installed reader qualification",
+    "Full UI phase acceptance remains0/4; original matrix/recovery/canonical open"
+  ]
+}

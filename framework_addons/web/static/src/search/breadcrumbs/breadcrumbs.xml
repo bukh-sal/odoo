@@ -7,7 +7,9 @@
         <t t-set="collapsedBreadcrumbs" t-value="props.breadcrumbs.slice(0, -3).reverse()"/>
         <t t-set="breadcrumb" t-value="currentBreadcrumbs[0] || {}"/>
 
-        <div t-if="collapsedBreadcrumbs.length || visiblePathBreadcrumbs.length" class="o_breadcrumb d-flex flex-row flex-md-column align-self-stretch justify-content-between min-w-0">
+        <div t-if="collapsedBreadcrumbs.length || visiblePathBreadcrumbs.length" class="o_breadcrumb d-flex flex-row align-self-stretch min-w-0"
+             t-att-class="{ 'flex-md-column': !props.inline, 'justify-content-between': !props.inline, 'mp-inline-breadcrumbs': props.inline }"
+             t-att-role="props.inline ? 'navigation' : undefined" t-att-aria-label="props.inline ? 'Breadcrumb' : undefined">
             <t t-if="env.isSmall">
                 <t t-set="previousBreadcrumb" t-value="visiblePathBreadcrumbs.at(-1)"/>
                 <button type="button" class="o_back_button btn btn-link d-print-none px-1 py-0" t-att-aria-label="getBreadcrumbTooltip(previousBreadcrumb)" t-on-click.prevent="previousBreadcrumb.onSelected">
@@ -33,11 +35,12 @@
                     <t t-foreach="visiblePathBreadcrumbs" t-as="breadcrumb" t-key="breadcrumb.jsId">
                         <li class="breadcrumb-item d-inline-flex min-w-0" t-att-class="{ o_back_button: breadcrumb_last }" t-att-data-hotkey="breadcrumb_last and 'b'">
                             <Icon t-if="!breadcrumb_first or collapsedBreadcrumbs.length" name="'chevron-right'" size="14" directional="true"/>
-                            <a t-att-href="breadcrumb.url" t-on-click="event => this.select(event, breadcrumb)" class="fw-bold text-truncate" t-att-data-tooltip="'Back to &quot;' + breadcrumb.name + '&quot;' + (breadcrumb.isFormView ? ' form' : '')"><t t-call="web.Breadcrumb.Name"/></a>
+                            <a t-att-href="breadcrumb.url" t-on-click="event => this.select(event, breadcrumb)" class="text-truncate" t-att-class="{ 'fw-bold': !props.inline }" t-att-data-tooltip="'Back to &quot;' + breadcrumb.name + '&quot;' + (breadcrumb.isFormView ? ' form' : '')"><t t-call="web.Breadcrumb.Name"/></a>
                         </li>
                     </t>
                 </ol>
             </t>
+            <Icon t-if="props.inline and !env.isSmall" name="'chevron-right'" size="14" directional="true"/>
             <div class="d-flex gap-1 text-truncate">
                 <div class="o_last_breadcrumb_item active d-flex gap-2 align-items-center min-w-0 lh-sm" t-att-role="props.headingLevel ? 'heading' : undefined" t-att-aria-level="props.headingLevel">
                     <span class="min-w-0 text-truncate" aria-current="page"><t t-call="web.Breadcrumb.Name"/></span>
@@ -46,7 +49,7 @@
             </div>
         </div>
 
-        <div t-else="" class="o_breadcrumb d-flex gap-1 text-truncate">
+        <div t-else="" class="o_breadcrumb d-flex gap-1 text-truncate" t-att-class="{ 'mp-inline-breadcrumbs': props.inline }">
             <div class="o_last_breadcrumb_item active d-flex fs-4 min-w-0 align-items-center" t-att-role="props.headingLevel ? 'heading' : undefined" t-att-aria-level="props.headingLevel">
                 <span class="min-w-0 text-truncate" aria-current="page"><t t-call="web.Breadcrumb.Name"/></span>
             </div>

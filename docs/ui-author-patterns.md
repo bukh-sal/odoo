@@ -345,3 +345,37 @@ partial outcomes. Workboard's task-plus-personal-reminder flow confirms task
 identity first, then schedules with a separate immutable key; it can retry the
 reminder or finish with the saved task without pretending to roll it back.
 These are source-qualified contracts until the installed successor passes.
+# Informational records and app-owned sections
+
+Use `RecordSection` for a truthful informational card (title, optional icon,
+heading level, action/default slots), and controlled `RecordTabs` for section
+navigation. The owner supplies stable unique tab/panel IDs, current selection and
+an awaited selection callback. Tabs support manual keyboard activation, logical
+arrow navigation and Home/End. Keep panels mounted while hidden when their draft
+must survive selection; await the owner's existing leave veto. The components do
+not fetch records, infer permissions, register business contributions or persist
+application state.
+
+An author supplying a primary readonly body title can opt into the native
+control-panel `recordBodyTitle` presentation. Ordinary forms, New, native
+save/validation/revision handling and record traversal keep their defaults. Keep
+an explicit Edit surface rather than pretending informational widgets are native
+edit fields.
+
+Partners demonstrates a **trusted, app-owned native seam**:
+`registry.category("dev.local.partners.record_sections")`. A descriptor has a
+unique namespaced `id`, plain `label`, finite `order` and Owl `Component`. The
+owner passes the loaded native `record`, `readonly`,
+`onAvailabilityChange({ available, summary })` and `registerLeaveGuard(fn)` (which
+returns an unregister callback). Availability follows a fresh authorized read,
+including after focus or identity changes. Report after initial mount; keep props
+and callbacks stable so selecting a tab does not restart provider requests. Clear
+old data on denial, ignore stale replies and hide unavailable providers. A provider
+error must not destroy the owner's overview. No unavailable app is represented by
+a fabricated zero or a placeholder finance summary.
+
+This seam is not the frozen `ui.slots` protocol, which remains actions-only, and
+does not grant access or sandbox trusted code. Other record-owning apps may expose
+their own explicit content seam while reusing the same core cards/navigation.
+Document the exact qualified owner/provider combination. Backend scope, current
+capabilities, release identity and revision checks remain authoritative.

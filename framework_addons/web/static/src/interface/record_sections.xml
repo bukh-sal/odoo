@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.RecordTabs">
+    <div class="mp-record-tabs d-print-none" role="tablist" t-att-aria-label="label" t-att-aria-busy="state.pending ? 'true' : undefined" t-ref="root">
+      <button t-foreach="items" t-as="item" t-key="item.id" type="button" role="tab"
+              t-att-id="tabId(item)" t-att-data-record-tab="item.id" t-att-aria-controls="item.panelId"
+              t-att-aria-selected="item.id === activeId ? 'true' : 'false'"
+              t-att-aria-disabled="state.pending or item.disabled ? 'true' : undefined"
+              t-att-disabled="item.disabled" t-att-tabindex="item.id === focusId ? 0 : -1"
+              t-on-keydown="event => this.onKeydown(event, item.id)" t-on-click="() => this.choose(item)">
+        <bdi t-esc="item.label"/>
+      </button>
+    </div>
+  </t>
+  <t t-name="web.interface.RecordSection">
+    <section class="mp-record-surface mp-record-section" t-att-aria-label="props.title">
+      <header class="mp-record-section-header">
+        <t t-tag="'h' + props.headingLevel" class="mp-record-section-title"><Icon t-if="props.icon" name="props.icon" size="16"/><t t-esc="props.title"/></t>
+        <div t-if="props.slots.actions" class="mp-record-actions"><t t-slot="actions"/></div>
+      </header>
+      <div class="mp-record-section-content"><t t-slot="default"/></div>
+    </section>
+  </t>
+</templates>

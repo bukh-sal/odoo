@@ -162,3 +162,5 @@ Core0.2.18 adds the shared native record ControlPanel variant and explicit loade
 15November2026 creation31: owned native action/list/form presentation adds explicit creation surfaces using the existing View/model and guarded Dialog lifecycle. Optional preventAutoSave/onRecordReady only affect opted-in creation; ordinary form defaults and existing-record routing remain. Original source/license notices preserved. Source and installed evidence are separate; see ui-creation-surfaces-plan.md and ADR0093.
 
 15November2026 creation32: scope desktop fullscreen and flush side-sheet geometry to opt-in creation surfaces, keeping inherited ordinary Dialog and print declarations. Expanded creation ignores drag offsets without changing the mounted native form/model. Native compact creation selects existing md size. Source proof separate from installed; no upstream notices removed.
+
+15November2026 record33: add presentation-only native record tabs/cards; optional recordBodyTitle selects compact inline breadcrumbs while ordinary native form controls, validation, CAS, print and callbacks retain defaults. No upstream licence/provenance removed.

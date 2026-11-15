@@ -46,7 +46,7 @@
             </t>
             <t t-elif="display.record">
                 <header class="mp-native-record-header">
-                    <div t-if="!env.config.noBreadcrumbs" class="mp-native-record-heading"><Breadcrumbs breadcrumbs="breadcrumbs"/></div>
+                    <div t-if="!env.config.noBreadcrumbs" class="mp-native-record-heading"><Breadcrumbs breadcrumbs="breadcrumbs" inline="display.recordBodyTitle"/></div>
                     <div class="o_control_panel_main_buttons mp-record-actions d-print-none" t-on-keydown="onMainButtonsKeydown">
                         <t t-slot="control-panel-create-button"/>
                         <t t-slot="layout-buttons"/>
