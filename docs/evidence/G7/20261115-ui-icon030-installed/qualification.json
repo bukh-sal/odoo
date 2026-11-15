@@ -1,0 +1,25 @@
+{
+  "apply_seconds": 145.781,
+  "checkpoint_verified": true,
+  "empty_plugins_retained": true,
+  "generation": 2,
+  "image_id": "sha256:b6983da42d994d79129b5bca09d512c0d84ed511ebb4a71fe8eb823e87b97599",
+  "operation_id": "e4c4b994-576e-4e7e-b446-3630758e9e9b",
+  "plan_hash": "sha256:e999f642f9ae43473fabed329a1f7b0e89442bc61242186ed6760d202497a8c7",
+  "protected_other_targets_exact": true,
+  "scope": "Normal zero-app core upgrade complete; installed frontend/sign-in requalification still required",
+  "tables_exact": 9,
+  "utc": "2026-11-15T09:46:22.051882+00:00",
+  "worker_id": "16778d57eff3c3aa5c13d476173a7f9d3867f196b488ebf4c552378597cdfa16",
+  "source": "3db44baf045e1f9babf7dc2f5aac3903e8e6faeb",
+  "frontend": {
+    "fresh_sign_in_console_errors": 0,
+    "fresh_sign_in_console_warnings": 0,
+    "empty_workspace_console_errors": 0,
+    "lazy_asset": "/web/assets/6f4cb79/web.assets_frontend_lazy.min.js",
+    "scope": "Actual in-app browser, new unauthenticated document and normal login; legacy branding/account glyphs remain"
+  },
+  "app_admission": false,
+  "ui_phase_acceptance": "0/4; bounded core fix, original full goal remains active",
+  "private_evidence": ".local/ui-shell-cohesion030-core-01"
+}
