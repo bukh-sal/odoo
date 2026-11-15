@@ -1,26 +1,14 @@
 # Shared UI qualification and support boundaries
 
-Latest populated installed combination is core0.2.17, Partners0.1.3,
-Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5. The
-[core17 record](evidence/G7/20261115-ui-core017-polish-qualification/qualification.json)
-proves real3-page directory/group paging and shared dark/action corrections.
-The [Partners refinement](evidence/G7/20261115-ui-partners013-native-qualification/qualification.json)
-proves normal149.141s two-scope upgrade with exact core/four other app pins,
-166global partners including the owned Sample fixture, other17tables/full history
-and ten protected sites. Actual desktop description/balanced columns/optional
-technical columns and heading-above-full-width Notes at desktop/390px pass.
-
-Remaining observed findings are the native form action strip/density, unlabelled
-Notes control, missing collection level1 heading/column chooser name, narrow
-header/scrollbar presentation, and the original RTL/realzoom/motion/contrast/
-authority/optional-app matrix. Final canonical waits for final source freeze.
-This is continued Meridian-led critique, not final visual acceptance. UI0/4.
-Historical source qualifications retain their original scope.
-
-Next source candidate0.2.18 implements the shared native record frame/status/
-loaded-ID navigation and semantic/control corrections under the [fresh plan](ui-native-records-refinement-plan.md). Its source/compiler proofs are recorded separately;
-it is not installed or visually accepted. Current private app pins remain exact.
-
+Latest populated installed combination is core0.2.18, Partners0.1.3,
+Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
+[Core18 direct evidence](evidence/G7/20261115-ui-core018-records-qualification/qualification.json)
+proves normal maintenance and actual record semantics/save/refusal checks.
+The owned165-row workspace directory remains; only one intended Sample row
+advanced to revision2, all other rows/history/authority exact. Real desktop
+navigation sizing, dark lines and conflict guidance still need correction.
+Core19 source checks pass under the [follow-up plan](ui-record-polish-followup-plan.md);
+no installed successor claim yet. Original matrix/final canonical stay open/UI0of4.
 
 The provisional local platform code is0.2.12/native core19.0.0.2.12 and
 web19.0.2.12.0. Its shared presentation exports and app-owned responsibilities

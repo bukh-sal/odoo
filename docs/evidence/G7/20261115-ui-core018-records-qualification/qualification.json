@@ -1,0 +1,57 @@
+{
+  "utc": "2026-11-15T02:02:38.568958+00:00",
+  "source": "1df5ba1d7ec4c5cf5d6f8d7ff8cb344efca14122",
+  "platform": "0.2.18",
+  "operation_id": "c21a2dbb-b97a-4c4c-9165-796aa588e000",
+  "plan_hash": "sha256:c12da6b1ef71a13d7f76856aac740dc5723412ea924f04735f9376375758a379",
+  "image_id": "sha256:2afa435ae7ea04da1cfbfd417ea682800854d4cc1fce3676c74be0e6c6ce6faf",
+  "apply_seconds": 153.188,
+  "configuration": 14,
+  "maintenance": {
+    "tables_exact": 18,
+    "history_full_rows_exact": true,
+    "other_targets_exact": 10,
+    "apps_exact": 5,
+    "final_layers": 14,
+    "project_files": 3792
+  },
+  "installed_browser": {
+    "collection_h1": true,
+    "chooser_named_keyboard_enter_escape": true,
+    "notes_accessible_name": true,
+    "loaded_id_navigation": true,
+    "visible_dirty_saved_discard": true,
+    "one_sample_revision_commit": true,
+    "stale_save_refused_draft_kept_explicitly_discarded": true,
+    "other_165_partners_and_17_tables_exact": true,
+    "new_outbox": 1,
+    "narrow_actual_css_px": [
+      390,
+      845
+    ],
+    "narrow_document_width": 390,
+    "light_restored": true,
+    "viewport_reset": true,
+    "drafts_open": 0
+  },
+  "findings": [
+    "Desktop inherited flex basis squeezes record navigation to76px/84px high",
+    "Dark sheet/section lines use inherited light colours",
+    "Stale conflict shows generic Oops instead of useful recovery",
+    "Partners contact group and technical revision need app-owned declaration refinement"
+  ],
+  "evidence_private": ".local/ui-native-records018-01",
+  "limits": [
+    "No full original visual/authority/RTL/zoom/motion matrix acceptance",
+    "Source mocks/compiler not installed proof",
+    "One manual submit and committed effects; no unobserved HTTP attempt count claim",
+    "Native visibility and leave auto-save unchanged"
+  ],
+  "screenshots_sha256": {
+    "northstar-record-light.jpg": "3d3829693b03212e0f6a4e63ade2f438f7fb207988d530951113bcd9eaa834b4",
+    "sample-dark-before.jpg": "31cfb528b0fd4cf0b0ebbb33e83111a5ed9eb27ab2ecb8066ed5e988defde56e",
+    "sample-narrow390-light.jpg": "8342fc94e8f57937c0bccd99432144a874003fc0f80b3bf6d5774d8cc455fe7d",
+    "sample-unsaved-desktop.jpg": "e6b2e90063e28f2fa3656da89db8a0fd2d3617e6eaf4251aec2688f46a030d00",
+    "stale-save-generic-error.jpg": "7bb3fb242a42124c952da56331af3b0b4f6e74ae141a40efef3cdc72deec307b"
+  }
+}

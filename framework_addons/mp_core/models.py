@@ -27,8 +27,18 @@ class ApiHttpErrors(models.AbstractModel):
             if isinstance(payload,dict) and isinstance(payload.get('error'),dict):
                 import json
                 ident=str(uuid4());data=payload['error'].get('data') or {}
-                payload['error']['message']='Operation denied or invalid'
-                payload['error']['data']={'name':data.get('name','odoo.exceptions.UserError'),'message':'Operation denied or invalid. Reference '+ident,'request_id':ident}
+                name=data.get('name','odoo.exceptions.UserError')
+                message='Operation denied or invalid'
+                from .controllers import PublicError
+                if isinstance(exception,PublicError) and exception.code=='CONFLICT':
+                    # Only a fixed public classification crosses this private
+                    # transport. Never expose exception text/details or retry.
+                    name='odoo.exceptions.UserError'
+                    message=('The information used by this operation has changed. '
+                             'Close this message and review the latest state before trying again. '
+                             'For an unsaved record, keep a copy of your edits before discarding and reopening it')
+                payload['error']['message']=message
+                payload['error']['data']={'name':name,'message':message+'. Reference '+ident,'request_id':ident}
                 response.set_data(json.dumps(payload))
         return response
 

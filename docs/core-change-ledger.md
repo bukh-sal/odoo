@@ -1,3 +1,14 @@
+## Installed record follow-up -15November2026
+
+Core18 installed proof exposed inherited zero-flex-basis navigation, light dark-sheet
+lines and generic stale-conflict error. Core19 changes only intrinsic screen layout,
+semantic line colours and exact PublicError/CONFLICT→fixed native UserError warning.
+Exception details/text stay redacted; JSON-RPC code/ID/request ID and original
+transaction failure remain. No retry/discard/authority/public-contract change.
+Six actual handler fake-boundary tests (hostile/unknown/authority/lookalike/nonRPC/
+malformed),37retained Node,72affected Python, pinned Sass/RTL and122file freeze pass;
+actual predecessor conflict witness fails. New installed verification remains required.
+
 ## UI rendered correction source -15November2026
 
 Actual in-app inspection now works and supersedes the tool-availability blocker.

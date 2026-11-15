@@ -127,11 +127,11 @@
     .mp-native-record-heading .o_last_breadcrumb_item { font-size: 13px !important; font-weight: 500; color: var(--mp-ui-muted); }
     .mp-native-record-header > .mp-record-actions { justify-content: flex-end; margin-inline-start: auto; }
     .mp-native-record-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; }
-    .mp-native-record-toolbar > .o_control_panel_navigation { margin-inline-start: auto; flex-grow: 0 !important; }
+    .mp-native-record-toolbar > .o_control_panel_navigation { margin-inline-start: auto; flex: 0 1 auto !important; min-width: 0; max-width: 100%; }
     .mp-native-record-toolbar .o_control_panel_navigation:empty { display: none !important; }
     .mp-native-record-toolbar:has(> .o_control_panel_actions:empty):has(> .o_control_panel_navigation:empty) { display: none; }
-    .mp-record-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-    .mp-record-position { flex: 0 1 auto; margin: 0; }
+    .mp-record-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; max-width: 100%; }
+    .mp-record-position { flex: 0 0 auto; margin: 0; white-space: nowrap; }
     .mp-record-step-buttons { display: inline-flex; align-items: center; gap: 4px; }
     .mp-record-step-buttons .mp-page-button { border-color: var(--mp-ui-line); background: var(--mp-ui-surface); }
     .mp-form-status { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; }
@@ -142,7 +142,8 @@
     .o_web_client .o_form_view .o_form_sheet .oe_title { margin-bottom: 24px; }
     .o_web_client .o_form_view .o_form_sheet .oe_title > h1 { min-height: 0; margin-bottom: 0; }
     .o_web_client .o_form_view .o_form_sheet > .o_group { margin-block: 24px; }
-    .o_web_client .o_form_view .o_form_sheet .o_horizontal_separator { font-size: 14px; font-weight: 600; text-transform: none !important; }
+    .o_web_client .o_form_view .o_form_sheet { border-color: var(--mp-ui-line); }
+    .o_web_client .o_form_view .o_form_sheet .o_horizontal_separator { font-size: 14px; font-weight: 600; text-transform: none !important; box-shadow: 0 1px 0 var(--mp-ui-line); }
     .o_web_client .o_form_view .o_form_sheet .o_form_label { color: var(--mp-ui-muted); font-size: 12px; font-weight: 500; }
     .o_web_client .o_form_sheet .o_field_widget:not(.o_readonly_modifier) :is(input.o_input, textarea.o_input) {
         border: 1px solid var(--mp-ui-control-line); border-radius: 5px; min-height: 34px; padding: 6px 10px;
