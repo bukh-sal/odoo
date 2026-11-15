@@ -6,7 +6,7 @@ const source = (await readFile(new URL("../framework_addons/web/static/src/inter
     .replace(/^import .*;\r?\n/gm, "");
 let serial = 0;
 async function fixture(props = {}) {
-    const focused = [], effects = [], destination = {};
+    const focused = [], effects = [], destination = {}, ui = { isSmall: true };
     const refs = {
         trigger: { el: { focus: () => focused.push("trigger") } },
         context: { el: { focus: () => focused.push("context"), contains: node => node === destination } },
@@ -16,15 +16,17 @@ async function fixture(props = {}) {
     globalThis.appLayoutFixture = {
         Component: class { constructor(props) { this.props = props; this.env = { isSmall: true }; } },
         Icon: class {}, useChildSubEnv: () => {}, useContextPreference: () => ({collapsed:false,toggle(){}}),
+        useService: name => { assert.equal(name, "ui"); return ui; },
+        document: { activeElement: null },
         useState: value => value, useRef: name => refs[name],
         useEffect: callback => effects.push(callback),
         _t: value => value, uniqueId: prefix => prefix + ++ids,
     };
-    const prefix = "const {Component,Icon,useChildSubEnv,useContextPreference,useState,useRef,useEffect,_t,uniqueId}=globalThis.appLayoutFixture;\n";
+    const prefix = "const {Component,Icon,useService,document,useChildSubEnv,useContextPreference,useState,useRef,useEffect,_t,uniqueId}=globalThis.appLayoutFixture;\n";
     const { AppLayout } = await import("data:text/javascript;base64," + Buffer.from(prefix + source).toString("base64") + "#" + serial++);
     const layout = new AppLayout({ ...AppLayout.defaultProps, contextTitle: "Long workspace destinations", ...props });
     layout.setup();
-    return { layout, focused, destination, flush: () => effects.forEach(callback => callback()) };
+    return { layout, ui, focused, destination, flush: () => effects.forEach(callback => callback()) };
 }
 
 test("context opener and Escape request the correct focus targets", async () => {
@@ -71,4 +73,22 @@ test("losing an open context clears its state and requests work-area focus", asy
     assert.deepEqual(f.focused, ["context", "content"]);
     f.layout.props.showContext = true;f.flush();
     assert.equal(f.layout.state.contextOpen, false);
+});
+
+test("breakpoint state follows the UI service, not the unsubscribed environment accessor", async () => {
+    const f = await fixture();
+    f.ui.isSmall = false;
+    assert.equal(f.layout.env.isSmall, true);
+    assert.equal(f.layout.contextExpanded, true);
+    f.layout.contextPreference.collapsed = true;
+    assert.equal(f.layout.contextCollapsed, true);
+    f.ui.isSmall = true;
+    assert.equal(f.layout.contextCollapsed, false);
+    assert.equal(f.layout.contextExpanded, false);
+    f.layout.toggleContext(); f.flush();
+    assert.equal(f.layout.contextExpanded, true);
+    f.ui.isSmall = false; f.flush();
+    assert.equal(f.layout.state.contextOpen, false);
+    assert.equal(f.layout.contextExpanded, false);
+    assert.equal(f.layout.contextPreference.collapsed, true);
 });

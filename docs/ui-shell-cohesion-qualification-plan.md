@@ -137,7 +137,8 @@ was touched. See [bounded installed proof](evidence/G7/20261115-ui-shell030-inst
 Actual desktop-to-narrow and inverse resize exposed stale AppLayout opener
 semantics before another component interaction. CSS responds, but merely reading
 `env.isSmall` does not subscribe the custom layout to the installed UI service's
-reactive breakpoint. Before the next candidate, subscribe through the existing
+reactive breakpoint. The native Shell uses the same unobserved accessor, so cover
+both owners with the same correction. Before the next candidate, subscribe through the existing
 UI service rather than a second matchMedia implementation; use that reactive
 value consistently for expanded/collapsed state, toggling and resize cleanup.
 Retain the standalone/dialog fallback and existing slot/portal/draft lifecycle.

@@ -44,6 +44,7 @@ export class Shell extends Component {
         this.action = useService("action");
         this.command = useService("command");
         this.dialog = useService("dialog");
+        this.ui = useService("ui");
         this.state = useState({ revision: 0, contextOpen: false });
         useSubEnv({ interfaceContextTarget: ".mp-shell-context-controls" });
         this.contextPreference = useContextPreference(() => this.current?.pluginID);
@@ -53,9 +54,9 @@ export class Shell extends Component {
             if (this.state.contextOpen) this.context.el?.focus();
         }, () => [this.state.contextOpen]);
         useEffect(() => {
-            if (!this.env.isSmall) this.state.contextOpen = false;
+            if (!this.ui.isSmall) this.state.contextOpen = false;
             if (this.contextCollapsed && this.context.el?.contains(document.activeElement)) this.contextTrigger.el?.focus();
-        }, () => [this.env.isSmall, this.contextCollapsed]);
+        }, () => [this.ui.isSmall, this.contextCollapsed]);
         useBus(this.env.bus, "MENUS:APP-CHANGED", () => this.state.revision++);
         useBus(this.env.bus, "ACTION_MANAGER:UI-UPDATED", () => {
             this.state.revision++;
@@ -115,13 +116,13 @@ export class Shell extends Component {
         const workspace = new URLSearchParams(browser.location.search).get("workspace");
         browser.open("/odoo" + (workspace ? "?workspace=" + encodeURIComponent(workspace) : ""), "_blank", "noopener");
     }
-    get contextCollapsed() { return !this.env.isSmall && this.contextPreference.collapsed; }
-    get contextExpanded() { return this.env.isSmall ? this.state.contextOpen : !this.contextPreference.collapsed; }
+    get contextCollapsed() { return !this.ui.isSmall && this.contextPreference.collapsed; }
+    get contextExpanded() { return this.ui.isSmall ? this.state.contextOpen : !this.contextPreference.collapsed; }
     get contextToggleLabel() {
         return this.contextExpanded ? _t("Collapse %s navigation", this.current?.name || "") : _t("Expand %s navigation", this.current?.name || "");
     }
     toggleContext() {
-        if (this.env.isSmall) this.state.contextOpen = !this.state.contextOpen;
+        if (this.ui.isSmall) this.state.contextOpen = !this.state.contextOpen;
         else this.contextPreference.toggle();
     }
     closeContext(event) {

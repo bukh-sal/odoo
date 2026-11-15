@@ -1,0 +1,51 @@
+{
+  "result": "source_breakpoint_correction_verified_not_installed",
+  "base_commit": "6004ad5856a",
+  "candidate": "0.2.31_unpublished",
+  "source_sha256": {
+    "framework_addons/web/static/src/interface/app_layout.js": "ecfe330185db87b16f3a2700d6d59b8811f0e23b0078974becc1bdebe59c5467",
+    "framework_addons/web/static/src/webclient/shell/shell.js": "227104b43e376657c93059a51e163049ee3d8f3b3d98a7891facb24500a02d91",
+    "framework_addons/web/__manifest__.py": "79651a534c3723007eb8523758d89d8b271d03d38e91cd49a17eab3d0c5c3af6",
+    "framework_addons/mp_core/__manifest__.py": "301438d412e7b41db86735b4ff76f6aa3cc2c58f0ff84274e2039e85fcc51795",
+    "packages/platform_sdk/modular_platform/projection.py": "c91d23d0b3cea2f88e6264cfa9d6dbc61451ef59076a12520bf58f7f147fb709",
+    "tests/test_app_layout.mjs": "bfc8cf18a553b81f38259ead24ec4d2c4a8e9b46568f7a2f429b602b05519452",
+    "tests/test_shell_navigation.mjs": "c58bb82fe05fcc4574106ca07acf9af4b8ab9698cd6f916305dfe51ce5428c22"
+  },
+  "node_cases": 22,
+  "native_version_cases": 7,
+  "mounted": {
+    "breakpointOnlyBothOwners": true,
+    "actualNativeUseService": true,
+    "noActionEventDuringResize": true,
+    "actualShellAndAppLayout": true,
+    "persistentPortalSameTopbar": true,
+    "oneToggleAndTeardown": true,
+    "retainedContentAndDraft": true,
+    "userAppStorage": true,
+    "nativeCustomSync": true,
+    "narrowEphemeralAndFocus": true,
+    "actualSvgNamespaces": true,
+    "escapedLabels": true,
+    "compiledNativeTemplates": 28,
+    "scope": "Actual Owl/components/native bus in test DOM; menu/action/network/user external boundaries mocked. Not installed browser, real CSS layout or backend qualification."
+  },
+  "old_failure": "Actual mounted Owl, native useService, reactive UI service and original env getter; breakpoint-only update keeps old aria-expanded=true, expectedfalse.",
+  "receipts": {
+    "before-source.json": "9ad5acb6a1708fbe5fc3ae83cab886150f252f0cb7f918bc7287e5cd536ab057",
+    "before.out.txt": "e60a60841045499fdeda2e3f419020d16f6e4f5df27636bd0c9f4317272b00b4",
+    "before-failure.json": "2afa8136c13d2f426ce3b3b923d5d7996dc5a9e9eada5450da158e969ef57386",
+    "mounted.mjs": "f204bc792d0fb536fe1771a90e95b1cec53098822c588dc0e72912067eb1daf8",
+    "after.out.txt": "b5ab478be0b609b585b95f54c927919754287238ae55e9d51f379659c7daa686",
+    "mounted-proof.json": "164100c09a65d3e1497c54701c419a8db2462fe3e120c41ad51cf04d2346a96a",
+    "node.out.txt": "58cc1ee951ed808944c2adaab1ec5136950430ebec3650f94b960012353559ca",
+    "node-final.out.txt": "2d4dd9f8ef0f9798fea1a7f6f24bad1b3bb84eec3903622efdcd295641c4e743",
+    "versions.out.txt": "acfb6a38a641011975f2de5555463c3dcbb4e65e907a8299e8273cf7a76019c6",
+    "versions-final.out.txt": "27f67991ef9b40b537329b9da3db48556aef8ca2f7ea1bdedd181cf8e7ab2add"
+  },
+  "limits": [
+    "No installed correction claim; current18730 stays core30/config3/image787f",
+    "No new image or private archive",
+    "No full UI card acceptance or final canonical",
+    "First new method fixture lacked document/contains; fixture-only correction retained failed log"
+  ]
+}

@@ -1,6 +1,7 @@
 import { Component, useChildSubEnv, useEffect, useRef, useState } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
 import { uniqueId } from "@web/core/utils/functions";
+import { useService } from "@web/core/utils/hooks";
 import { Icon } from "@web/interface/icon";
 import { useContextPreference } from "@web/interface/context_preference";
 
@@ -19,6 +20,7 @@ export class AppLayout extends Component {
     static defaultProps = { showContext: true, className: "", slots: {} };
 
     setup() {
+        this.ui = useService("ui");
         this.state = useState({ contextOpen: false });
         this.contextPreference = useContextPreference(() => this.props.contextKey);
         useChildSubEnv({ interfaceContextTarget: null });
@@ -38,21 +40,21 @@ export class AppLayout extends Component {
             this.focusAfterClose = null;
         }, () => [this.state.contextOpen, this.props.showContext]);
         useEffect(() => {
-            if (!this.env.isSmall) this.state.contextOpen = false;
+            if (!this.ui.isSmall) this.state.contextOpen = false;
             if (this.contextCollapsed && this.context.el?.contains(document.activeElement)) this.trigger.el?.focus();
-        }, () => [this.env.isSmall, this.contextCollapsed]);
+        }, () => [this.ui.isSmall, this.contextCollapsed]);
     }
 
     get contentLabel() { return this.props.contentLabel || _t("Work area"); }
     get toolbarTarget() { return this.env.inDialog ? null : this.env.interfaceContextTarget; }
-    get contextCollapsed() { return !this.env.isSmall && this.contextPreference.collapsed; }
-    get contextExpanded() { return this.env.isSmall ? this.state.contextOpen : !this.contextPreference.collapsed; }
+    get contextCollapsed() { return !this.ui.isSmall && this.contextPreference.collapsed; }
+    get contextExpanded() { return this.ui.isSmall ? this.state.contextOpen : !this.contextPreference.collapsed; }
     get toggleLabel() {
         return this.contextExpanded ? _t("Collapse %s navigation", this.props.contextTitle) : _t("Expand %s navigation", this.props.contextTitle);
     }
     toggleContext() {
         if (!this.props.showContext) return;
-        if (!this.env.isSmall) { this.contextPreference.toggle(); return; }
+        if (!this.ui.isSmall) { this.contextPreference.toggle(); return; }
         if (this.state.contextOpen) this.closeContext("trigger");
         else this.state.contextOpen = true;
     }

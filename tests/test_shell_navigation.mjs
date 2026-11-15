@@ -11,20 +11,20 @@ async function load(relative, fixture) {
 }
 
 async function shellFixture() {
-    const focused = [], effects = [], refs = {};
+    const focused = [], effects = [], refs = {}, ui = {isSmall:true};
     const blank = class {};
     const module = await load('../framework_addons/web/static/src/webclient/shell/shell.js', {
         Icon: blank, useSubEnv: () => {}, useContextPreference: () => ({collapsed:false,toggle(){}}),
         Component: blank, Dialog: class {static props = {};}, Dropdown: blank, DropdownItem: blank,
-        xml: strings => strings.join(''), window: {},
+        xml: strings => strings.join(''), window: {}, document: {activeElement:null},
         ErrorHandler: blank, UserMenu: blank, PageHeader: blank, StatusMessage: blank,
         useEffect: fn => effects.push(fn), useExternalListener: () => {}, useBus: () => {},
-        useState: value => value, useRef: name => refs[name] = {el: {focus: () => focused.push(name)}},
-        useService: name => ({menu:{unavailable:false},action:{},command:{},dialog:{add:()=>{}}})[name],
+        useState: value => value, useRef: name => refs[name] = {el: {focus: () => focused.push(name), contains:()=>false}},
+        useService: name => ({menu:{unavailable:false},action:{},command:{},dialog:{add:()=>{}},ui})[name],
         registry:{category:()=>({contains:()=>false})}, browser:{}, user:{}, _t:value=>value,
     });
     const shell = new module.Shell(); shell.env = {bus:{},isSmall:true}; shell.setup();
-    return {shell, focused, effects, refs};
+    return {shell, ui, focused, effects, refs};
 }
 
 test('native context opening moves focus into its mounted navigation', async () => {
@@ -51,6 +51,21 @@ test('nested handled Escape and closed context do not steal focus or keys', asyn
     assert.equal(f.shell.state.contextOpen,true);
     f.shell.state.contextOpen=false; f.shell.closeContext({...event,defaultPrevented:false});
     assert.deepEqual(f.focused,[]); assert.deepEqual(calls,[]);
+});
+
+test('native sidebar follows service breakpoint changes and retains desktop preference', async () => {
+    const f=await shellFixture();
+    f.ui.isSmall=false;
+    assert.equal(f.shell.env.isSmall,true);
+    assert.equal(f.shell.contextExpanded,true);
+    f.shell.contextPreference.collapsed=true;
+    assert.equal(f.shell.contextCollapsed,true);
+    f.ui.isSmall=true;
+    assert.equal(f.shell.contextExpanded,false);
+    f.shell.toggleContext();assert.equal(f.shell.contextExpanded,true);
+    f.ui.isSmall=false;f.effects.forEach(effect=>effect());
+    assert.equal(f.shell.state.contextOpen,false);
+    assert.equal(f.shell.contextPreference.collapsed,true);
 });
 
 async function appearanceFixture({dark=false,canLeave=true}={}) {

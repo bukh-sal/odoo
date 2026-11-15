@@ -313,3 +313,9 @@ remain localized/escaped through the ordinary renderer. Verify no duplicated
 visible controls in either mode. Native relation links still need the recorded
 shared dark contrast correction; token reuse around a field does not restyle
 the field's own legacy Sass declaration automatically.
+
+The native Shell and Owl AppLayout use the normal web host's reactive UI service
+for breakpoint presentation. Standalone AppLayout and dialog fallback mean no
+shell portal is required; they still use the ordinary web service environment.
+Do not build another matchMedia store or read env.isSmall alone for a component
+that must redraw on resize. This changes no application routes or authority.
