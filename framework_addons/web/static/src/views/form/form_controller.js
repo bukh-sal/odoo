@@ -737,9 +737,9 @@ export class FormController extends Component {
         const root = this.rootRef.el;
         if (document.activeElement !== document.body && !root?.contains(document.activeElement)) return;
         const target = requested.kind === "command" ? this.editButton.el : root?.querySelector(
-            '.o_form_sheet .o_field_widget input:not([disabled]):not([readonly]):not([type="hidden"]), ' +
-            '.o_form_sheet .o_field_widget textarea:not([disabled]):not([readonly]), ' +
-            '.o_form_sheet .o_field_widget select:not([disabled]):not([readonly])'
+            '.o_content .o_field_widget input:not([disabled]):not([readonly]):not([type="hidden"]), ' +
+            '.o_content .o_field_widget textarea:not([disabled]):not([readonly]), ' +
+            '.o_content .o_field_widget select:not([disabled]):not([readonly])'
         );
         target?.focus({ preventScroll: true });
     }

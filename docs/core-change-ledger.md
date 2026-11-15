@@ -1,3 +1,7 @@
+## Pre-approval native layout correction0.2.21 -15November2026
+
+Actual no-sheet Owl/native focus witness fails exact20 (assertion, exit1); candidate20 remains built/staged/unregistered, never approved/applied.21 scopes focus to native content instead of requiring a sheet. Exact old failure/current sheet+no-sheet successes retained; all mode/storage/authority/callback contracts otherwise unchanged.50currentNode/10affected identity checks/freeze pass;66prior source checks and32compiled unchanged templates remain scoped, not counted again. No installed21 claim until normal new immutable maintenance.
+
 ## Native read-first interaction source0.2.20 -15November2026
 
 Deliberately replace editing-first on standard full-page existing records using existing native modes and explicit Edit. New/dialog/custom persist/forcedreadonly controls retain contract. Normal Save/Discard/pager switch only after successful existing callback; refusal/error keeps draft; destroyed/replaced controllers and external focus guarded. Clean-editing optional status preserves legacy callers. Medium ordinary warning; no native storage/grant/leave/autosave/public wire/app/lock change.50Node66Python/32Owl/freeze122 pass, actual initial producer predecessor-red, real native component/mode/save pipeline with fake ORM boundary passes. Actual immutable installed qualification next, not claimed source-only.

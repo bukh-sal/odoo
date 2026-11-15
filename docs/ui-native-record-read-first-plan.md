@@ -87,3 +87,20 @@ Then finish the original RTL/real200%zoom/motion/contrast/current-authority/
 optional-app matrix and one final frozen canonical. Do not start another full
 suite while this interaction source is still being refined. No formal a11y,
 production/publication or broad support claim; original UI0of4 until cards pass.
+
+## Pre-approval general-layout counterexample
+
+Candidate0.2.20 was built/audited/staged and an unregistered proposal prepared,
+but was NOT approved/applied. A real Owl/native field witness with a standard
+form content region and no sheet exposed a focus defect: the first-field selector
+required `.o_form_sheet`. The framework supports such forms; that accidental
+restriction is not intentional. Preserve its candidate/proposal and failing log.
+
+Reserve unpublished0.2.21/core19.0.0.2.21/web19.0.2.21.0 for the corrected
+successor. Scope focus to the existing `.o_content` region, covering both sheet
+and ordinary native form layouts. Keep every other mode, callback, guard and
+dependency byte unchanged. Prove the no-sheet witness red on20/green on21 and
+retain the sheet proof; source/component/identity checks, fresh clean image,
+normal new stage/proposal/approval/maintenance only. Never register the retired
+20proposal2600d4ca-d643-4f78-888d-9b75a591ae79. Main stays config17/core19 while
+preparing; no uncertain write/recovery or live patch exists.
