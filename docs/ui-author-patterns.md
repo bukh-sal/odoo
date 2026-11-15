@@ -347,7 +347,7 @@ reminder or finish with the saved task without pretending to roll it back.
 These are source-qualified contracts until the installed successor passes.
 # Informational records and app-owned sections
 
-Use `RecordSection` for a truthful informational card (title, optional icon,
+`RecordSection` and `RecordTabs` require core>=0.2.33. Use `RecordSection` for a truthful informational card (title, optional icon,
 heading level, action/default slots), and controlled `RecordTabs` for section
 navigation. The owner supplies stable unique tab/panel IDs, current selection and
 an awaited selection callback. Tabs support manual keyboard activation, logical

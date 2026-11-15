@@ -1,0 +1,320 @@
+{
+  "source": "e59b24d056f88568d8318d2961243df1bf2efca3",
+  "core": {
+    "apply_seconds": 155.688,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 7,
+    "image_id": "sha256:939ae0eedcff8e66de03a39c5349388668c96438366e0afb31d9bbfa32f696c1",
+    "operation_id": "3aed18ed-6f4d-4ce5-88c3-48f0ff55a8a8",
+    "plan_hash": "sha256:327ab2aba2e19447d9e2f936492b4f43012da71c724c052627b09b84716e0478",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal core operation completed; verification-only source-backed control epoch disposition; UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 6,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 3,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 1,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "terminal_job_control_epoch_reconciled": true,
+    "worker_id": "34d9ec0cfb593b6899ddcdfcd61296a52b266ca76d8dfe1a250aa0ba6b9b52a6"
+  },
+  "apps": {
+    "apply_seconds": 155.015,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 8,
+    "image_id": "sha256:40c876ef0e01b28fb7ecd33932187a6ac99aed1a022551287b0ed06849de287d",
+    "obsolete_native_view_retired": true,
+    "operation_id": "4ac58a4a-9796-4b75-9643-d83e70e0ed2c",
+    "plan_hash": "sha256:84546eb5e57a1a9f471df0276c0ac760e570c52f8d6684a41fc2514bc9d0a543",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal app operation completed; verification-only control epoch disposition; UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 6,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 3,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 1,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "terminal_job_control_bound_to_actual_ready_receipt": true,
+    "worker_id": "7f0cec55c1eeb2c0db4bbf7bc77eb32651059abb7b49481d665eabd2e117812c",
+    "workspace_policy_epoch_increment": 1
+  },
+  "audits": {
+    "core": {
+      "image_id": "sha256:939ae0eedcff8e66de03a39c5349388668c96438366e0afb31d9bbfa32f696c1",
+      "image_tar_sha256": "8fae5c8fe924e475866094edac7ce814642dc00ddb9bc8b5c5021477de3497d5",
+      "layers": [
+        {
+          "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+          "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+          "index": 0
+        },
+        {
+          "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+          "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+          "index": 1
+        },
+        {
+          "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+          "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+          "index": 2
+        },
+        {
+          "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+          "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+          "index": 3
+        },
+        {
+          "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+          "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+          "index": 4
+        },
+        {
+          "diff_id": "sha256:30b3d83e92f4ff1b58bc83ec56c308cf1b435ee9f454ee0d285dcc17c9f6d0ef",
+          "digest": "sha256:7a1089ce8213e02b4bc7208c09a601e451b890f7e6098a6f4970b75fc588a618",
+          "index": 5
+        },
+        {
+          "diff_id": "sha256:3b85382dbb000a77d8cf691f91ff4c79f3d2212bd155a916a1702b49d71f7dbd",
+          "digest": "sha256:89fc315dff58f4486b12ad12cee9036c860dff63c94f105b052cb65e45568ab7",
+          "index": 6
+        },
+        {
+          "diff_id": "sha256:8da2302f3c793a8f9ee527816263af22dbd6f4884cbe2229f77e7cc68b3adc1f",
+          "digest": "sha256:742f1a542a35f1d1650e898041ef531675d746c81cb6998ba75fb46744c8cb35",
+          "index": 7
+        },
+        {
+          "diff_id": "sha256:0f732c345112c62f4ff799d7b6524f647e45b562afe17c2b1816e38a098ec8a7",
+          "digest": "sha256:e345e31f7008d37b980ed0c66b13136942a641e7b5fd6f64c6ec31f07396a027",
+          "index": 8
+        },
+        {
+          "diff_id": "sha256:8c020628d305b188ec917b08efc75c4dda03832200613b33b50d56df3f3f68a1",
+          "digest": "sha256:dd27f9ff1bbda69ca2c3b7f6296e17bee8befcad53708a7439976269d4b68ed4",
+          "index": 9
+        },
+        {
+          "diff_id": "sha256:fd796af1854f5a35877e162ef1d96175b96d3d43dbafba7d6c1c69ab728c6330",
+          "digest": "sha256:9f34b16cfd397c0bfbe3c2c8fa7bbecefdc499c1b82b421bb3fa3997fc1c60ec",
+          "index": 10
+        },
+        {
+          "diff_id": "sha256:66c9c31ee369351311437d63503cb0eb01d0049d854840147df3df6887c3e5e2",
+          "digest": "sha256:c910949985e64497821578ff1ccb7960e89971ab570714eed3288b94b03bfc48",
+          "index": 11
+        },
+        {
+          "diff_id": "sha256:b45ebc7ca7a582073e56c9e0cd57514df226d0419ea27d22c22f65eec0307ad1",
+          "digest": "sha256:d38b7d5f21cec778d94a2423dab25fe5d07abb97b6be57880df3720f9b222fd9",
+          "index": 12
+        },
+        {
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "index": 13
+        }
+      ],
+      "non_project_whiteouts": [
+        "/etc/apt/sources.list.d/.wh.debian.sources"
+      ],
+      "project_files": 3809,
+      "result": "exact-clean-final-layers-passed",
+      "source_image_not_final_ancestor": true
+    },
+    "apps": {
+      "image_id": "sha256:40c876ef0e01b28fb7ecd33932187a6ac99aed1a022551287b0ed06849de287d",
+      "image_tar_sha256": "7faba30556c1d35dc94db5173f1bafbf115cd49bc1d2a509f9d3fa64623d69c0",
+      "layers": [
+        {
+          "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+          "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+          "index": 0
+        },
+        {
+          "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+          "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+          "index": 1
+        },
+        {
+          "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+          "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+          "index": 2
+        },
+        {
+          "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+          "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+          "index": 3
+        },
+        {
+          "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+          "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+          "index": 4
+        },
+        {
+          "diff_id": "sha256:30b3d83e92f4ff1b58bc83ec56c308cf1b435ee9f454ee0d285dcc17c9f6d0ef",
+          "digest": "sha256:7a1089ce8213e02b4bc7208c09a601e451b890f7e6098a6f4970b75fc588a618",
+          "index": 5
+        },
+        {
+          "diff_id": "sha256:da3fb8b43bd77041a26dfcbbd45785c0d4100412816cfdf9b60d69551ba05dc6",
+          "digest": "sha256:4bedb7806ce585c8649530e1d5d46fb1b27e5af9399f724bd318e6959e3903cd",
+          "index": 6
+        },
+        {
+          "diff_id": "sha256:276c092b641d1adf2e7ea30b5c55e894d5115bab9e981e7ce0f4bbebafa95028",
+          "digest": "sha256:c6d74b2c239d2a6ad1a14316def62a66c97d3d89eecec5f5d89378c1a60b4849",
+          "index": 7
+        },
+        {
+          "diff_id": "sha256:fcba3e2d9f5250f2f7518e2a3c0bc96d1e7cfe6c594d92f7ac29c519ae7634b0",
+          "digest": "sha256:21082acefc8bf2c86540f0738adaa9d60ec06fb0b5befe1020ed38a6366ff753",
+          "index": 8
+        },
+        {
+          "diff_id": "sha256:b84902729c7a551b349c94c34cd03e2f0eedfb35bf5ed2b714061ee5255ed3e6",
+          "digest": "sha256:9cb86fbea2a24dfcc132e43b79c8322506c0b522ec9330e7e597ea9bd369442c",
+          "index": 9
+        },
+        {
+          "diff_id": "sha256:9a2b6b9b745cd5d746d64952f0e3a1cf6b2ddae24760f8c20322bc259cdbbc13",
+          "digest": "sha256:6e4be5ae2af1452587dbfd89678c32d3830b79380104c38e0c160c2e084a7bb2",
+          "index": 10
+        },
+        {
+          "diff_id": "sha256:0b8d81fce10a8d7b1ff66d5a9d2592b334999484945b0b81198d1fe6e4b043df",
+          "digest": "sha256:7bdf524dd5a4e2f6c7f2bf07f510b902eca2c7c972b2d3ba6c65ad3186c82060",
+          "index": 11
+        },
+        {
+          "diff_id": "sha256:fd641b143cd4151298472f8975f45f8c02bb9aa28313f58d85f4366acd0d26c0",
+          "digest": "sha256:29b83c5ff3847388a7ddbba626dab076a3a46f88fbad11eaaf5b1d9c5cf38c06",
+          "index": 12
+        },
+        {
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "index": 13
+        }
+      ],
+      "non_project_whiteouts": [
+        "/etc/apt/sources.list.d/.wh.debian.sources"
+      ],
+      "project_files": 3810,
+      "result": "exact-clean-final-layers-passed",
+      "source_image_not_final_ancestor": true
+    }
+  },
+  "verification_continuations": {
+    "core": {
+      "actual_image_source_sha256": "08d073dfe3ed6637b995f2a73109dcb9f4e9f14b7b8de41bd1e3ef4157ff011c",
+      "cause": "Private oracle incorrectly expected terminal job lifecycle control epochs to remain unchanged",
+      "changed_fields": [
+        "claim_generation",
+        "dispatch_generation",
+        "release_digest"
+      ],
+      "completed_attempt_result_payload_actor_input_key_schedule_exact": true,
+      "fresh_observer": true,
+      "lifecycle_source_sha256": "08d073dfe3ed6637b995f2a73109dcb9f4e9f14b7b8de41bd1e3ef4157ff011c",
+      "reminder_notice_outbox_and_every_other_table_field_exact": true,
+      "scope": "Verification only; original apply completed; no reapply",
+      "utc": "2026-11-15T14:13:32.936190+00:00"
+    },
+    "apps": {
+      "before_job_generation": 17,
+      "cause": "Private fixed dispatch increment incorrectly assumed current control generation equals the terminal job generation",
+      "changed_job_fields": [
+        "claim_generation",
+        "dispatch_generation",
+        "release_digest"
+      ],
+      "completed_attempt_result_payload_actor_input_key_schedule_exact": true,
+      "fresh_observer": true,
+      "lifecycle_source_sha256": "08d073dfe3ed6637b995f2a73109dcb9f4e9f14b7b8de41bd1e3ef4157ff011c",
+      "live_enabled_generation": 21,
+      "ready_generation": 20,
+      "ready_receipt_sha256": "e8778eae7698d99058341d48f2f3d5158f8d6db09568303771bcf2e43d74dcfd",
+      "reminder_notice_outbox_every_other_business_field_exact": true,
+      "scope": "Verification only; original apply completed; no reapply",
+      "utc": "2026-11-15T14:20:09.454613+00:00",
+      "workspace_policy_epoch_increment": 1
+    }
+  },
+  "obsolete_view": {
+    "exact_view_xmlid_absent": true,
+    "no_manual_sql": true,
+    "normal_native_xml_cleanup": true,
+    "surviving_app_views_exact_except_reviewed_owner_arch": true,
+    "view_id": 236,
+    "xmlid": "mp_delivery.view_partner_customer_work"
+  },
+  "browser": {
+    "native_owner_informational_overview": true,
+    "actual_native_field_formatting": true,
+    "native_edit_draft_discard_restores": true,
+    "manual_tab_keyboard": true,
+    "narrow_css_width390_no_horizontal_overflow": true,
+    "true_zoom": false,
+    "actual_task_reader_with_real_customer_and_pinned_file": true,
+    "console_errors_warnings": 0,
+    "no_business_writes": true,
+    "all22tables_exact": true,
+    "app_contribution_accepted": false,
+    "contact_creation_executed": false
+  },
+  "screenshots": {
+    "customer-before-translation-fix.png": "b6d218c312c25856eee97ffb92a1190322b2843635552140e39b5d614dd6c6c5",
+    "customer-narrow-before-fix.png": "709a730481a2104eb3e1553e5fa318a736d4daeafae4cd8fc2b8aa53b4faa128",
+    "task-reader.png": "ffd65c4ff1eb89c8d3272814318dea3b1eb30f349a1e7a0b78bc643fce0b9f33"
+  },
+  "findings": [
+    "Owner rejects native lazy TranslatedString descriptor registered before translations load; Work tab unavailable; identity translator fixture missed native class/timing",
+    "Readonly native header/traversal and extra sheet padding waste vertical space, especially narrow",
+    "Existing section separator margin stacks with new grid gap; preserve legacy utility and normalize new cards",
+    "Native gear/sort/account glyphs still use legacy icons"
+  ],
+  "next_plan": "docs/ui-record-rendered-corrections-plan.md",
+  "scope": "Partial installed informational qualification. Work contribution and visual density unaccepted; full UI0/4 goal remains active."
+}
