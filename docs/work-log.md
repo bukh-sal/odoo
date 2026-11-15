@@ -2883,3 +2883,6 @@ Owner native collection direction and five local references reviewed. Source cor
 
 
 15November2026: core17 image14layers3790files and144.328s normal maintenance pass. Actual in-app3page165-record directory/group122-record2page check, dark group/chip and dialog action proofs captured. Synthetic fixture163creates retains3global originals/17other tables/all original history; initial count assumption stopped before intent/mutation. Partners0.1.3 source refines declared widths/optional-hidden technical columns/plain description/fullspan Notes;2actual inherited-display Node+5app source tests pass. Normal app archive/build/upgrade and actual UI still next.
+
+
+15November2026: private Partners9667ce1/0.1.3 archive06d8f48d29454B, onef41a69e2candidate, normal85d1237dtwo-scope upgrade149.141s/config13. Actual desktop header/query/columns/page3 and Notes heading/fullwidth960.95px, narrow314.02px at390x845 verified; no UI save/draft. Original and Sample166rows plus other17tables/history/tenothers exact. Visually critique next native form actionstrip/sparse fieldgrid, unnamed Notes control/columnchooser and absent list h1; nextsharedpass must address these together, not accept screenshots as finalquality.

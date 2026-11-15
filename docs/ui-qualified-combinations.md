@@ -1,16 +1,20 @@
 # Shared UI qualification and support boundaries
 
-Latest populated installed combination is core0.2.17 with Workboard0.2.14 and
-Partners0.1.2; the other three private app pins remain unchanged. The
+Latest populated installed combination is core0.2.17, Partners0.1.3,
+Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5. The
 [core17 record](evidence/G7/20261115-ui-core017-polish-qualification/qualification.json)
-proves normal144.328s maintenance/checkpoint, exact18tables/full history/ten other
-sites, real3-page navigation and separately paged Person group, corrected dark
-facet/group contrast and shared dialog action style. A measured390px viewport
-retains the query/footer. An intentional163-row Sample-labelled directory fixture
-uses normal Alice service calls; all3original cross-workspace partner rows and
-17other business/authority tables are preserved. Long-name column balance and
-Notes heading need the prepared Partners0.1.3 declaration successor. Native narrow
-header wrapping, full original matrix and final canonical remain open, UI0/4.
+proves real3-page directory/group paging and shared dark/action corrections.
+The [Partners refinement](evidence/G7/20261115-ui-partners013-native-qualification/qualification.json)
+proves normal149.141s two-scope upgrade with exact core/four other app pins,
+166global partners including the owned Sample fixture, other17tables/full history
+and ten protected sites. Actual desktop description/balanced columns/optional
+technical columns and heading-above-full-width Notes at desktop/390px pass.
+
+Remaining observed findings are the native form action strip/density, unlabelled
+Notes control, missing collection level1 heading/column chooser name, narrow
+header/scrollbar presentation, and the original RTL/realzoom/motion/contrast/
+authority/optional-app matrix. Final canonical waits for final source freeze.
+This is continued Meridian-led critique, not final visual acceptance. UI0/4.
 Historical source qualifications retain their original scope.
 
 

@@ -398,3 +398,6 @@ Core16 normal152.39s maintenance and actual title/query/footer/empty/group/dirty
 
 
 Core17 normally installed once144.328s (656905f8), exactcheckpoint/18tables/fullhistory/tenothers/fivepins. Actual3page plus Person-group2page navigation, corrected dark group/facet and dialog action style, measured390px fit verified.163explicit Sample records created via ordinary scoped service with preserved3originals/17other tables/history; no authority change. Actual long-name column squeeze/Notes heading drive a legitimate private Partners0.1.3 successor; no app-specific core branch. UI0/4 unchanged.
+
+
+Partners0.1.3 normally installed149.141s (85d1237d) on unchangedcore17/fourotherarchives. Actual native columns/subtitle/optional technical fields and fullwidth Notes heading atdesktop390px verified. All166partners/17other tables/fullhistory/tenothers exact. Shared native form anatomy/field and chooser names/title heading/narrow controls remain observed findings; fullUI0/4 and finalcanonical still open.

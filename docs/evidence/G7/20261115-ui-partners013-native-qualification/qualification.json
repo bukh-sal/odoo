@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "source_commit": "f7380c7b4ac1572c810a0402aa44d2de41d6a30f",
+  "private_partners_commit": "9667ce1531d5ced00a74a6c52eb9c1af42eec7cc",
+  "version": "0.1.3",
+  "artifact": {
+    "bytes": 29454,
+    "digest": "sha256:06d8f48dbef8056c0d36433465d73d51909e0503dd7ca6ab86bc6cc6111b8536",
+    "file": "dev.local.partners-0.1.3.mplug",
+    "version": "0.1.3"
+  },
+  "image_id": "sha256:f41a69e21a4b7f2d7575de79619c07daf4fdf6987944d1650ed7302da3757807",
+  "configuration": 13,
+  "operation_id": "85d1237d-262d-4e1d-8430-72b2b6433101",
+  "plan_hash": "sha256:6ec2f4d66408df76026105c329c38a3aa53d401a10ea6fa3062dc6468160c3f7",
+  "apply_seconds": 149.141,
+  "checkpoint_manifest_sha256": "aee3aab06e51a57b0cb80519cde6c346b3ad919f850eaf7932ca2c222aef7c09",
+  "core_unchanged": "0.2.17",
+  "unchanged_other_app_archives": 4,
+  "proof": {
+    "actual_inherited_display_node": 2,
+    "app_source_python": 5,
+    "deterministic_archive": true,
+    "image_layer_audit": true
+  },
+  "installed_browser": {
+    "native_list_description": true,
+    "balanced_declared_columns": true,
+    "phone_revision_optional_hidden": true,
+    "actual_page3_range": "161\u2013165 of165",
+    "notes_heading_above_field": true,
+    "notes_desktop_width": 960.95,
+    "notes_desktop_sheet_width": 1010.75,
+    "notes_narrow_width": 314.02,
+    "narrow_viewport": {
+      "width": 390,
+      "height": 845
+    },
+    "original_and_fixture_partners_exact": 166,
+    "other_business_authority_tables_exact": 17,
+    "full_job_outbox_exact": true,
+    "other_targets_exact": 10,
+    "no_browser_save": true,
+    "appearance": "light",
+    "viewport_reset": true,
+    "open_findings": [
+      "Native form action strip/field density and empty-field treatment still behind Meridian",
+      "Native Notes text control has no programmatic accessible name",
+      "Table main title lacks level1 heading; optional columns button lacks accessible name",
+      "Narrow header action wrapping and native scrollbar presentation",
+      "Full RTL/realzoom/motion/authority/optional-app matrix and finalcanonical remain"
+    ]
+  },
+  "screenshot_sha256": {
+    "notes-form-desktop-light.jpg": "7527243e82a65c6c7c4abd66047bdbb05381f5f8ed49b6238c06c3105716b294",
+    "notes-form-narrow390-light.jpg": "bbe97789b7e279ee733a4ed7e97e963241f3f6b593d860f42c06baf5a9f932c3",
+    "partners-directory-light.jpg": "20feb563deb179316bd6be5a7a4c677f34fea2071934afaaa186674d88ca6b13",
+    "partners-pagination-light.jpg": "fa8f852b8e8c6f29530015afe658b518979401b4a4d268a386ce4858c4d20503"
+  },
+  "ui_phase_acceptance": "0/4",
+  "limitations": [
+    "No final canonical on this changed combination yet",
+    "Source/API/compiler checks are not substitutes for remaining installed matrix",
+    "Form record traversal remains inherited and needs distinct navigation presentation"
+  ]
+}

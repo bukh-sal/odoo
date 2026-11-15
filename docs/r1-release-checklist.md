@@ -95,3 +95,6 @@ checkpoint/base images and existing databases retain their recovery roles.
 Optional improvements excluded from this closure: Canvas polish or new features,
 a wholesale WebClient/shell rewrite, additional design-system work, and R2/R3.
 The required accessibility and fresh-developer observations are included in the gate evidence.
+
+
+UI continuation15November: installed core17 and Partners1.3 directory/form refinements have bounded normal/native/in-app proof. Full UI-D03..06 acceptance remains0/4. Open actual findings: native form composition/field density, Notes accessible name, list main heading/column chooser name, narrow header/scrollbar; original RTL/zoom/motion/contrast/authority/optional-app cards and finalcanonical remain. Prior R1/PP acceptance unchanged.
