@@ -269,3 +269,15 @@ canonical and original evidence audit. Owner enabled full CDP; refreshed current
 API still exposes no CDP/media controls, so no guessed methods or fake media.
 Current preview normal zoom; historical36/37 actual200% retained. Motion still
 off/unverified. Full originalUI0/4 active, no live operation or fixture.
+
+
+## Terminal regression finding and correction
+
+The first source40 canonical finished981tests/978pass/one failure/two existing
+skips. Its exact assertion was observing != stale: a real newer heartbeat was
+read after synthetic now had been calculated from an older observation. The
+[reconciliation plan](ui-final-regression-reconciliation-plan.md) precedes the
+test-only fixed clock and explicit newer-heartbeat counterexample. Seven focused
+checks pass; production observer and all4106/4012candidate source inputs remain
+exact. The failed full run stays failed. A new full canonical on the corrected
+test source is required before D06 acceptance; no image rebuild/version change.

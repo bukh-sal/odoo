@@ -100,3 +100,15 @@ snapshots equal all22populated and six empty-core tables to post40 baselines.
 Only the final frozen-source canonical terminal result and release-evidence audit
 remain for D06. A running process or earlier green source is not final acceptance.
 Private receipts bind the one active run's PID and Windows creation time.
+
+
+## Terminal regression finding and correction
+
+The first source40 canonical finished981tests/978pass/one failure/two existing
+skips. Its exact assertion was observing != stale: a real newer heartbeat was
+read after synthetic now had been calculated from an older observation. The
+[reconciliation plan](ui-final-regression-reconciliation-plan.md) precedes the
+test-only fixed clock and explicit newer-heartbeat counterexample. Seven focused
+checks pass; production observer and all4106/4012candidate source inputs remain
+exact. The failed full run stays failed. A new full canonical on the corrected
+test source is required before D06 acceptance; no image rebuild/version change.

@@ -1,0 +1,35 @@
+{
+  "utc": "2026-11-15T21:59:56.135369+00:00",
+  "only_non_documentation_delta": [
+    "tests/test_operation_progress.py"
+  ],
+  "production_observer_sha256": "f2bba1df8a51ddad34d6504245d5ca2d0288c394f9c3cb9de75bb74b4a49d136",
+  "images_unchanged": {
+    "populated": {
+      "image_id": "sha256:9335a01e023b1de8de0652732a946b1e77f2a492064a4cc38e79cc7756329854",
+      "record_sha256": "ecb98cc2c2d0298ead61827411c0594c3aa3896f3890ede54588b08ce0489486",
+      "curated_inputs_exact": 4106
+    },
+    "core": {
+      "image_id": "sha256:d30bb72ef80ec59d3389eb85c6ffc7fd560f77890666121f2ffa2cf9f1a297a5",
+      "record_sha256": "b500585c1ae46fdf7247a955a3fe34774369f105dc4f3ee3e135cc5b56cafdbe",
+      "curated_inputs_exact": 4012
+    }
+  },
+  "private_heads_exact": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "focused": {
+    "tests": 7,
+    "pass": 7,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 39.16,
+    "log_sha256": "f241aa56141dddf472c95acf22abfe792849a7867463e25567de0659adefcf31"
+  },
+  "scope": "Test-only deterministic clock and newer-heartbeat counterexample; no product or image change. Failed canonical retained; new full run still required."
+}

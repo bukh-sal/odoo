@@ -404,8 +404,8 @@ import { RecordSection, RecordTabs } from "@web/interface/record_sections";
 // The owner supplies localized plain labels and unique DOM panel IDs.
 get sectionItems() {
     return [
-        { id: "overview", panelId: "customer-overview", label: _t("Overview") },
-        { id: "work", panelId: "customer-work", label: _t("Work") },
+        { id: "overview", panelId: "customer-overview", label: String(_t("Overview")) },
+        { id: "work", panelId: "customer-work", label: String(_t("Work")) },
     ];
 }
 async selectSection(id) {
@@ -427,6 +427,9 @@ async selectSection(id) {
 </div>
 ```
 
+Initialize the owner's `state.section` to `overview`, and resolve these labels
+in the mounted owner after translation readiness. `RecordTabs` requires plain
+strings; do not pass an early lazy `TranslatedString` descriptor as its label.
 The owner must render every declared panel with matching ID/label, including
 its Work panel; the excerpt only shows Overview. Keep drafts mounted when
 needed. A section label is not permission or a promise of unavailable data.

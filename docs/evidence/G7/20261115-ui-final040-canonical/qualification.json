@@ -1,0 +1,21 @@
+{
+  "source": "748c5e32b3b4480ac7471b7b7a8a06301a26544b",
+  "frozen_files_exact": 8199,
+  "private_heads_exact": true,
+  "tests": 981,
+  "passed": 978,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 2,
+  "trace_assertion": "'observing' != 'stale'",
+  "cause": "Artificial now from older record while actual heartbeat advances; latest observation can correctly remain fresh.",
+  "exit": {
+    "exit": 1,
+    "seconds": 5080.5,
+    "pid": 28852,
+    "windows_creation_filetime": 134392482456224040,
+    "finished_utc": "2026-11-15T21:55:26.119452+00:00",
+    "log_sha256": "85a57f87565deef4e150d57ce9976e39d70f8d14d125cce9877515415774f5b6"
+  },
+  "corrective_plan": "docs/ui-final-regression-reconciliation-plan.md"
+}

@@ -1,3 +1,17 @@
+## Canonical40 observation-clock test race -16November2026
+
+First full run completed981cases/978pass/onefailure/two existing skips in5080.5s.
+The terminal trace confirms older-heartbeat artificial now versus newer live
+record; observing is correct, stale assertion raced the actual heartbeat. Source
+and five private trees stayed exact through terminal. Wrote reconciliation plan
+before changing only test_operation_progress.py: fixed clock in actual context/
+thread/OS-file test preserves all assertions; new latest-heartbeat fixture proves
+fresh/stale/clock-change independently. Focused7pass39.160s. Production observer
+and actual candidate4106/4012curated input maps remain exact, no build/version/
+site/authority mutation. Failed canonical receipt remains failed; final corrected
+full run required. D03-D05pass3/4, D06pending. Author example also resolves lazy
+translated labels to the required plain strings after translation readiness.
+
 ## Final source40 browser matrix and acceptance reconciliation -15November2026
 
 Both immutable40 updates completed normally: populatedconfig16/168.672s and

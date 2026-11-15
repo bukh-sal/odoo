@@ -86,3 +86,15 @@ frozen executable/app input map, exact failures/skips, current evidence links an
 private/public boundaries; commit only the intended documentation/evidence. If a
 failure requires source changes, keep D06 open and record that concrete finding
 before deciding its correction. A running or earlier green result is not a pass.
+
+
+## Terminal regression finding and correction
+
+The first source40 canonical finished981tests/978pass/one failure/two existing
+skips. Its exact assertion was observing != stale: a real newer heartbeat was
+read after synthetic now had been calculated from an older observation. The
+[reconciliation plan](ui-final-regression-reconciliation-plan.md) precedes the
+test-only fixed clock and explicit newer-heartbeat counterexample. Seven focused
+checks pass; production observer and all4106/4012candidate source inputs remain
+exact. The failed full run stays failed. A new full canonical on the corrected
+test source is required before D06 acceptance; no image rebuild/version change.

@@ -29,12 +29,28 @@ class ProgressTests(unittest.TestCase):
     def test_legacy_absent_is_unknown_not_failed(self):
         self.assertEqual(self.observation()['state'],'not_recorded')
     def test_actual_context_returns_without_claiming_journal_success(self):
-        with observe_execution(self.store,self.op,'apply'):
-            live=self.observation();self.assertEqual(live['state'],'observing');self.assertEqual(live['action'],'apply')
-            observed=datetime.fromisoformat(live['observed_at'])
-            self.assertEqual(read_observation(self.store,self.op,now=observed+timedelta(seconds=21))['state'],'stale')
-            self.assertEqual(read_observation(self.store,self.op,now=observed-timedelta(seconds=1))['state'],'clock_changed')
-        result=self.observation();self.assertEqual(result['state'],'returned');self.assertNotIn('completed',result)
+        # Keep real locks/files/thread, but do not derive synthetic ages from a
+        # timestamp that the concurrent real-clock heartbeat can advance.
+        with patch('operation_progress._now',return_value=datetime.now(timezone.utc)):
+            with observe_execution(self.store,self.op,'apply'):
+                live=self.observation();self.assertEqual(live['state'],'observing');self.assertEqual(live['action'],'apply')
+                observed=datetime.fromisoformat(live['observed_at'])
+                self.assertEqual(read_observation(self.store,self.op,now=observed+timedelta(seconds=21))['state'],'stale')
+                self.assertEqual(read_observation(self.store,self.op,now=observed-timedelta(seconds=1))['state'],'clock_changed')
+            result=self.observation();self.assertEqual(result['state'],'returned');self.assertNotIn('completed',result)
+    def test_newer_heartbeat_age_uses_latest_record_not_prior_read(self):
+        with observe_execution(self.store,self.op,'apply'):pass
+        # The real writer has joined. Supply a valid newer heartbeat fixture
+        # without racing it, preserving actual private-file/binding validation.
+        path=self.store.root/'progress'/(self.op+'.json');value=json.loads(path.read_bytes())
+        earlier=datetime.fromisoformat(value['observed_at'])
+        value.update(state='observing',observed_at=(earlier+timedelta(seconds=5)).isoformat(),elapsed_seconds=value['elapsed_seconds']+5)
+        path.write_text(json.dumps(value))
+        fresh=read_observation(self.store,self.op,now=earlier+timedelta(seconds=21))
+        self.assertEqual(fresh['state'],'observing');self.assertEqual(fresh['age_seconds'],16)
+        self.assertEqual(fresh['observation_state'],'observing');self.assertNotIn('completed',fresh)
+        self.assertEqual(read_observation(self.store,self.op,now=earlier+timedelta(seconds=26))['state'],'stale')
+        self.assertEqual(read_observation(self.store,self.op,now=earlier+timedelta(seconds=4))['state'],'clock_changed')
     def test_exception_retained_and_no_automatic_retry(self):
         calls=[]
         with self.assertRaisesRegex(RuntimeError,'original executor exception'):
