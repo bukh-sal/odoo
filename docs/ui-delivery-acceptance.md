@@ -75,6 +75,10 @@ history or pretend the entire SDK stayed unchanged.
 | Final canonical on frozen40 | **Pending.** One `tests/run_host_regression.py` process, PID/Windows creation time bound privately; process-local verified ripgrep. Observe to terminal; do not rerun on an observation timeout. Historical36:971cases/969pass/two existing skips. |
 | Final support/evidence/local commit and retained demo audit | Current support/author/acceptance records reconciled; final canonical receipt and final audit remain pending. Local-only, retained own sites/checkpoints/images, no publication or cleanup. |
 
+The [local review walkthrough](ui-local-review-walkthrough.md) identifies both
+retained sites, the useful existing journey, private credential/state locations,
+actual zoom versus responsive testing and exact retained-resource boundaries.
+
 ## Remaining action
 
 Observe the one current canonical process to its real terminal result. Check the
