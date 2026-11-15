@@ -58,6 +58,10 @@ WEB_APPEARANCE_READER_AFTER='7e01deba6fb7b6007b3ce34dd9984b156adbbe8d0940bc33ca6
 WEB_BOOTSTRAP_VIEW_PATH='addons/web/views/webclient_templates.xml'
 WEB_BOOTSTRAP_VIEW_BEFORE='075e913c055a049b1b4c4647dc4cac15b4ec500ac27c66d351372ab93a359458'
 WEB_BOOTSTRAP_VIEW_AFTER='e60f16121067bfeb3dfbafe24d8ab54605573f5d46de240dbad5f6b3a8cb1eae'
+# ADR0091: synchronize only the validated current-user presentation language.
+WEB_LOCALE_READER_PATH=WEB_APPEARANCE_READER_PATH
+WEB_LOCALE_READER_BEFORE=WEB_APPEARANCE_READER_AFTER
+WEB_LOCALE_READER_AFTER='eada15def5a6756eab93e0e76f67cc0a3d88ae189c54b882c4429256cdf55f63'
 
 
 def require_web_presentation_manifest(previous,target,files):
@@ -181,6 +185,9 @@ def validate_core_upgrade(base,runtime,descriptor):
     reviewed_bootstrap=('web' in allowed
         and old.get(WEB_BOOTSTRAP_VIEW_PATH)==WEB_BOOTSTRAP_VIEW_BEFORE
         and new.get(WEB_BOOTSTRAP_VIEW_PATH)==WEB_BOOTSTRAP_VIEW_AFTER)
+    reviewed_locale=('web' in allowed
+        and old.get(WEB_LOCALE_READER_PATH)==WEB_LOCALE_READER_BEFORE
+        and new.get(WEB_LOCALE_READER_PATH)==WEB_LOCALE_READER_AFTER)
     parser_changed=PARSER_PATH in changed
     if parser_changed and (not reviewed_transition(before,after) or 'mp_compat' not in allowed
             or 'addons/mp_compat/__manifest__.py' not in changed):
@@ -189,6 +196,7 @@ def validate_core_upgrade(base,runtime,descriptor):
         raise OperatorError('Core upgrade cannot alter generated patch attestations')
     if any(not name.startswith(prefixes) and name!=web_manifest and not (parser_changed and name==PARSER_PATH)
            and not (reviewed_appearance and name==WEB_APPEARANCE_READER_PATH)
+           and not (reviewed_locale and name==WEB_LOCALE_READER_PATH)
            and not (reviewed_bootstrap and name==WEB_BOOTSTRAP_VIEW_PATH) for name in changed):
         raise OperatorError('Core upgrade includes packaged/upstream/unsupported native changes')
     touched={name for name in allowed if any(path.startswith(f'addons/{name}/') for path in changed)}

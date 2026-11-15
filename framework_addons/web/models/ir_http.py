@@ -69,9 +69,14 @@ class IrHttp(models.AbstractModel):
         request.future_response.set_cookie('cids', max_age=0)
 
     def webclient_rendering_context(self):
+        session_info = self.session_info()
+        language = session_info.get('user_context', {}).get('lang')
+        if language:
+            # session_info refreshes the session; assets read the current env.
+            request.update_context(lang=language)
         return {
             'color_scheme': self.color_scheme(),
-            'session_info': self.session_info(),
+            'session_info': session_info,
         }
 
     def color_scheme(self):

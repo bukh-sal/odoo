@@ -72,6 +72,10 @@
 /* Shared native collection frame and model-driven table pagination. */
 .mp-search-filter-label { display: none; }
 @media screen {
+    /* App-declared shared cards already frame a full-page native reader. */
+    .mp-shell-action > .o_action_manager > .o_form_view .o_form_readonly .o_form_sheet:has(> .mp-record-surface) {
+        border: 0; box-shadow: none; background: transparent;
+    }
     .o_web_client .mp-native-table-controls { padding: 24px 24px 16px !important; gap: 20px !important; }
     .mp-native-table-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px 24px; }
     .mp-native-table-heading { flex: 1; min-width: 0; }

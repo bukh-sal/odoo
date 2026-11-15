@@ -298,7 +298,8 @@ class CoreUpgrade(unittest.TestCase):
     def test_reviewed_appearance_reader_hashes_bind_only_the_current_presentation_method(self):
         import hashlib
         from modular_platform.release_staging import WEB_APPEARANCE_READER_PATH,WEB_APPEARANCE_READER_BEFORE,WEB_APPEARANCE_READER_AFTER
-        source=(ROOT/'framework_addons/web/models/ir_http.py').read_bytes()
+        from test_web_locale_rendering import before_locale_fix
+        source=before_locale_fix((ROOT/'framework_addons/web/models/ir_http.py').read_text(encoding='utf-8')).encode()
         changed=b'        selected = request.httprequest.cookies.get("color_scheme")\n        return "dark" if selected == "dark" else "light"'
         self.assertEqual(source.count(changed),1)
         original=source.replace(changed,b'        return "light"',1)
@@ -312,6 +313,42 @@ class CoreUpgrade(unittest.TestCase):
         self.base['inventory']['files'][WEB_BOOTSTRAP_VIEW_PATH]=WEB_BOOTSTRAP_VIEW_BEFORE
         self.runtime['inventory']['files'][WEB_BOOTSTRAP_VIEW_PATH]=WEB_BOOTSTRAP_VIEW_AFTER
         return WEB_BOOTSTRAP_VIEW_PATH
+
+    def locale_reader_transition(self):
+        from modular_platform.release_staging import WEB_LOCALE_READER_PATH,WEB_LOCALE_READER_BEFORE,WEB_LOCALE_READER_AFTER
+        self.web_transition()
+        self.base['inventory']['files'][WEB_LOCALE_READER_PATH]=WEB_LOCALE_READER_BEFORE
+        self.runtime['inventory']['files'][WEB_LOCALE_READER_PATH]=WEB_LOCALE_READER_AFTER
+        return WEB_LOCALE_READER_PATH
+
+    def test_exact_locale_reader_is_reconstructed_and_forged_review_refuses(self):
+        path=self.locale_reader_transition();bundle=self.prepare()
+        validator=staged.StagedPlans.validator(self)
+        validator.observer.read=lambda:{'sites':[copy.deepcopy(self.site)],'runtime':copy.deepcopy(self.base)}
+        self.assertEqual(validator(bundle),self.document['state'])
+        forged=copy.deepcopy(bundle)
+        next(r for r in forged['operation_lock']['platform_source_diff'] if r['path']==path)['target_sha256']='8'*64
+        forged['plan']['dependency_lock_digest']=data_digest(forged['operation_lock'])
+        forged['plan_hash']=plan_hash(forged['plan']);forged['display']=_display(forged['plan'],forged['operation_lock'])
+        with self.assertRaisesRegex(OperatorError,'reconstruction'):validator(forged)
+
+    def test_locale_pair_does_not_admit_unknown_missing_or_other_backend(self):
+        path=self.locale_reader_transition()
+        for case in ('unknown_before','unknown_after','missing_before','missing_after','controller','other_model'):
+            base=copy.deepcopy(self.base);runtime=copy.deepcopy(self.runtime)
+            if case=='unknown_before':base['inventory']['files'][path]='0'*64
+            elif case=='unknown_after':runtime['inventory']['files'][path]='0'*64
+            elif case=='missing_before':base['inventory']['files'].pop(path)
+            elif case=='missing_after':runtime['inventory']['files'].pop(path)
+            else:runtime['inventory']['files'][{'controller':'addons/web/controllers/home.py','other_model':'addons/web/models/res_users.py'}[case]]='0'*64
+            with self.subTest(case=case),self.assertRaises(OperatorError):validate_core_upgrade(base,runtime,self.descriptor)
+
+    def test_locale_reader_requires_versioned_core_not_static_or_plugin_deploy(self):
+        self.locale_reader_transition()
+        with self.assertRaises(OperatorError):validate_platform_deploy(self.base,self.runtime,self.descriptor)
+        with self.assertRaises(OperatorError):validate_plugin_core_stability(self.base,self.runtime)
+        self.runtime['native_manifests']['web']['version']=self.base['native_manifests']['web']['version']
+        with self.assertRaises(OperatorError):validate_core_upgrade(self.base,self.runtime,self.descriptor)
 
     def test_exact_bootstrap_metadata_is_reconstructed_and_forged_review_refuses(self):
         path=self.bootstrap_metadata_transition();bundle=self.prepare()
