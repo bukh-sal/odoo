@@ -1,0 +1,50 @@
+{
+  "status": "partial_not_accepted",
+  "scope": "Current original UI interaction matrix; no new executable source",
+  "source": "a7b8cb9e93d8c2587eab007a7133c6302b8f248c",
+  "configuration": 28,
+  "zoom_keyboard_attempt": {
+    "key": "ctrl+plus",
+    "before": {
+      "documentWidth": 1363,
+      "dpr": 1.100000023841858,
+      "height": 789,
+      "meta": "width=device-width, initial-scale=1",
+      "outerHeight": 1016,
+      "outerWidth": 1904,
+      "scale": 1,
+      "viewportWidth": 1362.727294921875,
+      "width": 1363
+    },
+    "after": {
+      "documentWidth": 1363,
+      "dpr": 1.100000023841858,
+      "height": 789,
+      "outerHeight": 1016,
+      "outerWidth": 1904,
+      "scale": 1,
+      "viewportWidth": 1362.727294921875,
+      "width": 1363
+    }
+  },
+  "real_200_zoom_pass": false,
+  "css_or_media_injection": false,
+  "viewport_substituted_for_zoom": false,
+  "native_control": "Native preview-control inspection met unusable window coordinates. A later window-view action was stopped before input when human input was detected; no blind retry. Leave that native window under human control.",
+  "retention": {
+    "full_history_exact": true,
+    "other_targets_exact": 10,
+    "source_map_exact": 4086,
+    "tables_exact": 18,
+    "target_exact": true
+  },
+  "remaining": [
+    "Rendered full contrast including actual3.546 checksum failure",
+    "Keyboard/focus matrix",
+    "Genuine200%browser zoom",
+    "Actual reduced motion",
+    "Current authority/optional absence/current eight-addon default/final canonical"
+  ],
+  "phase_acceptance": "UI0/4 original full goal ACTIVE; no replacement objective",
+  "limit": "No formal accessibility or completed zoom/motion/interaction claim"
+}
