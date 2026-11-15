@@ -4,6 +4,14 @@
 
 ## Starting point
 
+**Owner refinement15November2026:** [record and shell direction](ui-record-and-shell-direction.md)
+now makes create presentation author-selectable (dialog/sheet/page), detail pages
+informational first with explicit Edit and optional app contributions, and adds
+persistent collapsible context, a unified modern icon family, complete removal of
+legacy branding and coherent breadcrumbs. [Shell cohesion](ui-shell-cohesion-plan.md)
+is the next detailed implementation plan. Preserve every original acceptance
+card below; later creation/record plans are written at entry, not speculated now.
+
 | What to carry forward | Evidence or consequence |
 | --- | --- |
 | Installed control | Platform source `8f42230bd26`, evidence commit `61407aeb754`. Core 0.2.7, Partners 0.1.0, Workboard 0.2.11, Documents 0.1.7. The local demo on port 18608 is the visual and behavioral comparison. Preserve it and the five earlier demo targets. |
