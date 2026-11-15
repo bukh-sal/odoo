@@ -1,0 +1,347 @@
+{
+  "utc": "2026-11-15T18:00:12.241825+00:00",
+  "source": "25808668b3ec459ca0f824511b9978cf1dcb17c0",
+  "receipts": {
+    ".local/ui-final-core036-combinations-01/core/complete.json": "15deb0e38696f5bb2e37b07731e318e071dbb5349975a66c9b029e73f3cd8633",
+    ".local/ui-final-core036-combinations-01/single/complete.json": "f123e4815f228bcdc5646d02747ce66f4947642f8425c3bbec86034514af818c",
+    ".local/ui-final-core036-site-01/complete.json": "456d0f6b396d045fdd84b19675326d6143f2cb118e7ebea8abcb8251b14de5bc",
+    ".local/ui-final-core036-site-01/browser-empty.json": "f07d3e387957489f46493a093d63c51331a5ef40a6b42fd3d47cea83f8fea075",
+    ".local/ui-final-single036-01/complete.json": "a6be63b57a16cf882992b16e73aff52b274e070ecb084175d4f8bf01df6cb35b",
+    ".local/ui-final-single036-01/business/verified.json": "ae2b5360de040c3e96e4cae467b07c1dc41dc3dd82b577aab38782ae5bc601a7",
+    ".local/ui-final-single036-01/business/final.json": "00e1c7cba384ef397c73551eed404b35f0bb203b2a7813dd1c5273be2b88e002",
+    ".local/ui-final-single036-01/suspend/complete.json": "daaca824e0ddcc65c39d7ae8b1260a00f2d3c8da7115e23e743e1bc42f879579",
+    ".local/ui-final-single036-01/enable/complete.json": "51febbc7029ae96d483ff476dc75231f0b4e9de410d704f5edee5453ba8b7064",
+    ".local/ui-final-single036-01/uninstall/complete.json": "1e24283704898fe904f91733b6152181334e6ddc9223b28553fa93ea83e1150e",
+    ".local/ui-final-single036-01/remove/complete.json": "19db39f33282a80feb66d7bb08078e1aa8a1d12817404dccc3a6a316ebb860c6",
+    ".local/ui-final-subtraction036-01/continuation/complete.json": "e1503b9ac9685ffcfb032a7c7c9f383e5139106f6e68a4a264d56177e9f4651f",
+    ".local/ui-final-pinned036-01/verified.json": "0e881f334370aed7ce0441c2449cbdb00c1768cd5a718a219e54609a2aaf28c1",
+    ".local/ui-final-pinned036-01/final-verified.json": "304b6739a61fa46db219be10227c3015a23f2489a8fa34dbc8b36737a96024eb",
+    ".local/ui-final-pinned036-01/browser-summary.json": "61b828ed40141dacccef147df24bd9439c45a261cf411c8dc4c32ca0ff0b863b",
+    ".local/ui-final-single036-01/remove/browser-summary.json": "93ec4efdc84b2733b15c205b0af372057783d2681d22e667dbae1a31bde1f2c5"
+  },
+  "populated": {
+    "target_sha256": "ee32c04226c3d89b7fc89619c90d0a0efd2cc7f4054e06849bf3cd8bef2ef25e",
+    "business22tables_exact_after_known_notes_and_version_uploads": true,
+    "partners": 4,
+    "tasks": 2,
+    "versions": 2,
+    "outbox": 9,
+    "original_bytes_and_pinned_v1_retained": true
+  },
+  "zero_core": {
+    "addons": 8,
+    "artifacts": 0,
+    "audit": {
+      "image_id": "sha256:3661934c05d3fe9e7fc86e9a5135580220b7d7ea1539b4915eac64d8f25d2134",
+      "image_tar_sha256": "a1ca6552085669b09cefae59796e89d0d8c3fcfeee7c907cb77a9cf1c6caa360",
+      "layers": [
+        {
+          "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+          "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+          "index": 0
+        },
+        {
+          "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+          "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+          "index": 1
+        },
+        {
+          "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+          "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+          "index": 2
+        },
+        {
+          "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+          "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+          "index": 3
+        },
+        {
+          "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+          "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+          "index": 4
+        },
+        {
+          "diff_id": "sha256:c5df3642a3d3150cbf1df9a1d53e7ce23f9caaa7096c356ec7871d0340b5fe0f",
+          "digest": "sha256:22fb4f9703ead538e99b0c94b7f8a4167bb75a31aa7fe8ef41518a4df972ccbf",
+          "index": 5
+        },
+        {
+          "diff_id": "sha256:17eaf3ea9c23526387b45b33bae6f32694a2438cb204dff83148283187037617",
+          "digest": "sha256:b8c0a7ff420c347fa97f28d00209f115a0f9952c2e7a774ab6719cca5f95f8f5",
+          "index": 6
+        },
+        {
+          "diff_id": "sha256:afc96c2aed3a2fb5b580fb1d89df1d575bcab3185eeb757770a06499afc411f5",
+          "digest": "sha256:27396dedebbd23d9c89aab474ea35fec2e59a52964aa0675b9891cc205634c75",
+          "index": 7
+        },
+        {
+          "diff_id": "sha256:51e6fff2da57863ec404cf04afca129df1db459f523a36f68a4380b08fcf2c17",
+          "digest": "sha256:1772f12cb9d842e4d29b267c3b5c8051f9cf1682911603bc98aae595616bf84b",
+          "index": 8
+        },
+        {
+          "diff_id": "sha256:68a9a0333fb29753709b428090c1da2f98b3a8455805c25cdce1c9abb8365e5c",
+          "digest": "sha256:ac54f40735fa4bf395fbcb258ecdc6b9620a58aa67bbda300236f11376833ec9",
+          "index": 9
+        },
+        {
+          "diff_id": "sha256:66a4fb4e628e30081c21a73c92bd66ff79e7d3138f23a8acb0fbd81387f7ab40",
+          "digest": "sha256:422e9f1332e4dd72e4dc542fad676120300f771b090411655d4fe24c0e453d0a",
+          "index": 10
+        },
+        {
+          "diff_id": "sha256:202e87fe1dd6ec991a44036368ef0e47f0c7cf1b19b87f9f874c2d50ba0172d2",
+          "digest": "sha256:45fa83a11aefe972741577b2b0e29e24e1b24d1eac05111c24314e8ec79f0a48",
+          "index": 11
+        },
+        {
+          "diff_id": "sha256:c18d583b48faeb4e36ffa90d812ab6abd8830314809f456bd617c6d27ed5b88c",
+          "digest": "sha256:373928ca151eed684eb684b2987f66ab137b89db031b80f7320db8bab10ef375",
+          "index": 12
+        },
+        {
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "index": 13
+        }
+      ],
+      "non_project_whiteouts": [
+        "/etc/apt/sources.list.d/.wh.debian.sources"
+      ],
+      "project_files": 3731,
+      "result": "exact-clean-final-layers-passed",
+      "source_image_not_final_ancestor": true
+    },
+    "build_record": "docs\\evidence\\G7\\20261115-ui-final036-core-01\\candidate-build.json",
+    "build_record_sha256": "5064d979c8509db093fbca1e0b5446c68234ea2fac469a9697105db5e0fd5eeb",
+    "core_files_exact": true,
+    "image_id": "sha256:3661934c05d3fe9e7fc86e9a5135580220b7d7ea1539b4915eac64d8f25d2134",
+    "protected_targets_exact": true,
+    "python_exact": true,
+    "source": "25808668b3ec459ca0f824511b9978cf1dcb17c0"
+  },
+  "single_core": {
+    "addons": 9,
+    "artifacts": 1,
+    "audit": {
+      "image_id": "sha256:767a50aee6e951d3709ca0bd511004004a02de63b16d158788f16a3d0d2790b5",
+      "image_tar_sha256": "42e0fe214d989b45ad4234c8ba8b3196f623fa93ceff26a1f281ad66ab11a63c",
+      "layers": [
+        {
+          "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+          "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+          "index": 0
+        },
+        {
+          "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+          "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+          "index": 1
+        },
+        {
+          "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+          "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+          "index": 2
+        },
+        {
+          "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+          "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+          "index": 3
+        },
+        {
+          "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+          "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+          "index": 4
+        },
+        {
+          "diff_id": "sha256:8d68c6841aa10b700980919ee9d8a3fc289ddd560bb5c92c4e190fbaa70b226b",
+          "digest": "sha256:f961d6251a9cf4e49f6ab1428f5a62a7cd783e3837def4cd96c78c4babe9f930",
+          "index": 5
+        },
+        {
+          "diff_id": "sha256:709c6a950e68475fbd67361db1d98d592d5331749a34bada6c9eb1c74712f099",
+          "digest": "sha256:9b5ee9ceee3f704a2c2bcaa003a0b9b871c153e0e47ae026dd89f4520a18b7ad",
+          "index": 6
+        },
+        {
+          "diff_id": "sha256:88820337ea0fe7cc0fb185b2398cd258c8900df228ab4f327818f9af6b0d760c",
+          "digest": "sha256:19850942a0bb2bce02996fd20f1cad341a72b12d4f9e8f9483b09abbcb569005",
+          "index": 7
+        },
+        {
+          "diff_id": "sha256:d622e640fd64671127516f4786e43d7d999140dc20ff0f6ce525f0dc61025bdf",
+          "digest": "sha256:1a0a22c4468212b34352a50465b1b399681c13ea3270d139a5634daee7705c33",
+          "index": 8
+        },
+        {
+          "diff_id": "sha256:8903c32977a8b38ec4cc807a85175699da752af0f5cb1727b46271037a1daf38",
+          "digest": "sha256:6d67b4ff565fe8ce2333f523bec0565ae9892b49cc24b65588c0ecf379659dcf",
+          "index": 9
+        },
+        {
+          "diff_id": "sha256:d45e3460b48c3684b0553c499a560a70c46726cb15d4c8a94ff801428aa1d6f9",
+          "digest": "sha256:85d055bee63f32565e717b6317b73c3179e84213562a4f699b183e730cfc10a8",
+          "index": 10
+        },
+        {
+          "diff_id": "sha256:5915ea1b624b68f3ee442615fb9297dc6fc48885d2073fe1df1a734b29b7bb4c",
+          "digest": "sha256:7fdb2ef0795500998c996321fb9f21b881f4babaf75528f4c1c6242acf937635",
+          "index": 11
+        },
+        {
+          "diff_id": "sha256:43da12c4b53acae0c90e4103e89fb83af9cacc9c39d2279bf05747d40d41af33",
+          "digest": "sha256:226748e95476f7b22b4f591897ae3e7d2ca30ee39f7562ac0c6bdf97e0c502d2",
+          "index": 12
+        },
+        {
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "index": 13
+        }
+      ],
+      "non_project_whiteouts": [
+        "/etc/apt/sources.list.d/.wh.debian.sources"
+      ],
+      "project_files": 3748,
+      "result": "exact-clean-final-layers-passed",
+      "source_image_not_final_ancestor": true
+    },
+    "build_record": "docs\\evidence\\G7\\20261115-ui-final036-single-01\\candidate-build.json",
+    "build_record_sha256": "976a13ca3d66987c6bbec0d93a1ffa9807e0a89873ab9bf660e919cdc16242e9",
+    "core_files_exact": true,
+    "image_id": "sha256:767a50aee6e951d3709ca0bd511004004a02de63b16d158788f16a3d0d2790b5",
+    "protected_targets_exact": true,
+    "python_exact": true,
+    "source": "25808668b3ec459ca0f824511b9978cf1dcb17c0"
+  },
+  "single_install": {
+    "checkpoint_verified": true,
+    "features": 2,
+    "generation": 2,
+    "image_id": "sha256:767a50aee6e951d3709ca0bd511004004a02de63b16d158788f16a3d0d2790b5",
+    "native_modules": 9,
+    "operation_id": "93d67369-43e7-43e0-8945-0e970049dc2a",
+    "other_authority_business_exact": true,
+    "plan_hash": "sha256:82cee9ef9e059cdd590d7d64db152a11296fd6599ff6e167aaae6e9acc487780",
+    "raw_installations": 1,
+    "scope": "Verification-only after completed normal apply; original saved native module shape uses addon, not name. No operation replay. Actual one-app/companion-absence browser proof next.",
+    "target_sha256": "f0ecf250c478612a00c1e2648946baa07e176c8a86520ed9b20ee6f69ea35461"
+  },
+  "feature_suspend": {
+    "generation": 2,
+    "operation_id": "8ed71ac1-e61a-4b9e-8254-8ac1cf99f17c",
+    "plan_hash": "sha256:220e5accea1d2714544ae76ab47a705724e5f088a30df21555883a97a7659934",
+    "scope": "suspend A only, B enabled, same release/image/native version, checkpoint and business/current memberships/grants exact",
+    "target_sha256": "b20f5bee993e57da7aec73f9b4e6444baee604df262c69404b526758b25eb86c"
+  },
+  "feature_enable": {
+    "generation": 2,
+    "operation_id": "61f16974-4a5b-4c78-aed0-59b1fc769244",
+    "plan_hash": "sha256:a5cc671d92f2f94a98faaf80a46574c0ef7af785d3fdd5c28d516f32346a7231",
+    "scope": "enable A only, B enabled, same release/image/native version, checkpoint and business/current memberships/grants exact",
+    "target_sha256": "256842586e31320de4cef11d93ead59c7329664d91b44c6b9a79f144330f4354"
+  },
+  "native_uninstall": {
+    "checkpoint_verified": true,
+    "core_authority_and_prior_outbox_business_exact": true,
+    "generation": 3,
+    "image_id": "sha256:767a50aee6e951d3709ca0bd511004004a02de63b16d158788f16a3d0d2790b5",
+    "operation_id": "4d62559a-ac15-4eb9-975c-6832b077f644",
+    "plan_hash": "sha256:77a3eef3d1ae9e6b90ce1b859f89e42395442aa5247891b0a9f3e0dffaa32acb",
+    "scope": "uninstall completed normally; installed8, zero bindings, retained tombstones/history/checkpoint, actual stale-route browser next",
+    "target_sha256": "4fcecdbf66371fe1f6c3fc6b7f15f627a3347919d8503752a17120f5bbc269f2"
+  },
+  "source_remove": {
+    "checkpoint_verified": true,
+    "core_authority_and_prior_outbox_business_exact": true,
+    "generation": 4,
+    "image_id": "sha256:b022283ad177be96d4c35ff740bde844ef5ef7c4fae18d1d2f6be38a339be2a2",
+    "operation_id": "d1c6e7d0-a3b8-4a40-ba5c-f6510aaa80a0",
+    "plan_hash": "sha256:fc9f9bca83605bd08475f71b89fbbb29adc52ab14189f4051bcda239d672992f",
+    "scope": "remove completed normally; installed8, zero bindings, retained tombstones/history/checkpoint, actual stale-route browser next",
+    "target_sha256": "92e510014914f6d92dd77848273ace5907b139b7169ed353dde5bf6ec9e74087"
+  },
+  "subtraction_continuation": {
+    "audit_sha256": "1150696eaeeae7c45028d3dda0a2e158a7dc10af3123f65fbe74c00858bf94d5",
+    "deploy_changed": false,
+    "exact_subtraction_files": 17,
+    "image_id": "sha256:b022283ad177be96d4c35ff740bde844ef5ef7c4fae18d1d2f6be38a339be2a2",
+    "inventory_digest": "sha256:1b2608d06501ad75095f4662183f2e0f3a51275f5eba15540ba2b2c5d3d76736",
+    "original_failure_sha256": "ee29acb9532daa09a67f73015303ad8999a87c8371f84eb342dc75791ecddccd",
+    "original_private_failure_sha256": "ad9b9e4297cc37f8acf11e514ad3e419f4e9dfc247cb6676455b672c6995f7a3",
+    "owned_input_alias_removed": true,
+    "result": "existing_image_verified_original_producer_exit1_preserved",
+    "runtime_and_rtl_verified": true,
+    "scope": "Image is eligible for separate normal stage/independent approval based on fresh runtime/exact-delta checks. Original build CLI remains failed for tag-finalization; no successful CLI/rewritten build-record claim.",
+    "source_image": "sha256:767a50aee6e951d3709ca0bd511004004a02de63b16d158788f16a3d0d2790b5",
+    "source_stage_and_checkpoint_tags_preserved": true
+  },
+  "pinned_current": {
+    "current_bytes": 302,
+    "current_sha256": "63d16e8803c1afbce33203dd83a24d79c421443ba420a3500ff0cc42e4cead49",
+    "current_version_id": "47f3a770-c846-4745-803a-1657de202131",
+    "one_version_event": true,
+    "original_blobs_versions_preserved": true,
+    "other_business_authority_exact": true,
+    "pinned_bytes": 218,
+    "pinned_link_exact": true,
+    "pinned_sha256": "6e6b024702e11e0736249f7483b1131b75dc44fcf3b2cc2d46b5f3d0e11842f0",
+    "pinned_version_id": "bcf21517-d2c7-4d2a-a26c-eaef19cc67e8"
+  },
+  "pinned_browser": {
+    "current_preview_version": 2,
+    "pinned_preview_version": 1,
+    "newer_current_revision_visible_in_task": true,
+    "task_pin_unchanged": true,
+    "new_tab_link_preserved_task_context": true,
+    "current_download_sha256": "63d16e8803c1afbce33203dd83a24d79c421443ba420a3500ff0cc42e4cead49",
+    "pinned_download_sha256": "6e6b024702e11e0736249f7483b1131b75dc44fcf3b2cc2d46b5f3d0e11842f0",
+    "history_v1_download_sha256": "6e6b024702e11e0736249f7483b1131b75dc44fcf3b2cc2d46b5f3d0e11842f0",
+    "no_trash_restore_remove_actions": true
+  },
+  "stale_route": {
+    "old_record_name_hidden": true,
+    "old_app_destination_absent": true,
+    "source_free_fresh_workspace_healthy": true,
+    "old_record_route_generic_error_still_bad": true,
+    "duplicate_native_errors_retained": true,
+    "no_claim_friendly_absence_complete": true
+  },
+  "zoom": {
+    "user_confirmed_200_percent": true,
+    "viewport_override": false,
+    "populated_css_width": 681,
+    "populated_document_width": 681,
+    "one_app_css_width": 681,
+    "one_app_document_width": 681,
+    "proof": "Human confirmed actual200% following ordinary preview zoom change; no injected style/viewport substitution. Desktop/narrow source36 browser receipts retain original scale."
+  },
+  "motion": {
+    "actual_reduced_media": false,
+    "settings_launch": "Official SystemSettings.exe launch exposed no targetable window; one fresh inventory also empty",
+    "agent_settings_changes": false,
+    "qualified": false
+  },
+  "recovery_applicability": {
+    "historical_source": "7fff9a81fec69c81901c97f82742a9bade557bde",
+    "critical_files_unchanged": {
+      "packages/platform_sdk/modular_platform/native_executor.py": "8e4ba4026f635027bf4ea50b6364ce629aef9b70d5825f7224100531660f2fb9",
+      "packages/platform_sdk/modular_platform/native_uninstall.py": "c04d2e051f41f17309345d9c7b36c5a5debc8aa8af68a4aa9e6e2ae34ddcfab8",
+      "packages/platform_sdk/modular_platform/uninstall_metadata.py": "2f3c227bc8f7ef1e240d358efee0c732aa960769bc505459e6a41ec2264375ba",
+      "packages/platform_sdk/modular_platform/remove_metadata.py": "7abbab897410a7e3193f14cae48ef02c7a2a428d91e7ffeb05d5fa48bce1c618",
+      "packages/platform_sdk/modular_platform/operator_store.py": "07211b5c11f4b82a23b2f3f80cfb4cc4aaba7eee565156ff27e61740b26988ee",
+      "packages/platform_sdk/modular_platform/restore_executor.py": "fd97877a5d203482924d0bccee0334518da7025cc06d9020bc1134bc00b491c6",
+      "packages/platform_sdk/modular_platform/restore_continuation.py": "77819b723ea9bf3560cd6145d28d46fb6f8a6d164754cfd8d486f5b87c329dd5",
+      "packages/platform_sdk/modular_platform/unchanged_recovery.py": "d024f2e3fb94c9aa86f68bbf681c7c77ccc3452dacc55a8f2d8e2f488a7a8171",
+      "packages/platform_sdk/modular_platform/completed_checkpoint.py": "3d2d460653aa1224b1d372e77048f186ad77bf05aae4100f60d905ad710b9e0c",
+      "packages/platform_sdk/modular_platform/checkpoint_recovery_journal.py": "59532903c6b25572851dea65f2b8d99ce10e646fcefdf8101e39a4f9d7350fb1",
+      "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "8fe44ef14932af93b916af0b4702a3c6a6dab15d053c3689e33bbbc1e667d3fc",
+      "packages/platform_sdk/modular_platform/dispatch_operator.py": "0b67d767429dd4eb13b6609b37b294c2f2a8ba2ae705706c1fb73609c4b68838",
+      "packages/platform_sdk/modular_platform/native_feature_executor.py": "63667d646dcf18c6544ad31aba64064d67ca594e2f2d494ee63a964fe31fccec",
+      "packages/platform_sdk/modular_platform/feature_executor.py": "75b7d3b35d9aff2504900e23ed0a0d7fe6e196646a129531f77792181ef1fd69",
+      "packages/platform_sdk/modular_platform/recovery_reviews.py": "85443de3fc31916c3110d513dd8024b1126fbe97254ff802ca1d7f6bfff06f31"
+    },
+    "scope": "Historical controlled native web commit/fresh restore/newer authority overlay/separate resume retains unchanged executor/dispatch/store boundaries. Current36 also directly proves checkpointed normal maintenance and authority restoration; no new fault is claimed. SDK delta is projection/version and reviewed web upgrade source rules, core model delta fixed public conflict guidance only; current private apps qualified separately."
+  },
+  "scope": "Actual source36 zero/one/many/authority/pinned-current/200% progress. Backend lifecycle passes; stale model404/duplicate access dialogs remain a concrete shared presentation failure. Reduced motion and final canonical are not green. Original full UI0/4 remains active."
+}

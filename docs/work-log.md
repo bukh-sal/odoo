@@ -3152,3 +3152,27 @@ rendered bytes are not erased automatically; optional Work denial clears only
 its contribution. Private pre-role/client mistakes stopped before mutation and
 are preserved. All fixtures closed; no new product defect/source change needed.
 Original UI0/4/current canonical/zero-one-absence/zoom-motion cards remain open.
+
+15November2026 current36 matrix: normal clean8/core build3661934c and clean9/
+Partners767a50ae audited, exact core/Python/current Partner archive; fresh18731
+zero-app bootstrap/chooser/empty shell/own jobs/preferences and390px light/dark
+read. Normal93d67369 install156.938s; one synthetic mixed Arabic/English customer
+created via full native page, reader Overview/Contacts and explicit Edit, no
+Work/document companion controls. Normal A-only suspend8ed71ac1/enable61f16974
+preserve record and other authority; fresh denial hides names and healthy reload
+restores. Normal native uninstall4d62559a155.438s then separate exact17-file
+source removed1c6e7d0188.922s; final8addons/0archives/0bindings/current plugins0,
+checkpoint/history retained. Exact subtraction built once but producer exit1 at
+tag finalization: agent overlapped suspension checkpoint tag creation. Guard
+correctly refused; original failures preserved, independently reverified existing
+image/runtime/RTL/all layers and removed only owned input alias; no rebuild,
+forced cleanup or rewritten successful build record. Fresh source-free workspace
+works; OLD model route gets duplicate generic Oops/404 dialogs, so friendly
+absence/error presentation remains unaccepted and needs one coherent source fix.
+Current populated18730 now has original218B pinnedv1 plus302B currentv2, exact
+downloads/previews/new-tab task return, link unchanged; one new version/event,
+all other22-table data/current authority/protected targets exact. Human confirmed
+actual200% preview;681CSS width/nooverflow for native/custom paths. Motion off;
+normal Settings launch had no targetable window, no settings changed. All native
+operations terminal, fixtures closed. Canonical036 remains ONE running process,
+not green; original full UI0/4 active. No product source edited in this section.
