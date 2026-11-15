@@ -1,0 +1,336 @@
+{
+  "source": "d1c041526cf46cc9b06da55f4833e2ec319830f7",
+  "core_operation": "66aa6433-50fd-457f-8b79-b89dfef30b9b",
+  "core_plan": "sha256:ed70fbd0ef8e1460d8cd8a95953afce1193f550eb15ba769478f58b1bfad9c60",
+  "core_apply_seconds": 158.594,
+  "core_image": "sha256:e049a43244c983f7792151990892c2957a34870879c6bf1c35e24351d3ac6da0",
+  "app_operation": "1a50a945-c173-42ae-9bcb-41e71e974201",
+  "app_plan": "sha256:0cae06d75c9bdb187e2907ce376827383c17236d9866085056594e7aba074109",
+  "app_apply_seconds": 164.5,
+  "configuration": 28,
+  "image_id": "sha256:5bf1d698cbe96ba5dd5b466bf702b1435f1cd7452966054e559ef73d39104952",
+  "source_checks": {
+    "private_sources": {
+      "partners": "35bf5b1a7ad4255d560319125bbba4825daf5bb1",
+      "workboard": "cbc227726382df26509cf4183e7246b23453d9b1",
+      "delivery": "b399472e73df2e54df1b15e1321d42d85daf5802",
+      "documents": "e64db3a74b3d228aae929bc2018273475f7be288",
+      "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+    },
+    "core_shipped_files": {
+      "framework_addons/web/static/src/views/fields/text/text_field.xml": "bfc8835cff58e887031155d409495cad6ddb5dd3420ee1b13f042b9bcf19ade0",
+      "framework_addons/web/static/src/interface/surfaces.css": "47540ce4fc349b2fc0db5ab3aae7a62716f608d23dcb18bffbdf026198517ad6",
+      "framework_addons/web/__manifest__.py": "d3ae3f9db435bcd715dcfd793b416f20a156b2dc9ef69325c90d15e1c5f167fd",
+      "framework_addons/mp_core/__manifest__.py": "2215734d4b21138d53997481ee58fa58e0121d833e12396afb339f8075560da1",
+      "packages/platform_sdk/modular_platform/projection.py": "ee1acb0af0cabd142aea4389828259909e32ff2e72471cbf5e256801016f4d58"
+    },
+    "python_tests": 24,
+    "node_tests": 99,
+    "owl": {
+      "nativeCases": 6,
+      "actualNativeInputAndReadonly": true,
+      "automaticDirection": true,
+      "escapingAndBytesPreserved": true,
+      "noInputUpdates": true,
+      "actualAppTemplates": 15,
+      "allAppJSLogicExact": true,
+      "actualPreviewFragmentEscaped": true,
+      "scope": "Actual Owl/native input hook in test DOM; passive layout helpers and external model mocked. Not installed bidi/layout/authority proof."
+    },
+    "css": {
+      "old_rtl_identifier_reversed": true,
+      "new_ltr_rtl_identifier_ltr": true,
+      "content_plaintext": true,
+      "all_unrelated_ltr_rtl_rules_exact": true,
+      "actual_pinned_sass_rtl": true,
+      "scope": "Source compiler only; installed bidi rendering pending"
+    },
+    "scope": "15November2026 content-direction successor: existing shared identifier RTL compiler guard and plaintext paragraph pattern; native TextField auto direction. Five app-owned template/value annotations only, no model/service/security/JS control changes.24affected Python and99Node pass; actual Owl six native read/edit cases,15app templates and escaped preview pass with external boundaries fake; old native template fails. Actual pinned Sass/RTL old identifier flips/newLTR in both, unrelated rules exact. Source-only browser mixed Arabic/English paragraph rendering and noninterpreted markup verified; not installed acceptance. Temporary loopback source fixture closed. Original UI0/4 and full matrix/canonical remain open."
+  },
+  "archives": {
+    "dev.local.delivery": {
+      "bytes": 30661,
+      "digest": "sha256:64327109e2d92bee78b19a832134249154d989cbbe098494aa6862932c3b0b9c",
+      "file": "dev.local.delivery-0.1.8.mplug",
+      "version": "0.1.8"
+    },
+    "dev.local.documents": {
+      "bytes": 52865,
+      "digest": "sha256:45351d478cc9786d9d622b694bb537ed5856763cdc37208b456b175c606ee9eb",
+      "file": "dev.local.documents-0.1.11.mplug",
+      "version": "0.1.11"
+    },
+    "dev.local.partners": {
+      "bytes": 30418,
+      "digest": "sha256:8c3c142e45b641fc5b9aaa06f977128ff73a2da3d350181fdddc567916f482bb",
+      "file": "dev.local.partners-0.1.7.mplug",
+      "version": "0.1.7"
+    },
+    "dev.local.taskfiles": {
+      "bytes": 38429,
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e",
+      "file": "dev.local.taskfiles-0.1.6.mplug",
+      "version": "0.1.6"
+    },
+    "dev.local.workboard": {
+      "bytes": 64448,
+      "digest": "sha256:e38480b2f5698a5c6c9a7c582799bbd4bde491e52c87863afc9716a3e390acb8",
+      "file": "dev.local.workboard-0.2.16.mplug",
+      "version": "0.2.16"
+    }
+  },
+  "installed": {
+    "customer": {
+      "bodyDirection": "rtl",
+      "dir": "rtl",
+      "fields": [
+        {
+          "bidi": "isolate",
+          "direction": "rtl",
+          "name": "kind",
+          "nativeText": [],
+          "text": "Person"
+        },
+        {
+          "bidi": "isolate",
+          "direction": "rtl",
+          "name": "organization_id",
+          "nativeText": [],
+          "text": "Sample · Willow Design 077"
+        },
+        {
+          "bidi": "isolate",
+          "direction": "ltr",
+          "name": "email",
+          "nativeText": [],
+          "text": "person79@sample.example.invalid"
+        },
+        {
+          "bidi": "isolate",
+          "direction": "ltr",
+          "name": "phone",
+          "nativeText": [],
+          "text": "+1 555 010 0079"
+        },
+        {
+          "bidi": "isolate",
+          "direction": "rtl",
+          "name": "notes",
+          "nativeText": [
+            {
+              "bidi": "plaintext",
+              "dir": "auto",
+              "direction": "ltr"
+            }
+          ],
+          "text": "Synthetic UI qualification record. No real person or customer information.\nCreated through the ordinary scoped Partners service.\nPreferred contact time: weekday mornings; email first (sample fixture)."
+        }
+      ],
+      "lang": "ar-001",
+      "page": 1363,
+      "styles": [
+        "/web/assets/b273f60/web.assets_web_print.rtl.min.css",
+        "/web/assets/078f548/web.assets_web.rtl.min.css"
+      ],
+      "width": 1363
+    },
+    "editor": {
+      "focus": "name_0",
+      "identifiers": [
+        {
+          "direction": "ltr",
+          "name": "email"
+        },
+        {
+          "direction": "ltr",
+          "name": "phone"
+        },
+        {
+          "direction": "ltr",
+          "name": "email"
+        },
+        {
+          "direction": "ltr",
+          "name": "phone"
+        }
+      ],
+      "notes": [
+        {
+          "bidi": "plaintext",
+          "dir": "auto",
+          "direction": "ltr",
+          "id": "name_0"
+        },
+        {
+          "bidi": "plaintext",
+          "dir": "auto",
+          "direction": "ltr",
+          "id": "notes_1"
+        }
+      ]
+    },
+    "narrow_customer": {
+      "page": 429,
+      "phone": [
+        {
+          "direction": "ltr",
+          "width": 107.4375
+        },
+        {
+          "direction": "ltr",
+          "width": 0
+        }
+      ],
+      "width": 429
+    },
+    "task": {
+      "fileNames": [
+        {
+          "dir": "auto",
+          "direction": "ltr",
+          "text": "Launch brief.md"
+        },
+        {
+          "dir": null,
+          "direction": "ltr",
+          "text": "Launch brief.md"
+        }
+      ],
+      "page": 1363,
+      "paragraphs": [
+        {
+          "bidi": "plaintext",
+          "dir": "auto",
+          "direction": "ltr",
+          "text": "Agree on the next step, record the decision, and keep the relevant customer context and evidence attached.\nDone means the owner has checked the result and the handoff is clear.\nUI-D05 shared surfaces: reviewed with customer and pinned brief."
+        },
+        {
+          "bidi": "plaintext",
+          "dir": "auto",
+          "direction": "ltr",
+          "text": "The brief is ready. Please check the intended outcome and leave any open questions here before the handoff."
+        }
+      ],
+      "width": 1363
+    },
+    "pinned_preview": {
+      "codes": [
+        {
+          "bidi": "isolate",
+          "direction": "ltr",
+          "text": "40d2741da6a439bb00068216834eab083a14f5947cc8eea3f4c89f8692f70f96"
+        },
+        {
+          "bidi": "isolate",
+          "direction": "ltr",
+          "text": "455bbe049f4c5863e3329deea728e61c81d5c44a96e6bf20a8f4821d13ca061d"
+        }
+      ],
+      "dir": "rtl",
+      "lang": "ar-001",
+      "page": 1363,
+      "pre": [
+        {
+          "bidi": "plaintext",
+          "children": 0,
+          "dir": "auto",
+          "direction": "ltr",
+          "text": "# Launch brief\n\nGoal: make the customer handoff clear.\n\n- Confirm the owner\n- Review the evidence\n- Agree the next step\n"
+        }
+      ],
+      "width": 1363
+    },
+    "narrow_dark_preview": {
+      "page": 390,
+      "pre": [
+        {
+          "background": "rgb(21, 22, 25)",
+          "bidi": "plaintext",
+          "direction": "ltr",
+          "foreground": "rgb(240, 241, 244)"
+        }
+      ],
+      "styles": [
+        "/web/assets/b273f60/web.assets_web_print.rtl.min.css",
+        "/web/assets/4e47926/web.assets_web_dark.rtl.min.css"
+      ],
+      "width": 390
+    },
+    "narrow_hash": {
+      "codes": [
+        {
+          "ancestorBackgrounds": [
+            "rgba(0, 0, 0, 0)",
+            "rgba(0, 0, 0, 0)",
+            "rgb(28, 30, 35)"
+          ],
+          "bidi": "isolate",
+          "color": "rgb(210, 49, 123)",
+          "direction": "ltr",
+          "scroll": 0,
+          "width": 264.460205078125
+        },
+        {
+          "ancestorBackgrounds": [
+            "rgba(0, 0, 0, 0)",
+            "rgba(0, 0, 0, 0)",
+            "rgb(28, 30, 35)"
+          ],
+          "bidi": "isolate",
+          "color": "rgb(210, 49, 123)",
+          "direction": "ltr",
+          "scroll": 0,
+          "width": 264.460205078125
+        }
+      ],
+      "page": 390,
+      "width": 390
+    },
+    "english_first_return": {
+      "bodyDirection": "ltr",
+      "dir": "ltr",
+      "lang": "en-US",
+      "styles": [
+        "/web/assets/820d2dd/web.assets_web_print.min.css",
+        "/web/assets/a4750a7/web.assets_web_dark.min.css"
+      ]
+    },
+    "locale_restoration": {
+      "history_exact": true,
+      "language": "en_US",
+      "only_actor6_language_changed": false,
+      "other_targets_exact": 10,
+      "profiles_semantically_exact": true,
+      "tables_exact": 18,
+      "utc": "2026-11-15T07:16:34.094514+00:00"
+    },
+    "retention": {
+      "full_history_exact": true,
+      "other_targets_exact": 10,
+      "sample_revision": 4,
+      "tables_exact": 18,
+      "utc": "2026-11-15T07:16:36.576575+00:00"
+    }
+  },
+  "rendered_contrast": {
+    "dark_escaped_preview": 16.019393081816,
+    "dark_checksum": 3.5459952836174216,
+    "checksum_normal_text_4_5_pass": false
+  },
+  "findings": [
+    "Phone grouping, email and checksums correctly isolated LTR inside actual RTL UI.",
+    "Native TextField title/Notes edit controls auto-direction and plaintext, Name focus, Cancel preserved.",
+    "Actual task description/comment, Delivery related task/name and Taskfiles filename isolated; linked exact v1 opens in new own tab while current remains v2.",
+    "Actual pinned preview Markdown markers/English punctuation corrected at desktop and390px/lightdark; zero interpreted children; no app/file/pin writes.",
+    "Some static app prose remains English and inherits RTL punctuation; full translation not claimed.",
+    "Checksum legacy pink contrast below4.5: collect with full contrast/keyboard/zoom/motion pass before next source batch."
+  ],
+  "failures_retained": {
+    "first_build": "Built valid five-app successor but rejected core-only scope before deployment; later independently verified/audited/reused under app-only plan, no relabel.",
+    "second_build": "Rejected exact old Taskfiles archive equality after Windows checkout changed three LF source blobs toCRLF. Preserved image; exact Git/installed bytes and five archive digests proved before fresh build03.",
+    "source_selector": "Old Documents test expected exact pre tag attributes; retained failure, escaping test still requires t-esc/no HTML and actual rendered hostile text proof passes.",
+    "native_wait": "First Arabic render took beyond locator observation deadline; no repeat preference submission, settled first document inspected."
+  },
+  "scope": "Installed direction/readability and preservation only; original UI0/4, current full matrix/final canonical still open",
+  "cleanup": false
+}
