@@ -54,3 +54,22 @@ The reference is stronger in hierarchy/density, not an acceptance oracle. Keep
 the real Arabic/RTL,200%zoom, motion/contrast, current authority, optional-app
 cards and final frozen canonical open until directly proved. Preserve original
 failure screenshots and all old operations/evidence. No cleanup/publication.
+
+## Installed declaration counterexample and correction
+
+Partners1.4 normal upgrade completed147.438s/config16 with exact retention.
+Actual desktop inspection rejects its flat col4 layout: intrinsic native grid
+tracks make one field side disproportionately narrow. Long names do soft-wrap
+at390px (textarea client/scroll dimensions match), and revision is hidden.
+The UI save intent was superseded BEFORE any typing; all18tables/full history
+still exact. Retain that intent and screenshot, never rewrite1.4 evidence.
+
+Use Partners1.5/native19.0.0.1.5 for the bounded declaration correction: an
+ordinary outer two-column group containing two ordinary inner groups, yielding
+native col-lg-6 widths via the existing OuterGroup producer. Keep kind/organization/
+active on the first side and email/phone on the second. Revision stays a loaded
+invisible field outside the visual groups; name widget/Notes/data/security unchanged.
+Document this reusable native pattern. No core patch or grid framework is needed.
+One exact app-only build/normal upgrade, then measure both widths and narrow
+stacking before accepting the result. Combine useful save/stale hidden-revision
+and core19 warning proof on this corrected installed combination.

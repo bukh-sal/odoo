@@ -18,6 +18,16 @@ from that evidence.
 
 ## Header and actions
 
+For balanced native record sections, use an outer `<group col="2">` containing
+two ordinary inner `<group>` declarations. The native OuterGroup producer gives
+each a `col-lg-6` width and stacks them on narrow screens. A flat `col="4"`
+inner group sizes tracks from content and does not guarantee equal field columns;
+the installed Partners1.4 counterexample demonstrates the difference. Keep
+revision-CAS fields invisible but loaded when an app controller requires them.
+Standard TextField supports char with `line_breaks: False` and autosizing for
+soft-wrapped names; keep server length/content validation. Apps own the choice
+of fields, sections and meaningful related actions; shared styles own appearance.
+
 Import components through their public web module names:
 
 ```js

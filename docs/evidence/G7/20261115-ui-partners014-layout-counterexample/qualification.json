@@ -1,0 +1,26 @@
+{
+  "operation_id": "42844c77-84cb-4a4f-8fca-dfd5fa364a00",
+  "plan_hash": "sha256:467ec64156f2090c60634652ffe364a2b21fc9a0b7b55634e5996e012d9a263d",
+  "apply_seconds": 147.438,
+  "configuration": 16,
+  "core": "0.2.19",
+  "partners": "0.1.4",
+  "maintenance_retention": {
+    "tables": 18,
+    "full_history": true,
+    "other_targets": 10,
+    "core_and_other_four_apps_exact": true
+  },
+  "visual_accepted": false,
+  "findings": [
+    "Flat col4 native grid makes unequal intrinsic field tracks; replace with two nested groups",
+    "Actual390px long name soft-wraps without text clipping; clientHeight/scrollHeight182px,width312px",
+    "Revision absent visually and stays declared loaded readonly"
+  ],
+  "ui_save_intent": "Preserved and superseded BEFORE typing; all18tables/history unchanged",
+  "private_evidence": ".local/ui-partners-record014-01/browser",
+  "screenshots": {
+    "long-name-narrow390.jpg": "17690beb972db2af18e1b098d25c010a3a501cb2917de0c755ec9dd8767afcac",
+    "uneven-flat-col4.jpg": "553b6ee8f25f5a9a6301f959fd29fa202556a4dd99d746124177e7f14be6bc0b"
+  }
+}
