@@ -49,3 +49,14 @@ The summary opens with Enter or Space. Tab reaches the fields in order, Escape
 returns focus to the summary, and choosing another control outside closes the
 disclosure. Use the existing native search menu for a generated view. Keep
 shortcut keycaps in the command palette or help, away from routine navigation.
+
+Content direction belongs to the value, not the interface language. Use
+`mp-identifier` for a phone, email, checksum or opaque request identity: its LTR
+isolation survives RTL compilation without changing the surrounding alignment.
+Use `dir="auto"` on an individual user title/name or `<bdi>` around one embedded
+name. For multiline notes and escaped file text use `class="mp-content-text"`
+with `dir="auto"`; paragraph direction follows the actual text, including mixed
+Arabic/English lines. Native TextField applies this to its own readonly text and
+textarea. Keep chrome, action rows and labels in the interface direction. These
+patterns do not translate content, sanitize rich HTML, or authorize data access;
+retain escaped rendering and normal server checks.

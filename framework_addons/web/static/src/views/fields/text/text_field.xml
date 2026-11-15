@@ -3,12 +3,13 @@
 
     <t t-name="web.TextField">
         <t t-if="props.readonly">
-            <span t-esc="props.record.data[props.name] or ''" />
+            <span class="mp-content-text" dir="auto" t-esc="props.record.data[props.name] or ''" />
         </t>
         <t t-else="">
             <div t-ref="div">
                 <textarea
-                    class="o_input"
+                    class="o_input mp-content-text"
+                    dir="auto"
                     t-att-class="{
                         'o_field_translate': isTranslatable,
                         'o_field_placeholder': props.dynamicPlaceholder,

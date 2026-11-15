@@ -24,7 +24,14 @@
 .mp-related-record-title { display: flex; flex: 1; align-items: center; min-width: 0; min-height: 34px; color: var(--mp-ui-link); font: 500 14px/22px var(--mp-ui-font); overflow-wrap: anywhere; }
 .mp-related-record-title:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 3px; border-radius: 3px; }
 .mp-record-state { flex: 0 0 auto; max-width: 45%; padding: 2px 8px; border: 1px solid var(--mp-ui-line); border-radius: var(--mp-ui-radius); color: var(--mp-ui-muted); background: var(--mp-ui-hover); font: 500 12px/20px var(--mp-ui-font); overflow-wrap: anywhere; }
-.mp-identifier { direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; }
+.mp-identifier {
+    /*rtl:ignore*/
+    direction: ltr;
+    unicode-bidi: isolate;
+    overflow-wrap: anywhere;
+}
+/* Content paragraphs follow their text, independently of interface direction. */
+.mp-content-text { unicode-bidi: plaintext; overflow-wrap: anywhere; }
 .mp-message { margin-block: 12px; padding: 16px; color: var(--mp-ui-ink); background: var(--mp-ui-hover); border: 1px solid var(--mp-ui-line); border-radius: var(--mp-ui-radius); overflow-wrap: anywhere; }
 .mp-message > p { margin: 0; font-size: 13px; line-height: 21px; }
 .mp-message-title { margin: 0 0 6px; font: 600 15px/23px var(--mp-ui-font); }
