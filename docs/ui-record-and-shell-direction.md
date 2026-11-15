@@ -37,7 +37,7 @@ demo-store joins are design examples, not our generic extension or security mode
    reconciliation, persistent collapsible context and native/shared breadcrumbs.
    Detailed plan: [shell cohesion](ui-shell-cohesion-plan.md). Preserve native
    routes/drafts and current app views; compare real screenshots to Meridian.
-2. **Creation surfaces:** fresh source/contract plan at entry; dialog/sheet/page
+2. **Creation surfaces:** [activated implementation plan](ui-creation-surfaces-plan.md); dialog/sheet/page
    author choice, validation/cancel/dirty/uncertain behavior and optional full-page
    expansion. Demonstrate a useful small create and a richer guided create.
 3. **Informational record composition:** fresh plan after creation findings;

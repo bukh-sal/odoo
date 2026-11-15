@@ -9,7 +9,8 @@ now makes create presentation author-selectable (dialog/sheet/page), detail page
 informational first with explicit Edit and optional app contributions, and adds
 persistent collapsible context, a unified modern icon family, complete removal of
 legacy branding and coherent breadcrumbs. [Shell cohesion](ui-shell-cohesion-plan.md)
-is the next detailed implementation plan. Preserve every original acceptance
+and the [activated creation-surface plan](ui-creation-surfaces-plan.md) carry the
+current implementation. Preserve every original acceptance
 card below; later creation/record plans are written at entry, not speculated now.
 
 | What to carry forward | Evidence or consequence |
