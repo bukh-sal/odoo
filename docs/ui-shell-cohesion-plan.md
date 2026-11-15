@@ -42,6 +42,13 @@ the user's working state or replay old mutation intents.
    navigation on a phone. Escape/selection/outside close and resize restore sane
    focus. No hidden mounted controls reachable by Tab; do not unmount business
    content or bypass pending-action/dirty-leave guards to change chrome.
+
+   Source trace before integration: ActionContainer mounts exactly its current
+   keyed component. Reuse Owl's existing portal into a shell-owned context-control
+   slot so native and custom pages put their single toggle in the same topbar.
+   AppLayout falls back to a local toolbar outside Shell/in dialogs; nested layouts
+   do not inherit the global portal target. Actual mounted tests must prove portal
+   removal on action teardown, no duplicate toggles and preserved work-area state.
 5. Style native breadcrumbs and provide a reusable shared component for app
    PageHeader: quiet path, logical separators, current item, truncation/overflow,
    narrow Back and long/mixed-script names. Preserve native callbacks/real links,
