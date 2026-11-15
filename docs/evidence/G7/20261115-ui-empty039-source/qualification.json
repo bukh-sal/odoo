@@ -1,0 +1,61 @@
+{
+  "source_base": "a5457a05edb0b2b4477d93a97ad8e1682149ed48",
+  "candidate": "0.2.39_unpublished",
+  "shipped_source_sha256": {
+    "packages/platform_sdk/modular_platform/projection.py": "13b50ddb836238ba82b8845b9567bc0f6f259b89838aa32627f83f0781985a7b",
+    "framework_addons/mp_core/__manifest__.py": "25dde63f749a191525c895f07cc2ccf50776d3d6b361f6c409a99a7de9cca819",
+    "framework_addons/web/__manifest__.py": "75fffb1deb9f8e2df6b026c6543fb92c3ec6d36bec0f2f6a357b57ae9b63eb1b",
+    "framework_addons/web/static/src/webclient/shell/shell.js": "580a1718cfd6b498de97656ac6a6a932d31feb13a2851416df75140ea68fb1ed",
+    "framework_addons/web/static/src/webclient/shell/shell.xml": "7cadf66aad3d6890ac763e5487ec5afdf060a3ea27d7aa7b2ca100fb52832da2",
+    "framework_addons/web/static/src/webclient/shell/shell.scss": "13566a01bed2019b38b984a1f9879069329c920ac63203ac0a01554f6197671a",
+    "framework_addons/web/static/src/core/dialog/dialog.xml": "4a2c354c7a1cfe7614f82a9e7dc2198843db89072076fb2daa43a87c79f7cc36",
+    "framework_addons/web/static/src/core/dialog/dialog.scss": "47938d2a5a4de4a8658701b8778259b8f9df20f50c93907add3ddcb91527ffdb"
+  },
+  "private_heads": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "artifacts": {
+    "dev.local.partners": {
+      "version": "0.1.10",
+      "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    },
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    }
+  },
+  "native_transport_unchanged_sha256": "14fd795e5cf98259ac4242735db44fc697f7bcdaef8a8db1d03745308bd07ca8",
+  "tests": {
+    "node": 177,
+    "python": 20,
+    "failures": 0,
+    "logs": {
+      "node.out.txt": "b3c50c2b7555e92b1cd2726a184d3ac1f26ab4d92b350c8d270d892a5af98ecf",
+      "python.out.txt": "d05adcd59fe37f773dec87f7080c8c5948440f59defd3beaf794b1082b1be090",
+      "freeze.out.txt": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+    }
+  },
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "scope": "Eight shipped presentation/identity paths. Source38 planner/backend/apps unchanged. Installed geometry and selected Sass/RTL compilation pending normal39 delivery; no installed39 claim."
+}

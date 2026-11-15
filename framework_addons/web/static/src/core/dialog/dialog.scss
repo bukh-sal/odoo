@@ -56,6 +56,26 @@
     display: block;
 }
 
+.o_dialog .modal-header .mp-dialog-header-control {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    padding: 6px;
+
+    @include media-breakpoint-down(md) {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .modal-fs {
         width: calc(100% - #{2 * $modal-dialog-margin-y-sm-up});

@@ -187,3 +187,10 @@ available app destinations with no selected page from a genuinely empty workspac
 The rendered source37 missing-model route supplied the counterexample. Existing
 blocked-access branch, action mount, navigation and draft behavior are unchanged.
 No vendor notice, attribution, asset dependency or application byte changed.
+
+15November2026 source39: an empty Shell action canvas keeps its mounted slot and
+access-hidden behavior but no longer consumes free flex space above the workspace
+card. Loaded controllers/drafts retain their allocation. Existing native Dialog
+header buttons gain component-owned34px/44px hit boxes, keeping pinned geometry,
+callbacks, labels, slots and t-call consumers. Original native Sass declarations,
+attribution and notices remain; actual installed geometry is required next.

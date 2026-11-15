@@ -65,6 +65,7 @@ export class Shell extends Component {
         return !this.blocked && this.current && !registry.category("shell_context").contains(this.action.currentController?.action?.tag);
     }
     get blocked() { return this.menu.unavailable || this.menu.currentAppUnavailable; }
+    get emptyCanvas() { return !this.current && !this.action.currentController; }
     get sections() { return this.current ? this.menu.getMenuAsTree(this.current.id).childrenTree : []; }
     get utilities() {
         return registry.category("systray").getEntries()

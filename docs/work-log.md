@@ -3207,3 +3207,21 @@ Five shipped source38 paths, unchanged five apps/Python/authority/recovery;
 populated and exact-policy core maintenance next, then actual empty-site stale
 URL and original matrix/final canonical. True200 confirmed; motion unchanged.
 Full original UI0/4 active; no canonical38, no cleanup or source injection.
+
+
+15November2026 installed38: normal populated193bcb4a168.61s/config14 and
+source-freef85f4b39152.485s/config5 completed. Exact five current app archives,
+22populated and6empty-core business/authority tables and app views/checkpoints
+preserved, including fresh post-browser equality. Empty site's two removed
+history rows retained, zero executable app targets, eight installed addons.
+Actual old customer URL yields one friendly dialog; Escape closes, dark text/
+icons readable,390px fits, available workspace says Choose a page. Task filter
+2->1->2 and keyboard palette->Documents->Back pass. Two visual findings remain:
+empty flex child consumes467px before the workspace card; header button30px.
+Fresh source39 plan precedes eight shipped presentation/identity changes: keep
+unconditional mounted action/access-hidden guard, remove only empty flex space,
+shared native header boxes34desktop/44narrow. Source38 planner unchanged;
+177Node/20affected Python/freeze122files11rows pass. Normal39 delivery/installed
+geometry next, then final frozen-source canonical and original card audit.
+Human200proof is dated36/37; browser currently normal width. Motion still off,
+manual question pending. Full originalUI0/4 active; no active operation/fixture.

@@ -1,0 +1,168 @@
+{
+  "source": "3aa8ba3618d13b93a566de3a8ffa4ef2ab8d0c30",
+  "operations": {
+    "populated": {
+      "all_views_exact": true,
+      "apply_seconds": 168.61,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 14,
+      "image_id": "sha256:270b3c30935107661fda164ea9897d15145ed82a41fdd09386c784fc7143fc1f",
+      "operation_id": "193bcb4a-07a7-418a-bfc6-0d96281c12a4",
+      "plan_hash": "sha256:7d990246e47177ff7e912e554ff1924ffbe71bc72e8a0525485c1c773696a8c0",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "delivery_link": 1,
+        "documents_blob": 2,
+        "documents_fence": 1,
+        "documents_file": 1,
+        "documents_upload": 2,
+        "documents_version": 2,
+        "mp_job": 1,
+        "mp_membership": 6,
+        "mp_outbox": 9,
+        "mp_plugin_grant": 8,
+        "mp_principal": 4,
+        "mp_workspace": 2,
+        "partners_partner": 4,
+        "taskfiles_event_cursor": 0,
+        "taskfiles_file_review": 0,
+        "taskfiles_link": 1,
+        "workboard_comment": 0,
+        "workboard_list": 0,
+        "workboard_notice": 1,
+        "workboard_reminder": 1,
+        "workboard_stage": 0,
+        "workboard_task": 2
+      },
+      "tables": 22,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "86ff1f58f8b40dc7d8def938926aa4ca8d35b3b6a07dec76a7be52d1b73ba3c3",
+      "workspace_policy_epoch_increment": 0
+    },
+    "core": {
+      "all_views_exact": true,
+      "apply_seconds": 152.485,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 5,
+      "image_id": "sha256:3c025bf8b0c4bc68b862fd3769afdb2b6eb29fb5b459fb2aa151062be4195df6",
+      "operation_id": "f85f4b39-74fd-4436-8271-c5dd66373243",
+      "plan_hash": "sha256:1a865a10bd975a0543e70f2a0f15c3dfa00df245b8b75de86aeafb8c69d16da2",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "mp_job": 0,
+        "mp_membership": 6,
+        "mp_outbox": 1,
+        "mp_plugin_grant": 0,
+        "mp_principal": 4,
+        "mp_workspace": 2
+      },
+      "tables": 6,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "a28d01fbc8407c909bedefff95d2f8796aa1ea5d03d5107752693d10ec42829c",
+      "workspace_policy_epoch_increment": 0
+    }
+  },
+  "browser": {
+    "core": "0.2.38",
+    "actual_removed_partner_url_one_dialog": true,
+    "desktop_close_svg": "x",
+    "narrow_populated_close_svg": "arrow-left",
+    "dark_text": {
+      "foreground": [
+        240,
+        241,
+        244
+      ],
+      "background": [
+        28,
+        30,
+        35
+      ]
+    },
+    "dark_close": {
+      "foreground": [
+        32,
+        33,
+        39
+      ],
+      "background": [
+        240,
+        241,
+        244
+      ]
+    },
+    "narrow_width": 390,
+    "narrow_document_width": 390,
+    "choose_page_in_available_workspace": true,
+    "empty_workspace_still_truthfully_empty": true,
+    "task_filter_counts": [
+      2,
+      1,
+      2
+    ],
+    "filter_escape_returns_focus": true,
+    "palette_documents_keyboard_and_back": true,
+    "current_default_width": 1363,
+    "earlier_human_zoom_proof": "source36/37 measured200%; later browser returned to default, no source38 current-zoom claim",
+    "motion": false,
+    "unaccepted_findings": [
+      "Empty mounted action container consumes467px above the empty-state card.",
+      "Native header close control remains30px at narrow; next source batch will improve target size."
+    ],
+    "business_writes": 0,
+    "theme": "light restored",
+    "viewport_override": "reset",
+    "fixtures": "none"
+  },
+  "post_browser_retention": {
+    "populated": {
+      "all_tables_exact": true,
+      "tables": 22,
+      "target_sha256": "b00904e34b6542118a413657c400932c0c4e15a4a9c96f9d062dd6d56f41386d",
+      "counts": {
+        "mp_job": 1,
+        "mp_outbox": 9,
+        "mp_principal": 4,
+        "mp_workspace": 2,
+        "delivery_link": 1,
+        "mp_membership": 6,
+        "documents_blob": 2,
+        "documents_file": 1,
+        "taskfiles_link": 1,
+        "workboard_list": 0,
+        "workboard_task": 2,
+        "documents_fence": 1,
+        "mp_plugin_grant": 8,
+        "workboard_stage": 0,
+        "documents_upload": 2,
+        "partners_partner": 4,
+        "workboard_notice": 1,
+        "documents_version": 2,
+        "workboard_comment": 0,
+        "workboard_reminder": 1,
+        "taskfiles_file_review": 0,
+        "taskfiles_event_cursor": 0
+      }
+    },
+    "core": {
+      "all_tables_exact": true,
+      "tables": 6,
+      "target_sha256": "a0581e5ab66af09af882b7cbe502cb07122bf933e1f586b6d414a8955a4b795f",
+      "counts": {
+        "mp_job": 0,
+        "mp_outbox": 1,
+        "mp_principal": 4,
+        "mp_workspace": 2,
+        "mp_membership": 6,
+        "mp_plugin_grant": 0
+      }
+    }
+  },
+  "scope": "Actual normal zero-target core maintenance preserves removed history; old removed-model URL one dialog, light/dark/narrow/keyboard checks and task/palette/Back. Empty-card placement and header target size remain unaccepted for39 correction. No actual reduced-motion or source38 zoom claim."
+}

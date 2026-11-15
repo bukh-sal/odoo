@@ -70,7 +70,25 @@ test('actual Shell retains its inline hidden-canvas contract without opening a s
  const effects=[],dialogs=[],actions=[];const model={dirty:true,text:'owned unsaved draft'};const controller={model};const services={menu:{unavailable:true,getApps:()=>[],getCurrentApp:()=>null},action:{currentController:controller,doAction:(...a)=>actions.push(a)},command:{},dialog:{add:(...a)=>dialogs.push(a)},ui:{isSmall:false}};const blank=class{};
  const module=await evaluate('webclient/shell/shell.js',{Component,useEffect:fn=>effects.push(fn),useExternalListener(){},useRef:()=>({el:{focus(){},contains:()=>false}}),useState:x=>x,useSubEnv(){},xml:parts=>parts.join(''),browser:{},useBus(){},useService:name=>services[name],registry:{category:()=>({contains:()=>false})},Dropdown:blank,DropdownItem:blank,ErrorHandler:blank,UserMenu:blank,user:{},Dialog:Component,_t:x=>x,PageHeader:blank,StatusMessage:blank,Icon:blank,useContextPreference:()=>({collapsed:false}),window:{},document:{activeElement:null}},'Shell');
  const shell=new module.Shell();shell.env={bus:{}};shell.setup();effects.forEach(fn=>fn());assert.equal(shell.blocked,true);assert.equal(dialogs.length,0);assert.equal(services.action.currentController,controller);assert.equal(controller.model,model);assert.equal(model.text,'owned unsaved draft');assert.deepEqual(actions,[]);
- const template=await readFile(resolve(root,base+'webclient/shell/shell.xml'),'utf8');assert.match(template,/class="mp-shell-action" t-att-hidden="blocked"><t t-slot="default"/);assert.match(template,/t-if="blocked"[^>]*role="alert"/);assert.match(template,/t-on-click="reopenWorkspace"/);
+ const template=await readFile(resolve(root,base+'webclient/shell/shell.xml'),'utf8');assert.match(template,/class="mp-shell-action" t-att-hidden="blocked"[^>]*><t t-slot="default"/);assert.match(template,/t-if="blocked"[^>]*role="alert"/);assert.match(template,/t-on-click="reopenWorkspace"/);
+});
+
+test('empty canvas allocation never hides or unmounts a loaded controller or draft',async()=>{
+ const blank=class{};
+ const {Shell}=await evaluate('webclient/shell/shell.js',{Component,Dropdown:blank,DropdownItem:blank,ErrorHandler:blank,UserMenu:blank,PageHeader:blank,StatusMessage:blank,Icon:blank,_t:text=>text},'Shell');
+ const shell=Object.create(Shell.prototype);let apps=[],current=null;
+ shell.menu={getApps:()=>apps,getCurrentApp:()=>current,unavailable:false};
+ shell.action={currentController:null};assert.equal(shell.emptyCanvas,true);
+ apps=[{id:1}];current=apps[0];assert.equal(shell.emptyCanvas,false);
+ apps=[];current=null;
+ const model={dirty:true,text:'keep this draft'};const controller={model};
+ shell.action.currentController=controller;assert.equal(shell.emptyCanvas,false);
+ shell.menu.unavailable=true;assert.equal(shell.blocked,true);assert.equal(shell.emptyCanvas,false);
+ assert.equal(shell.action.currentController,controller);assert.equal(controller.model,model);
+ assert.equal(model.text,'keep this draft');
+ const template=await readFile(resolve(root,base+'webclient/shell/shell.xml'),'utf8');
+ assert.match(template,/t-att-class="\{'is-empty': emptyCanvas\}"/);
+ assert.match(template,/class="mp-shell-action" t-att-hidden="blocked"[^>]*><t t-slot="default"/);
 });
 
 test('actual Shell distinguishes no selected page from an empty or unavailable workspace',async()=>{
