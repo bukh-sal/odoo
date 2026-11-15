@@ -1,3 +1,47 @@
+// One native action layout for both the direct and shared-shell mount.
+@mixin o-action-manager-layout {
+  direction: ltr; //Define direction attribute here so when rtlcss preprocessor run, it converts it to rtl
+  flex: 1 1 auto;
+  height: 100%;
+  overflow: hidden;
+
+  > .o_action {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      -ms-overflow-style: none; // IE and Edge
+      scrollbar-width: none;    // Firefox
+
+      &::-webkit-scrollbar {    // Chrome, Safari and Opera
+        display: none;
+      }
+    }
+
+    > .o_control_panel {
+      flex: 0 0 auto;
+    }
+    .o_content {
+      overflow: auto;
+      height: 100%;
+    }
+
+    @include media-breakpoint-down(md) {
+      // Made the o_action scroll instead of its o_content.
+      // Except when the view wants to handle the scroll itself.
+      &:not(.o_action_delegate_scroll), .o_form_view_container {
+        overflow: auto;
+
+        .o_content {
+          overflow: initial;
+        }
+      }
+    }
+  }
+}
+
 // ------------------------------------------------------------------
 // Base layout rules, use the 'webclient.scss' file for styling
 // ------------------------------------------------------------------
@@ -19,46 +63,7 @@
     }
 
     > .o_action_manager {
-      direction: ltr; //Define direction attribute here so when rtlcss preprocessor run, it converts it to rtl
-      flex: 1 1 auto;
-      height: 100%;
-      overflow: hidden;
-
-      > .o_action {
-        height: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        overflow: hidden;
-
-        @include media-breakpoint-up(lg) {
-          -ms-overflow-style: none; // IE and Edge
-          scrollbar-width: none;    // Firefox
-
-          &::-webkit-scrollbar {    // Chrome, Safari and Opera
-            display: none;
-          }
-        }
-
-        > .o_control_panel {
-          flex: 0 0 auto;
-        }
-        .o_content {
-          overflow: auto;
-          height: 100%;
-        }
-
-        @include media-breakpoint-down(md) {
-          // Made the o_action scroll instead of its o_content.
-          // Except when the view wants to handle the scroll itself.
-          &:not(.o_action_delegate_scroll), .o_form_view_container {
-            overflow: auto;
-
-            .o_content {
-              overflow: initial;
-            }
-          }
-        }
-      }
+      @include o-action-manager-layout;
     }
 
     .o_main_navbar {
@@ -95,6 +100,9 @@
 @include media-only(screen) {
     html {
         @extend %o-html-layout-fill;
+    }
+    .mp-shell-action > .o_action_manager {
+        @include o-action-manager-layout;
     }
 }
 
