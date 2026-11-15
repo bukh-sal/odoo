@@ -1,4 +1,7 @@
 /* Shared structural and record patterns; callers retain business state and actions. */
+.mp-page-title { margin: 0; }
+/* Isolate the title's content without moving an English name away from its RTL identity block. */
+.mp-page-title[dir="auto"] { text-align: match-parent; }
 .mp-page-header {
     display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;
     gap: 16px 24px; margin-block-end: 24px;

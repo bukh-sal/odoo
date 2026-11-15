@@ -98,6 +98,14 @@
         --btn-active-border-color: var(--mp-ui-control-line);
     }
     .o_web_client .btn-secondary { --btn-bg: var(--mp-ui-surface); --btn-disabled-bg: var(--mp-ui-surface); --btn-disabled-color: var(--mp-ui-muted); --btn-disabled-border-color: var(--mp-ui-line); }
+    .o_web_client .btn-outline-danger {
+        --btn-color: var(--mp-ui-danger-ink); --btn-border-color: var(--mp-ui-danger-ink);
+        --btn-hover-bg: var(--mp-ui-danger-surface); --btn-hover-color: var(--mp-ui-danger-ink);
+        --btn-hover-border-color: var(--mp-ui-danger-ink);
+        --btn-active-bg: var(--mp-ui-danger-surface); --btn-active-color: var(--mp-ui-danger-ink);
+        --btn-active-border-color: var(--mp-ui-danger-ink);
+        --btn-disabled-color: var(--mp-ui-muted); --btn-disabled-border-color: var(--mp-ui-line);
+    }
     .o_web_client .btn-link { color: var(--mp-ui-link); }
     .o_web_client .dropdown-menu {
         --dropdown-bg: var(--mp-ui-surface); --dropdown-color: var(--mp-ui-ink);

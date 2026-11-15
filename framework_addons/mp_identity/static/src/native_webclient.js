@@ -80,7 +80,9 @@ if (token && !odoo.__mp_client_release__) {
     router.addLockedKey("workspace");
     const nativeRPC = rpc._rpc;
     rpc._rpc = function (url, params, settings) {
-        if (!url.startsWith("/web/dataset/")) {
+        // Breadcrumb restoration also reads scoped record display names.
+        // Keep this exact endpoint pinned; unrelated action routes stay untouched.
+        if (!url.startsWith("/web/dataset/") && url !== "/web/action/load_breadcrumbs") {
             return nativeRPC.call(this, url, params, settings);
         }
         return nativeRPC.call(this, url, params, {

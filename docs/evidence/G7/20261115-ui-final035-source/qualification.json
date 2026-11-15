@@ -1,0 +1,106 @@
+{
+  "base": "9a0f320f1818c79eb76992a9c63b424240a0a0e4",
+  "candidate": "0.2.35_unpublished",
+  "shipped_source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "a85587a2a4c6ea63e8adc973fa35df087f44662cb2e0494d151879cdfb6e664e",
+    "framework_addons/mp_identity/__manifest__.py": "b4901cdb53608b73f3d386043199f5f2000adf56bbd4b93ced23488a3b727df0",
+    "framework_addons/mp_identity/static/src/native_webclient.js": "14fd795e5cf98259ac4242735db44fc697f7bcdaef8a8db1d03745308bd07ca8",
+    "framework_addons/web/__manifest__.py": "72afea32d134ee60424c164f43c353a71611f013a558e865694b24475eb6db4c",
+    "framework_addons/web/static/src/interface/foundation.css": "5af25640529cba620828b4fec09557a564fe1d6d97310363038cfc76f1dc3a7f",
+    "framework_addons/web/static/src/interface/record_sections.css": "464fc4977931c935da19925909ea4747e6086b64f4a244f8c6744935baf05cf0",
+    "framework_addons/web/static/src/interface/surfaces.css": "98deaf3f28acd6c0a80267a485e2115f399f4d2ed0a8e54bed54decf5eea6f70",
+    "packages/platform_sdk/modular_platform/projection.py": "656857e21d1cdba42d4c5e77f35060ba7d600ba8b0f63968251afcd8a0185131"
+  },
+  "test_sha256": {
+    "tests/test_native_scope_transport.mjs": "94714fdbbe0a78df69033d2125bc5d1b55d2871b9641de4846c265d5f3f7c059"
+  },
+  "private_heads": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "artifacts": {
+    "dev.local.partners": {
+      "version": "0.1.10",
+      "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    },
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    }
+  },
+  "native_source_node": {
+    "cases": 35,
+    "failures": 0,
+    "command": "node --test tests/test_native_scope_transport.mjs tests/test_native_record_frame.mjs tests/test_native_record_modes.mjs",
+    "observed_tool_exit": 0
+  },
+  "focused_python": {
+    "cases": 45,
+    "failures": 0,
+    "log_sha256": "6b8348645c1b48841258836c434ace5293682fb6dd7702997bce1ee330abaea5"
+  },
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "styles": {
+    "pinned_sass_rtl_postcss": true,
+    "all_unrelated_style_rules_exact": true,
+    "ordinary_edit_dialog_print_rules_exact": true,
+    "changed_sheet_selector_only": true,
+    "source_token_contrast": {
+      "foundation.css:default": 7.63,
+      "foundation.css:hover_active": 6.95,
+      "foundation.dark.scss:default": 10.03,
+      "foundation.dark.scss:hover_active": 8.539
+    },
+    "limits": [
+      "Source compilation/rule delta/token arithmetic only; installed cascade/actual alignment/contrast required",
+      "No source/runtime CSS injection"
+    ],
+    "source_sha256": {
+      "framework_addons/web/static/src/interface/foundation.css": "5af25640529cba620828b4fec09557a564fe1d6d97310363038cfc76f1dc3a7f",
+      "framework_addons/web/static/src/interface/surfaces.css": "98deaf3f28acd6c0a80267a485e2115f399f4d2ed0a8e54bed54decf5eea6f70",
+      "framework_addons/web/static/src/interface/record_sections.css": "464fc4977931c935da19925909ea4747e6086b64f4a244f8c6744935baf05cf0",
+      "framework_addons/web/static/src/interface/foundation.dark.scss": "7218ce200e4bc7bfbd2d39543937cb6c505813b1d061c69f44507ebba92f019a"
+    }
+  },
+  "actual_predecessor_readonly_breadcrumb_differential": {
+    "actual_native_endpoint": "/web/action/load_breadcrumbs",
+    "missing_scope_refused": [
+      {
+        "error": "Explicit workspace context required"
+      },
+      {
+        "error": "Explicit workspace context required"
+      }
+    ],
+    "correct_existing_pins_read_actual_names": true,
+    "foreign_workspace_cannot_read_record": true,
+    "server_guard_unchanged": true,
+    "source_header_boundary": "b10c041f77f0f1bd707fb3c5193877a213b61692c9a8408de451f5f758425657"
+  },
+  "limits": [
+    "Source/native fake-boundary transport plus actual unchanged predecessor server differential; installed35 reload/authority proof pending",
+    "CSS compile/rule-map/token arithmetic does not replace installed geometry/contrast",
+    "Five app archives unchanged; no new image or operation yet",
+    "Full original UI phase cards/current canonical still required"
+  ]
+}

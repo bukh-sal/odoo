@@ -3087,3 +3087,22 @@ Shared native sheet backdrop still overrides informational transparency; narrow
 header density remains an integrated visual finding. Source selector identified,
 no live CSS injection/relabel/new35 image. Original UI0/4 matrix/recovery/final
 canonical remains active. Main18610 human form and user tabs remain untouched.
+
+15November2026 final integration source35: shared informational sheet
+cascade corrected without changing ordinary/Edit/dialog/print rules; shared
+title default margin normalized and dir=auto alignment respects parent flow.
+Outline destructive actions use existing theme semantic tokens (source light
+7.63/default6.95hover, dark10.03/default8.539hover); installed proof pending.
+Actual predecessor nested breadcrumb reload exposed missing workspace scope;
+real normal endpoint differential refuses missing scope, accepts pinned A and
+refuses foreign B record name. Native frontend now sends its existing immutable
+page pins/no-cache to exactly load_breadcrumbs as well as dataset. Unknown/action/
+run/foreign URLs unchanged; no backend/authority/protocol guard changed. Native
+identity manifest1.10->1.11 required for its changed static bytes; core/web0.2.35.
+Exact8shippedfiles,35Node/45Python/freeze122files11rows/pinnedSassRTL rule-delta
+checks pass, five private heads/archives exact. Current34 real locale pass uses
+normal native existing Arabic activation; original admin timezone detected and
+restored, AliceEnglish restored,22business tables/groups/protected targets exact.
+Actual390px RTL customer/contact/task/pinned text works; mixed title alignment
+and real dark Move to trash3.68failure are retained for installed35 comparison.
+No35build/apply yet. Full original UI0/4/current canonical remains active.

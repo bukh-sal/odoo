@@ -1,7 +1,7 @@
 @media screen {
     .mp-create-button-icon { margin-inline-end: 4px; }
     .mp-informational-record .o_form_sheet_bg { padding: 20px 24px; }
-    .mp-informational-record .o_form_sheet { padding: 0; margin: 0; max-inline-size: none; border: 0; box-shadow: none; background: transparent; }
+    .o_web_client .o_form_view.mp-informational-record .o_form_sheet { padding: 0; margin: 0; max-inline-size: none; border: 0; box-shadow: none; background: transparent; }
     .o_web_client .mp-native-record-controls.mp-native-informational-controls { padding: 16px 24px 12px !important; }
     .mp-native-informational-controls .o_control_panel_navigation { flex: 0 1 auto !important; }
     .mp-native-informational-controls .mp-form-save-state { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
