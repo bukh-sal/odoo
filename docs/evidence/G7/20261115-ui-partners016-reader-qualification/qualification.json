@@ -1,0 +1,124 @@
+{
+  "source": "1be851c89de86bbc97e81d2304790964b48e14e5",
+  "private_sources": {
+    "delivery": "b413b5895b7449b1f520d24793c5639034b4b6e2",
+    "documents": "b0571695c12007c68ccd46a92407801bde7b8369",
+    "partners": "e54d6039b3a1d30d00200a120a4b3a2835b331a5",
+    "taskfiles": "7bbbd847200b8a29f914622545b5e90ba71cc6d1",
+    "workboard": "e842edc3a101669baba9589481abaac512a69003"
+  },
+  "image_id": "sha256:8f71b484b95388e6b1ec409b6f3747239f084f0e72c5086e71bc94c14e763820",
+  "operation_id": "45f2d2df-769c-4b88-9745-e714002a2403",
+  "plan_hash": "sha256:92f3036b74500d9d7625345683e736e4e37d52bc350932a4389e5cd216d4fedc",
+  "configuration": 23,
+  "apply_seconds": 176.14,
+  "apps": {
+    "dev.local.delivery": {
+      "bytes": 30653,
+      "digest": "sha256:a3e38b628f117482620e894baa42395708374d7d2b63186d9ed0a23ec7ee2186",
+      "file": "dev.local.delivery-0.1.7.mplug",
+      "version": "0.1.7"
+    },
+    "dev.local.documents": {
+      "bytes": 52837,
+      "digest": "sha256:189ff0a2a7489b93bf2ab97fde73c9d6513b9a1fc167b9d390145a5c503f7e87",
+      "file": "dev.local.documents-0.1.10.mplug",
+      "version": "0.1.10"
+    },
+    "dev.local.partners": {
+      "bytes": 30407,
+      "digest": "sha256:257cced9bf623d7f9560ae579e62201a93c21da23cad599366fa30a6502eb470",
+      "file": "dev.local.partners-0.1.6.mplug",
+      "version": "0.1.6"
+    },
+    "dev.local.taskfiles": {
+      "bytes": 38405,
+      "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+      "file": "dev.local.taskfiles-0.1.5.mplug",
+      "version": "0.1.5"
+    },
+    "dev.local.workboard": {
+      "bytes": 64398,
+      "digest": "sha256:e7568065236a3b531d0182b7ff5629003a7dc24eee6a781bf9c39a49ac735d48",
+      "file": "dev.local.workboard-0.2.15.mplug",
+      "version": "0.2.15"
+    }
+  },
+  "source_checks": {
+    "archives": {
+      "dev.local.delivery": {
+        "bytes": 30653,
+        "digest": "sha256:a3e38b628f117482620e894baa42395708374d7d2b63186d9ed0a23ec7ee2186",
+        "file": "dev.local.delivery-0.1.7.mplug",
+        "version": "0.1.7"
+      },
+      "dev.local.documents": {
+        "bytes": 52837,
+        "digest": "sha256:189ff0a2a7489b93bf2ab97fde73c9d6513b9a1fc167b9d390145a5c503f7e87",
+        "file": "dev.local.documents-0.1.10.mplug",
+        "version": "0.1.10"
+      },
+      "dev.local.partners": {
+        "bytes": 30407,
+        "digest": "sha256:257cced9bf623d7f9560ae579e62201a93c21da23cad599366fa30a6502eb470",
+        "file": "dev.local.partners-0.1.6.mplug",
+        "version": "0.1.6"
+      },
+      "dev.local.taskfiles": {
+        "bytes": 38405,
+        "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+        "file": "dev.local.taskfiles-0.1.5.mplug",
+        "version": "0.1.5"
+      },
+      "dev.local.workboard": {
+        "bytes": 64398,
+        "digest": "sha256:e7568065236a3b531d0182b7ff5629003a7dc24eee6a781bf9c39a49ac735d48",
+        "file": "dev.local.workboard-0.2.15.mplug",
+        "version": "0.2.15"
+      }
+    },
+    "node": 3,
+    "python": 7,
+    "scope": "Native XML readonly fields and original edit groups; unchanged CAS/list JavaScript/models/services/security/schema; no custom widget or generic-core change",
+    "unchanged_js_sha256": "5668e5a61df749aae38c9dd0c4bc67567a3e5de649647c5c64e03e38b1889df5"
+  },
+  "installed": {
+    "nativeReaderShowsRealRelationship": true,
+    "nativeEmptyValuesHonest": true,
+    "readonlyActiveBadgeNoCheckbox": true,
+    "noDuplicateVisibleEditFields": true,
+    "editorSummaryHiddenAndNativeGroupsRestored": true,
+    "keyboardEditFocusName": true,
+    "cancelReturnsReader": true,
+    "relatedTaskStillVisible": true,
+    "northstarTaskFits390Viewport": true,
+    "longPersonOrganizationContactNotesCorrect": true,
+    "longRecordPageWidth390": true,
+    "narrowBottomReachable": true,
+    "desktopNarrowLightDarkCaptured": true,
+    "currentViewerNoNewOrEdit": true,
+    "currentViewerSummaryAndTwoTasksVisible": true,
+    "lightRestored": true,
+    "viewportReset": true,
+    "temporaryViewerTab9Closed": true,
+    "businessWritesExpected": 0,
+    "visualCritique": "Clearer compact hierarchy and honest data; no fake owner/balance/activity. Outer native card plus inner cards still heavier than Meridian. Native organization link uses old rgb10289,143 on dark rgb28,30,35 rather than shared #b3baff; measured shared-native link correction next. Full original matrix remains open."
+  },
+  "retention": {
+    "full_history_exact": true,
+    "other_targets_exact": 10,
+    "partners": 166,
+    "sample_revision": 3,
+    "tables_exact": 18,
+    "task_original_revision": 2,
+    "utc": "2026-11-15T05:21:40.225903+00:00"
+  },
+  "dark_native_organization_link_contrast": 2.6922854433760897,
+  "shared_dark_link_token_contrast": 9.039793150332017,
+  "limits": [
+    "Compact reader is a bounded design improvement, not full visual/accessibility acceptance",
+    "Actual old native link colour is2.69to1 on dark surface; shared native correction remains",
+    "No reply to optional preference; Codex recommendation under ongoing authority, not human visual approval",
+    "Original full phase cards and final canonical remain required"
+  ]
+}

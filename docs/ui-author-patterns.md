@@ -246,3 +246,14 @@ full browser link is not a substitute for the native action dirty-leave guard.
 Delivery1.7 demonstrates shared related-record styles with actual current reads,
 bounded has_more guidance and a fresh existing context check before task action;
 no core business registry is required. Installed qualification is still pending.
+
+An application can build a compact read-first summary directly in native XML:
+readonly fields in a semantic definition list, a shared mp-record-surface and
+mp-record-section-header, honest missing-value text and shared status styling.
+Keep the full existing fields in explicit Edit/new; mode classes control only
+presentation. Partners0.1.6 demonstrates this without a new widget or request.
+Retain loaded readonly revision/CAS and server authority. Native labels/fields
+remain localized/escaped through the ordinary renderer. Verify no duplicated
+visible controls in either mode. Native relation links still need the recorded
+shared dark contrast correction; token reuse around a field does not restyle
+the field's own legacy Sass declaration automatically.

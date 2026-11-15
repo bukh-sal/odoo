@@ -1,14 +1,13 @@
 # Shared UI qualification and support boundaries
 
-Latest combination is core0.2.24/config22, Workboard0.2.15, Delivery0.1.7,
-Documents0.1.10, Partners0.1.5 and Taskfiles0.1.5.
-[Direct current evidence](evidence/G7/20261115-ui-core024-scroll-qualification/qualification.json)
-proves actual native long-form/table scrolling, shared34/44px targets, custom
-dialog/document scrolling, keyboard native editing entry/cancel, and exact
-eighteen-table/full-history/ten-site retention. PageDown requires focus in the
-record scroll owner; body focus does not scroll it. This is not full UI/RTL/zoom/
-contrast/accessibility acceptance. Sparse relationship reading layout remains
-an active design refinement; the original matrix and final canonical are open.
+Latest combination is core0.2.24/config23, Workboard0.2.15, Delivery0.1.7,
+Documents0.1.10, Partners0.1.6 and Taskfiles0.1.5.
+[Installed reader evidence](evidence/G7/20261115-ui-partners016-reader-qualification/qualification.json)
+proves compact real-data/empty/status summary, full native Edit/Cancel, current
+viewer controls, paired themes/narrow wrapping/reachability and exact retention.
+Dark native relation link2.69to1 is a measured defect, pending shared correction.
+Original full matrix/current canonical/UI0of4 remain open. No formal accessibility,
+full translation, broad compatibility or publication claim.
 
 The preceding populated combination was core0.2.19, Partners0.1.5,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
