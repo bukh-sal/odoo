@@ -204,3 +204,6 @@ replaces ListRenderer owns accepting/rendering the optional pagination input.
 Native form record traversal and non-table Kanban navigation remain separate.
 The current shared paginator uses modern container sizing for narrow grouped
 footers; installed browser support is provisional until the actual matrix passes.
+
+
+Native collection pagination uses the current model offset/limit/total and existing onUpdate callback. TablePagination accepts optional isGrouped for honest group totals; nested consumers supply their own grouping/count scope. The flag changes wording only, never queries or permissions. Single pages show a quiet count; limited counts never invent a final page.

@@ -103,6 +103,23 @@ test('group page callbacks stay bound to their own group and retain exact count 
     await props.onUpdate({offset:50,limit:25});assert.deepEqual(calls,[['load',{limit:25,offset:50}],['render',true]]);
     group.list.isGrouped=true;assert.equal(producer.getGroupPagerProps(group).total,3);
 });
+
+test('actual root and nested producers distinguish group counts from record counts',async()=>{
+    const controller={model:{root:{count:3,isGrouped:true,limit:25,offset:0}}};
+    const rootProps=nativeProducer.call(controller);
+    const {page}=await fixture(rootProps);
+    assert.equal(page.range,'1–3 of 3 groups');
+    controller.model.root.count=0;Object.assign(page.props,nativeProducer.call(controller));
+    assert.equal(page.range,'No groups');
+    const producer=new GroupProducer();
+    const nested={displayName:'Organizations',count:151,list:{count:8,isGrouped:true,offset:0,limit:5}};
+    Object.assign(page.props,producer.getGroupPagerProps(nested));
+    assert.equal(page.range,'1–5 of 8 groups');
+    nested.list.isGrouped=false;Object.assign(page.props,producer.getGroupPagerProps(nested));
+    assert.equal(page.range,'1–5 of 151 records');
+    page.props.isGrouped=true;page.props.offset=160;
+    assert.match(page.range,/No groups on this page/);
+});
 const relationalSource=await readFile(new URL('../framework_addons/web/static/src/views/fields/x2many/x2many_field.js',import.meta.url),'utf8');
 const RelationalProducer=method(relationalSource,'get pagerProps()');
 test('embedded table paging retains its own edit refusal and abandoned-new-row limit correction',async()=>{

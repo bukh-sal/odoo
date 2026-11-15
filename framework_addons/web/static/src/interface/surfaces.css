@@ -73,10 +73,14 @@
     .mp-native-table-tools { display: flex; gap: 8px; align-items: center; }
     .mp-native-table-tools .o_control_panel_navigation { flex-grow: 0 !important; }
     .mp-native-table-tools .o_control_panel_navigation:empty { display: none !important; }
-    .mp-native-table-query .o_cp_searchview { width: 100%; max-width: 640px; gap: 8px; flex-wrap: nowrap; }
+    .mp-native-table-query .o_cp_searchview { width: 100%; max-width: 560px; gap: 8px; flex-wrap: nowrap; }
     .mp-native-table-query .o_searchview { min-width: 0; border-inline-end: 1px solid var(--mp-ui-control-line) !important; border-radius: var(--mp-ui-radius) !important; }
     .mp-native-table-query .o_searchview_dropdown_toggler { display: inline-flex; gap: 8px; align-items: center; border-radius: var(--mp-ui-radius) !important; margin-inline-start: 0 !important; }
     .mp-native-table-query .mp-search-filter-label { display: inline; }
+    .mp-native-table-query .o_searchview_input_container { min-width: 0; }
+    .mp-native-table-query .o_searchview_input { min-width: 4ch; width: 4ch !important; }
+    .o_web_client .mp-native-table-query .o_searchview_dropdown_toggler { min-height: 36px; }
+    .o_web_client .mp-native-table-query .o_searchview .btn { min-height: 24px; }
     .o_list_view > .o_content, .o_list_view .o_content:has(> .o_list_renderer) { padding: 0 24px 24px; }
     .o_list_view .o_list_renderer { --ListRenderer-table-padding-x: 16px; }
     .o_list_renderer { container-type: inline-size; }
@@ -101,6 +105,9 @@
     .mp-native-table-heading { flex-basis: 55%; }
     .mp-native-table-query { flex-wrap: wrap; }
     .mp-native-table-query > .o_control_panel_actions { flex-basis: 100%; }
+    .o_web_client .mp-native-table-controls .mp-page-actions .btn,
+    .o_web_client .mp-native-table-query .o_searchview,
+    .o_web_client .mp-native-table-query .o_searchview_dropdown_toggler { min-height: 44px; }
     .mp-native-table-tools { margin-inline-start: auto; }
     .o_list_view > .o_content, .o_list_view .o_content:has(> .o_list_renderer) { padding: 0 16px 16px; }
     .mp-pagination { gap: 8px; }

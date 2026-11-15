@@ -52,11 +52,16 @@
     .o_web_client .o_list_renderer .o_list_table {
         --table-bg: var(--mp-ui-surface); --table-color: var(--mp-ui-ink);
         --table-border-color: var(--mp-ui-line);
-        --table-striped-bg: var(--mp-ui-hover); --table-striped-color: var(--mp-ui-ink);
+        --table-striped-bg: transparent; --table-striped-color: var(--mp-ui-ink);
         --table-hover-bg: var(--mp-ui-hover); --table-hover-color: var(--mp-ui-ink);
         --table-active-bg: var(--mp-ui-hover); --table-active-color: var(--mp-ui-ink);
     }
-    .o_web_client .o_list_renderer .o_list_table thead th { color: var(--mp-ui-ink); }
+    .o_web_client .o_list_renderer .o_list_table thead th { color: var(--mp-ui-muted); font-size: 12px; font-weight: 550; }
+    .o_web_client .o_list_renderer .o_group_name { color: var(--mp-ui-ink); }
+    .o_web_client .o_searchview_facet { color: var(--mp-ui-ink); background: var(--mp-ui-hover); }
+    .o_web_client .o_searchview_facet .mp-facet-hover { background: var(--mp-ui-surface); }
+    .o_web_client .o_searchview_facet_label { background: var(--mp-ui-action); color: var(--mp-ui-on-action); }
+    .o_web_client .o_searchview_facet .o_facet_remove { color: var(--mp-ui-muted); }
     .o_web_client .o_control_panel .breadcrumb { background-color: transparent; }
     .o_web_client .btn-close { filter: var(--mp-ui-close-filter); --btn-close-opacity: .8; --btn-close-focus-shadow: 0 0 0 3px var(--mp-ui-focus-ring); }
     .o_web_client .btn-close:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; }
@@ -100,13 +105,18 @@
     .o_web_client .o_form_view .o_form_sheet_bg { background-color: var(--mp-ui-canvas); }
     .o_web_client .o_control_panel .btn { min-height: var(--mp-ui-control); }
     .o_web_client .o_searchview { min-height: var(--mp-ui-search); }
-    .o_web_client .o_control_panel .btn-primary,
+    .o_web_client .btn-primary,
     .mp-page .btn-primary {
         --btn-bg: var(--mp-ui-action);
         --btn-border-color: var(--mp-ui-action);
         --btn-color: var(--mp-ui-on-action);
         --btn-hover-bg: var(--mp-ui-ink);
         --btn-hover-color: var(--mp-ui-on-action);
+        --btn-hover-border-color: var(--mp-ui-ink);
+        --btn-active-bg: var(--mp-ui-action); --btn-active-color: var(--mp-ui-on-action);
+        --btn-active-border-color: var(--mp-ui-action);
+        --btn-disabled-bg: var(--mp-ui-action); --btn-disabled-color: var(--mp-ui-on-action);
+        --btn-disabled-border-color: var(--mp-ui-action);
     }
     .o_web_client .o_list_view .o_list_renderer {
         --ListRenderer-thead-bg-color: var(--mp-ui-canvas);

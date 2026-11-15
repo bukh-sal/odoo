@@ -160,6 +160,7 @@ export class ListController extends Component {
                 offset: offset,
                 limit: limit,
                 total: count,
+                isGrouped,
                 onUpdate: async ({ offset, limit }, hasNavigated) => {
                     if (this.editedRecord) {
                         if (!(await this.editedRecord.save())) {

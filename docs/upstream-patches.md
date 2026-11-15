@@ -124,3 +124,6 @@ Actual dark-bundle audit exposed inherited fixed light native table/header/modal
 
 
 Core0.2.16 reworks owned native collection presentation with existing ControlPanel display/slots and list model pagination callback: shared bounded footer pagination, grouped/embedded consumer placement, explicit narrow query and end create action. Native non-table form record traversal remains separate. Owned router/WebClient preserves dirty action/URL consistency using presentation-only history positions and ordinary leave guards; no actor/workspace/permission authority is derived from this metadata. Theme files add native color-scheme and visible close SVG/focus. No wire/backend/storage/notice changes. Actual installed qualification pending.
+
+
+Core0.2.17 replaces fixed native group/facet colour utilities with semantic shared styles and expands the existing primary-action mapping to native dialogs. Uniform rows retain hover/selection; native query controls shrink/wrap and group counts are labelled through an optional presentation flag on existing paginator producers. No query/model/authorization changes; original source notices retained.

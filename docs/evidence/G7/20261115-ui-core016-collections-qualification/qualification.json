@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "source_commit": "8b9b4f5703f2d0849027dd6aaf59679a67275858",
+  "platform": "0.2.16",
+  "operation_id": "7c6d0472-473c-4bed-aa5a-ba9501445adf",
+  "plan_hash": "sha256:4259a2a40914ac9507a502267249a7140333ab3fe41eb980ee54edc1a2cb26a7",
+  "image_id": "sha256:6a76520e0cb44b3320d8a14646f9567e127aa3376ce355847c95b2f38f438e43",
+  "configuration": 11,
+  "apply_seconds": 152.39,
+  "checkpoint_manifest_sha256": "163b3597a55dcc55b86357680411757dd8acbc487b23f2b88fc40e59263692c9",
+  "retention": {
+    "main_tables_exact": 18,
+    "full_job_outbox_rows_exact": true,
+    "other_targets_exact": 10,
+    "private_app_pins_exact": 5
+  },
+  "source_proofs": {
+    "node_tests": 38,
+    "python_tests": 66,
+    "owl_templates": 19,
+    "freeze_files": 122,
+    "freeze_rows": 11
+  },
+  "installed_browser": {
+    "title_create_query_footer": true,
+    "empty_filter_and_clear": true,
+    "group_expand": true,
+    "dirty_back_draft_and_exact_url": true,
+    "draft_explicitly_discarded": true,
+    "business_saved": false,
+    "theme_restored": "light"
+  },
+  "findings": [
+    "Dark group fixed text utility and facet fixed light background have insufficient contrast",
+    "Native dialog primary action still purple due to shared selector scope",
+    "Group total wrongly labelled records",
+    "Partners Notes heading shares field row in installed0.1.2"
+  ],
+  "remaining": [
+    "Live many-page pagination",
+    "Full original D03-D06 visual matrix",
+    "Partners Notes declaration successor"
+  ],
+  "ui_phase_acceptance": "0/4",
+  "limitations": [
+    "No full canonical on changed source yet",
+    "Viewport requested390 measured355; not real200%zoom",
+    "Build exit0; private manifest expectation corrected via verification-only same-image continuation; original evidence retained"
+  ]
+}

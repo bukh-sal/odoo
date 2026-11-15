@@ -1161,6 +1161,7 @@ export class ListRenderer extends Component {
         const total = list.isGrouped ? list.count : group.count;
         return {
             label: String(group.displayName ?? ""),
+            isGrouped: list.isGrouped,
             offset: list.offset,
             limit: list.limit,
             total,

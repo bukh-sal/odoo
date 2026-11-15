@@ -1,13 +1,15 @@
 # Shared UI qualification and support boundaries
 
-Latest populated installed combination is core0.2.15 with Workboard0.2.14 and
-Partners0.1.2; the other three private app pins are unchanged. Its normal upgrade
-and exact data/history retention are in the [app correction record](evidence/G7/20261115-ui-app-corrections-qualification/qualification.json).
-Actual browser draft retention works; refused-history URL consistency and Notes
-heading placement remained findings. The [native collections plan](ui-native-collections-plan.md)
-now has source candidate0.2.16, not yet installed or visually accepted. Historical
-core12 canonical evidence below remains scoped to its original source. The full
-UI goal and original matrix remain unaccepted0/4.
+Latest populated installed combination is core0.2.16 with Workboard0.2.14 and
+Partners0.1.2; the other three private app pins remain unchanged. The
+[core16 record](evidence/G7/20261115-ui-core016-collections-qualification/qualification.json)
+proves normal152.39s maintenance/checkpoint and exact18tables/full history/ten
+other sites. Actual in-app title/end create/start query/bottom count, empty filter
+and clear, group expansion, and dirty Back text+URL retention pass. Dark grouping/
+filter chips, dialog primary style and Notes heading remain recorded findings.
+Core0.2.17 prepares their shared-style/count refinement; not yet installed. Live
+many-page pagination and the full original matrix remain open, acceptance0/4.
+Historical canonical evidence retains its original source scope.
 
 
 The provisional local platform code is0.2.12/native core19.0.0.2.12 and

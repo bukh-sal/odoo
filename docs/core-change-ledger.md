@@ -392,3 +392,6 @@ UI rendered native theme bridge0.2.15 normally installed/verified: actual native
 
 
 UI native collections candidate0.2.16 prepared after owner screenshots/reference audit. Shared footer paginator/model callbacks, header/query layout, narrow search, history refusal rollback and final dark control integration.38Node/66Python,19Owl and Sass/RTL source proofs pass; genuine previous-source navigation failure retained. Native build/maintenance/actual UI evidence pending; phase acceptance remains0/4.
+
+
+Core16 normal152.39s maintenance and actual title/query/footer/empty/group/dirty-Back URL+draft proofs complete in the linked qualification record. Core17 source refinement removes remaining fixed group/facet colours, unifies dialog primary styles, quiets native row/header treatment, improves narrow query sizing and labels group counts honestly.24focused Node/66Python/19Owl pass; installed core17 still pending; UI phase acceptance0/4.

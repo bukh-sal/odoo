@@ -24,6 +24,7 @@ export class TablePagination extends Component {
         offset: Number, limit: Number, total: Number, onUpdate: Function,
         updateTotal: { type: Function, optional: true },
         label: { type: String, optional: true },
+        isGrouped: { type: Boolean, optional: true },
         withAccessKey: { type: Boolean, optional: true },
         isEditable: { type: Boolean, optional: true },
     };
@@ -47,9 +48,14 @@ export class TablePagination extends Component {
     get canNext() { return this.valid && (this.limited || this.current < this.pageCount); }
     get range() {
         if (!this.valid) return _t("Result count unavailable");
-        if (!this.props.total) return _t("No records");
-        if (this.props.offset >= this.props.total && !this.limited) return _t("No records on this page · %s records in total", this.props.total);
+        if (!this.props.total) return this.props.isGrouped ? _t("No groups") : _t("No records");
+        if (this.props.offset >= this.props.total && !this.limited) return this.props.isGrouped
+            ? _t("No groups on this page · %s groups in total", this.props.total)
+            : _t("No records on this page · %s records in total", this.props.total);
         const end = Math.min(this.props.total, this.props.offset + this.props.limit);
+        if (this.props.isGrouped) return this.limited
+            ? _t("%s–%s · more groups may be available", this.props.offset + 1, end)
+            : _t("%s–%s of %s groups", this.props.offset + 1, end, this.props.total);
         return this.limited ? _t("%s–%s · more results may be available", this.props.offset + 1, end)
             : _t("%s–%s of %s records", this.props.offset + 1, end, this.props.total);
     }

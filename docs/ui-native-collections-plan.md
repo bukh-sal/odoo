@@ -150,3 +150,35 @@ app successor after core16. Do not silently relabel its installed0.1.2 archive.
 No new source is accepted by documentation: actual Owl compilation, meaningful
 source/controller tests, exact image/layers, normal checkpointed core maintenance
 and the original actual in-app interaction/visual matrix remain required.
+
+## Installed critique and next refinement (core17)
+
+Core16 was normally installed as operation7c6d0472, configuration11. The actual
+in-app list now has the requested title/end create/query/footer anatomy. Empty
+filter results and removing the filter work; dirty task Back preserves both text
+and the exact task URL, followed by explicit discard. These are bounded installed
+results, not completion of the original visual matrix or live many-page proof.
+
+Keep the local Meridian light/dark Partners captures beside the installed screen.
+Its quieter uniform rows and clear header hierarchy are useful; do not copy its
+duplicate tabs/sidebar choices, fabricated avatars, balances or ownership fields.
+Our list is still overly banded and heavy. Grouped dark headings are unreadable
+because the native template applies fixed text-black/text-body utilities; search
+chips retain a fixed light surface. A native task dialog also exposes a purple
+primary button because the shared action mapping is scoped too narrowly. Group
+pagination incorrectly calls its group count records. Preserve these screenshots.
+
+Next reserve unpublished core0.2.17/web19.0.2.17.0/native19.0.0.2.17, leaving app
+pins unchanged: map native group/facet/action presentation to shared semantic
+tokens, remove fixed conflicting colour utilities in the owned templates, use
+quiet uniform table rows with hover/selection retained, lighter header typography,
+consistent36px desktop query controls and44px narrow primary/query targets. Keep
+query input shrinkable beside Filters. Add an explicit grouped-count presentation
+flag to the existing pagination producer/consumer; no query/count/model changes.
+Actual narrow dimensions must be measured; viewport emulation is not real zoom.
+
+Compile and test the affected real templates/component/producer, then one exact
+immutable build and normal core maintenance, followed by paired actual light/dark
+group/filter/dialog and narrow captures. Fix Partners Notes in its ordinary
+full-span native declaration as the next legitimate app successor, separately
+from this unchanged-app core maintenance. No live source injection or relabelling.
