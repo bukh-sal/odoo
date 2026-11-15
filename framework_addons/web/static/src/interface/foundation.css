@@ -51,6 +51,12 @@
     }
     .o_web_client :is(h1, h2, h3, h4, h5, h6) { color: inherit; }
     .o_web_client .o_form_view :is(.oe_title, .o_form_label, .o_horizontal_separator) { color: var(--mp-ui-ink); }
+    /* Native relation/contact links have their own legacy Sass colours. */
+    .o_web_client .o_form_view a.o_form_uri,
+    .o_web_client .o_form_view a.o_form_uri > span:first-child { color: var(--mp-ui-link); }
+    .o_web_client .o_form_view a.o_form_uri > span:not(:first-child) { color: var(--mp-ui-ink); }
+    .o_web_client .o_form_view a.o_form_uri:hover { text-decoration: underline; text-underline-offset: 2px; }
+    .o_web_client .o_form_view a.o_form_uri:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; border-radius: 2px; }
     .o_web_client .o_list_renderer .o_list_table {
         --table-bg: var(--mp-ui-surface); --table-color: var(--mp-ui-ink);
         --table-border-color: var(--mp-ui-line);
