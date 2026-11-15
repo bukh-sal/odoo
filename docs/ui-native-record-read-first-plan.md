@@ -134,3 +134,31 @@ one immutable clean build/audit/new normal10scope reviewed upgrade and actual
 IAB Edit/first-field focus, Done/Cancel, Preferences close/no-write and narrow/
 light/dark checks. No replay of20/21, no runtime injection. Then continue the
 original matrix and app-owned visual/context improvements against Meridian.
+
+## Installed22 narrow action correction and shared context rows
+
+Actual22 desktop keyboard focus and Preferences now pass; zero-write retention
+is exact. Actual390px dark reader has no overflow but hides Edit/status, leaving
+New as its only command. The inherited mobile CSS hides all but the first action
+and expects an adaptive dropdown. Shared table/record frames deliberately wrap
+their actions and do not create that dropdown. This is an accidental lost action.
+
+Before23 implementation: restrict that legacy hiding to containers with the
+actual adaptive dropdown. Keep legacy dropdown behavior, shared wrapping,
+permission conditions, normal callbacks and all persistence/authority unchanged.
+Also add small shared header/list/row/status styles for a bounded linked-record
+preview, using existing tokens, logical layout, wrapping and visible focus. Apps
+own labels, queries, data, state and navigation; no new component/registry/API,
+business name, fabricated totals or dependency belongs in the core.
+
+Reserve0.2.23/core19.0.0.2.23/web19.0.2.23.0. Only mobile toolbar CSS, existing
+shared surfaces CSS and three identities ship; all five apps remain exact for
+this core step. Check actual CSS selector scope/legacy-vs-shared behavior, locked
+CSS/RTL compilation/identity/freeze and retained unchanged54Node source proof.
+One exact5file image/audit/normal reviewed10scope maintenance. Verify real390px
+reader Edit and edit Done/Cancel, New, desktop/light/dark without writes. Do not
+start a broad suite or claim full responsive/RTL/zoom acceptance from this slice.
+
+Then activate an app-owned current-source plan for real related work on the
+customer page, following Meridian's useful context hierarchy while preserving
+the existing provider/authority/revision contracts and optional-app behavior.

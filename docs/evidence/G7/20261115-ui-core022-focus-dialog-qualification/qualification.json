@@ -1,0 +1,40 @@
+{
+  "source": "cdd0770d5338411d40a9c6a6b787812bedb2c9e3",
+  "platform": "0.2.22",
+  "image_id": "sha256:4debdb7626193dd252f90a57524e034830c5ce78eb010de7c1515009c448e314",
+  "operation_id": "d8ac741c-aaff-4efd-8360-0dac05efe8ea",
+  "plan_hash": "sha256:bc7205cfe23466a3ed5ab6eaa273d5ef2af2ec66ff721d193b32667ef20a0c10",
+  "configuration": 19,
+  "apply_seconds": 154.516,
+  "source_checks": {
+    "node": 54,
+    "python": 66,
+    "templates": 32,
+    "freeze_files": 122
+  },
+  "installed": {
+    "keyboardEditFocusName": true,
+    "doneReaderEditFocus": true,
+    "dirtyDiscardRetainsOriginal": true,
+    "newEditableFocused": true,
+    "newDiscardDirectory": true,
+    "preferencesOpensNamed": true,
+    "preferencesNoSettingsWrite": true,
+    "desktopDarkReadable": true,
+    "narrowWidth": 390,
+    "narrowPageWidth": 390,
+    "narrowEditHiddenDefect": true,
+    "restoredLight": true,
+    "viewportReset": true,
+    "businessWritesExpected": 0
+  },
+  "retention": {
+    "full_history_exact": true,
+    "no_orphan": true,
+    "other_targets_exact": 10,
+    "partners_count": 166,
+    "tables_exact": 18,
+    "utc": "2026-11-15T03:47:40.459278+00:00"
+  },
+  "limit": "Specific installed focus/dialog fixes pass. Actual390px hides Edit through inherited mobile toolbar CSS; responsive card remains unaccepted. Original UI0of4/full matrix remains open."
+}

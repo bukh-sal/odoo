@@ -1,11 +1,11 @@
 # Shared UI qualification and support boundaries
 
-Latest installed combination is core0.2.21/config18 with Partners0.1.5 and the
-same four companions below. [Partial direct evidence](evidence/G7/20261115-ui-core021-readfirst-qualification/qualification.json)
-proves149.844s maintenance/retention and real reader, Done/Cancel, New/cancel,
-pager/dirty Discard with zero writes/no orphan. Actual Edit focus and Preferences
-fail; source correction22 is qualified but not installed. Original full matrix
-remains open/UI0of4; neither source compilation nor partial UI is full acceptance.
+Latest installed combination is core0.2.22/config19 with unchanged five apps.
+[Direct evidence](evidence/G7/20261115-ui-core022-focus-dialog-qualification/qualification.json)
+proves154.516s maintenance/retention, actual keyboard Edit/Done/Discard/New and
+Preferences dialog repair, zero business/history writes and no orphan. Actual
+390px dark reader exposes inherited hidden Edit; responsive card remains open.
+Original full matrix/UI0of4 remains open.21partial failures are retained.
 
 The preceding populated combination was core0.2.19, Partners0.1.5,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
