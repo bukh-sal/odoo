@@ -1,6 +1,15 @@
 # Shared UI qualification and support boundaries
 
-Latest combination is core0.2.26/config25, Workboard0.2.15, Delivery0.1.7,
+Current isolated review cohort is core0.2.34/config10, Partners0.1.10,
+Workboard0.2.19, Delivery0.1.10, Documents0.1.12 and Taskfiles0.1.6.
+[Installed reader/contact evidence](evidence/G7/20261115-ui-record034-installed/qualification.json)
+proves the bounded native informational/optional Work/contact workflow and its
+exact data effects. Desktop/narrow/theme/keyboard/sidebar checks are recorded;
+they do not close the original Arabic/RTL/authority/absence/zoom/recovery and
+final canonical cards. UI0/4 remains active. Historical combinations below
+retain their original source scope.
+
+An earlier combination was core0.2.26/config25, Workboard0.2.15, Delivery0.1.7,
 Documents0.1.10, Partners0.1.6 and Taskfiles0.1.5.
 [Current metadata/locale evidence](evidence/G7/20261115-ui-document026-qualification/qualification.json)
 proves real HTML language/direction and unrestricted viewport, plus restored

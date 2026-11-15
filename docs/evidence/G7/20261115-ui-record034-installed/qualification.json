@@ -1,0 +1,152 @@
+{
+  "source": "67e1deae197923817260c86ba4e7f76fc3401b40",
+  "core": {
+    "all_views_exact": true,
+    "apply_seconds": 168.469,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 9,
+    "image_id": "sha256:712f19ea3348f9faea5f574f74f4eceb0dcc1037e748256068d09d0e6b181dc3",
+    "operation_id": "fab98166-38ed-45e3-8279-b627b563402d",
+    "plan_hash": "sha256:1e5211ea97515dc0953c75db3ea5664c2365b687b7518b44d0b23231e39ab185",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 6,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 3,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 1,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "terminal_job_control_bound_to_actual_ready_receipt": true,
+    "worker_id": "2c4acc0162c415dbe71299945e50931b3f76cb2d7bd5bc2055761ecf0833f8de",
+    "workspace_policy_epoch_increment": 0
+  },
+  "apps": {
+    "all_views_exact": true,
+    "apply_seconds": 175.782,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 10,
+    "image_id": "sha256:8003e18cbe2740024f4bd899d4eb746123a115403c3d4b697d03b3307979caf8",
+    "operation_id": "c64ad356-1315-487d-98bc-64ff08576ab2",
+    "plan_hash": "sha256:eda692c38703f6bea09619993da437c535e346c733b295abdf79fdb1303f44d4",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 6,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 3,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 1,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "terminal_job_control_bound_to_actual_ready_receipt": true,
+    "worker_id": "4970f89f89a1bf830ed3609572ff57e8beadd87baa447dcdbae6e418b5d2707b",
+    "workspace_policy_epoch_increment": 1
+  },
+  "audits": {
+    "core": {
+      "image_id": "sha256:712f19ea3348f9faea5f574f74f4eceb0dcc1037e748256068d09d0e6b181dc3",
+      "receipt_sha256": "5456c37d89e825299c48ff22e4fc8d3629140fa3e6aee44a46c9a74aee2542cb"
+    },
+    "apps": {
+      "image_id": "sha256:8003e18cbe2740024f4bd899d4eb746123a115403c3d4b697d03b3307979caf8",
+      "receipt_sha256": "fc834dc6bce1cde60243b84497a7f9661c8d50c3df13760c56007c133b24adf7"
+    }
+  },
+  "installed_browser": {
+    "core": "0.2.34",
+    "partners": "0.1.10",
+    "nativeDiscardRestoredOriginalNotes": true,
+    "readonly22TablesExact": true,
+    "contactCreatedAnd22TableDeltaVerified": true,
+    "keyboard": {
+      "rightMovesFocusWithoutSelection": true,
+      "enterSelects": true,
+      "endMovesToWork": true
+    },
+    "narrow": {
+      "cssWidth": 390,
+      "cssHeight": 844,
+      "documentScrollWidth": 390
+    },
+    "sidebarCollapsePersistsReload": true,
+    "darkAppearancePersistsReload": true,
+    "restored": "light/expanded/default viewport",
+    "workContributionPresent": true,
+    "linkedTaskAndPinnedFileOpened": true,
+    "findings": [
+      "Native sheet paints a solid backdrop behind informational cards",
+      "Narrow header still uses two rows; useful detail available without horizontal overflow"
+    ],
+    "limits": [
+      "Not full original UI phase acceptance",
+      "No real RTL/current-authority/true-zoom/recovery claim in this pass"
+    ]
+  },
+  "retention": {
+    "readonly_22_tables_field_exact": true,
+    "one_contact_and_one_owner_outbox_event": true,
+    "organization_and_all_original_records_unchanged": true,
+    "after_contact_22_tables_exact": true,
+    "protected_targets_exact": true
+  },
+  "private_receipt_sha256": {
+    "browser-checks.json": "6c9361fb4c7cd0ec9778a39a56e9181497a375c8c294eb9626655a1fa76caa6d",
+    "contact-verified.json": "659a8e7a5a848de88e376587287191c7ccb44f67f3bb4d19a741a0af8d34c2a4",
+    "final-verified.json": "eb46aacec794886f5a09d07b7d0444312a68c9fdba40ec4af0e654642f160d06",
+    "native-sort.json": "8934396ba450986135297777c11ecfe8f537beec68c2920cd98f1efd8b20980a",
+    "readonly-verified.json": "c8a948febc8793720cf92d3e4cc3230386113727c183adfee80104dfa9d9840e"
+  },
+  "screenshot_sha256": {
+    "customer-contact-created.png": "8354ee23c1d236570787419d0e1bbbe6229486099c7695757f12ef8f32590c87",
+    "customer-dark.png": "4bc965741ccdb5ab9815b40be4fb4a4ac61bf6fe96d8d54067b94cc00acbda05",
+    "customer-narrow.png": "110d1340436f0020e8dd2f7789367232657a6fbf1f9eb6d9bf02af34e6bb05d1",
+    "customer-overview.png": "8e5c05740229f11fecae179e601e3357c3105a966a26b206bd415989e1cf7312",
+    "customer-work-narrow.png": "9f5922d6df40907de31abac0059299e83210595159fb2555e77b1f26157edee1",
+    "customer-work.png": "63cb9191ce0747630c87135e2cf42063fc1d9c3377f53f70f0953083a0452e53"
+  },
+  "findings": [
+    "Shared surfaces.css .o_web_client .o_form_view .o_form_sheet overrides lower-specificity informational background; solid sheet remains behind cards in both themes",
+    "Narrow native header uses two rows; no horizontal overflow, but vertical density still needs integrated critique"
+  ],
+  "scope": "Installed informational reader and bounded useful contact workflow verified; full UI-D03..06 original matrix/recovery/final canonical remains active, formal phase acceptance0/4."
+}

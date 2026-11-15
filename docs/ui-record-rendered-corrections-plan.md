@@ -82,3 +82,27 @@ archives, failed private verification traces and native cleanup evidence remain.
    pass, rather than treating a pretty screenshot as full qualification.
 
 Source inspection addendum: native list headers did not expose aria-sort; the correction adds truthful primary sort state without changing sorting. Existing shared Icon aliases already resolve legacy names; remove the remaining FontAwesome presentation classes and direct gear/account glyphs. The native frontend test asset is inventoried/shipped already; preserve and update its two useful SVG/ARIA assertions, but do not claim it ran. No whole-tree packaging change in this UI slice.
+
+## Installed34 outcome
+
+15November2026 record34 installed: one core37.984s build712f19ea and one
+Partner-successor35.015s build8003e18c; exact15 core/five Partner paths, Python,
+four other archives and all-layer/source audits verified. Normal corefab98166 /
+1e5211ea168.469s/config9 and Partnerc64ad356/eda692c3175.782s/config10 completed
+and directly verified; no postcheck failure, continuation or replay. Checkpoints,
+current installation/version/digest, all app views, exact retired Delivery view
+absence, authority and protected targets verified. Terminal-job normal control
+changes bind actual dispatch-ready receipts; business outcome/history stays exact.
+IAB18730 proves Overview/Contacts and actual Delivery Work contribution, native
+Edit/draft/Discard, native Name sorting SVG/ARIA, linked task/customer/pinned218B
+file journey, manual Right/End/Enter tab navigation,390CSS nooverflow, light/dark
+and remembered collapsed sidebar across reload. One scoped native Add contact
+creates a synthetic person with organization relation and one owner outbox event;
+organization/all original rows exact, all other22-table data exact, final later
+UI reads field-exact. No fake finance/contribution authority or universal rich ABI.
+Shared native sheet backdrop still overrides informational transparency; narrow
+header density remains an integrated visual finding. Source selector identified,
+no live CSS injection/relabel/new35 image. Original UI0/4 matrix/recovery/final
+canonical remains active. Main18610 human form and user tabs remain untouched.
+
+Detailed proof: [installed34](evidence/G7/20261115-ui-record034-installed/qualification.json). No further one-off app successor is needed for the current working contact/contribution outcome. Carry the exact cascade finding into the next coherent integrated qualification plan before another shipped edit.
