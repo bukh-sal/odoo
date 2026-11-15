@@ -10,6 +10,8 @@ import {
     NetworkErrorDialog,
     RequestEntityTooLargeErrorDialog,
     RPCErrorDialog,
+    PageUnavailableDialog,
+    WarningDialog,
 } from "./error_dialogs";
 import { UncaughtClientError, ThirdPartyScriptError, UncaughtPromiseError } from "./error_service";
 
@@ -21,6 +23,48 @@ import { UncaughtClientError, ThirdPartyScriptError, UncaughtPromiseError } from
 const errorHandlerRegistry = registry.category("error_handlers");
 const errorDialogRegistry = registry.category("error_dialogs");
 const errorNotificationRegistry = registry.category("error_notifications");
+
+// One expected-state message for concurrent failures in this web environment.
+// This is presentation only: the original server decision stays authoritative.
+const unavailableDialogs = new WeakSet();
+const unavailableExceptions = new Set([
+    "werkzeug.exceptions.NotFound",
+    "odoo.exceptions.MissingError",
+    "odoo.exceptions.AccessError",
+    "odoo.addons.web.controllers.action.MissingActionError",
+]);
+
+export function pageUnavailableHandler(env, error, originalError) {
+    if (!(originalError instanceof RPCError) ||
+        originalError.Component ||
+        (originalError.code !== 404 && !unavailableExceptions.has(originalError.exceptionName))) {
+        return false;
+    }
+    const name = originalError.exceptionName;
+    if (name && (errorNotificationRegistry.contains(name) ||
+        (errorDialogRegistry.contains(name) && errorDialogRegistry.get(name) !== WarningDialog))) {
+        return false; // Preserve explicit app-owned error presentation.
+    }
+    if (!unavailableDialogs.has(env)) {
+        unavailableDialogs.add(env);
+        try {
+            env.services.dialog.add(PageUnavailableDialog, {}, {
+                onClose: () => unavailableDialogs.delete(env),
+            });
+        } catch (failure) {
+            unavailableDialogs.delete(env);
+            throw failure;
+        }
+        // Recheck the normal scoped navigation; never retry the failed operation.
+        if (env.services.menu?.reload) {
+            Promise.resolve().then(() => env.services.menu.reload()).catch(() => {});
+        }
+    }
+    error.event?.preventDefault();
+    error.unhandledRejectionEvent?.preventDefault();
+    return true;
+}
+errorHandlerRegistry.add("pageUnavailableHandler", pageUnavailableHandler, { sequence: 95 });
 
 // -----------------------------------------------------------------------------
 // RPC errors
@@ -57,7 +101,7 @@ export function rpcErrorHandler(env, error, originalError) {
                 ErrorComponent = errorDialogRegistry.get(exceptionName);
             }
         }
-        if (!ErrorComponent && originalError.data.context) {
+        if (!ErrorComponent && originalError.data?.context) {
             const exceptionClass = originalError.data.context.exception_class;
             if (errorDialogRegistry.contains(exceptionClass)) {
                 ErrorComponent = errorDialogRegistry.get(exceptionClass);

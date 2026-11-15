@@ -170,3 +170,14 @@ Core0.2.18 adds the shared native record ControlPanel variant and explicit loade
 15November2026 final35: shared native informational cascade/heading/danger presentation corrections; native identity browser transports existing pinned scope/release headers to the exact readonly breadcrumb model-name endpoint. Server ACL/scope/release guards unchanged; attribution and notices retained.
 
 15November2026 source36: shared dir=auto title alignment uses validated document-root direction with basic supported left/right declarations, retained unchanged by RTL compilation. No locale/authority/action behavior or notices changed.
+
+15November2026 source37: the existing native error-handler registry presents actual
+missing/access RPC failures as one deduplicated, fixed translated unavailable-page
+dialog. Explicit application dialog/notification choices remain authoritative;
+unexpected errors retain opt-in diagnostics. Shell's redundant blocking modal is
+removed, retaining its hidden mounted action canvas and inline recovery. Native
+Dialog back/expand/close and diagnostic-copy controls use exact already-pinned
+Lucide SVG geometry in the shared header template, preserving native callers,
+callbacks, slots and notices. No request retry, automatic navigation, draft
+save/discard, server authority or recovery change. Source checks pass; installed
+qualification is pending under ui-unavailable-page-correction-plan.md.

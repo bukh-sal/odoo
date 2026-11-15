@@ -47,7 +47,7 @@ export const odooExceptionTitleMap = new Map(
 export class ErrorDialog extends Component {
     static template = "web.ErrorDialog";
     static components = { Dialog };
-    static title = _t("Odoo Error");
+    static title = _t("Application error");
     static showTracebackButtonText = _t("See technical details");
     static hideTracebackButtonText = _t("Hide technical details");
     static props = { ...standardErrorDialogProps };
@@ -58,7 +58,7 @@ export class ErrorDialog extends Component {
         });
         this.copyButtonRef = useRef("copyButton");
         this.popover = usePopover(Tooltip);
-        this.contextDetails = "Occured ";
+        this.contextDetails = "Occurred ";
         if (this.props.serverHost) {
             this.contextDetails += `on ${this.props.serverHost} `;
         }
@@ -87,13 +87,13 @@ export class ErrorDialog extends Component {
 // Client Error Dialog
 // -----------------------------------------------------------------------------
 export class ClientErrorDialog extends ErrorDialog {}
-ClientErrorDialog.title = _t("Odoo Client Error");
+ClientErrorDialog.title = _t("Client error");
 
 // -----------------------------------------------------------------------------
 // Network Error Dialog
 // -----------------------------------------------------------------------------
 export class NetworkErrorDialog extends ErrorDialog {}
-NetworkErrorDialog.title = _t("Odoo Network Error");
+NetworkErrorDialog.title = _t("Network error");
 
 // -----------------------------------------------------------------------------
 // Request Entity Too Large Dialog
@@ -125,13 +125,13 @@ export class RPCErrorDialog extends ErrorDialog {
         }
         switch (this.props.type) {
             case "server":
-                this.title = _t("Odoo Server Error");
+                this.title = _t("Server error");
                 break;
             case "script":
-                this.title = _t("Odoo Client Error");
+                this.title = _t("Client error");
                 break;
             case "network":
-                this.title = _t("Odoo Network Error");
+                this.title = _t("Network error");
                 break;
         }
     }
@@ -147,6 +147,17 @@ export class RPCErrorDialog extends ErrorDialog {
 // -----------------------------------------------------------------------------
 // Warning Dialog
 // -----------------------------------------------------------------------------
+export class PageUnavailableDialog extends Component {
+    static template = "web.WarningDialog";
+    static components = { Dialog };
+    static props = { close: Function };
+
+    get title() { return _t("Page unavailable").toString(); }
+    get message() {
+        return _t("This page is no longer available, or your access has changed. Close this message and choose a page from your workspace. Keep this tab open if it contains unsaved changes.").toString();
+    }
+}
+
 export class WarningDialog extends Component {
     static template = "web.WarningDialog";
     static components = { Dialog };

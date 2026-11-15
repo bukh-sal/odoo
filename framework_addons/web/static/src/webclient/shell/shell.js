@@ -1,4 +1,4 @@
-import { Component, useEffect, useExternalListener, useRef, useState, useSubEnv, xml } from "@odoo/owl";
+import { Component, useEffect, useExternalListener, useRef, useState, useSubEnv } from "@odoo/owl";
 import { browser } from "@web/core/browser/browser";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -7,31 +7,11 @@ import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { ErrorHandler } from "@web/core/utils/components";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
 import { user } from "@web/core/user";
-import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
 import { PageHeader } from "@web/interface/page_header";
 import { StatusMessage } from "@web/interface/status_message";
 import { Icon } from "@web/interface/icon";
 import { useContextPreference } from "@web/interface/context_preference";
-
-class AccessDialog extends Dialog {
-    dismiss() {}
-    onEscape() {}
-}
-
-export class AccessChanged extends Component {
-    static components = { Dialog: AccessDialog };
-    static props = { close: Function, reopen: Function };
-    static template = xml`
-        <Dialog title="title" header="false" size="'md'">
-            <h2>Workspace access changed</h2>
-            <p>The current view is hidden because its access or deployment could not be verified. Unsaved changes are kept in this tab.</p>
-            <t t-set-slot="footer">
-                <button class="btn btn-primary" t-on-click="props.reopen">Reopen workspace in a new tab</button>
-            </t>
-        </Dialog>`;
-    get title() { return _t("Workspace access changed"); }
-}
 
 /** Presentation over the existing menu/action services and their leave lifecycle. */
 export class Shell extends Component {
@@ -43,7 +23,6 @@ export class Shell extends Component {
         this.menu = useService("menu");
         this.action = useService("action");
         this.command = useService("command");
-        this.dialog = useService("dialog");
         this.ui = useService("ui");
         this.state = useState({ revision: 0, contextOpen: false });
         useSubEnv({ interfaceContextTarget: ".mp-shell-context-controls" });
@@ -64,11 +43,6 @@ export class Shell extends Component {
         });
         useBus(registry.category("systray"), "UPDATE", () => this.state.revision++);
         useExternalListener(window, "focus", () => this.menu.reload());
-        useEffect(() => {
-            if (this.blocked) {
-                return this.dialog.add(AccessChanged, { reopen: () => this.reopenWorkspace() });
-            }
-        }, () => [this.blocked]);
     }
 
     get apps() { return this.menu.getApps(); }

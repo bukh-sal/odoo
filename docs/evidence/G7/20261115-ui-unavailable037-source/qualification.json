@@ -1,0 +1,93 @@
+{
+  "source_base": "64c41365a3967c6b44ea23f8afbd68e4489339c8",
+  "candidate": "0.2.37_unpublished",
+  "shipped_source_sha256": {
+    "packages/platform_sdk/modular_platform/projection.py": "8b6d7f7c28c6d6590914aad20b2d5ae2971733ece17cbc1ec2993b2ee0d8fb4e",
+    "framework_addons/mp_core/__manifest__.py": "2e01c965ea12b9e582a3b816a482defe0c31241050668afa16c5d5c70b6b4957",
+    "framework_addons/web/__manifest__.py": "2dac9d2e72c54ba7090c30ff5437a914c3889c6b6bacbf94538883d86bc1bb4f",
+    "framework_addons/web/static/src/core/errors/error_handlers.js": "d9ee2099e0662c20b554dada59516dc034c5262b80c3eeac7bf69434981c4c30",
+    "framework_addons/web/static/src/core/errors/error_dialogs.js": "892bfa7a00d5fe57361d90fe12071579c7e3bc76d5a0e13d778becdfac628e92",
+    "framework_addons/web/static/src/core/errors/error_dialogs.xml": "97657dc32bae634b7db1200d8a8faff7780ef8b48a47dc0109b60923c0d3208f",
+    "framework_addons/web/static/src/core/dialog/dialog.xml": "f80950610c152ce93729a7a529082c67e97bb0de0c68ff869d12e8feadf059a5",
+    "framework_addons/web/static/src/webclient/shell/shell.js": "e339a87fbee5b3636a7f17e4dec9fa26d2761883f016f007bd92e302112bb059"
+  },
+  "private_heads": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "artifacts": {
+    "dev.local.partners": {
+      "version": "0.1.10",
+      "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    },
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    }
+  },
+  "native_transport_unchanged_sha256": "14fd795e5cf98259ac4242735db44fc697f7bcdaef8a8db1d03745308bd07ca8",
+  "tests": {
+    "node_cases": 175,
+    "node_failures": 0,
+    "focused_python": 54,
+    "python_failures": 0,
+    "log_sha256": {
+      "root-node.out.txt": "be773bbbaab1272c82a454f3f2a573f18dbe3e0671de1b00e16ad0f565f6592b",
+      "root-python.out.txt": "c8d5c7740d97dd147e194c609279fe09c4ee7ee0a032a6e998767654ad2ae9e1",
+      "root-freeze.out.txt": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+    }
+  },
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "predecessor_canonical": {
+    "source": "25808668b3ec459ca0f824511b9978cf1dcb17c0",
+    "exit": {
+      "exit": 0,
+      "seconds": 5048.609,
+      "pid": 12808,
+      "windows_creation_filetime": 134392361186909958,
+      "finished_utc": "2026-11-15T18:32:47.296628+00:00",
+      "log_sha256": "8b9a237c3dff7938822f4f34662e9456bd5468aa6bba444d8ecc99c3df153bfb"
+    },
+    "tests": 971,
+    "passed": 969,
+    "skipped": 2,
+    "failures": 0,
+    "errors": 0,
+    "source_inputs": 4105,
+    "curated_source_inputs_exact_through_terminal": true,
+    "documentation_only_later_commits": [
+      "docs/evidence/G7/20261115-ui-final036-matrix/qualification.json",
+      "docs/implementation-status.md",
+      "docs/ui-final-integration-plan.md",
+      "docs/ui-unavailable-page-correction-plan.md",
+      "docs/work-log.md"
+    ],
+    "scope": "Canonical source36 completed normally, same owned process throughout. Does not qualify the subsequent source37 correction.",
+    "skip_reasons": [
+      "Windows symlink privilege unavailable",
+      "Real Linux symlink probes qualify runtime policy"
+    ]
+  },
+  "maintenance_fence": "Existing owned-web static presentation prefix accepts these paths; no guard change needed.",
+  "scope": "Actual source RPC/error/Shell and template proofs with mocked external boundaries; installed source37 not yet qualified. No backend/authority/recovery/app archive changes."
+}

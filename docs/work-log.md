@@ -3176,3 +3176,17 @@ actual200% preview;681CSS width/nooverflow for native/custom paths. Motion off;
 normal Settings launch had no targetable window, no settings changed. All native
 operations terminal, fixtures closed. Canonical036 remains ONE running process,
 not green; original full UI0/4 active. No product source edited in this section.
+
+
+15November2026 source37: canonical036 finished normally971tests/969pass/
+2existing skips/0failures, exact curated source through terminal; it does not
+qualify37. Eight shipped paths implement one fixed unavailable-page dialog for
+actual missing/access RPC failures, preserve explicit owner presentations,
+deduplicate concurrent failures and remove Shell's redundant modal. Hidden
+mounted action/draft/inline recovery remain. Generic errors keep opt-in details;
+shared Dialog controls use exact existing pinned SVG geometry and native slots.
+All175Node cases and54affected Python cases pass; freeze122files11rows passes.
+No maintenance-fence change needed: existing static web boundary admits these
+presentation files. No backend/recovery/authority/app archive change. Installed
+37 proof next on owned18730 and source-free18731; main human18610 untouched.
+True200%confirmed; motion unchanged/unverified. Original UI0/4 remains active.

@@ -1,0 +1,30 @@
+{
+  "source": "25808668b3ec459ca0f824511b9978cf1dcb17c0",
+  "exit": {
+    "exit": 0,
+    "seconds": 5048.609,
+    "pid": 12808,
+    "windows_creation_filetime": 134392361186909958,
+    "finished_utc": "2026-11-15T18:32:47.296628+00:00",
+    "log_sha256": "8b9a237c3dff7938822f4f34662e9456bd5468aa6bba444d8ecc99c3df153bfb"
+  },
+  "tests": 971,
+  "passed": 969,
+  "skipped": 2,
+  "failures": 0,
+  "errors": 0,
+  "source_inputs": 4105,
+  "curated_source_inputs_exact_through_terminal": true,
+  "documentation_only_later_commits": [
+    "docs/evidence/G7/20261115-ui-final036-matrix/qualification.json",
+    "docs/implementation-status.md",
+    "docs/ui-final-integration-plan.md",
+    "docs/ui-unavailable-page-correction-plan.md",
+    "docs/work-log.md"
+  ],
+  "scope": "Canonical source36 completed normally, same owned process throughout. Does not qualify the subsequent source37 correction.",
+  "skip_reasons": [
+    "Windows symlink privilege unavailable",
+    "Real Linux symlink probes qualify runtime policy"
+  ]
+}
