@@ -1,6 +1,13 @@
 # Shared UI qualification and support boundaries
 
-Latest populated installed combination is core0.2.19, Partners0.1.5,
+Latest installed combination is core0.2.21/config18 with Partners0.1.5 and the
+same four companions below. [Partial direct evidence](evidence/G7/20261115-ui-core021-readfirst-qualification/qualification.json)
+proves149.844s maintenance/retention and real reader, Done/Cancel, New/cancel,
+pager/dirty Discard with zero writes/no orphan. Actual Edit focus and Preferences
+fail; source correction22 is qualified but not installed. Original full matrix
+remains open/UI0of4; neither source compilation nor partial UI is full acceptance.
+
+The preceding populated combination was core0.2.19, Partners0.1.5,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
 [Current direct record](evidence/G7/20261115-ui-partners015-record-qualification/qualification.json)
 proves normal154.89s upgrade/config17 with core/four apps unchanged; actual equal
@@ -12,7 +19,7 @@ pinned-v1/current-newer document context remains functional on this combination.
 
 The actual flat-col4 counterexample remains preserved as unaccepted1.4layout;
 there was no business write under its superseded UI intent. Source/native success
-was not called visual acceptance. Current critique is an editing-first native
+was not called visual acceptance. Its critique was an editing-first native
 reader, xl warning and custom action title fallback; follow the fresh
 [native read-first plan](ui-native-record-read-first-plan.md). No core20 claim yet.
 Original full rendered matrix/current frozen canonical remain open/UI0of4.

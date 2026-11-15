@@ -104,3 +104,33 @@ retain the sheet proof; source/component/identity checks, fresh clean image,
 normal new stage/proposal/approval/maintenance only. Never register the retired
 20proposal2600d4ca-d643-4f78-888d-9b75a591ae79. Main stays config17/core19 while
 preparing; no uncertain write/recovery or live patch exists.
+
+## Installed21 findings and next correction
+
+The normal21 rollout completed once in149.844s/config18. Installed reading,
+clean Done/Cancel, New/cancel, record navigation and dirty Discard work; the
+zero-write check preserves all18tables, full job/outbox history,166partners and
+ten protected targets. These results do not establish the full UI matrix.
+
+Two actual defects remain: explicit Edit leaves focus on BODY, despite the
+source harness passing; My Preferences raises ActionDialog's undefined slots
+header error. Preserve both screenshots and prior shallow harness results.
+
+Before implementation, reproduce focus with the real nested Field component
+and reactive record boundary rather than calculating its props in the parent.
+Resolve readiness/identity at that native seam, with a pending one-shot focus
+request, no timers/polling or focus theft. Keep touch, disabled autofocus,
+dialog, different/destroyed record and nested-relation exclusions. Use the
+existing Owl facilities; do not create a focus framework or app-specific rule.
+
+Reproduce the optional-slots ActionDialog with its inherited native template.
+Handle absent slots in the two ARIA expressions while retaining named normal,
+custom-header and headerless dialogs. No settings or account writes are needed.
+
+Reserve unpublished0.2.22/core19.0.0.2.22/web19.0.2.22.0 for one coherent fix.
+Keep all five apps, archives, authority, Python and persistence behavior exact.
+Require real predecessor-red/current-green witnesses, affected tests/templates,
+one immutable clean build/audit/new normal10scope reviewed upgrade and actual
+IAB Edit/first-field focus, Done/Cancel, Preferences close/no-write and narrow/
+light/dark checks. No replay of20/21, no runtime injection. Then continue the
+original matrix and app-owned visual/context improvements against Meridian.

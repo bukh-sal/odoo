@@ -7,8 +7,8 @@
                 tabindex="-1"
                 t-att-aria-modal="data.isActive ? 'true' : undefined"
                 t-att-aria-hidden="data.isActive ? undefined : 'true'"
-                t-att-aria-labelledby="props.header and !props.slots.header ? id + '_title' : undefined"
-                t-att-aria-label="!props.header or props.slots.header ? props.title : undefined"
+                t-att-aria-labelledby="props.header and !props.slots?.header ? id + '_title' : undefined"
+                t-att-aria-label="!props.header or props.slots?.header ? props.title : undefined"
                 t-att-class="{ o_technical_modal: props.technical, o_modal_full: isFullscreen, o_inactive_modal: !data.isActive }"
                 t-ref="modalRef"
                 >

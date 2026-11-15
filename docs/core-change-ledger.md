@@ -1,3 +1,15 @@
+## Native field readiness and optional dialog slots0.2.22 -15November2026
+
+Installed21 revealed real nested Field focus not covered by the shallow harness,
+and ActionDialog's optional-slots naming exception. Stronger actual Owl/native
+component witnesses reproduce both predecessors. Scope readiness notification
+to the current root Field and eligible read-first parent; keep request pending
+until actual input patch, clear after focus/external focus/disabled flows. No
+timer, new framework, app rule, persistence or authority change. Optional slots
+in shared ARIA naming preserves normal/custom/headerless dialog names. Three
+identity files legitimately version shipped bytes.54Node66Python32Owl/freeze122
+pass; installed successor qualification next. Prior failures/proof limits retained.
+
 ## Pre-approval native layout correction0.2.21 -15November2026
 
 Actual no-sheet Owl/native focus witness fails exact20 (assertion, exit1); candidate20 remains built/staged/unregistered, never approved/applied.21 scopes focus to native content instead of requiring a sheet. Exact old failure/current sheet+no-sheet successes retained; all mode/storage/authority/callback contracts otherwise unchanged.50currentNode/10affected identity checks/freeze pass;66prior source checks and32compiled unchanged templates remain scoped, not counted again. No installed21 claim until normal new immutable maintenance.

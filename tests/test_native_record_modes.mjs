@@ -125,6 +125,27 @@ test('focus waits for its requested mode and never steals dialog/touch/disabled/
     }
 });
 
+test('native input readiness completes the pending request after separately reactive Field patches',async()=>{
+    const f=fixture({editing:true});f.c.requestedRecordFocus={kind:'field',record:f.c.model.root};
+    f.c.rootRef.el.querySelector=()=>null;
+    f.c.focusRequestedRecordMode();assert.ok(f.c.requestedRecordFocus);assert.equal(f.doc.activeElement,f.doc.body);
+    f.c.rootRef.el.querySelector=()=>f.field;
+    f.c.focusRequestedRecordMode();assert.equal(f.doc.activeElement,f.field);assert.equal(f.c.requestedRecordFocus,null);
+    f.c.focusRequestedRecordMode();assert.equal(f.calls.filter(c=>c[0]==='focus').length,1);
+});
+
+test('actual Field readiness is scoped to the root record, optional and mode-dependent',async()=>{
+    const fieldSource=await readFile(new URL('framework_addons/web/static/src/views/fields/field.js',root),'utf8');
+    const setup=fieldSource.match(/^    setup\([^]*?^    }/m)[0];
+    for(const [callback,id,expected] of [[true,'root',1],[true,'nested',0],[false,'root',0]]){
+        const effects=[];let ready=0;
+        const Field=new Function('useEffect','getFieldFromRegistry','return class {'+setup+'}')((fn,deps)=>effects.push({fn,deps}),()=>({}));
+        const field=new Field();field.env={model:{root:{id:'root'}},onNativeRecordFieldReady:callback?()=>ready++:undefined};
+        field.props={fieldInfo:{field:{}},record:{id,isInEdition:false}};field.setup();assert.equal(effects.length,expected);
+        if(expected){assert.deepEqual(effects[0].deps(),[false]);field.props.record.isInEdition=true;assert.deepEqual(effects[0].deps(),[true]);effects[0].fn();assert.equal(ready,1);}
+    }
+});
+
 const statusSource=(await readFile(new URL('framework_addons/web/static/src/views/form/form_status_indicator/form_status_indicator.js',root),'utf8')).replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'');
 const Indicator=new Function('Component','useRef','useState','useEffect','useBus','_t','document',statusSource+';return FormStatusIndicator;')(
     class {constructor(props){this.props=props;}},()=>({el:null}),x=>x,()=>{},()=>{},x=>x,{activeElement:null,body:{}});

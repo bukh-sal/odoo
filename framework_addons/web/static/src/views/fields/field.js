@@ -7,7 +7,7 @@ import { getFieldContext } from "@web/model/relational_model/utils";
 import { X2M_TYPES, getClassNameFromDecoration } from "@web/views/utils";
 import { getTooltipInfo } from "./field_tooltip";
 
-import { Component, xml } from "@odoo/owl";
+import { Component, useEffect, xml } from "@odoo/owl";
 
 const isSmall = utils.isSmall;
 
@@ -360,6 +360,9 @@ export class Field extends Component {
         } else {
             const fieldType = this.props.record.fields[this.props.name].type;
             this.field = getFieldFromRegistry(fieldType, this.props.type);
+        }
+        if (this.env.onNativeRecordFieldReady && this.props.record.id === this.env.model?.root.id) {
+            useEffect(() => this.env.onNativeRecordFieldReady(), () => [this.props.record.isInEdition]);
         }
     }
 

@@ -1,0 +1,31 @@
+{
+  "source": "d6d90a91b3f1135c2fbcf3b756caad88ee13444a",
+  "platform": "0.2.21",
+  "image_id": "sha256:65ac6dce73fa3b4d1c35a1b15c9df85a027f4140726e5db1f57d85611fdc35df",
+  "operation_id": "25eb2805-5fb2-42e0-9007-e05d85cc74c4",
+  "plan_hash": "sha256:14e0643bf8fa3dce1f37b46fcda9ca17525807466ade3d7bb71c8eaf20f8b3e5",
+  "configuration": 18,
+  "apply_seconds": 149.844,
+  "installed_checks": {
+    "readerNoNameOrNotesInputs": true,
+    "explicitEdit": true,
+    "doneReturnsReaderAndEditFocus": true,
+    "cancelReturnsReaderAndEditFocus": true,
+    "dirtyDiscardReturnsReaderAndRetainedNotes": true,
+    "newEditable": true,
+    "newDiscardReturnedToDirectory": true,
+    "loadedNextRecordRemainsReader": true,
+    "editFocusFailedBody": true,
+    "preferencesClientFailure": "ActionDialog template: undefined header",
+    "businessWritesExpected": 0
+  },
+  "zero_write_retention": {
+    "full_history_exact": true,
+    "no_orphan": true,
+    "other_targets_exact": 10,
+    "partners_count": 166,
+    "tables_exact": 18,
+    "utc": "2026-11-15T03:23:26.799083+00:00"
+  },
+  "limit": "Partial installed evidence; actual Edit focus and Preferences fail. Native Field source harness was too shallow. Original full UI matrix remains open; not full acceptance."
+}

@@ -213,7 +213,10 @@ export class FormController extends Component {
             this.model.config.fields = fields;
         };
         this.model = useState(useModel(this.props.Model, this.modelParams, { beforeFirstLoad }));
-        useSubEnv({ model: this.model });
+        useSubEnv({
+            model: this.model,
+            onNativeRecordFieldReady: this.readFirst ? () => this.focusRequestedRecordMode() : undefined,
+        });
         onMounted(() => {
             effect(
                 (model) => {
@@ -732,16 +735,26 @@ export class FormController extends Component {
             return;
         }
         if ((requested.kind === "field") !== record.isInEdition) return;
-        this.requestedRecordFocus = null;
-        if (this.archInfo.disableAutofocus || hasTouch()) return;
+        if (this.archInfo.disableAutofocus || hasTouch()) {
+            this.requestedRecordFocus = null;
+            return;
+        }
         const root = this.rootRef.el;
-        if (document.activeElement !== document.body && !root?.contains(document.activeElement)) return;
+        if (document.activeElement !== document.body && !root?.contains(document.activeElement)) {
+            this.requestedRecordFocus = null;
+            return;
+        }
         const target = requested.kind === "command" ? this.editButton.el : root?.querySelector(
             '.o_content .o_field_widget input:not([disabled]):not([readonly]):not([type="hidden"]), ' +
             '.o_content .o_field_widget textarea:not([disabled]):not([readonly]), ' +
             '.o_content .o_field_widget select:not([disabled]):not([readonly])'
         );
-        target?.focus({ preventScroll: true });
+        // Separately reactive native Fields may patch after their controller.
+        // Their scoped readiness effect completes this one-shot request.
+        if (target) {
+            this.requestedRecordFocus = null;
+            target.focus({ preventScroll: true });
+        }
     }
 
     saveButtonClicked(params = {}) {
