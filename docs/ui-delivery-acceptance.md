@@ -1,10 +1,18 @@
 # UI delivery acceptance against the original plan
 
+> Current16November: core0.2.41 is installed on populated18730/config18 and
+> empty18731/config8. Taskfiles0.1.7 replaces only its app palette; the other four
+> archives and all core41 bytes stay exact. [Installed41 evidence](evidence/G7/20261116-ui-contrast041-installed/qualification.json)
+> closes the measured anchor, native-select and file-metadata contrast findings.
+> D03/D04/D05 remain accepted; D06 awaits the ONE frozen-source041 canonical
+> and final terminal audit. Historical40 failure/partial logs remain preserved.
+
+
 Reviewed15November2026 against frozen source
 `748c5e32b3b4480ac7471b7b7a8a06301a26544b`, core0.2.40. This closes findings
 against the original [delivery plan](ui-shell-delivery-plan.md), rather than
 replacing it with a smaller checklist. Implementation is substantially complete;
-**three of four phases pass. D06 remains open for the terminal source40 canonical
+**three of four phases pass. D06 remains open for the terminal source41 canonical
 regression and final release audit.** The original R1 result remains99/99 and100
 weighted points; PP01–05 remains100/100. Neither score is inflated by this record.
 
@@ -72,7 +80,7 @@ history or pretend the entire SDK stayed unchanged.
 | Keyboard, focus, actual200%, rendered contrast, motion | Direct40 shared focus2px; measured5.345:1light/9.04:1dark focus contrast; genuine browser reduced-motion media switch and zero representative transition duration; palette/focus/sidebar work. Human-confirmed200%,681CSSpx/DPR2.2/scale1, pointer and keyboard record opening. Overrides cleared. No formal accessibility certification. |
 | Optional-app/current authority/preservation | Direct36 lifecycle and authority fixtures, source40 post-browser equality of22populated and six empty-core tables, protected targets and unchanged private app repositories. All fixtures closed. |
 | Affected tests/freeze/templates/private app checks | Source40 identity7/freeze122files11rows; unchanged-source177Node and86planner checks, earlier actual app/archive/compiler records. Their exact scopes and prior harness failures remain recorded. |
-| Final canonical on frozen40 | **Pending.** One `tests/run_host_regression.py` process, PID/Windows creation time bound privately; process-local verified ripgrep. Observe to terminal; do not rerun on an observation timeout. Historical36:971cases/969pass/two existing skips. |
+| Final canonical on frozen41 | **Pending.** One `tests/run_host_regression.py` process, PID/Windows creation time bound privately; process-local verified ripgrep. Observe to terminal; do not rerun on an observation timeout. Historical36:971cases/969pass/two existing skips. |
 | Final support/evidence/local commit and retained demo audit | Current support/author/acceptance records reconciled; final canonical receipt and final audit remain pending. Local-only, retained own sites/checkpoints/images, no publication or cleanup. |
 
 The [local review walkthrough](ui-local-review-walkthrough.md) identifies both

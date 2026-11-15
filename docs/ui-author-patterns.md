@@ -1,8 +1,13 @@
 # Shared application interface patterns
 
+Source41 also bridges Bootstrap's link RGB consumers and themed native-select
+indicator. Taskfiles0.1.7 demonstrates adopting shared semantic colours without
+changing layout, JavaScript, services or its justified component minimum.
+
+
 The owned interface supplies shared presentation for native views and independent
 apps. Apps own data, services, authority, routes and drafts. The current installed
-cohort is core0.2.40; [qualified combinations](ui-qualified-combinations.md) and the
+cohort is core0.2.41; [qualified combinations](ui-qualified-combinations.md) and the
 [acceptance matrix](ui-delivery-acceptance.md) separate actual interaction proof,
 unchanged-source applicability and the remaining final canonical run.
 
@@ -458,3 +463,17 @@ browser: loading/empty/filter/error, draft/save/cancel/conflict, current access,
 optional provider absence, keyboard/focus, desktop/narrow, both themes, actual
 locale/RTL and200%zoom. Shared source tests cannot replace those checks. Retain
 exact app versions/digests and install them through normal immutable delivery.
+
+## Theme-safe app metadata and links
+
+Use `var(--mp-ui-muted)` for explanatory/version text, `--mp-ui-line` for ordinary
+borders, and the existing danger surface/line/ink trio for errors. Do not hardcode
+a light-only grey in an app. Taskfiles0.1.7 uses these tokens; actual installed
+metadata measures6.002:1 light and7.875:1 dark against its sheet surface. Ordinary
+links inherit the shared Bootstrap RGB bridge in41; hex `--link-color` alone did
+not affect Bootstrap's RGBA consumer. Keep navigation, focus and hover semantic.
+
+Native `.form-select` retains its native geometry and validation-image layer.
+Apps should not replace the indicator with their own light-only background image.
+These are presentation fixes, not reasons to invent new backend compatibility
+restrictions. Declare minima from the components/behavior actually consumed.

@@ -1,0 +1,415 @@
+{
+  "utc": "2026-11-15T23:33:27.232390+00:00",
+  "source": "fce79cff1f99d0ce1e8117d6725d1f6d75407a03",
+  "core_version": "0.2.41",
+  "web_version": "19.0.2.41.0",
+  "taskfiles_version": "0.1.7",
+  "operations": {
+    "populated_core": {
+      "all_views_exact": true,
+      "apply_seconds": 174.469,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 17,
+      "image_id": "sha256:3b28c0bccacb5fb0c4d5529289662e222d2ea2f924a0e27876f5fe6c62ff45e3",
+      "operation_id": "5bf509f2-676b-4893-8962-e6e23e70305f",
+      "plan_hash": "sha256:2390ed828d67e2cb31366643a19d711cfed6e39a6a7a76597582d51f6e47f7bb",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "delivery_link": 1,
+        "documents_blob": 2,
+        "documents_fence": 1,
+        "documents_file": 1,
+        "documents_upload": 2,
+        "documents_version": 2,
+        "mp_job": 1,
+        "mp_membership": 6,
+        "mp_outbox": 9,
+        "mp_plugin_grant": 8,
+        "mp_principal": 4,
+        "mp_workspace": 2,
+        "partners_partner": 4,
+        "taskfiles_event_cursor": 0,
+        "taskfiles_file_review": 0,
+        "taskfiles_link": 1,
+        "workboard_comment": 0,
+        "workboard_list": 0,
+        "workboard_notice": 1,
+        "workboard_reminder": 1,
+        "workboard_stage": 0,
+        "workboard_task": 2
+      },
+      "tables": 22,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "d8cca940d12d61c6e302510caf9172eb2e96013919635ca378116cb1ead06a8c",
+      "workspace_policy_epoch_increment": 0
+    },
+    "empty_core": {
+      "all_views_exact": true,
+      "apply_seconds": 142.641,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 8,
+      "image_id": "sha256:d077daad1b09814a7a8bd1bcc008f7cde078b5dff8436c31ca644f173ff189ba",
+      "operation_id": "badc8188-9581-49cc-9902-4469bcacbf62",
+      "plan_hash": "sha256:0366fd52613d5bcb7d13e3649e8f7e92a4b68f45d2fe39577ede54ebc750fba5",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "mp_job": 0,
+        "mp_membership": 6,
+        "mp_outbox": 1,
+        "mp_plugin_grant": 0,
+        "mp_principal": 4,
+        "mp_workspace": 2
+      },
+      "tables": 6,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "6196418b6c62a2d1c1f37db78a3dfd19d87ba63a086f249ec407a8538dc6f85c",
+      "workspace_policy_epoch_increment": 0
+    },
+    "taskfiles_upgrade": {
+      "all_views_exact": true,
+      "apply_seconds": 176.922,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 18,
+      "image_id": "sha256:4fbca618390e7f7a8b71392a637604c2bff224d6621d94a5098f201e565375d3",
+      "operation_id": "e62e07d9-b218-4c4a-9242-bca6e43b1085",
+      "plan_hash": "sha256:bbe385f1b3121f8bb33e12145f5e4cbe8c41cc8232e77574aaf439daeea87fb2",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "delivery_link": 1,
+        "documents_blob": 2,
+        "documents_fence": 1,
+        "documents_file": 1,
+        "documents_upload": 2,
+        "documents_version": 2,
+        "mp_job": 1,
+        "mp_membership": 6,
+        "mp_outbox": 9,
+        "mp_plugin_grant": 8,
+        "mp_principal": 4,
+        "mp_workspace": 2,
+        "partners_partner": 4,
+        "taskfiles_event_cursor": 0,
+        "taskfiles_file_review": 0,
+        "taskfiles_link": 1,
+        "workboard_comment": 0,
+        "workboard_list": 0,
+        "workboard_notice": 1,
+        "workboard_reminder": 1,
+        "workboard_stage": 0,
+        "workboard_task": 2
+      },
+      "tables": 22,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "f8dd83b1025e7636b96777ba9095b6022ad58fd906e319f86b35079ac9d8485a",
+      "workspace_policy_epoch_increment": 1
+    }
+  },
+  "source_audit": {
+    "all_frozen_sources_exact": true,
+    "builds": {
+      "core": {
+        "curated_map_exact": true,
+        "image_id": "sha256:d077daad1b09814a7a8bd1bcc008f7cde078b5dff8436c31ca644f173ff189ba",
+        "record_sha256": "6f799c4464062b3b037918877cdea93c97c5d5e50f131b716d7a201c06e5a1c5",
+        "source_inputs": 4012
+      },
+      "populated": {
+        "curated_map_exact": true,
+        "image_id": "sha256:4fbca618390e7f7a8b71392a637604c2bff224d6621d94a5098f201e565375d3",
+        "record_sha256": "4c6e3e6241e320fb016d07be740bbe7f9d882994a4230ff980e69732bf25bead",
+        "source_inputs": 4106
+      }
+    },
+    "five_private_trees_clean": true,
+    "frozen_non_documentation_files": 8199,
+    "private_app_source_delta": [
+      "applications/external/taskfiles/native/mp_taskfiles/__manifest__.py",
+      "applications/external/taskfiles/native/mp_taskfiles/static/src/taskfiles.scss",
+      "applications/external/taskfiles/plugin.toml"
+    ],
+    "private_heads": {
+      "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+      "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+      "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+      "taskfiles": "9762acee1553d263cb6b45b58e3255fd4fe95fad",
+      "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698"
+    },
+    "protected_targets_exact": 11,
+    "recovery_applicability": {
+      "critical_files_unchanged": {
+        "packages/platform_sdk/modular_platform/checkpoint_recovery_journal.py": "59532903c6b25572851dea65f2b8d99ce10e646fcefdf8101e39a4f9d7350fb1",
+        "packages/platform_sdk/modular_platform/completed_checkpoint.py": "3d2d460653aa1224b1d372e77048f186ad77bf05aae4100f60d905ad710b9e0c",
+        "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "8fe44ef14932af93b916af0b4702a3c6a6dab15d053c3689e33bbbc1e667d3fc",
+        "packages/platform_sdk/modular_platform/dispatch_operator.py": "0b67d767429dd4eb13b6609b37b294c2f2a8ba2ae705706c1fb73609c4b68838",
+        "packages/platform_sdk/modular_platform/feature_executor.py": "75b7d3b35d9aff2504900e23ed0a0d7fe6e196646a129531f77792181ef1fd69",
+        "packages/platform_sdk/modular_platform/native_executor.py": "8e4ba4026f635027bf4ea50b6364ce629aef9b70d5825f7224100531660f2fb9",
+        "packages/platform_sdk/modular_platform/native_feature_executor.py": "63667d646dcf18c6544ad31aba64064d67ca594e2f2d494ee63a964fe31fccec",
+        "packages/platform_sdk/modular_platform/native_uninstall.py": "c04d2e051f41f17309345d9c7b36c5a5debc8aa8af68a4aa9e6e2ae34ddcfab8",
+        "packages/platform_sdk/modular_platform/operator_store.py": "07211b5c11f4b82a23b2f3f80cfb4cc4aaba7eee565156ff27e61740b26988ee",
+        "packages/platform_sdk/modular_platform/recovery_reviews.py": "85443de3fc31916c3110d513dd8024b1126fbe97254ff802ca1d7f6bfff06f31",
+        "packages/platform_sdk/modular_platform/remove_metadata.py": "7abbab897410a7e3193f14cae48ef02c7a2a428d91e7ffeb05d5fa48bce1c618",
+        "packages/platform_sdk/modular_platform/restore_continuation.py": "77819b723ea9bf3560cd6145d28d46fb6f8a6d164754cfd8d486f5b87c329dd5",
+        "packages/platform_sdk/modular_platform/restore_executor.py": "fd97877a5d203482924d0bccee0334518da7025cc06d9020bc1134bc00b491c6",
+        "packages/platform_sdk/modular_platform/unchanged_recovery.py": "d024f2e3fb94c9aa86f68bbf681c7c77ccc3452dacc55a8f2d8e2f488a7a8171",
+        "packages/platform_sdk/modular_platform/uninstall_metadata.py": "2f3c227bc8f7ef1e240d358efee0c732aa960769bc505459e6a41ec2264375ba"
+      },
+      "historical_source": "7fff9a81fec69c81901c97f82742a9bade557bde",
+      "scope": "Exact fifteen executor/dispatch/store/recovery files remain unchanged from the recorded historical proof. Source38 plans.py correction separately admits only complete unbound removed history; actual independently approved zero-target checkpointed maintenance completed on38,39,40. Historical fault/fresh restore/newer authority/separate resume is applicable to these unchanged boundaries; no new fault/restore claim."
+    },
+    "source": "fce79cff1f99d0ce1e8117d6725d1f6d75407a03",
+    "utc": "2026-11-15T23:25:29.513335+00:00"
+  },
+  "browser": {
+    "rendered_contrast": {
+      "lightText": 6.002,
+      "darkText": 7.875,
+      "lightLinks": 6.922,
+      "darkLinks": 9.04
+    },
+    "actual_hover": {
+      "light": "rgb(68, 83, 166)",
+      "dark": "rgb(179, 186, 255)",
+      "both_real_pointer": true
+    },
+    "narrow": {
+      "light": {
+        "doc": 390,
+        "dpr": 1.100000023841858,
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      },
+      "dark": {
+        "width": 390,
+        "height": 844,
+        "doc": 390,
+        "dpr": 1
+      }
+    },
+    "native_select": "Actual keyboard End then Tab selects the last current customer; light/dark stroke6.002:1/7.875:1 and original geometry, second validation-image layer retained.",
+    "pinned_journey": "Keyboard Enter opens exact version1 in separate Documents tab; current2/history remain distinct; escaped pinned text preview succeeds; original task context retained.",
+    "capture_limit": "Initial light capture measured355CSS because native browser zoom changed to110%; preserved as unaccepted390proof. Corrected DIP429x928 capture measures actual390x844CSS. No native zoom change injected.",
+    "zoom_motion_applicability": "Actual source40 manual200%681CSS/DPR2.2 and CDP reduced-motion proof carried only over unchanged layout/controllers/JS. Latest human200confirmation coincided with a measured100% existing tab, so no fresh41native200claim.",
+    "no_business_or_authority_writes": true,
+    "appearance_restored": "light",
+    "temporary_device_override_cleared": true,
+    "temporary_tabs_closed": true
+  },
+  "retention": {
+    "cohorts": {
+      "core": {
+        "containers_retained": 93,
+        "generation": 8,
+        "image_id": "sha256:d077daad1b09814a7a8bd1bcc008f7cde078b5dff8436c31ca644f173ff189ba",
+        "native_modules": [
+          {
+            "name": "auth_password_policy",
+            "state": "installed",
+            "version": "19.0.1.0"
+          },
+          {
+            "name": "base",
+            "state": "installed",
+            "version": "19.0.1.4"
+          },
+          {
+            "name": "base_setup",
+            "state": "installed",
+            "version": "19.0.1.1"
+          },
+          {
+            "name": "bus",
+            "state": "installed",
+            "version": "19.0.1.0"
+          },
+          {
+            "name": "mp_compat",
+            "state": "installed",
+            "version": "19.0.0.1.1"
+          },
+          {
+            "name": "mp_core",
+            "state": "installed",
+            "version": "19.0.0.2.41"
+          },
+          {
+            "name": "mp_identity",
+            "state": "installed",
+            "version": "19.0.0.1.11"
+          },
+          {
+            "name": "web",
+            "state": "installed",
+            "version": "19.0.2.41.0"
+          }
+        ],
+        "networks": 2,
+        "no_host_port_or_authority_mount": true,
+        "post_browser_all_fields_exact": true,
+        "table_counts": {
+          "mp_job": 0,
+          "mp_membership": 6,
+          "mp_outbox": 1,
+          "mp_plugin_grant": 0,
+          "mp_principal": 4,
+          "mp_workspace": 2
+        },
+        "volumes": 6,
+        "worker_id": "6196418b6c62a2d1c1f37db78a3dfd19d87ba63a086f249ec407a8538dc6f85c"
+      },
+      "populated": {
+        "containers_retained": 176,
+        "generation": 18,
+        "image_id": "sha256:4fbca618390e7f7a8b71392a637604c2bff224d6621d94a5098f201e565375d3",
+        "native_modules": [
+          {
+            "name": "auth_password_policy",
+            "state": "installed",
+            "version": "19.0.1.0"
+          },
+          {
+            "name": "base",
+            "state": "installed",
+            "version": "19.0.1.4"
+          },
+          {
+            "name": "base_setup",
+            "state": "installed",
+            "version": "19.0.1.1"
+          },
+          {
+            "name": "bus",
+            "state": "installed",
+            "version": "19.0.1.0"
+          },
+          {
+            "name": "mp_compat",
+            "state": "installed",
+            "version": "19.0.0.1.1"
+          },
+          {
+            "name": "mp_core",
+            "state": "installed",
+            "version": "19.0.0.2.41"
+          },
+          {
+            "name": "mp_delivery",
+            "state": "installed",
+            "version": "19.0.0.1.10"
+          },
+          {
+            "name": "mp_documents",
+            "state": "installed",
+            "version": "19.0.0.1.12"
+          },
+          {
+            "name": "mp_identity",
+            "state": "installed",
+            "version": "19.0.0.1.11"
+          },
+          {
+            "name": "mp_partners",
+            "state": "installed",
+            "version": "19.0.0.1.10"
+          },
+          {
+            "name": "mp_taskfiles",
+            "state": "installed",
+            "version": "19.0.0.1.7"
+          },
+          {
+            "name": "mp_workboard",
+            "state": "installed",
+            "version": "19.0.0.2.19"
+          },
+          {
+            "name": "web",
+            "state": "installed",
+            "version": "19.0.2.41.0"
+          }
+        ],
+        "networks": 2,
+        "no_host_port_or_authority_mount": true,
+        "post_browser_all_fields_exact": true,
+        "table_counts": {
+          "delivery_link": 1,
+          "documents_blob": 2,
+          "documents_fence": 1,
+          "documents_file": 1,
+          "documents_upload": 2,
+          "documents_version": 2,
+          "mp_job": 1,
+          "mp_membership": 6,
+          "mp_outbox": 9,
+          "mp_plugin_grant": 8,
+          "mp_principal": 4,
+          "mp_workspace": 2,
+          "partners_partner": 4,
+          "taskfiles_event_cursor": 0,
+          "taskfiles_file_review": 0,
+          "taskfiles_link": 1,
+          "workboard_comment": 0,
+          "workboard_list": 0,
+          "workboard_notice": 1,
+          "workboard_reminder": 1,
+          "workboard_stage": 0,
+          "workboard_task": 2
+        },
+        "volumes": 6,
+        "worker_id": "f8dd83b1025e7636b96777ba9095b6022ad58fd906e319f86b35079ac9d8485a"
+      }
+    },
+    "protected_target_hashes_exact": 11,
+    "scope": "Read-only final post-browser equality and owned retention. No business/profile/authority writes or cleanup; foreign databases not queried.",
+    "source": "fce79cff1f99d0ce1e8117d6725d1f6d75407a03",
+    "utc": "2026-11-15T23:31:48.899740+00:00"
+  },
+  "recovery_applicability": {
+    "critical_files_unchanged": {
+      "packages/platform_sdk/modular_platform/checkpoint_recovery_journal.py": "59532903c6b25572851dea65f2b8d99ce10e646fcefdf8101e39a4f9d7350fb1",
+      "packages/platform_sdk/modular_platform/completed_checkpoint.py": "3d2d460653aa1224b1d372e77048f186ad77bf05aae4100f60d905ad710b9e0c",
+      "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "8fe44ef14932af93b916af0b4702a3c6a6dab15d053c3689e33bbbc1e667d3fc",
+      "packages/platform_sdk/modular_platform/dispatch_operator.py": "0b67d767429dd4eb13b6609b37b294c2f2a8ba2ae705706c1fb73609c4b68838",
+      "packages/platform_sdk/modular_platform/feature_executor.py": "75b7d3b35d9aff2504900e23ed0a0d7fe6e196646a129531f77792181ef1fd69",
+      "packages/platform_sdk/modular_platform/native_executor.py": "8e4ba4026f635027bf4ea50b6364ce629aef9b70d5825f7224100531660f2fb9",
+      "packages/platform_sdk/modular_platform/native_feature_executor.py": "63667d646dcf18c6544ad31aba64064d67ca594e2f2d494ee63a964fe31fccec",
+      "packages/platform_sdk/modular_platform/native_uninstall.py": "c04d2e051f41f17309345d9c7b36c5a5debc8aa8af68a4aa9e6e2ae34ddcfab8",
+      "packages/platform_sdk/modular_platform/operator_store.py": "07211b5c11f4b82a23b2f3f80cfb4cc4aaba7eee565156ff27e61740b26988ee",
+      "packages/platform_sdk/modular_platform/recovery_reviews.py": "85443de3fc31916c3110d513dd8024b1126fbe97254ff802ca1d7f6bfff06f31",
+      "packages/platform_sdk/modular_platform/remove_metadata.py": "7abbab897410a7e3193f14cae48ef02c7a2a428d91e7ffeb05d5fa48bce1c618",
+      "packages/platform_sdk/modular_platform/restore_continuation.py": "77819b723ea9bf3560cd6145d28d46fb6f8a6d164754cfd8d486f5b87c329dd5",
+      "packages/platform_sdk/modular_platform/restore_executor.py": "fd97877a5d203482924d0bccee0334518da7025cc06d9020bc1134bc00b491c6",
+      "packages/platform_sdk/modular_platform/unchanged_recovery.py": "d024f2e3fb94c9aa86f68bbf681c7c77ccc3452dacc55a8f2d8e2f488a7a8171",
+      "packages/platform_sdk/modular_platform/uninstall_metadata.py": "2f3c227bc8f7ef1e240d358efee0c732aa960769bc505459e6a41ec2264375ba"
+    },
+    "historical_source": "7fff9a81fec69c81901c97f82742a9bade557bde",
+    "scope": "Exact fifteen executor/dispatch/store/recovery files remain unchanged from the recorded historical proof. Source38 plans.py correction separately admits only complete unbound removed history; actual independently approved zero-target checkpointed maintenance completed on38,39,40. Historical fault/fresh restore/newer authority/separate resume is applicable to these unchanged boundaries; no new fault/restore claim."
+  },
+  "private_receipt_sha256": {
+    ".local/ui-contrast041-populated-rollout-01/complete.json": "5f340987428708f6dba3285149c43b249578bd805654dcd4821100101a126462",
+    ".local/ui-contrast041-core-rollout-01/complete.json": "8ccff6fe3e223adce1c333d621ce664c5dc4eecf5b9ea19f02192628012b243e",
+    ".local/ui-taskfiles017-rollout-01/complete.json": "b7f4ff35603c3a7653e84aeea07d59c15bde253d4dfa059e7548ffb895fae7d2",
+    ".local/ui-taskfiles017-populated-01/verified.json": "33899bd46efb8d3aea93ce646d9656e6961946e9e5a4a48630ab2e30363a5d12",
+    ".local/ui-taskfiles017-populated-01/artifact/complete.json": "5d88e54596e1b0e58b1f9b1d64e63d5ef7600ea6d75a8dad21937576f8b691ee",
+    ".local/ui-taskfiles017-admission-01/complete.json": "8124122d3e56db714e1e562007030c5836ccb35b19810fd6f01f4569ed5fdf6f",
+    ".local/ui-taskfiles017-01/package-proof.json": "fb931c487cca29885b12316024ec132ab91b3ac8e9bf5956104afe86b166314a",
+    ".local/ui-final041-browser-01/result.json": "a8ed328f34ca900871090e7b1c14494d4e784467ff1fbe4b6115a5c5114136ab",
+    ".local/ui-contrast041-01/browser/core-result.json": "c6d3fcb8cc6ecf02fbbcd95f174f49b50cf9825e047be979fbccb2a8e3d1d359",
+    ".local/ui-final041-source-audit-01/complete.json": "82fcef40b1f8a3f1b559c2b984d62ede3575d08ac38bbbc7fd96acc0b7274c1c",
+    ".local/ui-final041-retention-04/complete.json": "c33824806f1a61ca4e111969ccbce2ab1c6ca1664ad97184154678e75aa72363",
+    ".local/ui-final041-retention-04/retained-resources.json": "76726df166ddc3602b711908f2840e285d637d4c2983490daf69888aca168ad9",
+    ".local/ui-final041-retention-04/populated-tables.json": "027d76e0afb150603efd45efeb3b5b1b75ad8ec7633b9e5113619bab5eb8963d",
+    ".local/ui-final041-retention-04/core-tables.json": "31d704cae78e16140e04f8db42c7fe235b497366f8bc34df953e806e41f7449f"
+  },
+  "canonical": "Final041 running on frozen fce79cff source; this is installed/source evidence, NOT full canonical acceptance.",
+  "scope": "Local disposable exact combinations. No formal accessibility, arbitrary app support, production, publication or cleanup claim."
+}

@@ -9,17 +9,17 @@ Current goal: implement the [shared shell and application UI delivery plan](ui-s
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
-- Updated UTC: 2026-11-15T20:38:03.051141+00:00
+- Updated UTC: 2026-11-15T23:33:27.470576+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: UI-D06 contrast reconciliation active; D03/D04/D05 scoped functional cards3/4 accepted, final UI unaccepted. Installed populated18730/core40/config16 and empty18731/core40/config7. Human18610/form protected.
-- Latest work item: Expanded current walkthrough found ordinary anchor RGB2.692:1, native select indicator1.449:1, Taskfiles metadata3.106:1. Source41 generic RGB/select bridge plus three identities has20affected tests/freeze122files11rows pass; apps unchanged.
-- Current next action: Commit source41, build and normally deliver core-only with five OLD archives exact and empty8 policy. Then Taskfiles0.1.7 token adoption as separate app source/archive/upgrade. Freeze all final source before new canonical, and measure all corrected consumers.
-- Browser: refreshed in-app Browser2; own16 native reader at actual200% and22 empty core retained. Human main18610 and all other user tabs/drafts remain protected; no global OS preference was changed. Temporary CDP27 and modified-link28 were closed after clearing overrides. Browser IDs may renumber after reset; rebind by actual inventory, not an old number.
-- Acceptance/checklist: UI3/4 phases pass against the original cards, D06 pending terminal source40 canonical. Historical PP01..05 remains100/100 and5/5; R1 remains99/99 and100weighted points. No extra progress for generated documentation. Canonical036 terminal971cases/969pass/two existing skips is historical only.
-- Blocker register: Three measured rendered contrast failures remain unaccepted pending installed41 and app successor. Corrected canonical40 was deliberately stopped after411observed completions because candidate must change; exact process/partial receipts retained, not green. No active host test/native operation or data fixture.
+- Current phase/gate: UI-D06 final qualification; D03/D04/D05 accepted3/4. Populated18730/core41/config18/Taskfiles0.1.7 and empty18731/core41/config8. Main human18610 preserved.
+- Latest work item: [Installed41](evidence/G7/20261116-ui-contrast041-installed/qualification.json) closes the three measured contrast findings; exact business/authority/source/layer/retention checks pass.
+- Current next action: Observe SAME canonical041 process to terminal, reconcile actual failures/skips and frozen files; final documentation/evidence audit and local commit. No executable/test/app changes or operation replay.
+- Browser: In-app Browser2 own16 current Partners list/22 current empty workspace retained. Temporary31/32 closed; light restored, device overrides cleared. Actual40 native200% retained with unchanged-layout boundary; latest user confirmation not mislabelled fresh41 proof when tab measured100%.
+- Acceptance/checklist: UI3/4 phases accepted; D06 pending final041 canonical/terminal audit. Historical PP100/100 and R1 99/99/100weighted unchanged.
+- Blocker register: No unresolved installed contrast defect or open authority/draft fixture. ONE healthy canonical041 running; previous040 failure and superseded partial preserved, not waived. Await terminal before D06 acceptance.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

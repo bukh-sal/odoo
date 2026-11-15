@@ -3295,3 +3295,19 @@ canonical and original evidence audit. Owner enabled full CDP; refreshed current
 API still exposes no CDP/media controls, so no guessed methods or fake media.
 Current preview normal zoom; historical36/37 actual200% retained. Motion still
 off/unverified. Full originalUI0/4 active, no live operation or fixture.
+
+
+16November final installed contrast corrections: core41 normal checkpointed
+maintenance completed on populated/config17 and empty/config8; separate
+Taskfiles0.1.7 upgrade completed/config18 with exact core and other four app
+archives. All22populated/sixempty tables equal post-operation baselines after
+read-only browser checks; current authority, app views, pinned1/current2 bytes
+and11protected target hashes retained. Actual link6.922light/9.04dark and file
+metadata/select6.002light/7.875dark contrast; real hover/nativeEnd selection,
+390px two-theme wrapping and keyboard new-tab pinned preview pass. Light
+restored, device override cleared, temporary tabs closed. Three read-only audit
+harness shape/selection errors preserved; no product/resource mutation failure.
+All8199frozen non-docs/fiveprivate heads and4012/4106candidate input maps exact.
+Final041 canonical SAME86050/42696 sourcefce79cff running, no restart/codechange.
+First040failed and second040clockdeliberatelypartial remain NOT green. D03/D04/
+D05accepted3/4; D06pending terminal canonical and audit. No cleanup/publication.
