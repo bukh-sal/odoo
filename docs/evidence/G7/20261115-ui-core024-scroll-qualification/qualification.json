@@ -1,0 +1,64 @@
+{
+  "source": "76624cbaab938acae544c6a94e31d52af454b5a7",
+  "image_id": "sha256:782aa73a6b75daf5035a05defd369174dfa6da54ffa13c28a68e202395295fce",
+  "operation_id": "6d2475c8-8948-4eb6-902b-5e7a462cde6e",
+  "plan_hash": "sha256:495b794dfe804f21accbaeb0d5ad49bae98d513b9d0398fa8329ea792755aebb",
+  "configuration": 22,
+  "apply_seconds": 176.672,
+  "source_proof": {
+    "old_legacy_rules": 17,
+    "new_mount_rules": 8,
+    "legacy_declarations_exact": true,
+    "print_css_exact": true,
+    "rtl_compiled": true,
+    "native_block_whitespace_neutral_equal": true,
+    "unchanged_js": {
+      "framework_addons/web/static/src/views/form/form_controller.js": "ff7434f0dafbff1952cdd7570bff67f9c2f3da7ae0357d2489e130109d60ef1a",
+      "framework_addons/web/static/src/views/fields/field.js": "5c94e42485de57ef8acdb4836401fb98d6f05c2b9791e08d119f1a7eefca2388",
+      "framework_addons/web/static/src/core/dialog/dialog.xml": "ad8cc26316837bd734811eecf7526c75e40cb4bda5885d88239e630155feb9de"
+    },
+    "limits": "Actual locked Sass/RTL and CSS selector/declaration proof; no layout measurement or installed scrolling claim"
+  },
+  "installed": {
+    "nativeWheelReachesTask": true,
+    "keyboardPageDownWithRecordFocusReachesBottom": true,
+    "pageDownFromBodyDoesNotScroll": true,
+    "desktopTargetsApprox34": true,
+    "narrowTargetsApprox44": true,
+    "actualNarrowWidth": 390,
+    "narrowPageWidth": 390,
+    "longCustomerWrappingAndBottomReachable": true,
+    "tablePages": [
+      "1\u201380 of 165 records",
+      "81\u2013160 of 165 records",
+      "161\u2013165 of 165 records"
+    ],
+    "narrowFooterReachable": true,
+    "desktopFooterReachable": true,
+    "taskDialogIndependentScrollToDiscussion": true,
+    "documentsContentScrollAndPinnedText": true,
+    "namedPreferencesDialogOpenDiscard": true,
+    "nativeKeyboardEditFocusName": true,
+    "cleanCancelReturnsReader": true,
+    "lightRestored": true,
+    "viewportReset": true,
+    "noTemporaryTabsCreated": true,
+    "businessWritesExpected": 0,
+    "critique": "Contact reading layout remains sparse, especially on narrow screens. Meridian relationship hierarchy is preferable. No universal accessibility/RTL/zoom claim from this bounded slice."
+  },
+  "retention": {
+    "history_full_rows_exact": true,
+    "other_targets_exact": 10,
+    "partners": 166,
+    "sample_revision": 3,
+    "tables_exact": 18,
+    "task_original_revision": 2,
+    "utc": "2026-11-15T05:07:10.715736+00:00"
+  },
+  "limits": [
+    "Bounded native/custom scroll and target checks only",
+    "PageDown needs focus within the record scroll owner; keyboard Tab also reveals controls",
+    "Compact relationship reader remains next refinement; original full RTL/zoom/contrast/authority/optional-app cards and final canonical remain open",
+    "UI phase acceptance remains0of4"
+  ]
+}
