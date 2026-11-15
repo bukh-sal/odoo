@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_service";
@@ -90,7 +91,7 @@ class EmbeddedActionsConfigHandler {
 
 export class ControlPanel extends Component {
     static template = "web.ControlPanel";
-    static components = {
+    static components = { Icon,
         Pager,
         RecordNavigation,
         SearchBar,

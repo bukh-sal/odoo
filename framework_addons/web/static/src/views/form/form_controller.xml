@@ -6,11 +6,11 @@
             <div class="o_form_view_container">
                 <Layout className="model.useSampleModel ? 'o_view_sample_data' : ''" display="display">
                     <t t-set-slot="control-panel-create-button">
-                        <button t-if="canCreate" type="button" class="btn btn-secondary o_form_button_create" data-hotkey="c" t-on-click.stop="create"><i class="fa fa-plus me-1" aria-hidden="true"/>New</button>
+                        <button t-if="canCreate" type="button" class="btn btn-secondary o_form_button_create" data-hotkey="c" t-on-click.stop="create"><Icon name="'plus'" className="'me-1'"/>New</button>
                     </t>
 
                     <t t-set-slot="layout-buttons">
-                        <button t-if="readFirst and canEdit and !model.root.isNew and !model.root.isInEdition" t-ref="editButton" type="button" class="btn btn-primary o_form_button_edit" data-hotkey="e" t-on-click.stop="editRecord"><i class="fa fa-pencil me-1" aria-hidden="true"/>Edit</button>
+                        <button t-if="readFirst and canEdit and !model.root.isNew and !model.root.isInEdition" t-ref="editButton" type="button" class="btn btn-primary o_form_button_edit" data-hotkey="e" t-on-click.stop="editRecord"><Icon name="'pencil'" className="'me-1'"/>Edit</button>
                         <t t-if="env.inDialog">
                             <t t-if="footerArchInfo">
                                 <t t-component="props.Renderer" record="model.root" Compiler="props.Compiler" archInfo="footerArchInfo">

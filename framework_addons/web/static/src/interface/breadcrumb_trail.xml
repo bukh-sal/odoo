@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.BreadcrumbTrail">
+    <nav class="mp-breadcrumbs" t-att-aria-label="label"><ol>
+      <li t-foreach="props.items" t-as="item" t-key="item.id || item_index">
+        <Icon t-if="!item_first" name="'chevron-right'" size="14" directional="true"/>
+        <a t-if="href(item)" t-att-href="href(item)" t-on-click="event => this.select(event, item)" t-att-aria-current="item_last ? 'page' : undefined" t-att-title="item.label"><bdi t-esc="item.label"/></a>
+        <span t-else="" t-att-aria-current="item_last ? 'page' : undefined" t-att-title="item.label"><bdi t-esc="item.label"/></span>
+      </li>
+    </ol></nav>
+  </t>
+</templates>

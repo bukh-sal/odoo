@@ -4,12 +4,12 @@
     <div class="mp-shell-frame" t-att-data-navigation-revision="state.revision" t-on-keydown="closeContext">
       <nav class="mp-app-rail" aria-label="Applications">
         <Dropdown>
-          <button class="mp-rail-button mp-all-apps" aria-label="All apps" title="All apps"><i class="oi oi-apps" aria-hidden="true"/></button>
+          <button class="mp-rail-button mp-all-apps" aria-label="All apps" title="All apps"><Icon name="'grid-2x2'" size="20"/></button>
           <t t-set-slot="content">
             <div class="mp-app-chooser">
               <span class="dropdown-header">Applications</span>
               <DropdownItem t-foreach="apps" t-as="app" t-key="app.id" attrs="{href: href(app)}" onSelected="() => menu.selectMenu(app)">
-                <i t-att-class="icon(app)" aria-hidden="true"/><span t-esc="app.name"/>
+                <Icon name="icon(app)" size="20"/><span t-esc="app.name"/>
               </DropdownItem>
               <span t-if="!apps.length" class="dropdown-item-text" t-esc="emptyChooserLabel"/>
             </div>
@@ -19,16 +19,19 @@
           <a t-foreach="apps" t-as="app" t-key="app.id" class="mp-rail-button" t-att-href="href(app)"
              t-att-aria-label="app.name" t-att-title="app.name" t-att-aria-current="current?.id === app.id ? 'page' : undefined"
              t-on-click="event => this.select(event, app)">
-            <i t-att-class="icon(app)" aria-hidden="true"/>
+            <Icon name="icon(app)" size="20"/>
           </a>
         </div>
         <div class="mp-rail-account"><UserMenu/></div>
       </nav>
       <header class="mp-shell-topbar">
-        <button t-if="nativeContext" class="mp-context-toggle btn" t-ref="contextTrigger"
-            aria-controls="mp-native-context" t-att-aria-expanded="state.contextOpen ? 'true' : 'false'"
-            t-on-click="toggleContext"><i class="fa fa-bars" aria-hidden="true"/> <t t-esc="current.name"/></button>
-        <button class="mp-command-trigger" aria-label="Search apps and commands" t-on-click="openCommands"><i class="fa fa-search" aria-hidden="true"/> <span>Search apps and commands</span></button>
+        <div class="mp-shell-context-controls">
+          <button t-if="nativeContext" class="mp-context-toggle btn" t-ref="contextTrigger"
+              aria-controls="mp-native-context" t-att-aria-expanded="contextExpanded ? 'true' : 'false'"
+              t-att-aria-label="contextToggleLabel" t-att-title="contextToggleLabel"
+              t-on-click="toggleContext"><Icon name="contextExpanded ? 'panel-left-close' : 'panel-left-open'" directional="true"/><span t-esc="current.name"/></button>
+        </div>
+        <button class="mp-command-trigger" aria-label="Search apps and commands" t-on-click="openCommands"><Icon name="'search'"/> <span>Search apps and commands</span></button>
         <div class="mp-shell-utilities" role="group" aria-label="Workspace and account">
           <t t-foreach="utilities" t-as="item" t-key="item.key">
             <ErrorHandler onError="error => this.handleItemError(error)"><t t-component="item.Component"/></ErrorHandler>
@@ -36,7 +39,7 @@
         </div>
       </header>
       <div class="mp-shell-body">
-        <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-ref="context" tabindex="-1" aria-labelledby="mp-native-context-heading" t-att-class="{'is-open': state.contextOpen}">
+        <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-ref="context" tabindex="-1" aria-labelledby="mp-native-context-heading" t-att-class="{'is-open': state.contextOpen, 'is-collapsed': contextCollapsed}" t-att-inert="contextCollapsed ? '' : undefined">
           <h2 id="mp-native-context-heading" t-esc="current.name"/>
           <nav t-att-aria-label="current.name">
             <a t-att-href="href(current)" t-att-aria-current="active(current)" t-on-click="event => this.select(event, current)">Overview</a>

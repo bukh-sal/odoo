@@ -3,7 +3,7 @@
   <t t-name="web.interface.PageHeader">
     <header class="mp-page-header">
       <div class="mp-page-heading">
-        <div t-if="props.slots.breadcrumbs" class="mp-page-breadcrumbs"><t t-slot="breadcrumbs"/></div>
+        <div t-if="props.breadcrumbs?.length or props.slots.breadcrumbs" class="mp-page-breadcrumbs"><BreadcrumbTrail t-if="props.breadcrumbs?.length" items="props.breadcrumbs"/><t t-else="" t-slot="breadcrumbs"/></div>
         <p t-if="props.eyebrow" class="mp-page-eyebrow" t-esc="props.eyebrow"/>
         <h1 class="mp-page-title">
           <t t-esc="props.title"/>

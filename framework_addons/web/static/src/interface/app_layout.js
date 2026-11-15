@@ -1,12 +1,16 @@
-import { Component, useEffect, useRef, useState } from "@odoo/owl";
+import { Component, useChildSubEnv, useEffect, useRef, useState } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
 import { uniqueId } from "@web/core/utils/functions";
+import { Icon } from "@web/interface/icon";
+import { useContextPreference } from "@web/interface/context_preference";
 
 /** Context presentation only. Slots keep the owning app's state and components mounted. */
 export class AppLayout extends Component {
     static template = "web.interface.AppLayout";
+    static components = { Icon };
     static props = {
         contextTitle: String,
+        contextKey: { type: String, optional: true },
         contentLabel: { type: String, optional: true },
         showContext: { type: Boolean, optional: true },
         className: { type: String, optional: true },
@@ -16,6 +20,8 @@ export class AppLayout extends Component {
 
     setup() {
         this.state = useState({ contextOpen: false });
+        this.contextPreference = useContextPreference(() => this.props.contextKey);
+        useChildSubEnv({ interfaceContextTarget: null });
         this.contextId = uniqueId("mp-app-context-");
         this.context = useRef("context");
         this.content = useRef("content");
@@ -31,11 +37,22 @@ export class AppLayout extends Component {
             else if (this.focusAfterClose === "content") this.content.el?.focus();
             this.focusAfterClose = null;
         }, () => [this.state.contextOpen, this.props.showContext]);
+        useEffect(() => {
+            if (!this.env.isSmall) this.state.contextOpen = false;
+            if (this.contextCollapsed && this.context.el?.contains(document.activeElement)) this.trigger.el?.focus();
+        }, () => [this.env.isSmall, this.contextCollapsed]);
     }
 
     get contentLabel() { return this.props.contentLabel || _t("Work area"); }
+    get toolbarTarget() { return this.env.inDialog ? null : this.env.interfaceContextTarget; }
+    get contextCollapsed() { return !this.env.isSmall && this.contextPreference.collapsed; }
+    get contextExpanded() { return this.env.isSmall ? this.state.contextOpen : !this.contextPreference.collapsed; }
+    get toggleLabel() {
+        return this.contextExpanded ? _t("Collapse %s navigation", this.props.contextTitle) : _t("Expand %s navigation", this.props.contextTitle);
+    }
     toggleContext() {
         if (!this.props.showContext) return;
+        if (!this.env.isSmall) { this.contextPreference.toggle(); return; }
         if (this.state.contextOpen) this.closeContext("trigger");
         else this.state.contextOpen = true;
     }

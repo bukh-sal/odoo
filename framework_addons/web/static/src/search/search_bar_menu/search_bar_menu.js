@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { Component, useState } from "@odoo/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { PropertiesGroupByItem } from "@web/search/properties_group_by_item/properties_group_by_item";
@@ -14,7 +15,7 @@ const favoriteMenuRegistry = registry.category("favoriteMenu");
 
 export class SearchBarMenu extends Component {
     static template = "web.SearchBarMenu";
-    static components = {
+    static components = { Icon,
         Dropdown,
         DropdownItem,
         CheckboxItem,

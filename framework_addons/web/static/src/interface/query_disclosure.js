@@ -1,12 +1,14 @@
+import { Icon } from "@web/interface/icon";
 import { Component, useExternalListener, useRef, xml } from "@odoo/owl";
 
 /** Inline query controls. The owning view supplies labelled inputs and owns the query. */
 export class QueryDisclosure extends Component {
     static props = { label: String, count: { type: Number, optional: true }, slots: Object };
+    static components = { Icon };
     static template = xml`
         <details class="mp-query" t-ref="root" t-on-keydown="onKeydown">
             <summary class="mp-query-trigger" t-ref="trigger">
-                <i class="fa fa-sliders" aria-hidden="true"/>
+                <Icon name="'sliders-horizontal'"/>
                 <t t-esc="props.label"/>
                 <span t-if="props.count" class="mp-query-count" t-esc="props.count"/>
             </summary>

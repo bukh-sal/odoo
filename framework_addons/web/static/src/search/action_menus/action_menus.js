@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { browser } from "@web/core/browser/browser";
 import { makeContext } from "@web/core/context";
 import { session } from "@web/session";
@@ -23,7 +24,7 @@ export const ACTIONS_GROUP_NUMBER = 100;
  */
 export class ActionMenus extends Component {
     static template = "web.ActionMenus";
-    static components = {
+    static components = { Icon,
         Dropdown,
         DropdownItem,
     };

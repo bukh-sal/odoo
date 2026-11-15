@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { Component, useRef, useState } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
 
@@ -19,6 +20,7 @@ export function pageWindow(current, total) {
 }
 
 export class TablePagination extends Component {
+    static components = { Icon };
     static template = "web.interface.TablePagination";
     static props = {
         offset: Number, limit: Number, total: Number, onUpdate: Function,

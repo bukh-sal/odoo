@@ -8,7 +8,7 @@ const clean=source=>source.replace(/^import .*;\r?\n/gm,'').replace(/^export /gm
 const translate=(text,...args)=>text.replace(/%s/g,()=>args.shift());
 class Component {constructor(props){this.props=props;}}
 const pagination=clean(await read('framework_addons/web/static/src/interface/table_pagination.js'));
-const {TablePagination}=new Function('Component','useRef','useState','_t',pagination+';return {TablePagination};')(Component,()=>({el:null}),x=>x,translate);
+const {TablePagination}=new Function('Icon','Component','useRef','useState','_t',pagination+';return {TablePagination};')(class{},Component,()=>({el:null}),x=>x,translate);
 const navigation=clean(await read('framework_addons/web/static/src/interface/record_navigation.js'));
 const {RecordNavigation}=new Function('TablePagination','_t',navigation+';return {RecordNavigation};')(TablePagination,translate);
 const formSource=await read('framework_addons/web/static/src/views/form/form_controller.js');

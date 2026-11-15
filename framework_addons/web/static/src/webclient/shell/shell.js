@@ -1,4 +1,4 @@
-import { Component, useEffect, useExternalListener, useRef, useState, xml } from "@odoo/owl";
+import { Component, useEffect, useExternalListener, useRef, useState, useSubEnv, xml } from "@odoo/owl";
 import { browser } from "@web/core/browser/browser";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -11,6 +11,8 @@ import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
 import { PageHeader } from "@web/interface/page_header";
 import { StatusMessage } from "@web/interface/status_message";
+import { Icon } from "@web/interface/icon";
+import { useContextPreference } from "@web/interface/context_preference";
 
 class AccessDialog extends Dialog {
     dismiss() {}
@@ -34,7 +36,7 @@ export class AccessChanged extends Component {
 /** Presentation over the existing menu/action services and their leave lifecycle. */
 export class Shell extends Component {
     static template = "web.Shell";
-    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu, PageHeader, StatusMessage };
+    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu, PageHeader, StatusMessage, Icon };
     static props = { slots: Object };
 
     setup() {
@@ -43,11 +45,17 @@ export class Shell extends Component {
         this.command = useService("command");
         this.dialog = useService("dialog");
         this.state = useState({ revision: 0, contextOpen: false });
+        useSubEnv({ interfaceContextTarget: ".mp-shell-context-controls" });
+        this.contextPreference = useContextPreference(() => this.current?.pluginID);
         this.contextTrigger = useRef("contextTrigger");
         this.context = useRef("context");
         useEffect(() => {
             if (this.state.contextOpen) this.context.el?.focus();
         }, () => [this.state.contextOpen]);
+        useEffect(() => {
+            if (!this.env.isSmall) this.state.contextOpen = false;
+            if (this.contextCollapsed && this.context.el?.contains(document.activeElement)) this.contextTrigger.el?.focus();
+        }, () => [this.env.isSmall, this.contextCollapsed]);
         useBus(this.env.bus, "MENUS:APP-CHANGED", () => this.state.revision++);
         useBus(this.env.bus, "ACTION_MANAGER:UI-UPDATED", () => {
             this.state.revision++;
@@ -87,7 +95,7 @@ export class Shell extends Component {
     }
     icon(app) {
         const icon = app.appIcon;
-        return "fa fa-" + (/^[a-z][a-z0-9-]*$/.test(icon || "") ? icon : "cube");
+        return /^[a-z][a-z0-9-]*$/.test(icon || "") ? icon : "box";
     }
     href(menu) {
         const path = menu.actionPath || "action-" + menu.actionID;
@@ -107,7 +115,15 @@ export class Shell extends Component {
         const workspace = new URLSearchParams(browser.location.search).get("workspace");
         browser.open("/odoo" + (workspace ? "?workspace=" + encodeURIComponent(workspace) : ""), "_blank", "noopener");
     }
-    toggleContext() { this.state.contextOpen = !this.state.contextOpen; }
+    get contextCollapsed() { return !this.env.isSmall && this.contextPreference.collapsed; }
+    get contextExpanded() { return this.env.isSmall ? this.state.contextOpen : !this.contextPreference.collapsed; }
+    get contextToggleLabel() {
+        return this.contextExpanded ? _t("Collapse %s navigation", this.current?.name || "") : _t("Expand %s navigation", this.current?.name || "");
+    }
+    toggleContext() {
+        if (this.env.isSmall) this.state.contextOpen = !this.state.contextOpen;
+        else this.contextPreference.toggle();
+    }
     closeContext(event) {
         if (event.key === "Escape" && !event.defaultPrevented && this.state.contextOpen) {
             event.preventDefault();

@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { _t } from "@web/core/l10n/translation";
 import { evaluateExpr, evaluateBooleanExpr } from "@web/core/py_js/py";
 import { user } from "@web/core/user";
@@ -38,7 +39,7 @@ import {
 
 export class ListController extends Component {
     static template = `web.ListView`;
-    static components = {
+    static components = { Icon,
         ActionMenus,
         Layout,
         ViewButton,

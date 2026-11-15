@@ -54,7 +54,20 @@
 .o_web_client:has(.mp-shell-action[hidden]) .o_dialog.o_inactive_modal { visibility: hidden; }
 .mp-shell-empty { padding: 40px; max-width: 620px; }
 .mp-app-chooser { min-width: 240px; width: 380px; max-width: 95vw; max-height: 70vh; overflow-y: auto; .dropdown-item { display: flex; gap: 12px; white-space: normal; } }
-.mp-context-toggle { display: none; }
+.mp-shell-context-controls { display: flex; flex: 0 0 auto; align-items: center; }
+.mp-shell-context-controls:empty { display: none; }
+.mp-context-toggle {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-width: 36px; min-height: 36px; padding: 6px 8px;
+    color: var(--mp-ui-muted); background: transparent; border: 1px solid transparent;
+    border-radius: var(--mp-ui-radius); font: 500 13px/20px var(--mp-ui-font);
+    &:hover { color: var(--mp-ui-ink); background: var(--mp-ui-hover); }
+    &:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; }
+    > span { display: none; }
+}
+@media screen and (min-width: 768px) {
+    .mp-native-context.is-collapsed { display: none; }
+}
 @media (max-width: 767px) {
     .mp-shell-frame { --mp-shell-rail: 44px; }
     .mp-app-rail { padding-block: 8px; }
@@ -62,7 +75,7 @@
     .mp-shell-topbar { padding-inline: 10px; gap: 8px; flex-wrap: wrap; min-height: 56px; flex-basis: auto; }
     .mp-command-trigger { width: 34px; max-width: none; justify-content: center; padding: 0; span { display: none; } }
     .mp-shell-utilities { gap: 4px; font-size: 12px; }
-    .mp-context-toggle { display: flex; gap: 8px; align-items: center; max-width: 160px; overflow-wrap: anywhere; }
+    .mp-context-toggle { display: flex; gap: 8px; align-items: center; max-width: 160px; min-height: 44px; overflow-wrap: anywhere; > span { display: inline; } }
     .mp-native-context { display: none; &.is-open { display: block; width: 100%; flex-basis: auto; } }
     .mp-shell-body:has(.mp-native-context.is-open) .mp-shell-canvas { display: none; }
 }

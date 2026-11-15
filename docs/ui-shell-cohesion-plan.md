@@ -89,3 +89,11 @@ icon routes/focus/dirty guards, colours/contrast,18table/history/current-authori
 preservation and protected-site checks. No full UI acceptance from source tests,
 mockups or this plan. Current true200%zoom/motion/current authority/optional absence/
 current appfree/final canonical cards remain open.
+
+## Source checkpoint15November2026
+
+Core0.2.29 shell cohesion implemented and source/preview verified; not installed. Pinned63 Lucide0.468 SVG geometries with exact ISC/Feather notice/provenance; shared Icon and explicit neutral aliases; native/shared chrome, query/pager/actions/palette migrated. Per-origin/user/stable-app boolean context preference, same-window sync/storage failure fallback, shell-owned portal and independent narrow drawer keep work area mounted. Native/shared breadcrumbs retain leave callback/modified links; checksum/legacy brand utilities/focus colours use semantic light/dark tokens. No business/security/model/wire changes.
+
+64affected Node and32host tests passed. Actual Owl mount proves native/custom topbar portal ownership, teardown, shared preference, retained business slot/draft, dynamic SVG namespace and narrow focus/resize;28native templates compile with the actual native click directive. Pinned Sass/RTL compiles, explicit print maps equal, freeze122files11rows passes. IAB source fixture confirms desktop expanded/collapsed/reload/app isolation/custom context, dark/RTL/measured390px and retained typed draft; not installed or native backend proof.
+
+Five current installed archives and all private Git heads/trees match exactly;4094curated inputs bind new licence/provenance/geometry. Existing legacy icon assets and unmigrated users remain. Main human tab4/new preserved; source preview is ownedtab14/loopback18729. Next commit, one core-only candidate and safe owned installed qualification before private successors and later creation/record plans. No phase acceptance or whole-application redesign claim.

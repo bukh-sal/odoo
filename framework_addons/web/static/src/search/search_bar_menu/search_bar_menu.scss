@@ -17,11 +17,11 @@ $o-search-bar-menu-max-width: calc(100vw - #{map-get($spacers, 3) * 2 });
     }
 
     .o_favorite_item {
-        &:hover {
+        &:hover, &:focus-within {
             --show-on-hover: visible;
         }
 
-        i {
+        .mp-edit-favorite {
             display: block !important;
             visibility: var(--show-on-hover, hidden);
         }

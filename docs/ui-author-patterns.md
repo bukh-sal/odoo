@@ -94,6 +94,59 @@ When `showContext` becomes false, its context slot is removed; the default slot
 remains. This is presentation behavior, not a permission boundary or draft store.
 The source focus-request checks do not substitute for browser focus/draft checks.
 
+### Shell additions in candidate0.2.29
+
+These additions are source/preview qualified; installed qualification is pending.
+The previously installed core0.2.28 remains the control until normal delivery.
+
+Pass `contextKey="'your.stable.plugin.id'"` to `AppLayout` to remember desktop
+collapse. The key must be a stable identifier, never a translated title, record ID,
+URL or draft. The native shell uses the existing menu's `pluginID` automatically.
+The preference is a device-local boolean scoped to browser origin, authenticated
+user and application; it is shared across that user's workspaces on the origin,
+not synced to other devices. Missing identity or blocked storage leaves an
+ephemeral working control. It confers no authority and stores no business state.
+
+Expanded context remains264px. Desktop collapse removes that column while
+retaining the work area and its component/draft. The single labelled control is
+in the shell topbar for both native and custom actions; action teardown removes
+the custom portal. Outside Shell/in dialogs, AppLayout provides its local control.
+Nested layouts do not inherit the outer shell's portal destination. Narrow
+navigation remains an independent transient drawer, with Escape/selection/focus
+behavior, rather than inheriting an unusable collapsed desktop state.
+
+Use the shared local SVG primitive instead of new font-icon dependencies:
+
+```js
+import { Icon } from "@web/interface/icon";
+// static components = { Icon, ...otherComponents };
+```
+
+```xml
+<button type="button" aria-label="Previous record" t-on-click="previous">
+  <Icon name="'chevron-left'" directional="true"/>
+</button>
+```
+
+`name` is a pinned semantic name; `size` defaults18, `className` is optional.
+Icons are decorative unless a meaningful `label` is supplied. The containing
+control still needs a name. Mark only directional navigation icons `directional`;
+ordinary objects must not mirror in RTL. Explicit FA/OI aliases bridge existing
+native declarations; unknown names use the neutral box fallback. Image icon paths
+on native ViewButton remain image paths. Existing legacy fonts are retained for
+unmigrated native/app uses; this does not claim every icon has been replaced.
+Geometry is Lucide0.468.0, without React/runtime lookup/CDN; exact ISC/Feather
+notice and per-module hashes are in `web/static/lib/lucide/`.
+
+`PageHeader` also accepts a `breadcrumbs` array of `{id, label, href?, onSelected?}`.
+Use stable IDs, escaped readable labels and real root-relative/HTTP(S) links.
+Unsafe schemes, protocol-relative/control-character/backslash destinations are
+not rendered as links. The final item is current. `onSelected` delegates an
+ordinary click to the owner's existing route/dirty-leave lifecycle; modified
+clicks retain the link's normal behavior. The trail never stores or optimistically
+changes a selected record. The previous `breadcrumbs` slot remains supported.
+This is shared presentation, not a universal record schema or contribution API.
+
 Native actions already use the core Shell's contextual navigation. Keep their
 single action container and inherited save/leave handlers; do not wrap a native
 form in a second application shell.

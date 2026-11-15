@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { Domain } from "@web/core/domain";
 import { serializeDate, serializeDateTime } from "@web/core/l10n/dates";
 import { registry } from "@web/core/registry";
@@ -44,7 +45,7 @@ export const DROPDOWN_CLOSE_DELAY = 10;
 
 export class SearchBar extends Component {
     static template = "web.SearchBar";
-    static components = {
+    static components = { Icon,
         SearchBarMenu,
         Dropdown,
         DropdownItem,

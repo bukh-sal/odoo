@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { _t } from "@web/core/l10n/translation";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -124,7 +125,7 @@ export function useFormViewInDialog() {
 
 export class FormController extends Component {
     static template = `web.FormView`;
-    static components = {
+    static components = { Icon,
         FormStatusIndicator,
         Layout,
         ButtonBox,

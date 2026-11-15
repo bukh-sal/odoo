@@ -625,3 +625,5 @@ passed; no new full-host run or historical gate score. Exact failed test DB was
 archived/retired after recovery; protected foreign resources and coordinated
 checkpoints remain. See the capability register for intentional data/key/sharing
 boundaries and unqualified full-app cascade/rollback/external/mobile cases.
+
+15November2026 UI shell cohesion029 source/preview: [proof](evidence/G7/20261115-ui-shell-cohesion029-source/qualification.json).64Node and32affected host pass; actual Owl Shell/AppLayout portal/persistence/draft/focus/SVG plus28native templates, actual pinned Sass/RTL with identical print rules; freeze122files11rows. IAB source fixture desktop/lightdark/RTL/measured390px verified, external menu/model fixture boundary. Five current app archives byte-exact and4094curated inputs before build. This is not installed/native-backend/Arabic-localization/true200%zoom/reduced-motion/complete UI acceptance.

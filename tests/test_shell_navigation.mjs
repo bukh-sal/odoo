@@ -14,6 +14,7 @@ async function shellFixture() {
     const focused = [], effects = [], refs = {};
     const blank = class {};
     const module = await load('../framework_addons/web/static/src/webclient/shell/shell.js', {
+        Icon: blank, useSubEnv: () => {}, useContextPreference: () => ({collapsed:false,toggle(){}}),
         Component: blank, Dialog: class {static props = {};}, Dropdown: blank, DropdownItem: blank,
         xml: strings => strings.join(''), window: {},
         ErrorHandler: blank, UserMenu: blank, PageHeader: blank, StatusMessage: blank,
@@ -22,7 +23,7 @@ async function shellFixture() {
         useService: name => ({menu:{unavailable:false},action:{},command:{},dialog:{add:()=>{}}})[name],
         registry:{category:()=>({contains:()=>false})}, browser:{}, user:{}, _t:value=>value,
     });
-    const shell = new module.Shell(); shell.env = {bus:{}}; shell.setup();
+    const shell = new module.Shell(); shell.env = {bus:{},isSmall:true}; shell.setup();
     return {shell, focused, effects, refs};
 }
 

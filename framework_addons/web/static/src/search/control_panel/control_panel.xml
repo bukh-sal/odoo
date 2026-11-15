@@ -68,7 +68,7 @@
                         <t t-slot="control-panel-always-buttons"/>
                         <Dropdown t-if="env.isSmall" menuClass="'o-control-panel-adaptive-dropdown'" onOpened.bind="dropdownifyButtons">
                             <button class="btn btn-secondary o-control-panel-adaptive-dropdown" title="More">
-                                <i class="oi oi-fw oi-ellipsis-v" />
+                                <Icon name="'ellipsis'"/>
                             </button>
                             <t t-set-slot="content">
                                 <t t-slot="control-panel-create-button"/>
@@ -136,19 +136,19 @@
                             t-att-class="{active: state.embeddedInfos.showEmbedded}"
                             t-on-click="onClickShowEmbedded"
                             title="View related documents">
-                        <i class="fa fa-sliders" />
+                        <Icon name="'sliders-horizontal'"/>
                     </button>
                     <t t-if="env.config.viewSwitcherEntries?.length > 1">
                         <div t-if="env.isSmall" class="o_cp_switch_buttons btn-group d-print-none">
                             <Dropdown menuClass="{o_cp_switch_buttons: true, o_custom_bottom_sheet: true }">
                                 <button class="btn btn-secondary">
                                     <t t-set="activeView" t-value="env.config.viewSwitcherEntries.find((view) => view.active)"/>
-                                    <i class="oi-fw" t-att-class="activeView.icon"/>
+                                    <Icon name="activeView.icon"/>
                                 </button>
                                 <t t-set-slot="content">
                                     <t t-foreach="env.config.viewSwitcherEntries" t-as="view" t-key="view.type">
                                         <DropdownItem onSelected="() => this.switchView(view.type)" class="view.active ? 'selected' : ''">
-                                            <i class="oi-fw" t-att-class="view.icon"/>
+                                            <Icon name="view.icon"/>
                                             <span class="ms-1" t-out="view.name"/>
                                         </DropdownItem>
                                     </t>
@@ -163,7 +163,7 @@
                                     t-custom-click="(ev, isMiddleClick) => this.switchView(view.type, isMiddleClick)"
                                     t-att-aria-label="view.name + ' View'"
                                 >
-                                    <i class="oi-fw" t-att-class="view.icon" />
+                                    <Icon name="view.icon"/>
                                 </button>
                             </t>
                         </nav>
@@ -175,7 +175,7 @@
     <t t-name="web.embeddedActionsDropdown">
         <Dropdown menuClass="'o_embedded_actions_dropdown_menu'">
             <button name="openEmbeddedActions" class="btn btn-secondary">
-                <i class="fa fa-fw fa-sliders"/>
+                <Icon name="'sliders-horizontal'"/>
             </button>
             <t t-set-slot="content">
                 <t t-foreach="state.embeddedInfos.embeddedActions" t-as="action" t-key="action.id">

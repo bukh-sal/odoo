@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.Icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+         class="mp-icon" t-att-class="props.className + (props.directional ? ' is-directional' : '')"
+         t-att-width="size" t-att-height="size" focusable="false"
+         t-att-aria-hidden="props.label ? undefined : 'true'" t-att-role="props.label ? 'img' : undefined" t-att-aria-label="props.label">
+      <t t-foreach="nodes" t-as="node" t-key="node.key"><t t-tag="node.tag" t-att="node.attrs"/></t>
+    </svg>
+  </t>
+</templates>

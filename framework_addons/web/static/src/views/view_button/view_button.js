@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { Component } from "@odoo/owl";
 import { useDropdownCloser } from "@web/core/dropdown/dropdown_hooks";
 import { pick } from "@web/core/utils/objects";
@@ -21,10 +22,10 @@ const odooToBootstrapClasses = {
 function iconFromString(iconString) {
     const icon = {};
     if (iconString.startsWith("fa-")) {
-        icon.tag = "i";
+        icon.tag = "svg";
         icon.class = `o_button_icon fa fa-fw ${iconString}`;
     } else if (iconString.startsWith("oi-")) {
-        icon.tag = "i";
+        icon.tag = "svg";
         icon.class = `o_button_icon oi oi-fw ${iconString}`;
     } else {
         icon.tag = "img";
@@ -34,6 +35,7 @@ function iconFromString(iconString) {
 }
 
 export class ViewButton extends Component {
+    static components = { Icon };
     static template = "web.views.ViewButton";
     static props = [
         "id?",

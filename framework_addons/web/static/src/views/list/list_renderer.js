@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { browser } from "@web/core/browser/browser";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { Dropdown } from "@web/core/dropdown/dropdown";
@@ -103,7 +104,7 @@ export class ListRenderer extends Component {
     static groupRowTemplate = "web.ListRenderer.GroupRow";
     static useMagicColumnWidths = true;
     static LONG_TOUCH_THRESHOLD = 400;
-    static components = {
+    static components = { Icon,
         DropdownItem,
         Field,
         ViewButton,

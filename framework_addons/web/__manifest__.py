@@ -4,7 +4,7 @@
 {
     'name': 'Web',
     'category': 'Hidden',
-    'version': '19.0.2.28.0',
+    'version': '19.0.2.29.0',
     'description': """
 Odoo Web core module.
 ========================
@@ -127,6 +127,12 @@ This module provides the core of the Odoo Web Client.
             # Form style should be computed before
             'web/static/src/views/form/button_box/*.scss',
             'web/static/src/interface/foundation.css',
+            'web/static/src/interface/icons/lucide.js',
+            'web/static/src/interface/icon.js',
+            'web/static/src/interface/icon.xml',
+            'web/static/src/interface/context_preference.js',
+            'web/static/src/interface/breadcrumb_trail.js',
+            'web/static/src/interface/breadcrumb_trail.xml',
             'web/static/src/interface/query_disclosure.js',
 
             # Don't include dark mode files in light mode

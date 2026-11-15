@@ -34,7 +34,7 @@
                                         <span class="d-block min-w-0 text-truncate flex-grow-1 flex-shrink-1" t-att-class="isNumeric ? 'o_list_number_th' : ''"
                                               t-esc="column.label"/>
                                         <div class="o_list_header_label_spacer"/>
-                                        <i class="o_list_sortable_icon" t-att-class="getSortableIconClass(column)"/>
+                                        <Icon name="getSortableIconClass(column)" className="'o_list_sortable_icon ' + getSortableIconClass(column)" size="14"/>
                                     </div>
                                     <span
                                           class="o_resize position-absolute top-0 end-0 bottom-0 ps-1 bg-black-25 opacity-0 opacity-50-hover z-1"
@@ -49,7 +49,7 @@
                             <div t-if="displayOptionalFields or hasOptionalOpenFormViewColumn" class="o_optional_columns_dropdown d-print-none text-center border-top-0">
                                 <Dropdown position="'bottom-end'">
                                     <button type="button" class="btn p-0 mp-choose-columns" aria-label="Choose columns" title="Choose columns">
-                                        <i class="o_optional_columns_dropdown_toggle oi oi-fw oi-settings-adjust"/>
+                                        <Icon name="'columns-3'" className="'o_optional_columns_dropdown_toggle'"/>
                                     </button>
 
                                     <t t-set-slot="content">
@@ -110,10 +110,10 @@
                                     t-on-keydown="(ev) => this.onGroupInputKeydown(ev)"
                                 />
                                 <button class="btn btn-primary o_list_group_confirm" type="button" t-on-click="addNewGroup">
-                                    <i class="fa fa-check"/>
+                                    <Icon name="'check'"/>
                                 </button>
                                 <button class="btn btn-danger o_list_group_cancel" type="button" t-on-click="() => this.state.showGroupInput = false">
-                                    <i class="fa fa-times"/>
+                                    <Icon name="'x'"/>
                                 </button>
                             </div>
                         </td>
@@ -223,7 +223,7 @@
                             <t t-if="!evalInvisible(button.invisible, group.record)">
                                 <t t-if="button.clickParams.type === 'edit'">
                                     <button t-att-title="button.title" class="btn" t-on-click.stop="() => this.editGroupRecord(group)" tabindex="-1">
-                                        <i t-attf-class="fa fa-fw {{button.icon}} o_button_icon"/>
+                                        <Icon name="button.icon" className="'o_button_icon'"/>
                                     </button>
                                 </t>
                                 <t t-else="">

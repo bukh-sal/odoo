@@ -14,12 +14,13 @@ async function fixture(props = {}) {
     };
     let ids = 0;
     globalThis.appLayoutFixture = {
-        Component: class { constructor(props) { this.props = props; } },
+        Component: class { constructor(props) { this.props = props; this.env = { isSmall: true }; } },
+        Icon: class {}, useChildSubEnv: () => {}, useContextPreference: () => ({collapsed:false,toggle(){}}),
         useState: value => value, useRef: name => refs[name],
         useEffect: callback => effects.push(callback),
         _t: value => value, uniqueId: prefix => prefix + ++ids,
     };
-    const prefix = "const {Component,useState,useRef,useEffect,_t,uniqueId}=globalThis.appLayoutFixture;\n";
+    const prefix = "const {Component,Icon,useChildSubEnv,useContextPreference,useState,useRef,useEffect,_t,uniqueId}=globalThis.appLayoutFixture;\n";
     const { AppLayout } = await import("data:text/javascript;base64," + Buffer.from(prefix + source).toString("base64") + "#" + serial++);
     const layout = new AppLayout({ ...AppLayout.defaultProps, contextTitle: "Long workspace destinations", ...props });
     layout.setup();

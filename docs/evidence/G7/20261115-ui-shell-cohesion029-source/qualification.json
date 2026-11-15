@@ -1,0 +1,152 @@
+{
+  "utc": "2026-11-15T08:20:41.210609+00:00",
+  "base_head": "346f93b407df4d37789a7543316e875f458435e4",
+  "candidate": "0.2.29",
+  "source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "830299c67687ec40a19901459e8cb5d2b7ca0ccc64d651f94b3435f73fc3980c",
+    "framework_addons/web/__manifest__.py": "dd06660ac574947f833b99555d2c5d445fb95330d399aeb20f57a7910ff185eb",
+    "framework_addons/web/static/lib/lucide/LICENSE": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "framework_addons/web/static/lib/lucide/provenance.json": "68b7fa58388a73d7cedbed0fa77851b14d009cebedef15425c37e04eb1e32348",
+    "framework_addons/web/static/src/core/commands/command_palette.js": "860bb7942e938d0adcf1427e3209631190478f7d23fd7d3a8f8422f48d26c19d",
+    "framework_addons/web/static/src/core/commands/command_palette.xml": "a08b2049aaa6f932b5b3064c979ad1cae681d2d352d655d7d17c49cd5bf9291a",
+    "framework_addons/web/static/src/interface/app_layout.js": "8a9644976243b4071b96f1dad90278a6eb577fbd658f5098c5df3c45f1eeea7e",
+    "framework_addons/web/static/src/interface/app_layout.xml": "20bfbc4193fdef2dd6a5bbb4688b5a21fe802df6874c3744ee63dfa73b4a9c9f",
+    "framework_addons/web/static/src/interface/breadcrumb_trail.js": "cd3f65503b15c2e7400a55413dca529bafaaf3b00d460c52559100d4999febae",
+    "framework_addons/web/static/src/interface/breadcrumb_trail.xml": "be4a04fc758cf3d9ad46160aeb96c73bb1c23584499e522ce59a4e18c73ebdf4",
+    "framework_addons/web/static/src/interface/context_preference.js": "c5e7548e7ae4d4ae5a165ff2aa35aa575ea091b71a49b81da90370d1263bcc04",
+    "framework_addons/web/static/src/interface/foundation.css": "dda1554e55f9d386b6dd3a7ffd37b492e981bde8792ea86bcfbe621c66a9c02d",
+    "framework_addons/web/static/src/interface/foundation.dark.scss": "7218ce200e4bc7bfbd2d39543937cb6c505813b1d061c69f44507ebba92f019a",
+    "framework_addons/web/static/src/interface/icon.js": "6a7c6afbbea8a40b48d957ceb2d62ef08f9be760c777ee35fee21b8b68f254cd",
+    "framework_addons/web/static/src/interface/icon.xml": "2e9f7ef248bcdda9b6fbbc9a9230691cf554d3428e24edf5c056acb11ee0b784",
+    "framework_addons/web/static/src/interface/icons/lucide.js": "b8384b1d7ef9f0b04f35430c1e58e033d96e22e765b9064f7f221efec15cf30a",
+    "framework_addons/web/static/src/interface/page_header.js": "669b2e6ba6bf69cac970427e783e51b423ceb79e16561e6fa799cee8509d54eb",
+    "framework_addons/web/static/src/interface/page_header.xml": "ec3e1276f3fa972c473044981c30398eabae971f67011d433a373f318ac566ef",
+    "framework_addons/web/static/src/interface/query_disclosure.js": "72254ac30fc84356e520bf23f4d9651f0f9904ebebed1c7e21392138c08d9fbb",
+    "framework_addons/web/static/src/interface/record_navigation.xml": "f556612031d6e05e908478d13f403c69a7ce89a1d228d984e468e1b7e59bbc20",
+    "framework_addons/web/static/src/interface/surfaces.css": "fcbe59df8e372cc5199d13ea12ffbb284148a37902de030e475a64cd0ff113c1",
+    "framework_addons/web/static/src/interface/table_pagination.js": "69d3ed87b19a87cff1a98370a8582fb38fa4f0e8791ecab26f1a5f021902a54b",
+    "framework_addons/web/static/src/interface/table_pagination.xml": "1453b6ec4ecb11f03e55b47bfa9e087e3e919d2ec22cde022395b3ecd6df7af7",
+    "framework_addons/web/static/src/search/action_menus/action_menus.js": "e32d5391d2b6bf65659ec470863120a5196d77b6fe1e6eb7bd162d016e650800",
+    "framework_addons/web/static/src/search/action_menus/action_menus.xml": "f57657dff7f3ed3d4d50e6e00b4e54ef9f983e4744968a2cf0ab31630b88819b",
+    "framework_addons/web/static/src/search/breadcrumbs/breadcrumbs.js": "49eecc085721167d248fc09afceba1b5a1a473ceacfc35b81f8986b7dfdb4703",
+    "framework_addons/web/static/src/search/breadcrumbs/breadcrumbs.xml": "6407822d75fc0befcb93cece5d8d94f90dc9fcb29c3d3e5646ddd0f2fff9ac31",
+    "framework_addons/web/static/src/search/control_panel/control_panel.js": "0cebd5cd9d16499fde4eb52510d4d295cfb5759b581efae9e6b80d9f4c726403",
+    "framework_addons/web/static/src/search/control_panel/control_panel.xml": "f7808b4927f615bbfabee57c2e5c333196fcb257a18f07f91a986a31437ddb9c",
+    "framework_addons/web/static/src/search/search_bar/search_bar.js": "dc282192eafaa3c98023e452e6a92a2c8a1cc79de50ebd1b54f2e0d7734cb7b4",
+    "framework_addons/web/static/src/search/search_bar/search_bar.xml": "630a0a34a91065f32e55b2ad1749e88625e234135e8aed41846c6d73c3bd2ed0",
+    "framework_addons/web/static/src/search/search_bar_menu/search_bar_menu.js": "04cefce71621a9861e62b5dda81c3276eeb019aa73b2cbe2a8a93e841cfb2714",
+    "framework_addons/web/static/src/search/search_bar_menu/search_bar_menu.scss": "543b5e463a080f7a9578d694b6474e503b417fb16e88de2b6b8a053cec44c680",
+    "framework_addons/web/static/src/search/search_bar_menu/search_bar_menu.xml": "1f118cb07fc9b495b6ddf2a0b48215a6357b2559b29cf94e45863b2e57860911",
+    "framework_addons/web/static/src/views/form/form_controller.js": "a5a0866a8c873d7a73a8489a47db84fc907181a0d19627300769dc72874ef2c5",
+    "framework_addons/web/static/src/views/form/form_controller.xml": "3a06e61e78b60704df13e941ae8f5c2502d507d8f873085ecd54995c20c7f6e3",
+    "framework_addons/web/static/src/views/list/list_controller.js": "ab586192d7a4dda8cb78e6b0e240c1f6d080d96de5303c8f61e14a59ddfc6fea",
+    "framework_addons/web/static/src/views/list/list_controller.xml": "050f8a6e1abcb6b53c6b4e38b10693abd747884bb64bfe0970be9b40b9eaf678",
+    "framework_addons/web/static/src/views/list/list_renderer.js": "d06f4e087e1c1b4d8ea2d7911fcf77eeaa8864010ae69cacee5e8de14c654a2c",
+    "framework_addons/web/static/src/views/list/list_renderer.xml": "404df79bde366e2716c0c9b4070e30f7d6c9a4ddf335c780ce872c26aea5330f",
+    "framework_addons/web/static/src/views/view_button/view_button.js": "50e7611c194137625f469b2e703abc683cf457d5b0c20dd00b9a30a6efe9806e",
+    "framework_addons/web/static/src/views/view_button/view_button.xml": "2f09df06e1d796f3f87fb4a53a96411ee8d0b3c28a47dd9dd994040dcb399b4d",
+    "framework_addons/web/static/src/webclient/shell/shell.js": "ccd30eb1ebf18faf4838444fa876095ab7285776359fa062f7ad1a1a3cb32739",
+    "framework_addons/web/static/src/webclient/shell/shell.scss": "98f736a53cdef23a9392041cd6e489ac9b409c08ffad164af2c0a1a05e04cd3a",
+    "framework_addons/web/static/src/webclient/shell/shell.xml": "635c63d55b17884c60cab74c802bf90f6bba17a5670dda75d3432b8510bc7585",
+    "packages/platform_sdk/modular_platform/projection.py": "9a75203aab68bde6020d430defc318667e90e0cfba13149e6283f13293f05ed4"
+  },
+  "proof_classes": {
+    "node": "64 affected actual-method/hook cases; external services/storage mocked",
+    "owl": {
+      "actualShellAndAppLayout": true,
+      "persistentPortalSameTopbar": true,
+      "oneToggleAndTeardown": true,
+      "retainedContentAndDraft": true,
+      "userAppStorage": true,
+      "nativeCustomSync": true,
+      "narrowEphemeralAndFocus": true,
+      "actualSvgNamespaces": true,
+      "escapedLabels": true,
+      "compiledNativeTemplates": 28,
+      "scope": "Actual Owl/components/native bus in test DOM; menu/action/network/user external boundaries mocked. Not installed browser, real CSS layout or backend qualification."
+    },
+    "css": {
+      "pinned_sass_rtl": true,
+      "print_rules_identical": true,
+      "ltr_rtl_compiled": true,
+      "source_sha256": {
+        "interface/foundation.css": "dda1554e55f9d386b6dd3a7ffd37b492e981bde8792ea86bcfbe621c66a9c02d",
+        "interface/surfaces.css": "fcbe59df8e372cc5199d13ea12ffbb284148a37902de030e475a64cd0ff113c1",
+        "webclient/shell/shell.scss": "98f736a53cdef23a9392041cd6e489ac9b409c08ffad164af2c0a1a05e04cd3a",
+        "interface/foundation.dark.scss": "7218ce200e4bc7bfbd2d39543937cb6c505813b1d061c69f44507ebba92f019a"
+      },
+      "compiler_target": "f10b166a26eec1e19a1d4047ffcc9501b4849e5172018d25a1f1ca2f595587c3",
+      "target_generation": 28,
+      "scope": "Read-only stdin/stdout compiler; no installed UI/runtime change."
+    },
+    "browser": "IAB4/tab14 actual shared component source preview, synthetic menu/model boundary. Desktop expanded/collapsed/reload/app isolation; custom portal; draft retention/refused callback; dark/RTL actual390x844/no page overflow. Not installed/native backend/Arabic localization/200%zoom/motion qualification."
+  },
+  "pending": [
+    "normal immutable core-only build with exact current app archive bytes",
+    "private app stable context keys/shared icon successors after core-only preflight/build",
+    "separate owned installed preview and authority/history checks",
+    "later creation and record composition implementation plans at entry",
+    "original UI4 phase cards and final canonical unchanged"
+  ],
+  "private_evidence": ".local/ui-shell-cohesion029-01",
+  "icons": {
+    "package": "lucide-react",
+    "version": "0.468.0",
+    "license": "ISC; retained Feather attribution in exact package notice",
+    "source": "Existing owner-supplied Meridian node_modules package; geometry extracted from dist/esm/icons only",
+    "runtime_dependencies_added": [],
+    "package_json_sha256": "609e78dffe97aab720c105246eca516f0aaac1de60725e53c0f5abb908b08320",
+    "license_sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "generated_data_sha256": "b8384b1d7ef9f0b04f35430c1e58e033d96e22e765b9064f7f221efec15cf30a"
+  },
+  "affected_host_tests": {
+    "cases": 32,
+    "failed": 0,
+    "seconds": 11.178
+  },
+  "contract_freeze": {
+    "files": 122,
+    "rows": 11,
+    "result": "passed"
+  },
+  "prebuild_app_archives": {
+    "archives": {
+      "dev.local.partners": {
+        "bytes": 30418,
+        "digest": "sha256:8c3c142e45b641fc5b9aaa06f977128ff73a2da3d350181fdddc567916f482bb",
+        "version": "0.1.7"
+      },
+      "dev.local.workboard": {
+        "bytes": 64448,
+        "digest": "sha256:e38480b2f5698a5c6c9a7c582799bbd4bde491e52c87863afc9716a3e390acb8",
+        "version": "0.2.16"
+      },
+      "dev.local.delivery": {
+        "bytes": 30661,
+        "digest": "sha256:64327109e2d92bee78b19a832134249154d989cbbe098494aa6862932c3b0b9c",
+        "version": "0.1.8"
+      },
+      "dev.local.documents": {
+        "bytes": 52865,
+        "digest": "sha256:45351d478cc9786d9d622b694bb537ed5856763cdc37208b456b175c606ee9eb",
+        "version": "0.1.11"
+      },
+      "dev.local.taskfiles": {
+        "bytes": 38429,
+        "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e",
+        "version": "0.1.6"
+      }
+    },
+    "all_exact_installed": true,
+    "private_sources": {
+      "delivery": "b399472e73df2e54df1b15e1321d42d85daf5802",
+      "documents": "e64db3a74b3d228aae929bc2018273475f7be288",
+      "partners": "35bf5b1a7ad4255d560319125bbba4825daf5bb1",
+      "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81",
+      "workboard": "cbc227726382df26509cf4183e7246b23453d9b1"
+    },
+    "curated_inputs": 4094,
+    "new_vendor_license_and_geometry_bound": true,
+    "scope": "Read-only archive assembly/source checks; no build/deployment"
+  }
+}

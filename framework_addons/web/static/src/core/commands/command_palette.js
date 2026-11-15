@@ -1,3 +1,4 @@
+import { Icon } from "@web/interface/icon";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { _t } from "@web/core/l10n/translation";
@@ -91,7 +92,7 @@ export class DefaultCommandItem extends Component {
 
 export class CommandPalette extends Component {
     static template = "web.CommandPalette";
-    static components = { Dialog };
+    static components = { Icon, Dialog };
     static lastSessionId = 0;
     static props = {
         bus: { type: EventBus, optional: true },

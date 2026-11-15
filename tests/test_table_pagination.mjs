@@ -6,9 +6,9 @@ const source=(await readFile(new URL('../framework_addons/web/static/src/interfa
 let serial=0;
 async function fixture(props={}) {
     const focus=[]; const body={}; const root={contains:node=>node==='button',querySelector:()=>({focus:options=>focus.push(options)})};
-    globalThis.paginationFixture={Component:class{constructor(props){this.props=props;}},useRef:()=>({el:root}),useState:x=>x,
+    globalThis.paginationFixture={Icon:class{},Component:class{constructor(props){this.props=props;}},useRef:()=>({el:root}),useState:x=>x,
         _t:(text,...args)=>text.replace(/%s/g,()=>args.shift()),document:{activeElement:body,body}};
-    const prefix='const {Component,useRef,useState,_t,document}=globalThis.paginationFixture;\n';
+    const prefix='const {Icon,Component,useRef,useState,_t,document}=globalThis.paginationFixture;\n';
     const module=await import('data:text/javascript;base64,'+Buffer.from(prefix+source).toString('base64')+'#'+serial++);
     const calls=[];const page=new module.TablePagination({offset:0,limit:25,total:251,onUpdate:async(...args)=>calls.push(args),...props});page.setup();
     return {...module,page,calls,focus,document:globalThis.paginationFixture.document};
@@ -134,7 +134,7 @@ test('embedded table paging retains its own edit refusal and abandoned-new-row l
 const togglerSource=(await readFile(new URL('../framework_addons/web/static/src/search/search_bar/search_bar_toggler.js',import.meta.url),'utf8')).replace(/^import .*;\r?\n/gm,'');
 async function toggler(alwaysVisible){
     const ui={isSmall:true};const effects=[];let resize;
-    globalThis.togglerFixture={Component:class{},useEffect:fn=>effects.push(fn),useState:x=>x,useService:()=>ui,useDebounced:fn=>fn,browser:{addEventListener:(name,fn)=>resize=fn,removeEventListener:()=>{}}};
+    globalThis.togglerFixture={Icon:class{},Component:class{},useEffect:fn=>effects.push(fn),useState:x=>x,useService:()=>ui,useDebounced:fn=>fn,browser:{addEventListener:(name,fn)=>resize=fn,removeEventListener:()=>{}}};
     const prefix='const {Component,useEffect,useState,useService,useDebounced,browser}=globalThis.togglerFixture;\n';
     const {useSearchBarToggler}=await load(prefix+togglerSource);const result=useSearchBarToggler({alwaysVisible});effects[0]();
     return {ui,result,resize:()=>resize()};
